@@ -14,9 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
-		collisionVolumeScales = [[157 65 157]],
-		collisionVolumeOffsets = [[0 -19 0]],
-		collisionVolumeType	= [[CylY]],
+		collisionvolumeoffsets = "0 -19 0",
+		collisionvolumescales = "157 65 157",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Safe Plasma Deflector and paralyse HexaPod",
@@ -50,12 +50,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.66,
+		turninplacespeedlimit = 0.924,
 		turnrate = 225,
 		unitname = "tllgorgon",
 		upright = true,
 		customparams = {
-			buildpic = "tllgorgon.png",
+			buildpic = "tllgorgon.dds",
 			faction = "Arm",
 		},
 		featuredefs = {
@@ -177,13 +177,12 @@ return {
 					subs = 5,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {
 				def = "ARMDFLY_PARALYZER",
 				onlytargetcategory = "SURFACE",
-			},			
+			},
 			[3] = {
 				def = "REPULSOR2",
 			},

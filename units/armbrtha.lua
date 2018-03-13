@@ -45,7 +45,7 @@ return {
 		turnrate = 0,
 		unitname = "armbrtha",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "armbrtha.dds",

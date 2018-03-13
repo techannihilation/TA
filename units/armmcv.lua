@@ -32,7 +32,7 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 34,
 		maneuverleashlength = 640,
-		mass = 9600,
+		mass = 9800,
 		maxdamage = 52000,
 		maxslope = 12,
 		maxvelocity = 1.2,
@@ -166,8 +166,8 @@ return {
 				model = "titan_missile",
 				name = "TiTan Rocket",
 				noselfdamage = true,
-				range = 900,
 				proximitypriority = -1,
+				range = 900,
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
@@ -196,9 +196,9 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_BATSAFTX",
-				onlytargetcategory = "SURFACE",
 				maindir = "0 0 1",
-				maxangledif = 270,				
+				maxangledif = 270,
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARM_BATSAFTX",
@@ -207,8 +207,6 @@ return {
 			[3] = {
 				def = "RAVE_MISSILE",
 			},
-
-
 		},
 	},
 }

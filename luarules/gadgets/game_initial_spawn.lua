@@ -87,13 +87,11 @@ if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
     useFFAStartPoints = true
 end
 
+
 function GetFFAStartPoints()
-    if VFS.FileExists("luarules/configs/ffa_startpoints.lua") then
-        --load the ffaStartPoints table from the map, if it has it		
-        include("luarules/configs/ffa_startpoints.lua") 
-    else
-        --if not, see if we have a backup table for this map
-        include("luarules/configs/ffa_startpoints/ffa_startpoints.lua")
+    include("luarules/configs/ffa_startpoints/ffa_startpoints.lua") -- if we have a ffa start points config for this map, use it
+    if not ffaStartPoints and VFS.FileExists("luarules/configs/ffa_startpoints.lua") then
+        include("luarules/configs/ffa_startpoints.lua") -- if we don't have one, see if the map has one
     end
 end
 
@@ -213,6 +211,21 @@ function gadget:Initialize()
 		nAllyTeams = nAllyTeams + 1
 	end
 	
+	-- count teams
+    nSpawnTeams = 0
+    for k,v in pairs(spawnTeams) do
+        nSpawnTeams = nSpawnTeams + 1
+    end
+
+	-- create the ffaStartPoints table, if we need it & can get it
+    if useFFAStartPoints then
+        GetFFAStartPoints() 
+    end
+	-- make the relevant part of ffaStartPoints accessible to all, if it is use-able
+    if ffaStartPoints then
+		GG.ffaStartPoints = ffaStartPoints[nAllyTeams] -- NOT indexed by allyTeamID
+    end
+    
 	-- mark all players as 'not yet placed'	
 	local initState 
 	if Game.startPosType ~= 2 or ffaStartPoints then
@@ -335,58 +348,62 @@ end
 -- Spawning
 ----------------------------------------------------------------
 
-function gadget:GameStart() 
-	-- ffa mode spawning
-	if useFFAStartPoints then
-        GetFFAStartPoints()		
-        if ffaStartPoints and ffaStartPoints[nAllyTeams] and #(ffaStartPoints[nAllyTeams])==nAllyTeams then
+function gadget:GameStart()
+
+    -- ffa mode spawning
+    if useFFAStartPoints and ffaStartPoints and ffaStartPoints[nAllyTeams] and #(ffaStartPoints[nAllyTeams])==nAllyTeams then
 		-- cycle over ally teams and spawn starting units
-			local allyTeamSpawn = SetFFASpawns()
+        local allyTeamSpawn = SetPermutedSpawns(nAllyTeams, allyTeams)            
 			for teamID, allyTeamID in pairs(spawnTeams) do
-				SpawnFFAStartUnit(nAllyTeams, allyTeamID, allyTeamSpawn[allyTeamID], teamID) 
+            SpawnFFAStartUnit(nAllyTeams, allyTeamSpawn[allyTeamID], teamID) 
 			end
-			
-			gadgetHandler:RemoveGadget()
 			return
 		end
+
+    -- use ffa mode startpoints for random spawning, if possible, but per team instead of per allyTeam
+    if Game.startPosType==1 and ffaStartPoints and ffaStartPoints[nSpawnTeams] and #(ffaStartPoints[nSpawnTeams])==nSpawnTeams then
+        local teamSpawn = SetPermutedSpawns(nSpawnTeams, spawnTeams)
+        for teamID, allyTeamID in pairs(spawnTeams) do        
+            SpawnFFAStartUnit(nSpawnTeams, teamSpawn[teamID], teamID)
+        end
+        return
 	end
 	
 	-- normal spawning (also used as fallback if ffaStartPoints fails)
 	-- cycle through teams and call spawn team starting unit 
 	for teamID, allyTeamID in pairs(spawnTeams) do
 		SpawnTeamStartUnit(teamID, allyTeamID) 
-	end
-	
-	gadgetHandler:RemoveGadget()
+	end	
 end
 
-function SetFFASpawns()
-	-- construct a random permutation of [1,...,nAllyTeams] and call it perm (using a Knuth shuffle)
+function SetPermutedSpawns(nSpawns, idsToSpawn) 
+    -- this function assumes that idsToSpawn is a hash table with nSpawns elements    
+    -- returns a bijective random map from key values of idsToSpawn to [1,...,nSpawns]
+
+    -- first, construct a random permutation of [1,...,nSpawns] using a Knuth shuffle
 	local perm = {}
-	for i=1,nAllyTeams do
+    for i=1,nSpawns do
 		perm[i] = i
 	end
-	for i=1,nAllyTeams-1 do
-		local j = math.random(i,nAllyTeams)
+    for i=1,nSpawns-1 do
+        local j = math.random(i,nSpawns)
 		local temp = perm[i]
 		perm[i] = perm[j]
 		perm[j] = temp
 	end
 
-	-- construct bijective random map from active allyTeams to [1,...,nAllyTeams] and call it allyTeamSpawn
-	local allyTeamSpawn = {}
+    local permutedSpawns = {}
 	local slot = 1
-	for allyTeamID in pairs(allyTeams) do
-		allyTeamSpawn[allyTeamID] = perm[slot]
+    for id,_ in pairs(idsToSpawn) do
+        permutedSpawns[id] = perm[slot]
 		slot = slot + 1
 	end
-
-	return allyTeamSpawn
+    return permutedSpawns
 end
 
-function SpawnFFAStartUnit(nAllyTeams, allyTeamID, allyTeamSpawnID, teamID)
+function SpawnFFAStartUnit(nSpawns, spawnID, teamID)
 	-- get allyTeam start pos
-	local startPos = ffaStartPoints[nAllyTeams][allyTeamSpawnID]
+    local startPos = ffaStartPoints[nSpawns][spawnID]
 	local x = startPos.x
 	local z = startPos.z
 	
@@ -450,6 +467,11 @@ function SpawnStartUnit(teamID, x, z)
 	spSetTeamRulesParam(teamID, startUnitParamName, startUnit, {public=true}) -- visible to all (and picked up by advpllist)
 
 	--team storage is set up by game_team_resources
+end
+
+
+function gadget:GameFrame()
+    gadgetHandler:RemoveGadget(self)
 end
 
 

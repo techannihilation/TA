@@ -19,6 +19,8 @@ local teamInfo = {}
 local coopInfo = {}
 local present = {}
 
+local playerListByTeam = {} --does not contain specs
+
 local econUnitDefIDs = { --better to hardcode these since its complicated to pick them out with UnitDef properties
 	--Powerplants
 	UnitDefNames.aafus.id,
@@ -83,6 +85,9 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.tllsolar.id,
 	UnitDefNames.tllsolarns.id,
 	UnitDefNames.tlladvsolar.id,
+	UnitDefNames.armefus.id,
+	UnitDefNames.corefus.id,
+	UnitDefNames.tllefus.id,
 	--Metal Makers
 	UnitDefNames.armmakr.id,
 	UnitDefNames.armfmkr.id,
@@ -92,6 +97,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.armmmkr.id,
 	UnitDefNames.armuwmmm.id,
 	UnitDefNames.ametalmakerlvl2.id,
+	UnitDefNames.ametalmakerlvl3.id,
 	UnitDefNames.armgen.id,
 	UnitDefNames.cormakr.id,
 	UnitDefNames.corfmkr.id,
@@ -101,14 +107,37 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.cormmkr.id,
 	UnitDefNames.coruwmmm.id,
 	UnitDefNames.cmetalmakerlvl2.id,
+	UnitDefNames.cmetalmakerlvl3.id,
 	UnitDefNames.corgen.id,
 	UnitDefNames.tllmm.id,
 	UnitDefNames.tllwmconv.id,
 	UnitDefNames.tllammaker.id,
 	UnitDefNames.tllwmmohoconv.id,
 	UnitDefNames.tllgen.id,
+	UnitDefNames.tllmetalmakerlvl3.id
 }
 
+
+function gadget:Initialize()
+    -- helpful for debugging/testing
+	local teamList = Spring.GetTeamList()
+	for _,teamID in pairs(teamList) do
+		local playerList = Spring.GetPlayerList(teamID)
+		local list = {} --without specs
+		for _,playerID in pairs(playerList) do
+			local name, _, isSpec = Spring.GetPlayerInfo(playerID)
+			if not isSpec then
+				table.insert(list, name)
+			end
+		end
+		playerListByTeam[teamID] = list
+	end	
+end
+
+
+-----------------------------------
+-- set up book keeping
+-----------------------------------
 
 function gadget:GameStart()
 	--make table of teams eligible for awards
@@ -132,7 +161,7 @@ function gadget:GameStart()
 				
 				if numPlayers > 0 then
 					present[teamIDs[j]] = true
-					teamInfo[teamIDs[j]] = {ecoDmg=0, fightDmg=0, otherDmg=0, dmgDealt=0, ecoUsed=0, dmgRatio=0, ecoProd=0, lastKill=0, dmgRec=0, sleepTime=0, unitsCost=0, present=true,}
+					teamInfo[teamIDs[j]] = {allDmg=0, ecoDmg=0, fightDmg=0, otherDmg=0, dmgDealt=0, ecoUsed=0, effScore=0, ecoProd=0, lastKill=0, dmgRec=0, sleepTime=0, present=true,}
 					coopInfo[teamIDs[j]] = {players=numPlayers,}
 				else
 					present[teamIDs[j]] = false
@@ -141,7 +170,7 @@ function gadget:GameStart()
 				present[teamIDs[j]] = false
 			end
 		end
-	end
+	end    
 end
 
 function isEcon(unitDefID) 
@@ -153,6 +182,10 @@ function isEcon(unitDefID)
 	end
 	return false
 end
+
+-----------------------------------
+-- track kill damages (measure by cost of killed unit)
+-----------------------------------
 
 function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)
 	-- add destroyed unitID cost to stats for attackerTeamID
@@ -173,6 +206,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDef
 	local cost = ud.energyCost + 60 * ud.metalCost
 	
 	--keep track of killing 
+	teamInfo[attackerTeamID].allDmg = teamInfo[attackerTeamID].allDmg + cost
 	if #(ud.weapons) > 0 then
 		teamInfo[attackerTeamID].fightDmg = teamInfo[attackerTeamID].fightDmg + cost
 	elseif isEcon(unitDefID) then
@@ -180,78 +214,115 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDef
 	else
 		teamInfo[attackerTeamID].otherDmg = teamInfo[attackerTeamID].otherDmg + cost --currently not using this but recording it for interest
 	end		
+    
 	--Spring.Echo(teamInfo[attackerTeamID].fightDmg, teamInfo[attackerTeamID].ecoDmg, teamInfo[attackerTeamID].otherDmg)
 end
 
-function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
-    if not teamID then return end
-    if teamID==gaiaTeamID then return end
-    if not present[teamID] then return end
-    if not unitDefID then return end
-    
-    local ud = UnitDefs[unitDefID]
-	local cost = ud.energyCost + 60 * ud.metalCost
-    
-    if #(ud.weapons) > 0 and not ud.customParams.iscommander then
-        teamInfo[teamID].unitsCost = teamInfo[teamID].unitsCost + cost   
-    end
-    --Spring.Echo(teamID, teamInfo[teamID].unitsCost)
+---------------------------------
+-- for debugging/testing
+--[[
+function FindPlayerName(teamID)
+    local plList = playerListByTeam[teamID]
+	local name 
+	if plList[1] then
+		name = plList[1]
+		if #plList > 1 then
+			name = name .. " (coop)"
+		end
+	else
+		name = "(unknown)"
+	end
+	return name
 end
-
-function gadget:UnitTaken(unitID, unitDefID, teamID, newTeam)
-	if not newTeam then return end 
-    if newTeam==gaiaTeamID then return end
-	if not present[newTeam] then return end
-    if not present[teamID] then return end
-	if not unitDefID then return end --should never happen
-
-	local ud = UnitDefs[unitDefID]
-	local cost = ud.energyCost + 60 * ud.metalCost
-
-	teamInfo[newTeam].ecoUsed = teamInfo[newTeam].ecoUsed + cost 
-    if #(ud.weapons) > 0 then
-        teamInfo[teamID].unitsCost = teamInfo[teamID].unitsCost + cost   
+local effSampleRate = 15 
+function gadget:GameFrame(n)
+    if n%(30*effSampleRate)~=0 or n==0 then return end
+     	local topScore = -1
+    local topTeam = 0
+    local nDmg = 0
+    local nTeams = 0
+    for teamID,_ in pairs(teamInfo) do
+        local eff = CalculateEfficiency(teamID)
+        if eff > topScore then
+            topScore = eff
+            topTeam = teamID
+        end
+        nDmg = nDmg + teamInfo[teamID].allDmg
+        nTeams = nTeams + 1
+    end  
+    Spring.Echo("> most eff: " .. FindPlayerName(topTeam) .. ", score " .. topScore, "nTeamDmg = " .. nDmg/nTeams)
+    if localtestDebug and n==900 then
+        Spring.GameOver({1,0})
     end
+end
+]]
+
+-----------------------------------
+-- work out who wins the awards
+-----------------------------------
+
+function CalculateEfficiency(teamID)
+   	--calculate total damage dealt and unitsDeadCost
+	local totalDmg = 1 -- minor hack, avoid div0 
+    local totalEco = 1
+    local nTeams = 0
+	for tID,_ in pairs(teamInfo) do
+		local cur_max = Spring.GetTeamStatsHistory(tID)
+		local stats = Spring.GetTeamStatsHistory(tID, cur_max, cur_max)
+		totalDmg = totalDmg + teamInfo[tID].allDmg
+		totalEco = totalEco + stats[1].energyUsed + 60 * stats[1].metalUsed -- don't count excessed & reclaimed res
+        nTeams = nTeams + 1
+    end
+
+    -- calculate efficiency score
+    local cur_max = Spring.GetTeamStatsHistory(teamID)
+    local stats = Spring.GetTeamStatsHistory(teamID, cur_max, cur_max)
+	local teamEco = stats[1].energyProduced + 60 * stats[1].metalProduced -- do count excessed & reclaimed res
+    local pEco = (teamEco / totalEco) -- [0,1]
+    local pDmg = (teamInfo[teamID].allDmg / totalDmg) -- [0,infty), due to m/e excessed, but typically [0,1]
+    local effScore = nTeams * (pDmg - pEco) 
+    
+    --Spring.Echo("eff: scores " .. effScore, pDmg, pEco, " for " .. FindPlayerName(teamID))
+    return effScore
 end
 
 
 function gadget:GameOver(winningAllyTeams)
-	--calculate average damage dealt
-	local avgTeamDmg = 0 
-	local numTeams = 0
-	for teamID,_ in pairs(teamInfo) do
-		local cur_max = Spring.GetTeamStatsHistory(teamID)
-		local stats = Spring.GetTeamStatsHistory(teamID, 0, cur_max)
-		avgTeamDmg = avgTeamDmg + stats[cur_max].damageDealt / coopInfo[teamID].players
-		numTeams = numTeams + 1
-	end
-	avgTeamDmg = avgTeamDmg / (math.max(1,numTeams))
 	
-	--get other stuff from engine stats
+    --get stuff from engine stats (not all of which is currently used)
 	for teamID,_ in pairs(teamInfo) do
 		local cur_max = Spring.GetTeamStatsHistory(teamID)
-		local stats = Spring.GetTeamStatsHistory(teamID, 0, cur_max)
-		teamInfo[teamID].dmgDealt = teamInfo[teamID].dmgDealt + stats[cur_max].damageDealt	
-		teamInfo[teamID].ecoUsed = teamInfo[teamID].ecoUsed + stats[cur_max].energyUsed + 60 * stats[cur_max].metalUsed
-		if teamInfo[teamID].unitsCost > 175000 and teamInfo[teamID].dmgDealt >= 0.75 * avgTeamDmg then 
-			teamInfo[teamID].dmgRatio = teamInfo[teamID].dmgDealt / teamInfo[teamID].unitsCost * 100
-		else
-			teamInfo[teamID].dmgRatio = 0
-		end
-		teamInfo[teamID].dmgRec = stats[cur_max].damageReceived
-		teamInfo[teamID].ecoProd = stats[cur_max].energyProduced + 60 * stats[cur_max].metalProduced
+		local stats = Spring.GetTeamStatsHistory(teamID, cur_max, cur_max)
+		teamInfo[teamID].ecoUsed = teamInfo[teamID].ecoUsed + stats[1].energyUsed + 60 * stats[1].metalUsed -- might already be non-zero due to accounting in UnitTaken
+		teamInfo[teamID].ecoProd = stats[1].energyProduced + 60 * stats[1].metalProduced
+		teamInfo[teamID].dmgDealt = stats[1].damageDealt	
+		teamInfo[teamID].dmgRec = stats[1].damageReceived
 	end
 
-	--take account of coop
+	--take account of coop, calculate total damage and nTeams
+    local nDmg = 1
+    local nTeams = 0
 	for teamID,_ in pairs(teamInfo) do
+		teamInfo[teamID].allDmg = teamInfo[teamID].allDmg / coopInfo[teamID].players
 		teamInfo[teamID].ecoDmg = teamInfo[teamID].ecoDmg / coopInfo[teamID].players
 		teamInfo[teamID].fightDmg = teamInfo[teamID].fightDmg / coopInfo[teamID].players
 		teamInfo[teamID].otherDmg = teamInfo[teamID].otherDmg / coopInfo[teamID].players
 		teamInfo[teamID].dmgRec = teamInfo[teamID].dmgRec / coopInfo[teamID].players 
-		teamInfo[teamID].dmgRatio = teamInfo[teamID].dmgRatio / coopInfo[teamID].players
-	end
-	
-	
+        
+        nDmg = nDmg + teamInfo[teamID].allDmg
+        nTeams = nTeams + 1
+    end
+    
+    -- calculate efficiencies
+	for teamID,_ in pairs(teamInfo) do
+        local eff = CalculateEfficiency(teamID)
+        if nDmg > 7500 * nTeams  then
+            teamInfo[teamID].effScore = eff
+        else
+            teamInfo[teamID].effScore = -1
+        end
+    end
+
 	--award awards
 	local ecoKillAward, ecoKillAwardSec, ecoKillAwardThi, ecoKillScore, ecoKillScoreSec, ecoKillScoreThi = -1,-1,-1,0,0,0
 	local fightKillAward, fightKillAwardSec, fightKillAwardThi, fightKillScore, fightKillScoreSec, fightKillScoreThi = -1,-1,-1,0,0,0
@@ -300,20 +371,20 @@ function gadget:GameOver(winningAllyTeams)
 			fightKillAwardThi = teamID		
 		end
 		--efficiency ratio award
-		if effKillScore < teamInfo[teamID].dmgRatio then
+		if effKillScore < teamInfo[teamID].effScore then
 			effKillScoreThi = effKillScoreSec
 			effKillAwardThi = effKillAwardSec
 			effKillScoreSec = effKillScore
 			effKillAwardSec = effKillAward
-			effKillScore = teamInfo[teamID].dmgRatio 
+			effKillScore = teamInfo[teamID].effScore 
 			effKillAward = teamID
-		elseif effKillScoreSec < teamInfo[teamID].dmgRatio then
+		elseif effKillScoreSec < teamInfo[teamID].effScore then
 			effKillScoreThi = effKillScoreSec
 			effKillAwardThi = effKillAwardSec
-			effKillScoreSec = teamInfo[teamID].dmgRatio 
+			effKillScoreSec = teamInfo[teamID].effScore 
 			effKillAwardSec = teamID
-		elseif effKillScoreThi < teamInfo[teamID].dmgRatio then
-			effKillScoreThi = teamInfo[teamID].dmgRatio 
+		elseif effKillScoreThi < teamInfo[teamID].effScore then
+			effKillScoreThi = teamInfo[teamID].effScore 
 			effKillAwardThi = teamID		
 		end
 		
@@ -349,7 +420,6 @@ function gadget:GameOver(winningAllyTeams)
 		end
 	end
 
-	
 	--tell unsynced
 	SendToUnsynced("ReceiveAwards", ecoKillAward, ecoKillAwardSec, ecoKillAwardThi, ecoKillScore, ecoKillScoreSec, ecoKillScoreThi, 
 									fightKillAward, fightKillAwardSec, fightKillAwardThi, fightKillScore, fightKillScoreSec, fightKillScoreThi, 
@@ -358,9 +428,8 @@ function gadget:GameOver(winningAllyTeams)
 									dmgRecAward, dmgRecScore, 
 									sleepAward, sleepScore,
 									cowAward)
-	
-end
 
+end
 
 
 
@@ -421,7 +490,20 @@ local myPlayerID = Spring.GetMyPlayerID()
 
 
 
+
+function gadget:ViewResize(viewSizeX, viewSizeY)
+
+	--fix geometry
+	vsx,vsy = Spring.GetViewGeometry()
+	widgetScale = (0.75 + (vsx*vsy / 7500000))
+	cx = vsx/2
+	cy = vsy/2
+	bx = cx - w/2
+	by = cy - h/2 - 50
+end
+
 function gadget:Initialize()
+	gadget:ViewResize()
 	--register actions to SendToUnsynced messages
 	gadgetHandler:AddSyncAction("ReceiveAwards", ProcessAwards)	
 	
@@ -450,15 +532,6 @@ function gadget:Initialize()
 end
 
 
---[[function gadget:ViewResize(viewSizeX, viewSizeY)
-	vsx,vsy = viewSizeX,viewSizeY
-	if drawAwards then
-		
-	end
-end
-]]--
-
-
 function ProcessAwards(_,ecoKillAward, ecoKillAwardSec, ecoKillAwardThi, ecoKillScore, ecoKillScoreSec, ecoKillScoreThi, 
 						fightKillAward, fightKillAwardSec, fightKillAwardThi, fightKillScore, fightKillScoreSec, fightKillScoreThi, 
 						effKillAward, effKillAwardSec, effKillAwardThi, effKillScore, effKillScoreSec, effKillScoreThi, 
@@ -467,13 +540,6 @@ function ProcessAwards(_,ecoKillAward, ecoKillAwardSec, ecoKillAwardThi, ecoKill
 						sleepAward, sleepScore,
 						cowAward)
 
-	--fix geometry
-	vsx,vsy = Spring.GetViewGeometry()
-    cx = vsx/2 
-    cy = vsy/2 
-	bx = cx - w/2
-	by = cy - h/2 - 50
-	
     --record who won which awards in chat message (for demo parsing by replays.springrts.com)
 	--make all values positive, as unsigned ints are easier to parse
 	local ecoKillLine    = '\161' .. tostring(1+ecoKillAward) .. ':' .. tostring(ecoKillScore) .. '\161' .. tostring(1+ecoKillAwardSec) .. ':' .. tostring(ecoKillScoreSec) .. '\161' .. tostring(1+ecoKillAwardThi) .. ':' .. tostring(ecoKillScoreThi)  
@@ -482,12 +548,12 @@ function ProcessAwards(_,ecoKillAward, ecoKillAwardSec, ecoKillAwardThi, ecoKill
 	local otherLine      = '\164' .. tostring(1+cowAward) .. '\165' ..  tostring(1+ecoAward) .. ':' .. tostring(ecoScore).. '\166' .. tostring(1+dmgRecAward) .. ':' .. tostring(dmgRecScore) ..'\167' .. tostring(1+sleepAward) .. ':' .. tostring(sleepScore)
 	local awardsMsg = ecoKillLine .. fightKillLine .. effKillLine .. otherLine
 	Spring.SendLuaRulesMsg(awardsMsg)
-  
+
 	--create awards
 	CreateBackground()
 	FirstAward = CreateAward('fuscup',0,'Destroying enemy resource production', white, ecoKillAward, ecoKillAwardSec, ecoKillAwardThi, ecoKillScore, ecoKillScoreSec, ecoKillScoreThi, 100) 
 	SecondAward = CreateAward('bullcup',0,'Destroying enemy units and defences',white, fightKillAward, fightKillAwardSec, fightKillAwardThi, fightKillScore, fightKillScoreSec, fightKillScoreThi, 200) 
-	ThirdAward = CreateAward('comwreath',0,'Efficient use of units',white,effKillAward, effKillAwardSec, effKillAwardThi, effKillScore, effKillScoreSec, effKillScoreThi, 300) 
+	ThirdAward = CreateAward('comwreath',0,'Efficient use of resources',white,effKillAward, effKillAwardSec, effKillAwardThi, effKillScore, effKillScoreSec, effKillScoreThi, 300) 
 	if cowAward ~= -1 then
 		CowAward = CreateAward('cow',1,'Doing everything',white, ecoKillAward, 1,1,1,1,1, 400) 	
 	else
@@ -496,7 +562,7 @@ function ProcessAwards(_,ecoKillAward, ecoKillAwardSec, ecoKillAwardThi, ecoKill
 	drawAwards = true
 	
 	--don't show graph
-	Spring.SendCommands('endgraph 0')	
+	Spring.SendCommands('endgraph 0')
 end
 
 
@@ -704,11 +770,6 @@ function CreateAward(pic, award, note, noteColour, winnerID, secondID, thirdID, 
 			end
 		end
 		
-		--extra text for cow award
-		if award == 1 then 
-			glText(yellow .. 'Memorial WarCow', bx+9, by+15, 12, "o")
-		end
-	
 	end)
 	
 	return thisAward
@@ -742,20 +803,22 @@ function correctMouseForScaling(x,y)
 	return x,y
 end
 
+local chipStackOffsets = {}
 function gadget:DrawScreen()
 
 	if not drawAwards then return end
-	
-  vsx,vsy = Spring.GetViewGeometry()
-  widgetScale = (0.75 + (vsx*vsy / 7500000))
   
 	glPushMatrix()
 		glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
 		glScale(widgetScale, widgetScale, 1)
-		
+
+
+		--if Background == nil then
+		--	CreateBackground()
+		--end
 		if Background then
 			glCallList(Background)
-		end 
+		end
 		
 		if FirstAward and SecondAward and ThirdAward then
 			glCallList(FirstAward)
@@ -784,7 +847,8 @@ function gadget:DrawScreen()
 			graphColour = "\255"..string.char(201)..string.char(201)..string.char(201)
 		end
 		glText(quitColour .. 'Quit', bx+w-quitX, by+50, 16, "o")
-		glText(graphColour .. 'Show Graphs', bx+w-graphsX, by+50, 16, "o")	
+		glText(graphColour .. 'Show Graphs', bx+w-graphsX, by+50, 16, "o")
+
 	glPopMatrix()
 end
 

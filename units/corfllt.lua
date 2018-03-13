@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 50,
-		mass = 90,
+		mass = 100.83334,
 		maxdamage = 605,
 		maxvelocity = 0,
 		minwaterdepth = 2,
@@ -44,7 +44,7 @@ return {
 		waterline = 2,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "corfllt.png",
+			buildpic = "corfllt.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -74,7 +74,6 @@ return {
 				object = "2X2B",
 				reclaimable = true,
 			},
-
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -155,7 +154,6 @@ return {
 				def = "CORE_LIGHTLASER",
 				onlytargetcategory = "SURFACE",
 			},
-
 		},
 	},
 }

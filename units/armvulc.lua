@@ -45,7 +45,7 @@ return {
 		turnrate = 0,
 		unitname = "armvulc",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "armvulc.dds",

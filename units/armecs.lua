@@ -31,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 35,
 		maneuverleashlength = 640,
-		mass = 272,
+		mass = 16150,
 		maxdamage = 9105,
 		maxvelocity = 2,
 		metalmake = 2,
@@ -52,7 +52,7 @@ return {
 		steeringmode = 1,
 		terraformspeed = 750,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.6698,
+		turninplacespeedlimit = 1.32,
 		turnrate = 400,
 		unitname = "armecs",
 		waterline = 1,
@@ -74,7 +74,7 @@ return {
 			[14] = "armrech21",
 		},
 		customparams = {
-			buildpic = "armecs.png",
+			buildpic = "armecs.dds",
 			faction = "arm",
 		},
 		featuredefs = {

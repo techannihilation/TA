@@ -1,0 +1,338 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, floaties, turret, spindle, sleeve1, cannon1, flare1, sleeve2, cannon2, flare2, 
+	   sleeve3, cannon3, flare3, sleeve4, cannon4, flare4, sleeve5, cannon5, flare5, 
+	   sleeve6, cannon6, flare6 ;
+
+static-var  gun_1, firedelay, firing;
+
+// Signal definitions
+#define SIG_AIM				2
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RockUnit(anglex, anglez)
+{
+	turn base to x-axis anglex * <0.016484> speed <10.000000>;
+	turn base to z-axis anglez * <0.016484> speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis <0.000000> - anglex speed <10.000000>;
+	turn base to z-axis <0.000000> - anglez speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis anglex / <0.005495> speed <10.000000>;
+	turn base to z-axis anglez / <0.005495> speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis <0.000000> speed <8.000000>;
+	turn base to z-axis <0.000000> speed <8.000000>;
+}
+
+Create()
+{
+	
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	hide flare5;
+	hide flare6;
+	dont-cache flare1;
+	dont-cache flare2;
+	dont-cache flare3;
+	dont-cache flare4;
+	dont-cache flare5;
+	dont-cache flare6;
+	dont-cache cannon1;
+	dont-cache cannon2;
+	dont-cache cannon3;
+	dont-cache cannon4;
+	dont-cache cannon5;
+	dont-cache cannon6;	
+	dont-cache sleeve1;
+	dont-cache sleeve2;
+	dont-cache sleeve3;
+	dont-cache sleeve4;
+	dont-cache sleeve5;
+	dont-cache sleeve6;
+	
+	dont-shade floaties;
+	dont-shade flare1;
+	dont-shade flare2;
+	dont-shade flare3;
+	dont-shade flare4;
+	dont-shade flare5;
+	dont-shade flare6;
+	dont-shade cannon1;
+	dont-shade cannon2;
+	dont-shade cannon3;
+	dont-shade cannon4;
+	dont-shade cannon5;
+	dont-shade cannon6;	
+	dont-shade sleeve1;
+	dont-shade sleeve2;
+	dont-shade sleeve3;
+	dont-shade sleeve4;
+	dont-shade sleeve5;
+	dont-shade sleeve6;
+	
+	turn sleeve2 to y-axis <-60.000000> NOW;
+	turn sleeve3 to y-axis <-120.000000> NOW;
+	turn sleeve4 to y-axis <-180.000000> NOW;
+	turn sleeve5 to y-axis <-240.000000> NOW;
+	turn sleeve6 to y-axis <-300.000000> NOW;
+	turn sleeve1 to x-axis <-30.000000> NOW;
+	turn sleeve2 to x-axis <-30.000000> NOW;
+	turn sleeve3 to x-axis <-30.000000> NOW;
+	turn sleeve4 to x-axis <-30.000000> NOW;
+	turn sleeve5 to x-axis <-30.000000> NOW;
+	turn sleeve6 to x-axis <-30.000000> NOW;
+	
+	gun_1 = 0;
+	firedelay = 250;
+	firing = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <30.000000>;
+	turn sleeve1 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn sleeve2 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn sleeve3 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn sleeve4 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn sleeve5 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn sleeve6 to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve6 around x-axis;
+	while( firing )
+	{
+		sleep 100;
+	}
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		firing = 1;
+		move cannon1 to z-axis [-3.000000] speed [500.000000];
+		show flare1;
+		sleep 150;
+		move cannon1 to z-axis [0.000000] speed [3.000000];
+		hide flare1;
+		turn spindle to y-axis <60.030000> speed <200.093407>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 1 )
+	{
+		firing = 1;
+		move cannon2 to z-axis [-3.000000] speed [500.000000];
+		show flare2;
+		sleep 150;
+		move cannon2 to z-axis [0.000000] speed [3.000000];
+		hide flare2;
+		turn spindle to y-axis <120.060000> speed <200.093407>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 2 )
+	{
+		firing = 1;
+		move cannon3 to z-axis [-3.000000] speed [500.000000];
+		show flare3;
+		sleep 150;
+		move cannon3 to z-axis [0.000000] speed [3.000000];
+		hide flare3;
+		turn spindle to y-axis <180.030000> speed <200.093407>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 3 )
+	{
+		firing = 1;
+		move cannon4 to z-axis [-3.000000] speed [500.000000];
+		show flare4;
+		sleep 150;
+		move cannon4 to z-axis [0.000000] speed [3.000000];
+		hide flare4;
+		turn spindle to y-axis <240.060000> speed <200.093407>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 4 )
+	{
+		firing = 1;
+		move cannon5 to z-axis [-3.000000] speed [500.000000];
+		show flare5;
+		sleep 150;
+		move cannon5 to z-axis [0.000000] speed [3.000000];
+		hide flare5;
+		turn spindle to y-axis <300.030000> speed <200.093407>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 5 )
+	{
+		firing = 1;
+		move cannon6 to z-axis [-3.000000] speed [500.000000];
+		show flare6;
+		sleep 150;
+		move cannon6 to z-axis [0.000000] speed [3.000000];
+		hide flare6;
+		turn spindle to y-axis <0.060000> speed <200.093407>;
+		sleep firedelay;
+		firing = 0;
+	}
+	++gun_1;
+	if( gun_1 >= 6 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare6;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare6;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	hide flare5;
+	hide flare6;
+	
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode cannon1 type NOHEATCLOUD ;
+		explode cannon2 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve4 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode cannon1 type FALL | NOHEATCLOUD;
+		explode cannon2 type FALL | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve4 type SHATTER | NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode cannon1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode cannon2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve4 type SHATTER | NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode cannon1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode cannon2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode sleeve4 type SHATTER | NOHEATCLOUD;
+	explode turret type NOHEATCLOUD;
+	return (corpsetype);
+}

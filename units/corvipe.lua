@@ -47,7 +47,7 @@ return {
 		turnrate = 0,
 		unitname = "corvipe",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "corvipe.dds",

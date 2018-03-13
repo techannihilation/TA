@@ -32,7 +32,7 @@ return {
 		idletime = 300,
 		initcloaked = true,
 		losemitheight = 25,
-		mass = 27,
+		mass = 110,
 		maxdamage = 10,
 		maxslope = 40,
 		maxvelocity = 0,
@@ -55,7 +55,7 @@ return {
 		unitname = "tllfmine3",
 		waterline = 18,
 		customparams = {
-			buildpic = "tllfmine3.png",
+			buildpic = "tllfmine3.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {

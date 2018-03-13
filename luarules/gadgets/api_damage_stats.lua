@@ -20,7 +20,7 @@ local info = {}
 local gameType
 
 function gadget:Initialize()
-    if (tonumber(Spring.GetModOptions().mo_ffa) or 0) == 1 then 
+    if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then 
         gameType = "free for all"
         return
     end

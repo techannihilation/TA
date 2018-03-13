@@ -45,7 +45,7 @@ return {
 		turnrate = 0,
 		unitname = "tllhydre",
 		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+		usepiececollisionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "tllhydre.dds",

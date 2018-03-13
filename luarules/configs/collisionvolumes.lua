@@ -262,6 +262,22 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 			["1"]={155,315,155,0,32,0,1,1},
 			["4"]={30,30,100,0,0,75,1,2},
 	}
+	pieceCollisionVolume["armap"] = {
+			["1"]={126,14,96,0,0,0,2,1},
+			["6"]={100,95,30,10,20,-30,2,1},
+	}
+	pieceCollisionVolume["armaap"] = {
+			["1"]={126,14,96,0,0,0,2,1},
+			["2"]={80,100,40,0,20,-40,2,1},
+	}
+	pieceCollisionVolume["corap"] = {
+			["1"]={126,14,96,0,0,0,2,1},
+			["2"]={100,75,50,0,20,-5,2,1},
+	}
+	pieceCollisionVolume["coraap"] = {
+			["1"]={126,14,96,0,0,0,2,1},
+			["6"]={100,75,50,0,20,-50,2,1},
+	}
 	dynamicPieceCollisionVolume["corgant"] = {
 		on = {
 			["1"]={130,96,130,0,0,0,1,2},

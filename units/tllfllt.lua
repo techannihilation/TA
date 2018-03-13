@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 65,
-		mass = 90,
+		mass = 115,
 		maxdamage = 625,
 		maxvelocity = 0,
 		minwaterdepth = 2,
@@ -44,11 +44,11 @@ return {
 		waterline = 0,
 		yardmap = "wwwwwwwwwwwwwwww",
 		customparams = {
-			buildpic = "tllfllt.png",
+			buildpic = "tllfllt.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
-		dead = {
+			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "32 40 32",
@@ -159,6 +159,5 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 		},
-		
 	},
 }

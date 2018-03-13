@@ -16,9 +16,6 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
-		collisionvolumeoffsets = "0 -14 -23",
-		collisionvolumescales = "110 33 50",
-		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces T1 Aircraft",
 		energystorage = 100,
@@ -54,6 +51,7 @@ return {
 		turnrate = 0,
 		unitname = "corap",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = true,
 		workertime = 250,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
