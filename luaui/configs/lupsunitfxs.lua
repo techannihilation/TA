@@ -514,7 +514,7 @@ tllefus = {
  },
 }
 
---// COMMANDER XMAS HATS //--------------------------
+ --// COMMANDER XMAS HATS //--------------------------
 
  effectUnitDefsXmas = {
  armcom = {
