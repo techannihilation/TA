@@ -1,0 +1,236 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, pontoon, turret, neck, rotor, sleeve1, barrel1, gun1, 
+	   sleeve2, barrel2, gun2, sleeve3, barrel3, gun3, flare ;
+
+static-var  gun_1, firedelay, firing;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RockUnit(anglex, anglez)
+{
+	turn base to x-axis anglex * <0.016484> speed <10.000000>;
+	turn base to z-axis anglez * <0.016484> speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis <0.000000> - anglex speed <10.000000>;
+	turn base to z-axis <0.000000> - anglez speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis anglex / <0.005495> speed <10.000000>;
+	turn base to z-axis anglez / <0.005495> speed <10.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to x-axis <0.000000> speed <8.000000>;
+	turn base to z-axis <0.000000> speed <8.000000>;
+}
+
+Create()
+{
+	hide flare;
+	
+	dont-cache flare;
+	dont-cache barrel1;
+	dont-cache barrel2;
+	dont-cache barrel3;
+	dont-cache sleeve1;
+	dont-cache sleeve2;
+	dont-cache sleeve3;
+	dont-cache turret;
+	dont-cache pontoon;
+	dont-cache gun1;
+	dont-cache gun2;
+	dont-cache gun3;
+	dont-shade flare;
+	dont-shade barrel1;
+	dont-shade barrel2;
+	dont-shade barrel3;
+	dont-shade sleeve1;
+	dont-shade sleeve2;
+	dont-shade sleeve3;
+	dont-shade turret;
+	dont-shade pontoon;
+	dont-shade gun1;
+	dont-shade gun2;
+	dont-shade gun3;
+	
+	gun_1 = 0;
+	firedelay = 2100;
+	firing = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <30.005495>;
+	turn neck to x-axis <0.000000> - pitch speed <45.010989>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn neck around x-axis;
+	while( firing )
+	{
+//		sleep firedelay;
+//		wait-for-turn turret around y-axis;
+//		wait-for-turn neck around x-axis;
+//		firing = 0;
+		sleep 100;
+	}
+	return (1);
+}
+
+FirePrimary()
+{
+//	firing = 1;
+	if( gun_1 == 0 )
+	{
+		firing = 1;
+		move barrel3 to z-axis [-2.500000] now;
+		show flare;
+		sleep 150;
+		hide flare;
+		move barrel3 to z-axis [0.000000] speed [10.000000];
+		turn rotor to z-axis <-120.000000> speed <270.00000>;
+		turn gun1 to z-axis <120.000000> speed <270.000000>;
+		turn gun2 to z-axis <120.000000> speed <270.000000>;
+		turn gun3 to z-axis <120.000000> speed <270.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 1 )
+	{
+		firing = 1;
+		move barrel1 to z-axis [-2.500000] now;
+		show flare;
+		sleep 150;
+		hide flare;
+		move barrel1 to z-axis [0.000000] speed [10.000000];
+		turn rotor to z-axis <-240.000000> speed <270.00000>;
+		turn gun1 to z-axis <240.000000> speed <270.000000>;
+		turn gun2 to z-axis <240.000000> speed <270.000000>;
+		turn gun3 to z-axis <240.000000> speed <270.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 2 )
+	{
+		firing = 1;
+		move barrel2 to z-axis [-2.500000] now;
+		show flare;
+		sleep 150;
+		hide flare;
+		move barrel2 to z-axis [0.000000] speed [10.000000];
+		turn rotor to z-axis <0.000000> speed <270.00000>;
+		turn gun1 to z-axis <0.000000> speed <270.000000>;
+		turn gun2 to z-axis <0.000000> speed <270.000000>;
+		turn gun3 to z-axis <0.000000> speed <270.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	++gun_1;
+	if( gun_1 == 3 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode flare type NOHEATCLOUD;
+		explode gun1 type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode barrel1 type FALL | NOHEATCLOUD;
+		explode barrel2 type FALL | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode flare type FALL | NOHEATCLOUD;
+		explode gun1 type FALL | NOHEATCLOUD;
+		explode sleeve1 type SHATTER;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeve1 type SHATTER | BITMAP1;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeve1 type SHATTER | BITMAP1;
+	explode turret type NOHEATCLOUD;
+	return (corpsetype);
+}
