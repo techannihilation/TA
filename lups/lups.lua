@@ -183,13 +183,15 @@ thisGameFrame   = 0
 frameOffset     = 0
 LupsConfig      = {}
 
+local spActivateMaterial   = (Spring.UnitRendering and Spring.UnitRendering.ActivateMaterial) or function() end
+
 local noDrawUnits = {}
 function SetUnitLuaDraw(unitID,nodraw)
   if (nodraw) then
     noDrawUnits[unitID] = (noDrawUnits[unitID] or 0) + 1
     if (noDrawUnits[unitID]==1) then
       --if (Spring.Utilities.GetEngineVersion()=="0.76b1") then
-        Spring.UnitRendering.ActivateMaterial(unitID,1)
+        spActivateMaterial(unitID,1)
         --Spring.UnitRendering.SetLODLength(unitID,1,-1000)
         for pieceID in ipairs(Spring.GetUnitPieceList(unitID) or {}) do
           Spring.UnitRendering.SetPieceList(unitID,1,pieceID,nilDispList)
@@ -705,6 +707,18 @@ local function GetUnitIsState(unitID)
 		and not spGetUnitIsStunned(unitID)
 	
 	return activeUnit[unitID]
+end
+
+local lupsEffectLevelTeam = {}
+local activeTeamCheckTime = {}
+
+local function GetLupsEffectLevel(teamID)
+  if activeTeamCheckTime[teamID] and activeTeamCheckTime[teamID] > thisGameFrame then
+    return lupsEffectLevelTeam[teamID]
+  end
+
+  lupsEffectLevelTeam[teamID] = Spring.GetTeamRulesParam(teamID, "lupsEffectLevel") or 4
+  return lupsEffectLevel[teamID]
 end
 
 --------------------------------------------------------------------------------
