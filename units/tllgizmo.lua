@@ -25,7 +25,7 @@ return {
 		collisionvolumescales = "24 45 20",
 		collisionvolumetype = "Box",
 		defaultmissiontype = "Standby",
-		description = "Stealthy Capture Kbot",
+		description = "Paratrooping Capture Kbot",
 		explodeas = "SMALL_UNIT",
 		firestandorders = 0,
 		footprintx = 2,
