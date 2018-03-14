@@ -81,6 +81,7 @@ return {
 			[21] = "armvader",
 			[22] = "armfast",
 			[23] = "armfido",
+			[24] = "armrambo",
 		},
 		customparams = {
 			buildpic = "armfark.dds",
