@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 243,
+		losemitheight = 160,
 		mass = 102550,
 		maxdamage = 68000,
 		maxslope = 10,
@@ -34,7 +34,7 @@ return {
 		selfdestructas = "SHIPBLAST",
 		sightdistance = 220,
 		unitname = "tllshipyardlvl3",
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		workertime = 240,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccoooooooooooooooooo",
 		buildoptions = {

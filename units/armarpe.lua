@@ -30,7 +30,7 @@ return {
 		icontype = "gunship",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 9,
+		losemitheight = 5,
 		maneuverleashlength = 1280,
 		mass = 465,
 		maxdamage = 1275,

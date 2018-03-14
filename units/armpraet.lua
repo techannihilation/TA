@@ -30,7 +30,7 @@ return {
 		idleautoheal = 10,
 		idletime = 30,
 		immunetoparalyzer = 1,
-		losemitheight = 100,
+		losemitheight = 66,
 		maneuverleashlength = 640,
 		mass = 17050,
 		maxdamage = 70450,

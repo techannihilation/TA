@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		initcloaked = false,
-		losemitheight = 74,
+		losemitheight = 49,
 		mass = 241,
 		maxangledif1 = 1,
 		maxdamage = 712,

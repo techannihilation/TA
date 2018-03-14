@@ -24,7 +24,7 @@ return {
 		idletime = 1800,
 		isfeature = true,
 		levelground = false,
-		losemitheight = 50,
+		losemitheight = 36,
 		mass = 29,
 		maxdamage = 100,
 		maxslope = 24,

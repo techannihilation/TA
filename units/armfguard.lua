@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 27,
 		mass = 2510,
 		maxdamage = 3450,
 		maxslope = 14,
@@ -36,9 +36,10 @@ return {
 		sightdistance = 400,
 		standingfireorder = 2,
 		unitname = "armfguard",
-		yardmap = "wwww wwww wwww wwww",
 		waterline = 2,
+		yardmap = "wwww wwww wwww wwww",
 		customparams = {
+			buildpic = "armfguard.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

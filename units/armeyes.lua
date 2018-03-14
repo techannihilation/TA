@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		initcloaked = true,
 		levelground = false,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 41.66667,
 		maxdamage = 250,
 		maxslope = 24,

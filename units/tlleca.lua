@@ -30,6 +30,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
+		losemitheight = 12,
 		maneuverleashlength = 1280,
 		mass = 13980,
 		maxdamage = 11275,

@@ -24,7 +24,7 @@ return {
 		icontype = "krogoth",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 174,
+		losemitheight = 116,
 		maneuverleashlength = 640,
 		mass = 156650,
 		maxdamage = 745000,

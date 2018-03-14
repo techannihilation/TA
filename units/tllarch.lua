@@ -20,7 +20,7 @@ return {
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
-		losemitheight = 29,
+		losemitheight = 22,
 		mass = 3950,
 		maxdamage = 5050,
 		maxslope = 10,

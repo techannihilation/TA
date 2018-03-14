@@ -44,7 +44,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 37,
+		losemitheight = 20.5,
 		mass = 178000,
 		maxdamage = 450000,
 		maxvelocity = 1.1,

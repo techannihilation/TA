@@ -25,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		maneuverleashlength = 30,
 		mass = 960,
 		maxdamage = 1800,

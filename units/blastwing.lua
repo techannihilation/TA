@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		kamikaze = "1",
 		kamikazedistance = "64",
-		losemitheight = 3,
+		losemitheight = 2,
 		maneuverleashlength = 80,
 		mass = 75,
 		maxdamage = 125,

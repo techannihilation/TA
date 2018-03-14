@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		losemitheight = 33,
+		losemitheight = 22,
 		mass = 806,
 		maxdamage = 1451,
 		maxslope = 10,
