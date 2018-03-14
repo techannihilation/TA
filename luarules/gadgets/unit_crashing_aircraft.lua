@@ -52,7 +52,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 			SetUnitWeaponState(unitID, weaponID, "reloadTime", 9999)
 		end
 		SetUnitCOBValue(unitID, COB.CRASHING, 1)
-		Spring.SetUnitRulesParam(unitID, "nolups",1)
+		Spring.SetUnitRulesParam(unitID, "crashingAir",1)
 		SetUnitNoMinimap(unitID,true)
 		SetUnitNoSelect(unitID,true) --cause setting to neutral still allows selection (wtf?)
 		SetUnitSensorRadius(unitID, "airLos", 0)
