@@ -184,6 +184,7 @@ frameOffset     = 0
 LupsConfig      = {}
 
 local spActivateMaterial   = (Spring.UnitRendering and Spring.UnitRendering.ActivateMaterial) or function() end
+local spDeactivateMaterial = (Spring.UnitRendering and Spring.UnitRendering.DeactivateMaterial) or function() end
 
 local noDrawUnits = {}
 function SetUnitLuaDraw(unitID,nodraw)
@@ -204,7 +205,7 @@ function SetUnitLuaDraw(unitID,nodraw)
     noDrawUnits[unitID] = (noDrawUnits[unitID] or 0) - 1
     if (noDrawUnits[unitID]==0) then
       --if (Spring.Utilities.GetEngineVersion()=="0.76b1") then
-        Spring.UnitRendering.DeactivateMaterial(unitID,1)
+        spDeactivateMaterial(unitID,1)
       --else
       --  Spring.UnitRendering.SetUnitLuaDraw(unitID,false)
       --end
