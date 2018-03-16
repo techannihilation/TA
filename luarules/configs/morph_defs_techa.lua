@@ -1150,6 +1150,11 @@ local morphDefs = {
 	  	time = 90,
 		xp = 0.35,
 	},
+	tllpbot = {
+		into = 'tllpbot1',
+	  	time = 10,
+		xp = 0.05,
+	},
 }
 
 --
