@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 141800,
 		buildcostmetal = 9850,
 		builder = false,
-		buildpic = "helepolis.png",
+		buildpic = "helepolis.dds",
 		buildtime = 115000,
 		canattack = true,
 		canguard = true,
