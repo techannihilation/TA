@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 7,
 		idletime = 1800,
-		losemitheight = 94,
+		losemitheight = 62,
 		maneuverleashlength = 640,
 		mass = 26333.33398,
 		maxdamage = 158000,

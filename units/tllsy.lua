@@ -19,7 +19,7 @@ return {
 		footprintz = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 26,
 		mass = 735,
 		maxdamage = 2510,
 		metalmake = 0.5,

@@ -121,7 +121,8 @@ local pplants = {
 	["tlladvsolar"] = true,
 	["armefus"] = true,
 	["corefus"] = true,
-	["tllefus"] = true
+	["tllefus"] = true,
+	["tllgeo_armored"] = true
 }
 
 ------------------------------------------------------------------------------------

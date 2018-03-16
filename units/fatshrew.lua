@@ -31,7 +31,7 @@ return {
 		idletime = 300,
 		immunetoparalyzer = 1,
 		isairbase = true,
-		losemitheight = 133,
+		losemitheight = 88,
 		maneuverleashlength = 1250,
 		mass = 123200,
 		maxdamage = 343111,

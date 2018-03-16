@@ -27,7 +27,7 @@ return {
 		icontype = "mech",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 63,
+		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 7450,
 		maxdamage = 18900,

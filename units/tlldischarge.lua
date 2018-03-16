@@ -30,7 +30,7 @@ return {
 		hightrajectory = 1,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 30,
 		maneuverleashlength = 640,
 		mass = 650,
 		maxdamage = 3200,

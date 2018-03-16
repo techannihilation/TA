@@ -24,7 +24,7 @@ return {
 		icontype = "assaultkbot",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 61,
+		losemitheight = 40,
 		maneuverleashlength = 640,
 		mass = 7540,
 		maxdamage = 6550,

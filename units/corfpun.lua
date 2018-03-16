@@ -21,8 +21,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
-		mass = 2900,
+		losemitheight = 30,
+		mass = 2820,
 		maxdamage = 3050,
 		maxslope = 14,
 		minwaterdepth = 5,
@@ -37,9 +37,10 @@ return {
 		sightdistance = 400,
 		standingfireorder = 2,
 		unitname = "corfpun",
-		yardmap = "wwww wwww wwww wwww",
 		waterline = 2,
+		yardmap = "wwww wwww wwww wwww",
 		customparams = {
+			buildpic = "corfpun.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -140,7 +141,6 @@ return {
 					ships = 280,
 					subs = 5,
 				},
-
 			},
 		},
 		weapons = {

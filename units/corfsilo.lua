@@ -22,7 +22,7 @@ return {
 		footprintz = 16,
 		idleautoheal = 6,
 		idletime = 1800,
-		losemitheight = 137,
+		losemitheight = 90,
 		mass = 162624,
 		maxdamage = 15100,
 		maxslope = 10,
