@@ -703,7 +703,7 @@ local function GetUnitIsState(unitID)
   activeUnit[unitID] = spGetUnitIsActive(unitID)
 		--and	(spGetUnitRulesParam(unitID, "disarmed") ~= 1)
 		--and (spGetUnitRulesParam(unitID, "morphDisable") ~= 1)
-    and (spGetUnitRulesParam(unitID, "crashingAir") == 1)
+    and (spGetUnitRulesParam(unitID, "crashingAir") ~= 1)
     and (spGetUnitRulesParam(unitID, "disabledShield") ~= 1)
 		and not spGetUnitIsStunned(unitID)
 	
@@ -794,6 +794,7 @@ local function IsUnitFXVisible(fx)
 		else
 			local unitRadius = (spGetUnitRadius(unitID) or 0) + 40
 			local r = fx.radius or 0
+      Spring.Echo(fx.noIconDraw)
 			return Spring.IsUnitVisible(unitID, unitRadius + r, fx.noIconDraw)
 		end
 	else
