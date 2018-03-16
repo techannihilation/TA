@@ -35,6 +35,7 @@ local paraTroopers={
   [UnitDefNames["armmav"].id] = true,
   [UnitDefNames["tlltraq"].id] = true,
   [UnitDefNames["commando"].id] = true,
+  [UnitDefNames["armrambo"].id] = true,
 }
 
 local crawlingBombs = {
