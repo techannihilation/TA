@@ -28,10 +28,6 @@ local function GetInfo()
 end
 
 
---// FIXME
--- 1. add los handling (inRadar,alwaysVisible, etc.)
-
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -58,6 +54,41 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+--Fixes los states in engine 100+
+local origGetUnitLosState     = Spring.GetUnitLosState
+local origGetPositionLosState = Spring.GetPositionLosState
+local origIsPosInLos          = Spring.IsPosInLos
+local origIsPosInRadar        = Spring.IsPosInRadar
+local origIsPosInAirLos       = Spring.IsPosInAirLos
+  
+local function CreateUnitWrapper(origFunc)
+    return function(unitID,allyTeam,raw)
+        if ((allyTeam or 0) < 0) then
+            if (raw) then
+                return 0xFFFFFF
+            else
+                return { los = true, radar = true, typed = true }
+            end
+        end
+        return origFunc(unitID,allyTeam,raw)
+    end
+end
+
+local function CreatePosWrapper(origFunc)
+    return function(x,y,z,allyTeam)
+        if ((allyTeam or 0) < 0) then return true, true, true, true end
+        return origFunc(x,y,z)
+    end
+end
+
+Spring.GetUnitLosState     = CreateUnitWrapper(origGetUnitLosState);
+Spring.GetPositionLosState = CreatePosWrapper(origGetPositionLosState);
+Spring.IsPosInLos          = CreatePosWrapper(origIsPosInLos);
+Spring.IsPosInRadar        = CreatePosWrapper(origIsPosInRadar);
+Spring.IsPosInAirLos       = CreatePosWrapper(origIsPosInAirLos);
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 --// locals
 
 local push = table.insert
@@ -76,7 +107,6 @@ local spGetUnitViewPosition  = Spring.GetUnitViewPosition
 local spGetUnitDirection     = Spring.GetUnitDirection
 local spGetHeadingFromVector = Spring.GetHeadingFromVector
 local spGetUnitIsActive      = Spring.GetUnitIsActive
-local spGetUnitRulesParam    = Spring.GetUnitRulesParam
 local spGetGameFrame         = Spring.GetGameFrame
 local spGetFrameTimeOffset   = Spring.GetFrameTimeOffset
 local spGetUnitPieceList     = Spring.GetUnitPieceList
@@ -85,7 +115,6 @@ local spGetLocalAllyTeamID   = Spring.GetLocalAllyTeamID
 local scGetReadAllyTeam      = Script.GetReadAllyTeam
 local spGetUnitPieceMap      = Spring.GetUnitPieceMap
 local spValidUnitID          = Spring.ValidUnitID
-local spGetUnitIsStunned     = Spring.GetUnitIsStunned
 local spGetProjectilePosition = Spring.GetProjectilePosition
 
 local glUnitPieceMatrix = gl.UnitPieceMatrix
@@ -183,6 +212,7 @@ thisGameFrame   = 0
 frameOffset     = 0
 LupsConfig      = {}
 
+
 local spActivateMaterial   = (Spring.UnitRendering and Spring.UnitRendering.ActivateMaterial) or function() end
 local spDeactivateMaterial = (Spring.UnitRendering and Spring.UnitRendering.DeactivateMaterial) or function() end
 
@@ -191,7 +221,7 @@ function SetUnitLuaDraw(unitID,nodraw)
   if (nodraw) then
     noDrawUnits[unitID] = (noDrawUnits[unitID] or 0) + 1
     if (noDrawUnits[unitID]==1) then
-      --if (Spring.Utilities.GetEngineVersion()=="0.76b1") then
+      --if (Game.version=="0.76b1") then
         spActivateMaterial(unitID,1)
         --Spring.UnitRendering.SetLODLength(unitID,1,-1000)
         for pieceID in ipairs(Spring.GetUnitPieceList(unitID) or {}) do
@@ -204,7 +234,7 @@ function SetUnitLuaDraw(unitID,nodraw)
   else
     noDrawUnits[unitID] = (noDrawUnits[unitID] or 0) - 1
     if (noDrawUnits[unitID]==0) then
-      --if (Spring.Utilities.GetEngineVersion()=="0.76b1") then
+      --if (Game.version=="0.76b1") then
         spDeactivateMaterial(unitID,1)
       --else
       --  Spring.UnitRendering.SetUnitLuaDraw(unitID,false)
@@ -213,6 +243,7 @@ function SetUnitLuaDraw(unitID,nodraw)
     end
   end
 end
+
 
 local function DrawUnit(_,unitID,drawMode)
 --[[
@@ -494,28 +525,28 @@ local anyFXVisible = false
 local anyDistortionsVisible = false
 
 local function IsUnitPositionKnown(unitID)
-	if LocalAllyTeamID < 0 then
-		return true
-	end
-	local targetVisiblityState = Spring.GetUnitLosState(unitID, LocalAllyTeamID, true) 
-	local inLos = (targetVisiblityState == 15)
-	if inLos then
-		return true
-	end
-	local identified = (targetVisiblityState > 2)
-	
-	if not identified then
-		return false
-	end
-	local unitDefID = Spring.GetUnitDefID(unitID)
-	if not (unitDefID and UnitDefs[unitDefID]) then
-		return false
-	end
-	return not Spring.Utilities.getMovetype(UnitDefs[unitDefID])
+  if LocalAllyTeamID < 0 then
+    return true
+  end
+  local targetVisiblityState = Spring.GetUnitLosState(unitID, LocalAllyTeamID, true) 
+  local inLos = (targetVisiblityState == 15)
+  if inLos then
+    return true
+  end
+  local identified = (targetVisiblityState > 2)
+  
+  if not identified then
+    return false
+  end
+  local unitDefID = Spring.GetUnitDefID(unitID)
+  if not (unitDefID and UnitDefs[unitDefID]) then
+    return false
+  end
+  return not Spring.Utilities.getMovetype(UnitDefs[unitDefID])
 end
 
 local function RadarDotCheck(unitID)
-	return true
+  return true
 end
 
 local function Draw(extension,layer)
@@ -555,7 +586,6 @@ local function Draw(extension,layer)
                 glUnitMultMatrix(unitID)
               end
               
-
               --// render effects
               for i=1,#UnitEffects do
                 local fx = UnitEffects[i]
@@ -688,42 +718,6 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
--- Unit activity
-local activeUnit = {}
-local activeUnitCheckTime = {}
-local ACTIVE_CHECK_PERIOD = 10
-
-local function GetUnitIsState(unitID)
-	if activeUnitCheckTime[unitID] and activeUnitCheckTime[unitID] > thisGameFrame then
-		return activeUnit[unitID]
-	end
-	
-	activeUnitCheckTime[unitID] = thisGameFrame + ACTIVE_CHECK_PERIOD
-	--activeUnit[unitID] = (spGetUnitIsActive(unitID) or spGetUnitRulesParam(unitID, "unitActiveOverride") == 1)
-  activeUnit[unitID] = spGetUnitIsActive(unitID)
-		--and	(spGetUnitRulesParam(unitID, "disarmed") ~= 1)
-		--and (spGetUnitRulesParam(unitID, "morphDisable") ~= 1)
-    and (spGetUnitRulesParam(unitID, "crashingAir") ~= 1)
-    and (spGetUnitRulesParam(unitID, "disabledShield") ~= 1)
-		and not spGetUnitIsStunned(unitID)
-	
-	return activeUnit[unitID]
-end
-
-local lupsEffectLevelTeam = {}
-local activeTeamCheckTime = {}
-
-local function GetLupsEffectLevel(teamID)
-  if activeTeamCheckTime[teamID] and activeTeamCheckTime[teamID] > thisGameFrame then
-    return lupsEffectLevelTeam[teamID]
-  end
-
-  lupsEffectLevelTeam[teamID] = Spring.GetTeamRulesParam(teamID, "lupsEffectLevel") or 4
-  return lupsEffectLevel[teamID]
-end
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 local DrawWorldPreUnitVisibleFx
 local DrawWorldVisibleFx
@@ -733,41 +727,17 @@ local DrawWorldShadowVisibleFx
 local DrawScreenEffectsVisibleFx
 local DrawInMiniMapVisibleFx
 
-local function UpdateAllyTeamStatus()
-	local spec, specFullView = spGetSpectatingState()
-	if (specFullView) then
-		LocalAllyTeamID = scGetReadAllyTeam() or 0
-	else
-		LocalAllyTeamID = spGetLocalAllyTeamID() or 0
-	end
-end
-
 function IsPosInLos(x,y,z)
-	if LocalAllyTeamID == 0 then
-		UpdateAllyTeamStatus()
-	end
-	return LocalAllyTeamID == Script.ALL_ACCESS_TEAM or (LocalAllyTeamID ~= Script.NO_ACCESS_TEAM and Spring.IsPosInLos(x,y,z, LocalAllyTeamID))
+  --Spring.Echo(LocalAllyTeamID)
+  return Spring.IsPosInLos(x,y,z, LocalAllyTeamID)
 end
 
 function IsPosInRadar(x,y,z)
-	if LocalAllyTeamID == 0 then
-		UpdateAllyTeamStatus()
-	end
-	return LocalAllyTeamID == Script.ALL_ACCESS_TEAM or (LocalAllyTeamID ~= Script.NO_ACCESS_TEAM and Spring.IsPosInRadar(x,y,z, LocalAllyTeamID))
+  return Spring.IsPosInRadar(x,y,z, LocalAllyTeamID)
 end
 
 function IsPosInAirLos(x,y,z)
-	if LocalAllyTeamID == 0 then
-		UpdateAllyTeamStatus()
-	end
-	return LocalAllyTeamID == Script.ALL_ACCESS_TEAM or (LocalAllyTeamID ~= Script.NO_ACCESS_TEAM and Spring.IsPosInAirLos(x,y,z, LocalAllyTeamID))
-end
-
-function GetUnitLosState(unitID)
-	if LocalAllyTeamID == 0 then
-		UpdateAllyTeamStatus()
-	end
-	return LocalAllyTeamID == Script.ALL_ACCESS_TEAM or (LocalAllyTeamID ~= Script.NO_ACCESS_TEAM and (Spring.GetUnitLosState(unitID, LocalAllyTeamID) or {}).los) or false
+  return Spring.IsPosInAirLos(x,y,z, LocalAllyTeamID)
 end
 
 function FPS()
@@ -779,94 +749,112 @@ function FPS()
   end
 end
 
+
 local function IsUnitFXVisible(fx)
-	local unitActive = true
-	local unitID = fx.unit
-	if fx.onActive then
-		unitActive = GetUnitIsState(unitID)
-	end
-	--Spring.Utilities.UnitEcho(unitID, "w")
-	if (not fx.onActive) or (unitActive) then
-		if fx.alwaysVisible then
-			return true
-		elseif (fx.Visible) then
-			return fx:Visible()
-		else
-			local unitRadius = (spGetUnitRadius(unitID) or 0) + 40
-			local r = fx.radius or 0
-      Spring.Echo(fx.noIconDraw)
-			return Spring.IsUnitVisible(unitID, unitRadius + r, fx.noIconDraw)
-		end
-	else
-		return fx.alwaysVisible
-	end
+  local unitActive = true
+  local unitID = fx.unit
+  local isIcon = Spring.IsUnitIcon(unitID)
+  local _, specFullView = spGetSpectatingState()
+  local Crashing = Spring.GetUnitRulesParam(unitID, "nolups") or 0
+  local stunned = Spring.GetUnitIsStunned(unitID)
+
+  if fx.onActive then
+    unitActive = spGetUnitIsActive(unitID)
+    if (unitActive == nil) then
+      unitActive = true
+    end
+  end
+
+  if (isIcon) or Crashing == 1 or FPS() or stunned then
+    return false
+  elseif (not fx.onActive)or(unitActive) then
+    if fx.alwaysVisible then
+      return true
+    elseif (fx.Visible) and (not specFullView) then
+      return fx:Visible()
+    else
+      if spGetUnitRadius(unitID) then 
+        local unitRadius = (spGetUnitRadius(unitID) + 40)
+        local r = fx.radius or 0
+        return Spring.IsUnitVisible(unitID, unitRadius + r)
+      else
+        return false
+      end
+    end
+  else
+    return fx.alwaysVisible
+  end
 end
 
 local function IsProjectileFXVisible(fx)
-	if fx.alwaysVisible then
-		return true
-	elseif fx.Visible then
-		return fx:Visible()
-	else
-		local proID = fx.projectile
-		local x,y,z = Spring.GetProjectilePosition(proID)
-		if (IsPosInLos(x,y,z)and (spIsSphereInView(x,y,z,(fx.radius or 200)+100)) ) then
-			return true
-		end
-	end
+    local _, specFullView = spGetSpectatingState()
+  if fx.alwaysVisible then
+    return true
+  elseif fx.Visible and (not specFullView) then
+    return fx:Visible()
+  else
+    local proID = fx.projectile
+    local x,y,z = Spring.GetProjectilePosition(proID)
+    if (IsPosInLos(x,y,z)and (spIsSphereInView(x,y,z,(fx.radius or 200)+100)) ) then
+      return true
+    end
+  end
 end
 
 local function IsWorldFXVisible(fx)
-	if fx.alwaysVisible then
-		return true
-	elseif (fx.Visible) then
-		return fx:Visible()
-	elseif (fx.pos) then
-		local pos = fx.pos
-		if (IsPosInLos(pos[1],pos[2],pos[3]))and
-			(spIsSphereInView(pos[1],pos[2],pos[3],(fx.radius or 200)+100))
-		then
-			return true
-		end
-	end
+  local _, specFullView = spGetSpectatingState()
+  if FPS() then
+    return false
+  elseif fx.alwaysVisible then
+    return true
+  elseif (fx.Visible) and (not specFullView) then
+    return fx:Visible()
+  elseif (fx.pos) then
+    local pos = fx.pos
+    if (IsPosInLos(pos[1],pos[2],pos[3]))and
+      (spIsSphereInView(pos[1],pos[2],pos[3],(fx.radius or 200)+100))
+    then
+      return true
+    end
+  end
 end
 
 
 local function CreateVisibleFxList()
-	local removeFX = {}
-	local removeCnt = 1
+  local removeFX = {}
+  local removeCnt = 1
 
-	local foo = 0
-	for _,fx in pairs(particles) do
-		foo = foo + 1
-		if ((fx.unit or -1) > -1) then
-			fx.visible = IsUnitFXVisible(fx)
-			if (fx.visible) then
-				if (not anyFXVisible) then anyFXVisible = true end
-				if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
-			end
-		elseif ((fx.projectile or -1) > -1) then
-			fx.visible = IsProjectileFXVisible(fx)
-			if (fx.visible) then
-			if (not anyFXVisible) then anyFXVisible = true end
-			if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
-			end
-		else
-			fx.visible = IsWorldFXVisible(fx)
-			if (fx.visible) then
-				if (not anyFXVisible) then anyFXVisible = true end
-				if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
-			elseif (fx.Valid and (not fx:Valid())) then
-				removeFX[removeCnt] = fx.id
-				removeCnt = removeCnt + 1
-			end
-		end
-	end
-	--Spring.Echo("Lups fx cnt", foo)
+  local foo = 0
+  for _,fx in pairs(particles) do
+    foo = foo + 1
+    if ((fx.unit or -1) > -1) then
+      fx.visible = IsUnitFXVisible(fx)
+      if (fx.visible) then
+        if (not anyFXVisible) then anyFXVisible = true end
+        if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
+      end
+    elseif ((fx.projectile or -1) > -1) then
+      fx.visible = IsProjectileFXVisible(fx)
+      if (fx.visible) then
+      if (not anyFXVisible) then anyFXVisible = true end
+      if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
+      end
+    else
+      fx.visible = IsWorldFXVisible(fx)
+      if (fx.visible) then
+        if (not anyFXVisible) then anyFXVisible = true end
+        if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
+      elseif (fx.Valid and (not fx:Valid())) then
+        removeFX[removeCnt] = fx.id
+        removeCnt = removeCnt + 1
+      end
+    end
+  end
+  --Spring.Echo("Lups fx cnt", foo)
 
-	for i=1,removeCnt-1 do
-		RemoveParticles(removeFX[i])
-	end
+  for i=1,removeCnt-1 do
+    RemoveParticles(removeFX[i])
+  end
 end
 
 --------------------------------------------------------------------------------
@@ -919,7 +907,14 @@ local function GameFrame(_,n)
 
   if ((not next(particles)) and (not effectsInDelay[1])) then return end
 
-  UpdateAllyTeamStatus()
+  --// update team/player status
+  local spec, specFullView = spGetSpectatingState()
+  if (specFullView) then
+    LocalAllyTeamID = scGetReadAllyTeam()
+  else
+    LocalAllyTeamID = spGetLocalAllyTeamID()
+  end
+
   --// create delayed FXs
   if (effectsInDelay[1]) then
     local remaingFXs,cnt={},1
@@ -1004,14 +999,14 @@ end
 --------------------------------------------------------------------------------
 
 local function CheckParticleClassReq(pi)
-	return
-		(canShader or (not pi.shader))and
-		(canFBO or (not pi.fbo))and
-		(canRTT or (not pi.rtt))and
-		(canCTT or (not pi.ctt))and
-		(canDistortions or (not pi.distortion))and
-		((not isIntel) or (pi.intel~=0))and
-		((not isMS)  or (pi.ms~=0))
+  return
+    (canShader or (not pi.shader))and
+    (canFBO or (not pi.fbo))and
+    (canRTT or (not pi.rtt))and
+    (canCTT or (not pi.ctt))and
+    (canDistortions or (not pi.distortion))and
+    ((not isIntel) or (pi.intel~=0))and
+    ((not isMS)  or (pi.ms~=0))
 end
 
 
@@ -1125,7 +1120,6 @@ local function Shutdown()
 
   gl.DeleteList(nilDispList)
 end
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
