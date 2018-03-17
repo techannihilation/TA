@@ -1069,15 +1069,20 @@ local morphDefs = {
 		into = 'armmanni1',
 		time = 30,
 		xp = 0.25,
-	},	
+	},
 	tllpbot = {
-     		into = 'tllartybot',
+		into = 'tllpbot1',
+	 	time = 10,
+		xp = 0.05,
+	},
+	tllpbot1 = {
+    		into = 'tllartybot',
 		time = 30,
 		xp = 0.50,
 	},
 	tllartybot = {
      		into = 'heavyimpact',
-		time = 30,
+		time = 45,
 		xp = 0.50,
 	},
 	tllbind = {
