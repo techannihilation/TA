@@ -469,6 +469,11 @@ local morphDefs = {
 		time = 60,
 		xp = 0.50,
 	},
+	tllprivate = {
+		into = 'tllprivate1',
+	  	time = 10,
+		xp = 0.01,
+	},
 	armpw = {
 		into = 'armpw1',
 		time = 10,
