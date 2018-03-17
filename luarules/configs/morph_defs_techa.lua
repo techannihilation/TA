@@ -469,6 +469,11 @@ local morphDefs = {
 		time = 60,
 		xp = 0.50,
 	},
+	tllprivate = {
+		into = 'tllprivate1',
+	  	time = 10,
+		xp = 0.01,
+	},
 	armpw = {
 		into = 'armpw1',
 		time = 10,
@@ -493,7 +498,7 @@ local morphDefs = {
 		into = 'armtarantula',
 		time = 20,
 		xp = 0.10,
-	},
+	},	
 	armham = {
 		into = 'armham1',
 		time = 10,
@@ -1061,32 +1066,37 @@ local morphDefs = {
 		xp = 0.25,
 	},
 	armmanni = {
-	into = 'armmanni1',
+		into = 'armmanni1',
 		time = 30,
 		xp = 0.25,
 	},
 	tllpbot = {
 		into = 'tllpbot1',
-	  	time = 10,
+	  time = 10,
 		xp = 0.05,
 	},
 	tllpbot1 = {
-     	into = 'tllartybot',
+    into = 'tllartybot',
 		time = 30,
 		xp = 0.50,
 	},
 	tllartybot = {
-     	into = 'heavyimpact',
+     into = 'heavyimpact',
 		time = 45,
 		xp = 0.50,
 	},
 	tllbind = {
-     	into = 'tllblind',
+     		into = 'tllblind',
 		time = 120,
 		xp = 0.30,
 	},
 	tllfireraiser = {
-     	into = 'tllamphibot',
+     		into = 'tllfireraiser1',
+		time = 10,
+		xp = 0.05,
+	},
+	tllfireraiser1 = {
+     		into = 'tllamphibot',
 		time = 30,
 		xp = 0.50,
 	},
