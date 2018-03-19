@@ -505,8 +505,33 @@ plasmaball_tllcoldfus = {
   repeatEffect = true,
   noIconDraw = true,
   }
-  
-plasmaball_tllmegacoldfus = {
+    
+plasmaball_tllefus = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = -36,
+  life         = 51,
+  lifeSpread   = 20,
+  partpos      = "0,0,0",
+  colormap     = { {1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}, },
+  rotSpeed     = 0.2,
+  rotFactor    = 1.0,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  sizeExp      = -2,
+  size         = 80,
+  sizeSpread   = -10,
+  sizeGrowth   = -1,
+  emitVector   = {0,0,0},
+  emitRotSpread = 360,
+  texture      = 'bitmaps/techa_artwork/lightningball.png',
+  count        = 1,
+  repeatEffect = true,
+  noIconDraw = true,
+  }
+
+  plasmaball_tllmegacoldfus = {
   speed        = 0,
   speedSpread  = 0,
   layer        = -36,
