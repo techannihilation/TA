@@ -122,7 +122,7 @@ return {
 		},
 		weapondefs = {
 			trem1 = {
-				accuracy = 1400,
+				accuracy = 875,
 				areaofeffect = 175,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
@@ -137,7 +137,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				proximitypriority = -3,
-				range = 1400,
+				range = 1480,
 				reloadtime = 0.4,
 				rgbcolor = "0.7 0.37 0",
 				separation = 0.45,

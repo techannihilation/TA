@@ -107,7 +107,7 @@ return {
 		},
 		weapondefs = {
 			tll_hailstorm = {
-				accuracy = 3000,
+				accuracy = 1000,
 				alphadecay = 0.3,
 				areaofeffect = 400,
 				avoidfeature = false,
