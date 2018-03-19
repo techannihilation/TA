@@ -206,9 +206,9 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
       Spring.CallCOBScript(unitID, cmd.cob, 0)
       if ShieldUnits[unitDefID] then
         if cmdParams[1] == 1 then
-          Spring.SetUnitRulesParam(unitID, "nolups",0)
+          Spring.SetUnitRulesParam(unitID, "nolupsdraw",0)
         else
-          Spring.SetUnitRulesParam(unitID, "nolups",1)
+          Spring.SetUnitRulesParam(unitID, "nolupsdraw",1)
         end
       end
     end
