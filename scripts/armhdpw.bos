@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  torso, head, ruparm, luparm, rflare, lflare, rloarm, lloarm,
-       rguncap, lguncap, llaser, rlaser, pelvis, rthigh, lthigh, lleg,
+       rguncap, lguncap, pelvis, rthigh, lthigh, lleg,
        rleg, rfoot, lfoot, ground;
 
 static-var  bMoving, bAiming, Static_Var_3, gun_1, gun_2,
@@ -19,7 +19,7 @@ walk()
 {
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.539990] now;
+		move pelvis to y-axis [-0.630000] now;
 		turn rthigh to x-axis <10.692308> now;
 		turn lthigh to x-axis <-53.489011> now;
 		turn torso to y-axis <5.747253> now;
@@ -34,7 +34,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.300000] now;
+		move pelvis to y-axis [-0.360000] now;
 		turn rthigh to x-axis <-10.280220> now;
 		turn lthigh to x-axis <-41.549451> now;
 		turn torso to y-axis <3.280220> now;
@@ -49,7 +49,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.150000] now;
+		move pelvis to y-axis [-0.180000] now;
 		turn rthigh to x-axis <-18.093407> now;
 		turn lthigh to x-axis <-24.681319> now;
 		turn torso to y-axis <0.000000> now;
@@ -78,7 +78,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.200000] now;
+		move pelvis to y-axis [-0.240000] now;
 		turn rthigh to x-axis <-69.945055> now;
 		turn lthigh to x-axis <14.802198> now;
 		turn torso to y-axis <-6.159341> now;
@@ -91,7 +91,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.400000] now;
+		move pelvis to y-axis [-0.480000] now;
 		turn rthigh to x-axis <-75.291209> now;
 		turn lthigh to x-axis <20.137363> now;
 		turn torso to y-axis <-8.214286> now;
@@ -104,7 +104,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.550000] now;
+		move pelvis to y-axis [-0.660000] now;
 		turn rthigh to x-axis <-56.780220> now;
 		turn lthigh to x-axis <24.258242> now;
 		turn torso to y-axis <-6.159341> now;
@@ -119,7 +119,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.300000] now;
+		move pelvis to y-axis [-0.360000] now;
 		turn rthigh to x-axis <-44.846154> now;
 		turn lthigh to x-axis <5.335165> now;
 		turn torso to y-axis <-3.280220> now;
@@ -131,7 +131,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.139990] now;
+		move pelvis to y-axis [-0.160000] now;
 		turn rthigh to x-axis <-22.615385> now;
 		turn lthigh to x-axis <-12.736264> now;
 		turn torso to y-axis <0.000000> now;
@@ -161,7 +161,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.189990] now;
+		move pelvis to y-axis [-0.210000] now;
 		turn rthigh to x-axis <13.159341> now;
 		turn lthigh to x-axis <-57.192308> now;
 		turn torso to y-axis <6.159341> now;
@@ -170,7 +170,7 @@ walk()
 		turn rfoot to x-axis <-19.324176> now;
 		sleep 25;
 	}
-	move pelvis to y-axis [-0.400000] now;
+	move pelvis to y-axis [-0.480000] now;
 	turn rthigh to x-axis <16.445055> now;
 	turn lthigh to x-axis <-67.071429> now;
 	turn torso to y-axis <8.214286> now;
@@ -187,7 +187,7 @@ walklegs()
 {
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.539990] now;
+		move pelvis to y-axis [-0.610000] now;
 		turn rthigh to x-axis <10.692308> now;
 		turn lthigh to x-axis <-53.489011> now;
 		turn lleg to x-axis <53.489011> now;
@@ -197,7 +197,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.300000] now;
+		move pelvis to y-axis [-0.360000] now;
 		turn rthigh to x-axis <-10.280220> now;
 		turn lthigh to x-axis <-41.549451> now;
 		turn lleg to x-axis <41.967033> now;
@@ -207,7 +207,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.150000] now;
+		move pelvis to y-axis [-0.180000] now;
 		turn rthigh to x-axis <-18.093407> now;
 		turn lthigh to x-axis <-24.681319> now;
 		turn lleg to x-axis <24.681319> now;
@@ -228,7 +228,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.200000] now;
+		move pelvis to y-axis [-0.240000] now;
 		turn rthigh to x-axis <-69.945055> now;
 		turn lthigh to x-axis <14.802198> now;
 		turn lleg to x-axis <15.214286> now;
@@ -238,7 +238,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.400000] now;
+		move pelvis to y-axis [-0.480000] now;
 		turn rthigh to x-axis <-75.291209> now;
 		turn lthigh to x-axis <20.137363> now;
 		turn lleg to x-axis <26.324176> now;
@@ -248,7 +248,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.550000] now;
+		move pelvis to y-axis [-0.610000] now;
 		turn rthigh to x-axis <-56.780220> now;
 		turn lthigh to x-axis <24.258242> now;
 		turn lleg to x-axis <38.670330> now;
@@ -258,7 +258,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.300000] now;
+		move pelvis to y-axis [-0.360000] now;
 		turn rthigh to x-axis <-44.846154> now;
 		turn lthigh to x-axis <5.335165> now;
 		turn lleg to x-axis <67.071429> now;
@@ -267,7 +267,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.139990] now;
+		move pelvis to y-axis [-0.180000] now;
 		turn rthigh to x-axis <-22.615385> now;
 		turn lthigh to x-axis <-12.736264> now;
 		turn lleg to x-axis <79.412088> now;
@@ -289,13 +289,13 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move pelvis to y-axis [-0.189990] now;
+		move pelvis to y-axis [-0.220000] now;
 		turn rthigh to x-axis <13.159341> now;
 		turn lthigh to x-axis <-57.192308> now;
 		turn rfoot to x-axis <-19.324176> now;
 		sleep 25;
 	}
-	move pelvis to y-axis [-0.400000] now;
+	move pelvis to y-axis [-0.480000] now;
 	turn rthigh to x-axis <16.445055> now;
 	turn lthigh to x-axis <-67.071429> now;
 	turn lleg to x-axis <55.549451> now;
@@ -511,65 +511,6 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-AimFromSecondary(piecenum)
-{
-	if( gun_2 == 0 )
-	{
-		piecenum = ruparm;
-	}
-	if( gun_2 == 1 )
-	{
-		piecenum = luparm;
-	}
-}
-
-QuerySecondary(piecenum)
-{
-	if( gun_2 == 0 )
-	{
-		piecenum = rlaser;
-	}
-	if( gun_2 == 1 )
-	{
-		piecenum = llaser;
-	}
-}
-
-FireSecondary()
-{
-	if( gun_2 == 0 )
-	{
-		gun_2 = head;
-	}
-	if( gun_2 == 1 )
-	{
-		gun_2 = torso;
-	}
-}
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	bAiming = TRUE;
-	while( !Static_Var_3 )
-	{
-		sleep 100;
-	}
-	turn torso to y-axis heading speed <190.000000>;
-	turn lloarm to x-axis <0.000000> speed <200.000000>;
-	turn rloarm to x-axis <0.000000> speed <200.000000>;
-	turn luparm to x-axis <0.000000> - pitch speed <200.000000>;
-	turn ruparm to x-axis <0.000000> - pitch speed <200.000000>;
-	wait-for-turn torso around y-axis;
-	wait-for-turn lloarm around x-axis;
-	wait-for-turn rloarm around x-axis;
-	wait-for-turn luparm around x-axis;
-	wait-for-turn ruparm around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
 Killed(severity, corpsetype)
 {
 	hide rflare;
@@ -594,8 +535,6 @@ Killed(severity, corpsetype)
 		explode torso type NOHEATCLOUD;
 		explode rguncap type NOHEATCLOUD;
 		explode lguncap type NOHEATCLOUD;
-		explode llaser type NOHEATCLOUD;
-		explode rlaser type NOHEATCLOUD;
 		explode head type NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -619,8 +558,6 @@ Killed(severity, corpsetype)
 		explode torso type NOHEATCLOUD | SHATTER;
 		explode lguncap type NOHEATCLOUD | FALL;
 		explode rguncap type NOHEATCLOUD | FALL;
-		explode llaser type NOHEATCLOUD | FALL;
-		explode rlaser type NOHEATCLOUD | FALL;
 		explode head type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
@@ -644,8 +581,6 @@ Killed(severity, corpsetype)
 		explode torso type NOHEATCLOUD | SHATTER;
 		explode lguncap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rguncap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode llaser type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rlaser type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode head type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
@@ -667,8 +602,6 @@ Killed(severity, corpsetype)
 	explode torso type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode rguncap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rguncap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode llaser type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rlaser type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode head type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

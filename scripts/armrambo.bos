@@ -268,6 +268,6 @@ Killed(severity, corpsetype)
 		explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode hode type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (0);
+		return (corpsetype);
 	}
 }

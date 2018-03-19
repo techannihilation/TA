@@ -156,7 +156,7 @@ return {
 				},
 			},
 			rapid_intimidator_high = {
-				accuracy = 1000,
+				accuracy = 750,
 				areaofeffect = 250,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
