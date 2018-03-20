@@ -9,7 +9,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "TLLnanotower_aoplane.dds",
+		buildinggrounddecaltype = "ananotower_aoplane.dds",
 		buildpic = "TLLnanotower.dds",
 		buildtime = 100000,
 		canassist = true,
