@@ -18,7 +18,7 @@ local T1 = 1.1/100
 local T4 = 1.35/100
 local T5 = 1.4/100
 local T6 = 1.45/100
-local T6 = 1.5/100
+local T7 = 1.5/100
 
 local convertCapacities = {
 
