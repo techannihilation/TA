@@ -4,61 +4,55 @@
 effectUnitDefs = {
  --// FUSIONS //--------------------------
  corefus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=0, lifeSpread=30, noIconDraw = true},plasmaball_cafus)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=40, lifeSpread=30, noIconDraw = true},plasmaball_cafus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=0, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=40, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,120,0}, size=44, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
  corfus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, lifeSpread=30, noIconDraw = true},plasmaball_corfus)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, lifeSpread=30, noIconDraw = true},plasmaball_corfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
  },
- corsfus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,100,0}, delay=0, lifeSpread=30, noIconDraw = true},plasmaball_corsfus)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,100,0}, delay=40, lifeSpread=30, noIconDraw = true},plasmaball_corsfus)},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0},strength = 0.01, size=32, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashBlue},
-  },
  cafus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4.5}, delay=0, lifeSpread=30, noIconDraw = true},plasmaball_cafus)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4,5}, delay=40, lifeSpread=30, noIconDraw = true},plasmaball_cafus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4.5}, delay=0, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4,5}, delay=40, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,58.9,-4.5}, size=24.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
  crnns = {
-    {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=0, lifeSpread=30, noIconDraw = true},plasmaball_crnns)},
-    {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=40, lifeSpread=30, noIconDraw = true},plasmaball_crnns)},
+    {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=0, size=75, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=40, size=75, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
  cfusionplant = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, lifeSpread=30, noIconDraw = true},plasmaball_cfusionplant)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=40, lifeSpread=30, noIconDraw = true},plasmaball_cfusionplant)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, size=48, count=5, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=40, size=48, count=5, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,60,0}, size=28, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigBlue},
   },
  tllmedfusion = {
-    {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=0, lifeSpread=30},plasmaball_tllmedfusion)},
-    {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=40, lifeSpread=30},plasmaball_tllmedfusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=0, size=38, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=40, size=38, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge,  pos={-20,40,24}, size=13.9, precision=22, repeatEffect=true}},
   },
  tllcoldfus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=0, lifeSpread=30},plasmaball_tllcoldfus)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=40, lifeSpread=30},plasmaball_tllcoldfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=0, size=45, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=40, size=45, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,62,0}, size=20, precision=22, repeatEffect=true}},
   },
 tllefus = {
-    {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=0, lifeSpread=30},plasmaball_tllefus)},
-    {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=40, lifeSpread=30},plasmaball_tllefus)},
+    {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=0, size=80, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=40, size=80, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, piece="emit1", size=35, precision=22, repeatEffect=true}},
-    {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=0, lifeSpread=30},plasmaball_tllefus)},
-    {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=40, lifeSpread=30},plasmaball_tllefus)},
+    {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=0, size=80, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=40, size=80, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, piece="emit2", size=35, precision=22, repeatEffect=true}},
   },	
  tllmegacoldfus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, lifeSpread=30},plasmaball_tllmegacoldfus)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, lifeSpread=30},plasmaball_tllmegacoldfus)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, size=70, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, size=70, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90,0}, size=30.9, precision=22, repeatEffect=true}},
   },
  aafus = {
@@ -76,14 +70,14 @@ tllefus = {
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={2,68,-32}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={63,68,0}, size=12, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-60,68,0}, size=12, precision=22, repeatEffect=true}},
-},
+  },
   armefus = {
     {class='SimpleParticles2', options=MergeTable({pos={-67.2,112,32}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={44.8,112,32}, delay=10, lifeSpread=300},sparks)},
-	{class='SimpleParticles2', options=MergeTable({pos={-19.2,128,-65.28}, delay=10, lifeSpread=300},sparks)},
+	  {class='SimpleParticles2', options=MergeTable({pos={-19.2,128,-65.28}, delay=10, lifeSpread=300},sparks)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-56,104,32}, size=18, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={56,104,32}, size=18, precision=22, repeatEffect=true}},
-	{class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
+	  {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
   },
   
   --// SHIELDS //--------------------------
@@ -140,6 +134,12 @@ tllefus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
    corsfus = {
+    --Fusion
+    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, size=65, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, size=65, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    --{class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0},strength = 0.01, size=32, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+    --Shield
     {class='Bursts',options=corsfusBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, pos={0,20,0.0}, size=180, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
