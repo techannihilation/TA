@@ -3,46 +3,47 @@
 
 effectUnitDefs = {
  --// FUSIONS //--------------------------
- corefus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=0, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=40, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,120,0}, size=44, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashBlue},
-  },
- corfus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashBlue},
- },
- cafus = {
+  cafus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4.5}, delay=0, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4,5}, delay=40, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,58.9,-4.5}, size=24.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
- crnns = {
+  corfus = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='ShieldJitter',options={life=math.huge, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+  },
+  crnns = {
     {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=0, size=75, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=40, size=75, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
- cfusionplant = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, size=48, count=5, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=40, size=48, count=5, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+  --corsfus see shield lups def
+  corefus = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=0, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=40, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,120,0}, size=44, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+  },
+  cfusionplant = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, size=100, count=5, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=40, size=100, count=5, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,60,0}, size=28, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigBlue},
   },
- tllmedfusion = {
+  tllmedfusion = {
     {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=0, size=38, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=40, size=38, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge,  pos={-20,40,24}, size=13.9, precision=22, repeatEffect=true}},
   },
- tllcoldfus = {
+  tllcoldfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=0, size=45, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,62,0}, delay=40, size=45, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,62,0}, size=20, precision=22, repeatEffect=true}},
   },
-tllefus = {
+  tllefus = {
     {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=0, size=80, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({piece="emit1", delay=40, size=80, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, piece="emit1", size=35, precision=22, repeatEffect=true}},
@@ -50,12 +51,12 @@ tllefus = {
     {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=40, size=80, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, piece="emit2", size=35, precision=22, repeatEffect=true}},
   },	
- tllmegacoldfus = {
+  tllmegacoldfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, size=70, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, size=70, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,90,0}, size=30.9, precision=22, repeatEffect=true}},
   },
- aafus = {
+  aafus = {
     {class='SimpleParticles2', options=MergeTable({pos={-38,70,-10}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
     {class='ShieldJitter',options={layer=-16, life=math.huge, pos={-31,55,-10}, size=12, precision=22, repeatEffect=true}},
