@@ -306,7 +306,6 @@ return {
         "aexxec",
         "gladiator",
         "corexp",
-        "corlevlr",
         "corlevlr1",
         "tllriot"
     },
