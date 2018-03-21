@@ -15,7 +15,7 @@ return {
         "tllshu",
         "armstratus",
         "corshock",
-        "tllphoenix",
+        "tllphoenix"
     },
     bombers = {
         "armblz",
@@ -122,7 +122,7 @@ return {
         "tllrobber",
         "tlltplane",
         "armor",
-        "corbtrans",
+        "corbtrans"
     },
     --### SEA ###
     ships = {
