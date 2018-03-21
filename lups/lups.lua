@@ -496,7 +496,10 @@ local function IsUnitPositionKnown(unitID)
   if LocalAllyTeamID < 0 then
     return true
   end
-  local targetVisiblityState = Spring.GetUnitLosState(unitID, LocalAllyTeamID, true) 
+  local targetVisiblityState = Spring.GetUnitLosState(unitID, LocalAllyTeamID, true)
+  if not targetVisiblityState then
+    return false
+  end
   local inLos = (targetVisiblityState == 15)
   if inLos then
     return true
