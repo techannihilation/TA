@@ -14,7 +14,8 @@ return {
         "tllseaf",
         "tllshu",
         "armstratus",
-        "corshock"
+        "corshock",
+        "tllphoenix"
     },
     bombers = {
         "armblz",
@@ -121,7 +122,7 @@ return {
         "tllrobber",
         "tlltplane",
         "armor",
-        "corbtrans",
+        "corbtrans"
     },
     --### SEA ###
     ships = {
@@ -285,7 +286,8 @@ return {
         "tlllft",
         "cormaw",
         "cormatch",
-        "coreavalanche"
+        "coreavalanche",
+        "tllgeo_armored"
     },
     sniper_resistant = {
         "armzeus",
@@ -305,9 +307,7 @@ return {
         "corgfbt",
         "aexxec",
         "gladiator",
-        "armwar",
         "corexp",
-        "corlevlr",
         "corlevlr1",
         "tllriot"
     },
