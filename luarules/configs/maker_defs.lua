@@ -17,8 +17,8 @@ local T1 = 1.1/100
 --local T3 = 1.31/100
 local T4 = 1.35/100
 local T5 = 1.4/100
+local T6 = 1.45/100
 local T6 = 1.5/100
-
 
 local convertCapacities = {
 
@@ -54,7 +54,8 @@ local convertCapacities = {
 		--[UnitDefNames.____.id]  = { c = 600, e = (T3) }, -- Cloaked/Hardened
 		[UnitDefNames.tllammaker.id]  = { c = 1000, e = (T4) }, -- Moho
 		[UnitDefNames.tllwmmohoconv.id]  = { c = 1000, e = (T5) }, -- Underwater
-		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 30000, e = (T6) }, -- T4
+		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 10000, e = (T6) }, -- T4	
+		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 50000, e = (T7) }, -- T4
 		--[UnitDefNames.____.id]  = { c = 10000, e = (T6) }, -- Super
 
 		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion
