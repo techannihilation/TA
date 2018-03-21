@@ -305,7 +305,6 @@ return {
         "corgfbt",
         "aexxec",
         "gladiator",
-        "armwar",
         "corexp",
         "corlevlr",
         "corlevlr1",
