@@ -490,6 +490,10 @@ effectUnitDefs = {
  tllshu = {
     {class='AirJet',options={color={0.3,0.1,0}, width=8, length=65, piece="rearthrust", noIconDraw = true, onActive=true}},
  },
+ tllphoenix = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=10, length=85, piece="thrusta1", noIconDraw = true, onActive=true}},
+    {class='AirJet',options={color={0.3,0.1,0}, width=10, length=85, piece="thrusta2", noIconDraw = true, onActive=true}},
+ },
  tllnuada = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=5, length=40, piece="rearthrust", noIconDraw = true, onActive=true}},
  },
