@@ -1,8 +1,8 @@
 return {
 	cmetalmakerlvl1 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 5620,
-		buildcostmetal = 175,
+		buildcostenergy = 6220,
+		buildcostmetal = 195,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -11,7 +11,7 @@ return {
 		buildpic = "cmetalmakerlvl1.dds",
 		buildtime = 4800,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
-		description = "Converts upto 256 Energy to Metal",
+		description = "Converts upto 192 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
 		floater = false,
 		footprintx = 4,
@@ -21,7 +21,7 @@ return {
 		idletime = 1800,
 		losemitheight = 23,
 		mass = 175,
-		maxdamage = 324,
+		maxdamage = 345,
 		maxslope = 10,
 		maxwaterdepth = 255,
 		name = "T1.5 Metal Maker",
