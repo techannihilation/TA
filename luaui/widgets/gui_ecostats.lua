@@ -47,6 +47,7 @@ local GetTeamUnitCount				= Spring.GetTeamUnitCount
 local GetMyAllyTeamID				= Spring.GetMyAllyTeamID
 local GetTeamList					= Spring.GetTeamList
 local GetTeamInfo					= Spring.GetTeamInfo
+local GetUnitDefID					= Spring.GetUnitDefID
 
 local GetPlayerInfo					= Spring.GetPlayerInfo
 local GetTeamColor					= Spring.GetTeamColor
@@ -971,7 +972,7 @@ function getTeamProduction(teamID)
 	if inSpecMode then
 		local teamUnits = Spring.GetTeamUnits(teamID)
 		for unitID in pairs(teamUnits) do
-			unitDefID = Spring.GetUnitDefID(unitID)
+			local unitDefID = GetUnitDefID(unitID)
 			if reclaimerUnitDefs[unitDefID] then -- or metalUnitDefs[unitDefID]
 					local metalMake,metalUse,energyMake,energyUse = Spring.GetUnitResources(unitID)
 					if metalMake > 0 then
