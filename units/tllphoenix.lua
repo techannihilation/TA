@@ -1,12 +1,12 @@
 return {
-	tllphoenix = {
+	tllcondor = {
 		acceleration = 2,
 		airsightdistance = 1300,
 		bankscale = 1,
 		brakerate = 0.09,
 		buildcostenergy = 42000,
 		buildcostmetal = 4850,
-		buildpic = "tllphoenix.dds",
+		buildpic = "tllcondor.dds",
 		buildtime = 50000,
 		canattack = true,
 		canfly = true,
@@ -33,9 +33,9 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "Phoenix",
+		name = "Condor",
 		nochasecategory = "NOTVTOL SUB",
-		objectname = "tllphoenix",
+		objectname = "tllcondor",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,
 		standingfireorder = 2,
@@ -45,7 +45,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 9.9,
 		turnrate = 1400,
-		unitname = "tllphoenix",
+		unitname = "tllcondor",
 		customparams = {
 			faction = "TLL",
 		},
