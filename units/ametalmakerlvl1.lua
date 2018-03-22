@@ -2,7 +2,7 @@ return {
 	ametalmakerlvl1 = {
 		activatewhenbuilt = true,
 		buildcostenergy = 5115,
-		buildcostmetal = 165,
+		buildcostmetal = 175,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
