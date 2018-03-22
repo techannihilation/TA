@@ -276,7 +276,14 @@ return {
         -- t+++
         "tllcolossus",
         "fatshrew",
-        "exoarm"
+        "exoarm",
+        "armspid",
+        "tllgorgon",
+        "corhaboob",
+        "corhcrus",
+        "armhcrus",
+        "cormcv",
+        "corarbritator",
     },
     flamethrowers = {
         "corpyro",

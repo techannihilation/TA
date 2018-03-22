@@ -1170,6 +1170,11 @@ local morphDefs = {
 	  	time = 90,
 		xp = 0.35,
 	},
+	cormenacer = {
+		into = 'corhaboob',
+	  	time = 90,
+		xp = 0.35,
+	},
 }
 
 --
