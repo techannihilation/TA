@@ -1,5 +1,5 @@
 return {
-	TLLnanotower = {
+	tllnanotower = {
 		acceleration = 0.2,
 		brakerate = 2,
 		buildcostenergy = 148000,
@@ -9,8 +9,8 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "TLLnanotower_aoplane.dds",
-		buildpic = "TLLnanotower.dds",
+		buildinggrounddecaltype = "ananotower_aoplane.dds",
+		buildpic = "tllnanotower.dds",
 		buildtime = 100000,
 		canassist = true,
 		canguard = true,
@@ -43,7 +43,7 @@ return {
 		name = "Hardened Nanotower",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "TLLnanotower",
+		objectname = "tllnanotower",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "NANOBOOM2A",
@@ -53,7 +53,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 1.33,
-		unitname = "TLLnanotower",
+		unitname = "tllnanotower",
 		usebuildinggrounddecal = true,
 		workertime = 1250,
 		buildoptions = {
@@ -61,7 +61,7 @@ return {
 			[2] = "tllobliterator1",
 			[3] = "tlldb",
 			[4] = "tllantinuke1",
-			[5] = "tllsilo",
+			[5] = "tllsilo1",
 			[6] = "tlllrpt1",
 			[7] = "tllhydre2",
 			[8] = "tlldmc",

@@ -639,6 +639,11 @@ local morphDefs = {
 		time = 100,
 		xp = 0.5,
 	},
+	tllannouncer = {	
+		into = 'tllannouncer1',
+		time = 10,
+		xp = 0.05,
+	},
 	corgator = {
 		into = 'corgator1',
 		time = 10,
@@ -1167,6 +1172,11 @@ local morphDefs = {
 	},
 	trem = {
 		into = 'cormcv',
+	  	time = 90,
+		xp = 0.35,
+	},
+	cormenacer = {
+		into = 'corhaboob',
 	  	time = 90,
 		xp = 0.35,
 	},

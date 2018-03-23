@@ -1,0 +1,207 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret, holder, launcher, flare1, flare2, flare3, flare4, flare5,
+       rflare1, rflare2, rflare3, rflare4, rflare5, roues;
+
+static-var  restore_delay, gun_1, Static_Var_3, Static_Var_4, Static_Var_5;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from launcher;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	spin roues around x-axis speed <100.000000> accelerate <25>;
+	sleep 1;
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	stop-spin roues around x-axis;
+	sleep 1;
+}
+
+Create()
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	hide flare5;
+	gun_1 = base;
+	restore_delay = 3000;
+	Static_Var_5 = get MAX_SPEED;
+	start-script SmokeUnit();
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	set-signal-mask SIG_AIM;
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <150.000000>;
+	turn launcher to x-axis <0.000000> speed <150.000000>;
+	wait-for-turn turret around y-axis;
+	turn holder to x-axis <-50.000000> speed <150.000000>;
+	turn launcher to x-axis <50.000000> speed <150.000000>;
+	move turret to z-axis [0.000000] speed [5.000000];
+	wait-for-move turret along y-axis;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	move turret to z-axis [-2.000000] speed [9.000000];
+	turn holder to x-axis <0.000000> speed <150.000000>;
+	turn turret to y-axis heading speed <250.000000>;
+	turn launcher to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn launcher around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		emit-sfx 1024 from flare1;
+		emit-sfx 1025 from rflare1;
+		sleep 200;
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1024 from flare2;
+		emit-sfx 1025 from rflare2;
+		sleep 200;
+	}
+	if( gun_1 == 2 )
+	{
+		emit-sfx 1024 from flare3;
+		emit-sfx 1025 from rflare3;
+		sleep 200;
+	}
+	if( gun_1 == 3 )
+	{
+		emit-sfx 1024 from flare4;
+		emit-sfx 1025 from rflare4;
+		sleep 200;
+	}
+	if( gun_1 == 4 )
+	{
+		emit-sfx 1024 from flare5;
+		emit-sfx 1025 from rflare5;
+		sleep 200;
+	}
+	++gun_1;
+	if( gun_1 == 5 )
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = launcher;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	explode base type NOHEATCLOUD;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode launcher type NOHEATCLOUD;
+		explode holder type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	explode launcher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode holder type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode holder type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
