@@ -90,7 +90,7 @@ else
     force           = {0,0.3,0},
 
     partpos         = "r*sin(alpha),0,r*cos(alpha) | r=rand()*15, alpha=rand()*2*pi",
-
+    priority        = 2,
     rotSpeed        = 0.25,
     rotSpeedSpread  = -0.5,
     rotSpread       = 360,
@@ -119,6 +119,7 @@ else
     force           = {0,0.3,0},
 
     partpos         = "r*sin(alpha),0,r*cos(alpha) | r=rand()*15, alpha=rand()*2*pi",
+    priority        = 2,
 
     rotSpeed        = 0.25,
     rotSpeedSpread  = -0.5,
@@ -143,6 +144,7 @@ else
     emitVector    = {0,1,0},
     emitRotSpread = 60,
     force         = {0,0.5,0},
+    priority      = 1,
 
     life          = 140,
     lifeSpread    = 50,
@@ -169,6 +171,7 @@ else
     emitVector    = {0,1,0},
     emitRotSpread = 60,
     force         = {0,0.5,0},
+    priority      = 1,
 
     life          = 1,
     lifeSpread    = 40,

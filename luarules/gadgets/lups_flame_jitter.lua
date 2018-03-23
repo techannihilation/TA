@@ -107,6 +107,7 @@ else
 
       partpos      = partpos,
       pos          = {posx,posy,posz},
+      priority     = 2,
 
       emitVector   = {dirx,diry,dirz},
       emitRotSpread= 10,
@@ -141,6 +142,7 @@ else
 
       partpos      = partpos,
       pos          = {posx,posy,posz},
+      priority     = 2,
 
       emitVector   = {dirx,diry,dirz},
       emitRotSpread= 8,

@@ -83,6 +83,7 @@ local spGetUnitPieceMap      = Spring.GetUnitPieceMap
 local spValidUnitID          = Spring.ValidUnitID
 local spGetUnitIsStunned     = Spring.GetUnitIsStunned
 local spGetProjectilePosition = Spring.GetProjectilePosition
+local spGetUnitVelocity      = Spring.GetUnitVelocity 
 
 local glUnitPieceMatrix = gl.UnitPieceMatrix
 local glPushMatrix      = gl.PushMatrix
@@ -287,9 +288,11 @@ function AddParticles(Class,Options   ,__id)
     return -1;
   end
 
+  --[[
   if Options.quality and Options.quality > GetLupsSetting("quality", 3) then
     return -1;
   end
+  --]]
 
   if (Options.delay and Options.delay~=0) then
     partIDCount = partIDCount+1
@@ -716,6 +719,11 @@ local function GetUnitDrawStatus(unitID)
   return unitDrawStatus[unitID]
 end
 
+local function GetPriority(priority)
+  local LupsPriority = GG.LupsPriority or 3
+  return priority > LupsPriority
+end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -777,10 +785,15 @@ end
 local function IsUnitFXVisible(fx)
   local unitActive = true
   local unitID = fx.unit
+  local priority = fx.priority or 3
+  if GetPriority(priority) then return false end
   if fx.onActive then
     unitActive = GetUnitIsActive(unitID)
-    if (unitActive == nil) then
-      unitActive = true
+    if (unitActive == nil) and GetPriority(5) then --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
+    local vx, vy, vz = spGetUnitVelocity(unitID)
+      if (vx~= nil and (vx~= 0  or vz~=0)) then
+        unitActive=true
+      end
     end
   end
   if GetUnitDrawStatus(unitID) then
@@ -801,6 +814,8 @@ local function IsUnitFXVisible(fx)
 end
 
 local function IsProjectileFXVisible(fx)
+  local priority = fx.priority or 3
+  if GetPriority(priority) then return false end
   if fx.alwaysVisible then
     return true
   elseif fx.Visible then
@@ -815,6 +830,8 @@ local function IsProjectileFXVisible(fx)
 end
 
 local function IsWorldFXVisible(fx)
+  local priority = fx.priority or 3
+  if GetPriority(priority) then return false end
   if fx.alwaysVisible then
     return true
   elseif (fx.Visible) then

@@ -7,6 +7,7 @@ local ShieldSphereBase = {
 	colormap2 = {{0.2, 0.9, 1, 0.0}, {1, 0.9, 0.2, 0.0}},
 	repeatEffect = true,
 	drawBack = 0.7,
+	priority = 1,
 }
 
 local SEARCH_SMALL = {
