@@ -55,7 +55,26 @@ function UnitDef_Post(name, uDef)
 		end
 		Spring.Echo(name, "MCost ", uDef.buildcostmetal, "ECost ", uDef.buildcostenergy)
 
-		--Randomize Cost +/-2%
+		--Randomize Cost +/-4%
+			if uDef.buildcostmetal and uDef.buildcostmetal <= 200 then
+          for n=1,10 do
+            buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.04)
+            if buildcostmetal ~= uDef.buildcostmetal then
+              Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
+              uDef.buildcostmetal = buildcostmetal
+            end
+          end
+        end
+        if uDef.buildcostenergy and uDef.buildcostenergy <= 1000 then 
+          for n=1,10 do
+            buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.04)
+            if buildcostenergy ~= uDef.buildcostenergy then
+              Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
+              uDef.buildcostenergy = buildcostenergy
+            end
+          end
+        end
+        --Randomize Cost +/-2% 
 		if uDef.buildcostmetal and uDef.buildcostmetal > 200 then
           for n=1,10 do
             buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.02)
