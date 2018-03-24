@@ -721,7 +721,7 @@ end
 
 local function GetPriority(priority)
   local LupsPriority = GG.LupsPriority or 3
-  return priority > LupsPriority
+  return LupsPriority < priority
 end
 
 --------------------------------------------------------------------------------
@@ -786,6 +786,7 @@ local function IsUnitFXVisible(fx)
   local unitActive = true
   local unitID = fx.unit
   local priority = fx.priority or 3
+  --Spring.Echo(GetPriority(priority))
   if GetPriority(priority) then return false end
   if fx.onActive then
     unitActive = GetUnitIsActive(unitID)
