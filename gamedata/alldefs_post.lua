@@ -21,8 +21,8 @@
 --VFS.Include("gamedata/alldefs_config.lua")
 iswater, WTimeUnits, Nanos, cons, turninplacebots, pplants, unitheight = VFS.Include("gamedata/alldefs_config.lua")
 
-SaveDefsToCustomParams = false
-FixUnitStats = false
+SaveDefsToCustomParams = true
+FixUnitStats = true
 -------------------------
 -- DEFS POST PROCESSING
 -------------------------
@@ -53,17 +53,27 @@ function UnitDef_Post(name, uDef)
 			end
 			Spring.Echo(name,uDef.losemitheight,uDef.radaremitheight,unitheight[name])
 		end
+		Spring.Echo(name, "MCost ", uDef.buildcostmetal, "ECost ", uDef.buildcostenergy)
+
 		--Randomize Cost +/-2%
-        for n=1,10 do
-          metalCost = uDef.metalCost + math.floor(uDef.metalCost*(math.random()*math.random(-1,1))*0.02)
-          if metalCost ~= uDef.metalCost then break end
+		if uDef.buildcostmetal and uDef.buildcostmetal > 200 then
+          for n=1,10 do
+            buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.02)
+            if buildcostmetal ~= uDef.buildcostmetal then
+              Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
+              uDef.buildcostmetal = buildcostmetal
+            end
+          end
         end
-        for n=1,10 do
-          energyCost = uDef.energyCost + math.floor(uDef.energyCost*(math.random()*math.random(-1,1))*0.02)
-          if energyCost ~= uDef.energyCost then break end
+        if uDef.buildcostenergy and uDef.buildcostenergy > 1000 then 
+          for n=1,10 do
+            buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.02)
+            if buildcostenergy ~= uDef.buildcostenergy then
+              Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
+              uDef.buildcostenergy = buildcostenergy
+            end
+          end
         end
-        uDef.metalCost = metalCost
-        uDef.energyCost = energyCost
 		--Fix unit mass
 		if (not uDef.customparams.iscommander) then
 			uDef.mass = math.max(uDef.maxdamage / 6.0, uDef.buildcostmetal)
