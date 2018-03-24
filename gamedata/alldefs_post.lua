@@ -21,8 +21,8 @@
 --VFS.Include("gamedata/alldefs_config.lua")
 iswater, WTimeUnits, Nanos, cons, turninplacebots, pplants, unitheight = VFS.Include("gamedata/alldefs_config.lua")
 
-SaveDefsToCustomParams = true
-FixUnitStats = true
+SaveDefsToCustomParams = false
+FixUnitStats = false
 -------------------------
 -- DEFS POST PROCESSING
 -------------------------
