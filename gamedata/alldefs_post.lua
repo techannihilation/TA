@@ -55,44 +55,43 @@ function UnitDef_Post(name, uDef)
 		end
 		Spring.Echo(name, "MCost ", uDef.buildcostmetal, "ECost ", uDef.buildcostenergy)
 
-		--Randomize Cost +/-4%
-			if uDef.buildcostmetal and uDef.buildcostmetal <= 200 then
-          for n=1,10 do
-            buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.04)
-            if buildcostmetal ~= uDef.buildcostmetal then
-              Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
-              uDef.buildcostmetal = buildcostmetal
-            end
-          end
+		--Randomize Cost
+		if uDef.buildcostmetal then
+         	for n=1,10 do
+         		buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.025) -- +/- 2.5%
+         		if buildcostmetal == uDef.buildcostmetal then
+         			buildcostmetal = buildcostmetal + math.floor(4*math.random()*math.random(-1,1)) -- +/- 4 -- for low cost units
+         		end
+         		if buildcostmetal%10 == 0 then -- change last digit if it is 0
+         			buildcostmetal = math.ceil(buildcostmetal + math.random(-2,2)) -- +/- 2
+         		end
+         		if buildcostmetal ~= uDef.buildcostmetal then
+         		  Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
+         		  uDef.buildcostmetal = buildcostmetal
+         		  Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
+         		  break -- break loop if new value is different
+         		end
+         	end
         end
-        if uDef.buildcostenergy and uDef.buildcostenergy <= 1000 then 
-          for n=1,10 do
-            buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.04)
-            if buildcostenergy ~= uDef.buildcostenergy then
-              Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
-              uDef.buildcostenergy = buildcostenergy
-            end
-          end
+
+        if uDef.buildcostenergy then 
+			for n=1,10 do
+			 	buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.025)
+			 	if buildcostenergy == uDef.buildcostenergy then
+			 		buildcostenergy = buildcostenergy + math.floor(4*math.random()*math.random(-1,1))
+				end
+				if buildcostenergy%10 == 0 then
+         			buildcostenergy = math.ceil(buildcostenergy + math.random(-2,2))
+         		end
+			 	if buildcostenergy ~= uDef.buildcostenergy then
+			    	Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
+			    	uDef.buildcostenergy = buildcostenergy
+			    	Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
+			    	break -- break loop if new value is different
+			  end
+			end
         end
-        --Randomize Cost +/-2% 
-		if uDef.buildcostmetal and uDef.buildcostmetal > 200 then
-          for n=1,10 do
-            buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.02)
-            if buildcostmetal ~= uDef.buildcostmetal then
-              Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
-              uDef.buildcostmetal = buildcostmetal
-            end
-          end
-        end
-        if uDef.buildcostenergy and uDef.buildcostenergy > 1000 then 
-          for n=1,10 do
-            buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.02)
-            if buildcostenergy ~= uDef.buildcostenergy then
-              Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
-              uDef.buildcostenergy = buildcostenergy
-            end
-          end
-        end
+
 		--Fix unit mass
 		if (not uDef.customparams.iscommander) then
 			uDef.mass = math.max(uDef.maxdamage / 6.0, uDef.buildcostmetal)
