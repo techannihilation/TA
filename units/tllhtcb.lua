@@ -69,7 +69,7 @@ return {
 			[15] = "tllmds",
 			[16] = "tllshoretorp",
 			[17] = "tllcv",
-			[18] = "tllcoyote",
+			[18] = "tllmatrox",
 			[19] = "tllloki",
 		},
 		customparams = {
