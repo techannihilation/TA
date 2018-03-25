@@ -1166,7 +1166,7 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	tllshu = {
-		into = 'tllphoenix',
+		into = 'tllcondor',
 	  	time = 20,
 		xp = 0.05,
 	},
