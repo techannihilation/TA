@@ -276,13 +276,13 @@ effectUnitDefs = {
   --// PLANES still need to do work here //----------------------------
   armfig = {
     {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
- },
+  },
   armsfig = {
     {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
- },
+  },
   armseap = {
     {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
- },
+  },
   armhawk = {
     {class='AirJet',options={color={0.3,0.1,0}, width=6, length=75, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
   },
@@ -341,10 +341,10 @@ effectUnitDefs = {
   corhunt = {
     {class='AirJet',options={color={0.8,0.45,0}, width=4, length=50, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
- armawac = {
+  armawac = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=50, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
- armsehak = {
+  armsehak = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=50, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
   armcybr = {
@@ -423,13 +423,13 @@ effectUnitDefs = {
     {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_down", noIconDraw = true, priority=4, onActive=true}},
  },
 	
-  armcyclone = {
+ armcyclone = {
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rrthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="llthrust", noIconDraw = true, priority=3, onActive=true}},
  },
-  coreclipse = {
+ coreclipse = {
     {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
  }, 
  corfalc = {
@@ -438,8 +438,12 @@ effectUnitDefs = {
  armjade = {
     {class='Ribbon', options={width=1, size=8, piece="ribbon1", priority=3, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=8, piece="ribbon2", priority=3, noIconDraw = true}},
+ },
+ bladew = {
+    {class='Ribbon', options={width=1, size=8, piece="lribbon", priority=4, noIconDraw = true}},
+    {class='Ribbon', options={width=1, size=8, piece="rribbon", priority=4, noIconDraw = true}},
  }, 
-  corsbomb = {
+ corsbomb = {
     {class='Ribbon', options={width=1, size=12, piece="ribbon1", priority=3, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=12, piece="ribbon2", priority=3, noIconDraw = true}},
  }, 
@@ -481,7 +485,7 @@ effectUnitDefs = {
  tllseaf = {
     {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
  },
-  tllabomber = {
+ tllabomber = {
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rrthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
@@ -511,11 +515,11 @@ effectUnitDefs = {
     {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
-  abroadside = {
+ abroadside = {
     {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
-  cdevastator = {
+ cdevastator = {
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
