@@ -68,7 +68,6 @@ function UnitDef_Post(name, uDef)
          		if buildcostmetal ~= uDef.buildcostmetal then
          		  Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
          		  uDef.buildcostmetal = buildcostmetal
-         		  Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
          		  break -- break loop if new value is different
          		end
          	end
@@ -86,7 +85,6 @@ function UnitDef_Post(name, uDef)
 			 	if buildcostenergy ~= uDef.buildcostenergy then
 			    	Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
 			    	uDef.buildcostenergy = buildcostenergy
-			    	Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
 			    	break -- break loop if new value is different
 			  end
 			end
