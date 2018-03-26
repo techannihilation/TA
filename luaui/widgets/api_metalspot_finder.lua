@@ -197,7 +197,7 @@ function GetSpots()
 		local stripWorth = 0
 		
 		for mx = metalmapStartZ, metalmapSizeX, gridSize do
-			local _, groundMetal = spGetGroundInfo(mx, mz)
+			local _, _, groundMetal = spGetGroundInfo(mx, mz)
 			if groundMetal > 0 then
 				stripStart = stripStart or mx
 				stripWorth = stripWorth + groundMetal
