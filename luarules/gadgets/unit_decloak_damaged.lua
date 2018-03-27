@@ -50,16 +50,6 @@ local spGetUnitIsDead = Spring.GetUnitIsDead
 local recloakUnit = {}
 local recloakFrame = {}
 
---[[
-local noFFWeaponDefs = {}
-for i = 1, #WeaponDefs do
-	local wd = WeaponDefs[i]
-	if wd.customParams and wd.customParams.nofriendlyfire then
-		noFFWeaponDefs[i] = true
-	end
-end
---]]
-
 local DEFAULT_DECLOAK_TIME = 100
 local UPDATE_FREQUENCY = 10
 local CLOAK_MOVE_THRESHOLD = math.sqrt(0.2)
@@ -134,7 +124,6 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 	if damage > 0 and
 		not (attackerTeam and
 		weaponID and
-		noFFWeaponDefs[weaponID] and
 		attackerID ~= unitID and
 		spAreTeamsAllied(unitTeam, attackerTeam)) then
 		PokeDecloakUnit(unitID)
@@ -296,7 +285,7 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID)
 	local ud = UnitDefs[unitDefID]
-	if cloakUnitDefID[unitDefID] or GG.Upgrades_UnitCanCloak(unitID) then
+	if cloakUnitDefID[unitDefID] then
 		local cloakDescID = Spring.FindUnitCmdDesc(unitID, CMD_CLOAK)
 		if cloakDescID then
 			Spring.InsertUnitCmdDesc(unitID, unitWantCloakCommandDesc)
@@ -307,12 +296,6 @@ function gadget:UnitCreated(unitID, unitDefID)
 			end
 			return
 		end
-	elseif ud.customParams.dynamic_comm then
-		local cloakDescID = Spring.FindUnitCmdDesc(unitID, CMD_CLOAK)
-		if cloakDescID then
-			Spring.RemoveUnitCmdDesc(unitID, cloakDescID)
-		end
-	end
 end
 
 function gadget:Initialize()
