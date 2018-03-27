@@ -296,6 +296,7 @@ function gadget:UnitCreated(unitID, unitDefID)
 			end
 			return
 		end
+	end
 end
 
 function gadget:Initialize()
