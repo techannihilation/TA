@@ -5,6 +5,8 @@
 
 piece  base, body, flare1, flare2;
 
+// Signal definitions
+#define SIG_AIM			2
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -44,6 +46,13 @@ Activate()
 
 Deactivate()
 {
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
 }
 
 QueryPrimary(piecenum)

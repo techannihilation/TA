@@ -8,7 +8,7 @@ piece  base, carlingue, raile, rwing, laile, lwing, lflare, rflare,
 
 // Signal definitions
 #define SIG_MOVE			2
-
+#define SIG_AIM				4
 
 Create()
 {
@@ -64,6 +64,14 @@ MoveRate3()
 	set-signal-mask SIG_MOVE;
 	start-script ProcessFlames();
 	turn base to z-axis <0.000000> speed <120.000000>;
+}
+
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
 }
 
 AimFromPrimary(piecenum)

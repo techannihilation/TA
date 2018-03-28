@@ -147,6 +147,11 @@ AimFromPrimary(piecenum)
 	piecenum = gunflash;
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 AimFromSecondary(piecenum)
 {
 	piecenum = body;

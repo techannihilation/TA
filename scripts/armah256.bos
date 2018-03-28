@@ -156,6 +156,11 @@ AimSecondary()
 	return (1);
 }
 
+AimTertiary()
+{
+	return (1);
+}
+
 Shot3()
 {
 	emit-sfx 1024 + 1 from gflare;
