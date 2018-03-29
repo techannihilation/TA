@@ -63,7 +63,7 @@ function UnitDef_Post(name, uDef)
          		end
          		uDef.buildcostmetal = buildcostmetal
 			end
-        end
+		end
 
 		if uDef.buildcostenergy then
 			if string.match(uDef.buildcostenergy,"[0]$") and uDef.buildcostenergy>99 then
@@ -73,7 +73,7 @@ function UnitDef_Post(name, uDef)
          		end
          		uDef.buildcostenergy = buildcostenergy
 			end
-        end
+		end
 
 		--Fix unit mass
 		if (not uDef.customparams.iscommander) then
