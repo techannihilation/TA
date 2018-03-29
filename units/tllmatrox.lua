@@ -167,7 +167,7 @@ return {
 				badtargetcategory = "ANTIFLAME",
 				def = "TLL_FLAME",
 				maindir = "1 0 0",
-				maxangledif = 270,
+				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 		},
