@@ -23,6 +23,11 @@ Deactivate()
 	turn ltwing to y-axis <0.000000> speed <30.005495>;
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = bombpt;

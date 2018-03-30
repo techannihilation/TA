@@ -488,7 +488,7 @@ Create()
 	hide rfirept;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_3 = 1;
+	Static_Var_3 = 0;
 	restore_delay = 3000;
 	Static_Var_5 = get MAX_SPEED;
 	Static_Var_6 = 100;

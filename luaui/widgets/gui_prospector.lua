@@ -168,7 +168,7 @@ local function IntegrateMetal(mexDefInfo, x, z, forceUpdate)
 		for i = startX, endX do
 			for j = startZ, endZ do
 				local cx, cz = (i + 0.5) * METAL_MAP_SQUARE_SIZE, (j + 0.5) * METAL_MAP_SQUARE_SIZE
-				local _, metal = GetGroundInfo(cx, cz)
+				local _, _, metal = GetGroundInfo(cx, cz)
 				result = result + metal
 			end
 		end
@@ -180,7 +180,7 @@ local function IntegrateMetal(mexDefInfo, x, z, forceUpdate)
 				local dist = sqrt(dx * dx + dz * dz)
 				
 				if (dist < MEX_RADIUS) then
-					local _, metal = GetGroundInfo(cx, cz)
+					local _, _, metal = GetGroundInfo(cx, cz)
 					result = result + metal
 				end
 			end

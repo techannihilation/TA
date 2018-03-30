@@ -57,12 +57,6 @@ Stop()
 	call-script deactivatescr();
 }
 
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
 MMStatus(Func_Var_1)
 {
 	Static_Var_1 = Func_Var_1;
@@ -100,7 +94,6 @@ Create()
 	dont-shade base;
 	dont-shade glow1;
 	dont-cache glow1;
-	call-script InitState();
 	start-script SmokeUnit();
 
 }

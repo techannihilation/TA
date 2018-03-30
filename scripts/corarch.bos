@@ -135,6 +135,11 @@ StopMoving()
 	move base to y-axis [0.000000] speed [0.229999];
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;

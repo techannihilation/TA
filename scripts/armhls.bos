@@ -134,6 +134,11 @@ AimFromPrimary(piecenum)
 	piecenum = turret;
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 AimFromSecondary(piecenum)
 {
 	piecenum = base;

@@ -34,7 +34,6 @@ return {
 		icontype = "building",
 		idleautoheal = 10,
 		idletime = 300,
-		initcloaked = true,
 		levelground = false,
 		losemitheight = 22,
 		mass = 690,
@@ -61,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "tllmine6.dds",
 			faction = "TLL",
+			initcloaked = true,
 			requiretech = "T2 Factory",
 		},
 		sfxtypes = {

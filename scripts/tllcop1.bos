@@ -132,6 +132,11 @@ AimFromPrimary(piecenum)
 	piecenum = flare1;
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 QuerySecondary(piecenum)
 {
 	piecenum = flare2;

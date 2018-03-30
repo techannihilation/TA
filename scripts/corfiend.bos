@@ -100,6 +100,11 @@ SweetSpot(piecenum)
 	piecenum = fuselage;
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = bomb;

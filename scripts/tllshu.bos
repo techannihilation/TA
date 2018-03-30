@@ -132,6 +132,16 @@ Deactivate()
 	start-script RequestState(1);
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
+AimSecondary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = flare1;

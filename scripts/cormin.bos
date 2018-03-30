@@ -115,6 +115,11 @@ StopMoving()
 	call-script deactivatescr();
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 FirePrimary()
 {
 	sleep 50;

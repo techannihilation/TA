@@ -254,32 +254,34 @@ function MakeBindsTable (swapYZ)
 	"bind shift+v buildunit_corsy",
 	"bind v buildunit_tllsy",
 	"bind shift+v buildunit_tllsy",
-        
-        -- build spacing
-        "bind any+b buildspacing inc",
-        "bind any+n buildspacing dec",    
-        
-        -- numpad movement
-        "bind numpad2 moveback",
-        "bind numpad6 moveright",
-        "bind numpad4 moveleft",
-        "bind numpad8 moveforward",
-        "bind numpad9 moveup",
-        "bind numpad3 movedown",
-        "bind numpad1 movefast",
-        
-        -- set target
-        "bind "..Y.." settarget",
-        "bind j canceltarget",
-        
-        "bind q drawinmap", --some ke"..Y.."boards don't have ` or \
-        "bind ,	buildfacing inc", --because some ke"..Y.."boards don't have [ and ] ke"..Y.."s
-        "bind .	buildfacing dec",
-        "bind o buildfacing inc", --apparentl"..Y.." some ke"..Y.."boards don't have , and . either...
-        "bind shift+j jump"
-    }
-    
-    binds = _binds
+
+    -- build spacing
+    "bind any+b buildspacing inc",
+    "bind any+n buildspacing dec",
+
+    -- numpad movement
+    "bind numpad2 moveback",
+    "bind numpad6 moveright",
+    "bind numpad4 moveleft",
+    "bind numpad8 moveforward",
+    "bind numpad9 moveup",
+    "bind numpad3 movedown",
+    "bind numpad1 movefast",
+
+    -- set target
+    "bind "..Y.." settarget",
+    "bind j canceltarget",
+
+    "bind q drawinmap", --some ke"..Y.."boards don't have ` or \
+    "bind ,	buildfacing inc", --because some ke"..Y.."boards don't have [ and ] ke"..Y.."s
+    "bind .	buildfacing dec",
+    "bind o buildfacing inc", --apparentl"..Y.." some ke"..Y.."boards don't have , and . either...
+    "bind shift+j jump",
+    "bind k wantcloak",
+	"bind any+k wantcloak"
+	}
+
+	binds = _binds
 end
 
 -----------

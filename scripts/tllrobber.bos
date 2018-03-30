@@ -124,6 +124,11 @@ QueryTransport(Func_Var_1)
 	Func_Var_1 = 1;
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = flare1;
