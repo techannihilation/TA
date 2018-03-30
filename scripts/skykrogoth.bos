@@ -502,6 +502,11 @@ FireSecondary()
 	move neck3 to z-axis [0.000000] speed [100.000000];
 }
 
+AimTertiary()
+{
+	return (1);
+}
+
 QueryTertiary(piecenum)
 {
 	if( gun_3 == 0 )

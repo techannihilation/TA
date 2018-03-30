@@ -213,6 +213,11 @@ FireSecondary(Func_Var_1)
 	}
 }
 
+AimTertiary()
+{
+	return (1);
+}
+
 QueryTertiary(piecenum)
 {
 	if( Static_Var_2 == 1 )

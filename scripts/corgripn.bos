@@ -89,6 +89,11 @@ Deactivate()
 	move wing2 to x-axis [0.000000] speed [10.022217];
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 AimSecondary(heading, pitch)
 {
 	while( heading > 5460 AND heading < 60060 )
@@ -119,6 +124,11 @@ FirePrimary(Func_Var_1)
 	move Flare1 to x-axis [-21.600000] now;
 	sleep 1000;
 	move Flare1 to x-axis [0.000000] now;
+}
+
+AimTertiary()
+{
+	return (1);
 }
 
 QueryTertiary(piecenum)

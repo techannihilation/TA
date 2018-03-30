@@ -124,6 +124,11 @@ AimFromPrimary(piecenum)
 	piecenum = turret;
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 QuerySecondary(piecenum)
 {
 	piecenum = gun_1;

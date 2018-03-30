@@ -405,6 +405,11 @@ Deactivate()
 	start-script RequestState(1);
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = firept1;
@@ -468,9 +473,19 @@ FireSecondary()
 	move neck3 to z-axis [0.000000] speed [100.000000];
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 QuerySecondary(piecenum)
 {
 	piecenum = firept2;
+}
+
+AimTertiary()
+{
+	return (1);
 }
 
 QueryTertiary(piecenum)

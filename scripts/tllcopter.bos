@@ -55,6 +55,11 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = flare1;

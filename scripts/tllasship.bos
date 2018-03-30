@@ -85,6 +85,16 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
+AimTertiary()
+{
+	return (1);
+}
+
 FirePrimary()
 {
 }

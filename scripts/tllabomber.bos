@@ -116,6 +116,11 @@ StopMoving()
 {
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	Static_Var_1 = Rand( 1, 5 );

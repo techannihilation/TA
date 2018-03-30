@@ -156,6 +156,16 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
+AimSecondary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = weapon1;
