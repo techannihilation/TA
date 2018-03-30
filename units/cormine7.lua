@@ -29,7 +29,6 @@ return {
 		icontype = "building",
 		idleautoheal = 10,
 		idletime = 300,
-		initcloaked = true,
 		levelground = false,
 		losemitheight = 22,
 		mass = 540,
@@ -57,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "cormine7.dds",
 			faction = "CORE",
+			initcloaked = true,
 			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {

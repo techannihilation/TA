@@ -35,7 +35,6 @@ return {
 		icontype = "building",
 		idleautoheal = 10,
 		idletime = 300,
-		initcloaked = true,
 		levelground = false,
 		losemitheight = 22,
 		mass = 45,
@@ -63,6 +62,7 @@ return {
 		customparams = {
 			buildpic = "tllmine2.dds",
 			faction = "TLL",
+			initcloaked = true,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

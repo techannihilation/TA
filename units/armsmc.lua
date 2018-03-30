@@ -98,8 +98,8 @@ return {
 				footprintz = 3,
 				metal = 4320,
 				object = "3X3A",
- 				reclaimable = true,
- 			},
+				reclaimable = true,
+			},
 		},
 		nanocolor = {
 			[1] = 0.22,

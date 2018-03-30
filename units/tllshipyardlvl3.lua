@@ -34,7 +34,6 @@ return {
 		selfdestructas = "SHIPBLAST",
 		sightdistance = 220,
 		unitname = "tllshipyardlvl3",
-		--usebuildinggrounddecal = true,
 		workertime = 240,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccoooooooooooooooooo",
 		buildoptions = {
