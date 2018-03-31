@@ -39,7 +39,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
-		sightdistance = 665,
+		sightdistance = 465,
 		standingfireorder = 2,
 		unitname = "arm_immolator",
 		usebuildinggrounddecal = true,
