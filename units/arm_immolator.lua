@@ -128,7 +128,7 @@ return {
 				reloadtime = 12,
 				rgbcolor = "0.71 0.39 0",
 				separation = 0.45,
-				size = 2.72,
+				size = 2.8,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
 				soundhitwet = "splslrg",
