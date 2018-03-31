@@ -163,13 +163,13 @@ FireWeapon2()
 {
 	if( gun1 == 0 )
 	{
-		move barrel1a to z-axis [-1.600000] speed [200.000000];
+		move barrel1a to z-axis [-2.000000] speed [200.000000];
 		sleep 150;
 		move barrel1a to z-axis [0.000000] speed [0.400000];
 	}
 	if( gun1 == 1 )
 	{
-		move barrel1b to z-axis [-1.600000] speed [200.000000];
+		move barrel1b to z-axis [-2.000000] speed [200.000000];
 		sleep 150;
 		move barrel1b to z-axis [0.000000] speed [0.400000];
 	}
@@ -184,13 +184,13 @@ FireWeapon3()
 {
 	if( gun2 == 0 )
 	{
-		move barrel2a to z-axis [-1.600000] speed [200.000000];
+		move barrel2a to z-axis [-2.000000] speed [200.000000];
 		sleep 150;
 		move barrel2a to z-axis [0.000000] speed [0.400000];
 	}
 	if( gun2 == 1 )
 	{
-		move barrel2b to z-axis [-1.600000] speed [200.000000];
+		move barrel2b to z-axis [-2.000000] speed [200.000000];
 		sleep 150;
 		move barrel2b to z-axis [0.000000] speed [0.400000];
 	}
@@ -205,13 +205,13 @@ FireWeapon4()
 {
 	if( gun3 == 0 )
 	{
-		move barrel3a to z-axis [-1.600000] speed [200.000000];
+		move barrel3a to z-axis [-2.000000] speed [200.000000];
 		sleep 150;
 		move barrel3a to z-axis [0.000000] speed [0.400000];
 	}
 	if( gun3 == 1 )
 	{
-		move barrel3b to z-axis [-1.600000] speed [200.000000];
+		move barrel3b to z-axis [-2.000000] speed [200.000000];
 		sleep 150;
 		move barrel3b to z-axis [0.000000] speed [0.400000];
 	}
@@ -292,36 +292,36 @@ FireWeapon5()
 {
 	if( gun4 == 1 )
 	{
-		move barrel1 to z-axis [-1.500000] speed [60.000000];
+		move barrel1 to z-axis [-1.500000] speed [250.000000];
 		wait-for-move barrel1 along z-axis;
-		move barrel1 to z-axis [0.000000] speed [30.000000];
+		move barrel1 to z-axis [0.000000] speed [45.000000];
 		show flare1;
 		sleep 150;
 		hide flare1;
 	}
 	if( gun4 == 2 )
 	{
-		move barrel2 to z-axis [-1.500000] speed [60.000000];
+		move barrel2 to z-axis [-1.500000] speed [250.000000];
 		wait-for-move barrel2 along z-axis;
-		move barrel2 to z-axis [0.000000] speed [30.000000];
+		move barrel2 to z-axis [0.000000] speed [45.000000];
 		show flare2;
 		sleep 150;
 		hide flare2;
 	}
 	if( gun4 == 3 )
 	{
-		move barrel3 to z-axis [-1.500000] speed [60.000000];
+		move barrel3 to z-axis [-1.500000] speed [250.000000];
 		wait-for-move barrel3 along z-axis;
-		move barrel3 to z-axis [0.000000] speed [30.000000];
+		move barrel3 to z-axis [0.000000] speed [45.000000];
 		show flare3;
 		sleep 150;
 		hide flare3;
 	}
 	if( gun4 == 4 )
 	{
-		move barrel4 to z-axis [-1.500000] speed [60.000000];
+		move barrel4 to z-axis [-1.500000] speed [250.000000];
 		wait-for-move barrel4 along z-axis;
-		move barrel4 to z-axis [0.000000] speed [30.000000];
+		move barrel4 to z-axis [0.000000] speed [45.000000];
 		show flare4;
 		sleep 150;
 		hide flare4;
