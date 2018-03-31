@@ -7,7 +7,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "tll_immolator_aoplane.dds",
+		buildinggrounddecaltype = "core_immolator_aoplane.dds",
 		buildpic = "core_immolator.dds",
 		buildtime = 30000,
 		canattack = true,
