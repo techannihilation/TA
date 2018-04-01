@@ -36,7 +36,6 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMBRTHA1",
 		radaremitheight = 90,
-		script = "armbrtha.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 273,
