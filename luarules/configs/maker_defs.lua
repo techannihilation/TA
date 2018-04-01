@@ -13,7 +13,7 @@ local AC7 = 1.6/100
 
 local T0 = 1.05/100
 local T1 = 1.1/100
---local T2 = 1.24/100
+local T2 = 1.2/100
 --local T3 = 1.31/100
 local T4 = 1.35/100
 local T5 = 1.4/100
@@ -50,7 +50,7 @@ local convertCapacities = {
 		--TLL
 		[UnitDefNames.tllmm.id]  = { c = 100, e = (T0) }, -- Normal
 		[UnitDefNames.tllwmconv.id]  = { c = 100, e = (T1) }, -- Floating
-		--[UnitDefNames.____.id]  = { c = 300, e = (T2) }, -- T1,5
+		[UnitDefNames.tllmetalmakerlvl1.id]  = { c = 200, e = (T2) }, -- T1,5
 		--[UnitDefNames.____.id]  = { c = 600, e = (T3) }, -- Cloaked/Hardened
 		[UnitDefNames.tllammaker.id]  = { c = 1000, e = (T4) }, -- Moho
 		[UnitDefNames.tllwmmohoconv.id]  = { c = 1000, e = (T5) }, -- Underwater
