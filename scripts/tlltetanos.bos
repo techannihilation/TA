@@ -1,0 +1,247 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare1, flare3, flare2, base, turret,sleeves,
+		flare1a, flare1b, flare1c, flare1d, flare2a, flare2b, flare2c, flare2d, flare3a, flare3b, flare3c, flare3d;
+
+// Signal definitions
+#define SIG_AIM_1				2
+#define SIG_AIM_2				4
+#define SIG_AIM_3				8
+
+static-var  gun;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+
+	dont-shade base;
+	dont-shade turret;
+	dont-cache sleeves;
+	start-script SmokeUnit();
+	gun = 0;
+}
+/*
+RestoreAfterDelay()
+{
+	sleep 2000;
+	turn turret to y-axis <0.000000> speed <50.000000>;
+	turn sleeves to x-axis <0.000000> speed <25.000000>;	
+}
+*/
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret to y-axis heading speed <225.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <225.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	//start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	++gun;
+	if( gun == 15) {
+		gun = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun == 0) {
+		piecenum = flare1;
+	}
+	if( gun == 1) {
+		piecenum = flare2a;
+	}
+	if( gun == 2) {
+		piecenum = flare3b;
+	}	
+	if( gun == 3) {
+		piecenum = flare1c;
+	}	
+	if( gun == 4) {
+		piecenum = flare2d;
+	}	
+	if( gun == 5) {
+		piecenum = flare3;
+	}
+	if( gun == 6) {
+		piecenum = flare1b;
+	}
+	if( gun == 7) {
+		piecenum = flare2a;
+	}	
+	if( gun == 8) {
+		piecenum = flare3a;
+	}	
+	if( gun == 9) {
+		piecenum = flare1d;
+	}		
+	if( gun ==10) {
+		piecenum = flare2;
+	}
+	if( gun ==11) {
+		piecenum = flare3c;
+	}
+	if( gun ==12) {
+		piecenum = flare1c;
+	}	
+	if( gun ==13) {
+		piecenum = flare2b;
+	}	
+	if( gun ==14) {
+		piecenum = flare3d;
+	}		
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = sleeves;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+FireSecondary()
+{
+
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun == 0) {
+		piecenum = flare2;
+	}
+	if( gun == 1) {
+		piecenum = flare2d;
+	}
+	if( gun == 2) {
+		piecenum = flare2b;
+	}	
+	if( gun == 3) {
+		piecenum = flare2a;
+	}	
+	if( gun == 4) {
+		piecenum = flare2c;
+	}		
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+FireTertiary()
+{
+
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun == 0) {
+		piecenum = flare3;
+	}
+	if( gun == 1) {
+		piecenum = flare3a;
+	}
+	if( gun == 2) {
+		piecenum = flare3d;
+	}	
+	if( gun == 3) {
+		piecenum = flare3a;
+	}	
+	if( gun == 4) {
+		piecenum = flare3b;
+	}		
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode sleeves type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | SHATTER;
+	return (corpsetype);
+}

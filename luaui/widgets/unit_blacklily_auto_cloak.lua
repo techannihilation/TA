@@ -15,6 +15,7 @@ end
 
 local CMD_LOOPBACKATTACK = CMD.LOOPBACKATTACK
 local CMD_FIGHT = CMD.FIGHT
+local CMD_WANT_CLOAK = 37382
 
 local BlacklilyDefId = UnitDefNames["corsbomb"].id
 
@@ -28,7 +29,7 @@ function widget:MousePress(mx, my, mButton)
  			if unitDefID == BlacklilyDefId then
  				if not Spring.GetUnitIsCloaked(selUnits[i]) then
 					--Spring.Echo("bingo",selUnits[i],unitDefID)
-					Spring.GiveOrderToUnit(selUnits[i], CMD.CLOAK, {1}, {})
+					Spring.GiveOrderToUnit(selUnits[i], CMD_WANT_CLOAK, {1}, {})
 				end
 			end
 		end

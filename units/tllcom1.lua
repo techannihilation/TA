@@ -85,7 +85,7 @@ return {
 			[4] = "tllmstor",
 			[5] = "tllestor",
 			[6] = "tllmex1",
-			[7] = "tllmm",
+			[7] = "tllmetalmakerlvl1",
 			[8] = "tlllab",
 			[9] = "tllvp",
 			[10] = "tllap",

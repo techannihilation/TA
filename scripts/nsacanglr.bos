@@ -111,6 +111,11 @@ Create()
 	start-script SmokeUnit();
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	if( Static_Var_2 == 0 )

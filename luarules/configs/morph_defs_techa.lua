@@ -464,6 +464,11 @@ local morphDefs = {
 		time = 60,
 		xp = 0.50,
 	},
+	tll_immolator = {
+		into = 'tlllrpt',
+		time = 30,
+		xp = 0.50,	
+	},
 	tlllrpt = {
 		into = 'tlllrpt1',
 		time = 60,

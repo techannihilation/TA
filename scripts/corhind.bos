@@ -147,6 +147,11 @@ AimFromPrimary(piecenum)
 	piecenum = gunflash;
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 AimFromSecondary(piecenum)
 {
 	piecenum = body;
@@ -206,6 +211,11 @@ FireSecondary(Func_Var_1)
 	{
 		emit-sfx 1024 + 1 from misflash2;
 	}
+}
+
+AimTertiary()
+{
+	return (1);
 }
 
 QueryTertiary(piecenum)

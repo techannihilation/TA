@@ -153,6 +153,11 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
+AimTertiary()
+{
+	return (1);
+}
+
 QueryTertiary(piecenum)
 {
 	piecenum = gun_3;

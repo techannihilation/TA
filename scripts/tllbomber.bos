@@ -118,6 +118,11 @@ Deactivate()
 	start-script RequestState(1);
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	Static_Var_1 = Rand( 1, 2 );

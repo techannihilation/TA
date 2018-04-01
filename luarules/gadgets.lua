@@ -1122,6 +1122,28 @@ function gadgetHandler:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y
 end
 
 
+function gadgetHandler:AllowUnitCloak(unitID, enemyID)
+  for _,g in ipairs(self.AllowUnitCloakList) do
+    if (not g:AllowUnitCloak(unitID, enemyID)) then
+      return false
+    end
+  end
+
+  return true
+end
+
+
+function gadgetHandler:AllowUnitDecloak(unitID, objectID, weaponID)
+  for _,g in ipairs(self.AllowUnitDecloakList) do
+    if (not g:AllowUnitDecloak(unitID, objectID, weaponID)) then
+      return false
+    end
+  end
+
+  return true
+end
+
+
 function gadgetHandler:AllowUnitTransfer(unitID, unitDefID,
                                          oldTeam, newTeam, capture)
   for _,g in r_ipairs(self.AllowUnitTransferList) do
@@ -1484,6 +1506,34 @@ function gadgetHandler:UnitLeftLos(unitID, unitTeam, allyTeam, unitDefID)
 end
 
 
+function gadgetHandler:UnitEnteredWater(unitID, unitDefID, unitTeam)
+  for _,g in r_ipairs(self.UnitEnteredWaterList) do
+    g:UnitEnteredWater(unitID, unitDefID, unitTeam)
+  end
+end
+
+
+function gadgetHandler:UnitLeftWater(unitID, unitDefID, unitTeam)
+  for _,g in r_ipairs(self.UnitLeftWaterList) do
+    g:UnitLeftWater(unitID, unitDefID, unitTeam)
+  end
+end
+
+
+function gadgetHandler:UnitEnteredAir(unitID, unitDefID, unitTeam)
+  for _,g in r_ipairs(self.UnitEnteredAirList) do
+    g:UnitEnteredAir(unitID, unitDefID, unitTeam)
+  end
+end
+
+
+function gadgetHandler:UnitLeftAir(unitID, unitDefID, unitTeam)
+  for _,g in r_ipairs(self.UnitLeftAirList) do
+    g:UnitLeftAir(unitID, unitDefID, unitTeam)
+  end
+end
+
+
 function gadgetHandler:UnitSeismicPing(x, y, z, strength,
                                        allyTeam, unitID, unitDefID)
   for _,g in r_ipairs(self.UnitSeismicPingList) do
@@ -1531,15 +1581,23 @@ end
 
 
 function gadgetHandler:UnitUnitCollision(colliderID, collideeID)
-	for _,g in r_ipairs(self.UnitUnitCollisionList) do
-		g:UnitUnitCollision(colliderID, collideeID)
-	end
+  for _,g in r_ipairs(self.UnitUnitCollisionList) do
+    if (g:UnitUnitCollision(colliderID, collideeID)) then
+      return true
+    end
+  end
+
+  return false
 end
 
 function gadgetHandler:UnitFeatureCollision(colliderID, collideeID)
-	for _,g in r_ipairs(self.UnitFeatureCollisionList) do
-		g:UnitFeatureCollision(colliderID, collideeID)
-	end
+  for _,g in r_ipairs(self.UnitFeatureCollisionList) do
+    if (g:UnitFeatureCollision(colliderID, collideeID)) then
+      return true
+    end
+  end
+
+  return false
 end
 
 
@@ -1549,7 +1607,12 @@ function gadgetHandler:StockpileChanged(unitID, unitDefID, unitTeam,
     g:StockpileChanged(unitID, unitDefID, unitTeam,
                        weaponNum, oldCount, newCount)
   end
-  return
+end
+
+function gadgetHandler:UnitHarvestStorageFull(unitID, unitDefID, unitTeam)
+  for _,g in r_ipairs(self.UnitHarvestStorageFullList) do
+    g:UnitHarvestStorageFull(unitID, unitDefID, unitTeam)
+  end
 end
 
 
@@ -1678,11 +1741,14 @@ end
 --
 
 function gadgetHandler:Explosion(weaponID, px, py, pz, ownerID, projectileID)
-  local noGfx = false
+  -- "noGfx = noGfx or ..." short-circuits, so equivalent to this
   for _,g in r_ipairs(self.ExplosionList) do
-    noGfx = noGfx or g:Explosion(weaponID, px, py, pz, ownerID, projectileID)
+    if (g:Explosion(weaponID, px, py, pz, ownerID, projectileID)) then
+      return true
+    end
   end
-  return noGfx
+
+  return false
 end
 
 
@@ -1700,9 +1766,9 @@ function gadgetHandler:Update()
 end
 
 
-function gadgetHandler:DefaultCommand(type, id)
+function gadgetHandler:DefaultCommand(type, id, cmd)
   for _,g in r_ipairs(self.DefaultCommandList) do
-    local id = g:DefaultCommand(type, id)
+    local id = g:DefaultCommand(type, id, cmd)
     if (id) then
       return id
     end

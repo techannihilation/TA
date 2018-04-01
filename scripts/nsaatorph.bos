@@ -110,6 +110,11 @@ Create()
 	start-script SmokeUnit();
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = firept;

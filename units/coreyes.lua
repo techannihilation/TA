@@ -24,7 +24,6 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = true,
 		levelground = false,
 		losemitheight = 22,
 		mass = 41.66667,
@@ -51,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "coreyes.dds",
 			faction = "CORE",
+			initcloaked = true,
 		},
 		featuredefs = {
 			cdragonseyes_dead = {

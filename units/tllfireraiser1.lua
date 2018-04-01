@@ -155,7 +155,6 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
-
 		},
 	},
 }

@@ -53,42 +53,27 @@ function UnitDef_Post(name, uDef)
 			end
 			Spring.Echo(name,uDef.losemitheight,uDef.radaremitheight,unitheight[name])
 		end
-		Spring.Echo(name, "MCost ", uDef.buildcostmetal, "ECost ", uDef.buildcostenergy)
 
 		--Randomize Cost
 		if uDef.buildcostmetal then
-         	for n=1,10 do
-         		buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.025) -- +/- 2.5%
-         		if buildcostmetal == uDef.buildcostmetal then
-         			buildcostmetal = buildcostmetal + math.floor(4*math.random()*math.random(-1,1)) -- +/- 4 -- for low cost units
+			if string.match(uDef.buildcostmetal,"[0]$") and uDef.buildcostmetal>99 then
+				buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.01)
+				if buildcostmetal == uDef.buildcostmetal then
+         			buildcostmetal = uDef.buildcostmetal + math.floor(5*math.random()*math.random(-1,1))
          		end
-         		if buildcostmetal%10 == 0 then -- change last digit if it is 0
-         			buildcostmetal = math.ceil(buildcostmetal + math.random(-2,2)) -- +/- 2
-         		end
-         		if buildcostmetal ~= uDef.buildcostmetal then
-         		  Spring.Echo(name, uDef.buildcostmetal, buildcostmetal)
-         		  uDef.buildcostmetal = buildcostmetal
-         		  break -- break loop if new value is different
-         		end
-         	end
-        end
-
-        if uDef.buildcostenergy then 
-			for n=1,10 do
-			 	buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.025)
-			 	if buildcostenergy == uDef.buildcostenergy then
-			 		buildcostenergy = buildcostenergy + math.floor(4*math.random()*math.random(-1,1))
-				end
-				if buildcostenergy%10 == 0 then
-         			buildcostenergy = math.ceil(buildcostenergy + math.random(-2,2))
-         		end
-			 	if buildcostenergy ~= uDef.buildcostenergy then
-			    	Spring.Echo(name, uDef.buildcostenergy, buildcostenergy)
-			    	uDef.buildcostenergy = buildcostenergy
-			    	break -- break loop if new value is different
-			  end
+         		uDef.buildcostmetal = buildcostmetal
 			end
-        end
+		end
+
+		if uDef.buildcostenergy then
+			if string.match(uDef.buildcostenergy,"[0]$") and uDef.buildcostenergy>99 then
+				buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.01)
+				if buildcostenergy == uDef.buildcostenergy then
+         			buildcostenergy = uDef.buildcostenergy + math.floor(5*math.random()*math.random(-1,1))
+         		end
+         		uDef.buildcostenergy = buildcostenergy
+			end
+		end
 
 		--Fix unit mass
 		if (not uDef.customparams.iscommander) then

@@ -28,7 +28,6 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = true,
 		losemitheight = 22,
 		mass = 241.66667,
 		maxdamage = 1450,
@@ -57,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "armamex.dds",
 			faction = "ARM",
+			initcloaked = true,
 		},
 		featuredefs = {
 			dead = {

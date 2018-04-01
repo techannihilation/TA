@@ -40,7 +40,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLpbot1",
 		radaremitheight = 40,
-		script = "tllpbot.cob",		
+		script = "tllpbot.cob",
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 360,
 		standingfireorder = 2,

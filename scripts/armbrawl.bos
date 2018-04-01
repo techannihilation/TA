@@ -8,6 +8,8 @@ piece  flare1b, flare2b, base, wing1, wing2, tail1, tail2, weapon1,
 
 static-var  gun_1, statechg_DesiredState, statechg_StateChanging;
 
+// Signal definitions
+#define SIG_AIM			2
 
 activatescr()
 {
@@ -136,6 +138,13 @@ Deactivate()
 SweetSpot(piecenum)
 {
 	piecenum = base;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
 }
 
 FirePrimary()

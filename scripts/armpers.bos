@@ -8,6 +8,8 @@ piece  flare1b, flare2b, base, leftvent, rightvent, weapon1, weapon2, tail1,
 
 static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
+// Signal definitions
+#define SIG_AIM				2
 
 activatescr()
 {
@@ -126,6 +128,13 @@ SweetSpot(piecenum)
 SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = Func_Var_1 * 2;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
 }
 
 FirePrimary()

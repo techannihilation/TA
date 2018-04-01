@@ -35,7 +35,6 @@ return {
 		icontype = "building",
 		idleautoheal = 10,
 		idletime = 300,
-		initcloaked = true,
 		levelground = false,
 		losemitheight = 22,
 		mass = 10,
@@ -64,6 +63,7 @@ return {
 		customparams = {
 			buildpic = "armmine1.dds",
 			faction = "ARM",
+			initcloaked = true,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

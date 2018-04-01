@@ -112,6 +112,11 @@ Deactivate()
 	start-script RequestState(1);
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 FirePrimary()
 {
 	gun_1 = !gun_1;

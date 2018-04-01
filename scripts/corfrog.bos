@@ -157,6 +157,11 @@ QueryPrimary(piecenum)
 	}
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 QuerySecondary(piecenum)
 {
 	piecenum = missile;
