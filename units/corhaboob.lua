@@ -119,6 +119,7 @@ return {
 				craterareaofeffect = 225,
 				craterboost = 0,
 				cratermult = 0,
+				energypershot = 2000,
 				explosiongenerator = "custom:FLASH96",
 				gravityaffected = "TRUE",
 				impulseboost = 0,
