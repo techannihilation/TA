@@ -160,10 +160,10 @@ local CMD_ONOFF = CMD.ONOFF
 local CMD_FIRE_STATE = CMD.FIRE_STATE
 local CMD_MOVE_STATE = CMD.MOVE_STATE
 local CMD_REPEAT = CMD.REPEAT
-local CMD_CLOAK = CMD.CLOAK
 local CMD_TRAJECTORY = CMD.TRAJECTORY
 local CMD_STOP = CMD.STOP
 local CMD_SELFD = CMD.SELFD
+local CMD_WANT_CLOAK = 37382
 
 local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
 local morphcostmulti = tonumber(Spring.GetModOptions().mo_morphcostmulti) or 1
@@ -726,7 +726,7 @@ local function FinishMorph(unitID, morphData)
     { CMD_FIRE_STATE, { states.firestate },             { } },
     { CMD_MOVE_STATE, { states.movestate },             { } },
     { CMD_REPEAT,     { states["repeat"] and 1 or 0 },  { } },
-    { CMD_CLOAK,      { states.cloak     and 1 or udDst.initCloaked },  { } },
+    { CMD_WANT_CLOAK,      { states.cloak     and 1 or udDst.initCloaked },  { } },
     { CMD_ONOFF,      { 1 },                            { } },
     { CMD_TRAJECTORY, { states.trajectory and 1 or 0 }, { } },
   })

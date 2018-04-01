@@ -270,7 +270,7 @@ end
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
 	if cmdID == CMD_WANT_CLOAK then
-		if cloakUnitDefID[unitDefID] or GG.Upgrades_UnitCanCloak(unitID) then
+		if cloakUnitDefID[unitDefID] then
 			SetWantedCloaked(unitID,cmdParams[1])
 		end
 		return false
