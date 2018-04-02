@@ -88,7 +88,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.armefus.id,
 	UnitDefNames.corefus.id,
 	UnitDefNames.tllefus.id,
-	UnitDefNames.tllgeo_armored.tllefus.id,
+	UnitDefNames.tllgeo_armored.id,
 	--Metal Makers
 	UnitDefNames.armmakr.id,
 	UnitDefNames.armfmkr.id,
