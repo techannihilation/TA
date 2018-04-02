@@ -391,47 +391,49 @@ local function UpdateGrid(g,cmds,ordertype)
 		else
 			if (cmd.type == 5) then --state cmds (fire at will, etc)
 				if cmd.params[1] then
-				icon.caption = " "..(cmd.params[cmd.params[1]+2] or cmd.name).." "
+					icon.caption = " "..(cmd.params[cmd.params[1]+2] or cmd.name).." "
 				
-				local statecount = #cmd.params-1 --number of states for the cmd
-				local curstate = cmd.params[1]+1
+					local statecount = #cmd.params-1 --number of states for the cmd
+					local curstate = cmd.params[1]+1
 				
-				for i=1,statecount do
-					usedstaterectangles = usedstaterectangles + 1
-					local s = g.staterectangles[usedstaterectangles]
-					if (s == nil) then
-						s = New(Copy(g.staterect,true))
-						g.staterectangles[usedstaterectangles] = s
-						table.insert(g.background.movableslaves,s)
-					end
-					s.active = nil --activate
-					
-					local spread = 2
-					s.sx = (icon.sx-(spread*(statecount-1+2)))/statecount
-					s.sy = icon.sy/7
-					s.px = icon.px+spread + (s.sx+spread)*(i-1)
-					s.py = icon.py + icon.sy - s.sy -spread
-					
-					if (i == curstate) then
-						if (statecount < 4) then
-							if (i == 1) then
-								s.color = {0.8,0,0,1}
-							elseif (i == 2) then
-								if (statecount == 3) then
-									s.color = {0.8,0.8,0,1}
-								else
+					for i=1,statecount do
+						usedstaterectangles = usedstaterectangles + 1
+						local s = g.staterectangles[usedstaterectangles]
+						if (s == nil) then
+							s = New(Copy(g.staterect,true))
+							g.staterectangles[usedstaterectangles] = s
+							table.insert(g.background.movableslaves,s)
+						end
+						s.active = nil --activate
+						
+						local spread = 2
+						s.sx = (icon.sx-(spread*(statecount-1+2)))/statecount
+						s.sy = icon.sy/7
+						s.px = icon.px+spread + (s.sx+spread)*(i-1)
+						s.py = icon.py + icon.sy - s.sy -spread
+						
+						if (i == curstate) then
+							if (statecount < 4) then
+								if (i == 1) then
+									s.color = {0.8,0,0,1}
+								elseif (i == 2) then
+									if (statecount == 3) then
+										s.color = {0.8,0.8,0,1}
+									else
+										s.color = {0,0.8,0,1}
+									end
+								elseif (i == 3) then
 									s.color = {0,0.8,0,1}
 								end
-							elseif (i == 3) then
-								s.color = {0,0.8,0,1}
+							else
+								s.color = {0.8,0.8,0.8,1}
 							end
 						else
-							s.color = {0.8,0.8,0.8,1}
-						end
-					else
 						s.color = nil
+						end
 					end
-				end
+				else 
+					Spring.Echo("send info to nix ", cmd, cmd.name)
 				end
 			else
 				icon.caption = " "..cmd.name.." "
