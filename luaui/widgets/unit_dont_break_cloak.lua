@@ -3,7 +3,7 @@
 
 function widget:GetInfo()
 	return {
-		name      = "Cloak Fire State 2",
+		name      = "Don't Break Cloak",
 		desc      = "Sets units to Hold Fire when cloaked, reverts to original state when decloaked",
 		author    = "KingRaptor (L.J. Lim)",
 		date      = "Feb 14, 2010",
