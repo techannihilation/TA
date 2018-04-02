@@ -40,7 +40,7 @@ return {
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		customparams = {
 			buildpic = "tllmetalmakerlvl3.dds",
-			faction = "ARM",
+			faction = "TLL",
 		},
 		featuredefs = {
 			heap = {

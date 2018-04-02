@@ -55,7 +55,7 @@ return {
 		waterline = 18,
 		customparams = {
 			buildpic = "tllfmine3.dds",
-			faction = "ARM",
+			faction = "TLL",
 			initcloaked = true,
 		},
 		sfxtypes = {
