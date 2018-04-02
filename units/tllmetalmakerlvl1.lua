@@ -37,7 +37,7 @@ return {
 		selfdestructas = "ARMESTOR_BUILDING",
 		sightdistance = 210,
 		unitname = "tllmetalmakerlvl1",
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			faction = "TLL",

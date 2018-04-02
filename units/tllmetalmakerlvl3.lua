@@ -36,7 +36,7 @@ return {
 		selfdestructas = "nuclear_missile1",
 		sightdistance = 210,
 		unitname = "tllmetalmakerlvl3",
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		customparams = {
 			buildpic = "tllmetalmakerlvl3.dds",
