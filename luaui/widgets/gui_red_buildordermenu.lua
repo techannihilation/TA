@@ -390,6 +390,7 @@ local function UpdateGrid(g,cmds,ordertype)
 			end
 		else
 			if (cmd.type == 5) then --state cmds (fire at will, etc)
+				if cmd.params[1] then
 				icon.caption = " "..(cmd.params[cmd.params[1]+2] or cmd.name).." "
 				
 				local statecount = #cmd.params-1 --number of states for the cmd
@@ -430,6 +431,7 @@ local function UpdateGrid(g,cmds,ordertype)
 					else
 						s.color = nil
 					end
+				end
 				end
 			else
 				icon.caption = " "..cmd.name.." "
