@@ -1,7 +1,7 @@
 
-local ACZ = 1.0/100
-local AC0 = 1.1/100
-local AC1 = 1.15/100
+local ACZ = 0.8/100
+local AC0 = 1/100
+local AC1 = 1.05/100
 local AC2 = 1.3/100
 local A3 = 1.35/100
 local C3 = 1.35/100
@@ -11,8 +11,9 @@ local AC6 = 1.5/100
 local AC7 = 1.6/100
 
 
-local T0 = 1.05/100
-local T1 = 1.1/100
+
+local T0 = 0.95/100
+local T1 = 1/100
 local T2 = 1.2/100
 --local T3 = 1.31/100
 local T4 = 1.35/100
