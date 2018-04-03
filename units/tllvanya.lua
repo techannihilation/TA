@@ -45,6 +45,7 @@ return {
 		standingfireorder = 2,
 		unitname = "tllvanya",
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "tllvanya.dds",

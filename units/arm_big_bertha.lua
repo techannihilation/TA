@@ -42,6 +42,7 @@ return {
 		unitname = "arm_big_bertha",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "arm_big_bertha.dds",

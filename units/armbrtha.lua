@@ -46,6 +46,7 @@ return {
 		unitname = "armbrtha",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "armbrtha.dds",

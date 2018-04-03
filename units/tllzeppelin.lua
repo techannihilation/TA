@@ -229,7 +229,7 @@ return {
 					experimental_ships = 80000,
 					subs = 5,
 				},
-			},			
+			},
 		},
 		weapons = {
 			[1] = {
@@ -237,7 +237,6 @@ return {
 				def = "MINIION",
 				maindir = "0 0 1",
 				maxangledif = 45,
-
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {

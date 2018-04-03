@@ -50,7 +50,7 @@ return {
 		turnrate = 0,
 		unitname = "arm_mech_lab",
 		usepiececollisionvolumes = true,
-		usePieceSelectionVolumes = true,
+		usepieceselectionvolumes = true,
 		workertime = 600,
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {

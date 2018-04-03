@@ -54,7 +54,7 @@ return {
 		buildoptions = {
 			[1] = "tllradar",
 			[2] = "tllgate2",
-      [3] = "tll_immolator",
+			[3] = "tll_immolator",
 			[4] = "tllupgweb",
 			[5] = "tllvhlt",
 			[6] = "tllmortor",

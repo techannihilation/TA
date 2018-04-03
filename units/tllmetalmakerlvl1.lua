@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "55 30 55",
 		collisionvolumetest = 1,
-		collisionvolumetype = "box",		
+		collisionvolumetype = "box",
 		description = "Converts upto 200 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDINGEX",
 		floater = false,
@@ -37,7 +37,6 @@ return {
 		selfdestructas = "ARMESTOR_BUILDING",
 		sightdistance = 210,
 		unitname = "tllmetalmakerlvl1",
-		--usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			faction = "TLL",

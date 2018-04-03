@@ -48,6 +48,7 @@ return {
 		unitname = "armveil",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "armveil.dds",

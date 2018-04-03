@@ -47,6 +47,7 @@ return {
 		unitname = "corint",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "corint.dds",
