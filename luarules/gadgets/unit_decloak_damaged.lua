@@ -46,7 +46,7 @@ local spGetUnitRulesParam = Spring.GetUnitRulesParam
 local spSetUnitRulesParam = Spring.SetUnitRulesParam
 local spGetUnitDefID = Spring.GetUnitDefID
 local spGetUnitIsDead = Spring.GetUnitIsDead
-
+local spGetUnitHealth = Spring.GetUnitHealth
 local recloakUnit = {}
 local recloakFrame = {}
 
@@ -121,7 +121,8 @@ GG.PokeDecloakUnit = PokeDecloakUnit
 
 function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
                             weaponID, attackerID, attackerDefID, attackerTeam)
-	if damage > 0 and
+        local _,maxhp = spGetUnitHealth(unitID)
+	if (damage > 500 and damage > (maxhp*.75)) and
 		not (attackerTeam and
 		weaponID and
 		attackerID ~= unitID and
