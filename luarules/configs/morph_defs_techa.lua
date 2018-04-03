@@ -1027,6 +1027,11 @@ local morphDefs = {
 		time = 120,
 		xp = 1.00,
 	},
+	tllsalamander = {
+     	into = 'tllcenturion',
+		time = 30,
+		xp = 0.30,
+	},
 	armpincer = {
      	into = 'armcroc',
 		time = 30,
