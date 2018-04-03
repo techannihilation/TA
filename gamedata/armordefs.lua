@@ -15,7 +15,7 @@ return {
         "tllshu",
         "armstratus",
         "corshock",
-        "tllphoenix"
+        "tllcondor"
     },
     bombers = {
         "armblz",
