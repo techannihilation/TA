@@ -131,7 +131,11 @@ if (gadgetHandler:IsSyncedCode()) then
 			elseif (not UnitDefs[unitDefID].canFly) then
 				rs, hs, ws = 0.68, 0.68, 0.68
 				ars, ahs = 0.70, 0.70 
-			else
+			elseif spGetUnitRadius(unitID)>60 then
+				Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
+				rs, hs, ws = 0.77, 0.18, 0.77
+				ars, ahs = 0.70, 0.70 
+			else 
 				rs, hs, ws = 0.53, 0.26, 0.53
 				ars, ahs = 0.55, 0.55 
 			end
