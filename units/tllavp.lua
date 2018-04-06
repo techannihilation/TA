@@ -56,6 +56,8 @@ return {
 			[8] = "tllpuncher",
 			[9] = "tlldivine",
 			[10] = "tllobscurer",
+			[11] = "tllleopard",
+			
 		},
 		customparams = {
 			buildpic = "tllavp.dds",
