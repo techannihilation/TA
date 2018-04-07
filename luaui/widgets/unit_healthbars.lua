@@ -62,7 +62,10 @@ local walls = {dragonsteeth=true,dragonsteeth_core=true,fortification=true,forti
 local stockpileH = 24
 local stockpileW = 12
 
---------------------------------------------------------------------------------
+local destructableFeature = {}
+local drawnFeature = {}
+
+-------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 --// colors
@@ -165,6 +168,11 @@ function widget:Initialize()
     end
     local shieldDefID = ud.shieldWeaponDef
     ud.shieldPower = ((shieldDefID)and(WeaponDefs[shieldDefID].shieldPower))or(-1)
+  end
+
+  for i = 1, #FeatureDefs do
+    destructableFeature[i] = FeatureDefs[i].destructable
+    drawnFeature[i] = (FeatureDefs[i].drawTypeString=="model") 
   end
 
   --// wow, using a buffered list can give 1-2 frames in extreme(!) situations :p
@@ -904,11 +912,8 @@ do
       for i=cnt,1,-1 do  --TODO:  this is very inefficient 
         featureID    = visibleFeatures[i]
         featureDefID = GetFeatureDefID(featureID) or -1
-        featureDef   = FeatureDefs[featureDefID]
         --// filter trees and none destructable features
-        if (featureDef)and(featureDef.destructable)and(
-           (featureDef.drawTypeString=="model")or(select(5,GetFeatureResources(featureID))<1)
-        ) then
+        if destructableFeature[featureDefID] and (drawnFeature[featureDefID] or (select(5,GetFeatureResources(featureID))<1)) then
           local fx,fy,fz = GetFeaturePosition(featureID)
           visibleFeatures[i] = {fx,fy,fz, featureID, featureDefID}
         else

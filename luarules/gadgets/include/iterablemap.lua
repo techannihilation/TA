@@ -150,8 +150,20 @@ function IterableMap.New()
 	function api.GetIndexMax()
 		return indexMax
 	end
+	function api.IsEmpty()
+		return (indexMax == 0)
+	end
 	function api.GetKeyByIndex(index)
 		return keyByIndex[index]
+	end
+	function api.GetBarbarianData()
+		return indexMax, keyByIndex, dataByKey
+	end
+	function api.GetDataByIndex(index)
+		if keyByIndex[index] then
+			return dataByKey[keyByIndex[index]]
+		end
+		return false
 	end
 
 	return api

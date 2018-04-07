@@ -36,11 +36,13 @@ local glDepthTest 			= gl.DepthTest
 local glDrawGroundCircle 	= gl.DrawGroundCircle
 local glColor				= gl.Color
 local GL_ALWAYS				= GL.ALWAYS
+local glBeginEnd			= gl.BeginEnd
 
 local circleDivs = 32
 --local blastRadius = 360 -- com explosion
 
 local comCenters = {}
+local drawnComs = {}
 local drawList
 local amSpec = false
 local inSpecFullView = false
@@ -56,9 +58,20 @@ local HighPing = false
 local FPSCount = Spring.GetFPS()
 local FPSLimit = 8
 
+local isCommander = {}
 -- track coms --
 
 function widget:Initialize()
+	for i=1,#UnitDefs do
+    	local unitDefID = UnitDefs[i]
+  		if unitDefID.customParams.iscommander then
+  			local DgunRange = WeaponDefs[UnitDefs[i].weapons[3].weaponDef].range+ 2*WeaponDefs[UnitDefs[i].weapons[3].weaponDef].damageAreaOfEffect
+			local deathBlasId = WeaponDefNames[string.lower(UnitDefs[i]["deathExplosion"])].id
+			local blastRadius = WeaponDefs[deathBlasId].damageAreaOfEffect
+			isCommander[i] = {dgunrange = DgunRange, deathblasid = deathBlasId, blastradius = blastRadius}
+    	end
+    end
+    
     widgetHandler:RegisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
     widgetHandler:RegisterGlobal('DrawManager_combblast', DrawStatus)
 
@@ -72,45 +85,47 @@ function DrawStatus(toohigh,fps,ping)
     TooHigh = toohigh
 end
 
-function addCom(unitID)
+function addCom(unitID, unitDefID, unitTeam)
     if not spValidUnitID(unitID) then return end --because units can be created AND destroyed on the same frame, in which case luaui thinks they are destroyed before they are created
     local x,y,z = Spring.GetUnitPosition(unitID)
-    local teamID = Spring.GetUnitTeam(unitID)
+    local teamID = unitTeam
+    if not teamID then 
+    	teamID = Spring.GetUnitTeam(unitID)
+    end
     if x and teamID then
-        local unitDefID = spGetUnitDefID(unitID)
-	local DgunRange = WeaponDefs[UnitDefs[unitDefID].weapons[3].weaponDef].range+ 2*WeaponDefs[UnitDefs[unitDefID].weapons[3].weaponDef].damageAreaOfEffect
-	local deathBlasId = WeaponDefNames[string.lower(UnitDefs[unitDefID]["deathExplosion"])].id
-	local blastRadius = WeaponDefs[deathBlasId].damageAreaOfEffect
-        comCenters[unitID] = {x=x,y=y,z=z,draw=false,opacity=0,teamID=teamID,dgunRange=DgunRange,blastRadius=blastRadius}
+        comCenters[unitID] = {x=x,y=y,z=z,draw=false,opacity=0,teamID=teamID,dgunRange=isCommander[unitDefID].dgunrange,blastRadius=isCommander[unitDefID].blastradius}
     end
 end
 
 function removeCom(unitID)
     comCenters[unitID] = nil
+    drawnComs[unitID] = nil
 end
 
 function widget:UnitFinished(unitID, unitDefID, unitTeam)
-    if UnitDefs[unitDefID].customParams.iscommander == "1" then
-        addCom(unitID)
+	if isCommander[unitDefID] then
+        addCom(unitID, unitDefID, unitTeam)
     end
 end
 
 function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
     if UnitDefs[unitDefID].customParams.iscommander == "1" then
-        addCom(unitID)
+        addCom(unitID, unitDefID, teamID)
     end
 end
 
 function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
-    if UnitDefs[unitDefID].customParams.iscommander == "1" then
-        addCom(unitID)
+    if isCommander[unitDefID] then
+    	Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
+        addCom(unitID, unitDefID, newTeam)
     end
 end
 
 
 function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
-    if UnitDefs[unitDefID].customParams.iscommander == "1" then
-        addCom(unitID)
+    if isCommander[unitDefID] then
+    	Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
+        addCom(unitID, unitDefID, unitTeam)
     end
 end
 
@@ -123,8 +138,8 @@ end
 function widget:UnitEnteredLos(unitID, unitTeam)
     if not amSpec then
         local unitDefID = spGetUnitDefID(unitID)
-        if UnitDefs[unitDefID].customParams.iscommander == "1" then
-            addCom(unitID)
+        if isCommander[unitDefID] then
+            addCom(unitID, unitDefID, teamID)
         end
     end
 end
@@ -167,8 +182,8 @@ function checkComs()
     if visibleUnits ~= nil then
         for _, unitID in ipairs(visibleUnits) do
             local unitDefID = spGetUnitDefID(unitID)
-            if unitDefID and UnitDefs[unitDefID].customParams.iscommander == "1" then
-                addCom(unitID)
+            if unitDefID and isCommander[unitDefID] then
+                addCom(unitID,unitDefID,teamID)
             end
         end
     end
@@ -207,19 +222,18 @@ function widget:GameFrame(n)
             else
                 wantedOpacity = 0
             end
-            opacity = comCenters[unitID].opacity*(29/30) +  wantedOpacity*(1/30) --change gently
+            opacity = comCenters[unitID].opacity*(29/30) + wantedOpacity*(1/30) --change gently
             -- check if com is off the ground
-            if y-yg>10 then 
+            if (y-yg>10) or (not spIsSphereInView(x,y,z,blastRadius)) then 
                 draw = false
-            -- check if is in view
-            elseif not spIsSphereInView(x,y,z,blastRadius) then
-                draw = false
+                drawnComs[unitID] = nil
             end
             comCenters[unitID].x = x
             comCenters[unitID].y = y
             comCenters[unitID].z = z
             comCenters[unitID].draw = draw
             comCenters[unitID].opacity = opacity
+            drawnComs[unitID] = comCenters[unitID]
         else
             --couldn't get position, check if its still a unit 
             if not spValidUnitID(unitID) then
@@ -232,16 +246,19 @@ end
 -- opacity control
 local darkOpacity = 0
 local lightOpacity = 0
+
 function SetOpacity(dark, light)
     darkOpacity = dark
     lightOpacity = light
 end
 
 -- draw circles
+
 function widget:DrawWorldPreUnit()
-    if spIsGUIHidden() or HighPing or TooHigh then return end
+	if spIsGUIHidden() or HighPing or TooHigh then return end
     glDepthTest(true)
-    for _,center in pairs(comCenters) do
+    for _,center in pairs(drawnComs) do
+    	--comCenters[unitID] = {x=x,y=y,z=z,draw=false,opacity=0,teamID=teamID,dgunRange=isCommander[unitDefID].dgunrange,blastRadius=isCommander[unitDefID].blastradius}
         if center.draw then
             glColor(1, 0.8, 0, min(center.opacity,lightOpacity))
             glDrawGroundCircle(center.x, center.y, center.z, center.dgunRange, circleDivs)
