@@ -67,6 +67,9 @@ return {
 				metal = 217,
 				object = "CORTHUD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corthud_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 116,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

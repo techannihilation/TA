@@ -80,6 +80,9 @@ return {
 				metal = 14400,
 				object = "MONKEYLORD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -91,6 +94,9 @@ return {
 				metal = 7680,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

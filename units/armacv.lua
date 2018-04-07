@@ -106,6 +106,9 @@ return {
 				metal = 1343,
 				object = "ARMACV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

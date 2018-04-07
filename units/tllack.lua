@@ -87,6 +87,9 @@ return {
 				metal = 1217,
 				object = "tllack_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -97,6 +100,9 @@ return {
 				metal = 876,
 				object = "2x2b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

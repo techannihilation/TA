@@ -109,6 +109,9 @@ return {
 				metal = 90,
 				object = "CORCK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -120,6 +123,9 @@ return {
 				metal = 48,
 				object = "2X2F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

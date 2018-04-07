@@ -68,6 +68,9 @@ return {
 				metal = 596,
 				object = "ARMVHLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armvhlt_heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

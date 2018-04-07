@@ -63,6 +63,9 @@ return {
 				metal = 682,
 				object = "CoreDauber_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

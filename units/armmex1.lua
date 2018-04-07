@@ -67,6 +67,9 @@ return {
 				metal = 260,
 				object = "ARMMEX_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armmex_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 138,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

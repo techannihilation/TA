@@ -71,6 +71,9 @@ return {
 				metal = 293,
 				object = "CORESUPP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

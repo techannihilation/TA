@@ -54,6 +54,9 @@ return {
 				metal = 78000,
 				object = "tllshipyardlvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

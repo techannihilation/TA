@@ -64,6 +64,9 @@ return {
 				metal = 10612,
 				object = "ARMSILO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armsilo_heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 5660,
 				object = "3X3F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

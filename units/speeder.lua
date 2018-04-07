@@ -64,6 +64,9 @@ return {
 				metal = 727,
 				object = "speeder_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

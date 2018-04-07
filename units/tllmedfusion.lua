@@ -53,6 +53,9 @@ return {
 				footprintz = 5,
 				metal = 2910,
 				object = "tllmedfusion_dead",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -62,6 +65,9 @@ return {
 				footprintz = 4,
 				metal = 1552,
 				object = "4x4c",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

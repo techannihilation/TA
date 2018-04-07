@@ -72,6 +72,9 @@ return {
 				metal = 798,
 				object = "armcp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

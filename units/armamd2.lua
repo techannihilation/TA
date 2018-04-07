@@ -67,6 +67,9 @@ return {
 				metal = 17549,
 				object = "ARMAMD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armamd1_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 9359,
 				object = "5X5B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

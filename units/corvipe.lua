@@ -48,6 +48,7 @@ return {
 		unitname = "corvipe",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "corvipe.dds",
@@ -68,6 +69,9 @@ return {
 				metal = 1008,
 				object = "CORVIPE_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead2 = {
 				blocking = true,
@@ -80,6 +84,9 @@ return {
 				metal = 538,
 				object = "CORVIPE_DEAD2",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -91,6 +98,9 @@ return {
 				metal = 336,
 				object = "2X2F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -98,6 +98,9 @@ return {
 				metal = 1480,
 				object = "TLLECV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -63,6 +63,9 @@ return {
 				metal = 450,
 				object = "ARMZEUS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armzeus_heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 240,
 				object = "2X2E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

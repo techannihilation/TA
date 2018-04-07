@@ -74,6 +74,9 @@ return {
 				metal = 2175,
 				object = "CORGOL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corgol_heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 1160,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

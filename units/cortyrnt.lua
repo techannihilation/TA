@@ -73,6 +73,9 @@ return {
 				metal = 33937,
 				object = "cortyrnt_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

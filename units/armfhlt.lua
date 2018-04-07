@@ -65,6 +65,9 @@ return {
 				metal = 431,
 				object = "ARMFHLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

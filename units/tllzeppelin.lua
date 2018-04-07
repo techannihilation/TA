@@ -63,6 +63,9 @@ return {
 				metal = 221250,
 				object = "tllzeppelin_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -51,6 +51,9 @@ return {
 				metal = 96,
 				object = "tlluwjam_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -61,6 +64,9 @@ return {
 				metal = 51,
 				object = "3x3e",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

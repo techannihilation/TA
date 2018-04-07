@@ -67,6 +67,9 @@ return {
 				metal = 198,
 				object = "ARMHAM_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armham_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 106,
 				object = "2X2E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

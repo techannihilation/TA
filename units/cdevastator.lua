@@ -80,6 +80,9 @@ return {
 				metal = 227250,
 				object = "CDevastator_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

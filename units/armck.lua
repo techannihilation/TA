@@ -109,6 +109,9 @@ return {
 				metal = 81,
 				object = "ARMCK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -120,6 +123,9 @@ return {
 				metal = 43,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

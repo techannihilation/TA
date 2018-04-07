@@ -70,6 +70,9 @@ return {
 				metal = 72,
 				object = "armhplasma_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armhplasma_heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 38,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

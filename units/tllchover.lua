@@ -117,6 +117,9 @@ return {
 				metal = 157,
 				object = "tllchover_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -127,6 +130,9 @@ return {
 				metal = 84,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -63,6 +63,9 @@ return {
 				metal = 64,
 				object = "CORTIDE_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

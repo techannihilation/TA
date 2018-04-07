@@ -124,6 +124,9 @@ return {
 				metal = 108,
 				object = "ARMCH_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -135,6 +138,9 @@ return {
 				metal = 58,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

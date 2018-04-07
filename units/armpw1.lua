@@ -68,6 +68,9 @@ return {
 				metal = 68,
 				object = "ARMPW_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armpw_heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 36,
 				object = "2X2F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

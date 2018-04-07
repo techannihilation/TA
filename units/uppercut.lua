@@ -72,6 +72,9 @@ return {
 				metal = 11625,
 				object = "uppercut_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

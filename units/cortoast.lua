@@ -51,6 +51,7 @@ return {
 		unitname = "cortoast",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "cortoast.dds",
@@ -71,6 +72,9 @@ return {
 				metal = 1957,
 				object = "CORTOAST_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead2 = {
 				blocking = true,
@@ -83,6 +87,9 @@ return {
 				metal = 1044,
 				object = "CORTOAST_DEAD2",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -94,6 +101,9 @@ return {
 				metal = 652,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

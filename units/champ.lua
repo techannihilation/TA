@@ -72,6 +72,9 @@ return {
 				metal = 3960,
 				object = "champ_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

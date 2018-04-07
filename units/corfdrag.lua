@@ -59,6 +59,9 @@ return {
 				object = "corfdrag",
 				reclaimable = true,
 				world = "allworld",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

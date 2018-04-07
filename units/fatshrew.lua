@@ -81,6 +81,9 @@ return {
 				metal = 44400,
 				object = "fatshrew_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			fatshrew_heap = {
 				blocking = false,
@@ -92,6 +95,9 @@ return {
 				metal = 18680,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -87,6 +87,9 @@ return {
 				metal = 19200,
 				object = "CBuilderLvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

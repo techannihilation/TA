@@ -98,6 +98,9 @@ return {
 				metal = 3087,
 				object = "CORALAB_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -109,6 +112,9 @@ return {
 				metal = 1646,
 				object = "5X5A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

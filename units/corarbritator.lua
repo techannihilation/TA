@@ -78,6 +78,9 @@ return {
 				metal = 14400,
 				object = "corarbritator_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corarbritator_heap = {
 				blocking = false,
@@ -89,6 +92,9 @@ return {
 				metal = 7680,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

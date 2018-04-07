@@ -69,6 +69,9 @@ return {
 				metal = 87,
 				object = "CORJAMT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

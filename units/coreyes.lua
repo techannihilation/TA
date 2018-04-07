@@ -66,6 +66,9 @@ return {
 				metal = 24,
 				object = "1X1B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

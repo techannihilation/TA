@@ -89,6 +89,9 @@ return {
 				metal = 217,
 				object = "TLLDOC_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

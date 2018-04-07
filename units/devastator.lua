@@ -67,6 +67,9 @@ return {
 				metal = 1087,
 				object = "devastator_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

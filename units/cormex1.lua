@@ -68,6 +68,9 @@ return {
 				metal = 264,
 				object = "CORMEX_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			cormex_heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 141,
 				object = "3X3E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

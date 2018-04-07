@@ -68,6 +68,9 @@ return {
 				metal = 214500,
 				object = "CORBUZZ1_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

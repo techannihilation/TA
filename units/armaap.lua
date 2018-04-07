@@ -87,6 +87,9 @@ return {
 				metal = 3524,
 				object = "ARMAAP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -98,6 +101,9 @@ return {
 				metal = 1879,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

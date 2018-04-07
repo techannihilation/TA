@@ -67,6 +67,9 @@ return {
 				metal = 15,
 				object = "CORSONAR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

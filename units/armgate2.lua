@@ -64,6 +64,9 @@ return {
 				metal = 597,
 				object = "4X4D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -76,6 +79,9 @@ return {
 				metal = 1119,
 				object = "ARMGATE2_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

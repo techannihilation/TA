@@ -66,6 +66,9 @@ return {
 				metal = 5628,
 				object = "CORBHMTH_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corbhmth_heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 3002,
 				object = "5X5C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

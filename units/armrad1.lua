@@ -65,6 +65,9 @@ return {
 				metal = 91,
 				object = "ARMRAD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armrad_heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 48,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

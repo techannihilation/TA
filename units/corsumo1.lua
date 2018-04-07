@@ -64,6 +64,9 @@ return {
 				metal = 2062,
 				object = "CORSUMO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corsumo_heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 1100,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

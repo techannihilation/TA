@@ -67,6 +67,9 @@ return {
 				metal = 17686,
 				object = "CORFMD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corfmd1_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 9432,
 				object = "5X5D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -106,6 +106,9 @@ return {
 				metal = 1480,
 				object = "CORACV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

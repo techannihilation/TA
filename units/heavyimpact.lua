@@ -71,6 +71,9 @@ return {
 				metal = 5587,
 				object = "HEAVYIMPACT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heavyimpact_heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 2980,
 				object = "5X5B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

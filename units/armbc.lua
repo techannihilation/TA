@@ -63,6 +63,9 @@ return {
 				metal = 7125,
 				object = "armbc_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 3800,
 				object = "4x4c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			tllviking_heap2 = {
 				blocking = false,
@@ -84,6 +90,9 @@ return {
 				metal = 2375,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

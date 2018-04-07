@@ -80,6 +80,9 @@ return {
 				metal = 1263,
 				object = "CORCARRY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -91,6 +94,9 @@ return {
 				metal = 673,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -79,6 +79,9 @@ return {
 				metal = 13125,
 				object = "tllhcar_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -68,6 +68,9 @@ return {
 				metal = 1687,
 				object = "ARMFBOY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armfboy_heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 900,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -85,6 +85,9 @@ return {
 				metal = 735,
 				object = "ASUBPEN_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

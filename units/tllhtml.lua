@@ -69,6 +69,9 @@ return {
 				metal = 12937,
 				object = "tllhtml_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 6900,
 				object = "4x4b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -95,6 +101,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "all",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

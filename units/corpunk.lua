@@ -64,6 +64,9 @@ return {
 				metal = 12,
 				object = "ARMFLEA_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armflea_heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 6,
 				object = "1X1A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

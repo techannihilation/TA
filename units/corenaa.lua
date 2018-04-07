@@ -65,6 +65,9 @@ return {
 				metal = 663,
 				object = "CORENAA_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

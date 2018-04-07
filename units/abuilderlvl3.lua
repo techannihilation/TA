@@ -83,6 +83,9 @@ return {
 				metal = 19599,
 				object = "ABuilderLvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

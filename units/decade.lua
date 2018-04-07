@@ -71,6 +71,9 @@ return {
 				metal = 315,
 				object = "DECADE_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -70,6 +70,9 @@ return {
 				metal = 140,
 				object = "corjeag_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

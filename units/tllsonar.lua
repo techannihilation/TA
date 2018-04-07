@@ -50,6 +50,9 @@ return {
 				metal = 17,
 				object = "tllsonar_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

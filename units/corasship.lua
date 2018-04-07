@@ -72,6 +72,9 @@ return {
 				metal = 1350,
 				object = "CORASSHIP_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

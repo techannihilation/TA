@@ -80,6 +80,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			rockteeth = {
 				animating = 0,
@@ -97,6 +100,9 @@ return {
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

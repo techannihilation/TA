@@ -67,6 +67,9 @@ return {
 				metal = 720,
 				object = "CORSENT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corsent_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 384,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

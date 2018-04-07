@@ -83,6 +83,9 @@ return {
 				metal = 3687,
 				object = "ARMASY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

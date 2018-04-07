@@ -56,6 +56,9 @@ return {
 				metal = 849,
 				object = "CORUPMEX_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = true,
@@ -67,6 +70,9 @@ return {
 				metal = 453,
 				object = "3X3E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
