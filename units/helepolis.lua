@@ -99,6 +99,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
+				[1] = "custom:MEDIUMFLARE",
 				[2] = "custom:unitfire",
 			},
 			pieceexplosiongenerators = {
