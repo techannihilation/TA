@@ -285,7 +285,7 @@ FireSecondary()
 {
 	if( Static_Var_2 == 0 )
 	{
-		emit-sfx 1024 from flare2a;
+		emit-sfx 1025 from flare2a;
 		move barrel2a to z-axis [-1.] speed [500.];
 		sleep 150;
 		move barrel2a to z-axis [0.] speed [3.];
@@ -294,7 +294,7 @@ FireSecondary()
 	}
 	if( Static_Var_2 == 1 )
 	{
-		emit-sfx 1024 from flare2b;
+		emit-sfx 1025 from flare2b;
 		move barrel2b to z-axis [-1.] speed [500.];
 		sleep 150;
 		move barrel2b to z-axis [0.] speed [3.];
@@ -307,7 +307,7 @@ FireWeapon3()
 {
 	if( Static_Var_6 == 0 )
 	{
-		emit-sfx 1024 from flare3a;
+		emit-sfx 1025 from flare3a;
 		move barrel3a to z-axis [1.] speed [500.];
 		sleep 150;
 		move barrel3a to z-axis [0.] speed [3.];
@@ -316,7 +316,7 @@ FireWeapon3()
 	}
 	if( Static_Var_6 == 1 )
 	{
-		emit-sfx 1024 from flare3b;
+		emit-sfx 1025 from flare3b;
 		move barrel3b to z-axis [1.] speed [500.];
 		sleep 150;
 		move barrel3b to z-axis [0.] speed [3.];
