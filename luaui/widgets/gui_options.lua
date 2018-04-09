@@ -1673,9 +1673,9 @@ function loadAllWidgetData()
 
 	loadWidgetData("EnemySpotter", "enemyspotter_opacity", {'spotterOpacity'})
 	loadWidgetData("EnemySpotter", "enemyspotter_highlight", {'useXrayHighlight'})
-
+--]]
 	loadWidgetData("Outline", "outline_size", {'customSize'})
-
+--[[
 	loadWidgetData("Highlight Selected Units", "highlightselunits_opacity", {'highlightAlpha'})
 	loadWidgetData("Highlight Selected Units", "highlightselunits_shader", {'useHighlightShader'})
 	loadWidgetData("Highlight Selected Units", "highlightselunits_teamcolor", {'useTeamcolor'})
@@ -1761,8 +1761,8 @@ function init()
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=GetWidgetToggleValue("LupsManager"), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
 		{id="lupseffectlevel", group="gfx", name="Lups Effect", type="select", options={'basic','min','standard','extra','uber'}, value=WG.LupsPriority or 3, description='Sets lups particle effects quality'},
 
-		--{id="outline", group="gfx", widget="Outline", name="Unit outline (expensive)", type="bool", value=GetWidgetToggleValue("Outline"), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1000.\nStops rendering outlines when average fps falls below 13.'},
-		--{id="outline_size", group="gfx", name=widgetOptionColor.."   thickness", min=0.8, max=1.5, step=0.05, type="slider", value=1, description='Set the size of the outline'},
+		{id="outline", group="gfx", widget="Outline", name="Unit outline (expensive)", type="bool", value=GetWidgetToggleValue("Outline"), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1000.\nStops rendering outlines when average fps falls below 13.'},
+		{id="outline_size", group="gfx", name=widgetOptionColor.."   thickness", min=0.8, max=1.5, step=0.05, type="slider", value=1, description='Set the size of the outline'},
 
 		{id="xrayshader", group="gfx", widget="XrayShader", name="Unit xray shader", type="bool", value=GetWidgetToggleValue("XrayShader"), description='Highlights all units, highlight effect dissolves on close camera range.\n\nFades out and disables at low fps\nWorks less on dark teamcolors'},
 		{id="particles", group="gfx", name="Max particles", type="slider", min=5000, max=25000, step=500, value=tonumber(Spring.GetConfigInt("MaxParticles",1) or 1000), description='Particles used for explosions, smoke, fire and missiletrails\n\nSetting a low value will mean that various effects wont show properly'},
