@@ -1824,14 +1824,14 @@ function init()
 
 		--{id="showbuilderqueue", group="ui", widget="Show Builder Queue", name="Show Builder Queue", type="bool", value=GetWidgetToggleValue("Show Builder Queue"), description='Shows ghosted buildings about to be built on the map'},
 
-		{id="healthbarsscale", group="ui", name="Health Bars Scale", type="slider", min=0.7, max=1.31, step=0.1, value=1, description=''},
+		--{id="healthbarsscale", group="ui", name="Health Bars Scale", type="slider", min=0.7, max=1.31, step=0.1, value=1, description=''},
 
-		{id="guishader", group="ui", widget="GUI-Shader", name="GUI blur shader", type="bool", value=GetWidgetToggleValue("GUI-Shader"), description='Blurs the world under every user interface element\n\nIntel Graphics have trouble with this'},
-		{id="guishaderintensity", group="ui", name=widgetOptionColor.."   intensity", type="slider", min=0.0007, max=0.003, step=0.0001, value=0.0014, description='NOTE: does 2nd blur when value is above 0.0015'},
+		--{id="guishader", group="ui", widget="GUI-Shader", name="GUI blur shader", type="bool", value=GetWidgetToggleValue("GUI-Shader"), description='Blurs the world under every user interface element\n\nIntel Graphics have trouble with this'},
+		--{id="guishaderintensity", group="ui", name=widgetOptionColor.."   intensity", type="slider", min=0.0007, max=0.003, step=0.0001, value=0.0014, description='NOTE: does 2nd blur when value is above 0.0015'},
 
-		{id="oldconsole", group="ui", name="Old console (single)", type="bool", value=GetWidgetToggleValue("Red Console (old)"), description='Enable old console that doesnt separate system and chat messages'},
-		{id="consolemaxlines", group="ui", name="Console max lines", type="slider", min=3, max=9, step=1, value=6, description=''},
-		{id="consolefontsize", group="ui", name="Console font size", type="slider", min=0.9, max=1.2, step=0.05, value=1, description=''},
+		--{id="oldconsole", group="ui", name="Old console (single)", type="bool", value=GetWidgetToggleValue("Red Console (old)"), description='Enable old console that doesnt separate system and chat messages'},
+		--{id="consolemaxlines", group="ui", name="Console max lines", type="slider", min=3, max=9, step=1, value=6, description=''},
+		--{id="consolefontsize", group="ui", name="Console font size", type="slider", min=0.9, max=1.2, step=0.05, value=1, description=''},
 
 		--{id="buildmenuoldicons", group="ui", name="Buildmenu old unit icons", type="bool", value=(WG['red_buildmenu']~=nil and WG['red_buildmenu'].getConfigOldUnitIcons()), description='Use the old unit icons in the buildmenu\n\n(reselect something to see the change applied)'},
 		--{id="buildmenushortcuts", group="ui", name="Buildmenu shortcuts", type="bool", value=(WG['red_buildmenu']~=nil and WG['red_buildmenu'].getConfigShortcutsInfo()), description='Enables and shows shortcut keys in the buildmenu\n\n(reselect something to see the change applied)'},
