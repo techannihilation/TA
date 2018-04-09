@@ -205,7 +205,7 @@ return {
 				},
 			},
 			tllblind_tesla = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				beamttl = 10,
 				craterareaofeffect = 0,
 				craterboost = 0,
