@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 4020,
 		maxdamage = 6450,
@@ -74,6 +74,9 @@ return {
 				metal = 3240,
 				object = "armchimera_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 2128,
 				object = "4X4D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 16150,
 		maxdamage = 9105,
@@ -44,7 +44,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "armecs",
 		radardistance = 50,
-		radaremitheight = 35,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 300,
@@ -92,6 +92,9 @@ return {
 				metal = 7204,
 				object = "armecs_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -103,6 +106,9 @@ return {
 				metal = 4108,
 				object = "5X5A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

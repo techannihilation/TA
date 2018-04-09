@@ -29,7 +29,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1150,
 		maxdamage = 4250,
@@ -71,6 +71,9 @@ return {
 				metal = 862,
 				object = "CORHOVER3G_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 460,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

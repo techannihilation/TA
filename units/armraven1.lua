@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 36,
+		losemitheight = 26,
 		maneuverleashlength = 640,
 		mass = 1650,
 		maxdamage = 1985,
@@ -67,6 +67,9 @@ return {
 				metal = 1240,
 				object = "ARMRAVEN1_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 661,
 				object = "3X3C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

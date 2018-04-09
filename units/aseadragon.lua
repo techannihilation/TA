@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 54,
+		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 25000,
 		maxdamage = 68000,
@@ -45,7 +45,7 @@ return {
 		objectname = "ASEADRAGON",
 		pushresistant = true,
 		radardistance = 1500,
-		radaremitheight = 54,
+		radaremitheight = 36,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
@@ -77,6 +77,9 @@ return {
 				metal = 18750,
 				object = "ASEADRAGON_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -88,6 +91,9 @@ return {
 				metal = 10000,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 269,
+		losemitheight = 178,
 		maneuverleashlength = 640,
 		mass = 214000,
 		maxdamage = 810000,
@@ -73,6 +73,9 @@ return {
 				metal = 125250,
 				object = "corkrog1_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 66800,
 				object = "5X5C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

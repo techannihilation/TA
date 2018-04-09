@@ -53,7 +53,7 @@ function gadget:Explosion(weaponID, px, py, pz, ownerID)
 			allyID=SpGetUnitAllyTeam(ownerID),
 			allyScale=weaponInfo[weaponID].allyScale or 1.0,
 			teamScale=weaponInfo[weaponID].teamScale or 1.0,
-			scoutScale=weaponInfo[weaponID].scoutScale or 1.0
+			scoutDmg=weaponInfo[weaponID].scoutDmg or 1.0
 		}
 		table.insert(explosionList,w)
 	end
@@ -73,7 +73,7 @@ function gadget:GameFrame(f)
 					local damage = w.damage
 					local allyScale = w.allyScale
 					local teamScale = w.teamScale
-					local scoutScale = w.scoutScale
+					local scoutDmg = w.scoutDmg
 
 					if w.rangeFall ~= 0 then
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
@@ -87,9 +87,11 @@ function gadget:GameFrame(f)
 					-- Avoid damage to self altogether
 					if (u ~= nil and w.owner ~= nil and u ~= w.owner) then
 						if scouts[Spring.GetUnitDefID(u)] then
-							SpAddUnitDamage(u, damage*scoutScale, 0, w.owner, w.id, 0, 0, 0)
+							SpAddUnitDamage(u, scoutDmg, 0, w.owner, w.id, 0, 0, 0)
 						else
+							if damage > 0 then
 							SpAddUnitDamage(u, damage, 0, w.owner, w.id, 0, 0, 0)
+							end
 						end
 					end
 				end		

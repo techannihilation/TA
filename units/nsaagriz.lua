@@ -32,7 +32,7 @@ return {
 		idleautoheal = 4,
 		idletime = 2000,
 		immunetoparalyzer = 1,
-		losemitheight = 70,
+		losemitheight = 46,
 		maneuverleashlength = 640,
 		mass = 29000,
 		maxdamage = 20150,
@@ -48,7 +48,7 @@ return {
 		onoffable = true,
 		pushresistant = true,
 		radardistance = 1000,
-		radaremitheight = 70,
+		radaremitheight = 46,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		sightdistance = 240,
@@ -77,6 +77,9 @@ return {
 				metal = 21750,
 				object = "nsaagriz_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -87,6 +90,9 @@ return {
 				metal = 11600,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 136,
+		losemitheight = 68,
 		mass = 48500,
 		maxdamage = 30830,
 		maxslope = 13,
@@ -47,6 +47,7 @@ return {
 		unitname = "tllhydre2",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "tllhydre.dds",
@@ -67,6 +68,9 @@ return {
 				metal = 30525,
 				object = "TLLHYDRE_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +82,9 @@ return {
 				metal = 16480,
 				object = "7X7A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

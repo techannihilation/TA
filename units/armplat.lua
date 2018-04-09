@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 26,
 		mass = 4480,
 		maxdamage = 1820,
 		maxvelocity = 0,
@@ -35,7 +35,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMPLAT",
 		radardistance = 50,
-		radaremitheight = 39,
+		radaremitheight = 26,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 169,
@@ -75,6 +75,9 @@ return {
 				metal = 3360,
 				object = "ARMPLAT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

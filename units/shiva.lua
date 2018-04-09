@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 37,
+		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 3467,
 		maxdamage = 12800,
@@ -71,6 +71,9 @@ return {
 				metal = 2600,
 				object = "SHIVA_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 1386,
 				object = "3X3F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

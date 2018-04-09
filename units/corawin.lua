@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 124,
+		losemitheight = 81,
 		mass = 143,
 		maxdamage = 537,
 		maxslope = 10,
@@ -62,6 +62,9 @@ return {
 				metal = 107,
 				object = "CORAWIN_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -73,6 +76,9 @@ return {
 				metal = 57,
 				object = "7X7A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 93,
+		losemitheight = 62,
 		mass = 4635,
 		maxdamage = 4575,
 		maxslope = 10,
@@ -73,6 +73,9 @@ return {
 				metal = 3476,
 				object = "tllavp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 1854,
 				object = "6x6B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -94,6 +100,9 @@ return {
 				metal = 1158,
 				object = "4x4B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

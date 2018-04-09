@@ -30,8 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = false,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 352,
 		maxdamage = 1200,
 		maxslope = 10,
@@ -72,6 +71,9 @@ return {
 				metal = 264,
 				object = "PACKO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +85,9 @@ return {
 				metal = 140,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

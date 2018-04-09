@@ -32,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 26,
+		losemitheight = 23,
 		maneuverleashlength = 1200,
 		mass = 5280,
 		maxdamage = 28000,
@@ -72,6 +72,9 @@ return {
 				metal = 3960,
 				object = "champ_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

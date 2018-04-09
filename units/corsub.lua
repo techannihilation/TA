@@ -72,6 +72,9 @@ return {
 				metal = 543,
 				object = "CORSUB_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 289,
 				object = "4X4B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

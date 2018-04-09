@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 74,
+		losemitheight = 49,
 		maneuverleashlength = 640,
 		mass = 1835,
 		maxdamage = 11010,
@@ -74,6 +74,9 @@ return {
 				metal = 735,
 				object = "ARMTSHIP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 392,
 				object = "5X5A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

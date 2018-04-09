@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 80,
+		losemitheight = 53,
 		mass = 480,
 		maxdamage = 2275,
 		maxslope = 10,
@@ -70,6 +70,9 @@ return {
 				metal = 360,
 				object = "CORHLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 192,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

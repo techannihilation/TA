@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 41,
+		losemitheight = 29,
 		mass = 353.33334,
 		maxangledif1 = 1,
 		maxdamage = 2120,
@@ -65,6 +65,9 @@ return {
 				metal = 131,
 				object = "ARMASON_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

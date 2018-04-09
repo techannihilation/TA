@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 24,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 990,
 		maxdamage = 1500,
@@ -40,7 +40,7 @@ return {
 		objectname = "armhorg",
 		onoffable = true,
 		radardistance = 960,
-		radaremitheight = 24,
+		radaremitheight = 22,
 		selfdestructas = "TWILIGHT",
 		sightdistance = 300,
 		standingfireorder = 2,
@@ -67,6 +67,9 @@ return {
 				metal = 742,
 				object = "armhorg_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 396,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

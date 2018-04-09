@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 50,
+		losemitheight = 33,
 		mass = 4480,
 		maxdamage = 4500,
 		metalmake = 1,
@@ -69,6 +69,9 @@ return {
 				metal = 3360,
 				object = "tllasy_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 1792,
 				object = "6x6C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -90,6 +96,9 @@ return {
 				metal = 1120,
 				object = "4x4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

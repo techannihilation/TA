@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1850,
 		maxdamage = 6150,
@@ -45,7 +45,7 @@ return {
 		objectname = "ARMCAV",
 		onoffable = true,
 		radardistance = 640,
-		radaremitheight = 29,
+		radaremitheight = 22,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
 		standingfireorder = 2,
@@ -73,6 +73,9 @@ return {
 				metal = 1387,
 				object = "armcav_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 740,
 				object = "2x2a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

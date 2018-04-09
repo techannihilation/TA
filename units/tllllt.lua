@@ -32,7 +32,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 72,
+		losemitheight = 48,
 		mass = 105,
 		maxdamage = 605,
 		maxslope = 14,
@@ -71,6 +71,9 @@ return {
 				metal = 78,
 				object = "TLLLLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 42,
 				object = "2X2B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

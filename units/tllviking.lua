@@ -24,7 +24,7 @@ return {
 		footprintz = 6,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 56,
+		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 7600,
 		maxdamage = 18000,
@@ -62,6 +62,9 @@ return {
 				metal = 5700,
 				object = "tllviking_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -73,6 +76,9 @@ return {
 				metal = 3040,
 				object = "4x4c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -83,6 +89,9 @@ return {
 				metal = 1900,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

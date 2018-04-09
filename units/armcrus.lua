@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 41,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 1830,
 		maxdamage = 4500,
@@ -72,6 +72,9 @@ return {
 				metal = 1372,
 				object = "ARMCRUS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 732,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -4 0",
+		collisionvolumescales = "52 40 59",
+		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "standby",
 		description = "Very Heavy Assault Tank",
@@ -22,7 +25,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		maneuverleashlength = 300,
 		mass = 3285,
 		maxdamage = 10800,
@@ -61,6 +64,9 @@ return {
 				metal = 2463,
 				object = "TLLTHUMPER_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -71,6 +77,9 @@ return {
 				metal = 1314,
 				object = "4x4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

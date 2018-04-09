@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 72,
+		losemitheight = 47,
 		mass = 650,
 		maxdamage = 1900,
 		maxslope = 10,
@@ -70,6 +70,9 @@ return {
 				metal = 487,
 				object = "CJUNO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 260,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -114,6 +114,11 @@ ePrimary(Func_Var_1)
 	Static_Var_2 = !Static_Var_2;
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = Static_Var_2;

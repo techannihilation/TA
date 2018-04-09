@@ -28,7 +28,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 74,
+		losemitheight = 49,
 		maneuverleashlength = 640,
 		mass = 6750,
 		maxdamage = 14000,
@@ -71,6 +71,9 @@ return {
 				metal = 5062,
 				object = "CORBATS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 2700,
 				object = "6X6C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

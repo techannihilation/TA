@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 61,
+		losemitheight = 40,
 		maneuverleashlength = 640,
 		mass = 10800,
 		maxdamage = 60000,
@@ -73,6 +73,9 @@ return {
 				metal = 8100,
 				object = "ARMBANTH_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 4320,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

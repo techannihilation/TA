@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 36,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 1045,
 		maxdamage = 2575,
@@ -73,6 +73,9 @@ return {
 				metal = 783,
 				object = "ARMROY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 418,
 				object = "5X5B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

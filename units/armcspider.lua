@@ -97,6 +97,9 @@ return {
 				metal = 120,
 				object = "armcspider_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -107,6 +110,9 @@ return {
 				metal = 64,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

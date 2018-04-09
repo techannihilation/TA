@@ -26,8 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = false,
-		losemitheight = 39,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 4640,
 		maxdamage = 3150,
@@ -69,6 +68,9 @@ return {
 				metal = 3480,
 				object = "tllwhale_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -79,6 +81,9 @@ return {
 				metal = 1856,
 				object = "3x3e",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

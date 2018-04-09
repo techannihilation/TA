@@ -77,6 +77,9 @@ return {
 				metal = 127,
 				object = "CORWOLV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

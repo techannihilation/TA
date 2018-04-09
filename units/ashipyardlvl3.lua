@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 101,
+		losemitheight = 67,
 		mass = 106650,
 		maxdamage = 70000,
 		maxslope = 10,
@@ -61,6 +61,9 @@ return {
 				metal = 80000,
 				object = "AShipyardLvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

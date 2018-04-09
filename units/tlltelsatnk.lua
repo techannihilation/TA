@@ -64,6 +64,9 @@ return {
 				metal = 2737,
 				object = "tlltelsatnk_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 1460,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -113,7 +119,7 @@ return {
 		},
 		weapondefs = {
 			tlltelsa_cannon = {
-				areaofeffect = 12,
+				areaofeffect = 16,
 				beamttl = 10,
 				craterareaofeffect = 0,
 				craterboost = 0,

@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 22,
 		mass = 1029,
 		maxdamage = 2800,
 		maxslope = 10,
@@ -70,6 +70,9 @@ return {
 				metal = 771,
 				object = "CORFLAK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 411,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

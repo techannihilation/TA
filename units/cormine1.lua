@@ -35,7 +35,6 @@ return {
 		icontype = "building",
 		idleautoheal = 10,
 		idletime = 300,
-		initcloaked = true,
 		levelground = false,
 		losemitheight = 22,
 		mass = 10,
@@ -64,6 +63,7 @@ return {
 		customparams = {
 			buildpic = "cormine1.dds",
 			faction = "CORE",
+			initcloaked = true,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

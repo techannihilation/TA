@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 353,
 		maxdamage = 675,
 		maxslope = 20,
@@ -68,6 +68,9 @@ return {
 				metal = 264,
 				object = "CORMEX_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			cormex_heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 141,
 				object = "3X3E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

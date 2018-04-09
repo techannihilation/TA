@@ -391,30 +391,33 @@ function JitterParticles2:Visible()
                  self.frame*self.sphereGrowth --FIXME: frame is only updated on Update()
   local posX,posY,posZ = self.pos[1],self.pos[2],self.pos[3]
   local losState
-  local cx, cy, cz = Spring.GetCameraPosition()
-  local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-  local tooHigh = ((cy-smoothheight)^2 >= 15000000)
-  if not (tooHigh) then
   if (self.unit and not self.worldspace) then
     local ux,uy,uz = spGetUnitViewPosition(self.unit)
+    if not ux then
+      return false
+    end
+    radius = radius + (spGetUnitRadius(self.unit) or 0)
+    if self.noIconDraw then
+      if not Spring.IsUnitVisible(self.unit, radius, self.noIconDraw) then
+        return false
+      end
+    end
     posX,posY,posZ = posX+ux,posY+uy,posZ+uz
-    radius = radius + spGetUnitRadius(self.unit)
-    losState = spGetUnitLosState(self.unit, LocalAllyTeamID)
+    losState = GetUnitLosState(self.unit)
   elseif (self.projectile and not self.worldspace) then
     local px,py,pz = spGetProjectilePosition(self.projectile)
     posX,posY,posZ = posX+px,posY+py,posZ+pz
   end
   if (losState==nil) then
     if (self.radar) then
-      losState = IsPosInRadar(posX,posY,posZ, LocalAllyTeamID)
+      losState = IsPosInRadar(posX,posY,posZ)
     end
     if ((not losState) and self.airLos) then
-      losState = IsPosInAirLos(posX,posY,posZ, LocalAllyTeamID)
+      losState = IsPosInAirLos(posX,posY,posZ)
     end
     if ((not losState) and self.los) then
-      losState = IsPosInLos(posX,posY,posZ, LocalAllyTeamID)
+      losState = IsPosInLos(posX,posY,posZ)
     end
-  end
   end
   return (losState)and(spIsSphereInView(posX,posY,posZ,radius))
 end

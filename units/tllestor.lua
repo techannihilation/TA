@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 316.66666,
 		maxdamage = 1900,
 		maxslope = 10,
@@ -56,6 +56,9 @@ return {
 				metal = 195,
 				object = "tllestor_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -66,6 +69,9 @@ return {
 				metal = 104,
 				object = "4x4c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -28,7 +28,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1890,
 		maxdamage = 9250,
@@ -43,7 +43,7 @@ return {
 		objectname = "ARMSCPION",
 		radardistance = 650,
 		radardistancejam = 50,
-		radaremitheight = 25,
+		radaremitheight = 22,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
 		standingfireorder = 2,
@@ -71,6 +71,9 @@ return {
 				metal = 1417,
 				object = "armscpion_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 756,
 				object = "2x2e",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 45,
+		losemitheight = 29,
 		mass = 950,
 		maxdamage = 2234,
 		maxslope = 10,
@@ -73,6 +73,9 @@ return {
 				metal = 712,
 				object = "CORTLAB_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 380,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

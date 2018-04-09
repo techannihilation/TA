@@ -81,6 +81,7 @@ return {
 			[21] = "armvader",
 			[22] = "armfast",
 			[23] = "armfido",
+			[24] = "armrambo",
 		},
 		customparams = {
 			buildpic = "armfark.dds",
@@ -101,6 +102,9 @@ return {
 				metal = 168,
 				object = "ARMFARK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -112,6 +116,9 @@ return {
 				metal = 90,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

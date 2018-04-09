@@ -29,7 +29,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 65,
+		losemitheight = 45,
 		maneuverleashlength = 300,
 		mass = 1750,
 		maxdamage = 1800,
@@ -70,6 +70,9 @@ return {
 				metal = 1312,
 				object = "corprot_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 700,
 				object = "corprot_heap",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -36,7 +36,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 14.5,
 		mass = 23250,
 		maxdamage = 12500,
 		maxslope = 10,
@@ -87,6 +87,9 @@ return {
 				metal = 19200,
 				object = "CBuilderLvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

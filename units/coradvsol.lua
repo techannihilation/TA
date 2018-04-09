@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 49,
+		losemitheight = 32,
 		mass = 314,
 		maxdamage = 1080,
 		maxslope = 10,
@@ -70,6 +70,9 @@ return {
 				metal = 235,
 				object = "CORADVSOL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 125,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

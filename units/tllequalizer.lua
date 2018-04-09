@@ -26,7 +26,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 26,
 		maneuverleashlength = 640,
 		mass = 2160,
 		maxdamage = 4310,
@@ -65,6 +65,9 @@ return {
 				metal = 1620,
 				object = "tllequalizer_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 864,
 				object = "4x4c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

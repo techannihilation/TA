@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 26,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 5300,
 		maxdamage = 4960,
@@ -72,6 +72,9 @@ return {
 				metal = 3975,
 				object = "AVTR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 2120,
 				object = "4x4b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

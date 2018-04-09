@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 70,
+		losemitheight = 46,
 		mass = 10500,
 		maxdamage = 6520,
 		maxslope = 10,
@@ -56,6 +56,9 @@ return {
 				metal = 8625,
 				object = "tllsilo_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -66,6 +69,9 @@ return {
 				metal = 4600,
 				object = "5x5c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

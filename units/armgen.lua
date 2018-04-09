@@ -12,6 +12,9 @@ return {
 		buildpic = "armgen.dds",
 		buildtime = 7800,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 -2 0",
+		collisionvolumescales = "41 43 41",
+		collisionvolumetype = "CylY",
 		corpse = "heap",
 		description = "Hybrid Energy Producer/Metal Maker",
 		energymake = 100,
@@ -22,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 23,
 		mass = 390,
 		maxdamage = 1420,
 		maxslope = 10,
@@ -50,6 +53,9 @@ return {
 				metal = 156,
 				object = "3x3d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

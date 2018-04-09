@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 59,
+		losemitheight = 39,
 		maneuverleashlength = 640,
 		mass = 3990,
 		maxdamage = 15800,
@@ -70,6 +70,9 @@ return {
 				metal = 2857,
 				object = "ARMRAZ_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 1524,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

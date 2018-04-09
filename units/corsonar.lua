@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 22,
 		mass = 21,
 		maxangledif1 = 1,
 		maxdamage = 52,
@@ -67,6 +67,9 @@ return {
 				metal = 15,
 				object = "CORSONAR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

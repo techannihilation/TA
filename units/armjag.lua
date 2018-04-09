@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 81,
+		losemitheight = 53,
 		maneuverleashlength = 640,
 		mass = 20050,
 		maxdamage = 66912,
@@ -70,6 +70,9 @@ return {
 				metal = 15037,
 				object = "macross_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 8020,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

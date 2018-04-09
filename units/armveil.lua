@@ -48,6 +48,7 @@ return {
 		unitname = "armveil",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "armveil.dds",
@@ -68,6 +69,9 @@ return {
 				metal = 95,
 				object = "ARMVEIL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -79,6 +83,9 @@ return {
 				metal = 50,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

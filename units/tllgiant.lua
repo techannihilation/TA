@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isairbase = true,
-		losemitheight = 72,
+		losemitheight = 47,
 		maneuverleashlength = 1640,
 		mass = 3750,
 		maxdamage = 6450,
@@ -41,7 +41,7 @@ return {
 		objectname = "TLLGIANT",
 		onoffable = true,
 		radardistance = 2950,
-		radaremitheight = 72,
+		radaremitheight = 47,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 1080,
 		sonardistance = 760,
@@ -69,6 +69,9 @@ return {
 				metal = 1350,
 				object = "tllgiant_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 720,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

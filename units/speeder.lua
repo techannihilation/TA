@@ -25,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 970,
 		maxdamage = 2190,
@@ -64,6 +64,9 @@ return {
 				metal = 727,
 				object = "speeder_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 73,
+		losemitheight = 48,
 		mass = 15900,
 		maxdamage = 10829,
 		metalmake = 2,
@@ -39,7 +39,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMESY",
 		radardistance = 100,
-		radaremitheight = 73,
+		radaremitheight = 48,
 		selfdestructas = "ATOMIC_BLAST",
 		sightdistance = 324,
 		standingfireorder = 2,
@@ -74,6 +74,9 @@ return {
 				metal = 11925,
 				object = "ARMESY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 6360,
 				object = "7X7E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

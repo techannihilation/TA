@@ -25,7 +25,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 3350,
 		maxdamage = 9260,
@@ -66,6 +66,9 @@ return {
 				metal = 2512,
 				object = "armweaver_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 1340,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

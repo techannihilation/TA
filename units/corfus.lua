@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 53,
+		losemitheight = 35,
 		mass = 4750,
 		maxdamage = 5600,
 		maxslope = 10,
@@ -65,6 +65,9 @@ return {
 				metal = 3562,
 				object = "CORFUS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 1900,
 				object = "5X5D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

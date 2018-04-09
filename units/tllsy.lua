@@ -19,7 +19,7 @@ return {
 		footprintz = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 26,
 		mass = 735,
 		maxdamage = 2510,
 		metalmake = 0.5,
@@ -65,6 +65,9 @@ return {
 				metal = 551,
 				object = "tllsy_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 294,
 				object = "6x6C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -86,6 +92,9 @@ return {
 				metal = 183,
 				object = "4x4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 345,
 		maxdamage = 820,
@@ -70,6 +70,9 @@ return {
 				metal = 303,
 				object = "CORMORT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 162,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

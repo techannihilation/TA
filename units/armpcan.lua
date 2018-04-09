@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 71,
+		losemitheight = 46,
 		mass = 960,
 		maxdamage = 4200,
 		maxslope = 12,
@@ -62,6 +62,9 @@ return {
 				metal = 720,
 				object = "ARMPCAN_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -73,6 +76,9 @@ return {
 				metal = 384,
 				object = "3X3E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

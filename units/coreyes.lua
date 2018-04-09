@@ -24,9 +24,8 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = true,
 		levelground = false,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 41.66667,
 		maxdamage = 250,
 		maxslope = 24,
@@ -51,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "coreyes.dds",
 			faction = "CORE",
+			initcloaked = true,
 		},
 		featuredefs = {
 			cdragonseyes_dead = {
@@ -66,6 +66,9 @@ return {
 				metal = 24,
 				object = "1X1B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

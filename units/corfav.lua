@@ -76,6 +76,9 @@ return {
 				metal = 19,
 				object = "CORFAV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -87,6 +90,9 @@ return {
 				metal = 10,
 				object = "2X2B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

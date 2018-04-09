@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 121,
 		maxdamage = 320,
 		maxslope = 10,
@@ -69,6 +69,9 @@ return {
 				metal = 90,
 				object = "CORSOLAR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 48,
 				object = "5X5C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

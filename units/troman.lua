@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 58,
+		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 4620,
 		maxdamage = 16500,
@@ -63,6 +63,9 @@ return {
 				metal = 3090,
 				object = "Troman_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -73,6 +76,9 @@ return {
 				metal = 1648,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

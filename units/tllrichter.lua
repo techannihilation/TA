@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		levelground = false,
-		losemitheight = 31,
+		losemitheight = 22,
 		mass = 745,
 		maxdamage = 2500,
 		maxslope = 36,
@@ -55,6 +55,9 @@ return {
 				metal = 558,
 				object = "TLLRICHTER_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -66,6 +69,9 @@ return {
 				metal = 298,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

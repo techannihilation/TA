@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 22,
 		mass = 3915,
 		maxdamage = 4296,
 		maxslope = 15,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMAVP",
 		radardistance = 50,
-		radaremitheight = 34,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 283.39999,
@@ -96,6 +96,9 @@ return {
 				metal = 2936,
 				object = "ARMAVP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -107,6 +110,9 @@ return {
 				metal = 1566,
 				object = "6X6D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

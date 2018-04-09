@@ -72,6 +72,9 @@ return {
 				metal = 2006,
 				object = "CORMABM_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			cormabm_heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 1070,
 				object = "3X3D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

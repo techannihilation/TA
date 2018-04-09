@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 202,
+		losemitheight = 134,
 		mass = 18800,
 		maxdamage = 52000,
 		maxslope = 10,
@@ -39,7 +39,7 @@ return {
 		objectname = "CORDOOM1",
 		onoffable = true,
 		radardistance = 1200,
-		radaremitheight = 202,
+		radaremitheight = 134,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 780,
@@ -66,6 +66,9 @@ return {
 				metal = 12375,
 				object = "CORDOOM1_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 6600,
 				object = "6X6E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

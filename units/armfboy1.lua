@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 34,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 2250,
 		maxdamage = 11000,
@@ -68,6 +68,9 @@ return {
 				metal = 1687,
 				object = "ARMFBOY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armfboy_heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 900,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

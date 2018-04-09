@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 60,
-		losemitheight = 23,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 109,
 		maxdamage = 200,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMRECTR",
 		radardistance = 50,
-		radaremitheight = 23,
+		radaremitheight = 22,
 		resurrect = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -72,6 +72,9 @@ return {
 				metal = 81,
 				object = "ARMRECTR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 43,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

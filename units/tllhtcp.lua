@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 22,
 		mass = 19000,
 		maxdamage = 14575,
 		maxslope = 10,
@@ -71,6 +71,9 @@ return {
 				metal = 14250,
 				object = "tllhtcp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 7600,
 				object = "7x7d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -97,6 +103,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "all",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

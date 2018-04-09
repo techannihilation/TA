@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 52,
+		losemitheight = 35,
 		mass = 832,
 		maxdamage = 2500,
 		maxslope = 10,
@@ -69,6 +69,9 @@ return {
 				metal = 624,
 				object = "ARMCIR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 332,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

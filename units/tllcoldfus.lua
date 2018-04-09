@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 72,
+		losemitheight = 47,
 		makesmetal = 21,
 		mass = 13250,
 		maxdamage = 8900,
@@ -57,6 +57,9 @@ return {
 				metal = 9937,
 				object = "tllcoldfus_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -67,6 +70,9 @@ return {
 				metal = 5300,
 				object = "5x5a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

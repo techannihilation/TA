@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 45,
+		losemitheight = 32,
 		maneuverleashlength = 640,
 		mass = 960,
 		maxdamage = 2450,
@@ -62,6 +62,9 @@ return {
 				metal = 720,
 				object = "tllartybot_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -72,6 +75,9 @@ return {
 				metal = 384,
 				object = "3x3b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

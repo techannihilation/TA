@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 45,
+		losemitheight = 30,
 		maneuverleashlength = 640,
 		mass = 5500,
 		maxdamage = 4960,
@@ -72,6 +72,9 @@ return {
 				metal = 4125,
 				object = "TLLMLRPC_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 2200,
 				object = "4x4b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isairbase = true,
-		losemitheight = 43,
+		losemitheight = 28,
 		mass = 750,
 		maxdamage = 2500,
 		maxslope = 10,
@@ -73,6 +73,9 @@ return {
 				metal = 562,
 				object = "ARMASP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 300,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

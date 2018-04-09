@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 22,
 		mass = 2990,
 		maxdamage = 3510,
 		metalmake = 1.2,
@@ -76,6 +76,9 @@ return {
 				metal = 2242,
 				object = "tllsubpen_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -86,6 +89,9 @@ return {
 				metal = 1196,
 				object = "6x6a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

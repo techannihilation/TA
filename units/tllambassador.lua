@@ -28,7 +28,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 70,
+		losemitheight = 46,
 		maneuverleashlength = 640,
 		mass = 2533.33325,
 		maxdamage = 15200,
@@ -67,6 +67,9 @@ return {
 				metal = 756,
 				object = "tllambassador_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 403,
 				object = "4x4c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

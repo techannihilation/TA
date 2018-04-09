@@ -24,7 +24,7 @@ return {
 		icontype = "krogoth",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 174,
+		losemitheight = 116,
 		maneuverleashlength = 640,
 		mass = 156650,
 		maxdamage = 745000,
@@ -66,6 +66,9 @@ return {
 				metal = 35737,
 				object = "tllcolossus_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 13060,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

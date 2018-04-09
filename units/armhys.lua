@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 65,
+		losemitheight = 44,
 		mass = 11200,
 		maxdamage = 6500,
 		maxslope = 20,
@@ -33,7 +33,7 @@ return {
 		noautofire = false,
 		objectname = "ARMHYS",
 		radardistance = 1000,
-		radaremitheight = 65,
+		radaremitheight = 44,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 950,
 		standingfireorder = 2,
@@ -55,6 +55,9 @@ return {
 				metal = 8400,
 				object = "armhys_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -65,6 +68,9 @@ return {
 				metal = 4480,
 				object = "5x5a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

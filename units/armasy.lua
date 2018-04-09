@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 71,
+		losemitheight = 46,
 		mass = 4917,
 		maxdamage = 4512,
 		maxvelocity = 0,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMASY",
 		radardistance = 50,
-		radaremitheight = 71,
+		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 299,
@@ -83,6 +83,9 @@ return {
 				metal = 3687,
 				object = "ARMASY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

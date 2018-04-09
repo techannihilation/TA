@@ -82,7 +82,8 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 end
 
 function gadget:UnitDestroyed(unitID, unitDefID)
-	isloadedID[unitID] = false
+	isloadedID[unitID] = nil
+  holdingID[unitID] = nil
 end
 
 function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)

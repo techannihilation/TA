@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		losemitheight = 33,
+		losemitheight = 22,
 		mass = 806,
 		maxdamage = 1451,
 		maxslope = 10,
@@ -63,6 +63,9 @@ return {
 				metal = 604,
 				object = "ARMFATF_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 322,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

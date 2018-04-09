@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 23,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 294.66666,
 		maxdamage = 1768,
@@ -67,6 +67,9 @@ return {
 				metal = 217,
 				object = "CORTHUD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corthud_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 116,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

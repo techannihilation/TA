@@ -24,7 +24,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 535,
 		maxdamage = 2200,
@@ -66,6 +66,9 @@ return {
 				metal = 401,
 				object = "TLLamphibot_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 214,
 				object = "3x3F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

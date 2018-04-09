@@ -76,6 +76,9 @@ return {
 				metal = 660,
 				object = "CORVROC_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -87,6 +90,9 @@ return {
 				metal = 352,
 				object = "3X3E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

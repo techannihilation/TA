@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 53,
+		losemitheight = 35,
 		mass = 4341,
 		maxdamage = 3250,
 		maxslope = 10,
@@ -37,7 +37,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "TLLAAP",
 		radardistance = 1200,
-		radaremitheight = 53,
+		radaremitheight = 35,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 240,
 		standingfireorder = 2,
@@ -72,6 +72,9 @@ return {
 				metal = 3255,
 				object = "tllaap_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 1736,
 				object = "6x6a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

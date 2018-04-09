@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 4630,
 		maxdamage = 5205,
 		maxslope = 10,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CAHP",
 		radardistance = 50,
-		radaremitheight = 27,
+		radaremitheight = 22,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 220,
 		standingfireorder = 2,
@@ -74,6 +74,9 @@ return {
 				metal = 3472,
 				object = "Cahp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 1852,
 				object = "7x7a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

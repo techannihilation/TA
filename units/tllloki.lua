@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 23,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 455,
 		maxdamage = 650,
@@ -62,6 +62,9 @@ return {
 				metal = 341,
 				object = "TLLLOKI_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -72,6 +75,9 @@ return {
 				metal = 182,
 				object = "3x3C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

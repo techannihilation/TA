@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 265,
 		maxdamage = 1510,
@@ -67,6 +67,9 @@ return {
 				metal = 198,
 				object = "ARMHAM_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armham_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 106,
 				object = "2X2E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

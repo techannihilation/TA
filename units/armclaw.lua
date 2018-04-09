@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 45,
+		losemitheight = 31,
 		mass = 267,
 		maxdamage = 1200,
 		maxslope = 10,
@@ -77,6 +77,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			rockteeth = {
 				animating = 0,
@@ -94,6 +97,9 @@ return {
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

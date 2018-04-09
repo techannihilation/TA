@@ -28,8 +28,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = false,
-		losemitheight = 31,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 495,
 		maxdamage = 1798,
@@ -45,7 +44,7 @@ return {
 		objectname = "TAIPAN",
 		onoffable = true,
 		radardistance = 450,
-		radaremitheight = 31,
+		radaremitheight = 22,
 		selfdestructas = "BIG_UNITEX",
 		sightdistance = 450,
 		standingfireorder = 2,
@@ -73,6 +72,9 @@ return {
 				metal = 371,
 				object = "taipan_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +85,9 @@ return {
 				metal = 198,
 				object = "2x2c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

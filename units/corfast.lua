@@ -29,7 +29,7 @@ return {
 		healtime = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 205,
 		maxdamage = 750,
@@ -104,6 +104,9 @@ return {
 				metal = 153,
 				object = "CORFAST_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -115,6 +118,9 @@ return {
 				metal = 82,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -47,6 +47,7 @@ local GetTeamUnitCount				= Spring.GetTeamUnitCount
 local GetMyAllyTeamID				= Spring.GetMyAllyTeamID
 local GetTeamList					= Spring.GetTeamList
 local GetTeamInfo					= Spring.GetTeamInfo
+local GetUnitDefID					= Spring.GetUnitDefID
 
 local GetPlayerInfo					= Spring.GetPlayerInfo
 local GetTeamColor					= Spring.GetTeamColor
@@ -969,10 +970,10 @@ function getTeamProduction(teamID)
 	local currentWind = string.format('%.1f', select(4,Spring.GetWind()))
 
 	if inSpecMode then
-		local teamUnits = Spring.GetTeamUnitsSorted(teamID)
-		for unitDefID, units in pairs(teamUnits) do
+		local teamUnits = Spring.GetTeamUnits(teamID)
+		for unitID in pairs(teamUnits) do
+			local unitDefID = GetUnitDefID(unitID)
 			if reclaimerUnitDefs[unitDefID] then -- or metalUnitDefs[unitDefID]
-				for i, unitID in ipairs(units) do
 					local metalMake,metalUse,energyMake,energyUse = Spring.GetUnitResources(unitID)
 					if metalMake > 0 then
 						totalMetalReclaim = totalMetalReclaim + (metalMake-reclaimerUnitDefs[unitDefID][1])
@@ -980,7 +981,6 @@ function getTeamProduction(teamID)
 					if energyMake > 0 then
 						totalEnergyReclaim = totalEnergyReclaim + (energyMake-reclaimerUnitDefs[unitDefID][2])
 					end
-				end
 			end
 		end
 	end

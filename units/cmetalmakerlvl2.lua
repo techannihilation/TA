@@ -21,7 +21,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 41,
+		losemitheight = 27,
 		mass = 12250,
 		maxdamage = 6200,
 		maxslope = 20,
@@ -52,6 +52,9 @@ return {
 				metal = 19125,
 				object = "CMetalMakerLvl2_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -62,6 +65,9 @@ return {
 				metal = 10200,
 				object = "CMetalMakerLvl2_heap",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -12,6 +12,9 @@ return {
 		buildpic = "cfusionplant.dds",
 		buildtime = 1100000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 41 0",
+		collisionvolumescales = "165 101 165",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produces Energy",
 		energymake = 12800,
@@ -24,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 94,
+		losemitheight = 90,
 		mass = 33600,
 		maxdamage = 21250,
 		maxslope = 10,
@@ -57,6 +60,9 @@ return {
 				metal = 50400,
 				object = "CFusionPlant_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -67,6 +73,9 @@ return {
 				metal = 26880,
 				object = "CFusionPlant_heap",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

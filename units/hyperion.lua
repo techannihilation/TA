@@ -29,7 +29,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 108,
+		losemitheight = 72,
 		maneuverleashlength = 640,
 		mass = 73500,
 		maxdamage = 255000,
@@ -73,6 +73,9 @@ return {
 				metal = 55125,
 				object = "HYPERION_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			hyperion_heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 29400,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

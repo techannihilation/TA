@@ -27,7 +27,7 @@ return {
 		icontype = "mech",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 63,
+		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 7450,
 		maxdamage = 18900,
@@ -71,6 +71,9 @@ return {
 				metal = 5587,
 				object = "HEAVYIMPACT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heavyimpact_heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 2980,
 				object = "5X5B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

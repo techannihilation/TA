@@ -13,9 +13,8 @@ return {
 		buildtime = 900000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "138 99 72",
-		collisionvolumetest = 1,
-		collisionvolumetype = "Box",
+		collisionvolumescales = "188 99 132",
+		collisionvolumetype = "box",
 		corpse = "dead",
 		description = "Produces Energy",
 		energymake = 12000,
@@ -28,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 90,
+		losemitheight = 50,
 		mass = 29850,
 		maxdamage = 24850,
 		maxslope = 10,
@@ -61,6 +60,9 @@ return {
 				metal = 44775,
 				object = "AFusionPlant_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -71,6 +73,9 @@ return {
 				metal = 23880,
 				object = "AFusionPlant_heap",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

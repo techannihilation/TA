@@ -248,9 +248,9 @@ function gadget:Initialize()
 		  end
         end
       else
-        if (ud.techLevel == 4) then
+        if (ud.mass > 200 and ud.mass < 1000 ) then
           Spring.SetUnitDefIcon(udid, "sphere2.user")
-        elseif (ud.techLevel == 6) then
+        elseif (ud.mass > 1000) then
           Spring.SetUnitDefIcon(udid, "sphere3.user")
         else
           Spring.SetUnitDefIcon(udid, "sphere.user")

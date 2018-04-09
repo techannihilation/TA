@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 61,
+		losemitheight = 40,
 		mass = 2650,
 		maxdamage = 5040,
 		maxslope = 10,
@@ -54,6 +54,9 @@ return {
 				metal = 1587,
 				object = "tllantinuke_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -64,6 +67,9 @@ return {
 				metal = 846,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

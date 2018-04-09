@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 2000,
-		losemitheight = 45,
+		losemitheight = 29,
 		makesmetal = 6,
 		mass = 3880,
 		maxdamage = 4680,
@@ -53,6 +53,9 @@ return {
 				footprintz = 5,
 				metal = 2910,
 				object = "tllmedfusion_dead",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -62,6 +65,9 @@ return {
 				footprintz = 4,
 				metal = 1552,
 				object = "4x4c",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

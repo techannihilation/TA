@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 32,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 1440,
 		maxdamage = 7000,
@@ -71,6 +71,9 @@ return {
 				metal = 1080,
 				object = "MARAUDER_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 576,
 				object = "3X3F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

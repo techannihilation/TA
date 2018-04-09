@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 121,
 		maxdamage = 590,
@@ -109,6 +109,9 @@ return {
 				metal = 90,
 				object = "CORCK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -120,6 +123,9 @@ return {
 				metal = 48,
 				object = "2X2F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -31,7 +31,7 @@ return {
 		idletime = 300,
 		immunetoparalyzer = 1,
 		isairbase = true,
-		losemitheight = 133,
+		losemitheight = 88,
 		maneuverleashlength = 1250,
 		mass = 123200,
 		maxdamage = 343111,
@@ -81,6 +81,9 @@ return {
 				metal = 44400,
 				object = "fatshrew_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			fatshrew_heap = {
 				blocking = false,
@@ -92,6 +95,9 @@ return {
 				metal = 18680,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

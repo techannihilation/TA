@@ -36,7 +36,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27.5,
+		losemitheight = 15,
 		mass = 36600,
 		maxdamage = 14000,
 		maxslope = 10,
@@ -87,6 +87,9 @@ return {
 				metal = 19200,
 				object = "tllbuilderlvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

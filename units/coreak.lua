@@ -20,7 +20,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 10720,
 		maxdamage = 10870,
@@ -58,6 +58,9 @@ return {
 				metal = 5480,
 				object = "CORAAK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -69,6 +72,9 @@ return {
 				metal = 3256,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

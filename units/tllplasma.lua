@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 2950,
 		maxdamage = 3790,
 		maxslope = 10,
@@ -57,6 +57,9 @@ return {
 				metal = 2212,
 				object = "tllplasma_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -67,6 +70,9 @@ return {
 				metal = 1180,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

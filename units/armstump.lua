@@ -76,6 +76,9 @@ return {
 				metal = 161,
 				object = "ARMSTUMP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -87,6 +90,9 @@ return {
 				metal = 86,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

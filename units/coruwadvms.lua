@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 37,
+		losemitheight = 25,
 		mass = 1675,
 		maxdamage = 10050,
 		maxslope = 20,
@@ -61,6 +61,9 @@ return {
 				metal = 567,
 				object = "CORUWADVMS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -72,6 +75,9 @@ return {
 				metal = 302,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

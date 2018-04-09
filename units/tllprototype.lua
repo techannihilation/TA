@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 126,
+		losemitheight = 82,
 		mass = 72600,
 		maxdamage = 74500,
 		maxslope = 18,
@@ -39,7 +39,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "tllprototype",
 		radardistance = 50,
-		radaremitheight = 126,
+		radaremitheight = 82,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 273,
@@ -56,6 +56,7 @@ return {
 			[2] = "tllhailstorm",
 			[3] = "hyperion",
 			[4] = "tllcolossus",
+			[5] = "tllgorgon",
 		},
 		customparams = {
 			buildpic = "tllprototype.dds",
@@ -73,6 +74,9 @@ return {
 				metal = 39840,
 				object = "7X7C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

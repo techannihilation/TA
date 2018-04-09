@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 24,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 43.33333,
 		maxdamage = 260,
@@ -70,6 +70,9 @@ return {
 				metal = 26,
 				object = "CORAK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 14,
 				object = "2X2C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

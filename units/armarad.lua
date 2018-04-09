@@ -47,6 +47,7 @@ return {
 		unitname = "armarad",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "armarad.dds",
@@ -67,6 +68,9 @@ return {
 				metal = 420,
 				object = "ARMARAD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +82,9 @@ return {
 				metal = 224,
 				object = "2X2C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

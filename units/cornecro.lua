@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 60,
-		losemitheight = 36,
+		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 109,
 		maxdamage = 200,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORNECRO",
 		radardistance = 50,
-		radaremitheight = 36,
+		radaremitheight = 25,
 		resurrect = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -72,6 +72,9 @@ return {
 				metal = 81,
 				object = "CORNECRO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 43,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

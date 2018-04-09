@@ -54,6 +54,7 @@ return {
 		unitname = "corgant",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		workertime = 600,
 		yardmap = "oooooooooooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco",
 		buildoptions = {
@@ -90,6 +91,9 @@ return {
 				metal = 13599,
 				object = "CORGANT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -101,6 +105,9 @@ return {
 				metal = 7253,
 				object = "7X7B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

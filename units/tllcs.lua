@@ -95,6 +95,9 @@ return {
 				metal = 217,
 				object = "TLLCS_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -105,6 +108,9 @@ return {
 				metal = 116,
 				object = "4x4D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

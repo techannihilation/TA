@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 448.33334,
 		maxdamage = 2690,
@@ -65,6 +65,9 @@ return {
 				metal = 315,
 				object = "corechelonian_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 168,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

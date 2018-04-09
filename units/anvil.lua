@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 41,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 17550,
 		maxdamage = 15500,
@@ -68,6 +68,9 @@ return {
 				metal = 13162,
 				object = "anvil_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 7020,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

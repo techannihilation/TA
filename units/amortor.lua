@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		mass = 1950,
 		maxdamage = 2460,
 		maxslope = 10,
@@ -62,6 +62,9 @@ return {
 				metal = 1608,
 				object = "amortor_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -72,6 +75,9 @@ return {
 				metal = 857,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

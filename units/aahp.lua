@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 37,
+		losemitheight = 25,
 		mass = 4480,
 		maxdamage = 5005,
 		maxslope = 10,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "AAHP",
 		radardistance = 50,
-		radaremitheight = 37,
+		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 220,
 		standingfireorder = 2,
@@ -75,6 +75,9 @@ return {
 				metal = 3360,
 				object = "Aahp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 1792,
 				object = "7x7a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

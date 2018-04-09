@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 22,
 		mass = 640,
 		maxdamage = 3500,
 		maxslope = 20,
@@ -69,6 +69,9 @@ return {
 				metal = 478,
 				object = "CORMOHO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 255,
 				object = "5X5A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

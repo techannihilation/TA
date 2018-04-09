@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 29,
 		mass = 2065,
 		maxdamage = 5100,
 		maxslope = 10,
@@ -37,7 +37,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMAMD",
 		radardistance = 50,
-		radaremitheight = 42,
+		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 201,
@@ -67,6 +67,9 @@ return {
 				metal = 1549,
 				object = "ARMAMD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 826,
 				object = "5X5B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

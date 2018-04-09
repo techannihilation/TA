@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1090,
 		maxdamage = 2800,
@@ -73,6 +73,9 @@ return {
 				metal = 817,
 				object = "CORROY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 436,
 				object = "5X5D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

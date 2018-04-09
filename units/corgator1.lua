@@ -72,6 +72,9 @@ return {
 				metal = 174,
 				object = "CORGATOR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corgator_heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 93,
 				object = "2X2F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

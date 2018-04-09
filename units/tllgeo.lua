@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 49,
+		losemitheight = 32,
 		makesmetal = 6,
 		mass = 1810,
 		maxdamage = 1950,
@@ -56,6 +56,9 @@ return {
 				metal = 1357,
 				object = "tllgeo_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -66,6 +69,9 @@ return {
 				metal = 724,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

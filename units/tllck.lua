@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 150,
 		maxdamage = 780,
@@ -78,11 +78,12 @@ return {
 			[23] = "tlllbt",
 			[24] = "tlllmt",
 			[25] = "tllsam",
-			[26] = "tlljam",
-			[27] = "tllshoretorp",
-			[28] = "tlljuno",
-			[29] = "tllarch",
-			[30] = "tllsy",
+			[26] = "tlltetanos",
+			[27] = "tlljam",
+			[28] = "tllshoretorp",
+			[29] = "tlljuno",
+			[30] = "tllarch",
+			[31] = "tllsy",
 		},
 		customparams = {
 			buildpic = "tllck.dds",
@@ -99,6 +100,9 @@ return {
 				metal = 112,
 				object = "tllck_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -109,6 +113,9 @@ return {
 				metal = 60,
 				object = "2x2a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

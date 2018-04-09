@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 7,
 		idletime = 1800,
-		losemitheight = 94,
+		losemitheight = 62,
 		maneuverleashlength = 640,
 		mass = 26333.33398,
 		maxdamage = 158000,
@@ -73,6 +73,9 @@ return {
 				metal = 19440,
 				object = "Armorco_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 10368,
 				object = "5x5a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

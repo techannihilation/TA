@@ -30,7 +30,7 @@ return {
 		hightrajectory = 1,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 30,
 		maneuverleashlength = 640,
 		mass = 650,
 		maxdamage = 3200,
@@ -71,6 +71,9 @@ return {
 				metal = 487,
 				object = "tlldischarge_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 260,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

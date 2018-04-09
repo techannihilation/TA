@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 68,
+		losemitheight = 45,
 		mass = 970,
 		maxdamage = 2825,
 		maxslope = 10,
@@ -66,6 +66,9 @@ return {
 				metal = 648,
 				object = "tllvhlt_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
+		losemitheight = 22,
 		maneuverleashlength = 320,
 		mass = 311,
 		maxdamage = 835,
@@ -38,7 +38,7 @@ return {
 		objectname = "TLLDIVINE",
 		onoffable = true,
 		radardistance = 2200,
-		radaremitheight = 32,
+		radaremitheight = 22,
 		script = "tlldivine.lua",
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 320,
@@ -64,6 +64,9 @@ return {
 				metal = 233,
 				object = "tlldivine_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 124,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

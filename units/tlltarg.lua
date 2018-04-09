@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		istargetingupgrade = true,
-		losemitheight = 39,
+		losemitheight = 26,
 		mass = 7792,
 		maxdamage = 3455,
 		maxslope = 10,
@@ -35,7 +35,7 @@ return {
 		objectname = "TLLTARG",
 		onoffable = true,
 		radardistance = 5800,
-		radaremitheight = 39,
+		radaremitheight = 26,
 		script = "tlltarg.lua",
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 900,
@@ -58,6 +58,9 @@ return {
 				metal = 5844,
 				object = "tlltarg_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -68,6 +71,9 @@ return {
 				metal = 3116,
 				object = "6x6b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

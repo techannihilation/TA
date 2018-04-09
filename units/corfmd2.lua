@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 53,
+		losemitheight = 35,
 		mass = 23582,
 		maxdamage = 18280,
 		maxslope = 10,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORFMD2",
 		radardistance = 50,
-		radaremitheight = 53,
+		radaremitheight = 35,
 		script = "corfmd.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -67,6 +67,9 @@ return {
 				metal = 17686,
 				object = "CORFMD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corfmd1_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 9432,
 				object = "5X5D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

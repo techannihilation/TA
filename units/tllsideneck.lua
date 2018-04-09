@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 2250,
 		maxdamage = 3000,
@@ -64,6 +64,9 @@ return {
 				metal = 1687,
 				object = "tllturtle_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 900,
 				object = "3x3b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

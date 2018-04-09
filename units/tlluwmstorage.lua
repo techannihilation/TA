@@ -17,7 +17,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 58,
+		losemitheight = 38,
 		mass = 382,
 		maxdamage = 1725,
 		maxslope = 20,
@@ -48,6 +48,9 @@ return {
 				metal = 286,
 				object = "tlluwmstorage_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -58,6 +61,9 @@ return {
 				metal = 152,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

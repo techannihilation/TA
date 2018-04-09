@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
+		losemitheight = 22,
 		mass = 8150,
 		maxdamage = 5300,
 		maxslope = 10,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMSILO",
 		radardistance = 50,
-		radaremitheight = 32,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "NUCLEAR_MISSILE",
 		sightdistance = 455,
@@ -70,6 +70,9 @@ return {
 				metal = 6112,
 				object = "ARMSILO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 3260,
 				object = "3X3F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

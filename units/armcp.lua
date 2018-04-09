@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 24,
+		losemitheight = 22,
 		mass = 1065,
 		maxdamage = 1850,
 		maxslope = 10,
@@ -41,7 +41,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMCP",
 		radardistance = 500,
-		radaremitheight = 24,
+		radaremitheight = 22,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 225,
 		standingfireorder = 2,
@@ -72,6 +72,9 @@ return {
 				metal = 798,
 				object = "armcp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

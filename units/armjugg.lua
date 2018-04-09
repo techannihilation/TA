@@ -24,7 +24,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 73,
+		losemitheight = 48,
 		maneuverleashlength = 640,
 		mass = 13250,
 		maxdamage = 41900,
@@ -67,6 +67,9 @@ return {
 				metal = 9937,
 				object = "armjugg_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 5300,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 22,
 		maneuverleashlength = 320,
 		mass = 203,
 		maxdamage = 805,
@@ -40,7 +40,7 @@ return {
 		objectname = "TLLOBSERVER",
 		onoffable = true,
 		radardistance = 1800,
-		radaremitheight = 30,
+		radaremitheight = 22,
 		script = "tllobserver.lua",
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 240,
@@ -65,6 +65,9 @@ return {
 				metal = 152,
 				object = "tllobserver_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 81,
 				object = "2x2a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

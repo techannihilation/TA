@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 79,
+		losemitheight = 52,
 		maneuverleashlength = 640,
 		mass = 48000,
 		maxdamage = 96000,
@@ -45,7 +45,7 @@ return {
 		objectname = "ARMTRMPH",
 		pushresistant = true,
 		radardistance = 2000,
-		radaremitheight = 79,
+		radaremitheight = 52,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		sightdistance = 700,
@@ -73,6 +73,9 @@ return {
 				metal = 36000,
 				object = "armtrmph_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

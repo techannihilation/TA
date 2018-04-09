@@ -20,7 +20,7 @@ return {
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
-		losemitheight = 29,
+		losemitheight = 22,
 		mass = 3950,
 		maxdamage = 5050,
 		maxslope = 10,
@@ -50,6 +50,9 @@ return {
 				metal = 2650,
 				object = "tllarch_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -61,6 +64,9 @@ return {
 				metal = 1825,
 				object = "3x3b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

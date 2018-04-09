@@ -12,6 +12,9 @@ return {
 		buildpic = "tllgen.dds",
 		buildtime = 8950,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "42 50 42",
+		collisionvolumetype = "CylY",
 		corpse = "heap",
 		description = "Hybrid Energy Producer/Metal Maker",
 		energymake = 160,
@@ -23,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 30,
 		mass = 615,
 		maxdamage = 1590,
 		maxslope = 10,
@@ -51,6 +54,9 @@ return {
 				metal = 246,
 				object = "3x3d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

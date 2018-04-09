@@ -11,12 +11,12 @@ piece  base, torax, abdomen, magasin, laser_pylone, laser_bloc, cartouche, laser
        patte51, patte52, patte53, patte54, stomp5, patte60, patte61, patte62,
        patte63, patte64, stomp6, ecraseur_epaule, ecraseur_bras, load_shoulder, load_arm, unload_shoulder,
        unload_arm, goal_shoulder, goal_arm, basket1, basket2, basket3, basket4, basket5,
-       basket6, rocket_left, rocket_right;
+       basket6, rocket_left, rocket_right, R1, R2, R3, R4, R5, R6;
 
 static-var  bMoving, gun_1, gun_3, Static_Var_4, Static_Var_5,
             restore_delay, bAiming, Static_Var_8, Static_Var_9, Static_Var_10,
             Static_Var_11, Static_Var_12, Static_Var_13, Static_Var_14, Static_Var_15,
-            Static_Var_16;
+            Static_Var_16, starburst1, starburst2;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -547,6 +547,8 @@ Create()
 	Static_Var_12 = 5;
 	Static_Var_13 = 5;
 	Static_Var_14 = 5;
+	starburst1 = 0;
+	starburst2  = 0;
 	set ARMORED to 1;
 	set ACTIVATION to 1;
 	dont-cache abdomen;
@@ -775,7 +777,11 @@ AimWeapon5(heading, pitch)
 
 FireWeapon5()
 {
-
+	++starburst1;
+	if (starburst1 == 3)
+	{
+		starburst1 = 0;
+	}
 }
 
 AimFromWeapon5(piecenum)
@@ -786,7 +792,18 @@ AimFromWeapon5(piecenum)
 
 QueryWeapon5(piecenum)
 {
-	piecenum = rocket_right;
+	if (starburst1 == 0)
+	{
+		piecenum = R1;
+	}
+	if (starburst1 == 1)
+	{
+		piecenum = R2;
+	}
+	if (starburst1 == 2)
+	{
+		piecenum = R3;
+	}
 }
 
 AimWeapon6(heading, pitch)
@@ -796,7 +813,11 @@ AimWeapon6(heading, pitch)
 
 FireWeapon6()
 {
-
+	++starburst2;
+	if (starburst2 == 3)
+	{
+		starburst2 = 0;
+	}
 }
 
 AimFromWeapon6(piecenum)
@@ -807,7 +828,18 @@ AimFromWeapon6(piecenum)
 
 QueryWeapon6(piecenum)
 {
-	piecenum = rocket_left;
+	if (starburst2 == 0)
+	{
+		piecenum = R4;
+	}
+	if (starburst2 == 1)
+	{
+		piecenum = R5;
+	}
+	if (starburst2 == 2)
+	{
+		piecenum = R6;
+	}
 }
 
 SweetSpot(piecenum)

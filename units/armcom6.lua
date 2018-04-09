@@ -43,7 +43,7 @@ return {
 		idleautoheal = 11,
 		idletime = 1200,
 		immunetoparalyzer = 1,
-		losemitheight = 45,
+		losemitheight = 32,
 		maneuverleashlength = 640,
 		mass = 5000,
 		maxdamage = 10000,
@@ -61,7 +61,7 @@ return {
 		objectname = "ARMCOM6",
 		onoffable = true,
 		radardistance = 1060,
-		radaremitheight = 45,
+		radaremitheight = 32,
 		reclaimable = false,
 		script = "armcom.cob",
 		seismicsignature = 0,
@@ -134,6 +134,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -152,6 +155,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

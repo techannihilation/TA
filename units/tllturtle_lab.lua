@@ -14,6 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT LEVEL1 UNDERWATER",
+		collisionvolumeoffsets = "0 12 -6",
+		collisionvolumescales = "133 76 126",
+		collisionvolumetype = "box",
 		corpse = "dead",
 		description = "Produces Kbots",
 		energystorage = 100,
@@ -25,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 23,
 		mass = 4400,
 		maxdamage = 4250,
 		maxslope = 10,
@@ -71,6 +74,9 @@ return {
 				metal = 3300,
 				object = "tllturtle_lab_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +88,9 @@ return {
 				metal = 1760,
 				object = "6x6C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -92,6 +101,9 @@ return {
 				metal = 1100,
 				object = "4x4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

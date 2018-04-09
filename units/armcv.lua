@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 24,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 206.66667,
 		maxdamage = 1240,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMCV",
 		radardistance = 50,
-		radaremitheight = 24,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 253,
@@ -114,6 +114,9 @@ return {
 				metal = 102,
 				object = "ARMCV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -125,6 +128,9 @@ return {
 				metal = 54,
 				object = "3X3C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

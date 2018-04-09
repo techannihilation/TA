@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 111,
+		losemitheight = 73,
 		mass = 20480,
 		maxdamage = 12000,
 		maxslope = 15,
@@ -70,6 +70,9 @@ return {
 				metal = 15360,
 				object = "ARMEAP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 8192,
 				object = "7X7B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

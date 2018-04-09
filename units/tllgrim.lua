@@ -28,7 +28,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 72,
+		losemitheight = 48,
 		maneuverleashlength = 640,
 		mass = 20460,
 		maxdamage = 11000,
@@ -69,6 +69,9 @@ return {
 				metal = 17595,
 				object = "tllgrim_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 9384,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

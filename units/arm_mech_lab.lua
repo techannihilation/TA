@@ -50,6 +50,7 @@ return {
 		turnrate = 0,
 		unitname = "arm_mech_lab",
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		workertime = 600,
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {
@@ -76,6 +77,9 @@ return {
 				metal = 35840,
 				object = "7X7C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

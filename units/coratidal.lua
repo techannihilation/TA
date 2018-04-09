@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 36,
+		losemitheight = 24,
 		mass = 346,
 		maxdamage = 950,
 		maxslope = 10,
@@ -58,6 +58,9 @@ return {
 				metal = 259,
 				object = "CORATIDAL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -69,6 +72,9 @@ return {
 				metal = 138,
 				object = "6X6B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

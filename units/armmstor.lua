@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		mass = 443,
 		maxdamage = 2658,
 		maxslope = 10,
@@ -66,6 +66,9 @@ return {
 				metal = 243,
 				object = "ARMMSTOR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 130,
 				object = "4X4E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -26,7 +26,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 18500,
 		maxdamage = 58500,
@@ -65,6 +65,9 @@ return {
 				metal = 13875,
 				object = "CORBT_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 7400,
 				object = "4x4a",
 				reclamable = 1,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

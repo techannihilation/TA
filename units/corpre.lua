@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 28,
 		mass = 10560,
 		maxdamage = 8500,
 		maxslope = 20,
@@ -35,7 +35,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORPRE",
 		radardistance = 1000,
-		radaremitheight = 44,
+		radaremitheight = 28,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 1050,
 		standingfireorder = 2,
@@ -57,6 +57,9 @@ return {
 				metal = 7920,
 				object = "corpre_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -67,6 +70,9 @@ return {
 				metal = 4224,
 				object = "5x5a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

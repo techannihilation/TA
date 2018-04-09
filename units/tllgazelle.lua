@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
+		losemitheight = 22,
 		mass = 33430,
 		maxdamage = 18280,
 		maxslope = 10,
@@ -38,7 +38,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "tllgazelle",
 		radardistance = 50,
-		radaremitheight = 32,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 195,
@@ -65,6 +65,9 @@ return {
 				metal = 49072,
 				object = "TLLGAZELLE_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 26172,
 				object = "5X5D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

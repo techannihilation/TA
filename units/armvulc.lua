@@ -46,6 +46,7 @@ return {
 		unitname = "armvulc",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "armvulc.dds",
@@ -66,6 +67,9 @@ return {
 				metal = 21525,
 				object = "ARMVULC_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +81,9 @@ return {
 				metal = 11480,
 				object = "7X7A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

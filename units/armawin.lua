@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 136,
+		losemitheight = 90,
 		mass = 125,
 		maxdamage = 530,
 		maxslope = 10,
@@ -62,6 +62,9 @@ return {
 				metal = 93,
 				object = "ARMAWIN_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -73,6 +76,9 @@ return {
 				metal = 50,
 				object = "7X7B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

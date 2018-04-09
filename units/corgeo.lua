@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 51,
+		losemitheight = 34,
 		mass = 1405,
 		maxdamage = 1650,
 		maxslope = 15,
@@ -67,6 +67,9 @@ return {
 				metal = 1053,
 				object = "CORGEO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 562,
 				object = "4X4B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

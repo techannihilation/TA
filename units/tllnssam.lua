@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 37,
+		losemitheight = 25,
 		mass = 448,
 		maxdamage = 1455,
 		minwaterdepth = 20,
@@ -33,7 +33,7 @@ return {
 		objectname = "TLLNSSAM",
 		onoffable = true,
 		radardistance = 950,
-		radaremitheight = 37,
+		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
 		standingfireorder = 2,
@@ -55,6 +55,9 @@ return {
 				metal = 336,
 				object = "tllNSSAM_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -65,6 +68,9 @@ return {
 				metal = 179,
 				object = "4x4b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

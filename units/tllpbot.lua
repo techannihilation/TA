@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 41,
+		losemitheight = 28,
 		maneuverleashlength = 640,
 		mass = 208.33333,
 		maxdamage = 1250,
@@ -65,6 +65,9 @@ return {
 				metal = 153,
 				object = "tllpbot_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 82,
 				object = "2x2d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

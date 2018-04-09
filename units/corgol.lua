@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 29,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 2200,
 		maxdamage = 9000,
@@ -76,6 +76,9 @@ return {
 				metal = 1650,
 				object = "CORGOL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -87,6 +90,9 @@ return {
 				metal = 880,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

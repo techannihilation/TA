@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 72,
+		losemitheight = 74,
 		mass = 21650,
 		maxdamage = 52685,
 		maxslope = 10,
@@ -39,7 +39,7 @@ return {
 		objectname = "tllobliterator1",
 		onoffable = true,
 		radardistance = 1200,
-		radaremitheight = 72,
+		radaremitheight = 74,
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 850,
 		standingfireorder = 2,
@@ -61,6 +61,9 @@ return {
 				metal = 13237,
 				object = "tllobliterator1_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -72,6 +75,9 @@ return {
 				metal = 6260,
 				object = "4x4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -82,6 +88,9 @@ return {
 				metal = 7412,
 				object = "3x3C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

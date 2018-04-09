@@ -64,6 +64,9 @@ return {
 				metal = 225,
 				object = "armvisit_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

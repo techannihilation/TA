@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 55,
+		losemitheight = 36,
 		mass = 655,
 		maxdamage = 3930,
 		maxvelocity = 0,
@@ -65,6 +65,9 @@ return {
 				metal = 446,
 				object = "CORFHLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

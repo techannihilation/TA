@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 90,
+		losemitheight = 59,
 		mass = 58,
 		maxangledif1 = 1,
 		maxdamage = 81,
@@ -39,7 +39,7 @@ return {
 		objectname = "CORRAD",
 		onoffable = true,
 		radardistance = 2100,
-		radaremitheight = 90,
+		radaremitheight = 59,
 		script = "corrad.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -69,6 +69,9 @@ return {
 				metal = 43,
 				object = "CORRAD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 23,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

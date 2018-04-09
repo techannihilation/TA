@@ -53,6 +53,28 @@ function UnitDef_Post(name, uDef)
 			end
 			Spring.Echo(name,uDef.losemitheight,uDef.radaremitheight,unitheight[name])
 		end
+
+		--Randomize Cost
+		if uDef.buildcostmetal then
+			if string.match(uDef.buildcostmetal,"[0]$") and uDef.buildcostmetal>99 then
+				buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.01)
+				if buildcostmetal == uDef.buildcostmetal then
+         			buildcostmetal = uDef.buildcostmetal + math.floor(5*math.random()*math.random(-1,1))
+         		end
+         		uDef.buildcostmetal = buildcostmetal
+			end
+		end
+
+		if uDef.buildcostenergy then
+			if string.match(uDef.buildcostenergy,"[0]$") and uDef.buildcostenergy>99 then
+				buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.01)
+				if buildcostenergy == uDef.buildcostenergy then
+         			buildcostenergy = uDef.buildcostenergy + math.floor(5*math.random()*math.random(-1,1))
+         		end
+         		uDef.buildcostenergy = buildcostenergy
+			end
+		end
+
 		--Fix unit mass
 		if (not uDef.customparams.iscommander) then
 			uDef.mass = math.max(uDef.maxdamage / 6.0, uDef.buildcostmetal)

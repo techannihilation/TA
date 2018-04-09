@@ -31,7 +31,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 31,
+		losemitheight = 22,
 		mass = 4107,
 		maxdamage = 3808,
 		maxslope = 15,
@@ -44,7 +44,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMALAB",
 		radardistance = 50,
-		radaremitheight = 31,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 286,
@@ -99,6 +99,9 @@ return {
 				metal = 3080,
 				object = "ARMALAB_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -110,6 +113,9 @@ return {
 				metal = 1642,
 				object = "5X5A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

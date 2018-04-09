@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		maneuverleashlength = 300,
 		mass = 833.33331,
 		maxdamage = 5000,
@@ -63,6 +63,9 @@ return {
 				metal = 596,
 				object = "tllcoyote_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -73,6 +76,9 @@ return {
 				metal = 318,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

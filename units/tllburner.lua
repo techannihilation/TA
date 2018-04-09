@@ -24,7 +24,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 400,
 		maxdamage = 1650,
@@ -63,6 +63,9 @@ return {
 				metal = 300,
 				object = "tllburner_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -73,6 +76,9 @@ return {
 				metal = 160,
 				object = "2x2c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

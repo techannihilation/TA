@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 23,
 		mass = 365,
 		maxdamage = 2190,
 		minwaterdepth = 12,
@@ -52,6 +52,9 @@ return {
 				metal = 259,
 				object = "tlltorp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -62,6 +65,9 @@ return {
 				metal = 138,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 22,
 		mass = 3885,
 		maxdamage = 4650,
 		maxslope = 15,
@@ -42,7 +42,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORAVP",
 		radardistance = 50,
-		radaremitheight = 29,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 286,
@@ -98,6 +98,9 @@ return {
 				metal = 2913,
 				object = "CORAVP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -109,6 +112,9 @@ return {
 				metal = 1554,
 				object = "6X6C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

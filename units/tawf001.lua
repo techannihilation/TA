@@ -31,7 +31,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 76,
+		losemitheight = 50,
 		mass = 250,
 		maxdamage = 1290,
 		maxslope = 10,
@@ -71,6 +71,9 @@ return {
 				metal = 187,
 				object = "TAWF001_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 100,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

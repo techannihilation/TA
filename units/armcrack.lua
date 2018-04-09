@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 250,
-		losemitheight = 34,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 220,
 		maxdamage = 750,
@@ -68,6 +68,9 @@ return {
 				metal = 165,
 				object = "ARMCRACK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 88,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

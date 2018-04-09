@@ -43,7 +43,7 @@ return {
 		idleautoheal = 9,
 		idletime = 1400,
 		immunetoparalyzer = 1,
-		losemitheight = 61,
+		losemitheight = 43,
 		maneuverleashlength = 640,
 		mass = 5000,
 		maxdamage = 5000,
@@ -60,7 +60,7 @@ return {
 		norestrict = 1,
 		objectname = "TLLCOM3",
 		radardistance = 940,
-		radaremitheight = 61,
+		radaremitheight = 43,
 		reclaimable = false,
 		script = "tllcom.cob",
 		seismicsignature = 0,
@@ -136,6 +136,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -153,6 +156,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

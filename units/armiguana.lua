@@ -28,7 +28,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		maneuverleashlength = 30,
 		mass = 1600,
 		maxdamage = 4500,
@@ -70,6 +70,9 @@ return {
 				metal = 1200,
 				object = "CORSENT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corsent_heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 640,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -19,7 +19,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 43,
+		losemitheight = 28,
 		makesmetal = 8,
 		mass = 4670,
 		maxdamage = 5500,
@@ -50,6 +50,9 @@ return {
 				metal = 3502,
 				object = "tlluwfusion_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -60,6 +63,9 @@ return {
 				metal = 1868,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

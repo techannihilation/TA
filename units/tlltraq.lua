@@ -29,8 +29,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = false,
-		losemitheight = 45,
+		losemitheight = 32,
 		maneuverleashlength = 640,
 		mass = 850,
 		maxdamage = 1650,
@@ -46,7 +45,7 @@ return {
 		objectname = "TLLTRAQ",
 		onoffable = true,
 		radardistance = 450,
-		radaremitheight = 45,
+		radaremitheight = 32,
 		selfdestructas = "BIG_UNITEX",
 		sightdistance = 250,
 		standingfireorder = 2,
@@ -73,6 +72,9 @@ return {
 				metal = 637,
 				object = "tlltraq_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +85,9 @@ return {
 				metal = 340,
 				object = "2x2c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

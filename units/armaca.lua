@@ -32,7 +32,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 7,
+		losemitheight = 4,
 		maneuverleashlength = 1280,
 		mass = 1710,
 		maxdamage = 2180,
@@ -47,7 +47,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMACA",
 		radardistance = 50,
-		radaremitheight = 7,
+		radaremitheight = 4,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 383.5,
@@ -100,6 +100,9 @@ return {
 				metal = 2175,
 				object = "ARMACA_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

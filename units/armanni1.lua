@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 158,
+		losemitheight = 105,
 		mass = 18250,
 		maxdamage = 35000,
 		maxslope = 10,
@@ -40,7 +40,7 @@ return {
 		objectname = "ARMANNI1",
 		onoffable = true,
 		radardistance = 1500,
-		radaremitheight = 158,
+		radaremitheight = 105,
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",
 		sightdistance = 780,
@@ -67,6 +67,9 @@ return {
 				metal = 10650,
 				object = "ARMANNI1_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 5680,
 				object = "6X6B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

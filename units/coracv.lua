@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 24,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 2040,
 		maxdamage = 3930,
@@ -45,7 +45,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "CORACV",
 		radardistance = 50,
-		radaremitheight = 24,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 295.10001,
@@ -106,6 +106,9 @@ return {
 				metal = 1480,
 				object = "CORACV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

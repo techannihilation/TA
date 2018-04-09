@@ -50,6 +50,7 @@ return {
 		unitname = "coraap",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		workertime = 400,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
@@ -84,6 +85,9 @@ return {
 				metal = 3567,
 				object = "CORAAP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -95,6 +99,9 @@ return {
 				metal = 1902,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 24,
+		losemitheight = 22,
 		mass = 356.66666,
 		maxangledif1 = 1,
 		maxdamage = 2140,
@@ -67,6 +67,9 @@ return {
 				metal = 121,
 				object = "CORASON_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

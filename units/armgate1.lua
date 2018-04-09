@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 27,
 		mass = 13360,
 		maxdamage = 9000,
 		maxslope = 10,
@@ -65,6 +65,9 @@ return {
 				metal = 10025,
 				object = "ARMGATE1_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 5346,
 				object = "4X4D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -24,7 +24,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 36,
+		losemitheight = 25,
 		maneuverleashlength = 320,
 		mass = 260,
 		maxdamage = 1560,
@@ -39,7 +39,7 @@ return {
 		objectname = "tllhickatee",
 		onoffable = true,
 		radardistance = 2200,
-		radaremitheight = 36,
+		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 300,
 		sonardistance = 1250,
@@ -64,6 +64,9 @@ return {
 				metal = 183,
 				object = "tllturtle_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 98,
 				object = "2x2a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

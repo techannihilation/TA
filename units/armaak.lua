@@ -20,7 +20,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 28,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 619,
 		maxdamage = 1020,
@@ -59,6 +59,9 @@ return {
 				metal = 464,
 				object = "ARMAAK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -70,6 +73,9 @@ return {
 				metal = 247,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

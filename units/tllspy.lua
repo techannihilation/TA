@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 28,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 199,
 		maxdamage = 370,
@@ -71,6 +71,9 @@ return {
 				metal = 149,
 				object = "tllspy_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 79,
 				object = "1X1A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

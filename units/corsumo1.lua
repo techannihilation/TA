@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 29,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 3333.33325,
 		maxdamage = 20000,
@@ -64,6 +64,9 @@ return {
 				metal = 2062,
 				object = "CORSUMO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corsumo_heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 1100,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

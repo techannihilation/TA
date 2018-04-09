@@ -28,7 +28,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1380,
 		maxdamage = 2600,
@@ -68,6 +68,9 @@ return {
 				metal = 1035,
 				object = "Armhls_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

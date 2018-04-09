@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 7,
 		idletime = 1800,
-		losemitheight = 67,
+		losemitheight = 45,
 		mass = 31750,
 		maxdamage = 65000,
 		maxslope = 10,
@@ -60,6 +60,9 @@ return {
 				metal = 23812,
 				object = "NEBRASKA_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -70,6 +73,9 @@ return {
 				metal = 12700,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

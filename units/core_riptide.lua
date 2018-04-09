@@ -24,7 +24,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 4220,
 		maxdamage = 17150,
@@ -65,6 +65,9 @@ return {
 				metal = 1688,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -76,6 +79,9 @@ return {
 				metal = 3165,
 				object = "core_riptide_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

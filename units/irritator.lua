@@ -26,7 +26,7 @@ return {
 		idleautoheal = 10,
 		idletime = 30,
 		immunetoparalyzer = 1,
-		losemitheight = 130,
+		losemitheight = 86,
 		maneuverleashlength = 1250,
 		mass = 24900,
 		maxdamage = 126000,
@@ -78,6 +78,9 @@ return {
 				metal = 17625,
 				object = "IRRITATOR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			irritator_heap = {
 				blocking = false,
@@ -89,6 +92,9 @@ return {
 				metal = 9400,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -22,7 +22,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 45,
+		losemitheight = 31,
 		maneuverleashlength = 640,
 		mass = 883.33331,
 		maxdamage = 5300,
@@ -63,6 +63,9 @@ return {
 				metal = 450,
 				object = "ARMZEUS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armzeus_heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 240,
 				object = "2X2E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

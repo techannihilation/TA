@@ -27,7 +27,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 63,
+		losemitheight = 42,
 		maneuverleashlength = 640,
 		mass = 11950,
 		maxdamage = 46000,
@@ -70,6 +70,9 @@ return {
 				metal = 8962,
 				object = "armcrabe_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 4780,
 				object = "3x3d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 2980,
 		maxdamage = 5800,
@@ -67,6 +67,9 @@ return {
 				metal = 2655,
 				object = "tankanotor_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 1416,
 				object = "2X2F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

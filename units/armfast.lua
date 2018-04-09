@@ -26,7 +26,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 36,
+		losemitheight = 26,
 		maneuverleashlength = 640,
 		mass = 189,
 		maxdamage = 620,
@@ -70,6 +70,9 @@ return {
 				metal = 141,
 				object = "ARMFAST_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 75,
 				object = "2X2E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

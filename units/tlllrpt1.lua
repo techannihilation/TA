@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 211,
+		losemitheight = 90,
 		mass = 20200,
 		maxdamage = 16900,
 		maxslope = 13,
@@ -36,8 +36,7 @@ return {
 		name = "L.R.P.T. TECH 3",
 		nochasecategory = "ALL",
 		objectname = "TLLLRPT1",
-		radaremitheight = 184,
-		script = "tlllrpt.cob",
+		radaremitheight = 90,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 273,
@@ -65,6 +64,9 @@ return {
 				metal = 15150,
 				object = "corint1_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +78,9 @@ return {
 				metal = 8400,
 				object = "7X7A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

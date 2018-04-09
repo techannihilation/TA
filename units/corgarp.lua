@@ -74,6 +74,9 @@ return {
 				metal = 153,
 				object = "CORGARP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 67,
+		losemitheight = 45,
 		mass = 8750,
 		maxdamage = 5560,
 		maxslope = 10,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORSILO",
 		radardistance = 50,
-		radaremitheight = 67,
+		radaremitheight = 45,
 		seismicsignature = 0,
 		selfdestructas = "NUCLEAR_MISSILE",
 		sightdistance = 455,
@@ -70,6 +70,9 @@ return {
 				metal = 6562,
 				object = "CORSILO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 3500,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

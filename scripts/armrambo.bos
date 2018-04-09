@@ -1,0 +1,270 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, tail1, tail2, neck, turret1, gun1,
+       turret2, gun2, hode, spray, flare, lthigh, lleg,
+       lfoot, rthigh, rleg, rfoot;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3,
+            Static_Var_6;
+
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+walk(Func_Var_1, Func_Var_2)
+{
+	signal 2;
+	set-signal-mask 2;
+	Func_Var_1 = Static_Var_3;
+	turn rthigh to x-axis <0.> now;
+	turn lthigh to x-axis <0.> now;
+	turn rleg to x-axis <0.> now;
+	turn lleg to x-axis <0.> now;
+	move pelvis to y-axis [0.] now;
+	turn pelvis to z-axis <0.> now;
+	turn lfoot to x-axis <0.> now;
+	turn rfoot to x-axis <0.> now;
+	if( Static_Var_1 )
+	{
+		turn rthigh to x-axis <40.> speed <148.>;
+		turn lthigh to x-axis <-40.> speed <148.>;
+		turn rfoot to x-axis <-30.> speed <168.>;
+		turn lfoot to x-axis <10.> speed <148.>;
+		turn lleg to x-axis <-20.> speed <168.>;
+		sleep 253;
+	}
+	if( Static_Var_1 )
+	{
+		turn rfoot to x-axis <40.> speed <198.>;
+		turn lfoot to x-axis <20.> speed <148.>;
+		turn lleg to x-axis <40.> speed <198.>;
+		sleep 300;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-2.] speed [12.];
+		turn pelvis to z-axis <-7.> speed <13.>;
+	}
+	if( Static_Var_1 )
+	{
+		turn rthigh to x-axis <-40.> speed <148.>;
+		turn lthigh to x-axis <40.> speed <148.>;
+		turn lfoot to x-axis <-40.> speed <227.>;
+		turn rleg to x-axis <-40.> speed <198.>;
+		sleep 525;
+	}
+	if( Static_Var_1 )
+	{
+		turn lfoot to x-axis <40.> speed <198.>;
+		turn rleg to x-axis <40.> speed <198.>;
+		move pelvis to y-axis [0.] speed [12.];
+		sleep 300;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [2.] speed [12.];
+		turn pelvis to z-axis <7.> speed <18.>;
+	}
+	while( Static_Var_1 )
+	{
+		if( Static_Var_1 )
+		{
+			turn rthigh to x-axis <40.> speed <148.>;
+			turn lthigh to x-axis <-40.> speed <148.>;
+			turn rfoot to x-axis <-40.> speed <227.>;
+			turn lleg to x-axis <-40.> speed <198.>;
+			sleep 525;
+		}
+		if( Static_Var_1 )
+		{
+			turn rfoot to x-axis <40.> speed <198.>;
+			turn lfoot to x-axis <40.> speed <168.>;
+			turn lleg to x-axis <40.> speed <198.>;
+			sleep 300;
+		}
+		if( Static_Var_1 )
+		{
+			move pelvis to y-axis [2.] speed [12.];
+			turn pelvis to z-axis <-7.> speed <18.>;
+		}
+		if( Static_Var_1 )
+		{
+			turn rthigh to x-axis <-40.> speed <148.>;
+			turn lthigh to x-axis <40.> speed <148.>;
+			turn lfoot to x-axis <-40.> speed <227.>;
+			turn rleg to x-axis <-40.> speed <198.>;
+			sleep 525;
+		}
+		if( Static_Var_1 )
+		{
+			turn lfoot to x-axis <40.> speed <198.>;
+			turn rleg to x-axis <40.> speed <198.>;
+			move pelvis to y-axis [0.] speed [12.];
+			sleep 300;
+		}
+		if( Static_Var_1 )
+		{
+			move pelvis to y-axis [2.] speed [12.];
+			turn pelvis to z-axis <7.> speed <18.>;
+		}
+	}
+}
+
+stop()
+{
+	signal 2;
+	turn rthigh to x-axis <0.> speed <148.>;
+	turn lthigh to x-axis <0.> speed <148.>;
+	turn lleg to x-axis <0.> speed <198.>;
+	turn rleg to x-axis <0.> speed <198.>;
+	move pelvis to y-axis [0.] speed [120.];
+	turn pelvis to z-axis <0.> speed <119.>;
+	turn rfoot to x-axis <0.> speed <198.>;
+	turn lfoot to x-axis <0.> speed <198.>;
+	sleep 20;
+}
+
+StartMoving()
+{
+	Static_Var_1 = 1;
+	start-script walk();
+}
+
+StopMoving()
+{
+	Static_Var_1 = 0;
+	start-script stop();
+}
+
+Create()
+{
+	hide flare;
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	Static_Var_6 = 2500;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_6;
+	turn neck to y-axis <0.> speed <120.000000>;
+	turn gun2 to x-axis <0.> speed <60.000000>;
+	wait-for-turn neck around y-axis;
+	wait-for-turn gun2 around x-axis;
+	Static_Var_2 = 0;
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	Static_Var_3 = 1;
+	set INBUILDSTANCE to 1;
+	turn neck to y-axis Static_Var_1 speed <120.000000>;
+}
+
+StopBuilding()
+{
+	Static_Var_3 = 0;
+	set INBUILDSTANCE to 0;
+	if( !Static_Var_3 )
+	{
+		start-script RestoreAfterDelay();
+	}	
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = spray;
+}
+
+QueryTransport(Func_Var_1)
+{
+	Func_Var_1 = 6;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = pelvis;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+FirePrimary()
+{
+	show flare;
+	sleep 150;
+	hide flare;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn neck to y-axis heading speed <120.000000>;
+	turn gun2 to x-axis <90.000000> - pitch speed <60.000000>;
+	wait-for-turn neck around y-axis;
+	wait-for-turn gun2 around x-axis;
+	Static_Var_2 = 1;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode tail1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode tail2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode neck type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gun1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gun2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode hode type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

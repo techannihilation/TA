@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 45,
+		losemitheight = 32,
 		mass = 765,
 		maxdamage = 2552,
 		maxslope = 10,
@@ -61,6 +61,9 @@ return {
 				metal = 573,
 				object = "aspdbunk_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -71,6 +74,9 @@ return {
 				metal = 306,
 				object = "2x2a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

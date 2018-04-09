@@ -64,11 +64,12 @@ return {
 			[9] = "corfrad",
 			[10] = "corason",
 			[11] = "corfhlt",
-			[12] = "coratl",
-			[13] = "corenaa",
-			[14] = "corcs",
-			[15] = "corshark",
-			[16] = "corcrus",
+			[12] = "corfpun",
+			[13] = "coratl",
+			[14] = "corenaa",
+			[15] = "corcs",
+			[16] = "corshark",
+			[17] = "corcrus",
 		},
 		customparams = {
 			buildpic = "cormls.dds",
@@ -89,6 +90,9 @@ return {
 				metal = 228,
 				object = "CORMLS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -100,6 +104,9 @@ return {
 				metal = 122,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

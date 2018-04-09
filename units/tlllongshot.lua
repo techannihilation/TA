@@ -25,7 +25,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 5050,
 		maxdamage = 2400,
@@ -66,6 +66,9 @@ return {
 				metal = 3787,
 				object = "tlllongshot_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 2020,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

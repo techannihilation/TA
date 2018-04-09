@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 63,
+		losemitheight = 42,
 		maneuverleashlength = 640,
 		mass = 64250,
 		maxdamage = 93000,
@@ -45,7 +45,7 @@ return {
 		objectname = "tlldest",
 		pushresistant = true,
 		radardistance = 2000,
-		radaremitheight = 63,
+		radaremitheight = 42,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		sightdistance = 750,
@@ -74,6 +74,9 @@ return {
 				metal = 28100,
 				object = "TLLDEST_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 14320,
 				object = "5X5A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

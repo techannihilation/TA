@@ -28,7 +28,7 @@ return {
 		footprintz = 6,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 80,
+		losemitheight = 53,
 		maneuverleashlength = 640,
 		mass = 11200,
 		maxdamage = 20000,
@@ -66,6 +66,9 @@ return {
 				metal = 8400,
 				object = "tllasgard_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 4480,
 				object = "4x4c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -87,6 +93,9 @@ return {
 				metal = 2800,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

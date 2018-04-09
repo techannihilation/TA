@@ -27,7 +27,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 40,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 5850,
 		maxdamage = 19500,
@@ -65,6 +65,9 @@ return {
 				metal = 4387,
 				object = "COREREX_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 2340,
 				object = "4x4c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

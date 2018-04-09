@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		levelground = false,
-		losemitheight = 55,
+		losemitheight = 36,
 		mass = 705,
 		maxdamage = 2400,
 		maxslope = 36,
@@ -61,6 +61,9 @@ return {
 				metal = 528,
 				object = "ARMSD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -72,6 +75,9 @@ return {
 				metal = 282,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

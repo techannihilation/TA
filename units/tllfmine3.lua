@@ -30,8 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 10,
 		idletime = 300,
-		initcloaked = true,
-		losemitheight = 25,
+		losemitheight = 45,
 		mass = 110,
 		maxdamage = 10,
 		maxslope = 40,
@@ -56,7 +55,8 @@ return {
 		waterline = 18,
 		customparams = {
 			buildpic = "tllfmine3.dds",
-			faction = "ARM",
+			faction = "TLL",
+			initcloaked = true,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -74,6 +74,9 @@ return {
 				metal = 183,
 				object = "TLLSHAKER_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

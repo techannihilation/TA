@@ -26,7 +26,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 82,
+		losemitheight = 54,
 		mass = 89600,
 		maxdamage = 106000,
 		maxslope = 18,
@@ -39,7 +39,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORGANT1",
 		radardistance = 50,
-		radaremitheight = 82,
+		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 273,
@@ -74,6 +74,9 @@ return {
 				metal = 67200,
 				object = "corgant1_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 35840,
 				object = "7X7C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

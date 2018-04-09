@@ -13,7 +13,7 @@ return {
 		buildtime = 66125,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
-		description = "Increase Metal Storage (225000)",
+		description = "Increase Metal Storage (145000)",
 		downloadable = 1,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 6,
@@ -21,12 +21,12 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 48,
+		losemitheight = 64,
 		mass = 11000,
 		maxdamage = 66000,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 225000,
+		metalstorage = 145000,
 		name = "T3 Metal Storage",
 		noautofire = false,
 		nochasecategory = "ALL",
@@ -54,6 +54,9 @@ return {
 				metal = 7250,
 				object = "corsms_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -64,6 +67,9 @@ return {
 				metal = 4200,
 				object = "4x4b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

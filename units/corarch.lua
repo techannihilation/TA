@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1005,
 		maxdamage = 2450,
@@ -42,7 +42,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORARCH",
 		radardistance = 860,
-		radaremitheight = 27,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 525,
@@ -72,6 +72,9 @@ return {
 				metal = 753,
 				object = "CORARCH_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 402,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

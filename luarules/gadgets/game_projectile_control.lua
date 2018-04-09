@@ -13,7 +13,7 @@ end
 if (not gadgetHandler:IsSyncedCode()) then return end
 
 local wiggleWeapon = {}
-wiggleWeapon[WeaponDefNames["armabad_exp_heavyrocket1"].id] = 1
+--wiggleWeapon[WeaponDefNames["armabad_exp_heavyrocket1"].id] = 1
 
 local danceWeapon = {}
 danceWeapon[WeaponDefNames["fatshrew_rocket"].id] = 1
@@ -21,7 +21,7 @@ danceWeapon[WeaponDefNames["fatshrew_rocket"].id] = 1
 local redirectProjectiles = {}  -- [frame][projectileID] = table with .targetType .targetX .targetY .targetZ .targetID
 
 function gadget:Initialize()
-	Script.SetWatchWeapon (WeaponDefNames["armabad_exp_heavyrocket1"].id, true)
+	--Script.SetWatchWeapon (WeaponDefNames["armabad_exp_heavyrocket1"].id, true)
 	Script.SetWatchWeapon (WeaponDefNames["fatshrew_rocket"].id, true)
 end
 

@@ -55,6 +55,11 @@ QueryNanoPiece(piecenum)
 	piecenum = miner;
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 FirePrimary()
 {
 	sleep 50;

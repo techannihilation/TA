@@ -32,7 +32,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 75.5,
+		losemitheight = 41.5,
 		mass = 295000,
 		maxdamage = 1000000,
 		maxslope = 10,
@@ -66,6 +66,9 @@ return {
 				metal = 221250,
 				object = "ABroadside_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 22,
 		mass = 4045,
 		maxdamage = 3800,
 		maxslope = 10,
@@ -57,6 +57,9 @@ return {
 				metal = 1490,
 				object = "5x5d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			tllgate_dead = {
 				blocking = true,
@@ -68,6 +71,9 @@ return {
 				metal = 2793,
 				object = "tllgate_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

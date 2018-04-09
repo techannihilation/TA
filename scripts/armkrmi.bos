@@ -649,7 +649,7 @@ RestoreAfterDelay()
 	bAiming = FALSE;
 }
 
-Aim2econdary(Func_Var_1, Func_Var_2)
+AimSecondary(Func_Var_1, Func_Var_2)
 {
 	signal 8;
 	set-signal-mask 8;

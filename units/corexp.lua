@@ -32,7 +32,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 55,
+		losemitheight = 39,
 		mass = 235,
 		maxdamage = 1300,
 		maxslope = 20,
@@ -74,6 +74,9 @@ return {
 				metal = 176,
 				object = "COREXP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -85,6 +88,9 @@ return {
 				metal = 94,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 36,
+		losemitheight = 24,
 		mass = 2280,
 		maxdamage = 2750,
 		maxslope = 16,
@@ -53,6 +53,9 @@ return {
 				metal = 1710,
 				object = "CORUWLIGHTFUS_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -63,6 +66,9 @@ return {
 				metal = 912,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

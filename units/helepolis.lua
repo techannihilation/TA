@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 141800,
 		buildcostmetal = 9850,
 		builder = false,
-		buildpic = "helepolis.png",
+		buildpic = "helepolis.dds",
 		buildtime = 115000,
 		canattack = true,
 		canguard = true,
@@ -34,7 +34,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 48,
+		losemitheight = 32,
 		maneuverleashlength = 640,
 		mass = 9850,
 		maxdamage = 54000,
@@ -84,6 +84,9 @@ return {
 				metal = 6100,
 				object = "HELEPOLIS_DEAD.3DO",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -95,6 +98,9 @@ return {
 				metal = 3122,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

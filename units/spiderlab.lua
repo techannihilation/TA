@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 22,
 		mass = 980,
 		maxdamage = 2120,
 		maxslope = 10,
@@ -37,7 +37,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "spiderlab",
 		radardistance = 50,
-		radaremitheight = 33,
+		radaremitheight = 22,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 220,
 		standingfireorder = 2,
@@ -72,6 +72,9 @@ return {
 				metal = 735,
 				object = "spiderlab_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 392,
 				object = "5x5a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

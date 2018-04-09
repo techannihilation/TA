@@ -1,24 +1,25 @@
 
-local ACZ = 1.0/100
-local AC0 = 1.2/100
-local AC1 = 1.3/100
-local AC2 = 1.4/100
-local A3 = 1.48/100
-local C3 = 1.46/100
-local AC4 = 1.50/100
-local AC5 = 1.55/100
-local AC6 = 1.6/100
-local AC7 = 1.7/100
+local ACZ = 0.8/100
+local AC0 = 1/100
+local AC1 = 1.05/100
+local AC2 = 1.3/100
+local A3 = 1.35/100
+local C3 = 1.35/100
+local AC4 = 1.4/100
+local AC5 = 1.45/100
+local AC6 = 1.5/100
+local AC7 = 1.6/100
 
 
-local T0 = 1.08/100
-local T1 = 1.16/100
---local T2 = 1.24/100
+
+local T0 = 0.95/100
+local T1 = 1/100
+local T2 = 1.2/100
 --local T3 = 1.31/100
-local T4 = 1.42/100
-local T5 = 1.47/100
-local T6 = 1.6/100
-
+local T4 = 1.35/100
+local T5 = 1.4/100
+local T6 = 1.45/100
+local T7 = 1.5/100
 
 local convertCapacities = {
 
@@ -50,11 +51,12 @@ local convertCapacities = {
 		--TLL
 		[UnitDefNames.tllmm.id]  = { c = 100, e = (T0) }, -- Normal
 		[UnitDefNames.tllwmconv.id]  = { c = 100, e = (T1) }, -- Floating
-		--[UnitDefNames.____.id]  = { c = 300, e = (T2) }, -- T1,5
+		[UnitDefNames.tllmetalmakerlvl1.id]  = { c = 200, e = (T2) }, -- T1,5
 		--[UnitDefNames.____.id]  = { c = 600, e = (T3) }, -- Cloaked/Hardened
 		[UnitDefNames.tllammaker.id]  = { c = 1000, e = (T4) }, -- Moho
 		[UnitDefNames.tllwmmohoconv.id]  = { c = 1000, e = (T5) }, -- Underwater
-		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 30000, e = (T6) }, -- T4
+		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 10000, e = (T6) }, -- T4	
+		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 50000, e = (T7) }, -- T4
 		--[UnitDefNames.____.id]  = { c = 10000, e = (T6) }, -- Super
 
 		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion

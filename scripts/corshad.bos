@@ -95,6 +95,11 @@ Deactivate()
 	start-script RequestState(1);
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = bombay;

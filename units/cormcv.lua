@@ -29,7 +29,7 @@ return {
 		footprintz = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 33,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 10050,
 		maxdamage = 13500,
@@ -71,6 +71,9 @@ return {
 				metal = 7200,
 				object = "cormcv_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 3840,
 				object = "6x6c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -156,7 +162,7 @@ return {
 				},
 			},
 			rapid_intimidator_high = {
-				accuracy = 1000,
+				accuracy = 750,
 				areaofeffect = 250,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",

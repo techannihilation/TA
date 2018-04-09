@@ -69,6 +69,9 @@ return {
 				metal = 372,
 				object = "ARMJANUS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armjanus_heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 198,
 				object = "2X2C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

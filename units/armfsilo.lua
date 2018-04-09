@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 6,
 		idletime = 1800,
-		losemitheight = 176,
+		losemitheight = 116,
 		mass = 164149,
 		maxdamage = 15000,
 		maxslope = 10,
@@ -55,6 +55,9 @@ return {
 				metal = 123111,
 				object = "armfsilo_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -65,6 +68,9 @@ return {
 				metal = 65659,
 				object = "6x6d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

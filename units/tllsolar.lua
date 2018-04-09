@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 55,
+		losemitheight = 36,
 		mass = 220,
 		maxdamage = 469,
 		maxslope = 10,
@@ -54,6 +54,9 @@ return {
 				metal = 165,
 				object = "tllsolar_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -64,6 +67,9 @@ return {
 				metal = 88,
 				object = "5x5c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

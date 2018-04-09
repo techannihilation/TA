@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 7,
 		idletime = 1800,
-		losemitheight = 72,
+		losemitheight = 47,
 		mass = 34250,
 		maxdamage = 80000,
 		maxslope = 10,
@@ -60,6 +60,9 @@ return {
 				metal = 25687,
 				object = "corboucher_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -70,6 +73,9 @@ return {
 				metal = 13700,
 				object = "3x3d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

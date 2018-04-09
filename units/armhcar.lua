@@ -37,7 +37,7 @@ return {
 		immunetoparalyzer = 1,
 		isairbase = true,
 		istargetingupgrade = true,
-		losemitheight = 68,
+		losemitheight = 45,
 		maneuverleashlength = 640,
 		mass = 14500,
 		maxdamage = 15280,
@@ -53,7 +53,7 @@ return {
 		onoffable = true,
 		pushresistant = true,
 		radardistance = 3500,
-		radaremitheight = 68,
+		radaremitheight = 45,
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 600,
 		standingfireorder = 0,
@@ -79,6 +79,9 @@ return {
 				metal = 10875,
 				object = "armhcar_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

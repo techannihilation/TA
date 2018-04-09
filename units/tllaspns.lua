@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isairbase = true,
-		losemitheight = 47,
+		losemitheight = 31,
 		mass = 500,
 		maxdamage = 680,
 		maxslope = 10,
@@ -55,6 +55,9 @@ return {
 				metal = 375,
 				object = "tllaspns_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -65,6 +68,9 @@ return {
 				metal = 200,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

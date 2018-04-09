@@ -22,7 +22,7 @@ return {
 		footprintz = 16,
 		idleautoheal = 6,
 		idletime = 1800,
-		losemitheight = 137,
+		losemitheight = 90,
 		mass = 162624,
 		maxdamage = 15100,
 		maxslope = 10,
@@ -54,6 +54,9 @@ return {
 				metal = 121968,
 				object = "corfsilo_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -64,6 +67,9 @@ return {
 				metal = 65049,
 				object = "6x6d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

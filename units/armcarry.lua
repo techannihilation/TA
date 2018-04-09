@@ -35,7 +35,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isairbase = true,
-		losemitheight = 54,
+		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 3150,
 		maxdamage = 6340,
@@ -49,7 +49,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMCARRY",
 		radardistance = 2950,
-		radaremitheight = 54,
+		radaremitheight = 36,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 1105,
@@ -81,6 +81,9 @@ return {
 				metal = 1237,
 				object = "ARMCARRY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -92,6 +95,9 @@ return {
 				metal = 660,
 				object = "6X6C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

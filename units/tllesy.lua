@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 64,
+		losemitheight = 43,
 		mass = 21000,
 		maxdamage = 10829,
 		metalmake = 2,
@@ -39,7 +39,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "tllesy",
 		radardistance = 100,
-		radaremitheight = 64,
+		radaremitheight = 43,
 		selfdestructas = "ATOMIC_BLAST",
 		sightdistance = 324,
 		standingfireorder = 2,
@@ -72,6 +72,9 @@ return {
 				metal = 15750,
 				object = "TLLESY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 8400,
 				object = "7X7E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

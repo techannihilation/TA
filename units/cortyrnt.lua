@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 84,
+		losemitheight = 55,
 		maneuverleashlength = 640,
 		mass = 45250,
 		maxdamage = 93000,
@@ -45,7 +45,7 @@ return {
 		objectname = "CORTYRNT",
 		pushresistant = true,
 		radardistance = 2000,
-		radaremitheight = 84,
+		radaremitheight = 55,
 		selfdestructas = "CRBLMSSL",
 		selfdestructcountdown = 10,
 		sightdistance = 750,
@@ -73,6 +73,9 @@ return {
 				metal = 33937,
 				object = "cortyrnt_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 22,
 		mass = 347,
 		maxdamage = 570,
 		maxslope = 20,
@@ -67,6 +67,9 @@ return {
 				metal = 260,
 				object = "ARMMEX_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armmex_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 138,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

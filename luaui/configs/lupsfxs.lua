@@ -10,6 +10,8 @@ groundFlashBlue = {
   texture    = "bitmaps/GPL/Lups/groundflash.png",
   colormap   = { {0.5, 0.5, 1.0, 0.3},{0.5, 0.5, 1.0, 0.4},{0.5, 0.5, 1.0, 0.4},{0.5, 0.5, 1.0, 0.3}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 3,
 }
 
 groundFlashBigBlue = {
@@ -18,6 +20,8 @@ groundFlashBigBlue = {
   texture    = "bitmaps/GPL/Lups/groundflash.png",
   colormap   = { {0.5, 0.5, 1.0, 0.3},{0.5, 0.5, 1.0, 0.4},{0.5, 0.5, 1.0, 0.4},{0.5, 0.5, 1.0, 0.3}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 3,
 }
 
 groundFlashYellow = {
@@ -26,6 +30,8 @@ groundFlashYellow = {
   texture    = "bitmaps/GPL/Lups/groundflash.png",
   colormap   = { {1.0, 0.2, 0.2, 0.2},{1.0, 0.2, 0.2, 0.25},{1.0, 0.2, 0.2, 0.25},{1.0, 0.2, 0.2, 0.2}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority = 3,
 }
 
 groundFlashCorestor = {
@@ -34,6 +40,8 @@ groundFlashCorestor = {
   texture    = "bitmaps/GPL/Lups/gf_corestor.png",
   colormap   = { {0.9, 0.9, 0.0, 0.15},{0.9, 0.9, 0.0, 0.20},{0.9, 0.9, 0.0, 0.20},{0.9, 0.9, 0.0, 0.15}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority = 3,
 }
   
 groundFlashArmestor = {
@@ -42,6 +50,8 @@ groundFlashArmestor = {
   texture    = "bitmaps/GPL/Lups/gf_armestor.png",
   colormap   = { {0.9, 0.9, 0.0, 0.2},{0.9, 0.9, 0.0, 0.3},{0.9, 0.9, 0.0, 0.3},{0.9, 0.9, 0.0, 0.2}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority = 3,
 }
 
 groundFlashCorses = {
@@ -50,6 +60,8 @@ groundFlashCorses = {
   texture    = "bitmaps/GPL/Lups/gf_corestor.png",
   colormap   = { {0.9, 0.9, 0.0, 0.15},{0.9, 0.9, 0.0, 0.20},{0.9, 0.9, 0.0, 0.20},{0.9, 0.9, 0.0, 0.15}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority = 3,
 }
 groundFlashArmses = {
   life       = 50,
@@ -57,6 +69,8 @@ groundFlashArmses = {
   texture    = "bitmaps/GPL/Lups/gf_armestor.png",
   colormap   = { {0.9, 0.9, 0.0, 0.2},{0.9, 0.9, 0.0, 0.3},{0.9, 0.9, 0.0, 0.3},{0.9, 0.9, 0.0, 0.2}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority = 3,
 }
 groundFlashJuno = {
   life       = 50,
@@ -64,6 +78,8 @@ groundFlashJuno = {
   texture    = "bitmaps/GPL/Lups/groundflash.png",
   colormap   = { {0.55,0.55,0.9, 0.1}, {0.55,0.55,0.9, 0.12},{0.55,0.55,0.9, 0.12},{0.55,0.55,0.9, 0.1}, },
   repeatEffect = true,
+  noIconDraw = true,
+  priority = 3,
 }
 ----------------------------------------------------------------------------
 -- Lights ------------------------------------------------------------------
@@ -106,7 +122,9 @@ corsfusBursts = {
   colormap   = {{0.45, 0.2, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 5,
+  noIconDraw = true,
+  priority  = 3,
+  count      = 2,
 }
 exoarmBursts = {
   layer      = -35,
@@ -122,7 +140,9 @@ exoarmBursts = {
   colormap   = {{0.1, 0.55, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 10,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 4,
 }
 
 armsmcBursts = {
@@ -139,7 +159,9 @@ armsmcBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 2,
 }
 
 armpraetBursts = {
@@ -156,7 +178,9 @@ armpraetBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 2,
 }
 
 monkeylordBursts = {
@@ -173,7 +197,9 @@ monkeylordBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 2,
 }
 
 irritatorBursts = {
@@ -190,7 +216,9 @@ irritatorBursts = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 2,
 }
 
 shieldBursts100 = {
@@ -207,7 +235,9 @@ shieldBursts100 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 2,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 1,
 }
 
 shieldBursts150 = {
@@ -224,7 +254,9 @@ shieldBursts150 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 4,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 2,
 }
 
 shieldBursts200 = {
@@ -241,7 +273,9 @@ shieldBursts200 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 6,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 3,
 }
 
 shieldBursts250 = {
@@ -258,7 +292,9 @@ shieldBursts250 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 8,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 4,
 }
 
 shieldBursts340 = {
@@ -275,7 +311,9 @@ shieldBursts340 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 14,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 8,
 }
 
 shieldBursts400 = {
@@ -292,7 +330,9 @@ shieldBursts400 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 16,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 8,
 }
 
 shieldBursts1000 = {
@@ -309,198 +349,37 @@ shieldBursts1000 = {
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
-  count      = 20,
+  noIconDraw = true,
+  priority   = 3,
+  count      = 10,
 }
+
 ----------------------------------------------------------------------------
 -- Fusion ------------------------------------------------------------------
 ----------------------------------------------------------------------------
-  
-plasmaball_corfus = {
+plasmaball_fusion = {
   speed        = 0,
   speedSpread  = 0,
   layer        = -36,
   life         = 60,
-  lifeSpread   = 20,
+  lifeSpread   = 30,
   partpos      = "0,0,0",
-  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
-  rotSpeed     = 0.1,
-  rotFactor    = 1.0,
-  rotFactorSpread = -2.0,
-  rotairdrag   = 0.99,
-  rotSpread    = 360,
-  size         = 19,
-  sizeSpread   = 10,
-  sizeGrowth   = 0.74,
-  emitVector   = {0,0,0},
-  emitRotSpread = 70,
-  texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 2,
-  repeatEffect = true,
-  }
-  
-plasmaball_corsfus = {
-  speed        = 0,
-  speedSpread  = 0,
-  layer        = -36,
-  life         = 60,
-  lifeSpread   = 20,
-  partpos      = "0,0,0",
-  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
-  rotSpeed     = 0.1,
-  rotFactor    = 1.0,
-  rotFactorSpread = -2.0,
-  rotairdrag   = 0.99,
-  rotSpread    = 360,
-  size         = 30,
-  sizeSpread   = 10,
-  sizeGrowth   = 0.74,
-  emitVector   = {0,0,0},
-  emitRotSpread = 70,
-  texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 3,
-  repeatEffect = true,
-  }
-  
-plasmaball_cafus = {
-  speed        = 0,
-  speedSpread  = 0,
-  layer        = -36,
-  life         = 60,
-  lifeSpread   = 20,
-  partpos      = "0,0,0",
-  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
-  rotSpeed     = 0.1,
-  rotFactor    = 1.0,
-  rotFactorSpread = -2.0,
-  rotairdrag   = 0.99,
-  rotSpread    = 360,
-  size         = 20,
-  sizeSpread   = 10,
-  sizeGrowth   = 0.74,
-  emitVector   = {0,0,0},
-  emitRotSpread = 70,
-  texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 3,
-  repeatEffect = true,
-  }
-  
-plasmaball_crnns = {
-  speed        = 0,
-  speedSpread  = 0,
-  layer        = -36,
-  life         = 60,
-  lifeSpread   = 20,
-  partpos      = "0,0,0",
-  colormap     = { {0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}, },
-  rotSpeed     = 0.1,
-  rotFactor    = 1.0,
-  rotFactorSpread = -2.0,
-  rotairdrag   = 0.99,
-  rotSpread    = 360,
-  size         = 24,
-  sizeSpread   = 10,
-  sizeGrowth   = 0.74,
-  emitVector   = {0,0,0},
-  emitRotSpread = 70,
-  texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 3,
-  repeatEffect = true,
-  }
-  
-plasmaball_cfusionplant = {
-  speed        = 0,
-  speedSpread  = 0,
-  layer        = -36,
-  life         = 60,
-  lifeSpread   = 20,
-  partpos      = "0,0,0",
-  colormap     = { {0.1, 0.1, 0.4, 0.008}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.008}, },
-  rotSpeed     = 0.1,
-  rotFactor    = 1.0,
-  rotFactorSpread = -2.0,
-  rotairdrag   = 0.99,
-  rotSpread    = 360,
-  size         = 48,
-  sizeSpread   = 10,
-  sizeGrowth   = 0.74,
-  emitVector   = {0,0,0},
-  emitRotSpread = 360,
-  texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 5,
-  repeatEffect = true,
-  }
-  
-plasmaball_tllmedfusion = {
-  speed        = 0,
-  speedSpread  = 0,
-  layer        = -36,
-  life         = 51,
-  lifeSpread   = 20,
-  partpos      = "0,0,0",
-  colormap     = { {1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}, },
   rotSpeed     = 0.2,
   rotFactor    = 1.0,
   rotFactorSpread = -2.0,
   rotairdrag   = 0.99,
   rotSpread    = 360,
   sizeExp      = -2,
-  size         = 38,
   sizeSpread   = -10,
   sizeGrowth   = -1,
   emitVector   = {0,0,0},
   emitRotSpread = 360,
   texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 2,
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
   }
-  
-plasmaball_tllcoldfus = {
-  speed        = 0,
-  speedSpread  = 0,
-  layer        = -36,
-  life         = 51,
-  lifeSpread   = 20,
-  partpos      = "0,0,0",
-  colormap     = { {1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}, },
-  rotSpeed     = 0.2,
-  rotFactor    = 1.0,
-  rotFactorSpread = -2.0,
-  rotairdrag   = 0.99,
-  rotSpread    = 360,
-  sizeExp      = -2,
-  size         = 45,
-  sizeSpread   = -10,
-  sizeGrowth   = -1,
-  emitVector   = {0,0,0},
-  emitRotSpread = 360,
-  texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 2,
-  repeatEffect = true,
-  }
-  
-plasmaball_tllmegacoldfus = {
-  speed        = 0,
-  speedSpread  = 0,
-  layer        = -36,
-  life         = 51,
-  lifeSpread   = 20,
-  partpos      = "0,0,0",
-  colormap     = { {1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}, },
-  rotSpeed     = 0.2,
-  rotFactor    = 1.0,
-  rotFactorSpread = -2.0,
-  rotairdrag   = 0.99,
-  rotSpread    = 360,
-  sizeExp      = -2,
-  size         = 70,
-  sizeSpread   = -10,
-  sizeGrowth   = -1,
-  emitVector   = {0,0,0},
-  emitRotSpread = 360,
-  texture      = 'bitmaps/techa_artwork/lightningball.png',
-  count        = 2,
-  repeatEffect = true,
-  }
+   
 ----------------------------------------------------------------------------
 -- Other -------------------------------------------------------------------
 ----------------------------------------------------------------------------
@@ -544,6 +423,7 @@ roostDirt = {
   texture      = 'bitmaps/GPL/smoke_orange.png',
   count        = 5,
   repeatEffect = true,
+  noIconDraw = true,
   }
 
 sparks = {
@@ -566,6 +446,8 @@ sparks = {
   texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 6,
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
   }
   
 sparks1 = {
@@ -589,6 +471,8 @@ sparks1 = {
   texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 6,
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
   }
   
 sparksr1 = {
@@ -612,6 +496,8 @@ sparksr1 = {
   texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 6,
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
   }
   
 sparksr2 = {
@@ -635,6 +521,8 @@ sparksr2 = {
   texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 6,
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
   }
   
 sparksr3 = {
@@ -658,6 +546,8 @@ sparksr3 = {
   texture      = 'bitmaps/PD/Lightningball.TGA',
   count        = 8,
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
   }
   
 shield = {
@@ -676,6 +566,7 @@ shield = {
   texture      = 'bitmaps/ring.tga',
   count        = 6,
   repeatEffect = true,
+  noIconDraw = true,
   }
   
 corgensparks = {
@@ -698,6 +589,8 @@ corgensparks = {
   texture      = 'bitmaps/Emg.tga',
   count        = 8,
   repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
   }
   
 armamakerEffect = {

@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 55,
+		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 1850,
 		maxdamage = 3145,
@@ -76,6 +76,9 @@ return {
 				metal = 1567,
 				object = "TREM_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -87,6 +90,9 @@ return {
 				metal = 836,
 				object = "2X2B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -122,7 +128,7 @@ return {
 		},
 		weapondefs = {
 			trem1 = {
-				accuracy = 1400,
+				accuracy = 875,
 				areaofeffect = 175,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
@@ -137,7 +143,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				proximitypriority = -3,
-				range = 1300,
+				range = 1480,
 				reloadtime = 0.4,
 				rgbcolor = "0.7 0.37 0",
 				separation = 0.45,

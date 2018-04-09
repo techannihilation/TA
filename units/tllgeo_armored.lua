@@ -32,7 +32,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 68,
 		makesmetal = 12,
 		mass = 4005,
 		maxdamage = 17500,
@@ -75,6 +75,9 @@ return {
 				metal = 3753,
 				object = "TLLGEO_ARMORED_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -86,6 +89,9 @@ return {
 				metal = 2002,
 				object = "5X5C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -93,12 +99,10 @@ return {
 				[1] = "custom:muzzleflaretiny",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				[1] = "piecetrail5",
+				[2] = "piecetrail5",
+				[3] = "piecetrail4",
+				[4] = "piecetrail6",
 			},
 		},
 		sounds = {

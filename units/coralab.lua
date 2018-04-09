@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 60,
+		losemitheight = 39,
 		mass = 4117,
 		maxdamage = 4072,
 		maxslope = 15,
@@ -43,7 +43,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORALAB",
 		radardistance = 50,
-		radaremitheight = 60,
+		radaremitheight = 39,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 288.60001,
@@ -98,6 +98,9 @@ return {
 				metal = 3087,
 				object = "CORALAB_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -109,6 +112,9 @@ return {
 				metal = 1646,
 				object = "5X5A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

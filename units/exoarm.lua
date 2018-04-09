@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 154,
+		losemitheight = 102,
 		maneuverleashlength = 640,
 		mass = 154000,
 		maxdamage = 437031,
@@ -75,6 +75,9 @@ return {
 				metal = 38400,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

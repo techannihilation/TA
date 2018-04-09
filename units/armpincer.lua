@@ -74,6 +74,9 @@ return {
 				metal = 150,
 				object = "ARMPINCER_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

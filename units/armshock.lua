@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 50,
+		losemitheight = 33,
 		maneuverleashlength = 640,
 		mass = 3250,
 		maxdamage = 15000,
@@ -70,6 +70,9 @@ return {
 				metal = 2437,
 				object = "ARMSHOCK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 1300,
 				object = "4X4D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

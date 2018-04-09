@@ -26,7 +26,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 51,
+		losemitheight = 34,
 		maneuverleashlength = 640,
 		mass = 16580,
 		maxdamage = 56000,
@@ -67,6 +67,9 @@ return {
 				metal = 12435,
 				object = "armantar_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 6632,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

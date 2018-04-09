@@ -61,6 +61,9 @@ return {
 				metal = 1987,
 				object = "tllturtle_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -71,6 +74,9 @@ return {
 				metal = 1060,
 				object = "3x3b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

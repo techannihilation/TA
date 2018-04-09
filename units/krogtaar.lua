@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 56,
+		losemitheight = 37,
 		maneuverleashlength = 640,
 		mass = 6150,
 		maxdamage = 32500,
@@ -68,6 +68,9 @@ return {
 				metal = 4612,
 				object = "krogtaar_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 2460,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

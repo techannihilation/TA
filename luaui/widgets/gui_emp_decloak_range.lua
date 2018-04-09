@@ -54,7 +54,7 @@ local spIsSphereInView		= Spring.IsSphereInView
 local spIsUnitSelected		= Spring.IsUnitSelected
 
 local CMD_MOVE_STATE		= CMD.MOVE_STATE
-local cmdCloack				= CMD.CLOAK
+local cmdcloak				= 37382
 local cmdFireState			= CMD.FIRE_STATE
 
 local diag					= math.diag
@@ -81,11 +81,11 @@ local spectatorMode = false
 local notInSpecfullmode = false
 
 function cloackSpy(unitID)
-    spGiveOrderToUnit(unitID, cmdCloack, { 1 }, {})
+    spGiveOrderToUnit(unitID, cmdcloak, { 1 }, {})
 end
 
 function processGremlin(unitID)
-    spGiveOrderToUnit(unitID, cmdCloack, { 1 }, {})
+    spGiveOrderToUnit(unitID, cmdcloak, { 1 }, {})
     spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 0 }, {}) -- 0 == hold pos
     spGiveOrderToUnit(unitID, cmdFireState, { 0 }, {}) -- hold fire
 end

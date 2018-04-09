@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, housing1, housing2, turret, arms, sleeve, barrel,
+piece  base, body, rightchunk, leftchunk, turret, arms, sleeve, barrel,
        flare, turret3, sleeve3, barrel3, flare3, feetparent, flfoot, frfoot,
        rlfoot, rrfoot, aimpoint;
 
@@ -84,16 +84,16 @@ StartMoving()
 			move rrfoot to z-axis [-1.729999] speed [3.000000];
 			move body to y-axis [1.289984] now;
 			move body to z-axis [-0.259998] now;
-			move housing1 to x-axis [0.559998] now;
-			move housing1 to y-axis [1.289984] now;
-			move housing1 to z-axis [-0.300000] now;
-			move housing2 to x-axis [-0.559998] now;
-			move housing2 to y-axis [1.289984] now;
-			move housing2 to z-axis [-0.300000] now;
+			move rightchunk to x-axis [0.559998] now;
+			move rightchunk to y-axis [1.289984] now;
+			move rightchunk to z-axis [-0.300000] now;
+			move leftchunk to x-axis [-0.559998] now;
+			move leftchunk to y-axis [1.289984] now;
+			move leftchunk to z-axis [-0.300000] now;
 			turn frfoot to x-axis <-17.835165> now;
 			turn frfoot to x-axis <-14.000000> speed <27.005495>;
-			turn housing1 to x-axis <-4.000000> now;
-			turn housing1 to x-axis <-5.500000> speed <15.500000>;
+			turn rightchunk to x-axis <-4.000000> now;
+			turn rightchunk to x-axis <-5.500000> speed <15.500000>;
 			sleep 109;
 		}
 		if( TRUE )
@@ -105,8 +105,8 @@ StartMoving()
 			turn flfoot to x-axis <-12.000000> speed <117.027473>;
 			turn frfoot to x-axis <0.000000> speed <141.027473>;
 			turn rrfoot to x-axis <9.000000> speed <89.016484>;
-			turn housing1 to x-axis <0.000000> speed <50.000000>;
-			turn housing2 to x-axis <-2.500000> speed <25.500000>;
+			turn rightchunk to x-axis <0.000000> speed <50.000000>;
+			turn leftchunk to x-axis <-2.500000> speed <25.500000>;
 			sleep 110;
 		}
 		if( TRUE )
@@ -117,8 +117,8 @@ StartMoving()
 			move rrfoot to z-axis [-1.579999] speed [0.000000];
 			turn flfoot to x-axis <-30.016484> speed <157.027473>;
 			turn rrfoot to x-axis <15.000000> speed <51.005495>;
-			turn housing1 to x-axis <3.500000> speed <37.500000>;
-			turn housing2 to x-axis <-5.500000> speed <25.500000>;
+			turn rightchunk to x-axis <3.500000> speed <37.500000>;
+			turn leftchunk to x-axis <-5.500000> speed <25.500000>;
 			sleep 111;
 		}
 		if( TRUE )
@@ -128,8 +128,8 @@ StartMoving()
 			move rrfoot to z-axis [-0.569983] speed [9.000000];
 			turn flfoot to x-axis <-18.000000> speed <103.016484>;
 			turn rrfoot to x-axis <19.000000> speed <37.005495>;
-			turn housing1 to x-axis <0.500000> speed <27.500000>;
-			turn housing2 to x-axis <-3.000000> speed <20.500000>;
+			turn rightchunk to x-axis <0.500000> speed <27.500000>;
+			turn leftchunk to x-axis <-3.000000> speed <20.500000>;
 			sleep 110;
 		}
 		if( TRUE )
@@ -139,7 +139,7 @@ StartMoving()
 			move rrfoot to z-axis [0.609998] speed [10.000000];
 			turn flfoot to x-axis <0.000000> speed <164.038462>;
 			turn rrfoot to x-axis <3.500000> speed <109.016484>;
-			turn housing2 to x-axis <0.000000> speed <30.500000>;
+			turn leftchunk to x-axis <0.000000> speed <30.500000>;
 			sleep 111;
 		}
 		if( TRUE )
@@ -150,7 +150,7 @@ StartMoving()
 			turn flfoot to x-axis <0.000000> speed <6.000000>;
 			turn rlfoot to x-axis <22.000000> speed <204.049451>;
 			turn rrfoot to x-axis <0.000000> speed <62.005495>;
-			turn housing2 to x-axis <4.500000> speed <41.500000>;
+			turn leftchunk to x-axis <4.500000> speed <41.500000>;
 			sleep 109;
 		}
 		if( TRUE )
@@ -160,7 +160,7 @@ StartMoving()
 			move rlfoot to z-axis [-1.779999] speed [12.000000];
 			move rrfoot to z-axis [-0.179999] speed [3.000000];
 			turn rlfoot to x-axis <28.016484> speed <58.005495>;
-			turn housing2 to x-axis <5.000000> speed <5.000000>;
+			turn leftchunk to x-axis <5.000000> speed <5.000000>;
 			sleep 111;
 		}
 		if( TRUE )
@@ -170,7 +170,7 @@ StartMoving()
 			move rlfoot to z-axis [-0.529999] speed [10.000000];
 			move rrfoot to z-axis [-0.729999] speed [4.000000];
 			turn rlfoot to x-axis <10.000000> speed <169.038462>;
-			turn housing2 to x-axis <1.000000> speed <34.500000>;
+			turn leftchunk to x-axis <1.000000> speed <34.500000>;
 			sleep 110;
 		}
 		if( TRUE )
@@ -181,8 +181,8 @@ StartMoving()
 			move rrfoot to z-axis [-0.919983] speed [1.000000];
 			turn frfoot to x-axis <-10.000000> speed <99.016484>;
 			turn rlfoot to x-axis <0.000000> speed <96.016484>;
-			turn housing1 to x-axis <-0.500000> speed <13.500000>;
-			turn housing2 to x-axis <-1.000000> speed <24.000000>;
+			turn rightchunk to x-axis <-0.500000> speed <13.500000>;
+			turn leftchunk to x-axis <-1.000000> speed <24.000000>;
 			sleep 111;
 		}
 		if( TRUE )
@@ -192,14 +192,14 @@ StartMoving()
 			move rlfoot to z-axis [-0.429999] speed [6.000000];
 			move rrfoot to z-axis [-1.369983] speed [3.000000];
 			turn frfoot to x-axis <-12.000000> speed <20.000000>;
-			turn housing1 to x-axis <-2.000000> speed <13.500000>;
+			turn rightchunk to x-axis <-2.000000> speed <13.500000>;
 			sleep 110;
 		}
 	}
-	turn housing1 to x-axis <0.000000> speed <150.027473>;
+	turn rightchunk to x-axis <0.000000> speed <150.027473>;
 	turn rrfoot to x-axis <0.000000> speed <150.027473>;
 	turn frfoot to x-axis <0.000000> speed <150.027473>;
-	turn housing2 to x-axis <0.000000> speed <150.027473>;
+	turn leftchunk to x-axis <0.000000> speed <150.027473>;
 	turn rlfoot to x-axis <0.000000> speed <150.027473>;
 	turn flfoot to x-axis <0.000000> speed <150.027473>;
 }
@@ -213,16 +213,16 @@ RestoreAfterDelay()
 {
 	sleep 18000;
 	set-signal-mask 0;
-	turn turret to y-axis <0.000000> speed <60.016484>;
-	turn sleeve to x-axis <0.000000> speed <60.005495>;
+	turn turret to y-axis <0.000000> speed <60.000000>;
+	turn sleeve to x-axis <0.000000> speed <60.000000>;
 }
 
 RestoreTertiary()
 {
 	sleep 9000;
 	set-signal-mask 0;
-	turn turret3 to y-axis <0.000000> speed <180.000000>;
-	turn sleeve3 to x-axis <0.000000> speed <180.000000>;
+	turn turret3 to y-axis <0.000000> speed <90.000000>;
+	turn sleeve3 to x-axis <0.000000> speed <90.000000>;
 }
 
 AimPrimary(heading, pitch)
@@ -230,8 +230,8 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
-	turn turret to y-axis heading speed <60.016484>;
-	turn sleeve to x-axis <0.000000> - pitch speed <60.005495>;
+	turn turret to y-axis heading speed <60.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <60.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay();
@@ -242,12 +242,12 @@ FirePrimary()
 {
 	explode flare type NOHEATCLOUD;
 	move barrel to z-axis [-4.000000] speed [500.000000];
-	turn arms to y-axis <-50.016484> speed <500.115385>;
-	turn sleeve to y-axis <50.016484> speed <500.115385>;
+	turn arms to y-axis <-50.000000> speed <500.000000>;
+	turn sleeve to y-axis <50.000000> speed <500.000000>;
 	sleep 150;
 	move barrel to z-axis [0.000000] speed [2.000000];
-	turn arms to y-axis <0.000000> speed <23.005495>;
-	turn sleeve to y-axis <0.000000> speed <23.005495>;
+	turn arms to y-axis <0.000000> speed <23.000000>;
+	turn sleeve to y-axis <0.000000> speed <23.000000>;
 }
 
 AimFromPrimary(piecenum)
@@ -264,8 +264,8 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn turret3 to y-axis heading speed <180.000000>;
-	turn sleeve3 to x-axis <0.000000> - pitch speed <180.000000>;
+	turn turret3 to y-axis heading speed <90.000000>;
+	turn sleeve3 to x-axis <0.000000> - pitch speed <90.000000>;
 	wait-for-turn turret3 around y-axis;
 	wait-for-turn sleeve3 around x-axis;
 	start-script RestoreTertiary();

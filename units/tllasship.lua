@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 32,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1450,
 		maxdamage = 2100,
@@ -68,6 +68,9 @@ return {
 				metal = 1087,
 				object = "tllASSHIP_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 580,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

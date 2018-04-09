@@ -27,7 +27,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 7500,
 		maxdamage = 27500,
@@ -67,6 +67,9 @@ return {
 				metal = 5625,
 				object = "ARMSIEGE_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 3000,
 				object = "5x5a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

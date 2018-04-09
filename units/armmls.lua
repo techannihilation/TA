@@ -64,11 +64,12 @@ return {
 			[9] = "armfrad",
 			[10] = "armason",
 			[11] = "armfhlt",
-			[12] = "armatl",
-			[13] = "armfflak",
-			[14] = "armcs",
-			[15] = "armsubk",
-			[16] = "armcrus",
+			[12] = "armfguard",
+			[13] = "armatl",
+			[14] = "armfflak",
+			[15] = "armcs",
+			[16] = "armsubk",
+			[17] = "armcrus",
 		},
 		customparams = {
 			buildpic = "armmls.dds",
@@ -89,6 +90,9 @@ return {
 				metal = 206,
 				object = "ARMMLS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -100,6 +104,9 @@ return {
 				metal = 110,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

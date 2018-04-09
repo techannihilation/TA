@@ -1607,6 +1607,11 @@ AimTertiary(heading, pitch)
 	return (1);
 }
 
+AimSecondary()
+{
+	return (1);
+}
+
 Killed(severity, corpsetype)
 {
 	if( Static_Var_7 == 1 )

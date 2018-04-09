@@ -30,7 +30,7 @@ return {
 		icontype = "corthovr",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 73,
+		losemitheight = 48,
 		maneuverleashlength = 640,
 		mass = 836.66669,
 		maxdamage = 5020,
@@ -76,6 +76,9 @@ return {
 				metal = 519,
 				object = "CORTHOVR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

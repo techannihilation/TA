@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 131,
+		losemitheight = 87,
 		maneuverleashlength = 640,
 		mass = 19850,
 		maxdamage = 89000,
@@ -43,7 +43,7 @@ return {
 		objectname = "ARMRAPTOR",
 		pushresistant = true,
 		radardistance = 40,
-		radaremitheight = 131,
+		radaremitheight = 87,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
 		sightdistance = 700,
@@ -71,6 +71,9 @@ return {
 				metal = 10875,
 				object = "armraptor_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 5800,
 				object = "3x3d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

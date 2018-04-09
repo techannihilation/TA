@@ -29,7 +29,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 30,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 128,
 		maxdamage = 250,
@@ -70,6 +70,9 @@ return {
 				metal = 96,
 				object = "TLLSHAM_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 51,
 				object = "2x2d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

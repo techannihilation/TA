@@ -28,7 +28,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 26,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 1745,
 		maxdamage = 1400,
@@ -44,7 +44,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMACK",
 		radardistance = 50,
-		radaremitheight = 26,
+		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 325,
@@ -101,6 +101,9 @@ return {
 				metal = 1105,
 				object = "ARMACK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

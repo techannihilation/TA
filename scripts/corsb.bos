@@ -135,6 +135,11 @@ StopMoving()
 	bMoving = FALSE;
 }
 
+AimPrimary()
+{
+	return (1);
+}
+
 QueryPrimary(piecenum)
 {
 	piecenum = drop;

@@ -26,7 +26,7 @@ return {
 		footprintz = 6,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 44,
+		losemitheight = 29,
 		maneuverleashlength = 640,
 		mass = 5526,
 		maxdamage = 7210,
@@ -65,6 +65,9 @@ return {
 				metal = 4144,
 				object = "tllbats2_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 2210,
 				object = "6x6b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

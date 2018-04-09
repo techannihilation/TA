@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 160,
 		maxangledif1 = 1,
 		maxdamage = 960,
@@ -69,6 +69,9 @@ return {
 				metal = 87,
 				object = "CORJAMT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

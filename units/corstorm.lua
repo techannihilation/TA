@@ -25,7 +25,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 23,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 111.66666,
 		maxdamage = 670,
@@ -69,6 +69,9 @@ return {
 				metal = 67,
 				object = "CORSTORM_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 36,
 				object = "2X2C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -97,6 +97,9 @@ return {
 				metal = 1411,
 				object = "aach_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

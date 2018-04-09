@@ -1,0 +1,47 @@
+2018-03-18 
+Every change from latest stable 2018-02-20, in future list will be updated for every new test version
+Changes go from newest to oldest
+
+Added tll t4 Phoenix air
+Balanced tll t3 fusion
+Increased hp for arm/core t4 fusions
+Fixed arm hunter hell
+Added tll t1 plasma kbot morph
+Increased tremor range
+Added tll rocket kbot morph
+Balanced tll private and private morph
+Added proper lopo for helepolis
+Added rambo
+Increased arm hunter hell size
+Increased metalproduction for tll armored geo
+Increased macross size
+Added wreck for praetorian
+Added experimental nano for tll
+Added morph for tll nuke
+Balanced arm mlrs(t3.5 vehicle rocket launcher)
+Balanced overlord
+Updated tll lightning-units weapon sounds
+Added tll heavy naval mine
+Reduced aoe for hero explosions
+Increased cost for TSARs
+Added parachute icons for paratroopers
+Added t3 hover for testing
+Addded naval mines for tll
+Updated core t3 shipyard
+Removed taken the lead in damage/kills announcement
+Balanced metalmakers
+Updated tll battleship
+Added overlord (tremor morph)
+Added plasma to sea engineer
+Updated costs for star and supreme commanders
+Updated tll armored geo
+Reruced antarion experimental damage
+Added floating llts
+Updated commando
+Added new t4 units for testing
+
+
+
+
+
+

@@ -88,6 +88,7 @@ local optionHover = {}
 local optionSelect = {}
 local fullWidgetsList = {}
 local addedWidgetOptions = false
+local GetPriority
 
 local luaShaders = tonumber(Spring.GetConfigInt("ForceShaders",1) or 0)
 
@@ -779,6 +780,12 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == 'screenedgemove' then
 			Spring.SetConfigInt("FullscreenEdgeMove",value)
 			Spring.SetConfigInt("WindowedEdgeMove",value)
+		elseif id == 'scrollinverse' then
+			if value == 1 then
+				Spring.SetConfigInt("ScrollWheelSpeed",-options[getOptionByID('scrollspeed')].value)
+			else
+				Spring.SetConfigInt("ScrollWheelSpeed",options[getOptionByID('scrollspeed')].value)
+			end
 		elseif id == 'hwcursor' then
 			Spring.SendCommands("HardwareCursor "..value)
 			Spring.SetConfigInt("HardwareCursor",value)
@@ -889,7 +896,11 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.SetConfigInt("GroundDecals", value)
 			Spring.SendCommands("GroundDecals "..value)
 		elseif id == 'scrollspeed' then
-			Spring.SetConfigInt("ScrollWheelSpeed",value)
+			if options[getOptionByID('scrollinverse')].value then
+				Spring.SetConfigInt("ScrollWheelSpeed",-value)
+			else
+				Spring.SetConfigInt("ScrollWheelSpeed",value)
+			end
 		elseif id == 'disticon' then
 			--Spring.SetConfigInt("UnitIconDist "..value)
 			Spring.SendCommands("disticon "..value)
@@ -969,6 +980,11 @@ function applyOptionValue(i, skipRedrawWindow)
 			end
 		elseif id == 'water' then
 			Spring.SendCommands("water "..(value-1))
+		elseif id == 'lupseffectlevel' then
+			if WG.Lups then
+				WG.LupsPriority = value
+				--Spring.Echo("option for lups",value,WG.LupsPriority)
+			end
 		elseif id == 'camera' then
 			Spring.SetConfigInt("CamMode",(value-1))
 			if value == 1 then 
@@ -1275,6 +1291,8 @@ function widget:Initialize()
 
 		{id="water", group="gfx", name="Water type", type="select", options={'basic','reflective','dynamic','reflective&refractive','bump-mapped'}, value=(tonumber(Spring.GetConfigInt("Water",1) or 1)+1)},
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=widgetHandler.orderList["LupsManager"] ~= nil and (widgetHandler.orderList["LupsManager"] > 0), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
+		{id="lupseffectlevel", group="gfx", name="Lups Effect", type="select", options={'basic','min','standard','extra','uber'}, value=WG.LupsPriority or 3},
+
 		{id="xrayshader", group="gfx", widget="XrayShader", name="Unit xray shader", type="bool", value=widgetHandler.orderList["XrayShader"] ~= nil and (widgetHandler.orderList["XrayShader"] > 0), description='Highlights all units, highlight effect dissolves on close camera range.\n\nFades out and disables at low fps\nWorks less on dark teamcolors'},
 		{id="outline", group="gfx", widget="Outline", name="Unit Outline (tiny)", type="bool", value=widgetHandler.orderList["Outline"] ~= nil and (widgetHandler.orderList["Outline"] > 0), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1200.\nStops rendering outlines when average fps falls below 13.'},
 		{id="particles", group="gfx", name="Max particles", type="slider", min=5000, max=25000, step=100, value=tonumber(Spring.GetConfigInt("MaxParticles",1) or 1000), description='Particles used for explosions, smoke, fire and missiletrails\n\nSetting a low value will mean that various effects wont show properly'},
@@ -1302,6 +1320,8 @@ function widget:Initialize()
 		{id="camera", group="control", name="Camera", type="select", options={'fps','overhead','spring','rot overhead','free'}, value=(tonumber((Spring.GetConfigInt("CamMode",1)+1) or 2))},
 		{id="camerashake", group="control", widget="CameraShake", name="Camera shake", type="bool", value=widgetHandler.orderList["CameraShake"] ~= nil and (widgetHandler.orderList["CameraShake"] > 0), description='Shakes camera on explosions'},
 		{id="scrollspeed", group="control", name="Zoom direction/speed", type="slider", min=-45, max=45, step=5, value=tonumber(Spring.GetConfigInt("ScrollWheelSpeed",1) or 25), description='Leftside of the slider means inversed scrolling direction!\nNOTE: Having the slider centered means no mousewheel zooming at all!\n\nChanges will be applied next game'},
+		{id="scrollinverse", group="control", name="Scroll inversed", type="bool", value=(tonumber(Spring.GetConfigInt("ScrollWheelSpeed",1) or 25) < 0), description=""},
+
 
 		{id="hwcursor", group="control", name="Hardware cursor", type="bool", value=tonumber(Spring.GetConfigInt("hardwareCursor",1) or 1) == 1, description="When disabled: the mouse cursor refresh rate will be the same as your ingame fps"},
 		{id="crossalpha", group="control", name="Mouse cross alpha", type="slider", min=0, max=1, step=0.05, value=tonumber(Spring.GetConfigInt("CrossAlpha",1) or 1), description='Opacity of mouse icon in center of screen when you are in camera pan mode\n\n(The\'icon\' has a dot in center with 4 arrows pointing in all directions)'},
@@ -1354,7 +1374,6 @@ function widget:Initialize()
 		{id="enemynuke", group="dr", name="Enemy Nuke", type="bool", value=WG['defrange'].enabled.enemy.nuke or false, description='Show Range For Enemy Nuke'},
 	}
 
-
 	-- not sure if needed: remove vsync option when its dont by monitor (freesync/gsync) -> config value is set as 'x'
 	if Spring.GetConfigInt("Vsync",1) == 'x' then
 		options[getOptionByID('vsync')] = nil
@@ -1393,4 +1412,18 @@ function widget:Shutdown()
     if windowList then
         glDeleteList(windowList)
     end
+end
+
+function widget:GetConfigData()
+	local data = {}
+	data["LupsPriority"] = WG.LupsPriority
+	return data
+end
+
+function widget:SetConfigData(data) 
+	if (data ~= nil) then
+		if ( data["LupsPriority"] ~= nil ) then
+			WG.LupsPriority = data["LupsPriority"]
+		end
+	end
 end

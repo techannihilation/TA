@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 53,
+		losemitheight = 35,
 		mass = 135,
 		maxangledif1 = 1,
 		maxdamage = 99,
@@ -35,7 +35,7 @@ return {
 		objectname = "ARMFRAD",
 		onoffable = true,
 		radardistance = 2100,
-		radaremitheight = 53,
+		radaremitheight = 35,
 		script = "armfrad.lua",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -64,6 +64,9 @@ return {
 				metal = 101,
 				object = "ARMFRAD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

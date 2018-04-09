@@ -25,7 +25,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 71,
+		losemitheight = 47,
 		mass = 640,
 		maxdamage = 2990,
 		maxvelocity = 0,
@@ -80,6 +80,9 @@ return {
 				metal = 480,
 				object = "CORSY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 1150,
 		maxdamage = 900,
 		maxslope = 10,
@@ -53,6 +53,9 @@ return {
 				metal = 862,
 				object = "tllammaker_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -63,6 +66,9 @@ return {
 				metal = 460,
 				object = "4x4f",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

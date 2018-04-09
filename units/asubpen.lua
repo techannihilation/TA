@@ -28,7 +28,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 36,
+		losemitheight = 24,
 		mass = 980,
 		maxdamage = 2400,
 		maxslope = 10,
@@ -85,6 +85,9 @@ return {
 				metal = 735,
 				object = "ASUBPEN_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -17,7 +17,7 @@ return {
 		footprintx = 2,
 		footprintz = 2,
 		isfeature = true,
-		losemitheight = 62,
+		losemitheight = 43,
 		mass = 31,
 		maxdamage = 100,
 		maxslope = 24,
@@ -53,6 +53,9 @@ return {
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			tllfortification = {
 				autoreclaimable = 0,
@@ -76,6 +79,9 @@ return {
 				reclaimtime = 800,
 				seqnamereclamate = "tree1reclamate",
 				world = "allworld",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

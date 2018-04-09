@@ -76,11 +76,12 @@ return {
 			[22] = "tlllbt",
 			[23] = "tlllmt",
 			[24] = "tllsam",
-			[25] = "tlljam",
-			[26] = "tllshoretorp",
-			[27] = "tlljuno",
-			[28] = "tllarch",
-			[29] = "tllsy",
+			[25] = "tlltetanos",
+			[26] = "tlljam",
+			[27] = "tllshoretorp",
+			[28] = "tlljuno",
+			[29] = "tllarch",
+			[30] = "tllsy",
 		},
 		customparams = {
 			buildpic = "tllcv.dds",
@@ -97,6 +98,9 @@ return {
 				metal = 172,
 				object = "tllcv_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -107,6 +111,9 @@ return {
 				metal = 92,
 				object = "3x3f",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

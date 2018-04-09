@@ -24,7 +24,7 @@ return {
 		icontype = "assaultkbot",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 61,
+		losemitheight = 40,
 		maneuverleashlength = 640,
 		mass = 7540,
 		maxdamage = 6550,
@@ -65,6 +65,9 @@ return {
 				metal = 5655,
 				object = "CORHOWIE_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -76,6 +79,9 @@ return {
 				metal = 3016,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

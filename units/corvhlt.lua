@@ -30,7 +30,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 65,
+		losemitheight = 43,
 		mass = 865,
 		maxdamage = 2715,
 		maxslope = 10,
@@ -67,6 +67,9 @@ return {
 				metal = 648,
 				object = "CORVHLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corvhlt_heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

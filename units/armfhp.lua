@@ -78,6 +78,9 @@ return {
 				metal = 825,
 				object = "ARMFHP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -28,7 +28,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 50,
+		losemitheight = 33,
 		maneuverleashlength = 640,
 		mass = 7100,
 		maxdamage = 23500,
@@ -69,6 +69,9 @@ return {
 				metal = 5265,
 				object = "coradon_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 2808,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

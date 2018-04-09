@@ -23,7 +23,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 27,
+		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 250,
 		maxdamage = 1420,
@@ -69,6 +69,9 @@ return {
 				metal = 187,
 				object = "CORMIST_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			cormist_heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 100,
 				object = "3X3F",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -26,7 +26,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 63,
+		losemitheight = 42,
 		maneuverleashlength = 640,
 		mass = 2890,
 		maxdamage = 13500,
@@ -66,6 +66,9 @@ return {
 				metal = 1076,
 				object = "2X2C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

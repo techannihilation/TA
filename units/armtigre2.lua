@@ -26,7 +26,7 @@ return {
 		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 45,
+		losemitheight = 29,
 		maneuverleashlength = 640,
 		mass = 5900,
 		maxdamage = 18250,
@@ -65,6 +65,9 @@ return {
 				metal = 2360,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -76,6 +79,9 @@ return {
 				metal = 4425,
 				object = "armtigre2_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

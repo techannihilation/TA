@@ -17,7 +17,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 42,
+		losemitheight = 27,
 		mass = 213,
 		maxdamage = 1050,
 		maxslope = 10,
@@ -51,6 +51,9 @@ return {
 				metal = 159,
 				object = "tllatidal_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -61,6 +64,9 @@ return {
 				metal = 85,
 				object = "4x4a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

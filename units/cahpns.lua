@@ -24,7 +24,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 22,
 		mass = 4950,
 		maxdamage = 5205,
 		metalstorage = 300,
@@ -36,7 +36,7 @@ return {
 		noshadow = 1,
 		objectname = "CAHPNS",
 		radardistance = 50,
-		radaremitheight = 27,
+		radaremitheight = 22,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 220,
 		standingfireorder = 2,
@@ -73,6 +73,9 @@ return {
 				metal = 3712,
 				object = "Cahpns_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 1980,
 				object = "7x7a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

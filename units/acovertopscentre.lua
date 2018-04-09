@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 6,
 		idletime = 1800,
-		losemitheight = 41,
+		losemitheight = 27,
 		mass = 81640,
 		maxdamage = 36000,
 		maxslope = 10,
@@ -66,6 +66,9 @@ return {
 				metal = 61230,
 				object = "ACovertOpsCentre_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

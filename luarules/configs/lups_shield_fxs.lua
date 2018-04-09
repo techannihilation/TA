@@ -7,6 +7,7 @@ local ShieldSphereBase = {
 	colormap2 = {{0.2, 0.9, 1, 0.0}, {1, 0.9, 0.2, 0.0}},
 	repeatEffect = true,
 	drawBack = 0.7,
+	priority = 1,
 }
 
 local SEARCH_SMALL = {
@@ -60,6 +61,7 @@ for unitDefID = 1, #UnitDefs do
 		if radius > 250 then
 			myShield.shieldSize = "large"
 			myShield.drawBack = 0.6
+			myShield.drawBackCol = 0.3
 			myShield.drawBackMargin = 3
 			myShield.margin = 1.35
 			myShield.hitResposeMult = 0.6
@@ -68,6 +70,7 @@ for unitDefID = 1, #UnitDefs do
 		else
 			myShield.shieldSize = "small"
 			myShield.drawBack = 0.9
+			myShield.drawBackCol = 0.3
 			myShield.drawBackMargin = 1.9
 			myShield.margin = 1.2
 			myShield.colormap1[1][4] = 0.22

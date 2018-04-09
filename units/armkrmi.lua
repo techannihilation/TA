@@ -23,7 +23,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 59,
+		losemitheight = 39,
 		maneuverleashlength = 640,
 		mass = 1750,
 		maxdamage = 5500,
@@ -37,7 +37,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMKRMI",
 		radardistance = 1500,
-		radaremitheight = 59,
+		radaremitheight = 39,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 450,
 		standingfireorder = 2,
@@ -65,6 +65,9 @@ return {
 				metal = 1312,
 				object = "armkrmi_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -75,6 +78,9 @@ return {
 				metal = 700,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

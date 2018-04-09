@@ -50,6 +50,7 @@ return {
 		unitname = "corbuzz",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "corbuzz.dds",
@@ -70,6 +71,9 @@ return {
 				metal = 21187,
 				object = "CORBUZZ_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +85,9 @@ return {
 				metal = 11300,
 				object = "7X7A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

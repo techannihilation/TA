@@ -19,7 +19,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 63,
+		losemitheight = 44,
 		mass = 192,
 		maxdamage = 485,
 		minwaterdepth = 20,
@@ -52,6 +52,9 @@ return {
 				metal = 144,
 				object = "tllsolarNS_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -62,6 +65,9 @@ return {
 				metal = 76,
 				object = "4x4b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

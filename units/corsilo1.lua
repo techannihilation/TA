@@ -29,7 +29,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 67,
+		losemitheight = 45,
 		mass = 14750,
 		maxdamage = 7250,
 		maxslope = 10,
@@ -40,7 +40,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORSILO1",
 		radardistance = 50,
-		radaremitheight = 67,
+		radaremitheight = 45,
 		script = "corsilo.cob",
 		seismicsignature = 0,
 		selfdestructas = "NUCLEAR_MISSILE",
@@ -68,6 +68,9 @@ return {
 				metal = 11062,
 				object = "CORSILO_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corsilo_heap = {
 				blocking = false,
@@ -79,6 +82,9 @@ return {
 				metal = 5900,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

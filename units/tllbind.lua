@@ -22,7 +22,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 24,
 		maneuverleashlength = 640,
 		mass = 2850,
 		maxdamage = 12900,
@@ -61,6 +61,9 @@ return {
 				metal = 2212,
 				object = "tllbind_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -71,6 +74,9 @@ return {
 				metal = 1180,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -109,7 +115,7 @@ return {
 		},
 		weapondefs = {
 			tllbinder_weapon = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				beamttl = 10,
 				craterareaofeffect = 0,
 				craterboost = 0,

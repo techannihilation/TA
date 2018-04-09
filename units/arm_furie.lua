@@ -29,7 +29,7 @@ return {
 		idleautoheal = 7,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 85,
+		losemitheight = 56,
 		maneuverleashlength = 640,
 		mass = 45000,
 		maxdamage = 270000,
@@ -71,6 +71,9 @@ return {
 				metal = 28125,
 				object = "arm_furie_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			furie_heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 15000,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

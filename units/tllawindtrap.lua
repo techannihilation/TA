@@ -21,7 +21,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 61,
+		losemitheight = 40,
 		mass = 145,
 		maxdamage = 585,
 		maxslope = 10,
@@ -54,6 +54,9 @@ return {
 				metal = 97,
 				object = "tllawindtrap_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -64,16 +67,17 @@ return {
 				metal = 52,
 				object = "4x4f",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				[1] = "piecetrail5",
+				[2] = "piecetrail5",
+				[3] = "piecetrail4",
+				[4] = "piecetrail6",
 			},
 		},
 		sounds = {

@@ -31,7 +31,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 63,
+		losemitheight = 41,
 		maneuverleashlength = 1640,
 		mass = 26400,
 		maxdamage = 70000,
@@ -45,7 +45,7 @@ return {
 		objectname = "CORBLACKHY",
 		pushresistant = true,
 		radardistance = 1500,
-		radaremitheight = 63,
+		radaremitheight = 41,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
@@ -77,6 +77,9 @@ return {
 				metal = 19800,
 				object = "CORBLACKHY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -88,6 +91,9 @@ return {
 				metal = 10560,
 				object = "6X6A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

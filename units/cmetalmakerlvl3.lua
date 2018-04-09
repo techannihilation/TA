@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 125,
+		losemitheight = 95,
 		mass = 42500,
 		maxdamage = 31000,
 		maxslope = 20,
@@ -52,6 +52,9 @@ return {
 				metal = 12860,
 				object = "7x7d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

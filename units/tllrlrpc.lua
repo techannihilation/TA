@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 92,
+		losemitheight = 61,
 		mass = 34865,
 		maxdamage = 41980,
 		maxslope = 10,
@@ -60,6 +60,9 @@ return {
 				metal = 26150,
 				object = "tllrlrpc_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -71,6 +74,9 @@ return {
 				metal = 13946,
 				object = "5x5b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -81,6 +87,9 @@ return {
 				metal = 8716,
 				object = "4x4b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

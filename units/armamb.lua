@@ -31,8 +31,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = false,
-		losemitheight = 28,
+		losemitheight = 22,
 		mass = 2490,
 		maxdamage = 3600,
 		maxslope = 10,
@@ -73,6 +72,9 @@ return {
 				metal = 1867,
 				object = "ARMAMB_DEAD1",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead2 = {
 				blocking = true,
@@ -85,6 +87,9 @@ return {
 				metal = 996,
 				object = "ARMAMB_DEAD2",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -96,6 +101,9 @@ return {
 				metal = 622,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -43,7 +43,7 @@ return {
 		idleautoheal = 10,
 		idletime = 1300,
 		immunetoparalyzer = 1,
-		losemitheight = 47,
+		losemitheight = 33,
 		maneuverleashlength = 640,
 		mass = 5000,
 		maxdamage = 7500,
@@ -61,7 +61,7 @@ return {
 		objectname = "CORCOM5",
 		onoffable = true,
 		radardistance = 1000,
-		radaremitheight = 47,
+		radaremitheight = 33,
 		reclaimable = false,
 		script = "corcom.cob",
 		seismicsignature = 0,
@@ -140,6 +140,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -157,6 +160,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

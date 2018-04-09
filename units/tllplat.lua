@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 47,
+		losemitheight = 31,
 		mass = 3893,
 		maxdamage = 2121,
 		metalmake = 1,
@@ -67,6 +67,9 @@ return {
 				metal = 2919,
 				object = "tllplat_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 1557,
 				object = "6x6b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 35,
+		losemitheight = 24,
 		mass = 80,
 		maxdamage = 93,
 		maxslope = 10,
@@ -31,7 +31,7 @@ return {
 		objectname = "TLLRADAR",
 		onoffable = true,
 		radardistance = 2000,
-		radaremitheight = 35,
+		radaremitheight = 24,
 		script = "tllradar.lua",
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 350,
@@ -53,6 +53,9 @@ return {
 				metal = 60,
 				object = "tllradar_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -63,6 +66,9 @@ return {
 				metal = 32,
 				object = "2x2b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 27,
 		mass = 1160,
 		maxdamage = 1820,
 		maxvelocity = 0,
@@ -65,6 +65,9 @@ return {
 				metal = 663,
 				object = "CORENAA_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

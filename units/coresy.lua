@@ -27,7 +27,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 93,
+		losemitheight = 62,
 		mass = 16000,
 		maxdamage = 10598,
 		metalmake = 2,
@@ -39,7 +39,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORESY",
 		radardistance = 100,
-		radaremitheight = 93,
+		radaremitheight = 62,
 		selfdestructas = "ATOMIC_BLAST",
 		sightdistance = 324,
 		standingfireorder = 2,
@@ -73,6 +73,9 @@ return {
 				metal = 12000,
 				object = "CORESY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 6400,
 				object = "7X7B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {
