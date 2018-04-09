@@ -50,7 +50,6 @@ local isCom = {}
 for _,UnitDef in pairs(UnitDefs) do
 	if UnitDef.extractsMetal and UnitDef.extractsMetal > 0 then
 		mexIds[UnitDef.id] = UnitDef.id
-		Spring.Echo("autogen ",UnitDef.id,UnitDef.id)
 	end
 	if UnitDefs.customParams and UnitDefs.customParams.iscommander then
 		isCom[unitDefID.id] = true
@@ -308,7 +307,7 @@ function widget:CommandsChanged()
 				id      = CMD_AREA_MEX,
 				type    = CMDTYPE.ICON_AREA,
 				tooltip = 'Define an area to make mexes in',
-				name    = 'Area\nMex',
+				name    = 'Area\n Mex',
 				cursor  = 'Repair',
 				action  = 'areamex',
 			})
