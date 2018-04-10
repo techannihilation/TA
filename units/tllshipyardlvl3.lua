@@ -37,7 +37,7 @@ return {
 		workertime = 240,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccoooooooooooooooooo",
 		buildoptions = {
-			[1] = "tllvaliant",
+			[1] = "tllzeppelin",
 		},
 		customparams = {
 			buildpic = "tllshipyardlvl3.dds",
