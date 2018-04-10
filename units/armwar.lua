@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 265,
 		builder = false,
 		buildpic = "armwar.dds",
-		buildtime = 3828,
+		buildtime = 5000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -151,7 +151,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 950,
 				damage = {
-					default = 55,
+					commanders = 36,
+					default = 42,
 					subs = 5,
 				},
 			},
