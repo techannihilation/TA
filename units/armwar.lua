@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 265,
 		builder = false,
 		buildpic = "armwar.dds",
-		buildtime = 5000,
+		buildtime = 4400,
 		canattack = true,
 		canguard = true,
 		canmove = true,
