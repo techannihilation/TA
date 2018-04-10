@@ -43,6 +43,19 @@ local cos = math.cos
 local atan = math.atan 
 local random = math.random
 
+local glPushMatrix = gl.PushMatrix
+local glUnitShape = gl.UnitShape
+local glRotate = gl.Rotate
+local glTranslate = gl.Translate
+local glPopMatrix = gl.PopMatrix
+local glTexture = gl.Texture
+local glColor = gl.Color
+local glBeginEnd = gl.BeginEnd
+local glVertex = gl.Vertex
+local glTexCoord = gl.TexCoord
+local glUnit = gl.Unit
+local GL_QUADS = GL.QUADS
+
 --------------------------------------------------------------------------------
 -- Config
 --------------------------------------------------------------------------------
@@ -281,6 +294,14 @@ function widget:Initialize()
 	spLoadCmdColorsConfig('queueIconAlpha  0.5 ')
 	
 	setCmdLineColors(0.5)
+
+	WG['commandsfx'] = {}
+	WG['commandsfx'].getOpacity = function()
+		return opacity
+	end
+	WG['commandsfx'].setOpacity = function(value)
+		opacity = value
+	end
 end
 
 function widget:Shutdown()
@@ -319,21 +340,21 @@ local function DrawLineEnd(x1,y1,z1, x2,y2,z2, width)
     local zOffset2 = zOffset / 1.35
 	
 	-- first rounding
-    gl.Vertex(x1+xOffset2, y1, z1+zOffset2)
-    gl.Vertex(x1-xOffset2, y1, z1-zOffset2)
+    glVertex(x1+xOffset2, y1, z1+zOffset2)
+    glVertex(x1-xOffset2, y1, z1-zOffset2)
     
-    gl.Vertex(x2-xOffset, y2, z2-zOffset)
-    gl.Vertex(x2+xOffset, y2, z2+zOffset)
+    glVertex(x2-xOffset, y2, z2-zOffset)
+    glVertex(x2+xOffset, y2, z2+zOffset)
     
     -- second rounding
-    gl.Vertex(x1+xOffset2, y1, z1+zOffset2)
-    gl.Vertex(x1-xOffset2, y1, z1-zOffset2)
+    glVertex(x1+xOffset2, y1, z1+zOffset2)
+    glVertex(x1-xOffset2, y1, z1-zOffset2)
 	
     xOffset2 = xOffset / 3.22
     zOffset2 = zOffset / 3.22
 	
-    gl.Vertex(x1_2-xOffset2, y1, z1_2-zOffset2)
-    gl.Vertex(x1_2+xOffset2, y1, z1_2+zOffset2)
+    glVertex(x1_2-xOffset2, y1, z1_2-zOffset2)
+    glVertex(x1_2+xOffset2, y1, z1_2+zOffset2)
 end
 
 
@@ -360,29 +381,29 @@ local function DrawLineEndTex(x1,y1,z1, x2,y2,z2, width, texLength, texOffset)
     local zOffset2 = zOffset / 1.35
 	
 	-- first rounding
-	gl.TexCoord(0.2-texOffset,0)
-    gl.Vertex(x1+xOffset2, y1, z1+zOffset2)
-	gl.TexCoord(0.2-texOffset,1)
-    gl.Vertex(x1-xOffset2, y1, z1-zOffset2)
+	glTexCoord(0.2-texOffset,0)
+    glVertex(x1+xOffset2, y1, z1+zOffset2)
+	glTexCoord(0.2-texOffset,1)
+    glVertex(x1-xOffset2, y1, z1-zOffset2)
     
-	gl.TexCoord(0.55-texOffset,0.85)
-    gl.Vertex(x2-xOffset, y2, z2-zOffset)
-	gl.TexCoord(0.55-texOffset,0.15)
-    gl.Vertex(x2+xOffset, y2, z2+zOffset)
+	glTexCoord(0.55-texOffset,0.85)
+    glVertex(x2-xOffset, y2, z2-zOffset)
+	glTexCoord(0.55-texOffset,0.15)
+    glVertex(x2+xOffset, y2, z2+zOffset)
     
     -- second rounding
-	gl.TexCoord(0.8-texOffset,0.7)
-    gl.Vertex(x1+xOffset2, y1, z1+zOffset2)
-	gl.TexCoord(0.8-texOffset,0.3)
-    gl.Vertex(x1-xOffset2, y1, z1-zOffset2)
+	glTexCoord(0.8-texOffset,0.7)
+    glVertex(x1+xOffset2, y1, z1+zOffset2)
+	glTexCoord(0.8-texOffset,0.3)
+    glVertex(x1-xOffset2, y1, z1-zOffset2)
 	
     xOffset2 = xOffset / 3.22
     zOffset2 = zOffset / 3.22
 	
-	gl.TexCoord(0.55-texOffset,0.15)
-    gl.Vertex(x1_2-xOffset2, y1, z1_2-zOffset2)
-	gl.TexCoord(0.55-texOffset,0.85)
-    gl.Vertex(x1_2+xOffset2, y1, z1_2+zOffset2)
+	glTexCoord(0.55-texOffset,0.15)
+    glVertex(x1_2-xOffset2, y1, z1_2-zOffset2)
+	glTexCoord(0.55-texOffset,0.85)
+    glVertex(x1_2+xOffset2, y1, z1_2+zOffset2)
 end
 
 local function DrawLine(x1,y1,z1, x2,y2,z2, width) -- long thin rectangle
@@ -391,11 +412,11 @@ local function DrawLine(x1,y1,z1, x2,y2,z2, width) -- long thin rectangle
     local zOffset = cos(pi-theta) * width / 2
     local xOffset = sin(pi-theta) * width / 2
     
-    gl.Vertex(x1+xOffset, y1, z1+zOffset)
-    gl.Vertex(x1-xOffset, y1, z1-zOffset)
+    glVertex(x1+xOffset, y1, z1+zOffset)
+    glVertex(x1-xOffset, y1, z1-zOffset)
     
-    gl.Vertex(x2-xOffset, y2, z2-zOffset)
-    gl.Vertex(x2+xOffset, y2, z2+zOffset)
+    glVertex(x2-xOffset, y2, z2-zOffset)
+    glVertex(x2+xOffset, y2, z2+zOffset)
 end
 
 local function DrawLineTex(x1,y1,z1, x2,y2,z2, width, texLength, texOffset) -- long thin rectangle
@@ -406,26 +427,26 @@ local function DrawLineTex(x1,y1,z1, x2,y2,z2, width, texLength, texOffset) -- l
     local zOffset = cos(pi-theta) * width / 2
     local xOffset = sin(pi-theta) * width / 2
     
-	gl.TexCoord(((distance/width)/texLength)+1-texOffset, 1)
-    gl.Vertex(x1+xOffset, y1, z1+zOffset)
-	gl.TexCoord(((distance/width)/texLength)+1-texOffset, 0)
-    gl.Vertex(x1-xOffset, y1, z1-zOffset)
+	glTexCoord(((distance/width)/texLength)+1-texOffset, 1)
+    glVertex(x1+xOffset, y1, z1+zOffset)
+	glTexCoord(((distance/width)/texLength)+1-texOffset, 0)
+    glVertex(x1-xOffset, y1, z1-zOffset)
     
-	gl.TexCoord(0-texOffset,0)
-    gl.Vertex(x2-xOffset, y2, z2-zOffset)
-	gl.TexCoord(0-texOffset,1)
-    gl.Vertex(x2+xOffset, y2, z2+zOffset)
+	glTexCoord(0-texOffset,0)
+    glVertex(x2-xOffset, y2, z2-zOffset)
+	glTexCoord(0-texOffset,1)
+    glVertex(x2+xOffset, y2, z2+zOffset)
 end
 
 local function DrawGroundquad(x,y,z,size)
-	gl.TexCoord(0,0)
-	gl.Vertex(x-size,y,z-size)
-	gl.TexCoord(0,1)
-	gl.Vertex(x-size,y,z+size)
-	gl.TexCoord(1,1)
-	gl.Vertex(x+size,y,z+size)
-	gl.TexCoord(1,0)
-	gl.Vertex(x+size,y,z-size)
+	glTexCoord(0,0)
+	glVertex(x-size,y,z-size)
+	glTexCoord(0,1)
+	glVertex(x-size,y,z+size)
+	glTexCoord(1,1)
+	glVertex(x+size,y,z+size)
+	glTexCoord(1,0)
+	glVertex(x+size,y,z-size)
 end
 
 ------------------------------------------------------------------------------------
@@ -631,13 +652,13 @@ function widget:DrawWorldPreUnit()
             if prevX and commands[i].set_target and commands[i].set_target.params and commands[i].set_target.params[1] then
                 local lineColour = CONFIG[CMD_SET_TARGET].colour
                 local lineAlpha = opacity * lineColour[4] * (1-progress)
-                gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+                glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
                 if commands[i].set_target.params[3] then
-                    gl.BeginEnd(GL.QUADS, DrawLine, prevX,prevY,prevZ, commands[i].set_target.params[1], commands[i].set_target.params[2], commands[i].set_target.params[3], lineWidth) 
+                    glBeginEnd(GL_QUADS, DrawLine, prevX,prevY,prevZ, commands[i].set_target.params[1], commands[i].set_target.params[2], commands[i].set_target.params[3], lineWidth) 
                 else
                     local x,y,z = spGetUnitPosition(commands[i].set_target.params[1])    
                     if x then
-                        gl.BeginEnd(GL.QUADS, DrawLine, prevX,prevY,prevZ, x,y,z, lineWidth)
+                        glBeginEnd(GL_QUADS, DrawLine, prevX,prevY,prevZ, x,y,z, lineWidth)
                     end
                 end                  
             end
@@ -657,29 +678,29 @@ function widget:DrawWorldPreUnit()
 		                    local lineColour = CONFIG[commands[i].queue[j].id].colour
 		                    local lineAlpha = opacity * lineOpacity * (lineColour[4] * 2) * lineAlphaMultiplier
 		                    if lineAlpha > 0 then 
-								gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+								glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
 								if drawLineTexture then
 					                usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
-									gl.Texture(lineImg)
-									gl.BeginEnd(GL.QUADS, DrawLineTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength * (lineWidth / usedLineWidth), texOffset)
-									gl.Texture(false)
+									glTexture(lineImg)
+									glBeginEnd(GL_QUADS, DrawLineTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength * (lineWidth / usedLineWidth), texOffset)
+									glTexture(false)
 								else
-									gl.BeginEnd(GL.QUADS, DrawLine, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
+									glBeginEnd(GL_QUADS, DrawLine, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
 								end
 								-- ghost of build queue
 								if drawBuildQueue and commands[i].queue[j].buildingID then
-									gl.PushMatrix()
-									gl.Translate(X,Y+1,Z)
-									gl.Rotate(90 * commands[i].queue[j].params[4], 0, 1, 0)
-									gl.UnitShape(commands[i].queue[j].buildingID, spGetMyTeamID(), true, false, false)
-									gl.Rotate(-90 * commands[i].queue[j].params[4], 0, 1, 0)
-									gl.Translate(-X,-Y-1,-Z)
-									gl.PopMatrix()
+									glPushMatrix()
+									glTranslate(X,Y+1,Z)
+									glRotate(90 * commands[i].queue[j].params[4], 0, 1, 0)
+									glUnitShape(commands[i].queue[j].buildingID, spGetMyTeamID(), true, false, false)
+									glRotate(-90 * commands[i].queue[j].params[4], 0, 1, 0)
+									glTranslate(-X,-Y-1,-Z)
+									glPopMatrix()
 								end
 								if j == 1 and not drawLineTexture then
 									-- draw startpoint rounding
-									gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-									gl.BeginEnd(GL.QUADS, DrawLineEnd, X, Y, Z, prevX,prevY,prevZ, usedLineWidth)
+									glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+									glBeginEnd(GL_QUADS, DrawLineEnd, X, Y, Z, prevX,prevY,prevZ, usedLineWidth)
 								end
 							end
 		                    if j==commands[i].queueSize then
@@ -687,13 +708,13 @@ function widget:DrawWorldPreUnit()
 							-- draw endpoint rounding
 							if drawLineTexture == false and lineAlpha > 0 then 
 								if drawLineTexture then
-									gl.Texture(lineImg)
-									gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-									gl.BeginEnd(GL.QUADS, DrawLineEndTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength, texOffset)
-									gl.Texture(false)
+									glTexture(lineImg)
+									glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+									glBeginEnd(GL_QUADS, DrawLineEndTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength, texOffset)
+									glTexture(false)
 								else
-									gl.Color(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-									gl.BeginEnd(GL.QUADS, DrawLineEnd, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
+									glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+									glBeginEnd(GL_QUADS, DrawLineEnd, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
 									end
 		                   		end
 		                        
@@ -706,10 +727,10 @@ function widget:DrawWorldPreUnit()
 								if commands[i].selected then
 									glowAlpha = glowAlpha * 1.5
 								end
-								gl.Color(lineColour[1],lineColour[2],lineColour[3],glowAlpha)
-								gl.Texture(glowImg)
-								gl.BeginEnd(GL.QUADS,DrawGroundquad,X,Y+3,Z,size)
-								gl.Texture(false)
+								glColor(lineColour[1],lineColour[2],lineColour[3],glowAlpha)
+								glTexture(glowImg)
+								glBeginEnd(GL_QUADS,DrawGroundquad,X,Y+3,Z,size)
+								glTexture(false)
 							end		
                         end
                         prevX, prevY, prevZ = X, Y, Z
@@ -718,8 +739,7 @@ function widget:DrawWorldPreUnit()
             end
         end
     end
-    gl.Scale(1,1,1)
-    gl.Color(1,1,1,1)
+    glColor(1,1,1,1)
 end
 
 
@@ -738,11 +758,11 @@ function widget:DrawWorld()
 		for i, v in pairs(commands) do
 			if commands[i].draw and commands[i].highlight and not spIsUnitIcon(commands[i].unitID) then
 				local progress = (osClock - commands[i].time) / duration
-				gl.Color(commands[i].highlight[1],commands[i].highlight[2],commands[i].highlight[3],0.08*(1-progress))
-				gl.Unit(commands[i].unitID, true)
+				glColor(commands[i].highlight[1],commands[i].highlight[2],commands[i].highlight[3],0.08*(1-progress))
+				glUnit(commands[i].unitID, true)
+				highlightUnitCounter = highlightUnitCounter + 1
 			end
-			highlightUnitCounter = highlightUnitCounter + 1
-			if highlightUnitCounter <= drawUnitHightlightMaxUnits then
+			if highlightUnitCounter >= drawUnitHightlightMaxUnits then
 				break
 			end
 		end
@@ -750,4 +770,15 @@ function widget:DrawWorld()
 		gl.PolygonOffset(false)
 		gl.DepthTest(false)
 	end
+end
+
+
+function widget:GetConfigData(data)
+	savedTable = {}
+	savedTable.opacity = opacity
+	return savedTable
+end
+
+function widget:SetConfigData(data)
+	if data.opacity ~= nil 	then  opacity	= data.opacity end
 end
