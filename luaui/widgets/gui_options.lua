@@ -981,6 +981,8 @@ function applyOptionValue(i, skipRedrawWindow)
 				widgetHandler:EnableWidget('Red Console (Battle and autohosts)')
 			end
 			Spring.SendCommands("luarules reloadluaui")
+		elseif id == 'allyselunits_select' then
+			saveOptionValue('Ally Selected Units', 'allyselectedunits', 'setSelectPlayerUnits', {'selectPlayerUnits'}, options[i].value)
 		elseif id == 'buildmenuoldicons' then
 			saveOptionValue('Red Build/Order Menu', 'red_buildmenu', 'setConfigOldUnitIcons', {'oldUnitpics'}, options[i].value)
 		elseif id == 'buildmenushortcuts' then
@@ -1750,6 +1752,8 @@ function init()
 
 		{id="darkenmap", group="gfx", name="Darken map", min=0, max=0.5, step=0.01, type="slider", value=0, description='Darkens the whole map (not the units)\n\nRemembers setting per map\nUse /resetmapdarkness if you want to reset all stored map settings'},
 		{id="darkenmap_darkenfeatures", group="gfx", name=widgetOptionColor.."   Darken features with map", type="bool", value=false, description='Darkens features (trees, wrecks, ect..) along with darken map slider above\n\nNOTE: This setting can be CPU intensive because it cycles through all visible features \nand renders then another time.'},
+
+		{id="lighteffects", group="gfx", name="Deferred rendering", type="bool", value=GetWidgetToggleValue("Deferred rendering"), description='Adds lights to projectiles, lasers and explosions.\n\nRequires shaders.'},
 --[[
 		{id="lighteffects", group="gfx", name="Light effects", type="bool", value=GetWidgetToggleValue("Light Effects"), description='Adds lights to projectiles, lasers and explosions.\n\nRequires shaders.'},
 		{id="lighteffects_life", group="gfx", name=widgetOptionColor.."   lifetime", min=0.4, max=1, step=0.05, type="slider", value=0.65, description='lifetime of explosion lights'},
@@ -1759,7 +1763,7 @@ function init()
 		{id="lighteffects_laserradius", group="gfx", name=widgetOptionColor.."   laser radius  (gpu intensive)", min=0.5, max=1.6, step=0.1, type="slider", value=1, description='laser lights radius RELATIVE to global light radius set above\n\nWARNING: the bigger the radius the heavier on the GPU'},
 --]]
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=GetWidgetToggleValue("LupsManager"), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
-		{id="lupseffectlevel", group="gfx", name="Lups Effect", type="select", options={'basic','min','standard','extra','uber'}, value=WG.LupsPriority or 3, description='Sets lups particle effects quality'},
+		{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=WG.LupsPriority or 3, description='Sets lups particle effects quality'},
 
 		{id="outline", group="gfx", widget="Outline", name="Unit outline (expensive)", type="bool", value=GetWidgetToggleValue("Outline"), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1000.\nStops rendering outlines when average fps falls below 13.'},
 		{id="outline_size", group="gfx", name=widgetOptionColor.."   thickness", min=0.8, max=1.5, step=0.05, type="slider", value=1, description='Set the size of the outline'},
@@ -1781,6 +1785,8 @@ function init()
 		{id="commandsfxopacity", group="gfx", name=widgetOptionColor.."   opacity", type="slider", min=0.3, max=1, step=0.1, value=1, description=''},
 
 		{id="dofintensity", group="gfx", name="DoF intensity", type="slider", min=0.05, max=5, step=0.01, value=1.5, description='Enable Depth of Field with F8 first'},
+
+		{id="mousefx", group="gfx", widget="Mouse FX", name="Mouse FX", type="bool", value=GetWidgetToggleValue("Mouse FX"), description='Adds Glow effect at mouse clicks'},
 
 		--{id="resurrectionhalos", group="gfx", widget="Resurrection Halos", name="Resurrected unit halos", type="bool", value=GetWidgetToggleValue("Resurrection Halos"), description='Gives units have have been resurrected a little halo above it.'},
         --{id="tombstones", group="gfx", widget="Tombstones", name="Tombstones", type="bool", value=GetWidgetToggleValue("Tombstones"), description='Displays tombstones where commanders died'},
@@ -1812,6 +1818,7 @@ function init()
 		{id="cursor", group="control", name="Cursor", type="select", options={}, value=1, description='Choose a different mouse cursor style and/or size'},
 		{id="crossalpha", group="control", name="Mouse cross alpha", type="slider", min=0, max=1, step=0.05, value=tonumber(Spring.GetConfigString("CrossAlpha",1) or 1), description='Opacity of mouse icon in center of screen when you are in camera pan mode\n\n(The\'icon\' has a dot in center with 4 arrows pointing in all directions)'},
 		{id="screenedgemove", group="control", name="Screen edge moves camera", type="bool", value=tonumber(Spring.GetConfigInt("FullscreenEdgeMove",1) or 1) == 1, description="If mouse is close to screen edge this will move camera\n\nChanges will be applied next game"},
+		{id="allyselunits_select", group="control", name="Select units of tracked player", type="bool", value=(WG['allyselectedunits']~=nil and WG['allyselectedunits'].getSelectPlayerUnits()), description="When viewing a players camera, this will also select the units the player has selected"},
 
 		-- UI
 		--{id="teamcolors", group="ui", widget="Player Color Palette", name="Team colors based on a palette", type="bool", value=GetWidgetToggleValue("Player Color Palette"), description='Replaces lobby team colors for a color palette based one\n\nNOTE: reloads all widgets because these need to update their teamcolors'},
