@@ -1,15 +1,21 @@
-#define TA			// This is a TA script
-
+#define TA
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, sleeve, mainsleeve, barrel1a, barrel1b, flare,
-       flare1, flare2, flare3, flare4, flare5, flare6, flare7, flare8,
-       flare9, flare10;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8;
 
+piece base, body, turret, sleeve, mainsleeve, barrel1a, barrel1b, flare, flare1, flare2,
+	  flare3, flare4, flare5, flare6, flare7, flare8, flare9, flare10;
+
+
+static-var  missile, restore_delay, onoff, waiting, high, low;					
+static-var  statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions:
+#define SIG_AIM 		2
+#define SIG_AIM_2 		4
+#define SIG_AIM_3 		8
+#define SIG_ACTIVATE	16
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -38,83 +44,117 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+/*
+Activate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	onoff = 1;
+	waiting = 1;
+	sleep 100;
+	turn mainsleeve to x-axis <-80.000000> speed <25.000000>;
+	wait-for-turn mainsleeve around x-axis;
+	sleep 100;
+	waiting = 0;	
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	onoff = 0;
+	waiting = 1;
+	sleep 100;
+	turn mainsleeve to x-axis <0.000000> speed <25.000000>;
+	wait-for-turn mainsleeve around x-axis;
+	sleep 100;
+	waiting = 0;
+	
+}
+*/
 activatescr()
 {
 	if( TRUE )
 	{
-		turn mainsleeve to x-axis <-75.> speed <25.>;
+		turn mainsleeve to x-axis <-75.000000> speed <25.000000>;
 		wait-for-turn mainsleeve around x-axis;
 		sleep 150;
 	}
+	
+	return (0);
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		turn mainsleeve to x-axis <0.> speed <25.>;
+		turn mainsleeve to x-axis <0.000000> speed <25.000000>;
 		wait-for-turn mainsleeve around x-axis;
-		sleep 150;
+		sleep 150;		
 	}
 }
 
 Go()
 {
 	call-script activatescr();
-	Static_Var_4 = 1;
+	waiting = 1;	
 }
 
 Stop()
 {
-	Static_Var_4 = 0;
+	waiting = 0;
 	call-script deactivatescr();
 }
 
+
 InitState()
 {
-	Static_Var_7 = 1;
-	Static_Var_8 = 0;
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
 }
 
 RequestState(requestedstate, currentstate)
 {
-	if( Static_Var_8 )
+	if( statechg_StateChanging )
 	{
-		Static_Var_7 = requestedstate;
+		statechg_DesiredState = requestedstate;
 		return (0);
 	}
-	Static_Var_8 = 1;
-	currentstate = Static_Var_7;
-	Static_Var_7 = requestedstate;
-	while( Static_Var_7 != currentstate )
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
 	{
-		if( Static_Var_7 == 0 )
+		if( statechg_DesiredState == 0 )
 		{
 			call-script Go();
 			currentstate = 0;
 		}
-		if( Static_Var_7 == 1 )
+		if( statechg_DesiredState == 1 )
 		{
 			call-script Stop();
 			currentstate = 1;
 		}
 	}
-	Static_Var_8 = 0;
+	statechg_StateChanging = FALSE;
 }
+
 
 Create()
 {
-	Static_Var_1 = 0;
-	Static_Var_4 = 0;
-	Static_Var_3 = 0;
-	Static_Var_4 = 0;
-	Static_Var_2 = 5000;
+	missile = 0;
+	waiting = 0;
+	onoff = 0;
+	waiting = 0;
+	restore_delay = 5000;
 	
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;
 	}
-
+	
 	call-script InitState();
 	start-script RequestState(0);
 	start-script SmokeUnit();
@@ -122,25 +162,25 @@ Create()
 
 RestoreAfterDelay2()
 {
-	sleep Static_Var_2;
+	sleep restore_delay;
 	set-signal-mask 0;
-	turn turret to y-axis <0.> speed <45.>;
-	turn sleeve to x-axis <0.> speed <15.>;
+	turn turret to y-axis <0.000000> speed <45.000000>;
+	turn sleeve to x-axis <0.000000> speed <15.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	return (1);
 }
 
 FirePrimary()
 {
 	emit-sfx 1024 + 0 from flare;
-	move barrel1b to z-axis [-2.] speed [500.];
+	move barrel1b to z-axis [-2.000000] speed [500.000000];
 	sleep 250;
-	move barrel1b to z-axis [0.] speed [1.];
+	move barrel1b to z-axis [0.000000] speed [1.000000];
 }
 
 AimFromPrimary(piecenum)
@@ -155,11 +195,12 @@ QueryPrimary(piecenum)
 
 AimTertiary(heading, pitch)
 {
-	signal 8;
-	set-signal-mask 8;
-	turn turret to y-axis heading speed <60.>;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	
+	turn turret to y-axis heading speed <60.000000>;
 	wait-for-turn turret around y-axis;
-	turn sleeve to x-axis <0.> - pitch speed <30.>;
+	turn sleeve to x-axis <0.000000> - pitch speed <30.000000>;
 	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay2();
 	return (1);
@@ -167,52 +208,52 @@ AimTertiary(heading, pitch)
 
 Shot3()
 {
-	++Static_Var_1;
-	if( Static_Var_1 == 10 )
+	++missile;
+	if( missile == 10 )
 	{
-		Static_Var_1 = 0;
+		missile = 0;
 	}
 }
 
 QueryTertiary(piecenum)
 {
-	if( Static_Var_1 == 0 )
+	if( missile == 0 )
 	{
 		piecenum = flare1;
 	}
-	if( Static_Var_1 == 1 )
+	if( missile == 1 )
 	{
 		piecenum = flare2;
 	}
-	if( Static_Var_1 == 2 )
+	if( missile == 2 )
 	{
 		piecenum = flare3;
 	}
-	if( Static_Var_1 == 3 )
+	if( missile == 3 )
 	{
 		piecenum = flare4;
 	}
-	if( Static_Var_1 == 4 )
+	if( missile == 4 )
 	{
 		piecenum = flare5;
 	}
-	if( Static_Var_1 == 5 )
+	if( missile == 5 )
 	{
 		piecenum = flare6;
 	}
-	if( Static_Var_1 == 6 )
+	if( missile == 6 )
 	{
 		piecenum = flare7;
 	}
-	if( Static_Var_1 == 7 )
+	if( missile == 7 )
 	{
 		piecenum = flare8;
 	}
-	if( Static_Var_1 == 8 )
+	if( missile == 8 )
 	{
 		piecenum = flare9;
 	}
-	if( Static_Var_1 == 9 )
+	if( missile == 9 )
 	{
 		piecenum = flare10;
 	}
@@ -233,34 +274,37 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type 128;
-		explode sleeve type 128;
-		explode base type 128;
-		explode turret type 128;
+		explode body type NOHEATCLOUD;
+		explode sleeve type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type FALL | 128;
-		explode sleeve type FALL | 128;
-		explode base type 128;
-		explode turret type FALL | 128;
+		explode body type FALL | NOHEATCLOUD;
+		explode sleeve type FALL | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode turret type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | 128;
-		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | 128;
-		explode base type 128;
-		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | 128;
+		explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | 128;
-	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | 128;
-	explode base type 128;
-	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | 128;
+	explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }
+
+
+
