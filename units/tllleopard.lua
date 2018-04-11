@@ -2,8 +2,8 @@ return {
 	tllleopard = {
 		acceleration = 0.012,
 		brakerate = 0.03,
-		buildcostenergy = 26500,
-		buildcostmetal = 4580,
+		buildcostenergy = 28500,
+		buildcostmetal = 3850,
 		builder = false,
 		buildpic = "tllleopard.dds",
 		buildtime = 45000,
@@ -161,7 +161,7 @@ return {
 				},
 			},
 			artillery_high = {
-				accuracy = 50,
+				accuracy = 100,
 				areaofeffect = 256,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -178,7 +178,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 1650,
-				reloadtime = 3,
+				reloadtime = 2,
 				rgbcolor = "0.65 0.28 0",
 				separation = 0.5,
 				size = 2.8,
@@ -190,7 +190,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 512,
 				damage = {
-					default = 600,
+					default = 500,
 					subs = 5,
 				},
 			},
