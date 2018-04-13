@@ -249,7 +249,7 @@ Restore()
 	turn msleeve1 to x-axis <0> speed <180.000000>;
 	turn mturret2 to y-axis <0> speed <180.000000>;
 	turn msleeve2 to x-axis <0> speed <180.000000>;
-	turn mturret3 to y-axis <0> speed <180.000000>;
+	turn mturret3 to y-axis <180.000000> speed <180.000000>;
 	turn msleeve3 to x-axis <0> speed <180.000000>;
 }
 
