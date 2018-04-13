@@ -19,7 +19,7 @@ Balance:
  - Nerf T1/T1.5 Metal maker conversion rate -20%/-10%
  - Nerf Drillers conversion rate -10% 
  - Nerf All Metal Maker conversion rate ~ -8%
- - Buff TLL Hailstorm (tllhailstorm), energyCost 414000E -> 380000E, metalCost 50680M -> 45680M, buildTime -50%, moveSpeed +64%, range      2350 -> 1800, HP 572000 -> 1052000, AOE +23%, Damage 4000dps -> 6400dps
+ - Buff TLL Hailstorm (tllhailstorm), energyCost 414000E -> 380000E, metalCost 50680M -> 45680M, buildTime -50%, moveSpeed +64%, range 2350 -> 1800, HP 572000 -> 1052000, AOE +23%, Damage 4000dps -> 6400dps
  - Buff TLL Gatling (tllarch), areaOfEffect 64 -> 96
  - Buff ARM MLRS (armmlrs), HP 4800 -> 6730, Damage 315dps -> 450dps
  - Buff CORE Tremor (trem), energyCost 48000E -> 31000E, metalCost 2090M -> 1850M, HP 2945 -> 3145, turnRate +3.5%, 
@@ -75,6 +75,7 @@ Bugs:
  Interface:
  - Add even more options to options panel
  - Add new option for setting lups effect quality, 5 level of details
+ - Add area mex widget, constructors have now additional Area Mex button
 
 
 
