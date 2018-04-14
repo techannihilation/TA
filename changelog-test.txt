@@ -41,7 +41,7 @@ Balance:
  - ARM Rambo (armrambo) is paratrooper, captureSpeed 2600, 900dps (emp), moveSpeed 82.5 (as reference peewee moveSpeed is 84)
  - TLL Gizmo (tllgizmo) is paratrooper, captureSpeed 4121, 1458dps (emp), moveSpeed 57
  - Remove ARM Nebraska (nebraska), CORE Butcher (corboucher), TLL DMC (tlldmc) from T2 Cons, now avaible in T3 Cons
- - Nerf ARM Kronos (armmcv), Damage 200dps -> 150dps (default)
+ - Nerf ARM Kronos (armmcv), StarburstLauncher Damage 200dps -> 150dps (default)
 
 
 Improvements:
