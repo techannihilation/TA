@@ -3,7 +3,7 @@
 
 function widget:GetInfo()
 	return {
-		name      = "Don't Break Cloak",
+		name      = "Cloak Fire State 2",
 		desc      = "Sets units to Hold Fire when cloaked, reverts to original state when decloaked",
 		author    = "KingRaptor (L.J. Lim)",
 		date      = "Feb 14, 2010",
@@ -26,7 +26,7 @@ local GiveOrderToUnit  = Spring.GiveOrderToUnit
 local GetUnitStates    = Spring.GetUnitStates
 
 local STATIC_STATE_TABLE = {0}
-
+local CMD_CLOAK = 37382
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 local myTeam
@@ -77,8 +77,9 @@ end
 
 local cloakUnit = {} --stores the desired fire state when decloaked of each unitID
 
-function widget:UnitCloaked(unitID, unitDefID, teamID)
-	if (teamID ~= myTeam) or exceptionArray[unitDefID] then 
+function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams)
+if cmdID == CMD_CLOAK and cmdParams[1] == 1 then
+	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] then 
 		return
 	end
 	local states = GetUnitStates(unitID)
@@ -87,10 +88,9 @@ function widget:UnitCloaked(unitID, unitDefID, teamID)
 		STATIC_STATE_TABLE[1] = 0
 		GiveOrderToUnit(unitID, CMD.FIRE_STATE, STATIC_STATE_TABLE, 0)
 	end
-end
+elseif cmdID == CMD_CLOAK and cmdParams[1] == 0 then
 
-function widget:UnitDecloaked(unitID, unitDefID, teamID)
-	if (teamID ~= myTeam) or exceptionArray[unitDefID] or (not cloakUnit[unitID]) then 
+	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] or (not cloakUnit[unitID]) then 
 		return
 	end
 	local states = GetUnitStates(unitID)
@@ -101,6 +101,7 @@ function widget:UnitDecloaked(unitID, unitDefID, teamID)
 		--Spring.Echo("Unit compromised - weapons free!")
 	end
 	cloakUnit[unitID] = nil
+end
 end
 
 function widget:PlayerChanged()
@@ -114,6 +115,9 @@ function widget:Initialize()
 end
 
 function widget:UnitCreated(unitID, unitDefID, unitTeam)
+	if (not enabled) then
+		return
+	end
 	if unitTeam == myTeam then
 		local states = GetUnitStates(unitID)
 		cloakUnit[unitID] = states.firestate
