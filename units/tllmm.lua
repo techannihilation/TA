@@ -50,6 +50,9 @@ return {
 				metal = 12,
 				object = "tllmm_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -60,6 +63,9 @@ return {
 				metal = 6,
 				object = "3x3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

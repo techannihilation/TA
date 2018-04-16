@@ -94,6 +94,9 @@ return {
 				metal = 1950,
 				object = "ARMACSUB_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

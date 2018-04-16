@@ -60,6 +60,9 @@ return {
 				metal = 252,
 				object = "CORTL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

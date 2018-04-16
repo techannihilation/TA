@@ -621,7 +621,8 @@ local function hijacklayout()
 		widgetHandler.commands.n = cmdCount
 		widgetHandler:CommandsChanged() --call widget:CommandsChanged()
 		local iconList = {[1337]=9001}
-		return "", xIcons, yIcons, {}, {}, {}, {}, {}, {}, {}, iconList
+		local custom_cmdz = widgetHandler.customCommands
+		return "", xIcons, yIcons, {}, custom_cmdz, {}, {}, {}, {}, {}, iconList
 	end
 	widgetHandler:ConfigLayoutHandler(dummylayouthandler) --override default build/ordermenu layout
 	SpForceLayoutUpdate()

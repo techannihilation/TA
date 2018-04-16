@@ -66,7 +66,7 @@ return {
 		buildoptions = {
 			[1] = "tllmegacoldfus",
 			[2] = "tllemex",
-			[3] = "tllammaker",
+			[3] = "tllmetalmakerlvl2",
 			[4] = "tllemstor",
 			[5] = "tllnanotc2",
 			[6] = "tllprototype",
@@ -98,6 +98,9 @@ return {
 				metal = 1480,
 				object = "TLLECV_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

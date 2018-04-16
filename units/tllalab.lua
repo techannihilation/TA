@@ -79,6 +79,9 @@ return {
 				metal = 3412,
 				object = "tllalab_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -89,6 +92,9 @@ return {
 				metal = 1820,
 				object = "7x7C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

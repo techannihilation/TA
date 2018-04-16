@@ -14,9 +14,9 @@ return {
 		canreclaim = true,
 		canstop = 1,
 		category = "ALL CONSTR MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		collisionVolumeScales = [[103 103 165]],
-		collisionVolumeOffsets = [[0 -23 0]],
-		collisionVolumeType = [[CylZ]],
+		collisionvolumeoffsets = "0 -23 0",
+		collisionvolumescales = "103 103 165",
+		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Tech Level 3",
@@ -89,6 +89,9 @@ return {
 				metal = 6895,
 				object = "PINCHY_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -100,6 +103,9 @@ return {
 				metal = 4320,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

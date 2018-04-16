@@ -67,6 +67,9 @@ return {
 				metal = 132,
 				object = "ARMRL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armrl_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 70,
 				object = "3X3C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -14,9 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
-		collisionVolumeScales = [[128 52 125]],
-		collisionVolumeOffsets = [[0 -5 0]],
-		collisionVolumeType = [[box]],
+		collisionvolumeoffsets = "0 -5 0",
+		collisionvolumescales = "128 52 125",
+		collisionvolumetype = "box",
 		corpse = "dead",
 		description = "Produces T3 Vehicles",
 		energystorage = 500,
@@ -74,6 +74,9 @@ return {
 				metal = 12337,
 				object = "corevp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 6580,
 				object = "6x6d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

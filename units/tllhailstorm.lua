@@ -59,6 +59,9 @@ return {
 				metal = 28216,
 				object = "tllpbot_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -69,6 +72,9 @@ return {
 				metal = 11172,
 				object = "2x2d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

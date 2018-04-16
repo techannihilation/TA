@@ -67,6 +67,9 @@ return {
 				metal = 648,
 				object = "CORVHLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corvhlt_heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

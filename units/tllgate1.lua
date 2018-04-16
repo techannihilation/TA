@@ -58,6 +58,9 @@ return {
 				metal = 5400,
 				object = "5x5d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			tllgate_dead = {
 				blocking = true,
@@ -69,6 +72,9 @@ return {
 				metal = 10125,
 				object = "tllgate_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

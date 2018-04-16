@@ -95,6 +95,9 @@ return {
 				metal = 172,
 				object = "CORASSIS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -105,6 +108,9 @@ return {
 				metal = 92,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

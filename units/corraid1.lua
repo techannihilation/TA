@@ -69,6 +69,9 @@ return {
 				metal = 262,
 				object = "CORRAID_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corraid_heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 140,
 				object = "2X2E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

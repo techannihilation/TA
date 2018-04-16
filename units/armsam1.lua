@@ -69,6 +69,9 @@ return {
 				metal = 187,
 				object = "ARMSAM_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armsam_heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 100,
 				object = "3X3D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

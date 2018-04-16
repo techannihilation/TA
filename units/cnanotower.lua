@@ -78,6 +78,9 @@ return {
 				metal = 9000,
 				object = "CNanotower_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

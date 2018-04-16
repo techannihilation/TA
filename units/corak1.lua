@@ -67,6 +67,9 @@ return {
 				metal = 51,
 				object = "CORAK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corak_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 27,
 				object = "2X2C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

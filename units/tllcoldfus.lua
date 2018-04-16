@@ -2,7 +2,7 @@ return {
 	tllcoldfus = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 29850,
+		buildcostenergy = 44850,
 		buildcostmetal = 13250,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -15,9 +15,9 @@ return {
 		corpse = "dead",
 		description = "Produces Metal and Energy",
 		downloadable = 1,
-		energymake = 3100,
+		energymake = 2500,
 		energystorage = 6200,
-		energyuse = 2100,
+		energyuse = 0,
 		explodeas = "NUCLEAR_MISSILE",
 		footprintx = 5,
 		footprintz = 5,
@@ -25,9 +25,9 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 47,
-		makesmetal = 21,
+		makesmetal = 10,
 		mass = 13250,
-		maxdamage = 8900,
+		maxdamage = 9500,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		metalstorage = 500,
@@ -57,6 +57,9 @@ return {
 				metal = 9937,
 				object = "tllcoldfus_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -67,6 +70,9 @@ return {
 				metal = 5300,
 				object = "5x5a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

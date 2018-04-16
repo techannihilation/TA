@@ -19,7 +19,6 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		damagemodifier = 0.95,
 		description = "Enhanced Energy Output / Storage",
 		energymake = 3000,
 		energystorage = 35000,
@@ -32,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 43,
 		mass = 9940,
-		maxdamage = 10200,
+		maxdamage = 10970,
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
@@ -70,6 +69,9 @@ return {
 				metal = 7455,
 				object = "AAFUS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -81,6 +83,9 @@ return {
 				metal = 3976,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

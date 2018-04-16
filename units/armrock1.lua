@@ -67,6 +67,9 @@ return {
 				metal = 153,
 				object = "ARMROCK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armrock_heap = {
 				blocking = false,
@@ -78,6 +81,9 @@ return {
 				metal = 82,
 				object = "2X2B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

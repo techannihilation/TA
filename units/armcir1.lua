@@ -66,6 +66,9 @@ return {
 				metal = 1424,
 				object = "ARMCIR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armcir_heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 759,
 				object = "3X3B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -79,6 +79,9 @@ return {
 				metal = 360,
 				object = "CORSENT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -90,6 +93,9 @@ return {
 				metal = 192,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

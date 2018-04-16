@@ -65,6 +65,9 @@ return {
 				metal = 1688,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -76,6 +79,9 @@ return {
 				metal = 3165,
 				object = "core_riptide_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

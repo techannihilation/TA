@@ -83,7 +83,7 @@ return {
 			[1] = "tllgen",
 			[2] = "tllmegacoldfus",
 			[3] = "tllmohogeo",
-			[4] = "tllammaker",
+			[4] = "tllmetalmakerlvl2",
 			[5] = "tllemstor",
 			[6] = "tllemex",
 			[7] = "tllalab",
@@ -134,6 +134,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -151,6 +154,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

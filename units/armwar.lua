@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 265,
 		builder = false,
 		buildpic = "armwar.dds",
-		buildtime = 3828,
+		buildtime = 4400,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -69,6 +69,9 @@ return {
 				metal = 198,
 				object = "ARMWAR_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 106,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -145,7 +151,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 950,
 				damage = {
-					default = 55,
+					commanders = 36,
+					default = 42,
 					subs = 5,
 				},
 			},

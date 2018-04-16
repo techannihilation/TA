@@ -60,6 +60,9 @@ return {
 				metal = 3750,
 				object = "CORINT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corint_heap = {
 				blocking = false,
@@ -71,6 +74,9 @@ return {
 				metal = 2000,
 				object = "3X3C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

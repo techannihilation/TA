@@ -64,6 +64,9 @@ return {
 				metal = 680,
 				object = "ARMFFLAK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

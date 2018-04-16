@@ -60,6 +60,9 @@ return {
 				metal = 44775,
 				object = "AFusionPlant_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -70,6 +73,9 @@ return {
 				metal = 23880,
 				object = "AFusionPlant_heap",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

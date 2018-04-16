@@ -52,6 +52,9 @@ return {
 				metal = 19125,
 				object = "CMetalMakerLvl2_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -62,6 +65,9 @@ return {
 				metal = 10200,
 				object = "CMetalMakerLvl2_heap",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

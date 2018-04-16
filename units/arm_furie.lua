@@ -71,6 +71,9 @@ return {
 				metal = 28125,
 				object = "arm_furie_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			furie_heap = {
 				blocking = false,
@@ -81,6 +84,9 @@ return {
 				metal = 15000,
 				object = "3x3a",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

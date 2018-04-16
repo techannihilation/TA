@@ -87,6 +87,9 @@ return {
 				metal = 19200,
 				object = "tllbuilderlvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

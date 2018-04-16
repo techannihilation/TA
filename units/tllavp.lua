@@ -49,15 +49,15 @@ return {
 			[1] = "tllacv",
 			[2] = "tllhtcb",
 			[3] = "tllcoyote",
-			[4] = "tllthumper",
-			[5] = "tllconvincer",
-			[6] = "tllloki",
-			[7] = "tllroaster",
-			[8] = "tllpuncher",
-			[9] = "tlldivine",
-			[10] = "tllobscurer",
-			[11] = "tllleopard",
-			
+			[4] = "tllcenturion",
+			[5] = "tllthumper",
+			[6] = "tllconvincer",
+			[7] = "tllloki",
+			[8] = "tllroaster",
+			[9] = "tllpuncher",
+			[10] = "tlldivine",
+			[11] = "tllobscurer",			
+      [12] = "tllleopard",
 		},
 		customparams = {
 			buildpic = "tllavp.dds",
@@ -75,6 +75,9 @@ return {
 				metal = 3476,
 				object = "tllavp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -86,6 +89,9 @@ return {
 				metal = 1854,
 				object = "6x6B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -96,6 +102,9 @@ return {
 				metal = 1158,
 				object = "4x4B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

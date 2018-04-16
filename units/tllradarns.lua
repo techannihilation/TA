@@ -64,6 +64,9 @@ return {
 				metal = 77,
 				object = "TLLRADARNS_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

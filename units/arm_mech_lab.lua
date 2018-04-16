@@ -77,6 +77,9 @@ return {
 				metal = 35840,
 				object = "7X7C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

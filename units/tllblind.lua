@@ -67,6 +67,9 @@ return {
 				metal = 5737,
 				object = "tllblind_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -77,6 +80,9 @@ return {
 				metal = 3060,
 				object = "3x3c",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -199,7 +205,7 @@ return {
 				},
 			},
 			tllblind_tesla = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				beamttl = 10,
 				craterareaofeffect = 0,
 				craterboost = 0,

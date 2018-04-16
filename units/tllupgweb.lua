@@ -60,6 +60,9 @@ return {
 				metal = 292,
 				object = "tllweb_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			tlllft_heap = {
 				blocking = false,
@@ -70,6 +73,9 @@ return {
 				metal = 156,
 				object = "2x2b",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

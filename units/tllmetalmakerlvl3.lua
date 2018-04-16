@@ -51,6 +51,9 @@ return {
 				metal = 17860,
 				object = "AMetalMakerLvl2_heap",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

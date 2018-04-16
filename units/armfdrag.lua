@@ -59,6 +59,9 @@ return {
 				object = "armfdrag",
 				reclaimable = true,
 				world = "allworld",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -71,6 +71,9 @@ return {
 				metal = 14250,
 				object = "tllhtcp_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 7600,
 				object = "7x7d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap2 = {
 				blocking = false,
@@ -97,6 +103,9 @@ return {
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "all",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

@@ -63,6 +63,9 @@ return {
 				metal = 75,
 				object = "CORRAD_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corrad_heap = {
 				blocking = false,
@@ -74,6 +77,9 @@ return {
 				metal = 40,
 				object = "2X2D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -61,6 +61,9 @@ return {
 				metal = 87999,
 				object = "CShipyardLvl4_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

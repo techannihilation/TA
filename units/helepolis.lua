@@ -84,6 +84,9 @@ return {
 				metal = 6100,
 				object = "HELEPOLIS_DEAD.3DO",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -95,6 +98,9 @@ return {
 				metal = 3122,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

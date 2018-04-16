@@ -72,6 +72,9 @@ return {
 				metal = 187,
 				object = "TAWF013_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			tawf013_heap = {
 				blocking = false,
@@ -83,6 +86,9 @@ return {
 				metal = 100,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

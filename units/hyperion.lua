@@ -73,6 +73,9 @@ return {
 				metal = 55125,
 				object = "HYPERION_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			hyperion_heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 29400,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

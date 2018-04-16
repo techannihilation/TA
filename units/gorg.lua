@@ -71,6 +71,9 @@ return {
 				metal = 27675,
 				object = "GORG_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap1 = {
 				blocking = false,
@@ -82,6 +85,9 @@ return {
 				metal = 14760,
 				object = "4X4A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

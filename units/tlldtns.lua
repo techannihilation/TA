@@ -54,6 +54,9 @@ return {
 				object = "tlldtns",
 				reclaimable = true,
 				world = "allworld",
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

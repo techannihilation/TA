@@ -69,6 +69,9 @@ return {
 				metal = 168,
 				object = "CORLLT_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			corllt_heap = {
 				blocking = false,
@@ -80,6 +83,9 @@ return {
 				metal = 90,
 				object = "2X2A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

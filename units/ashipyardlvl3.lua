@@ -61,6 +61,9 @@ return {
 				metal = 80000,
 				object = "AShipyardLvl3_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

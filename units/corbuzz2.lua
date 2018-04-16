@@ -67,6 +67,9 @@ return {
 				metal = 18000,
 				object = "7X7A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -79,6 +82,9 @@ return {
 				metal = 33750,
 				object = "CORBUZZ_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

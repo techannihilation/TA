@@ -77,6 +77,9 @@ return {
 				metal = 68000,
 				object = "armshltx1_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -88,6 +91,9 @@ return {
 				metal = 36266,
 				object = "7X7B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

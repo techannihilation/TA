@@ -97,6 +97,9 @@ return {
 				metal = 172,
 				object = "CONSUL_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -108,6 +111,9 @@ return {
 				metal = 92,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

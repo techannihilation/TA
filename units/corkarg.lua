@@ -70,6 +70,9 @@ return {
 				metal = 2850,
 				object = "CORKARG_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

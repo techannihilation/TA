@@ -4,8 +4,8 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 4096,
-		buildcostenergy = 315000,
-		buildcostmetal = 14750,
+		buildcostenergy = 158500,
+		buildcostmetal = 7795,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
@@ -15,8 +15,8 @@ return {
 		buildtime = 90000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
-		description = "Increases Energy Storage (1.1M)",
-		energystorage = 1100000,
+		description = "Increases Energy Storage (550K)",
+		energystorage = 550000,
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",
 		footprintx = 6,
@@ -59,6 +59,9 @@ return {
 				metal = 8625,
 				object = "CORSES_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -70,6 +73,9 @@ return {
 				metal = 4600,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

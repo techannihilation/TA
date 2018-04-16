@@ -87,6 +87,9 @@ return {
 				metal = 663,
 				object = "CORAP_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -98,6 +101,9 @@ return {
 				metal = 354,
 				object = "6X6B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

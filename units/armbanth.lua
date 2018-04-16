@@ -73,6 +73,9 @@ return {
 				metal = 8100,
 				object = "ARMBANTH_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -84,6 +87,9 @@ return {
 				metal = 4320,
 				object = "3X3A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -181,7 +187,7 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 150,
-				weapontimer = 0.35,
+				weapontimer = 1,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 2100,
 				damage = {

@@ -78,6 +78,9 @@ return {
 				metal = 1162,
 				object = "CORMABM_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -89,6 +92,9 @@ return {
 				metal = 620,
 				object = "3X3D",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

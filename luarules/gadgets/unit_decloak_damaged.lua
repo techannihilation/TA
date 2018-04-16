@@ -121,13 +121,13 @@ GG.PokeDecloakUnit = PokeDecloakUnit
 
 function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
                             weaponID, attackerID, attackerDefID, attackerTeam)
-        local _,maxhp = spGetUnitHealth(unitID)
-	if (damage > 500 and damage > (maxhp*.75)) and
-		not (attackerTeam and
-		weaponID and
-		attackerID ~= unitID and
-		spAreTeamsAllied(unitTeam, attackerTeam)) then
-		PokeDecloakUnit(unitID)
+	if cloakUnitDefID[unitDefID] then
+		local _,maxhp = spGetUnitHealth(unitID)
+		if (damage > 500 and damage > (maxhp*.75)) then
+			if not (attackerTeam and weaponID and attackerID ~= unitID and spAreTeamsAllied(unitTeam, attackerTeam)) then
+				PokeDecloakUnit(unitID)
+			end
+		end
 	end
 end
 
@@ -274,7 +274,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
 		if cloakUnitDefID[unitDefID] then
 			SetWantedCloaked(unitID,cmdParams[1])
 		end
-		return false
+		return true
 	elseif cmdID == CMD_CLOAK then
 		return false
 	end

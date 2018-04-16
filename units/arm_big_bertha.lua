@@ -61,6 +61,9 @@ return {
 				metal = 3225,
 				object = "arm_big_bertha_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			armbrtha_heap = {
 				blocking = false,
@@ -72,6 +75,9 @@ return {
 				metal = 1720,
 				object = "3X3E",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

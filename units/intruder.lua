@@ -83,6 +83,9 @@ return {
 				metal = 1011,
 				object = "INTRUDER_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -94,6 +97,9 @@ return {
 				metal = 539,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

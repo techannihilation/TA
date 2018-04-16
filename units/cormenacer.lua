@@ -69,6 +69,9 @@ return {
 				metal = 960,
 				object = "4X4C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -80,6 +83,9 @@ return {
 				metal = 1800,
 				object = "cormenacer_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

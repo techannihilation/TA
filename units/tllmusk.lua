@@ -96,6 +96,9 @@ return {
 				metal = 2032,
 				object = "tllmusk_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -106,6 +109,9 @@ return {
 				metal = 1084,
 				object = "2x2d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

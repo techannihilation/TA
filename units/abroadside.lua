@@ -66,6 +66,9 @@ return {
 				metal = 221250,
 				object = "ABroadside_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

@@ -57,7 +57,7 @@ return {
 			[3] = "monkeylord",
 			[4] = "corgala",
 			[5] = "fatshrew",
-			[6] = "corkrog1",
+			[6] = "cormkl",
 		},
 		customparams = {
 			buildpic = "core_hexapod_lab.dds",
@@ -75,6 +75,9 @@ return {
 				metal = 30840,
 				object = "7X7C",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

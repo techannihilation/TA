@@ -66,6 +66,9 @@ return {
 				metal = 61230,
 				object = "CCovertOpsCentre_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

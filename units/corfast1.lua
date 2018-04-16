@@ -77,6 +77,9 @@ return {
 				metal = 217,
 				object = "CORFAST_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

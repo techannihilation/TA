@@ -2,8 +2,8 @@ return {
 	tlluwfusion = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 21500,
-		buildcostmetal = 4670,
+		buildcostenergy = 30500,
+		buildcostmetal = 4870,
 		builder = false,
 		buildpic = "tlluwfusion.dds",
 		buildtime = 90000,
@@ -11,8 +11,8 @@ return {
 		corpse = "dead",
 		description = "Produces Metal and Energy/ Storage",
 		downloadable = 1,
-		energymake = 1200,
-		energyuse = 800,
+		energymake = 1000,
+		energyuse = 0,
 		explodeas = "ATOMIC_BLAST",
 		footprintx = 6,
 		footprintz = 4,
@@ -20,8 +20,8 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 28,
-		makesmetal = 8,
-		mass = 4670,
+		makesmetal = 4,
+		mass = 4870,
 		maxdamage = 5500,
 		maxslope = 10,
 		maxwaterdepth = 255,
@@ -50,6 +50,9 @@ return {
 				metal = 3502,
 				object = "tlluwfusion_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -60,6 +63,9 @@ return {
 				metal = 1868,
 				object = "4x4d",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

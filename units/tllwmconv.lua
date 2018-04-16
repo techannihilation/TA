@@ -46,6 +46,9 @@ return {
 				metal = 21,
 				object = "tllWMconv_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

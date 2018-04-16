@@ -63,6 +63,9 @@ return {
 				metal = 18400,
 				object = "7X7A",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			dead = {
 				blocking = true,
@@ -75,6 +78,9 @@ return {
 				metal = 34500,
 				object = "ARMVULC_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {

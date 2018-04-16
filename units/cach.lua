@@ -97,6 +97,9 @@ return {
 				metal = 1356,
 				object = "cach_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {

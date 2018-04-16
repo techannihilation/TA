@@ -52,19 +52,9 @@ local comDefs = {
 
 local countChanged  = true 
 
-function isCom(unitID,unitDefID)
-	if not unitDefID and unitID then
-		unitDefID =  Spring.GetUnitDefID(unitID)
-	end
-	if not unitDefID or not UnitDefs[unitDefID] or not UnitDefs[unitDefID].customParams then
-		return false
-	end
-	return UnitDefs[unitDefID].customParams.iscommander ~= nil
-end
-
 function gadget:UnitCreated(unitID, unitDefID, teamID)
 	-- record com creation
-	if isCom(unitID) then
+	if comDefs[unitDefID] then
 		if not teamComs[teamID] then 
 			teamComs[teamID] = 0
 		end
@@ -75,7 +65,7 @@ end
 
 function gadget:UnitDestroyed(unitID, unitDefID, teamID)
 	-- record com death
-	if isCom(unitID) then
+	if comDefs[unitDefID] then
 		if not teamComs[teamID] then 
 			teamComs[teamID] = 0 --should never happen
 		end
@@ -84,7 +74,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID)
 	end
 end
 
--- BA does not allow sharing to enemy, so no need to check Given, Taken, etc
+-- TA does not allow sharing to enemy, so no need to check Given, Taken, etc
 
 local function ReCheck()
 	-- occasionally, recheck just to make sure...

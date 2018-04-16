@@ -61,6 +61,9 @@ return {
 				metal = 1083,
 				object = "TLLROASTER1_dead",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 			heap = {
 				blocking = false,
@@ -71,6 +74,9 @@ return {
 				metal = 578,
 				object = "4x4B",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		sfxtypes = {
@@ -147,7 +153,7 @@ return {
 				},
 			},
 			tlltelsa_cannon = {
-				areaofeffect = 12,
+				areaofeffect = 16,
 				beamttl = 10,
 				craterareaofeffect = 0,
 				craterboost = 0,

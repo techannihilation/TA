@@ -34,7 +34,6 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = true,
 		losemitheight = 51,
 		maneuverleashlength = 640,
 		mass = 985,
@@ -77,6 +76,7 @@ return {
 		},
 		customparams = {
 			buildpic = "armrambo.dds",
+			initcloaked = true,
 			faction = "ARM",
 			paralyzemultiplier = 0.15,
 		},

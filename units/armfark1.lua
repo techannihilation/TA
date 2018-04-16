@@ -76,6 +76,9 @@ return {
 				metal = 232,
 				object = "ARMFARK_DEAD",
 				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
 		},
 		nanocolor = {
