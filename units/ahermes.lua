@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 160,
 		builder = false,
 		buildpic = "ahermes.dds",
-		buildtime = 3000,
+		buildtime = 2500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
