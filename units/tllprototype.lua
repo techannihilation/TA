@@ -55,8 +55,9 @@ return {
 			[1] = "irritator",
 			[2] = "tllhailstorm",
 			[3] = "hyperion",
-			[4] = "tllcolossus",
-			[5] = "tllgorgon",
+			[4] = "tllgorgon",
+			[5] = "tllmcv",
+			[6] = "tllcolossus",			
 		},
 		customparams = {
 			buildpic = "tllprototype.dds",
