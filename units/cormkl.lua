@@ -77,7 +77,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 44400,
-				object = "cormkl_DEAD",
+				object = "CORMKL_DEAD",
 				reclaimable = true,
 			},
 			cormkl_heap = {
