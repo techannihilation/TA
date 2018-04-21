@@ -49,6 +49,7 @@ Balance:
 
 
 Improvements:
+ - Remplace T4 Krogoth by Black Widow in T4 Lab.
  - Add tllcrawler (T3 Kbot) - All-terrain
  - Add tllleopard (T2 Vehicle) - Heavy Artillery High Trajectory
  - Add TLL T4 Experimental Mobile Command Vehicle (tllmcv)
