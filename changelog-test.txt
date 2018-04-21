@@ -5,6 +5,10 @@ Changes go from newest to oldest
 2018-04-13
 
 Balance:
+ - armhorgue - increase paralyse time 10s -> 12s
+ - Balance all T1 Kbot Vehicle AA. Decrease power and cost.
+ - Balance Warrior - increase timebuild +15% and decrease damage 55 -> 42 (damage / shoot)
+ - abroadside : The middle turret can shoot at 360° (vs front before)
  - Rescale T4 TLL Ultimate Dark Matter to fit CORE/ARM scale
  - Increase AOE of TLL lighting weapons for Binder (tllbind) 16->32, Dreadnought (tllblind) 16->32, Advanced Roaster (tllroaster1) 24->32, Tesla Tank (tlltelsatnk) 24->32
  - Reduce Storage of T3 Energy Storage and T3 Matal Sotrage CORE and ARM by ~50%
@@ -45,6 +49,11 @@ Balance:
 
 
 Improvements:
+ - Add T4 HEavy Spider Black Widow
+ - Remplace T4 Krogoth by Black Widow in T4 Lab.
+ - Add tllcrawler (T3 Kbot) - All-terrain
+ - Add tllleopard (T2 Vehicle) - Heavy Artillery High Trajectory
+ - Add TLL T4 Experimental Mobile Command Vehicle (tllmcv)
  - Add TLL Gorgon (tllgorgon) Safe Plasma Deflector and paralyse HexaPod
  - Add TLL Tetanos (tlltetanos) Bomb-Resistant Medium-Range Missile Battery - Chainsaw/Eridicator counterpart
  - Add TLL T3 Metal maker (tllmetalmakerlvl2)
