@@ -56,6 +56,7 @@ return {
 			buildpic = "armcybr.dds",
 			faction = "ARM",
 			requiretech = "Advanced T2 Unit Research Centre",
+			impulseboost2 = 500,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
