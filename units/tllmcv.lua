@@ -195,7 +195,7 @@ return {
 				craterareaofeffect = 225,
 				craterboost = 0.5,
 				cratermult = 0.5,
-				energyuse = 10000,
+				energypershot = 15000,
 				explosiongenerator = "custom:Explosion_Huge_Tesla",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
