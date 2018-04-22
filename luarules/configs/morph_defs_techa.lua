@@ -1192,12 +1192,27 @@ local morphDefs = {
 	},
 	coradon = {
 		into = 'corhcrus',
-	  	time = 45,
+	  	time = 30,
 		xp = 0.20,
 	},
 	armtem = {
 		into = 'armhcrus',
 	  	time = 90,
+		xp = 0.35,
+	},
+	tllhplasma = {
+		into = 'tllhcrus',
+	  	time = 60,
+		xp = 0.35,
+	},
+	tllsalamander = {
+		into = 'tllcenturion',
+	  	time = 60,
+		xp = 0.35,
+	},
+	tllshaker = {
+		into = 'tllleopard',
+	  	time = 60,
 		xp = 0.35,
 	},	
 }
