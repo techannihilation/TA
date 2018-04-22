@@ -47,6 +47,7 @@ return {
 		objectname = "TLLMINE5",
 		onoffable = false,
 		radaremitheight = 25,
+		script = "mines_lus.lua",
 		seismicsignature = 0,
 		selfdestructas = "TWILIGHT",
 		selfdestructcountdown = 0,
@@ -61,6 +62,7 @@ return {
 			buildpic = "tllmine5.dds",
 			faction = "TLL",
 			initcloaked = true,
+			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

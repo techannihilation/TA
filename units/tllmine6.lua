@@ -47,6 +47,7 @@ return {
 		objectname = "TLLMINE6",
 		onoffable = false,
 		radaremitheight = 25,
+		script = "mines_lus.lua",
 		seismicsignature = 0,
 		selfdestructas = "mine_nuke",
 		selfdestructcountdown = 0,
@@ -62,6 +63,7 @@ return {
 			faction = "TLL",
 			initcloaked = true,
 			requiretech = "T2 Factory",
+			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

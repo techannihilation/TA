@@ -49,6 +49,7 @@ return {
 		objectname = "CORMINE2",
 		onoffable = false,
 		radaremitheight = 25,
+		script = "mines_lus.lua",
 		seismicsignature = 0,
 		selfdestructas = "MINE_MEDIUM",
 		selfdestructcountdown = 0,
@@ -64,6 +65,7 @@ return {
 			buildpic = "cormine2.dds",
 			faction = "CORE",
 			initcloaked = true,
+			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -48,6 +48,7 @@ return {
 		objectname = "CORMINE3",
 		onoffable = false,
 		radaremitheight = 25,
+		script = "mines_lus.lua",
 		seismicsignature = 0,
 		selfdestructas = "MINE_HEAVY",
 		selfdestructcountdown = 0,
@@ -64,6 +65,7 @@ return {
 			faction = "CORE",
 			initcloaked = true,
 			requiretech = "Advanced T1 Unit Research Centre",
+			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -43,6 +43,7 @@ return {
 		objectname = "ARMMINE6",
 		onoffable = false,
 		radaremitheight = 25,
+		script = "mines_lus.lua",
 		seismicsignature = 0,
 		selfdestructas = "mine_nuke",
 		selfdestructcountdown = 0,
@@ -59,6 +60,7 @@ return {
 			faction = "ARM",
 			initcloaked = true,
 			requiretech = "Advanced T2 Unit Research Centre",
+			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
