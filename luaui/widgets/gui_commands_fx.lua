@@ -17,6 +17,7 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+local CMD_RAW_MOVE = 39812
 local CMD_ATTACK = CMD.ATTACK --icon unit or map
 local CMD_CAPTURE = CMD.CAPTURE --icon unit or area
 local CMD_FIGHT = CMD.FIGHT -- icon map
@@ -56,14 +57,14 @@ local glTexCoord = gl.TexCoord
 local glUnit = gl.Unit
 local GL_QUADS = GL.QUADS
 
---------------------------------------------------------------------------------
+	--------------------------------------------------------------------------------
 -- Config
 --------------------------------------------------------------------------------
 
 local drawBuildQueue			= true
 local drawLineTexture			= true
 local drawUnitHighlight 		= true
-local drawUnitHighlightSkipFPS	= 8  -- (0 to disable) skip drawing when framerate gets below this value
+local drawUnitHighlightSkipFPS	= 13  -- (0 to disable) skip drawing when framerate gets below this value
 
 local opacity      				= 1
 local duration     				= 2.6
@@ -75,22 +76,26 @@ local lineWidthEnd				= 0.85		-- multiplier
 local lineTextureLength 		= 4
 local lineTextureSpeed  		= 2.4
 
-local groundGlow					= true
+local groundGlow				= true
 local glowRadius    			= 26
 local glowDuration  			= 0.5
 local glowOpacity   			= 0.11
 
-local TooHigh = true
-local HighPing = false
-
 -- limit amount of effects to keep performance sane
-local maxCommandCount			= 450
-local maxGroundGlowCount  = 80
-local drawUnitHightlightMaxUnits = 80
+local maxCommandCount			= 500		-- dont draw more commands than this amount, but keep processing them
+local maxTotalCommandCount		= 850		-- dont add more commands above this amount
+local maxGroundGlowCount		= 50
+local drawUnitHightlightMaxUnits = 70
 
-local glowImg			= ":n:"..LUAUI_DIRNAME.."Images/commandsfx/glow.dds"
-local lineImg			= ":n:"..LUAUI_DIRNAME.."Images/commandsfx/line2.dds"
+local glowImg			= ":n:LuaUI/Images/commandsfx/glow.dds"
+local lineImg			= ":n:LuaUI/Images/commandsfx/line2.dds"
 
+local ignoreUnits = {}
+for udefID,def in ipairs(UnitDefs) do
+	if def.customParams['nohealthbars'] then
+		ignoreUnits[udefID] = true
+	end
+end
 
 local mapX = Game.mapSizeX
 local mapZ = Game.mapSizeZ
@@ -131,11 +136,16 @@ local CONFIG = {
 		endSize = 0.28,
         colour = {1.00, 0.00, 0.00, 0.30},
     },
-    [CMD_MOVE] = {
-        sizeMult = 1, 
+	[CMD_MOVE] = {
+		sizeMult = 1,
 		endSize = 0.2,
-        colour = {0.00, 1.00, 0.00, 0.25},
-    },
+		colour = {0.00, 1.00, 0.00, 0.25},
+	},
+	[CMD_RAW_MOVE] = {
+		sizeMult = 1,
+		endSize = 0.2,
+		colour = {0.00, 1.00, 0.00, 0.25},
+	},
     [CMD_PATROL] = {
         sizeMult = 1,
 		endSize = 0.2,
@@ -181,7 +191,7 @@ local CONFIG = {
     [BUILD] = {
         sizeMult = 1,
 		endSize = 0.2,
-        colour = {0.00, 1.00 ,0.00 ,0.25},    
+        colour = {0.00, 1.00 ,0.00 ,0.25},
     }
 }
 
@@ -192,13 +202,10 @@ local commands = {}
 local monitorCommands = {}
 local minQueueCommand = 1
 local maxCommand = 0
+local totalCommands = 0
 
 local unitCommand = {} -- most recent key in command table of order for unitID 
-local osClock = os.clock()
-local prevTexOffset	= 0
-local prevOsClock = osClock
-local texOffset	= 0
-
+local osClock
 
 local UNITCONF = {}
 local shapes = {}
@@ -261,7 +268,6 @@ end
 
 
 local function setCmdLineColors(alpha)
-
 	spLoadCmdColorsConfig('move        0.5  1.0  0.5  '..alpha)
 	spLoadCmdColorsConfig('attack      1.0  0.2  0.2  '..alpha)
 	spLoadCmdColorsConfig('fight       0.5  0.5  1.0  '..alpha)
@@ -280,13 +286,7 @@ local function setCmdLineColors(alpha)
 	spLoadCmdColorsConfig('deathWatch  0.5  0.5  0.5  '..alpha)
 end
 
-function DrawStatus(toohigh,fps,ping)
-    TooHigh = toohigh
-    HighPing = ping
-end
-
 function widget:Initialize()
-	widgetHandler:RegisterGlobal('DrawManager_commandfx', DrawStatus)
 	--SetUnitConf()
 	
 	--spLoadCmdColorsConfig('useQueueIcons  0 ')
@@ -305,8 +305,6 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
-	widgetHandler:DeregisterGlobal('DrawManager_commandfx', DrawStatus)
-
 	--spLoadCmdColorsConfig('useQueueIcons  1 ')
 	spLoadCmdColorsConfig('queueIconScale  1 ')
 	spLoadCmdColorsConfig('queueIconAlpha  1 ')
@@ -457,23 +455,25 @@ function RemovePreviousCommand(unitID)
     end
 end
 
+local unprocessedCommands = {}
+local unprocessedCommandsNum = 0
 function addUnitCommand(unitID, unitDefID, cmdID)
 	-- record that a command was given (note: cmdID is not used, but useful to record for debugging)
 	if unitID and (CONFIG[cmdID] or cmdID==CMD_INSERT or cmdID<0) then
-    	maxCommand = maxCommand + 1
-    	commands[maxCommand] = {ID=cmdID,time=osClock,unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=unitDefID} -- command queue is not updated until next gameframe
-  	end
+		unprocessedCommandsNum = unprocessedCommandsNum + 1
+		unprocessedCommands[unprocessedCommandsNum] = {ID=cmdID,time=os.clock(),unitID=unitID,draw=false,selected=spIsUnitSelected(unitID),udid=unitDefID} -- command queue is not updated until next gameframe
+	end
 end
 
-
 local newUnitCommands = {}
-
 function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, _, _)
-	if newUnitCommands[unitID] == nil then		-- only process the first in queue, else when super large queue order is given widget will hog memory and crash
-    	addUnitCommand(unitID, unitDefID, cmdID)
-    	newUnitCommands[unitID] = true
-    else
-		newUnitCommands[unitID] = {unitDefID, cmdID}
+	if ignoreUnits[unitDefID] == nil then
+		if newUnitCommands[unitID] == nil then		-- only process the first in queue, else when super large queue order is given widget will hog memory and crash
+			addUnitCommand(unitID, unitDefID, cmdID)
+			newUnitCommands[unitID] = true
+		else
+			newUnitCommands[unitID] = {unitDefID, cmdID}
+		end
 	end
 end
 
@@ -501,115 +501,110 @@ function ExtractTargetLocation(a,b,c,d,cmdID)
 end
 
 function getCommandsQueue(unitID)
-		local q = spGetUnitCommands(unitID, 35) or {} --limit to prevent mem leak, hax etc
-	  local our_q = {}
-	  for _,cmd in ipairs(q) do
-	      if CONFIG[cmd.id] or cmd.id < 0 then
-	          if cmd.id < 0 then
-	              cmd.buildingID = -cmd.id;
-	              cmd.id = BUILD
-	              if not cmd.params[4] then
-	                  cmd.params[4] = 0 --sometimes the facing param is missing (wtf)
-	              end
-	          end
-	          our_q[#our_q+1] = cmd
-	      end
+	local q = spGetUnitCommands(unitID, 35) or {} --limit to prevent mem leak, hax etc
+	local our_q = {}
+	for _,cmd in ipairs(q) do
+	  if CONFIG[cmd.id] or cmd.id < 0 then
+		  if cmd.id < 0 then
+			  cmd.buildingID = -cmd.id;
+			  cmd.id = BUILD
+			  if not cmd.params[4] then
+				  cmd.params[4] = 0 --sometimes the facing param is missing (wtf)
+			  end
+		  end
+		  our_q[#our_q+1] = cmd
 	  end
-	  return our_q
+	end
+	return our_q
 end
 
-
+local prevGameframe = 0
 local sec = 0
 local lastUpdate = 0
+local sec2 = 0
+local lastUpdate2 = 0
 function widget:Update(dt)
-	if spIsGUIHidden() or HighPing or TooHigh then return end
-
 	sec = sec + dt
-	if sec > lastUpdate + 0.2 then
-	lastUpdate = sec
+	if sec > lastUpdate + 0.1 then
+		lastUpdate = sec
 		
-	osClock = os.clock()
-	if drawLineTexture then
-		texOffset = prevTexOffset - ((osClock - prevOsClock)*lineTextureSpeed)
-		texOffset = texOffset - math.floor(texOffset)
-		prevTexOffset = texOffset
-	end
-	prevOsClock = osClock
-
-	-- process newly given commands (not done in widget:UnitCommand() because with huge build queue it eats memory and can crash lua)
-	for i, v in pairs(newUnitCommands) do
-		if v ~= true then
-			addUnitCommand(i, v[1], v[2])
+		-- process newly given commands (not done in widgetUnitCommand() because with huge build queue it eats memory and can crash lua)
+		for i, v in pairs(newUnitCommands) do
+			if v ~= true and ignoreUnits[v[1]] == nil then
+				addUnitCommand(i, v[1], v[2])
+			end
 		end
-	end
-	newUnitCommands = {}
-  
-	-- update queue (in case unit has reached the nearest queue coordinate)
-	for i, qsize in pairs(monitorCommands) do
-	    if commands[i] ~= nil then
-	    	if commands[i].draw == false then
-	    		monitorCommands[i] = nil
-	    	else
-		    	local q = spGetUnitCommands(commands[i].unitID,35) or {}
-		    	if qsize ~= #q then
-		    		local our_q = getCommandsQueue(commands[i].unitID)
-		        commands[i].queue = our_q
-		        commands[i].queueSize = #our_q
-		        if qsize > 1 then
-		        	monitorCommands[i] = qsize
-		        else
-		      	  monitorCommands[i] = nil
-		        end
-		    	end
-		    end
-	    end
-	  end
-	  
-	end
-end
+		newUnitCommands = {}
 
 
-function widget:GameFrame(gameFrame)
-    if drawFrame == gameframeDrawFrame then 
-    	return
-	end
-	gameframeDrawFrame = drawFrame
-	
-	if spIsGUIHidden() or HighPing or TooHigh then return end
+		-- process new commands (cant be done directly because at widget:UnitCommand() the queue isnt updated yet)
+		for k, v in pairs(unprocessedCommands) do
+			if totalCommands <= maxTotalCommandCount then
+				maxCommand = maxCommand + 1
+				local i = maxCommand
+				commands[i] = v
+				totalCommands = totalCommands + 1
 
-	-- process new commands (cant be done directly because at widget:UnitCommand() the queue isnt updated yet)
-    for i, v in pairs(commands) do
-        if v.processed ~= true then
-    
-	    RemovePreviousCommand(v.unitID)
-	    unitCommand[v.unitID] = i
-			
-	    -- get pruned command queue
-	    local our_q = getCommandsQueue(v.unitID)
-	    local qsize = #our_q
-	    commands[i].queue = our_q
-	    commands[i].queueSize = qsize
-	    if qsize > 1 then
-	    	monitorCommands[i] = qsize
-	    end
-	    if qsize > 0 then
-	        commands[i].highlight = CONFIG[our_q[1].id].colour
-	        commands[i].draw = true
-	    end
-	    
-	    -- get location of final command
-	    local lastCmd = our_q[#our_q]
-	    if lastCmd and lastCmd.params then
-	        local x,y,z = ExtractTargetLocation(lastCmd.params[1],lastCmd.params[2],lastCmd.params[3],lastCmd.params[4],lastCmd.id)
-	        if x then
-	            commands[i].x = x
-	            commands[i].y = y
-	            commands[i].z = z
-	        end
-	    end
-	    commands[i].time = osClock
-	    commands[i].processed = true
-	  end
+				RemovePreviousCommand(v.unitID)
+				unitCommand[v.unitID] = i
+
+				-- get pruned command queue
+				local our_q = getCommandsQueue(v.unitID)
+				local qsize = #our_q
+				commands[i].queue = our_q
+				commands[i].queueSize = qsize
+				if qsize > 1 then
+					monitorCommands[i] = qsize
+				end
+				if qsize > 0 then
+					commands[i].highlight = CONFIG[our_q[1].id].colour
+					commands[i].draw = true
+				end
+
+				-- get location of final command
+				local lastCmd = our_q[#our_q]
+				if lastCmd and lastCmd.params then
+					local x,y,z = ExtractTargetLocation(lastCmd.params[1],lastCmd.params[2],lastCmd.params[3],lastCmd.params[4],lastCmd.id)
+					if x then
+						commands[i].x = x
+						commands[i].y = y
+						commands[i].z = z
+					end
+				end
+				commands[i].time = os.clock()
+			end
+		end
+		unprocessedCommands = {}
+		unprocessedCommandsNum = 0
+
+
+		if sec2 > lastUpdate2 + 0.3 then
+			lastUpdate2 = sec2
+			if prevGameframe ~= Spring.GetGameFrame() then
+				prevGameframe = Spring.GetGameFrame()
+
+				-- update queue (in case unit has reached the nearest queue coordinate)
+				for i, qsize in pairs(monitorCommands) do
+					if commands[i] ~= nil then
+						if commands[i].draw == false then
+							monitorCommands[i] = nil
+						else
+							local q = spGetUnitCommands(commands[i].unitID,35) or {}
+							if qsize ~= #q then
+								local our_q = getCommandsQueue(commands[i].unitID)
+								commands[i].queue = our_q
+								commands[i].queueSize = #our_q
+								if qsize > 1 then
+									monitorCommands[i] = qsize
+								else
+									monitorCommands[i] = nil
+								end
+							end
+						end
+					end
+				end
+			end
+		end
 	end
 end
 
@@ -621,11 +616,24 @@ local function IsPointInView(x,y,z)
     return false
 end
 
+
+local prevTexOffset			= 0
+local texOffset				= 0
+local prevOsClock = os.clock()
+
+
 function widget:DrawWorldPreUnit()
-    
 	drawFrame = drawFrame + 1
 
-  	if spIsGUIHidden() or HighPing or TooHigh then return end
+	if spIsGUIHidden() then return end
+
+	osClock = os.clock()
+	if drawLineTexture then
+		texOffset = prevTexOffset - ((osClock - prevOsClock)*lineTextureSpeed)
+		texOffset = texOffset - math.floor(texOffset)
+		prevTexOffset = texOffset
+	end
+	prevOsClock = os.clock()
 
 	gl.DepthTest(false)
 	gl.Blending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
@@ -636,10 +644,11 @@ function widget:DrawWorldPreUnit()
         local progress = (osClock - commands[i].time) / duration
         local unitID = commands[i].unitID
         
-        if progress >= 1 and commands[i].processed then
-            -- remove when duration has passed (also need to check if it was processed yet, because of pausing)
+        if progress >= 1 then
+            -- remove when duration has passed
             --Spring.Echo("Removing " .. i)
             commands[i] = nil
+			totalCommands = totalCommands - 1
             monitorCommands[i] = nil
             if unitCommand[unitID] == i then 
             	unitCommand[unitID] = nil
@@ -654,7 +663,7 @@ function widget:DrawWorldPreUnit()
                 local lineAlpha = opacity * lineColour[4] * (1-progress)
                 glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
                 if commands[i].set_target.params[3] then
-                    glBeginEnd(GL_QUADS, DrawLine, prevX,prevY,prevZ, commands[i].set_target.params[1], commands[i].set_target.params[2], commands[i].set_target.params[3], lineWidth) 
+                    glBeginEnd(GL_QUADS, DrawLine, prevX,prevY,prevZ, commands[i].set_target.params[1], commands[i].set_target.params[2], commands[i].set_target.params[3], lineWidth)
                 else
                     local x,y,z = spGetUnitPosition(commands[i].set_target.params[1])    
                     if x then
@@ -666,47 +675,48 @@ function widget:DrawWorldPreUnit()
 
             -- draw command queue
             if commands[i].queueSize > 0 and prevX and commandCount < maxCommandCount then
-            		local lineAlphaMultiplier  = 1 - (progress / lineDuration)
-		            for j=1,commands[i].queueSize do
-		                local X,Y,Z = ExtractTargetLocation(commands[i].queue[j].params[1], commands[i].queue[j].params[2], commands[i].queue[j].params[3], commands[i].queue[j].params[4], commands[i].queue[j].id)
-		                local validCoord = X and Z and X>=0 and X<=mapX and Z>=0 and Z<=mapZ
-		                -- draw
-		                if X and validCoord then
-		               		commandCount = commandCount + 1
-		                    -- lines
-		                    local usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
-		                    local lineColour = CONFIG[commands[i].queue[j].id].colour
-		                    local lineAlpha = opacity * lineOpacity * (lineColour[4] * 2) * lineAlphaMultiplier
-		                    if lineAlpha > 0 then 
-								glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-								if drawLineTexture then
-					                usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
-									glTexture(lineImg)
-									glBeginEnd(GL_QUADS, DrawLineTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength * (lineWidth / usedLineWidth), texOffset)
-									glTexture(false)
-								else
-									glBeginEnd(GL_QUADS, DrawLine, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
-								end
-								-- ghost of build queue
-								if drawBuildQueue and commands[i].queue[j].buildingID then
-									glPushMatrix()
-									glTranslate(X,Y+1,Z)
-									glRotate(90 * commands[i].queue[j].params[4], 0, 1, 0)
-									glUnitShape(commands[i].queue[j].buildingID, spGetMyTeamID(), true, false, false)
-									glRotate(-90 * commands[i].queue[j].params[4], 0, 1, 0)
-									glTranslate(-X,-Y-1,-Z)
-									glPopMatrix()
-								end
-								if j == 1 and not drawLineTexture then
-									-- draw startpoint rounding
-									glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
-									glBeginEnd(GL_QUADS, DrawLineEnd, X, Y, Z, prevX,prevY,prevZ, usedLineWidth)
-								end
+				local lineAlphaMultiplier  = 1 - (progress / lineDuration)
+				for j=1,commands[i].queueSize do
+					local X,Y,Z = ExtractTargetLocation(commands[i].queue[j].params[1], commands[i].queue[j].params[2], commands[i].queue[j].params[3], commands[i].queue[j].params[4], commands[i].queue[j].id)
+					local validCoord = X and Z and X>=0 and X<=mapX and Z>=0 and Z<=mapZ
+					-- draw
+					if X and validCoord then
+						commandCount = commandCount + 1
+						-- lines
+						local usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
+						local lineColour = CONFIG[commands[i].queue[j].id].colour
+						local lineAlpha = opacity * lineOpacity * (lineColour[4] * 2) * lineAlphaMultiplier
+						if lineAlpha > 0 then
+							glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+							if drawLineTexture then
+
+								usedLineWidth = lineWidth - (progress * (lineWidth - (lineWidth * lineWidthEnd)))
+								glTexture(lineImg)
+								glBeginEnd(GL_QUADS, DrawLineTex, prevX,prevY,prevZ, X, Y, Z, usedLineWidth, lineTextureLength * (lineWidth / usedLineWidth), texOffset)
+								glTexture(false)
+							else
+								glBeginEnd(GL_QUADS, DrawLine, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
 							end
-		                    if j==commands[i].queueSize then
+							-- ghost of build queue
+							if drawBuildQueue and commands[i].queue[j].buildingID then
+								glPushMatrix()
+								glTranslate(X,Y+1,Z)
+								glRotate(90 * commands[i].queue[j].params[4], 0, 1, 0)
+								glUnitShape(commands[i].queue[j].buildingID, spGetMyTeamID(), true, false, false)
+								glRotate(-90 * commands[i].queue[j].params[4], 0, 1, 0)
+								glTranslate(-X,-Y-1,-Z)
+								glPopMatrix()
+							end
+							if j == 1 and not drawLineTexture then
+								-- draw startpoint rounding
+								glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
+								glBeginEnd(GL_QUADS, DrawLineEnd, X, Y, Z, prevX,prevY,prevZ, usedLineWidth)
+							end
+						end
+						if j==commands[i].queueSize then
 
 							-- draw endpoint rounding
-							if drawLineTexture == false and lineAlpha > 0 then 
+							if drawLineTexture == false and lineAlpha > 0 then
 								if drawLineTexture then
 									glTexture(lineImg)
 									glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
@@ -715,15 +725,15 @@ function widget:DrawWorldPreUnit()
 								else
 									glColor(lineColour[1],lineColour[2],lineColour[3],lineAlpha)
 									glBeginEnd(GL_QUADS, DrawLineEnd, prevX,prevY,prevZ, X, Y, Z, usedLineWidth)
-									end
-		                   		end
-		                        
-								-- ground glow
+								end
+							end
+
+							-- ground glow
 							if groundGlow and groundGlowCount < maxGroundGlowCount then
 								groundGlowCount = groundGlowCount + 1
-							    local size = (glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) + ((glowRadius * CONFIG[commands[i].queue[j].id].endSize - glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) * progress)
+								local size = (glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) + ((glowRadius * CONFIG[commands[i].queue[j].id].endSize - glowRadius * CONFIG[commands[i].queue[j].id].sizeMult) * progress)
 								local glowAlpha = (1 - progress) * glowOpacity * opacity
-														
+
 								if commands[i].selected then
 									glowAlpha = glowAlpha * 1.5
 								end
@@ -731,11 +741,12 @@ function widget:DrawWorldPreUnit()
 								glTexture(glowImg)
 								glBeginEnd(GL_QUADS,DrawGroundquad,X,Y+3,Z,size)
 								glTexture(false)
-							end		
+							end
+
                         end
                         prevX, prevY, prevZ = X, Y, Z
                     end
-                end                            
+                end
             end
         end
     end
@@ -745,7 +756,7 @@ end
 
 
 function widget:DrawWorld()
-    if spIsGUIHidden() or HighPing or TooHigh then return end
+  if spIsGUIHidden() then return end
     
 	if drawUnitHighlightSkipFPS > 0 and spGetFPS() < drawUnitHighlightSkipFPS then return end
 	
