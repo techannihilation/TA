@@ -11,7 +11,7 @@ return {
 		buildpic = "corech3.dds",
 		buildtime = 7500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		collisionvolumeoffsets = "-1 -9 -5",
+		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "180 200 240",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
@@ -38,7 +38,10 @@ return {
 		sightdistance = 0,
 		unitname = "corech3",
 		usebuildinggrounddecal = true,
-		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
+		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
+		buildoptions = {
+			[1] = "cbuilderlvl2",
+		},
 		customparams = {
 			buildpic = "corech3.dds",
 			faction = "CORE",
