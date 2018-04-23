@@ -20,8 +20,8 @@ local GetUnitMass           = Spring.GetUnitMass
 --------------------------------------------------------------------------------
 -- CONSTANS
 --------------------------------------------------------------------------------
-local WeaponkDefIDs = {
-[WeaponDefNames.armcybr_arm_pidr.id]   = true,
+local Weapons = {
+[UnitDefNames.armcybr.weapons[1].weaponDef] = {impulseBoost = 500, weaponNumber = 1},
 }
 --------------------------------------------------------------------------------
 -- START OF CODE
@@ -31,16 +31,16 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- BEGIN SYNCED
 	--------------------------------------------------------------------------------
 	function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
-		if WeaponkDefIDs[weaponDefID] and attackerID then
-			local impulseBoost = tonumber(UnitDefs[attackerDefID].customParams.impulseboost2) or 1
-			local number,isUserTarget,Target = GetUnitWeaponTarget(attackerID,1)
+		if Weapons[weaponDefID] and attackerID then
+			local impulseBoost = Weapons[weaponDefID].impulseBoost
+			local number,isUserTarget,Target = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 			if number == 2 then
 				local ux,uy,uz = GetUnitPosition(unitID)
 				local vector = {Target[1] - ux,Target[3] - uz}
 				local vecLength = math.sqrt(vector[1]*vector[1] + vector[2]*vector[2])
 				local NormVector = {vector[1]/vecLength,vector[2]/vecLength}
 				local div = math.pow(GetUnitMass(unitID),2/3) -- 2/3 root of mass to alter higher mass unit a bit more
-				AddUnitImpulse(unitID,(-NormVector[1]*impulseBoost)/div,impulseBoost/div,(-NormVector[1]*impulseBoost)/div)
+				AddUnitImpulse(unitID,(-NormVector[1]*impulseBoost)/div,impulseBoost/div,(-NormVector[2]*impulseBoost)/div)
 			end
 		end
 	end
