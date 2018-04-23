@@ -50,7 +50,8 @@ return {
 		workertime = 160,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		buildoptions = {
-			[1] = "abuilderlvl3",
+			[1] = "abuilderlvl2",
+			[2] = "abuilderlvl3",
 		},
 		customparams = {
 			buildpic = "acovertopscentre.dds",
