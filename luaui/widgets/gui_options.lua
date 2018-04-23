@@ -637,7 +637,7 @@ function DrawWindow()
 					glColor(1,1,1,0.11)
 					RectRound(xPosMax-selectWidth-rightPadding, yPos-oHeight, xPosMax-rightPadding, yPos, 3)
 					if not option.options then 
-						Spring.Echo(option.id)
+						--Spring.Echo(option.id)
 					end
 					if option.options and option.options[tonumber(option.value)] ~= nil then
 					glText(option.options[tonumber(option.value)], xPosMax-selectWidth+5-rightPadding, yPos-(oHeight/3)-oPadding, oHeight*0.85, "no")
@@ -1136,7 +1136,6 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.SendCommands("shadows "..enabled.." "..value)
 			Spring.SetConfigInt("shadows", value)
 		elseif id == 'uibgcolor' then
-			Spring.Echo(value)
 			if value <= 0.4 then
 				WG["background_opacity_custom"][4] = WG["background_color"]
 			else
