@@ -997,6 +997,12 @@ function widget:UnitDestroyed(uID, uDefID, uTeam)
 	end
 end
 
+function widget:UnitGiven(uID, uDefID, uTeamNew, uTeam)
+	if inSpecMode and reclaimerUnitDefs[uDefID] then
+		reclaimerUnits[uTeam][uID] = nil
+		reclaimerUnits[uTeamNew][uID] = uDefID
+	end
+end
 
 function getTeamProduction(teamID)
 	local totalEnergyReclaim = 0
@@ -1366,7 +1372,7 @@ function widget:TeamDied(teamID)
 	lastPlayerChange = frame
 	
 	removeGuiShaderRects()
-	reclaimerUnits[teamID] = nil
+	--reclaimerUnits[teamID] = nil
 	
 	if not (Spring.GetSpectatingState() or isReplay) then
 		if inSpecMode then Spring.Echo("Ecostats: widget now in active player mode.") end
