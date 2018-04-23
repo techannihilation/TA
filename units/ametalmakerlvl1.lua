@@ -2,7 +2,7 @@ return {
 	ametalmakerlvl1 = {
 		activatewhenbuilt = true,
 		buildcostenergy = 5115,
-		buildcostmetal = 153,
+		buildcostmetal = 175,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -11,7 +11,7 @@ return {
 		buildpic = "ametalmakerlvl1.dds",
 		buildtime = 4000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
-		description = "Converts upto 200 Energy to Metal",
+		description = "Converts upto 160 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
 		floater = false,
 		footprintx = 3,
