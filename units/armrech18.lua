@@ -39,7 +39,7 @@ return {
 		sightdistance = 0,
 		unitname = "armrech18",
 		usebuildinggrounddecal = true,
-		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo",
+		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		customparams = {
 			buildpic = "armrech18.dds",
 			faction = "ARM",
