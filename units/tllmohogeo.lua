@@ -29,7 +29,7 @@ return {
 		maxdamage = 5320,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		metalstorage = 600,
+		metalstorage = 200,
 		name = "Moho Geothermal Foundry",
 		noautofire = false,
 		nochasecategory = "ALL",
