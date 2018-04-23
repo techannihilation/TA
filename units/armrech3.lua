@@ -40,6 +40,9 @@ return {
 		unitname = "armrech3",
 		usebuildinggrounddecal = true,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
+		buildoptions = {
+			[1] = "abuilderlvl2",
+		},
 		customparams = {
 			buildpic = "armrech3.dds",
 			faction = "ARM",
