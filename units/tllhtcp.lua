@@ -52,8 +52,9 @@ return {
 			[1] = "tlldoc",
 			[2] = "tllblind",
 			[3] = "heavyimpact",
-			[4] = "tllhtml",
-			[5] = "tllgrim",
+			[4] = "tllcrawler",
+			[5] = "tllhtml",
+			[6] = "tllgrim",
 		},
 		customparams = {
 			buildpic = "tllhtcp.dds",

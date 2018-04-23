@@ -56,7 +56,7 @@ return {
 		buildoptions = {
 			[1] = "tllmegacoldfus",
 			[2] = "tllemex",
-			[3] = "tllammaker",
+			[3] = "tllmetalmakerlvl2",
 			[4] = "tllemstor",
 			[5] = "tllnanotc2",
 			[6] = "tllprototype",

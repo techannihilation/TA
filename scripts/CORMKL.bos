@@ -1,0 +1,782 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  Base, Body, Extension,pattes, pattes10,
+       pattes11, pattes12, pattes13, pattes14, stomp1, pattes20, pattes21, pattes22,
+       pattes23, pattes24, stomp2, pattes30, pattes31, pattes32, pattes33, pattes34,
+       stomp3, pattes40, pattes41, pattes42, pattes43, pattes44, stomp4, pattes50,
+       pattes51, pattes52, pattes53, pattes54, stomp5, pattes60, pattes61, pattes62,
+       pattes63, pattes64, stomp6,
+       Platform, Turret, Arm, Sleeve, Wings, Spindle, Spin_Light, Barrel1,
+       Barrel1_Light, Barrel2, Barrel2_Light, Barrel3, Barrel3_Light, Flare3, Angular1, Point1,
+       Stride1, Point4, Stride4, Point5, Stride5, AnglePoint1, Angular2, Point2,
+       Stride2, Point3, Stride3, Point6, Stride6, AnglePoint2, ecraseur_epaule, ecraseur_bras,
+       Abdomen, Light, Head, Connect, Bridge, Glow, Emit1,
+       Emit2, Emit3, Emit4, Launchers, Pod1, Pod2, Pod3, Pod4,
+       Pod5, Pod6, Pipes, Doo, Dad, R1, R2, R3,
+       R4, R5, R6, R7, R8, R9, R10, R11,
+       R12, R13, R14, R15, R16, R17, R18, aimpoint1, aimpoint2, aimpoint3, beamweapon;
+
+static-var  Static_Var_1, Static_Var_4, maingun, Static_Var_9, Static_Var_10, Static_Var_12, Static_Var_11, bmoving, baiming, 
+			Static_Var_13, Static_Var_14, starburst1, starburst2, starburst3, starburst4, starburst5, starburst6, gun;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+#define SIG_AIM_8			256
+#define SIG_AIM_9			512
+
+TexasRanger(Func_Var_1, Func_Var_2)
+{
+	while( !bMoving )
+	{
+		sleep 100;
+	}
+	while( TRUE )
+	{
+		turn pattes60 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes50 to y-axis <45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes40 to y-axis <-16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes10 to y-axis <-14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes21 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes22 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes23 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp3);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp3)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_11 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_11 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes31 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes32 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes33 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes20 to y-axis <45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes30 to y-axis <-14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes60 to y-axis <-16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes40 to y-axis <-30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes10 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes51 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes52 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes53 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp2);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp2)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_10 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_10 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes21 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes22 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes23 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes50 to y-axis <-15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes20 to y-axis <29.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes60 to y-axis <-31.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes30 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes10 to y-axis <15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes41 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes42 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes43 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp5);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp5)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_13 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_13 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes51 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes52 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes53 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes40 to y-axis <30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes50 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes60 to y-axis <-45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes30 to y-axis <16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes20 to y-axis <14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes11 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes12 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes13 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp4);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp4)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_12 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_12 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes41 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes42 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes43 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes10 to y-axis <-45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes40 to y-axis <14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes30 to y-axis <30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes20 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes50 to y-axis <16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes61 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes62 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes63 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp1);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp1)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_9 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_9 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes11 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes12 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes13 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes60 to y-axis <15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes10 to y-axis <-29.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes20 to y-axis <-15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes50 to y-axis <31.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes40 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes31 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes32 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes33 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp6);
+		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
+		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
+		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp6)) - get PIECE_Y(ecraseur_epaule) now;
+		if( Static_Var_14 == 5 AND bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] now;
+		}
+		if( Static_Var_14 != 5 OR !bMoving )
+		{
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+		turn pattes61 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes62 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes63 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes30 to y-axis <-30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		while( !bMoving )
+		{
+			sleep 100;
+			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+		}
+	}
+	turn pattes21 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes22 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes23 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes23 around z-axis;
+	turn pattes20 to y-axis <45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn pattes20 around y-axis;
+	turn pattes21 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes22 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes23 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes23 around z-axis;
+	turn pattes20 to y-axis <-15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn pattes51 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes52 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes53 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes53 around z-axis;
+	turn pattes50 to y-axis <-15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn pattes50 around y-axis;
+	turn pattes51 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes52 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes53 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes53 around z-axis;
+	turn pattes50 to y-axis <45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn pattes41 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes42 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes43 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes43 around z-axis;
+	turn pattes40 to y-axis <30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn pattes40 around y-axis;
+	turn pattes41 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes42 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes43 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes43 around z-axis;
+	turn pattes40 to y-axis <-30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn pattes11 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes12 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes13 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes13 around z-axis;
+	turn pattes10 to y-axis <-45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn pattes10 around y-axis;
+	turn pattes11 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes12 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes13 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes13 around z-axis;
+	turn pattes10 to y-axis <15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn pattes61 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes62 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes63 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes63 around z-axis;
+	turn pattes60 to y-axis <15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn pattes60 around y-axis;
+	turn pattes61 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes62 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes63 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes63 around z-axis;
+	turn pattes60 to y-axis <-45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+	turn pattes31 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes32 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes33 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes33 around z-axis;
+	turn pattes30 to y-axis <-30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+	wait-for-turn pattes30 around y-axis;
+	turn pattes31 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+	turn pattes32 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+	turn pattes33 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+	wait-for-turn pattes33 around z-axis;
+	turn pattes30 to y-axis <30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+}
+
+StartMoving()
+{
+	
+	bMoving = TRUE;
+	
+	explode Emit1 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
+	explode Emit2 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
+	explode Emit3 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
+	explode Emit4 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
+	while( bMoving )
+	{
+		emit-sfx 256 | 1 from Emit1;
+		emit-sfx 256 | 1 from Emit2;
+		emit-sfx 256 | 1 from Emit3;
+		emit-sfx 256 | 1 from Emit4;
+		emit-sfx 256 | 2 from Emit1;
+		emit-sfx 256 | 2 from Emit2;
+		emit-sfx 256 | 2 from Emit3;
+		emit-sfx 256 | 2 from Emit4;
+		sleep Rand( 200, 300 );
+	}
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	sleep 500;
+	explode Emit1 type BITMAPONLY | BITMAP5;
+	sleep 50;
+	explode Emit2 type BITMAPONLY | BITMAP5;
+	sleep 100;
+	explode Emit3 type BITMAPONLY | BITMAP5;
+	sleep 50;
+	explode Emit4 type BITMAPONLY | BITMAP5;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	bAiming = FALSE;
+	Static_Var_9 = 5;
+	Static_Var_10 = 5;
+	Static_Var_11 = 5;
+	Static_Var_12 = 5;
+	Static_Var_13 = 5;
+	Static_Var_14 = 5;
+		
+	maingun = 0;
+	
+	starburst1 = 0;
+	starburst2 = 0;
+	starburst3 = 0;
+	starburst4 = 0;
+	starburst5 = 0;
+	starburst6 = 0;
+	gun = 0;
+	
+	set ARMORED to 1;
+	set ACTIVATION to 1;
+	dont-cache Light;
+	dont-cache Spin_Light;
+	dont-cache Barrel1_Light;
+	dont-cache Barrel2_Light;
+	dont-cache Barrel3_Light;
+	
+	//while( get BUILD_PERCENT_LEFT )
+	//{
+	//	sleep 1000;
+	//}
+
+	sleep 250;
+	turn pattes31 to z-axis <-20.> NOW;
+	turn pattes41 to z-axis <20.> NOW;
+	turn pattes50 to y-axis <50.> NOW;
+	turn pattes20 to y-axis <50.> NOW;
+	turn pattes10 to y-axis <-50.> NOW;
+	turn pattes60 to y-axis <-50.> NOW;
+		
+	start-script SmokeUnit();
+	start-script TexasRanger();
+	
+}
+
+RestoreAfterDelay()
+{
+	sleep 6000;
+	turn Turret to y-axis <0.> speed <30.>;
+	turn Sleeve to x-axis <0.> speed <30.>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 4000;
+	turn Connect to x-axis <0.> speed <10.>;
+	turn Bridge to y-axis <0.> speed <10.>;
+	wait-for-turn Connect around x-axis;
+	wait-for-turn Bridge around y-axis;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn Turret to y-axis heading speed <60.>;
+	turn Sleeve to x-axis <0.> - pitch speed <60.>;
+	wait-for-turn Turret around y-axis;
+	wait-for-turn Sleeve around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( maingun == 0 )
+	{
+		sleep 1000;
+		turn Spindle to z-axis <120.> speed <270.>;
+		turn Barrel1 to z-axis <-120.> speed <270.>;
+		turn Barrel2 to z-axis <-120.> speed <270.>;
+		turn Barrel3 to z-axis <-120.> speed <270.>;
+		wait-for-turn Spindle around z-axis;
+		wait-for-turn Barrel1 around z-axis;
+		wait-for-turn Barrel2 around z-axis;
+		wait-for-turn Barrel3 around z-axis;
+	}
+	if( maingun == 1 )
+	{
+		sleep 1000;
+		turn Spindle to z-axis <240.> speed <270.>;
+		turn Barrel1 to z-axis <-240.> speed <270.>;
+		turn Barrel2 to z-axis <-240.> speed <270.>;
+		turn Barrel3 to z-axis <-240.> speed <270.>;
+		wait-for-turn Spindle around z-axis;
+		wait-for-turn Barrel1 around z-axis;
+		wait-for-turn Barrel2 around z-axis;
+		wait-for-turn Barrel3 around z-axis;
+	}
+	if( maingun == 2 )
+	{
+		sleep 1000;
+		turn Spindle to z-axis <0.> speed <270.>;
+		turn Barrel1 to z-axis <0.> speed <270.>;
+		turn Barrel2 to z-axis <0.> speed <270.>;
+		turn Barrel3 to z-axis <0.> speed <270.>;
+		wait-for-turn Spindle around z-axis;
+		wait-for-turn Barrel1 around z-axis;
+		wait-for-turn Barrel2 around z-axis;
+		wait-for-turn Barrel3 around z-axis;
+	}
+	++maingun;
+	if( maingun == 3 )
+	{
+		maingun = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = Turret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = Flare3;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = Bridge;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn Connect to x-axis <0.> - pitch speed <10.>;
+	turn Bridge to y-axis heading speed <10.>;
+	wait-for-turn Connect around x-axis;
+	wait-for-turn Bridge around y-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FireSecondary()
+{	
+	move beamweapon to z-axis [-1.000000] now;
+	sleep 250;
+	move beamweapon to z-axis [0.000000] speed [0.500000];
+	sleep 750;
+	++gun;
+	
+	if (gun == 3) 
+	{
+		gun = 0;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if (gun == 0) 
+	{
+		piecenum = aimpoint1;
+	}	
+	if (gun == 1) 
+	{
+		piecenum = aimpoint2;
+	}	
+	if (gun == 2) 
+	{
+		piecenum = aimpoint3;
+	}	
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	return (1);
+}
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	return (1);
+}
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	return (1);
+}
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	return (1);
+}
+AimWeapon8(heading, pitch)
+{
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	return (1);
+}
+AimWeapon9(heading, pitch)
+{
+	signal SIG_AIM_9;
+	set-signal-mask SIG_AIM_9;
+	return (1);
+}
+
+FireWeapon4()
+{
+	++starburst4;
+	if (starburst4 == 3)
+	{
+		starburst4 = 0;
+	}
+}
+FireWeapon5()
+{
+	++starburst5;
+	if (starburst5 == 3)
+	{
+		starburst5 = 0;
+	}
+}
+FireWeapon6()
+{
+	++starburst6;
+	if (starburst6 == 3)
+	{
+		starburst6 = 0;
+	}
+}
+FireWeapon7()
+{
+	++starburst1;
+	if (starburst1 == 3)
+	{
+		starburst1 = 0;
+	}
+}
+FireWeapon8()
+{
+	++starburst2;
+	if (starburst2 == 3)
+	{
+		starburst2 = 0;
+	}
+}
+FireWeapon9()
+{
+	++starburst3;
+	if (starburst3 == 3)
+	{
+		starburst3 = 0;
+	}
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = Pod4;
+}
+AimFromWeapon5(piecenum)
+{
+	piecenum = Pod5;
+}
+AimFromWeapon6(piecenum)
+{
+	piecenum = Pod6;
+}
+AimFromWeapon7(piecenum)
+{
+	piecenum = Pod1;
+}
+AimFromWeapon8(piecenum)
+{
+	piecenum = Pod2;
+}
+AimFromWeapon9(piecenum)
+{
+	piecenum = Pod3;
+}
+
+QueryWeapon4(piecenum)
+{
+	if (starburst4 == 0)
+	{
+		piecenum = R10;
+	}
+	if (starburst4 == 1)
+	{
+		piecenum = R11;
+	}
+	if (starburst4 == 2)
+	{
+		piecenum = R12;
+	}
+}
+QueryWeapon5(piecenum)
+{
+	if (starburst5 == 0)
+	{
+		piecenum = R13;
+	}
+	if (starburst5 == 1)
+	{
+		piecenum = R14;
+	}
+	if (starburst5 == 2)
+	{
+		piecenum = R15;
+	}
+}
+QueryWeapon6(piecenum)
+{
+	if (starburst6 == 0)
+	{
+		piecenum = R16;
+	}
+	if (starburst6 == 1)
+	{
+		piecenum = R17;
+	}
+	if (starburst6 == 2)
+	{
+		piecenum = R18;
+	}
+}
+QueryWeapon7(piecenum)
+{
+	if (starburst1 == 0)
+	{
+		piecenum = R1;
+	}
+	if (starburst1 == 1)
+	{
+		piecenum = R2;
+	}
+	if (starburst1 == 2)
+	{
+		piecenum = R3;
+	}
+}
+QueryWeapon8(piecenum)
+{
+	if (starburst2 == 0)
+	{
+		piecenum = R4;
+	}
+	if (starburst2 == 1)
+	{
+		piecenum = R5;
+	}
+	if (starburst2 == 2)
+	{
+		piecenum = R6;
+	}
+}
+QueryWeapon9(piecenum)
+{
+	if (starburst3 == 0)
+	{
+		piecenum = R7;
+	}
+	if (starburst3 == 1)
+	{
+		piecenum = R8;
+	}
+	if (starburst3 == 2)
+	{
+		piecenum = R9;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = Body;
+}
+
+Killed(severity, corpsetype)
+{
+	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode Turret type SHATTER | BITMAP1;
+	corpsetype = 1;
+}

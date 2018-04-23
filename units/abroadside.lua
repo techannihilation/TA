@@ -195,8 +195,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "750MW",
-				maindir = "0 0 1",
-				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {

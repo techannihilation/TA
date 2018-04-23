@@ -961,7 +961,7 @@ local morphDefs = {
 		xp = 0.20,
 	},
 	corjeag = {
-     	into = 'corsent',
+     		into = 'corsent',
 		time = 30,
 		xp = 0.20,
 	},
@@ -976,69 +976,74 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corkrog = {
-        into = 'corkrog1',
-        time = 240,
-		xp = 0.60,
+		into = 'corkrog1',
+		time = 240,
+		xp = 0.25,
 	},
 	armbanth = {
-        into = 'armbanth1',
-        time = 240,
-		xp = 0.60,
+		into = 'armbanth1',
+		time = 240,
+		xp = 0.25,
 	},
 	corkarg = {
  		into = 'corkarg1',
-        time = 120,
-        xp = 0.50,
+		time = 120,
+		xp = 0.50,
          },
 	armgeo_mini = {
-     	into = 'armgeo',
+     		into = 'armgeo',
 		time = 30,
 	},
 	corgeo_mini = {
-     	into = 'corgeo',
+     		into = 'corgeo',
 		time = 30,
 	},
 	tllgeo_mini = {
-     	into = 'tllgeo',
+     		into = 'tllgeo',
 		time = 30,
 	},
 	corprot = {
-     	into = 'troman',
+     		into = 'troman',
 		time = 60,
 		xp = 0.30,
 	},
 	coramph = {
-     	into = 'shiva',
+     		into = 'shiva',
 		time = 60,
 		xp = 0.30,
 	},
 	armkrmi= {
-     	into = 'armgor',
+     		into = 'armgor',
 		time = 120,
 		xp = 0.45,
 	},
 	cortotal = {
-     	into = 'armsiege',
+     		into = 'armsiege',
 		time = 60,
 		xp = 0.30,
 	},
 	armfast = {
-     	into = 'armjugg',
+     		into = 'armjugg',
 		time = 120,
 		xp = 1.00,
 	},
+	tllsalamander = {
+    	 	into = 'tllcenturion',
+		time = 30,
+		xp = 0.30,
+	},
 	armpincer = {
-     	into = 'armcroc',
+    	 	into = 'armcroc',
 		time = 30,
 		xp = 0.30,
 	},
 	armcroc = {
-     	into = 'armscpion',
+   	  	into = 'armscpion',
 		time = 30,
 		xp = 0.30,
 	},
 	armst = {
-     	into = 'armscpion',
+  	   	into = 'armscpion',
 		time = 30,
 		xp = 0.15,
 	},
@@ -1046,32 +1051,32 @@ local morphDefs = {
 -- New adding for TLL
 
 	tllshaker = {
-     	into = 'tllloki',
+   	  	into = 'tllloki',
 		time = 30,
 		xp = 0.35,
 	},
 	tllloki = {
-     	into = 'tllmlrpc',
+ 	    	into = 'tllmlrpc',
 		time = 120,
 		xp = 0.60,
 	},
 	tllariman = {
-     	into = 'tllcoyote',
+  	   	into = 'tllcoyote',
 		time = 30,
 		xp = 0.40,
 	},
 	tllconvincer = {
-     	into = 'tllacid',
+  	   	into = 'tllacid',
 		time = 120,
 		xp = 0.60,
 	},
 	tllroaster = {
-	into = 'tllroaster1',
+		into = 'tllroaster1',
 		time = 30,
 		xp = 0.25,
 	},
 	tllroaster1 = {
-	into = 'tlltelsatnk',
+		into = 'tlltelsatnk',
 		time = 30,
 		xp = 0.25,
 	},
@@ -1185,6 +1190,31 @@ local morphDefs = {
 	  	time = 90,
 		xp = 0.35,
 	},
+	coradon = {
+		into = 'corhcrus',
+	  	time = 30,
+		xp = 0.20,
+	},
+	armtem = {
+		into = 'armhcrus',
+	  	time = 90,
+		xp = 0.35,
+	},
+	tllhplasma = {
+		into = 'tllhcrus',
+	  	time = 60,
+		xp = 0.35,
+	},
+	tllsalamander = {
+		into = 'tllcenturion',
+	  	time = 60,
+		xp = 0.35,
+	},
+	tllshaker = {
+		into = 'tllleopard',
+	  	time = 60,
+		xp = 0.35,
+	},	
 }
 
 --

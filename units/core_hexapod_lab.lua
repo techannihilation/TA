@@ -57,7 +57,7 @@ return {
 			[3] = "monkeylord",
 			[4] = "corgala",
 			[5] = "fatshrew",
-			[6] = "corkrog1",
+			[6] = "cormkl",
 		},
 		customparams = {
 			buildpic = "core_hexapod_lab.dds",
