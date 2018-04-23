@@ -34,7 +34,7 @@ return {
 		onoffable = false,
 		radardistance = 0,
 		radaremitheight = 140,
-		script = "ARMRECH2.COB",
+		script = "armrech2.cob",
 		selfdestructas = "COMMANDER_BLAST",
 		sightdistance = 0,
 		unitname = "armrech18",
