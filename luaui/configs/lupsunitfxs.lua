@@ -257,6 +257,11 @@ effectUnitDefs = {
     {class='ShieldSphere',options=tlljunoShieldSphere},
     {class='GroundFlash',options=groundFlashJuno},
   },
+ tllmcv = {
+    {class='SimpleParticles2', options=MergeTable({piece="p1", delay=30, lifeSpread=30},sparksr1)},
+    {class='SimpleParticles2', options=MergeTable({piece="p2", delay=45, lifeSpread=30},sparksr1)},
+    {class='SimpleParticles2', options=MergeTable({piece="p3", delay=60, lifeSpread=30},sparksr1)},
+  },
 
   --// ENERGY STORAGE //--------------------
   
@@ -272,7 +277,7 @@ effectUnitDefs = {
  armses = {
     {class='GroundFlash',options=groundFlashArmses},
   },
-  
+	  
   --// PLANES still need to do work here //----------------------------
   armfig = {
     {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
