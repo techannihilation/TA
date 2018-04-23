@@ -50,7 +50,8 @@ return {
 		workertime = 160,
 		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
 		buildoptions = {
-			[1] = "cbuilderlvl3",
+			[1] = "cbuilderlvl2",
+			[2] = "cbuilderlvl3",
 		},
 		customparams = {
 			buildpic = "ccovertopscentre.dds",
