@@ -47,7 +47,7 @@ return {
 		stealth = true,
 		unitname = "acovertopscentre",
 		usebuildinggrounddecal = true,
-		workertime = 160,
+		workertime = 500,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		buildoptions = {
 			[1] = "abuilderlvl2",
