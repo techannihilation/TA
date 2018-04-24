@@ -175,7 +175,7 @@ Create()
 	spray = base;
 	call-script InitState();
 	start-script SmokeUnit();
-
+	turn pad to y-axis <-90.000000> now;
 	//spin blade1 around y-axis speed <25.000000>;
 	//spin blade2 around y-axis speed <-50.000000>;
 	//spin blade3 around y-axis speed <75.000000>;

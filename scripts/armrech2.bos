@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, pad, beam1, beam2, plate1, yard, plate2, tower, blade3,
-       nano2, nano1, glow1, glow2,glow4,glow5, spire ;
+       nano2, nano1, glow1, glow2, glow4, glow5, spire ;
 
 static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
 
@@ -175,6 +175,7 @@ Create()
 	spray = base;
 	call-script InitState();
 	start-script SmokeUnit();
+	turn pad to y-axis <-90.000000> now;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;

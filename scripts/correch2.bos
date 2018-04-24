@@ -166,7 +166,7 @@ Create()
 
 	turn pivot_2 to y-axis <180.000000> NOW;
 	turn pivot_5 to y-axis <180.000000> NOW;
-	
+	turn pad to y-axis <-90.000000> now;
 
 	while( get BUILD_PERCENT_LEFT )
 	{
