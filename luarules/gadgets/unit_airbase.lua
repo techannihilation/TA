@@ -443,7 +443,7 @@ function gadget:GameFrame(n)
 		--if not Spring.ValidUnitID(unitID) then RemovePlane(unitID) return end
          --Spring.Echo("landing", unitID)
          local h,mh = Spring.GetUnitHealth(unitID)
-         if h==mh then toRemove[#toRemove+1] = unitID end
+         if h==mh then toRemove[#toRemove] = unitID end
          
          local airbaseID, padPieceNum = t[1], t[2]
          local px, py, pz = Spring.GetUnitPiecePosDir(airbaseID, padPieceNum)
@@ -461,7 +461,9 @@ function gadget:GameFrame(n)
                Spring.MoveCtrl.Enable(unitID)
             else
                -- fly towards pad (the pad may move!)
+               if not tractorPlanes[unitID] then
                Spring.SetUnitLandGoal(unitID, px, py, pz, r)
+               end
             end
          end
       end
