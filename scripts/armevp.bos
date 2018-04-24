@@ -14,16 +14,16 @@ static-var  statechg_DesiredState, statechg_StateChanging;
 
 activatescr()
 {
-	turn doorr to y-axis <-90.016484> speed <100.000000>;
-	turn doorl to y-axis <90.016484> speed <100.000000>;
+	turn doorr to y-axis <-90.000000> speed <100.000000>;
+	turn doorl to y-axis <90.000000> speed <100.000000>;
 	sleep 400;
-	turn roofr to z-axis <-90.016484> speed <70.000000>;
-	turn roofl to z-axis <90.016484> speed <70.000000>;
+	turn roofr to z-axis <-90.000000> speed <70.000000>;
+	turn roofl to z-axis <90.000000> speed <70.000000>;
 	wait-for-turn roofr around z-axis;
 	wait-for-turn roofl around z-axis;
 	sleep 100;
-	move hallr to x-axis [-11.000000] speed [10.000000];
-	move halll to x-axis [11.000000] speed [10.000000];
+	move hallr to x-axis [-12.000000] speed [10.000000];
+	move halll to x-axis [12.000000] speed [10.000000];
 	wait-for-move hallr along x-axis;
 	wait-for-move halll along x-axis;
 	move front1 to x-axis [-3.000000] speed [10.000000];
