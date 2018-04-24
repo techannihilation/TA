@@ -40,7 +40,7 @@ return {
 		unitname = "armrech3",
 		usebuildinggrounddecal = true,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
-		workertime = 250,
+		workertime = 125,
 		buildoptions = {
 			[1] = "abuilderlvl2",
 		},
