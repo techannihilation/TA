@@ -43,7 +43,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 	if crashing[unitID] then 
 		return 0,0
 	end --hacky
-	if UnitDefs[unitDefID]["canFly"] == true and (damage>GetUnitHealth(unitID)) and random()<0.33 then
+	if crashable[UnitDefID] and (damage>GetUnitHealth(unitID)) and random()<0.33 then
 	--NOTE: strafe airmovetype aircraft DO NOT CRASH, only regular stuff like bombers
 		--Spring.Echo('CRASHING AIRCRAFT',unitID)
 		crashingCount = crashingCount + 1
