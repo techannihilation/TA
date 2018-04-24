@@ -37,7 +37,7 @@ return {
 		sightdistance = 220,
 		stealth = true,
 		unitname = "tlldevelop",
-		workertime = 160,
+		workertime = 1000,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO OOOCCCCCCCOOO OOCCCCCCCCCOO OOCCCCCCCCCOO OOOCCCCCCOOOO OOCCCCCCCCCOO OOCCCCCCCCCOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		buildoptions = {
 			[1] = "tllbuilderlvl3",
