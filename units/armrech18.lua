@@ -3,7 +3,7 @@ return {
 		activatewhenbuilt = true,
 		buildcostenergy = 57000,
 		buildcostmetal = 5640,
-		builder = false,
+		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
@@ -40,6 +40,7 @@ return {
 		unitname = "armrech18",
 		usebuildinggrounddecal = true,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
+		workertime = 150,
 		customparams = {
 			buildpic = "armrech18.dds",
 			faction = "ARM",
