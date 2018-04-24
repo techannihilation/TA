@@ -40,7 +40,7 @@ return {
 		unitname = "armrech18",
 		usebuildinggrounddecal = true,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
-		workertime = 150,
+		workertime = 250,
 		customparams = {
 			buildpic = "armrech18.dds",
 			faction = "ARM",
