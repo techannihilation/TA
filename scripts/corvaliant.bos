@@ -1,0 +1,618 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece	flare1a, flare1b, flare1c, 
+		flare2a, flare2b, flare2c, 
+		blodflare1, blodflare2, blodflare3, blodflare4, blodflare5, blodflare6, blodflare7, blodflare8, blodflare9, blodflare10,
+		base, body, stand1, stand2, turret1, turret2, sleeves1, sleeves2, sleeve1, sleeve2, 
+		barrel1a, barrel1b, barrel1c, barrel2a, barrel2b, barrel2c, 
+		platform1, platform2, platform3, platform4, platform5,
+		blodturret1, blodturret2, blodturret3, blodturret4, blodturret5, blodturret6, blodturret7, blodturret8, blodturret9, blodturret10, 
+		blodsleeve1, blodsleeve2, blodsleeve3, blodsleeve4, blodsleeve5, blodsleeve6, blodsleeve7, blodsleeve8, blodsleeve9, blodsleeve10,
+		blodbarrel1, blodbarrel2, blodbarrel3, blodbarrel4, blodbarrel5, blodbarrel6, blodbarrel7, blodbarrel8, blodbarrel9, blodbarrel10,
+		aimfrom; 
+
+static-var  gun_1, gun_2, gun_3, aimback, wait, brb, wait2, landed;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+#define SIG_AIM_8			256
+#define SIG_AIM_9			512
+#define SIG_AIM_10			1024
+#define SIG_AIM_11			2048
+#define SIG_AIM_12			5026
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	move body to y-axis [45] now;
+		
+	hide flare1a;
+	hide flare1b;
+	hide flare1c;
+	hide flare2a;
+	hide flare2b;
+	hide flare2c;
+	dont-cache flare1a;
+	dont-cache flare1b;
+	dont-cache flare1c;
+	dont-cache flare2a;
+	dont-cache flare2b;
+	dont-cache flare2c;
+	hide blodflare1;
+	hide blodflare2;
+	hide blodflare3;
+	hide blodflare4;
+	hide blodflare5;
+	hide blodflare6;
+	hide blodflare7;
+	hide blodflare8;
+	hide blodflare9;
+	hide blodflare10;
+	dont-cache blodflare1;
+	dont-cache blodflare2;
+	dont-cache blodflare3;
+	dont-cache blodflare4;
+	dont-cache blodflare5;
+	dont-cache blodflare6;
+	dont-cache blodflare7;
+	dont-cache blodflare8;
+	dont-cache blodflare9;
+	dont-cache blodflare10;
+	
+	gun_1 = 0;
+	gun_2 = 0;
+	
+	start-script SmokeUnit();
+}
+
+Restore1()
+{
+	sleep 8000;
+	turn turret1 to y-axis <0> speed <25>;
+	turn sleeves1 to x-axis <0> speed <17.5>;
+}
+
+Restore2()
+{
+	sleep 8000;
+	turn turret2 to y-axis <0> speed <25>;
+	turn sleeves2 to x-axis <0> speed <17.5>;
+}
+
+Restore3()
+{
+	sleep 4000;
+	turn blodturret1 to y-axis <0> speed <25>;
+	turn blodsleeve1 to x-axis <0> speed <25>;
+}
+
+Restore4()
+{
+	sleep 4000;
+	turn blodturret2 to y-axis <0> speed <25>;
+	turn blodsleeve2 to x-axis <0> speed <25>;
+}
+
+Restore5()
+{
+	sleep 4000;
+	turn blodturret3 to y-axis <0> speed <25>;
+	turn blodsleeve3 to x-axis <0> speed <25>;
+}
+
+Restore6()
+{
+	sleep 4000;
+	turn blodturret4 to y-axis <0> speed <25>;
+	turn blodsleeve4 to x-axis <0> speed <25>;
+}
+
+Restore7()
+{
+	sleep 4000;
+	turn blodturret5 to y-axis <0> speed <25>;
+	turn blodsleeve5 to x-axis <0> speed <25>;
+}
+
+Restore8()
+{
+	sleep 4000;
+	turn blodturret6 to y-axis <0> speed <25>;
+	turn blodsleeve6 to x-axis <0> speed <25>;
+}
+
+Restore9()
+{
+	sleep 4000;
+	turn blodturret7 to y-axis <0> speed <25>;
+	turn blodsleeve7 to x-axis <0> speed <25>;
+}
+
+Restore10()
+{
+	sleep 4000;
+	turn blodturret8 to y-axis <0> speed <25>;
+	turn blodsleeve8 to x-axis <0> speed <25>;
+}
+
+Restore11()
+{
+	sleep 4000;
+	turn blodturret9 to y-axis <0> speed <25>;
+	turn blodsleeve9 to x-axis <0> speed <25>;
+}
+
+Restore12()
+{
+	sleep 4000;
+	turn blodturret10 to y-axis <0> speed <25>;
+	turn blodsleeve10 to x-axis <0> speed <25>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret1 to y-axis heading speed <50>;
+	turn sleeves1 to x-axis <0.000000> - pitch speed <35>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeves1 around x-axis;
+	Start-script Restore1();
+	return (1);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;	
+	turn turret2 to y-axis heading speed <50>;
+	turn sleeves2 to x-axis <0.000000> - pitch speed <35>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeves2 around x-axis;
+	Start-script Restore2();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_2 == 0 )
+	{
+		move barrel1a to z-axis [-4] now;
+		move barrel1a to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_2 == 1 )
+	{
+		move barrel1b to z-axis [-4] now;
+		move barrel1b to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_2 == 2 )
+	{
+		move barrel1c to z-axis [-4] now;
+		move barrel1c to z-axis [0.000000] speed [3.000000];
+	}
+	++gun_1;
+	if( gun_1 == 3 )
+	{
+		gun_1 = 0;
+	}
+}
+
+FireSecondary()
+{
+	if( gun_2 == 0 )
+	{
+		move barrel2a to z-axis [-4] now;
+		move barrel2a to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_2 == 1 )
+	{
+		move barrel2b to z-axis [-4] now;
+		move barrel2b to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_2 == 2 )
+	{
+		move barrel2c to z-axis [-4] now;
+		move barrel2c to z-axis [0.000000] speed [3.000000];
+	}
+	++gun_2;
+	if( gun_2 == 3 )
+	{
+		gun_2 = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret1;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret2;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare1b;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare1c;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare2a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = flare2c;
+	}
+}
+
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn blodturret1 to y-axis heading speed <25.000000>;
+	turn blodsleeve1 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret1 around y-axis;
+	wait-for-turn blodsleeve1 around x-axis;
+	start-script Restore3();
+	return(1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn blodturret2 to y-axis heading speed <25.000000>;
+	turn blodsleeve2 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret2 around y-axis;
+	wait-for-turn blodsleeve2 around x-axis;
+	start-script Restore4();
+	return(1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn blodturret3 to y-axis heading speed <25.000000>;
+	turn blodsleeve3 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret3 around y-axis;
+	wait-for-turn blodsleeve3 around x-axis;
+	start-script Restore5();
+	return(1);
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn blodturret4 to y-axis heading speed <25.000000>;
+	turn blodsleeve4 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret4 around y-axis;
+	wait-for-turn blodsleeve4 around x-axis;
+	start-script Restore6();
+	return(1);
+}	
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn blodturret5 to y-axis heading speed <25.000000>;
+	turn blodsleeve5 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret5 around y-axis;
+	wait-for-turn blodsleeve5 around x-axis;
+	start-script Restore7();
+	return(1);
+}
+
+AimWeapon8(heading, pitch)
+{
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	turn blodturret6 to y-axis heading speed <25.000000>;
+	turn blodsleeve6 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret6 around y-axis;
+	wait-for-turn blodsleeve6 around x-axis;
+	start-script Restore8();
+	return(1);
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal SIG_AIM_9;
+	set-signal-mask SIG_AIM_9;
+	turn blodturret7 to y-axis heading speed <25.000000>;
+	turn blodsleeve7 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret7 around y-axis;
+	wait-for-turn blodsleeve7 around x-axis;
+	start-script Restore9();
+	return(1);
+}
+
+AimWeapon10(heading, pitch)
+{
+	signal SIG_AIM_10;
+	set-signal-mask SIG_AIM_10;
+	turn blodturret8 to y-axis heading speed <25.000000>;
+	turn blodsleeve8 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret8 around y-axis;
+	wait-for-turn blodsleeve8 around x-axis;
+	start-script Restore10();
+	return(1);
+}	
+
+AimWeapon11(heading, pitch)
+{
+	signal SIG_AIM_11;
+	set-signal-mask SIG_AIM_11;
+	turn blodturret9 to y-axis heading speed <25.000000>;
+	turn blodsleeve9 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret9 around y-axis;
+	wait-for-turn blodsleeve9 around x-axis;
+	start-script Restore11();
+	return(1);
+}	
+
+AimWeapon12(heading, pitch)
+{
+	signal SIG_AIM_12;
+	set-signal-mask SIG_AIM_12;
+	turn blodturret10 to y-axis heading speed <25.000000>;
+	turn blodsleeve10 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret10 around y-axis;
+	wait-for-turn blodsleeve10 around x-axis;
+	start-script Restore12();
+	return(1);
+}	
+
+FireWeapon3()
+{
+	move blodbarrel1 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel1 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon4()
+{
+	move blodbarrel2 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel2 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon5()
+{
+	move blodbarrel3 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel3 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon6()
+{
+	move blodbarrel4 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel4 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon7()
+{
+	move blodbarrel5 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel5 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon8()
+{
+	move blodbarrel6 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel6 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon9()
+{
+	move blodbarrel7 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel7 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon10()
+{
+	move blodbarrel8 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel8 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon11()
+{
+	move blodbarrel9 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel9 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon12()
+{
+	move blodbarrel10 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel10 to z-axis [0.000000] speed [3.000000];
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = blodturret1;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = blodturret2;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = blodturret3;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = blodturret4;
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = blodturret5;
+}
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = blodturret6;
+}
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = blodturret7;
+}
+
+AimFromWeapon10(piecenum)
+{
+	piecenum = blodturret8;
+}
+
+AimFromWeapon11(piecenum)
+{
+	piecenum = blodturret9;
+}
+
+AimFromWeapon12(piecenum)
+{
+	piecenum = blodturret10;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = blodflare1;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = blodflare2;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = blodflare3;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = blodflare4;
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = blodflare5;
+}
+
+QueryWeapon8(piecenum)
+{
+	piecenum = blodflare6;
+}
+
+QueryWeapon9(piecenum)
+{
+	piecenum = blodflare7;
+}
+
+QueryWeapon10(piecenum)
+{
+	piecenum = blodflare8;
+}
+
+QueryWeapon11(piecenum)
+{
+	piecenum = blodflare9;
+}
+
+QueryWeapon12(piecenum)
+{
+	piecenum = blodflare10;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode barrel1a type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel1b type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel1c type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2a type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2b type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2c type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blodbarrel3 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blodbarrel4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blodbarrel5 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blodbarrel6 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeves1 type NOHEATCLOUD;
+	explode sleeves2 type NOHEATCLOUD;
+	explode blodsleeve1 type NOHEATCLOUD;
+	explode blodsleeve2 type NOHEATCLOUD;
+	explode platform1 type NOHEATCLOUD;
+	explode platform2 type NOHEATCLOUD;
+	explode platform3 type NOHEATCLOUD;
+	return (corpsetype);	
+}
