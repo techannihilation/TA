@@ -34,7 +34,7 @@ return {
 		footprintz = 2,
 		idleautoheal = 5,
 		idletime = 1800,
-		initcloaked = true,
+		--initcloaked = true,
 		losemitheight = 31,
 		maneuverleashlength = 640,
 		mass = 1598,
@@ -78,6 +78,7 @@ return {
 		customparams = {
 			buildpic = "tllgizmo.dds",
 			faction = "TLL",
+			initcloaked = true,
 			paralyzemultiplier = 0.15,
 		},
 		nanocolor = {
