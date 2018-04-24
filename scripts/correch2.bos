@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, pad, beam1, beam2, plate1, yard, plate2,nano2, nano1,
-	  tower, body, t1, t2, glow_4, pivot_1, arm_1, pivot_2, arm_2, pivot_4, arm_4, pivot_5, arm_5,
+	  tower, body, t1, t2, pivot_1, arm_1, pivot_2, arm_2, pivot_4, arm_4, pivot_5, arm_5,
 	  blade_1, blade_2, blade_4, blade_5;
 
 
