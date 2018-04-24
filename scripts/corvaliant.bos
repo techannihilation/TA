@@ -93,10 +93,8 @@ Create()
 	dont-cache blodflare8;
 	dont-cache blodflare9;
 	dont-cache blodflare10;
-	
 	gun_1 = 0;
 	gun_2 = 0;
-	
 	start-script SmokeUnit();
 }
 
