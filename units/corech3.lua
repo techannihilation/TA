@@ -3,7 +3,7 @@ return {
 		activatewhenbuilt = true,
 		buildcostenergy = 7000,
 		buildcostmetal = 640,
-		builder = false,
+		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
@@ -39,6 +39,7 @@ return {
 		unitname = "corech3",
 		usebuildinggrounddecal = true,
 		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
+		workertime = 500,
 		buildoptions = {
 			[1] = "cbuilderlvl2",
 		},
