@@ -475,7 +475,7 @@ m_chat = {
 position = position + 1
 
 local fixedallies = tonumber(Spring.GetModOptions().fixedallies)
-local drawAllyButton = (not fixedallies or fixedallies == 0)
+local drawAllyButton = false --(not fixedallies or fixedallies == 0)
 m_alliance = {
 	name 	  = "ally",
 	spec      = false,
