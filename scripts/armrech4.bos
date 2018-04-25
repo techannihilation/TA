@@ -175,6 +175,7 @@ Create()
 	spray = base;
 	call-script InitState();
 	start-script SmokeUnit();
+	turn pad to y-axis <-90.000000> now;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;
