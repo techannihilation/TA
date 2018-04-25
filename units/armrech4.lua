@@ -42,7 +42,7 @@ return {
 		sightdistance = 220,
 		stealth = true,
 		unitname = "armrech4",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		workertime = 1000,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		buildoptions = {

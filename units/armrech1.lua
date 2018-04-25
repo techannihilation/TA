@@ -34,7 +34,7 @@ return {
 		selfdestructas = "COMMANDER_BLAST",
 		sightdistance = 0,
 		unitname = "armrech1",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		workertime = 125,
 		buildoptions = {
