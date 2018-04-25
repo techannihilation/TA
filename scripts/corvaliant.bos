@@ -210,17 +210,17 @@ AimSecondary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_2 == 0 )
+	if( gun_1 == 0 )
 	{
 		move barrel1a to z-axis [-4] now;
 		move barrel1a to z-axis [0.000000] speed [3.000000];
 	}
-	if( gun_2 == 1 )
+	if( gun_1 == 1 )
 	{
 		move barrel1b to z-axis [-4] now;
 		move barrel1b to z-axis [0.000000] speed [3.000000];
 	}
-	if( gun_2 == 2 )
+	if( gun_1 == 2 )
 	{
 		move barrel1c to z-axis [-4] now;
 		move barrel1c to z-axis [0.000000] speed [3.000000];
