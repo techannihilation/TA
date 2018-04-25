@@ -7,7 +7,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 15,
 		buildinggrounddecalsizey = 15,
-		buildinggrounddecaltype = "armrech4_aoplane.dds",
 		buildpic = "armrech4.dds",
 		buildtime = 250000,
 		canmove = true,

@@ -7,7 +7,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 15,
 		buildinggrounddecalsizey = 15,
-		buildinggrounddecaltype = "correch4_aoplane.dds",
 		buildpic = "correch4.dds",
 		buildtime = 240000,
 		canmove = true,
