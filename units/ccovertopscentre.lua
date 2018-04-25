@@ -47,7 +47,7 @@ return {
 		stealth = true,
 		unitname = "ccovertopscentre",
 		usebuildinggrounddecal = true,
-		workertime = 160,
+		workertime = 1000,
 		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
 		buildoptions = {
 			[1] = "cbuilderlvl2",
