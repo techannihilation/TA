@@ -91,7 +91,7 @@ return {
 			[9] = "armavp",
 			[10] = "armaap",
 			[11] = "ananotower",
-			[12] = "armrech21",
+			[12] = "armrech3",
 			[13] = "armfort",
 			[14] = "armarad",
 			[15] = "armpb",

@@ -92,7 +92,7 @@ return {
 			[10] = "armaap",
 			[11] = "ananotower",
 			[12] = "arm_mech_lab",
-			[13] = "acovertopscentre",
+			[13] = "armrech4",
 			[14] = "armfort",
 			[15] = "armarad",
 			[16] = "armpb",

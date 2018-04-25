@@ -71,7 +71,7 @@ return {
 			[11] = "armasy",
 			[12] = "armesy",
 			[13] = "arm_mech_lab",
-			[14] = "armrech21",
+			[14] = "armrech3",
 		},
 		customparams = {
 			buildpic = "armecs.dds",

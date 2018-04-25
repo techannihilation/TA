@@ -60,7 +60,7 @@ return {
 		buildoptions = {
 			[1] = "coruwadves",
 			[2] = "coruwadvms",
-			[3] = "corech18",
+			[3] = "correch2",
 			[4] = "coruwfus",
 			[5] = "crnns",
 			[6] = "coruwmme",

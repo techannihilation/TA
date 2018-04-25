@@ -91,7 +91,7 @@ return {
 			[9] = "coravp",
 			[10] = "coraap",
 			[11] = "cnanotower",
-			[12] = "corech21",
+			[12] = "correch3",
 			[13] = "corfort",
 			[14] = "corarad",
 			[15] = "corvipe",

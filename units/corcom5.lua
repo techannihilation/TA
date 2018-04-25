@@ -90,7 +90,7 @@ return {
 			[8] = "corlab",
 			[9] = "corvp",
 			[10] = "corap",
-			[11] = "corech18",
+			[11] = "correch2",
 			[12] = "coreyes",
 			[13] = "corrad1",
 			[14] = "cordrag",

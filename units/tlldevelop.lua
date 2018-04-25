@@ -55,7 +55,7 @@ return {
 				footprintx = 12,
 				footprintz = 12,
 				metal = 61230,
-				object = "CCovertOpsCentre_dead",
+				object = "correch4_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -60,7 +60,7 @@ return {
 		buildoptions = {
 			[1] = "armuwadves",
 			[2] = "armuwadvms",
-			[3] = "armrech18",
+			[3] = "armrech2",
 			[4] = "armuwfus",
 			[5] = "armuwfus1",
 			[6] = "armuwmme",

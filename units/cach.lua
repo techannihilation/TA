@@ -69,7 +69,7 @@ return {
 			[13] = "corsilo",
 			[14] = "corint",
 			[15] = "corbuzz",
-			[16] = "corech18",
+			[16] = "correch2",
 			[17] = "coruwfus",
 			[18] = "coruwmme",
 			[19] = "coruwmmm",

@@ -92,7 +92,7 @@ return {
 			[28] = "corjamt",
 			[29] = "cjuno",
 			[30] = "cmortor",
-			[31] = "corech3",
+			[31] = "correch1",
 			[32] = "corsy",
 		},
 		customparams = {

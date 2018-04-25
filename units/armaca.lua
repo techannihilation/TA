@@ -70,7 +70,7 @@ return {
 			[8] = "armckmakr",
 			[9] = "armuwadves",
 			[10] = "armuwadvms",
-			[11] = "armrech18",
+			[11] = "armrech2",
 			[12] = "armtarg",
 			[13] = "armsd",
 			[14] = "armgate",

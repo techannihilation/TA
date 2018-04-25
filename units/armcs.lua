@@ -60,7 +60,7 @@ return {
 			[1] = "armgeo",
 			[2] = "armeyes",
 			[3] = "armdl",
-			[4] = "armrech3",
+			[4] = "armrech1",
 			[5] = "armtide",
 			[6] = "armuwmex",
 			[7] = "armfmkr",

@@ -87,7 +87,7 @@ return {
 			[29] = "armjamt",
 			[30] = "ajuno",
 			[31] = "amortor",
-			[32] = "armrech3",
+			[32] = "armrech1",
 			[33] = "armsy",
 		},
 		customparams = {

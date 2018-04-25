@@ -405,28 +405,28 @@ local morphDefs = {
 		time = 30,
 		tech = 1,
 	},
-	corech3 = {
-		into = 'corech18',
+	correch1 = {
+		into = 'correch2',
 		time = 45,
 	},
-	corech18 = {
-		into = 'corech21',
+	correch2 = {
+		into = 'correch3',
 		time = 60,
 	},
-	corech21 = {
-		into = 'CCovertOpsCentre',
+	correch3 = {
+		into = 'correch4',
 		time = 240,
 	},
-	armrech3 = {
-		into = 'armrech18',
+	armrech1 = {
+		into = 'armrech2',
 		time = 45,
 	},
-	armrech18 = {
-		into = 'armrech21',
+	armrech2 = {
+		into = 'armrech3',
 		time = 60,
 	},
-	armrech21 = {
-		into = 'ACovertOpsCentre',
+	armrech3 = {
+		into = 'armrech4',
 		time = 240,
 	},
 	armvulc = {

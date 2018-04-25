@@ -166,11 +166,11 @@ function gadget:Initialize()
       elseif (ud.name=="corkarg1") or (ud.name=="corgala") or (ud.name=="armraz1") or (ud.name=="armraptor") or (ud.name=="armbanth1") then
         Spring.SetUnitDefIcon(udid, "mech.user")
 --RC
-      elseif (ud.name=="armrech3") or (ud.name=="armrech18") or (ud.name=="armrech21")
-      or (ud.name=="corech3") or (ud.name=="corech18") or (ud.name=="corech21") then
+      elseif (ud.name=="armrech1") or (ud.name=="armrech2") or (ud.name=="armrech3")
+      or (ud.name=="correch1") or (ud.name=="correch2") or (ud.name=="correch3") then
         Spring.SetUnitDefIcon(udid, "rc.user")
 --last rc
-      elseif (ud.name=="ccovertopscentre") or (ud.name=="acovertopscentre") then
+      elseif (ud.name=="correch4") or (ud.name=="armrech4") then
         Spring.SetUnitDefIcon(udid, "rc1.user")
 --broadside etc
       elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllvaliant") then

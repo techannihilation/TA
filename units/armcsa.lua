@@ -76,7 +76,7 @@ return {
 			[14] = "armsilo",
 			[15] = "armbrtha",
 			[16] = "armvulc",
-			[17] = "armrech18",
+			[17] = "armrech2",
 			[18] = "armuwfus",
 			[19] = "armuwmmm",
 			[20] = "armuwmme",
