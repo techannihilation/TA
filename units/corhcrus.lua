@@ -2,8 +2,8 @@ return {
 	corhcrus = {
 		acceleration = 0.09,
 		brakerate = 0.135,
-		buildcostenergy = 195000,
-		buildcostmetal = 15500,
+		buildcostenergy = 241000,
+		buildcostmetal = 9800,
 		builder = false,
 		buildpic = "corhcrus.dds",
 		buildtime = 135000,
@@ -22,7 +22,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Battle Hovertank",
-		explodeas = "CRAWL_BLASTSML",
+		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 8,
 		footprintz = 8,
@@ -31,7 +31,7 @@ return {
 		losemitheight = 30,
 		maneuverleashlength = 640,
 		mass = 15500,
-		maxdamage = 38500,
+		maxdamage = 31700,
 		maxslope = 16,
 		maxvelocity = 1.4,
 		maxwaterdepth = 0,
@@ -42,7 +42,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "corhcrus",
 		radaremitheight = 65,
-		selfdestructas = "CRAWL_BLAST",
+		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 650,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "corhcrus.dds",
 			faction = "CORE",
+			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
