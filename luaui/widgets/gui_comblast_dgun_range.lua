@@ -103,20 +103,20 @@ function removeCom(unitID)
 end
 
 function widget:UnitFinished(unitID, unitDefID, unitTeam)
-	if isCommander[unitDefID] then
+    if isCommander[unitDefID] then
         addCom(unitID, unitDefID, unitTeam)
     end
 end
 
 function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
-    if UnitDefs[unitDefID].customParams.iscommander == "1" then
+    if isCommander[unitDefID] then
         addCom(unitID, unitDefID, teamID)
     end
 end
 
 function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
-    if isCommander[unitDefID] then
-    	Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
+    if isCommander[unitDefID] then 
+    	--Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
         addCom(unitID, unitDefID, newTeam)
     end
 end
@@ -124,7 +124,7 @@ end
 
 function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
     if isCommander[unitDefID] then
-    	Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
+    	--Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
         addCom(unitID, unitDefID, unitTeam)
     end
 end
