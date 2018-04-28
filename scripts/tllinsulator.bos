@@ -1,0 +1,361 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret, sleeve, barrel1, barrel2, flare1, flare2, wheelL1, wheelL2, wheelL3, wheelR1, wheelR2, wheelR3,
+		flame_turret1, flame_turret2, flamer_sleeve1, flame1, flame2, flamer_sleeve2;
+
+static-var  restore_delay, Static_Var_2, bMoving, bAiming1, bAiming2, Static_Var_3, gun_1, gun_2,
+            gun_3, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
+            Static_Var_11, Static_Var_12, gun;
+
+// Signal definitions
+#define SIG_AIM					2
+#define SIG_AIM_2				4
+#define SIG_AIM_3				8
+
+lua_FlameShot(Func_Var_1)
+{
+
+}
+
+RockUnit(anglex, anglez)
+{
+	turn base to x-axis anglex speed <50.000000>;
+	turn base to z-axis anglez speed <50.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <20.000000>;
+	turn base to x-axis <0.000000> speed <20.000000>;
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.000000>;
+	turn base to x-axis anglex speed <105.000000>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
+}
+
+EmitSFX()
+{
+	while( TRUE )
+	{
+		if( bMoving )
+		{
+			if( Static_Var_2 == 3 )
+			{
+				emit-sfx 259 from base;
+			}
+		}
+		sleep 250;
+	}
+}
+
+PilotLight1(Func_Var_1)
+{
+	while( TRUE )
+	{
+		while( bAiming1 )
+		{
+			sleep 100;
+		}
+		emit-sfx 1025 + 0 from flame1;
+		sleep 155;
+	}
+}
+
+PilotLight2(Func_Var_1)
+{
+	while( TRUE )
+	{
+		while( bAiming2 )
+		{
+			sleep 100;
+		}
+		emit-sfx 1025 + 0 from flame2;
+		sleep 155;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	//start-script WheelControl();
+	//start-script TurnControl();
+	start-script PilotLight1();
+	start-script PilotLight2();
+	start-script EmitSFX();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	Static_Var_2 = 4;
+	Static_Var_7 = 1;
+	Static_Var_12 = get MAX_SPEED;
+	gun = 0;
+	bMoving = FALSE;
+	bAiming1 = FALSE;
+	bAiming2 = FALSE;
+	restore_delay = 4000;
+	turn flame_turret1 to y-axis <180.000000> NOW;
+	start-script SmokeUnit();
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <60.000000>;
+	turn sleeve to x-axis <0.000000> speed <30.000000>;
+}
+
+Restore2()
+{
+	sleep restore_delay/1.5;
+	bAiming1 = FALSE;
+	turn flame_turret1 to y-axis <180.000000> speed <80.000000>;
+	turn flamer_sleeve1 to x-axis <0.000000> speed <40.000000>;
+}
+
+Restore3()
+{
+	sleep restore_delay/1.5;
+	bAiming2 = FALSE;
+	turn flame_turret2 to y-axis <0.000000> speed <80.000000>;
+	turn flamer_sleeve2 to x-axis <0.000000> speed <40.000000>;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	spin wheelL1 around x-axis speed <125.000000> accelerate <50.000000>;
+	spin wheelL2 around x-axis speed <125.000000> accelerate <50.000000>;
+	spin wheelL3 around x-axis speed <125.000000> accelerate <50.000000>;
+	spin wheelR1 around x-axis speed <125.000000> accelerate <50.000000>;
+	spin wheelR2 around x-axis speed <125.000000> accelerate <50.000000>;
+	spin wheelR3 around x-axis speed <125.000000> accelerate <50.000000>;
+	sleep 25;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	spin wheelL1 around x-axis speed <0.000000> accelerate <200.000000>;
+	spin wheelL2 around x-axis speed <0.000000> accelerate <200.000000>;
+	spin wheelL3 around x-axis speed <0.000000> accelerate <200.000000>;
+	spin wheelR1 around x-axis speed <0.000000> accelerate <200.000000>;
+	spin wheelR2 around x-axis speed <0.000000> accelerate <200.000000>;
+	spin wheelR3 around x-axis speed <0.000000> accelerate <200.000000>;
+	sleep 25;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <60.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <30.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	
+	if(gun == 0) 
+	{
+		emit-sfx 1024 + 0 from flare1;
+		move barrel1 to z-axis [-2.400000] speed [500.000000];
+		sleep 150;
+		wait-for-move barrel1 along z-axis;
+		move barrel1 to z-axis [0.000000] speed [3.000000];
+	}
+	if(gun == 1) 
+	{
+		emit-sfx 1024 + 0 from flare2;
+		move barrel2 to z-axis [-2.400000] speed [500.000000];
+		sleep 150;
+		wait-for-move barrel2 along z-axis;
+		move barrel2 to z-axis [0.000000] speed [3.000000];
+	}
+	++gun;
+	if(gun == 2) 
+	{
+		gun = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if(gun == 0) 
+	{
+		piecenum = flare1;
+	}
+	if(gun ==1) 
+	{
+		piecenum = flare2;
+	}
+}
+
+
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+AimSecondary(heading, pitch)
+{	
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	bAiming1 = TRUE;
+	turn flame_turret1 to y-axis heading speed <125.000000>;
+	turn flamer_sleeve1 to x-axis <0.> - pitch speed <75.000000>;
+	wait-for-turn flame_turret1 around y-axis;
+	wait-for-turn flamer_sleeve1 around x-axis;
+	start-script Restore2();
+	return (1);	
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = flame_turret1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flame1;
+}
+
+Shot2()
+{
+	call-script lua_FlameShot(2);
+	return (1);
+}
+
+AimTertiary(heading, pitch)
+{	
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	bAiming2 = TRUE;
+	turn flame_turret2 to y-axis heading speed <125.000000>;
+	turn flamer_sleeve2 to x-axis <0.> - pitch speed <75.000000>;
+	wait-for-turn flame_turret2 around y-axis;
+	wait-for-turn flamer_sleeve2 around x-axis;
+	start-script Restore3();
+	return (1);	
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = flame_turret2;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = flame2;
+}
+
+Shot3()
+{
+	call-script lua_FlameShot(3);
+	return (1);
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode barrel1 type NOHEATCLOUD;
+		explode sleeve type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode wheelL2 type NOHEATCLOUD;
+		explode wheelR1 type NOHEATCLOUD;
+		explode wheelR3 type NOHEATCLOUD;
+		explode flame_turret1 type NOHEATCLOUD;
+		explode flamer_sleeve2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode sleeve type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode wheelL2 type NOHEATCLOUD | FALL;
+		explode wheelR1 type NOHEATCLOUD | FALL;
+		explode wheelR3 type NOHEATCLOUD | FALL;
+		explode flame_turret1 type NOHEATCLOUD | FALL;
+		explode flamer_sleeve2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheelL2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheelR1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheelR3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flame_turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flamer_sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+		corpsetype = 3;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheelL2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheelR1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode wheelR3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flame_turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flamer_sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+}
