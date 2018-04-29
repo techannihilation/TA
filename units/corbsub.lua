@@ -59,7 +59,7 @@ return {
 			dead = {
 				blocking = true,
 				damage = 3061,
-				description = "Moray eel Wreckage",
+				description = "Hammerhead Wreckage",
 				featuredead = "heap",
 				footprintx = 5,
 				footprintz = 5,
@@ -70,7 +70,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 3826,
-				description = "Moray eel Debris",
+				description = "Hammerhead Debris",
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1493,
