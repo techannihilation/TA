@@ -189,7 +189,9 @@ return {
         "armacsub",
         "armrecl",
         "tllsr",
-        "tllswordfish"
+        "tllswordfish",
+        "corbsub",
+        "armbsub"
     },
     experimental_ships = {
         "armtrmph",
