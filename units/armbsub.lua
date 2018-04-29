@@ -35,7 +35,7 @@ return {
 		minwaterdepth = 20,
 		mobilestandorders = 1,
 		movementclass = "UBOAT5",
-		name = "Poseidon",
+		name = "Maelstrom",
 		noautofire = false,
 		nochasecategory = "NOTSUBNOTSHIP",
 		objectname = "armbsub",
@@ -59,7 +59,7 @@ return {
 			dead = {
 				blocking = true,
 				damage = 3061,
-				description = "Poseidon Wreckage",
+				description = "Maelstrom Wreckage",
 				featuredead = "heap",
 				footprintx = 5,
 				footprintz = 5,
@@ -70,7 +70,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 3826,
-				description = "Poseidon Debris",
+				description = "Maelstrom Debris",
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1493,
