@@ -35,7 +35,7 @@ return {
 		minwaterdepth = 20,
 		mobilestandorders = 1,
 		movementclass = "UBOAT5",
-		name = "Moray Eel",
+		name = "Hammerhead",
 		noautofire = false,
 		nochasecategory = "NOTSUBNOTSHIP",
 		objectname = "corbsub",
