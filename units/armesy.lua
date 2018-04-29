@@ -52,10 +52,11 @@ return {
 		buildoptions = {
 			[1] = "armecs",
 			[2] = "armbc",
-			[3] = "armmarlin",
-			[4] = "armhcar",
-			[5] = "aseadragon",
-			[6] = "armtrmph",
+			[3] = "armbsub",
+			[4] = "armmarlin",
+			[5] = "armhcar",
+			[6] = "aseadragon",
+			[7] = "armtrmph",
 		},
 		customparams = {
 			buildpic = "armesy.dds",
