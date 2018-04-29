@@ -67,8 +67,10 @@ return {
 			[11] = "tlllrpt1",
 			[12] = "tllhydre2",
 			[13] = "tllobliterator1",
-			[14] = "tlldmc",
-			[15] = "tlldb",
+			[14] = "tllrlrpc",
+			[15] = "tlldmc",
+			[16] = "tlldb",
+			[17] = "tlltarg",
 		},
 		customparams = {
 			buildpic = "tllaca.dds",
