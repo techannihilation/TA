@@ -115,7 +115,7 @@ return {
 			tll_hailstorm = {
 				accuracy = 1000,
 				alphadecay = 0.3,
-				areaofeffect = 400,
+				areaofeffect = 325,
 				avoidfeature = false,
 				cegtag = "vulcanfx_lowp",
 				craterboost = 0,
@@ -142,9 +142,9 @@ return {
 				weaponvelocity = 630,
 				damage = {
 					commanders = 1200,
-					default = 4800,
-					experimental_ships = 6200,
-					ships = 6200,
+					default = 3600,
+					experimental_ships = 4200,
+					ships = 4200,
 					subs = 5,
 				},
 			},
