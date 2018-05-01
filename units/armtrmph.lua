@@ -226,14 +226,20 @@ return {
 			},
 			[2] = {
 				def = "CANNON_TRMPH",
+				maindir = "0 0 1",
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CANNON_BATS_AFT",
+				maindir = "0 0 1",
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "CANNON_BATS_AFT",
+				maindir = "0 0 -1",
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
