@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "aafus_aoplane.dds",
 		buildpic = "armefus.dds",
-		buildtime = 1000000,
+		buildtime = 2000000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 18 0",
 		collisionvolumescales = "241 141 241",
