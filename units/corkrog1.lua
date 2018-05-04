@@ -212,7 +212,7 @@ return {
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1600,
+				range = 1400,
 				reloadtime = 1,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
