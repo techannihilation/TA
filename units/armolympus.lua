@@ -95,6 +95,9 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
+				[1] = "custom:vulcanflare",
+ 			},
+			explosiongenerators = {
 				[1] = "custom:tllllt_glow",
  				[2] = "custom:MEDIUMFLARE",
  				[3] = "custom:sparksr1",
