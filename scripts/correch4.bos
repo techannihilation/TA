@@ -4,8 +4,8 @@
 #include "exptype.h"
 
 piece  base, pad, beam1, beam2, plate1, yard, plate2,nano2, nano1,
-	  tower, body, t1, t2,  cage, glow_4, glow_shad, pivot_1, arm_1, pivot_2, arm_2, pivot_3, arm_3, pivot_4, arm_4, pivot_5, arm_5, pivot_6, arm_6,
-	  blade_1, blade_2, blade_3, blade_4, blade_5, blade_6;
+	  tower, body, t1, t2, pivot_1, arm_1, pivot_2, arm_2, pivot_3, arm_3, pivot_4, arm_4, pivot_5, arm_5, pivot_6, arm_6,
+	  blade_1, blade_2, blade_3, blade_4, blade_5, blade_6, dome, pod, spinner1, spinner2 ;
 
 
 static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
@@ -132,7 +132,7 @@ RequestState(requestedstate, currentstate)
 	}
 	statechg_StateChanging = FALSE;
 }
-
+/*
 helice()
 {
 	
@@ -149,7 +149,7 @@ helice()
 		spin blade_3 around z-axis speed <10.000000> accelerate <5.000000>;
 	}
 }
-
+*/
 Create()
 {
 	dont-shade beam1;
@@ -176,11 +176,12 @@ Create()
 		sleep 1000;
 	}
 	
-	start-script helice();
+//	start-script helice();
 	spin t1 around y-axis speed <9.000000> accelerate <1.000000>;
 	spin t2 around y-axis speed <-27.000000> accelerate <1.000000>;
-	spin cage around y-axis speed <54.000000> accelerate <-1.000000>;
-
+	spin dome around y-axis speed <23.000000> accelerate <-1.000000>;
+	spin spinner1 around y-axis speed <75.000000> accelerate <-1.000000>;
+	spin spinner2 around y-axis speed <75.000000> accelerate <-1.000000>;
 }
 
 QueryNanoPiece(piecenum)
@@ -250,8 +251,6 @@ Killed(severity, corpsetype)
 		explode blade_4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		explode blade_5 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		explode blade_6 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
-		explode cage type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
-		explode glow_shad type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		explode body type NOHEATCLOUD;
 		explode t1 type NOHEATCLOUD | FALL;
 		explode t2 type NOHEATCLOUD | FALL;

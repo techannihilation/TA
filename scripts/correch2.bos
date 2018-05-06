@@ -3,9 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, pad, beam1, beam2, plate1, yard, plate2,nano2, nano1,
-	  tower, body, t1, t2, pivot_1, arm_1, pivot_2, arm_2, pivot_4, arm_4, pivot_5, arm_5,
-	  blade_1, blade_2, blade_4, blade_5;
+piece  base, pad, beam1, beam2, plate1, yard, plate2,nano2, nano1, cage, glow,
+	  tower, body, t1, pivot_1, arm_1, pivot_2, arm_2, pivot_3, arm_3, blade_1, blade_2, blade_3;
 
 
 static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
@@ -133,21 +132,6 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
-helice()
-{
-	
-	While (TRUE)
-	{
-		sleep 2000;
-		spin blade_1 around z-axis speed <-10.000000> accelerate <5.000000>;
-		spin blade_2 around z-axis speed <-10.000000> accelerate <5.000000>;
-		
-		sleep 2000;
-		spin blade_1 around z-axis speed <10.000000> accelerate <5.000000>;
-		spin blade_2 around z-axis speed <10.000000> accelerate <5.000000>;
-	}
-}
-
 Create()
 {
 	dont-shade beam1;
@@ -162,20 +146,18 @@ Create()
 	unitviewer = FALSE;
 	spray = base;
 	call-script InitState();
-	start-script SmokeUnit();
 
-	turn pivot_2 to y-axis <180.000000> NOW;
-	turn pivot_5 to y-axis <180.000000> NOW;
+	turn pivot_2 to y-axis <120.000000> NOW;
+	turn pivot_3 to y-axis <240.000000> NOW;
 	turn pad to y-axis <-90.000000> now;
 
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;
 	}
-	
-	start-script helice();
+	start-script SmokeUnit();
 	spin t1 around y-axis speed <9.000000> accelerate <1.000000>;
-	spin t2 around y-axis speed <-27.000000> accelerate <1.000000>;
+	spin cage around y-axis speed <-35.000000> accelerate <2.000000>;
 }
 
 QueryNanoPiece(piecenum)
@@ -241,11 +223,9 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode blade_1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		explode blade_2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
-		explode blade_4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
-		explode blade_5 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		explode body type NOHEATCLOUD;
 		explode t1 type NOHEATCLOUD | FALL;
-		explode t2 type NOHEATCLOUD | FALL;
 		explode base type NOHEATCLOUD;
 		explode beam1 type NOHEATCLOUD;
 		explode beam2 type NOHEATCLOUD;
