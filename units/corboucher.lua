@@ -1,8 +1,8 @@
 return {
 	corboucher = {
 		buildangle = 8192,
-		buildcostenergy = 290000,
-		buildcostmetal = 34250,
+		buildcostenergy = 310000,
+		buildcostmetal = 36250,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
@@ -127,7 +127,7 @@ return {
 				intensity = 0.75,
 				name = "Cartouche Aluminium",
 				noselfdamage = true,
-				range = 2000,
+				range = 1560,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.6 1",
 				soundhitdry = "xplolrg1",
