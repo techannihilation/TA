@@ -1,8 +1,8 @@
 return {
 	nebraska = {
 		buildangle = 8192,
-		buildcostenergy = 326000,
-		buildcostmetal = 31750,
+		buildcostenergy = 346000,
+		buildcostmetal = 33750,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
@@ -125,7 +125,7 @@ return {
 				intensity = 0.75,
 				name = "Annihilator Weapon Nebraska",
 				noselfdamage = true,
-				range = 1850,
+				range = 1500,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.6 1",
 				soundhitdry = "xplolrg1",
