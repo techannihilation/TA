@@ -234,10 +234,14 @@ return {
 			},
 			[3] = {
 				def = "BLOD_DOOM",
+				maindir = "0 0 1",
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "BLOD_DOOM",
+				maindir = "0 0 1",
+				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 		},
