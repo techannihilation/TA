@@ -6,6 +6,8 @@
 piece body, base, tower, turret, tube, tube1, tube2, tail1, tail2, meche1, meche2, meche3, top1, top2, top3, steam1a, steam1b, steam2a, steam2b, steam3a, steam3b, foota, footb, footc, geo1, geo2, geo3 ;
 static-var  gun_1, canShoot;
 
+static-var bAiming;
+
 lua_FlameShot(Func_Var_1)
 {
 }
@@ -13,29 +15,29 @@ lua_FlameShot(Func_Var_1)
 
 flames1(Func_Var_1)
 {
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 500;
-	}
 	while( TRUE )
 	{
+		while( bAiming )
+		{
+			sleep 100;
+		}
 		Func_Var_1 = 200 + Rand( 50, 800 );
 		sleep Func_Var_1;
-		emit-sfx 0 from tail1;
+		emit-sfx 1025 + 0 from tail1;
 	}
 }
 
 flames2(Func_Var_1)
 {
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 500;
-	}
 	while( TRUE )
 	{
+		while( bAiming )
+		{
+			sleep 100;
+		}
 		Func_Var_1 = 200 + Rand( 50, 800 );
 		sleep Func_Var_1;
-		emit-sfx 0 from tail2;
+		emit-sfx 1025 + 0 from tail2;
 	}
 }
 
@@ -84,9 +86,18 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+RestorePrimary()
+{
+	sleep 2000;
+	bAiming = FALSE;
+	turn turret to y-axis <0.000000> speed <75.000000>;
+	turn tube to x-axis <0.000000> speed <50.000000>;	
+}
+
 Create()
 {
 	gun_1 = 0;
+	bAiming = FALSE;
 	canShoot = 0;
 	dont-shade tower;
 	dont-shade turret;
@@ -117,10 +128,12 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
+	bAiming = TRUE;
 	turn turret to y-axis heading speed <100.000000>;
 	turn tube to x-axis <0.000000> - pitch speed <50.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn tube around x-axis;
+	start-script RestorePrimary();
 	return (1);
 }
 
@@ -143,9 +156,10 @@ AimSecondary(heading, pitch)
 	return (1);
 }
 
-FireSecondary() 
+Shot2()
 {
-
+	call-script lua_FlameShot(2);
+	return (1);
 }
 
 QueryPrimary(piecenum)
