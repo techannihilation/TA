@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
-		buildinggrounddecaltype = "corint1_aoplane.dds",
+		buildinggrounddecaltype = "tlllrpt_aoplane.dds",
 		buildpic = "tlllrpt.dds",
 		buildtime = 185000,
 		canattack = true,
