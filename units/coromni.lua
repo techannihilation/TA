@@ -8,7 +8,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "coromni_aoplane.dds",
+		buildinggrounddecaltype = "corarad_aoplane.dds",
 		buildpic = "coromni.dds",
 		buildtime = 125000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
