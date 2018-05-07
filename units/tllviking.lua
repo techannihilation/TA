@@ -95,6 +95,10 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:MEDIUMFLARE",
+				[2] = "custom:Generic_Muzzle",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

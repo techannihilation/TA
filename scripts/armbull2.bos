@@ -95,9 +95,9 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turretA to y-axis heading speed <140.000000>;
-	turn canonA1 to x-axis <0.000000> - pitch speed <25.000000>;
-	turn canonA2 to x-axis <0.000000> - pitch speed <25.000000>;
+	turn turretA to y-axis heading speed <75.000000>;
+	turn canonA1 to x-axis <0.000000> - pitch speed <40.000000>;
+	turn canonA2 to x-axis <0.000000> - pitch speed <40.000000>;
 	wait-for-turn turretA around y-axis;
 	wait-for-turn canonA1 around x-axis;
 	wait-for-turn canonA2 around x-axis;
@@ -109,8 +109,8 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn pivot to y-axis heading speed <200.000000>;
-	turn turretB to x-axis <0.000000> - pitch speed <25.000000>;
+	turn pivot to y-axis heading speed <125.000000>;
+	turn turretB to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn pivot around y-axis;
 	wait-for-turn turretB around x-axis;
 	start-script RestoreAfterDelay2();
@@ -121,19 +121,17 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		show flareA1;
+		emit-sfx 1024 from flareA1;
 		move barrelA1 to z-axis [-2.000000] speed [500.000000];
 		sleep 150;
-		hide flareA1;
 		wait-for-move barrelA1 along z-axis;
 		move barrelA1 to z-axis [0.000000] speed [3.000000];
 	}
 	if( gun_1 == 1 )
 	{
-		show flareA2;
+		emit-sfx 1024 from flareA2;
 		move barrelA2 to z-axis [-2.000000] speed [500.000000];
 		sleep 150;
-		hide flareA2;
 		wait-for-move barrelA2 along z-axis;
 		move barrelA2 to z-axis [0.000000] speed [3.000000];
 	}
@@ -144,25 +142,23 @@ FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
-		show flareB2;
+		emit-sfx 1025 from flareB2;
 		move canonB2 to z-axis [-1.000000] speed [200.000000];
 		wait-for-move canonB2 along z-axis;
 		move barrelB2 to z-axis [-2.000000] speed [100.000000];
 		wait-for-move barrelB2 along z-axis;
 		move canonB2 to z-axis [0.000000] speed [10.000000];
 		move barrelB2 to z-axis [0.000000] speed [10.000000];
-		hide flareB2;
 	}
 	if( gun_2 == 1 )
 	{
-		show flareB1;
+		emit-sfx 1025 from flareB1;
 		move canonB1 to z-axis [-1.000000] speed [200.000000];
 		wait-for-move canonB1 along z-axis;
 		move barrelB1 to z-axis [-2.000000] speed [100.000000];
 		wait-for-move barrelB1 along z-axis;
 		move canonB1 to z-axis [0.000000] speed [10.000000];
 		move barrelB1 to z-axis [0.000000] speed [10.000000];
-		hide flareB1;
 	}
 	gun_2 = !gun_2;
 }
