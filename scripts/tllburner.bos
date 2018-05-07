@@ -570,9 +570,9 @@ UnitSpeed()
 	while( TRUE )
 	{
 		Static_Var_8 = get CURRENT_SPEED * 50 / Static_Var_7;
-		if( Static_Var_8 < 4 )
+		if( Static_Var_8 < 40 )
 		{
-			Static_Var_8 = 4;
+			Static_Var_8 = 40;
 		}
 		sleep 142;
 	}
