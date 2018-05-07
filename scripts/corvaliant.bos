@@ -60,43 +60,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	move body to y-axis [45] now;
-		
-	hide flare1a;
-	hide flare1b;
-	hide flare1c;
-	hide flare2a;
-	hide flare2b;
-	hide flare2c;
-	dont-cache flare1a;
-	dont-cache flare1b;
-	dont-cache flare1c;
-	dont-cache flare2a;
-	dont-cache flare2b;
-	dont-cache flare2c;
-	hide blodflare1;
-	hide blodflare2;
-	hide blodflare3;
-	hide blodflare4;
-	hide blodflare5;
-	hide blodflare6;
-	hide blodflare7;
-	hide blodflare8;
-	hide blodflare9;
-	hide blodflare10;
-	dont-cache blodflare1;
-	dont-cache blodflare2;
-	dont-cache blodflare3;
-	dont-cache blodflare4;
-	dont-cache blodflare5;
-	dont-cache blodflare6;
-	dont-cache blodflare7;
-	dont-cache blodflare8;
-	dont-cache blodflare9;
-	dont-cache blodflare10;
-	
 	gun_1 = 0;
 	gun_2 = 0;
-	
 	start-script SmokeUnit();
 }
 
