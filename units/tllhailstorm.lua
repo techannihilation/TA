@@ -120,7 +120,7 @@ return {
 				cegtag = "vulcanfx_lowp",
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 2000,
+				energypershot = 4500,
 				explosiongenerator = "custom:BERTHASHOT_LOWP",
 				impulseboost = 0,
 				impulsefactor = 0,

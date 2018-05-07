@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Mobile Command Vehicle",
+		description = "Experimental Mobile Command Vehicle Anti T3/T4",
 		downloadable = 1,
 		explodeas = "ESTOR_BUILDING",
 		firestandorders = 1,
