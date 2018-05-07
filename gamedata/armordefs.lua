@@ -270,7 +270,8 @@ return {
         -- heroes
         "cdevastator",
         "abroadside",
-        "tllvaliant",
+        "corvaliant",
+        "tllzeppelin",
         -- _experimental_
         "armpraet",
         "monkeylord",
@@ -286,6 +287,8 @@ return {
         "armhcrus",
         "cormcv",
         "corarbritator",
+        "cormkl",
+        "tllhailstorm",    
     },
     flamethrowers = {
         "corpyro",
