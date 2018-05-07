@@ -299,7 +299,8 @@ return {
         "cormaw",
         "cormatch",
         "coreavalanche",
-        "tllgeo_armored"
+        "tllgeo_armored",
+        "tllhcrus"
     },
     sniper_resistant = {
         "armzeus",
