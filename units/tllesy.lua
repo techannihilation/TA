@@ -53,7 +53,7 @@ return {
 			[2] = "tllswordfish",
 			[3] = "tllasgard",
 			[4] = "tllhcar",
-			[5] = "tlldest",
+			[5] = "tllcaps",
 		},
 		customparams = {
 			buildpic = "tllesy.dds",
