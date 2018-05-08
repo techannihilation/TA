@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
-		buildinggrounddecaltype = "tlllrpt_aoplane.dds",
+		--buildinggrounddecaltype = "tlllrpt_aoplane.dds",
 		buildpic = "tlllrpt.dds",
 		buildtime = 185000,
 		canattack = true,
@@ -45,7 +45,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tlllrpt1",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "tlllrpt.dds",
