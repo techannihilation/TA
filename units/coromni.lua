@@ -8,7 +8,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "corarad_aoplane.dds",
+		--buildinggrounddecaltype = "corarad_aoplane.dds",
 		buildpic = "coromni.dds",
 		buildtime = 125000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -39,7 +39,7 @@ return {
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 900,
 		unitname = "coromni",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo ",
 		customparams = {
 			faction = "CORE",
