@@ -1210,6 +1210,11 @@ local morphDefs = {
 	  	time = 60,
 		xp = 0.35,
 	},
+	tllcenturion = {
+		into = 'tllinsulator',
+	  	time = 60,
+		xp = 0.35,
+	},
 	tllshaker = {
 		into = 'tllleopard',
 	  	time = 60,
