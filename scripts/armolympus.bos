@@ -1,0 +1,187 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+
+piece 	base, body, turret, sleeve, barrel, barrel2, emit, flare,
+		arm1, plat1, tread1a, tread1b, arm2, plat2, tread2a, tread2b, arm3, plat3, tread3a, tread3b, arm4, plat4, tread4a, tread4b, shad4b, 
+		blast, r1, r2, r3, r4;
+	    
+static-var is_moving, firedelay, firing, gun_1;
+
+#define SIG_AIM 	2
+#define SIG_AIM2	4
+#define SIG_AIM3	8
+#define SIG_MOVE 	32
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+
+
+Create()
+{	
+	gun_1 = 0;
+	start-script SmokeUnit();	
+}
+
+
+RestoreAfterDelay()
+{
+	sleep 15000;
+	set-signal-mask 0;
+	turn turret to y-axis <0.000000> speed <9.000000>;
+	turn sleeve to x-axis <0.000000> speed <4.500000>;
+}
+
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <18.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <4.500000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	emit-sfx 1024 from flare;
+	move barrel2 to z-axis [-12.000000] speed [400.000000];	
+	move barrel to z-axis [-4.000000] speed [250.000000];
+	sleep 250;
+	move barrel2 to z-axis [0.000000] speed [2.000000];
+	move barrel to z-axis [0.000000] speed [1.000000];
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM3;
+	set-signal-mask SIG_AIM3;
+	return (1);
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = body;
+}
+
+FireTertiary()
+{
+	++gun_1;
+	if(gun_1 == 4) 
+	{
+		gun_1 = 0;
+	}
+	
+}
+
+QueryTertiary(piecenum)
+{
+	if(gun_1 == 0) 
+	{
+		piecenum = r1;
+	}
+	if(gun_1 == 1) 
+	{
+		piecenum = r2;
+	}
+	if(gun_1 == 2) 
+	{
+		piecenum = r3;
+	}
+	if(gun_1 == 3) 
+	{
+		piecenum = r4;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode arm1 type NOHEATCLOUD ;
+		explode arm2 type NOHEATCLOUD ;
+		explode base type NOHEATCLOUD;
+		explode flare type NOHEATCLOUD;
+		explode emit type NOHEATCLOUD;
+		explode plat3 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode arm1 type FALL | NOHEATCLOUD ;
+		explode arm2 type FALL | NOHEATCLOUD ;
+		explode base type NOHEATCLOUD;
+		explode flare type FALL | NOHEATCLOUD ;
+		explode emit type FALL | NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode arm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode arm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode base type NOHEATCLOUD;
+		explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode emit type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode arm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode arm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode base type NOHEATCLOUD;
+	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode emit type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+}
+
+
+
+
