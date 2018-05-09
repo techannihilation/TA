@@ -5,6 +5,7 @@ Changes go from newest to oldest
 2018-04-13
 
 Balance:
+- T3 & T4 Fusion : Buildtime reduced for T3 and increased for T4.
  - armhorgue - increase paralyse time 10s -> 12s
  - Balance all T1 Kbot Vehicle AA. Decrease power and cost.
  - Balance Warrior - increase timebuild +15% and decrease damage 55 -> 42 (damage / shoot)
@@ -46,10 +47,18 @@ Balance:
  - TLL Gizmo (tllgizmo) is paratrooper, captureSpeed 4121, 1458dps (emp), moveSpeed 57
  - Remove ARM Nebraska (nebraska), CORE Butcher (corboucher), TLL DMC (tlldmc) from T2 Cons, now avaible in T3 Cons
  - Nerf ARM Kronos (armmcv), StarburstLauncher Damage 200dps -> 150dps (default)
-
-
+ - ALL TLL fusion ratio between E/M outpout have been changed. Metal production / 2 and Energy Production * 2.5
+ - Arm_furie, fatshrew, krogoth have same rocket type.
+ 
 Improvements:
- - Add T4 HEavy Spider Black Widow
+ - Remlplace ALL RC by new models. They al can make T1 engineer.
+ - Add T3 insulator (amphibious vehcicle) (tllinsulator)
+ - Move barret for T3 cons
+ - Remplace tlldest by tllcaps (T3 ship)
+ - Add Olympus vehicle T4 for Arm
+ - Add T3 Radar/Jammer for ARM CORE. Move TLL Experimental Long Range Radar into T3 cons.
+ - Add T4 Hero Spider (Black Widow)
+ - Add T4 Tactical Spider (arbritator)
  - Remplace T4 Krogoth by Black Widow in T4 Lab.
  - Add tllcrawler (T3 Kbot) - All-terrain
  - Add tllleopard (T2 Vehicle) - Heavy Artillery High Trajectory
@@ -81,12 +90,13 @@ Improvements:
 Bugs:
  - Fixed selection of many units
 
- Interface:
+Interface:
  - Add even more options to options panel
  - Add new option for setting lups effect quality, 5 level of details
  - Add area mex widget, constructors have now additional Area Mex button
 
-
+Visual:
+ - Add new Fx effect for many units (example : flames for tllburner, barbecue...).
 
 
 
