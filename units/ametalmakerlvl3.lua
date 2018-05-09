@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "170 180 180",
 		collisionvolumetype = "ellipsoid",
 		corpse = "heap",
-		description = "Converts upto 75000 Energy to Metal",
+		description = "Converts upto 36000 Energy to Metal",
 		explodeas = "nuclear_missile1",
 		floater = false,
 		footprintx = 12,
