@@ -79,39 +79,6 @@ RockZ(Func_Var_1, Func_Var_2)
 	turn base to z-axis <0.> speed <2.>;
 }
 
-FlameControl(Func_Var_1)
-{
-	while( TRUE )
-	{
-		Func_Var_1 = get HEALTH;
-		if( Func_Var_1 <= 80 )
-		{
-			emit-sfx 1026 from ignite1;
-			if( Func_Var_1 <= 60 )
-			{
-				emit-sfx 1026 from ignite2;
-				if( Func_Var_1 <= 45 )
-				{
-					emit-sfx 1026 from ignite3;
-					if( Func_Var_1 <= 25 )
-					{
-						emit-sfx 1026 from ignite4;
-						if( Func_Var_1 <= 10 )
-						{
-							emit-sfx 1026 from ignite5;
-						}
-					}
-				}
-			}
-			sleep 66;
-		}
-		else
-		{
-			sleep 333;
-		}
-	}
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -128,7 +95,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 257;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from ignite1;
+			emit-sfx smoketype from ignite2;
+			emit-sfx smoketype from ignite3;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -141,19 +110,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	hide flare1a;
-	hide flare1b;
-	hide flare1c;
-	hide flare1d;
-	hide flare2b;
-	hide flare2a;
-	hide flare3a;
-	hide flare3b;
-	hide ignite1;
-	hide ignite2;
-	hide ignite3;
-	hide ignite4;
-	hide ignite5;
 	Static_Var_1 = 1;
 	Static_Var_2 = 1;
 	Static_Var_4 = 0;
@@ -161,10 +117,9 @@ Create()
 	Static_Var_6 = 0;
 	Static_Var_3 = 3000;
 	Static_Var_9 = 0;
-	
+	//turn turret3 to y-axis <0.000000> now;
 	start-script SmokeUnit();
 	start-script RockOnWaves();
-	start-script FlameControl();
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -391,10 +346,6 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare1a;
-	hide flare1b;
-	hide flare2a;
-	hide flare2b;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
