@@ -553,15 +553,19 @@ local function Draw(extension,layer)
               ------------------------------------------------------------------------------------
               glPushMatrix()
               if gadget and not IsUnitPositionKnown(unitID) then
-                local x, y, z = Spring.GetUnitPosition(unitID)
-                local a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, a41, a42, a43, a44 = Spring.GetUnitTransformMatrix(unitID)
-                gl.MultMatrix(a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, x, y, z , a44)
-              else
-                glUnitMultMatrix(unitID)
-              end
-              
-              --// render effects
-              for i=1,#UnitEffects do
+			    local x, y, z = Spring.GetUnitPosition(unitID)
+				local a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, a41, a42, a43, a44 = Spring.GetUnitTransformMatrix(unitID)
+				if a11 then
+				  gl.MultMatrix(a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, x, y, z , a44)
+				else
+				  glUnitMultMatrix(unitID)
+				end
+			  else
+				glUnitMultMatrix(unitID)
+			  end
+			  --// render effects
+			  for i=1,#UnitEffects do
+
                 local fx = UnitEffects[i]
                 if (fx.alwaysVisible or fx.visible) then
                   if (fx.piecenum) then
@@ -720,7 +724,7 @@ local function GetUnitDrawStatus(unitID)
 end
 
 local function GetPriority(priority)
-  local LupsPriority = GG.LupsPriority or 3
+  local LupsPriority = Spring.GetGameRulesParam("lupspriority") or 3
   return LupsPriority < priority
 end
 
@@ -852,9 +856,7 @@ local function CreateVisibleFxList()
   local removeFX = {}
   local removeCnt = 1
 
-  local foo = 0
   for _,fx in pairs(particles) do
-    foo = foo + 1
     if ((fx.unit or -1) > -1) then
       fx.visible = IsUnitFXVisible(fx)
       if (fx.visible) then
@@ -878,7 +880,7 @@ local function CreateVisibleFxList()
       end
     end
   end
-  --Spring.Echo("Lups fx cnt", foo)
+   --Spring.Echo("Lups fx cnt", particles.GetIndexMax())
 
   for i=1,removeCnt-1 do
     RemoveParticles(removeFX[i])
@@ -923,7 +925,9 @@ end
 
 --// needed to allow to use RemoveParticles in :Update of the particleclasses
 local fxRemoveList = {}
-function BufferRemoveParticles(id) fxRemoveList[#fxRemoveList+1] = id end
+function BufferRemoveParticles(id)
+	fxRemoveList[#fxRemoveList+1] = id
+end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -955,16 +959,12 @@ local function GameFrame(_,n)
     effectsInDelay = remaingFXs
   end
 
-  --// cleanup FX from dead/invalid units
-  CleanInvalidUnitFX()
+	--// cleanup FX from dead/invalid units
+	CleanInvalidUnitFX()
 
-  --// we can't remove items from a table we are iterating atm, so just buffer them and remove them later
-  local RemoveParticles_old = RemoveParticles
-  RemoveParticles  = BufferRemoveParticles
-
-  --// update FXs
-  framesToUpdate = thisGameFrame - lastGameFrame
-  for _,partFx in pairs(particles) do
+	--// update FXs
+	framesToUpdate = thisGameFrame - lastGameFrame
+	for _,partFx in pairs(particles) do
     if (n>=partFx.dieGameFrame) then
       --// lifetime ended
       if (partFx.repeatEffect) then
@@ -975,24 +975,24 @@ local function GameFrame(_,n)
         if (partFx.ReInitialize) then
           partFx:ReInitialize()
         else
-          partFx.dieGameFrame = partFx.dieGameFrame + partFx.life
-        end
-      else
-        RemoveParticles(partFx.id)
-      end
-    else
-      --// update particles
+					partFx.dieGameFrame = partFx.dieGameFrame + partFx.life
+				end
+			else
+				--// we can't remove items from a table we are iterating atm, so just buffer them and remove them later
+				BufferRemoveParticles(partFx.id)
+			end
+		else
+			--// update particles
       if (partFx.Update) then
         partFx:Update(framesToUpdate)
       end
-    end
-  end
+		end
+	end
 
-  --// now we can remove them
-  RemoveParticles = RemoveParticles_old
-  if (#fxRemoveList>0) then
-    for i=1,#fxRemoveList do
-      RemoveParticles(fxRemoveList[i])
+	--// now we can remove particles
+	if (#fxRemoveList>0) then
+		for i=1,#fxRemoveList do
+			RemoveParticles(fxRemoveList[i])
     end
     fxRemoveList = {}
   end
@@ -1016,6 +1016,7 @@ local function Update(_,dt)
     CreateVisibleFxList()
   end
 end
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
