@@ -345,9 +345,9 @@ AimTertiary(heading, pitch)
 FireTertiary()
 {
 	++gun_missile;
-	if (gun_missile == 7)
+	if (gun_missile == 6)
 	{
-		gun_missile = 1;
+		gun_missile = 0;
 	}
 }
 

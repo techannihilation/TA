@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, pad, beam1, beam2, plate1, yard, plate2,nano2, nano1,
+piece  base, pad, beam1, beam2, plate1, yard, plate2,nano2, nano1, cage, glow,
 	  tower, body, t1, t2, pivot_1, arm_1, pivot_2, arm_2, pivot_3, arm_3, pivot_4, arm_4, pivot_5, arm_5, pivot_6, arm_6,
 	  blade_1, blade_2, blade_3, blade_4, blade_5, blade_6;
 
@@ -133,23 +133,6 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
-helice()
-{
-	
-	While (TRUE)
-	{
-		sleep 2000;
-		spin blade_1 around z-axis speed <-10.000000> accelerate <5.000000>;
-		spin blade_2 around z-axis speed <-10.000000> accelerate <5.000000>;
-		spin blade_3 around z-axis speed <-10.000000> accelerate <5.000000>;
-		
-		sleep 2000;
-		spin blade_1 around z-axis speed <10.000000> accelerate <5.000000>;
-		spin blade_2 around z-axis speed <10.000000> accelerate <5.000000>;
-		spin blade_3 around z-axis speed <10.000000> accelerate <5.000000>;
-	}
-}
-
 Create()
 {
 	dont-shade beam1;
@@ -176,9 +159,9 @@ Create()
 		sleep 1000;
 	}
 	
-	start-script helice();
-	spin t1 around y-axis speed <9.000000> accelerate <1.000000>;
-	spin t2 around y-axis speed <-27.000000> accelerate <1.000000>;
+	spin t1 around y-axis speed <-9.000000> accelerate <1.000000>;
+	spin t2 around y-axis speed <27.000000> accelerate <1.000000>;
+	spin cage around y-axis speed <-35.000000> accelerate <2.000000>;
 }
 
 QueryNanoPiece(piecenum)

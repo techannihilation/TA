@@ -88,8 +88,8 @@ activatescr()
 		turn t1 to y-axis <25.000000> speed <15.000000>;
 		turn t2 to y-axis <-25.000000> speed <15.000000>;
 		sleep 2000;
-		turn nano1 to x-axis <80.000000> speed <25.000000>;
-		turn nano2 to x-axis <80.000000> speed <25.000000>;
+		turn nano1 to x-axis <60.000000> speed <25.000000>;
+		turn nano2 to x-axis <60.000000> speed <25.000000>;
 		wait-for-turn nano2 around x-axis;
 	}
 	sleep 100;

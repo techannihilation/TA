@@ -570,23 +570,24 @@ UnitSpeed()
 	while( TRUE )
 	{
 		Static_Var_8 = get CURRENT_SPEED * 50 / Static_Var_7;
-		if( Static_Var_8 < 4 )
+		if( Static_Var_8 < 45 )
 		{
-			Static_Var_8 = 4;
+			Static_Var_8 = 45;
 		}
 		sleep 142;
 	}
 }
 
-flames(Func_Var_1)
+PilotLight(Func_Var_1)
 {
 	while( TRUE )
 	{
-		Func_Var_1 = 300 + Rand( 50, 1000 );
-		sleep Func_Var_1;
-		emit-sfx 0 from flare;
-		sleep 100;
-		emit-sfx 0 from flare;
+		while( bAiming )
+		{
+			sleep 100;
+		}
+		emit-sfx 1025 + 0 from flare;
+		sleep 155;
 	}
 }
 
@@ -596,7 +597,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	start-script flames();
+	start-script PilotLight();
 	start-script UnitSpeed();
 	start-script MotionControl();
 	while( TRUE )

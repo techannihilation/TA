@@ -132,7 +132,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1400,
-				reloadtime = 3,
+				reloadtime = 1,
 				smoketrail = false,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splslrg",
@@ -152,7 +152,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 2100,
 				damage = {
-					default = 1200,
+					default = 960,
 					subs = 5,
 				},
 			},

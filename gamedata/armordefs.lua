@@ -189,7 +189,9 @@ return {
         "armacsub",
         "armrecl",
         "tllsr",
-        "tllswordfish"
+        "tllswordfish",
+        "corbsub",
+        "armbsub"
     },
     experimental_ships = {
         "armtrmph",
@@ -202,7 +204,7 @@ return {
         "corblackhy",
         "tllasgard",
         "tllhcar",
-        "tlldest"
+        "tllcaps"
     },
     --### LAND ###
     experimental_land = {
@@ -268,7 +270,8 @@ return {
         -- heroes
         "cdevastator",
         "abroadside",
-        "tllvaliant",
+        "corvaliant",
+        "tllzeppelin",
         -- _experimental_
         "armpraet",
         "monkeylord",
@@ -284,6 +287,9 @@ return {
         "armhcrus",
         "cormcv",
         "corarbritator",
+        "cormkl",
+        "tllhailstorm",
+	   "armolympus"    
     },
     flamethrowers = {
         "corpyro",
@@ -294,7 +300,8 @@ return {
         "cormaw",
         "cormatch",
         "coreavalanche",
-        "tllgeo_armored"
+        "tllgeo_armored",
+        "tllhcrus"
     },
     sniper_resistant = {
         "armzeus",

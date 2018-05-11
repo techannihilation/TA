@@ -1,0 +1,197 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, booster2, booster1, torpedoes, flare1, flare2, flare3, flare4, reactors, dome1, dome2, top_torp, 
+	   bubbles1, bubbles2, bubbles3, bubbles4, bubbles5, bubbles6, bubbles7, bubbles8, flare5;
+
+static-var  gun_1, gun_2;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+#define SIG_AIM_1				8
+#define SIG_AIM_2				16
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	healthpercent = get HEALTH;
+	sleeptime = healthpercent*healthpercent;
+	if( healthpercent < 66 )
+	{
+		emit-sfx 256 | 3 from base;
+		sleep sleeptime;
+		emit-sfx 256 | 3 from flare2;
+		if( Rand( 1, 66 ) > healthpercent )
+		{
+			emit-sfx 256 | 3 from booster1;
+			sleep sleeptime;
+			emit-sfx 256 | 3 from dome2;
+			sleep sleeptime;
+		}
+	}
+	start-script smokeunit();
+}
+
+
+Create()
+{
+	gun_1 = 0;
+	gun_2 = 0;
+	start-script SmokeUnit();
+	set ACTIVATION to TRUE;
+	
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 256 | 3 from bubbles1;
+		emit-sfx 256 | 3 from bubbles2;
+		emit-sfx 256 | 3 from bubbles3;
+		emit-sfx 256 | 3 from bubbles4;
+		emit-sfx 256 | 3 from bubbles5;
+		emit-sfx 256 | 3 from bubbles6;
+		emit-sfx 256 | 3 from bubbles7;
+		emit-sfx 256 | 3 from bubbles8;
+		sleep 250;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare5;
+}
+
+AimPrimary()
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+FirePrimary() 
+{
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare5;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = flare1;
+}
+
+AimSecondary()
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	return (1);
+}
+
+FireSecondary()
+{
+	++gun_1;
+	if(gun_1 == 2)
+	{
+		gun_1 = 0;
+	}	
+}
+
+QuerySecondary(piecenum)
+{
+	if(gun_1 == 0)
+	{
+		piecenum = flare1;
+	}
+	if(gun_1 == 1)
+	{
+		piecenum = flare3;
+	}		
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = flare2;
+}
+
+AimTertiary()
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	return (1);
+}
+
+FireTertiary()
+{
+	++gun_2;
+	if( gun_2 == 2 )
+	{
+		gun_2 = 0;
+	}
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare4;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode flare1 type NOHEATCLOUD;
+		explode flare2 type NOHEATCLOUD;
+		explode booster1 type NOHEATCLOUD;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode flare1 type NOHEATCLOUD | SHATTER;
+		explode flare2 type NOHEATCLOUD | SHATTER;
+		explode booster1 type NOHEATCLOUD | SHATTER;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode flare1 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flare2 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode booster1 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (0);
+	}
+	corpsetype = 3;
+	explode flare1 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flare2 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode booster1 type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+}

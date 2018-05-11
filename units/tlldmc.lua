@@ -1,8 +1,8 @@
 return {
 	tlldmc = {
 		buildangle = 8192,
-		buildcostenergy = 222000,
-		buildcostmetal = 35190,
+		buildcostenergy = 242000,
+		buildcostmetal = 37190,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -132,7 +132,7 @@ return {
 				name = "Dark Matter Cannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1820,
+				range = 1480,
 				reloadtime = 10,
 				rgbcolor = "1 0.15 0.15",
 				size = 4.5,
@@ -172,7 +172,7 @@ return {
 				name = "Dark Matter Cannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1820,
+				range = 1480,
 				reloadtime = 5,
 				rgbcolor = "1 0.15 0.15",
 				size = 4.5,

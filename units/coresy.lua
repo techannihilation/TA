@@ -51,10 +51,11 @@ return {
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
 			[1] = "corecs",
-			[2] = "uppercut",
-			[3] = "corhcar",
-			[4] = "corblackhy",
-			[5] = "cortyrnt",
+			[2] = "corbsub",
+			[3] = "uppercut",
+			[4] = "corhcar",
+			[5] = "corblackhy",
+			[6] = "cortyrnt",
 		},
 		customparams = {
 			buildpic = "coresy.dds",

@@ -2,7 +2,6 @@ return {
 	cormcv = {
 		acceleration = 0.07,
 		activatewhenbuilt = true,
-		amphibious = 1,
 		brakerate = 0.18,
 		buildcostenergy = 205000,
 		buildcostmetal = 10050,
@@ -90,6 +89,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:vulcanflare",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

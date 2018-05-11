@@ -46,6 +46,7 @@ function widget:Update(dt)
 	sec = sec + dt
 	if sec > lastUpdate + 0.2 then
 		lastUpdate = sec
+		spySelected = false
 
 		local count = GetSelectedUnitsCount()
 		if count <= 15 then  -- above a little amount we aren't micro-ing spies anymore...
@@ -54,9 +55,7 @@ function widget:Update(dt)
 				if selectedUnittypes[spyDefID] then
 					for _,unitID in pairs(selectedUnittypes[spyDefID]) do
 						if GetUnitStates(unitID).cloak then
-							spySelected = true
-						else		
-							spySelected = false
+							spySelected = true	
 						end
 					end
 				end
@@ -66,7 +65,7 @@ function widget:Update(dt)
 end
 
 function widget:DefaultCommand()
-	if spySelected then
+	if spySelected  then
 		return CMD_MOVE
 	end
 end
