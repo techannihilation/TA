@@ -10,6 +10,7 @@ function gadget:GetInfo()
     }
 end
 
+
 --[[
     INSTRUCTIONS: Each widget needs its own Script.LuaUI call added to the list below
                  The widget then needs to use widgetHandler:RegisterGlobal and widgetHandler:DeregisterGlobal to allow api_camera_height to call it
@@ -17,11 +18,17 @@ end
 
 if gadgetHandler:IsSyncedCode() then
 
+function gadget:RecvLuaMsg(msg, playerID)
+  local key = "LupsPriority"
+  if not (msg:find(key,1,true)) then return end
+  local value = msg:gsub(key,string.format(""))
+  Spring.SetGameRulesParam("lupspriority",value)
+end
+
 --SYNCED
 
 else
---UNSYNCED 
-  
+--UNSYNCED
 
 local SpGetCameraPosition = Spring.GetCameraPosition
 local SpGetSmoothMeshHeight = Spring.GetSmoothMeshHeight

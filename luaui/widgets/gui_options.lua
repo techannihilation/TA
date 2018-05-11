@@ -1269,6 +1269,7 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == 'lupseffectlevel' then
 			if WG.Lups then
 				WG.LupsPriority = value
+				Spring.SendLuaRulesMsg("LupsPriority"..value)
 				--Spring.Echo("option for lups",value,WG.LupsPriority)
 			end
 		elseif id == 'camera' then
@@ -2258,6 +2259,7 @@ function widget:GetConfigData(data)
 	savedTable = {}
 	savedTable.customPresets = customPresets
 	savedTable.minimapIconsize = minimapIconsize
+	savedTable.LupsPriority = WG.LupsPriority
 	return savedTable
 end
 
@@ -2267,5 +2269,9 @@ function widget:SetConfigData(data)
 	end
 	if data.minimapIconsize ~= nil then
 		minimapIconsize = data.minimapIconsize
+	end
+	if data.LupsPriority ~= nil then
+		WG.LupsPriority = data.LupsPriority
+		Spring.SendLuaRulesMsg("LupsPriority"..data.LupsPriority)
 	end
 end
