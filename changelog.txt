@@ -2,6 +2,8 @@
 2018-05-11
 
 Balance:
+ - Bahamut explode and self-destruct as Super Arm Furie
+ - Move Boucher/Nebraska/Dark Matter Cannon from T3 into T4
  - Arm_furie, fatshrew, krogoth have same rocket type.
  - ALL TLL fusion ratio between E/M outpout have been changed. Metal production / 2 and Energy Production * 2.5
  - T3 & T4 Fusion : Buildtime reduced for T3 and increased for T4.
