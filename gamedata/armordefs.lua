@@ -204,7 +204,7 @@ return {
         "corblackhy",
         "tllasgard",
         "tllhcar",
-        "tlldest"
+        "tllcaps"
     },
     --### LAND ###
     experimental_land = {
@@ -288,7 +288,8 @@ return {
         "cormcv",
         "corarbritator",
         "cormkl",
-        "tllhailstorm",    
+        "tllhailstorm",
+	   "armolympus"    
     },
     flamethrowers = {
         "corpyro",
