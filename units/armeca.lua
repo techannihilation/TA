@@ -74,6 +74,7 @@ return {
 			[14] = "armsilo1",
 			[15] = "armbrtha1",
 			[16] = "armvulc2",
+			[17] = "armrech3",
 		},
 		customparams = {
 			buildpic = "armeca.dds",
