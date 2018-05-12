@@ -103,7 +103,7 @@ for unitDefID = 1, #UnitDefs do
 		end
 
 		local mainClass
-		if ( Spring.GetGameRulesParam("lupspriority") or 3) >= 4 then
+		if (Spring.GetConfigInt("LupsPriority") or 3) >= 4 then
 			mainClass = "ShieldSphereColorHQ"
 		else
 			mainClass = "ShieldSphereColor"

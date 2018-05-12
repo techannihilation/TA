@@ -1268,8 +1268,7 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.SendCommands("water "..(value-1))
 		elseif id == 'lupseffectlevel' then
 			if WG.Lups then
-				WG.LupsPriority = value
-				Spring.SendLuaRulesMsg("LupsPriority"..value)
+				Spring.SetConfigInt("LupsPriority",value)
 				--Spring.Echo("option for lups",value,WG.LupsPriority)
 			end
 		elseif id == 'camera' then
@@ -1763,7 +1762,8 @@ function init()
 		{id="lighteffects_laserradius", group="gfx", name=widgetOptionColor.."   laser radius  (gpu intensive)", min=0.5, max=1.6, step=0.1, type="slider", value=1, description='laser lights radius RELATIVE to global light radius set above\n\nWARNING: the bigger the radius the heavier on the GPU'},
 --]]
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=GetWidgetToggleValue("LupsManager"), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
-		{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=WG.LupsPriority or 3, description='Sets lups particle effects quality'},
+		--{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=WG.LupsPriority or 3, description='Sets lups particle effects quality'},
+		{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=tonumber(Spring.GetConfigInt("LupsPriority",1) or 3), description='Sets lups particle effects quality'},
 
 		{id="outline", group="gfx", widget="Outline", name="Unit outline (expensive)", type="bool", value=GetWidgetToggleValue("Outline"), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1000.\nStops rendering outlines when average fps falls below 13.'},
 		{id="outline_size", group="gfx", name=widgetOptionColor.."   thickness", min=0.8, max=1.5, step=0.05, type="slider", value=1, description='Set the size of the outline'},
@@ -2269,9 +2269,5 @@ function widget:SetConfigData(data)
 	end
 	if data.minimapIconsize ~= nil then
 		minimapIconsize = data.minimapIconsize
-	end
-	if data.LupsPriority ~= nil then
-		WG.LupsPriority = data.LupsPriority
-		Spring.SendLuaRulesMsg("LupsPriority"..data.LupsPriority)
 	end
 end

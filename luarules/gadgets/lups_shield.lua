@@ -426,8 +426,8 @@ function gadget:Initialize(n)
 	end
 
 	shieldUnitDefs = include("LuaRules/Configs/lups_shield_fxs.lua")
-	highEnoughQuality = (Spring.GetGameRulesParam("lupspriority") or 3) >= 4
 
+	highEnoughQuality = (Spring.GetConfigInt("LupsPriority") or 3) >= 4
 
 	if highEnoughQuality then
 		gadgetHandler:AddSyncAction("AddShieldHitDataHandler", AddShieldHitData)

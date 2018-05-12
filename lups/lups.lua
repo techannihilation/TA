@@ -724,7 +724,7 @@ local function GetUnitDrawStatus(unitID)
 end
 
 local function GetPriority(priority)
-  local LupsPriority = Spring.GetGameRulesParam("lupspriority") or 3
+  local LupsPriority = Spring.GetConfigInt("LupsPriority") or 3
   return LupsPriority < priority
 end
 

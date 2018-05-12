@@ -18,13 +18,6 @@ end
 
 if gadgetHandler:IsSyncedCode() then
 
-function gadget:RecvLuaMsg(msg, playerID)
-  local key = "LupsPriority"
-  if not (msg:find(key,1,true)) then return end
-  local value = msg:gsub(key,string.format(""))
-  Spring.SetGameRulesParam("lupspriority",value)
-end
-
 --SYNCED
 
 else
