@@ -396,10 +396,13 @@ function gadget:UnitStunned(unitID, unitDefID, unitTeam, stunned)
 end
 
 function gadget:GameFrame(n)
-	if n%30==0 then
-		highEnoughQuality = (Spring.GetGameRulesParam("lupspriority") or 3) >= 4
-		--Spring.Echo(highEnoughQuality,Spring.GetGameRulesParam("lupspriority"))
+	--[[
+	--WIP
+	if n%60==0 then
+		highEnoughQuality = (Spring.GetConfigInt("LupsPriority") or 3) >= 4
+		shieldUnitDefs = include("LuaRules/Configs/lups_shield_fxs.lua")
 	end
+	--]]
 	if highEnoughQuality and hitUpdateNeeded and (n % HIT_UPDATE_PERIOD == 0) then
 		hitUpdateNeeded = false
 		for unitID, unitData in shieldUnits.Iterator() do
