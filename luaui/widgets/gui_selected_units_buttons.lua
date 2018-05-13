@@ -168,7 +168,7 @@ end
 local prevMouseIcon
 local hoverClock = nil
 function widget:DrawScreen()
-  --cacheUnitIcons()    -- else white icon bug happens
+  cacheUnitIcons()    -- else white icon bug happens
   if picList then
     if (spIsGUIHidden()) then return end
     if mouseIcon ~= prevMouseIcon then
