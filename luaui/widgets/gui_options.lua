@@ -934,7 +934,7 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.SendCommands("Shadows "..value)
 		elseif id == 'vsync' then
 			Spring.SendCommands("Vsync "..value)
-			Spring.SetConfigInt("Vsync",value)
+			Spring.SetConfigInt("VSync",value)
 		elseif id == 'fullscreen' then
 			Spring.SendCommands("Fullscreen "..value)
 			Spring.SetConfigInt("Fullscreen",value)
@@ -1013,6 +1013,10 @@ function applyOptionValue(i, skipRedrawWindow)
 			saveOptionValue('EnemySpotter', 'enemyspotter', 'setHighlight', {'useXrayHighlight'}, options[i].value)
         elseif id == 'highlightselunits_shader' then
 			saveOptionValue('Highlight Selected Units', 'highlightselunits', 'setShader', {'useHighlightShader'}, options[i].value)
+		elseif id == 'underconstructiongfx_shader' then
+			saveOptionValue('Highlight Selected Units', 'underconstructiongfx', 'setShader', {'useHighlightShader'}, options[i].value)
+		elseif id == 'underconstructiongfx_teamcolor' then
+			saveOptionValue('Highlight Selected Units', 'underconstructiongfx', 'setTeamcolor', {'useTeamcolor'}, options[i].value)
 		elseif id == 'highlightselunits_teamcolor' then
 			saveOptionValue('Highlight Selected Units', 'highlightselunits', 'setTeamcolor', {'useTeamcolor'}, options[i].value)
 		elseif id == 'fancyselectedunits_secondline' then
@@ -1235,6 +1239,8 @@ function applyOptionValue(i, skipRedrawWindow)
 			saveOptionValue('EnemySpotter', 'enemyspotter', 'setOpacity', {'spotterOpacity'}, value)
 		elseif id == 'outline_size' then
 			saveOptionValue('Outline', 'outline', 'setSize', {'customSize'}, value)
+		elseif id == 'underconstructiongfx_opacity' then
+			saveOptionValue('Highlight Selected Units', 'underconstructiongfx', 'setOpacity', {'highlightAlpha'}, value)
 		elseif id == 'highlightselunits_opacity' then
 			saveOptionValue('Highlight Selected Units', 'highlightselunits', 'setOpacity', {'highlightAlpha'}, value)
 		elseif id == 'fancyselectedunits_opacity' then
@@ -1665,7 +1671,7 @@ function loadAllWidgetData()
 	loadWidgetData("Snow", "snowmap", {'snowMaps',Game.mapName:lower()})
 	loadWidgetData("Snow", "snowautoreduce", {'autoReduce'})
 
-	--loadWidgetData("Commands FX", "commandsfxopacity", {'opacity'})
+	loadWidgetData("Commands FX", "commandsfxopacity", {'opacity'})
 
 	loadWidgetData("Depth of Field", "dofintensity", {'intensity'})
 --[[
@@ -1676,6 +1682,10 @@ function loadAllWidgetData()
 	loadWidgetData("EnemySpotter", "enemyspotter_highlight", {'useXrayHighlight'})
 --]]
 	loadWidgetData("Outline", "outline_size", {'customSize'})
+
+	loadWidgetData("Under construction gfx", "underconstructiongfx_opacity", {'highlightAlpha'})
+	loadWidgetData("Under construction gfx", "underconstructiongfx_shader", {'useHighlightShader'})
+	loadWidgetData("Under construction gfx", "underconstructiongfx_teamcolor", {'useTeamcolor'})
 --[[
 	loadWidgetData("Highlight Selected Units", "highlightselunits_opacity", {'highlightAlpha'})
 	loadWidgetData("Highlight Selected Units", "highlightselunits_shader", {'useHighlightShader'})
@@ -1728,7 +1738,7 @@ function init()
 		--{id="windowresy", group="gfx", name="Window resolution Y", type="slider", min=math.floor(ssy/3), max=ssy, step=1, value=tonumber(Spring.GetConfigInt("YResolutionWindowe",1) or 0), description='Set where on the screen the window is positioned on the Y axis'},
 		{id="fullscreen", group="gfx", name="Fullscreen", type="bool", value=tonumber(Spring.GetConfigInt("Fullscreen",1) or 1) == 1},
 		{id="borderless", group="gfx", name="  Borderless window", type="bool", value=tonumber(Spring.GetConfigInt("WindowBorderless",1) or 1) == 1, description="Changes will be applied next game.\n\n(dont forget to turn off the \'fullscreen\' option next game)"},
-		{id="vsync", group="gfx", name="V-sync", type="bool", value=tonumber(Spring.GetConfigInt("Vsync",1) or 1) == 1, description=''},
+		{id="vsync", group="gfx", name="V-sync", type="bool", value=tonumber(Spring.GetConfigInt("VSync",1) or 1) == 1, description=''},
 		{id="fsaa", group="gfx", name="Anti Aliasing", type="slider", min=0, max=16, step=1, value=tonumber(Spring.GetConfigInt("FSAALevel",1) or 2), description='Changes will be applied next game'},
 		{id="advmapshading", group="gfx", name="Advanced map shading", type="bool", value=tonumber(Spring.GetConfigInt("AdvMapShading",1) or 1) == 1, description='When disabled: map shadows aren\'t rendered as well'},
 		{id="advmodelshading", group="gfx", name="Advanced model shading", type="bool", value=tonumber(Spring.GetConfigInt("AdvModelShading",1) or 1) == 1},
@@ -1792,6 +1802,11 @@ function init()
         --{id="tombstones", group="gfx", widget="Tombstones", name="Tombstones", type="bool", value=GetWidgetToggleValue("Tombstones"), description='Displays tombstones where commanders died'},
         --{id="rankicons", group="gfx", widget="Rank Icons", name="Rank icons", type="bool", value=GetWidgetToggleValue("Rank Icons"), description='Shows a rank icon depending on experience next to units'},
 
+		{id="underconstructiongfx", group="gfx", widget="Under construction gfx", name="Under construction highlight", type="bool", value=GetWidgetToggleValue("Under construction gfx"), description='Highlights unit models when under construction'},
+		{id="underconstructiongfx_opacity", group="gfx", name=widgetOptionColor.."   opacity", min=0.25, max=0.5, step=0.01, type="slider", value=0.2, description='Set the opacity of the highlight on selected units'},
+		{id="underconstructiongfx_shader", group="gfx", name=widgetOptionColor.."   use shader", type="bool", value=false, description='Highlight model edges a bit'},
+		{id="underconstructiongfx_teamcolor", group="gfx", name=widgetOptionColor.."   use teamcolor", type="bool", value=false, description='Use teamcolor instead of unit health coloring'},
+		
 		-- SND
 		{id="sndvolmaster", group="snd", name="Master volume", type="slider", min=0, max=200, step=2, value=tonumber(Spring.GetConfigInt("snd_volmaster",1) or 100)},
 		--{id="sndvolgeneral", group="snd", name="General volume", type="slider", min=0, max=100, step=2, value=tonumber(Spring.GetConfigInt("snd_volgeneral",1) or 100)},
@@ -1901,7 +1916,7 @@ function init()
 
 
         {id="onlyfighterspatrol", group="game", widget="OnlyFightersPatrol", name="Only fighters patrol", type="bool", value=GetWidgetToggleValue("Autoquit"), description='Only fighters obey a factory\'s patrol route after leaving airlab.'},
-		--{id="fightersfly", group="game", widget="Set fighters on Fly mode", name="Set fighters on Fly mode", type="bool", value=GetWidgetToggleValue("Set fighters on Fly mode"), description='Setting fighters on Fly mode when created'},
+		{id="fightersfly", group="game", widget="Set fighters on Fly mode", name="Set fighters on Fly mode", type="bool", value=GetWidgetToggleValue("Set fighters on Fly mode"), description='Setting fighters on Fly mode when created'},
 
 		{id="passivebuilders", group="game", widget="Passive builders", name="Passive builders", type="bool", value=GetWidgetToggleValue("Passive builders"), description='Sets builders (nanos, labs and cons) on passive mode\n\nPassive mode means that builders will only spend energy when its availible.\nUsage: You could set your most important builders on active and leave the rest on passive'},
 
@@ -1912,10 +1927,10 @@ function init()
 
 		{id="blacklily", group="game", widget="unit_blacklily_auto_cloak", name="Blacklily Auto Cloak", type="bool", value=GetWidgetToggleValue("unit_blacklily_auto_cloak"), description='Enables cloak on attack or fight command'},
 
-		--{id="autogroup_immediate", group="game", name="Autogroup immediate mode", type="bool", value=(WG['autogroup']~=nil and WG['autogroup'].getImmediate~=nil and WG['autogroup'].getImmediate()), description='Units built/resurrected/received are added to autogroups immediately instead of waiting them to be idle.\n\n(add units to autogroup with ALT+number)'},
+		{id="autogroup_immediate", group="game", name="Autogroup immediate mode", type="bool", value=(WG['autogroup']~=nil and WG['autogroup'].getImmediate~=nil and WG['autogroup'].getImmediate()), description='Units built/resurrected/received are added to autogroups immediately instead of waiting them to be idle.\n\n(add units to autogroup with ALT+number)'},
 
 		{id="factoryguard", group="game", widget="FactoryGuard", name="Factory guard (builders)", type="bool", value=GetWidgetToggleValue("FactoryGuard"), description='Newly created builders will assist their source factory'},
-		--{id="factoryholdpos", group="game", widget="Factory hold position", name="Factory hold position", type="bool", value=GetWidgetToggleValue("Factory hold position"), description='Sets new factories, and all units they build, to hold position automatically (not aircraft)'},
+		{id="factoryholdpos", group="game", widget="Factory hold position", name="Factory hold position", type="bool", value=GetWidgetToggleValue("Factory hold position"), description='Sets new factories, and all units they build, to hold position automatically (not aircraft)'},
 		{id="factoryrepeat", group="game", widget="Factory Auto-Repeat", name="Factory auto-repeat", type="bool", value=GetWidgetToggleValue("Factory Auto-Repeat"), description='Sets new factories on Repeat mode'},
 
         {id="transportai", group="game", widget="Transport AI", name="Transport AI", type="bool", value=GetWidgetToggleValue("Transport AI"), description='Transport units automatically pick up new units going to factory waypoint.'},
@@ -2014,7 +2029,7 @@ function init()
 	end
 
 	-- not sure if needed: remove vsync option when its done by monitor (freesync/gsync) -> config value is set as 'x'
-	if Spring.GetConfigInt("Vsync",1) == 'x' then
+	if Spring.GetConfigInt("VSync",1) == 'x' then
 		options[getOptionByID('vsync')] = nil
 	end
 --[[
@@ -2074,14 +2089,22 @@ function init()
 	if widgetHandler.knownWidgets["Auto Group"] == nil then
 		options[getOptionByID("autogroup_immediate")] = nil
 	end
-
+--[[
 	if widgetHandler.knownWidgets["Highlight Selected Units"] == nil then
 		options[getOptionByID('highlightselunits')] = nil
 		options[getOptionByID("highlightselunits_opacity")] = nil
 		options[getOptionByID("highlightselunits_shader")] = nil
 		options[getOptionByID("highlightselunits_teamcolor")] = nil
 	end
+--]]
+	if widgetHandler.knownWidgets["Under construction gfx"] == nil then
+		options[getOptionByID('underconstructiongfx')] = nil
+		options[getOptionByID("underconstructiongfx_opacity")] = nil
+		options[getOptionByID("underconstructiongfx_shader")] = nil
+		options[getOptionByID("underconstructiongfx_teamcolor")] = nil
+	end
 
+--[[
 	if widgetHandler.knownWidgets["Light Effects"] == nil or widgetHandler.knownWidgets["Deferred rendering"] == nil then
 		options[getOptionByID('lighteffects')] = nil
 		options[getOptionByID("lighteffects_brightness")] = nil
@@ -2259,7 +2282,6 @@ function widget:GetConfigData(data)
 	savedTable = {}
 	savedTable.customPresets = customPresets
 	savedTable.minimapIconsize = minimapIconsize
-	savedTable.LupsPriority = WG.LupsPriority
 	return savedTable
 end
 
