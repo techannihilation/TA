@@ -5,7 +5,7 @@
 
 
 piece 	base, body, turret, sleeve, barrel, barrel2, emit, flare,
-		arm1, plat1, tread1a, tread1b, arm2, plat2, tread2a, tread2b, arm3, plat3, tread3a, tread3b, arm4, plat4, tread4a, tread4b, shad4b, 
+		arm1, plat1, tread1a, tread1b, arm2, plat2, tread2a, tread2b, arm3, plat3, tread3a, tread3b, arm4, plat4, tread4a, tread4b, 
 		blast, r1, r2, r3, r4;
 	    
 static-var is_moving, firedelay, firing, gun_1;
