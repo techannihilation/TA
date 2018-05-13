@@ -103,7 +103,7 @@ for unitDefID = 1, #UnitDefs do
 		end
 
 		local mainClass
-		if (Spring.GetConfigInt("LupsPriority") or 3) >= 4 then
+		if (Spring.GetConfigInt("LupsPriority") or 3) >= 3 then  --shield shader level 4
 			mainClass = "ShieldSphereColorHQ"
 		else
 			mainClass = "ShieldSphereColor"
