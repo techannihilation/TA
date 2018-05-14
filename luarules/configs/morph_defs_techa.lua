@@ -976,14 +976,28 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corkrog = {
-		into = 'corkrog1',
-		time = 240,
-		xp = 0.25,
+		{
+			into = 'corkrog1',
+			time = 240,
+			xp = 0.20,
+		},
+		{
+			into = 'corkrog1',
+			tech = 3,
+			time = 90,
+		},
 	},
 	armbanth = {
-		into = 'armbanth1',
-		time = 240,
-		xp = 0.25,
+		{
+			into = 'armbanth1',
+			time = 210,
+			xp = 0.20,
+		},
+		{	
+			into = 'armbanth1',
+			tech = 3,
+			time = 75,
+		},
 	},
 	corkarg = {
  		into = 'corkarg1',
