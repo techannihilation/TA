@@ -135,7 +135,7 @@ return {
 				name = "Laser",
 				noselfdamage = true,
 				paralyzer = true,
-				paralyzetime = 10,
+				paralyzetime = 7.5,
 				range = 150,
 				reloadtime = 1.5,
 				rgbcolor = "0 0 7",
