@@ -208,7 +208,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "fmdmislbig",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
