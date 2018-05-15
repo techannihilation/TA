@@ -179,7 +179,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "fmdmislbig",
+				model = "exphvyrock1",
 				name = "Heavy Rockets2",
 				range = 1400,
 				reloadtime = 1,
