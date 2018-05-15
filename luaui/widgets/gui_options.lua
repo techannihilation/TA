@@ -928,7 +928,6 @@ function applyOptionValue(i, skipRedrawWindow)
 			if value == 1 then
 				Spring.SendCommands("luarules reloadluaui")		-- becaue sometimes it ends in too bright unit shading but fixed after a luaui reload
 			end
-			
 		elseif id == 'lupsdynamic' then
 			Spring.SetConfigInt("DynamicLups",value)
 		elseif id == 'advsky' then
@@ -1280,6 +1279,9 @@ function applyOptionValue(i, skipRedrawWindow)
 				Spring.SetConfigInt("LupsPriority",value)
 				--Spring.Echo("option for lups",value,WG.LupsPriority)
 			end
+		elseif id == 'lupsnanoeffect' then
+			Spring.Echo("LupsNanoEffect",value)
+			Spring.SetConfigInt("LupsNanoEffect",value)
 		elseif id == 'camera' then
 			Spring.SetConfigInt("CamMode",(value-1))
 			if value == 1 then 
@@ -1776,14 +1778,15 @@ function init()
 --]]
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=GetWidgetToggleValue("LupsManager"), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
 		{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=tonumber(Spring.GetConfigInt("LupsPriority",1) or 3), description='Sets lups particle effects quality'},
-		{id="lupsdynamic", group="gfx", name="Dynamic Lups particle", type="bool", value=tonumber(Spring.GetConfigInt("DynamicLups",1) or 1), description='Auto adjust lups effect level depening on FPS'},
+		{id="lupsnanoeffect", group="gfx", name="Lups Nano Effect", type="select", options={'laser','particles'}, value=tonumber(Spring.GetConfigInt("LupsNanoEffect",1) or 1), description='Sets lups nano effect'},
+		--{id="lupsdynamic", group="gfx", name="Dynamic Lups particle", type="bool", value=tonumber(Spring.GetConfigInt("DynamicLups",1) or 1), description='Auto adjust lups effect level depening on FPS'},
 
 		{id="outline", group="gfx", widget="Outline", name="Unit outline (expensive)", type="bool", value=GetWidgetToggleValue("Outline"), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1000.\nStops rendering outlines when average fps falls below 13.'},
 		{id="outline_size", group="gfx", name=widgetOptionColor.."   thickness", min=0.8, max=1.5, step=0.05, type="slider", value=1, description='Set the size of the outline'},
 
 		{id="xrayshader", group="gfx", widget="XrayShader", name="Unit xray shader", type="bool", value=GetWidgetToggleValue("XrayShader"), description='Highlights all units, highlight effect dissolves on close camera range.\n\nFades out and disables at low fps\nWorks less on dark teamcolors'},
 		{id="particles", group="gfx", name="Max particles", type="slider", min=5000, max=25000, step=500, value=tonumber(Spring.GetConfigInt("MaxParticles",1) or 1000), description='Particles used for explosions, smoke, fire and missiletrails\n\nSetting a low value will mean that various effects wont show properly'},
-		{id="nanoparticles", group="gfx", name="Max nano particles", type="slider", min=500, max=5000, step=100, value=tonumber(Spring.GetConfigInt("MaxNanoParticles",1) or 500), description='NOTE: Nano particles are more expensive regarding the CPU'},
+		--{id="nanoparticles", group="gfx", name="Max nano particles", type="slider", min=500, max=5000, step=100, value=tonumber(Spring.GetConfigInt("MaxNanoParticles",1) or 500), description='NOTE: Nano particles are more expensive regarding the CPU'},
 
 		{id="iconadjuster", group="gfx", name="Unit icon scale", min=0.8, max=1.2, step=0.05, type="slider", value=1, description='Sets radar/unit icon size\n\n(Used for unit icon distance and minimap icons)'},
 		{id="disticon", group="gfx", name="Icon render distance", type="slider", min=0, max=800, step=10, value=tonumber(Spring.GetConfigInt("UnitIconDist",1) or 800)},
