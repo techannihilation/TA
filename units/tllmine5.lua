@@ -60,9 +60,9 @@ return {
 		unitname = "tllmine5",
 		customparams = {
 			buildpic = "tllmine5.dds",
+			detonaterange = "64",
 			faction = "TLL",
 			initcloaked = true,
-			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

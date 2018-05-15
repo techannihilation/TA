@@ -52,6 +52,7 @@ return {
 		radaremitheight = 51,
 		seismicsignature = 2,
 		selfdestructas = "SMALL_UNIT",
+		shownanospray = false,
 		sightdistance = 550,
 		standingfireorder = 0,
 		standingmoveorder = 1,
@@ -76,8 +77,8 @@ return {
 		},
 		customparams = {
 			buildpic = "armrambo.dds",
-			initcloaked = true,
 			faction = "ARM",
+			initcloaked = true,
 			paralyzemultiplier = 0.15,
 		},
 		nanocolor = {

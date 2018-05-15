@@ -38,6 +38,7 @@ return {
 		objectname = "TLLAVP",
 		radaremitheight = 93,
 		selfdestructas = "LARGE_BUILDING",
+		shownanospray = false,
 		sightdistance = 218,
 		standingfireorder = 2,
 		standingmoveorder = 0,
@@ -56,8 +57,8 @@ return {
 			[8] = "tllroaster",
 			[9] = "tllpuncher",
 			[10] = "tlldivine",
-			[11] = "tllobscurer",			
-      [12] = "tllleopard",
+			[11] = "tllobscurer",
+			[12] = "tllleopard",
 		},
 		customparams = {
 			buildpic = "tllavp.dds",

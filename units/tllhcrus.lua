@@ -80,7 +80,6 @@ return {
 				[1] = "custom:MEDIUMFLARE",
 				[2] = "custom:PILOT",
 			},
-
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -196,8 +195,6 @@ return {
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-
-
 		},
 	},
 }

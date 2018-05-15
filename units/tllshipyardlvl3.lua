@@ -35,6 +35,7 @@ return {
 		radardistance = 1200,
 		radaremitheight = 264,
 		selfdestructas = "SHIPBLAST",
+		shownanospray = false,
 		sightdistance = 220,
 		unitname = "tllshipyardlvl3",
 		workertime = 240,

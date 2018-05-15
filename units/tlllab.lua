@@ -38,6 +38,7 @@ return {
 		objectname = "TLLLAB",
 		radaremitheight = 32,
 		selfdestructas = "LARGE_BUILDING",
+		shownanospray = false,
 		sightdistance = 223,
 		standingmoveorder = 2,
 		unitname = "tlllab",

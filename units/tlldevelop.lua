@@ -34,6 +34,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 32,
 		selfdestructas = "SHIPBLAST",
+		shownanospray = false,
 		sightdistance = 220,
 		stealth = true,
 		unitname = "tlldevelop",

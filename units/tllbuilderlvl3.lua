@@ -49,6 +49,7 @@ return {
 		objectname = "tllbuilderlvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
+		shownanospray = false,
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 2.112,

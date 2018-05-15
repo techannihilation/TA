@@ -47,6 +47,7 @@ return {
 		objectname = "CORMIN",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
+		shownanospray = false,
 		sightdistance = 250,
 		standingmoveorder = 1,
 		steeringmode = 1,

@@ -47,6 +47,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
+		shownanospray = false,
 		sightdistance = 120,
 		sonardistance = 450,
 		standingmoveorder = 1,

@@ -31,11 +31,12 @@ return {
 		radaremitheight = 150,
 		script = "correch2.cob",
 		selfdestructas = "COMMANDER_BLAST",
+		shownanospray = false,
 		sightdistance = 0,
 		unitname = "correch2",
 		usebuildinggrounddecal = false,
-		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
 		workertime = 250,
+		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
 		buildoptions = {
 			[1] = "cbuilderlvl2",
 		},

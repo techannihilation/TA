@@ -44,6 +44,7 @@ return {
 		radardistance = 0,
 		repairspeed = 35,
 		selfdestructas = "SMALL_UNIT_VTOL",
+		shownanospray = false,
 		sightdistance = 380,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 6.6,

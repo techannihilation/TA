@@ -47,6 +47,7 @@ return {
 		radaremitheight = 22,
 		resurrect = 1,
 		selfdestructas = "BIG_UNITEX",
+		shownanospray = false,
 		sightdistance = 140,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -44,6 +44,7 @@ return {
 		objectname = "AACH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
+		shownanospray = false,
 		sightdistance = 270,
 		standingmoveorder = 1,
 		steeringmode = 1,

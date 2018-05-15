@@ -42,6 +42,7 @@ return {
 		objectname = "TLLACS",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
+		shownanospray = false,
 		sightdistance = 240,
 		standingmoveorder = 1,
 		steeringmode = 1,

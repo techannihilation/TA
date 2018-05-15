@@ -42,6 +42,7 @@ return {
 		radaremitheight = 22,
 		resurrect = 1,
 		selfdestructas = "BIG_UNIT",
+		shownanospray = false,
 		sightdistance = 300,
 		standingmoveorder = 1,
 		stealth = true,

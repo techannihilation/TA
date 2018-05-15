@@ -39,14 +39,15 @@ return {
 		radardistance = 0,
 		radaremitheight = 97,
 		selfdestructas = "SUPERBLAST",
+		shownanospray = false,
 		sightdistance = 220,
 		unitname = "cshipyardlvl4",
 		usebuildinggrounddecal = true,
 		workertime = 240,
 		yardmap = "ooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccoo",
 		buildoptions = {
-			[1] = "corvaliant",			
-			[2] = "cdevastator",			
+			[1] = "corvaliant",
+			[2] = "cdevastator",
 		},
 		customparams = {
 			buildpic = "cshipyardlvl4.dds",

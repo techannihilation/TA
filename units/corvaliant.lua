@@ -58,6 +58,7 @@ return {
 		reclaimable = true,
 		selfdestructas = "CRBLMSSL4",
 		selfdestructcountdown = 10,
+		shownanospray = false,
 		showplayername = true,
 		sightdistance = 900,
 		standingfireorder = 2,
@@ -185,7 +186,7 @@ return {
 					default = 2500,
 					subs = 5,
 				},
-			},			
+			},
 		},
 		weapons = {
 			[1] = {
@@ -216,7 +217,6 @@ return {
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-
 			[5] = {
 				badtargetcategory = "SMALL TINY",
 				def = "tehlazerofdewm",
@@ -224,7 +224,6 @@ return {
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-
 			[6] = {
 				badtargetcategory = "SMALL TINY",
 				def = "tehlazerofdewm",
@@ -274,7 +273,6 @@ return {
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-
 		},
 	},
 }

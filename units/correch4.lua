@@ -39,6 +39,7 @@ return {
 		radaremitheight = 32,
 		script = "correch4.cob",
 		selfdestructas = "SHIPBLAST",
+		shownanospray = false,
 		sightdistance = 220,
 		stealth = true,
 		unitname = "correch4",

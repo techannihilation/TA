@@ -41,6 +41,7 @@ return {
 		repairspeed = 500,
 		seismicsignature = 1,
 		selfdestructas = "TINY_BUILDINGEX",
+		shownanospray = false,
 		sightdistance = 420,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,

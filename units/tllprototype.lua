@@ -42,6 +42,7 @@ return {
 		radaremitheight = 82,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
+		shownanospray = false,
 		sightdistance = 273,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -57,7 +58,7 @@ return {
 			[3] = "hyperion",
 			[4] = "tllgorgon",
 			[5] = "tllmcv",
-			[6] = "tllcolossus",			
+			[6] = "tllcolossus",
 		},
 		customparams = {
 			buildpic = "tllprototype.dds",

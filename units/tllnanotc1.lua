@@ -45,6 +45,7 @@ return {
 		script = "cornanotc.cob",
 		seismicsignature = 0,
 		selfdestructas = "NANOBOOM2T",
+		shownanospray = false,
 		sightdistance = 380,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,

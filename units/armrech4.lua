@@ -39,6 +39,7 @@ return {
 		radaremitheight = 175,
 		script = "armrech4.cob",
 		selfdestructas = "SHIPBLAST",
+		shownanospray = false,
 		sightdistance = 220,
 		stealth = true,
 		unitname = "armrech4",

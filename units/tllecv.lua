@@ -48,6 +48,7 @@ return {
 		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
+		shownanospray = false,
 		sightdistance = 500,
 		standingmoveorder = 1,
 		steeringmode = 1,

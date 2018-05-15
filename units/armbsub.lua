@@ -200,7 +200,6 @@ return {
 				maxangledif = 45,
 				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
-
 		},
 	},
 }

@@ -57,10 +57,10 @@ return {
 		usebuildinggrounddecal = true,
 		customparams = {
 			buildpic = "cormine6.dds",
+			detonaterange = "64",
 			faction = "CORE",
 			initcloaked = true,
 			requiretech = "Advanced T2 Unit Research Centre",
-			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

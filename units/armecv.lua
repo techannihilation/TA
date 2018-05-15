@@ -48,6 +48,7 @@ return {
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
+		shownanospray = false,
 		sightdistance = 500,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -80,7 +81,7 @@ return {
 			[14] = "armamd1",
 			[15] = "armsilo1",
 			[16] = "armbrtha1",
-			[17] = "armvulc2",			
+			[17] = "armvulc2",
 		},
 		customparams = {
 			buildpic = "armecv.dds",

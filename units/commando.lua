@@ -53,6 +53,7 @@ return {
 		radaremitheight = 36,
 		seismicsignature = 2,
 		selfdestructas = "SMALL_UNIT",
+		shownanospray = false,
 		sightdistance = 650,
 		standingfireorder = 0,
 		standingmoveorder = 1,

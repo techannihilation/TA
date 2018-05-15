@@ -45,6 +45,7 @@ return {
 		objectname = "ABuilderLvl2",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
+		shownanospray = false,
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 5.94,

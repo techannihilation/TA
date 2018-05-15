@@ -37,6 +37,7 @@ return {
 		onoffable = true,
 		radaremitheight = 47,
 		selfdestructas = "BIG_UNIT",
+		shownanospray = false,
 		sightdistance = 193,
 		unitname = "tllasp",
 		usebuildinggrounddecal = true,

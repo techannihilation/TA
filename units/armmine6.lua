@@ -57,10 +57,10 @@ return {
 		usebuildinggrounddecal = true,
 		customparams = {
 			buildpic = "armmine6.dds",
+			detonaterange = "64",
 			faction = "ARM",
 			initcloaked = true,
 			requiretech = "Advanced T2 Unit Research Centre",
-			detonaterange = "64",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
