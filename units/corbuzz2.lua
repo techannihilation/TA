@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Rapid-Buzzsaw",
 		nochasecategory = "ALL",
-		objectname = "CORBUZZ",
+		objectname = "CORBUZZ2",
 		radaremitheight = 170,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_DEATH",
