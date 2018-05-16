@@ -1280,7 +1280,6 @@ function applyOptionValue(i, skipRedrawWindow)
 				--Spring.Echo("option for lups",value,WG.LupsPriority)
 			end
 		elseif id == 'lupsnanoeffect' then
-			Spring.Echo("LupsNanoEffect",value)
 			Spring.SetConfigInt("LupsNanoEffect",value)
 		elseif id == 'camera' then
 			Spring.SetConfigInt("CamMode",(value-1))

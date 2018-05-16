@@ -208,6 +208,7 @@ local factionsNanoFx = {
     corethickness   = "limcount",
     streamThickness = "0.5+5*limcount",
     streamSpeed     = "limcount*0.05",
+    priority        = 1,
   },
   ["default_high_quality"] = {
     fxtype      = "NanoParticles",
@@ -219,6 +220,7 @@ local factionsNanoFx = {
     rotSpread   = 360,
     texture     = "bitmaps/Other/Poof.png",
     particles   = 1.2,
+    priority    = 1,
   },
   --[[arm = {
     fxtype      = "NanoParticles",
@@ -411,7 +413,6 @@ function gadget:Update()
     local factionNanoFx = factionsNanoFx[faction]
     factionNanoFx.delaySpread = 30
     factionNanoFx.fxtype = factionNanoFx.fxtype:lower()
-    Spring.Echo("gadget side lups nano effect", Spring.GetConfigInt("LupsNanoEffect",1))
     if ((Spring.GetConfigInt("LupsNanoEffect",1) or 2) >= 1) and ((factionNanoFx.fxtype=="nanolasers") or (factionNanoFx.fxtype=="nanolasersshader")) then
       factionNanoFx.flare = true
     end
