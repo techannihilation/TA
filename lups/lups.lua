@@ -704,6 +704,13 @@ local unitDrawStatus = {}
 local unitDrawStatusCheckTime = {}
 local ACTIVE_CHECK_PERIOD = 15
 
+local GetPriorityCheckTime = 0
+local GetDynamicLupsCheckTime = 0
+local GetPriorityStatus = 3
+local GetDynamicLupsStatus = Spring.GetConfigInt("DynamicLups") or 0
+local CONFIG_CHECK_PERIOD = 25
+
+
 local function GetUnitIsActive(unitID)
   if activeUnitCheckTime[unitID] and activeUnitCheckTime[unitID] > thisGameFrame then
     return activeUnit[unitID]
@@ -724,8 +731,59 @@ local function GetUnitDrawStatus(unitID)
 end
 
 local function GetPriority(priority)
-  local LupsPriority = Spring.GetConfigInt("LupsPriority") or 3
-  return LupsPriority < priority
+  if GetPriorityCheckTime and GetPriorityCheckTime > thisGameFrame then
+    return GetPriorityStatus
+  end
+  GetPriorityCheckTime = thisGameFrame + CONFIG_CHECK_PERIOD
+  GetPriorityStatus = (Spring.GetConfigInt("LupsPriority",3) or 3) < priority
+  return true 
+end
+
+local function GetDynamicLups()
+  if GetDynamicLupsCheckTime and GetDynamicLupsCheckTime > thisGameFrame then
+    return GetDynamicLupsStatus
+  end
+  GetDynamicLupsCheckTime = thisGameFrame + CONFIG_CHECK_PERIOD
+  GetDynamicLupsStatus = Spring.GetConfigInt("DynamicLups",0) or 0
+  return GetDynamicLupsStatus
+end
+
+local function ConvertRange(value)
+  local OldMax, OldMin, NewMax, NewMin = 65,20,5,1
+  local OldRange = (OldMax - OldMin)
+  local NewRange = (NewMax - NewMin)
+  value = (((value - OldMin) * NewRange) / OldRange) + NewMin
+  --value = (NewMax + NewMin) - value
+  return math.min(value)
+end
+
+local weight = 5
+local timecheck = 0
+local avgfps = 0
+local storedfps = {}
+local index = 1
+local SAMPLE_RATE = 65
+local index = 1
+
+for i=1,weight do
+  storedfps[i] = Spring.GetFPS()
+  avgfps = avgfps + storedfps[i]
+end
+
+local function GetAvgFPS()
+  if timecheck and timecheck > thisGameFrame then
+    return avgfps / weight
+  end
+  timecheck = thisGameFrame + SAMPLE_RATE
+  if index == weight + 1 then
+    index = 1
+  end
+  --Spring.Echo(storedfps[index],index)
+  local oldfps = storedfps[index]
+  storedfps[index] = Spring.GetFPS()
+  avgfps = ((avgfps - oldfps) + storedfps[index])
+  index = index + 1
+  return avgfps / weight
 end
 
 --------------------------------------------------------------------------------
@@ -776,22 +834,20 @@ function GetUnitLosState(unitID)
   return LocalAllyTeamID == Script.ALL_ACCESS_TEAM or (LocalAllyTeamID ~= Script.NO_ACCESS_TEAM and (Spring.GetUnitLosState(unitID, LocalAllyTeamID) or {}).los) or false
 end
 
-function FPS()
-   local fpscount = Spring.GetFPS()
-   if fpscount > 10 then
-    return false
-  else
-    return true
-  end
-end
-
-
 local function IsUnitFXVisible(fx)
   local unitActive = true
   local unitID = fx.unit
   local priority = fx.priority or 3
-  --Spring.Echo(GetPriority(priority))
   if GetPriority(priority) then return false end
+
+  if GetDynamicLups() == 1 then
+    local avgFPS = GetAvgFPS()
+        --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
+    if avgFPS < 65 then
+      if ConvertRange(avgFPS) < priority then return false end
+    end
+  end
+
   if fx.onActive then
     unitActive = GetUnitIsActive(unitID)
     if (unitActive == nil) and GetPriority(5) then --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
@@ -821,6 +877,15 @@ end
 local function IsProjectileFXVisible(fx)
   local priority = fx.priority or 3
   if GetPriority(priority) then return false end
+
+  if GetDynamicLups() == 1 then
+    local avgFPS = GetAvgFPS()
+        --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
+    if avgFPS < 65 then
+      if ConvertRange(avgFPS) < priority then return false end
+    end
+  end
+
   if fx.alwaysVisible then
     return true
   elseif fx.Visible then
@@ -837,6 +902,15 @@ end
 local function IsWorldFXVisible(fx)
   local priority = fx.priority or 3
   if GetPriority(priority) then return false end
+
+  if GetDynamicLups() == 1 then
+    local avgFPS = GetAvgFPS()
+        --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
+    if avgFPS < 65 then
+      if ConvertRange(avgFPS) < priority then return false end
+    end
+  end
+
   if fx.alwaysVisible then
     return true
   elseif (fx.Visible) then
