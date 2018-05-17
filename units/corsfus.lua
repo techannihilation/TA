@@ -54,10 +54,10 @@ return {
 		customparams = {
 			buildpic = "corsfus.dds",
 			faction = "CORE",
-			shield_color1 = "{{0.45, 0.2, 1, 0.2}, {1, 0.2, 0.2, 0.2}}",
+			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_emit_height = 73.4,
 			shield_power = 16000,
-			shield_radius = 180,
+			shield_radius = 130,
 		},
 		featuredefs = {
 			dead = {
@@ -127,7 +127,7 @@ return {
 				shieldpower = 16000,
 				shieldpowerregen = 120,
 				shieldpowerregenenergy = 2048,
-				shieldradius = 180,
+				shieldradius = 130,
 				shieldrepulser = false,
 				shieldstartingpower = 4000,
 				soundhitwet = "sizzle",

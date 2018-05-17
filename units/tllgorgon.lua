@@ -56,7 +56,10 @@ return {
 		upright = true,
 		customparams = {
 			buildpic = "tllgorgon.dds",
-			faction = "Arm",
+			faction = "Tll",
+			shield_emit_height = 75,
+			shield_power = 10000,
+			shield_radius = 500,
 		},
 		featuredefs = {
 			dead = {
@@ -175,7 +178,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
+				visibleshield = false,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

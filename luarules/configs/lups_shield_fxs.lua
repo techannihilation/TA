@@ -56,6 +56,12 @@ for unitDefID = 1, #UnitDefs do
 		----==== myShield ====----
 
 		local myShield = Spring.Utilities.CopyTable(ShieldSphereBase, true)
+		if ud.customParams.shield_color1 then
+			myShield.colormap1 = loadstring("return "..ud.customParams.shield_color1)()
+		end
+		if ud.customParams.shield_color2 then
+			myShield.colormap2 = loadstring("return "..ud.customParams.shield_color2)()
+		end
 		if radius > 250 then
 			myShield.shieldSize = "large"
 			myShield.drawBack = 0.55

@@ -108,6 +108,17 @@ corshieldgenShieldSphere = {
   colormap2 = { {0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20},{0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20} },
   repeatEffect=true
 }
+
+tllgorgonSphere = {
+  layer=-30,
+  life=20,
+  piece="sphere",
+  size=23,
+  colormap1 = { {0,0.65,0, 0.80},{0,0.75,0, 0.8},{0,0.65,0, 0.8},{0,0.75,0, 0.80} },
+  colormap2 = { {0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20},{0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20} },
+  repeatEffect=true
+}
+
 corsfusBursts = {
   layer      = -35,
   life       = math.huge,
@@ -116,10 +127,10 @@ corsfusBursts = {
   rotSpread  = 0,
   arc        = 50,
   arcSpread  = 0,
-  size       = 180,
+  size       = 130,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
-  colormap   = {{0.45, 0.2, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
+  colormap   = {{0.1, 0.55, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
@@ -134,7 +145,7 @@ exoarmBursts = {
   rotSpread  = 0,
   arc        = 50,
   arcSpread  = 0,
-  size       = 350,
+  size       = 250,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
   colormap   = {{0.1, 0.55, 1, 0.1}, {1, 0.2, 0.2, 0.1}},

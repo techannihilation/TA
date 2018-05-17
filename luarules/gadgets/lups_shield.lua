@@ -119,6 +119,7 @@ local ShieldUnits = {
   [UnitDefNames["tllgate1"].id] = true,
   [UnitDefNames["tllgate2"].id] = true,
   [UnitDefNames["irritator"].id] = true,
+  [UnitDefNames["tllgorgon"].id] = true,
 }
 
 local function GetVisibleSearch(x, z, search)
