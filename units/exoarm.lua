@@ -63,7 +63,7 @@ return {
 			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_emit_height = 68,
 			shield_power = 9500,
-			shield_radius = 350,
+			shield_radius = 250,
 		},
 		featuredefs = {
 			heap = {
@@ -238,7 +238,7 @@ return {
 				shieldpower = 9500,
 				shieldpowerregen = 300,
 				shieldpowerregenenergy = 9300,
-				shieldradius = 350,
+				shieldradius = 250,
 				shieldrepulser = true,
 				smartshield = true,
 				soundhitwet = "sizzle",
