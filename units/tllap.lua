@@ -51,11 +51,12 @@ return {
 		buildoptions = {
 			[1] = "tllca",
 			[2] = "tllhtca",
-			[3] = "tllprob",
-			[4] = "tllfight",
-			[5] = "tllbomber",
-			[6] = "tlltplane",
-			[7] = "tllcop1",
+			[3] = "tlltsetse",
+			[4] = "tllprob",
+			[5] = "tllfight",
+			[6] = "tllbomber",
+			[7] = "tlltplane",
+			[8] = "tllcop1",
 		},
 		customparams = {
 			buildpic = "tllap.dds",
