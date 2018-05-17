@@ -1,0 +1,105 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, miner;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from miner;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+StartBuilding()
+{
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = miner;
+}
+
+AimPrimary()
+{
+	return (1);
+}
+
+FirePrimary()
+{
+	sleep 50;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = miner;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode miner type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode miner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode miner type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode miner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode base type NOHEATCLOUD;
+	return (corpsetype);
+}
