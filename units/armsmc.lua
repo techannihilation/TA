@@ -1,5 +1,6 @@
 return {
 	armsmc = {
+		activatewhenbuilt = true,
 		acceleration = 0.12,
 		brakerate = 0.75,
 		buildcostenergy = 294055,

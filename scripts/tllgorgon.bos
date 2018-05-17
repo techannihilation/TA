@@ -7,7 +7,7 @@
 piece  base, body, rupleg1, rupleg2, rupleg3, lupleg1, lupleg2, lupleg3, rfoot1, rfoot2, rfoot3,
 		lfoot1, lfoot2, lfoot3, sphere, firepoint;
 		
-static-var  statechg_DesiredState, statechg_StateChanging, moving, Static_Var_1, Speedmovingleg ;
+static-var  shieldonoff,statechg_DesiredState, statechg_StateChanging, moving, Speedmovingleg ;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -124,52 +124,11 @@ MotionControl(Func_Var_1)
 	}
 }
 
-ShieldOn()
+Shield()
 {
-	Static_Var_1 = 1;
+	shieldonoff = !shieldonoff;
 }
 
-ShieldOff()
-{
-	Static_Var_1 = 0;
-}
-
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script ShieldOn();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script ShieldOff();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
-}
 
 InitState()
 {
@@ -181,17 +140,17 @@ Create()
 {
 	moving = 0;
 	hide sphere;
-	Static_Var_1 = 0;
 	Speedmovingleg = 30;
 	call-script InitState();
 	start-script SmokeUnit();
 	start-script MotionControl();
+	shieldonoff = 1;
 }
 
 AimTertiary(heading, pitch)
 {
 	sleep 100;
-	return (Static_Var_1);
+	return (shieldonoff);
 }
 
 FireTertiary()
