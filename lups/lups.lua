@@ -757,13 +757,14 @@ local function ConvertRange(value)
   return math.min(value)
 end
 
-local weight = 5
+local weight = 10
 local timecheck = 0
 local avgfps = 0
 local storedfps = {}
 local index = 1
-local SAMPLE_RATE = 65
+local SAMPLE_RATE = 75
 local index = 1
+local skipfpscheck = false
 
 for i=1,weight do
   storedfps[i] = Spring.GetFPS()
@@ -775,10 +776,10 @@ local function GetAvgFPS()
     return avgfps / weight
   end
   timecheck = thisGameFrame + SAMPLE_RATE
+  skipfpscheck = false
   if index == weight + 1 then
     index = 1
   end
-  --Spring.Echo(storedfps[index],index)
   local oldfps = storedfps[index]
   storedfps[index] = Spring.GetFPS()
   avgfps = ((avgfps - oldfps) + storedfps[index])
@@ -844,7 +845,13 @@ local function IsUnitFXVisible(fx)
     local avgFPS = GetAvgFPS()
         --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
     if avgFPS < 65 then
-      if ConvertRange(avgFPS) < priority then return false end
+      if ConvertRange(avgFPS) < priority then
+        if not skipfpscheck then
+          timecheck = thisGameFrame + (SAMPLE_RATE * 10)
+          skipfpscheck = true
+        end
+        return false
+      end
     end
   end
 
@@ -882,7 +889,13 @@ local function IsProjectileFXVisible(fx)
     local avgFPS = GetAvgFPS()
         --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
     if avgFPS < 65 then
-      if ConvertRange(avgFPS) < priority then return false end
+      if ConvertRange(avgFPS) < priority then
+        if not skipfpscheck then
+          timecheck = thisGameFrame + (SAMPLE_RATE * 10)
+          skipfpscheck = true
+        end
+        return false
+      end
     end
   end
 
@@ -907,7 +920,13 @@ local function IsWorldFXVisible(fx)
     local avgFPS = GetAvgFPS()
         --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
     if avgFPS < 65 then
-      if ConvertRange(avgFPS) < priority then return false end
+      if ConvertRange(avgFPS) < priority then
+        if not skipfpscheck then
+          timecheck = thisGameFrame + (SAMPLE_RATE * 10)
+          skipfpscheck = true
+        end
+        return false
+      end
     end
   end
 
