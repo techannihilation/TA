@@ -150,7 +150,7 @@ return {
 				},
 			},
 			akmech_rocket = {
-				areaofeffect = 192,
+				areaofeffect = 92,
 				avoidfeature = false,
 				cegtag = "Core_Trail_rocket",
 				craterareaofeffect = 288,
