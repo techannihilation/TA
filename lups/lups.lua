@@ -749,7 +749,7 @@ local function GetDynamicLups()
 end
 
 local function ConvertRange(value)
-  local OldMax, OldMin, NewMax, NewMin = 65,20,5,1
+  local OldMax, OldMin, NewMax, NewMin = 65,40,5,1
   local OldRange = (OldMax - OldMin)
   local NewRange = (NewMax - NewMin)
   value = (((value - OldMin) * NewRange) / OldRange) + NewMin
@@ -847,7 +847,7 @@ local function IsUnitFXVisible(fx)
     if avgFPS < 65 then
       if ConvertRange(avgFPS) < priority then
         if not skipfpscheck then
-          timecheck = thisGameFrame + (SAMPLE_RATE * 10)
+          timecheck = thisGameFrame + (SAMPLE_RATE * 4)
           skipfpscheck = true
         end
         return false
@@ -891,7 +891,7 @@ local function IsProjectileFXVisible(fx)
     if avgFPS < 65 then
       if ConvertRange(avgFPS) < priority then
         if not skipfpscheck then
-          timecheck = thisGameFrame + (SAMPLE_RATE * 10)
+          timecheck = thisGameFrame + (SAMPLE_RATE * 4)
           skipfpscheck = true
         end
         return false
@@ -922,7 +922,7 @@ local function IsWorldFXVisible(fx)
     if avgFPS < 65 then
       if ConvertRange(avgFPS) < priority then
         if not skipfpscheck then
-          timecheck = thisGameFrame + (SAMPLE_RATE * 10)
+          timecheck = thisGameFrame + (SAMPLE_RATE * 4)
           skipfpscheck = true
         end
         return false
