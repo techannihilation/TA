@@ -687,6 +687,9 @@ Create()
 	hide eyeflare;
 	hide lgunflare;
 	hide rgunflare;
+	hide lmissle2;
+	hide rmissle2;
+	
 	dont-cache eyegun;
 	dont-shade eyegun;
 	bMoving = FALSE;
@@ -778,7 +781,7 @@ AimSecondary(heading, pitch)
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
 	bAiming = TRUE;
-	turn head to y-axis heading speed <300.071429>;
+	turn head to y-axis heading speed <150.000000>;
 	wait-for-turn head around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
