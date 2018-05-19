@@ -16,7 +16,7 @@ return {
 		canguard = true,
 		canmove = false,
 		canpatrol = true,
-		canreclamate = 0,
+		canreclaim = true,
 		canstop = 1,
 		cantbetransported = true,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
