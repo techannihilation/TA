@@ -16,7 +16,7 @@ return {
 		canguard = true,
 		canmove = false,
 		canpatrol = true,
-		canreclaim = false,
+		canreclaim = true,
 		canreclamate = 0,
 		canstop = 1,
 		cantbetransported = true,
