@@ -787,6 +787,20 @@ local function GetAvgFPS()
   return avgfps / weight
 end
 
+local function GetReduceEffects(priority)
+  local avgFPS = GetAvgFPS()
+  if avgFPS < 68 then
+    if ConvertRange(avgFPS) < priority then
+      if not skipfpscheck then
+        timecheck = thisGameFrame + (SAMPLE_RATE * 4)
+        skipfpscheck = true
+      end
+      return true
+    end
+  end
+  return false
+end
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -842,17 +856,8 @@ local function IsUnitFXVisible(fx)
   if GetPriority(priority) then return false end
 
   if GetDynamicLups() == 1 then
-    local avgFPS = GetAvgFPS()
-        --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
-    if avgFPS < 65 then
-      if ConvertRange(avgFPS) < priority then
-        if not skipfpscheck then
-          timecheck = thisGameFrame + (SAMPLE_RATE * 4)
-          skipfpscheck = true
-        end
-        return false
-      end
-    end
+    Spring.Echo(GetReduceEffects(priority))
+    if GetReduceEffects(priority) then return false end
   end
 
   if fx.onActive then
@@ -886,17 +891,7 @@ local function IsProjectileFXVisible(fx)
   if GetPriority(priority) then return false end
 
   if GetDynamicLups() == 1 then
-    local avgFPS = GetAvgFPS()
-        --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
-    if avgFPS < 65 then
-      if ConvertRange(avgFPS) < priority then
-        if not skipfpscheck then
-          timecheck = thisGameFrame + (SAMPLE_RATE * 4)
-          skipfpscheck = true
-        end
-        return false
-      end
-    end
+    if GetReduceEffects(priority) then return false end
   end
 
   if fx.alwaysVisible then
@@ -916,18 +911,8 @@ local function IsWorldFXVisible(fx)
   local priority = fx.priority or 3
   if GetPriority(priority) then return false end
 
-  if GetDynamicLups() == 1 then
-    local avgFPS = GetAvgFPS()
-        --Spring.Echo(GetDynamicLups(),GetAvgFPS(),ConvertRange(avgFPS),priority)
-    if avgFPS < 65 then
-      if ConvertRange(avgFPS) < priority then
-        if not skipfpscheck then
-          timecheck = thisGameFrame + (SAMPLE_RATE * 4)
-          skipfpscheck = true
-        end
-        return false
-      end
-    end
+ if GetDynamicLups() == 1 then
+    if GetReduceEffects(priority) then return false end
   end
 
   if fx.alwaysVisible then
