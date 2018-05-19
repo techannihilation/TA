@@ -781,12 +781,11 @@ end
 
 local function UpdateMorph(unitID, morphData)
   if SpGetUnitTransporter(unitID) then return true end
-    local teamID    = GetUnitTeam(unitID)
   if (morphData.progress < 1.0) and (SpUseUnitResource(unitID, morphData.def.resTable)) then
     morphData.progress = morphData.progress + morphData.increment
     SendToUnsynced("mph_prg", unitID, morphData.progress)
   end
-  if (morphData.progress >= 1.0) and #Spring.GetTeamUnits(teamID) < (MAXunits) then
+  if (morphData.progress >= 1.0) and morphData.teamID < (MAXunits) then
     FinishMorph(unitID, morphData)
     return false -- remove from the list, all done
   end
