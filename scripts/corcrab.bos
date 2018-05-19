@@ -11,7 +11,7 @@ piece  ssbase, sstoparm2, sstoparm5, sstoparm6, ssmidarm6, ssmidarm4, ssbotarm4,
 
 static-var  Static_Var_1, bMoving, restore_delay, gun_3, Static_Var_5,
             statechg_DesiredState, statechg_StateChanging;
-
+dd
 // Signal definitions
 #define SIG_AIM_2			2
 #define SIG_AIM				4
