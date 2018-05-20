@@ -736,7 +736,7 @@ local function GetPriority(priority)
   end
   GetPriorityCheckTime = thisGameFrame + CONFIG_CHECK_PERIOD
   GetPriorityStatus = (Spring.GetConfigInt("LupsPriority",3) or 3) < priority
-  return true 
+  return GetPriorityStatus 
 end
 
 local function GetDynamicLups()
@@ -856,7 +856,6 @@ local function IsUnitFXVisible(fx)
   if GetPriority(priority) then return false end
 
   if GetDynamicLups() == 1 then
-    Spring.Echo(GetReduceEffects(priority))
     if GetReduceEffects(priority) then return false end
   end
 
