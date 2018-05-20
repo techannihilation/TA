@@ -17,27 +17,33 @@ local spies  = {
 }
 
 local GetSelectedUnitsSorted = Spring.GetSelectedUnitsSorted
-local GetUnitStates = Spring.GetUnitStates
+local GetUnitIsCloaked = Spring.GetUnitIsCloaked
 local GetSelectedUnitsCount = Spring.GetSelectedUnitsCount
 local GetPlayerInfo = Spring.GetPlayerInfo
 
 local CMD_MOVE = CMD.MOVE
 
-function widget:PlayerChanged(playerID)
-    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
+function maybeRemoveSelf()
+    if Spring.GetSpectatingState() and (Spring.GetGameFrame() > 0 or gameStarted) then
         widgetHandler:RemoveWidget(self)
     end
 end
 
+function widget:GameStart()
+    gameStarted = true
+    maybeRemoveSelf()
+end
+
+function widget:PlayerChanged(playerID)
+    maybeRemoveSelf()
+end
+
 function widget:Initialize()
     if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
-        widget:PlayerChanged()
+        maybeRemoveSelf()
     end
 end
 
-function widget:GameStart()
-	widget:PlayerChanged()
-end
 
 local spySelected = false
 local sec = 0
@@ -49,12 +55,12 @@ function widget:Update(dt)
 		spySelected = false
 
 		local count = GetSelectedUnitsCount()
-		if count <= 15 then  -- above a little amount we aren't micro-ing spies anymore...
+		if count > 0 and count <= 12 then  -- above a little amount we aren't micro-ing spies anymore...
 			local selectedUnittypes = GetSelectedUnitsSorted()
 			for spyDefID in pairs(spies) do
 				if selectedUnittypes[spyDefID] then
 					for _,unitID in pairs(selectedUnittypes[spyDefID]) do
-						if GetUnitStates(unitID).cloak then
+						if GetUnitIsCloaked(unitID) then
 							spySelected = true	
 						end
 					end
@@ -65,7 +71,7 @@ function widget:Update(dt)
 end
 
 function widget:DefaultCommand()
-	if spySelected  then
+	if spySelected then
 		return CMD_MOVE
 	end
 end
