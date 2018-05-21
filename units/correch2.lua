@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 6397,
 		builder = true,
 		buildpic = "correch2.dds",
-		buildtime = 53000,
+		buildtime = 52155,
 		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "180 200 240",
