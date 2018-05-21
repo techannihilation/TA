@@ -3,7 +3,7 @@ return {
 		acceleration = 0.06,
 		airsightdistance = 920,
 		brakerate = 0.45,
-		buildcostenergy = 1380000,
+		buildcostenergy = 1481000,
 		buildcostmetal = 156650,
 		builder = false,
 		buildpic = "tllcolossus.dds",
