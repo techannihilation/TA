@@ -1,8 +1,8 @@
 return {
 	correch2 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 89350,
-		buildcostmetal = 5920,
+		buildcostenergy = 77350,
+		buildcostmetal = 6397,
 		builder = true,
 		buildpic = "correch2.dds",
 		buildtime = 55000,
