@@ -156,14 +156,14 @@ RequestState()
 			wait-for-turn door2b around z-axis;
 
 			
-			move stand1a to y-axis [4.000000] speed [12.000000];
-			move gun1a to y-axis [0.700000] speed [2.000000];
-			move stand1b to y-axis [4.000000] speed [12.000000];
-			move gun1b to y-axis [0.700000] speed [2.000000];
-			move stand2a to y-axis [4.000000] speed [12.000000];
-			move gun2a to y-axis [0.700000] speed [2.000000];
-			move stand2b to y-axis [4.000000] speed [12.000000];
-			move gun2b to y-axis [0.700000] speed [2.000000];
+			move stand1a to y-axis [3.000000] speed [12.000000];
+			move gun1a to y-axis [0.525000] speed [2.000000];
+			move stand1b to y-axis [3.000000] speed [12.000000];
+			move gun1b to y-axis [0.525000] speed [2.000000];
+			move stand2a to y-axis [3.000000] speed [12.000000];
+			move gun2a to y-axis [0.525000] speed [2.000000];
+			move stand2b to y-axis [3.000000] speed [12.000000];
+			move gun2b to y-axis [0.525000] speed [2.000000];
 			
 			turn turret1a to y-axis Turret_1 speed <160.000000>;
 			turn turret1b to y-axis Turret_1 speed <160.000000>;
