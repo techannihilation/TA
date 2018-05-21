@@ -2,7 +2,7 @@ return {
 	armrech4 = {
 		activatewhenbuilt = true,
 		buildcostenergy = 1570000,
-		buildcostmetal = 81640,
+		buildcostmetal = 122460,
 		builder = true,
 		buildpic = "armrech4.dds",
 		buildtime = 250000,
