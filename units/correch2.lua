@@ -1,11 +1,11 @@
 return {
 	correch2 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 57000,
-		buildcostmetal = 5640,
+		buildcostenergy = 77350,
+		buildcostmetal = 6397,
 		builder = true,
 		buildpic = "correch2.dds",
-		buildtime = 50000,
+		buildtime = 52155,
 		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "180 200 240",
@@ -19,7 +19,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 150,
-		mass = 5640,
+		mass = 5920,
 		maxdamage = 6000,
 		maxslope = 10,
 		name = "Advanced T2 Research Center",

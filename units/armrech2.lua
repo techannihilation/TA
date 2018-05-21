@@ -1,11 +1,11 @@
 return {
 	armrech2 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 57000,
-		buildcostmetal = 5640,
+		buildcostenergy = 65550,
+		buildcostmetal = 6586,
 		builder = true,
 		buildpic = "armrech2.dds",
-		buildtime = 50000,
+		buildtime = 52000,
 		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "-18 0 -10",
 		collisionvolumescales = "235 150 230",
@@ -20,7 +20,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 140,
-		mass = 5640,
+		mass = 6586,
 		maxdamage = 6000,
 		maxslope = 10,
 		name = "Advanced T2 Research Center",
