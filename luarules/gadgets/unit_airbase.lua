@@ -216,7 +216,6 @@ end
 function CheckAll()
    -- check all units to see if any need healing
    for _,unitID in ipairs(aircraft) do
-      local unitDefID = Spring.GetUnitDefID(unitID)
       if not landingPlanes[unitID] and not landedPlanes[unitID] and not tractorPlanes[unitID] and NeedsRepair(unitID) then
          pendingLanders[unitID] = true
       end     
