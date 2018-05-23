@@ -1176,6 +1176,15 @@ local function Initialize()
     end
   end
 
+  if Spring.GetConfigInt("lupsenablerefraction", 0) ~= 1 then
+    (gadgetHandler or widgetHandler):RemoveCallIn("DrawWorldRefraction")
+    Spring.Echo("Lups Refraction Pass Disabled")
+  end
+  if Spring.GetConfigInt("lupsenablereflection", 0) ~= 1 then
+    (gadgetHandler or widgetHandler):RemoveCallIn("DrawWorldReflection")
+    Spring.Echo("Lups Reflection Pass Disabled")
+  end
+
   --// link backup FXClasses
   for className,backupName in pairs(linkBackupFXClasses) do
     fxClasses[className]=fxClasses[backupName]

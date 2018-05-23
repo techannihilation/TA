@@ -930,6 +930,10 @@ function applyOptionValue(i, skipRedrawWindow)
 			end
 		elseif id == 'lupsdynamic' then
 			Spring.SetConfigInt("DynamicLups",value)
+		elseif id == 'lupsrefraction' then
+			Spring.SetConfigInt("lupsenablerefraction",value)
+		elseif id == 'lupsreflection' then
+			Spring.SetConfigInt("lupsenablereflection",value)
 		elseif id == 'advsky' then
 			Spring.SetConfigInt("AdvSky",value)
 		elseif id == 'shadows' then
@@ -1777,8 +1781,10 @@ function init()
 --]]
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=GetWidgetToggleValue("LupsManager"), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
 		{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=tonumber(Spring.GetConfigInt("LupsPriority",1) or 3), description='Sets lups particle effects quality'},
-		{id="lupsnanoeffect", group="gfx", name="Lups Nano Effect", type="select", options={'laser','particles'}, value=tonumber(Spring.GetConfigInt("LupsNanoEffect",2) or 1), description='Sets lups nano effect'},
-		{id="lupsdynamic", group="gfx", name="Dynamic Lups particle", type="bool", value=tonumber(Spring.GetConfigInt("DynamicLups",0) or 1), description='Auto adjust lups effect level depening on FPS'},
+		{id="lupsnanoeffect", group="gfx", name="Lups Nano Effect", type="select", options={'laser','particles'}, value=tonumber(Spring.GetConfigInt("LupsNanoEffect",2) or 1), description='Sets lups nano effect\n\nRESTART NEEDED'},
+		{id="lupsdynamic", group="gfx", name="Dynamic Lups particle", type="bool", value=tonumber(Spring.GetConfigInt("DynamicLups",0) or 1) ==1, description='Auto adjust lups effect level depening on FPS'},
+		{id="lupsrefraction", group="gfx", name="Toggle Lups Refraction Pass", type="bool", value=tonumber(Spring.GetConfigInt("lupsenablerefraction",1) or 1) == 1, description='The settings seem only relevant near water\nand disabling them reduces draw passes\n\nLuaUI RESTART NEEDED'},
+		{id="lupsreflection", group="gfx", name="Toggle Lups Reflection Pass", type="bool", value=tonumber(Spring.GetConfigInt("lupsenablereflection",1) or 1) == 1, description='The settings seem only relevant near water\nand disabling them reduces draw passes\n\nLuaUIRESTART NEEDED'},
 
 		{id="outline", group="gfx", widget="Outline", name="Unit outline (expensive)", type="bool", value=GetWidgetToggleValue("Outline"), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1000.\nStops rendering outlines when average fps falls below 13.'},
 		{id="outline_size", group="gfx", name=widgetOptionColor.."   thickness", min=0.8, max=1.5, step=0.05, type="slider", value=1, description='Set the size of the outline'},
