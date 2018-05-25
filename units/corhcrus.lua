@@ -123,7 +123,7 @@ return {
 				areaofeffect = 64,
 				avoidfeature = false,
 				canattackground = false,
-				cegtag = "Arm_Def_AA_Rocket",
+				cegtag = "Core_Def_AA_Rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
