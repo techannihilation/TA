@@ -39,7 +39,7 @@ return {
 		workertime = 250,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		buildoptions = {
-			[1] = "abuilderlvl2",
+			--[1] = "abuilderlvl2",
 		},
 		customparams = {
 			buildpic = "armrech2.dds",
