@@ -268,13 +268,13 @@ return {
 			},
 			[5] = {
 				def = "AA_MISSILE",
-				maindir = "-1 0 1",
+				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[6] = {
 				def = "AA_MISSILE",
-				maindir = "1 0 1",
+				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
