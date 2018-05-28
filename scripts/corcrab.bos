@@ -3,916 +3,376 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  ssbase, sstoparm2, sstoparm5, sstoparm6, ssmidarm6, ssmidarm4, ssbotarm4, ssmidarm3,
-       sstoes3, ssbotarm2, sstoes2, ssmidarm1, ssbotarm1, sstoes1, ssbody, sstoparm1,
-       ssbotarm6, ssmidarm5, ssbotarm5, ssmidarm2, sstoparm4, sstoparm3, ssbotarm3, turret1,
-       turret2, turret3, flare1, flare2, tube1, tube2, tube3, gun1,
-       gun2;
+piece  base, body, dome, legs,
+	   arm1, claw1a, door1a, turret1a, stand1a, gun1a, beam1a, claw1b, door1b, turret1b, stand1b, gun1b, beam1b,
+	   arm2, claw2a, door2a, turret2a, stand2a, gun2a, beam2a, claw2b, door2b, turret2b, stand2b, gun2b, beam2b,
+	   rupleg1, rloleg1a, rloleg1b, rupleg2, rloleg2a, rloleg2b, rupleg3, rloleg3a, rloleg3b,
+	   lupleg1, lloleg1a, lloleg1b, lupleg2, lloleg2a, lloleg2b, lupleg3, lloleg3a, lloleg3b ;
 
-static-var  Static_Var_1, bMoving, restore_delay, gun_3, Static_Var_5,
-            statechg_DesiredState, statechg_StateChanging;
-
-// Signal definitions
-#define SIG_AIM_2			2
-#define SIG_AIM				4
-#define SIG_AIM_3			8
-
-
-walk()
-{
-	if( TRUE )
-	{
-		move sstoparm2 to y-axis [0.000000] now;
-		move sstoparm2 to z-axis [0.000000] now;
-		move sstoparm5 to y-axis [0.000000] now;
-		move sstoparm6 to z-axis [0.000000] now;
-		move ssmidarm6 to z-axis [0.000000] now;
-		move ssmidarm4 to y-axis [0.000000] now;
-		move ssbotarm4 to x-axis [0.000000] now;
-		move ssmidarm3 to z-axis [0.000000] now;
-		move sstoes3 to x-axis [0.000000] now;
-		move sstoes3 to y-axis [0.000000] now;
-		move ssbotarm2 to z-axis [0.000000] now;
-		move sstoes2 to z-axis [0.000000] now;
-		move ssmidarm1 to y-axis [0.000000] now;
-		move ssbotarm1 to z-axis [0.000000] now;
-		move sstoes1 to y-axis [0.000000] now;
-		turn ssbody to y-axis <7.747253> now;
-		turn ssbody to y-axis <3.000000> speed <58.000000>;
-		turn sstoparm1 to z-axis <12.659341> now;
-		turn sstoparm1 to z-axis <7.000000> speed <65.000000>;
-		turn sstoparm2 to z-axis <3.247253> now;
-		turn sstoparm2 to z-axis <8.000000> speed <109.000000>;
-		turn sstoparm5 to z-axis <-4.879121> now;
-		turn sstoparm5 to z-axis <-1.000000> speed <36.000000>;
-		turn sstoparm6 to z-axis <-12.258242> now;
-		turn sstoparm6 to z-axis <-17.000000> speed <109.000000>;
-		turn ssmidarm6 to y-axis <10.615385> now;
-		turn ssmidarm6 to y-axis <-3.000000> speed <263.000000>;
-		turn ssbotarm6 to z-axis <2.846154> now;
-		turn ssbotarm6 to z-axis <-5.000000> speed <168.000000>;
-		turn ssmidarm5 to y-axis <-31.071429> now;
-		turn ssmidarm5 to y-axis <-22.000000> speed <131.000000>;
-		turn ssbotarm5 to z-axis <-22.505495> now;
-		turn ssbotarm5 to z-axis <-10.000000> speed <204.000000>;
-		turn ssmidarm4 to y-axis <60.538462> now;
-		turn ssmidarm4 to y-axis <59.005495> speed <0.000000>;
-		turn ssmidarm3 to y-axis <6.527473> now;
-		turn ssmidarm3 to y-axis <0.000000> speed <94.000000>;
-		turn ssmidarm2 to y-axis <-58.093407> now;
-		turn ssmidarm2 to y-axis <-32.005495> speed <431.000000>;
-		turn ssbotarm2 to y-axis <0.000000> now;
-		turn ssbotarm2 to y-axis <0.000000> speed <0.000000>;
-		turn ssbotarm2 to z-axis <-3.670330> now;
-		turn ssbotarm2 to z-axis <-10.000000> speed <138.000000>;
-		turn sstoes2 to z-axis <-20.027473> now;
-		turn sstoes2 to z-axis <-19.000000> speed <7.000000>;
-		turn ssmidarm1 to y-axis <45.390110> now;
-		turn ssmidarm1 to y-axis <37.005495> speed <127.000000>;
-		turn ssbotarm1 to z-axis <44.571429> now;
-		turn ssbotarm1 to z-axis <32.005495> speed <199.000000>;
-		turn sstoes1 to z-axis <-30.247253> now;
-		turn sstoes1 to z-axis <-18.000000> speed <189.000000>;
-		sleep 56;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <2.000000> speed <21.000000>;
-		turn sstoparm1 to z-axis <4.000000> speed <63.000000>;
-		turn sstoparm2 to z-axis <11.000000> speed <49.000000>;
-		turn sstoparm4 to z-axis <-2.000000> speed <56.000000>;
-		turn sstoparm5 to z-axis <0.000000> speed <49.000000>;
-		turn sstoparm6 to z-axis <-23.005495> speed <105.000000>;
-		turn ssmidarm6 to y-axis <-18.000000> speed <261.000000>;
-		turn ssbotarm6 to z-axis <-30.005495> speed <423.000000>;
-		turn ssmidarm5 to y-axis <-5.000000> speed <296.000000>;
-		turn ssbotarm5 to z-axis <0.000000> speed <190.000000>;
-		turn ssmidarm4 to y-axis <57.005495> speed <35.000000>;
-		turn ssmidarm3 to y-axis <-13.000000> speed <275.000000>;
-		turn ssmidarm2 to y-axis <-9.000000> speed <402.000000>;
-		turn ssbotarm2 to z-axis <-1.000000> speed <148.000000>;
-		turn sstoes2 to z-axis <-39.005495> speed <345.000000>;
-		turn ssmidarm1 to y-axis <30.005495> speed <123.000000>;
-		turn ssbotarm1 to z-axis <21.000000> speed <192.000000>;
-		turn sstoes1 to z-axis <-7.000000> speed <183.000000>;
-		sleep 58;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <1.000000> speed <20.000000>;
-		turn sstoparm1 to z-axis <1.000000> speed <45.000000>;
-		turn sstoparm2 to z-axis <17.000000> speed <104.000000>;
-		turn sstoparm4 to z-axis <-8.000000> speed <104.000000>;
-		turn sstoparm6 to z-axis <-17.000000> speed <97.000000>;
-		turn ssmidarm6 to y-axis <-34.005495> speed <284.000000>;
-		turn ssbotarm6 to z-axis <-43.005495> speed <228.000000>;
-		turn ssmidarm5 to y-axis <0.000000> speed <90.000000>;
-		turn ssmidarm4 to y-axis <32.005495> speed <416.000000>;
-		turn ssbotarm4 to z-axis <2.000000> speed <62.000000>;
-		turn ssmidarm3 to y-axis <-36.005495> speed <381.000000>;
-		turn ssmidarm2 to y-axis <3.000000> speed <249.000000>;
-		turn ssbotarm2 to z-axis <5.000000> speed <159.000000>;
-		turn sstoes2 to z-axis <-39.005495> speed <6.000000>;
-		turn ssmidarm1 to y-axis <22.000000> speed <121.000000>;
-		turn ssbotarm1 to z-axis <10.000000> speed <188.000000>;
-		turn sstoes1 to z-axis <-3.000000> speed <76.000000>;
-		sleep 59;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <0.000000> speed <48.000000>;
-		turn sstoparm1 to z-axis <0.000000> speed <45.000000>;
-		turn sstoparm2 to z-axis <23.005495> speed <104.000000>;
-		turn sstoparm4 to z-axis <-11.000000> speed <48.000000>;
-		turn sstoparm6 to z-axis <-11.000000> speed <104.000000>;
-		turn ssmidarm6 to y-axis <-45.005495> speed <152.000000>;
-		turn ssbotarm6 to z-axis <-32.005495> speed <187.000000>;
-		turn ssmidarm5 to y-axis <13.000000> speed <270.000000>;
-		turn ssmidarm4 to y-axis <9.000000> speed <395.000000>;
-		turn ssbotarm4 to z-axis <7.000000> speed <83.000000>;
-		turn ssmidarm3 to y-axis <-59.005495> speed <388.000000>;
-		turn ssmidarm2 to y-axis <18.000000> speed <256.000000>;
-		turn ssbotarm2 to z-axis <30.005495> speed <416.000000>;
-		turn ssmidarm1 to y-axis <5.000000> speed <294.000000>;
-		turn ssbotarm1 to z-axis <0.000000> speed <188.000000>;
-		turn sstoes1 to z-axis <0.000000> speed <76.000000>;
-		sleep 59;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <-1.000000> speed <20.000000>;
-		turn sstoparm2 to z-axis <17.000000> speed <97.000000>;
-		turn sstoparm4 to z-axis <-17.000000> speed <104.000000>;
-		turn sstoparm6 to z-axis <-7.000000> speed <62.000000>;
-		turn ssmidarm6 to y-axis <-37.005495> speed <110.000000>;
-		turn ssbotarm6 to z-axis <-21.000000> speed <187.000000>;
-		turn ssmidarm5 to y-axis <36.005495> speed <381.000000>;
-		turn ssmidarm4 to y-axis <-3.000000> speed <249.000000>;
-		turn ssbotarm4 to z-axis <1.000000> speed <110.000000>;
-		turn ssmidarm3 to y-axis <-59.005495> speed <0.000000>;
-		turn ssmidarm2 to y-axis <34.005495> speed <284.000000>;
-		turn ssbotarm2 to z-axis <43.005495> speed <228.000000>;
-		turn sstoes2 to z-axis <-34.005495> speed <83.000000>;
-		turn ssmidarm1 to y-axis <0.000000> speed <93.000000>;
-		sleep 59;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <-2.000000> speed <28.000000>;
-		turn sstoparm2 to z-axis <11.000000> speed <105.000000>;
-		turn sstoparm3 to z-axis <2.000000> speed <56.000000>;
-		turn sstoparm4 to z-axis <-23.005495> speed <105.000000>;
-		turn sstoparm6 to z-axis <-4.000000> speed <63.000000>;
-		turn ssmidarm6 to y-axis <-30.005495> speed <126.000000>;
-		turn ssbotarm6 to z-axis <-10.000000> speed <190.000000>;
-		turn ssmidarm5 to y-axis <59.005495> speed <395.000000>;
-		turn ssmidarm4 to y-axis <-18.000000> speed <261.000000>;
-		turn ssbotarm4 to z-axis <-5.000000> speed <155.000000>;
-		turn ssmidarm3 to y-axis <-57.005495> speed <28.000000>;
-		turn ssbotarm3 to z-axis <-8.000000> speed <162.000000>;
-		turn ssmidarm2 to y-axis <45.005495> speed <155.000000>;
-		turn ssbotarm2 to z-axis <43.005495> speed <0.000000>;
-		turn sstoes2 to z-axis <-29.005495> speed <84.000000>;
-		turn ssmidarm1 to y-axis <-13.000000> speed <271.000000>;
-		sleep 58;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <-4.000000> speed <28.000000>;
-		turn sstoparm2 to z-axis <7.000000> speed <63.000000>;
-		turn sstoparm3 to z-axis <8.000000> speed <105.000000>;
-		turn sstoparm4 to z-axis <-12.000000> speed <190.000000>;
-		turn sstoparm6 to z-axis <-1.000000> speed <49.000000>;
-		turn ssmidarm6 to y-axis <-22.000000> speed <126.000000>;
-		turn ssbotarm6 to z-axis <0.000000> speed <197.000000>;
-		turn ssmidarm5 to y-axis <59.005495> speed <0.000000>;
-		turn ssmidarm4 to y-axis <-34.005495> speed <289.000000>;
-		turn ssbotarm4 to z-axis <-30.005495> speed <416.000000>;
-		turn ssmidarm3 to y-axis <-32.005495> speed <423.000000>;
-		turn ssbotarm3 to z-axis <-10.000000> speed <35.000000>;
-		turn ssmidarm2 to y-axis <37.005495> speed <112.000000>;
-		turn ssbotarm2 to z-axis <32.005495> speed <190.000000>;
-		turn sstoes2 to z-axis <-18.000000> speed <183.000000>;
-		turn ssmidarm1 to y-axis <-36.005495> speed <391.000000>;
-		sleep 58;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <-6.000000> speed <43.000000>;
-		turn sstoparm2 to z-axis <4.000000> speed <64.000000>;
-		turn sstoparm3 to z-axis <11.000000> speed <50.000000>;
-		turn sstoparm4 to z-axis <-11.000000> speed <14.000000>;
-		turn sstoparm5 to z-axis <-2.000000> speed <57.000000>;
-		turn sstoparm6 to z-axis <0.000000> speed <43.000000>;
-		turn ssmidarm6 to y-axis <-5.000000> speed <301.000000>;
-		turn ssmidarm5 to y-axis <57.005495> speed <35.000000>;
-		turn ssbotarm5 to z-axis <2.000000> speed <64.000000>;
-		turn ssmidarm4 to y-axis <-45.005495> speed <165.000000>;
-		turn ssbotarm4 to z-axis <-43.005495> speed <236.000000>;
-		turn ssmidarm3 to y-axis <-9.000000> speed <416.000000>;
-		turn ssbotarm3 to z-axis <-1.000000> speed <150.000000>;
-		turn ssmidarm2 to y-axis <30.005495> speed <129.000000>;
-		turn ssbotarm2 to z-axis <20.000000> speed <208.000000>;
-		turn sstoes2 to z-axis <-7.000000> speed <186.000000>;
-		turn ssmidarm1 to y-axis <-59.005495> speed <398.000000>;
-		sleep 57;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <-4.000000> speed <43.000000>;
-		turn sstoparm2 to z-axis <1.000000> speed <50.000000>;
-		turn sstoparm3 to z-axis <17.000000> speed <107.000000>;
-		turn sstoparm4 to z-axis <-7.000000> speed <64.000000>;
-		turn sstoparm5 to z-axis <-8.000000> speed <107.000000>;
-		turn ssmidarm6 to y-axis <0.000000> speed <93.000000>;
-		turn ssmidarm5 to y-axis <32.005495> speed <423.000000>;
-		turn ssbotarm5 to z-axis <8.000000> speed <100.000000>;
-		turn ssmidarm4 to y-axis <-37.005495> speed <122.000000>;
-		turn ssbotarm4 to z-axis <-32.005495> speed <193.000000>;
-		turn ssmidarm3 to y-axis <3.000000> speed <251.000000>;
-		turn ssbotarm3 to z-axis <5.000000> speed <165.000000>;
-		turn ssmidarm2 to y-axis <22.000000> speed <129.000000>;
-		turn ssbotarm2 to z-axis <10.000000> speed <179.000000>;
-		turn sstoes2 to z-axis <-3.000000> speed <78.000000>;
-		sleep 57;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <-2.000000> speed <36.000000>;
-		turn sstoparm1 to z-axis <2.000000> speed <58.000000>;
-		turn sstoparm2 to z-axis <0.000000> speed <43.000000>;
-		turn sstoparm3 to z-axis <23.005495> speed <109.000000>;
-		turn sstoparm4 to z-axis <-4.000000> speed <65.000000>;
-		turn sstoparm5 to z-axis <-11.000000> speed <51.000000>;
-		turn ssmidarm6 to y-axis <13.000000> speed <284.000000>;
-		turn ssmidarm5 to y-axis <9.000000> speed <416.000000>;
-		turn ssbotarm5 to z-axis <10.000000> speed <29.000000>;
-		turn ssmidarm4 to y-axis <-30.005495> speed <131.000000>;
-		turn ssbotarm4 to z-axis <-21.000000> speed <197.000000>;
-		turn ssmidarm3 to y-axis <18.000000> speed <270.000000>;
-		turn ssbotarm3 to z-axis <30.005495> speed <438.000000>;
-		turn ssmidarm2 to y-axis <5.000000> speed <306.000000>;
-		turn ssbotarm2 to z-axis <0.000000> speed <204.000000>;
-		turn sstoes2 to z-axis <0.000000> speed <80.000000>;
-		turn ssmidarm1 to y-axis <-57.005495> speed <25.000000>;
-		turn ssbotarm1 to z-axis <-2.000000> speed <65.000000>;
-		sleep 56;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <-1.000000> speed <20.000000>;
-		turn sstoparm1 to z-axis <8.000000> speed <102.000000>;
-		turn sstoparm3 to z-axis <17.000000> speed <95.000000>;
-		turn sstoparm4 to z-axis <-1.000000> speed <47.000000>;
-		turn sstoparm5 to z-axis <-17.000000> speed <102.000000>;
-		turn ssmidarm6 to y-axis <35.005495> speed <368.000000>;
-		turn ssmidarm5 to y-axis <-3.000000> speed <245.000000>;
-		turn ssbotarm5 to z-axis <1.000000> speed <143.000000>;
-		turn ssmidarm4 to y-axis <-22.000000> speed <122.000000>;
-		turn ssbotarm4 to z-axis <-10.000000> speed <190.000000>;
-		turn ssmidarm3 to y-axis <34.005495> speed <279.000000>;
-		turn ssbotarm3 to z-axis <43.005495> speed <225.000000>;
-		turn ssmidarm2 to y-axis <0.000000> speed <88.000000>;
-		turn ssmidarm1 to y-axis <-32.005495> speed <412.000000>;
-		turn ssbotarm1 to z-axis <-8.000000> speed <93.000000>;
-		turn sstoes1 to z-axis <-19.000000> speed <337.000000>;
-		sleep 60;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <0.000000> speed <21.000000>;
-		turn sstoparm1 to z-axis <11.000000> speed <50.000000>;
-		turn sstoparm3 to z-axis <11.000000> speed <107.000000>;
-		turn sstoparm4 to z-axis <0.000000> speed <43.000000>;
-		turn sstoparm5 to z-axis <-23.005495> speed <107.000000>;
-		turn ssmidarm6 to y-axis <59.005495> speed <409.000000>;
-		turn ssmidarm5 to y-axis <-18.000000> speed <265.000000>;
-		turn ssbotarm5 to z-axis <-5.000000> speed <150.000000>;
-		turn ssmidarm4 to y-axis <-5.000000> speed <301.000000>;
-		turn ssbotarm4 to z-axis <0.000000> speed <193.000000>;
-		turn ssmidarm3 to y-axis <45.005495> speed <165.000000>;
-		turn ssbotarm3 to z-axis <43.005495> speed <0.000000>;
-		turn ssmidarm2 to y-axis <-13.000000> speed <279.000000>;
-		turn ssmidarm1 to y-axis <-9.000000> speed <409.000000>;
-		turn ssbotarm1 to z-axis <-10.000000> speed <34.000000>;
-		turn sstoes1 to z-axis <-39.005495> speed <355.000000>;
-		sleep 57;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <1.000000> speed <49.000000>;
-		turn sstoparm1 to z-axis <17.000000> speed <105.000000>;
-		turn sstoparm3 to z-axis <7.000000> speed <63.000000>;
-		turn sstoparm5 to z-axis <-17.000000> speed <98.000000>;
-		turn ssmidarm5 to y-axis <-34.005495> speed <289.000000>;
-		turn ssbotarm5 to z-axis <-30.005495> speed <444.000000>;
-		turn ssmidarm4 to y-axis <0.000000> speed <91.000000>;
-		turn ssmidarm3 to y-axis <37.005495> speed <119.000000>;
-		turn ssbotarm3 to z-axis <32.005495> speed <190.000000>;
-		turn ssmidarm2 to y-axis <-35.005495> speed <380.000000>;
-		turn ssmidarm1 to y-axis <3.000000> speed <257.000000>;
-		turn ssbotarm1 to z-axis <-1.000000> speed <149.000000>;
-		turn sstoes1 to z-axis <-39.005495> speed <3.000000>;
-		sleep 58;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <2.000000> speed <21.000000>;
-		turn sstoparm1 to z-axis <23.005495> speed <105.000000>;
-		turn sstoparm3 to z-axis <4.000000> speed <63.000000>;
-		turn sstoparm5 to z-axis <-11.000000> speed <105.000000>;
-		turn sstoparm6 to z-axis <-2.000000> speed <56.000000>;
-		turn ssmidarm6 to y-axis <57.005495> speed <35.000000>;
-		turn ssbotarm6 to z-axis <2.000000> speed <63.000000>;
-		turn ssmidarm5 to y-axis <-45.005495> speed <162.000000>;
-		turn ssbotarm5 to z-axis <-43.005495> speed <218.000000>;
-		turn ssmidarm4 to y-axis <13.000000> speed <275.000000>;
-		turn ssmidarm3 to y-axis <30.005495> speed <126.000000>;
-		turn ssbotarm3 to z-axis <21.000000> speed <190.000000>;
-		turn ssmidarm2 to y-axis <-59.005495> speed <402.000000>;
-		turn ssmidarm1 to y-axis <18.000000> speed <257.000000>;
-		turn ssbotarm1 to z-axis <5.000000> speed <149.000000>;
-		turn sstoes1 to z-axis <-39.005495> speed <3.000000>;
-		sleep 58;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <4.000000> speed <33.000000>;
-		turn sstoparm1 to z-axis <17.000000> speed <97.000000>;
-		turn sstoparm3 to z-axis <1.000000> speed <46.000000>;
-		turn sstoparm5 to z-axis <-7.000000> speed <60.000000>;
-		turn sstoparm6 to z-axis <-8.000000> speed <100.000000>;
-		turn ssmidarm6 to y-axis <32.005495> speed <395.000000>;
-		turn ssbotarm6 to z-axis <10.000000> speed <127.000000>;
-		turn ssmidarm5 to y-axis <-37.005495> speed <114.000000>;
-		turn ssbotarm5 to z-axis <-32.005495> speed <181.000000>;
-		turn ssmidarm4 to y-axis <36.005495> speed <368.000000>;
-		turn ssmidarm3 to y-axis <22.000000> speed <120.000000>;
-		turn ssbotarm3 to z-axis <10.000000> speed <187.000000>;
-		turn ssmidarm2 to y-axis <-59.005495> speed <0.000000>;
-		turn ssmidarm1 to y-axis <34.005495> speed <275.000000>;
-		turn ssbotarm1 to z-axis <30.005495> speed <409.000000>;
-		turn sstoes1 to z-axis <-34.005495> speed <80.000000>;
-		sleep 61;
-	}
-	if( TRUE )
-	{
-		turn ssbody to y-axis <6.000000> speed <40.000000>;
-		turn sstoparm1 to z-axis <11.000000> speed <97.000000>;
-		turn sstoparm2 to z-axis <2.000000> speed <53.000000>;
-		turn sstoparm3 to z-axis <0.000000> speed <40.000000>;
-		turn sstoparm5 to z-axis <-3.000000> speed <67.000000>;
-		turn sstoparm6 to z-axis <-11.000000> speed <46.000000>;
-		turn ssmidarm6 to y-axis <9.000000> speed <382.000000>;
-		turn ssbotarm6 to z-axis <1.000000> speed <140.000000>;
-		turn ssmidarm5 to y-axis <-30.005495> speed <120.000000>;
-		turn ssbotarm5 to z-axis <-21.000000> speed <181.000000>;
-		turn ssmidarm4 to y-axis <59.005495> speed <382.000000>;
-		turn ssmidarm3 to y-axis <5.000000> speed <281.000000>;
-		turn ssbotarm3 to z-axis <0.000000> speed <181.000000>;
-		turn ssmidarm2 to y-axis <-57.005495> speed <33.000000>;
-		turn ssbotarm2 to y-axis <0.000000> speed <0.000000>;
-		turn ssbotarm2 to z-axis <-2.000000> speed <60.000000>;
-		turn sstoes2 to z-axis <-19.000000> speed <328.000000>;
-		turn ssmidarm1 to y-axis <45.005495> speed <154.000000>;
-		turn ssbotarm1 to z-axis <43.005495> speed <221.000000>;
-		turn sstoes1 to z-axis <-29.005495> speed <80.000000>;
-		sleep 61;
-	}
-	sleep 1;
-}
-
-activatescr()
-{
-	if( TRUE )
-	{
-		move sstoparm2 to y-axis [0.000000] now;
-		move sstoparm2 to z-axis [0.000000] now;
-		move sstoparm5 to y-axis [0.000000] now;
-		move sstoparm6 to z-axis [0.000000] now;
-		move ssmidarm6 to z-axis [0.000000] now;
-		move ssmidarm4 to y-axis [0.000000] now;
-		move ssbotarm4 to x-axis [0.000000] now;
-		move ssmidarm3 to z-axis [0.000000] now;
-		move sstoes3 to x-axis [0.000000] now;
-		move sstoes3 to y-axis [0.000000] now;
-		move ssbotarm2 to z-axis [0.000000] now;
-		move sstoes2 to z-axis [0.000000] now;
-		move ssmidarm1 to y-axis [0.000000] now;
-		move ssbotarm1 to z-axis [0.000000] now;
-		turn sstoparm1 to z-axis <0.000000> now;
-		turn sstoparm1 to z-axis <-3.000000> speed <54.000000>;
-		turn sstoparm4 to z-axis <0.000000> now;
-		turn sstoparm4 to z-axis <3.000000> speed <54.000000>;
-		turn ssmidarm4 to z-axis <0.000000> now;
-		turn ssmidarm4 to z-axis <-8.000000> speed <124.000000>;
-		turn ssbotarm4 to z-axis <0.000000> now;
-		turn ssbotarm4 to z-axis <5.000000> speed <78.000000>;
-		turn ssmidarm1 to z-axis <0.000000> now;
-		turn ssmidarm1 to z-axis <8.000000> speed <124.000000>;
-		turn ssbotarm1 to z-axis <0.000000> now;
-		turn ssbotarm1 to z-axis <-5.000000> speed <78.000000>;
-		sleep 78;
-	}
-	if( TRUE )
-	{
-		turn sstoparm1 to z-axis <-7.000000> speed <55.000000>;
-		turn sstoparm4 to z-axis <7.000000> speed <55.000000>;
-		turn ssmidarm4 to z-axis <-18.000000> speed <125.000000>;
-		turn ssbotarm4 to z-axis <11.000000> speed <79.000000>;
-		turn ssmidarm1 to z-axis <18.000000> speed <125.000000>;
-		turn ssbotarm1 to z-axis <-11.000000> speed <79.000000>;
-		sleep 77;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [-0.500000] speed [0.000000];
-		move ssbotarm1 to y-axis [0.100000] speed [1.000000];
-		turn sstoparm1 to z-axis <-8.000000> speed <13.000000>;
-		turn sstoparm4 to z-axis <8.000000> speed <13.000000>;
-		turn ssmidarm4 to z-axis <-19.000000> speed <13.000000>;
-		turn ssbotarm4 to z-axis <10.000000> speed <13.000000>;
-		turn ssmidarm1 to z-axis <19.000000> speed <13.000000>;
-		turn ssbotarm1 to z-axis <-10.000000> speed <6.000000>;
-		sleep 70;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [0.500000] speed [1.000000];
-		move ssbotarm1 to y-axis [0.150000] speed [0.000000];
-		turn sstoparm1 to z-axis <-9.000000> speed <11.000000>;
-		turn sstoparm4 to z-axis <9.000000> speed <11.000000>;
-		turn ssmidarm4 to z-axis <-20.000000> speed <11.000000>;
-		turn ssbotarm4 to z-axis <9.000000> speed <5.000000>;
-		turn ssmidarm1 to z-axis <20.000000> speed <11.000000>;
-		turn ssbotarm1 to z-axis <-9.000000> speed <11.000000>;
-		sleep 84;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [-0.500000] speed [1.000000];
-		move ssbotarm1 to y-axis [0.500000] speed [1.000000];
-		turn sstoparm1 to z-axis <-7.000000> speed <20.000000>;
-		turn sstoparm4 to z-axis <7.000000> speed <20.000000>;
-		turn ssmidarm4 to z-axis <-18.000000> speed <20.000000>;
-		turn ssbotarm4 to z-axis <11.000000> speed <15.000000>;
-		turn ssmidarm1 to z-axis <18.000000> speed <20.000000>;
-		turn ssbotarm1 to z-axis <-11.000000> speed <15.000000>;
-		sleep 93;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [0.000000] speed [0.000000];
-		move ssbotarm1 to y-axis [0.000000] speed [0.000000];
-		sleep 83;
-	}
-}
-
-deactivatescr()
-{
-	if( TRUE )
-	{
-		move sstoparm2 to y-axis [0.000000] now;
-		move sstoparm2 to z-axis [0.000000] now;
-		move sstoparm5 to y-axis [0.000000] now;
-		move sstoparm6 to z-axis [0.000000] now;
-		move ssmidarm6 to z-axis [0.000000] now;
-		move ssmidarm4 to y-axis [0.000000] now;
-		move ssbotarm4 to x-axis [0.000000] now;
-		move ssmidarm3 to z-axis [0.000000] now;
-		move sstoes3 to x-axis [0.000000] now;
-		move sstoes3 to y-axis [0.000000] now;
-		move ssbotarm2 to z-axis [0.000000] now;
-		move sstoes2 to z-axis [0.000000] now;
-		move ssmidarm1 to y-axis [0.000000] now;
-		move ssbotarm1 to z-axis [0.000000] now;
-		move sstoes1 to y-axis [0.000000] now;
-		turn sstoparm1 to z-axis <-8.489011> now;
-		turn sstoparm4 to z-axis <8.489011> now;
-		turn ssmidarm4 to z-axis <-19.346154> now;
-		turn ssbotarm4 to z-axis <12.269231> now;
-		turn ssmidarm1 to z-axis <19.346154> now;
-		turn ssbotarm1 to z-axis <-12.269231> now;
-		sleep 50;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [-0.200000] speed [0.000000];
-		move ssbotarm1 to y-axis [0.200000] speed [0.000000];
-		sleep 100;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [-0.500000] speed [0.000000];
-		move ssbotarm1 to y-axis [0.500000] speed [0.000000];
-		sleep 100;
-	}
-	if( TRUE )
-	{
-		move ssbotarm1 to y-axis [0.700000] speed [0.000000];
-		turn sstoparm1 to z-axis <-7.000000> speed <4.000000>;
-		turn sstoparm4 to z-axis <7.000000> speed <4.000000>;
-		turn ssmidarm4 to z-axis <-18.000000> speed <4.000000>;
-		turn ssbotarm4 to z-axis <10.000000> speed <4.000000>;
-		turn ssmidarm1 to z-axis <18.000000> speed <4.000000>;
-		turn ssbotarm1 to z-axis <-11.000000> speed <2.000000>;
-		sleep 100;
-	}
-	if( TRUE )
-	{
-		move ssbotarm1 to y-axis [0.100000] speed [0.000000];
-		turn sstoparm1 to z-axis <-8.000000> speed <4.000000>;
-		turn sstoparm4 to z-axis <8.000000> speed <4.000000>;
-		turn ssmidarm4 to z-axis <-19.000000> speed <4.000000>;
-		turn ssbotarm4 to z-axis <10.000000> speed <4.000000>;
-		turn ssmidarm1 to z-axis <19.000000> speed <4.000000>;
-		turn ssbotarm1 to z-axis <-10.000000> speed <2.000000>;
-		sleep 100;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [-0.200000] speed [0.000000];
-		move ssbotarm1 to y-axis [0.500000] speed [0.000000];
-		turn sstoparm1 to z-axis <-3.000000> speed <47.000000>;
-		turn sstoparm4 to z-axis <3.000000> speed <47.000000>;
-		turn ssmidarm4 to z-axis <-9.000000> speed <101.000000>;
-		turn ssbotarm4 to z-axis <4.000000> speed <56.000000>;
-		turn ssmidarm1 to z-axis <9.000000> speed <101.000000>;
-		turn ssbotarm1 to z-axis <-4.000000> speed <59.000000>;
-		sleep 100;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [-0.100000] speed [0.000000];
-		move ssbotarm1 to y-axis [0.200000] speed [0.000000];
-		turn sstoparm1 to z-axis <-1.000000> speed <33.000000>;
-		turn sstoparm4 to z-axis <1.000000> speed <33.000000>;
-		turn ssmidarm4 to z-axis <-4.000000> speed <72.000000>;
-		turn ssbotarm4 to z-axis <1.000000> speed <40.000000>;
-		turn ssmidarm1 to z-axis <4.000000> speed <72.000000>;
-		turn ssbotarm1 to z-axis <-1.000000> speed <42.000000>;
-		sleep 70;
-	}
-	if( TRUE )
-	{
-		move ssbotarm4 to y-axis [0.000000] speed [0.000000];
-		move ssbotarm1 to y-axis [0.000000] speed [0.000000];
-		turn sstoparm1 to z-axis <0.000000> speed <59.000000>;
-		turn sstoparm4 to z-axis <0.000000> speed <59.000000>;
-		turn ssmidarm4 to z-axis <0.000000> speed <126.000000>;
-		turn ssbotarm4 to z-axis <0.000000> speed <70.000000>;
-		turn ssmidarm1 to z-axis <0.000000> speed <126.000000>;
-		turn ssbotarm1 to z-axis <0.000000> speed <73.000000>;
-		sleep 40;
-	}
-	sleep 40;
-}
+static-var  Turret_1, Moving_2, ReqState_3, On_4, Gun_4, Busy_5, Waiting_6, Turning_7, shieldonoff;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
+	var Func_Var_4;
 	while( TRUE )
 	{
-		healthpercent = get HEALTH;
+		healthpercent = ( get HEALTH );
 		if( healthpercent < 66 )
 		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
+			smoketype = ( 256 | 2 );
+			if( Rand(1,66) < healthpercent )
 			{
-				smoketype = 256 | 1;
+				smoketype = ( 256 | 1 );
 			}
-			emit-sfx smoketype from ssbody;
+			Func_Var_4 = Rand(1,2);
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from gun1a;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from gun2b;
+			}
 		}
-		sleeptime = healthpercent * 50;
+		sleeptime = ( healthpercent * 50 );
 		if( sleeptime < 200 )
 		{
 			sleeptime = 200;
 		}
 		sleep sleeptime;
-	}
-}
 
-Go()
-{
-	call-script activatescr();
-	Static_Var_1 = 1;
-}
-
-Stop()
-{
-	Static_Var_1 = 0;
-	call-script deactivatescr();
-}
-
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
+		if( !Busy_5 )
 		{
-			call-script Go();
-			currentstate = 0;
+			Waiting_6 = 0;
 		}
-		if( statechg_DesiredState == 1 )
+		if( Busy_5 )
 		{
-			call-script Stop();
-			currentstate = 1;
+			Waiting_6 = Waiting_6 + sleeptime ;
+			if( Waiting_6 > 11000 )
+			{
+				Busy_5 = 0;
+				Waiting_6 = 0;
+			}
 		}
 	}
-	statechg_StateChanging = FALSE;
 }
 
-MotionControl(Func_Var_1)
+
+
+MotionControl()
 {
+	var preang;
+	var ang;
 	while( TRUE )
 	{
-		Func_Var_1 = bMoving;
-		if( Func_Var_1 )
+		ang = get XZ_ATAN(-419);
+		Turning_7 = 0;
+		if (ang != preang)
 		{
-			call-script walk();
+			Turning_7 = 1;
 		}
-		if( !Func_Var_1 )
+		sleep 100;
+		preang = ang;
+		
+		if(( Moving_2 || Turning_7 ))
 		{
-			sleep 100;
+		TURN rupleg1 to y-axis <0> SPEED <40>;
+		TURN rupleg1 to z-axis <0> SPEED <40>;
+		TURN rupleg2 to z-axis <15> SPEED <40>;
+		TURN rupleg3 to y-axis <16.5> SPEED <40>;
+		TURN rupleg3 to z-axis <0> SPEED <40>;
+		TURN lupleg1 to y-axis <-19.5> SPEED <40>;
+		TURN lupleg1 to z-axis <0> SPEED <40>;
+		TURN lupleg2 to y-axis <0> SPEED <40>;
+		TURN lupleg2 to z-axis <0> SPEED <40>;
+		TURN lupleg3 to y-axis <-14.5> SPEED <40>;
+		TURN lupleg3 to z-axis <-22.5> SPEED <40>;
+		SLEEP 225;
+		
+		TURN rupleg2 to y-axis <16.5> SPEED <40>;
+		TURN rupleg2 to z-axis <15> SPEED <40>;
+		TURN lupleg1 to y-axis <0> SPEED <40>;
+		TURN lupleg2 to z-axis <-15> SPEED <40>;
+		TURN lupleg3 to z-axis <1> SPEED <40>;
+		TURN rupleg1 to z-axis <15> SPEED <40>;
+		TURN rupleg3 to y-axis <0> SPEED <40>;
+		TURN rupleg3 to z-axis <0> SPEED <40>;
+		SLEEP 225;
+		
+		TURN lupleg2 to y-axis <-15> SPEED <40>;
+		TURN lupleg2 to z-axis <-15> SPEED <40>;
+		TURN lupleg3 to y-axis <1.5> SPEED <40>;
+		TURN rupleg2 to y-axis <16.5> SPEED <40>;
+		TURN rupleg2 to z-axis <0> SPEED <40>;
+		TURN rupleg3 to z-axis <15> SPEED <40>;
+		TURN rupleg1 to y-axis <27> SPEED <40>;
+		TURN rupleg1 to z-axis <15> SPEED <40>;
+		TURN lupleg1 to y-axis <0> SPEED <40>;
+		TURN lupleg1 to z-axis <-15> SPEED <40>;
+		SLEEP 225;
+		
+		TURN lupleg2 to y-axis <-18> SPEED <40>;
+		TURN lupleg2 to z-axis <0> SPEED <40>;
+		TURN lupleg3 to y-axis <0> SPEED <40>;
+		TURN lupleg3 to z-axis <-22.5> SPEED <40>;
+		TURN rupleg2 to y-axis <0> SPEED <40>;
+		TURN rupleg2 to z-axis <0> SPEED <40>;
+		TURN rupleg3 to y-axis <16.5> SPEED <40>;
+		TURN rupleg1 to y-axis <21> SPEED <40>;
+		TURN rupleg1 to z-axis <0> SPEED <40>;
+		TURN rupleg3 to z-axis <15> SPEED <40>;
+		TURN lupleg1 to y-axis <-19.5> SPEED <40>;
+		TURN lupleg1 to z-axis <-15> SPEED <40>;
+		SLEEP 225;
+		}
+		if( !Moving_2 )
+		{
+			move rupleg1 to y-axis [0] now;
+			move rupleg2 to y-axis [0] now;
+			move rupleg3 to y-axis [0] now;
+			move lupleg1 to y-axis [0] now;
+			move lupleg2 to y-axis [0] now;
+			move lupleg3 to y-axis [0] now;
+			sleep 50;
 		}
 	}
 }
+
+RequestState()
+{
+	while( !Busy_5 AND ReqState_3 != On_4 )
+	{
+		Busy_5 = 1;
+		if( ReqState_3 and !On_4 )
+		{
+			turn door1a to z-axis <150.000000> speed <308.000000>;
+			turn door1b to z-axis <-150.000000> speed <311.000000>;
+			turn door2a to z-axis <150.000000> speed <308.000000>;
+			turn door2b to z-axis <-150.000000> speed <311.000000>;
+		
+			wait-for-turn door1a around z-axis;
+			wait-for-turn door1b around z-axis;
+			wait-for-turn door2a around z-axis;
+			wait-for-turn door2b around z-axis;
+
+			
+			move stand1a to y-axis [3.000000] speed [12.000000];
+			move gun1a to y-axis [0.525000] speed [2.000000];
+			move stand1b to y-axis [3.000000] speed [12.000000];
+			move gun1b to y-axis [0.525000] speed [2.000000];
+			move stand2a to y-axis [3.000000] speed [12.000000];
+			move gun2a to y-axis [0.525000] speed [2.000000];
+			move stand2b to y-axis [3.000000] speed [12.000000];
+			move gun2b to y-axis [0.525000] speed [2.000000];
+			
+			turn turret1a to y-axis Turret_1 speed <160.000000>;
+			turn turret1b to y-axis Turret_1 speed <160.000000>;
+			turn turret2a to y-axis Turret_1 speed <160.000000>;
+			turn turret2b to y-axis Turret_1 speed <160.000000>;
+			wait-for-turn turret1b around y-axis;
+			wait-for-turn turret2b around y-axis;
+			wait-for-turn turret1a around y-axis;
+			wait-for-turn turret2a around y-axis;
+			set INBUILDSTANCE to 1;
+			On_4 = 1;
+			
+		}
+		if( !ReqState_3 and On_4 )
+		{
+			On_4 = 0;
+			
+			set INBUILDSTANCE to 0;
+			
+			turn turret1a to y-axis <0.000000> speed <160.000000>;
+			wait-for-turn turret1a around y-axis;
+			turn turret1b to y-axis <0.000000> speed <160.000000>;
+			wait-for-turn turret1b around y-axis;
+			turn turret2a to y-axis <0.000000> speed <160.000000>;
+			wait-for-turn turret2a around y-axis;
+			turn turret2b to y-axis <0.000000> speed <160.000000>;
+			wait-for-turn turret2b around y-axis;
+			
+		
+			move stand1a to y-axis [0.000000] speed [5.000000];
+			move gun1a to y-axis [0.000000] speed [1.000000];
+			move stand1b to y-axis [0.000000] speed [5.000000];			
+			move gun1b to y-axis [0.000000] speed [1.000000];			
+			move stand2a to y-axis [0.000000] speed [5.000000];			
+			move gun2a to y-axis [0.000000] speed [1.000000];			
+			move stand2b to y-axis [0.000000] speed [5.000000];		
+			move gun2b to y-axis [0.000000] speed [1.000000];
+			
+			wait-for-turn door1a around z-axis;
+			wait-for-turn door1b around z-axis;
+			wait-for-turn door2a around z-axis;
+			wait-for-turn door2b around z-axis;
+			
+			sleep 250;
+			
+			turn door1a to z-axis <0.000000> speed <212.000000>;
+			turn door1b to z-axis <0.000000> speed <212.000000>;
+			turn door2a to z-axis <0.000000> speed <212.000000>;
+			turn door2b to z-axis <0.000000> speed <212.000000>;
+		
+			sleep 488;
+		}
+		Busy_5 = 0;
+	}
+}
+
+Shield()
+{
+	shieldonoff = !shieldonoff;
+}
+
 
 Create()
 {
-	hide flare1;
-	hide flare2;
-	hide tube1;
-	hide tube2;
-	hide tube3;
-	bMoving = FALSE;
-	Static_Var_1 = 0;
-	restore_delay = 3000;
-	call-script InitState();
-	start-script MotionControl();
+	Turret_1 = 0;
+	Moving_2 = 0;
+	ReqState_3 = 0;
+	On_4 = 0;
+	Gun_4 = 0;
+	Busy_5 = 0;
+	Waiting_6 = 0;
+	Turning_7 = 0;
+	shieldonoff = 1;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
 	start-script SmokeUnit();
+	start-script MotionControl();
+}
+
+StartBuilding(Func_Var_1)
+{
+	Turret_1 = Func_Var_1;
+	ReqState_3 = 1;
+	sleep rand(25,250);
+	start-script RequestState();
+}
+
+StopBuilding()
+{
+	ReqState_3 = 0;
+	sleep 5000;
+	if( !ReqState_3 )
+	{
+		start-script RequestState();
+	}
 }
 
 StartMoving()
 {
-	bMoving = TRUE;
+	Moving_2 = 1;
 }
 
 StopMoving()
 {
-	bMoving = FALSE;
-}
-
-setSFXoccupy(state)
-{
-	Static_Var_5 = state;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
-}
-
-RestoreAfterDelay()
-{
-	sleep restore_delay;
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	turn turret1 to y-axis <0.000000> speed <12.000000>;
-	wait-for-turn turret1 around y-axis;
-	turn turret2 to y-axis <0.000000> speed <200.000000>;
-	turn gun1 to x-axis <0.000000> speed <200.000000>;
-	wait-for-turn turret2 around y-axis;
-	wait-for-turn gun1 around x-axis;
-	turn turret3 to y-axis <0.000000> speed <100.000000>;
-	turn gun2 to x-axis <0.000000> speed <200.000000>;
-	wait-for-turn turret3 around y-axis;
-	wait-for-turn gun2 around x-axis;
-	set-signal-mask 0;
-	start-script RequestState(1);
+	Moving_2 = 0;
 }
 
 AimPrimary(heading, pitch)
 {
-	if( Static_Var_5 >= 0 )
-	{
-		start-script RequestState(0);
-		signal SIG_AIM;
-		set-signal-mask SIG_AIM;
-		turn turret2 to y-axis heading speed <200.000000>;
-		turn gun1 to x-axis <0.000000> - pitch speed <200.000000>;
-		wait-for-turn turret2 around y-axis;
-		wait-for-turn gun1 around x-axis;
-		start-script RestoreAfterDelay();
-	}
-	return (1);
-}
-
-AimSecondary(heading, pitch)
-{
-	if( Static_Var_5 >= 0 )
-	{
-		start-script RequestState(0);
-		signal SIG_AIM_2;
-		set-signal-mask SIG_AIM_2;
-		turn turret3 to y-axis heading speed <100.000000>;
-		turn gun2 to x-axis <0.000000> - pitch speed <200.000000>;
-		wait-for-turn turret3 around y-axis;
-		wait-for-turn gun2 around x-axis;
-		start-script RestoreAfterDelay();
-	}
-	return (1);
-}
-
-AimTertiary(heading, pitch)
-{
-	if( Static_Var_5 <= 0 )
-	{
-		start-script RequestState(0);
-		signal SIG_AIM_3;
-		set-signal-mask SIG_AIM_3;
-		turn turret1 to y-axis heading speed <12.000000>;
-		wait-for-turn turret1 around y-axis;
-		start-script RestoreAfterDelay();
-	}
-	return (1);
+	return (shieldonoff);
 }
 
 FirePrimary()
 {
-	if( Static_Var_5 >= 0 )
-	{
-		show flare1;
-		sleep 350;
-		hide flare1;
-	}
-}
-
-FireSecondary()
-{
-	if( Static_Var_5 >= 0 )
-	{
-		show flare2;
-		sleep 150;
-		hide flare2;
-	}
-}
-
-FireTertiary()
-{
-	if( Static_Var_5 <= 0 )
-	{
-		if( gun_3 == 1 )
-		{
-			emit-sfx 259 from tube1;
-			sleep 200;
-		}
-		if( gun_3 == 2 )
-		{
-			emit-sfx 259 from tube2;
-			sleep 200;
-		}
-		if( gun_3 == 3 )
-		{
-			emit-sfx 259 from tube3;
-			sleep 200;
-		}
-		++gun_3;
-		if( gun_3 == 4 )
-		{
-			gun_3 = sstoparm2;
-		}
-	}
-}
-
-AimFromPrimary(piecenum)
-{
-	if( Static_Var_5 >= 0 )
-	{
-		piecenum = flare1;
-	}
-}
-
-AimFromSecondary(piecenum)
-{
-	if( Static_Var_5 >= 0 )
-	{
-		piecenum = flare2;
-	}
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = tube1;
+	explode dome type NOHEATCLOUD | FALL;
+	sleep 100;
 }
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_5 >= 0 )
+	piecenum = dome;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = dome;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Gun_4 == 0 )
 	{
-		piecenum = gun1;
+		piecenum = beam1a;
+	}
+	if( Gun_4 == 1 )
+	{
+		piecenum = beam1b;
+	}
+	if( Gun_4 == 2 )
+	{
+		piecenum = beam2a;
+	}
+	if( Gun_4 == 3 )
+	{
+		piecenum = beam2b;
+	}
+	++Gun_4;
+	if( Gun_4 == 4 )
+	{
+		Gun_4 = 0;
 	}
 }
 
-QuerySecondary(piecenum)
+TargetHeading(Func_Var_1)
 {
-	if( Static_Var_5 >= 0 )
-	{
-		piecenum = gun2;
-	}
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = tube1;
+	Turret_1 = ( 0 - Func_Var_1 );
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = ssbody;
+	piecenum = body;
 }
 
 Killed(severity, corpsetype)
 {
-	hide flare1;
-	hide flare2;
-	hide tube1;
-	hide tube2;
-	hide tube3;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ssbody type NOHEATCLOUD;
-		explode turret1 type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD;
-		explode turret3 type NOHEATCLOUD;
-		explode gun1 type NOHEATCLOUD;
-		explode gun2 type NOHEATCLOUD;
-		return (corpsetype);
+		explode body type BITMAPONLY | BITMAP1;
+		explode lupleg1 type BITMAPONLY | BITMAP1;
+		explode lupleg2 type BITMAPONLY | BITMAP5;
+		explode lupleg3 type BITMAPONLY | BITMAP1;
+		explode rupleg1 type BITMAPONLY | BITMAP1;
+		explode rupleg2 type BITMAPONLY | BITMAP1;
+		explode rupleg3 type BITMAPONLY | BITMAP5;
+		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode ssbody type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode ssbody type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sstoparm6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
+		explode body type BITMAPONLY | BITMAP1;
+		explode lupleg1 type FALL | BITMAP1;
+		explode lupleg2 type FALL | BITMAP5;
+		explode lupleg3 type FALL | BITMAP1;
+		explode rupleg1 type FALL | BITMAP1;
+		explode rupleg2 type FALL | BITMAP1;
+		explode rupleg3 type FALL | BITMAP5;
+		return (0);
 	}
 	corpsetype = 3;
-	explode ssbody type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode gun2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sstoparm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sstoparm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sstoparm3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sstoparm4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sstoparm5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sstoparm6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	return (corpsetype);
+	if( severity <= 99 )
+	{
+		explode body type BITMAPONLY | BITMAP1;
+		explode lupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode lupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		explode lupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode rupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode rupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+		explode rupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+		return (0);
+	}
+	explode body type BITMAPONLY | BITMAP1;
+	explode lupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode lupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+	explode lupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode rupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode rupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
+	explode rupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+	return (0);
 }
