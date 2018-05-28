@@ -54,7 +54,10 @@ return {
 		workertime = 3500,
 		customparams = {
 			buildpic = "corcrab.dds",
-			faction = "ARM",
+			faction = "CORE",
+			shield_emit_height = 41.25,
+			shield_power = 5000,
+			shield_radius = 180,
 		},
 		featuredefs = {
 			dead = {

@@ -179,6 +179,15 @@ return {
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
   },
+  corcrab = {
+	{
+		name = "shield_corcrab",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
   tllcom5 = {
 	{
 		name = "shield_tc5",
