@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, storage, glow, ring, bridge, pod1, pod2, pod3, pod4, pod5, pod6;
+piece  base, body, storage, glow, ring, bridge, pod1, pod2, pod3, pod4, pod5, pod6, nanobeam;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
 
@@ -120,7 +120,7 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	piecenum = base;
+	piecenum = nanobeam;
 }
 
 SweetSpot(piecenum)
