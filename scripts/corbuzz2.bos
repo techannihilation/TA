@@ -3,9 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, flare3, flare4, flare5, flare6, base, turret,
-       barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, sleeve1, sleeve2,
-       sleeve3, sleeve4, sleeve5, sleeve6, spindle;
+piece  Flare, base, turret,
+       barrel01, barrel02, barrel03, barrel04, barrel05, barrel06, sleeve01, sleeve02,
+       sleeve03, sleeve04, sleeve05, sleeve06, spindle, barrel07, barrel08, barrel09, barrel10, barrel11, barrel12, sleeve07, sleeve08,
+       sleeve09, sleeve10, sleeve11, sleeve12;
 
 static-var  gun_1;
 
@@ -42,48 +43,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	dont-shade barrel1;
-	dont-shade barrel2;
-	dont-shade barrel3;
-	dont-shade barrel4;
-	dont-shade barrel5;
-	dont-shade barrel6;
-	dont-shade base;
-	dont-shade sleeve1;
-	dont-shade sleeve2;
-	dont-shade sleeve3;
-	dont-shade sleeve4;
-	dont-shade sleeve5;
-	dont-shade sleeve6;
-	dont-shade turret;
-	dont-shade spindle;
-	dont-cache turret;
-	dont-cache spindle;
-	dont-cache barrel1;
-	dont-cache barrel2;
-	dont-cache barrel3;
-	dont-cache barrel4;
-	dont-cache barrel5;
-	dont-cache barrel6;
-	dont-cache sleeve1;
-	dont-cache sleeve2;
-	dont-cache sleeve3;
-	dont-cache sleeve4;
-	dont-cache sleeve5;
-	dont-cache sleeve6;
-	dont-cache flare1;
-	dont-cache flare2;
-	dont-cache flare3;
-	dont-cache flare4;
-	dont-cache flare5;
-	dont-cache flare6;
-	hide flare1;
-	hide flare2;
-	hide flare3;
-	hide flare4;
-	hide flare5;
-	hide flare6;
-	gun_1 = flare1;
+	dont-cache Flare;
+	hide Flare;
+	gun_1 = 0;
 	start-script SmokeUnit();
 }
 
@@ -92,9 +54,8 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn turret to y-axis heading speed <5.000000>;
-	turn spindle to x-axis <60.005495> * gun_1 - pitch speed <400.038462>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn spindle around x-axis;
+	//wait-for-turn spindle around x-axis;
 	return (1);
 }
 
@@ -102,58 +63,136 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		move barrel1 to z-axis [-6.000000] now;
-		emit-sfx 1024 + 0 from flare1;
+		turn spindle to x-axis <30.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel01 to y-axis [-2.000000] now;
+		move barrel01 to z-axis [-3.500000] now;
+		emit-sfx 1024 + 0 from Flare;
 		sleep 100;
-		move barrel1 to z-axis [0.000000] speed [2.000000];
+		move barrel01 to y-axis [0.000000] speed [2.000000];
+		move barrel01 to z-axis [0.000000] speed [2.000000];
 	}
 	if( gun_1 == 1 )
 	{
-		move barrel2 to y-axis [-5.000000] now;
-		move barrel2 to z-axis [-3.000000] now;
-		emit-sfx 1024 + 0 from flare2;
+		turn spindle to x-axis <60.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel02 to y-axis [-3.500000] now;
+		move barrel02 to z-axis [-2.000000] now;
+		emit-sfx 1024 + 0 from Flare;
 		sleep 100;
-		move barrel2 to y-axis [0.000000] speed [2.000000];
-		move barrel2 to z-axis [0.000000] speed [2.000000];
+		move barrel02 to y-axis [0.000000] speed [2.000000];
+		move barrel02 to z-axis [0.000000] speed [2.000000];
+
 	}
 	if( gun_1 == 2 )
 	{
-		move barrel3 to y-axis [-5.000000] now;
-		move barrel3 to z-axis [3.000000] now;
-		emit-sfx 1024 + 0 from flare3;
+		turn spindle to x-axis <90.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel03 to y-axis [-4.000000] now;
+		emit-sfx 1024 + 0 from Flare;
 		sleep 100;
-		move barrel3 to y-axis [0.000000] speed [2.000000];
-		move barrel3 to z-axis [0.000000] speed [2.000000];
+		move barrel03 to y-axis [0.000000] speed [2.000000];
 	}
 	if( gun_1 == 3 )
 	{
-		move barrel4 to z-axis [6.000000] now;
-		emit-sfx 1024 + 0 from flare4;
+		turn spindle to x-axis <120.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel04 to y-axis [-3.500000] now;
+		move barrel04 to z-axis [2.000000] now;
+		emit-sfx 1024 + 0 from Flare;
 		sleep 100;
-		move barrel4 to z-axis [0.000000] speed [2.000000];
+		move barrel04 to y-axis [0.000000] speed [2.000000];
+		move barrel04 to z-axis [0.000000] speed [2.000000];
 	}
 	if( gun_1 == 4 )
-	{
-		move barrel5 to y-axis [5.000000] now;
-		move barrel5 to z-axis [3.000000] now;
-		emit-sfx 1024 + 0 from flare5;
+	{	
+		turn spindle to x-axis <150.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel05 to y-axis [-2.000000] now;
+		move barrel05 to z-axis [3.500000] now;
+		emit-sfx 1024 + 0 from Flare;
 		sleep 100;
-		move barrel5 to y-axis [0.000000] speed [2.000000];
-		move barrel5 to z-axis [0.000000] speed [2.000000];
+		move barrel05 to y-axis [0.000000] speed [2.000000];
+		move barrel05 to z-axis [0.000000] speed [2.000000];
+
 	}
 	if( gun_1 == 5 )
 	{
-		move barrel6 to y-axis [5.000000] now;
-		move barrel6 to z-axis [-3.000000] now;
-		emit-sfx 1024 + 0 from flare6;
+		turn spindle to x-axis <180.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel06 to z-axis [4.000000] now;
+		emit-sfx 1024 + 0 from Flare;
 		sleep 100;
-		move barrel6 to y-axis [0.000000] speed [2.000000];
-		move barrel6 to z-axis [0.000000] speed [2.000000];
+		move barrel06 to z-axis [0.000000] speed [2.000000];
+
 	}
-	++gun_1;
 	if( gun_1 == 6 )
 	{
-		gun_1 = flare1;
+		turn spindle to x-axis <210.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel07 to y-axis [2.000000] now;
+		move barrel07 to z-axis [3.500000] now;
+		emit-sfx 1024 + 0 from Flare;
+		sleep 100;
+		move barrel07 to y-axis [0.000000] speed [2.000000];
+		move barrel07 to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_1 == 7 )
+	{
+		turn spindle to x-axis <240.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel08 to y-axis [3.000000] now;
+		move barrel08 to z-axis [2.500000] now;
+		emit-sfx 1024 + 0 from Flare;
+		sleep 100;
+		move barrel08 to y-axis [0.000000] speed [2.000000];
+		move barrel08 to z-axis [0.000000] speed [2.000000];
+		
+	}
+	if( gun_1 == 8 )
+	{
+		turn spindle to x-axis <270.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel09 to y-axis [4.000000] now;
+		emit-sfx 1024 + 0 from Flare;
+		sleep 100;
+		move barrel09 to y-axis [0.000000] speed [2.000000];
+	}
+	if( gun_1 == 9 )
+	{
+		turn spindle to x-axis <300.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel10 to y-axis [3.500000] now;
+		move barrel10 to z-axis [-2.000000] now;
+		emit-sfx 1024 + 0 from Flare;
+		sleep 100;
+		move barrel10 to y-axis [0.000000] speed [2.000000];
+		move barrel10 to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_1 == 10 )
+	{
+		turn spindle to x-axis <330.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel11 to y-axis [2.000000] now;
+		move barrel11 to z-axis [-3.500000] now;
+		emit-sfx 1024 + 0 from Flare;
+		sleep 100;
+		move barrel11 to y-axis [0.000000] speed [2.000000];
+		move barrel11 to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_1 == 11 )
+	{
+		turn spindle to x-axis <0.000000> speed <350.000000>;
+		wait-for-turn spindle around x-axis;
+		move barrel12 to z-axis [-4.000000] now;
+		emit-sfx 1024 + 0 from Flare;
+		sleep 100;
+		move barrel12 to z-axis [0.000000] speed [2.000000];
+	}
+	++gun_1;
+	if( gun_1 == 12 )
+	{
+		gun_1 = 0;
 	}
 }
 
@@ -168,7 +207,7 @@ TargetCleared(Func_Var_1)
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	piecenum = Flare;
 }
 
 AimFromPrimary(piecenum)
