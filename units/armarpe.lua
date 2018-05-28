@@ -142,7 +142,7 @@ return {
 			},
 			gator_laserx = {
 				areaofeffect = 15,
-				beamtime = 0.2,
+				beamtime = 0.1,
 				corethickness = 0.175,
 				craterareaofeffect = 0,
 				craterboost = 0,
