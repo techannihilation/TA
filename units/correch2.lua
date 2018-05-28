@@ -38,7 +38,7 @@ return {
 		workertime = 250,
 		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
 		buildoptions = {
-			[1] = "cbuilderlvl2",
+		--	[1] = "cbuilderlvl2",
 		},
 		customparams = {
 			buildpic = "correch2.dds",
