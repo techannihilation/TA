@@ -40,7 +40,6 @@ return {
 		name = "Airstrike Resistant Fusion Reactor",
 		noautofire = false,
 		objectname = "CORSFUS",
-		onoffable = true,
 		radaremitheight = 150,
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL_CORE",
