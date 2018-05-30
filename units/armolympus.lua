@@ -31,7 +31,7 @@ return {
 		losemitheight = 145,
 		maneuverleashlength = 640,
 		mass = 9600,
-		maxdamage = 228000,
+		maxdamage = 217455,
 		maxslope = 12,
 		maxvelocity = 1,
 		maxwaterdepth = 20,
@@ -56,6 +56,7 @@ return {
 		unitname = "armolympus",
 		customparams = {
 			faction = "ARM",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -144,7 +145,7 @@ return {
 				model = "exphvyrock1",
 				name = "Heavy Rockets2",
 				range = 1400,
-				reloadtime = 1,
+				reloadtime = 0.75,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = false,
 				soundhitdry = "xplosml2",
