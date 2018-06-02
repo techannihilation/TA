@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 81640,
 		builder = true,
 		buildpic = "armrech4.dds",
-		buildtime = 400000,
+		buildtime = 600000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
