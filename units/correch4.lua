@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 81640,
 		builder = true,
 		buildpic = "correch4.dds",
-		buildtime = 240000,
+		buildtime = 400000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
