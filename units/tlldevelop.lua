@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 90640,
 		builder = true,
 		buildpic = "tlldevelop.dds",
-		buildtime = 1500000,
+		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
