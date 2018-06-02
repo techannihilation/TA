@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 31640,
 		builder = true,
 		buildpic = "armrech3.dds",
-		buildtime = 100000,
+		buildtime = 200000,
 		category = "LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "-18 0 -10",
 		collisionvolumescales = "235 150 230",
