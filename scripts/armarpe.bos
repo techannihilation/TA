@@ -95,7 +95,14 @@ FirePrimary()
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	if( gun_1 == 0 )
+	{
+		piecenum = feu1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = feu2;
+	}
 }
 
 AimFromPrimary(piecenum)
