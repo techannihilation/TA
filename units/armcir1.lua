@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armcir1_aoplane.dds",
 		buildpic = "armcir1.dds",
-		buildtime = 19004,
+		buildtime = 19000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
