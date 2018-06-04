@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
-		description = "Ultimate Nuclear Missile Launcher",
+		description = "Ultimate Nuclear ICBM Launcher (T4)",
 		downloadable = 1,
 		explodeas = "NUCLEAR_DISASTER",
 		firestandorders = 1,
