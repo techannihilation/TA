@@ -109,6 +109,10 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			end
+			if t.offsets then
+				p = t.offsets
+				Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
+			end
 		elseif dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
 			local t = dynamicPieceCollisionVolume[UnitDefs[unitDefID].name].on
 			for pieceIndex=1, #spGetPieceList(unitID) do
@@ -171,18 +175,20 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 
 		local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
-		unitYSizeOffset[unitID] = {ys,yo}
-			
-		-- reduce size of unit under construction
-		local _,_,_,_,bp = spGetUnitHealth(unitID)
-		local val  = 1
-		-- only affect units under construction
-		if (bp < BP_SIZE_LIMIT) then
-			val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
-			ys = ys * val
-			yo = yo * val
-			spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
-			spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+
+		if not pieceCollisionVolume[UnitDefs[unitDefID].name] or dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
+			unitYSizeOffset[unitID] = {ys,yo}
+			-- reduce size of unit under construction
+			local _,_,_,_,bp = spGetUnitHealth(unitID)
+			local val  = 1
+			-- only affect units under construction
+			if (bp < BP_SIZE_LIMIT) then
+				val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
+				ys = ys * val
+				yo = yo * val
+				spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+				spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+			end
 		end
 	end
 
@@ -229,27 +235,9 @@ if (gadgetHandler:IsSyncedCode()) then
 			local data = unitYSizeOffset[unitID]
 			ys = data[1]
 			yo = data[2]
+			
 			spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
-			if (pieceCollisionVolume[un]) then
-				local t = pieceCollisionVolume[un]
-				if t.offsets then
-					p = t.offsets
-					Spring.Echo("here",spGetUnitHeight(unitID),p[1], p[2], p[3])
-					Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
-				end
-			elseif dynamicPieceCollisionVolume[un] then
-				local t = dynamicPieceCollisionVolume[un].on 
-				if t.offsets then
-					p = t.offsets
-					Spring.Echo("there")
-
-					Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
-				end
-			else
-				Spring.Echo("sds")
-
-				spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
-			end
+			spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
 		end
 	end
 
