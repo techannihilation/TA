@@ -140,7 +140,7 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1700,
+				range = 1500,
 				reloadtime = 0.4,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
