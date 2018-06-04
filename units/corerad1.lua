@@ -4,8 +4,8 @@ return {
 		airsightdistance = 1250,
 		brakerate = 0,
 		buildangle = 65536,
-		buildcostenergy = 8688,
-		buildcostmetal = 1909,
+		buildcostenergy = 19275,
+		buildcostmetal = 1875,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -120,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			cor_erad2 = {
-				areaofeffect = 144,
+				areaofeffect = 32,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
@@ -139,7 +139,7 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
-				range = 1700,
+				range = 1500,
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
