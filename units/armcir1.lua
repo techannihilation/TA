@@ -4,8 +4,8 @@ return {
 		airsightdistance = 1300,
 		brakerate = 0,
 		buildangle = 65536,
-		buildcostenergy = 8688,
-		buildcostmetal = 1899,
+		buildcostenergy = 19985,
+		buildcostmetal = 1855,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -120,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			arm_cir2 = {
-				areaofeffect = 84,
+				areaofeffect = 32,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
