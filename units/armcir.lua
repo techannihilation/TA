@@ -123,7 +123,7 @@ return {
 		},
 		weapondefs = {
 			arm_cir = {
-				areaofeffect = 26,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
