@@ -125,7 +125,7 @@ return {
 		},
 		weapondefs = {
 			packo_missile = {
-				areaofeffect = 16,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.2,
