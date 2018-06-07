@@ -40,7 +40,8 @@ return {
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		buildoptions = {
 			[1] = "abuilderlvl2",
-			[2] = "abuilderlvl3",			
+			[2] = "abuilderlvl3",	
+			[3] = "abuilderlvl4",	
 		},
 		customparams = {
 			buildpic = "armrech2.dds",
