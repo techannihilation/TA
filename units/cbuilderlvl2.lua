@@ -64,10 +64,9 @@ return {
 			[9] = "corraid1",
 			[10] = "corstorm1",
 			[11] = "armraven1",
-			[12] = "corhcrus",
-			[13] = "cortl",
-			[14] = "corfhlt",
-			[15] = "corroy",
+			[12] = "cortl",
+			[13] = "corfhlt",
+			[14] = "corroy",
 		},
 		customparams = {
 			buildpic = "cbuilderlvl2.dds",
