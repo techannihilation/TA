@@ -49,6 +49,8 @@ return {
 		buildoptions = {
 			[1] = "cbuilderlvl2",
 			[2] = "cbuilderlvl3",
+			[3] = "cbuilderlvl4",
+			[4] = "cbuilderlvl5",
 		},
 		customparams = {
 			buildpic = "correch4.dds",
