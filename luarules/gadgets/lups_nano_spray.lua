@@ -299,8 +299,9 @@ function gadget:GameFrame(frame)
 	for i=1,#builders do
 		local unitID = builders[i]
     local UnitDefID = Spring.GetUnitDefID(unitID)
+    local buildpower = builderWorkTime[UnitDefID] or 1
 		if ((unitID + frame) % 30 < 1) then --// only update once per second
-			local strength = (Spring.GetUnitCurrentBuildPower(unitID)*builderWorkTime[UnitDefID] or 1)	-- * 16
+			local strength = ((Spring.GetUnitCurrentBuildPower(unitID)*buildpower) or 1)	-- * 16
       --Spring.Echo(strength,Spring.GetUnitCurrentBuildPower(unitID)*builderWorkTime[UnitDefID])
 			if (strength > 0) then
 				local type, target, isFeature = Spring.Utilities.GetUnitNanoTarget(unitID)
