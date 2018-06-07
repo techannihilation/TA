@@ -3,10 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, turn1, engine1, thruster11, thruster12, engine2, thruster21, thruster22, turn2, engine3, engine4, thrust11, thrust12, thrust21, thrust22, thrust3, thrust4,
-       barrel1, barrel2, sp, carry, beam1, beam2;
-
-static-var  DesiredState, StateChanging, Flying, UnitHeading, UnitSpeed, Inactive, Gun, Launcher, spray;
+piece  body, base, turn1, engine1, thrust11, thrust12, engine2, thrust21, 
+		thrust22, turn2, engine3, thrust3, engine4, thrust4, system, plates, barrel, beam;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -34,22 +32,22 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 }
+
 Create()
 {
-	spray = 0;
 	start-script SmokeUnit();
 }
 
-SweetSpot(PieceNum)
+SweetSpot(pieceNum)
 {
-	PieceNum = sp;
+	pieceNum = body;
 }
 
 Activate()
 {
 	set-signal-mask 256;
-	turn engine1 to x-axis <100.00> speed <10.00>;
-	turn engine2 to x-axis <100.00> speed <10.00>;
+	turn engine1 to x-axis <100.00> speed <1.00>;
+	turn engine2 to x-axis <100.00> speed <1.00>;
 	sleep 100;
 }
 
@@ -72,23 +70,17 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	if( spray == 0 )
-	{
-		piecenum = beam1;
-	}
-	if( spray != 0 )
-	{
-		piecenum = beam2;
-	}
-	spray = !spray;
+		piecenum = beam;
 }
 
 Killed(severity, corpseType)
 {
-	CorpseType = 3;
-	explode hull type NOHEATCLOUD;
+	corpseType = 3;
+	explode plates type NOHEATCLOUD;
+	explode system type NOHEATCLOUD;
 	explode engine1 type NOHEATCLOUD;
 	explode engine2 type NOHEATCLOUD;
+	explode engine3 type NOHEATCLOUD;
+	explode engine4 type NOHEATCLOUD;	
 	return corpseType;
-	
 }
