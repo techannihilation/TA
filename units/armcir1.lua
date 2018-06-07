@@ -38,7 +38,7 @@ return {
 		name = "Rapid Chainsaw",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "ARMCIR",
+		objectname = "ARMCIR1",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
