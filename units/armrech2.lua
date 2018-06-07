@@ -41,7 +41,6 @@ return {
 		buildoptions = {
 			[1] = "abuilderlvl2",
 			[2] = "abuilderlvl3",	
-			[3] = "abuilderlvl4",	
 		},
 		customparams = {
 			buildpic = "armrech2.dds",
