@@ -39,7 +39,7 @@ return {
 		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
 		buildoptions = {
 			[1] = "cbuilderlvl2",
-			[1] = "cbuilderlvl3",			
+			[2] = "cbuilderlvl3",			
 		},
 		customparams = {
 			buildpic = "correch2.dds",
