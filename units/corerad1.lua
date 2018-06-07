@@ -38,7 +38,7 @@ return {
 		name = "Rapid Eradicator",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "CORERAD",
+		objectname = "CORERAD1",
 		radaremitheight = 49,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
