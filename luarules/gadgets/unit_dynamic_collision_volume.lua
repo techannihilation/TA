@@ -10,9 +10,30 @@ function gadget:GetInfo()
   }
 end
 
+local isSub = {}
+local is3do = {}
+local isShip = {}
+local canFly = {}
+local isFlyingTrans = {}
+
+for i=1,#UnitDefs do
+    if Game.armorTypes[UnitDefs[i].armorType] =="subs" then
+        isSub[i] = true
+    elseif Game.armorTypes[UnitDefs[i].armorType] =="ship" then
+        isShip[i] = true
+    elseif UnitDefs[i].modeltype=="3do" then
+        is3do[i] = true
+    elseif UnitDefs[i].canFly then
+        canFly[i] = true
+        if UnitDefs[i].transportCapacity > 0 then
+        	isFlyingTrans[i] = true
+        end
+    end
+end
+
 -- Pop-up style unit and per piece collision volume definitions
 local popupUnits = {}		--list of pop-up style units
-local unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, sublist, isship = include("LuaRules/Configs/CollisionVolumes.lua")
+local unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, isTorp = include("LuaRules/Configs/CollisionVolumes.lua")
 local mapFeatures = {}
 
 -- Localization and speedups
@@ -39,7 +60,7 @@ local spActive = Spring.GetUnitIsActive
 local pairs = pairs	
 
 local unitYSizeOffset = {}     -- <unitID,{sizeY,offsetY}>
-local BP_SIZE_LIMIT = 0.8
+local BP_SIZE_LIMIT = 0.8 
 local BP_SIZE_MULTIPLIER = 1 / BP_SIZE_LIMIT
 
 if (gadgetHandler:IsSyncedCode()) then
@@ -97,97 +118,105 @@ if (gadgetHandler:IsSyncedCode()) then
 	--for S3O models it's not needed and will in fact result in wrong collision volume
 	--also handles per piece collision volume definitions
 	function gadget:UnitCreated(unitID, unitDefID, unitTeam)
-		local uDef = UnitDefs[unitDefID]
+		--local uDef = UnitDefs[unitDefID]
 	  	--Spring.Echo("Units Armor Class is : " .. (Game.armorTypes[uDef.armorType] or ""))
-		if (pieceCollisionVolume[UnitDefs[unitDefID].name]) then
-			local t = pieceCollisionVolume[UnitDefs[unitDefID].name]
-			for pieceIndex=1, #spGetPieceList(unitID) do
+	  	local perPieceTrunk = {}
+	  	local trunkIndex = nil
+		if is3do[unitDefID] then
+			if (pieceCollisionVolume[unitDefID]) then
+			local t = pieceCollisionVolume[unitDefID]
+				for pieceIndex=1, #spGetPieceList(unitID) do
 				local p = t[tostring(pieceIndex)]
-				if p then
-					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
-				else
+					if pieceIndex == t.trunk then
+						perPieceTrunk = p
+						trunkIndex = t.trunk
+					end
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
-			end
-			if t.offsets then
-				p = t.offsets
-				Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
-			end
-		elseif dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
-			local t = dynamicPieceCollisionVolume[UnitDefs[unitDefID].name].on
-			for pieceIndex=1, #spGetPieceList(unitID) do
-				local p = t[tostring(pieceIndex)]
-				if p then
-					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
-				else
+			elseif dynamicPieceCollisionVolume[unitDefID] then
+				local t = dynamicPieceCollisionVolume[unitDefID]
+				for pieceIndex=1, #spGetPieceList(unitID) do
+					local p = t[tostring(pieceIndex)]
+					if pieceIndex == t.trunk then
+						perPieceTrunk = p
+						trunkIndex = t.trunk
+					end
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
+			elseif not isSub[unitDefID] then
+				local rs, hs, ws, ars, ahs
+				if (spGetUnitRadius(unitID)>47 and not canFly[unitDefID]) then
+					rs, hs, ws = 0.59, 0.59, 0.59
+					ars, ahs = 0.66, 0.66
+				elseif (not canFly[unitDefID] ) then
+					rs, hs, ws = 0.68, 0.68, 0.68
+					ars, ahs = 0.70, 0.70 
+				elseif spGetUnitRadius(unitID)>60 then
+					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
+					rs, hs, ws = 0.77, 0.18, 0.77
+					ars, ahs = 0.70, 0.70 
+				else 
+					rs, hs, ws = 0.53, 0.26, 0.53
+					ars, ahs = 0.55, 0.55 
+				end
+				local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
+				if (vtype>=3 and xs==ys and ys==zs) then
+					if ( ys*hs ) < 13 and (canFly[unitDefID]) then -- Limit Max V height
+				        spSetUnitCollisionData(unitID, xs*ws, 13, zs*rs,  xo, yo, zo,  1, htype, 1)
+					elseif (UnitDefs[unitDefID].canFly) then
+						spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
+				  	else 
+						spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
+			  		end
+				end
+				if isFlyingTrans[unitDefID] then
+					spSetUnitRadiusAndHeight(unitID, 16, 16)
+				else
+					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
+				end
 			end
-		elseif UnitDefs[unitDefID].modeltype=="3do" and not (Game.armorTypes[uDef.armorType] =="subs") then
-			local rs, hs, ws, ars, ahs
-			if (spGetUnitRadius(unitID)>47 and not UnitDefs[unitDefID].canFly) then
-				rs, hs, ws = 0.59, 0.59, 0.59
-				ars, ahs = 0.66, 0.66
-			elseif (not UnitDefs[unitDefID].canFly) then
-				rs, hs, ws = 0.68, 0.68, 0.68
-				ars, ahs = 0.70, 0.70 
-			elseif spGetUnitRadius(unitID)>60 then
-				--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
-				rs, hs, ws = 0.77, 0.18, 0.77
-				ars, ahs = 0.70, 0.70 
-			else 
-				rs, hs, ws = 0.53, 0.26, 0.53
-				ars, ahs = 0.55, 0.55 
+			if isSub[unitDefID] then
+				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.45, spGetUnitHeight(unitID)*0.45)
 			end
-			local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
-			if (vtype>=3 and xs==ys and ys==zs) then
-			  if ( ys*hs ) < 13 and (UnitDefs[unitDefID].canFly) then -- Limit Max V height
-			        spSetUnitCollisionData(unitID, xs*ws, 13, zs*rs,  xo, yo, zo,  1, htype, 1)
-			  elseif (UnitDefs[unitDefID].canFly) then
-				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
-			  else 
-				spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
-			  end
+			if isShip[unitDefID] then 
+				local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+				local h = Spring.GetUnitHeight(unitID)
+				if by <= 0 and by + h >= 0 then
+					--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID)
+					Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az) 
+				end		
 			end
-			
-			if UnitDefs[unitDefID].canFly and UnitDefs[unitDefID].transportCapacity>0 then
-				spSetUnitRadiusAndHeight(unitID, 16, 16)
-			else
-				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
+			if isTorp[unitDefID] then
+				local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+				--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
+				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
 			end
-		end
-		if UnitDefs[unitDefID].modeltype=="3do" and (Game.armorTypes[uDef.armorType] =="subs") then
-			spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.45, spGetUnitHeight(unitID)*0.45)
-		end
-		if UnitDefs[unitDefID].modeltype=="3do" and (Game.armorTypes[uDef.armorType] =="ships") and (Game.armorTypes[uDef.armorType] =="experimental_ships") then 
-			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
-			local h = Spring.GetUnitHeight(unitID)
-			if by <= 0 and by + h >= 0 then
-				--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID)
-				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az) 
-			end		
-		end
-		if UnitDefs[unitDefID].name == "armtl" or UnitDefs[unitDefID].name == "armatl" or UnitDefs[unitDefID].name == "cortl" or UnitDefs[unitDefID].name == "coratl"
-		or UnitDefs[unitDefID].name == "tlltorp" or UnitDefs[unitDefID].name == "tllatorp" or UnitDefs[unitDefID].name == "tllwmjam" then
-			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
-			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
-			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
 		end
 
 		local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
-
-		if not pieceCollisionVolume[UnitDefs[unitDefID].name] or dynamicPieceCollisionVolume[UnitDefs[unitDefID].name] then
+		if pieceCollisionVolume[unitDefID] then
+			local t = pieceCollisionVolume[unitDefID]
+			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
+		elseif dynamicPieceCollisionVolume[unitDefID] then
+			local t = pieceCollisionVolume[unitDefID]
+			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
+		else
 			unitYSizeOffset[unitID] = {ys,yo}
-			-- reduce size of unit under construction
-			local _,_,_,_,bp = spGetUnitHealth(unitID)
-			local val  = 1
-			-- only affect units under construction
-			if (bp < BP_SIZE_LIMIT) then
-				val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
-				ys = ys * val
-				yo = yo * val
+		end
+		-- reduce size of unit under construction
+		local _,_,_,_,bp = spGetUnitHealth(unitID)
+		local val  = 1
+		-- only affect units under construction
+		if (bp < BP_SIZE_LIMIT) then
+			val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
+			ys = ys * val
+			yo = yo * val
+			if not pieceCollisionVolume[unitDefID] or dynamicPieceCollisionVolume[unitDefID] then
 				spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
 				spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+			else
+				spSetPieceCollisionData(unitID, trunkIndex, true, perPieceTrunk[1], ys, perPieceTrunk[3], perPieceTrunk[4], yo, perPieceTrunk[6], perPieceTrunk[7], perPieceTrunk[8])
+				spSetUnitMidAndAimPos(unitID,0, perPieceTrunk[2]*0.5, 0,0, perPieceTrunk[2]*0.5,0,true)
 			end
 		end
 	end
@@ -230,7 +259,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 		
 		-- set height to expected value for fully built unit
-		if unitYSizeOffset[unitID] then
+		if unitYSizeOffset[unitID] and not pieceCollisionVolume[unitDefID] or dynamicPieceCollisionVolume[unitDefID]then
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis,_ = spGetUnitCollisionData(unitID)
 			local data = unitYSizeOffset[unitID]
 			ys = data[1]
@@ -238,6 +267,30 @@ if (gadgetHandler:IsSyncedCode()) then
 			
 			spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
 			spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+		elseif (pieceCollisionVolume[unitDefID]) then
+			local t = pieceCollisionVolume[unitDefID]
+			for pieceIndex=1, #spGetPieceList(unitID) do
+				local p = t[tostring(pieceIndex)]
+				if p then
+					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
+				else
+					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
+				end
+			end
+			if t.offsets then
+				p = t.offsets
+				Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
+			end
+		elseif dynamicPieceCollisionVolume[unitDefID] then
+			local t = dynamicPieceCollisionVolume[unitDefID].on
+			for pieceIndex=1, #spGetPieceList(unitID) do
+				local p = t[tostring(pieceIndex)]
+				if p then
+					spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
+				else
+					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
+				end
+			end
 		end
 	end
 
@@ -259,57 +312,49 @@ if (gadgetHandler:IsSyncedCode()) then
 		if (n%15 ~= 0) then
 			return
 		end
-		local p, t 
+		local p, t, stateString, stateInt
 		for unitID,defs in pairs(popupUnits) do
 			if spArmor(unitID) then
-				if (defs.state ~= 0) then
-					if defs.perPiece then
-						t = dynamicPieceCollisionVolume[defs.name].off
-						for pieceIndex=1, defs.numPieces do
-							p = t[tostring(pieceIndex)]
-							if p then
-								spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
-							else
-								spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
-							end
-						end
-						if t.offsets then
-							p = t.offsets
-							Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
-						end
-					else
-						p = unitCollisionVolume[defs.name].off
-						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
-						if p[10] then
-							Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[10], p[11], p[12],true)
-						end
-					end
-					popupUnits[unitID].state = 0
-				end
+				stateString = "off"
+				stateInt = 0
 			else
-				if (defs.state ~= 1) then
-					if defs.perPiece then
-						t = dynamicPieceCollisionVolume[defs.name].on
-						for pieceIndex=1, defs.numPieces do
-							p = t[tostring(pieceIndex)]
-							if p then
-								spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
-							else
-								spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
-							end
-						end
-						if t.offsets then
-							p = t.offsets
-							Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[1], p[2], p[3],true)
-						end
-					else
-						p = unitCollisionVolume[defs.name].on
-						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
-						if p[10] then
-							Spring.SetUnitMidAndAimPos(unitID, 0, spGetUnitHeight(unitID)/2, 0, p[10], p[11], p[12],true)
+				stateString = "on"
+				stateInt = 1
+			end
+			if defs.state ~= stateInt then
+				if defs.perPiece then
+					t = dynamicPieceCollisionVolume[defs.name][stateString]
+					for pieceIndex=0, defs.numPieces do
+						p = t[tostring(pieceIndex)]
+						if p then
+							spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
+						else
+							spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 						end
 					end
-					popupUnits[unitID].state = 1
+					if t.offsets then
+						p = t.offsets
+						local unitHeight = spGetUnitHeight(unitID)
+						if unitHeight == nil then  -- had error once, hope this nil check helps
+							popupUnits[unitID] = nil
+						else
+							spSetUnitMidAndAimPos(unitID, 0, unitHeight/2, 0, p[1], p[2], p[3],true)
+						end
+					end
+				else
+					local unitHeight = spGetUnitHeight(unitID)
+					if unitHeight == nil then  -- had error once, hope this nil check helps
+						popupUnits[unitID] = nil
+					else
+						p = unitCollisionVolume[defs.name][stateString]
+						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
+						if p[10] then
+							spSetUnitMidAndAimPos(unitID, 0, unitHeight/2, 0, p[10], p[11], p[12],true)
+						end
+					end
+				end
+				if popupUnits[unitID] ~= nil then
+					popupUnits[unitID].state = stateInt
 				end
 			end			
 		end
@@ -330,8 +375,34 @@ if (gadgetHandler:IsSyncedCode()) then
 					ys = data[1] * val
 					yo = data[2] * val
 					--Spring.Echo(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
-					spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
-					spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+
+
+					--WIP per piece collision volumes can now grow a trunk piece with build percentage
+					local unitDefID = Spring.GetUnitDefID(unitID)
+					if (pieceCollisionVolume[unitDefID]) then
+						local t = pieceCollisionVolume[unitDefID]
+						local p = t[tostring(data[3])]
+						spSetPieceCollisionData(unitID, data[3], true, p[1], ys, p[3], p[4], yo, p[6], p[7], p[8])
+						if t.offsets then
+							p = t.offsets
+							Spring.SetUnitMidAndAimPos(unitID, 0, ys*0.5, 0, p[1], ys*0.5, p[3],true)
+						else
+							spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+						end
+					elseif dynamicPieceCollisionVolume[unitDefID] then
+						local t = dynamicPieceCollisionVolume[unitDefID]
+						local p = t[tostring(data[3])]
+						spSetPieceCollisionData(unitID, data[3], true, p[1], ys, p[3], p[4], yo, p[6], p[7], p[8])
+						if t.offsets then
+							p = t.offsets
+							Spring.SetUnitMidAndAimPos(unitID, 0, ys*0.5, 0, p[1], ys*0.5, p[3],true)
+						else
+							spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+						end
+					else
+						spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+						spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
+					end
 				end
 			end
 		end

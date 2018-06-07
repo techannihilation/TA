@@ -30,7 +30,7 @@ Spring.SetUnitPieceCollisionVolumeData ( number unitID, number pieceIndex, boole
      COLVOL_AXIS_Z = 2
 
    sample collision volume with detailed descriptions
-	unitCollisionVolume["arm_advanced_radar_tower"] = {
+	[UnitDefNames["arm_advanced_radar_tower"].id] = {
 		on=            -- Unit is active/open/poped-up 
 		   {60,80,60,  -- Volume X scale, Volume Y scale, Volume Z scale,
 		    0,15,0,    -- Volume X offset, Volume Y offset, Volume Z offset,
@@ -38,14 +38,14 @@ Spring.SetUnitPieceCollisionVolumeData ( number unitID, number pieceIndex, boole
 			0,0,0]}    -- Aimpoint X offset, Aimpoint Y offset, Aimpoint Z offset]},
 		off={32,48,32,0,-10,0,0,1,0},
 	}                  -- Aimpoint offsets are relative to unit's base position (aka unit coordiante space)
-	pieceCollisionVolume["arm_big_bertha"] = {
+	[UnitDefNames["arm_big_bertha"].id] = {
 		["0"]={true,       -- [pieceIndexNumber]={enabled,
 			   48,74,48,   --            Volume X scale, Volume Y scale, Volume Z scale,
 		       0,0,0,      --            Volume X offset, Volume Y offset, Volume Z offset,
 			   1,1},       --            vType, axis},   
 		....               -- All undefined pieces will be treated as disabled for collision detection
 	}
-	dynamicPieceCollisionVolume["core_viper"] = {	--same as with pieceCollisionVolume only uses "on" and "off" tables
+	[UnitDefNames["core_viper"].id] = {	--same as with pieceCollisionVolume only uses "on" and "off" tables
 		on = {
 			["0"]={true,51,12,53,0,4,0,2,0},
 			["5"]={true,25,66,25,0,-14,0,1,1},
@@ -72,235 +72,257 @@ Spring.SetUnitPieceCollisionVolumeData ( number unitID, number pieceIndex, boole
 ]]--
 
 --Collision volume definitions, ones entered here are for TA, for other mods modify apropriatly
-local unitCollisionVolume = {}			--dynamic collision volume definitions
-local pieceCollisionVolume = {}			--per piece collision volume definitions
-local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume definitions
 
-
-	unitCollisionVolume["armason"] = {
+local unitCollisionVolume = {					--dynamic collision volume definitions
+	[UnitDefNames["armason"].id] = {
 		on={57,60,57,0,-7,0,1,1,1},    --{Xscale,Yscale,Zscale, Xoffset,Yoffset,Zoffset, vType,tType,axis}
 		off={24,34,24,0,10,0,1,1,1},
-	}
-	unitCollisionVolume["armamb"] = {
+	},
+	[UnitDefNames["armamb"].id] = {
 		on={49,45,49,0,-6,0,1,1,1,0,16,0},
 		off={49,20,49,0,-6,0,1,1,1,0,5,0},
-	}
-	unitCollisionVolume["armanni"] = {
+	},
+	[UnitDefNames["armanni"].id] = {
 		on={54,84,54,0,-2,0,2,1,0},
 		off={54,58,54,0,-15,0,2,1,0},
-	}
-	unitCollisionVolume["armanni1"] = {
+	},
+	[UnitDefNames["armanni1"].id] = {
 		on={108,168,108,0,-4,0,2,1,0},
 		off={108,122,108,0,-30,0,2,1,0},
-	}
-	unitCollisionVolume["armlab"] = {
+	},
+	[UnitDefNames["armlab"].id] = {
 		on={95,28,95,0,2,0,2,1,0},
 		off={95,22,95,0,-1,0,1,1,1},
-	}
-	unitCollisionVolume["armclaw"] = {
+	},
+	[UnitDefNames["armclaw"].id] = {
 		on={32,60,32,0,-2,0,1,1,1,0,25,0},
 		off={32,32,32,0,-13.5,0,0,1,1,0,6,0},
-	}
-	unitCollisionVolume["armmmkr"] = {
+	},
+	[UnitDefNames["armmmkr"].id] = {
 		on={60,70,60,0,7,0,1,1,1},
 		off={60,50,60,0,-4,0,1,1,1},
-	}
-	unitCollisionVolume["armpb"] = {
+	},
+	[UnitDefNames["armpb"].id] = {
 		on={39,78,39,0,-11,0,1,1,1,0,25,0},
 		off={39,40,39,0,-20,0,1,1,1,0,10,0},
-	}
-	unitCollisionVolume["armplat"] = {
+	},
+	[UnitDefNames["armplat"].id] = {
 		on={105,66,105,0,33,0,2,1,0,0,40,0},
 		off={105,44,105,0,0,0,2,1,0,0,30,0},
-	}
-	unitCollisionVolume["armsolar"] = {
+	},
+	[UnitDefNames["armsolar"].id] = {
 		on={83,76,83,0,-18,1,1,1,1},
 		off={50,76,50,0,-18,1,1,1,1},
-	}
-	unitCollisionVolume["armtarg"] = {
+	},
+	[UnitDefNames["armtarg"].id] = {
 		on={62,34,62,0,0,0,2,1,0},
 		off={55,78,55,0,-19.5,0,1,1,1},
-	}
-	unitCollisionVolume["armvp"] = {
+	},
+	[UnitDefNames["armvp"].id] = {
 		on={120,34,92,0,0,0,2,1,0},
 		off={90,34,92,0,0,0,2,1,0},
-	}
-	unitCollisionVolume["cordoom"] = {
+	},
+	[UnitDefNames["cordoom"].id] = {
 		on={63,112,63,0,12,0,1,1,1},
 		off={45,87,45,0,0,0,2,1,0},
-	}
-	unitCollisionVolume["cordoom1"] = {
+	},
+	[UnitDefNames["cordoom1"].id] = {
 		on={126,230,126,-2,2,0,1,1,1},
 		off={90,178,90,0,-26,0,2,1,0},
-	}
-	unitCollisionVolume["corfmkr"] = {
+	},
+	[UnitDefNames["corfmkr"].id] = {
 		on={48,46,48,0,0,0,1,1,1},
 		off={48,43,48,0,-16,0,1,1,1},
-	}
-	unitCollisionVolume["cormaw"] = {
+	},
+	[UnitDefNames["cormaw"].id] = {
 		on={32,60,32,0,-6,0,1,1,1,0,24,0},
 		off={32,32,32,0,-13,0,0,1,1,0,6,0},
-	}
-	unitCollisionVolume["cormexp"] = {
+	},
+	[UnitDefNames["cormexp"].id] = {
 		on={83,77,83,0,-27,0,1,1,1},
 		off={90,135,90,0,-27,0,1,1,1},
-	}
-	unitCollisionVolume["cormmkr"] = {
+	},
+	[UnitDefNames["cormmkr"].id] = {
 		on={60,60,60,0,0,0,1,1,1},
 		off={55,92,55,0,-22.5,0,1,1,1},
-	}
-	unitCollisionVolume["corplat"] = {
+	},
+	[UnitDefNames["corplat"].id] = {
 		on={112,60,112,0,28,0,1,1,1},
 		off={112,35,112,0,0,0,1,1,1},
-	}
-	unitCollisionVolume["corsolar"] = {
+	},
+	[UnitDefNames["corsolar"].id] = {
 		on={86,78,86,0,-25,0,1,1,1},
 		off={60,78,60,0,-35,0,1,1,1},
-	}
-	unitCollisionVolume["cortarg"] = {
+	},
+	[UnitDefNames["cortarg"].id] = {
 		on={64,20,64,0,0,0,1,1,1},
 		off={38,20,38,0,0,0,1,1,1},
-	}
-	unitCollisionVolume["packo"] = {
+	},
+	[UnitDefNames["packo"].id] = {
 		on={49,51,49,-0.5,-10,0,1,1,1,0,16,0},
 		off={49,23,49,-0.5,-10,0,1,1,1,0,6,0},
-	}
-	unitCollisionVolume["shiva"] = {
+	},
+	[UnitDefNames["shiva"].id] = {
 		on={50,50,50,0,2,-1,1,1,1},
 		off={54,45,54,0,-4,-1,1,1,1},
-	}
-	unitCollisionVolume["tllobliterator"] = {
+	},
+	[UnitDefNames["tllobliterator"].id] = {
 		on={82,57,82,0,-7,6,1,1,1},
 		off={73,30,73,0,-12,0,1,1,1},
-	}	
-	unitCollisionVolume["tllkrak"] = {
+	},
+	[UnitDefNames["tllkrak"].id] = {
 		on={60,28,60,0,2,0,1,1,1,0,0,0},
 		off={60,28,60,0,-39,0,1,1,1,0,-39,0},
-	}
-	unitCollisionVolume["tlltrid"] = {
+	},
+	[UnitDefNames["tlltrid"].id] = {
 		on={60,44,60,0,2,0,1,1,1,0,0,0},
 		off={60,44,60,0,-44,0,1,1,1,0,-44,0},
-	}
-	unitCollisionVolume["tllwhale"] = {
+	},
+	[UnitDefNames["tllwhale"].id] = {
 		on={46,30,95,0,-8,3,2,1,2,0,-2,0},
 		off={46,35,95,0,10,3,2,1,2,0,25,0},
-	}
-	unitCollisionVolume["tllsy"] = {
+	},
+	[UnitDefNames["tllsy"].id] = {
 		on={122,40,116,0,-3,2,2,1,0,0,24,0},
 		off={122,60,116,-11,7,2,2,1,0,0,24,0},
-	}
-	unitCollisionVolume["tllasy"] = {
+	},
+	[UnitDefNames["tllasy"].id] = {
 		on={152,50,123,0,0,0,2,1,0,0,24,0},
 		off={152,66,123,0,18,0,2,1,0,0,24,0},
-	}
-	unitCollisionVolume["uppercut"] = {
+	},
+	[UnitDefNames["uppercut"].id] = {
 		on={31,31,156,0,45,0,1,1,2,0,60,0},
 		off={31,31,156,0,0,0,1,1,2,0,20,0},
-	
 	}
-	pieceCollisionVolume["armbrtha"] = {
+}			
+local pieceCollisionVolume = {					--per piece collision volume definitions
+	[UnitDefNames["armbrtha"].id] = {
 			["1"]={32,80,32,0,20,0,1,1},
 			["3"]={30,30,70,0,0,14,1,2},
 			["4"]={8,8,42,0,1,94,1,2},
-			offsets={0,50,0}
-	}
-	pieceCollisionVolume["corint"] = {
+			offsets={0,50,0},
+			trunk = 1
+	},
+	[UnitDefNames["corint"].id] = {
 			["1"]={73,103,73,0,50,0,1,1},
 			["3"]={13,13,48,0,1,55,1,2},
-			offsets={0,50,0}
-	}		
-	pieceCollisionVolume["arm_big_bertha"] = {
+			offsets={0,50,0},
+			trunk = 1
+	},	
+	[UnitDefNames["arm_big_bertha"].id] = {
 			["1"]={28,74,28,0,34,0,1,1},
 			["3"]={15,15,113,0,0,30,1,2},
-			offsets={0,40,0}
-	}
-	pieceCollisionVolume["armveil"] = {
+			offsets={0,40,0},
+			trunk = 1
+	},
+	[UnitDefNames["armveil"].id] = {
 			["1"]={25,58,25,0,30,0,1,1},
 			["3"]={76,16,16,6,0,0,1,0},
-	}
-	pieceCollisionVolume["armrad"] = {
+			trunk = 1
+	},
+	[UnitDefNames["armrad"].id] = {
 			["1"]={22,58,22,0,30,0,1,1},
 			["3"]={60,13,13,11,0,0,1,0},
-	}
-	pieceCollisionVolume["armrad1"] = {
+			trunk = 1
+	},
+	[UnitDefNames["armrad1"].id] = {
 			["1"]={22,58,22,0,30,0,1,1},
 			["3"]={60,13,13,11,0,0,1,0},
-	}
-	pieceCollisionVolume["armvulc"] = {
+			trunk = 1
+	},
+	[UnitDefNames["armvulc"].id] = {
 			["3"]={95,154,95,0,32,0,1,1},
 			["7"]={50,50,140,0,0,40,1,2},
-	}
-	pieceCollisionVolume["armvulc2"] = {
+			trunk = 1
+	},
+	[UnitDefNames["armvulc2"].id] = {
 			["3"]={95,154,95,0,32,0,1,1},
 			["7"]={50,50,140,0,0,40,1,2},
-	}
-	pieceCollisionVolume["armvulc1"] = {
+			trunk = 1
+	},
+	[UnitDefNames["armvulc1"].id] = {
 			["3"]={165,350,165,0,32,0,1,1},
 			["5"]={98,98,240,0,0,100,1,2},
-	}
-	pieceCollisionVolume["corbuzz"] = {
+			trunk = 1
+	},
+	[UnitDefNames["corbuzz"].id] = {
 			["3"]={75,145,75,0,32,0,1,1},
 			["5"]={15,15,145,0,0,0,1,0},
-	}
-	pieceCollisionVolume["corbuzz2"] = {
+			trunk = 1
+	},
+	[UnitDefNames["corbuzz2"].id] = {
 			["3"]={75,145,75,0,32,0,1,1},
 			["5"]={15,15,145,0,0,0,1,0},
-	}
-	pieceCollisionVolume["corbuzz1"] = {
+			trunk = 1
+	},
+	[UnitDefNames["corbuzz1"].id] = {
 			["3"]={155,365,155,0,32,0,1,1},
 			["5"]={30,30,290,0,0,0,1,0},
-	}
-	pieceCollisionVolume["corflu"] = {
+			trunk = 1
+	},
+	[UnitDefNames["corflu"].id] = {
 			["1"]={155,315,155,0,32,0,1,1},
 			["3"]={30,30,220,0,0,75,1,2},
-	}
-	pieceCollisionVolume["armtabi"] = {
+			trunk = 1
+	},
+	[UnitDefNames["armtabi"].id] = {
 			["1"]={155,315,155,0,32,0,1,1},
 			["3"]={30,30,270,0,0,45,1,2},
-	}
-	pieceCollisionVolume["tllvanya"] = {
+			trunk = 1
+	},
+	[UnitDefNames["tllvanya"].id] = {
 			["1"]={155,315,155,0,32,0,1,1},
 			["4"]={30,30,100,0,0,75,1,2},
-	}
-	pieceCollisionVolume["armap"] = {
+			trunk = 1
+	},
+	[UnitDefNames["armap"].id] = {
 			["1"]={126,14,96,0,0,0,2,1},
 			["6"]={100,95,30,10,20,-30,2,1},
-			offsets={0,30,-30}
-	}
-	pieceCollisionVolume["armaap"] = {
+			offsets={0,30,-30},
+			trunk = 6
+	},
+	[UnitDefNames["armaap"].id] = {
 			["1"]={126,14,96,0,0,0,2,1},
 			["2"]={80,100,40,0,20,-40,2,1},
-			offsets={0,30,-30}
-	}
-	pieceCollisionVolume["corap"] = {
+			offsets={0,30,-30},
+			trunk = 2
+	},
+	[UnitDefNames["corap"].id] = {
 			["1"]={126,14,96,0,0,0,2,1},
 			["2"]={100,75,50,-25,25,10,2,1},
-			offsets={0,30,-30}
-	}
-	pieceCollisionVolume["coraap"] = {
+			offsets={0,30,-30},
+			trunk = 2
+	},
+	[UnitDefNames["coraap"].id] = {
 			["1"]={126,14,96,0,0,0,2,1},
 			["6"]={100,75,50,0,20,-50,2,1},
-			offsets={0,30,-30}
+			offsets={0,30,-30},
+			trunk = 6
 	}
-	dynamicPieceCollisionVolume["corgant"] = {
+}
+
+local dynamicPieceCollisionVolume = {			--dynamic per piece collision volume definitions
+	[UnitDefNames["corgant"].id] = {
 		on = {
 			["1"]={130,96,130,0,0,0,1,2},
 			["18"]={105,35,105,0,13,30,2,2},
 		},
 		off = {
 			["1"]={130,66,130,0,0,0,1,2},
+			trunk = 1
 		}
-	}
-	dynamicPieceCollisionVolume["armarad"] = {
+	},
+	[UnitDefNames["armarad"].id] = {
 		on = {
 			["1"]={25,45,25,0,22,0,1,1},
 			["3"]={76,29,29,0,3,0,1,0},
 		},
 		off = {
 			["1"]={32,51,32,0,8,1,1,1},
+			trunk = 1
 		}
-	}
-	dynamicPieceCollisionVolume["cortoast"] = {
+	},
+	[UnitDefNames["cortoast"].id] = {
 		on = {
 			["2"]={44,23,44,0,0,0,2,0},
 			["8"]={10,10,60,0,3,13,1,2},
@@ -308,11 +330,12 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		},
 		off = {
 			["2"]={44,12,44,0,0,0,2,0},
-			offsets={0,2,0}
+			offsets={0,2,0},
+			trunk = 2
 
 		}
-	}
-	dynamicPieceCollisionVolume["corvipe"] = {
+	},
+	[UnitDefNames["corvipe"].id] = {
 		on = {
 			["1"]={40,12,30,0,0,0,2,0},
 			["6"]={25,46,25,0,25,0,1,1},
@@ -321,10 +344,11 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		},
 		off = {
 			["1"]={40,12,30,0,0,0,2,0},
-			offsets={0,3,0}
+			offsets={0,3,0},
+			trunk = 1
 		}
-	}
-	dynamicPieceCollisionVolume["arm_mech_lab"] = {
+	},
+	[UnitDefNames["arm_mech_lab"].id] = {
 		on = {
 			["1"]={220,125,220,0,-25,20,1,2},
 			["20"]={65,175,65,0,65,0,1,1},
@@ -333,7 +357,19 @@ local dynamicPieceCollisionVolume = {}	--dynamic per piece collision volume defi
 		off = {
 			["1"]={170,125,170,0,-25,20,1,2},
 			["20"]={65,175,65,0,65,0,1,1},
-
+			trunk = 1
 		}
 	}
-return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume
+}
+
+local isTorp = {
+	[UnitDefNames["armtl"].id] = true,
+	[UnitDefNames["armatl"].id] = true,
+	[UnitDefNames["cortl"].id] = true,
+	[UnitDefNames["coratl"].id] = true,
+	--[UnitDefNames["tllwmjam"].id] = true,
+	[UnitDefNames["tlltorp"].id] = true,
+	[UnitDefNames["tllatorp"].id] = true
+}
+
+return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, isTorp
