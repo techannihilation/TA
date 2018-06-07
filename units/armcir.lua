@@ -4,8 +4,8 @@ return {
 		airsightdistance = 1100,
 		brakerate = 0,
 		buildangle = 65536,
-		buildcostenergy = 8688,
-		buildcostmetal = 832,
+		buildcostenergy = 9985,
+		buildcostmetal = 855,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -31,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 35,
 		mass = 832,
-		maxdamage = 2500,
+		maxdamage = 2750,
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
@@ -123,7 +123,7 @@ return {
 		},
 		weapondefs = {
 			arm_cir = {
-				areaofeffect = 144,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
