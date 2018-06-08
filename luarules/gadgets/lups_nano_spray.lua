@@ -17,16 +17,17 @@ end
 local builderWorkTime = {}
 local min, max = 5000,0
 for uDefID, uDef in pairs(UnitDefs) do
-  if uDef.isBuilder and uDef.buildSpeed then
-    if uDef.buildSpeed > max then max = uDef.buildSpeed end
-    if uDef.buildSpeed < min then max = uDef.buildSpeed end
-    local value = uDef.buildSpeed
+  if uDef.isBuilder then
+    local BuildSpeed = uDef.buildSpeed or 220
+    if buildSpeed > max then max = buildSpeed end
+    if buildSpeed < min then max = buildSpeed end
+
     local OldMax, OldMin, NewMax, NewMin = 220,5000,0.2,2.2
     local OldRange = (OldMax - OldMin)
     local NewRange = (NewMax - NewMin)
-    value = (((value - OldMin) * NewRange) / OldRange) + NewMin
+    buildSpeed = (((buildSpeed - OldMin) * NewRange) / OldRange) + NewMin
     --Spring.Echo(uDef.name, uDef.buildSpeed,value)
-    builderWorkTime[uDefID] = value
+    builderWorkTime[uDefID] = buildSpeed
   end
 end
 --Spring.Echo("min buildpower is ", min) --220
@@ -298,8 +299,9 @@ end
 function gadget:GameFrame(frame)
 	for i=1,#builders do
 		local unitID = builders[i]
-    local UnitDefID = Spring.GetUnitDefID(unitID)
-    local buildpower = builderWorkTime[UnitDefID] or 1
+                if Spring.IsUnitIcon(unitID) then return end
+                local UnitDefID = Spring.GetUnitDefID(unitID)
+                local buildpower = builderWorkTime[UnitDefID] or 1
 		if ((unitID + frame) % 30 < 1) then --// only update once per second
 			local strength = ((Spring.GetUnitCurrentBuildPower(unitID)*buildpower) or 1)	-- * 16
       --Spring.Echo(strength,Spring.GetUnitCurrentBuildPower(unitID)*builderWorkTime[UnitDefID])
