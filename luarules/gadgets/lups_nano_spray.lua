@@ -18,7 +18,7 @@ local builderWorkTime = {}
 local min, max = 5000,0
 for uDefID, uDef in pairs(UnitDefs) do
   if uDef.isBuilder then
-    local BuildSpeed = uDef.buildSpeed or 220
+    local buildSpeed = uDef.buildSpeed or 220
     if buildSpeed > max then max = buildSpeed end
     if buildSpeed < min then max = buildSpeed end
 
