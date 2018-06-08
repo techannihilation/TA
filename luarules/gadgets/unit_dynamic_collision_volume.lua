@@ -198,7 +198,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			local t = pieceCollisionVolume[unitDefID]
 			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
 		elseif dynamicPieceCollisionVolume[unitDefID] then
-			local t = pieceCollisionVolume[unitDefID]
+			local t = dynamicPieceCollisionVolume[unitDefID]
 			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
 		else
 			unitYSizeOffset[unitID] = {ys,yo}
