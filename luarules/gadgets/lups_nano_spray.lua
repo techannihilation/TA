@@ -408,7 +408,7 @@ function gadget:Update()
   end
 
   --// enable freaky arm nano fx when quality>3
-  if ((Spring.GetConfigInt("LupsNanoEffect",1) or 2) >= 2) then
+  if ((Spring.GetConfigInt("LupsNanoEffect",1) or 1) == 2) then
     factionsNanoFx.default = factionsNanoFx["default_high_quality"]
   end
 
@@ -437,7 +437,7 @@ function gadget:Update()
     local factionNanoFx = factionsNanoFx[faction]
     factionNanoFx.delaySpread = 30
     factionNanoFx.fxtype = factionNanoFx.fxtype:lower()
-    if ((Spring.GetConfigInt("LupsNanoEffect",1) or 2) >= 1) and ((factionNanoFx.fxtype=="nanolasers") or (factionNanoFx.fxtype=="nanolasersshader")) then
+    if ((Spring.GetConfigInt("LupsNanoEffect",1) or 1) == 1) and ((factionNanoFx.fxtype=="nanolasers") or (factionNanoFx.fxtype=="nanolasersshader")) then
       factionNanoFx.flare = true
     end
 
