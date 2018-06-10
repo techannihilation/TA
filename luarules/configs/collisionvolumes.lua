@@ -233,32 +233,32 @@ local pieceCollisionVolume = {					--per piece collision volume definitions
 	[UnitDefNames["armvulc"].id] = {
 			["3"]={95,154,95,0,32,0,1,1},
 			["7"]={50,50,140,0,0,40,1,2},
-			trunk = 1
+			trunk = 3
 	},
 	[UnitDefNames["armvulc2"].id] = {
 			["3"]={95,154,95,0,32,0,1,1},
 			["7"]={50,50,140,0,0,40,1,2},
-			trunk = 1
+			trunk = 3
 	},
 	[UnitDefNames["armvulc1"].id] = {
 			["3"]={165,350,165,0,32,0,1,1},
 			["5"]={98,98,240,0,0,100,1,2},
-			trunk = 1
+			trunk = 3
 	},
 	[UnitDefNames["corbuzz"].id] = {
 			["3"]={75,145,75,0,32,0,1,1},
 			["5"]={15,15,145,0,0,0,1,0},
-			trunk = 1
+			trunk = 3
 	},
 	[UnitDefNames["corbuzz2"].id] = {
 			["3"]={75,145,75,0,32,0,1,1},
 			["5"]={15,15,145,0,0,0,1,0},
-			trunk = 1
+			trunk = 3
 	},
 	[UnitDefNames["corbuzz1"].id] = {
 			["3"]={155,365,155,0,32,0,1,1},
 			["5"]={30,30,290,0,0,0,1,0},
-			trunk = 1
+			trunk = 3
 	},
 	[UnitDefNames["corflu"].id] = {
 			["1"]={155,315,155,0,32,0,1,1},
