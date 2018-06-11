@@ -134,7 +134,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			elseif dynamicPieceCollisionVolume[unitDefID] then
-				local t = dynamicPieceCollisionVolume[unitDefID]
+				local t = dynamicPieceCollisionVolume[unitDefID].off
 				for pieceIndex=1, #spGetPieceList(unitID) do
 					local p = t[tostring(pieceIndex)]
 					if pieceIndex == t.trunk then
@@ -198,7 +198,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			local t = pieceCollisionVolume[unitDefID]
 			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
 		elseif dynamicPieceCollisionVolume[unitDefID] then
-			local t = dynamicPieceCollisionVolume[unitDefID]
+			local t = dynamicPieceCollisionVolume[unitDefID].off
 			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
 		else
 			unitYSizeOffset[unitID] = {ys,yo}
@@ -390,7 +390,7 @@ if (gadgetHandler:IsSyncedCode()) then
 							spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
 						end
 					elseif dynamicPieceCollisionVolume[unitDefID] then
-						local t = dynamicPieceCollisionVolume[unitDefID]
+						local t = dynamicPieceCollisionVolume[unitDefID].off
 						local p = t[tostring(data[3])]
 						spSetPieceCollisionData(unitID, data[3], true, p[1], ys, p[3], p[4], yo, p[6], p[7], p[8])
 						if t.offsets then
