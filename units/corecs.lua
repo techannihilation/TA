@@ -69,11 +69,11 @@ return {
 			[8] = "correch2",
 			[9] = "corfnanotc2",
 			[10] = "corflshd",
-			[11] = "corplat",
+			[11] = "corsy",
 			[12] = "corasy",
 			[13] = "coresy",
 			[14] = "core_hexapod_lab",
-			[15] = "armrech3",
+			[15] = "correch3",
 		},
 		customparams = {
 			buildpic = "corecs.dds",
