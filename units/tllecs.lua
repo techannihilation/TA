@@ -65,7 +65,7 @@ return {
 			[4] = "tllemex",
 			[5] = "tllfnanotc2",
 			[6] = "tllfgate",
-			[7] = "tllplat",
+			[7] = "tllsy",
 			[8] = "tllasy",
 			[9] = "tllsubpen",
 			[10] = "tllesy",
