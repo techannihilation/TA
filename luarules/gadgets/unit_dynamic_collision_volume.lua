@@ -253,7 +253,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:UnitFinished(unitID, unitDefID, unitTeam)
 		--local un = UnitDefs[unitDefID].name
 		if unitCollisionVolume[unitDefID] then
-			popupUnits[unitID]={id=unitDefId, state=-1, perPiece=false}
+			popupUnits[unitID]={id=unitDefID, state=-1, perPiece=false}
 		elseif dynamicPieceCollisionVolume[unitDefID] then
 			popupUnits[unitID]={id=unitDefID, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
 		end
