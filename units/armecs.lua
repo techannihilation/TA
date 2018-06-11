@@ -68,7 +68,7 @@ return {
 			[7] = "armemex",
 			[8] = "armfnanotc2",
 			[9] = "armfatf",
-			[10] = "armplat",
+			[10] = "armsy",
 			[11] = "armasy",
 			[12] = "armesy",
 			[13] = "arm_mech_lab",
