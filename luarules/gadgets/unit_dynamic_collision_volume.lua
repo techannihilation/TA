@@ -251,10 +251,10 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- Check if a unit is pop-up type (the list must be entered manually)
 	-- If a building was constructed add it to the list for later radius and height scaling
 	function gadget:UnitFinished(unitID, unitDefID, unitTeam)
-		local un = UnitDefs[unitDefID].name
-		if unitCollisionVolume[un] then
+		--local un = UnitDefs[unitDefID].name
+		if unitCollisionVolume[unitDefID] then
 			popupUnits[unitID]={name=un, state=-1, perPiece=false}
-		elseif dynamicPieceCollisionVolume[un] then
+		elseif dynamicPieceCollisionVolume[unitDefID] then
 			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
 		end
 		
