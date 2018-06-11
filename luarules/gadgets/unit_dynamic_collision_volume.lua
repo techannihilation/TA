@@ -253,9 +253,9 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:UnitFinished(unitID, unitDefID, unitTeam)
 		--local un = UnitDefs[unitDefID].name
 		if unitCollisionVolume[unitDefID] then
-			popupUnits[unitID]={name=un, state=-1, perPiece=false}
+			popupUnits[unitID]={id=unitDefId, state=-1, perPiece=false}
 		elseif dynamicPieceCollisionVolume[unitDefID] then
-			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
+			popupUnits[unitID]={id=unitDefID, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
 		end
 		
 		-- set height to expected value for fully built unit
@@ -323,7 +323,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 			if defs.state ~= stateInt then
 				if defs.perPiece then
-					t = dynamicPieceCollisionVolume[Spring.GetUnitDefID(unitID)][stateString]
+					t = dynamicPieceCollisionVolume[defs.id][stateString]
 					for pieceIndex=0, defs.numPieces do
 						p = t[tostring(pieceIndex)]
 						if p then
@@ -346,7 +346,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					if unitHeight == nil then  -- had error once, hope this nil check helps
 						popupUnits[unitID] = nil
 					else
-						p = unitCollisionVolume[Spring.GetUnitDefID(unitID)][stateString]
+						p = unitCollisionVolume[defs.id][stateString]
 						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 						if p[10] then
 							spSetUnitMidAndAimPos(unitID, 0, unitHeight/2, 0, p[10], p[11], p[12],true)
