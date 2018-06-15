@@ -2,14 +2,14 @@ return {
 	tllvanya = {
 		buildangle = 4096,
 		buildcostenergy = 3900000,
-		buildcostmetal = 1290000,
+		buildcostmetal = 516000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "tllvanya_aoplane.dds",
 		buildpic = "tllvanya.dds",
-		buildtime = 20000000,
+		buildtime = 8000000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -84,7 +84,7 @@ return {
 		weapondefs = {
 			arm_tabithacannon = {
 				accuracy = 120,
-				areaofeffect = 4360,
+				areaofeffect = 3900,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -100,7 +100,7 @@ return {
 				model = "obusnuke",
 				name = "Tabitha Cannon",
 				nogap = 1,
-				range = 12500,
+				range = 3500,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,
@@ -114,7 +114,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1380,
 				damage = {
-					default = 750000,
+					default = 10000000,
 					subs = 5,
 				},
 			},

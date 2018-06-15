@@ -1,15 +1,15 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 8000000,
-		buildcostmetal = 1080000,
+		buildcostenergy = 3200000,
+		buildcostmetal = 432000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "corflu_aoplane.dds",
 		buildpic = "corflu.dds",
-		buildtime = 20000000,
+		buildtime = 8000000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -85,7 +85,7 @@ return {
 		weapondefs = {
 			cor_flucannon = {
 				accuracy = 150,
-				areaofeffect = 4630,
+				areaofeffect = 3900,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -101,7 +101,7 @@ return {
 				model = "obusnuke",
 				name = "Influence Cannon",
 				nogap = 1,
-				range = 12000,
+				range = 3500,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,
@@ -114,7 +114,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1340,
 				damage = {
-					default = 750000,
+					default = 10000000,
 					subs = 5,
 				},
 			},
