@@ -1,15 +1,15 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 2920000,
-		buildcostmetal = 450000,
+		buildcostenergy = 7300000,
+		buildcostmetal = 1140000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "armtabi_aoplane.dds",
 		buildpic = "armtabi.dds",
-		buildtime = 8000000,
+		buildtime = 20000000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
@@ -85,7 +85,7 @@ return {
 		weapondefs = {
 			arm_tabithacannon = {
 				accuracy = 120,
-				areaofeffect = 3900,
+				areaofeffect = 4360,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -101,7 +101,7 @@ return {
 				model = "obusnuke",
 				name = "Tabitha Cannon",
 				nogap = 1,
-				range = 3500,
+				range = 12000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,
@@ -115,7 +115,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1380,
 				damage = {
-					default = 10000000,
+					default = 750000,
 					subs = 5,
 				},
 			},
