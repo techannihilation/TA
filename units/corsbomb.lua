@@ -110,7 +110,7 @@ return {
 				name = "Very Heavy Bombs",
 				noselfdamage = true,
 				range = 1280,
-				reloadtime = 17,
+				reloadtime = 20,
 				soundhitdry = "burn02",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
