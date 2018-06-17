@@ -387,7 +387,6 @@ function widget:DrawScreen()
 		textBuffer = {}
 		textBufferCount = 0
 
-		Spring.Echo(WG.energyConversion)
 		if(WG.energyConversion) then
 			local makerTemp = WG.energyConversion.convertCapacities[uDefID]
 			local curAvgEffi = spGetTeamRulesParam(myTeamID(), 'mmAvgEffi')
