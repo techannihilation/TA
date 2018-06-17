@@ -77,6 +77,8 @@ local Config = {
 	},
 }
 
+local guishaderEnabled = WG['guishader_api'] or false
+
 local sGetSelectedUnitsCount = Spring.GetSelectedUnitsCount
 local sGetActiveCommand = Spring.GetActiveCommand
 local sGetActiveCmdDescs = Spring.GetActiveCmdDescs
@@ -157,7 +159,8 @@ local function AutoResizeObjects() --autoresize v2
 	end
 end
 
-local function CreateGrid(r)
+WG.hoverID = nil
+    local function CreateGrid(r)
 	local background = {"rectangle",
 		px=r.px,py=r.py,
 		sx=r.isx*r.ix+r.ispreadx*(r.ix-1) +r.margin*2,
@@ -218,6 +221,7 @@ local function CreateGrid(r)
 		mouseover=function(mx,my,self)
 			if self.cmdID then
 				WG["cmdID"] = self.cmdID
+				WG.hoverID = self.cmdID
 				--Spring.Echo(WG["cmdID"],self.cmdname)
 			end
 			mouseoverhighlight.px = self.px
@@ -655,7 +659,23 @@ function widget:GameFrame(frame)
   end
 end
 
-function widget:Update()
+local sec = 0
+local guishaderCheckInterval = 1
+function widget:Update(dt)
+	sec=sec+dt
+	if (sec>1/guishaderCheckInterval) then
+		sec = 0
+		if (WG['guishader_api'] ~= guishaderEnabled) then
+			guishaderEnabled = WG['guishader_api']
+			if (guishaderEnabled) then
+				Config.buildmenu.fadetimeOut = 0.02
+				Config.ordermenu.fadetimeOut = 0.02
+			else
+				Config.buildmenu.fadetimeOut = Config.buildmenu.fadetime*0.66
+				Config.ordermenu.fadetimeOut = Config.ordermenu.fadetime*0.66
+			end
+		end
+	end
 	onWidgetUpdate()
 	if (updatehax or firstupdate) then
 		if (firstupdate) then
