@@ -50,6 +50,7 @@ local barGlowEdgeTexture		= LUAUI_DIRNAME.."Images/barglow-edge.dds"
 local bladesTexture					= ":c:"..LUAUI_DIRNAME.."Images/blades.png"
 local poleTexture						= LUAUI_DIRNAME.."Images/pole.png"
 local comTexture						= LUAUI_DIRNAME.."Images/comIcon.png"
+local convertCapacities = VFS.Include('LuaRules/Configs/maker_defs.lua')
 
 local vsx, vsy = gl.GetViewSizes()
 local widgetScale = (0.80 + (vsx*vsy / 6000000))
@@ -1500,6 +1501,9 @@ function widget:Initialize()
     if not WG["background_opacity_custom"] then
         WG["background_opacity_custom"] = {0,0,0,0.5}
     end
+
+    WG.energyConversion = {convertCapacities = convertCapacities}
+
 	Spring.SendCommands("resbar 0")
 	if Spring.GetGameFrame() > 0 then
 		countComs()
