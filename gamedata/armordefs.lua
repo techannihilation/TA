@@ -108,7 +108,7 @@ return {
         "corrag",
         "armmin",
         "cormin",
-	"tlltsetse",
+	--"tlltsetse",
         "tllbuilderlvl1",
         "tllbuilderlvl2",
         "tllbuilderlvl3",
