@@ -139,6 +139,7 @@ return {
 				tolerance = 100000,
 				weapontype = "Melee",
 				weaponvelocity = 100000,
+				waterweapon = true,
 				damage = {
 					default = 0,
 				},
