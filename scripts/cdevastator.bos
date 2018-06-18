@@ -4,13 +4,13 @@
 #include "exptype.h"
 
 piece  base, Head, Engine, Connection1, Connection2, BaseBox1, BaseBox2, BaseBox3,
-       turret1l, plate1l, sleeve1la, sleeve1lb, barrel1la, barrel1lb, flare1la, flare1lb,
-       turret1r, plate1r, sleeve1ra, sleeve1rb, barrel1ra, barrel1rb, flare1ra, flare1rb,
-       turret2l, plate2l, sleeve2la, sleeve2lb, barrel2la, barrel2lb, flare2la, flare2lb,
-       turret2r, plate2r, sleeve2ra, sleeve2rb, barrel2ra, barrel2rb, flare2ra, flare2rb,
-       turret3l, plate3l, sleeve3la, sleeve3lb, barrel3la, barrel3lb, flare3la, flare3lb,
-       turret3r, plate3r, sleeve3ra, sleeve3rb, barrel3ra, barrel3rb, flare3ra, flare3rb,
-       turret1m, plate1m, sleeve1m, barrel1m, flare1m, turret2m, plate2m, sleeve2m,
+       turret1l, sleeve1l, flare1l,
+       turret1r, sleeve1r, flare1r,
+       turret2l, sleeve2l, flare2l,
+       turret2r, sleeve2r, flare2r,
+       turret3l, sleeve3l, flare3l,
+       turret3r, sleeve3r, flare3r,
+       turret1m, sleeve1m, barrel1m, flare1m, turret2m, plate2m, sleeve2m,
        barrel2m, flare2m, turret3m, plate3m, sleeve3m, barrel3m, flare3m, rocketsr,
        rocketsl, rocketsr2, rocketsl2, rocketsr3, rocketsl3, rocketsr4, rocketsl4, mslr0,
        mslr1, mslr2, mslr3, msll0, msll1, msll2, msll3, rockets2r,
@@ -33,13 +33,8 @@ RestoreWeaps()
 		if( Static_Var_17 >= 37 )
 		{
 			show turret3r;
-			show plate3r;
-			show sleeve3ra;
-			show barrel3ra;
-			show sleeve3rb;
-			show barrel3rb;
+			show sleeve3r;
 			show turret2m;
-			show plate2m;
 			show sleeve2m;
 			show barrel2m;
 			Static_Var_15 = 0;
@@ -55,29 +50,21 @@ HitByWeapon()
 	{
 		Static_Var_15 = 1;
 		explode turret3r type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode plate3r type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3ra type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel3ra type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3rb type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel3rb type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeve3r type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeve3r type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		hide turret3r;
-		hide plate3r;
-		hide sleeve3ra;
-		hide barrel3ra;
-		hide sleeve3rb;
-		hide barrel3rb;
+		hide sleeve3r;
+		hide sleeve3r;
 	}
 	if( Static_Var_17 <= 28 AND Static_Var_16 == 0 )
 	{
 		Static_Var_16 = 1;
 		explode turret2m type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode plate2m type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode sleeve2m type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode barrel2m type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode sleeve2m type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode barrel2m type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		hide turret2m;
-		hide plate2m;
 		hide sleeve2m;
 		hide barrel2m;
 	}
@@ -171,31 +158,16 @@ missileReload2l()
 
 Create()
 {
-	hide flare1ra;
-	hide flare1rb;
-	hide flare1la;
-	hide flare1lb;
-	hide flare2ra;
-	hide flare2rb;
-	hide flare2la;
-	hide flare2lb;
-	hide flare3ra;
-	hide flare3rb;
-	hide flare3la;
-	hide flare3lb;
+	hide flare1r;
+	hide flare1l;
+	hide flare2r;
+	hide flare2l;
+	hide flare3r;
+	hide flare3l;
 	hide flare1m;
 	hide flare2m;
 	hide flare3m;
-	dont-cache turret3r;
-	dont-cache plate3r;
-	dont-cache sleeve3ra;
-	dont-cache barrel3ra;
-	dont-cache sleeve3rb;
-	dont-cache barrel3rb;
-	dont-cache turret2m;
-	dont-cache plate2m;
-	dont-cache sleeve2m;
-	dont-cache barrel2m;
+
 	Static_Var_1 = 0;
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
@@ -224,23 +196,23 @@ RestoreAfterDelay()
 {
 	sleep Static_Var_14;
 	turn turret1r to y-axis <0.000000> speed <55.000000>;
-	turn sleeve1ra to x-axis <0.000000> speed <30.000000>;
-	turn sleeve1rb to x-axis <0.000000> speed <30.000000>;
+	turn sleeve1r to x-axis <0.000000> speed <30.000000>;
+
 	turn turret1l to y-axis <0.000000> speed <55.000000>;
-	turn sleeve1la to x-axis <0.000000> speed <30.000000>;
-	turn sleeve1lb to x-axis <0.000000> speed <30.000000>;
+	turn sleeve1l to x-axis <0.000000> speed <30.000000>;
+
 	turn turret2r to y-axis <0.000000> speed <55.000000>;
-	turn sleeve2ra to x-axis <0.000000> speed <30.000000>;
-	turn sleeve2rb to x-axis <0.000000> speed <30.000000>;
+	turn sleeve2r to x-axis <0.000000> speed <30.000000>;
+
 	turn turret2l to y-axis <0.000000> speed <55.000000>;
-	turn sleeve2la to x-axis <0.000000> speed <30.000000>;
-	turn sleeve2lb to x-axis <0.000000> speed <30.000000>;
+	turn sleeve2l to x-axis <0.000000> speed <30.000000>;
+
 	turn turret3r to y-axis <0.000000> speed <55.000000>;
-	turn sleeve3ra to x-axis <0.000000> speed <30.000000>;
-	turn sleeve3rb to x-axis <0.000000> speed <30.000000>;
+	turn sleeve3r to x-axis <0.000000> speed <30.000000>;
+
 	turn turret3l to y-axis <0.000000> speed <55.000000>;
-	turn sleeve3la to x-axis <0.000000> speed <30.000000>;
-	turn sleeve3lb to x-axis <0.000000> speed <30.000000>;
+	turn sleeve3l to x-axis <0.000000> speed <30.000000>;
+
 	turn turret1m to y-axis <0.000000> speed <55.000000>;
 	turn sleeve1m to x-axis <0.000000> speed <30.000000>;
 	turn turret2m to y-axis <0.000000> speed <55.000000>;
@@ -267,16 +239,9 @@ AimWeapon1(heading, pitch)
 	signal 2;
 	set-signal-mask 2;
 	turn turret1r to y-axis heading speed <75.000000>;
-	turn sleeve1ra to x-axis <0.000000> - pitch speed <75.000000>;
-	turn sleeve1rb to x-axis <0.000000> - pitch speed <75.000000>;
+	turn sleeve1r to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn turret1r around y-axis;
-	wait-for-turn sleeve1ra around x-axis;
-	wait-for-turn sleeve1rb around x-axis;
-	if( Static_Var_1 == 0 )
-	{
-		wait-for-move barrel1ra along z-axis;
-		wait-for-move barrel1rb along z-axis;
-	}
+	wait-for-turn sleeve1r around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -286,16 +251,9 @@ AimWeapon2(heading, pitch)
 	signal 4;
 	set-signal-mask 4;
 	turn turret1l to y-axis heading speed <75.000000>;
-	turn sleeve1la to x-axis <0.000000> - pitch speed <75.000000>;
-	turn sleeve1lb to x-axis <0.000000> - pitch speed <75.000000>;
+	turn sleeve1l to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn turret1l around y-axis;
-	wait-for-turn sleeve1la around x-axis;
-	wait-for-turn sleeve1lb around x-axis;
-	if( Static_Var_2 == 0 )
-	{
-		wait-for-move barrel1la along z-axis;
-		wait-for-move barrel1lb along z-axis;
-	}
+	wait-for-turn sleeve1l around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -305,16 +263,9 @@ AimWeapon3(heading, pitch)
 	signal 8;
 	set-signal-mask 8;
 	turn turret2r to y-axis heading speed <75.000000>;
-	turn sleeve2ra to x-axis <0.000000> - pitch speed <75.000000>;
-	turn sleeve2rb to x-axis <0.000000> - pitch speed <75.000000>;
+	turn sleeve2r to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn turret2r around y-axis;
-	wait-for-turn sleeve2ra around x-axis;
-	wait-for-turn sleeve2rb around x-axis;
-	if( Static_Var_3 == 0 )
-	{
-		wait-for-move barrel2ra along z-axis;
-		wait-for-move barrel2rb along z-axis;
-	}
+	wait-for-turn sleeve2r around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -324,16 +275,9 @@ AimWeapon4(heading, pitch)
 	signal 16;
 	set-signal-mask 16;
 	turn turret2l to y-axis heading speed <75.000000>;
-	turn sleeve2la to x-axis <0.000000> - pitch speed <75.000000>;
-	turn sleeve2lb to x-axis <0.000000> - pitch speed <75.000000>;
+	turn sleeve2l to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn turret2l around y-axis;
-	wait-for-turn sleeve2la around x-axis;
-	wait-for-turn sleeve2lb around x-axis;
-	if( Static_Var_2 == 0 )
-	{
-		wait-for-move barrel2la along z-axis;
-		wait-for-move barrel2lb along z-axis;
-	}
+	wait-for-turn sleeve2l around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -347,16 +291,9 @@ AimWeapon5(heading, pitch)
 		sleep 500;
 	}
 	turn turret3r to y-axis heading speed <75.000000>;
-	turn sleeve3ra to x-axis <0.000000> - pitch speed <75.000000>;
-	turn sleeve3rb to x-axis <0.000000> - pitch speed <75.000000>;
+	turn sleeve3r to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn turret3r around y-axis;
-	wait-for-turn sleeve3ra around x-axis;
-	wait-for-turn sleeve3rb around x-axis;
-	if( Static_Var_3 == 0 )
-	{
-		wait-for-move barrel3ra along z-axis;
-		wait-for-move barrel3rb along z-axis;
-	}
+	wait-for-turn sleeve3r around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -366,168 +303,41 @@ AimWeapon6(heading, pitch)
 	signal 64;
 	set-signal-mask 64;
 	turn turret3l to y-axis heading speed <75.000000>;
-	turn sleeve3la to x-axis <0.000000> - pitch speed <75.000000>;
-	turn sleeve3lb to x-axis <0.000000> - pitch speed <75.000000>;
+	turn sleeve3l to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn turret3l around y-axis;
-	wait-for-turn sleeve3la around x-axis;
-	wait-for-turn sleeve3lb around x-axis;
-	if( Static_Var_3 == 0 )
-	{
-		wait-for-move barrel3la along z-axis;
-		wait-for-move barrel3lb along z-axis;
-	}
+	wait-for-turn sleeve3l around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FireWeapon1()
 {
-	if( Static_Var_1 == 0 )
-	{
-		show flare1ra;
-		move barrel1ra to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare1ra;
-		move barrel1ra to z-axis [0.000000] speed [2.000000];
-	}
-	if( Static_Var_1 == 1 )
-	{
-		show flare1rb;
-		move barrel1rb to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare1rb;
-		move barrel1rb to z-axis [0.000000] speed [2.000000];
-	}
-	++Static_Var_1;
-	if( Static_Var_1 == 2 )
-	{
-		Static_Var_1 = 0;
-	}
+
 }
 
 FireWeapon2()
 {
-	if( Static_Var_2 == 0 )
-	{
-		show flare1la;
-		move barrel1la to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare1la;
-		move barrel1la to z-axis [0.000000] speed [2.000000];
-	}
-	if( Static_Var_2 == 1 )
-	{
-		show flare1lb;
-		move barrel1lb to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare1lb;
-		move barrel1lb to z-axis [0.000000] speed [2.000000];
-	}
-	++Static_Var_2;
-	if( Static_Var_2 == 2 )
-	{
-		Static_Var_2 = 0;
-	}
+	
 }
 
 FireWeapon3()
 {
-	if( Static_Var_3 == 0 )
-	{
-		show flare2ra;
-		move barrel2ra to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare2ra;
-		move barrel2ra to z-axis [0.000000] speed [2.000000];
-	}
-	if( Static_Var_3 == 1 )
-	{
-		show flare2rb;
-		move barrel2rb to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare2rb;
-		move barrel2rb to z-axis [0.000000] speed [2.000000];
-	}
-	++Static_Var_3;
-	if( Static_Var_3 == 2 )
-	{
-		Static_Var_3 = 0;
-	}
+	
 }
 
 FireWeapon4()
 {
-	if( Static_Var_4 == 0 )
-	{
-		show flare2la;
-		move barrel2la to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare2la;
-		move barrel2la to z-axis [0.000000] speed [2.000000];
-	}
-	if( Static_Var_4 == 1 )
-	{
-		show flare2lb;
-		move barrel2lb to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare2lb;
-		move barrel2lb to z-axis [0.000000] speed [2.000000];
-	}
-	++Static_Var_4;
-	if( Static_Var_4 == 2 )
-	{
-		Static_Var_4 = 0;
-	}
+	
 }
 
 FireWeapon5()
 {
-	if( Static_Var_5 == 0 )
-	{
-		show flare3ra;
-		move barrel3ra to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare3ra;
-		move barrel3ra to z-axis [0.000000] speed [2.000000];
-	}
-	if( Static_Var_5 == 1 )
-	{
-		show flare3rb;
-		move barrel3rb to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare3rb;
-		move barrel3rb to z-axis [0.000000] speed [2.000000];
-	}
-	++Static_Var_5;
-	if( Static_Var_5 == 2 )
-	{
-		Static_Var_5 = 0;
-	}
+	
 }
 
 FireWeapon6()
 {
-	if( Static_Var_6 == 0 )
-	{
-		show flare3la;
-		move barrel3la to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare3la;
-		move barrel3la to z-axis [0.000000] speed [2.000000];
-	}
-	if( Static_Var_6 == 1 )
-	{
-		show flare3lb;
-		move barrel3lb to z-axis [-1.500000] now;
-		sleep 800;
-		hide flare3lb;
-		move barrel3lb to z-axis [0.000000] speed [2.000000];
-	}
-	++Static_Var_6;
-	if( Static_Var_6 == 2 )
-	{
-		Static_Var_6 = 0;
-	}
+	
 }
 
 AimFromWeapon7(piecenum)
@@ -1002,14 +812,7 @@ AimFromWeapon1(piecenum)
 
 QueryWeapon1(piecenum)
 {
-	if( Static_Var_1 == 0 )
-	{
-		piecenum = flare1ra;
-	}
-	if( Static_Var_1 == 1 )
-	{
-		piecenum = flare1rb;
-	}
+	piecenum = flare1r;
 }
 
 AimFromWeapon2(piecenum)
@@ -1019,14 +822,7 @@ AimFromWeapon2(piecenum)
 
 QueryWeapon2(piecenum)
 {
-	if( Static_Var_2 == 0 )
-	{
-		piecenum = flare1la;
-	}
-	if( Static_Var_2 == 1 )
-	{
-		piecenum = flare1lb;
-	}
+	piecenum = flare1l;
 }
 
 AimFromWeapon3(piecenum)
@@ -1036,14 +832,7 @@ AimFromWeapon3(piecenum)
 
 QueryWeapon3(piecenum)
 {
-	if( Static_Var_3 == 0 )
-	{
-		piecenum = flare2ra;
-	}
-	if( Static_Var_3 == 1 )
-	{
-		piecenum = flare2rb;
-	}
+	piecenum = flare2r;
 }
 
 AimFromWeapon4(piecenum)
@@ -1053,14 +842,8 @@ AimFromWeapon4(piecenum)
 
 QueryWeapon4(piecenum)
 {
-	if( Static_Var_4 == 0 )
-	{
-		piecenum = flare2la;
-	}
-	if( Static_Var_4 == 1 )
-	{
-		piecenum = flare2lb;
-	}
+	piecenum = flare2l;
+
 }
 
 AimFromWeapon5(piecenum)
@@ -1070,14 +853,7 @@ AimFromWeapon5(piecenum)
 
 QueryWeapon5(piecenum)
 {
-	if( Static_Var_5 == 0 )
-	{
-		piecenum = flare3ra;
-	}
-	if( Static_Var_5 == 1 )
-	{
-		piecenum = flare3rb;
-	}
+	piecenum = flare3r;
 }
 
 AimFromWeapon6(piecenum)
@@ -1087,14 +863,7 @@ AimFromWeapon6(piecenum)
 
 QueryWeapon6(piecenum)
 {
-	if( Static_Var_6 == 0 )
-	{
-		piecenum = flare3la;
-	}
-	if( Static_Var_6 == 1 )
-	{
-		piecenum = flare3lb;
-	}
+	piecenum = flare3l;
 }
 
 SweetSpot(piecenum)
@@ -1104,87 +873,34 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare1ra;
-	hide flare1rb;
-	hide flare1la;
-	hide flare1lb;
-	hide flare2ra;
-	hide flare2rb;
-	hide flare2la;
-	hide flare2lb;
-	hide flare3ra;
-	hide flare3rb;
-	hide flare3la;
-	hide flare3lb;
+	hide flare1r;
+	hide flare1l;
+	hide flare2r;
+	hide flare2l;
+	hide flare3r;
+	hide flare3l;
+
 	hide flare1m;
 	hide flare2m;
 	hide flare3m;
-	if( severity <= 30 )
-	{
-		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode turret1r type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2r type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret3m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve1la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve2la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve1ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve1rb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3rb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve1m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve2m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel3ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1lb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel3lb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1rb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2lb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel3m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
+
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-	explode Head type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
-	explode Engine type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
-	explode Connection1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
-	explode Connection2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
-	explode BaseBox1 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
-	explode BaseBox2 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
-	explode BaseBox3 type NOHEATCLOUD | SHATTER | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD;
 	explode turret1r type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret1l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret2r type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret2l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret3m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret2m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve1la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve2la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve1ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve3la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve1rb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve3rb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve1l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve2l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve1r type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve3l type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve1r type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve3r type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode sleeve1m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode sleeve2m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode sleeve3m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel1ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel2ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel1la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel3ra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel1lb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel3lb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel1rb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel2lb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel2la type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel1m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel2m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel3m type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
