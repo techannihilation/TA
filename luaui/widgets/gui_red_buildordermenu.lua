@@ -220,9 +220,8 @@ WG.hoverID = nil
 		},
 		mouseover=function(mx,my,self)
 			if self.cmdID then
-				WG["cmdID"] = self.cmdID
 				WG.hoverID = self.cmdID
-				--Spring.Echo(WG["cmdID"],self.cmdname)
+				--Spring.Echo(WG.hoverID,self.cmdname)
 			end
 			mouseoverhighlight.px = self.px
 			mouseoverhighlight.py = self.py
@@ -655,7 +654,7 @@ function widget:GameFrame(frame)
   end
 
   if frame%9==0 then
-  	WG["cmdID"] = nil
+  	WG.hoverID = nil
   end
 end
 

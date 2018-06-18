@@ -162,6 +162,12 @@ local function getEditedCurrentTooltip()
 	local limExp = currentExp and currentExp/(1+currentExp) or 1
 	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
 	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", currentExp) ) or text
+
+
+	if WG.Music and WG.Music.curTrack then
+		text = text .. "\nPlaying : " .. WG.Music.curTrack
+	end
+
 	local mx,my,gx,gy,gz,tooltipID
     mx,my = Spring.GetMouseState()
     if mx and my then
@@ -180,8 +186,8 @@ local function getEditedCurrentTooltip()
     elseif tooltipID then
         unitDefID=Spring.GetUnitDefID(tooltipID)
         iconsize=iconsizeMaster
-    elseif WG["cmdID"] and WG["cmdID"] < 0 then
-    	unitDefID=math.abs(WG["cmdID"])
+    elseif WG["hoverID"] and WG["hoverID"] < 0 then
+    	unitDefID=math.abs(WG["hoverID"])
     	iconsize=iconsizeMaster
     elseif Spring.GetSelectedUnitsCount() == 1 then
     	unitID=Spring.GetSelectedUnits()[1]

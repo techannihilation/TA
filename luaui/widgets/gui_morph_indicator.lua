@@ -250,13 +250,13 @@ function widget:GameFrame(frame)
   end
 
   if frame%4==0 then
-    --Spring.Echo("current cmdid",  WG["cmdID"], frame)
-    if WG["cmdID"] and (WG["cmdID"] >= CMD_MORPH and WG["cmdID"] <= (CMD_MORPH+200)) then
+    --Spring.Echo("current cmdid ", WG["hoverID"], CMD_MORPH, CMD_MORPH+200 ,frame)
+    if WG.hoverID and (WG.hoverID >= CMD_MORPH and WG.hoverID <= (CMD_MORPH+200)) then
       local sel = Spring.GetSelectedUnits()
       for i, unitIDs in pairs(sel) do
         local unitDefID = Spring.GetUnitDefID(unitIDs)
         if smallList[unitIDs] then
-          --Spring.Echo(unitIDs)
+          Spring.Echo(unitIDs)
           table.insert(morphableList,unitIDs)
         end
       end
