@@ -81,6 +81,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:Generic_Muzzle",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -130,7 +133,7 @@ return {
 				reloadtime = 0.8,
 				rgbcolor = "0.65 0.28 0",
 				separation = 0.45,
-				size = 2.38,
+				size = 2.15,
 				sizedecay = -0.15,
 				soundhitdry = "xplomed21",
 				soundhitwet = "splsmed",
