@@ -130,7 +130,7 @@ return {
 				name = "Totalitarian Cannon",
 				nogap = 1,
 				range = 1750,
-				reloadtime = 0.8,
+				reloadtime = 0.5,
 				rgbcolor = "0.65 0.28 0",
 				separation = 0.45,
 				size = 2.15,
@@ -144,7 +144,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 562,
 				damage = {
-					default = 190,
+					default = 120,
 					subs = 5,
 				},
 			},
