@@ -26,7 +26,6 @@ return {
 		capturespeed = 600,
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON SURFACE",
 		collide = false,
-		collisionvolumeoffsets = "0 100 0",
 		collisionvolumescales = "110 70 195",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",

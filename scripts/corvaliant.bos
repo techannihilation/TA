@@ -59,7 +59,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	move body to y-axis [45] now;
 	gun_1 = 0;
 	gun_2 = 0;
 	start-script SmokeUnit();
