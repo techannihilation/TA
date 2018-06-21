@@ -191,13 +191,13 @@ return {
 			[2] = {
 				def = "SUB_WEAPON",
 				maindir = "0 0 1",
-				maxangledif = 45,
+				maxangledif = 30,
 				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 			[3] = {
 				def = "SUB_WEAPON",
 				maindir = "0 0 1",
-				maxangledif = 45,
+				maxangledif = 30,
 				onlytargetcategory = "NOTHOVERNOTVTOL",
 			},
 		},
