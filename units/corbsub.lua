@@ -178,7 +178,7 @@ return {
 				weaponvelocity = 225,
 				damage = {
 					default = 450,
-					subs = 900,
+					subs = 675,
 				},
 			},
 		},
