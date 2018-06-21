@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0.057,
 		buildcostenergy = 155000,
-		buildcostmetal = 11200,
+		buildcostmetal = 13200,
 		builder = false,
 		buildpic = "armbsub.dds",
 		buildtime = 120000,
@@ -142,7 +142,7 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 220,
 				damage = {
-					default = 1300,
+					default = 1000,
 				},
 			},
 			sub_weapon_solo = {
