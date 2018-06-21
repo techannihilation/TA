@@ -52,9 +52,10 @@ return {
 		buildoptions = {
 			[1] = "tllecs",
 			[2] = "tllswordfish",
-			[3] = "tllasgard",
-			[4] = "tllhcar",
-			[5] = "tllcaps",
+			[3] = "tllbsub",
+			[4] = "tllasgard",
+			[5] = "tllhcar",
+			[6] = "tllcaps",
 		},
 		customparams = {
 			buildpic = "tllesy.dds",
