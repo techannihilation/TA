@@ -34,7 +34,7 @@ return {
 		objectname = "TLLASY",
 		radaremitheight = 49,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 245,
 		standingfireorder = 2,
 		standingmoveorder = 2,

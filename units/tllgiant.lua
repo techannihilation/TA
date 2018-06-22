@@ -43,7 +43,7 @@ return {
 		radardistance = 2950,
 		radaremitheight = 47,
 		selfdestructas = "CRAWL_BLAST",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 1080,
 		sonardistance = 760,
 		standingfireorder = 2,

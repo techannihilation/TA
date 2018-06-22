@@ -47,7 +47,7 @@ return {
 		objectname = "ARMMIN",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 250,
 		standingmoveorder = 1,
 		steeringmode = 1,

@@ -31,7 +31,7 @@ return {
 		radaremitheight = 150,
 		script = "correch2.cob",
 		selfdestructas = "COMMANDER_BLAST",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 0,
 		unitname = "correch2",
 		usebuildinggrounddecal = false,

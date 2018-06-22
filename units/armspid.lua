@@ -41,7 +41,7 @@ return {
 		resurrect = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 600,
 		standingmoveorder = 1,
 		stealth = true,

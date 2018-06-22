@@ -32,7 +32,7 @@ return {
 		radaremitheight = 140,
 		script = "armrech2.cob",
 		selfdestructas = "COMMANDER_BLAST",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 0,
 		unitname = "armrech2",
 		usebuildinggrounddecal = false,

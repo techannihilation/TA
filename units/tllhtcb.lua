@@ -42,7 +42,7 @@ return {
 		objectname = "TLLHTCB",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 300,
 		standingmoveorder = 1,
 		steeringmode = 1,

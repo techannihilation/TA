@@ -44,7 +44,7 @@ return {
 		objectname = "tllmusk",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNITEX",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 260,
 		standingfireorder = 2,
 		standingmoveorder = 1,

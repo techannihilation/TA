@@ -39,7 +39,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 240,
 		standingfireorder = 2,
 		standingmoveorder = 1,

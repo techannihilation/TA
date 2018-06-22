@@ -45,7 +45,7 @@ return {
 		objectname = "ARMCA",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 390,
 		standingmoveorder = 1,
 		steeringmode = 1,

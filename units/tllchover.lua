@@ -44,7 +44,7 @@ return {
 		objectname = "TLLCHOVER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 310,
 		standingmoveorder = 1,
 		steeringmode = 1,

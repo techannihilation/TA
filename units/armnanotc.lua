@@ -47,7 +47,7 @@ return {
 		repairspeed = 125.37112,
 		seismicsignature = 0,
 		selfdestructas = "NANOBOOM2A",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 380,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,

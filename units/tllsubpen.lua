@@ -39,7 +39,7 @@ return {
 		objectname = "TLLsubpen",
 		radaremitheight = 31,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 212,
 		sonardistance = 500,
 		standingfireorder = 2,

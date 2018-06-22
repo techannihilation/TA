@@ -67,7 +67,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "COMMANDER_SELFD",
 		selfdestructcountdown = 10,
-		shownanospray = true,
+		shownanospray = false,
 		showplayername = true,
 		sightdistance = 850,
 		sonardistance = 540,

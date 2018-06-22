@@ -45,7 +45,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLACA",
 		selfdestructas = "BIG_UNIT_VTOL",
-		shownanospray = true,
+		shownanospray = false,
 		sightdistance = 295,
 		standingmoveorder = 1,
 		steeringmode = 1,
