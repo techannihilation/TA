@@ -170,7 +170,7 @@ airCategories = {
 		local hasPriority = (Spring.GetUnitRulesParam(unitID, "targetPriorityFighters") and Spring.GetUnitRulesParam(unitID, "targetPriorityBombers") and Spring.GetUnitRulesParam(unitID, "targetPriorityScouts"))
 		if hasPriority then
 			if airCategories[unitDefID] then
-				priority = priority * Spring.GetUnitRulesParam(unitID, ("targetPriority"..airCategories[unitName]))
+				priority = priority * Spring.GetUnitRulesParam(unitID, ("targetPriority"..airCategories[unitDefID]))
 			end
 		end	
 		return allowed, priority
