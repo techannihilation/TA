@@ -7,9 +7,9 @@ piece  base, body, flarea, flareb, flarec, barrela1, barrela2, barrela3, barrela
        barrelb1, barrelb2, barrelb3, barrelb4, barrelb5, barrelc1, barrelc2, barrelc3, 
        barrelc4, barrelc5, sleevea1, sleevea2, sleevea3, sleevea4, sleevea5, sleeveb1,
        sleeveb2, sleeveb3, sleeveb4, sleeveb5, sleevec1, sleevec2, sleevec3, sleevec4,
-       sleevec5, spinnera, spinnerb, spinnerc, sleeve, riser, turret;
+       sleevec5, spinnera, spinnerb, spinnerc, sleeve, turret;
 
-static-var  gun_1, restore_4, reset_5, ready_6, busy_7, restore_delay, barrel_1, barrel_2, barrel_3;
+static-var  gun_1, restore_delay, barrel_1, barrel_2, barrel_3;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -18,41 +18,8 @@ static-var  gun_1, restore_4, reset_5, ready_6, busy_7, restore_delay, barrel_1,
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	while( busy_7 )
-	{
-		sleep 150;
-	}
-	if( !restore_4 )
-	{
-		busy_7 = 1;
-		signal 2;
-		signal 4;
-		set-signal-mask 0;
-		turn turret to y-axis <0> speed <80>;
-		turn sleeve to x-axis <0> speed <50>;
-		move riser to y-axis [0] speed [2.9];
-		move barrela1 to z-axis [0] speed [4];
-		move barrela2 to z-axis [0] speed [4];
-		move barrela3 to z-axis [0] speed [4];
-		move barrela4 to z-axis [0] speed [4];
-		move barrela5 to z-axis [0] speed [4];
-		move barrelb1 to z-axis [0] speed [4];
-		move barrelb2 to z-axis [0] speed [4];
-		move barrelb3 to z-axis [0] speed [4];
-		move barrelb4 to z-axis [0] speed [4];
-		move barrelb5 to z-axis [0] speed [4];
-		move barrelc1 to z-axis [0] speed [4];
-		move barrelc2 to z-axis [0] speed [4];
-		move barrelc3 to z-axis [0] speed [4];
-		move barrelc4 to z-axis [0] speed [4];
-		move barrelc5 to z-axis [0] speed [4];
-		wait-for-move riser along y-axis;
-		gun_1 = 0;
-		ready_6 = 0;
-		busy_7 = 0;
-	}
-	reset_5 = 0;
-	return (0);
+	turn turret to y-axis <0> speed <80>;
+	turn sleeve to x-axis <0> speed <50>;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -79,22 +46,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			sleeptime = 200;
 		}
 		sleep sleeptime;
-		if( restore_4 AND !reset_5 )
-		{
-			restore_4 = 0;
-			reset_5 = 1;
-			start-script RestoreAfterDelay();
-		}
-
 	}
 }
 
 Create()
 {
 	gun_1 = 0;
-	reset_5 = 0;
-	ready_6 = 0;
-	busy_7 = 0;
 	barrel_1 = 0;
 	barrel_2 = 0;
 	barrel_3 = 0;
@@ -111,48 +68,33 @@ Create()
 	turn sleevea5 to x-axis <288> NOW;
 	turn sleeveb5 to x-axis <288> NOW;
 	turn sleevec5 to x-axis <288> NOW;
-	restore_4 = 1;
+	move barrela1 to z-axis [1.7] NOW;
+	move barrela2 to z-axis [1.7] NOW;
+	move barrela3 to z-axis [1.7] NOW;
+	move barrela4 to z-axis [1.7] NOW;
+	move barrela5 to z-axis [1.7] NOW;
+	move barrelb1 to z-axis [1.7] NOW;
+	move barrelb2 to z-axis [1.7] NOW;
+	move barrelb3 to z-axis [1.7] NOW;
+	move barrelb4 to z-axis [1.7] NOW;
+	move barrelb5 to z-axis [1.7] NOW;
+	move barrelc1 to z-axis [1.7] NOW;
+	move barrelc2 to z-axis [1.7] NOW;
+	move barrelc3 to z-axis [1.7] NOW;
+	move barrelc4 to z-axis [1.7] NOW;
+	move barrelc5 to z-axis [1.7] NOW;
 	start-script SmokeUnit();
 }
 
 AimPrimary(heading, pitch)
-{
-	while( busy_7 )
-	{
-		sleep 300;
-	}
-	while( !ready_6 )
-	{
-		busy_7 = 1;
-		move riser to y-axis [2.8] speed [3];
-		sleep 400;
-		move barrela1 to z-axis [2.1] speed [4];
-		move barrela2 to z-axis [2.1] speed [4];
-		move barrela3 to z-axis [2.1] speed [4];
-		move barrela4 to z-axis [2.1] speed [4];
-		move barrela5 to z-axis [2.1] speed [4];
-		move barrelb1 to z-axis [2.1] speed [4];
-		move barrelb2 to z-axis [2.1] speed [4];
-		move barrelb3 to z-axis [2.1] speed [4];
-		move barrelb4 to z-axis [2.1] speed [4];
-		move barrelb5 to z-axis [2.1] speed [4];
-		move barrelc1 to z-axis [2.1] speed [4];
-		move barrelc2 to z-axis [2.1] speed [4];
-		move barrelc3 to z-axis [2.1] speed [4];
-		move barrelc4 to z-axis [2.1] speed [4];
-		move barrelc5 to z-axis [2.1] speed [4];
-		wait-for-move riser along y-axis;
-		sleep 50;
-		ready_6 = 1;
-		busy_7 = 0;
-	}		
+{	
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn turret to y-axis heading speed <90>;
 	turn sleeve to x-axis <0> - pitch speed <60>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
-	restore_4 = 1;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -166,14 +108,14 @@ FirePrimary()
 			move barrela1 to z-axis [0.0] NOW;
 			turn spinnera to x-axis <-72> speed <180>;
 			sleep 150;
-			move barrela1 to z-axis [2.1] speed [4];
+			move barrela1 to z-axis [1.7] speed [4];
 		}
 		if(barrel_1 == 1) 
 		{
 			move barrela2 to z-axis [0.0] NOW;
 			turn spinnera to x-axis <-144> speed <180>;
 			sleep 150;
-			move barrela2 to z-axis [2.1] speed [4];
+			move barrela2 to z-axis [1.7] speed [4];
 			
 		}
 		if(barrel_1 == 2) 
@@ -181,21 +123,21 @@ FirePrimary()
 			move barrela3 to z-axis [0.0] NOW;
 			turn spinnera to x-axis <-216> speed <180>;
 			sleep 150;
-			move barrela3 to z-axis [2.1] speed [4];
+			move barrela3 to z-axis [1.7] speed [4];
 		}
 		if(barrel_1 == 3) 
 		{
 			move barrela4 to z-axis [0.0] NOW;
 			turn spinnera to x-axis <-288> speed <180>;
 			sleep 150;
-			move barrela4 to z-axis [2.1] speed [4];
+			move barrela4 to z-axis [1.7] speed [4];
 		}
 		if(barrel_1 == 4) 
 		{
 			move barrela5 to z-axis [0.0] NOW;
 			turn spinnera to x-axis <0> speed <180>;
 			sleep 150;
-			move barrela5 to z-axis [2.1] speed [4];
+			move barrela5 to z-axis [1.7] speed [4];
 		}
 		++barrel_1;
 		if(barrel_1 == 5) 
@@ -212,35 +154,35 @@ FirePrimary()
 			move barrelb1 to z-axis [0.0] NOW;
 			turn spinnerb to x-axis <-72> speed <180>;
 			sleep 150;
-			move barrelb1 to z-axis [2.1] speed [4];			
+			move barrelb1 to z-axis [1.7] speed [4];			
 		}
 		if(barrel_2 == 1) 
 		{
 			move barrelb2 to z-axis [0.0] NOW;
 			turn spinnerb to x-axis <-144> speed <180>;
 			sleep 150;
-			move barrelb2 to z-axis [2.1] speed [4];			
+			move barrelb2 to z-axis [1.7] speed [4];			
 		}
 		if(barrel_2 == 2) 
 		{
 			move barrelb3 to z-axis [0.0] NOW;
 			turn spinnerb to x-axis <-216> speed <180>;
 			sleep 150;
-			move barrelb3 to z-axis [2.1] speed [4];			
+			move barrelb3 to z-axis [1.7] speed [4];			
 		}
 		if(barrel_2 == 3) 
 		{
 			move barrelb4 to z-axis [0.0] NOW;
 			turn spinnerb to x-axis <-288> speed <180>;
 			sleep 150;
-			move barrelb4 to z-axis [2.1] speed [4];			
+			move barrelb4 to z-axis [1.7] speed [4];			
 		}
 		if(barrel_2 == 4) 
 		{
 			move barrelb5 to z-axis [0.0] NOW;
 			turn spinnerb to x-axis <0> speed <180>;
 			sleep 150;
-			move barrelb5 to z-axis [2.1] speed [4];			
+			move barrelb5 to z-axis [1.7] speed [4];			
 		}
 		++barrel_2;
 		if(barrel_2 == 5) 
@@ -257,35 +199,35 @@ FirePrimary()
 			move barrelc1 to z-axis [0.0] NOW;
 			turn spinnerc to x-axis <-72> speed <180>;
 			sleep 150;
-			move barrelc1 to z-axis [2.1] speed [4];
+			move barrelc1 to z-axis [1.7] speed [4];
 		}
 		if(barrel_3 == 1) 
 		{
 			move barrelc2 to z-axis [0.0] NOW;
 			turn spinnerc to x-axis <-144> speed <180>;
 			sleep 150;
-			move barrelc2 to z-axis [2.1] speed [4];			
+			move barrelc2 to z-axis [1.7] speed [4];			
 		}
 		if(barrel_3 == 2) 
 		{
 			move barrelc3 to z-axis [0.0] NOW;
 			turn spinnerc to x-axis <-216> speed <180>;
 			sleep 150;
-			move barrelc3 to z-axis [2.1] speed [4];			
+			move barrelc3 to z-axis [1.7] speed [4];			
 		}
 		if(barrel_3 == 3) 
 		{
 			move barrelc4 to z-axis [0.0] NOW;
 			turn spinnerc to x-axis <-288> speed <180>;
 			sleep 150;
-			move barrelc4 to z-axis [2.1] speed [4];			
+			move barrelc4 to z-axis [1.7] speed [4];			
 		}
 		if(barrel_3 == 4) 
 		{
 			move barrelc5 to z-axis [0.0] NOW;
 			turn spinnerc to x-axis <0> speed <180>;
 			sleep 150;
-			move barrelc5 to z-axis [2.1] speed [4];			
+			move barrelc5 to z-axis [1.7] speed [4];			
 		}
 		++barrel_3;
 		if(barrel_3 == 5) 
@@ -303,7 +245,7 @@ FirePrimary()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = riser;
+	piecenum = sleeve;
 	return (0);
 }
 
