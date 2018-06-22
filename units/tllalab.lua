@@ -38,7 +38,7 @@ return {
 		objectname = "TLLALAB",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 220,
 		standingfireorder = 2,
 		standingmoveorder = 2,

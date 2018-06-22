@@ -45,7 +45,7 @@ return {
 		objectname = "TLLCSUB",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 100,
 		sonardistance = 200,
 		standingmoveorder = 1,

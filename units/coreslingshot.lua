@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "coreslingshot.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

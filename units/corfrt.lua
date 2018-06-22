@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "corfrt.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

@@ -42,7 +42,7 @@ return {
 		repairspeed = 75,
 		seismicsignature = 2,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 325,
 		standingmoveorder = 1,
 		steeringmode = 1,

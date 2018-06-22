@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "packo.dds",
 			faction = "ARM",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

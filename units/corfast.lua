@@ -47,7 +47,7 @@ return {
 		radaremitheight = 34,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 400,
 		standingmoveorder = 1,
 		steeringmode = 2,

@@ -34,7 +34,7 @@ return {
 		onoffable = true,
 		radaremitheight = 47,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 175,
 		sortbias = 0,
 		unitname = "tllaspns",

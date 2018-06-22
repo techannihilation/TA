@@ -41,7 +41,7 @@ return {
 		objectname = "tllturtle_lab",
 		radaremitheight = 34,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 223,
 		standingmoveorder = 2,
 		unitname = "tllturtle_lab",

@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "coreak.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

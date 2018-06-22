@@ -46,7 +46,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 44,
 		selfdestructas = "NANOBOOM2C",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 1000,
 		standingmoveorder = 1,
 		steeringmode = 1,

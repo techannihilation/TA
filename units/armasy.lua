@@ -41,7 +41,7 @@ return {
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 299,
 		standingfireorder = 2,
 		standingmoveorder = 0,

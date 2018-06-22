@@ -185,7 +185,6 @@ return {
 				def = "ARM_LIGHTLASER",
 				onlytargetcategory = "SURFACE",
 			},
-					
 		},
 	},
 }

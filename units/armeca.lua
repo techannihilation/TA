@@ -48,7 +48,7 @@ return {
 		radaremitheight = 9,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 500,
 		standingmoveorder = 1,
 		steeringmode = 1,

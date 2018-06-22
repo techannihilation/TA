@@ -40,7 +40,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 44,
 		selfdestructas = "MEDIUM_BUILDING",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 202,
 		standingmoveorder = 1,
 		stealth = true,

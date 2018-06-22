@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "corflak.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

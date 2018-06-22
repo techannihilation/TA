@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "tllsting.dds",
 			faction = "TLL",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

@@ -32,15 +32,13 @@ return {
 		radaremitheight = 150,
 		script = "correch3.cob",
 		selfdestructas = "COMMANDER_BLAST",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 0,
 		unitname = "correch3",
 		usebuildinggrounddecal = false,
 		workertime = 250,
 		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
-		buildoptions = {
-			--[1] = "cbuilderlvl2",
-		},
+		buildoptions = {},
 		customparams = {
 			buildpic = "correch3.dds",
 			faction = "CORE",

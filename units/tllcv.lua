@@ -42,7 +42,7 @@ return {
 		objectname = "TLLCV",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 195,
 		standingmoveorder = 1,
 		steeringmode = 1,

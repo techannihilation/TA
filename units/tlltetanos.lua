@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "tlltetanos.png",
 			faction = "TLL",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

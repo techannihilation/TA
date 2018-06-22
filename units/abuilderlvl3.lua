@@ -45,7 +45,7 @@ return {
 		objectname = "ABuilderLvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 2.112,

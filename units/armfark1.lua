@@ -43,7 +43,7 @@ return {
 		script = "armfark.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 377,
 		standingmoveorder = 1,
 		steeringmode = 1,

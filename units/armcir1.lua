@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armcir1.dds",
 			faction = "ARM",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			armcir_dead = {

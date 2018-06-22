@@ -32,15 +32,13 @@ return {
 		radaremitheight = 125,
 		script = "armrech1.cob",
 		selfdestructas = "COMMANDER_BLAST",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 0,
 		unitname = "armrech1",
 		usebuildinggrounddecal = false,
 		workertime = 125,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
-		buildoptions = {
-			--[1] = "abuilderlvl2",
-		},
+		buildoptions = {},
 		customparams = {
 			buildpic = "armrech1.dds",
 			faction = "ARM",

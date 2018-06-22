@@ -38,7 +38,7 @@ return {
 		objectname = "TLLAVP",
 		radaremitheight = 93,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 218,
 		standingfireorder = 2,
 		standingmoveorder = 0,

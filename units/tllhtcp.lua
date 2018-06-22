@@ -41,7 +41,7 @@ return {
 		objectname = "TLLHTCP",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 320,
 		standingfireorder = 2,
 		standingmoveorder = 0,

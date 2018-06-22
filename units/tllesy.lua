@@ -41,7 +41,7 @@ return {
 		radardistance = 100,
 		radaremitheight = 43,
 		selfdestructas = "ATOMIC_BLAST",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 324,
 		standingfireorder = 2,
 		standingmoveorder = 1,

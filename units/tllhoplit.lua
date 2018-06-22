@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "tllhoplit.dds",
 			faction = "TLL",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

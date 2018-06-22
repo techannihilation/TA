@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "tlllmt.dds",
 			faction = "TLL",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

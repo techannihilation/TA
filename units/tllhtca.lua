@@ -45,7 +45,7 @@ return {
 		objectname = "tllhtca",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 4.62,

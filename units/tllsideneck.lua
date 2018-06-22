@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "tllsideneck.dds",
 			faction = "TLL",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

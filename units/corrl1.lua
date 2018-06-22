@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corrl1.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			corrl_dead = {

@@ -45,7 +45,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLCA",
 		selfdestructas = "SMALL_UNIT_VTOL",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 280,
 		standingmoveorder = 1,
 		steeringmode = 1,

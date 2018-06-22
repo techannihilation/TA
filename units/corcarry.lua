@@ -51,7 +51,7 @@ return {
 		radaremitheight = 32,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
-		shownanospray = false,
+		shownanospray = true,
 		sightdistance = 1040,
 		sonardistance = 740,
 		standingfireorder = 2,
