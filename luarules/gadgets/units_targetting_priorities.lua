@@ -15,6 +15,7 @@ end
 if gadgetHandler:IsSyncedCode() then
 
 local CMD_SET_PRIORITY = 34567
+
 local setPriorityAirf = {
 	id      = CMD_SET_PRIORITY,
 	type    = CMDTYPE.ICON_MODE,
@@ -24,6 +25,7 @@ local setPriorityAirf = {
 	queueing = false,
 	params  = { '0', 'Fighters', 'Bombers', 'none'} ,
 }
+
 local setPriorityAirb = {
 	id      = CMD_SET_PRIORITY,
 	type    = CMDTYPE.ICON_MODE,
@@ -33,6 +35,7 @@ local setPriorityAirb = {
 	queueing = false,
 	params  = { '1', 'Fighters', 'Bombers', 'none'} ,
 }
+
 local setPriorityAirn = {
 	id      = CMD_SET_PRIORITY,
 	type    = CMDTYPE.ICON_MODE,
@@ -42,77 +45,78 @@ local setPriorityAirn = {
 	queueing = false,
 	params  = { '2', 'Fighters', 'Bombers', 'No priority'} ,
 }
+
 airCategories = {
 	--Transporters
-	armatlas = "Bombers",
-	armdfly = "Bombers",
-	armdragf = "Bombers",
-	armsl = "Bombers",
-	corfalc = "Bombers",
-	corvalk = "Bombers",
-	tllrobber = "Bombers",
-	tlltplane = "Bombers",
-	armor = "Bombers",
-	corbtrans = "Bombers",
+	[UnitDefNames["armatlas"].id] = "Bombers",
+	[UnitDefNames["armdfly"].id] = "Bombers",
+	[UnitDefNames["armdragf"].id] = "Bombers",
+	[UnitDefNames["armsl"].id] = "Bombers",
+	[UnitDefNames["corfalc"].id] = "Bombers",
+	[UnitDefNames["corvalk"].id] = "Bombers",
+	[UnitDefNames["tllrobber"].id] = "Bombers",
+	[UnitDefNames["tlltplane"].id] = "Bombers",
+	[UnitDefNames["armor"].id] = "Bombers",
+	[UnitDefNames["corbtrans"].id] = "Bombers",
 
 	--Bombers
-	armblz = "Bombers",
-	corfiend = "Bombers",
-	armcybr = "Bombers",
-	armlance = "Bombers",
-	armpnix = "Bombers",
-	armsb = "Bombers",
-	armthund = "Bombers",
-	armcyclone = "Bombers",
-	corgripn = "Bombers",
-	corhurc = "Bombers",
-	corsb = "Bombers",
-	corshad = "Bombers",
-	cortitan = "Bombers",
-	tllabomber = "Bombers",
-	tllbomber = "Bombers",
-	tlltorpp = "Bombers",
-	coreclipse = "Bombers",
-	tllseab = "Bombers",
-	corseap = "Bombers",
-	armseap = "Bombers",
-	corsbomb = "Bombers",
-	armorion = "Bombers",
-	tllanhur = "Bombers",
-	tllaether = "Bombers",
+	[UnitDefNames["armblz"].id] = "Bombers",
+	[UnitDefNames["corfiend"].id] = "Bombers",
+	[UnitDefNames["armcybr"].id] = "Bombers",
+	[UnitDefNames["armlance"].id] = "Bombers",
+	[UnitDefNames["armpnix"].id] = "Bombers",
+	[UnitDefNames["armsb"].id] = "Bombers",
+	[UnitDefNames["armthund"].id] = "Bombers",
+	[UnitDefNames["armcyclone"].id] = "Bombers",
+	[UnitDefNames["corgripn"].id] = "Bombers",
+	[UnitDefNames["corhurc"].id] = "Bombers",
+	[UnitDefNames["corsb"].id] = "Bombers",
+	[UnitDefNames["corshad"].id] = "Bombers",
+	[UnitDefNames["cortitan"].id] = "Bombers",
+	[UnitDefNames["tllabomber"].id] = "Bombers",
+	[UnitDefNames["tllbomber"].id] = "Bombers",
+	[UnitDefNames["tlltorpp"].id] = "Bombers",
+	[UnitDefNames["coreclipse"].id] = "Bombers",
+	[UnitDefNames["tllseab"].id] = "Bombers",
+	[UnitDefNames["corseap"].id] = "Bombers",
+	[UnitDefNames["armseap"].id] = "Bombers",
+	[UnitDefNames["corsbomb"].id] = "Bombers",
+	[UnitDefNames["armorion"].id] = "Bombers",
+	[UnitDefNames["tllanhur"].id] = "Bombers",
+	[UnitDefNames["tllaether"].id] = "Bombers",
 
-    airwolf3g = "Fighters",
-	armfig	 = "Fighters",
-	armhawk	 = "Fighters",
-	armsfig	 = "Fighters",
-	corsfig	 = "Fighters",
-	corvamp	 = "Fighters",
-	corveng	 = "Fighters",
-	shrike	 = "Fighters",
-	tlladvfight	 = "Fighters",
-	tllfight = "Fighters",
-	tllseaf	 = "Fighters",
-	tllshu = "Fighters",
-	armstratus = "Fighters",
-	corshoc = "Fighters",
-	tllcondor = "Fighters",
+	[UnitDefNames["airwolf3g"].id] = "Fighters",
+	[UnitDefNames["armfig"].id] = "Fighters",
+	[UnitDefNames["armhawk"].id] = "Fighters",
+	[UnitDefNames["armsfig"].id] = "Fighters",
+	[UnitDefNames["corsfig"].id] = "Fighters",
+	[UnitDefNames["corvamp"].id] = "Fighters",
+	[UnitDefNames["corveng"].id] = "Fighters",
+	[UnitDefNames["shrike"].id] = "Fighters",
+	[UnitDefNames["tlladvfight"].id] = "Fighters",
+	[UnitDefNames["tllfight"].id] = "Fighters",
+	[UnitDefNames["tllseaf"].id] = "Fighters",
+	[UnitDefNames["tllshu"].id] = "Fighters",
+	[UnitDefNames["armstratus"].id] = "Fighters",
+	[UnitDefNames["corshoc"].id] = "Fighters",
+	[UnitDefNames["tllcondor"].id] = "Fighters",
 
 	--Scouts
-	armpeep = "Scouts",
-	armawac = "Scouts",
-	armsehak = "Scouts",
-	corfink = "Scouts",
-	corawac = "Scouts",
-	corhunt = "Scouts",
-	tllprob = "Scouts",
-	tllrsplane = "Scouts",
-	tllsonpl = "Scouts"
+	[UnitDefNames["armpeep"].id] = "Scouts",
+	[UnitDefNames["armawac"].id] = "Scouts",
+	[UnitDefNames["armsehak"].id] = "Scouts",
+	[UnitDefNames["corfink"].id] = "Scouts",
+	[UnitDefNames["corawac"].id] = "Scouts",
+	[UnitDefNames["corhunt"].id] = "Scouts",
+	[UnitDefNames["tllprob"].id] = "Scouts",
+	[UnitDefNames["tllrsplane"].id] = "Scouts",
+	[UnitDefNames["tllsonpl"].id] = "Scouts"
 	}
-	
+
 	function gadget:Initialize()
-		
+
 	end
-	
+
 	function gadget:UnitCreated(unitID, unitDefID)
 		local uDef = UnitDefs[unitDefID]
 		if uDef.customParams.prioritytarget and uDef.customParams.prioritytarget == "air" then
@@ -122,7 +126,7 @@ airCategories = {
 					Spring.SetUnitRulesParam(unitID, "targetPriorityScouts", 1000)
 		end
 	end
-	
+
 	function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag, synced)
 		if cmdID == CMD_SET_PRIORITY then
 		cmdDescId = Spring.FindUnitCmdDesc(unitID, CMD_SET_PRIORITY) 
@@ -138,7 +142,7 @@ airCategories = {
 		end
 		return true
 	end
-	
+
 	function gadget:UnitCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOpts, cmdTag)
 		if cmdID == CMD_SET_PRIORITY then
 			if cmdParams and cmdParams[1] then
@@ -158,14 +162,14 @@ airCategories = {
 			end
 		end
 	end
-	
+
 	function gadget:AllowWeaponTarget(unitID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
 		local allowed = true
-		local unitName = UnitDefs[Spring.GetUnitDefID(targetID)].name
+		local unitDefID = Spring.GetUnitDefID(targetID)
 		local priority = defPriority
 		local hasPriority = (Spring.GetUnitRulesParam(unitID, "targetPriorityFighters") and Spring.GetUnitRulesParam(unitID, "targetPriorityBombers") and Spring.GetUnitRulesParam(unitID, "targetPriorityScouts"))
 		if hasPriority then
-			if airCategories[unitName] then
+			if airCategories[unitDefID] then
 				priority = priority * Spring.GetUnitRulesParam(unitID, ("targetPriority"..airCategories[unitName]))
 			end
 		end	
