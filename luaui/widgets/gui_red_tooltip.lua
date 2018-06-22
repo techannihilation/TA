@@ -21,6 +21,14 @@ local CMD_MORPH = 31410
 --1272,734 == 1280,768 windowed
 
 --todo: sy adjustment
+local OtaIconExist = {}
+
+for i=1,#UnitDefs do
+	if VFS.FileExists(oldUnitpicsDir..UnitDefs[i].name..'.png') then
+		OtaIconExist[i] = oldUnitpicsDir..UnitDefs[i].name..'.png'
+		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
+	end
+end
 
 local cbackground, cborder = include("Configs/ui_config.lua")
 
@@ -280,8 +288,8 @@ function widget:DrawScreen()
 	if unitDefID then
 		gl.Color(1, 1, 1, 1)
 		--Spring.Echo(VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png'),unitDefID,UnitDefs[unitDefID].name )
-		if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png') then
-			gl.Texture(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png')
+		if WG['OtaIcons'] and OtaIconExist[unitDefID] then
+			gl.Texture(OtaIconExist[unitDefID])
 		else
 			gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
 		end

@@ -27,6 +27,14 @@ local buttonTexture	= LUAUI_DIRNAME.."Images/button.png"
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
 local oldUnitpics = true
+local OtaIconExist = {}
+
+for i=1,#UnitDefs do
+	if VFS.FileExists(oldUnitpicsDir..UnitDefs[i].name..'.png') then
+		OtaIconExist[i] = oldUnitpicsDir..UnitDefs[i].name..'.png'
+		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
+	end
+end
 
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
@@ -381,8 +389,8 @@ local function UpdateGrid(g,cmds,ordertype)
 		}
 		
 		if (ordertype == 1) then --build orders
-			if oldUnitpics and UnitDefs[cmd.id*-1] ~= nil and VFS.FileExists(oldUnitpicsDir..UnitDefs[cmd.id*-1].name..'.png') then
-				icon.texture = oldUnitpicsDir..UnitDefs[cmd.id*-1].name..'.png'
+			if oldUnitpics and UnitDefs[cmd.id*-1] ~= nil and OtaIconExist[cmd.id*-1] then
+				icon.texture = OtaIconExist[cmd.id*-1]
 			else
 				icon.texture = "#"..cmd.id*-1
 			end

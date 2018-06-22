@@ -64,6 +64,15 @@ local yOffset = -((32 - (fontSize*0.9))*widgetScale)
 local DAMAGE_PERIOD ,weaponInfo = VFS.Include('LuaRules/Configs/area_damage_defs.lua', nil, VFS.RAW_FIRST)
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
+local OtaIconExist = {}
+
+for i=1,#UnitDefs do
+	if VFS.FileExists(oldUnitpicsDir..UnitDefs[i].name..'.png') then
+		OtaIconExist[i] = oldUnitpicsDir..UnitDefs[i].name..'.png'
+		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
+	end
+end
+
 local pplants = {
 	["aafus"] = true,
 	["afusionplant"] = true,
@@ -318,7 +327,7 @@ end
 function widget:DrawScreen()
 	local alt, ctrl, meta, shift = spGetModKeyState()
 	if not meta then 
-		WG.hoverID = nil 
+		--WG.hoverID = nil 
 		RemoveGuishader() 
 		return 
 	end
@@ -792,8 +801,8 @@ function widget:DrawScreen()
 
 		-- icon
 		glColor(1,1,1,1)
-		if WG['OtaIcons'] and UnitDefs[uDefID] ~= nil and VFS.FileExists(oldUnitpicsDir..UnitDefs[uDefID].name..'.png') then
-			glTexture(oldUnitpicsDir..UnitDefs[uDefID].name..'.png')
+		if WG['OtaIcons'] and OtaIconExist[uDefID] then
+			gl.Texture(OtaIconExist[uDefID])
 		else
 			glTexture('#' .. uDefID)
 		end

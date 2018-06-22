@@ -603,7 +603,9 @@ function InitializeFaction(sDefID)
 	end
 	for b = 0, #sBuilds - 1 do
 		cellRows[1 + math.floor(b / numCols)][1 + b % numCols] = sBuilds[b + 1]
-		if VFS.FileExists(oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png') then OtaIconExist[sBuilds[b + 1]] = true end
+		if VFS.FileExists(oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png') then
+			OtaIconExist[sBuilds[b + 1]] = oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png' 
+		end
 	end
 
 	-- delete any pre-existing displaylist
@@ -731,7 +733,7 @@ function widget:DrawScreen()
 
 						gl.Color(1, 1, 1, 1)
 						if WG['OtaIcons'] and OtaIconExist[cellRow[c]] then
-							gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
+							gl.Texture(OtaIconExist[cellRow[c]])
 						else
 							gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
 						end
