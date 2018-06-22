@@ -188,6 +188,9 @@ local TLLGEOMINI = UnitDefNames["tllgeo_mini"].id
 -- this info is used to switch buildings between factions
 local armToCore = {}
 
+-- to check if OTA icon exist, defs table
+local OtaIconExist = {}
+
 armToCore[ARMMEX] = CORMEX
 armToCore[ARMUWMEX] = CORUWMEX
 armToCore[ARMSOLAR] = CORSOLAR
@@ -600,6 +603,7 @@ function InitializeFaction(sDefID)
 	end
 	for b = 0, #sBuilds - 1 do
 		cellRows[1 + math.floor(b / numCols)][1 + b % numCols] = sBuilds[b + 1]
+		if VFS.FileExists(oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png') then OtaIconExist[sBuilds[b + 1]] = true end
 	end
 
 	-- delete any pre-existing displaylist
@@ -726,7 +730,7 @@ function widget:DrawScreen()
 						--gl.Rect(-borderSize, -borderSize, iconWidth + borderSize, iconHeight + borderSize)
 
 						gl.Color(1, 1, 1, 1)
-						if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png') then
+						if WG['OtaIcons'] and OtaIconExist[cellRow[c]] then
 							gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
 						else
 							gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
