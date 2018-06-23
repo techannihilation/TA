@@ -1,9 +1,9 @@
 #define TA			// This is a TA script
-#by skymyj
+
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, rocket1, rocket2, rocket3, turret, gun1, gun2, gun3;
+piece  base, rocket1, rocket2, rocket3, rocket4, rocket5, rocket6,turret, gun1, gun2, gun3, gun4, gun5, gun6;
 
 static-var  gun_1;
 
@@ -63,9 +63,9 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	++gun_1;
-	if( gun_1 == 4 )
+	if( gun_1 == 7 )
 	{
-		gun_1 = rocket1;
+		gun_1 = 0;
 	}
 }
 
@@ -87,6 +87,18 @@ QueryPrimary(piecenum)
 	if( gun_1 == 3 )
 	{
 		piecenum = rocket3;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = rocket4;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = rocket5;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = rocket6;
 	}
 }
 
