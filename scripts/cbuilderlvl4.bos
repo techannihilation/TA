@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 
-piece base ,body, beam, w1, w2, w5, w6, w7;
+piece base ,body, beam, pipes;
 static-var spray;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -33,20 +33,22 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 }
+
+
 Create()
 {
-	START-SCRIPT SmokeUnit();
+	spray = 0;
+	start-script SmokeUnit();
 }
-
 
 StartBuilding()
 {
-	set INBUILDSTANCE to TRUE;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	set INBUILDSTANCE to FALSE;
+	set INBUILDSTANCE to 0;
 }
 
 QueryNanoPiece(piecenum)
@@ -56,17 +58,13 @@ QueryNanoPiece(piecenum)
 
 SweetSpot(piecenum)
 {
-	piecenum = body;
+	piecenum = base;
 }
-	
+
 Killed(severity, corpsetype)
 {
-	corpsetype = 1;
-	explode body type NOHEATCLOUD;
-	explode w1 type NOHEATCLOUD;
-	explode w2 type NOHEATCLOUD;
-	explode w5 type NOHEATCLOUD;
-	explode w6 type NOHEATCLOUD;
-	explode w7 type NOHEATCLOUD;
-	return(corpsetype);
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode pipes type NOHEATCLOUD;
+		return (corpsetype);
 }
