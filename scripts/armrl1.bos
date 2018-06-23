@@ -65,12 +65,25 @@ AimPrimary(heading, pitch)
 	}
 	if( gun_1 == 2 )
 	{
-		turn barrel to z-axis <120.027473> speed <400.000000>;
+		turn barrel to z-axis <-60.000000> speed <400.000000>;
 	}
 	if( gun_1 == 3 )
 	{
-		turn barrel to z-axis <-120.027473> speed <400.000000>;
+		turn barrel to z-axis <-120.000000> speed <400.000000>;
 	}
+	if( gun_1 == 4 )
+	{
+		turn barrel to z-axis <-180.000000> speed <400.000000>;
+	}
+	if( gun_1 == 5 )
+	{
+		turn barrel to z-axis <-240.000000> speed <400.000000>;
+	}
+	if( gun_1 == 6 )
+	{
+		turn barrel to z-axis <-300.000000> speed <400.000000>;
+	}
+	
 	turn turret to y-axis heading speed <450.000000>;
 	turn launcher to x-axis <0.000000> - pitch speed <450.000000>;
 	wait-for-turn barrel around z-axis;
@@ -82,7 +95,7 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	++gun_1;
-	if( gun_1 == 4 )
+	if( gun_1 == 7 )
 	{
 		gun_1 = flare;
 	}

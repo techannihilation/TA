@@ -38,7 +38,7 @@ return {
 		name = "Boosted Pulverizer",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "CORRL",
+		objectname = "CORRL1",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corrl1.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			corrl_dead = {
@@ -120,8 +121,6 @@ return {
 			corrl_missile1 = {
 				areaofeffect = 48,
 				avoidfeature = false,
-				burst = 2,
-				burstrate = 0.25,
 				canattackground = false,
 				cegtag = "Core_Def_AA_Rocket",
 				craterareaofeffect = 0,
@@ -137,7 +136,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 965,
-				reloadtime = 2.3,
+				reloadtime = 1.15,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",

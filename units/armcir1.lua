@@ -4,15 +4,15 @@ return {
 		airsightdistance = 1300,
 		brakerate = 0,
 		buildangle = 65536,
-		buildcostenergy = 8688,
-		buildcostmetal = 1899,
+		buildcostenergy = 19985,
+		buildcostmetal = 1855,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armcir1_aoplane.dds",
 		buildpic = "armcir1.dds",
-		buildtime = 19004,
+		buildtime = 19000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armcir1.dds",
 			faction = "ARM",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			armcir_dead = {
@@ -120,7 +121,7 @@ return {
 		},
 		weapondefs = {
 			arm_cir2 = {
-				areaofeffect = 84,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
@@ -140,7 +141,7 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1700,
+				range = 1500,
 				reloadtime = 0.4,
 				smoketrail = true,
 				soundhitdry = "xplosml2",

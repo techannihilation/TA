@@ -21,6 +21,14 @@ local CMD_MORPH = 31410
 --1272,734 == 1280,768 windowed
 
 --todo: sy adjustment
+local OtaIconExist = {}
+
+for i=1,#UnitDefs do
+	if VFS.FileExists(oldUnitpicsDir..UnitDefs[i].name..'.png') then
+		OtaIconExist[i] = oldUnitpicsDir..UnitDefs[i].name..'.png'
+		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
+	end
+end
 
 local cbackground, cborder = include("Configs/ui_config.lua")
 
@@ -162,6 +170,12 @@ local function getEditedCurrentTooltip()
 	local limExp = currentExp and currentExp/(1+currentExp) or 1
 	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
 	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", currentExp) ) or text
+
+
+	if WG.Music and WG.Music.curTrack then
+		text = text .. "\nPlaying : " .. WG.Music.curTrack
+	end
+
 	local mx,my,gx,gy,gz,tooltipID
     mx,my = Spring.GetMouseState()
     if mx and my then
@@ -180,8 +194,8 @@ local function getEditedCurrentTooltip()
     elseif tooltipID then
         unitDefID=Spring.GetUnitDefID(tooltipID)
         iconsize=iconsizeMaster
-    elseif WG["cmdID"] and WG["cmdID"] < 0 then
-    	unitDefID=math.abs(WG["cmdID"])
+    elseif WG["hoverID"] and WG["hoverID"] < 0 then
+    	unitDefID=math.abs(WG["hoverID"])
     	iconsize=iconsizeMaster
     elseif Spring.GetSelectedUnitsCount() == 1 then
     	unitID=Spring.GetSelectedUnits()[1]
@@ -274,8 +288,8 @@ function widget:DrawScreen()
 	if unitDefID then
 		gl.Color(1, 1, 1, 1)
 		--Spring.Echo(VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png'),unitDefID,UnitDefs[unitDefID].name )
-		if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png') then
-			gl.Texture(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png')
+		if WG['OtaIcons'] and OtaIconExist[unitDefID] then
+			gl.Texture(OtaIconExist[unitDefID])
 		else
 			gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
 		end

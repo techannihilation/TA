@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "marauder.dds",
 			faction = "ARM",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

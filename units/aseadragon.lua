@@ -61,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "aseadragon.dds",
 			faction = "ARM",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "tllhovermissile.dds",
 			faction = "TLL",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

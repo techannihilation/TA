@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "corah.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

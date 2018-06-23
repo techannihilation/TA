@@ -93,6 +93,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	move emitnano to z-axis [5.500000] now;
 	call-script InitState();
 	start-script SmokeUnit();
 	Static_Var_1 = 0;

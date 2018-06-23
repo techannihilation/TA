@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "corhowie.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {

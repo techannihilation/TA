@@ -71,6 +71,15 @@ local bgcorner = ":n:LuaUI/Images/bgcorner.png"
 local highlightImg = ":n:LuaUI/Images/button-highlight.dds"
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
+local OtaIconExist = {}
+
+for i=1,#UnitDefs do
+	if VFS.FileExists(oldUnitpicsDir..UnitDefs[i].name..'.png') then
+		OtaIconExist[i] = oldUnitpicsDir..UnitDefs[i].name..'.png'
+		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
+	end
+end
+
 local iconsPerRow = 16		-- not functional yet, I doubt I will put this in
 
 local leftmouseColor = {1, 0.72, 0.25, 0.22}
@@ -360,8 +369,8 @@ function DrawUnitDefTexture(unitDefID, iconPos, count, row)
 
   local ud = UnitDefs[unitDefID]
   glColor(color)
-  if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png') then
-    gl.Texture(oldUnitpicsDir..UnitDefs[unitDefID].name..'.png')
+  if WG['OtaIcons'] and OtaIconExist[unitDefID] then
+	gl.Texture(OtaIconExist[unitDefID])
   else
     gl.Texture('#' .. unitDefID)
   end

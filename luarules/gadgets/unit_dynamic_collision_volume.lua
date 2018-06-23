@@ -134,7 +134,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			elseif dynamicPieceCollisionVolume[unitDefID] then
-				local t = dynamicPieceCollisionVolume[unitDefID]
+				local t = dynamicPieceCollisionVolume[unitDefID].off
 				for pieceIndex=1, #spGetPieceList(unitID) do
 					local p = t[tostring(pieceIndex)]
 					if pieceIndex == t.trunk then
@@ -198,7 +198,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			local t = pieceCollisionVolume[unitDefID]
 			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
 		elseif dynamicPieceCollisionVolume[unitDefID] then
-			local t = pieceCollisionVolume[unitDefID]
+			local t = dynamicPieceCollisionVolume[unitDefID].off
 			unitYSizeOffset[unitID] = {perPieceTrunk[2], perPieceTrunk[5], t.trunk}
 		else
 			unitYSizeOffset[unitID] = {ys,yo}
@@ -251,11 +251,11 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- Check if a unit is pop-up type (the list must be entered manually)
 	-- If a building was constructed add it to the list for later radius and height scaling
 	function gadget:UnitFinished(unitID, unitDefID, unitTeam)
-		local un = UnitDefs[unitDefID].name
-		if unitCollisionVolume[un] then
-			popupUnits[unitID]={name=un, state=-1, perPiece=false}
-		elseif dynamicPieceCollisionVolume[un] then
-			popupUnits[unitID]={name=un, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
+		--local un = UnitDefs[unitDefID].name
+		if unitCollisionVolume[unitDefID] then
+			popupUnits[unitID]={id=unitDefID, state=-1, perPiece=false}
+		elseif dynamicPieceCollisionVolume[unitDefID] then
+			popupUnits[unitID]={id=unitDefID, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
 		end
 		
 		-- set height to expected value for fully built unit
@@ -323,8 +323,8 @@ if (gadgetHandler:IsSyncedCode()) then
 			end
 			if defs.state ~= stateInt then
 				if defs.perPiece then
-					t = dynamicPieceCollisionVolume[defs.name][stateString]
-					for pieceIndex=0, defs.numPieces do
+					t = dynamicPieceCollisionVolume[defs.id][stateString]
+					for pieceIndex=1, defs.numPieces do
 						p = t[tostring(pieceIndex)]
 						if p then
 							spSetPieceCollisionData(unitID, pieceIndex, true, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8])
@@ -346,7 +346,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					if unitHeight == nil then  -- had error once, hope this nil check helps
 						popupUnits[unitID] = nil
 					else
-						p = unitCollisionVolume[defs.name][stateString]
+						p = unitCollisionVolume[defs.id][stateString]
 						spSetUnitCollisionData(unitID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 						if p[10] then
 							spSetUnitMidAndAimPos(unitID, 0, unitHeight/2, 0, p[10], p[11], p[12],true)
@@ -390,7 +390,7 @@ if (gadgetHandler:IsSyncedCode()) then
 							spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
 						end
 					elseif dynamicPieceCollisionVolume[unitDefID] then
-						local t = dynamicPieceCollisionVolume[unitDefID]
+						local t = dynamicPieceCollisionVolume[unitDefID].off
 						local p = t[tostring(data[3])]
 						spSetPieceCollisionData(unitID, data[3], true, p[1], ys, p[3], p[4], yo, p[6], p[7], p[8])
 						if t.offsets then

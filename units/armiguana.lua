@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "armiguana.dds",
 			faction = "ARM",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			corsent_dead = {

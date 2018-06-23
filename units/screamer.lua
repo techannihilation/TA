@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "screamer.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

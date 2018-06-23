@@ -43,6 +43,7 @@ return {
 		customparams = {
 			buildpic = "armaak.dds",
 			faction = "ARM",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

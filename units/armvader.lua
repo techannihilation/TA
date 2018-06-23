@@ -163,6 +163,7 @@ return {
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				tolerance = 100000,
+				waterweapon = true,
 				weapontype = "Melee",
 				weaponvelocity = 100000,
 				damage = {

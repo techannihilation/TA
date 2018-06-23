@@ -68,13 +68,6 @@ local GL_ONE_MINUS_SRC_ALPHA   = GL.ONE_MINUS_SRC_ALPHA
 local GL_SRC_ALPHA             = GL.SRC_ALPHA
 local glBlending               = gl.Blending
 
-local isMex = {}
-for uDefID, uDef in pairs(UnitDefs) do
-	if uDef.extractsMetal > 0 then
-		isMex[uDefID] = true
-	end
-end
-
 -- Building ids
 local ARMCOM = UnitDefNames["armcom"].id
 local CORCOM = UnitDefNames["corcom"].id
@@ -195,6 +188,9 @@ local TLLGEOMINI = UnitDefNames["tllgeo_mini"].id
 -- this info is used to switch buildings between factions
 local armToCore = {}
 
+-- to check if OTA icon exist, defs table
+local OtaIconExist = {}
+
 armToCore[ARMMEX] = CORMEX
 armToCore[ARMUWMEX] = CORUWMEX
 armToCore[ARMSOLAR] = CORSOLAR
@@ -292,6 +288,32 @@ end
 local coreToArm = table_invert(armToCore)
 local CoreTotll = table_invert(tllToCore)
 local Armtotll = table_invert(tlltoArm)
+
+local isMex = {}
+local isBuildableQueue = {}
+for uDefID, uDef in pairs(UnitDefs) do
+	if uDef.extractsMetal > 0 then
+		isMex[uDefID] = true
+	end
+	if ARMCOM == uDefID or CORCOM  == uDefID or TLLCOM == uDefID then
+		if uDef.buildOptions then
+			for i = 1, #uDef.buildOptions do
+			local tooltip = UnitDefs[uDef.buildOptions[i]].tooltip
+			local humanName = UnitDefs[uDef.buildOptions[i]].humanName
+			local text = "\255\215\255\215"..humanName.."\n\255\240\240\240"
+			local description_long = UnitDefs[uDef.buildOptions[i]].customParams.description_long or ""  --Todo atm we don't use this 
+			isBuildableQueue[uDef.buildOptions[i]] = {tooltip = tooltip, humanName = humanName, text = text, description_long = description_long}
+			--Spring.Echo("Initial Queue Build Option's ",i,UnitDefs[uDef.buildOptions[i]].name)
+			end
+		end
+	end
+end
+
+for uDefID, uDef in pairs(UnitDefs) do
+	if uDef.extractsMetal > 0 then
+		isMex[uDefID] = true
+	end
+end
 ------------------------------------------------------------
 -- Globals
 ------------------------------------------------------------
@@ -581,6 +603,9 @@ function InitializeFaction(sDefID)
 	end
 	for b = 0, #sBuilds - 1 do
 		cellRows[1 + math.floor(b / numCols)][1 + b % numCols] = sBuilds[b + 1]
+		if VFS.FileExists(oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png') then
+			OtaIconExist[sBuilds[b + 1]] = oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png' 
+		end
 	end
 
 	-- delete any pre-existing displaylist
@@ -707,8 +732,8 @@ function widget:DrawScreen()
 						--gl.Rect(-borderSize, -borderSize, iconWidth + borderSize, iconHeight + borderSize)
 
 						gl.Color(1, 1, 1, 1)
-						if WG['OtaIcons'] and VFS.FileExists(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png') then
-							gl.Texture(oldUnitpicsDir..UnitDefs[cellRow[c]].name..'.png')
+						if WG['OtaIcons'] and OtaIconExist[cellRow[c]] then
+							gl.Texture(OtaIconExist[cellRow[c]])
 						else
 							gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
 						end
@@ -759,9 +784,9 @@ function widget:DrawScreen()
 
 			if drawTooltip and WG['tooltip'] ~= nil then
 				local udefid = TraceDefID(CurMouseState[1], CurMouseState[2])
-				local text = "\255\215\255\215"..UnitDefs[udefid].humanName.."\n\255\240\240\240"
-				if drawBigTooltip and UnitDefs[udefid].customParams.description_long ~= nil then
-					local lines = wrap(UnitDefs[udefid].customParams.description_long, 58)
+				local text = isBuildableQueue[udefid].text
+				if drawBigTooltip and isBuildableQueue[udefid].description_long ~= nil then
+					local lines = wrap(isBuildableQueue[udefid].description_long, 58)
 					local description = ''
 					local newline = ''
 					for i, line in ipairs(lines) do
@@ -770,7 +795,7 @@ function widget:DrawScreen()
 					end
 					text = text..description
 				else
-					text = text..UnitDefs[udefid].tooltip
+					text = text..isBuildableQueue[udefid].tooltip
 				end
 				WG['tooltip'].ShowTooltip('initialqueue', text)
 			end

@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "corfrog.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			corsent_dead = {

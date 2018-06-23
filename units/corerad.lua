@@ -4,8 +4,8 @@ return {
 		airsightdistance = 1100,
 		brakerate = 0,
 		buildangle = 65536,
-		buildcostenergy = 8688,
-		buildcostmetal = 843,
+		buildcostenergy = 9275,
+		buildcostmetal = 875,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -31,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 33,
 		mass = 843,
-		maxdamage = 2600,
+		maxdamage = 2800,
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corerad.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {
@@ -123,7 +124,7 @@ return {
 		},
 		weapondefs = {
 			cor_erad = {
-				areaofeffect = 144,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,

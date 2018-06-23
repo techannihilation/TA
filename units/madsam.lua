@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "madsam.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {
@@ -124,7 +125,7 @@ return {
 		},
 		weapondefs = {
 			madsam_missile = {
-				areaofeffect = 16,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,

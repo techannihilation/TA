@@ -46,6 +46,7 @@ return {
 		selfdestructas = "FMINE_HEAVY",
 		selfdestructcountdown = 0,
 		sightdistance = 78,
+		sonarstealth = true,
 		standingfireorder = 2,
 		stealth = true,
 		turninplaceanglelimit = 140,

@@ -4,15 +4,15 @@ return {
 		airsightdistance = 1250,
 		brakerate = 0,
 		buildangle = 65536,
-		buildcostenergy = 8688,
-		buildcostmetal = 1909,
+		buildcostenergy = 19275,
+		buildcostmetal = 1875,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corerad1_aoplane.dds",
 		buildpic = "corerad1.dds",
-		buildtime = 19958,
+		buildtime = 19000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corerad1.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			corerad_dead = {
@@ -120,7 +121,7 @@ return {
 		},
 		weapondefs = {
 			cor_erad2 = {
-				areaofeffect = 144,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
@@ -139,7 +140,7 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
-				range = 1700,
+				range = 1500,
 				reloadtime = 0.8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",

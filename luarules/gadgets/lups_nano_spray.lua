@@ -14,6 +14,24 @@ function gadget:GetInfo()
   }
 end
 
+local builderWorkTime = {}
+local min, max = 5000,0
+for uDefID, uDef in pairs(UnitDefs) do
+  if uDef.isBuilder then
+    local buildSpeed = uDef.buildSpeed or 220
+    if buildSpeed > max then max = buildSpeed end
+    if buildSpeed < min then max = buildSpeed end
+
+    local OldMax, OldMin, NewMax, NewMin = 220,5000,0.2,2.2
+    local OldRange = (OldMax - OldMin)
+    local NewRange = (NewMax - NewMin)
+    buildSpeed = (((buildSpeed - OldMin) * NewRange) / OldRange) + NewMin
+    --Spring.Echo(uDef.name, uDef.buildSpeed,value)
+    builderWorkTime[uDefID] = buildSpeed
+  end
+end
+--Spring.Echo("min buildpower is ", min) --220
+--Spring.Echo("max buildpower is ", max) --5000
 
 local spGetFactoryCommands = Spring.GetFactoryCommands
 local spGetCommandQueue    = Spring.GetCommandQueue
@@ -203,23 +221,24 @@ end
 local factionsNanoFx = {
   default = {
     fxtype          = "NanoLasers",
-    alpha           = "0.2+count/30",
-    corealpha       = "0.2+count/120",
-    corethickness   = "limcount",
-    streamThickness = "0.5+5*limcount",
-    streamSpeed     = "limcount*0.05",
+    alpha           = "0.2+count/120",
+    corealpha       = "0.2+count/60",
+    corethickness   = "count/120",
+    streamThickness = "0.5+10*count/40",
+    streamSpeed     = "limcount*0.15",
     priority        = 1,
   },
   ["default_high_quality"] = {
     fxtype      = "NanoParticles",
-    alpha       = 0.27,
+    alpha       = 0.50,
     size        = 6,
-    sizeSpread  = 6,
+    sizeSpread  = 1,
     sizeGrowth  = 0.65,
     rotSpeed    = 0.1,
     rotSpread   = 360,
-    texture     = "bitmaps/Other/Poof.png",
-    particles   = 1.2,
+    --texture     = "bitmaps/Other/Poof.png",
+    texture     = "bitmaps/nano.tga",
+    particles   = 1.1,
     priority    = 1,
   },
   --[[arm = {
@@ -280,8 +299,12 @@ end
 function gadget:GameFrame(frame)
 	for i=1,#builders do
 		local unitID = builders[i]
+                if Spring.IsUnitIcon(unitID) then return end
+                local UnitDefID = Spring.GetUnitDefID(unitID)
+                local buildpower = builderWorkTime[UnitDefID] or 1
 		if ((unitID + frame) % 30 < 1) then --// only update once per second
-			local strength = (Spring.GetUnitCurrentBuildPower(unitID) or 0)*(Spring.GetUnitRulesParam(unitID, "totalEconomyChange") or 1)	-- * 16
+			local strength = ((Spring.GetUnitCurrentBuildPower(unitID)or 1)*buildpower) or 1	-- * 16
+      --Spring.Echo(strength,Spring.GetUnitCurrentBuildPower(unitID)*builderWorkTime[UnitDefID])
 			if (strength > 0) then
 				local type, target, isFeature = Spring.Utilities.GetUnitNanoTarget(unitID)
 
@@ -339,6 +362,7 @@ function gadget:GameFrame(frame)
 							nanopiece    = nanoPieceID,
 							targetpos    = endpos,
 							count        = strength*30,
+              streamThickness = 4+ strength * 0.34,
 							color        = teamColor,
 							type         = type,
 							targetradius = radius,
@@ -384,7 +408,7 @@ function gadget:Update()
   end
 
   --// enable freaky arm nano fx when quality>3
-  if ((Spring.GetConfigInt("LupsNanoEffect",1) or 2) >= 2) then
+  if ((Spring.GetConfigInt("LupsNanoEffect",1) or 1) == 2) then
     factionsNanoFx.default = factionsNanoFx["default_high_quality"]
   end
 
@@ -413,7 +437,7 @@ function gadget:Update()
     local factionNanoFx = factionsNanoFx[faction]
     factionNanoFx.delaySpread = 30
     factionNanoFx.fxtype = factionNanoFx.fxtype:lower()
-    if ((Spring.GetConfigInt("LupsNanoEffect",1) or 2) >= 1) and ((factionNanoFx.fxtype=="nanolasers") or (factionNanoFx.fxtype=="nanolasersshader")) then
+    if ((Spring.GetConfigInt("LupsNanoEffect",1) or 1) == 1) and ((factionNanoFx.fxtype=="nanolasers") or (factionNanoFx.fxtype=="nanolasersshader")) then
       factionNanoFx.flare = true
     end
 

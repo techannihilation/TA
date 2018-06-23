@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tllfirestarter.dds",
 			faction = "TLL",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

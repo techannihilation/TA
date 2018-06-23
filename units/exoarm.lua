@@ -1,7 +1,7 @@
 return {
 	exoarm = {
-		activatewhenbuilt = true,
 		acceleration = 0.103,
+		activatewhenbuilt = true,
 		brakerate = 0.65,
 		buildcostenergy = 2295000,
 		buildcostmetal = 154000,

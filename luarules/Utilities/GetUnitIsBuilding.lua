@@ -35,6 +35,7 @@ function Spring.Utilities.GetUnitNanoTarget(unitID)
     inRange = true
   else
     local unitDefID = Spring.GetUnitDefID(unitID)
+    if unitDefID == nil then return end
     if not CachedBuildDistance[unitDefID] then
       local unitDef = UnitDefs[unitDefID] or {}
       CachedBuildDistance[unitDefID] = unitDef.buildDistance or 0

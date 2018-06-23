@@ -512,7 +512,11 @@ local function processLine(line,g,cfg,newlinecolor)
 		name = lastConnectionAttempt
 	  ignoreThisMessage = true
 	end
-	
+
+	-- filter hash messages: server= / client=
+	if sfind(line,"server=[0-9a-z][0-9a-z][0-9a-z][0-9a-z]") or sfind(line,"client=[0-9a-z][0-9a-z][0-9a-z][0-9a-z]") then
+		ignoreThisMessage = true
+	end
 	
 	if linetype==0 then
 		--filter out some engine messages; 
