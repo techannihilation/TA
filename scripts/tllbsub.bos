@@ -1,0 +1,329 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, bubbles, torp1, torp2, torp3, torp4, t1a, t1b, t1c, t2a, t2b, t2c, t3a, t3b, t3c, t4a, t4b, t4c,
+		sonar, flare, bba, bbb, bbc, bbd, atorp, barrel, coil1, coil2, coil3;
+
+
+static-var  torpedo1, torpedo2, torpedo3, torpedo4 ;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM2			4
+#define SIG_AIM3			8
+#define SIG_AIM4			16
+#define SIG_AIM5			32
+#define SIG_MOVE			64
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	healthpercent = get HEALTH;
+	sleeptime = healthpercent*healthpercent;
+	if( healthpercent < 66 )
+	{
+		emit-sfx 256 | 3 from base;
+		sleep sleeptime;
+		emit-sfx 256 | 3 from torp3;
+		
+		if( Rand( 1, 66 ) > healthpercent )
+		{
+			emit-sfx 256 | 3 from base;
+			sleep sleeptime;
+			emit-sfx 256 | 3 from torp1;
+			sleep sleeptime;
+			emit-sfx 256 | 3 from torp4;
+			sleep sleeptime;
+		}
+	}
+	start-script smokeunit();
+}
+
+Create()
+{
+	torpedo1 = 0;
+	torpedo2 = 0;
+	torpedo3 = 0;
+	torpedo4 = 0;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 256 | 3 from bba;
+		emit-sfx 256 | 3 from bbb;
+		emit-sfx 256 | 3 from bbc;
+		emit-sfx 256 | 3 from bbd;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+
+Restore1()
+{
+	sleep 5000;
+	set-signal-mask 0; 
+	turn torp1 to y-axis <0.000000> speed <40.000000>;
+}
+Restore2()
+{
+	sleep 5000;
+	set-signal-mask 0; 
+	turn torp2 to y-axis <0.000000> speed <40.000000>;
+}
+Restore3()
+{
+	sleep 5000;
+	set-signal-mask 0; 
+	turn torp3 to y-axis <0.000000> speed <40.000000>;
+}
+Restore4()
+{
+	sleep 5000;
+	set-signal-mask 0; 
+	turn torp4 to y-axis <0.000000> speed <40.000000>;
+}
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+FirePrimary()
+{
+	move atorp to z-axis [-3.000000] speed [200.000000];
+	sleep 100;
+	move atorp to z-axis [0.000000] speed [20.000000];
+	emit-sfx 256 | 3 from bubbles;
+	sleep 50;
+	emit-sfx 256 | 3 from bubbles;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = barrel;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+	turn torp1 to y-axis heading speed <40.000000>;
+	wait-for-turn torp1 around y-axis;
+	start-script Restore1();
+	return (1);
+}
+
+FireSecondary()
+{
+	++torpedo1;
+	if ( torpedo1 == 3)
+	{
+		torpedo1 = 0;
+	}
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = torp1;
+}
+
+QuerySecondary(piecenum)
+{
+	if ( torpedo1 == 0)
+	{
+		piecenum = t1a;
+	}
+	if ( torpedo1 == 1)
+	{
+		piecenum = t1b;
+	}
+	if ( torpedo1 == 2)
+	{
+		piecenum = t1c;
+	}
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM3;
+	set-signal-mask SIG_AIM3;
+	turn torp3 to y-axis heading speed <40.000000>;
+	wait-for-turn torp3 around y-axis;
+	start-script Restore3();
+	return (1);
+}
+
+FireWeapon3()
+{
+	++torpedo3;
+	if ( torpedo3 == 3)
+	{
+		torpedo3 = 0;
+	}
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = torp3;
+}
+
+QueryWeapon3(piecenum)
+{
+	if ( torpedo3 == 0)
+	{
+		piecenum = t3a;
+	}
+	if ( torpedo3 == 1)
+	{
+		piecenum = t3b;
+	}
+	if ( torpedo3 == 2)
+	{
+		piecenum = t3c;
+	}
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM4;
+	set-signal-mask SIG_AIM4;
+	turn torp2 to y-axis heading speed <40.000000>;
+	wait-for-turn torp2 around y-axis;
+	start-script Restore2();
+	return (1);
+}
+
+FireWeapon4()
+{
+	++torpedo2;
+	if ( torpedo2 == 3)
+	{
+		torpedo2 = 0;
+	}
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = torp2;
+}
+
+QueryWeapon4(piecenum)
+{
+	if ( torpedo2 == 0)
+	{
+		piecenum = t2a;
+	}
+	if ( torpedo2 == 1)
+	{
+		piecenum = t2b;
+	}
+	if ( torpedo2 == 2)
+	{
+		piecenum = t2c;
+	}
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM5;
+	set-signal-mask SIG_AIM5;
+	turn torp4 to y-axis heading speed <40.000000>;
+	wait-for-turn torp4 around y-axis;
+	start-script Restore4();
+	return (1);
+}
+
+FireWeapon5()
+{
+	++torpedo4;
+	if ( torpedo4 == 3)
+	{
+		torpedo4 = 0;
+	}
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = torp4;
+}
+
+QueryWeapon5(piecenum)
+{
+	if ( torpedo4 == 0)
+	{
+		piecenum = t4a;
+	}
+	if ( torpedo4 == 1)
+	{
+		piecenum = t4b;
+	}
+	if ( torpedo4 == 2)
+	{
+		piecenum = t4c;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode torp3 type NOHEATCLOUD;
+		explode torp4 type NOHEATCLOUD;
+		explode torp1 type NOHEATCLOUD;
+		explode atorp type NOHEATCLOUD;		
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode torp3 type NOHEATCLOUD | FALL;
+		explode torp3 type FALL | NOHEATCLOUD;
+		explode torp3 type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode torp3 type NOHEATCLOUD;
+		explode torp4 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode torp1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY;
+	explode torp2 type NOHEATCLOUD;
+	explode torp3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode torp4 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}
