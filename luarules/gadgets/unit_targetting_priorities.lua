@@ -21,7 +21,7 @@ local setPriorityAirf = {
 	type    = CMDTYPE.ICON_MODE,
 	name    = 'Set Priority',
 	action  = 'setpriority',
-	tooltip = 'Toggle for target type priority',
+	tooltip = 'Toggle for target type priority\nCurrent AA priority set to to fighters',
 	queueing = false,
 	params  = { '0', 'Fighters', 'Bombers', 'none'} ,
 }
@@ -31,7 +31,7 @@ local setPriorityAirb = {
 	type    = CMDTYPE.ICON_MODE,
 	name    = 'Set Priority',
 	action  = 'setpriority',
-	tooltip = 'Toggle for target type priority',
+	tooltip = 'Toggle for target type priority\nCurrent AA priority set to to bombers',
 	queueing = false,
 	params  = { '1', 'Fighters', 'Bombers', 'none'} ,
 }
@@ -41,7 +41,7 @@ local setPriorityAirn = {
 	type    = CMDTYPE.ICON_MODE,
 	name    = 'Set Priority',
 	action  = 'setpriority',
-	tooltip = 'Toggle for target type priority',
+	tooltip = 'Toggle for target type priority\nNo current priority set for AA',
 	queueing = false,
 	params  = { '2', 'Fighters', 'Bombers', 'No priority'} ,
 }
@@ -98,7 +98,6 @@ airCategories = {
 	[UnitDefNames["tllseaf"].id] = "Fighters",
 	[UnitDefNames["tllshu"].id] = "Fighters",
 	[UnitDefNames["armstratus"].id] = "Fighters",
-	[UnitDefNames["corshoc"].id] = "Fighters",
 	[UnitDefNames["tllcondor"].id] = "Fighters",
 
 	--Scouts
