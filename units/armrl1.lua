@@ -39,7 +39,7 @@ return {
 		name = "Boosted Defender",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "ARMRL",
+		objectname = "ARMRL1",
 		radaremitheight = 49,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
