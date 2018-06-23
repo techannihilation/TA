@@ -154,7 +154,7 @@ unitList["TA"] = {
 --Super Ships
 [UnitDefNames["cdevastator"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
 [UnitDefNames["abroadside"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllvaliant"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
+[UnitDefNames["corvaliant"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
 
 --T3 AA
 [UnitDefNames["corpre"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
