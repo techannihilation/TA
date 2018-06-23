@@ -1,5 +1,5 @@
 #define TA			// This is a TA script
-
+#by skymyj
 #include "sfxtype.h"
 #include "exptype.h"
 
