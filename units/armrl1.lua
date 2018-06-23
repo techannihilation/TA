@@ -122,8 +122,6 @@ return {
 			armrl_missile1 = {
 				areaofeffect = 48,
 				avoidfeature = false,
-				burst = 2,
-				burstrate = 0.35,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
 				craterareaofeffect = 0,
@@ -139,7 +137,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 985,
-				reloadtime = 2.6,
+				reloadtime = 1.3,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
