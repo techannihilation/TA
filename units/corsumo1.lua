@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "corsumo1.dds",
 			faction = "CORE",
-			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corsumo_dead = {
