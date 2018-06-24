@@ -38,7 +38,10 @@ return {
 		usebuildinggrounddecal = false,
 		workertime = 250,
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
-		buildoptions = {},
+		buildoptions = {
+			[1] = "abuilderlvl2",
+			[2] = "abuilderlvl3",	
+		},
 		customparams = {
 			buildpic = "armrech2.dds",
 			faction = "ARM",
