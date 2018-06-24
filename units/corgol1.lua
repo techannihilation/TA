@@ -60,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "corgol1.dds",
 			faction = "CORE",
-			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corgol1_dead = {
