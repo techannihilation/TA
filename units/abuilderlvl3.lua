@@ -67,8 +67,9 @@ return {
 			[7] = "armbrth",
 			[8] = "armfatboy1",
 			[9] = "armbull2",
-			[10] = "armweaver",
-			[11] = "armcrus",			
+			[10] = "armmanni1",
+			[11] = "armweaver",
+			[12] = "armcrus",			
 		},
 		customparams = {
 			buildpic = "abuilderlvl3.dds",
