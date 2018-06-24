@@ -1,11 +1,12 @@
-#define TA			// This is a TA script
+#define TA
+
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, nanogun1, nano1, nanogun2, nano2;
+piece  base, hull, turn1, engine1, thruster11, thruster12, engine2, thruster21, thruster22, turn2, engine3, engine4, thrust11, thrust12, thrust21, thrust22, thrust3, thrust4,
+       barrel1, barrel2, sp, carry, beam1, beam2;
 
-static-var  spray;
-
+static-var  DesiredState, StateChanging, Flying, UnitHeading, UnitSpeed, Inactive, Gun, Launcher, spray;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -33,12 +34,30 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 }
-
 Create()
 {
-	set ARMORED to 1;
-	spray = base;
+	spray = 0;
 	start-script SmokeUnit();
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = sp;
+}
+
+Activate()
+{
+	set-signal-mask 256;
+	turn engine1 to x-axis <10.00> speed <50.00>;
+	turn engine2 to x-axis <10.00> speed <50.00>;
+	sleep 100;
+}
+
+Deactivate()
+{
+	signal 256;
+	turn engine1 to x-axis <0.00> speed <25.00>;
+	turn engine2 to x-axis <0.00> speed <25.00>;
 }
 
 StartBuilding()
@@ -55,30 +74,21 @@ QueryNanoPiece(piecenum)
 {
 	if( spray == 0 )
 	{
-		piecenum = nano1;
+		piecenum = beam1;
 	}
 	if( spray != 0 )
 	{
-		piecenum = nano2;
+		piecenum = beam2;
 	}
 	spray = !spray;
 }
 
-SweetSpot(piecenum)
+Killed(severity, corpseType)
 {
-	piecenum = base;
-}
-
-Killed(severity, corpsetype)
-{
-	if( severity <= 50 )
-	{
-		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode body type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-	return (corpsetype);
+	CorpseType = 3;
+	explode hull type NOHEATCLOUD;
+	explode engine1 type NOHEATCLOUD;
+	explode engine2 type NOHEATCLOUD;
+	return corpseType;
+	
 }
