@@ -1220,36 +1220,6 @@ local morphDefs = {
 	  	time = 60,
 		xp = 0.35,
 	},
-	abuilderlvl2 = {
-		into = 'abuilderlvl3',
-		time = 30,
-		tech = 2,
-	},
-	abuilderlvl3 = {
-		into = 'abuilderlvl4',
-		time = 45,
-		tech = 3,
-	},
-	abuilderlvl4 = {
-		into = 'abuilderlvl5',
-		time = 60,
-		tech = 4,
-	},
-	cbuilderlvl2 = {
-		into = 'cbuilderlvl3',
-		time = 30,
-		tech = 2,
-	},
-	cbuilderlvl3 = {
-		into = 'cbuilderlvl4',
-		time = 45,
-		tech = 3,
-	},
-	cbuilderlvl4 = {
-		into = 'cbuilderlvl5',
-		time = 60,
-		tech = 4,
-	},
 }
 
 --
