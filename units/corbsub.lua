@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0.057,
 		buildcostenergy = 124265,
-		buildcostmetal = 8400,
+		buildcostmetal = 8950,
 		builder = false,
 		buildpic = "corbsub.dds",
 		buildtime = 110000,
@@ -178,7 +178,7 @@ return {
 				weaponvelocity = 225,
 				damage = {
 					default = 450,
-					subs = 900,
+					subs = 675,
 				},
 			},
 		},
