@@ -13,11 +13,11 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-VFS.Include("LuaRules/Configs/customcmds.h.lua")
 local GetSelectedUnits = Spring.GetSelectedUnits
 local GiveOrderToUnit  = Spring.GiveOrderToUnit
 local GetUnitPosition  = Spring.GetUnitPosition
 local myOrder = false
+local CMD_MOVE = CMD.MOVE
 
 local function getDistance(x1,z1,x2,z2)
 	local dx,dz = x1-x2,z1-z2
@@ -29,7 +29,7 @@ function widget:CommandNotify(id, params, options)
 		return false
 	end
 
-	if (id == CMD.MOVE) and params[3] and (not myOrder) and options.coded then
+	if (id == CMD_MOVE) and params[3] and (not myOrder) and options.coded then
 		local selUnits = GetSelectedUnits()
 		if #selUnits > 1 then
 			myOrder = true
@@ -67,7 +67,7 @@ function widget:CommandNotify(id, params, options)
 					targetX = mx - (math.sin(angle) * maxOffset)
 					targetZ = mz - (math.cos(angle) * maxOffset)
 				end	
-				GiveOrderToUnit(unitID,CMD.MOVE,{targetX,params[2],targetZ},options.coded)
+				GiveOrderToUnit(unitID,CMD_MOVE,{targetX,params[2],targetZ},options.coded)
 			end
 			myOrder = false
 			return true
