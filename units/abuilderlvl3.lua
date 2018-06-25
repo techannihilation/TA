@@ -64,7 +64,7 @@ return {
 			[4] = "armflak",
 			[5] = "armmds",
 			[6] = "armgate",
-			[7] = "armbrth",
+			[7] = "armbrtha",
 			[8] = "armfboy1",
 			[9] = "armbull2",
 			[10] = "armmanni1",
