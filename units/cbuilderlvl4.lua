@@ -68,7 +68,7 @@ return {
 			[8] = "cormcv",
 			[9] = "corhaboob",
 			[10] = "corhcrus",
-			[11] = "blackdawn",
+			[11] = "corshock",
 			[12] = "armgor",
 		},
 		customparams = {
