@@ -65,7 +65,7 @@ return {
 			[7] = "armhys",
 			[8] = "armchimera",
 			[9] = "armhcrus",
-			[10] = "armpers",
+			[10] = "armstratus",
 			[11] = "armjugg",
 		},
 		customparams = {
