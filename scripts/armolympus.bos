@@ -75,9 +75,10 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	emit-sfx 1024 from flare;
 	move barrel2 to z-axis [-12.000000] speed [400.000000];	
 	move barrel to z-axis [-4.000000] speed [250.000000];
+	emit-sfx 1024 from emit;
+	wait-for-move barrel along z-axis;
 	sleep 250;
 	move barrel2 to z-axis [0.000000] speed [2.000000];
 	move barrel to z-axis [0.000000] speed [1.000000];
@@ -85,12 +86,12 @@ FirePrimary()
 
 QueryPrimary(piecenum)
 {
-	piecenum = flare;
+	piecenum = emit;
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = turret;
+	piecenum = sleeve;
 }
 
 AimTertiary(heading, pitch)
