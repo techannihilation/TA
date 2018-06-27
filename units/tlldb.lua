@@ -180,10 +180,10 @@ return {
 				startvelocity = 750,
 				tolerance = 8500,
 				tracks = true,
+				trajectoryheight = 1,
 				turnrate = 50000,
 				turret = true,
 				weaponacceleration = 450,
-				weapontimer = 15,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1750,
 				damage = {
