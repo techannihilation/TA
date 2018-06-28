@@ -391,7 +391,7 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		emit-sfx UNIT_SFX1 from flare1;
+		emit-sfx 1024 from flare1;
 		move barrela1 to z-axis [-3] now;
 		sleep 250;
 		move barrela1 to z-axis [0] speed [1];
@@ -401,7 +401,7 @@ FirePrimary()
 	}
 	if( gun_1 == 1 )
 	{
-		emit-sfx UNIT_SFX1 from flare2;
+		emit-sfx 1024 from flare2;
 		move barrelb1 to z-axis [-3] now;
 		sleep 250;
 		move barrelb1 to z-axis [0] speed [1];
@@ -411,7 +411,7 @@ FirePrimary()
 	}
 	if( gun_1 == 2 )
 	{
-		emit-sfx UNIT_SFX1 from flare1;
+		emit-sfx 1024 from flare1;
 		move barrela2 to y-axis [-3] now;
 		sleep 250;
 		move barrela2 to y-axis [0] speed [1];
@@ -421,7 +421,7 @@ FirePrimary()
 	}
 	if( gun_1 == 3 )
 	{
-		emit-sfx UNIT_SFX1 from flare2;
+		emit-sfx 1024 from flare2;
 		move barrelb2 to y-axis [-3] now;
 		sleep 250;
 		move barrelb2 to y-axis [0] speed [1];
@@ -431,7 +431,7 @@ FirePrimary()
 	}
 	if( gun_1 == 4 )
 	{
-		emit-sfx UNIT_SFX1 from flare1;
+		emit-sfx 1024 from flare1;
 		move barrela3 to z-axis [3] now;
 		sleep 50;
 		move barrela3 to z-axis [0] speed [1];
@@ -441,7 +441,7 @@ FirePrimary()
 	}
 	if( gun_1 == 5 )
 	{
-		emit-sfx UNIT_SFX1 from flare2;
+		emit-sfx 1024 from flare2;
 		move barrelb3 to z-axis [3] now;
 		sleep 250;
 		move barrelb3 to z-axis [0] speed [1];
@@ -451,7 +451,7 @@ FirePrimary()
 	}
 	if( gun_1 == 6 )
 	{
-		emit-sfx UNIT_SFX1 from flare1;
+		emit-sfx 1024 from flare1;
 		move barrela4 to y-axis [3] now;
 		sleep 250;
 		move barrela4 to y-axis [0] speed [1];
@@ -461,7 +461,7 @@ FirePrimary()
 	}
 	if( gun_1 == 7 )
 	{
-		emit-sfx UNIT_SFX1 from flare2;
+		emit-sfx 1024 from flare2;
 		move barrelb4 to y-axis [3] now;
 		sleep 250;
 		move barrelb4 to y-axis [0] speed [1];
