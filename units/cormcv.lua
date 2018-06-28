@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 10050,
 		builder = false,
 		buildpic = "cormcv.dds",
-		buildtime = 200000,
+		buildtime = 195000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
