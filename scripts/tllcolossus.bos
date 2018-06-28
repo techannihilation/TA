@@ -5,7 +5,7 @@
 
 piece  torso, luparm, ruparm, pelvis, rthigh, lthigh, lleg, lfoot,
        rleg, rfoot, turretr, turretl, hand, flare1, base, flare3, tbase,
-       flare2, flare4, flare5 ,flare6;
+       flare2, flare4, flare5 ,flare6, lemit;
 
 static-var  bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
             gun_1;
@@ -688,27 +688,23 @@ FirePrimary()
 	move ruparm to z-axis [-1.000000] speed [500.000000];
 	if( gun_1 == 0 )
 	{
-		show flare1;
+		emit-sfx 1024 from flare1;
 		sleep 100;
-		hide flare1;
 	}
 	if( gun_1 == 1 )
 	{
-		show flare2;
+		emit-sfx 1024 from flare2;
 		sleep 100;
-		hide flare2;
 	}
 	if( gun_1 == 2 )
 	{
-		show flare3;
+		emit-sfx 1024 from flare3;
 		sleep 100;
-		hide flare3;
 	}
 	if( gun_1 == 3 )
 	{
-		show flare4;
+		emit-sfx 1024 from flare4;
 		sleep 100;
-		hide flare4;
 	}
 	move ruparm to z-axis [0.000000] speed [2.000000];
 	++gun_1;
@@ -751,6 +747,7 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
+	emit-sfx 1025 from lemit;
 	sleep 150;
 }
 
@@ -761,7 +758,7 @@ AimFromTertiary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	piecenum = hand;
+	piecenum = lemit;
 }
 
 AimWeapon4(heading, pitch)
