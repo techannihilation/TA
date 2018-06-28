@@ -55,7 +55,7 @@ return {
 		turnrate = 175,
 		unitname = "tllmcv",
 		customparams = {
-			faction = "ARM",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
