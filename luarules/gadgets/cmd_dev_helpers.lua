@@ -67,9 +67,14 @@ function GiveCat(words)
     end
 
     local arrayWidth = math.ceil(math.sqrt(#giveUnits))
-    local spacing = 100
+    local spacing = 0
     local n = 0
     local x,z = ox,oz
+    for _,uDID in ipairs(giveUnits) do
+    	local size = UnitDefs[uDID].xsize
+    	spacing = spacing + size
+	end
+	spacing = (spacing/#giveUnits)*15
     for _,uDID in ipairs(giveUnits) do
         local y = Spring.GetGroundHeight(x,z)
         Spring.CreateUnit(uDID, x,y,z, "n", teamID)    
