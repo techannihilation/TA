@@ -12,7 +12,7 @@ return {
 		buildpic = "cfusionplant.dds",
 		buildtime = 725000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		collisionvolumeoffsets = "0 41 0",
+		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "165 101 165",
 		collisionvolumetype = "CylY",
 		corpse = "dead",

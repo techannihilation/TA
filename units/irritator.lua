@@ -163,7 +163,7 @@ return {
 			irritator_rocket = {
 				areaofeffect = 60,
 				avoidfeature = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "TLLRAVENTRAIL_LIGHT",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -178,7 +178,7 @@ return {
 				name = "Vpulse Rocket",
 				noselfdamage = true,
 				range = 1050,
-				reloadtime = 1,
+				reloadtime = 2,
 				smoketrail = false,
 				soundhitdry = "vpulsehit",
 				soundhitwet = "splssml",
@@ -195,7 +195,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 800,
 				damage = {
-					default = 500,
+					default = 1000,
 					subs = 5,
 				},
 			},
