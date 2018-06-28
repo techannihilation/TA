@@ -55,7 +55,8 @@ return {
 		turnrate = 175,
 		unitname = "tllmcv",
 		customparams = {
-			faction = "ARM",
+			faction = "TLL",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -152,7 +153,7 @@ return {
 				},
 			},
 			tll_blast = {
-				areaofeffect = 496,
+				areaofeffect = 375,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "banthablaster",
@@ -166,7 +167,7 @@ return {
 				intensity = 5,
 				name = "ImpulsionBlaster",
 				noselfdamage = true,
-				range = 2850,
+				range = 2650,
 				reloadtime = 8,
 				rgbcolor = "0.15 0.15 1",
 				size = 5,
