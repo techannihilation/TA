@@ -3,7 +3,7 @@ return {
 		acceleration = 0.09,
 		brakerate = 0.135,
 		buildcostenergy = 271000,
-		buildcostmetal = 11200,
+		buildcostmetal = 12825,
 		builder = false,
 		buildpic = "corhcrus.dds",
 		buildtime = 205000,
