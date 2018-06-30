@@ -244,6 +244,7 @@ return {
   },
 
   ["anvil"] = {
+    usedefaultexplosions = false,
     groundflash = {
       circlealpha        = 0.7,
       circlegrowth       = 1,
@@ -259,7 +260,7 @@ return {
     pikes20 = {
       air                = true,
       class              = [[explspike]],
-      count              = 15,
+      count              = 12,
       ground             = true,
       water              = true,
       properties = {
