@@ -19,11 +19,14 @@ local isFlyingTrans = {}
 for i=1,#UnitDefs do
     if Game.armorTypes[UnitDefs[i].armorType] =="subs" then
         isSub[i] = true
-    elseif Game.armorTypes[UnitDefs[i].armorType] =="ship" then
+    end
+    if Game.armorTypes[UnitDefs[i].armorType] =="ship" then
         isShip[i] = true
-    elseif UnitDefs[i].modeltype=="3do" then
+    end
+    if UnitDefs[i].modeltype=="3do" then
         is3do[i] = true
-    elseif UnitDefs[i].canFly then
+    end
+    if UnitDefs[i].canFly then
         canFly[i] = true
         if UnitDefs[i].transportCapacity > 0 then
         	isFlyingTrans[i] = true
@@ -143,11 +146,11 @@ if (gadgetHandler:IsSyncedCode()) then
 					end
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
-			elseif not isSub[unitDefID] then
+			else
 				local rs, hs, ws, ars, ahs
 				if (spGetUnitRadius(unitID)>47 and not canFly[unitDefID]) then
 					rs, hs, ws = 0.59, 0.59, 0.59
-					ars, ahs = 0.66, 0.66
+					ars, ahs = 0.60, 0.60
 				elseif (not canFly[unitDefID] ) then
 					rs, hs, ws = 0.68, 0.68, 0.68
 					ars, ahs = 0.70, 0.70 
@@ -157,7 +160,7 @@ if (gadgetHandler:IsSyncedCode()) then
 					ars, ahs = 0.70, 0.70 
 				else 
 					rs, hs, ws = 0.53, 0.26, 0.53
-					ars, ahs = 0.55, 0.55 
+					ars, ahs = 0.55, 0.55
 				end
 				local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 				if (vtype>=3 and xs==ys and ys==zs) then
@@ -171,12 +174,11 @@ if (gadgetHandler:IsSyncedCode()) then
 				end
 				if isFlyingTrans[unitDefID] then
 					spSetUnitRadiusAndHeight(unitID, 16, 16)
+				elseif isSub[unitDefID] then
+					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.65, spGetUnitHeight(unitID)*0.65)
 				else
 					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 				end
-			end
-			if isSub[unitDefID] then
-				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.45, spGetUnitHeight(unitID)*0.45)
 			end
 			if isShip[unitDefID] then 
 				local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
