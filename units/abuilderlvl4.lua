@@ -66,7 +66,6 @@ return {
 			[8] = "armchimera",
 			[9] = "armhcrus",
 			[10] = "armstratus",
-			[11] = "armjugg",
 		},
 		customparams = {
 			buildpic = "abuilderlvl4.dds",
