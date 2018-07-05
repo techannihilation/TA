@@ -44,7 +44,7 @@ end
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
     local pList = Spring.GetPlayerList(teamID)
     local playerID = pList[1]
-    local customtable = playerID and select(10,Spring.GetPlayerInfo(playerID))
+    local customtable = playerID and select(11,Spring.GetPlayerInfo(playerID))
     local tsMu = customtable and customtable.skill or ""
     mu = tsMu and tonumber(tsMu:match("%d+%.?%d*")) or 25
     

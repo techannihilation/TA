@@ -38,7 +38,7 @@ function gadget:Initialize()
             local playerList = Spring.GetPlayerList(tID)
             local teamSkill = 1
             for _,pID in pairs(playerList) do
-                local customtable = select(10,Spring.GetPlayerInfo(pID))
+                local customtable = select(11,Spring.GetPlayerInfo(pID))
 		local tsMu = customtable.skill
 		local tsSigma = customtable.skilluncertainty
 		if tsMu then
