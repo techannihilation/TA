@@ -50,6 +50,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 450,
+		shownanospray = false,
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
