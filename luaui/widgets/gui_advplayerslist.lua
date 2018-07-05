@@ -1002,7 +1002,7 @@ function round(num, idp)
 end
 
 function GetSkill(playerID)
-	local customtable = select(10,Spring_GetPlayerInfo(playerID)) -- player custom table
+	local customtable = select(11,Spring_GetPlayerInfo(playerID)) -- player custom table
 	local tsMu = customtable.skill
 	local tsSigma = customtable.skilluncertainty
 	local tskill = ""

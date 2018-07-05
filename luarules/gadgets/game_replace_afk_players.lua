@@ -41,7 +41,7 @@ function gadget:RecvLuaMsg(msg, playerID)
     end
     if msg=='\144' then
         -- do the same eligibility check as in unsynced
-        local customtable = select(10,Spring.GetPlayerInfo(playerID))
+        local customtable = select(11,Spring.GetPlayerInfo(playerID))
         local tsMu = customtable.skill 
         local tsSigma = customtable.skilluncertainty
         ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))
