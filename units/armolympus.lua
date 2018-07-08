@@ -94,7 +94,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:BANTHAMUZZLE",
+				[1] = "custom:ultimate_blaster_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -162,7 +162,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 2.5,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 450,
+				weaponvelocity = 750,
 				damage = {
 					default = 1600,
 					subs = 5,
@@ -172,7 +172,7 @@ return {
 				accuracy = 500,
 				areaofeffect = 192,
 				avoidfeature = false,
-				cegtag = "banthablaster",
+				cegtag = "ultimate_blaster",
 				collidefriendly = false,
 				craterareaofeffect = 288,
 				craterboost = 0,
@@ -189,7 +189,7 @@ return {
 				reloadtime = 10,
 				rgbcolor = "0.5 0.5 1.0",
 				separation = 0.45,
-				size = 10,
+				size = 16,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
 				soundhitwet = "splslrg",
@@ -197,7 +197,7 @@ return {
 				soundstart = "xplonuk4",
 				turret = true,
 				weapontype = "EmgCannon",
-				weaponvelocity = 750,
+				weaponvelocity = 500,
 				damage = {
 					commanders = 1000,
 					default = 10000,
