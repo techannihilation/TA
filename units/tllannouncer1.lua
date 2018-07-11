@@ -130,8 +130,8 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 615,
-				reloadtime = 0.9,
+				range = 640,
+				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
@@ -152,7 +152,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 340,
 				damage = {
-					default = 27,
+					default = 25,
 					subs = 5,
 				},
 			},
@@ -160,8 +160,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORTRUCK_MISSILE",
-				maindir = "0 0 1",
-				maxangledif = 235,
 				onlytargetcategory = "SURFACE",
 			},
 		},
