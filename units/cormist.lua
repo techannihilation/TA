@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 165,
 		builder = false,
 		buildpic = "cormist.dds",
-		buildtime = 3065,
+		buildtime = 2750,
 		canattack = true,
 		canguard = true,
 		canmove = true,
