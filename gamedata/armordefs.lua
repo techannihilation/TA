@@ -198,7 +198,6 @@ return {
         "armacsub",
         "armrecl",
         "tllsr",
-        "tllswordfish",
         "corbsub",
         "armbsub"
     },
@@ -207,13 +206,18 @@ return {
         "armhcar",
         "aseadragon",
         "uppercut",
+        "tllswordfish",
+        "armmarlin",
         "armbc",
         "cortyrnt",
         "corhcar",
         "corblackhy",
         "tllasgard",
         "tllhcar",
-        "tllcaps"
+        "tllcaps",
+        "armecs",
+        "corecs",
+        "tllecs"
     },
     --### LAND ###
     experimental_land = {
