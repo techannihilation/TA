@@ -17,10 +17,12 @@ local canFly = {}
 local isFlyingTrans = {}
 
 for i=1,#UnitDefs do
-    if Game.armorTypes[UnitDefs[i].armorType] =="subs" then
+    if UnitDefs[i].movementclass and (UnitDefs[i].movementclass:find("UBOAT",1,true)) then
+    	--Spring.Echo("Sub Found ",UnitDefs[i].name)
         isSub[i] = true
     end
-    if Game.armorTypes[UnitDefs[i].armorType] =="ship" then
+    if Game.armorTypes[UnitDefs[i].armorType] =="ships" or Game.armorTypes[UnitDefs[i].armorType] =="experimental_ships" then
+    	--Spring.Echo("Ship Found ",UnitDefs[i].name)
         isShip[i] = true
     end
     if UnitDefs[i].modeltype=="3do" then
