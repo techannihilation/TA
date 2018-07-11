@@ -31,7 +31,7 @@ return {
 		mass = 165,
 		maxdamage = 1120,
 		maxslope = 16,
-		maxvelocity = 1.6,
+		maxvelocity = 1.5,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -167,7 +167,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 500,
 				damage = {
-					default = 34,
+					default = 40,
 					subs = 5,
 				},
 			},
