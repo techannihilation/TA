@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 250,
 		builder = false,
 		buildpic = "armsam1.dds",
-		buildtime = 4200,
+		buildtime = 3500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
