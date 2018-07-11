@@ -162,7 +162,7 @@ return {
 			[1] = {
 				def = "CORTRUCK_MISSILE",
 				maindir = "0 0 1",
-				maxangledif = 235,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 		},
