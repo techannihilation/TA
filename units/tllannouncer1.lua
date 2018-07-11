@@ -2,11 +2,11 @@ return {
 	tllannouncer1 = {
 		acceleration = 0.13,
 		brakerate = 0.36,
-		buildcostenergy = 1090,
-		buildcostmetal = 240,
+		buildcostenergy = 1690,
+		buildcostmetal = 290,
 		builder = false,
 		buildpic = "tllannouncer.dds",
-		buildtime = 2500,
+		buildtime = 3500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -44,7 +44,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.023,
-		turnrate = 625,
+		turnrate = 440,
 		unitname = "tllannouncer1",
 		customparams = {
 			faction = "TLL",
@@ -130,8 +130,8 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 630,
-				reloadtime = 0.9,
+				range = 640,
+				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
@@ -152,7 +152,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 340,
 				damage = {
-					default = 27,
+					default = 30,
 					subs = 5,
 				},
 			},
@@ -160,8 +160,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORTRUCK_MISSILE",
-				maindir = "0 0 1",
-				maxangledif = 235,
 				onlytargetcategory = "SURFACE",
 			},
 		},
