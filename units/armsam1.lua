@@ -2,11 +2,11 @@ return {
 	armsam1 = {
 		acceleration = 0.0396,
 		brakerate = 0.0495,
-		buildcostenergy = 3500,
+		buildcostenergy = 2750,
 		buildcostmetal = 250,
 		builder = false,
 		buildpic = "armsam1.dds",
-		buildtime = 3745,
+		buildtime = 4200,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -28,7 +28,7 @@ return {
 		mass = 250,
 		maxdamage = 1365,
 		maxslope = 16,
-		maxvelocity = 1.605,
+		maxvelocity = 1.6,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -51,7 +51,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.0593,
-		turnrate = 497,
+		turnrate = 425,
 		unitname = "armsam1",
 		customparams = {
 			buildpic = "armsam1.dds",
@@ -141,7 +141,7 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 635,
+				range = 640,
 				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
@@ -164,7 +164,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 280,
 				damage = {
-					default = 45,
+					default = 50,
 					subs = 5,
 				},
 			},
@@ -173,6 +173,7 @@ return {
 			[1] = {
 				def = "ARMTRUCK_MISSILE1",
 				onlytargetcategory = "SURFACE",
+				
 			},
 		},
 	},
