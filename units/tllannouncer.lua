@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 190,
 		builder = false,
 		buildpic = "tllannouncer.dds",
-		buildtime = 2500,
+		buildtime = 2750,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -44,7 +44,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.023,
-		turnrate = 625,
+		turnrate = 440,
 		unitname = "tllannouncer",
 		customparams = {
 			buildpic = "tllannouncer.dds",
