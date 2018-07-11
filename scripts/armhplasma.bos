@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, body, turret, sleeve, barrel1, flare1, flare2, barrel2,
-       wakes, wake1, wake2, wake3, wake4, wake5, wake6, wake7,
+       wake1, wake2, wake3, wake4, wake5, wake6, wake7,
        wake8;
 
 static-var  Static_Var_1, restore_delay, gun_1;
