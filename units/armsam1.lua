@@ -142,7 +142,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 640,
-				reloadtime = 4,
+				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
@@ -164,7 +164,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 280,
 				damage = {
-					default = 50,
+					default = 45,
 					subs = 5,
 				},
 			},
