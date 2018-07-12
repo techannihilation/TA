@@ -84,7 +84,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 activatescr()
 {
-	set ARMORED to 0;
 	if( TRUE )
 	{
 		turn door5 to x-axis <30.000000> speed <30.000000>;
@@ -128,7 +127,6 @@ deactivatescr()
 		wait-for-turn door5 around x-axis;
 	}
 	sleep 26;
-	set ARMORED to 1;
 }
 
 OpenYard()
@@ -159,12 +157,14 @@ Go()
 {
 	call-script activatescr();
 	call-script OpenYard();
+	set ARMORED to 0;
 	set INBUILDSTANCE to 1;
 }
 
 Stop()
 {
 	set INBUILDSTANCE to 0;
+	set ARMORED to 1;
 	call-script CloseYard();
 	call-script deactivatescr();
 }
@@ -218,6 +218,7 @@ Create()
 	turn nano2 to y-axis <-90.000000> now;
 	spray = base;
 	unitviewer = FALSE;
+	set ARMORED to 0;
 	call-script InitState();
 	start-script SmokeUnit();
 	while( get BUILD_PERCENT_LEFT )

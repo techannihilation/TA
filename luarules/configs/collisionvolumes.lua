@@ -193,6 +193,14 @@ local unitCollisionVolume = {					--dynamic collision volume definitions
 	[UnitDefNames["uppercut"].id] = {
 		on={31,31,156,0,45,0,1,1,2,0,60,0},
 		off={31,31,156,0,0,0,1,1,2,0,20,0},
+	},
+	[UnitDefNames["tllap"].id] = {
+		on={150,65,150,0,5,0,1,1,1,0,32,0},
+		off={110,55,110,0,7,0,1,1,1,0,27,0},
+	},
+	[UnitDefNames["tllaap"].id] = {
+		on={125,50,125,0,5,0,1,1,1,0,25,0},
+		off={115,60,115,0,5,0,1,1,1,0,30,0},
 	}
 }			
 local pieceCollisionVolume = {					--per piece collision volume definitions
@@ -372,4 +380,7 @@ local isTorp = {
 	[UnitDefNames["tllatorp"].id] = true
 }
 
-return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, isTorp
+local customOffsets = {					--dynamic collision volume definitions
+	[UnitDefNames["tllvp"].id] = {0,-20,0}
+	}
+return unitCollisionVolume, pieceCollisionVolume, dynamicPieceCollisionVolume, isTorp, customOffsets
