@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Bagger",
 		nochasecategory = "ALL",
-		objectname = "tllbagger",
+		objectname = "TLLBAGGER",
 		radaremitheight = 272,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_DEATH",
@@ -65,7 +65,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 30525,
-				object = "tllbagger_DEAD",
+				object = "TLLBAGGER_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
