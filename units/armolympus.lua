@@ -185,6 +185,7 @@ return {
 				name = "GaussCannon",
 				noexplode = true,
 				nogap = 1,
+				noexplode = true,
 				noselfdamage = true,
 				range = 1950,
 				reloadtime = 10,
