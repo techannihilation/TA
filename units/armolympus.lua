@@ -184,6 +184,7 @@ return {
 				impulsefactor = 0.5,
 				name = "GaussCannon",
 				nogap = 1,
+				noexplode = true,
 				noselfdamage = true,
 				range = 1950,
 				reloadtime = 10,
