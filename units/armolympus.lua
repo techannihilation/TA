@@ -170,7 +170,7 @@ return {
 			},
 			ultimate_blast = {
 				accuracy = 500,
-				areaofeffect = 192,
+				areaofeffect = 212,
 				avoidfeature = false,
 				cegtag = "ultimate_blaster",
 				collidefriendly = false,
@@ -197,7 +197,7 @@ return {
 				soundstart = "xplonuk4",
 				turret = true,
 				weapontype = "EmgCannon",
-				weaponvelocity = 500,
+				weaponvelocity = 750,
 				damage = {
 					commanders = 1000,
 					default = 10000,
