@@ -1,9 +1,9 @@
 return {
 	tllgladius = {
-		acceleration = 0.8,
-		brakerate = 0.69,
-		buildcostenergy = 179,
-		buildcostmetal = 44,
+		acceleration = 0.13,
+		brakerate = 0.51,
+		buildcostenergy = 196,
+		buildcostmetal = 41,
 		builder = false,
 		buildpic = "tllgladius.dds",
 		buildtime = 1181,
@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL TINY WEAPON SURFACE",
+		collisionVolumeScales = [[23 17 27]],
+		collisionVolumeOffsets = [[0 -3 -1]],
+		collisionVolumeType = [[box]],
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Fast Scout Vehicle",
