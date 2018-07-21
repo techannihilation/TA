@@ -13,7 +13,6 @@ end
 local ignoreWeapons = false --if the only weapon is a shield it is ignored
 local ignoreStealth = false 
 
-local insert = table.insert 
 local remove = table.remove 
 
 local GetTeamUnits = Spring.GetTeamUnits 
@@ -85,7 +84,7 @@ function determine(ud, wd)
   local tmpbuilders = {} 
   for unitDefID, unitDef in pairs(ud) do 
     if isBuilder(unitDef) then 
-      insert(tmpbuilders, unitDefID) 
+	  tmpbuilders[#tmpbuilders+1] = unitDefID
     else 
       local extractsMetal = unitDef.extractsMetal 
       if (extractsMetal > 0) then 

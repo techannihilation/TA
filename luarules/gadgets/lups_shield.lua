@@ -268,7 +268,7 @@ local function DoAddShieldHitData(unitData, hitFrame, dmg, theta, phi)
 		local mag, aoe = GetMagAoE(dmg, unitData.capacity)
 		--Spring.Echo("DoAddShieldHitData", dmg, aoe, mag)
 		local dx, dy, dz = spherical2cart(unitData.radius, theta, phi)
-		table.insert(hitData, {
+		hitData[#hitData+1] = {
 			hitFrame = hitFrame,
 			dmg = dmg,
 			theta = theta,
@@ -278,7 +278,7 @@ local function DoAddShieldHitData(unitData, hitFrame, dmg, theta, phi)
 			dx = dx,
 			dy = dy,
 			dz = dz,
-		})
+		}
 	end
 	hitUpdateNeeded = true
 	unitData.needsUpdate = true

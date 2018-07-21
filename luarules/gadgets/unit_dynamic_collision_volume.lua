@@ -215,12 +215,12 @@ if (gadgetHandler:IsSyncedCode()) then
 			val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
 			ys = ys * val
 			yo = yo * val
-			if not pieceCollisionVolume[unitDefID] or dynamicPieceCollisionVolume[unitDefID] then
-				spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
-				spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
-			else
+			if pieceCollisionVolume[unitDefID] or dynamicPieceCollisionVolume[unitDefID] then
 				spSetPieceCollisionData(unitID, trunkIndex, true, perPieceTrunk[1], ys, perPieceTrunk[3], perPieceTrunk[4], yo, perPieceTrunk[6], perPieceTrunk[7], perPieceTrunk[8])
 				spSetUnitMidAndAimPos(unitID,0, perPieceTrunk[2]*0.5, 0,0, perPieceTrunk[2]*0.5,0,true)
+			else
+				spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
+				spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
 			end
 		end
 	end
