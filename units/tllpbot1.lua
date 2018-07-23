@@ -47,11 +47,12 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.056,
+		turninplacespeedlimit = 1.155,
 		turnrate = 1020,
 		unitname = "tllpbot1",
 		upright = true,
 		customparams = {
+			buildpic = "tllpbot.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

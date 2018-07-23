@@ -17,7 +17,7 @@ return {
 		footprintx = 2,
 		footprintz = 2,
 		isfeature = true,
-		losemitheight = 43,
+		losemitheight = 62,
 		mass = 31,
 		maxdamage = 100,
 		maxslope = 24,

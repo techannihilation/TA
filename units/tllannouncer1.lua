@@ -13,9 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON SURFACE",
-		collisionVolumeScales = [[29 29 47]],
-		collisionVolumeOffsets = [[0 -3 1]],
-		collisionVolumeType = [[box]],
+		collisionvolumeoffsets = "0 -3 1",
+		collisionvolumescales = "29 29 47",
+		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Missile Truck",
@@ -50,6 +50,7 @@ return {
 		turnrate = 525,
 		unitname = "tllannouncer1",
 		customparams = {
+			buildpic = "tllannouncer.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

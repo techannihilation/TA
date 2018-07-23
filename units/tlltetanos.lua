@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 55,
-		mass = 1775,
+		mass = 2015,
 		maxdamage = 3950,
 		maxslope = 10,
 		maxvelocity = 0,
@@ -48,7 +48,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "tlltetanos.png",
+			buildpic = "tlltetanos.dds",
 			faction = "TLL",
 			prioritytarget = "air",
 		},

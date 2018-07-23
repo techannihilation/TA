@@ -28,7 +28,7 @@ return {
 		idleautoheal = 7,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 162,
+		losemitheight = 247,
 		maneuverleashlength = 640,
 		mass = 192500,
 		maxdamage = 765000,
@@ -126,8 +126,8 @@ return {
 		},
 		weapondefs = {
 			arm_furie_fire = {
-				areaofeffect = 128,
 				accuracy = 1500,
+				areaofeffect = 128,
 				burnblow = false,
 				corethickness = 4.5,
 				craterareaofeffect = 0,

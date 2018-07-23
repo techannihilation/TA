@@ -49,8 +49,8 @@ return {
 		radaremitheight = 7.5,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
-		sightdistance = 450,
 		shownanospray = false,
+		sightdistance = 450,
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
@@ -59,7 +59,7 @@ return {
 		unitname = "cbuilderlvl4",
 		workertime = 800,
 		buildoptions = {
-			[1] = "cnanotower",			
+			[1] = "cnanotower",
 			[2] = "coromni",
 			[3] = "cordoom1",
 			[4] = "corgate1",

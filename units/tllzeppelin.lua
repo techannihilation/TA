@@ -3,6 +3,7 @@ return {
 		acceleration = 0.009,
 		airhoverfactor = 0,
 		airstrafe = false,
+		blocking = false,
 		brakerate = 0.04,
 		buildcostenergy = 1050000,
 		buildcostmetal = 305000,
@@ -51,6 +52,7 @@ return {
 		turnrate = 100,
 		unitname = "tllzeppelin",
 		customparams = {
+			buildpic = "tllzeppelin.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

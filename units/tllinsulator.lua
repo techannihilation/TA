@@ -29,7 +29,7 @@ return {
 		leavetracks = true,
 		losemitheight = 60,
 		maneuverleashlength = 640,
-		mass = 935,
+		mass = 7045,
 		maxdamage = 18060,
 		maxslope = 12,
 		maxvelocity = 1.3,
@@ -54,11 +54,11 @@ return {
 		trackwidth = 42,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
+		turninplacespeedlimit = 0.858,
 		turnrate = 300,
 		unitname = "tllinsulator",
 		customparams = {
-			buildpic = "tllinsulator.png",
+			buildpic = "tllinsulator.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

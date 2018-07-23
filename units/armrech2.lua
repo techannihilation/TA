@@ -7,9 +7,9 @@ return {
 		buildpic = "armrech2.dds",
 		buildtime = 50000,
 		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		collisionVolumeScales = [[211 211 200]],
-		collisionVolumeOffsets = [[13 -50 -21]],
-		collisionVolumeType = [[CylZ]],
+		collisionvolumeoffsets = "13 -50 -21",
+		collisionvolumescales = "211 211 200",
+		collisionvolumetype = "CylZ",
 		description = "Unlocks Advanced Units",
 		explodeas = "COMMANDER_BLAST",
 		floater = true,
@@ -39,7 +39,7 @@ return {
 		yardmap = "OOOOOOOOOOOOO OOOOOOOOOOOOO	OOOOOOOOOOOOO OOOCCCCCCOOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOCCCCCCCCOOO OOOCCCCCCOOOO OOOOOOOOOOOOO OOOOOOOOOOOOO",
 		buildoptions = {
 			[1] = "abuilderlvl2",
-			[2] = "abuilderlvl3",	
+			[2] = "abuilderlvl3",
 		},
 		customparams = {
 			buildpic = "armrech2.dds",

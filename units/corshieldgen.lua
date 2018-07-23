@@ -24,7 +24,7 @@ return {
 		icontype = "shield",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 39,
+		losemitheight = 60,
 		maneuverleashlength = 640,
 		mass = 2450,
 		maxdamage = 2255,

@@ -7,9 +7,9 @@ return {
 		buildpic = "correch2.dds",
 		buildtime = 50000,
 		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		collisionVolumeScales = [[140 140 210]],
-		collisionVolumeOffsets = [[0 -8 13]],
-		collisionVolumeType = [[CylZ]],
+		collisionvolumeoffsets = "0 -8 13",
+		collisionvolumescales = "140 140 210",
+		collisionvolumetype = "CylZ",
 		description = "Unlock's Advanced Units",
 		explodeas = "COMMANDER_BLAST",
 		floater = true,
@@ -38,7 +38,7 @@ return {
 		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
 		buildoptions = {
 			[1] = "cbuilderlvl2",
-			[2] = "cbuilderlvl3",			
+			[2] = "cbuilderlvl3",
 		},
 		customparams = {
 			buildpic = "correch2.dds",

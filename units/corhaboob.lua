@@ -48,11 +48,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.495,
 		turnrate = 190,
 		unitname = "corhaboob",
 		upright = false,
 		customparams = {
+			buildpic = "core_riptide.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

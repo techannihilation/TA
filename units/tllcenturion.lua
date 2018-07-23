@@ -29,7 +29,7 @@ return {
 		leavetracks = true,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 935,
+		mass = 1845,
 		maxdamage = 6160,
 		maxslope = 12,
 		maxvelocity = 1.5,
@@ -54,11 +54,11 @@ return {
 		trackwidth = 42,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
+		turninplacespeedlimit = 0.99,
 		turnrate = 300,
 		unitname = "tllcenturion",
 		customparams = {
-			buildpic = "tllcenturion.png",
+			buildpic = "tllcenturion.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

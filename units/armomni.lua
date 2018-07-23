@@ -23,7 +23,7 @@ return {
 		idletime = 1800,
 		istargetingupgrade = true,
 		losemitheight = 50,
-		mass = 8550,
+		mass = 7950,
 		maxdamage = 3645,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -41,6 +41,7 @@ return {
 		usebuildinggrounddecal = false,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo ",
 		customparams = {
+			buildpic = "armomni.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

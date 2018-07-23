@@ -50,6 +50,7 @@ return {
 		unitname = "tllfireraiser1",
 		upright = true,
 		customparams = {
+			buildpic = "tllfireraiser1.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

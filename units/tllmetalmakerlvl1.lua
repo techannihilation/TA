@@ -39,6 +39,7 @@ return {
 		unitname = "tllmetalmakerlvl1",
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			buildpic = "tllmetalmakerlvl1.dds",
 			faction = "TLL",
 		},
 		sfxtypes = {

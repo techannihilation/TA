@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 2990,
+		mass = 2590,
 		maxdamage = 9250,
 		maxslope = 16,
 		maxvelocity = 1.8,
@@ -46,10 +46,11 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.452,
+		turninplacespeedlimit = 1.188,
 		turnrate = 250,
 		unitname = "tllhcrus",
 		customparams = {
+			buildpic = "tllhcrus.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

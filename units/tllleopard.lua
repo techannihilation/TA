@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 33,
 		maneuverleashlength = 640,
-		mass = 4080,
+		mass = 3850,
 		maxdamage = 7100,
 		maxslope = 10,
 		maxvelocity = 1.1,
@@ -48,10 +48,11 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.858,
+		turninplacespeedlimit = 0.726,
 		turnrate = 320,
 		unitname = "tllleopard",
 		customparams = {
+			buildpic = "tllleopard.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

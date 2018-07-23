@@ -33,7 +33,7 @@ return {
 		isairbase = true,
 		losemitheight = 76,
 		maneuverleashlength = 1250,
-		mass = 123200,
+		mass = 195000,
 		maxdamage = 685000,
 		maxslope = 36,
 		maxvelocity = 1,
@@ -64,6 +64,7 @@ return {
 		version = 1,
 		zbuffer = 1,
 		customparams = {
+			buildpic = "cormkl.dds",
 			faction = "CORE",
 			requiretech = "Advanced T4 Unit Research Centre",
 		},

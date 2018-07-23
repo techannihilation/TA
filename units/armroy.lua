@@ -29,7 +29,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 23,
+		losemitheight = 36,
 		maneuverleashlength = 640,
 		mass = 1045,
 		maxdamage = 2575,

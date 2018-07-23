@@ -47,7 +47,7 @@ return {
 		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
+		turninplacespeedlimit = 1.155,
 		turnrate = 250,
 		unitname = "corcrab",
 		upright = true,

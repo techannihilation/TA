@@ -6,6 +6,7 @@ return {
 		airstrafe = false,
 		autoheal = 5,
 		bankscale = 1,
+		blocking = false,
 		brakerate = 0.375,
 		buildcostenergy = 1510000,
 		buildcostmetal = 128000,
@@ -64,11 +65,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.726,
+		turninplacespeedlimit = 0.792,
 		turnrate = 100,
 		unitname = "corvaliant",
 		workertime = 400,
 		customparams = {
+			buildpic = "corvaliant.dds",
 			faction = "CORE",
 		},
 		nanocolor = {
