@@ -47,7 +47,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.716,
-		turnrate = 625,
+		turnrate = 446,
 		unitname = "tllariman",
 		customparams = {
 			buildpic = "tllariman.dds",
