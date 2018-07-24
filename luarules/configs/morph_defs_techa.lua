@@ -807,12 +807,12 @@ local morphDefs = {
 	armzeus = {
 		into = 'armzeus1',
 		time = 20,
-		xp = 0.05,
+		xp = 0.10,
 	},
 	corcan = {
      		into = 'corcan1',
 		time = 25,
-		xp = 0.05,
+		xp = 0.075,
 	},
 	armfboy = {
 		into = 'armfboy1',
