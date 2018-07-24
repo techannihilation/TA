@@ -760,23 +760,23 @@ local morphDefs = {
 		energy = 2000,
 	},
 	armmav = {
-     	into = 'armraz',
+     		into = 'armraz',
 		time = 60,
 		xp = 0.5,
 	},
 	armraz  = {
  		into = 'armraz1',
-        time = 120,
-        xp = 0.50,
+        	time = 120,
+        	xp = 0.50,
          },
 	aexxec	= {
-     	into = 'akmech',
+     		into = 'akmech',
 		time = 120,
 		xp = 0.75,
 	},
 	akmech = {
-        into = 'armorco',
-        time = 120,
+		into = 'armorco',
+		time = 120,
 		xp = 0.50,
 	},
 	armmerl = {
@@ -807,7 +807,12 @@ local morphDefs = {
 	armzeus = {
 		into = 'armzeus1',
 		time = 20,
-		xp = 0.10,
+		xp = 0.05,
+	},
+	corcan = {
+     		into = 'corcan1',
+		time = 25,
+		xp = 0.05,
 	},
 	armfboy = {
 		into = 'armfboy1',
