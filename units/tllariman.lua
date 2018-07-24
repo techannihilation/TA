@@ -1,7 +1,7 @@
 return {
 	tllariman = {
-		acceleration = 0.055,
-		brakerate = 0.12,
+		acceleration = 0.0295,
+		brakerate = 0.095,
 		buildcostenergy = 1280,
 		buildcostmetal = 310,
 		builder = false,
@@ -30,7 +30,7 @@ return {
 		mass = 310,
 		maxdamage = 1820,
 		maxslope = 10,
-		maxvelocity = 2.6,
+		maxvelocity = 2.7,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -46,8 +46,8 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.716,
-		turnrate = 625,
+		turninplacespeedlimit = 1.782,
+		turnrate = 496,
 		unitname = "tllariman",
 		customparams = {
 			buildpic = "tllariman.dds",
