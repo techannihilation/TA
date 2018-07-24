@@ -36,6 +36,7 @@ local AIRPLANT = {
   [UnitDefNames["armcp"].id] = true,
   [UnitDefNames["tllap"].id] = true,
   [UnitDefNames["tllaap"].id] = true,
+  [UnitDefNames["tlleap"].id] = true,
   [UnitDefNames["tllplat"].id] = true,
 }
 

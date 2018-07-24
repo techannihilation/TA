@@ -44,7 +44,7 @@ local hmsx = Game.mapSizeX/2
 local hmsz = Game.mapSizeZ/2
 
 
-local morphednanos = {
+local morphednanos = { --not in use, look like 125
 --Core
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
@@ -122,9 +122,9 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
 		return
 	end
 	if IsImmobileBuilder(UnitDefs[unitDefID]) then
-		if not morphednanos[unitDefID] then
+		--if not morphednanos[unitDefID] then
 		spGiveOrderToUnit(unitID, CMD_PASSIVE, { 1 }, {})
-		end
+		--end
 		spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 1 }, {})
 		SetupUnit(unitID)
 	end
