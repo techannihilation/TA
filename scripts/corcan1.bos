@@ -23,10 +23,6 @@ walk()
 			move lleg to y-axis [0.600000] speed [3.986572];
 			move rleg to y-axis [0.000000] now;
 			move torso to y-axis [-0.400000] speed [2.657715];
-			move gun to y-axis [0.000000] now;
-			move firept to x-axis [0.000000] now;
-			move firept to y-axis [0.000000] now;
-			move firept to z-axis [0.000000] now;
 			turn pelvis to z-axis <2.802198> speed <18.653846>;
 			turn belly to x-axis <-5.967033> speed <39.642857>;
 			turn rthigh to x-axis <14.412088> speed <95.752747>;
@@ -43,9 +39,6 @@ walk()
 			move lthigh to y-axis [0.600000] speed [3.986572];
 			move lleg to y-axis [0.000000] speed [3.986572];
 			move torso to y-axis [0.000000] speed [2.657715];
-			move firept to x-axis [0.700000] speed [4.651001];
-			move firept to y-axis [0.100000] speed [0.664429];
-			move firept to z-axis [-2.700000] speed [17.939594];
 			turn pelvis to z-axis <6.670330> speed <25.659341>;
 			turn belly to x-axis <-4.560440> speed <9.307692>;
 			turn rthigh to x-axis <21.445055> speed <46.725275>;
@@ -299,7 +292,8 @@ RestoreAfterDelay()
 {
 	sleep restore_delay;
 	turn head to y-axis <0.000000> speed <135.000000>;
-	turn gun to x-axis <0.000000> speed <85.000000>;
+	turn gun1 to x-axis <0.000000> speed <85.000000>;
+	turn gun2 to x-axis <0.000000> speed <85.000000>;
 }
 
 AimPrimary(heading, pitch)
@@ -307,9 +301,10 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn head to y-axis heading speed <270.000000>;
-	turn gun to x-axis <0.000000> - pitch speed <170.000000>;
+	turn gun1 to x-axis <0.000000> - pitch speed <170.000000>;
+	turn gun2 to x-axis <0.000000> - pitch speed <170.000000>;
 	wait-for-turn head around y-axis;
-	wait-for-turn gun around x-axis;
+	wait-for-turn gun1 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -343,14 +338,15 @@ FirePrimary()
 
 Killed(severity, corpsetype)
 {
-	hide firept;
+	hide firept1;
+	hide firept2;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		explode belly type NOHEATCLOUD;
-		explode firept type NOHEATCLOUD;
+		explode firept1 type NOHEATCLOUD;
 		explode ground type NOHEATCLOUD;
-		explode gun type NOHEATCLOUD;
+		explode gun1 type NOHEATCLOUD;
 		explode head type NOHEATCLOUD;
 		explode lfoot type NOHEATCLOUD;
 		explode lleg type NOHEATCLOUD;
@@ -366,9 +362,9 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode belly type NOHEATCLOUD;
-		explode firept type NOHEATCLOUD | FALL;
+		explode firept1 type NOHEATCLOUD | FALL;
 		explode ground type NOHEATCLOUD | FALL;
-		explode gun type NOHEATCLOUD | FALL;
+		explode gun1 type NOHEATCLOUD | FALL;
 		explode head type NOHEATCLOUD | FALL;
 		explode lfoot type NOHEATCLOUD | FALL;
 		explode lleg type NOHEATCLOUD | FALL;
@@ -384,9 +380,9 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode belly type NOHEATCLOUD;
-		explode firept type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode firept1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode ground type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode head type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -400,9 +396,9 @@ Killed(severity, corpsetype)
 	}
 	corpsetype = 3;
 	explode belly type NOHEATCLOUD;
-	explode firept type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode firept1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode ground type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode gun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode head type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
