@@ -9,7 +9,7 @@ return {
 		builddistance = 250,
 		builder = true,
 		buildpic = "abuilderlvl3.dds",
-		buildtime = 100000,
+		buildtime = 70150,
 		canfly = true,
 		canguard = true,
 		canmove = true,
