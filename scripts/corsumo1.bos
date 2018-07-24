@@ -5,7 +5,7 @@
 
 piece  rflare, lflare, body, turret, feetparent, FLFoot, FRFoot, RLFoot,
        RRFoot, rightchunk, leftchunk, faceguard, Lgun, Rgun, Rbarrel, Lbarrel,
-       hips, knobs;
+       hips, knobs, Lgun2, Rgun2, Rbarrel2, Lbarrel2, rflare2, lflare2;
 
 static-var  bMoving, bAiming, Static_Var_3, restore_delay, gun_1;
 
@@ -42,20 +42,6 @@ walklegs()
 		move leftchunk to x-axis [-0.559998] now;
 		move leftchunk to y-axis [1.289984] now;
 		move leftchunk to z-axis [-0.300000] now;
-		move turret to x-axis [-0.100000] now;
-		move turret to y-axis [0.379999] now;
-		move turret to z-axis [-0.600000] now;
-		move faceguard to x-axis [0.100000] now;
-		move faceguard to y-axis [0.109998] now;
-		move faceguard to z-axis [-0.300000] now;
-		move Lgun to x-axis [-0.700000] now;
-		move Lgun to y-axis [0.109998] now;
-		move Lgun to z-axis [0.509998] now;
-		move Rgun to x-axis [0.100000] now;
-		move Rgun to y-axis [0.109998] now;
-		move Rgun to z-axis [0.509998] now;
-		move Rbarrel to z-axis [0.300000] now;
-		move Lbarrel to z-axis [0.300000] now;
 		turn FRFoot to x-axis <-17.835165> now;
 		turn FRFoot to x-axis <-14.000000> speed <18.000000>;
 		turn rightchunk to x-axis <-7.967033> now;
@@ -225,9 +211,11 @@ Create()
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_3 = 1;
-	gun_1 = rflare;
+	gun_1 = 0;
 	hide rflare;
 	hide lflare;
+	hide rflare2;
+	hide lflare2;
 	restore_delay = 3000;
 	start-script MotionControl();
 	start-script SmokeUnit();
@@ -259,6 +247,8 @@ RestoreAfterDelay()
 	turn turret to y-axis <0.000000> speed <90.000000>;
 	turn Rgun to x-axis <0.000000> speed <45.000000>;
 	turn Lgun to x-axis <0.000000> speed <45.000000>;
+	turn Rgun2 to x-axis <0.000000> speed <45.000000>;
+	turn Lgun2 to x-axis <0.000000> speed <45.000000>;
 	bAiming = FALSE;
 }
 
@@ -277,6 +267,14 @@ QueryPrimary(piecenum)
 	{
 		piecenum = lflare;
 	}
+	if( gun_1 == 2 )
+	{
+		piecenum = rflare2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = lflare2;
+	}
 }
 
 AimPrimary(heading, pitch)
@@ -287,9 +285,13 @@ AimPrimary(heading, pitch)
 	turn turret to y-axis heading speed <140.000000>;
 	turn Rgun to x-axis <0.000000> - pitch speed <35.000000>;
 	turn Lgun to x-axis <0.000000> - pitch speed <35.000000>;
+	turn Rgun2 to x-axis <0.000000> - pitch speed <35.000000>;
+	turn Lgun2 to x-axis <0.000000> - pitch speed <35.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn Rgun around x-axis;
 	wait-for-turn Lgun around x-axis;
+	wait-for-turn Rgun2 around x-axis;
+	wait-for-turn Lgun2 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -301,15 +303,29 @@ FirePrimary()
 		show rflare;
 		sleep 150;
 		hide rflare;
-		gun_1 = lflare;
-		return (0);
 	}
 	if( gun_1 == 1 )
 	{
 		show lflare;
 		sleep 150;
 		hide lflare;
-		gun_1 = rflare;
+	}
+	if( gun_1 == 2 )
+	{
+		show rflare2;
+		sleep 150;
+		hide rflare2;
+	}
+	if( gun_1 == 3 )
+	{
+		show lflare2;
+		sleep 150;
+		hide lflare2;
+	}
+	++gun_1;
+	if( gun_1 == 4 )
+	{
+		gun_1 = 0;
 	}
 }
 
@@ -317,6 +333,8 @@ Killed(severity, corpsetype)
 {
 	hide lflare;
 	hide rflare;
+	hide lflare2;
+	hide rflare2;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
