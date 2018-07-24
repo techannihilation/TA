@@ -77,7 +77,6 @@ return {
 		customparams = {
 			buildpic = "corfred.dds",
 			faction = "CORE",
-			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
