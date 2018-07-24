@@ -59,7 +59,7 @@ return {
 		usesmoothmesh = 0,
 		customparams = {
 			buildpic = "ARMARPE.dds",
-			faction = "ARM",
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {
