@@ -37,7 +37,6 @@ return {
 		norestrict = 1,
 		objectname = "CORGATE1",
 		radaremitheight = 39,
-		script = "corgate.cob",
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
 		sightdistance = 273,
