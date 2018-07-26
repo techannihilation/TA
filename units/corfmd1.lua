@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Fortitude",
 		nochasecategory = "ALL",
-		objectname = "CORFMD",
+		objectname = "CORFMD1",
 		radardistance = 50,
 		radaremitheight = 35,
 		seismicsignature = 0,

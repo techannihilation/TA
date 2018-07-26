@@ -41,7 +41,7 @@ return {
 		name = "Rapid-Fire LLT",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "CORLLT",
+		objectname = "CORLLT1",
 		radaremitheight = 62,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
