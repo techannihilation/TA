@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "corgate1_aoplane.dds",
+		buildinggrounddecaltype = "armgate1_aoplane.dds",
 		buildpic = "armgate1.dds",
 		buildtime = 200000,
 		canattack = false,
