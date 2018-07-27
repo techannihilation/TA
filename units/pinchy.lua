@@ -52,7 +52,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.924,
-		turnrate = 1210,
+		turnrate = 525,
 		unitname = "pinchy",
 		upright = true,
 		workertime = 1200,
