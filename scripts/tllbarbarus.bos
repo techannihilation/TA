@@ -1,0 +1,280 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, sleeve1, sleeve2, sleeve3, sleeve4, flare1a, flare2a, flare1b, flare2b, flare3, flare4, 
+		canon1, canon2, canon3, canon4, canon_flare1, canon_flare2, canon_flare3, canon_flare4,
+		turret1, turret2, turret3, turret4, tower1, tower2, socle, jammer, 
+		engine1, engine2, thrust1, thrust2, thrust3, thrust4, thrust5, thrust6;
+
+static-var  gun_1, gun_2, gun_3, RestoreDelay;
+
+// Signal definitions
+#define SIG_MOVE				2
+#define SIG_AIM_1				4
+#define SIG_AIM_2				8
+#define SIG_AIM_3				16
+#define SIG_AIM_4				32
+#define SIG_AIM_5				64
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = 0;
+	gun_2 = 0;
+	gun_3 = 0;
+	start-script SmokeUnit();
+}
+
+Restore1()
+{
+	sleep 6000;
+	turn turret1 to y-axis <0.000000> speed <32.500000>;
+	turn sleeve1 to x-axis <0.000000> speed <25.000000> ;
+}
+
+Restore2()
+{
+	sleep 6000;
+	turn turret2 to y-axis <0.000000> speed <32.500000>;
+	turn sleeve2 to x-axis <0.000000> speed <25.000000> ;
+}
+
+Restore3()
+{
+	sleep 6000;
+	turn turret3 to y-axis <0.000000> speed <100.000000>;
+	turn sleeve3 to x-axis <0.000000> speed <100.000000> ;
+}
+
+Restore4()
+{
+	sleep 6000;
+	turn turret4 to y-axis <0.000000> speed <100.000000>;
+	turn sleeve4 to x-axis <0.000000> speed <100.000000> ;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	return(1);
+}	
+
+FireWeapon1()
+{
+	++gun_1;
+	if( gun_1 == 4)
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = body;
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = canon_flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = canon_flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = canon_flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = canon_flare4;
+	}
+}
+
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret1 to y-axis heading speed <65.000000>;
+	turn sleeve1 to x-axis <0.000000> - pitch speed <50.000000> ;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script Restore1();
+	return(1);
+}	
+
+FireWeapon2()
+{
+	++gun_2;
+	if( gun_2 == 2)
+	{
+		gun_2 = 0;
+	}
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = tower1;
+}
+
+QueryWeapon2(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare1b;
+	}
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret2 to y-axis heading speed <65.000000>;
+	turn sleeve2 to x-axis <0.000000> - pitch speed <50.000000> ;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeve2 around x-axis;
+	start-script Restore2();
+	return(1);
+}	
+
+FireWeapon3()
+{
+	++gun_3;
+	if( gun_3 == 2)
+	{
+		gun_3 = 0;
+	}
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = tower2;
+}
+
+QueryWeapon3(piecenum)
+{
+	if( gun_3 == 0 )
+	{
+		piecenum = flare2a;
+	}
+	if( gun_3 == 1 )
+	{
+		piecenum = flare2b;
+	}
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn turret3 to y-axis heading speed <65.000000>;
+	turn sleeve3 to x-axis <0.000000> - pitch speed <50.000000> ;
+	wait-for-turn turret3 around y-axis;
+	wait-for-turn sleeve3 around x-axis;
+	start-script Restore3();
+	return(1);
+}	
+
+FireWeapon4()
+{
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turret3;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = flare3;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn turret4 to y-axis heading speed <65.000000>;
+	turn sleeve4 to x-axis <0.000000> - pitch speed <50.000000> ;
+	wait-for-turn turret4 around y-axis;
+	wait-for-turn sleeve4 around x-axis;
+	start-script Restore4();
+	return(1);
+}	
+
+FireWeapon5()
+{
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = turret4;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = flare4;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode body type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret3 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeve1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeve2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeve3 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeve4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode jammer type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode socle type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode tower1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode tower2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode canon1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode canon4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);	
+}
