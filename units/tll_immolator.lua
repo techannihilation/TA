@@ -134,7 +134,7 @@ return {
 				name = "IntimidatorCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 3200,
+				range = 2600,
 				reloadtime = 10,
 				rgbcolor = "0.71 0.39 0",
 				separation = 0.45,
