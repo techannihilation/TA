@@ -30,13 +30,13 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move trapinside to y-axis [5.200000] speed [5.000000];
+		move trapinside to y-axis [2.86000] speed [5.000000];
 		wait-for-move gunturret along y-axis;
 		sleep 428;
 	}
 	if( TRUE )
 	{
-		move gunbarrel to z-axis [1.500000] speed [10.000000];
+		move gunbarrel to z-axis [0.8250000] speed [10.000000];
 		sleep 429;
 	}
 	sleep 22;
