@@ -39,7 +39,7 @@ return {
 		maxvelocity = 0.95,
 		maxwaterdepth = 255,
 		metalstorage = 1000,
-		name = "Zeppelin",
+		name = "Dory",
 		nochasecategory = "SUB VTOL",
 		objectname = "tllzeppelin",
 		radardistance = 0,
