@@ -72,6 +72,7 @@ local nanos = {
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
   [UnitDefNames["tllnanotc3"].id] = true,
+  [UnitDefNames["tllnanotower"].id] = true,	
   [UnitDefNames["tllfnanotc"].id] = true,
   [UnitDefNames["tllfnanotc1"].id] = true,
   [UnitDefNames["tllfnanotc2"].id] = true,
