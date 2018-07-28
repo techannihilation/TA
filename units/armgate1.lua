@@ -37,7 +37,6 @@ return {
 		norestrict = 1,
 		objectname = "ARMGATE1",
 		radaremitheight = 41,
-		script = "armgate.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 273,

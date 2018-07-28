@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, beam, arms, disha, dishb, gun, legs, platform;
+piece  base, body, gun, emitter, core, reactor1, reactor2, reactor3, support1, support2, support3;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -79,14 +79,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	hide beam;
-	dont-shade arms;
-	dont-shade beam;
-	dont-shade disha;
-	dont-shade dishb;
-	dont-shade gun;
-	dont-shade legs;
-	dont-shade platform;
 	start-script SmokeUnit();
 	call-script InitState();
 }
@@ -155,50 +147,38 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arms type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
-		explode beam type NOHEATCLOUD;
-		explode disha type NOHEATCLOUD;
-		explode dishb type NOHEATCLOUD;
-		explode gun type NOHEATCLOUD;
-		explode legs type NOHEATCLOUD;
-		explode platform type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode emitter type NOHEATCLOUD;
+		explode reactor1 type NOHEATCLOUD;
+		explode reactor2 type NOHEATCLOUD;
+		explode reactor3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arms type NOHEATCLOUD | SHATTER;
-		explode base type NOHEATCLOUD;
-		explode beam type NOHEATCLOUD | FALL;
-		explode disha type NOHEATCLOUD | FALL;
-		explode dishb type NOHEATCLOUD | FALL;
-		explode gun type NOHEATCLOUD;
-		explode legs type NOHEATCLOUD;
-		explode platform type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;
+		explode emitter type NOHEATCLOUD;
+		explode reactor1 type NOHEATCLOUD | FALL;
+		explode reactor2 type NOHEATCLOUD | FALL;
+		explode reactor3 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode arms type NOHEATCLOUD | SHATTER;
-		explode base type NOHEATCLOUD;
-		explode beam type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode disha type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode dishb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gun type NOHEATCLOUD;
-		explode legs type NOHEATCLOUD;
-		explode platform type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode emitter type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode reactor1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode reactor2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode reactor3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arms type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD;
-	explode beam type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode disha type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode dishb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode gun type NOHEATCLOUD;
-	explode legs type NOHEATCLOUD;
-	explode platform type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	return (corpsetype);
+		explode body type NOHEATCLOUD;
+		explode emitter type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode reactor1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode reactor2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode reactor3 type NOHEATCLOUD;
+		return (corpsetype);
 }
