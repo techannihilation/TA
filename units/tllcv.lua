@@ -14,7 +14,7 @@ return {
 		canreclamate = 1,
 		canstop = 1,
 		category = "ALL CONSTR MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		collisionvolumeoffsets = "0 -26 0",
+		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "36 25 47",
 		collisionvolumetype = "box",
 		corpse = "dead",
