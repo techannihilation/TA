@@ -285,6 +285,7 @@ return {
         "abroadside",
         "corvaliant",
         "tllzeppelin",
+	"tllbarbarus",
         -- _experimental_
         "armpraet",
         "monkeylord",
