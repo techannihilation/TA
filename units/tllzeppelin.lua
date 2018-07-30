@@ -5,7 +5,7 @@ return {
 		airstrafe = false,
 		blocking = false,
 		brakerate = 0.04,
-		buildcostenergy = 1050000,
+		buildcostenergy = 1250000,
 		buildcostmetal = 325000,
 		builder = false,
 		buildpic = "tllzeppelin.dds",
