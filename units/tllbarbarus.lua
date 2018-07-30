@@ -48,7 +48,7 @@ return {
 		maxvelocity = 1.1,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Valiant",
+		name = "Barbarus",
 		noautofire = false,
 		objectname = "tllbarbarus",
 		pitchscale = 0.5,
