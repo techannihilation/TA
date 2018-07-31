@@ -178,7 +178,7 @@ return {
 				largebeamlaser = true,
 				minintensity = 1,
 				name = "Mini Ion Cannon",
-				range = 1650,
+				range = 1500,
 				reloadtime = 5,
 				rgbcolor = "0.2 0.2 1",
 				rgbcolor2 = "0.07 1 1",
@@ -202,8 +202,6 @@ return {
 				damage = {
 					commanders = 3000,
 					default = 15000,
-					experimental_land = 30000,
-					experimental_ships = 30000,
 					subs = 5,
 				},
 			},
