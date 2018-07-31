@@ -298,21 +298,30 @@ Shot1()
 {
 	if( gun_1 == 0 )
 	{
+		//No recoil for laser type weapons in techa
+		//move Rgun to z-axis [-2] now;
+		//move Rgun to z-axis [0] speed [5];
 		emit-sfx 1024 + 0 from rflare;
 		sleep 150;
 	}
 	if( gun_1 == 1 )
 	{
+		//move Lgun to z-axis [-2] now;
+		//move Lgun to z-axis [0] speed [5];
 		emit-sfx 1024 + 0 from lflare;
 		sleep 150;
 	}
 	if( gun_1 == 2 )
 	{
+		//move Rgun2 to z-axis [-2] now;
+		//move Rgun2 to z-axis [0] speed [5];
 		emit-sfx 1024 + 0 from rflare2;
 		sleep 150;
 	}
 	if( gun_1 == 3 )
 	{
+		//move Lgun2 to z-axis [-2] now;
+		//move Lgun2 to z-axis [0] speed [5];
 		emit-sfx 1024 + 0 from lflare2;
 		sleep 150;
 	}

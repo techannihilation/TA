@@ -138,7 +138,6 @@ walklegs()
 		sleep 80;
 	}
 	sleep 1;
-	return (0);
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -166,7 +165,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
 MotionControl(moving, aiming, justmoved)
@@ -203,7 +201,6 @@ MotionControl(moving, aiming, justmoved)
 			sleep 100;
 		}
 	}
-	return (0);
 }
 
 Create()
@@ -219,31 +216,26 @@ Create()
 	restore_delay = 3000;
 	start-script MotionControl();
 	start-script SmokeUnit();
-	return (0);
 }
 
 SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = Func_Var_1 * 2;
-	return (0);
 }
 
 StartMoving()
 {
 	bMoving = TRUE;
-	return (0);
 }
 
 StopMoving()
 {
 	bMoving = FALSE;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = body;
-	return (0);
 }
 
 RestoreAfterDelay()
@@ -253,13 +245,11 @@ RestoreAfterDelay()
 	turn Rgun to x-axis <0.000000> speed 1.5 * <45.000000>;
 	turn Lgun to x-axis <0.000000> speed 1.5 * <45.000000>;
 	bAiming = FALSE;
-	return (0);
 }
 
 AimFromPrimary(piecenum)
 {
 	piecenum = turret;
-	return (0);
 }
 
 QueryPrimary(piecenum)
@@ -272,7 +262,6 @@ QueryPrimary(piecenum)
 	{
 		piecenum = lflare;
 	}
-	return (0);
 }
 
 AimPrimary(heading, pitch)
@@ -294,23 +283,21 @@ Shot1()
 {
 	if( gun_1 == 0 )
 	{
-		//No recoil for laser type weapons
-		//move Rgun to z-axis [-5] now;
+		//No recoil for laser type weapons in techa
+		//move Rgun to z-axis [-2] now;
 		//move Rgun to z-axis [0] speed [5];
 		emit-sfx 1024 + 0 from rflare;
 		sleep 150;
 		gun_1 = lflare;
-		return (0);
 	}
 	if( gun_1 == 1 )
 	{
-		//move Lgun to z-axis [-5] now;
+		//move Lgun to z-axis [-2] now;
 		//move Lgun to z-axis [0] speed [5];
 		emit-sfx 1024 + 0 from lflare;
 		sleep 150;	
 		gun_1 = rflare;
 	}
-	return (0);
 }
 
 Killed(severity, corpsetype)
