@@ -157,13 +157,13 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					bombers = 100,
+					bombers = 25,
 					default = 5,
-					fighters = 100,
-					flak_resistant = 100,
+					fighters = 25,
+					flak_resistant = 25,
 					subs = 5,
-					transporters = 100,
-					unclassed_air = 100,
+					transporters = 25,
+					unclassed_air = 25,
 				},
 			},
 			core_reap = {
