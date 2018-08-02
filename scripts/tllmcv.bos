@@ -54,9 +54,9 @@ Create()
 	gun_1 = 0;
 	gun_2 = 0;
 	
-	turn turret2 to y-axis <180.000000> NOW;
-	turn Lturret1 to y-axis <180.000000> NOW;
-	turn Lturret3 to y-axis <180.000000> NOW;
+	turn turret2 to y-axis <180.000000> now;
+	turn Lturret1 to y-axis <180.000000> now;
+	turn Lturret3 to y-axis <180.000000> now;
 	start-script SmokeUnit();
 }
 

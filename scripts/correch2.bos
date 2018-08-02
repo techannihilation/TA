@@ -147,8 +147,8 @@ Create()
 	spray = base;
 	call-script InitState();
 
-	turn pivot_2 to y-axis <120.000000> NOW;
-	turn pivot_3 to y-axis <240.000000> NOW;
+	turn pivot_2 to y-axis <120.000000> now;
+	turn pivot_3 to y-axis <240.000000> now;
 	turn pad to y-axis <-90.000000> now;
 
 	while( get BUILD_PERCENT_LEFT )
@@ -218,9 +218,7 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
+		corpsetype = 3;
 		explode blade_1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		explode blade_2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		explode blade_3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;

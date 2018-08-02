@@ -140,10 +140,10 @@ MotionControl()
 
 RequestState()
 {
-	while( !Busy_5 AND ReqState_3 != On_4 )
+	while( !Busy_5 & ReqState_3 != On_4 )
 	{
 		Busy_5 = 1;
-		if( ReqState_3 and !On_4 )
+		if( ReqState_3 & !On_4 )
 		{
 			turn door1a to z-axis <150.000000> speed <308.000000>;
 			turn door1b to z-axis <-150.000000> speed <311.000000>;
@@ -177,7 +177,7 @@ RequestState()
 			On_4 = 1;
 			
 		}
-		if( !ReqState_3 and On_4 )
+		if( !ReqState_3 & On_4 )
 		{
 			On_4 = 0;
 			

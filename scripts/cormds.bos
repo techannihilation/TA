@@ -51,7 +51,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	hide Blitz;
-	turn lafette to x-axis <-50> NOW;
+	turn lafette to x-axis <-50> now;
 	dont-shade Turm;
 	dont-shade Lafette;
 	dont-shade Lauf;

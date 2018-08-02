@@ -123,7 +123,7 @@ Create()
 	bAiming1 = FALSE;
 	bAiming2 = FALSE;
 	restore_delay = 4000;
-	turn flame_turret1 to y-axis <180.000000> NOW;
+	turn flame_turret1 to y-axis <180.000000> now;
 	start-script SmokeUnit();
 }
 

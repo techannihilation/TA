@@ -652,7 +652,7 @@ QueryPrimary(piecenum)
 
 AimFromSecondary(piecenum)
 {
-	piecenum = torso;
+	piecenum = gun1;
 }
 
 QuerySecondary(piecenum)
@@ -683,8 +683,8 @@ AimSecondary(heading, pitch)
 	wait-for-turn luparm around x-axis;
 	wait-for-turn rlowarm around x-axis;
 	wait-for-turn llowarm around x-axis;
-	spin gat around y-axis speed <320.000000> accelerate <45.412088>;
-	spin gat2 around y-axis speed <320.000000> accelerate <45.412088>;
+	spin gat around y-axis speed <240.000000> accelerate <35.412088>;
+	spin gat2 around y-axis speed <240.000000> accelerate <35.412088>;
 	start-script RestoreSecondary();
 	return (1);
 }

@@ -244,62 +244,62 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ground type NOHEATCLOUD;
-		explode beam1 type NOHEATCLOUD;
-		explode beam2 type NOHEATCLOUD;
-		explode nano1 type NOHEATCLOUD;
-		explode nano2 type NOHEATCLOUD;
-		explode door1 type NOHEATCLOUD;
-		explode door2 type NOHEATCLOUD;
-		explode door3 type NOHEATCLOUD;
-		explode door4 type NOHEATCLOUD;
-		explode pad type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode ground type 128;
+		explode beam1 type 128;
+		explode beam2 type 128;
+		explode nano1 type 128;
+		explode nano2 type 128;
+		explode door1 type 128;
+		explode door2 type 128;
+		explode door3 type 128;
+		explode door4 type 128;
+		explode pad type 128;
+		explode base type 128;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode ground type NOHEATCLOUD | SHATTER;
-		explode beam1 type NOHEATCLOUD | FALL;
-		explode beam2 type NOHEATCLOUD | FALL;
-		explode nano1 type NOHEATCLOUD | FALL;
-		explode nano2 type NOHEATCLOUD | FALL;
-		explode door1 type NOHEATCLOUD;
-		explode door2 type NOHEATCLOUD | FALL;
-		explode door3 type NOHEATCLOUD | FALL;
-		explode door4 type NOHEATCLOUD;
-		explode pad type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode ground type 128 | SHATTER;
+		explode beam1 type 128 | FALL;
+		explode beam2 type 128 | FALL;
+		explode nano1 type 128 | FALL;
+		explode nano2 type 128 | FALL;
+		explode door1 type 128;
+		explode door2 type 128 | FALL;
+		explode door3 type 128 | FALL;
+		explode door4 type 128;
+		explode pad type 128;
+		explode base type 128;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode ground type NOHEATCLOUD | SHATTER;
-		explode beam1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode beam2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode nano1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode nano2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode door1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode door2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode door3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode door4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode pad type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode ground type 128 | SHATTER;
+		explode beam1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode beam2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode nano1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode nano2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door3 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door4 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pad type 128;
+		explode base type 128;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode ground type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode beam1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode beam2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode nano1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode nano2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode door1 type NOHEATCLOUD;
-	explode door2 type NOHEATCLOUD;
-	explode door3 type NOHEATCLOUD;
-	explode door4 type NOHEATCLOUD;
-	explode pad type NOHEATCLOUD;
-	explode base type NOHEATCLOUD;
+	explode ground type 128 | SHATTER | EXPLODE_ON_HIT;
+	explode beam1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode beam2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode door1 type 128;
+	explode door2 type 128;
+	explode door3 type 128;
+	explode door4 type 128;
+	explode pad type 128;
+	explode base type 128;
 	return (corpsetype);
 }

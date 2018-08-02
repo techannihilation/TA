@@ -108,17 +108,17 @@ Create()
 	
 	hide charged;
 		
-	turn pos2 to y-axis <-60.000000> NOW;
-	turn pos3 to y-axis <-120.000000> NOW;
-	turn pos4 to y-axis <-180.000000> NOW;
-	turn pos5 to y-axis <-240.000000> NOW;
-	turn pos6 to y-axis <-300.000000> NOW;
-	turn sleeve1 to x-axis <-30.000000> NOW;
-	turn sleeve2 to x-axis <-30.000000> NOW;
-	turn sleeve3 to x-axis <-30.000000> NOW;
-	turn sleeve4 to x-axis <-30.000000> NOW;
-	turn sleeve5 to x-axis <-30.000000> NOW;
-	turn sleeve6 to x-axis <-30.000000> NOW;
+	turn pos2 to y-axis <-60.000000> now;
+	turn pos3 to y-axis <-120.000000> now;
+	turn pos4 to y-axis <-180.000000> now;
+	turn pos5 to y-axis <-240.000000> now;
+	turn pos6 to y-axis <-300.000000> now;
+	turn sleeve1 to x-axis <-30.000000> now;
+	turn sleeve2 to x-axis <-30.000000> now;
+	turn sleeve3 to x-axis <-30.000000> now;
+	turn sleeve4 to x-axis <-30.000000> now;
+	turn sleeve5 to x-axis <-30.000000> now;
+	turn sleeve6 to x-axis <-30.000000> now;
 	gun_1 = 0;
 	gun_2 = 0;
 	bmoving=0;

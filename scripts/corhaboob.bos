@@ -369,7 +369,7 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 1 or gun_1 == 3 or gun_1 == 5 or gun_1 > 6)
+	if( gun_1 == 1 || gun_1 == 3 || gun_1 == 5 || gun_1 > 6)
 	{
 		piecenum = flare2;
 		return (0);
