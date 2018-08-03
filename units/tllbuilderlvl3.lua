@@ -68,7 +68,7 @@ return {
 			[9] = "tllgate1",
 			[10] = "tllgazelle",
 			[11] = "tlllrpt1",
-			[12] = "tllhydre1",
+			[12] = "tllbagger",
 			[13] = "tllion",
 			[14] = "tllvanya",
 			[15] = "tllprototype",
