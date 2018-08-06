@@ -55,6 +55,7 @@ return {
 			buildpic = "tllcoyote.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			paralyzemultiplier = 5.26, -- hp like arm panther now
 		},
 		featuredefs = {
 			dead = {
@@ -137,7 +138,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
-				reloadtime = 2,
+				reloadtime = 2.0,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
@@ -157,13 +158,13 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					bombers = 25,
+					bombers = 100,
 					default = 5,
-					fighters = 25,
-					flak_resistant = 25,
+					fighters = 100,
+					flak_resistant = 100,
 					subs = 5,
-					transporters = 25,
-					unclassed_air = 25,
+					transporters = 100,
+					unclassed_air = 100,
 				},
 			},
 			core_reap = {
