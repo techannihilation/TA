@@ -5,7 +5,7 @@
 
 piece  base, wheel;
 
-static-var  statechg_DesiredState, statechg_StateChanging;
+static-var  tidal_Spd, statechg_DesiredState, statechg_StateChanging;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -35,10 +35,15 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+TidalSpeed(Func_Var_1)
+{
+	tidal_Spd = Func_Var_1;
+}
+
 Go()
 {
 	dont-cache wheel;
-	spin wheel around y-axis speed <35.005495>;
+	spin wheel around y-axis speed tidal_Spd * <1.000000>;
 }
 
 Stop()
