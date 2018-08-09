@@ -14,7 +14,7 @@ return {
 		buildpic = "coramaker.dds",
 		buildtime = 4400,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		description = "Converts upto 256 Energy to Metal",
+		description = "Converts upto 192 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDINGEX",
 		footprintx = 4,
 		footprintz = 3,
