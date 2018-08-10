@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 67,
 		mass = 33750,
-		maxdamage = 65000,
+		maxdamage = 48000,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "NEBRASKA",
@@ -112,7 +112,7 @@ return {
 		weapondefs = {
 			nebraska_weapon = {
 				areaofeffect = 30,
-				collidefriendly = false,
+				collidefriendly = true,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -138,9 +138,9 @@ return {
 				weaponvelocity = 1000,
 				damage = {
 					commanders = 3100,
-					default = 17500,
-					experimental_land = 35000,
-					experimental_ships = 35000,
+					default = 14000,
+					experimental_land = 28000,
+					experimental_ships = 28000,
 					subs = 5,
 				},
 			},
