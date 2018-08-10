@@ -73,6 +73,10 @@ for i=1,#UnitDefs do
 	end
 end
 
+local pos = nil
+local dummyUnitID = nil
+local dummyRange = {}
+
 local pplants = {
 	["aafus"] = true,
 	["afusionplant"] = true,
@@ -150,7 +154,7 @@ local windMax = Game.windMax
 -- Speedups
 ------------------------------------------------------------------------------------
 
-local bgcorner				= "LuaUI/Images/bgcorner.png"
+local bgcorner = "LuaUI/Images/bgcorner.png"
 
 local white = '\255\255\255\255'
 local grey = '\255\190\190\190'
@@ -289,11 +293,17 @@ function RemoveGuishader()
 	end
 end
 
+local darkOpacity = 0
+function SetOpacity(dark,light)
+    darkOpacity = dark
+end
+
 ------------------------------------------------------------------------------------
 -- Code
 ------------------------------------------------------------------------------------
 
 function widget:Initialize()
+	widgetHandler:RegisterGlobal('SetOpacity_Unit_Stats', SetOpacity)
 	if not WG["background_opacity_custom"] then
         WG["background_opacity_custom"] = {0,0,0,0.5}
     end
@@ -301,6 +311,7 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
+	widgetHandler:DeregisterGlobal('SetOpacity_Unit_Stats', SetOpacity)
 	RemoveGuishader()
 end
 
@@ -327,7 +338,8 @@ end
 function widget:DrawScreen()
 	local alt, ctrl, meta, shift = spGetModKeyState()
 	if not meta then 
-		--WG.hoverID = nil 
+		--WG.hoverID = nil
+		dummyUnitID = nil
 		RemoveGuishader() 
 		return 
 	end
@@ -345,6 +357,7 @@ function widget:DrawScreen()
 	--end
 	local useHoverID = false
 	local morphID = false
+	dummyUnitID = nil
 	local _, activeID = Spring.GetActiveCommand()
 	local text = Spring.GetCurrentTooltip()
 	local expMorphPat = "UnitDefID (%d+)\n"
@@ -355,6 +368,8 @@ function widget:DrawScreen()
 			uID = nil
 			useHoverID = false
 			morphID = true
+			local expUnitPat = "UnitID (%d+)\n"
+			dummyUnitID = tonumber(text:match(expUnitPat)) or nil
 		elseif (not WG.hoverID) and not (activeID < 0) then
 			RemoveGuishader() return
 		elseif WG.hoverID and WG.hoverID < 0 and not (activeID < 0) then
@@ -998,7 +1013,8 @@ function widget:DrawScreen()
 				local reload = uWep.reload
 				local accuracy = uWep.accuracy
 				local moveError = uWep.targetMoveError
-				local range = uWep.range
+				local range = uWep.range or nil
+				dummyRange[i] = range or false
 				local infoText = ""
 				if wpnName == "Death explosion" or wpnName == "Self Destruct" then
 					infoText = format("%d aoe, %d%% edge", uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
@@ -1136,7 +1152,17 @@ function widget:DrawScreen()
 			guishaderEnabled = true
 			WG['guishader_api'].InsertRect(cX-bgpadding, cY+(fontSize/3)+bgpadding, cX+maxWidth+bgpadding, cYstart-bgpadding, 'unit_stats_data')
 		end
-
+	end
 end
-------------------------------------------------------------------------------------
+
+function widget:DrawWorld()
+    if dummyUnitID then
+    	for i,ranges in pairs(dummyRange) do
+    		gl.Color(1, 0, 0, darkOpacity)
+        	gl.LineWidth(1.2)
+        	x, y, z = Spring.GetUnitBasePosition(dummyUnitID)
+        	gl.DrawGroundCircle(x, y, z, ranges, 64)
+       		gl.Color(1,1,1,1)
+    	end
+    end
 end
