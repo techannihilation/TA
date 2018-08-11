@@ -77,7 +77,7 @@ local pos = nil
 local dummyUnitID = nil
 local dummyRange = {}
 local modConfig, colorConfig = include("Configs/defensive_range_defs.lua")
-local currentModDefs = modConfig[string.upper(Game.modShortName or "")]
+local currentMod = string.upper(Game.modShortName or "")
 
 local pplants = {
 	["aafus"] = true,
@@ -1016,7 +1016,7 @@ function widget:DrawScreen()
 				local accuracy = uWep.accuracy
 				local moveError = uWep.targetMoveError
 				local range = uWep.range or nil
-				dummyRange[i] = {range = range or false, name = uDef.name, index = i}
+				dummyRange[i] = {range = range or false, defID = uDef.id ,name = uDef.name, index = i}
 				local infoText = ""
 				if wpnName == "Death explosion" or wpnName == "Self Destruct" then
 					infoText = format("%d aoe, %d%% edge", uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
@@ -1160,16 +1160,19 @@ end
 function widget:DrawWorld()
     if dummyUnitID then
     	for i, keys in pairs(dummyRange) do
-    		local color = {1, 1, 1, darkOpacity}
-    		local weapontype = modConfig["TA"]["unitList"][keys.name]["weapons"][keys.index]
-    		Spring.Echo(keys.range, keys.name, weapontype)
-			if ( weapontype == 1 or weapontype == 4 ) then	 -- show combo units with ground-dps-colors
-				color = colorConfig["ally"]["ground"]["min"]
-			elseif ( weapontype == 2 ) then
-				color = colorConfig["ally"]["air"]["min"]
-			elseif ( weapontype == 3 ) then -- antinuke
-				color = colorConfig["ally"]["nuke"]
-			end			
+    		local color = {1, 0, 0, darkOpacity}
+    		--Spring.Echo(currentMod,keys.name,keys.defID,keys.index)
+    		if modConfig[currentMod]["unitList"][keys.name] then 
+    			local weapontype = modConfig[currentMod]["unitList"][keys.name]["weapons"][keys.index]
+    			--Spring.Echo(keys.range, keys.name, weapontype)
+				if ( weapontype == 1 or weapontype == 4 ) then	 -- show combo units with ground-dps-colors
+					color = colorConfig["ally"]["ground"]["min"]
+				elseif ( weapontype == 2 ) then
+					color = colorConfig["ally"]["air"]["min"]
+				elseif ( weapontype == 3 ) then -- antinuke
+					color = colorConfig["ally"]["nuke"]
+				end
+			end
     		gl.Color(color[1], color[2], color[3], darkOpacity)
         	gl.LineWidth(1.2)
         	x, y, z = Spring.GetUnitBasePosition(dummyUnitID)
