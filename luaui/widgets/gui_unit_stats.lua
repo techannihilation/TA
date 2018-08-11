@@ -65,6 +65,7 @@ local DAMAGE_PERIOD ,weaponInfo = VFS.Include('LuaRules/Configs/area_damage_defs
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
 local OtaIconExist = {}
+local onlytarget = {}
 
 for i=1,#UnitDefs do
 	if VFS.FileExists(oldUnitpicsDir..UnitDefs[i].name..'.png') then
@@ -944,7 +945,11 @@ function widget:DrawScreen()
 		local wepsCompact = {} -- uWepsCompact[1..n] = wepDefID
 		uWeps = uDef.weapons
 		local weaponNums = {}
+		local surface = nil
+		local air = nil
 		for i = 1, #uWeps do
+			surface = uWeps[i].onlyTargets["surface"]
+			air = uWeps[i].onlyTargets["vtol"]
 			local wDefID = uWeps[i].weaponDef
 			local wCount = wepCounts[wDefID]
 			if wCount then
@@ -1016,7 +1021,7 @@ function widget:DrawScreen()
 				local accuracy = uWep.accuracy
 				local moveError = uWep.targetMoveError
 				local range = uWep.range or nil
-				dummyRange[i] = {range = range or false, defID = uDef.id ,name = uDef.name, index = i}
+				dummyRange[i] = {range = range or false, defID = uDef.id ,name = uDef.name, index = i, surface = surface, air = air}
 				local infoText = ""
 				if wpnName == "Death explosion" or wpnName == "Self Destruct" then
 					infoText = format("%d aoe, %d%% edge", uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
@@ -1161,16 +1166,21 @@ function widget:DrawWorld()
     if dummyUnitID then
     	for i, keys in pairs(dummyRange) do
     		local color = {1, 0, 0, darkOpacity}
-    		--Spring.Echo(currentMod,keys.name,keys.defID,keys.index)
+    		--Spring.Echo(currentMod,keys.name,keys.defID,keys.index,keys.surface,keys.air)
     		if modConfig[currentMod]["unitList"][keys.name] then 
     			local weapontype = modConfig[currentMod]["unitList"][keys.name]["weapons"][keys.index]
-    			--Spring.Echo(keys.range, keys.name, weapontype)
 				if ( weapontype == 1 or weapontype == 4 ) then	 -- show combo units with ground-dps-colors
 					color = colorConfig["ally"]["ground"]["min"]
 				elseif ( weapontype == 2 ) then
 					color = colorConfig["ally"]["air"]["min"]
 				elseif ( weapontype == 3 ) then -- antinuke
 					color = colorConfig["ally"]["nuke"]
+				end
+			else
+				if keys.surface then
+					color = colorConfig["ally"]["ground"]["min"]
+				elseif keys.air then
+					color = colorConfig["ally"]["air"]["min"]
 				end
 			end
     		gl.Color(color[1], color[2], color[3], darkOpacity)
