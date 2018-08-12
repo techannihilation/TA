@@ -281,9 +281,14 @@ local function UpdateSelection()
   aoeUnitDefID = nil
   dgunUnitID = nil
   aoeUnitID = nil
+  overrideselectionID = nil
   hasSelection = false
   
   for unitDefID, unitIDs in pairs(sel) do
+    if WG.drawAOErings and WG.drawAOErings == unitDefID then
+      overrideselectionID = unitDefID
+      hasSelection = true
+    end
   	if (notdgun[unitDefID]) then 
       notdgunUnitDefID = unitDefID
       --dgunUnitID = unitIDs[1]
@@ -633,9 +638,13 @@ function widget:DrawWorld()
     return
   end
   
-  if (cmd == CMD_ATTACK and notdgunUnitDefID) or (cmd ~= CMD_ATTACK or not aoeUnitDefID) and not (cmd == CMD_MANUALFIRE and notdgunUnitDefID) then 
+  if (cmd == CMD_ATTACK and notdgunUnitDefID) or (cmd ~= CMD_ATTACK or not aoeUnitDefID) and not ((cmd == CMD_MANUALFIRE and notdgunUnitDefID) or (WG.drawAOErings and overrideselectionID)) then 
     UpdateSelection()
     return 
+  end
+
+  if overrideselectionID then
+    aoeUnitDefID = overrideselectionID
   end
   
   mouseDistance = GetMouseDistance() or 1000
