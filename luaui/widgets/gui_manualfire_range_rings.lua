@@ -76,7 +76,7 @@ end
 
 function widget:DrawWorld()
     local _, cmdID = SpGetActiveCommand()
-    if cmdID and cmdID == CMD_MANUALFIRE then
+    if (cmdID and cmdID == CMD_MANUALFIRE) or WG.drawAOErings then
         for uId, rings in pairs(ringedUnits) do
         local ux, uy, uz = SpGetUnitPosition(uId)
             if ux then
