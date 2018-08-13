@@ -1734,6 +1734,7 @@ function init()
 		{id='snd', name='Sound'},
 		{id='control', name='Control'},
 		{id='game', name='Game'},
+		{id='dev', name='Dev Tools'},
 	}
 	options = {
 		-- PRESET
@@ -1856,6 +1857,7 @@ function init()
 		{id="uibgcolor", group="ui", name="UI background opacity", type="slider", min=0.40, max=1, step=0.001, value=(WG["background_opacity_custom"] and WG["background_opacity_custom"][4]) or 0.69, description='Adjust Darkness of UI background'},
 
 		{id="showbuilderqueue", group="ui", widget="Show Builder Queue", name="Show Builder Queue", type="bool", value=GetWidgetToggleValue("Show Builder Queue"), description='Shows ghosted buildings about to be built on the map'},
+		{id="commanderwarning", group="ui", widget="Commander Warning", name="Commander Warning", type="bool", value=GetWidgetToggleValue("Commander Warning"), description='Adds Glow effect to UI if your commander is under attack'},
 
 		--{id="healthbarsscale", group="ui", name="Health Bars Scale", type="slider", min=0.7, max=1.31, step=0.1, value=1, description=''},
 
@@ -1946,6 +1948,10 @@ function init()
 
         {id="transportai", group="game", widget="Transport AI", name="Transport AI", type="bool", value=GetWidgetToggleValue("Transport AI"), description='Transport units automatically pick up new units going to factory waypoint.'},
 		{id="settargetdefault", group="game", widget="Set target default", name="Set-target as default", type="bool", value=GetWidgetToggleValue("Set target default"), description='Replace default attack command to a set-target command\n(when rightclicked on enemy unit)'},
+
+		--Dev Tools (WIP)
+		{id="widgetprofiler", group="dev", widget="Widget Profiler", name="Widget Profiler", type="bool", value=GetWidgetToggleValue("Widget Profiler"), description='Enables Widget Profiler (Dev Tool)'},
+
 	}
 
 	-- loads values via stored game config in luaui/configs

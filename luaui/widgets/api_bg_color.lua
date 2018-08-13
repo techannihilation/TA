@@ -77,7 +77,7 @@ end
 function widget:SetConfigData(data) 
 	if (data ~= nil) then
 		if ( data["background_opacity_custom"] ~= nil ) then
-			WG["background_opacity_custom"] = data["background_opacity_custom"]
+			WG["background_opacity_custom"] = {0,0,0,data["background_opacity_custom"][4]}
 		end
 	end
 end
