@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON TINYVTOL VTOL",
 		collide = false,
-		cruisealt = 70,
+		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Transport",
 		explodeas = "SMALL_UNITEX",

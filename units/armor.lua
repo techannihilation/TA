@@ -18,7 +18,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON VTOL",
-		cruisealt = 250,
+		cruisealt = 130,
 		defaultmissiontype = "VTOL_standby",
 		description = "Very Heavy Air Transport",
 		explodeas = "BIG_UNITEX",

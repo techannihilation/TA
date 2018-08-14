@@ -20,7 +20,7 @@ return {
 		collisionvolumeoffsets = "1 -3 0",
 		collisionvolumescales = "52 21 52",
 		collisionvolumetype = "CylY",
-		cruisealt = 150,
+		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Assault Transport",
 		energymake = 3,

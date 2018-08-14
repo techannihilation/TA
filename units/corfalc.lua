@@ -18,7 +18,7 @@ return {
 		cansubmerge = true,
 		category = "ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTWEAPON SMALLVTOL VTOL",
 		collide = false,
-		cruisealt = 120,
+		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Medium Amphibious Air Transport",
 		energystorage = 105,
