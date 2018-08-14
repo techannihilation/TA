@@ -23,9 +23,9 @@ function widget:KeyPress(key)
     end
 end
 
-function widget:KeyRelease(key)
-    if dischargeSelected and key == 101 then
-        Spring.GiveOrderToUnit(selectedunitID, empID, pos, {})
+function widget:MousePress(mx, my, mButton)
+    if dischargeSelected and mButton == 1 then
+        Spring.GiveOrderToUnit(selectedunitID, empID, pos, {"shift"})
     end
     pressed = false
 end
