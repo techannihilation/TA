@@ -10,11 +10,13 @@ modConfig["TA"]["unitList"] =
 								armclaw = { weapons = { 1 } },
 								amortor = { weapons = { 1 } },
 								armllt = { weapons = { 1 } },
+								armfllt = { weapons = { 1 } },
 								armllt1 = { weapons = { 1 } },
 								tawf001 = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
 								armvhlt = { weapons = { 1 } },
 								armguard = { weapons = { 1, 1 } },
+								armfguard = { weapons = { 1, 1 } },
 								arm_immolator = { weapons = { 1 } },
 								armamb = { weapons = { 1,1 } }, --ambusher
 								armpb = { weapons = { 1 } }, --pitbull
@@ -67,12 +69,14 @@ modConfig["TA"]["unitList"] =
 								corexp = { weapons = { 1 } },
 								cormaw = { weapons = { 1 } },
 								corllt = { weapons = { 1 } },
+								cofllt = { weapons = { 1 } },
 								corllt1 = { weapons = { 1 } },
 								hllt = { weapons = { 1 } },
 								corhlt = { weapons = { 1 } },
 								corvhlt = { weapons = { 1 } },
 								corfhlt = { weapons = { 1 } },
 								corpun = { weapons = { 1, 1 } },
+								corfpun = { weapons = { 1, 1 } },
 								cordl = { weapons = { 1 } },
 								cjuno = { weapons = { 1 } },
 								coranta = { weapons = { 1 } },
@@ -82,6 +86,7 @@ modConfig["TA"]["unitList"] =
 								corfhlt = { weapons = { 1 } },  --floating hlt
 								cortl = { weapons = { 1 } }, --torp launcher
 								coratl = { weapons = { 1 } }, --adv torp launcher
+								cormexp = { weapons = { 1,1 } },
 								cortoast = { weapons = { 1 } },
 								corvipe = { weapons = { 1 } },
 								cordoom = { weapons = { 1 } },
@@ -128,6 +133,14 @@ modConfig["TA"]["unitList"] =
 								tlllrpt = { weapons = { 1 } },
 								tllobliterator = { weapons = { 1 } },
 								tllobliterator1 = { weapons = { 1 } },
+								tll_immolator = { weapons = { 1 } },
+								tllarch = { weapons = { 1 } },
+								tllbagger = { weapons = { 1 } },
+								tllfllt = { weapons = { 1 } },
+								tllgeo_armored = { weapons = { 1 } },
+								tlllrpt1 = { weapons = { 1 } },
+								tllmortor = { weapons = { 1 } },
+								tllvhlt = { weapons = { 1 } },
 								tllplasma = { weapons = { 1 } },
 								tllpulaser = { weapons = { 1 } },
 								tllrlrpc = { weapons = { 1 } },
@@ -139,7 +152,7 @@ modConfig["TA"]["unitList"] =
 								tllweb = { weapons = { 1 } },
 								tllupgweb = { weapons = { 1 } },
 								tlldmc = { weapons = { 1 } },
-								tlllbt = { weapons = { 1 } },
+								tlllbt = { weapons = { 1,1 } },
 								tlltrid = { weapons = { 1 } },
 								tllkrak = { weapons = { 1 } },
 								tlljuno = { weapons = { 1 } },
@@ -158,6 +171,7 @@ modConfig["TA"]["unitList"] =
 								tllsam = { weapons = { 2 } },
 								tlldb = { weapons = { 2 } },
 								tllhmt = { weapons = { 2 } },
+								tlltetanos = { weapons = { 2 } },
 
 									--Anti-Nuke--
 								tllantinuke = { weapons = { 3 } },
