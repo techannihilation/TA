@@ -119,7 +119,7 @@ return {
 		},
 		weapondefs = {
 			tankanotor_missiles = {
-				areaofeffect = 280,
+				areaofeffect = 300,
 				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.24,
@@ -158,8 +158,8 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 400,
 				damage = {
-					commanders = 1050,
-					default = 2100,
+					commanders = 1015,
+					default = 2030,
 					subs = 5,
 				},
 			},
