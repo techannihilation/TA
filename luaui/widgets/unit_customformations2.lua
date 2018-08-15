@@ -59,6 +59,7 @@ local formationCmds = {
 	[CMD.UNLOAD_UNIT] = true,
 	[CMD_SETTARGET] = true, -- set target
 	[CMD_JUMP] = true -- jumpjets
+	[CMD.MANUALFIRE] = true -- emp/tacnukes
 }
 
 -- What commands require alt to be held 
