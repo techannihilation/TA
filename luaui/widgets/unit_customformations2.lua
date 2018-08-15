@@ -58,7 +58,7 @@ local formationCmds = {
 	[CMD.PATROL] = true,
 	[CMD.UNLOAD_UNIT] = true,
 	[CMD_SETTARGET] = true, -- set target
-	[CMD_JUMP] = true -- jumpjets
+	[CMD_JUMP] = true, -- jumpjets
 	[CMD.MANUALFIRE] = true -- emp/tacnukes
 }
 
