@@ -119,12 +119,12 @@ return {
 		},
 		weapondefs = {
 			tankanotor_missiles = {
-				areaofeffect = 320,
+				areaofeffect = 280,
 				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.24,
 				cegtag = "trail_large_rocket_tankonator",
-				craterareaofeffect = 480,
+				craterareaofeffect = 440,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
@@ -158,18 +158,14 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 400,
 				damage = {
-					default = 1000,
+					commanders = 1050,
+					default = 2100,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
-				def = "TANKANOTOR_MISSILES",
-				onlytargetcategory = "SURFACE",
-			},
-			[2] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TANKANOTOR_MISSILES",
 				onlytargetcategory = "SURFACE",
