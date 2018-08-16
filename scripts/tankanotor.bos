@@ -107,13 +107,13 @@ FirePrimary()
 	}
 	if( gun_1 == 1 )
 	{
-		move missile3 to z-axis [-6.000000] speed [500.000000];
-		sleep 750;
 		move missile4 to z-axis [-6.000000] speed [500.000000];
+		sleep 750;
+		move missile3 to z-axis [-6.000000] speed [500.000000];
 		sleep 2500;
-		move missile3 to z-axis [0.000000] speed [2.000000];
-		sleep 800;
 		move missile4 to z-axis [0.000000] speed [2.000000];
+		sleep 800;
+		move missile3 to z-axis [0.000000] speed [2.000000];
 		sleep 150;		
 	}
 	++gun_1;
