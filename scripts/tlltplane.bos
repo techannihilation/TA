@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, link, rengine, lengine, rwing, lwing, jet1, jet2,
-       jet3, body, jet4, jet5, l1;
+       jet3, body, jet4, l1;
 
 static-var  Static_Var_1, unitviewer, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
 
@@ -157,7 +157,6 @@ ProcessFlames()
 			if( Static_Var_3 )
 			{
 				emit-sfx 0 from jet4;
-				emit-sfx 0 from jet5;
 			}
 		}
 		sleep 67;
@@ -188,7 +187,7 @@ MoveRate1()
 {
 	signal 2;
 	set-signal-mask 2;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 1;
 }
 
@@ -196,7 +195,7 @@ MoveRate2()
 {
 	signal 2;
 	set-signal-mask 2;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 2;
 }
 
@@ -204,7 +203,7 @@ MoveRate3()
 {
 	signal 2;
 	set-signal-mask 2;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 3;
 }
 

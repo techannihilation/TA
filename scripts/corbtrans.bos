@@ -133,7 +133,7 @@ Create()
 	call-script InitState();
 	start-script SmokeUnit();
 	start-script RestoreAfterDelay();
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 }
 
 Demo()

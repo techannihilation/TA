@@ -187,7 +187,7 @@ MoveRate1()
 {
 	signal 8;
 	set-signal-mask 8;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 1;
 }
 
@@ -195,7 +195,7 @@ MoveRate2()
 {
 	signal 8;
 	set-signal-mask 8;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 2;
 }
 
@@ -203,7 +203,7 @@ MoveRate3()
 {
 	signal 8;
 	set-signal-mask 8;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 3;
 }
 

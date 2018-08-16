@@ -4,8 +4,7 @@
 #include "exptype.h"
 
 piece  base, link, rengine, lengine, rwing1, lwing1, rwing2, lwing2,
-       jet1, jet2, jet3, body, jet4, jet5, jet6, jet7,
-       jet8, rearengine, lpiv, rpiv, flare1, flare2;
+       jet1, jet2, jet3, body, jet4, rearengine, lpiv, rpiv, flare1, flare2;
 
 static-var  Static_Var_1, unitviewer, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
 
@@ -174,14 +173,10 @@ ProcessFlames()
 		{
 			emit-sfx 0 from jet1;
 			emit-sfx 0 from jet2;
-			emit-sfx 0 from jet5;
-			emit-sfx 0 from jet6;
 			if( Static_Var_3 )
 			{
 				emit-sfx 0 from jet3;
 				emit-sfx 0 from jet4;
-				emit-sfx 0 from jet7;
-				emit-sfx 0 from jet8;
 			}
 		}
 		sleep 100;
@@ -212,7 +207,7 @@ MoveRate1()
 	set-signal-mask 2;
 	turn rengine to x-axis <30.000000> speed <30.000000>;
 	turn lengine to x-axis <30.000000> speed <30.000000>;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 1;
 }
 
@@ -222,7 +217,7 @@ MoveRate2()
 	set-signal-mask 2;
 	turn rengine to x-axis <60.000000> speed <30.000000>;
 	turn lengine to x-axis <60.000000> speed <30.000000>;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 2;
 }
 
@@ -232,7 +227,7 @@ MoveRate3()
 	set-signal-mask 2;
 	turn rengine to x-axis <80.000000> speed <30.000000>;
 	turn lengine to x-axis <80.000000> speed <30.000000>;
-	start-script ProcessFlames();
+	//start-script ProcessFlames();
 	Static_Var_1 = 3;
 }
 
