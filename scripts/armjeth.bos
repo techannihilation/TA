@@ -277,9 +277,9 @@ UnitSpeed()
 		Static_Var_9 = get CURRENT_SPEED * 100 / Static_Var_8;
 		if( Static_Var_9 < 20 )
 		{
-			Static_Var_9 = 200;
+			Static_Var_9 = 20;
 		}
-		sleep 150;
+		sleep 142;
 	}
 }
 
@@ -376,14 +376,14 @@ FireTertiary()
 {
 	if( gun_3 == 0 )
 	{
-		move lgun to z-axis [-0.600000] NOW;
+		move lgun to z-axis [-0.600000] now;
 		emit-sfx 1024 from lexhaust;
 		move lgun to z-axis [0.000000] speed [1.200000];
 		sleep 250;
 	}
 	if( gun_3 == 1 )
 	{
-		move rgun to z-axis [-0.600000] NOW;
+		move rgun to z-axis [-0.600000] now;
 		emit-sfx 1024 from rexhaust;
 		move rgun to z-axis [0.000000] speed [1.200000];
 		sleep 250;
