@@ -142,7 +142,6 @@ return {
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
-				sprayangle = 1024,
 				startvelocity = 40,
 				targetable = 16,
 				texture1 = "null",
