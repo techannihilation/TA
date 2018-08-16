@@ -372,20 +372,30 @@ AimTertiary(heading, pitch)
 	return (1);
 }
 
-FireTertiary()
+Shot3()
 {
 	if( gun_3 == 0 )
 	{
 		move lgun to z-axis [-0.600000] now;
 		emit-sfx 1024 from lexhaust;
 		move lgun to z-axis [0.000000] speed [1.200000];
-		sleep 250;
 	}
 	if( gun_3 == 1 )
 	{
 		move rgun to z-axis [-0.600000] now;
 		emit-sfx 1024 from rexhaust;
 		move rgun to z-axis [0.000000] speed [1.200000];
+	}
+}
+
+FireTertiary()
+{
+	if( gun_3 == 0 )
+	{
+		sleep 250;
+	}
+	if( gun_3 == 1 )
+	{
 		sleep 250;
 	}
 	++gun_3;
