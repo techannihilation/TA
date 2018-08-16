@@ -320,7 +320,7 @@ Create()
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
 	gun_3 = 0;
-	restore_delay = 1500;
+	restore_delay = 3000;
 	Static_Var_6 = 1;
 	Static_Var_7 = 0;
 	Static_Var_8 = get MAX_SPEED;
@@ -350,9 +350,9 @@ SweetSpot(piecenum)
 
 RestoreAfterDelay()
 {
-	sleep 1500;
+	sleep restore_delay/2;
 	start-script RequestState(1);
-	sleep restore_delay;
+	sleep restore_delay/2;
 	set-signal-mask 0;	
 	turn torso to y-axis <0.000000> speed <90.000000>;
 }
