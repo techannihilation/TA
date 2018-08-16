@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 72,
 		mass = 36250,
-		maxdamage = 56000,
+		maxdamage = 80000,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "The Butcher",
@@ -114,7 +114,7 @@ return {
 		weapondefs = {
 			core_boucher = {
 				areaofeffect = 30,
-				collidefriendly = true,
+				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -140,9 +140,9 @@ return {
 				weaponvelocity = 1000,
 				damage = {
 					commanders = 2800,
-					default = 11500,
-					experimental_land = 21000,
-					experimental_ships = 21000,
+					default = 14000,
+					experimental_land = 28000,
+					experimental_ships = 28000,
 					subs = 5,
 				},
 			},
