@@ -122,7 +122,7 @@ return {
 				areaofeffect = 300,
 				avoidfeature = false,
 				burst = 2,
-				burstrate = 0.24,
+				burstrate = 1,
 				cegtag = "trail_large_rocket_tankonator",
 				craterareaofeffect = 440,
 				craterboost = 0,
