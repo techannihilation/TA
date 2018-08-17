@@ -4,10 +4,10 @@
 #include "exptype.h"
 
 piece  base, luparm, lloarm, lhand, ruparm, rloarm, rhand, body, arml, rflare, lflare,
-       flare1, flare2, flare3, barrel1, barrel2, barrel3, sleeve1, sleeve2, sleeve3, 
+       flare1, flare2, sleeve, turret, 
        armr, pelvis;
 
-static-var  Static_Var_1, gun_1, gun_2, bMoving;
+static-var  Static_Var_1, gun_1, gun_2, bMoving, Static_heading;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -45,67 +45,67 @@ walk()
 {
 	if( TRUE )
 	{
-		turn arml to x-axis <10.000000> speed <9.000000>;
-		turn armr to x-axis <-10.000000> speed <18.000000>;
-		turn luparm to x-axis <20.000000> speed <50.000000>;
-		turn ruparm to x-axis <-20.000000> speed <50.000000>;
-		turn lhand to x-axis <-15.005495> speed <70.000000>;
-		turn rhand to x-axis <5.000000> speed <50.000000>;
-		turn rloarm to x-axis <-10.000000> speed <70.000000>;
+		turn arml to x-axis <10.000000> speed <8.000000>;
+		turn armr to x-axis <-10.000000> speed <16.000000>;
+		turn luparm to x-axis <20.000000> speed <40.000000>;
+		turn ruparm to x-axis <-20.000000> speed <40.000000>;
+		turn lhand to x-axis <-15.005495> speed <60.000000>;
+		turn rhand to x-axis <5.000000> speed <45.000000>;
+		turn rloarm to x-axis <-10.000000> speed <60.000000>;
 		turn body to x-axis <3.000000> speed <5.000000>;
 		sleep 505;
-		turn lhand to x-axis <20.005495> speed <100.000000>;
-		turn rhand to x-axis <10.000000> speed <50.000000>;
-		turn rloarm to x-axis <20.005495> speed <100.000000>;
+		turn lhand to x-axis <20.005495> speed <80.000000>;
+		turn rhand to x-axis <10.000000> speed <45.000000>;
+		turn rloarm to x-axis <20.005495> speed <80.000000>;
 		sleep 600;
 		turn pelvis to z-axis <4.000000> speed <3.000000>;
 	}
 	if( TRUE )
 	{
-		turn arml to x-axis <-10.000000> speed <20.000000>;
-		turn armr to x-axis <10.000000> speed <20.000000>;
-		turn luparm to x-axis <-20.005495> speed <50.000000>;
-		turn ruparm to x-axis <20.005495> speed <50.000000>;
-		turn rhand to x-axis <-10.005495> speed <130.000000>;
-		turn lloarm to x-axis <-10.005495> speed <100.000000>;
+		turn arml to x-axis <-10.000000> speed <17.000000>;
+		turn armr to x-axis <10.000000> speed <17.000000>;
+		turn luparm to x-axis <-20.005495> speed <45.000000>;
+		turn ruparm to x-axis <20.005495> speed <45.000000>;
+		turn rhand to x-axis <-10.005495> speed <105.000000>;
+		turn lloarm to x-axis <-10.005495> speed <80.000000>;
 		sleep 1050;
-		turn rhand to x-axis <20.005495> speed <100.000000>;
-		turn lloarm to x-axis <20.005495> speed <100.000000>;
+		turn rhand to x-axis <20.005495> speed <80.000000>;
+		turn lloarm to x-axis <20.005495> speed <80.000000>;
 		sleep 600;
-		turn pelvis to z-axis <-4.000000> speed <8.000000>;
-		turn arml to x-axis <0.000000> speed <14.000000>;
-		turn armr to x-axis <0.000000> speed <14.000000>;
+		turn pelvis to z-axis <-4.000000> speed <7.000000>;
+		turn arml to x-axis <0.000000> speed <12.000000>;
+		turn armr to x-axis <0.000000> speed <12.000000>;
 	}
 	while( TRUE )
 	{
 		if( TRUE )
 		{
-			turn pelvis to y-axis <-5.000000> speed <12.000000>;
-			turn pelvis to x-axis <-2.000000> speed <6.000000>;
-			turn luparm to x-axis <40.005495> speed <50.000000>;
-			turn ruparm to x-axis <-40.005495> speed <50.000000>;
-			turn lhand to x-axis <-20.005495> speed <130.000000>;
-			turn rloarm to x-axis <-10.005495> speed <100.000000>;
+			turn pelvis to y-axis <-5.000000> speed <10.000000>;
+			turn pelvis to x-axis <-2.000000> speed <5.000000>;
+			turn luparm to x-axis <40.005495> speed <45.000000>;
+			turn ruparm to x-axis <-40.005495> speed <45.000000>;
+			turn lhand to x-axis <-20.005495> speed <127.000000>;
+			turn rloarm to x-axis <-10.005495> speed <80.000000>;
 			sleep 1050;
-			turn lhand to x-axis <20.005495> speed <100.000000>;
-			turn rhand to x-axis <20.005495> speed <70.000000>;
-			turn rloarm to x-axis <10.005495> speed <100.000000>;
+			turn lhand to x-axis <20.005495> speed <80.000000>;
+			turn rhand to x-axis <20.005495> speed <60.000000>;
+			turn rloarm to x-axis <10.005495> speed <80.000000>;
 			sleep 600;
-			turn pelvis to z-axis <4.000000> speed <8.000000>;
+			turn pelvis to z-axis <4.000000> speed <7.000000>;
 		}
 		if( TRUE )
 		{
-			turn pelvis to y-axis <4.000000> speed <12.000000>;
-			turn pelvis to x-axis <6.000000> speed <6.000000>;
-			turn luparm to x-axis <-40.005495> speed <50.000000>;
-			turn ruparm to x-axis <40.005495> speed <50.000000>;
-			turn rhand to x-axis <-20.005495> speed <130.000000>;
-			turn lloarm to x-axis <-10.005495> speed <100.000000>;
+			turn pelvis to y-axis <4.000000> speed <11.000000>;
+			turn pelvis to x-axis <6.000000> speed <5.000000>;
+			turn luparm to x-axis <-40.005495> speed <45.000000>;
+			turn ruparm to x-axis <40.005495> speed <45.000000>;
+			turn rhand to x-axis <-20.005495> speed <105.000000>;
+			turn lloarm to x-axis <-10.005495> speed <80.000000>;
 			sleep 1050;
-			turn rhand to x-axis <40.005495> speed <100.000000>;
-			turn lloarm to x-axis <10.005495> speed <100.000000>;
+			turn rhand to x-axis <40.005495> speed <80.000000>;
+			turn lloarm to x-axis <10.005495> speed <80.000000>;
 			sleep 600;		
-			turn pelvis to z-axis <-3.000000> speed <8.000000>;
+			turn pelvis to z-axis <-3.000000> speed <7.000000>;
 		}
 	}
 }
@@ -114,24 +114,24 @@ stop()
 {
 	turn luparm to x-axis <0.000000> speed <50.000000>;
 	turn ruparm to x-axis <0.000000> speed <50.000000>;
-	turn lloarm to x-axis <0.000000> speed <100.000000>;
-	turn rloarm to x-axis <0.000000> speed <100.000000>;
-	turn pelvis to y-axis <0.000000> speed <100.000000>;
+	turn lloarm to x-axis <0.000000> speed <80.000000>;
+	turn rloarm to x-axis <0.000000> speed <80.000000>;
+	turn pelvis to y-axis <0.000000> speed <80.000000>;
 	turn pelvis to x-axis <0.000000> speed <20.000000>;
 	move pelvis to y-axis [0.000000] speed [20.000000];
 	turn pelvis to z-axis <0.000000> speed <20.000000>;
-	turn rhand to x-axis <0.000000> speed <100.000000>;
-	turn lhand to x-axis <0.000000> speed <100.000000>;
+	turn rhand to x-axis <0.000000> speed <80.000000>;
+	turn lhand to x-axis <0.000000> speed <80.000000>;
 	wait-for-turn body around x-axis;
-	turn pelvis to x-axis <10.000000> speed <48.000000>;
-	turn arml to x-axis <-10.000000> speed <48.000000>;
-	turn armr to x-axis <-10.000000> speed <48.000000>;
+	turn pelvis to x-axis <10.000000> speed <46.000000>;
+	turn arml to x-axis <-10.000000> speed <46.000000>;
+	turn armr to x-axis <-10.000000> speed <46.000000>;
 	wait-for-turn body around x-axis;
-	turn pelvis to x-axis <-3.000000> speed <48.000000>;
+	turn pelvis to x-axis <-3.000000> speed <46.000000>;
 	wait-for-turn body around x-axis;
-	turn pelvis to x-axis <0.000000> speed <48.000000>;
-	turn arml to x-axis <0.000000> speed <48.000000>;
-	turn armr to x-axis <0.000000> speed <48.000000>;
+	turn pelvis to x-axis <0.000000> speed <46.000000>;
+	turn arml to x-axis <0.000000> speed <46.000000>;
+	turn armr to x-axis <0.000000> speed <46.000000>;
 	wait-for-turn pelvis around x-axis;
 	sleep 20;
 }
@@ -140,10 +140,10 @@ Create()
 {
 	hide flare1;
 	hide flare2;
-	hide flare3;
 	gun_1 = 0;
 	gun_2 = 0;
 	start-script SmokeUnit();
+	Static_heading = 0;
 }
 
 StartMoving()
@@ -166,24 +166,31 @@ SweetSpot(piecenum)
 	piecenum = body;
 }
 
-RestoreAfterDelay()
+RestoreAfterDelay1()
 {
-	sleep 3000;
-	//turn arml to x-axis <0.000000> speed <20.000000>;
-	//turn armr to x-axis <0.000000> speed <20.000000>;
-	turn body to y-axis <0.000000> speed <20.000000>;
-	//wait-for-turn arml around x-axis;
-	//wait-for-turn armr around x-axis;
+	sleep 2000;
+	turn turret to y-axis <0.000000> speed <50.000000>;
+	turn sleeve to x-axis <0.000000> speed <50.000000>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 2000;
+	turn body to y-axis <0.000000> speed <35.000000>;
+	Static_heading = Static_heading / 2;
 	wait-for-turn body around y-axis;
+	Static_heading = 0;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn body to y-axis heading speed <35.000000>;
-	wait-for-turn body around y-axis;
-	start-script RestoreAfterDelay();
+	turn turret to y-axis heading - Static_heading speed <75.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay1();
 	return (1);
 }
 
@@ -191,43 +198,19 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		emit-sfx 1024 from flare1;
-		move barrel1 to z-axis [0.000000] speed [500.000000];
-		turn sleeve1 to x-axis <-5.000000> speed <350.000000>;
-		wait-for-move barrel1 along z-axis;
-		wait-for-turn sleeve1 around y-axis;
-		move barrel1 to z-axis [0.000000] speed [0.500000];
-		turn sleeve1 to x-axis <0.000000> speed <35.000000>;
+		sleep 150;
 	}
 	if( gun_1 == 1 )
 	{
-		emit-sfx 1024 from flare2;
-		move barrel2 to z-axis [0.000000] speed [500.000000];
-		turn sleeve2 to x-axis <-5.000000> speed <350.000000>;
-		wait-for-move barrel2 along z-axis;
-		wait-for-turn sleeve2 around y-axis;
-		move barrel2 to z-axis [0.000000] speed [0.500000];
-		turn sleeve2 to x-axis <0.000000> speed <35.000000>;
-
-	}
-	if( gun_1 == 2 )
-	{
-		emit-sfx 1024 from flare3;
-		move barrel3 to z-axis [0.000000] speed [500.000000];
-		turn sleeve3 to x-axis <-5.000000> speed <350.000000>;
-		wait-for-move barrel3 along z-axis;
-		wait-for-turn sleeve3 around y-axis;
-		move barrel3 to z-axis [0.000000] speed [0.500000];
-		turn sleeve3 to x-axis <0.000000> speed <35.000000>;
+		sleep 150;
 	}
 	
 	++gun_1;
-	if( gun_1 == 3 )
+	if( gun_1 == 2 )
 	{
 		gun_1 = 0;
 	
 	}
-
 }
 
 QueryPrimary(piecenum)
@@ -239,22 +222,22 @@ QueryPrimary(piecenum)
 	if( gun_1 == 1 )
 	{
 		piecenum = flare2;
-	}
-	if( gun_1 == 2 )
-	{
-		piecenum = flare3;
-	}
+	}	
 }
 
 AimSecondary(heading, pitch)
 {
+	
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn arml to x-axis <0.000000> - pitch speed <40.000000>;
-	turn armr to x-axis <0.000000> - pitch speed <40.000000>;
+	turn body to y-axis heading speed <45.000000>;
+	Static_heading = heading;
+	turn arml to x-axis <0.000000> - pitch speed <45.000000>;
+	turn armr to x-axis <0.000000> - pitch speed <45.000000>;
 	wait-for-turn arml around x-axis;
 	wait-for-turn armr around x-axis;
 	wait-for-turn body around y-axis;
+	start-script RestoreAfterDelay2();
 	return (1);
 }
 
@@ -296,8 +279,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode pelvis type NOHEATCLOUD;
-		explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode luparm type NOHEATCLOUD;
 		explode lloarm type NOHEATCLOUD;
 		explode lhand type NOHEATCLOUD;
@@ -313,8 +294,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode pelvis type NOHEATCLOUD;
-		explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode luparm type NOHEATCLOUD | FALL;
 		explode lloarm type NOHEATCLOUD | FALL;
 		explode lhand type NOHEATCLOUD | FALL;
@@ -330,8 +309,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode pelvis type NOHEATCLOUD;
-		explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode lloarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode lhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -345,8 +322,6 @@ Killed(severity, corpsetype)
 	}
 	corpsetype = 3;
 	explode pelvis type NOHEATCLOUD;
-	explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lloarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
