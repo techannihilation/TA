@@ -34,7 +34,7 @@ return {
 		maxvelocity = 2,
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
-		movementclass = "KBOT2",
+		movementclass = "HTKBOT4",
 		name = "Maitika",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
