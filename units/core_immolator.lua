@@ -119,7 +119,7 @@ return {
 		weapondefs = {
 			core_intimidator = {
 				accuracy = 535,
-				areaofeffect = 250,
+				areaofeffect = 148,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 350,
