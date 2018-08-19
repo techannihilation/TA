@@ -119,7 +119,7 @@ return {
 		weapondefs = {
 			tll_intimidator3 = {
 				accuracy = 535,
-				areaofeffect = 250,
+				areaofeffect = 156,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 375,
