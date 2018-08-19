@@ -8,7 +8,7 @@ return {
 		builder = true,
 		buildpic = "armspid.dds",
 		buildtime = 550000,
-		canassist = false,
+		canassist = true,
 		canmove = true,
 		canpatrol = true,
 		canreclamate = 1,
