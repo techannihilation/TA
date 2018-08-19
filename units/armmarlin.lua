@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB WEAPON SURFACE",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTVTOL SUB WEAPON",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "31 31 156",
 		collisionvolumetype = "CylZ",
