@@ -171,7 +171,7 @@ return {
 	"tllotter",
 	"tllboat2",
 	"tllviolator",
-	"tllambassador",	
+	"tllambassador",
 	"corcs",
 	"corpt",
 	"coresupp",
