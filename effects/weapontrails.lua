@@ -1,6 +1,7 @@
 -- fireball
 -- nucklearnano
 -- tllraventrail
+-- tllraventrail_light
 -- pinkcrap
 -- purpleafterglow
 -- tinyred
@@ -219,6 +220,45 @@ return {
         color              = [[1, 0.4, 0.1]],
         dir                = [[-6 r12,-6 r12,-6 r12]],
         length             = 1,
+        width              = 14,
+      },
+    },
+  },
+
+ ["tllraventrail_light"] = {
+    usedefaultexplosions = false,
+     engine = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[1.0 0.8 0.2 0.01		1.0 0.2 0.1 0.01	0.6 0.1 0.1 0.01]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[none]],
+        length             = -33,
+        sidetexture        = [[muzzleside]],
+        size               = 4.3,
+        sizegrowth         = 0.9,
+        ttl                = 1,
+      },
+    },
+   
+    spikes = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 2,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 1,
+        alphadecay         = 0.35,
+        color              = [[1, 0.4, 0.1]],
+        dir                = [[-6 r12,-6 r12,-6 r12]],
+        length             = 2,
         width              = 14,
       },
     },
@@ -1297,7 +1337,7 @@ return {
         emitvector         = [[0, 1, 0]],
         gravity            = [[0, 0.01, 0]],
         numparticles       = 1,
-        particlelife       = 12,
+        particlelife       = 10,
         particlelifespread = 15,
         particlesize       = 8,
         particlesizespread = 1,
@@ -1324,7 +1364,7 @@ return {
         emitvector         = [[0, 1, 0]],
         gravity            = [[0, 0.01, 0]],
         numparticles       = 1,
-        particlelife       = 12,
+        particlelife       = 10,
         particlelifespread = 15,
         particlesize       = 8,
         particlesizespread = 1,

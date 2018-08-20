@@ -105,17 +105,17 @@ Create()
 	dont-shade sleeve5;
 	dont-shade sleeve6;
 	
-	turn sleeve2 to y-axis <-60.000000> NOW;
-	turn sleeve3 to y-axis <-120.000000> NOW;
-	turn sleeve4 to y-axis <-180.000000> NOW;
-	turn sleeve5 to y-axis <-240.000000> NOW;
-	turn sleeve6 to y-axis <-300.000000> NOW;
-	turn sleeve1 to x-axis <-30.000000> NOW;
-	turn sleeve2 to x-axis <-30.000000> NOW;
-	turn sleeve3 to x-axis <-30.000000> NOW;
-	turn sleeve4 to x-axis <-30.000000> NOW;
-	turn sleeve5 to x-axis <-30.000000> NOW;
-	turn sleeve6 to x-axis <-30.000000> NOW;
+	turn sleeve2 to y-axis <-60.000000> now;
+	turn sleeve3 to y-axis <-120.000000> now;
+	turn sleeve4 to y-axis <-180.000000> now;
+	turn sleeve5 to y-axis <-240.000000> now;
+	turn sleeve6 to y-axis <-300.000000> now;
+	turn sleeve1 to x-axis <-30.000000> now;
+	turn sleeve2 to x-axis <-30.000000> now;
+	turn sleeve3 to x-axis <-30.000000> now;
+	turn sleeve4 to x-axis <-30.000000> now;
+	turn sleeve5 to x-axis <-30.000000> now;
+	turn sleeve6 to x-axis <-30.000000> now;
 	
 	gun_1 = 0;
 	firedelay = 250;

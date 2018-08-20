@@ -213,9 +213,7 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
+		corpsetype = 3;
 		explode body type NOHEATCLOUD;
 		explode base type NOHEATCLOUD;
 		explode beam1 type NOHEATCLOUD;

@@ -3,9 +3,10 @@ return {
 		acceleration = 0.009,
 		airhoverfactor = 0,
 		airstrafe = false,
+		blocking = false,
 		brakerate = 0.04,
-		buildcostenergy = 1050000,
-		buildcostmetal = 305000,
+		buildcostenergy = 1250000,
+		buildcostmetal = 321000,
 		builder = false,
 		buildpic = "tllzeppelin.dds",
 		buildtime = 2150000,
@@ -51,6 +52,7 @@ return {
 		turnrate = 100,
 		unitname = "tllzeppelin",
 		customparams = {
+			buildpic = "tllzeppelin.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -204,7 +206,7 @@ return {
 				largebeamlaser = true,
 				minintensity = 1,
 				name = "Mini Ion Cannon",
-				range = 1800,
+				range = 1650,
 				reloadtime = 10,
 				rgbcolor = "0.2 0.2 1",
 				rgbcolor2 = "0.07 1 1",
@@ -228,8 +230,6 @@ return {
 				damage = {
 					commanders = 4000,
 					default = 40000,
-					experimental_land = 80000,
-					experimental_ships = 80000,
 					subs = 5,
 				},
 			},

@@ -1,6 +1,6 @@
 return {
 	corraid1 = {
-		acceleration = 0.0243,
+		acceleration = 0.0212,
 		brakerate = 0.076,
 		buildcostenergy = 3000,
 		buildcostmetal = 350,
@@ -51,7 +51,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.65,
-		turnrate = 429.79999,
+		turnrate = 421,
 		unitname = "corraid1",
 		customparams = {
 			buildpic = "corraid1.dds",

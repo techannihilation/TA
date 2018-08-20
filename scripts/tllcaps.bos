@@ -73,11 +73,11 @@ Create()
 	gun_2 = 0;
 	gun_3 = 0;
 	
-	turn turret3 to y-axis <-90.000000> NOW;
-	turn turret4 to y-axis <-90.000000> NOW;
-	turn turret5 to y-axis <90.000000> NOW;
-	turn turret6 to y-axis <90.000000> NOW;
-	turn turret8 to y-axis <180.000000> NOW;
+	turn turret3 to y-axis <-90.000000> now;
+	turn turret4 to y-axis <-90.000000> now;
+	turn turret5 to y-axis <90.000000> now;
+	turn turret6 to y-axis <90.000000> now;
+	turn turret8 to y-axis <180.000000> now;
 	
 	start-script SmokeUnit();
 }

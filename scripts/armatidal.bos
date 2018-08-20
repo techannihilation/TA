@@ -5,7 +5,7 @@
 
 piece  base, wheel;
 
-static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+static-var  tidal_Spd, statechg_DesiredState, statechg_StateChanging;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -37,6 +37,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
+	spin wheel around y-axis speed tidal_Spd * <1.000000>;
 }
 
 Stop()
@@ -81,7 +82,6 @@ Create()
 	dont-shade wheel;
 	call-script InitState();
 	start-script SmokeUnit();
-	Static_Var_1 = 800;
 }
 
 Activate()
@@ -94,14 +94,9 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-LuaSetSpeed(Func_Var_1)
+TidalSpeed(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
-	if( !get BUILD_PERCENT_LEFT )
-	{
-		spin wheel around y-axis speed Static_Var_1;
-		set ACTIVATION to 100;
-	}
+	tidal_Spd = Func_Var_1;
 }
 
 SweetSpot(piecenum)

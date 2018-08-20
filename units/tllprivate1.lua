@@ -46,7 +46,7 @@ return {
 		standingmoveorder = 2,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.881,
+		turninplacespeedlimit = 1.683,
 		turnrate = 1120,
 		unitname = "tllprivate1",
 		upright = true,

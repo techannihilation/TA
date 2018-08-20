@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 45,
 		maneuverleashlength = 640,
-		mass = 10900,
+		mass = 8950,
 		maxdamage = 14600,
 		maxvelocity = 1.7,
 		minwaterdepth = 20,
@@ -47,12 +47,13 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.155,
+		turninplacespeedlimit = 1.122,
 		turnrate = 75,
 		unitname = "corbsub",
 		upright = true,
 		waterline = 40,
 		customparams = {
+			buildpic = "corbsub.dds",
 			faction = "CORE",
 		},
 		featuredefs = {

@@ -20,7 +20,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 27,
+		losemitheight = 40,
 		mass = 363,
 		maxdamage = 920,
 		maxslope = 10,

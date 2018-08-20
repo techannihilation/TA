@@ -5,18 +5,7 @@
 
 piece  base, body, wheel, wake1, wake2, wake3, lights;
 
-static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
-
-
-LuaSetSpeed(Func_Var_1)
-{
-	Static_Var_2 = Func_Var_1;
-	if( !get BUILD_PERCENT_LEFT )
-	{
-		spin wheel around z-axis speed Static_Var_2;
-		set ACTIVATION to 100;
-	}
-}
+static-var  Active, tidal_Spd, statechg_DesiredState, statechg_StateChanging;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -47,27 +36,32 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 wakes()
 {
-	while( Static_Var_1 )
+	while( Active )
 	{
-		emit-sfx 2 from wake1;
-		emit-sfx 2 from wake2;
-		emit-sfx 2 from wake3;
+		emit-sfx 259 from wake1;
+		emit-sfx 259 from wake2;
+		emit-sfx 259 from wake3;
 		sleep 200;
 	}
 }
 
+TidalSpeed(Func_Var_1)
+{
+	tidal_Spd = Func_Var_1;
+}
+
 Go()
 {
-	Static_Var_1 = 1;
+	Active = 1;
 	dont-cache wheel;
 	dont-cache lights;
-	spin wheel around z-axis speed Static_Var_2;
+	spin wheel around z-axis speed tidal_Spd * <3.500000>;
 	start-script wakes();
 }
 
 Stop()
 {
-	Static_Var_1 = 0;
+	Active = 0;
 	spin wheel around z-axis speed <0.000000>;
 	cache wheel;
 	cache lights;
@@ -107,8 +101,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	Static_Var_1 = 1;
-	Static_Var_2 = 800;
+	Active = 1;
 	turn body to y-axis <45.000000> now;
 	dont-shade body;
 	dont-shade wheel;

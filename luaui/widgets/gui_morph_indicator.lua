@@ -256,7 +256,6 @@ function widget:GameFrame(frame)
       for i, unitIDs in pairs(sel) do
         local unitDefID = Spring.GetUnitDefID(unitIDs)
         if smallList[unitIDs] then
-          Spring.Echo(unitIDs)
           table.insert(morphableList,unitIDs)
         end
       end

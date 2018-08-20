@@ -30,7 +30,7 @@ return {
 		icontype = "corthovr",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 48,
+		losemitheight = 73,
 		maneuverleashlength = 640,
 		mass = 836.66669,
 		maxdamage = 5020,

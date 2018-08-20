@@ -2,10 +2,11 @@
 
 return {
   ["bigparticleboom"] = {
+    usedefaultexplosions = false,
     bluebigexplosion1 = {
       air                = true,
       class              = [[heatcloud]],
-      count              = 4,
+      count              = 2,
       ground             = true,
       properties = {
         alwaysvisible      = true,
@@ -22,7 +23,7 @@ return {
     explosionspikes1 = {
       air                = true,
       class              = [[explspike]],
-      count              = 4,
+      count              = 2,
       ground             = true,
       water              = true,
       properties = {
@@ -64,8 +65,8 @@ return {
         emitvector         = [[0, 1, 0]],
         gravity            = [[0, -0.005, 0]],
         numparticles       = 12,
-        particlelife       = 8,
-        particlelifespread = 18,
+        particlelife       = 6,
+        particlelifespread = 14,
         particlesize       = 7,
         particlesizespread = 30,
         particlespeed      = 5,
@@ -92,7 +93,7 @@ return {
         emitrotspread      = 32,
         emitvector         = [[0, 1, 0]],
         gravity            = [[0, -0.005, 0]],
-        numparticles       = 8,
+        numparticles       = 6,
         particlelife       = 5,
         particlelifespread = 8,
         particlesize       = 8,
@@ -109,7 +110,7 @@ return {
     pop1 = {
       air                = true,
       class              = [[heatcloud]],
-      count              = 4,
+      count              = 3,
       ground             = true,
       water              = true,
       properties = {
@@ -137,13 +138,12 @@ return {
         emitrotspread      = 10,
         emitvector         = [[0, 1, 0]],
         gravity            = [[0, 0, 0]],
-        numparticles       = 12,
-        particlelife       = 80,
-        particlelifespread = 30,
-        particlesize       = 15,
+        numparticles       = 3,
+        particlelife       = 15,
+        particlesize       = 70,
         particlesizespread = 60,
-        particlespeed      = 5,
-        particlespeedspread = 5,
+        particlespeed      = 7,
+        particlespeedspread = 6,
         pos                = [[r-1 r1, 1, r-1 r1]],
         sizegrowth         = 0.5,
         sizemod            = 1,
@@ -164,8 +164,8 @@ return {
         emitrotspread      = 32,
         emitvector         = [[0, 1, 0]],
         gravity            = [[0, -0.5, 0]],
-        numparticles       = 6,
-        particlelife       = 30,
+        numparticles       = 4,
+        particlelife       = 20,
         particlelifespread = 20,
         particlesize       = 15,
         particlesizespread = 8,

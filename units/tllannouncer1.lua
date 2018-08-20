@@ -1,7 +1,7 @@
 return {
 	tllannouncer1 = {
-		acceleration = 0.13,
-		brakerate = 0.36,
+		acceleration = 0.041,
+		brakerate = 0.05,
 		buildcostenergy = 1090,
 		buildcostmetal = 240,
 		builder = false,
@@ -13,6 +13,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL SMALL WEAPON SURFACE",
+		collisionvolumeoffsets = "0 -3 1",
+		collisionvolumescales = "29 29 47",
+		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Missile Truck",
@@ -44,9 +47,10 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.023,
-		turnrate = 625,
+		turnrate = 525,
 		unitname = "tllannouncer1",
 		customparams = {
+			buildpic = "tllannouncer.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

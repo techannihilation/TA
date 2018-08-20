@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		levelground = false,
-		losemitheight = 22,
+		losemitheight = 31,
 		mass = 745,
 		maxdamage = 2500,
 		maxslope = 36,

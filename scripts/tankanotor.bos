@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, turret, base, sleeve, barrel1, barrel2;
+piece  flare1, flare2, turret, base, sleeve, barrel1, barrel2, 
+		missile1, missile2, missile3, missile4;
 
 static-var  restore_delay, gun_1;
 
@@ -62,7 +63,7 @@ Create()
 {
 	hide flare1;
 	hide flare2;
-	gun_1 = flare1;
+	gun_1 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -83,8 +84,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <50.005495>;
-	turn sleeve to x-axis <0.000000> - pitch speed <25.005495>;
+	turn turret to y-axis heading speed <50.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <25.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay();
@@ -95,28 +96,44 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		show flare1;
-		move barrel1 to z-axis [-2.400000] speed [500.000000];
+		move missile2 to z-axis [-6.000000] speed [500.000000];
+		sleep 750;
+		move missile1 to z-axis [-6.000000] speed [500.000000];
+		sleep 2500;
+		move missile2 to z-axis [0.000000] speed [2.000000];
+		sleep 800;
+		move missile1 to z-axis [0.000000] speed [2.000000];
 		sleep 150;
-		hide flare1;
-		wait-for-move barrel1 along z-axis;
-		move barrel1 to z-axis [0.000000] speed [3.000000];
 	}
 	if( gun_1 == 1 )
 	{
-		show flare2;
-		move barrel2 to z-axis [-2.400000] speed [500.000000];
-		sleep 150;
-		hide flare2;
-		wait-for-move barrel2 along z-axis;
-		move barrel2 to z-axis [0.000000] speed [3.000000];
+		move missile4 to z-axis [-6.000000] speed [500.000000];
+		sleep 750;
+		move missile3 to z-axis [-6.000000] speed [500.000000];
+		sleep 2500;
+		move missile4 to z-axis [0.000000] speed [2.000000];
+		sleep 800;
+		move missile3 to z-axis [0.000000] speed [2.000000];
+		sleep 150;		
 	}
-	gun_1 = !gun_1;
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
+	
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
 }
 
 AimFromPrimary(piecenum)

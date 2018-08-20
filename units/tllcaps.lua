@@ -33,7 +33,7 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 84,
 		maneuverleashlength = 640,
-		mass = 45250,
+		mass = 64250,
 		maxdamage = 93000,
 		maxvelocity = 1.6,
 		minwaterdepth = 30,
@@ -59,6 +59,7 @@ return {
 		unitname = "tllcaps",
 		waterline = 6,
 		customparams = {
+			buildpic = "tllcaps.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

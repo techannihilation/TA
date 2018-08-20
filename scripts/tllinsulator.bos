@@ -20,15 +20,16 @@ lua_FlameShot(Func_Var_1)
 
 }
 
-RockUnit(anglex, anglez)
-{
-	turn base to x-axis anglex speed <50.000000>;
-	turn base to z-axis anglez speed <50.000000>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <20.000000>;
-	turn base to x-axis <0.000000> speed <20.000000>;
-}
+//*RockUnit(anglex, anglez)
+//{
+//	turn base to x-axis anglex speed <50.000000>;
+//	turn base to z-axis anglez speed <50.000000>;
+//	wait-for-turn base around z-axis;
+//	wait-for-turn base around x-axis;
+//	turn base to z-axis <0.000000> speed <20.000000>;
+//	turn base to x-axis <0.000000> speed <20.000000>;
+//}
+//
 
 HitByWeapon(anglex, anglez)
 {
@@ -123,7 +124,7 @@ Create()
 	bAiming1 = FALSE;
 	bAiming2 = FALSE;
 	restore_delay = 4000;
-	turn flame_turret1 to y-axis <180.000000> NOW;
+	turn flame_turret1 to y-axis <180.000000> now;
 	start-script SmokeUnit();
 }
 

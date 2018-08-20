@@ -196,15 +196,9 @@ Go()
 	Static_Var_2 = 1;
 	if( !Static_Var_3 )
 	{
-		turn luparm to z-axis <0.000000> now;
-		turn luparm to z-axis <-73.016484> speed <212.000000>;
-		turn lloarm to z-axis <0.000000> now;
-		turn lloarm to z-axis <90.016484> speed <260.000000>;
-		turn rloarm to z-axis <0.000000> now;
-		turn rloarm to z-axis <-90.016484> speed <260.000000>;
-		turn ruparm to z-axis <0.000000> now;
-		turn ruparm to z-axis <75.016484> speed <218.000000>;
-		sleep 450;
+		turn luparm to z-axis <70.000000> speed <212.000000>;
+		turn ruparm to z-axis <-70.000000> speed <212.000000>;
+		sleep 350;
 		Static_Var_3 = 1;
 	}
 }
@@ -214,15 +208,9 @@ Stop()
 	if( Static_Var_3 )
 	{
 		Static_Var_3 = 0;
-		turn luparm to z-axis <-73.478022> now;
-		turn luparm to z-axis <0.000000> speed <67.000000>;
-		turn lloarm to z-axis <90.016484> now;
-		turn lloarm to z-axis <0.000000> speed <82.000000>;
-		turn rloarm to z-axis <-90.016484> now;
-		turn rloarm to z-axis <0.000000> speed <82.000000>;
-		turn ruparm to z-axis <75.593407> now;
-		turn ruparm to z-axis <0.000000> speed <68.000000>;
-		sleep 1097;
+		turn luparm to z-axis <0.000000> speed <212.000000>;
+		turn ruparm to z-axis <0.000000> speed <212.000000>;
+		sleep 350;
 	}
 	Static_Var_2 = 0;
 }
@@ -331,7 +319,7 @@ Create()
 	bMoving = FALSE;
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
-	gun_3 = torso;
+	gun_3 = 0;
 	restore_delay = 3000;
 	Static_Var_6 = 1;
 	Static_Var_7 = 0;
@@ -362,8 +350,10 @@ SweetSpot(piecenum)
 
 RestoreAfterDelay()
 {
-	sleep restore_delay;
-	set-signal-mask 0;
+	sleep restore_delay/2;
+	start-script RequestState(1);
+	sleep restore_delay/2;
+	set-signal-mask 0;	
 	turn torso to y-axis <0.000000> speed <90.000000>;
 }
 
@@ -382,23 +372,37 @@ AimTertiary(heading, pitch)
 	return (1);
 }
 
-FireTertiary()
+Shot3()
 {
-	if( gun_3 )
+	if( gun_3 == 0 )
 	{
-		move lgun to z-axis [-0.600000] speed [10.000000];
-		wait-for-move lgun along z-axis;
-		emit-sfx 1024 from rexhaust;
+		move lgun to z-axis [-0.600000] now;
+		emit-sfx 1024 from lexhaust;
 		move lgun to z-axis [0.000000] speed [1.200000];
 	}
-	else
+	if( gun_3 == 1 )
 	{
-		move rgun to z-axis [-0.600000] speed [10.000000];
-		wait-for-move rgun along z-axis;
-		emit-sfx 1024 from lexhaust;
+		move rgun to z-axis [-0.600000] now;
+		emit-sfx 1024 from rexhaust;
 		move rgun to z-axis [0.000000] speed [1.200000];
 	}
-	gun_3 = !gun_3;
+}
+
+FireTertiary()
+{
+	if( gun_3 == 0 )
+	{
+		sleep 250;
+	}
+	if( gun_3 == 1 )
+	{
+		sleep 250;
+	}
+	++gun_3;
+	if( gun_3 == 2 )
+	{
+		gun_3 = 0;
+	}
 }
 
 AimFromTertiary(piecenum)
@@ -408,7 +412,14 @@ AimFromTertiary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	piecenum = 1 + gun_3;
+	if( gun_3 == 0 )
+	{
+		piecenum = lfirept;
+	}
+	if( gun_3 == 1 )
+	{
+		piecenum = rfirept;
+	}
 }
 
 Killed(severity, corpsetype)

@@ -65,6 +65,7 @@ local DAMAGE_PERIOD ,weaponInfo = VFS.Include('LuaRules/Configs/area_damage_defs
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 
 local OtaIconExist = {}
+local onlytarget = {}
 
 for i=1,#UnitDefs do
 	if VFS.FileExists(oldUnitpicsDir..UnitDefs[i].name..'.png') then
@@ -72,6 +73,12 @@ for i=1,#UnitDefs do
 		--Spring.Echo("Icon Path ",oldUnitpicsDir..UnitDefs[i].name..'.png')
 	end
 end
+
+local pos = nil
+local dummyUnitID = nil
+local dummyRange = {}
+local modConfig, colorConfig = include("Configs/defensive_range_defs.lua")
+local currentMod = string.upper(Game.modShortName or "")
 
 local pplants = {
 	["aafus"] = true,
@@ -150,7 +157,7 @@ local windMax = Game.windMax
 -- Speedups
 ------------------------------------------------------------------------------------
 
-local bgcorner				= "LuaUI/Images/bgcorner.png"
+local bgcorner = "LuaUI/Images/bgcorner.png"
 
 local white = '\255\255\255\255'
 local grey = '\255\190\190\190'
@@ -289,11 +296,17 @@ function RemoveGuishader()
 	end
 end
 
+local darkOpacity = 0
+function SetOpacity(dark,light)
+    darkOpacity = dark
+end
+
 ------------------------------------------------------------------------------------
 -- Code
 ------------------------------------------------------------------------------------
 
 function widget:Initialize()
+	widgetHandler:RegisterGlobal('SetOpacity_Unit_Stats', SetOpacity)
 	if not WG["background_opacity_custom"] then
         WG["background_opacity_custom"] = {0,0,0,0.5}
     end
@@ -301,6 +314,7 @@ function widget:Initialize()
 end
 
 function widget:Shutdown()
+	widgetHandler:DeregisterGlobal('SetOpacity_Unit_Stats', SetOpacity)
 	RemoveGuishader()
 end
 
@@ -327,7 +341,8 @@ end
 function widget:DrawScreen()
 	local alt, ctrl, meta, shift = spGetModKeyState()
 	if not meta then 
-		--WG.hoverID = nil 
+		--WG.hoverID = nil
+		dummyUnitID = nil
 		RemoveGuishader() 
 		return 
 	end
@@ -345,6 +360,7 @@ function widget:DrawScreen()
 	--end
 	local useHoverID = false
 	local morphID = false
+	dummyUnitID = nil
 	local _, activeID = Spring.GetActiveCommand()
 	local text = Spring.GetCurrentTooltip()
 	local expMorphPat = "UnitDefID (%d+)\n"
@@ -355,6 +371,8 @@ function widget:DrawScreen()
 			uID = nil
 			useHoverID = false
 			morphID = true
+			local expUnitPat = "UnitID (%d+)\n"
+			dummyUnitID = tonumber(text:match(expUnitPat)) or nil
 		elseif (not WG.hoverID) and not (activeID < 0) then
 			RemoveGuishader() return
 		elseif WG.hoverID and WG.hoverID < 0 and not (activeID < 0) then
@@ -927,7 +945,11 @@ function widget:DrawScreen()
 		local wepsCompact = {} -- uWepsCompact[1..n] = wepDefID
 		uWeps = uDef.weapons
 		local weaponNums = {}
+		local surface = nil
+		local air = nil
 		for i = 1, #uWeps do
+			surface = uWeps[i].onlyTargets["surface"]
+			air = uWeps[i].onlyTargets["vtol"]
 			local wDefID = uWeps[i].weaponDef
 			local wCount = wepCounts[wDefID]
 			if wCount then
@@ -998,7 +1020,8 @@ function widget:DrawScreen()
 				local reload = uWep.reload
 				local accuracy = uWep.accuracy
 				local moveError = uWep.targetMoveError
-				local range = uWep.range
+				local range = uWep.range or nil
+				dummyRange[i] = {range = range or false, defID = uDef.id ,name = uDef.name, index = i, surface = surface, air = air}
 				local infoText = ""
 				if wpnName == "Death explosion" or wpnName == "Self Destruct" then
 					infoText = format("%d aoe, %d%% edge", uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
@@ -1136,7 +1159,35 @@ function widget:DrawScreen()
 			guishaderEnabled = true
 			WG['guishader_api'].InsertRect(cX-bgpadding, cY+(fontSize/3)+bgpadding, cX+maxWidth+bgpadding, cYstart-bgpadding, 'unit_stats_data')
 		end
-
+	end
 end
-------------------------------------------------------------------------------------
+
+function widget:DrawWorld()
+    if dummyUnitID then
+    	for i, keys in pairs(dummyRange) do
+    		local color = {1, 0, 0, darkOpacity}
+    		--Spring.Echo(currentMod,keys.name,keys.defID,keys.index,keys.surface,keys.air)
+    		if modConfig[currentMod]["unitList"][keys.name] then 
+    			local weapontype = modConfig[currentMod]["unitList"][keys.name]["weapons"][keys.index]
+				if ( weapontype == 1 or weapontype == 4 ) then	 -- show combo units with ground-dps-colors
+					color = colorConfig["ally"]["ground"]["min"]
+				elseif ( weapontype == 2 ) then
+					color = colorConfig["ally"]["air"]["min"]
+				elseif ( weapontype == 3 ) then -- antinuke
+					color = colorConfig["ally"]["nuke"]
+				end
+			else
+				if keys.surface then
+					color = colorConfig["ally"]["ground"]["min"]
+				elseif keys.air then
+					color = colorConfig["ally"]["air"]["min"]
+				end
+			end
+    		gl.Color(color[1], color[2], color[3], darkOpacity)
+        	gl.LineWidth(1.2)
+        	x, y, z = Spring.GetUnitBasePosition(dummyUnitID)
+        	gl.DrawGroundCircle(x, y, z, keys.range, 64)
+       		gl.Color(1,1,1,1)
+    	end
+    end
 end

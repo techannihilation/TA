@@ -48,11 +48,12 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
+		turninplacespeedlimit = 0.495,
 		turnrate = 190,
 		unitname = "corhaboob",
 		upright = false,
 		customparams = {
+			buildpic = "core_riptide.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -86,6 +87,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:mediumflare_front_only",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -126,7 +130,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 2000,
-				explosiongenerator = "custom:FLASH96",
+				explosiongenerator = "custom:flash140_fakelight",
 				gravityaffected = "TRUE",
 				impulseboost = 0,
 				impulsefactor = 0,

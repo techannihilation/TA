@@ -108,6 +108,7 @@ return {
 				accuracy = 400,
 				areaofeffect = 224,
 				avoidfeature = false,
+				avoidfriendly = false,
 				avoidground = false,
 				cegtag = "Trail_cannon_large",
 				collidefriendly = false,

@@ -24,7 +24,7 @@ return {
 		healtime = 8,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 25,
+		losemitheight = 35,
 		maneuverleashlength = 640,
 		mass = 290,
 		maxdamage = 700,

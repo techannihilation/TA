@@ -20,7 +20,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 80,
+		losemitheight = 75,
 		maneuverleashlength = 640,
 		mass = 45680,
 		maxdamage = 105200,
@@ -79,7 +79,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:mediumflare",
+				[1] = "custom:mediumflare_front_only",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -128,7 +128,7 @@ return {
 				nogap = 1,
 				proximitypriority = -3,
 				range = 1800,
-				reloadtime = 0.75,
+				reloadtime = 1,
 				rgbcolor = "0.81 0.54 0",
 				separation = 0.45,
 				size = 2.25,
@@ -141,10 +141,10 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 630,
 				damage = {
-					commanders = 1200,
-					default = 3600,
-					experimental_ships = 4200,
-					ships = 4200,
+					commanders = 1600,
+					default = 4800,
+					experimental_ships = 5600,
+					ships = 5600,
 					subs = 5,
 				},
 			},

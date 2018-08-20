@@ -59,7 +59,7 @@ return {
 		stealth = false,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.1352,
+		turninplacespeedlimit = 1.254,
 		turnrate = 1016,
 		unitname = "tllgizmo",
 		upright = true,

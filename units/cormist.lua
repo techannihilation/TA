@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		leavetracks = true,
-		losemitheight = 22,
+		losemitheight = 27,
 		maneuverleashlength = 640,
 		mass = 186.66667,
 		maxdamage = 1120,

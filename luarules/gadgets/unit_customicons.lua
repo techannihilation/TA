@@ -163,7 +163,7 @@ function gadget:Initialize()
       elseif (ud.name=="armorco") or (ud.name=="gorg") or (ud.name=="cordem") then
         Spring.SetUnitDefIcon(udid, "med_mech.user")
 --t4 mechs
-      elseif (ud.name=="corkarg1") or (ud.name=="corgala") or (ud.name=="armraz1") or (ud.name=="armraptor") or (ud.name=="armbanth1") then
+      elseif (ud.name=="corkarg1") or (ud.name=="corgala") or (ud.name=="armraz1") or (ud.name=="armraptor") or (ud.name=="armbanth1") or (ud.name=="tllcolossus") then
         Spring.SetUnitDefIcon(udid, "mech.user")
 --RC
       elseif (ud.name=="armrech1") or (ud.name=="armrech2") or (ud.name=="armrech3")
@@ -173,14 +173,14 @@ function gadget:Initialize()
       elseif (ud.name=="correch4") or (ud.name=="armrech4") then
         Spring.SetUnitDefIcon(udid, "rc1.user")
 --broadside etc
-      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllvaliant") then
+      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllvaliant") or (ud.name=="tllzeppelin") then
         Spring.SetUnitDefIcon(udid, "t4ships.user")
 --battleships
       elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") then 
         Spring.SetUnitDefIcon(udid, "bships.user")
 --uber ships
 	 elseif (ud.name=="corblackhy") or (ud.name=="cortyrnt") or (ud.name=="aseadragon")
-      or (ud.name=="armtrmph") or (ud.name=="armbc") then
+      or (ud.name=="armtrmph") or (ud.name=="armbc") or (ud.name=="tllcaps") then
         Spring.SetUnitDefIcon(udid, "bsships.user")
       elseif (ud.isFactory) then
 -- factories

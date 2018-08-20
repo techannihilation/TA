@@ -32,7 +32,7 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 41.5,
+		losemitheight = 75.5,
 		mass = 295000,
 		maxdamage = 1000000,
 		maxslope = 10,

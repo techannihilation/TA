@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		losemitheight = 45,
+		losemitheight = 67,
 		mass = 5000,
 		maxdamage = 5225,
 		maxslope = 10,

@@ -54,7 +54,7 @@ Create()
 {
 	hide flare;
 	hide obus;
-	turn sleeves to x-axis <-50> NOW;
+	turn sleeves to x-axis <-50> now;
 	dont-cache turret;
 	dont-cache sleeves;
 	dont-cache culasse;

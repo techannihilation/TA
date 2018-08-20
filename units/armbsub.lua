@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 45,
 		maneuverleashlength = 640,
-		mass = 10900,
+		mass = 13200,
 		maxdamage = 21200,
 		maxvelocity = 1.5,
 		minwaterdepth = 20,
@@ -47,12 +47,13 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.155,
+		turninplacespeedlimit = 0.99,
 		turnrate = 75,
 		unitname = "armbsub",
 		upright = true,
 		waterline = 40,
 		customparams = {
+			buildpic = "armbsub.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

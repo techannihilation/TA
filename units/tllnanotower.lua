@@ -68,6 +68,7 @@ return {
 			[8] = "tlldmc",
 		},
 		customparams = {
+			buildpic = "tllnanotower.dds",
 			faction = "tll",
 		},
 		featuredefs = {

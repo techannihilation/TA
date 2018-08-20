@@ -36,12 +36,22 @@ local dgunInfo = {}
 local hasSelection = false
 local aoeUnitDefID
 local dgunUnitDefID
+local notdgunUnitDefID 
 local aoeUnitID
 local dgunUnitID
 local circleList
 local secondPart = 0
 local mouseDistance = 1000
 
+local notdgun = {
+    [UnitDefNames["uppercut"].id] = true,
+    [UnitDefNames["armmarlin"].id] = true,
+    [UnitDefNames["armhcar"].id] = true,
+    [UnitDefNames["corhcar"].id] = true,
+    [UnitDefNames["tllswordfish"].id] = true,
+    [UnitDefNames["corarbritator"].id] = true,
+    [UnitDefNames["tlldischarge"].id] = true,
+}
 --------------------------------------------------------------------------------
 --speedups
 --------------------------------------------------------------------------------
@@ -267,12 +277,19 @@ local function UpdateSelection()
     
   local maxCost = 0
   dgunUnitDefID = nil
+  notdgunUnitDefID = nil
   aoeUnitDefID = nil
   dgunUnitID = nil
   aoeUnitID = nil
   hasSelection = false
   
   for unitDefID, unitIDs in pairs(sel) do
+  	if (notdgun[unitDefID]) then 
+      notdgunUnitDefID = unitDefID
+      --dgunUnitID = unitIDs[1]
+      hasSelection = true
+  	end
+
     if (dgunInfo[unitDefID]) then 
       dgunUnitDefID = unitDefID
       dgunUnitID = unitIDs[1]
@@ -616,9 +633,13 @@ function widget:DrawWorld()
     return
   end
   
-  if (cmd ~= CMD_ATTACK or not aoeUnitDefID) then 
+  if (cmd == CMD_ATTACK and notdgunUnitDefID) or (cmd ~= CMD_ATTACK or not aoeUnitDefID) and not (cmd == CMD_MANUALFIRE and notdgunUnitDefID) then 
     UpdateSelection()
     return 
+  end
+
+  if overrideselectionID then
+    aoeUnitDefID = overrideselectionID
   end
   
   mouseDistance = GetMouseDistance() or 1000

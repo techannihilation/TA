@@ -134,7 +134,8 @@ corsfusBursts = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
-  priority  = 3,
+  disableabovelevel = 3,
+  priority   = 3,
   count      = 2,
 }
 exoarmBursts = {
@@ -152,6 +153,7 @@ exoarmBursts = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 4,
 }
@@ -171,6 +173,7 @@ armsmcBursts = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 2,
 }
@@ -190,6 +193,7 @@ armpraetBursts = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 2,
 }
@@ -209,6 +213,7 @@ monkeylordBursts = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 2,
 }
@@ -228,6 +233,7 @@ corcrabBursts = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 2,
 }
@@ -247,6 +253,7 @@ irritatorBursts = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 2,
 }
@@ -266,6 +273,7 @@ shieldBursts100 = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 1,
 }
@@ -285,6 +293,7 @@ shieldBursts150 = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 2,
 }
@@ -304,6 +313,7 @@ shieldBursts200 = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 3,
 }
@@ -323,6 +333,7 @@ shieldBursts250 = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 4,
 }
@@ -342,6 +353,7 @@ shieldBursts340 = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 8,
 }
@@ -361,6 +373,7 @@ shieldBursts400 = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 8,
 }
@@ -380,6 +393,7 @@ shieldBursts1000 = {
   directional= true,
   repeatEffect = true,
   noIconDraw = true,
+  disableabovelevel = 3,
   priority   = 3,
   count      = 10,
 }

@@ -108,6 +108,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	hide exhaust;
 	gun_1 = flare1;
 	call-script InitState();
 	start-script SmokeUnit();

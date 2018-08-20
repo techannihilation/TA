@@ -40,6 +40,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			buildpic = "tllmetalmakerlvl2.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

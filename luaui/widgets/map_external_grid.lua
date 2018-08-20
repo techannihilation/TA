@@ -326,6 +326,9 @@ function widget:Initialize()
 	Spring.SendCommands("luaui disablewidget Map Edge Extension")
 	island = IsIsland()
 	InitGroundHeights()
+	if DspLst then
+		gl.DeleteList(DspLst)
+	end
 	DspLst = glCreateList(DrawTiles)
 end
 

@@ -29,7 +29,7 @@ return {
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 2.5,
+		losemitheight = 4,
 		maneuverleashlength = 1280,
 		mass = 160,
 		maxdamage = 600,

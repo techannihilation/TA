@@ -41,7 +41,7 @@ function gadget:RecvLuaMsg(msg, playerID)
     end
     if msg=='\144' then
         -- do the same eligibility check as in unsynced
-        local customtable = select(10,Spring.GetPlayerInfo(playerID))
+        local customtable = select(11,Spring.GetPlayerInfo(playerID))
         local tsMu = customtable.skill 
         local tsSigma = customtable.skilluncertainty
         ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))
@@ -104,7 +104,7 @@ function FindSubs(real)
         local noStartPoint = (readyState==3) or (readyState==0)
         local present = active and (not spec) and (not noStartPoint)
         if not present then
-            local customtable = select(10,Spring.GetPlayerInfo(playerID)) -- player custom table
+            local customtable = select(11,Spring.GetPlayerInfo(playerID)) -- player custom table
             local tsMu = customtable.skill
             ts = tsMu and tonumber(tsMu:match("%d+%.?%d*")) 
             if ts then
@@ -293,7 +293,7 @@ function gadget:Initialize()
     gadgetHandler:AddSyncAction("ForceSpec", ForceSpec)
     
     -- match the equivalent check in synced
-    local customtable = select(10,Spring.GetPlayerInfo(myPlayerID)) 
+    local customtable = select(11,Spring.GetPlayerInfo(myPlayerID)) 
     local tsMu = "30"--customtable.skill 
 	local tsSigma = "0"--customtable.skilluncertainty
     ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))

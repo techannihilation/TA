@@ -4,9 +4,9 @@
 #include "exptype.h"
 
 piece  flare1, flare6, flare5, flare4, flare3, flare2, base, turret,
-       barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, sleeve;
+       barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, barrel7, barrel8, flare7, flare8, sleeve;
 
-static-var  Static_Var_1, gun_1, Static_Var_3, bAiming;
+static-var  Static_Var_1, gun_1, Static_Var_3;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -47,6 +47,8 @@ Create()
 	dont-shade barrel4;
 	dont-shade barrel5;
 	dont-shade barrel6;
+	dont-shade barrel7;
+	dont-shade barrel8;
 	dont-shade base;
 	dont-shade turret;
 	dont-shade sleeve;
@@ -57,6 +59,8 @@ Create()
 	dont-cache barrel4;
 	dont-cache barrel5;
 	dont-cache barrel6;
+	dont-cache barrel7;
+	dont-cache barrel8;
 	dont-cache sleeve;
 	dont-cache flare1;
 	dont-cache flare2;
@@ -64,40 +68,34 @@ Create()
 	dont-cache flare4;
 	dont-cache flare5;
 	dont-cache flare6;
+	dont-cache flare7;
+	dont-cache flare8;
 	hide flare1;
 	hide flare2;
 	hide flare3;
 	hide flare4;
 	hide flare5;
 	hide flare6;
-	gun_1 = flare1;
-	Static_Var_3 = 1;
+	hide flare7;
+	hide flare8;
+	gun_1 = 0;
 	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
-	sleep Static_Var_1;
-	turn sleeve to x-axis <0.000000> speed <200.038462>;
-	wait-for-turn sleeve around x-axis;
+	sleep 1000;
 }
 
 AimPrimary(heading, pitch)
 {
-	if( Static_Var_3 == 1 )
-	{
-		bAiming = Rand( 1, 500 );
-		sleep bAiming;
-		Static_Var_3 = 0;
-		set CHANGE_TARGET to 1;
-		return (0);
-	}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn turret to y-axis heading speed <250.000000>;
 	turn sleeve to x-axis <0.000000> - pitch speed <200.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -151,17 +149,63 @@ FirePrimary()
 		hide flare6;
 		move barrel6 to z-axis [0.000000] speed [5.000000];
 	}
-	++gun_1;
 	if( gun_1 == 6 )
 	{
-		gun_1 = flare1;
-		Static_Var_3 = 1;
+		move barrel7 to z-axis [-6.000000] now;
+		show flare7;
+		sleep 50;
+		hide flare7;
+		move barrel7 to z-axis [0.000000] speed [5.000000];
+	}
+	if( gun_1 == 7 )
+	{
+		move barrel8 to z-axis [-6.000000] now;
+		show flare8;
+		sleep 50;
+		hide flare8;
+		move barrel8 to z-axis [0.000000] speed [5.000000];
+	}
+	++gun_1;
+	if( gun_1 == 8 )
+	{
+		gun_1 = 0;
 	}
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare6;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = flare7;
+	}
+	if( gun_1 == 7 )
+	{
+		piecenum = flare8;
+	}
 }
 
 AimFromPrimary(piecenum)

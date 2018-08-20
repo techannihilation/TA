@@ -203,6 +203,7 @@ function widget:Update(dt)
 	if passedTime > 1 then
 		updateValues()
 		passedTime = passedTime - 1
+		updatePosition()
 	end
 end
 
@@ -233,7 +234,6 @@ function widget:ViewResize(newX,newY)
 end
 
 function widget:DrawScreen()
-	updatePosition()
 	if drawlist[1] ~= nil then
 		glPushMatrix()
 			gl.Color(WG["background_opacity_custom"])

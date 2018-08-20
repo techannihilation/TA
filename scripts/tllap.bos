@@ -84,7 +84,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 activatescr()
 {
-	set ARMORED to 0;
 	if( TRUE )
 	{
 		move door1b to z-axis [5.000000] speed [3.500000];
@@ -145,7 +144,6 @@ deactivatescr()
 		move plate to y-axis [0.000000] speed [10.000000];
 	}
 	sleep 26;
-	set ARMORED to 1;
 }
 
 OpenYard()
@@ -176,12 +174,14 @@ Go()
 {
 	call-script activatescr();
 	call-script OpenYard();
+	set ARMORED to 0;
 	set INBUILDSTANCE to 1;
 }
 
 Stop()
 {
 	set INBUILDSTANCE to 0;
+	set ARMORED to 1;
 	call-script CloseYard();
 	call-script deactivatescr();
 }
@@ -232,6 +232,7 @@ Create()
 	turn door3a to y-axis <-107.000000> now;
 	spray = base;
 	unitviewer = FALSE;
+	set ARMORED to 1;
 	call-script InitState();
 	start-script SmokeUnit();
 }

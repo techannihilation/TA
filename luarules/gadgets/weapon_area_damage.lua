@@ -55,7 +55,7 @@ function gadget:Explosion(weaponID, px, py, pz, ownerID)
 			teamScale=weaponInfo[weaponID].teamScale or 1.0,
 			scoutDmg=weaponInfo[weaponID].scoutDmg or 1.0
 		}
-		table.insert(explosionList,w)
+		explosionList[#explosionList+1] = w
 	end
 	return false
 end

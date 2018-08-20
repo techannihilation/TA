@@ -23,7 +23,7 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 264,
+		losemitheight = 243,
 		mass = 102550,
 		maxdamage = 68000,
 		maxslope = 10,
@@ -33,7 +33,7 @@ return {
 		nochasecategory = "ALL",
 		objectname = "tllshipyardlvl3",
 		radardistance = 1200,
-		radaremitheight = 264,
+		radaremitheight = 243,
 		selfdestructas = "SHIPBLAST",
 		shownanospray = false,
 		sightdistance = 220,
@@ -41,7 +41,8 @@ return {
 		workertime = 240,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
-			[1] = "tllzeppelin",
+			[1] = "tllbarbarus",
+			[2] = "tllzeppelin",
 		},
 		customparams = {
 			buildpic = "tllshipyardlvl3.dds",

@@ -1,6 +1,6 @@
 return {
 	armstump1 = {
-		acceleration = 0.03,
+		acceleration = 0.0235,
 		brakerate = 0.09,
 		buildcostenergy = 2750,
 		buildcostmetal = 365,
@@ -52,7 +52,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.716,
-		turnrate = 454,
+		turnrate = 437,
 		unitname = "armstump1",
 		customparams = {
 			buildpic = "armstump1.dds",

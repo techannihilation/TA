@@ -30,7 +30,7 @@ return {
 		icontype = "gunship",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 5,
+		losemitheight = 9,
 		maneuverleashlength = 1280,
 		mass = 465,
 		maxdamage = 1275,
@@ -59,7 +59,7 @@ return {
 		usesmoothmesh = 0,
 		customparams = {
 			buildpic = "ARMARPE.dds",
-			faction = "ARM",
+			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {

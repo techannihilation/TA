@@ -67,9 +67,14 @@ function GiveCat(words)
     end
 
     local arrayWidth = math.ceil(math.sqrt(#giveUnits))
-    local spacing = 100
+    local spacing = 0
     local n = 0
     local x,z = ox,oz
+    for _,uDID in ipairs(giveUnits) do
+    	local size = UnitDefs[uDID].xsize
+    	spacing = spacing + size
+	end
+	spacing = (spacing/#giveUnits)*15
     for _,uDID in ipairs(giveUnits) do
         local y = Spring.GetGroundHeight(x,z)
         Spring.CreateUnit(uDID, x,y,z, "n", teamID)    
@@ -219,6 +224,20 @@ function GiveCat(_,line)
 
 	techLevels['t4'] = t4Units
     techSuffix['t4'] = 't4'
+
+    local t5Units = {}
+ 	
+ 	for _,uDID in ipairs(UnitDefNames["ashipyardlvl3"].buildOptions) do
+        t5Units[uDID] = true
+    end
+	for _,uDID in ipairs(UnitDefNames["cshipyardlvl4"].buildOptions) do
+        t5Units[uDID] = true
+    end
+    for _,uDID in ipairs(UnitDefNames["tllshipyardlvl3"].buildOptions) do
+        t5Units[uDID] = true
+    end
+	techLevels['t5'] = t5Units
+    techSuffix['t5'] = 't5'
 
     local Accept = {} -- table of conditions that must be satisfied for the unitDef to be given
     

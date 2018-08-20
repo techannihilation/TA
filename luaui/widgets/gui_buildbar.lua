@@ -23,6 +23,7 @@ BlueStr    = "\255\170\170\255"
 YellowStr  = "\255\255\255\152"
 OrangeStr  = "\255\255\190\128"
 
+
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 --
@@ -170,7 +171,6 @@ local glColor     = gl.Color
 local glTexture   = gl.Texture
 local glTexRect   = gl.TexRect
 local glLineWidth = gl.LineWidth
-local push        = table.insert
 local tan         = math.tan
 
 
@@ -194,6 +194,13 @@ function widget:Initialize()
   if Spring.GetGameFrame() > 0 and Spring.GetSpectatingState() then
 	widgetHandler:RemoveWidget(self)
   end
+end
+
+function widget:Shutdown()
+  for i=1, #dlists do
+    gl.DeleteList(dlists[i])
+  end
+  dlists = {}
 end
 
 function widget:GetConfigData()
@@ -325,32 +332,33 @@ local function DrawBuildProgress(left,top,right,bottom, progress, color)
   local alpha_rad = math.rad(alpha)
   local beta_rad  = math.pi/2 - alpha_rad
   local list = {}
-  push(list, {v = { xcen,  ycen }})
-  push(list, {v = { xcen,  top }})
+
+  list[#list+1] = {v = { xcen,  ycen }}
+  list[#list+1] = {v = { xcen,  top }}
 
   local x,y
   x = (top-ycen)*tan(alpha_rad) + xcen
   if (alpha<90)and(x<right) then
-    push(list, {v = { x,  top }})   
+    list[#list+1] = {v = { x,  top }}
   else
-    push(list, {v = { right,  top }})
+    list[#list+1] = {v = { right,  top }}
     y = (right-xcen)*tan(beta_rad) + ycen
     if (alpha<180)and(y>bottom) then
-      push(list, {v = { right,  y }})
+      list[#list+1] = {v = { right,  y }}
     else
-      push(list, {v = { right,  bottom }})
+      list[#list+1] = {v = { right,  bottom }}
       x = (top-ycen)*tan(-alpha_rad) + xcen
       if (alpha<270)and(x>left) then
-        push(list, {v = { x,  bottom }})
+        list[#list+1] = {v = { x,  bottom }}
       else
-        push(list, {v = { left,  bottom }})
+        list[#list+1] = {v = { left,  bottom }}
         y = (right-xcen)*tan(-beta_rad) + ycen
         if (alpha<350)and(y<top) then
-          push(list, {v = { left,  y }})
+          list[#list+1] = {v = { left,  y }}
         else
-          push(list, {v = { left,  top }})
+          list[#list+1] = {v = { left,  top }}
           x = (top-ycen)*tan(alpha_rad) + xcen
-          push(list, {v = { x,  top }})
+          list[#list+1] = {v = { x,  top }}
         end
       end
     end
@@ -444,19 +452,47 @@ local function DrawButton(rect, unitDefID, options, iconResize, isFac)
 end
 
 
--------------------------------------------------------------------------------
--- DRAWSCREEN
--------------------------------------------------------------------------------
+local dlists = {}
+local sec = 0
+function widget:Update(dt)
 
-function widget:DrawScreen()
-  
-  SetupDimensions(#facs)
-  SetupSubDimensions()
+  if myTeamID~=Spring.GetMyTeamID() then
+    myTeamID = Spring.GetMyTeamID()
+    UpdateFactoryList()
+  end
+  inTweak = widgetHandler:InTweakMode()
+
 
   local icon,mx,my,lb,mb,rb = -1,-1,-1,false,false,false
   if (not inTweak) then
     mx,my,lb,mb,rb = GetMouseState()
   end
+
+  sec = sec + dt
+  local doupdate = false
+  if sec > 0.5 then
+    doupdate = true
+  end
+  if factoriesArea ~= nil then
+    if IsInRect(mx,my, {factoriesArea[1],factoriesArea[2],factoriesArea[3],factoriesArea[4]}) then
+      doupdate = true
+      factoriesAreaHovered = true
+    elseif factoriesAreaHovered then
+      factoriesAreaHovered = nil
+      doupdate = true
+    end
+  end
+  if doupdate then
+    sec = 0
+    SetupDimensions(#facs)
+    SetupSubDimensions()
+    for i=1, #dlists do
+      gl.DeleteList(dlists[i])
+    end
+    dlists = {}
+    factoriesArea = nil
+
+
 
   -- draw factory list
   local fac_rec = RectWH(facRect[1],facRect[2], iconSizeX, iconSizeY)
@@ -501,7 +537,42 @@ function widget:DrawScreen()
       options.waypoint = (waypointMode>1)and(i==waypointFac+1)
       options.selected = (i==openedMenu+1)
     -----------------------------------------------------------------------------------------
-    DrawButton(fac_rec,unitDefID,options, iconResize, true)
+          --DrawButton(fac_rec,unitDefID,options, iconResize, true)
+
+      dlists[#dlists+1] = gl.CreateList(DrawButton,fac_rec,unitDefID,options, iconResize, true)
+      if factoriesArea == nil then
+        factoriesArea = {fac_rec[1],fac_rec[2],fac_rec[3],fac_rec[4]}
+      else
+        factoriesArea[4] = fac_rec[4]
+      end
+
+      -- setup next icon pos
+      OffsetRect(fac_rec, fac_inext[1],fac_inext[2])
+    end
+  end
+end
+
+-------------------------------------------------------------------------------
+-- DRAWSCREEN
+-------------------------------------------------------------------------------
+
+function widget:DrawScreen()
+
+  local icon,mx,my,lb,mb,rb = -1,-1,-1,false,false,false
+  if (not inTweak) then
+    mx,my,lb,mb,rb = GetMouseState()
+  end
+
+  for i=1, #dlists do
+    gl.CallList(dlists[i])
+  end
+
+  -- draw factory list
+  if  (factoriesArea ~= nil and IsInRect(mx,my, {factoriesArea[1],factoriesArea[2],factoriesArea[3],factoriesArea[4]})) or
+      (buildoptionsArea ~= nil and IsInRect(mx,my, {buildoptionsArea[1],buildoptionsArea[2],buildoptionsArea[3],buildoptionsArea[4]})) then
+    local fac_rec = RectWH(facRect[1],facRect[2], iconSizeX, iconSizeY)
+    buildoptionsArea = nil
+    for i,facInfo in ipairs(facs) do
 
     -- draw build list
     if i==openedMenu+1 then
@@ -536,7 +607,11 @@ function widget:DrawScreen()
           options.alpha = 0.85
         -----------------------------------------------------------------------------------------
         DrawButton(bopt_rec,unitDefID,options, true)
-
+        if buildoptionsArea == nil then
+          buildoptionsArea = {bopt_rec[1],bopt_rec[2],bopt_rec[3],bopt_rec[4]}
+        else
+          buildoptionsArea[1] = bopt_rec[1]
+        end
         -- setup next icon pos
         OffsetRect(bopt_rec, bopt_inext[1],bopt_inext[2])
 
@@ -578,7 +653,9 @@ function widget:DrawScreen()
     -- setup next icon pos
     OffsetRect(fac_rec, fac_inext[1],fac_inext[2])
   end
-
+  else
+    buildoptionsArea = nil
+  end
   -- draw border around factory list
   --if (#facs>0) then DrawLineRect(facRect, { 0, 0, 0, 1 },borderSize+2) end
 end
@@ -738,6 +815,7 @@ end
 -------------------------------------------------------------------------------
 function UpdateFactoryList()
   facs = {}
+  local count = 0
 
   local teamUnits = Spring.GetTeamUnits(myTeamID)
   local totalUnits = #teamUnits
@@ -746,7 +824,8 @@ function UpdateFactoryList()
     local unitID = teamUnits[num]
     local unitDefID = GetUnitDefID(unitID)
     if UnitDefs[unitDefID].isFactory then
-      push(facs,{ unitID=unitID, unitDefID=unitDefID, buildList=UnitDefs[unitDefID].buildOptions })
+      count = count + 1
+      facs[count] = { unitID=unitID, unitDefID=unitDefID, buildList=UnitDefs[unitDefID].buildOptions }
       local _, _, _, _, buildProgress = GetUnitHealth(unitID)
       if (buildProgress)and(buildProgress<1) then
         unfinished_facs[unitID] = true
@@ -764,7 +843,7 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
   end
 
   if UnitDefs[unitDefID].isFactory and #UnitDefs[unitDefID].buildOptions>0 then
-    push(facs,{ unitID=unitID, unitDefID=unitDefID, buildList=UnitDefs[unitDefID].buildOptions })
+    facs[#facs+1] = { unitID=unitID, unitDefID=unitDefID, buildList=UnitDefs[unitDefID].buildOptions }
   end
   unfinished_facs[unitID] = true
 end
@@ -797,15 +876,6 @@ end
 
 function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
   widget:UnitDestroyed(unitID, unitDefID, unitTeam)
-end
-
-function widget:Update()
-  
-  if myTeamID~=Spring.GetMyTeamID() then
-    myTeamID = Spring.GetMyTeamID()
-    UpdateFactoryList()
-  end
-  inTweak = widgetHandler:InTweakMode()
 end
 
 function widget:PlayerChanged()
@@ -929,16 +999,17 @@ end
 function BuildHandler(button)
   local alt, ctrl, meta, shift = Spring.GetModKeyState()
   local opt = {}
-  if alt   then push(opt,"alt")   end
-  if ctrl  then push(opt,"ctrl")  end
-  if meta  then push(opt,"meta")  end
-  if shift then push(opt,"shift") end
+  if alt   then opt[#opt+1]="alt"   end
+  if ctrl  then opt[#opt+1]="ctrl"  end
+  if meta  then opt[#opt+1]="meta"  end
+  if shift then opt[#opt+1]="shift" end
+
 
   if button==1 then
     Spring.GiveOrderToUnit(facs[openedMenu+1].unitID, -(facs[openedMenu+1].buildList[pressedBOpt+1]),{},opt)
     Spring.PlaySoundFile(sound_queue_add, 0.75, 'ui')
   elseif button==3 then
-    push(opt,"right")
+    opt[#opt+1]="right"
     Spring.GiveOrderToUnit(facs[openedMenu+1].unitID, -(facs[openedMenu+1].buildList[pressedBOpt+1]),{},opt)
     Spring.PlaySoundFile(sound_queue_rem, 0.75, 'ui')
   end
@@ -958,10 +1029,11 @@ function WaypointHandler(x,y,button)
 
   local alt, ctrl, meta, shift = Spring.GetModKeyState()
   local opt = {"right"}
-  if alt   then push(opt,"alt")   end
-  if ctrl  then push(opt,"ctrl")  end
-  if meta  then push(opt,"meta")  end
-  if shift then push(opt,"shift") end
+  if alt   then opt[#opt+1]="alt"   end
+  if ctrl  then opt[#opt+1]="ctrl"  end
+  if meta  then opt[#opt+1]="meta"  end
+  if shift then opt[#opt+1]="shift" end
+
 
   local type,param = Spring.TraceScreenRay(x,y)
   if type=='ground' then

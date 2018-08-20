@@ -29,7 +29,7 @@ return {
 		icontype = "bigstar",
 		idleautoheal = 2,
 		idletime = 2200,
-		losemitheight = 260,
+		losemitheight = 162,
 		mass = 1140000,
 		maxdamage = 125000,
 		maxslope = 16,

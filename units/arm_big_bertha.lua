@@ -120,6 +120,7 @@ return {
 				alphadecay = 0.01,
 				areaofeffect = 360,
 				avoidfeature = false,
+				avoidfriendly = false,
 				cegtag = "vulcanfx1",
 				craterareaofeffect = 540,
 				craterboost = 0,

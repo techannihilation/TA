@@ -23,6 +23,7 @@ iswater, WTimeUnits, Nanos, cons, turninplacebots, pplants, unitheight = VFS.Inc
 
 SaveDefsToCustomParams = false
 FixUnitStats = false
+RandomCosts = false
 -------------------------
 -- DEFS POST PROCESSING
 -------------------------
@@ -55,7 +56,7 @@ function UnitDef_Post(name, uDef)
 		end
 
 		--Randomize Cost
-		if uDef.buildcostmetal then
+		if uDef.buildcostmetal and RandomCosts then
 			if string.match(uDef.buildcostmetal,"[0]$") and uDef.buildcostmetal>99 then
 				buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.01)
 				if buildcostmetal == uDef.buildcostmetal then
@@ -65,7 +66,7 @@ function UnitDef_Post(name, uDef)
 			end
 		end
 
-		if uDef.buildcostenergy then
+		if uDef.buildcostenergy and RandomCosts then
 			if string.match(uDef.buildcostenergy,"[0]$") and uDef.buildcostenergy>99 then
 				buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.01)
 				if buildcostenergy == uDef.buildcostenergy then
@@ -88,13 +89,14 @@ function UnitDef_Post(name, uDef)
 		if (uDef.hoverattack) then
 			uDef.turninplaceanglelimit = 360
 		end
-			if uDef.movementclass and (uDef.movementclass:find("TANK",1,true) or uDef.movementclass:find("HOVER",1,true)) then
+		if uDef.movementclass and (uDef.movementclass:find("TANK",1,true) or uDef.movementclass:find("HOVER",1,true)) then
 			--Spring.Echo('tank or hover:',uDef.name,uDef.movementclass)
 			if cons[name] then
 				--Spring.Echo('tank or hover con:',uDef.name,uDef.moveData)
 				uDef.turninplace=1
 				uDef.turninplaceanglelimit=60
-			elseif (uDef.maxvelocity) then 
+			elseif (uDef.maxvelocity) then
+				--Spring.Echo('tank or hover:',uDef.name,uDef.movementclass,uDef.turninplacespeedlimit)
 				uDef.turninplace = 0
 				uDef.turninplacespeedlimit = (uDef.maxvelocity*0.66) or 0
 			end

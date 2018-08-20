@@ -423,12 +423,12 @@ Create()
 	//}
 
 	sleep 250;
-	turn pattes31 to z-axis <-20.> NOW;
-	turn pattes41 to z-axis <20.> NOW;
-	turn pattes50 to y-axis <50.> NOW;
-	turn pattes20 to y-axis <50.> NOW;
-	turn pattes10 to y-axis <-50.> NOW;
-	turn pattes60 to y-axis <-50.> NOW;
+	turn pattes31 to z-axis <-20.> now;
+	turn pattes41 to z-axis <20.> now;
+	turn pattes50 to y-axis <50.> now;
+	turn pattes20 to y-axis <50.> now;
+	turn pattes10 to y-axis <-50.> now;
+	turn pattes60 to y-axis <-50.> now;
 		
 	start-script SmokeUnit();
 	start-script TexasRanger();

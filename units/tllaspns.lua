@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		isairbase = true,
-		losemitheight = 31,
+		losemitheight = 47,
 		mass = 500,
 		maxdamage = 680,
 		maxslope = 10,

@@ -178,7 +178,7 @@ local function UnitDamageOver(uID, uDefID, uTeam, notEmpDamage)
 			AdjustTeamCapacity(uTeam, cDefs.c, cDefs.e)
 			if teamMMList[uTeam][cDefs.e][uID].damaged == true then
 		    	teamMMList[uTeam][cDefs.e][uID].damaged = false
-		    	--Spring.Echo(currentFrameStamp, "  Reopened from damage ", unitID)Z
+		    	--Spring.Echo(currentFrameStamp, "  Reopened from damage ", unitID)
 			    Spring.CallCOBScript(uID,"MMStatus",0,0)
 	        end
 		end
@@ -189,13 +189,12 @@ end
 -- Damagedvector Methods
 ----------------------------------------------------------------
 local Damagedvector = {unitBuffer={}}
-local tableInsert = table.insert
 
 function Damagedvector:push(uID, frameID, notEmpDamage)
 	if self.unitBuffer[uID] then
 		self.unitBuffer[uID] = frameID
 	else
-		tableInsert(self.unitBuffer, uID, frameID)
+		self.unitBuffer[uID] = frameID
 		UnitTakingDamage(uID, spGetUnitDefID(uID), spGetUnitTeam(uID), notEmpDamage)
 	end
 end
@@ -204,7 +203,6 @@ function Damagedvector:process(currentFrame)
 	for uID, frameID in pairs(self.unitBuffer) do
 		if (currentFrame >= frameID) then
 			UnitDamageOver(uID, spGetUnitDefID(uID), spGetUnitTeam(uID))
-			
 			self.unitBuffer[uID] = nil
 		end
 	end

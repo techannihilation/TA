@@ -17,8 +17,6 @@ static-var  gun_1, gun_2, gun_3, terraintype, Static_Var_1, Static_Var_2, Static
 #define rocketlaunchmed 1024+1
 #define rocketlaunchback 1024+2
 
-#undef   ANIM_VARIABLE 
-
 walk()
 {
 	if( TRUE )

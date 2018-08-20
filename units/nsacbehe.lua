@@ -25,7 +25,7 @@ return {
 		germaname = "Behemoth",
 		idleautoheal = 5,
 		idletime = 1800,
-		losemitheight = 22,
+		losemitheight = 33,
 		maneuverleashlength = 640,
 		mass = 2370,
 		maxdamage = 8550,

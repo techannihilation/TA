@@ -234,7 +234,7 @@ function widget:Update(deltaTime)
   camX, camY, camZ = spGetCameraPosition()
   for uID, pos in pairs(antiInLos) do
   local x, y, z = spGetUnitPosition(uID)
-  if x ~= nil and y ~= nil and z ~= nil then
+  if x ~= nil and y ~= nil and z ~= nil and Spring.IsSphereInView(x, y, z, pos[4]) then
   lineOpacity(x,y,z)
 	local unitDefId = spGetUnitDefID(uID)
 	local pos = {}
