@@ -1,4 +1,5 @@
-return {    --### AIR ###
+return {
+	--### AIR ###
 	fighters = {
 	"airwolf3g",
 	"armfig",
