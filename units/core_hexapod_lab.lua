@@ -15,6 +15,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
+		collisionvolumescales = [[283 183 183]],
+		collisionvolumeoffsets = [[0 -70 0]],
+		collisionvolumetype = [[CylX]],
 		corpse = "heap",
 		description = "Produces T4 Units",
 		energystorage = 1000,
@@ -51,7 +54,7 @@ return {
 		turnrate = 0,
 		unitname = "core_hexapod_lab",
 		workertime = 600,
-		yardmap = "ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo ooccccccccccccccccoo",
+		yardmap = "yyooccccccccccccoooo yoooccccccccccccoooy ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo yoooccccccccccccoooy yyooccccccccccccooyy",
 		buildoptions = {
 			[1] = "corkarg1",
 			[2] = "coreak",
