@@ -1,8 +1,8 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 8000000,
-		buildcostmetal = 1080000,
+		buildcostenergy = 10400000,
+		buildcostmetal = 1404000,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -30,7 +30,7 @@ return {
 		idleautoheal = 2,
 		idletime = 2200,
 		losemitheight = 148,
-		mass = 1080000,
+		mass = 1404000,
 		maxdamage = 156200,
 		maxslope = 26,
 		maxwaterdepth = 0,
