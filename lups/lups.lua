@@ -749,10 +749,11 @@ local function GetDynamicLups()
 end
 
 local function ConvertRange(value)
-  local OldMax, OldMin, NewMax, NewMin = 65,40,5,1
+  local OldMax, OldMin, NewMax, NewMin = 50,30,5,1
   local OldRange = (OldMax - OldMin)
   local NewRange = (NewMax - NewMin)
   value = (((value - OldMin) * NewRange) / OldRange) + NewMin
+  if value < 1 then value = 1 end
   --value = (NewMax + NewMin) - value
   return math.min(value)
 end
@@ -762,12 +763,13 @@ local timecheck = 0
 local avgfps = 0
 local storedfps = {}
 local index = 1
-local SAMPLE_RATE = 75
+local SAMPLE_RATE = 35
+
 local index = 1
 local skipfpscheck = false
 
 for i=1,weight do
-  storedfps[i] = Spring.GetFPS()
+  storedfps[i] = 200 --dummy value
   avgfps = avgfps + storedfps[i]
 end
 
