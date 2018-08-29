@@ -77,7 +77,6 @@ return {
 		customparams = {
 			buildpic = "armmarv.dds",
 			faction = "ARM",
-			requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
