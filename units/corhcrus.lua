@@ -57,7 +57,6 @@ return {
 			buildpic = "corhcrus.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

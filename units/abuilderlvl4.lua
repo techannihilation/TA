@@ -9,7 +9,7 @@ return {
 		builddistance = 350,
 		builder = true,
 		buildpic = "abuilderlvl4.dds",
-		buildtime = 300000,
+		buildtime = 355000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
@@ -66,8 +66,7 @@ return {
 			[7] = "armhys",
 			[8] = "armchimera",
 			[9] = "armhcrus",
-			[10] = "armpers",
-			[11] = "armjugg",
+			[10] = "armstratus",
 		},
 		customparams = {
 			buildpic = "abuilderlvl4.dds",
