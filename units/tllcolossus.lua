@@ -192,7 +192,7 @@ return {
 				name = "HeavyCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 700,
+				range = 750,
 				reloadtime = 0.5,
 				rgbcolor = "1.0 0.5 0.0",
 				separation = 0.45,
@@ -210,7 +210,7 @@ return {
 				weaponvelocity = 500,
 				damage = {
 					commanders = 750,
-					default = 1500,
+					default = 2000,
 					subs = 5,
 				},
 			},
