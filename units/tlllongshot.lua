@@ -36,7 +36,7 @@ return {
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "TANK5",
+		movementclass = "VHTANK5",
 		name = "Longshot",
 		noautofire = false,
 		nochasecategory = "VTOL",
