@@ -512,6 +512,14 @@ effectUnitDefs = {
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
+tllaca = {
+    {class='AirJet',options={color={1,1,1}, width=8, length=15, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=8, length=15, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
+ },
+tlleca = {
+    {class='AirJet',options={color={1,1,1}, width=10, length=15, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=10, length=15, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
+ },
  tllfight = {
     {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
  },
