@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Advanced Hedgehog",
 		nochasecategory = "ALL SUB",
-		objectname = "CORMABM",
+		objectname = "CORMABM1",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
