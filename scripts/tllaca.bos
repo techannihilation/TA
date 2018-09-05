@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, lwing, rwing, nano1, nano2, engines;
+piece  base, body, lwing, rwing, nano1, nano2, engines, lthrust, rthrust;
 
 static-var  spray, statechg_DesiredState, statechg_StateChanging;
 
