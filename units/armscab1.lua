@@ -36,7 +36,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Advanced Scarab",
 		nochasecategory = "ALL SUB",
-		objectname = "ARMSCAB",
+		objectname = "ARMSCAB1",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
