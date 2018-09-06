@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "corshock.dds",
 			faction = "CORE",
-			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
