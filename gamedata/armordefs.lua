@@ -280,6 +280,7 @@ return {
 	"armbanth1",
 	"armraz1",
 	"armraptor",
+	"tllsaurus",
 	-- heroes
 	"cdevastator",
 	"abroadside",
