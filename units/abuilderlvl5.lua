@@ -5,7 +5,7 @@ return {
 		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 735000,
-		buildcostmetal = 47150,
+		buildcostmetal = 37150,
 		builddistance = 180,
 		builder = true,
 		buildpic = "abuilderlvl5.dds",
