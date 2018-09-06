@@ -187,7 +187,7 @@ return {
 				noexplode = true,
 				nogap = 1,
 				noselfdamage = true,
-				range = 1800,
+				range = 2000,
 				reloadtime = 10,
 				rgbcolor = "0.5 0.5 1.0",
 				separation = 0.45,
