@@ -4,7 +4,7 @@ return {
 		airhoverfactor = 0,
 		blocking = false,
 		brakerate = 0.35,
-		buildcostenergy = 490000,
+		buildcostenergy = 535000,
 		buildcostmetal = 39600,
 		builddistance = 190,
 		builder = true,
