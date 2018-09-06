@@ -5,7 +5,7 @@ return {
 		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 490000,
-		buildcostmetal = 56600,
+		buildcostmetal = 42600,
 		builddistance = 190,
 		builder = true,
 		buildpic = "tllbuilderlvl3.dds",
