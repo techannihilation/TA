@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "Phoenix",
+		name = "Condor",
 		nochasecategory = "NOTVTOL SUB",
 		objectname = "tllcondor",
 		selfdestructas = "BIG_UNIT_VTOL",
