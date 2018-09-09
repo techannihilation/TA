@@ -35,7 +35,7 @@ return {
 		losemitheight = 70,
 		maneuverleashlength = 640,
 		mass = 29000,
-		maxdamage = 20150,
+		maxdamage = 26195,
 		maxslope = 30,
 		maxvelocity = 1,
 		maxwaterdepth = 12,
@@ -132,7 +132,7 @@ return {
 		weapondefs = {
 			k666blaster = {
 				accuracy = 100,
-				areaofeffect = 16,
+				areaofeffect = 24,
 				beamdecay = 0.9,
 				beamtime = 0.6,
 				beamttl = 9,
