@@ -1,5 +1,5 @@
 return {
-    --### AIR ###
+	--### AIR ###
 	fighters = {
 	"airwolf3g",
 	"armfig",
