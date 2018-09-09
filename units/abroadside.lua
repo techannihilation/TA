@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 295000,
 		builder = false,
 		buildpic = "abroadside.dds",
-		buildtime = 2300000,
+		buildtime = 3150000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
