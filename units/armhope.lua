@@ -168,7 +168,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "exphvyrock",
+				model = "olympus_missile",
 				name = "Heavy Rockets2",
 				range = 1400,
 				reloadtime = 1,
