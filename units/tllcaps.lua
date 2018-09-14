@@ -272,13 +272,13 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CANNON",
+				def = "HAILSTORM",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "CANNON",
+				def = "HAILSTORM",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
