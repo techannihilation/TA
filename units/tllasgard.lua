@@ -169,7 +169,7 @@ return {
 					subs = 5,
 				},
 			},
-			cannon = {
+			HAILSTORM = {
 				accuracy = 800,
 				alphadecay = 0.3,
 				areaofeffect = 250,
@@ -209,7 +209,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CANNON",
+				def = "HAILSTORM",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
