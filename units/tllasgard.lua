@@ -169,7 +169,7 @@ return {
 					subs = 5,
 				},
 			},
-			HAILSTORM = {
+			hailstorm = {
 				accuracy = 800,
 				alphadecay = 0.3,
 				areaofeffect = 250,
