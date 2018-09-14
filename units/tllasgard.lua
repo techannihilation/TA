@@ -169,7 +169,7 @@ return {
 					subs = 5,
 				},
 			},
-			hailstorm = {
+			cannon = {
 				accuracy = 800,
 				alphadecay = 0.3,
 				areaofeffect = 250,
@@ -178,7 +178,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 400,
+				energypershot = 500,
 				explosiongenerator = "custom:BERTHASHOT_LOWP",
 				gravityaffected = "TRUE",
 				impulseboost = 0,
@@ -188,7 +188,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -3,
 				range = 2500,
-				reloadtime = 1,
+				reloadtime = 1.5,
 				rgbcolor = "0.81 0.54 0",
 				separation = 0.45,
 				size = 2.25,
@@ -203,13 +203,13 @@ return {
 				weaponvelocity = 700,
 				damage = {
 					commanders = 250,
-					default = 500,
+					default = 750,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				def = "HAILSTORM",
+				def = "CANNON",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
