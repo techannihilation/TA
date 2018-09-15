@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
-		collisionvolumescales = [[240 200 220]],
+		collisionvolumescales = [[270 200 230]],
 		collisionvolumeoffsets = [[0 -70 0]],
 		collisionvolumetype = [[CylZ]],	
 		corpse = "heap",
