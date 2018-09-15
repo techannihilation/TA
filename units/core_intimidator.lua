@@ -117,7 +117,7 @@ return {
 			core_intimidatoremp = {
 				accuracy = 300,
 				alphadecay = 0.01,
-				areaofeffect = 850,
+				areaofeffect = 450,
 				avoidfeature = false,
 				cegtag = "vulcanfx1",
 				craterareaofeffect = 1275,
@@ -150,7 +150,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1100,
 				damage = {
-					default = 1600,
+					default = 2500,
 					subs = 5,
 				},
 			},
