@@ -135,7 +135,7 @@ return {
 				model = "missileH2",
 				name = "Heavy Rocket",
 				noselfdamage = true,
-				range = 1060,
+				range = 1150,
 				reloadtime = 7,
 				smoketrail = true,
 				soundhitdry = "tankahit",
