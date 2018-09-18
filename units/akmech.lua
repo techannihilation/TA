@@ -147,6 +147,7 @@ return {
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
 				soundstart = "TAWF114a",
+				sprayangle = 1200,
 				startvelocity = 40,
 				targetable = 16,
 				texture1 = "null",
@@ -162,6 +163,7 @@ return {
 				weapontimer = 8,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 500,
+				wobble = 1400,
 				damage = {
 					commanders = 600,
 					default = 1200,
