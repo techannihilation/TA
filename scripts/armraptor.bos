@@ -266,13 +266,12 @@ Create()
 	unitviewer = FALSE;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	gun_1 = Stange;
-	gun_3 = body;
+	gun_1 = 1;
+	gun_3 = 0;
 	Static_Var_3 = 1;
 	Static_Var_6 = 0;
 	Static_Var_9 = get HEALTH;
 	spin RauchArm around y-axis speed <300.000000>;
-	set ARMORED to 1;
 	start-script SmokeUnit();
 }
 
@@ -547,7 +546,7 @@ AimPrimary(heading, pitch)
 	turn lmRakWerf to x-axis <-25.000000> speed <50.000000>;
 	turn rmRakWerf to x-axis <-25.000000> speed <50.000000>;
 	wait-for-turn lmRakWerf around x-axis;
-	turn RakTurm to y-axis heading speed <200.000000>;
+	turn RakTurm to y-axis heading speed <120.000000>;
 	wait-for-turn RakTurm around y-axis;
 	wait-for-turn Punkt around y-axis;
 	start-script RestorePrimary();
