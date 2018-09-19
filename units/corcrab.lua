@@ -62,7 +62,7 @@ return {
 			[6] = "cornanotc3",
 			[7] = "core_hexapod_lab",
 			[8] = "cshipyardlvl4",
-			[9] = "armrech4",
+			[9] = "correch4",
 			[10] = "corgate1",
 			[11] = "corfmd2",			
 			[12] = "corboucher",
