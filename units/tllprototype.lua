@@ -59,7 +59,6 @@ return {
 			[4] = "tllgorgon",
 			[5] = "tllmcv",
 			[6] = "tllcolossus",
-			[7] = "tllsaurus",
 		},
 		customparams = {
 			buildpic = "tllprototype.dds",
