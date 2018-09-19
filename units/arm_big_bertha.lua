@@ -118,7 +118,7 @@ return {
 			arm_berthacannonemp = {
 				accuracy = 300,
 				alphadecay = 0.01,
-				areaofeffect = 300,
+				areaofeffect = 360,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "vulcanfx1",
