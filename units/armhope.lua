@@ -125,7 +125,7 @@ return {
 				model = "rocketo",
 				name = "Barrarge",
 				proximitypriority = -1,
-				range = 2000,
+				range = 1500,
 				reloadtime = 20,
 				smoketrail = true,
 				soundhitdry = "mlrsboom",
