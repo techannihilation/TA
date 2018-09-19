@@ -117,7 +117,7 @@ return {
 			core_intimidatoremp = {
 				accuracy = 300,
 				alphadecay = 0.01,
-				areaofeffect = 450,
+				areaofeffect = 740,
 				avoidfeature = false,
 				cegtag = "vulcanfx1",
 				craterareaofeffect = 1275,
