@@ -11,7 +11,7 @@ return {
 		buildcostmetal = 303000,
 		builder = false,
 		buildpic = "cdevastator.dds",
-		buildtime = 2400000,
+		buildtime = 3240000,
 		canattack = true,
 		canfly = true,
 		canguard = true,

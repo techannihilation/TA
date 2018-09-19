@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 321000,
 		builder = false,
 		buildpic = "tllzeppelin.dds",
-		buildtime = 2150000,
+		buildtime = 2902500,
 		canattack = true,
 		canfly = true,
 		canguard = true,

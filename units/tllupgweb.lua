@@ -36,7 +36,7 @@ return {
 		name = "Charged Tesla",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "TLLweb",
+		objectname = "TLLUPGWEB",
 		radaremitheight = 62,
 		script = "tllweb.lua",
 		selfdestructas = "MEDIUM_BUILDING",

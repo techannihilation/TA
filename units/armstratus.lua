@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armstratus.dds",
 			faction = "ARM",
-			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

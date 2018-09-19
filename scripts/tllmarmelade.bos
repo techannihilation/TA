@@ -1,0 +1,204 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, nano1, nano2, support, turret, canon, trap;
+
+static-var  Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Wait;
+
+activatescr()
+{
+	move trap to z-axis [-12.350000] speed [10.000000];
+	wait-for-move trap along z-axis;
+
+	move support to y-axis [6.000000] speed [7.500000];
+	wait-for-move support along y-axis;
+	
+	turn turret to y-axis Static_Var_3 speed <80.000000>;
+	wait-for-turn turret around y-axis;
+	
+	Static_Wait = 0;
+}
+
+deactivatescr()
+{
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.000000> speed <60.000000>;
+	wait-for-turn turret around y-axis;
+	
+	move support to y-axis [0.000000] speed [7.500000];
+	wait-for-move support along y-axis;
+	
+	move trap to z-axis [0.000000] speed [10.000000];
+	wait-for-move support along y-axis;
+	
+	Static_Wait = 1;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	Static_Var_5 = 1;
+	Static_Var_6 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_6 )
+	{
+		Static_Var_5 = requestedstate;
+		return (0);
+	}
+	Static_Var_6 = 1;
+	currentstate = Static_Var_5;
+	Static_Var_5 = requestedstate;
+	while( Static_Var_5 != currentstate )
+	{
+		if( Static_Var_5 == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+
+		}
+		if( Static_Var_5 == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	Static_Var_6 = 0;
+}
+
+Create()
+{
+	Static_Wait = 1;
+	Static_Var_4 = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_3 = Func_Var_1;
+	start-script RequestState(0);
+	while( Static_Wait == 1 )
+	{
+		sleep 100;
+	}
+	signal 4;	
+	turn turret to y-axis Static_Var_3 speed <80.000000>;
+	wait-for-turn turret around y-axis;
+	sleep 150;
+	set INBUILDSTANCE to 1;		
+}
+
+StopBuilding()
+{
+	signal 4;
+	set-signal-mask 4;
+	sleep 6000;
+	set-signal-mask 0;
+	signal 4;
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_4 == 1 )
+	{
+		piecenum = nano1;
+	}
+	if( Static_Var_4 == 2 )
+	{
+		piecenum = nano2;
+	}
+	++Static_Var_4;
+	if( Static_Var_4 == 3 )
+	{
+		Static_Var_4 = 1;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode trap type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode trap type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode trap type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode trap type NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode nano1 type NOHEATCLOUD;
+	explode nano2 type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	return (corpsetype);
+}
