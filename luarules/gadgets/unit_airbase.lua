@@ -207,6 +207,7 @@ end
 
 function NeedsRepair(unitID)
    -- check if this unitID (which is assumed to be a plane) would want to land
+   if tonumber(unitID) == nil then Spring.Echo("unitID is not valid: "..unitID) return end
    local health, maxHealth, _, _, buildProgress = Spring.GetUnitHealth(unitID) 
    local landAtState = Spring.GetUnitStates(unitID).autorepairlevel
    if buildProgress<1 then return false end 
