@@ -207,7 +207,7 @@ end
 
 function NeedsRepair(unitID)
    -- check if this unitID (which is assumed to be a plane) would want to land
-   if tonumber(unitID) == nil then Spring.Echo("unitID is not valid: "..unitID) return end
+   if tonumber(unitID) == nil then return end -- just in case...
    local health, maxHealth, _, _, buildProgress = Spring.GetUnitHealth(unitID) 
    local landAtState = Spring.GetUnitStates(unitID).autorepairlevel
    if buildProgress<1 then return false end 
@@ -216,7 +216,7 @@ end
 
 function CheckAll()
    -- check all units to see if any need healing
-   for _,unitID in ipairs(aircraft) do
+   for unitID in pairs(aircraft) do
       if not landingPlanes[unitID] and not landedPlanes[unitID] and not tractorPlanes[unitID] and NeedsRepair(unitID) then
          pendingLanders[unitID] = true
       end     
@@ -249,7 +249,7 @@ function HealUnit(unitID, airbaseID, resourceFrames, h, mh)
    local unitDefID = Spring.GetUnitDefID(unitID)
    local buildSpeed = UnitDefs[airbaseDefID].buildSpeed 
    local timeToBuild = UnitDefs[unitDefID].buildTime / buildSpeed
-   local healthGain = timeToBuild / resourceFrames 
+   local healthGain = mh/(timeToBuild / resourceFrames)
    local newHealth = math.min(h+healthGain, mh)
    Spring.SetUnitHealth(unitID, newHealth)
    local ux, uy, uz = Spring.GetUnitPosition(unitID)
@@ -418,7 +418,7 @@ function gadget:GameFrame(n)
    -- assign airbases & pads to planes in pendingLanders, if possible
    -- once done, move into landingPlanes
    if n%16==0 then
-      for unitID, _ in pairs(pendingLanders) do
+      for unitID in pairs(pendingLanders) do
          --Spring.Echo("pending", unitID)
          local h,mh = Spring.GetUnitHealth(unitID)
          if h==mh then toRemove[#toRemove+1] = unitID end
