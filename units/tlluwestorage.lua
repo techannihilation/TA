@@ -1,7 +1,7 @@
 return {
 	tlluwestorage = {
 		buildangle = 8192,
-		buildcostenergy = 1420,
+		buildcostenergy = 1423,
 		buildcostmetal = 315,
 		builder = false,
 		buildpic = "tlluwestorage.dds",

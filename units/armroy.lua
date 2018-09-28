@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0.39,
 		buildangle = 16384,
-		buildcostenergy = 6050,
+		buildcostenergy = 6054,
 		buildcostmetal = 1045,
 		builder = false,
 		buildpic = "armroy.dds",

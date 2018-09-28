@@ -2,7 +2,7 @@ return {
 	cadvmsto = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 65500,
+		buildcostenergy = 65859,
 		buildcostmetal = 8225,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

@@ -1,8 +1,8 @@
 return {
 	tllsilo1 = {
 		buildangle = 8192,
-		buildcostenergy = 162000,
-		buildcostmetal = 16500,
+		buildcostenergy = 163407,
+		buildcostmetal = 16574,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 46,
-		mass = 16500,
+		mass = 16574,
 		maxdamage = 8520,
 		maxslope = 10,
 		maxwaterdepth = 0,

@@ -2,7 +2,7 @@ return {
 	corparrow = {
 		acceleration = 0.015,
 		brakerate = 0.2145,
-		buildcostenergy = 13900,
+		buildcostenergy = 13915,
 		buildcostmetal = 1245,
 		builder = false,
 		buildpic = "corparrow.dds",

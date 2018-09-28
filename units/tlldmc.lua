@@ -1,8 +1,8 @@
 return {
 	tlldmc = {
 		buildangle = 8192,
-		buildcostenergy = 242000,
-		buildcostmetal = 37190,
+		buildcostenergy = 242043,
+		buildcostmetal = 37404,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 7,
 		idletime = 1800,
 		losemitheight = 49,
-		mass = 37190,
+		mass = 37404,
 		maxdamage = 72000,
 		maxslope = 10,
 		maxwaterdepth = 0,

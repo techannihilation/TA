@@ -3,7 +3,7 @@ return {
 		acceleration = 0.15,
 		airsightdistance = 800,
 		brakerate = 0.45,
-		buildcostenergy = 4500,
+		buildcostenergy = 4507,
 		buildcostmetal = 480,
 		builder = false,
 		buildpic = "coreslingshot.dds",

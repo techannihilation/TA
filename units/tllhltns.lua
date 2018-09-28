@@ -1,8 +1,8 @@
 return {
 	tllhltns = {
 		buildangle = 32768,
-		buildcostenergy = 5800,
-		buildcostmetal = 690,
+		buildcostenergy = 5806,
+		buildcostmetal = 691,
 		builder = false,
 		buildpic = "tllhltns.dds",
 		buildtime = 9705,

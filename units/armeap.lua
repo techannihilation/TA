@@ -1,7 +1,7 @@
 return {
 	armeap = {
 		buildcostenergy = 154667,
-		buildcostmetal = 20480,
+		buildcostmetal = 20552,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 111,
-		mass = 20480,
+		mass = 20552,
 		maxdamage = 12000,
 		maxslope = 15,
 		maxwaterdepth = 0,

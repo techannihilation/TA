@@ -2,7 +2,7 @@ return {
 	cach = {
 		acceleration = 0.48,
 		brakerate = 0.288,
-		buildcostenergy = 35620,
+		buildcostenergy = 35629,
 		buildcostmetal = 1675,
 		builddistance = 225,
 		builder = true,

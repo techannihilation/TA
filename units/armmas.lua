@@ -2,7 +2,7 @@ return {
 	armmas = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 145240,
+		buildcostenergy = 145762,
 		buildcostmetal = 13905,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

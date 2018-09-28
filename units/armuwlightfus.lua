@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 23400,
+		buildcostenergy = 23498,
 		buildcostmetal = 2300,
 		builder = false,
 		buildpic = "armuwlightfus.dds",

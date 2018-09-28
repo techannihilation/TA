@@ -2,8 +2,8 @@ return {
 	armrottweiler = {
 		acceleration = 0.01,
 		brakerate = 0.045,
-		buildcostenergy = 5550,
-		buildcostmetal = 720,
+		buildcostenergy = 5556,
+		buildcostmetal = 721,
 		builder = false,
 		buildpic = "armrottweiler.dds",
 		buildtime = 8540,

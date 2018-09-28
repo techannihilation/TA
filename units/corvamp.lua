@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.087,
-		buildcostenergy = 9600,
+		buildcostenergy = 9618,
 		buildcostmetal = 150,
 		buildpic = "corvamp.dds",
 		buildtime = 9000,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.16,
 		airsightdistance = 980,
 		brakerate = 0.36,
-		buildcostenergy = 1480,
+		buildcostenergy = 1482,
 		buildcostmetal = 180,
 		builder = false,
 		buildpic = "tllhoplit.dds",

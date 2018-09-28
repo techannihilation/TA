@@ -1,6 +1,6 @@
 return {
 	coreap = {
-		buildcostenergy = 160000,
+		buildcostenergy = 160068,
 		buildcostmetal = 19947,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

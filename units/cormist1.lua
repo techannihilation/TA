@@ -2,7 +2,7 @@ return {
 	cormist1 = {
 		acceleration = 0.0352,
 		brakerate = 0.0495,
-		buildcostenergy = 3250,
+		buildcostenergy = 3252,
 		buildcostmetal = 250,
 		builder = false,
 		buildpic = "cormist1.dds",

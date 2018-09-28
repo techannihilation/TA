@@ -3,7 +3,7 @@ return {
 		acceleration = 0,
 		blocking = false,
 		brakerate = 0,
-		buildcostenergy = 2000,
+		buildcostenergy = 2001,
 		buildcostmetal = 90,
 		builder = false,
 		buildpic = "corfmine3.dds",

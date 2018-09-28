@@ -2,7 +2,7 @@ return {
 	corlevlr1 = {
 		acceleration = 0.0364,
 		brakerate = 1.0854,
-		buildcostenergy = 3540,
+		buildcostenergy = 3548,
 		buildcostmetal = 475,
 		builder = false,
 		buildpic = "corlevlr1.dds",

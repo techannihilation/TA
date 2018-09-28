@@ -2,7 +2,7 @@ return {
 	tllriot = {
 		acceleration = 0.15,
 		brakerate = 0.51,
-		buildcostenergy = 1650,
+		buildcostenergy = 1654,
 		buildcostmetal = 355,
 		builder = false,
 		buildpic = "tllriot.dds",

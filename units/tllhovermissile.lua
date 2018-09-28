@@ -2,7 +2,7 @@ return {
 	tllhovermissile = {
 		acceleration = 0.06,
 		brakerate = 0.27,
-		buildcostenergy = 4480,
+		buildcostenergy = 4494,
 		buildcostmetal = 192,
 		builder = false,
 		buildpic = "tllhovermissile.dds",

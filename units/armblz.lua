@@ -6,7 +6,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.04,
-		buildcostenergy = 9100,
+		buildcostenergy = 9107,
 		buildcostmetal = 245,
 		builder = false,
 		buildpic = "armblz.dds",

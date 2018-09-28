@@ -2,7 +2,7 @@ return {
 	tllprivate = {
 		acceleration = 0.24,
 		brakerate = 1.2,
-		buildcostenergy = 490,
+		buildcostenergy = 492,
 		buildcostmetal = 60,
 		builder = false,
 		buildpic = "tllprivate.dds",

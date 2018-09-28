@@ -5,7 +5,7 @@ return {
 		amphibious = 1,
 		blocking = false,
 		brakerate = 0.042,
-		buildcostenergy = 5500,
+		buildcostenergy = 5506,
 		buildcostmetal = 350,
 		builder = false,
 		buildpic = "tllseaf.dds",

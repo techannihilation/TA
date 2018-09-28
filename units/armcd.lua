@@ -2,7 +2,7 @@ return {
 	armcd = {
 		acceleration = 0.12,
 		brakerate = 0.75,
-		buildcostenergy = 18450,
+		buildcostenergy = 18519,
 		buildcostmetal = 2125,
 		builder = false,
 		buildpic = "armcd.dds",

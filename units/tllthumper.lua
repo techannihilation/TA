@@ -2,7 +2,7 @@ return {
 	tllthumper = {
 		acceleration = 0.03,
 		brakerate = 0.06,
-		buildcostenergy = 16900,
+		buildcostenergy = 16901,
 		buildcostmetal = 3285,
 		builder = false,
 		buildpic = "tllthumper.dds",

@@ -1,7 +1,7 @@
 return {
 	armuwadves = {
 		buildangle = 8192,
-		buildcostenergy = 14760,
+		buildcostenergy = 14763,
 		buildcostmetal = 825,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

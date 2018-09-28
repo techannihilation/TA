@@ -4,7 +4,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.0112,
-		buildcostenergy = 1350,
+		buildcostenergy = 1352,
 		buildcostmetal = 35,
 		builder = false,
 		buildpic = "armpeep.dds",

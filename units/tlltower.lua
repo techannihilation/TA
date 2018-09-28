@@ -1,8 +1,8 @@
 return {
 	tlltower = {
 		buildangle = 8192,
-		buildcostenergy = 700,
-		buildcostmetal = 160,
+		buildcostenergy = 702,
+		buildcostmetal = 162,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 137,
-		mass = 160,
+		mass = 162,
 		maxdamage = 145,
 		maxslope = 10,
 		maxwaterdepth = 0,

@@ -2,7 +2,7 @@ return {
 	armhplasma = {
 		acceleration = 0.05,
 		brakerate = 0.27,
-		buildcostenergy = 17250,
+		buildcostenergy = 17263,
 		buildcostmetal = 990,
 		builder = false,
 		buildpic = "armhplasma.dds",

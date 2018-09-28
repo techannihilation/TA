@@ -2,8 +2,8 @@ return {
 	arm_furie = {
 		acceleration = 0.09,
 		brakerate = 0.6,
-		buildcostenergy = 510000,
-		buildcostmetal = 37500,
+		buildcostenergy = 512108,
+		buildcostmetal = 37640,
 		builder = false,
 		buildpic = "arm_furie.dds",
 		buildtime = 500000,

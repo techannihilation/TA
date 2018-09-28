@@ -2,7 +2,7 @@ return {
 	tllsolarns = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 1440,
+		buildcostenergy = 1441,
 		buildcostmetal = 192,
 		builder = false,
 		buildpic = "tllsolarns.dds",

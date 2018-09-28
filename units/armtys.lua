@@ -4,7 +4,7 @@ return {
 		bankscale = 0.6,
 		blocking = false,
 		brakerate = 0.1547,
-		buildcostenergy = 7180,
+		buildcostenergy = 7209,
 		buildcostmetal = 318,
 		builder = false,
 		buildpic = "armtys.dds",

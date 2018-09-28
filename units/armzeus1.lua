@@ -2,8 +2,8 @@ return {
 	armzeus1 = {
 		acceleration = 0.12,
 		brakerate = 0.75,
-		buildcostenergy = 9500,
-		buildcostmetal = 600,
+		buildcostenergy = 9540,
+		buildcostmetal = 601,
 		builder = false,
 		buildpic = "armzeus1.dds",
 		buildtime = 10000,

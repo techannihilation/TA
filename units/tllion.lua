@@ -1,8 +1,8 @@
 return {
 	tllion = {
 		buildangle = 1700,
-		buildcostenergy = 720000,
-		buildcostmetal = 192000,
+		buildcostenergy = 721385,
+		buildcostmetal = 192006,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 19,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 301,
-		mass = 192000,
+		mass = 192006,
 		maxdamage = 15000,
 		maxslope = 12,
 		maxwaterdepth = 0,

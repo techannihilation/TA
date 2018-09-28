@@ -3,7 +3,7 @@ return {
 		acceleration = 0.05,
 		amphibious = 1,
 		brakerate = 0.05,
-		buildcostenergy = 11750,
+		buildcostenergy = 11755,
 		buildcostmetal = 1845,
 		builder = false,
 		buildpic = "tllcenturion.dds",

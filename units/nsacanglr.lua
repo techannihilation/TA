@@ -3,7 +3,7 @@ return {
 		acceleration = 0.04,
 		activatewhenbuilt = true,
 		brakerate = 0.69,
-		buildcostenergy = 3950,
+		buildcostenergy = 3951,
 		buildcostmetal = 375,
 		builder = false,
 		buildpic = "nsacanglr.dds",

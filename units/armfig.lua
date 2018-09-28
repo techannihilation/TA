@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.075,
-		buildcostenergy = 2130,
+		buildcostenergy = 2133,
 		buildcostmetal = 85,
 		buildpic = "armfig.dds",
 		buildtime = 4000,

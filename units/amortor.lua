@@ -1,8 +1,8 @@
 return {
 	amortor = {
 		buildangle = 4096,
-		buildcostenergy = 24750,
-		buildcostmetal = 1950,
+		buildcostenergy = 24832,
+		buildcostmetal = 1952,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 28,
-		mass = 1950,
+		mass = 1952,
 		maxdamage = 2460,
 		maxslope = 10,
 		maxwaterdepth = 0,

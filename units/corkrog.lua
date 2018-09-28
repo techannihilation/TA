@@ -2,8 +2,8 @@ return {
 	corkrog = {
 		acceleration = 0.108,
 		brakerate = 0.714,
-		buildcostenergy = 395000,
-		buildcostmetal = 27200,
+		buildcostenergy = 395985,
+		buildcostmetal = 27245,
 		builder = false,
 		buildpic = "corkrog.dds",
 		buildtime = 350145,

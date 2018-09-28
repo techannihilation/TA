@@ -1,8 +1,8 @@
 return {
 	tlllbt = {
 		buildangle = 8192,
-		buildcostenergy = 5060,
-		buildcostmetal = 2150,
+		buildcostenergy = 5070,
+		buildcostmetal = 2160,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 51,
-		mass = 2150,
+		mass = 2160,
 		maxdamage = 3452,
 		maxslope = 10,
 		maxwaterdepth = 0,

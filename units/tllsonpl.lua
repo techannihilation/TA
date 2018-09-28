@@ -6,7 +6,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.046,
-		buildcostenergy = 8470,
+		buildcostenergy = 8485,
 		buildcostmetal = 161,
 		builder = false,
 		buildpic = "tllsonpl.dds",

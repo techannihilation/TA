@@ -3,7 +3,7 @@ return {
 		acceleration = 0.1,
 		amphibious = 1,
 		brakerate = 0.05,
-		buildcostenergy = 95950,
+		buildcostenergy = 96394,
 		buildcostmetal = 7045,
 		builder = false,
 		buildpic = "tllinsulator.dds",

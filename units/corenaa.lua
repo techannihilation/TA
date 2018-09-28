@@ -5,7 +5,7 @@ return {
 		airsightdistance = 1000,
 		brakerate = 0,
 		buildangle = 16384,
-		buildcostenergy = 35520,
+		buildcostenergy = 35534,
 		buildcostmetal = 1160,
 		builder = false,
 		buildpic = "corenaa.dds",

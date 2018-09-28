@@ -1,8 +1,8 @@
 return {
 	tllturtle_lab = {
 		buildangle = 2096,
-		buildcostenergy = 41400,
-		buildcostmetal = 4400,
+		buildcostenergy = 41474,
+		buildcostmetal = 4407,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 35,
-		mass = 4400,
+		mass = 4407,
 		maxdamage = 4250,
 		maxslope = 10,
 		maxwaterdepth = 200,

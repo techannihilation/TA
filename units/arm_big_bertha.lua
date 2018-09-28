@@ -1,8 +1,8 @@
 return {
 	arm_big_bertha = {
 		buildangle = 4096,
-		buildcostenergy = 64850,
-		buildcostmetal = 4300,
+		buildcostenergy = 64851,
+		buildcostmetal = 4304,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		immunetoparalyzer = 1,
 		losemitheight = 67,
-		mass = 4300,
+		mass = 4304,
 		maxdamage = 4950,
 		maxslope = 10,
 		maxwaterdepth = 33,

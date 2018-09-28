@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.4613,
-		buildcostenergy = 7200,
+		buildcostenergy = 7248,
 		buildcostmetal = 350,
 		builder = false,
 		buildpic = "armsaber.dds",

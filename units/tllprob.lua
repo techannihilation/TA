@@ -4,7 +4,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.01,
-		buildcostenergy = 800,
+		buildcostenergy = 803,
 		buildcostmetal = 40,
 		builder = false,
 		buildpic = "tllprob.dds",

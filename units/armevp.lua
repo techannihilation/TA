@@ -1,8 +1,8 @@
 return {
 	armevp = {
 		buildangle = 1024,
-		buildcostenergy = 300000,
-		buildcostmetal = 16000,
+		buildcostenergy = 300228,
+		buildcostmetal = 16003,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 9,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 22,
-		mass = 16000,
+		mass = 16003,
 		maxdamage = 12820,
 		maxslope = 10,
 		maxwaterdepth = 0,

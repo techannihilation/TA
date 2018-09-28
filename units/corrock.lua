@@ -2,7 +2,7 @@ return {
 	corrock = {
 		acceleration = 0.108,
 		brakerate = 0.564,
-		buildcostenergy = 2480,
+		buildcostenergy = 2488,
 		buildcostmetal = 235,
 		builder = false,
 		buildpic = "corrock.dds",

@@ -2,7 +2,7 @@ return {
 	tllawindtrap = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 860,
+		buildcostenergy = 864,
 		buildcostmetal = 145,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

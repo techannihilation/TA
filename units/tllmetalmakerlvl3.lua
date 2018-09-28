@@ -1,8 +1,8 @@
 return {
 	tllmetalmakerlvl3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 660000,
-		buildcostmetal = 51540,
+		buildcostenergy = 662348,
+		buildcostmetal = 51553,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 90,
-		mass = 51540,
+		mass = 51553,
 		maxdamage = 14250,
 		maxslope = 20,
 		maxwaterdepth = 0,

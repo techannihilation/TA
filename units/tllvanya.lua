@@ -1,8 +1,8 @@
 return {
 	tllvanya = {
 		buildangle = 4096,
-		buildcostenergy = 5070000,
-		buildcostmetal = 1677000,
+		buildcostenergy = 5071889,
+		buildcostmetal = 1680838,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -30,7 +30,7 @@ return {
 		idleautoheal = 2,
 		idletime = 2200,
 		losemitheight = 175,
-		mass = 1677000,
+		mass = 1680838,
 		maxdamage = 161460,
 		maxslope = 16,
 		maxwaterdepth = 0,

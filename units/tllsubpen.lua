@@ -1,7 +1,7 @@
 return {
 	tllsubpen = {
-		buildcostenergy = 26600,
-		buildcostmetal = 2990,
+		buildcostenergy = 26701,
+		buildcostmetal = 2994,
 		builder = true,
 		buildpic = "tllsubpen.dds",
 		buildtime = 6520,
@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 31,
-		mass = 2990,
+		mass = 2994,
 		maxdamage = 3510,
 		metalmake = 1.2,
 		metalstorage = 150,

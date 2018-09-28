@@ -2,7 +2,7 @@ return {
 	armmh = {
 		acceleration = 0.072,
 		brakerate = 0.336,
-		buildcostenergy = 3010,
+		buildcostenergy = 3012,
 		buildcostmetal = 174,
 		builder = false,
 		buildpic = "armmh.dds",

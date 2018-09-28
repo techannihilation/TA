@@ -1,8 +1,8 @@
 return {
 	armrech1 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 7000,
-		buildcostmetal = 640,
+		buildcostenergy = 7002,
+		buildcostmetal = 642,
 		builder = true,
 		buildpic = "armrech1.dds",
 		buildtime = 7500,
@@ -19,7 +19,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 125,
-		mass = 640,
+		mass = 642,
 		maxdamage = 3000,
 		maxslope = 10,
 		name = "Advanced T1 Research Center",

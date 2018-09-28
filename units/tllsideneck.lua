@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		antiweapons = 1,
 		brakerate = 0.081,
-		buildcostenergy = 50000,
+		buildcostenergy = 50033,
 		buildcostmetal = 2250,
 		builder = false,
 		buildpic = "tllsideneck.dds",

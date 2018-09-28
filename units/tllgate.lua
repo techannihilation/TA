@@ -2,7 +2,7 @@ return {
 	tllgate = {
 		activatewhenbuilt = true,
 		buildangle = 1700,
-		buildcostenergy = 26840,
+		buildcostenergy = 26848,
 		buildcostmetal = 4045,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

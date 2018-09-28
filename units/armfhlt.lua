@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 16384,
-		buildcostenergy = 6150,
+		buildcostenergy = 6157,
 		buildcostmetal = 575,
 		builder = false,
 		buildpic = "armfhlt.dds",

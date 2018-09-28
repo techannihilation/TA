@@ -1,7 +1,7 @@
 return {
 	core_intimidator = {
-		buildcostenergy = 62000,
-		buildcostmetal = 5000,
+		buildcostenergy = 62235,
+		buildcostmetal = 5014,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		immunetoparalyzer = 1,
 		losemitheight = 67,
-		mass = 5000,
+		mass = 5014,
 		maxdamage = 5225,
 		maxslope = 10,
 		maxwaterdepth = 33,

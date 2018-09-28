@@ -1,8 +1,8 @@
 return {
 	tlltrid = {
 		buildangle = 32768,
-		buildcostenergy = 37000,
-		buildcostmetal = 4750,
+		buildcostenergy = 37274,
+		buildcostmetal = 4752,
 		builder = false,
 		buildpic = "tlltrid.dds",
 		buildtime = 49010,
@@ -22,7 +22,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 42,
-		mass = 4750,
+		mass = 4752,
 		maxdamage = 13200,
 		maxslope = 14,
 		minwaterdepth = 5,

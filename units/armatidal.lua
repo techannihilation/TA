@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 2160,
+		buildcostenergy = 2173,
 		buildcostmetal = 363,
 		builder = false,
 		buildpic = "armatidal.dds",

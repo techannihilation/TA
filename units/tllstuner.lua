@@ -1,8 +1,8 @@
 return {
 	tllstuner = {
 		buildangle = 8192,
-		buildcostenergy = 4550,
-		buildcostmetal = 560,
+		buildcostenergy = 4557,
+		buildcostmetal = 561,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 72,
-		mass = 560,
+		mass = 561,
 		maxdamage = 2350,
 		maxslope = 10,
 		maxwaterdepth = 0,

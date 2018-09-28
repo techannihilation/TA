@@ -2,7 +2,7 @@ return {
 	dao = {
 		acceleration = 0.031,
 		brakerate = 0.02289,
-		buildcostenergy = 3200,
+		buildcostenergy = 3215,
 		buildcostmetal = 400,
 		builder = false,
 		buildpic = "dao.dds",

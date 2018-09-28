@@ -2,7 +2,7 @@ return {
 	tllacsub = {
 		acceleration = 0.09,
 		brakerate = 0.36,
-		buildcostenergy = 26500,
+		buildcostenergy = 26717,
 		buildcostmetal = 2505,
 		builddistance = 312,
 		builder = true,

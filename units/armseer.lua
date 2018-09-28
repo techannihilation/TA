@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0418,
 		activatewhenbuilt = true,
 		brakerate = 0.0495,
-		buildcostenergy = 2070,
+		buildcostenergy = 2075,
 		buildcostmetal = 123,
 		builder = false,
 		buildpic = "armseer.dds",

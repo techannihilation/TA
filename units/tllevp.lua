@@ -1,8 +1,8 @@
 return {
 	tllevp = {
 		buildangle = 1024,
-		buildcostenergy = 145000,
-		buildcostmetal = 17900,
+		buildcostenergy = 145070,
+		buildcostmetal = 17931,
 		builder = true,
 		buildpic = "tllevp.dds",
 		buildtime = 80000,
@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 57,
-		mass = 17900,
+		mass = 17931,
 		maxdamage = 10500,
 		maxslope = 10,
 		maxwaterdepth = 0,

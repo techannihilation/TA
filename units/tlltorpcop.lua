@@ -6,7 +6,7 @@ return {
 		attackrunlength = 250,
 		blocking = false,
 		brakerate = 0.1,
-		buildcostenergy = 7900,
+		buildcostenergy = 7943,
 		buildcostmetal = 865,
 		builder = false,
 		buildpic = "tlltorpcop.dds",

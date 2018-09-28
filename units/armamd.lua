@@ -4,7 +4,7 @@ return {
 		antiweapons = 1,
 		brakerate = 0,
 		buildangle = 4096,
-		buildcostenergy = 95400,
+		buildcostenergy = 95515,
 		buildcostmetal = 2065,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

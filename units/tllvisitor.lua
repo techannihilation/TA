@@ -3,7 +3,7 @@ return {
 		acceleration = 0.042,
 		airsightdistance = 790,
 		brakerate = 0.36,
-		buildcostenergy = 10200,
+		buildcostenergy = 10204,
 		buildcostmetal = 2850,
 		builder = false,
 		buildpic = "tllvisitor.dds",

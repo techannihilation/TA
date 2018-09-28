@@ -1,7 +1,7 @@
 return {
 	tllasy = {
-		buildcostenergy = 37590,
-		buildcostmetal = 4480,
+		buildcostenergy = 37641,
+		buildcostmetal = 4482,
 		builder = true,
 		buildpic = "tllasy.dds",
 		buildtime = 13590,
@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 50,
-		mass = 4480,
+		mass = 4482,
 		maxdamage = 4500,
 		metalmake = 1,
 		metalstorage = 200,

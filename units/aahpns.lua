@@ -1,7 +1,7 @@
 return {
 	aahpns = {
-		buildcostenergy = 37800,
-		buildcostmetal = 4820,
+		buildcostenergy = 37882,
+		buildcostmetal = 4848,
 		builder = true,
 		buildpic = "aahpns.dds",
 		buildtime = 16220,
@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 37,
-		mass = 4820,
+		mass = 4848,
 		maxdamage = 5005,
 		metalstorage = 300,
 		minwaterdepth = 30,

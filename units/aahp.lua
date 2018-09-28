@@ -1,7 +1,7 @@
 return {
 	aahp = {
 		buildcostenergy = 37783,
-		buildcostmetal = 4480,
+		buildcostmetal = 4487,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 37,
-		mass = 4480,
+		mass = 4487,
 		maxdamage = 5005,
 		maxslope = 10,
 		maxwaterdepth = 0,

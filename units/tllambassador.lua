@@ -3,7 +3,7 @@ return {
 		acceleration = 0.09,
 		brakerate = 0.546,
 		buildangle = 16384,
-		buildcostenergy = 5280,
+		buildcostenergy = 5294,
 		buildcostmetal = 1008,
 		builder = false,
 		buildpic = "tllambassador.dds",

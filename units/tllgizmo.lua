@@ -2,7 +2,7 @@ return {
 	tllgizmo = {
 		acceleration = 0.1,
 		brakerate = 0.45,
-		buildcostenergy = 14150,
+		buildcostenergy = 14207,
 		buildcostmetal = 1598,
 		builddistance = 165,
 		builder = true,

@@ -2,7 +2,7 @@ return {
 	tllasonar = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 2930,
+		buildcostenergy = 2932,
 		buildcostmetal = 195,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

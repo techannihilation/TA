@@ -1,7 +1,7 @@
 return {
 	tllesy = {
-		buildcostenergy = 170000,
-		buildcostmetal = 21000,
+		buildcostenergy = 170230,
+		buildcostmetal = 21022,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 64,
-		mass = 21000,
+		mass = 21022,
 		maxdamage = 10829,
 		metalmake = 2,
 		metalstorage = 400,

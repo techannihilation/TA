@@ -2,7 +2,7 @@ return {
 	armrock1 = {
 		acceleration = 0.12,
 		brakerate = 0.564,
-		buildcostenergy = 1750,
+		buildcostenergy = 1751,
 		buildcostmetal = 205,
 		builder = false,
 		buildpic = "armrock1.dds",

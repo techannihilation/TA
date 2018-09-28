@@ -1,8 +1,8 @@
 return {
 	corboucher = {
 		buildangle = 8192,
-		buildcostenergy = 310000,
-		buildcostmetal = 36250,
+		buildcostenergy = 310943,
+		buildcostmetal = 36375,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 7,
 		idletime = 1800,
 		losemitheight = 72,
-		mass = 36250,
+		mass = 36375,
 		maxdamage = 80000,
 		maxslope = 10,
 		maxwaterdepth = 0,

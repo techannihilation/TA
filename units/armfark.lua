@@ -2,7 +2,7 @@ return {
 	armfark = {
 		acceleration = 0.88,
 		brakerate = 9,
-		buildcostenergy = 2880,
+		buildcostenergy = 2886,
 		buildcostmetal = 225,
 		builddistance = 112,
 		builder = true,

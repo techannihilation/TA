@@ -3,7 +3,7 @@ return {
 		acceleration = 0.04,
 		activatewhenbuilt = true,
 		brakerate = 0.057,
-		buildcostenergy = 22400,
+		buildcostenergy = 22504,
 		buildcostmetal = 3733,
 		builder = false,
 		buildpic = "tllorc.dds",

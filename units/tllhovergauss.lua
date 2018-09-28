@@ -2,7 +2,7 @@ return {
 	tllhovergauss = {
 		acceleration = 0.075,
 		brakerate = 0.3,
-		buildcostenergy = 1800,
+		buildcostenergy = 1810,
 		buildcostmetal = 275,
 		builder = false,
 		buildpic = "tllhovergauss.dds",

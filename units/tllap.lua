@@ -2,7 +2,7 @@ return {
 	tllap = {
 		activatewhenbuilt = false,
 		buildcostenergy = 1540,
-		buildcostmetal = 940,
+		buildcostmetal = 947,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 44,
-		mass = 940,
+		mass = 947,
 		maxdamage = 1920,
 		maxslope = 10,
 		maxwaterdepth = 0,

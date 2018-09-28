@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 32000,
-		buildcostenergy = 710,
+		buildcostenergy = 712,
 		buildcostmetal = 95,
 		builder = false,
 		buildpic = "corfllt.dds",

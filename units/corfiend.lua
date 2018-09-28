@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.004,
-		buildcostenergy = 8690,
+		buildcostenergy = 8693,
 		buildcostmetal = 255,
 		buildpic = "corfiend.dds",
 		buildtime = 15000,

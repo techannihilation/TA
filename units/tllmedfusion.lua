@@ -1,8 +1,8 @@
 return {
 	tllmedfusion = {
 		activatewhenbuilt = true,
-		buildcostenergy = 20800,
-		buildcostmetal = 3880,
+		buildcostenergy = 20830,
+		buildcostmetal = 3889,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -25,7 +25,7 @@ return {
 		idletime = 2000,
 		losemitheight = 45,
 		makesmetal = 4,
-		mass = 3880,
+		mass = 3889,
 		maxdamage = 4680,
 		maxslope = 20,
 		maxwaterdepth = 0,

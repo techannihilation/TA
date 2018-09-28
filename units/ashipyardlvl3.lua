@@ -1,7 +1,7 @@
 return {
 	ashipyardlvl3 = {
-		buildcostenergy = 1280000,
-		buildcostmetal = 106650,
+		buildcostenergy = 1286813,
+		buildcostmetal = 106956,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 33,
@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 101,
-		mass = 106650,
+		mass = 106956,
 		maxdamage = 70000,
 		maxslope = 10,
 		maxwaterdepth = 255,

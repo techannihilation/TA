@@ -2,7 +2,7 @@ return {
 	tllannouncer = {
 		acceleration = 0.041,
 		brakerate = 0.05,
-		buildcostenergy = 890,
+		buildcostenergy = 894,
 		buildcostmetal = 190,
 		builder = false,
 		buildpic = "tllannouncer.dds",

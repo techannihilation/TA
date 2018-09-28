@@ -1,7 +1,7 @@
 return {
 	armfsilo = {
 		buildangle = 8192,
-		buildcostenergy = 1055440,
+		buildcostenergy = 1057137,
 		buildcostmetal = 164149,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

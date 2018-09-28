@@ -1,8 +1,8 @@
 return {
 	tllhtcp = {
 		buildangle = 1024,
-		buildcostenergy = 145000,
-		buildcostmetal = 19000,
+		buildcostenergy = 145309,
+		buildcostmetal = 19007,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 26,
-		mass = 19000,
+		mass = 19007,
 		maxdamage = 14575,
 		maxslope = 10,
 		maxwaterdepth = 0,

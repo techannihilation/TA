@@ -2,7 +2,7 @@ return {
 	corraid = {
 		acceleration = 0.0243,
 		brakerate = 0.0762,
-		buildcostenergy = 2050,
+		buildcostenergy = 2054,
 		buildcostmetal = 225,
 		builder = false,
 		buildpic = "corraid.dds",

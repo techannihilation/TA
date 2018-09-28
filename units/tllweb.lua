@@ -1,7 +1,7 @@
 return {
 	tllweb = {
 		buildangle = 4768,
-		buildcostenergy = 2100,
+		buildcostenergy = 2104,
 		buildcostmetal = 260,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

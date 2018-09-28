@@ -1,8 +1,8 @@
 return {
 	tllplasma = {
 		buildangle = 8200,
-		buildcostenergy = 15060,
-		buildcostmetal = 2950,
+		buildcostenergy = 15074,
+		buildcostmetal = 2951,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 25,
-		mass = 2950,
+		mass = 2951,
 		maxdamage = 3790,
 		maxslope = 10,
 		maxwaterdepth = 0,

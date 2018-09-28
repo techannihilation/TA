@@ -2,7 +2,7 @@ return {
 	corack = {
 		acceleration = 0.8,
 		brakerate = 5.1,
-		buildcostenergy = 34360,
+		buildcostenergy = 34507,
 		buildcostmetal = 1695,
 		builddistance = 225,
 		builder = true,

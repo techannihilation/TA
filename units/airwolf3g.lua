@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.07,
-		buildcostenergy = 58600,
+		buildcostenergy = 58645,
 		buildcostmetal = 720,
 		buildpic = "airwolf3g.dds",
 		buildtime = 18000,

@@ -4,7 +4,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.075,
-		buildcostenergy = 7030,
+		buildcostenergy = 7045,
 		buildcostmetal = 340,
 		builder = false,
 		buildpic = "armlance.dds",

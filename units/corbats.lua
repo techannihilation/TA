@@ -3,7 +3,7 @@ return {
 		acceleration = 0.03,
 		brakerate = 0.075,
 		buildangle = 16384,
-		buildcostenergy = 69000,
+		buildcostenergy = 69376,
 		buildcostmetal = 6750,
 		builder = false,
 		buildpic = "corbats.dds",

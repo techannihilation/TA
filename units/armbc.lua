@@ -3,7 +3,7 @@ return {
 		acceleration = 0.005,
 		brakerate = 0.045,
 		buildangle = 16384,
-		buildcostenergy = 145000,
+		buildcostenergy = 145039,
 		buildcostmetal = 9500,
 		builder = false,
 		buildpic = "armbc.dds",

@@ -2,7 +2,7 @@ return {
 	armsam1 = {
 		acceleration = 0.0396,
 		brakerate = 0.0495,
-		buildcostenergy = 3500,
+		buildcostenergy = 3505,
 		buildcostmetal = 250,
 		builder = false,
 		buildpic = "armsam1.dds",

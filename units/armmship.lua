@@ -3,7 +3,7 @@ return {
 		acceleration = 0.024,
 		activatewhenbuilt = true,
 		brakerate = 0.084,
-		buildcostenergy = 29000,
+		buildcostenergy = 29146,
 		buildcostmetal = 2525,
 		builder = false,
 		buildpic = "armmship.dds",

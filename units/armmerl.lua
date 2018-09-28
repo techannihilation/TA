@@ -2,7 +2,7 @@ return {
 	armmerl = {
 		acceleration = 0.0198,
 		brakerate = 0.1122,
-		buildcostenergy = 8750,
+		buildcostenergy = 8779,
 		buildcostmetal = 920,
 		builder = false,
 		buildpic = "armmerl.dds",

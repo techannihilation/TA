@@ -4,7 +4,7 @@ return {
 		bankscale = 1.5,
 		blocking = false,
 		brakerate = 0.45,
-		buildcostenergy = 603700,
+		buildcostenergy = 608067,
 		buildcostmetal = 11045,
 		builddistance = 350,
 		builder = true,

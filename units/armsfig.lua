@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		blocking = false,
 		brakerate = 0.1,
-		buildcostenergy = 7500,
+		buildcostenergy = 7539,
 		buildcostmetal = 160,
 		builder = false,
 		buildpic = "armsfig.dds",

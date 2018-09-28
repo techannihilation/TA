@@ -1,7 +1,7 @@
 return {
 	armesy = {
-		buildcostenergy = 190000,
-		buildcostmetal = 15900,
+		buildcostenergy = 191345,
+		buildcostmetal = 15977,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 73,
-		mass = 15900,
+		mass = 15977,
 		maxdamage = 10829,
 		metalmake = 2,
 		metalstorage = 400,

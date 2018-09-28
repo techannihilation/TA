@@ -1,7 +1,7 @@
 return {
 	tllhpns = {
-		buildcostenergy = 2300,
-		buildcostmetal = 1300,
+		buildcostenergy = 2302,
+		buildcostmetal = 1303,
 		builder = true,
 		buildpic = "tllhpns.dds",
 		buildtime = 11007,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 22,
-		mass = 1300,
+		mass = 1303,
 		maxdamage = 3500,
 		metalstorage = 200,
 		minwaterdepth = 30,

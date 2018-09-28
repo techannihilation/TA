@@ -1,8 +1,8 @@
 return {
 	cmetalmakerlvl3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1350000,
-		buildcostmetal = 40500,
+		buildcostenergy = 1357034,
+		buildcostmetal = 40531,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 95,
-		mass = 40500,
+		mass = 40531,
 		maxdamage = 31000,
 		maxslope = 20,
 		maxwaterdepth = 0,

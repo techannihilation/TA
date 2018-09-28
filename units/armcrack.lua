@@ -2,7 +2,7 @@ return {
 	armcrack = {
 		acceleration = 0.108,
 		brakerate = 0.564,
-		buildcostenergy = 2750,
+		buildcostenergy = 2767,
 		buildcostmetal = 220,
 		builder = false,
 		buildpic = "armcrack.dds",

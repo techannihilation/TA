@@ -1,7 +1,7 @@
 return {
 	spiderlab = {
 		buildangle = 950,
-		buildcostenergy = 4160,
+		buildcostenergy = 4174,
 		buildcostmetal = 980,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

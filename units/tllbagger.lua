@@ -4,8 +4,8 @@ return {
 		antiweapons = 1,
 		brakerate = 0,
 		buildangle = 29090,
-		buildcostenergy = 3058480,
-		buildcostmetal = 659510,
+		buildcostenergy = 3064366,
+		buildcostmetal = 660533,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 136,
-		mass = 659512,
+		mass = 660533,
 		maxdamage = 110300,
 		maxslope = 13,
 		maxvelocity = 0,
@@ -49,7 +49,7 @@ return {
 		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo ",
 		customparams = {
-			buildpic = "tllhydre.dds",
+			buildpic = "tllbagger.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

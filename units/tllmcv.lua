@@ -2,7 +2,7 @@ return {
 	tllmcv = {
 		acceleration = 0.005,
 		brakerate = 0.18,
-		buildcostenergy = 1285000,
+		buildcostenergy = 1285187,
 		buildcostmetal = 119475,
 		builder = false,
 		buildpic = "tllmcv.dds",

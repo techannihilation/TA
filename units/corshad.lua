@@ -5,7 +5,7 @@ return {
 		attackrunlength = 170,
 		blocking = false,
 		brakerate = 0.055,
-		buildcostenergy = 5960,
+		buildcostenergy = 5995,
 		buildcostmetal = 160,
 		builder = false,
 		buildpic = "corshad.dds",

@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.05,
-		buildcostenergy = 6880,
+		buildcostenergy = 6912,
 		buildcostmetal = 125,
 		builder = false,
 		buildpic = "armawac.dds",

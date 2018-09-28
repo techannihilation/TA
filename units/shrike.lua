@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.09,
-		buildcostenergy = 70400,
+		buildcostenergy = 70612,
 		buildcostmetal = 580,
 		buildpic = "shrike.dds",
 		buildtime = 18000,

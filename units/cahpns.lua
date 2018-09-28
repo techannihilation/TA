@@ -1,6 +1,6 @@
 return {
 	cahpns = {
-		buildcostenergy = 41000,
+		buildcostenergy = 41004,
 		buildcostmetal = 4950,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

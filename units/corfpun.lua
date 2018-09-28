@@ -1,8 +1,8 @@
 return {
 	corfpun = {
 		buildangle = 32768,
-		buildcostenergy = 30600,
-		buildcostmetal = 2820,
+		buildcostenergy = 30655,
+		buildcostmetal = 2827,
 		builder = false,
 		buildpic = "corfpun.dds",
 		buildtime = 28000,
@@ -22,7 +22,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 30,
-		mass = 2820,
+		mass = 2827,
 		maxdamage = 3050,
 		maxslope = 14,
 		minwaterdepth = 5,

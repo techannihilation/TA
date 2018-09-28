@@ -2,7 +2,7 @@ return {
 	tllhmt = {
 		airsightdistance = 1000,
 		buildangle = 16384,
-		buildcostenergy = 58880,
+		buildcostenergy = 58937,
 		buildcostmetal = 1973,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

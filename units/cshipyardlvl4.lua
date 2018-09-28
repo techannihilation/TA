@@ -1,6 +1,6 @@
 return {
 	cshipyardlvl4 = {
-		buildcostenergy = 106650,
+		buildcostenergy = 107588,
 		buildcostmetal = 117335,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

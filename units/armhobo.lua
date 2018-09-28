@@ -2,7 +2,7 @@ return {
 	armhobo = {
 		acceleration = 0.12,
 		brakerate = 0.45,
-		buildcostenergy = 5900,
+		buildcostenergy = 5904,
 		buildcostmetal = 475,
 		builder = false,
 		buildpic = "armhobo.dds",

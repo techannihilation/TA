@@ -3,7 +3,7 @@ return {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
 		brakerate = 0.16,
-		buildcostenergy = 1050,
+		buildcostenergy = 1052,
 		buildcostmetal = 245,
 		builder = false,
 		buildpic = "tllhickatee.dds",

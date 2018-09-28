@@ -3,7 +3,7 @@ return {
 		acceleration = 0.21,
 		airsightdistance = 675,
 		brakerate = 0.75,
-		buildcostenergy = 980,
+		buildcostenergy = 986,
 		buildcostmetal = 175,
 		builder = false,
 		buildpic = "tllfirestarter.dds",

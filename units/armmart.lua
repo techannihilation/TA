@@ -2,7 +2,7 @@ return {
 	armmart = {
 		acceleration = 0.0184,
 		brakerate = 0.3696,
-		buildcostenergy = 5490,
+		buildcostenergy = 5512,
 		buildcostmetal = 375,
 		builder = false,
 		buildpic = "armmart.dds",

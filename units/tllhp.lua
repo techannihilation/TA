@@ -1,7 +1,7 @@
 return {
 	tllhp = {
-		buildcostenergy = 2250,
-		buildcostmetal = 1250,
+		buildcostenergy = 2252,
+		buildcostmetal = 1255,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 22,
-		mass = 1250,
+		mass = 1255,
 		maxdamage = 3100,
 		maxslope = 10,
 		maxwaterdepth = 0,

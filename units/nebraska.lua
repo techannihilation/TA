@@ -1,8 +1,8 @@
 return {
 	nebraska = {
 		buildangle = 8192,
-		buildcostenergy = 346000,
-		buildcostmetal = 33750,
+		buildcostenergy = 346189,
+		buildcostmetal = 33932,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 7,
 		idletime = 1800,
 		losemitheight = 67,
-		mass = 33750,
+		mass = 33932,
 		maxdamage = 65000,
 		maxslope = 10,
 		maxwaterdepth = 0,

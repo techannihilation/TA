@@ -1,8 +1,8 @@
 return {
 	correch2 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 57000,
-		buildcostmetal = 5640,
+		buildcostenergy = 57030,
+		buildcostmetal = 5641,
 		builder = true,
 		buildpic = "correch2.dds",
 		buildtime = 50000,
@@ -18,7 +18,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 150,
-		mass = 5640,
+		mass = 5641,
 		maxdamage = 6000,
 		maxslope = 10,
 		name = "Advanced T2 Research Center",

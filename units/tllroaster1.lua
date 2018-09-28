@@ -2,7 +2,7 @@ return {
 	tllroaster1 = {
 		acceleration = 0.03,
 		brakerate = 0.27,
-		buildcostenergy = 14950,
+		buildcostenergy = 14971,
 		buildcostmetal = 2375,
 		builder = false,
 		buildpic = "tllroaster.dds",

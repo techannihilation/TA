@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 2048,
-		buildcostenergy = 49000,
+		buildcostenergy = 49141,
 		buildcostmetal = 3900,
 		builder = false,
 		buildpic = "tllfgate.dds",

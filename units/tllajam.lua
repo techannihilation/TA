@@ -2,7 +2,7 @@ return {
 	tllajam = {
 		activatewhenbuilt = true,
 		buildangle = 4899,
-		buildcostenergy = 12490,
+		buildcostenergy = 12565,
 		buildcostmetal = 1035,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

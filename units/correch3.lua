@@ -1,8 +1,8 @@
 return {
 	correch3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 570000,
-		buildcostmetal = 31640,
+		buildcostenergy = 571026,
+		buildcostmetal = 31773,
 		builder = true,
 		buildpic = "correch3.dds",
 		buildtime = 200000,
@@ -18,7 +18,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 150,
-		mass = 31640,
+		mass = 31773,
 		maxdamage = 19000,
 		maxslope = 10,
 		maxwaterdepth = 0,

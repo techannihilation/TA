@@ -3,7 +3,7 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 740,
 		brakerate = 0.336,
-		buildcostenergy = 4160,
+		buildcostenergy = 4182,
 		buildcostmetal = 229,
 		builder = false,
 		buildpic = "armah.dds",

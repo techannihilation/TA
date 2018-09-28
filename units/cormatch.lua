@@ -2,7 +2,7 @@ return {
 	cormatch = {
 		acceleration = 0.11,
 		brakerate = 0.315,
-		buildcostenergy = 5850,
+		buildcostenergy = 5884,
 		buildcostmetal = 345,
 		builder = false,
 		buildpic = "cormatch.dds",

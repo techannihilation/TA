@@ -2,8 +2,8 @@ return {
 	armorco = {
 		acceleration = 0.108,
 		brakerate = 0.714,
-		buildcostenergy = 365400,
-		buildcostmetal = 25920,
+		buildcostenergy = 366463,
+		buildcostmetal = 26112,
 		builder = false,
 		buildpic = "armorco.dds",
 		buildtime = 320000,

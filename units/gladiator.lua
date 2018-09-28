@@ -2,7 +2,7 @@ return {
 	gladiator = {
 		acceleration = 0.06,
 		brakerate = 0.57,
-		buildcostenergy = 4890,
+		buildcostenergy = 4923,
 		buildcostmetal = 485,
 		builder = false,
 		buildpic = "gladiator.dds",

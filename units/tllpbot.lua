@@ -2,7 +2,7 @@ return {
 	tllpbot = {
 		acceleration = 0.21,
 		brakerate = 0.69,
-		buildcostenergy = 1340,
+		buildcostenergy = 1342,
 		buildcostmetal = 205,
 		builder = false,
 		buildpic = "tllpbot.dds",

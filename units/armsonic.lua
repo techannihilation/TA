@@ -2,7 +2,7 @@ return {
 	armsonic = {
 		acceleration = 0.81,
 		brakerate = 0.57,
-		buildcostenergy = 5500,
+		buildcostenergy = 5521,
 		buildcostmetal = 425,
 		builder = false,
 		buildpic = "armsonic.dds",

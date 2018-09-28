@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		airsightdistance = 820,
 		brakerate = 0.564,
-		buildcostenergy = 1280,
+		buildcostenergy = 1282,
 		buildcostmetal = 155,
 		builder = false,
 		buildpic = "armjeth.dds",

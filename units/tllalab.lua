@@ -1,8 +1,8 @@
 return {
 	tllalab = {
 		buildangle = 2048,
-		buildcostenergy = 42000,
-		buildcostmetal = 4550,
+		buildcostenergy = 42082,
+		buildcostmetal = 4552,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 26,
-		mass = 4550,
+		mass = 4552,
 		maxdamage = 3311,
 		maxslope = 10,
 		maxwaterdepth = 0,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.03,
 		activatewhenbuilt = true,
 		brakerate = 0.036,
-		buildcostenergy = 1290,
+		buildcostenergy = 1291,
 		buildcostmetal = 92,
 		builder = false,
 		buildpic = "corvrad.dds",

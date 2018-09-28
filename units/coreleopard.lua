@@ -2,7 +2,7 @@ return {
 	coreleopard = {
 		acceleration = 0.15,
 		brakerate = 0.45,
-		buildcostenergy = 1500,
+		buildcostenergy = 1504,
 		buildcostmetal = 155,
 		builddistance = 110,
 		builder = true,

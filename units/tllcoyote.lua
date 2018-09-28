@@ -3,7 +3,7 @@ return {
 		acceleration = 0.055,
 		airsightdistance = 650,
 		brakerate = 0.036,
-		buildcostenergy = 9500,
+		buildcostenergy = 9537,
 		buildcostmetal = 795,
 		builder = false,
 		buildpic = "tllcoyote.dds",

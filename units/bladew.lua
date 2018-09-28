@@ -3,7 +3,7 @@ return {
 		acceleration = 0.264,
 		blocking = false,
 		brakerate = 0.55,
-		buildcostenergy = 1280,
+		buildcostenergy = 1285,
 		buildcostmetal = 58,
 		buildpic = "bladew.dds",
 		buildtime = 2073,

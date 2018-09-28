@@ -1,8 +1,8 @@
 return {
 	corevp = {
 		buildangle = 1024,
-		buildcostenergy = 295000,
-		buildcostmetal = 16450,
+		buildcostenergy = 295163,
+		buildcostmetal = 16457,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 10,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 28,
-		mass = 16450,
+		mass = 16457,
 		maxdamage = 13910,
 		maxslope = 10,
 		maxwaterdepth = 0,

@@ -6,7 +6,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.047,
-		buildcostenergy = 7250,
+		buildcostenergy = 7260,
 		buildcostmetal = 265,
 		builder = false,
 		buildpic = "corseap.dds",

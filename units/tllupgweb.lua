@@ -1,8 +1,8 @@
 return {
 	tllupgweb = {
 		buildangle = 4768,
-		buildcostenergy = 3100,
-		buildcostmetal = 390,
+		buildcostenergy = 3102,
+		buildcostmetal = 392,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -29,7 +29,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 63,
-		mass = 390,
+		mass = 392,
 		maxdamage = 1500,
 		maxslope = 14,
 		maxwaterdepth = 0,

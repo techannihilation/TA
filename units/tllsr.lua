@@ -2,7 +2,7 @@ return {
 	tllsr = {
 		acceleration = 0.048,
 		brakerate = 0.75,
-		buildcostenergy = 3450,
+		buildcostenergy = 3452,
 		buildcostmetal = 601,
 		builddistance = 112,
 		builder = true,

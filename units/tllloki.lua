@@ -2,7 +2,7 @@ return {
 	tllloki = {
 		acceleration = 0.012,
 		brakerate = 0.03,
-		buildcostenergy = 3450,
+		buildcostenergy = 3451,
 		buildcostmetal = 455,
 		builder = false,
 		buildpic = "tllloki.dds",

@@ -1,8 +1,8 @@
 return {
 	armrech3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 570000,
-		buildcostmetal = 31640,
+		buildcostenergy = 570417,
+		buildcostmetal = 31661,
 		builder = true,
 		buildpic = "armrech3.dds",
 		buildtime = 200000,
@@ -19,7 +19,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 160,
-		mass = 31640,
+		mass = 31661,
 		maxdamage = 19000,
 		maxslope = 10,
 		maxwaterdepth = 0,

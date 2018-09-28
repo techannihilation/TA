@@ -4,7 +4,7 @@ return {
 		airsightdistance = 1000,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 38400,
+		buildcostenergy = 38447,
 		buildcostmetal = 1045,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

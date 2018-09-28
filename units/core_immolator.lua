@@ -1,8 +1,8 @@
 return {
 	core_immolator = {
 		buildangle = 8192,
-		buildcostenergy = 26670,
-		buildcostmetal = 2460,
+		buildcostenergy = 26672,
+		buildcostmetal = 2463,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -32,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 30,
-		mass = 2460,
+		mass = 2463,
 		maxdamage = 2800,
 		maxslope = 10,
 		maxwaterdepth = 0,

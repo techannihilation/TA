@@ -2,7 +2,7 @@ return {
 	armacv = {
 		acceleration = 0.144,
 		brakerate = 1.8,
-		buildcostenergy = 55530,
+		buildcostenergy = 55547,
 		buildcostmetal = 2035,
 		builddistance = 225,
 		builder = true,

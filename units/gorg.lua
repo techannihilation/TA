@@ -2,8 +2,8 @@ return {
 	gorg = {
 		acceleration = 0.048,
 		brakerate = 0.375,
-		buildcostenergy = 624000,
-		buildcostmetal = 36900,
+		buildcostenergy = 626567,
+		buildcostmetal = 36923,
 		builder = false,
 		buildpic = "gorg.dds",
 		buildtime = 500000,

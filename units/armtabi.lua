@@ -1,8 +1,8 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 9490000,
-		buildcostmetal = 1482000,
+		buildcostenergy = 9492952,
+		buildcostmetal = 1483878,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -30,7 +30,7 @@ return {
 		idleautoheal = 2,
 		idletime = 2200,
 		losemitheight = 162,
-		mass = 1482000,
+		mass = 1483878,
 		maxdamage = 125000,
 		maxslope = 16,
 		maxwaterdepth = 0,

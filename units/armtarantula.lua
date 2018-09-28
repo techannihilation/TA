@@ -2,7 +2,7 @@ return {
 	armtarantula = {
 		acceleration = 0.18,
 		brakerate = 0.564,
-		buildcostenergy = 4480,
+		buildcostenergy = 4502,
 		buildcostmetal = 325,
 		builder = false,
 		buildpic = "armtarantula.dds",

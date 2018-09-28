@@ -1,8 +1,8 @@
 return {
 	tllkrak = {
 		buildangle = 32768,
-		buildcostenergy = 16600,
-		buildcostmetal = 2720,
+		buildcostenergy = 16633,
+		buildcostmetal = 2738,
 		builder = false,
 		buildpic = "tllkrak.dds",
 		buildtime = 25000,
@@ -22,7 +22,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 26,
-		mass = 2720,
+		mass = 2738,
 		maxdamage = 3250,
 		maxslope = 14,
 		minwaterdepth = 5,

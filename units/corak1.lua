@@ -2,7 +2,7 @@ return {
 	corak1 = {
 		acceleration = 0.384,
 		brakerate = 0.75,
-		buildcostenergy = 990,
+		buildcostenergy = 994,
 		buildcostmetal = 75,
 		builder = false,
 		buildpic = "corak1.dds",

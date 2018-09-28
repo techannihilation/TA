@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0.33,
 		buildangle = 16384,
-		buildcostenergy = 4850,
+		buildcostenergy = 4851,
 		buildcostmetal = 1205,
 		builder = false,
 		buildpic = "tllviolator.dds",

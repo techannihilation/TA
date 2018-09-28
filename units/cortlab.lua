@@ -1,8 +1,8 @@
 return {
 	cortlab = {
 		buildangle = 4096,
-		buildcostenergy = 4800,
-		buildcostmetal = 950,
+		buildcostenergy = 4825,
+		buildcostmetal = 951,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 45,
-		mass = 950,
+		mass = 951,
 		maxdamage = 2234,
 		maxslope = 10,
 		maxwaterdepth = 0,

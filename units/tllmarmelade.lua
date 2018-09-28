@@ -2,7 +2,7 @@ return {
 	tllmarmelade = {
 		acceleration = 0.12,
 		brakerate = 1.65,
-		buildcostenergy = 405220,
+		buildcostenergy = 406092,
 		buildcostmetal = 34865,
 		builddistance = 450,
 		builder = true,
@@ -54,7 +54,7 @@ return {
 		trackstrength = 6,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1,
+		turninplacespeedlimit = 1.32,
 		turnrate = 275,
 		unitname = "tllmarmelade",
 		workertime = 2250,

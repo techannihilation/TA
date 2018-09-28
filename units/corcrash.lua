@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		airsightdistance = 770,
 		brakerate = 0.564,
-		buildcostenergy = 1220,
+		buildcostenergy = 1222,
 		buildcostmetal = 160,
 		builder = false,
 		buildpic = "corcrash.dds",

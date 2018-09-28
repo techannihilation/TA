@@ -4,7 +4,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.25,
-		buildcostenergy = 13050,
+		buildcostenergy = 13094,
 		buildcostmetal = 1973,
 		builder = false,
 		buildpic = "smasher.dds",

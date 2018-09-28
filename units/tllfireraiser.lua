@@ -2,7 +2,7 @@ return {
 	tllfireraiser = {
 		acceleration = 0.17,
 		brakerate = 0.63,
-		buildcostenergy = 850,
+		buildcostenergy = 852,
 		buildcostmetal = 145,
 		builder = false,
 		buildpic = "tllfireraiser.dds",

@@ -1,8 +1,8 @@
 return {
 	tllemp = {
 		buildangle = 8192,
-		buildcostenergy = 14230,
-		buildcostmetal = 1790,
+		buildcostenergy = 14297,
+		buildcostmetal = 1793,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 118,
-		mass = 1790,
+		mass = 1793,
 		maxdamage = 3500,
 		maxslope = 10,
 		maxwaterdepth = 0,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.025,
 		airsightdistance = 1000,
 		brakerate = 0.091,
-		buildcostenergy = 6040,
+		buildcostenergy = 6068,
 		buildcostmetal = 790,
 		builder = false,
 		buildpic = "tllloggerhead.dds",

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		brakerate = 0.45,
-		buildcostenergy = 5850,
+		buildcostenergy = 5863,
 		buildcostmetal = 70,
 		builder = false,
 		buildpic = "corroach.dds",

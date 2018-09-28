@@ -2,7 +2,7 @@ return {
 	tawf114 = {
 		acceleration = 0.0209,
 		brakerate = 0.0594,
-		buildcostenergy = 22080,
+		buildcostenergy = 22218,
 		buildcostmetal = 1020,
 		builder = false,
 		buildpic = "tawf114.dds",

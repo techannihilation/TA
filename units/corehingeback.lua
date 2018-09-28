@@ -2,8 +2,8 @@ return {
 	corehingeback = {
 		acceleration = 0.15,
 		brakerate = 0.45,
-		buildcostenergy = 3500,
-		buildcostmetal = 240,
+		buildcostenergy = 3504,
+		buildcostmetal = 241,
 		builder = false,
 		buildpic = "corehingeback.dds",
 		buildtime = 5000,

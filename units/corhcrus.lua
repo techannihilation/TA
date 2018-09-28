@@ -2,7 +2,7 @@ return {
 	corhcrus = {
 		acceleration = 0.09,
 		brakerate = 0.135,
-		buildcostenergy = 135000,
+		buildcostenergy = 135748,
 		buildcostmetal = 8925,
 		builder = false,
 		buildpic = "corhcrus.dds",
@@ -49,7 +49,7 @@ return {
 		steeringmode = 1,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.924,
+		turninplacespeedlimit = 1.221,
 		turnrate = 125,
 		unitname = "corhcrus",
 		waterline = 2,

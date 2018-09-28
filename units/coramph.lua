@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		amphibious = 1,
 		brakerate = 0.564,
-		buildcostenergy = 9500,
+		buildcostenergy = 9521,
 		buildcostmetal = 325,
 		builder = false,
 		buildpic = "coramph.dds",

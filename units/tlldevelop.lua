@@ -1,8 +1,8 @@
 return {
 	tlldevelop = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1070000,
-		buildcostmetal = 90640,
+		buildcostenergy = 1071248,
+		buildcostmetal = 90944,
 		builder = true,
 		buildpic = "tlldevelop.dds",
 		buildtime = 850000,
@@ -22,7 +22,7 @@ return {
 		idleautoheal = 6,
 		idletime = 1800,
 		losemitheight = 139,
-		mass = 90640,
+		mass = 90944,
 		maxdamage = 40000,
 		maxslope = 10,
 		maxwaterdepth = 255,

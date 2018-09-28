@@ -2,7 +2,7 @@ return {
 	armjanus = {
 		acceleration = 0.0198,
 		brakerate = 0.165,
-		buildcostenergy = 2520,
+		buildcostenergy = 2537,
 		buildcostmetal = 290,
 		builder = false,
 		buildpic = "armjanus.dds",

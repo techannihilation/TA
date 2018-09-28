@@ -2,8 +2,8 @@ return {
 	corechelonian = {
 		acceleration = 0.17,
 		brakerate = 0.525,
-		buildcostenergy = 5500,
-		buildcostmetal = 420,
+		buildcostenergy = 5535,
+		buildcostmetal = 423,
 		builder = false,
 		buildpic = "corechelonian.dds",
 		buildtime = 10000,

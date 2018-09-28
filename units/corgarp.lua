@@ -2,7 +2,7 @@ return {
 	corgarp = {
 		acceleration = 0.011,
 		brakerate = 0.033,
-		buildcostenergy = 1900,
+		buildcostenergy = 1911,
 		buildcostmetal = 205,
 		builder = false,
 		buildpic = "corgarp.dds",

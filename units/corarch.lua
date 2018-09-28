@@ -4,7 +4,7 @@ return {
 		airsightdistance = 800,
 		brakerate = 0.18,
 		buildangle = 16384,
-		buildcostenergy = 10780,
+		buildcostenergy = 10786,
 		buildcostmetal = 1005,
 		builder = false,
 		buildpic = "corarch.dds",

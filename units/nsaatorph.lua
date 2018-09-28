@@ -3,7 +3,7 @@ return {
 		acceleration = 0.04,
 		activatewhenbuilt = true,
 		brakerate = 0.24,
-		buildcostenergy = 4200,
+		buildcostenergy = 4218,
 		buildcostmetal = 390,
 		builder = false,
 		buildpic = "nsaatorph.dds",

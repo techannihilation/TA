@@ -1,8 +1,8 @@
 return {
 	tllmortor = {
 		buildangle = 4096,
-		buildcostenergy = 18900,
-		buildcostmetal = 2260,
+		buildcostenergy = 19073,
+		buildcostmetal = 2265,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -30,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 23,
-		mass = 2260,
+		mass = 2265,
 		maxdamage = 2590,
 		maxslope = 10,
 		maxwaterdepth = 0,

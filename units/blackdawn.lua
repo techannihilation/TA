@@ -4,7 +4,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.211,
-		buildcostenergy = 29440,
+		buildcostenergy = 29470,
 		buildcostmetal = 4100,
 		builder = false,
 		buildpic = "blackdawn.dds",

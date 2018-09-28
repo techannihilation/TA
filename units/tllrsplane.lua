@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.045,
-		buildcostenergy = 4800,
+		buildcostenergy = 4801,
 		buildcostmetal = 180,
 		builder = false,
 		buildpic = "tllrsplane.dds",

@@ -1,8 +1,8 @@
 return {
 	armfguard = {
 		buildangle = 32768,
-		buildcostenergy = 23600,
-		buildcostmetal = 2510,
+		buildcostenergy = 23636,
+		buildcostmetal = 2518,
 		builder = false,
 		buildpic = "armfguard.dds",
 		buildtime = 25000,
@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 27,
-		mass = 2510,
+		mass = 2518,
 		maxdamage = 3450,
 		maxslope = 14,
 		minwaterdepth = 5,

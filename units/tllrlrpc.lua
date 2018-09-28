@@ -1,7 +1,7 @@
 return {
 	tllrlrpc = {
 		buildangle = 2760,
-		buildcostenergy = 464700,
+		buildcostenergy = 465011,
 		buildcostmetal = 34865,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.09,
-		buildcostenergy = 6200,
+		buildcostenergy = 6204,
 		buildcostmetal = 255,
 		buildpic = "tlladvfight.dds",
 		buildtime = 10000,

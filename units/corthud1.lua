@@ -3,7 +3,7 @@ return {
 		acceleration = 0.113,
 		brakerate = 0.675,
 		buildcostenergy = 2092,
-		buildcostmetal = 290,
+		buildcostmetal = 291,
 		builder = false,
 		buildpic = "corthud1.dds",
 		buildtime = 2571,

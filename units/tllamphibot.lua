@@ -2,7 +2,7 @@ return {
 	tllamphibot = {
 		acceleration = 0.1,
 		brakerate = 0.45,
-		buildcostenergy = 9000,
+		buildcostenergy = 9056,
 		buildcostmetal = 535,
 		builder = false,
 		buildpic = "tllamphibot.dds",

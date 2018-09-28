@@ -2,7 +2,7 @@ return {
 	tllsham = {
 		acceleration = 0.5,
 		brakerate = 1.5,
-		buildcostenergy = 1600,
+		buildcostenergy = 1602,
 		buildcostmetal = 128,
 		builddistance = 102,
 		builder = true,

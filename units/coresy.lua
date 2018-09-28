@@ -1,7 +1,7 @@
 return {
 	coresy = {
-		buildcostenergy = 200000,
-		buildcostmetal = 16000,
+		buildcostenergy = 200740,
+		buildcostmetal = 16080,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 93,
-		mass = 16000,
+		mass = 16080,
 		maxdamage = 10598,
 		metalmake = 2,
 		metalstorage = 400,

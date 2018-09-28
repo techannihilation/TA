@@ -1,8 +1,8 @@
 return {
 	cmortor = {
 		buildangle = 4096,
-		buildcostenergy = 25400,
-		buildcostmetal = 1920,
+		buildcostenergy = 25420,
+		buildcostmetal = 1927,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -26,7 +26,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 29,
-		mass = 1920,
+		mass = 1927,
 		maxdamage = 2415,
 		maxslope = 10,
 		maxwaterdepth = 0,

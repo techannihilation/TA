@@ -2,7 +2,7 @@ return {
 	tllshaker = {
 		acceleration = 0.011,
 		brakerate = 0.0297,
-		buildcostenergy = 1600,
+		buildcostenergy = 1604,
 		buildcostmetal = 245,
 		builder = false,
 		buildpic = "tllshaker.dds",

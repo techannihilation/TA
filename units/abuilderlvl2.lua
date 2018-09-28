@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		blocking = false,
 		brakerate = 0.3596,
-		buildcostenergy = 4790,
+		buildcostenergy = 4795,
 		buildcostmetal = 720,
 		builddistance = 100,
 		builder = true,

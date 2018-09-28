@@ -3,7 +3,7 @@ return {
 		acceleration = 0.15,
 		activatewhenbuilt = true,
 		brakerate = 0.45,
-		buildcostenergy = 1650,
+		buildcostenergy = 1658,
 		buildcostmetal = 70,
 		builder = false,
 		buildpic = "armorbweaver.dds",

@@ -1,7 +1,7 @@
 return {
 	tllmetalmakerlvl1 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 4800,
+		buildcostenergy = 4809,
 		buildcostmetal = 190,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,

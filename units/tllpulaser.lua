@@ -1,7 +1,7 @@
 return {
 	tllpulaser = {
 		buildangle = 8192,
-		buildcostenergy = 14550,
+		buildcostenergy = 14566,
 		buildcostmetal = 1485,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
