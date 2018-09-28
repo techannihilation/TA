@@ -1,7 +1,7 @@
 return {
 	tllrlrpc = {
 		buildangle = 2760,
-		buildcostenergy = 164700,
+		buildcostenergy = 464700,
 		buildcostmetal = 34865,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -17,7 +17,7 @@ return {
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Rapid-Fire Long Range Lighting Beam",
 		downloadable = 1,
-		energymake = 200,
+		energymake = 0,
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 0,
@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 92,
 		mass = 34865,
-		maxdamage = 41980,
+		maxdamage = 22080,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Barret",
