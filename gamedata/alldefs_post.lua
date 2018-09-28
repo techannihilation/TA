@@ -33,7 +33,9 @@ local usable = {}
 
 -- process unitdef
 function UnitDef_Post(name, uDef)
-
+if uDef.pushresistant and uDef.pushresistant == true then
+    uDef.pushresistant = nil
+end
 -- Batch Processing of unitdefs leave alone
 	if FixUnitStats == true then
 		--Adjust los/radar emit heights
