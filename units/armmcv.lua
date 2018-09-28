@@ -44,7 +44,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMMCV",
 		onoffable = true,
-		pushresistant = true,
 		radaremitheight = 38,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,

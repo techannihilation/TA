@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "anvil",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 40,
 		selfdestructas = "ARM_BERTHACANNONEMP1",

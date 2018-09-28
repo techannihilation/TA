@@ -40,7 +40,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLSHAKER",
-		pushresistant = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",

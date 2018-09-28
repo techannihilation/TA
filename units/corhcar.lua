@@ -49,7 +49,6 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "CORHCAR",
 		onoffable = true,
-		pushresistant = true,
 		radardistance = 3500,
 		radaremitheight = 53,
 		selfdestructas = "BANTHA_NUKE",

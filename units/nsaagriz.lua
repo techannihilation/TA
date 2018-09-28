@@ -46,7 +46,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "NSAAGRIZ",
 		onoffable = true,
-		pushresistant = true,
 		radardistance = 1000,
 		radaremitheight = 70,
 		selfdestructas = "CRBLMSSL",

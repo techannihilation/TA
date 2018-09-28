@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "tlldest",
-		pushresistant = true,
 		radardistance = 2000,
 		radaremitheight = 63,
 		selfdestructas = "CRBLMSSL",

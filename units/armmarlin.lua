@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "NOTSUBNOTSHIP",
 		objectname = "armmarlin",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 52,
 		seismicsignature = 0,

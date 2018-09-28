@@ -37,7 +37,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMGOR",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 86,
 		selfdestructas = "BANTHA_NUKE",

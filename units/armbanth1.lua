@@ -40,7 +40,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMBANTH1",
-		pushresistant = true,
 		radaremitheight = 216,
 		script = "armbanth.cob",
 		seismicsignature = 0,

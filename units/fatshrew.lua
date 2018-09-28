@@ -45,7 +45,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "fatshrew",
 		onoffable = true,
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 76,
 		script = "fatshrew.cob",

@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMJAG",
-		pushresistant = true,
 		radardistance = 0,
 		radardistancejam = 0,
 		radaremitheight = 80,

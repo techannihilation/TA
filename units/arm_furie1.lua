@@ -41,7 +41,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARM_FURIE1",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 250,
 		script = "arm_furie.cob",

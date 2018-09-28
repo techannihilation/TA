@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "AVTR",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "ATOMIC_BLAST",

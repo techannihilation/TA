@@ -42,7 +42,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARM_FURIE",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 85,
 		selfdestructas = "CRBLMSSL",

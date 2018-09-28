@@ -40,7 +40,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMANTAR",
 		onoffable = true,
-		pushresistant = true,
 		radaremitheight = 50,
 		selfdestructas = "NUCLEAR_MISSILE",
 		sightdistance = 855,

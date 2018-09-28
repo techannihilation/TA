@@ -42,7 +42,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "irritator",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 130,
 		script = "irritator.cob",

@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "ASEADRAGON",
-		pushresistant = true,
 		radardistance = 1500,
 		radaremitheight = 54,
 		seismicsignature = 0,

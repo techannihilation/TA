@@ -40,7 +40,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "tllcrawler",
-		pushresistant = true,
 		radaremitheight = 62,
 		seismicsigniture = 5,
 		selfdestructas = "NUCLEAR_MISSILE",

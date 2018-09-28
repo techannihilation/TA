@@ -41,7 +41,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "TLLGRIM",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 72,
 		selfdestructas = "NUCLEAR_MISSILE",

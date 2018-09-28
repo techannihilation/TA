@@ -38,7 +38,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "ARMCRACK",
-		pushresistant = true,
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",

@@ -43,7 +43,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "corarbritator",
 		onoffable = true,
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 76,
 		script = "corarbritator.cob",

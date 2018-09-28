@@ -41,7 +41,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORGALA",
-		pushresistant = true,
 		radaremitheight = 202,
 		selfdestructas = "NUCLEAR_MISSILE",
 		selfdestructcountdown = 10,

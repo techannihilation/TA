@@ -38,7 +38,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORKARG1",
-		pushresistant = true,
 		radaremitheight = 108,
 		script = "corkarg.cob",
 		seismicsignature = 0,

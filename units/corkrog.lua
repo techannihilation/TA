@@ -40,7 +40,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORKROG",
-		pushresistant = true,
 		radaremitheight = 147,
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL",

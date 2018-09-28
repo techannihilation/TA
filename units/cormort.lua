@@ -38,7 +38,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "CORMORT",
-		pushresistant = true,
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",

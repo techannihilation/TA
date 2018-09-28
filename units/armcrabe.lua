@@ -41,7 +41,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMCRABE",
 		onoffable = true,
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 62,
 		seismicsigniture = 2500,

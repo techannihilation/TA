@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "CORTYRNT",
-		pushresistant = true,
 		radardistance = 2000,
 		radaremitheight = 84,
 		selfdestructas = "CRBLMSSL",

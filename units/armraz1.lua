@@ -41,7 +41,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMRAZ1",
-		pushresistant = true,
 		radaremitheight = 117,
 		script = "armraz.cob",
 		seismicsignature = 0,

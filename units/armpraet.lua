@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMPRAET",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 100,
 		script = "armpraet.cob",

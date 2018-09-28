@@ -45,7 +45,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "cormkl",
 		onoffable = true,
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 76,
 		seismicsignature = 48,

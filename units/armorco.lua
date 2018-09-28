@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMORCO",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 93,
 		seismicsignature = 64,

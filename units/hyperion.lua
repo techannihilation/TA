@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "hyperion",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 108,
 		selfdestructas = "CRBLMSSL",

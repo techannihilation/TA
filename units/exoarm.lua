@@ -42,7 +42,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "exoarm",
-		pushresistant = true,
 		radaremitheight = 216,
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL4",

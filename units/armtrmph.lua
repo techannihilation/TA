@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "ARMTRMPH",
-		pushresistant = true,
 		radardistance = 2000,
 		radaremitheight = 79,
 		selfdestructas = "CRBLMSSL",

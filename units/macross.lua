@@ -40,7 +40,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "macross5",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 98,
 		selfdestructas = "BANTHA_NUKE",

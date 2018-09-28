@@ -38,7 +38,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "GORG",
-		pushresistant = true,
 		radaremitheight = 76,
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL2",

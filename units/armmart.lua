@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMMART",
-		pushresistant = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",

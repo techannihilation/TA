@@ -41,7 +41,6 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "tllgorgon",
 		onoffable = true,
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 76,
 		selfdestructas = "BANTHA_NUKE",

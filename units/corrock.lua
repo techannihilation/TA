@@ -38,7 +38,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "CORROCK",
-		pushresistant = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",

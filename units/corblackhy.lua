@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "VTOL",
 		objectname = "CORBLACKHY",
-		pushresistant = true,
 		radardistance = 1500,
 		radaremitheight = 63,
 		seismicsignature = 0,

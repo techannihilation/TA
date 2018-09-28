@@ -14,10 +14,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
-		collisionVolumeScales = [[48 36 67]],
-		collisionVolumeOffsets = [[0 -3 9]],
-		collisionVolumeType = [[box]],
-
+		collisionvolumeoffsets = "0 -3 9",
+		collisionvolumescales = "48 36 67",
+		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Prototype Tank - Anti T3/T4",

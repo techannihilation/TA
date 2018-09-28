@@ -41,7 +41,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "tllmcv",
-		pushresistant = true,
 		radaremitheight = 145,
 		selfdestructas = "CRBLMSSL4",
 		selfdestructcountdown = 10,

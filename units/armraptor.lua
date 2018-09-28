@@ -41,7 +41,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMRAPTOR",
-		pushresistant = true,
 		radardistance = 40,
 		radaremitheight = 131,
 		selfdestructas = "BANTHA_NUKE",

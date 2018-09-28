@@ -39,7 +39,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "clb",
-		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "ATOMIC_BLAST",
