@@ -338,10 +338,6 @@ for moveName, moveData in pairs(moveDatas) do
     else
         moveData.heatmapping = true
     end
-    if moveData.footprintx > 4 then -- testing
-        moveData.footprintx = 5
-        moveData.footprintz = 5
-    end
     moveData.name = moveName
     defs[#defs + 1] = moveData
 end
