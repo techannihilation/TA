@@ -33,7 +33,7 @@ return {
 		losemitheight = 34,
 		maneuverleashlength = 640,
 		mass = 9800,
-		maxdamage = 52000,
+		maxdamage = 39000,
 		maxslope = 12,
 		maxvelocity = 1.2,
 		maxwaterdepth = 255,
@@ -156,7 +156,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 470,
 				damage = {
-					default = 225,
+					default = 195,
 					subs = 5,
 				},
 			},
