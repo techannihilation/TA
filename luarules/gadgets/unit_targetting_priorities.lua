@@ -189,7 +189,7 @@ if gadgetHandler:IsSyncedCode() then
                 priority = priority * Spring.GetUnitRulesParam(unitID, ("targetPriority"..airCategories[unitDefID]))
             end
         else
-            if airCategories[unitDefID] ~= "Bombers" then
+            if airCategories[unitDefID] ~= "Bombers" and airCategories[unitDefID] then
                 return false, defPriority
             end
         end
