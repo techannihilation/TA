@@ -129,7 +129,7 @@ airCategories = {
 	function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag, synced)
 		if cmdID == CMD_SET_PRIORITY then
 		cmdDescId = Spring.FindUnitCmdDesc(unitID, CMD_SET_PRIORITY) 
-			if cmdParams and cmdParams[1] then
+			if cmdParams and cmdParams[1] and cmdDescId then
 				if cmdParams[1] == 0 then
 				Spring.EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirf)
 				elseif cmdParams[1] == 1 then
