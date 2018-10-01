@@ -49,7 +49,14 @@ Spring.TimeCheck('Loading all definitions: ', function()
 
 end)
 
-
+local noenergyshields = tonumber(Spring.GetModOptions().mo_noenergyshields) or 0
+if noenergyshields == 1 then
+    for wdefName, wdef in pairs(DEFS.weaponDefs) do
+        if wdef.shieldenergyuse then
+            wdef.shieldenergyuse = 0
+        end
+    end
+end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
