@@ -115,7 +115,7 @@ local options={
   },
   {
     key = "mo_noenergyshields",
-    name = "No Energy Shield Power",
+    name = "No Energy For Shield Power",
     desc = "Shields not need energy for power, still need energy to regenerate\nAutoHost Usage :- mo_noenergyshields",
     type = "bool",
     def = false,
