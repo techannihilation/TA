@@ -138,7 +138,17 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tllsonpl"].id] = "Scouts"
     }
     
+    local function shallow_copy(t)
+        local tmp = {}
+        for k, v in pairs(t) do
+            tmp[k] = v
+        end
+        return tmp
+    end
+    
+    local airCategoriesCached = {}
     function gadget:Initialize()
+        airCategoriesCached = shallow_copy(airCategories)
     end
     
     function gadget:UnitCreated(unitID, unitDefID)
@@ -206,7 +216,7 @@ if gadgetHandler:IsSyncedCode() then
         local priorityDisabled = GetUnitRulesParam(unitID, "targetPriorityDisabled")
         if priorityDisabled == 0 then
             local unitDefID = GetUnitDefID(targetID)
-            local airCat = airCategories[unitDefID]
+            local airCat = airCategoriesCached[unitDefID]
             local onlyBombers = GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
             local noScouts = GetUnitRulesParam(unitID, "targetPriorityNoSouts")
             local hasPriority = (GetUnitRulesParam(unitID, "targetPriorityFighters") and GetUnitRulesParam(unitID, "targetPriorityBombers") and GetUnitRulesParam(unitID, "targetPriorityScouts"))
@@ -222,5 +232,5 @@ if gadgetHandler:IsSyncedCode() then
         end
         return allowed, priority
     end
-
+    
 end
