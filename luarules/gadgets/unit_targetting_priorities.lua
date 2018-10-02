@@ -213,7 +213,7 @@ if gadgetHandler:IsSyncedCode() then
     function gadget:AllowWeaponTarget(unitID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
         local allowed = true
         local priority = defPriority
-        local priorityDisabled = GetUnitRulesParam(unitID, "targetPriorityDisabled")
+        local priorityDisabled = GetUnitRulesParam(unitID, "targetPriorityDisabled") or 1
         if priorityDisabled == 0 then
             local unitDefID = GetUnitDefID(targetID)
             local airCat = airCategoriesCached[unitDefID]
