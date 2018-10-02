@@ -14,6 +14,13 @@ end
 --synced
 if gadgetHandler:IsSyncedCode() then
     
+    local EditUnitCmdDesc = Spring.EditUnitCmdDesc
+    local FindUnitCmdDesc = Spring.FindUnitCmdDesc
+    local GetUnitDefID = Spring.GetUnitDefID
+    local GetUnitRulesParam = Spring.GetUnitRulesParam
+    local InsertUnitCmdDesc = Spring.InsertUnitCmdDesc
+    local SetUnitRulesParam = Spring.SetUnitRulesParam
+    
     local CMD_SET_PRIORITY = 34567
     
     local setPriorityAirn = {
@@ -137,29 +144,25 @@ if gadgetHandler:IsSyncedCode() then
     function gadget:UnitCreated(unitID, unitDefID)
         local uDef = UnitDefs[unitDefID]
         if uDef.customParams.prioritytarget and uDef.customParams.prioritytarget == "air" then
-            Spring.InsertUnitCmdDesc(unitID, CMD_SET_PRIORITY, setPriorityAirn)
-            Spring.SetUnitRulesParam(unitID, "targetPriorityFighters", 1)
-            Spring.SetUnitRulesParam(unitID, "targetPriorityBombers", 1)
-            Spring.SetUnitRulesParam(unitID, "targetPriorityScouts", 1000)
-            Spring.SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 0)
-            Spring.SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
+            InsertUnitCmdDesc(unitID, CMD_SET_PRIORITY, setPriorityAirn)
+            SetUnitRulesParam(unitID, "targetPriorityDisabled", 1)
         end
     end
     
     function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag, synced)
         if cmdID == CMD_SET_PRIORITY then
-            cmdDescId = Spring.FindUnitCmdDesc(unitID, CMD_SET_PRIORITY)
+            cmdDescId = FindUnitCmdDesc(unitID, CMD_SET_PRIORITY)
             if cmdParams and cmdParams[1] and cmdDescId then
                 if cmdParams[1] == 0 then
-                    Spring.EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirn)
+                    EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirn)
                 elseif cmdParams[1] == 1 then
-                    Spring.EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirf)
+                    EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirf)
                 elseif cmdParams[1] == 2 then
-                    Spring.EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirb)
+                    EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirb)
                 elseif cmdParams[1] == 3 then
-                    Spring.EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirOb)
+                    EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirOb)
                 elseif cmdParams[1] == 4 then
-                    Spring.EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirNs)
+                    EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirNs)
                 end
             end
         end
@@ -170,28 +173,28 @@ if gadgetHandler:IsSyncedCode() then
         if cmdID == CMD_SET_PRIORITY then
             if cmdParams and cmdParams[1] then
                 if cmdParams[1] == 0 then
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityFighters", 1)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityBombers", 1)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityScouts", 1000)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 0)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityDisabled", 1)
                 elseif cmdParams[1] == 1 then
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityFighters", 0.0001)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityBombers", 1)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityScouts", 1000)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 0)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityDisabled", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityFighters", 0.0001)
+                    SetUnitRulesParam(unitID, "targetPriorityBombers", 1)
+                    SetUnitRulesParam(unitID, "targetPriorityScouts", 1000)
+                    SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
                 elseif cmdParams[1] == 2 then
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityFighters", 1)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityBombers", 0.0001)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityScouts", 1000)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 0)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityDisabled", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityFighters", 1)
+                    SetUnitRulesParam(unitID, "targetPriorityBombers", 0.0001)
+                    SetUnitRulesParam(unitID, "targetPriorityScouts", 1000)
+                    SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
                 elseif cmdParams[1] == 3 then
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 1)
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityDisabled", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityOnlyBombers", 1)
+                    SetUnitRulesParam(unitID, "targetPriorityNoSouts", 0)
                 elseif cmdParams[1] == 4 then
-                    Spring.SetUnitRulesParam(unitID, "targetPriorityNoSouts", 1)
+                    SetUnitRulesParam(unitID, "targetPriorityDisabled", 0)
+                    SetUnitRulesParam(unitID, "targetPriorityNoSouts", 1)
                 end
             end
         end
@@ -199,20 +202,25 @@ if gadgetHandler:IsSyncedCode() then
     
     function gadget:AllowWeaponTarget(unitID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
         local allowed = true
-        local unitDefID = Spring.GetUnitDefID(targetID)
         local priority = defPriority
-        local onlyBombers = Spring.GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
-        local noScouts = Spring.GetUnitRulesParam(unitID, "targetPriorityNoSouts")
-        local hasPriority = (Spring.GetUnitRulesParam(unitID, "targetPriorityFighters") and Spring.GetUnitRulesParam(unitID, "targetPriorityBombers") and Spring.GetUnitRulesParam(unitID, "targetPriorityScouts"))
-        if hasPriority and onlyBombers == 0 and noScouts == 0 then
-            if airCategories[unitDefID] then
-                priority = priority * Spring.GetUnitRulesParam(unitID, ("targetPriority"..airCategories[unitDefID]))
+        local priorityDisabled = GetUnitRulesParam(unitID, "targetPriorityDisabled")
+        if priorityDisabled == 0 then
+            local unitDefID = GetUnitDefID(targetID)
+            local airCat = airCategories[unitDefID]
+            local onlyBombers = GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
+            local noScouts = GetUnitRulesParam(unitID, "targetPriorityNoSouts")
+            local hasPriority = (GetUnitRulesParam(unitID, "targetPriorityFighters") and GetUnitRulesParam(unitID, "targetPriorityBombers") and GetUnitRulesParam(unitID, "targetPriorityScouts"))
+            if hasPriority and onlyBombers == 0 and noScouts == 0 then
+                if airCat then
+                    priority = priority * GetUnitRulesParam(unitID, ("targetPriority"..airCat))
+                end
+            elseif airCat and airCat ~= "Bombers" and noScouts == 0 then
+                allowed = false
+            elseif airCat == "Scouts" and noScouts == 1 then
+                allowed = false
             end
-        elseif airCategories[unitDefID] and airCategories[unitDefID] ~= "Bombers" and noScouts == 0 then
-            return false, defPriority
-        elseif airCategories[unitDefID] == "Scouts" then
-            return false, defPriority
         end
         return allowed, priority
     end
+
 end
