@@ -430,7 +430,8 @@ end
 local function GetMorphToolTip(unitID, unitDefID, teamID, morphDef, teamTech, unitXP, unitRank, teamOwnsReqUnit)
   local ud = UnitDefs[morphDef.into]
   local tt = ''
-   tt = tt .. 'UnitDefID ' .. morphDef.into .. '\n'
+  tt = tt .. 'UnitID ' .. unitID .. '\n'
+  tt = tt .. 'UnitDefID ' .. morphDef.into .. '\n'
   if (morphDef.text ~= nil) then
     tt = tt .. WhiteStr  .. morphDef.text .. '\n'
   else

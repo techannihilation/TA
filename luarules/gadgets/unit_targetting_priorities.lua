@@ -71,7 +71,9 @@ if gadgetHandler:IsSyncedCode() then
         queueing = false,
         params = {'4', '', '', '', '', '\255\64\170\255No Scouts'},
     }
-    
+
+    local AAunits = {}
+
     airCategories = {
         --Transporters
         [UnitDefNames["armatlas"].id] = "Bombers",
@@ -148,17 +150,24 @@ if gadgetHandler:IsSyncedCode() then
     
     local airCategoriesCached = {}
     function gadget:Initialize()
-        airCategoriesCached = shallow_copy(airCategories)
+    airCategoriesCached = shallow_copy(airCategories)
     end
     
     function gadget:UnitCreated(unitID, unitDefID)
         local uDef = UnitDefs[unitDefID]
         if uDef.customParams.prioritytarget and uDef.customParams.prioritytarget == "air" then
+        	AAunits[unitID] = true
             InsertUnitCmdDesc(unitID, CMD_SET_PRIORITY, setPriorityAirn)
             SetUnitRulesParam(unitID, "targetPriorityDisabled", 1)
         end
     end
     
+	function gadget:UnitDestroyed(unitID, unitDefID)
+        if AAunits[unitID] then 
+            AAunits[unitID] = nil
+        end
+    end
+
     function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag, synced)
         if cmdID == CMD_SET_PRIORITY then
             cmdDescId = FindUnitCmdDesc(unitID, CMD_SET_PRIORITY)
@@ -211,26 +220,27 @@ if gadgetHandler:IsSyncedCode() then
     end
     
     function gadget:AllowWeaponTarget(unitID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
-        local allowed = true
-        local priority = defPriority
-        local priorityDisabled = GetUnitRulesParam(unitID, "targetPriorityDisabled") or 1
-        if priorityDisabled == 0 then
-            local unitDefID = GetUnitDefID(targetID)
-            local airCat = airCategoriesCached[unitDefID]
-            local onlyBombers = GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
-            local noScouts = GetUnitRulesParam(unitID, "targetPriorityNoSouts")
-            local hasPriority = (GetUnitRulesParam(unitID, "targetPriorityFighters") and GetUnitRulesParam(unitID, "targetPriorityBombers") and GetUnitRulesParam(unitID, "targetPriorityScouts"))
-            if hasPriority and onlyBombers == 0 and noScouts == 0 then
-                if airCat then
-                    priority = priority * GetUnitRulesParam(unitID, ("targetPriority"..airCat))
-                end
-            elseif airCat and airCat ~= "Bombers" and noScouts == 0 then
-                allowed = false
-            elseif airCat == "Scouts" and noScouts == 1 then
-                allowed = false
-            end
-        end
+    	if AAunits[unitID] then 
+	        local allowed = true
+    	    local priority = defPriority
+        	local priorityDisabled = GetUnitRulesParam(unitID, "targetPriorityDisabled") or 1
+            if priorityDisabled == 0 then
+        	    local unitDefID = GetUnitDefID(targetID)
+         	    local airCat = airCategoriesCached[unitDefID]
+             	local onlyBombers = GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
+          	    local noScouts = GetUnitRulesParam(unitID, "targetPriorityNoSouts")
+            	local hasPriority = (GetUnitRulesParam(unitID, "targetPriorityFighters") and GetUnitRulesParam(unitID, "targetPriorityBombers") and GetUnitRulesParam(unitID, "targetPriorityScouts"))
+           		if hasPriority and onlyBombers == 0 and noScouts == 0 then
+                	if airCat then
+                   		priority = priority * GetUnitRulesParam(unitID, ("targetPriority"..airCat))
+                	end
+            	elseif airCat and airCat ~= "Bombers" and noScouts == 0 then
+                	allowed = false
+            	elseif airCat == "Scouts" and noScouts == 1 then
+                	allowed = false
+            	end
+        	end
+    	end
         return allowed, priority
     end
-    
 end

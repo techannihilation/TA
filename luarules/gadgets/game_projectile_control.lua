@@ -18,11 +18,15 @@ local wiggleWeapon = {}
 local danceWeapon = {}
 danceWeapon[WeaponDefNames["fatshrew_rocket"].id] = 1
 
+local fakeVerticalWeapon = {}
+fakeVerticalWeapon[WeaponDefNames["tlldb_dragon_breath_missile"].id] = 1
+
 local redirectProjectiles = {}  -- [frame][projectileID] = table with .targetType .targetX .targetY .targetZ .targetID
 
 function gadget:Initialize()
 	--Script.SetWatchWeapon (WeaponDefNames["armabad_exp_heavyrocket1"].id, true)
 	Script.SetWatchWeapon (WeaponDefNames["fatshrew_rocket"].id, true)
+	Script.SetWatchWeapon (WeaponDefNames["tlldb_dragon_breath_missile"].id, true)
 end
 
  
@@ -65,6 +69,18 @@ end
 		local x,y,z = Spring.GetUnitPosition (proOwnerID)
 		addProjectileRedirect (proID, makeTargetTable(x+math.random(-200,200),Spring.GetGroundHeight (x,z)+800,z+math.random(-200,200)), 1)
 		addProjectileRedirect (proID, originalTarget, 65)
+		return true
+	end
+	--Spring.Echo(fakeVerticalWeapon [Spring.GetProjectileDefID (proID)])
+	if (fakeVerticalWeapon [Spring.GetProjectileDefID (proID)]) then
+		local originalTarget = getTargetTable (proID)
+		local tx,ty,tz = getProjectileTargetXYZ (proID)
+		local x,y,z = Spring.GetUnitPosition (proOwnerID)
+		--addProjectileRedirect (proID, makeTargetTable(x+math.random(-200,200),Spring.GetGroundHeight (x,z)+800,z+math.random(-200,200)), 1)
+
+
+		--addProjectileRedirect (proID, makeTargetTable(x,Spring.GetGroundHeight (x,z)+500,z), 1)
+		--addProjectileRedirect (proID, originalTarget, 39)
 		return true
 	end
 end

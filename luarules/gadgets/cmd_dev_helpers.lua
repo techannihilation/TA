@@ -300,6 +300,10 @@ function GiveCat(_,line)
         local Condition = function (ud) return not ud.isImmobile end
         Accept[#Accept+1] = Condition
     end
+	if string.find(line, "air") then
+        local Condition = function (ud) return ud.canFly end
+        Accept[#Accept+1] = Condition
+    end
 
     -- team
     local _,_,_,teamID = Spring.GetPlayerInfo(Spring.GetMyPlayerID())

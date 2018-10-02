@@ -42,6 +42,7 @@ VFS.Include(SCRIPT_DIR .. 'utilities.lua', nil, VFSMODE)
 
 local actionHandler = VFS.Include(HANDLER_DIR .. 'actions.lua', nil, VFSMODE)
 
+local max = math.max
 
 --------------------------------------------------------------------------------
 
@@ -1287,7 +1288,7 @@ function gadgetHandler:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum
 			allowed = false; break
 		end
 
-		priority = math.max(priority, targetPriority)
+		priority = max(priority, targetPriority)
 	end
 
 	return allowed, priority

@@ -46,9 +46,9 @@ local GetTide              = Game.tidal*1.5
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 	if tidalDefs[unitDefID] then
     	local uDef = UnitDefs[unitDefID]
-    	local mult = 1
+    	local mult = 1.25
     	if uDef.customParams and uDef.customParams.energymultiplier then
-       		mult = uDef.customParams.energymultiplier*.75 or 1
+       		mult = uDef.customParams.energymultiplier*.5 or 1.25
     	end
 		--Spring.Echo("TIDAL SPEED :" .. GetTide*mult)
 		Spring.CallCOBScript(unitID, "TidalSpeed", 0, GetTide*mult)

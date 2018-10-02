@@ -62,6 +62,7 @@ function SetOpacity()
         ScriptLuaUICall("SetOpacity_Highlight_geo", opacityDark, opacityLight)
         ScriptLuaUICall("SetOpacity_Comblast_DGun_Range", opacityDark, opacityLight)
         ScriptLuaUICall("SetOpacity_Unit_Stats", opacityDark, opacityLight)
+        ScriptLuaUICall("SetOpacity_Missingrings", opacityDark, opacityLight)
     end
 end
 
