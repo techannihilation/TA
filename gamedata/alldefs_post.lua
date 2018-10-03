@@ -59,9 +59,9 @@ function UnitDef_Post(name, uDef)
 			if string.match(uDef.buildcostmetal,"[0]$") and uDef.buildcostmetal>99 then
 				buildcostmetal = uDef.buildcostmetal + math.floor(uDef.buildcostmetal*(math.random()*math.random(-1,1))*0.01)
 				if buildcostmetal == uDef.buildcostmetal then
-         			buildcostmetal = uDef.buildcostmetal + math.floor(5*math.random()*math.random(-1,1))
-         		end
-         		uDef.buildcostmetal = buildcostmetal
+					buildcostmetal = uDef.buildcostmetal + math.floor(5*math.random()*math.random(-1,1))
+				end
+				uDef.buildcostmetal = buildcostmetal
 			end
 		end
 
@@ -69,9 +69,9 @@ function UnitDef_Post(name, uDef)
 			if string.match(uDef.buildcostenergy,"[0]$") and uDef.buildcostenergy>99 then
 				buildcostenergy = uDef.buildcostenergy + math.floor(uDef.buildcostenergy*(math.random()*math.random(-1,1))*0.01)
 				if buildcostenergy == uDef.buildcostenergy then
-         			buildcostenergy = uDef.buildcostenergy + math.floor(5*math.random()*math.random(-1,1))
-         		end
-         		uDef.buildcostenergy = buildcostenergy
+					buildcostenergy = uDef.buildcostenergy + math.floor(5*math.random()*math.random(-1,1))
+					end
+				uDef.buildcostenergy = buildcostenergy
 			end
 		end
 
@@ -120,13 +120,13 @@ function UnitDef_Post(name, uDef)
 		uDef.sfxtypes["pieceexplosiongenerators"] = {}
 		if (pplants[uDef.unitname]) then
 			--Spring.Echo("energy unit ",uDef.unitname)
-	    	uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail5]]
+			uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail5]]
 			uDef.sfxtypes["pieceexplosiongenerators"][2] = [[piecetrail5]]
 			uDef.sfxtypes["pieceexplosiongenerators"][3] = [[piecetrail4]]
 			uDef.sfxtypes["pieceexplosiongenerators"][4] = [[piecetrail6]]
 		else
-		    --Spring.Echo("others unit ",uDef.unitname)
-	    	uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail0]]
+			--Spring.Echo("others unit ",uDef.unitname)
+			uDef.sfxtypes["pieceexplosiongenerators"][1] = [[piecetrail0]]
 			uDef.sfxtypes["pieceexplosiongenerators"][2] = [[piecetrail1]]
 			uDef.sfxtypes["pieceexplosiongenerators"][3] = [[piecetrail2]]
 			uDef.sfxtypes["pieceexplosiongenerators"][4] = [[piecetrail3]]
@@ -134,7 +134,7 @@ function UnitDef_Post(name, uDef)
 			uDef.sfxtypes["pieceexplosiongenerators"][6] = [[piecetrail5]]
 			uDef.sfxtypes["pieceexplosiongenerators"][6] = [[piecetrail6]]
 		end
-		--Uncomment to clean pieces
+		--Uncomment to clean piece explosions
 		--uDef.sfxtypes.pieceexplosiongenerators = nil
 
 		--Fix planes blocking
@@ -167,9 +167,9 @@ function ModOptions_Post(UnitDefs, WeaponDefs)
 		if (modOptions.mo_transportenemy == "notcoms") then
 			for name,ud in pairs(UnitDefs) do  
 				if Commanders[ud.unitname] then
-		 			ud.transportbyenemy = false
+					ud.transportbyenemy = false
 				end
-		  	end
+			end
 		elseif (modOptions.mo_transportenemy == "none") then
 			for name, ud in pairs(UnitDefs) do  
 				ud.transportbyenemy = false
@@ -185,12 +185,11 @@ function ModOptions_Post(UnitDefs, WeaponDefs)
 			end
 		end
 		if (modOptions.mo_noenergyshields == "1") then
-    		for name, wd in pairs(WeaponDefs) do
-        		if wd.shieldenergyuse then
-            		wd.shieldenergyuse = 0
-        		end
-    		end
+			for name, wd in pairs(WeaponDefs) do
+				if wd.shieldenergyuse then
+					wd.shieldenergyuse = 0
+				end
+			end
 		end
 	end
-	--]]
 end
