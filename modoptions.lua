@@ -114,6 +114,14 @@ local options={
     section= "ta_modes",
   },
   {
+    key = "mo_noenergyshields",
+    name = "No Energy For Shield Power",
+    desc = "Shields not need energy for power, still need energy to regenerate\nAutoHost Usage :- mo_noenergyshields",
+    type = "bool",
+    def = false,
+    section = "ta_modes",
+  },
+  {
     key    = "mo_noowner",
     name   = "FFA Mode",
     desc   = "Units with no player control are instantly removed/destroyed\nAutoHost Usage :- mo_noowner",

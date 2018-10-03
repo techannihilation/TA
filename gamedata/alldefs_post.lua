@@ -184,6 +184,13 @@ function ModOptions_Post(UnitDefs, WeaponDefs)
 				end
 			end
 		end
+		if (modOptions.mo_noenergyshields == "1") then
+    		for name, wd in pairs(WeaponDefs) do
+        		if wd.shieldenergyuse then
+            		wd.shieldenergyuse = 0
+        		end
+    		end
+		end
 	end
 	--]]
 end
