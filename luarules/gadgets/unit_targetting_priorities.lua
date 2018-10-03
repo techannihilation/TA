@@ -231,7 +231,7 @@ if gadgetHandler:IsSyncedCode() then
                 local onlyBombers = GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
                 local noScouts = GetUnitRulesParam(unitID, "targetPriorityNoSouts")
                 local hasPriority = (GetUnitRulesParam(unitID, "targetPriorityFighters") and GetUnitRulesParam(unitID, "targetPriorityBombers"))
-                if hasPriority and onlyBombers == 0 then
+                if airCat and hasPriority and onlyBombers == 0 then
                     if airCat == "Scouts" then
                         priority = priority * 1000
                         if noScouts == 1 then
