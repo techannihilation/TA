@@ -1277,21 +1277,22 @@ function gadgetHandler:AllowWeaponTargetCheck(attackerID, attackerWeaponNum, att
 	end
 end
 
+local GetUnitRulesParam = Spring.GetUnitRulesParam
 function gadgetHandler:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
-	local allowed = true
-	local priority = 1.0
-
-	for _, g in r_ipairs(self.AllowWeaponTargetList) do
-		local targetAllowed, targetPriority = g:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
-
-		if (not targetAllowed) then
-			allowed = false; break
-		end
-
-		priority = max(priority, targetPriority)
-	end
-
-	return allowed, priority
+    local allowed = true
+    local priority = 1.0
+    if GetUnitRulesParam(attackerID, "priorityEnabled") == 1 then
+        for _, g in r_ipairs(self.AllowWeaponTargetList) do
+            local targetAllowed, targetPriority = g:AllowWeaponTarget(attackerID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
+            
+            if (not targetAllowed) then
+                allowed = false; break
+            end
+            
+            priority = max(priority, targetPriority)
+        end
+    end
+    return allowed, priority
 end
 
 function gadgetHandler:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponNum, interceptorTargetID)
