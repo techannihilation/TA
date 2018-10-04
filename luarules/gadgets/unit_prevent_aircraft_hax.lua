@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function gadget:GetcheckDisto()
+function gadget:GetInfo()
     return {
         name = "Prevent outside-of-map hax",
         desc = "Prevent outside-of-map hax",
