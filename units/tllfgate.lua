@@ -31,7 +31,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "tllfgate",
-		onoffable = true,
 		radaremitheight = 38,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",

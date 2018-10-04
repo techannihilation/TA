@@ -98,6 +98,7 @@ local ShieldUnits = {
   [UnitDefNames["corgate"].id] = true,
   [UnitDefNames["corgate1"].id] = true,
   [UnitDefNames["corgate2"].id] = true,
+  [UnitDefNames["corflshd"].id] = true,
   [UnitDefNames["corshieldgen"].id] = true,
   [UnitDefNames["monkeylord"].id] = true, 
   [UnitDefNames["corsfus"].id] = true,
@@ -109,6 +110,7 @@ local ShieldUnits = {
   [UnitDefNames["armgate"].id] = true,
   [UnitDefNames["armgate1"].id] = true,
   [UnitDefNames["armgate2"].id] = true,
+  [UnitDefNames["armflosh"].id] = true,
   [UnitDefNames["armpraet"].id] = true,
   [UnitDefNames["exoarm"].id] = true,
   [UnitDefNames["armsmc"].id] = true,
@@ -117,6 +119,7 @@ local ShieldUnits = {
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
   [UnitDefNames["tllgate"].id] = true,
+  [UnitDefNames["tllfgate"].id] = true,
   [UnitDefNames["tllgate1"].id] = true,
   [UnitDefNames["tllgate2"].id] = true,
   [UnitDefNames["irritator"].id] = true,
@@ -364,7 +367,7 @@ function gadget:PlayerChanged()
 end
 
 function gadget:CommandNotify(id, params, options)
-	if (id >= 34520 and id <= (34520+28)) then
+	if (id >= 34520 and id <= (34520+31)) then
 		local selectedUnit = Spring.GetSelectedUnits()
 		if #selectedUnit == 1 then
 			local cmdunitID = selectedUnit[1]
@@ -375,7 +378,7 @@ function gadget:CommandNotify(id, params, options)
 					disabledShieldCobOff[cmdunitID] = true
 				end
 			end
-			if params[1] == 1 and (id >= 34520 and id <= 34540) and ShieldUnits[cmdunitID] then
+			if params[1] == 1 and (id >= 34520 and id <= 34520+31) and ShieldUnits[cmdunitID] then
 				if disabledShieldCobOff[cmdunitID] then 
 					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
 					disabledShieldCobOff[cmdunitID] = nil

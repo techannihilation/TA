@@ -30,7 +30,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "armflosh.s3o",
-		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -44,6 +43,8 @@ return {
 		customparams = {
 			buildpic = "armflosh.dds",
 			faction = "ARM",
+			shield_power = 7500,
+			shield_radius = 400,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -97,8 +98,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				visibleshield = true,
-				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
