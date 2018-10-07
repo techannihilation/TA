@@ -66,7 +66,11 @@ function widget:MousePress(x, y, b)
     local alt, ctrl, meta, shift = Spring.GetModKeyState() -- 
     local options = {} 
     if shift then options = {"shift"} end 
-    GiveOrderToUnit(rightClickUpgradeParams.builderID, CMD_UPGRADEMEX, {rightClickUpgradeParams.mexID}, options) 
+    if b == 3 then
+        GiveOrderToUnit(rightClickUpgradeParams.builderID, CMD_UPGRADEMEX, {rightClickUpgradeParams.mexID}, options)
+    else
+      return false
+    end
     return true 
   end    
 end 
