@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tllzeppelin.dds",
 			faction = "TLL",
+			requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

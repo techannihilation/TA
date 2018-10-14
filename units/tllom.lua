@@ -50,6 +50,7 @@ return {
 		unitname = "tllom",
 		upright = false,
 		customparams = {
+			requiretech = "T3 Factory",
 			buildpic = "tllom.dds",
 			faction = "TLL",
 		},

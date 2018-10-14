@@ -103,17 +103,6 @@ local options={
     section= "ta_modes",
   },
   {
-    key    = "mo_morphcostmulti",
-    name   = "Morph Cost Multiplier",
-    desc   = "Changes cost of morphs\nAutoHost Usage :- mo_morphcostmulti",
-    type   = "number",
-    def    = 1,
-    min    = 0.4,
-    max    = 3,
-    step   = 0.01,
-    section= "ta_modes",
-  },
-  {
     key = "mo_noenergyshields",
     name = "No Energy For Shield Power",
     desc = "Shields not need energy for power, still need energy to regenerate\nAutoHost Usage :- mo_noenergyshields",
