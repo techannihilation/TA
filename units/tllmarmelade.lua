@@ -69,9 +69,10 @@ return {
 			[8] = "tlldevelop",
 			[9] = "tllgate1",
 			[10] = "tllgazelle",
-			[11] = "tlllrpt1",
-			[12] = "tllbagger",
-			[13] = "tllion",
+			[11] = "tlldmc",
+			[12] = "tlllrpt1",
+			[13] = "tllbagger",
+			[14] = "tllion",
 		},
 		customparams = {
 			buildpic = "tllmarmelade.dds",
