@@ -63,9 +63,10 @@ return {
 			[9] = "correch4",
 			[10] = "corgate1",
 			[11] = "corfmd2",
-			[12] = "corint1",
-			[13] = "corbuzz1",
-			[14] = "corfsilo",
+			[12] = "corboucher",
+			[13] = "corint1",
+			[14] = "corbuzz1",
+			[15] = "corfsilo",
 		},
 		customparams = {
 			buildpic = "corcrab.dds",
