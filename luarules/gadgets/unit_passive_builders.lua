@@ -81,9 +81,6 @@ local spGetTeamResources = Spring.GetTeamResources
 local spGetTeamList = Spring.GetTeamList
 local spSetUnitRulesParam = Spring.SetUnitRulesParam
 local spGetUnitRulesParam = Spring.GetUnitRulesParam
-local spGetUnitIsBuilding = Spring.GetUnitIsBuilding
-local spGetUnitCurrentBuildPower = Spring.GetUnitCurrentBuildPower
-local spGetUnitDefID = Spring.GetUnitDefID
 local spSetUnitBuildSpeed = Spring.SetUnitBuildSpeed
 local spGetUnitIsBuilding = Spring.GetUnitIsBuilding
 local spValidUnitID = Spring.ValidUnitID
@@ -113,7 +110,7 @@ function gadget:Initialize()
 end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID)
-    if UnitDefs[unitDefID].buildSpeed>0 or canPassive[unitDefID] then
+    if canPassive[unitDefID] or UnitDefs[unitDefID].buildSpeed>0 then
         canBuild[teamID] = canBuild[teamID] or {}
         canBuild[teamID][unitID] = true
         realBuildSpeed[unitID] = UnitDefs[unitDefID].buildSpeed or 0
@@ -188,7 +185,11 @@ function gadget:GameFrame(n)
     -- see (*) below
     for builderID,builtUnit in pairs(buildTargetOwners) do
         if spValidUnitID(builderID) and spGetUnitIsBuilding(builderID)==builtUnit then
-            spSetUnitBuildSpeed(builderID, currentBuildSpeed[builderID])
+        	local nanoState = Spring.GetUnitRulesParam(builderID,"nanoBoosted") or 0
+        	    Spring.Echo(nanoState, builderID, currentBuildSpeed[builderID])
+        	if nanoState == 0 then
+           		spSetUnitBuildSpeed(builderID, currentBuildSpeed[builderID])
+           	end
         end
         buildTargetOwners[builderID] = nil
         buildTargets[builtUnit] = nil
