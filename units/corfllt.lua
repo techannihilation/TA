@@ -42,7 +42,7 @@ return {
 		turnrate = 0,
 		unitname = "corfllt",
 		waterline = 2,
-		yardmap = "wwwwwwwwwwwwwwww",
+		yardmap = "ww ww",
 		customparams = {
 			buildpic = "corfllt.dds",
 			faction = "CORE",

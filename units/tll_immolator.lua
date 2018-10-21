@@ -47,7 +47,7 @@ return {
 		standingfireorder = 2,
 		unitname = "tll_immolator",
 		usebuildinggrounddecal = true,
-		yardmap = "oooo oooo oooo oooo",
+		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "core_immolator.dds",
 			canareaattack = 1,

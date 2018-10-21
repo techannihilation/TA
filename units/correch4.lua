@@ -44,7 +44,7 @@ return {
 		unitname = "correch4",
 		usebuildinggrounddecal = false,
 		workertime = 1000,
-		yardmap = "OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOOOOOOOO OOOCCCCOOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOCCCCCCOO OOOCCCCOOO OOOOOOOOOO",
+		yardmap = "oooooooooo oooooooooo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo oooooooooo oooooooooo",
 		buildoptions = {
 			[1] = "cbuilderlvl2",
 			[2] = "cbuilderlvl3",

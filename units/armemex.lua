@@ -49,7 +49,7 @@ return {
 		turnrate = 0,
 		unitname = "armemex",
 		usebuildinggrounddecal = true,
-		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "armemex.dds",
 			faction = "ARM",

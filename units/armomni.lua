@@ -39,7 +39,7 @@ return {
 		sightdistance = 900,
 		unitname = "armomni",
 		usebuildinggrounddecal = false,
-		yardmap = "ooooo ooooo ooooo ooooo ooooo ",
+		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "armomni.dds",
 			faction = "ARM",

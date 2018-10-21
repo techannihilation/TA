@@ -42,7 +42,7 @@ return {
 		turnrate = 0,
 		unitname = "armfllt",
 		waterline = 2,
-		yardmap = "wwwwwwwwwwwwwwww",
+		yardmap = "ww ww",
 		customparams = {
 			buildpic = "armfllt.dds",
 			faction = "ARM",

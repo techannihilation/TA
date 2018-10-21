@@ -39,7 +39,7 @@ return {
 		sightdistance = 900,
 		unitname = "coromni",
 		usebuildinggrounddecal = false,
-		yardmap = "ooooo ooooo ooooo ooooo ooooo ",
+		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "coromni.dds",
 			faction = "CORE",

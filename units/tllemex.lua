@@ -48,7 +48,7 @@ return {
 		turnrate = 0,
 		unitname = "tllemex",
 		usebuildinggrounddecal = true,
-		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "tllemex.dds",
 			faction = "TLL",
