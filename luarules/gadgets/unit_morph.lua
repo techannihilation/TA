@@ -719,7 +719,7 @@ local function FinishMorph(unitID, morphData)
   SpSetUnitExperience(newUnit, newXp)
 
   --//copy some state
-  local nanoState = Spring.GetUnitRulesParam(unitID,"NanoPassive") or 0
+  local nanoState = Spring.GetUnitRulesParam(unitID,"nanoBoosted") or 0
 
   local states = SpGetUnitStates(unitID)
   SpGiveOrderArrayToUnitArray({ newUnit }, {
@@ -733,7 +733,7 @@ local function FinishMorph(unitID, morphData)
   
   local unitDefID = SpGetUnitDefID(newUnit)
   if nanos[unitDefID] then
-    Spring.GiveOrderToUnit(newUnit, CMD_PASSIVE, { nanoState }, {})
+    Spring.GiveOrderToUnit(newUnit, CMD_NANOBOOST, { nanoState }, {})
   end
 
   
