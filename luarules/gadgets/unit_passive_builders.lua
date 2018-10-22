@@ -186,7 +186,7 @@ function gadget:GameFrame(n)
     for builderID,builtUnit in pairs(buildTargetOwners) do
         if spValidUnitID(builderID) and spGetUnitIsBuilding(builderID)==builtUnit then
         	local nanoState = Spring.GetUnitRulesParam(builderID,"nanoBoosted") or 0
-        	    Spring.Echo(nanoState, builderID, currentBuildSpeed[builderID])
+        	    --Spring.Echo(nanoState, builderID, currentBuildSpeed[builderID])
         	if nanoState == 0 then
            		spSetUnitBuildSpeed(builderID, currentBuildSpeed[builderID])
            	end
