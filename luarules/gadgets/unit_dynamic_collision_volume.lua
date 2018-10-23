@@ -156,6 +156,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				elseif (not canFly[unitDefID] ) then
 					rs, hs, ws = 0.68, 0.68, 0.68
 					ars, ahs = 0.70, 0.70 
+				elseif spGetUnitRadius(unitID)>150 then --Fix hero's not moving in latest engine
+					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
+					rs, hs, ws = 0.77, 0.18, 0.77
+					ars, ahs = 0.25, 0.25 
 				elseif spGetUnitRadius(unitID)>60 then
 					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
 					rs, hs, ws = 0.77, 0.18, 0.77
