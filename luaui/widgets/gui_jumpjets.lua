@@ -28,7 +28,6 @@ end
 local CMD_ATTACK               = CMD.ATTACK
 local CMD_FIGHT                = CMD.FIGHT
 local CMD_MOVE                 = CMD.MOVE
-local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
 local GL_LINE_STRIP            = GL.LINE_STRIP
 local glBeginEnd               = gl.BeginEnd
 local glColor                  = gl.Color
@@ -72,10 +71,6 @@ local jumpDefs = {}
 for name, data in pairs(jumpDefNames) do
   jumpDefs[UnitDefNames[name].id] = data
 end
-
-local ignore = {
-  [CMD_SET_WANTED_MAX_SPEED] = true,
-}
 
 local curve = {CMD_MOVE, CMD_JUMP}
 local line = {CMD_FIGHT, CMD_ATTACK}
@@ -186,7 +181,7 @@ local function DrawQueue(unitID)
         DrawArc(unitID, ls.pos, queue[i].params, green, ls.frame)
       else
         local j = 1
-        while (queue[i-j] and ignore[queue[i-j].id] and j > 0) do
+        while (queue[i-j] and j > 0) do
           j = j + 1
         end
         if (curve[queue[i-j].id]) then
@@ -214,9 +209,6 @@ local function  DrawMouseArc(unitID, shift, groundPos)
     DrawArc(unitID, unitPos, groundPos, color, nil, range)
   elseif (shift) then
     local i = #queue
-    while (ignore[queue[i].id] and i > 0) do
-      i = i - 1
-    end
     if (curve[queue[i].id]) then
       local dist  = GetDist2(queue[i].params, groundPos)
       local color = range > dist and green or red
