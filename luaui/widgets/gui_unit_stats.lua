@@ -371,8 +371,10 @@ function widget:DrawScreen()
 			uID = nil
 			useHoverID = false
 			morphID = true
-			local expUnitPat = "UnitID (%d+)\n"
-			dummyUnitID = tonumber(text:match(expUnitPat)) or nil
+			local selUnits = spGetSelectedUnits()
+			if #selUnits >= 1 then
+				dummyUnitID = selUnits[1]
+			end
 		elseif (not WG.hoverID) and not (activeID < 0) then
 			RemoveGuishader() return
 		elseif WG.hoverID and WG.hoverID < 0 and not (activeID < 0) then

@@ -130,6 +130,7 @@ local function AutoResizeObjects() --autoresize v2
 end
 
 local function getEditedCurrentTooltip()
+
 	local text = sGetCurrentTooltip()
 	--Prune RC tech list
 	local lvl1tech = text:match("advanced t1 unit research centre") or nil
@@ -157,6 +158,14 @@ local function getEditedCurrentTooltip()
 			text = text:gsub(lvl1tech,string.format("Advanced T1 Unit Research Centre")) or text
 		end
 	end
+	-- Prune hidden unitID
+	--[[
+	local expUnitPat = "UnitID (%d+)\n"
+	local UnitID = tonumber(text:match(expUnitPat)) or nil
+	if UnitID ~= nil then
+    	text = text:gsub(expUnitPat,string.format("")) or text
+	end
+	--]]
 	--extract the exp value with regexp
 	local expMorphPat = "UnitDefID (%d+)\n"
 	local MorphDefID = tonumber(text:match(expMorphPat)) or nil
