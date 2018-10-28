@@ -27,7 +27,6 @@ local GetUnitStates        = Spring.GetUnitStates
 local GetTeamUnits         = Spring.GetTeamUnits
 
 local CMD_ATTACK = CMD.ATTACK
-local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
 local CMD_REMOVE = CMD.REMOVE
 local CMD_WAIT = CMD.WAIT
 
@@ -140,10 +139,8 @@ function widget:Update(dt)
 					if commands and commands[1] and commands[1].id==CMD_ATTACK and commands[2] then
 						local got_next_orders=false
 						for i=2,#commands do
-							if commands[i].id ~= CMD_SET_WANTED_MAX_SPEED then
-								got_next_orders=true
-								break
-							end
+							got_next_orders=true
+							break
 						end
 						if got_next_orders then
 							--Spring.Echo(CMD[commands[2].id])
