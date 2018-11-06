@@ -11,6 +11,7 @@ return {
 end
 
 --local show = true
+local maxNanoParticles = 4000
 
 local playSounds = true
 local buttonclick = 'LuaUI/Sounds/tock.wav'
@@ -114,6 +115,7 @@ local presets = {
 		xrayshader = false,
 		particles = 5000,
 		nanoparticles = 500,
+		nanobeamamount = 2,
 		grassdetail = 0,
 		treeradius = 0,
 		advsky = false,
@@ -137,6 +139,7 @@ local presets = {
 		xrayshader = false,
 		particles = 10000,
 		nanoparticles = 800,
+		nanobeamamount = 4,
 		grassdetail = 0,
 		treeradius = 200,
 		advsky = false,
@@ -160,6 +163,7 @@ local presets = {
 		xrayshader = false,
 		particles = 15000,
 		nanoparticles = 1200,
+		nanobeamamount = 6,
 		grassdetail = 0,
 		treeradius = 400,
 		advsky = false,
@@ -183,6 +187,7 @@ local presets = {
 		xrayshader = false,
 		particles = 20000,
 		nanoparticles = 2000,
+		nanobeamamount = 8,
 		grassdetail = 0,
 		treeradius = 800,
 		advsky = true,
@@ -206,6 +211,7 @@ local presets = {
 		xrayshader = false,
 		particles = 25000,
 		nanoparticles = 5000,
+		nanobeamamount = 10,
 		grassdetail = 0,
 		treeradius = 800,
 		advsky = true,
@@ -1137,6 +1143,7 @@ function applyOptionValue(i, skipRedrawWindow)
 			else
 				Spring.SetConfigInt("MSAALevel",0)
 			end
+			Spring.SetConfigInt("FSAALevel",0)
 			Spring.SetConfigInt("MSAALevel",value)
 		elseif id == 'shadowslider' then
 			local enabled = 1
@@ -1183,6 +1190,8 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.SetConfigInt("MaxParticles",value)
 		elseif id == 'nanoparticles' then
 			Spring.SetConfigInt("MaxNanoParticles",value)
+		elseif id == 'nanobeamamount' then
+			Spring.SetConfigInt("NanoBeamAmount",value)
 		elseif id == 'grassdetail' then
 			Spring.SetConfigInt("GrassDetail",value)
 		elseif id == 'grounddetail' then
@@ -1285,6 +1294,11 @@ function applyOptionValue(i, skipRedrawWindow)
 			end
 		elseif id == 'lupsnanoeffect' then
 			Spring.SetConfigInt("LupsNanoEffect",value)
+			if value == 1 then
+				Spring.SetConfigInt("MaxNanoParticles",0)
+			else
+				Spring.SetConfigInt("MaxNanoParticles",maxNanoParticles)
+			end
 		elseif id == 'camera' then
 			Spring.SetConfigInt("CamMode",(value-1))
 			if value == 1 then 
@@ -1782,7 +1796,8 @@ function init()
 --]]
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=GetWidgetToggleValue("LupsManager"), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
 		{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=tonumber(Spring.GetConfigInt("LupsPriority",1) or 3), description='Sets lups particle effects quality'},
-		{id="lupsnanoeffect", group="gfx", name="Lups Nano Effect", type="select", options={'laser','particles'}, value=tonumber(Spring.GetConfigInt("LupsNanoEffect",2) or 1), description='Sets lups nano effect\n\nRESTART NEEDED'},
+		{id="lupsnanoeffect", group="gfx", name="Lups Nano Effect", type="select", options={'laser','particles','none'}, value=tonumber(Spring.GetConfigInt("LupsNanoEffect",2) or 1), description='Sets lups nano effect'},
+		{id="nanobeamamount", group="gfx", name="Max New Particles", type="slider", min=2, max=20, step=1, value=tonumber(Spring.GetConfigInt("NanoBeamAmount",6) or 6), description='Not number of total emit effects (but total of new emit effects per gameframe)\n\nEmit Effects aren\'t cheap so lower this setting for better performance'},
 		{id="lupsdynamic", group="gfx", name="Dynamic Lups particle", type="bool", value=tonumber(Spring.GetConfigInt("DynamicLups",0) or 1) ==1, description='Auto adjust lups effect level depening on FPS'},
 		{id="lupsrefraction", group="gfx", name="Toggle Lups Refraction Pass", type="bool", value=tonumber(Spring.GetConfigInt("lupsenablerefraction",1) or 1) == 1, description='The settings seem only relevant near water\nand disabling them reduces draw passes\n\nLuaUI RESTART NEEDED'},
 		{id="lupsreflection", group="gfx", name="Toggle Lups Reflection Pass", type="bool", value=tonumber(Spring.GetConfigInt("lupsenablereflection",1) or 1) == 1, description='The settings seem only relevant near water\nand disabling them reduces draw passes\n\nLuaUIRESTART NEEDED'},
