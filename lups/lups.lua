@@ -389,6 +389,11 @@ function RemoveParticles(particlesID)
       end
     end
     fx:Destroy()
+    if fx.lightID then
+	  if WG and WG['lighteffects'] then
+	    WG['lighteffects'].removeLight(fx.lightID)
+	  end
+	end
     particles[particlesID] = nil
     particlesCount = particlesCount-1;
     return
@@ -708,7 +713,7 @@ local GetPriorityCheckTime = 0
 local GetDynamicLupsCheckTime = 0
 local GetPriorityConfig = Spring.GetConfigInt("LupsPriority") or 3
 local GetDynamicLupsStatus = Spring.GetConfigInt("DynamicLups") or 0
-local CONFIG_CHECK_PERIOD = 25
+local CONFIG_CHECK_PERIOD = 15
 
 
 local function GetUnitIsActive(unitID)
@@ -736,7 +741,7 @@ local function GetPriority(priority)
   end
   GetPriorityCheckTime = thisGameFrame + ACTIVE_CHECK_PERIOD
   GetPriorityConfig = Spring.GetConfigInt("LupsPriority") or 3
-  return priority >= GetPriorityConfig 
+  return priority > GetPriorityConfig 
 end
 
 local function GetDynamicLups()
@@ -855,9 +860,8 @@ local function IsUnitFXVisible(fx)
   local unitActive = true
   local unitID = fx.unit
   local priority = fx.priority or 3
-  --Spring.Echo("priority", fx.priority,priority)
   local disableOnLevel = fx.disableabovelevel or nil
-  if (disableOnLevel and GetPriority(priority)==false) then return false end
+  if (disableOnLevel and GetPriority(priority+1)==false) then return false end
   if GetPriority(priority) then return false end
 
   if GetDynamicLups() == 1 then
