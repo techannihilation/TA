@@ -19,6 +19,7 @@ end
 local GAMESPEED = Game.gameSpeed
 local SHIELDARMORID = 4
 local SHIELDARMORIDALT = 0
+local initialized = false
 
 if gadgetHandler:IsSyncedCode() then
 	local spSetUnitRulesParam = Spring.SetUnitRulesParam
@@ -71,7 +72,7 @@ local spGetSpectatingState  = Spring.GetSpectatingState
 
 local IterableMap = VFS.Include("LuaRules/Gadgets/Include/IterableMap.lua")
 
-local shieldUnitDefs
+local shieldUnitDefs = {}
 
 local Lups
 local LupsAddParticles
@@ -427,27 +428,53 @@ function gadget:GameFrame(n)
 	end
 end
 
-function gadget:Initialize(n)
-	if (not Lups) then
-		Lups = GG.Lups
-		LupsAddParticles = Lups.AddParticles
+function gadget:Update()
+	if (Spring.GetGameFrame()<1) then return end
+
+    if initialized then
+        --// enable particle effect?
+        if currentShieldEffect ~= (Spring.GetConfigInt("LupsPriority") or 3) then
+            currentShieldEffect = (Spring.GetConfigInt("LupsPriority") or 3)
+            shieldUnitDefs = include("LuaRules/Configs/lups_shield_fxs.lua")
+            init()
+		end
+    return
+    end
+	--gadgetHandler:RemoveCallIn("Update")
+
+	if (Lups) then
+		currentShieldEffect = (Spring.GetConfigInt("LupsPriority") or 3)
+		shieldUnitDefs = include("LuaRules/Configs/lups_shield_fxs.lua")
+		init()
+		initialized=true
 	end
+end
 
-	shieldUnitDefs = include("LuaRules/Configs/lups_shield_fxs.lua")
 
+
+function init()
 	highEnoughQuality = (Spring.GetConfigInt("LupsPriority") or 3) >= 4  --hit effect on level 5
-
 	if highEnoughQuality then
 		gadgetHandler:AddSyncAction("AddShieldHitDataHandler", AddShieldHitData)
 		GG.GetShieldHitPositions = GetShieldHitPositions
+	else
+		gadgetHandler:RemoveSyncAction("AddShieldHitDataHandler", AddShieldHitData)
+		GG.GetShieldHitPositions = nil
 	end
-
 
 	local allUnits = Spring.GetAllUnits()
 	for i = 1, #allUnits do
 		local unitID = allUnits[i]
 		local unitDefID = Spring.GetUnitDefID(unitID)
+		gadget:UnitDestroyed(unitID, unitDefID)
 		gadget:UnitFinished(unitID, unitDefID)
+	end
+end
+
+function gadget:Initialize(n)
+	if (not Lups) then
+		Lups = GG.Lups
+		LupsAddParticles = Lups.AddParticles
 	end
 end
 
