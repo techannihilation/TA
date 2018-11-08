@@ -97,7 +97,6 @@ end
   function gadget:GameFrame(frame)
     if (frame%30==0) and canDraw then 
       for unitID, thing in pairs(fusions) do
-        Spring.Echo(fusions[unitID].size)
         local myTeamID = Spring.GetMyTeamID()
         if not Spring.IsUnitIcon(unitID) and (CallAsTeam(myTeamID, Spring.IsUnitInView, unitID)) then
           local posx, posy, posz  = Spring.GetUnitPosition(unitID,true)
