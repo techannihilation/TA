@@ -59,7 +59,7 @@ return {
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
 		objectname = "TLLCOM3",
-		radardistance = 940,
+		radardistance = 880,
 		radaremitheight = 61,
 		reclaimable = false,
 		script = "tllcom.cob",
