@@ -291,7 +291,8 @@ function gadget:GameFrame(frame)
 				local type, target, isFeature = Spring.Utilities.GetUnitNanoTarget(unitID)
 				if (target) then
 					--Spring.Echo("IsUnitIcon", Spring.IsUnitIcon(unitID), unitID, "   Is Target Icon", Spring.IsUnitIcon(target),target)
-					if not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or CallAsTeam(myTeamID, spIsUnitInView, target)) then 
+                                        if not (Spring.IsUnitIcon(unitID) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or
+                                        not (isFeaturd and not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or CallAsTeam(myTeamID, spIsUnitInView, target))) then 
 						local endpos
 						local radius = 30
 						if (type=="restore") then
