@@ -23,6 +23,7 @@ iswater, WTimeUnits, Nanos, cons, turninplacebots, pplants, unitheight = VFS.Inc
 
 SaveDefsToCustomParams = false
 FixUnitStats = false
+FixWeaponStats = false
 RandomCosts = false
 -------------------------
 -- DEFS POST PROCESSING
@@ -144,11 +145,85 @@ function UnitDef_Post(name, uDef)
 	end
 end
 
+local Armtrails = {
+   ["armrock_arm_kbot_rocket"] = true,
+   ["armrock1_arm_kbot_rocket1"] = true,
+   ["armsam_armtruck_missile"] = true,
+   ["armsam1_armtruck_missile1"] = true,
+   ["armcrack_lightartmissarm"] = true,
+   }
+
 -- process weapondef
-function WeaponDef_Post(name, WeaponDefs)
-	if FixUnitStats == true then
+function WeaponDef_Post(wname, wd , name)
+	if FixWeaponStats == true then
+		local lower = string.lower
 		--Use this Area for WeaponDef changes
-		
+	
+		--Bake deferred rendering custom params
+		--Spring.Echo(" wname, wd ", wname, WeaponDefs)
+		for i,v in pairs(wd) do
+			--Spring.Echo(i,v)
+		end
+		if wd.weapontype and wd.weapontype == "LightningCannon" then
+			wd.customparams = {}
+			wd.customparams.light_mult = 1.2
+			wd.customparams.light_radius_mult = 0.9
+		end
+		if wd.weapontype and wd.weapontype == "BeamLaser" then
+			wd.customparams = {}
+			wd.customparams.light_mult = 1.8
+			wd.customparams.light_radius_mult = 1.2
+		end
+		if wd.weapontype and wd.weapontype == "DGun" then
+			Spring.Echo("dgun detected ", wname)
+			wd.customparams = {}
+			wd.customparams.light_color = "1 0.45 0.45"
+			wd.customparams.light_mult = 1.2
+			wd.customparams.light_radius_mult = 1.55
+			wd.customparams.expl_light_color = "1 0.45 0.45"
+			wd.customparams.expl_light_mult = 1.2
+			wd.customparams.expl_light_radius_mult = 1.75
+			wd.customparams.expl_light_heat_radius_mult = 2.2
+			wd.customparams.expl_light_heat_strength_mult = 0.66
+		end
+		if wd.weapontype and wd.weapontype == "MissileLauncher" then
+			if wd.cegtag and lower(wd.cegtag) == "arm_trail_rocket" then
+				Spring.Echo(name, wname, wd.size)
+				wd.customparams = {}
+				wd.customparams.light_color = "0.3 0.3 1.0"
+				wd.customparams.light_mult = 3
+				wd.customparams.light_radius_mult = 0.7
+           		--wd.customparams.expl_light_color = "1 0.5 0.05"
+           		--wd.customparams.expl_light_radius_mult = 1.05
+           	end
+           	if wd.cegtag and lower(wd.cegtag) == "cor_trail_rocket" then
+				Spring.Echo(name, wname, wd.size)
+				wd.customparams = {}
+				wd.customparams.light_color = "1.0 0.3 0.3"
+				wd.customparams.light_mult = 3
+				wd.customparams.light_radius_mult = 0.7
+           		--wd.customparams.expl_light_color = "1 0.5 0.05"
+           		--wd.customparams.expl_light_radius_mult = 1.05
+           	end
+           	if wd.cegtag and lower(wd.cegtag) == "tll_trail_rocket" then
+				Spring.Echo(name, wname, wd.size)
+				wd.customparams = {}
+				wd.customparams.light_color = "0.3 0.3 1.0"
+				wd.customparams.light_mult = 3
+				wd.customparams.light_radius_mult = 0.7
+           		--wd.customparams.expl_light_color = "1 0.5 0.05"
+           		--wd.customparams.expl_light_radius_mult = 1.05
+           	end
+		end
+		if wd.weapontype and wd.weapontype == "StarburstLauncher" then
+			if wd.cegtag and (lower(wd.cegtag) == "corraventrail" or lower(wd.cegtag) == "armraventrail" or lower(wd.cegtag) == "tllraventrail" ) then
+				Spring.Echo(name, wname, wd.size)
+				wd.customparams = {}
+				wd.customparams.light_color = "1 0.6 0.15"
+				wd.customparams.light_mult = 3.3
+				wd.customparams.light_radius_mult = 1.9
+           	end
+		end
 	end
 end
 
