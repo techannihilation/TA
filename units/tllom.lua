@@ -50,9 +50,9 @@ return {
 		unitname = "tllom",
 		upright = false,
 		customparams = {
-			requiretech = "T3 Factory",
 			buildpic = "tllom.dds",
 			faction = "TLL",
+			requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {
@@ -151,6 +151,10 @@ return {
 				turret = true,
 				weapontype = "LightningCannon",
 				weaponvelocity = 500,
+				customparams = {
+					light_mult = 1.4,
+					light_radius_mult = 0.9,
+				},
 				damage = {
 					commanders = 1200,
 					default = 3000,

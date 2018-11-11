@@ -151,6 +151,10 @@ return {
 				weapontimer = 4,
 				weapontype = "BeamLaser",
 				weaponvelocity = 920,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					commanders = 150,
 					default = 300,

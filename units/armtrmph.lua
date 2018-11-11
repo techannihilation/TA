@@ -211,6 +211,11 @@ return {
 				weapontimer = 1,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 600,
+				customparams = {
+					light_color = "1 0.6 0.15",
+					light_mult = 3.3,
+					light_radius_mult = 1.9,
+				},
 				damage = {
 					commanders = 250,
 					default = 500,

@@ -146,6 +146,10 @@ return {
 				weapontimer = 1,
 				weapontype = "LightningCannon",
 				weaponvelocity = 860,
+				customparams = {
+					light_mult = 1.4,
+					light_radius_mult = 0.9,
+				},
 				damage = {
 					default = 200,
 					subs = 5,

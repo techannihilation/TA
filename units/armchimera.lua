@@ -204,6 +204,10 @@ return {
 				turret = true,
 				weapontype = "LightningCannon",
 				weaponvelocity = 400,
+				customparams = {
+					light_mult = 1.4,
+					light_radius_mult = 0.9,
+				},
 				damage = {
 					commanders = 160,
 					default = 320,
@@ -239,6 +243,10 @@ return {
 				turret = true,
 				weapontype = "LightningCannon",
 				weaponvelocity = 400,
+				customparams = {
+					light_mult = 1.4,
+					light_radius_mult = 0.9,
+				},
 				damage = {
 					commanders = 160,
 					default = 320,

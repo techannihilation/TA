@@ -154,6 +154,11 @@ return {
 				weapontimer = 2,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 550,
+				customparams = {
+					light_color = "1 0.6 0.15",
+					light_mult = 3.3,
+					light_radius_mult = 1.9,
+				},
 				damage = {
 					default = 500,
 					subs = 5,
@@ -217,6 +222,10 @@ return {
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					commanders = 1250,
 					default = 2500,

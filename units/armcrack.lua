@@ -157,6 +157,11 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 250,
 				wobble = 2500,
+				customparams = {
+					light_color = "0.3 0.3 1.0",
+					light_mult = 3,
+					light_radius_mult = 0.7,
+				},
 				damage = {
 					default = 100,
 					subs = 5,

@@ -234,6 +234,16 @@ return {
 				weapontimer = 4.2,
 				weapontype = "DGun",
 				weaponvelocity = 300,
+				customparams = {
+					expl_light_color = "1 0.45 0.45",
+					expl_light_heat_radius_mult = 2.2,
+					expl_light_heat_strength_mult = 0.66,
+					expl_light_mult = 1.2,
+					expl_light_radius_mult = 1.75,
+					light_color = "1 0.45 0.45",
+					light_mult = 1.2,
+					light_radius_mult = 1.55,
+				},
 				damage = {
 					commanders = 450,
 					default = 999999,
@@ -272,6 +282,10 @@ return {
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 900,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					bombers = 112.5,
 					default = 75,
@@ -319,6 +333,10 @@ return {
 				waterweapon = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 900,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					default = 125,
 					subs = 75,

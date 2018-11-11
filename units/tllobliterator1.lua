@@ -15,9 +15,9 @@ return {
 		canguard = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
-		collisionvolumescales = [[133 127 133]],
-		collisionvolumeoffsets = [[0 -3 0]],
-		collisionvolumetype = [[CylY]],
+		collisionvolumeoffsets = "0 -3 0",
+		collisionvolumescales = "133 127 133",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		damagemodifier = 0.2,
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -158,6 +158,10 @@ return {
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					commanders = 1600,
 					default = 16000,

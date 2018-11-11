@@ -55,6 +55,7 @@ local copyLightDefs = {
 		["corgala_ravagerbeam"  ]      = "galacannon",
 
 		--Dgun
+		--[[
 		["armcom_arm_disintegrator"  ] = "arm_disintegrator",
 		["armcom1_arm_disintegrator" ] = "arm_disintegrator",
 		["armcom4_arm_disintegrator1"] = "arm_disintegrator",
@@ -73,6 +74,7 @@ local copyLightDefs = {
 		["tllcom5_tll_disintegrator2"] = "arm_disintegrator",
 		["tllcom6_tll_disintegrator2"] = "arm_disintegrator",
 		["tllcom7_tll_disintegrator2"] = "arm_disintegrator",
+		--]]
 
 		--nukes
 		["corsilo_crblmssl"          ] = "nuke_crblmssl",

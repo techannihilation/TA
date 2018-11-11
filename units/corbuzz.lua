@@ -154,7 +154,7 @@ return {
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
 				soundstart = "XPLONUK4",
-				stages = 20,
+				stages = 1,
 				turret = true,
 				weapontimer = 14,
 				weapontype = "Cannon",

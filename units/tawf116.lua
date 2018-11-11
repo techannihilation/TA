@@ -140,6 +140,16 @@ return {
 				weapontimer = 4,
 				weapontype = "DGun",
 				weaponvelocity = 200,
+				customparams = {
+					expl_light_color = "1 0.45 0.45",
+					expl_light_heat_radius_mult = 2.2,
+					expl_light_heat_strength_mult = 0.66,
+					expl_light_mult = 1.2,
+					expl_light_radius_mult = 1.75,
+					light_color = "1 0.45 0.45",
+					light_mult = 1.2,
+					light_radius_mult = 1.55,
+				},
 				damage = {
 					default = 250,
 					subs = 5,

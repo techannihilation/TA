@@ -131,6 +131,10 @@ return {
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 800,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					bombers = 5,
 					default = 200,
@@ -169,6 +173,10 @@ return {
 				turret = false,
 				weapontype = "BeamLaser",
 				weaponvelocity = 800,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					commanders = 70,
 					default = 140,

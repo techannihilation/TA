@@ -1727,15 +1727,17 @@ function loadAllWidgetData()
 	loadWidgetData("Defense Range", "defrange_enemyair", {'enabled','enemy','air'})
 	loadWidgetData("Defense Range", "defrange_enemyground", {'enabled','enemy','ground'})
 	loadWidgetData("Defense Range", "defrange_enemynuke", {'enabled','enemy','nuke'})
---[[
+--]]
 	loadWidgetData("Light Effects", "lighteffects_brightness", {'globalLightMult'})
 	loadWidgetData("Light Effects", "lighteffects_radius", {'globalRadiusMult'})
 	loadWidgetData("Light Effects", "lighteffects_laserbrightness", {'globalLightMultLaser'})
 	loadWidgetData("Light Effects", "lighteffects_laserradius", {'globalRadiusMultLaser'})
 	loadWidgetData("Light Effects", "lighteffects_life", {'globalLifeMult'})
+	loadWidgetData("Light Effects", "lighteffects_heatdistortion", {'enableHeatDistortion'})
+	loadWidgetData("Light Effects", "lighteffects_deferred", {'enableDeferred'})
 
-	loadWidgetData("Auto Group", "autogroup_immediate", {'config','immediate','value'})
---]]
+--	loadWidgetData("Auto Group", "autogroup_immediate", {'config','immediate','value'})
+
 	return changes
 end
 
@@ -1786,14 +1788,17 @@ function init()
 		{id="darkenmap_darkenfeatures", group="gfx", name=widgetOptionColor.."   Darken features with map", type="bool", value=false, description='Darkens features (trees, wrecks, ect..) along with darken map slider above\n\nNOTE: This setting can be CPU intensive because it cycles through all visible features \nand renders then another time.'},
 
 		{id="lighteffects", group="gfx", name="Deferred rendering", type="bool", value=GetWidgetToggleValue("Deferred rendering"), description='Adds lights to projectiles, lasers and explosions.\n\nRequires shaders.'},
---[[
-		{id="lighteffects", group="gfx", name="Light effects", type="bool", value=GetWidgetToggleValue("Light Effects"), description='Adds lights to projectiles, lasers and explosions.\n\nRequires shaders.'},
-		{id="lighteffects_life", group="gfx", name=widgetOptionColor.."   lifetime", min=0.4, max=1, step=0.05, type="slider", value=0.65, description='lifetime of explosion lights'},
+
+		{id="lighteffects", group="gfx", name="Lights", type="bool", value=GetWidgetToggleValue("Light Effects"), description='Adds lights to projectiles, lasers and explosions.\n\nRequires shaders.'},
+		{id="lighteffects_deferred", group="gfx", name=widgetOptionColor.."   real lights", type="bool", value=true, description='Otherwise simple ground flashes instead of actual map and model lighting.\n\nExpensive for the gpu when lots of (big) lights are there or when you zoom in on them.'},
+		{id="lighteffects_heatdistortion", group="gfx", name=widgetOptionColor.."   apply heat distortion", type="bool", value=true, description='Enables a distortion on top of explosions to simulate heat'},
+		{id="lighteffects_life", group="gfx", name=widgetOptionColor.."   lifetime", min=0.4, max=0.9, step=0.05, type="slider", value=0.65, description='lifetime of explosion lights'},
 		{id="lighteffects_brightness", group="gfx", name=widgetOptionColor.."   brightness", min=0.8, max=2.2, step=0.1, type="slider", value=1.2, description='Set the brightness of the lights'},
-		{id="lighteffects_radius", group="gfx", name=widgetOptionColor.."   radius  (gpu intensive)", min=1, max=2, step=0.1, type="slider", value=1.2, description='Set the radius of the lights\n\nWARNING: the bigger the radius the heavier on the GPU'},
-		{id="lighteffects_laserbrightness", group="gfx", name=widgetOptionColor.."   laser brightness", min=0.4, max=2, step=0.1, type="slider", value=1.2, description='laser lights brightness RELATIVE to global light brightness set above'},
-		{id="lighteffects_laserradius", group="gfx", name=widgetOptionColor.."   laser radius  (gpu intensive)", min=0.5, max=1.6, step=0.1, type="slider", value=1, description='laser lights radius RELATIVE to global light radius set above\n\nWARNING: the bigger the radius the heavier on the GPU'},
---]]
+		{id="lighteffects_radius", group="gfx", name=widgetOptionColor.."   radius", min=1, max=1.7, step=0.1, type="slider", value=1.2, description='Set the radius of the lights\n\nWARNING: the bigger the radius the heavier on the GPU'},
+		{id="lighteffects_laserbrightness", group="gfx", name=widgetOptionColor.."   laser brightness", min=0.4, max=2, step=0.1, type="slider", value=1.2, description='laser lights brightness RELATIVE to global light brightness set above\n\n(only applies to real map and model lighting)'},
+		{id="lighteffects_laserradius", group="gfx", name=widgetOptionColor.."   laser radius", min=0.5, max=1.6, step=0.1, type="slider", value=1, description='laser lights radius RELATIVE to global light radius set above\n\n(only applies to real map and model lighting)'},
+
+
 		{id="lups", group="gfx", widget="LupsManager", name="Lups particle/shader effects", type="bool", value=GetWidgetToggleValue("LupsManager"), description='Toggle unit particle effects: jet beams, ground flashes, fusion energy balls'},
 		{id="lupseffectlevel", group="gfx", name="Lups Quality", type="select", options={'basic','min','standard','extra','uber'}, value=tonumber(Spring.GetConfigInt("LupsPriority",1) or 3), description='Sets lups particle effects quality'},
 		{id="lupsnanoeffect", group="gfx", name="Lups Nano Effect", type="select", options={'laser','particles','none'}, value=tonumber(Spring.GetConfigInt("LupsNanoEffect",2) or 1), description='Sets lups nano effect'},

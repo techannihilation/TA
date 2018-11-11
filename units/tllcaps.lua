@@ -186,6 +186,10 @@ return {
 				weapontimer = 1,
 				weapontype = "LightningCannon",
 				weaponvelocity = 2250,
+				customparams = {
+					light_mult = 1.4,
+					light_radius_mult = 0.9,
+				},
 				damage = {
 					default = 175,
 					subs = 5,
@@ -258,6 +262,11 @@ return {
 				weapontimer = 1,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 800,
+				customparams = {
+					light_color = "1 0.6 0.15",
+					light_mult = 3.3,
+					light_radius_mult = 1.9,
+				},
 				damage = {
 					commanders = 250,
 					default = 500,

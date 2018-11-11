@@ -150,6 +150,10 @@ return {
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					commanders = 1500,
 					default = 8000,
@@ -237,6 +241,10 @@ return {
 				weapontimer = 0,
 				weapontype = "BeamLaser",
 				weaponvelocity = 2500,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					commanders = 3000,
 					default = 15000,
