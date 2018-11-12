@@ -84,7 +84,7 @@ local uniformViewPrjInvBeam
 --Light falloff functions: http://gamedev.stackexchange.com/questions/56897/glsl-light-attenuation-color-and-intensity-formula
 --------------------------------------------------------------------------------
 
-local verbose = true
+local verbose = false
 local function VerboseEcho(...)
 	if verbose then
 		Spring.Echo(...) 
