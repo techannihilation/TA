@@ -44,14 +44,14 @@ local SpGetAllUnits        = Spring.GetAllUnits
 
 local ipairs = ipairs
 local pairs = pairs
-
+local GAMESPEED = 30
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
 
 function gadget:GameFrame(n)
-  if (((n+20) % 32) < 0.1) then
+  if (((n+20) % GAMESPEED) < 0.1) then
   local strength = GetTide
     for unitID, scriptIDs in pairs(tidals) do
       local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
