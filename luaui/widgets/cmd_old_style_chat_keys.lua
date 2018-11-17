@@ -26,19 +26,19 @@ local unbinds={
 }
 
 function widget:Initialize()
-	for k,v in ipairs(unbinds) do
+	for _,v in ipairs(unbinds) do
 		Spring.SendCommands("un"..v)
 	end
-	for k,v in ipairs(binds) do
+	for _,v in ipairs(binds) do
 		Spring.SendCommands(v)
 	end
 end
 
 function widget:Shutdown()
-	for k,v in ipairs(binds) do
+	for _,v in ipairs(binds) do
 		Spring.SendCommands("un"..v)
 	end
-	for k,v in ipairs(unbinds) do
+	for _,v in ipairs(unbinds) do
 		Spring.SendCommands(v)
 	end
 end

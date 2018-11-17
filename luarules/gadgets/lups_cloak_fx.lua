@@ -37,7 +37,7 @@ local tinsert = function(tab, insert)
 	tab[#tab+1] = insert
 end
 
-local type  = type
+local _ = type
 local pairs = pairs
 
 --------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ local pairs = pairs
 local Lups  --// Lua Particle System
 local particleIDs = {}
 local initialized = false --// if LUPS isn't started yet, we try it once a gameframe later
-local tryloading  = 1     --// try to activate lups if it isn't found
+local _ = 1     --// try to activate lups if it isn't found
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ local tryloading  = 1     --// try to activate lups if it isn't found
 --
 
 local supportedFxs = {}
-local function fxSupported(fxclass)
+local function _(fxclass)
 	if (supportedFxs[fxclass]~=nil) then
 		return supportedFxs[fxclass]
 	else
@@ -214,7 +214,7 @@ end
 --  ?? Unit Destroyed handling ??
 --
 
-function gadget:UnitDestroyed(unitID,unitDefID)
+function gadget:UnitDestroyed(unitID, _)
 	if (particleIDs[unitID]) then
 		local effects = particleIDs[unitID]
 		for i=1,#effects do

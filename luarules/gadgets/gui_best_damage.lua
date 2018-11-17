@@ -23,9 +23,9 @@ if (gadgetHandler:IsSyncedCode()) then
 	local currenttime
 	local UPDATE = 15
 	local dgun_weapons = {}
-	
+
 	local function isUnitComplete(UnitID)
-		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(UnitID)
+		local _, _, _, _,buildProgress=Spring.GetUnitHealth(UnitID)
 		if buildProgress and buildProgress>=1 then
 			return true
 		else
@@ -46,9 +46,9 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 		return unpack(AIInfo)
 	end
-	
+
 	function gadget:Initialize()
-	
+
 		for i=1,#WeaponDefs do
     		local wd = WeaponDefs[i]
     		if (wd.type == "DGun") then
@@ -67,7 +67,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 	end
 
-	function gadget:UnitDamaged(u,ud,ut,d, p ,w ,pr, a,ad,at)
+	function gadget:UnitDamaged(u, _,ut,d, p ,w , _, a, _,at)
 		if dgun_weapons[w] then return end
 		currenttime = Spring.GetGameSeconds()
 		if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a and p == false then

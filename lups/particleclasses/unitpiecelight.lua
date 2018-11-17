@@ -13,12 +13,12 @@ local depthShader
 local blurShader
 local uniformScreenXY, uniformPixelSize, uniformDirection
 
-local GL_DEPTH_BITS = 0x0D56
+local _ = 0x0D56
 
-local GL_DEPTH_COMPONENT   = 0x1902
-local GL_DEPTH_COMPONENT16 = 0x81A5
+local _ = 0x1902
+local _ = 0x81A5
 local GL_DEPTH_COMPONENT24 = 0x81A6
-local GL_DEPTH_COMPONENT32 = 0x81A7
+local _ = 0x81A7
 
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------

@@ -125,15 +125,15 @@ function UnitCloaker:Draw()
 
   gl.Color(Spring.GetTeamColor(self.team))
 
-  
+
   local x, y, z = Spring.GetUnitPosition(self.unit)
   if not x then
     return
   end
-  local a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, a41, a42, a43, a44 = Spring.GetUnitTransformMatrix(self.unit)
-  
+  local _, _, _, _, _, _, _, _, _, _, _, _, a41, a42, a43, _ = Spring.GetUnitTransformMatrix(self.unit)
+
   gl.Translate(x - a41, y - a42, z - a43)
-  
+
   if (self.isS3o) then
     gl.Culling(GL.BACK)
     gl.Unit(self.unit,true,-1)
@@ -167,7 +167,7 @@ function UnitCloaker.Initialize()
       void main(void)
       {
         texCoord.st  = gl_MultiTexCoord0.st;
-        texCoord.p   = dot( gl_Vertex, ObjectPlaneS ); 
+        texCoord.p   = dot( gl_Vertex, ObjectPlaneS );
         texCoord.q   = dot( gl_Vertex, ObjectPlaneT );// + life*0.25;
         normal       = gl_NormalMatrix * gl_Normal;
         viewdir      = (gl_ModelViewMatrix * gl_Vertex).xyz - cameraPos;

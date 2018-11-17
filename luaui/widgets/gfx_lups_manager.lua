@@ -30,14 +30,14 @@ end
 
 function MergeTable(table1,table2)
   local result = {}
-  for i,v in pairs(table2) do 
+  for i,v in pairs(table2) do
     if (type(v)=='table') then
       result[i] = MergeTable(v,{})
     else
       result[i] = v
     end
   end
-  for i,v in pairs(table1) do 
+  for i,v in pairs(table1) do
     if (result[i]==nil) then
       if (type(v)=='table') then
         if (type(result[i])~='table') then result[i] = {} end
@@ -56,7 +56,7 @@ include("configs/lupsunitfxs.lua")
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local function blendColor(c1,c2,mix)
+local function _(c1,c2,mix)
   if (mix>1) then mix=1 end
   local mixInv = 1-mix
   return {
@@ -68,7 +68,7 @@ local function blendColor(c1,c2,mix)
 end
 
 
-local function blend(a,b,mix)
+local function _(a,b,mix)
   if (mix>1) then mix=1 end
   return a*(1-mix) + b*mix
 end
@@ -111,12 +111,12 @@ end
 --------------------------------------------------------------------------------
 
 
-local abs = math.abs
-local min = math.min
-local max = math.max
+local _ = math.abs
+local _ = math.min
+local _ = math.max
 local spGetSpectatingState = Spring.GetSpectatingState
 local spGetUnitDefID       = Spring.GetUnitDefID
-local spGetUnitRulesParam  = Spring.GetUnitRulesParam
+local _ = Spring.GetUnitRulesParam
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -141,21 +141,21 @@ local function ClearFxs(unitID)
 end
 
 
-local function ClearFx(unitID, fxIDtoDel)
+local function _(unitID, fxIDtoDel)
   if (particleIDs[unitID]) then
   local newTable = {}
     for i=1,#particleIDs[unitID] do
       local fxID = particleIDs[unitID][i]
-      if fxID == fxIDtoDel then 
+      if fxID == fxIDtoDel then
         Lups.RemoveParticles(fxID)
-      else 
+      else
         newTable[#newTable+1] = fxID
       end
     end
 
-    if #newTable == 0 then 
+    if #newTable == 0 then
       particleIDs[unitID] = nil
-    else 
+    else
       particleIDs[unitID] = newTable
     end
   end
@@ -207,7 +207,7 @@ local function UnitFinished(_,unitID,unitDefID)
 end
 
 
-local function UnitDestroyed(_,unitID,unitDefID)
+local function UnitDestroyed(_,unitID, _)
   registeredUnits[unitID] = nil
 
   ClearFxs(unitID)
@@ -216,10 +216,10 @@ end
 
 local function UnitEnteredLos(_,unitID)
   local spec, fullSpec = spGetSpectatingState()
-  if (spec and fullSpec) then 
-    return 
+  if (spec and fullSpec) then
+    return
   end
-  
+
   --[[
   if registeredUnits[unitID] then
     return
@@ -254,8 +254,8 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local color1 = {0,0,0}
-local color2 = {1,0.5,0}
+local _ = {0,0,0}
+local _ = {1,0.5,0}
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -266,7 +266,7 @@ local function PlayerChanged(_,playerID)
     --// clear all FXs
     for _,unitFxIDs in pairs(particleIDs) do
       for i=1,#unitFxIDs do
-	local fxID = unitFxIDs[i]    
+	local fxID = unitFxIDs[i]
         Lups.RemoveParticles(fxID)
       end
     end
@@ -376,7 +376,7 @@ function widget:Shutdown()
   if (initialized) then
     for _,unitFxIDs in pairs(particleIDs) do
       for i=1,#unitFxIDs do
-	local fxID = unitFxIDs[i]
+	local _ = unitFxIDs[i]
       end
     end
     particleIDs = {}

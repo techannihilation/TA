@@ -32,11 +32,11 @@ local function MakeWords(line)
   local words = {}
   for w in string.gmatch(line, "[^%s]+") do
     table.insert(words, w)
-  end   
+  end
   return words
 end
 
-            
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
@@ -105,7 +105,7 @@ end
 
 local function RemoveGadgetActions(gadget)
   local function clearActionList(actionMap)
-    for cmd, callInfoList in pairs(actionMap) do
+    for _, callInfoList in pairs(actionMap) do
       RemoveCallInfo(callInfoList, gadget)
     end
   end
@@ -180,7 +180,7 @@ local function Help(playerID, cmd)
         Spring.Echo('unknown command:  ' .. cmd)
       end
     else
-      for i,callInfo in ipairs(callInfoList) do
+      for _,callInfo in ipairs(callInfoList) do
         if (callInfo.help) then
           EchoLines(cmd .. callInfo.help)
           return
@@ -220,7 +220,7 @@ local function GotChatMsg(msg, playerID)
     msg = ""  -- no args
   end
 
-  for i,callInfo in ipairs(callInfoList) do
+  for _,callInfo in ipairs(callInfoList) do
     local func = callInfo[1]
     -- local gadget = callInfo[2]
     if (func(cmd, msg, words, playerID)) then
@@ -240,8 +240,8 @@ local function RecvFromSynced(...)
     if (callInfoList == nil) then
       return false
     end
-    
-    for i,callInfo in ipairs(callInfoList) do
+
+    for _,callInfo in ipairs(callInfoList) do
       local func = callInfo[1]
       -- local gadget = callInfo[2]
       if (func(...)) then
@@ -258,7 +258,7 @@ local function RecvFromSynced(...)
     end
     return false
   end
-  
+
   return false -- unknown type
 end
 

@@ -17,7 +17,7 @@ local sqrt                  = math.sqrt
 local min                   = math.min
 local max                   = math.max
 
-local spGetUnitPosition     = Spring.GetUnitPosition
+local _ = Spring.GetUnitPosition
 local spGetUnitDefID 		= Spring.GetUnitDefID
 local spGetAllUnits			= Spring.GetAllUnits
 local spGetSpectatingState 	= Spring.GetSpectatingState
@@ -35,8 +35,8 @@ local spAreTeamAllied       = Spring.AreTeamsAllied
 local glDepthTest 			= gl.DepthTest
 local glDrawGroundCircle 	= gl.DrawGroundCircle
 local glColor				= gl.Color
-local GL_ALWAYS				= GL.ALWAYS
-local glBeginEnd			= gl.BeginEnd
+local _ = GL.ALWAYS
+local _ = gl.BeginEnd
 
 local circleDivs = 32
 --local blastRadius = 360 -- com explosion
@@ -50,13 +50,13 @@ local inSpecFullView = false
 local myTeamID = Spring.GetMyTeamID()
 
 function widget:PlayerChanged()
-    myTeamID = Spring.GetMyTeamID()    
+    myTeamID = Spring.GetMyTeamID()
 end
 
 local TooHigh = true
 local HighPing = false
-local FPSCount = Spring.GetFPS()
-local FPSLimit = 8
+local _ = Spring.GetFPS()
+local _ = 8
 
 local isCommander = {}
 -- track coms --
@@ -71,7 +71,7 @@ function widget:Initialize()
 			isCommander[i] = {dgunrange = DgunRange, deathblasid = deathBlasId, blastradius = blastRadius}
     	end
     end
-    
+
     widgetHandler:RegisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
     widgetHandler:RegisterGlobal('DrawManager_combblast', DrawStatus)
 
@@ -80,7 +80,7 @@ function widget:Initialize()
     return true
 end
 
-function DrawStatus(toohigh,fps,ping)
+function DrawStatus(toohigh, _,ping)
     HighPing = ping
     TooHigh = toohigh
 end
@@ -89,7 +89,7 @@ function addCom(unitID, unitDefID, unitTeam)
     if not spValidUnitID(unitID) then return end --because units can be created AND destroyed on the same frame, in which case luaui thinks they are destroyed before they are created
     local x,y,z = Spring.GetUnitPosition(unitID)
     local teamID = unitTeam
-    if not teamID then 
+    if not teamID then
     	teamID = Spring.GetUnitTeam(unitID)
     end
     if x and teamID then
@@ -108,34 +108,34 @@ function widget:UnitFinished(unitID, unitDefID, unitTeam)
     end
 end
 
-function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
+function widget:UnitCreated(unitID, unitDefID, teamID, _)
     if isCommander[unitDefID] then
         addCom(unitID, unitDefID, teamID)
     end
 end
 
-function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
-    if isCommander[unitDefID] then 
+function widget:UnitTaken(unitID, unitDefID, _, newTeam)
+    if isCommander[unitDefID] then
     	--Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
         addCom(unitID, unitDefID, newTeam)
     end
 end
 
 
-function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+function widget:UnitGiven(unitID, unitDefID, unitTeam, _)
     if isCommander[unitDefID] then
     	--Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
         addCom(unitID, unitDefID, unitTeam)
     end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
     if comCenters[unitID] then
         removeCom(unitID)
     end
 end
 
-function widget:UnitEnteredLos(unitID, unitTeam)
+function widget:UnitEnteredLos(unitID, _)
     if not amSpec then
         local unitDefID = spGetUnitDefID(unitID)
         if isCommander[unitDefID] then
@@ -144,7 +144,7 @@ function widget:UnitEnteredLos(unitID, unitTeam)
     end
 end
 
-function widget:UnitLeftLos(unitID, unitDefID, unitTeam)
+function widget:UnitLeftLos(unitID, _, _)
     if not amSpec then
         if comCenters[unitID] then
             removeCom(unitID)
@@ -152,7 +152,7 @@ function widget:UnitLeftLos(unitID, unitDefID, unitTeam)
     end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     checkSpecView()
     return true
 end
@@ -167,7 +167,7 @@ function checkSpecView()
     --check if we became a spec
     local _,_,spec,_ = spGetPlayerInfo(spGetMyPlayerID())
     if spec ~= amSpec then
-        amSpec = spec 
+        amSpec = spec
         checkComs()
     end
 end
@@ -177,7 +177,7 @@ function checkComs()
     for k,_ in pairs(comCenters) do
         comCenters[k] = nil
     end
-    
+
     local visibleUnits = spGetAllUnits()
     if visibleUnits ~= nil then
         for _, unitID in ipairs(visibleUnits) do
@@ -190,10 +190,10 @@ function checkComs()
 end
 
 
--- draw -- 
- 
+-- draw --
+
 -- map out what to draw
-function widget:GameFrame(n)
+function widget:GameFrame(_)
    if spIsGUIHidden() or HighPing or TooHigh then return end
     -- check if we are in spec full view
     local spec,specFullView,_ = spGetSpectatingState()
@@ -206,12 +206,12 @@ function widget:GameFrame(n)
     for unitID,_ in pairs(comCenters) do
         local x,y,z = spGetUnitPosition(unitID)
         if x then
-            local yg = spGetGroundHeight(x,z) 
+            local yg = spGetGroundHeight(x,z)
             local draw = true
-            local opacity 
+            local opacity
             local wantedOpacity
             -- show if (1) unit is selected (2) com is enemy and we are not a spec (3) com has an enemy unit nearby
-	    
+
             local enemyUnitID = spGetUnitNearestEnemy(unitID,2*comCenters[unitID].blastRadius,false)
             if spIsUnitSelected(unitID) or (not spec and not spAreTeamAllied(myTeamID,comCenters[unitID].teamID)) then
                 wantedOpacity = 0.8
@@ -224,7 +224,7 @@ function widget:GameFrame(n)
             end
             opacity = comCenters[unitID].opacity*(29/30) + wantedOpacity*(1/30) --change gently
             -- check if com is off the ground
-            if (y-yg>10) or (not spIsSphereInView(x,y,z,blastRadius)) then 
+            if (y-yg>10) or (not spIsSphereInView(x,y,z,blastRadius)) then
                 draw = false
                 drawnComs[unitID] = nil
             end
@@ -235,12 +235,12 @@ function widget:GameFrame(n)
             comCenters[unitID].opacity = opacity
             drawnComs[unitID] = comCenters[unitID]
         else
-            --couldn't get position, check if its still a unit 
+            --couldn't get position, check if its still a unit
             if not spValidUnitID(unitID) then
                 removeCom(unitID)
             end
         end
-    end	
+    end
 end
 
 -- opacity control

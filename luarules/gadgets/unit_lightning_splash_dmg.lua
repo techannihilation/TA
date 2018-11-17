@@ -44,14 +44,14 @@ local SpAddUnitDamage = Spring.AddUnitDamage
 ----------------------------------------------------------------
 -- Callins
 ----------------------------------------------------------------
-function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitDamaged(unitID, _, _, damage, _, weaponID, _, attackerID, _, _)
     if sparkWeapons[weaponID] then
       local x,y,z = SpGetUnitPosition(unitID)
-      local angle = rad(mRandom(1,360))
+      local _ = rad(mRandom(1,360))
       local nearUnits = SpGetUnitsInSphere(x,y,z,sparkWeapons[weaponID].radius)
       local count = 0
       for _,nearUnit in ipairs(nearUnits) do
-        if (count >= sparkWeapons[weaponID].maxunits) then 
+        if (count >= sparkWeapons[weaponID].maxunits) then
           return
         end
         local nearUnitDefID = SpGetUnitDefID(nearUnit)
@@ -62,7 +62,7 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
           SpAddUnitDamage(nearUnit, damage*sparkWeapons[weaponID].forkdamage, 0, attackerID)
           count = count + 1
         end
-      end    
+      end
     end
 end
 

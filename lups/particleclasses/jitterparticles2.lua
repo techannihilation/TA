@@ -6,7 +6,7 @@ local JitterParticles2 = {}
 JitterParticles2.__index = JitterParticles2
 
 local billShader
-local colormapUniform = {}
+local _ = {}
 
 local lastTexture = ""
 
@@ -84,13 +84,13 @@ local rand  = math.random
 local twopi = 2 * math.pi
 local cos   = math.cos
 local sin   = math.sin
-local min   = math.min
+local _ = math.min
 local floor = math.floor
 local degreeToPI = math.pi/180
 
 local spGetUnitViewPosition = Spring.GetUnitViewPosition
-local spGetPositionLosState = Spring.GetPositionLosState
-local spGetUnitLosState     = Spring.GetUnitLosState
+local _ = Spring.GetPositionLosState
+local _ = Spring.GetUnitLosState
 local spIsSphereInView      = Spring.IsSphereInView
 local spGetUnitRadius       = Spring.GetUnitRadius
 local spGetProjectilePosition = Spring.GetProjectilePosition
@@ -99,23 +99,23 @@ local IsPosInLos    = Spring.IsPosInLos
 local IsPosInAirLos = Spring.IsPosInAirLos
 local IsPosInRadar  = Spring.IsPosInRadar
 
-local glTexture     = gl.Texture 
-local glBlending    = gl.Blending
-local glUniform     = gl.Uniform
-local glUniformInt  = gl.UniformInt
+local glTexture     = gl.Texture
+local _ = gl.Blending
+local _ = gl.Uniform
+local _ = gl.UniformInt
 local glPushMatrix  = gl.PushMatrix
 local glPopMatrix   = gl.PopMatrix
 local glTranslate   = gl.Translate
 local glCreateList  = gl.CreateList
 local glCallList    = gl.CallList
-local glRotate      = gl.Rotate
-local glColor       = gl.Color
+local _ = gl.Rotate
+local _ = gl.Color
 local glUseShader   = gl.UseShader
 
 local GL_QUADS               = GL.QUADS
-local GL_ONE                 = GL.ONE
-local GL_SRC_ALPHA           = GL.SRC_ALPHA
-local GL_ONE_MINUS_SRC_ALPHA = GL.ONE_MINUS_SRC_ALPHA
+local _ = GL.ONE
+local _ = GL.SRC_ALPHA
+local _ = GL.ONE_MINUS_SRC_ALPHA
 
 local glBeginEnd     = gl.BeginEnd
 local glMultiTexCoord= gl.MultiTexCoord
@@ -219,7 +219,7 @@ function JitterParticles2:Initialize()
       #define distStrength  gl_MultiTexCoord6.x
       #define distScale     gl_MultiTexCoord6.y
       #define distHeat      gl_MultiTexCoord6.z
-      #define animDir      (gl_MultiTexCoord2.zw) 
+      #define animDir      (gl_MultiTexCoord2.zw)
 
       // particle attributes
       #define posV        (gl_MultiTexCoord0.xyz)
@@ -230,7 +230,7 @@ function JitterParticles2:Initialize()
       #define sizeStart       gl_MultiTexCoord2.x
       #define sizeEnd         gl_MultiTexCoord2.y
       // equation is: 1-(1-life)^exp
-      #define attributesExp  (gl_MultiTexCoord3.xy) 
+      #define attributesExp  (gl_MultiTexCoord3.xy)
 
       const float halfpi = 0.159;
 
@@ -252,7 +252,7 @@ function JitterParticles2:Initialize()
            vec2 attrib = vec2(1.0) - pow(vec2(1.0 - life), abs(attributesExp));
          //if (attributesExp.x<0.0) attrib.x = 1.0 - attrib.x; // speed (no need for backward movement)
            if (attributesExp.y<0.0) attrib.y = 1.0 - attrib.y; // size
-           attrib.y   = sizeStart + attrib.y * sizeEnd; 
+           attrib.y   = sizeStart + attrib.y * sizeEnd;
 
            // calc vertex position
            vec3 forceV     = (1.0 - pow(1.0 - life, abs(forceExp))) * force;

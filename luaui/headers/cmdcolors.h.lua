@@ -1,6 +1,6 @@
 cmdColors = {}
 
-local f,it,isFile = nil,nil,false
+local _,it,isFile = nil,nil,false
 f  = io.open('cmdcolors.txt','r')
 if f then
   it = f:lines()

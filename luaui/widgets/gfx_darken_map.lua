@@ -24,7 +24,7 @@ local darkenFeatures = false
 
 local currentMapname = Game.mapName:lower()
 local maps = {}
-local gaia = Spring.GetGaiaTeamID()
+local _ = Spring.GetGaiaTeamID()
 
 local camX, camY, camZ = Spring.GetCameraPosition()
 local camDirX,camDirY,camDirZ = Spring.GetCameraDirection()
@@ -68,7 +68,7 @@ end
 
 local prevCam = {}
 prevCam[1],prevCam[2],prevCam[3] = Spring.GetCameraPosition()
-function widget:Update(dt)
+function widget:Update(_)
 	camX, camY, camZ = Spring.GetCameraPosition()
 	camDirX,camDirY,camDirZ = Spring.GetCameraDirection()
 	if darkenFeatures and (camX ~= prevCam[1] or  camY ~= prevCam[2] or  camZ ~= prevCam[3]) then
@@ -97,12 +97,12 @@ function widget:DrawWorld()
 		if features == nil then
 			features = Spring.GetVisibleFeatures(-1, 250, false)
 		end
-		
+
 		if features ~= nil then
 			gl.DepthTest(true)
 			gl.PolygonOffset(-2, -2)
 			gl.Color(0,0,0,darknessvalue)
-			for i, featureID in pairs(features) do
+			for _, featureID in pairs(features) do
 				local fdefID = spGetFeatureDefID(featureID)
 				if fdefID then
 					gl.Texture('%-'..fdefID..':1')
@@ -117,7 +117,7 @@ function widget:DrawWorld()
 end
 
 
-function widget:GetConfigData(data)
+function widget:GetConfigData(_)
     savedTable = {}
     savedTable.maps	= maps
     savedTable.darkenFeatures = darkenFeatures
@@ -138,7 +138,7 @@ end
 
 
 function widget:TextCommand(command)
-    if (string.find(command, "resetmapdarkness") == 1  and  string.len(command) == 16) then 
+    if (string.find(command, "resetmapdarkness") == 1  and  string.len(command) == 16) then
 		maps = {}
 		darknessvalue = 0
 	end

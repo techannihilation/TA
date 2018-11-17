@@ -24,12 +24,12 @@ end
 -------------------------------------------------------------------------------------
 
 local storageDefs = {
-  --Arm 
+  --Arm
   [ UnitDefNames['armestor'].id ] = true,
   [ UnitDefNames['armuwadves'].id ] = true,
   [ UnitDefNames['armses'].id ] = true,
   [ UnitDefNames['armuwes'].id ] = true,
-  --Core 
+  --Core
   [ UnitDefNames['corestor'].id ] = true,
   [ UnitDefNames['coruwadves'].id ] = true,
   [ UnitDefNames['corses'].id ] = true,
@@ -47,11 +47,11 @@ local storageunits = {}
 
 -- Speed-ups
 
-local uDefs = UnitDefs
-local GetUnitDefID         = Spring.GetUnitDefID
-local SpGetAllUnits        = Spring.GetAllUnits
+local _ = UnitDefs
+local _ = Spring.GetUnitDefID
+local _ = Spring.GetAllUnits
 
-local ipairs = ipairs
+local _ = ipairs
 local pairs = pairs
 
 -------------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ local pairs = pairs
 function gadget:GameFrame(n)
   if (((n+18) % 30) < 0.1) then
     for unitID, _ in pairs(storageunits) do
- 
+
 	   if Spring.GetUnitIsStunned(unitID) then
        local teamID = storageunits[unitID].teamID
        if teamID == nil then return end
@@ -106,7 +106,7 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
   end
 end
 
-function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
+function gadget:UnitGiven(unitID, unitDefID, newTeam, _)
 	if (storageDefs[unitDefID]) then
     storageunits[unitID] = nil
 		SetupUnit(unitID, unitDefID, newTeam)
@@ -114,8 +114,8 @@ function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
 end
 
 
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-	if (storageDefs[unitDefID]) then 
+function gadget:UnitDestroyed(unitID, unitDefID, _)
+	if (storageDefs[unitDefID]) then
 	 storageunits[unitID]= nil
 	end
 end

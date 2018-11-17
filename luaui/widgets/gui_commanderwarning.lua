@@ -12,23 +12,23 @@ function widget:GetInfo()
 end
 
 local commanderTable				= {}
-local localTeamID 					= nil	
+local localTeamID 					= nil
 local warningList					= {}
 local DISPLAYTIME					= 210
-local FADETIME						= 60
+local _ = 60
 local UPDATERATE					= 0.05
 local MASTERRATE 					= 0.08
 local GLOWRATE						= MASTERRATE
 local color 						= WG["background_opacity_custom"]
-local gameover 						= false
+local _ = false
 
 function widget:Initialize()
-    localTeamID = Spring.GetLocalTeamID()   
+    localTeamID = Spring.GetLocalTeamID()
 	if Spring.GetSpectatingState() or Spring.IsReplay() then
 		widgetHandler:RemoveWidget()
 		return false
 	end
-    
+
 	for id, unitDef in ipairs(UnitDefs) do
 		if unitDef.customParams.iscommander then
 			if unitDef.name then
@@ -38,17 +38,17 @@ function widget:Initialize()
 	end
 end
 
-function widget:UnitDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
+function widget:UnitDamaged (unitID, unitDefID, unitTeam, _, _, _, _, attackerDefID, _)
 	if localTeamID ~= unitTeam or Spring.IsUnitInView(unitID) then
 		return --ignore other teams and units in view
 	end
-	
-	if commanderTable[unitDefID] then 
+
+	if commanderTable[unitDefID] then
 		local health, maxhealth = Spring.GetUnitHealth(unitID)
 		if health > 0 then
 			local udef = UnitDefs[unitDefID]
 			local now = Spring.GetGameFrame()
-			local aName 
+			local aName
 			if attackerDefID then
 				aName = table.concat({"by ",(UnitDefs[attackerDefID] or "enemy"),"!"})
 			end
@@ -75,9 +75,9 @@ function widget:Update(tock)
 	if tick > lasttick + UPDATERATE then
 		lasttick = tick
 		colorRed = colorRed + GLOWRATE
-		if colorRed > 0.33 and GLOWRATE > 0 then 
+		if colorRed > 0.33 and GLOWRATE > 0 then
 			GLOWRATE = -MASTERRATE
-		elseif colorRed < 0.05 and GLOWRATE < 0 then 
+		elseif colorRed < 0.05 and GLOWRATE < 0 then
 			GLOWRATE = MASTERRATE
 		end
 

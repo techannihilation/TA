@@ -14,7 +14,7 @@ function widget:GetInfo()
 	}
 end
 
-local lineWidth = 1.0 -- calcs dynamic now
+local _ = 1.0 -- calcs dynamic now
 
 local printDebug
 
@@ -54,13 +54,13 @@ function widget:Shutdown()
 	widgetHandler:DeregisterGlobal('DrawManager_ghost', DrawStatus)
 end
 
-function DrawStatus(toohigh,fps,ping)
+function DrawStatus(toohigh, _,ping)
 	--Spring.Echo(toohigh,fps,ping)
 	TooHigh = toohigh
 	HighPing = ping
 end
 
-function widget:UnitEnteredRadar(unitID, allyTeam)
+function widget:UnitEnteredRadar(unitID, _)
 	if ( dots[unitID] ~= nil ) then
 		dots[unitID]["radar"] = true
 	end
@@ -70,39 +70,39 @@ function widget:UnitEnteredLos(unitID, allyTeam )
 	--update unitID info, ID could have been reused already!
 	local udefID = spGetUnitDefID(unitID)
 	local udef = udefTab[udefID]
-		
+
 	--skip buildings, they get ghosted anyway
-	if ( udef ~= nil and udef.isBuilding == false and udef.isFactory == false ) then 
+	if ( udef ~= nil and udef.isBuilding == false and udef.isFactory == false ) then
 		dots[unitID] = {}
 		dots[unitID]["unitDefId"] = udefID
 		dots[unitID]["teamId"] = allyTeam
 		dots[unitID]["radar"] = true
 		dots[unitID]["los"] = true
 	else
-		dots[unitID] = nil	
+		dots[unitID] = nil
 	end
 end
 
-function widget:UnitCreated(unitID, allyTeam)
+function widget:UnitCreated(unitID, _)
 	--kill the dot info if this unitID gets reused on own team
 	if ( dots[unitID] ~= nil ) then
 		dots[unitID] = nil
 	end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)
+function widget:UnitDestroyed(unitID, _, _, _, _, _)
 	if ( dots[unitID] ~= nil ) then
 		dots[unitID] = nil
 	end
 end
 
-function widget:UnitLeftRadar(unitID, allyTeam)
+function widget:UnitLeftRadar(unitID, _)
 	if ( dots[unitID] ~= nil ) then
 		dots[unitID]["radar"] = false
 	end
 end
 
-function widget:UnitLeftLos(unitID, allyTeam)
+function widget:UnitLeftLos(unitID, _)
 	if ( dots[unitID] ~= nil ) then
 		dots[unitID]["los"] = false
 	end
@@ -110,7 +110,7 @@ end
 
 function widget:DrawWorld()
 	--Spring.Echo(TooHigh,HighPing)
-	if TooHigh or HighPing then 
+	if TooHigh or HighPing then
 		return
 	end
 	glColor(1.0, 1.0, 1.0, 0.35 )
@@ -122,7 +122,7 @@ function widget:DrawWorld()
 				glPushMatrix()
 				glLoadIdentity()
 				glTranslate( x, y + 5 , z)
-				glUnitShape( dot["unitDefId"], dot["teamId"], false, false, false)					      
+				glUnitShape( dot["unitDefId"], dot["teamId"], false, false, false)
 				glPopMatrix()
 			end
 		end
@@ -135,7 +135,7 @@ function widget:Update()
 	local timef = spGetGameSeconds()
 	local time = floor(timef)
 	-- update timers once every <updateInt> seconds
-	if (time % updateInt == 0 and time ~= lastTime) then	
+	if (time % updateInt == 0 and time ~= lastTime) then
 		lastTime = time
 		--do update stuff:
 		local playerID = spGetMyPlayerID()
@@ -155,8 +155,8 @@ function printDebug( value )
 				else spEcho("false") end
 		elseif ( type(value ) == "table" ) then
 			spEcho("Dumping table:")
-			for key,val in pairs(value) do 
-				spEcho(key,val) 
+			for key,val in pairs(value) do
+				spEcho(key,val)
 			end
 		else
 			spEcho( value )

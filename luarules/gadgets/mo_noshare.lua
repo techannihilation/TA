@@ -19,7 +19,7 @@ end
 
 local enabled = tonumber(Spring.GetModOptions().mo_noshare) or 0
 
-if (enabled == 0) then 
+if (enabled == 0) then
   return false
 end
 
@@ -27,7 +27,7 @@ local AreTeamsAllied = Spring.AreTeamsAllied
 local SendMessageToTeam = Spring.SendMessageToTeam
 local IsCheatingEnabled = Spring.IsCheatingEnabled
 
-function gadget:AllowResourceTransfer(oldTeam, newTeam, type, amount)
+function gadget:AllowResourceTransfer(oldTeam, newTeam, _, _)
   if AreTeamsAllied(newTeam, oldTeam) or (IsCheatingEnabled()) then
     return true
   end
@@ -35,7 +35,7 @@ function gadget:AllowResourceTransfer(oldTeam, newTeam, type, amount)
   return false
 end
 
-function gadget:AllowUnitTransfer(unitID, unitDefID, oldTeam, newTeam, capture)
+function gadget:AllowUnitTransfer(_, _, oldTeam, newTeam, _)
   if AreTeamsAllied(newTeam, oldTeam) or (capture) or (IsCheatingEnabled()) then
     return true
   end

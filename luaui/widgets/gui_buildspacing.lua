@@ -17,7 +17,7 @@ function widget:Initialize()
    end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
    if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
       widgetHandler:RemoveWidget(self)
    end
@@ -27,8 +27,8 @@ function widget:GameStart()
    widget:PlayerChanged()
 end
 
-function widget:MousePress(mx, my, button)
-   local alt,ctrl,meta,shift = Spring.GetModKeyState()
+function widget:MousePress(_, _, button)
+   local _, _, _, _ = Spring.GetModKeyState()
    -- Spring.Echo("Button pressed: " .. button)
    if (button == 4) then
       -- Spring.SetActiveCommand("selfd")

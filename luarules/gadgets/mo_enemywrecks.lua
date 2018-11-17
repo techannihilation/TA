@@ -19,15 +19,15 @@ end
 
 local enabled = tonumber(Spring.GetModOptions().mo_enemywrecks) or 0
 
-if (enabled == 0) then 
+if (enabled == 0) then
   return false
 end
 
-local GetFeatureDefID = Spring.GetFeatureDefID
+local _ = Spring.GetFeatureDefID
 local SetFeatureAlwaysVisible = Spring.SetFeatureAlwaysVisible
 local sfind = string.find
 
-function gadget:FeatureCreated(featureID, allyTeam)
+function gadget:FeatureCreated(featureID, _)
   local featureDefID = Spring.GetFeatureDefID(featureID)
   if featureDefID then
 	  local featureName = (FeatureDefs[featureDefID].tooltip or "nil")

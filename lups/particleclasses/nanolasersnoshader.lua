@@ -85,7 +85,7 @@ local glPushMatrix = gl.PushMatrix
 local glPopMatrix  = gl.PopMatrix
 local glBeginEnd   = gl.BeginEnd
 
-local max  = math.max
+local _ = math.max
 
 local GetCameraVectors    = Spring.GetCameraVectors
 local IsSphereInView      = Spring.IsSphereInView
@@ -171,7 +171,7 @@ end
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-function NanoLasersNoShader:Update(n)
+function NanoLasersNoShader:Update(_)
   UpdateNanoParticles(self)
 
   if (self._dead) then

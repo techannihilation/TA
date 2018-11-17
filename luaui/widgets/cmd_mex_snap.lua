@@ -71,11 +71,11 @@ local function GetClosestMexPosition(spot, x, z, uDefID, facing)
 end
 
 local function GiveNotifyingOrder(cmdID, cmdParams, cmdOpts)
-	
+
 	if widgetHandler:CommandNotify(cmdID, cmdParams, cmdOpts) then
 		return
 	end
-	
+
 	Spring.GiveOrder(cmdID, cmdParams, cmdOpts.coded)
 end
 
@@ -92,8 +92,8 @@ function widget:Initialize()
 	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
 	    widget:PlayerChanged()
   	end
-	
-	for key,value in ipairs(mapBlackList) do
+
+	for _,value in ipairs(mapBlackList) do
 		if (Game.mapName == value) then
 			Spring.Echo("<Snap Mex> This map is incompatible - removing mex snap widget.")
 			widgetHandler:RemoveWidget(self)
@@ -101,7 +101,7 @@ function widget:Initialize()
 	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end
@@ -118,32 +118,32 @@ function widget:GameFrame(n)
 end
 
 function widget:DrawWorld()
-	
+
 	-- Check command is to build a mex
 	local cmdID
-	if gameStarted > 0 then 
+	if gameStarted > 0 then
 		_, cmdID = spGetActiveCommand()
 	elseif WG["PreGameCommand"] then
 		cmdID = WG["PreGameCommand"].cmdID
 	end
 
 	if not (cmdID and isMex[-cmdID]) then return end
-	
+
 	-- Attempt to get position of command
 	local mx, my = spGetMouseState()
 	local _, pos = spTraceScreenRay(mx, my, true)
 	if not pos then return end
-	
+
 	-- Find build position and check if it is valid (Would get 100% metal)
 	local bx, by, bz = Spring.Pos2BuildPos(-cmdID, pos[1], pos[2], pos[3])
 	local closestSpot = GetClosestMetalSpot(bx, bz)
 	if not closestSpot or WG.IsMexPositionValid(closestSpot, bx, bz) then return end
-	
+
 	-- Get the closet position that would give 100%
 	local bface = Spring.GetBuildFacing()
 	local bestPos = GetClosestMexPosition(closestSpot, bx, bz, -cmdID, bface)
 	if not bestPos then
-		if gameStarted == 0 then 
+		if gameStarted == 0 then
 			WG["PreGameMexPos"] = nil
 		end
 		return
@@ -152,22 +152,22 @@ function widget:DrawWorld()
 
 	-- Draw !
 	gl.DepthTest(false)
-	
+
 	gl.LineWidth(1.49)
     gl.Color(1, 1, 0, 0.5)
     gl.BeginEnd(GL.LINE_STRIP, DoLine, bx, by, bz, bestPos[1], bestPos[2], bestPos[3])
 	gl.LineWidth(1.0)
-	
+
 	gl.DepthTest(true)
 	gl.DepthMask(true)
-	
+
 	gl.Color(1, 1, 1, 0.5)
 	gl.PushMatrix()
 		gl.Translate(bestPos[1], bestPos[2], bestPos[3])
 		gl.Rotate(90 * bface, 0, 1, 0)
 		gl.UnitShape(-cmdID, Spring.GetMyTeamID(), false, true , true)
 	gl.PopMatrix()
-	
+
 	gl.DepthTest(false)
 	gl.DepthMask(false)
 end

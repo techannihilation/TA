@@ -16,7 +16,7 @@ local CMD_INSERT = CMD.INSERT
 local CMD_STOP = CMD.STOP
 local spGiveOrder = Spring.GiveOrder
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
         widgetHandler:RemoveWidget(self)
     end
@@ -32,7 +32,7 @@ function widget:GameStart()
 	widget:PlayerChanged()
 end
 
-function widget:CommandNotify(cmdID, cmdParams, cmdOpts)
+function widget:CommandNotify(cmdID, cmdParams, _)
 	if (cmdID == CMD_FIRE_STATE) and (cmdParams[1] == 0) then
 		spGiveOrder(CMD_INSERT, {0, CMD_STOP, 0}, {"alt"})
 	end

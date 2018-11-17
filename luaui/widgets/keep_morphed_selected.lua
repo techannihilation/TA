@@ -26,19 +26,19 @@ function widget:Initialize()
 	end
 end
 
-function widget:UnitDestroyed(unitID,unitDefID,teamID)
+function widget:UnitDestroyed(unitID, _,teamID)
 	if SpIsUnitSelected(unitID) then
 		local x,_,z=SpGetUnitPosition(unitID)
 		table.insert(Destroyeds,{u=unitID,x=x,z=z,t=teamID})
 	end
 end
 
-function widget:UnitCreated(unitID,unitDefID,teamID)
+function widget:UnitCreated(unitID, _,teamID)
 	local x,_,z=SpGetUnitPosition(unitID)
 	table.insert(Createds,{u=unitID,x=x,z=z,t=teamID})
 end
 
-function widget:GameFrame(frameNum)
+function widget:GameFrame(_)
 	local ToReSelect={}
 	for _,c in ipairs(Createds) do
 		for _,d in ipairs(Destroyeds) do

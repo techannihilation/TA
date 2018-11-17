@@ -36,8 +36,8 @@ function table.tostring( tbl )
 end
 
 function SaveDefToCustomParams(defType, name, def)
-    -- save def as a string 
-    local def_string = table.tostring(def)
+    -- save def as a string
+    local _ = table.tostring(def)
     def.customparams = def.customparams or {}
     def.customparams.__def = table.tostring(def)
     Spring.Echo("saved " .. defType .. "." .. name .. " to customparams.__def as string")

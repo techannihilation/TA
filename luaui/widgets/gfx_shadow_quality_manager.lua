@@ -55,7 +55,7 @@ end
 
 function widget:GameFrame(gameFrame)
 	if spHaveShadows() or shadowsAtInit and turnedShadowsOff then
-		
+
 		if gameFrame%109==0 then
 			local modelCount = #spGetVisibleUnits(-1,nil,false) + #spGetVisibleFeatures(-1,nil,false,false) -- expensive)
 			local modelCountWeight = modelCount/1700
@@ -66,15 +66,15 @@ function widget:GameFrame(gameFrame)
 			--local dquality = math.floor((maxQuality+minQuality) - (maxQuality / (averageFps/20)))
 			--Spring.Echo(averageFps..'   '..dquality)
 		end
-		if gameFrame%skipGameframes==0 then 
+		if gameFrame%skipGameframes==0 then
 			quality = math.floor((maxQuality+minQuality) - (maxQuality / (averageFps/20)))
-			
+
 			if averageFps > previousQualityFps + fpsDifference  or  averageFps < previousQualityFps - fpsDifference then  -- weight fps values with more rendered models heavier
-				
-				if quality > maxQuality then 
-					quality = maxQuality 
+
+				if quality > maxQuality then
+					quality = maxQuality
 				end
-				if quality < minQuality then 
+				if quality < minQuality then
 					quality = minQuality-1
 				end
 				if previousQuality ~= quality then
@@ -93,9 +93,9 @@ function widget:GameFrame(gameFrame)
 		end
 	end
 end
-	
+
 -- preserve data in case of a /luaui reload
-function widget:GetConfigData(data)
+function widget:GetConfigData(_)
     savedTable = {}
     savedTable.averageFps			= averageFps
     savedTable.previousQuality		= previousQuality

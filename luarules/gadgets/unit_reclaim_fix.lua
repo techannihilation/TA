@@ -48,7 +48,7 @@ end
 unitList = nil
 
 
-function gadget:AllowFeatureBuildStep(builderID, builderTeam, featureID, featureDefID, step)
+function gadget:AllowFeatureBuildStep(builderID, _, featureID, featureDefID, step)
     if step > 0 or featureList[featureDefID] == nil then
         return true
     end
@@ -64,38 +64,38 @@ end
 
 -- when a wreck dies and becomes a heap, we need to set the reclaim % of the heap to be equal to its 'parent' wreck
 -- order of callins below: featurecreated (for heap), feature destroyed (for wreck), gameframe
--- two features should not be able to occupy the same pos on the same frame 
+-- two features should not be able to occupy the same pos on the same frame
 -- so; keep track of features created on that frame, then when a feature dies in coord matching the feature created, transfer reclaim % onto it
 -- no need to transfer rez % since heaps are not rezzable
 local featuresCreatedThisFrame = {}
 
-function gadget:FeatureCreated(featureID, allyTeamID)
+function gadget:FeatureCreated(featureID, _)
 	--record feature creation
 	--Spring.Echo("created:",featureID)
 	featuresCreatedThisFrame[#featuresCreatedThisFrame+1] = featureID
 end
 
-function gadget:FeatureDestroyed(featureID, allyTeamID)
+function gadget:FeatureDestroyed(featureID, _)
 	local bpx,bpy,bpz = GetFeaturePosition(featureID)
 	local _,_,_,_, reclaimLeft = GetFeatureResources(featureID)
 	--Spring.Echo("died:", featureID, bpx,bpy,bpz,reclaimLeft, heap)
 
 	--seek out heap, if one exists
 	local replaceFID
-	for i=1,#featuresCreatedThisFrame do 
+	for i=1,#featuresCreatedThisFrame do
 		local nbpx, nbpy, nbpz = GetFeaturePosition(featuresCreatedThisFrame[i])
 		--Spring.Echo("possible", featuresCreatedThisFrame[i], bpx,bpy,bpz,nbpx,nbpy,nbpz)
 		if bpx==nbpx and bpy==nbpy and bpz==nbpz then --floating point errors
 			replaceFID = featuresCreatedThisFrame[i]
 		end
 	end
-	
+
 	--set heap reclaim %
 	if replaceFID and reclaimLeft then
 		--Spring.Echo("set:", replaceFID, reclaimLeft)
 		SetFeatureReclaim(replaceFID, reclaimLeft)
 	end
-	
+
 end
 
 function gadget:GameFrame()

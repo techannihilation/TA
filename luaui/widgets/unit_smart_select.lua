@@ -41,7 +41,7 @@ local idleSelectKey = 'space'
 -----------------------------------------------------------------
 -- manually generated locals because I don't have trepan's script
 -----------------------------------------------------------------
-local GetTimer = Spring.GetTimer
+local _ = Spring.GetTimer
 local GetMouseState = Spring.GetMouseState
 local GetModKeyState = Spring.GetModKeyState
 local GetKeyState = Spring.GetKeyState
@@ -143,7 +143,7 @@ local function GetUnitsInScreenRectangle(x1, y1, x2, y2, team)
 	else
 		units = GetAllUnits()
 	end
-	
+
 	local left, right = sort(x1, x2)
 	local bottom, top = sort(y1, y2)
 
@@ -186,7 +186,7 @@ function widget:MousePress(x, y, button)
 end
 
 function widget:TextCommand(command)
-    if (string.find(command, "selectionmode") == 1  and  string.len(command) == 13) then 
+    if (string.find(command, "selectionmode") == 1  and  string.len(command) == 13) then
 		selectBuildingsWithMobile = not selectBuildingsWithMobile
 		if selectBuildingsWithMobile then
 			Spring.Echo("SmartSelect: Selects whatever comes under selection rectangle.")
@@ -194,7 +194,7 @@ function widget:TextCommand(command)
 			Spring.Echo("SmartSelect: Ignores buildings if it can select mobile units.")
 		end
 	end
-    if (string.find(command, "selectionnanos") == 1  and  string.len(command) == 14) then 
+    if (string.find(command, "selectionnanos") == 1  and  string.len(command) == 14) then
 		includeNanosAsMobile = not includeNanosAsMobile
 		init()
 		if includeNanosAsMobile then
@@ -205,7 +205,7 @@ function widget:TextCommand(command)
 	end
 end
 
-function widget:GetConfigData(data)
+function widget:GetConfigData(_)
     savedTable = {}
     savedTable.selectBuildingsWithMobile = selectBuildingsWithMobile
     savedTable.includeNanosAsMobile = includeNanosAsMobile
@@ -230,7 +230,7 @@ function widget:Update()
 	if (referenceCoords ~= nil and GetActiveCommand() == 0) then
 		x, y, pressed = GetMouseState()
 		local px, py, sx, sy = GetMiniMapGeometry()
-		
+
 		if (pressed) and (referenceSelection ~= nil) then
 			local alt, ctrl, meta, shift = GetModKeyState()
 			if (#referenceSelection == 0) then
@@ -238,9 +238,9 @@ function widget:Update()
 				ctrl = false
 			end
 
-			local sameSelect = GetKeyState(sameSelectKey)
-			local idleSelect = GetKeyState(idleSelectKey)
-			
+			local _ = GetKeyState(sameSelectKey)
+			local _ = GetKeyState(idleSelectKey)
+
 			local sameLast = (referenceScreenCoords ~= nil) and (x == referenceScreenCoords[1] and y == referenceScreenCoords[2])
 			if (sameLast and lastCoords == referenceCoords) then
 				return
@@ -256,9 +256,9 @@ function widget:Update()
 			local mouseSelection, originalMouseSelection
 			local r = referenceScreenCoords
 			local playing = GetPlayerInfo(myPlayerID).spectating == false
-			local team = (playing and GetMyTeamID())
+			local _ = (playing and GetMyTeamID())
 			if (r ~= nil and IsAboveMiniMap(r[1], r[2])) then
-				local mx, my = max(px, min(px+sx, x)), max(py, min(py+sy, y))
+				local _, _ = max(px, min(px+sx, x)), max(py, min(py+sy, y))
 				mouseSelection = GetUnitsInMinimapRectangle(r[1], r[2], x, y, nil)
 			else
 				local d = referenceCoords
@@ -267,7 +267,7 @@ function widget:Update()
 			end
 			originalMouseSelection = mouseSelection
 
-			
+
 			-- filter gaia units
 			local filteredselection = {}
 			for i=1, #mouseSelection do
@@ -277,8 +277,8 @@ function widget:Update()
 			end
 			mouseSelection = filteredselection
 			filteredselection = nil
-			
-			local newSelection = {}
+
+			local _ = {}
 			local uid, udid, udef, tmp
 
 			if (idleSelect) then
@@ -417,7 +417,7 @@ function init()
 	builderFilter = {}
 	buildingFilter = {}
 	mobileFilter = {}
-	
+
 	for udid, udef in pairs(UnitDefs) do
 		local mobile = (udef.canMove and udef.speed > 0.000001) or (includeNanosAsMobile and (UnitDefs[udid].name == "armnanotc" or UnitDefs[udid].name == "cornanotc" or UnitDefs[udid].name == "armnanotcplat" or UnitDefs[udid].name == "cornanotcplat"))
 		local builder = (udef.canReclaim and udef.reclaimSpeed > 0) or
@@ -426,7 +426,7 @@ function init()
 						(udef.canRepair and udef.repairSpeed > 0)
 		local building = (mobile == false)
 		local combat = (builder == false) and (mobile == true) and (#udef.weapons > 0)
-		
+
 		combatFilter[udid] = combat
 		builderFilter[udid] = builder
 		buildingFilter[udid] = building
@@ -451,7 +451,7 @@ function widget:Initialize()
 end
 
 local function DrawRectangle(r)
-	local x1, y1, x2, y2 = r[1], r[2], r[3], r[4]
+	local _, _, _, _ = r[1], r[2], r[3], r[4]
 	glVertex(r[1], 0, r[2])
 	glVertex(r[1], 0, r[4])
 	glVertex(r[3], 0, r[4])

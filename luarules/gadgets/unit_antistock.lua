@@ -48,7 +48,7 @@ local spSetUnitStockpile = Spring.SetUnitStockpile
 --------------------------------------------------------------------------------
 -- Callins
 --------------------------------------------------------------------------------
-function gadget:UnitFinished(uID, uDefID, uTeam)
+function gadget:UnitFinished(uID, uDefID, _)
 	if isAnti[uDefID] then
 		spSetUnitStockpile(uID, 1)
 	end

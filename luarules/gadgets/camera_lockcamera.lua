@@ -1,4 +1,4 @@
-local versionNumber = "v2.91"
+local _ = "v2.91"
 
 function gadget:GetInfo()
 	return {
@@ -26,7 +26,7 @@ local broadcastPeriod = 1 --will send packet in this interval (s)
 local GetCameraState = Spring.GetCameraState
 local SetCameraState = Spring.SetCameraState
 local GetCameraNames = Spring.GetCameraNames
-local GetMouseState = Spring.GetMouseState
+local _ = Spring.GetMouseState
 local GetLastUpdateSeconds = Spring.GetLastUpdateSeconds
 local GetMyPlayerID = Spring.GetMyPlayerID
 local GetMyAllyTeamID = Spring.GetMyAllyTeamID
@@ -38,22 +38,22 @@ local SendLuaRulesMsg = Spring.SendLuaRulesMsg
 local SendCommands = Spring.SendCommands
 
 local Echo = Spring.Echo
-local strGMatch = string.gmatch
+local _ = string.gmatch
 local strSub = string.sub
 local strLen = string.len
 local strByte = string.byte
 local strChar = string.char
 
 local floor = math.floor
-local ceil = math.ceil
-local max = math.max
-local min = math.min
+local _ = math.ceil
+local _ = math.max
+local _ = math.min
 
 
-local vfsPackU8 = VFS.PackU8
+local _ = VFS.PackU8
 local vfsPackF32 = VFS.PackF32
-local vfsUnpackU8 = VFS.UnpackU8
-local vfsUnpackF32 = VFS.UnpackF32
+local _ = VFS.UnpackU8
+local _ = VFS.UnpackF32
 
 ------------------------------------------------
 --const
@@ -76,7 +76,7 @@ else
 	local timeSinceBroadcast = 0
 
 	local lastPacketSent
-	
+
 	local CAMERA_IDS = GetCameraNames()
 	local CAMERA_NAMES = {}
 	local CAMERA_STATE_FORMATS = {}
@@ -103,13 +103,13 @@ else
 		local floatChars = vfsPackF32(num)
 		if not floatChars then return nil end
 
-		local sign = 0
+		local _ = 0
 		local exponent = strByte(floatChars, 4) * 2
 		local mantissa = strByte(floatChars, 3) * 2
 
 		local negative = exponent >= 256
 		local exponentLSB = mantissa >= 256
-		local mantissaLSB = strByte(floatChars, 2) >= 128
+		local _ = strByte(floatChars, 2) >= 128
 
 		if negative then
 			sign = 128
@@ -157,10 +157,10 @@ else
 
 		if not (byte1 and byte2) then return nil end
 
-		local sign = 1
+		local _ = 1
 		local exponent = byte1
-		local mantissa = byte2 - 1
-		local norm = 1
+		local _ = byte2 - 1
+		local _ = 1
 
 		local negative = (byte1 >= 128)
 
@@ -256,11 +256,11 @@ else
 	SetCameraState(prevCameraState,0)
 	--workaround a bug where minimap remains minimized because we switched to overview cam
 	SendCommands("minimap minimize")
-	
+
 	function gadget:Initialize()
 		gadgetHandler:AddSyncAction("cameraBroadcast", handleCameraBroadcastEvent)
 	end
-	
+
 	function gadget:Shutdown()
 		SendLuaRulesMsg(PACKET_HEADER)
 		gadgetHandler:RemoveSyncAction("cameraBroadcast")
@@ -294,12 +294,12 @@ else
 
 	function gadget:Update()
 		local dt = GetLastUpdateSeconds()
-		totalTime = totalTime + dt 
+		totalTime = totalTime + dt
 		timeSinceBroadcast = timeSinceBroadcast + dt
 		if timeSinceBroadcast < broadcastPeriod then
 			return
 		end
-	
+
 		local state = GetCameraState()
 		local msg = CameraStateToPacket(state)
 
@@ -307,7 +307,7 @@ else
 			Echo("<LockCamera>: Error creating packet!")
 			return
 		end
-	
+
 		--don't send duplicates
 		if msg ~= lastPacketSent then
 			SendLuaRulesMsg(msg)

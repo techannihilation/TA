@@ -27,12 +27,12 @@ function widget:Initialize()
   end
 end
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, unitDefID, _)
   if activateSounds[unitDefID] then
     local x,y,z = GetUnitPosition(unitID)
     PlaySoundFile(activateSounds[unitDefID],volume,x,y,z)
   end
 end
-  
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -35,9 +35,9 @@ local skipOwnAllyTeam                   = true    -- keep this 'true' if you don
 local circleSize                        = 1
 local circleDivs                        = 12      -- how precise circle? octagon by default
 local circleOpacity                     = 0.13
-local innerSize                         = 1.35    -- circle scale compared to unit radius
+local _ = 1.35    -- circle scale compared to unit radius
 local outerSize                         = 1.30    -- outer fade size compared to circle scale (1 = no outer fade)
-                                        
+
 local defaultColorsForAllyTeams         = 0       -- (number of teams)   if number <= of total numebr of allyTeams then dont use teamcoloring but default colors
 local keepTeamColorsForSmallAllyTeam    = 3       -- (number of teams)   use teamcolors if number or teams (inside allyTeam)  <=  this value
 local spotterColor = {                            -- default color values
@@ -51,14 +51,14 @@ local EsMaxDist = 5500000 -- max dist at which to draw ETA
 
 -- Automatically generated local definitions
 
-local GL_ONE                  = GL.ONE
+local _ = GL.ONE
 local GL_ONE_MINUS_SRC_ALPHA  = GL.ONE_MINUS_SRC_ALPHA
 local GL_SRC_ALPHA            = GL.SRC_ALPHA
 local glBlending              = gl.Blending
 local glBeginEnd              = gl.BeginEnd
 local glColor                 = gl.Color
 local glCreateList            = gl.CreateList
-local glDeleteList            = gl.DeleteList
+local _ = gl.DeleteList
 local glDepthTest             = gl.DepthTest
 local glDrawListAtUnit        = gl.DrawListAtUnit
 local glPolygonOffset         = gl.PolygonOffset
@@ -66,14 +66,14 @@ local glVertex                = gl.Vertex
 local spGetTeamColor          = Spring.GetTeamColor
 local spGetUnitDefDimensions  = Spring.GetUnitDefDimensions
 local spGetUnitDefID          = Spring.GetUnitDefID
-local spIsUnitSelected        = Spring.IsUnitSelected
-local spGetAllyTeamList       = Spring.GetAllyTeamList 
+local _ = Spring.IsUnitSelected
+local spGetAllyTeamList       = Spring.GetAllyTeamList
 local spGetTeamList           = Spring.GetTeamList
 local spGetVisibleUnits       = Spring.GetVisibleUnits
 local spIsGUIHidden           = Spring.IsGUIHidden
 local spGetUnitAllyTeam       = Spring.GetUnitAllyTeam
-                              
-local myTeamID                = Spring.GetLocalTeamID()
+
+local _ = Spring.GetLocalTeamID()
 local myAllyID                = Spring.GetMyAllyTeamID()
 
 --------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ function widget:Initialize()
                if pickTeamColor then
                   -- pick the first team in the allyTeam and take the color from that one
                   if (teamListIndex == 1) then
-                     local r,g,b,a       = spGetTeamColor(teamID)
+                     local r,g,b, _ = spGetTeamColor(teamID)
                      usedSpotterColor[1] = r
                      usedSpotterColor[2] = g
                      usedSpotterColor[3] = b
@@ -117,12 +117,12 @@ function widget:Initialize()
                end
             end
          end
-         
-         
+
+
          circlePolys[allyID] = glCreateList(function()
-         
+
             glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)      -- disable layer blending
-            
+
             -- colored inner circle:
             glBeginEnd(GL.TRIANGLES, function()
                local radstep = (2.0 * math.pi) / circleDivs
@@ -138,7 +138,7 @@ function widget:Initialize()
                   glVertex(math.sin(a2), 0, math.cos(a2))
                end
             end)
-            
+
             if (outerSize ~= 1) then
                -- colored outer circle:
                glBeginEnd(GL.QUADS, function()
@@ -207,7 +207,7 @@ function widget:DrawWorldPreUnit()
      if ux~=nil then
        local dx, dy, dz = ux-cx, uy-cy, uz-cz
        local dist = dx*dx + dy*dy + dz*dz
-	if dist < EsMaxDist then 
+	if dist < EsMaxDist then
          local allyID = spGetUnitAllyTeam(unitID)
          if circlePolys[allyID] ~= nil then
             if not skipOwnAllyTeam  or  (skipOwnAllyTeam  and  not (allyID == myAllyID))  then
@@ -226,7 +226,7 @@ function widget:DrawWorldPreUnit()
    end
 end
 
-             
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

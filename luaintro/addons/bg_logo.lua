@@ -15,10 +15,10 @@ end
 ------------------------------------------
 
 local a = 0
-local b = 0
+local _ = 0
 
 
-local function DrawQuad(x, y, size)
+local function _(x, y, size)
 	gl.Vertex(x - size, y - size, 0)
 	gl.Vertex(x - size, y + size, 0)
 	gl.Vertex(x + size, y + size, 0)
@@ -358,7 +358,7 @@ end
 
 
 function addon.DrawLoadScreen()
-	local loadProgress = SG.GetLoadProgress()
+	local _ = SG.GetLoadProgress()
 
 	--b = math.min(b + 0.0005, 1.0)
 	a = (a + 0.001)

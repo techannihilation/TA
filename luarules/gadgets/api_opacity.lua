@@ -20,7 +20,7 @@ if gadgetHandler:IsSyncedCode() then
 end
 
 --mapBaseHeight
-local mapBaseHeight 
+local mapBaseHeight
 local h = {}
 for i=1,3 do
 for i=1,3 do
@@ -45,13 +45,13 @@ local gy = math.max(0,mapBaseHeight)
 local spGetCameraPosition = Spring.GetCameraPosition
 local cy = 0
 local prevOpacityDark = GetOpacityDark(cy,gy)
-local precOpacityLight = GetOpacityLight(cy,gy)
+local _ = GetOpacityLight(cy,gy)
 
-function SetOpacity() 
+function SetOpacity()
     cy = select(2,spGetCameraPosition())
     opacityDark = GetOpacityDark(cy,gy)
     opacityLight = GetOpacityLight(cy,gy)
-    
+
     if math.abs(opacityDark-prevOpacityDark)>0.1 or math.abs(opacityDark-prevOpacityDark)>0.1 then
         prevOpacityDark = opacityDark
         prevOpacityLight = opacityLight

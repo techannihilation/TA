@@ -11,20 +11,20 @@ local function get_health_percent()
 end
 
 
-local function SmokeUnit(healthpercent, sleeptime, smoketype)
+local function SmokeUnit(_, _, _)
 	while still_building_p() do Sleep(400); end
-	
+
 	while (true) do
 		local health_percent = get_health_percent();
-		
+
 		if (health_percent < 66) then
 			local smoketype = 258;
 			if (math.random(1, 66) < health_percent) then smoketype = 257; end
 			Spring.UnitScript.EmitSfx(base, smoketype);
 		end
-		
+
 		local sleep_time = health_percent * 50;
-		if (sleep_time < 200) then 
+		if (sleep_time < 200) then
 		  sleep_time = 200; end
 		Sleep(sleep_time);
 	end

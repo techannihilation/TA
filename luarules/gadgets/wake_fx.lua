@@ -71,20 +71,20 @@ function gadget:GameFrame(n)
         if current_fold > n_folds then
              current_fold = 1
         end
-		
+
         for i = current_fold, units.count, n_folds do
-            local unitID = listData[i]             
-            local x,y,z = Spring.GetUnitPosition(unitID)
+            local unitID = listData[i]
+            local _,y, _ = Spring.GetUnitPosition(unitID)
             local h = unit[unitID].h
             if y and h then
 				-- emit wakes only when moving and not completely submerged
-				if y > -h and y <= 0 and isMoving(unitID) and not Spring.GetUnitIsCloaked(unitID) then 
+				if y > -h and y <= 0 and isMoving(unitID) and not Spring.GetUnitIsCloaked(unitID) then
 					local radius = Spring.GetUnitRadius(unitID)
 					local effect = SFXTYPE_WAKE1
-					if radius > 50 then 
-						effect = SFXTYPE_WAKE2 
+					if radius > 50 then
+						effect = SFXTYPE_WAKE2
 					end
-					Spring.UnitScript.CallAsUnit(unitID, 
+					Spring.UnitScript.CallAsUnit(unitID,
 						function()
 							Spring.UnitScript.EmitSfx(1,effect);
 						end

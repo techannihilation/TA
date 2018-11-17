@@ -27,7 +27,7 @@ local glColor = gl.Color
 local glVertex = gl.Vertex
 local glBeginEnd = gl.BeginEnd
 local spGetMapDrawMode = Spring.GetMapDrawMode
-local SpGetSelectedUnits = Spring.GetSelectedUnits
+local _ = Spring.GetSelectedUnits
 
 local isGeo = {}
 

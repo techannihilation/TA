@@ -37,7 +37,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			layer   = -1,
 		}
 	end
-	
+
 	-- register/deregister for the synced Projectile*/Explosion call-ins
 	function gadget:Initialize()
 		for weaponDefName, _ in pairs(weaponLightDefs) do
@@ -67,7 +67,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		SendToUnsynced(PROJECTILE_DESTROYED_EVENT_ID, projectileID)
 	end
 
-	function gadget:Explosion(weaponDefID, posx, posy, posz, ownerID)
+	function gadget:Explosion(weaponDefID, posx, posy, posz, _)
 		SendToUnsynced(PROJECTILE_EXPLOSION_EVENT_ID, weaponDefID, posx, posy, posz)
 		return false -- noGFX
 	end
@@ -95,8 +95,8 @@ else
 	local function LoadLightDefs()
 		-- type(v) := {[1] = number, [2] = number, [3] = number}
 		-- type(s) := number
-		local function vector_scalar_add(v, s) return {v[1] + s, v[2] + s, v[3] + s} end
-		local function vector_scalar_mul(v, s) return {v[1] * s, v[2] * s, v[3] * s} end
+		local function _(v, s) return {v[1] + s, v[2] + s, v[3] + s} end
+		local function _(v, s) return {v[1] * s, v[2] * s, v[3] * s} end
 		local function vector_scalar_div(v, s) return {v[1] / s, v[2] / s, v[3] / s} end
 
 		for weaponDefName, weaponLightDef in pairs(weaponLightDefs) do
@@ -127,7 +127,7 @@ else
 
 
 
-	local function ProjectileCreated(projectileID, projectileOwnerID, projectileWeaponDefID)
+	local function ProjectileCreated(projectileID, _, projectileWeaponDefID)
 		local projectileLightDef = projectileLightDefs[projectileWeaponDefID]
 
 		if (projectileLightDef == nil) then
@@ -209,7 +209,7 @@ else
 	end
 
 	function gadget:Initialize()
-	  
+
 		local maxMapLights = Spring.GetConfigInt("MaxDynamicMapLights") or 0
 		local maxMdlLights = Spring.GetConfigInt("MaxDynamicModelLights") or 0
 		local enabled = tonumber(Spring.GetModOptions().mo_dynamic) or 1

@@ -30,12 +30,12 @@ if (gadgetHandler:IsSyncedCode()) then
 	--------------------------------------------------------------------------------
 	-- BEGIN SYNCED
 	--------------------------------------------------------------------------------
-	function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
+	function gadget:UnitPreDamaged(unitID, _, _, _, _, weaponDefID, _, attackerID, _, _)
 		if Weapons[weaponDefID] and attackerID then
 			local impulseBoost = Weapons[weaponDefID].impulseBoost
-			local number,isUserTarget,Target = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
+			local number, _,Target = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 			if number == 2 then
-				local ux,uy,uz = GetUnitPosition(unitID)
+				local ux, _,uz = GetUnitPosition(unitID)
 				local vector = {Target[1] - ux,Target[3] - uz}
 				local vecLength = math.sqrt(vector[1]*vector[1] + vector[2]*vector[2])
 				local NormVector = {vector[1]/vecLength,vector[2]/vecLength}

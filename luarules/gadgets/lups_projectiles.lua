@@ -46,7 +46,7 @@ function gadget:ProjectileCreated(proID, proOwnerID, weaponID)
 		projectiles[proID] = true;
 		SendToUnsynced("lupsProjectiles_AddProjectile", proID, proOwnerID, weaponID)
 	end
-end	
+end
 
 function gadget:ProjectileDestroyed(proID)
 	if projectiles[proID] then
@@ -76,8 +76,8 @@ else
 --------------------------------------------------------------------------------
 
 local Lups
-local LupsAddParticles 
-local SYNCED = SYNCED
+local LupsAddParticles
+local _ = SYNCED
 
 local projectiles = {}
 
@@ -93,7 +93,7 @@ function CopyTable(tableToCopy, deep)
 	return copy
 end
 
-local function AddProjectile(_, proID, proOwnerID, weaponID)
+local function AddProjectile(_, proID, _, weaponID)
   if (not Lups) then Lups = GG['Lups']; LupsAddParticles = Lups.AddParticles end
   projectiles[proID] = {}
   local def = weapons[weaponID]

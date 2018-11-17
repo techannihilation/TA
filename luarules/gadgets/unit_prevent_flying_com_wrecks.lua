@@ -27,7 +27,7 @@ end
 local GetUnitHealth = Spring.GetUnitHealth
 --local LICHE_BOMB = WeaponDefNames['armcybr_arm_pidr'].id
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, unitDefID, _, damage, _, _, _, _, _)
 	--if (UnitDefs[unitDefID].customParams.iscommander) and ((damage > GetUnitHealth(unitID)) or (weaponID==LICHE_BOMB)) then
 	if commanders[unitDefID] and damage > GetUnitHealth(unitID) then
 		return damage, 0

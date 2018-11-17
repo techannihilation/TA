@@ -13,16 +13,16 @@ end
 
 --synced
 if gadgetHandler:IsSyncedCode() then
-    
+
     local EditUnitCmdDesc = Spring.EditUnitCmdDesc
     local FindUnitCmdDesc = Spring.FindUnitCmdDesc
     local GetUnitDefID = Spring.GetUnitDefID
     local GetUnitRulesParam = Spring.GetUnitRulesParam
     local InsertUnitCmdDesc = Spring.InsertUnitCmdDesc
     local SetUnitRulesParam = Spring.SetUnitRulesParam
-    
+
     local CMD_SET_PRIORITY = 34567
-    
+
     local setPriorityAirn = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -32,7 +32,7 @@ if gadgetHandler:IsSyncedCode() then
         queueing = false,
         params = {'0', 'No priority', '', '', '', ''},
     }
-    
+
     local setPriorityAirf = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -42,7 +42,7 @@ if gadgetHandler:IsSyncedCode() then
         queueing = false,
         params = {'1', '', 'Fighters', '', '', ''},
     }
-    
+
     local setPriorityAirb = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -52,7 +52,7 @@ if gadgetHandler:IsSyncedCode() then
         queueing = false,
         params = {'2', '', '', 'Bombers', '', ''},
     }
-    
+
     local setPriorityAirOb = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -71,9 +71,9 @@ if gadgetHandler:IsSyncedCode() then
         queueing = false,
         params = {'4', '', '', '', '', '\255\64\170\255No Scouts'},
     }
-    
+
     local AAunits = {}
-    
+
     airCategories = {
         --Transporters
         [UnitDefNames["armatlas"].id] = "Bombers",
@@ -86,7 +86,7 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tlltplane"].id] = "Bombers",
         [UnitDefNames["armor"].id] = "Bombers",
         [UnitDefNames["corbtrans"].id] = "Bombers",
-        
+
         --Bombers
         [UnitDefNames["armblz"].id] = "Bombers",
         [UnitDefNames["corfiend"].id] = "Bombers",
@@ -112,7 +112,7 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["armorion"].id] = "Bombers",
         [UnitDefNames["tllanhur"].id] = "Bombers",
         [UnitDefNames["tllaether"].id] = "Bombers",
-        
+
         [UnitDefNames["airwolf3g"].id] = "Fighters",
         [UnitDefNames["armfig"].id] = "Fighters",
         [UnitDefNames["armhawk"].id] = "Fighters",
@@ -127,7 +127,7 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tllshu"].id] = "Fighters",
         [UnitDefNames["armstratus"].id] = "Fighters",
         [UnitDefNames["tllcondor"].id] = "Fighters",
-        
+
         --Scouts
         [UnitDefNames["armpeep"].id] = "Scouts",
         [UnitDefNames["armawac"].id] = "Scouts",
@@ -139,7 +139,7 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tllrsplane"].id] = "Scouts",
         [UnitDefNames["tllsonpl"].id] = "Scouts"
     }
-    
+
     local function shallow_copy(t)
         local tmp = {}
         for k, v in pairs(t) do
@@ -147,12 +147,12 @@ if gadgetHandler:IsSyncedCode() then
         end
         return tmp
     end
-    
+
     local airCategoriesCached = {}
     function gadget:Initialize()
         airCategoriesCached = shallow_copy(airCategories)
     end
-    
+
     function gadget:UnitCreated(unitID, unitDefID)
         local uDef = UnitDefs[unitDefID]
         if uDef.customParams.prioritytarget and uDef.customParams.prioritytarget == "air" then
@@ -161,14 +161,14 @@ if gadgetHandler:IsSyncedCode() then
             SetUnitRulesParam(unitID, "priorityEnabled", 0)
         end
     end
-    
-    function gadget:UnitDestroyed(unitID, unitDefID)
+
+    function gadget:UnitDestroyed(unitID, _)
         if AAunits[unitID] then
             AAunits[unitID] = nil
         end
     end
-    
-    function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+
+    function gadget:AllowCommand(unitID, _, _, cmdID, cmdParams, _, _, _)
         if cmdID == CMD_SET_PRIORITY then
             cmdDescId = FindUnitCmdDesc(unitID, CMD_SET_PRIORITY)
             if cmdParams and cmdParams[1] and cmdDescId then
@@ -187,8 +187,8 @@ if gadgetHandler:IsSyncedCode() then
         end
         return true
     end
-    
-    function gadget:UnitCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOpts, cmdTag)
+
+    function gadget:UnitCommand(unitID, _, _, cmdID, cmdParams, _, _)
         if cmdID == CMD_SET_PRIORITY then
             if cmdParams and cmdParams[1] then
                 if cmdParams[1] == 0 then
@@ -219,8 +219,8 @@ if gadgetHandler:IsSyncedCode() then
             end
         end
     end
-    
-    function gadget:AllowWeaponTarget(unitID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
+
+    function gadget:AllowWeaponTarget(unitID, targetID, _, _, defPriority)
         local allowed = true
         local priority = defPriority
         if AAunits[unitID] then

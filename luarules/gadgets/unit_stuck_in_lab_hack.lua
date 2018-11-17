@@ -23,7 +23,7 @@ end
 local GetUnitCommands = Spring.GetUnitCommands
 local SpGiveOrderArrayToUnitArray = Spring.GiveOrderArrayToUnitArray
 local SpGetUnitPosition = Spring.GetUnitPosition
-local SpGetUnitBuildFacing = Spring.GetUnitBuildFacing 
+local SpGetUnitBuildFacing = Spring.GetUnitBuildFacing
 local pairs = pairs
 local badfactories={
   --[UnitDefNames["corsy"].id] = true,
@@ -31,13 +31,13 @@ local badfactories={
   [UnitDefNames["corfhp"].id] = true,
   [UnitDefNames["cahpns"].id] = true,
   [UnitDefNames["csubpen"].id] = true,
-  
+
   [UnitDefNames["armsy"].id] = true,
   [UnitDefNames["armasy"].id] = true,
   [UnitDefNames["armfhp"].id] = true,
   [UnitDefNames["aahpns"].id] = true,
   [UnitDefNames["asubpen"].id] = true,
-  
+
   --[UnitDefNames["tllsy"].id] = true,
   [UnitDefNames["tllasy"].id] = true,
   [UnitDefNames["tllhpns"].id] = true,
@@ -47,10 +47,10 @@ local badfactories={
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+function gadget:AllowCommand(_, unitDefID, _, cmdID, _, _, _, _)
 	if cmdID<0 then
 		if UnitDefs[unitDefID]["buildOptions"] and #UnitDefs[unitDefID]["buildOptions"] >0 then
-			for i,v in pairs(UnitDefs[unitDefID]["buildOptions"]) do
+			for _,v in pairs(UnitDefs[unitDefID]["buildOptions"]) do
 				if v==-1*cmdID then
 					--Spring.Echo('yep, we can do that')
 					return true
@@ -65,9 +65,9 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
     return true
 end
 
-function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, userOrders)
+function gadget:UnitFromFactory(unitID, _, _, factID, factDefID, userOrders)
 	--Spring.Echo('UnitFromFactorycommands:',to_string(Spring.GetUnitCommands(unitID)))
-			
+
 	if userOrders then
 		local cmd=GetUnitCommands(unitID)
 		if cmd and #cmd==1 then
@@ -75,7 +75,7 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 			--Spring.Echo('UnitFromFactorycommands:',to_string(Spring.GetUnitCommands(unitID)))
 			--Spring.Echo('Factorycommands:',to_string(factcmd))
 			--Spring.Echo('FactorycmdID:',factcmd[1]['id'])
-			
+
 			local newcmd={}
 			--Spring.Echo('newcmd',to_string(newcmd),factcmd)
 			if #factcmd >0 then
@@ -85,7 +85,7 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 					--Spring.Echo('newcmd2',to_string(newcmd[k]))
 				end
 			else
-				local x,y,z = SpGetUnitPosition(factID)
+				local x, _,z = SpGetUnitPosition(factID)
 				local f=SpGetUnitBuildFacing(factID)
 				if f==0 then
 					z=z+128
@@ -105,7 +105,7 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 		end
 	else
 		if badfactories[factDefID] and #GetUnitCommands(factID)==0 then
-			local x,y,z = SpGetUnitPosition(factID)
+			local x, _,z = SpGetUnitPosition(factID)
 				local f=SpGetUnitBuildFacing(factID)
 				if f==0 then
 					z=z+96

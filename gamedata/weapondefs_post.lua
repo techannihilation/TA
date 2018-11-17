@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
 -- Default Engine Weapon Definitions Post-processing
 --------------------------------------------------------------------------------
--- BA stores weapondefs in the unitdef files 
+-- BA stores weapondefs in the unitdef files
 -- Here we load those defs into the WeaponDefs table
 -- Then we call alldefs_post.lua, in which post processing of defs should take place
--- basically, DONT TOUCH this! 
+-- basically, DONT TOUCH this!
 --------------------------------------------------------------------------------
 
 -- see alldefs.lua for documentation
@@ -14,12 +14,12 @@ VFS.Include("gamedata/alldefs_post.lua")
 VFS.Include("gamedata/post_save_to_customparams.lua")
 
 
-local function isbool(x)   return (type(x) == 'boolean') end
+local function _(x)   return (type(x) == 'boolean') end
 local function istable(x)  return (type(x) == 'table')   end
-local function isnumber(x) return (type(x) == 'number')  end
+local function _(x) return (type(x) == 'number')  end
 local function isstring(x) return (type(x) == 'string')  end
 
-local function tobool(val)
+local function _(val)
   local t = type(val)
   if (t == 'nil') then
     return false
@@ -47,7 +47,7 @@ local function ExtractWeaponDefs(udName, ud)
     if (isstring(wdName) and istable(wd)) then
       local fullName = udName .. '_' .. wdName
       WeaponDefs[fullName] = wd
-        
+
       WeaponDef_Post(fullName, wd)
 
       if SaveDefsToCustomParams then
@@ -87,7 +87,7 @@ local function ExtractWeaponDefs(udName, ud)
     if (WeaponDefs[fullName]) then
       ud.selfdestructas = fullName
     end
-  end  
+  end
 end
 
 --------------------------------------------------------------------------------
@@ -96,12 +96,12 @@ end
 -- handle standalone weapondefs
 for name,wd in pairs(WeaponDefs) do
     WeaponDef_Post(name,wd)
-    
+
     if SaveDefsToCustomParams then
-        SaveDefToCustomParams("WeaponDefs", name, wd)    
+        SaveDefToCustomParams("WeaponDefs", name, wd)
     end
 end
-  
+
 -- extract weapondefs from the unitdefs
 local UnitDefs = DEFS.unitDefs
 for udName,ud in pairs(UnitDefs) do
@@ -110,6 +110,6 @@ for udName,ud in pairs(UnitDefs) do
   end
 end
 
--- apply mod options that need _post 
+-- apply mod options that need _post
 ModOptions_Post(UnitDefs, WeaponDefs)
 

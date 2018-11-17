@@ -27,26 +27,26 @@ end
 --Speed-ups
 local GetUnitDefID    = Spring.GetUnitDefID
 local FindUnitCmdDesc = Spring.FindUnitCmdDesc
-local SetUnitBuildspeed = Spring.SetUnitBuildSpeed
+local _ = Spring.SetUnitBuildSpeed
 local spGetTeamResources = Spring.GetTeamResources
 local spInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
 local spEditUnitCmdDesc = Spring.EditUnitCmdDesc
 local spRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
-local Echo = Spring.Echo
+local _ = Spring.Echo
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 CMD_BUILDSPEED = 33455
-local passiveBuilders 			= {} -- passiveBuilders[uID] = nil / bool
+local _ = {} -- passiveBuilders[uID] = nil / bool
 local requiresMetal			 	= {} -- requiresMetal[uDefID] = bool
 local requiresEnergy 			= {} -- requiresEnergy[uDefID] = bool
 local teamList 					= {} -- teamList[1..n] = teamID
 local teamMetalStalling 		= {} -- teamStalling[teamID] = nil / bool
 local teamEnergyStalling 		= {} -- teamStalling[teamID] = nil / bool
-local modOptions    			= Spring.GetModOptions()
+local _ = Spring.GetModOptions()
 local buildspeedlist 			= {}
 local builderSpeeds				= {}
-local nanoTurretDefs			= {}
+local _ = {}
 local excludeUnits				= {}
 
 
@@ -59,7 +59,7 @@ local buildspeedCmdDesc = {
   tooltip = 'Orders: Production Rate',
   params  = { '0', 'Passive', '25%', '50%', '75%', '100%'}
 }
-  
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ local function AddBuildspeedCmdDesc(unitID)
   if (FindUnitCmdDesc(unitID, CMD_BUILDSPEED)) then
     return  -- already exists
   end
-  local insertID = 
+  local insertID =
     FindUnitCmdDesc(unitID, CMD.CLOAK)      or
     FindUnitCmdDesc(unitID, CMD.ONOFF)      or
     FindUnitCmdDesc(unitID, CMD.TRAJECTORY) or
@@ -100,13 +100,13 @@ local function UpdateButton(unitID, statusStr)
 
   buildspeedCmdDesc.params[1] = statusStr
 
-  spEditUnitCmdDesc(unitID, cmdDescID, { 
-    params  = buildspeedCmdDesc.params, 
+  spEditUnitCmdDesc(unitID, cmdDescID, {
+    params  = buildspeedCmdDesc.params,
     tooltip = tooltip,
   })
 end
 
-local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
+local function BuildspeedCommand(unitID, _, cmdParams, _)
 	if cmdParams[1] == 1 then
 		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *.25)
 	elseif cmdParams[1] == 2 then
@@ -127,12 +127,12 @@ function gadget:Initialize()
 	for uDefID, uDef in pairs(UnitDefs) do
 		requiresMetal[uDefID] = (uDef.metalCost > 1) -- T1 metal makers cost 1 metal.
 		requiresEnergy[uDefID] = (uDef.energyCost > 0) -- T1 solars cost 0 energy.
-		
+
 		if (uDef.isBuilder==true and #uDef.buildOptions>0) then
 			if not excludeUnits[uDefID] then
 				builderSpeeds[uDefID] = uDef.buildSpeed
 			end
-		end	
+		end
 	end
 	teamList = Spring.GetTeamList()
 	gadgetHandler:RegisterCMDID(CMD_BUILDSPEED)
@@ -141,10 +141,10 @@ function gadget:Initialize()
 		local unitDefID = GetUnitDefID(unitID)
 		gadget:UnitCreated(unitID, unitDefID, teamID)
 	end
-	
+
 end
 
-function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
+function gadget:UnitCreated(unitID, unitDefID, _, _)
 	if builderSpeeds[unitDefID] then
 		local stMode =  4
 		buildspeedlist[unitID]={speed=builderSpeeds[unitDefID], mode=stMode}
@@ -153,7 +153,7 @@ function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	end
 end
 
-function gadget:UnitDestroyed(unitID, _, teamID)
+function gadget:UnitDestroyed(unitID, _, _)
 	buildspeedlist[unitID] = nil
 end
 
@@ -161,15 +161,15 @@ function gadget:GameFrame(n)
 	if n % 15 == 0 then
 		for i = 1, #teamList do
 			local teamID = teamList[i]
-			local mCur, mStor, mPull, mInc, mExp, mShare, mSent, mRec, mExc = spGetTeamResources(teamID, 'metal')
-			local eCur, eStor, ePull, eInc, eExp, eShare, eSent, eRec, eExc = spGetTeamResources(teamID, 'energy')
+			local _, _, _, _, _, _, _, _, _ = spGetTeamResources(teamID, 'metal')
+			local eCur, _, ePull, _, eExp, _, _, _, eExc = spGetTeamResources(teamID, 'energy')
 			-- stabilize the situation if storage is small
 			if ePull > eExp then
 				eCur = eCur - (ePull - eExp)
 			end
 			if eExc > 0 then
 				eCur = eCur + eExc
-			end            
+			end
 			if mPull > mExp then
 				mCur = mCur - (mPull - mExp)
 			end
@@ -183,9 +183,9 @@ function gadget:GameFrame(n)
 	end
 end
 
-function gadget:AllowUnitBuildStep(builderID, builderTeamID, uID, uDefID, step)
+function gadget:AllowUnitBuildStep(builderID, builderTeamID, _, uDefID, step)
 	if buildspeedlist[builderID] then
-				
+
 		return (step <= 0) or buildspeedlist[builderID].mode~=0 or not ((teamMetalStalling[builderTeamID] and requiresMetal[uDefID]) or (teamEnergyStalling[builderTeamID] and requiresEnergy[uDefID]))
 	else
 		return true
@@ -197,7 +197,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
 	if cmdID ~= CMD_BUILDSPEED or UnitDefs[unitDefID].buildSpeed==0 then
 		return true
 	end
-	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)  
+	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	return false
 end
 

@@ -5,7 +5,7 @@
 --//FIXME: GL_TEXTURE_RECTANGLE support (LuaFBO doesn't support it yet?)
 
 local PostDistortion = {}
-local pd = PostDistortion 
+local pd = PostDistortion
 PostDistortion.__index = PostDistortion
 
 -----------------------------------------------------------------------------------------------------------------
@@ -29,21 +29,21 @@ local enterIdentity,postDrawAndLeaveIdentity
 local GL_TEXTURE_RECTANGLE = 0x84F5
 
 local GL_RGBA16F_ARB = 0x881A
-local GL_RGBA32F_ARB = 0x8814
+local _ = 0x8814
 
-local GL_RGBA12 = 0x805A
-local GL_RGBA16 = 0x805B
+local _ = 0x805A
+local _ = 0x805B
 
-local GL_DEPTH_BITS        = 0x0D56
+local _ = 0x0D56
 local GL_DEPTH_COMPONENT   = 0x1902
-local GL_DEPTH_COMPONENT16 = 0x81A5
-local GL_DEPTH_COMPONENT24 = 0x81A6
-local GL_DEPTH_COMPONENT32 = 0x81A7
+local _ = 0x81A5
+local _ = 0x81A6
+local _ = 0x81A7
 
 local GL_COLOR_ATTACHMENT0_EXT = 0x8CE0
-local GL_COLOR_ATTACHMENT1_EXT = 0x8CE1
-local GL_COLOR_ATTACHMENT2_EXT = 0x8CE2
-local GL_COLOR_ATTACHMENT3_EXT = 0x8CE3
+local _ = 0x8CE1
+local _ = 0x8CE2
+local _ = 0x8CE3
 
 local NON_POWER_OF_TWO = gl.HasExtension("GL_ARB_texture_non_power_of_two")
 local TEXRECT          = gl.HasExtension("GL_ARB_texture_rectangle")
@@ -96,17 +96,17 @@ function PostDistortion.ViewResize()
 		wrap_s   = GL.CLAMP_TO_EDGE,
 		wrap_t   = GL.CLAMP_TO_EDGE,
 	})
-	
+
 	fbo.depth  = depthTex
   end
-  
+
   if (gl.DeleteTextureFBO) then
     gl.DeleteTextureFBO(screenCopyTex)
     gl.DeleteTextureFBO(jitterTex)
   end
 
   local target = (pd.texRectangle and GL_TEXTURE_RECTANGLE)
-  
+
   screenCopyTex = gl.CreateTexture(vsx,vsy, {
     target = target,
     min_filter = GL.LINEAR,
@@ -132,7 +132,7 @@ end
 
 local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
 local GL_DEPTH_BUFFER_BIT = GL.DEPTH_BUFFER_BIT
-local GL_DEPTH_COLOR_BUFFER_BIT = math.bit_or(GL_DEPTH_BUFFER_BIT,GL_COLOR_BUFFER_BIT)
+local _ = math.bit_or(GL_DEPTH_BUFFER_BIT,GL_COLOR_BUFFER_BIT)
 local glActiveFBO     = gl.ActiveFBO
 local glCopyToTexture = gl.CopyToTexture
 local glCallList      = gl.CallList
@@ -155,10 +155,10 @@ function PostDistortion:EndDraw()
   glCallList(enterIdentity);
   if (pd.texRectangle) then glUniform(screenSizeLoc,vsx,vsy) end
   glTexture(0,jitterTex);
-  glTexture(1,screenCopyTex); 
+  glTexture(1,screenCopyTex);
   if HasBothDeferredTargets then
-	  glTexture(2,"$map_gbuffer_zvaltex"); 
-	  glTexture(3,"$model_gbuffer_zvaltex"); 
+	  glTexture(2,"$map_gbuffer_zvaltex");
+	  glTexture(3,"$model_gbuffer_zvaltex");
   end
   glCallList(postDrawAndLeaveIdentity);
 end
@@ -200,13 +200,13 @@ function PostDistortion.Initialize()
   ------------------------------------------------------------------------------------------
   -- CREATE SHADER
   --
-  local HasBothDeferredTargets 	= (Spring.GetConfigString("AllowDeferredMapRendering") == '1' and Spring.GetConfigString("AllowDeferredModelRendering")=='1') 
+  local HasBothDeferredTargets 	= (Spring.GetConfigString("AllowDeferredMapRendering") == '1' and Spring.GetConfigString("AllowDeferredModelRendering")=='1')
 
   local defines = ""
   if (pd.copyDepthBuffer and not HasBothDeferredTargets) then defines = defines .. "#define depthtexture\n" end
-  
+
   if HasBothDeferredTargets then defines = defines .. "#define hasdeferredbuffers\n" end
-  
+
   jitterShader = gl.CreateShader({
     fragment = defines .. [[
       #ifdef texrect
@@ -326,7 +326,7 @@ function PostDistortion.Finalize()
     gl.DeleteShader(jitterShader or 0)
   end
 
-  gl.DeleteList(enterIdentity or 0) 
+  gl.DeleteList(enterIdentity or 0)
   gl.DeleteList(postDrawAndLeaveIdentity or 0)
 end
 

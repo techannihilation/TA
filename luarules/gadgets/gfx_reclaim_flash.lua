@@ -9,8 +9,8 @@
         enabled   = true,
       }
     end
-     
-    
+
+
 local SpSpawnCEG = Spring.SpawnCEG
 local SpGetFeatureResources = Spring.GetFeatureResources
 local SpGetFeaturePosition = Spring.GetFeaturePosition
@@ -20,7 +20,7 @@ if (not gadgetHandler:IsSyncedCode()) then
   return
 end
 
-function gadget:FeatureDestroyed(featureID,allyteam)
+function gadget:FeatureDestroyed(featureID, _)
 	fx,fy,fz=SpGetFeaturePosition(featureID)
 	--Spring.Echo(allyteam)
 	if (fx ~= nil) then

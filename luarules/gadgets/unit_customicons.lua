@@ -10,10 +10,10 @@
 --------------------------------------------------------------------------------
 -- This gadget checks through the attributes of each unitdef and assigns an appropriate icon for use in the minimap & zoomed out mode.
 --
--- The reason that this is a gadget (it could also be a widget) and not part of weapondefs_post.lua/iconTypes.lua is the following:  
--- the default valuesfor UnitDefs attributes that are not specified in our unitdefs lua files are only loaded into UnitDefs AFTER  
--- unitdefs_post.lua and iconTypes.lua have been processed. For example, at the time of unitdefs_post, for most units ud.speed is  
--- nil and not a number, so we can't e.g. compare it to zero. Also, it's more modularized as a widget/gadget. 
+-- The reason that this is a gadget (it could also be a widget) and not part of weapondefs_post.lua/iconTypes.lua is the following:
+-- the default valuesfor UnitDefs attributes that are not specified in our unitdefs lua files are only loaded into UnitDefs AFTER
+-- unitdefs_post.lua and iconTypes.lua have been processed. For example, at the time of unitdefs_post, for most units ud.speed is
+-- nil and not a number, so we can't e.g. compare it to zero. Also, it's more modularized as a widget/gadget.
 -- [We could set the default values up in unitdefs_post to match engine defaults but thats just too hacky.]
 --
 -- Bluestone 27/04/2013
@@ -39,7 +39,7 @@ end
 
 --------------------------------------------------------------------------------
 
-local wasLuaModUIEnabled = 0
+local _ = 0
 
 --------------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("m-up.user", "icons/m-up.png")
   Spring.AddUnitIcon("m.user", "icons/m.png")
   Spring.AddUnitIcon("nuke.user", "icons/nuke.png",1.25)
-  Spring.AddUnitIcon("slash.user", "icons/slash.png") 
+  Spring.AddUnitIcon("slash.user", "icons/slash.png")
   Spring.AddUnitIcon("sphere.user", "icons/sphere.png",1.1)
   Spring.AddUnitIcon("sphere2.user", "icons/sphere.png",1.35)
   Spring.AddUnitIcon("sphere3.user", "icons/sphere.png",1.7)
@@ -97,27 +97,27 @@ function gadget:Initialize()
   Spring.AddUnitIcon("med_mech.user", "icons/mech.tga",3.0)
   Spring.AddUnitIcon("small_mech.user", "icons/mech.tga",2.5)
 
-   
+
   -- Setup the unitdef icons
   for udid,ud in pairs(UnitDefs) do
-  
+
     if (ud ~= nil) then
       if (ud.origIconType == nil) then
         ud.origIconType = ud.iconType
       end
- 
---wind      
+
+--wind
       if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwindtrap") then
         Spring.SetUnitDefIcon(udid, "e.user")
 -- t1.5 wind/tidals
-      elseif (ud.name=="armawin") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or (ud.name=="tllatide") or (ud.name=="tllawindtrap") then 
+      elseif (ud.name=="armawin") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or (ud.name=="tllatide") or (ud.name=="tllawindtrap") then
         Spring.SetUnitDefIcon(udid, "e1.user")
 --fighters
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") then
-        Spring.SetUnitDefIcon(udid, "tri-up_fighter.user") 
+        Spring.SetUnitDefIcon(udid, "tri-up_fighter.user")
 --t3 fighters
       elseif (ud.name=="airwolf3g") or (ud.name=="shrike") then
-        Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user") 
+        Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user")
 --t4 fusions
       elseif (ud.name=="cfusionplant") or (ud.name=="afusionplant") or (ud.name=="tllmegacoldfus") then
         Spring.SetUnitDefIcon(udid, "e4.user")
@@ -176,7 +176,7 @@ function gadget:Initialize()
       elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="corvaliant") or (ud.name=="tllzeppelin") or (ud.name=="tllbarbarus") then
         Spring.SetUnitDefIcon(udid, "t4ships.user")
 --battleships
-      elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") then 
+      elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") then
         Spring.SetUnitDefIcon(udid, "bships.user")
 --uber ships
 	 elseif (ud.name=="corblackhy") or (ud.name=="cortyrnt") or (ud.name=="aseadragon")
@@ -195,7 +195,7 @@ function gadget:Initialize()
 -- nuke / antinuke ( stockpile weapon anyway )
       elseif (ud.stockpileWeaponDef ~= nil) then
       	Spring.SetUnitDefIcon(udid, "nuke.user")
--- aircraft	
+-- aircraft
       elseif (ud.canFly) then
         Spring.SetUnitDefIcon(udid, "tri-up.user")
 -- immobile shields
@@ -258,7 +258,7 @@ function gadget:Initialize()
       end
     end
   end
-  
+
 -- Shrink scouts
   Spring.SetUnitDefIcon(UnitDefNames["corfav"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["armfav"].id, "tiny-sphere.user")

@@ -20,7 +20,7 @@ if (vsx == 1) then --hax for windowed mode
 end
 
 
-local minimapbrightness = nil
+local _ = nil
 local update = 0.5
 
 local sIsGUIHidden = Spring.IsGUIHidden
@@ -41,8 +41,8 @@ local glTranslate = gl.Translate
 local glResetState = gl.ResetState
 local glResetMatrices = gl.ResetMatrices
 local glDepthTest = gl.DepthTest
-local glVertex = gl.Vertex
-local glBeginEnd = gl.BeginEnd
+local _ = gl.Vertex
+local _ = gl.BeginEnd
 local glCallList = gl.CallList
 local glDeleteList = gl.DeleteList
 local glCreateList = gl.CreateList
@@ -51,8 +51,8 @@ local glPopMatrix = gl.PopMatrix
 local glScale = gl.Scale
 
 
-local GL_LINE_LOOP = GL.LINE_LOOP
-local GL_COLOR_BUFFER_BIT = GL.COLOR_BUFFER_BIT
+local _ = GL.LINE_LOOP
+local _ = GL.COLOR_BUFFER_BIT
 local GL_PROJECTION = GL.PROJECTION
 local GL_MODELVIEW = GL.MODELVIEW
 
@@ -86,7 +86,7 @@ local function Border(px,py,sx,sy,width,c)
 	end
 	if (c) and c[4] == 0 then
 		--Spring.Echo("DRAW CALL CULLED")
-		return 
+		return
 	end
 	glPushMatrix()
 	if (c) then
@@ -143,7 +143,7 @@ local function CreateStartList()
 	end)
 end
 
-function widget:ViewResize(viewSizeX, viewSizeY)
+function widget:ViewResize(_, _)
 	vsx,vsy = widgetHandler:GetViewSizes()
 	CreateStartList()
 end
@@ -152,11 +152,11 @@ function widget:Initialize()
     widgetHandler:RegisterGlobal('DrawManager_redui_drawing', DrawStatus)
 	vsx,vsy = widgetHandler:GetViewSizes()
 	CreateStartList()
-	
+
 	local T = {}
 	WG[TN] = T
 	T.version = version
-	
+
 	T.Color = function(a,b,c,d) --using (...) seems slower
 		Todo[#Todo+1] = {1,a,b,c,d}
 	end
@@ -172,7 +172,7 @@ function widget:Initialize()
 	T.Text = function(a,b,c,d,e,f)
 		Todo[#Todo+1] = {5,a,b,c,d,e,f}
 	end
-	
+
 	F[1] = Color
 	F[2] = Rect
 	F[3] = TexRect
@@ -188,17 +188,17 @@ function widget:DrawScreen()
 
 	glResetState()
 	glResetMatrices()
-	
+
 	glCallList(StartList)
 	for i=1,#Todo do
 		local t = Todo[i]
 		F[t[1]](t[2],t[3],t[4],t[5],t[6],t[7])
 		Todo[i] = nil
 	end
-	
+
 	glResetState()
 	glResetMatrices()
-	
+
 	CleanedTodo = true
 end
 
@@ -215,7 +215,7 @@ function widget:Update(deltaTime)
     	return
   	end
   	timeCounter = 0
-	
+
   	if WG["background_opacity_custom"] then
             minimapbrightness = WG["background_opacity_custom"][4]
         else
@@ -226,11 +226,11 @@ end
 function widget:Shutdown()
         widgetHandler:DeregisterGlobal('DrawManager_redui_drawing', DrawStatus)
 	glDeleteList(StartList)
-	
+
 	if (WG[TN].LastWidget) then
 		Spring.Echo(widget:GetInfo().name..">> last processed widget was \""..WG[TN].LastWidget.."\"") --for debugging
 	end
-	
-	
+
+
 	WG[TN]=nil
 end

@@ -15,17 +15,17 @@ end
 
 local enabled = tonumber(Spring.GetModOptions().mo_progmines) or 0
 
-if (enabled == 0) then 
+if (enabled == 0) then
   return false
 end
 
 if (gadgetHandler:IsSyncedCode()) then
 
 	local mexList = {}
-	
+
 	local SetUnitMetalExtraction = Spring.SetUnitMetalExtraction
 
-	function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+	function gadget:UnitFinished(unitID, unitDefID, _)
 	  if (UnitDefs[unitDefID].extractsMetal > 0) then
 		local extracts = (UnitDefs[unitDefID].extractsMetal * 0.25)
 		local maxExtracts = (UnitDefs[unitDefID].extractsMetal * 1.25)
@@ -34,9 +34,9 @@ if (gadgetHandler:IsSyncedCode()) then
 		if (UnitDefs[unitDefID].extractsMetal > 0.001) then
 		  radius = 49
 		end
-		mexList[unitID] = { 
-			extracts = extracts, 
-			frame = Spring.GetGameFrame(), 
+		mexList[unitID] = {
+			extracts = extracts,
+			frame = Spring.GetGameFrame(),
 			maxExtracts = maxExtracts,
 			step = (UnitDefs[unitDefID].extractsMetal * 0.0025),
 			radius = radius
@@ -45,7 +45,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	  end
 	end
 
-	function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
+	function gadget:UnitDestroyed(unitID, _, _)
 	  mexList[unitID] = nil
 	  SendToUnsynced("RemoveMine", unitID)
 	end
@@ -62,13 +62,13 @@ if (gadgetHandler:IsSyncedCode()) then
 		  SetUnitMetalExtraction(unitID, defs.extracts)
 		  SendToUnsynced("UpdateMine", unitID, defs.extracts, defs.maxExtracts)
 		elseif (defs.extracts == defs.maxExtracts) then
-		  
+
 		  SendToUnsynced("UpdateMine", unitID, defs.extracts, defs.maxExtracts, defs.radius-3)
 		  mexList[unitID] = nil
 		end
 	  end
 	end
-	
+
 	function gadget:GameStart()
 	  Spring.Echo("Progressive Mine mode enabled: Mines will take time to reach full productivity.")
 	end
@@ -78,29 +78,29 @@ else
 	local GetLocalTeamID = Spring.GetLocalTeamID
 	local GetUnitTeam = Spring.GetUnitTeam
 	local AreTeamsAllied = Spring.AreTeamsAllied
-	local teamID = GetLocalTeamID()
+	local _ = GetLocalTeamID()
 	local mineList = {}
 	local teamColors = {}
 	local spec = false
-	
+
 	local function GetTeamColor(teamID)
 	  local color = teamColors[teamID]
 	  if (color) then
 		return color[1], color[2], color[3]
 	  end
 	  local r,g,b = Spring.GetTeamColor(teamID)
-	  
+
 	  color = { r, g, b }
 	  teamColors[teamID] = color
-	  return r, g, b 
+	  return r, g, b
     end
 
 	function gadget:Initialize()
 	  gadgetHandler:AddSyncAction("UpdateMine",UpdateMine)
 	  gadgetHandler:AddSyncAction("RemoveMine",RemoveMine)
 	end
-	  
-	function UpdateMine(_, unitID, value, valueMax, radius) 
+
+	function UpdateMine(_, unitID, value, valueMax, radius)
 		if not mineList[unitID] then
 		  mineList[unitID] = {
 		    start = value,
@@ -118,11 +118,11 @@ else
 		spec, fullview = Spring.GetSpectatingState()
 		spec = spec or fullview
 	end
-	
+
 	function RemoveMine(_, unitID)
 	  mineList[unitID] = nil
 	end
-	  
+
 	local function circleLines(percentage, radius)
 		gl.BeginEnd(GL.LINE_STRIP, function()
 			local radstep = ((2.0 * math.pi) / 60) * -1
@@ -131,7 +131,7 @@ else
 				gl.Vertex(math.sin(a)*radius, 0, math.cos(a)*radius)
 			end
 		end)
-	end  
+	end
 
 	function gadget:DrawWorldPreUnit()
 		teamID = GetLocalTeamID()

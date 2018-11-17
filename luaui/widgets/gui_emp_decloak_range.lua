@@ -26,7 +26,7 @@ end
 
 local onlyDrawRangeWhenSelected	= true
 local fadeOnCameraDistance		= true
-local showLineGlow 				= true		-- a ticker but faint 2nd line will be drawn underneath	
+local showLineGlow 				= true		-- a ticker but faint 2nd line will be drawn underneath
 local opacityMultiplier			= 1.3
 local fadeMultiplier			= 1.2		-- lower value: fades out sooner
 local circleDivs				= 64		-- detail of range circle
@@ -104,7 +104,7 @@ function isGremlin(unitDefID)
     return false
 end
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, unitDefID, _)
     if isSpy(unitDefID) then
 		addSpy(unitID, unitDefID)
 		if autoCloackSpy then
@@ -118,13 +118,13 @@ function widget:UnitFinished(unitID, unitDefID, unitTeam)
     end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
     if units[unitID] then
         units[unitID] = nil
     end
 end
 
-function widget:UnitEnteredLos(unitID, unitTeam)
+function widget:UnitEnteredLos(unitID, _)
     if not spectatorMode then
         local unitDefID = GetUnitDefID(unitID)
         if isSpy(unitDefID) then
@@ -139,7 +139,7 @@ end
 
 
 function addSpy(unitID, unitDefID)
-	
+
 	local udef = udefTab[unitDefID]
 	local selfdBlastId = weapNamTab[lower(udef[selfdTag])].id
 	local selfdBlastRadius = weapTab[selfdBlastId][aoeTag]
@@ -147,14 +147,14 @@ function addSpy(unitID, unitDefID)
 end
 
 function addGremlin(unitID, unitDefID)
-	
+
 	local udef = udefTab[unitDefID]
 	units[unitID] = {udef["decloakDistance"],0}
 end
 
-function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
+function widget:UnitCreated(unitID, unitDefID, _, _)
 	if not spValidUnitID(unitID) then return end --because units can be created AND destroyed on the same frame, in which case luaui thinks they are destroyed before they are created
-		
+
     if isSpy(unitDefID) then
 		addSpy(unitID, unitDefID)
         cloackSpy(unitID)
@@ -166,7 +166,7 @@ function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
     end
 end
 
-function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+function widget:UnitTaken(unitID, unitDefID, _, _)
     if isSpy(unitDefID) then
 		addSpy(unitID, unitDefID)
         cloackSpy(unitID)
@@ -179,7 +179,7 @@ function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
 end
 
 
-function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+function widget:UnitGiven(unitID, unitDefID, _, _)
     if isSpy(unitDefID) then
 		addSpy(unitID, unitDefID)
         cloackSpy(unitID)
@@ -191,7 +191,7 @@ function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
     end
 end
 
-function widget:UnitLeftLos(unitID, unitDefID, unitTeam)
+function widget:UnitLeftLos(unitID, _, _)
     if not spectatorMode then
         if units[unitID] then
             units[unitID] = nil
@@ -214,14 +214,14 @@ function widget:DrawWorldPreUnit()
     if spIsGUIHidden() then return end
 
 	local camX, camY, camZ = spGetCameraPosition()
-	
+
     glDepthTest(true)
 
     for unitID, property in pairs(units) do
         local x,y,z = spGetUnitPosition(unitID)
 		if ((onlyDrawRangeWhenSelected and spIsUnitSelected(unitID)) or onlyDrawRangeWhenSelected == false) and spIsSphereInView(x,y,z,math.max(property[1],property[2])) then
-			local camDistance = diag(camX-x, camY-y, camZ-z) 
-			
+			local camDistance = diag(camX-x, camY-y, camZ-z)
+
 			local lineWidthMinus = (camDistance/2000)
 			if lineWidthMinus > 2 then
 				lineWidthMinus = 2
@@ -261,7 +261,7 @@ function widget:DrawWorldPreUnit()
     glDepthTest(false)
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     detectSpectatorView()
     return true
 end
@@ -272,7 +272,7 @@ function widget:Initialize()
 end
 
 function detectSpectatorView()
-    local _, _, spec, teamId = spGetPlayerInfo(spGetMyPlayerID())
+    local _, _, spec, _ = spGetPlayerInfo(spGetMyPlayerID())
 
     if spec then
         spectatorMode = true

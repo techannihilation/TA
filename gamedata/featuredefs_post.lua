@@ -14,9 +14,9 @@
 --------------------------------------------------------------------------------
 
 
-local function isbool(x)   return (type(x) == 'boolean') end
+local function _(x)   return (type(x) == 'boolean') end
 local function istable(x)  return (type(x) == 'table')   end
-local function isnumber(x) return (type(x) == 'number')  end
+local function _(x) return (type(x) == 'number')  end
 local function isstring(x) return (type(x) == 'string')  end
 
 
@@ -38,45 +38,45 @@ local function defaultMetalFunc(ud, coef)
 	return ud.buildcostmetal * coef
 end
 
-local featureConfig = 
+local featureConfig =
 {
 [0] = {
-	suffix = " Wreckage", 
-	damageFunc = function(ud) 
+	suffix = " Wreckage",
+	damageFunc = function(ud)
 		return defaultDamageFunc(ud, 0.8)
-	end, 
-	metalFunc = function(ud) 
+	end,
+	metalFunc = function(ud)
 		return defaultMetalFunc(ud, 0.75)
-	end, 
+	end,
 	}, --dead
 [1] = {
-	suffix = " Debris", 
-	damageFunc = function(ud) 
+	suffix = " Debris",
+	damageFunc = function(ud)
 		return defaultDamageFunc(ud, 1)
-	end, 
-	metalFunc = function(ud) 
+	end,
+	metalFunc = function(ud)
 		return defaultMetalFunc(ud, 0.4)
-	end, 
+	end,
 	}, --heap ~ dead wreckage
 [2] = {
-	suffix = " Metal Shards", 
-	damageFunc = function(ud) 
+	suffix = " Metal Shards",
+	damageFunc = function(ud)
 		return defaultDamageFunc(ud, 0.5)
-	end, 
-	metalFunc = function(ud) 
+	end,
+	metalFunc = function(ud)
 		return defaultMetalFunc(ud, 0.25)
-	end, 
+	end,
 	}, --heap2 ~ dead heap
 [3] = {
-	suffix = " Metal Dust", 
-	damageFunc = function(ud) 
+	suffix = " Metal Dust",
+	damageFunc = function(ud)
 		return defaultDamageFunc(ud, 0.4)
-	end, 
-	metalFunc = function(ud) 
+	end,
+	metalFunc = function(ud)
 		return defaultMetalFunc(ud, 0.10)
-	end, 
+	end,
 	} --heap3 ~ dead heap2
-	
+
 -- deeper nesting wont't be accepted
 }
 
@@ -85,33 +85,33 @@ local skipUnits = {
 	['cordrag'] = true,
 	['corfdrag'] = true,
 	['corfort'] = true,
-	
+
 	['armclaw'] = true,
 	['armdrag'] = true,
 	['armfdrag'] = true,
 	['armfort'] = true,
-	
+
 	['tlldtns'] = true,
 	['tlladt'] = true,
 	['tlldt'] = true,
-	
+
 }
 
 
 
 local function processFeature(fname, ud, level)
-	
-	
+
+
 	config = featureConfig[level]
 	if config then
 		-- accept only meaningful levels
 		fd = FeatureDefs[fname]
 		fd.description = (ud.name or "Mysterious") .. config.suffix
-		
+
 		if ud.category:find("COMMANDER") then
 			return
 		end
-		
+
 		fd.damage = config.damageFunc(ud)
 		fd.metal = config.metalFunc(ud)
 	end
@@ -127,7 +127,7 @@ local function recursiveHeap(fd, ud, heapLevel)
 			processFeature(fname, ud, heapLevel)
 			recursiveHeap(innerFd, ud, heapLevel + 1)
 		end
-		
+
 	end
 end
 
@@ -135,7 +135,7 @@ local function processUnitFeatures(ud)
 	if skipUnits[ud.unitname or ""] then
 		return
 	end
-	
+
 	--Spring.Echo("PUF")
 	if (isstring(ud.corpse) and istable(ud.featuredefs)) then
 		fname = ud.corpse
@@ -194,7 +194,7 @@ local function ProcessUnitDef(udName, ud)
   end
 
   processUnitFeatures(ud)
- 
+
 end
 
 

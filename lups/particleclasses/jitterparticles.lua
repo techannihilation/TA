@@ -64,27 +64,27 @@ local rand = math.random
 local twopi= 2*math.pi
 local cos  = math.cos
 local sin  = math.sin
-local min  = math.min
+local _ = math.min
 local degreeToPI = math.pi/180
 
 local spGetUnitViewPosition = Spring.GetUnitViewPosition
-local spGetPositionLosState = Spring.GetPositionLosState
-local spGetUnitLosState     = Spring.GetUnitLosState
+local _ = Spring.GetPositionLosState
+local _ = Spring.GetUnitLosState
 local spIsSphereInView      = Spring.IsSphereInView
 local spGetUnitRadius       = Spring.GetUnitRadius
 local spGetProjectilePosition = Spring.GetProjectilePosition
 
-local glTexture     = gl.Texture 
-local glBlending    = gl.Blending
+local glTexture     = gl.Texture
+local _ = gl.Blending
 local glUniform     = gl.Uniform
-local glUniformInt  = gl.UniformInt
+local _ = gl.UniformInt
 local glPushMatrix  = gl.PushMatrix
 local glPopMatrix   = gl.PopMatrix
 local glTranslate   = gl.Translate
 local glCreateList  = gl.CreateList
 local glCallList    = gl.CallList
 local glRotate      = gl.Rotate
-local glColor       = gl.Color
+local _ = gl.Color
 local glUseShader   = gl.UseShader
 
 local GL_QUADS = GL.QUADS
@@ -262,8 +262,8 @@ function JitterParticles:Update(n)
   if (n==1) then --// in the case of 1 frame we can use much faster equations
     self.uMovCoeff = self.airdrag^self.frame + self.uMovCoeff;
   else
-    local rotBoost = 0
-    for i=1,n do 
+    local _ = 0
+    for i=1,n do
       self.uMovCoeff = self.airdrag^(self.frame+i) + self.uMovCoeff;
     end
   end

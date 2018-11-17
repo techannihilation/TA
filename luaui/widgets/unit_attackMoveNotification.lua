@@ -11,8 +11,8 @@ function widget:GetInfo()
 end
 ----------------------------------------------------------------------------
 local alarmInterval                 = 15        --seconds
-local commanderAlarmInterval		= 10
-----------------------------------------------------------------------------                
+local _ = 10
+----------------------------------------------------------------------------
 local spGetLocalTeamID              = Spring.GetLocalTeamID
 local spPlaySoundFile               = Spring.PlaySoundFile
 local spEcho                        = Spring.Echo
@@ -38,7 +38,7 @@ local COMMANDER = {
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
-  --Arm 
+  --Arm
   [UnitDefNames["armcom"].id] = true,
   [UnitDefNames["armcom1"].id] = true,
   [UnitDefNames["armcom4"].id] = true,
@@ -58,13 +58,13 @@ local COMMANDER = {
 
 function widget:Initialize()
     CheckSpecState()
-    setTeamId()    
+    setTeamId()
     lastAlarmTime = spGetTimer()
     lastCommanderAlarmTime =  spGetTimer()
     math.randomseed( os.time() )
 end
 
-function widget:UnitDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam)
+function widget:UnitDamaged (unitID, unitDefID, unitTeam, _, _, _, _, _, _)
     if ( localTeamID ~= unitTeam )then
 		return
 	end
@@ -85,37 +85,37 @@ function widget:UnitDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, wea
 		end
 	end
     lastAlarmTime = now
-    
+
     local udef = UnitDefs[unitDefID]
     local x,y,z = spGetUnitPosition(unitID)
 
     spEcho("-> " .. udef.humanName  .." is being attacked!") --print notification
-    
+
     if ( udef.sounds.underattack and (#udef.sounds.underattack > 0) ) then
         id = random(1, #udef.sounds.underattack) --pick a sound from the table by random --(id 138, name warning2, volume 1)
-            
+
         soundFile = udef.sounds.underattack[id].name
         if ( string.find(soundFile, "%.") == nil ) then
             soundFile = soundFile .. ".wav" --append .wav if no extension is found
         end
-            
+
         spPlaySoundFile( "sounds/" .. soundFile, udef.sounds.underattack[id].volume, nil, "sfx" )
     end
-        
+
     if (x and y and z) then spSetLastMessagePosition(x,y,z) end
 end
 
-function widget:UnitMoveFailed(unitID, unitDefID, unitTeam)
+function widget:UnitMoveFailed(_, unitDefID, _)
     local udef = UnitDefs[unitDefID]
     spEcho( udef.humanName  .. ": Can't reach destination!" )
-end 
+end
 
 function setTeamId()
-    localTeamID = spGetLocalTeamID()    
+    localTeamID = spGetLocalTeamID()
 end
 
 --changing teams, rejoin, becoming spec etc
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     setTeamId()
     CheckSpecState()
 end
@@ -126,6 +126,6 @@ function CheckSpecState()
 		widgetHandler:RemoveWidget(self)
 		return false
 	end
-	
-	return true	
+
+	return true
 end

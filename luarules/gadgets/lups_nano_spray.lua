@@ -36,7 +36,7 @@ end
 local spGetFactoryCommands = Spring.GetFactoryCommands
 local spGetCommandQueue    = Spring.GetCommandQueue
 
-local function GetCmdTag(unitID) 
+local function GetCmdTag(unitID)
     local cmdTag = 0
     local cmds = spGetFactoryCommands(unitID,1)
 	if (cmds) then
@@ -45,7 +45,7 @@ local function GetCmdTag(unitID)
 			cmdTag = cmd.tag
 		end
 	end
-	if cmdTag == 0 then 
+	if cmdTag == 0 then
 		local cmds = spGetCommandQueue(unitID,1)
 		if (cmds) then
 			local cmd = cmds[1]
@@ -53,10 +53,10 @@ local function GetCmdTag(unitID)
 				cmdTag = cmd.tag
 			end
         end
-	end 
+	end
 	return cmdTag
-end 
-	
+end
+
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ local initialized = false --// if LUPS isn't started yet, we try it once a gamef
 local GetUnitRadius        = Spring.GetUnitRadius
 local GetFeatureRadius     = Spring.GetFeatureRadius
 local spGetFeatureDefID    = Spring.GetFeatureDefID
-local spGetTeamColor       = Spring.GetTeamColor
+local _ = Spring.GetTeamColor
 local spGetGameFrame       = Spring.GetGameFrame
 local spIsUnitInView       = Spring.IsUnitInView
 
@@ -116,7 +116,7 @@ if (not GetFeatureRadius) then
 end
 
 
-local function SetTable(table,arg1,arg2,arg3,arg4)
+local function _(table,arg1,arg2,arg3,arg4)
   table[1] = arg1
   table[2] = arg2
   table[3] = arg3
@@ -125,7 +125,7 @@ end
 
 
 local function CopyTable(outtable,intable)
-  for i,v in pairs(intable) do 
+  for i,v in pairs(intable) do
     if (type(v)=='table') then
       if (type(outtable[i])~='table') then outtable[i] = {} end
       CopyTable(outtable[i],v)
@@ -212,14 +212,14 @@ end
 local nanoParticles = {}
 
 local currentNanoEffect = (Spring.GetConfigInt("LupsNanoEffect",1) or 1)
-local maxEngineParticles = Spring.GetConfigInt("MaxNanoParticles", 10000)
+local _ = Spring.GetConfigInt("MaxNanoParticles", 10000)
 local maxNewNanoEmitters = (Spring.GetConfigInt("NanoBeamAmount", 6) or 6) -- limit for performance reasons
 
 
-local function GetFaction(udid) --todo add faction color nano spray support (needs nano color baked for all faction)
+local function GetFaction(_) --todo add faction color nano spray support (needs nano color baked for all faction)
   --local udef_factions = UnitDefs[udid].factions or {}
   --return ((#udef_factions~=1) and 'unknown') or udef_factions[1]
-  return "default" -- default 
+  return "default" -- default
 end
 
 local NanoFxNone = 3
@@ -292,9 +292,9 @@ function gadget:GameFrame(frame)
 				if (target) then
 					--Spring.Echo("IsUnitIcon", Spring.IsUnitIcon(unitID), unitID, "   Is Target Icon", Spring.IsUnitIcon(target),target)
                         if not Spring.IsUnitIcon(unitID) and (CallAsTeam(myTeamID, spIsUnitInView, unitID)) or
-                        not isFeature and not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or CallAsTeam(myTeamID, spIsUnitInView, target)) then 
+                        not isFeature and not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or CallAsTeam(myTeamID, spIsUnitInView, target)) then
 						local endpos
-						local radius = 30
+						local _ = 30
 						if (type=="restore") then
 							endpos = target
 							radius = target[4]
@@ -324,7 +324,7 @@ function gadget:GameFrame(frame)
 						local teamID = Spring.GetUnitTeam(unitID)
 						local allyID = Spring.GetUnitAllyTeam(unitID)
 						local unitDefID = Spring.GetUnitDefID(unitID)
-						local faction = GetFaction(unitDefID)
+						local _ = GetFaction(unitDefID)
 						local teamColor = {Spring.GetTeamColor(teamID)}
 						local nanoPieces = Spring.GetUnitNanoPieces(unitID) or {}
 
@@ -363,7 +363,7 @@ function gadget:GameFrame(frame)
                             local nanoSettings = CopyMergeTables(NanoFx.default, nanoParams)
 							ExecuteLuaCode(nanoSettings)
 
-							local fxType  = nanoSettings.fxtype
+							local _ = nanoSettings.fxtype
 							if (not nanoParticles[unitID]) then nanoParticles[unitID] = {} end
 							local unitFxs = nanoParticles[unitID]
 							if Lups then
@@ -401,7 +401,7 @@ function init()
   --// init user custom nano fxs
     for _,fx in pairs(Lups.Config or {}) do
     if (fx and (type(fx)=='table') and fx.fxtype) then
-      local fxType = fx.fxtype 
+      local fxType = fx.fxtype
       local fxSettings = fx
 
             if (fxType)and
@@ -415,7 +415,7 @@ function init()
     end
   end
 
-    for fxname,fx in pairs(NanoFx) do
+    for fxname, _ in pairs(NanoFx) do
         local NanoEffx = NanoFx[fxname]
         NanoEffx.delaySpread = 30
         NanoEffx.fxtype = NanoEffx.fxtype:lower()
@@ -453,10 +453,10 @@ end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
-  
+
 local registeredBuilders = {}
 
-function gadget:UnitFinished(uid, udid)
+function gadget:UnitFinished(uid, _)
     if currentNanoEffect == NanoFxNone then return end
 	if (UnitDefs[udid].isBuilder) and not registeredBuilders[uid] then
 		BuilderFinished(uid)
@@ -464,7 +464,7 @@ function gadget:UnitFinished(uid, udid)
 	end
 end
 
-function gadget:UnitDestroyed(uid, udid)
+function gadget:UnitDestroyed(uid, _)
     if currentNanoEffect == NanoFxNone then return end
 	if (UnitDefs[udid].isBuilder) and registeredBuilders[uid] then
 		BuilderDestroyed(uid)

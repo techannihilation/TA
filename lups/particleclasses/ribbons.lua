@@ -47,7 +47,7 @@ Ribbon.Default = {
   worldspace = true,
   repeatEffect = true,
   dieGameFrame = math.huge,
-  
+
   isvalid = true,
 }
 
@@ -56,7 +56,7 @@ Ribbon.Default = {
 
 local spGetUnitDefID         = Spring.GetUnitDefID
 local spGetUnitIsDead        = Spring.GetUnitIsDead
-local spIsUnitValid          = Spring.IsUnitValid
+local _ = Spring.IsUnitValid
 local spIsSphereInView       = Spring.IsSphereInView
 local spGetUnitVelocity      = Spring.GetUnitVelocity
 local spGetUnitPiecePosition = Spring.GetUnitPiecePosition
@@ -76,7 +76,7 @@ local GL_ONE = GL.ONE
 local GL_SRC_ALPHA = GL.SRC_ALPHA
 local GL_ONE_MINUS_SRC_ALPHA = GL.ONE_MINUS_SRC_ALPHA
 
-local function GetPiecePos(unit,piece)
+local function _(unit,piece)
   local x,y,z = spGetUnitViewPosition(unit,false)
   local front,up,right = spGetUnitVectors(unit)
   local px,py,pz = spGetUnitPiecePosition(unit,piece)
@@ -104,7 +104,7 @@ end
 
 
 function Ribbon:Draw()
-  
+
   local quads0 = self.quads0
   if self.texture ~= lastTexture then
 	glTexture(0,":c:"..self.texture)
@@ -130,7 +130,7 @@ function Ribbon:Draw()
     elseif self.projectile then
       x,y,z = spGetProjectilePosition(self.projectile)
     end
-    if x and y and z then 
+    if x and y and z then
       glUniform( oldPosUniform[quads0+1] , x,y,z )
     end
   else
@@ -254,10 +254,10 @@ function Ribbon:Update(n)
       end
     end
   else
-    local lastIndex = self.posIdx 
+    local lastIndex = self.posIdx
     self.posIdx = (self.posIdx % self.size)+1
     self.oldPos[self.posIdx] = self.oldPos[lastIndex]
-    
+
     self.blendfactor = self.blendfactor - n * self.decayRate
   end
 end
@@ -265,7 +265,7 @@ end
 
 function Ribbon:Visible()
   self.isvalid = (self.unit and spGetUnitIsDead(self.unit) == false) or (self.projectile and Spring.GetProjectileDefID(self.projectile))
-    
+
   if self.noIconDraw then
     if not Spring.IsUnitVisible(self.unit, radius, self.noIconDraw) then
       return false
@@ -314,7 +314,7 @@ function Ribbon:CreateParticle()
   self.quads0 = self.size-1
   self.blendfactor = 1
 
-  local x,y,z 
+  local x,y,z
   if self.unit then
     x,y,z = spGetUnitPiecePosDir(self.unit,self.piecenum)
   elseif self.projectile then

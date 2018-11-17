@@ -58,22 +58,22 @@ else
     }
 
 
-  function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+  function gadget:UnitCreated(unitID, unitDefID, _)
     if (UWFusions[unitDefID]) then
       fusions[unitID] = UWFusions[unitDefID]
     end
   end
 
 
-  function gadget:UnitTaken(unitID, unitDefID, unitTeam)
-    if (UWFusions[unitDefID]) then 
+  function gadget:UnitTaken(unitID, unitDefID, _)
+    if (UWFusions[unitDefID]) then
       fusions[unitID] = UWFusions[unitDefID]
     end
   end
 
 
-  function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-    if (UWFusions[unitDefID]) then 
+  function gadget:UnitDestroyed(unitID, unitDefID, _)
+    if (UWFusions[unitDefID]) then
       fusions[unitID] = nil
     end
   end
@@ -86,7 +86,7 @@ function gadget:Update(deltaTime)
   if (timeCounter < update) then
     timeCounter = timeCounter + deltaTime
     return
-  end    
+  end
   if tonumber(Spring.GetConfigInt("Water",1) or 1) > 2 then
     canDraw = false
   else
@@ -95,8 +95,8 @@ function gadget:Update(deltaTime)
 end
 
   function gadget:GameFrame(frame)
-    if (frame%30==0) and canDraw then 
-      for unitID, thing in pairs(fusions) do
+    if (frame%30==0) and canDraw then
+      for unitID, _ in pairs(fusions) do
         local myTeamID = Spring.GetMyTeamID()
         if not Spring.IsUnitIcon(unitID) and (CallAsTeam(myTeamID, Spring.IsUnitInView, unitID)) then
           local posx, posy, posz  = Spring.GetUnitPosition(unitID,true)

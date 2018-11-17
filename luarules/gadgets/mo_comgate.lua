@@ -15,7 +15,7 @@ end
 
 local enabled = tonumber(Spring.GetModOptions().mo_comgate) or 0
 
-if (enabled == 0) then 
+if (enabled == 0) then
   return false
 end
 
@@ -24,7 +24,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 local hiddenUnits = {}
 local gameStart = false
-local gaiaTeamID = Spring.GetGaiaTeamID()
+local _ = Spring.GetGaiaTeamID()
 
 local teamSKILL = {}
 
@@ -40,12 +40,12 @@ function gadget:Initialize()
             for _,pID in pairs(playerList) do
                 local customtable = select(11,Spring.GetPlayerInfo(pID))
 		local tsMu = customtable.skill
-		local tsSigma = customtable.skilluncertainty
+		local _ = customtable.skilluncertainty
 		if tsMu then
 
 			teamSkill = tsMu and tonumber(tsMu:match("%d+%.?%d*")) or 1
 		end
-		local name = Spring.GetPlayerInfo(pID)
+		local _ = Spring.GetPlayerInfo(pID)
 	        --Spring.Echo("player " .. name .. " has ts values of " .. teamSkill)
             end
             if teamSkill >= 35 then
@@ -59,12 +59,12 @@ function gadget:Initialize()
     end
 end
 
-function gadget:UnitCreated(unitID, unitDefID, teamID)
+function gadget:UnitCreated(unitID, _, teamID)
 	if (not gameStart) and not hiddenUnits[unitID] then
     Spring.CallCOBScript(unitID, "Beamcolor", 0, teamSKILL[teamID])
 		local x,y,z = Spring.GetUnitPosition(unitID)
 		hiddenUnits[unitID] = {x,y,z,teamID}
-		Spring.SetUnitNoDraw(unitID,true) 
+		Spring.SetUnitNoDraw(unitID,true)
 	end
 end
 
@@ -73,7 +73,7 @@ function gadget:GameFrame(n)
     gameStart = true
   end
   if (n == 6) then
-    for unitID,data in pairs(hiddenUnits) do
+    for unitID, _ in pairs(hiddenUnits) do
 		Spring.CallCOBScript(unitID, "TeleportControl", 0)
     end
   end
@@ -87,7 +87,7 @@ function gadget:GameFrame(n)
   end
 end
 
-function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+function gadget:AllowCommand(_, _, _, _, _, _, _, _)
 	local n = Spring.GetGameFrame()
 	if n < 140 then return false end
 	return true
@@ -97,7 +97,7 @@ end
 else
 --[[
 local myPlayerID = Spring.GetMyPlayerID()
-local _,_,spec,_ = Spring.GetPlayerInfo(myPlayerID) 
+local _,_,spec,_ = Spring.GetPlayerInfo(myPlayerID)
 local vsx,vsy = Spring.GetViewGeometry()
 local GateInfo
 
@@ -107,9 +107,9 @@ local colorString = "\255\255\255\255"
 local colorString2 = "\255\100\001\001"
 
 function gadget:DrawScreen()
-    if not spec then 
-	if Spring.GetGameRulesParam("player_" .. tostring(myPlayerID) .. "_readyState") == 2 then 
-		if GateInfo then 
+    if not spec then
+	if Spring.GetGameRulesParam("player_" .. tostring(myPlayerID) .. "_readyState") == 2 then
+		if GateInfo then
 			gl.DeleteList(GateInfo)
 		end
 	end
@@ -120,10 +120,10 @@ function gadget:DrawScreen()
 end
 
 function gadget:GameOver()
-		if GateInfo then 
+		if GateInfo then
 			gl.DeleteList(GateInfo)
 		end
-		gadgetHandler:RemoveGadget()	
+		gadgetHandler:RemoveGadget()
 end
 
 function gadget:Initialize()
@@ -131,7 +131,7 @@ function gadget:Initialize()
 	local dx = vsx*0.5
 	local dy = vsy*0.72
 	GateInfo = gl.CreateList(function()
-	
+
 		-- Second Message
 		msg = "Teleport Activated"
 		tackyfont:Begin()

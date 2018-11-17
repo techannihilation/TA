@@ -20,7 +20,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local KillCounters = {}
 
 	local function isUnitComplete(UnitID)
-		local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(UnitID)
+		local _, _, _, _,buildProgress=Spring.GetUnitHealth(UnitID)
 		if buildProgress and buildProgress>=1 then
 			return true
 		else
@@ -46,7 +46,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 	end
 
-	function gadget:UnitDestroyed(u,ud,ut,a,ad,at)
+	function gadget:UnitDestroyed(u, _,ut,a, _,at)
 		if ut and at and (not Spring.AreTeamsAllied(ut,at)) and isUnitComplete(u) and u and a and u~=a then
 			KillCounters[at]=KillCounters[at]+1
 			if KillCounters[at]>BestTeamCount then

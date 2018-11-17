@@ -24,7 +24,7 @@ deathTeams = {}
 
 -- auto detection of doesnotcount units
 local doesNotCountList = {}
-for name, ud in pairs(UnitDefs) do
+for _, ud in pairs(UnitDefs) do
 	if (ud.customParams.dontcount or ud.canKamikaze) then
 		doesNotCountList[ud.id] = true
 	end
@@ -33,7 +33,7 @@ end
 -- one man ally?
 rogueAlly = {}
 
-function gadget:AllowCommand_GetWantedCommand()	
+function gadget:AllowCommand_GetWantedCommand()
 	return {[CMD.SELFD] = true}
 end
 
@@ -41,7 +41,7 @@ function gadget:AllowCommand_GetWantedUnitDefID()
 	return true
 end
 
-function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions,fromSynced)
+function gadget:AllowCommand(unitID, _, unitTeam, cmdID, _, _, _)
   local a = spGetUnitAllyTeam(unitID)
   if not rogueAlly[a] and cmdID == CMD.SELFD then
     deathTeams[unitTeam] = true

@@ -14,7 +14,7 @@ end
 function table.key_to_str ( k )
   if "string" == type( k ) and string.match( k, "^[_%a][_%a%d]*$" ) then
     if k == "else" then k = "other" end --temp
-    return string.lower(k) -- make all key values lower case 
+    return string.lower(k) -- make all key values lower case
   else
     return "[" .. table.val_to_str( k ) .. "]"
   end
@@ -36,7 +36,7 @@ function table.tostring( tbl )
 end
 
 for name,ud in pairs(UnitDefs) do
-    local ud_string = table.tostring(ud)
+    local _ = table.tostring(ud)
     ud.customparams = ud.customparams or {}
     ud.customparams.__def = table.tostring(ud)
     Spring.Echo("saved UnitDefs." .. name .. " to customparams.__def as string")

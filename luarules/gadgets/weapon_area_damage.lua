@@ -22,8 +22,8 @@ local SpGetUnitsInSphere = Spring.GetUnitsInSphere
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpGetUnitTeam = Spring.GetUnitTeam
 local SpGetUnitAllyTeam = Spring.GetUnitAllyTeam
-local SpValidUnitID = Spring.ValidUnitID
-local SpEcho = Spring.Echo
+local _ = Spring.ValidUnitID
+local _ = Spring.Echo
 local sqrt = math.sqrt
 local pairs = pairs
 local ipairs = ipairs
@@ -60,7 +60,7 @@ function gadget:Explosion(weaponID, px, py, pz, ownerID)
 	return false
 end
 
-local totalDamage = 0
+local _ = 0
 
 function gadget:GameFrame(f)
 	frameNum=f
@@ -73,7 +73,7 @@ function gadget:GameFrame(f)
 					local damage = w.damage
 					local allyScale = w.allyScale
 					local teamScale = w.teamScale
-					local scoutDmg = w.scoutDmg
+					local _ = w.scoutDmg
 
 					if w.rangeFall ~= 0 then
 						damage = damage - damage*w.rangeFall*sqrt((ux-w.pos.x)^2 + (uy-w.pos.y)^2 + (uz-w.pos.z)^2)/w.radius
@@ -94,7 +94,7 @@ function gadget:GameFrame(f)
 							end
 						end
 					end
-				end		
+				end
 			end
 			w.damage = w.damage - w.timeLoss
 			if f >= w.expiry then

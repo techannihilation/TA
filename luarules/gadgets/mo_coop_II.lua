@@ -17,18 +17,18 @@ if (tonumber((Spring.GetModOptions() or {}).mo_coop) or 0) == 0 then
 end
 
 if gadgetHandler:IsSyncedCode() then
-	
+
 	----------------------------------------------------------------
 	-- Synced Var
 	----------------------------------------------------------------
 	local coopStartPoints = {} -- coopStartPoints[playerID] = {x,y,z} -- Also acts as is-player-a-coop-player
-	
+
 	GG.coopStartPoints = coopStartPoints -- Share it to other gadgets
-	
+
 	----------------------------------------------------------------
 	-- Synced Callins
 	----------------------------------------------------------------
-	
+
 	-- Commented out Initialize due to set of GG.coopMode and layer of 1
 	-- Previously layer was -1 (and so initialize ran first), however this made the unsynced drawing code draw UNDER the green startbox
 	-- Could have a separate :GetInfo in both synced and unsynced sections, but that is asking for trouble
@@ -71,15 +71,15 @@ if gadgetHandler:IsSyncedCode() then
 
 		return str
 	end
-	
-	
+
+
 	local function SetCoopStartPoint(playerID, x, y, z)
 		coopStartPoints[playerID] = {x, y, z}
 		--Spring.Echo('coop dbg6',playerID,x,y,z,to_string(coopStartPoints))
-	   
+
 		SendToUnsynced("CoopStartPoint", playerID, x, y, z)
 	end
-	
+
 	--function gadget:Initialize()
 	do
 		local coopHasEffect = false
@@ -97,7 +97,7 @@ if gadgetHandler:IsSyncedCode() then
 				end
 			end
 		end
-		
+
 		if coopHasEffect then
 			GG.coopMode = true -- Inform other gadgets that coop needs to be taken into account
 		--else
@@ -106,9 +106,9 @@ if gadgetHandler:IsSyncedCode() then
 		end
 	end
 
-	function gadget:AllowStartPosition(playerID, teamID, readyState, x, y, z, rx, ry, rz)
+	function gadget:AllowStartPosition(playerID, _, _, x, _, z, _, _, _)
 		--Spring.Echo('allowstart',x,z,playerID)
-		for otherplayerID, startPos in pairs(coopStartPoints) do
+		for _, startPos in pairs(coopStartPoints) do
 			if startPos[1]==x and startPos[3]==z then
 				--Spring.Echo('coop dbg8',playerID,'a real start was attempted to be placed on a coop start ',otherplayerID,'at',x,z,'disallowing!')
 				return false
@@ -118,7 +118,7 @@ if gadgetHandler:IsSyncedCode() then
 			-- Spring sometimes(?) has each player re-place their start position on their current team start position pre-gamestart
 			-- To catch this, we don't recognise a coop start position if it is identical to their teams spring start position
 			-- This has the side-effect that a coop player cannot intentionally start directly on their teammate, but this is OK
-			
+
 			--Since spring is a bitch, and if the host (the guy who places the real start point) readies up first, and the client second, then the host will have his start point overwritten by the client
 			-- this can be prevented by not allowing the host to place on client either.
 			local _, _, _, teamID, allyID = Spring.GetPlayerInfo(playerID)
@@ -133,15 +133,15 @@ if gadgetHandler:IsSyncedCode() then
 			return false
 		end
 		---Spring.Echo('allowstart true',x,z,playerID)
-		   
+
 	   return true
 	end
-	
+
 	local function SpawnTeamStartUnit(playerID,teamID, allyID, x, z)
 		local startUnit = Spring.GetTeamRulesParam(teamID, 'startUnit')
 		if GG.playerStartingUnits then --use that player specific start unit if available
 			startUnit = GG.playerStartingUnits[playerID] or startUnit
-		end 
+		end
 		if x <= 0 or z <= 0 then
 			local xmin, zmin, xmax, zmax = Spring.GetAllyTeamStartBox(allyID)
 			x = 0.5 * (xmin + xmax)
@@ -151,9 +151,9 @@ if gadgetHandler:IsSyncedCode() then
 		--we set unit rule to mark who belongs to, so initial queue knows which com unitID belongs to which player's initial queue
 		Spring.SetUnitRulesParam(unitID, "startingOwner", playerID )
 	end
-	
-	function gadget:GameFrame(n)
-		
+
+	function gadget:GameFrame(_)
+
 		if GG.coopMode then
 			--Spring.Echo('coop dbg7',to_string(coopStartPoints))
 			for playerID, startPos in pairs(coopStartPoints) do
@@ -161,23 +161,23 @@ if gadgetHandler:IsSyncedCode() then
 				SpawnTeamStartUnit(playerID,teamID, allyID, startPos[1], startPos[3])
 			end
 		end
-		
+
 		gadgetHandler:RemoveGadget(self)
 		SendToUnsynced('RemoveGadget') -- Remove unsynced side too
 	end
-		
+
 
 else
-	
+
 	----------------------------------------------------------------
 	-- Unsynced Var
 	----------------------------------------------------------------
 	local coneList
-	
+
 	local playerNames = {} -- playerNames[playerID] = playerName
 	local playerTeams = {} -- playerTeams[playerID] = playerTeamID
 	local coopStartPoints = {}
-	
+
 	----------------------------------------------------------------
 	-- Unsynced speedup
 	----------------------------------------------------------------
@@ -194,7 +194,7 @@ else
 	local spGetMyPlayerID = Spring.GetMyPlayerID
 	local spGetSpectatingState = Spring.GetSpectatingState
 	local spArePlayersAllied = Spring.ArePlayersAllied
-	
+
 	----------------------------------------------------------------
 	-- Stolen funcs from from minimap_startbox.lua (And cleaned up a bit)
 	----------------------------------------------------------------
@@ -202,27 +202,27 @@ else
 		local c = math.min(math.max(math.floor(x * 255), 1), 255)
 		return string.char(c)
 	end
-	
+
 	local teamColorStrs = {}
 	local function GetTeamColorStr(teamID)
-		
+
 		local colorStr = teamColorStrs[teamID]
 		if colorStr then
 			return colorStr
 		end
-		
+
 		local r, g, b = Spring.GetTeamColor(teamID)
 		local colorStr = '\255' .. ColorChar(r) .. ColorChar(g) .. ColorChar(b)
 		teamColorStrs[teamID] = colorStr
 		return colorStr
 	end
-	
-	local function CoopStartPoint(epicwtf, playerID, x, y, z) --this epicwtf param is used because it seem that when a registered function is locaal, then the registration name is  passed too. if the function is part of gadget: then it is not passed.
+
+	local function CoopStartPoint(_, playerID, x, y, z) --this epicwtf param is used because it seem that when a registered function is locaal, then the registration name is  passed too. if the function is part of gadget: then it is not passed.
 		--Spring.Echo('coop dbg5',epicwtf,playerID,x,y,z,to_string(coopStartPoints))
-			
+
 		coopStartPoints[playerID] = {x, y, z}
 	end
-	
+
 	----------------------------------------------------------------
 	-- Unsynced Callins
 	----------------------------------------------------------------
@@ -237,7 +237,7 @@ else
 			playerTeams[playerID] = teamID
 			--Spring.Echo('coop dbg2',i,playerName,playerID,teamID,#playerList)
 		end
-		
+
 		-- Cone code taken directly from minimap_startbox.lua
 		coneList = gl.CreateList(function()
 				local h = 100
@@ -254,12 +254,12 @@ else
 					end)
 			end)
 	end
-	
+
 	function gadget:Shutdown()
 		gl.DeleteList(coneList)
 		gadgetHandler:RemoveSyncAction("CoopStartPoint")
 	end
-	
+
 	function gadget:DrawWorld()
 		local areSpec = spGetSpectatingState()
 		local myPlayerID = spGetMyPlayerID()
@@ -279,20 +279,20 @@ else
 			end
 		end
 	end
-	
+
 	function gadget:DrawScreenEffects()
 		glBeginText()
 		local areSpec = spGetSpectatingState()
 		local myPlayerID = spGetMyPlayerID()
 		for playerID, startPosition in pairs(coopStartPoints) do
 			--Spring.Echo('coop dbg4',myPlayerID,playerID)
-		  
+
 			if areSpec or spArePlayersAllied(myPlayerID, playerID) then
 				local sx, sy, sz = startPosition[1], startPosition[2], startPosition[3]
 				if sx > 0 or sz > 0 then
 					local scx, scy, scz = spWorldToScreenCoords(sx, sy + 120, sz)
 					if scz < 1 then
-						local colorStr, outlineStr = GetTeamColorStr(playerTeams[playerID])
+						local colorStr, _ = GetTeamColorStr(playerTeams[playerID])
 						glText(colorStr .. playerNames[playerID], scx, scy, 18, 'cs')
 					end
 				end
@@ -300,13 +300,13 @@ else
 		end
 		glEndText()
 	end
-	
-	function gadget:RecvFromSynced(arg1, ...)
+
+	function gadget:RecvFromSynced(arg1, _)
 		if arg1 == 'RemoveGadget' then
 			gadgetHandler:RemoveGadget(self)
 		end
 	end
-	
+
 	function to_string(data, indent)
 		local str = ""
 
@@ -354,7 +354,7 @@ end
   -- 2: 144.53125
   -- 3: 619
 
--- [f=0000000] coop dbg5, CoopStartPoint, 1, 1868, 144.53125, 
+-- [f=0000000] coop dbg5, CoopStartPoint, 1, 1868, 144.53125,
 -- [f=0000000] coop dbg3, 1, CoopStartPoint, klj
 -- , CoopStartPoint:
   -- 1: 1

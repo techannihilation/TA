@@ -82,12 +82,12 @@ local options = {
 		type = 'bool',
 		value = true,
 	},
-	
+
 	cleargroups = {
 		name = 'Clear Auto Groups',
 		type = 'button',
-		OnChange = function() 
-			unit2group = {} 
+		OnChange = function()
+			unit2group = {}
 			Spring.Echo('Cleared Autogroups.')
 		end,
 	},
@@ -126,7 +126,7 @@ function widget:GameStart()
     widget:PlayerChanged()
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and (Spring.GetGameFrame() > 0 or gameStarted) then
         widgetHandler:RemoveWidget(self)
     end
@@ -190,19 +190,19 @@ function widget:UnitFinished(unitID, unitDefID, unitTeam)
 		if (createdFrame[unitID] == GetGameFrame()) then
 			local gr = unit2group[unitDefID]
 			if gr ~= nil then SetUnitGroup(unitID, gr) end
-		else 
+		else
 			finiGroup[unitID] = 1
 		end
 	end
 end
 
-function widget:UnitCreated(unitID, unitDefID, unitTeam, builderID) 
+function widget:UnitCreated(unitID, _, unitTeam, _)
 	if (unitTeam == myTeam) then
 		createdFrame[unitID] = GetGameFrame()
 	end
 end
 
-function widget:UnitFromFactory(unitID, unitDefID, unitTeam) 
+function widget:UnitFromFactory(unitID, unitDefID, unitTeam)
 	if options.immediate.value or groupableBuildings[unitDefID] then
 		if (unitTeam == myTeam) then
 			createdFrame[unitID] = GetGameFrame()
@@ -212,12 +212,12 @@ function widget:UnitFromFactory(unitID, unitDefID, unitTeam)
 	end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, teamID)
+function widget:UnitDestroyed(unitID, _, _)
 	finiGroup[unitID] = nil
 	createdFrame[unitID] = nil
 end
 
-function widget:UnitGiven(unitID, unitDefID, newTeamID, teamID)
+function widget:UnitGiven(unitID, unitDefID, newTeamID, _)
 	if (newTeamID == myTeam) then
 		local gr = unit2group[unitDefID]
 		if gr ~= nil then SetUnitGroup(unitID, gr) end
@@ -226,7 +226,7 @@ function widget:UnitGiven(unitID, unitDefID, newTeamID, teamID)
 	finiGroup[unitID] = nil
 end
 
-function widget:UnitTaken(unitID, unitDefID, oldTeamID, teamID)
+function widget:UnitTaken(unitID, unitDefID, _, teamID)
 	if (teamID == myTeam) then
 		local gr = unit2group[unitDefID]
 		if gr ~= nil then SetUnitGroup(unitID, gr) end
@@ -235,7 +235,7 @@ function widget:UnitTaken(unitID, unitDefID, oldTeamID, teamID)
 	finiGroup[unitID] = nil
 end
 
-function widget:UnitIdle(unitID, unitDefID, unitTeam) 
+function widget:UnitIdle(unitID, unitDefID, unitTeam)
 	if (unitTeam == myTeam and finiGroup[unitID]~=nil) then
 		local gr = unit2group[unitDefID]
 		if gr ~= nil then  SetUnitGroup(unitID, gr) end
@@ -243,12 +243,12 @@ function widget:UnitIdle(unitID, unitDefID, unitTeam)
 	end
 end
 
-function widget:KeyPress(key, modifier, isRepeat)
+function widget:KeyPress(key, modifier, _)
 	if ( modifier.alt and not modifier.meta ) then
 		local gr
 		if (key == KEYSYMS.N_0) then gr = 0 end
 		if (key == KEYSYMS.N_1) then gr = 1 end
-		if (key == KEYSYMS.N_2) then gr = 2 end 
+		if (key == KEYSYMS.N_2) then gr = 2 end
 		if (key == KEYSYMS.N_3) then gr = 3 end
 		if (key == KEYSYMS.N_4) then gr = 4 end
 		if (key == KEYSYMS.N_5) then gr = 5 end
@@ -260,7 +260,7 @@ function widget:KeyPress(key, modifier, isRepeat)
 		if (gr ~= nil) then
 				if (gr == -1) then gr = nil end
 				selUnitDefIDs = {}
-				local unit2groupDeleted = {}
+				local _ = {}
 				local exec = false --set to true when there is at least one unit to process
 				for _, unitID in ipairs(GetSelectedUnits()) do
 					local udid = GetUnitDefID(unitID)
@@ -314,15 +314,15 @@ function widget:KeyPress(key, modifier, isRepeat)
 				end
 				return true 	--key was processed by widget
 			end
-			
-	elseif (modifier.ctrl and not modifier.meta) then	
+
+	elseif (modifier.ctrl and not modifier.meta) then
 		if (key == KEYSYMS.BACKQUOTE) then
 			local mx,my = GetMouseState()
-			local _,pos = TraceScreenRay(mx,my,true)     
+			local _,pos = TraceScreenRay(mx,my,true)
 			local mindist = math.huge
 			local muid = nil
 			if (pos == nil) then return end
-				for _, uid in ipairs(GetSelectedUnits()) do  
+				for _, uid in ipairs(GetSelectedUnits()) do
 					local x,_,z = GetUnitPosition(uid)
 					dist = (pos[1]-x)*(pos[1]-x) + (pos[3]-z)*(pos[3]-z)
 					if (dist < mindist) then
@@ -337,7 +337,7 @@ function widget:KeyPress(key, modifier, isRepeat)
 		end
 		 --[[
 		if (key == KEYSYMS.Q) then
-		  for _, uid in ipairs(GetSelectedUnits()) do  
+		  for _, uid in ipairs(GetSelectedUnits()) do
 			SetUnitGroup(uid,-1)
 		  end
 		end
@@ -380,7 +380,7 @@ end
 
 function widget:GetConfigData()
 	local groups = {}
-	for id, gr in pairs(unit2group) do 
+	for id, gr in pairs(unit2group) do
 		table.insert(groups, {UnitDefs[id].name, gr})
 	end
 	local ret =

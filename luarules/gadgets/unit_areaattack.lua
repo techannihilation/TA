@@ -48,7 +48,7 @@ local aadesc= {
 	cursor="cursorattack",
 }
 
-function gadget:GameFrame(f)
+function gadget:GameFrame(_)
 	for i,o in pairs(attackList) do
 		attackList[i] = nil
 		local phase = random(200*pi)/100.0
@@ -63,11 +63,11 @@ function gadget:GameFrame(f)
 	end
 end
 
-function gadget:AllowCommand(u, ud, team, cmd, param, opt)
+function gadget:AllowCommand(_, ud, _, cmd, _, _)
 	if cmd == CMD_AREAATTACK then
 		if UnitDefs[ud].customParams.canareaattack=="1" then
 			return true
-		else 
+		else
 			return false
 		end
 	else
@@ -75,7 +75,7 @@ function gadget:AllowCommand(u, ud, team, cmd, param, opt)
 	end
 end
 
-function gadget:CommandFallback(u,ud,team,cmd,param,opt)
+function gadget:CommandFallback(u,ud, _,cmd,param, _)
 	if cmd == CMD_AREAATTACK then
 		local x,_,z = SpGetUnitPosition(u)
 		local dist = sqrt((x-param[1])*(x-param[1]) + (z-param[3])*(z-param[3]))
@@ -89,7 +89,7 @@ function gadget:CommandFallback(u,ud,team,cmd,param,opt)
 	return false
 end
 
-function gadget:UnitCreated(u, ud, team)
+function gadget:UnitCreated(u, ud, _)
 	if UnitDefs[ud].customParams.canareaattack=="1" then
 		range[ud] = WeaponDefs[UnitDefs[ud].weapons[1].weaponDef].range
 		SpInsertUnitCmdDesc(u,aadesc)

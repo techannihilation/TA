@@ -18,24 +18,24 @@ end
 -- Using WG.metalSpots instead of analyzing map at initialize()
 -- Erased non BA configs (since this version is only packed within BA)
 
-local maxMetalData = 40000 --2500000
-local pathToSave = "LuaUI/Widgets_TA/MetalMaps/" -- where to store mexmaps (MaDDoX: edited for BA 9.5x)
+local _ = 40000 --2500000
+local _ = "LuaUI/Widgets_TA/MetalMaps/" -- where to store mexmaps (MaDDoX: edited for BA 9.5x)
 -----------------
 --command notification and mex placement
 
 local CMD_AREA_MEX       = 10100
 
-local CMD_OPT_SHIFT = CMD.OPT_SHIFT
+local _ = CMD.OPT_SHIFT
 
 local spGetSelectedUnits = Spring.GetSelectedUnits
-local spInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
+local _ = Spring.InsertUnitCmdDesc
 local spGetGroundHeight = Spring.GetGroundHeight
 local spGiveOrderToUnit = Spring.GiveOrderToUnit
-local spGetUnitPosition = Spring.GetUnitPosition 
+local spGetUnitPosition = Spring.GetUnitPosition
 local spGetTeamUnits = Spring.GetTeamUnits
 local spGetMyTeamID = Spring.GetMyTeamID
 local spGetUnitDefID = Spring.GetUnitDefID
-local team = Spring.GetMyTeamID()
+local _ = Spring.GetMyTeamID()
 local spTestBuildOrder = Spring.TestBuildOrder
 
 local spGetActiveCommand = Spring.GetActiveCommand
@@ -56,7 +56,7 @@ for _,UnitDef in pairs(UnitDefs) do
 	end
 end
 
-local sqrt = math.sqrt
+local _ = math.sqrt
 local tasort = table.sort
 local taremove = table.remove
 
@@ -82,7 +82,7 @@ function widget:UnitCreated(unitID, unitDefID)
 			return
 		end
   		if ud.buildOptions then
-			for i, option in ipairs(ud.buildOptions) do 
+			for _, option in ipairs(ud.buildOptions) do
 			if mexIds[option] then
 					if mexBuilderDef[ud] then
 						mexBuilderDef[ud].buildings = mexBuilderDef[ud].buildings+1
@@ -116,7 +116,7 @@ function widget:Update()
 		    end
 			toggledMetal = false
 		end
-	end	
+	end
 end
 
 function AreAlliedUnits(unitID) -- Is unitID allied with me ?
@@ -125,46 +125,46 @@ end
 
 function NoAlliedMex(x,z, batchextracts) -- Is there any better and allied mex at this location (returns false if there is)
 	local mexesatspot = Spring.GetUnitsInCylinder(x,z, Game.extractorRadius)
-		for ct, uid in pairs(mexesatspot) do
+		for _, uid in pairs(mexesatspot) do
 			if mexIds[Spring.GetUnitDefID(uid)] and AreAlliedUnits(uid) and UnitDefs[Spring.GetUnitDefID(uid)].extractsMetal >= batchextracts then
 				return false
-			end	
+			end
 		end
 	return true
 end
 
-function widget:CommandNotify(id, params, options)	
+function widget:CommandNotify(id, params, options)
 	if (id == CMD_AREA_MEX) then
 	mexes = WG.metalSpots
 
-		local cx, cy, cz, cr = params[1], params[2], params[3], params[4]
+		local cx, _, cz, cr = params[1], params[2], params[3], params[4]
 		if (not cr) or (cr < Game.extractorRadius) then
 			cr = Game.extractorRadius
 		end
 		local cr = cr
-		
-		local xmin = cx-cr
-		local xmax = cx+cr
-		local zmin = cz-cr
-		local zmax = cz+cr
-		
-		local commands = {}
-		local orderedCommands = {}
-		local dis = {}
-		
+
+		local _ = cx-cr
+		local _ = cx+cr
+		local _ = cz-cr
+		local _ = cz+cr
+
+		local _ = {}
+		local _ = {}
+		local _ = {}
+
 		local ux = 0
 		local uz = 0
 		local us = 0
-		
-		local aveX = 0
-		local aveZ = 0
-		
+
+		local _ = 0
+		local _ = 0
+
 		local units=spGetSelectedUnits()
 		local maxbatchextracts = 0
 		local batchMexBuilder = {}
 		local lastprocessedbestbuilder = nil
-		
-		for i, id in pairs(units) do 
+
+		for _, id in pairs(units) do
 		if mexBuilder[id] then -- Get best extract rates, save best builderID
 			if UnitDefs[(mexBuilder[id].building[1])*-1].extractsMetal > maxbatchextracts then
 				maxbatchextracts = UnitDefs[(mexBuilder[id].building[1])*-1].extractsMetal
@@ -172,11 +172,11 @@ function widget:CommandNotify(id, params, options)
 			end
 		end
 		end
-		
+
 		local batchSize = 0
 		local shift = options.shift
 
-		for i, id in pairs(units) do -- Check position, apply guard orders to "inferiors" builders and adds superior builders to current batch builders
+		for _, id in pairs(units) do -- Check position, apply guard orders to "inferiors" builders and adds superior builders to current batch builders
 			if mexBuilder[id] then
 				if UnitDefs[(mexBuilder[id].building[1])*-1].extractsMetal == maxbatchextracts then
 				local x,_,z = spGetUnitPosition(id)
@@ -187,56 +187,56 @@ function widget:CommandNotify(id, params, options)
 				batchSize = batchSize + 1
 				batchMexBuilder[batchSize] = id
 				else
-					if not shift then 
+					if not shift then
 					spGiveOrderToUnit(id, CMD.STOP, {} , CMD.OPT_RIGHT )
 					end
-				local cmdQueue = Spring.GetUnitCommands(id, 1)
+				local _ = Spring.GetUnitCommands(id, 1)
 				spGiveOrderToUnit(id, CMD.GUARD, {lastprocessedbestbuilder} , {"shift"})
 				end
 			end
 		end
-		
-	
+
+
 		if (us == 0) then
 			return
 		else
 			aveX = ux/us
 			aveZ = uz/us
 		end
-	
-		for k, mex in pairs(mexes) do		
+
+		for _, mex in pairs(mexes) do
 			if (Distance(cx,cz,mex.x,mex.z) < cr^2) then -- circle area, slower
 				if NoAlliedMex(mex.x, mex.z, maxbatchextracts) == true then
 					commands[#commands+1] = {x = mex.x, z = mex.z, d = Distance(aveX,aveZ,mex.x,mex.z)}
 				end
-			
+
 			end
 		end
-	
+
 		local noCommands = #commands
 		while noCommands > 0 do
-	  
+
 			tasort(commands, function(a,b) return a.d < b.d end)
 			orderedCommands[#orderedCommands+1] = commands[1]
 			aveX = commands[1].x
 			aveZ = commands[1].z
 			taremove(commands, 1)
-			for k, com in pairs(commands) do		
+			for _, com in pairs(commands) do
 				com.d = Distance(aveX,aveZ,com.x,com.z)
 			end
 			noCommands = noCommands-1
 		end
-	
+
 		local shift = options.shift
 		local ctrl = options.ctrl or options.meta
-		for ct, id in pairs(batchMexBuilder) do
-			if not shift then 
+		for _, id in pairs(batchMexBuilder) do
+			if not shift then
 				spGiveOrderToUnit(id, CMD.STOP, {} , CMD.OPT_RIGHT )
 			end
 		end
-		
-			local shift = true
-		for ct, id in pairs(batchMexBuilder) do 
+
+			local _ = true
+		for ct, id in pairs(batchMexBuilder) do
 
 				for i, command in ipairs(orderedCommands) do
 					local spotSize = 0 -- GetSpotSize(x, z)
@@ -257,19 +257,19 @@ function widget:CommandNotify(id, params, options)
 											newx = command.x - ox
 											newz = command.z + oz
 											break
-										
+
 										elseif math.sqrt(ox^2 + oz^2) <= math.sqrt(Game.extractorRadius^2)-spotSize and spTestBuildOrder(-mexBuilder[id].building[j],command.x + ox,spGetGroundHeight(command.x + ox,command.z - oz),command.z - oz,1) ~= 0 then
 											buildable = spTestBuildOrder(-mexBuilder[id].building[j],command.x + ox,spGetGroundHeight(command.x + ox,command.z + oz),command.z + oz,1)
 											newx = command.x + ox
 											newz = command.z - oz
 											break
-										
+
 										elseif math.sqrt(ox^2 + oz^2) <= math.sqrt(Game.extractorRadius^2)-spotSize and spTestBuildOrder(-mexBuilder[id].building[j],command.x - ox,spGetGroundHeight(command.x - ox,command.z - oz),command.z - oz,1) ~= 0 then
 											buildable = spTestBuildOrder(-mexBuilder[id].building[j],command.x + ox,spGetGroundHeight(command.x + ox,command.z + oz),command.z + oz,1)
 											command.x = command.x - ox
 											command.z = command.z - oz
 											break
-										end			
+										end
 									if buildable ~= 0 then
 										break
 									end
@@ -287,23 +287,23 @@ function widget:CommandNotify(id, params, options)
 				end
 				end
 			end
-		
-  
+
+
 		return true
-  
+
 	end
-  
+
 end
 
 --------------------
 
 function widget:CommandsChanged()
 	local units=spGetSelectedUnits()
-	for i, id in pairs(units) do 
+	for _, id in pairs(units) do
 		if mexBuilder[id] then
 			local customCommands = widgetHandler.customCommands
-			
-			table.insert(customCommands, {			
+
+			table.insert(customCommands, {
 				id      = CMD_AREA_MEX,
 				type    = CMDTYPE.ICON_AREA,
 				tooltip = 'Define an area to make mexes in',
@@ -322,7 +322,7 @@ function widget:Initialize()
 		widgetHandler:RemoveWidget(self)
 	end
 	local units = spGetTeamUnits(spGetMyTeamID())
-	for i, id in ipairs(units) do 
+	for _, id in ipairs(units) do
 		widget:UnitCreated(id, spGetUnitDefID(id))
 	end
 end

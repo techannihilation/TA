@@ -72,7 +72,7 @@ function gadget:GameFrame(f)
   end
 end
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, _, _, damage, _, _, _, _, _, _)
   if isloadedID[unitID] then
     --Spring.Echo(unitID, " Damage reduced")
     return 0, 1
@@ -81,12 +81,12 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
   end
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID)
+function gadget:UnitDestroyed(unitID, _)
 	isloadedID[unitID] = nil
   holdingID[unitID] = nil
 end
 
-function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitDamaged(unitID, unitDefID, _, damage, _, _, _, attackerID, _, _)
   if (unitDefID == dropperID) and holding[unitID] then
     local currentHP, maxHP = Spring.GetUnitHealth(unitID)
     if currentHP <= (math.random(maxHP*.15,maxHP*.75)) then
@@ -103,7 +103,7 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
         if attackerID and passIDs then
           local x,y,z = Spring.GetUnitPosition(unitID)
           local ax,ay,az = Spring.GetUnitPosition(attackerID)
-          local facing = Spring.GetUnitBuildFacing(unitDefID)
+          local _ = Spring.GetUnitBuildFacing(unitDefID)
           z=z+math.random(-128,128)
           x=x+math.random(-128,128)
           Spring.GiveOrderToUnit(passIDs, CMD.MOVE, {x,y,z}, {"shift"})

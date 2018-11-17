@@ -85,13 +85,13 @@ function clearBuilderCommands(unitID)
 	end
 end
 
-local gameFrame = Spring.GetGameFrame()
+local _ = Spring.GetGameFrame()
 function widget:GameFrame(gf)
 	gameFrame = gf
 end
 
 local newUnitCommands = {}
-function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, _, _)
+function widget:UnitCommand(unitID, unitDefID, _, _, _, _)
 	if builderUnitDefs[unitDefID] then
 		newUnitCommands[unitID] = os.clock() + 0.05
 	end
@@ -143,14 +143,14 @@ function checkBuilder(unitID)
 	end
 end
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, _, _)
 	if commandCreatedUnitsIDs[unitID] then
 		commandCreatedUnits[commandCreatedUnitsIDs[unitID]] = nil
 		commandCreatedUnitsIDs[unitID] = nil
 	end
 end
 
-function widget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
+function widget:UnitCreated(unitID, unitDefID, unitTeam, _)
 	local x,y,z = Spring.GetUnitPosition(unitID)
 	if command[unitTeam..'_'..unitDefID..'_'..x..'_'..y..'_'..z] then
 		command[unitTeam..'_'..unitDefID..'_'..x..'_'..y..'_'..z] = nil
@@ -162,7 +162,7 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
 	end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam, builderID)
+function widget:UnitDestroyed(unitID, _, _, _)
 	if builders[unitID] then
 		builders[unitID] = nil
 		newUnitCommands[unitID] = nil

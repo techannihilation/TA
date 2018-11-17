@@ -26,7 +26,7 @@ local Health = false
 
 -- remove gadget if modoption is not set
 function gadget:Initialize()
-	if (Spring.GetModOptions().mo_preventcombomb == "1v1") then 
+	if (Spring.GetModOptions().mo_preventcombomb == "1v1") then
 		Spring.Echo("1v1")
 		oneOnone = true
 	elseif (Spring.GetModOptions().mo_preventcombomb == "hp") then
@@ -38,7 +38,7 @@ function gadget:Initialize()
 	end
 end
 
-local GetTeamInfos = Spring.GetTeamInfos
+local _ = Spring.GetTeamInfos
 local GetUnitPosition = Spring.GetUnitPosition
 local GetGroundHeight = Spring.GetGroundHeight
 local MoveCtrl = Spring.MoveCtrl
@@ -91,7 +91,7 @@ local COMMANDER = {
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
-  --Arm 
+  --Arm
   [UnitDefNames["armcom"].id] = true,
   [UnitDefNames["armcom1"].id] = true,
   [UnitDefNames["armcom4"].id] = true,
@@ -114,8 +114,8 @@ local immuneDgunList = {}
 local ctrlCom = {}
 local cantFall = {}
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
-                            weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, unitDefID, _, damage, _,
+                            weaponID, _, attackerID, attackerDefID, _)
 	--falling & debris damage
 	if weaponID < 0 and cantFall[unitID] then
 		return 0, 0
@@ -123,11 +123,11 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 
 	--New Commander with greatest hp survives blast option
 	if COM_BLAST[weaponID] and COMMANDER[unitDefID] and ValidUnitID(attackerID) and Health then
-	  
+
 	local hp = Spring.GetUnitHealth(unitID)
 	hp = hp or 0
 	local combombDamage = math.min(hp*0.33, math.max(0,hp-200-math.random(1,10))) -- lose hp*0.4 damage but don't let health get <200
-	combombDamage = math.min(damage,combombDamage) 
+	combombDamage = math.min(damage,combombDamage)
 		local targethp = Spring.GetUnitHealth(attackerID)
 		if unitID ~= attackerID then
 			if hp > targethp then
@@ -142,13 +142,13 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 		--Spring.Echo("Normal Damage")
 		return damage
 	end
-	
+
 	--Default settings for 1v1
 	if DGUN[weaponID] and oneOnone then
 	local hp = Spring.GetUnitHealth(unitID)
 	hp = hp or 0
 	local combombDamage = math.min(hp*0.33, math.max(0,hp-200-math.random(1,10))) -- lose hp*0.4 damage but don't let health get <200
-	combombDamage = math.min(damage,combombDamage) 
+	combombDamage = math.min(damage,combombDamage)
 		if immuneDgunList[unitID] then
 			-- immune
 			return 0, 0
@@ -166,12 +166,12 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 			cantFall[unitID] = GetGameFrame() + 30
 			return combombDamage, 0
 		else
-			--com blast hurts the attackerID 
+			--com blast hurts the attackerID
 			return damage
 		end
 	end
 	return damage
-	
+
 end
 
 function gadget:GameFrame(currentFrame)

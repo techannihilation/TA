@@ -1,16 +1,16 @@
-local base = piece 'base' 
-local pelvis = piece 'pelvis' 
-local rthigh = piece 'rthigh' 
-local lthigh = piece 'lthigh' 
-local rleg = piece 'rleg' 
-local lleg = piece 'lleg' 
-local rfoot = piece 'rfoot' 
-local lfoot = piece 'lfoot' 
-local tige = piece 'tige' 
-local dish = piece 'dish' 
-local d1 = piece 'd1' 
-local d2 = piece 'd2' 
-local plate = piece 'plate' 
+local base = piece 'base'
+local pelvis = piece 'pelvis'
+local rthigh = piece 'rthigh'
+local lthigh = piece 'lthigh'
+local rleg = piece 'rleg'
+local lleg = piece 'lleg'
+local rfoot = piece 'rfoot'
+local lfoot = piece 'lfoot'
+local tige = piece 'tige'
+local dish = piece 'dish'
+local d1 = piece 'd1'
+local d2 = piece 'd2'
+local plate = piece 'plate'
 
 
 -- Signal definitions
@@ -22,14 +22,14 @@ local stunned = 0
 local function StunnedCheck()
 	while true do
 		if select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) == 1  then
-			if  stunned and stunned == 1 then 
+			if  stunned and stunned == 1 then
 				stunned = 1;
 				SetUnitValue(COB.ACTIVATION, 0)
 			end
 			stunned = 1;
-		elseif stunned and stunned == 1  and not select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) ~= 1 then 
+		elseif stunned and stunned == 1  and not select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) ~= 1 then
 			stunned = 0;
-			SetUnitValue(COB.ACTIVATION, 1) 
+			SetUnitValue(COB.ACTIVATION, 1)
 		end
 		Sleep(250);
 	end
@@ -46,27 +46,27 @@ local function get_health_percent()
 end
 
 
-local function SmokeUnit(healthpercent, sleeptime, smoketype)
+local function SmokeUnit(_, _, _)
 	while still_building_p() do Sleep(400); end
-	
+
 	while (true) do
 		local health_percent = get_health_percent();
-		
+
 		if (health_percent < 66) then
 			local smoketype = 258;
 			if (math.random(1, 66) < health_percent) then smoketype = 257; end
 			Spring.UnitScript.EmitSfx(base, smoketype);
 		end
-		
+
 		local sleep_time = health_percent * 50;
-		if (sleep_time < 200) then 
+		if (sleep_time < 200) then
 		  sleep_time = 200; end
 		Sleep(sleep_time);
 	end
 end
 
 local function Moving()
-  
+
 	SetSignalMask( SIG_WALK)
 
 	while true do
@@ -229,7 +229,7 @@ end
 
 local function Activate()
         if stunned and stunned == 1 then SetUnitValue(COB.ACTIVATION, 0) return end -- ADDED FOR STUNABLE
-	
+
 	Turn( tige , x_axis, math.rad(90.000000), math.rad(85.000000) )
 	WaitForTurn(tige, x_axis)
 --	dont-cache dish
@@ -239,7 +239,7 @@ local function Activate()
 	Turn( d2 , y_axis, math.rad(90.000000), math.rad(105.000000) )
 	WaitForTurn(d2, y_axis)
 	Spin( dish , z_axis, 10.000000 , 2.000000 )
-	SetUnitValue(COB.ARMORED, 0) 
+	SetUnitValue(COB.ARMORED, 0)
 end
 
 local function Deactivate()
@@ -254,9 +254,9 @@ local function Deactivate()
 	WaitForTurn(d2, y_axis)
 	Turn( tige , x_axis, 0, math.rad(45.000000) )
 	WaitForTurn(tige, x_axis)
-	SetUnitValue(COB.ARMORED, 1) 
+	SetUnitValue(COB.ARMORED, 1)
 --	 close()
-	
+
 end
 
 function script.Create()
@@ -287,7 +287,7 @@ function script.Deactivate()
 end
 
 
-function script.Killed(severity, corpsetype)
+function script.Killed(severity, _)
 
 	Explode(pelvis, SFX.NONE)
 	Explode(lthigh, SFX.NONE)
@@ -295,7 +295,7 @@ function script.Killed(severity, corpsetype)
 	Explode(tige, SFX.SHATTER + SFX.EXPLODE_ON_HIT )
 	Explode(d1, SFX.SHATTER + SFX.EXPLODE_ON_HIT )
 	if  severity <= 25  then
-	
+
 		corpsetype = 1
 		return (0)
 	end
@@ -303,7 +303,7 @@ function script.Killed(severity, corpsetype)
 	Explode(d2, SFX.FALL + SFX.SMOKE  + SFX.EXPLODE_ON_HIT )
 	Explode(dish, SFX.FALL + SFX.SMOKE  + SFX.EXPLODE_ON_HIT )
 	if  severity <= 50  then
-	
+
 		corpsetype = 2
 		return (0)
 	end

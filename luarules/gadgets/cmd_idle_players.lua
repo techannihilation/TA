@@ -16,7 +16,7 @@ local finishedResumingPing = 2 --in seconds
 local maxInitialQueueSlack = 120 -- in seconds
 local takeCommand = "take2"
 local minTimeToTake = 10 -- in seconds
-local checkQueueTime = 25 -- in seconds 
+local checkQueueTime = 25 -- in seconds
 --in chose ingame startpostype, players must place beforehand, so take an action, grace period can be shorter
 minTimeToTake = Spring.GetModOptions().startpostype == 2 and 1 or minTimeToTake
 
@@ -34,7 +34,7 @@ if ( not gadgetHandler:IsSyncedCode()) then
 	local max = math.max
 
 	local nameEnclosingPatterns = {{""," added point"},{"<","> "},{"> <","> "},{"[","] "}}
-	local myPlayerName = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
+	local _ = Spring.GetPlayerInfo(Spring.GetMyPlayerID())
 	local lastActionTime = 0
 	local timer = 0
 	local updateTimer = 0
@@ -95,19 +95,19 @@ if ( not gadgetHandler:IsSyncedCode()) then
 			return
 		end
 		updateTimer = 0
-		
-		-- 
+
+		--
 		if checkQueueTime and GetGameSeconds() > checkQueueTime then
-			local playerID = Spring.GetMyPlayerID()
+			local _ = Spring.GetMyPlayerID()
 			local teamID = Spring.GetMyTeamID()
 			local myUnits = Spring.GetTeamUnits(teamID)
 			local queueTime = 0
 			for _,unitID in pairs(myUnits) do
 				local unitDefID = Spring.GetUnitDefID(unitID)
 				local thisQueueTime = 0
-				if UnitDefs[unitDefID].isBuilder then 
+				if UnitDefs[unitDefID].isBuilder then
 					local buildSpeed = UnitDefs[unitDefID].buildSpeed
-					local buildQueue = Spring.GetRealBuildQueue(unitID) 
+					local buildQueue = Spring.GetRealBuildQueue(unitID)
 					if buildQueue then
 						for uDID,_ in pairs(buildQueue) do
 							thisQueueTime = thisQueueTime + UnitDefs[uDID].buildTime / buildSpeed
@@ -117,9 +117,9 @@ if ( not gadgetHandler:IsSyncedCode()) then
 				queueTime = max(queueTime, thisQueueTime)
 			end
 			lastActionTime = min(max(lastActionTime, timer+queueTime),gameStartTime+maxInitialQueueSlack) --treat this queue as though is was an initial queue
-			checkQueueTime = nil 
+			checkQueueTime = nil
 		end
-		
+
 		-- ugly code to check if the mouse moved since the call-in doesn't work
 		local x,y = GetMouseState()
 		if mx ~= x or my ~= y then
@@ -153,8 +153,8 @@ if ( not gadgetHandler:IsSyncedCode()) then
 	-- extract a player name from a text message
 	function getPlayerName(playerMessage)
 		local pos
-		local retVal = ""
-		for index,pattern in pairs(nameEnclosingPatterns) do
+		local _ = ""
+		for _,pattern in pairs(nameEnclosingPatterns) do
 			local prefix = pattern[1]
 			local suffix = pattern[2]
 			local prefixstart,prefixend
@@ -197,13 +197,13 @@ else
 	local ShareTeamResource = Spring.ShareTeamResource
 	local GetTeamResources = Spring.GetTeamResources
 	local GetPlayerInfo = Spring.GetPlayerInfo
-	local GetTeamList = Spring.GetTeamList
+	local _ = Spring.GetTeamList
 	local GetTeamLuaAI = Spring.GetTeamLuaAI
 	local GetAIInfo = Spring.GetAIInfo
 	local SetTeamRulesParam = Spring.SetTeamRulesParam
 	local GetTeamRulesParam = Spring.GetTeamRulesParam
 	local GetTeamUnits = Spring.GetTeamUnits
-	local SetTeamShareLevel = Spring.SetTeamShareLevel
+	local _ = Spring.SetTeamShareLevel
 	local GetTeamInfo = Spring.GetTeamInfo
 	local GetTeamList = Spring.GetTeamList
 	local SendMessageToPlayer = Spring.SendMessageToPlayer
@@ -216,7 +216,7 @@ else
 	local gameSpeed = Game.gameSpeed
 
 	local min = math.min
-	local max = math.max
+	local _ = math.max
 
 	local function CheckPlayerState(playerID)
 		local newval = playerInfoTable[playerID]
@@ -252,7 +252,7 @@ else
 			end
 		end
 		for _,playerID in ipairs(GetPlayerList()) do -- update player infos
-			local _,active,spectator,teamID,allyTeamID,ping = GetPlayerInfo(playerID)
+			local _,active,spectator, _, _,ping = GetPlayerInfo(playerID)
 			local playerInfoTableEntry = playerInfoTable[playerID] or {}
 			playerInfoTableEntry.connected = active
 			playerInfoTableEntry.player = not spectator
@@ -279,7 +279,7 @@ else
 			if hostedAis then
 				--a player only needs to be connected and low enough ping to host an ai
 				if playerInfoTableEntry.connected  and playerInfoTableEntry.pingOK then
-					for _,aiTeamID in ipairs(hostedAis) do
+					for _, _ in ipairs(hostedAis) do
 						TeamToRemainingPlayers[teamID] = TeamToRemainingPlayers[teamID] +1
 					end
 				end
@@ -326,7 +326,7 @@ else
 		local previousPresent = playerInfoTableEntry.present
 		playerInfoTableEntry.present = afk == 0
 		playerInfoTable[playerID] = playerInfoTableEntry
-		local _,active,spectator,teamID,allyTeamID,ping = GetPlayerInfo(playerID)
+		local _, _,spectator, _,allyTeamID, _ = GetPlayerInfo(playerID)
 		if not spectator and name ~= nil then
 			if currentGameFrame > minTimeToTake*gameSpeed then
 				if previousPresent and not playerInfoTableEntry.present then
@@ -338,18 +338,18 @@ else
 		end
 	end
 
-	function gadget:AllowResourceTransfer(fromTeamID, toTeamID, restype, level)
+	function gadget:AllowResourceTransfer(_, toTeamID, _, _)
 		-- prevent resources to leak to uncontrolled teams
 		return GetTeamRulesParam(toTeamID,"numActivePlayers") ~= 0 or IsCheatingEnabled()
 	end
 
-	function gadget:AllowUnitTransfer(unitID, unitDefID, fromTeamID, toTeamID, capture)
+	function gadget:AllowUnitTransfer(_, _, _, toTeamID, capture)
 		-- prevent units to be shared to uncontrolled teams
 		return capture or GetTeamRulesParam(toTeamID,"numActivePlayers") ~= 0 or IsCheatingEnabled()
 	end
 
 
-	function TakeTeam(cmd, line, words, playerID)
+	function TakeTeam(_, _, words, playerID)
 		if not CheckPlayerState(playerID) then
 			SendMessageToPlayer(playerID,"Cannot share to afk players")
 			return -- exclude taking rights from lagged players, etc

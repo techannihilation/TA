@@ -79,8 +79,8 @@ local min  = math.min
 local degreeToPI = math.pi/180
 
 local spGetUnitViewPosition = Spring.GetUnitViewPosition
-local spGetPositionLosState = Spring.GetPositionLosState
-local spGetUnitLosState     = Spring.GetUnitLosState
+local _ = Spring.GetPositionLosState
+local _ = Spring.GetUnitLosState
 local spIsSphereInView      = Spring.IsSphereInView
 local spGetUnitRadius       = Spring.GetUnitRadius
 local spGetProjectilePosition = Spring.GetProjectilePosition
@@ -89,17 +89,17 @@ local IsPosInLos    = Spring.IsPosInLos
 local IsPosInAirLos = Spring.IsPosInAirLos
 local IsPosInRadar  = Spring.IsPosInRadar
 
-local glTexture     = gl.Texture 
+local glTexture     = gl.Texture
 local glBlending    = gl.Blending
 local glUniform     = gl.Uniform
-local glUniformInt  = gl.UniformInt
-local glPushMatrix  = gl.PushMatrix
-local glPopMatrix   = gl.PopMatrix
-local glTranslate   = gl.Translate
+local _ = gl.UniformInt
+local _ = gl.PushMatrix
+local _ = gl.PopMatrix
+local _ = gl.Translate
 local glCreateList  = gl.CreateList
 local glCallList    = gl.CallList
-local glRotate      = gl.Rotate
-local glColor       = gl.Color
+local _ = gl.Rotate
+local _ = gl.Color
 local glUseShader   = gl.UseShader
 
 local GL_QUADS               = GL.QUADS
@@ -244,7 +244,7 @@ function SimpleParticles2:Initialize()
          //if (attributesExp.x<0.0) attrib.x = 1.0 - attrib.x; // speed (no need for backward movement)
            if (attributesExp.y<0.0) attrib.y = 1.0 - attrib.y; // size
            if (attributesExp.z<0.0) attrib.z = 1.0 - attrib.z; // rot
-           attrib.yz   = attributesStart.yz + attrib.yz * attributesEnd.yz; 
+           attrib.yz   = attributesStart.yz + attrib.yz * attributesEnd.yz;
 
            // calc vertex position
            vec3 forceV = (1.0 - pow(1.0 - life, abs(forceExp))) * forceDir; //FIXME combine with other attribs!

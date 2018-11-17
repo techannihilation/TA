@@ -11,7 +11,7 @@ function widget:GetInfo()
 end
 
 --------------------------------------------------------------------------------
--- config 
+-- config
 --------------------------------------------------------------------------------
 
 local basicAlpha = 0.4
@@ -43,8 +43,8 @@ local brightTexture4 = nil
 
 local combineShader = nil
 local screenTexture = nil
-local screenTextureQuarter = nil
-local screenTextureSixteenth = nil
+local _ = nil
+local _ = nil
 
 -- speedups
 local glCreateTexture = gl.CreateTexture
@@ -59,29 +59,29 @@ local glUseShader = gl.UseShader
 local glUniformInt = gl.UniformInt
 local glUniform = gl.Uniform
 local glGetUniformLocation = gl.GetUniformLocation
-local glGetActiveUniforms = gl.GetActiveUniforms
+local _ = gl.GetActiveUniforms
 
 
-local GL_RGBA32F_ARB                = 0x8814
-local GL_RGB32F_ARB                 = 0x8815
-local GL_ALPHA32F_ARB               = 0x8816
-local GL_INTENSITY32F_ARB           = 0x8817
-local GL_LUMINANCE32F_ARB           = 0x8818
-local GL_LUMINANCE_ALPHA32F_ARB     = 0x8819
-local GL_RGBA16F_ARB                = 0x881A
+local _ = 0x8814
+local _ = 0x8815
+local _ = 0x8816
+local _ = 0x8817
+local _ = 0x8818
+local _ = 0x8819
+local _ = 0x881A
 local GL_RGB16F_ARB                 = 0x881B
-local GL_ALPHA16F_ARB               = 0x881C
-local GL_INTENSITY16F_ARB           = 0x881D
-local GL_LUMINANCE16F_ARB           = 0x881E
-local GL_LUMINANCE_ALPHA16F_ARB     = 0x881F
-local GL_TEXTURE_RED_TYPE_ARB       = 0x8C10
-local GL_TEXTURE_GREEN_TYPE_ARB     = 0x8C11
-local GL_TEXTURE_BLUE_TYPE_ARB      = 0x8C12
-local GL_TEXTURE_ALPHA_TYPE_ARB     = 0x8C13
-local GL_TEXTURE_LUMINANCE_TYPE_ARB = 0x8C14
-local GL_TEXTURE_INTENSITY_TYPE_ARB = 0x8C15
-local GL_TEXTURE_DEPTH_TYPE_ARB     = 0x8C16
-local GL_UNSIGNED_NORMALIZED_ARB    = 0x8C17
+local _ = 0x881C
+local _ = 0x881D
+local _ = 0x881E
+local _ = 0x881F
+local _ = 0x8C10
+local _ = 0x8C11
+local _ = 0x8C12
+local _ = 0x8C13
+local _ = 0x8C14
+local _ = 0x8C15
+local _ = 0x8C16
+local _ = 0x8C17
 
 
 -- shader uniform locations
@@ -90,12 +90,12 @@ local brightShaderInvRXLoc = nil
 local brightShaderInvRYLoc = nil
 local brightShaderIllumLoc = nil
 
-local blurShaderH51Text0Loc = nil
-local blurShaderH51InvRXLoc = nil
-local blurShaderH51FragLoc = nil
-local blurShaderV51Text0Loc = nil
-local blurShaderV51InvRYLoc = nil
-local blurShaderV51FragLoc = nil
+local _ = nil
+local _ = nil
+local _ = nil
+local _ = nil
+local _ = nil
+local _ = nil
 
 local blurShaderH71Text0Loc = nil
 local blurShaderH71InvRXLoc = nil
@@ -131,7 +131,7 @@ end
 function reset()
 
 	--if not initialized then return end
-	
+
 	if drawHighlights then
 		usedBasicAlpha = basicAlpha
 		drawWorldAlpha = 0.2 - (illumThreshold*0.4) + (usedBasicAlpha/11) + (0.018 * highlightsAlpha)
@@ -148,7 +148,7 @@ function reset()
 		gl.DeleteTexture(brightTexture4 or "")
 	end
 	gl.DeleteTexture(screenTexture or "")
-	
+
 	local btQuality = 4.6		-- high value creates flickering, but lower is more expensive
 	brightTexture1 = glCreateTexture(vsx/btQuality, vsy/btQuality, {
 		fbo = true, min_filter = GL.LINEAR, mag_filter = GL.LINEAR,
@@ -181,14 +181,14 @@ function reset()
 end
 
 
-function widget:ViewResize(viewSizeX, viewSizeY)
+function widget:ViewResize(_, _)
 	vsx,vsy = gl.GetViewSizes()
-	
+
 	ivsx = 1.0 / vsx
 	ivsy = 1.0 / vsy
 	kernelRadius = vsy / 80.0
 	kernelRadius2 = vsy / 30.0
-	
+
 	reset()
 end
 
@@ -196,7 +196,7 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function widget:Update(dt)
+function widget:Update(_)
 	if initialized == false then return end
 	camX, camY, camZ = Spring.GetCameraPosition()
 	camDirX,camDirY,camDirZ = Spring.GetCameraDirection()
@@ -259,7 +259,7 @@ function widget:Initialize()
   end
 
   widget:ViewResize(widgetHandler:GetViewSizes())
-    
+
 
 	combineShader = gl.CreateShader({
 		fragment = [[
@@ -370,7 +370,7 @@ function widget:Initialize()
 				vec2 C0 = vec2(gl_TexCoord[0]);
 				vec3 color = vec3(texture2D(texture0, C0));
 				float illum = dot(color, vec3(0.2990, 0.5870, 0.1140));
-		
+
 				if (illum > illuminationThreshold) {
 					gl_FragColor = vec4((color - color*(illuminationThreshold/max(illum, 0.00001))), 1.0);
 				} else {
@@ -404,7 +404,7 @@ function widget:Initialize()
 	combineShaderTexture1Loc = glGetUniformLocation(combineShader, "texture1")
 	combineShaderIllumLoc = glGetUniformLocation(combineShader, "illuminationThreshold")
 	combineShaderFragLoc = glGetUniformLocation(combineShader, "fragMaxBrightness")
-	
+
 	initialized = true
 end
 
@@ -430,13 +430,13 @@ end
 
 
 
-local function mglDrawTexture(texUnit, tex, w, h, flipS, flipT)
+local function _(texUnit, tex, w, h, flipS, flipT)
 	glTexture(texUnit, tex)
 	glTexRect(0, 0, w, h, flipS, flipT)
 	glTexture(texUnit, false)
 end
 
-local function mglDrawFBOTexture(tex)
+local function _(tex)
 	glTexture(tex)
 	glTexRect(-1, -1, 1, 1)
 	glTexture(false)
@@ -469,9 +469,9 @@ end
 
 local function Bloom()
 	gl.Color(1, 1, 1, 1)
-	
+
 	glCopyToTexture(screenTexture, 0, 0, 0, 0, vsx, vsy)
-	
+
 	-- global bloomin
 	glUseShader(brightShader)
 		glUniformInt(brightShaderText0Loc, 0)
@@ -480,7 +480,7 @@ local function Bloom()
 		glUniform(   brightShaderIllumLoc, illumThreshold)
 		mglRenderToTexture(brightTexture1, screenTexture, 1, -1)
 	glUseShader(0)
-	
+
 	for i = 1, 4 do
 		glUseShader(blurShaderH71)
 			glUniformInt(blurShaderH71Text0Loc, 0)
@@ -495,7 +495,7 @@ local function Bloom()
 			mglRenderToTexture(brightTexture1, brightTexture2, 1, -1)
 		glUseShader(0)
 	end
-	
+
 	glUseShader(combineShader)
 		glUniformInt(combineShaderDebgDrawLoc, dbgDraw)
 		glUniformInt(combineShaderTexture0Loc, 0)
@@ -505,11 +505,11 @@ local function Bloom()
 		mglActiveTexture(0, screenTexture, vsx, vsy, false, true)
 		mglActiveTexture(1, brightTexture1, vsx, vsy, false, true)
 	glUseShader(0)
-	
+
 	-- highlights
 	if drawHighlights then
 		glCopyToTexture(screenTexture, 0, 0, 0, 0, vsx, vsy)
-		
+
 		glUseShader(brightShader)
 			glUniformInt(brightShaderText0Loc, 0)
 			glUniform(   brightShaderInvRXLoc, ivsx)
@@ -517,7 +517,7 @@ local function Bloom()
 			glUniform(   brightShaderIllumLoc, 0.5)
 			mglRenderToTexture(brightTexture3, screenTexture, 1, -1)
 		glUseShader(0)
-		
+
 		for i = 1, 1 do
 			glUseShader(blurShaderH71)
 				glUniformInt(blurShaderH71Text0Loc, 0)
@@ -549,7 +549,7 @@ function widget:DrawScreenEffects()
 	Bloom()
 end
 
-function widget:GetConfigData(data)
+function widget:GetConfigData(_)
     savedTable = {}
     savedTable.basicAlpha = basicAlpha
     savedTable.drawHighlights = drawHighlights
@@ -567,7 +567,7 @@ function widget:SetConfigData(data)
 end
 
 function widget:TextCommand(command)
-  if (string.find(command, "advbloom") == 1  and  string.len(command) == 8) then 
+  if (string.find(command, "advbloom") == 1  and  string.len(command) == 8) then
 		WG['bloom'].setAdvBloom(not drawHighlights)
 		if drawHighlights then
 	 		Spring.Echo('Adv bloom enabled')

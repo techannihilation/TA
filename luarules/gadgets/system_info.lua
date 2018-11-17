@@ -35,7 +35,7 @@ if gadgetHandler:IsSyncedCode() then
 			return true
 		end
 	end
-	
+
 else
 	--------------------------------------------------------------------------------
 	-- unsynced
@@ -43,10 +43,10 @@ else
 
 	local SendLuaRulesMsg				= Spring.SendLuaRulesMsg
 	local GetMyPlayerID					= Spring.GetMyPlayerID
-	local myPlayerID					= GetMyPlayerID()
+	local _ = GetMyPlayerID()
 	local systems						= {}
 	local validation = SYNCED.validationSys
-	
+
 	function lines(str)
 	  local t = {}
 	  local function helper(line) table.insert(t, line) return "" end
@@ -79,7 +79,7 @@ else
 			-- store changelog into array
 			fileLines = lines(infolog)
 
-			for i, line in ipairs(fileLines) do
+			for _, line in ipairs(fileLines) do
 				if s_os ~= nil then
 
 					-- Spring v104

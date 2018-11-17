@@ -70,8 +70,8 @@ function AirJet:EndDraw()
 end
 
 function AirJet:Draw()
-  gl.Texture(1,self.texture1) 
-  gl.Texture(2,self.texture2) 
+  gl.Texture(1,self.texture1)
+  gl.Texture(2,self.texture2)
 
   if (self.dList==0) then
     self.dList=gl.CreateList(function()
@@ -209,7 +209,7 @@ function AirJet:Finalize()
   gl.DeleteShader(jetShader)
 end
 
-function AirJet.ViewResize(viewSizeX, viewSizeY)
+function AirJet.ViewResize(_, _)
   gl.DeleteTextureFBO(tex)
   tex = gl.CreateTexture(vsx, vsy, {
     min_filter = GL.NEAREST,

@@ -6,7 +6,7 @@ function gadget:GetInfo()
     date      = "June 2014",
     license   = "GNU GPL, v3 or later",
     layer     = 2, --run after game initial spawn and mo_coop (because we use readyStates)
-    enabled   = true  
+    enabled   = true
   }
 end
 
@@ -14,26 +14,26 @@ end
 --------------------------------------------------------------------------------
 
 -----------------------------
-if gadgetHandler:IsSyncedCode() then 
+if gadgetHandler:IsSyncedCode() then
 -----------------------------
 
--- TS difference required for substitutions 
+-- TS difference required for substitutions
 -- idealDiff is used if possible, validDiff as fall-back, otherwise no
-local validDiff = 4 
+local validDiff = 4
 local idealDiff = 2
 
 local substitutes = {}
 local players = {}
 local absent = {}
 local replaced = false
-local gameStarted = false
+local _ = false
 
 local gaiaTeamID = Spring.GetGaiaTeamID()
 local SpGetPlayerList = Spring.GetPlayerList
 local SpIsCheatingEnabled = Spring.IsCheatingEnabled
 
 function gadget:RecvLuaMsg(msg, playerID)
-    local checkChange = (msg=='\144' or msg=='\145')
+    local _ = (msg=='\144' or msg=='\145')
 
 	if msg=='\145' then
         substitutes[playerID] = nil
@@ -42,11 +42,11 @@ function gadget:RecvLuaMsg(msg, playerID)
     if msg=='\144' then
         -- do the same eligibility check as in unsynced
         local customtable = select(11,Spring.GetPlayerInfo(playerID))
-        local tsMu = customtable.skill 
+        local tsMu = customtable.skill
         local tsSigma = customtable.skilluncertainty
         ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))
         tsSigma = tonumber(tsSigma)
-        local eligible = tsMu and tsSigma and (tsSigma<=2) and (not string.find(tsMu, ")")) and (not players[playerID]) 
+        local eligible = tsMu and tsSigma and (tsSigma<=2) and (not string.find(tsMu, ")")) and (not players[playerID])
         if eligible then
             substitutes[playerID] = ts
         end
@@ -59,7 +59,7 @@ function gadget:RecvLuaMsg(msg, playerID)
     end
 end
 
-function gadget:AllowStartPosition(playerID, teamID, readyState, cx, cy, cz, rx, ry, rz)
+function gadget:AllowStartPosition(_, _, _, _, _, _, _, _, _)
     FindSubs(false)
     return true
 end
@@ -83,7 +83,7 @@ end
 
 function FindSubs(real)
     --Spring.Echo("FindSubs", "real=", real)
-    
+
     -- make a copy of the substitutes table
     local substitutesLocal = {}
     local i = 0
@@ -92,11 +92,11 @@ function FindSubs(real)
         i = i + 1
     end
     absent = {}
-    
+
     --local theSubs = ""
     --for k,v in pairs(substitutesLocal) do theSubs = theSubs .. tostring(k) .. "[" .. v .. "]" .. "," end
     --Spring.Echo("#subs: " .. i , theSubs)
-    
+
     -- make a list of absent players (only ones with valid ts)
     for playerID,_ in pairs(players) do
         local _,active,spec = Spring.GetPlayerInfo(playerID)
@@ -106,7 +106,7 @@ function FindSubs(real)
         if not present then
             local customtable = select(11,Spring.GetPlayerInfo(playerID)) -- player custom table
             local tsMu = customtable.skill
-            ts = tsMu and tonumber(tsMu:match("%d+%.?%d*")) 
+            ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))
             if ts then
                 absent[playerID] = ts
                 --Spring.Echo("absent:", playerID, ts)
@@ -118,27 +118,27 @@ function FindSubs(real)
         end
     end
     --Spring.Echo("#absent: " .. #absent)
-    
+
     -- for each one, try and find a suitable replacement & substitute if so
     for playerID,ts in pairs(absent) do
-        -- construct a table of who is ideal/valid 
+        -- construct a table of who is ideal/valid
         local idealSubs = {}
         local validSubs = {}
         for subID,subts in pairs(substitutesLocal) do
             local _,active,spec = Spring.GetPlayerInfo(subID)
             if active and spec then
-                if  math.abs(ts-subts)<=validDiff then 
+                if  math.abs(ts-subts)<=validDiff then
                     validSubs[#validSubs+1] = subID
                 end
 				if math.abs(ts-subts)<=idealDiff then
-                    idealSubs[#idealSubs+1] = subID 
+                    idealSubs[#idealSubs+1] = subID
                 end
             end
         end
         --Spring.Echo("ideal: " .. #idealSubs .. " for pID " .. playerID)
         --Spring.Echo("valid: " .. #validSubs .. " for pID " .. playerID)
 
-        local willSub = false --are we going to substitute anyone (for real)
+        local _ = false --are we going to substitute anyone (for real)
         if #validSubs>0 then
             -- choose who
             local sID
@@ -149,17 +149,17 @@ function FindSubs(real)
                 sID = (#validSubs>1) and validSubs[math.random(1,#validSubs)] or validSubs[1]
                 --Spring.Echo("picked valid sub", sID)
             end
-            
+
             --Spring.Echo("real", real)
             if real then
-                -- do the replacement 
+                -- do the replacement
                 local teamID = players[playerID]
                 Spring.AssignPlayerToTeam(sID, teamID)
                 players[sID] = teamID
                 replaced = true
-                
+
                 local incoming,_ = Spring.GetPlayerInfo(sID)
-                local outgoing,_ = Spring.GetPlayerInfo(playerID)            
+                local outgoing,_ = Spring.GetPlayerInfo(playerID)
                 Spring.Echo("Player " .. incoming .. " was substituted in for " .. outgoing)
             end
             substitutesLocal[sID] = nil
@@ -181,15 +181,15 @@ end
 
 function gadget:GameFrame(n)
     if n==1 and replaced then
-        -- if at least one player was replaced, reveal startpoints to all       
-        local coopStartPoints = GG.coopStartPoints or {} 
+        -- if at least one player was replaced, reveal startpoints to all
+        local coopStartPoints = GG.coopStartPoints or {}
         local revealed = {}
         for pID,p in pairs(coopStartPoints) do --first do the coop starts
             local name,_,tID = Spring.GetPlayerInfo(pID)
             SendToUnsynced("MarkStartPoint", p[1], p[2], p[3], name, tID)
             revealed[pID] = true
         end
-            
+
         local teamStartPoints = GG.teamStartPoints or {}
         for tID,p in pairs(teamStartPoints) do
             p = teamStartPoints[tID]
@@ -197,7 +197,7 @@ function gadget:GameFrame(n)
             local name = ""
             for _,pID in pairs(playerList) do --now do all pIDs for this team which were not coop starts
                 if not revealed[pID] then
-                    local pName,active,spec = Spring.GetPlayerInfo(pID) 
+                    local pName,active,spec = Spring.GetPlayerInfo(pID)
                     if pName and absent[pID]==nil and active and not spec then --AIs might not have a name, don't write the name of the dropped player
                         name = name .. pName .. ", "
                         revealed[pID] = true
@@ -210,24 +210,24 @@ function gadget:GameFrame(n)
             SendToUnsynced("MarkStartPoint", p[1], p[2], p[3], name, tID)
         end
     end
-    
+
     if n%5==0 then
         CheckJoined() -- there is no PlayerChanged or PlayerAdded in synced code
     end
 end
 
 
---------------------------- 
+---------------------------
 
 function CheckJoined()
     local pList = SpGetPlayerList(true)
-    local cheatsOn = SpIsCheatingEnabled() 
+    local cheatsOn = SpIsCheatingEnabled()
     if cheatsOn then return end
-    
+
     for _,pID in ipairs(pList) do
         if not players[pID] then
             local _,active,spec,_,aID = Spring.GetPlayerInfo(pID)
-            if active and not spec then 
+            if active and not spec then
                 --Spring.Echo("handle join", pID, active, spec)
                 HandleJoinedPlayer(pID,aID)
             end
@@ -235,7 +235,7 @@ function CheckJoined()
     end
 end
 
-function HandleJoinedPlayer(jID, aID)
+function HandleJoinedPlayer(jID, _)
     SendToUnsynced("ForceSpec", jID)
 end
 
@@ -243,8 +243,8 @@ end
 else -- begin unsynced section
 -----------------------------
 
-local x = 500
-local y = 500
+local _ = 500
+local _ = 500
 
 local myPlayerID = Spring.GetMyPlayerID()
 local spec,_ = Spring.GetSpectatingState()
@@ -286,20 +286,20 @@ end
 function gadget:Initialize()
     if (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
         gadgetHandler:RemoveGadget() -- don't run in FFA mode
-        return 
+        return
     end
 
     gadgetHandler:AddSyncAction("MarkStartPoint", MarkStartPoint)
     gadgetHandler:AddSyncAction("ForceSpec", ForceSpec)
-    
+
     -- match the equivalent check in synced
-    local customtable = select(11,Spring.GetPlayerInfo(myPlayerID)) 
-    local tsMu = "30"--customtable.skill 
+    local _ = select(11,Spring.GetPlayerInfo(myPlayerID))
+    local tsMu = "30"--customtable.skill
 	local tsSigma = "0"--customtable.skilluncertainty
     ts = tsMu and tonumber(tsMu:match("%d+%.?%d*"))
     tsSigma = tonumber(tsSigma)
     eligible = tsMu and tsSigma and (tsSigma<=2) and (not string.find(tsMu, ")")) and spec
-    
+
     MakeButton()
 end
 
@@ -309,7 +309,7 @@ function gadget:DrawScreen()
         -- ask each spectator if they would like to replace an absent player
 		-- draw button
 		gl.CallList(subsButton)
-		
+
 		-- text
 		local x,y = Spring.GetMouseState()
 		if x > bX and x < bX+bW and y > bY and y < bY+bH then
@@ -354,7 +354,7 @@ function gadget:MousePress(sx,sy)
     return false
 end
 
-function gadget:MouseRelease(x,y)
+function gadget:MouseRelease(_, _)
 end
 
 function gadget:GameStart()
@@ -373,7 +373,7 @@ end
 
 function colourNames(teamID)
     	nameColourR,nameColourG,nameColourB,nameColourA = Spring.GetTeamColor(teamID)
-		R255 = math.floor(nameColourR*255)  
+		R255 = math.floor(nameColourR*255)
         G255 = math.floor(nameColourG*255)
         B255 = math.floor(nameColourB*255)
         if ( R255%10 == 0) then
@@ -386,12 +386,12 @@ function colourNames(teamID)
                 B255 = B255+1
         end
 	return "\255"..string.char(R255)..string.char(G255)..string.char(B255) --works thanks to zwzsg
-end 
+end
 
 function gadget:GameFrame(n)
     if n~=5 then return end
-    
-    if revealed then    
+
+    if revealed then
         Spring.Echo("Substitution occurred, revealed start positions to all")
     end
     gadgetHandler:RemoveCallIn("GameFrame")
@@ -400,7 +400,7 @@ end
 function ForceSpec(_,pID)
     local myID = Spring.GetMyPlayerID()
     if pID==myID then
-        Spring.Echo("You have been made a spectator - adding players is only allowed before the game starts!") 
+        Spring.Echo("You have been made a spectator - adding players is only allowed before the game starts!")
         Spring.SendCommands("spectator")
     end
 end

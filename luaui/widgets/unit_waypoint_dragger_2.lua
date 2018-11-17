@@ -2,16 +2,16 @@ local sprGetActiveCommand    = Spring.GetActiveCommand
 local sprGetGameSeconds      = Spring.GetGameSeconds
 local sprGetSelectedUnits    = Spring.GetSelectedUnits
 local sprGetCommandQueue     = Spring.GetCommandQueue
-local sprGetUnitCommands     = Spring.GetUnitCommands
+local _ = Spring.GetUnitCommands
 local sprGetMouseState       = Spring.GetMouseState
 local sprGetModKeyState      = Spring.GetModKeyState
 local sprGiveOrderToUnit     = Spring.GiveOrderToUnit
-local sprSelectUnitArray     = Spring.SelectUnitArray
+local _ = Spring.SelectUnitArray
 local sprIsAboveMiniMap      = Spring.IsAboveMiniMap
 local sprMinimapMouseToWorld = Spring.MinimapMouseToWorld
-local sprTestBuildOrder      = Spring.TestBuildOrder
-local sprGetBuildFacing      = Spring.GetBuildFacing
-local sprGetMyTeamID         = Spring.GetMyTeamID
+local _ = Spring.TestBuildOrder
+local _ = Spring.GetBuildFacing
+local _ = Spring.GetMyTeamID
 
 local sprWorldToScreenCoords = Spring.WorldToScreenCoords
 local sprTraceScreenRay      = Spring.TraceScreenRay
@@ -24,11 +24,11 @@ local glColor            = gl.Color
 local glLineStipple      = gl.LineStipple
 local glDrawGroundCircle = gl.DrawGroundCircle
 
-local glPushMatrix       = gl.PushMatrix
-local glRotate           = gl.Rotate
-local glTranslate        = gl.Translate
-local glUnitShape        = gl.UnitShape
-local glPopMatrix        = gl.PopMatrix
+local _ = gl.PushMatrix
+local _ = gl.Rotate
+local _ = gl.Translate
+local _ = gl.UnitShape
+local _ = gl.PopMatrix
 
 local cmdColorsTbl = {
 	[CMD.MOVE]         = {0.5, 1.0, 0.5, 0.55},
@@ -66,7 +66,7 @@ function widget:Initialize()
   	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end
@@ -175,7 +175,7 @@ local function GetWayPointsNearCursor(wpTbl, mx, my)
 	if (selUnitsTbl == nil or #selUnitsTbl == 0) then
 		return numSelWayPts
 	end
-	
+
 	for i = 1, #selUnitsTbl do
 		local unitID = selUnitsTbl[i]
 		local commands = sprGetCommandQueue(unitID,-1)
@@ -222,13 +222,13 @@ local function MoveWayPoints(wpTbl, mx, my, finalize)
 			end
 		end
 
-		for wpKey, wpData in pairs(wpTbl) do
+		for _, wpData in pairs(wpTbl) do
 			-- facing for build orders,
 			-- radius for area orders
 			local cmdFacRad = wpData[4]
 			local cmdLink   = wpData[5]
 			local cmdID     = wpData[6].id
-			local cmdPars   = wpData[6].params
+			local _ = wpData[6].params
 			local cmdTag    = wpData[6].tag
 			local cmdUnitID = wpData[7]
 
@@ -310,9 +310,9 @@ function widget:MousePress(mx, my, mb)
 	--   4. our mouse cursor is within "grabbing" radius of (at least)
 	--      one waypoint of at least one of the units we have selected
 	--
-	local _, actCmdID, _, _      = sprGetActiveCommand()
-	local alt, ctrl, meta, shift = sprGetModKeyState()
-	local numWayPts              = 0
+	local _, _, _, _      = sprGetActiveCommand()
+	local _, _, _, shift = sprGetModKeyState()
+	local _ = 0
 	if (not shift)                                     then  return false  end
 	if (mb ~= 1)                                       then  return false  end
 	numWayPts = GetWayPointsNearCursor(selWayPtsTbl, mx, my)
@@ -324,12 +324,12 @@ function widget:MousePress(mx, my, mb)
 	return true
 end
 
-function widget:MouseMove(mx, my, mdx, mdy, mb)
+function widget:MouseMove(mx, my, _, _, _)
 	MoveWayPoints(selWayPtsTbl, mx, my, false)
 	return false
 end
 
-function widget:MouseRelease(mx, my, mb)
+function widget:MouseRelease(mx, my, _)
 	MoveWayPoints(selWayPtsTbl, mx, my, true)
 	return false
 end

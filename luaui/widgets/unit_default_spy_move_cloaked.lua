@@ -19,7 +19,7 @@ local spies  = {
 local GetSelectedUnitsSorted = Spring.GetSelectedUnitsSorted
 local GetUnitIsCloaked = Spring.GetUnitIsCloaked
 local GetSelectedUnitsCount = Spring.GetSelectedUnitsCount
-local GetPlayerInfo = Spring.GetPlayerInfo
+local _ = Spring.GetPlayerInfo
 
 local CMD_MOVE = CMD.MOVE
 
@@ -34,7 +34,7 @@ function widget:GameStart()
     maybeRemoveSelf()
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     maybeRemoveSelf()
 end
 
@@ -61,7 +61,7 @@ function widget:Update(dt)
 				if selectedUnittypes[spyDefID] then
 					for _,unitID in pairs(selectedUnittypes[spyDefID]) do
 						if GetUnitIsCloaked(unitID) then
-							spySelected = true	
+							spySelected = true
 						end
 					end
 				end

@@ -22,8 +22,8 @@ end
 
 local GiveOrderToUnit = Spring.GiveOrderToUnit
 local GetGroundHeight = Spring.GetGroundHeight
-local GetUnitPosition = Spring.GetUnitPosition
-local GetUnitHeight = Spring.GetUnitHeight
+local _ = Spring.GetUnitPosition
+local _ = Spring.GetUnitHeight
 
 local CMD_ATTACK = CMD.ATTACK
 local CMD_INSERT = CMD.INSERT
@@ -31,15 +31,15 @@ local CMD_INSERT = CMD.INSERT
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+function gadget:AllowCommand(UnitID, _, _, cmdID, cmdParams, cmdOptions, _, synced)
   if synced then return true end
   if (cmdID == CMD_INSERT) and (CMD_ATTACK == cmdParams[2]) and cmdParams[6] then
 	y=GetGroundHeight(cmdParams[4],cmdParams[6]) --is automatically corrected for below/above waterline and water/nonwater weapons within engine
     if (cmdParams[5] > y) then
       GiveOrderToUnit(UnitID, CMD_INSERT, {cmdParams[1],cmdParams[2],cmdParams[3],cmdParams[4],y,cmdParams[6]}, cmdOptions.coded)
       return false
-    end    
-  end  
+    end
+  end
   if (cmdID == CMD_ATTACK) and cmdParams[3] then
 	y=GetGroundHeight(cmdParams[1],cmdParams[3])
     if (cmdParams[2] > y) then

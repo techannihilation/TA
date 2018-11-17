@@ -38,7 +38,7 @@ local etaMaxDist= 500000 -- max dist at which to draw ETA
 
 --------------------------------------------------------------------------------
 
-local vsx, vsy = widgetHandler:GetViewSizes()
+local _, _ = widgetHandler:GetViewSizes()
 
 function widget:ViewResize(viewSizeX, viewSizeY)
   vsx = viewSizeX
@@ -84,7 +84,7 @@ end
 
 local lastGameUpdate = Spring.GetGameSeconds()
 
-function widget:Update(dt)
+function widget:Update(_)
 
   local userSpeed,_,pause = Spring.GetGameSpeed()
   if (pause) then
@@ -96,14 +96,14 @@ function widget:Update(dt)
     return
   end
   lastGameUpdate = gs
-  
+
   local killTable = {}
   for unitID,bi in pairs(etaTable) do
     local _,_,_,_,buildProgress = Spring.GetUnitHealth(unitID)
     if ((not buildProgress) or (buildProgress >= 1.0)) then
       table.insert(killTable, unitID)
     else
-      local dp = buildProgress - bi.lastProg 
+      local dp = buildProgress - bi.lastProg
       local dt = gs - bi.lastTime
       if (dt > 2) then
         bi.firstSet = true
@@ -164,17 +164,17 @@ function widget:UnitCreated(unitID, unitDefID, unitTeam)
 end
 
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
   etaTable[unitID] = nil
 end
 
 
-function widgetHandler:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+function widgetHandler:UnitTaken(unitID, _, _, _)
   etaTable[unitID] = nil
 end
 
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, _, _)
   etaTable[unitID] = nil
 end
 
@@ -203,7 +203,7 @@ local function DrawEtaText(timeLeft,yoffset)
 end
 
 function widget:DrawWorld()
-	if Spring.IsGUIHidden() == false then 
+	if Spring.IsGUIHidden() == false then
 	  gl.DepthTest(true)
 
 	  gl.Color(1, 1, 1, 0.1)
@@ -214,17 +214,17 @@ function widget:DrawWorld()
 		if ux~=nil then
 			local dx, dy, dz = ux-cx, uy-cy, uz-cz
 			local dist = dx*dx + dy*dy + dz*dz
-			if dist < etaMaxDist then 
+			if dist < etaMaxDist then
 				gl.DrawFuncAtUnit(unitID, false, DrawEtaText, bi.timeLeft,bi.yoffset)
 			end
 		end
 	  end
-	  
-	  gl.Color(1, 1, 1, 1) 
+
+	  gl.Color(1, 1, 1, 1)
 	  gl.DepthTest(false)
 	end
 end
-  
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

@@ -43,7 +43,7 @@ ShockWave.Default = {
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
-local glUniform   = gl.Uniform
+local _ = gl.Uniform
 local glUseShader = gl.UseShader
 local glCallList  = gl.CallList
 local glMultiTexCoord = gl.MultiTexCoord

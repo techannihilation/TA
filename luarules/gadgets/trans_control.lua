@@ -28,17 +28,17 @@ end
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-local CMD_UNLOAD_UNIT = CMD.UNLOAD_UNIT
+local _ = CMD.UNLOAD_UNIT
 
 local COMMANDER = {
   --Core
-  [UnitDefNames["corcom"].id] = true, 
+  [UnitDefNames["corcom"].id] = true,
   [UnitDefNames["corcom1"].id] = true,
   [UnitDefNames["corcom3"].id] = true,
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
-  --Arm 
+  --Arm
   [UnitDefNames["armcom"].id] = true,
   [UnitDefNames["armcom1"].id] = true,
   [UnitDefNames["armcom4"].id] = true,
@@ -54,7 +54,7 @@ local COMMANDER = {
   [UnitDefNames["tllcom7"].id] = true,
 }
 
-function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+function gadget:AllowCommand(_, _, teamID, cmdID, cmdParams, _, _, _)
   local Gametime = Spring.GetGameSeconds()
   --Spring.Echo(Gametime,unlocktime)
   if (cmdID == 75) then

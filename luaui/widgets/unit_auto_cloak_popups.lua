@@ -21,41 +21,41 @@ local clockingUnitDefs = {
 
 local cloakunits = {}
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, unitDefID, _)
     if clockingUnitDefs[unitDefID] then
         cloakunits[unitID] = true
         Spring.GiveOrderToUnit(unitID, CMD_CLOAK, {1}, {})
     end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
     if cloakunits[unitID] then
         cloakunits[unitID] = nil
     end
 end
 
-function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
+function widget:UnitCreated(unitID, unitDefID, _, _)
     if clockingUnitDefs[unitDefID] then
         cloakunits[unitID] = true
         Spring.GiveOrderToUnit(unitID, CMD_CLOAK, {1}, {})
     end
 end
 
-function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+function widget:UnitTaken(unitID, unitDefID, _, _)
     if clockingUnitDefs[unitDefID] then
         cloakunits[unitID] = true
         Spring.GiveOrderToUnit(unitID, CMD_CLOAK, {1}, {})
     end
 end
 
-function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+function widget:UnitGiven(unitID, unitDefID, _, _)
     if clockingUnitDefs[unitDefID] then
         cloakunits[unitID] = true
         Spring.GiveOrderToUnit(unitID, CMD_CLOAK, {1}, {})
     end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetGameFrame() > 0 and Spring.GetSpectatingState() then
         widgetHandler:RemoveWidget(self)
     end

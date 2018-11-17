@@ -17,49 +17,49 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local glBeginEnd             = gl.BeginEnd
-local glBillboard            = gl.Billboard
+local _ = gl.BeginEnd
+local _ = gl.Billboard
 local glBlending             = gl.Blending
-local glCallList             = gl.CallList
-local glClear                = gl.Clear
-local glColor                = gl.Color
-local glCreateList           = gl.CreateList
+local _ = gl.CallList
+local _ = gl.Clear
+local _ = gl.Color
+local _ = gl.CreateList
 local glCreateShader         = gl.CreateShader
-local glCreateTexture        = gl.CreateTexture
+local _ = gl.CreateTexture
 local glDeleteShader         = gl.DeleteShader
-local glDeleteTexture        = gl.DeleteTexture
-local glDepthMask            = gl.DepthMask
-local glDepthTest            = gl.DepthTest
+local _ = gl.DeleteTexture
+local _ = gl.DepthMask
+local _ = gl.DepthTest
 local glGetShaderLog         = gl.GetShaderLog
 local glGetUniformLocation   = gl.GetUniformLocation
-local glGetViewSizes         = gl.GetViewSizes
-local glPopMatrix            = gl.PopMatrix
-local glPushMatrix           = gl.PushMatrix
-local glTexCoord             = gl.TexCoord
+local _ = gl.GetViewSizes
+local _ = gl.PopMatrix
+local _ = gl.PushMatrix
+local _ = gl.TexCoord
 local glTexture              = gl.Texture
 local glTexRect              = gl.TexRect
-local glRect                 = gl.Rect
+local _ = gl.Rect
 local glRenderToTexture      = gl.RenderToTexture
 local glUniform              = gl.Uniform
-local glUniformInt           = gl.UniformInt
+local _ = gl.UniformInt
 local glUniformMatrix        = gl.UniformMatrix
 local glUseShader            = gl.UseShader
-local glVertex               = gl.Vertex
-local glTranslate            = gl.Translate
+local _ = gl.Vertex
+local _ = gl.Translate
 local spEcho                 = Spring.Echo
 local spGetCameraPosition    = Spring.GetCameraPosition
 local spWorldToScreenCoords  = Spring.WorldToScreenCoords
 
 
 local glowImg			= "LuaUI/Images/glow2.dds"
-local beamGlowImg = ":n:LuaUI/Images/barglow-center.png"
-local beamGlowEndImg = ":n:LuaUI/Images/barglow-edge.png"
+local _ = ":n:LuaUI/Images/barglow-center.png"
+local _ = ":n:LuaUI/Images/barglow-edge.png"
 
 local GLSLRenderer = true
 
 local vsx, vsy
-local ivsx = 1.0 
-local ivsy = 1.0 
+local _ = 1.0
+local _ = 1.0
 local screenratio = 1.0
 
 -- dynamic light shaders
@@ -69,15 +69,15 @@ local depthBeamShader = nil
 -- shader uniforms
 local lightposlocPoint = nil
 local lightcolorlocPoint = nil
-local lightparamslocPoint = nil
+local _ = nil
 local uniformEyePosPoint
 local uniformViewPrjInvPoint
 
 local lightposlocBeam  = nil
 local lightpos2locBeam  = nil
 local lightcolorlocBeam  = nil
-local lightparamslocBeam  = nil
-local uniformEyePosBeam 
+local _ = nil
+local uniformEyePosBeam
 local uniformViewPrjInvBeam
 
 --------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ local uniformViewPrjInvBeam
 local verbose = false
 local function VerboseEcho(...)
 	if verbose then
-		Spring.Echo(...) 
+		Spring.Echo(...)
 	end
 end
 
@@ -304,18 +304,18 @@ local function DeferredLighting_RegisterFunction(func)
 end
 
 function widget:Initialize()
-	
+
 	if (glCreateShader == nil) then
-		Spring.Echo('Deferred Rendering requires shader support!') 
+		Spring.Echo('Deferred Rendering requires shader support!')
 		widgetHandler:RemoveWidget(self)
 		return
 	end
-	
+
 	Spring.SetConfigInt("AllowDeferredMapRendering", 1)
 	Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 
 	if (Spring.GetConfigString("AllowDeferredMapRendering") == '0' or Spring.GetConfigString("AllowDeferredModelRendering") == '0') then
-		Spring.Echo('Deferred Rendering (gfx_deferred_rendering.lua) requires  AllowDeferredMapRendering and AllowDeferredModelRendering to be enabled in springsettings.cfg!') 
+		Spring.Echo('Deferred Rendering (gfx_deferred_rendering.lua) requires  AllowDeferredMapRendering and AllowDeferredModelRendering to be enabled in springsettings.cfg!')
 		widgetHandler:RemoveWidget(self)
 		return
 	end
@@ -383,14 +383,14 @@ function widget:Initialize()
 				uniformEyePosBeam     = glGetUniformLocation(depthBeamShader, 'eyePos')
 				uniformViewPrjInvBeam = glGetUniformLocation(depthBeamShader, 'viewProjectionInv')
 			end
-			
+
 			WG.DeferredLighting_RegisterFunction = DeferredLighting_RegisterFunction
 		end
 		screenratio = vsy / vsx --so we dont overdraw and only always draw a square
 	else
 		GLSLRenderer = false
 	end
-	
+
 	widget:ViewResize()
 end
 
@@ -422,7 +422,7 @@ local function DrawLightType(lights, lightsCount, lighttype) -- point = 0 beam =
 	glTexture(2, "$map_gbuffer_normtex")
 	glTexture(3, "$map_gbuffer_zvaltex")
 	glTexture(4, "$model_gbuffer_spectex")
-	
+
 	local cx, cy, cz = spGetCameraPosition()
 	for i = 1, lightsCount do
 		local light = lights[i]
@@ -434,32 +434,32 @@ local function DrawLightType(lights, lightsCount, lighttype) -- point = 0 beam =
 		if lighttype == 0 then -- point
 			local lightradius = param.radius
 			--Spring.Echo("Drawlighttype position = ", light.px, light.py, light.pz)
-			local sx, sy, sz = spWorldToScreenCoords(light.px, light.py, light.pz) -- returns x, y, z, where x and y are screen pixels, and z is z buffer depth.
+			local sx, sy, _ = spWorldToScreenCoords(light.px, light.py, light.pz) -- returns x, y, z, where x and y are screen pixels, and z is z buffer depth.
 			sx = sx/vsx
 			sy = sy/vsy --since FOV is static in the Y direction, the Y ratio is the correct one
 			local dist_sq = (light.px-cx)^2 + (light.py-cy)^2 + (light.pz-cz)^2
 			local ratio = lightradius / math.sqrt(dist_sq) * 1.5
 			glUniform(lightposlocPoint, light.px, light.py, light.pz, param.radius) --in world space
-			glUniform(lightcolorlocPoint, param.r * light.colMult, param.g * light.colMult, param.b * light.colMult, 1) 
+			glUniform(lightcolorlocPoint, param.r * light.colMult, param.g * light.colMult, param.b * light.colMult, 1)
 			glTexRect(
-				math.max(-1 , (sx-0.5)*2-ratio*screenratio), 
-				math.max(-1 , (sy-0.5)*2-ratio), 
-				math.min( 1 , (sx-0.5)*2+ratio*screenratio), 
-				math.min( 1 , (sy-0.5)*2+ratio), 
-				math.max( 0 , sx - 0.5*ratio*screenratio), 
-				math.max( 0 , sy - 0.5*ratio), 
+				math.max(-1 , (sx-0.5)*2-ratio*screenratio),
+				math.max(-1 , (sy-0.5)*2-ratio),
+				math.min( 1 , (sx-0.5)*2+ratio*screenratio),
+				math.min( 1 , (sy-0.5)*2+ratio),
+				math.max( 0 , sx - 0.5*ratio*screenratio),
+				math.max( 0 , sy - 0.5*ratio),
 				math.min( 1 , sx + 0.5*ratio*screenratio),
 				math.min( 1 , sy + 0.5*ratio)
 			) -- screen size goes from -1, -1 to 1, 1; uvs go from 0, 0 to 1, 1
-		end 
+		end
 		if lighttype == 1 then -- beam
-			local lightradius = 0
+			local _ = 0
 			local px = light.px+light.dx*0.5
 			local py = light.py+light.dy*0.5
 			local pz = light.pz+light.dz*0.5
 			local lightradius = param.radius + math.sqrt(light.dx^2 + light.dy^2 + light.dz^2)*0.5
 			VerboseEcho("Drawlighttype position = ", light.px, light.py, light.pz)
-			local sx, sy, sz = spWorldToScreenCoords(px, py, pz) -- returns x, y, z, where x and y are screen pixels, and z is z buffer depth.
+			local sx, sy, _ = spWorldToScreenCoords(px, py, pz) -- returns x, y, z, where x and y are screen pixels, and z is z buffer depth.
 			sx = sx/vsx
 			sy = sy/vsy --since FOV is static in the Y direction, the Y ratio is the correct one
 			local dist_sq = (px-cx)^2 + (py-cy)^2 + (pz-cz)^2
@@ -468,15 +468,15 @@ local function DrawLightType(lights, lightsCount, lighttype) -- point = 0 beam =
 
 			glUniform(lightposlocBeam, light.px, light.py, light.pz, param.radius) --in world space
 			glUniform(lightpos2locBeam, light.px+light.dx, light.py+light.dy+24, light.pz+light.dz, param.radius) --in world space, the magic constant of +24 in the Y pos is needed because of our beam distance calculator function in GLSL
-			glUniform(lightcolorlocBeam, param.r * light.colMult, param.g * light.colMult, param.b * light.colMult, 1) 
+			glUniform(lightcolorlocBeam, param.r * light.colMult, param.g * light.colMult, param.b * light.colMult, 1)
 			--TODO: use gl.Shape instead, to avoid overdraw
 			glTexRect(
-				math.max(-1 , (sx-0.5)*2-ratio*screenratio), 
-				math.max(-1 , (sy-0.5)*2-ratio), 
-				math.min( 1 , (sx-0.5)*2+ratio*screenratio), 
-				math.min( 1 , (sy-0.5)*2+ratio), 
-				math.max( 0 , sx - 0.5*ratio*screenratio), 
-				math.max( 0 , sy - 0.5*ratio), 
+				math.max(-1 , (sx-0.5)*2-ratio*screenratio),
+				math.max(-1 , (sy-0.5)*2-ratio),
+				math.min( 1 , (sx-0.5)*2+ratio*screenratio),
+				math.min( 1 , (sy-0.5)*2+ratio),
+				math.max( 0 , sx - 0.5*ratio*screenratio),
+				math.max( 0 , sy - 0.5*ratio),
 				math.min( 1 , sx + 0.5*ratio*screenratio),
 				math.min( 1 , sy + 0.5*ratio)
 			) -- screen size goes from -1, -1 to 1, 1; uvs go from 0, 0 to 1, 1
@@ -491,10 +491,10 @@ local function renderToTextureFunc(tex, s, t)
 	glTexture(false)
 end
 
-local function mglRenderToTexture(FBOTex, tex, s, t)
+local function _(FBOTex, tex, s, t)
 	glRenderToTexture(FBOTex, renderToTextureFunc, tex, s, t)
 end
-	
+
 local beamLights = {}
 local beamLightCount = 0
 local pointLights = {}
@@ -514,7 +514,7 @@ function widget:DrawWorld()
 	local lights = pointLights
 	glBlending(GL.SRC_ALPHA, GL.ONE)
 	gl.Texture(glowImg)
-	local size = 1
+	local _ = 1
 	for i = 1, pointLightCount do
 		local light = lights[i]
 		local param = light.param
@@ -541,7 +541,7 @@ function widget:DrawScreenEffects()
 		widgetHandler:RemoveWidget(self)
 		return
 	end
-	
+
 	--glBlending(GL.DST_COLOR, GL.ONE) -- Set add blending mode
 	glBlending(GL.SRC_ALPHA, GL.ONE)
 	if beamLightCount > 0 then

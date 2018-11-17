@@ -25,12 +25,12 @@ local paraTroppers = {
 local fC = 0
 local fallingUnits = {}
 
-function gadget:GameFrame(n)
+function gadget:GameFrame(_)
   if fC > 0 then
     for k,t in ipairs(fallingUnits) do
         local unitAlive = (Spring.ValidUnitID (t[1]) and (not Spring.GetUnitIsDead (t[1])))
         if (unitAlive) then
-            x,y,z = Spring.GetUnitBasePosition(t[1])        --maybe check if units were off map        
+            x,y,z = Spring.GetUnitBasePosition(t[1])        --maybe check if units were off map
             h = Spring.GetGroundHeight(x,z)
         --else
             --Spring.Echo ("unit was not alive anymore. There would have been error spam")
@@ -46,14 +46,14 @@ end
 
 function gadget:UnitUnloaded(unitID, unitDefID, _, transID)
     if paraTroppers[unitDefID] or not transID then
-        return 
+        return
     end
-    
+
     local transDefID = Spring.GetUnitDefID(transID)
-    if not transDefID or UnitDefs[transDefID].isAirBase then 
-        return 
+    if not transDefID or UnitDefs[transDefID].isAirBase then
+        return
     end
-    
+
     local x,y,z = Spring.GetUnitBasePosition(unitID)
     local h = math.max(0,Spring.GetGroundHeight(x,z))
     local damage = 0
@@ -61,7 +61,7 @@ function gadget:UnitUnloaded(unitID, unitDefID, _, transID)
         local Udef = UnitDefs[unitDefID]
         damage = Udef.mass * (y-h)/50
     end
-    if damage > 10 then 
+    if damage > 10 then
         fC = fC + 1
         --Spring.Echo(y-h, damage)
         fallingUnits[fC] = {unitID, damage}

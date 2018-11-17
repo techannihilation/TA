@@ -81,7 +81,7 @@ local vsx, vsy
 local function DrawTextWithBackground(text, x, y, size, opt)
 	local width = (glGetTextWidth(text) * size) + 8
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
-	
+
 	glColor(0.25, 0.25, 0.25, 0.75)
 	if (opt) then
 		if (strFind(opt, "r")) then
@@ -94,23 +94,23 @@ local function DrawTextWithBackground(text, x, y, size, opt)
 	else
 		glRect(x, y, x + width, y + size * TEXT_CORRECT_Y)
 	end
-	
+
 	glColor(1, 1, 1, 0.85)
-	
+
 	glText(text, x+4, y, size, opt)
-	
+
 end
 
-local function SetupMexDefInfos() 
+local function SetupMexDefInfos()
 	local minExtractsMetal
-	
+
 	local armMexDef = UnitDefNames["armmex"]
-	
+
 	if armMexDef and armMexDef.extractsMetal > 0 then
 		defaultDefID = UnitDefNames["armmex"].id
 		minExtractsMetal = 0
 	end
-	
+
 	for unitDefID = 1,#UnitDefs do
 		local unitDef = UnitDefs[unitDefID]
 		local extractsMetal = unitDef.extractsMetal
@@ -130,40 +130,40 @@ local function SetupMexDefInfos()
 			end
 		end
 	end
-	
+
 end
 
 local function IntegrateMetal(mexDefInfo, x, z, forceUpdate)
 	local newCenterX, newCenterZ
-	
+
 	if (mexDefInfo[3]) then
 		newCenterX = (floor( x / METAL_MAP_SQUARE_SIZE) + 0.5) * METAL_MAP_SQUARE_SIZE
 	else
 		newCenterX = floor( x / METAL_MAP_SQUARE_SIZE + 0.5) * METAL_MAP_SQUARE_SIZE
 	end
-	
+
 	if (mexDefInfo[4]) then
 		newCenterZ = (floor( z / METAL_MAP_SQUARE_SIZE) + 0.5) * METAL_MAP_SQUARE_SIZE
 	else
 		newCenterZ = floor( z / METAL_MAP_SQUARE_SIZE + 0.5) * METAL_MAP_SQUARE_SIZE
 	end
-	
+
 	if (centerX == newCenterX and centerZ == newCenterZ and not forceUpdate) then return end
-	
+
 	centerX = newCenterX
 	centerZ = newCenterZ
-	
+
 	local startX = floor((centerX - MEX_RADIUS) / METAL_MAP_SQUARE_SIZE)
 	local startZ = floor((centerZ - MEX_RADIUS) / METAL_MAP_SQUARE_SIZE)
 	local endX = floor((centerX + MEX_RADIUS) / METAL_MAP_SQUARE_SIZE)
 	local endZ = floor((centerZ + MEX_RADIUS) / METAL_MAP_SQUARE_SIZE)
 	startX, startZ = max(startX, 0), max(startZ, 0)
 	endX, endZ = min(endX, MAP_SIZE_X_SCALED - 1), min(endZ, MAP_SIZE_Z_SCALED - 1)
-	
+
 	local mult = mexDefInfo[1]
 	local square = mexDefInfo[2]
 	local result = 0
-	
+
 	if (square) then
 		for i = startX, endX do
 			for j = startZ, endZ do
@@ -178,7 +178,7 @@ local function IntegrateMetal(mexDefInfo, x, z, forceUpdate)
 				local cx, cz = (i + 0.5) * METAL_MAP_SQUARE_SIZE, (j + 0.5) * METAL_MAP_SQUARE_SIZE
 				local dx, dz = cx - centerX, cz - centerZ
 				local dist = sqrt(dx * dx + dz * dz)
-				
+
 				if (dist < MEX_RADIUS) then
 					local _, _, metal = GetGroundInfo(cx, cz)
 					result = result + metal
@@ -186,7 +186,7 @@ local function IntegrateMetal(mexDefInfo, x, z, forceUpdate)
 			end
 		end
 	end
-	
+
 	extraction = result * mult
 end
 
@@ -195,7 +195,7 @@ end
 ------------------------------------------------
 
 function widget:Initialize()
-	SetupMexDefInfos() 
+	SetupMexDefInfos()
 	myTeamID = Spring.GetMyTeamID()
   once = true
 end
@@ -205,11 +205,11 @@ function widget:DrawWorld()
 	if GetGameFrame() < 1 and defaultDefID and drawMode == "metal" then
 		local mx, my = GetMouseState()
 		local _, coords = TraceScreenRay(mx, my, true, true)
-		
+
 		if not coords then return end
-		
+
 		IntegrateMetal(mexDefInfos[defaultDefID], coords[1], coords[3], false)
-		
+
 		glLineWidth(1)
 		glColor(1, 0, 0, 0.5)
 		glDrawGroundCircle(centerX, 0, centerZ, MEX_RADIUS, 32)
@@ -230,9 +230,9 @@ function widget:DrawScreen()
 		widget:ViewResize(viewSizeX, viewSizeY)
 		once = false
 	end
-	
+
 	local mexDefInfo
-	
+
 	if GetGameFrame() < 1 then
 		local drawMode = GetMapDrawMode()
 		if drawMode == "metal" then
@@ -242,21 +242,21 @@ function widget:DrawScreen()
 		local _, cmd_id = GetActiveCommand()
 		if (not cmd_id) then return end
 		local unitDefID = -cmd_id
-		local forceUpdate = false
-		if (unitDefID ~= lastUnitDefID) then 
+		local _ = false
+		if (unitDefID ~= lastUnitDefID) then
 			forceUpdate = true
 		end
 		lastUnitDefID = unitDefID
 		mexDefInfo = mexDefInfos[unitDefID]
 	end
-	
+
 	if (not mexDefInfo) then return end
-	
+
 	local mx, my = GetMouseState()
 	local _, coords = TraceScreenRay(mx, my, true, true)
-	
+
 	if (not coords) then return end
-	
+
 	IntegrateMetal(mexDefInfo, coords[1], coords[3], forceUpdate)
 	DrawTextWithBackground("\255\255\255\255Metal extraction: " .. strFormat("%.2f", extraction), mx, my, textSize, "d")
 	glColor(1, 1, 1, 1)

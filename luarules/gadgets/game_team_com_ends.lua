@@ -40,7 +40,7 @@ local SpawnCEG = Spring.SpawnCEG
 
 local DISTANCE_LIMIT = (math.max(Game.mapSizeX,Game.mapSizeZ) * math.max(Game.mapSizeX,Game.mapSizeZ))
 local min = math.min
-local deathWave = false -- is the death wave happening right now?
+local _ = false -- is the death wave happening right now?
 local deathTimeBoost = 1
 local modeComEnds = true
 
@@ -154,17 +154,17 @@ function gadget:GameFrame(t)
 			end
 			if (dt > defs.time) then
                 if defs.a then DestroyUnit(unitID, true, nil, defs.a)
-                    else DestroyUnit(unitID, true) -- if 4th arg is given, it cannot be nil (or engine complains)                
+                    else DestroyUnit(unitID, true) -- if 4th arg is given, it cannot be nil (or engine complains)
                 end
 				destroyUnitQueue[unitID] = nil
 			end
 		end
 		deathTimeBoost = math.min(deathTimeBoost * 1.5, 500)
 	end
-	
+
 end
 
-function gadget:UnitCreated(u, ud, team)
+function gadget:UnitCreated(u, ud, _)
 	if modeComEnds then
 		isAlive[u] = true
 		if UnitDefs[ud].customParams.iscommander then
@@ -174,7 +174,7 @@ function gadget:UnitCreated(u, ud, team)
 	end
 end
 
-function gadget:UnitGiven(u, ud, team)
+function gadget:UnitGiven(u, ud, _)
 	if modeComEnds then
 		if UnitDefs[ud].customParams.iscommander then
 			local allyTeam = GetUnitAllyTeam(u)
@@ -183,7 +183,7 @@ function gadget:UnitGiven(u, ud, team)
 	end
 end
 
-function gadget:UnitDestroyed(u, ud, team, a, ad, ateam)
+function gadget:UnitDestroyed(u, ud, _, a, _, _)
 	if modeComEnds then
 		isAlive[u] = nil
 		if UnitDefs[ud].customParams.iscommander then
@@ -197,7 +197,7 @@ function gadget:UnitDestroyed(u, ud, team, a, ad, ateam)
 	end
 end
 
-function gadget:UnitTaken(u, ud, team, a, ad, ateam)
+function gadget:UnitTaken(u, ud, _, a, _, _)
 	if modeComEnds and isAlive[u] and UnitDefs[ud].customParams.iscommander then
 		local allyTeam = GetUnitAllyTeam(u)
 		aliveCount[allyTeam] = aliveCount[allyTeam] - 1

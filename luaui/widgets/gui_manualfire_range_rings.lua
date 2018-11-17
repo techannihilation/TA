@@ -23,8 +23,8 @@ local ringsToDraw = {
 local pairs = pairs
 local SpGetAllUnits = Spring.GetAllUnits
 local SpGetUnitDefID = Spring.GetUnitDefID
-local SpIsUnitAllied = Spring.IsUnitAllied
-local SpIsUnitSelected = Spring.IsUnitSelected
+local _ = Spring.IsUnitAllied
+local _ = Spring.IsUnitSelected
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpGetActiveCommand = Spring.GetActiveCommand
 
@@ -37,18 +37,18 @@ local ringsDefs = {}
 
 local ringedUnits = {}
 
--- opacity control 
-local darkOpacity = 0.5
+-- opacity control
+local _ = 0.5
 local lightOpacity = 0.5
 
-function SetOpacity(dark, light) 
-    darkOpacity = dark 
-    lightOpacity = light 
-end 
+function SetOpacity(dark, light)
+    darkOpacity = dark
+    lightOpacity = light
+end
 
 function widget:Initialize()
-    widgetHandler:RegisterGlobal('SetOpacity_Missingrings', SetOpacity) 
-    for uDefId, ud in ipairs(UnitDefs) do
+    widgetHandler:RegisterGlobal('SetOpacity_Missingrings', SetOpacity)
+    for uDefId, _ in ipairs(UnitDefs) do
         if ringsToDraw[uDefId] then
             ringsDefs[uDefId] = { r = 1 , g = 0, b = 0, radius = WeaponDefs[UnitDefs[uDefId].weapons[ringsToDraw[uDefId]].weaponDef].range}
         end
@@ -93,7 +93,7 @@ function widget:DrawWorld()
     glColor(1, 1, 1, 1)
 end
 
-function widget:GameOver() 
-    widgetHandler:DeregisterGlobal('SetOpacity_Missingrings', SetOpacity) 
-    widgetHandler:RemoveWidget(self) 
-end 
+function widget:GameOver()
+    widgetHandler:DeregisterGlobal('SetOpacity_Missingrings', SetOpacity)
+    widgetHandler:RemoveWidget(self)
+end

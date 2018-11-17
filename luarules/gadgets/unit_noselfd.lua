@@ -15,7 +15,7 @@ end
 local spGetUnitSelfDTime = Spring.GetUnitSelfDTime
 local spGiveOrderToUnit  = Spring.GiveOrderToUnit
 
-function gadget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+function gadget:UnitGiven(unitID, _, _, _)
 	if (spGetUnitSelfDTime(unitID) > 0) then --unit about to explode
 		spGiveOrderToUnit(unitID, CMD.SELFD, {}, {}) --cancel self-destruct
 	end

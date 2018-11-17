@@ -48,11 +48,11 @@ local spGetTimer             = Spring.GetTimer
 local spGetUnitBasePosition  = Spring.GetUnitBasePosition
 local spGetUnitDefDimensions = Spring.GetUnitDefDimensions
 local spGetUnitDefID         = Spring.GetUnitDefID
-local spGetUnitRadius        = Spring.GetUnitRadius
+local _ = Spring.GetUnitRadius
 local spGetUnitTeam          = Spring.GetUnitTeam
-local spGetUnitViewPosition  = Spring.GetUnitViewPosition
-local spIsUnitSelected       = Spring.IsUnitSelected
-local spIsUnitVisible        = Spring.IsUnitVisible
+local _ = Spring.GetUnitViewPosition
+local _ = Spring.IsUnitSelected
+local _ = Spring.IsUnitVisible
 local spSendCommands         = Spring.SendCommands
 local SpGetAllUnits        = Spring.GetAllUnits
 
@@ -83,7 +83,7 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local teamColors = {}
+local _ = {}
 
 local trackSlope = true
 
@@ -102,7 +102,7 @@ local FPSLimit = 8
 local update = 1.0
 local timeCounter = math.huge -- force the first update
 local visibleUnits = {}
-local selectedUnits = {} 
+local selectedUnits = {}
 local Unitlist = {}
 local diffTime
 local alpha
@@ -118,7 +118,7 @@ local function GetTeamColorSet(teamID)
     return colors
   end
   local r,g,b = spGetTeamColor(teamID)
-  
+
   colors = { r, g, b, 0.23 }
   teamColors[teamID] = colors
   return colors
@@ -146,11 +146,11 @@ function widget:Initialize()
       ud.radius = GetUnitDefRealRadius(udid)
     end
   end
-  
+
   for _, unitID in ipairs(SpGetAllUnits()) do
       SetUnitRadius(unitID)
   end
-  
+
   circleLines = glCreateList(function()
     glBeginEnd(GL_LINE_LOOP, function()
       local radstep = (2.0 * pi) / circleDivs
@@ -180,7 +180,7 @@ function widget:Shutdown()
 
   glDeleteList(circleLines)
   glDeleteList(circlePolys)
-  
+
 
   SetupCommandColors(true)
 end
@@ -198,18 +198,18 @@ function widget:Update(deltaTime)
 end
 
 
-function widget:UnitCreated(unitID, unitDefID, unitTeam)
+function widget:UnitCreated(unitID, _, _)
   if (Spring.IsUnitAllied(unitID)) then
     SetUnitRadius(unitID)
   end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
   Unitlist[unitID] = nil
 end
 
 
-function widget:UnitGiven(unitID, unitDefID, oldTeam, newTeam)
+function widget:UnitGiven(unitID, _, _, _)
     SetUnitRadius(unitID)
 end
 --------------------------------------------------------------------------------
@@ -224,7 +224,7 @@ end
 
 local realRadii = {}
 
-local function GetUnitDefRealRadius(udid)
+local function _(udid)
   local radius = realRadii[udid]
   if (radius) then
     return radius
@@ -251,30 +251,30 @@ end
 
 function widget:DrawWorldPreUnit()
     --Spring.Echo(TooHigh,FPSCount,HighPing)
-  
-    if Spring.IsGUIHidden() == true or ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+
+    if Spring.IsGUIHidden() == true or ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then
       return  -- avoid unnecessary GL calls
     end
-    
+
   glLineWidth(10.0)
 
   glDepthTest(true)
-  
+
   glPolygonOffset(-50, -2)
 
-  local lastColorSet = nil
+  local _ = nil
    if #visibleUnits then
     for i=1, #visibleUnits do
-    unitID = visibleUnits[i] 
+    unitID = visibleUnits[i]
     if Unitlist[unitID] then
       local teamID = Unitlist[unitID].team
       if (teamID and teamID~=GetGaiaTeamID) then
-	local radius = Unitlist[unitID].radius 
+	local radius = Unitlist[unitID].radius
         if (radius) then
           local colorSet  = Unitlist[unitID].teamcolor
 	  local canfly = Unitlist[unitID].canfly
           if (trackSlope and (not canfly)) and Spring.ValidUnitID(unitID) then
-            local x, y, z = spGetUnitBasePosition(unitID)
+            local x, _, z = spGetUnitBasePosition(unitID)
             local gx, gy, gz = spGetGroundNormal(x, z)
             local degrot = acos(gy) * 180 / pi
             glColor(colorSet)
@@ -291,9 +291,9 @@ function widget:DrawWorldPreUnit()
    end
  end
 end
-	   
 
-	
+
+
 
   glPolygonOffset(false)
 
@@ -306,18 +306,18 @@ end
 
 if #selectedUnits then
     for i=1, #selectedUnits do
-    unitID = selectedUnits[i] 
+    unitID = selectedUnits[i]
     if Unitlist[unitID] then
 
     local colors  = Unitlist[unitID].teamcolor
     glColor(colors[1],colors[2],colors[3], alpha)
-    
+
     local radius = Unitlist[unitID].radius
     if (radius) then
       local canfly = Unitlist[unitID].canfly
       if (trackSlope and (not canfly)) then
         local x, y, z = spGetUnitBasePosition(unitID)
-	if x or y ~= nil then 
+	if x or y ~= nil then
           local gx, gy, gz = spGetGroundNormal(x, z)
           local degrot = acos(gy) * 180 / pi
           glDrawListAtUnit(unitID, circleLines, false,
@@ -328,14 +328,14 @@ if #selectedUnits then
           glDrawListAtUnit(unitID, circleLines, false,
                       radius, 1.0, radius)
      end
-     
+
     end
       end
     end
   end
   glLineWidth(1.0)
 end
-              
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

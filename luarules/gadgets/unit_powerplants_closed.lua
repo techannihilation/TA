@@ -26,7 +26,7 @@ local noClosedE = {
     [UnitDefNames.tlladvsolar.id] = true,
 }
 
-function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+function gadget:UnitCommand(unitID, unitDefID, _, cmdID, cmdParams, _)
     if noClosedE[unitDefID] and cmdID==CMD.ONOFF then
         local on = (cmdParams[1]==1) --invert because the command hasn't yet taken effect
         local _,_,eMake,_ = Spring.GetUnitResources(unitID)

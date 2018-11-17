@@ -53,7 +53,7 @@ local MUSTARD_WEAPONS = {
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     if FIRE_WEAPONS[wd.name] or DISTORT_WEAPONS[wd.name] or MUSTARD_WEAPONS[wd.name] then
-      
+
       Script.SetWatchWeapon(wd.id,true)
     end
   end
@@ -69,7 +69,7 @@ local MUSTARD_WEAPONS = {
   function gadget:GameFrame(n)
     SendToUnsynced("napalm_GameFrame",n)
   end
-  
+
   function gadget:RecvLuaMsg(msg, id)
     if (msg == "lups shutdown") then
 		SendToUnsynced("napalm_Toggle",false,id)
@@ -108,7 +108,7 @@ else
     layer           = 1,
     texture         = "bitmaps/GPL/flame.png",
   }
-    
+
   local mustardFX = {
     colormap        = { {0.2, 0.45, 0.3, 0.1}, {0.2, 0.45, 0.3, 0.1}, {0.2, 0.45, 0.3, 0.1}, {0.16, 0.4, 0.1, 0.12}, {0.13, 0.3, 0.01, 0.15},  {0.13, 0.4, 0.01, 0.15}, {0.13, 0.5, 0.01, 0.15}, {0.1, 0.035, 0.01, 0.1}, {0, 0, 0, 0.01} },
     count           = 4,
@@ -138,7 +138,7 @@ else
     layer           = 1,
     texture         = "bitmaps/mustard.png",
   }
-    
+
   local heatFX = {
     count         = 1,
     emitVector    = {0,1,0},
@@ -165,7 +165,7 @@ else
 
     texture       = "bitmaps/GPL/Lups/mynoise2.png",
   }
-  
+
     local distortFX = {
     count         = 1,
     emitVector    = {0,1,0},
@@ -192,21 +192,21 @@ else
 
     texture       = "bitmaps/GPL/Lups/mynoise2.png",
   }
-   
+
   local Lups
-  local LupsAddParticles 
+  local LupsAddParticles
   local enabled = false
 
   local napalmWeapons = {}
   local napalmExplosions  = {}
-  
+
   local distortWeapons = {}
   local distortExplosions  = {}
-  
+
   local mustardWeapons = {}
   local mustardExplosions  = {}
 
-  local DISTORT_SHORT = {
+  local _ = {
     ["armcom_teleport"] = true,
     ["tllcom_teleport"] = true,
     ["corcom_teleport"] = true,
@@ -227,7 +227,7 @@ else
     elseif MUSTARD_WEAPONS[wd.name] then
       mustardWeapons[wd.id] = true
     end
-  end  
+  end
 
 
   local function napalm_Explosion(_, weaponID, px, py, pz)
@@ -250,7 +250,7 @@ else
     mustardFX.pos = {pos[1],pos[2],pos[3]}
     Lups.AddParticles('SimpleParticles2',mustardFX)
   end
-  
+
   local function SpawnHeatFX(pos)
      if enabled then
        if pos[4] and (DISTORT_SHORT[WeaponDefs[pos[4]].name]) then
@@ -262,8 +262,8 @@ else
        end
    end
 end
-  
-  local function napalm_GameFrame(_, n)
+
+  local function napalm_GameFrame(_, _)
     if (#napalmExplosions>0) then
       napalmExplosions =  napalmExplosions
       napalmCount      = #napalmExplosions
@@ -295,8 +295,8 @@ end
       end
       mustardExplosions = {}
     end
-end  
-  
+end
+
   local function Toggle(_,enable,playerId)
     if (playerId == Spring.GetMyPlayerID()) then
       if enable then
@@ -319,7 +319,7 @@ end
   function gadget:Shutdown()
     gadgetHandler.RemoveSyncAction("napalm_GameFrame")
     gadgetHandler.RemoveSyncAction("napalm_Toggle")
-    gadgetHandler:RemoveSyncAction("napalm_Explosion")    
+    gadgetHandler:RemoveSyncAction("napalm_Explosion")
   end
 
 end

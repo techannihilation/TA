@@ -25,7 +25,7 @@ local drawlist = {}
 local xPos = 0
 local yPos = 0
 
-local mouseover = false
+local _ = false
 
 local usedImgSize = iconSize
 
@@ -48,7 +48,7 @@ function DrawRect(px,py,sx,sy)
 	gl.BeginEnd(GL.QUADS, RectQuad, px,py,sx,sy)
 end
 
-local function createList(size)
+local function createList(_)
 	if drawlist[1] ~= nil then
 		glDeleteList(drawlist[1])
 	end

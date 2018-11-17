@@ -20,7 +20,7 @@ local cachedLoadTimes = VFS.FileExists("loadprogress_cached.lua") and VFS.Includ
 local cachedTotalTime = (cachedLoadTimes[Game.mapName] or -1) * 0.97 --*0.97 cause else last rendered frame would show 99%
 
 
-local function mix(x,y,a)
+local function _(x,y,a)
 	return x * (1-a) + y * a
 end
 

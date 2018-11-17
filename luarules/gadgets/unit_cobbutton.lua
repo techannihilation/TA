@@ -40,7 +40,7 @@ end
 --------------------------------------------------------------------------------
 
 local Spring, ipairs, pairs = Spring, ipairs, pairs
-local SetUnitRulesParam, GetUnitRulesParam = Spring.SetUnitRulesParam, Spring.GetUnitRulesParam
+local _, _ = Spring.SetUnitRulesParam, Spring.GetUnitRulesParam
 
 local ShieldUnits = {
   --Core
@@ -52,10 +52,10 @@ local ShieldUnits = {
   [UnitDefNames["corgate2"].id] = true,
   [UnitDefNames["corflshd"].id] = true,
   [UnitDefNames["corshieldgen"].id] = true,
-  [UnitDefNames["monkeylord"].id] = true, 
+  [UnitDefNames["monkeylord"].id] = true,
   [UnitDefNames["corsfus"].id] = true,
-  [UnitDefNames["corcrab"].id] = true, 
-  --Arm 
+  [UnitDefNames["corcrab"].id] = true,
+  --Arm
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
@@ -123,7 +123,7 @@ end
 function gadget:UnitCreated(unitID, unitDefID)
   local name = UnitDefs[unitDefID].name
   if (buttonDefs[name]) then
-    for i, button in ipairs(buttonDefs[name]) do
+    for _, button in ipairs(buttonDefs[name]) do
       Spring.InsertUnitCmdDesc(unitID, button.position or 500, button.cmdDesc)
     end
     reloads[unitID] = {}
@@ -160,7 +160,7 @@ function gadget:GameFrame(n)
         local cmdDescID = Spring.FindUnitCmdDesc(unitID, cmd.id)
         if (cmdDescID) then
           local cmdArray
-          if (cmd.duration and 
+          if (cmd.duration and
               s - reload > cmd.duration and
               s - reload < cmd.reload) then
             if (cmd.endcob and not expired) then
@@ -168,9 +168,9 @@ function gadget:GameFrame(n)
               status[2] = true
             end
             local progress = (s-reload-cmd.duration) / (cmd.reload-cmd.duration) * 100
-            local text = string.format("%d%%", progress)    
+            local text = string.format("%d%%", progress)
             cmdArray = {name = text, disabled = true}
-          elseif (s - reload < cmd.reload) then 
+          elseif (s - reload < cmd.reload) then
             local progress = (s-reload) / (cmd.duration) * 100
             local text = string.format("%d%%", progress)
             cmdArray = {name = text, disabled = true}
@@ -198,7 +198,7 @@ function gadget:UnitDestroyed(unitID)
 end
 
 
-function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+function gadget:AllowCommand(unitID, unitDefID, _, cmdID, cmdParams, _)
   if (buttons[cmdID] and buttonDefs[UnitDefs[unitDefID].name] and buttons[cmdID].name==buttonDefs[UnitDefs[unitDefID].name][1].name) then
     local cmd = buttons[cmdID]
   if (cmd.reload) then

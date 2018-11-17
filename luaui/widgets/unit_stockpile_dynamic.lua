@@ -29,8 +29,8 @@ end
 
 local GetTeamUnits 		= Spring.GetTeamUnits
 local GetMyTeamID		= Spring.GetMyTeamID
-local SetUnitGroup		= Spring.SetUnitGroup
-local GetSpectatingState= Spring.GetSpectatingState
+local _ = Spring.SetUnitGroup
+local _ = Spring.GetSpectatingState
 local GetUnitDefID 		= Spring.GetUnitDefID
 local GetUnitStockpile	= Spring.GetUnitStockpile
 local GiveOrderToUnit	= Spring.GiveOrderToUnit
@@ -41,7 +41,7 @@ function widget:SetConfigData(data)
 end
 
 function widget:GetConfigData()
-	return 
+	return
 	{
 		MaxStockpile= MaxStockpile,
 	}
@@ -64,7 +64,7 @@ function widget:GameStart()
     maybeRemoveSelf()
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     maybeRemoveSelf()
 end
 
@@ -153,7 +153,7 @@ function widget:UnitCaptured(unitID, unitDefID, unitTeam)
 	widget:UnitCreated(unitID, unitDefID, unitTeam)
 end
 
-function widget:StockpileChanged(unitID, unitDefID, unitTeam, weaponNum, oldCount, newCount)
+function widget:StockpileChanged(unitID, _, unitTeam, _, _, _)
 	if ( unitTeam == GetMyTeamID() ) then
 		DoStockPile( unitID )
 	end

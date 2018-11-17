@@ -8,7 +8,7 @@
 ]]--
 --[[
 	table.binsearch( table, value [, compval [, reversed] ] )
-	
+
 	Searches the table through BinarySearch for the given value.
 	If the  value is found:
 		it returns a table holding all the mathing indices (e.g. { startindice,endindice } )
@@ -34,7 +34,7 @@ do
 		local fcompval = fcompval or default_fcompval
 		local fcomp = reversed and fcompr or fcompf
 		--  Initialise numbers
-		local iStart,iEnd,iMid = 1,#t,0
+		local iStart,iEnd, _ = 1,#t,0
 		-- Binary Search
 		while iStart <= iEnd do
 			-- calculate middle
@@ -63,9 +63,9 @@ do
 end
 --[[
 	table.bininsert( table, value [, comp] )
-	
+
 	Inserts a given value through BinaryInsert into the table sorted by [, comp].
-	
+
 	If 'comp' is given, then it must be a function that receives
 	two table elements, and returns true when the first is less
 	than the second, e.g. comp = function(a, b) return a > b end,
@@ -96,4 +96,4 @@ do
 		return (iMid+iState)
 	end
 end
--- CHILLCODE™
+-- CHILLCODEï¿½

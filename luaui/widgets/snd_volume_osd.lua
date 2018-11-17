@@ -20,10 +20,10 @@ function widget:GetInfo()
 end
 
 include('keysym.h.lua')
-local pluskey								= KEYSYMS.PLUS 
-local minuskey								= KEYSYMS.MINUS 
-local pluskey2								= KEYSYMS.KP_PLUS 
-local minuskey2								= KEYSYMS.KP_MINUS 
+local pluskey								= KEYSYMS.PLUS
+local minuskey								= KEYSYMS.MINUS
+local pluskey2								= KEYSYMS.KP_PLUS
+local minuskey2								= KEYSYMS.KP_MINUS
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ function widget:KeyPress(key, mods, isRepeat)
 		--Spring.Echo("Volume = " .. volume)
 		if not isRepeat then Spring.PlaySoundFile(TEST_SOUND, 1.0) end
 		dt = os.clock()
-		return true		
+		return true
 	elseif (key == minuskey or key == minuskey2) and (not mods.alt) and (not mods.shift) then -- KEY = minuskey
 		volume = Spring.GetConfigInt("snd_volmaster", 60)
 		volume = volume - step
@@ -84,16 +84,16 @@ function widget:KeyPress(key, mods, isRepeat)
 end
 
 function widget:DrawScreen()
-		local y1 = widgetPosY 
+		local y1 = widgetPosY
 		local y2 = widgetPosY + widgetHeight
 		local x1 = widgetPosX
 		local x2 = widgetPosX + widgetWidth
 		local ostime = os.clock()
 		local t = ostime - dt
 		local boxwidth = widgetWidth/rectangles
-		
+
 		fontHandler.UseFont(font)
-		
+
 		if t < dtime and dt >= 0 then --dtime = 3
 			local alpha
 			if t < ftime then --ftime = 2
@@ -106,28 +106,28 @@ function widget:DrawScreen()
 			gl.Color(0.5,1,0.5,alpha)
 			TextDraw("Volume: ".. volume .. "%",x1+5,y2+5)
 			gl.Color(0.3,0.3,0.3,0.6*alpha)                              -- draws empty rectangles
-			
+
 			for i = 1,rectangles do
 				local u1 = x1+(i-1)*boxwidth
 				local u2= u1+boxwidth-boxspacing
 				gl.Rect(u1,y1,u2,y2)
 			end
-			
+
 			local vol2 = math.floor(volume/(100/rectangles))
 			gl.Color(0,0.8,0,alpha)                              -- draws filled rectangles
 			for i = 1,vol2 do
 				local u1 = x1+(i-1)*boxwidth
 				local u2= u1+boxwidth-boxspacing
-				gl.Color(red,green,blue,alpha)                              
+				gl.Color(red,green,blue,alpha)
 				gl.Rect(u1+1,y1+1,u1+2,y2-1)
-				gl.Color(red*1.2,green*1.2,blue*1.2,alpha)                              
+				gl.Color(red*1.2,green*1.2,blue*1.2,alpha)
 				gl.Rect(u1+2,y1+1,u2-1,y2-1)
 			end
 		end
 	end
 
 function widget:TweakDrawScreen()
-	local y1 = widgetPosY 
+	local y1 = widgetPosY
 	local y2 = widgetPosY + widgetHeight
 	local x1 = widgetPosX
 	local x2 = widgetPosX + widgetWidth
@@ -145,21 +145,21 @@ function widget:TweakDrawScreen()
 		local u2= u1+8
 		gl.Rect(u1,y1,u2,y2)
 	end
-	
+
 	local vol2 = math.floor(volume/2.5)
 	gl.Color(0,0.8,0,1)                              -- draws filled rectangles
 	for i = 1,vol2 do
 		local u1 = x1+(i-1)*10
 		local u2= u1+8
 		gl.Rect(u1+1,y1+1,u2-1,y2-1)
-	end	
+	end
 end
 
 	-----------------
 	-- AID --
 	-----------------
 
-function widget:TweakMouseMove(x,y,dx,dy,button)
+function widget:TweakMouseMove(x,y,dx,dy, _)
 		if pressedToMove then
 		if moveStartX == nil then                                                      -- move widget on y axis
 			moveStartX = x - widgetPosX
@@ -183,7 +183,7 @@ function widget:TweakMouseMove(x,y,dx,dy,button)
 			widgetPosX = vsx - widgetWidth - 5
 		end
 	end
-	
+
 end
 
 function widget:TweakMousePress(x, y, button)
@@ -197,8 +197,8 @@ function widget:TweakMousePress(x, y, button)
 	end
 end
 
-function widget:TweakMouseRelease(x,y,button)
-	pressedToMove = false                                             
+function widget:TweakMouseRelease(_, _, _)
+	pressedToMove = false
 end
 
 function IsOnButton(x, y, BLcornerX, BLcornerY,TRcornerX,TRcornerY)
@@ -215,7 +215,7 @@ end
 	-- SAVE/LOAD --
 	-----------------
 
-function widget:GetConfigData(data)      -- save
+function widget:GetConfigData(_)      -- save
 	return {
 		widgetPosX         = widgetPosX,
 		widgetPosY         = widgetPosY,

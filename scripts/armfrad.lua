@@ -1,10 +1,10 @@
-local base = piece 'base' 
-local platform = piece 'platform' 
-local post = piece 'post' 
-local tower = piece 'tower' 
-local dish = piece 'dish' 
-local ear1 = piece 'ear1' 
-local ear2 = piece 'ear2' 
+local base = piece 'base'
+local platform = piece 'platform'
+local post = piece 'post'
+local tower = piece 'tower'
+local dish = piece 'dish'
+local ear1 = piece 'ear1'
+local ear2 = piece 'ear2'
 
 
 local spGetUnitIsStunned = Spring.GetUnitIsStunned
@@ -13,14 +13,14 @@ local stunned = 0
 local function StunnedCheck()
 	while true do
 		if select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) == 1  then
-			if  stunned and stunned == 1 then 
+			if  stunned and stunned == 1 then
 				stunned = 1;
 				SetUnitValue(COB.ACTIVATION, 0)
 			end
 			stunned = 1;
-		elseif stunned and stunned == 1  and not select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) ~= 1 then 
+		elseif stunned and stunned == 1  and not select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) ~= 1 then
 			stunned = 0;
-			SetUnitValue(COB.ACTIVATION, 1) 
+			SetUnitValue(COB.ACTIVATION, 1)
 		end
 		Sleep(250);
 	end
@@ -37,20 +37,20 @@ local function get_health_percent()
 end
 
 
-local function SmokeUnit(healthpercent, sleeptime, smoketype)
+local function SmokeUnit(_, _, _)
 	while still_building_p() do Sleep(400); end
-	
+
 	while (true) do
 		local health_percent = get_health_percent();
-		
+
 		if (health_percent < 66) then
 			local smoketype = 258;
 			if (math.random(1, 66) < health_percent) then smoketype = 257; end
 			Spring.UnitScript.EmitSfx(base, smoketype);
 		end
-		
+
 		local sleep_time = health_percent * 50;
-		if (sleep_time < 200) then 
+		if (sleep_time < 200) then
 		  sleep_time = 200; end
 		Sleep(sleep_time);
 	end
@@ -95,7 +95,7 @@ function script.Killed(recentDamage, maxHealth)
 
 
 	if  (severity <= .25)  then
-	
+
 		Explode(base, SFX.NONE)
 		Explode(platform, SFX.NONE)
 		Explode(post, SFX.NONE)
@@ -104,7 +104,7 @@ function script.Killed(recentDamage, maxHealth)
 		Explode(ear1, SFX.NONE)
 		Explode(ear2, SFX.NONE)
 		return 1 -- corpsetype
-		
+
 	elseif  (severity <= .50)  then
 
 		Explode(base, SFX.NONE)
@@ -117,7 +117,7 @@ function script.Killed(recentDamage, maxHealth)
 
 		return 2 -- corpsetype
 	else
-	  
+
 	Explode(base, SFX.NONE)
 	Explode(platform, SFX.NONE)
 	Explode(post, SFX.NONE)

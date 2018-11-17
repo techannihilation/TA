@@ -25,7 +25,7 @@ local maverickOriginalRange = WeaponDefNames["armmav_armmav_weapon"].range
 
 local updateList = {}
 
-function gadget:GameFrame(n)
+function gadget:GameFrame(_)
 	for unitID in pairs(updateList) do
 		local curExp = GetUnitExperience(unitID)
         if curExp then
@@ -46,7 +46,7 @@ function GG.requestMaverickExpUpdate(unitID)
     updateList[unitID] = true
 end
 
-function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitDamaged(_, _, _, _, _, _, _, attackerID, attackerDefID, _)
 	if attackerDefID ~= maverickUnitDefID then
 		return
 	end

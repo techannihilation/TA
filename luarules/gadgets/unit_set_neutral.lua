@@ -19,7 +19,7 @@ end
 
 local GetUnitCOBValue = Spring.GetUnitCOBValue
 local SetUnitNeutral = Spring.SetUnitNeutral
-local GetUnitStates = Spring.GetUnitStates
+local _ = Spring.GetUnitStates
 local neutralUnits = {}
 local armourTurrets = {}
 
@@ -38,21 +38,21 @@ function gadget:GameFrame(n)
 		local armoured = (cobValue > 0)
 		if neutral and (not armoured) then
 		  SetUnitNeutral(unitID, false)
-		  neutralUnits[unitID] = false  
+		  neutralUnits[unitID] = false
         elseif (not neutral) and armoured then
           SetUnitNeutral(unitID, true)
-          neutralUnits[unitID] = true  
+          neutralUnits[unitID] = true
 		end
-      end      
-    end    
+      end
+    end
   end
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function gadget:UnitDestroyed(unitID, _, _)
   neutralUnits[unitID] = nil
 end
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, unitDefID, _)
   if armourTurrets[unitDefID] then
     if (GetUnitCOBValue(unitID, 20) == 1) then
       SetUnitNeutral(unitID, true)

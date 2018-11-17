@@ -26,7 +26,7 @@ local GetUnitExperience    = Spring.GetUnitExperience
 local GetTeamList          = Spring.GetTeamList
 local GetTeamUnits         = Spring.GetTeamUnits
 local GetMyAllyTeamID      = Spring.GetMyAllyTeamID
-local GetUnitViewPosition  = Spring.GetUnitViewPosition
+local _ = Spring.GetUnitViewPosition
 local spGetSpectatingState = Spring.GetSpectatingState
 
 local glDepthTest      = gl.DepthTest
@@ -43,12 +43,12 @@ local glDeleteTexture  = gl.DeleteTexture
 local GL_GREATER = GL.GREATER
 
 
--- loads unit morph info 
+-- loads unit morph info
 local morphDefs = VFS.Include('LuaRules/Configs/morph_defs_techa.lua', nil, VFS.RAW_FIRST)
 local morphRanks ={}
 
 local CMD_MORPH = 31410
-local MAX_MORPH = 250 -- ATM its 173
+local _ = 250 -- ATM its 173
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
@@ -79,8 +79,8 @@ local morphRankMax = #rankTextures
 
 local TooHigh = true
 local HighPing = false
-local FPSCount = Spring.GetFPS()
-local FPSLimit = 8
+local _ = Spring.GetFPS()
+local _ = 8
 
 local message = 0
 -------------------------------------------------------------------------------------
@@ -104,11 +104,11 @@ local function getUnitMorphXpValuesArray(unitName)
 	local i,v,i2,v2
 
   if morphDefs[unitName] then
-    for i, v in ipairs(morphDefs[unitName]) do
+    for _, v in ipairs(morphDefs[unitName]) do
       if v.xp then
       	 -- now check xp value hasnt already been recorded
       	 found = false
-				 for i2, v2 in ipairs(result) do
+				 for _, v2 in ipairs(result) do
 				   if v2 == v.xp then
 				 	   found = true
 			 		 end
@@ -124,7 +124,7 @@ end
 local function getAllUnitsMorphXpValuesArray()
 	local result = {}
 	local n,v
-	for n, v in pairs(morphDefs) do
+	for n, _ in pairs(morphDefs) do
     result[n] = getUnitMorphXpValuesArray(n)
 	end
 	return result
@@ -149,7 +149,7 @@ function widget:Initialize()
 
 
   -- now scan thru morphDefs and standardise structure
-  for k, v in pairs(morphDefs) do
+  for k, _ in pairs(morphDefs) do
    if morphDefs[k].into then morphDefs[k] = {morphDefs[k]} end
   end
 
@@ -173,7 +173,7 @@ end
 
 local function SetUnitRank(unitID)
   local ud = UnitDefs[GetUnitDefID(unitID)]
-  local teamID = Spring.GetUnitTeam(unitID)
+  local _ = Spring.GetUnitTeam(unitID)
   local rankIndex = 0
   local i, v
   if (ud == nil) then
@@ -181,7 +181,7 @@ local function SetUnitRank(unitID)
     return
   end
   local unitName = ud.name
-  local humanName = ud.humanName
+  local _ = ud.humanName
   local xp = GetUnitExperience(unitID)
   if (not xp) then
     alliedUnits[unitID] = nil
@@ -191,7 +191,7 @@ local function SetUnitRank(unitID)
 
     -- find out if there are xp requiring morphs for the unit
     if morphRanks[unitName] then
-			 for i,v in ipairs(morphRanks[unitName]) do
+			 for _,v in ipairs(morphRanks[unitName]) do
 			 	 if xp < v then
 	 	 		   break
 			   else
@@ -207,7 +207,7 @@ local function SetUnitRank(unitID)
   local rankTex = rankTextures[rankIndex]
 
   alliedUnits[unitID] = {}
-    if (rankTex ~= nil) then 
+    if (rankTex ~= nil) then
       smallList[unitID] = { rankTex, ud.height + iconoffset, message, humanName, teamID, false}
     end
 end
@@ -253,8 +253,8 @@ function widget:GameFrame(frame)
     --Spring.Echo("current cmdid ", WG["hoverID"], CMD_MORPH, CMD_MORPH+200 ,frame)
     if WG.hoverID and (WG.hoverID >= CMD_MORPH and WG.hoverID <= (CMD_MORPH+200)) then
       local sel = Spring.GetSelectedUnits()
-      for i, unitIDs in pairs(sel) do
-        local unitDefID = Spring.GetUnitDefID(unitIDs)
+      for _, unitIDs in pairs(sel) do
+        local _ = Spring.GetUnitDefID(unitIDs)
         if smallList[unitIDs] then
           table.insert(morphableList,unitIDs)
         end
@@ -280,21 +280,21 @@ end
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-function widget:UnitCreated(unitID, unitDefID, unitTeam)
+function widget:UnitCreated(unitID, _, _)
   if (Spring.IsUnitAllied(unitID)) then
     SetUnitRank(unitID)
   end
 end
 
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
   alliedUnits[unitID] = nil
   smallList[unitID] = nil
   sentmessage[unitID] = nil
 end
 
 
-function widget:UnitGiven(unitID, unitDefID, oldTeam, newTeam)
+function widget:UnitGiven(unitID, _, _, _)
   if (Spring.IsUnitAllied(unitID)) then
     SetUnitRank(unitID)
   else
@@ -316,15 +316,15 @@ end
 
 
 function widget:DrawWorld()
-  if TooHigh or HighPing then 
+  if TooHigh or HighPing then
     return
   end
-  
-  if Spring.IsGUIHidden() == false then 
+
+  if Spring.IsGUIHidden() == false then
     --if (next(smallList) == nil) then
     --  return -- avoid unnecessary GL calls
    -- end
-  
+
     CreateBillboard()
 
     glDepthMask(true)
@@ -334,12 +334,12 @@ function widget:DrawWorld()
       glTexture(rankTexHeight[1])
       glDrawFuncAtUnit(unitID, false, DrawUnitFunc, rankTexHeight[2])
     end
-       
+
     glTexture(false)
     glAlphaTest(false)
     glDepthTest(false)
     glDepthMask(false)
-    
+
   end
 end
 

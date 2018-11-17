@@ -60,9 +60,9 @@ local jumpDefNames  = VFS.Include"LuaRules/Configs/jump_defs.lua"
 
 local function ListToSet(t)
   local new = {}
-  for k, v in ipairs(t) do
+  for _, v in ipairs(t) do
     new[v] = true
-  end 
+  end
   return new
 end
 
@@ -96,11 +96,11 @@ end
 local function DrawLoop(start, vector, color, progress, step, height)
   glColor(color[1], color[2], color[3], color[4])
   for i=progress, 1, step do
-    
+
     local x = start[1] + vector[1]*i
     local y = start[2] + vector[2]*i + (1-(2*i-1)^2)*height
     local z = start[3] + vector[3]*i
-    
+
     glVertex(x, y, z)
   end
 end
@@ -109,49 +109,49 @@ end
 local function DrawArc(unitID, start, finish, color, jumpFrame, range)
 
   -- todo: display lists
-  
+
   local step
   local progress
   local vector       = {}
-  
+
   local unitDefID    = spGetUnitDefID(unitID)
-  local height       = jumpDefs[unitDefID].height
-  
+  local _ = jumpDefs[unitDefID].height
+
   for i=1, 3 do
     vector[i]        = finish[i] - start[i]
   end
-  
+
   if (range) then
     glColor(yellow[1], yellow[2], yellow[3], yellow[4])
     glDrawGroundCircle(start[1], start[2], start[3], range, 100)
   end
-  
+
   if (jumpFrame) then
     local vertex     = {}
-    
+
     vertex[1]        = start[1] + vector[1]*0.5
     vertex[2]        = start[2] + vector[2]*0.5 + (1-(2*0.5-1)^2)*height
     vertex[3]        = start[3] + vector[3]*0.5
-    
+
     local lineDist   = GetDist3(start, finish)
     local flightDist = GetDist2(start, vertex) + GetDist3(vertex, finish)
-    
+
     local speed      = jumpDefs[unitDefID].speed * lineDist/flightDist
     step             = speed/lineDist
-    
+
     local frame      = spGetGameFrame()
-    
+
     progress         = (frame - jumpFrame) * step
-    
+
   else
     progress         = 0
     step             = 0.01
   end
-  
+
   glLineStipple('')
   glBeginEnd(GL_LINE_STRIP, DrawLoop, start, vector, color, progress, step, height)
   glLineStipple(false)
-  
+
 end
 
 
@@ -167,9 +167,9 @@ local function DrawLine(a, b, color)
   glBeginEnd(GL_LINE_STRIP, Line, a, b, color)
   glLineStipple(false)
 end
- 
 
-local function DrawQueue(unitID)
+
+local function _(unitID)
   local queue = spGetCommandQueue(unitID,-1)
   if (not queue or not jumpDefs[spGetUnitDefID(unitID)]) then
     return
@@ -220,7 +220,7 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
         widgetHandler:RemoveWidget(self)
     end
@@ -236,7 +236,7 @@ function widget:GameStart()
   widget:PlayerChanged()
 end
 
-function widget:CommandNotify(id, params, options)
+function widget:CommandNotify(id, _, _)
   if (id ~= CMD_JUMP) then
     return
   end
@@ -252,14 +252,14 @@ function widget:CommandNotify(id, params, options)
 end
 
 
-function widget:UnitCmdDone(unitID, unitDefID, unitTeam, cmdID, cmdTag)
+function widget:UnitCmdDone(unitID, _, _, _, _)
   local cmd
   if spGetCommandQueue(unitID,1) then
-	cmd = spGetCommandQueue(unitID,-1)[2] 
+	cmd = spGetCommandQueue(unitID,-1)[2]
   end
   if (cmd and cmd.id == CMD_JUMP) then
       lastJump[unitID] = {
-        pos = {spGetUnitPosition(unitID)}, 
+        pos = {spGetUnitPosition(unitID)},
         frame = spGetGameFrame(),
       }
   end

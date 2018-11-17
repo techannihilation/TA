@@ -20,7 +20,7 @@ end
 local SpGetMyTeamID = Spring.GetMyTeamID
 local SpIsGUIHidden = Spring.IsGUIHidden
 local SpGetTeamUnits = Spring.GetTeamUnits
-local spGetSpectatingState = Spring.GetSpectatingState
+local _ = Spring.GetSpectatingState
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ local UnitCount = nil
 
 local tackyfontpath = "luarules/fonts/LCD2U___.TTF"
 local textcolor =  { 1.0, 0.0, 0.0, 1.0 }
-local outline =  { 0.1, 0.1, 0.1, 1.0 }	
+local outline =  { 0.1, 0.1, 0.1, 1.0 }
 local vsx,vsy = Spring.GetViewGeometry()
 local dx,dy = vsx*0.955, vsy*0.88
 local teamID = SpGetMyTeamID()
@@ -54,7 +54,7 @@ function widget:Initialize()
   end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
   if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
     widgetHandler:RemoveWidget(self)
   end

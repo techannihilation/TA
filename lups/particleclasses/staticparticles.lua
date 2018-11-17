@@ -61,22 +61,22 @@ StaticParticles.Default = {
 
 --// speed ups
 
-local abs  = math.abs
+local _ = math.abs
 local sqrt = math.sqrt
 local rand = math.random
-local twopi= 2*math.pi
-local cos  = math.cos
-local sin  = math.sin
+local _ = 2*math.pi
+local _ = math.cos
+local _ = math.sin
 local min  = math.min
 
-local spGetUnitLosState     = Spring.GetUnitLosState
-local spGetPositionLosState = Spring.GetPositionLosState
+local _ = Spring.GetUnitLosState
+local _ = Spring.GetPositionLosState
 local spGetUnitViewPosition = Spring.GetUnitViewPosition
 local spIsSphereInView      = Spring.IsSphereInView
 local spGetUnitRadius       = Spring.GetUnitRadius
 local spGetProjectilePosition = Spring.GetProjectilePosition
 
-local glTexture     = gl.Texture 
+local glTexture     = gl.Texture
 local glBlending    = gl.Blending
 local glUniform     = gl.Uniform
 local glUniformInt  = gl.UniformInt
@@ -85,10 +85,10 @@ local glPopMatrix   = gl.PopMatrix
 local glTranslate   = gl.Translate
 local glCallList    = gl.CallList
 local glRotate      = gl.Rotate
-local glColor       = gl.Color
+local _ = gl.Color
 
-local glBeginEnd     = gl.BeginEnd
-local GL_QUADS       = GL.QUADS
+local _ = gl.BeginEnd
+local _ = GL.QUADS
 local glMultiTexCoord= gl.MultiTexCoord
 local glVertex       = gl.Vertex
 
@@ -104,7 +104,7 @@ function StaticParticles:CreateParticleAttributes(partpos,n)
   local part = {size=self.size+size,life=life,i=n}
   pos   = { ProcessParamCode(partpos, part) }
 
-  return life, size, 
+  return life, size,
          pos[1],pos[2],pos[3];
 end
 

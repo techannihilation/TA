@@ -9,13 +9,13 @@
         enabled   = true,
       }
     end
-     
+
 if (not gadgetHandler:IsSyncedCode()) then
   return
 end
 
-local GetUnitHealth 		= Spring.GetUnitHealth 
-local random				= math.random 
+local GetUnitHealth 		= Spring.GetUnitHealth
+local random				= math.random
 local SetUnitCOBValue	 	= Spring.SetUnitCOBValue
 local SetUnitNoSelect		= Spring.SetUnitNoSelect
 local SetUnitNoMinimap		= Spring.SetUnitNoMinimap
@@ -38,9 +38,9 @@ function gadget:Initialize()
 	--crashable[UnitDefNames['armliche'].id] = false
 end
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, unitDefID, _, damage, paralyzer, _, _, _, _, _)
 	if paralyzer then return damage,1 end --OOPS FORGOT THIS
-	if crashing[unitID] then 
+	if crashing[unitID] then
 		return 0,0
 	end --hacky
 	if crashable[UnitDefID] and (damage>GetUnitHealth(unitID)) and random()<0.33 then
@@ -48,7 +48,7 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 		--Spring.Echo('CRASHING AIRCRAFT',unitID)
 		crashingCount = crashingCount + 1
 		crashing[unitID] = Spring.GetGameFrame() + 300
-		for weaponID, weapon in pairs(UnitDefs[unitDefID].weapons) do
+		for weaponID, _ in pairs(UnitDefs[unitDefID].weapons) do
 			SetUnitWeaponState(unitID, weaponID, "reloadTime", 9999)
 		end
 		SetUnitCOBValue(unitID, COB.CRASHING, 1)
@@ -74,7 +74,7 @@ function gadget:GameFrame(gf)
 	end
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)
+function gadget:UnitDestroyed(unitID, _, _, _, _, _)
 	if crashing[unitID] then
 		crashingCount = crashingCount - 1
 		--Spring.Echo('CRASHING AIRCRAFT UNITDESTROYED CALLED!',unitID)

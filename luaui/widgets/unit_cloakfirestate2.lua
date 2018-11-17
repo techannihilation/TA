@@ -63,7 +63,7 @@ local exceptionList = { --add exempt units here
 	"armamb",
 	"armpacko",
 	--Snipers
-	"armsnipe", 
+	"armsnipe",
 	"corprot"
 }
 
@@ -79,7 +79,7 @@ local cloakUnit = {} --stores the desired fire state when decloaked of each unit
 
 function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams)
 if cmdID == CMD_CLOAK and cmdParams[1] == 1 then
-	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] then 
+	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] then
 		return
 	end
 	local states = GetUnitStates(unitID)
@@ -90,7 +90,7 @@ if cmdID == CMD_CLOAK and cmdParams[1] == 1 then
 	end
 elseif cmdID == CMD_CLOAK and cmdParams[1] == 0 then
 
-	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] or (not cloakUnit[unitID]) then 
+	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] or (not cloakUnit[unitID]) then
 		return
 	end
 	local states = GetUnitStates(unitID)
@@ -114,7 +114,7 @@ function widget:Initialize()
 	CheckEnable()
 end
 
-function widget:UnitCreated(unitID, unitDefID, unitTeam)
+function widget:UnitCreated(unitID, _, unitTeam)
 	if (not enabled) then
 		return
 	end
@@ -130,7 +130,7 @@ function widget:UnitGiven(unitID, unitDefID, unitTeam)
 	widget:UnitCreated(unitID, unitDefID, unitTeam)
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
 	if cloakUnit[unitID] then
 		cloakUnit[unitID] = nil
 	end

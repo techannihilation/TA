@@ -23,20 +23,20 @@ local screenWidth = 1050-bgMargin-bgMargin
 local customScale = 1
 
 local spIsGUIHidden = Spring.IsGUIHidden
-local showHelp = false
+local _ = false
 
-local glColor = gl.Color
-local glLineWidth = gl.LineWidth
-local glPolygonMode = gl.PolygonMode
-local glRect = gl.Rect
-local glText = gl.Text
-local glShape = gl.Shape
+local _ = gl.Color
+local _ = gl.LineWidth
+local _ = gl.PolygonMode
+local _ = gl.Rect
+local _ = gl.Text
+local _ = gl.Shape
 local glGetTextWidth = gl.GetTextWidth
-local glGetTextHeight = gl.GetTextHeight
+local _ = gl.GetTextHeight
 
-local bgColorMultiplier = 0
+local _ = 0
 
-local glCreateList = gl.CreateList
+local _ = gl.CreateList
 local glCallList = gl.CallList
 local glDeleteList = gl.DeleteList
 
@@ -45,17 +45,17 @@ local glPushMatrix = gl.PushMatrix
 local glTranslate = gl.Translate
 local glScale = gl.Scale
 
-local GL_FILL = GL.FILL
-local GL_FRONT_AND_BACK = GL.FRONT_AND_BACK
-local GL_LINE_STRIP = GL.LINE_STRIP
+local _ = GL.FILL
+local _ = GL.FRONT_AND_BACK
+local _ = GL.LINE_STRIP
 
 local widgetScale = 1
-local vsx, vsy = Spring.GetViewGeometry()
+local _, _ = Spring.GetViewGeometry()
 
 local vsx,vsy = Spring.GetViewGeometry()
 local screenX = (vsx*0.5) - (screenWidth/2)
 local screenY = (vsy*0.5) + (screenHeight/2)
-  
+
 function widget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
   screenX = (vsx*0.5) - (screenWidth/2)
@@ -65,7 +65,7 @@ function widget:ViewResize()
   keybinds = gl.CreateList(DrawWindow)
 end
 
-local myTeamID = Spring.GetMyTeamID()
+local _ = Spring.GetMyTeamID()
 local showOnceMore = false
 
 local function DrawRectRound(px,py,sx,sy,cs, tl,tr,br,bl)
@@ -74,19 +74,19 @@ local function DrawRectRound(px,py,sx,sy,cs, tl,tr,br,bl)
 	gl.Vertex(sx-cs, py, 0)
 	gl.Vertex(sx-cs, sy, 0)
 	gl.Vertex(px+cs, sy, 0)
-	
+
 	gl.Vertex(px, py+cs, 0)
 	gl.Vertex(px+cs, py+cs, 0)
 	gl.Vertex(px+cs, sy-cs, 0)
 	gl.Vertex(px, sy-cs, 0)
-	
+
 	gl.Vertex(sx, py+cs, 0)
 	gl.Vertex(sx-cs, py+cs, 0)
 	gl.Vertex(sx-cs, sy-cs, 0)
 	gl.Vertex(sx, sy-cs, 0)
-	
+
 	local offset = 0.07		-- texture offset, because else gaps could show
-	
+
 	-- bottom left
 	if ((py <= 0 or px <= 0)  or (bl ~= nil and bl == 0)) and bl ~= 2   then o = 0.5 else o = offset end
 	gl.TexCoord(o,o)
@@ -161,7 +161,7 @@ function DrawTextTable(t,x,y)
 		width = math.max(glGetTextWidth(line)*11,width)
       end
       height = height + 13
-      
+
 	  j = j + 1
     end
     --screenHeight = math.max(screenHeight, height)
@@ -170,16 +170,16 @@ function DrawTextTable(t,x,y)
 end
 
 function DrawWindow()
-    local vsx,vsy = Spring.GetViewGeometry()
+    local _, _ = Spring.GetViewGeometry()
     local x = screenX --rightwards
     local y = screenY --upwards
-    
+
 	-- background
 	RectRound(x-bgMargin,y-screenHeight-bgMargin,x+screenWidth+bgMargin,y+bgMargin,8, 0,1,1,1)
 	-- content area
 	gl.Color(0.33,0.33,0.33,0.15)
 	RectRound(x,y-screenHeight,x+screenWidth,y,8)
-	
+
 	-- close button
 	local size = closeButtonSize*0.7
 	local width = size*0.055
@@ -191,7 +191,7 @@ function DrawWindow()
   	gl.Rotate(90,0,0,1)
   	gl.Rect(-width,size/2,width,-size/2)
 	gl.PopMatrix()
-	
+
 	-- title background
     local title = "Keybinds"
     local titleFontSize = 18
@@ -204,13 +204,13 @@ function DrawWindow()
 	font:SetOutlineColor(0,0,0,0.4)
 	font:Print(title, x-bgMargin+(titleFontSize*0.75), y+bgMargin+8, titleFontSize, "on")
 	font:End()
-	
+
     DrawTextTable(General,x,y-24)
     x = x + 350
     DrawTextTable(Units_I_II,x,y-24)
     x = x + 350
     DrawTextTable(Units_III,x,y-24)
-	
+
     gl.Color(1,1,1,1)
     gl.Text("These keybinds are set by default. If you remove/replace hotkey widgets, or use your own uikeys, they might stop working!", screenX+12, y-screenHeight + 14, 12.5)
 end
@@ -221,7 +221,7 @@ function widget:DrawScreen()
   if not keybinds then
       keybinds = gl.CreateList(DrawWindow)
   end
-  
+
   if show or showOnceMore then
 		glPushMatrix()
 			glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
@@ -257,7 +257,7 @@ function widget:KeyPress(key)
 end
 
 function IsOnRect(x, y, BLcornerX, BLcornerY,TRcornerX,TRcornerY)
-	
+
 	-- check if the mouse is in a rectangle
 	return x >= BLcornerX and x <= TRcornerX
 	                      and y >= BLcornerY
@@ -272,17 +272,17 @@ function widget:MouseRelease(x, y, button)
 	return mouseEvent(x, y, button, true)
 end
 
-function mouseEvent(x, y, button, release)
+function mouseEvent(x, y, _, release)
 	if spIsGUIHidden() then return false end
-  
-  if show then 
+
+  if show then
 		-- on window
 		local rectX1 = ((screenX-bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
 		local rectY1 = ((screenY+bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
 		local rectX2 = ((screenX+screenWidth+bgMargin) * widgetScale) - ((vsx * (widgetScale-1))/2)
 		local rectY2 = ((screenY-screenHeight-bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
 		if IsOnRect(x, y, rectX1, rectY2, rectX2, rectY1) then
-			
+
 			-- on close button
 			rectX1 = rectX2 - ((closeButtonSize+bgMargin+bgMargin) * widgetScale)
 			rectY2 = rectY1 - ((closeButtonSize+bgMargin+bgMargin) * widgetScale)

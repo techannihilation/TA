@@ -19,13 +19,13 @@ end
 
 local enabled = tonumber(Spring.GetModOptions().mo_greenfields) or 0
 
-if (enabled == 0) then 
+if (enabled == 0) then
   return false
 end
 
 local SetUnitMetalExtraction = Spring.SetUnitMetalExtraction
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, _, _)
  SetUnitMetalExtraction(unitID, 0, 0)
 end
 

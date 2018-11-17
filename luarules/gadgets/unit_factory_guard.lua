@@ -1,4 +1,4 @@
-local versionNumber = "1.2"
+local _ = "1.2"
 
 function gadget:GetInfo()
 	return {
@@ -14,16 +14,16 @@ end
 
 -- Shared SYNCED/UNSYNCED
 
-CMD_FACTORYGUARD 						= 37460 
-local SetCustomCommandDrawData					= Spring.SetCustomCommandDrawData
-local FindUnitCmdDesc 						= Spring.FindUnitCmdDesc
+CMD_FACTORYGUARD 						= 37460
+local _ = Spring.SetCustomCommandDrawData
+local _ = Spring.FindUnitCmdDesc
 
 if (gadgetHandler:IsSyncedCode()) then
 
 --SYNCED
 
 
-local Echo 							= Spring.Echo
+local _ = Spring.Echo
 local EditUnitCmdDesc						= Spring.EditUnitCmdDesc
 local FindUnitCmdDesc						= Spring.FindUnitCmdDesc
 local InsertUnitCmdDesc						= Spring.InsertUnitCmdDesc
@@ -68,33 +68,33 @@ local function UpdateFactoryButton(unitID, newValue)
 	if (cmdDescID == nil) then
 		return
 	end
-	
+
 	factoryGuardCmd.params[1] = newValue
 	EditUnitCmdDesc(unitID, cmdDescID, {params  = factoryGuardCmd.params})
 	SetFactoryValues(unitID,newValue)
 	Spring.SetUnitRulesParam(unitID,"FactoryGuard",newValue)
 end
 
-function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID,factDefID,_)
+function gadget:UnitFromFactory(_, unitDefID, _, factID, _,_)
 	local uD = UnitDefs[unitDefID]
-		
+
 	if uD and uD.canGuard and not uD.isFactory and uD.isBuilder and uD.canAssist then
 		local guardLimit = Spring.GetUnitRulesParam(factID,"FactoryGuard")
-		
+
 		if not guardLimit then return end
 		if guardLimit == 4 or guardLimit == 0 then
 			return -- no updates needed for trivial cases
 		else
 			local nbGuard = Spring.GetUnitRulesParam(factID,"nbGuard")
 			local nbPass = Spring.GetUnitRulesParam(factID,"nbPass")
-			
+
 			if nbGuard == 0 and nbPass == 0 then
 				SetFactoryValues(factID,guardLimit)
 			else
 				if nbGuard > 0 then
 					nbGuard = nbGuard - 1
 					Spring.SetUnitRulesParam(factID,"nbGuard",nbGuard)
-				elseif nbPass > 0 then					
+				elseif nbPass > 0 then
 					nbPass = nbPass - 1
 					Spring.SetUnitRulesParam(factID,"nbPass",nbPass)
 					if nbPass == 0 then
@@ -108,7 +108,7 @@ end
 
 function gadget:Initialize()
 	gadgetHandler:RegisterCMDID(CMD_FACTORYGUARD)
-		
+
 	for _, unitID in ipairs(Spring.GetAllUnits()) do
 		local unitDefID = GetUnitDefID(unitID)
 		gadget:UnitCreated(unitID, unitDefID, team)
@@ -116,19 +116,19 @@ function gadget:Initialize()
 end
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
-	
+
 	if cmdID ~= CMD_FACTORYGUARD then
 		return true
 	end
-	
+
 	local newValue = cmdParams[1]
 	local fd = UnitDefs[unitDefID]
 	defaultTeamSetting[teamID] = newValue
-	
+
 	if fd and fd.isFactory then
 		UpdateFactoryButton(unitID,newValue)
 	end
-	
+
 	return false
 end
 
@@ -142,6 +142,6 @@ function gadget:UnitCreated(unitID, unitDefID, teamID)
 	end
 end
 
-else 
+else
 --UNSYNCED
 end

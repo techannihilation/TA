@@ -72,13 +72,13 @@ local TooHigh = true
 
 
 local function unitHeight(unitDefID)
-  if not heightList[unitDefID] then 
+  if not heightList[unitDefID] then
     heightList[unitDefID] = (GetUnitDefDimensions(unitDefID).height * 0.9)
   end
-  return heightList[unitDefID]  
+  return heightList[unitDefID]
 end
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(_, unitDefID, _)
   if not heightList[unitDefID] then
     heightList[unitDefID] = (GetUnitDefDimensions(unitDefID).height * 0.9)
   end
@@ -104,7 +104,7 @@ local function displayDamage(unitID, unitDefID, damage, paralyze)
   damageTable[1].riseTime = (math.min((damage / 2500), 2) + 1)
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, unitDefID, _)
   if unitDamage[unitID] then
     local ux, uy, uz = GetUnitViewPosition(unitID)
     if ux ~= nil then
@@ -151,11 +151,11 @@ function widget:UnitTaken(unitID, unitDefID, oldTeam, newTeam)
   end
 end
 
-function widget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer)
+function widget:UnitDamaged(unitID, unitDefID, _, damage, paralyzer)
   if (damage < 1.5) then return end
-  
+
   if (UnitDefs[unitDefID] == nil) then return end
-    
+
   if paralyzer then
     if unitParalyze[unitID] then
       unitParalyze[unitID].damage = (unitParalyze[unitID].damage + damage)
@@ -165,8 +165,8 @@ function widget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer)
     unitDamage[unitID].damage = (unitDamage[unitID].damage + damage)
     return
   end
-    
-  if paralyze then 
+
+  if paralyze then
     unitParalyze[unitID] = {}
     unitParalyze[unitID].damage = damage
     unitParalyze[unitID].time = (lastTime + 0.1)
@@ -194,7 +194,7 @@ local function calcDPS(inTable, paralyze, theTime)
 end
 
 local function drawDeathDPS(damage,ux,uy,uz,textSize,red,alpha)
-  
+
   glPushMatrix()
   glTranslate(ux, uy, uz)
   glBillboard()
@@ -212,7 +212,7 @@ local function drawDeathDPS(damage,ux,uy,uz,textSize,red,alpha)
     end)
   end
   glCallList(drawTextLists[damage])
-  
+
   glPopMatrix()
 end
 
@@ -235,29 +235,29 @@ local function DrawUnitFunc(yshift, xshift, damage, textSize, alpha, paralyze)
 end
 
 function widget:DrawWorld()
-  if TooHigh then 
+  if TooHigh then
     return
   end
 
   local theTime = GetGameSeconds()
-  
+
   if (theTime ~= lastTime) then
-  
+
     if next(unitDamage) then calcDPS(unitDamage, false, theTime) end
     if next(unitParalyze) then calcDPS(unitParalyze, true, theTime) end
-    
+
     if changed then
       table.sort(damageTable, function(m1,m2) return m1.damage < m2.damage; end)
       changed = false
     end
   end
-  
+
   lastTime = theTime
- 
+
   if (not next(damageTable)) and (not next(deadList)) then return end
-    
+
   _,_,paused = GetGameSpeed()
-  
+
   glDepthMask(true)
   glDepthTest(true)
   glAlphaTest(GL_GREATER, 0)
@@ -265,25 +265,25 @@ function widget:DrawWorld()
   gl.Texture(1, "LuaUI/images/gradient_alpha_2.png")
 
   for i, damage in pairs(damageTable) do
-    if (damage.lifeSpan <= 0) then 
+    if (damage.lifeSpan <= 0) then
       table.remove(damageTable,i)
     else
-      glDrawFuncAtUnit(damage.unitID, false, DrawUnitFunc, (damage.height + damage.heightOffset), 
+      glDrawFuncAtUnit(damage.unitID, false, DrawUnitFunc, (damage.height + damage.heightOffset),
                        damage.offset, damage.damage, damage.textSize, damage.lifeSpan, damage.paralyze)
       if not paused then
-        if damage.paralyze then 
+        if damage.paralyze then
           damage.lifeSpan = (damage.lifeSpan - 0.05)
           damage.textSize = (damage.textSize + 0.2)
         else
           damage.heightOffset = (damage.heightOffset + damage.riseTime)
-          if (damage.heightOffset > 25) then 
+          if (damage.heightOffset > 25) then
             damage.lifeSpan = (damage.lifeSpan - damage.fadeTime)
           end
         end
       end
     end
   end
-  
+
   for i, death in pairs(deadList) do
     if (death.lifeSpan <= 0) then
       table.remove(deadList,i)
@@ -295,7 +295,7 @@ function widget:DrawWorld()
       end
     end
   end
-    
+
   gl.Texture(1, false)
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
   glAlphaTest(false)
@@ -323,7 +323,7 @@ function widget:Initialize()
     widgetHandler:RegisterGlobal('DrawManager_dps', DrawStatus)
 end
 
-function DrawStatus(toohigh,fps,ping)
+function DrawStatus(toohigh, _, _)
     TooHigh = toohigh
 end
 --------------------------------------------------------------------------------

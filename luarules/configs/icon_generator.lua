@@ -63,13 +63,13 @@ halo  = false --(scheme~="bw")
 
 --// backgrounds
 background = true
-local function Greater30(a)     return a>30;  end
+local function _(a)     return a>30;  end
 local function GreaterEq15(a)   return a>=15; end
 local function GreaterZero(a)   return a>0;   end
-local function GreaterEqZero(a) return a>=0;  end
+local function _(a) return a>=0;  end
 local function GreaterFour(a)   return a>4;   end
-local function LessEqZero(a)    return a<=0;  end
-local function IsCoreOrChicken(a)
+local function _(a)    return a<=0;  end
+local function _(a)
 	if a then return a.chicken
 	else return false end
 end
@@ -80,7 +80,7 @@ backgrounds = {
   {check={floatOnWater=false,minWaterDepth=GreaterFour},          texture="LuaRules/Images/IconGenBkgs/water.png"},
 --//sea
   {check={floatOnWater=true,minWaterDepth=GreaterZero},           texture="LuaRules/Images/IconGenBkgs/water.png"},
-  
+
   {check={canFly=true},                                                 texture="LuaRules/Images/IconGenBkgs/sky.png"},
 }
 

@@ -24,10 +24,10 @@ end
 -------------------------------------------------------------------------------------
 
 local storageDefs = {
-  --Arm 
+  --Arm
   [ UnitDefNames['armmstor'].id ] = true,
   [ UnitDefNames['armuwadvms'].id ] = true,
-  ---Core 
+  ---Core
   [ UnitDefNames['coruwms'].id ] = true,
   [ UnitDefNames['cormstor'].id ] = true,
   [ UnitDefNames['coruwadvms'].id ] = true,
@@ -47,9 +47,9 @@ local stunnedstorage = {}
 
 local uDefs = UnitDefs
 local GetUnitDefID         = Spring.GetUnitDefID
-local SpGetAllUnits        = Spring.GetAllUnits
+local _ = Spring.GetAllUnits
 
-local ipairs = ipairs
+local _ = ipairs
 local pairs = pairs
 
 -------------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ function gadget:GameFrame(n)
     if (((n+18) % 30) < 0.1) then
         for unitID, _ in pairs(storageunits) do
           local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
-          local uDef = uDefs[uDefID]
+          local _ = uDefs[uDefID]
           local storage = storageunits[unitID].storage
           local _,stunned = Spring.GetUnitIsStunned(unitID)
           local teamID = storageunits[unitID].teamID
@@ -77,7 +77,7 @@ function gadget:GameFrame(n)
             Spring.SpawnCEG("METAL_STORAGE_LEAK",x,y+height,z,0,0,0)
             end
             storageunits[unitID].isEMPed = true
-            stunnedstorage[unitID] = true 
+            stunnedstorage[unitID] = true
           end
         end
 
@@ -128,7 +128,7 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     end
 end
 
-function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
+function gadget:UnitGiven(unitID, _, newTeam, oldTeam)
   if (storageunits[unitID]) and storageunits[unitID].isEMPed == true then
   	storageunits[unitID].teamID = newTeam
     local storage = storageunits[unitID].storage
@@ -140,7 +140,7 @@ function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
   end
 end
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, projectileID, attackerID, attackerDefID, attackerTeam) --we use UnitPreDamaged so as we get in before unit_transportfix has its effect
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, _, _, _, _, _) --we use UnitPreDamaged so as we get in before unit_transportfix has its effect
     if (storageDefs[unitDefID]) then
         local hp = Spring.GetUnitHealth(unitID)
         if damage > hp and not paralyzer then  --unit's can have 0 health

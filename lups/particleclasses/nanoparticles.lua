@@ -81,13 +81,13 @@ local sin  = math.sin
 local min  = math.min
 local max  = math.max
 
-local spGetUnitViewPosition = Spring.GetUnitViewPosition
+local _ = Spring.GetUnitViewPosition
 local spIsSphereInView      = Spring.IsSphereInView
-local spGetUnitRadius       = Spring.GetUnitRadius
+local _ = Spring.GetUnitRadius
 
-local glTexture     = gl.Texture 
+local glTexture     = gl.Texture
 local glBlending    = gl.Blending
-local glMultiTexCoord = gl.MultiTexCoord
+local _ = gl.MultiTexCoord
 local glCreateList  = gl.CreateList
 local glCallList    = gl.CallList
 local glColor       = gl.Color
@@ -190,12 +190,12 @@ function NanoParticles:Draw()
   local startPos  = self.pos
   local endPosNew = self.targetpos
   local endPosOld = self.targetposStart
-  
+
   if (not self.pos) or (not self.targetpos) or (not self.targetposStart) then
     self._dead = true
     return
   end
-  
+
   glMultiTexCoord(0,  startPos[1],  startPos[2],  startPos[3], 1)
   glMultiTexCoord(1, endPosNew[1], endPosNew[2], endPosNew[3], 1)
   glMultiTexCoord(2, endPosOld[1], endPosOld[2], endPosOld[3], 1)

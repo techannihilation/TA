@@ -31,11 +31,11 @@ stop_builders=true -- Whever to stop builders or not. Set to true if you dont us
 --,FactoryGuard_workaround=true
 }
 
-local OrderUnit = Spring.GiveOrderToUnit
+local _ = Spring.GiveOrderToUnit
 local GetMyTeamID = Spring.GetMyTeamID
 local GetCommandQueue = Spring.GetCommandQueue
-local GetUnitBuildFacing = Spring.GetUnitBuildFacing
-local GetUnitPosition = Spring.GetUnitPosition
+local _ = Spring.GetUnitBuildFacing
+local _ = Spring.GetUnitPosition
 
 function widget:Initialize()
 	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
@@ -43,7 +43,7 @@ function widget:Initialize()
   	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end
@@ -79,7 +79,7 @@ end
 ]]--
 local function UnitHasPatrolOrder(unitID)
 	local queue=GetCommandQueue(unitID,20)
-	for i,cmd in ipairs(queue) do
+	for _,cmd in ipairs(queue) do
 		if cmd.id==CMD.PATROL then
 			return true
 		end
@@ -99,15 +99,15 @@ local function MustStop(unitID, unitDefID)
 				if ud and ud.isBuilder and ud.canAssist then
 					return false
 				end
-			end			
-		end	
-		]]--		
+			end
+		end
+		]]--
 		return true
 	end
 	return false
 end
-			
-function widget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, userOrders)
+
+function widget:UnitFromFactory(unitID, unitDefID, unitTeam, _, factDefID, userOrders)
 	if (unitTeam ~= GetMyTeamID()) then
 		return
 	elseif (userOrders) then
@@ -117,19 +117,19 @@ function widget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 	if (not (bd and bd.isFactory)) then
 		return
 	end
-	local ud=UnitDefs[unitDefID]
+	local _ =UnitDefs[unitDefID]
 	--- liche: workaround for BA (liche is fighter)
 	if MustStop(unitID, unitDefID) then
 		Spring.GiveOrderToUnit(unitID,CMD.STOP,{},{})
 	else
-	--[[	
+	--[[
 		Spring.Echo("-----")
 		for name,param in ud:pairs() do
 			Spring.Echo(name,param)
 		end
 	]]--
 	end
-	
+
 	--if ud.humanName=="Liche" then
 	--	UnitCanTargetAir(unitDefID)
 	--end

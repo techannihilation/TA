@@ -36,7 +36,7 @@ local GetTeamUnits = Spring.GetTeamUnits
 local DestroyUnit = Spring.DestroyUnit
 local GetUnitTransporter = Spring.GetUnitTransporter
 local GetAIInfo = Spring.GetAIInfo
-local GetGameFrame = Spring.GetGameFrame
+local _ = Spring.GetGameFrame
 local GetTeamLuaAI = Spring.GetTeamLuaAI
 local Echo = Spring.Echo
 local deadTeam = {}
@@ -53,7 +53,7 @@ function GetTeamIsTakeable(teamID)
 		allResigned,noneControlling = false,false
 	end
 	for _, playerID in pairs(players) do
-		local name, active, spec = GetPlayerInfo(playerID)
+		local _, active, spec = GetPlayerInfo(playerID)
 		allResigned = allResigned and spec
 		noneControlling = noneControlling and ( not active or spec )
 	end
@@ -125,7 +125,7 @@ function gadget:GameFrame(gameFrame)
 	end
 end
 
-function gadget:AllowUnitTransfer(unitID, unitDefID, oldTeam, newTeam, capture)
+function gadget:AllowUnitTransfer(_, _, _, newTeam, _)
 	return not deadTeam[newTeam]
 end
 

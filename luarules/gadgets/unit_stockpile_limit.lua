@@ -13,20 +13,20 @@ end
 
 -- SYNCED --
 if (gadgetHandler:IsSyncedCode()) then
- 
+
 local armminDefID = UnitDefNames.armmin.id
 local corminDefID = UnitDefNames.cormin.id
 
 local pilelimit = 2
 
 local CMD_STOCKPILE = CMD.STOCKPILE
-local CMD_INSERT = CMD.INSERT 
+local CMD_INSERT = CMD.INSERT
 local SpGiveOrderToUnit = Spring.GiveOrderToUnit
 
-function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
+function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, _, _) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
 	if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID) then
 		if cmdID == CMD_STOCKPILE or (cmdID == CMD_INSERT and cmdParams[2]==CMD_STOCKPILE) then
-			local pile,pileQ = Spring.GetUnitStockpile(UnitID)
+			local _, _ = Spring.GetUnitStockpile(UnitID)
 			local addQ = 1
 			if cmdOptions.shift then
 				if cmdOptions.ctrl then
@@ -34,17 +34,17 @@ function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOpt
 				else
 					addQ = 5
 				end
-			elseif cmdOptions.ctrl then 
+			elseif cmdOptions.ctrl then
 				addQ = 20
 			end
 			if cmdOptions.right then addQ = -addQ end
 
 			if pile+pileQ == pilelimit and (not cmdOptions.right) then SendToUnsynced("PileLimit",teamID,pilelimit) end
-			
-			if pile+pileQ+addQ <= pilelimit then 
+
+			if pile+pileQ+addQ <= pilelimit then
 				return true
 			else
-				if pile+pileQ <= pilelimit then 
+				if pile+pileQ <= pilelimit then
 					local added = 0
 					local needed = pilelimit - pile - pileQ
 					while added < needed do
@@ -54,13 +54,13 @@ function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOpt
 					return false
 				else
 					return false
-				end		
+				end
 			end
 		end
 	end
-	return true 
+	return true
 end
- 
+
 -- UNSYNCED --
 else
 

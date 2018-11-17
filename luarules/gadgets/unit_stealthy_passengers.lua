@@ -40,13 +40,13 @@ function gadget:Initialize()
 	end
 end
 
-function gadget:UnitLoaded(uID, uDefID, uTeam, transID, transTeam)
+function gadget:UnitLoaded(uID, uDefID, _, transID, _)
 	if stealthyTransports[spGetUnitDefID(transID)] and not stealthyUnits[uDefID] then
 		spSetUnitStealth(uID, true)
 	end
 end
 
-function gadget:UnitUnloaded(uID, uDefID, tID, transID)
+function gadget:UnitUnloaded(uID, uDefID, _, transID)
 	if stealthyTransports[spGetUnitDefID(transID)] and not stealthyUnits[uDefID] then
 		spSetUnitStealth(uID, false)
 	end

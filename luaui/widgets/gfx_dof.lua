@@ -67,12 +67,12 @@ local canShader = (gl.CreateShader ~= nil)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local GL_DEPTH_BITS = 0x0D56
+local _ = 0x0D56
 
-local GL_DEPTH_COMPONENT   = 0x1902
-local GL_DEPTH_COMPONENT16 = 0x81A5
+local _ = 0x1902
+local _ = 0x81A5
 local GL_DEPTH_COMPONENT24 = 0x81A6
-local GL_DEPTH_COMPONENT32 = 0x81A7
+local _ = 0x81A7
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ local focusRangeMultiplierLoc
 local focusPtXLoc
 local focusPtYLoc
 
-local oldvs = 0
+local _ = 0
 local vsx, vsy   = widgetHandler:GetViewSizes()
 function widget:ViewResize(viewSizeX, viewSizeY)
   vsx, vsy  = viewSizeX,viewSizeY
@@ -133,7 +133,7 @@ function widget:GetConfigData()
   }
 end
 
-function widget:SetConfigData(data)
+function widget:SetConfigData(_)
   --options.quality.value  = data.quality or 2.
   --options.intensity.value = data.intensity or 1.
   --options.focusCurveExp.value = data.focusCurveExp or 2.
@@ -168,7 +168,7 @@ end
 
 -- user controls
 local deactivated = true
-function dofToggle(cmd, line, words)
+function dofToggle(_, _, words)
   deactivated = not deactivated
   if words[1] then
      deactivated = words[1] == "0"
@@ -182,7 +182,7 @@ function dofToggle(cmd, line, words)
   end
 end
 
-function dofIntensity(cmd, line, words)
+function dofIntensity(_, _, words)
   options.intensity.value = tonumber(words[1])
   --Spring.Echo("Depth of Field: intensity: "..options.intensity.value)
   return true
@@ -206,7 +206,7 @@ function dofIntensityDecrease()
   return true
 end
 
-function dofQuality(cmd, line, words)
+function dofQuality(_, _, words)
   options.quality.value = tonumber(words[1])
   if (options.quality.value > options.quality.max) then
   	 options.quality.value = options.quality.max
@@ -219,18 +219,18 @@ end
 
 function widget:Initialize()
   if (not CheckHardware()) then return false end
-  
+
   -- register user control commands/keys
   widgetHandler:AddAction("dofToggle", dofToggle, nil, "t")
   Spring.SendCommands({"bind "..options.shortcuts.toggle.." dofToggle"})
   Spring.SendCommands({"dofToggle 0"})     -- toggle off defaultly
-  
+
   widgetHandler:AddAction("dofIntensityIncrease", dofIntensityIncrease, nil, "t")
   Spring.SendCommands({"bind "..options.shortcuts.intensityIncrease.." dofIntensityIncrease"})
-  
+
   widgetHandler:AddAction("dofIntensityDecrease", dofIntensityDecrease, nil, "t")
   Spring.SendCommands({"bind "..options.shortcuts.intensityDecrease.." dofIntensityDecrease"})
-  
+
   widgetHandler:AddAction("dofQuality", dofQuality, nil, "t")
   widgetHandler:AddAction("dofIntensity", dofIntensity, nil, "t")
 
@@ -241,7 +241,7 @@ function widget:Initialize()
   WG['dof'].setIntensity = function(value)
       options.intensity.value = value
   end
-  
+
   dofShader = gl.CreateShader({
     fragment = [[
       uniform sampler2D tex0;
@@ -258,18 +258,18 @@ function widget:Initialize()
 	  uniform float focusRangeMultiplier;
 	  uniform float focusPtX;
 	  uniform float focusPtY;
-	  
+
       void main(void)
       {
 		vec2 texCoord = vec2(gl_TextureMatrix[0] * gl_TexCoord[0]);
 	  	gl_FragColor = vec4(0.0,0.0,0.0,1.0);
-		
+
 		float focus = texture2D(tex2, vec2(focusPtX,focusPtY)).z;
-		
+
 		int k,l;
 		float zValue = texture2D(tex2, texCoord).z;
 		float dmix = clamp(abs(focus-zValue)*focusRange*focusRangeMultiplier ,0.0,1.0);
-		
+
 		if(dmix > 0.05 || focus>zValue)
 		{
 			zValue = 0;
@@ -283,8 +283,8 @@ function widget:Initialize()
 		if(focusCurveExp>1.){
 			dmix = (exp(focusCurveExp*dmix)-1.)/exp(focusCurveExp);
 		}
-		
-		
+
+
 		float halfSizeKernel = quality; // quality
 		float dy = (8./halfSizeKernel)*dmix/viewY*intensity;
 		float dx = (8./halfSizeKernel)*dmix/viewX*intensity;
@@ -345,7 +345,7 @@ function widget:Initialize()
   focusRangeMultiplierLoc = gl.GetUniformLocation(dofShader,"focusRangeMultiplier")
   focusRangeMultiplierLoc = gl.GetUniformLocation(dofShader,"focusRangeMultiplier")
   focusPtXLoc = gl.GetUniformLocation(dofShader,"focusPtX")
-  focusPtYLoc = gl.GetUniformLocation(dofShader,"focusPtY")  
+  focusPtYLoc = gl.GetUniformLocation(dofShader,"focusPtY")
 end
 
 
@@ -353,7 +353,7 @@ function widget:Shutdown()
   WG['dof'] = nil
   Spring.SendCommands({"DofEnable 0"})
   widgetHandler:RemoveAction("DofEnable", DofEnable)
-  
+
   if (gl.DeleteTextureFBO) then
     gl.DeleteTexture(depthcopy)
     gl.DeleteTexture(screencopy)
@@ -372,7 +372,7 @@ end
 
 function widget:DrawScreenEffects()
   if deactivated then return  end
-  
+
   local zfocus = 0.9995
 
   local msx,msy = widgetHandler:GetViewSizes()
@@ -381,11 +381,11 @@ function widget:DrawScreenEffects()
   if (type=="ground") then
     _,_,zfocus  = Spring.WorldToScreenCoords(mpos[1],mpos[2],mpos[3])
   end
-  
+
   viewX,viewY = gl.GetViewSizes()
-  
+
   local mouseX,mouseY = Spring.GetMouseState()
-  
+
   local focusRange = 0.8*(1-zfocus) -- + ((1-zfocus)*(1-zfocus)*10)
   --zfocus = zfocus - zfocus^10000
 

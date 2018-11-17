@@ -61,7 +61,7 @@ local airCmd = {
       params  = { '1', 'LandAt 0', 'LandAt 30', 'LandAt 50', 'LandAt 80'}
 }
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
+function gadget:UnitCreated(unitID, unitDefID, _, builderID)
   if AIRPLANT[unitDefID] then
     InsertUnitCmdDesc(unitID, 500, landCmd)
     InsertUnitCmdDesc(unitID, 500, airCmd)
@@ -74,20 +74,20 @@ function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
   end
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function gadget:UnitDestroyed(unitID, _, _)
   plantList[unitID] = nil
   buildingUnits[unitID] = nil
 end
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, _, _)
   if buildingUnits[unitID] then
     SetUnitNeutral(unitID, false)
   end
 end
 
-function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+function gadget:AllowCommand(unitID, unitDefID, _, cmdID, cmdParams, _)
   if AIRPLANT[unitDefID] then
-    if (cmdID == 34569) then 
+    if (cmdID == 34569) then
       local cmdDescID = FindUnitCmdDesc(unitID, 34569)
       landCmd.params[1] = cmdParams[1]
       EditUnitCmdDesc(unitID, cmdDescID, landCmd)

@@ -1,6 +1,6 @@
 --all we care about is how high the commander is when the COM_BLAST happens
 --this is much simper than checking if the com has just been unloaded from a trans or not, with essentially the same gameplay; coms don't levitate/bounce much
---if the com is more than 10 off the ground, the comblast damage is reduced. consequence is that COM_BLAST should not be used for anything else 
+--if the com is more than 10 off the ground, the comblast damage is reduced. consequence is that COM_BLAST should not be used for anything else
 
 function gadget:GetInfo()
   return {
@@ -27,7 +27,7 @@ local COM_BLAST = {
   [WeaponDefNames['commander_blast8'].id] = true,
 }
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam) --we use UnitPreDamaged so as we get in before unit_transportfix has its effect
+function gadget:UnitPreDamaged(unitID, _, _, damage, _, weaponDefID, _, attackerID, _, _) --we use UnitPreDamaged so as we get in before unit_transportfix has its effect
 
 	--Spring.Echo("UnitPreDamaged called with unitID " .. unitID .. " and attackerID ", attackerID)
 
@@ -38,10 +38,10 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, w
 		--Spring.Echo(x .. " " .. y .. " " .. z .. " " .. h)
 		if ((y-h) > 10) then
 			local _,hp = Spring.GetUnitHealth(unitID)
-			local newdamage = math.min(damage,math.max(hp*0.6,400)) 
+			local newdamage = math.min(damage,math.max(hp*0.6,400))
 			--Spring.Echo("new damage is " .. newdamage .. ", old damage is " .. damage .. ", hp is " .. hp)
 			return newdamage,0
-		end		
+		end
 	end
 	return damage,1
 end

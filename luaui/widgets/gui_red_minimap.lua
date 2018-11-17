@@ -19,20 +19,20 @@ local Config = {
 	minimap = {
 		px = 0,py = 0, --default start position
 		sx = math.min(135*Game.mapX/Game.mapY,270),sy = 135, --background size
-		
+
 		bsx = 15,bsy = 15, --button size
 
 		fadetime = 0.25, --fade effect time, in seconds
 		fadedistance = 100, --distance from cursor at which console shows up when empty
-		
+
 		cresizebackground = {0.9,0.9,0.9,0.5}, --color {r,g,b,alpha}
 		cresizecolor = {1,1,1,1},
-		
+
 		cmovebackground = {0,1,0,0.5},
 		cmovecolor = {0.9,0.9,0.9,0.8},
-		
+
 		cborder = {0,0,0,1},
-		
+
 		dragbutton = {1}, --left mouse button
 		tooltip = {
 			--todo? kinda useless
@@ -90,10 +90,10 @@ local function AutoResizeObjects() --autoresize v2
 	if ((lx ~= vsx) or (ly ~= vsy)) then
 		local objects = GetWidgetObjects(widget)
 		local scale = vsy/ly
-		local skippedobjects = {}
+		local _ = {}
 		for i=1,#objects do
 			local o = objects[i]
-			local adjust = 0
+			local _ = 0
 			if ((o.movableslaves) and (#o.movableslaves > 0)) then
 				adjust = (o.px*scale+o.sx*scale)-vsx
 				if (((o.px+o.sx)-lx) == 0) then
@@ -132,95 +132,95 @@ local function createminimap(r)
 		border=r.cborder,
 		obeyscreenedge = true,
 	}
-	
+
 	local resizebutton = {"rectangle",
 		px=r.px+r.sx-r.bsx,py=r.py+r.sy-1,
 		sx=r.bsx,sy=r.bsy,
-		
+
 		color=r.cresizebackground,
 		texturecolor=r.cmovecolor,
-		texture="LuaUI/Images/RedMinimap/resize.png",		
+		texture="LuaUI/Images/RedMinimap/resize.png",
 		border=r.cborder,
 		movable=r.dragbutton,
 		overridecursor = true,
 		overrideclick = r.dragbutton,
-		
+
 		effects = {
 			fadein_at_activation = r.fadetime,
 			fadeout_at_deactivation = r.fadetime,
 		},
 	}
-	
+
 	local movebutton = {"rectangle",
 		px=r.px+r.sx-r.bsx*2+1,py=r.py+r.sy-1,
 		sx=r.bsx,sy=r.bsy,
-		
+
 		color=r.cmovebackground,
 		texturecolor=r.cmovecolor,
 		texture="LuaUI/Images/RedMinimap/move.png",
-		
+
 		border=r.cborder,
 		movable=r.dragbutton,
 		obeyscreenedge = true,
 		overridecursor = true,
 		overrideclick = r.dragbutton,
-		
+
 		effects = {
 			fadein_at_activation = r.fadetime,
 			fadeout_at_deactivation = r.fadetime,
 		},
 	}
-	
+
 	New(movebutton)
 	New(resizebutton)
 	New(minimap)
-	
-	resizebutton.mouseover = function(mx,my,self)
+
+	resizebutton.mouseover = function(_, _,self)
 		self.active = nil
 		movebutton.active = nil
-		
+
 		if (not self._mouseover) then
 			self._color4 = self.color[4]
 			self.color[4] = 4
 		end
-		
+
 		self._mouseover = true
 	end
-	resizebutton.mousenotover = function(mx,my,self)
+	resizebutton.mousenotover = function(_, _,self)
 		if ((not minimap._mouseover) and (not movebutton._mouseover)) then
 			self.active = false --deactivate
 		end
-		
+
 		if (self._mouseover) then
 			self.color[4] = self._color4
 		end
-		
+
 		self._mouseover = nil
 	end
-	
-	movebutton.mouseover = function(mx,my,self)
+
+	movebutton.mouseover = function(_, _,self)
 		self.active = nil
 		resizebutton.active = nil
-		
+
 		if (not self._mouseover) then
 			self._color4 = self.color[4]
 			self.color[4] = 1
 		end
-		
+
 		self._mouseover = true
 	end
-	movebutton.mousenotover = function(mx,my,self)
+	movebutton.mousenotover = function(_, _,self)
 		if ((not minimap._mouseover) and (not resizebutton._mouseover)) then
 			self.active = false --deactivate
 		end
-		
+
 		if (self._mouseover) then
 			self.color[4] = self._color4
 		end
-		
+
 		self._mouseover = nil
 	end
-	
+
 	minimap.onupdate=function(self)
 		self.sx = resizebutton.px-self.px+resizebutton.sx
 		self.sy = resizebutton.py-self.py+1
@@ -236,18 +236,18 @@ local function createminimap(r)
 		self.maxpx = Screen.vsx
 		self.maxpy = Screen.vsy
 	end
-	
-	minimap.mousenotover = function(mx,my,self)
+
+	minimap.mousenotover = function(_, _,self)
 		self._mouseover = nil
 	end
-	
-	minimap.mouseover = function(mx,my,self)
+
+	minimap.mouseover = function(_, _,self)
 		self._mouseover = true
-	
+
 		movebutton.active = nil
 		resizebutton.active = nil
 	end
-	
+
 	minimap.movableslaves = {
 		movebutton,
 	}
@@ -257,7 +257,7 @@ local function createminimap(r)
 	resizebutton.movableslaves = {
 		movebutton,
 	}
-	
+
 	return minimap
 end
 
@@ -266,11 +266,11 @@ function widget:Initialize()
 
 	PassedStartupCheck = RedUIchecks()
 	if (not PassedStartupCheck) then return end
-	
+
 	rMinimap = createminimap(Config.minimap)
-	
+
 	glSlaveMiniMap(true)
-	
+
 	AutoResizeObjects() --fix for displacement on crash issue
 end
 
@@ -280,21 +280,21 @@ function widget:Update()
 	local _,_,_,_,minimized,maximized = sGetMiniMapGeometry()
 	if (maximized) then
 		--hack to reset state minimap
-		glSlaveMiniMap(false) 
+		glSlaveMiniMap(false)
 		glSlaveMiniMap(true)
 		----
 	end
-	
+
 	if (minimized) then
 		rMinimap.active = false
 		--hack to reset state minimap
-		glSlaveMiniMap(false) 
+		glSlaveMiniMap(false)
 		glSlaveMiniMap(true)
 		----
 	else
 		rMinimap.active = nil
 	end
-	
+
 	local st = sGetCameraState()
 	if (st.name == "ov") then --overview camera
 		rMinimap.active = false
@@ -324,9 +324,9 @@ function widget:DrawScreen()
 	glResetState()
 	glResetMatrices()
 	----
-	
+
 	glDrawMiniMap()
-	
+
 	-- this makes jK rage
 	glResetState()
 	glResetMatrices()

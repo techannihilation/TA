@@ -75,7 +75,7 @@ local glTranslate               = gl.Translate
 local glUnit                    = gl.Unit
 local glVertex                  = gl.Vertex
 local spDrawUnitCommands        = Spring.DrawUnitCommands
-local spGetFeatureAllyTeam      = Spring.GetFeatureAllyTeam
+local _ = Spring.GetFeatureAllyTeam
 local spGetFeatureDefID         = Spring.GetFeatureDefID
 local spGetFeaturePosition      = Spring.GetFeaturePosition
 local spGetFeatureRadius        = Spring.GetFeatureRadius
@@ -108,7 +108,7 @@ local fontSize = 16
 local fontName = ':n:'..LUAUI_DIRNAME..'Fonts/'..font..'_'..fontSize
 
 
-local showName = (1 > 0)
+local _ = (1 > 0)
 
 local customTex = LUAUI_DIRNAME .. 'Images/highlight_strip.png'
 local texName = LUAUI_DIRNAME .. 'Images/highlight_strip.png'
@@ -119,7 +119,7 @@ local cylList = 0
 
 local outlineWidth = 3
 
-local vsx, vsy = widgetHandler:GetViewSizes()
+local vsx, _ = widgetHandler:GetViewSizes()
 function widget:ViewResize(viewSizeX, viewSizeY)
   vsx = viewSizeX
   vsy = viewSizeY
@@ -179,7 +179,7 @@ local function HilightModel(drawFunc, drawData, outline)
   glPolygonOffset(-2, -2)
   glBlending(GL_SRC_ALPHA, GL_ONE)
 
-  
+
   local scale = 20
   local shift = (2 * widgetHandler:GetHourTimer()) % scale
   glTexCoord(0, 0)
@@ -229,7 +229,7 @@ local function SetUnitColor(unitID, alpha)
 end
 
 
-local function SetFeatureColor(featureID, alpha)
+local function SetFeatureColor(_, alpha)
   glColor(1.0, 0.0, 1.0, alpha) -- purple
   do return end  -- FIXME -- wait for feature team/allyteam resolution
 
@@ -339,7 +339,7 @@ function widget:DrawWorld()
     if (data ~= unitID) then
       HilightUnit(data)
       -- also draw the unit's command queue
-      local a,c,m,s = spGetModKeyState()
+      local _, _,m, _ = spGetModKeyState()
       if (m) then
         spDrawUnitCommands(data)
       end
@@ -366,7 +366,7 @@ local function GetTeamName(teamID)
     return name
   end
 
-  local teamNum, teamLeader = spGetTeamInfo(teamID)
+  local _, teamLeader = spGetTeamInfo(teamID)
   if (teamLeader == nil) then
     return ''
   end
@@ -389,7 +389,7 @@ local function GetTeamColorStr(teamID)
     return colorSet[1], colorSet[2]
   end
 
-  local outlineChar = ''
+  local _ = ''
   local r,g,b = spGetTeamColor(teamID)
   if (r and g and b) then
     local function ColorChar(x)
@@ -414,7 +414,7 @@ end
 --------------------------------------------------------------------------------
 
 function widget:DrawScreen()
-  local a,c,m,s = spGetModKeyState()
+  local _, _,m, _ = spGetModKeyState()
   if (not m) then
     return
   end
@@ -422,7 +422,7 @@ function widget:DrawScreen()
   local mx, my = GetMouseState()
   local type, data = TraceScreenRay(mx, my)
 
-  local typeStr = ''
+  local _ = ''
   local teamID = nil
 
   local cheat  = spIsCheatingEnabled()

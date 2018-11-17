@@ -19,11 +19,11 @@ end
 
 local SpSetUnitRulesParam = Spring.SetUnitRulesParam
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+function gadget:UnitCreated(unitID, _, _)
   SpSetUnitRulesParam(unitID, "under_construction", 1, { public = true })
 end
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, _, _)
   SpSetUnitRulesParam(unitID, "under_construction", 0, { public = true })
 end
 

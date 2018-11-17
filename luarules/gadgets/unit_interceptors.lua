@@ -20,7 +20,7 @@ if (not gadgetHandler:IsSyncedCode()) then
 	return false	--	no unsynced code
 end
 
-local interceptors = {}
+local _ = {}
 
 function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponID, targetProjectileID)
 	local ud = UnitDefs[Spring.GetUnitDefID(interceptorUnitID)]

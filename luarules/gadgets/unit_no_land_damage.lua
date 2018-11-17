@@ -40,7 +40,7 @@ local NO_LAND_DAMAGE = {
   [WeaponDefNames['corroy_depthcharge'].id] = true,
   [WeaponDefNames['armcrus_advdepthcharge'].id] = true,
   [WeaponDefNames['corcrus_advdepthcharge'].id] = true,
-  [WeaponDefNames['armsub_arm_torpedo'].id] = true, 
+  [WeaponDefNames['armsub_arm_torpedo'].id] = true,
   [WeaponDefNames['corsub_arm_torpedo'].id] = true,
   [WeaponDefNames['tllplunger_arm_torpedo'].id] = true,
   [WeaponDefNames['armsubk_armsmart_torpedo'].id] = true,
@@ -56,12 +56,12 @@ local NO_LAND_DAMAGE = {
   [WeaponDefNames['tlltorpcop_tllair_torpedo'].id] = true,
 }
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
-                            weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, _, _, damage, _,
+                            weaponID, _, _, _, _)
   if NO_LAND_DAMAGE[weaponID] then
-    if select(2,GetUnitBasePosition(unitID)) > 0 then 
+    if select(2,GetUnitBasePosition(unitID)) > 0 then
       return (damage * 0.2),1
-    else 
+    else
       return damage,1
     end
   else

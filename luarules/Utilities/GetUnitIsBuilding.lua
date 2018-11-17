@@ -12,13 +12,13 @@ local CachedBuildDistance = {}
 
 local function IsFeatureInRange(unitID, featureID, range)
 	range = range + 100 -- fudge factor
-    local x,y,z = Spring.GetFeaturePosition(featureID)
-    local ux,uy,uz = Spring.GetUnitPosition(unitID)
+    local x, _,z = Spring.GetFeaturePosition(featureID)
+    local ux, _,uz = Spring.GetUnitPosition(unitID)
     return ((ux - x)^2 + (uz - z)^2) <= range^2
 end
 
 local function IsGroundPosInRange(unitID, x, z, range)
-    local ux,uy,uz = Spring.GetUnitPosition(unitID)
+    local ux, _,uz = Spring.GetUnitPosition(unitID)
     return ((ux - x)^2 + (uz - z)^2) <= range^2
 end
 
@@ -107,7 +107,7 @@ function Spring.Utilities.GetUnitNanoTarget(unitID)
       end
     end
   end
-  
+
   if inRange then
     return type, target, isFeature
   else

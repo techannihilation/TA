@@ -21,7 +21,7 @@ function widget:Initialize()
   	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end
@@ -40,11 +40,11 @@ function widget:CommandNotify(id, params, options)
 			if options.right then
 				local units = spGetSelectedUnits()
 				local state = params[1] -2
-				if state < 0 then 
+				if state < 0 then
 					state = state + #comButton.params - 1
 				end
 				for _,sid in ipairs(units) do
-					spGiveOrderToUnit(sid, id, { state }, {})	
+					spGiveOrderToUnit(sid, id, { state }, {})
 				end
 				return true
 			end

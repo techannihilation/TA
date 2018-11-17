@@ -18,7 +18,7 @@ local bomber_uds={}
 local GetUnitWeaponState   = Spring.GetUnitWeaponState
 local GetUnitDefID         = Spring.GetUnitDefID
 local GiveOrderToUnit      = Spring.GiveOrderToUnit
-local GetGameFrame         = Spring.GetGameFrame
+local _ = Spring.GetGameFrame
 local GetMyTeamID          = Spring.GetMyTeamID
 local GetUnitTeam          = Spring.GetUnitTeam
 local GetGameFrame         = Spring.GetGameFrame
@@ -28,7 +28,7 @@ local GetTeamUnits         = Spring.GetTeamUnits
 
 local CMD_ATTACK = CMD.ATTACK
 local CMD_REMOVE = CMD.REMOVE
-local CMD_WAIT = CMD.WAIT
+local _ = CMD.WAIT
 
 local my_bombers={}
 
@@ -41,12 +41,12 @@ local function AddUnit(unit_id, unit_udid_)
 		local ud=UnitDefs[unit_udid]
 		if ud and bomber_uds[unit_udid] then
 			if  ud.primaryWeapon then
-				local _,reloaded_,reloadFrame = GetUnitWeaponState(unit_id,ud.primaryWeapon)		
+				local _,reloaded_, _ = GetUnitWeaponState(unit_id,ud.primaryWeapon)
 				my_bombers[unit_id]={reloaded=reloaded_, reload_frame}
 				--Spring.Echo("bomber added")
 			end
 		end
-	end	
+	end
 end
 
 function widget:UnitCreated(unit_id, unit_udid, unit_tid)
@@ -59,16 +59,16 @@ local function RemoveUnit(unit_id)
 	my_bombers[unit_id]=nil
 end
 
-function widget:UnitDestroyed(unit_id, unit_udid, unit_tid)
+function widget:UnitDestroyed(unit_id, _, _)
 	RemoveUnit(unit_id)
 end
 
 
-function widget:UnitGiven(unit_id, unit_udid, old_team, new_team)
+function widget:UnitGiven(unit_id, unit_udid, _, new_team)
 	RemoveUnit(unit_id)
 	if new_team==GetMyTeamID() then
 		AddUnit(unit_id,unit_udid)
-	end	
+	end
 end
 
 
@@ -80,7 +80,7 @@ local function UpdateUnitsList()
 	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
         widgetHandler:RemoveWidget(self)
     end
@@ -116,7 +116,7 @@ end
 
 local current_team=1234567
 
-function widget:Update(dt)
+function widget:Update(_)
 	local gameFrame = GetGameFrame()
     if ((gameFrame%15)<1) then
 		local my_team=GetMyTeamID()
@@ -154,7 +154,7 @@ function widget:Update(dt)
 				end
 			end
 		end
-	end	
+	end
 end
 
 

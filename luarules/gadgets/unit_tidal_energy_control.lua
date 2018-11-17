@@ -53,7 +53,7 @@ local GAMESPEED = 30
 function gadget:GameFrame(n)
   if (((n+20) % GAMESPEED) < 0.1) then
   local strength = GetTide
-    for unitID, scriptIDs in pairs(tidals) do
+    for unitID, _ in pairs(tidals) do
       local uDefID = GetUnitDefID(unitID) ; if not uDefID then break end
       local uDef = uDefs[uDefID]
       local mult = 2 -- DEFAULT
@@ -86,22 +86,22 @@ function gadget:Initialize()
 end
 
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, unitDefID, _)
   if (tideDefs[unitDefID]) then
     SetupUnit(unitID)
   end
 end
 
 
-function gadget:UnitTaken(unitID, unitDefID, unitTeam)
-  if (tideDefs[unitDefID]) then 
+function gadget:UnitTaken(unitID, unitDefID, _)
+  if (tideDefs[unitDefID]) then
     SetupUnit(unitID)
   end
 end
 
 
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-  if (tideDefs[unitDefID]) then 
+function gadget:UnitDestroyed(unitID, unitDefID, _)
+  if (tideDefs[unitDefID]) then
     tidals[unitID] = nil
   end
 end

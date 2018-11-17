@@ -18,7 +18,7 @@ end
 --]]
 
 -- CONFIGURATION
-local debug = false		--generates debug message
+local _ = false		--generates debug message
 local updateInt = 1 	--seconds for the ::update loop
 -- END OF CONFIG
 
@@ -40,24 +40,24 @@ local glTranslate           = gl.Translate
 local glFeatureShape		= gl.FeatureShape
 local glRotate              = gl.Rotate
 local spGetGameSeconds      = Spring.GetGameSeconds
-local spGetMyPlayerID       = Spring.GetMyPlayerID
-local spGetPlayerInfo       = Spring.GetPlayerInfo
+local _ = Spring.GetMyPlayerID
+local _ = Spring.GetPlayerInfo
 local spGetAllFeatures		= Spring.GetAllFeatures
 local spGetFeaturePosition  = Spring.GetFeaturePosition
 local spGetFeatureDefID		= Spring.GetFeatureDefID
 local spGetMyAllyTeamID		= Spring.GetMyAllyTeamID
 local spGetFeatureAllyTeam	= Spring.GetFeatureAllyTeam
 local spGetFeatureTeam		= Spring.GetFeatureTeam
-local spGetUnitHealth 		= Spring.GetUnitHealth
-local spGetFeatureHealth 	= Spring.GetFeatureHealth
+local _ = Spring.GetUnitHealth
+local _ = Spring.GetFeatureHealth
 local spGetFeatureResurrect = Spring.GetFeatureResurrect
 local spGetPositionLosState = Spring.GetPositionLosState
 local spIsUnitAllied		= Spring.IsUnitAllied
 local spGetUnitDirection     = Spring.GetUnitDirection
 local spGetFeatureDirection  = Spring.GetFeatureDirection
 local spGetUnitBasePosition = Spring.GetUnitBasePosition
-local spGetUnitHealth 	    = Spring.GetUnitHealth
-local spValidFeatureID     = Spring.ValidFeatureID
+local _ = Spring.GetUnitHealth
+local _ = Spring.ValidFeatureID
 local spEcho                = Spring.Echo
 local spGetUnitDefID        = Spring.GetUnitDefID
 local spGetUnitRulesParam   = Spring.GetUnitRulesParam
@@ -97,27 +97,27 @@ function widget:Update()
 	local time = floor(timef)
 
 	-- update timers once every <updateInt> seconds
-	if (time % updateInt == 0 and time ~= lastTime) then	
+	if (time % updateInt == 0 and time ~= lastTime) then
 		lastTime = time
 		--do update stuff:
-				
+
 		ScanFeatures()
-		
+
 		DeleteGhostSites()
 		DeleteGhostFeatures()
 	end
 end
 
 function widget:DrawWorld()
-  
-	if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then 
+
+	if ( TooHigh == true ) or ( FPSCount < FPSLimit ) or ( HighPing == true ) then
 		return
 	end
-	
+
 	DrawGhostSites()
-	
+
 	DrawGhostFeatures()
-	
+
 	ResetGl()
 end
 
@@ -127,15 +127,15 @@ function widget:UnitEnteredLos(unitID, allyTeam)
 	if ( spIsUnitAllied( unitID ) ) then
 		return
 	end
-	
+
 	local udef = udefTab[spGetUnitDefID(unitID)]
-		
+
 	if ( udef ~= nil and (udef.isBuilding == true or udef.isFactory == true) and (spGetUnitRulesParam(unitID, "under_construction") == 1))  then
 		local x, y, z = spGetUnitBasePosition(unitID)
-		
+
 		local dx,_,dz = spGetUnitDirection(unitID)
-		local angle = mdeg(matan2(dx,dz))	
-		
+		local angle = mdeg(matan2(dx,dz))
+
 		ghostSites[unitID] = { unitDefId = spGetUnitDefID(unitID), x=x, y=y, z=z, teamId = allyTeam, angle = angle }
 	end
 end
@@ -155,24 +155,24 @@ function DrawGhostFeatures()
 	--use the alpha given by glColor for the outgoing alpha.
 	glTexEnv( GL.TEXTURE_ENV, 34162, GL.REPLACE )			--GL_COMBINE_ALPHA
 	glTexEnv( GL.TEXTURE_ENV, 34184, 34167 )			--GL_SOURCE0_ALPHA_ARB			GL_PRIMARY_COLOR_ARB
-	
+
 	--------------------------Draw-------------------------------------------------------------
-	for unitID, ghost in pairs( ghostFeatures ) do
+	for _, ghost in pairs( ghostFeatures ) do
 
 		local x, y, z = ghost.x, ghost.y, ghost.z
 		local _, b, _ = spGetPositionLosState(x, y, z)
 		local losState = b
-	
+
 		if ( losState == false ) then
 			--glow effect?
 			--gl.Blending(GL.SRC_ALPHA, GL.ONE)
-			    
+
 			glPushMatrix()
 			glTranslate(x, y, z)
 			glRotate(ghost.angle,0,y,0)
 
 			glFeatureShape(ghost["featDefId"], ghost["teamId"] )
-			  
+
 			glPopMatrix()
 		end
 	end
@@ -188,31 +188,31 @@ function DrawGhostSites()
 	glColor(0.3, 1.0, 0.3, 0.25)
 	glDepthTest(true)
 
-	for unitID, ghost in pairs( ghostSites ) do
+	for _, ghost in pairs( ghostSites ) do
 
 		local x, y, z = ghost.x, ghost.y, ghost.z
-		local a, b, c = spGetPositionLosState(x, y, z)
+		local _, b, _ = spGetPositionLosState(x, y, z)
 		local losState = b
-	
+
 		if ( losState == false ) then
 			--glow effect?
 			--gl.Blending(GL.SRC_ALPHA, GL.ONE)
-			    
+
 			glPushMatrix()
 			glTranslate( x, y, z)
 			glRotate(ghost.angle,0,y,0)
-			
+
 			gl.UnitShape(ghost["unitDefId"], ghost["teamId"], false, true, false)
-			      
+
 			glPopMatrix()
 		end
 	end
 end
 
-function ScanFeatures()	
+function ScanFeatures()
 
 	local features = spGetAllFeatures()
-	
+
 	if firstScan then
 	  if (Spring.GetGameFrame() == 0) then
 	      -- Ignore all the map features we can see before game start
@@ -220,13 +220,13 @@ function ScanFeatures()
 			local fDefId = spGetFeatureDefID(fID)
 			if not ignoreFeature[fDefId] then
 				local x, y, z = spGetFeaturePosition(fID)
-				local LosOrRadar, inLos, inRadar = spGetPositionLosState(x, y, z)
+				local _, inLos, _ = spGetPositionLosState(x, y, z)
 				if not inLos then
 					ignoreFeature[fDefId] = true
 				end
 			end
 		  end
-	  else 
+	  else
 	    -- Widget loaded mid game, just use original 'ignore trees and rocks' logic
         local sfind = string.find
 	    for _, fID in ipairs(features) do
@@ -242,26 +242,26 @@ function ScanFeatures()
 	  firstScan = false
 	  return
 	end
-		
+
 	local myAllyID = spGetMyAllyTeamID()
-	
+
 	for _, fID in ipairs(features) do
 		local fDefId = spGetFeatureDefID(fID)
-		
+
 		if not ignoreFeature[fDefId] then
-		
+
 			local fAllyID = spGetFeatureAllyTeam(fID)
 			local fTeamID = spGetFeatureTeam( fID )
 
 			local resName, _ = spGetFeatureResurrect(fID)
-											
+
 			if ( (resName == "" or dontTrackEnemyWrecks == 0) and fAllyID ~= nil and fAllyID >= 0 and myAllyID ~= fAllyID and ghostFeatures[fID] == nil ) then
-							
+
 				local x, y, z = spGetFeaturePosition(fID)
 				local dx,_,dz = spGetFeatureDirection(fID)
-				local angle = mdeg(matan2(dx,dz))			
+				local angle = mdeg(matan2(dx,dz))
 				ghostFeatures[fID] = { featDefId = fDefId, x=x, y=y, z=z, teamId = fTeamID, angle=angle }
-				
+
 			end
 		end
 	end
@@ -269,11 +269,11 @@ end
 
 function DeleteGhostFeatures()
 	for featureID, ghost in pairs(ghostFeatures) do
-		local a, b, c = spGetPositionLosState(ghost.x, ghost.y, ghost.z)
+		local _, b, _ = spGetPositionLosState(ghost.x, ghost.y, ghost.z)
 		local losState = b
 		local featDefID = spGetFeatureDefID(featureID)
-				
-		if ( featDefID == nil and losState) then	
+
+		if ( featDefID == nil and losState) then
 			ghostFeatures[featureID] = nil
 		end
 	end
@@ -281,11 +281,11 @@ end
 
 function DeleteGhostSites()
 	for unitID, ghost in pairs(ghostSites) do
-		local a, b, c = spGetPositionLosState(ghost.x, ghost.y, ghost.z)
+		local _, b, _ = spGetPositionLosState(ghost.x, ghost.y, ghost.z)
 		local losState = b
 		local udefID = spGetUnitDefID(unitID)
-				
-		if ( ( udefID == nil or (spGetUnitRulesParam(unitID, "under_construction") ~= 1) ) and losState) then	
+
+		if ( ( udefID == nil or (spGetUnitRulesParam(unitID, "under_construction") ~= 1) ) and losState) then
 			ghostSites[unitID] = nil
 		end
 	end
@@ -293,7 +293,7 @@ end
 
 function widget:GameStart()
   if widgetHandler.widgets then
-	  for i, widget in ipairs(widgetHandler.widgets) do
+	  for _, widget in ipairs(widgetHandler.widgets) do
 		if (widget:GetInfo().name == 'Defense Range') then
 		  local version = tonumber(string.match(widget:GetInfo().desc,'%d+%.%d+'))
 		  if version and (version < tonumber("6")) then
@@ -306,14 +306,14 @@ function widget:GameStart()
 end
 
 --Commons
-function ResetGl() 
+function ResetGl()
 	glColor( { 1.0, 1.0, 1.0, 1.0 } )
 	glLineWidth( 1.0 )
 	glDepthTest(false)
 	glTexture(false)
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end

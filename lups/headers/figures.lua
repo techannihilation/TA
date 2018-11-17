@@ -1,7 +1,7 @@
 -- $Id: figures.lua 3171 2008-11-06 09:06:29Z det $
 -------------------------------------------------------------------------------
--- Desc: Create a sphere centered at cy, cx, cz with radius r, and 
---       precision p. Based on a function Written by Paul Bourke. 
+-- Desc: Create a sphere centered at cy, cx, cz with radius r, and
+--       precision p. Based on a function Written by Paul Bourke.
 --       http://astronomy.swin.edu.au/~pbourke/opengl/sphere/
 -------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ local TWOPI  = PI * 2;
 local PIDIV2 = PI * 0.5;
 
 local GL_TRIANGLE_STRIP = GL.TRIANGLE_STRIP
-local GL_QUADS   = GL.QUADS
+local _ = GL.QUADS
 local glBeginEnd = gl.BeginEnd
 local glNormal   = gl.Normal
 local glTexCoord = gl.TexCoord
@@ -20,9 +20,9 @@ local sin = math.sin
 local cos = math.cos
 
 function DrawSphere( cx, cy, cz, r, p )
-    local theta1,theta2,theta3 = 0,0,0;
-    local ex,ey,ez = 0,0,0;
-    local px,py,pz = 0,0,0;
+    local _, _, _ = 0,0,0;
+    local _, _, _ = 0,0,0;
+    local _, _, _ = 0,0,0;
 
     --// Disallow a negative number for radius.
     if ( r < 0 ) then r = -r; end
@@ -70,9 +70,9 @@ end
 -- not finished
 --
 function DrawCylinder( cx, cy, cz, r, h, p )
-    local theta1,theta2,theta3 = 0,0,0;
-    local ex,ey,ez = 0,0,0;
-    local px,py,pz = 0,0,0;
+    local _, _, _ = 0,0,0;
+    local _, _, _ = 0,0,0;
+    local _, _, _ = 0,0,0;
 
     --// Disallow a negative number for radius.
     if ( r < 0 ) then r = -r; end

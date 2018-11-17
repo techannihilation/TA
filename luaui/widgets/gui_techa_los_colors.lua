@@ -75,7 +75,7 @@ function updateLOS(colors)
     spSetLosViewColors(colors.fog, colors.los, colors.radar, colors.jam, colors.radar2)
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     local myPlayerId = Spring.GetMyPlayerID()
     local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(myPlayerId)
 

@@ -8,7 +8,7 @@ function widget:GetInfo()
 		date = "June 2013",
 		license = "click button magic",
 		layer = 10,
-		enabled = true,		
+		enabled = true,
 	}
 end
 
@@ -20,16 +20,16 @@ wPos = {x=0.00, y=0.15}
 local isPaused = false
 local isActive = true --is the widget shown and reacts to clicks?
 
-function widget:Initialize()	
+function widget:Initialize()
 	if (not Spring.IsReplay()) then
 		Spring.Echo ("replaycontrol: Not a replay, removing myself.")
 		widgetHandler:RemoveWidget(self)
 		return
 	end
-	
+
 	local dy = 0
 	local h = 0.033
-	for i = 1, #speeds do	
+	for i = 1, #speeds do
 		dy=dy+h
 		add_button (speedbuttons, wPos.x, wPos.y+dy, 0.037, 0.033, "  " .. speeds[i].."x", speeds[i], speedButtonColor (i))
 	end
@@ -39,17 +39,17 @@ function widget:Initialize()
 	if Spring.GetGameFrame() > 0 then
 		text = "  ||"
 	end
-	add_button (buttons, wPos.x, wPos.y, 0.037, 0.033, text,"playpauseskip", {0,0,0,0.6})	
-	
+	add_button (buttons, wPos.x, wPos.y, 0.037, 0.033, text,"playpauseskip", {0,0,0,0.6})
+
 end
 
-function widget:Shutdown()	
+function widget:Shutdown()
 	if (WG['guishader_api'] ~= nil) then
 		WG['guishader_api'].RemoveRect('replaybuttons')
 	end
 end
 
-function speedButtonColor (i)
+function speedButtonColor (_)
 	return{0,0,0,0.6}
 end
 
@@ -63,13 +63,13 @@ function widget:DrawScreen()
 			WG['guishader_api'].RemoveRect('replaybuttons')
 		end
 	end
-	
+
 	if not isActive then return end
 	draw_buttons(speedbuttons)
 	draw_buttons(buttons)
 end
 
-function widget:MousePress(x,y,button)	
+function widget:MousePress(_, _, _)
 	if not isActive then return end
 	local cb,i = clicked_button (speedbuttons)
 	if cb ~= "NOBUTTONCLICKED" then
@@ -79,15 +79,15 @@ function widget:MousePress(x,y,button)
 		end
 		speedbuttons[i].color = {0.75,0,0,0.66}
 	end
-	
-	local cb,i = clicked_button (buttons)	
+
+	local cb,i = clicked_button (buttons)
 	if cb == "playpauseskip" then
-		if Spring.GetGameFrame () > 1 then			
-			if (isPaused) then 			
+		if Spring.GetGameFrame () > 1 then
+			if (isPaused) then
 				Spring.SendCommands ("pause 0")
 				buttons[i].text = "  ||"
 				isPaused = false
-			else 
+			else
 				Spring.SendCommands ("pause 1")
 				buttons[i].text = "  >>"
 				isPaused = true
@@ -96,11 +96,11 @@ function widget:MousePress(x,y,button)
 			Spring.SendCommands ("skip 1")
 			buttons[i].text = "  ||"
 		end
-	end	
+	end
 end
 
-function setReplaySpeed (speed, i)
-	local s = Spring.GetGameSpeed()	
+function setReplaySpeed (speed, _)
+	local s = Spring.GetGameSpeed()
 	--Spring.Echo ("setting speed to: " , speed , " current is " , s)
 	if (speed > s) then	--speedup
 		Spring.SendCommands ("setminspeed " .. speed)
@@ -122,17 +122,17 @@ function widget:Update()
 	if #Spring.GetSelectedUnits () ~=0 then isActive = false else isActive = true end
 end
 
-function widget:GameFrame (f)	
+function widget:GameFrame (f)
 	if (f==1) then
 		buttons[1].text= "  ||"
 	end
 end
 
 ------------------------------------------------------------------------------------------
---a simple UI framework with buttons 
+--a simple UI framework with buttons
 --Feb 2011 by knorke
-local glPopMatrix      = gl.PopMatrix
-local glPushMatrix     = gl.PushMatrix
+local _ = gl.PopMatrix
+local _ = gl.PushMatrix
 local glText           = gl.Text
 local vsx, vsy = widgetHandler:GetViewSizes()
 --UI coordinaten zu scalierten screen koordinaten
@@ -167,12 +167,12 @@ end
 --------------------------------
 -----message boxxy-----
 function drawmessagebox (msgbox, msg_n)
-	if (msgbox.messages==nil) then return end	
+	if (msgbox.messages==nil) then return end
 	local yoff = msgbox.textsize
 	if (msg_n==nil) then msg_n=100 end --***
 	local start = #msgbox.messages-msg_n+1
-	if (start < 1) then start = 1 end	
-	local fade = 1
+	if (start < 1) then start = 1 end
+	local _ = 1
 	for i =  start, #msgbox.messages , 1 do
 		drawmessage (msgbox.messages[i],  msgbox.x,  msgbox.y-yoff, msgbox.textsize)
 		yoff=yoff+msgbox.textsize*1.2
@@ -182,35 +182,35 @@ end
 
 function drawmessage_simple (message, x, y, s)
 	offx=0
-	if (message.frame) then		
-		glText (frame2time (message.frame), sX(x+offx), sY(y), sX(s/2), 'vo')
-		offx=offx+(2*s)
-	end	
-	glText (message.text, sX(x+offx), sY(y), sX(s), 'vo')	
-end
-
---X, Y and size in UI scale
-function drawmessage (message, x, y, s)	
-	if (message.bgcolor) then 
-		gl.Color (unpack(message.bgcolor))
-		uiRect (x,y+s/2, x+1, y-s/2)
-	end	
-	offx=0
-	if (message.frame) then		
+	if (message.frame) then
 		glText (frame2time (message.frame), sX(x+offx), sY(y), sX(s/2), 'vo')
 		offx=offx+(2*s)
 	end
-	if (message.icon) then		
+	glText (message.text, sX(x+offx), sY(y), sX(s), 'vo')
+end
+
+--X, Y and size in UI scale
+function drawmessage (message, x, y, s)
+	if (message.bgcolor) then
+		gl.Color (unpack(message.bgcolor))
+		uiRect (x,y+s/2, x+1, y-s/2)
+	end
+	offx=0
+	if (message.frame) then
+		glText (frame2time (message.frame), sX(x+offx), sY(y), sX(s/2), 'vo')
+		offx=offx+(2*s)
+	end
+	if (message.icon) then
 		--****!!! irgendwie malt er danach keine Rechtecke mehr
 		--gl.PushMatrix()
 		gl.Color (1,1,1,1)
-		gl.Texture(message.icon)		
-		gl.TexRect(sX(x+s*1.9),sY(y-s*0.8), sX(x+s*2.9),sY(y+s*0.8)  )		
+		gl.Texture(message.icon)
+		gl.TexRect(sX(x+s*1.9),sY(y-s*0.8), sX(x+s*2.9),sY(y+s*0.8)  )
 		gl.Texture(false)
 		--gl.PopMatrix()
 		offx=offx+(s)
-	end	
-	glText (message.text, sX(x+offx), sY(y), sX(s), 'vo')	
+	end
+	glText (message.text, sX(x+offx), sY(y), sX(s), 'vo')
 end
 
 
@@ -226,24 +226,24 @@ end
 
 function RectRound(px,py,sx,sy,cs)
 
-	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.floor(sx),math.floor(sy),math.floor(cs)
-	
+	local px,py,sx,sy, _ = math.floor(px),math.floor(py),math.floor(sx),math.floor(sy),math.floor(cs)
+
 	gl.Rect(px, py, sx, sy)
 	--gl.Rect(sx-cs, py+cs, sx, sy-cs)
 	--gl.Rect(px+cs, py+cs, px, sy-cs)
-	
+
 	gl.Texture(false)
 end
 
 function draw_buttons (b)
 	local mousex, mousey = Spring.GetMouseState()
-	for i = 1, #b, 1 do	
+	for i = 1, #b, 1 do
 		if (b[i].color) then gl.Color (unpack(b[i].color)) else gl.Color (1 ,0,0,0.66) end
 		if (point_in_rect (b[i].x, b[i].y, b[i].x+b[i].w, b[i].y+b[i].h,  uiX(mousex), uiY(mousey)) or i == active_button) then
 			gl.Color (0.4,0.4,0.4,0.6)
 		end
 		if (b[i].name == selected_missionid) then gl.Color (0,1,1,0.66) end --highlight selected mission, bit unnice this way w/e
-		
+
 		uiRect (b[i].x, b[i].y, b[i].x+b[i].w, b[i].y+b[i].h)
 		uiText (b[i].text, b[i].x, b[i].y+b[i].h/2, (0.0115), 'vo')
 	end
@@ -277,7 +277,7 @@ function clicked_button (b)
 	local mx, my,click = Spring.GetMouseState()
 	local mousex=uiX(mx)
 	local mousey=uiY(my)
-	for i = 1, #b, 1 do	
+	for i = 1, #b, 1 do
 		if (click == true and point_in_rect (b[i].x, b[i].y, b[i].x+b[i].w, b[i].y+b[i].h,  mousex, mousey)) then return b[i].name, i end
 		--if (mouse_was_down == false and click == true and point_in_rect (b[i].x, b[i].y, b[i].x+b[i].w, b[i].y+b[i].h,  mousex, mousey)) then mouse_was_down = true end
 		end

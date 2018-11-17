@@ -48,7 +48,7 @@ local function sqDist(posA,posB)
 	return (posA[1]-posB[1])^2+(posA[3]-posB[3])^2 --+(posA[2]-posB[2])^2
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)
+function gadget:UnitDestroyed(unitID, unitDefID, _, _, _, _)
 	local wreckName = UnitDefs[unitDefID].wreckName
 	if not wreckName then
 		return --unit has no wreck
@@ -58,7 +58,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDef
 		return --wreck not found
 	end
 	--wreck is created rezFrameDistance frames after unit died
-	local wreckFrame = GetGameFrame() + rezFrameDistance 
+	local wreckFrame = GetGameFrame() + rezFrameDistance
 	local frameList = deadUnits[wreckFrame] or {}
 	local wreckList = frameList[wreckDefID] or {}
 	wreckList[#wreckList+1] = {
@@ -94,7 +94,7 @@ function gadget:FeatureCreated(featureID)
 	end
 end
 
-function gadget:UnitCreated(unitID,unitDefID,unitTeam,builderID)
+function gadget:UnitCreated(unitID,unitDefID, _,builderID)
 	if not builderID then
 		return
 	end
@@ -124,16 +124,16 @@ function gadget:FeatureDestroyed(featureID)
 			rezzedUnits[wreckInfo.unitDefID][unitID] = nil
 			return
 		end
-	end 
+	end
 end
 
 
 
 function gadget:GameFrame()
 	--wrecks gets created exactly rezFrameDistance frames after unit death
-	
+
 	--UnitCreated gets called BEFORE FeatureDestroyed, but within the same frame
-		
+
 	-- reset dead units vector, if wreck wasn't created since rezFrameDistance+1 frames, it will never be
 	local currentFrame = GetGameFrame()
 	deadUnits[currentFrame-1] = nil

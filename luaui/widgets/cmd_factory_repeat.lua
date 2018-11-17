@@ -27,7 +27,7 @@ end
 --------------------------------------------------------------------------------
 
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
         widgetHandler:RemoveWidget(self)
     end
@@ -43,7 +43,7 @@ function widget:GameStart()
 	widget:PlayerChanged()
 end
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, unitDefID, _)
  local ud = UnitDefs[unitDefID]
  if (ud and ud.isFactory) then
    Spring.GiveOrderToUnit(unitID, CMD.REPEAT, { 1 }, {})

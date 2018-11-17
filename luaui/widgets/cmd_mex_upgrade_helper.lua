@@ -1,36 +1,36 @@
-function widget:GetInfo() 
-  return { 
-    name      = "MexUpg Helper", 
-    desc      = "", 
-    author    = "author: BigHead", 
-    date      = "September 13, 2007", 
-    license   = "GNU GPL, v2 or later", 
-    layer     = -100, 
-    enabled   = true -- loaded by default? 
-  } 
-end 
+function widget:GetInfo()
+  return {
+    name      = "MexUpg Helper",
+    desc      = "",
+    author    = "author: BigHead",
+    date      = "September 13, 2007",
+    license   = "GNU GPL, v2 or later",
+    layer     = -100,
+    enabled   = true -- loaded by default?
+  }
+end
 
 
-local upgradeMouseCursor = "Reclaim" 
+local upgradeMouseCursor = "Reclaim"
 
-local CMD_UPGRADEMEX = 31244 
+local CMD_UPGRADEMEX = 31244
 
-local builderDefs = nil 
+local builderDefs = nil
 
-local GetUnitDefID = Spring.GetUnitDefID 
-local GiveOrderToUnit = Spring.GiveOrderToUnit 
-local GetSelectedUnits = Spring.GetSelectedUnits 
-local TraceScreenRay = Spring.TraceScreenRay 
-local GetActiveCommand = Spring.GetActiveCommand 
+local GetUnitDefID = Spring.GetUnitDefID
+local GiveOrderToUnit = Spring.GiveOrderToUnit
+local GetSelectedUnits = Spring.GetSelectedUnits
+local TraceScreenRay = Spring.TraceScreenRay
+local GetActiveCommand = Spring.GetActiveCommand
 
 function widget:Initialize()
   if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
     widget:PlayerChanged()
   end
-  widgetHandler:RegisterGlobal('registerUpgradePairs', registerUpgradePairs) 
-end 
+  widgetHandler:RegisterGlobal('registerUpgradePairs', registerUpgradePairs)
+end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
   if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
     widgetHandler:RemoveWidget(self)
   end
@@ -40,18 +40,18 @@ function widget:GameStart()
   widget:PlayerChanged()
 end
 
-function widget:Shutdown() 
-  widgetHandler:DeregisterGlobal('registerUpgradePairs') 
-end 
+function widget:Shutdown()
+  widgetHandler:DeregisterGlobal('registerUpgradePairs')
+end
 
-function registerUpgradePairs(v) 
-  builderDefs = v 
-  return true 
-end 
+function registerUpgradePairs(v)
+  builderDefs = v
+  return true
+end
 
-function widget:UpdateLayout(commandsChanged,page,alt,ctrl,meta, shift) 
-return true 
-end 
+function widget:UpdateLayout(_, _, _, _, _, _)
+return true
+end
 
 
 function widget:GameFrame(n)
@@ -61,66 +61,66 @@ function widget:GameFrame(n)
 	end
 end
 
-function widget:MousePress(x, y, b)  
-  if rightClickUpgradeParams then 
-    local alt, ctrl, meta, shift = Spring.GetModKeyState() -- 
-    local options = {} 
-    if shift then options = {"shift"} end 
+function widget:MousePress(_, _, b)
+  if rightClickUpgradeParams then
+    local _, _, _, shift = Spring.GetModKeyState() --
+    local options = {}
+    if shift then options = {"shift"} end
     if b == 3 then
         GiveOrderToUnit(rightClickUpgradeParams.builderID, CMD_UPGRADEMEX, {rightClickUpgradeParams.mexID}, options)
     else
       return false
     end
-    return true 
-  end    
-end 
+    return true
+  end
+end
 
-function widget:GetTooltip(x,y) 
-  local tooltip = nil 
-  if rightClickUpgradeParams then 
-    local unitDef = UnitDefs[rightClickUpgradeParams.upgradeTo] 
-    tooltip = "Right click to upgrade to " .. unitDef.humanName 
-    Spring.SetMouseCursor(upgradeMouseCursor) 
-  else 
-    tooltip = "NO TOOLTIP AVALIABLE" 
-  end 
-  return tooltip 
-end 
+function widget:GetTooltip(_, _)
+  local tooltip = nil
+  if rightClickUpgradeParams then
+    local unitDef = UnitDefs[rightClickUpgradeParams.upgradeTo]
+    tooltip = "Right click to upgrade to " .. unitDef.humanName
+    Spring.SetMouseCursor(upgradeMouseCursor)
+  else
+    tooltip = "NO TOOLTIP AVALIABLE"
+  end
+  return tooltip
+end
 
-function widget:IsAbove(x,y) 
-  if not builderDefs then 
-    return 
-  end 
-  rightClickUpgradeParams = nil 
-  
-  if GetActiveCommand() ~= 0 then 
-    return false 
-  end 
-  
-  local selectedUnits = GetSelectedUnits() 
-  
-  if #selectedUnits ~= 1 then 
-    return false 
-  end 
-  
-  local builderID = selectedUnits[1] 
-  local upgradePairs = builderDefs[GetUnitDefID(builderID)] 
+function widget:IsAbove(x,y)
+  if not builderDefs then
+    return
+  end
+  rightClickUpgradeParams = nil
 
-  if not upgradePairs then 
-    return false 
-  end 
+  if GetActiveCommand() ~= 0 then
+    return false
+  end
 
-  local type, unitID = TraceScreenRay(x, y) 
+  local selectedUnits = GetSelectedUnits()
 
-  if type ~= "unit" then 
-    return false 
-  end 
+  if #selectedUnits ~= 1 then
+    return false
+  end
 
-  local upgradeTo = upgradePairs[GetUnitDefID(unitID)] 
-  if not upgradeTo then 
-    return false 
-  end 
+  local builderID = selectedUnits[1]
+  local upgradePairs = builderDefs[GetUnitDefID(builderID)]
 
-  rightClickUpgradeParams = {builderID = builderID, mexID = unitID, upgradeTo = upgradeTo} 
-  return true 
+  if not upgradePairs then
+    return false
+  end
+
+  local type, unitID = TraceScreenRay(x, y)
+
+  if type ~= "unit" then
+    return false
+  end
+
+  local upgradeTo = upgradePairs[GetUnitDefID(unitID)]
+  if not upgradeTo then
+    return false
+  end
+
+  rightClickUpgradeParams = {builderID = builderID, mexID = unitID, upgradeTo = upgradeTo}
+  return true
 end

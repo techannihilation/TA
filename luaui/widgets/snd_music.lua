@@ -64,19 +64,19 @@ local previousTrackType = ''
 local newTrackWait = 1000
 local numVisibleEnemy = 0
 local fadeVol
-local curTrack	= "no name"
-local songText	= "no name"
+local _ = "no name"
+local _ = "no name"
 local haltMusic = false
 local looping = false
-local paused = false
+local _ = false
 local lastTrackTime = -1
 
 local warTracks, peaceTracks, briefingTracks, victoryTracks, defeatTracks
 
 local firstTime = false
 local wasPaused = false
-local firstFade = true
-local initSeed = 0
+local _ = true
+local _ = 0
 local initialized = false
 local gameStarted = Spring.GetGameFrame() > 0
 local gameOver = false
@@ -98,7 +98,7 @@ local function StartLoopingTrack(trackInit, trackLoop)
 	haltMusic = true
 	Spring.StopSoundStream()
 	musicType = 'custom'
-	
+
 	curTrack = trackInit
 	loopTrack = trackLoop
 	Spring.PlaySoundStream(trackInit, WG.music_volume or 0.4)
@@ -109,7 +109,7 @@ local function StartTrack(track)
 	haltMusic = false
 	looping = false
 	Spring.StopSoundStream()
-	
+
 	local newTrack = previousTrack
 	if musicType == 'custom' then
 		previousTrackType = "peace"
@@ -136,11 +136,11 @@ local function StartTrack(track)
 		until newTrack ~= previousTrack or tries >= 10
 	end
 	-- for key, val in pairs(oggInfo) do
-		-- Spring.Echo(key, val)	
+		-- Spring.Echo(key, val)
 	-- end
 	firstFade = false
 	previousTrack = newTrack
-	
+
 	-- if (oggInfo.comments.TITLE and oggInfo.comments.TITLE) then
 		-- Spring.Echo("Song changed to: " .. oggInfo.comments.TITLE .. " By: " .. oggInfo.comments.ARTIST)
 	-- else
@@ -148,7 +148,7 @@ local function StartTrack(track)
 	-- end
 	curTrack = newTrack
 	Spring.PlaySoundStream(newTrack,WG.music_volume or 0.4)
-	
+
 	WG.music_start_volume = WG.music_volume
 end
 
@@ -176,7 +176,7 @@ local function SetPeaceThreshold(num)
 		peaceThreshold = num
 	else
 		peaceThreshold = 1000
-	end	
+	end
 end
 
 function widget:Update(dt)
@@ -196,7 +196,7 @@ function widget:Update(dt)
 			victoryTracks = tracks.victory
 			defeatTracks = tracks.defeat
 		end
-		
+
 		local vfsMode = (options.useIncludedTracks.value and VFS.RAW_FIRST) or VFS.RAW
 		warTracks	= warTracks or VFS.DirList('sounds/music/war/', '*.ogg', vfsMode)
 		peaceTracks	= peaceTracks or VFS.DirList('sounds/music/peace/', '*.ogg', vfsMode)
@@ -204,7 +204,7 @@ function widget:Update(dt)
 		victoryTracks	= victoryTracks or VFS.DirList('sounds/music/victory/', '*.ogg', vfsMode)
 		defeatTracks	= defeatTracks or VFS.DirList('sounds/music/defeat/', '*.ogg', vfsMode)
 	end
-	
+
 	timeframetimer_short = timeframetimer_short + dt
 	if timeframetimer_short > 0.03 then
 		local playedTime, totalTime = Spring.GetSoundStreamTime()
@@ -221,12 +221,12 @@ function widget:Update(dt)
 		end
 		timeframetimer_short = 0
 	end
-	
+
 	timeframetimer = timeframetimer + dt
 	if (timeframetimer > UPDATE_PERIOD) then	-- every second
 		timeframetimer = 0
 		newTrackWait = newTrackWait + 1
-		local PlayerTeam = Spring.GetMyTeamID()
+		local _ = Spring.GetMyTeamID()
 		numVisibleEnemy = 0
 		local doods = Spring.GetVisibleUnits()
 		for i=1,#doods do
@@ -234,21 +234,21 @@ function widget:Update(dt)
 				numVisibleEnemy = numVisibleEnemy + 1
 			end
 		end
-			
+
 		local totalKilled = 0
 		for i = 1, 10, 1 do --calculate the first half of the table (1-15)
 			totalKilled = totalKilled + (dethklok[i] * 2)
 		end
-		
+
 		for i = 11, 20, 1 do -- calculate the second half of the table (16-45)
 			totalKilled = totalKilled + dethklok[i]
 		end
-		
+
 		for i = 20, 1, -1 do -- shift value(s) to the end of table
 			dethklok[i+1] = dethklok[i]
 		end
 		dethklok[1] = 0 -- empty the first row
-		
+
 		if (musicType == 'war' or musicType == 'peace') then
 			if (totalKilled >= warThreshold) then
 				musicType = 'war'
@@ -256,19 +256,19 @@ function widget:Update(dt)
 				musicType = 'peace'
 			end
 		end
-		
+
 		if (not firstTime) then
 			StartTrack()
-			firstTime = true -- pop this cherry	
+			firstTime = true -- pop this cherry
 		end
-		
+
 		local playedTime, totalTime = Spring.GetSoundStreamTime()
 		playedTime = math.floor(playedTime)
 		totalTime = math.floor(totalTime)
 		--Spring.Echo(playedTime, totalTime)
-		
+
 		--Spring.Echo(playedTime, totalTime, newTrackWait)
-		
+
 		--if((totalTime - playedTime) <= 6 and (totalTime >= 1) ) then
 			--Spring.Echo("time left:", (totalTime - playedTime))
 			--Spring.Echo("volume:", (totalTime - playedTime)/6)
@@ -288,7 +288,7 @@ function widget:Update(dt)
 		 and not(haltMusic or looping) then
 			previousTrackType = musicType
 			StartTrack()
-			
+
 			--Spring.Echo("Track: " .. newTrack)
 			newTrackWait = 0
 		end
@@ -304,9 +304,9 @@ function widget:GameStart()
 	gameStarted = true
 	previousTrackType = musicType
 	StartTrack()
-	
+
 	--Spring.Echo("Track: " .. newTrack)
-	newTrackWait = 0	
+	newTrackWait = 0
 end
 
 function widget:Initialize()
@@ -320,13 +320,13 @@ function widget:Initialize()
 
 	-- Spring.Echo(math.random(), math.random())
 	-- Spring.Echo(os.clock())
- 
+
 	-- for TrackName,TrackDef in pairs(peaceTracks) do
-		-- Spring.Echo("Track: " .. TrackDef)	
+		-- Spring.Echo("Track: " .. TrackDef)
 	-- end
 	--math.randomseed(os.clock()* 101.01)--lurker wants you to burn in hell rgn
 	-- for i=1,20 do Spring.Echo(math.random()) end
-	
+
 	for i = 1, 30, 1 do
 		dethklok[i]=0
 	end
@@ -335,22 +335,22 @@ end
 function widget:Shutdown()
 	Spring.StopSoundStream()
 	WG.Music = nil
-	
+
 	for i=1,#windows do
 		(windows[i]):Dispose()
 	end
 end
 
-function widget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer)
+function widget:UnitDamaged(_, unitDefID, _, damage, paralyzer)
 	if unitExceptions[unitDefID] then
 		return
 	end
-	
+
 	if (damage < 1.5) then return end
 	local PlayerTeam = Spring.GetMyTeamID()
-	
+
 	if (UnitDefs[unitDefID] == nil) then return end
-		
+
 	if paralyzer then
 		return
 	else
@@ -365,11 +365,11 @@ function widget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer)
 	end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, teamID) 
+function widget:UnitDestroyed(_, unitDefID, teamID)
 	if unitExceptions[unitDefID] then
 		return
 	end
-	local unitWorth = 50
+	local _ = 50
 	if (UnitDefs[unitDefID].metalCost > 500) then
 		unitWorth = 200
 	end
@@ -424,7 +424,7 @@ function widget:GetConfigData()
 	return data
 end
 
-function widget:SetConfigData(data) 
+function widget:SetConfigData(data)
 	if (data ~= nil) then
 		if ( data["music_volume"] ~= nil ) then
 			WG.music_volume = data["music_volume"]

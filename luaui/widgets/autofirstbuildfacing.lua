@@ -32,7 +32,7 @@ function widget:Initialize()
   	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end
@@ -46,9 +46,9 @@ end
 function widget:GameFrame(f)
   if f==3 then
     if SpGetTeamUnitCount(SpGetMyTeamID()) and SpGetTeamUnitCount(SpGetMyTeamID())>0 then
-      for k,unitID in pairs(SpGetTeamUnits(SpGetMyTeamID())) do
-        local ux=0
-        local uz=0
+      for _,unitID in pairs(SpGetTeamUnits(SpGetMyTeamID())) do
+        local _ =0
+        local _ =0
         ux,_,uz=SpGetUnitPosition(unitID)
         if ux and uz then
           x=x+ux

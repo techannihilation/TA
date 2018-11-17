@@ -42,7 +42,7 @@ function widget:GameOver()
   Echo("<autoquit> Automatically exiting in " .. delay .. " seconds. Move mouse to cancel.")
 end
 
-function widget:Update(dt)
+function widget:Update(_)
   if endTime then
     local nmx,nmy = GetMouseState()
     if nmx~=mx or nmy~=my then

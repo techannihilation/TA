@@ -15,7 +15,7 @@ local FRAMES_PER_SECOND = Game.gameSpeed
 
 local airTransports = {}
 local airTransportMaxSpeeds = {}
-	
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 if (gadgetHandler:IsSyncedCode()) then
@@ -23,17 +23,17 @@ if (gadgetHandler:IsSyncedCode()) then
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local massUsageFraction = 0
-local allowedSpeed = 0
+local _ = 0
+local _ = 0
 local currentMassUsage = 0
 -- update allowed speed for transport
 function updateAllowedSpeed(transportId, transportUnitDef)
-	
-	-- get sum of mass and size for all transported units                                
+
+	-- get sum of mass and size for all transported units
 	currentMassUsage = 0
 	for _,tUnitId in pairs(Spring.GetUnitIsTransporting(transportId)) do
 		local tUd = UnitDefs[Spring.GetUnitDefID(tUnitId)]
-		-- currentCapacityUsage = currentCapacityUsage + tUd.xsize 
+		-- currentCapacityUsage = currentCapacityUsage + tUd.xsize
 		currentMassUsage = currentMassUsage + tUd.mass
 	end
 	if transportUnitDef.transportMass == nil then return end
@@ -46,7 +46,7 @@ end
 
 
 -- add transports to table when they load a unit
-function gadget:UnitLoaded(unitId, unitDefId, unitTeam, transportId, transportTeam)
+function gadget:UnitLoaded(_, _, _, transportId, _)
 	local ud = UnitDefs[Spring.GetUnitDefID(transportId)]
 	if ud.canFly and not airTransports[transportId] then
 		airTransports[transportId] = ud
@@ -57,19 +57,19 @@ function gadget:UnitLoaded(unitId, unitDefId, unitTeam, transportId, transportTe
 end
 
 -- cleanup transports and unloaded unit tables when destroyed
-function gadget:UnitDestroyed(unitId, unitDefId, teamId, attackerId, attackerDefId, attackerTeamId)
+function gadget:UnitDestroyed(unitId, _, _, _, _, _)
 	airTransports[unitId] = nil
 	airTransportMaxSpeeds[unitId] = nil
 end
 
 -- every frame, adjust speed of air transports according to transported mass, if any
-function gadget:GameFrame(n)
-    
+function gadget:GameFrame(_)
+
 	-- for each air transport with units loaded, reduce speed if currently greater than allowed
-	local factor = 1
-	local vx,vy,vz,vw = 0
-	local alSpeed = 0
-	for unitId,ud in pairs(airTransports) do
+	local _ = 1
+	local _, _, _, _ = 0
+	local _ = 0
+	for unitId, _ in pairs(airTransports) do
 		vx,vy,vz,vw = Spring.GetUnitVelocity(unitId)
 		alSpeed = airTransportMaxSpeeds[unitId]
         if (alSpeed and vw and vw > alSpeed) then
@@ -80,7 +80,7 @@ function gadget:GameFrame(n)
 end
 
 
-function gadget:UnitUnloaded(unitId, unitDefId, teamId, transportId)
+function gadget:UnitUnloaded(_, _, _, transportId)
 	local ud = UnitDefs[Spring.GetUnitDefID(transportId)]
 	if ud.canFly then
 		if airTransports[transportId] and not Spring.GetUnitIsTransporting(transportId)[1] then
@@ -98,7 +98,7 @@ end
 --------------------------------------------------------------------------------
 else
 
-	
+
 -- END SYNCED
 -- BEGIN UNSYNCED
 --------------------------------------------------------------------------------

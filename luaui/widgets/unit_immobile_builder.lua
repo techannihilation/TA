@@ -27,38 +27,38 @@ end
 
 local CMD_PASSIVE			= 34571
 local CMD_MOVE_STATE		= CMD.MOVE_STATE
-local CMD_REPEAT			= CMD.REPEAT
-local CMD_PATROL			= CMD.PATROL
+local _ = CMD.REPEAT
+local _ = CMD.PATROL
 local CMD_FIGHT				= CMD.FIGHT
-local CMD_STOP				= CMD.STOP
-local spGetGameFrame		= Spring.GetGameFrame
+local _ = CMD.STOP
+local _ = Spring.GetGameFrame
 local spGetMyTeamID			= Spring.GetMyTeamID
 local spGetTeamUnits		= Spring.GetTeamUnits
-local spGetUnitCommands		= Spring.GetUnitCommands
+local _ = Spring.GetUnitCommands
 local spGetUnitDefID		= Spring.GetUnitDefID
 local spGetUnitPosition		= Spring.GetUnitPosition
 local spGiveOrderToUnit		= Spring.GiveOrderToUnit
-local spGetSpectatingState	= Spring.GetSpectatingState
+local _ = Spring.GetSpectatingState
 
 local hmsx = Game.mapSizeX/2
 local hmsz = Game.mapSizeZ/2
 
 
-local morphednanos = { --not in use, look like 125
+local _ = { --not in use, look like 125
 --Core
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
   [UnitDefNames["cornanotc3"].id] = true,
   [UnitDefNames["cnanotower"].id] = true,
 
-  
---Arm 
+
+--Arm
   [UnitDefNames["armnanotc1"].id] = true,
   [UnitDefNames["armnanotc2"].id] = true,
   [UnitDefNames["armnanotc3"].id] = true,
   [UnitDefNames["ananotower"].id] = true,
- 
- 
+
+
 
 --The lost legacy
   [UnitDefNames["tllnanotc1"].id] = true,
@@ -91,13 +91,13 @@ local function SetupUnit(unitID)
 	      z = z - 50
 	    else
 	      z = z + 50
-	    end	
+	    end
 		-- meta enables reclaim enemy units, alt autoresurrect ( if available )
 		spGiveOrderToUnit(unitID, CMD_FIGHT, { x, y, z }, {"meta"})
 	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
         widgetHandler:RemoveWidget(self)
     end

@@ -20,7 +20,7 @@ local showStickyTags = false --comms literally wear name tags
 local heightOffset = 22
 local xOffset = 0
 local yOffset = 0
-local fontSize = 6
+local _ = 6
 
 --------------------------------------------------------------------------------
 -- speed-ups
@@ -30,8 +30,8 @@ local GetUnitTeam         = Spring.GetUnitTeam
 local GetTeamInfo         = Spring.GetTeamInfo
 local GetPlayerInfo       = Spring.GetPlayerInfo
 local GetTeamColor        = Spring.GetTeamColor
-local GetUnitViewPosition = Spring.GetUnitViewPosition
-local GetVisibleUnits     = Spring.GetVisibleUnits
+local _ = Spring.GetUnitViewPosition
+local _ = Spring.GetVisibleUnits
 local GetUnitDefID        = Spring.GetUnitDefID
 local GetAllUnits         = Spring.GetAllUnits
 local GetUnitHeading      = Spring.GetUnitHeading
@@ -65,7 +65,7 @@ local glScale          = gl.Scale
 
 local overheadFont	= "LuaUI/Fonts/FreeSansBold_14"
 local stickyFont	= "LuaUI/Fonts/FreeSansBold_14"
-local fhDraw		= fontHandler.Draw
+local _ = fontHandler.Draw
 --------------------------------------------------------------------------------
 -- local variables
 --------------------------------------------------------------------------------
@@ -85,7 +85,7 @@ local CnMaxDist = 3000000 -- max dist at which to draw ETA
 local function GetCommAttributes(unitID, unitDefID)
   local team = GetUnitTeam(unitID)
   if team == nil then
-    return nil 
+    return nil
   end
   local _, player = GetTeamInfo(team)
   local name = GetPlayerInfo(player) or 'Robert Paulson'
@@ -93,16 +93,16 @@ local function GetCommAttributes(unitID, unitDefID)
   local height = UnitDefs[unitDefID].height + heightOffset
   local pm = spGetUnitPieceMap(unitID)
   local pmt = pm["torso"]
-  if (pmt == nil) then 
+  if (pmt == nil) then
     pmt = pm["chest"]
-  end    
+  end
   return {name, {r, g, b, a}, height, pmt }
 end
 
-local function DrawCommName(unitID, attributes)
+local function DrawCommName(_, attributes)
   glTranslate(0, attributes[3], 0 )
   glBillboard()
-  
+
   glColor(attributes[2])
   --glText(attributes[1], xOffset, yOffset, fontSize, "cn")
   fontHandler.UseFont(overheadFont)
@@ -110,15 +110,15 @@ local function DrawCommName(unitID, attributes)
   glColor(1,1,1,1)
 end
 
-local function DrawNameTag(rotation)
+local function _(rotation)
   glRotate(rotation,0,1,0)
   glTranslate(8, 35, 7)
-  
+
   glColor(1,1,1,1)
   glTexRect(-iconhsize, 0, iconhsize, iconsize)
 end
 
-local function DrawCommName2(unitID, attributes, rotation)
+local function DrawCommName2(_, attributes, rotation)
   glRotate(rotation,0,1,0)
   glTranslate(8, 40, 7)
 
@@ -143,7 +143,7 @@ function widget:Initialize()
 end
 
 
-function spGetUnitPieceMap(unitID,piecename)
+function spGetUnitPieceMap(unitID, _)
   local pieceMap = {}
   for piecenum,piecename in pairs(Spring.GetUnitPieceList(unitID)) do
     pieceMap[piecename] = piecenum
@@ -157,15 +157,15 @@ function widget:DrawWorld()
   if comGate == 1 and GetGameFrame() < 140 then
 	return  --Dont draw name tag if comgate is active
     end
-    
- if Spring.IsGUIHidden() == false then 
+
+ if Spring.IsGUIHidden() == false then
 
   glDepthTest(true)
   glTexture('LuaUI/Images/hellomynameis.png')
   glAlphaTest(GL_GREATER, 0)
 
   if (showStickyTags) then
-    
+
     for unitID, attributes in pairs(comms) do
 	  if (attributes[4]) then
 	      glPushMatrix()
@@ -186,20 +186,20 @@ function widget:DrawWorld()
 	      glRotate(0,0,1,0)
 	      glTranslate(8, 0, 7)
 	      glColor(attributes[2])
-	 
+
 	      glPushMatrix()
 	      glScale(0.03, 0.03, 0.03)
 	      glTranslate (0,120,5)
 	      fontHandler.UseFont(stickyFont)
 	      fontHandler.DrawCentered(attributes[1], 0,0)
 	      glPopMatrix()
-	 
+
 	      glPopMatrix()
 	  end
     end
 
   end
-      
+
   for unitID, attributes in pairs(comms) do
     local heading = GetUnitHeading(unitID)
     if (not heading) then
@@ -210,7 +210,7 @@ function widget:DrawWorld()
      if ux~=nil then
        local dx, dy, dz = ux-cx, uy-cy, uz-cz
        local dist = dx*dx + dy*dy + dz*dz
-	if dist < CnMaxDist then 
+	if dist < CnMaxDist then
 	  local rot = (heading / 32768) * 180
 	  glDrawFuncAtUnit(unitID, false, DrawCommName, unitID, attributes)
 	    if (showStickyTags) then
@@ -227,21 +227,21 @@ function widget:DrawWorld()
  end
 end
 
-function widget:UnitCreated( unitID,  unitDefID,  unitTeam)
+function widget:UnitCreated( unitID,  unitDefID, _)
   if (unitDefID and UnitDefs[unitDefID] and UnitDefs[unitDefID].customParams.iscommander) then
     comms[unitID] = GetCommAttributes(unitID, unitDefID)
   end
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
   comms[unitID] = nil
 end
 
-function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+function widget:UnitGiven(unitID, unitDefID, unitTeam, _)
   widget:UnitCreated( unitID,  unitDefID,  unitTeam)
 end
 
-function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+function widget:UnitTaken(unitID, unitDefID, unitTeam, _)
   widget:UnitCreated( unitID,  unitDefID,  unitTeam)
 end
 

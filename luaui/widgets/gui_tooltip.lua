@@ -37,7 +37,7 @@ local usedFontSize = 13
 local xOffset = 32
 local yOffset = -32-usedFontSize
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local cbackground, _, _ = include("Configs/ui_config.lua")
 local triggered = nil
 local update = 0.5
 
@@ -47,13 +47,13 @@ local update = 0.5
 
 local glColor = gl.Color
 local glText = gl.Text
-local glRect = gl.Rect
+local _ = gl.Rect
 local glTranslate = gl.Translate
 
-local spGetModKeyState = Spring.GetModKeyState
+local _ = Spring.GetModKeyState
 local spGetMouseState = Spring.GetMouseState
-local spTraceScreenRay = Spring.TraceScreenRay
-local spGetTooltip = Spring.GetCurrentTooltip
+local _ = Spring.TraceScreenRay
+local _ = Spring.GetCurrentTooltip
 
 local vsx, vsy = Spring.GetViewGeometry()
 
@@ -64,13 +64,13 @@ local tooltips = {}
 ------------------------------------------------------------------------------------
 
 function RectRound(px,py,sx,sy,cs)
-	
+
 	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.floor(sx),math.floor(sy),math.floor(cs)
-	
+
 	gl.Rect(px+cs, py, sx-cs, sy)
 	gl.Rect(sx-cs, py+cs, sx, sy-cs)
 	gl.Rect(px+cs, py+cs, px, sy-cs)
-	
+
 	gl.TexRect(px, py+cs, px+cs, py)		-- top left
 	gl.TexRect(sx, py+cs, sx-cs, py)		-- top right
 	gl.TexRect(px, sy-cs, px+cs, sy)		-- bottom left
@@ -83,7 +83,7 @@ end
 
 function widget:Shutdown()
 	if (WG['guishader_api'] ~= nil) then
-        for name, tooltip in pairs(tooltips) do
+        for name, _ in pairs(tooltips) do
 		    WG['guishader_api'].RemoveRect('tooltip_'..name)
         end
 	end
@@ -121,7 +121,7 @@ function init()
 end
 
 
-function widget:ViewResize(x,y)
+function widget:ViewResize(_, _)
 	init()
 end
 
@@ -144,16 +144,16 @@ function drawTooltip(name, x, y)
 	local paddingH = 7 *widgetScale
 	local paddingW = paddingH * 1.33
 	local posX = x + paddingW
-	local posY = y + paddingH
-	
+	local _ = y + paddingH
+
 	local fontSize = usedFontSize*widgetScale
 	local maxWidth = 0
 	local maxHeight = 0
 	local lineHeight = fontSize + (fontSize/4.5)
 	local lines = lines(tooltips[name].value)
-	
+
 	-- get text dimentions
-	for i, line in ipairs(lines) do
+	for _, line in ipairs(lines) do
 		maxWidth = math.max(maxWidth, (gl.GetTextWidth(line)*fontSize), maxWidth)
 		maxHeight = maxHeight + lineHeight
 	end
@@ -170,7 +170,7 @@ function drawTooltip(name, x, y)
 	if posY-maxHeight-paddingH-paddingH < 0 then
 		posY = 0 + maxHeight + paddingH + paddingH
 	end
-	
+
 	-- draw background
 	local cornersize = 0
 	glColor(cbackground)
@@ -181,12 +181,12 @@ function drawTooltip(name, x, y)
 	if (WG['guishader_api'] ~= nil) then
 		WG['guishader_api'].InsertRect(posX-paddingW-cornersize, posY-maxHeight-paddingH-cornersize, posX+maxWidth+paddingW+cornersize, posY+paddingH+cornersize, 'tooltip_'..name)
 	end
-	
+
 	-- draw text
 	maxHeight = -fontSize*0.93
 	glTranslate(posX, posY, 0)
 	gl.BeginText()
-	for i, line in ipairs(lines) do
+	for _, line in ipairs(lines) do
 		glText('\255\244\244\244'..line, 0, maxHeight, fontSize, "o")
 		maxHeight = maxHeight - lineHeight
 	end
@@ -215,9 +215,9 @@ end
 function widget:DrawScreen()
 	--if spIsGUIHidden() then return end
 
-	local x, y = spGetMouseState()
-	local now = os.clock()
-	
+	local _, _ = spGetMouseState()
+	local _ = os.clock()
+
 	if triggered == nil then
 		if cbackground[4] == 0.54321 and WG["background_color"] then
 			cbackground[4]=WG["background_color"]

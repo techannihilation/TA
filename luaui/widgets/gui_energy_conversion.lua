@@ -16,16 +16,16 @@ end
 
 local efficiencyClassBoxEnabled = true
 
-local EfficiencyThresholds = { 
-	{title="S", 		color={r = 0.3, 	g = 0.6, 	b = 1, a = 0.5}, e=0.018}, 
-	{title="A+", 		color={r = 0.1, 	g = 1, 		b = 0.3, 	a = 0.5}, e=0.018}, 
-	{title="A+", 		color={r = 0.1, 	g = 1, 		b = 0, 	a = 0.5}, e=0.017}, 
-	{title="A", 		color={r = 0.4, 	g = 1, 		b = 0, 	a = 0.5}, e=0.016}, 
-	{title="B", 		color={r = 0.7, 	g = 1, 		b = 0, 	a = 0.5}, e=0.015}, 
-	{title="C", 		color={r = 1, 	g = 1, 		b = 0, 	a = 0.5}, e=0.014}, 
-	{title="D", 		color={r = 1, 	g = 0.5, 	b = 0, 	a = 0.5}, e=0.013}, 
-	{title="E", 		color={r = 1, 	g = 0, 		b = 0, 	a = 0.5}, e=0.012}, 
-	{title="E-", 		color={r = 0.8, 	g = 0, 		b = 0, 	a = 0.5}, e=0.001}, 
+local EfficiencyThresholds = {
+	{title="S", 		color={r = 0.3, 	g = 0.6, 	b = 1, a = 0.5}, e=0.018},
+	{title="A+", 		color={r = 0.1, 	g = 1, 		b = 0.3, 	a = 0.5}, e=0.018},
+	{title="A+", 		color={r = 0.1, 	g = 1, 		b = 0, 	a = 0.5}, e=0.017},
+	{title="A", 		color={r = 0.4, 	g = 1, 		b = 0, 	a = 0.5}, e=0.016},
+	{title="B", 		color={r = 0.7, 	g = 1, 		b = 0, 	a = 0.5}, e=0.015},
+	{title="C", 		color={r = 1, 	g = 1, 		b = 0, 	a = 0.5}, e=0.014},
+	{title="D", 		color={r = 1, 	g = 0.5, 	b = 0, 	a = 0.5}, e=0.013},
+	{title="E", 		color={r = 1, 	g = 0, 		b = 0, 	a = 0.5}, e=0.012},
+	{title="E-", 		color={r = 0.8, 	g = 0, 		b = 0, 	a = 0.5}, e=0.001},
 	{title="/", 		color={r = 0.6, 	g = 0.6, 	b = 0.6,	a = 0.5}, e=0}
 }
 
@@ -77,16 +77,16 @@ local spGetTeamResources = Spring.GetTeamResources
 
 local convertCapacities = VFS.Include('LuaRules/Configs/maker_defs.lua')
 
-local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
+local cbackground, cborder, _ = include("Configs/ui_config.lua")
 local triggered = nil
 
 --table.sort(EfficiencyThresholds, function(a,b) return a.e>b.e end)
 local WhiteStr   = "\255\255\255\255"
-local BlackStr   = "\255\001\001\001"
-local GreyStr    = "\255\192\192\192"
+local _ = "\255\001\001\001"
+local _ = "\255\192\192\192"
 local RedStr     = "\255\255\001\001"
 local GreenStr   = "\255\001\255\001"
-local BlueStr    = "\255\001\001\255"
+local _ = "\255\001\001\255"
 local YellowStr  = "\255\255\255\001"
 
 local r, g, b, a
@@ -107,46 +107,46 @@ local floor = math.floor
 
 local function getLetter(effi)
 
-	for a, v in ipairs(EfficiencyThresholds) do
-		if (effi >= v.e) then 
+	for _, v in ipairs(EfficiencyThresholds) do
+		if (effi >= v.e) then
 			return v
 		end
 	end
 	return EfficiencyThresholds[#EfficiencyThresholds-1]
-end 
+end
 
 
 function EfficiencyThresholds:getTextColor(effi)
 	local nearestHigherT, nearestLowerT
 
-	for a, v in ipairs(self) do
-		
+	for _, v in ipairs(self) do
+
 		if (effi >= v.e) then
 			nearestLowerT = v
 			break
 		end
 		nearestHigherT = v
 	end
-	
-	if not nearestLowerT then 
+
+	if not nearestLowerT then
 		nearestLowerT = self[#self]
 	end
-	
+
 	local rel
-	
-	if not nearestHigherT then 
-		nearestHigherT = nearestLowerT 
+
+	if not nearestHigherT then
+		nearestHigherT = nearestLowerT
 		rel = 0
 	else
 		rel = (effi - nearestLowerT.e) / (nearestHigherT.e -  nearestLowerT.e)
 	end
-	
-	
-	return 
-		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)), 
-		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)), 
+
+
+	return
+		(nearestLowerT.color.r + rel * (nearestHigherT.color.r - nearestLowerT.color.r)),
+		(nearestLowerT.color.g + rel * (nearestHigherT.color.g - nearestLowerT.color.g)),
 		(nearestLowerT.color.b + rel * (nearestHigherT.color.b - nearestLowerT.color.b)),
-		(nearestLowerT.color.a + rel * (nearestHigherT.color.a - nearestLowerT.color.a)) 
+		(nearestLowerT.color.a + rel * (nearestHigherT.color.a - nearestLowerT.color.a))
 end
 
 
@@ -157,7 +157,7 @@ local function drawBorder(x0, y0, x1, y1, t)
 	glRect(x1 - t, 	y0 + t,	x1, 		y1  - t) -- RIGHT
 end
 
-local function refreshData() 
+local function refreshData()
 
 	myTeamID = spGetMyTeamID()
 	curLevel = spGetTeamRulesParam(myTeamID, 'mmLevel')
@@ -168,23 +168,23 @@ local function refreshData()
 
 	mProducedColor = (curUsage > 0 and curAvgEffi > 0)  and GreenStr .. '+' or YellowStr
 	eDrainedColor = (curUsage > 0 and curAvgEffi > 0)  and RedStr .. '-' or YellowStr
-	
-	if not (eCur and eStor) or (eStor <= 0) then 
+
+	if not (eCur and eStor) or (eStor <= 0) then
 		eStor = 1
 		eCur = 1
 	end
 
-	
+
 	local rc= curUsage/curCapacity
-	
+
 	if rc<0.8 then capacityColor = GreenStr elseif rc<1 then capacityColor = WhiteStr else capacityColor = YellowStr end
-	
+
 	r, g, b, a = EfficiencyThresholds:getTextColor(curAvgEffi)
-	
+
 	hasData = true
 end
 
-function DrawStatus(toohigh,fps,ping)
+function DrawStatus(_, _,ping)
     HighPing = ping
 end
 --------------------------------------------------------------------------------
@@ -194,15 +194,15 @@ function widget:Initialize()
     widgetHandler:RegisterGlobal('DrawManager_energygui', DrawStatus)
 
 	WG.energyConversion = {convertCapacities = convertCapacities}
-		
+
 	local playerID = Spring.GetMyPlayerID()
 	local _, _, spec, _, _, _, _, _ = Spring.GetPlayerInfo(playerID)
-		
+
 	if ( spec == true ) then
 		Spring.Echo("<Energy Conversion Info> Spectator mode. Widget removed.")
 		widgetHandler:RemoveWidget(self)
 	end
-	
+
 end
 
 function widget:Shutdown()
@@ -215,7 +215,7 @@ function widget:GameFrame(frame)
 		return
     end
 	if (frame % resourceRefreshRate == 1) then
-		refreshData() 
+		refreshData()
 	end
 end
 
@@ -231,7 +231,7 @@ function widget:DrawScreen()
 	if not hasData then refreshData() end
 
 	if curCapacity <= 0 or HighPing then return end
-	
+
     -- Positioning
     glPushMatrix()
 	glTranslate(px, py, 0)
@@ -248,52 +248,52 @@ function widget:DrawScreen()
 		local t = 1
 		glColor(r, g, b, 0.5)
 		drawBorder(sx - bx, 0, sx, by, t)
-		
+
 		glColor(r, g, b, 0.3)
 		glRect(sx - bx + t, t, sx - t, by- t)
-		
+
 		glColor(r, g, b, 1)
-		glText(currentRating.title, sx-bx/2, by/2 +1, 12, 'cv') 
+		glText(currentRating.title, sx-bx/2, by/2 +1, 12, 'cv')
 	end
-	
+
 	-- Text
 	glBeginText()
 
 		glText('Energy Conversion', lrBorder, 58, 12, 'do')
 		glText(format('%s%.1f m%s / %s%.0f e', mProducedColor, curAvgEffi * curUsage, WhiteStr, eDrainedColor, curUsage), sx - lrBorder, 58, 12, 'dr')
-		
+
 		glText('Hover:', lrBorder, 40, 12, 'do')
-		
+
 		glText('Usage:', lrBorder, 22, 12, 'do')
 		if (curCapacity > 0) then
 			glText(format('%i / %i (%s%i%%%s)', curUsage, curCapacity, capacityColor, curUsage/curCapacity*100,WhiteStr), sx - lrBorder, 22, 12, 'dr')
 		else
 			glText(format('no capacity', RedStr), sx - lrBorder, 22, 12, 'dr')
 		end
-		
+
 		glText('Efficiency (Class)', lrBorder, 4, 12, 'do')
 		glText(format('%s  %.2f m%s / 1000 e',   format("%c%c%c%c", 255, r*254 + 1, g*254 + 1, b*254 + 1),  curAvgEffi * 1000, WhiteStr), sx - lrBorder -bx, 4, 12, 'dr')
 
 	glEndText()
 
-	
-	
+
+
 	-- Bar
 	glColor(0, 0, 0, 0.5)
 	glRect(hoverLeft, barBottom, hoverRight, barTop)
 	local energyRelative = eCur/eStor
-	
+
 	glColor(1, 1, 0, 1)
 	glRect(hoverLeft+1, barBottom+1, hoverLeft+1 + energyRelative *  (hoverRight - hoverLeft - 2), barTop - 1)
-	
+
 	-- Slider
 	local sliderX = hoverLeft + (hoverRight - hoverLeft) * curLevel
 	glColor(1, 0, 0, 0.75)
 	glRect(sliderX - hoverHWidth, hoverBottom, sliderX + hoverHWidth, hoverTop)
-	
+
 	glColor(0, 0, 0, 1)
 	drawBorder(sliderX - hoverHWidth, hoverBottom, sliderX + hoverHWidth, hoverTop, 1)
-        
+
     glPopMatrix()
 end
 
@@ -312,7 +312,7 @@ function widget:MousePress(mx, my, mButton)
     end
 end
 
-function widget:MouseMove(mx, my, dx, dy, mButton)
+function widget:MouseMove(_, _, dx, dy, mButton)
     -- Dragging
     if mButton == 2 or mButton == 3 then
         px = px + dx

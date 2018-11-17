@@ -26,7 +26,7 @@ end
 local CMD_ONOFF = CMD.ONOFF
 
 
-function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+function gadget:AllowCommand(unitID, _, _, cmdID, _, _, _, _)
   if (cmdID == CMD_ONOFF) and Spring.GetUnitIsStunned(unitID) then
     return false
   else

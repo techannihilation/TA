@@ -6,7 +6,7 @@ local exceptions = {
 
 local array = {}
 
-for unit, data in pairs(exceptions) do
+for _, data in pairs(exceptions) do
 	if UnitDefNames[data] then
 		array[UnitDefNames[data].id] = true
 	end

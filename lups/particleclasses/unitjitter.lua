@@ -54,7 +54,7 @@ local GL_BACK = GL.BACK
 local GL_FRONT = GL.FRONT
 local glCulling = gl.Culling
 local glUnit = gl.Unit
-local glUniform = gl.Uniform
+local _ = gl.Uniform
 local glColor = gl.Color
 local glMultiTexCoord = gl.MultiTexCoord
 
@@ -168,7 +168,7 @@ function UnitJitter.Initialize()
 	void main()
 	{
             gl_Position = ftransform();
-            texCoord.s = dot( gl_Vertex, ObjectPlaneS ) + timer; 
+            texCoord.s = dot( gl_Vertex, ObjectPlaneS ) + timer;
             texCoord.t = dot( gl_Vertex, ObjectPlaneT ) + timer;
             texCoord.z = gl_MultiTexCoord2.x; //life
             texCoord.z *= abs( dot(normalize(gl_NormalMatrix * gl_Normal), normalize(vec3(gl_ModelViewMatrix * gl_Vertex))) );
@@ -265,7 +265,7 @@ function UnitJitter:Visible()
     return Spring.IsUnitVisible(self.unit, 0, true) -- Don't draw for icons
   end
 
-  local inLos = true
+  local _ = true
   if (self.enemyHit) then
     local x,y,z = Spring.GetUnitPosition(self.unit)
     if (x==nil) then return false end

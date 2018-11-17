@@ -52,7 +52,7 @@ local toStun = {}
 local fromtrans = {}
 local currentFrame = 0
 
-function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
+function gadget:UnitUnloaded(unitID, _, _, transportID)
   currentFrame = Spring.GetGameFrame()
   if (not toKill[currentFrame+1]) then toKill[currentFrame+1] = {} end
   if (not toStun[currentFrame+1]) then toStun[currentFrame+1] = {} end

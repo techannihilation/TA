@@ -20,7 +20,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	local orderQueue = {}
 
-	function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpts, cmdTag, synced)
+	function gadget:AllowCommand(unitID, unitDefID, _, cmdID, cmdParams, cmdOpts, _, _)
 		if not UnitDefs[unitDefID].canFly or not UnitDefs[unitDefID].transportSize then
 			return true
 		end
@@ -61,7 +61,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			if cmdOpts.alt then
 				--prevent removing globally move orders if synced unload are present
 				-- params are commandids
-				local foundMove = false
+				local _ = false
 				for _, cmdToCompare in pairs(cmdParams) do
 					if cmdToCompare == CMD.MOVE then
 						cmdToCompare = true
@@ -95,7 +95,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 	-- add a move cmd in front each air-trans load/unload cmd, because else the trans wont respect smoothmesh
-	function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpts,cmdTag)
+	function gadget:UnitCommand(unitID, unitDefID, _, cmdID, cmdParams, cmdOpts, _)
 		if cmdID < 0 then return end
 		if not UnitDefs[unitDefID].canFly and not UnitDefs[unitDefID].transportSize then
 			return

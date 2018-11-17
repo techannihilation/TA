@@ -73,18 +73,18 @@ local GL_ONE       = GL.ONE
 local GL_SRC_ALPHA = GL.SRC_ALPHA
 local GL_ONE_MINUS_SRC_ALPHA = GL.ONE_MINUS_SRC_ALPHA
 local GL_QUADS     = GL.QUADS
-local GL_TEXTURE   = GL.TEXTURE
-local GL_MODELVIEW = GL.MODELVIEW
+local _ = GL.TEXTURE
+local _ = GL.MODELVIEW
 
 local glColor      = gl.Color
 local glTexture    = gl.Texture
 local glBlending   = gl.Blending
 local glMultiTexCoord   = gl.MultiTexCoord
 local glVertex     = gl.Vertex
-local glTranslate  = gl.Translate
-local glMatrixMode = gl.MatrixMode
-local glPushMatrix = gl.PushMatrix
-local glPopMatrix  = gl.PopMatrix
+local _ = gl.Translate
+local _ = gl.MatrixMode
+local _ = gl.PushMatrix
+local _ = gl.PopMatrix
 local glBeginEnd   = gl.BeginEnd
 local glUseShader  = gl.UseShader
 local glAlphaTest  = gl.AlphaTest
@@ -92,7 +92,7 @@ local glCallList   = gl.CallList
 
 local max  = math.max
 
-local GetCameraVectors    = Spring.GetCameraVectors
+local _ = Spring.GetCameraVectors
 local IsSphereInView      = Spring.IsSphereInView
 
 -----------------------------------------------------------------------------------------------------------------
@@ -131,7 +131,7 @@ function NanoLasers:Draw()
   local color = self.color
   local startPos = self.pos
   local endPos   = self.targetpos
-  
+
   glColor(color[1],color[2],color[3],0.0003)
   glMultiTexCoord(0,endPos[1] - self.normdir[3] * self.scane_mult ,endPos[2],endPos[3] + self.normdir[1] * self.scane_mult,1)
   glMultiTexCoord(1,startPos[1],startPos[2],startPos[3],1)
@@ -150,9 +150,9 @@ end
 
 function NanoLasers:Update(n)
   UpdateNanoParticles(self)
-  
+
   self.fpos = (self.fpos or 0) + self.count * 5 * n
-  if (self.inversed) then 
+  if (self.inversed) then
     self.scane_mult = 4 * math.cos(6*(self.fpos%4001)/4000*math.pi)
   else
     self.scane_mult = 8 * math.cos(2*(self.fpos%4001)/4000*math.pi)

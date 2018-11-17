@@ -75,7 +75,7 @@ local function AllowAction(playerID)
 end
 
 
-local function ChatControl(cmd, line, words, playerID)
+local function ChatControl(_, _, words, playerID)
   if (AllowAction(playerID)) then
     if (#words == 0) then
       enabled = not enabled
@@ -113,23 +113,23 @@ end
 --------------------------------------------------------------------------------
 
 
-function gadget:AllowDirectUnitControl(unitID, unitDefID, unitTeam, playerID)
+function gadget:AllowDirectUnitControl(_, unitDefID, _, playerID)
   if (not enabled) then
     return true
   end
-  
+
   if (select(3,Spring.GetPlayerInfo(playerID)) == true) then
     return false
   end
-  
-  for key, value in pairs(badUnitDefs) do
+
+  for _, value in pairs(badUnitDefs) do
     if (value == unitDefID) then
 	  Spring.SendMessageToPlayer(playerID,
 	    "Direct control of " .. UnitDefs[value].name .. " is disabled")
       return false
     end
   end
-  
+
   return true
 end
 

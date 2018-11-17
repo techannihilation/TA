@@ -1,7 +1,7 @@
-local base = piece 'base' 
-local body = piece 'body' 
-local flare = piece 'flare' 
-local top = piece 'top' 
+local base = piece 'base'
+local _ = piece 'body'
+local flare = piece 'flare'
+local _ = piece 'top'
 
 -- Signal definitions
 local SIG_AIM = 2
@@ -21,18 +21,18 @@ local function get_health_percent()
 end
 
 
-local function SmokeUnit(healthpercent, sleeptime, smoketype)
+local function SmokeUnit(_, _, _)
 	while still_building_p() do Sleep(400); end
-	
+
 	while (true) do
 		local health_percent = get_health_percent();
-		
+
 		if (health_percent < 66) then
 			local smoketype = 258;
 			if (math.random(1, 66) < health_percent) then smoketype = 257; end
 			Spring.UnitScript.EmitSfx(base, smoketype);
 		end
-		
+
 		local sleep_time = health_percent * 50;
 		if (sleep_time < 200) then sleep_time = 200; end
 		Sleep(sleep_time);
@@ -54,7 +54,7 @@ function script.Create()
 
 end
 
-function script.AimWeapon1(heading, pitch)
+function script.AimWeapon1(heading, _)
 	Spring.UnitScript.Signal(SIG_AIM);
 	Spring.UnitScript.SetSignalMask(SIG_AIM);
 	Spring.UnitScript.Turn( flare , y_axis, math.rad(heading ), math.rad(220.000000) )
@@ -76,7 +76,7 @@ function script.QueryWeapon1()
 	return flare
 end
 
-function script.SweetSpot(piecenum)
+function script.SweetSpot(_)
 
 	return base
 end

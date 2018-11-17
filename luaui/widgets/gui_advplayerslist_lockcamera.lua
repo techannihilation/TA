@@ -35,17 +35,17 @@ local bgcorner				= ":n:LuaUI/Images/bgcorner.png"
 
 local widgetScale = 1
 local glText         = gl.Text
-local glGetTextWidth = gl.GetTextWidth
-local glBlending     = gl.Blending
-local glScale        = gl.Scale
-local glRotate       = gl.Rotate
-local glTranslate	   = gl.Translate
+local _ = gl.GetTextWidth
+local _ = gl.Blending
+local _ = gl.Scale
+local _ = gl.Rotate
+local _ = gl.Translate
 local glPushMatrix   = gl.PushMatrix
 local glPopMatrix	   = gl.PopMatrix
 local glColor        = gl.Color
-local glRect         = gl.Rect
-local glTexRect	     = gl.TexRect
-local glTexture      = gl.Texture
+local _ = gl.Rect
+local _ = gl.TexRect
+local _ = gl.Texture
 local glCreateList   = gl.CreateList
 local glDeleteList   = gl.DeleteList
 local glCallList     = gl.CallList
@@ -55,8 +55,8 @@ local parentPos = {}
 local widgetHeight = 23
 local top, left, bottom, right = 0,0,0,0
 
-local shown = false
-local mouseover = false
+local _ = false
+local _ = false
 local volume
 
 --------------------------------------------------------------------------------
@@ -195,7 +195,7 @@ local function createList()
 			local name,_,_,teamID,_,_,_,_,_ = Spring.GetPlayerInfo(lockPlayerID)
 			name = name..'  '
 			local fontSize = (widgetHeight*widgetScale) * 0.66
-			local nameWidth = gl.GetTextWidth(name) * fontSize
+			local _ = gl.GetTextWidth(name) * fontSize
 			local nameColourR,nameColourG,nameColourB,_ = Spring.GetTeamColor(teamID)
 			--glText('\255\222\222\222viewing   ', right-textWidth-nameWidth, bottom+(7.5*widgetScale), fontSize*0.7, 'or')
 			if (nameColourR + nameColourG*1.2 + nameColourB*0.4) < 0.8 then

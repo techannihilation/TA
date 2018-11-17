@@ -19,8 +19,8 @@ local CMD_WANT_CLOAK = 37382
 
 local BlacklilyDefId = UnitDefNames["corsbomb"].id
 
-function widget:MousePress(mx, my, mButton)
-	local a, activeCmdID = Spring.GetActiveCommand()
+function widget:MousePress(_, _, _)
+	local _, activeCmdID = Spring.GetActiveCommand()
 	--Spring.Echo("cmd:", CMD[activeCmdID],a)
 	if activeCmdID == CMD_FIGHT or activeCmdID == CMD_LOOPBACKATTACK then
 		local selUnits = Spring.GetSelectedUnits()
@@ -42,7 +42,7 @@ function widget:Initialize()
   	end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end

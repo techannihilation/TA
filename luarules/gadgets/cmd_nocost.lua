@@ -42,7 +42,7 @@ local function AllowAction(playerID)
 end
 
 
-local function NoCost(cmd, line, words, playerID)
+local function NoCost(_, _, words, playerID)
   if (not AllowAction(playerID)) then
     Spring.Echo('LuaRules nocost is ' .. ((nocost and 'enabled') or 'disabled'))
     return true
@@ -68,7 +68,7 @@ function gadget:Initialize()
     return
   end
   local cmd, help
-  
+
   cmd  = "nc"
   help = " [0|1]:  reversible nocost  (requires cheating)"
   gadgetHandler:AddChatAction(cmd, NoCost, help)
@@ -81,7 +81,7 @@ function gadget:Shutdown()
 end
 
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+function gadget:UnitCreated(unitID, _, _)
   if (nocost) then
     Spring.SetUnitCosts(unitID, {
       buildTime  = 1,
@@ -92,7 +92,7 @@ function gadget:UnitCreated(unitID, unitDefID, unitTeam)
 end
 
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, unitDefID, _)
   if (nocost) then
     local ud = UnitDefs[unitDefID]
     if (ud) then

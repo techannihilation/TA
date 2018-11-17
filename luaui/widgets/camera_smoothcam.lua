@@ -23,7 +23,7 @@ local spGetCameraState   	= Spring.GetCameraState
 local spSetCameraState   	= Spring.SetCameraState
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-function widget:Update(dt)
+function widget:Update(_)
   local cs = spGetCameraState()
   spSetCameraState(cs, camSpeed)
 end

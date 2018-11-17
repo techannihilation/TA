@@ -13,7 +13,7 @@ end
 
 --[[
 NOTE: This widget will block map draw commands from ignored players.
-      It is up to the chat console widget to check WG.ignoredPlayers[playerName] and block chat 
+      It is up to the chat console widget to check WG.ignoredPlayers[playerName] and block chat
 ]]
 
 local pID_table = {}
@@ -40,7 +40,7 @@ end
 function colourPlayer(playerName)
         local playerID = pID_table[playerName]
         if not playerID then return "" end
-        
+
         local _,_,_,teamID = Spring.GetPlayerInfo(playerID)
     	nameColourR,nameColourG,nameColourB,nameColourA = Spring.GetTeamColor(teamID)
 		R255 = math.floor(nameColourR*255)  --the first \255 is just a tag (not colour setting) no part can end with a zero due to engine limitation (C)
@@ -56,36 +56,36 @@ function colourPlayer(playerName)
                 B255 = B255+1
         end
 	return "\255"..string.char(R255)..string.char(G255)..string.char(B255) --works thanks to zwzsg
-end 
+end
 
 --ignore--
-function widget:TextCommand(s)     
+function widget:TextCommand(s)
      local token = {}
 	 local n = 0
 	 --for w in string.gmatch(s, "%a+") do
 	 for w in string.gmatch(s, "%S+") do
 		n = n +1
-		token[n] = w		
+		token[n] = w
      end
-	 
+
 	--for i = 1,n do Spring.Echo (token[i]) end
-	 
+
 	 if (token[1] == "ignoreplayer" or token[1] == "ignoreplayers") then
 		 for i = 2,n do
 			ignorePlayer(token[i])
 		end
 	end
-	
+
 	if (token[1] == "unignoreplayer" or token[1] == "unignoreplayers") then
         if n==1 then
-            UnignoreAll() 
+            UnignoreAll()
         else
             for i=2,n do
                 UnignorePlayer(token[i])
             end
         end
     end
-        
+
 	if (token[1] == "ignorelist") then
         ignoreList()
     end
@@ -93,7 +93,7 @@ end
 
 function ignoreList ()
     local luaSucks = 0
-    for _,iHateLua in pairs(ignoredPlayers) do
+    for _, _ in pairs(ignoredPlayers) do
         luaSucks = 1
         break
     end
@@ -112,7 +112,7 @@ function ignorePlayer (playerName)
         Spring.Echo("You cannot ignore yourself")
         return
     end
-    
+
 	ignoredPlayers[playerName] = true
     WG.ignoredPlayers = ignoredPlayers
     Spring.Echo ("Ignored " .. colourPlayer(playerName) .. playerName)
@@ -126,7 +126,7 @@ end
 
 function UnignoreAll ()
     local luaSucks = 0
-    for _,iHateLua in pairs(ignoredPlayers) do
+    for _, _ in pairs(ignoredPlayers) do
         luaSucks = 1
         break
     end
@@ -142,10 +142,10 @@ function UnignoreAll ()
     end
 
 	ignoredPlayers = {}
-    WG.ignoredPlayers = ignoredPlayers    
+    WG.ignoredPlayers = ignoredPlayers
 end
 
-function widget:MapDrawCmd(playerID, cmdType, startx, starty, startz, a, b, c)
+function widget:MapDrawCmd(playerID, _, _, _, _, _, _, _)
     local name,_ = Spring.GetPlayerInfo(playerID)
     if ignoredPlayers[name] then
         return true

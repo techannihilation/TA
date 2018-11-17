@@ -41,7 +41,7 @@ function gadget:Explosion_GetWantedWeaponDef()
 	return wantedList
 end
 
-function gadget:Explosion(weaponID, px, py, pz, ownerID)
+function gadget:Explosion(weaponID, px, py, pz, _)
   if (nux[weaponID] and py-GetGroundHeight(px,pz)>100) then
     return true
   elseif (inter[weaponID] and py-GetGroundHeight(px,pz)>60) then

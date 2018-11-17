@@ -13,8 +13,8 @@ end
 local pairs = pairs
 local SpGetAllUnits = Spring.GetAllUnits
 local SpGetUnitDefID = Spring.GetUnitDefID
-local SpIsUnitAllied = Spring.IsUnitAllied
-local SpIsUnitSelected = Spring.IsUnitSelected
+local _ = Spring.IsUnitAllied
+local _ = Spring.IsUnitSelected
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpGetActiveCommand = Spring.GetActiveCommand
 
@@ -26,17 +26,17 @@ local ringsDefs = {}
 
 local ringedUnits = {}
 
--- opacity control 
-local darkOpacity = 0.5
+-- opacity control
+local _ = 0.5
 local lightOpacity = 0.5
 
-function SetOpacity(dark, light) 
-    darkOpacity = dark 
-    lightOpacity = light 
-end 
+function SetOpacity(dark, light)
+    darkOpacity = dark
+    lightOpacity = light
+end
 
 function widget:Initialize()
-    widgetHandler:RegisterGlobal('SetOpacity_Nanorings', SetOpacity) 
+    widgetHandler:RegisterGlobal('SetOpacity_Nanorings', SetOpacity)
     for uDefId, ud in ipairs(UnitDefs) do
 	if ud.isBuilder and not ud.canMove and not ud.isFactory then
 	    ringsDefs[uDefId] = { r = ud.nanoColorR, g = ud.nanoColorG, b = ud.nanoColorB, radius = ud.buildDistance }
@@ -81,8 +81,7 @@ function widget:DrawWorld()
     glColor(1, 1, 1, 1)
 end
 
-function widget:GameOver() 
-    widgetHandler:DeregisterGlobal('SetOpacity_Nanorings', SetOpacity) 
-    widgetHandler:RemoveWidget(self) 
-end 
- 
+function widget:GameOver()
+    widgetHandler:DeregisterGlobal('SetOpacity_Nanorings', SetOpacity)
+    widgetHandler:RemoveWidget(self)
+end

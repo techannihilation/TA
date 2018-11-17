@@ -14,12 +14,12 @@ if (gadgetHandler:IsSyncedCode()) then
 	return
 end
 
-function LuaUIReload(cmd, line, words, playerID)
+function LuaUIReload(_, _, _, playerID)
     if playerID and playerID==Spring.GetMyPlayerID() then
         Spring.SendCommands("luaui reload")
     end
 end
-    
+
 
 function gadget:Initialize()
 	gadgetHandler:AddChatAction('reloadluaui', LuaUIReload, "")

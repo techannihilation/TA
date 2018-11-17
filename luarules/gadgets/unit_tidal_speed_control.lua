@@ -37,13 +37,13 @@ local tidalDefs = {
 -------------------------------------------------------------------------------------
 
 -- Speed-ups
-local SetUnitCOBValue      = Spring.SetUnitCOBValue
+local _ = Spring.SetUnitCOBValue
 local GetTide              = Game.tidal*1.5
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+function gadget:UnitCreated(unitID, unitDefID, _)
 	if tidalDefs[unitDefID] then
     	local uDef = UnitDefs[unitDefID]
     	local mult = 1.25

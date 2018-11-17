@@ -34,7 +34,7 @@ local GetUnitHealth    = Spring.GetUnitHealth
 
 local buildList = {}
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
   if Spring.GetSpectatingState() then
     widgetHandler:RemoveWidget(self)
   end
@@ -46,7 +46,7 @@ function widget:Initialize()
   end
   for _,unitID in ipairs(Spring.GetTeamUnits(Spring.GetMyTeamID())) do
     local _, _, _, _, buildProgress = GetUnitHealth(unitID)
-    if (buildProgress < 1) then widget:UnitCreated(unitID) end    
+    if (buildProgress < 1) then widget:UnitCreated(unitID) end
   end
 end
 
@@ -54,21 +54,21 @@ function widget:GameStart()
     widget:PlayerChanged()
 end
 
-local function toLocString(posX,posY,posZ)
+local function toLocString(posX, _,posZ)
   return (math.ceil(posX - 0.5) .. "_" .. math.ceil(posZ - 0.5))
 end
 
-function widget:UnitCreated(unitID, unitDefID, unitTeam)
+function widget:UnitCreated(unitID, _, _)
   local locString = toLocString(GetUnitPosition(unitID))
   buildList[locString] = unitID
 end
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, _, _)
   local locString = toLocString(GetUnitPosition(unitID))
   buildList[locString] = nil
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
   local locString = toLocString(GetUnitPosition(unitID))
   buildList[locString] = nil
 end
@@ -130,7 +130,7 @@ function widget:CommandNotify(id, params, options)
         return true
       else
         return false
-      end  
+      end
     end
   end
 end

@@ -20,9 +20,9 @@ if (not gadgetHandler:IsSyncedCode()) then
   return false  --  silent removal
 end
 
-local GetUnitHealth = Spring.GetUnitHealth
-local SetUnitHealth = Spring.SetUnitHealth
-local newSpring = false
+local _ = Spring.GetUnitHealth
+local _ = Spring.SetUnitHealth
+local _ = false
 
 local PWN_UNITS = {}
 --Arm
@@ -43,8 +43,8 @@ PWN_UNITS[UnitDefNames["tllburner"].id] = true
 PWN_UNITS[UnitDefNames["tllotter"].id] = true
 
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
-                            weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
+function gadget:UnitPreDamaged(unitID, unitDefID, _, damage, _,
+_, _, attackerID, _, _)
   if ((unitID == attackerID) and PWN_UNITS[unitDefID]) then
     return 0, 0
   else

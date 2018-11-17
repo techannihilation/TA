@@ -23,22 +23,22 @@ local SpGetUnitPosition = Spring.GetUnitPosition
 local SpGetGameFrame = Spring.GetGameFrame
 local SpSetUnitPhysics = Spring.SetUnitPhysics
 local SpSetUnitDirection = Spring.SetUnitDirection
-local SpGetUnitIsDead = Spring.GetUnitIsDead
+local _ = Spring.GetUnitIsDead
 
 local unloadedUnits = {}
 
-function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
+function gadget:UnitUnloaded(unitID, unitDefID, _, transportID)
 	if unitID == nil or unitDefID == nil or transportID == nil then return end
     --FIXME: is this exception for commando this really necessary?
-	if (unitDefID == COMMANDO) then		
-		local x,y,z = SpGetUnitVelocity(transportID)
+	if (unitDefID == COMMANDO) then
+		local x, _,z = SpGetUnitVelocity(transportID)
 		if x > 10 then x = 10 elseif x <- 10 then x = -10 end -- 10 is well above 'normal' air-trans velocity
-		if z > 10 then z = 10 elseif z <- 10 then z = -10 end		
+		if z > 10 then z = 10 elseif z <- 10 then z = -10 end
         local bx,by,bz = SpGetUnitPosition(unitID)
         if by-SpGetGroundHeight(bx,bz) < 5 then
             x = 0; y = 0; z = 0 --in particular, don't give any velocity if the transport has placed the unit slightly underground (or wierdness...)
         end
-		SpSetUnitVelocity(unitID, x, y, z)    
+		SpSetUnitVelocity(unitID, x, y, z)
 	else
     -- prevent unloaded units from sliding across the map
         local px,py,pz = Spring.GetUnitPosition(unitID)
@@ -46,7 +46,7 @@ function gadget:UnitUnloaded(unitID, unitDefID, teamID, transportID)
         local frame = SpGetGameFrame() + frameMargin
         unloadedUnits[unitID] = {["px"]=px,["py"]=py,["pz"]=pz,["dx"]=dx,["dy"]=dy,["dz"]=dz,["frame"]=frame}
 
-		SpSetUnitVelocity(unitID, 0,0,0)	
+		SpSetUnitVelocity(unitID, 0,0,0)
 	end
 end
 
@@ -66,4 +66,3 @@ function gadget:GameFrame(frame)
         end
     end
 end
-	

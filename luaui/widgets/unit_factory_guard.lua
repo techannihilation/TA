@@ -27,7 +27,7 @@ end
 -- 2014.09: updated to allow a portion of builders to sip through
 
 local CMD_FACTORYGUARD 		= 37460
-local Echo					= Spring.Echo
+local _ = Spring.Echo
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -47,14 +47,14 @@ local function ClearGroup(unitID, factID)
   end
 end
 
-local function GuardFactory(unitID, unitDefID, factID, factDefID)
+local function GuardFactory(unitID, _, factID, factDefID)
   -- is this a factory?
   local fd = UnitDefs[factDefID]
   if (not (fd and fd.isFactory)) then
-    return 
+    return
   end
 
-  local x, y, z = Spring.GetUnitPosition(factID)
+  local x, _, _ = Spring.GetUnitPosition(factID)
   if (not x) then
     return
   end
@@ -70,7 +70,7 @@ local function GuardFactory(unitID, unitDefID, factID, factDefID)
     return
   end
 
-  -- facing values { S = 0, E = 1, N = 2, W = 3 }  
+  -- facing values { S = 0, E = 1, N = 2, W = 3 }
   local dx, dz -- down vector
   local rx, rz -- right vector
   if (facing == 0) then
@@ -90,19 +90,19 @@ local function GuardFactory(unitID, unitDefID, factID, factDefID)
     dx, dz = -dist,  0
     rx, rz =  0,  dist
   end
-  
+
   local OrderUnit = Spring.GiveOrderToUnit
 
   OrderUnit(unitID, CMD.MOVE,  { x + dx, y, z + dz }, { "" })
   OrderUnit(unitID, CMD.MOVE,  { x + rx, y, z + rz }, { "shift" })
   OrderUnit(unitID, CMD.GUARD, { factID },            { "shift" })
 end
-	
+
 function widget:Initialize()
 	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
     widget:PlayerChanged()
   end
-	
+
   local cmds = widgetHandler.commands
 	local n = #(widgetHandler.commands)
 
@@ -112,8 +112,8 @@ function widget:Initialize()
 		end
 	end
 end
-	
-function widget:PlayerChanged(playerID)
+
+function widget:PlayerChanged(_)
   if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
     widgetHandler:RemoveWidget(self)
   end
@@ -124,7 +124,7 @@ function widget:GameStart()
 end
 
 function widget:ShutDown()
-		
+
 	local cmds = widgetHandler.commands
 	local n = #(widgetHandler.commands)
 
@@ -136,10 +136,10 @@ function widget:ShutDown()
 end
 
 function widget:CommandsChanged()
-    
+
 	local cmds = widgetHandler.commands
 	local n = #(widgetHandler.commands)
-	
+
 	for i=1,n do
 		if (cmds[i].id == CMD_FACTORYGUARD) then
 			cmds[i].hidden = false
@@ -147,13 +147,13 @@ function widget:CommandsChanged()
 	end
 end
 
-function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
-	
+function widget:UnitCreated(_, _, _, _)
+
 end
 --------------------------------------------------------------------------------
 
 function widget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, userOrders)
-  
+
 	if (unitTeam ~= Spring.GetMyTeamID()) then
 		return -- not my unit
 	end
@@ -163,7 +163,7 @@ function widget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 	if (userOrders) then
 		return -- already has user assigned orders
 	end
-	
+
 	-- can this unit assist?
 	local ud = UnitDefs[unitDefID]
 	if ud and ud.isBuilder and ud.canAssist and ud.canGuard and (not ud.isFactory) then

@@ -141,7 +141,7 @@ function ShieldJitter.Finalize()
   gl.DeleteTexture(tex)
 end
 
-function ShieldJitter.ViewResize(viewSizeX, viewSizeY)
+function ShieldJitter.ViewResize(_, _)
 end
 
 -----------------------------------------------------------------------------------------------------------------

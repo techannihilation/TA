@@ -16,12 +16,12 @@ local buttonWidth = 360
 local buttonHeight = 36
 
 local spGetSpectatingState = Spring.GetSpectatingState
-local spGetPlayerList = Spring.GetPlayerList
-local spGetPlayerInfo = Spring.GetPlayerInfo
+local _ = Spring.GetPlayerList
+local _ = Spring.GetPlayerInfo
 local spGetMyAllyTeamID = Spring.GetMyAllyTeamID
 local spGetMyTeamID = Spring.GetMyTeamID
 local spGetTeamList = Spring.GetTeamList
-local spGetTeamInfo = Spring.GetTeamInfo
+local _ = Spring.GetTeamInfo
 local spGetTeamUnitCount = Spring.GetTeamUnitCount
 local spGetTeamRulesParam = Spring.GetTeamRulesParam
 
@@ -35,11 +35,11 @@ end
 
 local tt = 0
 function widget:Update(dt)
-    
+
 	tt = tt + dt
     if tt < checkEvery then return end
     tt = 0
-    
+
     -- Silent disable if spectator
 	if spGetSpectatingState() then
 		widgetHandler:RemoveWidget(self)
@@ -60,16 +60,16 @@ function widget:Update(dt)
 end
 
 function widget:DrawScreen()
-    
+
     if takeableCount == 0 then return end
-    
+
     local posx, posy = GetButtonPosition()
     gl.Color(1, math.abs(os.clock() % 2 - 1), 0, 0.5)
     gl.Rect(posx, posy, posx + buttonWidth, posy + buttonHeight)
     gl.Color(0, 0, 0, 1)
-    gl.Shape(GL.LINE_LOOP, {{ v = { posx              , posy                }}, 
-                            { v = { posx              , posy + buttonHeight }}, 
-                            { v = { posx + buttonWidth, posy + buttonHeight }}, 
+    gl.Shape(GL.LINE_LOOP, {{ v = { posx              , posy                }},
+                            { v = { posx              , posy + buttonHeight }},
+                            { v = { posx + buttonWidth, posy + buttonHeight }},
                             { v = { posx + buttonWidth, posy                }}})
     gl.Text(string.format('\255\255\255\1Click to take %d abandoned units !', takeableCount), posx + 0.5 * buttonWidth, posy + 0.5 * buttonHeight, 20, 'ocv')
 end

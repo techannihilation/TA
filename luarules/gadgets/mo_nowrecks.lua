@@ -19,11 +19,11 @@ end
 
 local enabled = tonumber(Spring.GetModOptions().mo_nowrecks) or 0
 
-if (enabled == 0) then 
+if (enabled == 0) then
   return false
 end
 
-function gadget:AllowFeatureCreation(featureDefID, teamID, x, y, z)
+function gadget:AllowFeatureCreation(featureDefID, _, _, _, _)
    local featureName = (FeatureDefs[featureDefID].tooltip or "nil")
    if string.find(featureName, 'Teeth') then
       return true

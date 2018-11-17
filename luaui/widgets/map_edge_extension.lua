@@ -20,7 +20,7 @@ if VFS.FileExists("nomapedgewidget.txt") then
 end
 
 local spGetGroundHeight = Spring.GetGroundHeight
-local spTraceScreenRay = Spring.TraceScreenRay
+local _ = Spring.TraceScreenRay
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 local gridTex = "LuaUI/Images/vr_grid_large.dds"
@@ -38,7 +38,7 @@ local uup
 local uleft
 local ugrid
 local ubrightness
-local isInView = true
+local _ = true
 
 local island = nil -- Later it will be checked and set to true of false
 local drawingEnabled = true
@@ -62,7 +62,7 @@ options = {
 	--when using shader the map is stored once in a DL and drawn 8 times with vertex mirroring and bending
     --when not, the map is drawn mirrored 8 times into a display list
 	mapBorderStyle = {
-		type='radioButton', 
+		type='radioButton',
 		name='Exterior Effect',
 		items = {
 			{name = 'Texture',  key = 'texture', desc = "Mirror the heightmap and texture.",              hotkey=nil},
@@ -73,7 +73,7 @@ options = {
 		value = 'texture',  --default at start of widget is to be disabled!
 		OnChange = function(self)
 			Spring.SendCommands("mapborder " .. ((self.value == 'cutaway') and "1" or "0"))
-			drawingEnabled = (self.value == "texture") or (self.value == "grid") 
+			drawingEnabled = (self.value == "texture") or (self.value == "grid")
 			ResetWidget()
 		end,
 	},
@@ -81,7 +81,7 @@ options = {
 		name = "Draw for islands",
 		type = 'bool',
 		value = true,
-		desc = "Draws mirror map when map is an island",		
+		desc = "Draws mirror map when map is an island",
 	},
 	useShader = {
 		name = "Use shader",
@@ -94,8 +94,8 @@ options = {
 	gridSize = {
 		name = "Heightmap tile size",
 		type = 'number',
-		min = 32, 
-		max = 512, 
+		min = 32,
+		max = 512,
 		step = 32,
 		value = 32,
 		desc = '',
@@ -105,8 +105,8 @@ options = {
 		name = "Texture Brightness",
 		advanced = true,
 		type = 'number',
-		min = 0, 
-		max = 1, 
+		min = 0,
+		max = 1,
 		step = 0.01,
 		value = 0.27,
 		desc = 'Sets the brightness of the realistic texture (doesn\'t affect the grid)',
@@ -126,7 +126,7 @@ options = {
 		desc = 'Add a curvature to the extension.',
 		OnChange = ResetWidget,
 	},
-	
+
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -160,14 +160,14 @@ local function SetupShaderTable()
 
 		varying vec4 vertex;
 		varying vec4 color;
-  
+
 		void main()
 		{
 		gl_TexCoord[0]= gl_TextureMatrix[0]*gl_MultiTexCoord0;
 		vec4 vertex = gl_Vertex;
 		vertex.x = abs(mirrorX-vertex.x);
 		vertex.z = abs(mirrorZ-vertex.z);
-		
+
 		float alpha = 1.0;
 		#ifdef curvature
 		  if(mirrorX != 0.0)vertex.y -= pow(abs(vertex.x-left*mirrorX)/150.0, 2.0);
@@ -177,7 +177,7 @@ local function SetupShaderTable()
 			if(mirrorZ != 0.0) alpha -= pow(abs(vertex.z-up*mirrorZ)/lengthZ, 2.0);
 			alpha = 1.0 + (6.0 * (alpha + 0.18));
 		#endif
-  
+
 		float ff = 20000.0;
 		if((mirrorZ != 0.0 && mirrorX != 0.0))
 		  ff=ff/(pow(abs(vertex.z-up*mirrorZ)/150.0, 2.0)+pow(abs(vertex.x-left*mirrorX)/150.0, 2.0)+2.0);
@@ -185,14 +185,14 @@ local function SetupShaderTable()
 		  ff=ff/(pow(abs(vertex.x-left*mirrorX)/150.0, 2.0)+2.0);
 		else if(mirrorZ != 0.0)
 		  ff=ff/(pow(abs(vertex.z-up*mirrorZ)/150.0, 2.0)+2.0);
-  
+
 		gl_Position  = gl_ModelViewProjectionMatrix*vertex;
 		//gl_Position.z+ff;
-		
+
 		#ifdef edgeFog
 		  gl_FogFragCoord = length((gl_ModelViewMatrix * vertex).xyz)+ff; //see how Spring shaders do the fog and copy from there to fix this
 		#endif
-		
+
 		gl_FrontColor = vec4(brightness * gl_Color.rgb, alpha);
 
 		color = gl_FrontColor;
@@ -249,7 +249,7 @@ local function IsIsland()
 		-- right edge
 		if GetGroundHeight(Game.mapSizeX, i) > 0 then
 			return false
-		end	
+		end
 	end
 	return true
 end
@@ -257,7 +257,7 @@ end
 local function DrawMapVertices(useMirrorShader)
 
 	local floor = math.floor
-	local ceil = math.ceil
+	local _ = math.ceil
 	local abs = math.abs
 
 	gl.Color(1,1,1,1)
@@ -266,15 +266,15 @@ local function DrawMapVertices(useMirrorShader)
 		local Scale = options.gridSize.value
 		local sggh = Spring.GetGroundHeight
 		local Vertex = gl.Vertex
-		local glColor = gl.Color
+		local _ = gl.Color
 		local TexCoord = gl.TexCoord
-		local Normal = gl.Normal
-		local GetGroundNormal = Spring.GetGroundNormal
+		local _ = gl.Normal
+		local _ = Spring.GetGroundNormal
 		local mapSizeX, mapSizeZ = Game.mapSizeX, Game.mapSizeZ
-	
+
 		local sten = {0, floor(Game.mapSizeZ/Scale)*Scale, 0}--do every other strip reverse
-		local xm0, xm1 = 0, 0
-		local xv0, xv1 = 0,math.abs(dx)+sx
+		local _, xm1 = 0, 0
+		local _, xv1 = 0,math.abs(dx)+sx
 		local ind = 0
 		local zv
 		local h
@@ -283,7 +283,7 @@ local function DrawMapVertices(useMirrorShader)
 		gl.TexCoord(0, sten[2]/Game.mapSizeZ)
 		Vertex(xv1, sggh(0,sten[2]),abs(dz+sten[2])+sz)--start and end with a double vertex
 		end
-	
+
 		for x=0,Game.mapSizeX-Scale,Scale do
 			xv0, xv1 = xv1, abs(dx+x+Scale)+sx
 			xm0, xm1 = xm1, xm1+Scale
@@ -311,10 +311,10 @@ local function DrawMapVertices(useMirrorShader)
 		doMap(-Game.mapSizeX,-Game.mapSizeZ,-Game.mapSizeX,-Game.mapSizeZ)
 		doMap(0,-Game.mapSizeZ,0,-Game.mapSizeZ)
 		doMap(-Game.mapSizeX,-Game.mapSizeZ,Game.mapSizeX,-Game.mapSizeZ)
-	
+
 		doMap(-Game.mapSizeX,0,-Game.mapSizeX,0)
 		doMap(-Game.mapSizeX,0,Game.mapSizeX,0)
-	
+
 		doMap(-Game.mapSizeX,-Game.mapSizeZ,-Game.mapSizeX,Game.mapSizeZ)
 		doMap(0,-Game.mapSizeZ,0,Game.mapSizeZ)
 		doMap(-Game.mapSizeX,-Game.mapSizeZ,Game.mapSizeX,Game.mapSizeZ)
@@ -324,16 +324,16 @@ end
 local function DrawOMap(useMirrorShader)
 	gl.Blending(GL.SRC_ALPHA,GL.ONE_MINUS_SRC_ALPHA)
 	gl.DepthTest(GL.LEQUAL)
-        if options.mapBorderStyle.value == "texture" then 
+        if options.mapBorderStyle.value == "texture" then
 			gl.Texture(realTex)
 		else
-			gl.Texture(gridTex) 
+			gl.Texture(gridTex)
 		end
 	gl.BeginEnd(GL.TRIANGLE_STRIP,DrawMapVertices, useMirrorShader)
 	gl.DepthTest(false)
 	gl.Color(1,1,1,1)
 	gl.Blending(GL.SRC_ALPHA,GL.ONE_MINUS_SRC_ALPHA)
-	
+
 	----draw map compass text
 	gl.PushAttrib(GL.ALL_ATTRIB_BITS)
 	gl.Texture(false)
@@ -341,18 +341,18 @@ local function DrawOMap(useMirrorShader)
 	gl.DepthTest(false)
 	gl.Color(1,1,1,1)
 	gl.PopAttrib()
-	----	
+	----
 end
 
 function widget:Initialize()
-	
+
 	if not drawingEnabled then
 		return
 	end
-	
-	
+
+
 	Spring.SendCommands("mapborder " .. ((options and (options.mapBorderStyle.value == 'cutaway')) and "1" or "0"))
-	
+
 	if island == nil then
 		island = IsIsland()
 	end
@@ -469,9 +469,9 @@ end
 
 local function DrawWorldFunc() --is overwritten when not using the shader
     if (not island) or options.drawForIslands.value then
-        local glTranslate = gl.Translate
+        local _ = gl.Translate
         local glUniform = gl.Uniform
-        local GamemapSizeZ, GamemapSizeX = Game.mapSizeZ,Game.mapSizeX
+        local _, _ = Game.mapSizeZ,Game.mapSizeX
 
 		gl.Fog(true)
 		gl.FogCoord(1)

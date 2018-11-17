@@ -22,23 +22,23 @@ local sens = 80	--rotate mouse sensitivity - length of mouse movement vector
 local drawForAll = false --draw facing direction also for other buildings than labs
 --------------------------------------------------------------------------------
 local inDrag = false
-local mmbStart = false
+local _ = false
 local mouseDeltaX = 0
 local mouseDeltaY = 0
 local mouseXStartRotate = 0
 local mouseYStartRotate = 0
 local mouseXStartDrag = 0
 local mouseYStartDrag = 0
-local mouseLbLast = false
+local _ = false
 -------------------------------------------------------------------------------
 local udefTab				= UnitDefs
 
-local spGetActiveCommand 	= Spring.GetActiveCommand
-local spGetKeyState         = Spring.GetKeyState
+local _ = Spring.GetActiveCommand
+local _ = Spring.GetKeyState
 local spGetModKeyState      = Spring.GetModKeyState
-local spGetSelectedUnits    = Spring.GetSelectedUnits
-local spGetUnitDefID        = Spring.GetUnitDefID
-local spGetUnitPosition     = Spring.GetUnitPosition
+local _ = Spring.GetSelectedUnits
+local _ = Spring.GetUnitDefID
+local _ = Spring.GetUnitPosition
 local spGetGameSeconds      = Spring.GetGameSeconds
 local spGetActiveCommand 	= Spring.GetActiveCommand
 local spGetActiveCmdDesc 	= Spring.GetActiveCmdDesc
@@ -52,10 +52,10 @@ local spWarpMouse			= Spring.WarpMouse
 local spGetBuildFacing		= Spring.GetBuildFacing
 local spSetBuildFacing 		= Spring.SetBuildFacing
 local spPos2BuildPos 		= Spring.Pos2BuildPos
-local spGetGroundHeight 	= Spring.GetGroundHeight
+local _ = Spring.GetGroundHeight
 
 local floor                 = math.floor
-local abs					= math.abs
+local _ = math.abs
 local atan2                 = math.atan2
 local pi                    = math.pi
 local sqrt                  = math.sqrt
@@ -67,7 +67,7 @@ local glTexture             = gl.Texture
 local glPopMatrix           = gl.PopMatrix
 local glPushMatrix          = gl.PushMatrix
 local glTranslate           = gl.Translate
-local glText                = gl.Text
+local _ = gl.Text
 local glVertex              = gl.Vertex
 local glRotate				= gl.Rotate
 local glBeginEnd			= gl.BeginEnd
@@ -77,7 +77,7 @@ local GL_TRIANGLES			= GL.TRIANGLES
 ----------------------------------------------------------------------------------
 
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
         widgetHandler:RemoveWidget(self)
     end
@@ -96,23 +96,23 @@ end
 function widget:Update()
 	local timef = spGetGameSeconds()
 	local time = floor(timef)
-	
+
 	-- update timers once every <updateInt> seconds
-	if (time % updateInt == 0 and time ~= lastTimeUpdate) then	
+	if (time % updateInt == 0 and time ~= lastTimeUpdate) then
 		lastTimeUpdate = time
 		--do update stuff:
-		
+
 		if ( CheckSpecState() == false ) then
 			return false
 		end
 	end
-	
+
 	manipulateFacing()
 end
 
 function widget:DrawWorld()
 	drawOrientation()
-	
+
 	ResetGl()
 end
 
@@ -124,7 +124,7 @@ function getRotationVectors2d( vectorA, vectorB )
 	vectorA = normalizeVector2d( vectorA )
 	vectorB = normalizeVector2d( vectorB )
 	local radian = atan2( vectorA[2], vectorA[1] ) - atan2( vectorB[2], vectorB[1] )
-	local val = ( 360.0 * radian) / ( 2 * pi ) 
+	local val = ( 360.0 * radian) / ( 2 * pi )
 	return normalizeDegreeRange(val)
 end
 
@@ -156,38 +156,38 @@ end
 
 function getFacingByMouseDelta( mouseDeltaX,mouseDeltaY )
 	local camVecs = spGetCameraVectors()	--would be cool to update this only on a callin like "onCameraMoved()"
-	
+
 	local mouseMovVec = { mouseDeltaX, mouseDeltaY }
 	local mMovVecLen = getVector2dLen( mouseMovVec )
-	
+
 	if ( mMovVecLen < sens ) then
 		return nil
 	end
-	
+
 	local mouseDegree = getMouseFacingDegree( mouseMovVec )
-	
+
 	--calculate the camera angle
 	local camRight2d = { camVecs.right[1], -camVecs.right[3] }
 	local camDegree = getMouseFacingDegree( camRight2d ) - 90
 	camDegree = normalizeDegreeRange( camDegree )
-	
+
 	--take the camera angle into account here
 	mouseDegree = mouseDegree + camDegree
 	mouseDegree = normalizeDegreeRange( mouseDegree )
-	
+
 	local newFacing = nil
 	if ( ( mouseDegree >= 280.0 ) or ( mouseDegree < 45.0 ) ) then
 		newFacing = 2
 	elseif ( ( mouseDegree >= 45.0 ) and ( mouseDegree < 135.0 ) ) then
 		newFacing = 1
-	elseif ( ( mouseDegree >= 135.0 ) and ( mouseDegree < 225.0 ) ) then 
+	elseif ( ( mouseDegree >= 135.0 ) and ( mouseDegree < 225.0 ) ) then
 		newFacing = 0
 	elseif ( ( mouseDegree >= 225.0 ) and ( mouseDegree < 280.0 ) ) then
 		newFacing = 3
 	else
 		newFacing = 0 --should not happen
 	end
-	
+
 	return newFacing
 end
 
@@ -195,15 +195,15 @@ local ineffect = false
 function manipulateFacing()
 	ineffect = false
 
-	local mx,my,lmb,mmb,rmb = spGetMouseState()
-	local alt,ctrl,meta,shift = spGetModKeyState()
+	local mx,my,lmb,mmb, _ = spGetMouseState()
+	local _, _, _, _ = spGetModKeyState()
 
 	--check if valid command
-	local idx, cmd_id, cmd_type, cmd_name = spGetActiveCommand()
+	local idx, cmd_id, _, _ = spGetActiveCommand()
 	if (not cmd_id) then return end
 
 	local unitDefID = -cmd_id
-	local udef = udefTab[unitDefID]
+	local _ = udefTab[unitDefID]
 
 	--if (lmb and (mmb or (not shift or (udef ~= nil and udef["isFactory"])))) then
 	if (lmb and mmb) then
@@ -232,24 +232,24 @@ function manipulateFacing()
 		--quit here if not a build command
 		return
 	end
-	
+
 	if ( inDrag ) then
 		local curDeltaX = mx - mouseXStartRotate
 		mouseDeltaX = mouseDeltaX + curDeltaX
 		local curDeltaY = my - mouseYStartRotate
 		mouseDeltaY = mouseDeltaY + curDeltaY
-        
+
 		local newFacing = getFacingByMouseDelta( mouseDeltaX, mouseDeltaY )
 
 		if ( newFacing ~= nil ) then
 			mouseDeltaX = 0
-			mouseDeltaY = 0 
-			
+			mouseDeltaY = 0
+
 			if ( newFacing ~= spGetBuildFacing() ) then
 				spSetBuildFacing( newFacing )
 			end
 		end
-			
+
 		if mouseXStartRotate~=mx or mouseYStartRotate~=my then
 			spWarpMouse( mouseXStartRotate, mouseYStartRotate ) --set old mouse coords to prevent mouse movement
 		end
@@ -266,7 +266,7 @@ function drawOrientation()
 	--local alt,ctrl,meta,shift = spGetModKeyState()
 	--if shift then return false end
 
-	local idx, cmd_id, cmd_type, cmd_name = spGetActiveCommand()
+	local idx, cmd_id, _, _ = spGetActiveCommand()
 	local cmdDesc = spGetActiveCmdDesc( idx )
 
 	if ( cmdDesc == nil or cmdDesc["type"] ~= 20 ) then
@@ -364,7 +364,7 @@ function drawOrientation()
 end
 
 --Commons
-function ResetGl() 
+function ResetGl()
 	glColor( { 1.0, 1.0, 1.0, 1.0 } )
 	glLineWidth( 1.0 )
 	glDepthTest(false)
@@ -374,13 +374,13 @@ end
 function CheckSpecState()
 	local playerID = spGetMyPlayerID()
 	local _, _, spec, _, _, _, _, _ = spGetPlayerInfo(playerID)
-		
+
 	if ( spec == true ) then
 		widgetHandler:RemoveWidget(self)
 		return false
 	end
-	
-	return true	
+
+	return true
 end
 
 function printDebug( value )
@@ -390,12 +390,11 @@ function printDebug( value )
 				else spEcho("false") end
 		elseif ( type(value ) == "table" ) then
 			spEcho("Dumping table:")
-			for key,val in pairs(value) do 
-				spEcho(key,val) 
+			for key,val in pairs(value) do
+				spEcho(key,val)
 			end
 		else
 			spEcho( value )
 		end
 	end
 end
-	

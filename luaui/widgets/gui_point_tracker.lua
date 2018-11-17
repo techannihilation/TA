@@ -45,7 +45,7 @@ local glLineWidth = gl.LineWidth
 local glShape = gl.Shape
 local glPolygonMode = gl.PolygonMode
 local glText = gl.Text
-local max = math.max
+local _ = math.max
 local abs = math.abs
 local strSub = string.sub
 local GL_LINES = GL.LINES
@@ -97,9 +97,9 @@ end
 
 function widget:DrawScreen()
 	if (not on) then return end
-	
+
 	glLineWidth(lineWidth)
-	
+
 	for i=lastPoint,#mapPoints do
 		local curr = mapPoints[i]
 		local alpha = maxAlpha * (curr[6] - timeNow) / ttl
@@ -184,7 +184,7 @@ function widget:DrawScreen()
 			end
 		end
 	end
-	
+
 	glColor(1, 1, 1)
 	glLineWidth(1)
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
@@ -204,15 +204,15 @@ function widget:MapDrawCmd(playerID, cmdType, px, py, pz, label)
 	local spectator, fullView = GetSpectatingState()
 	local _, _, _, playerTeam = GetPlayerInfo(playerID)
 	if (label == "Start " .. playerTeam
-			or cmdType ~= "point" 
-			or not (ArePlayersAllied(myPlayerID, playerID) or (spectator and fullView))) then 
-		return 
+			or cmdType ~= "point"
+			or not (ArePlayersAllied(myPlayerID, playerID) or (spectator and fullView))) then
+		return
 	end
-	
+
 	local r, g, b = GetPlayerColor(playerID)
 	local color = {r, g, b}
 	local expiration = timeNow + ttl
-	
+
 	table.insert(mapPoints, {color, px, py, pz, strSub(label, 1, maxLabelLength), expiration})
 end
 
@@ -232,10 +232,10 @@ end
 function widget:DrawInMiniMap(sx, sy)
 	if (not on) then return end
 	glLineWidth(lineWidth)
-	
+
 	local ratioX = sx / mapX
 	local ratioY = sy / mapY
-	
+
 	for i=lastPoint,#mapPoints do
 		local curr = mapPoints[i]
 		local x = curr[2] * ratioX
@@ -260,7 +260,7 @@ function widget:DrawInMiniMap(sx, sy)
 				glShape(GL_LINES, vertices)
 		end
 	end
-	
+
 	glColor(1, 1, 1)
 	glLineWidth(1)
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)

@@ -56,7 +56,7 @@ function gadget:Initialize()
     end
 end
 
-function gadget:UnitCreated(uID, uDefID, uTeam)
+function gadget:UnitCreated(uID, uDefID, _)
     if canDGun[uDefID] then
         local cmdIdx = spFindUnitCmdDesc(uID, CMD_MANUALFIRE)
         if cmdIdx then
@@ -90,4 +90,4 @@ function gadget:UnitCreated(uID, uDefID, uTeam)
     end
 end
 
-    
+

@@ -23,20 +23,20 @@ function widget:Shutdown()
   widgetHandler:DeregisterGlobal('DrawManager_lups', DrawStatus)
 end
 
-function DrawStatus(toohigh,fps,ping)
+function DrawStatus(toohigh, _,ping)
   --height check
   if toohigh ~= oldtoohighstatus then
-    if toohigh == true then 
+    if toohigh == true then
       Spring.SendLuaRulesMsg("toohigh"..1)
     else
       Spring.SendLuaRulesMsg("toohigh"..0)
     end
   end
   oldtoohighstatus = toohigh
-  
+
   --ping
   if ping ~= oldpingstatus then
-    if ping == true then 
+    if ping == true then
       Spring.SendLuaRulesMsg("ping"..1)
     else
       Spring.SendLuaRulesMsg("ping"..0)

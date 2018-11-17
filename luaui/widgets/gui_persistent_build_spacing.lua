@@ -29,7 +29,7 @@ function widget:Initialize()
     end
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
         widgetHandler:RemoveWidget(self)
     end
@@ -40,15 +40,15 @@ function widget:GameStart()
 end
 
 function widget:Update()
-    
+
     local _, cmdID = spGetActiveCommand()
     if cmdID and cmdID < 0 then
-        
+
         if cmdID ~= lastCmdID then
             spSetBuildSpacing(buildSpacing[-cmdID] or defaultSpacing)
             lastCmdID = cmdID
         end
-        
+
         buildSpacing[-cmdID] = spGetBuildSpacing()
     end
 end

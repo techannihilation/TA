@@ -33,7 +33,7 @@ function gadget:Initialize()
     end
 end
 
-function gadget:UnitPreDamaged(uID, uDefID, uTeam, damage, paralyzer, weaponID, projID, aID, aDefID, aTeam)
+function gadget:UnitPreDamaged(_, uDefID, _, damage, paralyzer, _, _, _, _, _)
     if paralyzer then
         -- apply customParams paralyse multiplier
         local paralyzeMultiplier = paralyzeMultipliers[uDefID]

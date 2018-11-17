@@ -12,14 +12,14 @@ end
 
 
 if (not gadgetHandler:IsSyncedCode()) then
- 
-function gadget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+
+function gadget:UnitGiven(unitID, _, _, _)
   if (Spring.GetUnitSelfDTime(unitID) > 0) then
     Spring.GiveOrderToUnit(unitID, CMD.SELFD, {}, {})
   end
 end
 
-function gadget:PlayerChanged(playerID) --necessary wtfness, probably can remove in 97.0+
+function gadget:PlayerChanged(_) --necessary wtfness, probably can remove in 97.0+
 end
 
 else
@@ -28,7 +28,7 @@ function gadget:PlayerChanged(playerID)
 	local _,active,spec,teamID = Spring.GetPlayerInfo(playerID)
 	if active and not spec then return end
 	local team = Spring.GetPlayerList(teamID)
-	
+
 	if team then
 		-- check team is empty
 		for _,pID in pairs(team) do
@@ -37,7 +37,7 @@ function gadget:PlayerChanged(playerID)
 				return
 			end
 		end
-	
+
 		-- cancel any self d orders
 		local units = Spring.GetTeamUnits(teamID)
 		for _,unitID in pairs(units) do

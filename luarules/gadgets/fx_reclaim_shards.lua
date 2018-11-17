@@ -34,7 +34,7 @@ for featureDefID, defs in pairs(FeatureDefs) do
   end
 end
 
-function gadget:GameFrame(n)
+function gadget:GameFrame(_)
   for i,v in pairs(cegList) do
     if v.enabled then
       SpawnCEG(v.ceg,v.xs,v.ys,v.zs,0,1.0,0,0,0)
@@ -47,7 +47,7 @@ function gadget:GameFrame(n)
   end
 end
 
-function gadget:AllowFeatureBuildStep(builderID, builderTeam, featureID, featureDefID, part)
+function gadget:AllowFeatureBuildStep(_, _, featureID, featureDefID, _)
   if not cegList[featureID] then
     local featureDefs = featureList[featureDefID] or nil
     if featureDefs then

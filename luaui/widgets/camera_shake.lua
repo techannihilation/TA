@@ -63,15 +63,15 @@ function widget:Shutdown()
 end
 
 
-function widget:ShockFront(power, dx, dy, dz)
+function widget:ShockFront(power, _, _, _)
   exps = exps + 1
   power = power * powerScale
   if (power > 0.2) then
     power = 0.2
   end
-  
+
   shake = shake + power
-  if (shake > 0.3) then 
+  if (shake > 0.3) then
 	shake = 0.3
   end
 end
@@ -83,10 +83,10 @@ end
 
 
 function widget:Update(dt)
-  local t = widgetHandler:GetHourTimer()
+  local _ = widgetHandler:GetHourTimer()
   local pShake = shake * 0.1
   local tShake = shake * 0.025
-  local px, py, pz, tx, ty, tz =
+  local px, py, pz, tx, ty, _ =
     birand(pShake),
     birand(pShake),
     birand(pShake),

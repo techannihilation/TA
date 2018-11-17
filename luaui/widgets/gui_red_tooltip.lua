@@ -16,7 +16,7 @@ local iconsizeMaster = 96
 local iconsize = iconsizeMaster
 local oldUnitpicsDir = LUAUI_DIRNAME.."Images/oldunitpics/"
 local unitDefID
-local CMD_MORPH = 31410
+local _ = 31410
 
 --1272,734 == 1280,768 windowed
 
@@ -36,14 +36,14 @@ local Config = {
 	tooltip = {
 		px = 0,py = CanvasY-(12*7+5*2), --default start position
 		sx = 320,sy = 12*7+5*2, --background size
-		
+
 		fontsize = 12,
-		
+
 		margin = 5, --distance from background border
-		
+
 		cbackground = cbackground,
 		cborder = cborder,
-		
+
 		dragbutton = {2}, --middle mouse button
 		tooltip = {
 			background = "Hold \255\255\255\1middle mouse button\255\255\255\255 to drag the tooltip display around.",
@@ -94,10 +94,10 @@ local function AutoResizeObjects() --autoresize v2
 	if ((lx ~= vsx) or (ly ~= vsy)) then
 		local objects = GetWidgetObjects(widget)
 		local scale = vsy/ly
-		local skippedobjects = {}
+		local _ = {}
 		for i=1,#objects do
 			local o = objects[i]
-			local adjust = 0
+			local _ = 0
 			if ((o.movableslaves) and (#o.movableslaves > 0)) then
 				adjust = (o.px*scale+o.sx*scale)-vsx
 				if (((o.px+o.sx)-lx) == 0) then
@@ -176,7 +176,7 @@ local function getEditedCurrentTooltip()
 	local expPattern = "Experience (%d+%.%d%d)"
 	local currentExp = tonumber(text:match(expPattern))
 
-	local limExp = currentExp and currentExp/(1+currentExp) or 1
+	local _ = currentExp and currentExp/(1+currentExp) or 1
 	--replace with limexp: exp/(1+exp) since all spring exp effects are linear in limexp, multiply by 10 because people like big numbers instead of [0,1]
 	text = currentExp and text:gsub(expPattern,string.format("Experience %.2f", currentExp) ) or text
 
@@ -225,7 +225,7 @@ local function createtooltip(r)
 		fontsize=r.fontsize,
 		caption="",
 		options="o",
-		
+
 		onupdate=function(self)
 			local unitcount = sGetSelectedUnitsCount()
 			if (unitcount ~= 0) then
@@ -233,7 +233,7 @@ local function createtooltip(r)
 			else
 				self.caption = "\n"
 			end
-		
+
 			if (self._mouseoverself) then
 				self.caption = self.caption..r.tooltip.background
 			else
@@ -241,20 +241,20 @@ local function createtooltip(r)
 			end
 		end
 	}
-	
+
 	local background = {"rectangle",
 		px=r.px,py=r.py,
 		sx=r.sx,sy=r.sy,
 		color=r.cbackground,
 		border=r.cborder,
-		
+
 		movable=r.dragbutton,
 		movableslaves={text},
-		
+
 		obeyscreenedge = true,
 		--overridecursor = true,
 		overrideclick = {2},
-		
+
 		onupdate=function(self)
 			if (self.px < (Screen.vsx/2)) then --left side of screen
 				if ((self.sx-r.margin*2) <= text.getwidth()) then
@@ -274,21 +274,21 @@ local function createtooltip(r)
 				text.px = self.px + r.margin + iconsize
 			end
 		end,
-		mouseover=function(mx,my,self)
+		mouseover=function(_, _, _)
 			text._mouseoverself = true
 		end,
-		mousenotover=function(mx,my,self)
+		mousenotover=function(_, _, _)
 			text._mouseoverself = nil
 		end,
 	}
-	
+
 	New(background)
 	New(text)
-	
+
 	return {
 		["background"] = background,
 		["text"] = text,
-		
+
 		margin = r.margin,
 	}
 end
@@ -311,9 +311,9 @@ end
 function widget:Initialize()
 	PassedStartupCheck = RedUIchecks()
 	if (not PassedStartupCheck) then return end
-	
+
 	tooltip = createtooltip(Config.tooltip)
-		
+
 	Spring.SetDrawSelectionInfo(false) --disables springs default display of selected units count
 	Spring.SendCommands("tooltip 0")
 	AutoResizeObjects()

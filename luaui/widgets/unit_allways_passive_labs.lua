@@ -17,12 +17,12 @@ end
 --------------------------------------------------------------------------------
 local CMD_BUILDSPEED 		= 33455
 
-local spGetGameFrame		= Spring.GetGameFrame
+local _ = Spring.GetGameFrame
 local spGetMyTeamID			= Spring.GetMyTeamID
 local spGetTeamUnits		= Spring.GetTeamUnits
-local spGetUnitCommands		= Spring.GetUnitCommands
+local _ = Spring.GetUnitCommands
 local spGetUnitDefID		= Spring.GetUnitDefID
-local spGetUnitPosition		= Spring.GetUnitPosition
+local _ = Spring.GetUnitPosition
 local spGiveOrderToUnit		= Spring.GiveOrderToUnit
 
 
@@ -36,7 +36,7 @@ local function IsFactory(ud)
 	return ud and ud.isBuilder and ud.isFactory
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end

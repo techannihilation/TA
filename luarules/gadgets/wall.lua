@@ -19,16 +19,16 @@ if (enabled == 0) then --or wallHeight > mapHeight then
 end
 
 --local gl.Vertex = gl.Vertex
-local SpringGetUnitBasePosition = Spring.GetUnitBasePosition   
+local SpringGetUnitBasePosition = Spring.GetUnitBasePosition
 local SpringGetUnitTeam = Spring.GetUnitTeam
 
 if (gadgetHandler:IsSyncedCode()) then
 local GetGaiaTeamID  = Spring.GetGaiaTeamID ()
-local wallHeight = #UnitDefs
+local _ = #UnitDefs
 local wallActive = true
 local blockWeapons = true
 local seeEverything = true
-local mapHeight = 0x38
+local _ = 0x38
 
 local wallTime = 10 * 60 --in seconds
 local walls = {}
@@ -43,34 +43,34 @@ _G.wallText = "ready up!"
 function gadget:Initialize()
 	local minutes = Spring.GetModOptions()["wall_time"] or 10
 	wallTime = minutes * 60
-	
+
 	local p = Spring.GetModOptions()["wall_size"] or 45
 	p = p / 100
 	walls[1].z= Game.mapSizeZ *p
 	walls[2].z= Game.mapSizeZ *(1-p)
-	
+
 	local los = Spring.GetModOptions()["wall_los"] or '1'
 	if (los == '1') then seeEverything = true else seeEverything = false end
-		
-	local weapons = Spring.GetModOptions()["wall_weapons"] or '1' 
+
+	local weapons = Spring.GetModOptions()["wall_weapons"] or '1'
 	if (weapons == '2') then blockWeapons = false end
-		
+
 	Spring.Echo ("wallTime in seconds: " .. wallTime .. " | " .. "P=" .. p)
 end
 
 
 
 function gadget:GameFrame (f)
-	if (wallActive and f%10==0) then		
+	if (wallActive and f%10==0) then
 		wallCheck ()
 	end
-	if (f%30==0) then 
+	if (f%30==0) then
 
 		if (wallTime > 0) then
 			--Spring.Echo (wallTime)
 			wallTime = wallTime-1
-		else		
-			wallActive = false 
+		else
+			wallActive = false
 			RevertAlwaysVisible()
 			UnlockWeapons()
 			gadgetHandler:RemoveGadget()
@@ -82,7 +82,7 @@ function gadget:GameFrame (f)
 		--_G.wallTime = wallTime
 
 		SendToUnsynced("wallStatus",SecondsToClock (wallTime),wallActive)
-	end	
+	end
 end
 
 function wallCheck ()
@@ -95,7 +95,7 @@ function wallCheck ()
 				if (z > walls[1].z) then
 					Spring.MoveCtrl.Enable(all_units[i])
 					Spring.MoveCtrl.SetPosition (all_units[i],x,y,walls[1].z-10)
-					Spring.MoveCtrl.Disable(all_units[i])					
+					Spring.MoveCtrl.Disable(all_units[i])
 				end
 			else
 				if (z < walls[2].z) then
@@ -108,7 +108,7 @@ function wallCheck ()
 	end
 end
 
-function gadget:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z)
+function gadget:AllowUnitCreation(_, _, builderTeam, x, y, z)
 	if (wallActive and builderTeam ~= GetGaiaTeamID) then
 		if (x and y and z) then
 			if (z < Game.mapSizeZ/2) then
@@ -126,9 +126,9 @@ function gadget:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z)
 end
 
 
-function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
+function gadget:UnitCreated(unitID, unitDefID, _, _)
 	if (wallActive and blockWeapons) then
-		local n = #UnitDefs[unitDefID].weapons
+		local _ = #UnitDefs[unitDefID].weapons
 		--Spring.Echo ("n="..n)
 		for wi=0,32,1 do-- was: n-
 			--Spring.SetUnitWeaponState (unitID, wi,{aimReady=0})
@@ -196,14 +196,14 @@ end
 function drawWall (z)
 	gl.PushAttrib(GL.ALL_ATTRIB_BITS)
 	gl.DepthTest(true)
-	gl.DepthMask(true)	
-	gl.Texture(":a:luarules\\images\\wall.png")-- Texture file	
-	--gl.Color(red,green,blue,alpha)	
+	gl.DepthMask(true)
+	gl.Texture(":a:luarules\\images\\wall.png")-- Texture file
+	--gl.Color(red,green,blue,alpha)
 	gl.Color(0,1,1,0.25)
 	gl.BeginEnd(GL.QUADS,drawWallVertices,  z)
 	gl.Texture(false)
 	gl.DepthMask(false)
-	gl.DepthTest(false)	
+	gl.DepthTest(false)
 	gl.PopAttrib()
 end
 
@@ -213,25 +213,25 @@ function drawWallVertices (z)
   local x = Game.mapSizeX
   gl.TexCoord(-s*10,-s)
   gl.Vertex(0 ,0, z)
-  
+
   gl.TexCoord(-s*10,s)
   gl.Vertex(0,y,z)
-  
+
   gl.TexCoord(s*10,s)
   gl.Vertex(x,y,z)
-  
+
   gl.TexCoord(s*10,-s)
   gl.Vertex(x,0,z)
 end
 
 
-function draw3DText(text,ux,uy,uz,textSize)  
+function draw3DText(text,ux,uy,uz,textSize)
   gl.PushMatrix()
   gl.Translate(ux, uy, uz)
   --gl.Billboard()
-  --gl.MultiTexCoord(1, 1)  
-  --gl.Color(1, 1, 0)  
-  gl.Text(text, 100, 100, textSize, "oc")  
+  --gl.MultiTexCoord(1, 1)
+  --gl.Color(1, 1, 0)
+  gl.Text(text, 100, 100, textSize, "oc")
   gl.PopMatrix()
 end
 
@@ -241,29 +241,29 @@ end
 function DrawGroundHuggingSquare(red,green,blue,alpha,  x1,z1,x2,z2,   HoverHeight)
 	gl.PushAttrib(GL.ALL_ATTRIB_BITS)
 	gl.DepthTest(true)
-	gl.DepthMask(true)	
-	gl.Texture(":a:LuaRules\\Gadgets\\lava2.png")-- Texture file	
-	gl.Color(red,green,blue,alpha)	
+	gl.DepthMask(true)
+	gl.Texture(":a:LuaRules\\Gadgets\\lava2.png")-- Texture file
+	gl.Color(red,green,blue,alpha)
 	gl.BeginEnd(GL.QUADS,DrawGroundHuggingSquareVertices,  x1,z1, x2,z2,  HoverHeight)
 	gl.Texture(false)
 	gl.DepthMask(false)
-	gl.DepthTest(false)	
+	gl.DepthTest(false)
 	gl.PopAttrib()
 end
 
 
 function DrawGroundHuggingSquareVertices(x1,z1, x2,z2,   HoverHeight)
-  local y=HoverHeight--+Spring.GetGroundHeight(x,z)  
+  local y=HoverHeight--+Spring.GetGroundHeight(x,z)
   local s = 2
   gl.TexCoord(-s,-s)
   gl.Vertex(x1 ,y, z1)
-  
-  gl.TexCoord(-s,s) 
+
+  gl.TexCoord(-s,s)
   gl.Vertex(x1,y,z2)
-  
+
   gl.TexCoord(s,s)
   gl.Vertex(x2,y,z2)
-  
+
   gl.TexCoord(s,-s)
   gl.Vertex(x2,y,z1)
 end

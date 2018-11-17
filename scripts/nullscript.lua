@@ -1,3 +1,3 @@
-function script.Killed(recentDamage, maxHealth)
+function script.Killed(_, _)
 	return 0
 end

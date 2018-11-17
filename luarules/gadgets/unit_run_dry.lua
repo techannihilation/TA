@@ -33,7 +33,7 @@ local tidals = {}
 
 local uDefs = UnitDefs
 local GetUnitDefID         = Spring.GetUnitDefID
-local GetUnitBasePosition  = Spring.GetUnitBasePosition
+local _ = Spring.GetUnitBasePosition
 local GetUnitPosition      = Spring.GetUnitPosition
 local GetGroundHeight      = Spring.GetGroundHeight
 local SpSpawnCEG           = Spring.SpawnCEG
@@ -66,7 +66,7 @@ function gadget:GameFrame(n)
     local elevation = GetGroundHeight(rx, rz)
     local isFactory = tidals[unitID].isfactory
     --Spring.Echo( elevation, minwater,baseposy,baseposy+buffer,canMove)
-	  if ((elevation + minwater) > ( 0 +  buffer ) and canMove == false ) or ((elevation >= baseposy) and canMove and not isFactory) then 
+	  if ((elevation + minwater) > ( 0 +  buffer ) and canMove == false ) or ((elevation >= baseposy) and canMove and not isFactory) then
 	    if mass < 601 then
 	      SpSpawnCEG("Death_Explosion_Tidal_Small", rx, 0, rz)
 	    elseif mass >= 601 and mass <= 4000 then
@@ -110,22 +110,22 @@ function gadget:Initialize()
 end
 
 
-function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+function gadget:UnitCreated(unitID, unitDefID, _)
     if (tideDefs[unitDefID]) then
     SetupUnit(unitID)
   end
 end
 
 
-function gadget:UnitTaken(unitID, unitDefID, unitTeam)
-	if (tideDefs[unitDefID]) then 
+function gadget:UnitTaken(unitID, unitDefID, _)
+	if (tideDefs[unitDefID]) then
 		SetupUnit(unitID)
 	end
 end
 
 
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-	if (tideDefs[unitDefID]) then 
+function gadget:UnitDestroyed(unitID, unitDefID, _)
+	if (tideDefs[unitDefID]) then
 		tidals[unitID] = nil
 	end
 end

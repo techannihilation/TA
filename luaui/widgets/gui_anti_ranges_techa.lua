@@ -42,10 +42,10 @@ local fadeStartDistance			= 3300
 -- Speedups
 --------------------------------------------------------------------------------
 
-local spGetActiveCommand		= Spring.GetActiveCommand
-local spGetMouseState			= Spring.GetMouseState
-local spTraceScreenRay			= Spring.TraceScreenRay
-local spPos2BuildPos			= Spring.Pos2BuildPos
+local _ = Spring.GetActiveCommand
+local _ = Spring.GetMouseState
+local _ = Spring.TraceScreenRay
+local _ = Spring.Pos2BuildPos
 
 local glColor				= gl.Color
 local glDepthTest			= gl.DepthTest
@@ -55,12 +55,12 @@ local glDrawGroundCircle		= gl.DrawGroundCircle
 
 local spGetMyPlayerID			= Spring.GetMyPlayerID
 local spGetPlayerInfo			= Spring.GetPlayerInfo
-local spGetMyAllyTeamID			= Spring.GetMyAllyTeamID
+local _ = Spring.GetMyAllyTeamID
 local spGetUnitDefID			= Spring.GetUnitDefID
 local spGetUnitPosition			= Spring.GetUnitPosition
-local spGetUnitVelocity			= Spring.GetUnitVelocity
-local spMarkerAddPoint			= Spring.MarkerAddPoint
-local spGetTeamUnits			= Spring.GetTeamUnits
+local _ = Spring.GetUnitVelocity
+local _ = Spring.MarkerAddPoint
+local _ = Spring.GetTeamUnits
 local spGetPositionLosState		= Spring.GetPositionLosState
 local spGetCameraPosition		= Spring.GetCameraPosition
 local spGetUnitStockpile		= Spring.GetUnitStockpile
@@ -76,7 +76,7 @@ local HighPing = false
 local update = 0.5
 
 local antiNukes = {
---Arm 
+--Arm
   [UnitDefNames["armscab"].id] = true,
   [UnitDefNames["armscab1"].id] = true,
   [UnitDefNames["armamd"].id] = true,
@@ -100,7 +100,7 @@ local antiNukes = {
 
 for unitDefID, _ in pairs(antiNukes) do
 	--Spring.Echo("coverage range =",WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange)
-    antiNukes[unitDefID] = {coverageRange = WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange} 
+    antiNukes[unitDefID] = {coverageRange = WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange}
 end
 
 --------------------------------------------------------------------------------
@@ -115,12 +115,12 @@ function widget:DrawWorldPreUnit()
   end
 end
 
-function drawCircle(uID, coverageRange, x, y, z, circleColor)
+function drawCircle(_, coverageRange, x, y, z, circleColor)
   if lineOpacityMultiplier > 0 then
     glDepthTest(true)
     glColor(circleColor[1],circleColor[2],circleColor[3], .5*lineOpacityMultiplier)
     glLineWidth(3-lineWidthMinus)
-    glDrawGroundCircle(x, y, z, coverageRange, 64)  
+    glDrawGroundCircle(x, y, z, coverageRange, 64)
   end
 end
 
@@ -153,11 +153,11 @@ end
 function Stockpile(unitID)
 		local numStockpiled,_,_ = spGetUnitStockpile(unitID)
                 local circleColor = enemyStockpileColor
-                
+
                 if numStockpiled and numStockpiled == 0 then
                         circleColor = emptyStockpileColor
                 elseif numStockpiled and numStockpiled == 1 then
-                        circleColor = filledStockpileColor 
+                        circleColor = filledStockpileColor
                 elseif numStockpiled and numStockpiled > 1 and numStockpiled < 6 then
                         circleColor = multiStockpileColor
                 elseif numStockpiled and numStockpiled > 5 then
@@ -205,15 +205,15 @@ function widget:UnitLeftLos(unitID)
     end
 end
 
-function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
+function widget:UnitCreated(unitID, unitDefID, _, _)
     processVisibleUnit(unitID, unitDefID)
 end
 
-function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+function widget:UnitTaken(unitID, unitDefID, _, _)
     processVisibleUnit(unitID, unitDefID)
 end
 
-function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
+function widget:UnitGiven(unitID, unitDefID, _, _)
     processVisibleUnit(unitID, unitDefID)
 end
 
@@ -269,8 +269,8 @@ function widget:Update(deltaTime)
   end
 end
 
-function widget:GameFrame(n)
-  
+function widget:GameFrame(_)
+
 end
 
 function widget:Initialize()
@@ -278,16 +278,16 @@ function widget:Initialize()
 	checkAllUnits()
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	checkAllUnits()
 end
 
 function checkAllUnits()
-    local _, _, spec, teamId = spGetPlayerInfo(spGetMyPlayerID())
-	
+    local _, _, _, _ = spGetPlayerInfo(spGetMyPlayerID())
+
 	antiInLos				= {}
 	antiOutLos				= {}
-	
+
 	local allUnits = spGetAllUnits()
         for _, unitID in ipairs(allUnits) do
 	    local unitDefId = spGetUnitDefID(unitID)
@@ -300,7 +300,7 @@ function widget:Shutdown()
 end
 --------------------------------------------------------------------------------
 
-function widget:GetConfigData(data)
+function widget:GetConfigData(_)
     savedTable = {}
     savedTable.fadeOnCloseup		= fadeOnCloseup
     return savedTable
@@ -312,7 +312,7 @@ end
 
 function widget:TextCommand(command)
     --Spring.Echo(command)
-    if (string.find(command, "antiranges_fade") == 1  and  string.len(command) == 15) then 
+    if (string.find(command, "antiranges_fade") == 1  and  string.len(command) == 15) then
 		fadeOnCloseup = not fadeOnCloseup
 		if fadeOnCloseup then
 			Spring.Echo("Anti Ranges:  Fade-out on closeup enabled")

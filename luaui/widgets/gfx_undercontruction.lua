@@ -101,7 +101,7 @@ end
 function ResetUnderConstructionUnits()
   local allUnits = Spring.GetAllUnits()
   for _, unitID in pairs(allUnits) do
-    local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(unitID)
+    local _, _, _, _,buildProgress=Spring.GetUnitHealth(unitID)
     if buildProgress < 1 then
       --local unitDefID = Spring.GetUnitDefID(unitID)
       unitList[unitID] = spGetUnitTeam(unitID)
@@ -156,25 +156,25 @@ function widget:Shutdown()
 end
 
 
-function widget:UnitCreated(unitID, unitDefID, unitTeam)
+function widget:UnitCreated(unitID, _, unitTeam)
   unitList[unitID] = unitTeam
   unitListCount = unitListCount + 1
 end
 
-function widget:UnitDestroyed(unitID, unitDefID, unitTeam)
+function widget:UnitDestroyed(unitID, _, _)
   if unitList[unitID] then
     unitList[unitID] = nil
     unitListCount = unitListCount - 1
   end
 end
 
-function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+function widget:UnitTaken(unitID, _, unitTeam, _)
   if unitList[unitID] then
     unitList[unitID] = unitTeam
   end
 end
 
-function widget:UnitFinished(unitID, unitDefID, unitTeam)
+function widget:UnitFinished(unitID, _, _)
   if unitList[unitID] then
     unitList[unitID] = nil
     unitListCount = unitListCount - 1
@@ -197,7 +197,7 @@ function widget:DrawWorld()
   local teamID, prevTeamID, r,g,b
   for unitID,teamID in pairs(unitList) do
     if not spIsUnitIcon(unitID) and spIsUnitInView(unitID) then
-      local health,maxHealth,paralyzeDamage,captureProgress,buildProgress=Spring.GetUnitHealth(unitID)
+      local health,maxHealth, _, _,buildProgress=Spring.GetUnitHealth(unitID)
       if maxHealth ~= nil then
         if useTeamcolor then
           if teamID ~= prevTeamID then

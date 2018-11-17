@@ -44,7 +44,7 @@ end
 include("colors.h.lua")
 
 
-local unloadUnitCmdID = 4576
+local _ = 4576
 
 
 local vsx, vsy = widgetHandler:GetViewSizes()
@@ -61,17 +61,17 @@ end
 --
 
 local unitTypes = 0
-local countsTable = {}
-local activePress = false
-local mouseIcon = -1
-local currentDef = nil
+local _ = {}
+local _ = false
+local _ = -1
+local _ = nil
 
 local iconSizeX = math.floor(68)
 local iconSizeY = math.floor(iconSizeX * 0.75)
 local fontSize = iconSizeY * 0.25
 
 local rectMinX = 0
-local rectMaxX = 0
+local _ = 0
 local rectMinY = 0
 local rectMaxY = 0
 
@@ -112,14 +112,14 @@ function widget:DrawScreen()
     currentDef  = nil
     return
   end
-  
+
   SetupDimensions(unitTypes)
 
   -- unit model rendering uses the depth-buffer
   gl.Clear(GL.DEPTH_BUFFER_BIT)
 
   -- draw the buildpics
-  unitCounts.n = nil  
+  unitCounts.n = nil
   local icon = 0
   for udid,count in pairs(unitCounts) do
     DrawUnitDefIcon(udid, icon, count)
@@ -139,7 +139,7 @@ end
 
 
 function CenterUnitDef(unitDefID)
-  local ud = UnitDefs[unitDefID] 
+  local ud = UnitDefs[unitDefID]
   if (not ud) then
     return
   end
@@ -181,7 +181,7 @@ end
 
 
 local function SetupModelDrawing()
-  gl.DepthTest(true) 
+  gl.DepthTest(true)
   gl.DepthMask(true)
   --gl.Culling(GL.FRONT)
   gl.Lighting(true)
@@ -222,13 +222,13 @@ function DrawUnitDefIcon(unitDefID, iconPos, count)
   local xmin = math.floor(rectMinX + (iconSizeX * iconPos))
   local xmax = xmin + iconSizeX
   if ((xmax < 0) or (xmin > vsx)) then return end  -- bail
-  
+
   local ymin = rectMinY
   local ymax = rectMaxY
   local xmid = (xmin + xmax) * 0.5
   local ymid = (ymin + ymax) * 0.5
 
-  local ud = UnitDefs[unitDefID] 
+  local ud = UnitDefs[unitDefID]
 
   -- draw background quad
 --  gl.Color(0.3, 0.3, 0.3, 1.0)
@@ -244,7 +244,7 @@ function DrawUnitDefIcon(unitDefID, iconPos, count)
 
   -- draw the 3D unit
 	SetupModelDrawing()
-  
+
   gl.PushMatrix()
   gl.Scissor(xmin, ymin, xmax - xmin, ymax - ymin)
   gl.Translate(xmid, ymid, 0)
@@ -253,7 +253,7 @@ function DrawUnitDefIcon(unitDefID, iconPos, count)
   gl.Rotate(math.cos(0.38 * math.pi * timer) * 60.0, 0, 1, 0)
 
   CenterUnitDef(unitDefID)
-  
+
   local scribe = false
   if (scribe) then
     gl.Lighting(false)

@@ -14,7 +14,7 @@ end
 -------------------------------------------------------------------------------------------------------------------------
 
 local enabled = (tostring(Spring.GetModOptions().mo_enemycomcount) == "1") or false
-if not enabled then 
+if not enabled then
   return false
 end
 
@@ -32,7 +32,7 @@ local comDefs = {
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
---Arm 
+--Arm
   [UnitDefNames["armcom"].id] = true,
   [UnitDefNames["armcom1"].id] = true,
   [UnitDefNames["armcom4"].id] = true,
@@ -50,12 +50,12 @@ local comDefs = {
   [UnitDefNames["tllcom7"].id] = true,
 }
 
-local countChanged  = true 
+local countChanged  = true
 
-function gadget:UnitCreated(unitID, unitDefID, teamID)
+function gadget:UnitCreated(_, unitDefID, teamID)
 	-- record com creation
 	if comDefs[unitDefID] then
-		if not teamComs[teamID] then 
+		if not teamComs[teamID] then
 			teamComs[teamID] = 0
 		end
 		teamComs[teamID] = teamComs[teamID] + 1
@@ -63,10 +63,10 @@ function gadget:UnitCreated(unitID, unitDefID, teamID)
 	end
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID, teamID)
+function gadget:UnitDestroyed(_, unitDefID, teamID)
 	-- record com death
 	if comDefs[unitDefID] then
-		if not teamComs[teamID] then 
+		if not teamComs[teamID] then
 			teamComs[teamID] = 0 --should never happen
 		end
 		teamComs[teamID] = teamComs[teamID] - 1
@@ -109,7 +109,7 @@ function UpdateCount()
 	for teamID,_ in pairs(teamComs) do
 		local enemyComCount = 0
 		local _,_,_,_,_,allyTeamID = Spring.GetTeamInfo(teamID)
-		for otherTeamID,val in pairs(teamComs) do -- count all coms in enemy teams, to get enemy allyteam com count
+		for otherTeamID, _ in pairs(teamComs) do -- count all coms in enemy teams, to get enemy allyteam com count
 			local _,_,_,_,_,otherAllyTeamID = Spring.GetTeamInfo(otherTeamID)
 			if otherAllyTeamID ~= allyTeamID then
 				enemyComCount = enemyComCount + teamComs[otherTeamID]

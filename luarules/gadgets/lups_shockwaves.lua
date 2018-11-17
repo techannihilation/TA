@@ -14,8 +14,8 @@ end
 
 
 if (gadgetHandler:IsSyncedCode()) then
-  
-local SHOCK_WEAPONS = {
+
+local _ = {
     --Arm
     ["armguard_armfixed_gun"] = true,
     ["armguard_armfixed_gun_high"] = true,
@@ -29,7 +29,7 @@ local SHOCK_WEAPONS = {
     ["armfboy_arm_fatboy_notalaser"] = true,
     ["armfboy1_arm_fatboy_notalaser1"] = true,
     --Core
-    
+
     --The Lost Legacy
     ["tllhtml_tll_gauss2"] = true,
     ["tlldemon_demonslayer_cannon"] = true,
@@ -42,8 +42,8 @@ local SHOCK_WEAPONS = {
     local wd = WeaponDefs[i]
     local customParams = wd.customParams or {}
     if (SHOCK_WEAPONS[wd.name]) or (wd.type == "DGun") then
-      local speed = 1
-      local life = 1
+      local _ = 1
+      local _ = 1
       if customParams.lups_explodespeed then
 	    speed = wd.customParams.lups_explodespeed
       end
@@ -55,7 +55,7 @@ local SHOCK_WEAPONS = {
     end
   end
 
-  function gadget:Explosion(weaponID, px, py, pz, ownerID)
+  function gadget:Explosion(weaponID, px, py, pz, _)
     local wd = WeaponDefs[weaponID]
     --if (wd.description=="PlasmaImplosionDumpRocket") then --// Liche
     --  SendToUnsynced("lups_shockwave", px, py, pz, 6.4, 30, 0.13, true)

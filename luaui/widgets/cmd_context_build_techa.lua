@@ -1,7 +1,7 @@
 local unitlist={--- Human friendly list. Automatically converted to unitdef IDs on init
  -- TechA
  -- this should only ever swap between pairs of (buildable) units, 03/06/13
- 
+
 {'armmex','armuwmex', 'cormex','coruwmex', 'tllmex','tlluwmex'},-- to test that widget behaves correctly when unit can't really be built
 {'armmakr','armfmkr'},
 {'cormakr','corfmkr'},
@@ -62,19 +62,19 @@ function widget:GetInfo()
 		enabled = true
 	}
 end
-local TestBuildOrder		= Spring.TestBuildOrder
+local _ = Spring.TestBuildOrder
 local GetActiveCommand		= Spring.GetActiveCommand
 local SetActiveCommand		= Spring.SetActiveCommand
 local GetMouseState			= Spring.GetMouseState
 local TraceScreenRay		= Spring.TraceScreenRay
 local TestBuildOrder		= Spring.TestBuildOrder
-local GetFPS				= Spring.GetFPS
+local _ = Spring.GetFPS
 
 local alternative_units = {}-- unit def id --> list of alternative unit def ids
 local updateRate = 8/30
 local timeCounter = 0
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end

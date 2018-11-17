@@ -23,7 +23,7 @@ end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-  
+
 -- Speedups
 local spGetGroundHeight     = Spring.GetGroundHeight
 local spGetUnitBuildFacing  = Spring.GetUnitBuildFacing
@@ -35,7 +35,7 @@ local spGetUnitPosition = Spring.GetUnitPosition
 local spGiveOrderToUnit = Spring.GiveOrderToUnit
 
 local abs = math.abs
-local min = math.min
+local _ = math.min
 
 local CMD_STOP = CMD.STOP
 local ipairs = ipairs
@@ -49,21 +49,21 @@ local lab = {}
 --------------------------------------------------------------------------------
 
 function checkLabs()
-  for Lid,Lv in pairs(lab) do  
+  for _,Lv in pairs(lab) do
     local units = spGetUnitsInBox(Lv.minx, Lv.miny, Lv.minz, Lv.maxx, Lv.maxy, Lv.maxz)
-	
-    for i,id in ipairs(units) do 
+
+    for _,id in ipairs(units) do
 	  local ud = spGetUnitDefID(id)
 	  local fly = UnitDefs[ud].canFly
 	  local team = spGetUnitAllyTeam(id)
 	  if (team ~= Lv.team) and not fly then
-	  
+
 	    local ux, _, uz  = spGetUnitPosition(id)
-		
+
 		if (Lv.face == 1) then
 		  local l = abs(ux-Lv.minx)
 		  local r = abs(ux-Lv.maxx)
-		  
+
 		  if (l < r) then
 		    spSetUnitPosition(id, Lv.minx, uz)
 		  else
@@ -72,23 +72,23 @@ function checkLabs()
 		else
 		  local t = abs(uz-Lv.minz)
 		  local b = abs(uz-Lv.maxz)
-		  
+
 		  if (t < b) then
 		    spSetUnitPosition(id, ux, Lv.minz)
 		  else
 		    spSetUnitPosition(id, ux, Lv.maxz)
 		  end
 		end
-		
+
 		spGiveOrderToUnit(id, CMD_STOP, {}, {})
 		--[[
 		local l = abs(ux-Lv.minx)
 		local r = abs(ux-Lv.maxx)
 		local t = abs(uz-Lv.minz)
 		local b = abs(uz-Lv.maxz)
-		
+
 		local side = min(l,r,t,b)
-		
+
 		if (side == l) then
 		  spSetUnitPosition(id, Lv.minx, uz)
 		elseif (side == r) then
@@ -101,7 +101,7 @@ function checkLabs()
 		--]]
 	  end
 	end
-	
+
   end
 end
 
@@ -110,12 +110,12 @@ function gadget:UnitCreated(unitID, unitDefID)
   local name = ud.name
   if (ud.isFactory == true) and not (name == "armap" or name == "armaap" or name == "armeap" or name == "corap" or name == "coraap" or name == "coreap"
   or name == "tllap" or name == "tllaap") then
-	local ux, uy, uz  = spGetUnitPosition(unitID)
+	local ux, _, uz  = spGetUnitPosition(unitID)
 	local face = spGetUnitBuildFacing(unitID)
 	local xsize = ud.xsize*4
 	local ysize = (ud.ysize or ud.zsize)*4
 	local team = spGetUnitAllyTeam(unitID)
-	
+
 	if ((face == 0) or(face == 2)) then
 	  lab[unitID] = { team = team, face = 0,
 	  minx = ux-ysize, minz = uz-xsize, maxx = ux+ysize, maxz = uz+xsize}
@@ -123,28 +123,28 @@ function gadget:UnitCreated(unitID, unitDefID)
 	  lab[unitID] = { team = team, face = 1,
 	  minx = ux-ysize, minz = uz-xsize, maxx = ux+ysize, maxz = uz+xsize}
 	end
-	
+
 	lab[unitID].miny = spGetGroundHeight(ux,uz)
 	lab[unitID].maxy = lab[unitID].miny+100
-	
+
   end
-  
+
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID)
+function gadget:UnitDestroyed(unitID, _)
   if (lab[unitID]) then
     lab[unitID] = nil
   end
 end
 
-function gadget:UnitGiven(unitID, unitDefID)
+function gadget:UnitGiven(unitID, _)
   if (lab[unitID]) then
     lab[unitID].team = spGetUnitAllyTeam(unitID)
   end
 end
 
 function gadget:GameFrame(n)
-  if (n % 18 == 0) then 
+  if (n % 18 == 0) then
 	checkLabs()
   end
 end

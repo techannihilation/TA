@@ -7,7 +7,7 @@
 --
 
 -- Modifier: Capob
--- Modification Notes: 
+-- Modification Notes:
 --	Idle units no long include factories (bug)
 --	Units on "Hold Pos" are ignored
 --	Applies now to units which can reclaim, or repair, or capture.
@@ -26,7 +26,7 @@ function widget:GetInfo()
 end
 
 --------------------------------------------------------------------------------------
-local echo           = Spring.Echo
+local _ = Spring.Echo
 local getUnitPos     = Spring.GetUnitPosition
 local orderUnit      = Spring.GiveOrderToUnit
 local getUnitTeam    = Spring.GetUnitTeam
@@ -54,7 +54,7 @@ function widget:Initialize()
   	myTeamID=Spring.GetMyTeamID() --get my team ID
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
 	if Spring.GetSpectatingState() and Spring.GetGameFrame() > 0 then
 		widgetHandler:RemoveWidget(self)
 	end
@@ -81,9 +81,9 @@ end
 
 
 --Add reclaimer to the register
-function widget:UnitIdle(unitID, unitDefID, unitTeam)
+function widget:UnitIdle(unitID, unitDefID, _)
 	if (myTeamID==getUnitTeam(unitID)) then             --check if unit is mine
-		--don't apply to factories 
+		--don't apply to factories
 		--don't apply to units with hold position
 		if (UnitDefs[unitDefID]["canReclaim"] or UnitDefs[unitDefID]["canRepair"] or UnitDefs[unitDefID]["canCapture"])
 			and not (UnitDefs[unitDefID]["isFactory"] or UnitDefs[unitDefID]["canManualFire"])
@@ -94,7 +94,7 @@ function widget:UnitIdle(unitID, unitDefID, unitTeam)
 			  lastRegiInSecs=gameInSecs
 			  --echo("Registering unit "..unitID.." as idle")
 		end
-		
+
 	end
 end
 
@@ -103,7 +103,7 @@ end
 function widget:UnitCommand(unitID)
 	--echo("Unit "..unitID.." got a command") --¤debug
 	for reclaimerID in pairs(idleReclaimers) do
-		if (reclaimerID==unitID) then 
+		if (reclaimerID==unitID) then
 			idleReclaimers[reclaimerID]=nil
 			--echo("Unregistering unit "..reclaimerID.." as idle")
 		end

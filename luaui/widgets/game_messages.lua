@@ -55,9 +55,9 @@ end
 
 function widget:TeamDied(teamID)
 	local playerNames
-	local _, leaderPlayerId, isDead, isAiTeam = Spring.GetTeamInfo(teamID)
+	local _, _, _, isAiTeam = Spring.GetTeamInfo(teamID)
 	if isAiTeam then
-		local skirmishAIID, aiName, hostingPlayerID, shortName, version, options = Spring.GetAIInfo(teamID)
+		local _, aiName, hostingPlayerID, shortName, _, _ = Spring.GetAIInfo(teamID)
 		if aiName~="UNKNOWN" and aiName:lower():sub(1,3)~="bot" and aiName:len()>1 then
 			playerNames=aiName
 		elseif shortName~="UNKNOWN" then
@@ -71,7 +71,7 @@ function widget:TeamDied(teamID)
 	end
 	for _,playerId in ipairs(Spring.GetPlayerList(teamID,true)) do
 	local _,_,spectator=Spring.GetPlayerInfo(playerId)
-		if not spectator then 
+		if not spectator then
 		playerNames=(playerNames and playerNames..", " or "")..Spring.GetPlayerInfo(playerId)
 		end
 	end

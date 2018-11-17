@@ -23,8 +23,8 @@ local noCreate = {}
 local UseUnitResource = Spring.UseUnitResource
 
 function gadget:Initialize()
-	local modOptions = Spring.GetModOptions()
-	local spawn_defs_name, shieldCollide_names = VFS.Include("LuaRules/Configs/explosion_spawn_defs.lua")
+	local _ = Spring.GetModOptions()
+	local spawn_defs_name, _ = VFS.Include("LuaRules/Configs/explosion_spawn_defs.lua")
 	for weapon,spawn_def in pairs(spawn_defs_name) do
 		if WeaponDefNames[weapon] then
 			local weaponID = WeaponDefNames[weapon].id
@@ -58,7 +58,7 @@ function gadget:Explosion(w, x, y, z, owner)
 	return false
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)
+function gadget:UnitDestroyed(unitID, _, _, _, _, _)
   expireList[unitID] = nil
 end
 
@@ -69,13 +69,13 @@ function gadget:GameFrame(f)
             Spring.CreateFeature(c.name , c.x, c.y, c.z, 0, Spring.GetUnitTeam(c.owner))
         else
             local unitID = Spring.CreateUnit(c.name , c.x, c.y, c.z, 0, Spring.GetUnitTeam(c.owner))
-            if (c.expire > 0) and unitID then 
+            if (c.expire > 0) and unitID then
                 expireList[unitID] = f + c.expire * 32
             end
         end
 		createList[i]=nil
 	end
-  if ((f+6)%64<0.1) then 
+  if ((f+6)%64<0.1) then
     for i, e in pairs(expireList) do
       if (f > e) then
         Spring.DestroyUnit(i, true)

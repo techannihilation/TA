@@ -31,9 +31,9 @@ local windDefs = {
 
 local tllDefs = UnitDefNames['tllawindtrap'].id
 local windmills = {}
-local groundMin, groundMax = 0,0
-local groundExtreme = 0
-local slope = 0
+local _, _ = 0,0
+local _ = 0
+local _ = 0
 local GAMESPEED = 30
 
 -------------------------------------------------------------------------------------
@@ -47,8 +47,8 @@ local GetCOBScriptID       = Spring.GetCOBScriptID
 local GetWind              = Spring.GetWind
 local GetUnitDefID         = Spring.GetUnitDefID
 local GetHeadingFromVector = Spring.GetHeadingFromVector
-local windMin              = Game.windMin 
-local windMax              = Game.windMax
+local _ = Game.windMin
+local _ = Game.windMax
 local AddUnitResource      = Spring.AddUnitResource
 local SpGetAllUnits        = Spring.GetAllUnits
 local ipairs = ipairs
@@ -110,22 +110,22 @@ function gadget:Initialize()
 end
 
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+function gadget:UnitFinished(unitID, unitDefID, _)
   if (windDefs[unitDefID]) then
 	SetupUnit(unitID,unitDefID)
   end
 end
 
 
-function gadget:UnitTaken(unitID, unitDefID, unitTeam)
-  if (windDefs[unitDefID]) then 
+function gadget:UnitTaken(unitID, unitDefID, _)
+  if (windDefs[unitDefID]) then
     SetupUnit(unitID,unitDefID)
   end
 end
 
 
-function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-  if (windDefs[unitDefID]) then 
+function gadget:UnitDestroyed(unitID, unitDefID, _)
+  if (windDefs[unitDefID]) then
     windmills[unitID] = nil
   end
 end

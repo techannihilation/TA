@@ -16,22 +16,22 @@ local allyTeam = Spring.GetMyAllyTeamID()
 
 -- Speedups
 
-local spGiveOrderToUnit = Spring.GiveOrderToUnit
+local _ = Spring.GiveOrderToUnit
 local spGiveOrderToUnitArray = Spring.GiveOrderToUnitArray
-local spGetCommandQueue = Spring.GetCommandQueue
+local _ = Spring.GetCommandQueue
 local spGetSelectedUnits = Spring.GetSelectedUnits
 local spGetUnitsInCylinder = Spring.GetUnitsInCylinder
 local spWorldToScreenCoords = Spring.WorldToScreenCoords
 local spTraceScreenRay = Spring.TraceScreenRay
 local spGetUnitDefID = Spring.GetUnitDefID
 local spGetUnitAllyTeam = Spring.GetUnitAllyTeam
-local spGetModKeyState = Spring.GetModKeyState
+local _ = Spring.GetModKeyState
 
 
 local reclaimEnemy = Game.reclaimAllowEnemies
 
 local CMD_RECLAIM = CMD.RECLAIM
-local CMD_STOP = CMD.STOP
+local _ = CMD.STOP
 --
 
 
@@ -46,7 +46,7 @@ function widget:GameStart()
     maybeRemoveSelf()
 end
 
-function widget:PlayerChanged(playerID)
+function widget:PlayerChanged(_)
     maybeRemoveSelf()
 end
 
@@ -65,7 +65,7 @@ function widget:CommandNotify(id, params, options)
 
 		local cx, cy, cz = params[1], params[2], params[3]
 
-		local mx,my,mz = spWorldToScreenCoords(cx, cy, cz)
+		local mx,my, _ = spWorldToScreenCoords(cx, cy, cz)
 		local cType,id = spTraceScreenRay(mx,my)
 
 		if cType == "unit" then
@@ -84,7 +84,7 @@ function widget:CommandNotify(id, params, options)
 			end
 
 			local count = 0
-			for i, aid in ipairs(areaUnits) do
+			for _, aid in ipairs(areaUnits) do
 				if (targetEnemy and spGetUnitAllyTeam(aid) ~= allyTeam) or (options.alt and not targetEnemy and spGetUnitDefID(aid) == unitDef ) or  (options.ctrl and not targetEnemy) then
 					local cmdOpts = {}
 					if count ~= 0 or options.shift then
@@ -98,8 +98,8 @@ function widget:CommandNotify(id, params, options)
 
 		end
 	end
-	
-	
+
+
 end
 
 

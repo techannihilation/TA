@@ -90,7 +90,7 @@ function widget:DrawWorld()
 	glDepthTest(false)
 	for i = 1, #teamList do
 		local teamID = teamList[i]
-		local tsx, tsy, tsz = spGetTeamStartPosition(teamID)
+		local tsx, _, tsz = spGetTeamStartPosition(teamID)
 		if tsx and tsx > 0 then
 		local teamStartUnit = spGetTeamRulesParam(teamID, 'startUnit')
 			  if teamStartUnit == armcomDefID then
@@ -125,12 +125,12 @@ function widget:DrawScreen()
 	if factionChangeList then
 
 		glCallList(factionChangeList)
-	else 
+	else
 		factionChangeList = glCreateList(FactionChangeList)
 	end
 	glPopMatrix()
 
-	
+
 end
 
 function FactionChangeList()
@@ -145,7 +145,7 @@ function FactionChangeList()
         elseif commanderDefID == tllcomDefID then
             glRect(129, 1, 191, 63)
         end
-        
+
         -- Icons
         glColor(1, 1, 1, 1)
         glTexture('LuaUI/Images/ARM.png')
@@ -155,7 +155,7 @@ function FactionChangeList()
         glTexture('LuaUI/Images/TLL.png')
         glTexRect(136, 8, 184, 56)
         glTexture(false)
-        
+
         -- Text
         glBeginText()
             glText('Select Desired Faction', 95, 64, 12, 'cd')
@@ -193,21 +193,21 @@ function widget:MousePress(mx, my, mButton)
 			if newCom then
 				commanderDefID = newCom
 				-- tell initial_spawn
-				spSendLuaRulesMsg('\138' .. tostring(commanderDefID)) 
+				spSendLuaRulesMsg('\138' .. tostring(commanderDefID))
 				-- tell initial_queue
-				if WG["faction_change"] then 
+				if WG["faction_change"] then
 					WG["faction_change"](commanderDefID)
 				end
-				
+
 				--Remake gui
 				if factionChangeList then
 					glDeleteList(factionChangeList)
 				end
 				factionChangeList = glCreateList(FactionChangeList)
-			
+
 				return true
 			end
-			
+
 		elseif (mButton == 2 or mButton == 3) and mx < px + 128 then
 			-- Dragging
 			return true
@@ -215,7 +215,7 @@ function widget:MousePress(mx, my, mButton)
 	end
 end
 
-function widget:MouseMove(mx, my, dx, dy, mButton)
+function widget:MouseMove(_, _, dx, dy, mButton)
 	-- Dragging
 	if mButton == 2 or mButton == 3 then
 		px = px + dx

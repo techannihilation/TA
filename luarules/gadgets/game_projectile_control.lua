@@ -26,7 +26,7 @@ function gadget:Initialize()
 	Script.SetWatchWeapon (WeaponDefNames["tlldb_dragon_breath_missile"].id, true)
 end
 
- 
+
  function gadget:GameFrame (frame)
 --	if frame%60==0 then Spring.Echo ("projectile_test.lua"..frame) end
 
@@ -34,13 +34,13 @@ end
 		for projectileID,_ in pairs (redirectProjectiles[frame]) do
 			if (Spring.GetProjectileType (projectileID)) then
 				setTargetTable (projectileID, redirectProjectiles[frame][projectileID])
-				--Spring.SetProjectileCEG (projectileID, "custom:35mmHEATmissilesmoke")				
+				--Spring.SetProjectileCEG (projectileID, "custom:35mmHEATmissilesmoke")
 			end
 		end
 	redirectProjectiles[frame] = nil
 	end
 end
- 
+
 
 
 
@@ -48,7 +48,7 @@ end
 	if (wiggleWeapon [Spring.GetProjectileDefID (proID)]) then
 		local originalTarget = getTargetTable (proID)
 		local tx,ty,tz = getProjectileTargetXYZ (proID)
-		local x,y,z = Spring.GetUnitPosition (proOwnerID)
+		local _, _, _ = Spring.GetUnitPosition (proOwnerID)
 
 		addProjectileRedirect (proID, makeTargetTable(tx,Spring.GetGroundHeight (tx,tz)+600,tz), 10)
 		addProjectileRedirect (proID, originalTarget, 45)
@@ -57,13 +57,13 @@ end
 		addProjectileRedirect (proID, makeTargetTable(tx+math.random(-75,75),ty+math.random(-75,75),tz+math.random(-75,75)), 50)
 
 		addProjectileRedirect (proID, originalTarget, 80)
-		
+
 		return true
 	end
 	if (danceWeapon [Spring.GetProjectileDefID (proID)]) then
 		local originalTarget = getTargetTable (proID)
-		local tx,ty,tz = getProjectileTargetXYZ (proID)
-		local x,y,z = Spring.GetUnitPosition (proOwnerID)
+		local _, _, _ = getProjectileTargetXYZ (proID)
+		local x, _,z = Spring.GetUnitPosition (proOwnerID)
 		addProjectileRedirect (proID, makeTargetTable(x+math.random(-200,200),Spring.GetGroundHeight (x,z)+800,z+math.random(-200,200)), 1)
 		addProjectileRedirect (proID, originalTarget, 65)
 		return true
@@ -101,17 +101,17 @@ function getTargetTable (proID)
 	local targetTable = {}
 	local targetTypeInt, target  = Spring.GetProjectileTarget (proID)
 	if targetTypeInt == string.byte('g') then 	--target is position on ground
-		targetTable = {targetType = targetTypeInt, targetX=target[1],targetY=target[2],targetZ=target[3],}	
+		targetTable = {targetType = targetTypeInt, targetX=target[1],targetY=target[2],targetZ=target[3],}
 	else 										--target is unit,feature or projectile
-		targetTable = {targetType = targetTypeInt, targetID=target,}		
+		targetTable = {targetType = targetTypeInt, targetID=target,}
 	end
 	return targetTable
 end
 
-function setTargetTable (proID, targetTable)	
+function setTargetTable (proID, targetTable)
 	if targetTable.targetType == string.byte('g') then
 		Spring.SetProjectileTarget (proID, targetTable.targetX, targetTable.targetY, targetTable.targetZ)
 	else
-		Spring.SetProjectileTarget (proID, targetTable.targetID, targetTable.targetType)		
+		Spring.SetProjectileTarget (proID, targetTable.targetID, targetTable.targetType)
 	end
 end

@@ -14,7 +14,7 @@ function widget:GetInfo()
 end
 
 
-local spGetGameSeconds      = Spring.GetGameSeconds
+local _ = Spring.GetGameSeconds
 local spGetMouseState       = Spring.GetMouseState
 local spEcho                = Spring.Echo
 
@@ -27,8 +27,8 @@ local glTexture             = gl.Texture
 local glPopMatrix           = gl.PopMatrix
 local glPushMatrix          = gl.PushMatrix
 local glTranslate           = gl.Translate
-local glText                = gl.Text
-local glBeginEnd			= gl.BeginEnd
+local _ = gl.Text
+local _ = gl.BeginEnd
 local glTexRect 			= gl.TexRect
 local glLoadFont			= gl.LoadFont
 local glDeleteFont			= gl.DeleteFont
@@ -39,14 +39,14 @@ local glDepthTest           = gl.DepthTest
 local osClock				= os.clock
 ----------------------------------------------------------------------------------
 -- CONFIGURATION
-local debug = false	
+local debug = false
 local boxWidth = 450
 local boxHeight = 72
 local slideTime = 0.4
 local fadeTime = 1
 local wndBorderSize = 4
 local imgWidth = 335 --670 --drawing size of the image (independent from the real image pixel size)
-local imgWidthy = 143 --286 
+local imgWidthy = 143 --286
 local imgTexCoordX = 1  --image texture coordinate X -- textures image's dimension is a power of 2 (i use 0.625 cause my image has a width of 256, but region to use is only 160 pixel -> 160 / 256 = 0.625 )
 local imgTexCoordY = 1	--image texture coordinate Y -- enter values other than 1.0 to use just a region of the texture image
 local fontSizeHeadline = 48
@@ -56,7 +56,7 @@ local fontPath = "LuaRules/Fonts/LCD2U___.TTF"
 local windowClosePath = "LuaUI/Images/closex_32.png"
 local imgCloseWidth = 32
 --Color config in drawPause function
-	
+
 ----------------
 local screenx, screeny
 local myFont
@@ -92,7 +92,7 @@ function widget:DrawScreen()
 	local now = osClock()
 	local _, _, paused = spGetGameSpeed()
 	local diffPauseTime = ( now - pauseTimestamp)
-	
+
 	if ( ( not paused and lastPause ) or ( paused and not lastPause ) ) then
 		--pause switch
 		pauseTimestamp = osClock()
@@ -100,24 +100,24 @@ function widget:DrawScreen()
 			pauseTimestamp = pauseTimestamp - ( slideTime - ( diffPauseTime / slideTime ) * slideTime )
 		end
 	end
-	
+
 	if ( paused and not lastPause ) then
 		--new pause
 		clickTimestamp = nil
 	end
 
 	lastPause = paused
-		
+
 	if ( paused or ( ( now - pauseTimestamp) <= slideTime ) ) then
 		drawPause()
 	end
-	
+
 	ResetGl()
 end
 
 function isOverWindow(x, y)
-	if ( ( x > screenCenterX - boxWidth) and ( y < screenCenterY + boxHeight ) and 
-		( x < screenCenterX + boxWidth ) and ( y > screenCenterY - boxHeight ) ) then	
+	if ( ( x > screenCenterX - boxWidth) and ( y < screenCenterY + boxHeight ) and
+		( x < screenCenterX + boxWidth ) and ( y > screenCenterY - boxHeight ) ) then
 		return true
 	end
 	return false
@@ -125,21 +125,21 @@ function isOverWindow(x, y)
 
 function widget:MousePress(x, y, button)
   if ( not clickTimestamp and not forceHideWindow ) then
-	if ( isOverWindow(x, y)) then	
+	if ( isOverWindow(x, y)) then
 		--do not update clickTimestamp any more after right mouse button click
 		if ( not forceHideWindow ) then
 			clickTimestamp = osClock()
 		end
-		
+
 		--hide window for the rest of the game if it was a right mouse button
 		if ( button == 3 ) then
 			forceHideWindow = true
 		end
-		
+
 		return true
 	end
   end
-  
+
   return false
 end
 
@@ -153,7 +153,7 @@ end
 
 function widget:Update()
 	local x,y = spGetMouseState()
-	if ( isOverWindow(x, y) ) then	
+	if ( isOverWindow(x, y) ) then
 		mouseOverClose = true
 	else
 		mouseOverClose = false
@@ -173,16 +173,16 @@ function drawPause()
 
 	local text =  { 1.0, 0.0, 0.0, 1.0 }
 	local text2 =  { 0.8, 0.0, 0.0, 0.7 }
-	local outline =  { 0.4, 0.4, 0.4, 1.0 }	
+	local outline =  { 0.4, 0.4, 0.4, 1.0 }
 	local colorWnd = { 0.0, 0.0, 0.0, 0.6 }
-	local colorWnd2 = { 0.5, 0.5, 0.5, 0.6 }
+	local _ = { 0.5, 0.5, 0.5, 0.6 }
 	local iconColor = { 1.0, 1.0, 1.0, 1.0 }
 	local mouseOverColor = { 1.0, 1.0, 0.0, 1.0 }
 
 	--adjust transparency when clicked
 	if ( clickTimestamp ~= nil or forceHideWindow ) then
 		local factor = 0.0
-		if ( clickTimestamp ) then		
+		if ( clickTimestamp ) then
 			factor = ( 1.0 - ( now - clickTimestamp ) / fadeTime )
 		end
 		factor = max( factor, 0.3 )
@@ -191,13 +191,13 @@ function drawPause()
 		text2[4] = text2[4] * factor
 		outline[4] = outline[4] * factor
 		iconColor[4] = iconColor[4] * factor
-		mouseOverColor[4] = mouseOverColor[4] * factor			
+		mouseOverColor[4] = mouseOverColor[4] * factor
 	end
 	local imgWidthHalf = imgWidth * 0.5
-	
+
 	--draw window
 	glPushMatrix()
-	
+
 	if ( diffPauseTime <= slideTime ) then
 		local group1XOffset = 0
 		--we are sliding
@@ -210,40 +210,40 @@ function drawPause()
 		end
 		glTranslate( group1XOffset, 0, 0)
 	end
-	
+
 	glColor( colorWnd )
 	glRect( wndX1, wndY1, wndX2, wndY2 )
 	glColor( colorWnd )
 	glRect( wndX1 - wndBorderSize, wndY1 + wndBorderSize, wndX2 + wndBorderSize, wndY2 - wndBorderSize)
-	
+
 	--draw close icon
 	glColor(  iconColor )
 	if ( mouseOverClose and clickTimestamp == nil and forceHideWindow == false ) then
 		glColor( mouseOverColor )
 	end
-	
+
 	glTexture( ":n:" .. windowClosePath )
 	glTexRect( wndX2 - imgCloseWidth - wndBorderSize, wndY1 - imgCloseWidth - wndBorderSize, wndX2 - wndBorderSize, wndY1 - wndBorderSize, 0.0, 0.0, 1.0, 1.0 )
-	
+
 	--draw text
 	myFont:Begin()
 	myFont:SetOutlineColor( outline )
 
 	myFont:SetTextColor( text )
 	myFont:Print( "GAME PAUSED", textX, textY, fontSizeHeadline, "O" )
-		
+
 	myFont:SetTextColor( text2 )
 	myFont:Print( "Press 'Pause' to continue.", textX-80, textY - lineOffset, fontSizeAddon, "O" )
-	
+
 	myFont:End()
-	
+
 	glPopMatrix()
-	
+
 	--draw logo
 	glColor(  iconColor )
 	glTexture( ":n:" .. windowIconPath )
 	glPushMatrix()
-	
+
 	if ( diffPauseTime <= slideTime ) then
 		--we are sliding
 		if ( paused ) then
@@ -254,16 +254,16 @@ function drawPause()
 			glTranslate( 0, ( yCenter + imgWidthHalf ) * ( diffPauseTime / slideTime ), 0)
 		end
 	end
-	
+
 	glTexRect( xCut - imgWidthHalf, yCenter + imgWidthy/2, xCut + imgWidthHalf, yCenter - imgWidthy/2, 0.0, 0.0, imgTexCoordX, imgTexCoordY )
 	glPopMatrix()
-	
+
 	glTexture(false)
 end
 
 function updateWindowCoords()
 	screenx, screeny = widgetHandler:GetViewSizes()
-	
+
 	screenCenterX = screenx / 2
 	screenCenterY = screeny / 2
 	wndX1 = screenCenterX - boxWidth
@@ -274,17 +274,17 @@ function updateWindowCoords()
 	textX = wndX1 + ( wndX2 - wndX1 ) * 0.52
 	textY = wndY2 + ( wndY1 - wndY2 ) * 0.53
 	lineOffset = ( wndY1 - wndY2 ) * 0.3
-	
+
 	yCenter = wndY2 + ( wndY1 - wndY2 ) * 0.47
 	xCut = wndX1 + ( wndX2 - wndX1 ) * 0.19
 end
 
-function widget:ViewResize(viewSizeX, viewSizeY)
+function widget:ViewResize(_, _)
   updateWindowCoords()
  end
 
 --Commons
-function ResetGl() 
+function ResetGl()
 	glColor( { 1.0, 1.0, 1.0, 1.0 } )
 	glLineWidth( 1.0 )
 	glDepthTest(false)
@@ -299,12 +299,11 @@ function printDebug( value )
 				else spEcho("false") end
 		elseif ( type(value ) == "table" ) then
 			spEcho("Dumping table:")
-			for key,val in pairs(value) do 
-				spEcho(key,val) 
+			for key,val in pairs(value) do
+				spEcho(key,val)
 			end
 		else
 			spEcho( value )
 		end
 	end
 end
-	

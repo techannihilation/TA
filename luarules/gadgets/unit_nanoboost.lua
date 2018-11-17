@@ -26,13 +26,13 @@ if (gadgetHandler:IsSyncedCode()) then
 --Speed-ups
 local GetUnitDefID    = Spring.GetUnitDefID
 local FindUnitCmdDesc = Spring.FindUnitCmdDesc
-local spGetTeamResources = Spring.GetTeamResources
+local _ = Spring.GetTeamResources
 local spInsertUnitCmdDesc = Spring.InsertUnitCmdDesc
 local spEditUnitCmdDesc = Spring.EditUnitCmdDesc
 local spRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpSpawnCEG = Spring.SpawnCEG
-local uDefs = UnitDefs
+local _ = UnitDefs
 local SpGetUnitHealth = Spring.GetUnitHealth
 local SpAddUnitDamage = Spring.AddUnitDamage
 local spSetUnitRulesParam  = Spring.SetUnitRulesParam
@@ -72,7 +72,7 @@ local nanos = {
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
   [UnitDefNames["tllnanotc3"].id] = true,
-  [UnitDefNames["tllnanotower"].id] = true,	
+  [UnitDefNames["tllnanotower"].id] = true,
   [UnitDefNames["tllfnanotc"].id] = true,
   [UnitDefNames["tllfnanotc1"].id] = true,
   [UnitDefNames["tllfnanotc2"].id] = true,
@@ -95,7 +95,7 @@ local function AddBuildspeedCmdDesc(unitID)
   if (FindUnitCmdDesc(unitID, CMD_NANOBOOST)) then
     return  -- already exists
   end
-  local insertID = 
+  local insertID =
     FindUnitCmdDesc(unitID, CMD.CLOAK)      or
     FindUnitCmdDesc(unitID, CMD.ONOFF)      or
     FindUnitCmdDesc(unitID, CMD.TRAJECTORY) or
@@ -103,7 +103,7 @@ local function AddBuildspeedCmdDesc(unitID)
     FindUnitCmdDesc(unitID, CMD.MOVE_STATE) or
     FindUnitCmdDesc(unitID, CMD.FIRE_STATE) or
     123456 -- back of the pack
-    
+
     --Remove unused button
     removeButton(unitID, CMD.ATTACK)
     removeButton(unitID, CMD.MOVE)
@@ -123,19 +123,19 @@ local function UpdateButton(unitID, statusStr)
   local tooltip
   if (statusStr == 0) then
     tooltip = 'Nano running in normal opperations\n\255\255\001\001Warning Boost mode all power diverted to Production\nNano will be running in an unstable mode\nDAMAGE WILL OCCUR'
-  else 
+  else
     tooltip = 'Boost: Production at 180%, Reclaim at 0%,\nRepair set at 0%, Select to Revert to normal production.'
    end
 
   buildspeedCmdDesc.params[1] = statusStr
 
-  spEditUnitCmdDesc(unitID, cmdDescID, { 
-    params  = buildspeedCmdDesc.params, 
+  spEditUnitCmdDesc(unitID, cmdDescID, {
+    params  = buildspeedCmdDesc.params,
     tooltip = tooltip,
   })
 end
 
-local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
+local function BuildspeedCommand(unitID, _, cmdParams, _)
 	if cmdParams[1] == 1 then
 		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.8)
 		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.8,0,0)
@@ -149,7 +149,7 @@ local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 		spSetUnitRulesParam(unitID,"nanoPower",buildspeedlist[unitID].speed)
     spSetUnitRulesParam(unitID,"nanoBoosted",0)
 		boostednanos[unitID] = nil
-		
+
 	end
 	buildspeedlist[unitID].mode=cmdParams[1]
 	UpdateButton(unitID, cmdParams[1])
@@ -165,7 +165,7 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
+function gadget:UnitCreated(unitID, unitDefID, _, _)
 	local ud = UnitDefs[unitDefID]
 	if nanos[unitDefID] then
 		local stMode = 0
@@ -175,7 +175,7 @@ function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	end
 end
 
-function gadget:UnitDestroyed(unitID, _, teamID)
+function gadget:UnitDestroyed(unitID, _, _)
 	buildspeedlist[unitID] = nil
 	boostednanos[unitID] = nil
 end
@@ -192,7 +192,7 @@ end
 function gadget:GameFrame(n)
   if n %30 == 0 then
     for unitID in pairs(boostednanos) do
-      	if mrandom(0,1) == 0 then 
+      	if mrandom(0,1) == 0 then
 	  local _,hp = SpGetUnitHealth(unitID)
 	  local damage = mrandom(hp*0.01,(hp*0.25))
 	  --Spring.Echo("hp = " .. hp .."      " .. damage)
@@ -210,7 +210,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
 	if cmdID ~= CMD_NANOBOOST or not nanos[unitDefID] then
 		return true
 	end
-	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)  
+	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	return false
 end
 

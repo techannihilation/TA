@@ -16,9 +16,9 @@ end
 --config
 ----------------------------------------------------------------
 --negative to disable blinking
-local blinkPeriod = -1
+local _ = -1
 local ttl = 10
-local highlightSize = 16
+local _ = 16
 local highlightLineMin = 10
 local highlightLineMax = 20
 local edgeMarkerSize = 8
@@ -37,23 +37,23 @@ local minimapHighlightLineMax = 8
 ----------------------------------------------------------------
 --speedups
 ----------------------------------------------------------------
-local ArePlayersAllied = Spring.ArePlayersAllied
+local _ = Spring.ArePlayersAllied
 local GetPlayerInfo = Spring.GetPlayerInfo
 local GetTeamColor = Spring.GetTeamColor
-local GetSpectatingState = Spring.GetSpectatingState
+local _ = Spring.GetSpectatingState
 local WorldToScreenCoords = Spring.WorldToScreenCoords
 local GetUnitPosition = Spring.GetUnitPosition
 local GetMyTeamID = Spring.GetMyTeamID
-local PlaySoundFile = Spring.PlaySoundFile
+local _ = Spring.PlaySoundFile
 local glColor = gl.Color
 local glRect = gl.Rect
 local glLineWidth = gl.LineWidth
 local glShape = gl.Shape
 local glPolygonMode = gl.PolygonMode
 local glText = gl.Text
-local max = math.max
+local _ = math.max
 local abs = math.abs
-local strSub = string.sub
+local _ = string.sub
 local GL_LINES = GL.LINES
 local GL_TRIANGLES = GL.TRIANGLES
 local GL_LINE = GL.LINE
@@ -65,7 +65,7 @@ local GL_FILL = GL.FILL
 ----------------------------------------------------------------
 --table; i = {r, g, b, a, px, pz, label, expiration}
 local mapPoints = {}
-local lastPoint = 1
+local _ = 1
 local myPlayerID
 local timeNow, timePart
 local on = false
@@ -77,7 +77,7 @@ local vsx, vsy, sMidX, sMidY
 ----------------------------------------------------------------
 --local functions
 ----------------------------------------------------------------
-local function GetPlayerColor(playerID)
+local function _(playerID)
 	local _, _, _, teamID = GetPlayerInfo(playerID)
 	if (not teamID) then return nil end
 	return GetTeamColor(teamID)
@@ -103,17 +103,17 @@ end
 
 function widget:DrawScreen()
 	if (not on) or (next(mapPoints) == nil) then return end
-		
+
 	glLineWidth(lineWidth)
-	
+
 	for unitID,defs in pairs(mapPoints) do
-		local curr = mapPoints[i]
+		local _ = mapPoints[i]
 		local alpha = maxAlpha * (defs.time - timeNow) / ttl
 		if (alpha <= 0) then
 			mapPoints[unitID] = nil
 		else
 		    defs.x, defs.y, defs.z  = Spring.GetUnitPosition(unitID)
-		    if defs.x then 
+		    if defs.x then
 				local sx, sy, sz = WorldToScreenCoords(defs.x, defs.y, defs.z)
 				if blink then
 					glColor(defs.r, defs.g, defs.b, alpha * 0.5)
@@ -253,10 +253,10 @@ end
 function widget:DrawInMiniMap(sx, sy)
 	if (not on) then return end
 	glLineWidth(lineWidth)
-	
+
 	local ratioX = sx / mapX
 	local ratioY = sy / mapY
-	
+
 	for unitID,defs in pairs(mapPoints) do
 		if defs.x then
 			local x = defs.x * ratioX
@@ -282,7 +282,7 @@ function widget:DrawInMiniMap(sx, sy)
 			end
 		end
 	end
-	
+
 	glColor(1, 1, 1)
 	glLineWidth(1)
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL)
