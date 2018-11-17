@@ -301,7 +301,7 @@ for uDefID, uDef in pairs(UnitDefs) do
 			local tooltip = UnitDefs[uDef.buildOptions[i]].tooltip
 			local humanName = UnitDefs[uDef.buildOptions[i]].humanName
 			local text = "\255\215\255\215"..humanName.."\n\255\240\240\240"
-			local description_long = UnitDefs[uDef.buildOptions[i]].customParams.description_long or ""  --Todo atm we don't use this 
+			local description_long = UnitDefs[uDef.buildOptions[i]].customParams.description_long or ""  --Todo atm we don't use this
 			isBuildableQueue[uDef.buildOptions[i]] = {tooltip = tooltip, humanName = humanName, text = text, description_long = description_long}
 			--Spring.Echo("Initial Queue Build Option's ",i,UnitDefs[uDef.buildOptions[i]].name)
 			end
@@ -320,16 +320,16 @@ end
 local sDefID -- Starting unit def ID
 local sDef -- UnitDefs[sDefID]
 
-local selDefID = nil -- Currently selected def ID
+local selDefID -- Currently selected def ID
 local buildQueue = {}
 local buildNameToID = {}
-local gameStarted = false 
+local gameStarted = false
 
 local wWidth, wHeight = Spring.GetWindowGeometry()
 local wl, wt = 50, 0.5*wHeight
 
 local cellRows = {} -- {{bDefID, bDefID, ...}, ...}
-local panelList = nil -- Display list for panel
+local panelList -- Display list for panel
 local areDragging = false
 
 local isMex = {} -- isMex[uDefID] = true / nil
@@ -472,7 +472,7 @@ local function SetSelDefID(defID)
 	local MetalWidget = widgetHandler.knownWidgets['Pre Start Metal View'] or {}
 	if selDefID then
 		WG["PreGameCommand"] = {cmdID = -selDefID}
-	else 
+	else
 		WG["PreGameCommand"] = nil
 	end
 	if (isMex[selDefID] ~= nil) ~= (Spring.GetMapDrawMode() == "metal") and MetalWidget.active == false then
@@ -563,26 +563,26 @@ function processGuishader()
 end
 
 function RectRound(px,py,sx,sy,cs)
-	
+
 	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy),math.floor(cs)
-	
+
 	gl.Rect(px+cs, py, sx-cs, sy)
 	gl.Rect(sx-cs, py+cs, sx, sy-cs)
 	gl.Rect(px+cs, py+cs, px, sy-cs)
-	
+
 	gl.Texture(bgcorner)
 	--if py <= 0 or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
 	DrawRect(px, py+cs, px+cs, py)		-- top left
-	
+
 	--if py <= 0 or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
 	DrawRect(sx, py+cs, sx-cs, py)		-- top right
-	
+
 	--if sy >= vsy or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
 	DrawRect(px, sy-cs, px+cs, sy)		-- bottom left
-	
+
 	--if sy >= vsy or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
 	DrawRect(sx, sy-cs, sx-cs, sy)		-- bottom right
-	
+
 	gl.Texture(false)
 end
 
@@ -604,7 +604,7 @@ function InitializeFaction(sDefID)
 	for b = 0, #sBuilds - 1 do
 		cellRows[1 + math.floor(b / numCols)][1 + b % numCols] = sBuilds[b + 1]
 		if VFS.FileExists(oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png') then
-			OtaIconExist[sBuilds[b + 1]] = oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png' 
+			OtaIconExist[sBuilds[b + 1]] = oldUnitpicsDir..UnitDefs[sBuilds[b + 1]].name..'.png'
 		end
 	end
 
@@ -653,7 +653,7 @@ function widget:GetConfigData()
 		local numRows = math.ceil(#sBuilds / numCols)
 		local bgheight = ((numRows*iconHeight)+margin)*widgetScale
 		local bgwidth = ((numCols*iconWidth)+margin)*widgetScale
-		
+
 		savedTable = {}
 		savedTable.buildQueue	= buildQueue
 		savedTable.wt			= wt
@@ -672,7 +672,7 @@ function widget:SetConfigData(data)
 	if data.wt ~= nil and data.wl ~= nil and data.bgwidth ~= nil and data.bgheight ~= nil then
 		wt = data.wt
 		wl = data.wl
-		if wl < 0 then 
+		if wl < 0 then
 			wl = 0
 		end
 		if wl > vsx+data.bgwidth then
@@ -681,7 +681,7 @@ function widget:SetConfigData(data)
 		if wt < data.bgheight then
 			wt = data.bgwidth
 		end
-		if wt > vsy then 
+		if wt > vsy then
 			wt = vsy
 		end
 	end
@@ -722,10 +722,10 @@ function widget:DrawScreen()
 
 			for r = 1, #cellRows do
 				local cellRow = cellRows[r]
-				
+
 				gl.Translate(0, -((iconHeight - borderSize)), 0)
 				gl.PushMatrix()
-					
+
 					for c = 1, #cellRow do
 
 						gl.Color(0, 0, 0, 1)
@@ -754,12 +754,12 @@ function widget:DrawScreen()
 			totalTime = buildTime
 			gl.Text(string.format(queueTimeFormat, mCost, eCost, buildTime), 0, margin*widgetScale, fontSize*widgetScale, 'do')
 		end
-		
+
 		-- draw hover
 		local CurMouseState = {Spring.GetMouseState()} --{mx,my,m1,m2,m3}
 		local row = 1 + math.floor((wt - CurMouseState[2]) / ((iconHeight + borderSize)*widgetScale))
 		local col = 1 + math.floor((wl - CurMouseState[1]) / ((iconWidth + borderSize)*widgetScale))
-		
+
 		if TraceDefID(CurMouseState[1], CurMouseState[2]) then
 			gl.Translate(-((iconWidth*widgetScale)*col), -((iconHeight*widgetScale)*row), 0)
 			gl.Texture(buttonhighlight)
@@ -847,7 +847,7 @@ function widget:DrawWorld()
 			sDefID = sDef.id
 		elseif sDef.id == CORCOM then
 			sDefID = sDef.id
-		else 
+		else
 			sDefID = sDef.id
 		end
 
@@ -945,7 +945,7 @@ function widget:GameFrame(n)
 		widgetHandler:RemoveWidget(self)
 		return
 	end
-	
+
 	-- Don't run if we didn't queue anything
 	if (#buildQueue == 0) then
 		widgetHandler:RemoveWidget(self)
@@ -953,17 +953,17 @@ function widget:GameFrame(n)
 	end
 
 	if (n < 2) then return end -- Give the unit frames 0 and 1 to spawn
-	
+
 	--inform gadget how long is our queue
 	local buildTime = GetQueueBuildTime()
 	Spring.SendCommands("luarules initialQueueTime " .. buildTime)
-	
+
 	if (n == 142) then
 		--Spring.Echo("> Starting unit never spawned !")
 		widgetHandler:RemoveWidget(self)
 		return
 	end
-	
+
 
 	if (comGate==0 or Spring.GetGameFrame() == 141) then --comGate takes up until frame 105
 		local tasker
@@ -1009,7 +1009,7 @@ function SetBuildFacing()
 	if not pos then return end
 	local x = pos[1]
 	local z = pos[3]
-	
+
     if math.abs(Game.mapSizeX - 2*x) > math.abs(Game.mapSizeZ - 2*z) then
       if (2*x>Game.mapSizeX) then
         facing=3
@@ -1024,7 +1024,7 @@ function SetBuildFacing()
       end
     end
 	Spring.SetBuildFacing(facing)
-	
+
 end
 
 needBuildFacing = true
@@ -1106,14 +1106,14 @@ function widget:MouseMove(mx, my, dx, dy, mButton)
 		local numRows = math.ceil(#sBuilds / numCols)
 		local bgheight = ((numRows*iconHeight)+margin)*widgetScale
 		local bgwidth = ((numCols*iconWidth)+margin)*widgetScale
-		
-		if wl + dx >= 0 and wl + bgwidth + dx - 1 <= vsx then 
+
+		if wl + dx >= 0 and wl + bgwidth + dx - 1 <= vsx then
 			wl = wl + dx
 		end
-		if wt + dy >= bgheight and wt + bgheight + dy - 1 <= vsy+bgheight then 
+		if wt + dy >= bgheight and wt + bgheight + dy - 1 <= vsy+bgheight then
 			wt = wt + dy
 		end
-		if wl < 0 then 
+		if wl < 0 then
 			wl = 0
 		end
 		if wl > vsx-bgwidth then
@@ -1122,7 +1122,7 @@ function widget:MouseMove(mx, my, dx, dy, mButton)
 		if wt < bgheight then
 			wt = bgheight
 		end
-		if wt > vsy then 
+		if wt > vsy then
 			wt = vsy
 		end
 		processGuishader()
@@ -1159,7 +1159,7 @@ function widget:KeyPress(key,mods,isrepeat)
 			if 		selDefID == ARMMEX then 	SetSelDefID(ARMUWMEX)
 			elseif 	selDefID == ARMUWMEX then	SetSelDefID(ARMMEX)
 			else								SetSelDefID(ARMMEX)
-			end		
+			end
 		elseif key == XKEY then
 			if 		selDefID == RMSOLAR then	SetSelDefID(ARMWIN)
 			elseif 	selDefID == ARMWIN then		SetSelDefID(ARMTIDE)
@@ -1180,14 +1180,14 @@ function widget:KeyPress(key,mods,isrepeat)
 			elseif 	selDefID == ARMVP then		SetSelDefID(ARMSY)
 			elseif 	selDefID == ARMSY then		SetSelDefID(ARMLAB)
 			else 								SetSelDefID(ARMLAB)
-			end			
-		end	
+			end
+		end
 	elseif sDef == UnitDefs[CORCOM] then
 		if key == ZKEY then
 			if 		selDefID == CORMEX then 	SetSelDefID(CORUWMEX)
 			elseif 	selDefID == CORUWMEX then	SetSelDefID(CORMEX)
 			else								SetSelDefID(CORMEX)
-			end		
+			end
 		elseif key == XKEY then
 			if 		selDefID == CORSOLAR then	SetSelDefID(CORWIN)
 			elseif 	selDefID == CORWIN then		SetSelDefID(CORTIDE)
@@ -1207,15 +1207,15 @@ function widget:KeyPress(key,mods,isrepeat)
 			if		selDefID == CORLAB then		SetSelDefID(CORVP)
 			elseif 	selDefID == CORVP then		SetSelDefID(CORSY)
 			elseif 	selDefID == CORSY then		SetSelDefID(CORLAB)
-			else 								SetSelDefID(CORLAB)		
+			else 								SetSelDefID(CORLAB)
 			end
-		end	
+		end
 	elseif sDef == UnitDefs[TLLCOM] then
 		if key == ZKEY then
 			if 		selDefID == TLLMEX then 	SetSelDefID(TLLUWMEX)
 			elseif 	selDefID == TLLUWMEX then	SetSelDefID(TLLMEX)
 			else								SetSelDefID(TLLMEX)
-			end		
+			end
 		elseif key == XKEY then
 			if 		selDefID == TLLSOLAR then	SetSelDefID(TLLWIND)
 			elseif 	selDefID == TLLWIND then	SetSelDefID(TLLTIDE)
@@ -1235,9 +1235,9 @@ function widget:KeyPress(key,mods,isrepeat)
 			if		selDefID == TLLLAB then		SetSelDefID(TLLVP)
 			elseif 	selDefID == TLLVP then		SetSelDefID(TLLSY)
 			elseif 	selDefID == TLLSY then		SetSelDefID(TLLLAB)
-			else 								SetSelDefID(TLLLAB)		
+			else 								SetSelDefID(TLLLAB)
 			end
-		end	
+		end
 	end
 
 end
@@ -1246,14 +1246,14 @@ function widget:ViewResize(newX,newY)
 	vsx, vsy = newX, newY
 	widgetScale = (0.6 + (vsx*vsy / 4000000)) * customScale
 	processGuishader()
-	
+
 	local sBuilds = UnitDefs[sDefID].buildOptions
 	local numCols = math.min(#sBuilds, maxCols)
 	local numRows = math.ceil(#sBuilds / numCols)
 	local bgheight = ((numRows*iconHeight)+margin)*widgetScale
 	local bgwidth = ((numCols*iconWidth)+margin)*widgetScale
-	
-	if wl < 0 then 
+
+	if wl < 0 then
 		wl = 0
 	end
 	if wl > vsx-bgwidth then
@@ -1262,7 +1262,7 @@ function widget:ViewResize(newX,newY)
 	if wt < bgheight then
 		wt = bgheight
 	end
-	if wt > vsy then 
+	if wt > vsy then
 		wt = vsy
 	end
 end

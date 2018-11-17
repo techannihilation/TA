@@ -64,7 +64,7 @@ local unitTypes = 0
 local _ = {}
 local _ = false
 local _ = -1
-local _ = nil
+local _
 
 local iconSizeX = math.floor(68)
 local iconSizeY = math.floor(iconSizeX * 0.75)

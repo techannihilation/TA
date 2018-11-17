@@ -175,8 +175,8 @@ function getFacingByMouseDelta( mouseDeltaX,mouseDeltaY )
 	mouseDegree = mouseDegree + camDegree
 	mouseDegree = normalizeDegreeRange( mouseDegree )
 
-	local newFacing = nil
-	if ( ( mouseDegree >= 280.0 ) or ( mouseDegree < 45.0 ) ) then
+	local newFacing
+  if ( ( mouseDegree >= 280.0 ) or ( mouseDegree < 45.0 ) ) then
 		newFacing = 2
 	elseif ( ( mouseDegree >= 45.0 ) and ( mouseDegree < 135.0 ) ) then
 		newFacing = 1

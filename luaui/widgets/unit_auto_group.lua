@@ -320,8 +320,8 @@ function widget:KeyPress(key, modifier, _)
 			local mx,my = GetMouseState()
 			local _,pos = TraceScreenRay(mx,my,true)
 			local mindist = math.huge
-			local muid = nil
-			if (pos == nil) then return end
+			local muid
+      if (pos == nil) then return end
 				for _, uid in ipairs(GetSelectedUnits()) do
 					local x,_,z = GetUnitPosition(uid)
 					dist = (pos[1]-x)*(pos[1]-x) + (pos[3]-z)*(pos[3]-z)

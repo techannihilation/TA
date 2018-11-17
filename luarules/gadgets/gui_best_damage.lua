@@ -15,9 +15,9 @@ end
 
 if (gadgetHandler:IsSyncedCode()) then
 
-	local BestTeamDamage = nil
-	local BestTeamDamageCount = nil
-	local DamageCounters = {}
+	local BestTeamDamage
+  local BestTeamDamageCount
+  local DamageCounters = {}
 	local MinDamage = 50
 	local oldtime = 0
 	local currenttime

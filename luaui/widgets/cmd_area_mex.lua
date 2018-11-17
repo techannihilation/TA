@@ -162,9 +162,9 @@ function widget:CommandNotify(id, params, options)
 		local units=spGetSelectedUnits()
 		local maxbatchextracts = 0
 		local batchMexBuilder = {}
-		local lastprocessedbestbuilder = nil
+		local lastprocessedbestbuilder
 
-		for _, id in pairs(units) do
+    for _, id in pairs(units) do
 		if mexBuilder[id] then -- Get best extract rates, save best builderID
 			if UnitDefs[(mexBuilder[id].building[1])*-1].extractsMetal > maxbatchextracts then
 				maxbatchextracts = UnitDefs[(mexBuilder[id].building[1])*-1].extractsMetal

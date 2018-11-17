@@ -42,7 +42,7 @@ local myTeamID = Spring.GetMyTeamID()
 local possibleMetalMakersProduction = 0
 local possibleMetalMakersUpkeep = 0
 local releasedMetal = 0
-local selectedUnits = nil
+local selectedUnits
 local t0 = Spring.GetTimer()
 local tidalStrength = Game.tidal
 local totalSavedTime = 0

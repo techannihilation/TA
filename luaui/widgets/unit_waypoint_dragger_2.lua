@@ -88,9 +88,9 @@ local function GetCommandColor(cmdID)
 end
 
 local function GetMouseWorldCoors(mx, my)
-	local cwc = nil
+	local cwc
 
-	if (sprIsAboveMiniMap(mx, my)) then
+  if (sprIsAboveMiniMap(mx, my)) then
 		cwc = sprMinimapMouseToWorld(mx, my)
 	else
 		_, cwc = sprTraceScreenRay(mx, my, true)

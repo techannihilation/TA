@@ -91,7 +91,7 @@ local unitTypes = 0
 local countsTable = {}
 local activePress = false
 local mouseIcon = -1
-local currentDef = nil
+local currentDef
 local prevUnitCount = spGetSelectedUnitsCounts()
 
 local iconSizeX = 64
@@ -114,7 +114,7 @@ local playSounds = true
 local leftclick = 'LuaUI/Sounds/buildbar_add.wav'
 local middleclick = 'LuaUI/Sounds/buildbar_click.wav'
 local rightclick = 'LuaUI/Sounds/buildbar_rem.wav'
-local otaunitpics = nil
+local otaunitpics
 
 local guishaderDisabled = true
 if spGetSelectedUnitsCount() > 0 then
@@ -148,12 +148,12 @@ local vsx, vsy = widgetHandler:GetViewSizes()
 function widget:ViewResize(viewSizeX, viewSizeY)
   vsx = viewSizeX
   vsy = viewSizeY
-  
+
   usedIconSizeX = math.floor((iconSizeX/2) + ((vsx*vsy) / 115000))
   usedIconSizeY =  math.floor((iconSizeY/2) + ((vsx*vsy) / 115000))
   fontSize = usedIconSizeY * 0.28
   iconMargin = usedIconSizeX / 25
-  
+
   if picList then
     unitCounts = spGetSelectedUnitsCounts()
     gl.DeleteList(picList)
@@ -175,7 +175,7 @@ function cacheUnitIcons()
 end
 
 local prevMouseIcon
-local hoverClock = nil
+local hoverClock
 function widget:DrawScreen()
   cacheUnitIcons()    -- else white icon bug happens
   if picList then
@@ -304,24 +304,24 @@ function DrawPicList()
     currentDef  = nil
     return
   end
-  
+
   local xmid = vsx * 0.5
   local width = math.floor(usedIconSizeX * unitTypes)
   rectMinX = math.floor(xmid - (0.5 * width))
   rectMaxX = math.floor(xmid + (0.5 * width))
   rectMinY = 0
   rectMaxY = math.floor(rectMinY + usedIconSizeY)
-  
+
   -- draw background bar
   local xmin = math.floor(rectMinX)
   local xmax = math.floor(rectMinX + (usedIconSizeX * unitTypes))
   if ((xmax < 0) or (xmin > vsx)) then return end  -- bail
-  
+
   local ymin = rectMinY
   local ymax = rectMaxY
   local xmid = (xmin + xmax) * 0.5
   local ymid = (ymin + ymax) * 0.5
-  
+
   backgroundDimentions = {xmin-iconMargin-0.5, ymin, xmax+iconMargin+0.5, ymax+iconMargin-1}
   gl.Color(0,0,0,0.66)
   RectRound(backgroundDimentions[1],backgroundDimentions[2],backgroundDimentions[3],backgroundDimentions[4],usedIconSizeX / 7)
@@ -330,11 +330,11 @@ function DrawPicList()
   RectRound(backgroundDimentions[1]+borderPadding, backgroundDimentions[2]+borderPadding, backgroundDimentions[3]-borderPadding, backgroundDimentions[4]-borderPadding, usedIconSizeX / 9)
 
   -- draw the buildpics
-  unitCounts.n = nil 
-  local row = 0 
+  unitCounts.n = nil
+  local row = 0
   local icon = 0
   for udid,count in pairs(unitCounts) do
-    if icon % iconsPerRow == 0 then 
+    if icon % iconsPerRow == 0 then
 		row = row + 1
 	end
     DrawUnitDefTexture(udid, icon, count, row)
@@ -357,11 +357,11 @@ function DrawUnitDefTexture(unitDefID, iconPos, count, row)
   end
   local yPad = (usedIconSizeY*(1-usedIconImgMult)) / 2
   local xPad = (usedIconSizeX*(1-usedIconImgMult)) / 2
-  
+
   local xmin = math.floor(rectMinX + (usedIconSizeX * iconPos)) + xPad
   local xmax = xmin + usedIconSizeX - xPad - xPad
   if ((xmax < 0) or (xmin > vsx)) then return end  -- bail
-  
+
   local ymin = rectMinY + yPad
   local ymax = rectMaxY - yPad
   local xmid = (xmin + xmax) * 0.5
@@ -376,7 +376,7 @@ function DrawUnitDefTexture(unitDefID, iconPos, count, row)
   end
   glTexRect(math.floor(xmin+iconMargin), math.floor(ymin+iconMargin+ypad2), math.ceil(xmax-iconMargin), math.ceil(ymax-iconMargin+ypad2))
   glTexture(false)
-  
+
   if count > 1 then
     -- draw the count text
     local offset = math.ceil((ymax - (ymin+iconMargin+iconMargin)) / 20)
@@ -386,26 +386,26 @@ end
 
 
 function RectRound(px,py,sx,sy,cs)
-	
+
 	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy),math.floor(cs)
-	
+
 	glTexture(false)
 	glRect(px+cs, py, sx-cs, sy)
 	glRect(sx-cs, py+cs, sx, sy-cs)
 	glRect(px+cs, py+cs, px, sy-cs)
-	
+
 	if py <= 0 or px <= 0 then glTexture(false) else glTexture(bgcorner) end
 	glTexRect(px, py+cs, px+cs, py)		-- top left
-	
+
 	if py <= 0 or sx >= vsx then glTexture(false) else glTexture(bgcorner) end
 	glTexRect(sx, py+cs, sx-cs, py)		-- top right
-	
+
 	if sy >= vsy or px <= 0 then glTexture(false) else glTexture(bgcorner) end
 	glTexRect(px, sy-cs, px+cs, sy)		-- bottom left
-	
+
 	if sy >= vsy or sx >= vsx then glTexture(false) else glTexture(bgcorner) end
 	glTexRect(sx, sy-cs, sx-cs, sy)		-- bottom right
-	
+
 	glTexture(false)
 end
 
@@ -429,7 +429,7 @@ function DrawIconQuad(iconPos, color)
   gl.Color(color)
   glTexRect(xmin+iconMargin, ymin+iconMargin+iconMargin, xmax-iconMargin, ymax-iconMargin)
   gl.Texture(false)
-  
+
   RectRound(xmin+iconMargin, ymin+iconMargin+iconMargin, xmax-iconMargin, ymax-iconMargin, (xmax-xmin)/15)
   glBlending(GL_SRC_ALPHA, GL_ONE)
   gl.Color(color[1],color[2],color[3],color[4]/2)
@@ -529,7 +529,7 @@ function widget:MouseRelease(x, y, button)
   units.n = nil
 
   local unitDefID = -1
-  local unitTable = nil
+  local unitTable
   local index = 0
   for udid,uTable in pairs(units) do
     if (index == icon) then
@@ -542,9 +542,9 @@ function widget:MouseRelease(x, y, button)
   if (unitTable == nil) then
     return -1
   end
-  
+
   local alt, ctrl, meta, shift = spGetModKeyState()
-  
+
   if (button == 1) then
     LeftMouseButton(unitDefID, unitTable)
   elseif (button == 2) then

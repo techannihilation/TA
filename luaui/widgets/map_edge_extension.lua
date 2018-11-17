@@ -40,7 +40,7 @@ local ugrid
 local ubrightness
 local _ = true
 
-local island = nil -- Later it will be checked and set to true of false
+local island -- Later it will be checked and set to true of false
 local drawingEnabled = true
 
 --------------------------------------------------------------------------------

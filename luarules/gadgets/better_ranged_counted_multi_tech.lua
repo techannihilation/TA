@@ -3,7 +3,7 @@
 		Tech Tree gadget
 ------------------------------------------------------------
 To make use of this gadget:
-	Edit the FBI of your units, 
+	Edit the FBI of your units,
 	adding RequireTech and ProvideTech tags
 	in the CustomParams section of UnitInfo.
 
@@ -396,8 +396,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	local function ConcatProvList(techtable,separator)
-		local pos,neg=nil,nil
-		separator=separator or ", "
+		local pos,neg
+    separator=separator or ", "
 		for _,tech in pairs(techtable) do
 			local q=tech.quantity
 			if (q or 1)<0 then
@@ -451,8 +451,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	local function ParsePos(p1,p2,p3,p4)
-		local x,z=nil,nil
-		if type(p1)=="table" then
+		local x,z
+    if type(p1)=="table" then
 			if type(p1.x)=="number" and type(p1.z)=="number" then
 				x,z=p1.x,p1.z
 			elseif type(p1[1])=="number" and type(p1[2])=="number" then
@@ -594,8 +594,8 @@ if (gadgetHandler:IsSyncedCode()) then
 			if q and q~=1 then
 				tp.quantity=q
 			end
-			local rng=nil
-			if type(Range)=="number" then
+			local rng
+      if type(Range)=="number" then
 				rng=Range
 			elseif type(Range)=="function" then
 				rng=Range(id)
@@ -652,11 +652,11 @@ if (gadgetHandler:IsSyncedCode()) then
 		for _,tech in pairs(TechTable) do
 			count=count+1
 			str=str.."'"..string.upper(tech.name).."'"
-			local team_str=nil
-			local provider_str=nil
-			local consumer_str=nil
-			local access_str=nil
-			if tech.Ranged then
+			local team_str
+      local provider_str
+      local consumer_str
+      local access_str
+      if tech.Ranged then
 				str=str.."\r\n\tRanged"
 			end
 			for _,p in ipairs(tech.ProvidedBy) do
@@ -690,9 +690,9 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 		if ignoredunits[ud] then
-			return 
+			return
 		end
-		
+
 		-- Sub-functions
 		local function GrantingToolTip(u,ucd,cmd)
 			if not GrantDesc[cmd] then
@@ -705,10 +705,10 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 
 		-- Inits
-		local Grants=nil
-		local Requires=nil
+		local Grants
+    local Requires
 
-		-- What is granted
+    -- What is granted
 		for _,ud in ipairs(ProviderIDs) do
 			local UnitCmdDesc = Spring.FindUnitCmdDesc(u,-ud)
 			if UnitCmdDesc then
@@ -720,15 +720,15 @@ if (gadgetHandler:IsSyncedCode()) then
 		for _,cid in ipairs(AccessionIDs) do
 			local UnitCmdDesc = Spring.FindUnitCmdDesc(u,cid)
 			if UnitCmdDesc then
-				local ReqDesc=nil
-				if not OriDesc[cid] then
+				local ReqDesc
+        if not OriDesc[cid] then
 					OriDesc[cid]=Spring.GetUnitCmdDescs(u)[UnitCmdDesc].tooltip
 				end
 				local AllowedHereAndNow=true
 				local MaybeAllowedElsewhere=true
 				for _,req in pairs(AccessionTable[cid]) do
-					local color=nil
-					if CheckTech(req.tech,team,req.quantity,u) then
+					local color
+          if CheckTech(req.tech,team,req.quantity,u) then
 						color="\255\64\255\64"--green
 					else
 						AllowedHereAndNow=false
@@ -1019,8 +1019,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
 else--unsynced
 
-	local DrawWorldTimer = nil
-	local Tech
+	local DrawWorldTimer
+  local Tech
 
 	function gadget:GameFrame(frame)
 		if frame%64==17 then

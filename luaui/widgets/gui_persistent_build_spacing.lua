@@ -14,7 +14,7 @@ end
 local defaultSpacing = 0
 
 -- Globals
-local lastCmdID = nil
+local lastCmdID
 local buildSpacing = {}
 
 -- Speedups

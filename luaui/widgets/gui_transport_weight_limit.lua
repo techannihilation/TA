@@ -14,7 +14,7 @@ end
 -------------------------------------------------------------------------------
 local CMD_LOAD_UNITS = CMD.LOAD_UNITS
 local unitstodraw = {}
-local transID = nil
+local transID
 
 local validTrans = {}
 
@@ -39,12 +39,12 @@ function widget:GameFrame(n)
 		end
         elseif #selectedUnits > 1 then
                 for _,unitID in pairs(selectedUnits) do
-                    
+
                     local unitdefID = Spring.GetUnitDefID(unitID)
                     if validTrans[unitdefID] then
                        transID = unitID
                        unitcount = unitcount + 1
-                       if unitcount > 1 then 
+                       if unitcount > 1 then
                            transID = nil
                            return end
                     end
@@ -54,7 +54,7 @@ function widget:GameFrame(n)
 		return
 	end
 
-        
+
         if transID then
         local TransDefID = Spring.GetUnitDefID(transID)
         local udTrans = UnitDefs[TransDefID]
@@ -75,7 +75,7 @@ function widget:GameFrame(n)
 				local ud = UnitDefs[visableID]
 				local passengerMass = ud.mass
                                 local passengerX = ud.xsize/2
-                                if (passengerMass <= transMassLimit) and (passengerX <= transportSize) and not ud.cantBeTransported and not Spring.IsUnitIcon(unitID) then 
+                                if (passengerMass <= transMassLimit) and (passengerX <= transportSize) and not ud.cantBeTransported and not Spring.IsUnitIcon(unitID) then
                                     local x, y, z = Spring.GetUnitBasePosition(unitID)
                                     if (x) then
                                          unitstodraw[unitID] = {pos = {x,y,z},size = (passengerX*24)}

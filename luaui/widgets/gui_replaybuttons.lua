@@ -14,7 +14,7 @@ end
 
 local speedbuttons={} --the 1x 2x 3x etc buttons
 local buttons={}	--other buttons (atm only pause/play)
-local wantedSpeed = nil
+local wantedSpeed
 local speeds = {0.5, 1, 2, 3, 4, 5, 10, 20}
 wPos = {x=0.00, y=0.15}
 local isPaused = false

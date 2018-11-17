@@ -15,7 +15,7 @@ local upgradeMouseCursor = "Reclaim"
 
 local CMD_UPGRADEMEX = 31244
 
-local builderDefs = nil
+local builderDefs
 
 local GetUnitDefID = Spring.GetUnitDefID
 local GiveOrderToUnit = Spring.GiveOrderToUnit
@@ -76,7 +76,7 @@ function widget:MousePress(_, _, b)
 end
 
 function widget:GetTooltip(_, _)
-  local tooltip = nil
+  local tooltip
   if rightClickUpgradeParams then
     local unitDef = UnitDefs[rightClickUpgradeParams.upgradeTo]
     tooltip = "Right click to upgrade to " .. unitDef.humanName

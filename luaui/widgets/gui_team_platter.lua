@@ -262,8 +262,8 @@ function widget:DrawWorldPreUnit()
 
   glPolygonOffset(-50, -2)
 
-  local _ = nil
-   if #visibleUnits then
+  local _
+  if #visibleUnits then
     for i=1, #visibleUnits do
     unitID = visibleUnits[i]
     if Unitlist[unitID] then

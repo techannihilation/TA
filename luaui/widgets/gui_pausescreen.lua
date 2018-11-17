@@ -63,17 +63,17 @@ local myFont
 local clickTimestamp = 0
 local pauseTimestamp = 0 --start or end of pause
 local lastPause = false
-local screenCenterX = nil
-local screenCenterY = nil
-local wndX1 = nil
-local wndY1 = nil
-local wndX2 = nil
-local wndY2 = nil
-local textX = nil
-local textY = nil
-local lineOffset = nil
-local yCenter = nil
-local xCut = nil
+local screenCenterX
+local screenCenterY
+local wndX1
+local wndY1
+local wndX2
+local wndY2
+local textX
+local textY
+local lineOffset
+local yCenter
+local xCut
 local mouseOverClose = false
 local forceHideWindow = false
 

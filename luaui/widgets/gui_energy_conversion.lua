@@ -78,7 +78,7 @@ local spGetTeamResources = Spring.GetTeamResources
 local convertCapacities = VFS.Include('LuaRules/Configs/maker_defs.lua')
 
 local cbackground, cborder, _ = include("Configs/ui_config.lua")
-local triggered = nil
+local triggered
 
 --table.sort(EfficiencyThresholds, function(a,b) return a.e>b.e end)
 local WhiteStr   = "\255\255\255\255"

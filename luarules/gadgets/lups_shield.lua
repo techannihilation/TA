@@ -31,8 +31,8 @@ if gadgetHandler:IsSyncedCode() then
 	end
 
 	function gadget:ShieldPreDamaged(proID, proOwnerID, shieldEmitterWeaponNum, shieldCarrierUnitID, bounceProjectile, beamEmitterWeaponNum, beamEmitterUnitID, startX, startY, startZ, hitX, hitY, hitZ)
-		local wd = nil
-		local dmgMod = 1
+		local wd
+    local dmgMod = 1
 		if proID and proID ~= -1 then
 			local proDefID = Spring.GetProjectileDefID(proID)
 			wd = WeaponDefs[proDefID]
@@ -101,10 +101,10 @@ local ShieldUnits = {
   [UnitDefNames["corgate2"].id] = true,
   [UnitDefNames["corflshd"].id] = true,
   [UnitDefNames["corshieldgen"].id] = true,
-  [UnitDefNames["monkeylord"].id] = true, 
+  [UnitDefNames["monkeylord"].id] = true,
   [UnitDefNames["corsfus"].id] = true,
-  [UnitDefNames["corcrab"].id] = true, 
-  --Arm 
+  [UnitDefNames["corcrab"].id] = true,
+  --Arm
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
@@ -380,7 +380,7 @@ function gadget:CommandNotify(id, params, options)
 				end
 			end
 			if params[1] == 1 and (id >= 34520 and id <= 34520+31) and ShieldUnits[cmdunitID] then
-				if disabledShieldCobOff[cmdunitID] then 
+				if disabledShieldCobOff[cmdunitID] then
 					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
 					disabledShieldCobOff[cmdunitID] = nil
 				end

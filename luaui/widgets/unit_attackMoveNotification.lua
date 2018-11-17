@@ -24,9 +24,9 @@ local spSetLastMessagePosition      = Spring.SetLastMessagePosition
 local spGetSpectatingState          = Spring.GetSpectatingState
 local random                        = math.random
 ----------------------------------------------------------------------------
-local lastAlarmTime                 = nil
-local lastCommanderAlarmTime        = nil
-local localTeamID                   = nil
+local lastAlarmTime
+local lastCommanderAlarmTime
+local localTeamID
 ----------------------------------------------------------------------------
 
 local COMMANDER = {

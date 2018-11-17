@@ -63,20 +63,20 @@ local _ = 1.0
 local screenratio = 1.0
 
 -- dynamic light shaders
-local depthPointShader = nil
-local depthBeamShader = nil
+local depthPointShader
+local depthBeamShader
 
 -- shader uniforms
-local lightposlocPoint = nil
-local lightcolorlocPoint = nil
-local _ = nil
+local lightposlocPoint
+local lightcolorlocPoint
+local _
 local uniformEyePosPoint
 local uniformViewPrjInvPoint
 
-local lightposlocBeam  = nil
-local lightpos2locBeam  = nil
-local lightcolorlocBeam  = nil
-local _ = nil
+local lightposlocBeam
+local lightpos2locBeam
+local lightcolorlocBeam
+local _
 local uniformEyePosBeam
 local uniformViewPrjInvBeam
 

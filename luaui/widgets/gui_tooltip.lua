@@ -38,7 +38,7 @@ local xOffset = 32
 local yOffset = -32-usedFontSize
 
 local cbackground, _, _ = include("Configs/ui_config.lua")
-local triggered = nil
+local triggered
 local update = 0.5
 
 ------------------------------------------------------------------------------------

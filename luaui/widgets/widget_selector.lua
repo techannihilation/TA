@@ -12,7 +12,7 @@
 --------------------------------------------------------------------------------
 -- changes:
 --   jK (April@2009) - updated to new font system
---   Bluestone (Jan 2015) - added to BA as a widget, added various stuff 
+--   Bluestone (Jan 2015) - added to BA as a widget, added various stuff
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -24,8 +24,8 @@ function widget:GetInfo()
     date      = "Jan 8, 2007",
     license   = "GNU GPL, v2 or later",
     layer     = -math.huge,
-    handler   = true, 
-    enabled   = true  
+    handler   = true,
+    enabled   = true
   }
 end
 
@@ -49,7 +49,7 @@ local fullWidgetsList = {}
 
 local vsx, vsy = widgetHandler:GetViewSizes()
 
-local minMaxEntries = 15 
+local minMaxEntries = 15
 local curMaxEntries = 25
 
 local startEntry = 1
@@ -98,7 +98,7 @@ local apiWidgets = "BG color"
 
 
 local buttons = { --see MouseRelease for which functions are called by which buttons
-    [1] = "Reload LuaUI", 
+    [1] = "Reload LuaUI",
     [2] = "Unload ALL Widgets",
     [3] = "Allow/Disallow User Widgets",
     [4] = "Reset LuaUI",
@@ -114,7 +114,7 @@ local buttonTop = 20 -- offset between top of buttons and bottom of widget
 function widget:Initialize()
   widgetHandler.knownChanged = true
   Spring.SendCommands('unbindkeyset f11')
-  
+
   if widgetHandler.allowUserWidgets then
     buttons[3] = "Disallow User Widgets"
   else
@@ -132,17 +132,17 @@ local function DrawRectRound(px,py,sx,sy,cs)
 	gl.Vertex(sx-cs, py, 0)
 	gl.Vertex(sx-cs, sy, 0)
 	gl.Vertex(px+cs, sy, 0)
-	
+
 	gl.Vertex(px, py+cs, 0)
 	gl.Vertex(px+cs, py+cs, 0)
 	gl.Vertex(px+cs, sy-cs, 0)
 	gl.Vertex(px, sy-cs, 0)
-	
+
 	gl.Vertex(sx, py+cs, 0)
 	gl.Vertex(sx-cs, py+cs, 0)
 	gl.Vertex(sx-cs, sy-cs, 0)
 	gl.Vertex(sx, sy-cs, 0)
-	
+
 	local offset = 0.07		-- texture offset, because else gaps could show
 	local o = offset
 	-- top left
@@ -214,7 +214,7 @@ local function UpdateListScroll()
   if (lastStart > wCount - curMaxEntries + 1) then lastStart = 1 end
   if (startEntry > lastStart) then startEntry = lastStart end
   if (startEntry < 1) then startEntry = 1 end
-  
+
   widgetsList = {}
   local se = startEntry
   local ee = se + curMaxEntries - 1
@@ -239,7 +239,7 @@ end
 
 function widget:MouseWheel(up, value)
   if not show then return false end
-  
+
   local a,c,m,s = Spring.GetModKeyState()
   if (a or m) then
     return false  -- alt and meta allow normal control
@@ -256,19 +256,19 @@ end
 
 local function SortWidgetListFunc(nd1, nd2) --does nd1 come before nd2?
   -- widget profiler on top
-  if nd1[1]=="Widget Profiler" then 
-    return true 
+  if nd1[1]=="Widget Profiler" then
+    return true
   elseif nd2[1]=="Widget Profiler" then
     return false
   end
-  
+
   -- mod widgets first, then user widgets
   if (nd1[2].fromZip ~= nd2[2].fromZip) then
-    return nd1[2].fromZip  
+    return nd1[2].fromZip
   end
-  
+
   -- sort by name
-  return (nd1[1] < nd2[1]) 
+  return (nd1[1] < nd2[1])
 end
 
 
@@ -280,7 +280,7 @@ local function UpdateList()
 
   local myName = widget:GetInfo().name
   maxWidth = 0
-  local uncount = 1 
+  local uncount = 1
   widgetsList = {}
   for name,data in pairs(widgetHandler.knownWidgets) do
     if (name ~= myName) then
@@ -304,7 +304,7 @@ local function UpdateList()
       end
     end
   end
-  
+
   maxWidth = (maxWidth / fontSize)
 
   local myCount = #fullWidgetsList
@@ -327,7 +327,7 @@ function widget:ViewResize(viewSizeX, viewSizeY)
 	customScale = 1
   end
   sizeMultiplier   = 0.6 + (vsx*vsy / 6000000) * customScale
-  
+
   UpdateGeometry()
 end
 
@@ -354,7 +354,7 @@ end
 local activeGuishader = false
 local scrollbarOffset = -15
 function widget:DrawScreen()
-  if not show then 
+  if not show then
     if activeGuishader and (WG['guishader_api'] ~= nil) then
       activeGuishader = false
       WG['guishader_api'].RemoveRect('widgetselector')
@@ -364,7 +364,7 @@ function widget:DrawScreen()
   UpdateList()
   gl.BeginText()
   if (WG['guishader_api'] == nil) then
-    activeGuishader = false 
+    activeGuishader = false
   end
   if (WG['guishader_api'] ~= nil) and not activeGuishader then
     activeGuishader = true
@@ -375,10 +375,10 @@ function widget:DrawScreen()
 
   -- draw the header
   gl.Text("Widget Selector", midx, maxy + ((8 + bgPadding)*sizeMultiplier), titleFontSize*sizeMultiplier, "oc")
-  
+
   local mx,my,lmb,mmb,rmb = Spring.GetMouseState()
   local tcol = WhiteStr
-    
+
   -- draw the -/+ buttons
   if maxx-10 < mx and mx < maxx and maxy < my and my < maxy + ((buttonFontSize + 7)*sizeMultiplier) then
     tcol = '\255\031\031\031'
@@ -394,10 +394,10 @@ function widget:DrawScreen()
   -- draw the box
   gl.Color(0,0,0,0.75)
   RectRound(minx-(bgPadding*sizeMultiplier), miny-(bgPadding*sizeMultiplier), maxx+(bgPadding*sizeMultiplier), maxy+(bgPadding*sizeMultiplier), 8*sizeMultiplier)
-  
+
   gl.Color(0.6,0.6,0.6,0.1)
   RectRound(minx, miny, maxx, maxy, 8*sizeMultiplier)
-  
+
   -- draw the text buttons (at the bottom) & their outlines
   for i,name in ipairs(buttons) do
     tcol = WhiteStr
@@ -406,11 +406,11 @@ function widget:DrawScreen()
     end
     gl.Text(tcol .. buttons[i], (minx+maxx)/2, miny - (buttonTop*sizeMultiplier) - (i*(buttonHeight*sizeMultiplier)), buttonFontSize*sizeMultiplier, "oc")
   end
-  
-  
+
+
   -- draw the widgets
   local nd = not widgetHandler.tweakMode and self:AboveLabel(mx, my)
-  local pointedY = nil
+  local pointedY
   local pointedEnabled = false
   local pointedName = (nd and nd[1]) or nil
   local posy = maxy - ((yStep+bgPadding)*sizeMultiplier)
@@ -448,19 +448,19 @@ function widget:DrawScreen()
     gl.Text(color..tmpName, midx, posy + (fontSize*sizeMultiplier) * 0.5, fontSize*sizeMultiplier, "vc")
     posy = posy - (yStep*sizeMultiplier)
   end
-  
-  
+
+
   -- scrollbar
   if #widgetsList < #fullWidgetsList then
     sby2 = posy + (yStep * sizeMultiplier) - (fontSpace*sizeMultiplier) * 0.5
     sbheight = sby1 - sby2
-    sbsize = sbheight * #widgetsList / #fullWidgetsList 
+    sbsize = sbheight * #widgetsList / #fullWidgetsList
     if activescrollbar then
     	startEntry = math.max(0, math.min(
-    	math.floor(#fullWidgetsList * 
-    	((sby1 - sbsize) - 
+    	math.floor(#fullWidgetsList *
+    	((sby1 - sbsize) -
     	(my - math.min(scrollbargrabpos, sbsize)))
-    	 / sbheight + 0.5), 
+    	 / sbheight + 0.5),
         #fullWidgetsList - curMaxEntries)) + 1
     end
     local sizex = maxx - minx
@@ -468,10 +468,10 @@ function widget:DrawScreen()
     sbposy = sby1 - sbsize - sbheight * (startEntry - 1) / #fullWidgetsList
     sbsizex = (yStep * sizeMultiplier)
     sbsizey = sbsize
-    
+
     local trianglePadding = 4*sizeMultiplier
     local scrollerPadding = 8*sizeMultiplier
-    
+
     -- background
     --gl.Color(0.0, 0.0, 0.0, 0.2)
 	--RectRound(sbposx, miny, sbposx + sbsizex, maxy, 6*sizeMultiplier)
@@ -479,7 +479,7 @@ function widget:DrawScreen()
       gl.Color(1,1,1,0.04)
 	  RectRound(sbposx, miny, sbposx + sbsizex, maxy, 6*sizeMultiplier)
     end
-    
+
     --[[gl.Color(1.0, 1.0, 1.0, 0.15)
     gl.Shape(GL.TRIANGLES, {
       { v = { sbposx + sbsizex / 2, miny + trianglePadding } },
@@ -491,10 +491,10 @@ function widget:DrawScreen()
       { v = { sbposx - trianglePadding + sbsizex, sby2 + sbheight + 1 + trianglePadding} },
       { v = { sbposx + trianglePadding, sby2 + sbheight + 1 + trianglePadding} }
     })]]--
-    
+
     -- scroller
     if (sbposx < mx and mx < sbposx + sbsizex and sby2 < my and my < sby2 + sbheight) then
-      gl.Color(1.0, 1.0, 1.0, 0.4) 
+      gl.Color(1.0, 1.0, 1.0, 0.4)
       gl.Blending(GL.SRC_ALPHA, GL.ONE)
 	  RectRound(sbposx+scrollerPadding, sbposy, sbposx + sbsizex - scrollerPadding, sbposy + sbsizey, 1.75*sizeMultiplier)
       gl.Blending(GL.SRC_ALPHA, GL.ONE_MINUS_SRC_ALPHA)
@@ -511,7 +511,7 @@ function widget:DrawScreen()
 
   -- highlight label
   if (sbposx < mx and mx < sbposx + sbsizex and miny < my and my < maxy) or activescrollbar then
-  
+
   else
     if (pointedY) then
     gl.Color(1.0, 1.0, 1.0, 0.09)
@@ -530,7 +530,7 @@ function widget:DrawScreen()
     gl.Blending(GL.SRC_ALPHA, GL.ONE_MINUS_SRC_ALPHA)
 end
   end
-  
+
   gl.EndText()
 end
 
@@ -547,15 +547,15 @@ function widget:MousePress(x, y, button)
     if minx < x and x < maxx and miny - (buttonTop*sizeMultiplier) - #buttons*(buttonHeight*sizeMultiplier) < y and y < miny - (buttonTop*sizeMultiplier) then
       return true
     end
-    
-    -- above the -/+ 
+
+    -- above the -/+
     if maxx-10 < x and x < maxx and maxy + bgPadding < y and y < maxy + ((buttonFontSize + 7 + bgPadding)*sizeMultiplier) then
       return true
     end
     if minx < x and x < minx+10 and maxy + bgPadding < y and y < maxy + ((buttonFontSize + 7 + bgPadding)*sizeMultiplier) then
       return true
     end
-    
+
   -- above the scrollbar
   if ((x >= minx + scrollbarOffset) and (x <= maxx + scrollbarOffset + (yStep * sizeMultiplier))) then
     if ((y >= (maxy - bordery)) and (y <= maxy)) then
@@ -574,8 +574,8 @@ function widget:MousePress(x, y, button)
       return true
     end
   end
-    
-    -- above the list    
+
+    -- above the list
     if sbposx < x and x < sbposx + sbsizex and sbposy < y and y < sbposy + sbsizey then
       activescrollbar = true
       scrollbargrabpos = y - sbposy
@@ -588,25 +588,25 @@ function widget:MousePress(x, y, button)
       end
       UpdateListScroll()
       pagestepped = true
-      return true   
+      return true
     end
   end
-  
+
   local namedata = self:AboveLabel(x, y)
   if (not namedata) then
     show = false
     return false
   end
-  
-  
+
+
   return true
-  
+
 end
 
 
 function widget:MouseMove(x, y, dx, dy, button)
   if show and activescrollbar then
-    startEntry = math.max(0, math.min(math.floor((#fullWidgetsList * ((sby1 - sbsize) - (y - math.min(scrollbargrabpos, sbsize))) / sbheight) + 0.5), 
+    startEntry = math.max(0, math.min(math.floor((#fullWidgetsList * ((sby1 - sbsize) - (y - math.min(scrollbargrabpos, sbsize))) / sbheight) + 0.5),
     #fullWidgetsList - curMaxEntries)) + 1
     UpdateListScroll()
     return true
@@ -625,13 +625,13 @@ function widget:MouseRelease(x, y, mb)
 	  pagestepped = false
 	  return true
   end
-  
+
   if mb == 1 and activescrollbar then
     activescrollbar = false
     scrollbargrabpos = 0.0
     return -1
   end
-  
+
   if mb == 1 then
     if maxx-10 < x and x < maxx and maxy + bgPadding < y and y < maxy + buttonFontSize + 7 + bgPadding then
       -- + button
@@ -654,7 +654,7 @@ function widget:MouseRelease(x, y, mb)
   end
 
   if mb == 1 then
-    local buttonID = nil
+    local buttonID
     for i,_ in ipairs(buttons) do
         if minx < x and x < maxx and miny - (buttonTop*sizeMultiplier) - i*(buttonHeight*sizeMultiplier) < y and y < miny - (buttonTop*sizeMultiplier) - (i-1)*(buttonHeight*sizeMultiplier) then
             buttonID = i
@@ -670,7 +670,7 @@ function widget:MouseRelease(x, y, mb)
       for _,namedata in ipairs(fullWidgetsList) do
         widgetHandler:DisableWidget(namedata[1])
       end
-      widgetHandler:SaveConfigData()    
+      widgetHandler:SaveConfigData()
       return -1
     end
     if buttonID == 3 then
@@ -680,7 +680,7 @@ function widget:MouseRelease(x, y, mb)
         Spring.Echo("Disallowed user widgets, reloading...")
       else
         widgetHandler.__allowUserWidgets = true
-        Spring.Echo("Allowed user widgets, reloading...")      
+        Spring.Echo("Allowed user widgets, reloading...")
       end
       Spring.SendCommands("luarules reloadluaui")
       return -1
@@ -694,15 +694,15 @@ function widget:MouseRelease(x, y, mb)
       return -1
     end
   end
-  
+
   local namedata = self:AboveLabel(x, y)
   if (not namedata) then
     return false
   end
-  
+
   local name = namedata[1]
   local data = namedata[2]
-  
+
   if (mb == 1) then
     widgetHandler:ToggleWidget(name)
   elseif ((button == 2) or (button == 3)) then
@@ -726,17 +726,17 @@ function widget:AboveLabel(x, y)
   end
   local count = #widgetsList
   if (count < 1) then return nil end
-  
+
   local i = floor(1 + ((maxy - bordery) - y) / (yStep * sizeMultiplier))
   if     (i < 1)     then i = 1
   elseif (i > count) then i = count end
-  
+
   return widgetsList[i]
 end
 
 
 function widget:IsAbove(x, y)
-  if not show then return false end 
+  if not show then return false end
   UpdateList()
   if ((x < minx) or (x > maxx + (yStep * sizeMultiplier)) or
       (y < miny - #buttons*buttonHeight) or (y > maxy+bgPadding)) then
@@ -747,9 +747,9 @@ end
 
 
 function widget:GetTooltip(x, y)
-  if not show then return nil end 
+  if not show then return nil end
 
-  UpdateList()  
+  UpdateList()
   local namedata = self:AboveLabel(x, y)
   if (not namedata) then
     return '\255\200\255\200'..'Widget Selector\n'    ..
@@ -763,7 +763,7 @@ function widget:GetTooltip(x, y)
 
   local order = widgetHandler.orderList[n]
   local enabled = order and (order > 0)
-  
+
   local tt = (d.active and GreenStr) or (enabled  and YellowStr) or RedStr
   tt = tt..n..'\n'
   tt = d.desc   and tt..WhiteStr..d.desc..'\n' or tt
@@ -776,7 +776,7 @@ function widget:GetTooltip(x, y)
 end
 
 function widget:GetConfigData()
-    local data = {startEntry=startEntry, curMaxEntries=curMaxEntries, show=show} 
+    local data = {startEntry=startEntry, curMaxEntries=curMaxEntries, show=show}
     return data
 end
 
@@ -792,18 +792,18 @@ function widget:TextCommand(s)
   local n = 0
   for w in string.gmatch(s, "%S+") do
     n = n + 1
-    token[n] = w		
+    token[n] = w
   end
   if n==1 and token[1]=="reset" then
     -- tell the widget handler to reload with a blank config
     widgetHandler.blankOutConfig = true
-    Spring.SendCommands("luarules reloadluaui") 
+    Spring.SendCommands("luarules reloadluaui")
   end
   if n==1 and token[1]=="factoryreset" then
     -- tell the widget handler to disallow user widgets and reload with a blank config
     widgetHandler.__blankOutConfig = true
     widgetHandler.__allowUserWidgets = false
-    Spring.SendCommands("luarules reloadluaui") 
+    Spring.SendCommands("luarules reloadluaui")
   end
   if (string.find(s, "showapiwidgets") == 1 and string.len(s) == 14) then
     showApiWidgets = not showApiWidgets
@@ -817,12 +817,12 @@ function widget:TextCommand(s)
     end
   end
 end
-        
+
 
 
 function widget:Shutdown()
   Spring.SendCommands('bind f11 luaui selector') -- if this one is removed or crashes, then have the backup one take over.
-  
+
 	if (WG['guishader_api'] ~= nil) then
 		WG['guishader_api'].RemoveRect('widgetselector')
 	end

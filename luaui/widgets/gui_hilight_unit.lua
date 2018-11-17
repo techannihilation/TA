@@ -423,7 +423,7 @@ function widget:DrawScreen()
   local type, data = TraceScreenRay(mx, my)
 
   local _ = ''
-  local teamID = nil
+  local teamID
 
   local cheat  = spIsCheatingEnabled()
 
@@ -453,8 +453,8 @@ function widget:DrawScreen()
     teamID = spGetFeatureTeam(data)
   end
 
-  local pName = nil
-  local colorStr, outlineChar = nil, nil
+  local pName
+  local colorStr, outlineChar
   if (teamID) then
     pName = GetTeamName(teamID)
     if (pName) then

@@ -32,19 +32,19 @@ local camX, camY, camZ = Spring.GetCameraPosition()
 local camDirX,camDirY,camDirZ = Spring.GetCameraDirection()
 
 -- shader and texture handles
-local blurShaderH71 = nil
-local blurShaderV71 = nil
+local blurShaderH71
+local blurShaderV71
 
-local brightShader = nil
-local brightTexture1 = nil
-local brightTexture2 = nil
-local brightTexture3 = nil
-local brightTexture4 = nil
+local brightShader
+local brightTexture1
+local brightTexture2
+local brightTexture3
+local brightTexture4
 
-local combineShader = nil
-local screenTexture = nil
-local _ = nil
-local _ = nil
+local combineShader
+local screenTexture
+local _
+local _
 
 -- speedups
 local glCreateTexture = gl.CreateTexture
@@ -85,30 +85,30 @@ local _ = 0x8C17
 
 
 -- shader uniform locations
-local brightShaderText0Loc = nil
-local brightShaderInvRXLoc = nil
-local brightShaderInvRYLoc = nil
-local brightShaderIllumLoc = nil
+local brightShaderText0Loc
+local brightShaderInvRXLoc
+local brightShaderInvRYLoc
+local brightShaderIllumLoc
 
-local _ = nil
-local _ = nil
-local _ = nil
-local _ = nil
-local _ = nil
-local _ = nil
+local _
+local _
+local _
+local _
+local _
+local _
 
-local blurShaderH71Text0Loc = nil
-local blurShaderH71InvRXLoc = nil
-local blurShaderH71FragLoc = nil
-local blurShaderV71Text0Loc = nil
-local blurShaderV71InvRYLoc = nil
-local blurShaderV71FragLoc = nil
+local blurShaderH71Text0Loc
+local blurShaderH71InvRXLoc
+local blurShaderH71FragLoc
+local blurShaderV71Text0Loc
+local blurShaderV71InvRYLoc
+local blurShaderV71FragLoc
 
-local combineShaderDebgDrawLoc = nil
-local combineShaderTexture0Loc = nil
-local combineShaderTexture1Loc = nil
-local combineShaderIllumLoc = nil
-local combineShaderFragLoc = nil
+local combineShaderDebgDrawLoc
+local combineShaderTexture0Loc
+local combineShaderTexture1Loc
+local combineShaderIllumLoc
+local combineShaderFragLoc
 
 local illumThreshold = 0.33
 local function SetIllumThreshold()

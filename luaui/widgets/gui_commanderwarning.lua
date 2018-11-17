@@ -12,7 +12,7 @@ function widget:GetInfo()
 end
 
 local commanderTable				= {}
-local localTeamID 					= nil
+local localTeamID
 local warningList					= {}
 local DISPLAYTIME					= 210
 local _ = 60

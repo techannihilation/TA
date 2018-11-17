@@ -26,7 +26,7 @@ local _ = Spring.GetSpectatingState
 -------------------------------------------------------------------------------------
 
 local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
-local UnitCount = nil
+local UnitCount
 
 local tackyfontpath = "luarules/fonts/LCD2U___.TTF"
 local textcolor =  { 1.0, 0.0, 0.0, 1.0 }

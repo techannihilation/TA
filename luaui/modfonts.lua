@@ -8,7 +8,7 @@
 --
 --  Copyright (C) 2007.
 --  Licensed under the terms of the GNU GPL, v2 or later.
--- 
+--
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -47,8 +47,8 @@ local floor    = math.floor
 --------------------------------------------------------------------------------
 
 local fonts = {}
-local activeFont  = nil
-local defaultFont = nil
+local activeFont
+local defaultFont
 
 local caching = true
 local useFloor = true
@@ -94,12 +94,12 @@ local function CreateFontFiles(fontName)
       minChar = 0,
       maxChar = 255,
     --[[
-      texWidth = 
-      outlineMode = 
-      outlineRadius = 
-      outlineWeight = 
-      padding = 
-      spacing = 
+      texWidth =
+      outlineMode =
+      outlineRadius =
+      outlineWeight =
+      padding =
+      spacing =
       debug =
     --]]
     })
@@ -164,7 +164,7 @@ local function MakeOutlineDisplayLists(fontSpecs)
     local tyn = gi.ymax / th
     local txp = gi.xmax / tw
     local typ = gi.ymin / th
-    
+
     local list = glCreateList(function ()
       glTranslate(gi.initDist, 0, 0)
 

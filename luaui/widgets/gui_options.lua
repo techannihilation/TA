@@ -33,7 +33,7 @@ local backwardTex = "LuaUI/Images/backward.dds"
 local forwardTex = "LuaUI/Images/forward.dds"
 
 local cbackground, cborder, cbuttonbackground = include("Configs/ui_config.lua")
-local triggered = nil
+local triggered
 local update = 0.5
 
 local bgMargin = 6
@@ -42,7 +42,7 @@ local closeButtonSize = 30
 local screenHeight = 520-bgMargin-bgMargin
 local screenWidth = 1050-bgMargin-bgMargin
 
-local textareaMinLines = 10		-- wont scroll down more, will show at least this amount of lines 
+local textareaMinLines = 10		-- wont scroll down more, will show at least this amount of lines
 
 local customScale = 1
 
@@ -261,19 +261,19 @@ local function DrawRectRound(px,py,sx,sy,cs, tl,tr,br,bl)
 	gl.Vertex(sx-cs, py, 0)
 	gl.Vertex(sx-cs, sy, 0)
 	gl.Vertex(px+cs, sy, 0)
-	
+
 	gl.Vertex(px, py+cs, 0)
 	gl.Vertex(px+cs, py+cs, 0)
 	gl.Vertex(px+cs, sy-cs, 0)
 	gl.Vertex(px, sy-cs, 0)
-	
+
 	gl.Vertex(sx, py+cs, 0)
 	gl.Vertex(sx-cs, py+cs, 0)
 	gl.Vertex(sx-cs, sy-cs, 0)
 	gl.Vertex(sx, sy-cs, 0)
-	
+
 	local offset = 0.07		-- texture offset, because else gaps could show
-	
+
 	-- bottom left
 	if ((py <= 0 or px <= 0)  or (bl ~= nil and bl == 0)) and bl ~= 2   then o = 0.5 else o = offset end
 	gl.TexCoord(o,o)
@@ -332,7 +332,7 @@ function DrawButton()
 	glShape(GL_LINE_STRIP, vertices)
   glText("[ Options ]", textMargin, textMargin, textSize, "no")
 end
-	
+
 function lines(str)
   local t = {}
   local function helper(line) table.insert(t, line) return "" end
@@ -442,7 +442,7 @@ function DrawWindow()
 		gl.Color(0.33,0.33,0.33,0.15)
 	end
 	RectRound(x,y-screenHeight,x+screenWidth,y,6)
-	
+
 	--[[ close button
 	local size = closeButtonSize*0.7
 	local width = size*0.055
@@ -494,17 +494,17 @@ function DrawWindow()
 	-- title drawing
 	gl.Color(0,0,0,0.8)
 	RectRound(titleRect[1], titleRect[2], titleRect[3], titleRect[4], 8, 1,1,0,0)
-	
+
 	font:Begin()
 	font:SetTextColor(1,1,1,1)
 	font:SetOutlineColor(0,0,0,0.4)
 	font:Print(title, x-bgMargin+(titleFontSize*0.75), y+bgMargin+8, titleFontSize, "on")
 	font:End()
-	
+
 	local width = screenWidth/3
 	--gl.Color(0.66,0.66,0.66,0.08)
 	--RectRound(x+width+width+6,y-screenHeight,x+width+width+width,y,6)
-	
+
 	-- description background
 	gl.Color(0.62,0.5,0.22,0.14)
 	RectRound(x,y-screenHeight,x+width+width,y-screenHeight+90,6)
@@ -642,7 +642,7 @@ function DrawWindow()
 					optionButtons[oid] = {xPosMax-selectWidth-rightPadding, yPos-oHeight, xPosMax-rightPadding, yPos}
 					glColor(1,1,1,0.11)
 					RectRound(xPosMax-selectWidth-rightPadding, yPos-oHeight, xPosMax-rightPadding, yPos, 3)
-					if not option.options then 
+					if not option.options then
 						--Spring.Echo(option.id)
 					end
 					if option.options and option.options[tonumber(option.value)] ~= nil then
@@ -722,16 +722,16 @@ function widget:DrawScreen()
   if not windowList then
     --windowList = gl.CreateList(DrawWindow)
   end
-  
+
   -- update new slider value
 	if sliderValueChanged then
 		gl.DeleteList(windowList)
 		windowList = gl.CreateList(DrawWindow)
 		sliderValueChanged = nil
   end
-  
+
   if show or showOnceMore then
-  	
+
 		-- draw the options panel
 		glPushMatrix()
 			glTranslate(-(vsx * (widgetScale-1))/2, -(vsy * (widgetScale-1))/2, 0)
@@ -766,11 +766,11 @@ function widget:DrawScreen()
 				end
 			end
 			showOnceMore = false
-			
+
 			-- draw button hover
 			local usedScreenX = (vsx*0.5) - ((screenWidth/2)*widgetScale)
 			local usedScreenY = (vsy*0.5) + ((screenHeight/2)*widgetScale)
-			
+
 			-- mouseover (highlight and tooltip)
 
 		  local description = ''
@@ -1034,7 +1034,7 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == 'fancyselectedunits_secondline' then
 			saveOptionValue('Fancy Selected Units', 'fancyselectedunits', 'setSecondLine', {'showSecondLine'}, options[i].value)
 		elseif id == 'otaicons' then
-			if value == 0 then 
+			if value == 0 then
 				WG['OtaIcons'] = false
 			else
 				WG['OtaIcons'] = true
@@ -1134,7 +1134,7 @@ function applyOptionValue(i, skipRedrawWindow)
       			Spring.SendCommands("luarules reloadluaui")	-- cause several widgets are still using old colors
 			end
 		end
-	
+
 	elseif options[i].type == 'slider' then
 		local value =  options[i].value
 		if id == 'msaa' then
@@ -1147,7 +1147,7 @@ function applyOptionValue(i, skipRedrawWindow)
 			Spring.SetConfigInt("MSAALevel",value)
 		elseif id == 'shadowslider' then
 			local enabled = 1
-			if value == options[i].min then 
+			if value == options[i].min then
 				enabled = 0
 			end
 			Spring.SendCommands("shadows "..enabled.." "..value)
@@ -1301,15 +1301,15 @@ function applyOptionValue(i, skipRedrawWindow)
 			end
 		elseif id == 'camera' then
 			Spring.SetConfigInt("CamMode",(value-1))
-			if value == 1 then 
+			if value == 1 then
 				Spring.SendCommands('viewfps')
-			elseif value == 2 then 
+			elseif value == 2 then
 				Spring.SendCommands('viewta')
-			elseif value == 3 then 
+			elseif value == 3 then
 				Spring.SendCommands('viewspring')
-			elseif value == 4 then 
+			elseif value == 4 then
 				Spring.SendCommands('viewrot')
-			elseif value == 5 then 
+			elseif value == 5 then
 				Spring.SendCommands('viewfree')
 			end
 		elseif id == 'cursor' then
@@ -1346,7 +1346,7 @@ function widget:KeyPress(key)
 end
 
 function IsOnRect(x, y, BLcornerX, BLcornerY,TRcornerX,TRcornerY)
-	
+
 	-- check if the mouse is in a rectangle
 	return x >= BLcornerX and x <= TRcornerX
 	                      and y >= BLcornerY
@@ -1393,7 +1393,7 @@ end
 function widget:MouseWheel(up, value)
 	local x,y = Spring.GetMouseState()
 	local cx, cy = correctMouseForScaling(x,y)
-	if show then	
+	if show then
 		return true
 	end
 end
@@ -1838,7 +1838,7 @@ function init()
 		{id="underconstructiongfx_opacity", group="gfx", name=widgetOptionColor.."   opacity", min=0.25, max=0.5, step=0.01, type="slider", value=0.2, description='Set the opacity of the highlight on selected units'},
 		{id="underconstructiongfx_shader", group="gfx", name=widgetOptionColor.."   use shader", type="bool", value=false, description='Highlight model edges a bit'},
 		{id="underconstructiongfx_teamcolor", group="gfx", name=widgetOptionColor.."   use teamcolor", type="bool", value=false, description='Use teamcolor instead of unit health coloring'},
-		
+
 		-- SND
 		{id="sndvolmaster", group="snd", name="Master volume", type="slider", min=0, max=200, step=2, value=tonumber(Spring.GetConfigInt("snd_volmaster",1) or 100)},
 		--{id="sndvolgeneral", group="snd", name="General volume", type="slider", min=0, max=100, step=2, value=tonumber(Spring.GetConfigInt("snd_volgeneral",1) or 100)},

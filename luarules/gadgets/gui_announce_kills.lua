@@ -15,9 +15,9 @@ end
 
 if (gadgetHandler:IsSyncedCode()) then
 
-	local BestTeam = nil
-	local BestTeamCount = nil
-	local KillCounters = {}
+	local BestTeam
+  local BestTeamCount
+  local KillCounters = {}
 
 	local function isUnitComplete(UnitID)
 		local _, _, _, _,buildProgress=Spring.GetUnitHealth(UnitID)

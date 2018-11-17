@@ -20,7 +20,7 @@ if (vsx == 1) then --hax for windowed mode
 end
 
 
-local _ = nil
+local _
 local update = 0.5
 
 local sIsGUIHidden = Spring.IsGUIHidden

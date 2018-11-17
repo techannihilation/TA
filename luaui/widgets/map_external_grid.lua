@@ -16,7 +16,7 @@ if VFS.FileExists("nomapedgewidget.txt") then
 	return
 end
 
-local DspLst = nil
+local DspLst
 --local updateFrequency = 120	-- unused
 local gridTex = "LuaUI/Images/vr_grid.png"
 --local height = 0	-- how far above ground to draw

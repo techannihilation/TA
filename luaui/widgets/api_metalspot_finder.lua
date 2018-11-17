@@ -193,8 +193,8 @@ function GetSpots()
 		aboveIdx = workingIdx
 		workingIdx = nStrips + 1
 
-		local stripStart = nil
-		local stripWorth = 0
+		local stripStart
+    local stripWorth = 0
 
 		for mx = metalmapStartZ, metalmapSizeX, gridSize do
 			local _, _, groundMetal = spGetGroundInfo(mx, mz)

@@ -62,10 +62,10 @@ local spGetGameFrame = Spring.GetGameFrame
 
 local spArmor = Spring.GetUnitArmored
 local spActive = Spring.GetUnitIsActive
-local pairs = pairs	
+local pairs = pairs
 
 local unitYSizeOffset = {}     -- <unitID,{sizeY,offsetY}>
-local BP_SIZE_LIMIT = 0.8 
+local BP_SIZE_LIMIT = 0.8
 local BP_SIZE_MULTIPLIER = 1 / BP_SIZE_LIMIT
 
 if (gadgetHandler:IsSyncedCode()) then
@@ -91,7 +91,7 @@ if (gadgetHandler:IsSyncedCode()) then
 						end
 					end
 				end
-			end			
+			end
 		else
 			for _, featID in pairs(Spring.GetAllFeatures()) do
 					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].modelpath
@@ -101,13 +101,13 @@ if (gadgetHandler:IsSyncedCode()) then
 					if (spGetFeatureRadius(featID)>47) then
 						rs, hs = 0.68, 0.60
 					else
-						rs, hs = 0.75, 0.67  
+						rs, hs = 0.75, 0.67
 					end
 					local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
 					if (vtype>=3 and xs==ys and ys==zs) then
 						spSetFeatureCollisionData(featID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.1323529*rs, zo,  vtype, htype, axis)
 					end
-					spSetFeatureRadiusAndHeight(featID, spGetFeatureRadius(featID)*rs, spGetFeatureHeight(featID)*hs)			
+					spSetFeatureRadiusAndHeight(featID, spGetFeatureRadius(featID)*rs, spGetFeatureHeight(featID)*hs)
 				elseif featureModel:find(".s3o") then
 					local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
 					if (vtype>=3 and xs==ys and ys==zs) then
@@ -118,7 +118,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 	end
 
-	
+
 	--Reduces the diameter of default (unspecified) collision volume for 3DO models,
 	--for S3O models it's not needed and will in fact result in wrong collision volume
 	--also handles per piece collision volume definitions
@@ -126,8 +126,8 @@ if (gadgetHandler:IsSyncedCode()) then
 		--local uDef = UnitDefs[unitDefID]
 	  	--Spring.Echo("Units Armor Class is : " .. (Game.armorTypes[uDef.armorType] or ""))
 	  	local perPieceTrunk = {}
-	  	local trunkIndex = nil
-		if is3do[unitDefID] then
+	  	local trunkIndex
+    if is3do[unitDefID] then
 			if (pieceCollisionVolume[unitDefID]) then
 			local t = pieceCollisionVolume[unitDefID]
 				for pieceIndex=1, #spGetPieceList(unitID) do
@@ -155,16 +155,16 @@ if (gadgetHandler:IsSyncedCode()) then
 					ars, ahs = 0.60, 0.60
 				elseif (not canFly[unitDefID] ) then
 					rs, hs, ws = 0.68, 0.68, 0.68
-					ars, ahs = 0.70, 0.70 
+					ars, ahs = 0.70, 0.70
 				elseif spGetUnitRadius(unitID)>120 then --Fix hero's not moving in latest engine
 					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
 					rs, hs, ws = 0.77, 0.18, 0.77
-					ars, ahs = 0.25, 0.25 
+					ars, ahs = 0.25, 0.25
 				elseif spGetUnitRadius(unitID)>60 then
 					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
 					rs, hs, ws = 0.77, 0.18, 0.77
-					ars, ahs = 0.70, 0.70 
-				else 
+					ars, ahs = 0.70, 0.70
+				else
 					rs, hs, ws = 0.53, 0.26, 0.53
 					ars, ahs = 0.55, 0.55
 				end
@@ -174,7 +174,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				        spSetUnitCollisionData(unitID, xs*ws, 13, zs*rs,  xo, yo, zo,  1, htype, 1)
 					elseif (UnitDefs[unitDefID].canFly) then
 						spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
-				  	else 
+				  	else
 						spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
 			  		end
 				end
@@ -186,13 +186,13 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 				end
 			end
-			if isShip[unitDefID] then 
+			if isShip[unitDefID] then
 				local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
 				local h = Spring.GetUnitHeight(unitID)
 				if by <= 0 and by + h >= 0 then
 					--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID)
-					Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az) 
-				end		
+					Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
+				end
 			end
 			if isTorp[unitDefID] then
 				local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
@@ -239,7 +239,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if mapFeatures[featureModelTrim] then	-- it just might happen that some map features can have corpses
 			local p = mapFeatures[featureModelTrim]
 			spSetFeatureCollisionData(featureID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
-			spSetFeatureRadiusAndHeight(featureID, min(p[1], p[3])*0.5, p[2])		
+			spSetFeatureRadiusAndHeight(featureID, min(p[1], p[3])*0.5, p[2])
 		elseif featureModelTrim:find(".3do") then
 			local rs, hs
 			if (spGetFeatureRadius(featureID)>47) then
@@ -265,14 +265,14 @@ if (gadgetHandler:IsSyncedCode()) then
 		elseif dynamicPieceCollisionVolume[unitDefID] then
 			popupUnits[unitID]={id=unitDefID, state=-1, perPiece=true, numPieces = #spGetPieceList(unitID)}
 		end
-		
+
 		-- set height to expected value for fully built unit
 		if unitYSizeOffset[unitID] and not pieceCollisionVolume[unitDefID] or dynamicPieceCollisionVolume[unitDefID]then
 			local xs, ys, zs, xo, yo, zo, vtype, htype, axis,_ = spGetUnitCollisionData(unitID)
 			local data = unitYSizeOffset[unitID]
 			ys = data[1]
 			yo = data[2]
-			
+
 			spSetUnitCollisionData(unitID, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
 			spSetUnitMidAndAimPos(unitID,0, ys*0.5, 0,0, ys*0.5,0,true)
 		elseif (pieceCollisionVolume[unitDefID]) then
@@ -313,7 +313,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 	end
 
-	
+
 	--Dynamic adjustment of pop-up style of units' collision volumes based on unit's ARMORED status, runs twice per second
 	--rescaling of radius and height of 3DO buildings
 	function gadget:GameFrame(n)
@@ -364,7 +364,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if popupUnits[unitID] ~= nil then
 					popupUnits[unitID].state = stateInt
 				end
-			end			
+			end
 		end
 		-- adjust collision volume height based on build %
 		-- runs 6 times per second
@@ -373,12 +373,12 @@ if (gadgetHandler:IsSyncedCode()) then
 			local val = 0
 			for unitID,data in pairs(unitYSizeOffset) do
 				local _,_,_,_,bp = spGetUnitHealth(unitID)
-				
+
 				-- only affect units under construction
 				-- height grows until build % reaches 60
 				if (bp < BP_SIZE_LIMIT) then
 					xs, ys, zs, xo, yo, zo, vtype, htype, axis,_ = spGetUnitCollisionData(unitID)
-	
+
 					val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
 					ys = data[1] * val
 					yo = data[2] * val
