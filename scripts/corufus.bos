@@ -1,0 +1,334 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, main, main2, main3, sphere, claw1, claw2, claw3,
+       mmkr, mmkr2, mmkr3, mmkrtop, mmkrtop2, mmkrtop3, mmkrglow,
+       mmkrglow2, mmkrglow3, arm1a, arm1b, arm1c, arm2a, arm2b, arm2c,
+       arm3a, arm3b, arm3c, a1a, a1b, a2a, a2c, a3b,
+       a3c;
+
+static-var  statechg_DesiredState, statechg_StateChanging;
+
+SmokeUnit(healthpercent, sleeptime, smoketype, smokepiece)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+			
+			smokepiece = Rand( 1, 5 );
+			if( smokepiece == 1 )
+			{
+				emit-sfx smoketype from main2;
+			}
+			if( smokepiece == 2 )
+			{
+				emit-sfx smoketype from sphere;
+			}
+			if( smokepiece == 3 )
+			{
+				emit-sfx smoketype from mmkr;
+			}
+			if( smokepiece == 4 )
+			{
+				emit-sfx smoketype from mmkr2;
+			}
+			if( smokepiece == 5 )
+			{
+				emit-sfx smoketype from mmkr3;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	
+	turn arm1a to z-axis <-60> speed <60>;
+	sleep 50;
+	turn arm1b to z-axis <60> speed <60>;
+	turn arm1b to x-axis <0> speed <60>;
+	sleep 50;
+	turn arm1c to x-axis <60> speed <60>;
+	sleep 50;
+	
+	turn arm2a to z-axis <60> speed <60>;
+	sleep 50;
+	turn arm2b to x-axis <60> speed <60>;
+	sleep 50;
+	turn arm2c to z-axis <-60> speed <60>;
+	turn arm2c to x-axis <0> speed <60>;
+	sleep 50;
+	
+	turn arm3a to x-axis <60> speed <60>;
+	sleep 150;
+	turn arm3b to z-axis <-60> speed <60>;
+	sleep 150;
+	turn arm3c to z-axis <60> speed <60>;
+	turn arm3c to x-axis <0> speed <60>;
+
+	move mmkrtop to y-axis [0.5] speed [2];
+	set ARMORED to 0;
+	sleep 50;
+	
+	move mmkrtop2 to y-axis [2] speed [2];
+	sleep 50;
+	move mmkrtop3 to y-axis [2] speed [2];
+	sleep 150;
+	turn mmkrtop to z-axis <-180.0> speed <60>;
+	sleep 50;
+	turn mmkrtop2 to z-axis <180.0> speed <60>;
+	sleep 50;
+	turn mmkrtop3 to x-axis <180.0> speed <60>;
+	sleep 150;
+	move mmkrtop to y-axis [0] speed [5];
+	sleep 50;
+	move mmkrtop2 to y-axis [0] speed [5];
+	sleep 50;
+	move mmkrtop3 to y-axis [0] speed [5];
+	sleep 100;
+}
+
+deactivatescr()
+{
+	move mmkrtop to y-axis [-5] speed [20];
+	sleep 40;
+	move mmkrtop2 to y-axis [-5] speed [20];
+	sleep 40;
+	move mmkrtop3 to y-axis [-5] speed [20];
+	sleep 170;
+	turn mmkrtop to z-axis <0> speed <120>;
+	sleep 40;
+	turn mmkrtop2 to z-axis <0> speed <120>;
+	sleep 40;
+	turn mmkrtop3 to x-axis <0> speed <120>;
+	sleep 170;
+	
+	move mmkrtop to y-axis [0] speed [20];
+	move mmkrtop2 to y-axis [0] speed [20];
+	move mmkrtop3 to y-axis [0] speed [20];
+	
+	turn arm1a to z-axis <0> speed <60>;
+	turn arm1b to z-axis <0> speed <60>;
+	turn arm1c to x-axis <0> speed <60>;
+	sleep 40;
+	
+	turn arm2a to z-axis <0> speed <60>;
+	turn arm2b to x-axis <0> speed <60>;
+	turn arm2c to z-axis <0> speed <60>;
+	sleep 40;
+	
+	turn arm3a to x-axis <0> speed <60>;
+	turn arm3b to z-axis <0> speed <60>;
+	turn arm3c to z-axis <0> speed <60>;
+	sleep 40;
+		
+	set ARMORED to 1;
+	sleep 100;
+}
+
+Go()
+{
+	call-script activatescr();
+}
+
+Stop()
+{
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	turn a1a to y-axis <-30> now;
+	turn a1b to y-axis <30> now;
+	turn a2a to y-axis <30> now;
+	turn a2c to y-axis <-30> now;
+	turn a3b to y-axis <-30> now;
+	turn a3c to y-axis <30> now;
+
+	start-script SmokeUnit();
+	start-script activatescr();
+	spin main2 around y-axis speed <-3.000000>;
+	spin main3 around y-axis speed <5.000000>;	
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 2;
+	set-signal-mask 2;
+	set ACTIVATION to 0;
+	sleep 10000;
+	set ACTIVATION to 1;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode main type BITMAPONLY | BITMAP1;
+		explode main2 type BITMAPONLY | BITMAP2;
+		explode main3 type BITMAPONLY | BITMAP3;
+		explode claw1 type BITMAPONLY | BITMAP4;
+		explode claw2 type BITMAPONLY | BITMAP5;
+		explode claw3 type BITMAPONLY | BITMAP1;
+		explode sphere type BITMAPONLY | BITMAP2;
+		explode arm1a type BITMAPONLY | BITMAP2;
+		explode arm2a type BITMAPONLY | BITMAP3;
+		explode arm3a type BITMAPONLY | BITMAP4;
+		explode arm1b type BITMAPONLY | BITMAP5;
+		explode arm2b type BITMAPONLY | BITMAP2;
+		explode arm3b type BITMAPONLY | BITMAP3;
+		explode arm1c type BITMAPONLY | BITMAP4;
+		explode arm2c type BITMAPONLY | BITMAP5;
+		explode arm3c type BITMAPONLY | BITMAP1;
+		explode mmkrtop type BITMAPONLY | BITMAP1;
+		explode mmkrglow type BITMAPONLY | BITMAP2;
+		explode mmkrglow2 type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode mmkrglow3 type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode main type BITMAPONLY | BITMAP1;
+		explode main2 type BITMAPONLY | BITMAP2;
+		explode main3 type BITMAPONLY | BITMAP3;
+		explode claw1 type BITMAPONLY | BITMAP4;
+		explode claw2 type BITMAPONLY | BITMAP5;
+		explode claw3 type BITMAPONLY | BITMAP1;
+		explode sphere type BITMAPONLY | BITMAP2;
+		explode arm1a type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode arm2a type FALL | EXPLODE_ON_HIT | BITMAP3;
+		explode arm3a type FALL | EXPLODE_ON_HIT | BITMAP4;
+		explode arm1b type FALL | EXPLODE_ON_HIT | BITMAP5;
+		explode arm2b type FALL | EXPLODE_ON_HIT | BITMAP1;
+		explode arm3b type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode arm1b type FALL | EXPLODE_ON_HIT | BITMAP3;
+		explode arm2a type FALL | EXPLODE_ON_HIT | BITMAP4;
+		explode arm3a type FALL | EXPLODE_ON_HIT | BITMAP5;
+		explode mmkrtop type FALL | EXPLODE_ON_HIT | BITMAP1;
+		explode mmkrtop2 type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode mmkrtop3 type FALL | EXPLODE_ON_HIT | BITMAP3;
+		explode mmkrglow type SHATTER | BITMAP4;
+		explode mmkrglow2 type SHATTER | BITMAP5;
+		explode mmkrglow3 type SHATTER | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	if( severity <= 99 )
+	{
+		explode main type BITMAPONLY | BITMAP1;
+		explode main2 type BITMAPONLY | BITMAP2;
+		explode main3 type BITMAPONLY | BITMAP3;
+		explode claw1 type BITMAPONLY | BITMAP4;
+		explode claw2 type BITMAPONLY | BITMAP5;
+		explode claw3 type BITMAPONLY | BITMAP1;
+		explode sphere type BITMAPONLY | BITMAP2;
+		explode arm1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode arm2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode arm3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode arm1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode arm2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode arm3b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode arm1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode arm2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode arm3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode mmkrtop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode mmkrtop2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode mmkrtop3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode mmkrglow type SHATTER | BITMAP4;
+		explode mmkrglow2 type SHATTER | BITMAP5;
+		explode mmkrglow3 type SHATTER | BITMAP1;
+		return (0);
+	}
+	explode main type BITMAPONLY | BITMAP1;
+	explode main2 type BITMAPONLY | BITMAP2;
+	explode main3 type BITMAPONLY | BITMAP3;
+	explode claw1 type BITMAPONLY | BITMAP4;
+	explode claw2 type BITMAPONLY | BITMAP5;
+	explode claw3 type BITMAPONLY | BITMAP1;
+	explode sphere type BITMAPONLY | BITMAP2;
+	explode arm1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode arm2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode arm3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode arm1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode arm2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode arm3b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode arm1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode arm2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode arm3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode mmkrtop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode mmkrtop2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode mmkrtop3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode mmkrglow type SHATTER | EXPLODE_ON_HIT | BITMAP4;
+	explode mmkrglow2 type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	explode mmkrglow3 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+}
