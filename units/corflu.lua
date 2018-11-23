@@ -1,8 +1,8 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 10419307,
-		buildcostmetal = 1411002,
+		buildcostenergy = 72935149,
+		buildcostmetal = 9877014,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
