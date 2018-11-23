@@ -35,7 +35,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 1,
-		name = "Ultimate Fusion & Metal Maker Reactor (Converts upto 200K)",
+		name = "Ultimate Fusion & Metal Maker Reactor (Converts upto 205K)",
 		noautofire = false,
 		objectname = "corufus",
 		radaremitheight = 152,
