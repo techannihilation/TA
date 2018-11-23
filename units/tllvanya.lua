@@ -100,7 +100,7 @@ return {
 				model = "obusnuke",
 				name = "Tabitha Cannon",
 				nogap = 1,
-				range = 12500,
+				range = 72000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,
