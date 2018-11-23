@@ -101,7 +101,7 @@ return {
 				model = "obusnuke",
 				name = "Influence Cannon",
 				nogap = 1,
-				range = 12000,
+				range = 72000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,
