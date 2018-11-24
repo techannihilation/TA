@@ -15,7 +15,7 @@ return {
 		buildtime = 2000000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 -20",
-		collisionvolumescales = "575 450 575",
+		collisionvolumescales = "565 450 565",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produces Energy / Storage",
