@@ -1,8 +1,8 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 9492952,
-		buildcostmetal = 1483878,
+		buildcostenergy = 66450664,
+		buildcostmetal = 10387146,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -101,7 +101,7 @@ return {
 				model = "obusnuke",
 				name = "Tabitha Cannon",
 				nogap = 1,
-				range = 12000,
+				range = 72000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,

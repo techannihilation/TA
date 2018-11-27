@@ -1,8 +1,8 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 10419307,
-		buildcostmetal = 1411002,
+		buildcostenergy = 72935149,
+		buildcostmetal = 9877014,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
@@ -101,7 +101,7 @@ return {
 				model = "obusnuke",
 				name = "Influence Cannon",
 				nogap = 1,
-				range = 12000,
+				range = 72000,
 				reloadtime = 60,
 				separation = 0.45,
 				sizedecay = -0.15,
