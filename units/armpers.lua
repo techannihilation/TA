@@ -31,7 +31,7 @@ return {
 		mass = 6631,
 		maxdamage = 8768,
 		maxslope = 10,
-		maxvelocity = 4.7,
+		maxvelocity = 4.8,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Perseus",
