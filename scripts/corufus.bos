@@ -9,56 +9,7 @@ piece  base, main, main2, main3, sphere, claw1, claw2, claw3,
        arm3a, arm3b, arm3c, a1a, a1b, a2a, a2c, a3b,
        a3c;
 
-static-var  statechg_DesiredState, statechg_StateChanging;
-
-SmokeUnit(healthpercent, sleeptime, smoketype, smokepiece)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
-			
-			smokepiece = Rand( 1, 5 );
-			if( smokepiece == 1 )
-			{
-				emit-sfx smoketype from main2;
-			}
-			if( smokepiece == 2 )
-			{
-				emit-sfx smoketype from sphere;
-			}
-			if( smokepiece == 3 )
-			{
-				emit-sfx smoketype from mmkr;
-			}
-			if( smokepiece == 4 )
-			{
-				emit-sfx smoketype from mmkr2;
-			}
-			if( smokepiece == 5 )
-			{
-				emit-sfx smoketype from mmkr3;
-			}
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
-}
+static-var  Static_Var_1, Static_Var_2;
 
 activatescr()
 {
@@ -156,36 +107,86 @@ Stop()
 	call-script deactivatescr();
 }
 
-InitState()
+MMStatus(Func_Var_1)
 {
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_1 = Func_Var_1;
 }
 
-RequestState(requestedstate, currentstate)
+ImAMetalMaker()
 {
-	if( statechg_StateChanging )
+	while( get BUILD_PERCENT_LEFT )
 	{
-		statechg_DesiredState = requestedstate;
-		return (0);
+		sleep 150;
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_2 = -1;
+	while( TRUE )
 	{
-		if( statechg_DesiredState == 0 )
+		if( Static_Var_1 == 1 )
 		{
-			call-script Go();
-			currentstate = 0;
+			if( Static_Var_2 != 1 )
+			{
+				call-script Go();
+				Static_Var_2 = 1;
+			}
 		}
-		if( statechg_DesiredState == 1 )
+		else if( Static_Var_2 != 0 )
 		{
 			call-script Stop();
-			currentstate = 1;
+			Static_Var_2 = 0;
 		}
+		sleep 1000;
 	}
-	statechg_StateChanging = FALSE;
+}
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype, smokepiece)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script ImAMetalMaker();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+			
+			smokepiece = Rand( 1, 5 );
+			if( smokepiece == 1 )
+			{
+				emit-sfx smoketype from main2;
+			}
+			if( smokepiece == 2 )
+			{
+				emit-sfx smoketype from sphere;
+			}
+			if( smokepiece == 3 )
+			{
+				emit-sfx smoketype from mmkr;
+			}
+			if( smokepiece == 4 )
+			{
+				emit-sfx smoketype from mmkr2;
+			}
+			if( smokepiece == 5 )
+			{
+				emit-sfx smoketype from mmkr3;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
 }
 
 Create()
@@ -196,21 +197,9 @@ Create()
 	turn a2c to y-axis <-30> now;
 	turn a3b to y-axis <-30> now;
 	turn a3c to y-axis <30> now;
-
 	start-script SmokeUnit();
-	start-script activatescr();
 	spin main2 around y-axis speed <-3.000000>;
 	spin main3 around y-axis speed <5.000000>;	
-}
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
 }
 
 HitByWeapon(anglex, anglez)
