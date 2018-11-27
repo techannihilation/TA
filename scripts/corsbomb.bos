@@ -3,10 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, fuselage, eng1, eng2, flare1, sfx3, sfx4, fin,
-       turret1, turret2, fpt1a, fpt1b, fpt2a, fpt2b, ribbon1, ribbon2;
+piece  base, fuselage, eng1, eng2, flare1, fin, ribbon1, ribbon2;
 
-static-var  statechg_DesiredState, statechg_StateChanging, gun_1;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -29,11 +28,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			Func_Var_4 = Rand( 1, 2 );
 			if( Func_Var_4 == 1 )
 			{
-				emit-sfx smoketype from sfx3;
+				emit-sfx smoketype from eng1;
 			}
 			if( Func_Var_4 == 2 )
 			{
-				emit-sfx smoketype from sfx4;
+				emit-sfx smoketype from eng2;
 			}
 		}
 		sleeptime = healthpercent * 50;
@@ -55,34 +54,34 @@ deactivatescr()
 
 InitState()
 {
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
 }
 
 RequestState(requestedstate, currentstate)
 {
-	if( statechg_StateChanging )
+	if( Static_Var_2 )
 	{
-		statechg_DesiredState = requestedstate;
+		Static_Var_1 = requestedstate;
 		return (0);
 	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
 	{
-		if( statechg_DesiredState == 0 )
+		if( Static_Var_1 == 0 )
 		{
 			call-script activatescr();
 			currentstate = 0;
 		}
-		if( statechg_DesiredState == 1 )
+		if( Static_Var_1 == 1 )
 		{
 			call-script deactivatescr();
 			currentstate = 1;
 		}
 	}
-	statechg_StateChanging = FALSE;
+	Static_Var_2 = 0;
 }
 
 Create()
@@ -92,11 +91,9 @@ Create()
 	hide eng1;
 	hide eng2;
 	hide flare1;
-	hide sfx3;
-	hide sfx4;
 	call-script InitState();
 	start-script SmokeUnit();
-	gun_1 = base;
+	Static_Var_3 = 0;
 }
 
 Activate()
@@ -122,24 +119,10 @@ QueryPrimary(piecenum)
 FirePrimary()
 {
 	sleep 1500;
-	gun_1 = fuselage;
+	Static_Var_3 = 1;
 	set CURRENT_FUEL to 0;
 	sleep 1000;
-	gun_1 = base;
-}
-
-AimSecondary()
-{
-	while( gun_1 == 0 )
-	{
-		sleep 100;
-	}
-	return (1);
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = base;
+	Static_Var_3 = 0;
 }
 
 SweetSpot(piecenum)
@@ -152,42 +135,34 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode fuselage type NOHEATCLOUD;
-		explode eng1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode eng2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | SHATTER;
-		explode turret2 type NOHEATCLOUD | SHATTER;
+		explode base type 128;
+		explode fuselage type 128;
+		explode eng1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode eng2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		explode fuselage type NOHEATCLOUD;
-		explode eng1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode eng2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | SHATTER;
-		explode turret2 type NOHEATCLOUD | SHATTER;
+		explode base type 128;
+		explode fuselage type 128;
+		explode eng1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode eng2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode fuselage type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode eng1 type NOHEATCLOUD | SHATTER;
-		explode eng2 type NOHEATCLOUD | SHATTER;
+		explode base type 128;
+		explode fuselage type 128;
+		explode eng1 type 128 | SHATTER;
+		explode eng2 type 128 | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
-	explode fuselage type NOHEATCLOUD;
-	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode eng1 type NOHEATCLOUD | SHATTER;
-	explode eng2 type NOHEATCLOUD | SHATTER;
+	explode base type 128;
+	explode fuselage type 128;
+	explode eng1 type 128 | SHATTER;
+	explode eng2 type 128 | SHATTER;
 	return (corpsetype);
 }
