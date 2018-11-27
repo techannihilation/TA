@@ -571,9 +571,15 @@ effectUnitDefs = {
     {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
  cdevastator = {
-    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
-    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
- },
+	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,75,-165}, size=30, precision=22, repeatEffect=true}},
+	{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r4", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r5", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r6", noIconDraw = true, priority=3, onActive=true}},
+},
+
 tllzeppelin = {
     {class='AirJet',options={color={1,0.4,0.4}, width=30, length=35, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,0.4,0.4}, width=30, length=35, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
