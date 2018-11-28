@@ -133,7 +133,7 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_bats = {
+			tll_bats = {
 				accuracy = 350,
 				areaofeffect = 96,
 				avoidfeature = false,
@@ -213,15 +213,13 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "ARM_BATS",
-				def = "ARM_CRUS",
+				def = "TLL_BATS",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				def = "ARM_BATS",
-				def = "ARM_CRUS",
+				def = "TLL_BATS",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
