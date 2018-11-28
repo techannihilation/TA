@@ -86,17 +86,6 @@ effectUnitDefs = {
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={56,104,32}, size=18, precision=22, repeatEffect=true}},
 	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
   },
-  armufus = {
-	{class='SimpleParticles2', options=MergeTable({pos={-105,310,-105}, delay=15, lifeSpread=300},sparks)},
-	{class='ShieldJitter',options={life=math.huge, priority=2, pos={-105,250,-105}, size=36, precision=22, repeatEffect=true}},
-    	{class='SimpleParticles2', options=MergeTable({pos={105,310,-105}, delay=15, lifeSpread=300},sparks)},
-	{class='ShieldJitter',options={life=math.huge, priority=2, pos={105,250,-105}, size=36, precision=22, repeatEffect=true}},
-	{class='SimpleParticles2',options=MergeTable({pos={-105,310,105}, delay=15, lifeSpread=300},sparks)},
-	{class='ShieldJitter',options={life=math.huge, priority=2, pos={-105,250,105}, size=36, precision=22, repeatEffect=true}},
-	{class='SimpleParticles2', options=MergeTable({pos={105,310,105}, delay=15, lifeSpread=300},sparks)},
-	{class='ShieldJitter',options={life=math.huge, priority=2, pos={105,250,105}, size=36, precision=22, repeatEffect=true}},
-  },
-
   
   --// SHIELDS //--------------------------
   cmetalmakerlvl3 = {

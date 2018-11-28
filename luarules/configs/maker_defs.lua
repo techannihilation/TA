@@ -33,7 +33,6 @@ local convertCapacities = {
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
 		[UnitDefNames.ametalmakerlvl2.id]  = { c = 8000, e = (AC6) }, -- T3
 		[UnitDefNames.ametalmakerlvl3.id]  = { c = 36000, e = (AC7) }, -- T4
-		[UnitDefNames.armufus.id]  = { c = 180000, e = (AC7) }, -- T5
 		
 		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) }, -- Armgen Combo fusion
 					
