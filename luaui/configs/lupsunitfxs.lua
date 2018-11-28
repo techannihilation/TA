@@ -21,12 +21,6 @@ effectUnitDefs = {
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
   --corsfus see shield lups def
-  corufus = {
-    {class='SimpleParticles2', options=MergeTable({pos={0,340,-30}, delay=0, size=280, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,340,-30}, delay=40, size=280, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,340,-30}, size=150, precision=22, repeatEffect=true}},
-    {class='GroundFlash',options=groundFlashBlue},
-  },
   corefus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=0, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=40, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
