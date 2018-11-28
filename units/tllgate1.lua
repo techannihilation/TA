@@ -39,7 +39,6 @@ return {
 		objectname = "TLLGATE1",
 		radardistance = 0,
 		radaremitheight = 25,
-		script = "tllgate.cob",
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 240,
 		unitname = "tllgate",
