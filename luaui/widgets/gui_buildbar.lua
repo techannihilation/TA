@@ -19,7 +19,7 @@ end
 WhiteStr   = "\255\255\255\255"
 GreyStr    = "\255\210\210\210"
 GreenStr   = "\255\092\255\092"
-BlueStr    = "\255\170\170\255" 
+BlueStr    = "\255\170\170\255"
 YellowStr  = "\255\255\255\152"
 OrangeStr  = "\255\255\190\128"
 
@@ -40,16 +40,18 @@ local bar_openByClick  = false --needs a click to open the buildmenu or is a hov
 local bar_autoclose    = true  --autoclose buildmenu on mouseleave?
 
 -- list and interface vars
-local facs = {}
+local facs            = {}
 local unfinished_facs = {}
-local menuHovered = false --opened a buildlist by hover? (if true-> close the menu on mouseleave)
-local openedMenu  = -1
-local hoveredFac  = -1
-local hoveredBOpt = -1
-local pressedFac  = -1
-local pressedBOpt = -1
-local waypointFac = -1
-local waypointMode = 0   -- 0 = off; 1=lazy; 2=greedy (greedy means: you have to left click once before leaving waypoint mode and you can have units selected)
+local dlists          = {}
+local menuHovered     = false --opened a buildlist by hover? (if true-> close the menu on mouseleave)
+local openedMenu      = -1
+local hoveredFac      = -1
+local hoveredBOpt     = -1
+local pressedFac      = -1
+local pressedBOpt     = -1
+local waypointFac     = -1
+local waypointMode    = 0   -- 0 = off; 1=lazy; 2=greedy (greedy means: you have to left click once before leaving waypoint mode and you can have units selected)
+local sec             = 0
 
 -- factory icon rectangle
 local facRect  = {-1,-1,-1,-1}
@@ -187,7 +189,7 @@ function widget:Initialize()
   myTeamID = Spring.GetMyTeamID()
 
   UpdateFactoryList()
-  
+
   local viewSizeX, viewSizeY = widgetHandler:GetViewSizes()
   self:ViewResize(viewSizeX, viewSizeY)
 
@@ -276,27 +278,27 @@ local function DrawRect(rect, color)
 end
 
 function RectRound(px,py,sx,sy,cs)
-	
+
 	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.floor(sx),math.floor(sy),math.floor(cs)
-	
+
 	gl.Rect(px+cs, py, sx-cs, sy)
 	gl.Rect(sx-cs, py+cs, sx, sy-cs)
 	gl.Rect(px+cs, py+cs, px, sy-cs)
-	
+
 	gl.Texture(bgcorner)
-	
+
 	--if py <= 0 or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
 	gl.TexRect(px, py+cs, px+cs, py)		-- top left
-	
+
 	--if py <= 0 or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
 	gl.TexRect(sx, py+cs, sx-cs, py)		-- top right
-	
+
 	--if sy >= vsy or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
 	gl.TexRect(px, sy-cs, px+cs, sy)		-- bottom left
-	
+
 	--if sy >= vsy or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
 	gl.TexRect(sx, sy-cs, sx-cs, sy)		-- bottom right
-	
+
 	gl.Texture(false)
 end
 
@@ -365,13 +367,13 @@ local function DrawBuildProgress(left,top,right,bottom, progress, color)
   end
 
   glShape(GL.TRIANGLE_FAN, list)
-  
+
   -- adding additive overlay
   glColor(color[1],color[2],color[3],color[4]/10)
   glBlending(GL_SRC_ALPHA, GL_ONE)
   glShape(GL.TRIANGLE_FAN, list)
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
-  
+
   glColor(1,1,1,1)
 end
 
@@ -451,9 +453,6 @@ local function DrawButton(rect, unitDefID, options, iconResize, isFac)
   end]]--
 end
 
-
-local dlists = {}
-local sec = 0
 function widget:Update(dt)
 
   if myTeamID~=Spring.GetMyTeamID() then
@@ -515,7 +514,7 @@ function widget:Update(dt)
         iconResize = true
       elseif (unfinished_facs[facInfo.unitID]) then
         _, _, _, _, options.progress = GetUnitHealth(facInfo.unitID)
-        if (options.progress>=1) then 
+        if (options.progress>=1) then
           options.progress = -1
           unfinished_facs[facInfo.unitID] = nil
         end
@@ -616,7 +615,7 @@ function widget:DrawScreen()
         OffsetRect(bopt_rec, bopt_inext[1],bopt_inext[2])
 
         --if j % 3==0 then
-        --  xmin_,xmax_ = xmin   + bopt_inext[1],xmin_ + iconSizeX 
+        --  xmin_,xmax_ = xmin   + bopt_inext[1],xmin_ + iconSizeX
         --  ymax_,ymin_ = ymax_  - iconSizeY, ymin_ - iconSizeY
         --end
       end
@@ -632,7 +631,7 @@ function widget:DrawScreen()
           if (n==1) then count=count-1 end -- cause we show the actual in building unit instead of the factory icon
 
           if (count>0) then
-          
+
 					  local yPad = (iconSizeY*(1-iconImgMult)) / 2
 					  local xPad = (iconSizeX*(1-iconImgMult)) / 2
             DrawTexRect({bopt_rec[1]+xPad,bopt_rec[2]-yPad,bopt_rec[3]-xPad,bopt_rec[4]+yPad},"#"..unitBuildDefID,{1,1,1,0.5})
@@ -663,7 +662,7 @@ end
 
 
 function widget:DrawWorld()
-  
+
   -- Draw factories command lines
   if waypointMode>1 or openedMenu>=0 then
     local fac
@@ -680,7 +679,7 @@ end
 
 
 function widget:DrawInMiniMap(sx,sy)
-  
+
    if (openedMenu>-1) then
      gl.PushMatrix()
        local pt = math.min(sx,sy)
@@ -714,7 +713,7 @@ local function _clampScreen(mid,half,vsd)
   if     (mid-half<0) then
     return          0, half*2
   elseif (mid+half>vsd) then
-    return vsd-half*2, vsd 
+    return vsd-half*2, vsd
   else
     local val = math.floor(mid - half)
     return        val, val+half*2
@@ -1037,9 +1036,9 @@ function WaypointHandler(x,y,button)
 
   local type,param = Spring.TraceScreenRay(x,y)
   if type=='ground' then
-    Spring.GiveOrderToUnit(facs[waypointFac+1].unitID, CMD.MOVE,param,opt) 
+    Spring.GiveOrderToUnit(facs[waypointFac+1].unitID, CMD.MOVE,param,opt)
   elseif type=='unit' then
-    Spring.GiveOrderToUnit(facs[waypointFac+1].unitID, CMD.GUARD,{param},opt)     
+    Spring.GiveOrderToUnit(facs[waypointFac+1].unitID, CMD.GUARD,{param},opt)
   else --feature
     type,param = Spring.TraceScreenRay(x,y,true)
     Spring.GiveOrderToUnit(facs[waypointFac+1].unitID, CMD.MOVE,param,opt)
@@ -1079,7 +1078,7 @@ function MouseOverSubIcon(x,y)
      (x >= boptRect[1]) and (x <= boptRect[3])and
      (y >= boptRect[4]) and (y <= boptRect[2])
   then
-    local icon  
+    local icon
     if bar_side==0 then
       icon = math.floor((x - boptRect[1]) / bopt_inext[1])
     elseif bar_side==2 then
@@ -1111,7 +1110,7 @@ function widget:GetTooltip(x,y)
     --local unitID    = facs[hoveredFac+1].unitID
     local unitDef   = UnitDefs[facs[hoveredFac+1].unitDefID]
     return unitDef.humanName .. "\n" ..
-           --GreyStr .. "Left mouse: show build options\n" .. 
+           --GreyStr .. "Left mouse: show build options\n" ..
            GreyStr .. "Middle mouse: set camera target\n"
            --GreyStr .. "Right mouse: show build options"
   elseif (hoveredBOpt>=0) then
@@ -1164,7 +1163,7 @@ function widget:IsAbove(x,y)
     end
     return true
   else
-    if (bar_autoclose)and( 
+    if (bar_autoclose)and(
          (bar_openByClick) or
          (not bar_openByClick)and(menuHovered)
        )
