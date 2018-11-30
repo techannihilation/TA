@@ -36,7 +36,7 @@ end
 local spGetFactoryCommands = Spring.GetFactoryCommands
 local spGetCommandQueue    = Spring.GetCommandQueue
 
-local function GetCmdTag(unitID) 
+local function GetCmdTag(unitID)
     local cmdTag = 0
     local cmds = spGetFactoryCommands(unitID,1)
 	if (cmds) then
@@ -45,7 +45,7 @@ local function GetCmdTag(unitID)
 			cmdTag = cmd.tag
 		end
 	end
-	if cmdTag == 0 then 
+	if cmdTag == 0 then
 		local cmds = spGetCommandQueue(unitID,1)
 		if (cmds) then
 			local cmd = cmds[1]
@@ -53,10 +53,10 @@ local function GetCmdTag(unitID)
 				cmdTag = cmd.tag
 			end
         end
-	end 
+	end
 	return cmdTag
-end 
-	
+end
+
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ end
 
 
 local function CopyTable(outtable,intable)
-  for i,v in pairs(intable) do 
+  for i,v in pairs(intable) do
     if (type(v)=='table') then
       if (type(outtable[i])~='table') then outtable[i] = {} end
       CopyTable(outtable[i],v)
@@ -219,7 +219,7 @@ local maxNewNanoEmitters = (Spring.GetConfigInt("NanoBeamAmount", 6) or 6) -- li
 local function GetFaction(udid) --todo add faction color nano spray support (needs nano color baked for all faction)
   --local udef_factions = UnitDefs[udid].factions or {}
   --return ((#udef_factions~=1) and 'unknown') or udef_factions[1]
-  return "default" -- default 
+  return "default" -- default
 end
 
 local NanoFxNone = 3
@@ -284,7 +284,7 @@ function gadget:GameFrame(frame)
 		local unitID = builders[i]
 		local UnitDefID = Spring.GetUnitDefID(unitID)
 		local buildpower = builderWorkTime[UnitDefID] or 1
-            if ((unitID + frame) % updateFramerate < 1) then
+    if unitID and (unitID + frame) % updateFramerate < 1 then
 			local strength = ((Spring.GetUnitCurrentBuildPower(unitID)or 1)*buildpower) or 1
       		--Spring.Echo(strength,Spring.GetUnitCurrentBuildPower(unitID)*builderWorkTime[UnitDefID])
 			if (strength > 0) then
@@ -292,7 +292,7 @@ function gadget:GameFrame(frame)
 				if (target) then
 					--Spring.Echo("IsUnitIcon", Spring.IsUnitIcon(unitID), unitID, "   Is Target Icon", Spring.IsUnitIcon(target),target)
                         if not Spring.IsUnitIcon(unitID) and (CallAsTeam(myTeamID, spIsUnitInView, unitID)) or
-                        not isFeature and not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or CallAsTeam(myTeamID, spIsUnitInView, target)) then 
+                        not isFeature and not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or CallAsTeam(myTeamID, spIsUnitInView, target)) then
 						local endpos
 						local radius = 30
 						if (type=="restore") then
@@ -401,7 +401,7 @@ function init()
   --// init user custom nano fxs
     for _,fx in pairs(Lups.Config or {}) do
     if (fx and (type(fx)=='table') and fx.fxtype) then
-      local fxType = fx.fxtype 
+      local fxType = fx.fxtype
       local fxSettings = fx
 
             if (fxType)and
@@ -453,7 +453,7 @@ end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
-  
+
 local registeredBuilders = {}
 
 function gadget:UnitFinished(uid, udid)
