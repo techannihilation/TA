@@ -107,7 +107,7 @@ local options={
     name = "No Energy For Shield Power",
     desc = "Shields not need energy for power, still need energy to regenerate\nAutoHost Usage :- mo_noenergyshields",
     type = "bool",
-    def = false,
+    def = true,
     section = "ta_modes",
   },
   {

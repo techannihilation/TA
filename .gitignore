@@ -2,3 +2,4 @@
 *.swp
 .directory
 *.kate-swp
+/.idea/

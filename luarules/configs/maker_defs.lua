@@ -27,7 +27,7 @@ local convertCapacities = {
 		[UnitDefNames.armmakr.id]  = { c = 50, e = (AC0) }, -- Normal
 		[UnitDefNames.armfmkr.id]  = { c = 100, e = (AC1) }, -- Floating
 		[UnitDefNames.ametalmakerlvl1.id]  = { c = 160, e = (AC2) }, -- T1,5
-		[UnitDefNames.armamaker.id]  = { c = 200, e = (AC2) }, -- T1,5
+		[UnitDefNames.armamaker.id]  = { c = 160, e = (AC2) }, -- T1,5
 		[UnitDefNames.armckmakr.id]  = { c = 400, e = (A3) }, -- Cloaked/Hardened
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater

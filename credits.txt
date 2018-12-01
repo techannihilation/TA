@@ -9,6 +9,8 @@ tllasgard, tllesy, Tll Musk, Snakeneck, Matamata, loggerhead, Leatherback, Hicka
 Some Models (tllzeppelin, tllcaps, tll_immolator, tlltetanos, tllinsulator, tllcrawler, tllleopard, tllbahamut, tlllrpc1) are made by M1Garland (.wings) and implemented by skymyj (.3do, .cob, .bos). Please ask permission before using theses model/script.
 
 Bitmaps strike.png and lightningball.png are copyright by [BoS]nixtux please ask permission before using theses textures.
+Bitmaps sfume1.png, sfume2.png, slightning1.png are copyright by [KING]Silver please ask permission before using theses textures.
+Sounds sdrone1.wav, selectricity1.wav, selectricity2.wav are copyright by [KING]Silver please ask permission before using theses sounds.
 
 Unitlogos for tll copyrighted by [BoS]nixtux
 racelogogouraud.tga
