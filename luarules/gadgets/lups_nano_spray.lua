@@ -275,6 +275,8 @@ function gadget:GameFrame(frame)
     local updateFramerate = 30 ---math.min(30, 3 + math.floor(#builders/25)) -- update fast at gamestart and gradually slower
     local totalNanoEmitters = 0
     local myTeamID = Spring.GetMyTeamID()
+    local _, myFullview = Spring.GetSpectatingState()
+
     --Spring.Echo(currentNanoEffect,updateFramerate)
 
 	for i=1,#builders do
@@ -284,15 +286,15 @@ function gadget:GameFrame(frame)
 		local unitID = builders[i]
 		local UnitDefID = Spring.GetUnitDefID(unitID)
 		local buildpower = builderWorkTime[UnitDefID] or 1
-    if unitID and (unitID + frame) % updateFramerate < 1 then
+    	if ((unitID + frame) % updateFramerate < 1) then
 			local strength = ((Spring.GetUnitCurrentBuildPower(unitID)or 1)*buildpower) or 1
       		--Spring.Echo(strength,Spring.GetUnitCurrentBuildPower(unitID)*builderWorkTime[UnitDefID])
 			if (strength > 0) then
 				local type, target, isFeature = Spring.Utilities.GetUnitNanoTarget(unitID)
 				if (target) then
 					--Spring.Echo("IsUnitIcon", Spring.IsUnitIcon(unitID), unitID, "   Is Target Icon", Spring.IsUnitIcon(target),target)
-                        if not Spring.IsUnitIcon(unitID) and (CallAsTeam(myTeamID, spIsUnitInView, unitID)) or
-                        not isFeature and not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (CallAsTeam(myTeamID, spIsUnitInView, unitID) or CallAsTeam(myTeamID, spIsUnitInView, target)) then
+                        if not Spring.IsUnitIcon(unitID) and (myFullview or Spring.GetMyAllyTeamID() == Spring.GetUnitAllyTeam(unitID)) or
+                        not isFeature and not (Spring.IsUnitIcon(unitID) and Spring.IsUnitIcon(target)) and (myFullview or Spring.GetMyAllyTeamID() == Spring.GetUnitAllyTeam(unitID)) or (myFullview or Spring.GetMyAllyTeamID() == Spring.GetUnitAllyTeam(target)) then
 						local endpos
 						local radius = 30
 						if (type=="restore") then
