@@ -908,5 +908,9 @@ teamDeathMessages = {
 	"XX discovered it was wabbit sheason",
 	"XX failed to repeal Obamacare",
 	"XX had the largest inauguration crowd in history",
-	
+        --Temp messages
+        "XX ran out of Doo exploits",
+	"XX got caught using Doo exploits",
+        "XX stayed using engine 103",
+        "XX didn't know what a framework is",
 }
