@@ -183,7 +183,7 @@ local CMD_MOVE = CMD.MOVE
 local CMD_ATTACK = CMD.ATTACK
 local CMD_UNLOADUNIT = CMD.UNLOAD_UNIT
 local CMD_UNLOADUNITS = CMD.UNLOAD_UNITS
---local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
+local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
 local CMD_OPT_ALT = CMD.OPT_ALT
 local CMD_OPT_CTRL = CMD.OPT_CTRL
 local CMD_OPT_META = CMD.OPT_META
@@ -658,7 +658,6 @@ function widget:MouseRelease(mx, my, mButton)
 			end
 		end
 		
-		--[[
 		-- Move Speed (Applicable to every order)
 		local wantedSpeed = 99999 -- High enough to exceed all units speed, but not high enough to cause errors (i.e. vs math.huge)
 		
@@ -678,7 +677,6 @@ function widget:MouseRelease(mx, my, mButton)
 		  local speedOpts = GetCmdOpts(alt, ctrl, meta, shift, true)
 		  GiveNotifyingOrder(CMD_SET_WANTED_MAX_SPEED, {wantedSpeed / 30}, speedOpts)
 		end
-		--]]
 	end
 	
 	if #fNodes > 1 then
