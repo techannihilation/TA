@@ -912,5 +912,5 @@ teamDeathMessages = {
         "XX ran out of Doo exploits",
 	"XX got caught using Doo exploits",
         "XX stayed using engine 103",
-        "XX didn't know what a framework is",
+        "XX didn't know what a framework is, so had no business playing",
 }
