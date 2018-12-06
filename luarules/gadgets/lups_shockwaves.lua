@@ -41,7 +41,7 @@ local SHOCK_WEAPONS = {
   for i=1,#WeaponDefs do
     local wd = WeaponDefs[i]
     local customParams = wd.customParams or {}
-    if (SHOCK_WEAPONS[wd.name]) or (wd.type == "DGun") then
+    if (SHOCK_WEAPONS[wd.name]) then
       local speed = 1
       local life = 1
       if customParams.lups_explodespeed then
@@ -63,28 +63,21 @@ local SHOCK_WEAPONS = {
     --else
 	local shockwave = hasShockwave[weaponID]
 	if shockwave then
-      if (wd.type == "DGun") then
-        SendToUnsynced("lups_shockwave", px, py, pz, 4.0, 18, 0.13, true)
-      else
-        --local growth = wd.explosionSpeed
-        --local life = wd.damageAreaOfEffect / wd.explosionSpeed
-        local growth = (wd.damageAreaOfEffect*1.1)/20*shockwave.speed
-        local life = 23*shockwave.life
-        SendToUnsynced("lups_shockwave", px, py, pz, growth, life)
-      end
+      
+    --local growth = wd.explosionSpeed
+    --local life = wd.damageAreaOfEffect / wd.explosionSpeed
+    local growth = (wd.damageAreaOfEffect*1.1)/20*shockwave.speed
+    local life = 23*shockwave.life
+    SendToUnsynced("lups_shockwave", px, py, pz, growth, life)
 	end
     return false
   end
 
 else
 
-  local function SpawnShockwave(_,px,py,pz, growth, life, strength, desintergrator)
+  local function SpawnShockwave(_,px,py,pz, growth, life, strength)
     local Lups = GG['Lups']
-    if (desintergrator) then
-      Lups.AddParticles('SphereDistortion',{pos={px,py,pz}, life=life, strength=strength, growth=growth ,priority=2})
-    else
-      Lups.AddParticles('ShockWave',{pos={px,py,pz}, growth=growth, life=life, priority=2})
-    end
+    Lups.AddParticles('ShockWave',{pos={px,py,pz}, growth=growth, life=life, priority=2})
   end
 
   function gadget:Initialize()

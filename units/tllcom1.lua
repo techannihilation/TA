@@ -168,6 +168,7 @@ return {
 				[4] = "custom:teleport_beam",
 				[5] = "custom:teleport_beam_blue",
 				[6] = "custom:teleport_beam_yellow",
+				[7] = "custom:dgun_flare",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

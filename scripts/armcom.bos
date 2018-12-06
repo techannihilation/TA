@@ -451,6 +451,12 @@ Create()
 	hide rbigflash;
 	hide lfirept;
 	hide nanospray;
+	turn lfirept to x-axis <90> now;
+	move lfirept to x-axis [0.5] now;
+	move lfirept to z-axis [0.25] now;
+	turn rbigflash to x-axis <90> now;
+	move rbigflash to x-axis [0.5] now;
+	move rbigflash to y-axis [-0.35] now;
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_7 = 0;
@@ -652,9 +658,8 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
-	show rbigflash;
+	emit-sfx 1024 + 5 from rbigflash;
 	sleep 100;
-	hide rbigflash;
 	gun_3 = torso;
 }
 

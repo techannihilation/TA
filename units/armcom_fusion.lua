@@ -167,6 +167,7 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:com_sea_laser_bubbles",
+				[6] = "custom:dgun_flare",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

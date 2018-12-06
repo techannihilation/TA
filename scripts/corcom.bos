@@ -478,6 +478,8 @@ Create()
 	hide teleport;
 	hide bigflsh;
 	hide mlasflsh;
+	move bigflsh to x-axis [0.5] now;
+	move bigflsh to y-axis [-0.35] now;
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_7 = 0;
@@ -600,9 +602,8 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
-	show bigflsh;
+	emit-sfx 1024 + 5 from bigflsh;
 	sleep 100;
-	hide bigflsh;
 	gun_3 = torso;
 	call-script bigfire();
 }

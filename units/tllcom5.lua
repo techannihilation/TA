@@ -175,6 +175,7 @@ return {
 			explosiongenerators = {
 				[1] = "custom:tllroaster_muzzle",
 				[2] = "custom:com_sea_laser_bubbles",
+				[7] = "custom:dgun_flare",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

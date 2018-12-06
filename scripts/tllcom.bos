@@ -445,6 +445,9 @@ Create()
 	hide nano;
 	turn rlowarm to z-axis <20.000000> now;
 	turn llowarm to z-axis <-20.000000> now;
+	turn rflare to x-axis <-60> now;
+	//move rflare to x-axis [0.5] now;
+	move rflare to y-axis [0.15] now;
 	move teleport to y-axis [700.000000] now;
 	turn teleport to x-axis <90.000000> now;
 	Static_Var_5 = 0;
@@ -579,10 +582,9 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
-	show rflare;
+	emit-sfx 1024 + 6 from rflare;
 	move rlowarm to y-axis [1.000000] speed [500.000000];
 	sleep 100;
-	hide rflare;
 	move rlowarm to y-axis [0.000000] speed [2.000000];
 }
 
