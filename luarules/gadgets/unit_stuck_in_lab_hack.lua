@@ -25,7 +25,7 @@ local SpGiveOrderArrayToUnitArray = Spring.GiveOrderArrayToUnitArray
 local SpGetUnitPosition = Spring.GetUnitPosition
 local SpGetUnitBuildFacing = Spring.GetUnitBuildFacing 
 local pairs = pairs
-local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
+local CMD_WANTED_SPEED = 38825
 local badfactories={
   --[UnitDefNames["corsy"].id] = true,
   [UnitDefNames["corasy"].id] = true,
@@ -71,7 +71,7 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 			
 	if userOrders then
 		local cmd=GetUnitCommands(unitID)
-		if cmd and #cmd==1 and cmd[1]['id']==CMD_SET_WANTED_MAX_SPEED then -- =70
+		if cmd and #cmd==1 and cmd[1]['id']==CMD_WANTED_SPEED then
 			local factcmd=GetUnitCommands(factID)
 			--Spring.Echo('UnitFromFactorycommands:',to_string(Spring.GetUnitCommands(unitID)))
 			--Spring.Echo('Factorycommands:',to_string(factcmd))

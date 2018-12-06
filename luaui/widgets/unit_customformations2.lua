@@ -50,6 +50,7 @@ local lineFadeRate = 2.0
 -- What commands are eligible for custom formations
 local CMD_SETTARGET = 34923
 local CMD_JUMP = 38521
+local CMD_WANTED_SPEED = 38825
 
 local formationCmds = {
 	[CMD.MOVE] = true,
@@ -183,7 +184,6 @@ local CMD_MOVE = CMD.MOVE
 local CMD_ATTACK = CMD.ATTACK
 local CMD_UNLOADUNIT = CMD.UNLOAD_UNIT
 local CMD_UNLOADUNITS = CMD.UNLOAD_UNITS
-local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
 local CMD_OPT_ALT = CMD.OPT_ALT
 local CMD_OPT_CTRL = CMD.OPT_CTRL
 local CMD_OPT_META = CMD.OPT_META
@@ -675,7 +675,7 @@ function widget:MouseRelease(mx, my, mButton)
 		-- ... But other widgets CMD.INSERT the speed order into the front (Posn 1) of the queue instead (which doesn't work with shifted orders)
 		if usingCmd ~= CMD.ATTACK and usingCmd ~= CMD.UNLOAD then --hack to fix bomber line attack etc.
 		  local speedOpts = GetCmdOpts(alt, ctrl, meta, shift, true)
-		  GiveNotifyingOrder(CMD_SET_WANTED_MAX_SPEED, {wantedSpeed / 30}, speedOpts)
+		  GiveNotifyingOrder(CMD_WANTED_SPEED, {wantedSpeed / 30}, speedOpts)
 		end
 	end
 	

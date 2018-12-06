@@ -28,7 +28,7 @@ end
 local CMD_ATTACK               = CMD.ATTACK
 local CMD_FIGHT                = CMD.FIGHT
 local CMD_MOVE                 = CMD.MOVE
-local CMD_SET_WANTED_MAX_SPEED = CMD.SET_WANTED_MAX_SPEED
+local CMD_WANTED_SPEED         = 38825
 local GL_LINE_STRIP            = GL.LINE_STRIP
 local glBeginEnd               = gl.BeginEnd
 local glColor                  = gl.Color
@@ -74,7 +74,7 @@ for name, data in pairs(jumpDefNames) do
 end
 
 local ignore = {
-  [CMD_SET_WANTED_MAX_SPEED] = true,
+  [CMD_WANTED_SPEED] = true,
 }
 
 local curve = {CMD_MOVE, CMD_JUMP}
