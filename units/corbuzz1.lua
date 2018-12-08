@@ -40,7 +40,6 @@ return {
 		nochasecategory = "ALL",
 		objectname = "CORBUZZ1",
 		radaremitheight = 341,
-		script = "corbuzz.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_DEATH",
 		sightdistance = 273,
