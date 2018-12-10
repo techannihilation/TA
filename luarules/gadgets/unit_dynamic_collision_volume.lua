@@ -163,10 +163,10 @@ if (gadgetHandler:IsSyncedCode()) then
 				elseif spGetUnitRadius(unitID)>60 then
 					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
 					rs, hs, ws = 0.77, 0.18, 0.77
-					ars, ahs = 0.40, 0.40 
+					ars, ahs = 0.375, 0.375 
 				else 
 					rs, hs, ws = 0.53, 0.26, 0.53
-					ars, ahs = 0.55, 0.55
+					ars, ahs = 0.40, 0.40
 				end
 				local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 				if (vtype>=3 and xs==ys and ys==zs) then
