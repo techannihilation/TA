@@ -306,7 +306,7 @@ local morphDefs = {
 	},
 	armgmm = {
 		into = 'armfor',
-		time = 180,
+		time = 90,
 	},
 	corgeo = {
     	{
