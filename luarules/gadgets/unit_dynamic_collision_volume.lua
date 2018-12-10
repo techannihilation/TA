@@ -163,7 +163,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				elseif spGetUnitRadius(unitID)>60 then
 					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
 					rs, hs, ws = 0.77, 0.18, 0.77
-					ars, ahs = 0.70, 0.70 
+					ars, ahs = 0.40, 0.40 
 				else 
 					rs, hs, ws = 0.53, 0.26, 0.53
 					ars, ahs = 0.55, 0.55
