@@ -264,8 +264,8 @@ local pieceCollisionVolume = {					--per piece collision volume definitions
 			trunk = 3
 	},
 	[UnitDefNames["corbuzz1"].id] = {
-			["3"]={155,365,155,0,32,0,1,1},
-			["5"]={30,30,290,0,0,0,1,0},
+			["2"]={175,475,175,0,32,0,1,1},
+			["5"]={60,30,250,0,135,0,1,0},
 			trunk = 3
 	},
 	[UnitDefNames["corflu"].id] = {
