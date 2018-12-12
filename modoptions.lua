@@ -255,6 +255,17 @@ local options={
     step  = 1,
   },
   {
+    key   = "mo_dropstuntime",
+    name  = "Paratroopers Stun time",
+    desc  = "Sets stun time for paratroopers after drop\nAutoHost Usage :- comtranslock",
+    section= "ta_options",
+    type  = "number",
+    def   = 5,
+    min   = 5,
+    max   = 30,
+    step  = 1,
+  },
+  {
     key   = "mo_storageowner",
     name  = "Team Storage Owner",
     desc  = "What owns the starting resource storage\nAutoHost Usage :- mo_storageowner",
