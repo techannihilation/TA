@@ -257,7 +257,7 @@ local options={
   {
     key   = "mo_dropstuntime",
     name  = "Paratroopers Stun Time",
-    desc  = "Sets stun time for paratroopers after drop\nAutoHost Usage :- comtranslock",
+    desc  = "Sets stun time for paratroopers after drop\nAutoHost Usage :- mo_dropstuntime",
     section= "ta_options",
     type  = "number",
     def   = 5,
