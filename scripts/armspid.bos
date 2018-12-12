@@ -9,6 +9,7 @@ piece  base, leg1, leg2, leg3, leg4, leg5, leg6, body,
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6;
 
+#define SIG_BUILDING		2
 
 walk2()
 {
@@ -150,7 +151,6 @@ Go()
 	wait-for-move platform along y-axis;
 	turn platform to y-axis Static_Var_1 speed <160.>;
 	wait-for-turn platform around y-axis;
-	set INBUILDSTANCE to 1;
 }
 
 Stop()
@@ -224,14 +224,22 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	signal SIG_BUILDING;
+	Static_Var_1 = Func_Var_1;
+	turn platform to y-axis <0.> speed <160.>;
+	wait-for-turn platform around y-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
-	start-script RequestState(1);
-}
+	signal SIG_BUILDING;
+	set-signal-mask SIG_BUILDING;
+	sleep 6000;
+	set-signal-mask 0;
+	signal SIG_BUILDING;
+	start-script RequestState(1);}
 
 StartMoving()
 {

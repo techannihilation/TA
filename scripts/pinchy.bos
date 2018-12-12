@@ -14,7 +14,7 @@ static-var  bMoving, restore_delay, Static_Var_4, Static_Var_5,
 // Signal definitions
 #define SIG_MOVE			2
 #define SIG_AIM				4
-
+#define SIG_BUILDING		8
 
 activatescr()
 {
@@ -204,7 +204,6 @@ Go()
 	call-script activatescr();
 	turn gunturret to y-axis Static_Var_5 speed <160.000000>;
 	wait-for-turn gunturret around y-axis;
-	set INBUILDSTANCE to 1;	
 }
 
 Stop()
@@ -276,12 +275,21 @@ TargetHeading(Func_Var_1)
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_5 = Func_Var_1;
 	start-script RequestState(0);
+	signal SIG_BUILDING;
+	Static_Var_5 = Func_Var_1;
+	turn gunturret to y-axis Static_Var_5 speed <160.000000>;
+	wait-for-turn gunturret around y-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal SIG_BUILDING;
+	set-signal-mask SIG_BUILDING;
+	sleep 6000;
+	set-signal-mask 0;
+	signal SIG_BUILDING;
 	start-script RequestState(1);
 }
 
