@@ -28,7 +28,7 @@ end
 
 if (not gadgetHandler:IsSyncedCode()) then return end
 
-local stunTime = 5
+local stunTime = tonumber(Spring.GetModOptions().mo_dropstuntime) or 5
 
 local paraTroopers={
   [UnitDefNames["corpyro"].id] = true,
