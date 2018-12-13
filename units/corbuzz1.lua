@@ -48,7 +48,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corbuzz1",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		usepiececollisionvolumes = true,
 		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo oooooooooooooooo ",
