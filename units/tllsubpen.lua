@@ -49,7 +49,7 @@ return {
 		workertime = 115,
 		yardmap = "wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC wwwCCCCC",
 		buildoptions = {
-			[1] = "tllarchnano",
+			[1] = "tllcaretta",
 			[2] = "tllamphibot",
 			[3] = "tllsalamander",
 			[4] = "tllcenturion",
