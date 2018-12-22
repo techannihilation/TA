@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 255,
 		metalmake = 0.3,
 		mobilestandorders = 1,
-		movementclass = "AMPTBOT",
+		movementclass = "KBOT2",
 		name = "Archnano",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
