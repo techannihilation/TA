@@ -66,7 +66,6 @@ return {
 		customparams = {
 			buildpic = "helepolis.dds",
 			faction = "TLL",
-			requiretech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {
