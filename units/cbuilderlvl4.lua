@@ -70,7 +70,7 @@ return {
 			[9] = "cormcv",
 			[10] = "corhaboob",
 			[11] = "corhcrus",
-			[12] = "corshock",
+			[12] = "corblackrain",
 		},
 		customparams = {
 			buildpic = "cbuilderlvl4.dds",
