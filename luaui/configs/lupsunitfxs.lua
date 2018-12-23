@@ -491,7 +491,13 @@ effectUnitDefs = {
  corsbomb = {
     {class='Ribbon', options={width=1, size=12, piece="ribbon1", priority=3, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=12, piece="ribbon2", priority=3, noIconDraw = true}},
- }, 
+ },
+corblackrain = {
+    {class='Ribbon', options={width=1.2, size=12, piece="ribbon1", priority=3, noIconDraw = true}},
+    {class='Ribbon', options={width=1.2, size=12, piece="ribbon2", priority=3, noIconDraw = true}},
+    {class='Ribbon', options={width=1.2, size=13, piece="ribbon3", priority=3, noIconDraw = true}},
+    {class='Ribbon', options={width=1.2, size=13, piece="ribbon4", priority=3, noIconDraw = true}},
+ },
  abuilderlvl3 = {
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
