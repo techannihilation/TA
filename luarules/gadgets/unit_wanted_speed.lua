@@ -28,6 +28,7 @@ local wantedCommand = {
 }
 
 local getMovetype = Spring.Utilities.getMovetype
+local mcGetTag = Spring.MoveCtrl.GetTag
 local units = {}
 
 -------------------------------------------------------------------------------------
@@ -70,10 +71,9 @@ local function MaintainWantedSpeed(unitID)
 	if not (units[unitID] and units[unitID].lastWantedSpeed) then
 		return
 	end
-	
 	if units[unitID].moveType == 1 then
 		Spring.MoveCtrl.SetGunshipMoveTypeData(unitID, "maxWantedSpeed", units[unitID].lastWantedSpeed)
-	elseif units[unitID].moveType == 2 then
+	elseif units[unitID].moveType == 2 and not mcGetTag(unitID) then
 		Spring.MoveCtrl.SetGroundMoveTypeData(unitID, "maxWantedSpeed", units[unitID].lastWantedSpeed)
 	end
 end
