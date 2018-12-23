@@ -213,9 +213,9 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 from skiva2;
-	sleep 2000;
 	hide missile;
 	gun_1 = base;
+	sleep 2000;
 	start-script RequestState(1);
 }
 
