@@ -125,7 +125,7 @@ return {
 				name = "Doomsday Weapon",
 				noselfdamage = true,
 				range = 1200,
-				reloadtime = 5,
+				reloadtime = 2.5,
 				rgbcolor = "0 0 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
