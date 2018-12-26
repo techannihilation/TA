@@ -222,7 +222,7 @@ if gadgetHandler:IsSyncedCode() then
     
     function gadget:AllowWeaponTarget(unitID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
         local allowed = true
-        local priority = defPriority
+        local priority = defPriority or 10000
         if AAunits[unitID] then
             local priorityEnabled = GetUnitRulesParam(unitID, "priorityEnabled") or 0
             if priorityEnabled == 1 then
