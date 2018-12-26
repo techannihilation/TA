@@ -164,7 +164,7 @@ return {
 				intensity = 5,
 				name = "ImpulsionBlaster",
 				noselfdamage = true,
-				range = 2350,
+				range = 2565,
 				reloadtime = 8,
 				rgbcolor = "0.15 0.15 1",
 				size = 5,
