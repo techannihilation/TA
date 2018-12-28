@@ -97,6 +97,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:PILOT",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -231,6 +234,7 @@ return {
 				soundtrigger = false,
 				sprayangle = 1200,
 				tolerance = 2500,
+				turret = true,
 				weapontimer = 1.5,
 				weapontype = "Flame",
 				weaponvelocity = 265,
@@ -257,7 +261,7 @@ return {
 			[3] = {
 				def = "FLAMMER_WEAPON",
 				maindir = "0 0 1",
-				maxangledif = 30,
+				maxangledif = 15,
 				onlytargetcategory = "SURFACE",
 			},
 		},
