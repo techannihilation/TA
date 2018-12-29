@@ -207,6 +207,8 @@ return {
 			},
 			[3] = {
 				def = "CORADON_MISSILE",
+				maindir = "0 0 1",
+				maxangledif = 45,
 				onlytargetcategory = "SURFACE",
 			},
 		},
