@@ -49,7 +49,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armsilo",
-		unitrestricted = 10,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
