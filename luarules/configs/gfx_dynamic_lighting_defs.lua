@@ -77,13 +77,13 @@ local copyLightDefs = {
 		--]]
 
 		--nukes
-		["corsilo_crblmssl"          ] = "nuke_crblmssl",
-		["corsilo1_crblmssl1"        ] = "nuke_crblmssl1",
-		["corfsilo_corfsilo_weapon"  ] = "fnuke_missile1",
-		["tllsilo_crblmssl"          ] = "nuke_missile",
-		["armsilo_nuclear_missile"   ] = "nuke_missile",
-		["armsilo1_nuclear_missile1" ] = "nuke_missile1",
-		["armfsilo_armfsilo_weapon"  ] = "fnuke_missile",
+		--["corsilo_crblmssl"          ] = "nuke_crblmssl",
+		--["corsilo1_crblmssl1"        ] = "nuke_crblmssl1",
+		--["corfsilo_corfsilo_weapon"  ] = "fnuke_missile1",
+		--["tllsilo_crblmssl"          ] = "nuke_missile",
+		--["armsilo_nuclear_missile"   ] = "nuke_missile",
+		--["armsilo1_nuclear_missile1" ] = "nuke_missile1",
+		--["armfsilo_armfsilo_weapon"  ] = "fnuke_missile",
 		["armcybr_arm_pidr"          ] = "mini_nuke",
 		
 		--Emp / Tacnuke

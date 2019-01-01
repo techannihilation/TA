@@ -168,6 +168,15 @@ return {
 					default = 9500,
 					subs = 5,
 				},
+				customparams = {
+					light_color = "1 0.6 0.2",
+					light_mult = 7,
+					light_radius_mult = 2,
+					expl_light_color = "1 0.85 0.55",
+					expl_light_mult = 1.25,
+					expl_light_life_mult = 2.4,
+					expl_light_radius_mult = 0.9,
+				},
 			},
 		},
 		weapons = {
