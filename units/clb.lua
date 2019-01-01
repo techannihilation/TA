@@ -164,6 +164,8 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "CORE_INTIMIDATOR2",
+				maindir = "0 0 1",
+				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 		},
