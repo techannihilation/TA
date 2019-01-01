@@ -13,22 +13,12 @@ activatescr()
 {
 	turn rwing to y-axis <0.000000> speed <30.000000>;
 	turn lwing to y-axis <0.000000> speed <30.000000>;
-	show fum1;
-	sleep 2500;
-	show fum2;
-	sleep 3800;
-	show fum3;
 }
 
 deactivatescr()
 {
 	turn rwing to y-axis <-35.000000> speed <30.000000>;
 	turn lwing to y-axis <35.000000> speed <30.000000>;
-	hide fum3;
-	sleep 2000;
-	hide fum2;
-	sleep 1500;
-	hide fum1;
 }
 
 MoveRate1()
@@ -129,9 +119,6 @@ Create()
 	turn lwing to y-axis <35.000000> now;
 	call-script InitState();
 	start-script SmokeUnit();
-	spin fum1 around z-axis speed <25.000000>;
-	spin fum2 around z-axis speed <50.000000>;
-	spin fum3 around z-axis speed <100.000000>;
 }
 
 Activate()

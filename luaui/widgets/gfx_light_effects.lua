@@ -87,7 +87,7 @@ function loadWeaponDefs()
 	weaponConf = {}
 	for i=1, #WeaponDefs do
 		local customParams = WeaponDefs[i].customParams or {}
-		Spring.Echo(WeaponDefs[i])
+		--Spring.Echo(WeaponDefs[i])
 		if customParams.expl_light_skip == nil then
 			local params = {}
 			--local maxDamage = 0

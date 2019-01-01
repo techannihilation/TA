@@ -13,16 +13,14 @@ end
 
 --synced
 if gadgetHandler:IsSyncedCode() then
-    
     local EditUnitCmdDesc = Spring.EditUnitCmdDesc
     local FindUnitCmdDesc = Spring.FindUnitCmdDesc
     local GetUnitDefID = Spring.GetUnitDefID
     local GetUnitRulesParam = Spring.GetUnitRulesParam
     local InsertUnitCmdDesc = Spring.InsertUnitCmdDesc
     local SetUnitRulesParam = Spring.SetUnitRulesParam
-    
     local CMD_SET_PRIORITY = 34567
-    
+
     local setPriorityAirn = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -30,9 +28,9 @@ if gadgetHandler:IsSyncedCode() then
         action = 'setpriority',
         tooltip = 'Toggle for target type priority\nNo current priority set for AA',
         queueing = false,
-        params = {'0', 'No priority', '', '', '', ''},
+        params = {'0', 'No priority', '', '', '', ''}
     }
-    
+
     local setPriorityAirf = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -40,9 +38,9 @@ if gadgetHandler:IsSyncedCode() then
         action = 'setpriority',
         tooltip = 'Toggle for target type priority\nCurrent AA priority set to fighters',
         queueing = false,
-        params = {'1', '', 'Fighters', '', '', ''},
+        params = {'1', '', 'Fighters', '', '', ''}
     }
-    
+
     local setPriorityAirb = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -50,9 +48,9 @@ if gadgetHandler:IsSyncedCode() then
         action = 'setpriority',
         tooltip = 'Toggle for target type priority\nCurrent AA priority set to bombers',
         queueing = false,
-        params = {'2', '', '', 'Bombers', '', ''},
+        params = {'2', '', '', 'Bombers', '', ''}
     }
-    
+
     local setPriorityAirOb = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -60,8 +58,9 @@ if gadgetHandler:IsSyncedCode() then
         action = 'setpriority',
         tooltip = 'Toggle for target type priority\nCurrent AA priority set to \255\255\64\64only bombers',
         queueing = false,
-        params = {'3', '', '', '', '\255\255\64\64Only\n Bombers', ''},
+        params = {'3', '', '', '', '\255\255\64\64Only\n Bombers', ''}
     }
+
     local setPriorityAirNs = {
         id = CMD_SET_PRIORITY,
         type = CMDTYPE.ICON_MODE,
@@ -69,11 +68,11 @@ if gadgetHandler:IsSyncedCode() then
         action = 'setpriority',
         tooltip = 'Toggle for target type priority\nCurrent AA priority set to \255\64\170\255no scouts',
         queueing = false,
-        params = {'4', '', '', '', '', '\255\64\170\255No Scouts'},
+        params = {'4', '', '', '', '', '\255\64\170\255No Scouts'}
     }
-    
+
     local AAunits = {}
-    
+
     airCategories = {
         --Transporters
         [UnitDefNames["armatlas"].id] = "Bombers",
@@ -86,7 +85,6 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tlltplane"].id] = "Bombers",
         [UnitDefNames["armor"].id] = "Bombers",
         [UnitDefNames["corbtrans"].id] = "Bombers",
-        
         --Bombers
         [UnitDefNames["armblz"].id] = "Bombers",
         [UnitDefNames["corfiend"].id] = "Bombers",
@@ -112,7 +110,6 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["armorion"].id] = "Bombers",
         [UnitDefNames["tllanhur"].id] = "Bombers",
         [UnitDefNames["tllaether"].id] = "Bombers",
-        
         [UnitDefNames["airwolf3g"].id] = "Fighters",
         [UnitDefNames["armfig"].id] = "Fighters",
         [UnitDefNames["armhawk"].id] = "Fighters",
@@ -127,7 +124,6 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tllshu"].id] = "Fighters",
         [UnitDefNames["armstratus"].id] = "Fighters",
         [UnitDefNames["tllcondor"].id] = "Fighters",
-        
         --Scouts
         [UnitDefNames["armpeep"].id] = "Scouts",
         [UnitDefNames["armawac"].id] = "Scouts",
@@ -139,38 +135,43 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tllrsplane"].id] = "Scouts",
         [UnitDefNames["tllsonpl"].id] = "Scouts"
     }
-    
+
     local function shallow_copy(t)
         local tmp = {}
+
         for k, v in pairs(t) do
             tmp[k] = v
         end
+
         return tmp
     end
-    
+
     local airCategoriesCached = {}
+
     function gadget:Initialize()
         airCategoriesCached = shallow_copy(airCategories)
     end
-    
+
     function gadget:UnitCreated(unitID, unitDefID)
         local uDef = UnitDefs[unitDefID]
+
         if uDef.customParams.prioritytarget and uDef.customParams.prioritytarget == "air" then
             AAunits[unitID] = true
             InsertUnitCmdDesc(unitID, CMD_SET_PRIORITY, setPriorityAirn)
             SetUnitRulesParam(unitID, "priorityEnabled", 0)
         end
     end
-    
+
     function gadget:UnitDestroyed(unitID, unitDefID)
         if AAunits[unitID] then
             AAunits[unitID] = nil
         end
     end
-    
+
     function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag, synced)
         if cmdID == CMD_SET_PRIORITY then
             cmdDescId = FindUnitCmdDesc(unitID, CMD_SET_PRIORITY)
+
             if cmdParams and cmdParams[1] and cmdDescId then
                 if cmdParams[1] == 0 then
                     EditUnitCmdDesc(unitID, cmdDescId, setPriorityAirn)
@@ -185,9 +186,10 @@ if gadgetHandler:IsSyncedCode() then
                 end
             end
         end
+
         return true
     end
-    
+
     function gadget:UnitCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOpts, cmdTag)
         if cmdID == CMD_SET_PRIORITY then
             if cmdParams and cmdParams[1] then
@@ -219,32 +221,40 @@ if gadgetHandler:IsSyncedCode() then
             end
         end
     end
-    
+
     function gadget:AllowWeaponTarget(unitID, targetID, attackerWeaponNum, attackerWeaponDefID, defPriority)
-        local allowed = true
-        local priority = defPriority
-        if AAunits[unitID] then
-            local priorityEnabled = GetUnitRulesParam(unitID, "priorityEnabled") or 0
-            if priorityEnabled == 1 then
-                local unitDefID = GetUnitDefID(targetID)
-                local airCat = airCategoriesCached[unitDefID]
-                local onlyBombers = GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
-                local noScouts = GetUnitRulesParam(unitID, "targetPriorityNoSouts")
-                local hasPriority = (GetUnitRulesParam(unitID, "targetPriorityFighters") and GetUnitRulesParam(unitID, "targetPriorityBombers"))
-                if airCat and hasPriority and onlyBombers == 0 then
-                    if airCat == "Scouts" then
-                        priority = priority * 1000
-                        if noScouts == 1 then
-                            allowed = false
+        local unitDefID = GetUnitDefID(targetID)
+
+        if unitDefID then
+            local allowed = true
+            local priority = defPriority
+
+            if AAunits[unitID] then
+                local priorityEnabled = GetUnitRulesParam(unitID, "priorityEnabled") or 0
+
+                if priorityEnabled == 1 then
+                    local airCat = airCategoriesCached[unitDefID]
+                    local onlyBombers = GetUnitRulesParam(unitID, "targetPriorityOnlyBombers")
+                    local noScouts = GetUnitRulesParam(unitID, "targetPriorityNoSouts")
+                    local hasPriority = (GetUnitRulesParam(unitID, "targetPriorityFighters") and GetUnitRulesParam(unitID, "targetPriorityBombers"))
+
+                    if airCat and hasPriority and onlyBombers == 0 then
+                        if airCat == "Scouts" then
+                            priority = priority * 1000
+
+                            if noScouts == 1 then
+                                allowed = false
+                            end
+                        else
+                            priority = priority * GetUnitRulesParam(unitID, ("targetPriority" .. airCat))
                         end
-                    else
-                        priority = priority * GetUnitRulesParam(unitID, ("targetPriority"..airCat))
+                    elseif airCat and airCat ~= "Bombers" then
+                        allowed = false
                     end
-                elseif airCat and airCat ~= "Bombers" then
-                    allowed = false
                 end
             end
+
+            return allowed, priority
         end
-        return allowed, priority
     end
 end
