@@ -470,7 +470,11 @@ effectUnitDefs = {
     {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_up", noIconDraw = true, priority=4, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_down", noIconDraw = true, priority=4, onActive=true}},
  },
-	
+ armsr71 = {
+    {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=6, length=48, piece="wingthrust3", noIconDraw = true, priority=3, onActive=true}},
+ },	
  armcyclone = {
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rrthrust", noIconDraw = true, priority=3, onActive=true}},
