@@ -188,10 +188,14 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "ASM",
+				maindir = "0 0 1",
+				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "CORJEAG_MISSILE",
+				maindir = "0 0 1",
+				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
 		},
