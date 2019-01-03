@@ -141,6 +141,8 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "BARRAGE",
+				maindir = "0 0 1",
+				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 		},
