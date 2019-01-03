@@ -20,13 +20,46 @@ if (not gadgetHandler:IsSyncedCode()) then
 	return false	--	no unsynced code
 end
 
-local interceptors = {}
+local antiNukes = {
+--Arm 
+  [UnitDefNames["armscab"].id] = true,
+  [UnitDefNames["armscab1"].id] = true,
+  [UnitDefNames["armamd"].id] = true,
+  [UnitDefNames["armamd1"].id] = true,
+  [UnitDefNames["armamd2"].id] = true,
+  [UnitDefNames["armcarry"].id] = true,
+--Core
+  [UnitDefNames["cormabm"].id] = true,
+  [UnitDefNames["cormabm1"].id] = true,
+  [UnitDefNames["corfmd"].id] = true,
+  [UnitDefNames["corfmd1"].id] = true,
+  [UnitDefNames["corfmd2"].id] = true,
+  [UnitDefNames["corcarry"].id] = true,
+--The lost legacy
+  [UnitDefNames["tllturtle"].id] = true,
+  [UnitDefNames["tllantinuke"].id] = true,
+  [UnitDefNames["tllantinuke1"].id] = true,
+  [UnitDefNames["tllgazelle"].id] = true,
+  [UnitDefNames["tllgiant"].id] = true,
+}
+
+local interceptorsID = {}
+ 
+function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+    if (antiNukes[unitDefID]) then
+        interceptorsID[unitID] = antiNukes[unitDefID]
+  end
+end
+
+function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
+	if (antiNukes[unitDefID]) then 
+		interceptorsID[unitID] = nil
+	end
+end
 
 function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponID, targetProjectileID)
-	local ud = UnitDefs[Spring.GetUnitDefID(interceptorUnitID)]
-	local wd = WeaponDefs[ud.weapons[interceptorWeaponID].weaponDef]
 	local ox, _, oz = Spring.GetUnitPosition(interceptorUnitID)
-
+	local coverageRange = interceptorsID[interceptorUnitID]
     --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
 	local targetType, targetID = Spring.GetProjectileTarget(targetProjectileID)
 
@@ -40,15 +73,20 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
         elseif targetType == string.byte('p') then --PROJECTILE
             tx, ty,  tz = Spring.GetProjectilePosition(targetID)
         elseif targetType == string.byte('g') then -- ground
-            tx, ty, tz = unpack(targetID)
+            tx, ty, tz = targetID[1], targetID[2], targetID[3]
         end
-
-        return (ox - tx) ^ 2 + (oz - tz) ^ 2 < wd.coverageRange ^ 2
+        local areaX = ox - tx
+        local areaZ = oz - tz
+        return areaX * areaX + areaZ * areaZ < coverageRange
     end
 end
 
 
 function gadget:Initialize()
+	for unitDefID, _ in pairs(antiNukes) do
+		local coverageRange = WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange
+    	antiNukes[unitDefID] = coverageRange * coverageRange
+	end
 	for wdid, wd in pairs(WeaponDefs) do
 		if (wd.interceptor and wd.interceptor ~=16) and wd.coverageRange then
 			Script.SetWatchWeapon(wdid, true)
