@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, fuselage, eng1, eng2, flare1, fin, ribbon1, ribbon2;
+piece  base, fuselage, eng1, eng2, flare1, fin, ribbon1, ribbon2, 
+	   turret1, turret2, barrel1, barrel2, fpt1a, fpt1b, fpt2a, fpt2b;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -42,6 +43,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 }
 Create()
 {
+	hide turret1;
+	hide turret2;
+	hide barrel1;
+	hide barrel2;
 	hide ribbon1;
 	hide ribbon2;
 	hide eng1;
