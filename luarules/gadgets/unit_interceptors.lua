@@ -15,6 +15,8 @@ end
 -- 17 jul 2015 [teh]decay - fixed error: unit_interceptors.lua"]:27: bad argument #1 to 'unpack' (table expected, got number)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+local GetUnitPosition = Spring.GetUnitPosition
+local GetProjectileTarget = Spring.GetProjectileTarget
 
 if (not gadgetHandler:IsSyncedCode()) then
 	return false	--	no unsynced code
@@ -58,27 +60,24 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 end
 
 function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponID, targetProjectileID)
-	local ox, _, oz = Spring.GetUnitPosition(interceptorUnitID)
+	local ox, _, oz = GetUnitPosition(interceptorUnitID)
 	local coverageRange = interceptorsID[interceptorUnitID]
-    --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
-	local targetType, targetID = Spring.GetProjectileTarget(targetProjectileID)
-
-    if targetType then
-        local tx, ty, tz;
-
-        if targetType == string.byte('u') then -- unit
-            tx, ty,  tz = Spring.GetUnitPosition(targetID)
-        elseif targetType == string.byte('f') then -- feature
-            tx, ty,  tz = Spring.GetFeaturePosition(targetID)
-        elseif targetType == string.byte('p') then --PROJECTILE
-            tx, ty,  tz = Spring.GetProjectilePosition(targetID)
-        elseif targetType == string.byte('g') then -- ground
-            tx, ty, tz = targetID[1], targetID[2], targetID[3]
-        end
-        local areaX = ox - tx
-        local areaZ = oz - tz
-        return areaX * areaX + areaZ * areaZ < coverageRange
-    end
+	local targetType, targetID = GetProjectileTarget(targetProjectileID)
+	if targetType then
+		local tx, tz
+		if targetType == 117 then  -- unit
+			tx, _, tz = GetUnitPosition(targetID)
+		elseif targetType == 102 then  -- feature
+			tx, _, tz = GetFeaturePosition(targetID)
+		elseif targetType == 112 then -- PROJECTILE
+			tx, _, tz = GetProjectilePosition(targetID)
+		elseif targetType == 103 then  -- ground
+			tx, _, tz = targetID[1], targetID[2], targetID[3]
+		end
+		local areaX = ox - tx
+		local areaZ = oz - tz
+		return areaX * areaX + areaZ * areaZ < coverageRange
+	end
 end
 
 
