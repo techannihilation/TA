@@ -44,7 +44,8 @@ local antiNukes = {
 }
 
 local interceptorsID = {}
- 
+local projectileTargetCache = {}
+
 function gadget:UnitCreated(unitID, unitDefID, unitTeam)
     if (antiNukes[unitDefID]) then
         interceptorsID[unitID] = antiNukes[unitDefID]
@@ -57,28 +58,41 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
 	end
 end
 
+function gadget:ProjectileDestroyed(proID)
+	if projectileTargetCache[proID] then
+		projectileTargetCache[proID] = nil
+	end
+end
+
 function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponID, targetProjectileID)
 	local ox, _, oz = Spring.GetUnitPosition(interceptorUnitID)
 	local coverageRange = interceptorsID[interceptorUnitID]
     --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
-	local targetType, targetID = Spring.GetProjectileTarget(targetProjectileID)
-
-    if targetType then
-        local tx, ty, tz;
-
-        if targetType == string.byte('u') then -- unit
-            tx, ty,  tz = Spring.GetUnitPosition(targetID)
-        elseif targetType == string.byte('f') then -- feature
-            tx, ty,  tz = Spring.GetFeaturePosition(targetID)
-        elseif targetType == string.byte('p') then --PROJECTILE
-            tx, ty,  tz = Spring.GetProjectilePosition(targetID)
-        elseif targetType == string.byte('g') then -- ground
-            tx, ty, tz = targetID[1], targetID[2], targetID[3]
-        end
-        local areaX = ox - tx
+    if projectileTargetCache[targetProjectileID] and projectileTargetCache[targetProjectileID][1] then
+		local tx = projectileTargetCache[targetProjectileID][1] or nil
+		local tz = projectileTargetCache[targetProjectileID][2] or nil
+		local areaX = ox - tx
         local areaZ = oz - tz
         return areaX * areaX + areaZ * areaZ < coverageRange
-    end
+	else
+		local targetType, targetID = Spring.GetProjectileTarget(targetProjectileID)
+		if targetType then
+       		local tx, ty, tz
+        	if targetType == string.byte('u') then -- unit
+        	    tx, ty,  tz = Spring.GetUnitPosition(targetID)
+        	elseif targetType == string.byte('f') then -- feature
+            	tx, ty,  tz = Spring.GetFeaturePosition(targetID)
+        	elseif targetType == string.byte('p') then --PROJECTILE
+            	tx, ty,  tz = Spring.GetProjectilePosition(targetID)
+        	elseif targetType == string.byte('g') then -- ground
+            	tx, ty, tz = targetID[1], targetID[2], targetID[3]
+        	end
+        	local areaX = ox - tx
+        	local areaZ = oz - tz
+        	projectileTargetCache[targetProjectileID] = {tx,tz}
+        	return areaX * areaX + areaZ * areaZ < coverageRange
+        end
+	end
 end
 
 
