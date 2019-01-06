@@ -69,7 +69,6 @@ end
 function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponID, targetProjectileID)
 	local ox, _, oz = GetUnitPosition(interceptorUnitID)
 	local coverageRange = interceptorsID[interceptorUnitID]
-<<<<<<< HEAD
     --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
     if projectileTargetCache[targetProjectileID] and projectileTargetCache[targetProjectileID][1] then
 		local tx = projectileTargetCache[targetProjectileID][1] or nil
@@ -78,15 +77,15 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
         local areaZ = oz - tz
         return areaX * areaX + areaZ * areaZ < coverageRange
 	else
-		local targetType, targetID = Spring.GetProjectileTarget(targetProjectileID)
+		local targetType, targetID = GetProjectileTarget(targetProjectileID)
 		if targetType then
        		local tx, ty, tz
         	if targetType == string.byte('u') then -- unit
-        	    tx, ty,  tz = Spring.GetUnitPosition(targetID)
+        	    tx, ty,  tz = GetUnitPosition(targetID)
         	elseif targetType == string.byte('f') then -- feature
-            	tx, ty,  tz = Spring.GetFeaturePosition(targetID)
+            	tx, ty,  tz = GetFeaturePosition(targetID)
         	elseif targetType == string.byte('p') then --PROJECTILE
-            	tx, ty,  tz = Spring.GetProjectilePosition(targetID)
+            	tx, ty,  tz = GetProjectilePosition(targetID)
         	elseif targetType == string.byte('g') then -- ground
             	tx, ty, tz = targetID[1], targetID[2], targetID[3]
         	end
@@ -95,23 +94,6 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
         	projectileTargetCache[targetProjectileID] = {tx,tz}
         	return areaX * areaX + areaZ * areaZ < coverageRange
         end
-=======
-	local targetType, targetID = GetProjectileTarget(targetProjectileID)
-	if targetType then
-		local tx, tz
-		if targetType == 117 then  -- unit
-			tx, _, tz = GetUnitPosition(targetID)
-		elseif targetType == 102 then  -- feature
-			tx, _, tz = GetFeaturePosition(targetID)
-		elseif targetType == 112 then -- PROJECTILE
-			tx, _, tz = GetProjectilePosition(targetID)
-		elseif targetType == 103 then  -- ground
-			tx, _, tz = targetID[1], targetID[2], targetID[3]
-		end
-		local areaX = ox - tx
-		local areaZ = oz - tz
-		return areaX * areaX + areaZ * areaZ < coverageRange
->>>>>>> 81a34680f703070772a6c9c2d6830f03bb0e12ed
 	end
 end
 
