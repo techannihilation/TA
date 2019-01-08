@@ -14,8 +14,8 @@ end
 --------------------------------------------------------------------------------
 -- SPEEDUPS
 --------------------------------------------------------------------------------
-Echo = Spring.Echo
 local color = "\255\255\64\64"
+local SendMessageToTeam = Spring.SendMessageToTeam
 
 --------------------------------------------------------------------------------
 -- CONSTANS
@@ -38,10 +38,11 @@ if (gadgetHandler:IsSyncedCode()) then
 	--------------------------------------------------------------------------------
 	function gadget:AllowUnitTransfer(unitID, unitDefID, oldTeam, newTeam, capture)
 		if NUKES[unitDefID] then
-			Echo(color .. "Warning: " .. NUKES[unitDefID] .. " can not be shared to other team !")
+			SendMessageToTeam(oldTeam, color .. "Warning: " .. NUKES[unitDefID] .. " can not be shared to other team !")
 
 			return false
 		end
+
 		return true
 	end
 else
