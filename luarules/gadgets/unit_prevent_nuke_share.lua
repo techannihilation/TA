@@ -42,6 +42,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 			return false
 		end
+		return true
 	end
 else
 	--------------------------------------------------------------------------------
