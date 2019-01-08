@@ -49,6 +49,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corsilo",
+		unitrestricted = 12,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
