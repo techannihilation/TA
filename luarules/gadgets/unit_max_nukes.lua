@@ -1,7 +1,7 @@
 function gadget:GetInfo()
 	return {
-		name = "Prevent Share Nukes",
-		desc = "Prevent Share Nukes",
+		name = "Max Nukes",
+		desc = "Limits number of nukes",
 		author = "Silver",
 		version = "",
 		date = "2019",
@@ -21,13 +21,13 @@ local GetTeamList = Spring.GetTeamList
 --------------------------------------------------------------------------------
 -- CONSTANS
 --------------------------------------------------------------------------------
+local maxNukes = 12
 local NukeList = {"armsilo", "armsilo1", "corsilo", "corsilo1", "tllsilo", "tllsilo1"}
 local NUKES = {}
 
 for _, v in pairs(NukeList) do
 	NUKES[UnitDefNames[v].id] = {
-		name = UnitDefNames[v].humanName,
-		maxThisUnit = UnitDefNames[v].maxThisUnit
+		name = UnitDefNames[v].humanName
 	}
 end
 
@@ -45,11 +45,9 @@ if (gadgetHandler:IsSyncedCode()) then
 		for _, teamID in ipairs(GetTeamList()) do
 			TeamNukesNb[teamID] = 0
 			AllTeamUnits = GetTeamUnits(teamID)
-
 			for i = 1, #AllTeamUnits do
 				local unitID = AllTeamUnits[i]
 				local unitDefID = GetUnitDefID(unitID)
-
 				if NUKES[unitDefID] then
 					TeamNukesNb[teamID] = TeamNukesNb[teamID] + 1
 				end
@@ -76,8 +74,16 @@ if (gadgetHandler:IsSyncedCode()) then
 		end
 	end
 
+	function gadget:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z, facing)
+		if NUKES[unitDefID] and (TeamNukesNb[builderTeam] >= maxNukes) then
+			SendMessageToTeam(builderTeam, color .. "Warning: Can't build " .. NUKES[unitDefID].name .. ", nuke number limit has been reached.")
+			return false
+		end
+		return true
+	end
+
 	function gadget:AllowUnitTransfer(unitID, unitDefID, oldTeam, newTeam, capture)
-		if NUKES[unitDefID] and (TeamNukesNb[newTeam] >= NUKES[unitDefID].maxThisUnit - 1) then
+		if NUKES[unitDefID] and (TeamNukesNb[newTeam] >= maxNukes) then
 			SendMessageToTeam(oldTeam, color .. "Warning: Can't share " .. NUKES[unitDefID].name .. ", nuke number limit for team " .. newTeam .. " has been reached.")
 			return false
 		end

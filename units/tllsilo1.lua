@@ -40,7 +40,6 @@ return {
 		sightdistance = 350,
 		standingfireorder = 0,
 		unitname = "tllsilo1",
-		unitrestricted = 12,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
