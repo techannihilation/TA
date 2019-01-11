@@ -43,9 +43,9 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		move plate to y-axis [4.450000] now;
-		move door1 to y-axis [-2.350000] now;
-		move door2 to y-axis [-2.250000] now;
+	//	move plate to y-axis [4.450000] now;
+	//	move door1 to y-axis [-2.350000] now;
+	//	move door2 to y-axis [-2.250000] now;
 		turn door1 to z-axis <-70.659341> now;
 		turn door2 to z-axis <70.659341> now;
 		turn arm to x-axis <90.016484> now;
