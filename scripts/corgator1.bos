@@ -11,6 +11,7 @@ static-var  restore_delay;
 #define SIG_AIM				2
 
 
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
