@@ -63,7 +63,7 @@ return {
 			[8] = "tllsam",
 			[9] = "tlltetanos",
 			[10] = "tllpcan",
-			[11] = "tllfireraiser",
+			[11] = "tllfireraiser1",
 			[12] = "tllriot",
 			[13] = "tllhplasma",
 			[14] = "tllmoth",
