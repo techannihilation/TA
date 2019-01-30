@@ -9,7 +9,7 @@ return {
 		builddistance = 350,
 		builder = true,
 		buildpic = "abuilderlvl4.dds",
-		buildtime = 355000,
+		buildtime = 200000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
@@ -55,7 +55,7 @@ return {
 		turninplacespeedlimit = 3.828,
 		turnrate = 100,
 		unitname = "abuilderlvl4",
-		workertime = 1000,
+		workertime = 440,
 		buildoptions = {
 			[1] = "ananotower",
 			[2] = "armomni",
