@@ -55,7 +55,7 @@ return {
 		turninplacespeedlimit = 5.28,
 		turnrate = 353,
 		unitname = "cbuilderlvl1",
-		workertime = 150,
+		workertime = 125,
 		buildoptions = {
 			[1] = "corsolar",
 			[2] = "cormex",
