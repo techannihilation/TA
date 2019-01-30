@@ -9,7 +9,7 @@ return {
 		builddistance = 100,
 		builder = true,
 		buildpic = "tllbuilderlvl2.dds",
-		buildtime = 4000,
+		buildtime = 8000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
