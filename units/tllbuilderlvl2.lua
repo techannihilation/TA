@@ -51,7 +51,7 @@ return {
 		turninplacespeedlimit = 4.62,
 		turnrate = 380.38,
 		unitname = "tllbuilderlvl2",
-		workertime = 200,
+		workertime = 125,
 		buildoptions = {
 			[1] = "tllradar",
 			[2] = "tllgate2",
