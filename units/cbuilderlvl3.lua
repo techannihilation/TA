@@ -9,7 +9,7 @@ return {
 		builddistance = 225,
 		builder = true,
 		buildpic = "cbuilderlvl3.dds",
-		buildtime = 68000,
+		buildtime = 34000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
@@ -57,7 +57,7 @@ return {
 		turninplacespeedlimit = 3.3,
 		turnrate = 200,
 		unitname = "cbuilderlvl3",
-		workertime = 500,
+		workertime = 250,
 		buildoptions = {
 			[1] = "corarad",
 			[2] = "corvipe",
