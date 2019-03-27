@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, turret, flare, barrel, sleeve;
+piece  base, turret, flare1, barrel1, sleeve1, flare2, barrel2, sleeve2;
 
-static-var  restore_delay;
+static-var  restore_delay, gun;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -50,7 +50,7 @@ HitByWeapon(anglex, anglez)
 
 Create()
 {
-	hide flare;
+	gun = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -78,9 +78,11 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	show flare;
-	sleep 150;
-	hide flare;
+	++gun;
+	if (gun == 2)
+	{
+		gun = 0;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -90,7 +92,14 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = flare;
+	if (gun ==0) 
+	{
+		piecenum = flare1;
+	}
+	if (gun ==1) 
+	{
+		piecenum = flare2;
+	}	
 }
 
 SweetSpot(piecenum)
@@ -100,42 +109,41 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode barrel type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
 		explode base type NOHEATCLOUD;
-		explode flare type NOHEATCLOUD;
-		explode sleeve type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD;
+		explode sleeve2 type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode barrel type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
 		explode base type NOHEATCLOUD;
-		explode flare type NOHEATCLOUD | FALL;
-		explode sleeve type NOHEATCLOUD | FALL;
+		explode sleeve1 type NOHEATCLOUD | FALL;
+		explode sleeve2 type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode base type NOHEATCLOUD;
-		explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode base type NOHEATCLOUD;
-	explode flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
