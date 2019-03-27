@@ -165,11 +165,11 @@ Oeffne()
 	
 	wait-for-turn l3Klap around z-axis;
 	
-	move r1Blink to x-axis [2] speed [4];
-	move r3Blink to x-axis [2] speed [4];
+	move r1Blink to x-axis [2.3] speed [4];
+	move r3Blink to x-axis [2.3] speed [4];
 	
-	move l1Blink to x-axis [-2] speed [4];
-	move l3Blink to x-axis [-2] speed [4];
+	move l1Blink to x-axis [-2.3] speed [4];
+	move l3Blink to x-axis [-2.3] speed [4];
 
 	turn r1Arm to z-axis <130> speed <20>;
 	turn r2Arm to z-axis <130> speed <20>;
