@@ -9,7 +9,7 @@ return {
 		builddistance = 100,
 		builder = true,
 		buildpic = "tllbuilderlvl2.dds",
-		buildtime = 4000,
+		buildtime = 8000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
@@ -51,7 +51,7 @@ return {
 		turninplacespeedlimit = 4.62,
 		turnrate = 380.38,
 		unitname = "tllbuilderlvl2",
-		workertime = 200,
+		workertime = 125,
 		buildoptions = {
 			[1] = "tllradar",
 			[2] = "tllgate2",

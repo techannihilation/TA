@@ -36,7 +36,7 @@ return {
 		mass = 930,
 		maxdamage = 1850,
 		maxslope = 10,
-		maxvelocity = 7,
+		maxvelocity = 6,
 		maxwaterdepth = 18,
 		metalmake = 1,
 		metalstorage = 100,
@@ -51,7 +51,7 @@ return {
 		turninplacespeedlimit = 4.62,
 		turnrate = 380.38,
 		unitname = "tllhtca",
-		workertime = 250,
+		workertime = 125,
 		buildoptions = {
 			[1] = "tllawindtrap",
 			[2] = "tllgen",

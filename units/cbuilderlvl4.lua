@@ -9,7 +9,7 @@ return {
 		builddistance = 275,
 		builder = true,
 		buildpic = "cbuilderlvl4.dds",
-		buildtime = 420000,
+		buildtime = 220000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
@@ -57,7 +57,7 @@ return {
 		turninplacespeedlimit = 3.3,
 		turnrate = 100,
 		unitname = "cbuilderlvl4",
-		workertime = 800,
+		workertime = 500,
 		buildoptions = {
 			[1] = "cnanotower",
 			[2] = "coromni",
