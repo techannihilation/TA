@@ -57,7 +57,8 @@ return {
 			[3] = "champ",
 			[4] = "armsiege",
 			[5] = "armtigre2",
-			[6] = "corbt",
+			[6] = "corminotaur",
+			[7] = "corbt",
 		},
 		customparams = {
 			buildpic = "corevp.dds",
