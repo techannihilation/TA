@@ -202,8 +202,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 550,
 				damage = {
-					commanders = 1500,
-					default = 3000,
+					commanders = 1000,
+					default = 2000,
 					subs = 5,
 				},
 			},
@@ -311,26 +311,10 @@ return {
 			},
 			[10] = {
 				def = "DevastatorRockets",
-				maindir = "1 0 0.2",
-				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 			[11] = {
 				def = "DevastatorRockets",
-				maindir = "-1 0 0.2",
-				maxangledif = 180,
-				onlytargetcategory = "SURFACE",
-			},
-			[12] = {
-				def = "DevastatorRockets",
-				maindir = "1 0 -0.2",
-				maxangledif = 180,
-				onlytargetcategory = "SURFACE",
-			},
-			[13] = {
-				def = "DevastatorRockets",
-				maindir = "-1 0 -0.2",
-				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 		},
