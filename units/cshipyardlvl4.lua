@@ -47,7 +47,8 @@ return {
 		yardmap = "ooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccoo",
 		buildoptions = {
 			[1] = "corvaliant",
-			[2] = "cdevastator",
+			[2] = "cordust",
+			[3] = "cdevastator",
 		},
 		customparams = {
 			buildpic = "cshipyardlvl4.dds",
