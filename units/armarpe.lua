@@ -195,10 +195,14 @@ return {
 			[2] = {
 				def = "BLADEWING_LYZER",
 				onlytargetcategory = "SURFACE",
+				maindir = "0 0 1",
+				maxangledif = 160,
 			},
 			[3] = {
 				def = "BLADEWING_LYZER",
 				onlytargetcategory = "SURFACE",
+				maindir = "0 0 1",
+				maxangledif = 160,
 			},
 		},
 	},
