@@ -11,11 +11,10 @@ piece  base, Head, Engine, Connection1, Connection2, BaseBox1, BaseBox2, BaseBox
        turret3l, sleeve3l, flare3l,
        turret3r, sleeve3r, flare3r,
        turret1m, sleeve1m, barrel1m, flare1m, turret2m, plate2m, sleeve2m,
-       barrel2m, flare2m, turret3m, plate3m, sleeve3m, barrel3m, flare3m, rocketsr,
-       rocketsl, rocketsr2, rocketsl2, rocketsr3, rocketsl3, rocketsr4, rocketsl4, mslr0,
-       mslr1, mslr2, mslr3, msll0, msll1, msll2, msll3, rockets2r,
-       rockets2l, rockets2r2, rockets2l2, rockets2r3, rockets2l3, rockets2r4, rockets2l4, msl2r0,
-       msl2r1, msl2r2, msl2r3, msl2l0, msl2l1, msl2l2, msl2l3;
+       barrel2m, flare2m, turret3m, plate3m, sleeve3m, barrel3m, flare3m, rocketsr1,
+       rocketsl1, rocketsr2, rocketsl2, rocketsr3, rocketsl3, rocketsr4, rocketsl4, mslr0,
+       mslr1, mslr2, mslr3, msll0, msll1, msll2, msll3, rockets2r1,
+       rockets2l1, rockets2r2, rockets2l2, rockets2r3, rockets2l3, rockets2r4, rockets2l4, msl2r0, msl2r1, msl2r2, msl2r3, msl2l0, msl2l1, msl2l2, msl2l3;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
@@ -104,70 +103,144 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-missileReloadr()
+missileReloadr1(initialise)
 {
-	sleep 28000;
-	show mslr0;
-	sleep 500;
-	show mslr1;
-	sleep 500;
-	show mslr2;
-	sleep 500;
-	show mslr3;
-	Static_Var_18 = 0;
+	if (Static_Var_10 == 1 or initialise == 1)
+	{
+		move msl2l0 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2l0;
+		move msl2l0 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_10 == 2 or initialise == 1)
+	{
+		move msl2r0 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2r0;
+		move msl2r0 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_10 == 3 or initialise == 1)
+	{
+		move msl2l1 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2l1;
+		move msl2l1 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_10 == 4 or initialise == 1)
+	{
+		move msl2r1 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2r1;
+		move msl2r1 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_10 == 5 or initialise == 1)
+	{
+		move msl2l2 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2l2;
+		move msl2l2 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_10 == 6 or initialise == 1)
+	{
+		move msl2r2 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2r2;
+		move msl2r2 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_10 == 7 or initialise == 1)
+	{
+		move msl2l3 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2l3;
+		move msl2l3 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_10 == 0 or initialise == 1)
+	{
+		move msl2r3 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msl2r3;
+		move msl2r3 to y-axis [0.000000] speed [1.000000];
+	}
 }
-
-missileReloadl()
+missileReloadr2(initialise)
 {
-	sleep 28000;
-	show msll0;
-	sleep 500;
-	show msll1;
-	sleep 500;
-	show msll2;
-	sleep 500;
-	show msll3;
-	Static_Var_19 = 0;
-}
-
-missileReload2r()
-{
-	sleep 28000;
-	show msl2r0;
-	sleep 500;
-	show msl2r1;
-	sleep 500;
-	show msl2r2;
-	sleep 500;
-	show msl2r3;
-	Static_Var_20 = 0;
-}
-
-missileReload2l()
-{
-	sleep 28000;
-	show msl2l0;
-	sleep 500;
-	show msl2l1;
-	sleep 500;
-	show msl2l2;
-	sleep 500;
-	show msl2l3;
-	Static_Var_21 = 0;
+	if (Static_Var_11 == 1 or initialise == 1)
+	{
+		move msll0 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msll0;
+		move msll0 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_11 == 2 or initialise == 1)
+	{
+		move mslr0 to y-axis [-11.000000] now;
+		sleep 2500;
+		show mslr0;
+		move mslr0 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_11 == 3 or initialise == 1)
+	{
+		move msll1 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msll1;
+		move msll1 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_11 == 4 or initialise == 1)
+	{
+		move mslr1 to y-axis [-11.000000] now;
+		sleep 2500;
+		show mslr1;
+		move mslr1 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_11 == 5 or initialise == 1)
+	{
+		move msll2 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msll2;
+		move msll2 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_11 == 6 or initialise == 1)
+	{
+		move mslr2 to y-axis [-11.000000] now;
+		sleep 2500;
+		show mslr2;
+		move mslr2 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_11 == 7 or initialise == 1)
+	{
+		move msll3 to y-axis [-11.000000] now;
+		sleep 2500;
+		show msll3;
+		move msll3 to y-axis [0.000000] speed [1.000000];
+	}
+	if (Static_Var_11 == 0 or initialise == 1)
+	{
+		move mslr3 to y-axis [-11.000000] now;
+		sleep 2500;
+		show mslr3;
+		move mslr3 to y-axis [0.000000] speed [1.000000];
+	}
 }
 
 Create()
 {
-	hide flare1r;
-	hide flare1l;
-	hide flare2r;
-	hide flare2l;
-	hide flare3r;
-	hide flare3l;
-	hide flare1m;
-	hide flare2m;
-	hide flare3m;
-
+	hide msll0;
+	hide msll1;
+	hide msll2;
+	hide msll3;
+	hide msl2l0;
+	hide msl2l1;
+	hide msl2l2;
+	hide msl2l3;
+	hide mslr0;
+	hide mslr1;
+	hide mslr2;
+	hide mslr3;
+	hide msl2r0;
+	hide msl2r1;
+	hide msl2r2;
+	hide msl2r3;
+	
 	Static_Var_1 = 0;
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
@@ -179,8 +252,6 @@ Create()
 	Static_Var_9 = 0;
 	Static_Var_10 = 0;
 	Static_Var_11 = 0;
-	Static_Var_12 = 0;
-	Static_Var_13 = 0;
 	Static_Var_14 = 5000;
 	Static_Var_15 = 0;
 	Static_Var_16 = 0;
@@ -189,7 +260,10 @@ Create()
 	Static_Var_20 = 0;
 	Static_Var_21 = 0;
 	start-script SmokeUnit();
-	set ARMORED to 1;
+	start-script missileReloadr1(1);
+	sleep 50;
+	start-script missileReloadr2(1);
+
 }
 
 RestoreAfterDelay()
@@ -535,274 +609,186 @@ QueryWeapon9(piecenum)
 
 AimFromWeapon10(piecenum)
 {
-	piecenum = rocketsr;
+	piecenum = Connection2;
 }
 
 AimWeapon10(heading, pitch)
 {
-	while( Static_Var_18 == 0 )
-	{
 		signal 1024;
 		set-signal-mask 1024;
-		turn rocketsr to y-axis heading speed <300.000000>;
-		wait-for-turn rocketsr around y-axis;
 		return (1);
-	}
 }
 
 QueryWeapon10(piecenum)
 {
-	if( Static_Var_10 == 0 )
-	{
-		piecenum = rocketsr;
-	}
 	if( Static_Var_10 == 1 )
 	{
-		piecenum = rocketsr2;
+		piecenum = rockets2l1;
 	}
 	if( Static_Var_10 == 2 )
 	{
-		piecenum = rocketsr3;
+		piecenum = rockets2r1;
 	}
 	if( Static_Var_10 == 3 )
 	{
-		piecenum = rocketsr4;
+		piecenum = rockets2l2;
+	}
+	if( Static_Var_10 == 4 )
+	{
+		piecenum = rockets2r2;
+	}
+	if( Static_Var_10 == 5 )
+	{
+		piecenum = rockets2l3;
+	}
+	if( Static_Var_10 == 6 )
+	{
+		piecenum = rockets2r3;
+	}
+	if( Static_Var_10 == 7 )
+	{
+		piecenum = rockets2l4;
+	}
+	if( Static_Var_10 == 0 )
+	{
+		piecenum = rockets2r4;
 	}
 }
 
 FireWeapon10()
 {
-	if( Static_Var_18 == 0 )
-	{
 		if( Static_Var_10 == 0 )
 		{
-			hide mslr0;
+			hide msl2l0;
 		}
 		if( Static_Var_10 == 1 )
 		{
-			hide mslr1;
+			hide msl2r0;
 		}
 		if( Static_Var_10 == 2 )
 		{
-			hide mslr2;
+			hide msl2l1;
 		}
 		if( Static_Var_10 == 3 )
 		{
-			hide mslr3;
-			Static_Var_18 = 1;
-			sleep 1330;
-			start-script missileReloadr();
+			hide msl2r1;
 		}
+		if( Static_Var_10 == 4 )
+		{
+			hide msl2l2;
+		}
+		if( Static_Var_10 == 5 )
+		{
+			hide msl2r2;
+		}
+		if( Static_Var_10 == 6 )
+		{
+			hide msl2l3;
+		}
+		if( Static_Var_10 == 7 )
+		{
+			hide msl2r3;
+		}		
 		++Static_Var_10;
-	}
-	if( Static_Var_10 == 4 )
+		
+	if( Static_Var_10 == 8 )
 	{
 		Static_Var_10 = 0;
 	}
+	
+	start-script missileReloadr1(0);
 }
 
 AimFromWeapon11(piecenum)
 {
-	piecenum = rocketsl;
+	piecenum = Connection1;
 }
 
 AimWeapon11(heading, pitch)
 {
-	while( Static_Var_19 == 0 )
-	{
 		signal 2048;
 		set-signal-mask 2048;
-		turn rocketsl to y-axis heading speed <300.000000>;
-		wait-for-turn rocketsl around y-axis;
 		return (1);
-	}
 }
 
 QueryWeapon11(piecenum)
 {
-	if( Static_Var_11 == 0 )
-	{
-		piecenum = rocketsl;
-	}
 	if( Static_Var_11 == 1 )
 	{
-		piecenum = rocketsl2;
+		piecenum = rocketsl1;
 	}
 	if( Static_Var_11 == 2 )
 	{
-		piecenum = rocketsl3;
+		piecenum = rocketsr1;
 	}
 	if( Static_Var_11 == 3 )
 	{
+		piecenum = rocketsl2;
+	}
+	if( Static_Var_11 == 4 )
+	{
+		piecenum = rocketsr2;
+	}
+	if( Static_Var_11 == 5 )
+	{
+		piecenum = rocketsl3;
+	}
+	if( Static_Var_11 == 6 )
+	{
+		piecenum = rocketsr3;
+	}
+	if( Static_Var_11 == 7 )
+	{
 		piecenum = rocketsl4;
+	}
+	if( Static_Var_11 == 0 )
+	{
+		piecenum = rocketsr4;
 	}
 }
 
 FireWeapon11()
 {
-	if( Static_Var_19 == 0 )
-	{
 		if( Static_Var_11 == 0 )
 		{
 			hide msll0;
 		}
 		if( Static_Var_11 == 1 )
 		{
-			hide msll1;
+			hide mslr0;
 		}
 		if( Static_Var_11 == 2 )
 		{
-			hide msll2;
+			hide msll1;
 		}
 		if( Static_Var_11 == 3 )
 		{
-			hide msll3;
-			Static_Var_19 = 1;
-			sleep 1330;
-			start-script missileReloadl();
+			hide mslr1;
 		}
+		if( Static_Var_11 == 4 )
+		{
+			hide msll2;
+		}
+		if( Static_Var_11 == 5 )
+		{
+			hide mslr2;
+		}
+		if( Static_Var_11 == 6 )
+		{
+			hide msll3;
+		}
+		if( Static_Var_11 == 7 )
+		{
+			hide mslr3;
+		}		
 		++Static_Var_11;
-	}
-	if( Static_Var_11 == 4 )
+		
+	if( Static_Var_11 == 8 )
 	{
 		Static_Var_11 = 0;
 	}
-}
-
-AimFromWeapon12(piecenum)
-{
-	piecenum = rockets2r;
-}
-
-AimWeapon12(heading, pitch)
-{
-	while( Static_Var_20 == 0 )
-	{
-		signal 2048;
-		set-signal-mask 2048;
-		turn rockets2r to y-axis heading speed <300.000000>;
-		wait-for-turn rockets2r around y-axis;
-		return (1);
-	}
-}
-
-QueryWeapon12(piecenum)
-{
-	if( Static_Var_12 == 0 )
-	{
-		piecenum = rockets2r;
-	}
-	if( Static_Var_12 == 1 )
-	{
-		piecenum = rockets2r2;
-	}
-	if( Static_Var_12 == 2 )
-	{
-		piecenum = rockets2r3;
-	}
-	if( Static_Var_12 == 3 )
-	{
-		piecenum = rockets2r4;
-	}
-}
-
-FireWeapon12()
-{
-	if( Static_Var_20 == 0 )
-	{
-		if( Static_Var_12 == 0 )
-		{
-			hide msl2r0;
-		}
-		if( Static_Var_12 == 1 )
-		{
-			hide msl2r1;
-		}
-		if( Static_Var_12 == 2 )
-		{
-			hide msl2r2;
-		}
-		if( Static_Var_12 == 3 )
-		{
-			hide msl2r3;
-			Static_Var_20 = 1;
-			sleep 1330;
-			start-script missileReload2r();
-		}
-		++Static_Var_12;
-	}
-	if( Static_Var_12 == 4 )
-	{
-		Static_Var_12 = 0;
-	}
-}
-
-AimFromWeapon13(piecenum)
-{
-	piecenum = rockets2l;
-}
-
-AimWeapon13(heading, pitch)
-{
-	while( Static_Var_21 == 0 )
-	{
-		signal 8192;
-		set-signal-mask 8192;
-		turn rockets2l to y-axis heading speed <300.000000>;
-		wait-for-turn rockets2l around y-axis;
-		return (1);
-	}
-}
-
-QueryWeapon13(piecenum)
-{
-	if( Static_Var_13 == 0 )
-	{
-		piecenum = rockets2l;
-	}
-	if( Static_Var_13 == 1 )
-	{
-		piecenum = rockets2l2;
-	}
-	if( Static_Var_13 == 2 )
-	{
-		piecenum = rockets2l3;
-	}
-	if( Static_Var_13 == 3 )
-	{
-		piecenum = rockets2l4;
-	}
-}
-
-FireWeapon13()
-{
-	if( Static_Var_21 == 0 )
-	{
-		if( Static_Var_13 == 0 )
-		{
-			hide msl2l0;
-		}
-		if( Static_Var_13 == 1 )
-		{
-			hide msl2l1;
-		}
-		if( Static_Var_13 == 2 )
-		{
-			hide msl2l2;
-		}
-		if( Static_Var_13 == 3 )
-		{
-			hide msl2l3;
-			Static_Var_21 = 1;
-			sleep 1330;
-			start-script missileReload2l();
-		}
-		++Static_Var_13;
-	}
-	if( Static_Var_13 == 4 )
-	{
-		Static_Var_13 = 0;
-	}
+	
+	start-script missileReloadr2(0);
 }
 
 AimFromWeapon1(piecenum)
