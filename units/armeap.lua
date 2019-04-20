@@ -49,11 +49,12 @@ return {
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
 			[1] = "armeca",
-			[2] = "airwolf3g",
-			[3] = "armpers",
-			[4] = "armor",
-			[5] = "armorion",
-			[6] = "armcyclone",
+			[2] = "armsr71",
+			[3] = "airwolf3g",
+			[4] = "armpers",
+			[5] = "armor",
+			[6] = "armorion",
+			[7] = "armcyclone",
 		},
 		customparams = {
 			buildpic = "armeap.dds",

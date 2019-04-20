@@ -107,6 +107,7 @@ return {
 	"tllprob",
 	"tllrsplane",
 	"tllsonpl",
+	"armsr71",
 	-- gunship fighters
 	"tawf015",
 	"corrag",
