@@ -55,7 +55,7 @@ return {
 				damage = 3969,
 				description = "Long Range Paralizer Wreckage",
 				energy = 0,
-				featuredead = "tllemplrpt",
+				featuredead = "tllemplrpt_heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3225,
@@ -65,10 +65,10 @@ return {
 					fromunit = 1,
 				},
 			},
-			armbrtha_heap = {
+			tllemplrpt_heap = {
 				blocking = false,
 				damage = 4962,
-				description = "Big Bertha Paralizer Debris",
+				description = "Long Range Paralizer Debris",
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
