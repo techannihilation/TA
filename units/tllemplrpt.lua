@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "arm_big_bertha_aoplane.dds",
-		buildpic = "arm_big_bertha.dds",
+		buildpic = "tllemplrpt.dds",
 		buildtime = 85000,
 		canattack = true,
 		canguard = true,
