@@ -77,30 +77,14 @@ walk()
 	}
 }
 
-SmokeUnit(healthpercent, sleeptime, smoketype)
+PilotLight(Func_Var_1)
 {
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
 	while( TRUE )
 	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
+		Func_Var_1 = 200 + Rand( 150, 600 );
+		sleep Func_Var_1;
+		emit-sfx 1024 from flame;
+	
 	}
 }
 
@@ -128,6 +112,36 @@ MotionControl(Func_Var_1)
 		{
 			sleep 100;
 		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script PilotLight();
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
 	}
 }
 
@@ -241,15 +255,8 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
-PilotLight(Func_Var_1)
+lua_FlameShot(Func_Var_1)
 {
-	while( TRUE )
-	{
-		Func_Var_1 = 200 + Rand( 50, 800 );
-		sleep Func_Var_1;
-		emit-sfx 0 from flame;
-	}
-
 }
 
 Create()
@@ -258,20 +265,8 @@ Create()
 	firing = 0;
 	turning = 0;
 	hide flame;
-	dont-shade riser;
-	dont-shade fliptop;
-	dont-cache fliptop;
-	dont-cache riser;
-
-	while(get BUILD_PERCENT_LEFT)
-	{
-		sleep 1000;
-	}
-	
 	call-script InitState();
-	start-script MotionControl();
 	start-script SmokeUnit();
-	start-script PilotLight();	
 }
 
 Activate()
@@ -361,42 +356,6 @@ FireSecondary()
 	}
 }
 
-lua_FlameShot(Func_Var_1)
-{
-	return 2;
-}
-
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	return (1);
-}
-
-Shot3()
-{
-	call-script lua_FlameShot(1);
-	return (1);
-}
-
-FireTertiary(Func_Var_1)
-{
-	Func_Var_1 = 256 | 2;
-	emit-sfx 1024 from flame;
-	sleep 1;
-	emit-sfx 1024 from flame;
-	sleep 8;
-	emit-sfx 1024 from flame;
-	sleep 16;
-	emit-sfx 1024 from flame;
-	sleep 24;
-	emit-sfx 1024 from flame;
-	sleep 32;
-	emit-sfx 1024 from flame;
-	sleep 40;
-	emit-sfx 1024 from flame;
-}
-
 QuerySecondary(piecenum)
 {
 	if (gun_2 == 0) 
@@ -413,6 +372,18 @@ QuerySecondary(piecenum)
 	}	
 }
 
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	return (1);
+}
+
+Shot3()
+{
+	call-script lua_FlameShot(3);
+	return (1);
+}
 
 AimFromTertiary(piecenum)
 {
@@ -424,13 +395,10 @@ QueryTertiary(piecenum)
 	piecenum = flame;
 }
 
-
-
 SweetSpot(piecenum)
 {
 	piecenum = base;
 }
-
 
 Killed(severity, corpsetype)
 {
