@@ -4,16 +4,18 @@
 #include "exptype.h"
 
 piece  torso, luparm, ruparm, pelvis, rthigh, lthigh, lleg, lfoot,
-       rleg, rfoot, turretr, turretl, hand, flare1, base, flare3, tbase,
-       flare2, flare4, flare5 ,flare6, lemit;
+       rleg, rfoot, turretr, turretl, sleever, sleevel, hand, flare1, base, flare, tbase,
+       flare2, flare4, flare3, flarer ,flarel, starburst, s1, s2;
 
 static-var  bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
-            gun_1;
+            gun_1, gun_2;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
 #define SIG_AIM_4			8
+#define SIG_AIM_5			16
+#define SIG_AIM_6			32
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -80,9 +82,9 @@ Walk2()
 		turn rfoot to x-axis <-13.000000> now;
 		turn rfoot to x-axis <-15.593407> speed <12.390110>;
 		turn luparm to x-axis <-0.692308> now;
-		turn luparm to x-axis <1.692308> speed <35.192308>;
-		turn ruparm to x-axis <-2.000000> now;
-		turn ruparm to x-axis <-12.000000> speed <38.093407>;
+		turn luparm to x-axis <0.692308> speed <35.192308>;
+		turn ruparm to x-axis <-1.000000> now;
+		turn ruparm to x-axis <-5.000000> speed <38.093407>;
 		sleep 212;
 	}
 	if( bMoving )
@@ -97,8 +99,8 @@ Walk2()
 		turn lfoot to x-axis <18.593407> speed <0.593407>;
 		turn rleg to x-axis <33.390110> speed <35.500000>;
 		turn rfoot to x-axis <-18.291209> speed <11.593407>;
-		turn luparm to x-axis <10.593407> speed <56.692308>;
-		turn ruparm to x-axis <-12.390110> speed <33.593407>;
+		turn luparm to x-axis <5.593407> speed <56.692308>;
+		turn ruparm to x-axis <-6.390110> speed <33.593407>;
 		sleep 228;
 	}
 	if( bMoving )
@@ -113,8 +115,8 @@ Walk2()
 		turn lfoot to x-axis <22.390110> speed <17.692308>;
 		turn rleg to x-axis <35.890110> speed <11.390110>;
 		turn rfoot to x-axis <-22.500000> speed <19.593407>;
-		turn luparm to x-axis <10.593407> speed <9.291209>;
-		turn ruparm to x-axis <-12.890110> speed <58.000000>;
+		turn luparm to x-axis <5.593407> speed <9.291209>;
+		turn ruparm to x-axis <-6.890110> speed <58.000000>;
 		sleep 215;
 	}
 	if( bMoving )
@@ -129,8 +131,8 @@ Walk2()
 		turn lfoot to x-axis <26.093407> speed <20.192308>;
 		turn rleg to x-axis <36.890110> speed <5.593407>;
 		turn rfoot to x-axis <-26.692308> speed <22.390110>;
-		turn luparm to x-axis <15.500000> speed <52.593407>;
-		turn ruparm to x-axis <-17.390110> speed <13.692308>;
+		turn luparm to x-axis <7.500000> speed <52.593407>;
+		turn ruparm to x-axis <-8.390110> speed <13.692308>;
 		sleep 188;
 	}
 	if( bMoving )
@@ -146,8 +148,8 @@ Walk2()
 		turn lfoot to x-axis <15.000000> speed <59.890110>;
 		turn rleg to x-axis <36.593407> speed <1.890110>;
 		turn rfoot to x-axis <-10.500000> speed <87.000000>;
-		turn luparm to x-axis <10.791209> speed <111.291209>;
-		turn ruparm to x-axis <-12.791209> speed <51.500000>;
+		turn luparm to x-axis <5.791209> speed <111.291209>;
+		turn ruparm to x-axis <-6.791209> speed <51.500000>;
 		sleep 186;
 	}
 	if( bMoving )
@@ -163,8 +165,8 @@ Walk2()
 		turn lfoot to x-axis <3.890110> speed <102.192308>;
 		turn rleg to x-axis <40.791209> speed <38.692308>;
 		turn rfoot to x-axis <15.500000> speed <238.692308>;
-		turn luparm to x-axis <-6.791209> speed <162.093407>;
-		turn ruparm to x-axis <1.192308> speed <174.593407>;
+		turn luparm to x-axis <-3.791209> speed <162.093407>;
+		turn ruparm to x-axis <0.892308> speed <174.593407>;
 		sleep 109;
 	}
 	if( bMoving )
@@ -179,8 +181,8 @@ Walk2()
 		turn lfoot to x-axis <-2.291209> speed <87.890110>;
 		turn rleg to x-axis <53.500000> speed <180.791209>;
 		turn rfoot to x-axis <17.192308> speed <25.291209>;
-		turn luparm to x-axis <-16.500000> speed <209.791209>;
-		turn ruparm to x-axis <14.791209> speed <194.500000>;
+		turn luparm to x-axis <-8.500000> speed <209.791209>;
+		turn ruparm to x-axis <7.791209> speed <194.500000>;
 		sleep 70;
 	}
 	if( bMoving )
@@ -195,8 +197,8 @@ Walk2()
 		turn lfoot to x-axis <-8.390110> speed <42.692308>;
 		turn rleg to x-axis <67.500000> speed <97.692308>;
 		turn rfoot to x-axis <19.000000> speed <12.291209>;
-		turn luparm to x-axis <-15.093407> speed <17.593407>;
-		turn ruparm to x-axis <20.593407> speed <144.593407>;
+		turn luparm to x-axis <-7.093407> speed <17.593407>;
+		turn ruparm to x-axis <9.593407> speed <144.593407>;
 		sleep 144;
 	}
 	if( bMoving )
@@ -210,7 +212,7 @@ Walk2()
 		turn lfoot to x-axis <-14.500000> speed <33.390110>;
 		turn lfoot to y-axis <0.000000> speed <0.000000>;
 		turn rleg to x-axis <64.692308> speed <15.500000>;
-		turn luparm to x-axis <-17.000000> speed <15.890110>;
+		turn luparm to x-axis <-8.000000> speed <15.890110>;
 		sleep 182;
 	}
 	if( bMoving )
@@ -224,7 +226,7 @@ Walk2()
 		turn lfoot to x-axis <-20.593407> speed <31.192308>;
 		turn lfoot to y-axis <0.000000> speed <0.000000>;
 		turn rleg to x-axis <60.500000> speed <21.593407>;
-		turn luparm to x-axis <-18.093407> speed <26.390110>;
+		turn luparm to x-axis <-9.093407> speed <26.390110>;
 		sleep 195;
 	}
 	if( bMoving )
@@ -241,8 +243,8 @@ Walk2()
 		turn lfoot to y-axis <0.000000> speed <0.000000>;
 		turn rleg to x-axis <40.093407> speed <98.500000>;
 		turn rfoot to x-axis <19.390110> speed <1.593407>;
-		turn luparm to x-axis <-18.692308> speed <2.093407>;
-		turn ruparm to x-axis <20.593407> speed <4.791209>;
+		turn luparm to x-axis <-9.692308> speed <2.093407>;
+		turn ruparm to x-axis <10.593407> speed <4.791209>;
 		sleep 207;
 	}
 	if( bMoving )
@@ -259,8 +261,8 @@ Walk2()
 		turn lfoot to y-axis <0.000000> speed <0.000000>;
 		turn rleg to x-axis <19.291209> speed <109.791209>;
 		turn rfoot to x-axis <19.692308> speed <1.791209>;
-		turn luparm to x-axis <-17.500000> speed <83.500000>;
-		turn ruparm to x-axis <18.593407> speed <5.291209>;
+		turn luparm to x-axis <-8.500000> speed <83.500000>;
+		turn ruparm to x-axis <9.593407> speed <5.291209>;
 		sleep 189;
 	}
 	if( bMoving )
@@ -275,8 +277,8 @@ Walk2()
 		turn lfoot to x-axis <-1.192308> speed <183.093407>;
 		turn rleg to x-axis <22.500000> speed <24.500000>;
 		turn rfoot to x-axis <11.593407> speed <62.692308>;
-		turn luparm to x-axis <-15.791209> speed <113.791209>;
-		turn ruparm to x-axis <12.291209> speed <95.390110>;
+		turn luparm to x-axis <-7.791209> speed <113.791209>;
+		turn ruparm to x-axis <6.291209> speed <95.390110>;
 		sleep 129;
 	}
 	if( bMoving )
@@ -291,8 +293,8 @@ Walk2()
 		turn lfoot to x-axis <22.500000> speed <238.593407>;
 		turn rleg to x-axis <25.291209> speed <28.390110>;
 		turn rfoot to x-axis <3.500000> speed <81.692308>;
-		turn luparm to x-axis <-10.500000> speed <204.500000>;
-		turn ruparm to x-axis <10.000000> speed <124.291209>;
+		turn luparm to x-axis <-5.500000> speed <204.500000>;
+		turn ruparm to x-axis <5.000000> speed <124.291209>;
 		sleep 99;
 	}
 	if( bMoving )
@@ -307,7 +309,7 @@ Walk2()
 		turn lfoot to x-axis <20.390110> speed <30.192308>;
 		turn rleg to x-axis <21.093407> speed <61.192308>;
 		turn rfoot to x-axis <-4.692308> speed <119.791209>;
-		turn luparm to x-axis <-9.692308> speed <41.390110>;
+		turn luparm to x-axis <-4.692308> speed <41.390110>;
 		turn ruparm to x-axis <0.500000> speed <180.890110>;
 		sleep 69;
 	}
@@ -571,18 +573,13 @@ MotionControl(Func_Var_1, Func_Var_2)
 
 Create()
 {
-	hide flare1;
-	hide flare2;
-	hide flare3;
-	hide flare4;
-	hide flare5;
-	hide flare6;
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_3 = 1;
 	Static_Var_5 = 1;
 	gun_1 = 0;
-	restore_delay = 3000;
+	gun_2 = 0;
+	restore_delay = 6000;
 	start-script MotionControl();
 	start-script SmokeUnit();
 }
@@ -616,7 +613,6 @@ Reload()
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	gun_1 = luparm;
 	turn torso to y-axis <0.000000> speed <90.000000>;
 	turn tbase to y-axis <0.000000> speed <90.000000>;
 	turn ruparm to x-axis <0.000000> speed <90.000000>;
@@ -629,6 +625,8 @@ RestoreAfterDelay2()
 {
 	sleep restore_delay;
 	turn turretr to y-axis <0.000000> speed <90.000000>;
+	turn sleever to x-axis <0.000000> speed <90.000000>;
+	wait-for-turn sleever around x-axis;	
 	wait-for-turn turretr around y-axis;
 }
 
@@ -636,15 +634,17 @@ RestoreAfterDelay3()
 {
 	sleep restore_delay;
 	turn turretl to y-axis <0.000000> speed <90.000000>;
+	turn sleever to x-axis <0.000000> speed <90.000000>;
+	wait-for-turn sleever around x-axis;	
 	wait-for-turn turretl around y-axis;
 }
 
-AimFromPrimary(piecenum)
+AimFromSecondary(piecenum)
 {
 	piecenum = torso;
 }
 
-QueryPrimary(piecenum)
+QuerySecondary(piecenum)
 {
 	if( gun_1 == 0 )
 	{
@@ -660,11 +660,11 @@ QueryPrimary(piecenum)
 	}
 	if( gun_1 == 3 )
 	{
-		piecenum = flare3;
+		piecenum = flare4;
 	}
 }
 
-AimPrimary(heading, pitch)
+AimSecondary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -673,8 +673,8 @@ AimPrimary(heading, pitch)
 		sleep 25;
 	}
 	bAiming = TRUE;
-	turn torso to y-axis heading speed <100.000000>;
-	turn tbase to y-axis <0.000000> - heading speed <100.000000>;
+	turn torso to y-axis heading speed <75.000000>;
+	turn tbase to y-axis <0.000000> - heading speed <75.000000>;
 	turn ruparm to x-axis <0.000000> - pitch speed <100.000000>;
 	turn ruparm to y-axis <7.000000> speed <100.000000>;
 	wait-for-turn torso around y-axis;
@@ -683,90 +683,76 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
+FireSecondary()
 {
 	move ruparm to z-axis [-1.000000] speed [500.000000];
-	if( gun_1 == 0 )
-	{
-		emit-sfx 1024 from flare1;
-		sleep 100;
-	}
-	if( gun_1 == 1 )
-	{
-		emit-sfx 1024 from flare2;
-		sleep 100;
-	}
-	if( gun_1 == 2 )
-	{
-		emit-sfx 1024 from flare3;
-		sleep 100;
-	}
-	if( gun_1 == 3 )
-	{
-		emit-sfx 1024 from flare4;
-		sleep 100;
-	}
+	sleep 50;
 	move ruparm to z-axis [0.000000] speed [2.000000];
 	++gun_1;
 	if( gun_1 == 4 )
 	{
-	gun_1 = 0;
+		gun_1 = 0;
 	}
 }
 
-AimSecondary(heading, pitch)
+AimPrimary(heading, pitch)
 {
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	turn turretr to y-axis heading speed <100.000000>;
-	wait-for-turn turretr around y-axis;
-	start-script RestoreAfterDelay2();
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn torso to y-axis heading speed <75.000000>;
+	wait-for-turn torso around y-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
-AimFromSecondary(piecenum)
+AimFromPrimary(piecenum)
 {
-	piecenum = turretr;
+	piecenum = luparm;
 }
 
-QuerySecondary(piecenum)
+QueryPrimary(piecenum)
 {
-	piecenum = flare6;
+	piecenum = flare;
 }
 
-FireSecondary()
+FirePrimary()
 {
 }
 
 AimTertiary(heading, pitch)
 {
-	turn torso to y-axis heading speed <100.000000>;
-	wait-for-turn torso around y-axis;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turretr to y-axis heading speed <360.000000>;
+	turn sleever to x-axis <0.000000> - pitch speed <360.000000>;
+	wait-for-turn turretr around y-axis;
+	wait-for-turn sleever around x-axis;	
+	start-script RestoreAfterDelay2();
 	return (1);
 }
 
 FireTertiary()
 {
-	emit-sfx 1025 from lemit;
-	sleep 150;
 }
 
 AimFromTertiary(piecenum)
 {
-	piecenum = luparm;
+	piecenum = turretr;
 }
 
 QueryTertiary(piecenum)
 {
-	piecenum = lemit;
+	piecenum = flarer;
 }
 
 AimWeapon4(heading, pitch)
 {
 	signal SIG_AIM_4;
 	set-signal-mask SIG_AIM_4;
-	turn turretl to y-axis heading speed <100.000000>;
+	turn turretl to y-axis heading speed <360.000000>;
+	turn sleevel to x-axis <0.000000> - pitch speed <360.000000>;
 	wait-for-turn turretl around y-axis;
+	wait-for-turn sleevel around x-axis;
 	start-script RestoreAfterDelay3();
 	return (1);
 }
@@ -778,12 +764,46 @@ AimFromWeapon4(piecenum)
 
 QueryWeapon4(piecenum)
 {
-	piecenum = flare5;
+	piecenum = flarel;
 }
 
 FireWeapon4()
 {
 }
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	return (1);
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = starburst;
+}
+
+QueryWeapon5(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = s1;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = s2;
+	}
+}
+
+FireWeapon5()
+{
+	++gun_2;
+	if( gun_2 == 2 )
+	{
+		gun_2 = 0;
+	}
+}
+
 
 Killed(severity, corpsetype)
 {
