@@ -17,7 +17,7 @@ piece  Base, Body, Extension,pattes, pattes10,
        Emit2, Emit3, Emit4, Launchers, Pod1, Pod2, Pod3, Pod4,
        Pod5, Pod6, Pipes, Doo, Dad, R1, R2, R3,
        R4, R5, R6, R7, R8, R9, R10, R11,
-       R12, R13, R14, R15, R16, R17, R18, aimpoint1, aimpoint2, aimpoint3, beamweapon, flame;
+       R12, R13, R14, R15, R16, R17, R18, aimpoint1, aimpoint2, aimpoint3, beamweapon;
 
 static-var  Static_Var_1, Static_Var_4, maingun, Static_Var_9, Static_Var_10, Static_Var_12, Static_Var_11, bmoving, baiming, 
 			Static_Var_13, Static_Var_14, starburst1, starburst2, starburst3, starburst4, starburst5, starburst6, gun;
@@ -32,7 +32,6 @@ static-var  Static_Var_1, Static_Var_4, maingun, Static_Var_9, Static_Var_10, St
 #define SIG_AIM_7			128
 #define SIG_AIM_8			256
 #define SIG_AIM_9			512
-#define SIG_AIM_10			1024
 
 TexasRanger(Func_Var_1, Func_Var_2)
 {
@@ -325,6 +324,15 @@ StartMoving()
 {
 	
 	bMoving = TRUE;
+	
+	explode Emit1 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
+	explode Emit2 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
+	explode Emit3 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
+	explode Emit4 type BITMAPONLY | BITMAP5;
+	sleep Rand( 50, 250 );
 	while( bMoving )
 	{
 		emit-sfx 256 | 1 from Emit1;
@@ -343,19 +351,13 @@ StopMoving()
 {
 	bMoving = FALSE;
 	sleep 500;
-}
-
-PilotLight(Func_Var_1)
-{
-	while( TRUE )
-	{
-		while( bAiming )
-		{
-			sleep 100;
-		}
-		emit-sfx 1024 + 1 from flame;
-		sleep 225;
-	}
+	explode Emit1 type BITMAPONLY | BITMAP5;
+	sleep 50;
+	explode Emit2 type BITMAPONLY | BITMAP5;
+	sleep 100;
+	explode Emit3 type BITMAPONLY | BITMAP5;
+	sleep 50;
+	explode Emit4 type BITMAPONLY | BITMAP5;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -365,9 +367,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	
-	start-script PilotLight();
-	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -389,10 +388,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-lua_FlameShot(Func_Var_1)
-{
-}
-
 Create()
 {
 	bMoving = FALSE;
@@ -403,7 +398,7 @@ Create()
 	Static_Var_12 = 5;
 	Static_Var_13 = 5;
 	Static_Var_14 = 5;
-	hide flame;	
+		
 	maingun = 0;
 	
 	starburst1 = 0;
@@ -414,6 +409,19 @@ Create()
 	starburst6 = 0;
 	gun = 0;
 	
+	set ARMORED to 1;
+	set ACTIVATION to 1;
+	dont-cache Light;
+	dont-cache Spin_Light;
+	dont-cache Barrel1_Light;
+	dont-cache Barrel2_Light;
+	dont-cache Barrel3_Light;
+	
+	//while( get BUILD_PERCENT_LEFT )
+	//{
+	//	sleep 1000;
+	//}
+
 	sleep 250;
 	turn pattes31 to z-axis <-20.> now;
 	turn pattes41 to z-axis <20.> now;
@@ -423,7 +431,8 @@ Create()
 	turn pattes60 to y-axis <-50.> now;
 		
 	start-script SmokeUnit();
-	start-script TexasRanger();	
+	start-script TexasRanger();
+	
 }
 
 RestoreAfterDelay()
@@ -742,7 +751,6 @@ QueryWeapon8(piecenum)
 		piecenum = R6;
 	}
 }
-
 QueryWeapon9(piecenum)
 {
 	if (starburst3 == 0)
@@ -759,34 +767,6 @@ QueryWeapon9(piecenum)
 	}
 }
 
-Shot10()
-{
-	call-script lua_FlameShot(10);
-	return (1);
-}
-
-AimWeapon10(heading, pitch)
-{
-	signal SIG_AIM_10;
-	set-signal-mask SIG_AIM_10;
-	//turn Connect to x-axis <0.> - pitch speed <10.>;
-	//turn Bridge to y-axis heading speed <10.>;
-	wait-for-turn Connect around x-axis;
-	wait-for-turn Bridge around y-axis;
-	//start-script RestoreAfterDelay2();
-	return (1);
-}
-
-AimFromWeapon10(piecenum)
-{
-	piecenum = Bridge;
-}
-
-QueryWeapon10(piecenum)
-{
-	piecenum = flame;
-}
-
 SweetSpot(piecenum)
 {
 	piecenum = Body;
@@ -794,93 +774,9 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{	
-		corpsetype = 1;
-		explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Abdomen type NOHEATCLOUD ;
-		explode Pattes60 type NOHEATCLOUD;
-		explode Pattes61 type NOHEATCLOUD;
-		explode Pattes52 type NOHEATCLOUD;
-		explode Pattes40 type NOHEATCLOUD;
-		explode Pattes32 type NOHEATCLOUD;
-		explode Pattes20 type NOHEATCLOUD;
-		explode Pattes21 type NOHEATCLOUD;
-		explode Pattes12 type NOHEATCLOUD;
-		explode Pattes10 type NOHEATCLOUD;
-		explode Turret type SHATTER | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
-		explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Abdomen type NOHEATCLOUD ;
-		explode Pattes60 type FALL | NOHEATCLOUD;
-		explode Pattes61 type FALL | NOHEATCLOUD;
-		explode Pattes52 type FALL | NOHEATCLOUD;
-		explode Pattes40 type FALL | NOHEATCLOUD;
-		explode Pattes32 type FALL | NOHEATCLOUD;
-		explode Pattes20 type FALL | NOHEATCLOUD;
-		explode Pattes21 type FALL | NOHEATCLOUD;
-		explode Pattes12 type FALL | NOHEATCLOUD;
-		explode Pattes10 type FALL | NOHEATCLOUD;
-		explode Turret type SHATTER | NOHEATCLOUD;
-		return (corpsetype);
-	}	
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Abdomen type NOHEATCLOUD ;
-		explode Pattes60 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes61 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes52 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes40 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes32 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes20 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes21 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes12 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes10 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Turret type SHATTER | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	corpsetype = 3;
-	explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Abdomen type NOHEATCLOUD ;
-	explode Pattes60 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes61 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes52 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes40 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes32 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes20 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes21 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes12 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pattes10 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Turret type SHATTER | NOHEATCLOUD;
-	return (corpsetype);
+	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode Turret type SHATTER | BITMAP1;
+	corpsetype = 1;
 }
