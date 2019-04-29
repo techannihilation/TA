@@ -23,7 +23,10 @@ if (gadgetHandler:IsSyncedCode()) then
 
   --// Speed-ups
   local SendToUnsynced = SendToUnsynced
-  local corarbDefID = UnitDefNames.corarbritator.id
+  local flameonweaponDefID = {
+    [UnitDefNames["corarbritator"].id] = 3,
+    --[UnitDefNames["cormkl"].id] = 10,
+  }
   -------------------------------------------------------------------------------------
   -------------------------------------------------------------------------------------
 
@@ -31,8 +34,8 @@ if (gadgetHandler:IsSyncedCode()) then
   local lastLupsSpawn = {}
 
   function FlameShot(unitID,unitDefID,_, weapon)
-  	if unitDefID == corarbDefID then
-  		weapon = 3
+  	if flameonweaponDefID[unitDefID] then
+  		weapon = flameonweaponDefID[unitDefID]
   	end
     lastLupsSpawn[unitID] = lastLupsSpawn[unitID] or {}
     if ( ((lastLupsSpawn[unitID][weapon] or 0) - thisGameFrame) <= -MIN_EFFECT_INTERVAL ) then
