@@ -1807,6 +1807,8 @@ function init()
 		{id="lupsrefraction", group="gfx", name="Toggle Lups Refraction Pass", type="bool", value=tonumber(Spring.GetConfigInt("lupsenablerefraction",1) or 1) == 1, description='The settings seem only relevant near water\nand disabling them reduces draw passes\n\nLuaUI RESTART NEEDED'},
 		{id="lupsreflection", group="gfx", name="Toggle Lups Reflection Pass", type="bool", value=tonumber(Spring.GetConfigInt("lupsenablereflection",1) or 1) == 1, description='The settings seem only relevant near water\nand disabling them reduces draw passes\n\nLuaUIRESTART NEEDED'},
 
+		{id="ssao", group="gfx", widget="Screen-Space Ambient Occlusion", name="Screen Space Ambient Occlusion", type="bool", value=GetWidgetToggleValue("Screen-Space Ambient Occlusion"), description='Toggles Screen Space Ambient Occlusion\n(OMG very expensive)'},
+
 		{id="outline", group="gfx", widget="Outline", name="Unit outline (expensive)", type="bool", value=GetWidgetToggleValue("Outline"), description='Adds a small outline to all units which makes them crisp\n\nLimits total outlined units to 1000.\nStops rendering outlines when average fps falls below 13.'},
 		{id="outline_size", group="gfx", name=widgetOptionColor.."   thickness", min=0.8, max=1.5, step=0.05, type="slider", value=1, description='Set the size of the outline'},
 
@@ -1829,7 +1831,6 @@ function init()
 		{id="dofintensity", group="gfx", name="DoF intensity", type="slider", min=0.05, max=5, step=0.01, value=1.5, description='Enable Depth of Field with F8 first'},
 
 		{id="mousefx", group="gfx", widget="Mouse FX", name="Mouse FX", type="bool", value=GetWidgetToggleValue("Mouse FX"), description='Adds Glow effect at mouse clicks'},
-
 		--{id="resurrectionhalos", group="gfx", widget="Resurrection Halos", name="Resurrected unit halos", type="bool", value=GetWidgetToggleValue("Resurrection Halos"), description='Gives units have have been resurrected a little halo above it.'},
         --{id="tombstones", group="gfx", widget="Tombstones", name="Tombstones", type="bool", value=GetWidgetToggleValue("Tombstones"), description='Displays tombstones where commanders died'},
         --{id="rankicons", group="gfx", widget="Rank Icons", name="Rank icons", type="bool", value=GetWidgetToggleValue("Rank Icons"), description='Shows a rank icon depending on experience next to units'},
