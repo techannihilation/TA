@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "cormas_aoplane.dds",
 		buildpic = "coremex.dds",
-		buildtime = 100000,
+		buildtime = 38115,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -28 0",

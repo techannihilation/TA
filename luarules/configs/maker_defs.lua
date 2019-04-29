@@ -32,7 +32,7 @@ local convertCapacities = {
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
 		[UnitDefNames.ametalmakerlvl2.id]  = { c = 8000, e = (AC6) }, -- T3
-		[UnitDefNames.ametalmakerlvl3.id]  = { c = 36000, e = (AC7) }, -- T4
+		[UnitDefNames.ametalmakerlvl3.id]  = { c = 54000, e = (AC7) }, -- T4
 		
 		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) }, -- Armgen Combo fusion
 					

@@ -5,7 +5,8 @@
 
 piece  base, body, gun, tower, pipe1, pipe2, pipe3, 
 		emitter1, emitter2, emitter3, emitter4, emitter5, emitter6,
-		block1, block2, block3, light1, light2, light3;
+		block1, block2, block3, light1, light2, light3,
+		petal1,petal2, petal3, petal4, petal5, petal6;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -40,11 +41,29 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 ShieldOn()
 {
 	Static_Var_1 = 1;
+	move tower to y-axis [5] speed [4];
+	wait-for-move tower along y-axis;
+	sleep 150;
+	turn emitter1 to x-axis <60.000000> speed <15.000000>;
+	turn emitter2 to x-axis <60.000000> speed <15.000000>;
+	turn emitter3 to x-axis <60.000000> speed <15.000000>;
+	turn emitter4 to x-axis <60.000000> speed <15.000000>;
+	turn emitter5 to x-axis <60.000000> speed <15.000000>;	
+	turn emitter6 to x-axis <60.000000> speed <15.000000>;
 }
 
 ShieldOff()
 {
 	Static_Var_1 = 0;
+	turn emitter1 to x-axis <60.000000> speed <15.000000>;
+	turn emitter2 to x-axis <60.000000> speed <15.000000>;
+	turn emitter3 to x-axis <60.000000> speed <15.000000>;
+	turn emitter4 to x-axis <60.000000> speed <15.000000>;
+	turn emitter5 to x-axis <60.000000> speed <15.000000>;	
+	turn emitter6 to x-axis <60.000000> speed <15.000000>;
+	wait-for-turn emitter1 around x-axis;
+	sleep 150;
+	move tower to y-axis [5] speed [4];	
 }
 
 InitState()
@@ -79,13 +98,6 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
-Create()
-{
-	Static_Var_1 = 1;
-	start-script SmokeUnit();
-	call-script InitState();
-}
-
 Activate()
 {
 	start-script RequestState(0);
@@ -94,6 +106,37 @@ Activate()
 Deactivate()
 {
 	start-script RequestState(1);
+}
+/*
+OpenClose()
+{
+	while(TRUE)
+		{
+		while( Static_Var_1 )
+		{
+				sleep 500;
+		}
+			while( !Static_Var_1 )
+		{
+				call-script ShieldOff();
+				sleep 500;
+		}
+		sleep 500;
+	}
+}
+*/
+Create()
+{
+	turn petal1 to y-axis <0.000000> now;
+	turn petal2 to y-axis <60.000000> now;
+	turn petal3 to y-axis <120.000000> now;
+	turn petal4 to y-axis <180.000000> now;
+	turn petal5 to y-axis <240.000000> now;
+	turn petal6 to y-axis <300.000000> now;
+	Static_Var_1 = 1;
+	start-script SmokeUnit();
+	call-script InitState();
+	//start-script OpenClose();
 }
 
 AimPrimary(heading, pitch)

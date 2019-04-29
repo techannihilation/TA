@@ -35,7 +35,7 @@ return {
 		mass = 951,
 		maxdamage = 2400,
 		maxslope = 10,
-		maxvelocity = 8,
+		maxvelocity = 6.4,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Blade",

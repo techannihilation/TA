@@ -107,6 +107,7 @@ return {
 	"tllprob",
 	"tllrsplane",
 	"tllsonpl",
+	"armsr71",
 	-- gunship fighters
 	"tawf015",
 	"corrag",
@@ -280,6 +281,7 @@ return {
 	"armbanth1",
 	"armraz1",
 	"armraptor",
+	"tllsaurus",
 	-- heroes
 	"cdevastator",
 	"abroadside",

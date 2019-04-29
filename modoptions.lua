@@ -39,7 +39,7 @@ local options={
     section= "StartingResources",
     def    = 1000,
     min    = 0,
-    max    = 1000000,
+    --max    = 1000000,
     step   = 1,
   },
   {
@@ -50,7 +50,7 @@ local options={
     section= "StartingResources",
     def    = 1000,
     min    = 0,
-    max    = 1000000,
+    --max    = 1000000,
     step   = 1,
   },
   {

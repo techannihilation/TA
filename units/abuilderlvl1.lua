@@ -34,7 +34,7 @@ return {
 		mass = 370,
 		maxdamage = 945,
 		maxslope = 10,
-		maxvelocity = 10,
+		maxvelocity = 7.5,
 		maxwaterdepth = 255,
 		metalmake = 0.2,
 		metalstorage = 50,
@@ -50,7 +50,7 @@ return {
 		turninplacespeedlimit = 6.6,
 		turnrate = 513,
 		unitname = "abuilderlvl1",
-		workertime = 150,
+		workertime = 125,
 		buildoptions = {
 			[1] = "armsolar",
 			[2] = "armmex",

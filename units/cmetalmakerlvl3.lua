@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "130 160 130",
 		collisionvolumetype = "CylY",
 		corpse = "heap",
-		description = "Converts upto 40960 Energy to Metal",
+		description = "Converts upto 40960 Energy to Metal", -- 63148m cost vs 40960e/m = 0.648
 		explodeas = "nuclear_missile1",
 		floater = false,
 		footprintx = 8,

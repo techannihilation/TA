@@ -470,7 +470,11 @@ effectUnitDefs = {
     {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_up", noIconDraw = true, priority=4, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=8, length=32, piece="engine_down", noIconDraw = true, priority=4, onActive=true}},
  },
-	
+ armsr71 = {
+    {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=6, length=48, piece="wingthrust3", noIconDraw = true, priority=3, onActive=true}},
+ },	
  armcyclone = {
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rrthrust", noIconDraw = true, priority=3, onActive=true}},
@@ -568,6 +572,15 @@ effectUnitDefs = {
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
+cordust = {
+{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,67,-148}, size=27, precision=22, repeatEffect=true}},
+{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r1", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r2", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r3", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r4", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r5", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r6", noIconDraw = true, priority=3, onActive=true}},
+},
 tllzeppelin = {
     {class='AirJet',options={color={1,0.4,0.4}, width=30, length=35, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,0.4,0.4}, width=30, length=35, piece="engine2", noIconDraw = true, priority=3, onActive=true}},

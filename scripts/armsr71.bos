@@ -1,0 +1,150 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, spike, dish1, dish2, thrusters,
+	   wing1, wing2, wingthrust1, wingthrust2, wingthrust3;
+
+static-var  statechg_DesiredState, statechg_StateChanging;
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn thrusters to x-axis <0.000000> speed <75.000000>;
+		sleep 1000;
+	}
+	sleep 60;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn thrusters to x-axis <-90.000000> speed <150.000000>;
+		sleep 1000;
+	}
+	sleep 60;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{	
+	turn thrusters to x-axis <-90.000000> now;
+	call-script InitState();	
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD ;
+		explode wing1 type NOHEATCLOUD ;
+		explode wing2 type NOHEATCLOUD ;
+		explode wingthrust1 type NOHEATCLOUD ;
+		explode wingthrust2 type NOHEATCLOUD ;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD ;
+		explode wing1 type SHATTER | NOHEATCLOUD ;
+		explode wing2 type SHATTER | NOHEATCLOUD ;
+		explode wingthrust1 type FALL | NOHEATCLOUD ;
+		explode wingthrust2 type FALL | NOHEATCLOUD ;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD ;
+		explode wing1 type SHATTER | NOHEATCLOUD ;
+		explode wing2 type SHATTER | NOHEATCLOUD ;
+		explode wingthrust1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode wingthrust2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD ;
+	explode wing1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode wing2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode wingthrust1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode wingthrust2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+}

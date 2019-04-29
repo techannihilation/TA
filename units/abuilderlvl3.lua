@@ -9,7 +9,7 @@ return {
 		builddistance = 250,
 		builder = true,
 		buildpic = "abuilderlvl3.dds",
-		buildtime = 64000,
+		buildtime = 32000,
 		canfly = true,
 		canguard = true,
 		canmove = true,
@@ -57,7 +57,7 @@ return {
 		turninplacespeedlimit = 3.3,
 		turnrate = 175,
 		unitname = "abuilderlvl3",
-		workertime = 400,
+		workertime = 220,
 		buildoptions = {
 			[1] = "armarad",
 			[2] = "armpb",
