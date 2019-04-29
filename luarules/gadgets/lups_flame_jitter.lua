@@ -25,7 +25,7 @@ if (gadgetHandler:IsSyncedCode()) then
   local SendToUnsynced = SendToUnsynced
   local flameonweaponDefID = {
     [UnitDefNames["corarbritator"].id] = 3,
-    --[UnitDefNames["cormkl"].id] = 10,
+    [UnitDefNames["cormkl"].id] = 10,
   }
   -------------------------------------------------------------------------------------
   -------------------------------------------------------------------------------------
