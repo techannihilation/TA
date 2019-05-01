@@ -45,57 +45,60 @@ local wasLuaModUIEnabled = 0
 
 function gadget:Initialize()
 
-  Spring.AddUnitIcon("armcom.user", "icons/armcom.png",2)
-  Spring.AddUnitIcon("corcom.user", "icons/corcom.png",2)
-  Spring.AddUnitIcon("tllcom.user", "icons/tllcom.png",2)
+  Spring.AddUnitIcon("armcom.user", "icons/armcom.png", 2)
+  Spring.AddUnitIcon("corcom.user", "icons/corcom.png", 2)
+  Spring.AddUnitIcon("tllcom.user", "icons/tllcom.png", 2)
   Spring.AddUnitIcon("cross.user", "icons/cross.png")
-  Spring.AddUnitIcon("diamond.user", "icons/diamond.png",1.1)
+  Spring.AddUnitIcon("diamond.user", "icons/diamond.png", 1.1)
   Spring.AddUnitIcon("e.user", "icons/e.png")
-  Spring.AddUnitIcon("e1.user", "icons/e.png",1.2)
-  Spring.AddUnitIcon("e2.user", "icons/e.png",1.5)
-  Spring.AddUnitIcon("e3.user", "icons/e.png",1.8)
-  Spring.AddUnitIcon("e4.user", "icons/e.png",2.3)
-  Spring.AddUnitIcon("hemi-down.user", "icons/hemi-down.png",1.3)
-  Spring.AddUnitIcon("hemi-up.user", "icons/hemi-up.png",1.8)
+  Spring.AddUnitIcon("e1.user", "icons/e.png", 1.2)
+  Spring.AddUnitIcon("e2.user", "icons/e.png", 1.5)
+  Spring.AddUnitIcon("e3.user", "icons/e.png", 1.8)
+  Spring.AddUnitIcon("e4.user", "icons/e.png", 2.3)
+  Spring.AddUnitIcon("hemi-down.user", "icons/hemi-down.png", 1.3)
+  Spring.AddUnitIcon("hemi-up.user", "icons/hemi-up.png", 1.8)
   Spring.AddUnitIcon("hemi.user", "icons/hemi.png")
   Spring.AddUnitIcon("hourglass-side.user", "icons/hourglass-side.png")
   Spring.AddUnitIcon("hourglass.user", "icons/hourglass.png")
-  Spring.AddUnitIcon("krogoth.user", "icons/krogoth.tga",3)
-  Spring.AddUnitIcon("s_krogoth.user", "icons/krogoth.tga",4.5)
+  Spring.AddUnitIcon("krogoth.user", "icons/krogoth.tga", 3)
+  Spring.AddUnitIcon("s_krogoth.user", "icons/krogoth.tga", 4.5)
   Spring.AddUnitIcon("m-down.user", "icons/m-down.png")
   Spring.AddUnitIcon("m-up.user", "icons/m-up.png")
   Spring.AddUnitIcon("m.user", "icons/m.png")
-  Spring.AddUnitIcon("nuke.user", "icons/nuke.png",1.25)
+  Spring.AddUnitIcon("nuke.user", "icons/nuke.png", 1.25)
   Spring.AddUnitIcon("slash.user", "icons/slash.png") 
-  Spring.AddUnitIcon("sphere.user", "icons/sphere.png",1.1)
-  Spring.AddUnitIcon("sphere2.user", "icons/sphere.png",1.35)
-  Spring.AddUnitIcon("sphere3.user", "icons/sphere.png",1.7)
+  Spring.AddUnitIcon("sphere.user", "icons/sphere.png", 1.1)
+  Spring.AddUnitIcon("sphere1point5.user", "icons/sphere.png", 1.2)
+  Spring.AddUnitIcon("sphere2.user", "icons/sphere.png", 1.35)
+  Spring.AddUnitIcon("sphere2point5.user", "icons/sphere.png", 1.50)
+  Spring.AddUnitIcon("sphere3.user", "icons/sphere.png", 1.7)
+  Spring.AddUnitIcon("sphere3poing5.user", "icons/sphere.png", 1.85)
   Spring.AddUnitIcon("square.user", "icons/square.png")
-  Spring.AddUnitIcon("square_+.user", "icons/square_+.png",0.7)
-  Spring.AddUnitIcon("square_+1.user", "icons/square_+.png",0.8)
-  Spring.AddUnitIcon("square_+2.user", "icons/square_+.png",0.9)
-  Spring.AddUnitIcon("square_+3.user", "icons/square_+.png",1)
+  Spring.AddUnitIcon("square_+.user", "icons/square_+.png", 0.7)
+  Spring.AddUnitIcon("square_+1.user", "icons/square_+.png", 0.8)
+  Spring.AddUnitIcon("square_+2.user", "icons/square_+.png", 0.9)
+  Spring.AddUnitIcon("square_+3.user", "icons/square_+.png", 1)
   Spring.AddUnitIcon("square_x.user", "icons/square_x.png")
-  Spring.AddUnitIcon("square_x_factory.user", "icons/square_x.png",1.5)
+  Spring.AddUnitIcon("square_x_factory.user", "icons/square_x.png", 1.5)
   Spring.AddUnitIcon("star-dark.user", "icons/star-dark.png")
   Spring.AddUnitIcon("star.user", "icons/star.png")
-  Spring.AddUnitIcon("tri-down.user", "icons/tri-down.png",1.3)
-  Spring.AddUnitIcon("tri-up.user", "icons/tri-up.png",1.4)
-  Spring.AddUnitIcon("tri-up_fighter.user", "icons/tri-up.png",0.9)
-  Spring.AddUnitIcon("tri-up_fighter1.user", "icons/tri-up.png",1.2)
+  Spring.AddUnitIcon("tri-down.user", "icons/tri-down.png", 1.3)
+  Spring.AddUnitIcon("tri-up.user", "icons/tri-up.png", 1.4)
+  Spring.AddUnitIcon("tri-up_fighter.user", "icons/tri-up.png", 0.9)
+  Spring.AddUnitIcon("tri-up_fighter1.user", "icons/tri-up.png", 1.2)
   Spring.AddUnitIcon("triangle-down.user", "icons/triangle-down.png")
   Spring.AddUnitIcon("triangle-up.user", "icons/triangle-up.png")
   Spring.AddUnitIcon("x.user", "icons/x.png")
-  Spring.AddUnitIcon("rc.user", "icons/rc.png",1.4)
-  Spring.AddUnitIcon("rc1.user", "icons/rc.png",2)
-  Spring.AddUnitIcon("t4ships.user", "icons/t4ships.png",5)
-  Spring.AddUnitIcon("bships.user", "icons/bship.png",1.7)
-  Spring.AddUnitIcon("bsships.user", "icons/bship.png",3.6)
-  Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png",0.65)
-  Spring.AddUnitIcon("blank.user", "icons/sphere.png",0.0)
-  Spring.AddUnitIcon("mech.user", "icons/mech.tga",3.60)
-  Spring.AddUnitIcon("med_mech.user", "icons/mech.tga",3.0)
-  Spring.AddUnitIcon("small_mech.user", "icons/mech.tga",2.5)
+  Spring.AddUnitIcon("rc.user", "icons/rc.png", 1.4)
+  Spring.AddUnitIcon("rc1.user", "icons/rc.png", 2)
+  Spring.AddUnitIcon("t4ships.user", "icons/t4ships.png", 5)
+  Spring.AddUnitIcon("bships.user", "icons/bship.png", 1.7)
+  Spring.AddUnitIcon("bsships.user", "icons/bship.png", 3.6)
+  Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png", 0.65)
+  Spring.AddUnitIcon("blank.user", "icons/sphere.png", 0.0)
+  Spring.AddUnitIcon("mech.user", "icons/mech.tga", 3.60)
+  Spring.AddUnitIcon("med_mech.user", "icons/mech.tga", 3.0)
+  Spring.AddUnitIcon("small_mech.user", "icons/mech.tga", 2.5)
 
    
   -- Setup the unitdef icons
@@ -248,12 +251,18 @@ function gadget:Initialize()
 		  end
         end
       else
-        if (ud.mass > 200 and ud.mass < 1000 ) then
-          Spring.SetUnitDefIcon(udid, "sphere2.user")
-        elseif (ud.mass > 1000) then
-          Spring.SetUnitDefIcon(udid, "sphere3.user")
+      	if ud.customParams.requiretech == "Advanced T1 Unit Research Centre" then
+      	  Spring.SetUnitDefIcon(unitDefId, "sphere1point5.user")
+        elseif ud.customParams.requiretech == "Advanced T2 Unit Research Centre" then
+      	  Spring.SetUnitDefIcon(unitDefId, "sphere2point5.user")
+        elseif ud.customParams.requiretech == "Advanced T3 Unit Research Centre" then
+      	  Spring.SetUnitDefIcon(unitDefId, "sphere3point5.user")
+        elseif (IsTech2Unit(unitDefId)) then
+          Spring.SetUnitDefIcon(unitDefId, "sphere2.user")
+        elseif (IsTech3Unit(unitDefId)) then
+          Spring.SetUnitDefIcon(unitDefId, "sphere3.user")
         else
-          Spring.SetUnitDefIcon(udid, "sphere.user")
+          Spring.SetUnitDefIcon(unitDefId, "sphere.user")
         end
       end
     end
@@ -268,6 +277,31 @@ function gadget:Initialize()
   Spring.SetUnitDefIcon(UnitDefNames["tllbug"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllgladius"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllprivate"].id, "tiny-sphere.user")
+end
+
+local function IsUnitProducedByAnyFactoryFromList(factories, unitDefId)
+  if (factories and unitDefId) then
+    for _, factory in pairs(factories) do
+      local buildOptions = UnitDefNames[factory].buildOptions
+
+      if (buildOptions) then
+        for _, buildOption in pairs(buildOptions) do
+          if (unitDefId == buildOption) then return true end
+        end
+      end
+    end
+  end
+  return false
+end
+
+function IsTech2Unit(unitDefId)
+  local t2factories = { "armalab", "armavp", "coralab", "coravp", "tllalab", "tllavp" }
+  return IsUnitProducedByAnyFactoryFromList(t2factories, unitDefId)
+end
+
+function IsTech3Unit(unitDefId)
+  local t3factories = { "armshltx", "tllhtcp", "corgant" }
+  return IsUnitProducedByAnyFactoryFromList(t3factories, unitDefId)
 end
 
 --------------------------------------------------------------------------------
