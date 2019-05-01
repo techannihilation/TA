@@ -17,6 +17,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local corminDefID = UnitDefNames.cormin.id
 	local armpcaDefID = UnitDefNames.armpcan.id
 	local corpcaDefID = UnitDefNames.corpcan.id
+	local tllcanDefID = UnitDefNames.tllpcan.id
 	local pilelimit
 	local pilelimit1 = 2
 	local pilelimit2 = 10
@@ -26,8 +27,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	
 	function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
-		if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == armpcaDefID or UnitDefID == corpcaDefID) then
-			if (UnitDefID == armpcaDefID or UnitDefID == corpcaDefID) then
+		if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
+			if (UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
 				pilelimit = pilelimit2
 			else
 				pilelimit = pilelimit1
