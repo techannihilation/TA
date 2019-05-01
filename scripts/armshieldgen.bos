@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, shield_pos, protection, supportwheel, lwheel, rwheel, frontwheel;
+piece  base, body, turret, shield_pos, supportwheel, lwheel, rwheel;
 
 static-var shieldonoff;
 
@@ -77,8 +77,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
-		explode supportwheel type NOHEATCLOUD;
-		explode protection type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -86,8 +84,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
-		explode supportwheel type NOHEATCLOUD | FALL;
-		explode protection type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
@@ -95,15 +91,11 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode body type NOHEATCLOUD;
-		explode supportwheel type NOHEATCLOUD | FALL;
-		explode protection type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD;
-	explode supportwheel type NOHEATCLOUD | FALL;
-	explode protection type NOHEATCLOUD | FALL;
 	explode turret type NOHEATCLOUD | FALL;
 	return (corpsetype);
 }
