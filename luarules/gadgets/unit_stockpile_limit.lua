@@ -24,8 +24,8 @@ if (gadgetHandler:IsSyncedCode()) then
 	local CMD_INSERT = CMD.INSERT
 	local SpGiveOrderToUnit = Spring.GiveOrderToUnit
 
-	-- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
-	function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
+	
+	function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
 		if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == armpcaDefID or UnitDefID == corpcaDefID) then
 			if (UnitDefID == armpcaDefID or UnitDefID == corpcaDefID) then
 				pilelimit = pilelimit2
@@ -51,7 +51,9 @@ if (gadgetHandler:IsSyncedCode()) then
 					addQ = -addQ
 				end
 
-				if pile + pileQ == pilelimit and (not cmdOptions.right) then end --SendToUnsynced("PileLimit", teamID, pilelimit) --disable echo, spamming too much becouse of autostock widget :P
+				if pile + pileQ == pilelimit and (not cmdOptions.right) then
+					--SendToUnsynced("PileLimit", teamID, pilelimit) --disable echo, spamming too much becouse of autostock widget :P
+				end
 
 				if pile + pileQ + addQ <= pilelimit then
 					return true
