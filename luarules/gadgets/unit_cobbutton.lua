@@ -66,6 +66,7 @@ local ShieldUnits = {
   [UnitDefNames["armpraet"].id] = true,
   [UnitDefNames["exoarm"].id] = true,
   [UnitDefNames["armsmc"].id] = true,
+  [UnitDefNames["armshieldgen"].id] = true,
   --The lost legacy
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,

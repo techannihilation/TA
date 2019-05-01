@@ -50,6 +50,13 @@ local validStartUnits = {
     [tllcomDefID] = true,
 
 }
+
+local superEco = {
+	[UnitDefNames.armefus.id] = 3,
+	[UnitDefNames.cmetalmakerlvl3.id] = 6,
+}
+
+
 local spawnTeams = {} -- spawnTeams[teamID] = allyID
 
 --each player gets to choose a faction
@@ -461,6 +468,30 @@ function SpawnStartUnit(teamID, x, z)
 	--spawn starting unit
 	local y = spGetGroundHeight(x,z)
 	local unitID = spCreateUnit(startUnit, x, y, z, 0, teamID) 
+	local superEcoEnabled = tonumber(Spring.GetModOptions().mo_superecostart) or 0
+	if superEcoEnabled == 1 then
+		local maxRows = 3
+		local maxCol = 3
+		local i, j = 1, 0
+		local separation = 200
+
+		for unitDefID, val in pairs(superEco) do
+			for n = 1, val do
+				spCreateUnit(unitDefID, x + (separation * i), y, z + (separation * j), 0, teamID)
+
+				if i >= maxRows then
+					i = 0
+					j = j + 1
+				end
+
+				if j >= maxCol then
+					j = 0
+				end
+
+				i = i + 1
+			end
+		end
+	end
 
 	--share info
 	teamStartPoints[teamID] = {x,y,z}

@@ -111,6 +111,14 @@ local options={
     section = "ta_modes",
   },
   {
+    key = "mo_superecostart",
+    name = "Super Economy",
+    desc = "Start with Super Economy\nAutoHost Usage :- mo_superEcoStart",
+    type = "bool",
+    def = false,
+    section = "ta_modes",
+  },
+  {
     key    = "mo_noowner",
     name   = "FFA Mode",
     desc   = "Units with no player control are instantly removed/destroyed\nAutoHost Usage :- mo_noowner",
