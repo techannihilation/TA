@@ -38,16 +38,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-RockUnit(anglex, anglez)
-{
-	turn base to x-axis anglex speed <50.005495>;
-	turn base to z-axis anglez speed <50.005495>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <20.000000>;
-	turn base to x-axis <0.000000> speed <20.000000>;
-}
-
 Create()
 {
 	gun_1 = 1;
@@ -77,41 +67,42 @@ AimPrimary(heading, pitch)
 	wait-for-turn turret around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
+}
 
 FirePrimary()
 {
 	if( gun_1 == 1 )
 	{
-		move barrel1 to z-axis [-1.500000] speed [60.000000];
+		move barrel1 to z-axis [-0.700000] speed [60.000000];
 		wait-for-move barrel1 along z-axis;
-		move barrel1 to z-axis [0.000000] speed [30.000000];
 		sleep 150;
+		move barrel1 to z-axis [0.000000] speed [5.000000];	
 	}
 	if( gun_1 == 2 )
 	{
-		move barrel2 to z-axis [-1.500000] speed [60.000000];
+		move barrel2 to z-axis [-0.700000] speed [60.000000];
 		wait-for-move barrel2 along z-axis;
-		move barrel2 to z-axis [0.000000] speed [30.000000];
 		sleep 150;
+		move barrel2 to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 3 )
 	{
-		move barrel3 to z-axis [-1.500000] speed [60.000000];
+		move barrel3 to z-axis [-0.700000] speed [60.000000];
 		wait-for-move barrel3 along z-axis;
-		move barrel3 to z-axis [0.000000] speed [30.000000];
 		sleep 150;
+		move barrel3 to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 4 )
 	{
-		move barrel4 to z-axis [-1.500000] speed [60.000000];
+		move barrel4 to z-axis [-0.700000] speed [60.000000];
 		wait-for-move barrel4 along z-axis;
-		move barrel4 to z-axis [0.000000] speed [30.000000];
-		sleep 150;
+			sleep 150;
+		move barrel4 to z-axis [0.000000] speed [5.000000];
 	}
 	++gun_1;
 	if( gun_1 == 5 )
 	{
-		gun_1 = body;
+		gun_1 = 1;
 	}
 }
 
