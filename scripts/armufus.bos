@@ -1,0 +1,136 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, reactors, r1, r2, r3, r4, r5, r6, ground, g1, g2, g3, g4, g5, g6,
+		mainreactor, armor, tower, collar, ball, glow1, glow2, glow3, glow4, glow5, glow6,
+		cover1, cover2, cover3, cover4, cover5, cover6,
+		p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, b1, b2, b3, b4, b5, b6, bridge, pipes;
+
+SmokeUnit(healthpercent, sleeptime, smoketype, smokepiece)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+			emit-sfx smoketype from g3;
+			emit-sfx smoketype from g5;
+			emit-sfx smoketype from g1;			
+			smokepiece = Rand( 1, 7 );
+			if( smokepiece == 1 )
+			{
+				emit-sfx smoketype from cover1;
+			}
+			if( smokepiece == 2 )
+			{
+				emit-sfx smoketype from cover2;
+			}
+			if( smokepiece == 3 )
+			{
+				emit-sfx smoketype from cover3;
+			}
+			if( smokepiece == 4 )
+			{
+				emit-sfx smoketype from cover4;
+			}
+			if( smokepiece == 5 )
+			{
+				emit-sfx smoketype from tower;
+				emit-sfx smoketype from mainreactor;
+			}
+			if( smokepiece == 5 )
+			{
+				emit-sfx smoketype from cover5;
+			}
+			if( smokepiece == 5 )
+			{
+				emit-sfx smoketype from cover6;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+	spin ball around y-axis speed <-20.000000>;
+	spin collar around y-axis speed <35.000000>;		
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode p1 type NOHEATCLOUD;
+		explode p2 type NOHEATCLOUD;
+		explode p8 type NOHEATCLOUD;
+		explode p10 type NOHEATCLOUD;
+		explode b1 type NOHEATCLOUD;
+		explode b3 type NOHEATCLOUD;
+		explode b5 type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode r1 type NOHEATCLOUD;
+		explode r3 type NOHEATCLOUD;
+		explode r5 type NOHEATCLOUD;
+		explode collar type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode ball type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode p1 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+		explode p2 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+		explode p8 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+		explode p10 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+		explode b1 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+		explode b3 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+		explode b5 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+		explode tower type NOHEATCLOUD;
+		explode r1 type NOHEATCLOUD;
+		explode r3 type NOHEATCLOUD;
+		explode r5 type NOHEATCLOUD;
+		explode collar type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode ball type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode p1 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+	explode p2 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+	explode p8 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+	explode p10 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+	explode b1 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+	explode b3 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+	explode b5 type SHATTER | NOHEATCLOUD | EXPLODE_ON_HIT;
+	explode tower type NOHEATCLOUD;
+	explode r1 type NOHEATCLOUD;
+	explode r3 type NOHEATCLOUD;
+	explode r5 type NOHEATCLOUD;
+	explode collar type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode ball type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}
