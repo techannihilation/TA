@@ -3,7 +3,7 @@ return {
 		airsightdistance = 1450,
 		badtargetcategory = "NOTAIR",
 		buildangle = 9814,
-		buildcostenergy = 90004,
+		buildcostenergy = 225004,
 		buildcostmetal = 13536,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
