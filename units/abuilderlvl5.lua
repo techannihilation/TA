@@ -52,7 +52,7 @@ return {
 		unitname = "abuilderlvl5",
 		workertime = 2000,
 		buildoptions = {
-			[1] = "armefus",
+			[1] = "armufus",
 			[2] = "armmas",
 			[3] = "ametalmakerlvl3",
 			[4] = "armses",
