@@ -3,6 +3,12 @@
 
 effectUnitDefs = {
  --// FUSIONS //--------------------------
+	armufus = {
+		{class='SimpleParticles2', options=MergeTable({pos={-4,270,12}, delay=20, lifeSpread=300},sparks)},
+		{class='SimpleParticles2', options=MergeTable({pos={2,280,-12}, delay=25, lifeSpread=300},sparks)},
+		{class='SimpleParticles2', options=MergeTable({pos={-10,270,-12}, delay=15, lifeSpread=300},sparks)},
+		{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,200,-0}, size=30, precision=22, repeatEffect=true}},
+	},
   cafus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4.5}, priority=1, delay=0, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4,5}, priority=1, delay=40, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
