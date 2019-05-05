@@ -252,17 +252,17 @@ function gadget:Initialize()
         end
       else
       	if ud.customParams.requiretech == "Advanced T1 Unit Research Centre" then
-      	  Spring.SetUnitDefIcon(unitDefId, "sphere1point5.user")
+      	  Spring.SetUnitDefIcon(udid, "sphere1point5.user")
         elseif ud.customParams.requiretech == "Advanced T2 Unit Research Centre" then
-      	  Spring.SetUnitDefIcon(unitDefId, "sphere2point5.user")
+      	  Spring.SetUnitDefIcon(udid, "sphere2point5.user")
         elseif ud.customParams.requiretech == "Advanced T3 Unit Research Centre" then
-      	  Spring.SetUnitDefIcon(unitDefId, "sphere3point5.user")
-        elseif (IsTech2Unit(unitDefId)) then
-          Spring.SetUnitDefIcon(unitDefId, "sphere2.user")
-        elseif (IsTech3Unit(unitDefId)) then
-          Spring.SetUnitDefIcon(unitDefId, "sphere3.user")
+      	  Spring.SetUnitDefIcon(udid, "sphere3point5.user")
+        elseif (IsTech2Unit(udid)) then
+          Spring.SetUnitDefIcon(udid, "sphere2.user")
+        elseif (IsTech3Unit(uudid)) then
+          Spring.SetUnitDefIcon(udid, "sphere3.user")
         else
-          Spring.SetUnitDefIcon(unitDefId, "sphere.user")
+          Spring.SetUnitDefIcon(udid, "sphere.user")
         end
       end
     end
