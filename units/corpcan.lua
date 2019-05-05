@@ -138,7 +138,7 @@ return {
 				model = "corak_bomb",
 				name = "A.K. Cannon",
 				noselfdamage = true,
-				range = 2145,
+				range = 2545,
 				reloadtime = 0.6,
 				soundhitdry = "xplonuk1",
 				soundhitwet = "splshbig",
