@@ -259,7 +259,7 @@ function gadget:Initialize()
       	  Spring.SetUnitDefIcon(udid, "sphere3point5.user")
         elseif (IsTech2Unit(udid)) then
           Spring.SetUnitDefIcon(udid, "sphere2.user")
-        elseif (IsTech3Unit(uudid)) then
+        elseif (IsTech3Unit(udid)) then
           Spring.SetUnitDefIcon(udid, "sphere3.user")
         else
           Spring.SetUnitDefIcon(udid, "sphere.user")
