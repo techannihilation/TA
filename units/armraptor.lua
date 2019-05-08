@@ -162,6 +162,8 @@ return {
 			tawf_banisher2 = {
 				areaofeffect = 200,
 				avoidfeature = false,
+				burst = 4,
+				burstrate = 0.15,
 				craterareaofeffect = 300,
 				craterboost = 0,
 				cratermult = 0,
@@ -173,8 +175,8 @@ return {
 				model = "TAWF114a",
 				name = "Banisher",
 				noselfdamage = true,
-				range = 1200,
-				reloadtime = 3,
+				range = 1150,
+				reloadtime = 7,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
 				soundhitwet = "splslrg",
@@ -191,19 +193,19 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 700,
 				damage = {
-					commanders = 1000,
-					default = 3000,
+					commanders = 700,
+					default = 2100,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				def = "MECH_RAPIDLASER1",
+				def = "TAWF_BANISHER2",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
-				def = "TAWF_BANISHER2",
+			[2] = {
+				def = "MECH_RAPIDLASER1",
 				onlytargetcategory = "SURFACE",
 			},
 		},
