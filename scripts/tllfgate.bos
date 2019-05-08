@@ -1,12 +1,11 @@
 #define TA			// This is a TA script
 
-
 #include "sfxtype.h"
 #include "exptype.h"
 
 piece  base, body, arm, dish, light;
 
-static-var  Static_Var_1;
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -61,14 +60,11 @@ Shield()
 	Static_Var_1 = !Static_Var_1;
 }
 
+
 Create()
 {
-	dont-shade dish;
-	dont-shade arm;
-	dont-shade light;
 	start-script SmokeUnit();
 	start-script Tangue();
-	set ARMORED to 1;
 }
 
 RestoreAfterDelay()
