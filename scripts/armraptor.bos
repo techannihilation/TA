@@ -1,9 +1,9 @@
 #define TA			// This is a TA script
-#Skymyj reload
+
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  Huefte, Stange, loSchenkel, luSchenkel, lFuss, l1Finger, l2Finger, lDaumen,
+piece  base, body, Stange, loSchenkel, luSchenkel, lFuss, l1Finger, l2Finger, lDaumen,
        roSchenkel, ruSchenkel, rFuss, r1Finger, r2Finger, rDaumen, Torso, Achse,
        lSchulter, lArm, lKanone, l1Lauf, l1Blitz, l2Lauf, l2Blitz, rSchulter,
        rArm, rKanone, r1Lauf, r1Blitz, r2Lauf, r2Blitz, Punkt, RakTurm,
@@ -62,8 +62,8 @@ StartWalk()
 		turn l2Finger to x-axis <0.000000> speed <100.000000>;
 		sleep 450;
 		turn lDaumen to x-axis <0.000000> speed <100.000000>;
-		move Huefte to y-axis [1.000000] speed [1.000000];
-		turn Huefte to z-axis <3.000000> speed <3.000000>;
+		move body to y-axis [1.000000] speed [1.000000];
+		turn body to z-axis <3.000000> speed <3.000000>;
 	}
 	if( TRUE )
 	{
@@ -79,7 +79,7 @@ StartWalk()
 		sleep 1050;
 		turn lFuss to x-axis <38.000000> speed <100.000000>;
 		turn ruSchenkel to x-axis <30.000000> speed <80.000000>;
-		move Huefte to y-axis [0.000000] speed [2.000000];
+		move body to y-axis [0.000000] speed [2.000000];
 		turn r1Finger to x-axis <0.000000> speed <100.000000>;
 		turn r2Finger to x-axis <0.000000> speed <100.000000>;
 		turn l1Finger to x-axis <45.000000> speed <100.000000>;
@@ -87,8 +87,8 @@ StartWalk()
 		turn lDaumen to x-axis <-45.000000> speed <100.000000>;
 		sleep 450;
 		turn rDaumen to x-axis <0.000000> speed <100.000000>;
-		move Huefte to y-axis [2.000000] speed [2.000000];
-		turn Huefte to z-axis <-5.000000> speed <8.000000>;
+		move body to y-axis [2.000000] speed [2.000000];
+		turn body to z-axis <-5.000000> speed <8.000000>;
 		turn lArm to x-axis <0.000000> speed <14.000000>;
 		turn rArm to x-axis <0.000000> speed <14.000000>;
 	}
@@ -119,7 +119,7 @@ Walk()
 		turn rFuss to x-axis <38.000000> speed <100.000000>;
 		turn lFuss to x-axis <38.000000> speed <70.000000>;
 		turn luSchenkel to x-axis <30.000000> speed <100.000000>;
-		move Huefte to y-axis [0.000000] speed [2.000000];
+		move body to y-axis [0.000000] speed [2.000000];
 		turn r1Finger to x-axis <45.000000> speed <100.000000>;
 		turn r2Finger to x-axis <45.000000> speed <100.000000>;
 		turn rDaumen to x-axis <-45.000000> speed <100.000000>;
@@ -127,8 +127,8 @@ Walk()
 		turn l2Finger to x-axis <0.000000> speed <100.000000>;
 		sleep 450;
 		turn lDaumen to x-axis <0.000000> speed <100.000000>;
-		move Huefte to y-axis [1.000000] speed [1.000000];
-		turn Huefte to z-axis <3.000000> speed <7.000000>;
+		move body to y-axis [1.000000] speed [1.000000];
+		turn body to z-axis <3.000000> speed <7.000000>;
 	}
 	if( TRUE )
 	{
@@ -152,7 +152,7 @@ Walk()
 		sleep 1050;
 		turn lFuss to x-axis <38.000000> speed <100.000000>;
 		turn ruSchenkel to x-axis <30.000000> speed <80.000000>;
-		move Huefte to y-axis [0.000000] speed [2.000000];
+		move body to y-axis [0.000000] speed [2.000000];
 		turn r1Finger to x-axis <0.000000> speed <100.000000>;
 		turn r2Finger to x-axis <0.000000> speed <100.000000>;
 		turn l1Finger to x-axis <45.000000> speed <100.000000>;
@@ -160,8 +160,8 @@ Walk()
 		turn lDaumen to x-axis <-45.000000> speed <100.000000>;
 		sleep 450;
 		turn rDaumen to x-axis <0.000000> speed <100.000000>;
-		move Huefte to y-axis [1.000000] speed [1.000000];
-		turn Huefte to z-axis <-3.000000> speed <7.000000>;
+		move body to y-axis [1.000000] speed [1.000000];
+		turn body to z-axis <-3.000000> speed <7.000000>;
 	}
 }
 
@@ -174,8 +174,8 @@ StopWalk()
 		turn ruSchenkel to x-axis <0.000000> speed <100.000000>;
 		turn luSchenkel to x-axis <0.000000> speed <100.000000>;
 		turn Torso to x-axis <0.000000> speed <20.000000>;
-		move Huefte to y-axis [0.000000] speed [20.000000];
-		turn Huefte to z-axis <0.000000> speed <20.000000>;
+		move body to y-axis [0.000000] speed [20.000000];
+		turn body to z-axis <0.000000> speed <20.000000>;
 		turn l1Finger to x-axis <0.000000> speed <100.000000>;
 		turn l2Finger to x-axis <0.000000> speed <100.000000>;
 		turn lDaumen to x-axis <0.000000> speed <100.000000>;
@@ -266,13 +266,12 @@ Create()
 	unitviewer = FALSE;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	gun_1 = Stange;
-	gun_3 = Huefte;
+	gun_1 = 1;
+	gun_3 = 0;
 	Static_Var_3 = 1;
 	Static_Var_6 = 0;
 	Static_Var_9 = get HEALTH;
 	spin RauchArm around y-axis speed <300.000000>;
-	set ARMORED to 1;
 	start-script SmokeUnit();
 }
 
@@ -347,12 +346,12 @@ RestoreAfterDelay(Func_Var_1)
 	bAiming = FALSE;
 }
 
-AimFromPrimary(piecenum)
+AimFromSecondary(piecenum)
 {
 	piecenum = Torso;
 }
 
-QueryPrimary(piecenum)
+QuerySecondary(piecenum)
 {
 	if( gun_1 == 1 )
 	{
@@ -372,7 +371,7 @@ QueryPrimary(piecenum)
 	}
 }
 
-AimPrimary(heading, pitch)
+AimSecondary(heading, pitch)
 {
 	var Func_Var_3, Func_Var_4, Func_Var_5;
 	signal SIG_AIM;
@@ -413,7 +412,7 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
+FireSecondary()
 {
 	turn Achse to x-axis <4.000000> speed <60.000000>;
 	if( gun_1 == 1 )
@@ -430,7 +429,7 @@ FirePrimary()
 		turn lKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = loSchenkel;
+		gun_1 = 2;
 		return (0);
 	}
 	if( gun_1 == 2 )
@@ -447,7 +446,7 @@ FirePrimary()
 		turn rKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = luSchenkel;
+		gun_1 = 3;
 		return (0);
 	}
 	if( gun_1 == 3 )
@@ -464,7 +463,7 @@ FirePrimary()
 		turn lKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = lFuss;
+		gun_1 = 4;
 		return (0);
 	}
 	if( gun_1 == 4 )
@@ -481,12 +480,12 @@ FirePrimary()
 		turn rKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = Stange;
+		gun_1 = 1;
 		return (0);
 	}
 }
 
-RestoreTertiary()
+RestorePrimary()
 {
 	sleep 5000;
 	Static_Var_7 = 0;
@@ -510,12 +509,12 @@ RestoreTertiary()
 	hide rmRakWerf;
 }
 
-AimFromTertiary(piecenum)
+AimFromPrimary(piecenum)
 {
 	piecenum = RakTurm;
 }
 
-QueryTertiary(piecenum)
+QueryPrimary(piecenum)
 {
 	if( gun_3 == 0 )
 	{
@@ -527,7 +526,7 @@ QueryTertiary(piecenum)
 	}
 }
 
-AimTertiary(heading, pitch)
+AimPrimary(heading, pitch)
 {
 	Static_Var_7 = 1;
 	signal SIG_AIM_3;
@@ -547,29 +546,35 @@ AimTertiary(heading, pitch)
 	turn lmRakWerf to x-axis <-25.000000> speed <50.000000>;
 	turn rmRakWerf to x-axis <-25.000000> speed <50.000000>;
 	wait-for-turn lmRakWerf around x-axis;
-	turn RakTurm to y-axis heading speed <200.000000>;
+	turn RakTurm to y-axis heading speed <120.000000>;
 	wait-for-turn RakTurm around y-axis;
 	wait-for-turn Punkt around y-axis;
-	start-script RestoreTertiary();
+	start-script RestorePrimary();
 	return (1);
 }
 
-FireTertiary()
+FirePrimary()
 {
-	if( gun_3 == 0 )
+	if(gun_3 == 0)
 	{
-		show lRakBlitz;
-		sleep 150;
-		hide lRakBlitz;
-		gun_3 = Stange;
+//		show lRakBlitz;
+//		sleep 150;
+//		hide lRakBlitz;
+
+		sleep 400;
+
+		gun_3 = 1;
 		return (0);
 	}
-	if( gun_3 == 1 )
+	if(gun_3 == 1)
 	{
-		show rRakBlitz;
-		sleep 150;
-		hide rRakBlitz;
-		gun_3 = Huefte;
+//		show rRakBlitz;
+//		sleep 150;
+//		hide rRakBlitz;
+
+		sleep 400;
+		
+		gun_3 = 0;
 		return (0);
 	}
 }
@@ -579,7 +584,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode Huefte type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode loSchenkel type NOHEATCLOUD;
 		explode luSchenkel type NOHEATCLOUD;
 		explode lFuss type NOHEATCLOUD;
@@ -615,7 +620,7 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode Huefte type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
 		explode loSchenkel type NOHEATCLOUD | SHATTER;
 		explode luSchenkel type NOHEATCLOUD | SHATTER;
 		explode lFuss type NOHEATCLOUD | SHATTER;
@@ -651,7 +656,7 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode Huefte type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode loSchenkel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode luSchenkel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode lFuss type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -685,7 +690,7 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode Huefte type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode loSchenkel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode luSchenkel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lFuss type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
