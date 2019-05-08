@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  torso, pelvis, flash, rthigh, lthigh, lleg, rleg, ruparm,
-       luparm, lelbow, lloarm, lhand, rloarm, backgun, gun, ground;
+       luparm, lelbow, lloarm, lhand, rloarm, backgun, gun, ground, muzzle, flare2;
 
 static-var  bMoving, Static_Var_2, Static_Var_3, Static_Var_4, restore_delay,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
@@ -573,6 +573,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	hide flash;
+	hide flare2;
+	hide muzzle;
 	show backgun;
 	hide gun;
 	bMoving = FALSE;
@@ -644,9 +646,9 @@ QueryPrimary(piecenum)
 
 FirePrimary()
 {
-	show flash;
+	emit-sfx 1024 + 0 from muzzle;
+	emit-sfx 1024 + 1 from flare2;
 	sleep 100;
-	hide flash;
 }
 
 Killed(severity, corpsetype)
