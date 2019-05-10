@@ -33,6 +33,13 @@ effectUnitDefs = {
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,60,0}, size=28, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBigBlue},
   },
+  corufus = {
+    {class='StaticParticles',options=cmetelmakerlvl3Effect},
+    {class='SimpleParticles2', options=MergeTable({pos={0,340,-30}, delay=0, size=280, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,340,-30}, delay=40, size=280, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,340,-30}, size=150, precision=22, repeatEffect=true}},
+    {class='GroundFlash',options=groundFlashBlue},
+  },
   tllmedfusion = {
     {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=0, size=38, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={-20,40,24}, delay=40, size=38, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
