@@ -36,7 +36,6 @@ return {
 		nochasecategory = "ALL",
 		objectname = "ARMVULC1",
 		radaremitheight = 272,
-		script = "armvulc.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_DEATH",
 		sightdistance = 273,
