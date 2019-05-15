@@ -11,7 +11,7 @@ return {
 		buildcostmetal = 134000,
 		builder = true,
 		buildpic = "armhope.dds",
-		buildtime = 1000000,
+		buildtime = 1200000,
 		canattack = true,
 		cancapture = true,
 		canfly = true,
