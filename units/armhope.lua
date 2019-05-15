@@ -7,7 +7,7 @@ return {
 		autoheal = 5,
 		bankscale = 1,
 		brakerate = 0.375,
-		buildcostenergy = 1195000,
+		buildcostenergy = 1495000,
 		buildcostmetal = 134000,
 		builder = true,
 		buildpic = "armhope.dds",
