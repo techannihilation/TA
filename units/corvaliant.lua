@@ -32,7 +32,7 @@ return {
 		collisionvolumetype = "box",
 		cruisealt = 20,
 		defaultmissiontype = "VTOL_standby",
-		description = "Hero (CORE)",
+		description = "Battle Destroyer",
 		dontland = 1,
 		energystorage = 20000,
 		explodeas = "NUCLEAR_MISSILE4",
