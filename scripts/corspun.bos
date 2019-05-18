@@ -1,0 +1,345 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret, spindle, top, sleeve1, cannon1, flare1, sleeve2, cannon2, flare2, 
+	   sleeve3, cannon3, flare3, sleeve4, cannon4, flare4, sleeve5, cannon5, flare5, 
+	   sleeve6, cannon6, flare6, barrel1, barrel2, barrel3, barrel4, barrel5, barrel6 ;
+
+static-var  gun_1, firedelay, firing, Static_Var_1, restore_delay, statechg_DesiredState, statechg_StateChanging, Static_Var_6;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+activatescr()
+{
+	move top to y-axis [0.000000] speed [3.000000];
+	wait-for-move top along y-axis;	
+	move cannon1 to z-axis [0.000000] speed [8.000000];
+	move cannon2 to z-axis [0.000000] speed [8.000000];
+	move cannon3 to z-axis [0.000000] speed [8.000000];
+	move cannon4 to z-axis [0.000000] speed [8.000000];
+	move cannon5 to z-axis [0.000000] speed [8.000000];
+	move cannon6 to z-axis [0.000000] speed [8.000000];		
+	sleep 350;
+}
+
+deactivatescr()
+{
+	move cannon1 to z-axis [-6.000000] speed [8.000000];
+	move cannon2 to z-axis [-6.000000] speed [8.000000];
+	move cannon3 to z-axis [-6.000000] speed [8.000000];
+	move cannon4 to z-axis [-6.000000] speed [8.000000];
+	move cannon5 to z-axis [-6.000000] speed [8.000000];
+	move cannon6 to z-axis [-6.000000] speed [8.000000];			
+	wait-for-move cannon1 along z-axis;	
+	move top to y-axis [-6.200000] speed [3.000000];
+	sleep 350;
+}
+
+Go()
+{
+	if( !Static_Var_1 )
+	{
+		call-script activatescr();
+	}
+	Static_Var_1 = 1;
+	set ARMORED to 0;
+}
+
+Stop()
+{
+	set ARMORED to 1;
+	Static_Var_1 = 0;
+	call-script deactivatescr();
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	hide flare5;
+	hide flare6;
+	
+	Static_Var_1 = 0;
+	restore_delay = 5000;
+	move top to y-axis [-6.20000] now;
+	move cannon1 to z-axis [-6.000000] now;
+	move cannon2 to z-axis [-6.000000] now;
+	move cannon3 to z-axis [-6.000000] now;
+	move cannon4 to z-axis [-6.000000] now;
+	move cannon5 to z-axis [-6.000000] now;
+	move cannon6 to z-axis [-6.000000] now;
+	turn sleeve2 to y-axis <-60.000000> now;
+	turn sleeve3 to y-axis <-120.000000> now;
+	turn sleeve4 to y-axis <-180.000000> now;
+	turn sleeve5 to y-axis <-240.000000> now;
+	turn sleeve6 to y-axis <-300.000000> now;
+	
+	
+
+	gun_1 = 0;
+	firedelay = 250;
+	firing = 0;
+	start-script SmokeUnit();
+	call-script InitState();
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;²
+	set-signal-mask 0;
+		
+	turn barrel1 to x-axis <0.000000> speed <15.000000>;
+	turn barrel2 to x-axis <0.000000> speed <15.000000>;
+	turn barrel3 to x-axis <0.000000> speed <15.000000>;
+	turn barrel4 to x-axis <0.000000> speed <15.000000>;
+	turn barrel5 to x-axis <0.000000> speed <15.000000>;
+	turn barrel6 to x-axis <0.000000> speed <15.000000>;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RequestState(1);
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	while( !Static_Var_1 )
+	{
+		sleep 250;
+	}
+
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <30.000000>;
+	turn barrel1 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn barrel2 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn barrel3 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn barrel4 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn barrel5 to x-axis <0.000000> - pitch speed <45.000000>;
+	turn barrel6 to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn barrel6 around x-axis;
+	while( firing )
+	{
+		sleep 100;
+	}
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		firing = 1;
+		move cannon1 to z-axis [-3.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare1;
+		sleep 150;
+		move cannon1 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <60.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 1 )
+	{
+		firing = 1;
+		move cannon2 to z-axis [-3.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare2;
+		sleep 150;
+		move cannon2 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <120.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 2 )
+	{
+		firing = 1;
+		move cannon3 to z-axis [-3.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare3;
+		sleep 150;
+		move cannon3 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <180.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 3 )
+	{
+		firing = 1;
+		move cannon4 to z-axis [-3.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare4;
+		sleep 150;
+		move cannon4 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <240.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 4 )
+	{
+		firing = 1;
+		move cannon5 to z-axis [-3.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare5;
+		move cannon5 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <300.000000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	if( gun_1 == 5 )
+	{
+		firing = 1;
+		move cannon6 to z-axis [-3.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare6;
+		sleep 150;
+		move cannon6 to z-axis [0.000000] speed [3.000000];
+		turn spindle to y-axis <0.060000> speed <200.000000>;
+		sleep firedelay;
+		firing = 0;
+	}
+	++gun_1;
+	if( gun_1 >= 6 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare6;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+		piecenum = body;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode cannon1 type NOHEATCLOUD ;
+		explode cannon2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode sleeve4 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode cannon1 type FALL | NOHEATCLOUD;
+		explode cannon2 type FALL | NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode sleeve4 type SHATTER | NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode cannon1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode cannon2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode sleeve4 type SHATTER | NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode cannon1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode cannon2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode sleeve4 type SHATTER | NOHEATCLOUD;
+	explode turret type NOHEATCLOUD;
+	return (corpsetype);
+}
