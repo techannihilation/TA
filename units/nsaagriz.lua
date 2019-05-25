@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "80 77 92",
 		collisionvolumetype = "box",
 		corpse = "dead",
-		damagemodifier = 0.09,
+		damagemodifier = 0.05,
 		defaultmissiontype = "Standby",
 		description = "Armored Mobile Blaster",
 		downloadable = 1,
