@@ -1,5 +1,5 @@
 #define TA			// This is a TA script
-//
+
 #include "sfxtype.h"
 #include "exptype.h"
 
@@ -185,7 +185,7 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading - Static_heading speed <20.000000>;
+	turn turret to y-axis heading - Static_heading speed <40.000000>;
 	wait-for-turn turret around y-axis;
 	start-script RestoreAfterDelay1();
 	return (1);
@@ -298,7 +298,7 @@ AimSecondary(heading, pitch)
 	
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn body to y-axis heading speed <25.000000>;
+	turn body to y-axis heading speed <50.000000>;
 	Static_heading = heading;
 	turn rgun to x-axis <0.000000> - pitch speed <25.000000>;
 	turn lgun to x-axis <0.000000> - pitch speed <25.000000>;
