@@ -132,6 +132,8 @@ return {
 				damage = {
 					commanders = 67.5,
 					default = 135,
+					experimental_land = 230,
+					experimental_ships = 230,
 				},
 			},
 			krowlaser2 = {
@@ -172,6 +174,8 @@ return {
 				damage = {
 					commanders = 250,
 					default = 500,
+					experimental_land = 1200,
+					experimental_ships = 1200,
 				},
 			},
 		},
