@@ -24,7 +24,7 @@ local GetUnitMass = Spring.GetUnitMass
 --------------------------------------------------------------------------------
 local Weapons = {
 	[UnitDefNames.armcybr.weapons[1].weaponDef] = {
-		impulseBoost = 1000,
+		impulseBoost = 1500,
 		weaponNumber = 1
 	}
 }
