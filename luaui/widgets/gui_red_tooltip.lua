@@ -199,18 +199,18 @@ local function getEditedCurrentTooltip()
     end
     if MorphDefID then
     	unitDefID=MorphDefID
-        iconsize=iconsizeMaster
+        iconsize=tooltip.background.sy
     elseif tooltipID then
         unitDefID=Spring.GetUnitDefID(tooltipID)
-        iconsize=iconsizeMaster
+        iconsize=tooltip.background.sy
     elseif WG["hoverID"] and WG["hoverID"] < 0 then
     	unitDefID=math.abs(WG["hoverID"])
-    	iconsize=iconsizeMaster
+    	iconsize=tooltip.background.sy
     elseif Spring.GetSelectedUnitsCount() == 1 then
     	unitID=Spring.GetSelectedUnits()[1]
     	if Spring.ValidUnitID(unitID) then
     		unitDefID=Spring.GetUnitDefID(unitID)
-    		iconsize=iconsizeMaster
+    		iconsize=tooltip.background.sy
     	end
     else
     	unitDefID=nil
@@ -302,7 +302,7 @@ function widget:DrawScreen()
 		else
 			gl.Texture('#' .. unitDefID) -- Screen.vsx,Screen.vsy
 		end
-  		gl.TexRect(tooltip.background.px, Screen.vsy - tooltip.background.py - iconsize, tooltip.background.px + iconsize, Screen.vsy - tooltip.background.py)
+  		gl.TexRect(tooltip.background.px, Screen.vsy - tooltip.background.py - iconsize, tooltip.background.px +iconsize , Screen.vsy - tooltip.background.py) 
   		gl.Texture(false)
   	end
 end
