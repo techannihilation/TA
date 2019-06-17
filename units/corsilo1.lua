@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corsilo1_aoplane.dds",
 		buildpic = "corsilo1.dds",
-		buildtime = 181243,
+		buildtime = 235615,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
