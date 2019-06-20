@@ -7,8 +7,7 @@ piece base, body, head, lights, charged, turret, spindle,
 	  pos1, sleeve1, sleeve1a, barrel1, flare1, pos2, sleeve2, sleeve2a, barrel2, flare2,
 	  pos3, sleeve3, sleeve3a, barrel3, flare3, pos4, sleeve4, sleeve4a, barrel4, flare4,
 	  pos5, sleeve5, sleeve5a, barrel5, flare5, pos6, sleeve6, sleeve6a, barrel6, flare6,
-	  cans, s1, s2, s3, s4, blast,
-	  spinner, aimer;
+	  cans, s1, s2, s3, s4, a1, a2, a3, a4, a5, a6;
 
 
 static-var  gun_1, gun_2, bmoving, firedelay, firing, firing_2, firedelay_2;			
@@ -66,7 +65,6 @@ StartMoving()
 	}
 }
 
-
 StopMoving()
 {
 	signal SIG_MOVE;
@@ -74,40 +72,21 @@ StopMoving()
 	bMoving=0;
 }
 
-
 Create()
 {
 	onoff = 0;
 	waiting = 0;
-	
-	set ARMORED to 1;
-	
 	firedelay = 150;
 	firedelay_2 = 150;
 	firing = 0;
 	firing_2 = 0;
-		
-	hide blast;
-	
 	hide flare1;
 	hide flare2;
 	hide flare3;
 	hide flare4;
 	hide flare5;
-	hide flare6;
-	
-	dont-cache flare1;
-	dont-cache flare2;
-	dont-cache flare3;
-	dont-cache flare4;
-	dont-cache flare5;
-	dont-cache flare6;
-	
-	hide spinner;
-	hide aimer;
-	
-	hide charged;
-		
+	hide flare6;		
+	hide charged;		
 	turn pos2 to y-axis <-60.000000> now;
 	turn pos3 to y-axis <-120.000000> now;
 	turn pos4 to y-axis <-180.000000> now;
@@ -122,7 +101,6 @@ Create()
 	gun_1 = 0;
 	gun_2 = 0;
 	bmoving=0;
-	
 	start-script SmokeUnit();
 	dont-cache charged;
 }
@@ -384,7 +362,7 @@ FirePrimary()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = aimer;
+	piecenum = spindle;
 }
 
 QueryPrimary(piecenum)
@@ -600,7 +578,7 @@ FireTertiary()
 
 AimFromTertiary(piecenum)
 {
-	piecenum = aimer;
+	piecenum = spindle;
 }
 
 SweetSpot(piecenum)
@@ -619,53 +597,53 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode sleeve1a type BITMAPONLY | BITMAP1;
-		explode sleeve2a type BITMAPONLY | BITMAP1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode sleeve4 type BITMAPONLY | BITMAP1;
-		explode sleeve4a type BITMAPONLY | BITMAP5;
-		explode sleeve1 type BITMAPONLY | BITMAP1;
-		explode barrel1 type BITMAPONLY | BITMAP1;
-		explode barrel2 type BITMAPONLY | BITMAP1;
-		explode barrel4 type BITMAPONLY | BITMAP1;
+		explode sleeve1a type NOHEATCLOUD;
+		explode sleeve2a type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode sleeve4 type NOHEATCLOUD;
+		explode sleeve4a type NOHEATCLOUD;
+		explode sleeve1 type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode barrel4 type NOHEATCLOUD;
 		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode sleeve1a type FALL | BITMAP1;
-		explode sleeve2a type FALL | BITMAP1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode sleeve4 type FALL | BITMAP1;
+		explode sleeve1a type FALL | NOHEATCLOUD ;
+		explode sleeve2a type FALL | NOHEATCLOUD ;
+		explode base type BITMAPONLY | NOHEATCLOUD ;
+		explode sleeve4 type FALL | NOHEATCLOUD ;
 		explode sleeve4a type FALL | BITMAP5;
-		explode sleeve1 type SHATTER | BITMAP1;
-		explode barrel1 type FALL | BITMAP1;
-		explode barrel2 type FALL | BITMAP1;
-		explode barrel4 type FALL | BITMAP1;
+		explode sleeve1 type SHATTER | NOHEATCLOUD ;
+		explode barrel1 type FALL | NOHEATCLOUD ;
+		explode barrel2 type FALL | NOHEATCLOUD ;
+		explode barrel4 type FALL | NOHEATCLOUD ;
 		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode sleeve1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode sleeve2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode sleeve4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode sleeve1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeve2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode base type BITMAPONLY | NOHEATCLOUD ;
+		explode sleeve4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 		explode sleeve4a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode sleeve1 type SHATTER | BITMAP1;
-		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode barrel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode sleeve1 type SHATTER | NOHEATCLOUD ;
+		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode barrel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 		return (0);
 	}
 	corpsetype = 3;
-	explode sleeve1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode sleeve2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode base type BITMAPONLY | BITMAP1;
-	explode sleeve4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode sleeve1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode sleeve2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode base type BITMAPONLY | NOHEATCLOUD ;
+	explode sleeve4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 	explode sleeve4a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode sleeve1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode barrel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode sleeve1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode barrel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 }
