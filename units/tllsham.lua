@@ -4,7 +4,7 @@ return {
 		brakerate = 1.5,
 		buildcostenergy = 1602,
 		buildcostmetal = 128,
-		builddistance = 102,
+		builddistance = 132,
 		builder = true,
 		buildpic = "tllsham.dds",
 		buildtime = 2416,
