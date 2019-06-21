@@ -185,7 +185,7 @@ return {
 				sprayangle = 1200,	
 				startvelocity = 400,
 				tolerance = 1200,
-				tracks = true,
+				tracks = false,
 				trajectoryheight = 0.45,
 				turnrate = 22000,
 				turret = true,
