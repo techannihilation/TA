@@ -9,7 +9,7 @@ return {
 		builder = true,
 		buildpic = "cormlv.dds",
 		buildtime = 3640,
-		canassist = false,
+		canassist = true,
 		canguard = false,
 		canmove = true,
 		canpatrol = false,

@@ -9,7 +9,7 @@ return {
 		builder = true,
 		buildpic = "tllmlv.dds",
 		buildtime = 3921,
-		canassist = false,
+		canassist = true,
 		canguard = false,
 		canmove = true,
 		canpatrol = false,

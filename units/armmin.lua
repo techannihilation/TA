@@ -10,7 +10,7 @@ return {
 		builder = true,
 		buildpic = "armmin.dds",
 		buildtime = 1600,
-		canassist = false,
+		canassist = true,
 		canbeassisted = false,
 		canfly = true,
 		canguard = true,

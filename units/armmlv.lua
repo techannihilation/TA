@@ -9,7 +9,7 @@ return {
 		builder = true,
 		buildpic = "armmlv.dds",
 		buildtime = 3519,
-		canassist = false,
+		canassist = true,
 		canguard = false,
 		canmove = true,
 		canpatrol = false,
