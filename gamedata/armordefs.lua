@@ -150,6 +150,7 @@ return {
 	"tllsting",
 	"tllequalizer",
 	"tllviking",
+	"tllmako",	
 	"tllgiant",
 	"tllvisitor",
 	"tllmixer",

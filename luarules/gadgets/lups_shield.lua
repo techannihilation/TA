@@ -126,6 +126,7 @@ local ShieldUnits = {
   [UnitDefNames["tllgate2"].id] = true,
   [UnitDefNames["irritator"].id] = true,
   [UnitDefNames["tllgorgon"].id] = true,
+  [UnitDefNames["tllmako"].id] = true,
 }
 
 local function GetVisibleSearch(x, z, search)
@@ -367,9 +368,9 @@ end
 function gadget:PlayerChanged()
 	myAllyTeamID = spGetMyAllyTeamID()
 end
-
 function gadget:CommandNotify(id, params, options)
-	if (id >= 34520 and id <= (34520+31)) then
+
+	if (id >= 34520 and id <= (34520+35)) then
 		local selectedUnit = Spring.GetSelectedUnits()
 		if #selectedUnit == 1 then
 			local cmdunitID = selectedUnit[1]
@@ -380,7 +381,7 @@ function gadget:CommandNotify(id, params, options)
 					disabledShieldCobOff[cmdunitID] = true
 				end
 			end
-			if params[1] == 1 and (id >= 34520 and id <= 34520+31) and ShieldUnits[cmdunitID] then
+			if params[1] == 1 and (id >= 34520 and id <= 34520+35) and ShieldUnits[cmdunitID] then
 				if disabledShieldCobOff[cmdunitID] then 
 					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
 					disabledShieldCobOff[cmdunitID] = nil

@@ -296,6 +296,15 @@ return {
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
   },
+  tllmako = {
+	{
+		name = "shield_mako",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
   tlltrid = {
 	{
 		name = "dive_tri",

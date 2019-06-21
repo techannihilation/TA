@@ -77,6 +77,7 @@ local ShieldUnits = {
   [UnitDefNames["tllgate2"].id] = true,
   [UnitDefNames["irritator"].id] = true,
   [UnitDefNames["tllgorgon"].id] = true,
+  [UnitDefNames["tllmako"].id] = true,
 }
 
 --------------------------------------------------------------------------------
