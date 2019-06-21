@@ -181,7 +181,7 @@ return {
 				turnrate = 0,
 				turret = true,
 				weaponacceleration = 150,
-				weapontimer = 15,
+				weapontimer = 12,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 510,
 				wobble = 2000,
