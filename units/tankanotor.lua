@@ -129,7 +129,7 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
 				firestarter = 20,
-				flighttime = 3.75,
+				flighttime = 3.85,
 				impulseboost = 0,
 				impulsefactor = 0,
 				model = "missileH2",
