@@ -17,6 +17,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Safe Plasma Deflector Artillery ship",
+		energystorage = 600,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		floater = true,
