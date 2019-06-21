@@ -152,7 +152,7 @@ return {
 				tolerance = 3000,
 				tracks = true,
 				trajectoryheight = 1,
-				turnrate = 43300,
+				turnrate = 0,
 				turret = true,
 				weaponacceleration = 150,
 				weapontimer = 7,
