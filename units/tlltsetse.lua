@@ -36,7 +36,7 @@ return {
 		mass = 87.5,
 		maxdamage = 525,
 		maxslope = 10,
-		maxvelocity = 4,
+		maxvelocity = 6.45,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Tse Tse",
