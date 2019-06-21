@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, ring, rblink0, rblink1, rblink2;
+piece  base, body, ring;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
