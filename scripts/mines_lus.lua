@@ -2,8 +2,9 @@
 local base = piece("base")
 local GetUnitPosition 	= Spring.GetUnitPosition
 local unitDefID = Spring.GetUnitDefID(unitID)
-local triggerRange = tonumber(UnitDefs[unitDefID].customParams and UnitDefs[unitDefID].customParams.detonaterange) or 64
-
+--local triggerRange = tonumber(UnitDefs[unitDefID].customParams and UnitDefs[unitDefID].customParams.detonaterange) or 64
+local triggerRange = 40 --elmos
+local delay = 250 --in ms
 -- Author: Doo
 -- Requires customParams.detonaterange in unitDefs or 64 elmos range will be used
 -- Possible enhancements: Use GetUnitsInCylinder(or sphere) of detonaterange and check for any restriction on target units
@@ -57,7 +58,7 @@ function EnemyDetect()
 end
 
 function Detonate()
-	Sleep(500)
+	Sleep(delay)
 	Spring.DestroyUnit(unitID, false, false)
 end
 
