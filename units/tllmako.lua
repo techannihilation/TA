@@ -1,5 +1,6 @@
 return {
 	tllmako = {
+		activatewhenbuilt = true,
 		acceleration = 0.025,
 		brakerate = 0.35,
 		buildangle = 15000,
@@ -17,7 +18,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Safe Plasma Deflector Artillery ship",
-		energystorage = 600,
+		energystorage = 1500,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		floater = true,
