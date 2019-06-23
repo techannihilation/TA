@@ -635,7 +635,7 @@ FireWeapon4()
 
 AimFromTertiary(piecenum)
 {
-	piecenum = pelvis;
+	piecenum = biggun;
 }
 
 QueryTertiary(piecenum)
