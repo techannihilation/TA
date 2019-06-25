@@ -161,8 +161,8 @@ AimPrimary(heading, pitch)
 	signal 2;
 	set-signal-mask 2;
 	Static_Var_1 = 0;
-	turn turret1 to y-axis heading speed <20.>;
-	turn sleeve1 to x-axis <0.> - pitch speed <20.>;
+	turn turret1 to y-axis heading speed <50.>;
+	turn sleeve1 to x-axis <0.> - pitch speed <30.>;
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn sleeve1 around x-axis;
 	start-script RestoreAfterDelay();
@@ -174,8 +174,8 @@ AimSecondary(heading, pitch)
 	signal 4;
 	set-signal-mask 4;
 	Static_Var_1 = 1;
-	turn turret2 to y-axis <0.> + heading speed <80.>;
-	turn sleeve2 to x-axis <0.> - pitch speed <80.>;
+	turn turret2 to y-axis <0.> + heading speed <60.000000>;
+	turn sleeve2 to x-axis <0.> - pitch speed <30.000000>;
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn sleeve2 around x-axis;
 	start-script RestoreAfterDelay();
@@ -187,8 +187,8 @@ AimWeapon3(heading, pitch)
 	signal 16;
 	set-signal-mask 16;
 	Static_Var_1 = 1;
-	turn turret3 to y-axis <180.> + heading speed <80.>;
-	turn sleeve3 to x-axis pitch speed <80.>;
+	turn turret3 to y-axis <180.> + heading speed <60.000000>;
+	turn sleeve3 to x-axis pitch speed <30.000000>;
 	wait-for-turn turret3 around y-axis;
 	wait-for-turn sleeve3 around x-axis;
 	start-script RestoreAfterDelay();
@@ -201,18 +201,18 @@ FirePrimary()
 	if( Static_Var_4 == 0 )
 	{
 		emit-sfx 1024 from flare1a;
-		move barrel1a to z-axis [-1.] speed [500.];
+		move barrel1a to z-axis [-1.] speed [500.000000];
 		sleep 150;
-		move barrel1a to z-axis [0.] speed [3.];
+		move barrel1a to z-axis [0.] speed [3.000000];
 		Static_Var_4 = 1;
 		return (0);
 	}
 	if( Static_Var_4 == 1 )
 	{
 		emit-sfx 1024 from flare1b;
-		move barrel1b to z-axis [-1.] speed [500.];
+		move barrel1b to z-axis [-1.] speed [500.000000];
 		sleep 150;
-		move barrel1b to z-axis [0.] speed [3.];
+		move barrel1b to z-axis [0.] speed [3.000000];
 		Static_Var_4 = 2;
 		return (0);
 	}
@@ -221,16 +221,16 @@ FirePrimary()
 		emit-sfx 1024 from flare1c;
 		move barrel1c to z-axis [-1.] speed [500.];
 		sleep 150;
-		move barrel1c to z-axis [0.] speed [3.];
+		move barrel1c to z-axis [0.] speed [3.000000];
 		Static_Var_4 = 3;
 		return (0);
 	}
 	if( Static_Var_4 == 3 )
 	{
 		emit-sfx 1024 from flare1d;
-		move barrel1d to z-axis [-1.] speed [500.];
+		move barrel1d to z-axis [-1.] speed [500.000000];
 		sleep 150;
-		move barrel1d to z-axis [0.] speed [3.];
+		move barrel1d to z-axis [0.] speed [3.000000];
 		Static_Var_4 = 0;
 		return (0);
 	}
@@ -241,18 +241,18 @@ FireSecondary()
 	if( Static_Var_2 == 0 )
 	{
 		emit-sfx 1025 from flare2a;
-		move barrel2a to z-axis [-1.] speed [500.];
+		move barrel2a to z-axis [-1.] speed [500.000000];
 		sleep 150;
-		move barrel2a to z-axis [0.] speed [3.];
+		move barrel2a to z-axis [0.] speed [3.000000];
 		Static_Var_2 = 1;
 		return (0);
 	}
 	if( Static_Var_2 == 1 )
 	{
 		emit-sfx 1025 from flare2b;
-		move barrel2b to z-axis [-1.] speed [500.];
+		move barrel2b to z-axis [-1.] speed [500.000000];
 		sleep 150;
-		move barrel2b to z-axis [0.] speed [3.];
+		move barrel2b to z-axis [0.] speed [3.000000];
 		Static_Var_2 = 0;
 		return (0);
 	}
