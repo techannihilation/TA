@@ -90,7 +90,7 @@ return {
 		},
 		weapondefs = {
 			arm_pidr = {
-				areaofeffect = 256,
+				areaofeffect = 512,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Arm_Trail_rocket_upg",
@@ -98,7 +98,7 @@ return {
 				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
-				edgeeffectiveness = 0.5,
+				edgeeffectiveness = 0.2,
 				explosiongenerator = "custom:nix_mininuke",
 				firestarter = 100,
 				flighttime = 1.5,
