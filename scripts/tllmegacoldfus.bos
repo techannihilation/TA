@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, ring, rblink0, rblink1, rblink2;
+piece  base, body, ring;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -41,18 +41,11 @@ Create()
 		sleep 1000;
 	}
 	start-script SmokeUnit();
-	while( TRUE )
-	{
-		emit-sfx 1024 + 0 from rblink0;
-		emit-sfx 1024 + 0 from rblink1;
-		emit-sfx 1024 + 0 from rblink2;
-		sleep 7;
-	}
 }
 
 Activate()
 {
-	spin ring around y-axis speed <10.000000>;
+	spin ring around y-axis speed <8.000000>;
 }
 
 SweetSpot(piecenum)
