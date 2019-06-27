@@ -41,6 +41,11 @@ if (gadgetHandler:IsSyncedCode()) then
 			local impulseBoost = Weapons[weaponDefID].impulseBoost
 			local number, _, Target = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 
+			if number == 1 then
+				local div = math.pow(GetUnitMass(unitID), 2 / 3) -- 2/3 root of mass to alter higher mass unit a bit more
+				AddUnitImpulse(unitID, (math.random() * impulseBoost) / div, 1.5 * impulseBoost / div, (math.random() * impulseBoost) / div)
+			end
+
 			if number == 2 then
 				local ux, _, uz = GetUnitPosition(unitID)
 				local vector = {Target[1] - ux, Target[3] - uz}
