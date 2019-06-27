@@ -1,0 +1,95 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, main, main2, main3, sphere, claw1, claw2, claw3;
+
+static-var  Static_Var_1, Static_Var_2;
+
+SmokeUnit(healthpercent, sleeptime, smoketype, smokepiece)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from main;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+	spin main2 around y-axis speed <-3.000000>;
+	spin main3 around y-axis speed <5.000000>;	
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode main type NOHEATCLOUD;
+		explode main2 type NOHEATCLOUD;
+		explode main3 type NOHEATCLOUD;
+		explode claw1 type NOHEATCLOUD;
+		explode claw2 type NOHEATCLOUD;
+		explode claw3 type NOHEATCLOUD;
+		explode sphere type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode main type NOHEATCLOUD;
+		explode main2 type NOHEATCLOUD;
+		explode main3 type NOHEATCLOUD;
+		explode claw1 type NOHEATCLOUD;
+		explode claw2 type NOHEATCLOUD;
+		explode claw3 type NOHEATCLOUD;
+		explode sphere type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	if( severity <= 99 )
+	{
+		explode main type NOHEATCLOUD;
+		explode main2 type NOHEATCLOUD;
+		explode main3 type NOHEATCLOUD;
+		explode claw1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode claw2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode claw3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sphere type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	explode main type NOHEATCLOUD;
+	explode main2 type NOHEATCLOUD;
+	explode main3 type NOHEATCLOUD;
+	explode claw1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode claw2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode claw3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sphere type NOHEATCLOUD;
+	return (corpsetype);
+}
