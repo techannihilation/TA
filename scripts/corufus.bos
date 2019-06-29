@@ -37,6 +37,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype, smokepiece)
 Create()
 {
 	start-script SmokeUnit();
+}
+
+Activate()
+{
 	spin main2 around y-axis speed <-3.000000>;
 	spin main3 around y-axis speed <5.000000>;	
 }
