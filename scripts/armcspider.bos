@@ -14,6 +14,10 @@ static-var  bMoving, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
