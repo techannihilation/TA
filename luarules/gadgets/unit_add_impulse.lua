@@ -24,7 +24,7 @@ local GetUnitMass = Spring.GetUnitMass
 --------------------------------------------------------------------------------
 local Weapons = {
 	[UnitDefNames.armcybr.weapons[1].weaponDef] = {
-		impulseBoost = 3000,
+		impulseBoost = 1000,
 		weaponNumber = 1
 	}
 }
@@ -43,7 +43,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 			if number == 1 then
 				local div = math.pow(GetUnitMass(unitID), 2 / 3) -- 2/3 root of mass to alter higher mass unit a bit more
-				AddUnitImpulse(unitID, (math.random() * impulseBoost) / div, 1.5 * impulseBoost / div, (math.random() * impulseBoost) / div)
+				AddUnitImpulse(unitID, (math.random() * impulseBoost) / div, impulseBoost / div, (math.random() * impulseBoost) / div)
 			end
 
 			if number == 2 then
