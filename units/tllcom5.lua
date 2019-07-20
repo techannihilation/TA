@@ -94,7 +94,7 @@ return {
 			[11] = "tlltower",
 			[12] = "tllradar",
 			[13] = "tlldt",
-			[14] = "tllupgweb",
+			[14] = "tlllft",
 			[15] = "tllvhlt",
 			[16] = "tllsam",
 			[17] = "tllshoretorp",
