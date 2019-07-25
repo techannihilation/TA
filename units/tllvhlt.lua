@@ -126,10 +126,10 @@ return {
 		},
 		weapondefs = {
 			core_laserh2 = {
-				areaofeffect = 20,
-				beamtime = 2.4,
+				areaofeffect = 16,
+				beamtime = 0.2,
 				collidefriendly = false,
-				corethickness = 0.65,
+				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
