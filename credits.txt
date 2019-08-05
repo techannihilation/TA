@@ -11,7 +11,7 @@ Some Models (tllzeppelin, tllcaps, tll_immolator, tlltetanos, tllinsulator, tllc
 Bitmaps strike.png and lightningball.png are copyright by [BoS]nixtux please ask permission before using theses textures.
 
 Bitmaps sfume1.png, sfume2.png, slightning1.png are copyright by [KING]Silver.
-Sounds sdrone1.wav, selectricity1.wav, selectricity2.wav, zeus_hit_1.wav are copyright  by [KING]Silver.
+Sounds laser_1.wav,sdrone1.wav,selectricity1.wav, selectricity2.wav, sonar_1.wav, zeus_hit_1.wav are copyright  by [KING]Silver.
 [KING]Silver gave full right to [BoS]nixtux of ownership of his artwork (bitmaps/sounds), please ask permission before using them.
 
 Unitlogos for tll copyrighted by [BoS]nixtux
