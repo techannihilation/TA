@@ -115,7 +115,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
-				energypershot = 55000,
+				energypershot = 132000,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				gravityaffected = true,
 				impulseboost = 0.5,
