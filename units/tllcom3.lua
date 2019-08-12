@@ -94,7 +94,7 @@ return {
 			[12] = "tllradar",
 			[13] = "tlldt",
 			[14] = "tllllt",
-			[15] = "tllupgweb",
+			[15] = "tlllft",
 			[16] = "tllhlt",
 			[17] = "tlllmt1",
 			[18] = "tllbuilderlvl2",

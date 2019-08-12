@@ -161,6 +161,11 @@ local morphDefs = {
 		time = 15,
 		xp = 0.50,
 	},
+	tllllt = {
+		into = 'tlllft',
+		time = 15,
+		xp = 0.40,
+	},
 	armhlt = {
 		into = 'armvhlt',
 		time = 30,
