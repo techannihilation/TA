@@ -134,7 +134,7 @@ return {
 				name = "lrpt_cannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 7050,
+				range = 5050,
 				reloadtime = 8,
 				rgbcolor = "0.85 0.6 0",
 				separation = 0.45,

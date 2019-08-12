@@ -138,7 +138,7 @@ return {
 				name = "BerthaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 7100,
+				range = 5100,
 				reloadtime = 5,
 				rgbcolor = "0.93 0.74 0",
 				separation = 0.45,
