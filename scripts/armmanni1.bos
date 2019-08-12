@@ -62,15 +62,7 @@ Create()
 {
 	hide flash1;
 	hide flash2;
-	dont-cache flash1;
-	dont-cache flash2;
-	dont-cache sensor;
-	dont-cache barrel1;
-	dont-cache barrel2;
-	dont-cache sleeve1;
-	dont-cache sleeve2;
-	dont-cache turret;
-	dont-shade sensor;
+	gun_1 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -104,16 +96,6 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if(gun_1 == 0)
-	{
-		show flash1;
-		sleep 500;
-	}
-	if(gun_1 == 1)
-	{
-		show flash2;
-		sleep 500;
-	}
 	++gun_1;
 	if(gun_1 == 2)
 	{
