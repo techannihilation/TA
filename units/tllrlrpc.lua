@@ -136,7 +136,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.6,
-				energypershot = 15700,
+				energypershot = 12700,
 				explosiongenerator = "custom:Explosion_Barret_Tesla",
 				firestarter = 90,
 				impulseboost = 0,
