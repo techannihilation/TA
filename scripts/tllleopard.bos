@@ -206,13 +206,28 @@ AimTertiary(heading, pitch)
 	return (1);
 }
 
-Shot3()
+FireTertiary()
 {
-	++missile;
-	if( missile == 10 )
-	{
-		missile = 0;
-	}
+	missile = 0;
+	sleep 80;
+	missile = 1;
+	sleep 80;
+	missile = 2;
+	sleep 80;
+	missile = 3;
+	sleep 80;
+	missile = 4;
+	sleep 80;
+	missile = 5;
+	sleep 80;	
+	missile = 6;
+	sleep 80;
+	missile = 7;
+	sleep 80;
+	missile = 8;
+	sleep 80;
+	missile = 9;
+	sleep 80;
 }
 
 QueryTertiary(piecenum)
