@@ -14,6 +14,10 @@ static-var  bMoving, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -46,7 +50,7 @@ RequestState(requestedstate, currentstate)
 			sleep 250;
 			turn nano to x-axis <120.000000> speed <270.000000>;
 			sleep 450;
-			move lathe to z-axis [-4.000000] speed [8.000000];
+			move lathe to z-axis [-3.200000] speed [8.000000];
 			turn nano to x-axis <179.895604> speed <120.000000>;
 			sleep 500;
 			turn turret to y-axis Static_Var_2 speed <160.000000>;
@@ -78,10 +82,6 @@ Create()
 	Static_Var_3 = 1;
 	Static_Var_4 = 0;
 	Static_Var_5 = 0;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
 	start-script SmokeUnit();
 }
 
