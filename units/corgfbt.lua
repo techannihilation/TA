@@ -3,7 +3,7 @@ return {
 		acceleration = 0.025,
 		activatewhenbuilt = true,
 		brakerate = 0.06,
-		buildcostenergy = 10647,
+		buildcostenergy = 8047,
 		buildcostmetal = 694,
 		builder = false,
 		buildpic = "corgfbt.dds",
