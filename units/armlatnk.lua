@@ -2,8 +2,8 @@ return {
 	armlatnk = {
 		acceleration = 0.125,
 		brakerate = 0.375,
-		buildcostenergy = 7504,
-		buildcostmetal = 321,
+		buildcostenergy = 5904,
+		buildcostmetal = 297,
 		builder = false,
 		buildpic = "armlatnk.dds",
 		buildtime = 6000,
