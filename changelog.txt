@@ -1,3 +1,13 @@
+3.08.0 -> 3.XX.XX
+2019-08-18
+
+Balance:
+ - Decrease Lighting Tank cost -30M and -1KE
+ - Increase Range for Coyote at 460 (same than Bull)
+ 
+Improvements:
+ - Delete temporally Copters (Need to redisign and balance)
+
 3.07.0 -> 3.08.0
 2018-05-11
 
