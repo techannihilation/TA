@@ -169,7 +169,7 @@ return {
 				impulsefactor = 0,
 				name = "Vengence Laser",
 				range = 545,
-				reloadtime = 0.65,
+				reloadtime = 0.75,
 				rgbcolor = "0.1875 0.109375 0.65625",
 				soundhitdry = "xplosml3",
 				soundhitwet = "sizzle",
