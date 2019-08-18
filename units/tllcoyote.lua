@@ -180,7 +180,7 @@ return {
 				name = "PlasmaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 410,
+				range = 460,
 				reloadtime = 0.8,
 				separation = 0.45,
 				sizedecay = -0.15,
