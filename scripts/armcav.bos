@@ -3,14 +3,14 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  torso, gunflare, emgflare, hips, l_thigh, r_thigh, head, luparm,
-       ruparm, rarm, larm, rleg, rfoot, lleg, lfoot, lemg,
-       rgun;
+piece  torso, emgflare, hips, l_thigh, r_thigh, head, luparm,
+       ruparm, rarm, larm, rleg, rfoot, lleg, lfoot, lemg, flash, muzzle, gun;
 
 static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, restore_delay;
 
 // Signal definitions
 #define SIG_AIM				4
+#define SIG_AIM_2				8
 
 
 walk()
@@ -37,10 +37,10 @@ walk()
 		turn head to y-axis <7.736264> speed <43.049451>;
 		turn luparm to x-axis <-19.692308> now;
 		turn luparm to x-axis <-14.593407> speed <104.049451>;
-		turn ruparm to x-axis <21.802198> now;
-		turn ruparm to x-axis <26.192308> speed <89.703297>;
-		turn rarm to x-axis <24.615385> now;
-		turn rarm to x-axis <45.714286> speed <430.582418>;
+		turn ruparm to x-axis <7.802198> now;
+		turn ruparm to x-axis <8.192308> speed <89.703297>;
+		turn rarm to x-axis <7.615385> now;
+		turn rarm to x-axis <10.714286> speed <430.582418>;
 		turn larm to x-axis <0.000000> now;
 		turn larm to x-axis <-8.791209> speed <179.412088>;
 		turn rleg to x-axis <17.225275> now;
@@ -65,8 +65,8 @@ walk()
 		turn torso to y-axis <-5.626374> speed <35.879121>;
 		turn head to y-axis <5.626374> speed <43.049451>;
 		turn luparm to x-axis <-9.489011> speed <104.049451>;
-		turn ruparm to x-axis <30.582418> speed <89.703297>;
-		turn rarm to x-axis <66.813187> speed <430.582418>;
+		turn ruparm to x-axis <10.582418> speed <89.703297>;
+		turn rarm to x-axis <12.813187> speed <430.582418>;
 		turn larm to x-axis <-17.582418> speed <179.412088>;
 		turn rleg to x-axis <9.489011> speed <78.934066>;
 		turn rfoot to x-axis <8.780220> speed <462.879121>;
@@ -87,7 +87,7 @@ walk()
 		turn head to y-axis <3.335165> speed <54.412088>;
 		turn luparm to x-axis <-0.703297> speed <209.313187>;
 		turn ruparm to x-axis <16.879121> speed <326.527473>;
-		turn rarm to x-axis <62.236264> speed <108.835165>;
+		turn rarm to x-axis <20.236264> speed <108.835165>;
 		turn larm to x-axis <-3.516484> speed <334.901099>;
 		turn rleg to x-axis <7.203297> speed <54.412088>;
 		turn rfoot to x-axis <4.390110> speed <104.648352>;
@@ -108,7 +108,7 @@ walk()
 		turn head to y-axis <1.049451> speed <50.791209>;
 		turn luparm to x-axis <8.082418> speed <195.357143>;
 		turn ruparm to x-axis <3.159341> speed <304.758242>;
-		turn rarm to x-axis <57.670330> speed <101.582418>;
+		turn rarm to x-axis <18.670330> speed <101.582418>;
 		turn larm to x-axis <10.549451> speed <312.571429>;
 		turn rleg to x-axis <4.923077> speed <50.791209>;
 		turn rfoot to x-axis <0.000000> speed <97.670330>;
@@ -127,7 +127,7 @@ walk()
 		turn head to y-axis <-2.104396> speed <44.571429>;
 		turn luparm to x-axis <12.659341> speed <64.379121>;
 		turn ruparm to x-axis <-1.934066> speed <71.813187>;
-		turn rarm to x-axis <43.604396> speed <198.104396>;
+		turn rarm to x-axis <14.604396> speed <198.104396>;
 		turn larm to x-axis <14.412088> speed <54.478022>;
 		turn rfoot to x-axis <-8.082418> speed <113.912088>;
 		turn lleg to x-axis <23.560440> speed <158.489011>;
@@ -145,7 +145,7 @@ walk()
 		turn head to y-axis <-5.269231> speed <43.945055>;
 		turn luparm to x-axis <17.225275> speed <63.489011>;
 		turn ruparm to x-axis <-7.027473> speed <70.813187>;
-		turn rarm to x-axis <29.538462> speed <195.357143>;
+		turn rarm to x-axis <9.538462> speed <195.357143>;
 		turn larm to x-axis <18.280220> speed <53.714286>;
 		turn rfoot to x-axis <-16.170330> speed <112.324176>;
 		turn lleg to x-axis <12.302198> speed <156.280220>;
@@ -161,8 +161,8 @@ walk()
 		turn torso to y-axis <7.736264> speed <18.901099>;
 		turn head to y-axis <-7.379121> speed <22.681319>;
 		turn luparm to x-axis <19.335165> speed <22.681319>;
-		turn ruparm to x-axis <-13.357143> speed <68.060440>;
-		turn rarm to x-axis <14.769231> speed <158.802198>;
+		turn ruparm to x-axis <-6.357143> speed <68.060440>;
+		turn rarm to x-axis <6.769231> speed <158.802198>;
 		turn larm to x-axis <26.890110> speed <92.637363>;
 		turn rleg to x-axis <2.456044> speed <26.467033>;
 		turn rfoot to x-axis <-16.170330> speed <0.000000>;
@@ -179,7 +179,7 @@ walk()
 		turn torso to y-axis <9.489011> speed <18.505495>;
 		turn head to y-axis <-9.489011> speed <22.203297>;
 		turn luparm to x-axis <21.445055> speed <22.203297>;
-		turn ruparm to x-axis <-19.692308> speed <66.626374>;
+		turn ruparm to x-axis <-8.692308> speed <66.626374>;
 		turn rarm to x-axis <0.000000> speed <155.456044>;
 		turn larm to x-axis <35.516484> speed <90.681319>;
 		turn rleg to x-axis <0.000000> speed <25.901099>;
@@ -200,8 +200,8 @@ walk()
 		turn torso to y-axis <7.560440> speed <39.467033>;
 		turn head to y-axis <-7.736264> speed <35.879121>;
 		turn luparm to x-axis <25.846154> speed <89.703297>;
-		turn ruparm to x-axis <-14.593407> speed <104.049451>;
-		turn rarm to x-axis <-7.027473> speed <143.527473>;
+		turn ruparm to x-axis <-9.593407> speed <104.049451>;
+		turn rarm to x-axis <-4.027473> speed <143.527473>;
 		turn larm to x-axis <50.978022> speed <315.758242>;
 		turn rleg to x-axis <10.714286> speed <218.879121>;
 		turn rfoot to x-axis <-8.258242> speed <161.467033>;
@@ -221,8 +221,8 @@ walk()
 		turn torso to y-axis <5.626374> speed <39.467033>;
 		turn head to y-axis <-5.978022> speed <35.879121>;
 		turn luparm to x-axis <30.236264> speed <89.703297>;
-		turn ruparm to x-axis <-9.489011> speed <104.049451>;
-		turn rarm to x-axis <-14.060440> speed <143.527473>;
+		turn ruparm to x-axis <-7.489011> speed <104.049451>;
+		turn rarm to x-axis <-8.060440> speed <143.527473>;
 		turn larm to x-axis <66.456044> speed <315.758242>;
 		turn rleg to x-axis <21.445055> speed <218.879121>;
 		turn rfoot to x-axis <-0.346154> speed <161.467033>;
@@ -263,8 +263,8 @@ walk()
 		turn torso to y-axis <2.104396> speed <36.626374>;
 		turn head to y-axis <-2.104396> speed <40.291209>;
 		turn luparm to x-axis <3.159341> speed <282.049451>;
-		turn ruparm to x-axis <8.082418> speed <183.148352>;
-		turn rarm to x-axis <10.901099> speed <260.071429>;
+		turn ruparm to x-axis <6.082418> speed <183.148352>;
+		turn rarm to x-axis <6.901099> speed <260.071429>;
 		turn larm to x-axis <57.313187> speed <95.236264>;
 		turn rleg to x-axis <52.390110> speed <322.335165>;
 		turn rfoot to x-axis <-10.192308> speed <102.560440>;
@@ -283,8 +283,8 @@ walk()
 		turn torso to y-axis <-1.747253> speed <52.269231>;
 		turn head to y-axis <1.747253> speed <52.269231>;
 		turn luparm to x-axis <-2.104396> speed <71.269231>;
-		turn ruparm to x-axis <13.005495> speed <66.527473>;
-		turn rarm to x-axis <14.934066> speed <54.637363>;
+		turn ruparm to x-axis <6.005495> speed <66.527473>;
+		turn rarm to x-axis <8.934066> speed <54.637363>;
 		turn larm to x-axis <43.604396> speed <185.324176>;
 		turn rleg to x-axis <39.027473> speed <180.571429>;
 		turn rfoot to x-axis <-7.203297> speed <40.390110>;
@@ -303,8 +303,8 @@ walk()
 		turn torso to y-axis <-5.626374> speed <50.890110>;
 		turn head to y-axis <5.626374> speed <50.890110>;
 		turn luparm to x-axis <-7.379121> speed <69.401099>;
-		turn ruparm to x-axis <17.923077> speed <64.769231>;
-		turn rarm to x-axis <18.989011> speed <53.203297>;
+		turn ruparm to x-axis <7.923077> speed <64.769231>;
+		turn rarm to x-axis <9.989011> speed <53.203297>;
 		turn larm to x-axis <29.879121> speed <180.445055>;
 		turn rleg to x-axis <25.659341> speed <175.824176>;
 		turn rfoot to x-axis <-4.214286> speed <39.324176>;
@@ -322,8 +322,8 @@ walk()
 		turn torso to y-axis <-7.379121> speed <18.703297>;
 		turn head to y-axis <7.736264> speed <22.445055>;
 		turn luparm to x-axis <-13.527473> speed <65.456044>;
-		turn ruparm to x-axis <19.857143> speed <20.571429>;
-		turn rarm to x-axis <21.802198> speed <29.923077>;
+		turn ruparm to x-axis <11.857143> speed <20.571429>;
+		turn rarm to x-axis <12.802198> speed <29.923077>;
 		turn larm to x-axis <14.934066> speed <158.989011>;
 		turn rleg to x-axis <21.445055> speed <44.890110>;
 		turn rfoot to x-axis <-12.302198> speed <86.038462>;
@@ -622,7 +622,9 @@ MotionControl(moving, aiming, justmoved)
 
 Create()
 {
-	hide gunflare;
+	hide flash;
+	hide muzzle;
+//	hide gunflare;
 	hide emgflare;
 	bMoving = FALSE;
 	bAiming = FALSE;
@@ -667,25 +669,25 @@ RestoreAfterDelay()
 	bAiming = FALSE;
 }
 
-AimFromPrimary(piecenum)
+AimFromSecondary(piecenum)
 {
 	piecenum = torso;
 }
 
-QueryPrimary(piecenum)
+QuerySecondary(piecenum)
 {
-	piecenum = gunflare;
+	piecenum = flash;
 }
 
-FirePrimary()
+FireSecondary()
 {
-	emit-sfx 1024 + 0 from gunflare;
+	emit-sfx 1024 + 0 from muzzle;
 }
 
-AimPrimary(heading, pitch)
+AimSecondary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	bAiming = TRUE;
 	while( !Static_Var_3 )
 	{
@@ -699,21 +701,21 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-AimFromSecondary(piecenum)
+AimFromPrimary(piecenum)
 {
 	piecenum = torso;
 }
 
-QuerySecondary(piecenum)
+QueryPrimary(piecenum)
 {
 	piecenum = emgflare;
 }
 
-FireSecondary()
+FirePrimary()
 {
 }
 
-AimSecondary(heading, pitch)
+AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -741,7 +743,6 @@ Killed(severity, corpsetype)
 		explode larm type NOHEATCLOUD;
 		explode l_thigh type NOHEATCLOUD;
 		explode luparm type NOHEATCLOUD;
-		explode rgun type NOHEATCLOUD;
 		explode rfoot type NOHEATCLOUD;
 		explode rleg type NOHEATCLOUD;
 		explode rarm type NOHEATCLOUD;
@@ -759,7 +760,6 @@ Killed(severity, corpsetype)
 		explode larm type NOHEATCLOUD | FALL;
 		explode l_thigh type NOHEATCLOUD | FALL;
 		explode luparm type NOHEATCLOUD | FALL;
-		explode rgun type NOHEATCLOUD | FALL;
 		explode rfoot type NOHEATCLOUD | FALL;
 		explode rleg type NOHEATCLOUD | FALL;
 		explode rarm type NOHEATCLOUD | FALL;
@@ -777,7 +777,6 @@ Killed(severity, corpsetype)
 		explode larm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode l_thigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rgun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -793,7 +792,6 @@ Killed(severity, corpsetype)
 	explode larm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode l_thigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rgun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

@@ -36,6 +36,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "ARMZEUS1",
 		radaremitheight = 44,
+		script = "armzeus.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 331.5,
