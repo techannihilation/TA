@@ -7,7 +7,10 @@ Balance:
  
 Improvements:
  - Delete temporally Copters (Need to redisign and balance)
-
+ - Add new flammer tank core t1.5 (Remplace corfgbt model). Decrease energycost by 10%.
+ - Add new model Akmech
+ - Add new T1.5 Cons Veh (tllmando) TLL and delete T1.5 Cons Air (tllhtca)
+ 
 3.07.0 -> 3.08.0
 2018-05-11
 
