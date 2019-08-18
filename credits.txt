@@ -25,8 +25,20 @@ tll.bmp
 All Unit pictures and images used for icon backgrounds copyrighted by [BoS]nixtux ask permission before using those images.
 ----------------------------------------------------------------------------------
 
-Credits :-Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
-boogie ,wootan and the registeredone for letting us use these models
+Credits : Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
+boogie, Wotan and the TheRegisteredOne for letting us use these models. Please follow this link : taesc.tauniverse.com to see rights about these units.
+
+List from TAESC (in Work) : 
+- T3 Construction Air Arm/Core
+- T4 ArmOlympus
+- T4 MetalMaker Arm/Core
+- T3 Jammer Arm/Core
+- T3 Extractor Metal Arm/Core
+- T3 Lighting Tank Arm
+- T3 SubMarines Arm/Core
+- T1.5 Bertha Arm/Core
+- T3 Artillery Overlord
+- Others (in work)
 
 ----------------------------------------------------------------------------------
 UNITS MADE BY KROGOTH86:
