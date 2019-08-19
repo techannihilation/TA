@@ -3,11 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, fuselage, eng1, eng2, flare1, sfx3, sfx4, fin,
-       turret1, turret2, fpt1a, fpt1b, fpt2a, fpt2b, ribbon1, ribbon2;
-
-static-var  statechg_DesiredState, statechg_StateChanging, gun_1;
-
+piece  base, fuselage, flare1, ribbon1, ribbon2;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -26,15 +22,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			Func_Var_4 = Rand( 1, 2 );
-			if( Func_Var_4 == 1 )
-			{
-				emit-sfx smoketype from sfx3;
-			}
-			if( Func_Var_4 == 2 )
-			{
-				emit-sfx smoketype from sfx4;
-			}
+			emit-sfx smoketype from fuselage;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -44,69 +32,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 }
-
-activatescr()
-{
-}
-
-deactivatescr()
-{
-}
-
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script activatescr();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script deactivatescr();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-
 Create()
 {
 	hide ribbon1;
 	hide ribbon2;
-	hide eng1;
-	hide eng2;
 	hide flare1;
-	hide sfx3;
-	hide sfx4;
-	call-script InitState();
 	start-script SmokeUnit();
-	gun_1 = base;
-}
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
 }
 
 AimPrimary()
@@ -122,24 +53,8 @@ QueryPrimary(piecenum)
 FirePrimary()
 {
 	sleep 1500;
-	gun_1 = fuselage;
 	set CURRENT_FUEL to 0;
 	sleep 1000;
-	gun_1 = base;
-}
-
-AimSecondary()
-{
-	while( gun_1 == 0 )
-	{
-		sleep 100;
-	}
-	return (1);
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = base;
 }
 
 SweetSpot(piecenum)
@@ -149,45 +64,7 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode fuselage type NOHEATCLOUD;
-		explode eng1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode eng2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | SHATTER;
-		explode turret2 type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		explode fuselage type NOHEATCLOUD;
-		explode eng1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode eng2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | SHATTER;
-		explode turret2 type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode fuselage type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode eng1 type NOHEATCLOUD | SHATTER;
-		explode eng2 type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
-	explode fuselage type NOHEATCLOUD;
-	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode eng1 type NOHEATCLOUD | SHATTER;
-	explode eng2 type NOHEATCLOUD | SHATTER;
+	explode fuselage type NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
