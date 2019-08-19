@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "armfsilo_aoplane.dds",
 		buildpic = "armfsilo.dds",
-		buildtime = 701868,
+		buildtime = 2000000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
