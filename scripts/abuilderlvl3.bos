@@ -45,21 +45,6 @@ SweetSpot(PieceNum)
 	PieceNum = sp;
 }
 
-Activate()
-{
-	set-signal-mask 256;
-	turn engine1 to x-axis <10.00> speed <50.00>;
-	turn engine2 to x-axis <10.00> speed <50.00>;
-	sleep 100;
-}
-
-Deactivate()
-{
-	signal 256;
-	turn engine1 to x-axis <0.00> speed <25.00>;
-	turn engine2 to x-axis <0.00> speed <25.00>;
-}
-
 StartBuilding()
 {
 	set INBUILDSTANCE to 1;
