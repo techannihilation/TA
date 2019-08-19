@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "tllion_aoplane.dds",
 		buildpic = "tllion.dds",
-		buildtime = 1559848,
+		buildtime = 2000000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
