@@ -5,7 +5,7 @@
 
 piece  base, body, arm, dish, light;
 
-static-var  Static_Var_1;
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -35,26 +35,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
-{
-	Func_Var_1 = -18;
-	Func_Var_2 = -18;
-	while( TRUE )
-	{
-		while( get ABS(Func_Var_2) < 238 )
-		{
-			Func_Var_3 = 263 - get ABS(Func_Var_2);
-			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
-			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
-			wait-for-turn base around x-axis;
-			wait-for-turn base around z-axis;
-			Func_Var_2 = Func_Var_2 + Func_Var_1;
-		}
-		Func_Var_1 = 0 - Func_Var_1;
-		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
-	}
-}
-
 Shield()
 {
 	Static_Var_1 = !Static_Var_1;
@@ -65,8 +45,8 @@ Create()
 	dont-shade dish;
 	dont-shade arm;
 	dont-shade light;
+	Static_Var_1 = 1;
 	start-script SmokeUnit();
-	start-script Tangue();
 	set ARMORED to 1;
 }
 

@@ -26,35 +26,33 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move hatch to x-axis [6.400000] speed [8.000000];
-		move hatch to y-axis [-7.200000] speed [10.000000];
+		move hatch to x-axis [7.500000] speed [8.000000];
+		move hatch to y-axis [-8.500000] speed [10.000000];
 		turn hatch to z-axis <-49.000000> speed <52.000000>;
 		sleep 150;
 	}
 	if( TRUE )
 	{
-		move shell1a to z-axis [0.000000] speed [0.000000];
-		move shell4b to x-axis [-8.000000] speed [12.000000];
-		move shell3b to z-axis [-8.000000] speed [12.000000];
-		move shell2b to x-axis [4.000000] speed [10.000000];
-		move shell1b to z-axis [4.000000] speed [10.000000];
+		move shell4b to x-axis [-10.000000] speed [12.000000];
+		move shell3b to z-axis [-10.000000] speed [12.000000];
+		move shell2b to x-axis [10.000000] speed [10.000000];
+		move shell1b to z-axis [10.000000] speed [10.000000];
 		sleep 150;
 	}
 	if( TRUE )
 	{
-		move shell1a to x-axis [6.400000] speed [8.000000];
-		move shell1a to z-axis [0.000000] speed [0.000000];
-		move shell2a to z-axis [-6.400000] speed [8.000000];
-		move shell3a to x-axis [-6.400000] speed [8.000000];
-		move shell4a to z-axis [6.400000] speed [8.000000];
+		move shell1a to x-axis [8.60000] speed [8.000000];
+		move shell2a to z-axis [-8.60000] speed [8.000000];
+		move shell3a to x-axis [-8.60000] speed [8.000000];
+		move shell4a to z-axis [8.600000] speed [8.000000];
 		sleep 150;
 	}
 	if( TRUE )
 	{
-		move shell1a to y-axis [-23.200000] speed [34.000000];
-		move shell2a to y-axis [-23.200000] speed [34.000000];
-		move shell3a to y-axis [-23.200000] speed [32.000000];
-		move shell4a to y-axis [-23.200000] speed [32.000000];
+		move shell1a to y-axis [-33.00000] speed [34.000000];
+		move shell2a to y-axis [-33.00000] speed [34.000000];
+		move shell3a to y-axis [-33.00000] speed [32.000000];
+		move shell4a to y-axis [-32.00000] speed [32.000000];
 		sleep 150;
 	}
 	if( TRUE )
