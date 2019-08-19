@@ -1,8 +1,8 @@
 return {
 	tllrlrpc = {
 		buildangle = 2760,
-		buildcostenergy = 383457,
-		buildcostmetal = 24892,
+		buildcostenergy = 393457,
+		buildcostmetal = 25892,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -28,7 +28,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 92,
-		mass = 27892,
+		mass = 25892,
 		maxdamage = 12080,
 		maxslope = 10,
 		maxwaterdepth = 0,
