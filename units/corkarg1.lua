@@ -1,9 +1,9 @@
 return {
 	corkarg1 = {
 		acceleration = 0.096,
-		airsightdistance = 1100,
+		airsightdistance = 900,
 		brakerate = 0.7,
-		buildcostenergy = 319928,
+		buildcostenergy = 224555,
 		buildcostmetal = 17140,
 		builder = false,
 		buildpic = "corkarg1.dds",
@@ -28,9 +28,9 @@ return {
 		losemitheight = 108,
 		maneuverleashlength = 640,
 		mass = 17140,
-		maxdamage = 72500,
+		maxdamage = 54500,
 		maxslope = 160,
-		maxvelocity = 1.8,
+		maxvelocity = 1.5,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "HTKBOT7",
@@ -119,7 +119,7 @@ return {
 			},
 		},
 		weapondefs = {
-			cor_erad2 = {
+			aa_missile2 = {
 				areaofeffect = 84,
 				avoidfeature = false,
 				burnblow = true,
@@ -140,7 +140,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 900,
-				reloadtime = 1,
+				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splssml",
@@ -265,7 +265,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				def = "cor_erad2",
+				def = "AA_MISSILE2",
 				onlytargetcategory = "VTOL",
 			},
 		},

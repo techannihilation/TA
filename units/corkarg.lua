@@ -108,7 +108,7 @@ return {
 			},
 		},
 		weapondefs = {
-			cor_erad = {
+			aa_missile = {
 				areaofeffect = 144,
 				avoidfeature = false,
 				burnblow = true,
@@ -124,10 +124,10 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				model = "missile",
-				name = "ExplosiveRockets",
+				name = "AA missile",
 				noselfdamage = true,
 				proximitypriority = -4,
-				range = 750,
+				range = 600,
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
@@ -252,7 +252,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				def = "COR_ERAD",
+				def = "AA_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 		},
