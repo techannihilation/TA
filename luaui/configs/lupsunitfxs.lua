@@ -497,7 +497,19 @@ cbuilderlvl3 = {
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
 },
- cbuilderlvl5 = {
+cbuilderlvl4 = {
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
+},
+coreca = {
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
+},
+cbuilderlvl5 = {
  	{class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster1", noIconDraw = true, priority=3, onActive=true}},
  	{class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster.55552", noIconDraw = true, priority=3, onActive=true}},
 },
