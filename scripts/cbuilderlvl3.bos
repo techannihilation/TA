@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 
-piece base ,body, beam, w1, w2, w5, w6, w7;
+piece base ,body, beam, w1, w2, w5, w6, w7, engine1, engine2;
 static-var spray;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -38,6 +38,15 @@ Create()
 	START-SCRIPT SmokeUnit();
 }
 
+Activate()
+{
+	set ARMORED to 1;
+}
+
+Deactivate()
+{
+	set ARMORED to 0;
+}
 
 StartBuilding()
 {

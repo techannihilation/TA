@@ -483,23 +483,39 @@ abuilderlvl5 = {
 	{class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1,1,1}, width=12, length=15, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
- },
+},
+cbuilderlvl1 = {
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExR", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExL", noIconDraw = true, priority=3, onActive=true}},
+},
 cbuilderlvl2 = {
 	{class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="lbthrust", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="rbthrust", noIconDraw = true, priority=3, onActive=true}},
 },
-cbuilderlvl1 = {
-	{class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExR", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExL", noIconDraw = true, priority=3, onActive=true}},
- },
- cbuilderlvl5 = {
+cbuilderlvl3 = {
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+},
+cbuilderlvl4 = {
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
+},
+coreca = {
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
+},
+cbuilderlvl5 = {
  	{class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster1", noIconDraw = true, priority=3, onActive=true}},
  	{class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster.55552", noIconDraw = true, priority=3, onActive=true}},
- },
+},
  tllbuilderlvl3 = {
  	{class='AirJet',options={color={1,1,1}, width=10, length=35, piece="thruster", noIconDraw = true, priority=3, onActive=true}},
- },
+},
  armorion = {
     {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=7, length=24, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},

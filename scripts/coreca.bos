@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, storage, glow, ring, bridge, pod1, pod2, pod3, pod4, pod5, pod6, nanobeam;
+piece  base, body, storage, glow, ring, bridge, pod1, pod2, pod3, pod4, pod5, pod6, nanobeam, engine1, engine2, engine3, engine4;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
 

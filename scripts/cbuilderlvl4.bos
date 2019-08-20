@@ -4,8 +4,8 @@
 #include "exptype.h"
 
 
-piece base ,body, beam, pipes;
-static-var spray;
+piece base ,body, nanobeam, ring1, ring2, bridge, engine1, engine2, engine3, engine4;
+static-var  spray, statechg_DesiredState, statechg_StateChanging;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -34,11 +34,75 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+activatescr()
+{
+	if( TRUE )
+	{
+		spin ring1 around y-axis speed <50.000000> accelerate <0.600000>;
+		spin ring2 around y-axis speed <-50.000000> accelerate <0.600000>;
+		sleep 1400;
+	}
+	sleep 50;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		stop-spin ring1 around y-axis decelerate <-0.600000>;
+		stop-spin ring2 around y-axis decelerate <0.600000>;
+		sleep 1400;
+	}
+	sleep 50;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
 
 Create()
 {
+	call-script InitState();
 	spray = 0;
 	start-script SmokeUnit();
+}
+
+Activate()
+{
+	set ARMORED to 1;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
 }
 
 StartBuilding()
@@ -53,7 +117,7 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	piecenum = beam;
+	piecenum = nanobeam;
 }
 
 SweetSpot(piecenum)
@@ -65,6 +129,8 @@ Killed(severity, corpsetype)
 {
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
-		explode pipes type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD;
+		explode ring1 type NOHEATCLOUD;
+		explode ring2 type NOHEATCLOUD;
 		return (corpsetype);
 }
