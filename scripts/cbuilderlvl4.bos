@@ -39,7 +39,7 @@ activatescr()
 	if( TRUE )
 	{
 		spin ring1 around y-axis speed <50.000000> accelerate <0.600000>;
-		spin ring2 around y-axis speed <-50.000000> accelerate <0.600000>;
+		spin ring2 around y-axis speed <-75.000000> accelerate <1.200000>;
 		sleep 1400;
 	}
 	sleep 50;
@@ -50,7 +50,7 @@ deactivatescr()
 	if( TRUE )
 	{
 		stop-spin ring1 around y-axis decelerate <-0.600000>;
-		stop-spin ring2 around y-axis decelerate <0.600000>;
+		stop-spin ring2 around y-axis decelerate <-1.200000>;
 		sleep 1400;
 	}
 	sleep 50;
