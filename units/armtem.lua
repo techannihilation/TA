@@ -160,7 +160,7 @@ return {
 				},
 			},
 			armtem_weapon = {
-				areaofeffect = 170,
+				areaofeffect = 180,
 				avoidfeature = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
