@@ -6,7 +6,7 @@
 piece  torso, emgflare, hips, l_thigh, r_thigh, head, luparm,
        ruparm, rarm, larm, rleg, rfoot, lleg, lfoot, lemg, flash, muzzle, gun;
 
-static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, restore_delay;
+static-var  bMoving, bAiming, Static_Var_4, restore_delay, isgunone;
 
 // Signal definitions
 #define SIG_AIM				4
@@ -584,19 +584,16 @@ MotionControl(moving, aiming, justmoved)
 		{
 			if( aiming )
 			{
-				Static_Var_3 = 1;
 				call-script walklegs();
 			}
 			if( !aiming )
 			{
-				Static_Var_3 = 0;
 				call-script walk();
 			}
 			justmoved = TRUE;
 		}
 		if( !moving )
 		{
-			Static_Var_3 = 1;
 			if( justmoved )
 			{
 				turn r_thigh to x-axis <0.000000> speed <200.038462>;
@@ -624,11 +621,10 @@ Create()
 {
 	hide flash;
 	hide muzzle;
-//	hide gunflare;
 	hide emgflare;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_3 = 1;
+	isgunone = 0;
 	Static_Var_4 = 0;
 	restore_delay = 3000;
 	start-script MotionControl();
@@ -658,10 +654,11 @@ SweetSpot(piecenum)
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	turn torso to y-axis <0.000000> speed <90.016484>;
-	turn ruparm to x-axis <0.000000> speed <45.005495>;
-	turn rarm to y-axis <0.000000> speed <45.005495>;
-	turn luparm to x-axis <0.000000> speed <45.005495>;
+	isgunone = 0;
+	turn torso to y-axis <0.000000> speed <90.0>;
+	turn ruparm to x-axis <0.000000> speed <45.0>;
+	turn rarm to y-axis <0.000000> speed <45.0>;
+	turn luparm to x-axis <0.000000> speed <45.0>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn rarm around y-axis;
@@ -671,7 +668,7 @@ RestoreAfterDelay()
 
 AimFromSecondary(piecenum)
 {
-	piecenum = torso;
+	piecenum = flash;
 }
 
 QuerySecondary(piecenum)
@@ -688,22 +685,20 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	bAiming = TRUE;
-	while( !Static_Var_3 )
+	while( isgunone ==0)
 	{
 		sleep 100;
 	}
-	turn torso to y-axis heading speed <150.027473>;
-	turn ruparm to x-axis <0.000000> - pitch speed <200.038462>;
+	turn torso to y-axis heading speed <150.0>;
+	turn ruparm to x-axis <0.000000> - pitch speed <200.0>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
-	start-script RestoreAfterDelay();
 	return (1);
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = torso;
+	piecenum = emgflare;
 }
 
 QueryPrimary(piecenum)
@@ -720,14 +715,11 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
-	while( !Static_Var_3 )
-	{
-		sleep 100;
-	}
-	turn torso to y-axis heading speed <150.027473>;
-	turn luparm to x-axis <0.000000> - pitch speed <200.038462>;
+	turn torso to y-axis heading speed <150.0>;
+	turn luparm to x-axis <0.000000> - pitch speed <200.0>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn luparm around x-axis;
+	isgunone = 1;
 	start-script RestoreAfterDelay();
 	return (1);
 }
