@@ -157,7 +157,6 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					commanders = 130,
 					default = 260,
 					subs = 5,
 				},
