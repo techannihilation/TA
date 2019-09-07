@@ -2,8 +2,8 @@ return {
 	talon_sniper = {
 		acceleration = 0.36,
 		brakerate = 0.6,
-		buildcostenergy = 1750,
-		buildcostmetal = 50,
+		buildcostenergy = 1950,
+		buildcostmetal = 75,
 		builder = false,
 		buildpic = "talon_sniper.dds",
 		buildtime = 2000,
@@ -133,7 +133,7 @@ return {
 				name = "SniperWeapon",
 				noselfdamage = true,
 				range = 550,
-				reloadtime = 5,
+				reloadtime = 6,
 				rgbcolor = "1.0 0.8 0.25",
 				soundhitdry = "xplolrg2",
 				soundhitvolume = 4,
@@ -147,8 +147,8 @@ return {
 				weaponvelocity = 1500,
 				damage = {
 					commanders = 100,
-					default = 150,
-					sniper_resistant = 50,
+					default = 450,
+					sniper_resistant = 225,
 					subs = 5,
 				},
 

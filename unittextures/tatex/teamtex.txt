@@ -19,3 +19,7 @@ Solid3b
 race32Dk
 race32Lt
 raceLogoGouraud
+talonlogo64bright00
+talonlogo64dark00
+blanklogogouraud00
+talonlogogouraud00
