@@ -141,7 +141,7 @@ return {
 				name = "ATAD",
 				noselfdamage = true,
 				range = 1200,
-				reloadtime = 8.5,
+				reloadtime = 8,
 				rgbcolor = "0 0 1",
 				soundhitdry = "",
 				soundhitwet = "sizzle",

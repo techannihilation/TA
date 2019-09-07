@@ -119,6 +119,16 @@ tllgorgonSphere = {
   repeatEffect=true
 }
 
+corcrabSphere = {
+  layer=-30,
+  life=20,
+  piece="dome",
+  size=11,
+  colormap1 = { {0,0.65,0, 0.80},{0,0.75,0, 0.8},{0,0.65,0, 0.8},{0,0.75,0, 0.80} },
+  colormap2 = { {0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20},{0.89, 0.99, 0, 0.20},{0.99, 0.89, 0, 0.20} },
+  repeatEffect=true
+}
+
 corsfusBursts = {
   layer      = -35,
   life       = math.huge,
@@ -338,7 +348,7 @@ shieldBursts250 = {
   count      = 4,
 }
 
-shieldBursts340 = {
+shieldBursts300 = {
   layer      = -35,
   life       = math.huge,
   piece      = "base",
@@ -346,7 +356,7 @@ shieldBursts340 = {
   rotSpread  = 0,
   arc        = 50,
   arcSpread  = 0,
-  size       = 340,
+  size       = 300,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
@@ -423,7 +433,55 @@ plasmaball_fusion = {
   noIconDraw = true,
   priority   = 1,
   }
-   
+
+-- TALON
+sunlight_fusion = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = 5,
+  life         = 120,
+  lifeSpread   = 30,
+  partpos      = "0,0,0",
+  rotSpeed     = 0.1,
+  rotFactor    = 0.5,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  sizeExp      = 0.15,
+  sizeSpread   = 0.15,
+  sizeGrowth   = 0.5,
+  emitVector   = {0,0,0},
+  emitRotSpread = 360,
+  texture      = 'bitmaps/techa_artwork/sunlight1.png',
+  repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
+  }
+
+sunlight_gen = {
+  speed        = 0,
+  speedSpread  = 0,
+  layer        = 5,
+  life         = 120,
+  lifeSpread   = 30,
+  partpos      = "0,0,0",
+  rotSpeed     = 0.1,
+  rotFactor    = 0.5,
+  rotFactorSpread = -2.0,
+  rotairdrag   = 0.99,
+  rotSpread    = 360,
+  sizeExp      = 0.15,
+  sizeSpread   = 0.15,
+  sizeGrowth   = 0.5,
+  emitVector   = {0,0,0},
+  emitRotSpread = 360,
+  texture      = 'bitmaps/techa_artwork/sunlight1.png',
+  repeatEffect = true,
+  noIconDraw = true,
+  priority   = 1,
+  }
+
+
 ----------------------------------------------------------------------------
 -- Other -------------------------------------------------------------------
 ----------------------------------------------------------------------------

@@ -65,7 +65,6 @@ return {
 			[5] = "tllsilo1",
 			[6] = "tlllrpt1",
 			[7] = "tllhydre2",
-			[8] = "tlldmc",
 		},
 		customparams = {
 			buildpic = "tllnanotower.dds",

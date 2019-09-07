@@ -1,0 +1,196 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, v1, v2, v3, v4, hatchesA, hatchesB, body, aimpoint, sleeve, barrel, flare;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	Static_Var_1 = 1; //tube1
+	Static_Var_2 = 5000; //Delay to open hatches
+	dont-cache flare;
+	hide flare;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 1000;
+	spin barrel around z-axis speed <0.000000> accelerate <-10.000000>;
+	sleep Static_Var_2;
+	set-signal-mask 0;
+	turn body to y-axis <0.000000> speed <40.000000>;
+	turn hatchesA to z-axis <0.000000> speed <40.000000>;
+	turn hatchesB to z-axis <0.000000> speed <40.000000>;
+	wait-for-turn body around y-axis;
+	wait-for-turn hatchesA around z-axis;
+	wait-for-turn hatchesB around z-axis;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn hatchesA to z-axis <180.000000> speed <40.000000>;
+	turn hatchesB to z-axis <-180.000000> speed <40.000000>;
+	wait-for-turn hatchesA around z-axis;
+	wait-for-turn hatchesB around z-axis;	
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	++Static_Var_1;
+	if( Static_Var_1 == 5 )
+	{
+		Static_Var_1 = 1;
+	}
+
+}
+
+QueryPrimary(piecenum)
+{
+	
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = v1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = v2;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = v3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = v4;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn body to y-axis heading speed <40.000000>;
+	wait-for-turn body around y-axis;	
+	start-script RestoreAfterDelay();
+	return (1);
+
+}
+
+FireSecondary()
+{
+	signal 4;
+	set-signal-mask 4;
+	emit-sfx 1025 from flare;
+	move sleeve to z-axis [-1.000000] now;
+	move sleeve to z-axis [0.000000] speed [1.];
+	move barrel to z-axis [-1.000000] now;
+	move barrel to z-axis [0.000000] speed [1.];
+	spin barrel around z-axis speed <300.000000>;	
+	sleep 300;
+}
+
+Querysecondary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = flare;
+
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD;
+		explode v1 type NOHEATCLOUD;
+		explode v2 type NOHEATCLOUD;
+		explode v3 type NOHEATCLOUD;
+		explode v4 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		explode barrel type NOHEATCLOUD | FALL ;
+		explode v1 type NOHEATCLOUD | FALL ;
+		explode v2 type NOHEATCLOUD | FALL ;
+		explode v3 type NOHEATCLOUD | FALL ;
+		explode v4 type NOHEATCLOUD | FALL ;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL;
+	explode body type NOHEATCLOUD | FALL;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL;
+	explode body type NOHEATCLOUD | FALL;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode v4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

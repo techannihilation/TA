@@ -50,8 +50,8 @@ return {
 		customparams = {
 			buildpic = "armgate2.dds",
 			faction = "ARM",
-			shield_power = 2900,
-			shield_radius = 340,
+			shield_power = 3000,
+			shield_radius = 300,
 		},
 		featuredefs = {
 			armgate1_heap = {
@@ -128,10 +128,10 @@ return {
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldmaxspeed = 200,
-				shieldpower = 2900,
+				shieldpower = 3000,
 				shieldpowerregen = 29,
 				shieldpowerregenenergy = 240.5,
-				shieldradius = 340,
+				shieldradius = 300,
 				shieldrepulser = true,
 				smartshield = true,
 				soundhitwet = "sizzle",

@@ -41,7 +41,7 @@ return {
 		standingfireorder = 0,
 		unitname = "tlldmc",
 		usebuildinggrounddecal = true,
-		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "tlldmc.dds",
 			canareaattack = 1,

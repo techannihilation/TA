@@ -92,7 +92,7 @@ return {
 			[9] = "corvp",
 			[10] = "corap",
 			[11] = "cnanotower",
-			[12] = "correch3",
+			--[12] = "correch3",
 			[13] = "corfort",
 			[14] = "corarad",
 			[15] = "corvipe",

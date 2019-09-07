@@ -10,8 +10,6 @@ local AC5 = 1.45/100
 local AC6 = 1.5/100
 local AC7 = 1.6/100
 
-
-
 local T0 = 0.95/100
 local T1 = 1/100
 local T2 = 1.2/100
@@ -33,9 +31,7 @@ local convertCapacities = {
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
 		[UnitDefNames.ametalmakerlvl2.id]  = { c = 8000, e = (AC6) }, -- T3
 		[UnitDefNames.ametalmakerlvl3.id]  = { c = 54000, e = (AC7) }, -- T4
-		
-		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) }, -- Armgen Combo fusion
-					
+		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) },					
 		--CORE
 		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
 		[UnitDefNames.corfmkr.id]  = { c = 128, e = (AC1) }, -- Floating
@@ -46,22 +42,29 @@ local convertCapacities = {
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
 		[UnitDefNames.cmetalmakerlvl2.id]  = { c = 10240, e = (AC6) }, -- T3
 		[UnitDefNames.cmetalmakerlvl3.id]  = { c = 40960, e = (AC7) }, -- T4
+		[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) }, 
 
-		[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion
 		--TLL
 		[UnitDefNames.tllmm.id]  = { c = 100, e = (T0) }, -- Normal
 		[UnitDefNames.tllwmconv.id]  = { c = 100, e = (T1) }, -- Floating
 		[UnitDefNames.tllmetalmakerlvl1.id]  = { c = 200, e = (T2) }, -- T1,5
 		--[UnitDefNames.____.id]  = { c = 600, e = (T3) }, -- Cloaked/Hardened
 		[UnitDefNames.tllammaker.id]  = { c = 1000, e = (T4) }, -- Moho
-		[UnitDefNames.tllwmmohoconv.id]  = { c = 1000, e = (T5) }, -- Underwater
+		[UnitDefNames.tllwmmohoconv.id]  = { c = 1200, e = (T5) }, -- Underwater
 		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 10000, e = (T6) }, -- T4	
 		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 40000, e = (T7) }, -- T4
-		--[UnitDefNames.____.id]  = { c = 10000, e = (T6) }, -- Super
+		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) },
 
-		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) }, -- Corgen Combo fusion
+		--TALON
+		[UnitDefNames.talon_makr.id]  = { c = 75, e = (AC0) }, -- Normal
+		[UnitDefNames.talon_fmkr.id]  = { c = 150, e = (AC1) }, -- Floating
+		--[UnitDefNames.talon_afmkr.id]  = { c = 225, e = (AC2) }, -- T1,5
+		[UnitDefNames.talon_amaker.id]  = { c = 1200, e = (AC4) }, -- Moho
+		[UnitDefNames.talon_famkr.id]  = { c = 1375, e = (AC5) }, -- Underwater
+		[UnitDefNames.talon_metalmakerlvl2.id]  = { c = 12000, e = (AC6) }, -- T3
+		[UnitDefNames.talon_metalmakerlvl3.id]  = { c = 48000, e = (AC7) }, -- T4		
+		[UnitDefNames.talon_gen.id]  = { c = UnitDefNames.talon_gen.energyMake, e = (ACZ) },
     }
-
 
 return convertCapacities
 

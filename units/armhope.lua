@@ -178,7 +178,7 @@ return {
 				model = "olympus_missile",
 				name = "Heavy Rockets2",
 				range = 1400,
-				reloadtime = 2,
+				reloadtime = 1,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = false,
 				soundhitdry = "xplosml2",
@@ -199,7 +199,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 450,
 				damage = {
-					default = 1920,
+					default = 960,
 					subs = 5,
 				},
 			},

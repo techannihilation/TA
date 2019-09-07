@@ -43,11 +43,13 @@ local startUnitParamName = 'startUnit'
 local armcomDefID = UnitDefNames.armcom.id
 local corcomDefID = UnitDefNames.corcom.id
 local tllcomDefID = UnitDefNames.tllcom.id
+local taloncomDefID = UnitDefNames.talon_com.id
 
 local validStartUnits = {
     [armcomDefID] = true,
     [corcomDefID] = true,
     [tllcomDefID] = true,
+    [taloncomDefID] = true,
 
 }
 

@@ -31,7 +31,7 @@ return {
 		decoyfor = "tllcom",
 		defaultmissiontype = "Standby",
 		description = "Commander",
-		energymake = 100,
+		energymake = 150,
 		energystorage = 2000,
 		energyuse = 0,
 		explodeas = "COMMANDER_BLAST1",

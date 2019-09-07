@@ -57,6 +57,45 @@ local morphDefs = {
 		into = 'armcom7',
 		time = 180,
 	},
+	talon_com = {
+		{
+			into = 'talon_com3',
+			time = 30,
+		
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
+		
+		},
+		{
+			into = 'talon_com1',
+			time = 30,
+		
+			--metal = 0,
+			--energy = 0,
+			--Free For Xmas
+		},
+	},
+	talon_com1 = {
+		into = 'talon_com_fusion',
+        	time = 60,
+	},
+	talon_com_fusion = {
+		into = 'talon_com6',
+        	time = 120,
+	},
+	talon_com3 = {
+		into = 'talon_com5',
+        	time = 60,
+	},
+	talon_com5 = {
+		into = 'talon_com6',
+		time = 120,
+	},
+	talon_com6 = {
+		into = 'talon_com7',
+		time = 180,
+	},
 	corcom = {
 		{
 			into = 'corcom3',
@@ -164,7 +203,12 @@ local morphDefs = {
 	tllllt = {
 		into = 'tlllft',
 		time = 15,
-		xp = 0.40,
+		xp = 0.25,
+	},
+	talon_llt = {
+		into = 'talon_llt',
+		time = 15,
+		xp = 0.50,
 	},
 	armhlt = {
 		into = 'armvhlt',
@@ -176,6 +220,11 @@ local morphDefs = {
 		time = 30,
 		xp = 0.30,	
 	},
+	talon_hlt = {
+		into = 'talon_vhlt',
+		time = 30,
+		xp = 0.30,
+	},	
 	corhlt= {
 		into = 'corvhlt',
 		time = 30,
@@ -206,6 +255,11 @@ local morphDefs = {
 		time = 30,
 		xp = 0.50,
 	},
+	talon_painless = {
+		into = 'talon_slinger',
+		time = 30,
+		xp = 0.50,
+	},
 	corpun= {
 		into = 'cortoast',
 		time = 30,
@@ -223,6 +277,11 @@ local morphDefs = {
 	},
 	corfmd = {
 		into = 'corfmd1',
+		time = 40,
+		tech = 2,
+	},
+	talon_damascus = {
+		into = 'talon_damascus1',
 		time = 40,
 		tech = 2,
 	},
@@ -287,6 +346,12 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
+	talon_silo = {
+		into = 'talon_silo1',
+		tech = 2,
+		time = 30,
+		xp = 0.15,
+	},
 	armcir = {
 		into = 'armcir1',
 		time = 60,
@@ -312,6 +377,11 @@ local morphDefs = {
 	armgmm = {
 		into = 'armfor',
 		time = 90,
+	},
+	talon_geo = {
+		into = 'talon_mohogeo',
+		time = 120,
+		tech = 1,
 	},
 	corgeo = {
     	{
@@ -372,12 +442,22 @@ local morphDefs = {
 		time = 120,
 		tech = 2,
 	},
+	talon_gate = {
+		into = 'talon_gate1',
+		time = 120,
+		tech = 2,
+	},
 	armrad = {
 		into = 'armrad1',
 		time = 20,
 	},
 	armrad1 = {
 		into = 'armarad',
+		time = 30,
+		tech = 1,
+	},
+	talon_rad = {
+		into = 'talon_arad',
 		time = 30,
 		tech = 1,
 	},
@@ -416,11 +496,11 @@ local morphDefs = {
 	},
 	correch2 = {
 		into = 'correch3',
-		time = 100,
+		time = 75,
 	},
 	correch3 = {
 		into = 'correch4',
-		time = 200,
+		time = 100,
 	},
 	armrech1 = {
 		into = 'armrech2',
@@ -428,11 +508,11 @@ local morphDefs = {
 	},
 	armrech2 = {
 		into = 'armrech3',
-		time = 100,
+		time = 75,
 	},
 	armrech3 = {
 		into = 'armrech4',
-		time = 200,
+		time = 100,
 	},
 	armvulc = {
 		into = 'armvulc2',
@@ -441,12 +521,17 @@ local morphDefs = {
 	},
 	corbuzz = {
 		into = 'corbuzz2',
-		time = 30,
+		time = 45,
 		xp = 0.15,
 	},
 	tllhydre = {
 		into = 'tllhydre2',
-		time = 30,
+		time = 45,
+		xp = 0.15,
+	},
+	talon_veloute = {
+		into = 'talon_veloute2',
+		time = 45,
 		xp = 0.15,
 	},
 	arm_immolator = {
@@ -828,127 +913,121 @@ local morphDefs = {
 		into = 'armnanotc1',
 		time = 30,
 		tech = 1,
-		metal = 380,
-		energy = 11000,
 	},
 	armnanotc1 = {
 		into = 'armnanotc2',
 		tech = 2,
 		time = 60,
-		metal = 1320,
-		energy = 43000,
 	},
 	armnanotc2 = {
 		into = 'armnanotc3',
 		tech = 3,
-		time = 120,
-		metal = 3520,
-		energy = 99000,
+		time = 90,
 	},
 	armfnanotc = {
 		into = 'armfnanotc1',
 		time = 30,
 		tech = 1,
-		metal = 380,
-		energy = 11000,
 	},
 	armfnanotc1 = {
 		into = 'armfnanotc2',
 		tech = 2,
 		time = 60,
-		metal = 1320,
-		energy = 43000,
 	},
 	armfnanotc2 = {
 		into = 'armfnanotc3',
 		tech = 3,
-		time = 120,
-		metal = 3520,
-		energy = 99000,
+		time = 90,
 	},
 	cornanotc = {
 		into = 'cornanotc1',
 		tech = 1,
 		time = 30,
-		metal = 680,
-		energy = 11000,
 	},
 	cornanotc1 = {
 		into = 'cornanotc2',
 		tech = 2,
 		time = 60,
-		metal = 1320,
-		energy = 43000,
 	},
 	cornanotc2 = {
 		into = 'cornanotc3',
 		tech = 3,
-		time = 120,
-		metal = 3520,
-		energy = 99000,
+		time = 90,
 	},
 	corfnanotc = {
 		into = 'corfnanotc1',
 		tech = 1,
 		time = 30,
-		metal = 680,
-		energy = 11000,
 	},
 	corfnanotc1 = {
 		into = 'corfnanotc2',
 		tech = 2,
 		time = 60,
-		metal = 1320,
-		energy = 43000,
 	},
 	corfnanotc2 = {
 		into = 'corfnanotc3',
 		tech = 3,
-		time = 120,
-		metal = 3520,
-		energy = 99000,
+		time = 90,
 	},
 	tllnanotc = {
 		into = 'tllnanotc1',
 		tech = 1,
 		time = 30,
-		metal = 800,
-		energy = 13000,
 	},
 	tllnanotc1 = {
 		into = 'tllnanotc2',
 		tech = 2,
 		time = 60,
-		metal = 2700,
-		energy = 33000,
 	},
 	tllnanotc2 = {
 		into = 'tllnanotc3',
 		tech = 3,
-		time = 120,
-		metal = 4540,
-		energy = 60000,
+		time = 90,
 	},
 	tllfnanotc = {
 		into = 'tllfnanotc1',
 		tech = 1,
 		time = 30,
-		metal = 800,
-		energy = 13000,
 	},
 	tllfnanotc1 = {
 		into = 'tllfnanotc2',
 		tech = 2,
 		time = 60,
-		metal = 2700,
-		energy = 33000,
 	},
 	tllfnanotc2 = {
 		into = 'tllfnanotc3',
 		tech = 3,
-		time = 120,
-		metal = 3520,
-		energy = 99000,
+		time = 90,
+	},
+	talon_nanotc = {	 
+		into = 'talon_nanotc1',
+		time = 30,
+		tech = 1,
+	},
+	talon_nanotc1 = {
+		into = 'talon_nanotc2',
+		tech = 2,
+		time = 60,
+	},
+	talon_nanotc2 = {
+		into = 'talon_nanotc3',
+		tech = 3,
+		time = 90,
+	},
+	talon_fnanotc = {
+		into = 'talon_fnanotc1',
+		time = 30,
+		tech = 1,
+	},
+	talon_fnanotc1 = {
+		into = 'talon_fnanotc2',
+		tech = 2,
+		time = 60,
+	},
+	talon_fnanotc2 = {
+		into = 'talon_fnanotc3',
+		tech = 3,
+		time = 90,
 	},
 	armamph = {
 		into = 'marauder',
@@ -1010,6 +1089,10 @@ local morphDefs = {
 	},
 	tllgeo_mini = {
      		into = 'tllgeo',
+		time = 30,
+	},
+	talon_geo_mini = {
+     		into = 'talon_geo',
 		time = 30,
 	},
 	corprot = {
@@ -1230,6 +1313,20 @@ local morphDefs = {
 	  	time = 60,
 		xp = 0.35,
 	},
+	talon_psyker = {
+		into = 'talon_psyker1',
+	  	time = 30,
+	},
+	talon_ack = {
+		into = 'talon_ack1',
+	  	time = 60,
+	},
+	talon_whinestone  = {
+		into = 'talon_sapphire',
+	  	time = 40,
+		xp = 0.40,
+	},
+	
 }
 
 --

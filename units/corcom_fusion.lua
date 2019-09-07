@@ -91,7 +91,7 @@ return {
 			[9] = "corlab",
 			[10] = "corvp",
 			[11] = "corap",
-			[12] = "correch1",
+			--[12] = "correch1",
 			[13] = "coreyes",
 			[14] = "corrad",
 			[15] = "cordrag",

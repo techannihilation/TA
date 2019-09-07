@@ -55,7 +55,7 @@ return {
 			faction = "ARM",
 			shield_emit_height = 54.8,
 			shield_emit_offset = -9.37,
-			shield_power = 2600,
+			shield_power = 3000,
 			shield_radius = 250,
 		},
 		featuredefs = {
@@ -111,7 +111,7 @@ return {
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldmaxspeed = 200,
-				shieldpower = 2600,
+				shieldpower = 3000,
 				shieldpowerregen = 29,
 				shieldpowerregenenergy = 260.5,
 				shieldradius = 250,

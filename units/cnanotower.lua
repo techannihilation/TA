@@ -58,7 +58,7 @@ return {
 		workertime = 900,
 		buildoptions = {
 			[1] = "corgate1",
-			[2] = "corspun",
+			--[2] = "corspun",
 			[3] = "cordoom1",
 			[4] = "corpre",
 			[5] = "coromni",

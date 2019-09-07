@@ -38,7 +38,12 @@ local antiNukes = {
   [UnitDefNames["tllantinuke"].id] = true,
   [UnitDefNames["tllantinuke1"].id] = true,
   [UnitDefNames["tllgazelle"].id] = true,
-  [UnitDefNames["tllgiant"].id] = true
+  [UnitDefNames["tllgiant"].id] = true,
+  --Talon
+  [UnitDefNames["talon_damascus"].id] = true,
+  [UnitDefNames["talon_damascus1"].id] = true,
+  [UnitDefNames["talon_nexus"].id] = true,
+  [UnitDefNames["talon_requiem"].id] = true,
 }
 
 local interceptorsID = {}

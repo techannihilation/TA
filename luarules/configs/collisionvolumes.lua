@@ -249,8 +249,8 @@ local pieceCollisionVolume = {					--per piece collision volume definitions
 			trunk = 3
 	},
 	[UnitDefNames["armvulc1"].id] = {
-			["3"]={180,310,180,0,32,0,1,1},
-			["5"]={98,98,240,0,0,100,1,2},
+			["3"]={153,265,153,0,28,0,1,1},
+			["5"]={84,84,204,0,0,85,1,2},
 			trunk = 3
 	},
 	[UnitDefNames["corbuzz"].id] = {
@@ -264,8 +264,8 @@ local pieceCollisionVolume = {					--per piece collision volume definitions
 			trunk = 3
 	},
 	[UnitDefNames["corbuzz1"].id] = {
-			["2"]={175,475,175,0,32,0,1,1},
-			["5"]={60,30,250,0,135,0,1,0},
+			["2"]={150,405,150,0,28,0,1,1},
+			["5"]={51,26,213,0,120,0,1,0},
 			trunk = 2
 	},
 	[UnitDefNames["corflu"].id] = {

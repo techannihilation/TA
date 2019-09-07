@@ -17,24 +17,24 @@
 
 
 return {
-  armcom5 = {
-	{
-		name = "shield_ac5",
-		cob = "Shield",
-		tooltip = "Toggle shield activation",
-		type = CMDTYPE.ICON_MODE,
-		params = {'1', 'Shield Off', 'Shield On'},
+	armcom5 = {
+		{
+			name = "shield_ac5",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+  	},
+	armcom6 = {
+		{
+			name = "shield_ac6",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
 	},
-  },
-  armcom6 = {
-	{
-		name = "shield_ac6",
-		cob = "Shield",
-		tooltip = "Toggle shield activation",
-		type = CMDTYPE.ICON_MODE,
-		params = {'1', 'Shield Off', 'Shield On'},
-	},
-  },
   armcom7 = {
 	{
 		name = "shield_ac7",
@@ -314,22 +314,85 @@ return {
 		params = {'1', 'Surface', 'Dive'},
 	},
   },
-  tllkrak = {
-	{
-		name = "dive_tri",
-		cob = "Dive",
-		tooltip = "Dive Underwater",
-		type = CMDTYPE.ICON_MODE,
-		params = {'1', 'Surface', 'Dive'},
+	tllkrak = {
+		{
+			name = "dive_tri",
+			cob = "Dive",
+			tooltip = "Dive Underwater",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Surface', 'Dive'},
+		},
 	},
-  },
-  tlldmc = {
-	{
-		name = "weapon_toggle",
-		cob = "Dive",
-		tooltip = "Toggle rapid fire weapon",
-		type = CMDTYPE.ICON_MODE,
-		params = {'1', 'Rapid', 'Standard'},
+  	tlldmc = {
+		{
+			name = "weapon_toggle",
+			cob = "Dive",
+			tooltip = "Toggle rapid fire weapon",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Rapid', 'Standard'},
+		},
 	},
-  },
+	talon_com5 = {
+		{
+			name = "shield_talc5",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_com6 = {
+		{
+			name = "shield_talc6",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_com7 = {
+		{
+			name = "shield_talc7",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_gate = {
+		{
+			name = "shield_talg",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_gate1 = {
+		{
+			name = "shield_talg1",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_gate2 = {
+		{
+			name = "shield_talg2",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_obelisk = {
+		{
+			name = "shield_talob",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 }

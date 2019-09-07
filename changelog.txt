@@ -2,25 +2,42 @@
 2019-08-18
 
 Balance:
+ - Decrease T1 shieldradius 340 => 300. Increase Powershield 2900 => 3000.
+ - tllcom1 (eco) : increase energyproduction 100 => 150 E/s
+ - Decrease HP for adv rapid bertha (T3) by 20%
+ - Dragon Arm & Core : Decrease range. Increase Damage (+25%) and Hp (+100%). Job : defense. (atm, this unit have same job than beam arm or double llt for core). With this balance, dragon will be better to defend low range and not used to expand on battlezone. 
+ - Balance Zeus1 : Too op. Decrease HP by 5%. Decrease damage 300 => 200 range 350 => 270. Increase cost by 5%.
+ - Balance Cavalier. Range for main weapon 750 => 675. Speed 1.4 => 1.5. Cost reduced by 10%.
  - Decrease Lighting Tank cost -30M and -1KE
  - Increase Range for Coyote at 460 (same than Bull)
  - Balance T4 Karg. Decrease speed 2.3 => 1.5. (fix same speed than T3 Karg : 1.5). Decrease HP by 20%. Decrease AA damage by 50%. Decrease energycost by 33%. This unit was totally OP attack/defend and not used for all-terrain strategy.
  - Balance T4 Razor. Decrease HP by 20%. Decrease energycost by 33%. Increase speed at 2.3=>2.5. Goal here is to have a rapid unit with high damage. Before, it was same job (speed, damage except shield) than Armpraet but was better.
   - Balance Raptor : Decrease HP by 25%. Decrease speed by 1.7=>1.5. Delete the T4 RC to get it. Decrease range 700 => 675. Decrease damage for missile (more relaod). This unit was very strong (high damage and all terrain) with low cost.  
-  - Increase Timebuild for all T4 nuke by 250%.
-  - Fix range for Barret at 2150. (was 2650).
+ - Increase Timebuild for all T4 nuke by 250%.
+ - Fix range for Barret at 2150. (was 2650).
  
-Improvements:
- - Delete temporally Copters (Need to redisign and balance)
+Improvements from last TA version (2019-08-28):
+ - Add TALON faction. T0.5 T1 T1.5 T2 T3 T5 Implemented. Total 200+ new units!
+ - Add Minigate for All T1 cons
+ - Rework all Panel Menu for cons
+ - Delete Copters (Need to redisign and rebalance in future)
+ - Delete Armorclass Raider. Was unknown from community. Maybe remplace it by Hover armorclass in future
+ - Rebalance Nano morph. Add Nano for T2 Cons.
+ - Rework many cons panel menu with good order.
+ - Delete Eco structure and add corkrog1 & armbanth1 for T4 RC Cons.
+ - Decrease 15% model : ultimate vulcain, bagger, buzz
  - Add new flammer tank core t1.5 (Remplace corfgbt model). Decrease energycost by 10%.
  - Add new model Akmech
+ - Add new model for cor RC T3
  - Add new T1.5 Cons Veh (tllmando) TLL and delete T1.5 Cons Air (tllhtca)
  - Add new model for cloak bomber
  - Change raptor main weapon. Now blue laser (same damage 2k/s).
  - Add AA weapon for Rottweiler.
  - Add Flammer tower for battle tll com (remplace adv tesla).
  - Rework tower for bulldog2 (turret scaleup Y)
- 
+ - Add new turret for scorpion, add tubes for torpedo
+ - Add new color for lighting Arm (Lighting tank, Chimera, Dragon Teeth) (0.125 0.125 1 > 0.5 0.5 1)
+ - Add T1 Shield for all cons T1
  Bugs:
  - Fixed cordoom1 script
  - Fixed tllfgate (the shield didn't load)

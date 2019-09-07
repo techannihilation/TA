@@ -1,0 +1,329 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pad, towers, doors, lights, post1, post2, nano1,
+       nano2, tower1, tower2, spray1, spray2, radar;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		dont-cache doors;
+		dont-cache lights;
+		dont-cache nano1;
+		dont-cache nano2;
+		dont-cache post1;
+		dont-cache post2;
+		set ARMORED to 0;
+	}
+	if( TRUE )
+	{
+		move doors to z-axis [-2.] speed [4.];
+		wait-for-move doors along z-axis;
+	}
+	if( TRUE )
+	{
+		move post1 to y-axis [10.] speed [4.];
+		move post2 to y-axis [10.] speed [4.];
+		wait-for-move post1 along y-axis;
+	}
+	if( TRUE )
+	{
+		turn nano1 to x-axis <90.> speed <100.>;
+		turn nano2 to x-axis <90.> speed <100.>;
+		wait-for-turn nano1 around x-axis;
+	}
+	if( TRUE )
+	{
+		cache doors;
+		cache nano1;
+		cache nano2;
+		cache post1;
+		cache post2;
+	}
+}
+
+deactivatescr()
+{
+	signal 4;
+	set-signal-mask 4;
+	if( TRUE )
+	{
+		dont-cache doors;
+		dont-cache lights;
+		dont-cache nano1;
+		dont-cache nano2;
+		dont-cache post1;
+		dont-cache post2;
+		sleep 300;
+	}
+	if( TRUE )
+	{
+		turn nano1 to x-axis <0.> speed <100.>;
+		turn nano2 to x-axis <0.> speed <100.>;
+		wait-for-turn nano1 around z-axis;
+	}
+	if( TRUE )
+	{
+		move post1 to y-axis [0.] speed [4.];
+		move post2 to y-axis [0.] speed [4.];
+		wait-for-move post1 along y-axis;
+	}
+	if( TRUE )
+	{
+		move doors to z-axis [0.] speed [4.];
+		wait-for-move doors along z-axis;
+	}
+	if( TRUE )
+	{
+		cache doors;
+		cache lights;
+		cache nano1;
+		cache nano2;
+		cache post1;
+		cache post2;
+		set ARMORED to 1;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	spin radar around y-axis speed <100.>;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = spray1;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = spray2;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 3 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	dont-cache pad;
+	spin pad around y-axis speed <30.>;
+}
+
+StopBuilding()
+{
+	cache pad;
+	stop-spin pad around y-axis;
+	turn pad to y-axis <0.> speed <30.>;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode doors type NOHEATCLOUD;
+		explode towers type NOHEATCLOUD;
+		explode post1 type NOHEATCLOUD;
+		explode post2 type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode tower1 type NOHEATCLOUD;
+		explode tower2 type NOHEATCLOUD;
+		explode spray1 type NOHEATCLOUD;
+		explode spray2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode pad type NOHEATCLOUD | FALL;
+		explode doors type NOHEATCLOUD | FALL; 
+		explode towers type NOHEATCLOUD | FALL;
+		explode post1 type NOHEATCLOUD | FALL;
+		explode post2 type NOHEATCLOUD | FALL;
+		explode nano1 type NOHEATCLOUD | FALL;
+		explode nano2 type NOHEATCLOUD | FALL;
+		explode tower1 type NOHEATCLOUD | FALL;
+		explode tower2 type NOHEATCLOUD | FALL;
+		explode spray1 type NOHEATCLOUD | FALL;
+		explode spray2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode pad type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doors type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode towers type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode post1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode post2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode nano1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode nano2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode tower1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode tower2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode spray1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode spray2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode pad type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode doors type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode towers type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode post1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode post2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode nano1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode nano2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode tower1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode tower2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode spray1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode spray2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

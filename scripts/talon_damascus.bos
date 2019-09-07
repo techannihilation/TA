@@ -1,0 +1,160 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, mis, mis2, rocket, fp;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+measure()
+{
+	while( TRUE )
+	{
+		if( Static_Var_2 == 1 )
+		{
+			sleep Rand( 1500, 2000 );
+			Static_Var_2 = 0;
+		}
+		sleep 1;
+	}
+}
+
+Create()
+{
+	Static_Var_2 = 0;
+	dont-cache rocket;
+	dont-cache mis;
+	dont-cache mis2;
+	start-script SmokeUnit();
+	dont-shade base;
+	dont-shade body;
+	hide rocket;
+	Static_Var_1 = 0;
+	Static_Var_3 = 0;
+	start-script measure();
+}
+
+restore()
+{
+	while( Static_Var_2 )
+	{
+		sleep 1;
+	}
+	Static_Var_1 = 0;
+	if( Static_Var_3 )
+	{
+		explode rocket type BITMAPONLY | BITMAP3;
+	}
+	hide rocket;
+	move rocket to y-axis [0.] now;
+	turn mis2 to x-axis <0.> now;
+	move mis to y-axis [0.] now;
+	Static_Var_3 = 0;
+	Static_Var_2 = 0;
+}
+
+smoke1()
+{
+	while( Static_Var_1 )
+	{
+		emit-sfx 256 | 1 from rocket;
+		sleep 1;
+	}
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	Static_Var_1 = 1;
+	start-script smoke1();
+	show rocket;
+	Static_Var_3 = 1;
+	start-script restore();
+	return (1);
+}
+
+FirePrimary()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	hide rocket;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	turn mis2 to x-axis <0.> now;
+	move mis to y-axis [0.] now;
+	move rocket to y-axis [0.] now;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = fp;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = rocket;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | FALL | FIRE |SMOKE;
+		explode body type NOHEATCLOUD | FALL | FIRE |SMOKE;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | FIRE |SMOKE;
+	explode body type NOHEATCLOUD | FALL  | FIRE |SMOKE;
+	return (corpsetype);
+}

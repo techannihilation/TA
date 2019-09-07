@@ -1,0 +1,505 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  nano1, nano2, pelvis, lthigh, rthigh, lleg, lfoot, rleg,
+       rfoot, torso, door1, door2, larm, rarm, base;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+walk()
+{
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-1.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <17.> now;
+		turn lthigh to x-axis <-41.> now;
+		turn torso to y-axis <6.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <42.> now;
+		turn lfoot to x-axis <-5.> now;
+		turn rleg to x-axis <27.> now;
+		turn rfoot to x-axis <-28.> now;
+		sleep 96;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <7.> now;
+		turn lthigh to x-axis <-33.> now;
+		turn torso to y-axis <3.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <32.> now;
+		turn lfoot to x-axis <-5.> now;
+		turn rleg to x-axis <39.> now;
+		turn rfoot to x-axis <-27.> now;
+		sleep 88;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <-11.> now;
+		turn lthigh to x-axis <-26.> now;
+		turn torso to y-axis <0.> now;
+		turn rarm to x-axis <41.> now;
+		turn lfoot to x-axis <-10.> now;
+		turn rleg to x-axis <51.> now;
+		sleep 80;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <-19.> now;
+		turn lthigh to x-axis <1.> now;
+		turn torso to y-axis <-3.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <6.> now;
+		turn lfoot to x-axis <-9.> now;
+		turn rleg to x-axis <52.> now;
+		turn rfoot to x-axis <-23.> now;
+		sleep 72;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <-42.> now;
+		turn lthigh to x-axis <8.> now;
+		turn torso to y-axis <-6.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <10.> now;
+		turn lfoot to x-axis <-16.> now;
+		turn rleg to x-axis <51.> now;
+		turn rfoot to x-axis <-6.> now;
+		sleep 80;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <3.> now;
+		turn rthigh to x-axis <-49.> now;
+		turn lthigh to x-axis <11.> now;
+		turn torso to y-axis <-9.> now;
+		turn rarm to x-axis <41.> now;
+		turn lleg to x-axis <19.> now;
+		turn lfoot to x-axis <-23.> now;
+		turn rleg to x-axis <33.> now;
+		sleep 88;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <-44.> now;
+		turn lthigh to x-axis <19.> now;
+		turn torso to y-axis <-6.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <23.> now;
+		turn lfoot to x-axis <-26.> now;
+		turn rleg to x-axis <49.> now;
+		turn rfoot to x-axis <-8.> now;
+		sleep 96;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <-33.> now;
+		turn lthigh to x-axis <3.> now;
+		turn torso to y-axis <-3.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <44.> now;
+		turn lfoot to x-axis <-27.> now;
+		turn rleg to x-axis <41.> now;
+		turn rfoot to x-axis <-13.> now;
+		sleep 88;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <-26.> now;
+		turn lthigh to x-axis <-12.> now;
+		turn torso to y-axis <0.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <62.> now;
+		turn rleg to x-axis <36.> now;
+		turn rfoot to x-axis <-15.> now;
+		sleep 80;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <6.> now;
+		turn lthigh to x-axis <-26.> now;
+		turn torso to y-axis <3.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <72.> now;
+		turn lfoot to x-axis <-26.> now;
+		turn rleg to x-axis <3.> now;
+		turn rfoot to x-axis <-12.> now;
+		sleep 72;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <16.> now;
+		turn lthigh to x-axis <-39.> now;
+		turn torso to y-axis <6.> now;
+		turn rarm to x-axis <41.> now;
+		turn larm to x-axis <36.> now;
+		turn lleg to x-axis <55.> now;
+		turn lfoot to x-axis <-23.> now;
+		turn rleg to x-axis <8.> now;
+		turn rfoot to x-axis <-19.> now;
+		sleep 80;
+	}
+	move pelvis to y-axis [-0.] now;
+	turn pelvis to x-axis <3.> now;
+	turn rthigh to x-axis <22.> now;
+	turn lthigh to x-axis <-48.> now;
+	turn torso to y-axis <9.> now;
+	turn rarm to x-axis <41.> now;
+	turn lleg to x-axis <40.> now;
+	turn lfoot to x-axis <-8.> now;
+	turn rleg to x-axis <11.> now;
+	turn rfoot to x-axis <-23.> now;
+	sleep 110;
+}
+
+walklegs()
+{
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-1.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <17.> now;
+		turn lthigh to x-axis <-41.> now;
+		turn lleg to x-axis <42.> now;
+		turn lfoot to x-axis <-5.> now;
+		turn rleg to x-axis <27.> now;
+		turn rfoot to x-axis <-28.> now;
+		sleep 96;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <7.> now;
+		turn lthigh to x-axis <-33.> now;
+		turn lleg to x-axis <32.> now;
+		turn lfoot to x-axis <-5.> now;
+		turn rleg to x-axis <39.> now;
+		turn rfoot to x-axis <-27.> now;
+		sleep 88;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <-11.> now;
+		turn lthigh to x-axis <-26.> now;
+		turn lfoot to x-axis <-10.> now;
+		turn rleg to x-axis <51.> now;
+		sleep 80;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <-19.> now;
+		turn lthigh to x-axis <1.> now;
+		turn lleg to x-axis <6.> now;
+		turn lfoot to x-axis <-9.> now;
+		turn rleg to x-axis <52.> now;
+		turn rfoot to x-axis <-23.> now;
+		sleep 72;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <-42.> now;
+		turn lthigh to x-axis <8.> now;
+		turn lleg to x-axis <10.> now;
+		turn lfoot to x-axis <-16.> now;
+		turn rleg to x-axis <51.> now;
+		turn rfoot to x-axis <-6.> now;
+		sleep 80;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <3.> now;
+		turn rthigh to x-axis <-49.> now;
+		turn lthigh to x-axis <11.> now;
+		turn lleg to x-axis <19.> now;
+		turn lfoot to x-axis <-23.> now;
+		turn rleg to x-axis <33.> now;
+		sleep 88;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <-44.> now;
+		turn lthigh to x-axis <19.> now;
+		turn lleg to x-axis <23.> now;
+		turn lfoot to x-axis <-26.> now;
+		turn rleg to x-axis <49.> now;
+		turn rfoot to x-axis <-8.> now;
+		sleep 96;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <-33.> now;
+		turn lthigh to x-axis <3.> now;
+		turn lleg to x-axis <44.> now;
+		turn lfoot to x-axis <-27.> now;
+		turn rleg to x-axis <41.> now;
+		turn rfoot to x-axis <-13.> now;
+		sleep 88;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <5.> now;
+		turn rthigh to x-axis <-26.> now;
+		turn lthigh to x-axis <-12.> now;
+		turn lleg to x-axis <62.> now;
+		turn rleg to x-axis <36.> now;
+		turn rfoot to x-axis <-15.> now;
+		sleep 80;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <6.> now;
+		turn lthigh to x-axis <-26.> now;
+		turn lleg to x-axis <72.> now;
+		turn lfoot to x-axis <-26.> now;
+		turn rleg to x-axis <3.> now;
+		turn rfoot to x-axis <-12.> now;
+		sleep 72;
+	}
+	if( Static_Var_1 )
+	{
+		move pelvis to y-axis [-0.] now;
+		turn pelvis to x-axis <4.> now;
+		turn rthigh to x-axis <16.> now;
+		turn lthigh to x-axis <-39.> now;
+		turn lleg to x-axis <55.> now;
+		turn lfoot to x-axis <-23.> now;
+		turn rleg to x-axis <8.> now;
+		turn rfoot to x-axis <-19.> now;
+		sleep 80;
+	}
+	move pelvis to y-axis [-0.] now;
+	turn pelvis to x-axis <3.> now;
+	turn rthigh to x-axis <22.> now;
+	turn lthigh to x-axis <-48.> now;
+	turn lleg to x-axis <40.> now;
+	turn lfoot to x-axis <-8.> now;
+	turn rleg to x-axis <11.> now;
+	turn rfoot to x-axis <-23.> now;
+	sleep 88;
+}
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = Static_Var_1;
+		aiming = Static_Var_2;
+		if( moving )
+		{
+			if( aiming )
+			{
+				Static_Var_3 = 1;
+				call-script walklegs();
+			}
+			if( !aiming )
+			{
+				Static_Var_3 = 0;
+				call-script walk();
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+				move pelvis to y-axis [0.] speed [1.];
+				if( !aiming )
+				{
+					turn torso to x-axis <0.> speed <90.>;
+				}
+				justmoved = FALSE;
+			}
+			sleep 80;
+		}
+	}
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	start-script MotionControl();
+}
+
+StartMoving()
+{
+	Static_Var_1 = 1;
+}
+
+StopMoving()
+{
+	Static_Var_1 = 0;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_4 == 0 )
+	{
+		piecenum = nano1;
+	}
+	if( Static_Var_4 == 1 )
+	{
+		piecenum = nano2;
+	}
+	Static_Var_4 = !Static_Var_4;
+}
+
+RestorePosition()
+{
+	turn torso to y-axis <0.> speed <90.>;
+	wait-for-turn torso around y-axis;
+	Static_Var_2 = 0;
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{
+	Static_Var_2 = 1;
+	while( !Static_Var_3 )
+	{
+		sleep 100;
+	}
+	turn torso to y-axis Func_Var_1 speed <300.>;
+	wait-for-turn torso around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+TargetCleared(Func_Var_1)
+{
+	signal 2;
+	set-signal-mask 2;
+	call-script RestorePosition();
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+	signal 2;
+	set-signal-mask 2;
+	call-script RestorePosition();
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode pelvis type NOHEATCLOUD ;
+		explode door1 type NOHEATCLOUD ;
+		explode door2 type NOHEATCLOUD ;
+		explode nano1 type NOHEATCLOUD ;
+		explode larm type NOHEATCLOUD ;
+		explode torso type NOHEATCLOUD ;
+		explode lfoot type NOHEATCLOUD ;
+		explode lthigh type NOHEATCLOUD ;
+		explode rthigh type NOHEATCLOUD ;
+		explode rarm type NOHEATCLOUD ;
+		explode rleg type NOHEATCLOUD ;
+		explode lleg type NOHEATCLOUD ;
+		explode rfoot type NOHEATCLOUD ;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode pelvis type FALL | NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD ;
+		explode door2 type NOHEATCLOUD ;
+		explode nano1 type SHATTER | NOHEATCLOUD;
+		explode larm type NOHEATCLOUD;
+		explode torso type FALL | NOHEATCLOUD;
+		explode lfoot type NOHEATCLOUD;
+		explode lthigh type FALL | NOHEATCLOUD;
+		explode rthigh type FALL | NOHEATCLOUD;
+		explode rarm type FALL | NOHEATCLOUD;
+		explode rleg type FALL | NOHEATCLOUD;
+		explode lleg type FALL | NOHEATCLOUD;
+		explode rfoot type FALL | NOHEATCLOUD;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode door1 type  NOHEATCLOUD;
+		explode door2 type  NOHEATCLOUD;
+		explode nano1 type SHATTER | NOHEATCLOUD;
+		explode larm type NOHEATCLOUD;
+		explode torso type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lfoot type NOHEATCLOUD ;
+		explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (0);
+	}
+	corpsetype = 3;
+	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door1 type NOHEATCLOUD;
+	explode door2 type NOHEATCLOUD ;
+	explode nano1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode larm type NOHEATCLOUD ;
+	explode lfoot type NOHEATCLOUD ;
+	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+}

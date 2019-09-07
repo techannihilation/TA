@@ -1,0 +1,254 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  missle1, missle2, base, body, w1, w2, w3, w4,
+       w5, w6, w7, w8, wakes;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	while( TRUE )
+	{
+		if( Static_Var_1 == 3 )
+		{
+			emit-sfx 256 | 3 from w5;
+			emit-sfx 256 | 3 from w6;
+			emit-sfx 256 | 3 from w3;
+			emit-sfx 256 | 3 from w4;
+			emit-sfx 256 | 3 from w1;
+			emit-sfx 256 | 3 from w2;
+			emit-sfx 256 | 3 from w7;
+			emit-sfx 256 | 3 from w8;
+		}
+		sleep 150;
+	}
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		sleep 500;
+		turn body to z-axis <240.> speed <120.>;
+		wait-for-turn body around z-axis;
+		turn body to z-axis <120.> speed <180.>;
+		wait-for-turn body around z-axis;
+		turn body to z-axis <0.> speed <120.>;
+		sleep 1000;
+	}
+	sleep 23;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		sleep 24;
+	}
+	sleep 24;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	if( Static_Var_1 != 3 )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		healthpercent = get HEALTH;
+		sleeptime = healthpercent * healthpercent;
+		if( healthpercent < 66 )
+		{
+			emit-sfx 256 | 3 from base;
+			sleep sleeptime;
+			emit-sfx 256 | 3 from w8;
+			sleep sleeptime;
+			emit-sfx 256 | 3 from w7;
+			if( Rand( 1, 66 ) > healthpercent )
+			{
+				emit-sfx 256 | 3 from w6;
+				sleep sleeptime;
+				emit-sfx 256 | 3 from w5;
+				sleep sleeptime;
+				emit-sfx 256 | 3 from w3;
+				sleep sleeptime;
+				emit-sfx 256 | 3 from w4;
+				sleep sleeptime;
+			}
+		}
+	}
+	start-script SmokeUnit();
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+InitState()
+{
+	Static_Var_4 = 1;
+	Static_Var_5 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_5 )
+	{
+		Static_Var_4 = requestedstate;
+		return (0);
+	}
+	Static_Var_5 = 1;
+	currentstate = Static_Var_4;
+	Static_Var_4 = requestedstate;
+	while( Static_Var_4 != currentstate )
+	{
+		if( Static_Var_4 == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( Static_Var_4 == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	Static_Var_5 = 0;
+}
+
+MoveRate2()
+{
+	if( Rand( 1, 10 ) == 1 AND !Static_Var_2 )
+	{
+		Static_Var_2 = 1;
+		turn base to z-axis <240.> speed <120.>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <120.> speed <180.>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <0.> speed <120.>;
+		Static_Var_2 = 0;
+	}
+}
+
+Create()
+{
+	Static_Var_2 = 0;
+	Static_Var_1 = 0;
+	Static_Var_3 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+FirePrimary()
+{
+
+}
+FireSecondary()
+{
+
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	return (1);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = missle1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = missle2;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode missle1 type NOHEATCLOUD;
+		explode missle2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode missle1 type NOHEATCLOUD;
+		explode missle2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode missle1 type NOHEATCLOUD;
+		explode missle2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode missle1 type NOHEATCLOUD;
+	explode missle2 type NOHEATCLOUD;
+	return (corpsetype);
+}

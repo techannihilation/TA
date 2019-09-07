@@ -1,0 +1,80 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, spinner, smoker, glow;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Smoke()
+{
+	emit-sfx 256 | 2 from smoker;
+	sleep 10;
+	emit-sfx 256 | 1 from smoker;
+	sleep 10;
+	start-script Smoke();
+}
+
+Create()
+{
+	start-script SmokeUnit();
+	dont-shade glow;
+	spin spinner around y-axis speed <5000.000000>;
+	dont-shade base;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD ;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;;
+}

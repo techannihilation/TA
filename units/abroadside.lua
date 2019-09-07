@@ -39,7 +39,6 @@ return {
 		maxvelocity = 0.95,
 		maxwaterdepth = 255,
 		metalstorage = 1000,
-		metaluse = 0,
 		name = "BROADSIDE",
 		nochasecategory = "SUB VTOL",
 		objectname = "ABroadside",

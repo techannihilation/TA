@@ -91,7 +91,7 @@ return {
 			[8] = "armlab",
 			[9] = "armvp",
 			[10] = "armap",
-			[11] = "armrech2",
+			--[11] = "armrech2",
 			[12] = "armeyes",
 			[13] = "armrad1",
 			[14] = "armdrag",

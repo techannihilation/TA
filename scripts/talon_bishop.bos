@@ -1,0 +1,270 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, turret, boom, arm1, arm2, link, door1a, door2a,
+       door1b, door2b, magnet, arm3, arm4, w1, w2, w3,
+       w4, w5, w6, w7, w8, w9, w10, w11,
+       w12, wakes;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+RockOnWaves()
+{
+	while( TRUE )
+	{
+		turn base to x-axis <1.> speed <2.>;
+		move base to y-axis [0.] speed [0.];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <-1.> speed <2.>;
+		move base to y-axis [-0.] speed [0.];
+		wait-for-move base along y-axis;
+		move base to y-axis [0.] speed [0.];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <1.> speed <2.>;
+		move base to y-axis [-0.] speed [0.];
+		wait-for-move base along y-axis;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+	start-script RockOnWaves();
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	while( TRUE )
+	{
+		emit-sfx 3 from w1;
+		emit-sfx 3 from w2;
+		emit-sfx 3 from w3;
+		emit-sfx 3 from w4;
+		emit-sfx 3 from w5;
+		emit-sfx 3 from w6;
+		emit-sfx 3 from w7;
+		emit-sfx 3 from w8;
+		emit-sfx 3 from w9;
+		emit-sfx 3 from w10;
+		emit-sfx 3 from w11;
+		emit-sfx 3 from w12;
+		emit-sfx 5 from w1;
+		emit-sfx 5 from w2;
+		emit-sfx 5 from w3;
+		emit-sfx 5 from w4;
+		emit-sfx 5 from w5;
+		emit-sfx 5 from w6;
+		emit-sfx 5 from w7;
+		emit-sfx 5 from w8;
+		emit-sfx 5 from w9;
+		emit-sfx 5 from w10;
+		emit-sfx 5 from w11;
+		emit-sfx 5 from w12;
+		sleep 250;
+	}
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+StartDoorOpen()
+{
+	signal 4;
+	set-signal-mask 4;
+	turn door2b to z-axis <180.> speed <200.>;
+	turn door1b to z-axis <-180.> speed <200.>;
+	turn door2a to z-axis <-90.> speed <100.>;
+	turn door1a to z-axis <90.> speed <100.>;
+	sleep 5000;
+	turn door2b to z-axis <0.> speed <100.>;
+	turn door1b to z-axis <0.> speed <100.>;
+	turn door2a to z-axis <0.> speed <50.>;
+	turn door1a to z-axis <0.> speed <50.>;
+}
+
+BoomCalc(posxz, posy)
+{
+	var Func_Var_3, Func_Var_4, Func_Var_5;
+	Func_Var_3 = get PIECE_XZ(turret) - posxz;
+	Func_Var_4 = posy - get PIECE_Y(turret) - 3276800;
+	Func_Var_5 = get XZ_HYPOT(Func_Var_3);
+	Static_Var_1 = get HYPOT(Func_Var_5,Func_Var_4) - 3276800;
+	Static_Var_2 = get XZ_ATAN(Func_Var_3);
+	Static_Var_3 = get ATAN(Func_Var_4,Func_Var_5);
+	Static_Var_4 = Static_Var_1 < 17203200;
+}
+
+BoomExtend(posxz, posy)
+{
+	start-script StartDoorOpen();
+	turn turret to y-axis Static_Var_2 speed <50.>;
+	turn magnet to x-axis Static_Var_3 speed <30.>;
+	turn boom to x-axis <0.> - Static_Var_3 speed <30.>;
+	move arm1 to z-axis Static_Var_1 / [0.] speed [30.];
+	move arm2 to z-axis Static_Var_1 / [0.] speed [30.];
+	move arm3 to z-axis Static_Var_1 / [0.] speed [30.];
+	move arm4 to z-axis Static_Var_1 / [0.] speed [30.];
+	wait-for-turn turret around y-axis;
+	wait-for-turn boom around x-axis;
+	wait-for-move arm1 along z-axis;
+	wait-for-move arm2 along z-axis;
+	wait-for-move arm3 along z-axis;
+	wait-for-move arm4 along z-axis;
+}
+
+BoomReset()
+{
+	turn turret to y-axis <0.> speed <40.>;
+	turn magnet to x-axis <0.> speed <30.>;
+	turn boom to x-axis <0.> speed <30.>;
+	move arm1 to z-axis [0.] speed [25.];
+	move arm2 to z-axis [0.] speed [25.];
+	move arm3 to z-axis [0.] speed [25.];
+	move arm4 to z-axis [0.] speed [25.];
+}
+
+BoomToPad()
+{
+	start-script StartDoorOpen();
+	turn turret to y-axis <0.> speed <40.>;
+	turn magnet to x-axis <0.> speed <30.>;
+	turn boom to x-axis <0.> speed <30.>;
+	move arm1 to z-axis [0.] speed [30.];
+	move arm2 to z-axis [0.] speed [30.];
+	move arm3 to z-axis [0.] speed [30.];
+	move arm4 to z-axis [0.] speed [30.];
+	wait-for-turn turret around y-axis;
+	wait-for-turn boom around x-axis;
+	wait-for-move arm1 along z-axis;
+	wait-for-move arm2 along z-axis;
+	wait-for-move arm3 along z-axis;
+	wait-for-move arm4 along z-axis;
+	turn magnet to x-axis <-30.> speed <30.>;
+	turn boom to x-axis <30.> speed <30.>;
+	wait-for-turn boom around x-axis;
+}
+
+TransportPickup(unitid)
+{
+	call-script BoomCalc(get UNIT_XZ(unitid),get UNIT_Y(unitid) + get UNIT_HEIGHT(unitid));
+	if( Static_Var_4 )
+	{
+		set BUSY to 1;
+		call-script BoomExtend();
+		move link to y-axis [0.] - get UNIT_HEIGHT(unitid) now;
+		attach-unit unitid to link;
+		call-script BoomToPad();
+		attach-unit unitid to 0 - 1;
+		call-script BoomReset();
+		set BUSY to 0;
+	}
+}
+
+TransportDrop(unitid, position)
+{
+	call-script BoomCalc(position,get GROUND_HEIGHT(position) + get UNIT_HEIGHT(unitid));
+	if( Static_Var_4 )
+	{
+		set BUSY to 1;
+		call-script BoomToPad();
+		move link to y-axis [0.] - get UNIT_HEIGHT(unitid) now;
+		attach-unit unitid to link;
+		call-script BoomExtend();
+		drop-unit unitid;
+		call-script BoomReset();
+		set BUSY to 0;
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode boom type NOHEATCLOUD;
+		explode arm1 type NOHEATCLOUD;
+		explode arm2 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode door1a type NOHEATCLOUD;
+		explode door2a type NOHEATCLOUD;
+		explode link type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode boom type NOHEATCLOUD | FALL;
+		explode arm1 type NOHEATCLOUD | FALL;
+		explode arm2 type NOHEATCLOUD | FALL;
+		explode base type NOHEATCLOUD | FALL;
+		explode door1a type NOHEATCLOUD | FALL;
+		explode door2a type NOHEATCLOUD | FALL;
+		explode link type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode boom type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode arm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode arm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode door2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	
+	}
+	corpsetype = 3;
+	explode boom type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode arm1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode arm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode door1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode door2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

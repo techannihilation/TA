@@ -1,0 +1,237 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, plates, n1, n2, n3, n4, n5, n6, n7, n8, emit;
+
+static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		sleep 400;
+	}
+	if( TRUE )
+	{
+		sleep 400;
+	}
+	sleep 20;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		sleep 400;
+	}
+	if( TRUE )
+	{
+		sleep 400;
+	}
+	sleep 20;
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	call-script InitState();
+	spray = 1;
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 1 )
+	{
+		piecenum = n1;
+	}
+	if( spray == 2 )
+	{
+		piecenum = n2;
+	}
+	if( spray == 3 )
+	{
+		piecenum = n3;
+	}
+	if( spray == 4 )
+	{
+		piecenum = n4;
+	}
+	if( spray == 5 )
+	{
+		piecenum = n5;
+	}
+	if( spray == 6 )
+	{
+		piecenum = n6;
+	}
+	if( spray == 7 )
+	{
+		piecenum = n7;
+	}
+	if( spray == 8 )
+	{
+		piecenum = n8;
+	}
+	++spray;
+	if( spray == 9 )
+	{
+		spray = 1;
+	}
+
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	if( !unitviewer )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{	
+	sleep 20;
+	spin emit around y-axis speed <2.000000> accelerate <1.000000>;
+ 
+}
+
+StopBuilding()
+{
+	sleep 20;
+	spin emit around y-axis speed <0.000000> accelerate <1.000000>;
+
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = emit;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	return corpsetype;
+}

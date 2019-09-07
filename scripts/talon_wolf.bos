@@ -1,0 +1,367 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  ground, turret, torso, ruparm, luparm, pelvis, lthigh, rthigh, rleg, rfoot, lleg, lfoot,
+       lloarm, lhand, rloarm, rhand, barrel, flash;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+
+walk()
+{
+	while( TRUE )
+	{
+		if( TRUE )
+		{
+			move torso to y-axis [0.] speed <160.000000>;
+			move ruparm to y-axis [0.] speed <160.000000>;
+			move ruparm to z-axis [0.] speed <160.000000>;
+			move luparm to y-axis [-0.] speed <160.000000>;
+			move luparm to z-axis [0.] speed <160.000000>;
+			turn pelvis to z-axis <-4.> speed <160.000000>;
+			turn torso to z-axis <5.> speed <160.000000>;
+			turn lthigh to x-axis <34.> speed <160.000000>;
+			turn rthigh to x-axis <0.> speed <160.000000>;
+			turn rleg to x-axis <25.> speed <160.000000>;
+			turn rfoot to x-axis <-32.> speed <160.000000>;
+			turn lleg to x-axis <7.> speed <160.000000>;
+			turn lfoot to x-axis <-6.> speed <160.000000>;
+			turn ruparm to x-axis <23.> speed <160.000000>;
+			turn luparm to x-axis <-51.> speed <160.000000>;
+			turn lloarm to x-axis <21.> speed <160.000000>;
+			turn lhand to x-axis <36.> speed <160.000000>;
+			turn rloarm to x-axis <0.> speed <160.000000>;
+			turn rhand to x-axis <-6.> speed <160.000000>;
+			sleep 130;
+		}
+		if( TRUE )
+		{
+			move torso to y-axis [0.] speed <160.000000>;
+			move ruparm to y-axis [1.] speed <160.000000>;
+			move ruparm to z-axis [-0.] speed <160.000000>;
+			move luparm to y-axis [0.] speed <160.000000>;
+			move luparm to z-axis [0.] speed <160.000000>;
+			turn pelvis to z-axis <-2.> speed <160.000000>;
+			turn torso to z-axis <2.> speed <160.000000>;
+			turn lthigh to x-axis <47.> speed <160.000000>;
+			turn rthigh to x-axis <7.> speed <160.000000>;
+			turn rleg to x-axis <-20.> speed <160.000000>;
+			turn rfoot to x-axis <17.> speed <160.000000>;
+			turn lleg to x-axis <0.> speed <160.000000>;
+			turn lfoot to x-axis <0.> speed <160.000000>;
+			turn ruparm to x-axis <7.> speed <160.000000>;
+			turn luparm to x-axis <-29.> speed <160.000000>;
+			turn lloarm to x-axis <14.> speed <160.000000>;
+			turn lhand to x-axis <16.> speed <160.000000>;
+			turn rloarm to x-axis <4.> speed <160.000000>;
+			turn rhand to x-axis <106.> speed <160.000000>;
+			sleep 130;
+		}
+		if( TRUE )
+		{
+			move torso to y-axis [0.] speed <160.000000>;
+			move ruparm to z-axis [-0.] speed <160.000000>;
+			move luparm to z-axis [0.] speed <160.000000>;
+			turn pelvis to z-axis <-1.> speed <160.000000>;
+			turn torso to z-axis <-1.> speed <160.000000>;
+			turn lthigh to x-axis <51.> speed <160.000000>;
+			turn rthigh to x-axis <9.> speed <160.000000>;
+			turn rleg to x-axis <11.> speed <160.000000>;
+			turn rfoot to x-axis <-10.> speed <160.000000>;
+			turn lleg to x-axis <0.> speed <160.000000>;
+			turn lfoot to x-axis <18.> speed <160.000000>;
+			turn luparm to x-axis <0.> speed <160.000000>;
+			turn lloarm to x-axis <0.> speed <160.000000>;
+			turn lhand to x-axis <0.> speed <160.000000>;
+			turn rloarm to x-axis <-41.> speed <160.000000>;
+			turn rhand to x-axis <143.> speed <160.000000>;
+			sleep 130;
+		}
+		if( TRUE )
+		{
+			move torso to y-axis [0.] speed <160.000000>;
+			move ruparm to z-axis [0.] speed <160.000000>;
+			turn pelvis to z-axis <2.> speed <160.000000>;
+			turn torso to z-axis <-5.> speed <160.000000>;
+			turn lthigh to x-axis <1.> speed <160.000000>;
+			turn rthigh to x-axis <21.> speed <160.000000>;
+			turn rleg to x-axis <4.> speed <160.000000>;
+			turn rfoot to x-axis <-15.> speed <160.000000>;
+			turn lleg to x-axis <35.> speed <160.000000>;
+			turn lfoot to x-axis <1.> speed <160.000000>;
+			turn ruparm to x-axis <-18.> speed <160.000000>;
+			turn luparm to x-axis <18.> speed <160.000000>;
+			turn lloarm to x-axis <-3.> speed <160.000000>;
+			turn lhand to x-axis <-5.> speed <160.000000>;
+			sleep 130;
+		}
+		if( TRUE )
+		{
+			move torso to y-axis [0.] speed <160.000000>;
+			move ruparm to y-axis [-0.] speed <160.000000>;
+			move ruparm to z-axis [0.] speed <160.000000>;
+			turn pelvis to z-axis <4.> speed <160.000000>;
+			turn torso to z-axis <-5.> speed <160.000000>;
+			turn lthigh to x-axis <-16.> speed <160.000000>;
+			turn rthigh to x-axis <36.> speed <160.000000>;
+			turn rfoot to x-axis <-9.> speed <160.000000>;
+			turn lleg to x-axis <55.> speed <160.000000>;
+			turn lfoot to x-axis <-22.> speed <160.000000>;
+			turn ruparm to x-axis <-49.> speed <160.000000>;
+			turn luparm to x-axis <20.> speed <160.000000>;
+			turn lloarm to x-axis <9.> speed <160.000000>;
+			turn lhand to x-axis <-17.> speed <160.000000>;
+			turn rloarm to x-axis <14.> speed <160.000000>;
+			turn rhand to x-axis <46.> speed <160.000000>;
+			sleep 130;
+		}
+		if( TRUE )
+		{
+			move torso to y-axis [0.] speed <160.000000>;
+			move ruparm to z-axis [0.] speed <160.000000>;
+			move luparm to y-axis [1.] speed <160.000000>;
+			turn pelvis to z-axis <2.> speed <160.000000>;
+			turn torso to z-axis <-2.> speed <160.000000>;
+			turn lthigh to x-axis <0.> speed <160.000000>;
+			turn rthigh to x-axis <46.> speed <160.000000>;
+			turn rfoot to x-axis <6.> speed <160.000000>;
+			turn lleg to x-axis <0.> speed <160.000000>;
+			turn lfoot to x-axis <0.> speed <160.000000>;
+			turn ruparm to x-axis <-34.> speed <160.000000>;
+			turn luparm to x-axis <11.> speed <160.000000>;
+			turn lloarm to x-axis <0.> speed <160.000000>;
+			turn lhand to x-axis <117.> speed <160.000000>;
+			turn rhand to x-axis <20.> speed <160.000000>;
+			sleep 130;
+		}
+		if( TRUE )
+		{
+			move torso to y-axis [0.] speed <160.000000>;
+			move ruparm to z-axis [0.] speed <160.000000>;
+			move luparm to y-axis [1.] speed <160.000000>;
+			turn pelvis to z-axis <1.> speed <160.000000>;
+			turn torso to z-axis <1.> speed <160.000000>;
+			turn lthigh to x-axis <11.> speed <160.000000>;
+			turn rthigh to x-axis <60.> speed <160.000000>;
+			turn rfoot to x-axis <11.> speed <160.000000>;
+			turn lleg to x-axis <13.> speed <160.000000>;
+			turn lfoot to x-axis <-15.> speed <160.000000>;
+			turn ruparm to x-axis <5.> speed <160.000000>;
+			turn luparm to x-axis <-9.> speed <160.000000>;
+			turn lloarm to x-axis <-29.> speed <160.000000>;
+			turn lhand to x-axis <149.> speed <160.000000>;
+			turn rloarm to x-axis <-6.> speed <160.000000>;
+			turn rhand to x-axis <7.> speed <160.000000>;
+			sleep 130;
+		}
+		move torso to y-axis [0.] speed <160.000000>;
+		move ruparm to z-axis [0.] speed <160.000000>;
+		move luparm to y-axis [0.] speed <160.000000>;
+		turn pelvis to z-axis <-2.> speed <160.000000>;
+		turn torso to z-axis <5.> speed <160.000000>;
+		turn lthigh to x-axis <37.> speed <160.000000>;
+		turn rthigh to x-axis <27.> speed <160.000000>;
+		turn rleg to x-axis <29.> speed <160.000000>;
+		turn lleg to x-axis <-0.> speed <160.000000>;
+		turn lfoot to x-axis <-17.> speed <160.000000>;
+		turn luparm to x-axis <-21.> speed <160.000000>;
+		turn lloarm to x-axis <-41.> speed <160.000000>;
+		turn lhand to x-axis <90.> speed <160.000000>;
+		turn rloarm to x-axis <4.> speed <160.000000>;
+		turn rhand to x-axis <-10.> speed <160.000000>;
+		sleep 130;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flash;
+	Static_Var_1 = 3000;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	start-script walk();
+}
+
+StopMoving()
+{
+	move torso to y-axis [0.] speed <160.000000>;
+	move ruparm to y-axis [0.] speed <160.000000>;
+	move ruparm to z-axis [0.] speed <160.000000>;
+	move luparm to y-axis [0.] speed <160.000000>;
+	move luparm to z-axis [0.] speed <160.000000>;
+	turn pelvis to z-axis <0.> speed <160.000000>;
+	turn torso to z-axis <0.> speed <160.000000>;
+	turn lthigh to x-axis <0.> speed <160.000000>;
+	turn rthigh to x-axis <0.> speed <160.000000>;
+	turn rleg to x-axis <0.> speed <160.000000>;
+	turn rfoot to x-axis <0.> speed <160.000000>;
+	turn lleg to x-axis <0.> speed <160.000000>;
+	turn lfoot to x-axis <0.> speed <160.000000>;
+	turn ruparm to x-axis <0.> speed <160.000000>;
+	turn luparm to x-axis <0.> speed <160.000000>;
+	turn lloarm to x-axis <0.> speed <160.000000>;
+	turn lhand to x-axis <0.> speed <160.000000>;
+	turn rloarm to x-axis <0.> speed <160.000000>;
+	turn rhand to x-axis <0.> speed <160.000000>;
+	signal 2;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = ground;
+}
+
+RestoreAfterDelay()
+{
+	sleep 1000;
+	spin barrel around z-axis speed <0.000000> accelerate <-10.000000>;
+	turn turret to y-axis <0.000000> speed <60.000000>;
+	wait-for-turn turret around y-axis;
+	turn barrel to x-axis <0.000000> speed <30.000000>;
+	wait-for-turn barrel around x-axis;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flash;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn turret to y-axis heading speed <120.000000>;
+//	turn barrel to x-axis <0.000000> - pitch speed <30.000000>;
+	wait-for-turn turret around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	signal 16;
+	set-signal-mask 16;
+	emit-sfx 1025 from flash;
+	spin barrel around z-axis speed <300.000000>;	
+	sleep 300;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode lfoot type NOHEATCLOUD;
+		explode lhand type NOHEATCLOUD ;
+		explode lleg type NOHEATCLOUD ;
+		explode lloarm type NOHEATCLOUD ;
+		explode lthigh type NOHEATCLOUD ;
+		explode luparm type NOHEATCLOUD ;
+		explode pelvis type NOHEATCLOUD ;
+		explode rfoot type NOHEATCLOUD ;
+		explode rhand type NOHEATCLOUD ;
+		explode rleg type NOHEATCLOUD ;
+		explode rloarm type NOHEATCLOUD ;
+		explode rthigh type NOHEATCLOUD ;
+		explode ruparm type NOHEATCLOUD ;
+		explode torso type NOHEATCLOUD ;
+		explode turret type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode lfoot type FALL | NOHEATCLOUD ;
+		explode lhand type FALL | NOHEATCLOUD ;
+		explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode lloarm type FALL | NOHEATCLOUD ;
+		explode lthigh type FALL | NOHEATCLOUD ;
+		explode luparm type FALL | NOHEATCLOUD ;
+		explode pelvis type NOHEATCLOUD ;
+		explode rfoot type FALL | NOHEATCLOUD ;
+		explode rhand type FALL | NOHEATCLOUD ;
+		explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode rloarm type FALL | NOHEATCLOUD ;
+		explode rthigh type FALL | NOHEATCLOUD ;
+		explode ruparm type FALL | NOHEATCLOUD ;
+		explode torso type NOHEATCLOUD ;
+		explode turret type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode luparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD  | BITMAP5;
+		explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode ruparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode torso type NOHEATCLOUD ;
+		explode turret type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode luparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pelvis type NOHEATCLOUD  | BITMAP5;
+	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rloarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode ruparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode torso type NOHEATCLOUD ;
+	explode turret type NOHEATCLOUD ;
+	return (corpsetype);
+}

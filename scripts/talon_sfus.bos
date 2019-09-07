@@ -1,0 +1,111 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  crystal, base, towers1, tubes1, GP, rays1, rays2,
+       trueglow, flareglow, tubes2, tubes3, towers2, towers3;
+
+static-var  Static_Var_1;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide rays1;
+	hide rays2;
+	hide crystal;
+	hide trueglow;
+	hide flareglow;
+	start-script SmokeUnit();
+	spin crystal around y-axis speed <100.000000>;
+	show crystal;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+	explode crystal type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode GP type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode towers1 type NOHEATCLOUD;
+	explode towers2 type NOHEATCLOUD;
+	explode towers3 type NOHEATCLOUD;
+	explode tubes1 type NOHEATCLOUD;
+	explode tubes2 type NOHEATCLOUD;
+	explode tubes3 type NOHEATCLOUD;
+		return (corpsetype);	
+	}
+	if( severity <= 50 )
+	{
+	corpsetype = 2;
+	explode crystal type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode GP type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode towers1 type NOHEATCLOUD;
+	explode towers2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode towers3 type NOHEATCLOUD;
+	explode tubes1 type NOHEATCLOUD;
+	explode tubes2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tubes3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+	explode crystal type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode GP type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode towers1 type NOHEATCLOUD;
+	explode towers2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode towers3 type NOHEATCLOUD;
+	explode tubes1 type NOHEATCLOUD;
+	explode tubes2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tubes3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode crystal type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode GP type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
+	explode towers1 type NOHEATCLOUD;
+	explode towers2 type NOHEATCLOUD;
+	explode towers3 type NOHEATCLOUD;
+	explode tubes1 type NOHEATCLOUD;
+	explode tubes2 type NOHEATCLOUD;
+	explode tubes3 type NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -1,0 +1,126 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, tube1, tube2, tube5, tube6, tube9, tube10, tube14, tube15, massive;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 2000;
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	return (1);
+}
+
+FirePrimary()
+{
+	sleep 100;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = massive;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = body;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode tube1 type NOHEATCLOUD;
+		explode tube2 type NOHEATCLOUD;
+		explode tube5 type NOHEATCLOUD;
+		explode tube6 type NOHEATCLOUD;
+		explode tube9 type NOHEATCLOUD;
+		explode tube10 type NOHEATCLOUD;
+		explode tube14 type NOHEATCLOUD;
+		explode tube15 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode tube1 type NOHEATCLOUD;
+		explode tube2 type NOHEATCLOUD;
+		explode tube5 type NOHEATCLOUD;
+		explode tube6 type NOHEATCLOUD;
+		explode tube9 type NOHEATCLOUD;
+		explode tube10 type NOHEATCLOUD;
+		explode tube14 type NOHEATCLOUD;
+		explode tube15 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube9 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube10 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube14 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode tube15 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube9 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube10 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube14 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tube15 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);	
+}

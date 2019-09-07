@@ -1,5 +1,7 @@
 return {
+	
 	--### AIR ###
+	
 	fighters = {
 	"airwolf3g",
 	"armfig",
@@ -15,7 +17,10 @@ return {
 	"tllshu",
 	"armstratus",
 	"corshock",
-	"tllcondor"
+	"tllcondor",
+	"talon_token",
+	"talon_echelon",
+	"talon_hornet",
 	},
 	bombers = {
 	"armblz",
@@ -41,7 +46,10 @@ return {
 	"corsbomb",
 	"armorion",
 	"tllanhur",
-	"tllaether"
+	"tllaether",
+	"talon_shade",
+	"talon_eclipse",
+	"talon_handgod",
 	},
 	flak_resistant = {
 	"apache",
@@ -52,10 +60,8 @@ return {
 	"tllcopter",
 	"corhind",
 	"armkamo",
-	"skykrogoth"
 	},
 	unclassed_air = {
-	-- Builders
 	"abuilderlvl1",
 	"abuilderlvl2",
 	"abuilderlvl3",
@@ -79,7 +85,9 @@ return {
 	"tlleca",
 	"tllcsa",
 	"tlltsetse",
-	-- gunships without flak resistance
+	"talon_ca",
+	"talon_aca",
+	"talon_medic",
 	"armbrawl",
 	"armjade",
 	"armkam",
@@ -94,7 +102,11 @@ return {
 	"ferret",
 	"tllcop1",
 	"tlltorpcop",
+	"talon_drone",
+	"talon_trident", 
 	"bladew",
+	"talon_vulture",
+	"talon_pampa",
 	-- scout planes
 	"armawac",
 	"armpeep",
@@ -108,21 +120,22 @@ return {
 	"tllrsplane",
 	"tllsonpl",
 	"armsr71",
-	-- gunship fighters
 	"tawf015",
 	"corrag",
 	"armmin",
 	"cormin",
-	--"tlltsetse",
 	"tllbuilderlvl1",
 	"tllbuilderlvl2",
 	"tllbuilderlvl3",
 	"tllhtca",
 	"tllmoth",
 	"blastwing",
-	"armarpe"
-    },
-    transporters = {
+	"armarpe",
+	"talon_recon",
+	"talon_vigilante",
+	"talon_dart",
+	},
+	transporters = {
 	"armatlas",
 	"armdfly",
 	"armdragf",
@@ -132,11 +145,14 @@ return {
 	"tllrobber",
 	"tlltplane",
 	"armor",
-	"corbtrans"
-    },
+	"corbtrans",
+	"talon_wyvern",
+	"talon_rukh",
+},
+
 --### SEA ###
+
 	ships = {
-	--t1
 	"armmls",
 	"armaas",
 	"armcrus",
@@ -161,7 +177,6 @@ return {
 	"cormship",
 	"corcarry",
 	"corsjam",
-	--t2
 	"armcs",
 	"armpt",
 	"decade",
@@ -178,9 +193,20 @@ return {
 	"coresupp",
 	"corroy",
 	"cortship",
-	"corasship"
-    },
-    subs = {
+	"corasship",
+"talon_cs",
+"talon_charon",
+"talon_vasculitis",
+"talon_mainstay",
+"talon_bishop",
+"talon_acs",
+"talon_anonymous",
+"talon_aas",
+"talon_nexus",
+"talon_zamak",
+	"talon_imperator",
+},
+	subs = {
 	"corsub",
 	"armsub",
 	"tllcsub",
@@ -201,15 +227,19 @@ return {
 	"armrecl",
 	"tllsr",
 	"corbsub",
-	"armbsub"
-    },
-    experimental_ships = {
-	"armtrmph",
-	"armhcar",
-	"aseadragon",
+	"armbsub",
 	"uppercut",
 	"tllswordfish",
 	"armmarlin",
+"talon_sub",
+"talon_jellyfish",
+"talon_lancelet",
+"talon_frigate",
+	},
+	experimental_ships = {
+	"armtrmph",
+	"armhcar",
+	"aseadragon",
 	"armbc",
 	"cortyrnt",
 	"corhcar",
@@ -219,9 +249,12 @@ return {
 	"tllcaps",
 	"armecs",
 	"corecs",
-	"tllecs"
-    },
---### LAND ###
+	"tllecs",
+	"talon_dread",
+	},
+	
+	--### LAND ###
+	
 	experimental_land = {
 	-- tll t3 vechiles
 	"tlltelsatnk",
@@ -275,6 +308,17 @@ return {
 	"corjurgen",
 	"troman",
 	"corhowie",
+--talon t3 kbot
+"talon_berserker",
+"talon_opal",
+"talon_hollander",
+"talon_talos",
+-- talon t3 veh
+"talon_abaddon",
+"talon_repentance",
+"talon_mrtn",
+"talon_visitant",
+"talon_thanos",
 	-- t4
 	"corkrog1",
 	"corkarg1",
@@ -283,17 +327,6 @@ return {
 	"armraz1",
 	"armraptor",
 	"tllsaurus",
-	-- heroes
-	"cdevastator",
-	"abroadside",
-	"corvaliant",
-	"tllzeppelin",
-	"tllbarbarus",
-	-- _experimental_
-	"armpraet",
-	"monkeylord",
-	"irritator",
-	-- t+++
 	"tllcolossus",
 	"fatshrew",
 	"exoarm",
@@ -306,8 +339,19 @@ return {
 	"corarbritator",
 	"cormkl",
 	"tllhailstorm",
-	"armolympus"    
-    },
+	"armolympus",
+	"armpraet",
+	"monkeylord",
+	"irritator",  
+	-- T5 heroes
+	"cdevastator",
+	"abroadside",
+	"corvaliant",
+	"tllzeppelin",
+	"tllbarbarus",
+"talon_skynet",
+	"talon_independence",
+	},
 	flamethrowers = {
 	"corpyro",
 	"corpyrox",
@@ -318,32 +362,19 @@ return {
 	"cormatch",
 	"coreavalanche",
 	"tllgeo_armored",
-	"tllhcrus"
-    },
+	"tllhcrus",
+	},
 	sniper_resistant = {
 	"armzeus",
 	"armzeus1",
-	"corcan"
-    },
-    raider_resistant = {
-	"tllthumper",
-	"corsumo",
-	"corsumo1",
+	"corcan",
+	"corcan1",
 	"tllbind",
-	"corgol",
-	"corgol1",
-	"armfboy",
-	"armfboy1",
-	"cormexp",
-	"corgfbt",
-	"aexxec",
-	"gladiator",
-	"corexp",
-	"corlevlr1",
-	"tllriot"
 	},
-    -- TODO bombresistant
-    bomb_resistant = {
+	raider_resistant = {
+	
+	},   
+	bomb_resistant = {
 	"armcir",
 	"armcir1",
 	"corerad",
@@ -351,16 +382,16 @@ return {
 	"mercury",
 	"screamer",
 	"tllhmt",
-	"--corsfus" --too op
+	"talon_cir",
 	},
 	crawlingbombs = {
 	"armvader",
 	"corroach",
 	"corsktl",
 	"tllcrawlb",
-	"coretnt"
+	"coretnt",
 	},
-    nanos = {
+	nanos = {
 	"armnanotc",
 	"armnanotc1",
 	"armnanotc2",
@@ -383,7 +414,15 @@ return {
 	"tllfnanotc",
 	"tllfnanotc1",
 	"tllfnanotc2",
-	"tllfnanotc3"
+	"tllfnanotc3",
+	"talon_nanotc",
+	"talon_nanotc1",
+	"talon_nanotc2",
+	"talon_nanotc3",
+	"talon_fnanotc",
+	"talon_fnanotc1",
+	"talon_fnanotc2",
+	"talon_fnanotc3",
 	},
 	mines = {
 	"armmine1",
@@ -403,12 +442,18 @@ return {
 	"tllmine3",
 	"tllmine4",
 	"tllmine5",
-	"tllmine6"
+	"tllmine6",
+	"talon_mine1",
+	"talon_mine2",
+	"talon_mine3",
+	"talon_mine4",
+	"talon_mine5",
 	},
 	minelayers = {
 	"armmlv",
 	"cormlv",
-	"tllmlv"
+	"tllmlv",
+	"talon_mlv",
 	},
 	commanders = {
 	"armcom",
@@ -431,6 +476,13 @@ return {
 	"tllcom_fusion",
 	"tllcom5",
 	"tllcom6",
-	"tllcom7"
+	"tllcom7",
+	"talon_com",
+	"talon_com1",
+	"talon_com3",
+	"talon_com_fusion",
+	"talon_com5",
+	"talon_com6",
+	"talon_com7",
 	}
 }

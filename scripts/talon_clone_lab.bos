@@ -1,0 +1,260 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  GP, base, nano, tank, beam;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		dont-cache nano;
+		move tank to y-axis [-12.] speed [4.];
+		wait-for-move tank along y-axis;
+		set ARMORED to 0;
+		Static_Var_5 = 1;
+		sleep 300;
+	}
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move tank to y-axis [0.] speed [4.];
+		wait-for-move tank along y-axis;
+		cache nano;
+		set ARMORED to 1;
+		Static_Var_5 = 0;
+		sleep 300;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+/*
+UpDownNano()
+{
+	if( Static_Var_5 == 0 )
+	{
+		move beam1 to y-axis [5.] speed [3.];
+		wait-for-move emit along y-axis;
+		move beam2 to y-axis [-2.] speed [3.];
+		wait-for-move emit along y-axis;
+		start-script UpDownNano();
+	}
+	if( Static_Var_5 == 1 )
+	{
+		move beam2 to y-axis [0.] speed [10.];
+		wait-for-move emit along y-axis;
+		sleep 150;
+		start-script UpDownNano();
+	}
+}
+*/
+/*
+Standby()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 100;
+	}
+	if( Static_Var_5 == 0 )
+	{
+		emit-sfx 1024 + 1 from emit;
+	}
+	if( Static_Var_5 == 1 )
+	{
+		emit-sfx 1024 + 0 from emit;
+	}
+	sleep 50;
+	start-script Standby();
+}
+*/
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	start-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	sleep 3000;
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 1;
+	Static_Var_5 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+//	hide tank;
+//	start-script Standby();
+//	start-script UpDownNano();
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	sleep 300;
+}
+
+StopBuilding()
+{
+	sleep 300;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = nano;
+}
+
+QueryNanoPiece(piecenum)
+{
+		piecenum = beam;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode GP type NOHEATCLOUD;
+		explode tank type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+	return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode GP type NOHEATCLOUD | FALL;
+		explode tank type NOHEATCLOUD | FALL;
+		explode nano type NOHEATCLOUD | FALL;
+		explode base type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+	explode GP type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tank type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode GP type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tank type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

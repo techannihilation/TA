@@ -3,9 +3,24 @@
 
 effectUnitDefs = {
  --// FUSIONS //--------------------------
-  cafus = {
+  talon_gen = {
+	{class='SimpleParticles2', options=MergeTable({pos={0,28,0}, delay=0, size=10, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_gen)},
+	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,28,0}, size=6, precision=22, repeatEffect=true}},
+},
+  talon_ckfus = {
+	{class='SimpleParticles2', options=MergeTable({pos={0,40,6}, delay=0, size=60, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
+	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,40,6}, size=16, precision=22, repeatEffect=true}},
+},
+talon_afus = {
+	{class='SimpleParticles2', options=MergeTable({pos={0,55,10}, delay=0, size=80, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
+	{class='SimpleParticles2', options=MergeTable({pos={0,55,10}, delay=60, size=55, count=2, colormap={{0.6, 1.0, 0.70, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
+	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,55,10}, size=20, precision=22, repeatEffect=true}},
+
+},
+
+cafus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4.5}, priority=1, delay=0, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4,5}, priority=1, delay=40, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4,5}, priority=1, delay=25, size=50, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={priority=2,layer=-16, life=math.huge, pos={0,58.9,-4.5}, size=24.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
@@ -176,6 +191,7 @@ effectUnitDefs = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corcrab = {
+    {class='ShieldSphere',options=corcrabSphere},
     {class='Bursts',options=corcrabBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=180, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
@@ -184,16 +200,16 @@ effectUnitDefs = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armgate2 = {
-    {class='Bursts',options=shieldBursts340},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=340, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corgate2 = {
-    {class='Bursts',options=shieldBursts340},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=340, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllgate2 = {
-    {class='Bursts',options=shieldBursts340},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=340, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armgate = {
     {class='Bursts',options=shieldBursts400},
@@ -223,7 +239,22 @@ effectUnitDefs = {
     {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-  
+talon_gate2 = {
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+talon_gate = {
+    {class='Bursts',options=shieldBursts1000},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  talon_gate1 = {
+    {class='Bursts',options=shieldBursts1000},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  talon_obelisk = {
+    {class='Bursts',options=exoarmBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   --// OTHER //--------------------------
  armmex1 = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
@@ -273,6 +304,10 @@ effectUnitDefs = {
     {class='GroundFlash',options=groundFlashJuno},
   },
  tlljuno = {
+    {class='ShieldSphere',options=tlljunoShieldSphere},
+    {class='GroundFlash',options=groundFlashJuno},
+  },
+ talon_juno = {
     {class='ShieldSphere',options=tlljunoShieldSphere},
     {class='GroundFlash',options=groundFlashJuno},
   },
@@ -500,16 +535,16 @@ cbuilderlvl3 = {
 cbuilderlvl4 = {
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
 },
 coreca = {
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
 },
-cbuilderlvl5 = {
+ cbuilderlvl5 = {
  	{class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster1", noIconDraw = true, priority=3, onActive=true}},
  	{class='AirJet',options={color={0.8,0.1,0.1}, width=12, length=15, piece="thruster.55552", noIconDraw = true, priority=3, onActive=true}},
 },
@@ -727,6 +762,34 @@ tllbarbarus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  tllcom7 = {
+    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+    {class='Bursts',options=shieldBursts200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+
+ talon_com = {
+    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+  },
+ talon_com1 = {
+    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+  },
+ talon_com3 = {
+    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+  },
+ talon_com_fusion = {
+    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
+  },
+ talon_com5 = {
+    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+    {class='Bursts',options=shieldBursts100},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+ talo_com6 = {
+    {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+ talon_com7 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
     {class='Bursts',options=shieldBursts200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},

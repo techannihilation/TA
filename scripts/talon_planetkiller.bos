@@ -1,0 +1,95 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, weapon, aimpoint, circle, flare;
+
+static-var  Restore_Delay;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	Restore_Delay = 5000;
+	start-script SmokeUnit();
+	spin circle around y-axis speed <250.000000> accelerate <25.000000>;
+	spin circle around z-axis speed <150.000000> accelerate <25.000000>;
+	spin aimpoint around x-axis speed <250.000000> accelerate <25.000000>;
+	spin aimpoint around z-axis speed <250.000000> accelerate <25.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	
+	turn body to y-axis <0.000000> + heading speed <20.000000>;
+	//turn body to x-axis pitch speed <20.000000> ;
+	wait-for-turn body around y-axis;
+	wait-for-turn body around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 30 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode circle type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode aimpoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode circle type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode aimpoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -1,0 +1,246 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  lightning, body, base, turret, w1, w2, w3, w4,
+       w5, w6, w7, w8, w9, w10, w11, w12,
+       wakes, lsleeve, rsleeve;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+
+WobbleUnit()
+{
+	while( TRUE )
+	{
+		if( Static_Var_2 )
+		{
+			move base to y-axis [2.] speed [3.];
+		}
+		else
+		{
+			move base to y-axis [-0.] speed [3.];
+		}
+		Static_Var_2 = !Static_Var_2;
+		sleep 750;
+	}
+}
+
+BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	while( TRUE )
+	{
+		Func_Var_1 = get PIECE_XZ(base);
+		Func_Var_3 = 0;
+		if( get XZ_HYPOT(Func_Var_1 - Func_Var_2) >= 163840 )
+		{
+			Func_Var_3 = 0 - get XZ_ATAN(Func_Var_2 - Func_Var_1) * 80 / 40;
+		}
+		turn body to z-axis Func_Var_3 speed <55.>;
+		Func_Var_2 = Func_Var_1;
+		sleep 300;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script WobbleUnit();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RockUnit(anglex, anglez)
+{
+	signal 8;
+	set-signal-mask 8;
+	turn body to x-axis <0.> * anglex speed <50.>;
+	turn body to z-axis <0.> * anglez speed <50.>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.> speed <20.>;
+	turn body to x-axis <0.> speed <20.>;
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 8;
+	set-signal-mask 8;
+	turn body to z-axis <0.> * anglez speed <105.>;
+	turn body to x-axis <0.> * anglex speed <105.>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.> speed <30.>;
+	turn body to x-axis <0.> speed <30.>;
+}
+
+StartMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+}
+
+StopMoving()
+{
+	signal 4;
+}
+
+waking()
+{
+	while( TRUE )
+	{
+		if( Static_Var_1 == 2 OR Static_Var_1 == 1 )
+		{
+			emit-sfx 3 from w1;
+			emit-sfx 3 from w2;
+			emit-sfx 3 from w3;
+			emit-sfx 3 from w4;
+			emit-sfx 3 from w5;
+			emit-sfx 3 from w6;
+			emit-sfx 3 from w7;
+			emit-sfx 3 from w8;
+			emit-sfx 3 from w9;
+			emit-sfx 3 from w10;
+			emit-sfx 3 from w11;
+			emit-sfx 3 from w12;
+			emit-sfx 5 from w1;
+			emit-sfx 5 from w2;
+			emit-sfx 5 from w3;
+			emit-sfx 5 from w4;
+			emit-sfx 5 from w5;
+			emit-sfx 5 from w6;
+			emit-sfx 5 from w7;
+			emit-sfx 5 from w8;
+			emit-sfx 5 from w9;
+			emit-sfx 5 from w10;
+			emit-sfx 5 from w11;
+			emit-sfx 5 from w12;
+		}
+		sleep 325;
+	}
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+Create()
+{
+	start-script waking();
+	hide lightning;
+	dont-cache lightning;
+	Static_Var_3 = 3000;
+	start-script SmokeUnit();
+	start-script BankClerck();
+	turn rsleeve to x-axis <-45.> now;
+	turn lsleeve to x-axis <-45.> now;
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	Static_Var_3 = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_3;
+	turn turret to y-axis <0.> speed <90.>;
+	turn rsleeve to x-axis <-45.> speed <120.>;
+	turn lsleeve to x-axis <-45.> speed <80.>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <175.>;
+	turn rsleeve to x-axis <0.> - pitch speed <80.>;
+	wait-for-turn rsleeve around x-axis;
+	turn lsleeve to x-axis <0.> - pitch speed <80.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn lsleeve around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	explode lightning type BITMAPONLY | BITMAP5;
+	sleep 250;
+	explode lightning type BITMAPONLY | BITMAP5;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = lightning;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide lightning;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode rsleeve type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode lsleeve type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode rsleeve type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD;
+		explode lsleeve type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+				explode rsleeve type NOHEATCLOUD;
+		explode body type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | FALL;
+		explode lsleeve type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+		explode rsleeve type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD;
+		explode lsleeve type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+}

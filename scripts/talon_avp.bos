@@ -1,0 +1,431 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pad, hallr, halll, hallr1, halll1, roofr, roofl,
+       roofr1, roofl1, doorr1, doorr2, doorr1a, doorr1b, doorl1, doorl2,
+       doorl1a, doorl1b, nanor, nanol, sprayr, sprayl, nanodoorr, nanodoorl,
+       cover, padsee;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		dont-cache roofr;
+		dont-cache roofl;
+		dont-cache doorr1;
+		dont-cache doorr2;
+		dont-cache doorl1;
+		dont-cache doorl2;
+		dont-cache nanodoorr;
+		dont-cache nanodoorl;
+		dont-cache nanor;
+		dont-cache nanol;
+		dont-cache base;
+		set ARMORED to 0;
+	}
+	if( TRUE )
+	{
+		show cover;
+	}
+	if( TRUE )
+	{
+		turn roofl to z-axis <90.> speed <100.>;
+		turn doorl1 to y-axis <90.> speed <100.>;
+		turn doorr1 to y-axis <-90.> speed <100.>;
+		turn doorl2 to y-axis <-90.> speed <100.>;
+		turn doorr2 to y-axis <90.> speed <100.>;
+		turn roofr to z-axis <-90.> speed <100.>;
+		wait-for-turn doorr1 around y-axis;
+	}
+	if( TRUE )
+	{
+		move hallr to x-axis [-9.] speed [4.];
+		move halll to x-axis [9.] speed [4.];
+		wait-for-move hallr along x-axis;
+	}
+	if( TRUE )
+	{
+		move nanodoorr to y-axis [-9.] speed [4.];
+		move nanodoorl to y-axis [-9.] speed [4.];
+		wait-for-move nanodoorl along y-axis;
+	}
+	if( TRUE )
+	{
+		move nanor to z-axis [8.] speed [4.];
+		move nanol to z-axis [8.] speed [4.];
+		wait-for-move nanor along z-axis;
+	}
+	if( TRUE )
+	{
+		sleep 300;
+	}
+	if( TRUE )
+	{
+		cache roofr;
+		cache roofl;
+		cache doorr1;
+		cache doorr2;
+		cache doorl1;
+		cache doorl2;
+		cache nanodoorr;
+		cache nanodoorl;
+		cache nanor;
+		cache nanol;
+		sleep 300;
+	}
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		dont-cache roofr;
+		dont-cache roofl;
+		dont-cache doorr1;
+		dont-cache doorr2;
+		dont-cache doorl1;
+		dont-cache doorl2;
+		dont-cache nanodoorr;
+		dont-cache nanodoorl;
+		dont-cache nanor;
+		dont-cache nanol;
+		sleep 300;
+	}
+	if( TRUE )
+	{
+		move nanor to z-axis [0.] speed [4.];
+		move nanol to z-axis [0.] speed [4.];
+		wait-for-move nanor along z-axis;
+	}
+	if( TRUE )
+	{
+		move nanodoorr to y-axis [0.] speed [4.];
+		move nanodoorl to y-axis [0.] speed [4.];
+		wait-for-move nanodoorl along y-axis;
+	}
+	if( TRUE )
+	{
+		move hallr to x-axis [0.] speed [4.];
+		move halll to x-axis [0.] speed [4.];
+		wait-for-move hallr along x-axis;
+	}
+	if( TRUE )
+	{
+		turn roofl to z-axis <0.> speed <100.>;
+		turn doorl1 to y-axis <0.> speed <100.>;
+		turn doorr1 to y-axis <0.> speed <100.>;
+		turn doorr2 to y-axis <0.> speed <100.>;
+		turn roofr to z-axis <0.> speed <100.>;
+		turn roofr to z-axis <0.> speed <100.>;
+		wait-for-turn doorr1 around y-axis;
+	}
+	if( TRUE )
+	{
+		cache roofr;
+		cache roofl;
+		cache doorr1;
+		cache doorr2;
+		cache doorl1;
+		cache doorl2;
+		cache nanodoorr;
+		cache nanodoorl;
+		cache nanor;
+		cache nanol;
+		cache base;
+	}
+	if( TRUE )
+	{
+		set ARMORED to 1;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	sleep 3000;
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	start-script deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	dont-shade base;
+	dont-shade padsee;
+	dont-shade hallr;
+	dont-shade halll;
+	dont-shade hallr1;
+	dont-shade halll1;
+	dont-shade roofr;
+	dont-shade roofl;
+	dont-shade roofr1;
+	dont-shade roofl1;
+	dont-shade doorr1;
+	dont-shade doorr2;
+	dont-shade doorr1a;
+	dont-shade doorr1b;
+	dont-shade doorl1;
+	dont-shade doorl2;
+	dont-shade doorl1a;
+	dont-shade doorl1b;
+	dont-shade nanor;
+	dont-shade nanol;
+	dont-shade sprayr;
+	dont-shade sprayl;
+	dont-shade nanodoorr;
+	dont-shade nanodoorl;
+	dont-cache cover;
+	hide cover;
+	Static_Var_1 = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = sprayr;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = sprayl;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 3 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode hallr type NOHEATCLOUD;
+		explode halll type NOHEATCLOUD;
+		explode hallr1 type NOHEATCLOUD;
+		explode halll1 type NOHEATCLOUD;
+		explode roofr type NOHEATCLOUD;
+		explode roofl type NOHEATCLOUD;
+		explode roofr1 type NOHEATCLOUD;
+		explode roofl1 type NOHEATCLOUD;
+		explode doorr1 type NOHEATCLOUD;
+		explode doorr2 type NOHEATCLOUD;
+		explode doorr1a type NOHEATCLOUD;
+		explode doorr1b type NOHEATCLOUD;
+		explode doorl1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode doorl2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode doorl1a type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode doorl1b type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode nanor type NOHEATCLOUD;
+		explode nanol type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode pad type NOHEATCLOUD | FALL;
+		explode hallr type NOHEATCLOUD | FALL;
+		explode halll type NOHEATCLOUD | FALL;
+		explode hallr1 type NOHEATCLOUD | FALL;
+		explode halll1 type NOHEATCLOUD | FALL;
+		explode roofr type NOHEATCLOUD | FALL;
+		explode roofl type NOHEATCLOUD | FALL;
+		explode roofr1 type NOHEATCLOUD | FALL;
+		explode roofl1 type NOHEATCLOUD | FALL;
+		explode doorr1 type NOHEATCLOUD | FALL;
+		explode doorr2 type NOHEATCLOUD | FALL;
+		explode doorr1a type NOHEATCLOUD | FALL;
+		explode doorr1b type NOHEATCLOUD | FALL;
+		explode doorl1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode doorl2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode doorl1a type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode doorl1b type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode nanor type NOHEATCLOUD;
+		explode nanol type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode pad type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode hallr type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode halll type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode hallr1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode halll1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode roofr type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode roofl type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode roofr1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode roofl1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode doorr1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode doorr2 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode doorr1a type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode doorr1b type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+		explode doorl1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode doorl2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode doorl1a type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode doorl1b type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode nanor type NOHEATCLOUD;
+		explode nanol type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode pad type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode hallr type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode halll type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode hallr1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode halll1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode roofr type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode roofl type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode roofr1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode roofl1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode doorr1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode doorr2 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode doorr1a type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode doorr1b type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode doorl1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode doorl2 type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+	explode doorl1a type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode doorl1b type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nanor type NOHEATCLOUD;
+	explode nanol type NOHEATCLOUD;
+	return (corpsetype);
+}
