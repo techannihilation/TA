@@ -49,7 +49,7 @@ return {
 		turnrate = 0,
 		unitname = "talon_afus",
 		usebuildinggrounddecal = true,
-		yardmap = "ooooooo ooooooo ooooooo ooooooo oooooooo oooooooo",
+		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "talon_afus.dds",
 			faction = "TALON",

@@ -45,7 +45,7 @@ return {
 		turnrate = 0,
 		unitname = "talon_asonar",
 		usebuildinggrounddecal = true,
-		yardmap = "oooooooooooooooo",
+		yardmap = "oooo oooo",
 		waterline = 5,
 		customparams = {
 			buildpic = "talon_asonar.dds",

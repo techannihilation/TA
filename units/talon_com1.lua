@@ -101,7 +101,8 @@ return {
 			[20] = "talon_sy",
 			[21] = "talon_sonar",
 			[22] = "talon_fdrag",
-			[23] = "talon_tl",
+			[23] = "talon_frl",
+			[24] = "talon_tl",
 		},
 		customparams = {
 			buildpic = "talon_com1.dds",

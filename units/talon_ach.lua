@@ -78,7 +78,7 @@ return {
 			[18] = "talon_uwfus",
 			[19] = "talon_uwms",
 			[20] = "talon_uwes",
-			[21] = "talon_famker",
+			[21] = "talon_famkr",
 			[22] = "talon_uwmme",
 			[23] = "talon_sy",
 			[24] = "talon_asy",

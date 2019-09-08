@@ -136,7 +136,7 @@ return {
 				name = "peewee",
 				noselfdamage = true,
 				range = 160,
-				reloadtime = 0.75,
+				reloadtime = 0.5,
 				rgbcolor = "0.83 0.57 0",
 				size = 1,
 				soundhitwet = "splshbig",
@@ -150,7 +150,6 @@ return {
 				weaponvelocity = 500,
 				damage = {
 					default = 5,
-					raider_resistant = 5,
 					subs = 5,
 				},
 			},
