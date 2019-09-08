@@ -169,18 +169,19 @@ FirePrimary()
 	
 	if(gun_0 == 0) 
 	{
-		move barrel1 to z-axis [-1.000000] now;
-		sleep 150;
-		move barrel1 to z-axis [0.000000] speed [3.000000];
-		wait-for-turn sleeve around z-axis;
+		//move barrel1 to z-axis [-1.000000] now;
+		//sleep 350;
+		//move barrel1 to z-axis [0.000000] speed [3.000000];
+		//wait-for-move sleeve along z-axis;
 	}
 	if(gun_0 == 1) 
 	{
-		move barrel2 to z-axis [-1.000000] now;
-		sleep 150;
-		move barrel2 to z-axis [0.000000] speed [3.000000];
-		wait-for-turn sleeve around z-axis;
-	}	
+		//move barrel2 to z-axis [-1.000000] now;
+		//sleep 350;
+		//move barrel2 to z-axis [0.000000] speed [3.000000];
+		//wait-for-move sleeve along z-axis;
+	}
+	sleep 1000;	
 	++gun_0;
 	if(gun_0 == 2) 
 	{

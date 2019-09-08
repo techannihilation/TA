@@ -401,6 +401,7 @@ StartBuilding()
 StopBuilding()
 {
 	//stop-spin NanoPad around y-axis;
+	sleep 3000;
 	start-script Stop();
 }
 

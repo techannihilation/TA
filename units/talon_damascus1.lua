@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corfmd_aoplane.dds",
-		buildpic = "talon_damascus.dds",
+		buildpic = "talon_damascus1.dds",
 		buildtime = 200000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
@@ -50,7 +50,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "Talon_damascus.dds",
+			buildpic = "Talon_damascus1.dds",
 			faction = "TALON",
 		},
 		featuredefs = {

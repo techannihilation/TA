@@ -177,7 +177,6 @@ return {
 				range = 1000,
 				reloadtime = 8,
 				rgbcolor = "0 0 1",
-				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "annigun1",
@@ -203,7 +202,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
-				def = "ATDR",
+				def = "ATADR",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {

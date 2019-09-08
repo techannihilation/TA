@@ -144,7 +144,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.3,
 				thickness = 10,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1400,
@@ -153,7 +152,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 1800,
+					commanders = 3600,
 					default = 18000,
 					subs = 5,
 				},

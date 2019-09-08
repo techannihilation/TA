@@ -60,9 +60,10 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move lid2 to y-axis [-0.] now;
+		move lid2 to y-axis [-0.1] speed <150.>;
+		wait-for-move lid2 along y-axis;
 		move lid2 to z-axis [-3.] speed [5.];
-		move lid1 to y-axis [-0.] now;
+		move lid1 to y-axis [-0.1] speed <150.>;
 		move lid1 to z-axis [-3.] speed [5.];
 		wait-for-move lid1 along z-axis;
 	}
@@ -106,6 +107,7 @@ deactivatescr()
 		move lid1 to y-axis [0.] now;
 		move lid2 to y-axis [0.] now;
 	}
+
 	sleep 27;
 }
 
