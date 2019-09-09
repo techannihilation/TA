@@ -56,7 +56,7 @@ local commanderDefID = spGetTeamRulesParam(myTeamID, 'startUnit')
 local amNewbie = (spGetTeamRulesParam(myTeamID, 'isNewbie') == 1)
 
 local factionChangeList
-local px, py = wWidth - 262, 0.63*wHeight
+local px, py = wWidth - 280, 0.63*wHeight
 
 --------------------------------------------------------------------------------
 -- Funcs
@@ -137,7 +137,7 @@ end
 
 function FactionChangeList()
 	-- Panel
-	glRect(0, 0, 192, 80)
+	glRect(0, 0, 255, 80)
 		-- Highlight
 	glColor(1, 1, 0, 0.5)
         if commanderDefID == armcomDefID then
@@ -146,7 +146,7 @@ function FactionChangeList()
             glRect(65, 1, 127, 63)
         elseif commanderDefID == tllcomDefID then
             glRect(129, 1, 191, 63)
-        elseif commanderDefID == tllcomDefID then
+        elseif commanderDefID == taloncomDefID then
             glRect(193, 1, 255, 63)
         end
         
@@ -164,7 +164,7 @@ function FactionChangeList()
         
         -- Text
         glBeginText()
-            glText('Select Desired Faction', 95, 64, 12, 'cd')
+            glText('Select Desired Faction', 127, 64, 12, 'cd')
             glText('ARM', 32, 0, 12, 'cd')
             glText('CORE', 96, 0, 12, 'cd')
             glText('TLL', 160, 0, 12, 'cd')
@@ -196,7 +196,7 @@ function widget:MousePress(mx, my, mButton)
 				newCom = corcomDefID
 			elseif mx < px + 192 then
 				newCom = tllcomDefID
-                elseif mx < px + 256 then
+            elseif mx < px + 256 then
 				newCom = taloncomDefID
 			end
 			if newCom then
