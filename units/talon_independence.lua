@@ -190,7 +190,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 1000000,
-				explosiongenerator = "custom:FLASHNUKE480",
+				explosiongenerator = "custom:explosion_talon_independence",
 				impulseboost = 0,
 				impulsefactor = 0,
 				largebeamlaser = true,

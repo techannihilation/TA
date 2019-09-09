@@ -30,7 +30,7 @@ return {
 		collisionvolumeoffsets = "0 -13 0",
 		collisionvolumescales = "110 57 195",
 		collisionvolumetype = "box",
-		cruisealt = 20,
+		cruisealt = 40,
 		defaultmissiontype = "VTOL_standby",
 		description = "Battle Destroyer",
 		dontland = 1,

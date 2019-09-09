@@ -111,11 +111,12 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.1,
 				thickness = 1,
-				tolerance = 500,
-				turret = true,
+				tolerance = 2000,
+				turret = false,
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {
+					commanders = 10,
 					default = 20,
 					subs = 5,
 				},
@@ -125,8 +126,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "TAL_LASER",
-				maindir = "0 0 1",
-				maxangledif = 60,
 				onlytargetcategory = "SURFACE",
 			},
 		},
