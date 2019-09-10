@@ -193,7 +193,7 @@ return {
 				},
 			},
 			tawf_banisher1 = {
-				areaofeffect = 96,
+				areaofeffect = 32,
 				avoidfeature = false,
 				burst = 4,
 				burstrate = 0.12,
@@ -233,8 +233,8 @@ return {
 				weaponacceleration = 120,
 				weapontimer = 6,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 510,
-				wobble = 2000,
+				weaponvelocity = 850,
+				wobble = 1800,
 				damage = {
 					commanders = 150,
 					default = 300,

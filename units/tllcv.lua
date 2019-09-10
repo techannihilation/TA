@@ -2,7 +2,7 @@ return {
 	tllcv = {
 		acceleration = 0.166,
 		brakerate = 5.76,
-		buildcostenergy = 1855,
+		buildcostenergy = 1555,
 		buildcostmetal = 168,
 		builddistance = 160,
 		builder = true,

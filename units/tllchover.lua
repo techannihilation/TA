@@ -53,7 +53,7 @@ return {
 		turninplacespeedlimit = 1.3992,
 		turnrate = 400,
 		unitname = "tllchover",
-		workertime = 140,
+		workertime = 120,
 		buildoptions = {
 			[1] = "tllsolar",
 			[2] = "tlladvsolar",
