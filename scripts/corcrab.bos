@@ -3,28 +3,31 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, dome, legs,
-	   arm1, claw1a, door1a, turret1a, stand1a, gun1a, beam1a, claw1b, door1b, turret1b, stand1b, gun1b, beam1b,
-	   arm2, claw2a, door2a, turret2a, stand2a, gun2a, beam2a, claw2b, door2b, turret2b, stand2b, gun2b, beam2b,
-	   rupleg1, rloleg1a, rloleg1b, rupleg2, rloleg2a, rloleg2b, rupleg3, rloleg3a, rloleg3b,
-	   lupleg1, lloleg1a, lloleg1b, lupleg2, lloleg2a, lloleg2b, lupleg3, lloleg3a, lloleg3b ;
+piece  base, body, dome, legs, arm1, claw1a, door1a, turret1a,
+       stand1a, gun1a, beam1a, claw1b, door1b, turret1b, stand1b, gun1b,
+       beam1b, arm2, claw2a, door2a, turret2a, stand2a, gun2a, beam2a,
+       claw2b, door2b, turret2b, stand2b, gun2b, beam2b, rupleg1, rloleg1a,
+       rloleg1b, rupleg2, rloleg2a, rloleg2b, rupleg3, rloleg3a, rloleg3b, lupleg1,
+       lloleg1a, lloleg1b, lupleg2, lloleg2a, lloleg2b, lupleg3, lloleg3a, lloleg3b;
 
-static-var  Turret_1, Moving_2, ReqState_3, On_4, Gun_4, Busy_5, Waiting_6, Turning_7, shieldonoff;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9;
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	var Func_Var_4;
 	while( TRUE )
 	{
-		healthpercent = ( get HEALTH );
+		healthpercent = get HEALTH;
 		if( healthpercent < 66 )
 		{
-			smoketype = ( 256 | 2 );
-			if( Rand(1,66) < healthpercent )
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
 			{
-				smoketype = ( 256 | 1 );
+				smoketype = 256 | 1;
 			}
-			Func_Var_4 = Rand(1,2);
+			Func_Var_4 = Rand( 1, 2 );
 			if( Func_Var_4 == 1 )
 			{
 				emit-sfx smoketype from gun1a;
@@ -34,105 +37,96 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 				emit-sfx smoketype from gun2b;
 			}
 		}
-		sleeptime = ( healthpercent * 50 );
+		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
 		{
 			sleeptime = 200;
 		}
 		sleep sleeptime;
-
-		if( !Busy_5 )
+		if( !Static_Var_6 )
 		{
-			Waiting_6 = 0;
+			Static_Var_7 = 0;
 		}
-		if( Busy_5 )
+		if( Static_Var_6 )
 		{
-			Waiting_6 = Waiting_6 + sleeptime ;
-			if( Waiting_6 > 11000 )
+			Static_Var_7 = Static_Var_7 + sleeptime;
+			if( Static_Var_7 > 11000 )
 			{
-				Busy_5 = 0;
-				Waiting_6 = 0;
+				Static_Var_6 = 0;
+				Static_Var_7 = 0;
 			}
 		}
 	}
 }
 
-
-
-MotionControl()
+MotionControl(Func_Var_1, Func_Var_2)
 {
-	var preang;
-	var ang;
 	while( TRUE )
 	{
-		ang = get XZ_ATAN(-419);
-		Turning_7 = 0;
-		if (ang != preang)
+		Func_Var_2 = get XZ_ATAN(-419);
+		Static_Var_8 = 0;
+		if( Func_Var_2 != Func_Var_1 )
 		{
-			Turning_7 = 1;
+			Static_Var_8 = 1;
 		}
 		sleep 100;
-		preang = ang;
-		
-		if(( Moving_2 || Turning_7 ))
+		Func_Var_1 = Func_Var_2;
+		if( Static_Var_2 OR Static_Var_8 )
 		{
-		TURN rupleg1 to y-axis <0> SPEED <40>;
-		TURN rupleg1 to z-axis <0> SPEED <40>;
-		TURN rupleg2 to z-axis <15> SPEED <40>;
-		TURN rupleg3 to y-axis <16.5> SPEED <40>;
-		TURN rupleg3 to z-axis <0> SPEED <40>;
-		TURN lupleg1 to y-axis <-19.5> SPEED <40>;
-		TURN lupleg1 to z-axis <0> SPEED <40>;
-		TURN lupleg2 to y-axis <0> SPEED <40>;
-		TURN lupleg2 to z-axis <0> SPEED <40>;
-		TURN lupleg3 to y-axis <-14.5> SPEED <40>;
-		TURN lupleg3 to z-axis <-22.5> SPEED <40>;
-		SLEEP 225;
-		
-		TURN rupleg2 to y-axis <16.5> SPEED <40>;
-		TURN rupleg2 to z-axis <15> SPEED <40>;
-		TURN lupleg1 to y-axis <0> SPEED <40>;
-		TURN lupleg2 to z-axis <-15> SPEED <40>;
-		TURN lupleg3 to z-axis <1> SPEED <40>;
-		TURN rupleg1 to z-axis <15> SPEED <40>;
-		TURN rupleg3 to y-axis <0> SPEED <40>;
-		TURN rupleg3 to z-axis <0> SPEED <40>;
-		SLEEP 225;
-		
-		TURN lupleg2 to y-axis <-15> SPEED <40>;
-		TURN lupleg2 to z-axis <-15> SPEED <40>;
-		TURN lupleg3 to y-axis <1.5> SPEED <40>;
-		TURN rupleg2 to y-axis <16.5> SPEED <40>;
-		TURN rupleg2 to z-axis <0> SPEED <40>;
-		TURN rupleg3 to z-axis <15> SPEED <40>;
-		TURN rupleg1 to y-axis <27> SPEED <40>;
-		TURN rupleg1 to z-axis <15> SPEED <40>;
-		TURN lupleg1 to y-axis <0> SPEED <40>;
-		TURN lupleg1 to z-axis <-15> SPEED <40>;
-		SLEEP 225;
-		
-		TURN lupleg2 to y-axis <-18> SPEED <40>;
-		TURN lupleg2 to z-axis <0> SPEED <40>;
-		TURN lupleg3 to y-axis <0> SPEED <40>;
-		TURN lupleg3 to z-axis <-22.5> SPEED <40>;
-		TURN rupleg2 to y-axis <0> SPEED <40>;
-		TURN rupleg2 to z-axis <0> SPEED <40>;
-		TURN rupleg3 to y-axis <16.5> SPEED <40>;
-		TURN rupleg1 to y-axis <21> SPEED <40>;
-		TURN rupleg1 to z-axis <0> SPEED <40>;
-		TURN rupleg3 to z-axis <15> SPEED <40>;
-		TURN lupleg1 to y-axis <-19.5> SPEED <40>;
-		TURN lupleg1 to z-axis <-15> SPEED <40>;
-		SLEEP 225;
+			turn rupleg1 to y-axis <0.> speed <40.>;
+			turn rupleg1 to z-axis <0.> speed <40.>;
+			turn rupleg2 to z-axis <15.> speed <40.>;
+			turn rupleg3 to y-axis <17.> speed <40.>;
+			turn rupleg3 to z-axis <0.> speed <40.>;
+			turn lupleg1 to y-axis <-20.> speed <40.>;
+			turn lupleg1 to z-axis <0.> speed <40.>;
+			turn lupleg2 to y-axis <0.> speed <40.>;
+			turn lupleg2 to z-axis <0.> speed <40.>;
+			turn lupleg3 to y-axis <-15.> speed <40.>;
+			turn lupleg3 to z-axis <-23.> speed <40.>;
+			sleep 225;
+			turn rupleg2 to y-axis <17.> speed <40.>;
+			turn rupleg2 to z-axis <15.> speed <40.>;
+			turn lupleg1 to y-axis <0.> speed <40.>;
+			turn lupleg2 to z-axis <-15.> speed <40.>;
+			turn lupleg3 to z-axis <1.> speed <40.>;
+			turn rupleg1 to z-axis <15.> speed <40.>;
+			turn rupleg3 to y-axis <0.> speed <40.>;
+			turn rupleg3 to z-axis <0.> speed <40.>;
+			sleep 225;
+			turn lupleg2 to y-axis <-15.> speed <40.>;
+			turn lupleg2 to z-axis <-15.> speed <40.>;
+			turn lupleg3 to y-axis <2.> speed <40.>;
+			turn rupleg2 to y-axis <17.> speed <40.>;
+			turn rupleg2 to z-axis <0.> speed <40.>;
+			turn rupleg3 to z-axis <15.> speed <40.>;
+			turn rupleg1 to y-axis <27.> speed <40.>;
+			turn rupleg1 to z-axis <15.> speed <40.>;
+			turn lupleg1 to y-axis <0.> speed <40.>;
+			turn lupleg1 to z-axis <-15.> speed <40.>;
+			sleep 225;
+			turn lupleg2 to y-axis <-18.> speed <40.>;
+			turn lupleg2 to z-axis <0.> speed <40.>;
+			turn lupleg3 to y-axis <0.> speed <40.>;
+			turn lupleg3 to z-axis <-23.> speed <40.>;
+			turn rupleg2 to y-axis <0.> speed <40.>;
+			turn rupleg2 to z-axis <0.> speed <40.>;
+			turn rupleg3 to y-axis <17.> speed <40.>;
+			turn rupleg1 to y-axis <21.> speed <40.>;
+			turn rupleg1 to z-axis <0.> speed <40.>;
+			turn rupleg3 to z-axis <15.> speed <40.>;
+			turn lupleg1 to y-axis <-20.> speed <40.>;
+			turn lupleg1 to z-axis <-15.> speed <40.>;
+			sleep 225;
 		}
-		if( !Moving_2 )
+		if( !Static_Var_2 )
 		{
-			move rupleg1 to y-axis [0] now;
-			move rupleg2 to y-axis [0] now;
-			move rupleg3 to y-axis [0] now;
-			move lupleg1 to y-axis [0] now;
-			move lupleg2 to y-axis [0] now;
-			move lupleg3 to y-axis [0] now;
+			move rupleg1 to y-axis [0.] now;
+			move rupleg2 to y-axis [0.] now;
+			move rupleg3 to y-axis [0.] now;
+			move lupleg1 to y-axis [0.] now;
+			move lupleg2 to y-axis [0.] now;
+			move lupleg3 to y-axis [0.] now;
 			sleep 50;
 		}
 	}
@@ -140,103 +134,89 @@ MotionControl()
 
 RequestState()
 {
-	while( !Busy_5 & ReqState_3 != On_4 )
+	while( !Static_Var_6 & Static_Var_3 != Static_Var_4 )
 	{
-		Busy_5 = 1;
-		if( ReqState_3 & !On_4 )
+		Static_Var_6 = 1;
+		if( Static_Var_3 & !Static_Var_4 )
 		{
-			turn door1a to z-axis <150.000000> speed <308.000000>;
-			turn door1b to z-axis <-150.000000> speed <311.000000>;
-			turn door2a to z-axis <150.000000> speed <308.000000>;
-			turn door2b to z-axis <-150.000000> speed <311.000000>;
-		
+			turn door1a to z-axis <150.> speed <308.>;
+			turn door1b to z-axis <-150.> speed <311.>;
+			turn door2a to z-axis <150.> speed <308.>;
+			turn door2b to z-axis <-150.> speed <311.>;
 			wait-for-turn door1a around z-axis;
 			wait-for-turn door1b around z-axis;
 			wait-for-turn door2a around z-axis;
 			wait-for-turn door2b around z-axis;
-
-			
-			move stand1a to y-axis [3.000000] speed [12.000000];
-			move gun1a to y-axis [0.525000] speed [2.000000];
-			move stand1b to y-axis [3.000000] speed [12.000000];
-			move gun1b to y-axis [0.525000] speed [2.000000];
-			move stand2a to y-axis [3.000000] speed [12.000000];
-			move gun2a to y-axis [0.525000] speed [2.000000];
-			move stand2b to y-axis [3.000000] speed [12.000000];
-			move gun2b to y-axis [0.525000] speed [2.000000];
-			
-			turn turret1a to y-axis Turret_1 speed <160.000000>;
-			turn turret1b to y-axis Turret_1 speed <160.000000>;
-			turn turret2a to y-axis Turret_1 speed <160.000000>;
-			turn turret2b to y-axis Turret_1 speed <160.000000>;
+			move stand1a to y-axis [3.] speed [12.];
+			move gun1a to y-axis [1.] speed [2.];
+			move stand1b to y-axis [3.] speed [12.];
+			move gun1b to y-axis [1.] speed [2.];
+			move stand2a to y-axis [3.] speed [12.];
+			move gun2a to y-axis [1.] speed [2.];
+			move stand2b to y-axis [3.] speed [12.];
+			move gun2b to y-axis [1.] speed [2.];
+			turn turret1a to y-axis Static_Var_1 speed <160.>;
+			turn turret1b to y-axis Static_Var_1 speed <160.>;
+			turn turret2a to y-axis Static_Var_1 speed <160.>;
+			turn turret2b to y-axis Static_Var_1 speed <160.>;
 			wait-for-turn turret1b around y-axis;
 			wait-for-turn turret2b around y-axis;
 			wait-for-turn turret1a around y-axis;
 			wait-for-turn turret2a around y-axis;
 			set INBUILDSTANCE to 1;
-			On_4 = 1;
-			
+			Static_Var_4 = 1;
 		}
-		if( !ReqState_3 & On_4 )
+		if( !Static_Var_3 & Static_Var_4 )
 		{
-			On_4 = 0;
-			
+			Static_Var_4 = 0;
 			set INBUILDSTANCE to 0;
-			
-			turn turret1a to y-axis <0.000000> speed <160.000000>;
+			turn turret1a to y-axis <0.> speed <160.>;
 			wait-for-turn turret1a around y-axis;
-			turn turret1b to y-axis <0.000000> speed <160.000000>;
+			turn turret1b to y-axis <0.> speed <160.>;
 			wait-for-turn turret1b around y-axis;
-			turn turret2a to y-axis <0.000000> speed <160.000000>;
+			turn turret2a to y-axis <0.> speed <160.>;
 			wait-for-turn turret2a around y-axis;
-			turn turret2b to y-axis <0.000000> speed <160.000000>;
+			turn turret2b to y-axis <0.> speed <160.>;
 			wait-for-turn turret2b around y-axis;
-			
-		
-			move stand1a to y-axis [0.000000] speed [5.000000];
-			move gun1a to y-axis [0.000000] speed [1.000000];
-			move stand1b to y-axis [0.000000] speed [5.000000];			
-			move gun1b to y-axis [0.000000] speed [1.000000];			
-			move stand2a to y-axis [0.000000] speed [5.000000];			
-			move gun2a to y-axis [0.000000] speed [1.000000];			
-			move stand2b to y-axis [0.000000] speed [5.000000];		
-			move gun2b to y-axis [0.000000] speed [1.000000];
-			
+			move stand1a to y-axis [0.] speed [5.];
+			move gun1a to y-axis [0.] speed [1.];
+			move stand1b to y-axis [0.] speed [5.];
+			move gun1b to y-axis [0.] speed [1.];
+			move stand2a to y-axis [0.] speed [5.];
+			move gun2a to y-axis [0.] speed [1.];
+			move stand2b to y-axis [0.] speed [5.];
+			move gun2b to y-axis [0.] speed [1.];
 			wait-for-turn door1a around z-axis;
 			wait-for-turn door1b around z-axis;
 			wait-for-turn door2a around z-axis;
 			wait-for-turn door2b around z-axis;
-			
 			sleep 250;
-			
-			turn door1a to z-axis <0.000000> speed <212.000000>;
-			turn door1b to z-axis <0.000000> speed <212.000000>;
-			turn door2a to z-axis <0.000000> speed <212.000000>;
-			turn door2b to z-axis <0.000000> speed <212.000000>;
-		
+			turn door1a to z-axis <0.> speed <212.>;
+			turn door1b to z-axis <0.> speed <212.>;
+			turn door2a to z-axis <0.> speed <212.>;
+			turn door2b to z-axis <0.> speed <212.>;
 			sleep 488;
 		}
-		Busy_5 = 0;
+		Static_Var_6 = 0;
 	}
 }
 
 Shield()
 {
-	shieldonoff = !shieldonoff;
+	Static_Var_9 = !Static_Var_9;
 }
-
 
 Create()
 {
-	Turret_1 = 0;
-	Moving_2 = 0;
-	ReqState_3 = 0;
-	On_4 = 0;
-	Gun_4 = 0;
-	Busy_5 = 0;
-	Waiting_6 = 0;
-	Turning_7 = 0;
-	shieldonoff = 1;
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	Static_Var_3 = 0;
+	Static_Var_4 = 0;
+	Static_Var_5 = 0;
+	Static_Var_6 = 0;
+	Static_Var_7 = 0;
+	Static_Var_8 = 0;
+	Static_Var_9 = 1;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
@@ -247,17 +227,17 @@ Create()
 
 StartBuilding(Func_Var_1)
 {
-	Turret_1 = Func_Var_1;
-	ReqState_3 = 1;
-	sleep rand(25,250);
+	Static_Var_1 = Func_Var_1;
+	Static_Var_3 = 1;
+	sleep Rand( 25, 250 );
 	start-script RequestState();
 }
 
 StopBuilding()
 {
-	ReqState_3 = 0;
+	Static_Var_3 = 0;
 	sleep 5000;
-	if( !ReqState_3 )
+	if( !Static_Var_3 )
 	{
 		start-script RequestState();
 	}
@@ -265,22 +245,22 @@ StopBuilding()
 
 StartMoving()
 {
-	Moving_2 = 1;
+	Static_Var_2 = 1;
 }
 
 StopMoving()
 {
-	Moving_2 = 0;
+	Static_Var_2 = 0;
 }
 
 AimPrimary(heading, pitch)
 {
-	return (shieldonoff);
+	return (Static_Var_9);
 }
 
 FirePrimary()
 {
-	explode dome type NOHEATCLOUD | FALL;
+	explode dome type 128 | FALL;
 	sleep 100;
 }
 
@@ -296,32 +276,32 @@ AimFromPrimary(piecenum)
 
 QueryNanoPiece(piecenum)
 {
-	if( Gun_4 == 0 )
+	if( Static_Var_5 == 0 )
 	{
 		piecenum = beam1a;
 	}
-	if( Gun_4 == 1 )
+	if( Static_Var_5 == 1 )
 	{
 		piecenum = beam1b;
 	}
-	if( Gun_4 == 2 )
+	if( Static_Var_5 == 2 )
 	{
 		piecenum = beam2a;
 	}
-	if( Gun_4 == 3 )
+	if( Static_Var_5 == 3 )
 	{
 		piecenum = beam2b;
 	}
-	++Gun_4;
-	if( Gun_4 == 4 )
+	++Static_Var_5;
+	if( Static_Var_5 == 4 )
 	{
-		Gun_4 = 0;
+		Static_Var_5 = 0;
 	}
 }
 
 TargetHeading(Func_Var_1)
 {
-	Turret_1 = ( 0 - Func_Var_1 );
+	Static_Var_1 = 0 - Func_Var_1;
 }
 
 SweetSpot(piecenum)
@@ -374,5 +354,4 @@ Killed(severity, corpsetype)
 	explode rupleg1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode rupleg2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP1;
 	explode rupleg3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
-	return (0);
 }

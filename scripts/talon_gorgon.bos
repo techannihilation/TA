@@ -187,9 +187,8 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode lightning type BITMAPONLY | BITMAP5;
-	sleep 250;
-	explode lightning type BITMAPONLY | BITMAP5;
+	emit-sfx 1024 + 0 from lightning;
+	sleep 100;
 }
 
 AimFromPrimary(piecenum)

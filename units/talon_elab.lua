@@ -57,9 +57,10 @@ return {
 		buildoptions = {
 			[1] = "talon_eck",			
 			[2] = "talon_berserker",
-			[3] = "talon_opal",
-			[4] = "talon_hollander",
-			[5] = "talon_talos",
+			[3] = "talon_crab",
+			[4] = "talon_opal",
+			[5] = "talon_hollander",
+			[6] = "talon_talos",
 		},
 		customparams = {
 			buildpic = "talon_elab.dds",

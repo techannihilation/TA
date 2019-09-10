@@ -23,3 +23,4 @@ talonlogo64bright00
 talonlogo64dark00
 blanklogogouraud00
 talonlogogouraud00
+talonveh00
