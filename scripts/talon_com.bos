@@ -400,12 +400,12 @@ AimSecondary(heading, pitch)
 
 AimFromSecondary(piecenum)
 {
-	piecenum = lleg;
+	piecenum = teleport;
 }
 
 QuerySecondary(piecenum)
 {
-	piecenum = lleg;
+	piecenum = teleport;
 }
 
 AimFromTertiary(piecenum)
