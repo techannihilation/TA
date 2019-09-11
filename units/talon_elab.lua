@@ -15,6 +15,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "LEVEL2 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
+		collisionvolumeoffsets = "0 -45 5",
+		collisionvolumescales = "148 90 140",
+		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		description = "Produces Heavy T3 Units",
 		energystorage = 1400,
@@ -50,8 +53,8 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_elab",
-		usebuildinggrounddecal = true,
-		usepiececollisionvolumes = 1,
+
+		
 		workertime = 600,
 		yardmap = "oooooooooooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco",
 		buildoptions = {

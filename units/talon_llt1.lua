@@ -42,7 +42,7 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "talon_llt",
-		script = "talon_llt1",
+		script = "talon_llt.cob",
 		radaremitheight = 65,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -51,7 +51,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "talon_llt",
+		unitname = "talon_llt1",
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {

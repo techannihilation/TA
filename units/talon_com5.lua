@@ -88,7 +88,7 @@ return {
 			[8] = "talon_clone_lab",
 			[9] = "talon_vp",
 			[10] = "talon_ap",
-			[11] = "talon_drag",
+			[11] = "talon_jump",
 			[12] = "talon_drag",
 			[13] = "talon_llt1",
 			[14] = "talon_vhlt",
