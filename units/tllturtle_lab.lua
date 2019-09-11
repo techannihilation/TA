@@ -1,7 +1,7 @@
 return {
 	tllturtle_lab = {
 		buildangle = 2096,
-		buildcostenergy = 41474,
+		buildcostenergy = 56474,
 		buildcostmetal = 4407,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "tllturtle_lab_aoplane.dds",
 		buildpic = "tllturtle_lab.dds",
-		buildtime = 45000,
+		buildtime = 36000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -33,7 +33,6 @@ return {
 		maxdamage = 4250,
 		maxslope = 10,
 		maxwaterdepth = 200,
-		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Turtle Lab",
 		noautofire = false,
@@ -45,7 +44,7 @@ return {
 		sightdistance = 223,
 		standingmoveorder = 2,
 		unitname = "tllturtle_lab",
-		workertime = 400,
+		workertime = 420,
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
 			[1] = "tllmusk",

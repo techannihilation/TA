@@ -1,10 +1,10 @@
 return {
 	tllasy = {
-		buildcostenergy = 37641,
-		buildcostmetal = 4482,
+		buildcostenergy = 49641,
+		buildcostmetal = 5182,
 		builder = true,
 		buildpic = "tllasy.dds",
-		buildtime = 13590,
+		buildtime = 36000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -23,8 +23,6 @@ return {
 		losemitheight = 50,
 		mass = 4482,
 		maxdamage = 4500,
-		metalmake = 1,
-		metalstorage = 200,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
@@ -40,7 +38,7 @@ return {
 		standingmoveorder = 2,
 		unitname = "tllasy",
 		waterline = 22,
-		workertime = 620,
+		workertime = 550,
 		yardmap = "wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw wCCCCCCCw",
 		buildoptions = {
 			[1] = "tllacs",

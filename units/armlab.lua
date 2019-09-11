@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "armlab_aoplane.dds",
 		buildpic = "armlab.dds",
-		buildtime = 5260,
+		buildtime = 5250,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -55,7 +55,7 @@ return {
 		turnrate = 0,
 		unitname = "armlab",
 		usebuildinggrounddecal = true,
-		workertime = 250,
+		workertime = 225,
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
 			[1] = "armck",

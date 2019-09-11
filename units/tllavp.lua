@@ -1,7 +1,7 @@
 return {
 	tllavp = {
 		buildangle = 1024,
-		buildcostenergy = 44063,
+		buildcostenergy = 52063,
 		buildcostmetal = 4635,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "tllavp_aoplane.dds",
 		buildpic = "tllavp.dds",
-		buildtime = 36440,
+		buildtime = 36000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

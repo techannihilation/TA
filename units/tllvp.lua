@@ -1,7 +1,7 @@
 return {
 	tllvp = {
 		buildangle = 1024,
-		buildcostenergy = 1349,
+		buildcostenergy = 1249,
 		buildcostmetal = 848,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "tllvp_aoplane.dds",
 		buildpic = "tllvp.dds",
-		buildtime = 5850,
+		buildtime = 5750,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -47,7 +47,7 @@ return {
 		standingmoveorder = 2,
 		unitname = "tllvp",
 		usebuildinggrounddecal = true,
-		workertime = 220,
+		workertime = 250,
 		yardmap = "ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo",
 		buildoptions = {
 			[1] = "tllcv",

@@ -2,11 +2,11 @@ return {
 	armasy = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 37659,
+		buildcostenergy = 57659,
 		buildcostmetal = 4917,
 		builder = true,
 		buildpic = "armasy.dds",
-		buildtime = 35972,
+		buildtime = 36000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -50,7 +50,7 @@ return {
 		turnrate = 0,
 		unitname = "armasy",
 		waterline = 6,
-		workertime = 600,
+		workertime = 500,
 		yardmap = "wCCCCCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCCCCCw",
 		buildoptions = {
 			[1] = "armacsub",
