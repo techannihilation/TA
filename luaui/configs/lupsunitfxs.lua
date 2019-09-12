@@ -145,9 +145,10 @@ cafus = {
   },
   corshieldgen = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
-    --{class='SimpleParticles2', options=MergeTable({piece="sphere", delay=20, lifeSpread=30},shield)},
-    --{class='SimpleParticles2', options=MergeTable({piece="sphere", delay=40, lifeSpread=30},shield)},
-    --{class='SimpleParticles2', options=MergeTable({piece="sphere", delay=60, lifeSpread=30},shield)},
+    {class='Bursts',options=shieldBursts250},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=250, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+   armshieldgen = {
     {class='Bursts',options=shieldBursts250},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=250, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
@@ -160,7 +161,6 @@ cafus = {
     --Fusion
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, size=65, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, size=65, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    --{class='ShieldJitter',options={layer=-16, life=math.huge, pos={0,100.9,0},strength = 0.01, size=32, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
     --Shield
     {class='Bursts',options=corsfusBursts},
@@ -173,10 +173,6 @@ cafus = {
  armsmc = {
     {class='Bursts',options=armsmcBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-  },
- armshieldgen = {
-    {class='Bursts',options=shieldBursts250},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=250, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  tllmako = {
     {class='Bursts',options=shieldBursts250},
