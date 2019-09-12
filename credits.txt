@@ -3,10 +3,14 @@ Tech Annihilation
 Arm Abaddon model was created by zweistein, please ask permission before using this model.
 
 Core Hardened Metal Maker created by [void]finkky who gave full right to [BoS]nixtux of ownership of model, please ask permission before using this model.
+
 Tllvhlt tllmortor tllgen tllbuilderlvl3 and tllmas (t3 mex) are created by [BoS]nixtux, please ask permission before using this model.
+
 tllasgard, tllesy, Tll Musk, Snakeneck, Matamata, loggerhead, Leatherback, Hickatee, Softshell, Om, tlldest and tllmds where crafted by [BoS]nixtux please ask permission before using theses model.
+
 ##### --- --- #####
-TALON faction models provides from community.
+TALON faction models created by TheRegisteredOne. Please Ask him permission to use all units. Link to Talon download : https://www.moddb.com/mods/talon-race
+ 
 All Bos/Cob have been created by skymyj. Please Ask permission to skymyj@hotmail.com if you want to use them.
 Thorgasm created the TALON Logo (.TGA). Ask him for permission if you want use it.
 ##### --- --- #####
@@ -62,7 +66,6 @@ tll.bmp
 
 All Unit pictures and images used for icon backgrounds copyrighted by [BoS]nixtux ask permission before using those images.
 ----------------------------------------------------------------------------------
-
 Credits : Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
 boogie, Wotan and the TheRegisteredOne for letting us use these models. Please follow this link : taesc.tauniverse.com to see rights about these units.
 
