@@ -28,7 +28,7 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 50,
-		maxdamage = 220,
+		maxdamage = 205,
 		maxslope = 17,
 		maxvelocity = 1.5,
 		maxwaterdepth = 12,
@@ -146,7 +146,7 @@ return {
 				weapontype = "Rifle",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 100,
+					commanders = 200,
 					default = 450,
 					sniper_resistant = 225,
 					subs = 5,

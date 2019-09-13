@@ -390,6 +390,8 @@ return {
 	"corsktl",
 	"tllcrawlb",
 	"coretnt",
+	"talon_herison",
+	"talon_sphere",
 	},
 	nanos = {
 	"armnanotc",

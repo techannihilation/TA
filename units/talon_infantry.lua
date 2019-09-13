@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 25,
 		builder = false,
 		buildpic = "talon_infantry.dds",
-		buildtime = 1420,
+		buildtime = 800,
 		canattack = true,
 		canguard = true,
 		canmove = true,
