@@ -1,56 +1,30 @@
-# Project Title
+# Tech Annihilation
 
-One Paragraph of project description goes here
+Use Spring Engine (https://springrts.com/). 
+This Mode looks like to Balanced Annihilation with more units and a morph system.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Nixtux and Finky start to work on the mode in 2010 on github.
+The game use a rapid tool with springlobby. All commits update the game in real time.
 
-### Prerequisites
+### Prerequisites & Installing
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+To install the game, 2 options : 
+1 - Download the spring Engine (https://springrts.com/wiki/Download). And Donload this repository and paste on spring/games/TA.SDD folder. You could play alone to test the mode.
+2 - Download a lobby, for example : https://springlobby.info/landing/index.php. then you will find a battleroom with Tech-annihilation mention. You can enter in the battleroom and maps and last version will be automatically download.
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+In work.
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
+In work
 
 ### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
+In work.
 
 ## Deployment
 
@@ -68,21 +42,28 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Actually, the Tech annihilation mode, have no version. All commits done are automatically upload on Rapid (http://tard.repo.springrts.com/builds/).
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+Nixtux, Finky, Zweistein, Skymyj, Silver.
+See the credits.txt in main folder to see autorisations.
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+Many models come from other total Annihilation Community. We ask permission to use all models, script and effects. They provide from : 
+- TAESC (http://taesc.tauniverse.com/)
+- Unit universe Website (http://units.tauniverse.com/)
+- Talon Race on moddb (https://www.moddb.com/mods/talon-race)
+- Maximum Annihilation (https://springrts.com/wiki/Maximum_Annihilation)
+- TA ZERO (http://zero.tauniverse.com/)
+
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the credit.txt (https://github.com/techannihilation/TA/blob/master/credits.txt)
+
+Careful, do not use content, cause many of all contents provides from other games/mode. 
+Post an Issue if you want to ask us to use a model. We could answer if you can use or not a file we created. In case, of not our work, we could directly send the good person to contact in order to use file.
 
 ## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+In work.
 
