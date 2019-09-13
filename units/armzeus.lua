@@ -29,7 +29,7 @@ return {
 		losemitheight = 46,
 		maneuverleashlength = 640,
 		mass = 500,
-		maxdamage = 3000,
+		maxdamage = 3005,
 		maxslope = 15,
 		maxvelocity = 1.5,
 		maxwaterdepth = 23,
@@ -90,6 +90,10 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:zeusmuzzle",
+				[2] = "custom:zeusgroundflash",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

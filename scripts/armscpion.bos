@@ -4,9 +4,9 @@
 #include "exptype.h"
 
 piece  base, ground, turret1, canon1, barrel1, flare1, turret2, flare2,
-       torpille;
+       torpille, tube1, tube2;
 
-static-var  Static_Var_1;
+static-var  Static_Var_1, torpedo;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -65,11 +65,7 @@ RockUnit(anglex, anglez)
 
 Create()
 {
-	dont-cache turret1;
-	hide flare1;
-	hide flare2;
-	spin flare1 around z-axis speed <50.010989>;
-	spin flare2 around z-axis speed <50.010989>;
+	torpedo = 0;
 	start-script SmokeUnit();
 }
 
@@ -103,8 +99,8 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn turret2 to y-axis heading speed <50.000000>;
-	turn turret2 to x-axis <0.000000> - pitch speed <25.000000>;
+	turn turret2 to y-axis heading speed <150.000000>;
+	turn turret2 to x-axis <0.000000> - pitch speed <50.000000>;
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn turret2 around x-axis;
 	start-script RestoreAfterDelay2();
@@ -136,6 +132,11 @@ FireSecondary()
 
 FireTertiary()
 {
+	++torpedo;
+	if (torpedo == 2)
+	{
+		torpedo = 0;
+	}
 }
 
 QueryPrimary(piecenum)
@@ -160,7 +161,14 @@ AimFromSecondary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	piecenum = torpille;
+	if (torpedo == 0)
+	{
+		piecenum = tube1;
+	}
+	if (torpedo == 1)
+	{
+		piecenum = tube2;
+	}
 }
 
 AimFromTertiary(piecenum)
