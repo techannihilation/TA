@@ -44,8 +44,8 @@ Create()
 	hide trueglow;
 	hide flareglow;
 	start-script SmokeUnit();
-	spin crystal around y-axis speed <100.000000>;
-	show crystal;
+	//spin crystal around y-axis speed <100.000000>;
+	//show crystal;
 }
 
 SweetSpot(piecenum)

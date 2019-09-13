@@ -46,7 +46,7 @@ MotionControl(Func_Var_1, Func_Var_2)
 	while( TRUE )
 	{
 		sleep 100;
-		if( moving OR bAiming )
+		if( moving )
 		{
 			turn rleg1 to y-axis <0.> speed <40.>;
 			turn rleg1 to z-axis <0.> speed <40.>;

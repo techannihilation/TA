@@ -64,7 +64,7 @@ return {
 			[2] = "talon_mex",
 			[3] = "talon_ahp",
 			[4] = "talon_nanotc",
-			[5] = "talon_mine2",
+			[5] = "talon_mine1",
 			[6] = "talon_fort",
 			[7] = "talon_arad",
 			[8] = "talon_conspiracy",

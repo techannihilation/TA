@@ -52,10 +52,10 @@ return {
 		yardmap = "oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo",
 		buildoptions = {
 			[1] = "talon_ech",
-			[2] = "talon_abaddon",
-			[3] = "talon_repentance",
-			[4] = "talon_mrtn",
-			[5] = "talon_visitant",
+			[2] = "talon_mrtn",
+			[3] = "talon_visitant",
+			[4] = "talon_abaddon",
+			[5] = "talon_repentance",
 			[6] = "talon_thanos",
 		},
 		customparams = {
