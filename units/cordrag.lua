@@ -25,7 +25,7 @@ return {
 		isfeature = true,
 		levelground = false,
 		losemitheight = 22,
-		mass = 16.66667,
+		mass = 11,
 		maxdamage = 100,
 		maxslope = 64,
 		maxvelocity = 0,
