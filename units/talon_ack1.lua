@@ -45,7 +45,6 @@ return {
 		radardistance = 50,
 		radaremitheight = 25,
 		seismicsignature = 0,
-		script = "talon_ack.cob",
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 325,
 		shownanospray = false,

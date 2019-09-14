@@ -50,6 +50,7 @@ return {
 	"talon_shade",
 	"talon_eclipse",
 	"talon_handgod",
+	"talon_cyclone",
 	},
 	flak_resistant = {
 	"apache",
@@ -88,6 +89,7 @@ return {
 	"talon_ca",
 	"talon_aca",
 	"talon_medic",
+	"talon_csa", 
 	"armbrawl",
 	"armjade",
 	"armkam",
@@ -107,6 +109,8 @@ return {
 	"bladew",
 	"talon_vulture",
 	"talon_pampa",
+	"talon_cyclone",
+	"talon_corsair",
 	-- scout planes
 	"armawac",
 	"armpeep",

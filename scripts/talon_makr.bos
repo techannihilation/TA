@@ -104,6 +104,7 @@ Create()
 {
 	hide glow;
 	start-script SmokeUnit();
+	start-script ImAMetalMaker();
 }
 
 SweetSpot(piecenum)
