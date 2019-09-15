@@ -58,7 +58,7 @@ local convertCapacities = {
 		--TALON
 		[UnitDefNames.talon_makr.id]  = { c = 75, e = (AC0) }, -- Normal
 		[UnitDefNames.talon_fmkr.id]  = { c = 150, e = (AC1) }, -- Floating
-		--[UnitDefNames.talon_afmkr.id]  = { c = 225, e = (AC2) }, -- T1,5
+		[UnitDefNames.talon_fmkr1.id]  = { c = 225, e = (AC2) }, -- T1,5
 		[UnitDefNames.talon_amaker.id]  = { c = 1200, e = (AC4) }, -- Moho
 		[UnitDefNames.talon_famkr.id]  = { c = 1375, e = (AC5) }, -- Underwater
 		[UnitDefNames.talon_metalmakerlvl2.id]  = { c = 12000, e = (AC6) }, -- T3

@@ -85,7 +85,7 @@ return {
 			[4] = "talon_mstor",
 			[5] = "talon_estor",
 			[6] = "talon_mex1",
-			[7] = "talon_makr",
+			[7] = "talon_makr1",
 			[8] = "talon_clone_lab",
 			[9] ="talon_vp",
 			[10] ="talon_ap",
