@@ -37,7 +37,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	spin blades around z-axis speed Static_Var_1;
+	spin blades around z-axis speed <1.000000> - Static_Var_1;
 	turn post to y-axis Static_Var_2 speed <30.000000>;
 
 }
@@ -109,7 +109,7 @@ SetSpeed(Func_Var_1)
 	Static_Var_1 = 0 - Func_Var_1;
 	if( !get BUILD_PERCENT_LEFT )
 	{
-		spin blades around z-axis speed Static_Var_1;
+		spin blades around z-axis speed <1.000000> - Static_Var_1;
 		set ACTIVATION to 100;
 	}
 

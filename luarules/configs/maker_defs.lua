@@ -63,7 +63,7 @@ local convertCapacities = {
 		[UnitDefNames.talon_famkr.id]  = { c = 1375, e = (AC5) }, -- Underwater
 		[UnitDefNames.talon_metalmakerlvl2.id]  = { c = 12000, e = (AC6) }, -- T3
 		[UnitDefNames.talon_metalmakerlvl3.id]  = { c = 48000, e = (AC7) }, -- T4		
-		[UnitDefNames.talon_gen.id]  = { c = UnitDefNames.talon_gen.energyMake, e = (ACZ) },
+		--[UnitDefNames.talon_gen.id]  = { c = UnitDefNames.talon_gen.energyMake, e = (ACZ) },
     }
 
 return convertCapacities
