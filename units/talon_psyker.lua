@@ -74,9 +74,10 @@ talon_psyker = {
 			[12] = "talon_ap",
 			[13] = "talon_drag",
 			[14] = "talon_rad",
-			[15] = "talon_llt",
-			[16] = "talon_rl",
-			[17] = "talon_sy",
+			[15] = "talon_conspiracy",
+			[16] = "talon_llt",
+			[17] = "talon_rl",
+			[18] = "talon_sy",
 		},
 		customparams = {
 			buildpic = "talon_psyker.dds",
