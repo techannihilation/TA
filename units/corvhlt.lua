@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "corvhlt_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Very Heavy Laser Tower",
+		description = "Heavy Laser Tower",
 		energystorage = 400,
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",

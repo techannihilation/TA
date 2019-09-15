@@ -60,7 +60,7 @@ return {
 		buildoptions = {
 			[1] = "talon_ckfus",
 			[2] = "talon_mohogeo",
-			[3] = "talon_amakr",
+			[3] = "talon_amaker",
 			[4] = "talon_moho",
 			[5] = "talon_vp",
 			[6] = "talon_avp",

@@ -109,7 +109,6 @@ return {
 	"bladew",
 	"talon_vulture",
 	"talon_pampa",
-	"talon_cyclone",
 	"talon_corsair",
 	-- scout planes
 	"armawac",

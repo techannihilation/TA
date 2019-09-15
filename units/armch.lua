@@ -1,4 +1,3 @@
-corch
 return {
 	armch = {
 		acceleration = 0.288,
