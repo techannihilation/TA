@@ -5,7 +5,7 @@ return {
 		brakerate = 0.353,
 		buildcostenergy = 3584,
 		buildcostmetal = 705,
-		builddistance = 100,
+		builddistance = 120,
 		builder = true,
 		buildpic = "cbuilderlvl2.dds",
 		buildtime = 8000,

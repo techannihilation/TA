@@ -4,7 +4,7 @@ return {
 		brakerate = 0.4,
 		buildcostenergy = 15033,
 		buildcostmetal = 355,
-		builddistance = 100,
+		builddistance = 130,
 		builder = true,
 		buildpic = "talon_medic.dds",
 		buildtime = 10500,

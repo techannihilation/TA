@@ -6,7 +6,7 @@ return {
 		brakerate = 0.3596,
 		buildcostenergy = 4795,
 		buildcostmetal = 720,
-		builddistance = 100,
+		builddistance = 130,
 		builder = true,
 		buildpic = "abuilderlvl2.dds",
 		buildtime = 8000,

@@ -312,7 +312,12 @@ local morphDefs = {
 		into = 'tllobliterator1',
 		time = 120,
 		xp = 1.07,
-	},	
+	},
+	talon_blt = {
+		into = 'talon_blt1',
+		time = 120,
+		xp = 1.07,
+	},
 	corflak = {
 		into = 'corpre',
 		time = 120,

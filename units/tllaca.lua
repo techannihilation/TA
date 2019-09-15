@@ -6,7 +6,7 @@ return {
 		brakerate = 0.35,
 		buildcostenergy = 39001,
 		buildcostmetal = 1993,
-		builddistance = 80,
+		builddistance = 120,
 		builder = true,
 		buildpic = "tllaca.dds",
 		buildtime = 32000,

@@ -6,7 +6,7 @@ return {
 		brakerate = 0.4275,
 		buildcostenergy = 50725,
 		buildcostmetal = 1694,
-		builddistance = 80,
+		builddistance = 120,
 		builder = true,
 		buildpic = "coraca.dds",
 		buildtime = 32000,

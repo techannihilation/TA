@@ -5,7 +5,7 @@ return {
 		brakerate = 0.4275,
 		buildcostenergy = 56456,
 		buildcostmetal = 1610,
-		builddistance = 120,
+		builddistance = 130,
 		builder = true,
 		buildpic = "talon_aca.dds",
 		buildtime = 33000,

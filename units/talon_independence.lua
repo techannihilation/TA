@@ -1,6 +1,6 @@
 return {
 	talon_independence = {
-		acceleration = 0.01,	
+		acceleration = 0.005,	
 		airhoverfactor = 0,
 		airstrafe = false,
 		brakerate = 0.04,
@@ -34,7 +34,7 @@ return {
 		mass = 1000000,
 		maxdamage = 3000000,
 		maxslope = 10,
-		maxvelocity = 0.4,
+		maxvelocity = 0.6,
 		maxwaterdepth = 0,
 		metaluse = 0,
 		name = "Independance",
@@ -47,7 +47,7 @@ return {
 		sightdistance = 1500,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 0.627,
-		turnrate = 80,
+		turnrate = 50,
 		unitname = "talon_independence",
 		customparams = {
 			buildpic = "talon_independence.dds",
@@ -190,7 +190,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 1000000,
-				explosiongenerator = "custom:explosion_talon_independence",
+				explosiongenerator = "custom:FLASHNUKE480",
 				impulseboost = 0,
 				impulsefactor = 0,
 				largebeamlaser = true,

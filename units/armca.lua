@@ -6,7 +6,7 @@ return {
 		brakerate = 0.4275,
 		buildcostenergy = 4608,
 		buildcostmetal = 112,
-		builddistance = 60,
+		builddistance = 135,
 		builder = true,
 		buildpic = "armca.dds",
 		buildtime = 9000,
