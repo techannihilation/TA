@@ -2,8 +2,8 @@ return {
 	corlightfus = {
 		activatewhenbuilt = true,
 		buildangle = 65535,
-		buildcostenergy = 16433,
-		buildcostmetal = 1919,
+		buildcostenergy = 19354,
+		buildcostmetal = 1897,
 		builder = false,
 		buildpic = "corlightfus.dds",
 		buildtime = 22000,

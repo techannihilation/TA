@@ -20,7 +20,7 @@ return {
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "600 100 600",
 		collisionvolumetype = "CylY",
-		cruisealt = 200,
+		cruisealt = 150,
 		description = "Invasion Ship",
 		dontland = 1,
 		energystorage = 1000000,
@@ -93,7 +93,7 @@ return {
 		weapondefs = {
 			mountedantimatteraccelerator = {
 				areaofeffect = 60,
-				beamtime = 1.5,
+				beamtime = 1.65,
 				burnblow = true,
 				collidefriendly = false,
 				corethickness = 0.4,
@@ -116,7 +116,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.3,
-				soundstart = "arrfire",
+				soundstart = "talon_accelerator",
 				soundtrigger = 1,
 				sweepfire = false,
 				targetmoveerror = 0.4,

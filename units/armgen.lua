@@ -2,8 +2,8 @@ return {
 	armgen = {
 		activatewhenbuilt = true,
 		buildangle = 0,
-		buildcostenergy = 5297,
-		buildcostmetal = 391,
+		buildcostenergy = 4760,
+		buildcostmetal = 379,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,

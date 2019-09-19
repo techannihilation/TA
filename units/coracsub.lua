@@ -62,7 +62,7 @@ return {
 			[1] = "coruwadves",
 			[2] = "coruwadvms",
 			[3] = "coruwfus",
-			[4] = "crnns",
+			--[4] = "crnns",
 			[5] = "coruwmme",
 			[6] = "coruwmmm",
 			[7] = "corsy",

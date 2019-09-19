@@ -2,8 +2,8 @@ return {
 	armlightfus = {
 		activatewhenbuilt = true,
 		buildangle = 65535,
-		buildcostenergy = 16271,
-		buildcostmetal = 1532,
+		buildcostenergy = 16755,
+		buildcostmetal = 1455,
 		builder = false,
 		buildpic = "armlightfus.dds",
 		buildtime = 20000,

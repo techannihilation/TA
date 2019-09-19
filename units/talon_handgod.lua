@@ -114,7 +114,7 @@ return {
 				noselfdamage = true,
 				range = 1250,
 				reloadtime = 25,
-				soundhitdry = "burn02",
+				soundhitdry = "xplomed5",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",

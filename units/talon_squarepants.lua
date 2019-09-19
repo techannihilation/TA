@@ -179,6 +179,7 @@ return {
 				soundtrigger = true,
 				texture1 = "strike",
 				thickness = 10,
+				tolerance = 1500,
 				turret = true,
 				weapontype = "LightningCannon",
 				weaponvelocity = 400,

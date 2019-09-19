@@ -61,7 +61,7 @@ return {
 			[1] = "armuwadves",
 			[2] = "armuwadvms",
 			[3] = "armuwfus",
-			[4] = "armuwfus1",
+			--[4] = "armuwfus1",
 			[5] = "armuwmme",
 			[6] = "armuwmmm",
 			[7] = "armsy",
