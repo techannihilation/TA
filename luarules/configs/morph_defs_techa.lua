@@ -446,6 +446,11 @@ local morphDefs = {
 		into = 'tllgate1',
 		time = 120,
 		tech = 2,
+	},	
+	talon_gate2 = {
+		into = 'talon_gate',
+		time = 60,
+		tech = 1,
 	},
 	talon_gate = {
 		into = 'talon_gate1',
