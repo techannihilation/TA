@@ -24,8 +24,8 @@ local convertCapacities = {
 		--ARM
 		[UnitDefNames.armmakr.id]  = { c = 50, e = (AC0) }, -- Normal
 		[UnitDefNames.armfmkr.id]  = { c = 100, e = (AC1) }, -- Floating
-		[UnitDefNames.ametalmakerlvl1.id]  = { c = 160, e = (AC2) }, -- T1,5
-		[UnitDefNames.armamaker.id]  = { c = 160, e = (AC2) }, -- T1,5
+		[UnitDefNames.ametalmakerlvl1.id]  = { c = 150, e = (AC2) }, -- T1,5
+		[UnitDefNames.armamaker.id]  = { c = 150, e = (AC2) }, -- T1,5
 		[UnitDefNames.armckmakr.id]  = { c = 400, e = (A3) }, -- Cloaked/Hardened
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
@@ -45,14 +45,14 @@ local convertCapacities = {
 		[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) }, 
 
 		--TLL
-		[UnitDefNames.tllmm.id]  = { c = 100, e = (T0) }, -- Normal
-		[UnitDefNames.tllwmconv.id]  = { c = 100, e = (T1) }, -- Floating
-		[UnitDefNames.tllmetalmakerlvl1.id]  = { c = 200, e = (T2) }, -- T1,5
+		[UnitDefNames.tllmm.id]  = { c = 45, e = (T0) }, -- Normal
+		[UnitDefNames.tllwmconv.id]  = { c = 90, e = (T1) }, -- Floating
+		[UnitDefNames.tllmetalmakerlvl1.id]  = { c = 135, e = (T2) }, -- T1,5
 		--[UnitDefNames.____.id]  = { c = 600, e = (T3) }, -- Cloaked/Hardened
-		[UnitDefNames.tllammaker.id]  = { c = 1000, e = (T4) }, -- Moho
-		[UnitDefNames.tllwmmohoconv.id]  = { c = 1200, e = (T5) }, -- Underwater
-		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 10000, e = (T6) }, -- T4	
-		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 40000, e = (T7) }, -- T4
+		[UnitDefNames.tllammaker.id]  = { c = 600, e = (T4) }, -- Moho
+		[UnitDefNames.tllwmmohoconv.id]  = { c = 900, e = (T5) }, -- Underwater
+		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 6000, e = (T6) }, -- T4	
+		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 36000, e = (T7) }, -- T4
 		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) },
 
 		--TALON
