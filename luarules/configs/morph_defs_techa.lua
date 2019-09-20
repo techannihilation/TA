@@ -333,6 +333,11 @@ local morphDefs = {
 		time = 120,
 		xp = 1.07,
 	},
+	talon_popcorn = {
+		into = 'talon_popcorn1',
+		time = 120,
+		xp = 1.07,
+	},
 	armsilo = {
 		into = 'armsilo1',
 		tech = 2,
