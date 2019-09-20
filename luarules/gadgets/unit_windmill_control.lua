@@ -27,6 +27,7 @@ local windDefs = {
   [ UnitDefNames['armawin'].id ] = true,
   [ UnitDefNames['corawin'].id ] = true,
   [ UnitDefNames['tllawindtrap'].id ] = true,
+  [ UnitDefNames['talon_win1'].id ] = true,
 }
 
 local tllDefs = UnitDefNames['tllawindtrap'].id
