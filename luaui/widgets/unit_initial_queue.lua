@@ -111,7 +111,7 @@ local TALON_RL = UnitDefNames["talon_rl"].id
  
 local ARMTL = UnitDefNames["armtl"].id
 local CORTL = UnitDefNames["cortl"].id
-local TllToRP = UnitDefNames["tlltorp"].id
+local TllTORP = UnitDefNames["tlltorp"].id
 local TALON_TL = UnitDefNames["talon_tl"].id
  
 local ARMSONAR = UnitDefNames["armsonar"].id
@@ -173,20 +173,17 @@ local TALON_DRAG = UnitDefNames["talon_drag"].id
 local ARMDL = UnitDefNames["armdl"].id
 local CORDL = UnitDefNames["cordl"].id
 local TLLSHORETORP = UnitDefNames["tllshoretorp"].id
---local TALON_TL = UnitDefNames["talon_tl"].id --???? FIXME SKYMYJ
- 
- 
+local TALON_TL = UnitDefNames["talon_tl"].id
+  
 local ARMAP = UnitDefNames["armap"].id
 local CORAP = UnitDefNames["corap"].id
 local TLLAP = UnitDefNames["tllap"].id
 local TALON_AP = UnitDefNames["talon_ap"].id
  
- 
 local ARMFRAD = UnitDefNames["armfrad"].id
 local CORFRAD = UnitDefNames["corfrad"].id
---local TLLDTNS = UnitDefNames["tlldtns"].id --???? FIXME SKYMYJ
-local TALON_FRAD = UnitDefNames["talon_frad"].id -- not in use, fix me SKYMYJ need to be added to TalonToArm, ToCore and etc
- 
+local TALON_FRAD = UnitDefNames["talon_frad"].id
+
 local ARMUWMS = UnitDefNames["armuwms"].id
 local CORUWMS = UnitDefNames["coruwms"].id
 local TLLUWMSTORAGE = UnitDefNames["tlluwmstorage"].id
@@ -204,7 +201,7 @@ local TALON_FMKR = UnitDefNames["talon_fmkr"].id
  
 local ARMFDRAG = UnitDefNames["armfdrag"].id
 local CORFDRAG = UnitDefNames["corfdrag"].id
---local TLLDTNS = UnitDefNames["tlldtns"].id --???? FIXME SKYMYJ
+local TLLDTNS = UnitDefNames["tlldtns"].id
 local TALON_FDRAG = UnitDefNames["talon_fdrag"].id
  
 local ARMGEOMINI = UnitDefNames["armgeo_mini"].id
@@ -272,7 +269,7 @@ TllToCore[TLLUWMSTORAGE] = CORUWMS
 TllToCore[TLLUWESTORAGE] = CORUWES
 TllToCore[TLLWMCONV] = CORFMKR
 TllToCore[TLLDTNS] = CORFDRAG
-TllToCore[TllToRP] = CORTL
+TllToCore[TllTORP] = CORTL
 TllToCore[TLLGEOMINI] = CORGEOMINI
 
 local TllToArm = {}
@@ -301,7 +298,7 @@ TllToArm[TLLUWMSTORAGE] = ARMUWMS
 TllToArm[TLLUWESTORAGE] = ARMUWES
 TllToArm[TLLWMCONV] = ARMFMKR
 TllToArm[TLLDTNS] = ARMFDRAG
-TllToArm[TllToRP] = ARMTL
+TllToArm[TllTORP] = ARMTL
 TllToArm[TLLGEOMINI] = ARMGEOMINI
 
 local TalonToTll = {}
@@ -312,7 +309,7 @@ local TalonToTll = {}
  TalonToTll[TALON_WIND] = TLLWIND
  TalonToTll[TALON_TIDE] = TLLTIDE
  TalonToTll[TALON_LLT] = TLLLLT
- TalonToTll[TALON_RADAR] = TLLRAD
+ TalonToTll[TALON_RADAR] = TLLRADAR
  TalonToTll[TALON_RL] = TLLLMT
  TalonToTll[TALON_SONAR] = TLLSONAR
  TalonToTll[TALON_FRL] = TLLFRT
@@ -324,13 +321,12 @@ local TalonToTll = {}
  TalonToTll[TALON_MAKR] = TLLMAKR
  --TalonToTll [TALON] = TLLEYES
  TalonToTll[TALON_DRAG] = TLLDTNS
- TalonToTll[TALON_TL] = TLLSHORETORP
  TalonToTll[TALON_AP] = TLLAP
  TalonToTll[TALON_UWMS] = TLLUWMSTORAGE
  TalonToTll[TALON_UWES] = TLLUWESTORAGE
  TalonToTll[TALON_FMKR] = TLLWMCONV
  TalonToTll[TALON_FDRAG] = TLLDTNS
- TalonToTll[TALON_TL] = TllToRP
+ TalonToTll[TALON_TL] = TllTORP
  TalonToTll[TALON_GEOMINI] = TLLGEOMINI
 
 local TalonToArm = {}
@@ -353,7 +349,6 @@ TalonToArm[TALON_ESTOR] = ARMESTOR
 TalonToArm[TALON_MAKR] = ARMMAKR
 --TalonToArm [TALON] = ARMEYES
 TalonToArm[TALON_DRAG] = ARMDRAG
-TalonToArm[TALON_TL] = ARMDL
 TalonToArm[TALON_AP] = ARMAP
 TalonToArm[TALON_UWMS] = ARMUWMS
 TalonToArm[TALON_UWES] = ARMUWES
@@ -382,7 +377,6 @@ TalonToCore[TALON_ESTOR] = CORESTOR
 TalonToCore[TALON_MAKR] = CORMAKR
 --TalonToArm [TALON] = COREYES
 TalonToCore[TALON_DRAG] = CORDRAG
-TalonToCore[TALON_TL] = CORDL
 TalonToCore[TALON_AP] = CORAP
 TalonToCore[TALON_UWMS] = CORUWMS
 TalonToCore[TALON_UWES] = CORUWES

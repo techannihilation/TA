@@ -80,7 +80,7 @@ unitList["TA"] = {
 
 --T4 Labs
 [UnitDefNames["armshltx1"].id] = 	{["en"]="T4 Gantry", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgant1"].id] = 	{["en"]="T4 Gantry", ["de"]="", ["fr"]="" },
+--[UnitDefNames["corgant1"].id] = 	{["en"]="T4 Gantry", ["de"]="", ["fr"]="" },
 [UnitDefNames["cshipyardlvl4"].id] = 	{["en"]="Core Hero Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["ashipyardlvl3"].id] = 	{["en"]="Arm Hero Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["armrech4"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
