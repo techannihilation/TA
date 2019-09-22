@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Assault Kbot",
+		description = "Assault Kbot (Sniper Resistant)",
 		energymake = 0,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,

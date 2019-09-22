@@ -352,7 +352,7 @@ return {
 	"corvaliant",
 	"tllzeppelin",
 	"tllbarbarus",
-"talon_skynet",
+	"talon_skynet",
 	"talon_independence",
 	},
 	flamethrowers = {
@@ -373,6 +373,7 @@ return {
 	"corcan",
 	"corcan1",
 	"tllbind",
+	"talon_crusader",
 	},
 	raider_resistant = {
 	

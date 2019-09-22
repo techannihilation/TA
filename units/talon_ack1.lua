@@ -60,7 +60,7 @@ return {
 		workertime = 240,
 		buildoptions = {
 			[1] = "talon_ckfus",
-			[2] = "talon_afus",
+			--[2] = "talon_afus",
 			[3] = "talon_mohogeo",
 			[4] = "talon_amaker",
 			[5] = "talon_moho",

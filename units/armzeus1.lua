@@ -15,7 +15,7 @@ return {
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "armzeus_dead",
 		defaultmissiontype = "Standby",
-		description = "Heavy Assault Kbot",
+		description = "Heavy Assault Kbot (Sniper Resistant)",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,

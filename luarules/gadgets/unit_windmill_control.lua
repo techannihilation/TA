@@ -31,6 +31,7 @@ local windDefs = {
 }
 
 local tllDefs = UnitDefNames['tllawindtrap'].id
+local talonDefs = UnitDefNames['talon_win1'].id
 local windmills = {}
 local groundMin, groundMax = 0,0
 local groundExtreme = 0
@@ -65,10 +66,16 @@ function gadget:GameFrame(n)
     for unitID, scriptIDs in pairs(windmills) do
       local mult = scriptIDs.mult
       local IsTll = scriptIDs.IsTll
+      local IsTalon = scriptIDs.IsTalon
       if not Spring.GetUnitIsStunned(unitID) then
         AddUnitResource(unitID, "e", strength * (mult - 1))
       end
       if IsTll ~= true then
+        local speed = strength * mult * COBSCALE * 0.010
+        CallCOBScript(unitID, scriptIDs.speed, 0, speed)
+        CallCOBScript(unitID, scriptIDs.dir,   0, heading)
+      end
+      if IsTalon ~= true then
         local speed = strength * mult * COBSCALE * 0.010
         CallCOBScript(unitID, scriptIDs.speed, 0, speed)
         CallCOBScript(unitID, scriptIDs.dir,   0, heading)
@@ -83,6 +90,7 @@ end
 local function SetupUnit(unitID,unitDefID)
   local scriptIDs = {}
   local IsTll
+  local IsTalon
   scriptIDs.speed = GetCOBScriptID(unitID, "LuaSetSpeed")
   scriptIDs.dir   = GetCOBScriptID(unitID, "LuaSetDirection")
   local uDef = uDefs[unitDefID]
@@ -95,8 +103,14 @@ local function SetupUnit(unitID,unitDefID)
   else
     IsTll = false
   end
+  if unitDefID == talonDefs then
+    IsTalon = true
+  else
+    IsTalon = false
+  end
   scriptIDs.mult = mult
   scriptIDs.IsTll = IsTll
+  scriptIDs.IsTalon = IsTalon
   windmills[unitID] = scriptIDs
 end
 
