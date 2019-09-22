@@ -79,7 +79,7 @@ return {
 		upright = true,
 		workertime = 300,
 		buildoptions = {
-			[1] = "talon_win",
+			[1] = "talon_win1",
 			[2] = "talon_gen",
 			[3] = "talon_geo",
 			[4] = "talon_mstor",
@@ -93,7 +93,7 @@ return {
 			[12] = "talon_rad",
 			[13] = "talon_llt",
 			[14] = "talon_rl",
-			[15] = "talon_tide",
+			[15] = "talon_tide1",
 			[16] = "talon_uwms",
 			[17] = "talon_uwes",
 			[18] = "talon_uwmex",

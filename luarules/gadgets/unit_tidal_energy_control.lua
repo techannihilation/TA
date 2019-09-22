@@ -27,6 +27,7 @@ local tideDefs = {
   [ UnitDefNames['armatidal'].id ] = true,
   [ UnitDefNames['coratidal'].id ] = true,
   [ UnitDefNames['tllatidal'].id ] = true,
+  [ UnitDefNames['talon_tide1'].id ] = true,
 }
 
 local tidals = {}

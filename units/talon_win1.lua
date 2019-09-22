@@ -60,7 +60,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 93,
-				object = "ARMAWIN_DEAD",
+				object = "TALON_WIN1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

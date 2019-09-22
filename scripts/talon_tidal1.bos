@@ -1,0 +1,149 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, wheel, wake1, wake2, wake3, lights, front, back;
+
+static-var  Active, tidal_Spd, statechg_DesiredState, statechg_StateChanging;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+wakes()
+{
+	while( Active )
+	{
+		emit-sfx 259 from wake1;
+		emit-sfx 259 from wake2;
+		emit-sfx 259 from wake3;
+		sleep 200;
+	}
+}
+
+TidalSpeed(Func_Var_1)
+{
+	tidal_Spd = Func_Var_1;
+}
+
+Go()
+{
+	Active = 1;
+	spin front around z-axis speed tidal_Spd * <3.500000>;
+	spin back around z-axis speed tidal_Spd * <-3.500000>;
+	start-script wakes();
+}
+
+Stop()
+{
+	Active = 0;
+	spin front around z-axis speed <0.000000>;
+	spin back around z-axis speed <0.000000>;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	Active = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode wheel type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode wheel type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode wheel type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode wheel type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

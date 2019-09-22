@@ -31,6 +31,8 @@ local tidalDefs = {
     [UnitDefNames['tllatidal'].id ] = true,
     [UnitDefNames['tllsolarns'].id ] = true,
     [UnitDefNames['tlltide'].id ] = true,
+    [UnitDefNames['talon_tide1'].id ] = true,
+
 }
 
 -------------------------------------------------------------------------------------

@@ -2,11 +2,11 @@ return {
 	tlltide = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 517,
+		buildcostenergy = 314,
 		buildcostmetal = 101,
 		builder = false,
 		buildpic = "tlltide.dds",
-		buildtime = 2290,
+		buildtime = 2100,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Produces Energy",
