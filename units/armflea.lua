@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 15,
 		builder = false,
 		buildpic = "armflea.dds",
-		buildtime = 789,
+		buildtime = 700,
 		canattack = true,
 		canguard = true,
 		canmove = true,
