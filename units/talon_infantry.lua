@@ -2,7 +2,7 @@ return {
 	talon_infantry = {
 		acceleration = 0.36,
 		brakerate = 0.6,
-		buildcostenergy = 485,
+		buildcostenergy = 515,
 		buildcostmetal = 25,
 		builder = false,
 		buildpic = "talon_infantry.dds",
@@ -41,7 +41,7 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
-		sightdistance = 425,
+		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,

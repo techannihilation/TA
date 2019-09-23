@@ -2,11 +2,11 @@ return {
 	talon_mercenary = {
 		acceleration = 0.36,
 		brakerate = 0.6,
-		buildcostenergy = 715,
+		buildcostenergy = 1150,
 		buildcostmetal = 45,
 		builder = false,
 		buildpic = "talon_mercenary.png",
-		buildtime = 1000,
+		buildtime = 1450,
 		canattack = true,
 		canguard = true,
 		canmove = true,
