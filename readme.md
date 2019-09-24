@@ -46,7 +46,7 @@ Actually, the Tech annihilation mode, have no version. All commits done are auto
 
 ## Authors
 
-Nixtux, Finky, Zweistein, Skymyj, Silver.
+Nixtux, Finky, Zweistein, Skymyj.
 See the credits.txt in main folder to see autorisations.
 
 Many models come from other total Annihilation Community. We ask permission to use all models, script and effects. They provide from : 
