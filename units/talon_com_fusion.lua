@@ -44,10 +44,10 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 37,
 		maneuverleashlength = 640,
-		mass = 5000,
-		maxdamage = 2500,
+		mass = 7500,
+		maxdamage = 3000,
 		maxslope = 20,
-		maxvelocity = 1.1,
+		maxvelocity = 1.2,
 		maxwaterdepth = 35,
 		metalmake = 8,
 		metalstorage = 3000,
@@ -201,7 +201,7 @@ return {
 				[1] = "kcarmsel",
 			},
 		},
-		weapondefs = {
+weapondefs = {
 			tal_disintegrator = {
 				areaofeffect = 36,
 				avoidfeature = false,
@@ -232,7 +232,7 @@ return {
 				weapontype = "DGun",
 				weaponvelocity = 300,
 				damage = {
-					commanders = 450,
+					--commanders = 450,
 					default = 999999,
 				},
 			},
@@ -249,9 +249,9 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				laserflaresize = 10,
-				name = "LightLaser",
+				name = "Talon Gun",
 				noselfdamage = true,
-				range = 350,
+				range = 300,
 				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
 				rgbcolor2= "1.0 1.0 1.00";
@@ -263,13 +263,14 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.1,
 				thickness = 1,
-				tolerance = 500,
+				tolerance = 10000,
 				turret = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {
-					default = 75,
+					default = 60,
 					subs = 5,
+					unclassed_air = 120,
 				},
 			},
 			tal_sealaser = {
@@ -287,8 +288,8 @@ return {
 				laserflaresize = 10,
 				name = "LightLaser",
 				noselfdamage = true,
-				range = 300,
-				reloadtime = 0.3,
+				range = 250,
+				reloadtime = 0.5,
 				rgbcolor = "0.2 0.2 0.6",
 				rgbcolor2 = "0.2 0.2 0.2",
 				soundhitdry = "",
@@ -304,8 +305,8 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {
-					default = 36,
-					subs = 24,
+					default = 75,
+					subs = 37.5,
 				},
 			},
 			teleport = {

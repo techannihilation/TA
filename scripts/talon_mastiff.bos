@@ -208,8 +208,6 @@ Create()
 {
 	hide mpoint1;
 	hide mpoint2;
-	dont-shade mpoint1;
-	dont-shade mpoint2;
 	Static_Var_2 = 0;
 	Static_Var_1 = 3000;
 	Static_Var_3 = 0;

@@ -51,7 +51,7 @@ return {
 		transmaxunits = 1,
 		transportcapacity = 1,
 		transportmass = 5000,
-		transportsize = 5,
+		transportsize = 3,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 7.788,
 		turnrate = 480,

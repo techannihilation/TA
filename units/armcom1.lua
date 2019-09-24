@@ -246,7 +246,7 @@ return {
 					light_radius_mult = 1.55,
 				},
 				damage = {
-					commanders = 450,
+					--commanders = 450,
 					default = 999999,
 				},
 			},
@@ -288,13 +288,9 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					bombers = 112.5,
-					default = 75,
-					fighters = 112.5,
-					flak_resistant = 112.5,
+					default = 80,
 					subs = 5,
-					transporters = 112.5,
-					unclassed_air = 196.875,
+					unclassed_air = 160,
 				},
 			},
 			armcomsealaser = {
@@ -317,7 +313,7 @@ return {
 				laserflaresize = 7,
 				name = "J7NSLaser",
 				noselfdamage = true,
-				range = 260,
+				range = 250,
 				reloadtime = 1,
 				rgbcolor = "0.2 0.2 0.6",
 				rgbcolor2 = "0.2 0.2 0.2",
@@ -339,7 +335,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					default = 125,
+					default = 150,
 					subs = 75,
 				},
 			},
