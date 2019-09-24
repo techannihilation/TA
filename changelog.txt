@@ -1,4 +1,22 @@
 3.08.0 -> 3.XX.XX
+2019-09-24
+
+Balance:
+ - All Dgun inflict 100% damage vs other commanders
+ - Commander mass changed : std=>3000 Eco/Battle=>5000 Fusion/Assault=>7500 Star =>10000 Supreme 12500
+ - All Transport Air Mass transported changed : T1=>3000 T1.5=>5000 T2=>7500 T3=>No changed 15000+ (So, now battle com can't be transported by an T1 Atlas, or Fusion Com have to be transported by a T2 Air). This choice to decrease Com abuse in Eco or with dropping in ennemy base.
+ - Talon Sniper : Decrease Speed and Range
+ - All Fusion/MM have been balanced with an algorythm (https://github.com/techannihilation/TA/issues/1555)
+
+Improvements
+ - Talon units reworked
+ - Add many new units (T3 Flak, T2 Jam, T1.5 Wind...)
+
+Bugs : 
+ - Fix Talon adv Wind 
+ - Fix 50% Menu Panel to chhose faction (again some errors)
+
+3.08.0 -> 3.XX.XX
 2019-08-18
 
 Balance:
