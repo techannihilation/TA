@@ -2,7 +2,7 @@ return {
 	talon_biker = {
 		acceleration = 0.25,
 		brakerate = 0.495,
-		buildcostenergy = 954,
+		buildcostenergy = 1190,
 		buildcostmetal = 46,
 		builder = false,
 		buildpic = "talon_biker.dds",

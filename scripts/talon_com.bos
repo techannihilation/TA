@@ -7,9 +7,12 @@ piece  laser, torso, dgun, nano, arm, pelvis, rthight, lthight,
        hand, lfoot, lboot, rfoot, rboot, shoulder, base, head,
        rleg, lleg, rad, lshoulder, larm, lhand, oldshoulder, barrel, flare, teleport;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_mouvement, 
-            Static_Var_20, Static_Var_21, Static_Var_22;
+static-var  bMoving , bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10, Static_Var_mouvement, 
+            gun_1, gun_3, Static_Var_20, Static_Var_21, Static_Var_22;
+
+// Signal definitions
+#define SIG_AIM				2
 
 
 MasterAnimation(Func_Var_1, Func_Var_2, Func_Var_3)
@@ -20,9 +23,9 @@ MasterAnimation(Func_Var_1, Func_Var_2, Func_Var_3)
 	sleep Rand( 0, 330 );
 	while( TRUE )
 	{
-		if( Static_Var_1 )
+		if( bMoving  )
 		{
-			if( !Static_Var_2 )
+			if( !bAiming )
 			{
 				Func_Var_1 = Func_Var_1;
 				if( Func_Var_1 == 1 )
@@ -161,7 +164,7 @@ MasterAnimation(Func_Var_1, Func_Var_2, Func_Var_3)
 			}
 			Func_Var_2 = 1;
 		}
-		if( !Static_Var_1 AND Func_Var_2 )
+		if( !bMoving  AND Func_Var_2 )
 		{
 			Func_Var_2 = 0;
 			turn head to y-axis <0.> speed <10.>* Static_Var_mouvement;
@@ -173,7 +176,7 @@ MasterAnimation(Func_Var_1, Func_Var_2, Func_Var_3)
 			turn rleg to x-axis <0.> speed <10.>* Static_Var_mouvement;
 			turn rfoot to x-axis <0.> speed <10.>* Static_Var_mouvement;
 			turn rboot to x-axis <0.> speed <10.>* Static_Var_mouvement;
-			if( !Static_Var_2 )
+			if( !bAiming )
 			{
 				turn torso to y-axis <0.> speed <10.>* Static_Var_mouvement;
 				turn shoulder to x-axis <0.> speed <10.>* Static_Var_mouvement;
@@ -182,12 +185,12 @@ MasterAnimation(Func_Var_1, Func_Var_2, Func_Var_3)
 				turn lshoulder to x-axis <0.> speed <10.>* Static_Var_mouvement;
 				turn larm to x-axis <0.> speed <10.>* Static_Var_mouvement;
 				turn lhand to x-axis <0.> speed <10.>* Static_Var_mouvement;
-				if( !Static_Var_1 AND !Static_Var_2 )
+				if( !bMoving  AND !bAiming )
 				{
 				}
 			}
 		}
-		if( !Static_Var_1 AND Static_Var_2 )
+		if( !bMoving  AND bAiming )
 		{
 			if( Func_Var_3 == 1 )
 			{
@@ -211,14 +214,30 @@ MasterAnimation(Func_Var_1, Func_Var_2, Func_Var_3)
 	}
 }
 
+UnitSpeed()
+{
+	while( TRUE )
+	{
+		Static_Var_mouvement = get CURRENT_SPEED * 100 / Static_Var_10;
+		if( Static_Var_mouvement < 20 )
+		{
+			Static_Var_mouvement = 20;
+		}
+		sleep 142;
+	}
+}
+
+
 Shield()
 {
 	Static_Var_20 = !Static_Var_20;
+
 }
 
 Beamcolor(Func_Var_1)
 {
-	Static_Var_21 = Func_Var_1;
+	Static_Var_21 = !Func_Var_1;
+
 }
 
 TeleportControl()
@@ -238,20 +257,58 @@ TeleportControl()
 	move teleport to y-axis [0.] now;
 }
 
+RestorePosition()
+{
+
+		turn shoulder to x-axis <0.> speed <40.>;
+		turn shoulder to y-axis <0.> speed <40.>;
+		turn shoulder to z-axis <0.> speed <40.>;
+		turn arm to x-axis <0.> speed <40.>;
+		turn arm to y-axis <0.> speed <40.>;
+		turn arm to z-axis <0.> speed <40.>;
+		turn hand to x-axis <0.> speed <40.>;
+		turn hand to y-axis <0.> speed <40.>;
+		turn hand to z-axis <0.> speed <40.>;
+		turn torso to x-axis <0.> speed <40.>;
+		turn torso to y-axis <0.> speed <40.>;
+		turn torso to z-axis <0.> speed <40.>;
+		turn lshoulder to x-axis <0.> speed <40.>;
+		turn lshoulder to y-axis <0.> speed <40.>;
+		turn lshoulder to z-axis <0.> speed <40.>;
+		turn larm to x-axis <0.> speed <40.>;
+		turn larm to y-axis <0.> speed <40.>;
+		turn larm to z-axis <0.> speed <40.>;
+		turn lhand to x-axis <0.> speed <40.>;
+		turn lhand to y-axis <0.> speed <40.>;
+		turn lhand to z-axis <0.> speed <40.>;
+		bAiming = FALSE;
+}
+
+ResumeBuilding()
+{
+	sleep 400;
+	if( Static_Var_7 AND !gun_1 )
+	{
+		turn torso to y-axis Static_Var_9 speed <150.000000>;
+		turn lshoulder to x-axis <-30.000000> - Static_Var_8 speed <45.000000>;
+		turn lhand to x-axis <-30.000000> - Static_Var_8 speed <45.000000>;
+	}
+}
+
 Create()
 {
-	set UNIT_HEIGHT to 0;
-	set ACTIVATION to 0;
-	Static_Var_1 = 0;
-	Static_Var_2 = 0;
+	
+	bMoving  = 0;
+	bAiming = FALSE;
 	Static_Var_3 = 0;
 	Static_Var_4 = 0;
 	Static_Var_5 = 0;
 	Static_Var_6 = 0;
-	Static_Var_22 = 0;
-	Static_Var_20 = 1;
+	Static_Var_7 = 0;
+	Static_Var_8 = 0;
+	Static_Var_9 = 0;
 	Static_Var_mouvement = 3; // Legs speed
-	
+	Static_Var_10 = get MAX_SPEED;
 	hide flare;
 	hide laser;
 	hide teleport;
@@ -261,12 +318,12 @@ Create()
 
 StartMoving()
 {
-	Static_Var_1 = 1;
+	bMoving  = TRUE;
 }
 
 StopMoving()
 {
-	Static_Var_1 = 0;
+	bMoving  = FALSE;
 }
 
 SweetSpot(piecenum)
@@ -289,90 +346,28 @@ QueryPrimary(piecenum)
 	piecenum = flare;
 }
 
-RestorePrimary()
-{
-	sleep 1500;
-	Static_Var_3 = 0;
-	if( !Static_Var_4 AND !Static_Var_5 )
-	{
-		stop-spin barrel around z-axis decelerate <100.>;
-		Static_Var_2 = 0;
-		stop-spin hand around y-axis;
-		turn shoulder to x-axis <0.> speed <40.>;
-		turn shoulder to y-axis <0.> speed <40.>;
-		turn shoulder to z-axis <0.> speed <40.>;
-		turn arm to x-axis <0.> speed <40.>;
-		turn arm to y-axis <0.> speed <40.>;
-		turn arm to z-axis <0.> speed <40.>;
-		turn hand to x-axis <0.> speed <40.>;
-		turn hand to y-axis <0.> speed <40.>;
-		turn hand to z-axis <0.> speed <40.>;
-		turn torso to x-axis <0.> speed <40.>;
-		turn torso to y-axis <0.> speed <40.>;
-		turn torso to z-axis <0.> speed <40.>;
-		turn lshoulder to x-axis <0.> speed <40.>;
-		turn lshoulder to y-axis <0.> speed <40.>;
-		turn lshoulder to z-axis <0.> speed <40.>;
-		turn larm to x-axis <0.> speed <40.>;
-		turn larm to y-axis <0.> speed <40.>;
-		turn larm to z-axis <0.> speed <40.>;
-		turn lhand to x-axis <0.> speed <40.>;
-		turn lhand to y-axis <0.> speed <40.>;
-		turn lhand to z-axis <0.> speed <40.>;
-		Static_Var_6 = 0;
-	}
-}
-
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
-	Static_Var_3 = 0;
-	Static_Var_2 = 1;
-	while( Static_Var_4 OR Static_Var_5 OR !Static_Var_3 )
+	if( gun_3 == 1 )
 	{
-		Static_Var_3 = 1;
-		while( Static_Var_4 OR Static_Var_5 )
-		{
-			sleep 100;
-		}
-		if( Static_Var_7 == 0 )
-		{
-			stop-spin hand around y-axis;
-			turn shoulder to x-axis <0.> speed <40.>;
-			turn shoulder to y-axis <0.> speed <40.>;
-			turn shoulder to z-axis <0.> speed <40.>;
-			turn arm to x-axis <0.> speed <40.>;
-			turn arm to y-axis <0.> speed <40.>;
-			turn arm to z-axis <0.> speed <40.>;
-			turn hand to x-axis <0.> speed <40.>;
-			turn hand to y-axis <0.> speed <40.>;
-			turn hand to z-axis <0.> speed <40.>;
-			turn torso to x-axis <0.> speed <40.>;
-			turn torso to y-axis <0.> speed <40.>;
-			turn torso to z-axis <0.> speed <40.>;
-			turn lshoulder to x-axis <0.> speed <40.>;
-			turn lshoulder to y-axis <0.> speed <40.>;
-			turn lshoulder to z-axis <0.> speed <40.>;
-			turn larm to x-axis <0.> speed <40.>;
-			turn larm to y-axis <0.> speed <40.>;
-			turn larm to z-axis <0.> speed <40.>;
-			turn lhand to x-axis <0.> speed <40.>;
-			turn lhand to y-axis <0.> speed <40.>;
-			turn lhand to z-axis <0.> speed <40.>;
-			Static_Var_6 = 0;
-			Static_Var_6 = heading;
-			turn hand to y-axis <0.> speed <40.>;
-			turn torso to y-axis heading speed <300.>;
-			turn shoulder to x-axis <-40.> - pitch speed <90.>;
-			turn hand to x-axis <-50.> - pitch 
-			speed <90.>;
-			wait-for-turn torso around y-axis;
-			wait-for-turn shoulder around x-axis;
-			wait-for-turn hand around x-axis;
-		}
+		return (0);
 	}
-	start-script RestorePrimary();
+
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	turn torso to y-axis heading speed <300.>;
+	turn shoulder to x-axis <-40.> - pitch speed <90.>;
+	turn hand to x-axis <-50.> - pitch speed <90.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn shoulder around x-axis;
+	wait-for-turn hand around x-axis;
+	gun_1 = 1;
+	if( Static_Var_7 == 1 )
+	{
+		start-script ResumeBuilding();
+	}
+
 	return (1);
 }
 
@@ -388,7 +383,7 @@ FirePrimary()
 
 AimSecondary(heading, pitch)
 {
-	if( Static_Var_20 )
+	if( bAiming )
 	{
 		return (1);
 	}
@@ -418,88 +413,26 @@ QueryTertiary(piecenum)
 	piecenum = dgun;
 }
 
-RestoreTertiary()
-{
-	sleep 1500;
-	Static_Var_4 = 0;
-	if( !Static_Var_3 AND !Static_Var_5 )
-	{
-		stop-spin barrel around z-axis decelerate <100.>;
-		Static_Var_2 = 0;
-		stop-spin hand around y-axis;
-		turn shoulder to x-axis <0.> speed <40.>;
-		turn shoulder to y-axis <0.> speed <40.>;
-		turn shoulder to z-axis <0.> speed <40.>;
-		turn arm to x-axis <0.> speed <40.>;
-		turn arm to y-axis <0.> speed <40.>;
-		turn arm to z-axis <0.> speed <40.>;
-		turn hand to x-axis <0.> speed <40.>;
-		turn hand to y-axis <0.> speed <40.>;
-		turn hand to z-axis <0.> speed <40.>;
-		turn torso to x-axis <0.> speed <40.>;
-		turn torso to y-axis <0.> speed <40.>;
-		turn torso to z-axis <0.> speed <40.>;
-		turn lshoulder to x-axis <0.> speed <40.>;
-		turn lshoulder to y-axis <0.> speed <40.>;
-		turn lshoulder to z-axis <0.> speed <40.>;
-		turn larm to x-axis <0.> speed <40.>;
-		turn larm to y-axis <0.> speed <40.>;
-		turn larm to z-axis <0.> speed <40.>;
-		turn lhand to x-axis <0.> speed <40.>;
-		turn lhand to y-axis <0.> speed <40.>;
-		turn lhand to z-axis <0.> speed <40.>;
-		Static_Var_6 = 0;
-	}
-}
-
 AimTertiary(heading, pitch)
 {
-	signal 8;
-	set-signal-mask 8;
-	Static_Var_2 = 1;
-	Static_Var_4 = 1;
-	if( pitch > 32768 )
-	{
-		pitch = pitch - 65536;
-	}
-	stop-spin hand around y-axis;
-	turn shoulder to x-axis <0.> speed <40.>;
-	turn shoulder to y-axis <0.> speed <40.>;
-	turn shoulder to z-axis <0.> speed <40.>;
-	turn arm to x-axis <0.> speed <40.>;
-	turn arm to y-axis <0.> speed <40.>;
-	turn arm to z-axis <0.> speed <40.>;
-	turn hand to x-axis <0.> speed <40.>;
-	turn hand to y-axis <0.> speed <40.>;
-	turn hand to z-axis <0.> speed <40.>;
-	turn torso to x-axis <0.> speed <40.>;
-	turn torso to y-axis <0.> speed <40.>;
-	turn torso to z-axis <0.> speed <40.>;
-	turn lshoulder to x-axis <0.> speed <40.>;
-	turn lshoulder to y-axis <0.> speed <40.>;
-	turn lshoulder to z-axis <0.> speed <40.>;
-	turn larm to x-axis <0.> speed <40.>;
-	turn larm to y-axis <0.> speed <40.>;
-	turn larm to z-axis <0.> speed <40.>;
-	turn lhand to x-axis <0.> speed <40.>;
-	turn lhand to y-axis <0.> speed <40.>;
-	turn lhand to z-axis <0.> speed <40.>;
-	Static_Var_6 = 0;
-	Static_Var_6 = heading;
-	turn hand to y-axis <0.> speed <40.>;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	gun_3 = 1;
+	bAiming = TRUE;
 	turn torso to y-axis heading speed <300.>;
 	turn shoulder to x-axis <-40.> - pitch speed <45.>;
 	turn hand to x-axis <-50.> - pitch speed <45.>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn shoulder around x-axis;
 	wait-for-turn hand around x-axis;
-	start-script RestoreTertiary();
 	return (1);
 }
 
 FireTertiary()
 {
+	emit-sfx 1024 + 5 from dgun;
 	sleep 200;
+	gun_3 = 0;
 }
 
 AimWeapon4(heading, pitch)
@@ -508,42 +441,24 @@ AimWeapon4(heading, pitch)
 	{
 		return (0);
 	}
-	signal 8;
-	set-signal-mask 8;
-	Static_Var_2 = 1;
-	Static_Var_4 = 1;
-	stop-spin hand around y-axis;
-	turn shoulder to x-axis <0.> speed <40.>;
-	turn shoulder to y-axis <0.> speed <40.>;
-	turn shoulder to z-axis <0.> speed <40.>;
-	turn arm to x-axis <0.> speed <40.>;
-	turn arm to y-axis <0.> speed <40.>;
-	turn arm to z-axis <0.> speed <40.>;
-	turn hand to x-axis <0.> speed <40.>;
-	turn hand to y-axis <0.> speed <40.>;
-	turn hand to z-axis <0.> speed <40.>;
-	turn torso to x-axis <0.> speed <40.>;
-	turn torso to y-axis <0.> speed <40.>;
-	turn torso to z-axis <0.> speed <40.>;
-	turn lshoulder to x-axis <0.> speed <40.>;
-	turn lshoulder to y-axis <0.> speed <40.>;
-	turn lshoulder to z-axis <0.> speed <40.>;
-	turn larm to x-axis <0.> speed <40.>;
-	turn larm to y-axis <0.> speed <40.>;
-	turn larm to z-axis <0.> speed <40.>;
-	turn lhand to x-axis <0.> speed <40.>;
-	turn lhand to y-axis <0.> speed <40.>;
-	turn lhand to z-axis <0.> speed <40.>;
-	Static_Var_6 = 0;
-	Static_Var_6 = heading;
-	turn hand to y-axis <0.> speed <40.>;
+	if( Static_Var_7 )
+	{
+		return (0);
+	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
 	turn torso to y-axis heading speed <300.>;
 	turn shoulder to x-axis <-40.> - pitch speed <45.>;
 	turn hand to x-axis <-50.> - pitch speed <45.>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn shoulder around x-axis;
 	wait-for-turn hand around x-axis;
-	start-script RestorePrimary();
+	gun_1 = 1;
+	if( Static_Var_7 == 1 )
+	{
+		start-script ResumeBuilding();
+	}
 	return (1);
 }
 
@@ -599,91 +514,34 @@ QueryWeapon7(piecenum)
 	piecenum = torso;
 }
 
-
 StartBuilding(Func_Var_1, Func_Var_2)
 {
-	signal 16;
-	set-signal-mask 16;
-	Static_Var_2 = 1;
-	Static_Var_5 = 1;
-	while( Static_Var_5 )
-	{
-		while( Static_Var_4 )
-		{
-			sleep 100;
-		}
-		if( Func_Var_2 > 32768 )
-		{
-			Func_Var_2 = Func_Var_2 - 65536;
-		}
-		stop-spin hand around y-axis;
-		turn shoulder to x-axis <0.> speed <40.>;
-		turn shoulder to y-axis <0.> speed <40.>;
-		turn shoulder to z-axis <0.> speed <40.>;
-		turn arm to x-axis <0.> speed <40.>;
-		turn arm to y-axis <0.> speed <40.>;
-		turn arm to z-axis <0.> speed <40.>;
-		turn hand to x-axis <0.> speed <40.>;
-		turn hand to y-axis <0.> speed <40.>;
-		turn hand to z-axis <0.> speed <40.>;
-		turn torso to x-axis <0.> speed <40.>;
-		turn torso to y-axis <0.> speed <40.>;
-		turn torso to z-axis <0.> speed <40.>;
-		turn lshoulder to x-axis <0.> speed <40.>;
-		turn lshoulder to y-axis <0.> speed <40.>;
-		turn lshoulder to z-axis <0.> speed <40.>;
-		turn larm to x-axis <0.> speed <40.>;
-		turn larm to y-axis <0.> speed <40.>;
-		turn larm to z-axis <0.> speed <40.>;
-		turn lhand to x-axis <0.> speed <40.>;
-		turn lhand to y-axis <0.> speed <40.>;
-		turn lhand to z-axis <0.> speed <40.>;
-		Static_Var_6 = 0;
-		Static_Var_6 = Func_Var_1;
-		turn hand to y-axis <0.> speed <40.>;
-		turn torso to y-axis Func_Var_1 speed <300.>;
-		turn lshoulder to x-axis <-30.> - Func_Var_2 speed <45.>;
-		turn lhand to x-axis <-50.> - Func_Var_2 speed <45.>;
-		wait-for-turn torso around y-axis;
-		wait-for-turn lshoulder around x-axis;
-		set INBUILDSTANCE to 1;
-		sleep 900;
-	}
+	bAiming = TRUE;
+	Static_Var_7 = 1;
+	turn torso to y-axis Func_Var_1 speed <300.>;
+	turn lshoulder to x-axis <-30.> - Func_Var_2 speed <45.>;
+	turn lhand to x-axis <-50.> - Func_Var_2 speed <45.>;
+	Static_Var_9 = Func_Var_1;
+	Static_Var_8 = Func_Var_2;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	set INBUILDSTANCE to 1;
+}
+
+TargetCleared(Func_Var_1)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	call-script RestorePosition();
 }
 
 StopBuilding()
 {
-	signal 16;
-	set-signal-mask 16;
+	Static_Var_7 = 0;
 	set INBUILDSTANCE to 0;
-	Static_Var_5 = 0;
-	if( !Static_Var_3 AND !Static_Var_4 )
-	{
-		Static_Var_2 = 0;
-		stop-spin hand around y-axis;
-		turn shoulder to x-axis <0.> speed <40.>;
-		turn shoulder to y-axis <0.> speed <40.>;
-		turn shoulder to z-axis <0.> speed <40.>;
-		turn arm to x-axis <0.> speed <40.>;
-		turn arm to y-axis <0.> speed <40.>;
-		turn arm to z-axis <0.> speed <40.>;
-		turn hand to x-axis <0.> speed <40.>;
-		turn hand to y-axis <0.> speed <40.>;
-		turn hand to z-axis <0.> speed <40.>;
-		turn torso to x-axis <0.> speed <40.>;
-		turn torso to y-axis <0.> speed <40.>;
-		turn torso to z-axis <0.> speed <40.>;
-		turn lshoulder to x-axis <0.> speed <40.>;
-		turn lshoulder to y-axis <0.> speed <40.>;
-		turn lshoulder to z-axis <0.> speed <40.>;
-		turn larm to x-axis <0.> speed <40.>;
-		turn larm to y-axis <0.> speed <40.>;
-		turn larm to z-axis <0.> speed <40.>;
-		turn lhand to x-axis <0.> speed <40.>;
-		turn lhand to y-axis <0.> speed <40.>;
-		turn lhand to z-axis <0.> speed <40.>;
-		Static_Var_6 = 0;
-	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	call-script RestorePosition();
 }
 
 

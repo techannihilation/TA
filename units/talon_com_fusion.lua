@@ -302,6 +302,7 @@ weapondefs = {
 				thickness = 1,
 				tolerance = 500,
 				turret = true,
+				waterweapon = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {

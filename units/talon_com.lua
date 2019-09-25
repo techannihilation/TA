@@ -159,10 +159,7 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:com_sea_laser_bubbles",
-				[2] = "custom:sky_enterance",
-				[3] = "custom:teleport_beam",
-				[4] = "custom:teleport_beam_blue",
-				[5] = "custom:teleport_beam_yellow",
+				[6] = "custom:dgun_flare",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -302,6 +299,7 @@ return {
 				thickness = 1,
 				tolerance = 500,
 				turret = true,
+				waterweapon = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {
