@@ -364,9 +364,9 @@ AimPrimary(heading, pitch)
 			Static_Var_6 = heading;
 			turn hand to y-axis <0.> speed <40.>;
 			turn torso to y-axis heading speed <300.>;
-			turn shoulder to x-axis <-40.> - pitch speed <45.>;
+			turn shoulder to x-axis <-40.> - pitch speed <90.>;
 			turn hand to x-axis <-50.> - pitch 
-			speed <45.>;
+			speed <90.>;
 			wait-for-turn torso around y-axis;
 			wait-for-turn shoulder around x-axis;
 			wait-for-turn hand around x-axis;
