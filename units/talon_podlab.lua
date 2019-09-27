@@ -54,9 +54,9 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {
-			[1] = "talon_archon",
-			--[2] = "corkarg1",
-			--[3] = "corgala",
+			[1] = "talon_cpod",
+			[2] = "talon_archon",
+			[3] = "talon_mythril",
 		},
 		customparams = {
 			buildpic = "talon_podlab.dds",

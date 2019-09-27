@@ -64,7 +64,7 @@ return {
 			[4] = "talon_ap",
 			[5] = "talon_aap",
 			[6] = "talon_eap",
-			[7] = "talon_covertopscentre",
+			[7] = "talon_podlab",
 			[8] = "talon_nanotc2",
 			[9] = "talon_targ",
 			[10] = "talon_blt1",

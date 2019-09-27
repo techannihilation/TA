@@ -20,7 +20,7 @@ return {
 		collide = false,
 		corpse = "dead",
 		cruisealt = 180,
-		description = "Ship Tech Level 4",
+		description = "Ship Tech Level 5",
 		dontland = 0,
 		energymake = 300,
 		energystorage = 600,

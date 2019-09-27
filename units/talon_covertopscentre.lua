@@ -1,15 +1,15 @@
 return {
 	talon_covertopscentre = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1800000,
-		buildcostmetal = 75000,
+		buildcostenergy = 2286405,
+		buildcostmetal = 161241,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 15,
 		buildinggrounddecalsizey = 15,
 		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_covertopscentre.dds",
-		buildtime = 800000,
+		buildtime = 1200000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -44,7 +44,7 @@ return {
 		stealth = true,
 		unitname = "talon_covertopscentre",
 		usebuildinggrounddecal = true,
-		workertime = 160,
+		workertime = 3500,
 		yardmap = "ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo ooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
 			[1] = "talon_builderlvl3",
