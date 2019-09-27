@@ -9,6 +9,8 @@ Balance:
  - All Fusion/MM have been balanced with an algorythm (https://github.com/techannihilation/TA/issues/1555)
 
 Improvements
+ - Add T4 Pod Talon (Lab, Cons T4, Psychyc Pod and Battle Pod)
+ - Add Ultimate Weapon Talon : PlanetKiller T5
  - Talon units reworked
  - Add many new units (T3 Flak, T2 Jam, T1.5 Wind...)
 
