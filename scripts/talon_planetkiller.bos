@@ -32,6 +32,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 }
+RestoreAfterDelay()
+{
+	sleep 5000;
+	//turn body to y-axis <0.000000> speed <15.000000>;
+	turn body to x-axis <0.000000> speed <10.000000> ;
+}
 
 Create()
 {
@@ -39,6 +45,7 @@ Create()
 	start-script SmokeUnit();
 	spin circle around y-axis speed <250.000000> accelerate <25.000000>;
 	spin circle around z-axis speed <150.000000> accelerate <25.000000>;
+	spin circle around x-axis speed <15.000000> accelerate <25.000000>;
 	spin aimpoint around x-axis speed <250.000000> accelerate <25.000000>;
 	spin aimpoint around z-axis speed <250.000000> accelerate <25.000000>;
 }
@@ -47,11 +54,11 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	
-	turn body to y-axis <0.000000> + heading speed <20.000000>;
-	//turn body to x-axis pitch speed <20.000000> ;
+	turn body to y-axis <0.000000> + heading speed <15.000000>;
+	turn body to x-axis pitch speed <10.000000> ;
 	wait-for-turn body around y-axis;
 	wait-for-turn body around x-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 

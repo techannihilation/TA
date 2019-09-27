@@ -65,7 +65,7 @@ return {
 			[9] = "talon_requiem",
 			[10] = "talon_elixir",
 			[11] = "talon_veloute1",
-			--[12] = "talon_planetkiller",
+			[12] = "talon_planetkiller",
 		},
 		customparams = {
 			buildpic = "talon_builderlvl3.dds",
