@@ -7,24 +7,12 @@ piece  ground, pelvis, bar, torso, ruparm, rloarm, rhand, luparm,
        lloarm, lhand, lthigh, lleg, lfoot, rthigh, rleg, rfoot,
        lathe, lathe2;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6;
+static-var  spray, bMoving, Static_Var_2;
 
 
-Build()
+walk()
 {
-	set-signal-mask 4;
-	while( TRUE )
-	{
-		emit-sfx 1025 from lathe;
-		emit-sfx 1025 from lathe2;
-		sleep 100;
-	}
-}
-
-Walk()
-{
-	while( TRUE )
+	while( bMoving )
 	{
 		if( TRUE )
 		{
@@ -165,12 +153,29 @@ Walk()
 	}
 }
 
+MotionControl(Func_Var_1)
+{
+	while( TRUE )
+	{
+		Func_Var_1 = bMoving;
+		if( Func_Var_1 )
+		{
+			call-script walk();
+		}
+		else
+		{
+			sleep 100;
+		}
+	}
+}
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
+	start-script MotionControl();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -192,140 +197,60 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Activatescr()
-{
-	sleep 1;
-}
-
-Deactivatescr()
-{
-	sleep 1;
-}
-
-Go()
-{
-	call-script Activatescr();
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	call-script Deactivatescr();
-}
-
-InitState()
-{
-	Static_Var_5 = 1;
-	Static_Var_6 = 0;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( Static_Var_6 )
-	{
-		Static_Var_5 = requestedstate;
-		return (0);
-	}
-	Static_Var_6 = 1;
-	currentstate = Static_Var_5;
-	Static_Var_5 = requestedstate;
-	while( Static_Var_5 != currentstate )
-	{
-		if( Static_Var_5 == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( Static_Var_5 == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	Static_Var_6 = 0;
-}
-
 Create()
 {
-	Static_Var_1 = 3000;
+	bMoving = FALSE;
+	spray = 0;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_1 = Func_Var_1 * 2;
-}
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
 }
 
 StartBuilding(Func_Var_1)
 {
-	start-script RequestState(0);
+	set INBUILDSTANCE to 1;
 	signal 4;
-	start-script Build();
 }
 
 StopBuilding()
 {
 	signal 4;
 	set-signal-mask 4;
-	sleep 1000;
+	sleep 150;
 	set-signal-mask 0;
 	signal 4;
-	start-script RequestState(1);
+	set INBUILDSTANCE to 0;
 }
 
 StartMoving()
 {
-	signal 2;
-	set-signal-mask 2;
-	start-script Walk();
+	bMoving = TRUE;
 }
 
 StopMoving()
 {
-	signal 2;
+	bMoving = FALSE;
 }
+
 
 QueryNanoPiece(piecenum)
 {
-	if( Static_Var_4 == 0 )
+	if( spray == 0 )
 	{
 		piecenum = lathe;
 	}
-	if( Static_Var_4 == 1 )
+	if( spray == 1 )
 	{
 		piecenum = lathe2;
 	}
-	++Static_Var_4;
-	if( Static_Var_4 == 2 )
+	++spray;
+	if( spray == 2 )
 	{
-		Static_Var_4 = 0;
+		spray = 0;
 	}
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = pelvis;
-}
-
-TargetHeading(Func_Var_1)
-{
-	Static_Var_3 = 0 - Func_Var_1;
-}
-
-RestoreAfterDelay()
-{
-	sleep Static_Var_1;
+	piecenum = ground;
 }
 
 Killed(severity, corpsetype)

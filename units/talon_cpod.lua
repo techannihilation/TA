@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
-		name = "Crab",
+		name = "Quadrupod",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "talon_cpod",

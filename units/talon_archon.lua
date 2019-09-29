@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Psychic Shield Hexapod",
+		description = "Psychic Shield quadrupod",
 		energystorage = 10000,
 		explodeas = "NUCLEAR_MISSILE2",
 		firestandorders = 1,

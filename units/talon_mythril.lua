@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Battle Hexapod",
+		description = "Battle quadrupod",
 		energystorage = 10000,
 		explodeas = "NUCLEAR_MISSILE2",
 		firestandorders = 1,
