@@ -311,17 +311,17 @@ return {
 	"corjurgen",
 	"troman",
 	"corhowie",
---talon t3 kbot
-"talon_berserker",
-"talon_opal",
-"talon_hollander",
-"talon_talos",
--- talon t3 veh
-"talon_abaddon",
-"talon_repentance",
-"talon_mrtn",
-"talon_visitant",
-"talon_thanos",
+	--talon t3 kbot
+	"talon_berserker",
+	"talon_opal",
+	"talon_hollander",
+	"talon_talos",
+	-- talon t3 veh
+	"talon_abaddon",
+	"talon_repentance",
+	"talon_mrtn",
+	"talon_visitant",
+	"talon_thanos",
 	-- t4
 	"corkrog1",
 	"corkarg1",
@@ -346,6 +346,8 @@ return {
 	"armpraet",
 	"monkeylord",
 	"irritator",  
+	"talon_mythril",
+	"talon_archon",
 	-- T5 heroes
 	"cdevastator",
 	"abroadside",
