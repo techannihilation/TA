@@ -135,6 +135,8 @@ local ShieldUnits = {
   [UnitDefNames["talon_gate1"].id] = true,
   [UnitDefNames["talon_gate2"].id] = true,
   [UnitDefNames["talon_obelisk"].id] = true,
+  [UnitDefNames["talon_cpod"].id] = true,
+  [UnitDefNames["talon_archon"].id] = true,
 }
 
 local function GetVisibleSearch(x, z, search)
