@@ -1,170 +1,65 @@
-#define TA			// This is a TA script
+#define TA
 
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, ltower1, ltower2, rtower1, rtower2, rside, lside, ldoor,
-       rdoor, pad, lpost, rpost, lnano, rnano, lbeam, rbeam;
+piece base, plant, plant2, plant3, wall1, gate1a, gate1b, gate2a, gate2b, wall2, gate3a, gate3b,
+	  gate4a, gate4b, pipe, flashPink, flashBlue, lever, Lnano, LnanoP, Rnano, RnanoP;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+static-var spray, unitview, statechg_DesiredState, statechg_StateChanging, Static_Var_4, working;
 
-
-RestoreAfterDelay()
-{
-	sleep 5000;
-}
+#define SIG_ACTIVATE			2
 
 activatescr()
 {
 	if( TRUE )
 	{
-		dont-cache ltower1;
-		dont-cache ltower2;
-		dont-cache rtower1;
-		dont-cache rtower2;
-		set ARMORED to 0;
+		hide plant3;
+		turn gate1a to z-axis <-35> speed <15>;
+		turn gate2a to z-axis <-35> speed <15>;
+		turn gate3a to z-axis <35> speed <15>;
+		turn gate4a to z-axis <35> speed <15>;
+		wait-for-turn gate4a around z-axis;
 	}
-	if( TRUE )
-	{
-		move ltower1 to z-axis [-8.] speed [4.];
-		move rtower1 to z-axis [-8.] speed [4.];
-		move ltower2 to z-axis [8.] speed [4.];
-		move rtower2 to z-axis [8.] speed [4.];
-		wait-for-move rtower1 along z-axis;
-	}
-	if( TRUE )
-	{
-		cache ltower1;
-		cache ltower2;
-		cache rtower1;
-		cache rtower2;
-	}
-	if( TRUE )
-	{
-		dont-cache lside;
-		dont-cache rside;
-		dont-cache ldoor;
-		dont-cache rdoor;
-		dont-cache lpost;
-		dont-cache rpost;
-		dont-cache lnano;
-		dont-cache rnano;
-	}
-	if( TRUE )
-	{
-		move lside to x-axis [10.] speed [4.];
-		move rside to x-axis [-10.] speed [4.];
-		wait-for-move lside along x-axis;
-	}
-	if( TRUE )
-	{
-		turn ldoor to z-axis <-90.> speed <100.>;
-		turn rdoor to z-axis <90.> speed <100.>;
-		wait-for-turn ldoor around z-axis;
-	}
-	if( TRUE )
-	{
-		turn lpost to x-axis <-90.> speed <100.>;
-		turn rpost to x-axis <90.> speed <100.>;
-		wait-for-turn lpost around x-axis;
-	}
-	if( TRUE )
-	{
-		turn lnano to y-axis <60.> speed <100.>;
-		turn rnano to y-axis <60.> speed <100.>;
-		wait-for-turn lnano around y-axis;
-	}
-	if( TRUE )
-	{
-		cache lside;
-		cache rside;
-		cache ldoor;
-		cache rdoor;
-		cache lpost;
-		cache rpost;
-		cache lnano;
-		cache rnano;
-	}
-	if( TRUE )
-	{
-		sleep 300;
-	}
+	sleep 50;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		dont-cache lside;
-		dont-cache rside;
-		dont-cache ldoor;
-		dont-cache rdoor;
-		dont-cache lpost;
-		dont-cache rpost;
-		dont-cache lnano;
-		dont-cache rnano;
+		show plant3;
+		turn gate1a to z-axis <0> speed <30>;
+		turn gate2a to z-axis <0> speed <30>;
+		turn gate3a to z-axis <0> speed <30>;
+		turn gate4a to z-axis <0> speed <30>;
+		wait-for-turn gate4a around z-axis;
 	}
-	if( TRUE )
+	sleep 50;
+}
+
+whenbuilding()
+{
+	while( TRUE )
 	{
-		turn lnano to y-axis <0.> speed <100.>;
-		turn rnano to y-axis <0.> speed <100.>;
-		wait-for-turn lnano around y-axis;
-	}
-	if( TRUE )
-	{
-		turn lpost to x-axis <0.> speed <100.>;
-		turn rpost to x-axis <0.> speed <100.>;
-		wait-for-turn lpost around x-axis;
-	}
-	if( TRUE )
-	{
-		turn ldoor to z-axis <0.> speed <100.>;
-		turn rdoor to z-axis <0.> speed <100.>;
-		wait-for-turn ldoor around z-axis;
-	}
-	if( TRUE )
-	{
-		move lside to x-axis [0.] speed [4.];
-		move rside to x-axis [0.] speed [4.];
-		wait-for-move lside along x-axis;
-	}
-	if( TRUE )
-	{
-		cache lside;
-		cache rside;
-		cache ldoor;
-		cache rdoor;
-		cache lpost;
-		cache rpost;
-		cache lnano;
-		cache rnano;
-	}
-	if( TRUE )
-	{
-		dont-cache ltower1;
-		dont-cache ltower2;
-		dont-cache rtower1;
-		dont-cache rtower2;
-	}
-	if( TRUE )
-	{
-		move ltower1 to z-axis [0.] speed [4.];
-		move rtower1 to z-axis [0.] speed [4.];
-		move ltower2 to z-axis [0.] speed [4.];
-		move rtower2 to z-axis [0.] speed [4.];
-		wait-for-move rtower1 along z-axis;
-	}
-	if( TRUE )
-	{
-		cache ltower1;
-		cache ltower2;
-		cache rtower1;
-		cache rtower2;
-	}
-	if( TRUE )
-	{
-		set ARMORED to 1;
-		sleep 300;
+		if(working == 1)
+		{
+			move Lnano to z-axis [-6.375] speed [15];
+			move Rnano to z-axis [6.375] speed [15];
+			wait-for-move Rnano along z-axis;
+			sleep 300;
+			move Lnano to z-axis [6.375] speed [15];
+			move Rnano to z-axis [-6.375] speed [15];
+			wait-for-move Rnano along z-axis;
+			sleep 300;
+		}
+		if(working == 0)
+		{
+			move Lnano to z-axis [0] speed [5];
+			move Rnano to z-axis [0] speed [5];
+			wait-for-move Rnano along z-axis;
+			sleep 500;
+		}
 	}
 }
 
@@ -228,172 +123,166 @@ Go()
 
 Stop()
 {
-	sleep 3000;
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
-	start-script deactivatescr();
+	call-script deactivatescr();
 }
 
 InitState()
 {
-	Static_Var_3 = 1;
-	Static_Var_4 = 0;
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
 }
 
 RequestState(requestedstate, currentstate)
 {
-	if( Static_Var_4 )
+	if( statechg_StateChanging )
 	{
-		Static_Var_3 = requestedstate;
+		statechg_DesiredState = requestedstate;
 		return (0);
 	}
-	Static_Var_4 = 1;
-	currentstate = Static_Var_3;
-	Static_Var_3 = requestedstate;
-	while( Static_Var_3 != currentstate )
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
 	{
-		if( Static_Var_3 == 0 )
+		if( statechg_DesiredState == 0 )
 		{
 			call-script Go();
 			currentstate = 0;
 		}
-		if( Static_Var_3 == 1 )
+		if( statechg_DesiredState == 1 )
 		{
 			call-script Stop();
 			currentstate = 1;
 		}
 	}
-	Static_Var_4 = 0;
+	statechg_StateChanging = FALSE;
 }
 
 Create()
 {
-	Static_Var_1 = 1;
+	unitview = FALSE;
+	spray = 0;
+	working = 0;
 	call-script InitState();
+	start-script whenbuilding();
 	start-script SmokeUnit();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
 }
 
-QueryNanoPiece(piecenum)
+SweetSpot (piecenum)
 {
-	if( Static_Var_1 == 1 )
-	{
-		piecenum = lbeam;
-	}
-	if( Static_Var_1 == 2 )
-	{
-		piecenum = rbeam;
-	}
-	++Static_Var_1;
-	if( Static_Var_1 == 3 )
-	{
-		Static_Var_1 = 1;
-	}
+	piecenum = base;
+}
+
+Demo()
+{
+	unitview = TRUE;
 }
 
 Activate()
 {
-	signal 2;
+	signal SIG_ACTIVATE;
 	start-script RequestState(0);
 }
 
 Deactivate()
 {
-	signal 2;
-	set-signal-mask 2;
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
 	set-signal-mask 0;
 	start-script RequestState(1);
 }
 
 StartBuilding()
 {
+	working = 1;
 }
 
 StopBuilding()
 {
+	working = 0;
 }
 
 QueryBuildInfo(piecenum)
 {
-	piecenum = pad;
+	piecenum = plant;
 }
 
-SweetSpot(piecenum)
+QueryNanoPiece(piecenum)
 {
-	piecenum = base;
+	if(spray == 1)
+	{
+		piecenum = LnanoP;
+	}
+	if(spray == 2)
+	{
+		piecenum = RnanoP;
+	}
+	++spray;
+	if(spray == 3)
+	{
+		spray = 1;
+	}
 }
 
 Killed(severity, corpsetype)
-{
-	if( severity <= 25 )
 	{
+	if (severity <= 25)
+		{
 		corpsetype = 1;
-		explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ldoor type SHATTER | NOHEATCLOUD;
-		explode ldoor type SHATTER | NOHEATCLOUD;
-		explode lpost type SHATTER | NOHEATCLOUD;
-		explode rpost type SHATTER | NOHEATCLOUD;
-		explode lnano type SHATTER | NOHEATCLOUD ;
-		explode rnano type FALL | NOHEATCLOUD;
-		explode lside type SHATTER | NOHEATCLOUD;
-		explode rside type SHATTER | BITMAP4;
-		explode ltower1 type SHATTER | NOHEATCLOUD ;
-		explode ltower2 type SHATTER | NOHEATCLOUD;
-		explode rtower1 type SHATTER | SMOKE | NOHEATCLOUD;
-		explode rtower2 type SHATTER | SMOKE | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 50 )
-	{
+		explode wall1 type	NOHEATCLOUD;
+		explode gate1a type	NOHEATCLOUD;
+		explode gate1b type	NOHEATCLOUD;
+		explode gate2a type	NOHEATCLOUD;
+		explode gate2b type	NOHEATCLOUD;
+		explode wall2 type	NOHEATCLOUD;
+		explode gate3a type	NOHEATCLOUD;
+		explode gate3b type	NOHEATCLOUD;
+		explode gate4a type	NOHEATCLOUD;
+		explode gate4b type	NOHEATCLOUD;
+		return(corpsetype);
+		}
+	if (severity <= 50)
+		{
 		corpsetype = 2;
-		explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ldoor type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ldoor type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lpost type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rpost type FALL | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode lnano type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lside type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rside type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ltower1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode ltower2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rtower1 type SHATTER | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rtower2 type SHATTER | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (0);
-	}
-	if( severity <= 99 )
-	{
+		explode wall1 type	NOHEATCLOUD | FALL;
+		explode gate1a type	NOHEATCLOUD | FALL;
+		explode gate1b type	NOHEATCLOUD | FALL;
+		explode gate2a type	NOHEATCLOUD | FALL;
+		explode gate2b type	NOHEATCLOUD | FALL;
+		explode wall2 type	NOHEATCLOUD | FALL;
+		explode gate3a type	NOHEATCLOUD | FALL;
+		explode gate3b type	NOHEATCLOUD | FALL;
+		explode gate4a type	NOHEATCLOUD | FALL;
+		explode gate4b type	NOHEATCLOUD | FALL;
+		return(corpsetype);
+		}
+	if (severity <= 99)
+		{
 		corpsetype = 3;
-		explode pad type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lpost type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rpost type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lnano type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode rnano type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lside type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rside type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ltower1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode ltower2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rtower1 type SHATTER | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rtower2 type SHATTER | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (corpsetype);
+		explode wall1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate1a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate1b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate2a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate2b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode wall2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate3a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate3b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate4a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode gate4b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return(corpsetype);
+		}
+	corpsetype = 3;
+	explode wall1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate1a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate1b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate2a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate2b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wall2 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate3a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate3b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate4a type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode gate4b type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return(corpsetype);
 	}
-		corpsetype = 3;
-		explode pad type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ldoor type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lpost type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rpost type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lnano type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode rnano type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lside type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rside type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ltower1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode ltower2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rtower1 type SHATTER | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rtower2 type SHATTER | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (corpsetype);
-}

@@ -13,6 +13,7 @@ Improvements
  - Add Ultimate Weapon Talon : PlanetKiller T5
  - Talon units reworked
  - Add many new units (T3 Flak, T2 Jam, T1.5 Wind...)
+ - New talon t1.5 Kbot, MM TLL T4 Models
 
 Bugs : 
  - Fix Talon adv Wind 
