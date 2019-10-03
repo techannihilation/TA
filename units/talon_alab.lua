@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "LEVEL1 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
-		collisionvolumescales = "80 82 90",
+		collisionvolumescales = "80 68 90",
 		collisionvolumetest = 1,
 		collisionvolumetype = "box",
 		corpse = "dead1",

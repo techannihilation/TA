@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, nano, tank, steam1, steam2, pipe1;
+piece  base, lever1, lever2, lever3, steam1, steam2, steam3, mainsteam, hips;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -16,8 +16,16 @@ Steam()
 		{
 			emit-sfx 257 from steam1;
 			emit-sfx 257 from steam2;
-			sleep 200;
+			emit-sfx 257 from steam3;
+			sleep 300;
 		}
+		if( Static_Var_1 == 0 )
+		{
+			emit-sfx 257 from mainsteam;
+			sleep 150;
+		}
+		
+		
 		sleep 1;
 	}
 }
@@ -27,16 +35,21 @@ Standby()
 
 	while( TRUE )
 	{
+			move lever1 to y-axis [-10.000000] speed [30.000000];
+			move lever2 to y-axis [-10.000000] speed [30.000000];
+			move lever3 to y-axis [-10.000000] speed [30.000000];
+			wait-for-move lever1 along y-axis;
 			Static_Var_1 = 1;
-			turn pipe1 to y-axis <-180.000000> speed <30.000000>;
-			wait-for-turn pipe1 around y-axis;
+					
+			sleep 10000;
 			
-			sleep 2500;
-			
-			turn pipe1 to y-axis <0.000000> speed <30.000000>;
-			wait-for-turn pipe1 around y-axis;
-			Static_Var_1 = 0;
-			sleep 3670;
+			Static_Var_1 = 0;			
+			move lever1 to y-axis [0.000000] speed [30.000000];
+			move lever2 to y-axis [0.000000] speed [30.000000];
+			move lever3 to y-axis [0.000000] speed [30.000000];
+			wait-for-move lever1 along y-axis;
+						
+			sleep 5000;
 	}
 }
 
@@ -46,6 +59,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	start-script Steam();
+	start-script Standby();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -71,9 +86,6 @@ Create()
 {
 	Static_Var_2 = 0;
 	Static_Var_1 = 0;
-	
-	start-script Steam();
-	start-script Standby();
 	start-script SmokeUnit();
 }
 
@@ -97,22 +109,25 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode nano type NOHEATCLOUD;
-		explode pipe1 type NOHEATCLOUD;
+		explode hips type NOHEATCLOUD;
+		explode lever1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode lever2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode lever3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | FALL;
-		explode nano type NOHEATCLOUD | FALL;
-		explode pipe1 type NOHEATCLOUD;
+		explode hips type NOHEATCLOUD | FALL;
+		explode lever1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode lever2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode lever3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode nano type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode pipe1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode hips type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode lever1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode lever2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode lever3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

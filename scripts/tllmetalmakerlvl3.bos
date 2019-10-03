@@ -3,10 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, dummies, beacon, panel1, panel2, panel3, panel4, body;
+piece  base, MM, door1, door2, door3, engine, rotor, dummies, panel1, panel2, panel3, panel4, body;
 
 static-var  Static_Var_1, Static_Var_2;
-
 
 activatescr()
 {
@@ -15,17 +14,61 @@ activatescr()
 	turn panel3 to x-axis <20.> speed <75.>;
 	turn panel1 to x-axis <-20.> speed <75.>;	
 	sleep 250;
-	turn beacon to x-axis <180.> speed <150.>;
+	
+	set ARMORED to 0;
+	
+	turn door3 to y-axis <180.000000> speed <600.000000>;
+	wait-for-turn door3 around y-axis;
+	move door3 to y-axis [-7.000000] speed [15.000000];
+	wait-for-move door3 along y-axis;
+	hide door3;
+	turn door2 to y-axis <-180.000000> speed <600.000000>;
+	wait-for-turn door2 around y-axis;
+	move door2 to y-axis [-7.000000] speed [15.000000];
+	wait-for-move door2 along y-axis;
+	hide door2;
+	turn door1 to y-axis <180.000000> speed <600.000000>;
+	wait-for-turn door1 around y-axis;
+	move door1 to y-axis [-7.000000] speed [15.000000];
+	wait-for-move door1 along y-axis;
+	hide door1;
+	show engine;
+	show rotor;
+	move engine to y-axis [0.000000] speed [5.000000];
+	wait-for-move engine along y-axis;
+	spin rotor around y-axis speed <240.000000>;
+	
 }
 
 deactivatescr()
 {
-	turn beacon to x-axis <0.> speed <150.>;
+	move engine to y-axis [-5.000000] speed [10.000000];
+	stop-spin rotor around y-axis;
+	move engine to y-axis [-5.000000] speed [10.000000];
+	wait-for-move engine along y-axis;
+	hide engine;
+	hide rotor;
+	show door1;
+	move door1 to y-axis [0.000000] speed [15.000000];
+	wait-for-move door1 along y-axis;
+	turn door1 to y-axis <0.000000> speed <600.000000>;
+	wait-for-turn door1 around y-axis;
+	show door2;
+	move door2 to y-axis [0.000000] speed [15.000000];
+	wait-for-move door2 along y-axis;
+	turn door2 to y-axis <0.000000> speed <600.000000>;
+	wait-for-turn door2 around y-axis;
+	show door3;
+	move door3 to y-axis [0.000000] speed [15.000000];
+	wait-for-move door3 along y-axis;
+	turn door3 to y-axis <0.000000> speed <600.000000>;
+	wait-for-turn door3 around y-axis;
 	sleep 250;
 	turn panel4 to z-axis <0.> speed <75.>;
 	turn panel2 to z-axis <0.> speed <75.>;
 	turn panel3 to x-axis <0.> speed <75.>;
 	turn panel1 to x-axis <0.> speed <75.>;
+	set ARMORED to 1;
 }
 
 Go()
@@ -124,7 +167,7 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode dummies type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode beacon type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode door1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -132,7 +175,7 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode dummies type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode beacon type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode door1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
@@ -140,12 +183,12 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode dummies type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode beacon type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode door1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode dummies type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode beacon type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }
