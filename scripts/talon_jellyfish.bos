@@ -5,7 +5,7 @@
 
 piece  base, body, wake, aimpoint, rotor1, rotor2;
 
-static-var  gun_1;
+static-var  gun_1, bmoving;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -37,18 +37,18 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	gun_1 = base;
-	//spin rotor1 around x-axis speed <75.000000> accelerate <10.000000>;
-	//spin rotor2 around x-axis speed <-75.000000> accelerate <10.000000>; 
+	gun_1 = 0;
+	bmoving = FALSE;
 }
 
 StartMoving()
 {
 	signal SIG_MOVE;
-	
 	set-signal-mask SIG_MOVE;
-	
-	while( TRUE )
+	bmoving = TRUE;
+	spin rotor1 around z-axis speed <325.000000> accelerate <10.000000>;
+	spin rotor2 around z-axis speed <-325.000000> accelerate <10.000000>; 
+	while( bmoving )
 	{
 		emit-sfx 256 | 3 from wake;
 		sleep 250;
@@ -58,6 +58,9 @@ StartMoving()
 StopMoving()
 {
 	signal SIG_MOVE;
+	stop-spin rotor1 around z-axis;
+	stop-spin rotor2 around z-axis;
+	bmoving = FALSE;
 }
 
 AimPrimary()
@@ -67,6 +70,7 @@ AimPrimary()
 
 FirePrimary()
 {
+
 }
 
 QueryPrimary(piecenum)
@@ -76,7 +80,7 @@ QueryPrimary(piecenum)
 
 AimFromPrimary(piecenum)
 {
-	piecenum = base;
+	piecenum = aimpoint;
 }
 
 SweetSpot(piecenum)

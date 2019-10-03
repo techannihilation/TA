@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, spinner, smoker, glow;
+piece  base;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -33,21 +33,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Smoke()
-{
-	emit-sfx 256 | 2 from smoker;
-	sleep 10;
-	emit-sfx 256 | 1 from smoker;
-	sleep 10;
-	start-script Smoke();
-}
-
 Create()
 {
 	start-script SmokeUnit();
-	dont-shade glow;
-	spin spinner around y-axis speed <5000.000000>;
-	dont-shade base;
 }
 
 SweetSpot(piecenum)
@@ -60,21 +48,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD ;
-		return (0);
+		explode base type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode base type NOHEATCLOUD;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;;
-		return (0);
+		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
 }
