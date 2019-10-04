@@ -41,7 +41,7 @@ return {
 		name = "LLT",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "talon_llt",
+		objectname = "talon_llt1",
 		script = "talon_llt.cob",
 		radaremitheight = 65,
 		seismicsignature = 0,
