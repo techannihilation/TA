@@ -1330,7 +1330,7 @@ local morphDefs = {
 	},
 	talon_psyker = {
 		into = 'talon_psyker1',
-	  	time = 30,
+	  	time = 35,
 	},
 	talon_ack = {
 		into = 'talon_ack1',

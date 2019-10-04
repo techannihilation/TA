@@ -147,7 +147,7 @@ return {
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
-				soundstart = "xplonuk3",
+				soundstart = "cannhvy2",
 				sprayangle = 360,
 				stages = 20,				
 				turret = true,
