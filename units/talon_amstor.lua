@@ -7,7 +7,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "talon_amstor_aoplane.dds",
+		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_amstor.dds",
 		buildtime = 20391,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",

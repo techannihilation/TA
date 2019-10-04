@@ -21,7 +21,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
 		collide = false,
-		cruisealt = 120,
+		cruisealt = 200,
 		description = "Assault Ship",
 		dontland = 1,
 		energystorage = 1000000,
