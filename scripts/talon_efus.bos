@@ -1,0 +1,75 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, building, spinner1, spinner2, sup1, sup2, sup3, sup4, sup5, sup6, sup7;
+       
+Activate()
+{
+	spin spinner1 around y-axis speed <160.00> accelerate <3.00>;
+	spin spinner2 around y-axis speed <-80.00> accelerate <3.00>;	
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script Activate();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();    
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode building type NOHEATCLOUD;
+		explode spinner1 type NOHEATCLOUD;
+		explode spinner2 type NOHEATCLOUD;
+		explode sup1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;	
+		explode sup3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;	
+		explode sup5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;	
+		explode sup7 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode building type NOHEATCLOUD;
+	explode spinner1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode spinner2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sup1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;	
+	explode sup3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;	
+	explode sup5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;	
+	explode sup7 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

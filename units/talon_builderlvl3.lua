@@ -54,7 +54,7 @@ return {
 		unitname = "talon_builderlvl3",
 		workertime = 3000,
 		buildoptions = {
-			[1] = "talon_sfus",
+			[1] = "talon_efus",
 			[2] = "talon_mas",
 			[3] = "talon_metalmakerlvl3",
 			[4] = "talon_podlab",			
