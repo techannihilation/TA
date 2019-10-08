@@ -2,7 +2,7 @@ return {
 	tllmas = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 185920,
+		buildcostenergy = 180920,
 		buildcostmetal = 15251,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -21,7 +21,7 @@ return {
 		energymake = 0,
 		energyuse = 400,
 		explodeas = "ATOMIC_BLAST",
-		extractsmetal = 0.042,
+		extractsmetal = 0.045,
 		footprintx = 7,
 		footprintz = 7,
 		icontype = "building",

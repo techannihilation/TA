@@ -5,7 +5,7 @@
 
 piece  base, Silo, Block1, Block2, Platform, Outer-Ring, Middle-Ring, Inner-Ring, Firearm, gun,
        Hatch1, Hatch2, Hatch3, Fan1, Fan2, Fan3, Connection, Tower, Top, Support1, Support2,
-       Pipe1, Pipe2, Pipe3,aimer, target, shoulder, arm, hand;
+       Pipe1, Pipe2, Pipe3,aimer, target, shoulder;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
