@@ -258,8 +258,8 @@ activatescr()
 	}
 	if( Static_Var_4 )
 	{
-		move Door1 to x-axis [11.] speed [1.];
-		move Door2 to x-axis [-11.] speed [1.];
+		move Door1 to x-axis [13.2] speed [1.];
+		move Door2 to x-axis [-13.2] speed [1.];
 		wait-for-move Door2 along x-axis;
 	}
 	if( Static_Var_4 )

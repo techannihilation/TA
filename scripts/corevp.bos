@@ -15,23 +15,23 @@ static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
 activatescr()
 {
-	move piece1 to x-axis [-12.000000] speed [14.000000];
-	move piece1 to z-axis [12.000000] speed [14.000000];
-	move piece2 to x-axis [12.000000] speed [14.000000];
-	move piece2 to z-axis [12.000000] speed [14.000000];
-	move piece3 to x-axis [12.000000] speed [14.000000];
-	move piece3 to z-axis [-12.000000] speed [14.000000];
-	move piece4 to x-axis [-12.000000] speed [14.000000];
-	move piece4 to z-axis [-12.000000] speed [14.000000];
+	move piece1 to x-axis [-15.000000] speed [14.000000];
+	move piece1 to z-axis [15.000000] speed [14.000000];
+	move piece2 to x-axis [15.000000] speed [14.000000];
+	move piece2 to z-axis [15.000000] speed [14.000000];
+	move piece3 to x-axis [15.000000] speed [14.000000];
+	move piece3 to z-axis [-15.000000] speed [14.000000];
+	move piece4 to x-axis [-15.000000] speed [14.000000];
+	move piece4 to z-axis [-15.000000] speed [14.000000];
 	sleep 1000;
-	move piece11 to x-axis [12.000000] speed [14.000000];
-	move piece12 to z-axis [-12.000000] speed [14.000000];
-	move piece21 to x-axis [-12.000000] speed [14.000000];
-	move piece22 to z-axis [-12.000000] speed [14.000000];
-	move piece31 to x-axis [-12.000000] speed [14.000000];
-	move piece32 to z-axis [12.000000] speed [14.000000];
-	move piece41 to x-axis [12.000000] speed [14.000000];
-	move piece42 to z-axis [12.000000] speed [14.000000];
+	move piece11 to x-axis [15.000000] speed [14.000000];
+	move piece12 to z-axis [-15.000000] speed [14.000000];
+	move piece21 to x-axis [-15.000000] speed [14.000000];
+	move piece22 to z-axis [-15.000000] speed [14.000000];
+	move piece31 to x-axis [-15.000000] speed [14.000000];
+	move piece32 to z-axis [15.000000] speed [14.000000];
+	move piece41 to x-axis [15.000000] speed [14.000000];
+	move piece42 to z-axis [15.000000] speed [14.000000];
 	sleep 800;
 	sleep 100;
 }
@@ -111,23 +111,6 @@ CloseYard()
 
 Go()
 {
-	dont-cache plate;
-	dont-cache piece1;
-	dont-cache piece11;
-	dont-cache piece12;
-	dont-cache piece2;
-	dont-cache piece21;
-	dont-cache piece22;
-	dont-cache piece3;
-	dont-cache piece31;
-	dont-cache piece32;
-	dont-cache piece4;
-	dont-cache piece41;
-	dont-cache piece42;
-	dont-cache nano1;
-	dont-cache nano2;
-	dont-cache nano3;
-	dont-cache nano4;
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
@@ -138,23 +121,6 @@ Stop()
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
 	call-script deactivatescr();
-	cache plate;
-	cache piece1;
-	cache piece11;
-	cache piece12;
-	cache piece2;
-	cache piece21;
-	cache piece22;
-	cache piece3;
-	cache piece31;
-	cache piece32;
-	cache piece4;
-	cache piece41;
-	cache piece42;
-	cache nano1;
-	cache nano2;
-	cache nano3;
-	cache nano4;
 }
 
 InitState()
@@ -191,24 +157,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade base;
-	dont-shade plate;
-	dont-shade piece1;
-	dont-shade piece11;
-	dont-shade piece12;
-	dont-shade piece2;
-	dont-shade piece21;
-	dont-shade piece22;
-	dont-shade piece3;
-	dont-shade piece31;
-	dont-shade piece32;
-	dont-shade piece4;
-	dont-shade piece41;
-	dont-shade piece42;
-	dont-shade nano1;
-	dont-shade nano2;
-	dont-shade nano3;
-	dont-shade nano4;
 	Static_Var_1 = 1;
 	call-script InitState();
 	start-script SmokeUnit();
