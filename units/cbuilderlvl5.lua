@@ -63,7 +63,7 @@ return {
 			[5] = "cordoom1",
 			[6] = "corboucher",
 			[7] = "corpre",
-			[8] = "corgate1",
+			[8] = "corgate3",
 			[9] = "corfmd2",
 			[10] = "corfsilo",
 			[11] = "corint1",

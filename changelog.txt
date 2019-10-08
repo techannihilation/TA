@@ -1,4 +1,21 @@
 3.08.0 -> 3.XX.XX
+2019-10-09
+
+Balance:
+ - Talon Sniper, Talon Oblivion (air drone), Talon Biker.
+ - All Shield T1 T2 T3 T5
+
+Improvements:
+ - Add T2 Storage for Talon
+ - Add PlanetKiller (~Tsar)
+ - Add T5 Shield for Arm/Core
+ - Rework LLT Talon model
+ - Add T5 Turret
+
+Bugs:
+ - ...
+
+3.08.0 -> 3.XX.XX
 2019-09-24
 
 Balance:
@@ -8,7 +25,7 @@ Balance:
  - Talon Sniper : Decrease Speed and Range
  - All Fusion/MM have been balanced with an algorythm (https://github.com/techannihilation/TA/issues/1555)
 
-Improvements
+Improvements:
  - Add T4 Pod Talon (Lab, Cons T4, Psychyc Pod and Battle Pod)
  - Add Ultimate Weapon Talon : PlanetKiller T5
  - Talon units reworked

@@ -169,6 +169,15 @@ return {
 		type = CMDTYPE.ICON_MODE,
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
+  },  
+  corgate3 = {
+	{
+		name = "shield_cg3",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
   },
   corflshd = {
 	{

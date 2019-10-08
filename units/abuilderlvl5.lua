@@ -59,7 +59,7 @@ return {
 			[5] = "armanni1",
 			[6] = "nebraska",
 			[7] = "armhys",
-			[8] = "armgate1",
+			[8] = "armgate3",
 			[9] = "armamd2",
 			[10] = "armfsilo",
 			[11] = "armbrtha1",

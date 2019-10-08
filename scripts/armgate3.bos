@@ -1,0 +1,296 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, Silo, Block1, Block2, Platform, Outer-Ring, Middle-Ring, Inner-Ring, Firearm, gun,
+       Hatch1, Hatch2, Hatch3, Fan1, Fan2, Fan3, Connection, Tower, Top, Support1, Support2,
+       Pipe1, Pipe2, Pipe3,aimer, target, shoulder, arm, hand;
+
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
+
+#define SIG_ACTDEACT 4
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+
+
+ShieldOn()
+{
+	Static_Var_1 = 1;
+	signal SIG_ACTDEACT;
+	set-signal-mask SIG_ACTDEACT;
+	turn Hatch1 to z-axis <-180> speed <30>;
+	sleep 200;
+	turn Hatch2 to z-axis <-180> speed <30>;
+	sleep 200;
+	turn Hatch3 to z-axis <-180> speed <30>;
+	wait-for-turn Hatch1 around z-axis;
+	wait-for-turn Hatch2 around z-axis;
+	wait-for-turn Hatch3 around z-axis;
+	move Platform to y-axis [8] speed [2];
+	wait-for-move Platform along y-axis;
+	
+	spin Inner-Ring around x-axis speed <400> accelerate <0.8>;
+	spin Inner-Ring around y-axis speed <190> accelerate <0.2>;
+	sleep 1000;
+	spin Middle-Ring around z-axis speed <380> accelerate <0.8>;
+	spin Middle-Ring around y-axis speed <180> accelerate <0.2>;
+	sleep 1000;
+	spin Outer-Ring around x-axis speed <360> accelerate <0.8>;
+}
+
+ShieldOff()
+{
+	Static_Var_1 = 0;
+	signal SIG_ACTDEACT;
+	set-signal-mask SIG_ACTDEACT;
+
+	stop-spin Inner-Ring around x-axis decelerate <0.8>;
+	stop-spin Inner-Ring around y-axis decelerate <0.8>;
+	stop-spin Middle-Ring around z-axis decelerate <0.8>;
+	stop-spin Middle-Ring around y-axis decelerate <0.8>;
+	stop-spin Outer-Ring around x-axis decelerate <0.8>;
+	sleep 5000;
+
+	move Platform to y-axis [0] speed [2];	
+	turn Inner-Ring to x-axis <0> speed <30>;
+	turn Inner-Ring to y-axis <0> speed <30>;
+	turn Middle-Ring to z-axis <0> speed <30>;
+	turn Middle-Ring to y-axis <0> speed <30>;
+	turn Outer-Ring to x-axis <0> speed <30>;
+	wait-for-turn Inner-Ring around y-axis;
+	
+	sleep 2000;
+	
+	turn Hatch3 to z-axis <0> speed <30>;
+	sleep 200;
+	turn Hatch2 to z-axis <0> speed <30>;
+	sleep 200;
+	turn Hatch1 to z-axis <0> speed <30>;
+	wait-for-turn Hatch3 around z-axis;
+	wait-for-turn Hatch2 around z-axis;
+	wait-for-turn Hatch1 around z-axis;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script ShieldOn();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script ShieldOff();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+Create()
+{
+	turn Hatch2 to y-axis <120> now;
+	turn Hatch3 to y-axis <240> now;
+	Static_Var_1 = 1;
+	start-script SmokeUnit();
+	call-script InitState();
+}
+
+AimPrimary(heading, pitch)
+{
+	sleep 100;
+	return (Static_Var_1);
+}
+
+FirePrimary()
+{
+	explode gun type NOHEATCLOUD | FALL;
+	sleep 100;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+AimSecondary(heading, pitch)
+{
+	sleep 100;
+	return (Static_Var_1);
+}
+
+FireSecondary()
+{
+	explode gun type NOHEATCLOUD | FALL;
+	sleep 100;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = base;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type FALL | NOHEATCLOUD;
+		explode Silo type FALL | NOHEATCLOUD;
+		explode Block1 type FALL | NOHEATCLOUD;
+		explode Block2 type FALL | NOHEATCLOUD;
+		explode Platform type FALL | NOHEATCLOUD;
+		explode Outer-Ring type FALL | NOHEATCLOUD;
+		explode Middle-Ring type FALL | NOHEATCLOUD;
+		explode Inner-Ring type FALL | NOHEATCLOUD;
+		explode Hatch1 type FALL | NOHEATCLOUD;
+		explode Hatch2 type FALL | NOHEATCLOUD;
+		explode Hatch3 type FALL | NOHEATCLOUD;
+		explode Connection type FALL | NOHEATCLOUD;
+		explode Tower type FALL | SMOKE | NOHEATCLOUD;
+		explode Top type FALL | SMOKE | NOHEATCLOUD;
+		explode Support1 type FALL | NOHEATCLOUD;
+		explode Support2 type FALL | NOHEATCLOUD;
+		explode Pipe1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Pipe2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Pipe3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type FALL | NOHEATCLOUD;
+		explode Silo type FALL | NOHEATCLOUD;
+		explode Block1 type FALL | NOHEATCLOUD;
+		explode Block2 type FALL | NOHEATCLOUD;
+		explode Platform type FALL | NOHEATCLOUD;
+		explode Outer-Ring type FALL | NOHEATCLOUD;
+		explode Middle-Ring type FALL | NOHEATCLOUD;
+		explode Inner-Ring type FALL | NOHEATCLOUD;
+		explode Hatch1 type FALL | NOHEATCLOUD;
+		explode Hatch2 type FALL | NOHEATCLOUD;
+		explode Hatch3 type FALL | NOHEATCLOUD;
+		explode Connection type FALL | NOHEATCLOUD;
+		explode Tower type FALL | SMOKE | NOHEATCLOUD;
+		explode Top type FALL | SMOKE | NOHEATCLOUD;
+		explode Support1 type FALL | NOHEATCLOUD;
+		explode Support2 type FALL | NOHEATCLOUD;
+		explode Pipe1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Pipe2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Pipe3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Silo type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Block1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Block2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Platform type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Outer-Ring type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Middle-Ring type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Inner-Ring type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Hatch1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Hatch2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Hatch3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Connection type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Tower type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Top type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Support1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Support2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Pipe1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Pipe2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode Pipe3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Silo type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Block1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Block2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Platform type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Outer-Ring type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Middle-Ring type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Inner-Ring type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Hatch1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Hatch2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Hatch3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Connection type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Tower type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Top type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Support1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Support2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Pipe1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Pipe2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Pipe3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

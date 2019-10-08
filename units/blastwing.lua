@@ -18,8 +18,6 @@ return {
 		cruisealt = "32",
 		description = "Kamikaze EMP Bomb Drone",
 		downloadable = 1,
-		energymake = 1,
-		energyuse = 0,
 		explodeas = "BLASTWING",
 		firestandorders = 1,
 		footprintx = 3,

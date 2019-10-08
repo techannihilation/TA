@@ -408,6 +408,26 @@ shieldBursts1000 = {
   count      = 10,
 }
 
+shieldBursts2200 = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "gun",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 1600,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
+  directional= true,
+  repeatEffect = true,
+  noIconDraw = true,
+  disableabovelevel = 3,
+  priority   = 3,
+  count      = 12,
+}
+
 ----------------------------------------------------------------------------
 -- Fusion ------------------------------------------------------------------
 ----------------------------------------------------------------------------
