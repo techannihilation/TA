@@ -48,7 +48,6 @@ local comDefs = {
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
-}
 --Talon
   [UnitDefNames["talon_com"].id] = true,
   [UnitDefNames["talon_com1"].id] = true,

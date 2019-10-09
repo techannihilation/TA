@@ -32,7 +32,7 @@ return {
 		mass = 1941,
 		maxdamage = 4675,
 		maxslope = 187,
-		maxvelocity = 1.25,
+		maxvelocity = 1.4,
 		maxwaterdepth = 35,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",

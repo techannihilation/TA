@@ -1,4 +1,4 @@
-treturn {
+return {
 	tllgate = {
 		activatewhenbuilt = true,
 		buildangle = 1700,
@@ -17,7 +17,6 @@ treturn {
 		corpse = "tllgate_dead",
 		description = "Plasma Deflector",
 		energystorage = 1800,
-		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
 		footprintx = 5,
 		footprintz = 3,
