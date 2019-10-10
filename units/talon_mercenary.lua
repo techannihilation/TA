@@ -30,7 +30,7 @@ return {
 		mass = 50,
 		maxdamage = 250,
 		maxslope = 17,
-		maxvelocity = 2.5,
+		maxvelocity = 2.25,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
@@ -53,7 +53,7 @@ return {
 		upright = true,
 		customparams = {
 			buildpic = "talon_mercenary.png",
-			faction = "ARM",
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {

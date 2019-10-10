@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece base, plant, plant2, plant3, wall1, gate1a, gate1b, gate2a, gate2b, wall2, gate3a, gate3b,
-	  gate4a, gate4b, pipe, flashPink, flashBlue, lever, Lnano, LnanoP, Rnano, RnanoP;
+piece base, wall1, gate1a, gate1b, gate2a, gate2b, wall2, gate3a, gate3b,
+	  gate4a, gate4b, flashPink, flashBlue, lever, Lnano, LnanoP, Rnano, RnanoP;
 
 static-var spray, unitview, statechg_DesiredState, statechg_StateChanging, Static_Var_4, working;
 
@@ -14,7 +14,6 @@ activatescr()
 {
 	if( TRUE )
 	{
-		hide plant3;
 		turn gate1a to z-axis <-35> speed <15>;
 		turn gate2a to z-axis <-35> speed <15>;
 		turn gate3a to z-axis <35> speed <15>;
@@ -28,7 +27,6 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		show plant3;
 		turn gate1a to z-axis <0> speed <30>;
 		turn gate2a to z-axis <0> speed <30>;
 		turn gate3a to z-axis <0> speed <30>;
@@ -206,7 +204,7 @@ StopBuilding()
 
 QueryBuildInfo(piecenum)
 {
-	piecenum = plant;
+	piecenum = base;
 }
 
 QueryNanoPiece(piecenum)

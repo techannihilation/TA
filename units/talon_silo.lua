@@ -16,7 +16,7 @@ return {
 		corpse = "dead",
 		description = "Nuclear Missile Launcher",
 		digger = 1,
-		explodeas = "ATOMIC_BLASTSML",
+		explodeas = "ATOMIC_BLAST",
 		firestandorders = 1,
 		firestate = 0,
 		footprintx = 8,

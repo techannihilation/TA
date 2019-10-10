@@ -42,7 +42,7 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
-		sightdistance = 350,
+		sightdistance = 250,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -54,7 +54,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 4.224,
-		turnrate = 500,
+		turnrate = 250,
 		unitname = "talon_biker",
 		unitrestricted = 150,
 		customparams = {
