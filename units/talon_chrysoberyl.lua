@@ -87,8 +87,9 @@ return {
 			[25] = "talon_fdrag",
 			[26] = "talon_atl",
 			[27] = "talon_fhlt",
-			[28] = "talon_frl",
-			[29] = "talon_kernel",
+			[28] = "talon_fsprinkler",
+			[29] = "talon_frl",
+			[30] = "talon_kernel",
 		},
 		customparams = {
 			buildpic = "talon_chrysoberyl.dds",

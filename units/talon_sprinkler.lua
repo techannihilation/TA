@@ -152,7 +152,6 @@ return {
 					default = 75,
 					subs = 5,
 				},
-
 			},
 		},
 		weapons = {
