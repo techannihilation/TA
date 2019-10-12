@@ -6,8 +6,7 @@
 piece  turret1, turret2, sleeve1, sleeve2, sleeve3, base,
 		barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, flare1, flare2, flare3, flare4, flare5, flare6,
 		fire, cover1, cover2, cover3, cover4, cover5, cover6, cover7,
-		w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, 
-		w13, w14, w15, w16, w17, w18, w19, w20, w21, w22, w23, w24, gun, 
+		w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12,gun, 
 		wakes1, wakes2, mis1, mis2, body, cycle, aimfrom, depth_aim1, depth_aim2;
 
 static-var  gun_1, restore_delay, gun_2, turret_1, beforehealth;
@@ -61,16 +60,7 @@ Create()
 	hide flare4;
 	hide flare5;
 	hide flare6;
-	dont-cache flare1;
-	dont-cache flare2;
-	dont-cache flare3;
-	dont-cache flare4;
-	dont-cache flare5;
-	dont-cache flare6;
 	hide fire;
-	dont-cache fire;
-	dont-cache body;
-	
 	turn sleeve3 to y-axis <180.000000> now;
 	
 	gun_1 = 0;
@@ -120,18 +110,6 @@ StartMoving()
 		emit-sfx 3 from w10;
 		emit-sfx 3 from w11;
 		emit-sfx 3 from w12;
-		emit-sfx 3 from w13;
-		emit-sfx 3 from w14;
-		emit-sfx 3 from w15;
-		emit-sfx 3 from w16;
-		emit-sfx 3 from w17;
-		emit-sfx 3 from w18;
-		emit-sfx 3 from w19;
-		emit-sfx 3 from w20;
-		emit-sfx 3 from w21;
-		emit-sfx 3 from w22;
-		emit-sfx 3 from w23;
-		emit-sfx 3 from w24;
 		emit-sfx 5 from w1;
 		emit-sfx 5 from w2;
 		emit-sfx 5 from w3;
@@ -144,18 +122,6 @@ StartMoving()
 		emit-sfx 5 from w10;
 		emit-sfx 5 from w11;
 		emit-sfx 5 from w12;
-		emit-sfx 5 from w13;
-		emit-sfx 5 from w14;
-		emit-sfx 5 from w15;
-		emit-sfx 5 from w16;
-		emit-sfx 5 from w17;
-		emit-sfx 5 from w18;
-		emit-sfx 5 from w19;
-		emit-sfx 5 from w20;
-		emit-sfx 5 from w21;
-		emit-sfx 5 from w22;
-		emit-sfx 5 from w23;
-		emit-sfx 5 from w24;
 		sleep 500;
 	}
 }
@@ -279,8 +245,8 @@ AimSecondary(heading, pitch)
 	set-signal-mask SIG_AIM_2;
 	turn sleeve3 to y-axis heading speed <80>;
 	turn cover7 to x-axis <0.000000> - pitch speed <50>;
-	wait-for-turn turret2 around y-axis;
-	wait-for-turn sleeve3 around x-axis;
+	wait-for-turn sleeve3 around y-axis;
+	wait-for-turn cover7 around x-axis;
 	start-script RestoreAfterDelay2();
 	return (1);
 }

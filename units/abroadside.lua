@@ -36,7 +36,7 @@ return {
 		mass = 297481,
 		maxdamage = 1000000,
 		maxslope = 10,
-		maxvelocity = 0.95,
+		maxvelocity = 0.9,
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "BROADSIDE",

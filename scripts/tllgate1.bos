@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, side1, side2, side3, side4, side5, side6, systemon, sp;
+piece  base, body, side1, side2, side3, side4, side5, side6, systemon, sp, gun;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 

@@ -70,6 +70,16 @@ return {
 		type = CMDTYPE.ICON_MODE,
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
+
+  armgate3 = {
+	{
+		name = "shield_ag3",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+
   },
   armflosh = {
 	{
@@ -272,6 +282,15 @@ return {
   tllgate2 = {
 	{
 		name = "shield_tg2",
+		cob = "Shield",
+		tooltip = "Toggle shield activation",
+		type = CMDTYPE.ICON_MODE,
+		params = {'1', 'Shield Off', 'Shield On'},
+	},
+  },
+  tllgate3 = {
+	{
+		name = "shield_tg3",
 		cob = "Shield",
 		tooltip = "Toggle shield activation",
 		type = CMDTYPE.ICON_MODE,

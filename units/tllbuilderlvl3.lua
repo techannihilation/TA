@@ -61,7 +61,7 @@ return {
 			[4] = "tllobliterator1",
 			[5] = "tlldmc",
 			[6] = "tlldb",
-			[7] = "tllgate1",
+			[7] = "tllgate3",
 			[8] = "tllgazelle",
 			[9] = "tllion",
 			[10] = "tlllrpt1",

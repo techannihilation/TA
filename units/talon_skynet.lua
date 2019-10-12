@@ -35,7 +35,7 @@ return {
 		mass = 350000,
 		maxdamage = 420000,
 		maxslope = 10,
-		maxvelocity = 0.75,
+		maxvelocity = 0.85,
 		maxwaterdepth = 0,
 		metalstorage = 10000,
 		name = "Skynet",

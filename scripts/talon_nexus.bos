@@ -3,57 +3,12 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  pad1, flare, turret, barrel, sleeve, base, dish, w1, w2,
+piece  pad, flare, turret, barrel, sleeve, base, dish, w1, w2,
        w3, w4, w5, w6, w7, w8, w9, w10, anti, antinuke,
-       w11, w12, wakes, pad2, pad3;
+       w11, w12, wakes, land1, land2, land3;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8;
+static-var  Static_Var_1, Static_Var_2;
 
-
-Lights()
-{
-	set-signal-mask 8;
-	while( TRUE )
-	{
-		if( !Static_Var_7 AND Static_Var_8 )
-		{
-			show pad1;
-			show pad2;
-			show pad3;
-			sleep 1200;
-		}
-		if( Static_Var_7 == 1 )
-		{
-			show pad1;
-			show pad2;
-			show pad3;
-			sleep 600;
-		}
-		if( Static_Var_7 == 2 )
-		{
-			show pad1;
-			show pad2;
-			show pad3;
-			sleep 600;
-		}
-		else
-		{
-			hide pad1;
-		}
-		hide pad2;
-		hide pad3;
-		sleep 333;
-	}
-}
-
-
-
-InitState()
-{
-	Static_Var_3 = 1;
-	Static_Var_4 = 0;
-}
 
 RockOnWaves()
 {
@@ -73,36 +28,14 @@ RockOnWaves()
 	}
 }
 
-RequestState(requestedstate, currentstate)
-{
-	if( Static_Var_4 )
-	{
-		Static_Var_3 = requestedstate;
-		return (0);
-	}
-	Static_Var_4 = 1;
-	currentstate = Static_Var_3;
-	Static_Var_3 = requestedstate;
-	while( Static_Var_3 != currentstate )
-	{
-		if( Static_Var_3 == 0 )
-		{
-			currentstate = 0;
-		}
-		if( Static_Var_3 == 1 )
-		{
-			currentstate = 1;
-		}
-	}
-	Static_Var_4 = 0;
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
+	start-script RockOnWaves();
+	spin dish around y-axis speed <60.>;
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -136,19 +69,8 @@ RestoreAfterDelay()
 
 Create()
 {
-	//hide pad1;
-	//hide pad2;
-	//hide pad3;
 	Static_Var_1 = 0;
-	call-script InitState();
 	start-script SmokeUnit();
-	start-script RockOnWaves();
-	start-script Lights();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
-	spin dish around y-axis speed <60.>;
 }
 
 StartMoving()
@@ -195,10 +117,11 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
-QueryLandingPad(Func_Var_1, Func_Var_2)
+QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	Func_Var_1 = 0;
-	Func_Var_2 = 0;
+	Func_Var_1 = 25;
+	Func_Var_2 = 26;
+	Func_Var_3 = 27;
 }
 
 AimPrimary(heading, pitch)
@@ -225,12 +148,10 @@ AimTertiary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-
 	turn turret to y-axis heading speed <100.000000>;
-	turn sleeve to x-axis pitch speed <100.000000> ;
+	turn sleeve to x-axis <0> - pitch speed <100.000000> ;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
-
 	start-script RestoreAfterDelay();
 	return (1);
 
@@ -242,11 +163,8 @@ FireTertiary()
 	set-signal-mask 16;
 	
 	emit-sfx 1025 from flare;
-//	move sleeve to z-axis [-1.] now;
-//	move sleeve to z-axis [0.] speed [1.];
-//	move barrel to z-axis [-1.] now;
-//	move barrel to z-axis [0.] speed [1.];
-	
+	move sleeve to z-axis [-1.] now;
+	move sleeve to z-axis [0.] speed [1.];
 	spin barrel around z-axis speed <300.000000>;	
 	sleep 300;
 
@@ -269,7 +187,7 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode base type NOHEATCLOUD;
 		explode dish type NOHEATCLOUD;
-		explode pad1 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
 		explode turret type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -278,7 +196,7 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode base type NOHEATCLOUD;
 		explode dish type SHATTER;
-		explode pad1 type FALL;
+		explode pad type FALL;
 		explode turret type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -287,14 +205,14 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode base type NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode dish type SHATTER;
-		explode pad1 type FALL;
+		explode pad type FALL;
 		explode turret type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode dish type SHATTER;
-	explode pad1 type FALL;
+	explode pad type FALL;
 	explode turret type FALL | NOHEATCLOUD;
 	return (corpsetype);
 }

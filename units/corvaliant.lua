@@ -46,7 +46,7 @@ return {
 		immunetoparalyzer = 1,
 		mass = 128316,
 		maxdamage = 310000,
-		maxvelocity = 1.2,
+		maxvelocity = 1.05,
 		maxwaterdepth = 0,
 		metalmake = 2.5,
 		mobilestandorders = 1,

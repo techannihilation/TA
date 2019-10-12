@@ -54,6 +54,7 @@ return {
 			[1] = "talon_lancelet",
 			[2] = "talon_frigate",
 			[3] = "talon_dread",
+			[4] = "talon_hcar",
 		},
 		customparams = {
 			buildpic = "talon_asy.dds",

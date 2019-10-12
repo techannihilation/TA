@@ -45,7 +45,7 @@ return {
 		immunetoparalyzer = 1,
 		mass = 134000,
 		maxdamage = 274000,
-		maxvelocity = 1.35,
+		maxvelocity = 1.15,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Hope",

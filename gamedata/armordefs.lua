@@ -254,6 +254,8 @@ return {
 	"corecs",
 	"tllecs",
 	"talon_dread",
+	"talon_hcar",
+
 },
 	
 	--### LAND ###

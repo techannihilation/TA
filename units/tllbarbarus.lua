@@ -46,7 +46,7 @@ return {
 		immunetoparalyzer = 1,
 		mass = 149302,
 		maxdamage = 335000,
-		maxvelocity = 1.1,
+		maxvelocity = 1.05,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Barbarus",

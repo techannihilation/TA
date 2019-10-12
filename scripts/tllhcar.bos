@@ -98,17 +98,12 @@ Deactivate()
 	cache radar;
 }
 
-QueryLandingPad(Func_Var_1, Func_Var_2)
+QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4 )
 {
-	Static_Var_1 = !Static_Var_1;
-	if( Static_Var_1 )
-	{
-		Func_Var_1 = 6;
-		Func_Var_2 = 5;
-		return (0);
-	}
-	Func_Var_1 = 5;
-	Func_Var_2 = 6;
+	Func_Var_1 = 3;
+	Func_Var_2 = 5;
+	Func_Var_3 = 7;
+	Func_Var_4 = 9;
 }
 
 SweetSpot(piecenum)

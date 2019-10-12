@@ -111,7 +111,7 @@ return {
 			},
 		},
 		weapondefs = {
-			corssub_weapon = {
+			talonsub_weapon = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -149,7 +149,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CORSSUB_WEAPON",
+				def = "TALONSUB_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 45,
 				onlytargetcategory = "NOTHOVERNOTVTOL",
