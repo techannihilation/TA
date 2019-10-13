@@ -55,7 +55,8 @@ return {
 			[1] = "talon_eca",
 			[2] = "talon_hornet",
 			[3] = "talon_pampa",
-			[4] = "talon_handgod",
+			[4] = "talon_tau",
+			[5] = "talon_handgod",
 		},
 		customparams = {
 			buildpic = "talon_eap.dds",

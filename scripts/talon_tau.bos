@@ -1,0 +1,285 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, link, lclamp, rclamp, neck, lengine, rengine, wings, body, lwing, rwing,
+		lfrontengine, rfrontengine, frontclamp, flare1, flare2, eng1, eng2, eng3, eng4;
+
+static-var  Static_Var_1, unitviewer, statechg_DesiredState, statechg_StateChanging;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move lclamp to x-axis [-3.000000] speed [2.5];
+		move rclamp to x-axis [3.000000] speed [2.5];
+		move neck to z-axis [15.000000] speed [5];
+		
+		move lfrontengine to x-axis [-2.000000] speed [2.5];
+		move rfrontengine to x-axis [2.000000] speed [2.5];
+		sleep 1000;
+	}
+	sleep 50;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move lfrontengine to x-axis [0.000000] speed [2.5];
+		move rfrontengine to x-axis [0.000000] speed [2.5];
+		move lclamp to x-axis [0.000000] speed [2.5];
+		move rclamp to x-axis [0.000000] speed [2.5];
+		move neck to z-axis [0.000000] speed [5];
+		sleep 1000;
+	}
+	sleep 50;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+			emit-sfx smoketype from lengine;
+			emit-sfx smoketype from rengine;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	unitviewer = FALSE;
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryTransport(Func_Var_1)
+{
+	Func_Var_1 = 1;
+}
+
+Activate()
+{
+	if( unitviewer )
+	{
+		start-script RequestState(0);
+	}
+}
+
+BeginTransport(Func_Var_1)
+{
+	move link to y-axis [0.000000] - Func_Var_1 now;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	if( unitviewer )
+	{
+		start-script RequestState(1);
+	}
+}
+
+EndTransport()
+{
+	start-script RequestState(1);
+}
+
+StopMoving()
+{
+	signal 2;
+	Static_Var_1 = 0;
+	turn lwing to z-axis <0.000000> speed <50.000000>;
+	turn rwing to z-axis <0.000000> speed <50.000000>;
+	turn lengine to z-axis <0.000000> speed <50.000000>;
+	turn rengine to z-axis <0.000000> speed <50.000000>;
+}
+
+MoveRate1()
+{
+	signal 2;
+	set-signal-mask 2;
+	Static_Var_1 = 1;
+	turn lwing to z-axis <90.000000> speed <25.000000>;
+	turn rwing to z-axis <-90.000000> speed <25.000000>;
+	turn lengine to z-axis <-90.000000> speed <25.000000>;
+	turn rengine to z-axis <90.000000> speed <25.000000>;
+	
+}
+
+MoveRate2()
+{
+	signal 2;
+	set-signal-mask 2;
+	Static_Var_1 = 2;
+	turn lwing to z-axis <90.000000> speed <50.000000>;
+	turn rwing to z-axis <-90.000000> speed <50.000000>;
+	turn lengine to z-axis <-90.000000> speed <50.000000>;
+	turn rengine to z-axis <90.000000> speed <50.000000>;
+}
+
+MoveRate3()
+{
+	signal 2;
+	set-signal-mask 2;
+	Static_Var_1 = 3;
+	turn lwing to z-axis <90.000000> speed <50.000000>;
+	turn rwing to z-axis <-90.000000> speed <50.000000>;
+	turn lengine to z-axis <-90.000000> speed <50.000000>;
+	turn rengine to z-axis <90.000000> speed <50.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	return (1);
+}
+
+FirePrimary(Func_Var_1)
+{
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare1;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare1;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	return (1);
+}
+
+FireSecondary(Func_Var_1)
+{
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = flare2;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare2;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode neck type NOHEATCLOUD;
+		explode wings type NOHEATCLOUD;
+		explode lclamp type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode rclamp type NOHEATCLOUD;
+		explode lengine type NOHEATCLOUD;
+		explode rengine type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode neck type NOHEATCLOUD;
+		explode wings type NOHEATCLOUD | FALL;
+		explode lclamp type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;
+		explode rclamp type NOHEATCLOUD | FALL;
+		explode lengine type NOHEATCLOUD | FALL;
+		explode rengine type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode neck type NOHEATCLOUD;
+		explode wings type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lclamp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode rclamp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lengine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rengine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode neck type NOHEATCLOUD;
+	explode wings type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lclamp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode rclamp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lengine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rengine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

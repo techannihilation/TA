@@ -8,7 +8,7 @@ piece  base, pelvis, lflegy, lfleg, lfleg2, lfleg3, lfleg4, lflegy2, rflegy, rfl
        turret, pitchturret, Lbarrel1, Lbarrel2, Rbarrel1, Rbarrel2, laser1, laser2,
        Rflare1, Rflare2, Rflare3, rflare4, Lflare1, Lflare2, Lflare3, Lflare4, aimpoint;
 
-static-var  bMoving, bAiming, gun_1, gun_2, gun_3;
+static-var  bMoving, bAiming, gun_1, gun_2, gun_3, isgunone;
 
 // Signal definitions
 #define SIG_AIM_1				2
@@ -281,6 +281,7 @@ Create()
 {
 	bMoving = 0;
 	bAiming = 0;
+	isgunone = 0;
 	gun_1 = 0;
 	gun_2 = 0;
 	gun_3 = 0;
@@ -293,7 +294,8 @@ Create()
 
 RestoreAfterDelay()
 {
-	sleep 6000;
+	sleep 4000;
+	isgunone = 0;
 	bAiming = 0;
 	turn turret to y-axis <0.> speed <25.000000>;
 	turn pitchturret to x-axis <0.> speed <25.000000>;
@@ -323,6 +325,7 @@ AimPrimary(heading, Pitch)
 	turn pitchturret to x-axis <0.> - pitch speed <50.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn pitchturret around x-axis;
+	isgunone = 1;
 	start-script RestoreAfterDelay();
 	return(1);
 }
@@ -331,8 +334,12 @@ AimSecondary(heading, Pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
+	while(isgunone ==0)
+	{
+		sleep 100;
+	}
+	turn turret to y-axis heading speed <50.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn pitchturret around x-axis;
 	return(1);
 }
 

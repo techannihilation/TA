@@ -366,6 +366,13 @@ cafus = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
   },
+
+  talon_tau = {
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=8, length=35, emitVector = {0,1,0}, piece="eng1", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=8, length=35, emitVector = {0,1,0}, piece="eng2", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=6, length=30, emitVector = {0,1,0}, piece="eng3", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=6, length=30, emitVector = {0,1,0}, piece="eng4", noIconDraw = true, priority=3, onActive=true}},
+  },
   armor = {
     {class='ThundAirJet',options={color={0.1,0.4,0.6}, width=7, length=35, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.1,0.4,0.6}, width=7, length=35, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},

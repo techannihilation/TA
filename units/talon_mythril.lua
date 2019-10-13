@@ -181,7 +181,7 @@ return {
 				laserflaresize = 15,
 				name = "Talon Tachyon Accelerator",
 				noselfdamage = true,
-				range = 1750,
+				range = 1500,
 				reloadtime = 2,
 				rgbcolor = "0.1 0.9 1.0",
 				soundhitdry = "",

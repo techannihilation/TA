@@ -9,7 +9,7 @@ piece  rgunflare, lgunflare, rmispoint, lmispoint, head, torso, hips, mpack,
        rrock, lrock, lfoot, rfoot, lrockpoint, rrockpoint, rback, lback;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8;
+            Static_Var_6, Static_Var_7, Static_Var_8, isgunone;
 
 
 walk()
@@ -117,6 +117,7 @@ Create()
 	hide rgunflare;
 	hide lrockpoint;
 	hide rrockpoint;
+	isgunone = 0;
 	Static_Var_1 = 0;
 	Static_Var_4 = 0;
 	Static_Var_5 = 0;
@@ -170,6 +171,7 @@ StopMoving()
 RestoreAfterDelay()
 {
 	sleep 3000;
+	isgunone = 0;
 	while( Static_Var_8 OR Static_Var_7 )
 	{
 		sleep 100;
@@ -197,6 +199,8 @@ AimPrimary(heading, pitch)
 	wait-for-turn torso around y-axis;
 	wait-for-turn rarm around x-axis;
 	wait-for-turn larm around x-axis;
+	isgunone = 1;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -288,7 +292,12 @@ AimSecondary(heading, pitch)
 {
 	signal 4;
 	set-signal-mask 4;
-	start-script RestoreAfterDelay();
+	while( isgunone ==0)
+	{
+		sleep 100;
+	}
+	turn torso to y-axis heading speed <75.>;
+	wait-for-turn torso around y-axis;
 	return (1);
 }
 

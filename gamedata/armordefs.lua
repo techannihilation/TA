@@ -151,6 +151,7 @@ return {
 	"corbtrans",
 	"talon_wyvern",
 	"talon_rukh",
+	"talon_tau",
 },
 
 --### SEA ###
