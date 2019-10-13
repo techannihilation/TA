@@ -10,7 +10,7 @@ piece  base, body, trap, missile, w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, 
 		torpedo1, torpedo2, torpedo3, torpedo4, flare1a, flare1b, flare2a, flare2b, flare3a, flare3b, flare4a, flare4b,
 		pad1, pad2, pad3, pad4, pads, aimpad, light, land1, land2, land3, land4 ;
 
-static-var  gun_1, gun_2, gun_3, torpedo_1, torpedo_2, torpedo_3, torpedo_4, restore_delay;
+static-var  gun_1, gun_2, gun_3, gun_4, gun_5, gun_6, gun_7, restore_delay;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -27,15 +27,15 @@ RockOnWaves()
 {
 	while( TRUE )
 	{
-		turn base to x-axis <1.> speed <0.5>;
+		turn base to x-axis <0.75> speed <0.25>;
 		move base to y-axis [0.] speed [0.];
 		wait-for-turn base around x-axis;
-		turn base to x-axis <-1.> speed <0.5>;
+		turn base to x-axis <-0.75> speed <0.25>;
 		move base to y-axis [-0.] speed [0.];
 		wait-for-move base along y-axis;
 		move base to y-axis [0.] speed [0.];
 		wait-for-turn base around x-axis;
-		turn base to x-axis <1.> speed <0.5>;
+		turn base to x-axis <0.75> speed <0.25>;
 		move base to y-axis [-0.] speed [0.];
 		wait-for-move base along y-axis;
 	}
@@ -78,10 +78,10 @@ Create()
 	gun_1 = 0;
 	gun_2 = 0;
 	gun_3 = 0;
-	torpedo_1 = 0;
-	torpedo_2 = 0;
-	torpedo_3 = 0;
-	torpedo_4 = 0;	
+	gun_4 = 0;
+	gun_5 = 0;
+	gun_6 = 0;
+	gun_7 = 0;	
 	
 	restore_delay = 3000;
 	hide flare1;
@@ -433,7 +433,9 @@ AimWeapon6(heading, pitch)
 	signal SIG_AIM_6;
 	set-signal-mask SIG_AIM_6;
 	turn torpedo1 to y-axis heading speed <75>;
+	turn torpedo1 to x-axis <0> - pitch speed <75>;
 	wait-for-turn torpedo1 around y-axis;
+	wait-for-turn torpedo1 around x-axis;
 	start-script RestoreTorpedo1();
 	return (1);
 }
@@ -443,7 +445,9 @@ AimWeapon7(heading, pitch)
 	signal SIG_AIM_7;
 	set-signal-mask SIG_AIM_7;
 	turn torpedo2 to y-axis heading speed <75>;
+	turn torpedo2 to x-axis <0> - pitch speed <75>;
 	wait-for-turn torpedo2 around y-axis;
+	wait-for-turn torpedo2 around x-axis;
 	start-script RestoreTorpedo2();
 	return (1);
 }
@@ -453,7 +457,9 @@ AimWeapon8(heading, pitch)
 	signal SIG_AIM_8;
 	set-signal-mask SIG_AIM_8;
 	turn torpedo3 to y-axis heading speed <75>;
+	turn torpedo3 to x-axis <0> - pitch speed <75>;
 	wait-for-turn torpedo3 around y-axis;
+	wait-for-turn torpedo3 around x-axis;
 	start-script RestoreTorpedo3();
 	return (1);
 }
@@ -463,90 +469,92 @@ AimWeapon9(heading, pitch)
 	signal SIG_AIM_9;
 	set-signal-mask SIG_AIM_9;
 	turn torpedo4 to y-axis heading speed <75>;
+	turn torpedo4 to x-axis <0> - pitch speed <75>;
 	wait-for-turn torpedo4 around y-axis;
+	wait-for-turn torpedo4 around x-axis;
 	start-script RestoreTorpedo4();
 	return (1);
 }
 
 FireWeapon6()
 {
-	++torpedo_1;
-	if (torpedo_1 == 2)
+	++gun_4;
+	if (gun_4 == 2)
 	{
-		torpedo_1 = 0;
+		gun_4 = 0;
 	}
 }
 
 FireWeapon7()
 {
-	++torpedo_2;
-	if (torpedo_2 == 2)
+	++gun_5;
+	if (gun_5 == 2)
 	{
-		torpedo_2 = 0;
+		gun_5 = 0;
 	}
 }
 
 FireWeapon8()
 {
-	++torpedo_3;
-	if (torpedo_3 == 2)
+	++gun_6;
+	if (gun_6 == 2)
 	{
-		torpedo_3 = 0;
+		gun_6 = 0;
 	}
 }
 
 FireWeapon9()
 {
-	++torpedo_4;
-	if (torpedo_4 == 2)
+	++gun_7;
+	if (gun_7 == 2)
 	{
-		torpedo_4 = 0;
+		gun_7 = 0;
 	}
 }
 
-QuerryWeapon6(piecenum)
+QueryWeapon6(piecenum)
 {
-	if (torpedo_1 == 0)
+	if (gun_4 == 0)
 	{
 		piecenum = flare1a;
 	}
-	if (torpedo_1 == 1)
+	if (gun_4 == 1)
 	{
 		piecenum = flare1b;
 	}
 }
 
-QuerryWeapon7(piecenum)
+QueryWeapon7(piecenum)
 {
-	if (torpedo_2 == 0)
+	if (gun_5 == 0)
 	{
 		piecenum = flare2a;
 	}
-	if (torpedo_2 == 1)
+	if (gun_5 == 1)
 	{
 		piecenum = flare2b;
 	}
 }
 
-QuerryWeapon8(piecenum)
+QueryWeapon8(piecenum)
 {
-	if (torpedo_3 == 0)
+	if (gun_6 == 0)
 	{
 		piecenum = flare3a;
 	}
-	if (torpedo_3 == 1)
+	if (gun_6 == 1)
 	{
 		piecenum = flare3b;
 	}
 }
 
-QuerryWeapon9(piecenum)
+QueryWeapon9(piecenum)
 {
-	if (torpedo_4 == 0)
+	if (gun_7 == 0)
 	{
 		piecenum = flare4a;
 	}
-	if (torpedo_4 == 1)
+	if (gun_7 == 1)
 	{
 		piecenum = flare4b;
 	}

@@ -70,7 +70,7 @@ return {
 		type = CMDTYPE.ICON_MODE,
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
-
+  }
   armgate3 = {
 	{
 		name = "shield_ag3",
@@ -79,7 +79,6 @@ return {
 		type = CMDTYPE.ICON_MODE,
 		params = {'1', 'Shield Off', 'Shield On'},
 	},
-
   },
   armflosh = {
 	{
