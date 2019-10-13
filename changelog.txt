@@ -4,13 +4,15 @@
 Balance:
  - Talon Sniper, Talon Oblivion (air drone), Talon Biker.
  - All Shield T1 T2 T3 T5
+ - Decrease by 10% speed of all Heroes Ship except Talon.
 
 Improvements:
  - Add T2 Storage for Talon
  - Add PlanetKiller (~Tsar)
- - Add T5 Shield for Arm/Core
+ - Add T5 Shield for Arm/Core/TLL
  - Rework LLT Talon model
  - Add T5 Turret
+ - Ad T3 Nuke TALON Ship
 
 Bugs:
  - ...
