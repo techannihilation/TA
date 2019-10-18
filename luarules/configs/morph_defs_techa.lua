@@ -1248,6 +1248,11 @@ local morphDefs = {
 	  	time = 30,
 	  	tech = 1,
 	},
+	talon_conspiracy  = {
+		into = 'talon_conspiracy1',
+	  	time = 30,
+	  	tech = 1,
+	},
 	armrad = {
 		into = 'armarad',
 	  	time = 30,

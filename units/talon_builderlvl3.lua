@@ -61,7 +61,7 @@ return {
 			[5] = "talon_covertopscentre",			
 			[6] = "talon_nanotc3",
 			[7] = "talon_talpax",
-			[8] = "talon_gate1",
+			[8] = "talon_gate3",
 			[9] = "talon_requiem",
 			[10] = "talon_elixir",
 			[11] = "talon_dmc",

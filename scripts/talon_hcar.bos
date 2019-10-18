@@ -95,8 +95,8 @@ Create()
 	hide airflare3;
 	hide airflare4;
 	turn turret2 to y-axis <180.000000> now;
-	turn airsleeve1 to x-axis <-90.000000> now;
-	turn airsleeve2 to x-axis <-90.000000> now;
+	//turn airsleeve1 to x-axis <-90.000000> now;
+	//turn airsleeve2 to x-axis <-90.000000> now;
 	start-script SmokeUnit();
 	
 }
@@ -182,8 +182,8 @@ RestoreAfterDelay()
 RestoreAfterDelay2()
 {
 	sleep restore_delay;
-	turn turret2 to y-axis <0> speed <50>;
-	turn airsleeve1 to x-axis <-90> speed <50>;
+	turn turret2 to y-axis <180> speed <50>;
+	//turn airsleeve1 to x-axis <-90> speed <50>;
 	gun_2 = 0;
 }
 
@@ -191,7 +191,7 @@ RestoreAfterDelay3()
 {
 	sleep restore_delay;
 	turn turret3 to y-axis <0> speed <50>;
-	turn airsleeve2 to x-axis <-90> speed <50>;
+	//turn airsleeve2 to x-axis <-90> speed <50>;
 	gun_3 = 0;
 }
 

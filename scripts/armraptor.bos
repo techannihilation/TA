@@ -257,10 +257,6 @@ Create()
 	hide rRakBlitz;
 	hide lmRakWerf;
 	hide rmRakWerf;
-	dont-cache lBlinker;
-	dont-shade lBlinker;
-	dont-cache rBlinker;
-	dont-shade rBlinker;
 	turn Stange to x-axis <-64.000000> now;
 	Static_Var_10 = 4;
 	unitviewer = FALSE;
@@ -421,9 +417,9 @@ FireSecondary()
 		turn lKanone to x-axis <-18.000000> speed <400.000000>;
 		move l1Lauf to z-axis [-3.000000] speed [300.000000];
 		turn Achse to y-axis <-1.000000> speed <40.000000>;
-		show l1Blitz;
+		//show l1Blitz;
 		sleep 100;
-		hide l1Blitz;
+		//hide l1Blitz;
 		move l1Lauf to z-axis [0.000000] speed [3.000000];
 		turn lSchulter to x-axis <0.000000> speed <30.000000>;
 		turn lKanone to x-axis <0.000000> speed <30.000000>;
@@ -436,10 +432,10 @@ FireSecondary()
 	{
 		turn rSchulter to x-axis <15.000000> speed <400.000000>;
 		turn rKanone to x-axis <-18.000000> speed <400.000000>;
-		show r1Blitz;
+		//show r1Blitz;
 		move r1Lauf to z-axis [-3.000000] speed [300.000000];
 		turn Achse to y-axis <1.000000> speed <40.000000>;
-		sleep 100;
+		//sleep 100;
 		move r1Lauf to z-axis [0.000000] speed [3.000000];
 		hide r1Blitz;
 		turn rSchulter to x-axis <0.000000> speed <30.000000>;
@@ -453,12 +449,12 @@ FireSecondary()
 	{
 		turn lSchulter to x-axis <15.000000> speed <400.000000>;
 		turn lKanone to x-axis <-18.000000> speed <400.000000>;
-		show l2Blitz;
+		//show l2Blitz;
 		move l2Lauf to z-axis [-3.000000] speed [300.000000];
 		turn Achse to y-axis <-1.000000> speed <40.000000>;
 		sleep 100;
 		move l2Lauf to z-axis [0.000000] speed [3.000000];
-		hide l2Blitz;
+		//hide l2Blitz;
 		turn lSchulter to x-axis <0.000000> speed <30.000000>;
 		turn lKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
@@ -470,12 +466,12 @@ FireSecondary()
 	{
 		turn rSchulter to x-axis <15.000000> speed <400.000000>;
 		turn rKanone to x-axis <-18.000000> speed <400.000000>;
-		show r2Blitz;
+		//show r2Blitz;
 		move r2Lauf to z-axis [-3.000000] speed [300.000000];
 		turn Achse to y-axis <1.000000> speed <40.000000>;
 		sleep 100;
 		move r2Lauf to z-axis [0.000000] speed [3.000000];
-		hide r2Blitz;
+		//hide r2Blitz;
 		turn rSchulter to x-axis <0.000000> speed <30.000000>;
 		turn rKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
