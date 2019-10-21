@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 1707,
 		builder = false,
 		buildpic = "tawf009.dds",
-		buildtime = 21087,
+		buildtime = 25000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -56,7 +56,7 @@ return {
 		customparams = {
 			buildpic = "tawf009.dds",
 			faction = "ARM",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
