@@ -58,7 +58,7 @@ return {
 		customparams = {
 			buildpic = "spiderlab.dds",
 			faction = "ARM",
-			providetech = "T1 Factory",
+			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {
