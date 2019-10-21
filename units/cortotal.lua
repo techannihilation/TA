@@ -48,7 +48,7 @@ return {
 		customparams = {
 			buildpic = "cortotal.dds",
 			faction = "CORE",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corgol_heap = {
