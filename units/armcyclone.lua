@@ -56,7 +56,7 @@ return {
 		customparams = {
 			buildpic = "armcyclone.dds",
 			faction = "ARM",
-			requiretech = "Advanced T3 Unit Research Centre",
+			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
