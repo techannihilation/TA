@@ -97,7 +97,7 @@ return {
 			[15] = "tlllft",
 			[16] = "tllhlt",
 			[17] = "tlllmt1",
-			[18] = "tllbuilderlvl2",
+			--[18] = "tllbuilderlvl2",
 			[19] = "tllshoretorp",
 			[20] = "tlltide",
 			[21] = "tlluwmstorage",
