@@ -2,11 +2,11 @@ return {
 	armhobo = {
 		acceleration = 0.12,
 		brakerate = 0.45,
-		buildcostenergy = 5904,
-		buildcostmetal = 475,
+		buildcostenergy = 6004,
+		buildcostmetal = 418,
 		builder = false,
 		buildpic = "armhobo.dds",
-		buildtime = 8000,
+		buildtime = 6500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -25,7 +25,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 475,
-		maxdamage = 950,
+		maxdamage = 1195,
 		maxvelocity = 2.6,
 		maxwaterdepth = 16,
 		mobilestandorders = 1,
@@ -48,7 +48,7 @@ return {
 		customparams = {
 			buildpic = "armhobo.dds",
 			faction = "ARM",
-			requiretech = "Advanced T1 Unit Research Centre",
+			--requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -130,7 +130,7 @@ return {
 				intensity = 12,
 				name = "LightningGun",
 				noselfdamage = true,
-				range = 320,
+				range = 300,
 				reloadtime = 2,
 				rgbcolor = "0.5 0.5 1.000",
 				soundhitdry = "lashit",
@@ -148,8 +148,8 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					commanders = 160,
-					default = 320,
+					commanders = 150,
+					default = 300,
 					subs = 5,
 				},
 			},

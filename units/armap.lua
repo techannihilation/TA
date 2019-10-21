@@ -65,9 +65,9 @@ return {
 			[6] = "armatlas",
 			[7] = "armkam",
 			[8] = "blastwing",
-			[9] = "armblz",
-			[10] = "armdragf",
-			[11] = "armjade",
+			--[9] = "armblz",
+			--[10] = "armdragf",
+			--[11] = "armjade",
 		},
 		customparams = {
 			buildpic = "armap.dds",

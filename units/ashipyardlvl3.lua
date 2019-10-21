@@ -46,8 +46,9 @@ return {
 		workertime = 3200,
 		yardmap = "ooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccoo",
 		buildoptions = {
-			[1] = "armhope",
-			[2] = "abroadside",
+			[1] = "abuilderlvl5",
+			[2] = "armhope",
+			[3] = "abroadside",
 		},
 		customparams = {
 			buildpic = "ashipyardlvl3.dds",

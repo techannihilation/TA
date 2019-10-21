@@ -58,7 +58,7 @@ return {
 		yardmap = "yyyyyyyyyoooyyooooooooocccoooocccoooocccoooocccoo",
 		buildoptions = {
 			[1] = "corcv",
-			[2] = "cormuskrat",
+			--[2] = "cormuskrat",
 			[3] = "corfred",
 			[4] = "cormlv",
 			[5] = "corfav",
@@ -69,8 +69,8 @@ return {
 			[10] = "corwolv",
 			[11] = "cormist",
 			[12] = "corjeag",
-			[13] = "dao",
-			[14] = "cbrutus",
+			--[13] = "dao",
+			--[14] = "cbrutus",
 			[15] = "corgfbt",
 		},
 		customparams = {

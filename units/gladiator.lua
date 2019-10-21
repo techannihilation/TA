@@ -2,8 +2,8 @@ return {
 	gladiator = {
 		acceleration = 0.06,
 		brakerate = 0.57,
-		buildcostenergy = 4923,
-		buildcostmetal = 485,
+		buildcostenergy = 4723,
+		buildcostmetal = 465,
 		builder = false,
 		buildpic = "gladiator.dds",
 		buildtime = 5200,
@@ -54,7 +54,7 @@ return {
 		customparams = {
 			buildpic = "gladiator.dds",
 			faction = "CORE",
-			requiretech = "Advanced T1 Unit Research Centre",
+			--requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -140,7 +140,7 @@ return {
 				name = "Rockets",
 				noselfdamage = true,
 				range = 475,
-				reloadtime = 3,
+				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",

@@ -71,9 +71,9 @@ return {
 			[13] = "armspy",
 			[14] = "armmark",
 			[15] = "taipan",
-			[16] = "armcav",
-			[17] = "armhdpw",
-			[18] = "armmech",
+			--[16] = "armcav",
+			--[17] = "armhdpw",
+			--[18] = "armmech",
 			[19] = "akmech",
 		},
 		customparams = {

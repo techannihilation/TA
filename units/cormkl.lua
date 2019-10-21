@@ -65,7 +65,7 @@ return {
 		customparams = {
 			buildpic = "cormkl.dds",
 			faction = "CORE",
-			requiretech = "Advanced T4 Unit Research Centre",
+			--requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			cormkl_dead = {

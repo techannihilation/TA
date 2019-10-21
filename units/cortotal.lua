@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 3374,
 		builder = false,
 		buildpic = "cortotal.dds",
-		buildtime = 38000,
+		buildtime = 44000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -48,7 +48,7 @@ return {
 		customparams = {
 			buildpic = "cortotal.dds",
 			faction = "CORE",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corgol_heap = {

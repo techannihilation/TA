@@ -64,7 +64,7 @@ return {
 			[2] = "tllmetalmakerlvl3",
 			[3] = "tllemstor",
 			[4] = "tllmas",
-			[5] = "tllprototype",
+			--[5] = "tllprototype",
 			[6] = "tllshipyardlvl3",
 			[7] = "tlldevelop",
 			[8] = "tllnanotc3",

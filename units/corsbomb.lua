@@ -55,7 +55,7 @@ return {
 		customparams = {
 			buildpic = "corsbomb.dds",
 			faction = "CORE",
-			requiretech = "Advanced T3 Unit Research Centre",
+			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

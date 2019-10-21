@@ -55,13 +55,13 @@ return {
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {
 			[1] = "armspid",
-			[2] = "armraz1",
+			--[2] = "armraz1",
 			[3] = "armeak",
 			[4] = "armpraet",
 			[5] = "armraptor",
 			[6] = "armolympus",
 			[7] = "exoarm",
-			[8] = "arm_furie1",
+			--[8] = "arm_furie1",
 		},
 		customparams = {
 			buildpic = "arm_mech_lab.dds",

@@ -52,7 +52,7 @@ return {
 		customparams = {
 			buildpic = "core_riptide.dds",
 			faction = "CORE",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corgol_heap = {

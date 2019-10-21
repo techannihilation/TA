@@ -58,7 +58,7 @@ return {
 		yardmap = "ooooooooooccccooooccccooooccccooooccccooooccccoo",
 		buildoptions = {
 			[1] = "armcv",
-			[2] = "armbeaver",
+			--[2] = "armbeaver",
 			[3] = "armmarv",
 			[4] = "armmlv",
 			[5] = "armfav",
@@ -69,10 +69,10 @@ return {
 			[10] = "armjanus",
 			[11] = "armsam",
 			[12] = "ahermes",
-			[13] = "armsonic",
-			[14] = "armscar",
+			--[13] = "armsonic",
+			--[14] = "armscar",
 			[15] = "armrottweiler",
-			[16] = "armarty",
+			--[16] = "armarty",
 		},
 		customparams = {
 			buildpic = "armvp.dds",

@@ -2,11 +2,11 @@ return {
 	macross = {
 		acceleration = 0.3,
 		brakerate = 0.96,
-		buildcostenergy = 152410,
-		buildcostmetal = 12219,
+		buildcostenergy = 212410,
+		buildcostmetal = 10919,
 		builder = false,
 		buildpic = "macross.dds",
-		buildtime = 102487,
+		buildtime = 210000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -17,9 +17,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Krogoth Class All-Terrain Kbot",
-		energymake = 22.5,
-		energystorage = 100,
-		energyuse = 10.75,
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 4,
@@ -32,7 +29,7 @@ return {
 		mass = 12219,
 		maxdamage = 40950,
 		maxslope = 20,
-		maxvelocity = 1.7,
+		maxvelocity = 1.5,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "HTKBOT4",
@@ -56,7 +53,7 @@ return {
 		customparams = {
 			buildpic = "macross.dds",
 			faction = "CORE",
-			requiretech = "Advanced T3 Unit Research Centre",
+			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -140,7 +137,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					default = 1350,
+					default = 900,
 					subs = 5,
 				},
 			},

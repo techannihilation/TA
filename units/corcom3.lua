@@ -97,7 +97,7 @@ return {
 			[15] = "corhlt",
 			[16] = "corrl1",
 			[17] = "cordl",
-			[18] = "cbuilderlvl2",
+			--[18] = "cbuilderlvl2",
 			[19] = "cortide",
 			[20] = "coruwms",
 			[21] = "coruwes",

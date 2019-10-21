@@ -55,7 +55,7 @@ return {
 			[5] = "coresupp",
 			[6] = "corroy",
 			[7] = "cortship",
-			[8] = "corasship",
+			--[8] = "corasship",
 		},
 		customparams = {
 			buildpic = "corsy.dds",

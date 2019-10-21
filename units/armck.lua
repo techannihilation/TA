@@ -73,7 +73,7 @@ return {
 			[13] = "armvp",
 			[14] = "armap",
 			[15] = "armhp",
-			[16] = "armrech1",			
+			--[16] = "armrech1",			
 			[17] = "armnanotc",
 			[18] = "armeyes",
 			[19] = "armrad",

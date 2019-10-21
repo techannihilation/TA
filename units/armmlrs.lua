@@ -2,11 +2,11 @@ return {
 	armmlrs = {
 		acceleration = 0.34,
 		brakerate = 0.02931,
-		buildcostenergy = 125816,
-		buildcostmetal = 6671,
+		buildcostenergy = 145816,
+		buildcostmetal = 10171,
 		builder = false,
 		buildpic = "armmlrs.dds",
-		buildtime = 155000,
+		buildtime = 200000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -29,7 +29,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 6671,
-		maxdamage = 6730,
+		maxdamage = 5730,
 		maxslope = 10,
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
@@ -53,7 +53,7 @@ return {
 		customparams = {
 			buildpic = "armmlrs.dds",
 			faction = "ARM",
-			requiretech = "Advanced T3 Unit Research Centre",
+			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
 			explosiongenerators = {
@@ -142,7 +142,7 @@ return {
 				badtargetcategory = "SMALL TINY",
 				def = "BARRAGE",
 				maindir = "0 0 1",
-				maxangledif = 180,
+				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
 		},

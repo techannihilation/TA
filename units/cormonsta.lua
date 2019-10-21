@@ -54,7 +54,7 @@ return {
 			buildpic = "cormonsta.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

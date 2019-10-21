@@ -99,7 +99,7 @@ return {
 			[16] = "tllsam",
 			[17] = "tllshoretorp",
 			[18] = "tlljumpdrive",
-			[19] = "tllbuilderlvl2",
+			--[19] = "tllbuilderlvl2",
 			[20] = "tlltide",
 			[21] = "tlluwmstorage",
 			[22] = "tlluwestorage",
