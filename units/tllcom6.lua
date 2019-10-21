@@ -97,7 +97,7 @@ return {
 			[14] = "tllpulaser",
 			[15] = "tllflak",
 			[16] = "tlljumpdrive",
-			[17] = "tllbuilderlvl2",
+			--[17] = "tllbuilderlvl2",
 			[18] = "tlluwfusion",
 			[19] = "tllwmmohoconv",
 			[20] = "tllauwmex",
