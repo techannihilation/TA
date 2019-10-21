@@ -91,7 +91,7 @@ return {
 			[8] = "corlab",
 			[9] = "corvp",
 			[10] = "corap",
-			[11] = "cnanotower",
+			--[11] = "cnanotower",
 			[12] = "core_hexapod_lab",
 			--[13] = "correch4",
 			[14] = "corfort",
