@@ -54,7 +54,7 @@ return {
 		transportsize = 3,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.4388,
+		turninplacespeedlimit = 1.45,
 		turnrate = 370,
 		unitname = "corthovr",
 		waterline = 10,
