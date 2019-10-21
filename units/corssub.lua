@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 1867,
 		builder = false,
 		buildpic = "corssub.dds",
-		buildtime = 23007,
+		buildtime = 25000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
