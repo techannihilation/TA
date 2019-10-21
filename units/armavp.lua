@@ -72,8 +72,8 @@ return {
 			[12] = "armjam",
 			[13] = "armshieldgen",
 			[14] = "armhorg",
-			[15] = "armscpion",
-			[16] = "armcd",
+			--[15] = "armscpion",
+			--[16] = "armcd",
 			[17] = "tankanotor",
 		},
 		customparams = {
