@@ -31,7 +31,7 @@ return {
 		losemitheight = 55,
 		maneuverleashlength = 640,
 		mass = 8146,
-		maxdamage = 35000,
+		maxdamage = 20475,
 		maxslope = 30,
 		maxvelocity = 1,
 		maxwaterdepth = 50,
@@ -57,7 +57,7 @@ return {
 		customparams = {
 			buildpic = "akmech.dds",
 			faction = "ARM",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -154,7 +154,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 520,
 				damage = {
-					default = 250,
+					default = 150,
 					subs = 5,
 				},
 			},
@@ -163,12 +163,12 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 300,
+				energypershot = 150,
 				firestarter = 90,
 				impulseboost = 0,
 				impulsefactor = 0,
 				name = "Vengence Laser",
-				range = 545,
+				range = 525,
 				reloadtime = 0.75,
 				rgbcolor = "0.1875 0.109375 0.65625",
 				soundhitdry = "xplosml3",
