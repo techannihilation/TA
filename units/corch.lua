@@ -72,7 +72,7 @@ return {
 			[12] = "corap",
 			[13] = "corhp",
 			[14] = "cahp",
-			[15] = "correch1",
+			--[15] = "correch1",
 			[16] = "cornanotc",
 			[17] = "coreyes",
 			[18] = "corrad",
