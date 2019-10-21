@@ -60,7 +60,7 @@ return {
 		customparams = {
 			buildpic = "ARMARPE.dds",
 			faction = "CORE",
-			requiretech = "Advanced T1 Unit Research Centre",
+			--requiretech = "Advanced T1 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
