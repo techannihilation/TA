@@ -61,7 +61,7 @@ return {
 			[5] = "armraptor",
 			[6] = "armolympus",
 			[7] = "exoarm",
-			[8] = "arm_furie1",
+			--[8] = "arm_furie1",
 		},
 		customparams = {
 			buildpic = "arm_mech_lab.dds",
