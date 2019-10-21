@@ -46,7 +46,7 @@ return {
 		workertime = 3200,
 		yardmap = "ooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccoo",
 		buildoptions = {
-			[1] = "abuilderlvl5",
+			[1] = "cbuilderlvl5",
 			[2] = "corvaliant",
 			[3] = "cordust",
 			[4] = "cdevastator",
