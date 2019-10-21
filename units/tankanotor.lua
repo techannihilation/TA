@@ -3,10 +3,10 @@ return {
 		acceleration = 0.012,
 		brakerate = 0.03,
 		buildcostenergy = 41540,
-		buildcostmetal = 2982,
+		buildcostmetal = 3282,
 		builder = false,
 		buildpic = "tankanotor.dds",
-		buildtime = 26750,
+		buildtime = 30000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -29,7 +29,7 @@ return {
 		losemitheight = 33,
 		maneuverleashlength = 640,
 		mass = 2982,
-		maxdamage = 5800,
+		maxdamage = 3780,
 		maxslope = 10,
 		maxvelocity = 1.1,
 		maxwaterdepth = 12,
@@ -54,7 +54,7 @@ return {
 		customparams = {
 			buildpic = "tankanotor.dds",
 			faction = "ARM",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
