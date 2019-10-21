@@ -3,7 +3,7 @@ return {
 		acceleration = 0.07,
 		brakerate = 0.54,
 		buildcostenergy = 69246,
-		buildcostmetal = 5146,
+		buildcostmetal = 5147,
 		builder = false,
 		buildpic = "akmech.dds",
 		buildtime = 60000,

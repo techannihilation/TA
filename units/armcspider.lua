@@ -7,7 +7,7 @@ return {
 		builddistance = 180,
 		builder = true,
 		buildpic = "armcspider.dds",
-		buildtime = 4000,
+		buildtime = 20000,
 		canattack = false,
 		canguard = true,
 		canmove = true,
