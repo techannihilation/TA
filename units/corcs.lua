@@ -62,7 +62,7 @@ return {
 			[1] = "corgeo",
 			[2] = "coreyes",
 			[3] = "cordl",
-			[4] = "correch1",
+			--[4] = "correch1",
 			[5] = "cortide",
 			[6] = "coruwmex",
 			[7] = "corfmkr",
