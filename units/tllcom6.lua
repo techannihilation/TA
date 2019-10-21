@@ -90,7 +90,7 @@ return {
 			[7] = "tlllab",
 			[8] = "tllvp",
 			[9] = "tllap",
-			[10] = "tllnanotower",
+			--[10] = "tllnanotower",
 			[11] = "tlladt",
 			[12] = "tlltower",
 			[13] = "tllarad",
