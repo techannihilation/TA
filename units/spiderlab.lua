@@ -43,7 +43,7 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		unitname = "spiderlab",
-		workertime = 250,
+		workertime = 400,
 		yardmap = "oooooooo occcccco occcccco occcccco occcccco occcccco yyyyyyyy yyyyyyyy",
 		buildoptions = {
 			[1] = "armcspider",
