@@ -46,9 +46,10 @@ return {
 		workertime = 3200,
 		yardmap = "ooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccooooccccccccccccoo",
 		buildoptions = {
-			[1] = "corvaliant",
-			[2] = "cordust",
-			[3] = "cdevastator",
+			[1] = "abuilderlvl5",
+			[2] = "corvaliant",
+			[3] = "cordust",
+			[4] = "cdevastator",
 		},
 		customparams = {
 			buildpic = "cshipyardlvl4.dds",
