@@ -61,7 +61,7 @@ return {
 			[3] = "coreak",
 			[4] = "monkeylord",
 			[5] = "corarbritator",
-			[6] = "corgala",
+			--[6] = "corgala",
 			[7] = "fatshrew",
 			[8] = "cormkl",
 		},
