@@ -56,7 +56,7 @@ return {
 			[5] = "decade",
 			[6] = "armroy",
 			[7] = "armtship",
-			[8] = "armhls",
+			--[8] = "armhls",
 		},
 		customparams = {
 			buildpic = "armsy.dds",
