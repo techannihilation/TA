@@ -42,7 +42,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "CRBLMSSL2",
 		selfdestructcountdown = 10,
-		sightdistance = 720,
+		sightdistance = 600,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
@@ -53,7 +53,7 @@ return {
 		customparams = {
 			buildpic = "gorg.dds",
 			faction = "CORE",
-			requiretech = "Advanced T3 Unit Research Centre",
+			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead1 = {
