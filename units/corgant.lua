@@ -67,7 +67,7 @@ return {
 			[6] = "cordem",
 			[7] = "macross",
 			[8] = "corhowie",
-			[9] = "armgor",
+			--[9] = "armgor",
 			[10] = "gorg",
 			[11] = "corkrog",
 		},
