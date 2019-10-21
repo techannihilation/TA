@@ -63,7 +63,7 @@ return {
 		customparams = {
 			buildpic = "fatshrew.dds",
 			faction = "CORE",
-			requiretech = "Advanced T4 Unit Research Centre",
+			--requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			fatshrew_dead = {
