@@ -600,15 +600,10 @@ local morphDefs = {
 		xp = 1.00,
 	},
 	armrock = {
-		into = 'armrock1',
+		into = 'armcrack',
 		time = 10,
 		xp = 0.05,
 	},
-	armrock1 = {
-		into = 'armtarantula',
-		time = 20,
-		xp = 0.10,
-	},	
 	armham = {
 		into = 'armham1',
 		time = 10,
@@ -616,13 +611,13 @@ local morphDefs = {
 	},
 	armham1 = {
 		into = 'armshock1',
-		time = 60,
-		xp = 0.50,
+		time = 30,
+		xp = 0.15,
 	},
 	armshock1 = {
 		into = 'armshock',
-		time = 120,
-		xp = 0.60,
+		time = 60,
+		xp = 0.30,
 	},
 	corak = {
 		into = 'corak1',
@@ -650,19 +645,19 @@ local morphDefs = {
 		xp = 0.60,
 	},
 	corstorm = {
-		into = 'corstorm1',
+		into = 'corrock',
 		time = 10,
 		xp = 0.05,
 	},
-    	corstorm1 = {
+    	corrock = {
 		into = 'armraven1',
-		time = 60,
-		xp = 0.50,
+		time = 30,
+		xp = 0.15,
 	},
 	armraven1 = {
 		into = 'armraven',
-		time = 120,
-		xp = 0.60,
+		time = 60,
+		xp = 0.30,
 	},
 	corthud = {
 		into = 'corthud1',
