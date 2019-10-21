@@ -64,9 +64,9 @@ return {
 			[5] = "corshad",
 			[6] = "corvalk",
 			[7] = "bladew",
-			[8] = "corfiend",
-			[9] = "corfalc",
-			[10] = "armarpe",
+			--[8] = "corfiend",
+			--[9] = "corfalc",
+			--[10] = "armarpe",
 		},
 		customparams = {
 			buildpic = "corap.dds",
