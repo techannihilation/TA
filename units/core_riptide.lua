@@ -37,7 +37,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "core_riptide",
-		radardistance = 0,
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 480,

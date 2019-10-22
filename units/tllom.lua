@@ -2,11 +2,11 @@ return {
 	tllom = {
 		acceleration = 0.07629,
 		brakerate = 0.22887,
-		buildcostenergy = 31623,
-		buildcostmetal = 6363,
+		buildcostenergy = 47623,
+		buildcostmetal = 5063,
 		builder = false,
 		buildpic = "tllom.dds",
-		buildtime = 102000,
+		buildtime = 60000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -27,7 +27,7 @@ return {
 		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 6363,
-		maxdamage = 20650,
+		maxdamage = 13650,
 		maxslope = 10,
 		maxvelocity = 0.75,
 		maxwaterdepth = 12,
@@ -37,7 +37,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "tllom",
-		radardistance = 0,
 		radaremitheight = 41,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -52,7 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllom.dds",
 			faction = "TLL",
-			requiretech = "T3 Factory",
+			--requiretech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {
@@ -164,7 +163,7 @@ return {
 			rocket = {
 				areaofeffect = 96,
 				avoidfeature = false,
-				burst = 8,
+				burst = 6,
 				burstrate = 0.11,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -210,7 +209,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "LIGHTNING",
-				maindir = "-1 0 4",
+				maindir = "-1 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
@@ -220,7 +219,7 @@ return {
 			},
 			[3] = {
 				def = "LIGHTNING",
-				maindir = "1 0 0",
+				maindir = "1 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},

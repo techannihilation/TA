@@ -7,7 +7,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "ametalmakerlvl2_aoplane.dds",
+		--buildinggrounddecaltype = "ametalmakerlvl2_aoplane.dds",
 		buildpic = "ametalmakerlvl3.dds",
 		buildtime = 2000000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",

@@ -4,7 +4,7 @@ return {
 		brakerate = 0,
 		buildangle = 32768,
 		buildcostenergy = 740,
-		buildcostmetal = 82,
+		buildcostmetal = 85,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -134,7 +134,7 @@ return {
 				laserflaresize = 10,
 				name = "Talon Gun",
 				noselfdamage = true,
-				range = 460,
+				range = 440,
 				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
 				rgbcolor2= "1.0 1.0 1.00";
