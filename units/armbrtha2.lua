@@ -7,7 +7,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "arm_immolator_aoplane.dds",
+		buildinggrounddecaltype = "default_aoplane.dds",
 		buildpic = "armbrtha2.dds",
 		buildtime = 30000,
 		canattack = true,

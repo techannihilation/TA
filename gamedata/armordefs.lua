@@ -321,6 +321,7 @@ return {
 	"talon_hollander",
 	"talon_talos",
 	"talon_crab",
+	"talon_artycrab",
 	-- talon t3 veh
 	"talon_abaddon",
 	"talon_repentance",

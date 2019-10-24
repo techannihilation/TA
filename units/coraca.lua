@@ -78,7 +78,7 @@ return {
 			[16] = "cornanotc1",
 			[17] = "cortarg",
 			[18] = "corsd",
-			[19] = "correch2",
+			--[19] = "correch2",
 			[20] = "corgate",
 			[21] = "cortron",
 			[22] = "corfmd",

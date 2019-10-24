@@ -116,7 +116,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				name = "PlasmaRepulsor",
-				range = 1000,
+				range = 700,
 				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 3000,
 				shieldforce = 7,

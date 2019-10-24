@@ -199,6 +199,13 @@ local nanos = {
   [UnitDefNames["tllfnanotc"].id] = true,
   [UnitDefNames["tllfnanotc1"].id] = true,
   [UnitDefNames["tllfnanotc2"].id] = true,
+  --Talon
+  [UnitDefNames["talon_nanotc"].id] = true,
+  [UnitDefNames["talon_nanotc1"].id] = true,
+  [UnitDefNames["talon_nanotc2"].id] = true,
+  [UnitDefNames["talon_fnanotc"].id] = true,
+  [UnitDefNames["talon_fnanotc1"].id] = true,
+  [UnitDefNames["talon_fnanotc2"].id] = true,
 }
 
 --------------------------------------------------------------------------------

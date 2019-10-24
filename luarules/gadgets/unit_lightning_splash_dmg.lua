@@ -31,6 +31,7 @@ local immuneToSplash = {
     [UnitDefNames["armzeus"].id] = true,
     [UnitDefNames["armzeus1"].id] = true,
     [UnitDefNames["armclaw"].id] = true,
+    [UnitDefNames["armcav"].id] = true,
 }
 
 local mRandom = math.random

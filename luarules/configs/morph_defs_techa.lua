@@ -437,11 +437,6 @@ local morphDefs = {
 		time = 90,
 		tech = 3,
 	},
-	armgate1 = {
-		into = 'armgate3',
-		time = 120,
-		tech = 4,
-	},
 	corgate2 = {
 		into = 'corgate',
 		time = 30,
@@ -456,11 +451,6 @@ local morphDefs = {
 		into = 'corgate1',
 		time = 90,
 		tech = 3,
-	},
-	corgate1 = {
-		into = 'corgate3',
-		time = 120,
-		tech = 4,
 	},
 	tllgate2 = {
 		into = 'tllgate',
@@ -477,11 +467,6 @@ local morphDefs = {
 		time = 90,
 		tech = 3,
 	},
-	tllgate1 = {
-		into = 'tllgate3',
-		time = 120,
-		tech = 4,
-	},
 	talon_gate2 = {
 		into = 'talon_gate',
 		time = 30,
@@ -496,11 +481,6 @@ local morphDefs = {
 		into = 'talon_gate1',
 		time = 90,
 		tech = 3,
-	},
-	talon_gate1 = {
-		into = 'talon_gate3',
-		time = 120,
-		tech = 4,
 	},
 	armrad = {
 		into = 'armrad1',

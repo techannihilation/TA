@@ -409,6 +409,7 @@ local cons = {
 	['corfred'] = true,
 	['corassis'] = true,
 	['cach'] = true,
+	['corcrab'] = true,
 
 	
 	['tllcv'] = true,
