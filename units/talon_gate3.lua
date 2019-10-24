@@ -66,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 10188,
-				object = "talon_gate3_DEAD",
+				object = "talon_gate_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

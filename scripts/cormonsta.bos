@@ -266,7 +266,7 @@ AimSecondary(heading, pitch)
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
 	turn turret2 to y-axis heading speed <450.000000>;
-	turn rocket to x-axis heading speed <450.000000>;
+	turn rocket to x-axis <0> - pitch speed <450.000000>;
 	start-script RestoreAfterDelay1();
 	return (1);
 }

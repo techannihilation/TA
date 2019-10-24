@@ -55,7 +55,7 @@ return {
 			[5] = "coretnt",
 			--[7] = "cormenacer",
 			--[6] = "corhaboob",
-			[7] = "coreslingshot",
+			[7] = "coraapod",
 			[8] = "cormonsta",
 			[9] = "core_riptide",
 		},
