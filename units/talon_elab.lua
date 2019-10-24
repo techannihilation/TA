@@ -61,7 +61,8 @@ return {
 			[3] = "talon_crab",
 			[4] = "talon_opal",
 			[5] = "talon_hollander",
-			[6] = "talon_talos",
+			[6] = "talon_artycrab",
+			[7] = "talon_talos",
 		},
 		customparams = {
 			buildpic = "talon_elab.dds",
