@@ -34,7 +34,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Talir",
+		name = "Talir T4",
 		noautofire = false,
 		nochasecategory = "ALL",
 		norestrict = 1,

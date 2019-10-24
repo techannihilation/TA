@@ -29,7 +29,7 @@ return {
 		maxdamage = 1700,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Shield Generator",
+		name = "Umbrella T1",
 		noautofire = false,
 		nochasecategory = "ALL",
 		norestrict = 1,
@@ -110,10 +110,10 @@ return {
 		weapondefs = {
 			repulsor2 = {
 				name = "PlasmaRepulsor",
-				range = 340,
+				range = 300,
 				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 300,
-				shieldforce = 8,
+				shieldforce = 7,
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldmaxspeed = 200,

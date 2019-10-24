@@ -49,6 +49,18 @@ local unitlist={--- Human friendly list. Automatically converted to unitdef IDs 
 {'armlightfus','armuwlightfus'},
 {'corlightfus','coruwlightfus'},
 {'tllsam','tllnssam'},
+{'talon_solar','talon_tide'},
+{'talon_win','talon_tide'},
+{'talon_llt','talon_tl'},
+{'talon_rl','talon_frl'},
+{'talon_rad','talon_frad'},
+{'talon_clone_lab','talon_sy'},
+{'talon_vp','talon_sy'},
+{'talon_mstor','talon_uwms'},
+{'talon_estor','talon_uwes'},
+{'talon_mex','talon_uwmex'},
+{'talon_makr','talon_fmkr'},
+{'talon_drag','talon_fdrag'},
 }
 
 function widget:GetInfo()

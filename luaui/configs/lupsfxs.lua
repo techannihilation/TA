@@ -376,7 +376,7 @@ shieldBursts400 = {
   rotSpread  = 0,
   arc        = 50,
   arcSpread  = 0,
-  size       = 400,
+  size       = 300,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
@@ -388,6 +388,26 @@ shieldBursts400 = {
   count      = 8,
 }
 
+shieldBursts700 = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "base",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 500,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},
+  directional= true,
+  repeatEffect = true,
+  noIconDraw = true,
+  disableabovelevel = 3,
+  priority   = 3,
+  count      = 10,
+}
+
 shieldBursts1000 = {
   layer      = -35,
   life       = math.huge,
@@ -396,7 +416,7 @@ shieldBursts1000 = {
   rotSpread  = 0,
   arc        = 50,
   arcSpread  = 0,
-  size       = 600,
+  size       = 800,
   sizeSpread = 50,
   texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
   colormap   = {{0.2, 1, 0.2, 0.1}, {1, 0.2, 0.2, 0.1}},

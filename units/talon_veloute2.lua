@@ -58,11 +58,11 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-30.100944519 -5.74996727295 19.3314819336",
-				collisionvolumescales = "169.401870728 123.486465454 147.862945557",
+				collisionvolumeoffsets = "-30 -5 19",
+				collisionvolumescales = "169 123 147",
 				collisionvolumetype = "Box",
 				damage = 8861,
-				description = "Vulcan Wreckage",
+				description = "Veloute Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 7,
@@ -74,7 +74,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 11076,
-				description = "Vulcan Debris",
+				description = "Veloute Debris",
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,

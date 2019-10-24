@@ -3,9 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, gun, tower, pipe1, pipe2, pipe3, pipe4, pipe5, pipe6, 
+piece  base, body, gun, tower, pipe1, pipe2, pipe3, 
 		emitter1, emitter2, emitter3, emitter4, emitter5, emitter6,
-		decor1, decor2, decor3, petal1,petal2, petal3, petal4, petal5, petal6;
+		block1, block2, block3, light1, light2, light3,
+		petal1,petal2, petal3, petal4, petal5, petal6;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -40,7 +41,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 ShieldOn()
 {
 	Static_Var_1 = 1;
-	move tower to y-axis [6] speed [4];
+	move tower to y-axis [5] speed [4];
 	wait-for-move tower along y-axis;
 	sleep 150;
 	turn emitter1 to x-axis <60.000000> speed <15.000000>;
@@ -106,7 +107,24 @@ Deactivate()
 {
 	start-script RequestState(1);
 }
-
+/*
+OpenClose()
+{
+	while(TRUE)
+		{
+		while( Static_Var_1 )
+		{
+				sleep 500;
+		}
+			while( !Static_Var_1 )
+		{
+				call-script ShieldOff();
+				sleep 500;
+		}
+		sleep 500;
+	}
+}
+*/
 Create()
 {
 	turn petal1 to y-axis <0.000000> now;
@@ -118,6 +136,7 @@ Create()
 	Static_Var_1 = 1;
 	start-script SmokeUnit();
 	call-script InitState();
+	//start-script OpenClose();
 }
 
 AimPrimary(heading, pitch)
@@ -181,9 +200,10 @@ Killed(severity, corpsetype)
 		explode emitter2 type NOHEATCLOUD;
 		explode emitter5 type NOHEATCLOUD;
 		explode emitter6 type NOHEATCLOUD;
-		explode decor1 type NOHEATCLOUD;
-		explode decor2 type NOHEATCLOUD;
-		explode decor3 type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
+		explode block1 type NOHEATCLOUD;
+		explode block2 type NOHEATCLOUD;
+		explode block3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -195,9 +215,10 @@ Killed(severity, corpsetype)
 		explode emitter2 type NOHEATCLOUD;
 		explode emitter5 type NOHEATCLOUD;
 		explode emitter6 type NOHEATCLOUD;
-		explode decor1 type NOHEATCLOUD;
-		explode decor2 type NOHEATCLOUD;
-		explode decor3 type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
+		explode block1 type NOHEATCLOUD;
+		explode block2 type NOHEATCLOUD;
+		explode block3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
@@ -209,9 +230,10 @@ Killed(severity, corpsetype)
 		explode emitter2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode emitter5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode emitter6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode decor1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode decor2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode decor3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode gun type NOHEATCLOUD;
+		explode block1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode block2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode block3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -221,8 +243,9 @@ Killed(severity, corpsetype)
 	explode emitter2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode emitter5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode emitter6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode decor1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode decor2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode decor3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode gun type NOHEATCLOUD;
+	explode block1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode block2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode block3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

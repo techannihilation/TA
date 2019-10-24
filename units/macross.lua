@@ -16,7 +16,7 @@ return {
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Krogoth Class All-Terrain Kbot",
+		description = "Assault All-Terrain Kbot",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 4,
