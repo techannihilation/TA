@@ -77,7 +77,7 @@ return {
 			[11] = "armomni",
 			[12] = "armanni1",
 			[13] = "armhys",
-			[14] = "armgate1",
+			[14] = "armgate4",
 			[15] = "armamd1",
 			[16] = "armsilo1",
 			[17] = "armbrtha1",

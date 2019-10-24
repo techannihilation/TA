@@ -68,7 +68,7 @@ return {
 			[9] = "talon_targ",
 			[10] = "talon_blt1",
 			[11] = "talon_popcorn1",
-			[12] = "talon_gate1",
+			[12] = "talon_gate4",
 			[13] = "talon_damascus1",
 			[14] = "talon_silo1",
 			[15] = "talon_lrpt",

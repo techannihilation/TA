@@ -68,7 +68,7 @@ return {
 			[12] = "tllobliterator1",
 			[13] = "tllrlrpc",
 			[14] = "tlldb",
-			[15] = "tllgate1",
+			[15] = "tllgate4",
 			[16] = "tllantinuke1",
 			[17] = "tllsilo1",
 			[18] = "tlllrpt1",

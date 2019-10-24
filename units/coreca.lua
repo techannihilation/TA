@@ -72,7 +72,7 @@ return {
 			--[13] = "corspun",
 			[12] = "cordoom1",
 			[13] = "corpre",
-			[14] = "corgate1",
+			[14] = "corgate4",
 			[15] = "corfmd1",
 			[16] = "corsilo1",
 			[17] = "corint1",
