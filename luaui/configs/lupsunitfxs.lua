@@ -394,6 +394,33 @@ cafus = {
     {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=6, length=30, emitVector = {0,1,0}, piece="eng3", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=6, length=30, emitVector = {0,1,0}, piece="eng4", noIconDraw = true, priority=3, onActive=true}},
   },
+talon_ca = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_medic = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_aca = {
+    {class='AirJet',options={color={0.2,0.9,1}, width=5, length=14, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.2,0.9,1}, width=5, length=14, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_eca = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.2,0.9,1}, width=6, length=18, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.2,0.9,1}, width=6, length=18, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_token = {
+    {class='AirJet',options={color={0.2,0.9,1}, width=2.5, length=23, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.2,0.9,1}, width=2.5, length=23, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_shade = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit4", noIconDraw = true, priority=3, onActive=true}},
+  },
+
   armor = {
     {class='ThundAirJet',options={color={0.1,0.4,0.6}, width=7, length=35, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.1,0.4,0.6}, width=7, length=35, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
@@ -516,6 +543,15 @@ cafus = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+  },
+  armeca = {
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=13, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=13, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=13, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=13, piece="emit4", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit5", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit6", noIconDraw = true, priority=3, onActive=true}},
+
   },
   armsb = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=70, piece="emit1", noIconDraw = true, priority=3, onActive=true}},

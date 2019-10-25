@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, winga, wingb, fin1, fin2, nose, emit;
+piece  base, winga, wingb, fin1, fin2, nose, emit1, emit2, nano;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -15,14 +15,9 @@ activatescr()
 		turn winga to z-axis <0.> speed <62.>;
 		turn wingb to z-axis <0.> speed <62.>;
 		wait-for-turn wingb around z-axis;
-		turn base to z-axis <240.> speed <120.>;
-		wait-for-turn base around z-axis;
-		turn base to z-axis <120.> speed <180.>;
-		wait-for-turn base around z-axis;
-		turn base to z-axis <0.> speed <120.>;
-		sleep 1000;
+		sleep 150;
 	}
-	sleep 23;
+	sleep 25;
 }
 
 deactivatescr()
@@ -31,9 +26,9 @@ deactivatescr()
 	{
 		turn winga to z-axis <-120.> speed <62.>;
 		turn wingb to z-axis <120.> speed <62.>;
-		sleep 1445;
+		sleep 150;
 	}
-	sleep 24;
+	sleep 25;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -123,7 +118,7 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	piecenum = emit;
+	piecenum = nano;
 }
 
 SweetSpot(piecenum)

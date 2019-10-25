@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, body, boosters, s1, s2, t1, t2, wing1,
-       wing2, wake1, wake2;
+       wing2, wake1, wake2, emit1, emit2, emit3, emit4, emit5, emit6;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
 

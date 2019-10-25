@@ -1,4 +1,4 @@
-return {
+ return {
 	talon_covertopscentre = {
 		activatewhenbuilt = true,
 		buildcostenergy = 2286405,
@@ -13,12 +13,12 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "LEVEL3 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT",
+		category = "LEVEL3 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
-		collisionvolumescales = "650 200 650",
+		collisionvolumescales = "635 200 635",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Produces T4 units",
+		description = "Produces T5 Ship",
 		energystorage = 250,
 		explodeas = "BANTHA_NUKE",
 		floater = true,
@@ -32,7 +32,7 @@ return {
 		maxdamage = 115000,
 		maxslope = 10,
 		maxwaterdepth = 255,
-		name = "OPS Center T4",
+		name = "OPS Center",
 		nochasecategory = "ALL",
 		objectname = "talon_covertopscentre",
 		onoffable = true,
@@ -52,8 +52,8 @@ return {
 			[3] = "talon_independence",
 		},
 		customparams = {
-			faction = "TALON",
-			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre,Advanced T4 Unit Research Centre",
+			buildpic = "talon_covertopscentre.dds",
+			faction = "TALON",			
 		},
 		featuredefs = {
 			dead = {

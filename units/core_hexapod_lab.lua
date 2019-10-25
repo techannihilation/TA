@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
+		category = "LEVEL3 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
 		collisionvolumeoffsets = "0 -70 0",
 		collisionvolumescales = "283 183 183",
 		collisionvolumetype = "CylX",
@@ -68,7 +68,6 @@ return {
 		customparams = {
 			buildpic = "core_hexapod_lab.dds",
 			faction = "CORE",
-			providetech = "T4 Factory",
 		},
 		featuredefs = {
 			heap = {

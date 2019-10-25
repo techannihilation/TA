@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
+		category = "LEVEL3 ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON PLANT SURFACE",
 		corpse = "heap",
 		description = "Produces T4 Units",
 		energystorage = 1000,
@@ -66,7 +66,6 @@ return {
 		customparams = {
 			buildpic = "arm_mech_lab.dds",
 			faction = "ARM",
-			providetech = "T4 Factory",
 		},
 		featuredefs = {
 			heap = {

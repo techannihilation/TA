@@ -569,7 +569,7 @@ local morphDefs = {
 		time = 45,
 		xp = 0.15,
 	},
-	arm_immolator = {
+	armbrtha2 = {
 		into = 'armbrtha',
 		time = 30,
 		xp = 0.50,	
@@ -579,7 +579,7 @@ local morphDefs = {
 		time = 60,
 		xp = 0.50,
 	},
-	core_immolator = {
+	corint2 = {
 		into = 'corint',
 		time = 30,
 		xp = 0.50,	
@@ -589,7 +589,7 @@ local morphDefs = {
 		time = 60,
 		xp = 0.50,
 	},
-	tll_immolator = {
+	tlllrpt2 = {
 		into = 'tlllrpt',
 		time = 30,
 		xp = 0.50,	

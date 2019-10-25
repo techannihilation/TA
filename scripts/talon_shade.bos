@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  bombay1, bombay2, bombay3, bombay4, base, body, winga, wingb;
+piece  bombay1, bombay2, bombay3, bombay4, base, body, winga, wingb, emit1, emit2, emit3, emit4;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 

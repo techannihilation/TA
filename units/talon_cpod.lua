@@ -14,7 +14,7 @@ return {
 		canpatrol = true,
 		canreclaim = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SMALL SURFACE",
+		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Shielded Tech Level 4",
@@ -68,7 +68,7 @@ return {
 		},
 		customparams = {
 			buildpic = "talon_cpod.dds",
-			faction = "CORE",
+			faction = "TALON",
 			shield_emit_height = 41.25,
 			shield_power = 5000,
 			shield_radius = 180,
