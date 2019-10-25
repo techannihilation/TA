@@ -13,12 +13,12 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move lclamp to x-axis [-3.000000] speed [2.5];
-		move rclamp to x-axis [3.000000] speed [2.5];
-		move neck to z-axis [15.000000] speed [5];
+		move lclamp to x-axis [-3.600000] speed [2.5];
+		move rclamp to x-axis [3.600000] speed [2.5];
+		move neck to z-axis [18.000000] speed [5];
 		
-		move lfrontengine to x-axis [-2.000000] speed [2.5];
-		move rfrontengine to x-axis [2.000000] speed [2.5];
+		move lfrontengine to x-axis [-2.400000] speed [2.5];
+		move rfrontengine to x-axis [2.400000] speed [2.5];
 		sleep 1000;
 	}
 	sleep 50;

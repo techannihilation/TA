@@ -388,7 +388,13 @@ cafus = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
   },
 
-  talon_tau = {
+  talon_rukh = {
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=5, length=20, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=5, length=20, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=5, length=20, emitVector = {0,1,0}, piece="jet3", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=5, length=20, emitVector = {0,1,0}, piece="jet4", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_tau = {
     {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=8, length=35, emitVector = {0,1,0}, piece="eng1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=8, length=35, emitVector = {0,1,0}, piece="eng2", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=6, length=30, emitVector = {0,1,0}, piece="eng3", noIconDraw = true, priority=3, onActive=true}},
@@ -402,23 +408,41 @@ talon_medic = {
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit", noIconDraw = true, priority=3, onActive=true}},
   },
 talon_aca = {
-    {class='AirJet',options={color={0.2,0.9,1}, width=5, length=14, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={0.2,0.9,1}, width=5, length=14, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.2,0.9,1}, width=4, length=17, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.2,0.9,1}, width=4, length=17, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
   },
 talon_eca = {
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={0.2,0.9,1}, width=6, length=18, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={0.2,0.9,1}, width=6, length=18, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.2,0.9,1}, width=4, length=17, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.2,0.9,1}, width=4, length=17, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
   },
 talon_token = {
-    {class='AirJet',options={color={0.2,0.9,1}, width=2.5, length=23, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
-    {class='AirJet',options={color={0.2,0.9,1}, width=2.5, length=23, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.2,0.9,1}, width=2, length=23, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.2,0.9,1}, width=2, length=23, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
   },
+talon_echelon = {
+    {class='AirJet',options={color={0.2,0.9,1}, width=2, length=30, piece="emit", noIconDraw = true, priority=3, onActive=true}},
+  },
+
 talon_shade = {
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit4", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_eclipse = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=3.5, length=35, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.3,0.1,0}, width=3.5, length=35, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.3,0.1,0}, width=3.5, length=35, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.3,0.1,0}, width=3.5, length=35, piece="emit4", noIconDraw = true, priority=3, onActive=true}},
+  },
+talon_handgod = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=5, length=40, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.3,0.1,0}, width=5, length=40, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.3,0.1,0}, width=5, length=40, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.3,0.1,0}, width=5, length=40, piece="emit4", noIconDraw = true, priority=3, onActive=true}},
+	{class='AirJet',options={color={0.2,0.9,1}, width=3, length=30, piece="emit5", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.2,0.9,1}, width=3, length=30, piece="emit6", noIconDraw = true, priority=3, onActive=true}},
   },
 
   armor = {

@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  missle1, missle2, base, body, winga, wingb, wingc, wingd,
-       topa, topb;
+       topa, topb, emit;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
 
