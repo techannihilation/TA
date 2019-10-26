@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  missle1, missle2, base, body, winga, wingb, flare1, flare2, flare3;
+piece  missle1, missle2, base, body, winga, wingb, flare1, flare2, flare3, emit1, emit2, emit3, emit4;
 
 static-var  depth, Static_Var_1, gun_1, statechg_DesiredState, statechg_StateChanging;
 

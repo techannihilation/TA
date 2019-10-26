@@ -423,7 +423,12 @@ talon_token = {
 talon_echelon = {
     {class='AirJet',options={color={0.2,0.9,1}, width=2, length=30, piece="emit", noIconDraw = true, priority=3, onActive=true}},
   },
-
+talon_hornet = {
+    {class='AirJet',options={color={0.2,0.9,1}, width=2, length=30, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.2,0.9,1}, width=2, length=30, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.2,0.9,1}, width=2, length=30, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
+{class='AirJet',options={color={0.2,0.9,1}, width=2, length=30, piece="emit4", noIconDraw = true, priority=3, onActive=true}},
+  },
 talon_shade = {
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=30, piece="emit2", noIconDraw = true, priority=3, onActive=true}},

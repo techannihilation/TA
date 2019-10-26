@@ -1,4 +1,3 @@
- 
 local base = piece 'base' 
 local body = piece 'body' 
 local arm = piece 'arm' 
@@ -98,7 +97,7 @@ local function Activate()
 		Turn( ldoor , z_axis, math.rad(-(90.000000)), math.rad(35.000000) )
 		WaitForTurn(ldoor, z_axis)
 	
-		Move( plate , y_axis, 9.000000 , 5.000000 )
+		Move( plate , y_axis, 23.550000 , 5.000000 )
 		WaitForMove(plate, y_axis)
 	
 		Turn( arm , x_axis, math.rad(-130.000000), math.rad(33.000000) )

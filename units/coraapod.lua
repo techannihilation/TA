@@ -22,7 +22,7 @@ return {
 		mass = 641,
 		maxdamage = 2490,
 		maxvelocity = 1.2,
-		movementclass = "HTKBOT3",
+		movementclass = "AMPTBOT",
 		name = "Peacock",
 		nochasecategory = "ALL SUB",
 		objectname = "coraapod",
