@@ -52,8 +52,9 @@ return {
 			[4] = "armhobo",
 			[5] = "armtarantula",
 			[6] = "armorbweaver",
-			[7] = "armhuntsman",			
-			[8] = "armweaver",
+			[7] = "armhuntsman",	
+			[8] = "armscab",		
+			[9] = "armweaver",
 		},
 		customparams = {
 			buildpic = "spiderlab.dds",

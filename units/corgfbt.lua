@@ -33,7 +33,7 @@ return {
 		mass = 694,
 		maxdamage = 4685,
 		maxslope = 14,
-		maxvelocity = 1.4,
+		maxvelocity = 1.6,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK3",

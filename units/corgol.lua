@@ -2,7 +2,7 @@ return {
 	corgol = {
 		acceleration = 0.0242,
 		brakerate = 0.1485,
-		buildcostenergy = 21106,
+		buildcostenergy = 22854,
 		buildcostmetal = 2203,
 		builder = false,
 		buildpic = "corgol.dds",

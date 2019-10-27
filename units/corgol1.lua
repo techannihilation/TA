@@ -2,11 +2,11 @@ return {
 	corgol1 = {
 		acceleration = 0.025,
 		brakerate = 0.15,
-		buildcostenergy = 35071,
+		buildcostenergy = 38070,
 		buildcostmetal = 2903,
 		builder = false,
 		buildpic = "corgol1.dds",
-		buildtime = 36125,
+		buildtime = 36000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
