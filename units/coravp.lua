@@ -73,7 +73,7 @@ return {
 			--[15] = "corparrow",
 			--[16] = "nsacskv",
 			[17] = "requ1",
-			[18] = "cortotal",
+			--[18] = "cortotal",
 			--[19] = "cormddm",
 		},
 		customparams = {
