@@ -1,6 +1,6 @@
 return {
 	coreclipse = {
-		acceleration = 0.06828,
+		acceleration = 0.07,
 		ai_limit = "limit Tu95-A 6",
 		ai_weight = "weight Tu95-A 4",
 		altfromsealevel = 1,
@@ -24,7 +24,7 @@ return {
 		collide = false,
 		cruisealt = 320,
 		defaultmissiontype = "VTOL_standby",
-		description = "Very Heavy Bomber",
+		description = "Experimental Bomber",
 		downloadable = 1,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "coreclipse",
-		script = "coreclipse.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingmoveorder = 1,
@@ -129,13 +128,8 @@ return {
 				weaponvelocity = 600,
 				damage = {
 					bomb_resistant = 800,
-					bombers = 5,
 					commanders = 800,
 					default = 2400,
-					fighters = 5,
-					flak_resistant = 5,
-					transporters = 5,
-					unclassed_air = 5,
 				},
 			},
 		},

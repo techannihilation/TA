@@ -1,3 +1,30 @@
+﻿3.08.0 -> 3.XX.XX
+2019-10-29
+Balance:
+ - Delete Totalitarian from T2
+ - Increase Tremor, Goliath, TllThump stats and cost
+ - Decrease Stats and cost for TLL and Talon T3 Bomber
+ - Increase Troman Cost (+500M) and Timebuild (+45K)
+ - Decrease Energy cost for Raz (was too high +110KE)
+ - Tortoise riptide gain Torpedo and lost starburst. Now, riptide can go in water and is all-terrain (New tortoises will come : radar, jammer, heavy assault, artillery (could be morph in haboob T3)
+ - ReduceRange for Talon LLT / Sniper
+ - Decrease cost and stats for T2.5 Krogtaar / AKmech (now, they are near from T2 than T3 units) 
+
+Improvements:
+ - Delete all Tech Center, RC Cons and Exp Nano !!! (it's a test for few weeks to decrease complexity). => Many TX.5 units have been unlock or removed from panel menu but still exist with morph.
+ - Add T3 Air Trans for Talon
+ - Move builerT5 into T5 ShipLab. Give them back T4/T5 Eco.
+ - Add new models for Nano Core/ARm
+ - Delete AA Tortoise and remplace by a Pod AA.
+ - Move ArmCrabe for Talon T3. Delete Missile. Decrease cost and HP.
+ - Add T3/T5 Shield Reflector. Some gate become T4 Now. 
+ - Add Luia Effect for Transport & fighter & Bomber Talon Air
+
+Bugs:
+ - Fix Talon Air animation
+ - Fix MinTransMass for Air Transport
+ - Fix Talon T3 KBOT LAb Open/Start Cons 
+
 3.08.0 -> 3.XX.XX
 2019-10-21
 Balance:
@@ -5,13 +32,13 @@ Balance:
  - T3 All-Terrain decrease stats and cost
  - Decrease Vengence (Akmech) and Krogtaar (T2) stats and cost
  
- Improvements:
+Improvements:
  - Delete all Tech Center, Experimental Nano, Commander constructor
  - Delete from lab many X.5 units or move them in morph (Dao, brutus, rockos, pewee1/AK1, Mobile Domday, Air Blade, Pyrox, Helldriver, T1.5 ships, T2 Amphibious Mech Arm, Jump Kbot T2 Arm/Core, laser T2 Arm Tank, Gorilla T3, Juggernaut T3, Kargareth t4, Razzorback T4)
  - Move T5 Cons into T5 Shipyard
  - Add T5 Shield for all factions
  
- Bugs:
+Bugs:
  - Add Talon Lab with unit_air_plants gadget
  
 3.08.0 -> 3.XX.XX

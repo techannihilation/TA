@@ -1,6 +1,6 @@
 return {
 	armcyclone = {
-		acceleration = 0.05392,
+		acceleration = 0.06,
 		ai_limit = "limit B-52G 6",
 		ai_weight = "weight B-52G 4",
 		altfromsealevel = 1,
@@ -24,7 +24,7 @@ return {
 		collide = false,
 		cruisealt = 320,
 		defaultmissiontype = "VTOL_standby",
-		description = "Cyclone Precise Bomber",
+		description = "Precise Bomber",
 		downloadable = 1,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
@@ -39,7 +39,7 @@ return {
 		maxvelocity = 7.6,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Arm Cyclone",
+		name = "Cyclone",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "armcyclone",
@@ -90,7 +90,7 @@ return {
 			},
 		},
 		weapondefs = {
-			["mk-83"] = {
+			mk83 = {
 				areaofeffect = 100,
 				avoidfeature = false,
 				cegtag = "Trail_Medium_Rocket_Bomb",
@@ -131,7 +131,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "Mk-83",
+				def = "MK83",
 				onlytargetcategory = "SURFACE",
 			},
 		},
