@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 116,
 		builder = false,
 		buildpic = "armflash.dds",
-		buildtime = 1963,
+		buildtime = 1750,
 		canattack = true,
 		canguard = true,
 		canmove = true,

@@ -29,9 +29,9 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 85,
-		maxdamage = 345,
+		maxdamage = 295,
 		maxslope = 26,
-		maxvelocity = 4.5,
+		maxvelocity = 4.25,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK2",
@@ -59,7 +59,7 @@ return {
 		unitrestricted = 150,
 		customparams = {
 			buildpic = "talon_topaz.png",
-			faction = "ARM",
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {
