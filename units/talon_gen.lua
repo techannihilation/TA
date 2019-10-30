@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armgen_aoplane.dds",
 		buildpic = "talon_gen.dds",
-		buildtime = 8500,
+		buildtime = 10500,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		cloakcost = 15,
 		collisionvolumescales = "45 38 45",

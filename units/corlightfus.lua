@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 1897,
 		builder = false,
 		buildpic = "corlightfus.dds",
-		buildtime = 22000,
+		buildtime = 25000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "60 32 64",
