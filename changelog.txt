@@ -9,6 +9,7 @@ Balance:
  - Tortoise riptide gain Torpedo and lost starburst. Now, riptide can go in water and is all-terrain (New tortoises will come : radar, jammer, heavy assault, artillery (could be morph in haboob T3)
  - ReduceRange for Talon LLT / Sniper
  - Decrease cost and stats for T2.5 Krogtaar / AKmech (now, they are near from T2 than T3 units) 
+ - Reduce Stats and cost for T2.5 Hover. 
 
 Improvements:
  - Delete all Tech Center, RC Cons and Exp Nano !!! (it's a test for few weeks to decrease complexity). => Many TX.5 units have been unlock or removed from panel menu but still exist with morph.
@@ -19,6 +20,8 @@ Improvements:
  - Move ArmCrabe for Talon T3. Delete Missile. Decrease cost and HP.
  - Add T3/T5 Shield Reflector. Some gate become T4 Now. 
  - Add Luia Effect for Transport & fighter & Bomber Talon Air
+ - Add Adv. AntiNuke Mobile Turtle TLL and Tribulation Talon
+ - Rework Gorilla. New weapons and increase power. You can have it with Krogtaar morph.
 
 Bugs:
  - Fix Talon Air animation
