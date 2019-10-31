@@ -2,11 +2,11 @@ return {
 	tllroaster = {
 		acceleration = 0.03,
 		brakerate = 0.27,
-		buildcostenergy = 11985,
+		buildcostenergy = 12985,
 		buildcostmetal = 1575,
 		builder = false,
 		buildpic = "tllroaster.dds",
-		buildtime = 31200,
+		buildtime = 28000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

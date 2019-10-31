@@ -416,6 +416,9 @@ talon_eca = {
 	{class='AirJet',options={color={0.2,0.9,1}, width=4, length=17, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.2,0.9,1}, width=4, length=17, piece="emit3", noIconDraw = true, priority=3, onActive=true}},
   },
+talon_wyvern = {
+    {class='AirJet',options={color={0.3,0.1,0}, width=3.25, length=25, piece="emit", noIconDraw = true, priority=3, onActive=true}},
+  },
 talon_token = {
     {class='AirJet',options={color={0.2,0.9,1}, width=2, length=23, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.2,0.9,1}, width=2, length=23, piece="emit2", noIconDraw = true, priority=3, onActive=true}},

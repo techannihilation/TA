@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 1200,
 		builder = false,
 		buildpic = "armmanni.dds",
-		buildtime = 25706,
+		buildtime = 25000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

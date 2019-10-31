@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, link, wing1, wing2, flamer1, flamer2, flamer3, flamer4;
+piece  base, link, wing1, wing2, flamer1, flamer2, flamer3, flamer4, emit;
 
 static-var  Static_Var_1, unitviewer, statechg_DesiredState, statechg_StateChanging;
 
