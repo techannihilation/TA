@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, leg1, foot1, leg2, foot2, leg3, foot3, flare1, flare2,
+piece  base, body, leg1, foot1, leg2, foot2, leg3, foot3, flare1, flare2, sleeves,
 	   leg4, foot4, tower, spinnera, spinnerb, barrela1, barrela2,
 	   barrela3, barrela4, barrelb1, barrelb2, barrelb3, barrelb4;
 
@@ -360,6 +360,7 @@ RestoreAfterDelay()
 {
 	sleep restore_delay;
 	turn tower to y-axis <0> speed <10>;
+	turn sleeves to x-axis <0> speed <10>;
 }
 
 AimFromPrimary(piecenum)
@@ -381,7 +382,9 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn tower to y-axis heading speed <11>;
+	turn tower to y-axis heading speed <20>;
+	turn sleeves to x-axis <0> - pitch speed <10>;
+	wait-for-turn sleeves around x-axis;
 	wait-for-turn tower around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
