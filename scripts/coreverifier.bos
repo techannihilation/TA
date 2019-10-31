@@ -1,0 +1,476 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, holder, dinnerplate, tail, sonar, door1, door2,
+       Leg1, Foot1, Leg2, Foot2, Leg3, Foot3, Leg4, Foot4;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+MotionControl()
+{
+	while( TRUE )
+	{
+		if( Static_Var_2 )
+		{
+			turn Leg1 to y-axis <15.> speed <240.>;
+			move Leg1 to x-axis [0.] now;
+			move Leg1 to z-axis [-0.] now;
+			turn Leg2 to y-axis <-25.> speed <480.>;
+			turn Leg2 to z-axis <50.> speed <480.>;
+			turn Foot2 to z-axis <-50.> speed <480.>;
+			turn Leg3 to y-axis <-35.> speed <240.>;
+			turn Leg4 to y-axis <25.> speed <240.>;
+			turn Foot1 to y-axis <-15.> speed <240.>;
+			turn Foot2 to y-axis <25.> speed <480.>;
+			turn Foot3 to y-axis <35.> speed <240.>;
+			turn Foot4 to y-axis <-25.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <10.> speed <240.>;
+			move Leg1 to x-axis [0.] now;
+			move Leg1 to z-axis [-0.] now;
+			turn Leg2 to y-axis <-10.> speed <480.>;
+			turn Leg3 to y-axis <-30.> speed <240.>;
+			turn Leg4 to y-axis <30.> speed <240.>;
+			turn Foot1 to y-axis <-10.> speed <240.>;
+			turn Foot2 to y-axis <10.> speed <480.>;
+			turn Foot3 to y-axis <30.> speed <240.>;
+			turn Foot4 to y-axis <-30.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <5.> speed <240.>;
+			move Leg1 to x-axis [0.] now;
+			move Leg1 to z-axis [-0.] now;
+			turn Leg2 to y-axis <5.> speed <480.>;
+			move Leg2 to x-axis [1.] now;
+			move Leg2 to z-axis [1.] now;
+			turn Leg3 to y-axis <-25.> speed <240.>;
+			turn Leg4 to y-axis <35.> speed <240.>;
+			turn Foot1 to y-axis <-5.> speed <240.>;
+			turn Foot2 to y-axis <-5.> speed <480.>;
+			turn Foot3 to y-axis <25.> speed <240.>;
+			turn Foot4 to y-axis <-35.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <0.> speed <240.>;
+			move Leg1 to x-axis [1.] now;
+			move Leg1 to z-axis [-1.] now;
+			turn Leg2 to y-axis <20.> speed <480.>;
+			turn Leg2 to z-axis <0.> speed <480.>;
+			move Leg2 to x-axis [1.] speed [8.];
+			move Leg2 to z-axis [1.] speed [8.];
+			turn Foot2 to z-axis <0.> speed <480.>;
+			turn Leg3 to y-axis <-20.> speed <240.>;
+			turn Leg4 to y-axis <40.> speed <240.>;
+			turn Foot1 to y-axis <0.> speed <240.>;
+			turn Foot2 to y-axis <0.> speed <480.>;
+			turn Foot3 to y-axis <20.> speed <240.>;
+			turn Foot4 to y-axis <-40.> speed <240.>;
+			sleep 28;
+		}
+		if( Static_Var_2 )
+		{
+			turn Leg1 to y-axis <-5.> speed <240.>;
+			move Leg1 to x-axis [1.] now;
+			move Leg1 to z-axis [-1.] now;
+			turn Leg2 to y-axis <15.> speed <240.>;
+			move Leg2 to x-axis [1.] now;
+			move Leg2 to z-axis [1.] now;
+			turn Leg3 to y-axis <-15.> speed <240.>;
+			move Leg3 to x-axis [-0.] now;
+			move Leg3 to z-axis [-0.] now;
+			turn Leg4 to y-axis <25.> speed <480.>;
+			turn Leg4 to z-axis <-50.> speed <480.>;
+			turn Foot4 to z-axis <50.> speed <480.>;
+			turn Foot1 to y-axis <5.> speed <240.>;
+			turn Foot2 to y-axis <-15.> speed <240.>;
+			turn Foot3 to y-axis <15.> speed <240.>;
+			turn Foot4 to y-axis <-25.> speed <480.>;
+			sleep 28;
+			turn Leg1 to y-axis <-10.> speed <240.>;
+			move Leg1 to x-axis [1.] now;
+			move Leg1 to z-axis [-1.] now;
+			turn Leg2 to y-axis <10.> speed <240.>;
+			move Leg2 to x-axis [1.] now;
+			move Leg2 to z-axis [1.] now;
+			turn Leg3 to y-axis <-10.> speed <240.>;
+			move Leg3 to x-axis [-0.] now;
+			move Leg3 to z-axis [-0.] now;
+			turn Leg4 to y-axis <10.> speed <480.>;
+			turn Foot1 to y-axis <10.> speed <240.>;
+			turn Foot2 to y-axis <-10.> speed <240.>;
+			turn Foot3 to y-axis <10.> speed <240.>;
+			turn Foot4 to y-axis <-10.> speed <480.>;
+			sleep 28;
+			turn Leg1 to y-axis <-15.> speed <240.>;
+			move Leg1 to x-axis [1.] now;
+			move Leg1 to z-axis [-1.] now;
+			turn Leg2 to y-axis <5.> speed <240.>;
+			move Leg2 to x-axis [1.] now;
+			move Leg2 to z-axis [1.] now;
+			turn Leg3 to y-axis <-5.> speed <240.>;
+			move Leg3 to x-axis [-0.] now;
+			move Leg3 to z-axis [-0.] now;
+			turn Leg4 to y-axis <-5.> speed <480.>;
+			move Leg4 to x-axis [-1.] now;
+			move Leg4 to z-axis [1.] now;
+			turn Foot1 to y-axis <15.> speed <240.>;
+			turn Foot2 to y-axis <-5.> speed <240.>;
+			turn Foot3 to y-axis <5.> speed <240.>;
+			turn Foot4 to y-axis <5.> speed <480.>;
+			sleep 28;
+			turn Leg1 to y-axis <-20.> speed <240.>;
+			move Leg1 to x-axis [1.] now;
+			move Leg1 to z-axis [-1.] now;
+			turn Leg2 to y-axis <0.> speed <240.>;
+			move Leg2 to x-axis [1.] now;
+			move Leg2 to z-axis [1.] now;
+			turn Leg3 to y-axis <0.> speed <240.>;
+			move Leg3 to x-axis [-1.] now;
+			move Leg3 to z-axis [-1.] now;
+			turn Leg4 to y-axis <-20.> speed <480.>;
+			turn Leg4 to z-axis <0.> speed <480.>;
+			move Leg4 to x-axis [-1.] speed [8.];
+			move Leg4 to z-axis [1.] speed [8.];
+			turn Foot4 to z-axis <0.> speed <480.>;
+			turn Foot1 to y-axis <20.> speed <240.>;
+			turn Foot2 to y-axis <0.> speed <240.>;
+			turn Foot3 to y-axis <0.> speed <240.>;
+			turn Foot4 to y-axis <20.> speed <480.>;
+			sleep 28;
+		}
+		if( Static_Var_2 )
+		{
+			turn Leg1 to y-axis <-5.> speed <480.>;
+			turn Leg1 to z-axis <50.> speed <480.>;
+			move Leg1 to x-axis [1.] speed [8.];
+			move Leg1 to z-axis [-1.] speed [8.];
+			turn Foot1 to z-axis <-50.> speed <480.>;
+			turn Leg2 to y-axis <-5.> speed <240.>;
+			move Leg2 to x-axis [0.] now;
+			move Leg2 to z-axis [0.] now;
+			turn Leg3 to y-axis <5.> speed <240.>;
+			move Leg3 to x-axis [-1.] now;
+			move Leg3 to z-axis [-1.] now;
+			turn Leg4 to y-axis <-15.> speed <240.>;
+			move Leg4 to x-axis [-1.] now;
+			move Leg4 to z-axis [1.] now;
+			turn Foot1 to y-axis <5.> speed <480.>;
+			turn Foot2 to y-axis <5.> speed <240.>;
+			turn Foot3 to y-axis <-5.> speed <240.>;
+			turn Foot4 to y-axis <15.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <10.> speed <480.>;
+			move Leg1 to x-axis [0.] now;
+			move Leg1 to z-axis [0.] now;
+			turn Leg2 to y-axis <-10.> speed <240.>;
+			move Leg2 to x-axis [0.] now;
+			move Leg2 to z-axis [0.] now;
+			turn Leg3 to y-axis <10.> speed <240.>;
+			move Leg3 to x-axis [-1.] now;
+			move Leg3 to z-axis [-1.] now;
+			turn Leg4 to y-axis <-10.> speed <240.>;
+			move Leg4 to x-axis [-1.] now;
+			move Leg4 to z-axis [1.] now;
+			turn Foot1 to y-axis <-10.> speed <480.>;
+			turn Foot2 to y-axis <10.> speed <240.>;
+			turn Foot3 to y-axis <-10.> speed <240.>;
+			turn Foot4 to y-axis <10.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <25.> speed <480.>;
+			turn Leg2 to y-axis <-15.> speed <240.>;
+			move Leg2 to x-axis [0.] now;
+			move Leg2 to z-axis [0.] now;
+			turn Leg3 to y-axis <15.> speed <240.>;
+			move Leg3 to x-axis [-1.] now;
+			move Leg3 to z-axis [-1.] now;
+			turn Leg4 to y-axis <-5.> speed <240.>;
+			move Leg4 to x-axis [-1.] now;
+			move Leg4 to z-axis [1.] now;
+			turn Foot1 to y-axis <-25.> speed <480.>;
+			turn Foot2 to y-axis <15.> speed <240.>;
+			turn Foot3 to y-axis <-15.> speed <240.>;
+			turn Foot4 to y-axis <5.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <40.> speed <480.>;
+			turn Leg1 to z-axis <0.> speed <480.>;
+			turn Foot1 to z-axis <0.> speed <480.>;
+			turn Leg2 to y-axis <-20.> speed <240.>;
+			move Leg2 to x-axis [0.] now;
+			move Leg2 to z-axis [0.] now;
+			turn Leg3 to y-axis <20.> speed <240.>;
+			move Leg3 to x-axis [-1.] now;
+			move Leg3 to z-axis [-1.] now;
+			turn Leg4 to y-axis <0.> speed <240.>;
+			move Leg4 to x-axis [-1.] now;
+			move Leg4 to z-axis [1.] now;
+			turn Foot1 to y-axis <-40.> speed <480.>;
+			turn Foot2 to y-axis <20.> speed <240.>;
+			turn Foot3 to y-axis <-20.> speed <240.>;
+			turn Foot4 to y-axis <0.> speed <240.>;
+			sleep 28;
+		}
+		if( Static_Var_2 )
+		{
+			turn Leg1 to y-axis <35.> speed <240.>;
+			turn Leg2 to y-axis <-25.> speed <240.>;
+			turn Leg3 to y-axis <5.> speed <480.>;
+			turn Leg3 to z-axis <-50.> speed <480.>;
+			move Leg3 to x-axis [-1.] speed [8.];
+			move Leg3 to z-axis [-1.] speed [8.];
+			turn Foot3 to z-axis <50.> speed <480.>;
+			turn Leg4 to y-axis <5.> speed <240.>;
+			move Leg4 to x-axis [-0.] now;
+			move Leg4 to z-axis [0.] now;
+			turn Foot1 to y-axis <-35.> speed <240.>;
+			turn Foot2 to y-axis <25.> speed <240.>;
+			turn Foot3 to y-axis <-5.> speed <480.>;
+			turn Foot4 to y-axis <-5.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <30.> speed <240.>;
+			turn Leg2 to y-axis <-30.> speed <240.>;
+			turn Leg3 to y-axis <-10.> speed <480.>;
+			move Leg3 to x-axis [0.] now;
+			move Leg3 to z-axis [0.] now;
+			turn Leg4 to y-axis <10.> speed <240.>;
+			move Leg4 to x-axis [-0.] now;
+			move Leg4 to z-axis [0.] now;
+			turn Foot1 to y-axis <-30.> speed <240.>;
+			turn Foot2 to y-axis <30.> speed <240.>;
+			turn Foot3 to y-axis <10.> speed <480.>;
+			turn Foot4 to y-axis <-10.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <25.> speed <240.>;
+			turn Leg2 to y-axis <-35.> speed <240.>;
+			turn Leg3 to y-axis <-25.> speed <480.>;
+			turn Leg4 to y-axis <15.> speed <240.>;
+			move Leg4 to x-axis [-0.] now;
+			move Leg4 to z-axis [0.] now;
+			turn Foot1 to y-axis <-25.> speed <240.>;
+			turn Foot2 to y-axis <35.> speed <240.>;
+			turn Foot3 to y-axis <25.> speed <480.>;
+			turn Foot4 to y-axis <-15.> speed <240.>;
+			sleep 28;
+			turn Leg1 to y-axis <20.> speed <240.>;
+			turn Leg2 to y-axis <-40.> speed <240.>;
+			turn Leg3 to y-axis <-40.> speed <480.>;
+			turn Leg3 to z-axis <0.> speed <480.>;
+			turn Foot3 to z-axis <0.> speed <480.>;
+			turn Leg4 to y-axis <20.> speed <240.>;
+			move Leg4 to x-axis [0.] now;
+			move Leg4 to z-axis [0.] now;
+			turn Foot1 to y-axis <-20.> speed <240.>;
+			turn Foot2 to y-axis <40.> speed <240.>;
+			turn Foot3 to y-axis <40.> speed <480.>;
+			turn Foot4 to y-axis <-20.> speed <240.>;
+			sleep 28;
+		}
+		if( !Static_Var_2 )
+		{
+			turn Leg1 to y-axis <0.> speed <480.>;
+			move Leg1 to x-axis [0.] now;
+			move Leg1 to z-axis [0.] now;
+			turn Leg2 to y-axis <0.> speed <480.>;
+			move Leg2 to x-axis [0.] now;
+			move Leg2 to z-axis [0.] now;
+			turn Leg3 to y-axis <0.> speed <480.>;
+			move Leg3 to x-axis [0.] now;
+			move Leg3 to z-axis [0.] now;
+			turn Leg4 to y-axis <0.> speed <480.>;
+			move Leg4 to x-axis [0.] now;
+			move Leg4 to z-axis [0.] now;
+			turn Foot1 to y-axis <0.> speed <480.>;
+			turn Foot2 to y-axis <0.> speed <480.>;
+			turn Foot3 to y-axis <0.> speed <480.>;
+			turn Foot4 to y-axis <0.> speed <480.>;
+			sleep 28;
+		}
+	}
+}
+
+HitByWeapon()
+{
+	Static_Var_5 = 10;
+	if( Static_Var_3 )
+	{
+		set ACTIVATION to 0;
+	}
+}
+
+RequestState()
+{
+	if( Static_Var_4 )
+	{
+		return (0);
+	}
+	Static_Var_4 = 1;
+	while( Static_Var_3 != Static_Var_1 )
+	{
+		if( Static_Var_3 )
+		{
+			move tail to z-axis [0.] now;
+			move holder to y-axis [0.] now;
+			turn door1 to z-axis <-180.> speed <270.>;
+			turn door2 to z-axis <180.> speed <270.>;
+			wait-for-turn door1 around z-axis;
+			set ARMORED to 0;
+			move tail to z-axis [-8.] speed [7.];
+			move holder to y-axis [4.] speed [6.];
+			sleep 600;
+			turn dinnerplate to x-axis <35.> speed <70.>;
+			sleep 548;
+			spin holder around y-axis speed <100.>;
+			spin sonar around y-axis speed <100.>;
+			Static_Var_1 = 1;
+		}
+		if( !Static_Var_3 )
+		{
+			stop-spin holder around y-axis;
+			stop-spin sonar around y-axis;
+			turn holder to y-axis <0.> speed <100.>;
+			turn sonar to y-axis <0.> speed <100.>;
+			wait-for-turn holder around y-axis;
+			wait-for-turn sonar around y-axis;
+			move tail to z-axis [0.] speed [7.];
+			turn dinnerplate to x-axis <0.> speed <70.>;
+			sleep 500;
+			move holder to y-axis [0.] speed [6.];
+			sleep 600;
+			set ARMORED to 1;
+			turn door1 to z-axis <0.> speed <270.>;
+			turn door2 to z-axis <0.> speed <270.>;
+			sleep 667;
+			Static_Var_1 = 0;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	Static_Var_5 = 0;
+	set ARMORED to 1;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script SmokeUnit();
+	start-script MotionControl();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Activate()
+{
+	Static_Var_3 = 1;
+	Static_Var_5 = 0;
+	start-script RequestState();
+}
+
+Deactivate()
+{
+	Static_Var_3 = 0;
+	start-script RequestState();
+	if( Static_Var_5 )
+	{
+		while( Static_Var_5 )
+		{
+			--Static_Var_5;
+			sleep 1000;
+		}
+		if( !Static_Var_3 )
+		{
+			set ACTIVATION to 1;
+		}
+	}
+}
+
+StartMoving()
+{
+	Static_Var_2 = 1;
+}
+
+StopMoving()
+{
+	Static_Var_2 = 0;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY ;
+		explode Foot1 type NOHEATCLOUD ;
+		explode Foot2 type NOHEATCLOUD ;
+		explode Foot3 type NOHEATCLOUD ;
+		explode Foot4 type NOHEATCLOUD ;
+		explode holder type NOHEATCLOUD ;
+		explode dinnerplate type NOHEATCLOUD ;
+		explode sonar type NOHEATCLOUD ;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD ;
+		explode Foot1 type NOHEATCLOUD ;
+		explode Foot2 type FALL ;
+		explode Foot3 type FALL ;
+		explode Foot4 type NOHEATCLOUD ;
+		explode holder type NOHEATCLOUD ;
+		explode dinnerplate type NOHEATCLOUD ;
+		explode sonar type FALL ;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type NOHEATCLOUD ;
+		explode Foot1 type FALL ;
+		explode Foot2 type FALL | EXPLODE_ON_HIT ;
+		explode Foot3 type FALL | EXPLODE_ON_HIT ;
+		explode Foot4 type FALL ;
+		explode holder type SHATTER | NOHEATCLOUD;
+		explode dinnerplate type FALL | NOHEATCLOUD;
+		explode sonar type FALL | EXPLODE_ON_HIT ;
+		return (0);
+	}
+	explode body type NOHEATCLOUD ;
+	explode Foot1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
+	explode Foot2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
+	explode Foot3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
+	explode Foot4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
+	explode holder type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode dinnerplate type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sonar type FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
+}
