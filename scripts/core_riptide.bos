@@ -576,20 +576,18 @@ FirePrimary()
 	if( gun_1 == 0 )
 	{
 		gun_1 = body;
+		emit-sfx 1024 from flare1;
 		move barrel1 to z-axis [-2.000000] speed [400.000000];
-		show flare1;
 		sleep 150;
-		hide flare1;
 		move barrel1 to z-axis [0.000000] speed [2.000000];
 		return (0);
 	}
 	if( gun_1 == 1 )
 	{
 		gun_1 = base;
+		emit-sfx 1024 from flare1;
 		move barrel2 to z-axis [-2.000000] speed [400.000000];
-		show flare2;
 		sleep 150;
-		hide flare2;
 		move barrel2 to z-axis [0.000000] speed [2.000000];
 		return (0);
 	}

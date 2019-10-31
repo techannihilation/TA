@@ -1,4 +1,4 @@
-﻿3.08.0 -> 3.XX.XX
+﻿3.08.0 -> 3.09.0
 2019-10-29
 Balance:
  - Delete Totalitarian from T2

@@ -2,8 +2,8 @@ return {
 	tllmatamata = {
 		acceleration = 0.025,
 		brakerate = 0.101,
-		buildcostenergy = 12557,
-		buildcostmetal = 2653,
+		buildcostenergy = 18557,
+		buildcostmetal = 2453,
 		builder = false,
 		buildpic = "tllmatamata.dds",
 		buildtime = 16000,
@@ -114,7 +114,7 @@ return {
 			},
 		},
 		weapondefs = {
-			light_cannon = {
+			cannon = {
 				areaofeffect = 118,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
@@ -130,7 +130,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 750,
-				reloadtime = 1.2,
+				reloadtime = 1,
 				rgbcolor = "0.87 0.63 0",
 				separation = 0.45,
 				size = 1.36,
@@ -144,15 +144,15 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 450,
 				damage = {
-					commanders = 225,
-					default = 450,
+					commanders = 187.5,
+					default = 375,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				def = "LIGHT_CANNON",
+				def = "CANNON",
 				onlytargetcategory = "SURFACE",
 			},
 		},

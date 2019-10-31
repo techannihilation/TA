@@ -17,9 +17,9 @@ activateScr()
 	if( TRUE )
 	{
 		turn door1 to z-axis <0.000000> now;
-		move door1 to y-axis [6.500000] speed [10.000000];
+		move door1 to y-axis [7.475000] speed [10.000000];
 		turn door2 to z-axis <0.000000> now;
-		move door2 to y-axis [6.500000] speed [10.000000];
+		move door2 to y-axis [7.475000] speed [10.000000];
 		sleep 610;
 	}
 	if( TRUE )
@@ -35,7 +35,7 @@ activateScr()
 	}
 	if( TRUE )
 	{
-		move nano to z-axis [4.000000] speed [10.500000];
+		move nano to z-axis [4.600000] speed [10.500000];
 		turn nano1 to y-axis <90.000000> speed <190.000000>;
 		turn nano2 to y-axis <-90.000000> speed <190.000000>;
 		sleep 380;
@@ -47,12 +47,12 @@ deactivateScr()
 {
 	if( TRUE )
 	{
-		move door1 to y-axis [6.500000] now;
-		move door2 to y-axis [6.500000] now;
+		move door1 to y-axis [7.475000] now;
+		move door2 to y-axis [7.475000] now;
 		turn door1 to z-axis <-90.000000> now;
 		turn door2 to z-axis <90.000000> now;
 		turn cover to x-axis <-90.000000> now;
-		move nano to z-axis [4.000000] now;
+		move nano to z-axis [4.600000] now;
 		turn nano1 to y-axis <90.000000> now;
 		turn nano2 to y-axis <-90.000000> now;
 		move nano to z-axis [0.000000] speed [10.500000];
