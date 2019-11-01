@@ -1,3 +1,4 @@
+
 return {
 	armcom5 = {
 		acceleration = 0.22,
@@ -45,8 +46,8 @@ return {
 		immunetoparalyzer = 1,
 		losemitheight = 63,
 		maneuverleashlength = 640,
-		mass = 7500,
-		maxdamage = 7500,
+		mass = 5000,
+		maxdamage = 5000,
 		maxslope = 29,
 		maxvelocity = 1.4,
 		maxwaterdepth = 35,

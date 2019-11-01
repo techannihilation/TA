@@ -46,7 +46,7 @@ return {
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 500,
 		transportcapacity = 1,
-		transportmass = 7500,
+		transportmass = 5000,
 		transportmaxunits = 1,
 		transportsize = 25,
 		turninplaceanglelimit = 360,

@@ -55,7 +55,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		transportcapacity = 1,
-		transportmass = 3000,
+		transportmass = 1500,
 		transportsize = 3,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 5.28,
