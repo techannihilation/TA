@@ -1,4 +1,5 @@
 ﻿3.09.0 -> 3.09.1
+2019-11-01
 Balance:
  - Helepolis, Adv Roaster. Less cost and stats.
  - Balance T1 Fast Vehicle Topaz (less HP)
