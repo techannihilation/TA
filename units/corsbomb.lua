@@ -37,7 +37,7 @@ return {
 		maxslope = 30,
 		maxvelocity = 6,
 		maxwaterdepth = 0,
-		mincloakdistance = 100,
+		mincloakdistance = 200,
 		mobilestandorders = 1,
 		name = "Black Lily",
 		noautofire = false,

@@ -60,7 +60,7 @@ return {
 		workertime = 1000,
 		buildoptions = {
 			[1] = "tllprototype",
-			[2] = "tlldevelop",
+			--[2] = "tlldevelop",
 			[3] = "tlluwfusion",
 			[4] = "tllwmmohoconv",
 			[5] = "tllemex",

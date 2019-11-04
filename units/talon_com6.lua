@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 40750,
 		builddistance = 300,
 		builder = true,
-		buildpic = "talon_com6.png",
+		buildpic = "talon_com6.dds",
 		buildtime = 325000,
 		canattack = true,
 		cancapture = true,

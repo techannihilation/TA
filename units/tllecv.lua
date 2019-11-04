@@ -72,7 +72,7 @@ return {
 			[6] = "tllavp",
 			[7] = "tllevp",
 			[8] = "tllprototype",
-			[9] = "tlldevelop",
+			--[9] = "tlldevelop",
 			[10] = "tllnanotc2",
 			[11] = "tlltarg",
 			[12] = "tllobliterator1",
