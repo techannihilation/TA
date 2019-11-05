@@ -35,6 +35,7 @@ local scouts = {
   [UnitDefNames["corfav"].id] = true,
   [UnitDefNames["tllbug"].id] = true,
   [UnitDefNames["tllgladius"].id] = true,
+  [UnitDefNames["talon_infantry"].id] = true,
 }
 
 function gadget:Explosion(weaponID, px, py, pz, ownerID)

@@ -1,10 +1,12 @@
 ﻿3.09.0 -> 3.09.1
-2019-11-01
+2019-11-04
 Balance:
  - Helepolis, Adv Roaster. Less cost and stats.
  - Balance T1 Fast Vehicle Topaz (less HP)
  - Talon Solar and Gen increase Timebuild
  - Decrease HP for Talon Psyker
+ - Nerf Gladiator (less range for beam = same than arm warrior). Decrease HP by 200.
+ - Cloak bomber. Increase decloak radius
 
 Improvements:
  - Reduce Mass for Commander and transportair Air Mass transported. It's change nothing for commander. But now T1 Air can't transport Sumo for example. 
@@ -13,7 +15,8 @@ Improvements:
  - Add Artillery Tortoise (Menacer with new model)
  - Add Long Range Rapid artillery (Haboob)
  - Add Adv Turtle Tribulation Antinuke
- -
+ - Fix Spider cons t4 & TLLEMplrpt Icon DDS
+ - 
 
 3.08.0 -> 3.09.0
 2019-10-29

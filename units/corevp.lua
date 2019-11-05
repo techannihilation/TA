@@ -56,7 +56,7 @@ return {
 			[3] = "champ",
 			[4] = "armsiege",
 			[5] = "armtigre2",
-			[6] = "corminotaur",
+			--[6] = "corminotaur",
 			[7] = "corbt",
 		},
 		customparams = {
