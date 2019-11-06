@@ -35,7 +35,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 45265,
 		maxdamage = 93000,
-		maxvelocity = 1.6,
+		maxvelocity = 1.35,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		movementclass = "HDBOAT8",

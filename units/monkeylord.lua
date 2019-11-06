@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 2.97,
 		buildcostenergy = 450039,
-		buildcostmetal = 32463,
+		buildcostmetal = 36463,
 		builder = false,
 		buildpic = "monkeylord.dds",
 		buildtime = 400000,

@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Very Heavy Tank - Anti T3/T4",
+		description = "Experimental Units Hunter - Anti T3/T4",
 		downloadable = 1,
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,

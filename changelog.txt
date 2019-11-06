@@ -7,6 +7,11 @@ Balance:
  - Decrease HP for Talon Psyker
  - Nerf Gladiator (less range for beam = same than arm warrior). Decrease HP by 200.
  - Cloak bomber. Increase decloak radius
+ - All commando : Reduce HP 25%, CaptureSpeed 50%, Sight 30%. Delete Radar.
+ - Increase cost of t2 kbot lab Talon. Delete morph for engi into t2 cons.
+ - Increase speed for all faction t2/t3 ship. Increase HP + 20% for all Bats T2 ship.
+ - Increase stats for T4 Archon and Mythrill Talon
+ - Increase cost for Monkeylord (+5%)
 
 Improvements:
  - Reduce Mass for Commander and transportair Air Mass transported. It's change nothing for commander. But now T1 Air can't transport Sumo for example. 
@@ -16,7 +21,11 @@ Improvements:
  - Add Long Range Rapid artillery (Haboob)
  - Add Adv Turtle Tribulation Antinuke
  - Fix Spider cons t4 & TLLEMplrpt Icon DDS
- - 
+ - Delete corminautor (t3). Revert Champion => Core with Anti Experimental weapon.
+ - Add Talon commando. (MAde by engi t2)
+
+Fix : 
+ - Core/Arm Mines are now unlocked by T2/T3 lab as Talon/TLL 
 
 3.08.0 -> 3.09.0
 2019-10-29

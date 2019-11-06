@@ -66,6 +66,7 @@ return {
 			detonaterange = "64",
 			faction = "TALON",
 			initcloaked = true,
+			requiretech = "T2 Factory",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

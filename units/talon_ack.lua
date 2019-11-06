@@ -67,7 +67,7 @@ return {
 			[5] = "talon_mine2",
 			[6] = "talon_fort",
 			[7] = "talon_arad",
-			[8] = "talon_conspiracy",
+			[8] = "talon_conspiracy1",
 			[9] = "talon_vhlt",
 			[10] = "talon_sprinkler",
 			[11] = "talon_slinger",
@@ -78,6 +78,7 @@ return {
 			[16] = "talon_mds",
 			[17] = "talon_psyker",
 			[18] = "talon_wolf",
+			[19] = "talon_shepherd",
 		},
 		customparams = {
 			buildpic = "talon_ack.dds",
