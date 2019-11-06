@@ -58,7 +58,7 @@ return {
 		buildoptions = {
 			[1] = "talon_ack1",
 			[2] = "talon_ack",
-			[2] = "talon_wolf",
+			[3] = "talon_wolf",
 			[4] = "talon_crusader",
 			[5] = "talon_mastiff",
 			[6] = "talon_striker",
@@ -68,6 +68,7 @@ return {
 		customparams = {
 			buildpic = "talon_alab.dds",
 			faction = "TALON",
+			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead1 = {
