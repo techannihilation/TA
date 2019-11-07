@@ -64,6 +64,7 @@ return {
 			[6] = "talon_striker",
 			[7] = "talon_herison",
 			[8] = "talon_husher",
+			[9] = "talon_fdog",
 		},
 		customparams = {
 			buildpic = "talon_alab.dds",

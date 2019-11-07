@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 34042,
 		buildcostmetal = 2761,
 		builder = false,
-		buildpic = "armfboy.dds",
+		buildpic = "talon_fdog.dds",
 		buildtime = 30000,
 		canattack = true,
 		canguard = true,
@@ -52,7 +52,7 @@ return {
 		unitname = "talon_fdog",
 		upright = false,
 		customparams = {
-			buildpic = "armfboy.dds",
+			buildpic = "talon_fdog.dds",
 			faction = "TALON",
 		},
 		featuredefs = {
@@ -62,13 +62,13 @@ return {
 				collisionvolumescales = "33.431427002 25.3690338135 53.5839233398",
 				collisionvolumetype = "Box",
 				damage = 5148,
-				description = "Fatboy Wreckage",
+				description = "FatDog Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1162,
-				object = "ARMFBOY_DEAD",
+				object = "talon_fdog_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +77,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 6435,
-				description = "Fatboy Debris",
+				description = "FatDog Debris",
 				energy = 0,
 				footprintx = 2,
 				footprintz = 2,
@@ -90,6 +90,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:goliathflare",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
