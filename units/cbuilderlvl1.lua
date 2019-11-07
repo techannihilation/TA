@@ -67,7 +67,7 @@ return {
 			[8] = "corarad",
 			[9] = "cormine2",
 			[10] = "hllt",
-			[11] = "corvhlt",
+			--[11] = "corvhlt",
 			[12] = "corvipe",
 			[13] = "cortoast",
 			[14] = "cordoom",

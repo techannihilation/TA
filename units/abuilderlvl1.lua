@@ -62,7 +62,7 @@ return {
 			[8] = "armarad",
 			[9] = "armmine2",
 			[10] = "tawf001",
-			[11] = "armvhlt",
+			--[11] = "armvhlt",
 			[12] = "armpb",
 			[13] = "armamb",
 			[14] = "armanni",

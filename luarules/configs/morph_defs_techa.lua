@@ -395,6 +395,7 @@ local morphDefs = {
 	armgmm = {
 		into = 'armfor',
 		time = 90,
+		tech = 2,
 	},
 	talon_geo = {
 		into = 'talon_mohogeo',
@@ -416,7 +417,7 @@ local morphDefs = {
 	corbhmth = {
 		into = 'corbhmth1',
 		time = 90,
-		xp = 0.30,
+		tech = 2,
   	},
 	tllgeo = {
 		{
