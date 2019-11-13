@@ -1,4 +1,11 @@
-﻿3.09.0 -> 3.09.1
+﻿3.09 -> 3.1
+2019-11-14
+Balance:
+ - Metal Extractor modification for extract metal (**X is Ratio of XT1 ** T1.5 : 2 vs 2.5 -- T2 : 5 vs 6 -- T3 : 12.5 vs 16 -- T4 37.5 vs 45). I'm thinking about T5 Mex for future.
+Improvements:
+ - Add FatDog for Talon Kbot T2
+
+3.09.0 -> 3.09.1
 2019-11-04
 Balance:
  - Helepolis, Adv Roaster. Less cost and stats.

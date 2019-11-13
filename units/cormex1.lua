@@ -22,7 +22,7 @@ return {
 		description = "Overcharged Metal Extractor, Amphibious",
 		energyuse = 22,
 		explodeas = "SMALL_BUILDING",
-		extractsmetal = 0.0025,
+		extractsmetal = 0.002,
 		footprintx = 3,
 		footprintz = 3,
 		icontype = "building",
