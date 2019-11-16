@@ -51,8 +51,9 @@ return {
 			[4] = "tllinsulator",
 			[5] = "tlldemon",
 			[6] = "tllacid",
-			[7] = "tlllongshot",
-			[8] = "anvil",
+			[7] = "tllnaja",
+			[8] = "tlllongshot",
+			[9] = "anvil",
 		},
 		customparams = {
 			buildpic = "tllevp.dds",

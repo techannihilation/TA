@@ -109,7 +109,7 @@ return {
 				flighttime = 6,
 				metalpershot = 0,
 				model = "TAWF114a",
-				name = "Antiship missile",
+				name = "Barrage missile",
 				range = 2100,
 				reloadtime = 15,
 				smoketrail = true,
