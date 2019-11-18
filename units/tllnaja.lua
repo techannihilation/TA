@@ -3,7 +3,7 @@ return {
 		acceleration = 0.34,
 		brakerate = 0.02931,
 		buildcostenergy = 137101,
-		buildcostmetal = 13017,
+		buildcostmetal = 12854,
 		builder = false,
 		buildpic = "tllnaja.dds",
 		buildtime = 200000,

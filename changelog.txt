@@ -1,4 +1,14 @@
-﻿3.09 -> 3.1
+﻿3.1 -> 3.2
+Balance:
+ - Decrease Horgue Cost by 10%
+Improvements:
+ - Delete for Test the T1.5 Adv Vehicle/Kbot
+ - Decrease cost of ALL T2 Cons by 66%
+ - Decrease cost of ALL T3 Cons by 50%
+ - Decrease cost of ALL T4 Cons by 33%
+ - Add T3 Vehicle Naja (Rocket Thermite launcher)
+
+3.09 -> 3.1
 2019-11-14
 Balance:
  - Metal Extractor modification for extract metal (**X is Ratio of XT1 ** T1.5 : 2 vs 2.5 -- T2 : 5 vs 6 -- T3 : 12.5 vs 16 -- T4 37.5 vs 45). I'm thinking about T5 Mex for future.

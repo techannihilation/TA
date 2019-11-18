@@ -59,7 +59,7 @@ return {
 		buildoptions = {
 			[1] = "corcv",
 			--[2] = "cormuskrat",
-			[3] = "corfred",
+			--[3] = "corfred",
 			[4] = "cormlv",
 			[5] = "corfav",
 			[6] = "corgator",

@@ -56,7 +56,7 @@ return {
 		turnrate = 448,
 		unitname = "armcs",
 		waterline = 1,
-		workertime = 160,
+		workertime = 100,
 		buildoptions = {
 			[1] = "armgeo",
 			[2] = "armeyes",

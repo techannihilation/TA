@@ -16,7 +16,7 @@ return {
 		category = "ALL CONSTR MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON LARGE SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Advanced T1 Amphibious Construction Vehicle",
+		description = "Tech Level 1.5 (Amphibious)",
 		energymake = 10,
 		energyuse = 0,
 		explodeas = "BIG_UNITEX",

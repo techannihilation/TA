@@ -4,7 +4,7 @@ return {
 		brakerate = 2.25,
 		buildcostenergy = 1907,
 		buildcostmetal = 299,
-		builddistance = 260,
+		builddistance = 240,
 		builder = true,
 		buildpic = "tllcs.dds",
 		buildtime = 5250,
@@ -56,7 +56,7 @@ return {
 		turnrate = 421,
 		unitname = "tllcs",
 		waterline = 4,
-		workertime = 200,
+		workertime = 130,
 		buildoptions = {
 			[1] = "tllgeo",
 			[2] = "tllturtle_lab",

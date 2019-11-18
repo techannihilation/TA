@@ -4,7 +4,7 @@ return {
 		brakerate = 0.12,
 		buildcostenergy = 2533,
 		buildcostmetal = 277,
-		builddistance = 260,
+		builddistance = 240,
 		builder = true,
 		buildpic = "corcs.dds",
 		buildtime = 5000,
@@ -57,7 +57,7 @@ return {
 		turnrate = 426,
 		unitname = "corcs",
 		waterline = 1,
-		workertime = 180,
+		workertime = 120,
 		buildoptions = {
 			[1] = "corgeo",
 			[2] = "coreyes",

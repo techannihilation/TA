@@ -1374,10 +1374,10 @@ local morphDefs = {
 	  	time = 60,
 		xp = 0.35,
 	},
-	talon_psyker = {
-		into = 'talon_psyker1',
-	  	time = 35,
-	},
+	--talon_psyker = {
+	--	into = 'talon_psyker1',
+	--  	time = 35,
+	--},
 	talon_whinestone  = {
 		into = 'talon_sapphire',
 	  	time = 40,
