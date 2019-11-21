@@ -8,9 +8,12 @@ Balance:
 
 Improvements:
  - Delete for Test the T1.5 Adv Vehicle/Kbot
+ - Decrease All T2 Lab Energy cost by 60% and metal by 20%. (TLL was too high cost. Now they will be better).
+ - Increase Cost of T4 Lab E by 50%. And Add Timebuild by 33%.
  - Decrease cost of ALL T2/T3 Cons by 66%
  - Decrease cost of ALL T4 Cons by 50%
  - Add T3 Vehicle Naja (Rocket Thermite launcher)
+ - T3 Rex and black Tiger are now Amphibious
  - Add DDS icon for new units
 
 3.09 -> 3.1

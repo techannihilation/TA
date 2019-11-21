@@ -22,15 +22,15 @@ activatescr()
 	wait-for-turn roofr around z-axis;
 	wait-for-turn roofl around z-axis;
 	sleep 100;
-	move hallr to x-axis [-12.000000] speed [10.000000];
-	move halll to x-axis [12.000000] speed [10.000000];
+	move hallr to x-axis [-14.400000] speed [10.000000];
+	move halll to x-axis [14.400000] speed [10.000000];
 	wait-for-move hallr along x-axis;
 	wait-for-move halll along x-axis;
-	move front1 to x-axis [-3.000000] speed [10.000000];
-	move front2 to x-axis [3.000000] speed [10.000000];
+	move front1 to x-axis [-3.600000] speed [10.000000];
+	move front2 to x-axis [3.600000] speed [10.000000];
 	wait-for-move front1 along x-axis;
 	wait-for-move front2 along x-axis;
-	move nano to z-axis [4.000000] speed [10.000000];
+	move nano to z-axis [4.800000] speed [10.000000];
 	sleep 100;
 }
 
@@ -107,16 +107,6 @@ CloseYard()
 
 Go()
 {
-	dont-cache halll;
-	dont-cache hallr;
-	dont-cache front1;
-	dont-cache front2;
-	dont-cache roofl;
-	dont-cache roofr;
-	dont-cache doorr;
-	dont-cache doorl;
-	dont-cache pad;
-	dont-cache nano;
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
@@ -127,16 +117,6 @@ Stop()
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
 	call-script deactivatescr();
-	cache halll;
-	cache hallr;
-	cache front1;
-	cache front2;
-	cache roofl;
-	cache roofr;
-	cache doorr;
-	cache doorl;
-	cache pad;
-	cache nano;
 }
 
 InitState()
@@ -173,17 +153,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade base;
-	dont-shade halll;
-	dont-shade hallr;
-	dont-shade front1;
-	dont-shade front2;
-	dont-shade roofl;
-	dont-shade roofr;
-	dont-shade doorr;
-	dont-shade doorl;
-	dont-shade pad;
-	dont-shade nano;
 	call-script InitState();
 	start-script SmokeUnit();
 }
