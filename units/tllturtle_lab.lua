@@ -1,8 +1,8 @@
 return {
 	tllturtle_lab = {
 		buildangle = 2096,
-		buildcostenergy = 56474,
-		buildcostmetal = 4407,
+		buildcostenergy = 33412,
+		buildcostmetal = 3161,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,

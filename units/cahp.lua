@@ -1,7 +1,7 @@
 return {
 	cahp = {
-		buildcostenergy = 70502,
-		buildcostmetal = 4051,
+		buildcostenergy = 28454,
+		buildcostmetal = 3421,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 12,

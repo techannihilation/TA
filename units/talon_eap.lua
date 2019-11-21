@@ -2,7 +2,7 @@ return {
 	talon_eap = {
 		buildangle = 1024,
 		buildcostenergy = 411042,
-		buildcostmetal = 17403,
+		buildcostmetal = 17985,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 9,

@@ -1,10 +1,10 @@
 return {
 	tllshipyardlvl3 = {
-		buildcostenergy = 1492966,
-		buildcostmetal = 169897,
+		buildcostenergy = 1792966,
+		buildcostmetal = 166897,
 		builder = true,
 		buildpic = "tllshipyardlvl3.dds",
-		buildtime = 1200000,
+		buildtime = 2500000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

@@ -1,14 +1,14 @@
 return {
 	talon_esy = {
-		buildcostenergy = 212000,
-		buildcostmetal = 14650,
+		buildcostenergy = 267969,
+		buildcostmetal = 19050,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "armesy_aoplane.dds",
 		buildpic = "talon_asy.dds",
-		buildtime = 85000,
+		buildtime = 200000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

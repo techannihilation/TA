@@ -2,8 +2,8 @@ return {
 	asubpen = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 80111,
-		buildcostmetal = 3786,
+		buildcostenergy = 28541,
+		buildcostmetal = 3488,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,

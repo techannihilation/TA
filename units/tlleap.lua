@@ -1,14 +1,14 @@
 return {
 	tlleap = {
-		buildcostenergy = 288100,
-		buildcostmetal = 20952,
+		buildcostenergy = 315001,
+		buildcostmetal = 19415,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "tlleap_aoplane.dds",
 		buildpic = "tlleap.dds",
-		buildtime = 96525,
+		buildtime = 300000,
 		canbeassisted = true,
 		canmove = true,
 		canpatrol = true,

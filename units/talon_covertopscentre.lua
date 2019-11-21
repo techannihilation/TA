@@ -9,7 +9,7 @@
 		buildinggrounddecalsizey = 15,
 		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_covertopscentre.dds",
-		buildtime = 1200000,
+		buildtime = 2700000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

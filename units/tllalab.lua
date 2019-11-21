@@ -1,8 +1,8 @@
 return {
 	tllalab = {
 		buildangle = 2048,
-		buildcostenergy = 48082,
-		buildcostmetal = 4352,
+		buildcostenergy = 23149,
+		buildcostmetal = 3201,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,

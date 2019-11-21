@@ -1,8 +1,8 @@
 return {
 	talon_evp = {
 		buildangle = 1024,
-		buildcostenergy = 355432,
-		buildcostmetal = 17134,
+		buildcostenergy = 362950,
+		buildcostmetal = 15211,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 10,

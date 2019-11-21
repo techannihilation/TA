@@ -1,7 +1,7 @@
 return {
 	tllaap = {
-		buildcostenergy = 67693,
-		buildcostmetal = 4441,
+		buildcostenergy = 27854,
+		buildcostmetal = 4005,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,

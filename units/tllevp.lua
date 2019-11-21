@@ -1,8 +1,8 @@
 return {
 	tllevp = {
 		buildangle = 1024,
-		buildcostenergy = 274070,
-		buildcostmetal = 20931,
+		buildcostenergy = 282960,
+		buildcostmetal = 16625,
 		builder = true,
 		buildpic = "tllevp.dds",
 		buildtime = 320000,

@@ -1,8 +1,8 @@
 return {
 	cortlab = {
 		buildangle = 4096,
-		buildcostenergy = 63025,
-		buildcostmetal = 3951,
+		buildcostenergy = 25641,
+		buildcostmetal = 3368,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,

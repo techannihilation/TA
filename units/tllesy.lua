@@ -1,14 +1,14 @@
 return {
 	tllesy = {
 		buildcostenergy = 170230,
-		buildcostmetal = 21022,
+		buildcostmetal = 21422,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,
 		buildinggrounddecalsizey = 18,
 		buildinggrounddecaltype = "tllesy_aoplane.dds",
 		buildpic = "tllesy.dds",
-		buildtime = 65400,
+		buildtime = 200000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

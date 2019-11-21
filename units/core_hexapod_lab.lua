@@ -2,7 +2,7 @@ return {
 	core_hexapod_lab = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 952296,
+		buildcostenergy = 1552296,
 		buildcostmetal = 86632,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 20,
 		buildinggrounddecaltype = "core_hexapod_lab_aoplane.dds",
 		buildpic = "core_hexapod_lab.dds",
-		buildtime = 600000,
+		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

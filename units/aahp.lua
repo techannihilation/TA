@@ -1,7 +1,7 @@
 return {
 	aahp = {
-		buildcostenergy = 67783,
-		buildcostmetal = 4187,
+		buildcostenergy = 29595,
+		buildcostmetal = 3541,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,

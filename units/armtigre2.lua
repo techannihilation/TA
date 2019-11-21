@@ -32,7 +32,7 @@ return {
 		maxvelocity = 1.45,
 		maxwaterdepth = 255,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT4",
+		movementclass = "ATANK3",
 		name = "Black Tiger",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",

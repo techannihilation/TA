@@ -1,7 +1,7 @@
 return {
 	aahpns = {
-		buildcostenergy = 67882,
-		buildcostmetal = 4248,
+		buildcostenergy = 29687,
+		buildcostmetal = 3544,
 		builder = true,
 		buildpic = "aahpns.dds",
 		buildtime = 36000,

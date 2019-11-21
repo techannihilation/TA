@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Heavy Combat Mechbot",
+		description = "Heavy Combat Kbot",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 4,
