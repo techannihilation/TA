@@ -77,17 +77,21 @@ if gadgetHandler:IsSyncedCode() then
         --Transporters
         [UnitDefNames["armatlas"].id] = "Bombers",
         [UnitDefNames["armdfly"].id] = "Bombers",
-        --[UnitDefNames["armdragf"].id] = "Bombers",
-        [UnitDefNames["armsl"].id] = "Bombers",
-        [UnitDefNames["corfalc"].id] = "Bombers",
+        [UnitDefNames["talon_wyvern"].id] = "Bombers",
+        [UnitDefNames["talon_rukh"].id] = "Bombers",
+        [UnitDefNames["talon_tau"].id] = "Bombers",
+        [UnitDefNames["armsl"].id] = "Bombers",        
         [UnitDefNames["corvalk"].id] = "Bombers",
         [UnitDefNames["tllrobber"].id] = "Bombers",
         [UnitDefNames["tlltplane"].id] = "Bombers",
         [UnitDefNames["armor"].id] = "Bombers",
         [UnitDefNames["corbtrans"].id] = "Bombers",
         --Bombers
-        [UnitDefNames["armblz"].id] = "Bombers",
-        --[UnitDefNames["corfiend"].id] = "Bombers",
+        [UnitDefNames["talon_cyclone"].id] = "Bombers",
+        [UnitDefNames["talon_shade"].id] = "Bombers",
+        [UnitDefNames["talon_eclipse"].id] = "Bombers",
+        [UnitDefNames["talon_handgod"].id] = "Bombers",
+        [UnitDefNames["talon_trident"].id] = "Bombers",
         [UnitDefNames["armcybr"].id] = "Bombers",
         [UnitDefNames["armlance"].id] = "Bombers",
         [UnitDefNames["armpnix"].id] = "Bombers",
@@ -124,6 +128,9 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tllshu"].id] = "Fighters",
         [UnitDefNames["armstratus"].id] = "Fighters",
         [UnitDefNames["tllcondor"].id] = "Fighters",
+        [UnitDefNames["talon_token"].id] = "Fighters",
+        [UnitDefNames["talon_echelon"].id] = "Fighters",
+        [UnitDefNames["talon_hornet"].id] = "Fighters",
         --Scouts
         [UnitDefNames["armpeep"].id] = "Scouts",
         [UnitDefNames["armawac"].id] = "Scouts",
@@ -134,6 +141,8 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["tllprob"].id] = "Scouts",
         [UnitDefNames["tllrsplane"].id] = "Scouts",
         [UnitDefNames["tllsonpl"].id] = "Scouts"
+        [UnitDefNames["talon_recon"].id] = "Scouts"
+        [UnitDefNames["talon_vigilante"].id] = "Scouts"
     }
 
     local function shallow_copy(t)
