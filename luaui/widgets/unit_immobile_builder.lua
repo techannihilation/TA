@@ -63,7 +63,7 @@ local morphednanos = { --not in use, look like 125
 --The lost legacy
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
-  [UnitDefNames["tllnanotc3"].id] = true
+  [UnitDefNames["tllnanotc3"].id] = true,
 
 
 --Talon

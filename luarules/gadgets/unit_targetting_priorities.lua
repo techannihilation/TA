@@ -140,9 +140,9 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["corhunt"].id] = "Scouts",
         [UnitDefNames["tllprob"].id] = "Scouts",
         [UnitDefNames["tllrsplane"].id] = "Scouts",
-        [UnitDefNames["tllsonpl"].id] = "Scouts"
-        [UnitDefNames["talon_recon"].id] = "Scouts"
-        [UnitDefNames["talon_vigilante"].id] = "Scouts"
+        [UnitDefNames["tllsonpl"].id] = "Scouts",
+        [UnitDefNames["talon_recon"].id] = "Scouts",
+        [UnitDefNames["talon_vigilante"].id] = "Scouts",
     }
 
     local function shallow_copy(t)

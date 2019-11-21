@@ -40,6 +40,9 @@ jumpCategory = {
 		range = 1250, height = 150, speed = 5,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	jumpbot = {
 		range = 400, height = 200, speed = 3,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
+	longjumpbot = {
+		range = 400, height = 200, speed = 6,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},		
+}
 
 jumpClassGroups = {
 	assaultcom = {
@@ -63,7 +66,11 @@ jumpClassGroups = {
 	jumpbot = {
 	"tlldischarge",
 	"armcav",
-	},	
+	},
+	longjumpbot = {
+	
+	},
+	
 }
 
 for name,data in pairs(UnitDefNames) do
