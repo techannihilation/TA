@@ -1,0 +1,157 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret, sleeve, barrel1, flare1, barrel2, flare2, sp1;
+
+static-var  gun;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	dont-shade turret;
+	dont-shade sleeve;
+	dont-shade barrel1;
+	dont-shade barrel2;
+	dont-shade body;
+	dont-shade flare1;
+	dont-shade flare2;
+	dont-cache turret;
+	dont-cache sleeve;
+	dont-cache barrel1;
+	dont-cache barrel2;
+	dont-cache body;
+	dont-cache flare1;
+	dont-cache flare2;
+	hide sp1;
+	hide flare1;
+	hide flare2;
+	gun = 0;
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <80.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <40.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+
+	if (gun == 0 ) 
+	{
+		emit-sfx 1024 + 0 from flare1;
+		move barrel1 to z-axis [-3.000000] now;
+		sleep 150;
+		move barrel1 to z-axis [0.000000] speed [4.000000];
+	}
+	if (gun == 1 ) 
+	{
+		emit-sfx 1024 + 0 from flare2;
+		move barrel2 to z-axis [-3.000000] now;
+		sleep 150;
+		move barrel2 to z-axis [0.000000] speed [4.000000];
+	}
+	++gun;
+	if (gun == 2 ) 
+	{
+		gun = 0;
+	}
+	
+}
+
+QueryPrimary(piecenum)
+{
+	if (gun == 0 ) 
+	{
+		piecenum = flare1;
+	}
+	if (gun == 1 ) 
+	{
+		piecenum = flare2;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = sp1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

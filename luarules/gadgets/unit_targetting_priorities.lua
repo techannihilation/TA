@@ -77,7 +77,7 @@ if gadgetHandler:IsSyncedCode() then
         --Transporters
         [UnitDefNames["armatlas"].id] = "Bombers",
         [UnitDefNames["armdfly"].id] = "Bombers",
-        [UnitDefNames["armdragf"].id] = "Bombers",
+        --[UnitDefNames["armdragf"].id] = "Bombers",
         [UnitDefNames["armsl"].id] = "Bombers",
         [UnitDefNames["corfalc"].id] = "Bombers",
         [UnitDefNames["corvalk"].id] = "Bombers",
@@ -87,7 +87,7 @@ if gadgetHandler:IsSyncedCode() then
         [UnitDefNames["corbtrans"].id] = "Bombers",
         --Bombers
         [UnitDefNames["armblz"].id] = "Bombers",
-        [UnitDefNames["corfiend"].id] = "Bombers",
+        --[UnitDefNames["corfiend"].id] = "Bombers",
         [UnitDefNames["armcybr"].id] = "Bombers",
         [UnitDefNames["armlance"].id] = "Bombers",
         [UnitDefNames["armpnix"].id] = "Bombers",

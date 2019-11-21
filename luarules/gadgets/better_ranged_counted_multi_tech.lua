@@ -311,7 +311,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local UnitsWithScripts={}
 	local ignoredunits={
  		[UnitDefNames["tlldischarge"].id] = true,
- 		[UnitDefNames["armkrmi"].id] = true,
+ 		--[UnitDefNames["armkrmi"].id] = true,
  		[UnitDefNames["armcav"].id] = true,
 	}
 

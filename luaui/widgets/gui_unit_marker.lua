@@ -79,15 +79,15 @@ unitList["TA"] = {
 [UnitDefNames["corevp"].id] = 	{["en"]="T3 Vehicle Lab", ["de"]="", ["fr"]="" },
 
 --T4 Labs
-[UnitDefNames["armshltx1"].id] = 	{["en"]="T4 Gantry", ["de"]="", ["fr"]="" },
---[UnitDefNames["corgant1"].id] = 	{["en"]="T4 Gantry", ["de"]="", ["fr"]="" },
-[UnitDefNames["cshipyardlvl4"].id] = 	{["en"]="Core Hero Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllshipyardlvl3"].id] = 	{["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["cshipyardlvl4"].id] = 	{["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["ashipyardlvl3"].id] = 	{["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_covertopscentre"].id] = {["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["ashipyardlvl3"].id] = 	{["en"]="Arm Hero Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["armrech4"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["correch4"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["core_hexapod_lab"].id] = 	{["en"]="Hexapod Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["arm_mech_lab"].id] = 	{["en"]="Mech Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllprototype"].id] = 	{["en"]="Prototype Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_podlab"].id] = 	{["en"]="Pod Lab", ["de"]="", ["fr"]="" },
 
 --T3 Mex
 [UnitDefNames["armmas"].id] = 	{["en"]="T3 Mex", ["de"]="", ["fr"]="" },
