@@ -5,10 +5,10 @@
 
 piece  torso, pelvis, lleg, lfoot, rleg, rfoot, rthigh, lthigh,
        head, luparm, ruparm, rarm, larm, mpack, rmispoint, lmispoint,
-       rmissle2, lmissle2, rgunflare, lgunflare, l_jetpk, r_jetpk, spark_emit;
+       rmissle2, lmissle2, rgunflare, lgunflare, l_jetpk, r_jetpk;
 
 static-var  bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
-            gun_2, Static_Var_7, Static_Var_8;
+            gun_1, gun_2, Static_Var_7, Static_Var_8;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -493,7 +493,8 @@ Create()
 	Static_Var_7 = 0;
 	Static_Var_3 = 1;
 	Static_Var_5 = 1;
-	gun_2 = pelvis;
+	gun_1 = 0;
+	gun_2 = 0;
 	restore_delay = 3000;
 	start-script MotionControl();
 	start-script SmokeUnit();
@@ -515,19 +516,10 @@ RestoreAfterDelay()
 	turn lmissle2 to z-axis <0.000000> speed <60.005495>;
 	move rmissle2 to y-axis [0.000000] speed [10.000000];
 	move lmissle2 to y-axis [0.000000] speed [10.000000];
-	wait-for-turn luparm around x-axis;
-	wait-for-turn ruparm around x-axis;
-	wait-for-turn torso around y-axis;
-	wait-for-turn ruparm around z-axis;
-	wait-for-turn luparm around z-axis;
-	wait-for-turn rarm around x-axis;
-	wait-for-turn larm around x-axis;
-	wait-for-turn head around y-axis;
-	wait-for-turn head around x-axis;
 	bAiming = FALSE;
 }
 
-AimPrimary(heading, pitch)
+AimSecondary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -547,7 +539,7 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-AimSecondary(heading, pitch)
+AimPrimary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
@@ -559,56 +551,70 @@ AimSecondary(heading, pitch)
 	return (1);
 }
 
+FireSecondary()
+{	
+	if( gun_1 == 0 )
+	{
+		emit-sfx 1024 + 2 from rgunflare;
+		sleep 33;
+		emit-sfx 1024 + 1 from rgunflare;		
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1024 + 2 from lgunflare;
+		sleep 33;
+		emit-sfx 1024 + 1 from lgunflare;	
+	}
+	
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+		
+	}
+}
+
 FirePrimary()
 {
-	emit-sfx 1024 + 2 from rgunflare;
-	emit-sfx 1024 + 2 from lgunflare;
-	emit-sfx 1024 + 1 from spark_emit;
-	sleep 11;
-	emit-sfx 1024 + 1 from spark_emit;
-	sleep 11;
-	emit-sfx 1024 + 1 from spark_emit;
-	sleep 11;
-	emit-sfx 1024 + 1 from spark_emit;
-	sleep 33;
-}
-
-FireSecondary()
-{
-	if( gun_2 == 1 )
+	++gun_2;
+	if( gun_2 == 2 )
 	{
-		gun_2 = lleg;
-		return (0);
+		gun_2 = 0;
+		
 	}
-	else
-	{
-		gun_2 = pelvis;
-		return (0);
-	}
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = torso;
 }
 
 AimFromSecondary(piecenum)
 {
-	piecenum = mpack;
+	piecenum = torso;
 }
 
-QueryPrimary(piecenum)
+AimFromPrimary(piecenum)
 {
-	piecenum = spark_emit;
+	piecenum = mpack;
 }
 
 QuerySecondary(piecenum)
 {
-	if( gun_2 == 1 )
+	if( gun_1 == 0 )
+	{
+		piecenum = rgunflare;
+		
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lgunflare;
+		
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_2 == 0 )
 	{
 		piecenum = rmispoint;
 	}
-	if( gun_2 == 2 )
+	if( gun_2 == 1 )
 	{
 		piecenum = lmispoint;
 	}
