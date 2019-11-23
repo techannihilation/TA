@@ -2,7 +2,8 @@
 2019-11-19
 !!On this update, major changes that will changes gameplay!! (in test for 1-2 weeks)
 Balance:
- - Decrease stats and cost for tllblinf (t3 tll). And increase speed.
+ - Decrease Regen/S for All Plasma Deflector. Fix at 10E => 1 Regen
+ - Decrease stats and cost for tllblind (t3 tll). And increase speed.
  - Decrease Horgue Cost by 10%
  - Decrease Speed rotation for pelvis ExoArm
  - Add 1000 HP to All Fusion Com

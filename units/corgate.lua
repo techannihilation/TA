@@ -134,7 +134,7 @@ return {
 				shieldintercepttype = 1,
 				shieldmaxspeed = 3500,
 				shieldpower = 7500,
-				shieldpowerregen = 150,
+				shieldpowerregen = 75,
 				shieldpowerregenenergy = 750,
 				shieldradius = 400,
 				shieldrepulser = true,
