@@ -82,7 +82,7 @@ return {
 		buildoptions = {
 			[1] = "corawin",
 			[2] = "corgen",
-			[3] = "corlightfus",
+			--[3] = "corlightfus",
 			[4] = "corgeo",
 			[5] = "cormstor",
 			[6] = "corestor",

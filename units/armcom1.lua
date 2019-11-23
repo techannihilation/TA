@@ -82,7 +82,7 @@ return {
 		buildoptions = {
 			[1] = "armawin",
 			[2] = "armgen",
-			[3] = "armlightfus",
+			--[3] = "armlightfus",
 			[4] = "armgeo",
 			[5] = "armmstor",
 			[6] = "armestor",
