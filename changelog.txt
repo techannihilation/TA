@@ -2,6 +2,7 @@
 2019-11-19
 !!On this update, major changes that will changes gameplay!! (in test for 1-2 weeks)
 Balance:
+ - Decrease stats and cost for tllblinf (t3 tll). And increase speed.
  - Decrease Horgue Cost by 10%
  - Decrease Speed rotation for pelvis ExoArm
  - Add 1000 HP to All Fusion Com
@@ -14,6 +15,7 @@ Improvements:
  - Decrease cost of ALL T4 Cons by 50%
  - Add T3 Vehicle Naja (Rocket Thermite launcher)
  - T3 Rex and black Tiger are now Amphibious
+ - Rework t2 kbot TLllDischarge (was the harder unit to use. Now more easier and it rocks !)
  - Add DDS icon for new units
 
 3.09 -> 3.1

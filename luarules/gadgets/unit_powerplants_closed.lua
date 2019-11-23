@@ -24,6 +24,7 @@ local noClosedE = {
     [UnitDefNames.tllsolar.id] = true,
     [UnitDefNames.tllsolarns.id] = true,
     [UnitDefNames.tlladvsolar.id] = true,
+    [UnitDefNames.talon_solar.id] = true,
 }
 
 function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)

@@ -33,7 +33,7 @@ local nukes = {
 }
 
 local emp = {
-    [UnitDefNames["tlldischarge"].id] = true,
+    --[UnitDefNames["tlldischarge"].id] = true,
 }
 ----------------------------------------------------------------
 -- Speedups
