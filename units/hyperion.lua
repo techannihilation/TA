@@ -33,7 +33,7 @@ return {
 		mass = 73502,
 		maxdamage = 181325,
 		maxslope = 17,
-		maxvelocity = 1.1,
+		maxvelocity = 1.3,
 		maxwaterdepth = 12,
 		metalmake = 0,
 		mobilestandorders = 1,
