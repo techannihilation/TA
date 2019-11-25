@@ -59,7 +59,7 @@ return {
 			[2] = "tllmantis",
 			[3] = "irritator",
 			[4] = "tllhailstorm",
-			[5] = "hyperion",
+			--[5] = "hyperion",
 			[6] = "tllgorgon",
 			[7] = "tllmcv",
 			[8] = "tllcolossus",
