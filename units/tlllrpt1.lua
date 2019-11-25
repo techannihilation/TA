@@ -10,7 +10,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
-		buildpic = "tlllrpt.dds",
+		buildpic = "tlllrpt1.dds",
 		buildtime = 382500,
 		canattack = true,
 		canstop = 1,
@@ -47,7 +47,7 @@ return {
 		usebuildinggrounddecal = false,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "tlllrpt.dds",
+			buildpic = "tlllrpt1.dds",
 			canareaattack = 1,
 			faction = "TLL",
 		},

@@ -99,7 +99,7 @@ return {
 			[17] = "armdl",
 			[18] = "armrl",
 			[19] = "armatidal",
-			[20] = "armuwlightfus",
+			--[20] = "armuwlightfus",
 			[21] = "armuwms",
 			[22] = "armuwes",
 			[23] = "armfmkr",
