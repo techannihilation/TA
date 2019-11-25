@@ -1,12 +1,15 @@
 ﻿3.1 -> 3.2
-2019-11-24
-!!On this update, major changes that will changes gameplay!! (in test for 1-2 weeks)
+2019-11-25
+On this update, major changes that will changes gameplay!
 Balance:
  - Decrease Regen/S for All Plasma Deflector. Fix at 10E => 1 Regen
  - Decrease stats and cost for tllblind (t3 tll). And increase speed.
  - Decrease Horgue Cost by 10%
  - Decrease Speed rotation for pelvis ExoArm
  - Add 1000 HP to All Fusion Com
+ - Decrease Stats and costfor Hyperion
+ - Increase range for arm_furie main weapon 590 => 650
+ - Decrease velocity for armorco (1.25 => 1.2) Same than Krogoth.
 
 Improvements:
  - Delete for Test the T1.5 Adv Vehicle/Kbot
@@ -17,6 +20,8 @@ Improvements:
  - Add T3 Vehicle Naja (Rocket Thermite launcher)
  - T3 Rex and black Tiger are now Amphibious
  - Rework t2 kbot TLllDischarge (was the harder unit to use. Now more easier and it rocks !)
+ - Increase T3 ARM Lab model by 20%
+ - Hyperion rebecomes T3 unit
  - Add DDS icon for new units
 
 3.09 -> 3.1

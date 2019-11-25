@@ -136,7 +136,7 @@ return {
 				impulsefactor = 0,
 				intensity = 1,
 				name = "Gauss Cannon2",
-				range = 590,
+				range = 700,
 				reloadtime = 0.1,
 				rgbcolor = "1 0.1 0.1",
 				soundhitdry = "xplomed2",
