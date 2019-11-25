@@ -55,6 +55,7 @@ return {
 			[4] = "tllcrawler",
 			[5] = "tllhtml",
 			[6] = "tllgrim",
+			[7] = "hyperion",
 		},
 		customparams = {
 			buildpic = "tllhtcp.dds",
