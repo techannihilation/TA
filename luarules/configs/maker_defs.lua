@@ -12,7 +12,7 @@ local AC7 = 1.6/100
 
 local T0 = 0.95/100
 local T1 = 1/100
-local T2 = 1.2/100
+local T2 = 1.25/100
 --local T3 = 1.31/100
 local T4 = 1.35/100
 local T5 = 1.4/100
