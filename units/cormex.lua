@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		damagemodifier = 0.4,
-		description = "Extracts Metal",
+		description = "Tech Level 1",
 		energyuse = 3,
 		explodeas = "SMALL_BUILDINGEX",
 		extractsmetal = 0.001,

@@ -68,7 +68,7 @@ return {
 			[8] = "armwar",
 			--[9] = "armpw1",
 			--[10] = "armcrack",
-			[10] = "aexxec",
+			--[10] = "aexxec",
 		},
 		customparams = {
 			buildpic = "armlab.dds",

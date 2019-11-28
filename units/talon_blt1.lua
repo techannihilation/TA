@@ -120,7 +120,6 @@ return {
 			blt1 = {
 				areaofeffect = 50,
 				beamtime = 0.75,
-				beamttl=5,
 				corethickness = 0.15,
 				craterareaofeffect = 0,
 				craterboost = 0,
