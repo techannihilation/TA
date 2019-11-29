@@ -10,8 +10,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 26,
 		buildinggrounddecalsizey = 26,
-		buildinggrounddecaltype = "corsfus_aoplane.dds",
-		buildpic = "corefus.dds",
+		buildpic = "corufus.dds",
 		buildtime = 15000000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 -5 -20",
@@ -46,7 +45,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corufus",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo ",
 		customparams = {
 			buildpic = "corufus.dds",
