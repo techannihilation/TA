@@ -37,7 +37,7 @@ return {
 		maxvelocity = 2.7,
 		maxwaterdepth = 18,
 		metalmake = 0.1,
-		metalstorage = 100,
+		metalstorage = 50,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Consul",
