@@ -41,6 +41,11 @@ local minedefs ={
 	[UnitDefNames["tllmine4"].id] = true,
 	[UnitDefNames["tllmine5"].id] = true,
 	[UnitDefNames["tllmine6"].id] = true,
+	[UnitDefNames["talon_mine1"].id] = true,
+	[UnitDefNames["talon_mine2"].id] = true,
+	[UnitDefNames["talon_mine3"].id] = true,
+	[UnitDefNames["talon_mine4"].id] = true,
+	[UnitDefNames["talon_fmine"].id] = true,
 }
 local mines={}
 local nummines=0
