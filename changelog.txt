@@ -6,6 +6,8 @@ Balance:
 
 Improvements:
  - Add Engineers Hover Arm/Core
+ - Rework Weapon for Mamba T2 Arm Hover
+ - Add dDDS File for all units reworked (except nano)
 
 Fix:
  - Talon Mines explodes auto now
