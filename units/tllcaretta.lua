@@ -62,7 +62,7 @@ return {
 			[8] = "tllmine2",
 			[9] = "tllpulaser",
 			[10] = "tllplasma",
-			[11] = "tllarch",
+			--[11] = "tllarch",
 			[12] = "tllobliterator",
 			[13] = "tllflak",
 			[14] = "tllhmt",
