@@ -2,7 +2,9 @@
 2019-11-30
 Balance:
  - Decrease Pyro stats (-40HP, cost +2%)
- - Decrease cost 1900M => 1400M and Hp 9500=>6500 for cormonsta (T2 Core Pod). Decrease Range 500=>475. Increase speed 1.2=>1.4
+ - Decrease cost 1900M => 1400M and Hp 9500=>6500 for cormonsta (T2 Core Pod). Decrease Range 500=>475. Increase speed  - T2 ArtyBot TLL become a real artilley Kbot like T2 Core mortar. (Decrease cost, HP, damage/s).
+
+1.2=>1.4
 
 Improvements:
  - Add Engineers Hover Arm/Core

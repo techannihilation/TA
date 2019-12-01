@@ -9,7 +9,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "armwin_aoplane.dds",
 		buildpic = "talon_win.dds",
 		buildtime = 1603,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -44,7 +43,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_win",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		windgenerator = 120,
 		yardmap = "ooooooooo",
 		customparams = {
