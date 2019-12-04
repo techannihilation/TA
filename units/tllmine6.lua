@@ -38,7 +38,7 @@ return {
 		levelground = false,
 		losemitheight = 22,
 		mass = 691,
-		maxdamage = 150,
+		maxdamage = 75,
 		maxslope = 40,
 		maxvelocity = 0,
 		maxwaterdepth = 0,

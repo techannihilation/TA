@@ -137,7 +137,7 @@ return {
 				metalpershot = 160,
 				model = "epulse",
 				name = "AntiSignal",
-				range = 5500,
+				range = 5150,
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "junohit2",
@@ -154,7 +154,7 @@ return {
 				damage = {
 					commanders = 1,
 					default = 1,
-					mines = 1000,
+					mines = 25,
 					subs = 5,
 				},
 			},
