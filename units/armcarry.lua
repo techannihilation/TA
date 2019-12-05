@@ -34,7 +34,6 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		losemitheight = 54,
 		maneuverleashlength = 640,
 		mass = 3167,
@@ -64,6 +63,7 @@ return {
 		unitname = "armcarry",
 		workertime = 4000,
 		customparams = {
+			isairbase = true,
 			buildpic = "armcarry.dds",
 			faction = "ARM",
 		},

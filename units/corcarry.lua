@@ -33,7 +33,6 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		losemitheight = 49,
 		maneuverleashlength = 640,
 		mass = 3454,
@@ -63,6 +62,7 @@ return {
 		unitname = "corcarry",
 		workertime = 4000,
 		customparams = {
+			isairbase = true,
 			buildpic = "corcarry.dds",
 			faction = "CORE",
 		},

@@ -26,7 +26,6 @@ return {
 		footprintz = 6,
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		losemitheight = 72,
 		maneuverleashlength = 1640,
 		mass = 3754,
@@ -56,6 +55,7 @@ return {
 		waterline = 7,
 		workertime = 4000,
 		customparams = {
+			isairbase = true,
 			buildpic = "tllgiant.dds",
 			faction = "TLL",
 		},

@@ -50,7 +50,7 @@ function gadget:UnitUnloaded(unitID, unitDefID, _, transID)
     end
     
     local transDefID = Spring.GetUnitDefID(transID)
-    if not transDefID or UnitDefs[transDefID].isAirBase then 
+    if not transDefID or UnitDefs[transDefID].customParams.isairbase then 
         return 
     end
     

@@ -29,7 +29,6 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		losemitheight = 42,
 		mass = 500,
 		maxdamage = 1980,
@@ -55,6 +54,7 @@ return {
 		workertime = 3000,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
+			isairbase = true,
 			buildpic = "talon_asp.dds",
 			faction = "TALON",
 		},

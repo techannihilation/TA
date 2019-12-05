@@ -29,7 +29,6 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		losemitheight = 40,
 		mass = 721,
 		maxdamage = 2250,
@@ -55,6 +54,7 @@ return {
 		workertime = 3000,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			isairbase = true,
 			buildpic = "corasp.dds",
 			faction = "CORE",
 		},
