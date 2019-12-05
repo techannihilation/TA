@@ -8,7 +8,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "tlltarg_aoplane.dds",
 		buildpic = "talon_targ.dds",
 		buildtime = 100000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -42,7 +41,7 @@ return {
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 900,
 		unitname = "talon_targ",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "talon_targ.dds",

@@ -10,7 +10,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "tlltarg_aoplane.dds",
 		buildpic = "talon_gate.dds",
 		buildtime = 51000,
 		canattack = false,
@@ -47,7 +46,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_gate",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "talon_gate.dds",
