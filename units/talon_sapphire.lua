@@ -57,7 +57,7 @@ return {
 		turnrate = 378,
 		unitname = "talon_sapphire",
 		customparams = {
-			buildpic = "talon_Sapphire.dds",
+			buildpic = "talon_sapphire.dds",
 			faction = "TALON",
 		},
 		featuredefs = {

@@ -9,7 +9,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_painless.dds",
 		buildtime = 15000,
 		canattack = true,
@@ -50,7 +49,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_painless",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "talon_painless.dds",

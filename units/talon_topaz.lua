@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 865,
 		buildcostmetal = 95,
 		builder = false,
-		buildpic = "talon_topaz.png",
+		buildpic = "talon_topaz.dds",
 		buildtime = 1500,
 		canattack = true,
 		canguard = true,
@@ -58,7 +58,7 @@ return {
 		unitname = "talon_topaz",
 		unitrestricted = 150,
 		customparams = {
-			buildpic = "talon_topaz.png",
+			buildpic = "talon_topaz.dds",
 			faction = "TALON",
 		},
 		featuredefs = {

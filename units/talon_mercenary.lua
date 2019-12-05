@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 1150,
 		buildcostmetal = 45,
 		builder = false,
-		buildpic = "talon_mercenary.png",
+		buildpic = "talon_mercenary.dds",
 		buildtime = 1450,
 		canattack = true,
 		canguard = true,
@@ -52,7 +52,7 @@ return {
 		unitrestricted = 125,
 		upright = true,
 		customparams = {
-			buildpic = "talon_mercenary.png",
+			buildpic = "talon_mercenary.dds",
 			faction = "TALON",
 		},
 		featuredefs = {

@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 55,
 		builddistance = 100,
 		builder = true,
-		buildpic = "talon_mlv.png",
+		buildpic = "talon_mlv.dds",
 		buildtime = 3650,
 		canassist = false,
 		canguard = false,
@@ -74,8 +74,8 @@ return {
 			[5] = "talon_mine4",
 		},
 		customparams = {
-			buildpic = "talon_mlv.png",
-			faction = "arm",
+			buildpic = "talon_mlv.dds",
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {

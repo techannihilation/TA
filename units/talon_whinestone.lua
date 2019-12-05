@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2250,
 		buildcostmetal = 225,
 		builder = false,
-		buildpic = "talon_Whinestone.dds",
+		buildpic = "talon_whinestone.dds",
 		buildtime = 3000,
 		canattack = true,
 		canguard = true,

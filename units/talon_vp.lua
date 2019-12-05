@@ -9,7 +9,6 @@ return {
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
-		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_vp.dds",
 		buildtime = 5750,
 		canmove = true,
@@ -53,7 +52,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_vp",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		workertime = 250,
 		yardmap = "ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo",
 		buildoptions = {
