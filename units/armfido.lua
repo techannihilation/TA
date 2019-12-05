@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Mortar/Skirmish Kbot",
+		description = "Skirmish Kbot",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -147,7 +147,7 @@ return {
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 292,
+				weaponvelocity = 600,
 				damage = {
 					default = 255,
 					subs = 5,

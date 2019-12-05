@@ -7,6 +7,7 @@ Balance:
 
 Fix : 
  - Now all MLV (vehicle mines layer), can kill mines (20dmg/s)
+ - Bug with Aibase fixed. Thank Silver.
 
 1.2=>1.4
 
