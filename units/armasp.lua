@@ -29,7 +29,6 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		losemitheight = 43,
 		mass = 751,
 		maxdamage = 2500,
@@ -55,6 +54,7 @@ return {
 		workertime = 3000,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			isairbase = true,
 			buildpic = "armasp.dds",
 			faction = "ARM",
 		},

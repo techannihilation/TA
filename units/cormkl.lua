@@ -30,7 +30,6 @@ return {
 		idleautoheal = 10,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		isairbase = true,
 		losemitheight = 76,
 		maneuverleashlength = 1250,
 		mass = 195561,
@@ -63,6 +62,7 @@ return {
 		version = 1,
 		zbuffer = 1,
 		customparams = {
+			isairbase = true,
 			buildpic = "cormkl.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T4 Unit Research Centre",

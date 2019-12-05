@@ -30,7 +30,6 @@ return {
 		idleautoheal = 10,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		isairbase = true,
 		losemitheight = 133,
 		maneuverleashlength = 1250,
 		mass = 123300,
@@ -61,6 +60,7 @@ return {
 		unitname = "fatshrew",
 		upright = true,
 		customparams = {
+			isairbase = true,
 			buildpic = "fatshrew.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T4 Unit Research Centre",

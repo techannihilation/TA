@@ -35,7 +35,6 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
-		isairbase = true,
 		istargetingupgrade = true,
 		losemitheight = 53,
 		maneuverleashlength = 640,
@@ -63,6 +62,7 @@ return {
 		waterline = 2,
 		workertime = 5500,
 		customparams = {
+			isairbase = true,
 			buildpic = "corhcar.dds",
 			faction = "CORE",
 		},

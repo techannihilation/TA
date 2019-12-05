@@ -20,7 +20,6 @@ return {
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
-		isairbase = true,
 		losemitheight = 47,
 		mass = 502,
 		maxdamage = 680,
@@ -42,6 +41,7 @@ return {
 		workertime = 3000,
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
+			isairbase = true,
 			buildpic = "tllaspns.dds",
 			faction = "TLL",
 		},
