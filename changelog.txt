@@ -4,6 +4,8 @@ Balance:
  - Decrease Pyro stats (-40HP, cost +2%)
  - Decrease cost 1900M => 1400M and Hp 9500=>6500 for cormonsta (T2 Core Pod). Decrease Range 500=>475. Increase speed  - T2 ArtyBot TLL become a real artilley Kbot like T2 Core mortar. (Decrease cost, HP, damage/s).
  - Mines : Some changes. Now launch Missile Juno x 1 to kill Light/Medium. x2 to Kill Heavy Mines/EMP. x3 for Nuke/Thermites Mines. x4 for AntiT3/T4 Mines.
+ - Tankanotor angle limited at 180° in front
+ - Arm Fido projectile speed * 3
 
 Fix : 
  - Now all MLV (vehicle mines layer), can kill mines (20dmg/s)

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 7100,
 		buildcostmetal = 305,
 		builder = false,
-		buildpic = "talon_wolf.png",
+		buildpic = "talon_wolf.dds",
 		buildtime = 7500,
 		canattack = true,
 		canguard = true,
@@ -52,7 +52,7 @@ return {
 		unitname = "talon_wolf",
 		upright = false,
 		customparams = {
-			buildpic = "talon_wolf.png",
+			buildpic = "talon_wolf.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

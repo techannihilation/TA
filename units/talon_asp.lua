@@ -11,7 +11,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "tllasp_aoplane.dds",
 		buildpic = "talon_asp.png",
 		buildtime = 10000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -50,7 +49,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_asp",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		workertime = 3000,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {

@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 7486,
 		buildcostmetal = 385,
 		builder = false,
-		buildpic = "talon_mastiff.dss",
+		buildpic = "talon_mastiff.dds",
 		buildtime = 8500,
 		canattack = true,
 		canguard = true,

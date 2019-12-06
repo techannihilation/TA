@@ -10,8 +10,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 3,
 		buildinggrounddecalsizey = 3,
-		buildinggrounddecaltype = "tllmine1_aoplane.dds",
-		buildpic = "armmine2.dds",
+		buildpic = "talon_mine1.dds",
 		buildtime = 100,
 		canattack = false,
 		canguard = false,
@@ -60,7 +59,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_mine1",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		customparams = {
 			buildpic = "talon_mine1.dds",
 			detonaterange = "64",

@@ -32,7 +32,7 @@ return {
 		mass = 11975,
 		maxdamage = 31565,
 		maxslope = 20,
-		maxvelocity = 0.95,
+		maxvelocity = 1.2,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "HTKBOT4",

@@ -10,7 +10,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "corint_aoplane.dds",
 		buildpic = "talon_lrpt.dds",
 		buildtime = 90000,
 		canattack = true,
@@ -48,7 +47,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_lrpt",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		usepiececollisionvolumes = 1,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
