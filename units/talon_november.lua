@@ -80,9 +80,6 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				[1] = "custom:tllroaster1_muzzle",
-			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -128,7 +125,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "corvrocket",
+				model = "talon_rocket",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1420,
@@ -149,6 +146,11 @@ return {
 				weapontimer = 3.3,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 415,
+				customparams = {
+					light_color = "1 0.6 0.15",
+					light_mult = 3.3,
+					light_radius_mult = 1.9,
+				},
 				damage = {
 					commanders = 1000,
 					default = 1900,

@@ -17,11 +17,11 @@ WobbleUnit()
 	{
 		if( Static_Var_4 )
 		{
-			move base to y-axis [2.] speed [3.];
+			move base to y-axis [1.] speed [1.];
 		}
 		else
 		{
-			move base to y-axis [-0.] speed [3.];
+			move base to y-axis [-0.] speed [1.];
 		}
 		Static_Var_4 = !Static_Var_4;
 		sleep 750;
@@ -61,44 +61,6 @@ SetMaxReloadTime(Func_Var_1)
 	Static_Var_2 = Func_Var_1;
 }
 
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 258;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 257;
-			}
-			emit-sfx smoketype from w1;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
-}
-
-StartMoving()
-{
-	signal 4;
-	set-signal-mask 4;
-}
-
-StopMoving()
-{
-	signal 4;
-}
-
 waking()
 {
 	while( TRUE )
@@ -134,6 +96,47 @@ waking()
 	}
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script BankClerck();
+	start-script WobbleUnit();	
+	start-script waking();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from w1;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+}
+
+StopMoving()
+{
+	signal 4;
+}
+
 setSFXoccupy(state)
 {
 	Static_Var_1 = state;
@@ -141,16 +144,9 @@ setSFXoccupy(state)
 
 Create()
 {
-	start-script waking();
-	start-script SmokeUnit();
-	Static_Var_2 = 3000;
-	start-script BankClerck();
 	Static_Var_3 = 0;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1;
-	}
-	start-script WobbleUnit();
+	Static_Var_2 = 3000;	
+	start-script SmokeUnit();
 }
 
 RestorePrimary(Func_Var_1)

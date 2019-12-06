@@ -58,8 +58,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				collisionvolumeoffsets = "-0.415473937988 2.80222904785 -0.337173461914",
-				collisionvolumescales = "34.1171112061 20.2492980957 33.3804016113",
+				collisionvolumeoffsets = "-0.4 2.8 -0.3",
+				collisionvolumescales = "34.1 20.2 33.3",
 				collisionvolumetype = "Box",
 				damage = 1520,
 				description = "Salamander Wreckage",
@@ -117,6 +117,8 @@ return {
 		weapondefs = {
 			talon_salamander_weapon = {
 				areaofeffect = 32,
+				burst = 2,
+				burstrate = 0.3,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 0,
@@ -130,7 +132,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 320,
-				reloadtime = 0.75,
+				reloadtime = 1.5,
 				rgbcolor = "1 0.9 0.45",
 				separation = 0.45,
 				size = 1.16,

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 145016,
 		buildcostmetal = 8675,
 		builder = false,
-		buildpic = "armcrabe.dds",
+		buildpic = "talon_artycrab.dds",
 		buildtime = 160000,
 		canattack = true,
 		canguard = true,
@@ -55,7 +55,7 @@ return {
 		turnrate = 100,
 		unitname = "talon_artycrab",
 		customparams = {
-			buildpic = "armcrabe.dds",
+			buildpic = "talon_artycrab.dds",
 			faction = "TALON",
 		},
 		featuredefs = {

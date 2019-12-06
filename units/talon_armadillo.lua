@@ -135,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "rocket",
+				model = "talon_rocket",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1400,
