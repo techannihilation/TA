@@ -193,7 +193,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				def = "CORKROG_ROCKET",
+				def = "RAVE_MISSILE",
 			},
 		},
 	},
