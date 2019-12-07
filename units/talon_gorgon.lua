@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 7950,
 		buildcostmetal = 410,
 		builder = false,
-		buildpic = "talon_gorgon.png",
+		buildpic = "talon_gorgon.dds",
 		buildtime = 7000,
 		canattack = true,
 		canguard = true,
@@ -52,7 +52,8 @@ return {
 		turnrate = 520,
 		unitname = "talon_gorgon",
 		customparams = {
-			faction = "ARM",
+			buildpic = "talon_gorgon.dds",
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {

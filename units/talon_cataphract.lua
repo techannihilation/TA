@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 3450,
 		buildcostmetal = 255,
 		builder = false,
-		buildpic = "talon_cataphract.png",
+		buildpic = "talon_cataphract.dds",
 		buildtime = 3600,
 		canattack = true,
 		canguard = true,
@@ -53,8 +53,8 @@ return {
 		turnrate = 490,
 		unitname = "talon_cataphract",
 		customparams = {
-			buildpic = "talon_cataphract.png",
-			faction = "ARM",
+			buildpic = "talon_cataphract.dds",
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {

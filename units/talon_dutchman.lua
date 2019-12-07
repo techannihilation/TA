@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 70470,
 		buildcostmetal = 5125,
 		builder = false,
-		buildpic = "talon_dutchman.png",
+		buildpic = "talon_dutchman.dds",
 		buildtime = 80000,
 		canattack = true,
 		canguard = true,
@@ -54,7 +54,8 @@ return {
 		turnrate = 150,
 		unitname = "talon_dutchman",
 		customparams = {
-			faction = "ARM",
+			buildpic = "talon_dutchman.dds",
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {

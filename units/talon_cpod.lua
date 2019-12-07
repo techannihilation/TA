@@ -6,6 +6,7 @@ return {
 		buildcostenergy = 1779617,
 		buildcostmetal = 80576,
 		builder = true,
+		builddistance = 525,		
 		buildpic = "talon_cpod.dds",
 		buildtime = 1000000,
 		canguard = true,
