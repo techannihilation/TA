@@ -3,11 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  gun1, gun2, turret, flare1, flare2, torso, rshoulder, lshoulder,
+piece  turret, flare1, flare2, flare3, flare4, torso, rshoulder, lshoulder,
        pelvis, lthigh, rthigh, rknee, rfoot, lknee, lfoot, lelbow,
        lhand, relbow, rhand, base;
 
-static-var  Static_Var_1, Static_Var_2;
+static-var  gun_1;
 
 
 walk()
@@ -211,18 +211,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	hide flare1;
-	hide flare2;
-	dont-cache flare1;
-	dont-cache flare2;
-	Static_Var_2 = 0;
-	Static_Var_1 = 3000;
+	gun_1 = 0;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_1 = Func_Var_1 * 2;
 }
 
 StartMoving()
@@ -255,72 +245,56 @@ StopMoving()
 
 SweetSpot(piecenum)
 {
-	piecenum = gun1;
+	piecenum = base;
 }
 
-RestoreAfterDelay()
+AimfromPrimary(piecenum)
 {
-	sleep Static_Var_1;
-	turn turret to y-axis <0.> speed <90.>;
-	turn turret to x-axis <0.> speed <50.>;
-	turn gun2 to x-axis <0.> speed <50.>;
-	wait-for-turn turret around y-axis;
-	wait-for-turn gun2 around x-axis;
+	piecenum = turret;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal 4;
 	set-signal-mask 4;
-	turn turret to y-axis heading speed <270.>;
-	turn turret to x-axis <0.> - pitch speed <100.>;
-	wait-for-turn turret around y-axis;
-	wait-for-turn turret around x-axis;
-	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	if( Static_Var_2 )
+	++gun_1;
+	if( gun_1 == 4)
 	{
-		show flare1;
-		move gun1 to z-axis [-2.] speed [500.];
-		sleep 200;
-		move gun1 to z-axis [0.] speed [2.];
-		hide flare1;
+		gun_1 = 0;
 	}
-	if( !Static_Var_2 )
-	{
-		show flare2;
-		move gun2 to z-axis [-2.] speed [500.];
-		sleep 200;
-		move gun2 to z-axis [0.] speed [2.];
-		hide flare2;
-	}
-	Static_Var_2 = 1 - Static_Var_2;
 }
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_2 )
+	if( gun_1 == 0 )
 	{
 		piecenum = flare1;
 	}
-	if( !Static_Var_2 )
+	if( gun_1 == 1)
 	{
 		piecenum = flare2;
+	}
+	if( gun_1 == 2)
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3)
+	{
+		piecenum = flare4;
 	}
 }
 
 Killed(severity, corpsetype)
 {
-	hide flare1;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		explode flare1 type NOHEATCLOUD;
-		explode gun1 type NOHEATCLOUD;
 		explode base type NOHEATCLOUD;
 		explode lfoot type NOHEATCLOUD;
 		explode lhand type NOHEATCLOUD;
@@ -343,7 +317,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode flare1 type FALL | NOHEATCLOUD;
-		explode gun1 type SHATTER | NOHEATCLOUD;
 		explode base type FALL | NOHEATCLOUD;
 		explode lfoot type FALL | NOHEATCLOUD;
 		explode lhand type FALL | NOHEATCLOUD;
@@ -366,7 +339,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode gun1 type SHATTER | NOHEATCLOUD;
 		explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode lhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
@@ -387,7 +359,6 @@ Killed(severity, corpsetype)
 	}
 	corpsetype = 3;
 	explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode gun1 type SHATTER | NOHEATCLOUD;
 	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode lhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
