@@ -8,8 +8,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "tllajam_aoplane.dds",
-		buildpic = "talon_talpax.png",
+		buildpic = "talon_talpax.dds",
 		buildtime = 500000,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -41,9 +40,11 @@ return {
 		sightdistance = 2000,
 		stealth = true,
 		unitname = "talon_talpax",
+		usebuildinggrounddecal = false,		
 		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo",
 
 		customparams = {
+			buildpic = "talon_talpax.dds",
 			faction = "TALON",
 		},
 		featuredefs = {

@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 568915,
 		buildcostmetal = 46390,
 		builder = false,
-		buildpic = "talon_afus.dds",
+		buildpic = "talon_sfus.dds",
 		buildtime = 825000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 0 0",
@@ -42,7 +42,7 @@ return {
 		usebuildinggrounddecal = false,
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		customparams = {
-			buildpic = "talon_afus.dds",
+			buildpic = "talon_sfus.dds",
 			faction = "TALON",
 		},
 		featuredefs = {
