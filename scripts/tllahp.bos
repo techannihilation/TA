@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, pad, light, arm1, arm2, nano1, nano2,
-       spray1, spray2, spray3;
+piece  base, body, pad, arm1, arm2, nano1, nano2,
+       spray1, spray2, spray3, spray4, plate1, plate2;
 
 static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
 
@@ -39,26 +39,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
-{
-	Func_Var_1 = -18;
-	Func_Var_2 = -18;
-	while( TRUE )
-	{
-		while( get ABS(Func_Var_2) < 238 )
-		{
-			Func_Var_3 = 263 - get ABS(Func_Var_2);
-			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
-			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
-			wait-for-turn base around x-axis;
-			wait-for-turn base around z-axis;
-			Func_Var_2 = Func_Var_2 + Func_Var_1;
-		}
-		Func_Var_1 = 0 - Func_Var_1;
-		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
-	}
-}
-
 OpenYard()
 {
 	set YARD_OPEN to 1;
@@ -85,17 +65,10 @@ CloseYard()
 
 activatescr()
 {
-	dont-cache arm1;
-	dont-cache arm2;
-	dont-cache nano1;
-	dont-cache nano2;
-	dont-cache light;
-	move base to y-axis [2.000000] speed [3.000000];
-	wait-for-move base along y-axis;
 	turn arm1 to z-axis <-110.000000> speed <30.000000>;
 	turn arm2 to z-axis <110.000000> speed <30.000000>;
-	turn nano1 to z-axis <130.000000> speed <37.000000>;
-	turn nano2 to z-axis <-130.000000> speed <37.000000>;
+	turn nano1 to z-axis <-130.000000> speed <37.000000>;
+	turn nano2 to z-axis <130.000000> speed <37.000000>;
 	wait-for-turn nano1 around z-axis;
 }
 
@@ -106,12 +79,6 @@ deactivatescr()
 	turn arm1 to z-axis <0.000000> speed <40.000000>;
 	turn arm2 to z-axis <0.000000> speed <40.000000>;
 	wait-for-turn arm1 around z-axis;
-	move base to y-axis [-0.500000] speed [3.000000];
-	wait-for-move base along y-axis;
-	cache arm1;
-	cache arm2;
-	cache nano1;
-	cache nano2;
 }
 
 Go()
@@ -162,18 +129,9 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade pad;
-	dont-shade body;
-	dont-shade light;
-	dont-shade nano1;
-	dont-shade nano2;
-	dont-shade arm1;
-	dont-shade arm2;
-	move base to y-axis [-0.500000] now;
 	Static_Var_2 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	start-script Tangue();
 }
 
 QueryNanoPiece(piecenum)
@@ -190,8 +148,12 @@ QueryNanoPiece(piecenum)
 	{
 		piecenum = spray3;
 	}
+	if( Static_Var_2 == 3 )
+	{
+		piecenum = spray4;
+	}
 	++Static_Var_2;
-	if( Static_Var_2 >= 3 )
+	if( Static_Var_2 >= 4 )
 	{
 		Static_Var_2 = 0;
 	}
@@ -214,14 +176,14 @@ Deactivate()
 
 StartBuilding()
 {
-//	spin pad around y-axis speed <30.000000> accelerate <2.000000>;
-//	dont-cache pad;
+	//spin pad around y-axis speed <30.000000> accelerate <2.000000>;
+	//dont-cache pad;
 }
 
 StopBuilding()
 {
-//	stop-spin pad around y-axis decelerate <2.000000>;
-//	cache pad;
+	//stop-spin pad around y-axis decelerate <2.000000>;
+	//cache pad;
 }
 
 QueryBuildInfo(piecenum)
@@ -252,14 +214,12 @@ Killed(severity, corpsetype)
 		explode arm2 type NOHEATCLOUD | FALL;
 		explode nano2 type NOHEATCLOUD | FALL;
 		explode nano1 type NOHEATCLOUD | FALL;
-		explode light type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode nano2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode nano1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode pad type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode light type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode arm2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);

@@ -188,14 +188,14 @@ Deactivate()
 
 StartBuilding()
 {
-	spin pad around y-axis speed <30.000000> accelerate <2.000000>;
-	dont-cache pad;
+//	spin pad around y-axis speed <30.000000> accelerate <2.000000>;
+//	dont-cache pad;
 }
 
 StopBuilding()
 {
-	stop-spin pad around y-axis decelerate <2.000000>;
-	cache pad;
+//	stop-spin pad around y-axis decelerate <2.000000>;
+//	cache pad;
 }
 
 QueryBuildInfo(piecenum)
