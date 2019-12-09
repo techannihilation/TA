@@ -136,6 +136,11 @@ RestoreAfterDelay()
 	turn body to x-axis <0.> speed <100.>;
 }
 
+AimFromPrimary(piecenum)
+{
+	piecenum = body;
+}
+
 AimPrimary(heading, pitch)
 {
 	signal 2;
