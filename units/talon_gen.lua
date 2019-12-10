@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 32,
 		mass = 390,
-		maxdamage = 1760,
+		maxdamage = 1185,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Cloakable Mini Fusion Reactor",

@@ -1,4 +1,15 @@
-﻿3.20 -> 3.21
+﻿3.21 -> 3.22
+2019-12-09
+Balance: 
+ - Gladiator : Increase green laser power (75dmg/s => 100). Decrease range and power for rockets (150dmg=>126dmg for each rocket).
+ - Decrease 500HP for all drillers
+
+Improvments:
+ - Add T2 Hover TLL
+ - Add all DDS Talon icons for ground units
+ - Add Christmas Hat for Krogoth :)
+
+3.20 -> 3.21
 2019-11-30
 Balance:
  - Decrease Pyro stats (-40HP, cost +2%)

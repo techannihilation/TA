@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 265,
 		builder = false,
 		buildpic = "armwar.dds",
-		buildtime = 3828,
+		buildtime = 3750,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -155,7 +155,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					default = 55,
+					default = 54,
 					subs = 5,
 				},
 			},

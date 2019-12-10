@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		losemitheight = 33,
 		mass = 391,
-		maxdamage = 1420,
+		maxdamage = 920,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Energy Driller",
