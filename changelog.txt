@@ -5,9 +5,11 @@ Balance:
  - Decrease 500HP for all drillers
 
 Improvments:
+ - TLL T1 Private have Lighting weapon. New TLL Weapon Sound for LLT and private.
  - Add T2 Hover TLL
  - Add all DDS Talon icons for ground units
  - Add Christmas Hat for Krogoth :)
+ - Eco/Battle Commander can be transported.
 
 3.20 -> 3.21
 2019-11-30
