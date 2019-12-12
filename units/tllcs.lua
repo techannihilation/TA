@@ -71,7 +71,7 @@ return {
 			[11] = "tllsy",
 			[12] = "tllasy",
 			[13] = "tllplat",
-			[14] = "tllhpns",
+			[14] = "tllahpns",
 			[15] = "tllsubpen",
 			[16] = "tllfnanotc",
 			[17] = "tllradarns",

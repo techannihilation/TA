@@ -70,7 +70,7 @@ return {
 			[10] = "armsy",
 			[11] = "armasy",
 			[12] = "armplat",
-			[13] = "armfhp",
+			[13] = "armaahpns",
 			[14] = "asubpen",
 			[15] = "armfnanotc",
 			[16] = "armfrad",

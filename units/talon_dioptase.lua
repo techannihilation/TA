@@ -61,7 +61,7 @@ return {
 			[4] = "talon_fnanotc",
 			[5] = "talon_fnanotc",
 			[6] = "talon_frad",
-			[7] = "talon_sonar",
+			[7] = "talon_asonar",
 			[8] = "talon_fdrag",
 			[9] = "talon_atl",
 			[10] = "talon_fhlt",

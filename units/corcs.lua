@@ -71,7 +71,7 @@ return {
 			[10] = "corsy",
 			[11] = "corasy",
 			[12] = "corplat",
-			[13] = "corfhp",
+			[13] = "cahpns",
 			[14] = "csubpen",
 			[15] = "corfnanotc",
 			[16] = "corfrad",
