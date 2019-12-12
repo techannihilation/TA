@@ -10,7 +10,6 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "armuwfus_aoplane.dds",
 		buildpic = "talon_uwfus.dds",
 		buildtime = 90000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
@@ -42,7 +41,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_uwfus",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "oooooooooooooooooooo",
 		customparams = {
 			buildpic = "talon_uwfus.dds",

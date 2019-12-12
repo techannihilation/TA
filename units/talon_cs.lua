@@ -62,7 +62,7 @@ return {
 			--[2] = "",			
 			--[3] = "",			
 			[4] = "talon_tide",
-			[5] = "talon_tide1",
+			--[5] = "talon_tide1",
 			[6] = "talon_uwms",
 			[7] = "talon_uwes",
 			[8] = "talon_uwmex",
