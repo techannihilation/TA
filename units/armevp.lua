@@ -49,7 +49,7 @@ return {
 		unitname = "armevp",
 		usebuildinggrounddecal = true,
 		workertime = 800,
-		yardmap = "oooooooooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo",
+		yardmap = "oooooooooo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo",
 		buildoptions = {
 			[1] = "armecv",
 			[2] = "armchimera",			
