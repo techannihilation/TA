@@ -1,7 +1,7 @@
 return {
 	tllsilo = {
 		buildangle = 8192,
-		buildcostenergy = 72028,
+		buildcostenergy = 84028,
 		buildcostmetal = 10511,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllsilo_aoplane.dds",
 		buildpic = "tllsilo.dds",
-		buildtime = 253500,
+		buildtime = 250000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",

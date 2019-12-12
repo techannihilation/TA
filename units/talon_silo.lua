@@ -1,15 +1,15 @@
 return {
 	talon_silo = {
 		buildangle = 8192,
-		buildcostenergy = 71000,
-		buildcostmetal = 11500,
+		buildcostenergy = 121501,
+		buildcostmetal = 7995,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllsilo_aoplane.dds",
 		buildpic = "talon_silo.dds",
-		buildtime = 220000,
+		buildtime = 250000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",

@@ -2,8 +2,8 @@ return {
 	tllantinuke = {
 		antiweapons = 1,
 		buildangle = 4096,
-		buildcostenergy = 58225,
-		buildcostmetal = 2654,
+		buildcostenergy = 38225,
+		buildcostmetal = 2354,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

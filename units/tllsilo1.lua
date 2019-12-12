@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tllsilo_aoplane.dds",
 		buildpic = "tllsilo.dds",
-		buildtime = 240500,
+		buildtime = 300000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",

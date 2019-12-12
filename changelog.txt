@@ -3,6 +3,9 @@
 Balance: 
  - Gladiator : Increase green laser power (75dmg/s => 100). Decrease range and power for rockets (150dmg=>126dmg for each rocket).
  - Decrease 500HP for all drillers
+ - Decrease All Energy cost by 50% for Mobile and static Antinuke T2/T3.
+ - Decrease Timebuild for Mobile Antinuke. (-25%)
+ - Increase cost for T1 Nuke (+20KE). Increase Timebuilf for T1 Nuke (+25%)
 
 Improvments:
  - TLL T1 Private have Lighting weapon. New TLL Weapon Sound for LLT and private.
