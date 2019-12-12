@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 25955,
 		buildcostmetal = 3891,
 		builder = true,
-		buildpic = "talon_asy.png",
+		buildpic = "talon_asy.dds",
 		buildtime = 36000,
 		canmove = true,
 		canpatrol = true,
@@ -60,8 +60,8 @@ return {
 			[8] = "talon_imperator",			
 		},
 		customparams = {
-			buildpic = "talon_asy.png",
-			faction = "ARM",
+			buildpic = "talon_asy.dds",
+			faction = "TALON",
 			providetech = "T2 Factory",
 		},
 		featuredefs = {

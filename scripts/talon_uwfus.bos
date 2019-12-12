@@ -53,11 +53,8 @@ bubbles()
 
 Create()
 {
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
-	spin crystal around y-axis speed <100.>;
+	hide crystal;
+	//spin crystal around y-axis speed <100.>;
 	start-script SmokeUnit();
 	start-script bubbles();
 }
