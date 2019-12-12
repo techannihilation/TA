@@ -53,8 +53,9 @@ return {
 			[1] = "tlleca",
 			[2] = "tllshu",
 			[3] = "tllnuada",
-			[4] = "tllanhur",
-			[5] = "tllaether",
+			[4] = "tllbtrans",
+			[5] = "tllanhur",
+			[6] = "tllaether",
 		},
 		customparams = {
 			buildpic = "tlleap.dds",

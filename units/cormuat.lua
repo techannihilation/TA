@@ -1,5 +1,5 @@
 return {
-	corbtrans = {
+	cormuat = {
 		acceleration = 0.2,
 		antiweapons = 1,
 		bankscale = 1,
@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 65004,
 		buildcostmetal = 3011,
 		builder = false,
-		buildpic = "corbtrans.dds",
+		buildpic = "cormuat.dds",
 		buildtime = 78000,
 		canattack = true,
 		canfly = true,
@@ -38,9 +38,9 @@ return {
 		maxwaterdepth = 0,
 		mintransportmass = 100,
 		mobilestandorders = 1,
-		name = "Vindicator",
+		name = "Muat",
 		nochasecategory = "SUB VTOL",
-		objectname = "CORBTRANS",
+		objectname = "cormuat",
 		radardistance = 0,
 		radaremitheight = 28.8,
 		releaseheld = true,
@@ -55,9 +55,9 @@ return {
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 2.508,
 		turnrate = 300,
-		unitname = "corbtrans",
+		unitname = "cormuat",
 		customparams = {
-			buildpic = "corbtrans.dds",
+			buildpic = "cormuat.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

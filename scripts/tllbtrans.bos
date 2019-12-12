@@ -1,0 +1,420 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, lhigear, llogear, rhigear, rlogear, lturretex, lturret,
+       lbarrel, lflare, rturretex, rturret, rbarrel, rflare, FLholderA, FLholderB,
+       FLturbine, FRholderA, FRholderB, FRturbine, BLholderA, BLholderB, BLturbine, BRholderA,
+       BRholderB, BRturbine, link, FLthrust, FRthrust, BLthrust, BRthrust;
+
+static-var  Static_Var_1, unitviewer, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	turn llogear to z-axis <0.000000> speed <100.000000>;
+	turn rlogear to z-axis <0.000000> speed <100.000000>;
+	turn llogear to z-axis <50.005495> speed <100.000000>;
+	turn rlogear to z-axis <-50.005495> speed <100.000000>;
+}
+
+deactivatescr()
+{
+	turn llogear to z-axis <0.000000> speed <100.000000>;
+	turn rlogear to z-axis <0.000000> speed <100.000000>;
+	turn llogear to z-axis <-150.027473> speed <100.000000>;
+	turn rlogear to z-axis <150.027473> speed <100.000000>;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+RestoreAfterDelay()
+{
+	sleep Static_Var_3;
+	turn lturret to y-axis <90.016484> speed <300.000000>;
+	turn lbarrel to x-axis <0.000000> speed <100.000000>;
+	turn rturret to y-axis <-90.016484> speed <300.000000>;
+	turn rbarrel to x-axis <0.000000> speed <100.000000>;
+	move lturretex to x-axis [3.000000] speed [12.000000];
+	move rturretex to x-axis [-3.000000] speed [12.000000];
+}
+
+ProcessFlames()
+{
+	while( TRUE )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			emit-sfx 0 from FLthrust;
+			emit-sfx 0 from FRthrust;
+			emit-sfx 0 from BLthrust;
+			emit-sfx 0 from BRthrust;
+		}
+		if( Static_Var_1 == 2 )
+		{
+			emit-sfx 0 from FLthrust;
+			emit-sfx 0 from FRthrust;
+			emit-sfx 0 from BLthrust;
+			emit-sfx 0 from BRthrust;
+		}
+		sleep 40;
+	}
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	unitviewer = FALSE;
+	Static_Var_3 = 3000;
+	hide lflare;
+	hide rflare;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script RestoreAfterDelay();
+	//start-script ProcessFlames();
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Activate()
+{
+	Static_Var_1 = 2;
+	turn FLholderA to z-axis <-30.005495> speed <25.000000>;
+	turn FRholderA to z-axis <30.005495> speed <25.000000>;
+	turn BLholderA to z-axis <-30.005495> speed <25.000000>;
+	turn BRholderA to z-axis <30.005495> speed <25.000000>;
+	turn FLturbine to z-axis <30.005495> speed <25.000000>;
+	turn FRturbine to z-axis <-30.005495> speed <25.000000>;
+	turn BLturbine to z-axis <30.005495> speed <25.000000>;
+	turn BRturbine to z-axis <-30.005495> speed <25.000000>;
+	wait-for-turn FLholderA around z-axis;
+	turn llogear to z-axis <-150.027473> speed <100.000000>;
+	turn rlogear to z-axis <150.027473> speed <100.000000>;
+	wait-for-turn rlogear around z-axis;
+	turn body to x-axis <5.000000> speed <2.000000>;
+	turn FLholderB to z-axis <-2.000000> speed <16.000000>;
+	turn FRholderB to z-axis <2.000000> speed <16.000000>;
+	turn BLholderB to z-axis <-2.000000> speed <16.000000>;
+	turn BRholderB to z-axis <2.000000> speed <16.000000>;
+	turn FLholderA to z-axis <-29.005495> speed <8.000000>;
+	turn FRholderA to z-axis <29.005495> speed <8.000000>;
+	turn BLholderA to z-axis <-29.005495> speed <8.000000>;
+	turn BRholderA to z-axis <29.005495> speed <8.000000>;
+	turn FLturbine to x-axis <10.000000> speed <20.000000>;
+	turn FRturbine to x-axis <10.000000> speed <20.000000>;
+	turn BLturbine to x-axis <10.000000> speed <20.000000>;
+	turn BRturbine to x-axis <10.000000> speed <20.000000>;
+	Static_Var_1 = 1;
+}
+
+Deactivate()
+{
+	Static_Var_1 = 2;
+	turn body to x-axis <0.000000> speed <2.000000>;
+	turn FLholderB to z-axis <0.000000> speed <16.000000>;
+	turn FRholderB to z-axis <0.000000> speed <16.000000>;
+	turn BLholderB to z-axis <0.000000> speed <16.000000>;
+	turn BRholderB to z-axis <0.000000> speed <16.000000>;
+	turn FLholderA to z-axis <-30.005495> speed <8.000000>;
+	turn FRholderA to z-axis <30.005495> speed <8.000000>;
+	turn BLholderA to z-axis <-30.005495> speed <8.000000>;
+	turn BRholderA to z-axis <30.005495> speed <8.000000>;
+	turn FLturbine to x-axis <0.000000> speed <20.000000>;
+	turn FRturbine to x-axis <0.000000> speed <20.000000>;
+	turn BLturbine to x-axis <0.000000> speed <20.000000>;
+	turn BRturbine to x-axis <0.000000> speed <20.000000>;
+	wait-for-turn FLturbine around x-axis;
+	turn llogear to z-axis <0.000000> speed <100.000000>;
+	turn rlogear to z-axis <0.000000> speed <100.000000>;
+	wait-for-turn rlogear around z-axis;
+	turn FLholderA to z-axis <30.005495> speed <25.000000>;
+	turn FRholderA to z-axis <-30.005495> speed <25.000000>;
+	turn BLholderA to z-axis <30.005495> speed <25.000000>;
+	turn BRholderA to z-axis <-30.005495> speed <25.000000>;
+	turn FLturbine to z-axis <-30.005495> speed <25.000000>;
+	turn FRturbine to z-axis <30.005495> speed <25.000000>;
+	turn BLturbine to z-axis <-30.005495> speed <25.000000>;
+	turn BRturbine to z-axis <30.005495> speed <25.000000>;
+	wait-for-turn BRholderA around z-axis;
+	move body to y-axis [-1.000000] speed [4.000000];
+	turn lhigear to z-axis <-3.000000> speed <12.000000>;
+	turn rhigear to z-axis <3.000000> speed <12.000000>;
+	turn llogear to z-axis <-3.000000> speed <12.000000>;
+	turn rlogear to z-axis <3.000000> speed <12.000000>;
+	wait-for-turn llogear around z-axis;
+	turn lhigear to z-axis <0.000000> speed <12.000000>;
+	turn rhigear to z-axis <0.000000> speed <12.000000>;
+	turn llogear to z-axis <0.000000> speed <12.000000>;
+	turn rlogear to z-axis <0.000000> speed <12.000000>;
+	move body to y-axis [0.000000] speed [4.000000];
+	Static_Var_1 = 0;
+}
+
+BeginTransport(Func_Var_1)
+{
+	move link to y-axis [0.000000] - Func_Var_1 now;
+	start-script RequestState(0);
+}
+
+QueryTransport(Func_Var_1)
+{
+	Func_Var_1 = 26;
+}
+
+EndTransport()
+{
+	start-script RequestState(1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = lflare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = lturret;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	move lturretex to x-axis [0.000000] speed [12.000000];
+	move rturretex to x-axis [0.000000] speed [12.000000];
+	turn lturret to y-axis heading speed <300.000000>;
+	turn lbarrel to x-axis <0.000000> - pitch speed <100.000000>;
+	wait-for-turn lturret around y-axis;
+	wait-for-turn lbarrel around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	show lflare;
+	sleep 150;
+	hide lflare;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = rflare;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = rturret;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	move lturretex to x-axis [0.000000] speed [12.000000];
+	move rturretex to x-axis [0.000000] speed [12.000000];
+	turn rturret to y-axis heading speed <300.000000>;
+	turn rbarrel to x-axis <0.000000> - pitch speed <100.000000>;
+	wait-for-turn rturret around y-axis;
+	wait-for-turn rbarrel around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	show rflare;
+	sleep 150;
+	hide rflare;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode lhigear type NOHEATCLOUD;
+		explode llogear type NOHEATCLOUD;
+		explode rhigear type NOHEATCLOUD;
+		explode rlogear type NOHEATCLOUD;
+		explode lturretex type NOHEATCLOUD;
+		explode lturret type NOHEATCLOUD;
+		explode lbarrel type NOHEATCLOUD;
+		explode lflare type NOHEATCLOUD;
+		explode rturretex type NOHEATCLOUD;
+		explode rturret type NOHEATCLOUD;
+		explode rbarrel type NOHEATCLOUD;
+		explode rflare type NOHEATCLOUD;
+		explode FLholderA type NOHEATCLOUD;
+		explode FLholderB type NOHEATCLOUD;
+		explode FLturbine type NOHEATCLOUD;
+		explode FRholderA type NOHEATCLOUD;
+		explode FRholderB type NOHEATCLOUD;
+		explode FRturbine type NOHEATCLOUD;
+		explode BLholderA type NOHEATCLOUD;
+		explode BLholderB type NOHEATCLOUD;
+		explode BLturbine type NOHEATCLOUD;
+		explode BRholderA type NOHEATCLOUD;
+		explode BRholderB type NOHEATCLOUD;
+		explode BRturbine type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode lhigear type NOHEATCLOUD | SHATTER;
+		explode llogear type NOHEATCLOUD | SHATTER;
+		explode rhigear type NOHEATCLOUD | SHATTER;
+		explode rlogear type NOHEATCLOUD | SHATTER;
+		explode lturretex type NOHEATCLOUD | SHATTER;
+		explode lturret type NOHEATCLOUD | SHATTER;
+		explode lbarrel type NOHEATCLOUD | SHATTER;
+		explode lflare type NOHEATCLOUD | SHATTER;
+		explode rturretex type NOHEATCLOUD | SHATTER;
+		explode rturret type NOHEATCLOUD | SHATTER;
+		explode rbarrel type NOHEATCLOUD | SHATTER;
+		explode rflare type NOHEATCLOUD | SHATTER;
+		explode FLholderA type NOHEATCLOUD | SHATTER;
+		explode FLholderB type NOHEATCLOUD | SHATTER;
+		explode FLturbine type NOHEATCLOUD | SHATTER;
+		explode FRholderA type NOHEATCLOUD | SHATTER;
+		explode FRholderB type NOHEATCLOUD | SHATTER;
+		explode FRturbine type NOHEATCLOUD | SHATTER;
+		explode BLholderA type NOHEATCLOUD | SHATTER;
+		explode BLholderB type NOHEATCLOUD | SHATTER;
+		explode BLturbine type NOHEATCLOUD | SHATTER;
+		explode BRholderA type NOHEATCLOUD | SHATTER;
+		explode BRholderB type NOHEATCLOUD | SHATTER;
+		explode BRturbine type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lhigear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode llogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rhigear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rlogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode FLholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode FLholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode FLturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode FRholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode FRholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode FRturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode BLholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode BLholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode BLturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode BRholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode BRholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode BRturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lhigear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode llogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rhigear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rlogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode FLholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode FLholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode FLturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode FRholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode FRholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode FRturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode BLholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode BLholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode BLturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode BRholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode BRholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode BRturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

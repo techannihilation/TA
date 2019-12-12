@@ -52,7 +52,7 @@ return {
 			[1] = "coreca",
 			[2] = "shrike",
 			[3] = "blackdawn",
-			[4] = "corbtrans",
+			[4] = "cormuat",
 			[5] = "corsbomb",
 			[6] = "coreclipse",
 		},
