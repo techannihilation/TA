@@ -206,6 +206,8 @@ return {
 	"talon_bishop",
 	"talon_acs",
 	"talon_anonymous",
+	"talon_crus",
+	"talon_dioptase",
 	"talon_aas",
 	"talon_nexus",
 	"talon_zamak",
@@ -257,7 +259,6 @@ return {
 	"tllecs",
 	"talon_dread",
 	"talon_hcar",
-
 },
 	
 	--### LAND ###

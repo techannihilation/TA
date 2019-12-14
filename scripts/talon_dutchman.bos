@@ -6,12 +6,10 @@
 piece  flare1, flare2, flare3, flare4, barrel1, barrel2,
        barrel3, barrel4,  base, body, turret1, sleeve1,
        turret2, sleeve2, w1, w2, w3, w4, w5, w6,
-       w7, w8, w9, w10, w11, w12, w13, w14,
-       w15, w16, w17, w18, w19, w20, w21, w22,
-       w23, w24, wakes, boob, miss;
+       w7, w8, w9, wakes, boob, miss1, miss2;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10, gun_miss;
 
 
 ProjXPW(Func_Var_1, Func_Var_2)
@@ -73,11 +71,11 @@ WobbleUnit()
 	{
 		if( Static_Var_7 )
 		{
-			move base to y-axis [1.] speed [3.];
+			move base to y-axis [1.] speed [0.4];
 		}
 		else
 		{
-			move base to y-axis [-1.] speed [3.];
+			move base to y-axis [-1.] speed [0.4];
 		}
 		Static_Var_7 = !Static_Var_7;
 		sleep 750;
@@ -155,21 +153,6 @@ wakes2()
 			emit-sfx 3 from w7;
 			emit-sfx 3 from w8;
 			emit-sfx 3 from w9;
-			emit-sfx 3 from w10;
-			emit-sfx 3 from w11;
-			emit-sfx 3 from w12;
-			emit-sfx 3 from w13;
-			emit-sfx 3 from w14;
-			emit-sfx 3 from w15;
-			emit-sfx 3 from w16;
-			emit-sfx 3 from w17;
-			emit-sfx 3 from w18;
-			emit-sfx 3 from w19;
-			emit-sfx 3 from w20;
-			emit-sfx 3 from w21;
-			emit-sfx 3 from w22;
-			emit-sfx 3 from w23;
-			emit-sfx 3 from w24;
 			emit-sfx 5 from w1;
 			emit-sfx 5 from w2;
 			emit-sfx 5 from w3;
@@ -179,21 +162,6 @@ wakes2()
 			emit-sfx 5 from w7;
 			emit-sfx 5 from w8;
 			emit-sfx 5 from w9;
-			emit-sfx 5 from w10;
-			emit-sfx 5 from w11;
-			emit-sfx 5 from w12;
-			emit-sfx 5 from w13;
-			emit-sfx 5 from w14;
-			emit-sfx 5 from w15;
-			emit-sfx 5 from w16;
-			emit-sfx 5 from w17;
-			emit-sfx 5 from w18;
-			emit-sfx 5 from w19;
-			emit-sfx 5 from w20;
-			emit-sfx 5 from w21;
-			emit-sfx 5 from w22;
-			emit-sfx 5 from w23;
-			emit-sfx 5 from w24;
 		}
 		sleep 325;
 	}
@@ -207,6 +175,7 @@ Create()
 	hide flare4;
 	
 	start-script wakes2();
+	gun_miss = 1;
 	Static_Var_3 = 0;
 	Static_Var_4 = 0;
 	Static_Var_1 = 0;
@@ -376,17 +345,35 @@ AimWeapon3(heading, pitch)
 
 FireWeapon3()
 {
-
+	++gun_miss;
+	if(gun_miss == 3 )
+	{	
+		gun_miss = 1;	
+	}
 }
 
 AimFromWeapon3(piecenum)
 {
-	piecenum = miss;
+	if(gun_miss == 1 )
+	{	
+		piecenum = miss1;	
+	}
+	if(gun_miss == 2 )
+	{	
+		piecenum = miss2;	
+	}
 }
 
 QueryWeapon3(piecenum)
 {
-	piecenum = miss;	
+	if(gun_miss == 1 )
+	{	
+		piecenum = miss1;	
+	}
+	if(gun_miss == 2 )
+	{	
+		piecenum = miss2;	
+	}
 }
 
 SweetSpot(piecenum)
