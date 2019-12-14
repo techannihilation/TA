@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 498,
 		builder = false,
 		buildpic = "armcroc.dds",
-		buildtime = 13367,
+		buildtime = 10000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

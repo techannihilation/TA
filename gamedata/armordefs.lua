@@ -375,6 +375,7 @@ return {
 	"coreavalanche",
 	"tllgeo_armored",
 	"tllhcrus",
+	"corgfbt",
 	},
 	sniper_resistant = {
 	"armzeus",

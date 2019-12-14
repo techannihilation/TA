@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, base, turret1, turret2, sleeve1, sleeve2, body,
+piece  flare1, flare2, base, turret1, turret2, barrel1, barrel2, body,
        shell;
 
 static-var  Static_Var_1;
@@ -60,20 +60,20 @@ FirePrimary()
 	if( Static_Var_1 == 0 )
 	{
 		emit-sfx 1024 from flare1;
-		move sleeve1 to z-axis [-5.] now;
+		move barrel1 to z-axis [-5.] now;
 		explode shell type FALL;
 		sleep 150;
-		wait-for-move sleeve1 along z-axis;
-		move sleeve1 to z-axis [0.] speed [5.];
+		wait-for-move barrel1 along z-axis;
+		move barrel1 to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 1 )
 	{
 		emit-sfx 1024 from flare2;
-		move sleeve2 to z-axis [-5.] now;
+		move barrel2 to z-axis [-5.] now;
 		explode shell type FALL;
 		sleep 150;
-		wait-for-move sleeve2 along z-axis;
-		move sleeve2 to z-axis [0.] speed [5.];
+		wait-for-move barrel2 along z-axis;
+		move barrel2 to z-axis [0.] speed [5.];
 	}
 	Static_Var_1 = !Static_Var_1;
 }
