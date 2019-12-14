@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, lhigear, llogear, rhigear, rlogear, lturretex, lturret,
-       lbarrel, lflare, rturretex, rturret, rbarrel, rflare, FLholderA, FLholderB,
+piece  base, body, lhigear, llogear, rhigear, rlogear, FLholderA, FLholderB,
        FLturbine, FRholderA, FRholderB, FRturbine, BLholderA, BLholderB, BLturbine, BRholderA,
        BRholderB, BRturbine, link, FLthrust, FRthrust, BLthrust, BRthrust;
 
@@ -90,17 +89,6 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
-RestoreAfterDelay()
-{
-	sleep Static_Var_3;
-	turn lturret to y-axis <90.016484> speed <300.000000>;
-	turn lbarrel to x-axis <0.000000> speed <100.000000>;
-	turn rturret to y-axis <-90.016484> speed <300.000000>;
-	turn rbarrel to x-axis <0.000000> speed <100.000000>;
-	move lturretex to x-axis [3.000000] speed [12.000000];
-	move rturretex to x-axis [-3.000000] speed [12.000000];
-}
-
 ProcessFlames()
 {
 	while( TRUE )
@@ -128,12 +116,8 @@ Create()
 	Static_Var_1 = 0;
 	unitviewer = FALSE;
 	Static_Var_3 = 3000;
-	hide lflare;
-	hide rflare;
 	call-script InitState();
 	start-script SmokeUnit();
-	start-script RestoreAfterDelay();
-	//start-script ProcessFlames();
 }
 
 Demo()
@@ -236,68 +220,6 @@ EndTransport()
 	start-script RequestState(1);
 }
 
-QueryPrimary(piecenum)
-{
-	piecenum = lflare;
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = lturret;
-}
-
-AimPrimary(heading, pitch)
-{
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	move lturretex to x-axis [0.000000] speed [12.000000];
-	move rturretex to x-axis [0.000000] speed [12.000000];
-	turn lturret to y-axis heading speed <300.000000>;
-	turn lbarrel to x-axis <0.000000> - pitch speed <100.000000>;
-	wait-for-turn lturret around y-axis;
-	wait-for-turn lbarrel around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FirePrimary()
-{
-	show lflare;
-	sleep 150;
-	hide lflare;
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = rflare;
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = rturret;
-}
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	move lturretex to x-axis [0.000000] speed [12.000000];
-	move rturretex to x-axis [0.000000] speed [12.000000];
-	turn rturret to y-axis heading speed <300.000000>;
-	turn rbarrel to x-axis <0.000000> - pitch speed <100.000000>;
-	wait-for-turn rturret around y-axis;
-	wait-for-turn rbarrel around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireSecondary()
-{
-	show rflare;
-	sleep 150;
-	hide rflare;
-}
-
 Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
@@ -308,14 +230,6 @@ Killed(severity, corpsetype)
 		explode llogear type NOHEATCLOUD;
 		explode rhigear type NOHEATCLOUD;
 		explode rlogear type NOHEATCLOUD;
-		explode lturretex type NOHEATCLOUD;
-		explode lturret type NOHEATCLOUD;
-		explode lbarrel type NOHEATCLOUD;
-		explode lflare type NOHEATCLOUD;
-		explode rturretex type NOHEATCLOUD;
-		explode rturret type NOHEATCLOUD;
-		explode rbarrel type NOHEATCLOUD;
-		explode rflare type NOHEATCLOUD;
 		explode FLholderA type NOHEATCLOUD;
 		explode FLholderB type NOHEATCLOUD;
 		explode FLturbine type NOHEATCLOUD;
@@ -338,14 +252,6 @@ Killed(severity, corpsetype)
 		explode llogear type NOHEATCLOUD | SHATTER;
 		explode rhigear type NOHEATCLOUD | SHATTER;
 		explode rlogear type NOHEATCLOUD | SHATTER;
-		explode lturretex type NOHEATCLOUD | SHATTER;
-		explode lturret type NOHEATCLOUD | SHATTER;
-		explode lbarrel type NOHEATCLOUD | SHATTER;
-		explode lflare type NOHEATCLOUD | SHATTER;
-		explode rturretex type NOHEATCLOUD | SHATTER;
-		explode rturret type NOHEATCLOUD | SHATTER;
-		explode rbarrel type NOHEATCLOUD | SHATTER;
-		explode rflare type NOHEATCLOUD | SHATTER;
 		explode FLholderA type NOHEATCLOUD | SHATTER;
 		explode FLholderB type NOHEATCLOUD | SHATTER;
 		explode FLturbine type NOHEATCLOUD | SHATTER;
@@ -368,14 +274,6 @@ Killed(severity, corpsetype)
 		explode llogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rhigear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rlogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode FLholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode FLholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode FLturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -396,14 +294,6 @@ Killed(severity, corpsetype)
 	explode llogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rhigear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rlogear type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rturretex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode FLholderA type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode FLholderB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode FLturbine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
