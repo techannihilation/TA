@@ -1,4 +1,15 @@
-﻿3.21 -> 3.22
+﻿3.22 -> 3.23
+2019-12-18
+Balance: 
+ - increase All T2 Energy cost Lab *2
+ - Balance Commander Shield (Cost and protection)
+
+Improvments:
+ - Change Model for T2 Cons Hover Arm
+ - Add Engineer Hover for Arm/Core
+ - Add Talon Pyramide (T5 Blue Shield)
+
+3.21 -> 3.22
 2019-12-09
 Balance: 
  - Gladiator : Increase green laser power (75dmg/s => 100). Decrease range and power for rockets (150dmg=>126dmg for each rocket).
