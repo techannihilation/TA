@@ -1,6 +1,6 @@
 return {
 	tllahpns = {
-		buildcostenergy = 21595,
+		buildcostenergy = 43595,
 		buildcostmetal = 3799,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

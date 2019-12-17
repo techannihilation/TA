@@ -1,6 +1,6 @@
 return {
 	cahp = {
-		buildcostenergy = 28454,
+		buildcostenergy = 57454,
 		buildcostmetal = 3421,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

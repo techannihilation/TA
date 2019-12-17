@@ -2,8 +2,8 @@ return {
 	talon_aap = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 36267,
-		buildcostmetal = 3655,
+		buildcostenergy = 72267,
+		buildcostmetal = 3555,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 9,
