@@ -28,7 +28,7 @@ return {
 		maxdamage = 21855,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Cloackable Experimental Fusion Reactor",
+		name = "Experimental Fusion Reactor",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "talon_sfus",
