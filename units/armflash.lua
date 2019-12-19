@@ -53,7 +53,7 @@ return {
 		trackwidth = 22,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 2.376,
+		turninplacespeedlimit = 2.35,
 		turnrate = 592,
 		unitname = "armflash",
 		customparams = {

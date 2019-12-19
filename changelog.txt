@@ -3,11 +3,14 @@
 Balance: 
  - increase All T2 Energy cost Lab *2
  - Balance Commander Shield (Cost and protection)
-
+ - Talon-emerald (t1 riot veh) : More speed and tunrate 
 Improvments:
  - Change Model for T2 Cons Hover Arm
  - Add Engineer Hover for Arm/Core
  - Add Talon Pyramide (T5 Blue Shield)
+Fix:
+ - Talon Dragon/Fort Perimeter (not erase when cons pass over)
+ - Talon_sphere (they chained)
 
 3.21 -> 3.22
 2019-12-09

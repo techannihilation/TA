@@ -4,6 +4,6 @@
 #include "exptype.h"
 
 
-Create(Func_Var_1)
+Create()
 {
 }

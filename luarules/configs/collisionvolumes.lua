@@ -378,6 +378,8 @@ local isTorp = {
 	--[UnitDefNames["tllwmjam"].id] = true,
 	[UnitDefNames["tlltorp"].id] = true,
 	[UnitDefNames["tllatorp"].id] = true
+	[UnitDefNames["talon_tl"].id] = true
+	[UnitDefNames["talon_atl"].id] = true
 }
 
 local customOffsets = {					--dynamic collision volume definitions

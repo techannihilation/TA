@@ -466,7 +466,7 @@ return {
 	"talon_mine2",
 	"talon_mine3",
 	"talon_mine4",
-	"talon_mine5",
+	"talon_fmine",
 	},
 	minelayers = {
 	"armmlv",
