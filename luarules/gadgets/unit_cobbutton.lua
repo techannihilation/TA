@@ -94,6 +94,7 @@ local ShieldUnits = {
   [UnitDefNames["talon_gate3"].id] = true,
   [UnitDefNames["talon_gate4"].id] = true,
   [UnitDefNames["talon_obelisk"].id] = true,
+  [UnitDefNames["talon_pyramid"].id] = true,
   [UnitDefNames["talon_cpod"].id] = true,
   [UnitDefNames["talon_archon"].id] = true,
 }

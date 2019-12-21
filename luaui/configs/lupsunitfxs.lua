@@ -284,8 +284,12 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_obelisk = {
-    {class='Bursts',options=exoarmBursts},
+    {class='Bursts',options=obeliskBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  talon_pyramid = {
+    {class='Bursts',options=pyramidBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,5,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armgate3 = {
     {class='Bursts',options=shieldBursts2200},
