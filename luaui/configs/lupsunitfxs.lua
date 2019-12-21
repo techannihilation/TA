@@ -276,7 +276,7 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_gate = {
-    {class='Bursts',options=shieldBursts1000},
+    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_gate1 = {

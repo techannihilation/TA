@@ -38,7 +38,6 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "talon_obelisk",
-		onoffable = true,
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",

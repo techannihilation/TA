@@ -109,6 +109,8 @@ MotionControl(Func_Var_1, Func_Var_2)
 
 Create()
 {
+	hide flare1;
+	hide flare2;
 	anglelauncher = 0;
 	gun_1 = 0;
 	start-script SmokeUnit();
