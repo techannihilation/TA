@@ -14,7 +14,7 @@ return {
 		buildtime = 1500000,
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		collisionvolumeoffsets = "0 -1 2",
+		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "150 200 150",
 		collisionvolumetype = "Box",
 		corpse = "dead",

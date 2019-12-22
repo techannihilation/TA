@@ -1,13 +1,25 @@
-﻿3.22 -> 3.23
+﻿3.23 -> 3.24
+2019-12-21
+Balance: 
+ - Decrease Haboob Artillery Tortoise Damage (250dmg/s=>225)
+
+Improvments:
+ - Add Christmas Morph Free
+ - Add Pyramid Talon T5 Blue Shield
+ - Rework some DDS Talon Icons
+
+3.22 -> 3.23
 2019-12-18
 Balance: 
  - increase All T2 Energy cost Lab *2
  - Balance Commander Shield (Cost and protection)
- - Talon-emerald (t1 riot veh) : More speed and tunrate 
+ - Talon-emerald (t1 riot veh) : More speed and tunrate
+
 Improvments:
  - Change Model for T2 Cons Hover Arm
  - Add Engineer Hover for Arm/Core
  - Add Talon Pyramide (T5 Blue Shield)
+
 Fix:
  - Talon Dragon/Fort Perimeter (not erase when cons pass over)
  - Talon_sphere (they chained)
