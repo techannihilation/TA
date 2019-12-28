@@ -21,7 +21,7 @@ return {
 		energymake = 614400,
 		energystorage = 1000000,
 		energyuse = 0,
-		explodeas = "SUPERBLAST_BUILDING",
+		explodeas = "SUPERBLAST_BUILDING2",
 		footprintx = 26,
 		footprintz = 26,
 		hidedamage = true,
@@ -39,7 +39,7 @@ return {
 		objectname = "corufus",
 		radaremitheight = 500,
 		seismicsignature = 0,
-		selfdestructas = "SUPERBLAST_BUILDING",
+		selfdestructas = "SUPERBLAST_BUILDING2",
 		sightdistance = 500,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
@@ -49,7 +49,7 @@ return {
 		yardmap = "oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo oooooooooooooooooooooooooo ",
 		customparams = {
 			buildpic = "corufus.dds",
-			faction = "ARM",
+			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {

@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "talon_hydra.dds",
 			faction = "TALON",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			corsent_dead = {
@@ -121,7 +122,7 @@ return {
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
-				cegtag = "corflak-fx",
+				cegtag = "talonflak-fx",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -149,6 +150,7 @@ return {
 					default = 5,
 					fighters = 180,
 					flak_resistant = 90,
+					transporters = 180,
 					unclassed_air = 180,
 				},
 			},

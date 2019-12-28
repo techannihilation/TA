@@ -1,4 +1,5 @@
 -- core_def_aa_rocket
+--Need add Talon
 
 return {
   ["core_def_aa_rocket"] = {
@@ -32,6 +33,27 @@ return {
       water              = true,
       properties = {
         colormap           = [[0.9 0.1 1.0 0.01		0.0 0.2 0.6 0.01	0.0 0.2 0.4 0.01]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[none]],
+        length             = 18,
+        sidetexture        = [[flashside1]],
+        size               = 5.5,
+        sizegrowth         = 0.9,
+        ttl                = 2,
+      },
+    },
+  },
+  ["talon_def_aa_rocket"] = {
+    engine = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[0.1 0.9 1.0 0.01		0.05 0.45 0.5 0.01	0.0 0.125 0.25 0.01]],
         dir                = [[dir]],
         frontoffset        = 0,
         fronttexture       = [[none]],

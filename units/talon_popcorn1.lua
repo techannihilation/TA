@@ -112,7 +112,7 @@ return {
 				areaofeffect = 192,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "armflak-fx",
+				cegtag = "talonflak-fx",
 				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,
