@@ -163,7 +163,7 @@ return {
 				acceleration = 0.3,
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "titan_trail",
+				cegtag = "Arm_titan_trail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

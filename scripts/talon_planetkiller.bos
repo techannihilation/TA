@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, weapon, aimpoint, circle, flare;
+piece  base, body, turret, aim, weapon, aimpoint, circle, flare;
 
 static-var  Restore_Delay;
 
@@ -34,14 +34,14 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 }
 RestoreAfterDelay()
 {
-	sleep 5000;
-	//turn body to y-axis <0.000000> speed <15.000000>;
-	turn body to x-axis <0.000000> speed <10.000000> ;
+	sleep Restore_Delay;
+	move turret to y-axis [0.000000] speed [5.000000];
+	turn turret to x-axis <0.000000> speed <10.000000> ;
 }
 
 Create()
 {
-	Restore_Delay = 5000;
+	Restore_Delay = 10000;
 	start-script SmokeUnit();
 	spin circle around y-axis speed <250.000000> accelerate <25.000000>;
 	spin circle around z-axis speed <150.000000> accelerate <25.000000>;
@@ -54,10 +54,12 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn body to y-axis <0.000000> + heading speed <15.000000>;
-	turn body to x-axis pitch speed <10.000000> ;
-	wait-for-turn body around y-axis;
-	wait-for-turn body around x-axis;
+	move turret to y-axis [80.000000] speed [15.000000];
+	turn turret to y-axis <0.000000> + heading speed <15.000000>;
+	turn turret to x-axis <0.000000> - pitch speed <10.000000> ;
+	wait-for-move turret along y-axis;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -69,7 +71,7 @@ FirePrimary()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = flare;
+	piecenum = aim;
 }
 
 QueryPrimary(piecenum)
@@ -87,15 +89,15 @@ Killed(severity, corpsetype)
 	if( severity <= 30 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode circle type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode aimpoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
-	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode circle type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode aimpoint type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);

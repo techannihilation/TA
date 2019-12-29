@@ -1,4 +1,18 @@
-﻿3.23 -> 3.24
+﻿3.24 -> 3.25
+Balance:
+ - Decrease Cost and stats for T2 Flak Hover Core/Arm
+ - Decrease turnrate for exoarm (1000 => 300 Same than Krog)
+
+Improvments:
+ - Delete Christmas Morph Free and commander Hat
+ - Add new Cegtag for Talon rocket, Arm Burst
+
+Fix : 
+ - Missile AA Launcher ArmRl T1 Script
+ - Fix Exoarm collision box (coulnd't be dgun from long distance)
+ - Fix PlanetKiller Aimpoint
+
+3.23 -> 3.24
 2019-12-21
 Balance: 
  - Decrease Haboob Artillery Tortoise Damage (250dmg/s=>225)

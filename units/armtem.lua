@@ -128,7 +128,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "Arm_titan_missile",
 				name = "TiTan Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

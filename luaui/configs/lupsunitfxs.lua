@@ -21,9 +21,9 @@ talon_afus = {
 	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,55,10}, size=20, precision=22, repeatEffect=true}},
 },
 talon_sfus = {
-	{class='SimpleParticles2', options=MergeTable({pos={0,55,0}, delay=0, size=100, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
-	{class='SimpleParticles2', options=MergeTable({pos={0,55,0}, delay=60, size=65, count=2, colormap={{0.6, 1.0, 0.70, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
-	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,135,10}, size=23, precision=22, repeatEffect=true}},
+	{class='SimpleParticles2', options=MergeTable({pos={0,55,0}, delay=0, size=80, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
+	{class='SimpleParticles2', options=MergeTable({pos={0,55,0}, delay=60, size=50, count=2, colormap={{0.6, 1.0, 0.70, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
+	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,135,10}, size=18, precision=22, repeatEffect=true}},
 },
 talon_efus = {
 	{class='SimpleParticles2', options=MergeTable({pos={0,60,0}, delay=0, size=150, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
