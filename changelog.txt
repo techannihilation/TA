@@ -2,8 +2,10 @@
 Balance:
  - Decrease Cost and stats for T2 Flak Hover Core/Arm
  - Decrease turnrate for exoarm (1000 => 300 Same than Krog)
+ - Decrease Stats for Bantha (Hp and cost. But increase damage)
 
 Improvments:
+ - Bantha. Change mainWeapon with more range and damage * 2. change Rocket for Rave model.
  - Delete Christmas Morph Free and commander Hat
  - Add new Cegtag for Talon rocket, Arm Burst
 

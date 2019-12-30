@@ -163,7 +163,7 @@ return {
 				laserflaresize = 12,
 				name = "ATAD",
 				noselfdamage = true,
-				range = 800,
+				range = 950,
 				reloadtime = 2.5,
 				rgbcolor = "0.2 0.2 1",
 				soundhitdry = "",

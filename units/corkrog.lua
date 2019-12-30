@@ -290,14 +290,14 @@ return {
 			[3] = {
 				def = "CORKROG_ROCKET",
 			},
-			[4] = {
-				def = "KROGCRUSH",
-				onlytargetcategory = "SURFACE",
-			},
-			[5] = {
-				def = "KROGCRUSH",
-				onlytargetcategory = "SURFACE",
-			},
+			--[4] = {
+			--	def = "KROGCRUSH",
+			--	onlytargetcategory = "SURFACE",
+			--},
+			--[5] = {
+			--	def = "KROGCRUSH",
+			--	onlytargetcategory = "SURFACE",
+			--},
 		},
 	},
 }
