@@ -10,8 +10,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "armanni_aoplane.dds",
-		buildpic = "talon_blt.dds",
+		buildpic = "talon_blt1.dds",
 		buildtime = 245000,
 		canattack = true,
 		canstop = 1,
@@ -51,7 +50,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_blt1",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		yardmap = "oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "talon_blt1.dds",
