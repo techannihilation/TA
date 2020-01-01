@@ -22,7 +22,7 @@ return {
 		collisionvolumescales = "155 155 564",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
-		cruisealt = 40,
+		cruisealt = 50,
 		description = "Hero (Arm)",
 		dontland = 1,
 		energystorage = 10000,
