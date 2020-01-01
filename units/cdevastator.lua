@@ -22,7 +22,7 @@ return {
 		collisionvolumescales = "150 150 548",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
-		cruisealt = 40,
+		cruisealt = 80,
 		defaultmissiontype = "VTOL_standby",
 		description = "Hero (Core)",
 		dontland = 1,
