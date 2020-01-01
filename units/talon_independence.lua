@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON SURFACE",
 		collide = false,
-		collisionvolumeoffsets = "0 0 0",
+		collisionvolumeoffsets = "0 40 0",
 		collisionvolumescales = "600 100 600",
 		collisionvolumetype = "CylY",
 		cruisealt = 150,

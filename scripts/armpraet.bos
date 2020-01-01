@@ -791,9 +791,9 @@ FirePrimary()
 	{
 		turn ruparm to x-axis <85.016484> speed <200.038462>;
 		turn rarm to x-axis <-100.016484> speed <200.038462>;
-		show rgunflare;
+		//show rgunflare;
 		sleep 150;
-		hide rgunflare;
+		//hide rgunflare;
 		turn rarm to x-axis <-86.016484> speed <100.016484>;
 		turn ruparm to x-axis <0.000000> speed <100.016484>;
 		gun_1 = torso;
@@ -803,9 +803,9 @@ FirePrimary()
 	{
 		turn luparm to x-axis <85.016484> speed <200.038462>;
 		turn larm to x-axis <-100.016484> speed <200.038462>;
-		show lgunflare;
+		//show lgunflare;
 		sleep 150;
-		hide lgunflare;
+		//hide lgunflare;
 		turn larm to x-axis <-86.016484> speed <100.016484>;
 		turn luparm to x-axis <0.000000> speed <100.016484>;
 		gun_1 = head;
