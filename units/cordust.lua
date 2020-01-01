@@ -46,7 +46,7 @@ return {
 		maxwaterdepth = 0,
 		metalstorage = 1000,
 		metaluse = 0,
-		-mobilestandorders = 1,
+		--mobilestandorders = 1,
 		name = "Dust",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
