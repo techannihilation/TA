@@ -59,7 +59,7 @@ return {
 			[4] = "tllupgweb",
 			[5] = "tllvhlt",
 			[6] = "tllmortor",
-			[7] = "tllarch",
+			--[7] = "tllarch",
 			[8] = "tlllmt1",
 			[9] = "tllsam",
 			[10] = "tlltetanos",

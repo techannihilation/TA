@@ -77,7 +77,7 @@ return {
 			[21] = "nsaatorph",
 			[22] = "armtide",
 			[23] = "armuwmex",
-			[24] = "armaahpns",
+			[24] = "aahpns",
 			[25] = "armfnanotc",
 			[26] = "armfdrag",
 			[27] = "armfrad",
