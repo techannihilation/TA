@@ -1,6 +1,7 @@
 return {
 	cordust = {
 		acceleration = 0.01,
+		activatewhenbuilt = true,
 		airhoverfactor = 0,
 		airstrafe = false,
 		bankscale = 0.5,
@@ -17,7 +18,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL SUPERSHIP WEAPON",
+		category = "ALL HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL SUPERSHIP WEAPON SURFACE",
 		collide = false,
 		collisionvolumeoffsets = "0 -21 -40",
 		collisionvolumescales = "180 180 473",
@@ -26,7 +27,7 @@ return {
 		cruisealt = 20,
 		defaultmissiontype = "VTOL_standby",
 		description = "Hero (Core)",
-		dontland = 0,
+		dontland = 1,
 		energystorage = 10000,
 		explodeas = "MEGA_BLAST",
 		firestandorders = 1,
