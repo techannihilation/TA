@@ -22,7 +22,7 @@ return {
 		collisionvolumetype = "CylY",
 		cruisealt = 150,
 		description = "Invasion Ship",
-		dontland = 1,
+		dontland = 0,
 		energystorage = 1000000,
 		explodeas = "MEGA_BLAST1",
 		footprintx = 37,
