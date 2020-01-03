@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base;
+piece  base, turret;
 
 static-var  Static_Var_1;
 
@@ -42,6 +42,8 @@ Shield()
 
 Create()
 {
+	dont-shade turret;
+	Static_Var_1 = 1;
 	start-script SmokeUnit();
 }
 
@@ -53,7 +55,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	explode base type NOHEATCLOUD | FALL;
+	explode turret type NOHEATCLOUD | FALL;
 	sleep 100;
 }
 
@@ -67,11 +69,6 @@ AimFromPrimary(piecenum)
 	piecenum = base;
 }
 
-SweetSpot(piecenum)
-{
-	piecenum = base;
-}
-
 AimSecondary(heading, pitch)
 {
 	sleep 100;
@@ -80,7 +77,7 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	explode base type NOHEATCLOUD | FALL;
+	explode turret type NOHEATCLOUD | FALL;
 	sleep 100;
 }
 
@@ -90,6 +87,11 @@ QuerySecondary(piecenum)
 }
 
 AimFromSecondary(piecenum)
+{
+	piecenum = base;
+}
+
+SweetSpot(piecenum)
 {
 	piecenum = base;
 }
