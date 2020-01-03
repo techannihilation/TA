@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -1 -11",
-		collisionvolumescales = "42 32 71",
+		collisionvolumescales = "60 40 95",
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -90,6 +90,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:berthaflare",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
