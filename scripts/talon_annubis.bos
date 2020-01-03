@@ -1,0 +1,427 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, mainturret, sleeves1, sleeves2, barrel1, barrel2, barrel3, barrel4, 
+		shell12, shell34, flare1, flare2, flare3, flare4, 
+		p11, p12, p13, p14, p16, p17, p18, p19,
+		p21, p22, p23, p24, p26, p27, p28, p29,
+		turret, minigunsleeves, barrel, flare;
+
+static-var  gun_1, statechg_DesiredState, statechg_StateChanging, bAiming, bMoving;
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn p11 to z-axis <0.000000> speed <10.>;
+		turn p12 to z-axis <0.000000> speed <35.>;
+		turn p13 to z-axis <0.000000> speed <15.>;
+		turn p14 to z-axis <0.000000> speed <15.>;
+	
+		turn p16 to z-axis <0.000000> speed <10.>;
+		turn p17 to z-axis <0.000000> speed <35.>;
+		turn p18 to z-axis <0.000000> speed <15.>;
+		turn p19 to z-axis <0.000000> speed <15.>;
+		
+		turn p21 to z-axis <0.000000> speed <10.>;
+		turn p22 to z-axis <0.000000> speed <35.>;
+		turn p23 to z-axis <0.000000> speed <15.>;
+		turn p24 to z-axis <0.000000> speed <15.>;
+	
+		turn p26 to z-axis <0.000000> speed <10.>;
+		turn p27 to z-axis <0.000000> speed <35.>;
+		turn p28 to z-axis <0.000000> speed <15.>;
+		turn p29 to z-axis <0.000000> speed <15.>;
+		
+		wait-for-turn p11 around y-axis;
+		wait-for-turn p12 around y-axis;
+		wait-for-turn p13 around y-axis;
+		wait-for-turn p14 around y-axis;
+		wait-for-turn p16 around y-axis;
+		wait-for-turn p17 around y-axis;
+		wait-for-turn p18 around y-axis;
+		wait-for-turn p19 around y-axis;
+		
+		sleep 50;
+	}
+	
+	sleep 50;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn p11 to z-axis <60.000000> speed <5.>;
+		turn p12 to z-axis <120.000000> speed <15.>;
+		turn p13 to z-axis <150.000000> speed <35.>;
+		turn p14 to z-axis <90.000000> speed <20.>;
+		
+		turn p16 to z-axis <-60.000000> speed <5.>;
+		turn p17 to z-axis <-120.000000> speed <15.>;
+		turn p18 to z-axis <-150.000000> speed <35.>;
+		turn p19 to z-axis <-90.000000> speed <20.>;
+		
+		turn p21 to z-axis <60.000000> speed <5.>;
+		turn p22 to z-axis <90.000000> speed <15.>;
+		turn p23 to z-axis <105.000000> speed <35.>;
+		turn p24 to z-axis <45.000000> speed <20.>;
+		
+		turn p26 to z-axis <-60.000000> speed <5.>;
+		turn p27 to z-axis <-90.000000> speed <15.>;
+		turn p28 to z-axis <-105.000000> speed <35.>;
+		turn p29 to z-axis <-45.000000> speed <20.>;
+		
+		wait-for-turn p11 around y-axis;
+		wait-for-turn p12 around y-axis;
+		wait-for-turn p13 around y-axis;
+		wait-for-turn p14 around y-axis;
+		wait-for-turn p16 around y-axis;
+		wait-for-turn p17 around y-axis;
+		wait-for-turn p18 around y-axis;
+		wait-for-turn p19 around y-axis;
+		
+		sleep 150;
+	}
+	sleep 50;
+	if( TRUE )
+	{
+		turn p12 to z-axis <90.000000> speed <10.>;
+		turn p17 to z-axis <-90.000000> speed <10.>;
+		sleep 50;
+		turn p13 to z-axis <120.000000> speed <10.>;
+		turn p14 to z-axis <90.000000> speed <10.>;
+		turn p18 to z-axis <-120.000000> speed <10.>;
+		turn p19 to z-axis <-90.000000> speed <10.>;	
+		sleep 50;
+	}
+	sleep 50;
+}
+
+Go()
+{
+	if( !bAiming )
+	{
+		call-script activatescr();
+	}
+	sleep 4500;
+	bAiming = 1;
+}
+
+Stop()
+{
+	bAiming = 0;
+	if( TRUE )
+	{
+		turn mainturret to y-axis <0.000000> speed <20.>;
+		turn sleeves1 to x-axis <0.000000> speed <20.>;
+		turn sleeves2 to x-axis <0.000000> speed <20.>;	
+		wait-for-turn mainturret around y-axis;
+		sleep 50;
+	}
+	sleep 50;	
+	call-script deactivatescr();	
+}
+
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flare1;
+	hide flare2;
+	hide flare3;
+	hide flare4;
+	
+	gun_1 = 0;
+	bAiming = 0;
+	bMoving = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = 1;
+	call-script RequestState(1);
+	
+		turn p11 to z-axis <0.000000> speed <10.>;
+		turn p12 to z-axis <0.000000> speed <35.>;
+		turn p13 to z-axis <0.000000> speed <15.>;
+		turn p14 to z-axis <0.000000> speed <15.>;
+	
+		turn p16 to z-axis <0.000000> speed <10.>;
+		turn p17 to z-axis <0.000000> speed <35.>;
+		turn p18 to z-axis <0.000000> speed <15.>;
+		turn p19 to z-axis <0.000000> speed <15.>;
+		
+		turn p21 to z-axis <0.000000> speed <10.>;
+		turn p22 to z-axis <0.000000> speed <35.>;
+		turn p23 to z-axis <0.000000> speed <15.>;
+		turn p24 to z-axis <0.000000> speed <15.>;
+	
+		turn p26 to z-axis <0.000000> speed <10.>;
+		turn p27 to z-axis <0.000000> speed <35.>;
+		turn p28 to z-axis <0.000000> speed <15.>;
+		turn p29 to z-axis <0.000000> speed <15.>;
+
+}
+
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+RestoreAfterDelay1()
+{
+	sleep 5000;
+	set-signal-mask 0;
+	call-script RequestState(1);
+}
+
+RestoreAfterDelay2()
+{
+	sleep 800;
+	spin barrel around z-axis speed <0.000000> accelerate <3.500000>;
+	sleep 4000;
+	turn turret to y-axis <0.000000> speed <35.000000>;
+	turn minigunsleeves to x-axis <0.000000> speed <35.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	
+	if( !bMoving )
+	{
+		start-script RequestState(0);
+	}
+	signal 2;
+	set-signal-mask 2;
+	
+	while( !bAiming OR bMoving )
+	{
+		sleep 250;
+	}
+	
+	turn mainturret to y-axis heading speed <20.>;
+	turn sleeves1 to x-axis <0.> - pitch speed <20.>;
+	turn sleeves2 to x-axis <0.> - pitch speed <20.>;
+	wait-for-turn mainturret around y-axis;
+	wait-for-turn sleeves1 around x-axis;
+	start-script RestoreAfterDelay1();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		move barrel1 to z-axis [-10.] now;
+		emit-sfx 1024 + 0 from flare1;
+		explode shell12 type FALL;
+		sleep 50;
+		move barrel1 to z-axis [0.] speed [8.];
+	}
+	if( gun_1 == 1 )
+	{
+		move barrel3 to z-axis [-10.] now;
+		emit-sfx 1024 + 0 from flare3;
+		explode shell34 type FALL;
+		sleep 50;
+		move barrel3 to z-axis [0.] speed [8.];
+	}
+	if( gun_1 == 2 )
+	{
+		move barrel2 to z-axis [-10.] now;
+		emit-sfx 1024 + 0 from flare2;
+		explode shell12 type FALL;
+		sleep 50;
+		move barrel2 to z-axis [0.] speed [8.];
+	}
+	if( gun_1 == 3 )
+	{
+		move barrel4 to z-axis [-10.] now;
+		emit-sfx 1024 + 0 from flare4;
+		explode shell34 type FALL;
+		sleep 50;
+		move barrel4 to z-axis [0.] speed [8.];
+	}
+	++gun_1;
+	if( gun_1 == 4 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = mainturret;
+}
+
+
+AimTertiary(heading, pitch)
+{
+	signal 8;
+	set-signal-mask 8;
+	turn turret to y-axis heading speed <100.000000>;
+	turn minigunsleeves to x-axis <0.000000> - pitch speed <100.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn minigunsleeves around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FireTertiary()
+{
+	signal 16;
+	set-signal-mask 16;
+	//emit-sfx 1025 from flare;
+	move barrel to z-axis [-0.25] now;
+	move barrel to z-axis [0.] speed [1.5];
+	spin barrel around z-axis speed <450.000000>;	
+	sleep 300;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode sleeves1 type NOHEATCLOUD;
+		explode sleeves2 type NOHEATCLOUD | FALL;
+		explode mainturret type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode minigunsleeves type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode barrel3 type NOHEATCLOUD;
+		explode barrel4 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode mainturret type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD;
+		explode minigunsleeves type NOHEATCLOUD | FALL;
+		explode barrel type NOHEATCLOUD;
+		explode sleeves1 type NOHEATCLOUD | FALL;
+		explode sleeves2 type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		explode barrel3 type NOHEATCLOUD | FALL;
+		explode barrel4 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode mainturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode minigunsleeves type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeves1 type NOHEATCLOUD | FALL;
+	explode sleeves2 type NOHEATCLOUD | FALL;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -57,6 +57,7 @@ return {
 			[4] = "talon_abaddon",
 			[5] = "talon_repentance",
 			[6] = "talon_thanos",
+			[7] = "talon_annubis",
 		},
 		customparams = {
 			buildpic = "talon_evp.dds",
