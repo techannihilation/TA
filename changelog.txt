@@ -1,9 +1,12 @@
 ﻿3.25 -> 3.26
-2020-01-01
+2020-01-03
 Improvments:
  - Armpraet. New Main weapon. Same balance.
+ - Add T3 vehicle - Annubis Rapid Mobile LRPT
+ - Rework Mythril Main Weapon (effect)
 
 Fix : 
+ - Balance Mythril : More damage (+35%) and less range (1500=>1250) (Laser=>Plasma)
  - HERO movement unlocked
 
 

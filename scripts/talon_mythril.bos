@@ -380,7 +380,7 @@ FireSecondary()
 		emit-sfx 1024 + 0 from Lflare2;
 		move Lbarrel2 to z-axis [-4.00] speed [250.];
 		sleep 50;
-		move Lbarrel2 to z-axis [0.00] speed [25.00];
+		move Lbarrel2 to z-axis [0.00] speed [100.00];
 		wait-for-move Lbarrel2 along z-axis;
 	}
 	
@@ -390,7 +390,7 @@ FireSecondary()
 		emit-sfx 1024 + 0 from Lflare1;
 		move Lbarrel1 to z-axis [-4.00] speed [250.];
 		sleep 50;
-		move Lbarrel1 to z-axis [0.00] speed [25.00];
+		move Lbarrel1 to z-axis [0.00] speed [100.00];
 		wait-for-move Lbarrel1 along z-axis;
 	}
 	

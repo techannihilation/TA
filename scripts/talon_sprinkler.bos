@@ -45,8 +45,8 @@ RestoreAfterDelay()
 	
 	sleep 1000;
 	
-	spin Rbarrel around z-axis speed <0.000000> accelerate <-10.000000>;
-	spin Lbarrel around z-axis speed <0.000000> accelerate <-10.000000>;
+	spin Rbarrel around z-axis speed <0.000000> accelerate <5.000000>;
+	spin Lbarrel around z-axis speed <0.000000> accelerate <5.000000>;
 	
 	sleep restore_delay;
 	turn sleeves to x-axis <-90.000000> speed <25.000000>;

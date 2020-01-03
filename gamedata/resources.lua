@@ -232,6 +232,8 @@ local resources = {
 			--lightning
 			strike='techa_artwork/strike.png',
 			lightningball_new='techa_artwork/lightningball.png',
+	sunlight_new='techa_artwork/sunlight.png',
+
 			puff='Shine_Smokey_256.png',
 
 			cloud='sky1.png',
