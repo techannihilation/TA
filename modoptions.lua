@@ -211,7 +211,7 @@ local options={
     def    = true,
     section= "ta_options",
   },
-  {
+  --[[ {
     key    = "mo_noshare",
     name   = "No Sharing To Enemies",
     desc   = "Prevents players from giving units or resources to enemies\nAutoHost Usage :- mo_noshare",
@@ -219,6 +219,7 @@ local options={
     def    = true,
     section= "ta_options",
   },
+  --]]
   {
     key    = "mo_nowrecks",
     name   = "No Unit Wrecks",
