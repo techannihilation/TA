@@ -2,11 +2,11 @@ return {
 	talon_quartz = {
 		acceleration = 0.0396,
 		brakerate = 0.0495,
-		buildcostenergy = 2280,
-		buildcostmetal = 145,
+		buildcostenergy = 2080,
+		buildcostmetal = 134,
 		builder = false,
 		buildpic = "talon_quartz.dds",
-		buildtime = 2945,
+		buildtime = 2500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -162,7 +162,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 280,
 				damage = {
-					default = 15,
+					default = 20,
 					subs = 5,
 				},
 			},

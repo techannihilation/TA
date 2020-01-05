@@ -22,7 +22,7 @@ return {
 		collisionvolumescales = "80 23 76",
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
-		cruisealt = 60,
+		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Flying Fortress",
 		explodeas = "SMALL_BUILDING",
