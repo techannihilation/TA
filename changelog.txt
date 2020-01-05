@@ -1,4 +1,19 @@
-﻿3.25 -> 3.26
+﻿3.26 -> 3.27
+2020-01-05
+Balance : 
+ - Increase Krogoth/Armorco cost by 5%
+ - Increase damage T4 Nuke (27K=>50K) 
+ - Decrease cost champion (15%). Delete Add Anti-Experimental unit damage.
+ - Metron : Add Anti-Experimental unit damage.
+
+Improvments:
+ - Add new weapon for Orco and Champion.
+ - Rework Models for MobileLRPT (increase size, and add details for models)
+
+Fix : 
+ - Ennemy Share Widget removed
+
+3.25 -> 3.26
 2020-01-03
 Improvments:
  - Armpraet. New Main weapon. Same balance.

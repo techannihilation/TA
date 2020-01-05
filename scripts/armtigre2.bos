@@ -3,14 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, baseb, turret, canon1, canon2, flare1, flare2, laser,
-       flarel1, flarel2, missil, miss1, miss2, roueg1, roueg2, roueg3,
+piece  base, baseb, turret, canon1, canon2, flare1, flare2, 
+       missil, miss1, miss2, roueg1, roueg2, roueg3,
        roued1, roued2, roued3, roueg1b, roueg2b, roueg3b, roued1b, roued2b,
        roued3b, shell1, shell2;
 
-static-var  restore_delay, Static_Var_2, Static_Var_3, gun_1, gun_2,
-            gun_3, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
-            Static_Var_11, Static_Var_12;
+static-var  restore_delay, gun_1,
+            gun_3;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -18,57 +17,12 @@ static-var  restore_delay, Static_Var_2, Static_Var_3, gun_1, gun_2,
 #define SIG_AIM_3			8
 
 
-TurnControl(Func_Var_1, Func_Var_2, Func_Var_3)
-{
-	Func_Var_1 = get HEADING;
-	while( TRUE )
-	{
-		Func_Var_2 = get HEADING;
-		Func_Var_3 = Func_Var_2 - Func_Var_1;
-		Static_Var_8 = 2;
-		Static_Var_9 = 2;
-		if( Func_Var_3 >= 500 )
-		{
-			Static_Var_8 = 1;
-		}
-		if( Func_Var_3 <= -500 )
-		{
-			Static_Var_9 = 1;
-		}
-		Func_Var_1 = Func_Var_2;
-		sleep 67;
-	}
-}
-
-WheelControl()
-{
-	sleep 33;
-	while( TRUE )
-	{
-		Static_Var_11 = get CURRENT_SPEED * 20 / Static_Var_12;
-		Static_Var_10 = Static_Var_11 * 6;
-		if( Static_Var_11 < 4 )
-		{
-			Static_Var_11 = 4;
-		}
-		spin roueg1 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_8 accelerate <3.000000> * Static_Var_11;
-		spin roueg2 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_8 accelerate <3.000000> * Static_Var_11;
-		spin roueg3 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_8 accelerate <3.000000> * Static_Var_11;
-		spin roued1 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_9 accelerate <3.000000> * Static_Var_11;
-		spin roued2 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_9 accelerate <3.000000> * Static_Var_11;
-		spin roued3 around x-axis speed <1.000000> * Static_Var_10 * Static_Var_9 accelerate <3.000000> * Static_Var_11;
-		sleep 67;
-	}
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
-	start-script WheelControl();
-	start-script TurnControl();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -102,39 +56,34 @@ HitByWeapon(anglex, anglez)
 
 StartMoving()
 {
-	sleep 1;
+		spin roueg1 around x-axis speed <150.000000> accelerate <5.000000>;
+		spin roueg2 around x-axis speed <150.000000> accelerate <5.000000>;
+		spin roueg3 around x-axis speed <150.000000> accelerate <5.000000>;
+		spin roued1 around x-axis speed <150.000000> accelerate <5.000000>;
+		spin roued2 around x-axis speed <150.000000> accelerate <5.000000>;
+		spin roued3 around x-axis speed <150.000000> accelerate <5.000000>;
 }
 
 StopMoving()
 {
-	sleep 1;
+		spin roueg1 around x-axis speed <0.000000> accelerate <150.000000>;
+		spin roueg2 around x-axis speed <0.000000> accelerate <150.000000>;
+		spin roueg3 around x-axis speed <0.000000> accelerate <150.000000>;
+		spin roued1 around x-axis speed <0.000000> accelerate <150.000000>;
+		spin roued2 around x-axis speed <0.000000> accelerate <150.000000>;
+		spin roued3 around x-axis speed <0.000000> accelerate <150.000000>;
 }
 
 Create()
 {
 	start-script SmokeUnit();
-	hide flarel1;
-	hide flarel2;
 	hide flare1;
 	hide flare2;
 	hide shell1;
 	hide shell2;
 	gun_1 = baseb;
-	gun_2 = baseb;
 	gun_3 = baseb;
-	Static_Var_7 = 1;
-	Static_Var_12 = get MAX_SPEED;
 	restore_delay = 3000;
-}
-
-TargetHeading(Func_Var_1)
-{
-	Static_Var_3 = 0 - Func_Var_1;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1;
 }
 
 RestoreAfterDelay()
@@ -143,11 +92,10 @@ RestoreAfterDelay()
 	turn canon1 to x-axis <0.000000> speed <100.000000>;
 	turn canon2 to x-axis <0.000000> speed <100.000000>;
 	turn turret to y-axis <0.000000> speed <70.000000>;
-	turn laser to y-axis <0.000000> speed <100.000000>;
 	wait-for-turn canon1 around x-axis;
 	wait-for-turn canon2 around x-axis;
 	wait-for-turn turret around y-axis;
-	wait-for-turn laser around y-axis;
+
 }
 
 RestoreAfterDelay2()
@@ -161,23 +109,9 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <120.000000>;
+	turn turret to y-axis heading speed <100.000000>;
 	turn canon1 to x-axis <0.000000> - pitch speed <50.000000>;
 	turn canon2 to x-axis <0.000000> - pitch speed <50.000000>;
-	wait-for-turn laser around y-axis;
-	wait-for-turn turret around y-axis;
-	wait-for-turn canon1 around x-axis;
-	wait-for-turn canon2 around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	turn laser to y-axis heading speed <200.000000>;
-	wait-for-turn laser around y-axis;
 	wait-for-turn turret around y-axis;
 	wait-for-turn canon1 around x-axis;
 	wait-for-turn canon2 around x-axis;
@@ -199,44 +133,24 @@ FirePrimary()
 {
 	if( gun_1 == 1 )
 	{
-		move canon1 to z-axis [-2.000000] speed [20.000000];
-		show flare1;
-		show shell1;
+		emit-sfx 1024 + 0 from flare1;
+		move canon1 to z-axis [-2.000000] speed [40.000000];
+		//show flare1;
 		sleep 150;
-		hide flare1;
+		//hide flare1;
 		move canon1 to z-axis [0.000000] speed [10.000000];
 		gun_1 = turret;
 		return (0);
 	}
 	if( gun_1 == 2 )
 	{
-		move canon2 to z-axis [-2.000000] speed [20.000000];
-		show flare2;
-		show shell2;
+		emit-sfx 1024 + 0 from flare2;
+		move canon2 to z-axis [-2.000000] speed [40.000000];
+		//show flare2;
 		sleep 150;
-		hide flare2;
+		//hide flare2;
 		move canon2 to z-axis [0.000000] speed [10.000000];
 		gun_1 = baseb;
-		return (0);
-	}
-}
-
-FireSecondary()
-{
-	if( gun_2 == 1 )
-	{
-		show flarel1;
-		sleep 150;
-		hide flarel1;
-		gun_2 = turret;
-		return (0);
-	}
-	if( gun_2 == 2 )
-	{
-		show flarel2;
-		sleep 150;
-		hide flarel2;
-		gun_2 = baseb;
 		return (0);
 	}
 }
@@ -260,10 +174,6 @@ AimFromPrimary(piecenum)
 	piecenum = turret;
 }
 
-AimFromSecondary(piecenum)
-{
-	piecenum = laser;
-}
 
 AimFromTertiary(piecenum)
 {
@@ -279,18 +189,6 @@ QueryPrimary(piecenum)
 	if( gun_1 == 2 )
 	{
 		piecenum = flare2;
-	}
-}
-
-QuerySecondary(piecenum)
-{
-	if( gun_2 == 1 )
-	{
-		piecenum = flarel1;
-	}
-	if( gun_2 == 2 )
-	{
-		piecenum = flarel2;
 	}
 }
 
@@ -319,7 +217,6 @@ Killed(severity, corpsetype)
 		explode baseb type NOHEATCLOUD;
 		explode base type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode laser type NOHEATCLOUD;
 		explode missil type NOHEATCLOUD;
 		explode canon1 type NOHEATCLOUD;
 		explode canon2 type NOHEATCLOUD;
@@ -331,8 +228,6 @@ Killed(severity, corpsetype)
 		explode roued3 type NOHEATCLOUD;
 		explode flare1 type NOHEATCLOUD;
 		explode flare2 type NOHEATCLOUD;
-		explode flarel1 type NOHEATCLOUD;
-		explode flarel2 type NOHEATCLOUD;
 		explode miss1 type NOHEATCLOUD;
 		explode miss2 type NOHEATCLOUD;
 		explode roueg1b type NOHEATCLOUD;
@@ -351,7 +246,6 @@ Killed(severity, corpsetype)
 		explode baseb type NOHEATCLOUD;
 		explode base type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD | FALL;
-		explode laser type NOHEATCLOUD | FALL;
 		explode missil type NOHEATCLOUD | FALL;
 		explode canon1 type NOHEATCLOUD;
 		explode canon2 type NOHEATCLOUD;
@@ -363,40 +257,6 @@ Killed(severity, corpsetype)
 		explode roued3 type NOHEATCLOUD | FALL;
 		explode flare1 type NOHEATCLOUD;
 		explode flare2 type NOHEATCLOUD;
-		explode flarel1 type NOHEATCLOUD;
-		explode flarel2 type NOHEATCLOUD;
-		explode miss1 type NOHEATCLOUD;
-		explode miss2 type NOHEATCLOUD;
-		explode roueg1b type NOHEATCLOUD;
-		explode roueg2b type NOHEATCLOUD;
-		explode roueg3b type NOHEATCLOUD;
-		explode roued1b type NOHEATCLOUD;
-		explode roued2b type NOHEATCLOUD;
-		explode roued3b type NOHEATCLOUD;
-		explode shell1 type NOHEATCLOUD;
-		explode shell2 type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode baseb type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode laser type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode missil type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode canon1 type NOHEATCLOUD;
-		explode canon2 type NOHEATCLOUD;
-		explode roueg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode roueg2 type NOHEATCLOUD;
-		explode roueg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode roued1 type NOHEATCLOUD;
-		explode roued2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode roued3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flare1 type NOHEATCLOUD;
-		explode flare2 type NOHEATCLOUD;
-		explode flarel1 type NOHEATCLOUD;
-		explode flarel2 type NOHEATCLOUD;
 		explode miss1 type NOHEATCLOUD;
 		explode miss2 type NOHEATCLOUD;
 		explode roueg1b type NOHEATCLOUD;
@@ -413,7 +273,6 @@ Killed(severity, corpsetype)
 	explode baseb type NOHEATCLOUD;
 	explode base type NOHEATCLOUD;
 	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode laser type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode missil type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode canon1 type NOHEATCLOUD;
 	explode canon2 type NOHEATCLOUD;
@@ -425,8 +284,6 @@ Killed(severity, corpsetype)
 	explode roued3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode flare1 type NOHEATCLOUD;
 	explode flare2 type NOHEATCLOUD;
-	explode flarel1 type NOHEATCLOUD;
-	explode flarel2 type NOHEATCLOUD;
 	explode miss1 type NOHEATCLOUD;
 	explode miss2 type NOHEATCLOUD;
 	explode roueg1b type NOHEATCLOUD;
