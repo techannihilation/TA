@@ -68,10 +68,10 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.armawin.id,
 	UnitDefNames.coratidal.id,
 	UnitDefNames.armatidal.id,
-	UnitDefNames.armlightfus.id,
-	UnitDefNames.armuwlightfus.id,
-	UnitDefNames.corlightfus.id,
-	UnitDefNames.coruwlightfus.id,
+	--UnitDefNames.armlightfus.id,
+	--UnitDefNames.armuwlightfus.id,
+	--UnitDefNames.corlightfus.id,
+	--UnitDefNames.coruwlightfus.id,
 	UnitDefNames.armgen.id,
 	UnitDefNames.corgen.id,
 	UnitDefNames.tllgen.id,
@@ -87,8 +87,14 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.tlladvsolar.id,
 	UnitDefNames.armefus.id,
 	UnitDefNames.corefus.id,
+	UnitDefNames.corufus.id,
 	UnitDefNames.tllefus.id,
-	UnitDefNames.tllgeo_armored.id,
+	UnitDefNames.talon_gen.id,
+	UnitDefNames.talon_ckfus.id,
+	UnitDefNames.talon_sfus.id,
+	UnitDefNames.talon_afus.id,
+	UnitDefNames.talon_efus.id,
+	UnitDefNames.talon_uwfus.id,
 	--Metal Makers
 	UnitDefNames.armmakr.id,
 	UnitDefNames.armfmkr.id,
@@ -116,6 +122,11 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.tllwmmohoconv.id,
 	UnitDefNames.tllgen.id,
 	UnitDefNames.tllmetalmakerlvl3.id
+	UnitDefNames.talon_makr.id
+	UnitDefNames.talon_fmkr.id
+	UnitDefNames.talon_makr1.id
+	UnitDefNames.talon_metalmakerlvl2.id
+	UnitDefNames.talon_metalmakerlvl3.id	
 }
 
 

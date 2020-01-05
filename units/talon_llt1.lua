@@ -70,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 64,
-				object = "talon_DEAD",
+				object = "talon_llt_DEAD",
 				reclaimable = true,
 			},
 			heap = {

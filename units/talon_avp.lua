@@ -97,7 +97,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "8X8A",
+				object = "6X6D",
 				reclaimable = true,
 			},
 		},
