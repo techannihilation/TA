@@ -3,16 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, ring, Turret1, Turret2, Turret3, bladestop, bladesbottom,
-       wing1, wing2, wing3, wing2top, wing3top, sphere1, sphere2, sphere3,
-       flash1, flash2, flash3, engine;
+piece  base, body, ring, turret1, turret2, bladestop, bladesbottom,
+       wing1, wing2, wing3, wing2top, wing3top, engine, 
+       sleeve1, sleeve2, gun11, gun12, gun21, gun22, flare21, flare22, flare11, flare12;
 
-static-var  restore_delay, statechg_DesiredState, statechg_StateChanging;
+static-var  restore_delay, statechg_DesiredState, statechg_StateChanging, gun_1, gun_2;
 
 // Signal definitions
 #define SIG_AIM				4
 #define SIG_AIM_2			8
-#define SIG_AIM_3			16
 
 
 activatescr()
@@ -101,11 +100,10 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	gun_1 = 0;
+	gun_2 = 0;
 	start-script SmokeUnit();
 	call-script InitState();
-	hide flash1;
-	hide flash2;
-	hide flash3;
 }
 
 Activate()
@@ -118,38 +116,29 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-SweetSpot(piecenum)
+RestoreAfterDelay1()
 {
-	piecenum = base;
+	sleep 2500;
+	turn sleeve1 to x-axis <0.000000> speed <100.000000>;
+	turn turret1 to y-axis <0.000000> speed <70.000000>;
 }
 
-QueryPrimary(piecenum)
+RestoreAfterDelay2()
 {
-	piecenum = flash1;
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = flash2;
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = flash3;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
+	sleep 2500;
+	turn sleeve2 to x-axis <0.000000> speed <100.000000>;
+	turn turret2 to y-axis <0.000000> speed <70.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn Turret1 to y-axis heading speed <200.000000>;
-	turn Turret1 to x-axis heading speed <200.000000>;
-	wait-for-turn Turret1 around y-axis;
+	turn turret1 to y-axis heading speed <150.000000>;
+	turn sleeve1 to x-axis <0.> - pitch speed <150.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay1();
 	return (1);
 }
 
@@ -157,41 +146,59 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn Turret2 to x-axis heading speed <200.000000>;
-	turn Turret2 to y-axis heading speed <200.000000>;
-	wait-for-turn Turret2 around x-axis;
-	return (1);
-}
-
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	turn Turret3 to x-axis heading speed <200.000000>;
-	turn Turret3 to y-axis heading speed <200.000000>;
-	wait-for-turn Turret3 around x-axis;
+	turn turret2 to y-axis heading speed <150.000000>;
+	turn sleeve2 to x-axis <0.> - pitch speed <150.000000>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeve2 around x-axis;
+	start-script RestoreAfterDelay2();
 	return (1);
 }
 
 FirePrimary()
 {
-	show flash1;
-	sleep 100;
-	hide flash1;
+	++gun_1;
+	if (gun_1 == 2)
+	{
+		gun_1 = 0;
+	}
 }
 
 FireSecondary()
 {
-	show flash2;
-	sleep 100;
-	hide flash2;
+	++gun_2;
+	if (gun_2 == 2)
+	{
+		gun_2 = 0;
+	}
 }
 
-FireTertiary()
+QueryPrimary(piecenum)
 {
-	show flash3;
-	sleep 100;
-	hide flash3;
+	if (gun_1 == 0)
+	{
+		piecenum = flare11;
+	}
+	if (gun_1 == 1)
+	{
+		piecenum = flare12;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if (gun_2 == 0)
+	{
+		piecenum = flare21;
+	}
+	if (gun_2 == 1)
+	{
+		piecenum = flare22;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -204,14 +211,10 @@ Killed(severity, corpsetype)
 		explode wing1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode wing2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode wing3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sphere1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sphere2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sphere3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode wing2top type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode wing3top type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode Turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode Turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode Turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode bladestop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode bladesbottom type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
@@ -222,14 +225,10 @@ Killed(severity, corpsetype)
 	explode wing1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode wing2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode wing3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sphere1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sphere2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sphere3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode wing2top type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode wing3top type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode bladestop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode bladesbottom type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
