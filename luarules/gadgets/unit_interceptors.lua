@@ -71,6 +71,11 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
   local ox, _, oz = GetUnitPosition(interceptorUnitID)
   local coverageRange = interceptorsID[interceptorUnitID]
   --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
+  if not coverageRange then
+	  local unitDefID = Spring.GetUnitDefID(interceptorUnitID)
+	  Spring.Echo("Missing AnitNuke Interceptor: " .. unitDefID .. "name: " .. UnitDefs[unitDefID].name)
+    return false
+  end
   if projectileTargetCache[targetProjectileID] and projectileTargetCache[targetProjectileID][1] then
     local tx = projectileTargetCache[targetProjectileID][1] or nil
     local tz = projectileTargetCache[targetProjectileID][2] or nil
