@@ -212,14 +212,6 @@ local options={
     section= "ta_options",
   },
   {
-    key    = "mo_noshare",
-    name   = "No Sharing To Enemies",
-    desc   = "Prevents players from giving units or resources to enemies\nAutoHost Usage :- mo_noshare",
-    type   = "bool",
-    def    = true,
-    section= "ta_options",
-  },
-  {
     key    = "mo_nowrecks",
     name   = "No Unit Wrecks",
     desc   = "Removes all unit wrecks from the game\nAutoHost Usage :- mo_nowrecks",
