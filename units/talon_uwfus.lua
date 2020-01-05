@@ -95,7 +95,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "watfusn1",
+				[1] = "talon_gen",
 			},
 		},
 	},
