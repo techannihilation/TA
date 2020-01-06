@@ -52,6 +52,11 @@ local exceptionList = { --add exempt units here
 	"tllmine4",
 	"tllmine5",
 	"tllmine6",
+	"talon_mine1",
+	"talon_mine2",
+	"talon_mine3",
+	"talon_mine4",
+	"talon_fmine",
 	--Crawling Bomb
 	"corsktl",
 	"armvader",

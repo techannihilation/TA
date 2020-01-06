@@ -391,6 +391,14 @@ local Nanos = {
 	tllfnanotc1 = true,
 	tllfnanotc2 = true,
 	tllfnanotc3 = true,
+	talon_nanotc = true,
+	talon_nanotc1 = true,
+	talon_nanotc2 = true,
+	talon_nanotc3 = true,
+	talon_fnanotc = true,
+	talon_fnanotc1 = true,
+	talon_fnanotc2 = true,
+	talon_fnanotc3 = true,
 }
 
 local cons = {
@@ -473,10 +481,10 @@ local pplants = {
 	["armawin"] = true,
 	["coratidal"] = true,
 	["armatidal"] = true,
-	["armlightfus"] = true,
-	["armuwlightfus"] = true,
-	["corlightfus"] = true,
-	["coruwlightfus"] = true,
+	--["armlightfus"] = true,
+	--["armuwlightfus"] = true,
+	--["corlightfus"] = true,
+	--["coruwlightfus"] = true,
 	["armgen"] = true,
 	["corgen"] = true,
 	["armsolar"] = true,
@@ -496,6 +504,20 @@ local pplants = {
 	["tllestor"] = true,
 	["tllemstor"] = true,
 	["tlluwestorage"] = true,
+	["talon_gen"] = true,
+	["talon_solar"] = true,
+	["talon_wind"] = true,
+	["talon_wind1"] = true,
+	["talon_ckfus"] = true,
+	["talon_afus"] = true,
+	["talon_sfus"] = true,
+	["talon_efus"] = true,
+	["talon_uwfus"] = true,
+	["talon_advsolar"] = true,
+	--[""] = true,
+	--[""] = true,
+
+
 }
 
 local unitheight = {
