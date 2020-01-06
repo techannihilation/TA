@@ -5,6 +5,7 @@ Balance :
  - Increase damage T4 Nuke (27K=>50K) 
  - Decrease cost champion (15%). Delete Add Anti-Experimental unit damage.
  - Metron : Add Anti-Experimental unit damage.
+ - Balance Missile Truck : 15dmg/S => 20dmg/s. Adv Missile Truck : 20dmg/s => 30dmg/s
 
 Improvments:
  - Add new weapon for Orco and Champion.
@@ -12,6 +13,8 @@ Improvments:
 
 Fix : 
  - Ennemy Share Widget removed
+ - Unit_interceptor widget
+ - Many errors on infolog (thanks to abma)
 
 3.25 -> 3.26
 2020-01-03
