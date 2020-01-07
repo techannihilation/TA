@@ -5,7 +5,7 @@
 
 piece  base, flare, turret, sleeve, barrel;
 
-static-var  restore_delay;
+static-var  restore_delay, bMoving;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -58,10 +58,21 @@ HitByWeapon(anglex, anglez)
 	turn base to x-axis <0.000000> speed <30.005495>;
 }
 
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
 Create()
 {
 	hide flare;
 	restore_delay = 3000;
+	bMoving = FALSE;
 	start-script SmokeUnit();
 }
 
@@ -81,6 +92,10 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	while( bMoving )
+	{
+		sleep 150;
+	}
 	turn turret to y-axis heading speed <14.005495>;
 	turn sleeve to x-axis <0.000000> - pitch speed <19.005495>;
 	wait-for-turn turret around y-axis;

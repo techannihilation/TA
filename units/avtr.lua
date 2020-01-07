@@ -167,8 +167,6 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "ARM_BERTHACANNON2",
-				maindir = "0 0 1",
-				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 		},

@@ -51,7 +51,7 @@ RockUnit(anglex, anglez)
 
 StartMoving()
 {
-	bMoving = FALSE;
+	bMoving = TRUE;
 	turn pat3 to x-axis <90.000000> speed <150.000000>;
 	turn pat4 to x-axis <90.000000> speed <150.000000>;
 	turn pat1 to x-axis <-90.000000> speed <150.000000>;
@@ -64,7 +64,7 @@ StartMoving()
 
 StopMoving()
 {
-	bMoving = TRUE;
+	bMoving = FALSE;
 }
 
 Create()
@@ -96,7 +96,7 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( bMoving == 0 )
+	while( bMoving )
 	{
 		sleep 150;
 	}
