@@ -49,6 +49,7 @@ return {
 		objectname = "talon_mine1",
 		onoffable = false,
 		radaremitheight = 25,
+		script = "mines_lus.lua",
 		seismicsignature = 0,
 		selfdestructas = "MINE_MEDIUM",
 		selfdestructcountdown = 0,
