@@ -88,6 +88,7 @@ return {
 	"tlltsetse",
 	"talon_ca",
 	"talon_aca",
+	"talon_eca",
 	"talon_medic",
 	"talon_csa", 
 	"armbrawl",
@@ -110,6 +111,7 @@ return {
 	"talon_vulture",
 	"talon_pampa",
 	"talon_corsair",
+	"talon_ceddral",
 	-- scout planes
 	"armawac",
 	"armpeep",
