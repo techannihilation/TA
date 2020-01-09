@@ -119,6 +119,17 @@ local options={
     section = "ta_modes",
   },
   {
+    key = "mo_directboost",
+    name = "Unit speed boost in direct control mode",
+    desc = "Boost unit speed in direct control mode\nAutoHost Usage :- mo_directboost",
+    type = "number",
+    def = 0,
+    section = "ta_modes",
+    min    = 0,
+    max    = 10,
+    step   = 0.1,
+  },
+  {
     key    = "mo_noowner",
     name   = "FFA Mode",
     desc   = "Units with no player control are instantly removed/destroyed\nAutoHost Usage :- mo_noowner",
