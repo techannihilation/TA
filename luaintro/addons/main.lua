@@ -64,6 +64,11 @@ if Spring.GetModOptions() then
   		message = "Nano frames Decay disabled"
   		table.insert(infoMessage, message)
 	end
+	if Spring.GetModOptions().mo_directboost > "0" then
+		local boostVal = math.floor((Spring.GetModOptions().mo_directboost) * 100)
+  		message = "Unit speed boost in FPS mode is set to +"..boostVal.."% for units under 2000 metal"
+  		table.insert(infoMessage, message)
+	end
 end
 
 --Spring.Echo ("Message length == ",#infoMessage)
