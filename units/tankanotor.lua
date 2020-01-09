@@ -168,7 +168,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "SMALL TINY",
 				def = "TANKANOTOR_MISSILES",
 				maindir = "0 0 1",
 				maxangledif = 160,

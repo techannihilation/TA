@@ -157,7 +157,6 @@ return {
 				texture2 = "coresmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tolerance = 9000,
 				tracks = false,
 				trajectoryheight = 1.45,
 				turnrate = 0,

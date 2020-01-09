@@ -1,4 +1,17 @@
-﻿3.26 -> 3.27
+﻿3.27 -> 3.28
+2020-01-10
+Balance : 
+ - All Mobile LRPT need to not move to shoot
+
+Improvments:
+ - Add T4 Air for Arm/Core into T4 Lab
+ - Add T5 Talon Fusion.
+ - Add Heavy Gunship Talon Air T2
+
+Fix : 
+ - Talon Mine fixed (Thanks to Ceddral)
+
+3.26 -> 3.27
 2020-01-05
 Balance : 
  - Increase Krogoth/Armorco cost by 5%

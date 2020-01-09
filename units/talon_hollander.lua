@@ -1,6 +1,6 @@
 return {
 	talon_hollander = {
-		acceleration = 0.08,
+		acceleration = 0.02,
 		brakerate = 0.56,
 		buildcostenergy = 98200,
 		buildcostmetal = 4850,
@@ -46,8 +46,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.056,
-		turnrate = 979,
+		turninplacespeedlimit = 1.0,
+		turnrate = 450,
 		unitname = "talon_hollander",
 		upright = true,
 		customparams = {

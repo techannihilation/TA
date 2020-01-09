@@ -64,7 +64,7 @@ return {
 			[7] = "talon_dart",
 			[8] = "talon_rukh",
 			[9] = "talon_vigilante",
-
+			[10] = "talon_ceddral",
 		},
 		customparams = {
 			buildpic = "talon_aap.dds",
