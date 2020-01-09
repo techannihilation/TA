@@ -66,16 +66,18 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	function setSpeed(unitID, speedFactor)
 		local MoveTypeData = GetUnitMoveTypeData(unitID)
-		if MoveTypeData.name ~= "ground" and MoveTypeData.name ~= "gunship" then return false end
-
-		if MoveTypeData.name == "ground" then
-			SetGroundMoveTypeData(unitID, {
-				maxSpeed = unitList[unitID].orgspeed * speedFactor
-			})
-		elseif MoveTypeData.name == "gunship" then
-			SetGunshipMoveTypeData(unitID, {
-				maxSpeed = unitList[unitID].orgspeed * speedFactor
-			})
+		if MoveTypeData and MoveTypeData.name then
+			if MoveTypeData.name ~= "ground" and MoveTypeData.name ~= "gunship" then return false end
+	
+			if MoveTypeData.name == "ground" then
+				SetGroundMoveTypeData(unitID, {
+					maxSpeed = unitList[unitID].orgspeed * speedFactor
+				})
+			elseif MoveTypeData.name == "gunship" then
+				SetGunshipMoveTypeData(unitID, {
+					maxSpeed = unitList[unitID].orgspeed * speedFactor
+				})
+			end
 		end
 	end
 end
