@@ -144,7 +144,7 @@ return {
 				badtargetcategory = "SMALL TINY",
 				def = "CEDDRAL_MISSILES",
 				maindir = "0 0 1",
-				maxangledif = 110,
+				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},
