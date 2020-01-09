@@ -20,7 +20,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local boostedUnits = {}
 
 	function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
-		Spring.Echo(UnitDefs[unitDefID].metalCost)
+		--Spring.Echo(UnitDefs[unitDefID].metalCost)
 		if UnitDefs[unitDefID].metalCost <= maximumMetalCost then
 			local tr = UnitDefs[unitDefID].turnRate
 			local ms = UnitDefs[unitDefID].speed
