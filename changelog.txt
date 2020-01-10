@@ -2,11 +2,12 @@
 2020-01-10
 Balance : 
  - All Mobile LRPT need to not move to shoot
+ - T3 Talon and TLL Targ become T2 targ. Reduced cost. Delete the long-range Radar.
 
 Improvments:
  - Add T4 Air for Arm/Core into T4 Lab
  - Add T5 Talon Fusion.
- - Add Heavy Gunship Talon Air T2
+ - Add Heavy Gunship Talon & TLL Air T2
 
 Fix : 
  - Talon Mine fixed (Thanks to Ceddral)

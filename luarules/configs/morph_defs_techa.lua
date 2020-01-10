@@ -1073,10 +1073,15 @@ local morphDefs = {
 	corkrog = {
 		into = 'corkrog1',
 		time = 120,
-		xp = 0.25,
+		xp = 0.15,
 	},
 	armbanth = {
 		into = 'armbanth1',
+		time = 120,
+		xp = 0.20,
+	},
+	tllblind = {
+		into = 'tllcolossus',
 		time = 120,
 		xp = 0.25,
 	},
@@ -1088,7 +1093,7 @@ local morphDefs = {
 	arm_furie = {
 		into = 'arm_furie1',
 		time = 120,
-		xp = 0.25,
+		xp = 0.15,
 	},
 	armgeo_mini = {
      		into = 'armgeo',

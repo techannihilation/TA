@@ -55,6 +55,7 @@ return {
 			[6] = "tlladvfight",
 			[7] = "tllrsplane",
 			[8] = "tllrobber",
+			[9] = "tllpterodactyl",
 		},
 		customparams = {
 			buildpic = "tllaap.dds",

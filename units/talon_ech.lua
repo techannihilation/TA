@@ -66,7 +66,7 @@ return {
 			[6] = "talon_evp",
 			[7] = "talon_podlab",
 			[8] = "talon_nanotc2",
-			[9] = "talon_targ",
+			--[9] = "talon_targ",
 			[10] = "talon_conspiracy2",
 			[11] = "talon_blt1",
 			[12] = "talon_popcorn1",

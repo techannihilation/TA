@@ -104,6 +104,7 @@ return {
 	"corcut",
 	"ferret",
 	"tllcop1",
+	"tllpterodactyl",
 	"tlltorpcop",
 	"talon_drone",
 	"talon_trident", 
