@@ -3,10 +3,32 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, flare1, flare2;
+piece  flare1, flare2, flarea, flareb, base, body, wing1, wing2,
+       turreta, turretb, gun1, gun2, reactor1, reactor2;
 
-// Signal definitions
-#define SIG_AIM			2
+static-var  Static_Var_3, Static_Var_4;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move wing1 to x-axis [0.] speed [2.5];
+		move wing2 to x-axis [0.] speed [2.5];
+		sleep 1000;
+	}
+	sleep 23;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move wing1 to x-axis [3.] speed [2.5];
+		move wing2 to x-axis [-3.] speed [2.5];
+		sleep 1000;
+	}
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -35,31 +57,98 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+
 Create()
 {
+	move wing1 to x-axis [3.] now;
+	move wing2 to x-axis [-3.] now;
+	call-script InitState();
 	start-script SmokeUnit();
 }
 
 Activate()
 {
-
+	start-script RequestState(0);
 }
 
 Deactivate()
 {
+	start-script RequestState(1);
+}
 
+RestoreAfterDelay()
+{
+	sleep 1000;
+	spin gun1 around z-axis speed <0.> accelerate <-10.>;
+	spin gun2 around z-axis speed <0.> accelerate <-10.>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 2000;
+	turn turreta to y-axis <0.> speed <50.>;
+	turn turreta to x-axis <0.> speed <50.>;
+}
+
+RestoreAfterDelay3()
+{
+	sleep 2000;
+	turn turretb to y-axis <0.> speed <50.>;
+	turn turretb to x-axis <0.> speed <50.>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = body;
 }
 
 AimPrimary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
+	signal 2;
+	set-signal-mask 2;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
-AimSecondary()
+FirePrimary()
 {
-	return (1);
+	emit-sfx 1025 from flare1;
+	move gun1 to z-axis [-1.] now;
+	move gun1 to z-axis [0.] speed [1.];
+	spin gun1 around z-axis speed <220.>;
+	sleep 300;
 }
 
 QueryPrimary(piecenum)
@@ -67,9 +156,85 @@ QueryPrimary(piecenum)
 	piecenum = flare1;
 }
 
+AimFromSecondary(piecenum)
+{
+	piecenum = body;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	emit-sfx 1025 from flare2;
+	move gun2 to z-axis [-1.] now;
+	move gun2 to z-axis [0.] speed [1.];
+	spin gun2 around z-axis speed <-220.>;
+	sleep 300;
+}
+
 QuerySecondary(piecenum)
 {
 	piecenum = flare2;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turreta;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turretb;
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal 8;
+	set-signal-mask 8;
+	turn turreta to y-axis heading speed <100.>;
+	turn turreta to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn turreta around y-axis;
+	wait-for-turn turreta around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal 16;
+	set-signal-mask 16;
+	turn turretb to y-axis heading speed <100.>;
+	turn turretb to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn turretb around y-axis;
+	wait-for-turn turretb around x-axis;
+	start-script RestoreAfterDelay3();
+	return (1);
+}
+
+FireWeapon3()
+{
+	sleep 50;
+}
+
+FireWeapon4()
+{
+	sleep 50;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = flarea;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = flareb;
 }
 
 SweetSpot(piecenum)
@@ -79,25 +244,15 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode body type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
-		explode body type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode body type NOHEATCLOUD;
-		return (corpsetype);
-	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD;
+	explode body type 128;
+	explode turreta type 128;
+	explode turretb type 128;
+	explode reactor1 type 128;
+	explode reactor2 type 128;
+	explode gun1 type 128;
+	explode gun2 type 128;
+	explode wing1 type 128;
+	explode wing2 type 128;
 	return (corpsetype);
 }
