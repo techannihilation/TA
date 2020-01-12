@@ -57,7 +57,7 @@ return {
 		buildoptions = {
 			--[1] = "tllprototype",
 			[2] = "tllshipyardlvl3",
-			[3] = "tllnanotc3",
+			[3] = "tllnanotower",
 			[4] = "tllobliterator1",
 			[5] = "tlldmc",
 			[6] = "tlldb",
