@@ -1,6 +1,6 @@
 return {
 	armsam = {
-		acceleration = 0.0396,
+		acceleration = 0.04,
 		brakerate = 0.0495,
 		buildcostenergy = 2162,
 		buildcostmetal = 149,
@@ -28,10 +28,10 @@ return {
 		leavetracks = true,
 		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 177.5,
-		maxdamage = 1065,
+		mass = 149,
+		maxdamage = 915,
 		maxslope = 16,
-		maxvelocity = 1.705,
+		maxvelocity = 1.6,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -175,6 +175,7 @@ return {
 					light_radius_mult = 0.7,
 				},
 				damage = {
+					commanders = 22.5,
 					default = 30,
 					subs = 5,
 				},

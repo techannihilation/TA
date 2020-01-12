@@ -1,6 +1,6 @@
 return {
 	talon_quartz = {
-		acceleration = 0.0396,
+		acceleration = 0.04,
 		brakerate = 0.0495,
 		buildcostenergy = 2080,
 		buildcostmetal = 134,
@@ -28,10 +28,10 @@ return {
 		leavetracks = true,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 177.5,
-		maxdamage = 1065,
+		mass = 134,
+		maxdamage = 945,
 		maxslope = 16,
-		maxvelocity = 1.705,
+		maxvelocity = 1.6,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -162,6 +162,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 280,
 				damage = {
+					commanders = 15,
 					default = 20,
 					subs = 5,
 				},

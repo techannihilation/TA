@@ -1,6 +1,6 @@
 return {
 	tllannouncer1 = {
-		acceleration = 0.041,
+		acceleration = 0.04,
 		brakerate = 0.05,
 		buildcostenergy = 1691,
 		buildcostmetal = 211,
@@ -28,7 +28,7 @@ return {
 		losemitheight = 28,
 		maneuverleashlength = 640,
 		mass = 241,
-		maxdamage = 1250,
+		maxdamage = 1165,
 		maxslope = 16,
 		maxvelocity = 1.55,
 		maxwaterdepth = 12,
@@ -161,6 +161,7 @@ return {
 					light_radius_mult = 0.7,
 				},
 				damage = {
+					commanders = 19.5,
 					default = 27,
 					subs = 5,
 				},

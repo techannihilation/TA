@@ -28,7 +28,7 @@ return {
 		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 190,
-		maxdamage = 1100,
+		maxdamage = 965,
 		maxslope = 16,
 		maxvelocity = 1.55,
 		maxwaterdepth = 12,
@@ -161,6 +161,7 @@ return {
 					light_radius_mult = 0.7,
 				},
 				damage = {
+					commanders = 19.5,
 					default = 26,
 					subs = 5,
 				},

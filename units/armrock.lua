@@ -2,7 +2,7 @@ return {
 	armrock = {
 		acceleration = 0.12,
 		brakerate = 0.564,
-		buildcostenergy = 1000,
+		buildcostenergy = 1002,
 		buildcostmetal = 105,
 		builder = false,
 		buildpic = "armrock.dds",
@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		losemitheight = 26,
 		maneuverleashlength = 640,
-		mass = 108.33334,
+		mass = 105,
 		maxdamage = 650,
 		maxslope = 14,
 		maxvelocity = 1.75,

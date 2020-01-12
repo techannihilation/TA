@@ -1,4 +1,13 @@
-﻿3.27 -> 3.28
+﻿3.28 -> 3.29
+2020-01-13
+Balance : 
+ - Balance All Hover Scout (adjust cost/speed/...) for all factions
+ - Missile trucks T1 : decrease HP -150. Add special dammage against commanders (-25%)
+
+Improvments:
+ - Add T5 Nano for TLL CORE ARM.
+
+3.27 -> 3.28
 2020-01-10
 Balance : 
  - All Mobile LRPT need to not move to shoot

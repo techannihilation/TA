@@ -1,6 +1,6 @@
 return {
 	cormist = {
-		acceleration = 0.0352,
+		acceleration = 0.04,
 		brakerate = 0.0495,
 		buildcostenergy = 2322,
 		buildcostmetal = 156,
@@ -28,10 +28,10 @@ return {
 		leavetracks = true,
 		losemitheight = 27,
 		maneuverleashlength = 640,
-		mass = 186.66667,
-		maxdamage = 1120,
+		mass = 156,
+		maxdamage = 970,
 		maxslope = 16,
-		maxvelocity = 1.584,
+		maxvelocity = 1.55,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
@@ -167,6 +167,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 550,
 				damage = {
+					commanders = 37.5,
 					default = 50,
 					subs = 5,
 				},
