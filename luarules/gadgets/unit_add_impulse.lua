@@ -66,7 +66,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if number > 0 then
 					div = math.pow(GetUnitMass(unitID), 0.67)
 					local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
-					AddUnitImpulse(unitID, (dirX * impulseBoost) / div, impulseBoost / div, (dirZ * impulseBoost) / div)
+					AddUnitImpulse(unitID, (dirX * impulseBoost) / div, (impulseBoost / div) / 2, (dirZ * impulseBoost) / div)
 				end
 			end
 		end
