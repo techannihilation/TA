@@ -15,6 +15,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local multiplier = tonumber(Spring.GetModOptions().mo_impmulti) or 0
 
 	local Weapons = {
+		---ARM
 		[UnitDefNames.armcybr.weapons[1].weaponDef] = {
 			impulseBoost = 1000,
 			weaponNumber = 1
@@ -27,6 +28,15 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 100,
 			weaponNumber = 1
 		},
+		[UnitDefNames.armmcv.weapons[1].weaponDef] = {
+			impulseBoost = 30,
+			weaponNumber = 1
+		},
+		[UnitDefNames.shiva.weapons[1].weaponDef] = {
+			impulseBoost = 90,
+			weaponNumber = 1
+		},
+		---CORE
 		[UnitDefNames.corgol.weapons[1].weaponDef] = {
 			impulseBoost = 90,
 			weaponNumber = 1
@@ -35,16 +45,30 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 90,
 			weaponNumber = 1
 		},
-		[UnitDefNames.armsiege.weapons[1].weaponDef] = {
-			impulseBoost = 212,
-			weaponNumber = 1
-		},
 		[UnitDefNames.corbt.weapons[1].weaponDef] = {
 			impulseBoost = 90,
 			weaponNumber = 1
 		},
-		[UnitDefNames.armmcv.weapons[1].weaponDef] = {
-			impulseBoost = 30,
+		[UnitDefNames.armsiege.weapons[1].weaponDef] = {
+			impulseBoost = 212,
+			weaponNumber = 1
+		},
+		---TLL
+		[UnitDefNames.tllblind.weapons[1].weaponDef] = {
+			impulseBoost = 90,
+			weaponNumber = 1
+		},
+		[UnitDefNames.tllcolossus.weapons[2].weaponDef] = {
+			impulseBoost = 200,
+			weaponNumber = 2
+		},
+		[UnitDefNames.tllthumper.weapons[1].weaponDef] = {
+			impulseBoost = 150,
+			weaponNumber = 1
+		},
+		---TALON
+		[UnitDefNames.talon_fdog.weapons[1].weaponDef] = {
+			impulseBoost = 90,
 			weaponNumber = 1
 		}
 	}
@@ -66,7 +90,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				if number > 0 then
 					div = math.pow(GetUnitMass(unitID), 0.67)
 					local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
-					AddUnitImpulse(unitID, (dirX * impulseBoost) / div, (impulseBoost / div) / 2, (dirZ * impulseBoost) / div)
+					AddUnitImpulse(unitID, (dirX * impulseBoost) / div, (impulseBoost / div), (dirZ * impulseBoost) / div)
 				end
 			end
 		end
