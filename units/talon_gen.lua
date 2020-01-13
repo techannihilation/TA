@@ -39,7 +39,7 @@ return {
 		sightdistance = 250,
 		unitname = "talon_gen",
 		usebuildinggrounddecal = true,
-		yardmap = "oooo oooo oooo oooo",
+		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "talon_gen.dds",
 			faction = "TALON",

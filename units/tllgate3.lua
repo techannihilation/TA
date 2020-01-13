@@ -49,7 +49,7 @@ return {
 		turnrate = 0,
 		unitname = "tllgate3",
 		usebuildinggrounddecal = true,
-		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
+		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo ",
 		customparams = {
 			buildpic = "tllgate3.dds",
 			faction = "CORE",

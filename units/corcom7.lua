@@ -99,7 +99,7 @@ return {
 			[16] = "corvipe",
 			[17] = "cordoom",
 			[18] = "corflak",
-			[19] = "cbuilderlvl2",
+			--[19] = "cbuilderlvl2",
 			[20] = "corupmex",
 			[21] = "coruwfus",
 			[22] = "coruwmmm",
