@@ -119,6 +119,17 @@ local options={
     section = "ta_modes",
   },
   {
+    key = "mo_impmulti",
+    name = "Impulse multiplier",
+    desc = "Impulse multiplier for certain units\nAutoHost Usage :- mo_impmulti",
+    type = "number",
+    def = 1,
+    section = "ta_modes",
+    min    = 0,
+    max    = 4,
+    step   = 0.1,
+  },
+  {
     key    = "mo_noowner",
     name   = "FFA Mode",
     desc   = "Units with no player control are instantly removed/destroyed\nAutoHost Usage :- mo_noowner",
