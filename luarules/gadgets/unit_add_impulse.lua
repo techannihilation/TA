@@ -1,62 +1,76 @@
 function gadget:GetInfo()
 	return {
-		name = "Add special impulse boost",
+		name = "Add special impulse boost / AntiSpam",
 		desc = "",
 		author = "Silver",
-		version = "1.0",
-		date = "2018",
+		version = "1.1",
+		date = "2020",
 		license = "GNU GPL, v2 or later",
 		layer = 0,
 		enabled = true
 	}
 end
 
---------------------------------------------------------------------------------
--- SPEEDUPS
---------------------------------------------------------------------------------
-local GetUnitPosition = Spring.GetUnitPosition
-local GetUnitWeaponTarget = Spring.GetUnitWeaponTarget
-local AddUnitImpulse = Spring.AddUnitImpulse
-local GetUnitMass = Spring.GetUnitMass
-
---------------------------------------------------------------------------------
--- CONSTANS
---------------------------------------------------------------------------------
-local Weapons = {
-	[UnitDefNames.armcybr.weapons[1].weaponDef] = {
-		impulseBoost = 1000,
-		weaponNumber = 1
-	}
-}
-
---------------------------------------------------------------------------------
--- START OF CODE
---------------------------------------------------------------------------------
 if (gadgetHandler:IsSyncedCode()) then
+	local multiplier = tonumber(Spring.GetModOptions().mo_impmulti) or 0
+
+	local Weapons = {
+		[UnitDefNames.armcybr.weapons[1].weaponDef] = {
+			impulseBoost = 1000,
+			weaponNumber = 1
+		},
+		[UnitDefNames.armfboy.weapons[1].weaponDef] = {
+			impulseBoost = 100,
+			weaponNumber = 1
+		},
+		[UnitDefNames.armfboy1.weapons[1].weaponDef] = {
+			impulseBoost = 100,
+			weaponNumber = 1
+		},
+		[UnitDefNames.corgol.weapons[1].weaponDef] = {
+			impulseBoost = 90,
+			weaponNumber = 1
+		},
+		[UnitDefNames.corgol1.weapons[1].weaponDef] = {
+			impulseBoost = 90,
+			weaponNumber = 1
+		},
+		[UnitDefNames.armsiege.weapons[1].weaponDef] = {
+			impulseBoost = 212,
+			weaponNumber = 1
+		},
+		[UnitDefNames.corbt.weapons[1].weaponDef] = {
+			impulseBoost = 90,
+			weaponNumber = 1
+		},
+		[UnitDefNames.armmcv.weapons[1].weaponDef] = {
+			impulseBoost = 30,
+			weaponNumber = 1
+		}
+	}
+
+	local GetUnitWeaponTarget = Spring.GetUnitWeaponTarget
+	local AddUnitImpulse = Spring.AddUnitImpulse
+	local GetUnitMass = Spring.GetUnitMass
+	local GetUnitWeaponVectors = Spring.GetUnitWeaponVectors
+
 	--------------------------------------------------------------------------------
 	-- BEGIN SYNCED
 	--------------------------------------------------------------------------------
 	function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
-		if Weapons[weaponDefID] and attackerID then
-			local impulseBoost = Weapons[weaponDefID].impulseBoost
-			local number, _, Target = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
+		if multiplier > 0 then
+			if Weapons[weaponDefID] and attackerID and (unitTeam ~= attackerTeam) then
+				local impulseBoost = Weapons[weaponDefID].impulseBoost * multiplier
+				local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 
-			if number == 1 then
-				local div = math.pow(GetUnitMass(unitID), 2 / 3) -- 2/3 root of mass to alter higher mass unit a bit more
-				AddUnitImpulse(unitID, (math.random() * impulseBoost) / div, impulseBoost / div, (math.random() * impulseBoost) / div)
-			end
-
-			if number == 2 then
-				local ux, _, uz = GetUnitPosition(unitID)
-				local vector = {Target[1] - ux, Target[3] - uz}
-				local vecLength = math.sqrt(vector[1] * vector[1] + vector[2] * vector[2])
-				local NormVector = {vector[1] / vecLength, vector[2] / vecLength}
-				local div = math.pow(GetUnitMass(unitID), 2 / 3) -- 2/3 root of mass to alter higher mass unit a bit more
-				AddUnitImpulse(unitID, (-NormVector[1] * impulseBoost) / div, impulseBoost / div, (-NormVector[2] * impulseBoost) / div)
+				if number > 0 then
+					div = math.pow(GetUnitMass(unitID), 0.67)
+					local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
+					AddUnitImpulse(unitID, (dirX * impulseBoost) / div, impulseBoost / div, (dirZ * impulseBoost) / div)
+				end
 			end
 		end
 	end
-else
 	--------------------------------------------------------------------------------
 	-- END SYNCED
 	-- BEGIN UNSYNCED
