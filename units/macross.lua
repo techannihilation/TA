@@ -2,8 +2,8 @@ return {
 	macross = {
 		acceleration = 0.3,
 		brakerate = 0.96,
-		buildcostenergy = 212410,
-		buildcostmetal = 10919,
+		buildcostenergy = 187410,
+		buildcostmetal = 10719,
 		builder = false,
 		buildpic = "macross.dds",
 		buildtime = 210000,
@@ -132,7 +132,6 @@ return {
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.6,
 				soundstart = "macrossmissile",
-				tolerance = 1000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 500,
