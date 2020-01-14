@@ -77,21 +77,20 @@ if (gadgetHandler:IsSyncedCode()) then
 	local AddUnitImpulse = Spring.AddUnitImpulse
 	local GetUnitMass = Spring.GetUnitMass
 	local GetUnitWeaponVectors = Spring.GetUnitWeaponVectors
+	local pow = math.pow
 
 	--------------------------------------------------------------------------------
 	-- BEGIN SYNCED
 	--------------------------------------------------------------------------------
 	function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
-		if multiplier > 0 then
-			if Weapons[weaponDefID] and attackerID and (unitTeam ~= attackerTeam) then
-				local impulseBoost = Weapons[weaponDefID].impulseBoost * multiplier
-				local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
+		if multiplier > 0 and attackerID and (unitTeam ~= attackerTeam) and Weapons[weaponDefID] then -- Short-circuit evaluation; that is, the other operands are evaluated only if necessary.
+			local impulseBoost = Weapons[weaponDefID].impulseBoost * multiplier
+			local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 
-				if number > 0 then
-					div = math.pow(GetUnitMass(unitID), 0.67)
-					local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
-					AddUnitImpulse(unitID, (dirX * impulseBoost) / div, (impulseBoost / div), (dirZ * impulseBoost) / div)
-				end
+			if number > 0 then
+				impulseBoost = impulseBoost / pow(GetUnitMass(unitID), 0.67)
+				local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
+				AddUnitImpulse(unitID, dirX * impulseBoost, impulseBoost, dirZ * impulseBoost)
 			end
 		end
 	end
