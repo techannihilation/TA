@@ -77,7 +77,6 @@ if (gadgetHandler:IsSyncedCode()) then
 	local AddUnitImpulse = Spring.AddUnitImpulse
 	local GetUnitMass = Spring.GetUnitMass
 	local GetUnitWeaponVectors = Spring.GetUnitWeaponVectors
-	local pow = math.pow
 
 	--------------------------------------------------------------------------------
 	-- BEGIN SYNCED
@@ -87,7 +86,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 
 			if number > 0 then
-				local impulseBoost = Weapons[weaponDefID].impulseBoost / pow(GetUnitMass(unitID), 0.67)
+				local impulseBoost = Weapons[weaponDefID].impulseBoost / (GetUnitMass(unitID) ^ 0.67)
 				local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
 				AddUnitImpulse(unitID, dirX * impulseBoost, impulseBoost, dirZ * impulseBoost)
 			end
