@@ -17,58 +17,58 @@ if (gadgetHandler:IsSyncedCode()) then
 	local Weapons = {
 		---ARM
 		[UnitDefNames.armcybr.weapons[1].weaponDef] = {
-			impulseBoost = 1000,
+			impulseBoost = 1000 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.armfboy.weapons[1].weaponDef] = {
-			impulseBoost = 100,
+			impulseBoost = 100 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.armfboy1.weapons[1].weaponDef] = {
-			impulseBoost = 100,
+			impulseBoost = 100 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.armmcv.weapons[1].weaponDef] = {
-			impulseBoost = 30,
+			impulseBoost = 30 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.shiva.weapons[1].weaponDef] = {
-			impulseBoost = 90,
+			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
 		---CORE
 		[UnitDefNames.corgol.weapons[1].weaponDef] = {
-			impulseBoost = 90,
+			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.corgol1.weapons[1].weaponDef] = {
-			impulseBoost = 90,
+			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.corbt.weapons[1].weaponDef] = {
-			impulseBoost = 90,
+			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.armsiege.weapons[1].weaponDef] = {
-			impulseBoost = 212,
+			impulseBoost = 212 * multiplier,
 			weaponNumber = 1
 		},
 		---TLL
 		[UnitDefNames.tllblind.weapons[1].weaponDef] = {
-			impulseBoost = 90,
+			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
 		[UnitDefNames.tllcolossus.weapons[2].weaponDef] = {
-			impulseBoost = 200,
+			impulseBoost = 200 * multiplier,
 			weaponNumber = 2
 		},
 		[UnitDefNames.tllthumper.weapons[1].weaponDef] = {
-			impulseBoost = 150,
+			impulseBoost = 150 * multiplier,
 			weaponNumber = 1
 		},
 		---TALON
 		[UnitDefNames.talon_fdog.weapons[1].weaponDef] = {
-			impulseBoost = 90,
+			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		}
 	}
@@ -87,7 +87,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 
 			if number > 0 then
-				local impulseBoost = Weapons[weaponDefID].impulseBoost / pow(GetUnitMass(unitID), 0.67) * multiplier
+				local impulseBoost = Weapons[weaponDefID].impulseBoost / pow(GetUnitMass(unitID), 0.67)
 				local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
 				AddUnitImpulse(unitID, dirX * impulseBoost, impulseBoost, dirZ * impulseBoost)
 			end
