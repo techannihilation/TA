@@ -84,11 +84,10 @@ if (gadgetHandler:IsSyncedCode()) then
 	--------------------------------------------------------------------------------
 	function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
 		if multiplier > 0 and attackerID and (unitTeam ~= attackerTeam) and Weapons[weaponDefID] then -- Short-circuit evaluation; that is, the other operands are evaluated only if necessary.
-			local impulseBoost = Weapons[weaponDefID].impulseBoost * multiplier
 			local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 
 			if number > 0 then
-				impulseBoost = impulseBoost / pow(GetUnitMass(unitID), 0.67)
+				local impulseBoost = Weapons[weaponDefID].impulseBoost / pow(GetUnitMass(unitID), 0.67) * multiplier
 				local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
 				AddUnitImpulse(unitID, dirX * impulseBoost, impulseBoost, dirZ * impulseBoost)
 			end
