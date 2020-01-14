@@ -5,7 +5,8 @@
 
 piece  base, body, turret, sleeves, Rbarrel, Lbarrel, bsupport, msupport,
 		Lsupport, Rsupport, flare, top, bground, mground, fground, 
-		brground, blground, mrground, mlground, frground, flground;
+		brground, blground, mrground, mlground, frground, flground, 
+		Rback, Rfront, Rtrap, Ltrap, Lback, Lfront, rfoot1, lfoot1;
 
 static-var  statechg_DesiredState, statechg_StateChanging, bAiming, bMoving, WeaponToggle;
 
@@ -15,6 +16,12 @@ static-var  statechg_DesiredState, statechg_StateChanging, bAiming, bMoving, Wea
 
 deactivatescr()
 {
+	turn turret to y-axis <0> speed <45.>;
+	turn sleeves to x-axis <0.> speed <45.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	sleep 50;
+	
 	if( TRUE )
 	{
 		move Rsupport to y-axis [0] speed [0.5];
@@ -23,22 +30,29 @@ deactivatescr()
 		turn Rsupport to z-axis <0.000000> speed <10.>;
 		move Rbarrel to z-axis [0] speed [1];
 		move Lbarrel to z-axis [0] speed [1];
+		move Rfront to z-axis [0] speed [0.5];
+		move Lfront to z-axis [0] speed [0.5];
+		move Lback to z-axis [0] speed [0.5];
+		move Rback to z-axis [0] speed [0.5];
+		turn Ltrap to z-axis <0.000000> speed <15.>;
+		turn Rtrap to z-axis <0.000000> speed <15.>;
+		move rfoot1 to x-axis [0.0] speed [2.5];
+		move lfoot1 to x-axis [0.0] speed [2.5];
+		wait-for-turn Lsupport around y-axis;
+		wait-for-turn Ltrap around z-axis;
+		wait-for-move Rbarrel along z-axis;
+		wait-for-move Rfront along z-axis;		
 		sleep 50;
 	}
 	if( TRUE )
 	{
-		move bground to z-axis [0] speed [1];
-		move fground to z-axis [0] speed [1];
-		
-		
-	//	move brground to z-axis [0.5] speed [0.5];
-	//	move blground to z-axis [0.5] speed [0.5];
-	//	move frsupport to z-axis [0.5] speed [0.5];
-	//	move flsupport to z-axis [0.5] speed [0.5];
 		
 		move mrground to x-axis [0] speed [1];
 		move mlground to x-axis [0] speed [1];
-		
+		wait-for-move mrground along x-axis;
+			
+		move body to y-axis [0] speed [2.5];
+			
 		turn brground to x-axis <0.000000> speed <10.>;
 		turn blground to x-axis <0.000000> speed <10.>;
 		turn brground to y-axis <0.000000> speed <10.>;
@@ -46,9 +60,12 @@ deactivatescr()
 		turn frground to x-axis <0.000000> speed <10.>;
 		turn flground to x-axis <0.000000> speed <10.>;
 		turn frground to y-axis <0.000000> speed <10.>;
-		turn flground to y-axis <0.000000> speed <10.>;
+		turn flground to y-axis <0.000000> speed <10.>;		
 		
-		move body to y-axis [0] speed [0.5];
+		wait-for-move body along y-axis;
+		
+		move bground to z-axis [0] speed [1.5];
+		move fground to z-axis [0] speed [1.5];
 	}
 	sleep 50;
 }
@@ -57,41 +74,71 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move Rsupport to y-axis [0.5] speed [0.5];
-		move Lsupport to y-axis [0.5] speed [0.5];
-		turn Lsupport to z-axis <15.000000> speed <10.>;
-		turn Rsupport to z-axis <-15.000000> speed <10.>;
-		move Rbarrel to z-axis [3] speed <1.>;
-		move Lbarrel to z-axis [3] speed <1.>;
-	}
-	sleep 50;
-	if( TRUE )
-	{
-		move bground to z-axis [-7] speed [1];
-		move fground to z-axis [6.5] speed [1];
+		move bground to z-axis [-10.5] speed [1.5];
+		move fground to z-axis [9.75] speed [1.5];
 		wait-for-move bground along z-axis;
 		
-		move body to y-axis [4] speed [2.5];
+		move body to y-axis [8.25] speed [3.5];
 		
-		turn brground to x-axis <-35.000000> speed <20.>;
-		turn blground to x-axis <-35.000000> speed <20.>;
-		turn brground to y-axis <-20.000000> speed <20.>;
-		turn blground to y-axis <20.000000> speed <20.>;
+		turn brground to x-axis <-25.000000> speed <15.>;
+		turn blground to x-axis <-25.000000> speed <15.>;
+		turn brground to y-axis <-20.000000> speed <25.>;
+		turn blground to y-axis <20.000000> speed <25.>;
 		
-		turn frground to x-axis <30.000000> speed <20.>;
-		turn flground to x-axis <30.000000> speed <20.>;
-		turn frground to y-axis <20.000000> speed <20.>;
-		turn flground to y-axis <-20.000000> speed <20.>;
+		turn frground to x-axis <20.000000> speed <15.>;
+		turn flground to x-axis <20.000000> speed <15.>;
+		turn frground to y-axis <20.000000> speed <25.>;
+		turn flground to y-axis <-20.000000> speed <25.>;
 		
-	//	move frsupport to z-axis [0.5] speed [0.5];
-	//	move flsupport to z-axis [0.5] speed [0.5];
-		
-		//move body to y-axis [2] speed [0.5];
 		wait-for-move body along y-axis;
 		
-		move mrground to x-axis [5] speed [2];
-		move mlground to x-axis [-5] speed [2];
+		move mrground to x-axis [7.5] speed [2];
+		move mlground to x-axis [-7.5] speed [2];
+		wait-for-move mrground along x-axis;
+	}
+	sleep 50;
+	
+	if( TRUE )
+	{	
+		turn Rtrap to z-axis <38.000000> speed <15.>;
+		turn Ltrap to z-axis <-38.000000> speed <15.>;
+		move Rfront to z-axis [-4.725] speed [0.5];
+		move Rback to z-axis [4.8] speed [0.5];
+		move Lfront to z-axis [4.725] speed [0.5];
+		move Lback to z-axis [-4.8] speed [0.5];
+		wait-for-move Rfront along z-axis;
+		wait-for-turn Ltrap around z-axis;
 		
+		move rfoot1 to x-axis [-6.75] speed [2.5];
+		move lfoot1 to x-axis [6.75] speed [2.5];
+
+	//	wait-for-move rfoot1 along x-axis;
+	/*	
+		move rfoot1 to x-axis [-7.5] speed [2];
+		move rfoot2 to x-axis [-2.5] speed [2];
+		wait-for-move rfoot1 along x-axis;
+		
+		turn rfoot2 to z-axis <45.000000> speed <60>;
+		sleep 50;
+		turn rfoot3 to z-axis <165.000000> speed <45>;
+		turn rfoot4 to z-axis <60.000000> speed <45>;
+		sleep 250;
+		turn rfoot5 to z-axis <90.000000> speed <75>;
+		*/
+	}
+	sleep 50;
+	
+	if( TRUE )
+	{		
+		move Rsupport to y-axis [0.75] speed [0.5];
+		move Lsupport to y-axis [0.75] speed [0.5];
+		turn Lsupport to z-axis <20.000000> speed <10.>;
+		turn Rsupport to z-axis <-20.000000> speed <10.>;
+		wait-for-move Rsupport along y-axis;
+		wait-for-turn Lsupport around z-axis;
+		
+		move Rbarrel to z-axis [4.5] speed [1.];
+		move Lbarrel to z-axis [4.5] speed [1.];
 	}
 	sleep 50;
 }
@@ -109,13 +156,6 @@ Go()
 Stop()
 {
 	bAiming = 0;
-	if( TRUE )
-	{
-		turn turret to y-axis <0.000000> speed <20.>;
-		turn sleeves to x-axis <0.000000> speed <20.>;
-		wait-for-turn turret around y-axis;
-		sleep 50;
-	}
 	sleep 50;	
 	call-script deactivatescr();	
 }
@@ -251,8 +291,8 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 + 0 from flare;
-	move Rbarrel to z-axis [-3.] speed [150.];
-	move Lbarrel to z-axis [-3.] speed [150.];
+	move Rbarrel to z-axis [-4.5] speed [150.];
+	move Lbarrel to z-axis [-4.5] speed [150.];
 	sleep 50;
 	move Rbarrel to z-axis [0.] speed [2.];
 	move Lbarrel to z-axis [0.] speed [2.];
@@ -288,12 +328,12 @@ AimSecondary(heading, pitch)
 FireSecondary()
 {
 	emit-sfx 1024 + 0 from flare;
-	move Rbarrel to z-axis [-1.] speed [150.];
-	move Lbarrel to z-axis [-1.] speed [150.];
+	move Rbarrel to z-axis [1.] speed [150.];
+	move Lbarrel to z-axis [1.] speed [150.];
 	emit-sfx 1024 + 0 from Flare;
 	sleep 200;
-	move Rbarrel to z-axis [0.] speed [2.];
-	move Lbarrel to z-axis [0.] speed [2.];
+	move Rbarrel to z-axis [3.] speed [2.];
+	move Lbarrel to z-axis [3.] speed [2.];
 
 }
 

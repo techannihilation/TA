@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 119475,
 		builder = false,
 		buildpic = "tllmcv.dds",
-		buildtime = 179600,
+		buildtime = 1100000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
