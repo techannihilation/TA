@@ -74,21 +74,21 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move bground to z-axis [-10.5] speed [1.5];
-		move fground to z-axis [9.75] speed [1.5];
+		move bground to z-axis [-10.5] speed [2.5];
+		move fground to z-axis [9.75] speed [2.5];
 		wait-for-move bground along z-axis;
 		
-		move body to y-axis [8.25] speed [3.5];
+		move body to y-axis [8.25] speed [5];
 		
-		turn brground to x-axis <-25.000000> speed <15.>;
-		turn blground to x-axis <-25.000000> speed <15.>;
-		turn brground to y-axis <-20.000000> speed <25.>;
-		turn blground to y-axis <20.000000> speed <25.>;
+		turn brground to x-axis <-25.000000> speed <12.>;
+		turn blground to x-axis <-25.000000> speed <12.>;
+		turn brground to y-axis <-30.000000> speed <25.>;
+		turn blground to y-axis <30.000000> speed <25.>;
 		
-		turn frground to x-axis <20.000000> speed <15.>;
-		turn flground to x-axis <20.000000> speed <15.>;
-		turn frground to y-axis <20.000000> speed <25.>;
-		turn flground to y-axis <-20.000000> speed <25.>;
+		turn frground to x-axis <20.000000> speed <12.>;
+		turn flground to x-axis <20.000000> speed <12.>;
+		turn frground to y-axis <30.000000> speed <25.>;
+		turn flground to y-axis <-30.000000> speed <25.>;
 		
 		wait-for-move body along y-axis;
 		
@@ -149,15 +149,17 @@ Go()
 	{
 		call-script activatescr();
 	}
-	sleep 4500;
+	sleep 3750;
 	bAiming = 1;
+	set ARMORED to 0;
 }
 
 Stop()
 {
 	bAiming = 0;
 	sleep 50;	
-	call-script deactivatescr();	
+	call-script deactivatescr();
+	set ARMORED to 1;	
 }
 
 
