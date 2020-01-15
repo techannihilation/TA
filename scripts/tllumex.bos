@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, top, cutterhead, leg1, leg2, leg3, leg4, leg5, emit1, emit2,
-	   emit3, emit4;
+piece  base, body, cutterhead, emit1, emit2, emit3, emit4;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging, bCrushing;
 
@@ -36,31 +35,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Shudder()
-{
-while( bCrushing )
-	{
-		move cutterhead to y-axis [-1.000000] speed [800.000000];
-		move top to y-axis [-13.0000] speed [1375.000000];
-		sleep 100;
-		move cutterhead to y-axis [0.000000] speed [800.000000];
-		move top to y-axis [-12.800000] speed [1375.000000];
-		sleep 100;
-	}
-	sleep 500;
-	move cutterhead to y-axis [0.000000] speed [5.000000];
-	move top to y-axis [0.0000] speed [5.000000];
-	sleep 100;	
-}
-
 Go()
 {
 
-	move top to y-axis [-12.000000] speed [10.000000];
-	spin cutterhead around y-axis speed Static_Var_1 accelerate Static_Var_2;
-	set ARMORED to 1;
+	spin cutterhead around x-axis speed Static_Var_1 accelerate Static_Var_2;
 	sleep 1000;
-	start-script Shudder();
+	
 	while( bCrushing )
 	{
 		emit-sfx 1024 + 0 from emit1;
@@ -74,9 +54,8 @@ Go()
 Stop()
 {
 
-	stop-spin cutterhead around y-axis decelerate Static_Var_3;
-	set ARMORED to 0;
-	wait-for-turn cutterhead around y-axis;
+	stop-spin cutterhead around x-axis decelerate Static_Var_3;
+	wait-for-turn cutterhead around x-axis;
 }
 
 InitState()
@@ -90,6 +69,7 @@ RequestState(requestedstate, currentstate)
 	if( statechg_StateChanging )
 	{
 		statechg_DesiredState = requestedstate;
+		return (0);
 	}
 	statechg_StateChanging = TRUE;
 	currentstate = statechg_DesiredState;
@@ -110,14 +90,14 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
+
 Create()
 {
-	move top to y-axis [0.000000] now;
+	
 	bCrushing = 0;
 	Static_Var_1 = 0;
 	Static_Var_2 = 100;
-	Static_Var_3 = 500;
-	set ARMORED to 0;
+	Static_Var_3 = 160;
 	//call-script Shudder();
 	call-script InitState();
 	start-script SmokeUnit();
@@ -127,6 +107,7 @@ Activate()
 {
 	start-script RequestState(0);
 	bCrushing = 1;
+	
 }
 
 Deactivate()
@@ -151,23 +132,17 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 		explode cutterhead type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode cutterhead type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 		explode cutterhead type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode cutterhead type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

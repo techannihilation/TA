@@ -25,28 +25,15 @@ local unitList = {}
 unitList["TA"] = {
 
 
---[UnitDefNames["cormabm"].id] = {["en"]="Mobile Anti-Nuke", ["de"]="Mobile Anti-Atomwaffe", ["fr"]="Mobile Contre l'Arme Nucl�aire" },
---[UnitDefNames["armscab"].id] = {["en"]="Mobile Anti-Nuke", ["de"]="Mobile Anti-Atomwaffe", ["fr"]="Mobile Contre l'Arme Nucl�aire" },
-
---[UnitDefNames["aafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="Sup�rieur Fusion" },
---[UnitDefNames["cafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="Sup�rieur Fusion" },
-
---[UnitDefNames["amgeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
---[UnitDefNames["cmgeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
-
---[UnitDefNames["corblackhy"].id]={["en"]="Black Hydra", ["de"]="Flaggschiff", ["fr"]="" },
---[UnitDefNames["armepoch"].id]={["en"]="Epoch", ["de"]="Flaggschiff", ["fr"]="" }
-
-
-
-
 --Anti-Nukes
 [UnitDefNames["armamd"].id] = {["en"]="Anti-Nuke", ["de"]="Anti-Atomwaffe", ["fr"]="Contre l'Arme Nucl�aire" },
 [UnitDefNames["corfmd"].id] = {["en"]="Anti-Nuke", ["de"]="Anti-Atomwaffe", ["fr"]="Contre l'Arme Nucl�aire" },
 [UnitDefNames["armamd1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corfmd1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllantinuke"].id] = 	{["en"]="Anti Nuke", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllantinuke1"].id] = 	{["en"]="Anti Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllantinuke1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
+UnitDefNames["talon_damascus"].id] = 	{["en"]="Anti Nuke", ["de"]="", ["fr"]="" },
+UnitDefNames["talon_damascus1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 
 --Nuke Silos
 [UnitDefNames["armsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
@@ -54,29 +41,42 @@ unitList["TA"] = {
 [UnitDefNames["armsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllsilo"].id] = 	{["en"]="Nuke", ["de"]="", ["fr"]="" },
+UnitDefNames["talon_silo"].id] = 	{["en"]="Nuke", ["de"]="", ["fr"]="" },
+UnitDefNames["talon_silo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 
 --Uber Nukes
 [UnitDefNames["tllion"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
 [UnitDefNames["armfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
 [UnitDefNames["corfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
+[UnitDefNames["talon_elixir"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
 
 --Uber Anti-Nukes
 [UnitDefNames["tllgazelle"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["armamd2"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corfmd2"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_requiem"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
 
 --Tac Nuke Style static units
 [UnitDefNames["armemp"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
 [UnitDefNames["cortron"].id] = 	{["en"]="Tactical Nuke Silo", ["de"]="Taktische Atom-Raketensilo", ["fr"]="l'Arme Tactiques Nucl�aire" },
 [UnitDefNames["tllemp"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
+[UnitDefNames["talon_armistice"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
 
 --T3 labs
-[UnitDefNames["armshltx"].id] = 	{["en"]="T3 Gantry", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgant"].id] = 	{["en"]="Krog Gantry", ["de"]="", ["fr"]="" },
+[UnitDefNames["armshltx"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["corgant"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["armesy"].id] = 	{["en"]="T3 Shipyard", ["de"]="", ["fr"]="" },
 [UnitDefNames["coresy"].id] = 	{["en"]="T3 Shipyard", ["de"]="", ["fr"]="" },
 [UnitDefNames["armevp"].id] = 	{["en"]="T3 Vehicle Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["corevp"].id] = 	{["en"]="T3 Vehicle Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllevp"].id] = 	{["en"]="T3 Vehicle Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["tlleap"].id] = 	{["en"]="T3 Air Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_eap"].id] = 	{["en"]="T3 Air Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_evp"].id] = 	{["en"]="T3 Vehicle Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_elab"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllhtcp"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["coreap"].id] = 	{["en"]="T3 Air Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["armeap"].id] = 	{["en"]="T3 Air Lab", ["de"]="", ["fr"]="" },
 
 --T4 Labs
 [UnitDefNames["tllshipyardlvl3"].id] = 	{["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
@@ -89,18 +89,24 @@ unitList["TA"] = {
 [UnitDefNames["tllprototype"].id] = 	{["en"]="Prototype Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["talon_podlab"].id] = 	{["en"]="Pod Lab", ["de"]="", ["fr"]="" },
 
---T3 Mex
-[UnitDefNames["armmas"].id] = 	{["en"]="T3 Mex", ["de"]="", ["fr"]="" },
-[UnitDefNames["cormas"].id] = 	{["en"]="T3 Mex", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllmas"].id] = 	{["en"]="T3 Mex", ["de"]="", ["fr"]="" },
+--T4 Mex
+[UnitDefNames["armmas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },
+[UnitDefNames["cormas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllmas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },
+
+--T5 Mex
+[UnitDefNames["tllumex"].id] = 	{["en"]="T5 Mex", ["de"]="", ["fr"]="" },
 
 --Fusion
-[UnitDefNames["aafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="Sup�rieur Fusion" },
-[UnitDefNames["cafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="Sup�rieur Fusion" },
-[UnitDefNames["tllcoldfus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="Sup�rieur Fusion" },
+[UnitDefNames["aafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
+[UnitDefNames["cafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
+[UnitDefNames["tllcoldfus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
 [UnitDefNames["afusionplant"].id] = 	{["en"]="Arm Mega Fusion Reactor", ["de"]="", ["fr"]="" },
 [UnitDefNames["cfusionplant"].id] = 	{["en"]="Core Mega Fusion Reactor", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllmegacoldfus"].id] = 	{["en"]="TLL Mega Fusion Reactor", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_afus"].id] = 	{["en"]="Adv. Fusion Reactor", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_sfus"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
+
 
 --Doomsday etc
 [UnitDefNames["armanni"].id] = 	{["en"]="Tachyon", ["de"]="", ["fr"]="" },
@@ -115,6 +121,7 @@ unitList["TA"] = {
 [UnitDefNames["corboucher"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 [UnitDefNames["nebraska"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 [UnitDefNames["tlldmc"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_dmc"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 
 --Plasma Cannons
 [UnitDefNames["armbrtha"].id] = 	{["en"]="Bertha", ["de"]="", ["fr"]="" },
@@ -125,15 +132,18 @@ unitList["TA"] = {
 [UnitDefNames["core_intimidator"].id] = 	{["en"]="EMP Intimidator", ["de"]="", ["fr"]="" },
 [UnitDefNames["armvulc"].id] = 	{["en"]="Vulcan", ["de"]="Schnellfeuer-Plasmakanone", ["fr"]="Cadence de Tir �lev� Plasma Canon" },
 [UnitDefNames["corbuzz"].id] = 	{["en"]="Buzzsaw", ["de"]="Schnellfeuer-Plasmakanone", ["fr"]="Cadence de Tir �lev� Plasma Canon" },
-[UnitDefNames["armvulc2"].id] = 	{["en"]="Rapid-Vulcan", ["de"]="", ["fr"]="" },
-[UnitDefNames["corbuzz2"].id] = 	{["en"]="Rapid-Buzzsaw", ["de"]="", ["fr"]="" },
-[UnitDefNames["armvulc1"].id] = 	{["en"]="T3 Vulcan", ["de"]="", ["fr"]="" },
-[UnitDefNames["corbuzz1"].id] = 	{["en"]="T3 Buzzsaw", ["de"]="", ["fr"]="" },
+[UnitDefNames["armvulc2"].id] = 	{["en"]="T3 Rapid-Vulcan", ["de"]="", ["fr"]="" },
+[UnitDefNames["corbuzz2"].id] = 	{["en"]="T3 Rapid-Buzzsaw", ["de"]="", ["fr"]="" },
+[UnitDefNames["armvulc1"].id] = 	{["en"]="T4 Vulcan", ["de"]="", ["fr"]="" },
+[UnitDefNames["corbuzz1"].id] = 	{["en"]="T4 Buzzsaw", ["de"]="", ["fr"]="" },
 [UnitDefNames["tlllrpt"].id] = 	{["en"]="LR Plasma", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllhydre"].id] = 	{["en"]="Hydre", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllhydre1"].id] = 	{["en"]="T3 Hydre", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllhydre2"].id] = 	{["en"]="Rapid-Hydre", ["de"]="", ["fr"]="" },
-
+[UnitDefNames["talon_veloute"].id] = 	{["en"]="Hydre", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_veloute1"].id] = 	{["en"]="T4 Hydre", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_veloute2"].id] = 	{["en"]="T3 Rapid-Hydre", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_lrpt"].id] = 	{["en"]="Onyx", ["de"]="", ["fr"]="" },
 
 --TSAR
 [UnitDefNames["armtabi"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },
@@ -142,34 +152,42 @@ unitList["TA"] = {
 
 --Shields
 [UnitDefNames["armgate"].id] = 	{["en"]="T2 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["armgate1"].id] = 	{["en"]="Heavy Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["armgate2"].id] = 	{["en"]="Small Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["armgate1"].id] = 	{["en"]="T4 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["armgate2"].id] = 	{["en"]="T1 Shield", ["de"]="", ["fr"]="" },
 [UnitDefNames["corgate"].id] = 	{["en"]="T2 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgate1"].id] = 	{["en"]="Heavy Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgate2"].id] = 	{["en"]="Small Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["corgate1"].id] = 	{["en"]="T4 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["corgate2"].id] = 	{["en"]="T1 Shield", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllgate"].id] = 	{["en"]="T2 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllgate1"].id] = 	{["en"]="Heavy Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllgate2"].id] = 	{["en"]="Small Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllgate1"].id] = 	{["en"]="T4 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllgate2"].id] = 	{["en"]="T1 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllgate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_gate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["armgate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["corgate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllgate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_gate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["armgate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
+[UnitDefNames["corgate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
+
 
 --Super Ships
 [UnitDefNames["cdevastator"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
 [UnitDefNames["abroadside"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
-[UnitDefNames["corvaliant"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllzeppelin"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_independence"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
 
 --T3 AA
 [UnitDefNames["corpre"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
 [UnitDefNames["tlldb"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
 [UnitDefNames["armhys"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_popcorn1"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
+
 
 --Moho Geos
 [UnitDefNames["amgeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
 [UnitDefNames["cmgeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
 [UnitDefNames["tllmohogeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
-
---Don't mark mobile units
---[UnitDefNames["armbanth1"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
---[UnitDefNames["corkrog1"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
-}
+[UnitDefNames["talon_mohogeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
 
 --END OF MARKER LIST---------------------------------------
 
