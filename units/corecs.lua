@@ -1,6 +1,6 @@
 return {
 	corecs = {
-		acceleration = 0.05,
+		acceleration = 0.015,
 		brakerate = 0.15,
 		buildcostenergy = 77395,
 		buildcostmetal = 5396,
@@ -14,8 +14,8 @@ return {
 		canreclamate = 1,
 		canstop = 1,
 		category = "ALL CONSTR MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL NOTWEAPON SURFACE",
-		collisionvolumeoffsets = "0 -5 -1",
-		collisionvolumescales = "30 30 78",
+		collisionvolumeoffsets = "0 -10 0",
+		collisionvolumescales = "52 40 145",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -54,9 +54,9 @@ return {
 		terraformspeed = 750,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.32,
-		turnrate = 400,
+		turnrate = 225,
 		unitname = "corecs",
-		waterline = 1,
+		waterline = 2,
 		workertime = 720,
 		buildoptions = {
 			[1] = "core_hexapod_lab",

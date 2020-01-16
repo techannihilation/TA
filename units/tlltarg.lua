@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "tlltarg_aoplane.dds",
 		buildpic = "tlltarg.dds",
-		buildtime = 100000,
+		buildtime = 10000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
 		damagemodifier = 0.75,

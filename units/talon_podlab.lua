@@ -8,7 +8,6 @@ return {
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
-		buildinggrounddecaltype = "corgant1_aoplane.dds",
 		buildpic = "talon_podlab.dds",
 		buildtime = 342000,
 		canmove = true,
@@ -50,7 +49,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_podlab",
-		usebuildinggrounddecal = true,
+		usebuildinggrounddecal = false,
 		workertime = 600,
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {

@@ -260,6 +260,7 @@ return {
 	"armecs",
 	"corecs",
 	"tllecs",
+	"talon_ecs",
 	"talon_dread",
 	"talon_hcar",
 },

@@ -47,10 +47,11 @@ return {
 		workertime = 400,
 		yardmap = "wCCCCCCCCCCCCCwcCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCccCCCCCCCCCCCCCc",
 		buildoptions = {
-			[1] = "talon_lancelet",
-			[2] = "talon_frigate",
-			[3] = "talon_dread",
-			[4] = "talon_hcar",
+			[1] = "talon_ecs",
+			[2] = "talon_lancelet",
+			[3] = "talon_frigate",
+			[4] = "talon_dread",
+			[5] = "talon_hcar",
 		},
 		customparams = {
 			buildpic = "talon_asy.dds",

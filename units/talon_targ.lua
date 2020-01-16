@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildpic = "talon_targ.dds",
-		buildtime = 100000,
+		buildtime = 10000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "55 65 55",

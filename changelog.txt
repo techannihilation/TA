@@ -1,4 +1,11 @@
-﻿3.28 -> 3.29
+﻿3.29 -> 3.30
+2020-01-16
+Improvments:
+ - Add T5 MEX for TLL
+ - Add mode impulse multiplier (activate with !mo_impmulti 1) by Silver
+ - Add T3 Cons Ship Talon
+
+3.28 -> 3.29
 2020-01-13
 Balance : 
  - Balance All Hover Scout (adjust cost/speed/...) for all factions
