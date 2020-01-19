@@ -61,7 +61,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 15150,
-				object = "corint1_dead",
+				object = "tlllrpt1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

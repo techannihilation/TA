@@ -172,7 +172,7 @@ return {
 				badtargetcategory = "SMALL TINY",
 				def = "ATAM",
 				maindir = "0 0 1",
-				maxangledif = 180,
+				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},
