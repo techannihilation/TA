@@ -67,8 +67,8 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move Door1 to x-axis [15.00000] speed [4.500000];
-		move Door2 to x-axis [-15.00000] speed [4.500000];
+		move Door1 to x-axis [17.00000] speed [4.500000];
+		move Door2 to x-axis [-17.00000] speed [4.500000];
 		wait-for-move Door2 along x-axis;
 	}
 	if( TRUE )
