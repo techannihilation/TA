@@ -242,6 +242,34 @@ Dive()
 
 Create()
 {
+	move body to y-axis [8.25] now;
+	move bground to z-axis [-10.5] now;
+	move fground to z-axis [9.75] now;
+	turn brground to x-axis <-25.000000> now;
+	turn blground to x-axis <-25.000000> now;
+	turn brground to y-axis <-30.000000> now;
+	turn blground to y-axis <30.000000> now;
+	turn frground to x-axis <20.000000> now;
+	turn flground to x-axis <20.000000> now;
+	turn frground to y-axis <30.000000> now;
+	turn flground to y-axis <-30.000000> now;
+	move mrground to x-axis [7.5] now;
+	move mlground to x-axis [-7.5] now;
+	turn Rtrap to z-axis <38.000000> now;;
+	turn Ltrap to z-axis <-38.000000> now;
+	move Rfront to z-axis [-4.725] now;
+	move Rback to z-axis [4.8] now;
+	move Lfront to z-axis [4.725] now;
+	move Lback to z-axis [-4.8] now;
+	move rfoot1 to x-axis [-6.75] now;
+	move lfoot1 to x-axis [6.75] now;
+	move Rsupport to y-axis [0.75] now;
+	move Lsupport to y-axis [0.75] now;
+	turn Lsupport to z-axis <20.000000> now;
+	turn Rsupport to z-axis <-20.000000> now;
+	move Rbarrel to z-axis [4.5] now;
+	move Lbarrel to z-axis [4.5] now;
+
 	WeaponToggle = 0;
 	bAiming = 0;
 	bMoving = 0;
@@ -272,10 +300,10 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-//	if(!WeaponToggle OR (get WEAPON_RELOADSTATE(2) > get GAME_FRAME)) 
-//	{
-//		return 0;
-//	}
+	//if(!WeaponToggle OR (get WEAPON_RELOADSTATE(2) > get GAME_FRAME)) 
+	//{
+	//	return 0;
+	//}
 
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
@@ -315,10 +343,6 @@ AimFromPrimary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	//if(WeaponToggle OR (get WEAPON_RELOADSTATE(1) > get GAME_FRAME)) 
-	//{
-	//	return 0;
-	//}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn turret to y-axis heading speed <60.000000>;

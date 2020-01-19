@@ -56,6 +56,7 @@ return {
 			[1] = "talon_cpod",
 			[2] = "talon_archon",
 			[3] = "talon_mythril",
+			[4] = "talon_mcv",
 		},
 		customparams = {
 			buildpic = "talon_podlab.dds",

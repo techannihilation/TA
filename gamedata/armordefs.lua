@@ -360,6 +360,8 @@ return {
 	"irritator",  
 	"talon_mythril",
 	"talon_archon",
+	"talon_mcv",
+	"talon_mcv1",
 	-- T5 heroes
 	"cdevastator",
 	"abroadside",

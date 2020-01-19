@@ -384,6 +384,7 @@ return {
 			params = {'1', 'Rapid', 'Standard'},
 		},
 	},
+	--[[
 	talon_mcv = {
 		{
 			name = "weapon_toggle_talon",
@@ -393,6 +394,7 @@ return {
 			params = {'1', 'Deployed', 'Standard'},
 		},
 	},
+	--]]
 	talon_com5 = {
 		{
 			name = "shield_talc5",

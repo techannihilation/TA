@@ -1330,7 +1330,14 @@ local morphDefs = {
 	  	time = 40,
 		xp = 0.40,
 	},
-	
+	talon_mcv  = {
+		into = 'talon_mcv1',
+	  	time = 15,
+	},
+	talon_mcv1  = {
+		into = 'talon_mcv',
+	  	time = 15,
+	},	
 }
 
 --
