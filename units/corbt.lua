@@ -31,7 +31,7 @@ return {
 		mass = 18549,
 		maxdamage = 52590,
 		maxslope = 12,
-		maxvelocity = 1.3,
+		maxvelocity = 1.15,
 		maxwaterdepth = 20,
 		mobilestandorders = 1,
 		movementclass = "VHTANK5",

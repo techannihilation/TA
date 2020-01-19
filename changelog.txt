@@ -1,4 +1,13 @@
-﻿3.29 -> 3.30
+﻿3.30 -> 3.31
+2020-01-19
+Balance : 
+ - Balance Metron speed
+
+Improvments:
+ - Add T4 Command vehicle talon with new morphing system
+ - Decrease Size model for T2 Jammer Talon
+
+3.29 -> 3.30
 2020-01-16
 Improvments:
  - Add T5 MEX for TLL
