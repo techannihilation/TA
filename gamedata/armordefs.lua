@@ -383,6 +383,7 @@ return {
 	"tllgeo_armored",
 	"tllhcrus",
 	"corgfbt",
+	"talon_xeon",
 	},
 	sniper_resistant = {
 	"armzeus",

@@ -7,7 +7,7 @@ Improvments:
  - Add T4 Command vehicle talon with new morphing system
  - Decrease Size model for T2 Jammer Talon
  - Add Tachyon Vehicle T2 Talon 
- - Add Flammer Rapid tank T2 (soon)
+ - Add Flammer Rapid tank T2 Talon
 
 3.29 -> 3.30
 2020-01-16
