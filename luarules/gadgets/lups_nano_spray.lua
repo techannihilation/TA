@@ -284,6 +284,7 @@ function gadget:GameFrame(frame)
             break
         end
 		local unitID = builders[i]
+	if tonumber(unitID) then
 		local UnitDefID = Spring.GetUnitDefID(unitID)
 		local buildpower = builderWorkTime[UnitDefID] or 1
     	if ((unitID + frame) % updateFramerate < 1) then
@@ -376,6 +377,7 @@ function gadget:GameFrame(frame)
 				end
 			end
 		end
+	end
 	end --//for
 	--Spring.Echo(frame..'  '..totalNanoEmitters)
 end
