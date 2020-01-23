@@ -1,6 +1,6 @@
 return {
 	talon_lancelet = {
-		acceleration = 0.05,
+		acceleration = 0.1,
 		activatewhenbuilt = true,
 		brakerate = 0.057,
 		buildcostenergy = 98000,
@@ -41,14 +41,14 @@ return {
 		objectname = "talon_lancelet",
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",
-		sightdistance = 450,
+		sightdistance = 650,
 		sonardistance = 1000,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.155,
-		turnrate = 90,
+		turnrate = 140,
 		unitname = "talon_lancelet",
 		upright = true,
 		waterline = 32,
@@ -112,7 +112,7 @@ return {
 		},
 		weapondefs = {
 			talonsub_weapon = {
-				areaofeffect = 16,
+				areaofeffect = 48,
 				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,
