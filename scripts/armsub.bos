@@ -3,17 +3,17 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, base, tail;
+piece  flare1, flare2, base, tail, torpedo;
 
 static-var  gun_1;
 
 // Signal definitions
 #define SIG_MOVE			2
-
+#define SIG_AIM				4
 
 Create()
 {
-	gun_1 = flare1;
+	gun_1 = 1;
 }
 
 StartMoving()
@@ -34,17 +34,33 @@ StopMoving()
 
 FirePrimary()
 {
-	gun_1 = !gun_1;
+	++gun_1;
+	
+	if( gun_1 == 3 )
+	{
+		gun_1 = 1;
+	}
+
 }
 
 AimPrimary()
 {
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	return (1);
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	if( gun_1 == 1 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare2;
+	}
+
 }
 
 SweetSpot(piecenum)

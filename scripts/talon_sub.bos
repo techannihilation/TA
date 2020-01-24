@@ -3,90 +3,48 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  torp1, torp2, base, tail, w1, w2;
+piece  torp1, torp2, base, tail, w1, w2, torpedo;
 
 static-var  Static_Var_1;
 
 #define SIG_AIM				4
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	healthpercent = get HEALTH;
-	sleeptime = healthpercent * healthpercent;
-	if( healthpercent < 66 )
-	{
-		emit-sfx 256 | 3 from base;
-		sleep sleeptime;
-		emit-sfx 256 | 3 from torp2;
-		if( Rand( 1, 66 ) > healthpercent )
-		{
-			emit-sfx 256 | 3 from torp1;
-			sleep sleeptime;
-			emit-sfx 256 | 3 from tail;
-			sleep sleeptime;
-			emit-sfx 256 | 3 from base;
-			sleep sleeptime;
-			emit-sfx 256 | 3 from torp2;
-			sleep sleeptime;
-		}
-	}
-	start-script SmokeUnit();
-}
-
-BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
-{
-	while( TRUE )
-	{
-		Func_Var_1 = get PIECE_XZ(base);
-		Func_Var_3 = 0;
-		if( get XZ_HYPOT(Func_Var_1 - Func_Var_2) >= 163840 )
-		{
-			Func_Var_3 = 0 - get XZ_ATAN(Func_Var_2 - Func_Var_1) * 80 / 40;
-		}
-		turn base to z-axis Func_Var_3 speed <30.>;
-		Func_Var_2 = Func_Var_1;
-		sleep 300;
-	}
-}
+#define SIG_MOVE			2
 
 Create()
 {
 	spin tail around z-axis speed <50.>;
 	Static_Var_1 = 1;
-	start-script SmokeUnit();
-	start-script BankClerck();
 }
 
 StartMoving()
 {
-	signal 2;
-	set-signal-mask 2;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
 	while( TRUE )
 	{
-		emit-sfx 3 from w1;
-		emit-sfx 3 from w2;
+		emit-sfx 256 | 3 from w1;
+		emit-sfx 256 | 3 from w2;
 		sleep 250;
 	}
+
 }
 
 StopMoving()
 {
-	signal 2;
+	signal SIG_MOVE;
+
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = tail;
+	piecenum = torpedo;
 }
 
 AimPrimary() 
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	return (1);
 }
 
 FirePrimary()
