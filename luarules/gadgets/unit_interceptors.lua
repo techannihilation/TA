@@ -44,6 +44,8 @@ local antiNukes = {
   [UnitDefNames["talon_damascus1"].id] = true,
   [UnitDefNames["talon_nexus"].id] = true,
   [UnitDefNames["talon_requiem"].id] = true,
+  [UnitDefNames["talon_tribulation"].id] = true,
+  [UnitDefNames["talon_tribulation1"].id] = true,	
 }
 
 local interceptorsID = {}
@@ -73,7 +75,7 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
   --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
   if not coverageRange then
 	  local unitDefID = Spring.GetUnitDefID(interceptorUnitID)
-	  Spring.Echo("Missing AnitNuke Interceptor: " .. unitDefID .. "name: " .. UnitDefs[unitDefID].name)
+	  Spring.Echo("Missing AnitNuke Interceptor: " .. unitDefID .. " name: " .. UnitDefs[unitDefID].name)
     return false
   end
   if projectileTargetCache[targetProjectileID] and projectileTargetCache[targetProjectileID][1] then
