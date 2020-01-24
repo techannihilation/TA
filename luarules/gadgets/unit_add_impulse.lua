@@ -79,6 +79,10 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 2000 * multiplier,
 			weaponNumber = 1
 		}
+		[UnitDefNames.tllmcv.weapons[1].weaponDef] = {
+			impulseBoost = 1000 * multiplier,
+			weaponNumber = 1
+		},
 	}
 
 	local GetUnitWeaponTarget = Spring.GetUnitWeaponTarget
