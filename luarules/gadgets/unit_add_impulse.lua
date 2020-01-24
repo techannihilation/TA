@@ -71,6 +71,10 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
+		[UnitDefNames.talon_mcv.weapons[2].weaponDef] = {
+			impulseBoost = 1000 * multiplier,
+			weaponNumber = 2
+		},
 		[UnitDefNames.talon_mcv1.weapons[1].weaponDef] = {
 			impulseBoost = 2000 * multiplier,
 			weaponNumber = 1
