@@ -33,10 +33,13 @@ local DISTORT_WEAPONS = {
   ["armcom_teleport_yellow"] = true,
   ["tllcom_teleport_yellow"] = true,
   ["corcom_teleport_yellow"] = true,
-  ["armsonic_sonic_cannon"] = true,
+  ["talon_com_teleport_blue"] = true,
+  ["talon_com_teleport_yellow"] = true,
+  ["talon_com_teleport"] = true,
+  --["armsonic_sonic_cannon"] = true,
   ["corvroc_cortruck_rocket"] = true,
   ["armmerl_armtruck_rocket"] = true,
-  ["shiva_shiva_rocket"] = true,
+  --["shiva_shiva_rocket"] = true,
   ["armorco_corkrog_rocket"] = true,
   ["corhowie_asm"] = true,
   ["armmlrs_227mm_rockets3"] = true,
@@ -216,6 +219,10 @@ else
     ["armcom_teleport_yellow"] = true,
     ["tllcom_teleport_yellow"] = true,
     ["corcom_teleport_yellow"] = true,
+    ["talon_com_teleport_blue"] = true,
+    ["talon_com_teleport_yellow"] = true,
+    ["talon_com_teleport"] = true,
+
 }
   --// find napalms
   for i=1,#WeaponDefs do

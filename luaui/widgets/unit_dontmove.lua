@@ -58,6 +58,15 @@ local unitArray = {
   "tllcom6",
   "tllcom7",
 
+--Talon
+  "talon_com",
+  "talon_com1",
+  "talon_com3",
+  "talon_com_fusion",
+  "talon_com5",
+  "talon_com6",
+  "talon_com7",
+
   --aa units
   "armjeth",
   "armaak",
@@ -163,6 +172,9 @@ local unitArray = {
   "armorion",
   "tllanhur",
   "tllaether",
+  "talon_shade",
+  "talon_handgod",
+  "talon_eclipse",
   
   --shields/jammers/radars
   "armjam",
@@ -196,13 +208,20 @@ local unitArray = {
   
   --antinukes
   "armscab",
+  "armscab1",
   "armcarry",
   
   "cormabm",
+  "cormabm1",
   "corcarry",
   
   "tllcarry",
   "tllturtle",
+  "tllturtle1",
+
+  "talon_damascus",
+  "talon_damascus1",
+  "talon_nexus",
   
   --misc
   
