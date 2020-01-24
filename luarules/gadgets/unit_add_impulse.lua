@@ -70,7 +70,19 @@ if (gadgetHandler:IsSyncedCode()) then
 		[UnitDefNames.talon_fdog.weapons[1].weaponDef] = {
 			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
+		},
+		[UnitDefNames.talon_mcv.weapons[2].weaponDef] = {
+			impulseBoost = 1000 * multiplier,
+			weaponNumber = 2
+		},
+		[UnitDefNames.talon_mcv1.weapons[1].weaponDef] = {
+			impulseBoost = 2000 * multiplier,
+			weaponNumber = 1
 		}
+		[UnitDefNames.tllmcv.weapons[1].weaponDef] = {
+			impulseBoost = 1000 * multiplier,
+			weaponNumber = 1
+		},
 	}
 
 	local GetUnitWeaponTarget = Spring.GetUnitWeaponTarget
@@ -84,7 +96,6 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
 		if multiplier > 0 and attackerID and (unitTeam ~= attackerTeam) and Weapons[weaponDefID] then -- Short-circuit evaluation; that is, the other operands are evaluated only if necessary.
 			local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
-
 			if number > 0 then
 				local impulseBoost = Weapons[weaponDefID].impulseBoost / (GetUnitMass(unitID) ^ 0.67)
 				local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
