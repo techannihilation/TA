@@ -123,10 +123,10 @@ local options={
     name = "Impulse multiplier",
     desc = "Impulse multiplier for certain units\nAutoHost Usage :- mo_impmulti",
     type = "number",
-    def = 1,
+    def = 2,
     section = "ta_modes",
-    min    = 0,
-    max    = 4,
+    min    = 1,
+    max    = 3,
     step   = 0.1,
   },
   {
