@@ -200,7 +200,7 @@ return {
 			talon_starburst = {
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "talonraventrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -209,7 +209,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "talon_rocket",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

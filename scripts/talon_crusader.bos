@@ -241,8 +241,8 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn turret to y-axis heading speed <70.>;
-	turn gun to x-axis <0.> - pitch speed <40.>;
+	turn turret to y-axis heading speed <110.>;
+	turn gun to x-axis <0.> - pitch speed <65.>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn gun around x-axis;
 	start-script RestoreAfterDelay();

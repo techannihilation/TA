@@ -120,7 +120,7 @@ return {
 				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.25,
-				cegtag = "Arm_Trail_rocket",
+				cegtag = "Talon_Trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -163,7 +163,7 @@ return {
 			talon_rocket = {
 				areaofeffect = 64,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "talonraventrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

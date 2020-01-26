@@ -196,7 +196,7 @@ return {
 			talon_starburst = {
 				areaofeffect = 130,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "talonraventrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -204,7 +204,7 @@ return {
 				flighttime = 6,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "temrocket",
+				model = "talon_rocket",
 				name = "Guided Rockets",
 				range = 1050,
 				reloadtime = 2,
