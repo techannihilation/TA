@@ -177,6 +177,7 @@ if (gadgetHandler:IsSyncedCode()) then
         tractorPlanes[unitID] = nil
         -- release its move ctrl
         Spring.MoveCtrl.Disable(unitID)
+        Spring.MoveCtrl.SetTag(unitID,0)
     end
     
     function AttachToPad(unitID, airbaseID, padPieceNum)
@@ -385,7 +386,7 @@ if (gadgetHandler:IsSyncedCode()) then
         -- and remove it from our book-keeping
         -- (in many situations, unless the user changes the RepairAt level, it will be quickly reinserted, but we have to assume that's what they want!)
         landingPlanes[unitID] = nil
-        landedPlanes[unitID] = nil
+        --landedPlanes[unitID] = nil -- no need, actually it make issues !!!
         pendingLanders[unitID] = nil
     end
     
@@ -451,6 +452,7 @@ if (gadgetHandler:IsSyncedCode()) then
                         landingPlanes[unitID] = nil
                         tractorPlanes[unitID] = {airbaseID, padPieceNum}
                         Spring.MoveCtrl.Enable(unitID)
+                        Spring.MoveCtrl.SetTag(unitID,1)
                     else
                         -- fly towards pad (the pad may move!)
                         if not tractorPlanes[unitID] then
@@ -479,6 +481,7 @@ if (gadgetHandler:IsSyncedCode()) then
                 AttachToPad(unitID, airbaseID, padPieceNum)
                 Spring.PlaySoundFile("sounds/nanlath2.wav", 1.0, ux, uy, uz, 0, 0, 0, "battle")
                 Spring.MoveCtrl.Disable(unitID)
+                Spring.MoveCtrl.SetTag(unitID,0)
                 Spring.SetUnitLoadingTransport(unitID, nil)
                 RemoveOrderFromQueue(unitID, CMD_LAND_AT_SPECIFIC_AIRBASE) -- also clears the move goal by triggering widget:UnitCmdDone
             else
@@ -555,6 +558,7 @@ if (gadgetHandler:IsSyncedCode()) then
     function gadget:ShutDown()
         for unitID, _ in pairs(tractorPlanes) do
             Spring.MoveCtrl.Disable(unitID)
+            Spring.MoveCtrl.SetTag(unitID,0)
         end
     end
     
