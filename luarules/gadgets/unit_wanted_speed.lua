@@ -50,13 +50,10 @@ local function SetUnitWantedSpeed(unitID, unitDefID, wantedSpeed)
 		}
 	end
 	
-	if units[unitID].unhandled then
+	if units[unitID].unhandled or units[unitID].lastWantedSpeed == wantedSpeed or (Spring.MoveCtrl.GetTag(unitID) ~= nil and Spring.MoveCtrl.GetTag(unitID) == 1) then
 		return
 	end
-	
-	if units[unitID].lastWantedSpeed == wantedSpeed then
-		return
-	end
+
 	units[unitID].lastWantedSpeed = wantedSpeed
 	
 	--Spring.Utilities.UnitEcho(unitID, wantedSpeed)
@@ -68,7 +65,7 @@ local function SetUnitWantedSpeed(unitID, unitDefID, wantedSpeed)
 end
 
 local function MaintainWantedSpeed(unitID)
-	if not (units[unitID] and units[unitID].lastWantedSpeed) then
+	if (not (units[unitID] and units[unitID].lastWantedSpeed)) or (Spring.MoveCtrl.GetTag(unitID) ~= nil and Spring.MoveCtrl.GetTag(unitID) == 1) then
 		return
 	end
 	if units[unitID].moveType == 1 then
