@@ -1,23 +1,22 @@
-
 function widget:GetInfo()
+	-- Puts it above minimap_startboxes with layer 0
 	return {
-		name      = "Initial Queue",
-		desc      = "Allows you to queue buildings before game start",
-		author    = "Niobium",
-		version   = "1.6",
-		date      = "7 April 2010",
-		license   = "GNU GPL, v2 or later",
-		layer     = -1, -- Puts it above minimap_startboxes with layer 0
-		enabled   = true,
-		handler   = true
+		name = "Initial Queue",
+		desc = "Allows you to queue buildings before game start",
+		author = "Niobium",
+		version = "1.6",
+		date = "7 April 2010",
+		license = "GNU GPL, v2 or later",
+		layer = -1,
+		enabled = true,
+		handler = true
 	}
 end
+
 -- 12 jun 2012: "uDef.isMetalExtractor" was replaced by "uDef.extractsMetal > 0" to fix "metal" mode map switching (by [teh]decay, thx to vbs and Beherith)
 -- 20 march 2013: added keyboard support with BA keybinds (Bluestone)
 -- august 2013: send queue length to cmd_idle_players (BrainDamage)
 -- june 2015: guishader + rounded corners + hover effect + widget scales with resolution + remembers queue after /luaui reload (Floris)
-
-
 ------------------------------------------------------------
 -- Config
 ------------------------------------------------------------
@@ -32,11 +31,11 @@ local margin = 1
 local drawTooltip = true -- drawBigTooltip = true... this needs to be true aswell
 local drawBigTooltip = false
 local borderPadding = 1
-local borderColor = {1,1,1,0.025}
-local backgroundColor = {0,0,0,0.66}
-local hoverColor = {1,1,1,0.25}
-local pushedColor = {1,0.1,0,0.33}
-local clickColor = {0.66,1,0,0.25}
+local borderColor = {1, 1, 1, 0.025}
+local backgroundColor = {0, 0, 0, 0.66}
+local hoverColor = {1, 1, 1, 0.25}
+local pushedColor = {1, 0.1, 0, 0.33}
+local clickColor = {0.66, 1, 0, 0.25}
 --local pressColor = {1,0,0,0.44}
 local bgcorner = LUAUI_DIRNAME .. "Images/bgcorner.png"
 local buttonhighlight = ":n:" .. LUAUI_DIRNAME .. "Images/button-highlight.dds"
@@ -44,177 +43,137 @@ local buttonpushed = ":n:" .. LUAUI_DIRNAME .. "Images/button-pushed.dds"
 local oldUnitpicsDir = LUAUI_DIRNAME .. "Images/oldunitpics/"
 local customScale = 0.95
 -- Colors
-local buildDistanceColor = {0.3,1.0,0.3,0.6}
-local buildLinesColor = {0.3,1.0,0.3,0.6}
-local borderNormalColor = {0.3,1.0,0.3,0.5}
-local borderClashColor = {0.7,0.3,0.3,1.0}
-local borderValidColor = {0.0,1.0,0.0,1.0}
-local borderInvalidColor = {1.0,0.0,0.0,1.0}
+local buildDistanceColor = {0.3, 1.0, 0.3, 0.6}
+local buildLinesColor = {0.3, 1.0, 0.3, 0.6}
+local borderNormalColor = {0.3, 1.0, 0.3, 0.5}
+local borderClashColor = {0.7, 0.3, 0.3, 1.0}
+local borderValidColor = {0.0, 1.0, 0.0, 1.0}
+local borderInvalidColor = {1.0, 0.0, 0.0, 1.0}
 local buildingQueuedAlpha = 0.5
 local metalColor = '\255\196\196\255' -- Light blue
 local energyColor = '\255\255\255\128' -- Light yellow
 local buildColor = '\255\128\255\128' -- Light green
 local whiteColor = '\255\255\255\255' -- White
-local vsx,vsy = gl.GetViewSizes()
+local vsx, vsy = gl.GetViewSizes()
 local widgetScale = 1 -- will adjust based on resolution
 local GL_ONE = GL.ONE
 local GL_ONE_MINUS_SRC_ALPHA = GL.ONE_MINUS_SRC_ALPHA
 local GL_SRC_ALPHA = GL.SRC_ALPHA
 local glBlending = gl.Blending
-
 -- Building ids
 local ARMCOM = UnitDefNames["armcom"].id
 local CORCOM = UnitDefNames["corcom"].id
 local TLLCOM = UnitDefNames["tllcom"].id
 local TALON_COM = UnitDefNames["talon_com"].id
- 
 local ARMMEX = UnitDefNames["armmex"].id
 local CORMEX = UnitDefNames["cormex"].id
 local TLLMEX = UnitDefNames["tllmex"].id
 local TALON_MEX = UnitDefNames["talon_mex"].id
- 
 local ARMUWMEX = UnitDefNames["armuwmex"].id
 local CORUWMEX = UnitDefNames["coruwmex"].id
 local TLLUWMEX = UnitDefNames["tlluwmex"].id
 local TALON_UWMEX = UnitDefNames["talon_uwmex"].id
- 
 local ARMSOLAR = UnitDefNames["armsolar"].id
 local CORSOLAR = UnitDefNames["corsolar"].id
 local TLLSOLAR = UnitDefNames["tllsolar"].id
 local TALON_SOLAR = UnitDefNames["talon_solar"].id
- 
- 
 local ARMWIN = UnitDefNames["armwin"].id
 local CORWIN = UnitDefNames["corwin"].id
 local TLLWIND = UnitDefNames["tllwindtrap"].id
 local TALON_WIND = UnitDefNames["talon_win"].id
- 
 local ARMTIDE = UnitDefNames["armtide"].id
 local CORTIDE = UnitDefNames["cortide"].id
 local TLLTIDE = UnitDefNames["tlltide"].id
 local TALON_TIDE = UnitDefNames["talon_tide"].id
- 
 local ARMLLT = UnitDefNames["armllt"].id
 local CORLLT = UnitDefNames["corllt"].id
 local TLLLLT = UnitDefNames["tllllt"].id
 local TALON_LLT = UnitDefNames["talon_llt"].id
- 
 local ARMRAD = UnitDefNames["armrad"].id
 local CORRAD = UnitDefNames["corrad"].id
 local TLLRADAR = UnitDefNames["tllradar"].id
 local TALON_RADAR = UnitDefNames["talon_rad"].id
- 
 local ARMRL = UnitDefNames["armrl"].id
 local CORRL = UnitDefNames["corrl"].id
 local TLLLMT = UnitDefNames["tlllmt"].id
 local TALON_RL = UnitDefNames["talon_rl"].id
- 
 local ARMTL = UnitDefNames["armtl"].id
 local CORTL = UnitDefNames["cortl"].id
 local TllTORP = UnitDefNames["tlltorp"].id
 local TALON_TL = UnitDefNames["talon_tl"].id
- 
 local ARMSONAR = UnitDefNames["armsonar"].id
 local CORSONAR = UnitDefNames["corsonar"].id
 local TLLSONAR = UnitDefNames["tllsonar"].id
 local TALON_SONAR = UnitDefNames["talon_sonar"].id
- 
- 
 local ARMFRT = UnitDefNames["armfrt"].id
 local CORFRT = UnitDefNames["corfrt"].id
 local TLLLMTNS = UnitDefNames["tlllmtns"].id
 local TALON_FRL = UnitDefNames["talon_frl"].id
- 
- 
 local ARMLAB = UnitDefNames["armlab"].id
 local CORLAB = UnitDefNames["corlab"].id
 local TLLLAB = UnitDefNames["tlllab"].id
 local TALON_CLONE_LAB = UnitDefNames["talon_clone_lab"].id
- 
- 
 local ARMVP = UnitDefNames["armvp"].id
 local CORVP = UnitDefNames["corvp"].id
 local TLLVP = UnitDefNames["tllvp"].id
 local TALON_VP = UnitDefNames["talon_vp"].id
- 
- 
 local ARMSY = UnitDefNames["armsy"].id
 local CORSY = UnitDefNames["corsy"].id
 local TLLSY = UnitDefNames["tllsy"].id
 local TALON_SY = UnitDefNames["talon_sy"].id
- 
 -- these are not used for hotkeys but used for switch faction buildings
- 
 local ARMMSTOR = UnitDefNames["armmstor"].id
 local CORMSTOR = UnitDefNames["cormstor"].id
 local TLLMSTOR = UnitDefNames["tllmstor"].id
 local TALON_MSTOR = UnitDefNames["talon_mstor"].id
- 
- 
 local ARMESTOR = UnitDefNames["armestor"].id
 local CORESTOR = UnitDefNames["corestor"].id
 local TLLESTOR = UnitDefNames["tllestor"].id
 local TALON_ESTOR = UnitDefNames["talon_estor"].id
- 
 local ARMMAKR = UnitDefNames["armmakr"].id
 local CORMAKR = UnitDefNames["cormakr"].id
 local TLLMM = UnitDefNames["tllmm"].id
 local TALON_MAKR = UnitDefNames["talon_makr"].id
- 
 local ARMEYES = UnitDefNames["armeyes"].id
 local COREYES = UnitDefNames["coreyes"].id
 local TllToWER = UnitDefNames["tlltower"].id
- 
 local ARMDRAG = UnitDefNames["armdrag"].id
 local CORDRAG = UnitDefNames["cordrag"].id
 local TLLDTNS = UnitDefNames["tlldtns"].id
 local TALON_DRAG = UnitDefNames["talon_drag"].id
- 
 local ARMDL = UnitDefNames["armdl"].id
 local CORDL = UnitDefNames["cordl"].id
 local TLLSHORETORP = UnitDefNames["tllshoretorp"].id
-local TALON_TL = UnitDefNames["talon_tl"].id
-  
 local ARMAP = UnitDefNames["armap"].id
 local CORAP = UnitDefNames["corap"].id
 local TLLAP = UnitDefNames["tllap"].id
 local TALON_AP = UnitDefNames["talon_ap"].id
- 
 local ARMFRAD = UnitDefNames["armfrad"].id
 local CORFRAD = UnitDefNames["corfrad"].id
 local TALON_FRAD = UnitDefNames["talon_frad"].id
-
 local ARMUWMS = UnitDefNames["armuwms"].id
 local CORUWMS = UnitDefNames["coruwms"].id
 local TLLUWMSTORAGE = UnitDefNames["tlluwmstorage"].id
 local TALON_UWMS = UnitDefNames["talon_uwms"].id
- 
 local ARMUWES = UnitDefNames["armuwes"].id
 local CORUWES = UnitDefNames["coruwes"].id
 local TLLUWESTORAGE = UnitDefNames["tlluwestorage"].id
 local TALON_UWES = UnitDefNames["talon_uwes"].id
- 
 local ARMFMKR = UnitDefNames["armfmkr"].id
 local CORFMKR = UnitDefNames["corfmkr"].id
 local TLLWMCONV = UnitDefNames["tllwmconv"].id
 local TALON_FMKR = UnitDefNames["talon_fmkr"].id
- 
 local ARMFDRAG = UnitDefNames["armfdrag"].id
 local CORFDRAG = UnitDefNames["corfdrag"].id
-local TLLDTNS = UnitDefNames["tlldtns"].id
 local TALON_FDRAG = UnitDefNames["talon_fdrag"].id
- 
 local ARMGEOMINI = UnitDefNames["armgeo_mini"].id
 local CORGEOMINI = UnitDefNames["corgeo_mini"].id
 local TLLGEOMINI = UnitDefNames["tllgeo_mini"].id
 local TALON_GEOMINI = UnitDefNames["talon_geo_mini"].id
-
 -- this info is used to switch buildings between factions
 local ArmToCore = {}
-
 -- to check if OTA icon exist, defs table
 local OtaIconExist = {}
-
 ArmToCore[ARMMEX] = CORMEX
 ArmToCore[ARMUWMEX] = CORUWMEX
 ArmToCore[ARMSOLAR] = CORSOLAR
@@ -242,9 +201,7 @@ ArmToCore[ARMUWES] = CORUWES
 ArmToCore[ARMFMKR] = CORFMKR
 ArmToCore[ARMFDRAG] = CORFDRAG
 ArmToCore[ARMGEOMINI] = CORGEOMINI
-
 local TllToCore = {}
-
 TllToCore[TLLMEX] = CORMEX
 TllToCore[TLLUWMEX] = CORUWMEX
 TllToCore[TLLSOLAR] = CORSOLAR
@@ -271,9 +228,7 @@ TllToCore[TLLWMCONV] = CORFMKR
 TllToCore[TLLDTNS] = CORFDRAG
 TllToCore[TllTORP] = CORTL
 TllToCore[TLLGEOMINI] = CORGEOMINI
-
 local TllToArm = {}
-
 TllToArm[TLLMEX] = ARMMEX
 TllToArm[TLLUWMEX] = ARMUWMEX
 TllToArm[TLLSOLAR] = ARMSOLAR
@@ -300,9 +255,7 @@ TllToArm[TLLWMCONV] = ARMFMKR
 TllToArm[TLLDTNS] = ARMFDRAG
 TllToArm[TllTORP] = ARMTL
 TllToArm[TLLGEOMINI] = ARMGEOMINI
-
 local TalonToTll = {}
-
 TalonToTll[TALON_MEX] = TLLMEX
 TalonToTll[TALON_UWMEX] = TLLUWMEX
 TalonToTll[TALON_SOLAR] = TLLSOLAR
@@ -327,9 +280,7 @@ TalonToTll[TALON_FMKR] = TLLWMCONV
 TalonToTll[TALON_FDRAG] = TLLDTNS
 TalonToTll[TALON_TL] = TllTORP
 TalonToTll[TALON_GEOMINI] = TLLGEOMINI
-
 local TalonToArm = {}
-
 TalonToArm[TALON_MEX] = ARMMEX
 TalonToArm[TALON_UWMEX] = ARMUWMEX
 TalonToArm[TALON_SOLAR] = ARMSOLAR
@@ -348,15 +299,14 @@ TalonToArm[TALON_ESTOR] = ARMESTOR
 TalonToArm[TALON_MAKR] = ARMMAKR
 TalonToArm[TALON_DRAG] = ARMDRAG
 TalonToArm[TALON_AP] = ARMAP
+TalonToArm[TALON_FRAD] = ARMFRAD
 TalonToArm[TALON_UWMS] = ARMUWMS
 TalonToArm[TALON_UWES] = ARMUWES
 TalonToArm[TALON_FMKR] = ARMFMKR
 TalonToArm[TALON_FDRAG] = ARMFDRAG
 TalonToArm[TALON_TL] = ARMTL
 TalonToArm[TALON_GEOMINI] = ARMGEOMINI
-
 local TalonToCore = {}
-
 TalonToCore[TALON_MEX] = CORMEX
 TalonToCore[TALON_UWMEX] = CORUWMEX
 TalonToCore[TALON_SOLAR] = CORSOLAR
@@ -375,6 +325,7 @@ TalonToCore[TALON_ESTOR] = CORESTOR
 TalonToCore[TALON_MAKR] = CORMAKR
 TalonToCore[TALON_DRAG] = CORDRAG
 TalonToCore[TALON_AP] = CORAP
+TalonToArm[TALON_FRAD] = CORFRAD
 TalonToCore[TALON_UWMS] = CORUWMS
 TalonToCore[TALON_UWES] = CORUWES
 TalonToCore[TALON_FMKR] = CORFMKR
@@ -382,11 +333,10 @@ TalonToCore[TALON_FDRAG] = CORFDRAG
 TalonToCore[TALON_TL] = CORTL
 TalonToCore[TALON_GEOMINI] = CORGEOMINI
 
-
 function table_invert(t)
 	local s = {}
 
-	for k,v in pairs(t) do
+	for k, v in pairs(t) do
 		s[v] = k
 	end
 
@@ -394,22 +344,22 @@ function table_invert(t)
 end
 
 local CoreToArm = table_invert(ArmToCore)
-local CoreTotll = table_invert(TllToCore)
-local ArmTotll = table_invert(TllToArm)
+local CoreToTll = table_invert(TllToCore)
+local ArmToTll = table_invert(TllToArm)
 local TllToTalon = table_invert(TalonToTll)
 local ArmToTalon = table_invert(TalonToArm)
 local CoreToTalon = table_invert(TalonToCore)
 local isMex = {}
 local isBuildableQueue = {}
 
-for uDefID,uDef in pairs(UnitDefs) do
+for uDefID, uDef in pairs(UnitDefs) do
 	if uDef.extractsMetal > 0 then
 		isMex[uDefID] = true
 	end
 
 	if ARMCOM == uDefID or CORCOM == uDefID or TLLCOM == uDefID or TALON_COM == uDefID then
 		if uDef.buildOptions then
-			for i = 1,#uDef.buildOptions do
+			for i = 1, #uDef.buildOptions do
 				local tooltip = UnitDefs[uDef.buildOptions[i]].tooltip
 				local humanName = UnitDefs[uDef.buildOptions[i]].humanName
 				local text = "\255\215\255\215" .. humanName .. "\n\255\240\240\240"
@@ -427,7 +377,7 @@ for uDefID,uDef in pairs(UnitDefs) do
 	end
 end
 
-for uDefID,uDef in pairs(UnitDefs) do
+for uDefID, uDef in pairs(UnitDefs) do
 	if uDef.extractsMetal > 0 then
 		isMex[uDefID] = true
 	end
@@ -442,8 +392,8 @@ local selDefID = nil -- Currently selected def ID
 local buildQueue = {}
 local buildNameToID = {}
 local gameStarted = false
-local wWidth,wHeight = Spring.GetWindowGeometry()
-local wl,wt = 50,0.5 * wHeight
+local wWidth, wHeight = Spring.GetWindowGeometry()
+local wl, wt = 50, 0.5 * wHeight
 local cellRows = {} -- {{bDefID, bDefID, ...}, ...}
 local panelList = nil -- Display list for panel
 local areDragging = false
@@ -453,23 +403,23 @@ local changeStartUnitRegex = '^\138(%d+)$'
 local startUnitParamName = 'startUnit'
 local myTeamID = Spring.GetMyTeamID()
 local myPlayerID = Spring.GetMyPlayerID()
-local amNewbie = (Spring.GetTeamRulesParam(myTeamID,'isNewbie') == 1)
+local amNewbie = (Spring.GetTeamRulesParam(myTeamID, 'isNewbie') == 1)
 local totalTime
 
 ------------------------------------------------------------
 -- Local functions
 ------------------------------------------------------------
-function wrap(str,limit)
+function wrap(str, limit)
 	limit = limit or 72
 	local here = 1
 	local buf = ""
 	local t = {}
 
-	str:gsub("(%s*)()(%S+)()",function(sp,st,word,fi)
+	str:gsub("(%s*)()(%S+)()", function(sp, st, word, fi)
 		if fi - here > limit then
 			--# Break the line
 			here = st
-			table.insert(t,buf)
+			table.insert(t, buf)
 			buf = word
 		else
 			buf = buf .. sp .. word --# Append
@@ -478,77 +428,77 @@ function wrap(str,limit)
 
 	--# Tack on any leftovers
 	if (buf ~= "") then
-		table.insert(t,buf)
+		table.insert(t, buf)
 	end
 
 	return t
 end
 
-local function RectQuad(px,py,sx,sy)
+local function RectQuad(px, py, sx, sy)
 	local o = 0.008 -- texture offset, because else grey line might show at the edges
-	gl.TexCoord(o,1 - o)
-	gl.Vertex(px,py,0)
-	gl.TexCoord(1 - o,1 - o)
-	gl.Vertex(sx,py,0)
-	gl.TexCoord(1 - o,o)
-	gl.Vertex(sx,sy,0)
-	gl.TexCoord(o,o)
-	gl.Vertex(px,sy,0)
+	gl.TexCoord(o, 1 - o)
+	gl.Vertex(px, py, 0)
+	gl.TexCoord(1 - o, 1 - o)
+	gl.Vertex(sx, py, 0)
+	gl.TexCoord(1 - o, o)
+	gl.Vertex(sx, sy, 0)
+	gl.TexCoord(o, o)
+	gl.Vertex(px, sy, 0)
 end
 
-function DrawRect(px,py,sx,sy)
-	gl.BeginEnd(GL.QUADS,RectQuad,px,py,sx,sy)
+function DrawRect(px, py, sx, sy)
+	gl.BeginEnd(GL.QUADS, RectQuad, px, py, sx, sy)
 end
 
-local function TraceDefID(mx,my)
+local function TraceDefID(mx, my)
 	local overRow = cellRows[1 + math.floor((wt - my) / ((iconHeight + borderSize) * widgetScale))]
 	if not overRow then return nil end
 
 	return overRow[1 + math.floor((mx - wl) / ((iconWidth + borderSize) * widgetScale))]
 end
 
-local function GetBuildingDimensions(uDefID,facing)
+local function GetBuildingDimensions(uDefID, facing)
 	local bDef = UnitDefs[uDefID]
 
 	if (facing % 2 == 1) then
-		return 4 * bDef.zsize,4 * bDef.xsize
+		return 4 * bDef.zsize, 4 * bDef.xsize
 	else
-		return 4 * bDef.xsize,4 * bDef.zsize
+		return 4 * bDef.xsize, 4 * bDef.zsize
 	end
 end
 
-local function DrawBuilding(buildData,borderColor,buildingAlpha,drawRanges)
-	local bDefID,bx,by,bz,facing = buildData[1],buildData[2],buildData[3],buildData[4],buildData[5]
-	local bw,bh = GetBuildingDimensions(bDefID,facing)
+local function DrawBuilding(buildData, borderColor, buildingAlpha, drawRanges)
+	local bDefID, bx, by, bz, facing = buildData[1], buildData[2], buildData[3], buildData[4], buildData[5]
+	local bw, bh = GetBuildingDimensions(bDefID, facing)
 	gl.DepthTest(false)
 	gl.Color(borderColor)
 
-	gl.Shape(GL.LINE_LOOP,{
+	gl.Shape(GL.LINE_LOOP, {
 		{
-			v = {bx - bw,by,bz - bh}
+			v = {bx - bw, by, bz - bh}
 		},
 		{
-			v = {bx + bw,by,bz - bh}
+			v = {bx + bw, by, bz - bh}
 		},
 		{
-			v = {bx + bw,by,bz + bh}
+			v = {bx + bw, by, bz + bh}
 		},
 		{
-			v = {bx - bw,by,bz + bh}
+			v = {bx - bw, by, bz + bh}
 		}
 	})
 
 	if drawRanges then
 		if isMex[bDefID] then
-			gl.Color(1.0,0.3,0.3,0.7)
-			gl.DrawGroundCircle(bx,by,bz,Game.extractorRadius,50)
+			gl.Color(1.0, 0.3, 0.3, 0.7)
+			gl.DrawGroundCircle(bx, by, bz, Game.extractorRadius, 50)
 		end
 
 		local wRange = weaponRange[bDefID]
 
 		if wRange then
-			gl.Color(1.0,0.3,0.3,0.7)
-			gl.DrawGroundCircle(bx,by,bz,wRange,40)
+			gl.Color(1.0, 0.3, 0.3, 0.7)
+			gl.DrawGroundCircle(bx, by, bz, wRange, 40)
 		end
 	end
 
@@ -559,34 +509,34 @@ local function DrawBuilding(buildData,borderColor,buildingAlpha,drawRanges)
 		gl.Lighting(true)
 	end
 
-	gl.Color(1.0,1.0,1.0,buildingAlpha)
+	gl.Color(1.0, 1.0, 1.0, buildingAlpha)
 	gl.PushMatrix()
-	gl.Translate(bx,by,bz)
-	gl.Rotate(90 * facing,0,1,0)
-	gl.UnitShape(bDefID,Spring.GetMyTeamID(),false,true,false)
+	gl.Translate(bx, by, bz)
+	gl.Rotate(90 * facing, 0, 1, 0)
+	gl.UnitShape(bDefID, Spring.GetMyTeamID(), false, true, false)
 	gl.PopMatrix()
 	gl.Lighting(false)
 	gl.DepthTest(false)
 	gl.DepthMask(false)
 end
 
-local function DrawUnitDef(uDefID,uTeam,ux,uy,uz)
-	gl.Color(1.0,1.0,1.0,1.0)
+local function DrawUnitDef(uDefID, uTeam, ux, uy, uz)
+	gl.Color(1.0, 1.0, 1.0, 1.0)
 	gl.DepthTest(GL.LEQUAL)
 	gl.DepthMask(true)
 	gl.Lighting(true)
 	gl.PushMatrix()
-	gl.Translate(ux,uy,uz)
-	gl.UnitShape(uDefID,uTeam,false,true,false)
+	gl.Translate(ux, uy, uz)
+	gl.UnitShape(uDefID, uTeam, false, true, false)
 	gl.PopMatrix()
 	gl.Lighting(false)
 	gl.DepthTest(false)
 	gl.DepthMask(false)
 end
 
-local function DoBuildingsClash(buildData1,buildData2)
-	local w1,h1 = GetBuildingDimensions(buildData1[1],buildData1[5])
-	local w2,h2 = GetBuildingDimensions(buildData2[1],buildData2[5])
+local function DoBuildingsClash(buildData1, buildData2)
+	local w1, h1 = GetBuildingDimensions(buildData1[1], buildData1[5])
+	local w2, h2 = GetBuildingDimensions(buildData2[1], buildData2[5])
 
 	return math.abs(buildData1[2] - buildData2[2]) < w1 + w2 and math.abs(buildData1[4] - buildData2[4]) < h1 + h2
 end
@@ -615,12 +565,12 @@ local function GetUnitCanCompleteQueue(uID)
 	local uCanBuild = {}
 	local uBuilds = UnitDefs[uDefID].buildOptions
 
-	for i = 1,#uBuilds do
+	for i = 1, #uBuilds do
 		uCanBuild[uBuilds[i]] = true
 	end
 
 	-- Can it build everything that was queued ?
-	for i = 1,#buildQueue do
+	for i = 1, #buildQueue do
 		if not uCanBuild[buildQueue[i][1]] then return false end
 	end
 
@@ -630,7 +580,7 @@ end
 local function GetQueueBuildTime()
 	local t = 0
 
-	for i = 1,#buildQueue do
+	for i = 1, #buildQueue do
 		t = t + UnitDefs[buildQueue[i][1]].buildTime
 	end
 
@@ -642,33 +592,36 @@ local function GetQueueCosts()
 	local eCost = 0
 	local bCost = 0
 
-	for i = 1,#buildQueue do
+	for i = 1, #buildQueue do
 		local uDef = UnitDefs[buildQueue[i][1]]
 		mCost = mCost + uDef.metalCost
 		eCost = eCost + uDef.energyCost
 		bCost = bCost + uDef.buildTime
 	end
 
-	return mCost,eCost,bCost
+	return mCost, eCost, bCost
 end
 
 ------------------------------------------------------------
 -- Initialize/shutdown
 ------------------------------------------------------------
-
 function widget:Initialize()
-    if not WG["background_opacity_custom"] then
-        WG["background_opacity_custom"] = {0,0,0,0.5}
-    end
-	if (Game.startPosType == 1) or			-- Don't run if start positions are random
-		(Spring.GetGameFrame() > 0) or		-- Don't run if game has already started
-		amNewbie or						-- Don't run if i'm a newbie
-		(Spring.GetSpectatingState()) then	-- Don't run if we are a spec
+	if not WG["background_opacity_custom"] then
+		WG["background_opacity_custom"] = {0, 0, 0, 0.5}
+	end
+
+	-- Don't run if start positions are random
+	if (Game.startPosType == 1) or (Spring.GetGameFrame() > 0) or amNewbie or (Spring.GetSpectatingState()) then
+		-- Don't run if game has already started
+		-- Don't run if i'm a newbie
+		-- Don't run if we are a spec
 		widgetHandler:RemoveWidget(self)
+
 		return
 	end
+
 	-- Get our starting unit
-	local _,_,_,_,mySide = Spring.GetTeamInfo(myTeamID)
+	local _, _, _, _, mySide = Spring.GetTeamInfo(myTeamID)
 
 	-- Don't run unless we know what faction the player is
 	if mySide == "" then
@@ -688,28 +641,28 @@ end
 function processGuishader()
 	if (WG['guishader_api'] ~= nil) then
 		local sBuilds = UnitDefs[sDefID].buildOptions
-		local numCols = math.min(#sBuilds,maxCols)
+		local numCols = math.min(#sBuilds, maxCols)
 		local numRows = math.ceil(#sBuilds / numCols)
 		local bgheight = ((numRows * iconHeight) + margin) * widgetScale
 		local bgwidth = ((numCols * iconWidth) + margin) * widgetScale
-		WG['guishader_api'].InsertRect(wl - (margin * widgetScale),wt - bgheight,wl + bgwidth,wt + margin * widgetScale,'initialqueue')
+		WG['guishader_api'].InsertRect(wl - (margin * widgetScale), wt - bgheight, wl + bgwidth, wt + margin * widgetScale, 'initialqueue')
 	end
 end
 
-function RectRound(px,py,sx,sy,cs)
-	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy),math.floor(cs)
-	gl.Rect(px + cs,py,sx - cs,sy)
-	gl.Rect(sx - cs,py + cs,sx,sy - cs)
-	gl.Rect(px + cs,py + cs,px,sy - cs)
+function RectRound(px, py, sx, sy, cs)
+	local px, py, sx, sy, cs = math.floor(px), math.floor(py), math.ceil(sx), math.ceil(sy), math.floor(cs)
+	gl.Rect(px + cs, py, sx - cs, sy)
+	gl.Rect(sx - cs, py + cs, sx, sy - cs)
+	gl.Rect(px + cs, py + cs, px, sy - cs)
 	gl.Texture(bgcorner)
 	--if py <= 0 or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
-	DrawRect(px,py + cs,px + cs,py) -- top left
+	DrawRect(px, py + cs, px + cs, py) -- top left
 	--if py <= 0 or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
-	DrawRect(sx,py + cs,sx - cs,py) -- top right
+	DrawRect(sx, py + cs, sx - cs, py) -- top right
 	--if sy >= vsy or px <= 0 then gl.Texture(false) else gl.Texture(bgcorner) end
-	DrawRect(px,sy - cs,px + cs,sy) -- bottom left
+	DrawRect(px, sy - cs, px + cs, sy) -- bottom left
 	--if sy >= vsy or sx >= vsx then gl.Texture(false) else gl.Texture(bgcorner) end
-	DrawRect(sx,sy - cs,sx - cs,sy) -- bottom right
+	DrawRect(sx, sy - cs, sx - cs, sy) -- bottom right
 	gl.Texture(false)
 end
 
@@ -719,14 +672,14 @@ function InitializeFaction(sDefID)
 	local sBuilds = sDef.buildOptions
 	if not sBuilds or (#sBuilds == 0) then return end
 	-- Set up cells
-	local numCols = math.min(#sBuilds,maxCols)
+	local numCols = math.min(#sBuilds, maxCols)
 	local numRows = math.ceil(#sBuilds / numCols)
 
-	for r = 1,numRows do
+	for r = 1, numRows do
 		cellRows[r] = {}
 	end
 
-	for b = 0,#sBuilds - 1 do
+	for b = 0, #sBuilds - 1 do
 		cellRows[1 + math.floor(b / numCols)][1 + b % numCols] = sBuilds[b + 1]
 
 		if VFS.FileExists(oldUnitpicsDir .. UnitDefs[sBuilds[b + 1]].name .. '.png') then
@@ -739,7 +692,7 @@ function InitializeFaction(sDefID)
 		gl.DeleteList(panelList)
 	end
 
-	for uDefID,uDef in pairs(UnitDefs) do
+	for uDefID, uDef in pairs(UnitDefs) do
 		if uDef.extractsMetal > 0 then
 			isMex[uDefID] = true
 		end
@@ -762,22 +715,20 @@ function widget:Shutdown()
 	WG["faction_change"] = nil
 end
 
-
 ------------------------------------------------------------
 -- Config
 ------------------------------------------------------------
-
 function widget:GetConfigData()
 	if (Spring.GetSpectatingState()) then return end
 	--local wWidth, wHeight = Spring.GetWindowGeometry()
 	--return {wl / wWidth, wt / wHeight}
-	local _,_,_,_,mySide = Spring.GetTeamInfo(Spring.GetMyTeamID())
+	local _, _, _, _, mySide = Spring.GetTeamInfo(Spring.GetMyTeamID())
 
 	if Spring.GetGameSeconds() <= 0 and mySide ~= "" then
 		local startUnitName = Spring.GetSideData(mySide)
 		local sDefID = UnitDefNames[startUnitName].id
 		local sBuilds = UnitDefs[sDefID].buildOptions
-		local numCols = math.min(#sBuilds,maxCols)
+		local numCols = math.min(#sBuilds, maxCols)
 		local numRows = math.ceil(#sBuilds / numCols)
 		local bgheight = ((numRows * iconHeight) + margin) * widgetScale
 		local bgwidth = ((numCols * iconWidth) + margin) * widgetScale
@@ -829,36 +780,33 @@ end
 ------------------------------------------------------------
 --local queueTimeFormat = whiteColor .. 'Queued: ' .. buildColor .. '%.1f sec ' .. whiteColor .. '[' .. metalColor .. '%d m' .. whiteColor .. ', ' .. energyColor .. '%d e' .. whiteColor .. ']'
 local queueTimeFormat = whiteColor .. 'Queued ' .. metalColor .. '%dm ' .. energyColor .. '%de ' .. buildColor .. '%.1f sec'
+
 --local queueTimeFormat = metalColor .. '%dm ' .. whiteColor .. '/ ' .. energyColor .. '%de ' .. whiteColor .. '/ ' .. buildColor .. '%.1f sec'
-
-
 -- "Queued 23.9 seconds (820m / 2012e)" (I think this one is the best. Time first emphasises point and goodness of widget)
-	-- Also, it is written like english and reads well, none of this colon stuff or figures stacked together
-
-
+-- Also, it is written like english and reads well, none of this colon stuff or figures stacked together
 function widget:DrawScreen()
 	gl.PushMatrix()
-	gl.Translate(wl,wt,0)
-	gl.Scale(widgetScale,widgetScale,widgetScale)
+	gl.Translate(wl, wt, 0)
+	gl.Scale(widgetScale, widgetScale, widgetScale)
 	gl.PushMatrix()
-	gl.Translate(0,borderSize,0)
+	gl.Translate(0, borderSize, 0)
 	-- background
 	local bgheight = ((#cellRows * iconHeight) + margin)
 	local bgwidth = ((maxCols * iconWidth) + margin)
 	gl.Color(WG["background_opacity_custom"])
-	RectRound(-(margin),-bgheight,bgwidth,margin,((iconWidth + iconPadding + iconPadding) / 7))
+	RectRound(-(margin), -bgheight, bgwidth, margin, ((iconWidth + iconPadding + iconPadding) / 7))
 	gl.Color(borderColor)
-	RectRound(-(margin) + borderPadding,-bgheight + borderPadding,bgwidth - borderPadding,margin - borderPadding,((iconWidth + iconPadding + iconPadding) / 9))
+	RectRound(-(margin) + borderPadding, -bgheight + borderPadding, bgwidth - borderPadding, margin - borderPadding, ((iconWidth + iconPadding + iconPadding) / 9))
 
-	for r = 1,#cellRows do
+	for r = 1, #cellRows do
 		local cellRow = cellRows[r]
-		gl.Translate(0,-((iconHeight - borderSize)),0)
+		gl.Translate(0, -((iconHeight - borderSize)), 0)
 		gl.PushMatrix()
 
-		for c = 1,#cellRow do
-			gl.Color(0,0,0,1)
+		for c = 1, #cellRow do
+			gl.Color(0, 0, 0, 1)
 			--gl.Rect(-borderSize, -borderSize, iconWidth + borderSize, iconHeight + borderSize)
-			gl.Color(1,1,1,1)
+			gl.Color(1, 1, 1, 1)
 
 			if WG['OtaIcons'] and OtaIconExist[cellRow[c]] then
 				gl.Texture(OtaIconExist[cellRow[c]])
@@ -866,9 +814,9 @@ function widget:DrawScreen()
 				gl.Texture('#' .. cellRow[c]) -- Screen.vsx,Screen.vsy
 			end
 
-			DrawRect(iconPadding,iconPadding,(iconWidth - iconPadding),(iconHeight - iconPadding))
+			DrawRect(iconPadding, iconPadding, (iconWidth - iconPadding), (iconHeight - iconPadding))
 			gl.Texture(false)
-			gl.Translate((iconWidth + borderSize),0,0)
+			gl.Translate((iconWidth + borderSize), 0, 0)
 		end
 
 		gl.PopMatrix()
@@ -876,13 +824,13 @@ function widget:DrawScreen()
 
 	gl.PopMatrix()
 	--gl.CallList(panelList)
-	gl.Scale(1 / widgetScale,1 / widgetScale,1 / widgetScale)
+	gl.Scale(1 / widgetScale, 1 / widgetScale, 1 / widgetScale)
 
 	if #buildQueue > 0 then
-		local mCost,eCost,bCost = GetQueueCosts()
+		local mCost, eCost, bCost = GetQueueCosts()
 		local buildTime = bCost / sDef.buildSpeed
 		totalTime = buildTime
-		gl.Text(string.format(queueTimeFormat,mCost,eCost,buildTime),0,margin * widgetScale,fontSize * widgetScale,'do')
+		gl.Text(string.format(queueTimeFormat, mCost, eCost, buildTime), 0, margin * widgetScale, fontSize * widgetScale, 'do')
 	end
 
 	-- draw hover
@@ -890,40 +838,40 @@ function widget:DrawScreen()
 	local row = 1 + math.floor((wt - CurMouseState[2]) / ((iconHeight + borderSize) * widgetScale))
 	local col = 1 + math.floor((wl - CurMouseState[1]) / ((iconWidth + borderSize) * widgetScale))
 
-	if TraceDefID(CurMouseState[1],CurMouseState[2]) then
-		gl.Translate(-((iconWidth * widgetScale) * col),-((iconHeight * widgetScale) * row),0)
+	if TraceDefID(CurMouseState[1], CurMouseState[2]) then
+		gl.Translate(-((iconWidth * widgetScale) * col), -((iconHeight * widgetScale) * row), 0)
 		gl.Texture(buttonhighlight)
 		gl.Color(hoverColor)
-		DrawRect((iconPadding * widgetScale),(iconPadding * widgetScale),((iconWidth - iconPadding) * widgetScale),((iconHeight - iconPadding) * widgetScale))
-		gl.Color(hoverColor[1],hoverColor[2],hoverColor[3],hoverColor[4] / 1.5)
-		glBlending(GL_SRC_ALPHA,GL_ONE)
-		DrawRect((iconPadding * widgetScale),(iconPadding * widgetScale),((iconWidth - iconPadding) * widgetScale),((iconHeight - iconPadding) * widgetScale))
-		glBlending(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA)
+		DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+		gl.Color(hoverColor[1], hoverColor[2], hoverColor[3], hoverColor[4] / 1.5)
+		glBlending(GL_SRC_ALPHA, GL_ONE)
+		DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+		glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
 		if CurMouseState[3] then
 			gl.Color(clickColor)
-			DrawRect((iconPadding * widgetScale),(iconPadding * widgetScale),((iconWidth - iconPadding) * widgetScale),((iconHeight - iconPadding) * widgetScale))
-			gl.Color(clickColor[1],clickColor[2],clickColor[3],clickColor[4] / 1.5)
-			glBlending(GL_SRC_ALPHA,GL_ONE)
-			DrawRect((iconPadding * widgetScale),(iconPadding * widgetScale),((iconWidth - iconPadding) * widgetScale),((iconHeight - iconPadding) * widgetScale))
-			glBlending(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA)
+			DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+			gl.Color(clickColor[1], clickColor[2], clickColor[3], clickColor[4] / 1.5)
+			glBlending(GL_SRC_ALPHA, GL_ONE)
+			DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+			glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 			lastClickedRow = row
 			lastClickedCol = col
 		end
 
 		gl.Texture(false)
-		gl.Translate(((iconWidth * widgetScale) * col),((iconHeight * widgetScale) * row),0)
+		gl.Translate(((iconWidth * widgetScale) * col), ((iconHeight * widgetScale) * row), 0)
 
 		if drawTooltip and WG['tooltip'] ~= nil then
-			local udefid = TraceDefID(CurMouseState[1],CurMouseState[2])
+			local udefid = TraceDefID(CurMouseState[1], CurMouseState[2])
 			local text = isBuildableQueue[udefid].text
 
 			if drawBigTooltip and isBuildableQueue[udefid].description_long ~= nil then
-				local lines = wrap(isBuildableQueue[udefid].description_long,58)
+				local lines = wrap(isBuildableQueue[udefid].description_long, 58)
 				local description = ''
 				local newline = ''
 
-				for i,line in ipairs(lines) do
+				for i, line in ipairs(lines) do
 					description = description .. newline .. line
 					newline = '\n'
 				end
@@ -933,22 +881,22 @@ function widget:DrawScreen()
 				text = text .. isBuildableQueue[udefid].tooltip
 			end
 
-			WG['tooltip'].ShowTooltip('initialqueue',text)
+			WG['tooltip'].ShowTooltip('initialqueue', text)
 		end
 	end
 
 	if selDefID ~= nil and lastClickedRow ~= nil and lastClickedCol ~= nil then
-		local row,col = lastClickedRow,lastClickedCol
-		gl.Translate(-((iconWidth * widgetScale) * col),-((iconHeight * widgetScale) * row),0)
+		local row, col = lastClickedRow, lastClickedCol
+		gl.Translate(-((iconWidth * widgetScale) * col), -((iconHeight * widgetScale) * row), 0)
 		gl.Texture(buttonpushed)
 		gl.Color(pushedColor)
-		DrawRect((iconPadding * widgetScale),(iconPadding * widgetScale),((iconWidth - iconPadding) * widgetScale),((iconHeight - iconPadding) * widgetScale))
-		gl.Color(pushedColor[1],pushedColor[2],pushedColor[3],pushedColor[4] / 1.5)
-		glBlending(GL_SRC_ALPHA,GL_ONE)
-		DrawRect((iconPadding * widgetScale),(iconPadding * widgetScale),((iconWidth - iconPadding) * widgetScale),((iconHeight - iconPadding) * widgetScale))
-		glBlending(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA)
+		DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+		gl.Color(pushedColor[1], pushedColor[2], pushedColor[3], pushedColor[4] / 1.5)
+		glBlending(GL_SRC_ALPHA, GL_ONE)
+		DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+		glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 		gl.Texture(false)
-		gl.Translate(((iconWidth * widgetScale) * col),((iconHeight * widgetScale) * row),0)
+		gl.Translate(((iconWidth * widgetScale) * col), ((iconHeight * widgetScale) * row), 0)
 	end
 
 	gl.PopMatrix()
@@ -963,23 +911,23 @@ function widget:DrawWorld()
 	local selBuildData
 
 	if selDefID then
-		local mx,my = Spring.GetMouseState()
-		local _,pos = Spring.TraceScreenRay(mx,my,true)
+		local mx, my = Spring.GetMouseState()
+		local _, pos = Spring.TraceScreenRay(mx, my, true)
 
 		if pos then
-			local bx,by,bz = Spring.Pos2BuildPos(selDefID,pos[1],pos[2],pos[3])
+			local bx, by, bz = Spring.Pos2BuildPos(selDefID, pos[1], pos[2], pos[3])
 			local buildFacing = Spring.GetBuildFacing()
-			selBuildData = {selDefID,bx,by,bz,buildFacing}
+			selBuildData = {selDefID, bx, by, bz, buildFacing}
 		end
 	end
 
 	local myTeamID = Spring.GetMyTeamID()
-	local sx,sy,sz = Spring.GetTeamStartPosition(myTeamID) -- Returns -100, -100, -100 when none chosen
+	local sx, sy, sz = Spring.GetTeamStartPosition(myTeamID) -- Returns -100, -100, -100 when none chosen
 	local startChosen = (sx ~= -100)
 
 	if startChosen then
 		-- Correction for start positions in the air
-		sy = Spring.GetGroundHeight(sx,sz)
+		sy = Spring.GetGroundHeight(sx, sz)
 
 		-- Draw the starting unit at start position
 		if sDef.id == ARMCOM then
@@ -990,14 +938,14 @@ function widget:DrawWorld()
 			sDefID = sDef.id
 		end
 
-		DrawUnitDef(sDefID,myTeamID,sx,sy,sz)
+		DrawUnitDef(sDefID, myTeamID, sx, sy, sz)
 		-- Draw start units build radius
 		gl.Color(buildDistanceColor)
-		gl.DrawGroundCircle(sx,sy,sz,sDef.buildDistance,40)
+		gl.DrawGroundCircle(sx, sy, sz, sDef.buildDistance, 40)
 	end
 
 	-- Check for faction change
-	for b = 1,#buildQueue do
+	for b = 1, #buildQueue do
 		local buildData = buildQueue[b]
 		local buildDataId = buildData[1]
 
@@ -1032,18 +980,18 @@ function widget:DrawWorld()
 				buildQueue[b] = buildData
 			end
 		elseif sDef.id == TLLCOM then
-			if CoreTotll[buildDataId] ~= nil then
-				buildData[1] = CoreTotll[buildDataId]
+			if CoreToTll[buildDataId] ~= nil then
+				buildData[1] = CoreToTll[buildDataId]
 				buildQueue[b] = buildData
 			end
 
-			if ArmTotll[buildDataId] ~= nil then
-				buildData[1] = ArmTotll[buildDataId]
+			if ArmToTll[buildDataId] ~= nil then
+				buildData[1] = ArmToTll[buildDataId]
 				buildQueue[b] = buildData
 			end
 
-			if TalonTotll[buildDataId] ~= nil then
-				buildData[1] = TalonTotll[buildDataId]
+			if TalonToTll[buildDataId] then
+				buildData[1] = TalonToTll[buildDataId]
 				buildQueue[b] = buildData
 			end
 		elseif sDef.id == TALON_COM then
@@ -1067,50 +1015,48 @@ function widget:DrawWorld()
 	-- Draw all the buildings
 	local queueLineVerts = startChosen and {
 		{
-			v = {sx,sy,sz}
+			v = {sx, sy, sz}
 		}
 	} or {}
 
-	for b = 1,#buildQueue do
+	for b = 1, #buildQueue do
 		local buildData = buildQueue[b]
 
-		if selBuildData and DoBuildingsClash(selBuildData,buildData) then
-			DrawBuilding(buildData,borderClashColor,buildingQueuedAlpha)
+		if selBuildData and DoBuildingsClash(selBuildData, buildData) then
+			DrawBuilding(buildData, borderClashColor, buildingQueuedAlpha)
 		else
-			DrawBuilding(buildData,borderNormalColor,buildingQueuedAlpha)
+			DrawBuilding(buildData, borderNormalColor, buildingQueuedAlpha)
 		end
 
 		queueLineVerts[#queueLineVerts + 1] = {
-			v = {buildData[2],buildData[3],buildData[4]}
+			v = {buildData[2], buildData[3], buildData[4]}
 		}
 	end
 
 	-- Draw queue lines
 	gl.Color(buildLinesColor)
 	gl.LineStipple("springdefault")
-	gl.Shape(GL.LINE_STRIP,queueLineVerts)
+	gl.Shape(GL.LINE_STRIP, queueLineVerts)
 	gl.LineStipple(false)
 
 	-- Draw selected building
 	if selBuildData then
-		if Spring.TestBuildOrder(selDefID,selBuildData[2],selBuildData[3],selBuildData[4],selBuildData[5]) ~= 0 then
-			DrawBuilding(selBuildData,borderValidColor,1.0,true)
+		if Spring.TestBuildOrder(selDefID, selBuildData[2], selBuildData[3], selBuildData[4], selBuildData[5]) ~= 0 then
+			DrawBuilding(selBuildData, borderValidColor, 1.0, true)
 		else
-			DrawBuilding(selBuildData,borderInvalidColor,1.0,true)
+			DrawBuilding(selBuildData, borderInvalidColor, 1.0, true)
 		end
 	end
 
 	-- Reset gl
-	gl.Color(1.0,1.0,1.0,1.0)
+	gl.Color(1.0, 1.0, 1.0, 1.0)
 	gl.LineWidth(1.0)
 end
 
 ------------------------------------------------------------
 -- Game start
 ------------------------------------------------------------
-
 local comGate = tonumber(Spring.GetModOptions().mo_comgate) or 0 --if comgate is on, all orders are blocked before frame 105
-
 
 function widget:GameFrame(n)
 	if not gameStarted then
@@ -1151,21 +1097,21 @@ function widget:GameFrame(n)
 		-- Search for our starting unit
 		local units = Spring.GetTeamUnits(Spring.GetMyTeamID())
 
-		for u = 1,#units do
+		for u = 1, #units do
 			local uID = units[u]
 
 			--Spring.GetUnitDefID(uID) == sDefID then
 			if GetUnitCanCompleteQueue(uID) then
 				tasker = uID
-				if Spring.GetUnitRulesParam(uID,"startingOwner") == Spring.GetMyPlayerID() then break end --we found our com even if cooping, assigning queue to this particular unit
+				if Spring.GetUnitRulesParam(uID, "startingOwner") == Spring.GetMyPlayerID() then break end --we found our com even if cooping, assigning queue to this particular unit
 			end
 		end
 
 		if tasker then
 			--Spring.Echo("sending queue to unit")
-			for b = 1,#buildQueue do
+			for b = 1, #buildQueue do
 				local buildData = buildQueue[b]
-				Spring.GiveOrderToUnit(tasker,-buildData[1],{buildData[2],buildData[3],buildData[4],buildData[5]},{"shift"})
+				Spring.GiveOrderToUnit(tasker, -buildData[1], {buildData[2], buildData[3], buildData[4], buildData[5]}, {"shift"})
 			end
 
 			widgetHandler:RemoveWidget(self)
@@ -1176,22 +1122,22 @@ end
 ------------------------------------------------------------
 -- Mouse
 ------------------------------------------------------------
-function widget:IsAbove(mx,my)
-	return TraceDefID(mx,my)
+function widget:IsAbove(mx, my)
+	return TraceDefID(mx, my)
 end
 
 local tooltipFormat = 'Build %s\n%s\n' .. metalColor .. '%d m ' .. whiteColor .. '/ ' .. energyColor .. '%d e ' .. whiteColor .. '/ ' .. buildColor .. '%.1f sec'
 
-function widget:GetTooltip(mx,my)
-	local bDefID = TraceDefID(mx,my)
+function widget:GetTooltip(mx, my)
+	local bDefID = TraceDefID(mx, my)
 	local bDef = UnitDefs[bDefID]
 
-	return string.format(tooltipFormat,bDef.humanName,bDef.tooltip,bDef.metalCost,bDef.energyCost,bDef.buildTime / sDef.buildSpeed)
+	return string.format(tooltipFormat, bDef.humanName, bDef.tooltip, bDef.metalCost, bDef.energyCost, bDef.buildTime / sDef.buildSpeed)
 end
 
 function SetBuildFacing()
-	local wx,wy,_,_ = Spring.GetScreenGeometry()
-	local _,pos = Spring.TraceScreenRay(wx / 2,wy / 2,true)
+	local wx, wy, _, _ = Spring.GetScreenGeometry()
+	local _, pos = Spring.TraceScreenRay(wx / 2, wy / 2, true)
 	if not pos then return end
 	local x = pos[1]
 	local z = pos[3]
@@ -1215,8 +1161,8 @@ end
 
 needBuildFacing = true
 
-function widget:MousePress(mx,my,mButton)
-	local tracedDefID = TraceDefID(mx,my)
+function widget:MousePress(mx, my, mButton)
+	local tracedDefID = TraceDefID(mx, my)
 
 	if tracedDefID then
 		if mButton == 1 then
@@ -1236,10 +1182,10 @@ function widget:MousePress(mx,my,mButton)
 	else
 		if selDefID then
 			if mButton == 1 then
-				local mx,my = Spring.GetMouseState()
-				local _,pos = Spring.TraceScreenRay(mx,my,true)
+				local mx, my = Spring.GetMouseState()
+				local _, pos = Spring.TraceScreenRay(mx, my, true)
 				if not pos then return end
-				local bx,by,bz = Spring.Pos2BuildPos(selDefID,pos[1],pos[2],pos[3])
+				local bx, by, bz = Spring.Pos2BuildPos(selDefID, pos[1], pos[2], pos[3])
 				local buildFacing = Spring.GetBuildFacing()
 
 				if WG["PreGameMexPos"] and isMex[selDefID] then
@@ -1249,19 +1195,19 @@ function widget:MousePress(mx,my,mButton)
 					--buildFacing = WG["PreGameMexPos"].buildFacing
 				end
 
-				if Spring.TestBuildOrder(selDefID,bx,by,bz,buildFacing) ~= 0 then
-					local buildData = {selDefID,bx,by,bz,buildFacing}
-					local _,_,meta,shift = Spring.GetModKeyState()
+				if Spring.TestBuildOrder(selDefID, bx, by, bz, buildFacing) ~= 0 then
+					local buildData = {selDefID, bx, by, bz, buildFacing}
+					local _, _, meta, shift = Spring.GetModKeyState()
 
 					if meta then
-						table.insert(buildQueue,1,buildData)
+						table.insert(buildQueue, 1, buildData)
 					elseif shift then
 						local anyClashes = false
 
-						for i = #buildQueue,1,-1 do
-							if DoBuildingsClash(buildData,buildQueue[i]) then
+						for i = #buildQueue, 1, -1 do
+							if DoBuildingsClash(buildData, buildQueue[i]) then
 								anyClashes = true
-								table.remove(buildQueue,i)
+								table.remove(buildQueue, i)
 							end
 						end
 
@@ -1287,10 +1233,10 @@ function widget:MousePress(mx,my,mButton)
 	end
 end
 
-function widget:MouseMove(mx,my,dx,dy,mButton)
+function widget:MouseMove(mx, my, dx, dy, mButton)
 	if areDragging then
 		local sBuilds = UnitDefs[sDefID].buildOptions
-		local numCols = math.min(#sBuilds,maxCols)
+		local numCols = math.min(#sBuilds, maxCols)
 		local numRows = math.ceil(#sBuilds / numCols)
 		local bgheight = ((numRows * iconHeight) + margin) * widgetScale
 		local bgwidth = ((numCols * iconWidth) + margin) * widgetScale
@@ -1323,10 +1269,9 @@ function widget:MouseMove(mx,my,dx,dy,mButton)
 	end
 end
 
-
-function widget:MouseRelease(mx,my,mButton)
+function widget:MouseRelease(mx, my, mButton)
 	areDragging = false
-	local tracedDefID = TraceDefID(mx,my)
+	local tracedDefID = TraceDefID(mx, my)
 
 	if tracedDefID then
 		if mButton == 1 then
@@ -1349,7 +1294,6 @@ end
 -- local XKEY = 120
 -- local CKEY = 99
 -- local VKEY = 118
-
 -- function widget:KeyPress(key,mods,isrepeat)
 -- 	if sDef == UnitDefs[ARMCOM] then
 -- 		if key == ZKEY then
@@ -1436,15 +1380,13 @@ end
 -- 			end
 -- 		end	
 -- 	end
-
 -- end
-
-function widget:ViewResize(newX,newY)
-	vsx,vsy = newX,newY
+function widget:ViewResize(newX, newY)
+	vsx, vsy = newX, newY
 	widgetScale = (0.6 + (vsx * vsy / 4000000)) * customScale
 	processGuishader()
 	local sBuilds = UnitDefs[sDefID].buildOptions
-	local numCols = math.min(#sBuilds,maxCols)
+	local numCols = math.min(#sBuilds, maxCols)
 	local numRows = math.ceil(#sBuilds / numCols)
 	local bgheight = ((numRows * iconHeight) + margin) * widgetScale
 	local bgwidth = ((numCols * iconWidth) + margin) * widgetScale
@@ -1486,7 +1428,7 @@ function widget:TextCommand(cmd)
 		end
 
 		Spring.SetBuildFacing(newFacing)
-		Spring.Echo("Buildings set to face " .. ({"South","East","North","West"})[1 + newFacing])
+		Spring.Echo("Buildings set to face " .. ({"South", "East", "North", "West"})[1 + newFacing])
 
 		return true
 	end
