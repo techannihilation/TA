@@ -77,8 +77,9 @@ return {
 			[17] = "talon_uwfus",
 			[18] = "talon_famkr",
 			[19] = "talon_esy",
-			[20] = "talon_fnanotc2",
-			[21] = "talon_asonar",
+			[20] = "talon_ahpns",
+			[21] = "talon_fnanotc2",
+			[22] = "talon_asonar",
 		},
 		customparams = {
 			buildpic = "talon_ech.dds",
