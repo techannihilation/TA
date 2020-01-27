@@ -130,6 +130,14 @@ local options={
     step   = 0.1,
   },
   {
+    key = "mo_unitlimiter",
+    name = "Spam Limiter",
+    desc = "Limits number of units being build\nAutoHost Usage :- mo_unitlimiter",
+    type   = "bool",
+    def = false,
+    section = "ta_modes",
+  },
+  {
     key    = "mo_noowner",
     name   = "FFA Mode",
     desc   = "Units with no player control are instantly removed/destroyed\nAutoHost Usage :- mo_noowner",
