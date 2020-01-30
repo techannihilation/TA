@@ -1,4 +1,12 @@
-﻿3.30 -> 3.31
+﻿3.31 -> 3.32
+2020-01-30
+Improvments:
+ - Add Watch Tower Talon
+ - Add New Mex Model for Talon
+ - Add T3 Metal and Energy Storage Talon
+ - Add T3 Bertha Talon
+
+3.30 -> 3.31
 2020-01-19
 Balance : 
  - Balance Metron speed
