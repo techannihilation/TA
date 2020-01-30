@@ -85,6 +85,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:akmech_muzzle",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -118,7 +121,9 @@ return {
 		weapondefs = {
 			talon_bats = {
 				accuracy = 350,
-				areaofeffect = 48,
+				areaofeffect = 96,
+				burst = 3,
+				burstrate = 0.4,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -132,7 +137,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 1500,
-				reloadtime = 0.75,
+				reloadtime = 2.25,
 				rgbcolor = "0.86 0.62 0",
 				separation = 0.45,
 				size = 1.25,
@@ -141,8 +146,8 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
+				sprayangle = 420,
 				stages = 20,
-				tolerance = 5000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 470,
@@ -179,7 +184,6 @@ return {
 				texture2 = "coresmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tolerance = 9000,
 				tracks = true,
 				trajectoryheight = 0.45,
 				turnrate = 22000,

@@ -35,7 +35,7 @@ return {
 		footprintx = 1,
 		footprintz = 1,
 		icontype = "building",
-		idleautoheal = 10,
+		idleautoheal = 2,
 		idletime = 300,
 		levelground = false,
 		losemitheight = 22,

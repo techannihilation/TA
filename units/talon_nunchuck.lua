@@ -94,7 +94,6 @@ return {
 			explosiongenerators = {
 				[1] = "custom:akmech_muzzle",
 			},
-
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

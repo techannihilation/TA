@@ -146,14 +146,13 @@ Create()
 	Static_Var_8 = 0;
 	Static_Var_7 = 1;
 	start-script monitorhealth();
-	Static_Var_2 = 0;
+	Static_Var_2 = 1;
 	Static_Var_3 = 3;
 	Static_Var_4 = 0;
 	Static_Var_1 = 3000;
 	//Static_Var_missile = 0;
 	start-script SmokeUnit();
 	call-script InitState();
-	set ARMORED to 1;
 	spin radar around y-axis speed <75.000000> accelerate <10.000000>;
 
 }
@@ -202,48 +201,51 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( Static_Var_2 == 0 )
-	{
-		show flare1;
-		move barrel1 to z-axis [-3.] speed [500.];
-		sleep 150;
-		hide flare1;
-		wait-for-move barrel1 along z-axis;
-		move barrel1 to z-axis [0.] speed [3.];
-	}
-	if( Static_Var_2 == 1 )
-	{
-		show flare2;
-		move barrel2 to z-axis [-3.] speed [500.];
-		sleep 150;
-		hide flare2;
-		wait-for-move barrel2 along z-axis;
-		move barrel2 to z-axis [0.] speed [3.];
-	}
-	if( Static_Var_2 == 2 )
-	{
-		show flare3;
-		move barrel3 to z-axis [-3.] speed [500.];
-		sleep 150;
-		hide flare3;
-		wait-for-move barrel3 along z-axis;
-		move barrel3 to z-axis [0.] speed [3.];
-	}
-	++Static_Var_2;
-	if( Static_Var_2 == 3 )
-	{
-		Static_Var_2 = 0;
-	}
+	emit-sfx 1024 from flare1;
+	move barrel1 to z-axis [-3.] speed [500.];
+	sleep 150;
+	wait-for-move barrel1 along z-axis;
+	move barrel1 to z-axis [0.] speed [3.];
+	sleep 200;
+	
+	Static_Var_2 = 2;
+	emit-sfx 1024 from flare2;
+	move barrel2 to z-axis [-3.] speed [500.];
+	sleep 150;
+	wait-for-move barrel2 along z-axis;
+	move barrel2 to z-axis [0.] speed [3.];
+	sleep 200;
+	
+	Static_Var_2 = 3;
+	emit-sfx 1024 from flare3;
+	move barrel3 to z-axis [-3.] speed [500.];
+	sleep 150;
+	wait-for-move barrel3 along z-axis;
+	move barrel3 to z-axis [0.] speed [3.];
+	sleep 200;
+	Static_Var_2 = 1;
+
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = Static_Var_2;
+	if ( Static_Var_2 == 1) 
+	{	 
+		piecenum = flare1;
+	}
+	if ( Static_Var_2 == 2) 
+	{	 
+		piecenum = flare2;
+	}
+	if ( Static_Var_2 == 3) 
+	{	 
+		piecenum = flare3;
+	}
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = Static_Var_2;
+	piecenum = turret;
 }
 
 AimSecondary(heading, pitch)
