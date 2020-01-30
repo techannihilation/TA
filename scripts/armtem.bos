@@ -5,7 +5,7 @@
 
 piece  lflare, rflare, turret, wake1, wake2, wake3, wake4, wake5,
        wake6, wake7, wake8, barrelcon, lbarrel, rbarrel, launch, lrocket,
-       rrocket, base;
+       rrocket, body, base;
 
 static-var  Static_Var_1, gun_1, gun_2, bAiming, restore_delay;
 
@@ -31,7 +31,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -44,12 +44,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 HitByWeapon(anglex, anglez)
 {
-	turn base to z-axis anglez / <1.791209> speed <105.000000>;
-	turn base to x-axis anglex / <1.791209> speed <105.000000>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <30.000000>;
-	turn base to x-axis <0.000000> speed <30.000000>;
+	turn body to z-axis anglez / <1.791209> speed <105.000000>;
+	turn body to x-axis anglex / <1.791209> speed <105.000000>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.000000> speed <30.000000>;
+	turn body to x-axis <0.000000> speed <30.000000>;
 }
 
 StartMoving()
@@ -243,7 +243,7 @@ Killed(severity, corpsetype)
 			corpsetype = 2;
 			explode lbarrel type NOHEATCLOUD | FALL;
 			explode rbarrel type NOHEATCLOUD | FALL;
-			explode base type NOHEATCLOUD;
+			explode body type NOHEATCLOUD;
 			explode launch type NOHEATCLOUD | FALL;
 			explode turret type NOHEATCLOUD | SHATTER;
 			return (corpsetype);
@@ -251,7 +251,7 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode launch type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
@@ -263,7 +263,7 @@ Killed(severity, corpsetype)
 			corpsetype = 2;
 			explode lbarrel type NOHEATCLOUD | FALL;
 			explode rbarrel type NOHEATCLOUD | FALL;
-			explode base type NOHEATCLOUD;
+			explode body type NOHEATCLOUD;
 			explode launch type NOHEATCLOUD | FALL;
 			explode turret type NOHEATCLOUD | SHATTER;
 			return (corpsetype);
@@ -271,7 +271,7 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode launch type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
@@ -281,7 +281,7 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode lbarrel type NOHEATCLOUD;
 		explode rbarrel type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode launch type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
@@ -291,7 +291,7 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode lbarrel type NOHEATCLOUD | FALL;
 		explode rbarrel type NOHEATCLOUD | FALL;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode launch type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
@@ -301,7 +301,7 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode launch type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
@@ -309,7 +309,7 @@ Killed(severity, corpsetype)
 	corpsetype = 3;
 	explode lbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rbarrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode launch type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
