@@ -66,6 +66,7 @@ return {
 			[10] = "talon_requiem",
 			[11] = "talon_elixir",
 			[12] = "talon_dmc",
+			[13] = "talon_lrpt1",
 			[13] = "talon_veloute1",
 			[14] = "talon_planetkiller",
 		},
