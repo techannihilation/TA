@@ -70,10 +70,10 @@ return {
       },
     },
     groundflash = {
-      circlealpha        = 0.99,
-      circlegrowth       = 20,
-      flashalpha         = 0.99,
-      flashsize          = 380,
+      circlealpha        = 0.6,
+      circlegrowth       = 30,
+      flashalpha         = 0.65,
+      flashsize          = 450,
       ttl                = 15,
       color = {
         [1]  = 0.2,
