@@ -3,10 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  missle1, missle2, base, body, winga, wingb, w1, w2,
-       w3, w4, w5, w6, w7, w8, wakes;
+piece  bomb, base, body, w1, w2, w3, w4, w5, w6, w7, w8, wakes;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+static-var  Static_Var_1, Static_Var_2;
 
 
 StartMoving()
@@ -31,34 +30,6 @@ StartMoving()
 setSFXoccupy(state)
 {
 	Static_Var_1 = state;
-}
-
-activatescr()
-{
-	if( TRUE )
-	{
-		turn winga to z-axis <0.> speed <62.>;
-		turn wingb to z-axis <0.> speed <62.>;
-		wait-for-turn wingb around z-axis;
-		turn body to z-axis <240.> speed <120.>;
-		wait-for-turn body around z-axis;
-		turn body to z-axis <120.> speed <180.>;
-		wait-for-turn body around z-axis;
-		turn body to z-axis <0.> speed <120.>;
-		sleep 1000;
-	}
-	sleep 23;
-}
-
-deactivatescr()
-{
-	if( TRUE )
-	{
-		turn winga to z-axis <-90.> speed <62.>;
-		turn wingb to z-axis <90.> speed <62.>;
-		sleep 1445;
-	}
-	sleep 24;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -113,43 +84,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	start-script SmokeUnit();
 }
 
-StopMoving()
-{
-	signal 2;
-}
-
-InitState()
-{
-	Static_Var_4 = 1;
-	Static_Var_5 = 0;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( Static_Var_5 )
-	{
-		Static_Var_4 = requestedstate;
-		return (0);
-	}
-	Static_Var_5 = 1;
-	currentstate = Static_Var_4;
-	Static_Var_4 = requestedstate;
-	while( Static_Var_4 != currentstate )
-	{
-		if( Static_Var_4 == 0 )
-		{
-			call-script activatescr();
-			currentstate = 0;
-		}
-		if( Static_Var_4 == 1 )
-		{
-			call-script deactivatescr();
-			currentstate = 1;
-		}
-	}
-	Static_Var_5 = 0;
-}
-
 MoveRate2()
 {
 	if( Rand( 1, 10 ) == 1 AND !Static_Var_2 )
@@ -168,29 +102,23 @@ Create()
 {
 	Static_Var_2 = 0;
 	Static_Var_1 = 0;
-	Static_Var_3 = 0;
-	call-script InitState();
 	start-script SmokeUnit();
 }
 
-Activate()
+AimPrimary(pitch, heading)
 {
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
+	
+	return (1);
 }
 
 FirePrimary(Func_Var_1)
 {
-	Static_Var_3 = !Static_Var_3;
+
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = Static_Var_3;
+	piecenum = bomb;
 }
 
 SweetSpot(piecenum)
@@ -203,38 +131,16 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD ;
-		explode missle1 type NOHEATCLOUD ;
-		explode missle2 type NOHEATCLOUD ;
-		explode winga type NOHEATCLOUD ;
-		explode wingb type NOHEATCLOUD ;
+		explode body type NOHEATCLOUD ;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD ;
-		explode missle1 type NOHEATCLOUD ;
-		explode missle2 type NOHEATCLOUD ;
-		explode winga type NOHEATCLOUD ;
-		explode wingb type NOHEATCLOUD ;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD ;
-		explode missle1 type NOHEATCLOUD ;
-		explode missle2 type NOHEATCLOUD ;
-		explode winga type NOHEATCLOUD ;
-		explode wingb type NOHEATCLOUD ;
+		explode body type NOHEATCLOUD ;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD ;
-	explode missle1 type NOHEATCLOUD ;
-	explode missle2 type NOHEATCLOUD ;
-	explode winga type NOHEATCLOUD ;
-	explode wingb type NOHEATCLOUD ;
+	explode body type NOHEATCLOUD ;
 	return (corpsetype);
 }

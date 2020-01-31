@@ -130,6 +130,7 @@ return {
 	"corrag",
 	"armmin",
 	"cormin",
+	"talon_carbon",
 	"tllbuilderlvl1",
 	"tllbuilderlvl2",
 	"tllbuilderlvl3",
