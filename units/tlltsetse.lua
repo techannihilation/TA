@@ -26,6 +26,7 @@ return {
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Mine Layer",
+		energymake = 5,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
 		footprintz = 3,

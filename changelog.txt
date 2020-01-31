@@ -1,10 +1,14 @@
 ﻿3.31 -> 3.32
 2020-01-30
+Balance :
+ - Arm T4 MM : decrease Capacity 54KE => 32KE. (Decrease cost and timebuild too)
+
 Improvments:
  - Add Watch Tower Talon
  - Add New Mex Model for Talon
  - Add T3 Metal and Energy Storage Talon
  - Add T3 Bertha Talon
+ - Add T5 MM for Arm with 198KE capacity (new model for T4, and existing T4 model becomes T5)
 
 3.30 -> 3.31
 2020-01-19

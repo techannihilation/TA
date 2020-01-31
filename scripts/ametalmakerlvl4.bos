@@ -4,14 +4,15 @@
 #include "exptype.h"
 
 piece  base, body1, doodad1, doodad2, doodad3, doodad4, doodad5, doodad6, doodad7,
-	   doodad8, doodad9, doodad10, doodad11, doodad12, doodad13, doodad14,
-	   body2, clamp1, clamp2, clamp3, glow1 ;
+	   doodad8, doodad9, doodad10, doodad11, doodad12, doodad13, doodad14, 
+	   body2, clamp1, clamp2, clamp3, clamp4, clamp5, clamp6, 
+	   glow1, bldg1, bldg2 ;
 
 static-var  Static_Var_1, Static_Var_2;
 
 activatescr()
 {
-	spin body2 around y-axis speed <3.500000> accelerate <0.500000>;
+	spin body2 around y-axis speed <2.500000> accelerate <0.500000>;
 }
 
 deactivatescr()
@@ -137,6 +138,8 @@ Killed(severity, corpsetype)
 		explode doodad12 type NOHEATCLOUD;
 		explode doodad13 type NOHEATCLOUD;
 		explode doodad14 type NOHEATCLOUD;
+		explode bldg1 type NOHEATCLOUD;
+		explode bldg2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -162,6 +165,35 @@ Killed(severity, corpsetype)
 		explode doodad12 type NOHEATCLOUD| FALL;
 		explode doodad13 type NOHEATCLOUD| FALL;
 		explode doodad14 type NOHEATCLOUD| FALL;
+		explode bldg1 type NOHEATCLOUD| FALL;
+		explode bldg2 type NOHEATCLOUD| FALL;
+		return (corpsetype);
+	}
+	if( severity <= 80 )
+	{
+		corpsetype = 3;
+		explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad5 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad6 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad7 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad8 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad9 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad10 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad11 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad12 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad13 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode doodad14 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode bldg1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+		explode bldg2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -185,5 +217,7 @@ Killed(severity, corpsetype)
 	explode doodad12 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doodad13 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doodad14 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode bldg1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode bldg2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

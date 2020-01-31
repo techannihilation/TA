@@ -54,8 +54,8 @@ local validStartUnits = {
 }
 
 local superEco = {
-	[UnitDefNames.corufus.id] = 1,
-	[UnitDefNames.ametalmakerlvl3.id] = 4,
+	[UnitDefNames.talon_ufus.id] = 1,
+	[UnitDefNames.ametalmakerlvl4.id] = 2,
 }
 
 

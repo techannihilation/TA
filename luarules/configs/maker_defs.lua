@@ -9,6 +9,7 @@ local AC4 = 1.4/100
 local AC5 = 1.45/100
 local AC6 = 1.5/100
 local AC7 = 1.6/100
+local AC8 = 1.7/100
 
 local T0 = 0.95/100
 local T1 = 1/100
@@ -30,8 +31,11 @@ local convertCapacities = {
 		[UnitDefNames.armmmkr.id]  = { c = 800, e = (AC4) }, -- Moho
 		[UnitDefNames.armuwmmm.id]  = { c = 1000, e = (AC5) }, -- Underwater
 		[UnitDefNames.ametalmakerlvl2.id]  = { c = 8000, e = (AC6) }, -- T3
-		[UnitDefNames.ametalmakerlvl3.id]  = { c = 54000, e = (AC7) }, -- T4
-		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) },					
+		[UnitDefNames.ametalmakerlvl3.id]  = { c = 32000, e = (AC7) }, -- T4
+		[UnitDefNames.ametalmakerlvl4.id]  = { c = 192000, e = (AC8) }, -- T5
+
+		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) },
+					
 		--CORE
 		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
 		[UnitDefNames.corfmkr.id]  = { c = 128, e = (AC1) }, -- Floating

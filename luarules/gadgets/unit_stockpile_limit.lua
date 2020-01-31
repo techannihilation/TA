@@ -15,9 +15,11 @@ end
 if (gadgetHandler:IsSyncedCode()) then
 	local armminDefID = UnitDefNames.armmin.id
 	local corminDefID = UnitDefNames.cormin.id
-	local armpcaDefID = UnitDefNames.armpcan.id
-	local corpcaDefID = UnitDefNames.corpcan.id
-	local tllcanDefID = UnitDefNames.tllpcan.id
+	local corminDefID = UnitDefNames.tlltsetse.id
+	local corminDefID = UnitDefNames.talon_carbon.id
+	--local armpcaDefID = UnitDefNames.armpcan.id
+	--local corpcaDefID = UnitDefNames.corpcan.id
+	--local tllcanDefID = UnitDefNames.tllpcan.id
 	local pilelimit
 	local pilelimit1 = 2
 	local pilelimit2 = 10
