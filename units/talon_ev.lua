@@ -81,7 +81,8 @@ return {
 			[15] = "talon_ptr",
 			[16] = "talon_mds",
 			[17] = "talon_cv",
-			[18] = "talon_ogopogo",
+			[18] = "talon_xeon",
+			[19] = "talon_ogopogo",
 		},
 		customparams = {
 			buildpic = "talon_ev.dds",
