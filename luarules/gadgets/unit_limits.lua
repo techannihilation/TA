@@ -17,17 +17,21 @@ if unitLimiter == 0 then return 0 end
 -- SPEEDUPS
 --------------------------------------------------------------------------------
 local GetGameFrame = Spring.GetGameFrame
+local SendMessageToTeam = Spring.SendMessageToTeam
 --------------------------------------------------------------------------------
 -- CONSTANS
 --------------------------------------------------------------------------------
-local waitFrames = 15
-local maxCounter = 5
+local maxCounter = 10 -- maximum units/time period for each team
+local timePeriod = 120 -- time period to check count of units
+local waitFrames = 10 -- delay frames before counter is zero out * number of units build in timePeriod
 --------------------------------------------------------------------------------
-local prevGameframe = 0
-local Counter = {}
-local unitsCount = {}
-local gameframe = GetGameFrame()
+local counter = {}
 local factoryList = {}
+local gameFrame = {}
+local prevgameFrame = {}
+local unitsCount = {}
+local redcolor = "\255\255\64\64"
+local yellowcolor = "\255\255\255\64"
 
 if (gadgetHandler:IsSyncedCode()) then
 	--------------------------------------------------------------------------------
@@ -37,7 +41,12 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 	function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, userOrders)
-		gameframe = GetGameFrame()
+		gameFrame[unitTeam] = GetGameFrame()
+
+		if not prevgameFrame[unitTeam] then
+			prevgameFrame[unitTeam] = gameFrame[unitTeam]
+		end
+
 		factoryList[factID] = true
 
 		if unitsCount[unitTeam] == nil then
@@ -46,21 +55,25 @@ if (gadgetHandler:IsSyncedCode()) then
 
 		unitsCount[unitTeam] = unitsCount[unitTeam] + 1
 
-		if gameframe > prevGameframe + 30 then
-			prevGameframe = gameframe
-			Counter[unitTeam] = unitsCount[unitTeam]
+		if gameFrame[unitTeam] > prevgameFrame[unitTeam] + timePeriod then
+			prevgameFrame[unitTeam] = gameFrame[unitTeam]
+			counter[unitTeam] = unitsCount[unitTeam]
 			unitsCount[unitTeam] = 0
 		end
 	end
 
-	function gadget:AllowUnitCreation(unitDefID, builderID, ubuilderTeam, x, y, z, facing)
-		gameframe = GetGameFrame()
+	function gadget:AllowUnitCreation(unitDefID, builderID, builderTeamID, x, y, z, facing)
+		gameFrame[builderTeamID] = GetGameFrame()
 		if not factoryList[builderID] then return true end
 
-		if (Counter[ubuilderTeam] and Counter[ubuilderTeam] > maxCounter) then
-			if gameframe > prevGameframe + (waitFrames * Counter[ubuilderTeam]) then
-				Counter[ubuilderTeam] = 0
+		if (counter[builderTeamID] and counter[builderTeamID] > maxCounter) then
+			local waitTime = waitFrames * counter[builderTeamID]
+
+			if gameFrame[builderTeamID] > (prevgameFrame[builderTeamID] + waitTime) then
+				counter[builderTeamID] = 0
 			end
+
+			SendMessageToTeam(builderTeamID, yellowcolor .. "WARNING:" .. redcolor .. " SPAM LIMITER ACTIVETED FOR " .. math.floor(waitTime / 30) .. " SECONDS")
 
 			return false
 		else
