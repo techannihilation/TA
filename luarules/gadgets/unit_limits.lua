@@ -20,13 +20,15 @@ local GetGaiaTeamID = Spring.GetGaiaTeamID
 local GetGameFrame = Spring.GetGameFrame
 local GetTeamList = Spring.GetTeamList
 local SendMessageToTeam = Spring.SendMessageToTeam
+local strformat = string.format
 --------------------------------------------------------------------------------
 -- CONSTANS
 --------------------------------------------------------------------------------
-local maxUnits = 9 -- maximum number of units produced within timePeriod
-local timePeriod = 120 -- time period after units count will be checked
-local waitFrames = 10 -- delay after counter is zero out * total number of units produced in timePeriod
+local rateLimit = tonumber(Spring.GetModOptions().mo_ratelimit) or 3 -- maximum number of units produced within one second
 --------------------------------------------------------------------------------
+local timePeriod = 30 -- time period after units count will be checked
+local waitFrames = 30 -- delay after counter is zero out * total number of units produced in timePeriod
+local div = timePeriod / 30
 local counter = {}
 local factoryList = {}
 local gameFrame = {}
@@ -56,7 +58,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 	local function sendWarningMessage(playerID, waitTime)
-		SendMessageToTeam(playerID, yellowcolor .. "WARNING:" .. redcolor .. " SPAM LIMITER ACTIVETED FOR " .. math.floor(waitTime / 30) .. " SECONDS")
+		SendMessageToTeam(playerID, yellowcolor .. "WARNING:" .. redcolor .. " SPAM LIMITER ACTIVATED FOR " .. strformat("%.2f", waitTime / 30) .. " SECONDS")
 		messageSent[playerID] = true
 	end
 
@@ -67,7 +69,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 		if gameFrame[unitTeam] > prevgameFrame[unitTeam] + timePeriod then
 			prevgameFrame[unitTeam] = gameFrame[unitTeam]
-			counter[unitTeam] = unitsCount[unitTeam]
+			counter[unitTeam] = unitsCount[unitTeam] / div
 			unitsCount[unitTeam] = 0
 		end
 	end
@@ -75,7 +77,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	function gadget:AllowUnitCreation(unitDefID, builderID, builderTeamID, x, y, z, facing)
 		if not factoryList[builderID] then return true end
 
-		if counter[builderTeamID] and counter[builderTeamID] > maxUnits then
+		if counter[builderTeamID] and counter[builderTeamID] > rateLimit then
 			local waitTime = waitFrames * counter[builderTeamID]
 			gameFrame[builderTeamID] = GetGameFrame()
 
