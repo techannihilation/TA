@@ -137,6 +137,17 @@ local options={
     def = false,
     section = "ta_modes",
   },
+    {
+    key = "mo_ratelimit",
+    name = "Rate limit - units/sec",
+    desc = "Set rate limit for Spam Limiter\nAutoHost Usage :- mo_ratelimit",
+    type = "number",
+    def = 3,
+    section = "ta_modes",
+    min    = 1,
+    max    = 10,
+    step   = 0.1,
+  },
   {
     key    = "mo_noowner",
     name   = "FFA Mode",
