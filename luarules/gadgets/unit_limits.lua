@@ -26,7 +26,7 @@ local strformat = string.format
 --------------------------------------------------------------------------------
 local rateLimit = tonumber(Spring.GetModOptions().mo_ratelimit) or 3 -- maximum number of units produced within one second
 --------------------------------------------------------------------------------
-local timePeriod = 30 -- time period after units count will be checked
+local timePeriod = 50 -- time period after units count will be checked
 local waitFrames = 30 -- delay after counter is zero out * total number of units produced in timePeriod
 local div = timePeriod / 30
 local counter = {}
