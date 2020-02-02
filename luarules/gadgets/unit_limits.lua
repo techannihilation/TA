@@ -16,20 +16,23 @@ if unitLimiter == 0 then return 0 end
 --------------------------------------------------------------------------------
 -- SPEEDUPS
 --------------------------------------------------------------------------------
+local GetGaiaTeamID = Spring.GetGaiaTeamID
 local GetGameFrame = Spring.GetGameFrame
+local GetTeamList = Spring.GetTeamList
 local SendMessageToTeam = Spring.SendMessageToTeam
 --------------------------------------------------------------------------------
 -- CONSTANS
 --------------------------------------------------------------------------------
-local maxCounter = 10 -- maximum units/time period for each team
-local timePeriod = 120 -- time period to check count of units
-local waitFrames = 10 -- delay frames before counter is zero out * number of units build in timePeriod
+local maxUnits = 9 -- maximum number of units produced within timePeriod
+local timePeriod = 120 -- time period after units count will be checked
+local waitFrames = 10 -- delay after counter is zero out * total number of units produced in timePeriod
 --------------------------------------------------------------------------------
 local counter = {}
 local factoryList = {}
 local gameFrame = {}
 local prevgameFrame = {}
 local unitsCount = {}
+local messageSent = {}
 local redcolor = "\255\255\64\64"
 local yellowcolor = "\255\255\255\64"
 
@@ -38,21 +41,28 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- BEGIN SYNCED
 	--------------------------------------------------------------------------------
 	function gadget:Initialize()
+		local gaiaTeamID = GetGaiaTeamID()
+		local teamList = GetTeamList()
+
+		for i = 1, #teamList do
+			local teamID = teamList[i]
+
+			if teamID ~= gaiaTeamID then
+				prevgameFrame[teamID] = 0
+				unitsCount[teamID] = 0
+				messageSent[teamID] = false
+			end
+		end
+	end
+
+	local function sendWarningMessage(playerID, waitTime)
+		SendMessageToTeam(playerID, yellowcolor .. "WARNING:" .. redcolor .. " SPAM LIMITER ACTIVETED FOR " .. math.floor(waitTime / 30) .. " SECONDS")
+		messageSent[playerID] = true
 	end
 
 	function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, userOrders)
-		gameFrame[unitTeam] = GetGameFrame()
-
-		if not prevgameFrame[unitTeam] then
-			prevgameFrame[unitTeam] = gameFrame[unitTeam]
-		end
-
 		factoryList[factID] = true
-
-		if unitsCount[unitTeam] == nil then
-			unitsCount[unitTeam] = 0
-		end
-
+		gameFrame[unitTeam] = GetGameFrame()
 		unitsCount[unitTeam] = unitsCount[unitTeam] + 1
 
 		if gameFrame[unitTeam] > prevgameFrame[unitTeam] + timePeriod then
@@ -63,17 +73,20 @@ if (gadgetHandler:IsSyncedCode()) then
 	end
 
 	function gadget:AllowUnitCreation(unitDefID, builderID, builderTeamID, x, y, z, facing)
-		gameFrame[builderTeamID] = GetGameFrame()
 		if not factoryList[builderID] then return true end
 
-		if (counter[builderTeamID] and counter[builderTeamID] > maxCounter) then
+		if counter[builderTeamID] and counter[builderTeamID] > maxUnits then
 			local waitTime = waitFrames * counter[builderTeamID]
+			gameFrame[builderTeamID] = GetGameFrame()
+
+			if messageSent[builderTeamID] == false then
+				sendWarningMessage(builderTeamID, waitTime)
+			end
 
 			if gameFrame[builderTeamID] > (prevgameFrame[builderTeamID] + waitTime) then
 				counter[builderTeamID] = 0
+				messageSent[builderTeamID] = false
 			end
-
-			SendMessageToTeam(builderTeamID, yellowcolor .. "WARNING:" .. redcolor .. " SPAM LIMITER ACTIVETED FOR " .. math.floor(waitTime / 30) .. " SECONDS")
 
 			return false
 		else
