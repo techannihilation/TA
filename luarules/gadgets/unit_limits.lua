@@ -11,8 +11,6 @@ function gadget:GetInfo()
 	}
 end
 
-local unitLimiter = tonumber(Spring.GetModOptions().mo_unitlimiter) or 0
-if unitLimiter == 0 then return 0 end
 --------------------------------------------------------------------------------
 -- SPEEDUPS
 --------------------------------------------------------------------------------
