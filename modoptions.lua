@@ -129,14 +129,6 @@ local options={
     max    = 4,
     step   = 0.1,
   },
-  {
-    key = "mo_unitlimiter",
-    name = "Spam Limiter",
-    desc = "Limits number of units being build\nAutoHost Usage :- mo_unitlimiter",
-    type   = "bool",
-    def = false,
-    section = "ta_modes",
-  },
     {
     key = "mo_ratelimit",
     name = "Rate limit - units/sec",
