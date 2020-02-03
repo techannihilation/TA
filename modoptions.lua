@@ -138,7 +138,7 @@ local options={
     section = "ta_modes",
     min    = 1,
     max    = 10,
-    step   = 0.1,
+    step   = 0.01,
   },
   {
     key    = "mo_noowner",
