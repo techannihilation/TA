@@ -16,10 +16,6 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	local Weapons = {
 		---ARM
-		[UnitDefNames.armcybr.weapons[1].weaponDef] = {
-			impulseBoost = 1000 * multiplier,
-			weaponNumber = 1
-		},
 		[UnitDefNames.armfboy.weapons[1].weaponDef] = {
 			impulseBoost = 100 * multiplier,
 			weaponNumber = 1
