@@ -552,6 +552,11 @@ local morphDefs = {
 		time = 45,
 		xp = 0.25,
 	},
+	talon_lrpt = {
+		into = 'talon_lrpt1',
+		time = 45,
+		xp = 0.25,
+	},
 	tllprivate = {
 		into = 'tllprivate1',
 	  	time = 5,

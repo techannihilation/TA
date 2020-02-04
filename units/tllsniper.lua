@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		cloakcost = 200,
-		cloakcostmoving = 600,
+		cloakcostmoving = 400,
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Sniper Kbot",

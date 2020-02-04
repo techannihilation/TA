@@ -21,7 +21,6 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Anti T3/T4 Sniper Kbot",
 		downloadable = 1,
-		energystorage = 5000,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 4,

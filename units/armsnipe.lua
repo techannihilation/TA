@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
-		cloakcost = 75,
+		cloakcost = 100,
 		cloakcostmoving = 200,
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "26 41 16",

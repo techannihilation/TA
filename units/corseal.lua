@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0462,
 		amphibious = 1,
 		brakerate = 0.0627,
-		buildcostenergy = 10814,
+		buildcostenergy = 8963,
 		buildcostmetal = 477,
 		builder = false,
 		buildpic = "corseal.dds",
