@@ -1,4 +1,13 @@
-﻿3.31 -> 3.32
+﻿3.32 -> 3.33
+2020-01-30
+Balance :
+ - Decrease Timbuild for Sumo. (-20%)
+
+Improvments:
+ - Add T5 Meteor Controller for TLL
+ - Add new sound for Tesla Web
+
+3.31 -> 3.32
 2020-01-30
 Balance :
  - Arm T4 MM : decrease Capacity 54KE => 32KE. (Decrease cost and timebuild too)

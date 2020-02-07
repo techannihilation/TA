@@ -30,7 +30,7 @@ return {
 		maxdamage = 48555,
 		maxslope = 12,
 		maxwaterdepth = 0,
-		name = "Zenith",
+		name = "Ares",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "tllmeteor",
