@@ -875,7 +875,7 @@ local morphDefs = {
 	},
 	corsumo = {
 		into = 'corsumo1',
-		time = 30,
+		time = 20,
 		xp = 0.10,
 	},
 	corsumo1 = {
@@ -905,7 +905,7 @@ local morphDefs = {
 	},
 	armfboy = {
 		into = 'armfboy1',
-		time = 30,
+		time = 20,
 		xp = 0.15,
 	},
 	armnanotc = {	 

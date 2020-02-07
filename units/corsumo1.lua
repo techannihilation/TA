@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 2754,
 		builder = false,
 		buildpic = "corsumo1.dds",
-		buildtime = 50975,
+		buildtime = 42000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
