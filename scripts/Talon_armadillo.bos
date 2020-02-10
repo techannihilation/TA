@@ -110,7 +110,7 @@ AimSecondary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn body to y-axis heading speed <40.000000>;
+	turn body to y-axis heading speed <55.000000>;
 	wait-for-turn body around y-axis;	
 	start-script RestoreAfterDelay();
 	return (1);

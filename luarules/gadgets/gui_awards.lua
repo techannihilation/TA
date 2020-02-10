@@ -122,12 +122,12 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.tllammaker.id,
 	UnitDefNames.tllwmmohoconv.id,
 	UnitDefNames.tllgen.id,
-	UnitDefNames.tllmetalmakerlvl3.id
-	UnitDefNames.talon_makr.id
-	UnitDefNames.talon_fmkr.id
-	UnitDefNames.talon_makr1.id
-	UnitDefNames.talon_metalmakerlvl2.id
-	UnitDefNames.talon_metalmakerlvl3.id	
+	UnitDefNames.tllmetalmakerlvl3.id,
+	UnitDefNames.talon_makr.id,
+	UnitDefNames.talon_fmkr.id,
+	UnitDefNames.talon_makr1.id,
+	UnitDefNames.talon_metalmakerlvl2.id,
+	UnitDefNames.talon_metalmakerlvl3.id,
 }
 
 

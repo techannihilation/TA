@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, target, aimer;
+piece  base, sup1, sup2, sup3, sup4, sup5, target, aimer;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -75,18 +75,20 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
+	if( severity <= 75 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD | SHATTER;
+		explode sup1 type NOHEATCLOUD | SHATTER;
+		explode sup2 type NOHEATCLOUD | SHATTER;
+		explode sup3 type NOHEATCLOUD | SHATTER;
+		explode sup4 type NOHEATCLOUD | SHATTER;
+		explode sup5 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
-		explode body type NOHEATCLOUD | SHATTER;
-		return (0);
-	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 }

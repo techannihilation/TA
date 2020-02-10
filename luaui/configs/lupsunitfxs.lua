@@ -340,6 +340,16 @@ cafus = {
  tllamex = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,34,0}, delay=10, lifeSpread=300},sparks)},
   },
+ talon_mex1 = {
+    {class='SimpleParticles2', options=MergeTable({pos={-12,28,0}, delay=10, lifeSpread=300},sparks)},
+  },
+tllmeteor = {
+	{class='SimpleParticles2', options=MergeTable({pos={32,265,-40}, delay=10, lifeSpread=30},sparksr1)},
+	{class='SimpleParticles2', options=MergeTable({pos={-32,265,-40}, delay=15, lifeSpread=30},sparksr1)},
+	{class='SimpleParticles2', options=MergeTable({pos={0,265,50}, delay=14, lifeSpread=30},sparksr1)},
+	{class='SimpleParticles2', options=MergeTable({pos={50,265,20}, delay=13, lifeSpread=30},sparksr1)},
+	{class='SimpleParticles2', options=MergeTable({pos={-50,265,20}, delay=12, lifeSpread=30},sparksr1)},
+},
  armrech1 = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr1)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr1)},

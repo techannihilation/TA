@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, extractor, glow, pillar;
+piece  base, socle, spinner1, spinner2, system1, system2, system3, system4, pillar;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -37,15 +37,14 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	spin extractor around y-axis speed Static_Var_1 accelerate <0.500000>;
-	set ARMORED to 1;
+	spin spinner1 around y-axis speed Static_Var_1 accelerate <0.500000>;
+	spin spinner2 around y-axis speed -1 * Static_Var_1 * 2 accelerate <0.500000>;
 }
 
 Stop()
 {
-	stop-spin extractor around y-axis decelerate <0.500000>;
-	wait-for-turn extractor around y-axis;
-	set ARMORED to 0;
+	stop-spin spinner1 around y-axis decelerate <0.500000>;
+	stop-spin spinner2 around y-axis decelerate <1.000000>;
 }
 
 SetSpeed(Func_Var_1)
@@ -86,14 +85,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-cache glow;
-	dont-cache extractor;
-	set ARMORED to 0;
 	call-script InitState();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 250;
-	}
 	start-script SmokeUnit();
 }
 
@@ -107,23 +99,6 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-AimWeapon1(heading, pitch)
-{
-	if( get ACTIVATION )
-	{
-		return (1);
-	}
-	if( !get ACTIVATION )
-	{
-		return (0);
-	}
-}
-
-QueryWeapon1(piecenum)
-{
-	piecenum = pillar;
-}
-
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -134,27 +109,35 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode extractor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode socle type NOHEATCLOUD;
+		explode spinner1 type NOHEATCLOUD;
+		explode spinner2 type NOHEATCLOUD;
+		explode system1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode system2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode system3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode system4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode pillar type NOHEATCLOUD;
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode extractor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode extractor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode socle type NOHEATCLOUD;
+		explode spinner1 type NOHEATCLOUD | SHATTER;
+		explode spinner2 type NOHEATCLOUD | SHATTER;
+		explode system1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode system2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode system3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode system4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode pillar type NOHEATCLOUD;
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode extractor type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode glow type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode socle type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode spinner1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode spinner2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode system1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode system2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode system3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode system4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode pillar type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
