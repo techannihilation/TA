@@ -162,7 +162,7 @@ return {
 				name = "Overcharged Impulsion Blaster",
 				noselfdamage = true,
 				range = 2750,
-				reloadtime = 5,
+				reloadtime = 10.7,
 				rgbcolor = "0.1 0.9 1",
 				size = 5,
 				soundhitdry = "sizzle",
