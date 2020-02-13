@@ -2,6 +2,10 @@
 2020-02-13
 
 Balance :
+ - Increase reload time of Talon Silver V2: 5sec -> 10.7sec
+ - Remove impulse from Liche and Talon Silver unit, add to Talon Repentance, adjust factor.
+ - Nerf Fatshrew (All-Terrian) - Autoheal 1000->250
+ - Remove jammer from Talon Abaddon.
  - Decrease Timbuild for Sumo. (-20%)
  - Decrease Extraction Metal for T5 Mex TLL. (-30%). Increase cost 10KM and 100KE.
  - Decrease Double LLT Core (Less range but better damage). Decrease HP 1500 => 1400.
