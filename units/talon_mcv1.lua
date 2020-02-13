@@ -40,7 +40,7 @@ return {
 		name = "Silver",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
-		objectname = "talon_mcv",
+		objectname = "talon_mcv1",
 		radaremitheight = 100,
 		selfdestructas = "CRBLMSSL4",
 		selfdestructcountdown = 10,
