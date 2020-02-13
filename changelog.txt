@@ -1,11 +1,15 @@
 ﻿3.32 -> 3.33
-2020-01-30
+2020-02-13
+
 Balance :
  - Decrease Timbuild for Sumo. (-20%)
+ - Decrease Extraction Metal for T5 Mex TLL. (-30%). Increase cost 10KM and 100KE.
+ - Decrease Double LLT Core (Less range but better damage). Decrease HP 1500 => 1400.
 
 Improvments:
  - Add T5 Meteor Controller for TLL
  - Add new sound for Tesla Web
+ - Add T1 AntiSwarm Turret Missile Talon
 
 3.31 -> 3.32
 2020-01-30

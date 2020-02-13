@@ -1,0 +1,184 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare1a, flare1b, flare1c, flare1d, flare2a, flare2b, flare2c, flare2d, base, body,
+	   turret, sleeves, gun1, gun2, support;
+
+static-var  gun_1, gun_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	spin turret around y-axis speed <-25.000000>;
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RestoreAfterDelay()
+{
+	sleep 2500;
+	turn sleeves to x-axis <-90.> speed <25.000000>;
+	wait-for-turn support around x-axis;
+	spin turret around y-axis speed <-25.000000>;
+}
+
+Create()
+{
+	gun_1 = 0;
+	gun_2 = 0;
+	turn sleeves to x-axis <-90.> now;
+	start-script SmokeUnit();	
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	stop-spin turret around y-axis;
+	turn turret to y-axis heading speed <125.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <135.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	++gun_1;
+	if( gun_1 == 3 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if ( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if ( gun_1 == 1 )
+	{
+		piecenum = flare1b;
+	}
+	if ( gun_1 == 2 )
+	{
+		piecenum = flare1c;
+	}
+	if ( gun_1 == 3 )
+	{
+		piecenum = flare1d;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = gun1;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	++gun_2;
+	if( gun_2 == 3 )
+	{
+		gun_2 = 0;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if ( gun_2 == 0 )
+	{
+		piecenum = flare2a;
+	}
+	if ( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+	if ( gun_2 == 2 )
+	{
+		piecenum = flare2c;
+	}
+	if ( gun_2 == 3 )
+	{
+		piecenum = flare2d;
+	}
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = gun2;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode gun1 type NOHEATCLOUD;
+		explode gun2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode support type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode gun1 type FALL | NOHEATCLOUD;
+		explode gun2 type FALL | NOHEATCLOUD;
+		explode body type NOHEATCLOUD | NOHEATCLOUD;
+		explode sleeves type SHATTER | NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		explode support type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode gun1 type FALL | NOHEATCLOUD;
+	explode gun2 type FALL | NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode sleeves type SHATTER | NOHEATCLOUD;
+	explode turret type SHATTER | NOHEATCLOUD;
+	explode support type NOHEATCLOUD;
+	return (corpsetype);
+}

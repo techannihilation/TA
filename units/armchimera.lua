@@ -1,6 +1,6 @@
 return {
 	armchimera = {
-		acceleration = 0.12,
+		acceleration = 0.14,
 		brakerate = 0.375,
 		buildcostenergy = 85045,
 		buildcostmetal = 4222,
@@ -29,9 +29,9 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 4022,
-		maxdamage = 8350,
+		maxdamage = 9855,
 		maxslope = 10,
-		maxvelocity = 2.7,
+		maxvelocity = 2.85,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK4",

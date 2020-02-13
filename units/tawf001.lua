@@ -126,7 +126,7 @@ return {
 		weapondefs = {
 			tawf001_weapon = {
 				areaofeffect = 8,
-				beamtime = 0.15,
+				beamtime = 0.1,
 				corethickness = 0.225,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -152,7 +152,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.05,
 				thickness = 2.2,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1000,

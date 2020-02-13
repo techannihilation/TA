@@ -124,7 +124,7 @@ return {
 			lightartmissarm = {
 				areaofeffect = 48,
 				avoidfeature = false,
-				burst = 2,
+				burst = 4,
 				burstrate = 0.15,
 				cegtag = "Arm_Trail_rocket",
 				craterareaofeffect = 0,
@@ -139,7 +139,7 @@ return {
 				name = "Rockets",
 				noselfdamage = true,
 				range = 620,
-				reloadtime = 2,
+				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
