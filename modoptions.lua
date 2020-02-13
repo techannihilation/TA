@@ -126,7 +126,7 @@ local options={
     def = 0,
     section = "ta_modes",
     min    = 0,
-    max    = 4,
+    max    = 3,
     step   = 0.1,
   },
   {

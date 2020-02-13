@@ -16,10 +16,6 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	local Weapons = {
 		---ARM
-		[UnitDefNames.armcybr.weapons[1].weaponDef] = {
-			impulseBoost = 1000 * multiplier,
-			weaponNumber = 1
-		},
 		[UnitDefNames.armfboy.weapons[1].weaponDef] = {
 			impulseBoost = 100 * multiplier,
 			weaponNumber = 1
@@ -71,33 +67,30 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
-		[UnitDefNames.talon_mcv.weapons[2].weaponDef] = {
-			impulseBoost = 1000 * multiplier,
-			weaponNumber = 2
-		},
-		[UnitDefNames.talon_mcv1.weapons[1].weaponDef] = {
-			impulseBoost = 2000 * multiplier,
-			weaponNumber = 1
-		},
 		[UnitDefNames.tllmcv.weapons[1].weaponDef] = {
 			impulseBoost = 1000 * multiplier,
 			weaponNumber = 1
 		},
+		[UnitDefNames.talon_repentance.weapons[1].weaponDef] = {
+			impulseBoost = 2000 * multiplier,
+			weaponNumber = 1
+		}
 	}
 
 	local GetUnitWeaponTarget = Spring.GetUnitWeaponTarget
 	local AddUnitImpulse = Spring.AddUnitImpulse
 	local GetUnitMass = Spring.GetUnitMass
 	local GetUnitWeaponVectors = Spring.GetUnitWeaponVectors
+	local AreTeamsAllied = Spring.AreTeamsAllied
 
 	--------------------------------------------------------------------------------
 	-- BEGIN SYNCED
 	--------------------------------------------------------------------------------
 	function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam)
-		if multiplier > 0 and attackerID and (unitTeam ~= attackerTeam) and Weapons[weaponDefID] then -- Short-circuit evaluation; that is, the other operands are evaluated only if necessary.
+		if multiplier > 0 and attackerID and (unitTeam ~= attackerTeam) and not AreTeamsAllied(unitTeam,attackerTeam) and Weapons[weaponDefID] then -- Short-circuit evaluation; that is, the other operands are evaluated only if necessary.
 			local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 			if number > 0 then
-				local impulseBoost = Weapons[weaponDefID].impulseBoost / (GetUnitMass(unitID) ^ 0.67)
+				local impulseBoost = Weapons[weaponDefID].impulseBoost / (GetUnitMass(unitID) ^ 0.8)
 				local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
 				AddUnitImpulse(unitID, dirX * impulseBoost, impulseBoost, dirZ * impulseBoost)
 			end
