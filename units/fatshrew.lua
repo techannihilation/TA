@@ -2,7 +2,7 @@ return {
 	fatshrew = {
 		acceleration = 0.2,
 		activatewhenbuilt = true,
-		autoheal = 1000,
+		autoheal = 250,
 		brakerate = 1.05,
 		buildcostenergy = 1400174,
 		buildcostmetal = 121300,
@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "fatshrew_dead",
 		defaultmissiontype = "Standby",
-		description = "All-terrain Hexapod (Auto-Repair 500)",
+		description = "All-terrain Hexapod (Auto-Repair 250)",
 		energystorage = 10000,
 		explodeas = "NUCLEAR_MISSILE4",
 		firestandorders = 1,
