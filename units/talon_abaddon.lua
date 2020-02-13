@@ -45,7 +45,6 @@ return {
 		pushresistant = true,
 		radaremitheight = 33,
 		radardistance = 1500,
-		radardistancejam = 750,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
 		sightdistance = 640,
