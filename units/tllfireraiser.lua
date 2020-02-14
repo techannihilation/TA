@@ -115,7 +115,7 @@ return {
 		},
 		weapondefs = {
 			tll_kbot_rocket = {
-				areaofeffect = 48,
+				areaofeffect = 56,
 				avoidfeature = false,
 				cegtag = "Tll_Trail_rocket",
 				craterareaofeffect = 0,
@@ -145,7 +145,7 @@ return {
 				weaponacceleration = 120,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 190,
+				weaponvelocity = 200,
 				customparams = {
 					light_color = "0.3 0.3 1.0",
 					light_mult = 3,

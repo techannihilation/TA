@@ -46,14 +46,14 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
-		turnrate = 1103,
+		turninplacespeedlimit = 1.00,
+		turnrate = 1100,
 		unitname = "armcrack",
 		upright = true,
 		customparams = {
 			buildpic = "armcrack.dds",
 			faction = "ARM",
-			requiretech = "Advanced T1 Unit Research Centre",
+			--requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -122,7 +122,7 @@ return {
 		},
 		weapondefs = {
 			lightartmissarm = {
-				areaofeffect = 48,
+				areaofeffect = 64,
 				avoidfeature = false,
 				burst = 4,
 				burstrate = 0.15,
@@ -145,6 +145,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
+				sprayangle = 450,
 				startvelocity = 190,
 				texture1 = "null",
 				texture2 = "null",
@@ -156,7 +157,6 @@ return {
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 250,
-				wobble = 2500,
 				customparams = {
 					light_color = "0.3 0.3 1.0",
 					light_mult = 3,

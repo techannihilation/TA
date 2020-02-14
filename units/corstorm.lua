@@ -124,7 +124,7 @@ return {
 		},
 		weapondefs = {
 			core_kbot_rocket = {
-				areaofeffect = 48,
+				areaofeffect = 56,
 				avoidfeature = false,
 				cegtag = "Core_Trail_rocket",
 				craterareaofeffect = 0,
@@ -155,7 +155,7 @@ return {
 				weaponacceleration = 120,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 190,
+				weaponvelocity = 200,
 				damage = {
 					default = 126,
 					subs = 5,

@@ -46,8 +46,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
-		turnrate = 1103,
+		turninplacespeedlimit = 1.00,
+		turnrate = 1100,
 		unitname = "corrock",
 		upright = true,
 		customparams = {
@@ -122,7 +122,7 @@ return {
 		},
 		weapondefs = {
 			lightartmiss = {
-				areaofeffect = 48,
+				areaofeffect = 72,
 				avoidfeature = false,
 				burst = 2,
 				burstrate = 0.15,
@@ -134,7 +134,6 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				metalpershot = 0,
 				model = "missile",
 				name = "Rockets",
 				noselfdamage = true,
@@ -145,6 +144,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
+				sprayangle = 450,
 				startvelocity = 190,
 				texture1 = "null",
 				texture2 = "null",
@@ -155,8 +155,7 @@ return {
 				weaponacceleration = 120,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 250,
-				wobble = 2500,
+				weaponvelocity = 200,
 				damage = {
 					default = 150,
 					subs = 5,

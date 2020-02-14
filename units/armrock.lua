@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 105,
 		builder = false,
 		buildpic = "armrock.dds",
-		buildtime = 1800,
+		buildtime = 1750,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -47,7 +47,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.155,
-		turnrate = 1106,
+		turnrate = 1100,
 		unitname = "armrock",
 		upright = true,
 		customparams = {
@@ -124,7 +124,7 @@ return {
 		},
 		weapondefs = {
 			arm_kbot_rocket = {
-				areaofeffect = 48,
+				areaofeffect = 54,
 				avoidfeature = false,
 				cegtag = "Arm_Trail_rocket",
 				craterareaofeffect = 0,
@@ -155,7 +155,7 @@ return {
 				weaponacceleration = 120,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 190,
+				weaponvelocity = 225,
 				customparams = {
 					light_color = "0.3 0.3 1.0",
 					light_mult = 3,
