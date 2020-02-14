@@ -142,7 +142,7 @@ return {
 				name = "LightLaser",
 				noselfdamage = true,
 				range = 430,
-				reloadtime = 0.5,
+				reloadtime = 0.48,
 				rgbcolor = "1 0 0",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
@@ -161,7 +161,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 150,
+					commanders = 140,
 					default = 75,
 					subs = 5,
 				},
