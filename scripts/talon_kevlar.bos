@@ -69,7 +69,7 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	++gun_1;
-	if( gun_1 == 3 )
+	if( gun_1 == 4 )
 	{
 		gun_1 = 0;
 	}
@@ -113,7 +113,7 @@ AimSecondary(heading, pitch)
 FireSecondary()
 {
 	++gun_2;
-	if( gun_2 == 3 )
+	if( gun_2 == 4 )
 	{
 		gun_2 = 0;
 	}
