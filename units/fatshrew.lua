@@ -192,7 +192,6 @@ return {
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "gatling",
-				soundstartvolume = 15,
 				soundtrigger = true,
 				texture1 = "beamrifle",
 				texture2 = "NULL",

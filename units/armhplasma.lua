@@ -134,7 +134,7 @@ return {
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "gatling",
-				soundstartvolume = 2.7,
+				soundstartvolume = 0.8,
 				soundtrigger = true,
 				turret = true,
 				weapontype = "Cannon",
