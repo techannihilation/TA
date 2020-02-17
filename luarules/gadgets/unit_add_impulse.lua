@@ -13,6 +13,7 @@ end
 
 if (gadgetHandler:IsSyncedCode()) then
 	local multiplier = tonumber(Spring.GetModOptions().mo_impmulti) or 0
+	local factor = tonumber(Spring.GetModOptions().mo_impfact) or 0.8
 
 	local Weapons = {
 		---ARM
@@ -90,7 +91,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if multiplier > 0 and attackerID and (unitTeam ~= attackerTeam) and not AreTeamsAllied(unitTeam,attackerTeam) and Weapons[weaponDefID] then -- Short-circuit evaluation; that is, the other operands are evaluated only if necessary.
 			local number, _, _ = GetUnitWeaponTarget(attackerID, Weapons[weaponDefID].weaponNumber)
 			if number > 0 then
-				local impulseBoost = Weapons[weaponDefID].impulseBoost / (GetUnitMass(unitID) ^ 0.8)
+				local impulseBoost = Weapons[weaponDefID].impulseBoost / (GetUnitMass(unitID) ^ factor)
 				local _, _, _, dirX, _, dirZ = GetUnitWeaponVectors(attackerID, Weapons[weaponDefID].weaponNumber)
 				AddUnitImpulse(unitID, dirX * impulseBoost, impulseBoost, dirZ * impulseBoost)
 			end

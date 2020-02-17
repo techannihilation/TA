@@ -130,6 +130,17 @@ local options={
     step   = 0.1,
   },
   {
+    key = "mo_impfact",
+    name = "Impulse square factor",
+    desc = "Impulse square factor\nAutoHost Usage :- mo_impfact",
+    type = "number",
+    def = 0.8,
+    section = "ta_modes",
+    min    = 0.1,
+    max    = 1,
+    step   = 0.1,
+  },
+  {
     key = "mo_unitlimiter",
     name = "Spam Limiter",
     desc = "Limits number of units being build\nAutoHost Usage :- mo_unitlimiter",
