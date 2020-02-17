@@ -311,6 +311,42 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
+	if( gun_2 == 0 )
+	{
+		move lbarrel1 to z-axis [-2] speed [250.000000];
+		sleep 50;
+		move lbarrel1 to z-axis [0] speed [2.000000];
+	}
+	if( gun_2 == 1 )
+	{
+		move rbarrel1 to z-axis [-2] speed [250.000000];
+		sleep 50;
+		move rbarrel1 to z-axis [0] speed [2.000000];
+	}
+	if( gun_2 == 2 )
+	{
+		move lbarrel2 to z-axis [-2] speed [250.000000];
+		sleep 50;
+		move lbarrel2 to z-axis [0] speed [2.000000];
+	}
+	if( gun_2 == 3 )
+	{
+		move rbarrel2 to z-axis [-2] speed [250.000000];
+		sleep 50;
+		move rbarrel2 to z-axis [0] speed [2.000000];
+	}
+	if( gun_2 == 4 )
+	{
+		move lbarrel3 to z-axis [-2] speed [250.000000];
+		sleep 50;
+		move lbarrel3 to z-axis [0] speed [2.000000];
+	}
+	if( gun_2 == 5 )
+	{
+		move rbarrel3 to z-axis [-2] speed [250.000000];
+		sleep 50;
+		move rbarrel3 to z-axis [0] speed [2.000000];
+	}
 	++gun_2;
 	if( gun_2 == 6 )
 	{

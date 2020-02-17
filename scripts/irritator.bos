@@ -220,7 +220,7 @@ RestoreSecondary()
 	set-signal-mask 0;
 	bAiming = FALSE;
 	turn MGTurret to y-axis <0.000000> speed <80.000000>;
-	turn MGBarrels to z-axis <0.000000> speed <100.000000>;
+	//turn MGBarrels to z-axis <0.000000> speed <100.000000>;
 	wait-for-turn MGTurret around y-axis;
 	if( !bMoving )
 	{
@@ -332,10 +332,10 @@ AimSecondary(heading, pitch)
 FireSecondary()
 {
 	emit-sfx 1024 + 2 from MGFlare;
-	turn MGBarrels to z-axis <0.000000> now;
-	spin MGBarrels around z-axis speed <400.000000>;
+	//turn MGBarrels to z-axis <0.000000> now;
+	//spin MGBarrels around z-axis speed <400.000000>;
 	sleep 1000;
-	stop-spin MGBarrels around z-axis decelerate <15.000000>;
+	//stop-spin MGBarrels around z-axis decelerate <15.000000>;
 }
 
 AimFromSecondary(piecenum)

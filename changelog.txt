@@ -1,5 +1,5 @@
 ﻿3.32 -> 3.33
-2020-02-14
+2020-02-17
 Balance :
  - Increase reload time of Talon Silver V2: 5sec -> 8sec. Decrease cost -20K and decrease HP -10K.
  - Remove impulse from Liche and Talon Silver unit, add to Talon Repentance, adjust factor.
@@ -9,12 +9,17 @@ Balance :
  - Decrease Extraction Metal for T5 Mex TLL. (-30%). Increase cost 10KM and 100KE.
  - Decrease Double LLT Core (Less range but better damage). Decrease HP 1500 => 1400.
  - Inrease T1 Rocket Velocity (190=>200) and 225 for Arm. Increase Aoe by 1%.
+ - tll LLT : Increase damage vs commander to have same bonus than Arm/Core
 
 Improvments:
  - Add T5 Meteor Controller for TLL
  - Add new sound for Tesla Web
  - Add T1 AntiSwarm Turret Missile Talon
  - Rework Adv Rocket T1 Arm Model and weapon (2=>4 burst for same balance)
+ - Rework All Sound/Effect/SprayAngle TLL Lighting (Bind/Blind, MCV, Caps, TeslaTank, ...)
+ - Rework Saurus Main Weapon Same Balance (Laser => Plasma and now 0 Energy/Hit)
+ - Rework Irritator canon (secondary Weapon). Transform into Lighting, same balance.
+ - Rework Adv Roaster : Delete Lighting from middle. Decrease cost by 200M and 2KE.
 
 3.31 -> 3.32
 2020-01-30

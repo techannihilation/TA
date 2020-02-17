@@ -141,7 +141,7 @@ return {
 				soundhitwetvolume = 0.5,
 				soundstart = "tllspark",
 				--soundstart = "Lghthvy1",
-				sprayangle = 1500,
+				sprayangle = 500,
 				texture1 = "strike",
 				thickness = 1.8,
 				turret = true,
