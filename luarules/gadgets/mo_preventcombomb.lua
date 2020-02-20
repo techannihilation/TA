@@ -26,7 +26,7 @@ local Health = false
 
 -- remove gadget if modoption is not set
 function gadget:Initialize()
-	if (Spring.GetModOptions().mo_preventcombomb == "1v1") then 
+	if (Spring.GetModOptions().mo_preventcombomb == "1v1") then
 		Spring.Echo("1v1")
 		oneOnone = true
 	elseif (Spring.GetModOptions().mo_preventcombomb == "hp") then
@@ -68,7 +68,6 @@ local DGUN = {
   [WeaponDefNames['corcom1_arm_disintegrator'].id] = true,
   [WeaponDefNames['corcom3_arm_disintegrator1'].id] = true,
   [WeaponDefNames['corcom_fusion_arm_disintegrator'].id] = true,
-
   [WeaponDefNames['corcom5_arm_disintegrator2'].id] = true,
   [WeaponDefNames['corcom6_arm_disintegrator2'].id] = true,
   [WeaponDefNames['corcom7_arm_disintegrator2'].id] = true,
@@ -80,6 +79,14 @@ local DGUN = {
   [WeaponDefNames['tllcom5_tll_disintegrator2'].id] = true,
   [WeaponDefNames['tllcom6_tll_disintegrator2'].id] = true,
   [WeaponDefNames['tllcom7_tll_disintegrator2'].id] = true,
+    --Talon
+  [WeaponDefNames['talon_com_disintegrator3'].id] = true,
+  [WeaponDefNames['talon_com1_arm_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com3_tll_disintegrator1'].id] = true,
+  [WeaponDefNames['talon_com_fusion_arm_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com5_tll_disintegrator2'].id] = true,
+  [WeaponDefNames['talon_com6_tll_disintegrator2'].id] = true,
+  [WeaponDefNames['talon_com7_tll_disintegrator2'].id] = true,
 }
 
 local COMMANDER = {
@@ -91,7 +98,7 @@ local COMMANDER = {
   [UnitDefNames["corcom5"].id] = true,
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
-  --Arm 
+  --Arm
   [UnitDefNames["armcom"].id] = true,
   [UnitDefNames["armcom1"].id] = true,
   [UnitDefNames["armcom4"].id] = true,
@@ -123,11 +130,11 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 
 	--New Commander with greatest hp survives blast option
 	if COM_BLAST[weaponID] and COMMANDER[unitDefID] and ValidUnitID(attackerID) and Health then
-	  
+
 	local hp = Spring.GetUnitHealth(unitID)
 	hp = hp or 0
 	local combombDamage = math.min(hp*0.33, math.max(0,hp-200-math.random(1,10))) -- lose hp*0.4 damage but don't let health get <200
-	combombDamage = math.min(damage,combombDamage) 
+	combombDamage = math.min(damage,combombDamage)
 		local targethp = Spring.GetUnitHealth(attackerID)
 		if unitID ~= attackerID then
 			if hp > targethp then
@@ -142,13 +149,13 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 		--Spring.Echo("Normal Damage")
 		return damage
 	end
-	
+
 	--Default settings for 1v1
 	if DGUN[weaponID] and oneOnone then
 	local hp = Spring.GetUnitHealth(unitID)
 	hp = hp or 0
 	local combombDamage = math.min(hp*0.33, math.max(0,hp-200-math.random(1,10))) -- lose hp*0.4 damage but don't let health get <200
-	combombDamage = math.min(damage,combombDamage) 
+	combombDamage = math.min(damage,combombDamage)
 		if immuneDgunList[unitID] then
 			-- immune
 			return 0, 0
@@ -166,12 +173,12 @@ function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
 			cantFall[unitID] = GetGameFrame() + 30
 			return combombDamage, 0
 		else
-			--com blast hurts the attackerID 
+			--com blast hurts the attackerID
 			return damage
 		end
 	end
 	return damage
-	
+
 end
 
 function gadget:GameFrame(currentFrame)
