@@ -52,9 +52,6 @@ Bitmaps strike.png and lightningball.png are copyright by [BoS]nixtux please ask
 
 Bitmaps sunlight1.png and sunlight.png are copyright by skymyj please ask permission before using theses textures.
 
-Bitmaps sfume1.png, sfume2.png, slightning1.png are copyright by [KING]Silver.
-Sounds laser_1.wav,sdrone1.wav,selectricity1.wav, selectricity2.wav, sonar_1.wav, zeus_hit_1.wav are copyright  by [KING]Silver.
-[KING]Silver gave full right to [BoS]nixtux of ownership of his artwork (bitmaps/sounds), please ask permission before using them.
 
 Unitlogos for tll copyrighted by [BoS]nixtux
 racelogogouraud.tga
