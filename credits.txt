@@ -1,6 +1,6 @@
 Tech Annihilation
 
-All scripts bos/cob, models 3do/s3o and lua files are copyrighted. 
+All Artwork items are copyrighted. 
 Please, ask us permission if you want use them.
 Many files provides from other games and they are copyrighted. We asked them permissions for a non commercial use.
 ##### --- --- #####
@@ -10,33 +10,22 @@ Tllvhlt, tllmortor, tllgen, tllbuilderlvl3, tllmas, tllasgard, tllesy, Tll Musk,
 ##### --- --- #####
 TALON faction models created by TA Universe comunity (TheRegisteredOne). They are all copyrighted. You can't use this content. Link to Talon download : https://www.moddb.com/mods/talon-race
 ##### --- --- #####
-All Bos/Cob Talon script have been created by skymyj. Please Ask permission to skymyj@hotmail.com if you want to use them.
-Thorgasm created the TALON Logo (.TGA). Ask him for permission if you want use it.
+Thorgasm created the TALON Logo (.TGA) and talonveh.tga. Ask him for permission if you want use it.
 ##### --- --- #####
-Many models have been created by M1garland (.wings). Skymyj import them in 3D0, add Textures and created Bos/Cob scripts. The list is here : 
-**Model & Script** 
-T1 Arm/Core LLT1, T1 Arm/Core RL1, TLLHydre Tllhydre1, T3 Bertha/Corint, T1/T2/T3/T4 Arm/Core Tech Center, Arm/Core builderlvl2 builderlvl3, T5 Cruiser : tllzeppelin, tllbarbarus, T3.5 Ship : tllcaps, ,  Plasma gun : tll_immolator, tlllrpc, T4 tllbahamut,  T4 tllsaurus, AA Tower : tlltetanos, tllinsulator, tllcrawler, tllleopard, tllmarmelade, TLL Hover (tllhcrus), Core T1 tank flammer : corgfbt, TLL Fusion (tllefus), coremex, corbuzz1, tllmando, Talon engineer Vehicle & Hover, Talon Juno, Talon MCV (silver), talon_veloute1, talon_veloute2, talon_veloute3, talon_gate3, talon_gate2, talon_gate1, talon_kevlar, talon_handgod, talon_tower, talon_nanotc1234, talon_fnanotc1234, ...
-**Model & Script** 
-**Only 3do Model** 
-- Morphed unit t1 : tllprivate1,  tllfireraizer,  tllpbot, tllanouncer
-- Arm/Core/TLL Nuke1 model               
-- Core Antinuke model 
-- tllmetalmakerlvl1
+Many models have been created by M1garland (.wings). Skymyj import them in 3D0 and textured them. The list is here : 
+T1 Arm/Core LLT1, T1 Arm/Core RL1, TLLHydre Tllhydre1, T3 Bertha/Corint, T1/T2/T3/T4 Arm/Core Tech Center, Arm/Core builderlvl2 builderlvl3, T5 Cruiser : tllzeppelin, tllbarbarus, T3.5 Ship : tllcaps, ,  Plasma gun : tll_immolator, tlllrpc, T4 tllbahamut,  T4 tllsaurus, AA Tower : tlltetanos, tllinsulator, tllcrawler, tllleopard, tllmarmelade, TLL Hover (tllhcrus), Core T1 tank flammer : corgfbt, TLL Fusion (tllefus), coremex, corbuzz1, tllmando, Talon engineer Vehicle & Hover, Talon Juno, Talon MCV (silver), talon_veloute1, talon_veloute2, talon_veloute3, talon_gate3, talon_gate2, talon_gate1, talon_kevlar, talon_handgod, talon_tower, talon_nanotc1234, talon_fnanotc1234, tllprivate1,  tllfireraizer,  tllpbot, tllanouncer, Arm/Core/TLL Nuke1 model, Core Antinuke, tllmetalmakerlvl1, talon_planetkiller.
 Please Ask permission to skymyj@hotmail.com if you want to use them.
 ##### --- --- #####
 Bitmaps strike.png and lightningball.png are copyright by [BoS]nixtux please ask permission before using theses textures.
 ##### --- --- #####
 Bitmaps sunlight1.png and sunlight.png are copyright by skymyj please ask permission before using theses textures.
 ##### --- --- #####
-Unitlogos for tll copyrighted by [BoS]nixtux
-racelogogouraud.tga
-race32dk.tga
-race32lt.tga
-##### --- --- #####
-Sidepic
-tll.bmp
-talon.bmp
+Sidepic for tll copyrighted by [BoS]nixtux : racelogogouraud.tga, race32dk.tga, race32lt.tga
+Unitlogos tll.bmp copyrighted by [BoS]nixtux 
 All Unit pictures and images used for icon backgrounds copyrighted by [BoS]nixtux ask permission before using those images.
+##### --- --- #####
+Unitlogos talon.bmp copyrighted by skymyj  
+All icons Talon have been created and are copyrighted by skymyj
 ##### --- --- #####
 Credits : Some Models are in this mod are from TA:Escalation i would like to thanks archdragon,
 boogie, Wotan and the TheRegisteredOne for letting us use these models. Please follow this link : taesc.tauniverse.com to see rights about these units.
