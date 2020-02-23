@@ -28,8 +28,7 @@ return {
 		losemitheight = 37,
 		mass = 4487,
 		maxdamage = 4105,
-		maxslope = 10,
-		maxwaterdepth = 0,
+		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform",
 		noautofire = false,
@@ -44,7 +43,7 @@ return {
 		unitname = "tllahpns",
 		usebuildinggrounddecal = false,
 		waterline = 3,
-		workertime = 400,
+		workertime = 420,
 		yardmap = "ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo ooccccccoo",
 		buildoptions = {
 			[1] = "tllach",

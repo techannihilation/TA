@@ -27,7 +27,6 @@ return {
 		losemitheight = 22,
 		mass = 1303,
 		maxdamage = 3500,
-		metalstorage = 200,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Hovercraft Platform - NS",
@@ -44,7 +43,7 @@ return {
 		standingmoveorder = 1,
 		unitname = "tllhpns",
 		waterline = 9,
-		workertime = 500,
+		workertime = 250,
 		yardmap = "wwCCCCww wwCCCCww wwCCCCww wwCCCCww wwCCCCww wwCCCCww wwCCCCww wwCCCCww",
 		buildoptions = {
 			[1] = "tllchover",
