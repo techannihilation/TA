@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, base, tail, torpedo;
+piece  flare1, flare2, base, tail;
 
 static-var  gun_1;
 
