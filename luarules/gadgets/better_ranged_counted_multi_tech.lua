@@ -314,6 +314,7 @@ if (gadgetHandler:IsSyncedCode()) then
  		--[UnitDefNames["armkrmi"].id] = true,
  		[UnitDefNames["armcav"].id] = true,
 	}
+	local ignoredBuilders = GG.ignoredBuilders or {}
 
 	local function NthCharIs(str,n,charlist)
 		local char=string.sub(str,n,n)
@@ -689,7 +690,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		team=team or Spring.GetUnitTeam(u)
 
 
-		if ignoredunits[ud] then
+		if ignoredunits[ud] or ignoredBuilders[ud] then
 			return 
 		end
 		
