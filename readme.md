@@ -43,7 +43,7 @@ Many models come from other total Annihilation Community. We asked permission to
 
 ## License
 
-This project is licensed under the MIT License - see the credit.txt (https://github.com/techannihilation/TA/blob/master/credits.txt)
+This project is licensed under the Attribution-NonCommercial-ShareAlike 4.0 International - see the credit.txt (https://github.com/techannihilation/TA/blob/master/credits.txt)
 
-Careful, do not use content, cause many of all contents provides from other games/mode. 
+Careful, do not use content, cause many of all contents are copyrighted and provide from other games/mode. 
 Post an Issue if you want to ask us to use a model. We could answer if you can use or not a file we created. In case, of not our work, we could directly send the good person to contact in order to use file.

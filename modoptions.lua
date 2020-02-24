@@ -141,6 +141,17 @@ local options={
     step   = 0.1,
   },
   {
+    key = "mo_maxtech",
+    name = "Limit game to selected tech level",
+    desc = "Limit game to selected tech level\nAutoHost Usage :- mo_maxtech",
+    type = "number",
+    def = 0,
+    section = "ta_modes",
+    min    = 0,
+    max    = 5,
+    step   = 1,
+  },
+  {
     key = "mo_unitlimiter",
     name = "Spam Limiter",
     desc = "Limits number of units being build\nAutoHost Usage :- mo_unitlimiter",
