@@ -1,4 +1,15 @@
-﻿3.32 -> 3.33
+﻿3.33 -> 3.34
+2020-02-24
+Balance :
+ - Nothing
+
+Improvments:
+ - Delete temporaly Talon until we found solution with licence
+ - Add Talon Hover Lab Naval Serie
+ - Add for all Faction t1 ship cons the hover t1/t2 lab
+ - decrease model goliath hover (5%) and tllgaus t1 (10%)
+
+3.32 -> 3.33
 2020-02-17
 Balance :
  - Increase reload time of Talon Silver V2: 5sec -> 8sec. Decrease cost -20K and decrease HP -10K.

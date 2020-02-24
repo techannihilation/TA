@@ -48,7 +48,7 @@ return {
 		trackstrength = 10,
 		trackstretch = 1,
 		tracktype = "StdTank",
-		trackwidth = 50,
+		trackwidth = 40,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.561,

@@ -4,7 +4,8 @@
 #include "exptype.h"
 
 piece  beam1, beam2, beam3, beam4, base, body, pier1, pier2,
-       pier3, pier4, side1, side2, pad, block1, block2, nano1a, nano1b, nano2a, nano2b;
+       pier3, pier4, side1, side2,
+       pad, block1, block2, nano1a, nano1b, nano2a, nano2b, padsee;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
 
@@ -106,7 +107,7 @@ Go()
 
 Stop()
 {
-	sleep 500;
+	sleep 3000;
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
 	start-script deactivatescr();
@@ -227,13 +228,13 @@ Killed(severity, corpsetype)
 		explode pier1 type SHATTER | NOHEATCLOUD ;
 		explode pier2 type SHATTER | NOHEATCLOUD;
 		explode pier3 type SHATTER | SMOKE | NOHEATCLOUD;
-		explode pier4 type SHATTER | SMOKE | NOHEATCLOUD;		
+		explode pier4 type SHATTER | SMOKE | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+				explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode nano1a type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 		explode nano2a type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode nano1b type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
@@ -250,6 +251,8 @@ Killed(severity, corpsetype)
 		explode pier4 type SHATTER | SMOKE | NOHEATCLOUD;
 		return (corpsetype);
 	}
+	if( severity <= 99 )
+	{
 		corpsetype = 3;
 		explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode nano1a type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
@@ -267,4 +270,6 @@ Killed(severity, corpsetype)
 		explode pier3 type SHATTER | SMOKE | NOHEATCLOUD;
 		explode pier4 type SHATTER | SMOKE | NOHEATCLOUD;
 		return (corpsetype);
+	}
+
 }
