@@ -35,6 +35,3 @@ T3 Jammer Arm/Core, T1.5 Bertha Arm/Core, Artillery Overlord, armolympus, armecv
 UNITS MADE BY KROGOTH86: You may use all of those units in your mods but you have to give proper credits to me...
 Arm/Core Advanced Metal Maker, Arm/Core Advanced Tidal Generator, Arm/Core Advanced Wind Generator, Arm/Core Cracker (T1 Artillery KBot), Arm/Core Extreme Air Plant, Arm/Core Light Fusion Power Plant, armvhlt, Mole (T2 Vehicle Assister), Punkie (T1 Scout KBot) (Flea counterpart), Thud MK-II (T3 Artillery Mech), VHLT (T2 Laser Turret)
 ##### --- --- #####
-"Parachute" icon by Joe Looney, from thenounproject.com
-"Parachute" icons by Joe Looney are included in armmav.png, corpyro.png, commando.png, tlltraq.png
-Parachute Icon is licensed as Creative Commons CCBY, https://creativecommons.org/licenses/by/3.0/us/legalcode
