@@ -83,6 +83,7 @@ return {
 			[22] = "talon_ahpns",
 			[23] = "talon_fnanotc2",
 			[24] = "talon_asonar",
+			[25] = "talon_fgate1",
 		},
 		customparams = {
 			buildpic = "talon_ech.dds",

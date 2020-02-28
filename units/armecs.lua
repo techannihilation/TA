@@ -69,7 +69,7 @@ return {
 			[8] = "armasy",
 			[9] = "armesy",
 			[10] = "armfnanotc2",
-			[11] = "armflosh",			
+			[11] = "armfgate1",			
 		},
 		customparams = {
 			buildpic = "armecs.dds",

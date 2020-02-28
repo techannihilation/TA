@@ -1,13 +1,17 @@
 ﻿3.33 -> 3.34
 2020-02-24
 Balance :
- - Nothing
+ - Decrease Kronos Range 1400=>1300
+ - Increase HP for T3 Sniper 11000 => 12850
+ - TLLHailstorm damage 4800 => 4500
+ - T3 Armored Vehicle Lighting. When decrease protection when closed 95% => 90% (for 100dmg, it takes 10)
 
 Improvments:
  - Delete temporaly Talon until we found solution with licence
  - Add Talon Hover Lab Naval Serie
  - Add for all Faction t1 ship cons the hover t1/t2 lab
  - decrease model goliath hover (5%) and tllgaus t1 (10%)
+ - Add T3 Shield Reflector Naval Series
 
 3.32 -> 3.33
 2020-02-17

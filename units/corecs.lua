@@ -69,7 +69,7 @@ return {
 			[8] = "corasy",
 			[9] = "coresy",
 			[10] = "corfnanotc2",
-			[11] = "corflshd",
+			[11] = "corfgate1",
 		},
 		customparams = {
 			buildpic = "corecs.dds",

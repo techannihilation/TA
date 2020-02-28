@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 1940180,
 		buildcostmetal = 294918,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 8,
-		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "tllgate1_aoplane.dds",
 		buildpic = "tllgate3.dds",
 		buildtime = 1250000,
 		canattack = false,
@@ -48,7 +44,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllgate3",
-		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo ",
 		customparams = {
 			buildpic = "tllgate3.dds",

@@ -96,6 +96,15 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	armfgate1 = {
+		{
+			name = "shield_afg1",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	armpraet = {
 		{
 			name = "shield_praet",
@@ -207,6 +216,15 @@ return {
 	corflshd = {
 		{
 			name = "shield_cfg",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	corfgate1 = {
+		{
+			name = "shield_cfg1",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
@@ -330,6 +348,15 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	tllfgate1 = {
+		{
+			name = "shield_tfg1",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	irritator = {
 		{
 			name = "shield_irr",
@@ -425,6 +452,24 @@ return {
 	talon_gate = {
 		{
 			name = "shield_talg",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_fgate = {
+		{
+			name = "shield_talfg",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_fgate1 = {
+		{
+			name = "shield_talfg1",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,

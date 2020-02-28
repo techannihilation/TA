@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, gun, emitter, core, reactor1, reactor2, reactor3, support1, support2, support3;
+piece  base, body, gun, emitter, core, support1, support2, support3;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -149,9 +149,9 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
 		explode emitter type NOHEATCLOUD;
-		explode reactor1 type NOHEATCLOUD;
-		explode reactor2 type NOHEATCLOUD;
-		explode reactor3 type NOHEATCLOUD;
+		explode support1 type NOHEATCLOUD;
+		explode support2 type NOHEATCLOUD;
+		explode support3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -159,26 +159,16 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
 		explode emitter type NOHEATCLOUD;
-		explode reactor1 type NOHEATCLOUD | FALL;
-		explode reactor2 type NOHEATCLOUD | FALL;
-		explode reactor3 type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode body type NOHEATCLOUD;
-		explode emitter type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode reactor1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode reactor2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode reactor3 type NOHEATCLOUD;
+		explode support1 type NOHEATCLOUD | FALL;
+		explode support2 type NOHEATCLOUD | FALL;
+		explode support3 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-		explode body type NOHEATCLOUD;
-		explode emitter type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode reactor1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode reactor2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode reactor3 type NOHEATCLOUD;
-		return (corpsetype);
+	explode body type NOHEATCLOUD;
+	explode emitter type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode support1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode support2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode support3 type NOHEATCLOUD;
+	return (corpsetype);
 }

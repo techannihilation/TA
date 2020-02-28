@@ -75,7 +75,7 @@ return {
 			[19] = "tllwmmohoconv",
 			[20] = "tllesy",
 			[21] = "tllfnanotc2",
-			[22] = "tllfgate",		
+			[22] = "tllfgate1",		
 		},
 		customparams = {
 			buildpic = "tlldoc.dds",

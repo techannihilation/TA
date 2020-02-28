@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 349703,
 		buildcostmetal = 31538,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 6,
-		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "tllgate1_aoplane.dds",
 		buildpic = "tllgate.dds",
 		buildtime = 350000,
 		canattack = false,
@@ -42,7 +38,6 @@ return {
 		selfdestructas = "BANTHA_NUKE",
 		sightdistance = 240,
 		unitname = "tllgate",
-		usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "tllgate.dds",
