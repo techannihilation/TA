@@ -53,9 +53,9 @@ HitByWeapon(anglex, anglez)
 Go()
 {
 	Static_Var_3 = 2;
-	turn caisson1 to z-axis <-70.016484> speed <30.000000>;
-	turn caisson2 to z-axis <70.016484> speed <30.000000>;
-	turn caisson to x-axis <-70.016484> speed <45.000000>;
+	turn caisson1 to z-axis <-70.016484> speed <20.000000>;
+	turn caisson2 to z-axis <70.016484> speed <20.000000>;
+	turn caisson to x-axis <-70.016484> speed <40.000000>;
 	wait-for-turn caisson around x-axis;
 	set ARMORED to 0;
 	move blaster to y-axis [10.000000] speed [10.000000];
@@ -74,9 +74,9 @@ Stop()
 	move blaster to y-axis [0.000000] speed [10.000000];
 	move bearing to y-axis [0.000000] speed [10.000000];
 	sleep 2000;
-	turn caisson1 to z-axis <0.000000> speed <35.000000>;
-	turn caisson2 to z-axis <0.000000> speed <35.000000>;
-	turn caisson to x-axis <0.000000> speed <35.000000>;
+	turn caisson1 to z-axis <0.000000> speed <20.000000>;
+	turn caisson2 to z-axis <0.000000> speed <20.000000>;
+	turn caisson to x-axis <0.000000> speed <40.000000>;
 	sleep 800;
 	set ARMORED to 1;
 	set BUSY to 0;
