@@ -462,12 +462,12 @@ local morphDefs = {
 		tech = 1,
 	},
 	tllgate = {
-		into = 'tllfgate1',
+		into = 'tllgate4',
 		time = 60,
 		tech = 2,
 	},
 	tllfgate = {
-		into = 'tllgate4',
+		into = 'tllfgate1',
 		time = 60,
 		tech = 2,
 	},

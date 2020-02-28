@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 349703,
 		buildcostmetal = 31538,
 		builder = false,
-		buildpic = "tllgate.dds",
+		buildpic = "tllgate1.dds",
 		buildtime = 350000,
 		canattack = false,
 		canstop = 1,
@@ -40,7 +40,7 @@ return {
 		unitname = "tllgate",
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
-			buildpic = "tllgate.dds",
+			buildpic = "tllgate1.dds",
 			faction = "TLL",
 			shield_power = 60000,
 			shield_radius = 1000,

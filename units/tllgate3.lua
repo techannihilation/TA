@@ -47,7 +47,7 @@ return {
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo ",
 		customparams = {
 			buildpic = "tllgate3.dds",
-			faction = "CORE",
+			faction = "TLL",
 			shield_power = 600000,
 			shield_radius = 2200,
 		},
