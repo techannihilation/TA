@@ -78,6 +78,9 @@ function widget:DrawWorld()
 	glCallList(geoDisplayList)
 	glColor(1, 1, 1, 1)
 	glLineWidth(1)
+	else
+		gl.DeleteList(geoDisplayList)
+		geoDisplayList = nil
 	end
 end
 
