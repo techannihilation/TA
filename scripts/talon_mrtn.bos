@@ -3,9 +3,14 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, Lflare1, Lflare2, Lflare3, Rflare, Lsleeve, Rsleeve, turret, Lgun, Rgun, gine1, gine2, gine3;
+piece  base, turret, Rflare, Lflare, 
+       Rbarrel1, Rbarrel2, Rbarrel3, Lbarrel1, Lbarrel2, Lbarrel3, 
+       Rsleeves, Lsleeves, gine1, gine2, gine3, Rcanon, Lcanon;
 
-static-var  Static_Var_Delay, Static_Var_1;
+static-var  restore_delay, gun1;
+
+// Signal definitions
+#define SIG_AIM				2
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -35,101 +40,106 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-RockUnit(anglex, anglez)
+HitByWeapon(anglex, anglez)
 {
-	turn base to x-axis anglex speed <50.>;
-	turn base to z-axis anglez speed <50.>;
+	turn base to z-axis anglez speed <105.021978>;
+	turn base to x-axis anglex speed <105.021978>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
-	turn base to z-axis <0.> speed <20.>;
-	turn base to x-axis <0.> speed <20.>;
+	turn base to z-axis <0.000000> speed <30.005495>;
+	turn base to x-axis <0.000000> speed <30.005495>;
 }
 
 Create()
 {
-	hide Lflare1;
-	hide Lflare2;
-	hide Lflare3;
-	hide Rflare;
-	Static_Var_Delay = 4000;
-	Static_Var_1 = 0;
+	restore_delay = 3000;
+	gun1 = 0;
 	start-script SmokeUnit();
 }
 
 SetMaxReloadTime(Func_Var_1)
 {
-	Static_Var_Delay = Func_Var_1 * 2;
+	restore_delay = Func_Var_1 * 4;
 }
 
 RestoreAfterDelay()
 {
-	sleep Static_Var_Delay;
-	turn turret to y-axis <0.> speed <75.>;
-	turn Lsleeve to x-axis <0.> speed <50.>;
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <10.000000>;
+	turn Rsleeves to x-axis <0.000000> speed <4.000000>;
+	turn Lsleeves to x-axis <0.000000> speed <4.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
-	turn turret to y-axis heading speed <75.>;
-	turn Lgun to x-axis <0.> - pitch speed <50.>;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <60.000000>;
+	turn Rsleeves to x-axis <0.000000> - pitch speed <50.000000>;
+	turn Lsleeves to x-axis <0.000000> - pitch speed <50.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn Lgun around x-axis;
+	wait-for-turn Rsleeves around x-axis;
 	start-script RestoreAfterDelay();
-	return (1);
-}
-
-AimSecondary(heading, pitch)
-{
-	signal 4;
-	set-signal-mask 4;
 	return (1);
 }
 
 FirePrimary()
 {
-	++Static_Var_1;
-	If (Static_Var_1 == 3)
+	if (gun1 == 0)
 	{
-		Static_Var_1 = 0;
-	}
+		sleep 500;
+		turn Rcanon to z-axis <120.000000> speed <150.000000>;
 
+	}
+	if (gun1 == 1)
+	{
+		sleep 500;
+		turn Lcanon to z-axis <120.000000> speed <150.000000>;
+	}
+	if (gun1 == 2)
+	{
+		sleep 500;
+		turn Rcanon to z-axis <240.000000> speed <150.000000>;
+	}
+	if (gun1 == 3)
+	{
+		sleep 500;
+		turn Lcanon to z-axis <240.000000> speed <150.000000>;
+
+	}
+	if (gun1 == 4)
+	{
+		sleep 500;
+		turn Rcanon to z-axis <0.000000> speed <150.000000>;
+	}
+	if (gun1 == 5)
+	{
+		sleep 500;
+		turn Lcanon to z-axis <0.000000> speed <150.000000>;
+	}
+	
+	++gun1;
+	if (gun1 == 6)
+	{
+		gun1 = 0;
+	}
 }
 
-FireSecondary()
+QueryPrimary(piecenum)
 {
+	if (gun1 == 0 or gun1 == 2 or gun1 == 4 )
+	{
+		piecenum = Rflare;
+	}
+	if (gun1 == 1 or gun1 == 3 or gun1 == 5 )
+	{
+		piecenum = Lflare;
+	}	
 }
 
 AimFromPrimary(piecenum)
 {
 	piecenum = turret;
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = turret;
-}
-
-QueryPrimary(piecenum)
-{
-	If (Static_Var_1 == 0)
-	{
-		piecenum = Lflare1;
-	}
-	If (Static_Var_1 == 1)
-	{
-		piecenum = Lflare2;
-	}	
-	If (Static_Var_1 == 2)
-	{
-		piecenum = Lflare3;
-	}
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = Rflare;
 }
 
 SweetSpot(piecenum)
@@ -139,50 +149,40 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide Lflare1;
-	hide Lflare2;
-	hide Lflare3;
-	hide Rflare;
-	
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode Lgun type NOHEATCLOUD;
+		explode Rsleeves type NOHEATCLOUD;
+		explode Lsleeves type NOHEATCLOUD;
 		explode gine1 type NOHEATCLOUD;
 		explode gine2 type NOHEATCLOUD;
 		explode gine3 type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode Lsleeve type NOHEATCLOUD;
+		explode Rcanon type NOHEATCLOUD;
+		explode Lcanon type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode Lgun type NOHEATCLOUD | FALL;
 		explode gine1 type NOHEATCLOUD;
 		explode gine2 type NOHEATCLOUD;
 		explode gine3 type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | FALL;
-		explode Lsleeve type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode Lgun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gine1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gine2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gine3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode Lsleeve type NOHEATCLOUD;
+		explode Rcanon type NOHEATCLOUD | FALL;
+		explode Lcanon type NOHEATCLOUD | FALL;
+		explode Rsleeves type NOHEATCLOUD | FALL;
+		explode Lsleeves type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode Lgun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode gine1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode gine2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode gine3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lsleeve type NOHEATCLOUD;
+	explode gine1 type NOHEATCLOUD;
+	explode gine2 type NOHEATCLOUD;
+	explode gine3 type NOHEATCLOUD;
+	explode Rcanon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Lcanon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Rsleeves type NOHEATCLOUD | FALL;
+	explode Lsleeves type NOHEATCLOUD | FALL;
+	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
