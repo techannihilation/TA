@@ -14,16 +14,6 @@ To install the game, 2 options :
 1 - Download the spring Engine (https://springrts.com/wiki/Download). And Donload this repository and paste on spring/games/TA.SDD folder. You could play alone to test the mode.
 2 - Download a lobby, for example : https://springlobby.info/landing/index.php. then you will find a battleroom with Tech-annihilation mention. You can enter in the battleroom and maps and last version will be automatically download.
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
 Actually, the Tech annihilation mode, have no version. All commits done are automatically upload on Rapid (http://tard.repo.springrts.com/builds/).
@@ -43,7 +33,7 @@ Many models come from other total Annihilation Community. We asked permission to
 
 ## License
 
-This project is licensed under the Attribution-NonCommercial-ShareAlike 4.0 International - see the credit.txt (https://github.com/techannihilation/TA/blob/master/credits.txt)
+Artwork items are licensed under the Attribution-NonCommercial-ShareAlike 4.0 International - see the credit.txt (https://github.com/techannihilation/TA/blob/master/credits.txt)
 
-Careful, do not use content, cause many of all contents are copyrighted and provide from other games/mode. 
+Careful, do not use any content! Many of all contents are copyrighted and provide from other games/mode. 
 Post an Issue if you want to ask us to use a model. We could answer if you can use or not a file we created. In case, of not our work, we could directly send the good person to contact in order to use file.
