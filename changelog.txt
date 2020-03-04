@@ -4,7 +4,7 @@ Balance :
  - Decrease Kronos Range 1400=>1300
  - Increase HP for T3 Sniper 11000 => 12850
  - TLLHailstorm damage 4800 => 4500
- - T3 Armored Vehicle Lighting. When decrease protection when closed 95% => 90% (for 100dmg, it takes 10)
+ - T3 Armored Vehicle Lighting. Increase reloadtime 1.2=>1.25. When open/close, decrease protection 95% => 90% (for 100dmg, it takes 10). Decrease time to open/close.
 
 Improvments:
  - Delete temporaly Talon until we found solution with licence
