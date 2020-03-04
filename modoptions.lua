@@ -111,14 +111,6 @@ local options={
     section = "ta_modes",
   },
   {
-    key = "mo_superecostart",
-    name = "Super Economy",
-    desc = "Start with Super Economy\nAutoHost Usage :- mo_superEcoStart",
-    type = "bool",
-    def = false,
-    section = "ta_modes",
-  },
-  {
     key = "mo_impmulti",
     name = "Impulse multiplier",
     desc = "Impulse multiplier for certain units\nAutoHost Usage :- mo_impmulti",
@@ -127,17 +119,6 @@ local options={
     section = "ta_modes",
     min    = 0,
     max    = 3,
-    step   = 0.1,
-  },
-  {
-    key = "mo_impfact",
-    name = "Impulse square factor",
-    desc = "Impulse square factor\nAutoHost Usage :- mo_impfact",
-    type = "number",
-    def = 0.8,
-    section = "ta_modes",
-    min    = 0.1,
-    max    = 1,
     step   = 0.1,
   },
   {
@@ -208,14 +189,6 @@ local options={
     section= "ta_modes",
   },
   {
-    key    = "mo_allowfactionchange",
-    name   = "Allow Faction Change",
-    desc   = "Allows faction to be changed ingame\nAutoHost Usage :- mo_allowfactionchange",
-    type   = "bool",
-    def    = true,
-    section= "ta_options",
-  },
-  {
     key    = "mo_comgate",
     name   = "Commander Teleport Effect",
     desc   = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost Usage :- mo_comgate",
@@ -263,15 +236,6 @@ local options={
     def    = true,
     section= "ta_options",
   },
-  --[[ {
-    key    = "mo_noshare",
-    name   = "No Sharing To Enemies",
-    desc   = "Prevents players from giving units or resources to enemies\nAutoHost Usage :- mo_noshare",
-    type   = "bool",
-    def    = true,
-    section= "ta_options",
-  },
-  --]]
   {
     key    = "mo_nowrecks",
     name   = "No Unit Wrecks",

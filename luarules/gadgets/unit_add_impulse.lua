@@ -13,7 +13,7 @@ end
 
 if (gadgetHandler:IsSyncedCode()) then
 	local multiplier = tonumber(Spring.GetModOptions().mo_impmulti) or 0
-	local factor = tonumber(Spring.GetModOptions().mo_impfact) or 0.8
+	local factor = 0.7
 
 	local Weapons = {
 		---ARM
