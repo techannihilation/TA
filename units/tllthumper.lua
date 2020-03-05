@@ -118,7 +118,7 @@ return {
 				areaofeffect = 312,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 468,
+				craterareaofeffect = 312,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
