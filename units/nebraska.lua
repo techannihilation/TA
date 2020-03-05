@@ -125,7 +125,7 @@ return {
 				intensity = 0.75,
 				name = "Annihilator Weapon Nebraska",
 				noselfdamage = true,
-				range = 1500,
+				range = 1650,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.6 1",
 				soundhitdry = "xplolrg1",
