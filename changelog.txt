@@ -1,4 +1,13 @@
-﻿3.33 -> 3.34
+﻿3.34 -> 3.35
+2020-03-05
+Balance :
+ - Decrease range for Silver Talon and Bahamut TLL Unit
+ - 
+
+Improvments:
+ - Decrease Crater visual for all aoe like goliath, fatboy... In work again.
+
+3.33 -> 3.34
 2020-02-24
 Balance :
  - Decrease Kronos Range 1400=>1300
