@@ -125,7 +125,7 @@ return {
 				areaofeffect = 320,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 360,
+				craterareaofeffect = 320,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,

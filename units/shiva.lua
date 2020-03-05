@@ -4,7 +4,7 @@ return {
 		amphibious = 1,
 		brakerate = 0.714,
 		buildcostenergy = 86187,
-		buildcostmetal = 3467,
+		buildcostmetal = 3611,
 		builder = false,
 		buildpic = "shiva.dds",
 		buildtime = 35000,
@@ -123,10 +123,10 @@ return {
 		},
 		weapondefs = {
 			shiva_gun = {
-				areaofeffect = 176,
+				areaofeffect = 292,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 264,
+				craterareaofeffect = 292,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",

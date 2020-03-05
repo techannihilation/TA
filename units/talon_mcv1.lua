@@ -161,7 +161,7 @@ return {
 				intensity = 5,
 				name = "Overcharged Impulsion Blaster",
 				noselfdamage = true,
-				range = 2750,
+				range = 2500,
 				reloadtime = 8,
 				rgbcolor = "0.1 0.9 1",
 				size = 5,
