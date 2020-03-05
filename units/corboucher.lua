@@ -127,7 +127,7 @@ return {
 				intensity = 0.75,
 				name = "Cartouche Aluminium",
 				noselfdamage = true,
-				range = 1560,
+				range = 2000,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.6 1",
 				soundhitdry = "xplolrg1",
