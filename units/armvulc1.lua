@@ -123,7 +123,7 @@ return {
 				name = "RapidfireLRPC",
 				nogap = 1,
 				noselfdamage = true,
-				range = 6000,
+				range = 9800,
 				reloadtime = 0.5,
 				rgbcolor = "0.85 0.6 0",
 				separation = 0.45,
