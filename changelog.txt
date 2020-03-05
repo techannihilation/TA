@@ -2,7 +2,7 @@
 2020-03-05
 Balance :
  - Decrease range for Silver Talon and Bahamut TLL Unit
- - 
+ - Decrease Range for T5 Turret (nebraska...) 2K=> 1600-1700
 
 Improvments:
  - Decrease Crater visual for all aoe like goliath, fatboy... In work again.
