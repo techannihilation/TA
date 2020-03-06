@@ -103,7 +103,7 @@ cafus = {
     {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=0, size=112, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({piece="emit2", delay=40, size=112, count=1, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={life=math.huge, priority=2, piece="emit2", size=50, precision=22, repeatEffect=true}},
-  },	
+  },
   tllmegacoldfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, size=70, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, size=70, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
@@ -133,7 +133,7 @@ cafus = {
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={56,104,32}, size=18, precision=22, repeatEffect=true}},
 	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
   },
-  
+
   --// SHIELDS //--------------------------
   cmetalmakerlvl3 = {
     {class='StaticParticles',options=cmetelmakerlvl3Effect},
@@ -407,7 +407,7 @@ tllmeteor = {
     {class='SimpleParticles2', options=MergeTable({pos={-12,60,-37}, delay=15, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,75,-37}, delay=30, lifeSpread=30},sparksr3)},
     {class='SimpleParticles2', options=MergeTable({pos={-12,90,-37}, delay=45, lifeSpread=30},sparksr3)},
-  }, 
+  },
  cjuno = {
     {class='ShieldSphere',options=junoShieldSphere},
     {class='GroundFlash',options=groundFlashJuno},
@@ -426,7 +426,7 @@ tllmeteor = {
   },
 
   --// ENERGY STORAGE //--------------------
-  
+
  corestor = {
     {class='GroundFlash',options=groundFlashCorestor},
   },
@@ -439,7 +439,7 @@ tllmeteor = {
  armses = {
     {class='GroundFlash',options=groundFlashArmses},
   },
-  
+
   --// PLANES still need to do work here //----------------------------
   armatlas = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
@@ -538,7 +538,7 @@ talon_handgod = {
   },
   corfalc = {
     {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
-  }, 
+  },
   tllrobber = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
@@ -608,7 +608,7 @@ talon_handgod = {
   corshock = {
     {class='AirJet',options={color={0.8,0.1,0}, width=10, length=30, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=10, length=30, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
-  },	
+  },
   corvamp = {
     {class='AirJet',options={color={0.6,0.1,0}, width=3.5, length=65, piece="thrustb", noIconDraw = true, priority=3, onActive=true}},
   },
@@ -683,13 +683,13 @@ talon_handgod = {
 abuilderlvl2 = {
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lfthrust", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lbthrust", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rfthrust", noIconDraw = true, priority=3, onActive=true}}, 
+	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rfthrust", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rbthrust", noIconDraw = true, priority=3, onActive=true}},
-}, 
+},
 abuilderlvl3 = {
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=25, emitVector = {0,1,0}, piece="thrust11", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust12", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust21", noIconDraw = true, priority=3, onActive=true}}, 
+	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust21", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust22", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
@@ -697,7 +697,7 @@ abuilderlvl3 = {
 abuilderlvl4 = {
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=6.5, length=25, emitVector = {0,1,0}, piece="thrust11", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=6.5, length=25, emitVector = {0,1,0}, piece="thrust12", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.2,0.3}, width=6.5, length=25, emitVector = {0,1,0}, piece="thrust21", noIconDraw = true, priority=3, onActive=true}}, 
+	{class='AirJet',options={color={1.0,0.2,0.3}, width=6.5, length=25, emitVector = {0,1,0}, piece="thrust21", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=6.5, length=25, emitVector = {0,1,0}, piece="thrust22", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=6.5, length=25, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=6.5, length=25, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
@@ -760,7 +760,7 @@ coreca = {
     {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.4,0}, width=4, length=24, piece="wingthrust2", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=6, length=48, piece="wingthrust3", noIconDraw = true, priority=3, onActive=true}},
- },	
+ },
  armcyclone = {
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=2.3, length=24, piece="rrthrust", noIconDraw = true, priority=3, onActive=true}},
@@ -769,7 +769,7 @@ coreca = {
  },
  coreclipse = {
     {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
- }, 
+ },
  armjade = {
     {class='Ribbon', options={width=1, size=8, piece="ribbon1", priority=3, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=8, piece="ribbon2", priority=3, noIconDraw = true}},
@@ -777,11 +777,11 @@ coreca = {
  bladew = {
     {class='Ribbon', options={width=1, size=8, piece="lribbon", priority=4, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=8, piece="rribbon", priority=4, noIconDraw = true}},
- }, 
+ },
  corsbomb = {
     {class='Ribbon', options={width=1, size=12, piece="ribbon1", priority=3, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=12, piece="ribbon2", priority=3, noIconDraw = true}},
- }, 
+ },
  tllca = {
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
@@ -800,6 +800,13 @@ coreca = {
  tlladvfight = {
     {class='AirJet',options={color={0,0,1}, width=5, length=22, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0,0,1}, width=5, length=22, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
+ },
+ tllpterodactyl = {
+    {class='AirJet',options={color={0,0,1}, width=2, length=18, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=2, length=18, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0,0,1}, width=2, length=18, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=20, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=20, piece="thrust5", noIconDraw = true, priority=3, onActive=true}},
  },
  tllseaf = {
     {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
@@ -860,7 +867,7 @@ tllzeppelin = {
 tllbarbarus = {
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust2", noIconDraw = true, priority=4, onActive=true}},
-    {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=4, onActive=true}}, 
+    {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=4, onActive=true}},
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust5", noIconDraw = true, priority=4, onActive=true}},
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust6", noIconDraw = true, priority=4, onActive=true}},
