@@ -1,0 +1,196 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, Ltrap, Rtrap, missl1, missl2, missl3, missl4;
+
+static-var  restore_delay, Static_Var_2, gun_1, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	move Ltrap to x-axis [-2.16] speed [5.0];
+	move Rtrap to x-axis [2.16] speed [5.0];
+	turn Ltrap to z-axis <60.000000> speed <40.000000>;
+	turn Rtrap to z-axis <-60.000000> speed <40.000000>;
+	wait-for-turn Ltrap around z-axis;
+	Static_Var_2 = 1;
+}
+
+Stop()
+{
+	Static_Var_2 = 0;
+	turn Ltrap to z-axis <0.000000> speed <40.000000>;
+	turn Rtrap to z-axis <0.000000> speed <40.000000>;
+	move Ltrap to x-axis [0.0] speed [5.0];
+	move Rtrap to x-axis [0.0] speed [5.0];
+	wait-for-turn Rtrap around z-axis;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	Static_Var_2 = 0;
+	gun_1 = 0;
+	restore_delay = 3000;
+	start-script SmokeUnit();
+	call-script InitState();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	set-signal-mask SIG_AIM;
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	while( !Static_Var_2 )
+	{
+		sleep 200;
+		start-script RequestState(0);
+	}
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	++gun_1;
+	if( gun_1 >= 4 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = missl1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = missl2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = missl3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = missl4;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode Ltrap type NOHEATCLOUD;
+		explode Rtrap type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD | FALL;
+		explode Ltrap type NOHEATCLOUD | FALL;
+		explode Rtrap type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD | SHATTER;
+	explode Ltrap type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode Rtrap type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

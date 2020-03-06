@@ -49,9 +49,10 @@ return {
 			[1] = "tllach",
 			--[2] = "tllengi",
 			[3] = "tllhcrus",
-			[4] = "tlllochness",
-			[5] = "tllhflak",
-			[6] = "tllhjam",
+			[4] = "tlldimetrodon",
+			[5] = "tlllochness",
+			[6] = "tllhflak",
+			[7] = "tllhjam",
 		},
 		customparams = {
 			buildpic = "tllahpns.dds",
