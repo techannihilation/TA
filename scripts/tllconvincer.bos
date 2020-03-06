@@ -137,24 +137,6 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 0 )
-	{
-		show flare1;
-		sleep 150;
-		hide flare1;
-	}
-	if( gun_1 == 1 )
-	{
-		show flare2;
-		sleep 150;
-		hide flare2;
-	}
-	if( gun_1 == 2 )
-	{
-		show flare3;
-		sleep 150;
-		hide flare3;
-	}
 	++gun_1;
 	if( gun_1 >= 3 )
 	{
