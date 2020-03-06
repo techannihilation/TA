@@ -18,7 +18,7 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move topcap to y-axis [-16.050000] speed [60.112378];
+		move topcap to y-axis [-12.0375] speed [60.112378];
 		sleep 267;
 	}
 	if( TRUE )
@@ -28,7 +28,7 @@ activatescr()
 	}
 	if( TRUE )
 	{
-		move topcap to y-axis [-0.700000] speed [57.706769];
+		move topcap to y-axis [-0.525000] speed [57.706769];
 		sleep 266;
 	}
 	set ACTIVATION to 1;
@@ -40,8 +40,8 @@ deactivatescr()
 	set ACTIVATION to 0;
 	if( TRUE )
 	{
-		move topcap to y-axis [-0.700000] now;
-		move topcap to y-axis [-16.050000] speed [57.924524];
+		move topcap to y-axis [-0.525000] now;
+		move topcap to y-axis [-12.0375] speed [57.924524];
 		turn topcap to y-axis <45.005495> now;
 		turn topcap to z-axis <-180.038462> now;
 		sleep 265;

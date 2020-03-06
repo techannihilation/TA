@@ -43,7 +43,7 @@ groundFlashCorestor = {
   noIconDraw = true,
   priority = 3,
 }
-  
+
 groundFlashArmestor = {
   life       = 50,
   size       = 80,
@@ -87,8 +87,8 @@ groundFlashJuno = {
 
 cmetelmakerlvl3Effect = {
   life       = math.huge,
-  pos        = {0,160,0},
-  size       = 120,
+  pos        = {0,120,0},
+  size       = 90,
   sizeSpread = 10,
   colormap   = { {0.3, 0.3, 0.8, 0.01} },
   onActive   = true,
@@ -628,7 +628,7 @@ sparks = {
   noIconDraw = true,
   priority   = 1,
   }
-  
+
 sparks1 = {
   speed        = 0,
   speedSpread  = 0,
@@ -653,7 +653,7 @@ sparks1 = {
   noIconDraw = true,
   priority   = 1,
   }
-  
+
 sparksr1 = {
   speed        = 0,
   speedSpread  = 0,
@@ -678,7 +678,7 @@ sparksr1 = {
   noIconDraw = true,
   priority   = 1,
   }
-  
+
 sparksr2 = {
   speed        = 0,
   speedSpread  = 0,
@@ -703,7 +703,7 @@ sparksr2 = {
   noIconDraw = true,
   priority   = 1,
   }
-  
+
 sparksr3 = {
   speed        = 0,
   speedSpread  = 0,
@@ -728,7 +728,7 @@ sparksr3 = {
   noIconDraw = true,
   priority   = 1,
   }
-  
+
 shield = {
   speed        = 0.2,
   speedSpread  = 0,
@@ -747,7 +747,7 @@ shield = {
   repeatEffect = true,
   noIconDraw = true,
   }
-  
+
 corgensparks = {
   speed        = 0,
   speedSpread  = 0,
@@ -771,7 +771,7 @@ corgensparks = {
   noIconDraw = true,
   priority   = 1,
   }
-  
+
 armamakerEffect = {
   life       = math.huge,
   pos        = {0,24,0},
