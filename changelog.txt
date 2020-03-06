@@ -2,7 +2,7 @@
 2020-03-05
 Balance :
  - Decrease range for Silver Talon and Bahamut TLL Unit
- - Decrease Range for T5 Turret (nebraska...) 2K=> 1600-1700
+ - Increase Range of T5 Turrets: The Butcher 1560 -> 1700, Nebraska 1500 -> 1650, Tll DMC 1480 -> 1600
 
 Improvments:
  - Decrease Crater visual for all aoe like goliath, fatboy... In work again.
