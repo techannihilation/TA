@@ -26,7 +26,7 @@ end
 local mapX = Game.mapSizeX
 local mapZ = Game.mapSizeZ
 local maxDist = 1500
-local checkDist = 5000
+local checkDist = 10000
 function gadget:GameFrame(f)
     if (f % 31 == 0) then
         left_side_units = GetUnitsInRectangle(-checkDist, -checkDist, -maxDist, mapZ + checkDist)
