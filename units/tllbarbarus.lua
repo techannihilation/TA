@@ -53,8 +53,6 @@ return {
 		noautofire = false,
 		objectname = "tllbarbarus",
 		pitchscale = 0.5,
-		radardistance = 1500,
-		radardistancejam = 450,
 		radaremitheight = 25,
 		reclaimable = true,
 		selfdestructas = "CRBLMSSL4",
