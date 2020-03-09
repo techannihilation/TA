@@ -193,8 +193,8 @@ function gadget:Initialize()
 				spSetTeamRulesParam(teamID, startUnitParamName, corcomDefID)
 			elseif teamSide == 'tll' then
 				spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
-			--elseif teamSide == 'talon' then
-				--spSetTeamRulesParam(teamID, startUnitParamName, taloncomDefID)
+			elseif teamSide == 'talon' then
+				spSetTeamRulesParam(teamID, startUnitParamName, taloncomDefID)
 			else
 				spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
 			end
