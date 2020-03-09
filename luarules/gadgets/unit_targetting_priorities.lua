@@ -20,7 +20,9 @@ if gadgetHandler:IsSyncedCode() then
     local SetUnitRulesParam = Spring.SetUnitRulesParam
     local GetUnitRulesParam = Spring.GetUnitRulesParam
     local GetUnitTeam = Spring.GetUnitTeam
+    local SendMessageToTeam = Spring.SendMessageToTeam
     local CMD_SET_PRIORITY = 34567
+    local redcolor = "\255\255\64\64"
     local PRIORITY_GOOD = 0.001
     local PRIORITY_BAD = 100
     local PRIORITY_INDIFFERENT = 1
@@ -409,6 +411,7 @@ if gadgetHandler:IsSyncedCode() then
             end
             if GetUnitRulesParam(unitID, "priorityEnabled") == 0 and cmdParams and cmdParams[1] ~= NO_PRIORITY_INDEX then -- change to prioritising
                 if playerPriorityCount[team] >= PLAYER_PRIORITY_LIMIT then
+                    SendMessageToTeam(team, redcolor .. "Warning: Can not set priority, limit ("..PLAYER_PRIORITY_LIMIT..") reached")
                     return false
                 end
                 playerPriorityCount[team] = playerPriorityCount[team] + 1
