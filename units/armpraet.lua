@@ -183,7 +183,7 @@ return {
 				explosiongenerator = "custom:FLASH4",
 				firestarter = 70,
 				metalpershot = 0,
-				model = "praetorian_missile",
+				model = "exphvyrock1",
 				name = "HeavyRockets",
 				proximitypriority = -1,
 				range = 1050,
