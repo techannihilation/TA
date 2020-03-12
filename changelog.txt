@@ -1,10 +1,13 @@
 ﻿3.34 -> 3.35
-2020-03-05
+2020-03-11
 Balance :
  - Decrease range for Silver Talon and Bahamut TLL Unit
  - Increase Range of T5 Turrets: The Butcher 1560 -> 1700, Nebraska 1500 -> 1650, Tll DMC 1480 -> 1600
+ - Decrease command Vehicle Arm Hp 45K => 43K
+ - Decrease Metron HP 54K => 49K
 
 Improvments:
+ - ReAdd Talon faction. Licence problem solved.
  - Decrease Crater visual for all aoe like goliath, fatboy... In work again.
 
 3.33 -> 3.34

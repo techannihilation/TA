@@ -4,9 +4,6 @@ return {
 		buildcostenergy = 9504768,
 		buildcostmetal = 170381,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 6,
-		buildinggrounddecalsizey = 6,
 		buildpic = "ametalmakerlvl4.dds",
 		buildtime = 9000000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -35,7 +32,6 @@ return {
 		selfdestructas = "nuclear_missile4",
 		sightdistance = 210,
 		unitname = "ametalmakerlvl4",
-		usebuildinggrounddecal = false,
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		customparams = {
 			buildpic = "ametalmakerlvl4.dds",
