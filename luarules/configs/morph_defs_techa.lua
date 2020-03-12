@@ -206,7 +206,7 @@ local morphDefs = {
 		xp = 0.25,
 	},
 	talon_llt = {
-		into = 'talon_llt',
+		into = 'talon_llt1',
 		time = 15,
 		xp = 0.25,
 	},
@@ -1350,6 +1350,16 @@ local morphDefs = {
 	--	into = 'talon_psyker1',
 	--  	time = 35,
 	--},
+	talon_sheatiped  = {
+		into = 'talon_vanguard',
+	  	time = 30,
+		xp = 1.00,
+	},
+	talon_lupa  = {
+		into = 'talon_armadillo',
+	  	time = 40,
+		xp = 0.40,
+	},
 	talon_whinestone  = {
 		into = 'talon_sapphire',
 	  	time = 40,
@@ -1362,7 +1372,12 @@ local morphDefs = {
 	talon_mcv1  = {
 		into = 'talon_mcv',
 	  	time = 15,
-	},	
+	},
+	talon_jewel  = {
+		into = 'talon_mrtn',
+	  	time = 60,
+		xp = 0.25,
+	},
 }
 
 --
