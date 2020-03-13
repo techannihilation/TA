@@ -50,13 +50,14 @@ return {
 		turnrate = 0,
 		unitname = "talon_podlab",
 		usebuildinggrounddecal = false,
-		workertime = 600,
+		workertime = 1600,
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo oooccccccccccccooo",
 		buildoptions = {
 			[1] = "talon_cpod",
-			[2] = "talon_archon",
-			[3] = "talon_mythril",
-			[4] = "talon_mcv",
+			[2] = "talon_expanse",
+			[3] = "talon_archon",
+			[4] = "talon_mythril",
+			[5] = "talon_mcv",
 		},
 		customparams = {
 			buildpic = "talon_podlab.dds",
