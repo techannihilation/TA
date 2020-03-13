@@ -5,7 +5,9 @@ Balance :
  - Increase Range of T5 Turrets: The Butcher 1560 -> 1700, Nebraska 1500 -> 1650, Tll DMC 1480 -> 1600
  - Decrease command Vehicle Arm Hp 45K => 43K
  - Decrease Metron HP 54K => 49K
-
+ - TLLColossus : Decrease Range for minion weapon 1500=>1400. Decrease damage for plasma 4000 => 3600
+ - TllMcv (Bahamut) : Decrease range 2400 => 2250
+ 
 Improvments:
  - ReAdd Talon faction. Licence problem solved.
  - Decrease Crater visual for all aoe like goliath, fatboy... In work again.
@@ -62,13 +64,13 @@ Improvments:
 
 3.30 -> 3.31
 2020-01-19
-Balance : 
+Balance :
  - Balance Metron speed
 
 Improvments:
  - Add T4 Command vehicle talon with new morphing system
  - Decrease Size model for T2 Jammer Talon
- - Add Tachyon Vehicle T2 Talon 
+ - Add Tachyon Vehicle T2 Talon
  - Add Flammer Rapid tank T2 Talon
 
 3.29 -> 3.30
@@ -80,7 +82,7 @@ Improvments:
 
 3.28 -> 3.29
 2020-01-13
-Balance : 
+Balance :
  - Balance All Hover Scout (adjust cost/speed/...) for all factions
  - Missile trucks T1 : decrease HP -150. Add special dammage against commanders (-25%)
 
@@ -89,7 +91,7 @@ Improvments:
 
 3.27 -> 3.28
 2020-01-10
-Balance : 
+Balance :
  - All Mobile LRPT need to not move to shoot
  - T3 Talon and TLL Targ become T2 targ. Reduced cost. Delete the long-range Radar.
 
@@ -98,14 +100,14 @@ Improvments:
  - Add T5 Talon Fusion.
  - Add Heavy Gunship Talon & TLL Air T2
 
-Fix : 
+Fix :
  - Talon Mine fixed (Thanks to Ceddral)
 
 3.26 -> 3.27
 2020-01-05
-Balance : 
+Balance :
  - Increase Krogoth/Armorco cost by 5%
- - Increase damage T4 Nuke (27K=>50K) 
+ - Increase damage T4 Nuke (27K=>50K)
  - Decrease cost champion (15%). Delete Add Anti-Experimental unit damage.
  - Metron : Add Anti-Experimental unit damage.
  - Balance Missile Truck : 15dmg/S => 20dmg/s. Adv Missile Truck : 20dmg/s => 30dmg/s
@@ -114,7 +116,7 @@ Improvments:
  - Add new weapon for Orco and Champion.
  - Rework Models for MobileLRPT (increase size, and add details for models)
 
-Fix : 
+Fix :
  - Ennemy Share Widget removed
  - Unit_interceptor widget
  - Many errors on infolog (thanks to abma)
@@ -126,7 +128,7 @@ Improvments:
  - Add T3 vehicle - Annubis Rapid Mobile LRPT
  - Rework Mythril Main Weapon (effect)
 
-Fix : 
+Fix :
  - Balance Mythril : More damage (+35%) and less range (1500=>1250) (Laser=>Plasma)
  - HERO movement unlocked
 
@@ -143,14 +145,14 @@ Improvments:
  - Delete Christmas Morph Free and commander Hat
  - Add new Cegtag for Talon rocket, Arm Burst
 
-Fix : 
+Fix :
  - Missile AA Launcher ArmRl T1 Script
  - Fix Exoarm collision box (coulnd't be dgun from long distance)
  - Fix PlanetKiller Aimpoint
 
 3.23 -> 3.24
 2019-12-21
-Balance: 
+Balance:
  - Decrease Haboob Artillery Tortoise Damage (250dmg/s=>225)
 
 Improvments:
@@ -160,7 +162,7 @@ Improvments:
 
 3.22 -> 3.23
 2019-12-18
-Balance: 
+Balance:
  - increase All T2 Energy cost Lab *2
  - Balance Commander Shield (Cost and protection)
  - Talon-emerald (t1 riot veh) : More speed and tunrate
@@ -176,7 +178,7 @@ Fix:
 
 3.21 -> 3.22
 2019-12-09
-Balance: 
+Balance:
  - Gladiator : Increase green laser power (75dmg/s => 100). Decrease range and power for rockets (150dmg=>126dmg for each rocket).
  - Decrease 500HP for all drillers
  - Decrease All Energy cost by 50% for Mobile and static Antinuke T2/T3.
@@ -200,7 +202,7 @@ Balance:
  - Tankanotor angle limited at 180° in front
  - Arm Fido projectile speed * 3
 
-Fix : 
+Fix :
  - Now all MLV (vehicle mines layer), can kill mines (20dmg/s)
  - Bug with Aibase fixed. Thank Silver.
 
@@ -264,7 +266,7 @@ Balance:
  - Increase cost for Monkeylord (+5%)
 
 Improvements:
- - Reduce Mass for Commander and transportair Air Mass transported. It's change nothing for commander. But now T1 Air can't transport Sumo for example. 
+ - Reduce Mass for Commander and transportair Air Mass transported. It's change nothing for commander. But now T1 Air can't transport Sumo for example.
  - Add Judgement Tortoise (Assault)
  - Add Radar Tortoise
  - Add Artillery Tortoise (Menacer with new model)
@@ -274,8 +276,8 @@ Improvements:
  - Delete corminautor (t3). Revert Champion => Core with Anti Experimental weapon.
  - Add Talon commando. (MAde by engi t2)
 
-Fix : 
- - Core/Arm Mines are now unlocked by T2/T3 lab as Talon/TLL 
+Fix :
+ - Core/Arm Mines are now unlocked by T2/T3 lab as Talon/TLL
 
 3.08.0 -> 3.09.0
 2019-10-29
@@ -287,8 +289,8 @@ Balance:
  - Decrease Energy cost for Raz (was too high +110KE)
  - Tortoise riptide gain Torpedo and lost starburst. Now, riptide can go in water and is all-terrain (New tortoises will come : radar, jammer, heavy assault, artillery (could be morph in haboob T3)
  - ReduceRange for Talon LLT / Sniper
- - Decrease cost and stats for T2.5 Krogtaar / AKmech (now, they are near from T2 than T3 units) 
- - Reduce Stats and cost for T2.5 Hover. 
+ - Decrease cost and stats for T2.5 Krogtaar / AKmech (now, they are near from T2 than T3 units)
+ - Reduce Stats and cost for T2.5 Hover.
 
 Improvements:
  - Delete all Tech Center, RC Cons and Exp Nano !!! (it's a test for few weeks to decrease complexity). => Many TX.5 units have been unlock or removed from panel menu but still exist with morph.
@@ -297,7 +299,7 @@ Improvements:
  - Add new models for Nano Core/ARm
  - Delete AA Tortoise and remplace by a Pod AA.
  - Move ArmCrabe for Talon T3. Delete Missile. Decrease cost and HP.
- - Add T3/T5 Shield Reflector. Some gate become T4 Now. 
+ - Add T3/T5 Shield Reflector. Some gate become T4 Now.
  - Add Luia Effect for Transport & fighter & Bomber Talon Air
  - Add Adv. AntiNuke Mobile Turtle TLL and Tribulation Talon
  - Rework Gorilla. New weapons and increase power. You can have it with Krogtaar morph.
@@ -305,7 +307,7 @@ Improvements:
 Bugs:
  - Fix Talon Air animation
  - Fix MinTransMass for Air Transport
- - Fix Talon T3 KBOT LAb Open/Start Cons 
+ - Fix Talon T3 KBOT LAb Open/Start Cons
 
 3.08.0 -> 3.XX.XX
 2019-10-21
@@ -313,16 +315,16 @@ Balance:
  - ARM/CORE Spider / Tortoise became T2. Increase power of some units. Transform Rezzer into Engineer. New units will come in future.
  - T3 All-Terrain decrease stats and cost
  - Decrease Vengence (Akmech) and Krogtaar (T2) stats and cost
- 
+
 Improvements:
  - Delete all Tech Center, Experimental Nano, Commander constructor
  - Delete from lab many X.5 units or move them in morph (Dao, brutus, rockos, pewee1/AK1, Mobile Domday, Air Blade, Pyrox, Helldriver, T1.5 ships, T2 Amphibious Mech Arm, Jump Kbot T2 Arm/Core, laser T2 Arm Tank, Gorilla T3, Juggernaut T3, Kargareth t4, Razzorback T4)
  - Move T5 Cons into T5 Shipyard
  - Add T5 Shield for all factions
- 
+
 Bugs:
  - Add Talon Lab with unit_air_plants gadget
- 
+
 3.08.0 -> 3.XX.XX
 2019-10-09
 
@@ -359,8 +361,8 @@ Improvements:
  - Add many new units (T3 Flak, T2 Jam, T1.5 Wind...)
  - New talon t1.5 Kbot, MM TLL T4 Models
 
-Bugs : 
- - Fix Talon adv Wind 
+Bugs :
+ - Fix Talon adv Wind
  - Fix 50% Menu Panel to chhose faction (again some errors)
 
 3.08.0 -> 3.XX.XX
@@ -370,17 +372,17 @@ Balance:
  - Decrease T1 shieldradius 340 => 300. Increase Powershield 2900 => 3000.
  - tllcom1 (eco) : increase energyproduction 100 => 150 E/s
  - Decrease HP for adv rapid bertha (T3) by 20%
- - Dragon Arm & Core : Decrease range. Increase Damage (+25%) and Hp (+100%). Job : defense. (atm, this unit have same job than beam arm or double llt for core). With this balance, dragon will be better to defend low range and not used to expand on battlezone. 
+ - Dragon Arm & Core : Decrease range. Increase Damage (+25%) and Hp (+100%). Job : defense. (atm, this unit have same job than beam arm or double llt for core). With this balance, dragon will be better to defend low range and not used to expand on battlezone.
  - Balance Zeus1 : Too op. Decrease HP by 5%. Decrease damage 300 => 200 range 350 => 270. Increase cost by 5%.
  - Balance Cavalier. Range for main weapon 750 => 675. Speed 1.4 => 1.5. Cost reduced by 10%.
  - Decrease Lighting Tank cost -30M and -1KE
  - Increase Range for Coyote at 460 (same than Bull)
  - Balance T4 Karg. Decrease speed 2.3 => 1.5. (fix same speed than T3 Karg : 1.5). Decrease HP by 20%. Decrease AA damage by 50%. Decrease energycost by 33%. This unit was totally OP attack/defend and not used for all-terrain strategy.
  - Balance T4 Razor. Decrease HP by 20%. Decrease energycost by 33%. Increase speed at 2.3=>2.5. Goal here is to have a rapid unit with high damage. Before, it was same job (speed, damage except shield) than Armpraet but was better.
-  - Balance Raptor : Decrease HP by 25%. Decrease speed by 1.7=>1.5. Delete the T4 RC to get it. Decrease range 700 => 675. Decrease damage for missile (more relaod). This unit was very strong (high damage and all terrain) with low cost.  
+  - Balance Raptor : Decrease HP by 25%. Decrease speed by 1.7=>1.5. Delete the T4 RC to get it. Decrease range 700 => 675. Decrease damage for missile (more relaod). This unit was very strong (high damage and all terrain) with low cost.
  - Increase Timebuild for all T4 nuke by 250%.
  - Fix range for Barret at 2150. (was 2650).
- 
+
 Improvements from last TA version (2019-08-28):
  - Add TALON faction. T0.5 T1 T1.5 T2 T3 T5 Implemented. Total 200+ new units!
  - Add Minigate for All T1 cons
@@ -406,7 +408,7 @@ Improvements from last TA version (2019-08-28):
  Bugs:
  - Fixed cordoom1 script
  - Fixed tllfgate (the shield didn't load)
- 
+
 3.07.0 -> 3.08.0
 2018-05-11
 
@@ -432,12 +434,12 @@ Balance:
  - Balance TLL Ultimate Dark Matter (tllefus), energyMake 32000E(-24000E) -> 28000E (-0E), metalMake 250M -> 125M
  - Reduce cost of TLL Private (tllprivate), energyCost 525E -> 490E, metalCost 65M -> 60M, buildTime reduced by 20%
  - Nerf T1/T1.5 Metal maker conversion rate -20%/-10%
- - Nerf Drillers conversion rate -10% 
+ - Nerf Drillers conversion rate -10%
  - Nerf All Metal Maker conversion rate ~ -8%
  - Buff TLL Hailstorm (tllhailstorm), energyCost 414000E -> 380000E, metalCost 50680M -> 45680M, buildTime -50%, moveSpeed +64%, range 2350 -> 1800, HP 572000 -> 1052000, AOE +23%, Damage 4000dps -> 6400dps
  - Buff TLL Gatling (tllarch), areaOfEffect 64 -> 96
  - Buff ARM MLRS (armmlrs), HP 4800 -> 6730, Damage 315dps -> 450dps
- - Buff CORE Tremor (trem), energyCost 48000E -> 31000E, metalCost 2090M -> 1850M, HP 2945 -> 3145, turnRate +3.5%, 
+ - Buff CORE Tremor (trem), energyCost 48000E -> 31000E, metalCost 2090M -> 1850M, HP 2945 -> 3145, turnRate +3.5%,
  - Increase cost of TLL Vanya (tllvanya), energyCost 2900000E -> 3900000E , metalCost 952000M -> 1290000M, buildTime +100%
  - Increase cost of CORE Influence (corflu), energyCost 5750000E -> 8000000E, metalCost 810000M -> 1080000M, buildTime +100%
  - Increase cost of ARM Tabitha (armtabi), energyCost 5300000E -> 7300000E, metalCost 840000M -> 1140000M, buildTime +100%
@@ -477,23 +479,23 @@ Improvements:
  - Add TLL T3 Metal maker (tllmetalmakerlvl2)
  - Add TLL T1.5 Metal Maker (tllmetalmakerlvl1)
  - Add TLL Immolator, energyPerShot 2000E, reloadTime 10sec, dmg per shot 750,
- - ARM/CORE/TLL Add new modles for T3 Berthas  
+ - ARM/CORE/TLL Add new modles for T3 Berthas
  - Add TLL Furious Announcer (tllannouncer1), Announcer can morph into Furious Announcerm, needs 0.05xp
  - Add T3 CORE Haboob All-Terrain Rapid Artillery Turtoise (corhaboob), Menacer All-Terrain Artillery Tortoise can morph into Haboob, needs 0.35xp
  - Add TLL Condor (tllcondor), T3 Shu Stealth Fighter can morph in T4 Condor - Supersonic Fighter, needs 0.05xp
  - Add TLL Furious Rainman (tllpbot1), Rainman can morph in Furious Rainman, needs 0.05xp
  - Add TLL Furious Private (tllprivate1), Private can morph in Furious Private, needs 0.01xp
  - Add TLL Hardened Nanotower (tllnanotower), build by TLL Star Commander
- - Add TLL Enriched Revenger (tllsilo1), build by TLL T3 Constructors 
- - Add CORE Lotus (corfpun) - Floating Plasma Battery, build by Naval Engineer 
+ - Add TLL Enriched Revenger (tllsilo1), build by TLL T3 Constructors
+ - Add CORE Lotus (corfpun) - Floating Plasma Battery, build by Naval Engineer
  - Add ARM Trident (armfguard) - Floating Plasma Battery, build by Naval Engineer
  - Add build options for ARM Rambo (armrambo), TLL Gizmo (tllgizmo), CORE Commando (commando)
  - Default maxUnits increased 750 -> 1500
  - Add TLL Naval Mine U-47 (tllfmine3)
  - Add CORE Overlord (cormcv), only available from morph tree: Tremor can morph into Overlord, needs 0.35xp (was 0.5xp)
  - Add Floating LLT to ARM, CORE, TLL
- - Add TLL Viking (tllviking) to T2 TLL Advanced Shipyard 
- - Add TLL Gizmo (tllgizmo), ARM Rambo (armrambo) - CORE Commando counterpart, build by T2 kbot engineers 
+ - Add TLL Viking (tllviking) to T2 TLL Advanced Shipyard
+ - Add TLL Gizmo (tllgizmo), ARM Rambo (armrambo) - CORE Commando counterpart, build by T2 kbot engineers
  - Add TLL Barbecue (tllgeo_armored), E/M +1400E/-1200E/+12M, HP 17500, 1600dps (flametower)
 
 Bugs:
@@ -516,7 +518,7 @@ Bugs:
  - coreavalanche & cordemon : Add flames.
  - tlldmc : increase size.
  - batships (arm & core) : the main turret fires in continue (no more pause after the third shoot)
- 
+
 
  Balance:
  - commando have Cloak. Stealthy feature deleted. Paratrooping feature deleted.
@@ -524,9 +526,9 @@ Bugs:
  - troman : Delete the Sniper weapon and add beam laser. Increase speed and HP.
  - tlldmc : decrease HP and cost.
  - monkeylord : increase cost and timebuild. The weapon rotation has been reduced.
- 
+
  Improvements:
- - Add new T4 Fusion, MEX and MM. 
+ - Add new T4 Fusion, MEX and MM.
  - All T3/T4 Fusion/MM/MEX have been reworking and balancing.
  - Add New T3 Air, Vehicle, Naval Constructors for each faction.
  - Add Gizmo for TLL Commando unit.
@@ -538,11 +540,11 @@ Bugs:
  - Add new class for air transporter.
  - Add paratrooper feature for maverick and pyro (after killed the air transporter, units survive at 50% hp).
  - Remplace the Viking models (T2 Ship TLL).
- 
+
  Bugs Fix Release:
  - TLLdest : Turret shoot is fixed now. Deleted the flare for Flak.
  - Valiant : Delete capture button.
- 
+
 3.05.0 -> 3.06
  2018-01-16
 

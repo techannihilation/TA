@@ -150,13 +150,12 @@ return {
 				soundstart = "cannhvy2",
 				sprayangle = 200,
 				stages = 20,
-				tolerance = 8000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					commanders = 1000,
-					default = 2000,
+					commanders = 900,
+					default = 1800,
 					subs = 5,
 				},
 			},
@@ -260,7 +259,7 @@ return {
 				largebeamlaser = true,
 				minintensity = 1,
 				name = "Mini Ion Cannon",
-				range = 1500,
+				range = 1400,
 				reloadtime = 5,
 				rgbcolor = "0.2 0.2 1",
 				rgbcolor2 = "0.07 1 1",
@@ -297,7 +296,7 @@ return {
 				def = "MINIION",
 				onlytargetcategory = "SURFACE",
 			},
-			
+
 			[2] = {
 				def = "QUATRO_GUN",
 				onlytargetcategory = "SURFACE",
@@ -314,7 +313,7 @@ return {
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
-			},	
+			},
 			[5] = {
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE",
