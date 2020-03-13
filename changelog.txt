@@ -7,10 +7,13 @@ Balance :
  - Decrease Metron HP 54K => 49K
  - TLLColossus : Decrease Range for minion weapon 1500=>1400. Decrease damage for plasma 4000 => 3600
  - TllMcv (Bahamut) : Decrease range 2400 => 2250
- 
+ - All T4 AA Balance. Less HP for tllmantis. Increase cost for Arm/COre by 1KMetal.
+
 Improvments:
+ - Add Expanse Talon Anti Air in T4 Lab.
  - ReAdd Talon faction. Licence problem solved.
  - Decrease Crater visual for all aoe like goliath, fatboy... In work again.
+ - Fix production speed for t4 Lab Talon
 
 3.33 -> 3.34
 2020-02-24
