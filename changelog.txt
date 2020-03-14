@@ -8,6 +8,7 @@ Balance :
  - TLLColossus : Decrease Range for minion weapon 1500=>1400. Decrease damage for plasma 4000 => 3600
  - TllMcv (Bahamut) : Decrease range 2400 => 2250
  - All T4 AA Balance. Less HP for tllmantis. Increase cost for Arm/COre by 1KMetal.
+ - Juggernault : decrease Speed 0.8=>0.75. hp 540K => 495K. Decrease cost 37KM=>36KM
 
 Improvments:
  - Add Expanse Talon Anti Air in T4 Lab.
