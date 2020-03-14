@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 21900,
 		buildcostmetal = 555,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "armarad_aoplane.dds",
 		buildpic = "talon_arad.dds",
 		buildtime = 12400,
 		canattack = false,
@@ -44,7 +40,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_arad",
-		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = 1,
 		yardmap = "oooo",
 		customparams = {
