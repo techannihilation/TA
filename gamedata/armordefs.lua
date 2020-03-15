@@ -1,7 +1,7 @@
 return {
-	
+
 	--### AIR ###
-	
+
 	fighters = {
 	"airwolf3g",
 	"armfig",
@@ -76,7 +76,7 @@ return {
 	"cbuilderlvl2",
 	"cbuilderlvl3",
 	"cbuilderlvl4",
-	"cbuilderlvl5",	
+	"cbuilderlvl5",
 	"coraca",
 	"coreca",
 	"corca",
@@ -90,7 +90,7 @@ return {
 	"talon_aca",
 	"talon_eca",
 	"talon_medic",
-	"talon_csa", 
+	"talon_csa",
 	"armbrawl",
 	"armjade",
 	"armkam",
@@ -107,7 +107,7 @@ return {
 	"tllpterodactyl",
 	"tlltorpcop",
 	"talon_drone",
-	"talon_trident", 
+	"talon_trident",
 	"bladew",
 	"talon_vulture",
 	"talon_pampa",
@@ -175,7 +175,7 @@ return {
 	"tllsting",
 	"tllequalizer",
 	"tllviking",
-	"tllmako",	
+	"tllmako",
 	"tllgiant",
 	"tllvisitor",
 	"tllmixer",
@@ -265,9 +265,9 @@ return {
 	"talon_dread",
 	"talon_hcar",
 },
-	
+
 	--### LAND ###
-	
+
 	experimental_land = {
 	-- tll t3 vechiles
 	"tlltelsatnk",
@@ -358,9 +358,10 @@ return {
 	"armolympus",
 	"armpraet",
 	"monkeylord",
-	"irritator",  
+	"irritator",
 	"talon_mythril",
 	"talon_archon",
+	"talon_grenat",
 	"talon_mcv",
 	"talon_mcv1",
 	-- T5 heroes
@@ -395,8 +396,8 @@ return {
 	"talon_crusader",
 	},
 	raider_resistant = {
-	
-	},   
+
+	},
 	bomb_resistant = {
 	"armcir",
 	"armcir1",
