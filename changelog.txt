@@ -3,6 +3,7 @@
 Balance :
  - Mythril Pod : Increase Cost and Power. Add Blue Shield. Same power than Exoarm.
  - Cormkl (T4 Spider) : More range rocket and add reloadtime. (fix range with other t4 units)
+ - Talon MCV (Silver). Increase cost 87KM => 90KM. Decrease Experimental damage (200% => 150% from default damage)
 
 Improvments:
  - Add Grenat T4 Tank assault unit
