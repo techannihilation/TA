@@ -43,7 +43,7 @@ if (gadgetHandler:IsSyncedCode()) then
       SendToUnsynced("flame_FlameShot", unitID, unitDefID, weapon)
     end
   end
-  
+
   GG.LUPS = GG.LUPS or {}
   GG.LUPS.FlameShot = FlameShot
 
@@ -91,14 +91,14 @@ else
 
     local posx,posy,posz, dirx,diry,dirz = Spring.GetUnitWeaponVectors(unitID,weapon)
     local wd  = WeaponDefs[UnitDefs[unitDefID].weapons[weapon].weaponDef]
-    local weaponRange = wd.range * wd.duration 
+    local weaponRange = wd.range * wd.duration
     local weaponVelocity = wd.projectilespeed * 30
 
     local speedx,speedy,speedz = Spring.GetUnitVelocity(unitID)
     local partpos = "x*delay,y*delay,z*delay|x="..speedx..",y="..speedy..",z="..speedz
 
 	local altFlameTexture = wd.customParams.altflametex	-- FIXME: more elegant solution when this is actually implemented (as in, one that doesn't rely on different unitdef)
-	
+
     particleList[particleCnt] = {
       class        = 'JitterParticles2',
       colormap     = { {1,1,1,1},{1,1,1,1} },

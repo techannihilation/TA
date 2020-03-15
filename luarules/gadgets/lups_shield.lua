@@ -104,10 +104,10 @@ local ShieldUnits = {
   [UnitDefNames["corflshd"].id] = true,
   [UnitDefNames["corfgate1"].id] = true,
   [UnitDefNames["corshieldgen"].id] = true,
-  [UnitDefNames["monkeylord"].id] = true, 
+  [UnitDefNames["monkeylord"].id] = true,
   [UnitDefNames["corsfus"].id] = true,
-  [UnitDefNames["corcrab"].id] = true, 
-  --Arm 
+  [UnitDefNames["corcrab"].id] = true,
+  --Arm
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
@@ -151,6 +151,7 @@ local ShieldUnits = {
   [UnitDefNames["talon_pyramid"].id] = true,
   [UnitDefNames["talon_cpod"].id] = true,
   [UnitDefNames["talon_archon"].id] = true,
+  [UnitDefNames["talon_mythril"].id] = true,
 }
 
 local function GetVisibleSearch(x, z, search)
@@ -406,7 +407,7 @@ function gadget:CommandNotify(id, params, options)
 				end
 			end
 			if params[1] == 1 and (id >= 34520 and id <= 34520+35) and ShieldUnits[cmdunitID] then
-				if disabledShieldCobOff[cmdunitID] then 
+				if disabledShieldCobOff[cmdunitID] then
 					AddUnit(cmdunitID, Spring.GetUnitDefID(cmdunitID))
 					disabledShieldCobOff[cmdunitID] = nil
 				end

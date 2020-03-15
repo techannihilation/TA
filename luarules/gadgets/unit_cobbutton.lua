@@ -55,10 +55,10 @@ local ShieldUnits = {
   [UnitDefNames["corflshd"].id] = true,
   [UnitDefNames["corfgate1"].id] = true,
   [UnitDefNames["corshieldgen"].id] = true,
-  [UnitDefNames["monkeylord"].id] = true, 
+  [UnitDefNames["monkeylord"].id] = true,
   [UnitDefNames["corsfus"].id] = true,
-  [UnitDefNames["corcrab"].id] = true, 
-  --Arm 
+  [UnitDefNames["corcrab"].id] = true,
+  --Arm
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
@@ -102,6 +102,7 @@ local ShieldUnits = {
   [UnitDefNames["talon_pyramid"].id] = true,
   [UnitDefNames["talon_cpod"].id] = true,
   [UnitDefNames["talon_archon"].id] = true,
+  [UnitDefNames["talon_mythril"].id] = true,
 }
 
 --------------------------------------------------------------------------------
@@ -186,7 +187,7 @@ function gadget:GameFrame(n)
         local cmdDescID = Spring.FindUnitCmdDesc(unitID, cmd.id)
         if (cmdDescID) then
           local cmdArray
-          if (cmd.duration and 
+          if (cmd.duration and
               s - reload > cmd.duration and
               s - reload < cmd.reload) then
             if (cmd.endcob and not expired) then
@@ -194,9 +195,9 @@ function gadget:GameFrame(n)
               status[2] = true
             end
             local progress = (s-reload-cmd.duration) / (cmd.reload-cmd.duration) * 100
-            local text = string.format("%d%%", progress)    
+            local text = string.format("%d%%", progress)
             cmdArray = {name = text, disabled = true}
-          elseif (s - reload < cmd.reload) then 
+          elseif (s - reload < cmd.reload) then
             local progress = (s-reload) / (cmd.duration) * 100
             local text = string.format("%d%%", progress)
             cmdArray = {name = text, disabled = true}

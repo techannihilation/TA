@@ -6,9 +6,9 @@
 piece  base, pelvis, lflegy, lfleg, lfleg2, lfleg3, lfleg4, lflegy2, rflegy, rfleg, rfleg2, rfleg3, rfleg4, rflegy2,
        lblegy, lbleg, lbleg2, lbleg3, lbleg4, lblegy2, rblegy, rbleg, rbleg2, rbleg3, rbleg4, rblegy2,
        turret, pitchturret, Lbarrel1, Lbarrel2, Rbarrel1, Rbarrel2, laser1, laser2,
-       Rflare1, Rflare2, Rflare3, rflare4, Lflare1, Lflare2, Lflare3, Lflare4, aimpoint;
+       Rflare1, Rflare2, Rflare3, rflare4, Lflare1, Lflare2, Lflare3, Lflare4, aimpoint, shield_pos;
 
-static-var  bMoving, bAiming, gun_1, gun_2, gun_3, isgunone;
+static-var  bMoving, bAiming, gun_1, gun_2, gun_3, isgunone, shield_onoff;
 
 // Signal definitions
 #define SIG_AIM_1				2
@@ -277,6 +277,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;	}
 }
 
+Shield()
+{
+	shield_onoff = !shield_onoff;
+}
+
 Create()
 {
 	bMoving = 0;
@@ -290,6 +295,7 @@ Create()
 	turn lblegy to y-axis <45.00> now;
 	turn rblegy to y-axis <-45.00> now;
 	start-script Smokeunit();
+	shield_onoff = 1;
 }
 
 RestoreAfterDelay()
@@ -463,6 +469,25 @@ QueryTertiary(PieceNum)
 	}
 }
 
+AimWeapon5(heading, pitch)
+{
+	return (shield_onoff);
+}
+
+FireWeapon5()
+{
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = shield_pos;
+}
+
 StartMoving()
 {
 	bMoving = TRUE;
@@ -513,23 +538,6 @@ Killed(severity, corpseType)
 		explode Rbarrel2 type NOHEATCLOUD | FALL ;
 		explode Rbarrel1 type NOHEATCLOUD | FALL ;
 		explode Lbarrel2 type NOHEATCLOUD | FALL ;		
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode pelvis type NOHEATCLOUD ;
-		explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode lflegy type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode rfleg type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode lfleg2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode lfleg type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode lfleg3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode rfleg4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode lflegy2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode Rbarrel2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode Rbarrel1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-		explode Lbarrel2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;		
 		return (corpsetype);
 	}
 	corpsetype = 3;

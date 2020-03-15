@@ -200,6 +200,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SMALL TINY",
 				def = "TLL_ROASTER",
 				maindir = "0 0 1",
 				maxangledif = 220,
