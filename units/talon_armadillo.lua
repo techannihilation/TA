@@ -43,7 +43,7 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		sightdistance = 247,
+		sightdistance = 250,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -55,7 +55,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.63888,
-		turnrate = 520.29999,
+		turnrate = 320,
 		unitname = "talon_armadillo",
 		customparams = {
 			buildpic = "talon_armadillo.dds",
@@ -207,7 +207,7 @@ return {
 			},
 			[2] = {
 				def = "TALON_LASER",
-				onlytargetcategory = "SURFACE",		
+				onlytargetcategory = "SURFACE",
 			},
 
 		},

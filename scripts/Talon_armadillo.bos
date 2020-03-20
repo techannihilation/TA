@@ -37,9 +37,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	Static_Var_1 = 1; //tube1
-	Static_Var_2 = 5000; //Delay to open hatches
-	dont-cache flare;
+	Static_Var_1 = 1;
+	Static_Var_2 = 2500;
 	hide flare;
 	start-script SmokeUnit();
 }
@@ -48,14 +47,15 @@ RestoreAfterDelay()
 {
 	sleep 1000;
 	spin barrel around z-axis speed <0.000000> accelerate <-10.000000>;
-	sleep Static_Var_2;
-	set-signal-mask 0;
+	sleep 2000a;
 	turn body to y-axis <0.000000> speed <40.000000>;
+}
+
+RestoreHatche()
+{
+	sleep 5000;
 	turn hatchesA to z-axis <0.000000> speed <40.000000>;
 	turn hatchesB to z-axis <0.000000> speed <40.000000>;
-	wait-for-turn body around y-axis;
-	wait-for-turn hatchesA around z-axis;
-	wait-for-turn hatchesB around z-axis;
 }
 
 AimPrimary(heading, pitch)
@@ -66,7 +66,7 @@ AimPrimary(heading, pitch)
 	turn hatchesB to z-axis <-180.000000> speed <40.000000>;
 	wait-for-turn hatchesA around z-axis;
 	wait-for-turn hatchesB around z-axis;	
-	start-script RestoreAfterDelay();
+	start-script RestoreHatche();
 	return (1);
 }
 
@@ -108,8 +108,8 @@ AimFromPrimary(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
+	signal 4;
+	set-signal-mask 4;
 	turn body to y-axis heading speed <55.000000>;
 	wait-for-turn body around y-axis;	
 	start-script RestoreAfterDelay();
@@ -119,8 +119,6 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	signal 4;
-	set-signal-mask 4;
 	emit-sfx 1025 from flare;
 	move sleeve to z-axis [-1.000000] now;
 	move sleeve to z-axis [0.000000] speed [1.];

@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Very Heavy Assault Tank",
+		description = "Experimental Assault Tank",
 		explodeas = "NUCLEAR_MISSILE4",
 		firestandorders = 1,
 		footprintx = 8,

@@ -20,7 +20,7 @@ return {
 		corpse = "dead",
 		damagemodifier = 0.75,
 		defaultmissiontype = "Standby",
-		description = "Experimental Siege Vehicle",
+		description = "Experimental Siege Tank",
 		downloadable = 1,
 		explodeas = "NUCLEAR_MISSILE4",
 		firestandorders = 1,

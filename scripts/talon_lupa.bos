@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, v1, v2, rack;
+piece  base, body, v1, v2, rack, hatchesA, hatchesB;
 
 static-var  Static_Var_1;
 
@@ -35,6 +35,13 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+RestoreAfterDelay()
+{
+	sleep 1500;
+	turn hatchesA to z-axis <0.000000> speed <130.000000>;
+	turn hatchesB to z-axis <0.000000> speed <130.000000>;
+}
+
 Create()
 {
 	
@@ -47,6 +54,11 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
+	turn hatchesA to z-axis <180.000000> speed <130.000000>;
+	turn hatchesB to z-axis <-180.000000> speed <130.000000>;
+	wait-for-turn hatchesA around z-axis;
+	wait-for-turn hatchesB around z-axis;	
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
