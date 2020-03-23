@@ -303,5 +303,16 @@ local options={
       {key="none", name="Disallow All", desc="No enemy units can be napped"},
     }
   },
+  {
+    key  = "mo_priority_unit_limit",
+    name = "Priority Unit Limit",
+    desc = "Per player limit on number of units using custom target priorities. Large Values (> 100) may allow lag.\nAutoHost Usage :- mo_priority_unit_limit",
+    type = "number",
+    section = "ta_options",
+    def  = 20,
+    min  = 0,
+    max  = 10000,
+    step = 1,
+  },
 }
 return options
