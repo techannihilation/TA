@@ -22,7 +22,7 @@ return {
 		corpse = "armllt_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Boosted Light Laser Tower",
-		energystorage = 100,
+		energystorage = 60,
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,

@@ -123,7 +123,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1.9,
-				energypershot = 50,
+				energypershot = 30,
 				explosiongenerator = "custom:tllupgweb_exp",
 				firestarter = 85,
 				impulseboost = 0,
