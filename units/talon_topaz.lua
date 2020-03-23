@@ -53,8 +53,8 @@ return {
 		trackwidth = 22,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 4.224,
-		turnrate = 400,
+		turninplacespeedlimit = 4.0,
+		turnrate = 750,
 		unitname = "talon_topaz",
 		unitrestricted = 150,
 		customparams = {
