@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, v1, v2, v3, v4, hatchesA, hatchesB, body, aimpoint, sleeve, barrel, flare;
+piece  base, v1, v2, v3, v4, hatchesA, hatchesB, body, aimpoint, turret, sleeve, barrel, flare;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
@@ -135,7 +135,7 @@ Querysecondary(piecenum)
 
 AimFromSecondary(piecenum)
 {
-	piecenum = flare;
+	piecenum = turret;
 
 }
 
