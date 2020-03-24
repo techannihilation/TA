@@ -1,6 +1,6 @@
 return {
 	talon_grenat = {
-		acceleration = 0.015,
+		acceleration = 0.02,
 		brakerate = 0.165,
 		buildcostenergy = 1075024,
 		buildcostmetal = 84910,
@@ -31,7 +31,7 @@ return {
 		mass = 1000,
 		maxdamage = 325850,
 		maxslope = 12,
-		maxvelocity = 1.5,
+		maxvelocity = 1.7,
 		maxwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "HTANK3",
