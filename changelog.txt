@@ -1,4 +1,19 @@
-﻿3.35 -> 3.36
+﻿3.36 -> 3.37
+2020-03-24
+Balance :
+ - Balance Beamer/double LLT/Kevlar/LLT TLL (try to have good balance between Hp / range / cost / damage). In test..
+ - Grenat T4 Talon : Increase speed 1.5=> 1.7
+ - FatShrew : Decrease range weapon 1300 => 1200. Increase cost by 1% metal.
+
+Improvments:
+ - Add GroundPlate for talon Lab (in work again).
+ - Add Target Priority for AA vs Air (Thanks to Ceddral for this add)
+
+Fix :
+ - Fix Talon_armadillo Weapon
+ - Fix Tllacid Weapon (the body doesn't turn now while shot
+
+3.35 -> 3.36
 2020-03-15
 Balance :
  - Mythril Pod : Increase Cost and Power. Add Blue Shield. Same power than Exoarm.
