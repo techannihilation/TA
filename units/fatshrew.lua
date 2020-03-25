@@ -33,7 +33,7 @@ return {
 		losemitheight = 133,
 		maneuverleashlength = 1250,
 		mass = 123300,
-		maxdamage = 343111,
+		maxdamage = 343500,
 		maxslope = 36,
 		maxvelocity = 1.25,
 		maxwaterdepth = 520,
@@ -255,14 +255,14 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			[2] = {
 				badtargetcategory = "TINY",
 				def = "ATAD",
 				maindir = "0 0 1",
 				maxangledif = 85,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			[1] = {
 				def = "GATLING",
 				onlytargetcategory = "SURFACE",
 			},
