@@ -1,6 +1,7 @@
 return {
 	talon_grenat = {
 		acceleration = 0.02,
+		autoheal = 250,
 		brakerate = 0.165,
 		buildcostenergy = 1075024,
 		buildcostmetal = 84910,
@@ -18,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Assault Tank",
+		description = "Experimental Assault Tank (Auto-Repair 250)",
 		explodeas = "NUCLEAR_MISSILE4",
 		firestandorders = 1,
 		footprintx = 8,

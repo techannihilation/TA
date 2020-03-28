@@ -8,13 +8,13 @@ piece  base, body, turret, lid1, lid2, nano1, nano2, beam1,
        w8, w9, w10, w11, w12, wakes;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6;
+            Static_Var_6, Aim;
 
 
 HitByWeapon(anglex, anglez)
 {
-	signal 4;
-	set-signal-mask 4;
+	signal 16;
+	set-signal-mask 16;
 	turn body to z-axis <0.> * anglez speed <105.>;
 	turn body to x-axis <0.> * anglex speed <105.>;
 	wait-for-turn body around z-axis;
@@ -79,11 +79,17 @@ activatescr()
 		move nano2 to z-axis [2.] speed [5.];
 		wait-for-move nano1 along z-axis;
 	}
-	sleep 39;
+	turn turret to y-axis Aim speed <160.>;
+	wait-for-turn turret around y-axis;
+	sleep 150;
 }
 
 deactivatescr()
 {
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.> speed <160.>;
+	wait-for-turn turret around y-axis;	
+		
 	if( TRUE )
 	{
 		show lid1;
@@ -108,7 +114,7 @@ deactivatescr()
 		move lid2 to y-axis [0.] now;
 	}
 
-	sleep 27;
+	sleep 50;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -139,22 +145,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Go()
-{
-	call-script activatescr();
-	turn turret to y-axis Static_Var_2 speed <160.>;
-	wait-for-turn turret around y-axis;
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	turn turret to y-axis <0.> speed <160.>;
-	wait-for-turn turret around y-axis;
-	call-script deactivatescr();
-}
-
 InitState()
 {
 	Static_Var_3 = 1;
@@ -175,12 +165,12 @@ RequestState(requestedstate, currentstate)
 	{
 		if( Static_Var_3 == 0 )
 		{
-			call-script Go();
+			call-script activatescr();
 			currentstate = 0;
 		}
 		if( Static_Var_3 == 1 )
 		{
-			call-script Stop();
+			call-script deactivatescr();
 			currentstate = 1;
 		}
 	}
@@ -242,6 +232,7 @@ Create()
 {
 	start-script waking();
 	Static_Var_2 = 0;
+	Aim = 0;
 	call-script InitState();
 	start-script SmokeUnit();
 	start-script BankClerck();
@@ -260,13 +251,24 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_2 = Func_Var_1;
 	start-script RequestState(0);
+	signal 4;
+	sleep 150;
+	Aim = Func_Var_1;
+	wait-for-move lid1 along z-axis;
+	wait-for-move lid2 along z-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 2500;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
+
 }
 
 QueryNanoPiece(piecenum)

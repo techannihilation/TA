@@ -60,6 +60,9 @@ activatescr()
 deactivatescr()
 {
 	Static_Var_5 = 0;
+	set INBUILDSTANCE to 0;
+	turn nanobase to y-axis <0.> speed <160.>;
+	wait-for-turn nanobase around y-axis;
 	move nano1 to z-axis [0.] speed [4.];
 	move nano2 to z-axis [0.] speed [4.];
 	turn nano1 to z-axis <0.> speed <120.>;
@@ -128,20 +131,6 @@ StopMoving()
 	signal 2;
 }
 
-Go()
-{
-	call-script activatescr();
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	turn nanobase to y-axis <0.> speed <160.>;
-	wait-for-turn nanobase around y-axis;
-	call-script deactivatescr();
-}
-
 InitState()
 {
 	Static_Var_2 = 1;
@@ -162,12 +151,12 @@ RequestState(requestedstate, currentstate)
 	{
 		if( Static_Var_2 == 0 )
 		{
-			call-script Go();
+			call-script activatescr();
 			currentstate = 0;
 		}
 		if( Static_Var_2 == 1 )
 		{
-			call-script Stop();
+			call-script deactivatescr();
 			currentstate = 1;
 		}
 	}
@@ -197,12 +186,21 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	signal 4;
+	sleep 250;
+	turn nanobase to y-axis Func_Var_1 + <90.> speed <160.>;
+	wait-for-turn nanobase around y-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 3000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
 
@@ -221,11 +219,6 @@ QueryNanoPiece(piecenum)
 	{
 		Static_Var_4 = 1;
 	}
-}
-
-TargetHeading(Func_Var_1)
-{
-	Static_Var_1 = 0 - Func_Var_1;
 }
 
 SweetSpot(piecenum)

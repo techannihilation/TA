@@ -8,24 +8,17 @@ piece  base, body, nanoturd, nanobase, nanoturn, door1, door2, nano1,
        w4, w5, w6, w7, w8, w9, w10, w11,
        w12, wakes;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6;
+static-var  Aiming, Static_Var_Sea, Emit, statechg_DesiredState, statechg_StateChanging;
 
 
 WobbleUnit()
 {
 	while( TRUE )
 	{
-		if( Static_Var_3 )
-		{
-			move base to y-axis [2.] speed [3.];
-		}
-		else
-		{
-			move base to y-axis [-0.] speed [3.];
-		}
-		Static_Var_3 = !Static_Var_3;
-		sleep 750;
+		move base to y-axis [1.1] speed [1.];
+		wait-for-move base along y-axis;
+		move base to y-axis [-0.] speed [1.];
+		sleep 500;
 	}
 }
 
@@ -78,11 +71,13 @@ activatescr()
 		spin nano2 around y-axis speed <90.>;
 		spin nano3 around y-axis speed <180.>;
 	}
-	sleep 39;
+	sleep 750;
 }
 
 deactivatescr()
 {
+	move nanobase to z-axis [0.] speed [15.];
+	turn nanoturd to y-axis <0.> speed <100.>;
 	if( TRUE )
 	{
 		stop-spin nano1 around y-axis;
@@ -112,7 +107,7 @@ deactivatescr()
 		turn door2 to y-axis <0.> speed <-180.>;
 		wait-for-turn door1 around y-axis;
 	}
-	sleep 27;
+	sleep 50;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -142,54 +137,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Go()
-{
-	call-script activatescr();
-	turn nanoturd to y-axis Static_Var_2 speed <180.>;
-	move nanobase to z-axis [25.] speed [15.];
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	move nanobase to z-axis [0.] speed [15.];
-	turn nanoturd to y-axis <0.> now;
-	call-script deactivatescr();
-}
-
-InitState()
-{
-	Static_Var_5 = 1;
-	Static_Var_6 = 0;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( Static_Var_6 )
-	{
-		Static_Var_5 = requestedstate;
-		return (0);
-	}
-	Static_Var_6 = 1;
-	currentstate = Static_Var_5;
-	Static_Var_5 = requestedstate;
-	while( Static_Var_5 != currentstate )
-	{
-		if( Static_Var_5 == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( Static_Var_5 == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	Static_Var_6 = 0;
-}
-
 StartMoving()
 {
 	signal 2;
@@ -205,7 +152,7 @@ waking()
 {
 	while( TRUE )
 	{
-		if( Static_Var_1 == 2 OR Static_Var_1 == 1 )
+		if( Static_Var_Sea == 2 OR Static_Var_Sea == 1 )
 		{
 			emit-sfx 3 from w1;
 			emit-sfx 3 from w2;
@@ -238,21 +185,51 @@ waking()
 
 setSFXoccupy(state)
 {
-	Static_Var_1 = state;
+	Static_Var_Sea = state;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+			Aiming = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+			Aiming = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
 }
 
 Create()
 {
 	start-script waking();
-	Static_Var_2 = 0;
+	Aiming = 1;
+	Emit = 1;
 	call-script InitState();
 	start-script SmokeUnit();
 	start-script BankClerck();
-	Static_Var_4 = 1;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1;
-	}
 	start-script WobbleUnit();
 }
 
@@ -268,39 +245,48 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_2 = Func_Var_1;
 	start-script RequestState(0);
+	while( Aiming )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn nanoturd to y-axis Func_Var_1 speed <180.>;
+	move nanobase to z-axis [25.] speed [15.];
+	set INBUILDSTANCE to 1;
+
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 2000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
+
 }
 
 QueryNanoPiece(piecenum)
 {
-	if( Static_Var_4 == 1 )
+	if( Emit == 1 )
 	{
 		piecenum = lath1;
 	}
-	if( Static_Var_4 == 2 )
+	if( Emit == 2 )
 	{
 		piecenum = lath2;
 	}
-	if( Static_Var_4 == 3 )
+	if( Emit == 3 )
 	{
 		piecenum = lath3;
 	}
-	++Static_Var_4;
-	if( Static_Var_4 == 4 )
+	++Emit;
+	if( Emit == 4 )
 	{
-		Static_Var_4 = 1;
+		Emit = 1;
 	}
-}
-
-TargetHeading(Func_Var_1)
-{
-	Static_Var_2 = 0 - Func_Var_1;
 }
 
 SweetSpot(piecenum)

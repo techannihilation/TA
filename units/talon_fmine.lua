@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 2445,
 		buildcostmetal = 85,
 		builder = false,
-		buildpic = "armfmine3.dds",
+		buildpic = "talon_fmine.dds",
 		buildtime = 150,
 		canattack = false,
 		canguard = false,

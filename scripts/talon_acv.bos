@@ -6,7 +6,7 @@
 piece  base, body, turret, nano1, nano2, wheel1, wheel2, wheel3,
        lath1, lath2;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Aim;
 
 
 HitByWeapon(anglex, anglez)
@@ -28,17 +28,22 @@ activatescr()
 	move nano1 to z-axis [2.] speed [16.];
 	move nano2 to z-axis [2.] speed [16.];
 	wait-for-move nano1 along z-axis;
-	sleep 20;
+	turn turret to y-axis Aim speed <160.>;
+	wait-for-turn turret around y-axis;
+	sleep 250;
 }
 
 deactivatescr()
 {
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.> speed <160.>;
+	wait-for-turn turret around y-axis;
 	move nano1 to z-axis [0.] speed [4.];
 	move nano2 to z-axis [0.] speed [4.];
 	wait-for-move nano1 along z-axis;
 	move turret to y-axis [0.] speed [4.];
 	wait-for-move turret along y-axis;
-	sleep 20;
+	sleep 50;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -85,22 +90,6 @@ StopMoving()
 	signal 2;
 }
 
-Go()
-{
-	call-script activatescr();
-	turn turret to y-axis Static_Var_1 speed <160.>;
-	wait-for-turn turret around y-axis;
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	turn turret to y-axis <0.> speed <160.>;
-	wait-for-turn turret around y-axis;
-	call-script deactivatescr();
-}
-
 InitState()
 {
 	Static_Var_2 = 1;
@@ -121,12 +110,12 @@ RequestState(requestedstate, currentstate)
 	{
 		if( Static_Var_2 == 0 )
 		{
-			call-script Go();
+			call-script activatescr();
 			currentstate = 0;
 		}
 		if( Static_Var_2 == 1 )
 		{
-			call-script Stop();
+			call-script deactivatescr();
 			currentstate = 1;
 		}
 	}
@@ -135,6 +124,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	Aim = 0;
 	Static_Var_1 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
@@ -153,12 +143,19 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	signal 4;
+	Aim = Func_Var_1;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 2000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
 
@@ -177,11 +174,6 @@ QueryNanoPiece(piecenum)
 	{
 		Static_Var_4 = 1;
 	}
-}
-
-TargetHeading(Func_Var_1)
-{
-	Static_Var_1 = 0 - Func_Var_1;
 }
 
 SweetSpot(piecenum)

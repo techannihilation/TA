@@ -81,7 +81,7 @@ return {
 			[19] = "talon_tide",
 			[20] = "talon_uwmex",
 			[21] = "talon_fnanotc",
-			[22] = "talon_mine2",
+			--[22] = "talon_mine2",
 			[23] = "talon_frad",
 			[24] = "talon_sonar",
 			[25] = "talon_fdrag",

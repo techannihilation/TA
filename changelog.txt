@@ -1,18 +1,22 @@
 ﻿3.36 -> 3.37
-2020-03-24
+2020-03-28
 Balance :
  - Balance Beamer/double LLT/Kevlar/LLT TLL (try to have good balance between Hp / range / cost / damage). In test..
  - Grenat T4 Talon : Increase speed 1.5=> 1.7
  - FatShrew : Decrease range weapon 1300 => 1200. Increase cost by 1% metal.
  - Raptor : Increase cost and HP (+3K and +25K HP)
  - Colossus : Decrease HP -20K. Increase energy cost +100KE
+ - All Seaplane Fighters balanced (cost too high metal vs T2 fighter)
+ - Talon commando : increase damage and time. Vs other commando, not Aoe damage.
 
 Improvments:
  - Add GroundPlate for talon Lab (in work again).
  - Add Target Priority for AA vs Air (Thanks to Ceddral for this add)
  - Rework fatshrew model (atad weapon).
+ - Add t5 Talon Nano
 
 Fix :
+ - All Constructors Talon. After construction, they closed/opened nanos and lost 3-4sec between each cons.
  - Fix Talon_armadillo Weapon
  - Fix Tllacid Weapon (the body doesn't turn now while shot
 

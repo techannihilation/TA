@@ -33,6 +33,9 @@ activatescr()
 
 deactivatescr()
 {
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.> speed <160.>;
+	wait-for-turn turret around y-axis;
 	move nano1 to z-axis [0.] speed [4.];
 	move nano2 to z-axis [0.] speed [4.];
 	wait-for-move nano1 along z-axis;
@@ -83,22 +86,6 @@ StopMoving()
 	signal 2;
 }
 
-Go()
-{
-	call-script activatescr();
-	turn turret to y-axis Static_Var_1 speed <160.>;
-	wait-for-turn turret around y-axis;
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	turn turret to y-axis <0.> speed <160.>;
-	wait-for-turn turret around y-axis;
-	call-script deactivatescr();
-}
-
 InitState()
 {
 	Static_Var_2 = 1;
@@ -119,12 +106,12 @@ RequestState(requestedstate, currentstate)
 	{
 		if( Static_Var_2 == 0 )
 		{
-			call-script Go();
+			call-script activatescr();
 			currentstate = 0;
 		}
 		if( Static_Var_2 == 1 )
 		{
-			call-script Stop();
+			call-script deactivatescr();
 			currentstate = 1;
 		}
 	}
@@ -151,12 +138,21 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	signal 4;
+	turn turret to y-axis Func_Var_1 speed <160.>;
+	wait-for-turn turret around y-axis;
+	
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 2000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
 
