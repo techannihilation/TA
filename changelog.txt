@@ -8,12 +8,14 @@ Balance :
  - Colossus : Decrease HP -20K. Increase energy cost +100KE
  - All Seaplane Fighters balanced (cost too high metal vs T2 fighter)
  - Talon commando : increase damage and time. Vs other commando, not Aoe damage.
+ - corgfbt (t1 core flamer tank) : increase range 290=>300
 
 Improvments:
  - Add GroundPlate for talon Lab (in work again).
  - Add Target Priority for AA vs Air (Thanks to Ceddral for this add)
  - Rework fatshrew model (atad weapon).
  - Add t5 Talon Nano
+ - Add T2 Assault Tank Carbuncle
 
 Fix :
  - All Constructors Talon. After construction, they closed/opened nanos and lost 3-4sec between each cons.

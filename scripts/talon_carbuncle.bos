@@ -1,0 +1,278 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, flarea, flareb, guna, gunb, barrela, barrelb, 
+		turret, sleeves, msl, supportbl, supportfl, supportbr, supportfr,
+		flameturret1, flame1, flameturret2, flame2;
+
+static-var  gun_1, bAiming1, bAiming2;
+
+#define SIG_AIM 	2
+#define SIG_AIM2 	4
+#define SIG_AIM_3 	8
+#define SIG_AIM_4 	16
+#define SIG_AIM_5 	32
+#define SIG_AIM_6 	64
+#define SIG_AIM_7 	128
+#define SIG_AIM_8 	256
+
+PilotLight1()
+{
+	while( TRUE )
+	{
+		while( bAiming1 )
+		{
+			sleep 250;
+		}
+		emit-sfx 1024 + 1 from flame1;
+		sleep 150;
+	}
+}
+
+PilotLight2()
+{
+	while( TRUE )
+	{
+		while( bAiming2 )
+		{
+			sleep 250;
+		}
+		emit-sfx 1024 + 1 from flame2;
+		sleep 150;
+	}
+}
+
+lua_FlameShot(Func_Var_1)
+{
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	turn flameturret1 to y-axis <-90.000000> speed <10>;
+	turn flameturret2 to y-axis <90.000000> speed <10>;	
+	start-script PilotLight1();
+	start-script PilotLight2();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+			emit-sfx smoketype from turret;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flame1;
+	hide flame2;
+	hide flarea;
+	hide flareb;
+	gun_1 = 0;
+	bAiming1 = 0;
+	bAiming2 = 0;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 3500;
+	turn turret to y-axis <0.000000> speed <50.000000>;
+	turn sleeves to x-axis <0.000000> speed <50.000000>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 1500;
+	bAiming1 = 0;
+	turn flameturret1 to y-axis <-90.000000> speed <50.000000>;
+}
+
+RestoreAfterDelay3()
+{
+	sleep 1500;
+	bAiming2 = 0;
+	turn flameturret2 to y-axis <90.000000> speed <50.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <85.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <85.000000>;
+	wait-for-turn turret around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if (gun_1 == 0)
+	{
+		emit-sfx 1024 + 0 from flarea;
+		move guna to z-axis [-1.00000] now;
+		sleep 150;
+		move guna to z-axis [0.000000] speed [1.5];
+	}
+	if (gun_1 == 1)
+	{
+		emit-sfx 1024 + 0 from flareb;
+		move gunb to z-axis [-1.00000] now;
+		sleep 150;
+		move gunb to z-axis [0.000000] speed [1.5];
+	}	
+	++gun_1;
+	if (gun_1 == 2)
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	if (gun_1 == 0)
+	{
+		piecenum = flarea;
+	}
+	if (gun_1 == 1)
+	{
+		piecenum = flareb;
+	}
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	return (1);
+}
+
+FireWeapon3()
+{
+
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = msl;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = msl;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	bAiming1 = 1;
+	turn flameturret1 to y-axis heading speed <90.000000>;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	bAiming2 = 1;
+	turn flameturret2 to y-axis heading speed <90.000000>;
+	start-script RestoreAfterDelay3();
+	return (1);
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum  = flameturret1;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum  = flame1;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum  = flameturret2;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum  = flame2;
+}
+
+Shot4()
+{
+	call-script lua_FlameShot(4);
+	return (1);
+}
+
+Shot5()
+{
+	call-script lua_FlameShot(5);
+	return (1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1 ;
+		explode body type NOHEATCLOUD ;
+		explode barrela type NOHEATCLOUD;
+		explode barrelb type NOHEATCLOUD;
+		explode flameturret1 type NOHEATCLOUD;
+		explode flameturret2 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type FALL | NOHEATCLOUD;
+		explode barrela type FALL | NOHEATCLOUD;
+		explode barrelb type FALL | NOHEATCLOUD;
+		explode flameturret1 type NOHEATCLOUD;
+		explode flameturret2 type NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode barrela type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrelb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flameturret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flameturret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type SHATTER | NOHEATCLOUD;
+	return (corpsetype);
+}

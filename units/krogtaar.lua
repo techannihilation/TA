@@ -15,7 +15,7 @@ return {
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Heavy Weapons Mech",
+		description = "Very Heavy Assault Mech",
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 4,

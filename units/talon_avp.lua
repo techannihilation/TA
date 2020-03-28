@@ -69,6 +69,7 @@ return {
 			[11] = "talon_tribulation",
 			[12] = "talon_squarepants",
 			[13] = "talon_jewel",
+			[14] = "talon_carbuncle",
 		},
 		customparams = {
 			buildpic = "talon_avp.dds",
