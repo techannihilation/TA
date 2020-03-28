@@ -365,7 +365,7 @@ local WTimeUnits = {
 		["tllvp"] = true,
 	}
 }
-	
+
 local Nanos = {
 	armnanotc = true,
 	armnanotc1 = true,
@@ -395,10 +395,14 @@ local Nanos = {
 	talon_nanotc1 = true,
 	talon_nanotc2 = true,
 	talon_nanotc3 = true,
+	talon_nanotc4 = true,
 	talon_fnanotc = true,
 	talon_fnanotc1 = true,
 	talon_fnanotc2 = true,
 	talon_fnanotc3 = true,
+	tllnanotower = true,
+	ananotower = true,
+	cnanotower = true,
 }
 
 local cons = {
@@ -419,7 +423,7 @@ local cons = {
 	['cach'] = true,
 	['corcrab'] = true,
 
-	
+
 	['tllcv'] = true,
 	['tllacv'] = true,
 	['tllhtcb'] = true,

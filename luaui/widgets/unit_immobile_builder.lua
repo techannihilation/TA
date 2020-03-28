@@ -51,14 +51,14 @@ local morphednanos = { --not in use, look like 125
   [UnitDefNames["cornanotc3"].id] = true,
   [UnitDefNames["cnanotower"].id] = true,
 
-  
---Arm 
+
+--Arm
   [UnitDefNames["armnanotc1"].id] = true,
   [UnitDefNames["armnanotc2"].id] = true,
   [UnitDefNames["armnanotc3"].id] = true,
   [UnitDefNames["ananotower"].id] = true,
- 
- 
+
+
 
 --The lost legacy
   [UnitDefNames["tllnanotc1"].id] = true,
@@ -72,7 +72,7 @@ local morphednanos = { --not in use, look like 125
   [UnitDefNames["talon_nanotc1"].id] = true,
   [UnitDefNames["talon_nanotc2"].id] = true,
   [UnitDefNames["talon_nanotc3"].id] = true,
-
+  [UnitDefNames["talon_nanotc4"].id] = true,
 
 }
 
@@ -101,7 +101,7 @@ local function SetupUnit(unitID)
 	      z = z - 50
 	    else
 	      z = z + 50
-	    end	
+	    end
 		-- meta enables reclaim enemy units, alt autoresurrect ( if available )
 		spGiveOrderToUnit(unitID, CMD_FIGHT, { x, y, z }, {"meta"})
 	end

@@ -149,6 +149,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "TLL_HAILSTORM",
 				onlytargetcategory = "SURFACE",
 			},
