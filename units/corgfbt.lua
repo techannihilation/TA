@@ -142,7 +142,7 @@ return {
 				intensity = 0.6,
 				name = "FlameThrower",
 				noselfdamage = true,
-				range = 290,
+				range = 300,
 				reloadtime = 1,
 				rgbcolor = "0.15 0.15 1",
 				rgbcolor2 = "0.5 0.45 1",
