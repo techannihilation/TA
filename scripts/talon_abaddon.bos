@@ -141,7 +141,7 @@ Create()
 	hide miniflare1;
 	hide miniflare2;
 	hide miniflare3;
-	turn minigun3 to y-axis <135.000000> now;
+	turn minigun3 to y-axis <225.000000> now;
 	Static_Var_9 = 0;
 	Static_Var_10 = 0;
 	Static_Var_8 = 0;
@@ -172,7 +172,7 @@ RestoreAfterDelay()
 	turn minibar1 to x-axis <0.> speed <75.>;
 	turn minigun2 to y-axis <0.> speed <75.>;
 	turn minibar2 to x-axis <0.> speed <75.>;
-	turn minigun3 to y-axis <135.> speed <75.>;
+	turn minigun3 to y-axis <225.> speed <75.>;
 	turn minibar3 to x-axis <0.> speed <75.>;
 	sleep 5000;
 	turn turret to y-axis <0.> speed <35.>;

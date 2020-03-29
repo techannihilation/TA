@@ -2,7 +2,7 @@ return {
 	armantar = {
 		acceleration = 0.03,
 		brakerate = 0.16887,
-		buildcostenergy = 151480,
+		buildcostenergy = 231480,
 		buildcostmetal = 16644,
 		builder = false,
 		buildpic = "armantar.dds",

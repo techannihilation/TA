@@ -11,6 +11,7 @@ Balance :
  - corgfbt (t1 core flamer tank) : increase range 290=>300
  - Talon berserker : becomes paratroopers
  - Annubis : Decrease damage and range from laser gun.
+ - Antarion : Increase energy cost 150K => 220K
 
 Improvments:
  - Add GroundPlate for talon Lab (in work again).
