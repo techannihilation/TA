@@ -13,7 +13,7 @@ end
 --------------------------------------------------------------------------------
 --This unit marker is a culmination of previous work by Pako (this method of
 --setting units of interest and their names with multi-language support) and
---enhancements by LEDZ. The amount of units/events it marks has been reduced 
+--enhancements by LEDZ. The amount of units/events it marks has been reduced
 --substanially by Bluestone (by popular request).
 --Features:
 --{x}Multilanguage support
@@ -32,23 +32,23 @@ unitList["TA"] = {
 [UnitDefNames["corfmd1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllantinuke"].id] = 	{["en"]="Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllantinuke1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
-UnitDefNames["talon_damascus"].id] = 	{["en"]="Anti Nuke", ["de"]="", ["fr"]="" },
-UnitDefNames["talon_damascus1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_damascus"].id] = 	{["en"]="Anti Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_damascus1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 
 --Nuke Silos
-[UnitDefNames["armsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
-[UnitDefNames["corsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
+[UnitDefNames["armsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
+[UnitDefNames["corsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
 [UnitDefNames["armsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllsilo"].id] = 	{["en"]="Nuke", ["de"]="", ["fr"]="" },
-UnitDefNames["talon_silo"].id] = 	{["en"]="Nuke", ["de"]="", ["fr"]="" },
-UnitDefNames["talon_silo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_silo"].id] = 	{["en"]="Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_silo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 
 --Uber Nukes
-[UnitDefNames["tllion"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
-[UnitDefNames["armfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
-[UnitDefNames["corfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
-[UnitDefNames["talon_elixir"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucl�aire" },
+[UnitDefNames["tllion"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
+[UnitDefNames["armfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
+[UnitDefNames["corfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
+[UnitDefNames["talon_elixir"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
 
 --Uber Anti-Nukes
 [UnitDefNames["tllgazelle"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
@@ -58,7 +58,7 @@ UnitDefNames["talon_silo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]=""
 
 --Tac Nuke Style static units
 [UnitDefNames["armemp"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
-[UnitDefNames["cortron"].id] = 	{["en"]="Tactical Nuke Silo", ["de"]="Taktische Atom-Raketensilo", ["fr"]="l'Arme Tactiques Nucl�aire" },
+[UnitDefNames["cortron"].id] = 	{["en"]="Tactical Nuke Silo", ["de"]="Taktische Atom-Raketensilo", ["fr"]="l'Arme Tactiques Nucleaire" },
 [UnitDefNames["tllemp"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
 [UnitDefNames["talon_armistice"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
 
@@ -117,7 +117,7 @@ UnitDefNames["talon_silo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]=""
 [UnitDefNames["tllobliterator1"].id] = 	{["en"]="Adv. Obliterator", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllrlrpc"].id] = 	{["en"]="The Barret", ["de"]="", ["fr"]="" },
 
---Anti Experimental Cannon 
+--Anti Experimental Cannon
 [UnitDefNames["corboucher"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 [UnitDefNames["nebraska"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 [UnitDefNames["tlldmc"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
@@ -247,13 +247,13 @@ function widget:Initialize()
 		spEcho("<Unit Marker> Unsupported Game, shutting down...")
 		widgetHandler:RemoveWidget(self)
 		return
-	else	
+	else
 		curUnitList = unitList[curModID] or {}
 	end
 	myLang = myLang or string.lower(select(8,Spring.GetPlayerInfo(Spring.GetMyPlayerID())))
 end
 
-function colourNames(teamID) 
+function colourNames(teamID)
 	nameColourR,nameColourG,nameColourB,nameColourA = spGetTeamColor(teamID)
 	R255 = math.floor(nameColourR*255)  --the first \255 is just a tag (not colour setting) no part can end with a zero due to engine limitation (C)
 	G255 = math.floor(nameColourG*255)
@@ -268,21 +268,21 @@ function colourNames(teamID)
 		B255 = B255+1
 	end
   return "\255"..string.char(R255)..string.char(G255)..string.char(B255) --works thanks to zwzsg
-end 
+end
 
 function widget:UnitEnteredLos(unitID, allyTeam)
 	if ( IsUnitAllied( unitID ) ) then return end
 
 	local udefID = spGetUnitDefID(unitID)
 	local x, y, z = spGetUnitPosition(unitID)  --x and z on map floor, y is height
-	
+
 	if udefID and x then
 	  if curUnitList and curUnitList[udefID] then
 			prevX, prevY, prevZ = prevMarkX[unitID],prevMarkY[unitID],prevMarkZ[unitID]
 			if prevX == nil then
 				prevX, prevY, prevZ = 0,0,0
 			end
-			
+
 			if (math.sqrt(math.pow((prevX - x), 2)+(math.pow((prevZ - z), 2)))) >= 100 then -- marker only really uses x and z
 				markColour = colourNames(spGetUnitTeam(unitID))
 				if UnitDefs[udefID].customParams.iscommander == "1" then
@@ -303,7 +303,7 @@ function widget:UnitEnteredLos(unitID, allyTeam)
 	  end
 	end
 end
-	
+
 function widget:Initialize()
 	if Spring.IsReplay() or Spring.GetGameFrame() > 0 then
 	    widget:PlayerChanged()

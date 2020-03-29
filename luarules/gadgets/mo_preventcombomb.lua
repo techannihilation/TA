@@ -80,13 +80,13 @@ local DGUN = {
   [WeaponDefNames['tllcom6_tll_disintegrator2'].id] = true,
   [WeaponDefNames['tllcom7_tll_disintegrator2'].id] = true,
     --Talon
-  [WeaponDefNames['talon_com_disintegrator3'].id] = true,
-  [WeaponDefNames['talon_com1_arm_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com3_tll_disintegrator1'].id] = true,
-  [WeaponDefNames['talon_com_fusion_arm_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com5_tll_disintegrator2'].id] = true,
-  [WeaponDefNames['talon_com6_tll_disintegrator2'].id] = true,
-  [WeaponDefNames['talon_com7_tll_disintegrator2'].id] = true,
+  [WeaponDefNames['talon_com_tal_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com1_tal_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com3_tal_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com_fusion_tal_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com5_tal_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com6_tal_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com7_tal_disintegrator'].id] = true,
 }
 
 local COMMANDER = {

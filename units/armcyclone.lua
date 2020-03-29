@@ -105,7 +105,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.133,
 				interceptedbyshieldtype = 16,
-				model = "praetorian_missile",
+				model = "exphvyrock1",
 				name = "Mk-83",
 				noselfdamage = true,
 				range = 2100,

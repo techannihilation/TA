@@ -61,7 +61,7 @@ return {
 		radardistance = 940,
 		radaremitheight = 41,
 		reclaimable = false,
-		script = "talon_com.cob", 
+		script = "talon_com.cob",
 		seismicsignature = 0,
 		selfdestructas = "COMMANDER_BLAST1",
 		shownanospray = false,
@@ -205,7 +205,7 @@ return {
 			},
 		},
 		weapondefs = {
-			tal_disintegrator1 = {
+			tal_disintegrator = {
 				areaofeffect = 36,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -416,7 +416,7 @@ return {
 				onlytargetcategory = "NOTSUB",
 			},
 			[3] = {
-				def = "TAL_DISINTEGRATOR1",
+				def = "TAL_DISINTEGRATOR",
 			},
 			[4] = {
 				def = "TAL_SEALASER",
