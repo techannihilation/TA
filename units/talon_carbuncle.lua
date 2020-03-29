@@ -32,7 +32,7 @@ return {
 		mass = 2903,
 		maxdamage = 18450,
 		maxslope = 12,
-		maxvelocity = 1.4,
+		maxvelocity = 1.7,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "HTANK5",
@@ -130,7 +130,7 @@ return {
 		weapondefs = {
 			carbuncle_rc = {
 				accuracy = 200,
-				areaofeffect = 56,
+				areaofeffect = 64,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "carbuncleblaster",
@@ -155,8 +155,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 350,
 				damage = {
-					commanders = 80,
-					default = 160,
+					commanders = 90,
+					default = 180,
 					subs = 5,
 				},
 			},

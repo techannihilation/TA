@@ -37,6 +37,7 @@ local paraTroopers={
   [UnitDefNames["commando"].id] = true,
   [UnitDefNames["armrambo"].id] = true,
   [UnitDefNames["tllgizmo"].id] = true,
+  [UnitDefNames["talon_berserker"].id] = true,
 }
 
 local crawlingBombs = {
@@ -45,6 +46,7 @@ local crawlingBombs = {
   [UnitDefNames.corsktl.id] = true,
   [UnitDefNames.tllcrawlb.id] = true,
   [UnitDefNames.coretnt.id] = true,
+  [UnitDefNames.talon_herison.id] = true,
 }
 
 local toKill = {}

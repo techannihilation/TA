@@ -9,6 +9,8 @@ Balance :
  - All Seaplane Fighters balanced (cost too high metal vs T2 fighter)
  - Talon commando : increase damage and time. Vs other commando, not Aoe damage.
  - corgfbt (t1 core flamer tank) : increase range 290=>300
+ - Talon berserker : becomes paratroopers
+ - Annubis : Decrease damage and range from laser gun.
 
 Improvments:
  - Add GroundPlate for talon Lab (in work again).
@@ -16,7 +18,8 @@ Improvments:
  - Rework fatshrew model (atad weapon).
  - Add t5 Talon Nano
  - Add T2 Assault Tank Carbuncle
-
+ - Add T4 MetalMaker to T5 builder Core
+ 
 Fix :
  - All Constructors Talon. After construction, they closed/opened nanos and lost 3-4sec between each cons.
  - Fix Talon_armadillo Weapon
@@ -28,7 +31,7 @@ Balance :
  - Mythril Pod : Increase Cost and Power. Add Blue Shield. Same power than Exoarm.
  - Cormkl (T4 Spider) : More range rocket and add reloadtime. (fix range with other t4 units)
  - Talon MCV (Silver) : Increase cost 87KM => 90KM. Decrease Experimental damage (200% => 150% from default damage)
- - Talon Thanos : Increase cost (+3KM and 30KE). Increase HP 54K=>86K. 
+ - Talon Thanos : Increase cost (+3KM and 30KE). Increase HP 54K=>86K.
 
 Improvments:
  - Add Grenat T4 Tank assault unit

@@ -179,7 +179,7 @@ return {
 				laserflaresize = 10,
 				name = "Heavy Talon Gun",
 				noselfdamage = true,
-				range = 900,
+				range = 750,
 				reloadtime = 0.2,
 				rgbcolor = "1.0 0.8 0.25",
 				rgbcolor2= "1.0 1.0 1.00";
@@ -195,7 +195,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {
-					default = 100,
+					default = 75,
 					subs = 5,
 				},
 			},

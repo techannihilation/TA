@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Battle Mech",
+		description = "Paratrooping Battle Mech",
 		explodeas = "FAST MECH_BLASTSML",
 		firestandorders = 1,
 		footprintx = 4,
