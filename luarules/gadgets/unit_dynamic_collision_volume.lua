@@ -215,7 +215,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		local _,_,_,_,bp = spGetUnitHealth(unitID)
 		local val  = 1
 		-- only affect units under construction
-		if (bp < BP_SIZE_LIMIT) then
+		if bp and (bp < BP_SIZE_LIMIT) then
 			val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
 			ys = ys * val
 			yo = yo * val
@@ -376,7 +376,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				
 				-- only affect units under construction
 				-- height grows until build % reaches 60
-				if (bp < BP_SIZE_LIMIT) then
+				if bp and (bp < BP_SIZE_LIMIT) then
 					xs, ys, zs, xo, yo, zo, vtype, htype, axis,_ = spGetUnitCollisionData(unitID)
 	
 					val = math.max(bp*BP_SIZE_MULTIPLIER,0.1)
