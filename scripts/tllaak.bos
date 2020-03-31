@@ -307,7 +307,7 @@ Create()
 	Static_Var_3 = 0;
 	Static_Var_4 = 1;
 	Static_Var_6 = 0;
-	gun_2 = base;
+	gun_2 = 0;
 	Static_Var_5 = 6000;
 	hide barrels;
 	hide elevator;
@@ -351,7 +351,12 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	gun_2 = 1 - gun_2;
+	sleep 250;
+	++gun_2;
+	if ( gun_2 == 2)
+	{
+		gun_2 = 0;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -361,7 +366,14 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = lflare;
+	if ( gun_2 == 0)
+	{
+		piecenum = lflare;
+	}
+	if ( gun_2 == 1)
+	{
+		piecenum = rflare;
+	}	
 }
 
 AimSecondary(heading, pitch)
