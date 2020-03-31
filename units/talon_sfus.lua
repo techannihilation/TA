@@ -2,8 +2,8 @@ return {
 	talon_sfus = {
 		activatewhenbuilt = true,
 		buildangle = 90096,
-		buildcostenergy = 568915,
-		buildcostmetal = 46390,
+		buildcostenergy = 514080,
+		buildcostmetal = 48573,
 		builder = false,
 		buildpic = "talon_sfus.dds",
 		buildtime = 825000,
