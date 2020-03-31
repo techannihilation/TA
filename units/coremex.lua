@@ -2,7 +2,7 @@ return {
 	coremex = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 45502,
+		buildcostenergy = 65502,
 		buildcostmetal = 3756,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -18,7 +18,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
 		description = "Tech Level 3 (Amphibious)",
-		energyuse = 175,
+		energyuse = 300,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.0125,
 		footprintx = 7,

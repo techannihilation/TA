@@ -2,7 +2,7 @@ return {
 	tllmas = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 180920,
+		buildcostenergy = 225092,
 		buildcostmetal = 15251,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		description = "Tech Level 4 (Amphibious)",
 		energymake = 0,
-		energyuse = 400,
+		energyuse = 1000,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.0375,
 		footprintx = 7,

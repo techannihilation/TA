@@ -2,7 +2,7 @@ return {
 	tllumex = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 680920,
+		buildcostenergy = 780920,
 		buildcostmetal = 56251,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -17,7 +17,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
 		description = "Tech Level 5 (Amphibious)",
-		energyuse = 1500,
+		energyuse = 3000,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.09375,
 		footprintx = 8,

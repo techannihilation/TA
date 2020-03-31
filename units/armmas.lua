@@ -2,7 +2,7 @@ return {
 	armmas = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 219854,
+		buildcostenergy = 262854,
 		buildcostmetal = 13905,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		description = "Tech Level 4 (Amphibious)",
 		energymake = 0,
-		energyuse = 500,
+		energyuse = 1000,
 		explodeas = "ATOMIC_BLAST",
 		extractsmetal = 0.0375,
 		footprintx = 7,

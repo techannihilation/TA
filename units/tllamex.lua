@@ -2,7 +2,7 @@ return {
 	tllamex = {
 		activatewhenbuilt = true,
 		buildangle = 2048,
-		buildcostenergy = 5754,
+		buildcostenergy = 6754,
 		buildcostmetal = 741,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -17,7 +17,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 2",
-		energyuse = 45,
+		energyuse = 75,
 		explodeas = "SMALL_BUILDINGEX",
 		extractsmetal = 0.005,
 		footprintx = 5,
