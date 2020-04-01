@@ -1,5 +1,5 @@
 ﻿3.36 -> 3.37
-2020-03-28
+2020-03-31
 Balance :
  - Balance Beamer/double LLT/Kevlar/LLT TLL (try to have good balance between Hp / range / cost / damage). In test..
  - Grenat T4 Talon : Increase speed 1.5=> 1.7
@@ -12,6 +12,8 @@ Balance :
  - Talon berserker : becomes paratroopers
  - Annubis : Decrease damage and range from laser gun.
  - Antarion : Increase energy cost 150K => 220K
+ - All T2/T3/T4 Mex : Balance energy cost. Increase by 1000 for t2 by 20K for t3 and 60K for T4. 100K for t5. Energy use increase too. 75 for t2 300 for t3, 3000 for t4.
+ - Fusion T5 cost (increase cost)
 
 Improvments:
  - Add GroundPlate for talon Lab (in work again).
@@ -20,11 +22,14 @@ Improvments:
  - Add t5 Talon Nano
  - Add T2 Assault Tank Carbuncle
  - Add T4 MetalMaker to T5 builder Core
- 
+ - Fix Cost for T4 Veloute Talon
+
 Fix :
  - All Constructors Talon. After construction, they closed/opened nanos and lost 3-4sec between each cons.
  - Fix Talon_armadillo Weapon
  - Fix Tllacid Weapon (the body doesn't turn now while shot
+ - Fix T3 tll mex. 4k cost instead 40K...
+- cost ratio for some fusion talon / core / arm
 
 3.35 -> 3.36
 2020-03-15
