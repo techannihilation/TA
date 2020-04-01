@@ -11,7 +11,7 @@ piece  base, body, flare, turret, barrel,
 		flameturret1, flamebarrel1, flame1, 
 		flameturret2, flamebarrel2, flame2;
 
-static-var  gun_3, gun_4, missile1, missile2, bAiming;
+static-var  gun_3, gun_4, missile1, missile2, bAiming1, bAiming2;
 
 #define SIG_AIM 	2
 #define SIG_AIM2 	4
@@ -22,16 +22,27 @@ static-var  gun_3, gun_4, missile1, missile2, bAiming;
 #define SIG_AIM_7 	128
 #define SIG_AIM_8 	256
 
-PilotLight(Func_Var_1)
+PilotLight1()
 {
 	while( TRUE )
 	{
-		while( bAiming )
+		while( bAiming1 )
 		{
-			sleep 100;
+			sleep 250;
 		}
 		emit-sfx 1024 + 1 from flame1;
 		sleep 150;
+	}
+}
+
+PilotLight2()
+{
+	while( TRUE )
+	{
+		while( bAiming2 )
+		{
+			sleep 250;
+		}
 		emit-sfx 1024 + 1 from flame2;
 		sleep 150;
 	}
@@ -47,7 +58,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	start-script PilotLight(1);
+	start-script PilotLight1();
+	start-script PilotLight2();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -83,7 +95,9 @@ Create()
 	gun_4 = 0;
 	missile1 = 0;
 	missile2 = 0;
-	bAiming = 0;
+	bAiming1 = 0;
+	bAiming2 = 0;
+
 	start-script SmokeUnit();	
 }
 
@@ -117,11 +131,16 @@ RestoreAfterDelay2()
 
 RestoreAfterDelay3()
 {
-	sleep 3000;
-	baiming = 0;
+	sleep 2000;
+	bAiming1 = 0;
 	turn flameturret1 to y-axis <0.000000> speed <50.000000>;
+}
+
+RestoreAfterDelay4()
+{
+	sleep 2000;
+	bAiming2 = 0;
 	turn flameturret2 to y-axis <0.000000> speed <50.000000>;
-	
 }
 
 
@@ -358,7 +377,7 @@ AimWeapon7(heading, pitch)
 	signal SIG_AIM_7;
 	set-signal-mask SIG_AIM_7;
 	turn flameturret1 to y-axis heading speed <90.000000>;
-	bAiming = 1;
+	bAiming1 = 1;
 	start-script RestoreAfterDelay3();
 	return (1);
 }
@@ -368,8 +387,8 @@ AimWeapon8(heading, pitch)
 	signal SIG_AIM_8;
 	set-signal-mask SIG_AIM_8;
 	turn flameturret2 to y-axis heading speed <90.000000>;
-	bAiming = 1;
-	start-script RestoreAfterDelay3();
+	bAiming2 = 1;
+	start-script RestoreAfterDelay4();
 	return (1);
 }
 
