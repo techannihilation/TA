@@ -90,11 +90,12 @@ return {
 		},
 		weapondefs = {
 			barrage = {
+				accuracy = 200,
 				areaofeffect = 320,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 4,
-				burstrate = 0.75,
+				burstrate = 0.45,
 				cegtag = "Trail_Large_Rocket_New",
 				craterareaofeffect = 525,
 				craterboost = 0,

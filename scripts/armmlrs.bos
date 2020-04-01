@@ -169,13 +169,13 @@ FirePrimary()
 	{
 		start-script Reload(1);
 		hide rocket1;
-		sleep 900;
+		sleep 1000;
 		gun_1 = 1;
 		hide rocket2;
-		sleep 900;
+		sleep 1000;
 		gun_1 = 2;
 		hide rocket3;
-		sleep 900;
+		sleep 1000;
 		gun_1 = 3;
 		return 0;
 	}
@@ -183,13 +183,13 @@ FirePrimary()
 	{
 		start-script Reload(2);
 		hide rocket4;
-		sleep 900;
+		sleep 1000;
 		gun_1 = 4;
 		hide rocket5;
-		sleep 900;
+		sleep 1000;
 		gun_1 = 5;
 		hide rocket6;
-		sleep 900;
+		sleep 1000;
 		gun_1 = 0;
 		return 0;
 	}

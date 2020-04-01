@@ -97,28 +97,26 @@ FirePrimary()
 {
 	if (Static_Var_1 == 0)
 	{
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 1;
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 2;
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 3;
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 4;
-		sleep 2000;
 		return 0;
 	}
 	if (Static_Var_1 == 4)
 	{
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 5;
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 6;
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 7;
-		sleep 750;
+		sleep 400;
 		Static_Var_1 = 0;
-		sleep 2000;
 		return 0;
 	}
 }
