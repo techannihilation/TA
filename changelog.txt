@@ -1,3 +1,12 @@
+3.37 -> 3.38
+2020-04-05
+Balance :
+ - Corsumo : Decrease range 650=>600
+ - Corsumo1 : Increase cost 2.7KM=>3.2KM Decrease Range 650=>600. Decrease HP 20K => 15K. Increase dmg/s 625 => 1000.
+ - Abbadon : Decrease Rocket range 1000 => 900 (same than Talos). Decrease HP 98K => 94K.
+ - Repentance : Decrease Range 1500 => 1400.
+ - T1 Arm Beam : Increase cost 250M => 290M. Increase energyuse 80/s=>100/s
+ 
 ﻿3.36 -> 3.37
 2020-04-01
 Balance :

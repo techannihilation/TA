@@ -128,7 +128,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Plasma Cannon",
 				nogap = 1,
-				range = 1500,
+				range = 1400,
 				reloadtime = 20,
 				rgbcolor = "0.88 0.65 0",
 				separation = 0.45,
