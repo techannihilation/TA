@@ -6,6 +6,7 @@ Balance :
  - Abbadon : Decrease Rocket range 1000 => 900 (same than Talos). Decrease HP 98K => 94K.
  - Repentance : Decrease Range 1500 => 1400.
  - T1 Arm Beam : Increase cost 250M => 290M. Increase energyuse 80/s=>100/s
+ - Ceddral : Increase range 790 => 1175. Decrease Hp 11K=>6.4K. Increase speed 4.2=>4.5
  
 ﻿3.36 -> 3.37
 2020-04-01
