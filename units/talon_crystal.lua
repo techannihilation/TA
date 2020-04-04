@@ -149,7 +149,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				interceptor = 16,
-				name = "Annihilator Weapon",
+				name = "Missile/Rocket Interceptor",
 				noselfdamage = true,
 				range = 1200,
 				reloadtime = 1.5,

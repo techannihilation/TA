@@ -149,7 +149,6 @@ return {
 				texture2 = "null",
 				texture3 = "null",
 				texture4 = "null",
-				tolerance = 3000,
 				tracks = true,
 				trajectoryheight = 1,
 				turnrate = 0,
