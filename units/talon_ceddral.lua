@@ -105,7 +105,7 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",
 				firestarter = 20,
-				flighttime = 2.45,
+				flighttime = 4,
 				impulseboost = 0,
 				impulsefactor = 0,
 				model = "talon_missile",
