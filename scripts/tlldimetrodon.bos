@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, Ltrap, Rtrap, missl1, missl2, missl3, missl4;
+piece  base, body, Ltrap, Rtrap, missl1, missl2, missl3, missl4, missl;
 
 static-var  restore_delay, Static_Var_2, gun_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -120,6 +120,11 @@ RestoreAfterDelay()
 	sleep restore_delay;
 	set-signal-mask 0;
 	start-script RequestState(1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = missl;
 }
 
 AimPrimary(heading, pitch)

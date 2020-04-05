@@ -11,9 +11,11 @@ static-var  gun_1, restore_delay, gun_2, Static_Var_4, Static_Var_5,
             bAiming, Static_Var_7;
 
 // Signal definitions
-#define SIG_AIM_2			2
-#define SIG_AIM				4
-#define SIG_MOVE			8
+#define SIG_AIM			2
+#define SIG_AIM_3		4
+#define SIG_AIM_4		8
+#define SIG_AIM_5		16
+#define SIG_MOVE		32
 
 
 SetDirection(heading)
@@ -118,6 +120,7 @@ Create()
 	hide flare2;
 	hide foreflare;
 	hide aftflare;
+	turn aftturret to y-axis <180.000000> now;
 	gun_1 = base;
 	gun_2 = base;
 	restore_delay = 3000;
@@ -138,13 +141,17 @@ RestoreAfterDelay()
 	turn barrel2 to x-axis <0.000000> speed <15.000000>;
 }
 
-RestoreDeckLaser()
+RestoreWeapon4()
 {
-	sleep 3000;
-	set-signal-mask 0;
+	sleep 2000;
 	turn foreturret to y-axis <0.000000> speed <150.000000>;
 	turn foregun to x-axis <0.000000> speed <100.000000>;
-	turn aftturret to y-axis <0.000000> speed <150.000000>;
+}
+
+RestoreWeapon5()
+{
+	sleep 2000;
+	turn aftturret to y-axis <180.000000> speed <150.000000>;
 	turn aftgun to x-axis <0.000000> speed <100.000000>;
 }
 
@@ -187,73 +194,70 @@ StopMoving()
 	move base to y-axis [0.000000] speed [0.250000];
 }
 
-AimSecondary(heading, pitch)
+AimWeapon4(heading, pitch)
 {
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	if( gun_2 )
-	{
-		turn aftturret to y-axis heading speed <300.000000>;
-		turn aftgun to x-axis <0.000000> - pitch speed <200.000000>;
-		wait-for-turn aftturret around y-axis;
-		wait-for-turn aftgun around x-axis;
-		start-script RestoreDeckLaser();
-		return (1);
-	}
-	else
-	{
-		turn foreturret to y-axis heading speed <300.000000>;
-		turn foregun to x-axis <0.000000> - pitch speed <200.000000>;
-		wait-for-turn foreturret around y-axis;
-		wait-for-turn foregun around x-axis;
-		start-script RestoreDeckLaser();
-		return (1);
-	}
+	
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn foreturret to y-axis heading speed <300.000000>;
+	turn foregun to x-axis <0.000000> - pitch speed <200.000000>;
+	wait-for-turn foreturret around y-axis;
+	wait-for-turn foregun around x-axis;
+	start-script RestoreWeapon4();
+	return (1);
 }
 
-FireSecondary()
+AimWeapon5(heading, pitch)
 {
-	if( gun_2 )
-	{
-		show aftflare;
-		sleep 150;
-		hide aftflare;
-	}
-	else
-	{
-		show foreflare;
-		sleep 150;
-		hide foreflare;
-	}
-	gun_2 = !gun_2;
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn aftturret to y-axis heading speed <300.000000>;
+	turn aftgun to x-axis <0.000000> - pitch speed <200.000000>;
+	wait-for-turn aftturret around y-axis;
+	wait-for-turn aftgun around x-axis;
+	start-script RestoreWeapon5();
+	return (1);
 }
 
-AimFromSecondary(piecenum)
+		
+FireWeapon4()
 {
-	if( gun_2 )
-	{
-		piecenum = aftgun;
-	}
-	else
-	{
-		piecenum = foregun;
-	}
+	show foreflare;
+	sleep 150;
+	hide foreflare;
 }
 
-QuerySecondary(piecenum)
+FireWeapon5()
 {
-	if( gun_2 )
-	{
-		piecenum = aftflare;
-	}
-	else
-	{
-		piecenum = foreflare;
-	}
+	show aftflare;
+	sleep 150;
+	hide aftflare;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = foregun;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = aftgun;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = foreflare;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = aftflare;
 }
 
 AimTertiary(heading, pitch)
 {
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
 	return (1);
 }
 
