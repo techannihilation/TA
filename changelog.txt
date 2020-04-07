@@ -1,4 +1,4 @@
-3.37 -> 3.38
+3.37 -> 3.38 (released)
 2020-04-05
 Balance :
  - Corsumo : Decrease range 650=>600
@@ -8,7 +8,7 @@ Balance :
  - T1 Arm Beam : Increase cost 250M => 290M. Increase energyuse 80/s=>100/s
  - Ceddral : Increase range 790 => 1175. Decrease Hp 11K=>6.4K. Increase speed 4.2=>4.5
  
-﻿3.36 -> 3.37
+3.36 -> 3.37
 2020-04-01
 Balance :
  - Balance Beamer/double LLT/Kevlar/LLT TLL (try to have good balance between Hp / range / cost / damage). In test..
