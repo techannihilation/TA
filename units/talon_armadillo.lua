@@ -2,11 +2,11 @@ return {
 	talon_armadillo = {
 		acceleration = 0.0198,
 		brakerate = 0.1122,
-		buildcostenergy = 18750,
-		buildcostmetal = 1520,
+		buildcostenergy = 17750,
+		buildcostmetal = 1420,
 		builder = false,
 		buildpic = "talon_armadillo.dds",
-		buildtime = 25000,
+		buildtime = 24000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -121,7 +121,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armtruck_rocket = {
+			talon_rocket = {
 				areaofeffect = 90,
 				avoidfeature = false,
 				cegtag = "talonraventrail",
@@ -175,10 +175,10 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				laserflaresize = 10,
-				name = "Talon Gun",
+				name = "Light Rapid Talon Gun",
 				noselfdamage = true,
-				range = 600,
-				reloadtime = 0.25,
+				range = 520,
+				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
 				rgbcolor2= "1.0 1.0 1.00";
 				soundhitdry = "talongunhit",
@@ -189,12 +189,11 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.1,
 				thickness = 1,
-				tolerance = 500,
 				turret = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {
-					default = 30,
+					default = 45,
 					subs = 5,
 				},
 			},
@@ -202,7 +201,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MOBILE",
-				def = "ARMTRUCK_ROCKET",
+				def = "TALON_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {

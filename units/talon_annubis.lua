@@ -177,10 +177,10 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				laserflaresize = 10,
-				name = "Heavy Talon Gun",
+				name = "Rapid Talon Gun",
 				noselfdamage = true,
-				range = 750,
-				reloadtime = 0.2,
+				range = 650,
+				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
 				rgbcolor2= "1.0 1.0 1.00";
 				soundhitdry = "talongunhit",

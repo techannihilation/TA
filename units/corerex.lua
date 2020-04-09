@@ -116,7 +116,7 @@ return {
 		weapondefs = {
 			beam_weapon = {
 				areaofeffect = 8,
-				beamtime = 0.15,
+				beamtime = 0.1,
 				corethickness = 0.225,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -151,7 +151,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					default = 40,
+					default = 30,
 					subs = 5,
 				},
 			},
