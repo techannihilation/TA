@@ -1,3 +1,15 @@
+3.37 -> 3.39
+Balance :
+ - Fix Range for all talon laser (yellow)
+ - Talon  wolf : Decrease cost  (290=>250M & 7KE=>5kE) and timebuild 7000 => 5250
+ - Juggernault Core : decrease HP 490 => 480K. Decrease Cost 36KM => 30KM. decrease Timebuild.
+ - Arm/Core LLT1 : Better damage. Less Range. Same cost. (we have llt 435 range, llt1 475 range and beam/hllt 500 range)
+Improvment :
+ - Rework Juggernault Weapon. Add Double llt for top with damage * 2. Rework main weapon. Same range. Add special dammage vs Experimental units.
+
+Fix :
+  - Tll Dimetrodon (Vpulse hover) : Now they can fire from Sea.
+
 3.37 -> 3.38 (released)
 2020-04-05
 Balance :
@@ -7,7 +19,7 @@ Balance :
  - Repentance : Decrease Range 1500 => 1400.
  - T1 Arm Beam : Increase cost 250M => 290M. Increase energyuse 80/s=>100/s
  - Ceddral : Increase range 790 => 1175. Decrease Hp 11K=>6.4K. Increase speed 4.2=>4.5
- 
+
 3.36 -> 3.37
 2020-04-01
 Balance :

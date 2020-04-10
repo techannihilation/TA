@@ -137,7 +137,7 @@ return {
 				laserflaresize = 10,
 				name = "LightLaser",
 				noselfdamage = true,
-				range = 500,
+				range = 475,
 				reloadtime = 0.25,
 				rgbcolor = "1 0 0",
 				soundhitdry = "",
