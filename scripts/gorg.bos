@@ -6,10 +6,10 @@
 piece  rflare, lflare, body, turret, feetparent, FLFoot, FRFoot, RLFoot,
        RRFoot, rightchunk, leftchunk, faceguard, Lgun, Rgun, Rbarrel, Lbarrel,
        hips, knobs, stand1, stand2, stand3, gun1, gun2, gun3,
-       flare1, flare2, flare3;
+       flare1, flare2, flare31, flare32, sleeve31, sleeve32;
 
 static-var  bMoving, Static_Var_2, Static_Var_3, restore_delay, Static_Var_5,
-            Static_Var_6, Static_Var_7;
+            Static_Var_6, Static_Var_7, gun;
 
 
 walk()
@@ -386,11 +386,13 @@ Create()
 	bMoving = FALSE;
 	Static_Var_2 = 0;
 	Static_Var_3 = 1;
+	gun = 0;
 	hide rflare;
 	hide lflare;
 	hide flare1;
 	hide flare2;
-	hide flare3;
+	hide flare31;
+	hide flare32;
 	restore_delay = 3000;
 	start-script MotionControl();
 	start-script SmokeUnit();
@@ -464,17 +466,13 @@ FireWeapon1()
 	if( Static_Var_5 == 0 )
 	{
 		move Rbarrel to z-axis [-2.000000] now;
-		show rflare;
 		sleep 150;
-		hide rflare;
 		move Rbarrel to z-axis [0.000000] speed [4.000000];
 	}
 	if( Static_Var_5 == 1 )
 	{
 		move Lbarrel to z-axis [-2.000000] now;
-		show lflare;
 		sleep 150;
-		hide lflare;
 		move Lbarrel to z-axis [0.000000] speed [4.000000];
 	}
 	Static_Var_5 = !Static_Var_5;
@@ -540,8 +538,8 @@ AimWeapon4(heading, pitch)
 {
 	signal 32;
 	set-signal-mask 32;
-	turn gun3 to y-axis heading speed <300.071429>;
-	turn gun3 to x-axis <0.000000> - pitch speed <200.038462>;
+	turn gun3 to y-axis heading speed <300.0>;
+	turn gun3 to x-axis <0.000000> - pitch speed <200.0>;
 	wait-for-turn stand3 around y-axis;
 	wait-for-turn gun3 around x-axis;
 	return (1);
@@ -549,9 +547,24 @@ AimWeapon4(heading, pitch)
 
 FireWeapon4()
 {
-	show flare3;
-	sleep 150;
-	hide flare3;
+	if ( gun == 0)	
+	{
+		show flare1;
+		sleep 150;
+		hide flare1;
+	}	
+	if ( gun == 1)	
+	{
+		show flare2;
+		sleep 150;
+		hide flare2;
+	}	
+	
+	++gun;
+	if (gun == 2)
+	{
+		gun = 0;
+	}
 }
 
 AimFromWeapon4(piecenum)
@@ -561,7 +574,14 @@ AimFromWeapon4(piecenum)
 
 QueryWeapon4(piecenum)
 {
-	piecenum = flare3;
+	if (gun == 0) 	
+	{
+		piecenum = flare31;
+	}
+	if (gun == 1) 	
+	{
+		piecenum = flare32;
+	}
 }
 
 Killed(severity, corpsetype)
@@ -570,7 +590,8 @@ Killed(severity, corpsetype)
 	hide rflare;
 	hide flare1;
 	hide flare2;
-	hide flare3;
+	hide flare31;
+	hide flare32;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
