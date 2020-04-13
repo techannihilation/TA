@@ -1,15 +1,15 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 72935149,
-		buildcostmetal = 9877014,
+		buildcostenergy = 142935149,
+		buildcostmetal = 19877014,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "corflu_aoplane.dds",
 		buildpic = "corflu.dds",
-		buildtime = 20000000,
+		buildtime = 30000000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,

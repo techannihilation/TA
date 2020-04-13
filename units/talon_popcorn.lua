@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 29900,
 		buildcostmetal = 1350,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "armflak_aoplane.dds",
 		buildpic = "talon_popcorn.dds",
 		buildtime = 25000,
 		canattack = true,
@@ -49,7 +45,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_popcorn",
-		usebuildinggrounddecal = true,
 		yardmap = "oo oo",
 		customparams = {
 			buildpic = "talon_popcorn.dds",

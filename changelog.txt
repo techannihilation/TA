@@ -1,4 +1,13 @@
-3.37 -> 3.39
+3.39 -> 3.40
+2020-04-13
+
+Balance :
+ - Tsar All faction : +10M Metal and energy * 2
+ - Marauder : increase cost by 10%. decrease AA damage by 15%. Increase plasma gun by 2%.
+ - Abaddon : decrease range from plasma : 1500 => 1400
+
+3.38 -> 3.39
+2020-04-10
 Balance :
  - Fix Range for all talon laser (yellow)
  - Talon  wolf : Decrease cost  (290=>250M & 7KE=>5kE) and timebuild 7000 => 5250

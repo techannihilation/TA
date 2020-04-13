@@ -1,15 +1,15 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 66450664,
-		buildcostmetal = 10387146,
+		buildcostenergy = 126450664,
+		buildcostmetal = 20387146,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 13,
 		buildinggrounddecalsizey = 13,
 		buildinggrounddecaltype = "armtabi_aoplane.dds",
 		buildpic = "armtabi.dds",
-		buildtime = 20000000,
+		buildtime = 30000000,
 		canattack = true,
 		canguard = true,
 		canstop = 1,
