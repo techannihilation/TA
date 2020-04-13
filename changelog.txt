@@ -6,6 +6,9 @@ Balance :
  - Marauder : increase cost by 10%. decrease AA damage by 15%. Increase plasma gun by 2%.
  - Abaddon : decrease range from plasma : 1500 => 1400
 
+Improvment :
+ - Rework model for T4 MM Talon
+
 3.38 -> 3.39
 2020-04-10
 Balance :

@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "0 -4 0",
 		collisionvolumescales = "70 120 70",
 		collisionvolumetype = "CylY",
-		corpse = "dead",
+		corpse = "heap",
 		damagemodifier = 0.25,
 		description = "Converts upto 12000 Energy to Metal",
 		explodeas = "nuclear_missile1",
@@ -44,17 +44,6 @@ return {
 			faction = "TALON",
 		},
 		featuredefs = {
-			dead = {
-				blocking = true,
-				damage = 4000,
-				description = "T3 Metal Maker Wreckage",
-				featuredead = "heap",
-				footprintx = 4,
-				footprintz = 4,
-				metal = 14737,
-				object = "talon_metalmakerlvl2_dead",
-				reclaimable = true,
-			},
 			heap = {
 				blocking = false,
 				damage = 5000,

@@ -45,7 +45,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 17860,
-				object = "AMetalMakerLvl2_heap",
+				object = "ametalmakerlvl2_heap",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
