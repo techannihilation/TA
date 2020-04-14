@@ -251,25 +251,21 @@ Killed(severity, corpsetype)
 		explode pier4 type SHATTER | SMOKE | NOHEATCLOUD;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode nano1a type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode nano2a type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode nano1b type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode nano2b type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode beam1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode beam2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode beam3 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode beam4 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode side2 type SHATTER | NOHEATCLOUD;
-		explode side1 type SHATTER | NOHEATCLOUD;
-		explode pier1 type SHATTER | NOHEATCLOUD ;
-		explode pier2 type SHATTER | NOHEATCLOUD;
-		explode pier3 type SHATTER | SMOKE | NOHEATCLOUD;
-		explode pier4 type SHATTER | SMOKE | NOHEATCLOUD;
-		return (corpsetype);
-	}
-
+	corpsetype = 3;
+	explode pad type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nano1a type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode nano2a type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nano1b type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode nano2b type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode beam1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode beam2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode beam3 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode beam4 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode side2 type SHATTER | NOHEATCLOUD;
+	explode side1 type SHATTER | NOHEATCLOUD;
+	explode pier1 type SHATTER | NOHEATCLOUD ;
+	explode pier2 type SHATTER | NOHEATCLOUD;
+	explode pier3 type SHATTER | SMOKE | NOHEATCLOUD;
+	explode pier4 type SHATTER | SMOKE | NOHEATCLOUD;
+	return (corpsetype);
 }

@@ -1,7 +1,7 @@
 local unitlist={--- Human friendly list. Automatically converted to unitdef IDs on init
  -- TechA
  -- this should only ever swap between pairs of (buildable) units, 03/06/13
- 
+
 {'armmex','armuwmex', 'cormex','coruwmex', 'tllmex','tlluwmex'},-- to test that widget behaves correctly when unit can't really be built
 {'armmakr','armfmkr'},
 {'cormakr','corfmkr'},
@@ -70,6 +70,7 @@ local unitlist={--- Human friendly list. Automatically converted to unitdef IDs 
 {'talon_mex','talon_uwmex'},
 {'talon_makr','talon_fmkr'},
 {'talon_drag','talon_fdrag'},
+{'talon_mine1','talon_fmine'},
 }
 
 function widget:GetInfo()

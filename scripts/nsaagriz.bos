@@ -173,7 +173,7 @@ RestoreAfterDelay()
 	{
 		wait-for-turn blaster around y-axis;
 		sleep restore_delay;
-		turn blaster to y-axis <0.000000> speed <200.000000>;
+		turn blaster to y-axis <0.000000> speed <80.000000>;
 	}
 }
 
@@ -183,7 +183,7 @@ AimPrimary(heading, pitch)
 	{
 		signal SIG_AIM;
 		set-signal-mask SIG_AIM;
-		turn blaster to y-axis heading speed <290.000000>;
+		turn blaster to y-axis heading speed <80.000000>;
 		wait-for-turn blaster around y-axis;
 		start-script RestoreAfterDelay();
 		return (1);

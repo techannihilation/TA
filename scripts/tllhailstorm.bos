@@ -356,8 +356,6 @@ Create()
 {
 	Static_Var_4 = 0;
 	Static_Var_5 = 0;
-	dont-cache gun1;
-	dont-shade gun1;
 	hide flare1;
 	hide flare2;
 	bMoving = FALSE;
@@ -393,8 +391,8 @@ SweetSpot(piecenum)
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	turn body to y-axis <0.000000> speed <90.000000>;
-	turn guns to x-axis <0.000000> speed <90.000000>;
+	turn body to y-axis <0.000000> speed <80.000000>;
+	turn guns to x-axis <0.000000> speed <80.000000>;
 	wait-for-turn body around y-axis;
 	bAiming = FALSE;
 }
@@ -460,8 +458,8 @@ AimPrimary(heading, pitch)
 	{
 		sleep 100;
 	}
-	turn body to y-axis heading speed <150.000000>;
-	turn guns to x-axis <0.000000> - pitch speed <150.000000>;
+	turn body to y-axis heading speed <80.000000>;
+	turn guns to x-axis <0.000000> - pitch speed <80.000000>;
 	wait-for-turn body around y-axis;
 	wait-for-turn guns around x-axis;
 	start-script RestoreAfterDelay();

@@ -1,6 +1,7 @@
 --Configs for TA alldefs
 
 local iswater = {
+	["talon_atl"] = true,
 	["armfnanotc1"] = true,
 	["tllwhale"] = true,
 	["armmship"] = true,

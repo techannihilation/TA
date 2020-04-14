@@ -5,9 +5,18 @@ Balance :
  - Tsar All faction : +10M Metal and energy * 2
  - Marauder : increase cost by 10%. decrease AA damage by 15%. Increase plasma gun by 2%.
  - Abaddon : decrease range from plasma : 1500 => 1400
+ - Armbantha : Decrease HP 39K 37K. decrease main plasma weapon damage 300 => 250
+ - Akmeck (vengence) : Increase range 1000 => 1250. Decrease laser range 550=>450. Decrease cost 5.1KM => 4.7KM
+ - blind Tll t3 : Increase HP 22K 24K. Decrease damage for lightning (600=>400)
+ - Hailstorm : Decrease damage 4200 => 2400. Better reloadtime.
+ - Krypton : Decrease turn y speed for turret 320=>80
+ - Silver : Decrease turn y speed for turret 100 => 60
 
 Improvment :
  - Rework model for T4 MM Talon
+
+Fix :
+ - Adv Talon torpedo can be placed in water correctly
 
 3.38 -> 3.39
 2020-04-10
