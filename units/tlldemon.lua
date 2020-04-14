@@ -137,7 +137,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "missile10",
-				name = "Anti-Dreadnaught Heavy Cannon",
+				name = "Experimental Missile",
 				proximitypriority = -1,
 				range = 1150,
 				reloadtime = 10,

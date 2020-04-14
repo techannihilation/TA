@@ -132,7 +132,7 @@ return {
 				laserflaresize = 10,
 				name = "Talon Gun",
 				noselfdamage = true,
-				range = 500,
+				range = 485,
 				reloadtime = 0.25,
 				rgbcolor = "1.0 0.8 0.25",
 				rgbcolor2= "1.0 1.0 1.00";
