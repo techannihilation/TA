@@ -76,7 +76,7 @@ RestoreAfterDelay()
 {
 	signal 16;
 	set-signal-mask 16;
-	sleep 20000;
+	sleep 10000;
 	turn turret to y-axis <0.> speed <15.>;
 	turn sleeves to x-axis <0.> speed <15.>;
 	turn minigun1 to y-axis <0.> speed <50.>;
@@ -89,7 +89,7 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn turret to y-axis heading speed <15.>;
+	turn turret to y-axis heading speed <25.>;
 	turn sleeves to x-axis <0.> - pitch speed <15.>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves around x-axis;
@@ -171,19 +171,6 @@ AimFromTertiary(piecenum)
 {
 	piecenum = minigun2;
 }
-smoke()
-{
-	while( Static_Var_2 == 1 )
-	{
-		emit-sfx 256 | 1 from l_flare;
-		emit-sfx 256 | 2 from l_flare;
-		sleep 10;
-		if( Rand( 1, 15 ) == 1 )
-		{
-			explode l_flare type BITMAPONLY | BITMAP5;
-		}
-	}
-}
 
 SweetSpot(piecenum)
 {
@@ -213,16 +200,6 @@ Killed(severity, corpsetype)
 		explode turret type SHATTER | FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
-		explode stats type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode sleeves type SHATTER | NOHEATCLOUD;
-		explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (corpsetype);
-	}
 	corpsetype = 3;
 	explode barrel type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode base type NOHEATCLOUD;
@@ -230,3 +207,4 @@ Killed(severity, corpsetype)
 	explode sleeves type SHATTER | NOHEATCLOUD;
 	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
+}
