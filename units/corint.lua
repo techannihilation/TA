@@ -33,7 +33,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Intimidator",
+		name = "T2 Intimidator",
 		nochasecategory = "ALL",
 		objectname = "CORINT",
 		radaremitheight = 92,

@@ -36,7 +36,7 @@ return {
 		maxdamage = 2800,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Immolator",
+		name = "T1 Intimidator",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "corint2",

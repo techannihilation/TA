@@ -30,7 +30,7 @@ return {
 		maxdamage = 5070,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "L.R.P.T.",
+		name = "T2 Immolator",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "TLLLRPT",

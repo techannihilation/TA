@@ -32,7 +32,7 @@ return {
 		maxdamage = 2800,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Immolator",
+		name = "T1 Big Bertha",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "armbrtha2",

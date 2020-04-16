@@ -35,7 +35,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Onyx",
+		name = "T2 Onyx",
 		nochasecategory = "ALL",
 		objectname = "talon_lrpt",
 		radaremitheight = 92,
