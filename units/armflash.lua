@@ -29,7 +29,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 116,
-		maxdamage = 570,
+		maxdamage = 585,
 		maxslope = 10,
 		maxvelocity = 3.6,
 		maxwaterdepth = 12,
@@ -63,8 +63,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.0750198364258 0.20984 -0.70206451416",
-				collisionvolumescales = "20.3918304443 9.5 30.2260284424",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "20 9.5 30",
 				collisionvolumetype = "Box",
 				damage = 784,
 				description = "Flash Wreckage",
@@ -143,7 +143,7 @@ return {
 				name = "flash",
 				noselfdamage = true,
 				range = 180,
-				reloadtime = 0.31,
+				reloadtime = 0.3,
 				rgbcolor = "0.83 0.57 0",
 				size = 1.75,
 				soundhitwet = "splshbig",
@@ -156,8 +156,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					default = 11,
-					raider_resistant = 5.5,
+					default = 10,
 					subs = 5,
 				},
 			},
