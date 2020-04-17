@@ -13,6 +13,8 @@ Balance :
  - Hailstorm : Decrease damage 4200 => 2400. Better reloadtime.
  - Krypton : Decrease turn y speed for turret 320=>80
  - Silver : Decrease turn y speed for turret 100 => 60
+ - T2 Laser Hover Core : Increase stats and cost. Damage 300=>500, Speed 2=>1, Add Light angle laser 270° in front, 1200M=>1600M
+ - T2 Beam Hover Arm : (fix real damage at 300/s). Increase HP 2.3K=>3.7K. Increase speed 1.5=>2.5. Decrease Cost 1.1KM => 0.78KM
 
 Improvment :
  - Rework model for T4 MM Talon
