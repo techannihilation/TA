@@ -123,9 +123,9 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn missil to x-axis <-75.016484> speed <100.000000>;
-	wait-for-turn missil around x-axis;
-	start-script RestoreAfterDelay2();
+	//turn missil to x-axis <-75.016484> speed <100.000000>;
+	//wait-for-turn missil around x-axis;
+	//start-script RestoreAfterDelay2();
 	return (1);
 }
 
