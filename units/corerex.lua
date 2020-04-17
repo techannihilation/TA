@@ -122,7 +122,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.6,
-				energypershot = 8,
+				energypershot = 10,
 				explosiongenerator = "custom:SMALL_BURN_WHITE",
 				firestarter = 30,
 				impactonly = 1,
