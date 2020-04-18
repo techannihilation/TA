@@ -124,7 +124,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armflak_gun = {
+			corflak_gun = {
 				accuracy = 1000,
 				areaofeffect = 192,
 				avoidfeature = false,
@@ -165,7 +165,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARMFLAK_GUN",
+				def = "CORFLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},
 		},

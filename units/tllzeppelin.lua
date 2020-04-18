@@ -175,11 +175,11 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 2250,
 				damage = {
-					bombers = 800,
+					bombers = 650,
 					default = 5,
-					fighters = 800,
-					flak_resistant = 400,
-					unclassed_air = 800,
+					fighters = 650,
+					flak_resistant = 225,
+					unclassed_air = 650,
 				},
 			},
 			miniion = {

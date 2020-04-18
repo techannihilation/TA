@@ -5,7 +5,7 @@ Balance :
  - Tsar All faction : +10M Metal and energy * 2
  - Marauder : increase cost by 10%. decrease AA damage by 15%. Increase plasma gun by 2%.
  - Abaddon : decrease range from plasma : 1500 => 1400
- - Repentance : decrease damage 1000/s => 600/s. Decrease range 1500 => 1400. Cost 19KM => 17KM.
+ - Repentance : decrease damage 1000/s => 600/s. Decrease range 1500 => 1250. Cost 19KM => 17KM.
  - Metron : Increase Angle for Turret 120 => 220 in front. Decrease HP 47K => 44K. Fix Damage 1000 / projectile (was 1200 for exp unit and 900 by default)
  - Armbantha : Decrease HP 39K 37K. decrease main plasma weapon damage 300 => 250
  - Akmeck (vengence) : Increase range 1000 => 1250. Decrease laser range 550=>450. Decrease cost 5.1KM => 4.7KM
@@ -19,6 +19,7 @@ Balance :
 Improvment :
  - Rework model for T4 MM Talon
  - Rework Ares weapon. Laser => Lightning.
+ - Broadside / Devastator : Remplace Laser by Flak
 
 Fix :
  - Adv Talon torpedo can be placed in water correctly
