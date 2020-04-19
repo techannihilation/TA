@@ -2,8 +2,8 @@ function gadget:GetInfo()
 	return {
 		name = "Team Com Ends + dead allyteam blowup",
 		desc = "Implements com ends for allyteams + blows up team if no players left",
-		author = "KDR_11k (David Becker)",
-		date = "2008-02-04",
+		author = "KDR_11k (David Becker), Fast (René Jochum)",
+		date = "2020-04-19",
 		license = "Public domain",
 		layer = 1,
 		enabled = true
@@ -47,6 +47,13 @@ local modeComEnds = true
 local gaiaTeamID = Spring.GetGaiaTeamID()
 local allyTeamList = Spring.GetAllyTeamList()
 
+-- Get coms from UnitDefs
+local comDefs = {}
+for ud, _ in ipairs(UnitDefs) do
+	if UnitDefs[ud].customParams.iscommander then
+		comDefs[UnitDefs[ud].id] = true
+	end
+end
 
 local teamCount = 0
 for _,teamID in ipairs(GetTeamList()) do
@@ -84,8 +91,21 @@ function gadget:Initialize()
 	end
 end
 
+local function ReCheck()
+	-- occasionally, recheck just to make sure...
+	local teamList = Spring.GetTeamList()
+	for _,allyTeamID in ipairs(allyTeamList) do
+	  for commander,_ in ipairs(comDefs) do
+		aliveCount[teamID] = 0 + Spring.GetTeamUnitDefCount(teamID, commander)
+	  end
+	end
+end
 
 function gadget:GameFrame(t)
+
+	if n%30==0 then
+		ReCheck()
+	end
 
 	if t % 15 < .1 then
 		-- blow up an allyteam when it has no players left
@@ -174,15 +194,6 @@ function gadget:UnitCreated(u, ud, team)
 	end
 end
 
-function gadget:UnitGiven(u, ud, team)
-	if modeComEnds then
-		if UnitDefs[ud].customParams.iscommander then
-			local allyTeam = GetUnitAllyTeam(u)
-			aliveCount[allyTeam] = aliveCount[allyTeam] + 1
-		end
-	end
-end
-
 function gadget:UnitDestroyed(u, ud, team, a, ad, ateam)
 	if modeComEnds then
 		isAlive[u] = nil
@@ -197,18 +208,7 @@ function gadget:UnitDestroyed(u, ud, team, a, ad, ateam)
 	end
 end
 
-function gadget:UnitTaken(u, ud, team, a, ad, ateam)
-	if modeComEnds and isAlive[u] and UnitDefs[ud].customParams.iscommander then
-		local allyTeam = GetUnitAllyTeam(u)
-		aliveCount[allyTeam] = aliveCount[allyTeam] - 1
-		if aliveCount[allyTeam] <= 0 then
-			local x,y,z = Spring.GetUnitPosition(u)
-			destroyQueue[allyTeam] = {x = x, y = y, z = z, a = a}
-		end
-	end
-end
-
-
+-- TA does not allow sharing to enemy, so no need to check Given, Taken, etc
 
 else
 
