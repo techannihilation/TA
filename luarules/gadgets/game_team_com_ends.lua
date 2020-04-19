@@ -103,7 +103,7 @@ end
 
 function gadget:GameFrame(t)
 
-	if n%30==0 then
+	if t%30==0 then
 		ReCheck()
 	end
 
