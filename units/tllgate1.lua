@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "56 32 56",
 		collisionvolumetype = "box",
 		corpse = "tllgate_dead",
-		description = "Experimental Shield Plasma Deflector",
+		description = "Plasma Deflector",
 		energystorage = 2000,
 		energyuse = 0,
 		explodeas = "MINE_NUKE",

@@ -12,7 +12,7 @@ return {
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
-		description = "Experimental Plasma Deflector",
+		description = "Plasma Deflector",
 		energystorage = 1500,
 		energyuse = 0,
 		explodeas = "MINE_NUKE",

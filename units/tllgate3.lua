@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "90 100 90",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Ultimate Plasma Deflector",
+		description = "Plasma Deflector",
 		energystorage = 15000,
 		energyuse = 0,
 		explodeas = "BANTHA_DEATH",

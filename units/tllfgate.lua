@@ -26,7 +26,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		minwaterdepth = 5,
-		name = "Saint",
+		name = "Umbrella T2",
 		noautofire = false,
 		nochasecategory = "ALL",
 		norestrict = 1,

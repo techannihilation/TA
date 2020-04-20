@@ -23,6 +23,7 @@ Improvment :
 
 Fix :
  - Adv Talon torpedo can be placed in water correctly
+ - Bagger shoot cost
 
 3.38 -> 3.39
 2020-04-10

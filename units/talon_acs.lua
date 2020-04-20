@@ -68,7 +68,7 @@ return {
 			[10] = "talon_asy",
 			[11] = "talon_esy",
 			[12] = "talon_plat",
-			[13] = "talon_asonar",
+			[13] = "talon_fgate",
 		},
 		customparams = {
 			faction = "TALON",

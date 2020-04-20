@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "60 37 60",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Super Plasma Deflector",
+		description = "Plasma Deflector",
 		energystorage = 1500,
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
