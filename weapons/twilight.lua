@@ -13,15 +13,13 @@ return {
 		name = "EMPboom",
 		paralyzer = 1,
 		paralyzetime = 20,
-		range = 600,
 		reloadtime = 0.3,
 		soundhit = "EMGPULS1",
 		soundstart = "bombrel",
-		tolerance = 7000,
 		turret = 1,
 		damage = {
 			commanders = 100,
-			default = 4000,
+			default = 5000,
 		},
 	},
 }

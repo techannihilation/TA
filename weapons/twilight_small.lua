@@ -1,6 +1,6 @@
 return {
 	twilight_small = {
-		areaofeffect = 150,
+		areaofeffect = 100,
 		commandfire = 1,
 		craterboost = 0,
 		cratermult = 0,
@@ -12,16 +12,14 @@ return {
 		model = "bomb",
 		name = "EMPboom",
 		paralyzer = 1,
-		paralyzetime = 10,
-		range = 600,
+		paralyzetime = 8,
 		reloadtime = 0.3,
 		soundhit = "EMGPULS1",
 		soundstart = "bombrel",
-		tolerance = 7000,
 		turret = 1,
 		damage = {
 			commanders = 100,
-			default = 4000,
+			default = 2000,
 		},
 	},
 }
