@@ -59,16 +59,9 @@ local exceptionList = { --add exempt units here
 	"talon_fmine",
 	--Crawling Bomb
 	"corsktl",
-	"armvader",
-	"coretnt",
-	"corroach",
 	"tllcrawlb",
-	--Other
-	"armpb",
-	"armamb",
-	"armpacko",
 	--Snipers
-	"armsnipe", 
+	"armsnipe",
 	"corprot"
 }
 
@@ -84,7 +77,7 @@ local cloakUnit = {} --stores the desired fire state when decloaked of each unit
 
 function widget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams)
 if cmdID == CMD_CLOAK and cmdParams[1] == 1 then
-	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] then 
+	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] then
 		return
 	end
 	local states = GetUnitStates(unitID)
@@ -95,7 +88,7 @@ if cmdID == CMD_CLOAK and cmdParams[1] == 1 then
 	end
 elseif cmdID == CMD_CLOAK and cmdParams[1] == 0 then
 
-	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] or (not cloakUnit[unitID]) then 
+	if (not enabled) or (teamID ~= myTeam) or exceptionArray[unitDefID] or (not cloakUnit[unitID]) then
 		return
 	end
 	local states = GetUnitStates(unitID)

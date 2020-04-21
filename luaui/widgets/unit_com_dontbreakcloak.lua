@@ -2,7 +2,7 @@ function widget:GetInfo()
 	return {
 		name      = 'DontBreakCloak',
 		desc      = 'Sets units to hold fire when cloaked',
-		author    = 'Niobium',  
+		author    = 'Niobium',
 		version   = '1.1',
 		date      = 'April 2011',
 		license   = 'GNU GPL, v2 or later',
@@ -24,7 +24,7 @@ local isCommander = {
   [UnitDefNames["corcom6"].id] = true,
   [UnitDefNames["corcom7"].id] = true,
 
---Arm 
+--Arm
   [UnitDefNames["armcom"].id] = true,
   [UnitDefNames["armcom1"].id] = true,
   [UnitDefNames["armcom4"].id] = true,
@@ -32,7 +32,7 @@ local isCommander = {
   [UnitDefNames["armcom5"].id] = true,
   [UnitDefNames["armcom6"].id] = true,
   [UnitDefNames["armcom7"].id] = true,
-	
+
 --The lost legacy
   [UnitDefNames["tllcom"].id] = true,
   [UnitDefNames["tllcom1"].id] = true,
@@ -41,6 +41,15 @@ local isCommander = {
   [UnitDefNames["tllcom5"].id] = true,
   [UnitDefNames["tllcom6"].id] = true,
   [UnitDefNames["tllcom7"].id] = true,
+
+--Talon
+	[UnitDefNames["talon_com"].id] = true,
+	[UnitDefNames["talon_com1"].id] = true,
+	[UnitDefNames["talon_com3"].id] = true,
+	[UnitDefNames["talon_com_fusion"].id] = true,
+	[UnitDefNames["talon_com5"].id] = true,
+	[UnitDefNames["talon_com6"].id] = true,
+	[UnitDefNames["talon_com7"].id] = true,
 }
 
 ----------------------------------------------------------------
@@ -80,7 +89,7 @@ function widget:UnitCommand(uID, uDefID, uTeam, cmdID, cmdParams, cmdOpts)
 			spGiveOrderToUnit(uID, CMD_FIRE_STATE, {0}, 0)
             spGiveOrderToUnit(uID, CMD_INSERT, {0, 0, 0}, CMD_OPT_ALT)
 		else
-			spGiveOrderToUnit(uID, CMD_FIRE_STATE, {2}, 0) 
+			spGiveOrderToUnit(uID, CMD_FIRE_STATE, {2}, 0)
 		end
 	end
 end

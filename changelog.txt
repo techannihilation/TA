@@ -1,6 +1,17 @@
+3.40 -> 3.41
+2020-04-21
+Balance :
+  - Praetorian : Increase Metal cost 18K=>19K
+  - Add Dance for rocket Armmlrs and talon_crystal
+
+Fix :
+  - Tll Emp mine T1 : fix dmaage and Aoe (was same than T2)
+  - Talon Com have Hold Fire when clocked
+  - Add alert sound if talon com is attacked
+  - Add Terraforming for Talon unit. All Commanders & T2 Cons have Terraforming (need to add for T3/T4  : in work)
+
 3.39 -> 3.40
 2020-04-13
-
 Balance :
  - Tsar All faction : +10M Metal and energy * 2
  - Marauder : increase cost by 10%. decrease AA damage by 15%. Increase plasma gun by 2%.

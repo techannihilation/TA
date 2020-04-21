@@ -18,7 +18,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "box",
 		defaultmissiontype = "Standby",
-		description = "Multi Launch Rocket System",
+		description = "Experimental Rocket Vehicle",
 		downloadable = 1,
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
