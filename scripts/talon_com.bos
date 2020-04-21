@@ -307,6 +307,7 @@ Create()
 	Static_Var_7 = 0;
 	Static_Var_8 = 0;
 	Static_Var_9 = 0;
+	Static_Var_20 = 1;
 	Static_Var_mouvement = 3; // Legs speed
 	Static_Var_10 = get MAX_SPEED;
 	hide flare;
@@ -383,7 +384,7 @@ FirePrimary()
 
 AimSecondary(heading, pitch)
 {
-	if( bAiming )
+	if( Static_Var_20 )
 	{
 		return (1);
 	}

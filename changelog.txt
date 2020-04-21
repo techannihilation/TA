@@ -15,6 +15,7 @@ Balance :
  - Silver : Decrease turn y speed for turret 100 => 60
  - T2 Laser Hover Core : Increase stats and cost. Damage 300=>500, Speed 2=>1, Add Light angle laser 270° in front, 1200M=>1600M
  - T2 Beam Hover Arm : (fix real damage at 300/s). Increase HP 2.3K=>3.7K. Increase speed 1.5=>2.5. Decrease Cost 1.1KM => 0.78KM
+ - T1 Shield / T2 mobile shield : Decrease Power 3000 => 2500. Increase Radius for mobile 250 => 300
 
 Improvment :
  - Rework model for T4 MM Talon
@@ -24,6 +25,8 @@ Improvment :
 Fix :
  - Adv Talon torpedo can be placed in water correctly
  - Bagger shoot cost
+ - Mako Shield good center
+ - Shield for talon commander is now ok (didn't load except if you shot)
 
 3.38 -> 3.39
 2020-04-10

@@ -59,7 +59,7 @@ return {
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
 		objectname = "TLLCOM6",
-		onoffable = true,
+		--onoffable = true,
 		radardistance = 1060,
 		radaremitheight = 67,
 		reclaimable = false,

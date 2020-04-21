@@ -176,16 +176,20 @@ cafus = {
   },
   corshieldgen = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
-    {class='Bursts',options=shieldBursts250},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=250, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
    armshieldgen = {
-    {class='Bursts',options=shieldBursts250},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=250, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  tllmako = {
+     {class='Bursts',options=shieldBursts300},
+     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+ },
   tllgorgon = {
     {class='ShieldSphere',options=tllgorgonSphere},
-    {class='Bursts',options=shieldBursts250},
+    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
    corsfus = {
@@ -205,14 +209,10 @@ cafus = {
     {class='Bursts',options=exoarmBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
- armsmc = {
+  armsmc = {
     {class='Bursts',options=armsmcBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
- tllmako = {
-    {class='Bursts',options=shieldBursts250},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=250, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-},
   armpraet = {
     {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},

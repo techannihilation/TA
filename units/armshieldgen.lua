@@ -53,8 +53,6 @@ return {
 		customparams = {
 			buildpic = "armshieldgen.dds",
 			faction = "ARM",
-			shield_emit_height = 54.8,
-			shield_emit_offset = -9.37,
 			shield_power = 3000,
 			shield_radius = 250,
 		},

@@ -59,7 +59,7 @@ return {
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
 		objectname = "ARMCOM7",
-		onoffable = true,
+		--onoffable = true,
 		radardistance = 1200,
 		radaremitheight = 72,
 		reclaimable = false,

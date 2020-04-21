@@ -59,7 +59,7 @@ return {
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
 		objectname = "CORCOM5",
-		onoffable = true,
+		--onoffable = true,
 		radardistance = 1000,
 		radaremitheight = 63,
 		reclaimable = false,

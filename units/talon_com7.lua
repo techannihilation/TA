@@ -61,7 +61,7 @@ return {
 		radardistance = 1200,
 		radaremitheight = 41,
 		reclaimable = false,
-		script = "talon_com.cob", 	
+		script = "talon_com.cob",
 		seismicsignature = 0,
 		selfdestructas = "COMMANDER_BLAST1",
 		selfdestructcountdown = 4,
@@ -101,7 +101,7 @@ return {
 			[20] = "talon_asonar",
 			[21] = "talon_fdrag",
 			[22] = "talon_atl",
-			[23] = "talon_fhlt",		
+			[23] = "talon_fhlt",
 			[24] = "talon_kernel",
 		},
 		customparams = {
@@ -111,6 +111,7 @@ return {
 			iscommander = true,
 			paralyzemultiplier = 0.025,
 			providetech = "Battle Commander,Assault Commander,Star Commander,Supreme Commander",
+			shield_emit_height = 25,
 			shield_power = 1650,
 			shield_radius = 200,
 

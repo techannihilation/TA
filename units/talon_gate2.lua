@@ -50,7 +50,7 @@ return {
 		customparams = {
 			buildpic = "talon_gate2.dds",
 			faction = "TALON",
-			shield_power = 3000,
+			shield_power = 2500,
 			shield_radius = 300,
 		},
 		featuredefs = {
@@ -128,7 +128,7 @@ return {
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldmaxspeed = 1250,
-				shieldpower = 3000,
+				shieldpower = 2500,
 				shieldpowerregen = 37.5,
 				shieldpowerregenenergy = 375,
 				shieldradius = 300,

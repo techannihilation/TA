@@ -1,4 +1,3 @@
-
 return {
 	armcom5 = {
 		acceleration = 0.22,
@@ -60,7 +59,7 @@ return {
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
 		objectname = "ARMCOM5",
-		onoffable = true,
+		--onoffable = true,
 		radardistance = 1000,
 		radaremitheight = 63,
 		reclaimable = false,

@@ -50,7 +50,7 @@ return {
 		customparams = {
 			buildpic = "corgate2.dds",
 			faction = "CORE",
-			shield_power = 3000,
+			shield_power = 2500,
 			shield_radius = 300,
 		},
 		featuredefs = {
@@ -127,8 +127,8 @@ return {
 				shieldforce = 7,
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
-				shieldmaxspeed = 200,
-				shieldpower = 3000,
+				shieldmaxspeed = 1250,
+				shieldpower = 2500,
 				shieldpowerregen = 37.5,
 				shieldpowerregenenergy = 375,
 				shieldradius = 300,

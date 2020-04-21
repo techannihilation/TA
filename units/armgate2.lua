@@ -50,7 +50,7 @@ return {
 		customparams = {
 			buildpic = "armgate2.dds",
 			faction = "ARM",
-			shield_power = 3000,
+			shield_power = 2500,
 			shield_radius = 300,
 		},
 		featuredefs = {
