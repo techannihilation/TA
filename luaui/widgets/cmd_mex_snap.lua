@@ -18,7 +18,9 @@ end
 ------------------------------------------------------------
 local mapBlackList = {
 						"Brazillian_Battlefield_Remake_V2",
-						"Techno Lands Final v4.0"
+						"Techno Lands Final v4.0",
+						"Techno Lands Final v4.5",
+						"Techno Lands Final v5.0",
 					 }
 
 ------------------------------------------------------------
