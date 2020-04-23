@@ -31,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 45,
 		mass = 267,
-		maxdamage = 2705,
+		maxdamage = 2005,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Dragon's Claw",

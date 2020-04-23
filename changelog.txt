@@ -3,6 +3,10 @@
 Balance :
   - Praetorian : Increase Metal cost 18K=>19K
   - Add Dance for rocket Armmlrs and talon_crystal
+  - Decrease HP for Dragon Teeth (2700=>2000)
+  - Core Flamer Tank (t1) : Increase damage 240/s => 400/s
+  - Janus T1 : Decrease cost -2%. Increase damage 300=>360 for 1 rocket
+  - Corraid, armstump, whinestone, ariman : round up damage/s, ratio M/E, HP.
 
 Fix :
   - Tll Emp mine T1 : fix dmaage and Aoe (was same than T2)

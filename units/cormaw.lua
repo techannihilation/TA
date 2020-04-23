@@ -34,7 +34,7 @@ return {
 		idletime = 1800,
 		losemitheight = 45,
 		mass = 291,
-		maxdamage = 2645,
+		maxdamage = 2155,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Dragon's Maw",
