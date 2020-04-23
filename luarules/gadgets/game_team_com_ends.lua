@@ -49,9 +49,9 @@ local allyTeamList = Spring.GetAllyTeamList()
 
 -- Get coms from UnitDefs
 local comDefs = {}
-for ud, _ in ipairs(UnitDefs) do
-	if UnitDefs[ud].customParams.iscommander then
-		comDefs[UnitDefs[ud].id] = true
+for _, u in ipairs(UnitDefs) do
+	if u.customParams.iscommander then
+		comDefs[u.id] = true
 	end
 end
 
@@ -86,18 +86,19 @@ function gadget:Initialize()
 		end
 		modeComEnds = false
 	end
-	for _,t in ipairs(Spring.GetAllyTeamList()) do
+	for _,t in ipairs(allyTeamList) do
 		aliveCount[t] = 0
 	end
 end
 
 local function ReCheck()
 	-- occasionally, recheck just to make sure...
-	local teamList = Spring.GetAllyTeamList()
-	for _,teamID in ipairs(teamList) do
-	  for commander,_ in pairs(comDefs) do
-		aliveCount[teamID] = 0 + Spring.GetTeamUnitDefCount(teamID, commander)
-	  end
+	for _,teamID in ipairs(allyTeamList) do
+		local ac = 0
+		for commander,_ in pairs(comDefs) do
+			ac = ac + Spring.GetTeamUnitDefCount(teamID, commander)
+		end
+		aliveCount[teamID] = ac
 	end
 end
 
