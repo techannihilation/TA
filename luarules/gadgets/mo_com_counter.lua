@@ -26,9 +26,9 @@ local teamComs = {} -- format is enemyComs[teamID] = total # of coms in enemy te
 
 -- Get coms from UnitDefs
 local comDefs = {}
-for ud, _ in ipairs(UnitDefs) do
-	if UnitDefs[ud].customParams.iscommander then
-		comDefs[UnitDefs[ud].id] = true
+for _, u in ipairs(UnitDefs) do
+	if u.customParams.iscommander then
+		comDefs[u.id] = true
 	end
 end
 
@@ -64,7 +64,7 @@ local function ReCheck()
 	for _,teamID in ipairs(teamList) do
 	  local newCount = 0
 
-	  for commander,_ in ipairs(comDefs) do
+	  for commander,_ in pairs(comDefs) do
 		 newCount = newCount + Spring.GetTeamUnitDefCount(teamID, commander)
 	  end
 		if newCount ~= teamComs[teamID] then
@@ -76,7 +76,7 @@ end
 
 function gadget:GameFrame(n)
 
-	if n%30==0 then
+	if n % 30 == 0 then
 		ReCheck()
 	end
 
