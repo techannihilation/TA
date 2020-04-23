@@ -8,6 +8,9 @@ Balance :
   - Janus T1 : Decrease cost -2%. Increase damage 300=>360 for 1 rocket
   - Corraid, armstump, whinestone, ariman : round up damage/s, ratio M/E, HP.
 
+Improvment :
+  - Rework Ariman model
+  
 Fix :
   - Tll Emp mine T1 : fix dmaage and Aoe (was same than T2)
   - Talon Com have Hold Fire when clocked
