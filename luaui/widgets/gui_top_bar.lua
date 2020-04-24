@@ -915,6 +915,7 @@ function widget:Update(dt)
 	end
 	if comcountChanged then
 		updateComs()
+		countComs()
 	end
 
 	-- rejoin
