@@ -93,9 +93,9 @@ end
 
 local function ReCheck()
 	-- occasionally, recheck just to make sure...
-	local teamList = Spring.GetAllyTeamList()
-	for _,teamID in ipairs(teamList) do
-	  for commander,_ in pairs(comDefs) do
+	local teamList = Spring.GetTeamList()
+	for _,allyTeamID in ipairs(allyTeamList) do
+	  for commander,_ in ipairs(comDefs) do
 		aliveCount[teamID] = 0 + Spring.GetTeamUnitDefCount(teamID, commander)
 	  end
 	end
@@ -103,11 +103,11 @@ end
 
 function gadget:GameFrame(t)
 
-	if t % 30 == 0 then
+	if t%30==0 then
 		ReCheck()
 	end
 
-	if t % 15 == 0 then
+	if t % 15 < .1 then
 		-- blow up an allyteam when it has no players left
 		if blowUpWhenEmptyAllyTeam then
 			for _,allyTeamID in ipairs(allyTeamList) do
