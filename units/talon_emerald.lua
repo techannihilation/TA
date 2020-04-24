@@ -28,10 +28,10 @@ return {
 		leavetracks = true,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 275,
+		mass = 141,
 		maxdamage = 615,
 		maxslope = 17,
-		maxvelocity = 2.75,
+		maxvelocity = 2,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK2",
@@ -54,7 +54,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 2.35,
-		turnrate = 500,
+		turnrate = 350,
 		unitname = "talon_emerald",
 		customparams = {
 			buildpic = "talon_emerald.dds",
@@ -121,7 +121,7 @@ return {
 		},
 		weapondefs = {
 			emerald_weapon = {
-				areaofeffect = 130,
+				areaofeffect = 96,
 				avoidfeature = false,
 				burnblow = true,
 				craterareaofeffect = 0,
@@ -144,7 +144,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 550,
 				damage = {
-					default = 210,
+					default = 180,
 					subs = 5,
 				},
 			},

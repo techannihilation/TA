@@ -1,6 +1,7 @@
 3.40 -> 3.41
-2020-04-21
+2020-04-25
 Balance :
+  - Nerf Talon Emeral : Speed 2.75=>2, AOE 110=>96, damage 210=>180
   - Praetorian : Increase Metal cost 18K=>19K
   - Add Dance for rocket Armmlrs and talon_crystal
   - Decrease HP for Dragon Teeth (2700=>2000)
@@ -10,7 +11,7 @@ Balance :
 
 Improvment :
   - Rework Ariman model
-  
+
 Fix :
   - Tll Emp mine T1 : fix dmaage and Aoe (was same than T2)
   - Talon Com have Hold Fire when clocked
