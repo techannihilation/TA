@@ -93,20 +93,14 @@ end
 
 local function ReCheck()
 	-- occasionally, recheck just to make sure...
-<<<<<<< HEAD
-	local teamList = Spring.GetTeamList()
-	for _,allyTeamID in ipairs(allyTeamList) do
-	  for commander,_ in ipairs(comDefs) do
-		aliveCount[teamID] = 0 + Spring.GetTeamUnitDefCount(teamID, commander)
-	  end
-=======
-	for _,teamID in ipairs(allyTeamList) do
+	for _,at in ipairs(allyTeamList) do
 		local ac = 0
-		for commander,_ in pairs(comDefs) do
-			ac = ac + Spring.GetTeamUnitDefCount(teamID, commander)
+		for _,teamID in ipairs(GetTeamList(at)) do
+			for commander,_ in pairs(comDefs) do
+				ac = ac + Spring.GetTeamUnitDefCount(teamID, commander)
+			end			
 		end
-		aliveCount[teamID] = ac
->>>>>>> b9067873b16ca6567f4e31419c13d884551e6c0b
+		aliveCount[at] = ac
 	end
 end
 
