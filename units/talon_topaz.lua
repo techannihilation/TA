@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 95,
 		builder = false,
 		buildpic = "talon_topaz.dds",
-		buildtime = 1500,
+		buildtime = 1800,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -121,7 +121,7 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_laser = {
+			talon_laser = {
 				areaofeffect = 8,
 				beamtime = 0.1,
 				burstrate = 0.2,
@@ -130,7 +130,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.02,
-				energypershot = 2,
 				explosiongenerator = "custom:SMALL_YELLOW_BURN",
 				firestarter = 50,
 				hardstop = true,
@@ -140,7 +139,7 @@ return {
 				laserflaresize = 5,
 				name = "Laser",
 				noselfdamage = true,
-				range = 235,
+				range = 200,
 				reloadtime = 0.5,
 				rgbcolor = "1 1 0.4",
 				soundhitdry = "",
@@ -163,7 +162,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARM_LASER",
+				def = "TALON_LASER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

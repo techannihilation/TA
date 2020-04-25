@@ -142,7 +142,7 @@ return {
 				laserflaresize = 10,
 				name = "Talon Beam",
 				noselfdamage = true,
-				range = 1000,
+				range = 965,
 				reloadtime = 4,
 				rgbcolor = "0.1 0.9 1.0",
 				soundhitdry = "",

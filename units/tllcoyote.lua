@@ -137,7 +137,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
-				reloadtime = 2.4,
+				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
@@ -153,7 +153,6 @@ return {
 				turnrate = 48000,
 				turret = true,
 				weaponacceleration = 141,
-				weapontimer = 5,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
