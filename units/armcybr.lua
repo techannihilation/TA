@@ -32,7 +32,7 @@ return {
 		losemitheight = 8.5,
 		maneuverleashlength = 1280,
 		mass = 3145,
-		maxdamage = 4480,
+		maxdamage = 3940,
 		maxslope = 10,
 		maxvelocity = 9.45,
 		maxwaterdepth = 0,
@@ -90,7 +90,7 @@ return {
 		},
 		weapondefs = {
 			arm_pidr = {
-				areaofeffect = 512,
+				areaofeffect = 400,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Arm_Trail_rocket_upg",
