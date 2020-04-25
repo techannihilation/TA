@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 571,
 		buildcostmetal = 325,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 6,
-		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "armmstor_aoplane.dds",
 		buildpic = "talon_mstor.dds",
 		buildtime = 2925,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -45,7 +41,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_mstor",
-		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "talon_MSTOR.dds",
