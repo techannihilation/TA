@@ -13,14 +13,12 @@ end
 
 -------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------
-if VFS.FileExists("luarules/configs/comDefs.lua") then
-	VFS.Include("luarules/configs/comDefs.lua")
-end
 
 local enabled = (tostring(Spring.GetModOptions().mo_enemycomcount) == "1") or false
 if not enabled then return false end
 if not (gadgetHandler:IsSyncedCode()) then return false end --synced only
 local teamComs = {} -- format is enemyComs[teamID] = total # of coms in enemy teams
+local comDefs = VFS.Include("luarules/configs/comDefs.lua")
 
 local function UpdateCount()
 	for teamID, _ in pairs(teamComs) do
