@@ -74,7 +74,7 @@ return {
 			[14] = "armhorg",
 			--[15] = "armscpion",
 			--[16] = "armcd",
-			[17] = "tankanotor",
+			--[17] = "tankanotor", - temporary disable
 		},
 		customparams = {
 			buildpic = "armavp.dds",
