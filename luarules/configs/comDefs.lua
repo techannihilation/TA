@@ -1,4 +1,4 @@
-comDefs = {
+local comDefs = {
 	[UnitDefNames["corcom"].id] = true,
 	[UnitDefNames["corcom1"].id] = true,
 	[UnitDefNames["corcom3"].id] = true,
@@ -31,3 +31,4 @@ comDefs = {
 	[UnitDefNames["talon_com6"].id] = true,
 	[UnitDefNames["talon_com7"].id] = true
 }
+return comDefs
