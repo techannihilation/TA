@@ -188,6 +188,8 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "SMALL TINY MEDIUM",
+				maindir = "0 0 1",
+				maxangledif = 220,
 				def = "CANNON_SIEGE",
 				onlytargetcategory = "SURFACE",
 			},

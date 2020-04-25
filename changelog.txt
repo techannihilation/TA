@@ -7,7 +7,7 @@ Balance :
   - Decrease HP for Dragon Teeth (2700=>2000)
   - Core Flamer Tank (t1) : Increase damage 240/s => 400/s
   - Janus T1 : Decrease cost -2%. Increase damage 300=>360 for 1 rocket
-  - Corraid, armstump, whinestone, ariman : round up damage/s, ratio M/E, HP.
+  - Repentance : Add Angle Limit to 220° on front
 
 Improvment :
   - Rework Ariman model
@@ -17,6 +17,8 @@ Fix :
   - Talon Com have Hold Fire when clocked
   - Add alert sound if talon com is attacked
   - Add Terraforming for Talon unit. All Commanders & T2 Cons have Terraforming (need to add for T3/T4  : in work)
+  - Counter Com widget
+  - Collision Box for Naval LLT (sub couldn't shoot them)
 
 3.39 -> 3.40
 2020-04-13
