@@ -8,7 +8,8 @@ piece  base, body, launch, engine, reactors, r1, r2, r3, r4, r5, r6,
        turret2r, sleeve2r, flare2r,
        turret3r, sleeve3r, flare3r,
        turret4r, sleeve4r, flare4r,
-       turret1m, sleeve1m, barrel1m, flare1m, turret2m, sleeve2m, barrel2m, flare2m,
+       turret1m, sleeve1m, gun1am, gun1bm, flare1am, flare1bm,
+       turret2m, sleeve2m, gun2am, gun2bm, flare2am, flare2bm,
        turret1, turret2, sleeve1, sleeve2, barrel1a, barrel1b, barrel1c, barrel2a, barrel2b, barrel2c,
        flare1a, flare1b, flare1c, flare2a, flare2b, flare2c,
        msl1, msl2, msl3, msl4, msl5, msl6, msl7, msl8, msl9, msl10;
@@ -134,6 +135,10 @@ Create()
 	hide msl8;
 	hide msl9;
 	hide msl10;
+	hide flare1am;
+	hide flare1bm;
+	hide flare2am;
+	hide flare2bm;
 	missile = 1;
 	gun1 = 0; 
 	gun2 = 0;
@@ -275,8 +280,8 @@ AimWeapon7(heading, pitch)
 {
 	signal 128;
 	set-signal-mask 128;
-	turn turret1m to y-axis heading speed <300.000000>;
-	turn sleeve1m to x-axis <0.000000> - pitch speed <250.000000>;
+	turn turret1m to y-axis heading speed <400.000000>;
+	turn sleeve1m to x-axis <0.000000> - pitch speed <350.000000>;
 	wait-for-turn turret1m around y-axis;
 	wait-for-turn sleeve1m around x-axis;
 	start-script RestoreAfterDelay7();
@@ -287,8 +292,8 @@ AimWeapon8(heading, pitch)
 {
 	signal 256;
 	set-signal-mask 256;
-	turn turret2m to y-axis heading speed <300.000000>;
-	turn sleeve2m to x-axis <0.000000> - pitch speed <250.000000>;
+	turn turret2m to y-axis heading speed <400.000000>;
+	turn sleeve2m to x-axis <0.000000> - pitch speed <350.000000>;
 	wait-for-turn turret2m around y-axis;
 	wait-for-turn sleeve2m around x-axis;
 	start-script RestoreAfterDelay8();
@@ -380,34 +385,23 @@ FireWeapon7()
 {
 	if( gun3 == 0 )
 	{
-		show flare1m;
-		sleep 50;
-		hide flare1m;
-		turn barrel1m to z-axis <90.000000> speed <350.000000>;
+		move gun1am to z-axis [-1.000000] speed [500.000000];
+		//show flakflare4a;
+		sleep 150;
+		move gun1am to z-axis [0.000000] speed [3.000000];
+		//hide flakflare4a;
 	}
 	if( gun3 == 1 )
 	{
-		show flare1m;
-		sleep 50;
-		hide flare1m;
-		turn barrel1m to z-axis <180.000000> speed <350.000000>;
-	}
-	if( gun3 == 2 )
-	{
-		show flare1m;
-		sleep 50;
-		hide flare1m;
-		turn barrel1m to z-axis <270.000000> speed <350.000000>;
-	}
-	if( gun3 == 3 )
-	{
-		show flare1m;
-		sleep 50;
-		hide flare1m;
-		turn barrel1m to z-axis <0.000000> speed <350.000000>;
+		move gun1bm to z-axis [-1.000000] speed [500.000000];
+		//show flakflare4a;
+		sleep 150;
+		move gun1bm to z-axis [0.000000] speed [3.000000];
+		//hide flakflare4a;
+
 	}
 	++gun3;
-	if( gun3 == 4 )
+	if( gun3 == 2 )
 	{
 		gun3 = 0;
 	}
@@ -417,34 +411,23 @@ FireWeapon8()
 {
 	if( gun4 == 0 )
 	{
-		show flare2m;
-		sleep 50;
-		hide flare2m;
-		turn barrel2m to z-axis <90.000000> speed <350.000000>;
+		move gun2am to z-axis [-1.000000] speed [500.000000];
+		//show flakflare4a;
+		sleep 150;
+		move gun2am to z-axis [0.000000] speed [3.000000];
+		//hide flakflare4a;
+
 	}
 	if( gun4 == 1 )
 	{
-		show flare2m;
-		sleep 50;
-		hide flare2m;
-		turn barrel2m to z-axis <180.000000> speed <350.000000>;
-	}
-	if( gun4 == 2 )
-	{
-		show flare2m;
-		sleep 50;
-		hide flare2m;
-		turn barrel2m to z-axis <270.000000> speed <350.000000>;
-	}
-	if( gun4 == 3 )
-	{
-		show flare2m;
-		sleep 50;
-		hide flare2m;
-		turn barrel2m to z-axis <0.000000> speed <350.000000>;
+		move gun2bm to z-axis [-1.000000] speed [500.000000];
+		//show flakflare4a;
+		sleep 150;
+		move gun2bm to z-axis [0.000000] speed [3.000000];
+		//hide flakflare4a;
 	}
 	++gun4;
-	if( gun4 == 4 )
+	if( gun4 == 2 )
 	{
 		gun4 = 0;
 	}
@@ -590,7 +573,14 @@ AimFromWeapon7(piecenum)
 
 QueryWeapon7(piecenum)
 {
-	piecenum = flare1m;
+	if( gun3 == 0 )
+	{
+		piecenum = flare1am;
+	}
+	if( gun3 == 1 )
+	{
+		piecenum = flare1bm;
+	}
 }
 
 AimFromWeapon8(piecenum)
@@ -600,7 +590,14 @@ AimFromWeapon8(piecenum)
 
 QueryWeapon8(piecenum)
 {
-	piecenum = flare2m;
+	if( gun4 == 0 )
+	{
+		piecenum = flare2am;
+	}
+	if( gun4 == 1 )
+	{
+		piecenum = flare2bm;
+	}
 }
 
 AimFromWeapon9(piecenum)
