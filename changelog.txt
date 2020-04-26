@@ -1,6 +1,7 @@
 3.40 -> 3.41
 2020-04-25
 Balance :
+  - All Blue Shield : Absorb damage and not reflect. Now they intercept all weapon type except explosion from other unit.
   - Nerf Talon Emeral : Speed 2.75=>2, AOE 110=>96, damage 210=>180
   - Praetorian : Increase Metal cost 18K=>19K
   - Add Dance for rocket Armmlrs and talon_crystal
@@ -10,6 +11,7 @@ Balance :
   - Repentance : Add Angle Limit to 220° on front
 
 Improvment :
+  - Rework cordust hero : Add Flak instead of laser AA
   - Rework Ariman model
 
 Fix :
