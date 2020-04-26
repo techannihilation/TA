@@ -49,92 +49,117 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-missileReloadr(initialise)
+missileReloadr(Static_Var_1)
 {
-	if (missile == 2 or initialise == 1)
+	
+	if (Static_Var_1 == 0)
+	{
+		move msl1 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl2 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl3 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl4 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl5 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl6 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl7 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl8 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl9 to y-axis [0.000000] speed [1.000000];
+		sleep 50;
+		move msl10 to y-axis [0.000000] speed [1.000000];
+		return 0;
+	}
+	
+	if (Static_Var_1 == 1)
 	{
 		move msl1 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl1;
+		//show msl1;
 		move msl1 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 3 or initialise == 1)
+	if (Static_Var_1 == 2)
 	{
 		move msl2 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl2;
+		//show msl2;
 		move msl2 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 4 or initialise == 1)
+	if (Static_Var_1 == 3)
 	{
 		move msl3 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl3;
+		//show msl3;
 		move msl3 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 5 or initialise == 1)
+	if (Static_Var_1 == 4)
 	{
 		move msl4 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl4;
+		//show msl4;
 		move msl4 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 6 or initialise == 1)
+	if (Static_Var_1 == 5)
 	{
 		move msl5 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl5;
+		//show msl5;
 		move msl5 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 7 or initialise == 1)
+	if (Static_Var_1 == 6)
 	{
 		move msl6 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl6;
+		//show msl6;
 		move msl6 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 8 or initialise == 1)
+	if (Static_Var_1 == 7)
 	{
 		move msl7 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl7;
+		//show msl7;
 		move msl7 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 9 or initialise == 1)
+	if (Static_Var_1 == 8)
 	{
 		move msl8 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl8;
+		//show msl8;
 		move msl8 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 10 or initialise == 1)
+	if (Static_Var_1 == 9)
 	{
 		move msl9 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl9;
+		//show msl9;
 		move msl9 to y-axis [0.000000] speed [1.000000];
 	}
-	if (missile == 1 or initialise == 1)
+	if (Static_Var_1 == 10)
 	{
 		move msl10 to y-axis [-11.000000] now;
 		sleep 2500;
-		show msl10;
+		//show msl9;
 		move msl10 to y-axis [0.000000] speed [1.000000];
 	}
 }
 
 Create()
 {
-	hide msl1;
-	hide msl2;
-	hide msl3;
-	hide msl4;
-	hide msl5;
-	hide msl6;
-	hide msl7;
-	hide msl8;
-	hide msl9;
-	hide msl10;
+	move msl1 to y-axis [-11.000000] now;
+	move msl2 to y-axis [-11.000000] now;
+	move msl3 to y-axis [-11.000000] now;
+	move msl4 to y-axis [-11.000000] now;
+	move msl5 to y-axis [-11.000000] now;
+	move msl6 to y-axis [-11.000000] now;
+	move msl7 to y-axis [-11.000000] now;
+	move msl8 to y-axis [-11.000000] now;
+	move msl9 to y-axis [-11.000000] now;
+	move msl10 to y-axis [-11.000000] now;	
 	hide flare1am;
 	hide flare1bm;
 	hide flare2am;
@@ -145,7 +170,7 @@ Create()
 	gun3 = 0;
 	gun4 = 0;
 	start-script SmokeUnit();
-	start-script missileReloadr(1);	
+	start-script missileReloadr(0);
 }
 
 RestoreAfterDelay1()
@@ -435,47 +460,7 @@ FireWeapon8()
 
 FireWeapon9()
 {
-	if( missile == 1 )
-	{
-		hide msl1;
-	}
-	if( missile == 2 )
-	{
-		hide msl2;
-	}
-	if( missile == 3 )
-	{
-		hide msl3;
-	}
-	if( missile == 4 )
-	{
-		hide msl4;
-	}
-	if( missile == 5 )
-	{
-		hide msl5;
-	}
-	if( missile == 6 )
-	{
-		hide msl6;
-	}
-	if( missile == 7 )
-	{
-		hide msl7;
-	}
-	if( missile == 8 )
-	{
-		hide msl8;
-	}
-	if( missile == 9 )
-	{
-		hide msl9;
-	}
-	if( missile == 10 )
-	{
-		hide msl10;
-	}
-	start-script missileReloadr(0);
+	start-script missileReloadr(missile);
 	++missile;
 	if( missile == 11 )
 	{
@@ -609,43 +594,43 @@ QueryWeapon9(piecenum)
 {
 	if(missile == 1)
 	{
-		piecenum = msl1;
+		piecenum = msl10;
 	}
 	if(missile == 2)
 	{
-		piecenum = msl2;
+		piecenum = msl1;
 	}
 	if(missile == 3)
 	{
-		piecenum = msl3;
+		piecenum = msl2;
 	}
 	if(missile == 4)
 	{
-		piecenum = msl4;
+		piecenum = msl3;
 	}
 	if(missile == 5)
 	{
-		piecenum = msl5;
+		piecenum = msl4;
 	}
 	if(missile == 6)
 	{
-		piecenum = msl6;
+		piecenum = msl5;
 	}
 	if(missile == 7)
 	{
-		piecenum = msl7;
+		piecenum = msl6;
 	}
 	if(missile == 8)
 	{
-		piecenum = msl8;
+		piecenum = msl7;
 	}
 	if(missile == 9)
 	{
-		piecenum = msl9;
+		piecenum = msl8;
 	}
 	if(missile == 10)
 	{
-		piecenum = msl10;
+		piecenum = msl9;
 	}
 }
 
