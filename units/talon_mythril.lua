@@ -63,8 +63,7 @@ return {
 			buildpic = "talon_mythril.dds",
 			faction = "TALON",
 			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
-			shield_emit_height = 68,
-			shield_power = 9500,
+			shield_power = 10000,
 			shield_radius = 250,
 		},
 		featuredefs = {

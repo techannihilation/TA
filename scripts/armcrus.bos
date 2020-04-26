@@ -17,16 +17,6 @@ static-var  gun_1, restore_delay, gun_2, Static_Var_4, Static_Var_5,
 #define SIG_AIM_5		16
 #define SIG_MOVE		32
 
-
-SetDirection(heading)
-{
-	var Func_Var_2;
-	Func_Var_2 = ( get ABS(Static_Var_7) - get ABS(heading) ) / 2;
-	turn ground to y-axis heading speed Func_Var_2;
-	turn base to y-axis <0.000000> - heading speed Func_Var_2;
-	Static_Var_7 = heading;
-}
-
 RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
 	Func_Var_1 = -18;
@@ -43,47 +33,6 @@ RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 		Func_Var_1 = 0 - Func_Var_1;
 		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
-}
-
-ProjXPW(Func_Var_1, Func_Var_2)
-{
-	if( Func_Var_2 < -21840 )
-	{
-		Static_Var_4 = Func_Var_1 * ( Func_Var_2 + 32760 ) / 10920;
-	}
-	else if( Func_Var_2 > 21840 )
-	{
-		Static_Var_4 = Func_Var_1 * ( 32760 - Func_Var_2 ) / 10920;
-	}
-	else if( Func_Var_2 < -10920 )
-	{
-		Static_Var_4 = 0 - Func_Var_1;
-	}
-	else if( Func_Var_2 > 10920 )
-	{
-		Static_Var_4 = Func_Var_1;
-	}
-	else
-	{
-		Static_Var_4 = Func_Var_1 * Func_Var_2 / 10920;
-	}
-}
-
-RockZ(Func_Var_1, Func_Var_2)
-{
-	signal 16;
-	set-signal-mask 16;
-	call-script ProjXPW(10920 / Func_Var_2,Func_Var_1);
-	Static_Var_5 = Static_Var_5 + Static_Var_4;
-	Static_Var_4 = get ABS(Static_Var_5);
-	while( Static_Var_4 > 91 )
-	{
-		turn base to z-axis Static_Var_5 speed Static_Var_4 * <0.016484>;
-		wait-for-turn base around z-axis;
-		Static_Var_5 = Static_Var_5 * -1 / 2;
-		Static_Var_4 = get ABS(Static_Var_5);
-	}
-	turn base to z-axis <0.000000> speed <1.500000>;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -172,18 +121,12 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var Func_Var_1;
 	start-script waveSplash();
-	while( TRUE )
+	while (TRUE)
 	{
 		emit-sfx 2 from wake1;
 		emit-sfx 2 from wake2;
-		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
-		if( Func_Var_1 < 50 )
-		{
-			Func_Var_1 = 50;
-		}
-		sleep 12000 / Func_Var_1;
+		sleep 200;
 	}
 }
 
@@ -293,7 +236,6 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	start-script RockZ(-7,bAiming);
 	if( gun_1 )
 	{
 		show flare2;

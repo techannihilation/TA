@@ -16,15 +16,6 @@ static-var  restore_delay, gun_2, gun_1, Static_Var_4, Static_Var_5;
 #define SIG_MOVE		32
 
 
-SetDirection(heading)
-{
-	var Func_Var_2;
-	Func_Var_2 = ( get ABS(Static_Var_5) - get ABS(heading) ) / 2;
-	turn ground to y-axis heading speed Func_Var_2;
-	turn base to y-axis <0.000000> - heading speed Func_Var_2;
-	Static_Var_5 = heading;
-}
-
 RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
 	Func_Var_1 = -18;
@@ -128,18 +119,12 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
 		emit-sfx 2 from wake1;
 		emit-sfx 4 from wake2;
-		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
-		if( Func_Var_1 < 50 )
-		{
-			Func_Var_1 = 50;
-		}
-		sleep 12000 / Func_Var_1;
+		sleep 200;
 	}
 }
 
