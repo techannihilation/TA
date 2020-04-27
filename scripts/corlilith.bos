@@ -1,0 +1,596 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, head,
+		pattes10, pattes11, pattes12, pattes13, pattes14, stomp1, 
+		pattes20, pattes21, pattes22, pattes23, pattes24, stomp2, 
+		pattes30, pattes31, pattes32, pattes33, pattes34, stomp3, 
+		pattes40, pattes41, pattes42, pattes43, pattes44, stomp4, 
+		pattes50, pattes51, pattes52, pattes53, pattes54, stomp5, 
+		pattes60, pattes61, pattes62, pattes63, pattes64, stomp6,
+       blodsleeve1, blodsleeve2, blodsleeve3, blodsleeve4, 
+       blodbarrel1, blodbarrel2, blodbarrel3, blodbarrel4, 
+       blodturret1, blodturret2, blodturret3, blodturret4, 
+       blodflare1, blodflare2, blodflare3, blodflare4, 
+       turret1, turret2, sleeve1, sleeve2, turret3, sleeve3, 
+       barrel1a, barrel1b, flare1aa, flare1ab, flare1ba, flare1bb,
+       barrel2a, barrel2b, flare2aa, flare2ab, flare2ba, flare2bb,
+       barrel3, flare3a, flare3b;
+
+static-var  gun1, gun2, gun3, bMoving, bAiming;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			64
+
+TexasRanger(Func_Var_1, Func_Var_2)
+{
+	while( !bMoving )
+	{
+		sleep 100;
+	}
+	while( TRUE )
+	{
+		turn pattes60 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes50 to y-axis <45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes40 to y-axis <-16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes10 to y-axis <-14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes21 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes22 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes23 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+
+		turn pattes31 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes32 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes33 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes20 to y-axis <45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+
+		turn pattes30 to y-axis <-14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes60 to y-axis <-16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes40 to y-axis <-30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes10 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes51 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes52 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes53 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+
+		while( !bMoving )
+		{
+			sleep 250;
+		}
+		
+		turn pattes21 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes22 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes23 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes50 to y-axis <-15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		
+		turn pattes20 to y-axis <29.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes60 to y-axis <-31.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes30 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes10 to y-axis <15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes41 to z-axis <10.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes42 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes43 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+
+		turn pattes51 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes52 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes53 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes40 to y-axis <30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+
+		turn pattes50 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes60 to y-axis <-45.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes30 to y-axis <16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes20 to y-axis <14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes11 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes12 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes13 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+
+		while( !bMoving )
+		{
+			sleep 250;
+		}
+		
+		
+		turn pattes41 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes42 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes43 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes10 to y-axis <-45.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+
+		turn pattes40 to y-axis <14.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes30 to y-axis <30.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes20 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes50 to y-axis <16.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes61 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes62 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes63 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+
+		turn pattes11 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes12 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes13 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes60 to y-axis <15.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+	
+		turn pattes10 to y-axis <-29.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes20 to y-axis <-15.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes50 to y-axis <31.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes40 to y-axis <-1.000000> speed <15.000000> * <2.747253> / <2.197802>;
+		turn pattes31 to z-axis <0.000000> - <20.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes32 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes33 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		sleep 400;
+
+		turn pattes61 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
+		turn pattes62 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
+		turn pattes63 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
+		turn pattes30 to y-axis <-30.000000> speed <60.000000> * <2.747253> / <2.197802>;
+		sleep 400;
+		
+		while( !bMoving )
+		{
+			sleep 250;
+		}
+
+	}	
+}
+
+StartMoving()
+{
+	
+	bMoving = TRUE;
+	while( bMoving )
+	{
+	//	emit-sfx 256 | 1 from Emit1;
+	//	emit-sfx 256 | 1 from Emit2;
+	//	emit-sfx 256 | 1 from Emit3;
+	//	emit-sfx 256 | 1 from Emit4;
+	//	emit-sfx 256 | 2 from Emit1;
+	//	emit-sfx 256 | 2 from Emit2;
+	//	emit-sfx 256 | 2 from Emit3;
+	//	emit-sfx 256 | 2 from Emit4;
+		sleep Rand( 200, 300 );
+	}
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	bAiming = FALSE;
+	turn turret3 to y-axis <180.> now;
+	gun1 = 0;
+	gun2 = 0;
+	gun3 = 0;
+	
+	sleep 250;
+	turn pattes31 to z-axis <-20.> now;
+	turn pattes41 to z-axis <20.> now;
+	turn pattes50 to y-axis <50.> now;
+	turn pattes20 to y-axis <50.> now;
+	turn pattes10 to y-axis <-50.> now;
+	turn pattes60 to y-axis <-50.> now;
+		
+	start-script SmokeUnit();
+	start-script TexasRanger();	
+}
+
+RestoreAfterDelay()
+{
+	sleep 6000;
+	turn turret1 to y-axis <0.> speed <45.>;
+	turn turret2 to y-axis <0.> speed <45.>;
+	turn sleeve1 to x-axis <0.> speed <30.>;
+	turn sleeve2 to x-axis <0.> speed <30.>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 4000;
+	turn turret3 to y-axis <180.> speed <45.>;
+	turn sleeve3 to x-axis <0.> speed <30.>;
+}
+
+Restore4()
+{
+	sleep 4000;
+	turn blodturret1 to y-axis <0> speed <25>;
+	turn blodsleeve1 to x-axis <0> speed <25>;
+}
+
+Restore5()
+{
+	sleep 4000;
+	turn blodturret2 to y-axis <0> speed <25>;
+	turn blodsleeve2 to x-axis <0> speed <25>;
+}
+
+Restore6()
+{
+	sleep 4000;
+	turn blodturret3 to y-axis <0> speed <25>;
+	turn blodsleeve3 to x-axis <0> speed <25>;
+}
+
+Restore7()
+{
+	sleep 4000;
+	turn blodturret4 to y-axis <0> speed <25>;
+	turn blodsleeve4 to x-axis <0> speed <25>;
+}
+
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret1 to y-axis heading speed <60.>;
+	turn sleeve1 to x-axis <0.> - pitch speed <60.>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun1 == 0 )
+	{
+		sleep 200;
+		gun1 = 1;
+		sleep 200;
+		gun1 = 2;
+		return 0;		
+	}
+	if( gun1 == 2 )
+	{
+		sleep 200;
+		gun1 = 3;
+		sleep 200;
+		gun1 = 0;
+		return 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret1;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun1 == 0 )
+	{
+		piecenum = flare1aa;
+	}
+	if( gun1 == 1 )
+	{
+		piecenum = flare1ab;
+	}
+	if( gun1 == 2 )
+	{
+		piecenum = flare1ba;
+	}
+	if( gun1 == 3 )
+	{
+		piecenum = flare1bb;
+	}
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret2;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <60.>;
+	turn sleeve2 to x-axis <0.> - pitch speed <60.>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeve2 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{	
+	if( gun2 == 0 )
+	{
+		sleep 200;
+		gun2 = 1;
+		sleep 200;
+		gun2 = 2;
+		return 0;		
+	}
+	if( gun2 == 2 )
+	{
+		sleep 200;
+		gun2 = 3;
+		sleep 200;
+		gun2 = 0;
+		return 0;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun2 == 0 )
+	{
+		piecenum = flare2aa;
+	}
+	if( gun2 == 1 )
+	{
+		piecenum = flare2ab;
+	}
+	if( gun2 == 2 )
+	{
+		piecenum = flare2ba;
+	}
+	if( gun2 == 3 )
+	{
+		piecenum = flare2bb;
+	}	
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret3 to y-axis heading speed <60.>;
+	turn sleeve3 to x-axis <0.> - pitch speed <60.>;
+	wait-for-turn turret3 around y-axis;
+	wait-for-turn sleeve3 around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FireWeapon3()
+{
+	sleep 250;
+	gun3 = 1;
+	sleep 250;
+	gun3 = 0;		
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turret3;
+}
+
+QueryWeapon3(piecenum)
+{
+	if( gun3 == 0 )
+	{
+		piecenum = flare3a;
+	}
+	if( gun3 == 1 )
+	{
+		piecenum = flare3b;
+	}
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn blodturret1 to y-axis heading speed <50.000000>;
+	turn blodsleeve1 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret1 around y-axis;
+	wait-for-turn blodsleeve1 around x-axis;
+	start-script Restore4();
+	return(1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn blodturret2 to y-axis heading speed <50.000000>;
+	turn blodsleeve2 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret2 around y-axis;
+	wait-for-turn blodsleeve2 around x-axis;
+	start-script Restore5();
+	return(1);
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn blodturret3 to y-axis heading speed <50.000000>;
+	turn blodsleeve3 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret3 around y-axis;
+	wait-for-turn blodsleeve3 around x-axis;
+	start-script Restore6();
+	return(1);
+}	
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn blodturret4 to y-axis heading speed <50.000000>;
+	turn blodsleeve4 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn blodturret4 around y-axis;
+	wait-for-turn blodsleeve4 around x-axis;
+	start-script Restore7();
+	return(1);
+}
+
+FireWeapon4()
+{
+	move blodbarrel1 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel1 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon5()
+{
+	move blodbarrel2 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel2 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon6()
+{
+	move blodbarrel3 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel3 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon7()
+{
+	move blodbarrel4 to z-axis [-1] now;
+	sleep 750;
+	move blodbarrel4 to z-axis [0.000000] speed [3.000000];
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = blodturret1;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = blodturret2;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = blodturret3;
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = blodturret4;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = blodflare1;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = blodflare2;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = blodflare3;
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = blodflare4;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{	
+		corpsetype = 1;
+		explode turret1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode turret2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode turret3 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode body type NOHEATCLOUD;
+		explode head type NOHEATCLOUD ;
+		explode Pattes60 type NOHEATCLOUD;
+		explode Pattes61 type NOHEATCLOUD;
+		explode Pattes52 type NOHEATCLOUD;
+		explode Pattes40 type NOHEATCLOUD;
+		explode Pattes32 type NOHEATCLOUD;
+		explode Pattes20 type NOHEATCLOUD;
+		explode Pattes21 type NOHEATCLOUD;
+		explode Pattes12 type NOHEATCLOUD;
+		explode Pattes10 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode head type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode turret1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode turret2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode turret3 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode body type NOHEATCLOUD ;
+		explode Pattes60 type FALL | NOHEATCLOUD;
+		explode Pattes61 type FALL | NOHEATCLOUD;
+		explode Pattes52 type FALL | NOHEATCLOUD;
+		explode Pattes40 type FALL | NOHEATCLOUD;
+		explode Pattes32 type FALL | NOHEATCLOUD;
+		explode Pattes20 type FALL | NOHEATCLOUD;
+		explode Pattes21 type FALL | NOHEATCLOUD;
+		explode Pattes12 type FALL | NOHEATCLOUD;
+		explode Pattes10 type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}	
+	corpsetype = 3;
+	explode head type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode body type NOHEATCLOUD ;
+	explode turret1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode turret2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode turret3 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes60 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes61 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes52 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes40 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes32 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes20 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes21 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes12 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Pattes10 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	return (corpsetype);
+}
