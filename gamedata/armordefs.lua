@@ -354,6 +354,7 @@ return {
 	"cormcv",
 	"corarbritator",
 	"cormkl",
+	"corlilith",
 	"tllhailstorm",
 	"armolympus",
 	"armpraet",
