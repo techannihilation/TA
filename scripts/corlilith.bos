@@ -4,12 +4,12 @@
 #include "exptype.h"
 
 piece  base, body, head,
-		pattes10, pattes11, pattes12, pattes13, pattes14, stomp1, 
-		pattes20, pattes21, pattes22, pattes23, pattes24, stomp2, 
-		pattes30, pattes31, pattes32, pattes33, pattes34, stomp3, 
-		pattes40, pattes41, pattes42, pattes43, pattes44, stomp4, 
-		pattes50, pattes51, pattes52, pattes53, pattes54, stomp5, 
-		pattes60, pattes61, pattes62, pattes63, pattes64, stomp6,
+		pattes10, pattes11, pattes12, pattes13, pattes14, 
+		pattes20, pattes21, pattes22, pattes23, pattes24, 
+		pattes30, pattes31, pattes32, pattes33, pattes34, 
+		pattes40, pattes41, pattes42, pattes43, pattes44, 
+		pattes50, pattes51, pattes52, pattes53, pattes54, 
+		pattes60, pattes61, pattes62, pattes63, pattes64,
        blodsleeve1, blodsleeve2, blodsleeve3, blodsleeve4, 
        blodbarrel1, blodbarrel2, blodbarrel3, blodbarrel4, 
        blodturret1, blodturret2, blodturret3, blodturret4, 
