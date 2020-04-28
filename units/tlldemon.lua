@@ -151,7 +151,6 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				trajectoryheight = 0.5,
-				turnrate = 6000,
 				turret = true,
 				weaponacceleration = 120,
 				weapontimer = 6,
@@ -160,8 +159,8 @@ return {
 				damage = {
 					commanders = 2500,
 					default = 5000,
-					experimental_land = 10000,
-					experimental_ships = 10000,
+					experimental_land = 7500,
+					experimental_ships = 7500,
 					subs = 5,
 				},
 			},
@@ -170,6 +169,8 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "DEMONSLAYER_CANNON",
+				maindir = "0 0 1",
+				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},

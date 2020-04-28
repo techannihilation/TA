@@ -5,6 +5,7 @@ Balance :
  - Skynet : Increase damage from Beam. (18K=>20K per shot). Decrease reload time for Mainbeam 60=>40s.
  - Juggernault Core : Decrease Speed 0.75=>0.6
  - Repentance : Decrease all : HP - 3K, AOE -150, Range -100.
+ - Tlldemon and Mrtn : decrease experimental unit damage -25%. Add angle limit 220° front.
 
 Improvment :
  - Add Lilith T5 Spider (hidden unit. try to find it!)
