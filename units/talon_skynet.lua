@@ -1,7 +1,7 @@
 return {
 	talon_skynet = {
 		acceleration = 0.009,
-		autoheal = 100,		
+		autoheal = 100,
 		airhoverfactor = 0,
 		airstrafe = false,
 		brakerate = 0.04,
@@ -55,7 +55,7 @@ return {
 			faction = "TALON",
 		},
 		featuredefs = {
-		
+
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -131,15 +131,15 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1800,
-					default = 18000,
+					commanders = 2000,
+					default = 20000,
 					subs = 5,
 				},
 			},
 			skynet_weapon = {
 				areaofeffect = 1250,
 				beamtime = 4,
-				burnblow = true,				
+				burnblow = true,
 				collidefriendly = true,
 				corethickness = 1,
 				craterareaofeffect = 0,
@@ -152,19 +152,19 @@ return {
 				largebeamlaser = true,
 				laserflaresize = 8,
 				name = "Ultimate Beam",
-				noselfdamage = true,				
-				range = 350,
-				reloadtime = 60,
+				noselfdamage = true,
+				range = 400,
+				reloadtime = 40,
 				rgbcolor = "0 1 0",
 				soundhitdry = "bignuke",
 				soundstart = "arrfire",
-				soundtrigger = 1,				
+				soundtrigger = 1,
 				targetmoveerror = 0.4,
 				texture1 = "Type4Beam",
 				texture2 = "NULL",
 				texture3 = "NULL",
 				texture4 = "EMG",
-				thickness = 12,				
+				thickness = 12,
 				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",

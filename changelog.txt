@@ -1,3 +1,17 @@
+3.41 -> 3.42
+2020-04-28
+Balance :
+ - Independence : Increase damage from Beam 25% (24K=>32K per shot). Decrease reload time for Mainbeam 60=>40s. Change laser by lightning weapon (can shoot ground and air units). Decrease Cost -40K Metal.
+ - Skynet : Increase damage from Beam. (18K=>20K per shot). Decrease reload time for Mainbeam 60=>40s.
+Improvment :
+ - Add Lilith T5 Spider (hidden unit. try to find it!)
+ - Decrease XP for some units (krogoth, bantha, krogtaar, ...)
+ - Delete water strucutre from tllarchnano engeneer panel menu
+
+Fix :
+ - Script for cruser Arm/Core
+ - Fix animation for artibot T2 TLL
+
 3.40 -> 3.41
 2020-04-25
 Balance :

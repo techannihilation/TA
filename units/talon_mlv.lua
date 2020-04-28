@@ -50,6 +50,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 201,
+		shownanospray = false,
 		standingfireorder = 0,
 		standingmoveorder = 1,
 		stealth = true,
