@@ -9,6 +9,9 @@ piece  torso, t1, turret, sleeve, flare1, flare2, barrel1, barrel2,
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM2				4
 
 walk()
 {
@@ -510,8 +513,8 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	turn turret to y-axis heading speed <140.>;
 	turn sleeve to x-axis <0.> - pitch speed <45.>;
 	wait-for-turn turret around y-axis;
@@ -571,8 +574,9 @@ RestoreAfterDelay2()
 
 AimSecondary(heading, pitch)
 {
-	signal 8;
-	set-signal-mask 8;
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+
 	Static_Var_2 = 1;
 	while( !Static_Var_3 )
 	{
@@ -616,48 +620,48 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type 128;
-		explode sleeve type 128;
-		explode lfoot type 128;
-		explode barrel1 type 128;
-		explode lleg type 128;
-		explode lthigh type 128;
-		explode pelvis type 128;
-		explode rfoot type 128;
-		explode barrel2 type 128;
-		explode rleg type 128;
-		explode rthigh type 128;
-		explode torso type 128;
+		explode base type NOHEATCLOUD ;
+		explode sleeve type NOHEATCLOUD ;
+		explode lfoot type NOHEATCLOUD ;
+		explode barrel1 type NOHEATCLOUD ;
+		explode lleg type NOHEATCLOUD ;
+		explode lthigh type NOHEATCLOUD ;
+		explode pelvis type NOHEATCLOUD ;
+		explode rfoot type NOHEATCLOUD ;
+		explode barrel2 type NOHEATCLOUD ;
+		explode rleg type NOHEATCLOUD ;
+		explode rthigh type NOHEATCLOUD ;
+		explode torso type NOHEATCLOUD ;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type 128 | FALL;
-		explode torso type 128 | SHATTER;
-		explode lfoot type 128 | FALL;
-		explode barrel1 type 128 | FALL;
-		explode lleg type 128 | FALL;
-		explode lthigh type 128 | FALL;
-		explode pelvis type 128 | FALL;
-		explode rfoot type 128 | FALL;
-		explode barrel2 type 128 | FALL;
-		explode rleg type 128 | FALL;
-		explode rthigh type 128 | FALL;
+		explode base type NOHEATCLOUD | FALL;
+		explode torso type NOHEATCLOUD | SHATTER;
+		explode lfoot type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode lleg type NOHEATCLOUD | FALL;
+		explode lthigh type NOHEATCLOUD | FALL;
+		explode pelvis type NOHEATCLOUD | FALL;
+		explode rfoot type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		explode rleg type NOHEATCLOUD | FALL;
+		explode rthigh type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode torso type 128 | SHATTER | EXPLODE_ON_HIT;
-	explode lfoot type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel1 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lleg type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lthigh type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode pelvis type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rfoot type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel2 type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rleg type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rthigh type 128 | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve type 128;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode torso type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel2 type NOHEATCLOUD  | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve type NOHEATCLOUD;
 	return (corpsetype);
 }
