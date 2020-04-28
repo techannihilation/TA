@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 54200,
 		buildcostmetal = 5910,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 6,
-		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "tllmohogeo_aoplane.dds",
 		buildpic = "talon_mohogeo.dds",
 		buildtime = 160000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -40,7 +36,6 @@ return {
 		selfdestructas = "NUCLEAR_MISSILE",
 		sightdistance = 210,
 		unitname = "tllmohogeo",
-		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGG GGGGGGG GGGGGGG GGGGGGG GGGGGGG GGGGGGG GGGGGGG",
 		customparams = {
 			buildpic = "talon_mohogeo.dds",

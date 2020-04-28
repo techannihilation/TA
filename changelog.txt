@@ -3,6 +3,9 @@
 Balance :
  - Independence : Increase damage from Beam 25% (24K=>32K per shot). Decrease reload time for Mainbeam 60=>40s. Change laser by lightning weapon (can shoot ground and air units). Decrease Cost -40K Metal.
  - Skynet : Increase damage from Beam. (18K=>20K per shot). Decrease reload time for Mainbeam 60=>40s.
+ - Juggernault Core : Decrease Speed 0.75=>0.6
+ - Repentance : Decrease all : HP - 3K, AOE -150, Range -100.
+
 Improvment :
  - Add Lilith T5 Spider (hidden unit. try to find it!)
  - Decrease XP for some units (krogoth, bantha, krogtaar, ...)

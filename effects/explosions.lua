@@ -747,7 +747,7 @@ return {
       },
     },
   },
-  
+
    ["BT_BOMB_explosion"] = {
     groundflash = {
       air                = true,
@@ -814,10 +814,10 @@ return {
       },
     },
   },
-  
-  
-  
-  
+
+
+
+
 
   ["blue_explosion"] = {
     generatorpop1 = {
@@ -1061,7 +1061,7 @@ return {
       },
     },
   },
-  
+
     ["flash96red"] = {
     usedefaultexplosions = true,
     groundflash = {
@@ -1365,7 +1365,7 @@ return {
     },
   },
 
-  
+
   ["vsmlmissile_explosion"] = {
     usedefaultexplosions = true,
     groundflash = {
@@ -2262,6 +2262,22 @@ return {
     },
   },
 
+  ["flashnuke350"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 3,
+      circlegrowth       = 10,
+      flashalpha         = 2,
+      flashsize          = 350,
+      ttl                = 20,
+      color = {
+        [1]  = 1,
+        [2]  = 0.69999998807907,
+        [3]  = 0.69999998807907,
+      },
+    },
+  },
+
   ["flash144"] = {
     usedefaultexplosions = true,
     groundflash = {
@@ -2448,5 +2464,3 @@ return {
   },
 
 }
-
-
