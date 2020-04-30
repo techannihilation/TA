@@ -6,11 +6,13 @@ Balance :
  - Juggernault Core : Decrease Speed 0.75=>0.6
  - Repentance : Decrease all : HP - 3K, AOE -150, Range -100.
  - Tlldemon and Mrtn : decrease experimental unit damage -25%. Add angle limit 220° front.
+ - Core Laser Hover : Decrease cost -10%. Decrease range laser : 450=>350. Increase HP 3600 => 3875.
 
 Improvment :
  - Add Lilith T5 Spider (hidden unit. try to find it!)
  - Decrease XP for some units (krogoth, bantha, krogtaar, ...)
  - Delete water strucutre from tllarchnano engeneer panel menu
+ - Add T4 Fighter into lab T4 for TLL 
 
 Fix :
  - Script for cruser Arm/Core
