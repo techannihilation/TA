@@ -127,7 +127,6 @@ return {
 	"tllsonpl",
 	"armsr71",
 	"tawf015",
-	"corrag",
 	"armmin",
 	"cormin",
 	"talon_carbon",
