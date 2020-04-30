@@ -57,7 +57,7 @@ return {
 		buildoptions = {
 			[1] = "tllefus",
 			[2] = "tllmetalmakerlvl3",
-			[3] = "tllumex",
+			[3] = "tllmas",
 			[4] = "tllprototype",
 			[5] = "tllshipyardlvl3",
 			[6] = "tllnanotower",
