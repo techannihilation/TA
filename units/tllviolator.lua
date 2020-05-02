@@ -118,7 +118,7 @@ return {
 		},
 		weapondefs = {
 			arm_roy = {
-				areaofeffect = 32,
+				areaofeffect = 96,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 0,

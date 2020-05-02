@@ -1374,6 +1374,60 @@ local morphDefs = {
 		time = 120,
 		xp = 0.05,
 	},
+	corroy = {
+		into = 'corcrus',
+		time = 45,
+		xp = 0.25,
+	},
+	armroy = {
+		into = 'armcrus',
+		time = 45,
+		xp = 0.25,
+	},
+	talon_mainstay = {
+		into = 'talon_crus',
+		time = 45,
+		xp = 0.25,
+	},
+	tllviolator = {
+		into = 'tllequalizer',
+		time = 45,
+		xp = 0.25,
+	},
+	tllviking = {
+		{
+			into = 'tllasgard',
+			time = 90,
+			xp = 0.25,
+		},
+		{
+			into = 'tllcaps',
+			time = 160,
+			xp = 0.75,
+		},
+	},
+	armbats = {
+		{
+			into = 'armbc',
+			time = 90,
+			xp = 0.25,
+		},
+		{
+			into = 'aseadragon',
+			time = 120,
+			xp = 0.50,
+		},
+	},
+	corbats = {
+		into = 'corblackhy',
+		time = 120,
+		xp = 0.50,
+	},
+	talon_imperator = {
+		into = 'talon_dread',
+		time = 160,
+		xp = 0.75,
+	},
 }
 
 --

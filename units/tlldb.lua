@@ -169,7 +169,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 25,
-				model = "quadmissile3g",
+				model = "missile",
 				name = "Dragons Breath Missile",
 				noselfdamage = true,
 				range = 1700,
