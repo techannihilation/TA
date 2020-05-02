@@ -196,7 +196,8 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 200,
 				damage = {
-					default = 220,
+					default = 140,
+					subs = 280,
 				},
 			},
 			arm_crus = {

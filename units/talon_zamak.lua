@@ -53,7 +53,7 @@ return {
 		unitname = "talon_zamak",
 		waterline = 2,
 		customparams = {
-			buildpic = "talon_zamak.dds",	
+			buildpic = "talon_zamak.dds",
 			faction = "TALON",
 		},
 		featuredefs = {
@@ -166,8 +166,8 @@ return {
 				model = "DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
-				range = 375,
-				reloadtime = 3,
+				range = 400,
+				reloadtime = 2.5,
 				soundhitdry = "xplodep2",
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
@@ -178,11 +178,11 @@ return {
 				turret = true,
 				waterweapon = true,
 				weaponacceleration = 25,
-				weapontimer = 3,
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 225,
 				damage = {
-					default = 300,
+					default = 140,
+					subs = 280,
 				},
 			},
 

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flarea1, flarea2, flareb, base, turret, sleeves, w1, w2,
+piece  flarea1, flarea2, flareb, base, body, turret, sleeves, w1, w2,
        w3, w4, w5, w6, w7, w8, w9, w10,
        w11, w12, wakes, barrel1, barrel2;
 
@@ -60,9 +60,6 @@ Create()
 	hide flarea1;
 	hide flarea2;
 	hide flareb;
-	dont-cache flarea1;
-	dont-cache flarea2;
-	dont-cache flareb;
 	Static_Var_1 = 0;
 	Static_Var_3 = 0;
 	Static_Var_2 = 3000;
@@ -203,7 +200,7 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode barrel1 type NOHEATCLOUD;
 		explode barrel2 type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode sleeves type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
@@ -213,25 +210,15 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode barrel1 type NOHEATCLOUD | FALL;
 		explode barrel2 type NOHEATCLOUD | FALL;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode sleeves type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD  | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
-		explode sleeves type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD  | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode sleeves type NOHEATCLOUD;
 	explode turret type NOHEATCLOUD  | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);

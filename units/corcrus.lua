@@ -186,7 +186,6 @@ return {
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 140,
-				tolerance = 1000,
 				tracks = true,
 				turnrate = 8000,
 				turret = true,
@@ -196,7 +195,8 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 200,
 				damage = {
-					default = 220,
+					default = 140,
+					subs = 280,
 				},
 			},
 			cor_crus = {
@@ -206,6 +206,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
+				energypershot = 75,
 				explosiongenerator = "custom:FLASH1",
 				firestarter = 90,
 				impactonly = 1,

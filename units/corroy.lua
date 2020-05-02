@@ -32,8 +32,8 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 1093,
-		maxdamage = 2800,
-		maxvelocity = 2.9,
+		maxdamage = 3095,
+		maxvelocity = 2.75,
 		minwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "BOAT4",
@@ -126,7 +126,7 @@ return {
 		weapondefs = {
 			core_roy = {
 				alphadecay = 0.3,
-				areaofeffect = 64,
+				areaofeffect = 128,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 0,
@@ -141,7 +141,7 @@ return {
 				noselfdamage = true,
 				range = 610,
 				reloadtime = 2.5,
-				rgbcolor = "1 0.91 0.56",
+				rgbcolor = "0.86 0.62 0",
 				separation = 0.45,
 				size = 1.53,
 				sizedecay = -0.15,
