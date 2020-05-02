@@ -71,8 +71,7 @@ return {
 			[11] = "armesy",
 			[12] = "armfnanotc1",
 			[13] = "armfatf",
-			[14] = "armason",
-			[15] = "armflosh",
+			[14] = "armflosh",
 		},
 		customparams = {
 			buildpic = "armacsub.dds",

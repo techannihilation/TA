@@ -50,8 +50,9 @@ return {
 			[7] = "tllgiant",
 			[8] = "tllvisitor",
 			[9] = "tllmixer",
-			[10] = "tllmako",
-			[11] = "tllviking",
+			[10] = "tllorc",
+			[11] = "tllmako",
+			[12] = "tllviking",
 		},
 		customparams = {
 			buildpic = "tllasy.dds",

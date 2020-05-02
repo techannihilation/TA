@@ -65,6 +65,7 @@ return {
 			[9] = "corparrow",
 			[10] = "intruder",
 			[11] = "corshark",
+			[12] = "corssub",			
 		},
 		customparams = {
 			buildpic = "csubpen.dds",

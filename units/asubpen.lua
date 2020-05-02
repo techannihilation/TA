@@ -62,6 +62,7 @@ return {
 			[6] = "armcroc",
 			[7] = "armscpion",
 			[8] = "armsubk",
+			[9] = "tawf009",			
 		},
 		customparams = {
 			buildpic = "asubpen.dds",

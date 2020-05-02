@@ -1398,35 +1398,75 @@ local morphDefs = {
 		{
 			into = 'tllasgard',
 			time = 90,
-			xp = 0.25,
+			xp = 0.30,
 		},
 		{
 			into = 'tllcaps',
 			time = 160,
-			xp = 0.75,
+			xp = 0.50,
 		},
 	},
 	armbats = {
 		{
 			into = 'armbc',
 			time = 90,
-			xp = 0.25,
+			xp = 0.30,
 		},
 		{
 			into = 'aseadragon',
 			time = 120,
-			xp = 0.50,
+			xp = 0.40,
 		},
 	},
 	corbats = {
 		into = 'corblackhy',
 		time = 120,
-		xp = 0.50,
+		xp = 0.40,
 	},
 	talon_imperator = {
 		into = 'talon_dread',
 		time = 160,
-		xp = 0.75,
+		xp = 0.50,
+	},
+	tawf009 = {
+		into = 'armbsub',
+		time = 90,
+		xp = 0.25,
+	},
+	corssub = {
+		into = 'corbsub',
+		time = 90,
+		xp = 0.25,
+	},
+	tllorc = {
+		into = 'tllbsub',
+		time = 90,
+		xp = 0.25,
+	},
+	talon_jellyfish = {
+		into = 'talon_lancelet',
+		time = 60,
+		xp = 0.40,
+	},
+	armsub = {
+		into = 'armsubk',
+		time = 30,
+		xp = 0.25,
+	},
+	corsub = {
+		into = 'corshark',
+		time = 30,
+		xp = 0.25,
+	},
+	tllplunger = {
+		into = 'tllmanta',
+		time = 30,
+		xp = 0.25,
+	},
+	talon_sub = {
+		into = 'talon_jellyfish',
+		time = 30,
+		xp = 0.25,
 	},
 }
 
