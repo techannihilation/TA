@@ -76,7 +76,7 @@ local HighPing = false
 local update = 0.5
 
 local antiNukes = {
---Arm 
+--Arm
   [UnitDefNames["armscab"].id] = true,
   [UnitDefNames["armscab1"].id] = true,
   [UnitDefNames["armamd"].id] = true,
@@ -92,15 +92,24 @@ local antiNukes = {
   [UnitDefNames["corcarry"].id] = true,
 --The lost legacy
   [UnitDefNames["tllturtle"].id] = true,
+  [UnitDefNames["tllturtle1"].id] = true,
   [UnitDefNames["tllantinuke"].id] = true,
   [UnitDefNames["tllantinuke1"].id] = true,
   [UnitDefNames["tllgazelle"].id] = true,
   [UnitDefNames["tllgiant"].id] = true,
+--Talon
+  [UnitDefNames["talon_damascus"].id] = true,
+  [UnitDefNames["talon_damascus1"].id] = true,
+  [UnitDefNames["talon_nexus"].id] = true,
+  [UnitDefNames["talon_requiem"].id] = true,
+  [UnitDefNames["talon_tribulation"].id] = true,
+  [UnitDefNames["talon_tribulation1"].id] = true,	
+
 }
 
 for unitDefID, _ in pairs(antiNukes) do
 	--Spring.Echo("coverage range =",WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange)
-    antiNukes[unitDefID] = {coverageRange = WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange} 
+    antiNukes[unitDefID] = {coverageRange = WeaponDefs[UnitDefs[unitDefID].weapons[1].weaponDef].coverageRange}
 end
 
 --------------------------------------------------------------------------------
@@ -120,7 +129,7 @@ function drawCircle(uID, coverageRange, x, y, z, circleColor)
     glDepthTest(true)
     glColor(circleColor[1],circleColor[2],circleColor[3], .5*lineOpacityMultiplier)
     glLineWidth(3-lineWidthMinus)
-    glDrawGroundCircle(x, y, z, coverageRange, 64)  
+    glDrawGroundCircle(x, y, z, coverageRange, 64)
   end
 end
 
@@ -153,11 +162,11 @@ end
 function Stockpile(unitID)
 		local numStockpiled,_,_ = spGetUnitStockpile(unitID)
                 local circleColor = enemyStockpileColor
-                
+
                 if numStockpiled and numStockpiled == 0 then
                         circleColor = emptyStockpileColor
                 elseif numStockpiled and numStockpiled == 1 then
-                        circleColor = filledStockpileColor 
+                        circleColor = filledStockpileColor
                 elseif numStockpiled and numStockpiled > 1 and numStockpiled < 6 then
                         circleColor = multiStockpileColor
                 elseif numStockpiled and numStockpiled > 5 then
@@ -270,7 +279,7 @@ function widget:Update(deltaTime)
 end
 
 function widget:GameFrame(n)
-  
+
 end
 
 function widget:Initialize()
@@ -284,10 +293,10 @@ end
 
 function checkAllUnits()
     local _, _, spec, teamId = spGetPlayerInfo(spGetMyPlayerID())
-	
+
 	antiInLos				= {}
 	antiOutLos				= {}
-	
+
 	local allUnits = spGetAllUnits()
         for _, unitID in ipairs(allUnits) do
 	    local unitDefId = spGetUnitDefID(unitID)
@@ -312,7 +321,7 @@ end
 
 function widget:TextCommand(command)
     --Spring.Echo(command)
-    if (string.find(command, "antiranges_fade") == 1  and  string.len(command) == 15) then 
+    if (string.find(command, "antiranges_fade") == 1  and  string.len(command) == 15) then
 		fadeOnCloseup = not fadeOnCloseup
 		if fadeOnCloseup then
 			Spring.Echo("Anti Ranges:  Fade-out on closeup enabled")

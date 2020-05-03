@@ -26,8 +26,8 @@ unitList["TA"] = {
 
 
 --Anti-Nukes
-[UnitDefNames["armamd"].id] = {["en"]="Anti-Nuke", ["de"]="Anti-Atomwaffe", ["fr"]="Contre l'Arme Nucl�aire" },
-[UnitDefNames["corfmd"].id] = {["en"]="Anti-Nuke", ["de"]="Anti-Atomwaffe", ["fr"]="Contre l'Arme Nucl�aire" },
+[UnitDefNames["armamd"].id] = {["en"]="Anti-Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["corfmd"].id] = {["en"]="Anti-Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["armamd1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corfmd1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllantinuke"].id] = 	{["en"]="Anti Nuke", ["de"]="", ["fr"]="" },
@@ -36,8 +36,8 @@ unitList["TA"] = {
 [UnitDefNames["talon_damascus1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 
 --Nuke Silos
-[UnitDefNames["armsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
-[UnitDefNames["corsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
+[UnitDefNames["armsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="" },
+[UnitDefNames["corsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="" },
 [UnitDefNames["armsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllsilo"].id] = 	{["en"]="Nuke", ["de"]="", ["fr"]="" },
@@ -45,10 +45,10 @@ unitList["TA"] = {
 [UnitDefNames["talon_silo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 
 --Uber Nukes
-[UnitDefNames["tllion"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
-[UnitDefNames["armfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
-[UnitDefNames["corfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
-[UnitDefNames["talon_elixir"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="l'Arme Nucleaire" },
+[UnitDefNames["tllion"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["armfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["corfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_elixir"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
 
 --Uber Anti-Nukes
 [UnitDefNames["tllgazelle"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
@@ -79,20 +79,20 @@ unitList["TA"] = {
 [UnitDefNames["armeap"].id] = 	{["en"]="T3 Air Lab", ["de"]="", ["fr"]="" },
 
 --T4 Labs
-[UnitDefNames["tllshipyardlvl3"].id] = 	{["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["cshipyardlvl4"].id] = 	{["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["ashipyardlvl3"].id] = 	{["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["talon_covertopscentre"].id] = {["en"]="Aeroship Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["ashipyardlvl3"].id] = 	{["en"]="Arm Hero Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["core_hexapod_lab"].id] = 	{["en"]="Hexapod Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["arm_mech_lab"].id] = 	{["en"]="Mech Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllprototype"].id] = 	{["en"]="Prototype Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["talon_podlab"].id] = 	{["en"]="Pod Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllshipyardlvl3"].id] = 	{["en"]="T5 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["cshipyardlvl4"].id] = 	{["en"]="T5 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["ashipyardlvl3"].id] = 	{["en"]="T5 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_covertopscentre"].id] = {["en"]="T5 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["core_hexapod_lab"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["arm_mech_lab"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllprototype"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_podlab"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
 
 --T4 Mex
 [UnitDefNames["armmas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },
 [UnitDefNames["cormas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllmas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_mas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },
 
 --T5 Mex
 [UnitDefNames["tllumex"].id] = 	{["en"]="T5 Mex", ["de"]="", ["fr"]="" },
@@ -101,21 +101,13 @@ unitList["TA"] = {
 [UnitDefNames["aafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
 [UnitDefNames["cafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
 [UnitDefNames["tllcoldfus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
-[UnitDefNames["afusionplant"].id] = 	{["en"]="Arm Mega Fusion Reactor", ["de"]="", ["fr"]="" },
-[UnitDefNames["cfusionplant"].id] = 	{["en"]="Core Mega Fusion Reactor", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllmegacoldfus"].id] = 	{["en"]="TLL Mega Fusion Reactor", ["de"]="", ["fr"]="" },
+[UnitDefNames["afusionplant"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
+[UnitDefNames["cfusionplant"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllmegacoldfus"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
 [UnitDefNames["talon_afus"].id] = 	{["en"]="Adv. Fusion Reactor", ["de"]="", ["fr"]="" },
 [UnitDefNames["talon_sfus"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
-
-
---Doomsday etc
-[UnitDefNames["armanni"].id] = 	{["en"]="Tachyon", ["de"]="", ["fr"]="" },
-[UnitDefNames["cordoom"].id] = 	{["en"]="Tachyon", ["de"]="", ["fr"]="" },
-[UnitDefNames["armanni1"].id] = 	{["en"]="Adv. Tachyon", ["de"]="", ["fr"]="" },
-[UnitDefNames["cordoom1"].id] = 	{["en"]="Adv. Doomsday", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllobliterator"].id] = 	{["en"]="Obliterator", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllobliterator1"].id] = 	{["en"]="Adv. Obliterator", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllrlrpc"].id] = 	{["en"]="The Barret", ["de"]="", ["fr"]="" },
+[UnitDefNames["corufus"].id] = 	{["en"]="Ultimate Fusion Reactor", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_ufus"].id] = 	{["en"]="Ultimate Fusion Reactor", ["de"]="", ["fr"]="" },
 
 --Anti Experimental Cannon
 [UnitDefNames["corboucher"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
@@ -149,26 +141,11 @@ unitList["TA"] = {
 [UnitDefNames["armtabi"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },
 [UnitDefNames["corflu"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllvanya"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_planetkiller"].id] = 	{["en"]="Orbital Cannon", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllmeteor"].id] = 	{["en"]="Meteor Station", ["de"]="", ["fr"]="" },
 
---Shields
-[UnitDefNames["armgate"].id] = 	{["en"]="T2 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["armgate1"].id] = 	{["en"]="T4 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["armgate2"].id] = 	{["en"]="T1 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgate"].id] = 	{["en"]="T2 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgate1"].id] = 	{["en"]="T4 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgate2"].id] = 	{["en"]="T1 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllgate"].id] = 	{["en"]="T2 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllgate1"].id] = 	{["en"]="T4 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllgate2"].id] = 	{["en"]="T1 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllgate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["talon_gate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["armgate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgate4"].id] = 	{["en"]="T3 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["tllgate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["talon_gate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["armgate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
-[UnitDefNames["corgate3"].id] = 	{["en"]="T5 Shield", ["de"]="", ["fr"]="" },
-
+--T5.5 unit
+[UnitDefNames["corlilith"].id] = 	{["en"]="OMFG!", ["de"]="", ["fr"]="" },
 
 --Super Ships
 [UnitDefNames["cdevastator"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
@@ -181,7 +158,6 @@ unitList["TA"] = {
 [UnitDefNames["tlldb"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
 [UnitDefNames["armhys"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
 [UnitDefNames["talon_popcorn1"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
-
 
 --Moho Geos
 [UnitDefNames["amgeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
