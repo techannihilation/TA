@@ -1,6 +1,7 @@
 3.41 -> 3.42
 2020-04-28
 Balance :
+ - Temporally disable T5 Mex.
  - Add more AOE for all Destroyer. Increase HP for arm/core by 500. (~2500=>3000).
  - Independence : Increase damage from Beam 25% (24K=>32K per shot). Decrease reload time for Mainbeam 60=>40s. Change laser by lightning weapon (can shoot ground and air units). Decrease Cost -40K Metal.
  - Skynet : Increase damage from Beam. (18K=>20K per shot). Decrease reload time for Mainbeam 60=>40s.
@@ -20,6 +21,7 @@ Improvment :
 Fix :
  - Script for cruser Arm/Core
  - Fix animation for artibot T2 TLL
+ - Add range for talon antinuke
 
 3.40 -> 3.41
 2020-04-25
