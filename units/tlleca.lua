@@ -57,7 +57,7 @@ return {
 			[1] = "tllmegacoldfus",
 			[2] = "tllemex",
 			[3] = "tllmetalmakerlvl2",
-			[4] = "tllemstor",
+			[4] = "tllemstor1",
 			[5] = "tllap",
 			[6] = "tllaap",
 			[7] = "tlleap",

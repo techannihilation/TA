@@ -28,7 +28,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T3 Energy Storage",
+		name = "T3 Storage",
 		noautofire = false,
 		objectname = "talon_eestor",
 		radaremitheight = 102,

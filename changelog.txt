@@ -11,6 +11,7 @@ Balance :
  - Core Laser Hover : Decrease cost -10%. Decrease range laser : 450=>350. Increase HP 3600 => 3875.
 
 Improvment :
+ - Add T3 Storage for TLL
  - Add Lilith T5 Spider (hidden unit. try to find it!)
  - Decrease XP for some units (krogoth, bantha, krogtaar, ...)
  - Delete water strucutre from tllarchnano engeneer panel menu

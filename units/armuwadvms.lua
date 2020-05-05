@@ -30,7 +30,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 9999,
 		metalstorage = 10000,
-		name = "Hardened Metal Storage",
+		name = "T2 Storage",
 		noautofire = false,
 		nochasecategory = "ALL",
 		noshadow = 1,

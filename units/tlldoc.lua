@@ -55,9 +55,9 @@ return {
 		workertime = 600,
 		buildoptions = {
 			[1] = "tllmegacoldfus",
-			[2] = "tllemstor",
-			[3] = "tllemex",
-			[4] = "tllmetalmakerlvl2",
+			[2] = "tllemex",
+			[3] = "tllmetalmakerlvl2",
+			[4] = "tllemstor1",
 			[5] = "tlllab",
 			[6] = "tllalab",
 			[7] = "tllhtcp",
@@ -75,7 +75,7 @@ return {
 			[19] = "tllwmmohoconv",
 			[20] = "tllesy",
 			[21] = "tllfnanotc2",
-			[22] = "tllfgate1",		
+			[22] = "tllfgate1",
 		},
 		customparams = {
 			buildpic = "tlldoc.dds",

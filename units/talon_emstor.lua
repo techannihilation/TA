@@ -25,7 +25,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		metalstorage = 125000,
-		name = "T3 Metal Storage",
+		name = "T3 Storage",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "talon_emstor",

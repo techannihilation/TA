@@ -62,7 +62,7 @@ return {
 		buildoptions = {
 			[1] = "tllefus",
 			[2] = "tllmetalmakerlvl3",
-			[3] = "tllemstor",
+			[3] = "tllemstor1",
 			[4] = "tllmas",
 			[5] = "tllprototype",
 			[6] = "tllshipyardlvl3",
@@ -74,7 +74,7 @@ return {
 			[12] = "tllgazelle",
 			[13] = "tllion",
 			[14] = "tlllrpt1",
-			[15] = "tllbagger",			
+			[15] = "tllbagger",
 		},
 		customparams = {
 			buildpic = "tllmarmelade.dds",

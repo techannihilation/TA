@@ -4,12 +4,12 @@
 #include "exptype.h"
 
 
-piece 	flare1a, flare1b, flare1c, flare2a, flare2b, flare2c, 
-		r1, r2, r3, r4, r5, r6, base, turret1, sleeves1, barrel1a, barrel1b, barrel1c,  
-		turret2, sleeves2, barrel2a, barrel2b, barrel2c, w1, w2, w3, w4, w5, w6, w7, w8, blast;
+piece 	base, body, flare1a, flare1b, flare1c, flare2a, flare2b, flare2c, 
+		r1, r2, r3, r4, r5, r6, turret1, bridge, sleeves1, barrel1a, barrel1b, barrel1c,  
+		turret2, sleeves2, barrel2a, barrel2b, barrel2c, w1, w2, w3, w4, w5, w6, w7, w8;
 		
 
-static-var is_moving, gun_1, gun_2, gun_missile, wait, aimback, brb, amphib, open, dontpop ;
+static-var gun_1, gun_2, gun_missile, amphib, bMoving;
 
 
 #define SIG_AIM 	2
@@ -18,42 +18,9 @@ static-var is_moving, gun_1, gun_2, gun_missile, wait, aimback, brb, amphib, ope
 
 track_tracks()
 {
-	var pre;
-	var now;
-	pre = get XZ_ATAN(-419);
-	var dif;
-	
-	var preang;
-	var prepos;
-	var ang;
-	var pos;
-	
-	preang = get XZ_ATAN(-419);
-	prepos = get PIECE_XZ(base);
-	
-	var counter;
-	var g;
-	
-	counter = 0;
-
 	while(1)
 	{
-		now = get XZ_ATAN(-419);
-		dif = pre - now;
-		if(dif > <2>)
-		{
-//			turning = 1;			
-		}
-		if(dif < <-2>)
-		{
-//			turning = 1;
-		}
-		if(dif <= <2> && dif >= <-2>)
-		{
-//			turning = 0;
-		}
-
-		if( is_moving && amphib == 3)
+		if( bMoving && amphib > 0)
 		{
 			emit-sfx 259 from w1;
 			emit-sfx 259 from w2;
@@ -63,46 +30,8 @@ track_tracks()
 			emit-sfx 259 from w6;
 			emit-sfx 259 from w7;
 			emit-sfx 259 from w8;
-		}
-		if( is_moving && amphib == 2)
-		{
-			emit-sfx 259 from w1;
-			emit-sfx 259 from w2;
-			emit-sfx 259 from w3;
-			emit-sfx 259 from w4;
-			emit-sfx 259 from w5;
-			emit-sfx 259 from w6;
-			emit-sfx 259 from w7;
-			emit-sfx 259 from w8;
-		}
-		if( is_moving && amphib == 1)
-		{
-			emit-sfx 259 from w1;
-			emit-sfx 259 from w2;
-			emit-sfx 259 from w3;
-			emit-sfx 259 from w4;
-			emit-sfx 259 from w5;
-			emit-sfx 259 from w6;
-			emit-sfx 259 from w7;
-			emit-sfx 259 from w8;
-		}
-		ang = get XZ_ATAN(-419);
-		pos = get PIECE_XZ(base);
-		
-		is_moving = 0;
-		
-		if (ang != preang)
-		{
-			is_moving = 1;
-		}
-		if(pos != prepos)
-		{
-			is_moving = 1;
 		}
 		sleep 200;
-		prepos = pos;
-		preang = ang;
-		pre = now;
 	}
 }
 
@@ -112,6 +41,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	
+	start-script track_tracks();
+		
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -135,40 +67,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	set ARMORED to 1;
-	dontpop=1;
-	
-	hide blast;
+	bMoving = FALSE;
 	hide flare1a;
 	hide flare1b;
 	hide flare1c;
 	hide flare2a;
 	hide flare2b;
-	hide flare2c;
-
-	
-	dont-cache flare1a;
-	dont-cache flare1b;
-	dont-cache flare1c;
-	dont-cache flare2a;
-	dont-cache flare2b;
-	dont-cache flare2c;
-
-		
+	hide flare2c;	
 	gun_1 = 0;
 	gun_2 = 0;
 	gun_missile = 0;
-
-	set ACTIVATION to TRUE;
-		
-	while(get BUILD_PERCENT_LEFT)
-	{
-		sleep 100;
-	}
-
 	start-script SmokeUnit();
-	start-script track_tracks();
-
 }
 
 setSFXoccupy(Func_Var_1)
@@ -176,6 +85,15 @@ setSFXoccupy(Func_Var_1)
 	amphib = Func_Var_1;
 }
 
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
 
 RestorePrimary()
 {
@@ -406,7 +324,8 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode turret1 type NOHEATCLOUD;
 		explode turret2 type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD;
 		explode sleeves1 type NOHEATCLOUD;
 		explode barrel1a type NOHEATCLOUD;
 		explode barrel1c type NOHEATCLOUD;
@@ -418,7 +337,8 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode turret1 type NOHEATCLOUD | FALL;
 		explode turret2 type NOHEATCLOUD | FALL;
-		explode base type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD;
 		explode flare1a type NOHEATCLOUD | FALL;
 		explode flare2b type NOHEATCLOUD | FALL;
 		explode sleeves1 type NOHEATCLOUD | FALL;
@@ -427,29 +347,16 @@ Killed(severity, corpsetype)
 		explode barrel2b type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flare2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeves1 type NOHEATCLOUD | FALL;
-		explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1c type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-		corpsetype = 3;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode flare1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flare2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeves1 type NOHEATCLOUD | FALL;
-		explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1c type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
+	corpsetype = 3;
+	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode bridge type NOHEATCLOUD;
+	explode flare1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flare2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeves1 type NOHEATCLOUD | FALL;
+	explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel1c type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
 }

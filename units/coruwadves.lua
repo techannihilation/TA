@@ -30,7 +30,7 @@ return {
 		maxdamage = 11400,
 		maxslope = 20,
 		maxwaterdepth = 9999,
-		name = "Hardened Energy Storage",
+		name = "T2 Storage",
 		noautofire = false,
 		nochasecategory = "ALL",
 		noshadow = 1,
