@@ -1,0 +1,88 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, bridge1, bridge2, foot1, foot2, foot3, foot4,
+		storage1, storage2, storage3, storage4, cross;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode cross type NOHEATCLOUD;
+		explode storage1 type NOHEATCLOUD;
+		explode storage2 type NOHEATCLOUD;
+		explode storage3 type NOHEATCLOUD;
+		explode storage4 type NOHEATCLOUD;
+		explode foot1 type NOHEATCLOUD;
+		explode foot3 type NOHEATCLOUD;
+		explode bridge1 type NOHEATCLOUD;
+		explode bridge2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode cross type NOHEATCLOUD;
+		explode storage1 type NOHEATCLOUD | FALL;
+		explode storage2 type NOHEATCLOUD | FALL;
+		explode storage3 type NOHEATCLOUD | FALL;
+		explode storage4 type NOHEATCLOUD | FALL;
+		explode foot1 type NOHEATCLOUD | FALL;
+		explode foot3 type NOHEATCLOUD | FALL;
+		explode bridge1 type NOHEATCLOUD | FALL;
+		explode bridge2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode cross type NOHEATCLOUD;
+	explode storage1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode storage2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode storage3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode storage4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode foot1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode foot3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode bridge1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode bridge2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
