@@ -45,16 +45,16 @@ StartWalk()
 			turn rArm to x-axis <18.000000> speed <9.000000>;
 			turn lArm to x-axis <-18.000000> speed <18.000000>;
 		}
-		turn roSchenkel to x-axis <38.000000> speed <50.000000>;
-		turn loSchenkel to x-axis <-38.000000> speed <50.000000>;
+		turn roSchenkel to x-axis <28.000000> speed <50.000000>;
+		turn loSchenkel to x-axis <-28.000000> speed <50.000000>;
 		turn rFuss to x-axis <-28.000000> speed <70.000000>;
 		turn lFuss to x-axis <8.000000> speed <50.000000>;
-		turn luSchenkel to x-axis <-30.000000> speed <80.000000>;
+		turn luSchenkel to x-axis <-20.000000> speed <80.000000>;
 		turn Torso to x-axis <4.000000> speed <5.000000>;
 		sleep 505;
 		turn rFuss to x-axis <38.000000> speed <100.000000>;
 		turn lFuss to x-axis <18.000000> speed <50.000000>;
-		turn luSchenkel to x-axis <38.000000> speed <100.000000>;
+		turn luSchenkel to x-axis <28.000000> speed <100.000000>;
 		turn r1Finger to x-axis <45.000000> speed <100.000000>;
 		turn r2Finger to x-axis <45.000000> speed <100.000000>;
 		turn rDaumen to x-axis <-45.000000> speed <100.000000>;
@@ -72,13 +72,13 @@ StartWalk()
 			turn rArm to x-axis <-18.000000> speed <20.000000>;
 			turn lArm to x-axis <18.000000> speed <20.000000>;
 		}
-		turn roSchenkel to x-axis <-38.000000> speed <50.000000>;
-		turn loSchenkel to x-axis <38.000000> speed <50.000000>;
+		turn roSchenkel to x-axis <-28.000000> speed <50.000000>;
+		turn loSchenkel to x-axis <28.000000> speed <50.000000>;
 		turn lFuss to x-axis <-38.000000> speed <130.000000>;
-		turn ruSchenkel to x-axis <-30.000000> speed <80.000000>;
+		turn ruSchenkel to x-axis <-20.000000> speed <80.000000>;
 		sleep 1050;
 		turn lFuss to x-axis <38.000000> speed <100.000000>;
-		turn ruSchenkel to x-axis <30.000000> speed <80.000000>;
+		turn ruSchenkel to x-axis <20.000000> speed <80.000000>;
 		move body to y-axis [0.000000] speed [2.000000];
 		turn r1Finger to x-axis <0.000000> speed <100.000000>;
 		turn r2Finger to x-axis <0.000000> speed <100.000000>;
@@ -111,14 +111,14 @@ Walk()
 			}
 		}
 		turn Torso to x-axis <-3.000000> speed <6.000000>;
-		turn roSchenkel to x-axis <38.000000> speed <50.000000>;
+		turn roSchenkel to x-axis <28.000000> speed <50.000000>;
 		turn loSchenkel to x-axis <-38.000000> speed <50.000000>;
 		turn rFuss to x-axis <-38.000000> speed <130.000000>;
-		turn luSchenkel to x-axis <-30.000000> speed <80.000000>;
+		turn luSchenkel to x-axis <-20.000000> speed <80.000000>;
 		sleep 1050;
 		turn rFuss to x-axis <38.000000> speed <100.000000>;
 		turn lFuss to x-axis <38.000000> speed <70.000000>;
-		turn luSchenkel to x-axis <30.000000> speed <100.000000>;
+		turn luSchenkel to x-axis <20.000000> speed <100.000000>;
 		move body to y-axis [0.000000] speed [2.000000];
 		turn r1Finger to x-axis <45.000000> speed <100.000000>;
 		turn r2Finger to x-axis <45.000000> speed <100.000000>;
@@ -145,13 +145,13 @@ Walk()
 			}
 		}
 		turn Torso to x-axis <4.000000> speed <6.000000>;
-		turn roSchenkel to x-axis <-38.000000> speed <50.000000>;
+		turn roSchenkel to x-axis <-28.000000> speed <50.000000>;
 		turn loSchenkel to x-axis <38.000000> speed <50.000000>;
 		turn lFuss to x-axis <-38.000000> speed <130.000000>;
-		turn ruSchenkel to x-axis <-30.000000> speed <100.000000>;
+		turn ruSchenkel to x-axis <-20.000000> speed <100.000000>;
 		sleep 1050;
 		turn lFuss to x-axis <38.000000> speed <100.000000>;
-		turn ruSchenkel to x-axis <30.000000> speed <80.000000>;
+		turn ruSchenkel to x-axis <20.000000> speed <80.000000>;
 		move body to y-axis [0.000000] speed [2.000000];
 		turn r1Finger to x-axis <0.000000> speed <100.000000>;
 		turn r2Finger to x-axis <0.000000> speed <100.000000>;
