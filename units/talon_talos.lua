@@ -154,7 +154,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 600,
 				damage = {
-					commanders = 300,
+					commanders = 600,
 					default = 1200,
 					subs = 5,
 				},
@@ -187,7 +187,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.3,
 				thickness = 3.5,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1000,
@@ -244,7 +243,7 @@ return {
 			[1] = {
 				def = "TALON_BLT",
 				onlytargetcategory = "SURFACE",
-			},		
+			},
 			[2] = {
 				def = "TALON_MISSILE",
 				onlytargetcategory = "SURFACE",
