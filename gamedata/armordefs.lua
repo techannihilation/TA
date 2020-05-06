@@ -361,6 +361,7 @@ return {
 	"irritator",
 	"talon_mythril",
 	"talon_archon",
+	"talon_scorpion",
 	"talon_grenat",
 	"talon_mcv",
 	"talon_mcv1",

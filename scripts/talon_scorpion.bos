@@ -1,0 +1,471 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, rleg2, rleg3, rleg1, lleg1, lleg2, lleg3, 
+		turret, support, flarea, flareb, sleevea, sleeveb, miniguna, minigunb,
+		msla1, msla2, mslb1, mslb2, laser1, laser2, aim, tail1, tail2, tail3, lightning,
+		lfoot1, lfoot2, lfoot3, rfoot1, rfoot2, rfoot3;
+
+static-var  msl1, msl2, gun, bMoving, bAiming;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+
+Playtail()
+{
+	while( TRUE )
+	{
+		sleep 1000;
+		if( !bMoving && !bAiming)
+		{
+			turn tail1 to y-axis <5> speed <2.>;
+			turn tail1 to x-axis <-15> speed <2.>;
+			
+			turn tail2 to x-axis <-60> speed <5.>;
+			//wait-for-turn tail1 around y-axis;
+			
+			turn tail3 to x-axis <-30> speed <10.>;
+			wait-for-turn tail1 around y-axis;
+		
+			sleep 500;
+		}
+		if( !bMoving && !bAiming)
+		{
+			turn tail1 to y-axis <-3> speed <2.>;
+			
+			turn tail2 to x-axis <-30> speed <5.>;
+			//wait-for-turn tail1 around y-axis;
+			
+			turn tail3 to x-axis <-25> speed <10.>;
+			wait-for-turn tail1 around y-axis;
+		
+			sleep 500;
+		}
+		
+		turn tail1 to y-axis <0> speed <2.>;
+		turn tail1 to x-axis <0> speed <2.>;
+		turn tail2 to x-axis <0> speed <5.>;
+		turn tail3 to x-axis <0> speed <10.>;
+		sleep 500;
+	}
+}
+		
+
+MotionControl()
+{
+	while( TRUE )
+	{
+		sleep 100;
+		if( bMoving )
+		{
+			turn rleg1 to y-axis <0.> speed <20.>;
+			turn rleg1 to z-axis <0.> speed <20.>;
+			turn rleg2 to z-axis <15.> speed <20.>;
+			turn rleg3 to y-axis <17.> speed <20.>;
+			turn rleg3 to z-axis <0.> speed <20.>;
+			turn lleg1 to y-axis <-20.> speed <20.>;
+			turn lleg1 to z-axis <0.> speed <20.>;
+			turn lleg2 to y-axis <0.> speed <20.>;
+			turn lleg2 to z-axis <0.> speed <20.>;
+			turn lleg3 to y-axis <-15.> speed <20.>;
+			turn lleg3 to z-axis <-23.> speed <20.>;
+			turn tail2 to x-axis <7> speed <3.>;
+			turn tail1 to z-axis <5> speed <8.>;
+			sleep 225;
+			turn rleg2 to y-axis <20.> speed <20.>;
+			turn rleg2 to z-axis <15.> speed <20.>;
+			turn lleg1 to y-axis <0.> speed <20.>;
+			turn lleg2 to z-axis <-15.> speed <20.>;
+			turn lleg3 to z-axis <1.> speed <20.>;
+			turn rleg1 to z-axis <15.> speed <20.>;
+			turn rleg3 to y-axis <0.> speed <20.>;
+			turn rleg3 to z-axis <0.> speed <20.>;
+			sleep 225;
+			turn lleg2 to y-axis <-15.> speed <20.>;
+			turn lleg2 to z-axis <-15.> speed <20.>;
+			turn lleg3 to y-axis <2.> speed <20.>;
+			turn rleg2 to y-axis <20.> speed <20.>;
+			turn rleg2 to z-axis <0.> speed <20.>;
+			turn rleg3 to z-axis <15.> speed <20.>;
+			turn rleg1 to y-axis <27.> speed <20.>;
+			turn rleg1 to z-axis <15.> speed <20.>;
+			turn lleg1 to y-axis <0.> speed <20.>;
+			turn lleg1 to z-axis <-15.> speed <20.>;
+			turn tail2 to x-axis <-7> speed <3.>;
+			turn tail1 to z-axis <-5> speed <8.>;
+			sleep 225;
+			turn lleg2 to y-axis <-18.> speed <20.>;
+			turn lleg2 to z-axis <0.> speed <20.>;
+			turn lleg3 to y-axis <0.> speed <20.>;
+			turn lleg3 to z-axis <-23.> speed <20.>;
+			turn rleg2 to y-axis <12.> speed <20.>;
+			turn rleg2 to z-axis <0.> speed <20.>;
+			turn rleg3 to y-axis <17.> speed <20.>;
+			turn rleg1 to y-axis <21.> speed <20.>;
+			turn rleg1 to z-axis <0.> speed <20.>;
+			turn rleg3 to z-axis <15.> speed <20.>;
+			turn lleg1 to y-axis <-20.> speed <20.>;
+			turn lleg1 to z-axis <-15.> speed <20.>;
+			//turn tail2 to x-axis <0> speed <4.>;
+			sleep 225;
+		}
+		if( !bMoving )
+		{
+			move rleg1 to y-axis [0.] now;
+			move rleg2 to y-axis [0.] now;
+			move rleg3 to y-axis [0.] now;
+			move lleg1 to y-axis [0.] now;
+			move lleg2 to y-axis [0.] now;
+			move lleg3 to y-axis [0.] now;
+			sleep 50;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	start-script PlayTail();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	turn rleg1 to y-axis <20.> now;
+	turn rleg2 to y-axis <10.> now;
+	turn lleg1 to y-axis <-20.> now;
+	turn lleg2 to y-axis <-10.> now;
+	
+	msl1 = 0;
+	msl2 = 0;
+	gun = 0;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+RestoreTail()
+{
+	sleep 3500;
+	bAiming = FALSE;
+	turn tail1 to y-axis <0.000000> speed <25.000000>;
+	turn tail2 to x-axis <0.000000> speed <15.000000>;
+	turn tail3 to x-axis <0.000000> speed <15.000000>;
+}
+
+RestoreTurret()
+{
+	sleep 800;
+	spin miniguna around z-axis speed <0.000000> accelerate <3.500000>;
+	spin minigunb around z-axis speed <0.000000> accelerate <3.500000>;
+	sleep 4000;
+	turn turret to y-axis <0.000000> speed <75.000000>;
+	turn sleevea to x-axis <0.000000> speed <75.000000>;
+	turn sleeveb to x-axis <0.000000> speed <75.000000>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aim;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	return (1);
+}
+
+FirePrimary()
+{
+	++gun;
+	if(gun == 2)
+	{
+		gun = 0;
+	}	
+}
+
+QueryPrimary(piecenum)
+{
+	if(gun == 0)
+	{
+		piecenum = laser1;
+	}
+	if(gun == 1)
+	{
+		piecenum = laser2;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	bAiming = TRUE;
+	turn tail1 to y-axis <0.000000> - pitch speed <30.000000>;
+	turn tail2 to x-axis <20.000000> speed <75.000000>;
+	turn tail3 to x-axis <-20.000000> - pitch speed <75.000000>;
+	wait-for-turn tail1 around y-axis;
+	wait-for-turn tail2 around x-axis;
+	wait-for-turn tail3 around x-axis;
+	start-script RestoreTail();
+	return (1);
+}
+	
+AimWeapon3(heading, pitch)
+{	
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret to y-axis heading speed <90.000000>;
+	turn sleevea to x-axis <0.000000> - pitch speed <75.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleevea around x-axis;
+	start-script RestoreTurret();
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{	
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeveb around x-axis;
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{	
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleevea around x-axis;
+	return (1);
+}
+
+AimWeapon6(heading, pitch)
+{	
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeveb around x-axis;
+	return (1);
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = lightning;
+}
+
+FireSecondary()
+{
+	emit-sfx 1024 + 0 from lightning;
+	sleep 100;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = lightning;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = turret;
+}
+
+FireWeapon3()
+{
+	//signal 512;
+	//set-signal-mask 512;
+	//emit-sfx 1025 from flare;
+	move miniguna to z-axis [-0.25] now;
+	move miniguna to z-axis [0.] speed [1.5];
+	spin miniguna around z-axis speed <450.000000>;	
+	sleep 300;
+}
+
+FireWeapon4()
+{
+	//signal 512;
+	//set-signal-mask 512;
+	//emit-sfx 1025 from flare;
+	move minigunb to z-axis [-0.25] now;
+	move minigunb to z-axis [0.] speed [1.5];
+	spin minigunb around z-axis speed <450.000000>;	
+	sleep 300;
+}
+
+FireWeapon5()
+{
+	++msl1;
+	if(msl1 == 2)
+	{
+		msl1 = 0;
+	}
+}
+
+FireWeapon6()
+{
+	++msl2;
+	if(msl2 == 2)
+	{
+		msl2 = 0;
+	}
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = flarea;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = flareb;
+}
+
+QueryWeapon5(piecenum)
+{
+	if(msl1 ==0)
+	{
+		piecenum = msla1;
+	}
+	if(msl1 ==1)
+	{
+		piecenum = msla2;
+	}
+}
+
+QueryWeapon6(piecenum)
+{
+	if(msl2 ==0)
+	{
+		piecenum = mslb1;
+	}
+	if(msl2 ==1)
+	{
+		piecenum = mslb2;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode tail1 type NOHEATCLOUD;
+		explode tail2 type NOHEATCLOUD;
+		explode tail3 type NOHEATCLOUD;
+		explode lfoot1 type NOHEATCLOUD;
+		explode lfoot3 type NOHEATCLOUD;
+		explode rfoot2 type NOHEATCLOUD;
+		explode rfoot3 type NOHEATCLOUD;
+		explode lleg1 type NOHEATCLOUD;
+		explode lleg2 type NOHEATCLOUD;
+		explode rleg1 type NOHEATCLOUD;
+		explode rleg3 type NOHEATCLOUD;
+		explode rleg3 type NOHEATCLOUD;
+		explode sleevea type NOHEATCLOUD;
+		explode sleeveb type NOHEATCLOUD;		
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD  | FALL;
+		explode tail1 type NOHEATCLOUD  | FALL;
+		explode tail2 type NOHEATCLOUD  | FALL;
+		explode tail3 type NOHEATCLOUD  | FALL;
+		explode lfoot1 type NOHEATCLOUD  | FALL;
+		explode lfoot3 type NOHEATCLOUD  | FALL;
+		explode rfoot2 type NOHEATCLOUD  | FALL;
+		explode rfoot3 type NOHEATCLOUD  | FALL;
+		explode lleg1 type NOHEATCLOUD  | FALL;
+		explode lleg2 type NOHEATCLOUD  | FALL;
+		explode rleg1 type NOHEATCLOUD  | FALL;
+		explode rleg3 type NOHEATCLOUD  | FALL;
+		explode rleg3 type NOHEATCLOUD  | FALL;
+		explode sleevea type NOHEATCLOUD  | FALL;
+		explode sleeveb type NOHEATCLOUD  | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tail1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tail2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tail3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lfoot1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lfoot3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleevea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeveb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

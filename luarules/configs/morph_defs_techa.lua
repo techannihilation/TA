@@ -612,7 +612,12 @@ local morphDefs = {
 	arm_furie = {
 		into = 'arm_furie1',
 		time = 180,
-		xp = 1.00,
+		xp = 0.15,
+	},
+	talon_crab = {
+		into = 'talon_scorpion',
+		time = 90,
+		xp = 0.25,
 	},
 	armrock = {
 		into = 'armcrack',
@@ -1070,18 +1075,18 @@ local morphDefs = {
 	},
 	gladiator = {
 		into = 'krogtaar',
-		time = 80,
-		xp = 0.50,
+		time = 90,
+		xp = 0.25,
 	},
 	krogtaar = {
 		{
 			into = 'armgor',
-			time = 40,
+			time = 45,
 			xp = 0.05,
 		},
 		{
 			into = 'corkrog',
-			time = 80,
+			time = 90,
 			xp = 0.15,
 		},
 	},
