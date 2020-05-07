@@ -36,7 +36,7 @@ return {
 		maxvelocity = 1.15,
 		maxwaterdepth = 25,
 		metalmake = 0.2,
-		metalstorage = 50,
+		metalstorage = 25,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Construction KBot",

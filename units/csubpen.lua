@@ -55,7 +55,7 @@ return {
 		yardmap = "oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo",
 		buildoptions = {
 			[1] = "coracsub",
-			[2] = "cormuskrat",
+			[2] = "corfred",
 			[3] = "coraak",
 			[4] = "corroach",
 			[5] = "corsktl",
@@ -65,7 +65,7 @@ return {
 			[9] = "corparrow",
 			[10] = "intruder",
 			[11] = "corshark",
-			[12] = "corssub",			
+			[12] = "corssub",
 		},
 		customparams = {
 			buildpic = "csubpen.dds",

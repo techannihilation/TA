@@ -43,12 +43,12 @@ RequestState()
 		{
 			move door1 to x-axis [0] now;
 			move door2 to x-axis [0] now;
-			move door1 to x-axis [2.8] speed [4];
-			move door2 to x-axis [-2.8] speed [4];
+			move door1 to x-axis [2.4] speed [4];
+			move door2 to x-axis [-2.4] speed [4];
 			wait-for-move door1 along x-axis; 
 			turn door1 to z-axis <-40> speed <60>;
 			turn door2 to z-axis <40> speed <60>;
-			move plate to y-axis [4.08] speed [5];
+			move plate to y-axis [3.45] speed [5];
 			wait-for-move plate along y-axis;
 			turn nano to y-axis S_Var_1 speed <160>;
 			wait-for-turn nano around y-axis;

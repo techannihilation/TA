@@ -55,14 +55,14 @@ return {
 		yardmap = "oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo",
 		buildoptions = {
 			[1] = "armacsub",
-			[2] = "armbeaver",
+			[2] = "armmarv",
 			[3] = "armaak",
 			[4] = "armvader",
 			[5] = "armpincer",
 			[6] = "armcroc",
 			[7] = "armscpion",
 			[8] = "armsubk",
-			[9] = "tawf009",			
+			[9] = "tawf009",
 		},
 		customparams = {
 			buildpic = "asubpen.dds",

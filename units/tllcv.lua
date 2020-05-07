@@ -35,7 +35,7 @@ return {
 		maxvelocity = 1.70,
 		maxwaterdepth = 18,
 		metalmake = 0.2,
-		metalstorage = 50,
+		metalstorage = 25,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Construction Vehicle",

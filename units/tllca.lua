@@ -37,7 +37,7 @@ return {
 		maxvelocity = 7,
 		maxwaterdepth = 0,
 		metalmake = 0.1,
-		metalstorage = 50,
+		metalstorage = 25,
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
