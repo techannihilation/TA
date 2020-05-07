@@ -150,7 +150,6 @@ return {
 				damage = {
 					default = 24,
 					flamethrowers = 8,
-					raider_resistant = 12,
 					subs = 5,
 				},
 			},
