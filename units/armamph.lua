@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Amphibious Kbot",
+		description = "Swimming Kbot",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		floater = false,

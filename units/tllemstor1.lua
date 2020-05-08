@@ -35,7 +35,7 @@ return {
 		selfdestructas = "TWILIGHT_BIG",
 		sightdistance = 210,
 		unitname = "tllemstor1",
-		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
+		yardmap = "oooooooooo oooooooooo  oooooooooo  oooooooooo  oooooooooo  oooooooooo  oooooooooo  oooooooooo oooooooooo oooooooooo",
 		customparams = {
 			buildpic = "tllemstor1.dds",
 			faction = "TLL",

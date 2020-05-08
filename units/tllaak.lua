@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 803,
 		builder = false,
 		buildpic = "tllaak.dds",
-		buildtime = 5450,
+		buildtime = 7000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

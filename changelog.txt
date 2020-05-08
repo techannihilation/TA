@@ -2,6 +2,7 @@
 2020-05-07
 Balance :
  - Tllhcrus : Decrease HP (9K=>8K) and range for plasma weapon. (600=>550)
+ - Increase Energy cost for T1 TLL Bomber
 
 Improvment :
  - Decrease T5 Nano Reclaim / Repair like all other nano, repair and reclaim 50% from wortertime)

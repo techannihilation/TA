@@ -87,7 +87,7 @@ walk()
 	}
 	if( TRUE )
 	{
-		move body to y-axis [-1.125000] now;
+		move body to y-axis [-1.0] now;
 		move rupleg to y-axis [-1.500000] now;
 		move lupleg to y-axis [0.750000] now;
 		turn body to x-axis <7.725275> now;
@@ -815,7 +815,7 @@ walklegs()
 	}
 	if( TRUE )
 	{
-		move body to y-axis [1.750000] speed [16.400598];
+		move body to y-axis [1.00000] speed [16.400598];
 		move rupleg to y-axis [-0.625000] speed [7.454816];
 		move rfoot to y-axis [-0.649994] speed [2.683801];
 		move lupleg to y-axis [-0.399994] speed [1.192841];
@@ -1087,7 +1087,7 @@ walklegs()
 		turn lfoot to x-axis <-2.802198> speed <77.329670>;
 		sleep 38;
 	}
-	move body to y-axis [1.750000] speed [16.400598];
+	move body to y-axis [1.0] speed [16.400598];
 	move rupleg to y-axis [-0.324994] speed [1.192664];
 	move rleg to y-axis [0.500000] speed [8.945782];
 	move rfoot to y-axis [-2.000000] speed [18.786285];
@@ -1108,60 +1108,49 @@ transform()
 {
 	if( TRUE )
 	{
-		move lhippivot to z-axis [0.000000] now;
-		move rhippivot to z-axis [0.000000] now;
-		move rfoot to y-axis [0.000000] now;
-		move rfoot to y-axis [0.849988] speed [5.000000];
-		move rfoot to z-axis [0.000000] now;
 		move rfoot to z-axis [2.250000] speed [12.500000];
-		move lfoot to y-axis [0.000000] now;
-		move lfoot to y-axis [0.699994] speed [2.500000];
-		move lfoot to z-axis [0.000000] now;
-		move lfoot to z-axis [2.000000] speed [12.500000];
-		turn rfoot to x-axis <0.000000> now;
-		turn rfoot to x-axis <47.005495> speed <312.000000>;
-		turn lfoot to x-axis <0.000000> now;
-		turn lfoot to x-axis <49.005495> speed <324.000000>;
-		sleep 153;
+		move lfoot to z-axis [2.250000] speed [12.500000];
+		turn rfoot to x-axis <45.005495> speed <300.000000>;
+		turn lfoot to x-axis <45.005495> speed <300.000000>;
+		sleep 75;
 	}
+	
+	if( TRUE )
+	{
+		move body to y-axis [-4.000000] speed [10.000000];
+		sleep 75;
+	}
+	
 	if( TRUE )
 	{
 		move rleg to y-axis [1.125000] speed [2.500000];
-		move rleg to z-axis [2.000000] speed [7.500000];
+		move rleg to z-axis [1.000000] speed [7.500000];
 		move lleg to y-axis [1.125000] speed [2.500000];
-		move lleg to z-axis [1.875000] speed [5.000000];
-		turn rleg to x-axis <29.005495> speed <116.000000>;
-		turn lleg to x-axis <28.005495> speed <113.000000>;
-		sleep 253;
+		move lleg to z-axis [1.000000] speed [5.000000];
+		turn rleg to x-axis <30.0> speed <110.000000>;
+		turn lleg to x-axis <30.0> speed <110.000000>;
+		sleep 75;
 	}
 	if( TRUE )
 	{
-		move lhippivot to x-axis [2.724988] speed [5.000000];
-		move lhippivot to y-axis [-7.250000] speed [15.000000];
-		move rhippivot to x-axis [-2.750000] speed [5.000000];
-		move rhippivot to y-axis [-7.250000] speed [15.000000];
-		turn rupleg to z-axis <90.016484> speed <207.000000>;
-		turn lupleg to z-axis <-90.016484> speed <207.000000>;
-		sleep 433;
-	}
+		move lhippivot to x-axis [2.75] speed [5.000000];
+		move rhippivot to x-axis [-2.75] speed [5.000000];
+		move lhippivot to y-axis [-4.] speed [5.000000];
+		move rhippivot to y-axis [-4.] speed [5.000000];
+		turn rupleg to z-axis <90.0> speed <207.000000>;
+		turn lupleg to z-axis <-90.0> speed <207.000000>;
+		sleep 75;
+	}	
+
 	if( TRUE )
 	{
-		move lhippivot to z-axis [7.224988] speed [7.500000];
-		move rhippivot to z-axis [7.224988] speed [7.500000];
-		turn lhippivot to y-axis <-90.016484> speed <97.000000>;
-		turn rhippivot to y-axis <90.016484> speed <97.000000>;
-		sleep 923;
+		move lhippivot to z-axis [2.0] speed [7.500000];
+		move rhippivot to z-axis [2.0] speed [7.500000];
+		turn lhippivot to y-axis <-60.0> speed <97.000000>;
+		turn rhippivot to y-axis <60.0> speed <97.000000>;
+		sleep 75;
 	}
-	if( TRUE )
-	{
-		turn body to x-axis <-8.000000> speed <50.000000>;
-		sleep 173;
-	}
-	if( TRUE )
-	{
-		turn body to x-axis <0.000000> speed <120.000000>;
-		sleep 73;
-	}
+		
 	sleep 73;
 }
 
@@ -1169,161 +1158,52 @@ reform()
 {
 	if( TRUE )
 	{
-		move body to y-axis [0.000000] now;
-		move body to y-axis [5.500000] speed [22.500000];
-		move lhippivot to x-axis [2.724988] now;
-		move lhippivot to x-axis [0.000000] speed [10.000000];
-		move lhippivot to y-axis [-7.250000] now;
-		move lhippivot to y-axis [0.000000] speed [30.000000];
-		move lhippivot to z-axis [7.224988] now;
-		move lhippivot to z-axis [8.375000] speed [5.000000];
-		move rhippivot to x-axis [-2.750000] now;
-		move rhippivot to x-axis [0.000000] speed [10.000000];
-		move rhippivot to y-axis [-7.250000] now;
-		move rhippivot to y-axis [0.000000] speed [30.000000];
-		move rhippivot to z-axis [7.224988] now;
-		move rhippivot to z-axis [8.375000] speed [5.000000];
-		move rleg to y-axis [1.125000] now;
-		move rleg to y-axis [1.000000] speed [0.000000];
-		move rleg to z-axis [2.000000] now;
-		move rleg to z-axis [1.750000] speed [0.000000];
-		move rfoot to y-axis [0.849988] now;
-		move rfoot to y-axis [0.875000] speed [0.000000];
-		move rfoot to z-axis [2.250000] now;
-		move rfoot to z-axis [2.625000] speed [0.000000];
-		move lleg to y-axis [1.125000] now;
-		move lleg to z-axis [1.875000] now;
-		move lleg to z-axis [1.875000] speed [0.000000];
-		move lfoot to y-axis [0.699994] now;
-		move lfoot to y-axis [0.625000] speed [0.000000];
-		move lfoot to z-axis [2.000000] now;
-		move lfoot to z-axis [2.099988] speed [0.000000];
-		turn body to x-axis <0.000000> now;
-		turn body to x-axis <-5.000000> speed <23.000000>;
-		turn lhippivot to y-axis <-90.016484> now;
-		turn lhippivot to y-axis <-90.016484> speed <0.000000>;
-		turn rhippivot to y-axis <90.016484> speed <359.357143>;
-		turn rupleg to z-axis <90.016484> now;
-		turn rupleg to z-axis <0.000000> speed <400.000000>;
-		turn rleg to x-axis <29.527473> now;
-		turn rleg to x-axis <29.005495> speed <0.000000>;
-		turn rfoot to x-axis <47.813187> now;
-		turn rfoot to x-axis <38.005495> speed <39.000000>;
-		turn lupleg to z-axis <-90.016484> now;
-		turn lupleg to z-axis <0.000000> speed <400.000000>;
-		turn lleg to x-axis <28.824176> now;
-		turn lleg to x-axis <29.005495> speed <4.000000>;
-		turn lfoot to x-axis <49.571429> now;
-		turn lfoot to x-axis <40.005495> speed <40.000000>;
-		sleep 225;
+		move lhippivot to z-axis [0.0] speed [7.500000];
+		move rhippivot to z-axis [0.0] speed [7.500000];
+		turn lhippivot to y-axis <-0.0> speed <97.000000>;
+		turn rhippivot to y-axis <0.0> speed <97.000000>;
+		sleep 75;
+	}
+	
+	if( TRUE )
+	{
+		move lhippivot to x-axis [0.0] speed [5.000000];
+		move rhippivot to x-axis [-0.0] speed [5.000000];
+		move lhippivot to y-axis [-0.] speed [5.000000];
+		move rhippivot to y-axis [-0.] speed [5.000000];
+		turn rupleg to z-axis <0.0> speed <207.000000>;
+		turn lupleg to z-axis <0.0> speed <207.000000>;
+		sleep 75;
+	}	
+	if( TRUE )
+	{
+		move rleg to y-axis [0.0] speed [2.500000];
+		move rleg to z-axis [0.0] speed [7.500000];
+		move lleg to y-axis [0.0] speed [2.500000];
+		move lleg to z-axis [0.0] speed [5.000000];
+		turn rleg to x-axis <0.0> speed <110.000000>;
+		turn lleg to x-axis <0.0> speed <110.000000>;
+		sleep 75;
 	}
 	if( TRUE )
 	{
-		move body to y-axis [6.000000] speed [0.000000];
-		move lhippivot to z-axis [0.000000] speed [32.500000];
-		move rhippivot to z-axis [0.000000] speed [32.500000];
-		turn body to x-axis <-3.000000> speed <8.000000>;
-		sleep 257;
+		move body to y-axis [0.000000] speed [10.000000];
+		sleep 75;
 	}
 	if( TRUE )
 	{
-		move body to y-axis [5.375000] speed [2.500000];
-		turn body to x-axis <0.000000> speed <15.000000>;
-		turn lhippivot to y-axis <0.000000> speed <430.000000>;
-		turn rhippivot to y-axis <0.000000> speed <430.000000>;
-		sleep 209;
+		move rfoot to z-axis [0.0] speed [12.500000];
+		move lfoot to z-axis [0.0] speed [12.500000];
+		turn rfoot to x-axis <0.0> speed <300.000000>;
+		turn lfoot to x-axis <0.0> speed <300.000000>;
+		sleep 75;
 	}
-	if( TRUE )
-	{
-		move body to y-axis [6.625000] speed [7.500000];
-		move rleg to y-axis [0.000000] speed [5.000000];
-		move lleg to y-axis [0.000000] speed [7.500000];
-		sleep 146;
-	}
-	if( TRUE )
-	{
-		move body to y-axis [2.849988] speed [45.000000];
-		move rleg to z-axis [0.000000] speed [20.000000];
-		move lleg to z-axis [0.000000] speed [22.500000];
-		turn body to x-axis <1.000000> speed <13.000000>;
-		turn rleg to x-axis <0.000000> speed <367.000000>;
-		turn lleg to x-axis <0.000000> speed <371.000000>;
-		sleep 80;
-	}
-	if( TRUE )
-	{
-		move body to y-axis [1.875000] speed [5.000000];
-		move rfoot to y-axis [0.000000] speed [5.000000];
-		move lfoot to y-axis [0.000000] speed [2.500000];
-		turn body to x-axis <-3.000000> speed <30.000000>;
-		sleep 138;
-	}
-	if( TRUE )
-	{
-		move body to y-axis [0.000000] speed [12.500000];
-		move rfoot to z-axis [0.000000] speed [20.000000];
-		move lfoot to z-axis [0.000000] speed [15.000000];
-		turn body to x-axis <0.000000> speed <24.000000>;
-		turn rfoot to x-axis <0.000000> speed <306.000000>;
-		turn lfoot to x-axis <0.000000> speed <318.000000>;
-		sleep 127;
-	}
-	if( TRUE )
-	{
-		move body to y-axis [-2.750000] speed [25.000000];
-		move rupleg to y-axis [1.500000] speed [12.500000];
-		move lupleg to y-axis [1.250000] speed [10.000000];
-		turn body to x-axis <5.000000> speed <57.000000>;
-		turn rupleg to x-axis <9.000000> speed <87.000000>;
-		turn rleg to x-axis <-16.000000> speed <155.000000>;
-		turn lupleg to x-axis <17.000000> speed <172.000000>;
-		turn lleg to x-axis <-25.005495> speed <246.000000>;
-		sleep 104;
-	}
-	if( TRUE )
-	{
-		move body to y-axis [0.000000] speed [27.500000];
-		move rupleg to y-axis [0.000000] speed [15.000000];
-		move lupleg to y-axis [0.000000] speed [12.500000];
-		turn body to x-axis <0.000000> speed <56.000000>;
-		turn rupleg to x-axis <0.000000> speed <97.000000>;
-		turn rleg to x-axis <0.000000> speed <172.000000>;
-		turn lupleg to x-axis <0.000000> speed <190.000000>;
-		turn lleg to x-axis <0.000000> speed <273.000000>;
-		sleep 94;
-	}
-	sleep 74;
+	sleep 75;
 }
 
 swim()
 {
-	if( TRUE )
-	{
-		move lhippivot to x-axis [2.724988] now;
-		move lhippivot to y-axis [-7.250000] now;
-		move lhippivot to z-axis [7.224988] now;
-		move rhippivot to x-axis [-2.750000] now;
-		move rhippivot to y-axis [-7.250000] now;
-		move rhippivot to z-axis [7.224988] now;
-		move rleg to y-axis [1.125000] now;
-		move rleg to z-axis [2.000000] now;
-		move rfoot to y-axis [0.849988] now;
-		move rfoot to z-axis [2.250000] now;
-		move lleg to y-axis [1.125000] speed [2.295410];
-		move lleg to z-axis [1.875000] now;
-		move lfoot to y-axis [0.699994] now;
-		move lfoot to z-axis [2.000000] now;
-		turn lhippivot to y-axis <-90.016484> now;
-		turn rhippivot to y-axis <90.016484> now;
-		turn rupleg to z-axis <90.016484> now;
-		turn rleg to x-axis <29.527473> now;
-		turn rfoot to x-axis <47.813187> now;
-		turn lupleg to z-axis <-90.016484> now;
-		turn lleg to x-axis <28.824176> now;
-		turn lfoot to x-axis <49.571429> now;
-		sleep 200;
-	}
-	sleep 10;
+	sleep 50;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)

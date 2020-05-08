@@ -134,6 +134,7 @@ return {
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
+				cegtag = "armflak-fx",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

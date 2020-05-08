@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.06,
-		buildcostenergy = 2831,
+		buildcostenergy = 4292,
 		buildcostmetal = 181,
 		builder = false,
 		buildpic = "tllbomber.dds",
