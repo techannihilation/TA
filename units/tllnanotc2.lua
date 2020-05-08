@@ -43,7 +43,7 @@ return {
 		repairspeed = 450,
 		script = "cornanotc.cob",
 		seismicsignature = 0,
-		selfdestructas = "NANOBOOM2C",
+		selfdestructas = "NANOBOOM4",
 		shownanospray = false,
 		sightdistance = 275,
 		steeringmode = 1,

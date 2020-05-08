@@ -16,7 +16,7 @@ return {
 		weaponvelocity = 70,
 		damage = {
 			default = 10,
-			nanos = 700,
+			nanos = 1600,
 		},
 	},
 }

@@ -43,7 +43,7 @@ return {
 		repairspeed = 900,
 		script = "talon_nanotc.cob",
 		seismicsignature = 0,
-		selfdestructas = "NANOBOOM3A",
+		selfdestructas = "NANOBOOM5",
 		shownanospray = false,
 		sightdistance = 500,
 		steeringmode = 1,

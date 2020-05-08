@@ -1,6 +1,6 @@
 return {
-	nanoboom2t = {
-		areaofeffect = 128,
+	nanoboom6t = {
+		areaofeffect = 256,
 		craterboost = 0,
 		cratermult = 0,
 		edgeeffectiveness = 0.75,
@@ -16,7 +16,7 @@ return {
 		weaponvelocity = 70,
 		damage = {
 			default = 10,
-			nanos = 450,
+			nanos = 7500,
 		},
 	},
 }

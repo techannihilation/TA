@@ -45,7 +45,7 @@ return {
 		reclaimspeed = 150,
 		repairspeed = 150,
 		seismicsignature = 0,
-		selfdestructas = "NANOBOOM2C",
+		selfdestructas = "NANOBOOM2",
 		shownanospray = false,
 		sightdistance = 200,
 		steeringmode = 1,

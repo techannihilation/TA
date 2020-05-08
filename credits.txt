@@ -14,7 +14,7 @@ Arm/Core Advanced Metal Maker, Arm/Core Advanced Tidal Generator, Arm/Core Advan
 --- --- --- --- --- --- --- --- --- --- ---
 
 --- --- --- --- --- --- --- --- --- --- ---
-All other Artwork items created (Except OTA files and files from tauniverse.com) are under the Attribution-NonCommercial-ShareAlike 4.0 International.
+All other Artwork items created (Except files from Total Annihilation and tauniverse.com) are under the Attribution-NonCommercial-ShareAlike 4.0 International.
 Please, ask us permission if you want use them. You will find all unitname :
 
 - These Models have been created by M1garland (.wings). Skymyj import them in 3D0 and textured them. The list is here :

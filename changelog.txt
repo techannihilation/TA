@@ -3,10 +3,11 @@
 Balance :
  - Tllhcrus : Decrease HP (9K=>8K) and range for plasma weapon. (600=>550)
 
- Improvment :
-  - Add T1 Amphibious Vehicle into T1 Vehicle Lab
-  - Add T4 All-Terrain Talon Scorpion
-  - Add T3 Storage for TLL
+Improvment :
+ - Decrease T5 Nano Reclaim / Repair like all other nano, repair and reclaim 50% from wortertime)
+ - Add T1 Amphibious Vehicle into T1 Vehicle Lab
+ - Add T4 All-Terrain Talon Scorpion
+ - Add T3 Storage for TLL
 
 3.41 -> 3.42
 2020-04-28
