@@ -609,11 +609,6 @@ local morphDefs = {
 		time = 180,
 		xp = 1.00,
 	},
-	arm_furie = {
-		into = 'arm_furie1',
-		time = 180,
-		xp = 0.15,
-	},
 	talon_crab = {
 		into = 'talon_scorpion',
 		time = 90,

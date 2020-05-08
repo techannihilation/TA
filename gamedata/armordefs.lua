@@ -300,7 +300,6 @@ return {
 	-- arm t3 bots
 	"armorco",
 	"arm_furie",
-	"arm_furie1",
 	"armbanth",
 	"armjag",
 	"armjugg",
