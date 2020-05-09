@@ -3,6 +3,7 @@
 Balance :
  - Tllhcrus : Decrease HP (9K=>8K) and range for plasma weapon. (600=>550)
  - Increase Energy cost for T1 TLL Bomber
+ - Tllbind : Decrease range 600 => 550. Decrease Lightning damage 875 => 700.
 
 Improvment :
  - Decrease T5 Nano Reclaim / Repair like all other nano, repair and reclaim 50% from wortertime)
