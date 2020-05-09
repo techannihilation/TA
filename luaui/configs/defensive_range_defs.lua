@@ -3,8 +3,8 @@ local modConfig = {}
 --to support other mods
 --table initialized and unitList is needed!
 modConfig["TA"] = {}
-modConfig["TA"]["unitList"] = 
-							{ 
+modConfig["TA"]["unitList"] =
+							{
 								--Arm
 									--Ground Weapons--
 								armclaw = { weapons = { 1 } },
@@ -115,12 +115,13 @@ modConfig["TA"]["unitList"] =
 								corflak = { weapons = { 2 } },
 								screamer = { weapons = { 2 } },
 								corpre = { weapons = { 2 } },
-								
+
 									--Anti-Nuke--
 								corfmd = { weapons = { 3 } },
 								corfmd1 = { weapons = { 3 } },
 								corfmd2 = { weapons = { 3 } },
 								cortron = { weapons = { 3 } },
+								corarbritator = { weapons = { 3 } },
 
 								--TLL
 									--Ground Weapons--
@@ -160,6 +161,25 @@ modConfig["TA"]["unitList"] =
 								tllhydre = { weapons = { 1 } },
 								tllhydre1 = { weapons = { 1 } },
 								tllhydre2 = { weapons = { 1 } },
+								talon_llt = { weapons = { 1 } },
+								talon_llt1 = { weapons = { 1 } },
+								talon_kevlar = { weapons = { 1 } },
+								talon_blt = { weapons = { 1 } },
+								talon_blt1 = { weapons = { 1 } },
+								talon_sprinkler = { weapons = { 1 } },
+								talon_fsprinkler = { weapons = { 1 } },
+								talon_veloute = { weapons = { 1 } },
+								talon_veloute1 = { weapons = { 1 } },
+								talon_veloute2 = { weapons = { 1 } },
+								talon_lrpt = { weapons = { 1 } },
+								talon_lrpt1 = { weapons = { 1 } },
+								talon_slinger = { weapons = { 1 } },
+								talon_dmc = { weapons = { 1 } },
+								talon_tl = { weapons = { 1 } },
+								talon_atl = { weapons = { 1 } },
+								talon_hlt = { weapons = { 1 } },
+								talon_vhlt = { weapons = { 1 } },
+								talon_juno = { weapons = { 1 } },
 
 									--Anti-Air--
 								tlllmt = { weapons = { 2 } },
@@ -172,12 +192,23 @@ modConfig["TA"]["unitList"] =
 								tlldb = { weapons = { 2 } },
 								tllhmt = { weapons = { 2 } },
 								tlltetanos = { weapons = { 2 } },
+								talon_popcorn = { weapons = { 2 } },
+								talon_popcorn1 = { weapons = { 2 } },
+								talon_rl = { weapons = { 2 } },
+								talon_frl = { weapons = { 2 } },
+								talon_cir = { weapons = { 2 } },
+								talon_kernel = { weapons = { 2 } },
 
 									--Anti-Nuke--
 								tllantinuke = { weapons = { 3 } },
 								tllantinuke1 = { weapons = { 3 } },
 								tllgazelle = { weapons = { 3 } },
-								armmds = { weapons = { 3 } } --Missile Defence System
+								talon_damascus = { weapons = { 3 } },
+								talon_damascus1 = { weapons = { 3 } },
+								talon_requiem = { weapons = { 3 } },
+								talon_armistice = { weapons = { 3 } },
+								talon_mds = { weapons = { 3 } }, --Missile Defence System
+								armmds = { weapons = { 3 } }, --Missile Defence System
 							}
 
 --implement this if you want dps-depending ring-colors
@@ -199,7 +230,7 @@ modConfig["TA"]["color"]["enemy"] = {}
 modConfig["TA"]["color"]["enemy"]["ground"] = {}
 modConfig["TA"]["color"]["enemy"]["air"] = {}
 
-modConfig["TA"]["color"]["enemy"]["nuke"] = {}									 
+modConfig["TA"]["color"]["enemy"]["nuke"] = {}
 modConfig["TA"]["color"]["enemy"]["ground"]["min"] = { 1.0, 0.0, 0.0 }
 modConfig["TA"]["color"]["enemy"]["ground"]["max"] = { 1.0, 1.0, 0.0 }
 modConfig["TA"]["color"]["enemy"]["air"]["min"] = { 0.0, 1.0, 0.0 }
