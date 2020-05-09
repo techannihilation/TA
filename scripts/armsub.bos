@@ -50,6 +50,11 @@ AimPrimary()
 	return (1);
 }
 
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
 QueryPrimary(piecenum)
 {
 	if( gun_1 == 1 )

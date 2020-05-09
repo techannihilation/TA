@@ -66,7 +66,7 @@ return {
 				damage = 3126,
 				description = "Slinger Wreckage",
 				energy = 0,
-				featuredead = "dead2",
+				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1867,

@@ -37,6 +37,11 @@ AimPrimary()
 	return (1);
 }
 
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
 FirePrimary()
 {
 	gun_1 = !gun_1;

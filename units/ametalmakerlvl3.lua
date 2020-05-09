@@ -42,10 +42,10 @@ return {
 				blocking = false,
 				damage = 35000,
 				description = "T4 Metal Maker Debris",
-				footprintx = 4,
-				footprintz = 4,
+				footprintx = 7,
+				footprintz = 7,
 				metal = 17860,
-				object = "ametalmakerlvl2_heap",
+				object = "7x7a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -6,64 +6,18 @@
 piece  flare1, flare2, flare3, flare4, barrel1, barrel2,
        barrel3, barrel4,  base, body, turret1, sleeve1,
        turret2, sleeve2, w1, w2, w3, w4, w5, w6,
-       w7, w8, w9, wakes, boob, miss1, miss2;
+       w7, w8, w9, wakes, boob, miss1, miss2, aimmsl;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10, gun_miss;
 
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_MOVE			16
+#define SIG_ROCK			32
 
-ProjXPW(Func_Var_1, Func_Var_2)
-{
-	if( Func_Var_2 < -21840 )
-	{
-		Static_Var_9 = Func_Var_1 * ( Func_Var_2 + 32760 ) / 10920;
-	}
-	else if( Func_Var_2 > 21840 )
-	{
-		Static_Var_9 = Func_Var_1 * ( 32760 - Func_Var_2 ) / 10920;
-	}
-	else if( Func_Var_2 < -10920 )
-	{
-		Static_Var_9 = 0 - Func_Var_1;
-	}
-	else if( Func_Var_2 > 10920 )
-	{
-		Static_Var_9 = Func_Var_1;
-	}
-	else
-	{
-		Static_Var_9 = Func_Var_1 * Func_Var_2 / 10920;
-	}
-}
-
-RockZ(Func_Var_1, Func_Var_2)
-{
-	signal 16;
-	set-signal-mask 16;
-	call-script ProjXPW(10920 / Func_Var_2,Func_Var_1);
-	Static_Var_10 = Static_Var_10 + Static_Var_9;
-	Static_Var_9 = get ABS(Static_Var_10);
-	while( Static_Var_9 > 91 )
-	{
-		turn base to z-axis Static_Var_10 speed Static_Var_9 * <0.>;
-		wait-for-turn base around z-axis;
-		Static_Var_10 = Static_Var_10 * -1 / 2;
-		Static_Var_9 = get ABS(Static_Var_10);
-	}
-	turn base to z-axis <0.> speed <2.>;
-}
-
-RockUnit(anglex, anglez)
-{
-	signal 8;
-	set-signal-mask 8;
-	turn body to x-axis anglex speed <50.>;
-	turn body to z-axis anglez speed <50.>;
-	wait-for-turn body around z-axis;
-	wait-for-turn body around x-axis;
-	turn body to z-axis <0.> speed <20.>;
-	turn body to x-axis <0.> speed <20.>;
-}
 
 WobbleUnit()
 {
@@ -86,8 +40,8 @@ HitByWeapon(anglex, anglez)
 {
 	signal 8;
 	set-signal-mask 8;
-	turn body to z-axis <0.> * anglez speed <105.>;
-	turn body to x-axis <0.> * anglex speed <105.>;
+	turn body to z-axis <0.1> * anglez * 0.5 speed <105.>;
+	turn body to x-axis <0.1> * anglex * 0.5 speed <105.>;
 	wait-for-turn body around z-axis;
 	wait-for-turn body around x-axis;
 	turn body to z-axis <0.> speed <30.>;
@@ -107,34 +61,6 @@ BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
 		turn body to z-axis Func_Var_3 speed <20.>;
 		Func_Var_2 = Func_Var_1;
 		sleep 300;
-	}
-}
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	start-script WobbleUnit();
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
 	}
 }
 
@@ -167,34 +93,55 @@ wakes2()
 	}
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script WobbleUnit();
+	start-script wakes2();
+	start-script BankClerck();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
+	turn turret2 to y-axis <180.> now;
 	hide flare1;
 	hide flare2;
 	hide flare3;
 	hide flare4;
-	
-	start-script wakes2();
 	gun_miss = 1;
 	Static_Var_3 = 0;
 	Static_Var_4 = 0;
 	Static_Var_1 = 0;
 	Static_Var_2 = 0;
-	turn turret2 to y-axis <180.> now;
-	//turn turret2 to y-axis <180.000000> now;
-	start-script BankClerck();
-	Static_Var_5 = 3000;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_5 = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
 {
-	sleep Static_Var_5;
+	sleep 3000;
 	turn sleeve2 to x-axis <0.> speed <60.>;
 	turn turret2 to y-axis <180.> speed <30.>;
 	turn sleeve1 to x-axis <0.> speed <60.>;
@@ -208,32 +155,76 @@ setSFXoccupy(state)
 
 StartMoving()
 {
-	signal 8;
-	set-signal-mask 8;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
 }
 
 StopMoving()
 {
-	signal 8;
+	signal SIG_MOVE;
 }
+
 
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
-	turn turret1 to y-axis heading speed <75.>;
-	turn sleeve1 to x-axis <0.> - pitch speed <75.>;
-	wait-for-turn turret1 around y-axis;
-	wait-for-turn sleeve1 around x-axis;
-	start-script RestoreAfterDelay();
-	Static_Var_8 = heading;
-	++Static_Var_1;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
 	return (1);
 }
 
 FirePrimary()
 {
-	//start-script RockZ(-5,Static_Var_8);
+	++gun_miss;
+	if(gun_miss == 3 )
+	{	
+		gun_miss = 1;	
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aimmsl;
+}
+
+QueryPrimary(piecenum)
+{
+	if(gun_miss == 1 )
+	{	
+		piecenum = miss1;	
+	}
+	if(gun_miss == 2 )
+	{	
+		piecenum = miss2;	
+	}
+}
+
+Rock()
+{
+	signal SIG_ROCK;
+	set-signal-mask SIG_ROCK;
+	turn body to x-axis <1.> speed <50.>;
+	turn body to z-axis <1.> speed <50.>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.> speed <20.>;
+	turn body to x-axis <0.> speed <20.>;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret1 to y-axis heading speed <75.>;
+	turn sleeve1 to x-axis <0.> - pitch speed <75.>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	start-script Rock();
 	if( Static_Var_1 == 0 )
 	{
 		emit-sfx 1025 from flare1;
@@ -259,12 +250,12 @@ FirePrimary()
 	}
 }
 
-AimFromPrimary(piecenum)
+AimFromSecondary(piecenum)
 {
 	piecenum = turret1;
 }
 
-QueryPrimary(piecenum)
+QuerySecondary(piecenum)
 {
 	if( Static_Var_1 == 0 )
 	{
@@ -276,7 +267,7 @@ QueryPrimary(piecenum)
 	}
 }
 
-AimWeapon2(heading, pitch)
+AimTertiary(heading, pitch)
 {
 	signal 4;
 	set-signal-mask 4;
@@ -285,13 +276,12 @@ AimWeapon2(heading, pitch)
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn sleeve2 around x-axis;
 	start-script RestoreAfterDelay();
-	Static_Var_8 = heading;
 	return (1);
 }
 
-FireWeapon2()
+FireTertiary()
 {
-	//start-script RockZ(-5,Static_Var_8);	
+	start-script Rock();
 	if( Static_Var_2 == 0 )
 	{
 		emit-sfx 1025 from flare3;
@@ -318,12 +308,12 @@ FireWeapon2()
 
 }
 
-AimFromWeapon2(piecenum)
+AimFromTertiary(piecenum)
 {
 	piecenum = turret2;
 }
 
-QueryWeapon2(piecenum)
+QueryTertiary(piecenum)
 {
 	if( Static_Var_2 == 0 )
 	{
@@ -334,46 +324,6 @@ QueryWeapon2(piecenum)
 		piecenum = flare4;
 	}
 	
-}
-
-AimWeapon3(heading, pitch)
-{
-	signal 8;
-	set-signal-mask 8;
-	return (1);
-}
-
-FireWeapon3()
-{
-	++gun_miss;
-	if(gun_miss == 3 )
-	{	
-		gun_miss = 1;	
-	}
-}
-
-AimFromWeapon3(piecenum)
-{
-	if(gun_miss == 1 )
-	{	
-		piecenum = miss1;	
-	}
-	if(gun_miss == 2 )
-	{	
-		piecenum = miss2;	
-	}
-}
-
-QueryWeapon3(piecenum)
-{
-	if(gun_miss == 1 )
-	{	
-		piecenum = miss1;	
-	}
-	if(gun_miss == 2 )
-	{	
-		piecenum = miss2;	
-	}
 }
 
 SweetSpot(piecenum)

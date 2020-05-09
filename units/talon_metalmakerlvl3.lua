@@ -4,10 +4,6 @@ return {
 		buildcostenergy = 2560118,
 		buildcostmetal = 34992,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 6,
-		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "ametalmakerlvl3_aoplane.dds",
 		buildpic = "talon_metalmakerlvl3.dds",
 		buildtime = 1750000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -37,7 +33,6 @@ return {
 		selfdestructas = "nuclear_missile2",
 		sightdistance = 210,
 		unitname = "talon_metalmakerlvl3",
-		usebuildinggrounddecal = true,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			buildpic = "talon_metalmakerlvl3.dds",

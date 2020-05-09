@@ -4,10 +4,6 @@ return {
 		buildcostenergy = 17455,
 		buildcostmetal = 2661,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 6,
-		buildinggrounddecalsizey = 6,
-		buildinggrounddecaltype = "core_immolator_aoplane.dds",
 		buildpic = "core_immolator.dds",
 		buildtime = 30000,
 		canattack = true,
@@ -46,7 +42,6 @@ return {
 		sightdistance = 450,
 		standingfireorder = 2,
 		unitname = "tll_immolator",
-		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "core_immolator.dds",

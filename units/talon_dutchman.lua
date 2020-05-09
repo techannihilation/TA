@@ -189,19 +189,19 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			[2] = {
 				def = "TALON_GUN",
 				onlytargetcategory = "SURFACE",
 				maindir = "0 0 1",
-				maxangledif = 300,				
+				maxangledif = 300,
 			},
-			[2] = {
+			[3] = {
 				def = "TALON_GUN",
 				onlytargetcategory = "SURFACE",
 				maindir = "0 0 -1",
 				maxangledif = 300,
 			},
-			[3] = {
+			[1] = {
 				def = "RAVE_MISSILE",
 			},
 

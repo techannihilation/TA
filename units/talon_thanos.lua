@@ -136,7 +136,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.3,
-				soundstart = "talon_accelerator2",
+				soundstart = "talon_accelerator",
 				soundtrigger = 1,
 				sweepfire = false,
 				targetmoveerror = 0.4,
