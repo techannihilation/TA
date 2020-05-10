@@ -6,6 +6,8 @@ Balance :
  - Tllbind : Decrease range 600 => 550. Decrease Lightning damage 875 => 700.
 
 Improvment :
+ - Move T4 AA into T3 Lab. Decrease their stats and cost by 50%. 
+ - Each faction have new AA T3 in vehicle lab and/or kbot lab.
  - Decrease T5 Nano Reclaim / Repair like all other nano, repair and reclaim 50% from wortertime)
  - Add T1 Amphibious Vehicle into T1 Vehicle Lab
  - Add T4 All-Terrain Talon Scorpion
