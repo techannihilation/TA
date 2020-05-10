@@ -20,7 +20,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Radar Jammer Vehicle",
-		energymake = 16,
 		energyuse = 100,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,

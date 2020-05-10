@@ -1,0 +1,582 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lleg, lkneel, lfoot,
+       rleg, rkneel, rfoot, turret1, turret2, turret3, flare1, flare2, flare3, 
+       turretr, sleever, flarer, tail1, tail2, head, wake1, wake2, 
+       msl1, msl2, msl11, msl12, msl13, msl14, msl21, msl22, msl23, msl24;
+
+static-var  gun_1, bMoving, bAiming, missile_1, bEmit, transformed;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_SWIM			4
+#define SIG_AIM_1			8
+#define SIG_AIM_2			16
+#define SIG_AIM_3			32
+#define SIG_AIM_4			64
+#define SIG_AIM_5			128
+
+Transform()
+{
+	
+	if( transformed == 1 )
+	{
+		turn rleg to x-axis <5.0> speed <120.000000>;
+		turn lleg to x-axis <5.0> speed <120.000000>;
+		sleep 75;
+	}
+	
+	sleep 500;
+	
+	if( transformed == 1 )
+	{
+		turn rleg to x-axis <40.0> speed <120.000000>;
+		turn lleg to x-axis <40.0> speed <120.000000>;
+		sleep 75;
+	}
+	
+	if( transformed == 1 )
+	{
+		turn rkneel to x-axis <40.0> speed <120.000000>;
+		turn rkneel to x-axis <40.0> speed <120.000000>;
+		turn rfoot to x-axis <-35.0> speed <120.000000>;
+		turn lfoot to x-axis <-35.0> speed <120.000000>;
+		sleep 75;
+	}
+	
+	if( transformed == 1 )
+	{
+		move base to y-axis [-12.500000] speed [10.000000];
+		turn base to x-axis <-5.0> speed <120.000000>;
+		sleep 75;
+	}
+}
+
+Reform()
+{
+	if( TRUE )
+	{
+		turn rleg to x-axis <0.0> speed <120.000000>;
+		turn lleg to x-axis <0.0> speed <120.000000>;
+		sleep 75;
+	}
+	
+	if( TRUE )
+	{
+		turn rkneel to x-axis <0.0> speed <120.000000>;
+		turn rkneel to x-axis <0.0> speed <120.000000>;
+		turn rfoot to x-axis <-0.0> speed <120.000000>;
+		turn lfoot to x-axis <-0.0> speed <120.000000>;
+		sleep 75;
+	}
+	
+	if( TRUE )
+	{
+		move base to y-axis [0.000000] speed [10.000000];
+		turn base to x-axis <0.0> speed <120.000000>;
+		sleep 75;
+	}
+	transformed = 0;
+}
+
+Swim()
+{
+	while( transformed == 1 and bMoving )
+	{
+		if( TRUE )
+		{
+			turn tail1 to y-axis <5.00000> speed <10.000000>;
+			turn tail2 to y-axis <10.000000> speed <15.000000>;
+			turn head to y-axis <-4.000000> speed <4.000000>;
+			sleep 450;
+		}
+		emit-sfx 259 from wake1;
+		emit-sfx 259 from wake2;
+		if( TRUE )
+		{
+			turn tail1 to y-axis <-5.00000> speed <10.000000>;
+			turn tail2 to y-axis <-10.000000> speed <15.000000>;
+			turn head to y-axis <4.000000> speed <4.000000>;
+			sleep 450;
+		}
+		if( !bMoving )
+		{
+			turn tail1 to y-axis <0.00000> speed <10.000000>;
+			turn tail2 to y-axis <0.000000> speed <15.000000>;
+			turn head to y-axis <0.000000> speed <4.000000>;
+			sleep 450;
+		}
+		//sleep 150;
+		emit-sfx 259 from wake1;
+		emit-sfx 259 from wake2;
+	}
+}
+
+Walk()
+{
+	if( transformed == 0 )
+	{
+		turn rleg to x-axis <28.000000> speed <50.000000>;
+		turn lleg to x-axis <-28.000000> speed <50.000000>;
+		turn rfoot to x-axis <-28.000000> speed <70.000000>;
+		turn lfoot to x-axis <8.000000> speed <50.000000>;
+		turn lkneel to x-axis <-20.000000> speed <80.000000>;
+		turn pelvis to x-axis <4.000000> speed <5.000000>;
+		sleep 505;
+		turn rfoot to x-axis <38.000000> speed <100.000000>;
+		turn lfoot to x-axis <18.000000> speed <50.000000>;
+		turn lkneel to x-axis <28.000000> speed <100.000000>;
+	
+		sleep 450;
+		move base to y-axis [1.000000] speed [1.000000];
+		turn base to z-axis <3.000000> speed <3.000000>;
+	}
+	if( !bMoving)
+	{
+		return (0);
+	}
+	if( transformed == 0 )
+	{
+		turn rleg to x-axis <-28.000000> speed <50.000000>;
+		turn lleg to x-axis <28.000000> speed <50.000000>;
+		turn lfoot to x-axis <-38.000000> speed <130.000000>;
+		turn rkneel to x-axis <-20.000000> speed <80.000000>;
+		sleep 1050;
+		turn lfoot to x-axis <38.000000> speed <100.000000>;
+		turn rkneel to x-axis <20.000000> speed <80.000000>;
+		move pelvis to y-axis [0.000000] speed [2.000000];
+		sleep 450;
+		move pelvis to y-axis [2.000000] speed [2.000000];
+		turn pelvis to z-axis <-5.000000> speed <8.000000>;
+	}
+	if( !bMoving)
+	{
+		return (0);
+	}
+	if( transformed == 0 )
+	{
+		turn pelvis to x-axis <-3.000000> speed <6.000000>;
+		turn rleg to x-axis <28.000000> speed <50.000000>;
+		turn lleg to x-axis <-38.000000> speed <50.000000>;
+		turn rfoot to x-axis <-38.000000> speed <130.000000>;
+		turn lkneel to x-axis <-20.000000> speed <80.000000>;
+		turn tail1 to y-axis <2.500000> speed <10.000000>;
+		turn tail2 to y-axis <5.000000> speed <15.000000>;
+		turn head to y-axis <-2.000000> speed <4.000000>;
+		sleep 1050;
+		turn rfoot to x-axis <38.000000> speed <100.000000>;
+		turn lfoot to x-axis <38.000000> speed <70.000000>;
+		turn lkneel to x-axis <20.000000> speed <100.000000>;
+		move pelvis to y-axis [0.000000] speed [2.000000];
+		sleep 450;
+		move pelvis to y-axis [1.000000] speed [1.000000];
+		turn pelvis to z-axis <3.000000> speed <7.000000>;
+	}
+	if( !bMoving)
+	{
+		return (0);
+	}
+	if( transformed == 0 )
+	{
+		turn pelvis to x-axis <4.000000> speed <6.000000>;
+		turn rleg to x-axis <-28.000000> speed <50.000000>;
+		turn lleg to x-axis <38.000000> speed <50.000000>;
+		turn lfoot to x-axis <-38.000000> speed <130.000000>;
+		turn rkneel to x-axis <-20.000000> speed <100.000000>;
+		turn tail1 to y-axis <-2.500000> speed <10.000000>;
+		turn tail2 to y-axis <-5.000000> speed <15.000000>;
+		turn head to y-axis <2.000000> speed <4.000000>;
+		sleep 1050;
+		turn lfoot to x-axis <38.000000> speed <100.000000>;
+		turn rkneel to x-axis <20.000000> speed <80.000000>;
+		move pelvis to y-axis [0.000000] speed [2.000000];
+		sleep 450;
+		move pelvis to y-axis [1.000000] speed [1.000000];
+		turn pelvis to z-axis <-3.000000> speed <7.000000>;
+	}
+}
+
+StopWalk()
+{
+	if( transformed == 0 )
+	{
+		turn rleg to x-axis <0.000000> speed <50.000000>;
+		turn lleg to x-axis <0.000000> speed <50.000000>;
+		turn rkneel to x-axis <0.000000> speed <100.000000>;
+		turn lkneel to x-axis <0.000000> speed <100.000000>;
+		turn pelvis to x-axis <0.000000> speed <20.000000>;
+		turn tail1 to y-axis <0.000000> speed <10.000000>;
+		turn tail2 to y-axis <0.000000> speed <15.000000>;
+		turn head to y-axis <0.000000> speed <4.000000>;
+		move base to y-axis [0.000000] speed [20.000000];
+		turn base to z-axis <0.000000> speed <20.000000>;
+		turn lfoot to x-axis <0.000000> speed <100.000000>;
+		turn rfoot to x-axis <0.000000> speed <100.000000>;
+		turn pelvis to x-axis <0.000000> speed <48.000000>;
+	}
+	sleep 50;
+}
+
+MotionTransform()
+{
+	while( TRUE )
+	{
+		if( transformed == 0 )
+		{
+			if( bEmit == 2 )
+			{
+				start-script Transform();
+				transformed = 1;
+			}
+			if( bEmit == 3 )
+			{
+				start-script Transform();
+				transformed = 1;
+			}
+		}
+		if( transformed == 1 )
+		{
+			if( bEmit == 1 )
+			{
+				start-script Reform();
+				transformed = 0;
+			}
+			if( bEmit == 4 )
+			{
+				start-script Reform();
+				transformed = 0;
+			}
+		}
+		sleep 150;
+	}
+}
+
+MotionControl()
+{
+	while( TRUE )
+	{		
+		if(bMoving)
+		{
+			if(transformed == 1)
+			{
+				call-script Swim();
+			}
+			if(transformed == 0)
+			{
+				call-script Walk();
+			}
+		}
+		else
+		{
+			call-script StopWalk();
+		}
+		sleep 150;
+	}
+}	
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	start-script MotionTransform();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+			emit-sfx smoketype from head;
+		}
+		sleeptime = healthpercent * 30;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	turn turret3 to y-axis <180.000000> now;
+	bMoving = FALSE;
+	bAiming = FALSE;
+	bEmit = 0;
+	gun_1 = 0;
+	transformed = 0;
+	missile_1 = 0;
+	start-script SmokeUnit();
+}
+
+setSFXoccupy(state)
+{
+	bEmit = state;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	/*
+	while( TRUE )
+	{		
+		if(transformed == 1)
+		{
+			call-script Swim();
+		}
+		if(transformed == 0)
+		{
+			call-script StopWalk();
+		}
+		sleep 150;
+	}
+	*/
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+RestoreAfterDelayLightning()
+{
+	sleep 3500;	
+	turn turret1 to y-axis <0.000000> speed <75.000000>;
+	turn turret2 to y-axis <0.000000> speed <75.000000>;
+	turn turret3 to y-axis <180.000000> speed <75.000000>;
+}
+
+RestoreAfterDelayFlak()
+{
+	sleep 5000;	
+	turn turretr to y-axis <0.000000> speed <100.000000>;
+	turn sleever to x-axis <0.000000> speed <100.000000>;
+}
+
+//
+//Lightning Weapon
+//
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret1;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = turret2;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turret3;
+}
+
+QueryWeapon1(piecenum)
+{
+	piecenum = flare1;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = flare2;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = flare3;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	if (transformed == 0)
+	{
+		bAiming = TRUE;
+		turn turret1 to y-axis heading speed <100.000000>;
+		wait-for-turn turret1 around y-axis;
+		start-script RestoreAfterDelayLightning();
+		return (1);
+	}
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	if (transformed == 0)
+	{
+		bAiming = TRUE;
+		turn turret2 to y-axis heading speed <100.000000>;
+		wait-for-turn turret2 around y-axis;
+		start-script RestoreAfterDelayLightning();
+		return (1);
+	}
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	bAiming = TRUE;
+	turn turret3 to y-axis heading speed <100.000000>;
+	wait-for-turn turret3 around y-axis;
+	start-script RestoreAfterDelayLightning();
+	return (1);
+}
+
+FireWeapon1()
+{
+
+}
+
+FireWeapon2()
+{
+
+}
+
+FireWeapon3()
+{
+
+}
+
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turretr;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn turretr to y-axis heading speed <360.000000>;
+	turn sleever to x-axis <0.000000> - pitch speed <360.000000>;
+	wait-for-turn turretr around y-axis;
+	wait-for-turn sleever around x-axis;	
+	start-script RestoreAfterDelayFlak();
+	return (1);
+}
+
+FireWeapon4()
+{
+
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = flarer;
+}
+
+//Missile
+AimFromWeapon5(piecenum)
+{
+	piecenum = msl1;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	return (1);
+}
+
+FireWeapon5()
+{
+	++missile_1;
+	if ( missile_1 == 8)
+	{
+		missile_1 = 0;
+	}
+}
+
+QueryWeapon5(piecenum)
+{
+	if ( missile_1 == 0)
+	{
+		piecenum = msl11;
+	}	
+	if ( missile_1 == 1)
+	{
+		piecenum = msl21;
+	}
+	if ( missile_1 == 2)
+	{
+		piecenum = msl12;
+	}
+	if ( missile_1 == 3)
+	{
+		piecenum = msl22;
+	}
+	if ( missile_1 == 4)
+	{
+		piecenum = msl13;
+	}	
+	if ( missile_1 == 5)
+	{
+		piecenum = msl23;
+	}
+	if ( missile_1 == 6)
+	{
+		piecenum = msl14;
+	}
+	if ( missile_1 == 7)
+	{
+		piecenum = msl24;
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode lleg type NOHEATCLOUD;
+		explode lkneel type NOHEATCLOUD;
+		explode lfoot type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		explode rkneel type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode lleg type NOHEATCLOUD | SHATTER;
+		explode lkneel type NOHEATCLOUD | SHATTER;
+		explode lfoot type NOHEATCLOUD | SHATTER;
+		explode rleg type NOHEATCLOUD | SHATTER;
+		explode rkneel type NOHEATCLOUD | SHATTER;
+		explode rfoot type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lkneel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rkneel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -56,14 +56,14 @@ return {
 		yardmap = "oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo",
 		buildoptions = {
 			[1] = "tllmarmelade",
-			[2] = "tllmantis",
+			--[2] = "tllmantis",
 			[3] = "irritator",
 			[4] = "tllhailstorm",
 			[5] = "tllgorgon",
 			[6] = "tllmcv",
 			[7] = "tllcolossus",
 			[8] = "tllsaurus",
-			[9] = "tllcondor",						
+			[9] = "tllcondor",
 		},
 		customparams = {
 			buildpic = "tllprototype.dds",

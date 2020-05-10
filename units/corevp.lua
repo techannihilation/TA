@@ -52,11 +52,11 @@ return {
 		yardmap = "occcccccco cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc occcccccco",
 		buildoptions = {
 			[1] = "corecv",
-			[2] = "clb",
-			[3] = "champ",
-			[4] = "armsiege",
-			[5] = "armtigre2",
-			--[6] = "corminotaur",
+			[2] = "coramist",
+			[3] = "clb",
+			[4] = "champ",
+			[5] = "armsiege",
+			[6] = "armtigre2",
 			[7] = "corbt",
 		},
 		customparams = {
