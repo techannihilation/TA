@@ -3,7 +3,7 @@ return {
 		acceleration = 0.06,
 		airsightdistance = 920,
 		brakerate = 0.45,
-		buildcostenergy = 65430,
+		buildcostenergy = 79430,
 		buildcostmetal = 5254,
 		builder = false,
 		buildpic = "tllblind.dds",

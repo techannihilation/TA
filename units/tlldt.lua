@@ -12,7 +12,7 @@ return {
 		buildtime = 520,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "tlldragonsteeth",
-		description = "Dragon's Teeth",
+		description = "Perimeter Defense",
 		footprintx = 2,
 		footprintz = 2,
 		isfeature = true,
