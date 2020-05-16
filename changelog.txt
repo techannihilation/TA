@@ -1,12 +1,21 @@
+3.43 -> 3.44
+2020-05-16
+Balance :
+ - Helepolis : Decrease range for plasma 1500=>1400
+ 
+Improvment :
+ - Add new screens load for game launching
+ - Add Dragon Teeth for Talon and Tll. After they die or self destroyed, they EMP AOE
+
 3.42 -> 3.43
 2020-05-07
 Balance :
  - Tllhcrus : Decrease HP (9K=>8K) and range for plasma weapon. (600=>550)
  - Increase Energy cost for T1 TLL Bomber
- - Tllbind : Decrease range 600 => 550. Decrease Lightning damage 875 => 700.
+ - Tllbind : Decrease range 600 => 550. Decrease Lightning damage 875 => 700
 
 Improvment :
- - Move T4 AA into T3 Lab. Decrease their stats and cost by 50%. 
+ - Move T4 AA into T3 Lab. Decrease their stats and cost by 50%.
  - Each faction have new AA T3 in vehicle lab and/or kbot lab.
  - Decrease T5 Nano Reclaim / Repair like all other nano, repair and reclaim 50% from wortertime)
  - Add T1 Amphibious Vehicle into T1 Vehicle Lab
