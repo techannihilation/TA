@@ -23,7 +23,6 @@ return {
 		description = "Pop-Up Flamethrower Turret",
 		digger = 1,
 		downloadable = 1,
-		energystorage = 15,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 2,
