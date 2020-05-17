@@ -1061,12 +1061,22 @@ local morphDefs = {
 	ahermes = {
 		into = 'armyork',
 		time = 30,
-		xp = 0.20,
+		xp = 1.00,
+	},
+	armyork = {
+		into = 'armeflak',
+		time = 60,
+		xp = 1.00,
 	},
 	corjeag = {
-     		into = 'corsent',
+    into = 'corsent',
 		time = 30,
-		xp = 0.20,
+		xp = 1.00,
+	},
+	corsent = {
+		into = 'coramist',
+		time = 60,
+		xp = 1.00,
 	},
 	gladiator = {
 		into = 'krogtaar',
@@ -1224,12 +1234,22 @@ local morphDefs = {
 	tllfirestarter = {
 	  into = 'tllaak',
 		time = 30,
-		xp = 0.20,
+		xp = 1.00,
+	},
+	tllfirestarter = {
+		into = 'tlldilophosaurus',
+		time = 60,
+		xp = 1.00,
 	},
 	tllhoplit = {
 	  into = 'tllpuncher',
 		time = 30,
-		xp = 0.20,
+		xp = 1.00,
+	},
+	tllpuncher = {
+		into = 'tllmantis',
+		time = 60,
+		xp = 1.00,
 	},
 	armjamt = {
 		into = 'armveil',
@@ -1343,7 +1363,12 @@ local morphDefs = {
 	},
 	talon_sheatiped  = {
 		into = 'talon_vanguard',
-	  	time = 30,
+	  time = 30,
+		xp = 0.20,
+	},
+	talon_vanguard  = {
+		into = 'talon_expanse',
+		time = 60,
 		xp = 1.00,
 	},
 	talon_lupa  = {
@@ -1467,6 +1492,11 @@ local morphDefs = {
 		into = 'talon_jellyfish',
 		time = 30,
 		xp = 0.25,
+	},
+	talon_striker = {
+		into = 'talon_eak',
+		time = 60,
+		xp = 1.00,
 	},
 }
 
