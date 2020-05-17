@@ -344,8 +344,9 @@ AimSecondary(heading, Pitch)
 	{
 		sleep 100;
 	}
-	turn turret to y-axis heading speed <50.000000>;
+	//turn turret to y-axis heading speed <50.000000>;
 	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
 	return(1);
 }
 
@@ -355,20 +356,18 @@ FirePrimary()
 	{
 		
 		emit-sfx 1024 + 0 from Rflare2;
-		move Rbarrel2 to z-axis [-4.00] speed [250.];
-		sleep 50;
-		move Rbarrel2 to z-axis [0.00] speed [100.00];
-		wait-for-move Rbarrel2 along z-axis;
+		move Rbarrel2 to z-axis [-1.00] now;
+		sleep 10;
+		move Rbarrel2 to z-axis [0.00] speed [4.00];
 	}
 	
 	if( gun_1 == 1 )
 	{
 		
 		emit-sfx 1024 + 0 from Rflare1;
-		move Rbarrel1 to z-axis [-4.00] speed [250.];
-		sleep 50;
-		move Rbarrel1 to z-axis [0.00] speed [100.00];
-		wait-for-move Rbarrel1 along z-axis;
+		move Rbarrel1 to z-axis [-1.00] now;
+		sleep 10;
+		move Rbarrel1 to z-axis [0.00] speed [4.00];
 	}
 	
 	++gun_1;
@@ -384,20 +383,18 @@ FireSecondary()
 	{
 		
 		emit-sfx 1024 + 0 from Lflare2;
-		move Lbarrel2 to z-axis [-4.00] speed [250.];
-		sleep 50;
-		move Lbarrel2 to z-axis [0.00] speed [100.00];
-		wait-for-move Lbarrel2 along z-axis;
+		move Lbarrel2 to z-axis [-1.00] now;
+		sleep 10;
+		move Lbarrel2 to z-axis [0.00] speed [4.00];
 	}
 	
 	if( gun_2 == 1 )
 	{
 		
 		emit-sfx 1024 + 0 from Lflare1;
-		move Lbarrel1 to z-axis [-4.00] speed [250.];
-		sleep 50;
-		move Lbarrel1 to z-axis [0.00] speed [100.00];
-		wait-for-move Lbarrel1 along z-axis;
+		move Lbarrel1 to z-axis [-1.00] now;
+		sleep 10;
+		move Lbarrel1 to z-axis [0.00] speed [4.00];
 	}
 	
 	++gun_2;

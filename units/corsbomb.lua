@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON",
 		cloakcost = 500,
-		cloakcostmoving = 1750,
+		cloakcostmoving = 2000,
 		cloaktimeout = 480,
 		collide = false,
 		cruisealt = 220,

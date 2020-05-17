@@ -209,12 +209,10 @@ flare(Func_Var_1)
 	if( Func_Var_1 == 0 )
 	{
 		emit-sfx 1025 from rgunflare;
-		sleep 200;
 	}
 	if( Func_Var_1 == 1 )
 	{
 		emit-sfx 1025 from lgunflare;
-		sleep 200;
 	}
 }
 
@@ -231,6 +229,7 @@ rgun()
 	turn head to y-axis <0.> speed <15.>;
 	move rbarrel1 to z-axis [-4.] now;
 	move rbarrel1 to z-axis [0.] speed [8.];
+	sleep 500;
 	turn rrotate to z-axis <120.> speed <200.>;
 	turn rrotate to z-axis <0.> now;
 }
@@ -248,6 +247,7 @@ lgun()
 	turn head to y-axis <0.> speed <15.>;
 	move lbarrel1 to z-axis [-4.] now;
 	move lbarrel1 to z-axis [0.] speed [8.];
+	sleep 500;
 	turn lrotate to z-axis <120.> speed <200.>;
 	turn lrotate to z-axis <0.> now;
 }
@@ -262,7 +262,6 @@ FirePrimary()
 	{
 		start-script lgun();
 	}
-	
 	++Static_Var_1;
 	if( Static_Var_1 == 2 )
 	{

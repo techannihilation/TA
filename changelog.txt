@@ -2,8 +2,10 @@
 2020-05-16
 Balance :
  - Helepolis : Decrease range for plasma 1500=>1400
- 
+
 Improvment :
+ - Increase cost for Independence and Lilith (+3%)
+ - Increase cost for Air Cloak Air (Talon T2 Spy and Core T3 Black Lily). If Not enough for Talon, will be increased or move into T3.
  - Add new screens load for game launching
  - Add Dragon Teeth for Talon and Tll. After they die or self destroyed, they EMP AOE
 

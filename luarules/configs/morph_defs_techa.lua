@@ -1396,7 +1396,7 @@ local morphDefs = {
 	},
 	cormkl = {
 		into = 'corlilith',
-		time = 120,
+		time = 160,
 		xp = 0.05,
 	},
 	corroy = {
