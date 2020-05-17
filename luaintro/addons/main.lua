@@ -17,13 +17,15 @@ end
 local lastLoadMessage = ""
 local infoMessage = {}
 
+table.insert(infoMessage, "Version 3.44. Main Change : Add EMP dragon Teeth for TLL & Talon.")
+
 --table.insert(infoMessage, "Spring Engine version 101.0.1-201 or above is needed for this version")
 
 --table.insert(infoMessage, "Merry Xmas From TECHA 1st morph is free")
 
 --table.insert(infoMessage, "To Switch to OTA style icon use option widget")
 
-if Spring.GetModOptions() then 
+if Spring.GetModOptions() then
 	if Spring.GetModOptions().deathmode then
 		if Spring.GetModOptions().deathmode == "com" then
     		message = "Game Objective Destroy All Enemy Commanders To Win"
@@ -82,17 +84,17 @@ function addon.DrawLoadScreen()
 
 	local vsx, vsy = gl.GetViewSizes()
 	local xDiv, yDiv, texy, ar = SG.GetDiv()
-	
+
 	-- draw progressbar
 	local hbw = 3.5/vsx
 	local vbw = 3.5/vsy
 	local hsw = 0.2
 	local vsw = 0.2
-	
+
 	gl.PushMatrix()
 	gl.Scale(.4,.4,1)
 	gl.Translate(-0.1,0,0)
-	
+
 	gl.BeginEnd(GL.QUADS, function()
 		--shadow topleft
 		gl.Color(0,0,0,0)
@@ -219,15 +221,15 @@ function addon.DrawLoadScreen()
 	gl.Scale(1/vsx,1/vsy,1)
 		local barTextSize = vsy * (0.05 - 0.015)
 		local InfoTextSize = vsy * (0.08 - 0.005)
-		
+
 		local posy = 0.5 * (vsy-vsx/ar)
-		
+
 		local y0 = vsy * 0.222 + posy -- vsy-texy > 300 and vsy-texy or vsy * 0.25
 		local y1 = y0 + vsy * 0.3
 		local dy = 4
-		
+
 		--Spring.Echo("XY:",yDiv,vsy * 0.2,yDiv > 0.1,y0,y1,yDiv*vsy,vsx/ar,posy)
-		
+
 		--font:Print(lastLoadMessage, vsx * 0.5, vsy * 0.3, 50, "sc")
 		--font:Print(Game.gameName, vsx * 0.5, vsy * 0.95, vsy * 0.07, "sca")
 		font:Print(lastLoadMessage, vsx * 0.2, vsy * 0.14, barTextSize, "sa")
@@ -241,15 +243,15 @@ function addon.DrawLoadScreen()
 		--Pre Game Info
 		--Todo Scale bar to depening on massage count
 		gl.Color(0.0,0.0,0.0,0.6)
-		local vsy_depth = (InfoTextSize *1.02) * #infoMessage 
+		local vsy_depth = (InfoTextSize *1.02) * #infoMessage
 		gl.Rect(0,vsy/2,vsx*4,vsy/2+vsy_depth)
-	
+
 		--gl.Color(1,1,1,0.5)
 		--gl.Rect(0,vsy/2,4*vsx,vsy/2+2)
 		--gl.Rect(0,vsy/2+(,4*vsx,vsy/2+vsy_depth)
-		
+
 		gl.Color(1,1,1,1)
-		
+
 		font2:Begin()
 		font2:SetTextColor({1, 1, 1, 0.9 })
 		--Spring.Echo("infoMessage:",#infoMessage)
@@ -260,9 +262,9 @@ function addon.DrawLoadScreen()
 			font2:Print(text,vsx * 0.2,y2 + ((line-1)*InfoTextSize)+((InfoTextSize/2)+2),InfoTextSize,'vo')
 		end
 		font2:End()
-		
+
 	gl.PopMatrix()
-	
+
 	gl.PopMatrix()
 end
 
