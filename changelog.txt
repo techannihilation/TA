@@ -1,4 +1,4 @@
-3.43 -> 3.44
+3.43 -> 3.44 (released)
 2020-05-16
 Balance :
  - Helepolis : Decrease range for plasma 1500=>1400

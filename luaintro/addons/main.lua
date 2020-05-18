@@ -17,7 +17,7 @@ end
 local lastLoadMessage = ""
 local infoMessage = {}
 
-table.insert(infoMessage, "Version 3.44. Main Change : Add EMP dragon Teeth for TLL & Talon.")
+--table.insert(infoMessage, "Version 3.44. Main Change : Add EMP dragon Teeth for TLL & Talon.")
 
 --table.insert(infoMessage, "Spring Engine version 101.0.1-201 or above is needed for this version")
 
