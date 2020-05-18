@@ -2,6 +2,7 @@
 2020-05-16
 Balance :
  - Helepolis : Decrease range for plasma 1500=>1400
+ - Lilith : Increase cost (870KM => 1200KM). Xp to have it 0.05 => 0.10.
 
 Improvment :
  - Increase cost for Independence and Lilith (+3%)
