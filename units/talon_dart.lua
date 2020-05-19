@@ -40,7 +40,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "talon_dart",
 		radardistance = 1000,
-		seismicsignature = 2,
+		seismicsignature = 0, --Don't work for air unit
 		selfdestructas = "BIG_UNITEX",
 		sightdistance = 1200,
 		sonardistance = 800,
