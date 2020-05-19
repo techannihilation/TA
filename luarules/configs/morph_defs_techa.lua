@@ -859,24 +859,24 @@ local morphDefs = {
 		xp = 0.25,
 	},
 	armmav = {
-     		into = 'armraz',
+    into = 'armraz',
 		time = 60,
 		xp = 1.00,
 	},
 	armraz  = {
  		into = 'armraz1',
         	time = 90,
-        	xp = 0.50,
+        	xp = 0.10,
          },
 	aexxec = {
-     		into = 'akmech',
+    into = 'akmech',
 		time = 60,
 		xp = 0.25,
 	},
 	akmech = {
 		into = 'armorco',
 		time = 90,
-		xp = 0.50,
+		xp = 0.15,
 	},
 	armmerl = {
 		into = 'armmlrs',
@@ -1118,7 +1118,7 @@ local morphDefs = {
 	corkarg = {
  		into = 'corkarg1',
 		time = 90,
-		xp = 0.25,
+		xp = 0.10,
          },
 	arm_furie = {
 		into = 'arm_furie1',
@@ -1397,7 +1397,7 @@ local morphDefs = {
 	cormkl = {
 		into = 'corlilith',
 		time = 180,
-		xp = 0.10,
+		xp = 0.15,
 	},
 	corroy = {
 		into = 'corcrus',
