@@ -2,8 +2,8 @@ return {
 	tllcaretta = {
 		acceleration = 0.075,
 		brakerate = 0.12,
-		buildcostenergy = 3505,
-		buildcostmetal = 495,
+		buildcostenergy = 4205,
+		buildcostmetal = 455,
 		builddistance = 150,
 		builder = true,
 		buildpic = "tllcaretta.dds",
@@ -33,6 +33,7 @@ return {
 		maxvelocity = 0.9,
 		maxwaterdepth = 255,
 		metalmake = 0.3,
+		metalstorage = 50,
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Caretta",
