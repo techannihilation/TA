@@ -1498,6 +1498,66 @@ local morphDefs = {
 		time = 60,
 		xp = 1.00,
 	},
+	talon_carbuncle = {
+		into = 'talon_grenat',
+		time = 120,
+		xp = 0.50,
+	},
+	armkam = {
+		into = 'corape',
+		time = 30,
+		xp = 0.20,
+	},
+	armfig = {
+		into = 'armhawk',
+		time = 30,
+		xp = 0.40,
+	},
+	armthund = {
+		into = 'armpnix',
+		time = 30,
+		xp = 0.60,
+	},
+	tllcop1 = {
+		into = 'tllcopter',
+		time = 30,
+		xp = 0.20,
+	},
+	tllbomber = {
+		into = 'tllabomber',
+		time = 30,
+		xp = 0.60,
+	},
+	tllfight = {
+		into = 'tlladvfight',
+		time = 30,
+		xp = 0.40,
+	},
+	corveng = {
+		into = 'corvamp',
+		time = 30,
+		xp = 0.40,
+	},
+	corshad = {
+		into = 'corhurc',
+		time = 30,
+		xp = 0.60,
+	},
+	talon_drone = {
+		into = 'talon_vulture',
+		time = 30,
+		xp = 0.20,
+	},
+	talon_token = {
+		into = 'talon_echelon',
+		time = 30,
+		xp = 0.40,
+	},
+	talon_shade = {
+		into = 'talon_eclipse',
+		time = 30,
+		xp = 0.40,
+	},
 }
 
 --
