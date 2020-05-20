@@ -61,7 +61,7 @@ return {
 			[4] = "talon_eclipse",
 			[5] = "talon_trident",
 			[6] = "talon_echelon",
-			[7] = "talon_dart",
+			--[7] = "talon_dart",
 			[8] = "talon_rukh",
 			[9] = "talon_vigilante",
 			[10] = "talon_ceddral",

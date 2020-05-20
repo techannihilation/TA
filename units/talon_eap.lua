@@ -53,10 +53,11 @@ return {
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		buildoptions = {
 			[1] = "talon_eca",
-			[2] = "talon_hornet",
-			[3] = "talon_pampa",
-			[4] = "talon_tau",
-			[5] = "talon_handgod",
+			[2] = "talon_dart",
+			[3] = "talon_hornet",
+			[4] = "talon_pampa",
+			[5] = "talon_tau",
+			[6] = "talon_handgod",
 		},
 		customparams = {
 			buildpic = "talon_eap.dds",
