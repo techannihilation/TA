@@ -2,13 +2,21 @@
 2020-05-16
 Balance :
  - Helepolis : Decrease range for plasma 1500=>1400
- - Lilith : Increase cost (870KM => 1200KM). Xp to have it 0.05 => 0.10.
-
-Improvment :
+ - Lilith : Increase cost (870KM => 1200KM). Xp to have it 0.05 => 0.15.
+ - Tllstunter : Transform it into EMP T1 Bertha (wasn't played)
  - Increase cost for Independence and Lilith (+3%)
  - Increase cost for Air Cloak Air (Talon T2 Spy and Core T3 Black Lily). If Not enough for Talon, will be increased or move into T3.
+
+Improvment :
  - Add new screens load for game launching
  - Add Dragon Teeth for Talon and Tll. After they die or self destroyed, they EMP AOE
+ - Add T2 Hover Subkiller for TLL
+ - Add Yellow color for all EMP laser/plasma/explosion
+ - Add morph for all T2 AA => T3 AA
+ - Add morph for all T1 Air => T2 (except core emp gunship)
+
+Fix :
+ - Hover Collision Box. Some hover hit by sub.
 
 3.42 -> 3.43
 2020-05-07
