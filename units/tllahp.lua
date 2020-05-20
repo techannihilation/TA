@@ -51,8 +51,9 @@ return {
 			[3] = "tllhcrus",
 			[4] = "tlldimetrodon",
 			[5] = "tlllochness",
-			[6] = "tllhflak",
-			[7] = "tllhjam",
+			[6] = "tllhopomis",
+			[7] = "tllhflak",
+			[8] = "tllhjam",
 		},
 		customparams = {
 			buildpic = "tllahp.dds",

@@ -45,25 +45,23 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var Func_Var_1, Func_Var_2;
-	Func_Var_1 = 3;
-	Func_Var_2 = 4;
+
 	while( TRUE )
 	{
 		if( bState == 1 )
 		{
-			emit-sfx Func_Var_1 from wake1;
-			emit-sfx Func_Var_1 from wake2;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
 		}
 		if( bState == 2 )
 		{
-			emit-sfx Func_Var_1 from wake1;
-			emit-sfx Func_Var_1 from wake2;
+			emit-sfx 3 from wake1;
+			emit-sfx 4 from wake2;
 		}
 		if( bState == 3 )
 		{
-			emit-sfx Func_Var_1 from wake1;
-			emit-sfx Func_Var_1 from wake2;
+			emit-sfx 3 from wake1;
+			emit-sfx 4 from wake2;
 		}
 		sleep 300;
 	}
