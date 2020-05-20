@@ -11,7 +11,7 @@ piece base, body, head, lights, charged, turret, spindle,
 
 
 static-var  gun_1, gun_2, bmoving, firedelay, firing, firing_2, firedelay_2;			
-static-var  onoff, waiting, next ;			
+static-var  onoff, waiting, next, WeaponToggle ;			
 
 // Signal definitions:
 
@@ -21,12 +21,82 @@ static-var  onoff, waiting, next ;
 #define SIG_ACTIVATE	16
 #define SIG_MOVE 		32
 
+Activate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	onoff = 1;
+	waiting = 1;
+	
+	//show charged;
+	
+	sleep 2000;
+	
+	gun_2 = next;
+	
+	turn sleeve1 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve2 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve3 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve4 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve5 to x-axis <-45.000000> speed <25.000000>;
+	turn sleeve6 to x-axis <-45.000000> speed <25.000000>;
+	
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+	wait-for-turn sleeve3 around x-axis;
+	wait-for-turn sleeve4 around x-axis;
+	wait-for-turn sleeve5 around x-axis;
+	wait-for-turn sleeve6 around x-axis;
+	
+	sleep 1000;
+	
+	waiting = 0;
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	onoff = 0;
+	waiting = 1;
+	
+	//hide charged;
+	sleep 2000;
+	
+	gun_1 = next;
+	
+	turn sleeve1 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve2 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve3 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve4 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve5 to x-axis <-30.000000> speed <25.000000>;
+	turn sleeve6 to x-axis <-30.000000> speed <25.000000>;
+	
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+	wait-for-turn sleeve3 around x-axis;
+	wait-for-turn sleeve4 around x-axis;
+	wait-for-turn sleeve5 around x-axis;
+	wait-for-turn sleeve6 around x-axis;
+	
+	sleep 1000;
+	
+	waiting = 0;
+}
+
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
+	
+	start-script Activate();
+	WeaponToggle = 1;
+	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -68,12 +138,12 @@ StartMoving()
 StopMoving()
 {
 	signal SIG_MOVE;
-	
 	bMoving=0;
 }
 
 Create()
 {
+	WeaponToggle = 0;
 	onoff = 0;
 	waiting = 0;
 	firedelay = 150;
@@ -102,76 +172,7 @@ Create()
 	gun_2 = 0;
 	bmoving=0;
 	start-script SmokeUnit();
-	dont-cache charged;
 }
-
-Activate()
-{
-	signal SIG_ACTIVATE;
-	set-signal-mask SIG_ACTIVATE;
-	set-signal-mask 0;
-	
-	onoff = 1;
-	waiting = 1;
-	
-	show charged;
-	
-	sleep 2000;
-	
-	gun_2 = next;
-	
-	turn sleeve1 to x-axis <-45.000000> speed <25.000000>;
-	turn sleeve2 to x-axis <-45.000000> speed <25.000000>;
-	turn sleeve3 to x-axis <-45.000000> speed <25.000000>;
-	turn sleeve4 to x-axis <-45.000000> speed <25.000000>;
-	turn sleeve5 to x-axis <-45.000000> speed <25.000000>;
-	turn sleeve6 to x-axis <-45.000000> speed <25.000000>;
-	
-	wait-for-turn sleeve1 around x-axis;
-	wait-for-turn sleeve2 around x-axis;
-	wait-for-turn sleeve3 around x-axis;
-	wait-for-turn sleeve4 around x-axis;
-	wait-for-turn sleeve5 around x-axis;
-	wait-for-turn sleeve6 around x-axis;
-	
-	sleep 1000;
-	
-	waiting = 0;
-}
-
-Deactivate()
-{
-	signal SIG_ACTIVATE;
-	set-signal-mask SIG_ACTIVATE;
-	set-signal-mask 0;
-	
-	onoff = 0;
-	waiting = 1;
-	
-	hide charged;
-	sleep 2000;
-	
-	gun_1 = next;
-	
-	turn sleeve1 to x-axis <-30.000000> speed <25.000000>;
-	turn sleeve2 to x-axis <-30.000000> speed <25.000000>;
-	turn sleeve3 to x-axis <-30.000000> speed <25.000000>;
-	turn sleeve4 to x-axis <-30.000000> speed <25.000000>;
-	turn sleeve5 to x-axis <-30.000000> speed <25.000000>;
-	turn sleeve6 to x-axis <-30.000000> speed <25.000000>;
-	
-	wait-for-turn sleeve1 around x-axis;
-	wait-for-turn sleeve2 around x-axis;
-	wait-for-turn sleeve3 around x-axis;
-	wait-for-turn sleeve4 around x-axis;
-	wait-for-turn sleeve5 around x-axis;
-	wait-for-turn sleeve6 around x-axis;
-	
-	sleep 1000;
-	
-	waiting = 0;
-}
-
 
 RestoreAll()
 {
@@ -205,13 +206,30 @@ RestoreAll()
 }
 
 
+Dive()
+{
+	if (WeaponToggle == 1)
+	{
+		WeaponToggle = 0;
+		start-script Deactivate();
+		return (0);
+	}
+	if (WeaponToggle == 0)
+	{
+		WeaponToggle = 1;
+		start-script Activate();
+		return (0);
+	}
+	//WeaponToggle = !WeaponToggle;
+	//get PRINT(WeaponToggle);
+}
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	
-	while (onoff == 1 OR waiting == 1)
+	while (onoff == 1 OR waiting == 1 OR bmoving ==1)
 	{ 
 		sleep 1000;
 	}	
@@ -425,7 +443,7 @@ AimTertiary(heading, pitch)
 	signal SIG_AIM2;
 	set-signal-mask SIG_AIM2;
 	
-	while (onoff == 0 OR waiting == 1)
+	while (onoff == 0 OR waiting == 1 OR bmoving ==1)
 	{ 
 		sleep 1000;
 	}	

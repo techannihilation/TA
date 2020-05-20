@@ -420,6 +420,15 @@ return {
 			params = {'1', 'Rapid', 'Standard'},
 		},
 	},
+	cormcv = {
+		{
+			name = "weapon_cormcv",
+			cob = "Dive",
+			tooltip = "High / low",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Low Trajectory', 'High Trajectory'},
+		},
+	},
 	--[[
 	talon_mcv = {
 		{

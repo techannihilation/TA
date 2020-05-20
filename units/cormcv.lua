@@ -1,7 +1,6 @@
 return {
 	cormcv = {
 		acceleration = 0.07,
-		activatewhenbuilt = true,
 		brakerate = 0.18,
 		buildcostenergy = 205138,
 		buildcostmetal = 10058,
@@ -41,7 +40,6 @@ return {
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
 		objectname = "cormcv",
-		onoffable = true,
 		radaremitheight = 33,
 		selfdestructas = "BANTHA_NUKE",
 		selfdestructcountdown = 10,
