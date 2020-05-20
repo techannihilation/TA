@@ -31,7 +31,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		metalstorage = 50,
-		name = "Moho Mine",
+		name = "Metal Extractor",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "TLLAMEX",

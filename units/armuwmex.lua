@@ -15,7 +15,7 @@ return {
 		buildtime = 1875,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
 		corpse = "dead",
-		description = "Extracts Metal",
+		description = "Tech Level 1",
 		energyuse = 2,
 		explodeas = "SMALL_BUILDINGEX",
 		extractsmetal = 0.001,

@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 20,
 		metalstorage = 50,
-		name = "Moho Mine",
+		name = "Metal Extractor",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "ARMMOHO",

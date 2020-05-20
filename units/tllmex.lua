@@ -16,7 +16,7 @@ return {
 		collisionvolumescales = "46 42 46",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Extracts Metal",
+		description = "Tech Level 1",
 		digger = 1,
 		energyuse = 4,
 		explodeas = "TINY_BUILDINGEX",
