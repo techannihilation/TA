@@ -1,11 +1,11 @@
 3.43 -> 3.44 (released)
-2020-05-16
+2020-05-21
 Balance :
  - Helepolis : Decrease range for plasma 1500=>1400
  - Lilith : Increase cost (870KM => 1200KM). Xp to have it 0.05 => 0.15.
  - Tllstunter : Transform it into EMP T1 Bertha (wasn't played)
  - Increase cost for Independence and Lilith (+3%)
- - Increase cost for Air Cloak Air (Talon T2 Spy and Core T3 Black Lily). If Not enough for Talon, will be increased or move into T3.
+ - Increase cost for Air Cloak Air (Talon T2 Spy and Core T3 Black Lily). Become T3 Air Spy
 
 Improvment :
  - Add new screens load for game launching
@@ -13,7 +13,8 @@ Improvment :
  - Add T2 Hover Subkiller for TLL
  - Add Yellow color for all EMP laser/plasma/explosion
  - Add morph for all T2 AA => T3 AA
- - Add morph for all T1 Air => T2 (except core emp gunship)
+ - Add morph for all T1 Air => T2
+ - Add T2 Engi for TLL
 
 Fix :
  - Hover Collision Box. Some hover hit by sub.
