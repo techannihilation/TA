@@ -98,18 +98,8 @@ Create()
 	Static_Var_6 = 0;
 	Static_Var_9 = 5000;
 	Static_Var_7 = 0;
-	turn turret3 to y-axis <180.000000> speed <500.000000>;
+	turn turret3 to y-axis <180.000000> now;
 	start-script SmokeUnit();
-	set ARMORED to 1;
-	while( get BUILD_PERCENT_LEFT > 0 )
-	{
-		sleep 250;
-	}
-	dont-cache turret3;
-	dont-cache barrel3A;
-	dont-cache barrel3B;
-	dont-cache barrel3C;
-	Static_Var_7 = 0;
 }
 
 AimWeapon1(heading, pitch)
@@ -118,12 +108,6 @@ AimWeapon1(heading, pitch)
 	set-signal-mask 2;
 	turn turret1 to y-axis heading speed <45.000000>;
 	wait-for-turn turret1 around y-axis;
-	if( Static_Var_1 == 0 )
-	{
-		wait-for-move barrel1A along z-axis;
-		wait-for-move barrel1B along z-axis;
-		wait-for-move barrel1C along z-axis;
-	}
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -134,12 +118,6 @@ AimWeapon2(heading, pitch)
 	set-signal-mask 4;
 	turn turret2 to y-axis heading speed <45.000000>;
 	wait-for-turn turret2 around y-axis;
-	if( Static_Var_2 == 0 )
-	{
-		wait-for-move barrel2A along z-axis;
-		wait-for-move barrel2B along z-axis;
-		wait-for-move barrel2C along z-axis;
-	}
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -148,18 +126,8 @@ AimWeapon3(heading, pitch)
 {
 	signal 8;
 	set-signal-mask 8;
-	while( Static_Var_7 >= 1 )
-	{
-		sleep 500;
-	}
 	turn turret3 to y-axis heading speed <45.000000>;
 	wait-for-turn turret3 around y-axis;
-	if( Static_Var_3 == 0 )
-	{
-		wait-for-move barrel3A along z-axis;
-		wait-for-move barrel3B along z-axis;
-		wait-for-move barrel3C along z-axis;
-	}
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -194,12 +162,6 @@ AimWeapon6(heading, pitch)
 	set-signal-mask 64;
 	turn turret6 to y-axis heading speed <45.000000>;
 	wait-for-turn turret6 around y-axis;
-	if( Static_Var_6 == 0 )
-	{
-		wait-for-move barrel6a along z-axis;
-		wait-for-move barrel6b along z-axis;
-		wait-for-move barrel6c along z-axis;
-	}
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -228,7 +190,7 @@ FireWeapon1()
 		move barrel1C to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare1C;
-		move barrel1C to z-axis [0.000000] speed [0.400000];
+		move barrel1C to z-axis [0.000000] speed [0.800000];
 	}
 	++Static_Var_1;
 	if( Static_Var_1 == 3 )
@@ -245,7 +207,7 @@ FireWeapon2()
 		move barrel2A to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare2A;
-		move barrel2A to z-axis [0.000000] speed [0.400000];
+		move barrel2A to z-axis [0.000000] speed [0.800000];
 	}
 	if( Static_Var_2 == 1 )
 	{
@@ -253,7 +215,7 @@ FireWeapon2()
 		move barrel2B to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare2B;
-		move barrel2B to z-axis [0.000000] speed [0.400000];
+		move barrel2B to z-axis [0.000000] speed [0.800000];
 	}
 	if( Static_Var_2 == 2 )
 	{
@@ -261,7 +223,7 @@ FireWeapon2()
 		move barrel2C to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare2C;
-		move barrel2C to z-axis [0.000000] speed [0.400000];
+		move barrel2C to z-axis [0.000000] speed [0.800000];
 	}
 	++Static_Var_2;
 	if( Static_Var_2 == 3 )
@@ -278,7 +240,7 @@ FireWeapon3()
 		move barrel3A to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare3A;
-		move barrel3A to z-axis [0.000000] speed [0.400000];
+		move barrel3A to z-axis [0.000000] speed [0.800000];
 	}
 	if( Static_Var_3 == 1 )
 	{
@@ -286,7 +248,7 @@ FireWeapon3()
 		move barrel3B to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare3B;
-		move barrel3B to z-axis [0.000000] speed [0.400000];
+		move barrel3B to z-axis [0.000000] speed [0.800000];
 	}
 	if( Static_Var_3 == 2 )
 	{
@@ -294,7 +256,7 @@ FireWeapon3()
 		move barrel3C to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare3C;
-		move barrel3C to z-axis [0.000000] speed [0.400000];
+		move barrel3C to z-axis [0.000000] speed [0.800000];
 	}
 	++Static_Var_3;
 	if( Static_Var_3 == 3 )
@@ -361,7 +323,7 @@ FireWeapon6()
 		move barrel6a to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare6a;
-		move barrel6a to z-axis [0.000000] speed [0.400000];
+		move barrel6a to z-axis [0.000000] speed [0.800000];
 	}
 	if( Static_Var_6 == 1 )
 	{
@@ -369,7 +331,7 @@ FireWeapon6()
 		move barrel6b to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare6b;
-		move barrel6b to z-axis [0.000000] speed [0.400000];
+		move barrel6b to z-axis [0.000000] speed [0.800000];
 	}
 	if( Static_Var_6 == 2 )
 	{
@@ -377,7 +339,7 @@ FireWeapon6()
 		move barrel6c to z-axis [-1.600000] speed [200.000000];
 		sleep 150;
 		hide flare6c;
-		move barrel6c to z-axis [0.000000] speed [0.400000];
+		move barrel6c to z-axis [0.000000] speed [0.800000];
 	}
 	++Static_Var_6;
 	if( Static_Var_6 == 3 )

@@ -1,8 +1,8 @@
 return {
 	tllstuner = {
 		buildangle = 8192,
-		buildcostenergy = 4557,
-		buildcostmetal = 561,
+		buildcostenergy = 19557,
+		buildcostmetal = 2461,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

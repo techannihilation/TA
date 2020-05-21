@@ -11,13 +11,12 @@ piece	flare1a, flare1b, flare1c,
 		platform1, platform2, platform3, platform4, platform5,
 		blodturret1, blodturret2, blodturret3, blodturret4, blodturret5, blodturret6, blodturret7, blodturret8, blodturret9, blodturret10, 
 		blodsleeve1, blodsleeve2, blodsleeve3, blodsleeve4, blodsleeve5, blodsleeve6, blodsleeve7, blodsleeve8, blodsleeve9, blodsleeve10,
-		blodbarrel1, blodbarrel2, blodbarrel3, blodbarrel4, blodbarrel5, blodbarrel6, blodbarrel7, blodbarrel8, blodbarrel9, blodbarrel10,
-		aimfrom; 
+		blodbarrel1, blodbarrel2, blodbarrel3, blodbarrel4, blodbarrel5, blodbarrel6, blodbarrel7, blodbarrel8, blodbarrel9, blodbarrel10; 
 
-static-var  gun_1, gun_2, gun_3, aimback, wait, brb, wait2, landed;
+static-var  gun_1, gun_2, gun_3, aimback, wait, brb, wait2, landed, bAiming;
 
 // Signal definitions
-#define SIG_AIM				2
+#define SIG_AIM_1			2
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
 #define SIG_AIM_4			16
@@ -28,7 +27,7 @@ static-var  gun_1, gun_2, gun_3, aimback, wait, brb, wait2, landed;
 #define SIG_AIM_9			512
 #define SIG_AIM_10			1024
 #define SIG_AIM_11			2048
-#define SIG_AIM_12			5026
+#define SIG_AIM_12			4096
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -59,8 +58,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
+	turn turret1 to y-axis <0.0> now;
+	
 	gun_1 = 0;
 	gun_2 = 0;
+	bAiming = FALSE;
 	start-script SmokeUnit();
 }
 
@@ -150,13 +152,13 @@ Restore12()
 
 AimPrimary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
 	turn turret1 to y-axis heading speed <50>;
 	turn sleeves1 to x-axis <0.000000> - pitch speed <35>;
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn sleeves1 around x-axis;
-	Start-script Restore1();
+	start-script Restore1();
 	return (1);
 }
 
@@ -168,7 +170,7 @@ AimSecondary(heading, pitch)
 	turn sleeves2 to x-axis <0.000000> - pitch speed <35>;
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn sleeves2 around x-axis;
-	Start-script Restore2();
+	start-script Restore2();
 	return (1);
 }
 

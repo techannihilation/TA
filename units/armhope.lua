@@ -31,7 +31,7 @@ return {
 		collisionvolumetype = "Box",
 		cruisealt = 20,
 		defaultmissiontype = "VTOL_standby",
-		description = "Battle Destroyer",
+		description = "Destroyer Areoship",
 		dontland = 1,
 		energystorage = 20000,
 		explodeas = "NUCLEAR_MISSILE4",

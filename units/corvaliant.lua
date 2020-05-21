@@ -32,7 +32,7 @@ return {
 		collisionvolumetype = "box",
 		cruisealt = 50,
 		defaultmissiontype = "VTOL_standby",
-		description = "Battle Destroyer",
+		description = "Destroyer Aeroship",
 		dontland = 1,
 		energystorage = 20000,
 		explodeas = "NUCLEAR_MISSILE4",
@@ -113,7 +113,7 @@ return {
 			},
 		},
 		weapondefs = {
-			["750mw"] = {
+			["650mw"] = {
 				accuracy = 500,
 				areaofeffect = 120,
 				burnblow = false,
@@ -131,7 +131,7 @@ return {
 				name = "Heavy plasma cannon",
 				noselfdamage = true,
 				range = 1200,
-				reloadtime = 1,
+				reloadtime = 1.25,
 				rgbcolor = "0.95 0.95 0.8",
 				rgbcolor2 = "0.93 0 0",
 				soundhitdry = "xplomed1",
@@ -142,7 +142,6 @@ return {
 				texture2 = "NULL",
 				texture3 = "NULL",
 				thickness = 7,
-				tolerance = 1000,
 				turret = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 650,
@@ -196,14 +195,14 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
-				def = "750MW",
+				def = "650MW",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
-				def = "750MW",
+				def = "650MW",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
