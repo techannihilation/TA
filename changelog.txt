@@ -6,6 +6,7 @@ Balance :
  - Tllstunter : Transform it into EMP T1 Bertha (wasn't played)
  - Increase cost for Independence and Lilith (+3%)
  - Increase cost for Air Cloak Air (Talon T2 Spy and Core T3 Black Lily). Become T3 Air Spy
+ - Dreadnought : Decrease speed 1.2 => 1.0
 
 Improvment :
  - Add new screens load for game launching
