@@ -2,7 +2,7 @@
 2020-05-22
 Balance :
  - Helepolis : Decrease range for plasma 1500=>1400
- - Lilith : Increase cost (870KM => 1000KM). Xp to have it 0.05 => 0.15. Decrease range for main weapon 1750=>1700
+ - Lilith : Increase cost (870KM => 1MM). Xp to have it 0.05 => 0.15. Decrease range for main weapon 1750=>1700
  - Tllstunter : Transform it into EMP T1 Bertha (wasn't played)
  - Increase cost for Independence and Lilith (+3%)
  - Increase cost for Air Cloak Air (Talon T2 Spy and Core T3 Black Lily). Become T3 Air Spy
@@ -21,8 +21,7 @@ Fix :
  - Hover Collision Box. Some hover hit by sub.
  - abroadside : Fix sleep between each salvo. So damage was reduced. Fix balance.
  - Valiant : Fix turret 1. Didn't shoot 75% time. Fix balance.
- - Fix Flare Atad
- - from krogoth1
+ - Fix Flare Atad from krogoth1
 
 3.42 -> 3.43
 2020-05-07
