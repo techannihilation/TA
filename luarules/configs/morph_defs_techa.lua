@@ -572,6 +572,11 @@ local morphDefs = {
 		time = 45,
 		xp = 0.25,
 	},
+	tllstuner = {
+		into = 'tllemplrpt',
+		time = 45,
+		tech = 1,
+	},
 	talon_lrpt = {
 		into = 'talon_lrpt1',
 		time = 45,

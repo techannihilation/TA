@@ -136,7 +136,7 @@ return {
 				name = "Light Laser",
 				range = 350,
 				reloadtime = 0.5,
-				rgbcolor = "0.000 1.000 0.612",
+				rgbcolor = "0 1 0",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
