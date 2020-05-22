@@ -25,7 +25,7 @@ return {
 		firestandorders = 1,
 		footprintx = 7,
 		footprintz = 7,
-		icontype = "Krogoth",
+		icontype = "spider",
 		idleautoheal = 10,
 		idletime = 30,
 		immunetoparalyzer = 1,

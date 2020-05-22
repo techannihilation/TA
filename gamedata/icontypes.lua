@@ -11,38 +11,45 @@ local icontypes = {
     size=0.9,
     radiusadjust=1,
   },
-  
+
   armcommander = {
     bitmap="icons/armcom.tga",
     size=2,
   },
-  
+
   corcommander = {
     bitmap="icons/corcom.tga",
     size=2,
     radiusadjust=1,
   },
-  
+
   krogoth = {
     bitmap="icons/krogoth.tga",
     size=3,
   },
-  
+  spider = {
+    bitmap="icons/spider.tga",
+    size=3,
+  },
+  lilith = {
+    bitmap="icons/krogoth.tga",
+    size=4,
+  },
   air = {
     bitmap="icons/triangle.tga",
     size=1.2,
   },
-  
+
   sea = {
     bitmap="icons/semi-circle.tga",
     size=1.5,
   },
-  
+
   building = {
     bitmap="icons/square.tga",
     size=0.8,
   },
-  
+
 }
 
 --------------------------------------------------------------------------------
