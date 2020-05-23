@@ -27,14 +27,6 @@ local icontypes = {
     bitmap="icons/krogoth.tga",
     size=3,
   },
-  spider = {
-    bitmap="icons/spider.tga",
-    size=3,
-  },
-  lilith = {
-    bitmap="icons/krogoth.tga",
-    size=4,
-  },
   air = {
     bitmap="icons/triangle.tga",
     size=1.2,
