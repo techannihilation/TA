@@ -105,7 +105,6 @@ return {
 			[25] = "tllfllt",
 			[26] = "tlltorp",
 			[27] = "tlllmtns",
-			[28] = "tllsolarns",
 		},
 		customparams = {
 			buildpic = "tllcom.dds",

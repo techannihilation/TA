@@ -117,7 +117,6 @@ local pplants = {
 	["tllmegacoldfus"] = true,
 	["tllmohogeo"] = true,
 	["tllsolar"] = true,
-	["tllsolarns"] = true,
 	["tlltide"] = true,
 	["tlluwfusion"] = true,
 	["tllwindtrap"] = true,
@@ -141,7 +140,6 @@ local pplants = {
 	["corsolar"] = true,
 	["crnns"] = true,
 	["tllsolar"] = true,
-	["tllsolarns"] = true,
 	["tlladvsolar"] = true,
 	["armefus"] = true,
 	["corefus"] = true,
@@ -227,13 +225,13 @@ local spec = Spring.GetSpectatingState()
 
 
 function RectRound(px,py,sx,sy,cs)
-	
+
 	local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.floor(sx),math.floor(sy),math.floor(cs)
-	
+
 	gl.Rect(px+cs, py, sx-cs, sy)
 	gl.Rect(sx-cs, py+cs, sx, sy-cs)
 	gl.Rect(px+cs, py+cs, px, sy-cs)
-	
+
 	gl.Texture(bgcorner)
 	gl.TexRect(px, py+cs, px+cs, py)		-- top left
 	gl.TexRect(sx, py+cs, sx-cs, py)		-- top right
@@ -326,7 +324,7 @@ function init()
 	vsx, vsy = gl.GetViewSizes()
 	widgetScale = (0.60 + (vsx*vsy / 5000000))
 	fontSize = customFontSize * widgetScale
-	
+
 	bgcornerSize = fontSize*0.45
 	bgpadding = fontSize*0.9
 
@@ -340,11 +338,11 @@ end
 
 function widget:DrawScreen()
 	local alt, ctrl, meta, shift = spGetModKeyState()
-	if not meta then 
+	if not meta then
 		--WG.hoverID = nil
 		dummyUnitID = nil
-		RemoveGuishader() 
-		return 
+		RemoveGuishader()
+		return
 	end
 	local mx, my = spGetMouseState()
 	local uID
@@ -388,10 +386,10 @@ function widget:DrawScreen()
 		end
 	end
 	local useExp = ctrl
-	
+
 	local uDefID = (uID and spGetUnitDefID(uID)) or (useHoverID and -WG.hoverID) or (UnitDefs[-activeID] and -activeID)
 	or (morphID and morphDefID)
-	
+
 	if not uDefID then
 		RemoveGuishader() return
 	end
@@ -400,15 +398,15 @@ function widget:DrawScreen()
 		local uDef = uDefs[uDefID]
 		local uCurHp, uMaxHp, _, _, buildProg = spGetUnitHealth(uID)
 		local uTeam = spGetUnitTeam(uID)
-		
+
 		local _, xp = Spring.GetUnitExperience(uID)
-		
+
 		maxWidth = 0
 
 		cX = mx + xOffset
 		cY = my + yOffset
 		cYstart = cY
-		
+
 		local titleFontSize = fontSize*1.12
 		local cornersize = ceil(bgpadding*0.21)
 
@@ -420,7 +418,7 @@ function widget:DrawScreen()
 			local makerTemp = WG.energyConversion.convertCapacities[uDefID]
 			local curAvgEffi = spGetTeamRulesParam(myTeamID(), 'mmAvgEffi')
 			local avgCR = 0.015
-			if(makerTemp) then 
+			if(makerTemp) then
 				DrawText(orange .. "Metal maker properties", '')
 				DrawText("M-             .:", makerTemp.c)
 				DrawText("M-Effi.:", format('%.2f m / 1000 e', makerTemp.e * 1000))
@@ -428,12 +426,12 @@ function widget:DrawScreen()
 			end
 
 			if pplants[uDef.name] then
-				-- Powerplants 
+				-- Powerplants
 				DrawText(orange .. "Powerplant properties", '')
 				DrawText("CR is metal maker conversion rate", '')
-			
+
 				local totalEOut = uDef.energyMake
-			
+
 				if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
 				    local mult = 1 -- DEFAULT
 				    if uDef.customParams then
@@ -441,73 +439,73 @@ function widget:DrawScreen()
 				    end
 					totalEOut = totalEOut +(tidalStrength * mult)
 				end
-			
+
 				if (uDef.windGenerator > 0) then
 					local mult = 1 -- DEFAULT
 				    if uDef.customParams then
 						mult = uDef.customParams.energymultiplier or mult
 				    end
-				
+
 					local unitWindMin = math.min(windMin, uDef.windGenerator)
 					local unitWindMax = math.min(windMax, uDef.windGenerator)
 					totalEOut = totalEOut + (((unitWindMin + unitWindMax) / 2 ) * mult)
 				end
-			
+
 				DrawText("Avg. E-Out.:", totalEOut)
 				DrawText("M-Cost.:", uDef.metalCost)
-				
+
 				DrawText("Avg-Effi.:", format('%.2f%% e / (m + e * avg. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * avgCR)))
 				if(curAvgEffi>0) then
 					DrawText("Curr-Effi.:", format('%.2f%% e / (m + e * curr. CR) ', totalEOut * 100 / (uDef.metalCost + uDef.energyCost * curAvgEffi)))
 				end
 				cY = cY - fontSize
 			end
-			
+
 			if not (#uDef.weapons>0) or uDef.isBuilding or pplants[uDef.name] then
 				if ((uDef.extractsMetal and uDef.extractsMetal  > 0) or (uDef.metalMake and uDef.metalMake > 0) or (uDef.energyMake and uDef.energyMake>0) or (uDef.tidalGenerator and uDef.tidalGenerator > 0)  or (uDef.windGenerator and uDef.windGenerator > 0)) then
-				-- Powerplants 
+				-- Powerplants
 					--DrawText(metalColor .. "Total metal generation efficiency", '')
 					DrawText(metalColor .. "Estimated time of recovering 100% of cost:", '')
-					
+
 					local totalMOut = uDef.metalMake or 0
 					local totalEOut = uDef.energyMake or 0
-				
+
 					if (uDef.extractsMetal and uDef.extractsMetal  > 0) then
 						local metalExtractor = {inc = 0, out = 0, passed= false}
 						local tooltip = spGetTooltip()
 						string.gsub(tooltip, 'Metal: ....%d+%.%d', function(x) string.gsub(x, "%d+%.%d", function(y) metalExtractor.inc = tonumber(y); end) end)
 						string.gsub(tooltip, 'Energy: ....%d+%.%d+..../....-%d+%.%d+', function(x) string.gsub(x, "%d+%.%d", function(y) if (metalExtractor.passed) then metalExtractor.out = tonumber(y); else metalExtractor.passed = true end; end) end)
-					
+
 						totalMOut = totalMOut + metalExtractor.inc
 						totalEOut = totalEOut -  metalExtractor.out
 					end
-				
+
 					if (uDef.tidalGenerator > 0 and tidalStrength > 0) then
 					local mult = 1 -- DEFAULT
 						if uDef.customParams then
 							mult = uDef.customParams.energymultiplier or mult
 						end
-					  
+
 					totalEOut = totalEOut + tidalStrength * mult
 					end
-				
+
 					if (uDef.windGenerator > 0) then
-				
+
 						local mult = 1 -- DEFAULT
 						if uDef.customParams then
 							mult = uDef.customParams.energymultiplier or mult
 						end
-				
+
 						local unitWindMin = math.min(windMin, uDef.windGenerator)
 						local unitWindMax = math.min(windMax, uDef.windGenerator)
 						totalEOut = totalEOut + ((unitWindMin + unitWindMax) / 2) * mult
 					end
-			
+
 					if(totalEOut * avgCR + totalMOut > 0) then
-					
+
 						local avgSec = (uDef.metalCost + uDef.energyCost * avgCR)/(totalEOut * avgCR + totalMOut)
 						local currSec = (uDef.metalCost + uDef.energyCost * curAvgEffi)/(totalEOut * curAvgEffi + totalMOut)
-					
+
 						DrawText('Average: ', format('%i sec (%i min %i sec)', avgSec, avgSec/60, avgSec%60))
 						if(curAvgEffi>0) then
 							DrawText('Current: ', format('%i sec (%i min %i sec)', currSec, currSec/60, currSec%60))
@@ -547,14 +545,14 @@ function widget:DrawScreen()
 		------------------------------------------------------------------------------------
 		-- Generic information, cost, move, class
 		------------------------------------------------------------------------------------
-		
+
 		--DrawText('Height:', uDefs[spGetUnitDefID(uID)].height)
-					
+
 		DrawText("Cost:", format(metalColor .. '%d' .. white .. ' / ' ..
 								energyColor .. '%d' .. white .. ' / ' ..
 								buildColor .. '%d', uDef.metalCost, uDef.energyCost, uDef.buildTime)
 				)
-   
+
 		if not (uDef.isBuilding or uDef.isFactory) then
 			if not Spring.GetUnitMoveTypeData(uID) then
 				DrawText("Move:", format("%.1f / %.1f / %.0f (Speed / Accel / Turn)", uDef.speed, 900 * uDef.maxAcc, simSpeed * uDef.turnRate * (180 / 32767)))
@@ -615,17 +613,17 @@ function widget:DrawScreen()
 			else
 			DrawText("Exp:                 unknown",'\255\255\77\77')
 			end
-			
+
 		end
 		DrawText("Open:", format("maxHP: %d", maxHP) )
 		local _, armoredMultiple = Spring.GetUnitArmored(uID)
-		
-			if armoredMultiple and armoredMultiple ~= 1 then 
+
+			if armoredMultiple and armoredMultiple ~= 1 then
 			DrawText("Closed:", format(" +%d%%, maxHP: %d", (1/armoredMultiple-1) *100,maxHP/armoredMultiple))
-			elseif uDef.armoredMultiple ~= 1 then 
-			DrawText("Closed:", format(" +%d%%, maxHP: %d", (1/uDef.armoredMultiple-1) *100,maxHP/uDef.armoredMultiple)) 
+			elseif uDef.armoredMultiple ~= 1 then
+			DrawText("Closed:", format(" +%d%%, maxHP: %d", (1/uDef.armoredMultiple-1) *100,maxHP/uDef.armoredMultiple))
 			end
-			
+
 		cY = cY - fontSize
 
 		------------------------------------------------------------------------------------
@@ -646,7 +644,7 @@ function widget:DrawScreen()
 				weaponNums[#wepsCompact] = i
 			end
 		end
-		
+
 		local selfDWeaponID = WeaponDefNames[uDef.selfDExplosion].id
 		local deathWeaponID = WeaponDefNames[uDef.deathExplosion].id
 		local selfDWeaponIndex
@@ -758,7 +756,7 @@ function widget:DrawScreen()
 					-- They take the correct amount of time
 					-- They drain ((simSpeed+2)/simSpeed) times more resources than they should (And the listed drain is real, having lower income than listed drain WILL stall you)
 					local drainAdjust = uWep.stockpile and (simSpeed+2)/simSpeed or 1
-					
+
 					DrawText('Cost:', format(metalColor .. '%d' .. white .. ', ' ..
 											 energyColor .. '%d' .. white .. ' = ' ..
 											 metalColor .. '-%d' .. white .. ', ' ..
@@ -768,18 +766,18 @@ function widget:DrawScreen()
 											 drainAdjust * uWep.metalCost / oRld,
 											 drainAdjust * uWep.energyCost / oRld))
 				end
-				
+
 				if (weaponInfo[wDefId]) then
 					local radius = weaponInfo[wDefId].radius
 					local damage = weaponInfo[wDefId].damage
 					local duration = weaponInfo[wDefId].duration
 					DrawText("Area Dmg:", format(white .. "%d aoe, %d max damage per second , %d seconds", radius, damage * 30 / DAMAGE_PERIOD, duration / 30 ))
 				end
-				
+
 				cY = cY - fontSize
 			end
 		end
-		
+
 		-- background
 		glColor(WG["background_opacity_custom"])
 
@@ -852,13 +850,13 @@ function widget:DrawScreen()
 		local uDef = uDefs[uDefID]
 		local uMaxHp = uDef.health
 		local uTeam = Spring.GetMyTeamID()
-		
+
 		maxWidth = 0
 
 		cX = mx + xOffset
 		cY = my + yOffset
 		cYstart = cY
-		
+
 		local titleFontSize = fontSize*1.12
 		local cornersize = ceil(bgpadding*0.21)
 
@@ -870,9 +868,9 @@ function widget:DrawScreen()
 		------------------------------------------------------------------------------------
 		-- Generic information, cost, move, class
 		------------------------------------------------------------------------------------
-		
+
 		--DrawText('Height:', uDefs[spGetUnitDefID(uID)].height)
-					
+
 		DrawText("Cost:", format(metalColor .. '%d' .. white .. ' / ' ..
 								energyColor .. '%d' .. white .. ' / ' ..
 								buildColor .. '%d', uDef.metalCost, uDef.energyCost, uDef.buildTime)
@@ -881,7 +879,7 @@ function widget:DrawScreen()
 		if not (uDef.isBuilding or uDef.isFactory) then
 				DrawText("Move:", format("%.1f / %.1f / %.0f (Speed / Accel / Turn)", uDef.speed, 900 * uDef.maxAcc, simSpeed * uDef.turnRate * (180 / 32767)))
 		end
-		
+
 		-- Buildoptions
 		cY = cY - fontSize
 
@@ -891,7 +889,7 @@ function widget:DrawScreen()
 			buildColor .. 'Build')
 			cY = cY - fontSize
 			for i=1, #uDef.buildOptions do
-    			buildDefID = uDef.buildOptions[i] 
+    			buildDefID = uDef.buildOptions[i]
     			local bDef = uDefs[buildDefID]
     			DrawText(bDef.humanName, format(metalColor .. '%d' .. white .. ' / ' ..
 				energyColor .. '%d' .. white .. ' / ' ..
@@ -901,7 +899,7 @@ function widget:DrawScreen()
 
 		cY = cY - fontSize
 
-		if uDef.buildSpeed > 0 then	
+		if uDef.buildSpeed > 0 then
 			DrawText('Build:', yellow .. uDef.buildSpeed)
 		end
 		cY = cY - fontSize
@@ -936,8 +934,8 @@ function widget:DrawScreen()
 		DrawText("Armor:", "class " .. Game.armorTypes[uDef.armorType or 0] or '???')
 		local maxHP = uDef.health
 		DrawText("Open:", format("maxHP: %d", maxHP) )
-		DrawText("Closed:", format(" +%d%%, maxHP: %d", (1/uDef.armoredMultiple-1) *100,maxHP/uDef.armoredMultiple)) 
-			
+		DrawText("Closed:", format(" +%d%%, maxHP: %d", (1/uDef.armoredMultiple-1) *100,maxHP/uDef.armoredMultiple))
+
 		cY = cY - fontSize
 
 		------------------------------------------------------------------------------------
@@ -962,7 +960,7 @@ function widget:DrawScreen()
 				weaponNums[#wepsCompact] = i
 			end
 		end
-		
+
 		local selfDWeaponID = WeaponDefNames[uDef.selfDExplosion].id
 		local deathWeaponID = WeaponDefNames[uDef.deathExplosion].id
 		local selfDWeaponIndex
@@ -1006,7 +1004,7 @@ function widget:DrawScreen()
 					DrawText("Weap:", wpnName)
 				end
 				DrawText("Info:", format("%d range, %d aoe, %d%% edge", uWep.range, uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness))
-			
+
 				if uWep.coverageRange and uWep.stockpile then
 				  	DrawText("Anti:", format("%d Interceptor Range", uWep.coverageRange))
 				end
@@ -1070,7 +1068,7 @@ function widget:DrawScreen()
 					-- They take the correct amount of time
 					-- They drain ((simSpeed+2)/simSpeed) times more resources than they should (And the listed drain is real, having lower income than listed drain WILL stall you)
 					local drainAdjust = uWep.stockpile and (simSpeed+2)/simSpeed or 1
-					
+
 					DrawText('Cost:', format(metalColor .. '%d' .. white .. ', ' ..
 											 energyColor .. '%d' .. white .. ' = ' ..
 											 metalColor .. '-%d' .. white .. ', ' ..
@@ -1080,14 +1078,14 @@ function widget:DrawScreen()
 											 drainAdjust * uWep.metalCost / oRld,
 											 drainAdjust * uWep.energyCost / oRld))
 				end
-			
+
 				if (weaponInfo[wDefId]) then
 					local radius = weaponInfo[wDefId].radius
 					local damage = weaponInfo[wDefId].damage
 					local duration = weaponInfo[wDefId].duration
 					DrawText("Area Dmg:", format(white .. "%d aoe, %d max damage per second , %d seconds", radius, damage * 30 / DAMAGE_PERIOD, duration / 30 ))
 				end
-					
+
 				cY = cY - fontSize
 			end
 		end
@@ -1169,7 +1167,7 @@ function widget:DrawWorld()
     	for i, keys in pairs(dummyRange) do
     		local color = {1, 0, 0, darkOpacity}
     		--Spring.Echo(currentMod,keys.name,keys.defID,keys.index,keys.surface,keys.air)
-    		if modConfig[currentMod]["unitList"][keys.name] then 
+    		if modConfig[currentMod]["unitList"][keys.name] then
     			local weapontype = modConfig[currentMod]["unitList"][keys.name]["weapons"][keys.index]
 				if ( weapontype == 1 or weapontype == 4 ) then	 -- show combo units with ground-dps-colors
 					color = colorConfig["ally"]["ground"]["min"]

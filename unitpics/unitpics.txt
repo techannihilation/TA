@@ -940,7 +940,6 @@ tllsnakeneck.dds
 tllsniper.dds
 tllsoftshell.dds
 tllsolar.dds
-tllsolarns.dds
 tllsonar.dds
 tllsonpl.dds
 tllspy.dds

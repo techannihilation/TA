@@ -22,7 +22,6 @@ local noClosedE = {
     [UnitDefNames.armsolar.id] = true,
     [UnitDefNames.crnns.id] = true,
     [UnitDefNames.tllsolar.id] = true,
-    [UnitDefNames.tllsolarns.id] = true,
     [UnitDefNames.tlladvsolar.id] = true,
     [UnitDefNames.talon_solar.id] = true,
 }
