@@ -16,7 +16,7 @@ return {
 		soundhit = "xplomed4",
 		soundstart = "misicbm1",
 		damage = {
-			commanders = 3500,
+			commanders = 2500,
 			default = 10000,
 		},
 	},
