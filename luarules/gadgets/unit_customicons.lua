@@ -93,15 +93,23 @@ function gadget:Initialize()
   Spring.AddUnitIcon("rc.user", "icons/rc.png", 1.4)
   Spring.AddUnitIcon("rc1.user", "icons/rc.png", 2)
   Spring.AddUnitIcon("t4ships.user", "icons/t4ships.png", 5)
-  Spring.AddUnitIcon("bships.user", "icons/bship.png", 1.7)
+  Spring.AddUnitIcon("bships.user", "icons/bship.png", 2.5)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png", 3.6)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png", 0.65)
   Spring.AddUnitIcon("blank.user", "icons/sphere.png", 0.0)
   Spring.AddUnitIcon("mech.user", "icons/mech.tga", 3.60)
   Spring.AddUnitIcon("med_mech.user", "icons/mech.tga", 3.0)
   Spring.AddUnitIcon("small_mech.user", "icons/mech.tga", 2.5)
-  Spring.AddUnitIcon("spider.user", "icons/spider.tga", 3)
-  Spring.AddUnitIcon("lilith.user", "icons/spider.tga", 4)
+  Spring.AddUnitIcon("fatshrew.user", "icons/fatshrew.png", 3)
+  Spring.AddUnitIcon("monkeylord.user", "icons/monkeylord.png", 4)
+  Spring.AddUnitIcon("corlilith.user", "icons/corlilith.png", 6)
+  Spring.AddUnitIcon("armolympus.user", "icons/armolympus.png", 3)
+  Spring.AddUnitIcon("exoarm.user", "icons/exoarm.png", 3)
+  Spring.AddUnitIcon("talon_mcv.user", "icons/talon_mcv.png", 3)
+  Spring.AddUnitIcon("talon_grenat.user", "icons/talon_grenat.png", 3)
+  Spring.AddUnitIcon("tllmcv.user", "icons/tllmcv.png", 3)
+  Spring.AddUnitIcon("tllcolossus.user", "icons/tllcolossus.png", 4)
+  Spring.AddUnitIcon("tllsaurus.user", "icons/tllsaurus.png", 4)
 
 
   -- Setup the unitdef icons
@@ -148,11 +156,33 @@ function gadget:Initialize()
 	  elseif (ud.name=="armnanotc3") or (ud.name=="cornanotc3") or (ud.name=="tllnanotc3") or (ud.name=="armfnanotc3") or (ud.name=="corfnanotc3") or (ud.name=="tllfnanotc3") then
           Spring.SetUnitDefIcon(udid, "square_+3.user")
 --Spider
-    elseif (ud.name=="cormkl") or (ud.name=="monkeylord") or (ud.name=="fatshrew") or (ud.name=="corarbritator") then
-          Spring.SetUnitDefIcon(udid, "spider.user")
---Spider
     elseif (ud.name=="corlilith") then
-          Spring.SetUnitDefIcon(udid, "lilith.user")
+          Spring.SetUnitDefIcon(udid, "corlilith.user")
+    elseif (ud.name=="fatshrew") then
+          Spring.SetUnitDefIcon(udid, "fatshrew.user")
+    elseif (ud.name=="monkeylord") then
+          Spring.SetUnitDefIcon(udid, "monkeylord.user")
+--Olympus
+    elseif (ud.name=="armolympus") then
+          Spring.SetUnitDefIcon(udid, "armolympus.user")
+--Exoarm
+    elseif (ud.name=="exoarm") then
+          Spring.SetUnitDefIcon(udid, "exoarm.user")
+--tllsaurus
+    elseif (ud.name=="tllsaurus") then
+          Spring.SetUnitDefIcon(udid, "tllsaurus.user")
+--tllcolossus
+    elseif (ud.name=="tllcolossus") then
+          Spring.SetUnitDefIcon(udid, "tllcolossus.user")
+--tllmcv
+    elseif (ud.name=="tllmcv") then
+          Spring.SetUnitDefIcon(udid, "tllmcv.user")
+--talon_mcv
+    elseif (ud.name=="talon_mcv") then
+          Spring.SetUnitDefIcon(udid, "talon_mcv.user")
+--talon_grenat
+    elseif (ud.name=="talon_grenat") then
+          Spring.SetUnitDefIcon(udid, "talon_grenat.user")
 --armcom
       elseif (ud.name=="armcom") or (ud.name=="armcom1") or (ud.name=="armcom4") or (ud.name=="armcom_fusion") or (ud.name=="armcom5")or (ud.name=="armcom5") or (ud.name=="armcom6") or (ud.name=="armcom7") then
         Spring.SetUnitDefIcon(udid, "armcom.user")
@@ -175,10 +205,10 @@ function gadget:Initialize()
       elseif (ud.name=="corkarg") or (ud.name=="arm_furie") or (ud.name=="armbanth") then
         Spring.SetUnitDefIcon(udid, "small_mech.user")
 --med mech
-      elseif (ud.name=="armorco") or (ud.name=="gorg") or (ud.name=="cordem") then
+      elseif (ud.name=="armorco") then
         Spring.SetUnitDefIcon(udid, "med_mech.user")
 --t4 mechs
-      elseif (ud.name=="corkarg1") or (ud.name=="talon_mythril") or (ud.name=="armraz1") or (ud.name=="exoarm") or (ud.name=="armraptor") or (ud.name=="armbanth1") or (ud.name=="tllcolossus") or (ud.name=="tllsaurus") or (ud.name=="tllmcv") or (ud.name=="talon_mcv") then
+      elseif (ud.name=="talon_mythril") or (ud.name=="armraptor") or (ud.name=="armbanth1") then
         Spring.SetUnitDefIcon(udid, "mech.user")
 --RC
       elseif (ud.name=="armrech1") or (ud.name=="armrech2") or (ud.name=="armrech3")
@@ -188,10 +218,10 @@ function gadget:Initialize()
       elseif (ud.name=="correch4") or (ud.name=="armrech4") then
         Spring.SetUnitDefIcon(udid, "rc1.user")
 --broadside etc
-      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="corvaliant") or (ud.name=="tllzeppelin") or (ud.name=="tllbarbarus") or (ud.name=="talon_independence") or (ud.name=="talon_skynet") then
+      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllzeppelin") or (ud.name=="tllbarbarus") or (ud.name=="talon_independence") or (ud.name=="talon_skynet") then
         Spring.SetUnitDefIcon(udid, "t4ships.user")
 --battleships
-      elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") then
+      elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") or (ud.name=="talon_imperator") then
         Spring.SetUnitDefIcon(udid, "bships.user")
 --uber ships
 	 elseif (ud.name=="corblackhy") or (ud.name=="cortyrnt") or (ud.name=="aseadragon")
@@ -218,7 +248,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "hemi-up.user")
 -- metal extractors and makers
       elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or
-	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armckmakr") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or
+	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armckmakr") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or (ud.name=="ametalmakerlvl3") or
 	(ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="corhmakr") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
 	or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv") then
         Spring.SetUnitDefIcon(udid, "m.user")
