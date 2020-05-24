@@ -1,6 +1,7 @@
 return {
 	tllhopomis = {
 		acceleration = 0.05,
+		activatewhenbuilt = true,
 		airsightdistance = 1000,
 		brakerate = 0.3,
 		buildcostenergy = 9887,

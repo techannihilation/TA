@@ -943,7 +943,6 @@ tllsolar.dds
 tllsonar.dds
 tllsonpl.dds
 tllspy.dds
-tllsquid.dds
 tllsr.dds
 tllsting.dds
 tllstuner.dds

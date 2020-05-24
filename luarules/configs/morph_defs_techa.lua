@@ -1105,6 +1105,11 @@ local morphDefs = {
 		time = 120,
 		xp = 0.10,
 	},
+	armorco = {
+		into = 'exoarm',
+		time = 120,
+		xp = 0.10,
+	},
 	armbanth = {
 		into = 'armbanth1',
 		time = 120,
@@ -1343,32 +1348,32 @@ local morphDefs = {
 	},
 	coradon = {
 		into = 'corhcrus',
-	  	time = 30,
-		xp = 0.20,
+	  time = 30,
+		xp = 0.10,
 	},
 	armtem = {
 		into = 'armhcrus',
-	  	time = 90,
-		xp = 0.35,
+	  time = 60,
+		xp = 0.10,
 	},
 	tllhplasma = {
 		into = 'tllhcrus',
-	  	time = 60,
-		xp = 0.35,
+	  time = 30,
+		xp = 0.30,
 	},
 	tllsalamander = {
 		into = 'tllcenturion',
-	  	time = 60,
-		xp = 0.35,
+	  time = 45,
+		xp = 0.30,
 	},
 	tllcenturion = {
 		into = 'tllinsulator',
-	  	time = 60,
-		xp = 0.35,
+	  time = 60,
+		xp = 0.10,
 	},
 	tllshaker = {
 		into = 'tllleopard',
-	  	time = 60,
+	  time = 60,
 		xp = 0.35,
 	},
 	talon_sheatiped  = {
@@ -1383,21 +1388,21 @@ local morphDefs = {
 	},
 	talon_lupa  = {
 		into = 'talon_armadillo',
-	  	time = 40,
+	  time = 40,
 		xp = 0.40,
 	},
 	talon_whinestone  = {
 		into = 'talon_sapphire',
-	  	time = 40,
+	  time = 40,
 		xp = 0.40,
 	},
 	talon_mcv  = {
 		into = 'talon_mcv1',
-	  	time = 12,
+	  time = 12,
 	},
 	talon_mcv1  = {
 		into = 'talon_mcv',
-	  	time = 12,
+	  time = 12,
 	},
 	talon_jewel  = {
 		into = 'talon_mrtn',
@@ -1407,7 +1412,7 @@ local morphDefs = {
 	cormkl = {
 		into = 'corlilith',
 		time = 180,
-		xp = 0.15,
+		xp = 0.10,
 	},
 	corroy = {
 		into = 'corcrus',
@@ -1514,12 +1519,22 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	armkam = {
-		into = 'corape',
+		into = 'armbrawl',
 		time = 30,
+		xp = 0.20,
+	},
+	armbrawl = {
+		into = 'armpers',
+		time = 45,
 		xp = 0.20,
 	},
 	armfig = {
 		into = 'armhawk',
+		time = 30,
+		xp = 0.40,
+	},
+	armhawk = {
+		into = 'airwolf3g',
 		time = 30,
 		xp = 0.40,
 	},
@@ -1528,9 +1543,19 @@ local morphDefs = {
 		time = 30,
 		xp = 0.60,
 	},
+	armpnix = {
+		into = 'armorion',
+		time = 45,
+		xp = 0.60,
+	},
 	tllcop1 = {
 		into = 'tllcopter',
 		time = 30,
+		xp = 0.20,
+	},
+	tllcopter = {
+		into = 'tllnuada',
+		time = 45,
 		xp = 0.20,
 	},
 	tllbomber = {
@@ -1538,8 +1563,18 @@ local morphDefs = {
 		time = 30,
 		xp = 0.60,
 	},
+	tllabomber = {
+		into = 'tllanhur',
+		time = 45,
+		xp = 0.60,
+	},
 	tllfight = {
 		into = 'tlladvfight',
+		time = 30,
+		xp = 0.40,
+	},
+	tlladvfight = {
+		into = 'tllshu',
 		time = 30,
 		xp = 0.40,
 	},
@@ -1548,14 +1583,34 @@ local morphDefs = {
 		time = 30,
 		xp = 0.40,
 	},
+	corvamp = {
+		into = 'shrike',
+		time = 30,
+		xp = 0.40,
+	},
 	corshad = {
 		into = 'corhurc',
 		time = 30,
 		xp = 0.60,
 	},
+	corhurc = {
+		into = 'coreclipse',
+		time = 45,
+		xp = 0.60,
+	},
+	corape = {
+		into = 'blackdawn',
+		time = 45,
+		xp = 0.20,
+	},
 	talon_drone = {
 		into = 'talon_vulture',
 		time = 30,
+		xp = 0.20,
+	},
+	talon_vulture = {
+		into = 'talon_pampa',
+		time = 45,
 		xp = 0.20,
 	},
 	talon_token = {
@@ -1563,9 +1618,19 @@ local morphDefs = {
 		time = 30,
 		xp = 0.40,
 	},
+	talon_echelon = {
+		into = 'talon_hornet',
+		time = 30,
+		xp = 0.40,
+	},
 	talon_shade = {
 		into = 'talon_eclipse',
 		time = 30,
+		xp = 0.40,
+	},
+	talon_eclipse = {
+		into = 'talon_handgod',
+		time = 45,
 		xp = 0.40,
 	},
 }

@@ -165,14 +165,14 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	turn spin1 to z-axis <0.> now;
-	turn spin2 to z-axis <0.> now;
+	//turn spin1 to z-axis <0.> now;
+	//turn spin2 to z-axis <0.> now;
 	
 	if( gun_1 == 0 )
 	{
 		emit-sfx 1024 + 0 from flare1;
 		move barrel1a to z-axis [-1.000000] now;
-		sleep 150;
+		sleep 25;
 		move barrel1a to z-axis [0.000000] speed [3.000000];
 		turn spin1 to z-axis <120.> speed <240.000000>;
 	
@@ -181,13 +181,44 @@ FirePrimary()
 	{
 		emit-sfx 1024 + 0 from flare2;
 		move barrel2a to z-axis [-1.000000] now;
-		sleep 150;
+		sleep 25;
 		move barrel2a to z-axis [0.000000] speed [3.000000];
-		turn spin2 to z-axis <120.> speed <260.000000>;
+		turn spin2 to z-axis <120.> speed <240.000000>;
 	}
-	
-	++gun_1;
 	if( gun_1 == 2 )
+	{
+		emit-sfx 1024 + 0 from flare1;
+		move barrel1b to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel1b to z-axis [0.000000] speed [3.000000];
+		turn spin1 to z-axis <240.> speed <240.000000>;
+	}
+	if( gun_1 == 3 )
+	{
+		emit-sfx 1024 + 0 from flare2;
+		move barrel2b to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel2b to z-axis [0.000000] speed [3.000000];
+		turn spin2 to z-axis <240.> speed <240.000000>;
+	}
+	if( gun_1 == 4 )
+	{
+		emit-sfx 1024 + 0 from flare1;
+		move barrel1c to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel1c to z-axis [0.000000] speed [3.000000];
+		turn spin1 to z-axis <0.> speed <240.000000>;
+	}
+	if( gun_1 == 5 )
+	{
+		emit-sfx 1024 + 0 from flare2;
+		move barrel2c to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel2c to z-axis [0.000000] speed [3.000000];
+		turn spin2 to z-axis <0.> speed <260.000000>;
+	}
+	++gun_1;
+	if( gun_1 == 6 )
 	{
 		gun_1 = 0;	
 	}
@@ -201,11 +232,11 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 0 )
+	if( gun_1 == 0 OR gun_1 == 2 OR gun_1 == 4)
 	{
 		piecenum = flare1;
 	}
-	if( gun_1 == 1 )
+	if( gun_1 == 1 OR gun_1 == 3 OR gun_1 == 5 )
 	{
 		piecenum = flare2;
 	}

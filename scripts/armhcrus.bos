@@ -10,8 +10,9 @@ piece  base, body, rk_tur1, rk_slv1, rk_flare1a, rk_flare1b, rk_flare1c, rk_tur2
 	   rk_tur3, rk_slv3, rk_flare3a, rk_flare3b, rk_flare3c, rk_tur4, rk_slv4, rk_flare4a, rk_flare4b, rk_flare4c, sides, 
 	   wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8,
 	   turret1, sleeve1a, gun1a, flare1a, sleeve1b, gun1b, flare1b, 
-	   turret2, sleeve2, barrel2a, flare2a, barrel2b, flare2b, barrel2c, flare2c,
-	   turret3, sleeve3, barrel3a, flare3a, barrel3b, flare3b, barrel3c, flare3c,
+	   turret2, sleeve21, sleeve22, load21, load22, flare21, flare22, barrel21a, barrel21b, barrel21c, barrel22a, barrel22b, barrel22c,
+	   turret3, sleeve31, sleeve32, load31, load32, flare31, flare32, barrel31a, barrel31b, barrel31c, barrel32a, barrel32b, barrel32c,
+	   spin21, spin22, spin31, spin32,
 	   turret4, sleeve4, barrel4, flare4, turret5, sleeve5, barrel5, flare5;
 
 static-var  Static_Var_1, restore_delay, salvo_1, salvo_2, gun_1, gun_2, gun_3, gun_4, minigun;
@@ -26,8 +27,8 @@ static-var  Static_Var_1, restore_delay, salvo_1, salvo_2, gun_1, gun_2, gun_3, 
 #define SIG_AIM_7			128
 #define SIG_AIM_8			256
 #define SIG_AIM_9			512
-#define SIG_R				2048
-#define SIG_MOVE			4092
+#define SIG_R				1024
+#define SIG_MOVE			2046
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -144,12 +145,10 @@ Create()
 	
 	hide flare1a;
 	hide flare1b;
-	hide flare2a;
-	hide flare2b;
-	hide flare2c;
-	hide flare3a;
-	hide flare3b;
-	hide flare3c;
+	hide flare21;
+	hide flare22;
+	hide flare31;
+	hide flare32;
 	hide flare4;
 	hide flare5;
 	
@@ -157,6 +156,7 @@ Create()
 	gun_2 = 0;
 	gun_3 = 0;
 	gun_4 = 0;
+	
 	minigun = 0;
 	salvo_1 = 0;
 	salvo_2 = 0;
@@ -169,7 +169,7 @@ Restore()
 {
 	signal SIG_R;
 	set-signal-mask SIG_R;
-	sleep 5000;
+	sleep 3000;
 	turn rk_tur1 to y-axis <0> speed <80.000000>;
 	turn rk_slv1 to x-axis <0> speed <60.000000>;
 	turn rk_tur2 to y-axis <0> speed <80.000000>;
@@ -179,18 +179,21 @@ Restore()
 	turn rk_tur4 to y-axis <0> speed <80.000000>;
 	turn rk_slv4 to x-axis <0> speed <60.000000>;
 	
-	turn turret1 to y-axis <0> speed <30.000000>;
-	turn sleeve1a to x-axis <0> speed <20.000000>;
-	turn sleeve1b to x-axis <0> speed <20.000000>;
-	
 	turn turret2 to y-axis <0> speed <60.000000>;
-	turn sleeve2 to x-axis <0> speed <60.000000>;
+	turn sleeve21 to x-axis <0> speed <60.000000>;
+	turn sleeve22 to x-axis <0> speed <60.000000>;
 	turn turret3 to y-axis <0> speed <60.000000>;
-	turn sleeve3 to x-axis <0> speed <60.000000>;
+	turn sleeve31 to x-axis <0> speed <60.000000>;
+	turn sleeve32 to x-axis <0> speed <60.000000>;
 	turn turret4 to y-axis <0> speed <100.000000>;
 	turn sleeve4 to x-axis <0> speed <60.000000>;
 	turn turret5 to y-axis <0> speed <100.000000>;
 	turn sleeve5 to x-axis <0> speed <60.000000>;
+	
+	sleep 2000;
+	turn turret1 to y-axis <0> speed <30.000000>;
+	turn sleeve1a to x-axis <0> speed <20.000000>;
+	turn sleeve1b to x-axis <0> speed <20.000000>;
 }
 
 
@@ -255,10 +258,12 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn turret2 to y-axis heading speed <60.000000>;
-	turn sleeve2 to x-axis <0.000000> - pitch speed <50.000000>;
+	turn turret2 to y-axis heading speed <100.000000>;
+	turn sleeve21 to x-axis <0.000000> - pitch speed <50.000000>;
+	turn sleeve22 to x-axis <0.000000> - pitch speed <50.000000>;
 	wait-for-turn turret2 around y-axis;
-	wait-for-turn sleeve2 around x-axis;
+	wait-for-turn sleeve21 around x-axis;
+	wait-for-turn sleeve22 around x-axis;
 	Start-script Restore();
 	return (1);
 }
@@ -267,30 +272,60 @@ FireSecondary()
 {
 	if( salvo_1 == 0 )
 	{
-		emit-sfx 1024 + 0 from flare2a;
-		move barrel2a to z-axis [-2.000000] now;
-		sleep 150;
-		move barrel2a to z-axis [0.000000] speed [4.000000];
+		emit-sfx 1024 + 0 from flare21;
+		move barrel21a to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel21a to z-axis [0.000000] speed [3.000000];
+		turn spin21 to z-axis <120.> speed <240.000000>;
+	
 	}
 	if( salvo_1 == 1 )
 	{
-		emit-sfx 1024 + 0 from flare2b;
-		move barrel2b to z-axis [-2.000000] now;
-		sleep 150;
-		move barrel2b to z-axis [0.000000] speed [4.000000];
+		emit-sfx 1024 + 0 from flare22;
+		move barrel22a to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel22a to z-axis [0.000000] speed [3.000000];
+		turn spin22 to z-axis <120.> speed <240.000000>;
 	}
 	if( salvo_1 == 2 )
 	{
-		emit-sfx 1024 + 0 from flare2c;
-		move barrel2c to z-axis [-2.000000] now;
-		sleep 150;
-		move barrel2c to z-axis [0.000000] speed [4.000000];
+		emit-sfx 1024 + 0 from flare22;
+		move barrel21b to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel21b to z-axis [0.000000] speed [3.000000];
+		turn spin21 to z-axis <240.> speed <240.000000>;
 	}
-	++salvo_1;
 	if( salvo_1 == 3 )
 	{
-		salvo_1 = 0;
-	}	
+		emit-sfx 1024 + 0 from flare22;
+		move barrel22b to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel22b to z-axis [0.000000] speed [3.000000];
+		turn spin22 to z-axis <240.> speed <240.000000>;
+	}
+	if( salvo_1 == 4 )
+	{
+		emit-sfx 1024 + 0 from flare21;
+		move barrel21c to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel21c to z-axis [0.000000] speed [3.000000];
+		turn spin21 to z-axis <0.> speed <240.000000>;
+	}
+	if( salvo_1 == 5 )
+	{
+		emit-sfx 1024 + 0 from flare22;
+		move barrel22c to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel22c to z-axis [0.000000] speed [3.000000];
+		turn spin22 to z-axis <0.> speed <260.000000>;
+	}
+	
+	++salvo_1;
+	if( salvo_1 == 6 )
+	{
+		salvo_1 = 0;	
+	}
+
 }
 
 AimFromSecondary(piecenum)
@@ -302,15 +337,11 @@ QuerySecondary(piecenum)
 {
 	if( salvo_1 == 0 )
 	{
-		piecenum = flare2a;
+		piecenum = flare21;
 	}
 	if( salvo_1 == 1 )
 	{
-		piecenum = flare2b;
-	}
-	if( salvo_1 == 2 )
-	{
-		piecenum = flare2c;
+		piecenum = flare22;
 	}
 }
 
@@ -319,9 +350,11 @@ AimTertiary(heading, pitch)
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
 	turn turret3 to y-axis heading speed <60.000000>;
-	turn sleeve3 to x-axis <0.000000> - pitch speed <50.000000>;
+	turn sleeve31 to x-axis <0.000000> - pitch speed <50.000000>;
+	turn sleeve32 to x-axis <0.000000> - pitch speed <50.000000>;
 	wait-for-turn turret3 around y-axis;
-	wait-for-turn sleeve3 around x-axis;
+	wait-for-turn sleeve31 around x-axis;
+	wait-for-turn sleeve32 around x-axis;
 	Start-script Restore();
 	return (1);
 }
@@ -330,30 +363,59 @@ FireTertiary()
 {
 	if( salvo_2 == 0 )
 	{
-		emit-sfx 1024 + 0 from flare3a;
-		move barrel3a to z-axis [-2.000000] now;
-		sleep 150;
-		move barrel3a to z-axis [0.000000] speed [4.000000];
+		emit-sfx 1024 + 0 from flare31;
+		move barrel31a to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel31a to z-axis [0.000000] speed [3.000000];
+		turn spin31 to z-axis <120.> speed <240.000000>;
+	
 	}
 	if( salvo_2 == 1 )
 	{
-		emit-sfx 1024 + 0 from flare3b;
-		move barrel3b to z-axis [-2.000000] now;
-		sleep 150;
-		move barrel3b to z-axis [0.000000] speed [4.000000];
+		emit-sfx 1024 + 0 from flare32;
+		move barrel32a to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel32a to z-axis [0.000000] speed [3.000000];
+		turn spin32 to z-axis <120.> speed <240.000000>;
 	}
 	if( salvo_2 == 2 )
 	{
-		emit-sfx 1024 + 0 from flare3c;
-		move barrel3c to z-axis [-2.000000] now;
-		sleep 150;
-		move barrel3c to z-axis [0.000000] speed [4.000000];
+		emit-sfx 1024 + 0 from flare32;
+		move barrel31b to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel31b to z-axis [0.000000] speed [3.000000];
+		turn spin31 to z-axis <240.> speed <240.000000>;
 	}
-	++salvo_2;
 	if( salvo_2 == 3 )
 	{
-		salvo_2 = 0;
-	}	
+		emit-sfx 1024 + 0 from flare32;
+		move barrel32b to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel32b to z-axis [0.000000] speed [3.000000];
+		turn spin32 to z-axis <240.> speed <240.000000>;
+	}
+	if( salvo_2 == 4 )
+	{
+		emit-sfx 1024 + 0 from flare31;
+		move barrel31c to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel31c to z-axis [0.000000] speed [3.000000];
+		turn spin31 to z-axis <0.> speed <240.000000>;
+	}
+	if( salvo_2 == 5 )
+	{
+		emit-sfx 1024 + 0 from flare32;
+		move barrel32c to z-axis [-1.000000] now;
+		sleep 25;
+		move barrel32c to z-axis [0.000000] speed [3.000000];
+		turn spin32 to z-axis <0.> speed <260.000000>;
+	}
+	
+	++salvo_2;
+	if( salvo_2 == 6 )
+	{
+		salvo_2 = 0;	
+	}
 }
 
 AimFromTertiary(piecenum)
@@ -365,15 +427,11 @@ QueryTertiary(piecenum)
 {
 	if( salvo_2 == 0 )
 	{
-		piecenum = flare3a;
+		piecenum = flare31;
 	}
 	if( salvo_2 == 1 )
 	{
-		piecenum = flare3b;
-	}
-	if( salvo_2 == 2 )
-	{
-		piecenum = flare3c;
+		piecenum = flare32;
 	}
 }
 

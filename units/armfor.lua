@@ -12,7 +12,7 @@ return {
 		buildpic = "armfor.dds",
 		buildtime = 200000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
-		description = "Advanced Geothermical reactor",
+		description = "Unstable Geothermical Reactor",
 		energymake = 5000,
 		energystorage = 5000,
 		energyuse = 0,

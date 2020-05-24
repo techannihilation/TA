@@ -21,7 +21,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Kbot Biomechanics",
-		explodeas = "ARM_BERTHACANNONEMP1",
+		explodeas = "BANTHA_NUKE",
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
@@ -54,7 +54,7 @@ return {
 		unitname = "tllcrawler",
 		customparams = {
 			buildpic = "tllcrawler.dds",
-			faction = "ARM",
+			faction = "TLL",
 		},
 		featuredefs = {
 			dead = {
@@ -175,7 +175,7 @@ return {
 				name = "ATAD",
 				noselfdamage = true,
 				range = 1000,
-				reloadtime = 8,
+				reloadtime = 4,
 				rgbcolor = "0 0 1",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
@@ -184,7 +184,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.3,
 				thickness = 5.5,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
@@ -193,8 +192,8 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 1000,
-					default = 7600,
+					commanders = 1200,
+					default = 3800,
 					subs = 5,
 				},
 			},

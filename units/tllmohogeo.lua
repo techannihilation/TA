@@ -15,7 +15,7 @@ return {
 		corpse = "tllmohogeo_dead",
 		description = "Produces Energy",
 		energymake = 2500,
-		energystorage = 4000,
+		energystorage = 2500,
 		explodeas = "NUCLEAR_MISSILE",
 		footprintx = 4,
 		footprintz = 4,

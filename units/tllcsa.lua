@@ -74,7 +74,7 @@ return {
 			[14] = "tllsubpen",
 			[15] = "tllaspns",
 			[16] = "tlldtns",
-			[17] = "tlluwjam",
+			--[17] = "tlluwjam",
 			[18] = "tllfgate",
 		},
 		customparams = {

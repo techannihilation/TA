@@ -30,7 +30,7 @@ local unitSet = {}
 local unitArray = {
 
   --comms
-  
+
   --Core
   "corcom",
   "corcom1",
@@ -40,7 +40,7 @@ local unitArray = {
   "corcom6",
   "corcom7",
 
---Arm 
+--Arm
   "armcom",
   "armcom1",
   "armcom4",
@@ -72,32 +72,32 @@ local unitArray = {
   "armaak",
   "corcrash",
   "coraak",
-  
+
   "armsam",
   "armyork",
   "cormist",
   "corsent",
   "ahermes",
   "corjeag",
-  
+
   "armah",
   "corah",
   "armmls",
   "cormls",
   "armaas",
   "corarch",
-  
+
   "tllaak",
   "tllsting",
   "tllhovermissile",
   "tllfirestarter",
   "tllhoplit",
-  
+
   --arty
   "tawf013",
   "armham",
   "corwolv",
-  
+
   "armmart",
   "armmerl",
   "cormart",
@@ -105,14 +105,14 @@ local unitArray = {
   "trem",
   "armsnipe",
   "corhrk",
-  
+
   "armmh",
   "cormh",
   "armroy",
   "corroy",
   "tawf009",
   "corssub",
-  
+
   "armmship",
   "cormship",
   "armbats",
@@ -120,21 +120,21 @@ local unitArray = {
   "armbc",
   "aseadragon",
   "corblackhy",
-  
+
   "armraven",
   "armraven1",
   "armshock",
   "armshock1",
-  
+
   --skirmishers/fire support
   "armjanus",
   "armrock",
   "corstorm",
-  
+
   "tawf114",
   "armmanni",
   "cormort",
-  
+
   --scouts
   "armflea",
   "armfav",
@@ -142,7 +142,7 @@ local unitArray = {
   "armspy",
   "tllbug",
   "tllgladius",
-  
+
   "armpt",
   "corpt",
   "tllotter",
@@ -175,46 +175,45 @@ local unitArray = {
   "talon_shade",
   "talon_handgod",
   "talon_eclipse",
-  
+
   --shields/jammers/radars
   "armjam",
   "armaser",
   "armjaspd",
   "armsjam",
-  
+
   "coreter",
   "concealer",
   "corspec",
   "corsjam",
   "blotter",
   
-  "tllsquid",
   "tllobscurer",
   "tllmixer",
   "tllconfuser",
-  
-   
+
+
   "armseer",
   "r75-v",
   "armmark",
-  
+
   "watcher",
   "corvrad",
   "corvoyr",
-  
+
   "tlldivine",
   "tllobserver",
-  
-  
+
+
   --antinukes
   "armscab",
   "armscab1",
   "armcarry",
-  
+
   "cormabm",
   "cormabm1",
   "corcarry",
-  
+
   "tllcarry",
   "tllturtle",
   "tllturtle1",
@@ -222,9 +221,9 @@ local unitArray = {
   "talon_damascus",
   "talon_damascus1",
   "talon_nexus",
-  
+
   --misc
-  
+
 }
 
 
@@ -251,10 +250,9 @@ function widget:UnitFromFactory(unitID, unitDefID, unitTeam)
   if ((ud ~= nil) and (unitTeam == SpGetMyTeamID())) then
     if (unitSet[ud.name]) then
       SpGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 0 }, {})
-    end 
+    end
   end
 end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-

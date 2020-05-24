@@ -102,15 +102,17 @@ function gadget:Initialize()
   Spring.AddUnitIcon("small_mech.user", "icons/mech.tga", 2.5)
   Spring.AddUnitIcon("fatshrew.user", "icons/fatshrew.png", 3)
   Spring.AddUnitIcon("monkeylord.user", "icons/monkeylord.png", 4)
+  Spring.AddUnitIcon("cormkl.user", "icons/cormkl.png", 5)
   Spring.AddUnitIcon("corlilith.user", "icons/corlilith.png", 6)
-  Spring.AddUnitIcon("armolympus.user", "icons/armolympus.png", 3)
-  Spring.AddUnitIcon("exoarm.user", "icons/exoarm.png", 3)
+  Spring.AddUnitIcon("armolympus.user", "icons/armolympus.png", 4)
+  Spring.AddUnitIcon("exoarm.user", "icons/exoarm.png", 4)
   Spring.AddUnitIcon("talon_mcv.user", "icons/talon_mcv.png", 3)
-  Spring.AddUnitIcon("talon_grenat.user", "icons/talon_grenat.png", 3)
-  Spring.AddUnitIcon("tllmcv.user", "icons/tllmcv.png", 3)
+  Spring.AddUnitIcon("talon_grenat.user", "icons/talon_grenat.png", 4)
+  Spring.AddUnitIcon("tllmcv.user", "icons/tllmcv.png", 4)
   Spring.AddUnitIcon("tllcolossus.user", "icons/tllcolossus.png", 4)
   Spring.AddUnitIcon("tllsaurus.user", "icons/tllsaurus.png", 4)
-
+  Spring.AddUnitIcon("gorg.user", "icons/gorg.png", 3)
+  Spring.AddUnitIcon("arm_furie.user", "icons/arm_furie.png", 3)
 
   -- Setup the unitdef icons
   for udid,ud in pairs(UnitDefs) do
@@ -162,6 +164,14 @@ function gadget:Initialize()
           Spring.SetUnitDefIcon(udid, "fatshrew.user")
     elseif (ud.name=="monkeylord") then
           Spring.SetUnitDefIcon(udid, "monkeylord.user")
+    elseif (ud.name=="cormkl") then
+          Spring.SetUnitDefIcon(udid, "cormkl.user")
+--Furie
+    elseif (ud.name=="arm_furie") then
+          Spring.SetUnitDefIcon(udid, "arm_furie.user")
+--Gorg
+    elseif (ud.name=="gorg") then
+          Spring.SetUnitDefIcon(udid, "gorg.user")
 --Olympus
     elseif (ud.name=="armolympus") then
           Spring.SetUnitDefIcon(udid, "armolympus.user")
@@ -202,13 +212,13 @@ function gadget:Initialize()
       elseif (ud.name=="corkrog1") then
         Spring.SetUnitDefIcon(udid, "s_krogoth.user")
 --small mech
-      elseif (ud.name=="corkarg") or (ud.name=="arm_furie") or (ud.name=="armbanth") then
+      elseif (ud.name=="corkarg") or (ud.name=="armraz") or (ud.name=="armraptor") or (ud.name=="armraz1") or (ud.name=="corkarg1") or (ud.name=="armbanth") then
         Spring.SetUnitDefIcon(udid, "small_mech.user")
 --med mech
       elseif (ud.name=="armorco") then
         Spring.SetUnitDefIcon(udid, "med_mech.user")
 --t4 mechs
-      elseif (ud.name=="talon_mythril") or (ud.name=="armraptor") or (ud.name=="armbanth1") then
+      elseif (ud.name=="talon_mythril") or (ud.name=="talon_archon") or (ud.name=="armbanth1") or (ud.name=="armpraet") then
         Spring.SetUnitDefIcon(udid, "mech.user")
 --RC
       elseif (ud.name=="armrech1") or (ud.name=="armrech2") or (ud.name=="armrech3")
