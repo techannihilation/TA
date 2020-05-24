@@ -225,7 +225,6 @@ return {
 	"tllmanta",
 	"tllorc",
 	"tllwhale",
-	"tllsquid",
 	"tllshark",
 	"correcl",
 	"corshark",
