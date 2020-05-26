@@ -36,8 +36,8 @@ unitList["TA"] = {
 [UnitDefNames["talon_damascus1"].id] = 	{["en"]="Adv. Anti Nuke", ["de"]="", ["fr"]="" },
 
 --Nuke Silos
-[UnitDefNames["armsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="" },
-[UnitDefNames["corsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="Atom-Raketensilo", ["fr"]="" },
+[UnitDefNames["armsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["corsilo"].id] = 	{["en"]="Nuke Missile Silo", ["de"]="", ["fr"]="" },
 [UnitDefNames["armsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corsilo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllsilo"].id] = 	{["en"]="Nuke", ["de"]="", ["fr"]="" },
@@ -57,10 +57,10 @@ unitList["TA"] = {
 [UnitDefNames["talon_requiem"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
 
 --Tac Nuke Style static units
-[UnitDefNames["armemp"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
-[UnitDefNames["cortron"].id] = 	{["en"]="Tactical Nuke Silo", ["de"]="Taktische Atom-Raketensilo", ["fr"]="l'Arme Tactiques Nucleaire" },
-[UnitDefNames["tllemp"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
-[UnitDefNames["talon_armistice"].id] = 	{["en"]="EMP Silo", ["de"]="EMP-Raketensilo", ["fr"]="EMP Silo" },
+[UnitDefNames["armemp"].id] = 	{["en"]="EMP Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["cortron"].id] = 	{["en"]="Tactical Nuke Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllemp"].id] = 	{["en"]="EMP Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_armistice"].id] = 	{["en"]="EMP Silo", ["de"]="", ["fr"]="" },
 
 --T3 labs
 [UnitDefNames["armshltx"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
@@ -98,9 +98,9 @@ unitList["TA"] = {
 [UnitDefNames["tllumex"].id] = 	{["en"]="T5 Mex", ["de"]="", ["fr"]="" },
 
 --Fusion
-[UnitDefNames["aafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
-[UnitDefNames["cafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
-[UnitDefNames["tllcoldfus"].id] = 	{["en"]="Adv. Fusion", ["de"]="Fortgeschrittene Fusion", ["fr"]="" },
+[UnitDefNames["aafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="", ["fr"]="" },
+[UnitDefNames["cafus"].id] = 	{["en"]="Adv. Fusion", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllcoldfus"].id] = 	{["en"]="Adv. Fusion", ["de"]="", ["fr"]="" },
 [UnitDefNames["afusionplant"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
 [UnitDefNames["cfusionplant"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllmegacoldfus"].id] = 	{["en"]="Mega Fusion Reactor", ["de"]="", ["fr"]="" },
@@ -122,8 +122,8 @@ unitList["TA"] = {
 [UnitDefNames["corint1"].id] = 	{["en"]="T3 Intimidator", ["de"]="", ["fr"]="" },
 [UnitDefNames["arm_big_bertha"].id] = 	{["en"]="EMP Bertha", ["de"]="", ["fr"]="" },
 [UnitDefNames["core_intimidator"].id] = 	{["en"]="EMP Intimidator", ["de"]="", ["fr"]="" },
-[UnitDefNames["armvulc"].id] = 	{["en"]="Vulcan", ["de"]="Schnellfeuer-Plasmakanone", ["fr"]="Cadence de Tir �lev� Plasma Canon" },
-[UnitDefNames["corbuzz"].id] = 	{["en"]="Buzzsaw", ["de"]="Schnellfeuer-Plasmakanone", ["fr"]="Cadence de Tir �lev� Plasma Canon" },
+[UnitDefNames["armvulc"].id] = 	{["en"]="Vulcan", ["de"]="", ["fr"]="" },
+[UnitDefNames["corbuzz"].id] = 	{["en"]="Buzzsaw", ["de"]="", ["fr"]="" },
 [UnitDefNames["armvulc2"].id] = 	{["en"]="T3 Rapid-Vulcan", ["de"]="", ["fr"]="" },
 [UnitDefNames["corbuzz2"].id] = 	{["en"]="T3 Rapid-Buzzsaw", ["de"]="", ["fr"]="" },
 [UnitDefNames["armvulc1"].id] = 	{["en"]="T4 Vulcan", ["de"]="", ["fr"]="" },
@@ -141,7 +141,7 @@ unitList["TA"] = {
 [UnitDefNames["armtabi"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },
 [UnitDefNames["corflu"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllvanya"].id] = 	{["en"]="TSAR Cannon", ["de"]="", ["fr"]="" },
-[UnitDefNames["talon_planetkiller"].id] = 	{["en"]="Orbital Cannon", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_planetkiller"].id] =  {["en"]="Orbital Cannon", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllmeteor"].id] = 	{["en"]="Meteor Station", ["de"]="", ["fr"]="" },
 
 --T5.5 unit
@@ -160,10 +160,10 @@ unitList["TA"] = {
 [UnitDefNames["talon_popcorn1"].id] = 	{["en"]="T3 Anti-Air", ["de"]="", ["fr"]="" },
 
 --Moho Geos
-[UnitDefNames["amgeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
-[UnitDefNames["cmgeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
-[UnitDefNames["tllmohogeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
-[UnitDefNames["talon_mohogeo"].id] = 	{["en"]="Moho Geo", ["de"]="Moho Geo", ["fr"]="Moho G�o" },
+[UnitDefNames["amgeo"].id] = 	{["en"]="Moho Geo", ["de"]="", ["fr"]="" },
+[UnitDefNames["cmgeo"].id] = 	{["en"]="Moho Geo", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllmohogeo"].id] = 	{["en"]="Moho Geo", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_mohogeo"].id] = 	{["en"]="Moho Geo", ["de"]="", ["fr"]="" },
 
 --END OF MARKER LIST---------------------------------------
 
@@ -226,7 +226,9 @@ function widget:Initialize()
 	else
 		curUnitList = unitList[curModID] or {}
 	end
-	myLang = myLang or string.lower(select(8,Spring.GetPlayerInfo(Spring.GetMyPlayerID())))
+	--myLang = myLang or string.lower(select(8,Spring.GetPlayerInfo(Spring.GetMyPlayerID())))
+	myLang = "en"
+	-- Add skymyj
 end
 
 function colourNames(teamID)

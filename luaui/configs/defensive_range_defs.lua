@@ -49,7 +49,6 @@ modConfig["TA"]["unitList"] =
 								armrl1 = { weapons = { 2 } },
 								packo = { weapons = { 2 } },
 								armcir = { weapons = { 2 } }, --chainsaw
-								armcir1 = { weapons = { 2 } }, --chainsaw
 								armfrt = { weapons = { 2 } },  --floating rocket laucher
 								armflak = { weapons = { 2 } },
 								armfflak = { weapons = { 2 } },
@@ -110,7 +109,6 @@ modConfig["TA"]["unitList"] =
 								corrl1 = { weapons = { 2 } },
 								madsam = { weapons = { 2 } },
 								corerad = { weapons = { 2 } },
-								corerad1 = { weapons = { 2 } },
 								corenaa = { weapons = { 2 } },
 								corflak = { weapons = { 2 } },
 								screamer = { weapons = { 2 } },
@@ -197,6 +195,7 @@ modConfig["TA"]["unitList"] =
 								talon_rl = { weapons = { 2 } },
 								talon_frl = { weapons = { 2 } },
 								talon_cir = { weapons = { 2 } },
+								talon_ptr = { weapons = { 2 } },
 								talon_kernel = { weapons = { 2 } },
 
 									--Anti-Nuke--

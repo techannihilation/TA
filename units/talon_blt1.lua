@@ -1,7 +1,6 @@
 return {
 	talon_blt1 = {
 		acceleration = 0,
-		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 388050,
@@ -39,7 +38,6 @@ return {
 		name = "Advanced Thea",
 		nochasecategory = "ALL",
 		objectname = "talon_blt1",
-		onoffable = true,
 		radardistance = 1500,
 		radaremitheight = 79,
 		seismicsignature = 0,

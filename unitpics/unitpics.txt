@@ -76,7 +76,6 @@ armcbomb.dds
 armcd.dds
 armch.dds
 armchimera.dds
-armcir1.dds
 armcir.dds
 armck.dds
 armckfus.dds
@@ -453,7 +452,6 @@ core_immolator.dds
 core_intimidator.dds
 coreleopard.dds
 corenaa.dds
-corerad1.dds
 corerad.dds
 corerex.dds
 core_riptide.dds

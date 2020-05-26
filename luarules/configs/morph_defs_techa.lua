@@ -355,16 +355,6 @@ local morphDefs = {
 		tech = 2,
 		time = 60,
 	},
-	armcir = {
-		into = 'armcir1',
-		time = 20,
-		xp = 0.05,
-	},
-	corerad = {
-		into = 'corerad1',
-		time = 20,
-		xp = 0.05,
-	},
 	armgeo = {
 		{
 				into = 'amgeo',

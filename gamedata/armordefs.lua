@@ -399,11 +399,11 @@ return {
 	},
 	bomb_resistant = {
 	"armcir",
-	"armcir1",
 	"corerad",
-	"corerad1",
+	"tlltetanos",
 	"mercury",
 	"screamer",
+	"talon_ptr",
 	"tllhmt",
 	"talon_cir",
 	},

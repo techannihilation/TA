@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  flare1, flare6, flare5, flare4, flare3, flare2, base, turret,
-       barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, sleeve;
+       barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, barrel7, barrel8, flare7, flare8, sleeve;
 
 static-var  Static_Var_1, gun_1, Static_Var_3;
 
@@ -41,36 +41,15 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	dont-shade barrel1;
-	dont-shade barrel2;
-	dont-shade barrel3;
-	dont-shade barrel4;
-	dont-shade barrel5;
-	dont-shade barrel6;
-	dont-shade base;
-	dont-shade turret;
-	dont-shade sleeve;
-	dont-cache turret;
-	dont-cache barrel1;
-	dont-cache barrel2;
-	dont-cache barrel3;
-	dont-cache barrel4;
-	dont-cache barrel5;
-	dont-cache barrel6;
-	dont-cache sleeve;
-	dont-cache flare1;
-	dont-cache flare2;
-	dont-cache flare3;
-	dont-cache flare4;
-	dont-cache flare5;
-	dont-cache flare6;
 	hide flare1;
 	hide flare2;
 	hide flare3;
 	hide flare4;
 	hide flare5;
 	hide flare6;
-	gun_1 = flare1;
+	hide flare7;
+	hide flare8;
+	gun_1 = 0;
 	start-script SmokeUnit();
 }
 
@@ -95,62 +74,109 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		move barrel1 to z-axis [-6.000000] now;
+		//move barrel1 to z-axis [-6.000000] now;
 		show flare1;
 		sleep 50;
 		hide flare1;
-		move barrel1 to z-axis [0.000000] speed [5.000000];
+		//move barrel1 to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 1 )
 	{
-		move barrel2 to z-axis [-6.000000] now;
+	//	move barrel2 to z-axis [-6.000000] now;
 		show flare2;
 		sleep 50;
 		hide flare2;
-		move barrel2 to z-axis [0.000000] speed [5.000000];
+	//	move barrel2 to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 2 )
 	{
-		move barrel3 to z-axis [-6.000000] now;
+	//	move barrel3 to z-axis [-6.000000] now;
 		show flare3;
 		sleep 50;
 		hide flare3;
-		move barrel3 to z-axis [0.000000] speed [5.000000];
+	//	move barrel3 to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 3 )
 	{
-		move barrel4 to z-axis [-6.000000] now;
+	//	move barrel4 to z-axis [-6.000000] now;
 		show flare4;
 		sleep 50;
 		hide flare4;
-		move barrel4 to z-axis [0.000000] speed [5.000000];
+	//	move barrel4 to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 4 )
 	{
-		move barrel5 to z-axis [-6.000000] now;
+	//	move barrel5 to z-axis [-6.000000] now;
 		show flare5;
 		sleep 50;
 		hide flare5;
-		move barrel5 to z-axis [0.000000] speed [5.000000];
+	//	move barrel5 to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 5 )
 	{
-		move barrel6 to z-axis [-6.000000] now;
+	//	move barrel6 to z-axis [-6.000000] now;
 		show flare6;
 		sleep 50;
 		hide flare6;
-		move barrel6 to z-axis [0.000000] speed [5.000000];
+	//	move barrel6 to z-axis [0.000000] speed [5.000000];
 	}
-	++gun_1;
 	if( gun_1 == 6 )
 	{
-		gun_1 = flare1;
+	//	move barrel7 to z-axis [-6.000000] now;
+		show flare7;
+		sleep 50;
+		hide flare7;
+	//	move barrel7 to z-axis [0.000000] speed [5.000000];
+	}
+	if( gun_1 == 7 )
+	{
+	//	move barrel8 to z-axis [-6.000000] now;
+		show flare8;
+		sleep 50;
+		hide flare8;
+	//	move barrel8 to z-axis [0.000000] speed [5.000000];
+	}
+	++gun_1;
+	if( gun_1 == 8 )
+	{
+		gun_1 = 0;
 	}
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare6;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = flare7;
+	}
+	if( gun_1 == 7 )
+	{
+		piecenum = flare8;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -200,25 +226,6 @@ Killed(severity, corpsetype)
 		explode barrel4 type NOHEATCLOUD | FALL;
 		explode barrel5 type NOHEATCLOUD | FALL;
 		explode barrel6 type NOHEATCLOUD | FALL;
-		explode turret type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode flare1 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode flare2 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode flare3 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode flare4 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode flare5 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode flare6 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode barrel3 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode barrel4 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode barrel5 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
-		explode barrel6 type NOHEATCLOUD | FALL | SMOKE | gun_1 | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}

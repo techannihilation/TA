@@ -57,7 +57,7 @@ return {
 			[2] = "armllt1",
 			[3] = "armvhlt",
 			[4] = "armrl1",
-			[5] = "armcir1",
+			--[5] = "armcir1",
 			[6] = "armgate2",
 			[7] = "arm_immolator",
 			[8] = "armpcan",

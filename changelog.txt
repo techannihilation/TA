@@ -3,9 +3,13 @@
 Balance :
  - Lilith : Decrease Xp 0.15 => 0.10. Increase Los to 1400.
  - Decrease Xp for some units (T3 cruser / T2 and T3 Air figter Bomber Gunship)
+ - Balance Ares Cost. Increase Hp +25.
+ - All commander : set Counttime for selfdestroy to 1s
+ - Chainsaw Arm/Core : Increase stats/cost to have same than Tll/Talon
 
 Improvment :
- - Add Engineet Hover TLL.
+ - Delete Arm/Core Chainsaw1 morph.
+ - Add Engineet Hover TLL
  - Add tllHopomis : T2 Anti Sub Hover
  - Delete units : solar Tll naval Serie, Jamer Naval serie, Squid sub Jam naval Series
  - Add new icons (visible on minimap) for some T3/T4 units. In work for other units.
@@ -13,7 +17,7 @@ Improvment :
 
  Fix :
  - Exoarm : Animation for Legs (was too quick)
- - Fix armhplasma gun animation
+ - Fix armhplasma gun animationo
 
 3.43 -> 3.45
 2020-05-22
