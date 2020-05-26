@@ -18,7 +18,7 @@ return {
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Bomb-Resistant Medium-Range Missile Battery",
+		description = "Bomb-Resistant Missile Battery",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 4,
