@@ -154,7 +154,7 @@ StopBuilding()
 {
 	signal 4;
 	set-signal-mask 4;
-	sleep 1000;
+	sleep 2500;
 	set-signal-mask 0;
 	signal 4;
 	start-script RequestState(1);
