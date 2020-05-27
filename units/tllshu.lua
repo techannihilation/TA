@@ -49,7 +49,6 @@ return {
 		turninplacespeedlimit = 9.9,
 		turnrate = 1280,
 		unitname = "tllshu",
-		unitrestricted = 300,
 		customparams = {
 			buildpic = "tllshu.dds",
 			faction = "TLL",

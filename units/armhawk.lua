@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 7.92,
 		turnrate = 1425,
 		unitname = "armhawk",
-		unitrestricted = 150,
 		customparams = {
 			buildpic = "armhawk.dds",
 			faction = "ARM",

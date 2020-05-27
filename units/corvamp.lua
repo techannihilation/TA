@@ -50,7 +50,6 @@ return {
 		turninplacespeedlimit = 7.92,
 		turnrate = 1337,
 		unitname = "corvamp",
-		unitrestricted = 150,
 		customparams = {
 			buildpic = "corvamp.dds",
 			faction = "CORE",

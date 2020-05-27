@@ -56,7 +56,7 @@ return {
 		turninplacespeedlimit = 4.0,
 		turnrate = 750,
 		unitname = "talon_topaz",
-		unitrestricted = 150,
+		unitrestricted = 200,
 		customparams = {
 			buildpic = "talon_topaz.dds",
 			faction = "TALON",

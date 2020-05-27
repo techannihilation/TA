@@ -49,7 +49,6 @@ return {
 		turninplacespeedlimit = 9.9,
 		turnrate = 1280,
 		unitname = "shrike",
-		unitrestricted = 300,
 		customparams = {
 			buildpic = "shrike.dds",
 			faction = "CORE",

@@ -49,7 +49,7 @@ return {
 		turninplacespeedlimit = 2.904,
 		turnrate = 1672,
 		unitname = "armflea",
-		unitrestricted = 150,
+		unitrestricted = 200,
 		customparams = {
 			buildpic = "armflea.dds",
 			faction = "ARM",

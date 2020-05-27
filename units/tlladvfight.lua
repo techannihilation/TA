@@ -48,7 +48,6 @@ return {
 		turninplacespeedlimit = 8.58,
 		turnrate = 1400,
 		unitname = "tlladvfight",
-		unitrestricted = 300,
 		customparams = {
 			buildpic = "tlladvfight.dds",
 			faction = "TLL",

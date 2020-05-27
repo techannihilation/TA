@@ -49,7 +49,6 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 1210,
 		unitname = "corak",
-		unitrestricted = 125,
 		upright = true,
 		customparams = {
 			buildpic = "corak.dds",

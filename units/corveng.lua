@@ -49,8 +49,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 6.6,
 		turnrate = 839,
-		unitname = "corveng",
-		unitrestricted = 200,
+		unitname = "corveng",		
 		customparams = {
 			buildpic = "corveng.dds",
 			faction = "CORE",

@@ -49,7 +49,7 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 1056,
 		unitname = "talon_mercenary",
-		unitrestricted = 125,
+		unitrestricted = 200,
 		upright = true,
 		customparams = {
 			buildpic = "talon_mercenary.dds",

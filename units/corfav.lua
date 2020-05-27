@@ -56,7 +56,7 @@ return {
 		turninplacespeedlimit = 3.2274,
 		turnrate = 1097,
 		unitname = "corfav",
-		unitrestricted = 150,
+		unitrestricted = 200,
 		customparams = {
 			buildpic = "corfav.dds",
 			faction = "CORE",

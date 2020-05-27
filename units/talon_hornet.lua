@@ -47,7 +47,6 @@ return {
 		turninplacespeedlimit = 9.9,
 		turnrate = 1220,
 		unitname = "talon_hornet",
-		unitrestricted = 300,
 		customparams = {
 			buildpic = "talon_hornet.dds",
 			faction = "TALON",

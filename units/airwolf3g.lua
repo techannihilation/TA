@@ -49,7 +49,6 @@ return {
 		turninplacespeedlimit = 9.9,
 		turnrate = 1220,
 		unitname = "airwolf3g",
-		unitrestricted = 300,
 		customparams = {
 			buildpic = "airwolf3g.dds",
 			faction = "ARM",

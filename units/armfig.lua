@@ -49,8 +49,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 6.6,
 		turnrate = 891,
-		unitname = "armfig",
-		unitrestricted = 200,
+		unitname = "armfig",		
 		customparams = {
 			buildpic = "armfig.dds",
 			faction = "ARM",

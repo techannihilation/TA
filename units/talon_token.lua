@@ -47,8 +47,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 6.336,
 		turnrate = 900,
-		unitname = "talon_token",
-		unitrestricted = 200,
+		unitname = "talon_token",		
 		customparams = {
 			buildpic = "talon_token.dds",
 			faction = "TALON",
