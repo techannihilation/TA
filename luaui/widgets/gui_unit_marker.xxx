@@ -167,7 +167,7 @@ unitList["TA"] = {
 
 --END OF MARKER LIST---------------------------------------
 
-local myLang = "en" -- --set this if you want to bypass lobby country
+local myLang = "en" --set this if you want to bypass lobby country
 local myPlayerID
 local curModID
 local spEcho = Spring.Echo

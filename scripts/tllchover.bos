@@ -5,7 +5,7 @@
 
 piece  base, body, turret, arm, door1, door2, spray, nano,
        wakes, wake1, wake2, wake3, wake4, wake5, wake6, wake7,
-       wake8, p;
+       wake8;
 
 static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
 

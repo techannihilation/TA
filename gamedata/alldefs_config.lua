@@ -210,7 +210,6 @@ local WTimeUnits = {
 		["armesy"] = true,
 		["armevp"] = true,
 		["armfark"] = true,
-		["armfark1"] = true,
 		["armfhp"] = true,
 		["armgant"] = true,
 		["armhcar"] = true,

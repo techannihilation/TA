@@ -7,7 +7,7 @@ piece  base, body, door, turret, nano1, nano2, nanobits, w1,
        w2, w3, w4, w5, w6, w7, w8, w9,
        w10, w11, w12, wakes;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
 
 RockOnWaves()
@@ -34,11 +34,14 @@ activatescr()
 	wait-for-move turret along y-axis;
 	move nanobits to z-axis [1.200000] speed [8.];
 	wait-for-move nanobits along z-axis;
-	sleep 20;
+	Static_Var_5 = 1;
 }
 
 deactivatescr()
 {
+	Static_Var_5 = 0;
+	turn turret to y-axis <0.0> speed <160.>;
+	wait-for-turn turret around y-axis;
 	move nanobits to z-axis [0.] speed [8.];
 	wait-for-move nanobits along z-axis;
 	move turret to y-axis [0.] speed [8.];
@@ -112,22 +115,6 @@ StopMoving()
 	signal 2;
 }
 
-Go()
-{
-	call-script activatescr();
-	turn turret to y-axis Static_Var_1 speed <160.>;
-	wait-for-turn turret around y-axis;
-	set INBUILDSTANCE to 1;
-}
-
-Stop()
-{
-	set INBUILDSTANCE to 0;
-	turn turret to y-axis <0.> speed <160.>;
-	wait-for-turn turret around y-axis;
-	call-script deactivatescr();
-}
-
 InitState()
 {
 	Static_Var_2 = 1;
@@ -148,12 +135,12 @@ RequestState(requestedstate, currentstate)
 	{
 		if( Static_Var_2 == 0 )
 		{
-			call-script Go();
+			call-script activatescr();
 			currentstate = 0;
 		}
 		if( Static_Var_2 == 1 )
 		{
-			call-script Stop();
+			call-script deactivatescr();
 			currentstate = 1;
 		}
 	}
@@ -166,6 +153,7 @@ Create()
 	call-script InitState();
 	start-script SmokeUnit();
 	Static_Var_4 = 1;
+	Static_Var_5 = 0;
 	start-script RockOnWaves();
 }
 
@@ -181,12 +169,22 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	signal 4;
+	sleep 250;
+	turn turret to y-axis Func_Var_1 speed <160.>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 3500;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
 
