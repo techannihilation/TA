@@ -6,6 +6,7 @@ Balance :
  - Balance Ares Cost. Increase Hp +25.
  - All commander : set Counttime for selfdestroy to 1s
  - Chainsaw Arm/Core : Increase stats/cost to have same than Tll/Talon
+ - Corgator : Decrease damage 100=>80. Increase Range 230=>240.
 
 Improvment :
  - Delete Arm/Core Chainsaw1 morph.

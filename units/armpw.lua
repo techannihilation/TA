@@ -3,7 +3,7 @@ return {
 		acceleration = 0.36,
 		brakerate = 0.6,
 		buildcostenergy = 951,
-		buildcostmetal = 50,
+		buildcostmetal = 48,
 		builder = false,
 		buildpic = "armpw.dds",
 		buildtime = 1420,
@@ -155,7 +155,6 @@ return {
 				weaponvelocity = 500,
 				damage = {
 					default = 10,
-					raider_resistant = 5,
 					subs = 5,
 				},
 			},
