@@ -9,6 +9,8 @@ Many files provides from other games and they are copyrighted. We asked them per
 
 - TAESC models from TA:Escalation created by archdragon, boogie, Wotan and the TheRegisteredOne. Link to TAESC sources : http://taesc.tauniverse.com. It includes : T3 Jammer Arm/Core, T1.5 Bertha Arm/Core, Artillery Overlord, armolympus, armecv, armeca, coreca, corecs, armecs, corvaliant, akmech, ametalmakerlvl3, cmetalmakerlvl3, armemex, coremex, armchimera, armbsub, corbsub, armbrtha1, armbrtha2, corint2, armefus, afusionplant, corefus, cfusionplant, corarbritator, corcrab, cormkl, tllgorgone.
 
+- Total Annihilation ZERO models created by Vohvelieläin. Link to TA Zero : http://zero.tauniverse.com/. It includes : talon_archon, talon_mythril, talon_mohogeo, talon_dmc, tllgate1, tllgate2, tllgate3, talon_eestor, talon_emstor, talon_mas, tllmeteor.
+
 - Contents made by KROGOTH86
 Arm/Core Advanced Metal Maker, Arm/Core Advanced Tidal Generator, Arm/Core Advanced Wind Generator, Arm/Core Cracker (T1 Artillery KBot), Arm/Core Extreme Air Plant, Arm/Core Light Fusion Power Plant, armvhlt, Mole (T2 Vehicle Assister), Punkie (T1 Scout KBot) (Flea counterpart), Thud MK-II (T3 Artillery Mech), VHLT (T2 Laser Turret)
 --- --- --- --- --- --- --- --- --- --- ---
