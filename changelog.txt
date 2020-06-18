@@ -1,3 +1,13 @@
+3.46 -> 3.47
+2020-06-18
+Balance :
+  - T3 Vehicle Core : Delete Jammer. Decrease HP and Metalcost
+
+Improvment :
+ - Add Shoot'n'Run gadget (player (and spectators) can control (move and shoot) an unit if player unlock it) (thanks to Ares). Need to test it more.
+ - Delete totalitarian unit (morph from t2 artillery veh)
+ - Delete TLL crawling bomb from t2 Kbot. Engineer can always made them like other factions
+
 3.45 -> 3.46
 2020-05-25
 Balance :
@@ -6,14 +16,14 @@ Balance :
  - Balance Ares Cost. Increase Hp +25.
  - All commander : set Counttime for selfdestroy to 1s
  - Chainsaw Arm/Core : Increase stats/cost to have same than Tll/Talon
- - Corgator : Decrease damage 100=>80. Increase Range 230=>240.
+ - Corgator : Decrease damage 100=>80. Increase Range 230=>240
 
 Improvment :
  - Delete Arm/Core Chainsaw1 morph.
  - Add Engineet Hover TLL
  - Add tllHopomis : T2 Anti Sub Hover
  - Delete units : solar Tll naval Serie, Jamer Naval serie, Squid sub Jam naval Series
- - Add new icons (visible on minimap) for some T3/T4 units. In work for other units.
+ - Add new icons (visible on minimap) for some T3/T4 units. In work for other units
  - Rework T3 Arm Hover Cruser (new secondary Weapon)
 
  Fix :

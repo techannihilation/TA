@@ -55,7 +55,7 @@ return {
 			[4] = "tllamphibot",
 			[5] = "tllhrk",
 			[6] = "tllbind",
-			[7] = "tllcrawlb",
+			--[7] = "tllcrawlb",
 			[8] = "tllsniper",
 			[9] = "tllartybot",
 			[10] = "tllaak",

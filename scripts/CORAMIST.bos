@@ -4,8 +4,7 @@
 #include "exptype.h"
 
 piece  flare1, flare2, flare3, flare4, flare5, flare6, 
-	   base, body, turret, sleeve, fork,
-	   rocket1, rocket2, rocket3, rocket4, rocket5, rocket6;
+	   base, body, turret, sleeve, rocket1, rocket2, rocket3, rocket4, rocket5, rocket6;
 
 static-var  gun_1, restore_delay, firedelay, firing, jamming, moving, antiair;
 
@@ -54,20 +53,6 @@ Create()
 		sleep 1000;
 	}
 	start-script SmokeUnit();
-}
-
-Activate()
-{
-	signal SIG_ACTIVATE;
-	set-signal-mask SIG_ACTIVATE;
-	spin fork around y-axis speed <100.021978>;
-}
-
-Deactivate()
-{
-	signal SIG_ACTIVATE;
-	set-signal-mask SIG_ACTIVATE;
-	spin fork around y-axis speed <0.0>;
 }
 
 RestoreAfterDelay()
@@ -156,7 +141,6 @@ Killed(severity, corpsetype)
 		explode rocket6 type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		explode sleeve type NOHEATCLOUD;
-		explode fork type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -167,10 +151,9 @@ Killed(severity, corpsetype)
 		explode rocket1 type FALL | BITMAP1;
 		explode rocket2 type FALL | NOHEATCLOUD;
 		explode rocket3 type FALL | NOHEATCLOUD;
-		explode rocket6 type FALL | BITMAP1;
+		explode rocket6 type FALL | NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		explode sleeve type NOHEATCLOUD;
-		explode fork type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -182,5 +165,4 @@ Killed(severity, corpsetype)
 	explode rocket6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode turret type NOHEATCLOUD;
 	explode sleeve type NOHEATCLOUD;
-	explode fork type NOHEATCLOUD;
 }

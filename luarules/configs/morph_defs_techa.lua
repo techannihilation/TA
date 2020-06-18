@@ -807,16 +807,9 @@ local morphDefs = {
 		},
 	},
 	cormart = {
-		{
-			into = 'cortotal',
-			time = 45,
-			xp = 0.30,
-		},
-		{
-			into = 'clb',
-			time = 90,
-			xp = 0.50,
-		},
+		into = 'clb',
+		time = 90,
+		xp = 0.50,
 	},
 	cormist = {
 		into = 'cormist1',

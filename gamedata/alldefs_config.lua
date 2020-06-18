@@ -1149,7 +1149,6 @@ local unitheight = {
     ["cortl"] = 19,
     ["cortlab"] = 50,
     ["cortoast"] = 14,
-    ["cortotal"] = 26,
     ["cortron"] = 48,
     ["cortship"] = 77,
     ["cortyrnt"] = 94,

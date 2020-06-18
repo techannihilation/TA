@@ -639,7 +639,6 @@ cortitan.dds
 cortlab.dds
 cortl.dds
 cortoast.dds
-cortotal.dds
 cortron.dds
 cortship.dds
 cortyrnt.dds
