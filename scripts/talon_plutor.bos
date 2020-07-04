@@ -1,0 +1,353 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, lengine, rengine, link, aim,
+		turret1, barrel1, flare1, turret2, barrel2, flare2, 
+		antenn1, antenn2, trap1, trap2, support1, support2,
+		pince11, pince12, pince13, bloc1,
+		pince21, pince22, pince23, bloc2, 
+		pince31, pince32, pince33, bloc3,
+		pince41, pince42, pince43, bloc4,
+		pince51, pince52, pince53, bloc5,
+		pince61, pince62, pince63, bloc6,
+		megaflare1, megaflare2, megaflare3, megaflare4;
+
+static-var  Static_Var_1, unitviewer, statechg_DesiredState, statechg_StateChanging, megagun, isClose;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn pince11 to z-axis <-10.000000> speed <50.000000>;
+		turn pince12 to z-axis <-15.000000> speed <50.000000>;
+		turn pince13 to z-axis <-45.000000> speed <50.000000>;
+		
+		turn pince21 to z-axis <-10.000000> speed <50.000000>;
+		turn pince22 to z-axis <-15.000000> speed <50.000000>;
+		turn pince23 to z-axis <-45.000000> speed <50.000000>;
+		
+		turn pince31 to z-axis <-10.000000> speed <50.000000>;
+		turn pince32 to z-axis <-15.000000> speed <50.000000>;
+		turn pince33 to z-axis <-45.000000> speed <50.000000>;
+		
+		turn pince41 to z-axis <10.000000> speed <50.000000>;
+		turn pince42 to z-axis <15.000000> speed <50.000000>;
+		turn pince43 to z-axis <45.000000> speed <50.000000>;
+		
+		turn pince51 to z-axis <10.000000> speed <50.000000>;
+		turn pince52 to z-axis <15.000000> speed <50.000000>;
+		turn pince53 to z-axis <45.000000> speed <50.000000>;
+		
+		turn pince61 to z-axis <10.000000> speed <50.000000>;
+		turn pince62 to z-axis <15.000000> speed <50.000000>;
+		turn pince63 to z-axis <45.000000> speed <50.000000>;
+		
+		wait-for-turn pince11 around y-axis;
+		sleep 1000;
+	}
+	sleep 50;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn pince11 to z-axis <0.000000> speed <50.000000>;
+		turn pince12 to z-axis <0.000000> speed <50.000000>;
+		turn pince13 to z-axis <0.000000> speed <50.000000>;
+		
+		turn pince21 to z-axis <0.000000> speed <50.000000>;
+		turn pince22 to z-axis <0.000000> speed <50.000000>;
+		turn pince23 to z-axis <0.000000> speed <50.000000>;
+		
+		turn pince31 to z-axis <0.000000> speed <50.000000>;
+		turn pince32 to z-axis <0.000000> speed <50.000000>;
+		turn pince33 to z-axis <0.000000> speed <50.000000>;
+		
+		turn pince41 to z-axis <0.000000> speed <50.000000>;
+		turn pince42 to z-axis <0.000000> speed <50.000000>;
+		turn pince43 to z-axis <0.000000> speed <50.000000>;
+		
+		turn pince51 to z-axis <0.000000> speed <50.000000>;
+		turn pince52 to z-axis <0.000000> speed <50.000000>;
+		turn pince53 to z-axis <0.000000> speed <50.000000>;
+		
+		turn pince61 to z-axis <0.000000> speed <50.000000>;
+		turn pince62 to z-axis <0.000000> speed <50.000000>;
+		turn pince63 to z-axis <0.000000> speed <50.000000>;
+		sleep 1000;
+	}
+	sleep 50;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+			emit-sfx smoketype from turret1;
+			emit-sfx smoketype from antenn2;
+			emit-sfx smoketype from lengine;
+			emit-sfx smoketype from rengine;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	hide flare1;
+	hide flare2;
+	
+	turn bloc2 to y-axis <-15.000000> now;
+	turn bloc3 to y-axis <15.000000> now;
+	turn bloc5 to y-axis <15.000000> now;
+	turn bloc6 to y-axis <-15.000000> now;
+	
+	isClose = TRUE;
+	unitviewer = FALSE;
+	Static_Var_1 = 0;
+	megagun = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryTransport(Func_Var_1)
+{
+	Func_Var_1 = 4;
+}
+
+Activate()
+{
+	if( unitviewer )
+	{
+		start-script RequestState(0);
+	}
+}
+
+BeginTransport(Func_Var_1)
+{
+	move link to y-axis [0.000000] - Func_Var_1 now;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	if( unitviewer )
+	{
+		start-script RequestState(1);
+		move link to y-axis [0.000000] now;
+	}
+}
+
+EndTransport()
+{
+	start-script RequestState(1);
+}
+
+StopMoving()
+{
+	signal 2;
+	Static_Var_1 = 0;
+}
+
+CloseTrap()
+{
+	sleep 3000;
+	move trap1 to z-axis [0.000000] speed [2];
+	move trap2 to z-axis [0.000000] speed [2];
+	sleep 150;
+	isClose = TRUE;
+}
+
+OpenTrap()
+{
+	move trap1 to z-axis [8.000000] speed [2];
+	move trap2 to z-axis [-8.000000] speed [2];
+	sleep 1000;
+	isClose = FALSE;
+}
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+	turn turret1 to y-axis <0.> speed <45.>;
+	turn turret2 to y-axis <0.> speed <45.>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	move trap1 to z-axis [5.000000] speed [2];
+	move trap2 to z-axis [-5.000000] speed [2];
+	wait-for-move trap1 along z-axis;
+	wait-for-move trap2 along z-axis;
+	//start-script OpenTrap();
+	//while (isClose)
+	//{
+	//	sleep 150;
+	//}
+	start-script CloseTrap();
+	return (1);
+}
+
+FirePrimary(Func_Var_1)
+{
+	++megagun;
+	if(megagun == 4)
+	{
+		megagun = 0;	
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aim;
+}
+
+QueryPrimary(piecenum)
+{
+	if(megagun == 0)
+	{
+		piecenum = megaflare1;
+	}
+	if(megagun == 1)
+	{
+		piecenum = megaflare2;
+	}
+	if(megagun == 2)
+	{
+		piecenum = megaflare3;
+	}
+	if(megagun == 3)
+	{
+		piecenum = megaflare4;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn turret1 to y-axis heading speed <60.000000>;
+	wait-for-turn turret1 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary(Func_Var_1)
+{
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare1;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal 8;
+	set-signal-mask 8;
+	turn turret2 to y-axis heading speed <60.000000>;
+	wait-for-turn turret2 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireTertiary(Func_Var_1)
+{
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = turret2;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = flare2;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode turret1 type NOHEATCLOUD;
+	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode antenn1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode antenn2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode pince41 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pince63 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pince12 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pince61 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pince31 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -469,6 +469,11 @@ talon_tau = {
     {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=6, length=30, emitVector = {0,1,0}, piece="eng3", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=6, length=30, emitVector = {0,1,0}, piece="eng4", noIconDraw = true, priority=3, onActive=true}},
   },
+talon_plutor = {
+      {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=16, length=55, emitVector = {0,0,-1}, piece="rengine", noIconDraw = true, priority=3, onActive=true}},
+      {class='ThundAirJet',options={color={0.2,0.9,1.0}, width=16, length=55, emitVector = {0,0,-1}, piece="lengine", noIconDraw = true, priority=3, onActive=true}},
+    },
+
 talon_ca = {
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=20, piece="emit2", noIconDraw = true, priority=3, onActive=true}},

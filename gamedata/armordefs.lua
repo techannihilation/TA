@@ -156,6 +156,7 @@ return {
 	"talon_wyvern",
 	"talon_rukh",
 	"talon_tau",
+	"talon_plutor",
 },
 
 --### SEA ###
