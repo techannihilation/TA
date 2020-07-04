@@ -8,21 +8,6 @@ static-var  Static_Var_1, unitviewer;
 
 #define SIG_MOVE 32
 
-Flames()
-{
-	while(TRUE)
-	{
-		if(Static_Var_1 == 1)
-		{
-			emit-sfx 0 from flamer1;
-			emit-sfx 0 from flamer2;
-			emit-sfx 0 from flamer3;
-			emit-sfx 0 from flamer4;
-		}
-		sleep 40;
-	}
-}		
-
 Demo()
 {
 	unitviewer = TRUE;
@@ -34,7 +19,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	//start-script Flames();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;

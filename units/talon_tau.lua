@@ -1,6 +1,7 @@
 return {
 	talon_tau = {
 		acceleration = 0.05,
+		airsightdistance = 1250,
 		bankscale = 1,
 		brakerate = 0.825,
 		buildcostenergy = 71074,

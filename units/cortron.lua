@@ -129,7 +129,7 @@ return {
 				craterboost = 0.48,
 				cratermult = 0.21,
 				edgeeffectiveness = 0.4,
-				energypershot = 17437,
+				energypershot = 20000,
 				explosiongenerator = "custom:FLASHNUKE480",
 				firestarter = 0,
 				flighttime = 400,
