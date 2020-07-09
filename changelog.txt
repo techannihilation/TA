@@ -2,9 +2,9 @@
 2020-07-04
 Balance :
   - Sumo : Increase cost 2150M=>2300
-  
+
 Improvment :
- - Add Plutor T4 TALON Air Transport. Can transport 70K Mass.
+ - Add Plutor T4 TALON Air Transport. Can transport 95K Mass (represent metal cost).
 
 3.46 -> 3.47
 2020-06-18
