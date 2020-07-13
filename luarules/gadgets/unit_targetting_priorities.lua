@@ -7,7 +7,7 @@ function gadget:GetInfo()
         date = 'May 2018',
         license = 'GNU GPL, v2 or later',
         layer = -1, --must run before game_initial_spawn, because game_initial_spawn must control the return of GameSteup
-        enabled = true
+        enabled = false
     }
 end
 
