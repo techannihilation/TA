@@ -34,8 +34,6 @@ function widget:Initialize()
         if turnVsyncOff and tonumber(Spring.GetConfigInt("Vsync",1) or 1) == 1 then
             Spring.SendCommands("Vsync 0")
             Spring.SetConfigInt("Vsync",0)
-            Spring.SendCommands("WorkerThreadCount 1")
-            Spring.SetConfigInt("WorkerThreadCount",1)
             Spring.Echo('First time setup widget:  disabling Vsync')
         end
         if tonumber(Spring.GetConfigInt("MaxParticles",1) or 0) < minMaxparticles then
