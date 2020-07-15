@@ -93,7 +93,7 @@ return {
 			[10] = "corap",
 			--[11] = "correch2",
 			[12] = "coreyes",
-			[13] = "corrad1",
+			[13] = "corrad",
 			[14] = "cordrag",
 			[15] = "corllt1",
 			[16] = "corvhlt",

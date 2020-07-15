@@ -93,7 +93,7 @@ return {
 			[10] = "armap",
 			--[11] = "armrech2",
 			[12] = "armeyes",
-			[13] = "armrad1",
+			[13] = "armrad",
 			[14] = "armdrag",
 			[15] = "armllt1",
 			[16] = "armvhlt",
