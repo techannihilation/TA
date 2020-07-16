@@ -1311,27 +1311,27 @@ local morphDefs = {
 	},
 	shrike = {
 		into = 'corshock',
-	  time = 60,
+	  	time = 60,
 		xp = 0.10,
 	},
 	tllshu = {
 		into = 'tllcondor',
-	  time = 20,
+	  	time = 20,
 		xp = 0.05,
 	},
 	trem = {
-		into = 'cormcv',
-	  time = 90,
+		into = 'armsiege',
+	  	time = 90,
 		xp = 0.25,
 	},
 	cormenacer = {
 		into = 'corhaboob',
-	  time = 90,
+	  	time = 90,
 		xp = 0.25,
 	},
 	coradon = {
 		into = 'corhcrus',
-	  time = 30,
+	  	time = 30,
 		xp = 0.10,
 	},
 	armtem = {
