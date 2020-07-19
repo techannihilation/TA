@@ -96,7 +96,6 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	--Metal Makers
 	UnitDefNames.armmakr.id,
 	UnitDefNames.armfmkr.id,
-	UnitDefNames.ametalmakerlvl1.id,
 	UnitDefNames.armamaker.id,
 	UnitDefNames.armckmakr.id,
 	UnitDefNames.armmmkr.id,
@@ -107,7 +106,6 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.armgen.id,
 	UnitDefNames.cormakr.id,
 	UnitDefNames.corfmkr.id,
-	UnitDefNames.cmetalmakerlvl1.id,
 	UnitDefNames.coramaker.id,
 	UnitDefNames.corhmakr.id,
 	UnitDefNames.cormmkr.id,

@@ -233,11 +233,6 @@ local pieceCollisionVolume = {					--per piece collision volume definitions
 			["3"]={60,13,13,11,0,0,1,0},
 			trunk = 1
 	},
-	[UnitDefNames["armrad1"].id] = {
-			["1"]={22,58,22,0,30,0,1,1},
-			["3"]={60,13,13,11,0,0,1,0},
-			trunk = 1
-	},
 	[UnitDefNames["armvulc"].id] = {
 			["3"]={95,154,95,0,32,0,1,1},
 			["7"]={50,50,140,0,0,40,1,2},
