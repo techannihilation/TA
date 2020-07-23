@@ -284,14 +284,14 @@ return {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "k777blaster",
 				maindir = "-1 0 0",
-				maxangledif = 250,
+				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
 			[8] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "k777blaster",
 				maindir = "1 0 0",
-				maxangledif = 250,
+				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
 			[9] = {
