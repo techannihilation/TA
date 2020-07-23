@@ -95,6 +95,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("rc.user", "icons/rc.png", 1.4)
   Spring.AddUnitIcon("rc1.user", "icons/rc.png", 2)
   Spring.AddUnitIcon("t4ships.user", "icons/t4ships.png", 5)
+  Spring.AddUnitIcon("t5ships.user", "icons/t4ships.png", 8)
   Spring.AddUnitIcon("bships.user", "icons/bship.png", 2.5)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png", 3.6)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png", 0.65)
@@ -238,6 +239,10 @@ function gadget:Initialize()
 --broadside etc
       elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllzeppelin") or (ud.name=="tllbarbarus") or (ud.name=="talon_independence") or (ud.name=="talon_skynet") then
         Spring.SetUnitDefIcon(udid, "t4ships.user")
+--broadside etc
+      elseif (ud.name=="armarch") then
+        Spring.SetUnitDefIcon(udid, "t5ships.user")
+
 --battleships
       elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") or (ud.name=="talon_imperator") then
         Spring.SetUnitDefIcon(udid, "bships.user")
