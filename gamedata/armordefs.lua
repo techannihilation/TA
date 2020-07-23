@@ -367,6 +367,7 @@ return {
 	"tllbarbarus",
 	"talon_skynet",
 	"talon_independence",
+	"armarch",
 	},
 	flamethrowers = {
 	"corpyro",

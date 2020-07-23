@@ -1,0 +1,340 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret1, turret2, turret3, turret4, enginea, engineb, enginec, 
+	   flare1, flare2, flare3, flare4,
+       turrete1, sleevee1, flaree1,  
+       turrete2, sleevee2, flaree2, 
+       turrete3, sleevee3, flaree3, 
+       turrete4, sleevee4, flaree4,
+       msl, msl1, msl2, msl3, msl4; 
+       
+
+static-var  missile;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RestoreAfterDelay()
+{
+	sleep 4000;
+	turn turret1 to y-axis <180.000000> speed <55.000000>;
+	turn turret2 to y-axis <0.000000> speed <55.000000>;
+	turn turret3 to y-axis <180.000000> speed <55.000000>;
+	turn turret4 to y-axis <0.000000> speed <55.000000>;
+	turn turrete1 to y-axis <0.000000> speed <75.000000>;
+	turn turrete2 to y-axis <180.000000> speed <75.000000>;
+	turn turrete3 to y-axis <0.000000> speed <75.000000>;
+	turn turrete4 to y-axis <0.000000> speed <75.000000>;
+}
+
+Create()
+{
+	missile = 0;
+	turn turret1 to y-axis <180.000000> now;
+	turn turrete2 to y-axis <180.000000> now;
+	start-script SmokeUnit();
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret1 to y-axis heading speed <45.000000>;
+	wait-for-turn turret1 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn turret2 to y-axis heading speed <45.000000>;
+	wait-for-turn turret2 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal 8;
+	set-signal-mask 8;
+	turn turret3 to y-axis heading speed <45.000000>;
+	wait-for-turn turret3 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal 16;
+	set-signal-mask 16;
+	turn turret4 to y-axis heading speed <45.000000>;
+	wait-for-turn turret3 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal 32;
+	set-signal-mask 32;
+	turn turrete1 to y-axis heading speed <90.000000>;
+	turn sleevee1 to x-axis <0.000000> - pitch speed <90.000000>;
+	wait-for-turn turrete1 around y-axis;
+	wait-for-turn sleevee1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal 64;
+	set-signal-mask 64;
+	turn turrete2 to y-axis heading speed <45.000000>;
+	turn sleevee2 to x-axis <0.000000> - pitch speed <90.000000>;
+	wait-for-turn turrete2 around y-axis;
+	wait-for-turn sleevee2 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon7(heading, pitch)
+{
+	signal 128;
+	set-signal-mask 128;
+	turn turrete3 to y-axis heading speed <45.000000>;
+	turn sleevee3 to x-axis <0.000000> - pitch speed <90.000000>;
+	wait-for-turn turrete3 around y-axis;
+	wait-for-turn sleevee3 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon8(heading, pitch)
+{
+	signal 256;
+	set-signal-mask 256;
+	turn turrete4 to y-axis heading speed <45.000000>;
+	turn sleevee4 to x-axis <0.000000> - pitch speed <90.000000>;
+	wait-for-turn turrete4 around y-axis;
+	wait-for-turn sleevee4 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal 512;
+	set-signal-mask 512;
+	return (1);
+}
+
+FireWeapon1()
+{
+
+}
+
+FireWeapon2()
+{
+
+}
+
+FireWeapon3()
+{
+	
+}
+
+FireWeapon4()
+{
+	
+}
+
+FireWeapon5()
+{
+	
+}
+
+FireWeapon6()
+{
+	
+}
+
+FireWeapon7()
+{
+	
+}
+
+FireWeapon8()
+{
+	
+}
+
+FireWeapon9()
+{
+	++missile;
+	if (missile == 4)
+	{
+		missile = 0;
+	}
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret1;
+}
+
+QueryWeapon1(piecenum)
+{
+	
+	piecenum = flare1;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = turret2;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = flare2;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turret3;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = flare3;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turret4;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = flare4;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = turrete1;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = flaree1;
+	
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = turrete2;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = flaree2;
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = turrete3;
+}
+
+QueryWeapon7(piecenum)
+{
+		piecenum = flaree3;
+}
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = turrete4;
+}
+
+QueryWeapon8(piecenum)
+{
+	piecenum = flaree4;
+}
+
+QueryWeapon9(piecenum)
+{
+	if(missile == 0)
+	{
+		piecenum = msl1;
+	}
+	if(missile == 1)
+	{
+		piecenum = msl2;
+	}
+	if(missile == 2)
+	{
+		piecenum = msl3;
+	}
+	if(missile == 3)
+	{
+		piecenum = msl4;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turrete1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turrete4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turrete3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turrete1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turrete4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turrete3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL;
+	return (corpsetype);
+}

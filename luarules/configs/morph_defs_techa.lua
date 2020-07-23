@@ -1397,6 +1397,11 @@ local morphDefs = {
 		time = 180,
 		xp = 0.10,
 	},
+	armhope = {
+		into = 'armarch',
+		time = 200,
+		xp = 0.125,
+	},
 	corroy = {
 		into = 'corcrus',
 		time = 45,
@@ -1616,6 +1621,7 @@ local morphDefs = {
 		time = 45,
 		xp = 0.40,
 	},
+
 }
 
 --

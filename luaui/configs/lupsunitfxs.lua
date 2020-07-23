@@ -854,6 +854,11 @@ coreca = {
     {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
+ armarch = {
+    {class='AirJet',options={color={0.8,0.8,1}, width=30, length=35, piece="enginea", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.8,0.8,1}, width=30, length=35, piece="engineb", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.8,0.8,1}, width=45, length=40, piece="enginec", noIconDraw = true, priority=3, onActive=true}},
+ },
  cdevastator = {
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
