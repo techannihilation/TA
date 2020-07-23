@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 364809,
 		buildcostmetal = 18828,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 9,
-		buildinggrounddecalsizey = 9,
-		buildinggrounddecaltype = "cordoom1_aoplane.dds",
 		buildpic = "cordoom1.dds",
 		buildtime = 260000,
 		canattack = true,
@@ -48,7 +44,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cordoom1",
-		usebuildinggrounddecal = true,
 		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "cordoom1.dds",

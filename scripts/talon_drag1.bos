@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, mine;
+piece  base, mine;
 
 // Signal definitions
 #define SIG_AIM				2
