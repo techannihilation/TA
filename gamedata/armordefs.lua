@@ -275,7 +275,8 @@ return {
 	"heavyimpact",
 	"tllhtcb",
 	"tllhtml",
-	"tllblind",
+	--
+"tllblind",
 	"tllgrim",
 	"tllmlrpc",
 	-- core t3 vehs
@@ -389,6 +390,7 @@ return {
 	"corcan",
 	"corcan1",
 	"tllbind",
+	"tllblind",
 	"talon_crusader",
 	},
 	raider_resistant = {
