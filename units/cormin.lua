@@ -64,7 +64,7 @@ return {
 			[5] = "cormine3",
 			[6] = "cormine5",
 			[7] = "cormine6",
-			[8] = "cormine7",
+			--[8] = "cormine7",
 			[9] = "corfmine3",
 			[10] = "corfdrag",
 		},

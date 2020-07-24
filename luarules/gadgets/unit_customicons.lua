@@ -237,7 +237,7 @@ function gadget:Initialize()
       elseif (ud.name=="correch4") or (ud.name=="armrech4") then
         Spring.SetUnitDefIcon(udid, "rc1.user")
 --broadside etc
-      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllzeppelin") or (ud.name=="tllbarbarus") or (ud.name=="talon_independence") or (ud.name=="talon_skynet") then
+      elseif (ud.name=="abroadside") or (ud.name=="armhope") or (ud.name=="cdevastator") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllzeppelin") or (ud.name=="tllbarbarus") or (ud.name=="talon_independence") or (ud.name=="talon_skynet") then
         Spring.SetUnitDefIcon(udid, "t4ships.user")
 --broadside etc
       elseif (ud.name=="armarch") then

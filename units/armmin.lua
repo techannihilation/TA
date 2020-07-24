@@ -64,7 +64,7 @@ return {
 			[5] = "armmine3",
 			[6] = "armmine5",
 			[7] = "armmine7",
-			[8] = "armmine6",
+			--[8] = "armmine6",
 			[9] = "armfmine3",
 			[10] = "armfdrag",
 		},
