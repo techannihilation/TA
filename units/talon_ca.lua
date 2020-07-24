@@ -76,7 +76,7 @@ return {
 			[19] = "talon_juno",
 			[20] = "talon_gate2",
 			[21] = "talon_drag",
-			[22] = "talon_drag1",
+			--[22] = "talon_drag1",
 			[23] = "talon_llt",
 			[24] = "talon_kevlar",
 			[25] = "talon_hlt",
