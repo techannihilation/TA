@@ -5,6 +5,7 @@ Balance :
  - Decrease AOE for all EMP Bertha. ATM, 280~300 Range vs 360
  
 Improvment :
+ - Delete many t1 morph. Now they can all morph into T2 units. Except rockos. With this change, all faction are more balanced.
  - Add Arch T6 Arm unit. Morph armhope to get it
  - Delete Teeth EMP (cause not used)
  - Delete Experimental mines. Keep Nuke Mines. Thermithe Tll mines remplace Heavy Mines.
