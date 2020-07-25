@@ -573,25 +573,20 @@ local morphDefs = {
 		xp = 0.25,
 	},
 	tllprivate = {
-		into = 'tllprivate1',
-	  time = 5,
-		xp = 0.01,
+		into = 'tlldischarge',
+	  	time = 5,
+		xp = 0.30,
 	},
 	armpw = {
-		into = 'armpw1',
-		time = 5,
-		xp = 0.01,
-	},
-	armpw1 = {
 		{
 			into = 'armfast',
 			time = 5,
-			xp = 0.25,
+			xp = 0.30,
 		},
 		{
 			into = 'armhdpw',
 			time = 45,
-			xp = 0.50,
+			xp = 0.60,
 		},
 	},
 	armfast = {
@@ -615,11 +610,6 @@ local morphDefs = {
 		xp = 0.05,
 	},
 	armham = {
-		into = 'armham1',
-		time = 10,
-		xp = 0.05,
-	},
-	armham1 = {
 		into = 'armfido',
 		time = 30,
 		xp = 0.15,
@@ -630,14 +620,9 @@ local morphDefs = {
 		xp = 0.30,
 	},
 	corak = {
-		into = 'corak1',
-		time = 5,
-		xp = 0.01,
-	},
-	corak1 = {
 		into = 'corpyro',
 		time = 5,
-		xp = 0.25,
+		xp = 0.30,
 	},
 	corpyro = {
 		into = 'corpyrox',
@@ -660,19 +645,14 @@ local morphDefs = {
 		xp = 0.05,
 	},
 	corthud = {
-		into = 'corthud1',
-		time = 10,
-		xp = 0.05,
-	},
-	corthud1 = {
 		into = 'cormort',
 		time = 30,
-		xp = 0.25,
+		xp = 0.15,
 	},
 	armflash = {
-		into = 'armflash1',
-		time = 10,
-		xp = 0.05,
+		into = 'armlatnk',
+		time = 20,
+		xp = 0.15,
 	},
 	armlatnk = {
 		into = 'armchimera',
@@ -680,11 +660,6 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	armstump = {
-		into = 'armstump1',
-		time = 15,
-		xp = 0.10,
-	},
-	armstump1 = {
 		into = 'armbull',
 		time = 30,
 		xp = 0.30,
@@ -700,11 +675,6 @@ local morphDefs = {
 		xp = 0.30,
 	},
 	tawf013 = {
-		into = 'tawf0131',
-		time = 10,
-		xp = 0.05,
-	},
-	tawf0131 = {
 		into = 'armmart',
 		time = 30,
 		xp = 0.15,
@@ -730,36 +700,16 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	armsam = {
-		into = 'armsam1',
-		time = 10,
-		xp = 0.05,
-	},
-	armsam1 = {
 		into = 'armhorg',
 		time = 45,
 		xp = 0.25,
 	},
-	tllannouncer = {
-		into = 'tllannouncer1',
-		time = 10,
-		xp = 0.05,
-	},
 	corgator = {
-		into = 'corgator1',
-		time = 10,
-		xp = 0.05,
-	},
-	corgator1 = {
 		into = 'nsacskv',
 		time = 20,
 		xp = 0.15,
 	},
 	corlevlr = {
-		into = 'corlevlr1',
-		time = 15,
-		xp = 0.10,
-	},
-	corlevlr1 = {
 		into = 'corgol',
 		time = 45,
 		xp = 0.50,
@@ -775,11 +725,6 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corraid = {
-		into = 'corraid1',
-		time = 15,
-		xp = 0.10,
-	},
-	corraid1 = {
 		into = 'correap',
 		time = 30,
 		xp = 0.30,
@@ -790,20 +735,15 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corwolv = {
-		into = 'corwolv1',
-		time = 10,
-		xp = 0.05,
-	},
-	corwolv1 = {
 		{
 			into = 'cormart',
-			time = 20,
+			time = 30,
 			xp = 0.15,
 		},
 		{
 			into = 'trem',
-			time = 45,
-			xp = 0.30,
+			time = 60,
+			xp = 0.35,
 		},
 	},
 	cormart = {
@@ -1083,20 +1023,15 @@ local morphDefs = {
 			xp = 0.15,
 		},
 	},
-	corkrog = {
-		into = 'corkrog1',
-		time = 120,
-		xp = 0.10,
-	},
 	armorco = {
 		into = 'exoarm',
 		time = 120,
 		xp = 0.10,
 	},
 	armbanth = {
-		into = 'exoarm',
-		time = 120,
-		xp = 0.10,
+		into = 'armpraet',
+		time = 60,
+		xp = 0.05,
 	},
 	hyperion = {
 		into = 'tllsaurus',
@@ -1200,14 +1135,9 @@ local morphDefs = {
 		xp = 0.20,
 	},
 	tllpbot = {
-		into = 'tllpbot1',
-	 	time = 10,
-		xp = 0.05,
-	},
-	tllpbot1 = {
   	into = 'tllartybot',
 		time = 30,
-		xp = 0.50,
+		xp = 0.15,
 	},
 	tllartybot = {
     into = 'heavyimpact',
