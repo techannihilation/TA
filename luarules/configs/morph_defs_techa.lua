@@ -1094,7 +1094,7 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	armbanth = {
-		into = 'armbanth1',
+		into = 'exoarm',
 		time = 120,
 		xp = 0.10,
 	},

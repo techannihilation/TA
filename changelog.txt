@@ -7,7 +7,7 @@ Balance :
 Improvment :
  - Add Arch T6 Arm unit. Morph armhope to get it
  - Delete Teeth EMP (cause not used)
- - Delete Experimental mines. Keep Nuke Mines
+ - Delete Experimental mines. Keep Nuke Mines. Thermithe Tll mines remplace Heavy Mines.
 
 3.47 -> 3.48
 2020-07-04
