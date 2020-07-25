@@ -1,11 +1,13 @@
 3.48 -> 3.49
 2020-07-24
 Balance :
- - Blind TLL : Decrease Speed 1.3=>1.2 Increase Range Lighting 450=>550 (same than Bind) & damage (100/s=>125/s). Add Armor vs sniper (experimental change cause lost t3/t4 armor so harder to kill with experimental weapon).
- - Decrease AOE for all EMP Bertha. ATM, 280~300 Range vs 360.
+ - Blind TLL : Decrease Speed 1.3=>1.2 Increase Range Lighting 450=>550 (same than Bind) & damage (100/s=>125/s). Add Armor vs sniper (experimental change cause lost t3/t4 armor so harder to kill with experimental weapon)
+ - Decrease AOE for all EMP Bertha. ATM, 280~300 Range vs 360
  
 Improvment :
- - Add Arch T6 Arm unit. Morph armhope to get it.
+ - Add Arch T6 Arm unit. Morph armhope to get it
+ - Delete Teeth EMP (cause not used)
+ - Delete Experimental mines. Keep Nuke Mines
 
 3.47 -> 3.48
 2020-07-04

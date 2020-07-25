@@ -1,6 +1,6 @@
 return {
 	thermite_mine = {
-		areaofeffect = 100,
+		areaofeffect = 128,
 		commandfire = 1,
 		craterboost = 0,
 		cratermult = 0,
@@ -15,10 +15,9 @@ return {
 		reloadtime = 0.3,
 		soundhitdry = "xplosml3",
 		soundstart = "canlite3",
-		tolerance = 7000,
 		turret = 1,
 		damage = {
-			default = 3000,
+			default = 1500,
 			minelayers = 25,
 			mines = 0.5,
 		},

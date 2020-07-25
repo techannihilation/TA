@@ -7,8 +7,6 @@ return {
 		explosiongenerator = "custom:FLASHNUKE240",
 		impulseboost = 0,
 		name = "HeavyMine",
-		range = 480,
-		reloadtime = 3,
 		soundhit = "xplolrg3",
 		soundstart = "largegun",
 		weaponvelocity = 250,
