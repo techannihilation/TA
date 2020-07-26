@@ -792,7 +792,7 @@ local morphDefs = {
 		xp = 1.00,
 	},
 	armraz  = {
- 		into = 'armraz1',
+ 		into = 'armraptor',
         	time = 90,
         	xp = 0.10,
          },
@@ -1048,11 +1048,6 @@ local morphDefs = {
 		time = 120,
 		xp = 0.10,
 	},
-	corkarg = {
- 		into = 'corkarg1',
-		time = 90,
-		xp = 0.10,
-         },
 	arm_furie = {
 		into = 'arm_furie1',
 		time = 120,
