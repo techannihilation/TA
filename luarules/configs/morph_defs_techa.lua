@@ -796,11 +796,6 @@ local morphDefs = {
         	time = 90,
         	xp = 0.10,
          },
-	aexxec = {
-    into = 'akmech',
-		time = 60,
-		xp = 0.25,
-	},
 	akmech = {
 		into = 'armorco',
 		time = 90,
@@ -817,11 +812,6 @@ local morphDefs = {
 		xp = 1.25,
 	},
 	corsumo = {
-		into = 'corsumo1',
-		time = 20,
-		xp = 0.10,
-	},
-	corsumo1 = {
 		into = 'helepolis',
 		time = 30,
 		xp = 0.10,
@@ -832,11 +822,6 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	armzeus = {
-		into = 'armzeus1',
-		time = 20,
-		xp = 0.10,
-	},
-	armzeus1 = {
 		into = 'armcav',
 		time = 20,
 		xp = 0.10,
@@ -1045,11 +1030,6 @@ local morphDefs = {
 	},
 	talon_talos = {
 		into = 'talon_mythril',
-		time = 120,
-		xp = 0.10,
-	},
-	arm_furie = {
-		into = 'arm_furie1',
 		time = 120,
 		xp = 0.10,
 	},
