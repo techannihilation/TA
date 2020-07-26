@@ -630,11 +630,6 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corpyrox = {
-		into = 'corpyrox1',
-		time = 15,
-		xp = 0.05,
-	},
-	corpyrox1 = {
 		into = 'cordem',
 		time = 45,
 		xp = 0.10,

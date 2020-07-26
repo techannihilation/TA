@@ -10,6 +10,7 @@ Improvment :
  - Change Model for T4 Lab Talon
  - corkrog, corkarg morph deleted. Try to find new unit design.
  - Delete armraz1 and remplace armraz morph with armraptor
+ - Delete corpyrox1 and remplace corpyrox morph with cordem
  - Add Arch T6 Arm unit. Morph armhope to get it
  - Delete Teeth EMP (cause not used)
  - Delete Experimental mines. Keep Nuke Mines. Thermithe Tll mines remplace Heavy Mines.
