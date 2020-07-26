@@ -3,9 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  Base, Body, Door1, Door2, NanoTower1A, NanoTower1B, NanoDoor1, NanoGun1A,
-       NanoGun1B, Spray1, NanoGun2A, NanoGun2B, Spray2, NanoTower2A, NanoTower2B, NanoDoor2,
-       NanoGun3A, NanoGun3B, Spray3, NanoGun4A, NanoGun4B, Spray4, NanoPad, Nanodoor1b;
+piece  base, body, nanotower1a, nanotower1b, nanotower2a, nanotower2b,
+       nanoPad, door1a, door1b, door2a, door2b, 
+       nanospray1a, nanospray1b, nanospray1c, nanospray1d,
+       nanospray2a, nanospray2b, nanospray2c, nanospray2d;
 
 static-var  statechg_DesiredState, statechg_StateChanging, spray ;
 
@@ -33,19 +34,19 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			Func_Var_4 = Rand( 1, 4 );
 			if( Func_Var_4 == 1 )
 			{
-				emit-sfx smoketype from Base;
+				emit-sfx smoketype from base;
 			}
 			if( Func_Var_4 == 2 )
 			{
-				emit-sfx smoketype from NanoDoor1;
+				emit-sfx smoketype from door1a;
 			}
 			if( Func_Var_4 == 3 )
 			{
-				emit-sfx smoketype from NanoGun1A;
+				emit-sfx smoketype from nanotower2b;
 			}
 			if( Func_Var_4 == 4 )
 			{
-				emit-sfx smoketype from NanoGun4A;
+				emit-sfx smoketype from door2b;
 			}
 		}
 		sleeptime = healthpercent * 50;
@@ -61,65 +62,52 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move Door1 to x-axis [4.000000] speed [2.000000];
-		move Door2 to x-axis [-4.000000] speed [2.000000];
-		wait-for-move Door2 along x-axis;
+		//turn door1b to z-axis <-20.000000> speed <15.000000>;
+		//turn door2b to z-axis <20.000000> speed <15.000000>;
+		//wait-for-turn door1b around z-axis;
 	}
+
 	if( TRUE )
-	{
-		move Door1 to x-axis [17.00000] speed [4.500000];
-		move Door2 to x-axis [-17.00000] speed [4.500000];
-		wait-for-move Door2 along x-axis;
-	}
-	if( TRUE )
-	{
-		turn NanoTower1A to x-axis <-20.000000> speed <15.000000>;
-		turn NanoTower2A to x-axis <-20.000000> speed <15.000000>;
-		wait-for-turn NanoTower2A around x-axis;
-		turn NanoTower1A to x-axis <-90.000000> speed <10.000000>;
-		turn NanoTower2A to x-axis <-90.000000> speed <10.000000>;
-		wait-for-turn NanoTower2A around x-axis;
-	}
-	if( TRUE )
-	{
-		move NanoTower1B to z-axis [-2.000000] speed [1.00000];
-		move NanoTower2B to z-axis [-2.000000] speed [1.00000];
-		wait-for-move NanoTower2B along z-axis;
-		move NanoTower1B to z-axis [-10.000000] speed [5.100000];
-		move NanoTower2B to z-axis [-10.000000] speed [5.100000];
-		wait-for-move NanoTower2B along z-axis;
-	}
-	if( TRUE )
-	{
+	{	
+		turn door1a to z-axis <-45.000000> speed <10.000000>;
+		turn door2a to z-axis <45.000000> speed <10.000000>;
+		
 		sleep 500;
-	}
-	if( TRUE )
-	{
-		turn NanoDoor1 to z-axis <85.000000> speed <90.000000>;
-		turn NanoDoor2 to z-axis <-85.000000> speed <90.000000>;
-		move NanoGun1A to x-axis [10.00000] speed [9.500000];
-		move NanoGun2A to x-axis [10.00000] speed [9.500000];
-		move NanoGun3A to x-axis [-10.00000] speed [9.500000];
-		move NanoGun4A to x-axis [-10.00000] speed [9.500000];
-		move NanoGun1B to x-axis [10.00000] speed [9.000000];
-		move NanoGun2B to x-axis [10.00000] speed [9.000000];
-		move NanoGun3B to x-axis [-10.00000] speed [9.000000];
-		move NanoGun4B to x-axis [-10.00000] speed [9.000000];
-		wait-for-turn NanoDoor2 around z-axis;
-	}
-	if( TRUE )
-	{
-		turn NanoDoor1 to z-axis <90.000000> speed <18.000000>;
-		turn NanoDoor2 to z-axis <-90.000000> speed <18.000000>;
-		wait-for-turn NanoDoor2 around z-axis;
-	}
-	if( TRUE )
-	{
-		turn NanoGun1B to z-axis <-95.000000> speed <140.000000>;
-		turn NanoGun2B to z-axis <-95.000000> speed <140.000000>;
-		turn NanoGun3B to z-axis <95.000000> speed <140.000000>;
-		turn NanoGun4B to z-axis <95.000000> speed <140.000000>;
-		wait-for-turn NanoGun4B around z-axis;
+		
+		turn nanotower1b to z-axis <30.000000> speed <25.000000>;
+		turn nanotower2b to z-axis <-30.000000> speed <25.000000>;
+				
+		wait-for-turn nanotower1b around z-axis;
+		
+		sleep 500;
+		
+		turn nanotower1b to z-axis <90.000000> speed <25.000000>;
+		turn nanotower2b to z-axis <-90.000000> speed <25.000000>;
+		
+		turn door1b to z-axis <45.000000> speed <10.000000>;
+		turn door2b to z-axis <-45.000000> speed <10.000000>;
+		
+		sleep 500;
+		
+		turn nanotower1b to z-axis <180.000000> speed <35.000000>;
+		turn nanotower2b to z-axis <-180.000000> speed <35.000000>;
+		
+		turn nanotower1a to z-axis <-20.000000> speed <40.000000>;
+		turn nanotower2a to z-axis <20.000000> speed <40.000000>;
+		
+		turn nanotower1b to z-axis <180.000000> speed <55.000000>;
+		turn nanotower2b to z-axis <-180.000000> speed <55.000000>;
+		
+		wait-for-turn door2a around z-axis;
+		
+		turn door1a to z-axis <-90.000000> speed <15.000000>;
+		turn door2a to z-axis <90.000000> speed <15.000000>;
+		
+		turn nanotower1a to z-axis <-90.000000> speed <40.000000>;
+		turn nanotower2a to z-axis <90.000000> speed <40.000000>;
+		
+		turn nanotower1b to z-axis <270.000000> speed <50.000000>;
+		turn nanotower2b to z-axis <-270.000000> speed <50.000000>;	
 	}
 }
 
@@ -127,63 +115,36 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		turn NanoGun1B to z-axis <0.000000> speed <120.000000>;
-		turn NanoGun2B to z-axis <0.000000> speed <120.000000>;
-		turn NanoGun3B to z-axis <0.000000> speed <120.000000>;
-		turn NanoGun4B to z-axis <0.000000> speed <120.000000>;
-		wait-for-turn NanoGun4B around z-axis;
-	}
-	if( TRUE )
-	{
-		turn NanoDoor1 to z-axis <85.000000> speed <12.000000>;
-		turn NanoDoor2 to z-axis <-85.000000> speed <12.000000>;
-		move NanoGun1A to x-axis [0.000000] speed [8.500000];
-		move NanoGun2A to x-axis [0.000000] speed [8.500000];
-		move NanoGun3A to x-axis [0.000000] speed [8.500000];
-		move NanoGun4A to x-axis [0.000000] speed [8.500000];
-		move NanoGun1B to x-axis [0.000000] speed [8.000000];
-		move NanoGun2B to x-axis [0.000000] speed [8.000000];
-		move NanoGun3B to x-axis [0.000000] speed [8.000000];
-		move NanoGun4B to x-axis [0.000000] speed [8.000000];
-		wait-for-turn NanoDoor2 around z-axis;
-	}
-	if( TRUE )
-	{
-		turn NanoDoor1 to z-axis <0.000000> speed <60.000000>;
-		turn NanoDoor2 to z-axis <0.000000> speed <60.000000>;
-		wait-for-turn NanoDoor2 around z-axis;
-		sleep 400;
-	}
-	if( TRUE )
-	{
-		move NanoTower1B to z-axis [-10.000000] speed [1.200000];
-		move NanoTower2B to z-axis [-10.000000] speed [1.200000];
-		wait-for-move NanoTower2B along z-axis;
-	}
-	if( TRUE )
-	{
-		move NanoTower1B to z-axis [0.000000] speed [5.0000];
-		move NanoTower2B to z-axis [0.000000] speed [5.0000];
-		wait-for-move NanoTower2B along z-axis;
-	}
 
-	if( TRUE )
-	{
-		turn NanoTower1A to x-axis <0.000000> speed <5.00000>;
-		turn NanoTower2A to x-axis <0.000000> speed <5.00000>;
-		wait-for-turn NanoTower2A around x-axis;
-	}
-	if( TRUE )
-	{
-		move Door1 to x-axis [8.00000] speed [2.800000];
-		move Door2 to x-axis [-8.00000] speed [2.800000];
-		wait-for-move Door2 along x-axis;
-	}
-	if( TRUE )
-	{
-		move Door1 to x-axis [0.000000] speed [4.00000];
-		move Door2 to x-axis [0.000000] speed [4.00000];
-		wait-for-move Door2 along x-axis;
+		turn nanotower1b to z-axis <180.000000> speed <50.000000>;
+		turn nanotower2b to z-axis <-180.000000> speed <50.000000>;	
+		
+		wait-for-turn nanotower1b around z-axis;
+
+		turn door1a to z-axis <-45.000000> speed <20.000000>;
+		turn door2a to z-axis <45.000000> speed <20.000000>;
+		
+		turn door1b to z-axis <0.000000> speed <50.000000>;
+		turn door2b to z-axis <0.000000> speed <50.000000>;
+		
+		turn nanotower1a to z-axis <-20.000000> speed <35.000000>;
+		turn nanotower2a to z-axis <20.000000> speed <35.000000>;
+		
+		turn nanotower1b to z-axis <60.000000> speed <75.000000>;
+		turn nanotower2b to z-axis <-60.000000> speed <75.000000>;	
+		
+		wait-for-turn door2a around z-axis;
+		
+		turn door1a to z-axis <0.000000> speed <20.000000>;
+		turn door2a to z-axis <0.000000> speed <20.000000>;
+		
+		turn nanotower1b to z-axis <0.000000> speed <75.000000>;
+		turn nanotower2b to z-axis <0.000000> speed <75.000000>;
+		
+		
+		turn nanotower1a to z-axis <0.000000> speed <35.000000>;
+		turn nanotower2a to z-axis <0.000000> speed <35.000000>;
+		
 	}
 }
 
@@ -193,7 +154,7 @@ OpenYard()
 	while( !get YARD_OPEN )
 	{
 		set BUGGER_OFF to 1;
-		sleep 1500;
+		sleep 2500;
 		set YARD_OPEN to 1;
 	}
 	set BUGGER_OFF to 0;
@@ -205,7 +166,7 @@ CloseYard()
 	while( get YARD_OPEN )
 	{
 		set BUGGER_OFF to 1;
-		sleep 1500;
+		sleep 2500;
 		set YARD_OPEN to 0;
 	}
 	set BUGGER_OFF to 0;
@@ -215,6 +176,7 @@ Go()
 {
 	call-script activatescr();
 	call-script OpenYard();
+	sleep 3100;
 	set INBUILDSTANCE to 1;
 
 }
@@ -274,24 +236,40 @@ QueryNanoPiece(piecenum)
 {
 	if( spray  == 1 )
 	{
-		piecenum = Spray1;
+		piecenum = nanospray1a;
 	}
 	if( spray  == 2 )
 	{
-		piecenum = Spray2;
+		piecenum = nanospray1b;
 	}
 	if( spray  == 3 )
 	{
-		piecenum = Spray3;
+		piecenum = nanospray1c;
 	}
 	if( spray  == 4 )
 	{
-		piecenum = Spray4;
+		piecenum = nanospray1d;
+	}
+	if( spray  == 5 )
+	{
+		piecenum = nanospray2a;
+	}
+	if( spray  == 6 )
+	{
+		piecenum = nanospray2b;
+	}
+	if( spray  == 7 )
+	{
+		piecenum = nanospray2c;
+	}
+	if( spray  == 8 )
+	{
+		piecenum = nanospray2d;
 	}
 	++spray ;
-	if( spray  > 4 )
+	if( spray  == 9 )
 	{
-		spray  = 1;
+		spray  = 0;
 	}
 }
 
@@ -329,110 +307,31 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode Base type NOHEATCLOUD;
-		explode Body type NOHEATCLOUD;
-		explode Door1 type NOHEATCLOUD;
-		explode Door2 type NOHEATCLOUD;
-		explode NanoTower1A type NOHEATCLOUD;
-		explode NanoTower1B type NOHEATCLOUD;
-		explode NanoDoor1 type NOHEATCLOUD;
-		explode NanoGun1A type NOHEATCLOUD;
-		explode NanoGun1B type NOHEATCLOUD;
-		explode Spray1 type NOHEATCLOUD;
-		explode NanoGun2A type NOHEATCLOUD;
-		explode NanoGun2B type NOHEATCLOUD;
-		explode Spray2 type NOHEATCLOUD;
-		explode NanoTower2A type NOHEATCLOUD;
-		explode NanoTower2B type NOHEATCLOUD;
-		explode NanoDoor2 type NOHEATCLOUD;
-		explode NanoGun3A type NOHEATCLOUD;
-		explode NanoGun3B type NOHEATCLOUD;
-		explode Spray3 type NOHEATCLOUD;
-		explode NanoGun4A type NOHEATCLOUD;
-		explode NanoGun4B type NOHEATCLOUD;
-		explode Spray4 type NOHEATCLOUD;
-		explode NanoPad type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode door1a type NOHEATCLOUD;
+		explode door2a type NOHEATCLOUD;
+		explode nanotower1a type NOHEATCLOUD;
+		explode nanotower1b type NOHEATCLOUD;
+		explode door2b type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode Base type SHATTER | NOHEATCLOUD;
-		explode Body type SHATTER | NOHEATCLOUD;
-		explode Door1 type SHATTER | NOHEATCLOUD;
-		explode Door2 type SHATTER | NOHEATCLOUD;
-		explode NanoTower1A type SHATTER | NOHEATCLOUD;
-		explode NanoTower1B type SHATTER | NOHEATCLOUD;
-		explode NanoDoor1 type SHATTER | NOHEATCLOUD;
-		explode NanoGun1A type SHATTER | NOHEATCLOUD;
-		explode NanoGun1B type SHATTER | NOHEATCLOUD;
-		explode Spray1 type SHATTER | NOHEATCLOUD;
-		explode NanoGun2A type SHATTER | NOHEATCLOUD;
-		explode NanoGun2B type SHATTER | NOHEATCLOUD;
-		explode Spray2 type SHATTER | NOHEATCLOUD;
-		explode NanoTower2A type SHATTER | NOHEATCLOUD;
-		explode NanoTower2B type SHATTER | NOHEATCLOUD;
-		explode NanoDoor2 type SHATTER | NOHEATCLOUD;
-		explode NanoGun3A type SHATTER | NOHEATCLOUD;
-		explode NanoGun3B type SHATTER | NOHEATCLOUD;
-		explode Spray3 type SHATTER | NOHEATCLOUD;
-		explode NanoGun4A type SHATTER | NOHEATCLOUD;
-		explode NanoGun4B type SHATTER | NOHEATCLOUD;
-		explode Spray4 type SHATTER | NOHEATCLOUD;
-		explode NanoPad type SHATTER | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode Base type SHATTER | NOHEATCLOUD;
-		explode Body type SHATTER | NOHEATCLOUD;
-		explode Door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode Door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoTower1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoTower1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoDoor1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode Spray1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode Spray2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoTower2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoTower2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoDoor2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun3A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun3B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode Spray3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun4A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoGun4B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode Spray4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode NanoPad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode door1a type FALL | NOHEATCLOUD;
+		explode door2a type FALL |  NOHEATCLOUD;
+		explode nanotower1a type FALL | NOHEATCLOUD;
+		explode nanotower1b type FALL | NOHEATCLOUD;
+		explode door2b type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode Base type SHATTER | NOHEATCLOUD;
-	explode Body type SHATTER | NOHEATCLOUD;
-	explode Door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoTower1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoTower1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoDoor1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun1A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun1B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Spray1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Spray2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoTower2A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoTower2B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoDoor2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun3A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun3B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Spray3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun4A type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoGun4B type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Spray4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode NanoPad type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode door1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nanotower1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nanotower1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }
