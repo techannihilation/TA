@@ -4,7 +4,7 @@ return {
 		autoheal = 50,
 		brakerate = 0.54,
 		buildcostenergy = 28900,
-		buildcostmetal = 2904,
+		buildcostmetal = 2204,
 		builder = false,
 		buildpic = "corpyrox.dds",
 		buildtime = 32000,
@@ -139,7 +139,7 @@ return {
 				weapontype = "Flame",
 				weaponvelocity = 265,
 				damage = {
-					default = 20,
+					default = 24,
 					flamethrowers = 8,
 					subs = 5,
 				},

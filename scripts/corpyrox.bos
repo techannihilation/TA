@@ -137,6 +137,13 @@ RestoreAfterDelay()
 	sleep 10;
 }
 
+RestoreAfterDelay1()
+{
+	sleep 2000;
+	turn flip1 to z-axis <0.000000> speed <90.000000>;
+	turn flip2 to z-axis <0.000000> speed <90.000000>;
+}
+
 Create()
 {
 	Static_Var_4 = get MY_ID;
@@ -150,13 +157,6 @@ Create()
 	hide eyegun;
 	hide lflame2;
 	hide rflame2;
-	hide spines;
-	hide horns;
-	hide launcher;
-	hide door1;
-	hide door2;
-	hide flip1;
-	hide flip2;
 	hide ltubes;
 	hide rtubes;
 	Static_Var_8 = 200;
@@ -278,16 +278,12 @@ AimTertiary()
 	turn flip2 to z-axis <-90.000000> speed <90.000000>;
 	wait-for-turn flip1 around z-axis;
 	wait-for-turn flip2 around z-axis;
+	start-script RestoreAfterDelay1();
 	return (1);
 }
 
 FireTertiary()
 {
-	cache eyegun;
-	turn flip1 to z-axis <0.000000> speed <90.000000>;
-	turn flip2 to z-axis <0.000000> speed <90.000000>;
-	sleep [1.098633];
-	dont-cache eyegun;
 }
 
 AimFromTertiary(piecenum)
