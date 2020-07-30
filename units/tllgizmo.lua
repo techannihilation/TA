@@ -71,7 +71,7 @@ return {
 			[5] = "tlljam",
 			[6] = "tlladt",
 			[7] = "tllmine2",
-			[8] = "tllmine3",
+			[8] = "tllmine4",
 			[9] = "tllmine5",
 		},
 		customparams = {

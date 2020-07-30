@@ -16,13 +16,16 @@ local groundScouts = {
     [UnitDefNames["corfav"].id] = true,
     [UnitDefNames["armfav"].id] = true,
     [UnitDefNames["corak"].id] = true,
-    [UnitDefNames["corak1"].id] = true,
     [UnitDefNames["armpw"].id] = true,
-    [UnitDefNames["armpw1"].id] = true,
     [UnitDefNames["armflea"].id] = true,
     [UnitDefNames["corpunk"].id] = true,
     [UnitDefNames["tllprivate"].id] = true,
     [UnitDefNames["tllgladius"].id] = true,
+    [UnitDefNames["talon_infantry"].id] = true,
+    [UnitDefNames["talon_mercenary"].id] = true,
+    [UnitDefNames["talon_rebel"].id] = true,
+    [UnitDefNames["talon_sniper"].id] = true,
+    [UnitDefNames["talon_topaz"].id] = true,
 }
 
 local min = math.min

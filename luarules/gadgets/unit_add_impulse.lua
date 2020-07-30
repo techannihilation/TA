@@ -21,10 +21,6 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 100 * multiplier,
 			weaponNumber = 1
 		},
-		[UnitDefNames.armfboy1.weapons[1].weaponDef] = {
-			impulseBoost = 100 * multiplier,
-			weaponNumber = 1
-		},
 		[UnitDefNames.armmcv.weapons[1].weaponDef] = {
 			impulseBoost = 30 * multiplier,
 			weaponNumber = 1
