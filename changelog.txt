@@ -12,6 +12,7 @@ Improvment :
  - Delete armraz1 and remplace armraz morph with armraptor
  - Delete corpyrox1 and remplace corpyrox morph with cordem
  - Add Arch T6 Arm unit. Morph armhope to get it
+ - Delete corcan morph
  - Delete Teeth EMP (cause not used)
  - Delete Experimental mines. Keep Nuke Mines. Thermithe Tll mines remplace Heavy Mines.
 

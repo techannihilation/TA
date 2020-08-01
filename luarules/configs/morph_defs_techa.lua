@@ -821,11 +821,6 @@ local morphDefs = {
 		time = 20,
 		xp = 0.10,
 	},
-	corcan = {
-     		into = 'corcan1',
-		time = 20,
-		xp = 0.05,
-	},
 	armfboy = {
 		into = 'armshock',
 		time = 45,

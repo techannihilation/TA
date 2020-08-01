@@ -385,9 +385,7 @@ return {
 	},
 	sniper_resistant = {
 	"armzeus",
-	"armzeus1",
 	"corcan",
-	"corcan1",
 	"tllbind",
 	"tllblind",
 	"talon_crusader",
