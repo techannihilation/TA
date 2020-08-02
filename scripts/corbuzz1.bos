@@ -5,13 +5,16 @@
 
 piece  flare1a, flare2a, flare3a, flare4a, flare5a, flare6a,
 	   flare1b, flare2b, flare3b, flare4b, flare5b, flare6b,
-	   base, body, turret, central, rotor, right, left, rotatea, rotateb,
+	   flare1c, flare2c, flare3c, flare4c, flare5c, flare6c,
+	   base, body, turret, rotor, right, left, rotatea, rotateb,
        barrel1a, barrel2a, barrel3a, barrel4a, barrel5a, barrel6a, 
        sleeve1a, sleeve2a,sleeve3a, sleeve4a, sleeve5a, sleeve6a, spindlea,
        barrel1b, barrel2b, barrel3b, barrel4b, barrel5b, barrel6b, 
-       sleeve1b, sleeve2b,sleeve3b, sleeve4b, sleeve5b, sleeve6b, spindleb, aimpoint;
+       sleeve1b, sleeve2b,sleeve3b, sleeve4b, sleeve5b, sleeve6b, spindleb,
+       barrel1c, barrel2c, barrel3c, barrel4c, barrel5c, barrel6c, 
+       sleeve1c, sleeve2c,sleeve3c, sleeve4c, sleeve5c, sleeve6c, spindlec, aimpoint;
 
-static-var  gun_1, gun_2;
+static-var  gun_1, gun_2, gun_3;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -58,8 +61,15 @@ Create()
 	hide flare4b;
 	hide flare5b;
 	hide flare6b;
+	hide flare1c;
+	hide flare2c;
+	hide flare3c;
+	hide flare4c;
+	hide flare5c;
+	hide flare6c;
 	gun_1 = 0;
 	gun_2 = 0;
+	gun_3 = 0;
 	start-script SmokeUnit();
 }
 
@@ -76,7 +86,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 0 AND gun_2 != 5)
+	if( gun_1 == 0 AND gun_2 != 5 AND gun_3 != 5)
 	{
 		gun_1 = 1;
 		move barrel1a to z-axis [-6.000000] now;
@@ -86,7 +96,7 @@ FirePrimary()
 		turn spindlea to x-axis <60.000000> * gun_1 speed <180.000000>;
 		return 1;
 	}
-	if( gun_2 == 0 )
+	if( gun_2 == 0 AND gun_3 != 5)
 	{
 		gun_2 = 1;
 		move barrel1b to z-axis [-6.000000] now;
@@ -94,6 +104,16 @@ FirePrimary()
 		sleep 100;
 		move barrel1b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
+		return 1;
+	}
+	if( gun_3 == 0)
+	{
+		gun_3 = 1;
+		move barrel1c to z-axis [-6.000000] now;
+		emit-sfx 1024 + 0 from flare1c;
+		sleep 100;
+		move barrel1c to z-axis [0.000000] speed [20.000000];
+		turn spindlec to x-axis <60.000000> * gun_2 speed <180.000000>;
 		return 1;
 	}
 	if( gun_1 == 1 )
@@ -120,6 +140,18 @@ FirePrimary()
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
 		return 1;
 	}
+	if( gun_3 == 1 )
+	{
+		gun_3 = 2;
+		move barrel2c to y-axis [-5.000000] now;
+		move barrel2c to z-axis [-3.000000] now;
+		emit-sfx 1024 + 0 from flare2c;
+		sleep 100;
+		move barrel2c to y-axis [0.000000] speed [20.000000];
+		move barrel2c to z-axis [0.000000] speed [20.000000];
+		turn spindlec to x-axis <60.000000> * gun_2 speed <180.000000>;
+		return 1;
+	}
 	if( gun_1 == 2 )
 	{
 		gun_1 = 3;
@@ -144,6 +176,18 @@ FirePrimary()
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
 		return 1;
 	}
+	if( gun_3 == 2 )
+	{
+		gun_3 = 3;
+		move barrel3c to y-axis [-5.000000] now;
+		move barrel3c to z-axis [3.000000] now;
+		emit-sfx 1024 + 0 from flare3c;
+		sleep 100;
+		move barrel3c to y-axis [0.000000] speed [20.000000];
+		move barrel3c to z-axis [0.000000] speed [20.000000];
+		turn spindlec to x-axis <60.000000> * gun_2 speed <180.000000>;
+		return 1;
+	}
 	if( gun_1 == 3 )
 	{
 		gun_1 = 4;
@@ -162,6 +206,16 @@ FirePrimary()
 		sleep 100;
 		move barrel4b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
+		return 1;
+	}
+	if( gun_3 == 3 )
+	{
+		gun_3 = 4;
+		move barrel4c to z-axis [6.000000] now;
+		emit-sfx 1024 + 0 from flare4c;
+		sleep 100;
+		move barrel4c to z-axis [0.000000] speed [20.000000];
+		turn spindlec to x-axis <60.000000> * gun_2 speed <180.000000>;
 		return 1;
 	}
 	if( gun_1 == 4 )
@@ -188,6 +242,18 @@ FirePrimary()
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
 		return 1;
 	}
+	if( gun_3 == 4)
+	{
+		gun_3 = 5;
+		move barrel5c to y-axis [5.000000] now;
+		move barrel5c to z-axis [3.000000] now;
+		emit-sfx 1024 + 0 from flare5c;
+		sleep 100;
+		move barrel5c to y-axis [0.000000] speed [20.000000];
+		move barrel5c to z-axis [0.000000] speed [20.000000];
+		turn spindlec to x-axis <60.000000> * gun_2 speed <180.000000>;
+		return 1;
+	}
 	if( gun_1 == 5 )
 	{
 		gun_1 = 0;
@@ -212,7 +278,18 @@ FirePrimary()
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
 		return 1;
 	}
-	
+	if( gun_3 == 5 )
+	{
+		gun_3 = 0;
+		move barrel6c to y-axis [5.000000] now;
+		move barrel6c to z-axis [-3.000000] now;
+		emit-sfx 1024 + 0 from flare6c;
+		sleep 100;
+		move barrel6c to y-axis [0.000000] speed [20.000000];
+		move barrel6c to z-axis [0.000000] speed [20.000000];
+		turn spindlec to x-axis <60.000000> * gun_2 speed <180.000000>;
+		return 1;
+	}	
 }
 
 TargetCleared(Func_Var_1)
@@ -274,6 +351,30 @@ QueryPrimary(piecenum)
 	{
 		piecenum = flare5b;
 	}
+	if( gun_3 == 0 )
+	{
+		piecenum = flare6c;
+	}
+	if( gun_3 == 1 )
+	{
+		piecenum = flare1c;
+	}
+	if( gun_3 == 2 )
+	{
+		piecenum = flare2c;
+	}
+	if( gun_3 == 3 )
+	{
+		piecenum = flare3c;
+	}
+	if( gun_3 == 4 )
+	{
+		piecenum = flare4c;
+	}
+	if( gun_3 == 5 )
+	{
+		piecenum = flare5c;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -296,6 +397,7 @@ Killed(severity, corpsetype)
 		explode barrel4a type NOHEATCLOUD;
 		explode barrel2b type NOHEATCLOUD;
 		explode barrel6b type NOHEATCLOUD;
+		explode barrel3c type NOHEATCLOUD;
 		explode barrel1a type NOHEATCLOUD;
 		explode left type NOHEATCLOUD;
 		explode right type NOHEATCLOUD;
@@ -308,23 +410,11 @@ Killed(severity, corpsetype)
 		explode spindlea type NOHEATCLOUD | FALL;
 		explode barrel4a type NOHEATCLOUD | FALL;
 		explode barrel2b type NOHEATCLOUD | FALL;
+		explode barrel3c type NOHEATCLOUD | FALL;
 		explode barrel6b type NOHEATCLOUD | FALL;
 		explode barrel1a type NOHEATCLOUD | FALL;
 		explode left type NOHEATCLOUD | FALL;
 		explode right type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode body type NOHEATCLOUD;
-		explode spindlea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel4a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel6b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode left type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode right type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -332,6 +422,7 @@ Killed(severity, corpsetype)
 	explode spindlea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel4a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel2b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel3c type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel6b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode left type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
