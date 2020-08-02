@@ -230,16 +230,16 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 420,
 				damage = {
-					experimental_land = 500,
-					experimental_ships = 500,
-					default = 400,
+					experimental_land = 750,
+					experimental_ships = 750,
+					default = 500,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "TINY MEDIUM",
 				def = "COR_JUG",
 				onlytargetcategory = "SURFACE",
 			},
