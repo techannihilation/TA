@@ -2,11 +2,11 @@ return {
 	nsacskv = {
 		acceleration = 0.1,
 		brakerate = 0.3,
-		buildcostenergy = 9521,
-		buildcostmetal = 564,
+		buildcostenergy = 7521,
+		buildcostmetal = 464,
 		builder = false,
 		buildpic = "nsacskv.dds",
-		buildtime = 19000,
+		buildtime = 10000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -27,9 +27,9 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 564,
-		maxdamage = 1550,
+		maxdamage = 1050,
 		maxslope = 10,
-		maxvelocity = 3.5,
+		maxvelocity = 3.75,
 		maxwaterdepth = 12,
 		mobilestanorders = 1,
 		movementclass = "TANK2",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "nsacskv.dds",
 			faction = "CORE",
-			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

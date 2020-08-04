@@ -747,13 +747,8 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	cormist = {
-		into = 'cormist1',
-		time = 10,
-		xp = 0.05,
-	},
-	cormist1 = {
 		into = 'tawf114',
-		time = 60,
+		time = 45,
 		xp = 0.30,
 	},
 	armjeth = {
