@@ -683,8 +683,8 @@ AimSecondary(heading, pitch)
 	wait-for-turn luparm around x-axis;
 	wait-for-turn rlowarm around x-axis;
 	wait-for-turn llowarm around x-axis;
-	spin gat around y-axis speed <320.000000> accelerate <45.412088>;
-	spin gat2 around y-axis speed <320.000000> accelerate <45.412088>;
+	spin gat around y-axis speed <240.000000> accelerate <45.000000>;
+	spin gat2 around y-axis speed <240.000000> accelerate <45.000000>;
 	start-script RestoreSecondary();
 	return (1);
 }
@@ -693,11 +693,11 @@ FireSecondary()
 {
 	if( gun_2 == 1 )
 	{
-		emit-sfx 1024 + 0 from flame1;
+		//emit-sfx 1024 + 0 from flame1;
 	}
 	else
 	{
-		emit-sfx 1024 + 0 from flame1b;
+		//emit-sfx 1024 + 0 from flame1b;
 	}
 	gun_2 = !gun_2;
 }
@@ -706,7 +706,7 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn lmsl to z-axis <60.000000> speed <50.000000>;
+	turn lmsl to z-axis <60.000000> speed <90.000000>;
 	wait-for-turn lmsl around z-axis;
 	turn lmsl to z-axis <0.000000> now;
 	return (1);
