@@ -3,13 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  turret1, turret2, sleeve1, sleeve2, sleeve3, base,
+piece  turret1, turret2, sleeve1, sleeve2, base,
 		barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, flare1, flare2, flare3, flare4, flare5, flare6,
-		fire, cover1, cover2, cover3, cover4, cover5, cover6, cover7,
-		w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12,gun, 
+		cover1, cover2, cover3, cover4, cover5, cover6, 
+		w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, flare21, flare22, flare23, flare24, 
 		wakes1, wakes2, mis1, mis2, body, cycle, aimfrom, depth_aim1, depth_aim2;
 
-static-var  gun_1, restore_delay, gun_2, turret_1, beforehealth;
+static-var  gun_1, restore_delay, gun_2, turret_1, laser, beforehealth;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -60,11 +60,11 @@ Create()
 	hide flare4;
 	hide flare5;
 	hide flare6;
-	hide fire;
-	turn sleeve3 to y-axis <180.000000> now;
+	turn turret2 to y-axis <180.000000> now;
 	
 	gun_1 = 0;
 	gun_2 = 7;
+	laser = 0;
 	
 	restore_delay = 6000;
 	start-script SmokeUnit();
@@ -87,10 +87,7 @@ RestoreAfterDelay()
 RestoreAfterDelay2()
 {
 	sleep restore_delay / 2;
-	turn cover7 to x-axis <0> speed <50>;
-	turn sleeve3 to y-axis <180.000000> speed <80>;
-	gun_1 = 0;
-	gun_2 = 0;
+	turn turret2 to y-axis <180.000000> speed <50>;
 }
 StartMoving()
 {
@@ -243,29 +240,40 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn sleeve3 to y-axis heading speed <80>;
-	turn cover7 to x-axis <0.000000> - pitch speed <50>;
-	wait-for-turn sleeve3 around y-axis;
-	wait-for-turn cover7 around x-axis;
-	start-script RestoreAfterDelay2();
+	turn turret2 to y-axis heading speed <90.000000>;
+	wait-for-turn turret2 around y-axis;
+	//start-script RestoreAfterDelay2();
 	return (1);
 }
 
 QuerySecondary(piecenum)
 {
-		piecenum = fire;
+	if (laser == 0)
+	{
+		piecenum = flare21;
+	}
+	if (laser == 1)
+	{
+		piecenum = flare22;
+	}
+	if (laser == 2)
+	{
+		piecenum = flare23;
+	}
+	if (laser == 3)
+	{
+		piecenum = flare24;
+	}
+		
 }
 
 FireSecondary() 
 {
-	emit-sfx 1025 from fire;
-	explode fire type NOHEATCLOUD;
-	move gun to z-axis [-3.] now;
-	move gun to z-axis [0.] speed [5.];
-	show fire;
-	sleep 150;
-	hide fire;
-	sleep 350;
+	++laser;
+	if (laser == 4)
+	{
+		laser = 0;
+	}
 }
 
 
@@ -277,7 +285,7 @@ AimFromTertiary(piecenum)
 AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_2;
+	set-signal-mask SIG_AIM_3;
 	return (1);
 }
 
@@ -385,22 +393,6 @@ Killed(severity, corpsetype)
 	explode base type NOHEATCLOUD |FALL;
 	explode mis1 type NOHEATCLOUD |FALL;
 	explode mis2 type NOHEATCLOUD |FALL;
-	return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-	corpsetype = 3;
-	explode turret1 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve1 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel1 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel2 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret2 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve2 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel3 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel6 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode mis1 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode mis2 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 	}
 	corpsetype = 3;
