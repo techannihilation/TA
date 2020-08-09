@@ -2,8 +2,8 @@ return {
 	nsacskv = {
 		acceleration = 0.1,
 		brakerate = 0.3,
-		buildcostenergy = 7521,
-		buildcostmetal = 464,
+		buildcostenergy = 7021,
+		buildcostmetal = 382,
 		builder = false,
 		buildpic = "nsacskv.dds",
 		buildtime = 10000,
@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 564,
+		mass = 382,
 		maxdamage = 1050,
 		maxslope = 10,
 		maxvelocity = 3.75,
@@ -146,6 +146,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
+					commanders = 140,
 					default = 280,
 					subs = 5,
 				},
