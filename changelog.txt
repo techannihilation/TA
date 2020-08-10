@@ -4,8 +4,11 @@ Balance :
  - Furie : Increase main gun dmage 1500/s => 3000/s. Decrease Range 650=>600. Change rocket for Rave missile. Decrease Speed 0.9 => 0.8 and HP 270K => 245K. Increase energy cost 0 => 3KE / S.
  - Absolutor : Decrease cost 500M=>400M
  - Dreadnought Talon T3 ship : Decrease Beam reload by 50%
+ - Delete Starburst for T3 TLL Sniper. Decrease Cost -2KM.
 
 Improvment : 
+ - Add Rez Snox Fox for Talon T1
+ - Delete Biker Talon
  - Add new Beam Tower for Dreadnought
 
 3.48 -> 3.49
