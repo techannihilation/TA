@@ -1511,7 +1511,11 @@ local morphDefs = {
 		time = 45,
 		xp = 0.40,
 	},
-
+	tllsniper = {
+		into = 'tllgrim',
+		time = 45,
+		xp = 0.40,
+	},
 }
 
 --
