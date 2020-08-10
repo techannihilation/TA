@@ -156,6 +156,7 @@ return {
 					subs = 5,
 				},
 			},
+		},
 		weapons = {
 			[1] = {
 				def = "TLLGRIM_GUN",
