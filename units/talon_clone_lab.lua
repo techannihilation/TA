@@ -59,11 +59,13 @@ talon_clone_lab = {
 		buildoptions = {
 			[1] = "talon_psyker",
 			[2] = "talon_infantry",
-			[3] = "talon_mercenary",
-			[4] = "talon_rebel",
-			[5] = "talon_sniper",
-			[6] = "talon_biker",
-			[7] = "talon_sphere",
+			[3] = "talon_sphere",
+			[4] = "talon_mercenary",
+			[5] = "talon_rebel",
+			[6] = "talon_sniper",
+			[7] = "talon_fox",			
+			--[8] = "talon_biker",
+			
 		},
 		customparams = {
 			buildpic = "talon_clone_lab.dds",
