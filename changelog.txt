@@ -5,11 +5,15 @@ Balance :
  - Absolutor : Decrease cost 500M=>400M
  - Dreadnought Talon T3 ship : Decrease Beam reload by 50%
  - Delete Starburst for T3 TLL Sniper. Decrease Cost -2KM.
+ - Change laser Weapon for Razorback into Emg (More damage and SprayAngle)
+ - add torpedo for Shiva T3 Core
 
-Improvment : 
+Improvment :
+ - Add new sound for Saurus and razorback weapon
  - Add Rez Snox Fox for Talon T1
  - Delete Biker Talon
  - Add new Beam Tower for Dreadnought
+ - Add Morph for Sniper T2 Tll => T3 Sniper
 
 3.48 -> 3.49
 2020-07-26
