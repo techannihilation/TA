@@ -1,0 +1,2 @@
+Compression = 16kbit
+Only Mono. Not stereo.
