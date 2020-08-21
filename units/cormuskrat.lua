@@ -89,7 +89,7 @@ return {
 			[25] = "hllt",
 			[26] = "corhlt",
 			[27] = "corpun",
-			[28] = "cmortor",
+			--[28] = "cmortor",
 			[29] = "corint2",
 			[30] = "corrl",
 			[31] = "madsam",
