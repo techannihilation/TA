@@ -275,8 +275,6 @@ return {
 	"heavyimpact",
 	"tllhtcb",
 	"tllhtml",
-	--
-"tllblind",
 	"tllgrim",
 	"tllmlrpc",
 	-- core t3 vehs
