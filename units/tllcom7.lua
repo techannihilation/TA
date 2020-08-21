@@ -83,7 +83,7 @@ return {
 		buildoptions = {
 			[1] = "tllmedfusion",
 			[2] = "tllefus",
-			[3] = "tllmohogeo",
+			[3] = "tllgeo_armored",
 			[4] = "tllmetalmakerlvl3",
 			[5] = "tllemstor",
 			[6] = "tllmas",
