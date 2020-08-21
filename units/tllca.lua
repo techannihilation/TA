@@ -79,7 +79,7 @@ return {
 			[23] = "tllweb",
 			[24] = "tllhlt",
 			[25] = "tlllbt",
-			[26] = "tllmortor",
+			--[26] = "tllmortor",
 			[27] = "tllstuner",
 			[28] = "tlllrpt2",
 			[29] = "tlllmt",

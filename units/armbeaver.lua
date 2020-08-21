@@ -91,7 +91,7 @@ return {
 		[26] = "armhlt",
 		[27] = "armdl",
 		[28] = "armguard",
-		[29] = "amortor",
+		--[29] = "amortor",
 		[30] = "armbrtha2",
 		[31] = "armrl",
 		[32] = "packo",

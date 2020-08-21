@@ -85,7 +85,7 @@ return {
 			[26] = "tawf001",
 			[27] = "armhlt",
 			[28] = "armguard",
-			[29] = "amortor",
+			--[29] = "amortor",
 			[30] = "armbrtha2",
 			[31] = "armrl",
 			[32] = "packo",

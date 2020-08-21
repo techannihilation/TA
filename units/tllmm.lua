@@ -22,7 +22,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		mass = 10,
-		maxdamage = 75,
+		maxdamage = 95,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Metal Maker",
