@@ -33,7 +33,7 @@ return {
 		selfdestructas = "nuclear_missile2",
 		sightdistance = 210,
 		unitname = "talon_metalmakerlvl3",
-		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
+		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			buildpic = "talon_metalmakerlvl3.dds",
 			faction = "TALON",
