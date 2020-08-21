@@ -23,8 +23,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
 local sparkWeapons = {
     [WeaponDefNames.armzeus_lightning.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits = 2, radius = 60},
-    [WeaponDefNames.armzeus1_lightning1.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits = 3, radius = 60},
-    [WeaponDefNames.armclaw_dclaw.id] = {ceg = "CLAW_FLASH_SUB", forkdamage = 0.325, maxunits = 2, radius = 60},
+    [WeaponDefNames.armcav_lightning.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits = 2, radius = 60},
+    --[WeaponDefNames.armclaw_dclaw.id] = {ceg = "CLAW_FLASH_SUB", forkdamage = 0.325, maxunits = 2, radius = 60},
 }
 
 local immuneToSplash = {
@@ -51,7 +51,7 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
       local nearUnits = SpGetUnitsInSphere(x,y,z,sparkWeapons[weaponID].radius)
       local count = 0
       for _,nearUnit in ipairs(nearUnits) do
-        if (count >= sparkWeapons[weaponID].maxunits) then 
+        if (count >= sparkWeapons[weaponID].maxunits) then
           return
         end
         local nearUnitDefID = SpGetUnitDefID(nearUnit)
@@ -62,7 +62,7 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
           SpAddUnitDamage(nearUnit, damage*sparkWeapons[weaponID].forkdamage, 0, attackerID)
           count = count + 1
         end
-      end    
+      end
     end
 end
 
