@@ -6,17 +6,15 @@
 piece  ground, hips, luparm, lloarm, lhand, fingerla, fingerlb, thumbl,
        ruparm, rloarm, rhand, fingerra, fingerrb, thumbr, body, arml,
        cannonl, flareb, canonbarrel1, armr, cannonr, flarea, canonbarrel2, EnrgyCell1,
-       Enrgycell2, b1, b2, arm1, arm2, ar, al, calcarm,
-       calcflare, calcpoint, turret, barrel, emit, axis, flare, exploder,
-       hpoint, smokepoint, smokeemit;
+       Enrgycell2, b1, b2, arm1, arm2, ar, al;
 
-static-var  Static_Var_1, gun_1, bMoving, bAiming, Static_Var_5,
-            Static_Var_6, unitviewer, Static_Var_8, Static_Var_9;
+static-var  Static_Var_8, bMoving, bAiming, Static_Var_5,
+            Static_Var_6;
 
 // Signal definitions
 #define SIG_MOVE			2
 #define SIG_AIM				4
-#define SIG_AIM_3			8
+#define SIG_AIM_2			8
 
 
 startwalk()
@@ -185,11 +183,6 @@ walk()
 			turn arml to x-axis <18.000000> speed <18.000000>;
 			turn armr to x-axis <-18.000000> speed <18.000000>;
 			turn body to y-axis <-8.000000> speed <12.000000>;
-			turn axis to y-axis <8.000000> speed <12.000000>;
-			if( !Static_Var_9 )
-			{
-				turn hpoint to y-axis <-8.000000> speed <12.000000>;
-			}
 		}
 		move hips to y-axis [2.000000] speed [2.000000];
 		turn ruparm to x-axis <20.000000> speed <90.000000>;
@@ -267,11 +260,6 @@ walk()
 			turn arml to x-axis <-18.000000> speed <20.000000>;
 			turn armr to x-axis <18.000000> speed <20.000000>;
 			turn body to y-axis <8.000000> speed <12.000000>;
-			turn axis to y-axis <-8.000000> speed <12.000000>;
-			if( !Static_Var_9 )
-			{
-				turn hpoint to y-axis <8.000000> speed <12.000000>;
-			}
 		}
 		move hips to y-axis [2.000000] speed [2.000000];
 		turn ruparm to x-axis <20.000000> speed <90.000000>;
@@ -401,7 +389,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from smokeemit;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 30;
 		if( sleeptime < 200 )
@@ -412,67 +400,14 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-SmokeGun(Func_Var_1)
-{
-	signal 16;
-	set-signal-mask 16;
-	Func_Var_1 = 150;
-	emit-sfx 256 | 1 from emit;
-	sleep 150;
-	emit-sfx 256 | 1 from emit;
-	sleep 170;
-	emit-sfx 256 | 1 from emit;
-	sleep 190;
-	emit-sfx 256 | 1 from emit;
-	sleep 210;
-	emit-sfx 256 | 1 from emit;
-	sleep 230;
-	emit-sfx 256 | 1 from emit;
-	sleep 250;
-	emit-sfx 256 | 1 from emit;
-	sleep 270;
-	emit-sfx 256 | 1 from emit;
-	sleep 290;
-	emit-sfx 256 | 1 from emit;
-	sleep 310;
-	emit-sfx 256 | 1 from emit;
-	sleep 330;
-	emit-sfx 256 | 1 from emit;
-	sleep 350;
-	emit-sfx 256 | 1 from emit;
-	sleep 370;
-	emit-sfx 256 | 1 from emit;
-	sleep 390;
-	emit-sfx 256 | 1 from emit;
-	sleep 410;
-	emit-sfx 256 | 1 from emit;
-}
-
-Demo()
-{
-	unitviewer = TRUE;
-}
-
 Create()
 {
-	hide flare;
 	hide flarea;
 	hide flareb;
-	hide exploder;
-	turn calcarm to x-axis <0.000000> now;
-	gun_1 = ground;
-	unitviewer = FALSE;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_9 = 0;
 	Static_Var_5 = 1;
-	Static_Var_1 = 3500;
 	Static_Var_8 = 0;
-	dont-cache EnrgyCell1;
-	dont-shade EnrgyCell1;
-	dont-cache Enrgycell2;
-	dont-shade Enrgycell2;
-	spin smokepoint around y-axis speed <300.000000>;
 	start-script SmokeUnit();
 }
 
@@ -485,12 +420,6 @@ StartMoving()
 	{
 		Static_Var_8 = 0;
 		turn body to y-axis <0.000000> speed <60.000000>;
-		turn axis to y-axis <0.000000> speed <60.000000>;
-		if( Rand( 1, 7 ) == 1 )
-		{
-			spin canonbarrel1 around z-axis speed <100.000000> accelerate <10.000000>;
-			spin canonbarrel2 around z-axis speed <100.000000> accelerate <10.000000>;
-		}
 	}
 	call-script startwalk();
 	while( TRUE )
@@ -511,36 +440,16 @@ SweetSpot(piecenum)
 	piecenum = body;
 }
 
-RestoreTertiary()
-{
-	sleep 6000;
-	turn hpoint to y-axis Static_Var_8 speed <70.000000>;
-	Static_Var_9 = 0;
-}
-
 RestoreAfterDelay(Func_Var_1)
 {
-	sleep Static_Var_1;
-	Func_Var_1 = bMoving;
-	stop-spin canonbarrel1 around z-axis decelerate <25.000000>;
-	stop-spin canonbarrel2 around z-axis decelerate <25.000000>;
+	sleep 2500;
+	//stop-spin canonbarrel1 around z-axis decelerate <25.000000>;
+	//stop-spin canonbarrel2 around z-axis decelerate <25.000000>;
 	turn cannonr to y-axis <0.000000> speed <15.000000>;
 	turn cannonl to y-axis <0.000000> speed <15.000000>;
-	if( Func_Var_1 )
-	{
-		Static_Var_8 = 0;
-		turn body to y-axis <0.000000> speed <60.000000>;
-		turn axis to y-axis <0.000000> speed <60.000000>;
-		wait-for-turn body around y-axis;
-	}
-	if( !Func_Var_1 )
-	{
-		turn arml to x-axis <0.000000> speed <20.000000>;
-		turn armr to x-axis <0.000000> speed <20.000000>;
-		wait-for-turn arml around x-axis;
-	}
-	wait-for-turn cannonr around y-axis;
-	Static_Var_5 = 1;
+	turn body to y-axis <0.000000> speed <60.000000>;
+	turn arml to x-axis <0.000000> speed <20.000000>;
+	turn armr to x-axis <0.000000> speed <20.000000>;
 	bAiming = FALSE;
 }
 
@@ -549,60 +458,61 @@ AimFromPrimary(piecenum)
 	piecenum = body;
 }
 
+AimFromSecondary(piecenum)
+{
+	piecenum = body;
+}
+
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = flareb;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = flarea;
-	}
+	piecenum = flarea;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flareb;
 }
 
 AimPrimary(heading, pitch)
 {
-	var Func_Var_3, Func_Var_4, Func_Var_5;
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
-	spin canonbarrel1 around z-axis speed <1000.000000> accelerate <30.000000>;
-	spin canonbarrel2 around z-axis speed <1000.000000> accelerate <30.000000>;
-	Static_Var_5 = 0;
-	if( !unitviewer )
-	{
-		turn calcarm to x-axis <0.000000> - pitch now;
-		Func_Var_4 = get PIECE_Y(calcpoint);
-		Func_Var_3 = get PIECE_Y(calcflare);
-		if( Func_Var_4 >= Func_Var_3 )
-		{
-			Func_Var_5 = ( Func_Var_4 - Func_Var_3 ) / 300 + 360;
-			turn cannonr to y-axis Func_Var_5 speed <200.000000>;
-			turn cannonl to y-axis <0.000000> - Func_Var_5 speed <200.000000>;
-		}
-		if( Func_Var_4 < Func_Var_3 )
-		{
-			turn cannonr to y-axis <0.000000> speed <200.000000>;
-			turn cannonl to y-axis <0.000000> speed <200.000000>;
-		}
-		turn body to y-axis heading speed <320.000000>;
-		turn axis to y-axis <0.005495> - heading speed <200.000000>;
-		if( !Static_Var_9 )
-		{
-			turn hpoint to y-axis heading speed <200.000000>;
-		}
-		turn arml to x-axis <0.000000> - pitch speed <200.000000>;
-		turn armr to x-axis <0.000000> - pitch speed <200.000000>;
-	}
-	if( unitviewer )
-	{
-		turn body to y-axis heading speed <200.000000>;
-		turn axis to y-axis <0.005495> - heading speed <100.000000>;
-	}
+	//spin canonbarrel1 around z-axis speed <1000.000000> accelerate <30.000000>;
+	//spin canonbarrel2 around z-axis speed <1000.000000> accelerate <30.000000>;
+	
+	
+	turn body to y-axis heading speed <280.000000>;
 	wait-for-turn body around y-axis;
+	
+	turn cannonl to y-axis <-5.000000> speed <200.000000>;
+	turn arml to x-axis <0.000000> - pitch speed <200.000000>;
+	
 	Static_Var_8 = heading;
+		
 	wait-for-turn arml around x-axis;
+	wait-for-turn cannonl around y-axis;	
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	bAiming = TRUE;
+	//spin canonbarrel1 around z-axis speed <1000.000000> accelerate <30.000000>;
+	//spin canonbarrel2 around z-axis speed <1000.000000> accelerate <30.000000>;
+		
+	turn body to y-axis heading speed <280.000000>;
+	wait-for-turn body around y-axis;
+	
+	turn cannonr to y-axis <5.000000> speed <200.000000>;
+	turn armr to x-axis <0.000000> - pitch speed <200.000000>;
+	
+
+	Static_Var_8 = heading;
+	
 	wait-for-turn armr around x-axis;
 	wait-for-turn cannonr around y-axis;
 	start-script RestoreAfterDelay();
@@ -611,71 +521,28 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 0 )
-	{
-		move b2 to z-axis [-2.000000] speed [400.000000];
-		turn al to x-axis <20.000000> speed <400.000000>;
-		turn cannonl to x-axis <-20.000000> speed <400.000000>;
-		show flareb;
-		sleep 100;
-		hide flareb;
-		move b2 to z-axis [0.000000] speed [2.000000];
-		turn al to x-axis <0.000000> speed <35.000000>;
-		turn cannonl to x-axis <0.000000> speed <35.000000>;
-		gun_1 = hips;
-		return (0);
-	}
-	if( gun_1 == 1 )
-	{
-		move b1 to z-axis [-2.000000] speed [400.000000];
-		turn ar to x-axis <20.000000> speed <400.000000>;
-		turn cannonr to x-axis <-20.000000> speed <400.000000>;
-		show flarea;
-		sleep 100;
-		hide flarea;
-		move b1 to z-axis [0.000000] speed [2.000000];
-		turn ar to x-axis <0.000000> speed <35.000000>;
-		turn cannonr to x-axis <0.000000> speed <35.000000>;
-		gun_1 = ground;
-		return (0);
-	}
+	move b2 to z-axis [-2.000000] speed [400.000000];
+	turn al to x-axis <20.000000> speed <400.000000>;
+	turn cannonl to x-axis <-20.000000> speed <400.000000>;
+	show flareb;
+	sleep 100;
+	hide flareb;
+	move b2 to z-axis [0.000000] speed [2.000000];
+	turn al to x-axis <0.000000> speed <35.000000>;
+	turn cannonl to x-axis <0.000000> speed <35.000000>;
 }
 
-AimFromTertiary(piecenum)
+FireSecondary()
 {
-	piecenum = hpoint;
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = emit;
-}
-
-AimTertiary(heading, pitch)
-{
-	Static_Var_9 = 1;
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	turn hpoint to y-axis heading speed <200.000000>;
-	wait-for-turn hpoint around y-axis;
-	start-script RestoreTertiary();
-	return (1);
-}
-
-FireTertiary()
-{
-	start-script SmokeGun();
-	show flare;
-	explode emit type NOHEATCLOUD;
-	explode exploder type NOHEATCLOUD | FALL;
-	explode exploder type NOHEATCLOUD | FALL;
-	explode exploder type NOHEATCLOUD | FALL;
-	move turret to z-axis [-0.500000] speed [200.000000];
-	move barrel to z-axis [-1.000000] speed [400.000000];
-	sleep 280;
-	move barrel to z-axis [0.000000] speed [2.000000];
-	move turret to z-axis [0.000000] speed [1.000000];
-	hide flare;
+	move b1 to z-axis [-2.000000] speed [400.000000];
+	turn ar to x-axis <20.000000> speed <400.000000>;
+	turn cannonr to x-axis <-20.000000> speed <400.000000>;
+	show flarea;
+	sleep 100;
+	hide flarea;
+	move b1 to z-axis [0.000000] speed [2.000000];
+	turn ar to x-axis <0.000000> speed <35.000000>;
+	turn cannonr to x-axis <0.000000> speed <35.000000>;
 }
 
 Killed(severity, corpsetype)
@@ -685,8 +552,6 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode barrel type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD;
 		explode hips type NOHEATCLOUD;
 		explode luparm type NOHEATCLOUD;
 		explode lloarm type NOHEATCLOUD;
@@ -714,8 +579,6 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode barrel type NOHEATCLOUD | SHATTER;
-		explode turret type NOHEATCLOUD | SHATTER;
 		explode hips type NOHEATCLOUD | SHATTER;
 		explode luparm type NOHEATCLOUD | SHATTER;
 		explode lloarm type NOHEATCLOUD | SHATTER;
@@ -740,37 +603,7 @@ Killed(severity, corpsetype)
 		explode canonbarrel2 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode hips type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lloarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode fingerla type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode fingerlb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode thumbl type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rloarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode fingerra type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode fingerrb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode thumbr type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode arml type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode cannonl type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flareb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode canonbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode armr type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode cannonr type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode canonbarrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
 	corpsetype = 3;
-	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode hips type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lloarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
