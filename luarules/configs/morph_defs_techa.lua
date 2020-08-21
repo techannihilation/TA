@@ -586,12 +586,12 @@ local morphDefs = {
 		{
 			into = 'armhdpw',
 			time = 45,
-			xp = 0.60,
+			xp = 0.50,
 		},
 	},
 	armfast = {
-    into = 'armjugg',
-		time = 90,
+		into = 'armjugg',
+		time = 60,
 		xp = 0.75,
 	},
 	armhdpw = {
@@ -777,7 +777,7 @@ local morphDefs = {
 		xp = 0.25,
 	},
 	armmav = {
-    into = 'armraz',
+    		into = 'armraz',
 		time = 60,
 		xp = 1.00,
 	},
