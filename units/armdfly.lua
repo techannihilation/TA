@@ -133,12 +133,8 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					bombers = 5,
 					default = 6400,
-					fighters = 5,
-					flak_resistant = 5,
-					transporters = 5,
-					unclassed_air = 5,
+					subs = 5,
 				},
 			},
 		},

@@ -6,14 +6,22 @@ Balance :
  - Dreadnought Talon T3 ship : Decrease Beam reload by 50%
  - Delete Starburst for T3 TLL Sniper. Decrease Cost -2KM.
  - Change laser Weapon for Razorback into Emg (More damage and SprayAngle)
- - add torpedo for Shiva T3 Core
+ - Add torpedo for Shiva T3 Core
+ - ExoArm and Mythrill : Increase Power Shield.
+ - Exoarm : decrease Metal cost -20K. Increase damage by 20% for Atad and main gun.
+ - T4 Core Spider : Increase Energycost by 500KE
+ - TLLSaurus : Decrease speed 1.25 => 1.20. Increase Metalcost by 5KM.
+ - Tllcopter : Decrease stats (HP and cost).  Delete flak resistance.
+
 
 Improvment :
+ - Delete Flak resistant armortype
  - Add new sound for Saurus and razorback weapon
  - Add Rez Snox Fox for Talon T1
  - Delete Biker Talon
  - Add new Beam Tower for Dreadnought
  - Add Morph for Sniper T2 Tll => T3 Sniper
+ - Add Lighting for all Gunship TLL. ~Same Stats.
 
 3.48 -> 3.49
 2020-07-26

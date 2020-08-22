@@ -119,9 +119,9 @@ return {
 				weapontype = "AircraftBomb",
 				damage = {
 					bomb_resistant = 60,
-					commanders = 80,
+					commanders = 60,
 					default = 160,
-					subs = 5,
+					subs = 80,
 				},
 			},
 		},

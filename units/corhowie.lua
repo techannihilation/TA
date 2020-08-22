@@ -178,7 +178,6 @@ return {
 					bombers = 160,
 					default = 5,
 					fighters = 160,
-					flak_resistant = 160,
 					transporters = 160,
 					unclassed_air = 160,
 				},

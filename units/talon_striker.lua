@@ -156,7 +156,7 @@ return {
 					bombers = 105,
 					default = 5,
 					fighters = 105,
-					flak_resistant = 105,
+					transporters = 105,
 					unclassed_air = 105,
 				},
 			},
@@ -164,7 +164,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TALON_STARBURST",
-				onlytargetcategory = "VTOL",			
+				onlytargetcategory = "VTOL",
 			},
 		},
 	},

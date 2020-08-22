@@ -121,6 +121,7 @@ return {
 					bomb_resistant = 2500,
 					commanders = 2500,
 					default = 7500,
+					subs = 3750,
 				},
 			},
 			talon_laser = {

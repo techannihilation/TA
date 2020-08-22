@@ -47,7 +47,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 6.336,
 		turnrate = 900,
-		unitname = "talon_token",		
+		unitname = "talon_token",
 		customparams = {
 			buildpic = "talon_token.dds",
 			faction = "TALON",
@@ -120,7 +120,7 @@ return {
 					bombers = 160,
 					default = 5,
 					fighters = 80,
-					flak_resistant = 40,
+					transporters = 160,
 					unclassed_air = 40,
 				},
 			},

@@ -122,7 +122,7 @@ return {
 				damage = {
 					bomb_resistant = 1000,
 					default = 4000,
-					subs = 5,
+					subs = 2000,
 				},
 			},
 		},

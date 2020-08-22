@@ -50,16 +50,6 @@ return {
 	"talon_handgod",
 	"talon_cyclone",
 	},
-	flak_resistant = {
-	"apache",
-	"armah256",
-	"blade",
-	"chopper",
-	"smasher",
-	"tllcopter",
-	"corhind",
-	"armkamo",
-	},
 	unclassed_air = {
 	"abuilderlvl1",
 	"abuilderlvl2",

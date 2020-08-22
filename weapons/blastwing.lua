@@ -14,12 +14,8 @@ return {
 		soundhit = "EMGPULS1",
 		soundstart = "bombrel",
 		damage = {
-			bombers = 5,
 			commanders = 30,
 			default = 1200,
-			fighters = 5,
-			flak_resistant = 5,
-			unclassed_air = 5,
 		},
 	},
 }

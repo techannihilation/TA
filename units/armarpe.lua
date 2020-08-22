@@ -136,12 +136,8 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					bombers = 5,
 					default = 200,
-					fighters = 5,
-					flak_resistant = 5,
-					transporters = 5,
-					unclassed_air = 5,
+					subs = 5,
 				},
 			},
 			gator_laserx = {
@@ -180,10 +176,7 @@ return {
 				damage = {
 					commanders = 70,
 					default = 140,
-					fighters = 0,
-					flak_resistant = 0,
 					subs = 5,
-					unclassed_air = 0,
 				},
 			},
 		},
