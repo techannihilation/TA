@@ -48,7 +48,7 @@ return {
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 3.498,
-		turnrate = 792,
+		turnrate = 800,
 		unitname = "armbrawl",
 		customparams = {
 			buildpic = "armbrawl.dds",
