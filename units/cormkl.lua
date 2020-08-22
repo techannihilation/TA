@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		autoheal = 250,
 		brakerate = 1.05,
-		buildcostenergy = 1737336,
+		buildcostenergy = 2437336,
 		buildcostmetal = 195561,
 		builder = false,
 		buildpic = "cormkl.dds",
