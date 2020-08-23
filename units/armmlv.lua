@@ -76,7 +76,6 @@ return {
 			[5] = "armmine3",
 			[6] = "armmine5",
 			[7] = "armmine6",
-			[8] = "armmine7",
 		},
 		customparams = {
 			buildpic = "armmlv.dds",
