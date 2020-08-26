@@ -52,7 +52,7 @@ return {
 		turnrate = 0,
 		unitname = "tllgeo_armored",
 		usebuildinggrounddecal = true,
-		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo ",
+		yardmap = "GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG",
 		customparams = {
 			buildpic = "tllgeo_armored.dds",
 			faction = "TLL",
