@@ -31,7 +31,7 @@ return {
 		mass = 312,
 		maxdamage = 1225,
 		maxslope = 14,
-		maxvelocity = 2.3,
+		maxvelocity = 1.9,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
@@ -149,7 +149,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 600,
 				damage = {
-					default = 255,
+					commanders = 120,
+					default = 240,
 					subs = 5,
 				},
 			},
