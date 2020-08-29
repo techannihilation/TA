@@ -193,11 +193,11 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "TALON_LASER",
+				def = "BLT",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "BLT",
+				def = "TALON_LASER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

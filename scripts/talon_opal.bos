@@ -3,16 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  torso, lpflarer, lpflarel, rarm, larm, pelvis, gaussflarel, gaussflarer,
-       turret, spflare, rleg, rfoot, lleg, lfoot, lthigh, rthigh, base;
+piece  torso, lpflarer, lpflarel, rarm, larm, pelvis, turret, spflare, rleg, rfoot, lleg, lfoot, lthigh, rthigh, base;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+static-var  Static_Var_1, Static_Var_2, bMoving, bAiming, bAimTorso,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Move, Static_Turn;
 
 
 walk()
 {
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		move rleg to y-axis [0.] speed Static_Move * [1.000000];
@@ -35,7 +34,7 @@ walk()
 		turn lfoot to x-axis <-50.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -48,7 +47,7 @@ walk()
 		turn lfoot to x-axis <-25.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -61,7 +60,7 @@ walk()
 		turn lfoot to x-axis <-26.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-6.> speed Static_Turn * <1.000000>;
@@ -74,7 +73,7 @@ walk()
 		turn lfoot to x-axis <8.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -87,7 +86,7 @@ walk()
 		turn lfoot to x-axis <43.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -99,7 +98,7 @@ walk()
 		turn lfoot to x-axis <7.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
@@ -111,7 +110,7 @@ walk()
 		turn lfoot to x-axis <28.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
@@ -124,7 +123,7 @@ walk()
 		turn lfoot to x-axis <47.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -137,7 +136,7 @@ walk()
 		turn lfoot to x-axis <43.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -150,7 +149,7 @@ walk()
 		turn lfoot to x-axis <34.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-6.> speed Static_Turn * <1.000000>;
@@ -163,7 +162,7 @@ walk()
 		turn lfoot to x-axis <14.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -175,7 +174,7 @@ walk()
 		turn lfoot to x-axis <-21.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -201,7 +200,7 @@ walk()
 
 walklegs()
 {
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		move rleg to y-axis [0.] speed Static_Move * [1.000000];
@@ -223,7 +222,7 @@ walklegs()
 		turn lfoot to x-axis <-50.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -235,7 +234,7 @@ walklegs()
 		turn lfoot to x-axis <-25.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -247,7 +246,7 @@ walklegs()
 		turn lfoot to x-axis <-26.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-6.> speed Static_Turn * <1.000000>;
@@ -259,7 +258,7 @@ walklegs()
 		turn lfoot to x-axis <8.> speed Static_Turn * <1.000000>;
 		sleep 60;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -271,7 +270,7 @@ walklegs()
 		turn lfoot to x-axis <43.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -282,7 +281,7 @@ walklegs()
 		turn lfoot to x-axis <7.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
@@ -293,7 +292,7 @@ walklegs()
 		turn lfoot to x-axis <28.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
@@ -305,7 +304,7 @@ walklegs()
 		turn lfoot to x-axis <47.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -317,7 +316,7 @@ walklegs()
 		turn lfoot to x-axis <43.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -329,7 +328,7 @@ walklegs()
 		turn lfoot to x-axis <34.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Turn * <1.000000>;
 		turn pelvis to x-axis <-6.> speed Static_Move * [1.000000];
@@ -341,7 +340,7 @@ walklegs()
 		turn lfoot to x-axis <14.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -353,7 +352,7 @@ walklegs()
 		turn lfoot to x-axis <-21.> speed Static_Turn * <1.000000>;
 		sleep 80;
 	}
-	if( Static_Var_3 )
+	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
@@ -408,25 +407,22 @@ MotionControl(moving, aiming, justmoved)
 	justmoved = TRUE;
 	while( TRUE )
 	{
-		moving = Static_Var_3;
-		aiming = Static_Var_4;
+		moving = bMoving;
+		aiming = bAiming;
 		if( moving )
 		{
 			if( aiming )
 			{
-				Static_Var_5 = 1;
 				call-script walklegs();
 			}
 			if( !aiming )
 			{
-				Static_Var_5 = 0;
 				call-script walk();
 			}
 			justmoved = TRUE;
 		}
 		if( !moving )
 		{
-			Static_Var_5 = 1;
 			if( justmoved )
 			{
 				move pelvis to y-axis [0.] speed [4.000000];
@@ -451,80 +447,67 @@ MotionControl(moving, aiming, justmoved)
 
 Create()
 {
-	set ARMORED to 0;
-	Static_Var_3 = 0;
-	Static_Var_4 = 0;
-	Static_Var_5 = 1;
+	bMoving = 0;
+	bAiming = 0;
+	bAimTorso = 0;
 	Static_Var_1 = 1;
 	Static_Var_2 = 1;
-	set ARMORED to 0;
 	Static_Var_6 = 0;
 	Static_Var_8 = 32;
 	Static_Var_9 = 1;
-	Static_Var_7 = 2000;
 	Static_Move = 5;
 	Static_Turn = 90;
 	start-script MotionControl();
 	start-script SmokeUnit();
 }
 
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_7 = Func_Var_1;
-}
-
 StartMoving()
 {
-	Static_Var_3 = 1;
+	bMoving = 1;
 }
 
 StopMoving()
 {
-	Static_Var_3 = 0;
+	bMoving = 0;
 }
 
 RestoreAfterDelay()
 {
-	sleep 2750;
-	turn torso to y-axis <0.> speed <90.>;
+	sleep 2000;
+	turn torso to y-axis <0.> speed <45.>;
 	turn torso to x-axis <0.> speed <45.>;
 	turn turret to y-axis <0.> speed <90.>;
 	turn larm to x-axis <0.> speed <45.>;
 	turn rarm to x-axis <0.> speed <45.>;
+	turn turret to y-axis <0.000000> speed <40.>;
 	turn turret to x-axis <0.000000> speed <25.>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn torso around x-axis;
-	wait-for-turn turret around y-axis;
-	wait-for-turn larm around x-axis;
-	wait-for-turn rarm around x-axis;
-	Static_Var_4 = 0;
+	bAiming = 0;
+	bAimTorso = 0;
 }
 
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
-	Static_Var_4 = 1;
-	while( !Static_Var_5 )
-	{
-		sleep 25;
-	}
-	turn torso to y-axis heading speed <100.>;
-	turn rarm to x-axis <0.> - pitch speed <90.>;
-	turn larm to x-axis <0.> - pitch speed <90.>;
-	wait-for-turn torso around y-axis;
+	signal 4;
+	set-signal-mask 4;
+	turn turret to y-axis heading - bAimTorso speed <85.000000>;
+	wait-for-turn turret around y-axis;
+	turn turret to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn turret around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 AimSecondary(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
-	Static_Var_4 = 1;
-	turn torso to y-axis heading speed <100.>;
-	wait-for-turn torso around y-axis;
-	turn turret to x-axis <0.000000> - pitch speed <25.>;
+	signal 2;
+	set-signal-mask 2;
+	bAiming = 1;
+	bAimTorso = heading;
+	turn torso to y-axis heading speed <90.>;
+	turn rarm to x-axis <0.> - pitch speed <90.>;
+	turn larm to x-axis <0.> - pitch speed <90.>;
 	wait-for-turn torso around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
@@ -534,21 +517,15 @@ AimTertiary(heading, pitch)
 {
 	signal 8;
 	set-signal-mask 8;
-	Static_Var_4 = 1;
-	turn torso to y-axis heading speed <100.>;
-	wait-for-turn torso around y-axis;
-	start-script RestoreAfterDelay();
-	if( Static_Var_9 == 0 )
-	{
-		return (0);
-	}
-	else
-	{
-		return (1);
-	}
+	return (1);
 }
 
 FirePrimary()
+{
+
+}
+
+FireSecondary()
 {
 	if( Static_Var_1 == 1 )
 	{
@@ -562,27 +539,8 @@ FirePrimary()
 	}
 }
 
-FireSecondary()
-{
-}
-
 FireTertiary()
 {
-	--Static_Var_8;
-	if( Static_Var_8 == 0 )
-	{
-		Static_Var_9 = 0;
-	}
-	if( Static_Var_2 == 1 )
-	{
-		Static_Var_2 = 2;
-		return (0);
-	}
-	if( Static_Var_2 == 2 )
-	{
-		Static_Var_2 = 1;
-		return (0);
-	}
 }
 
 AimFromPrimary(piecenum)
@@ -602,6 +560,11 @@ AimFromTertiary(piecenum)
 
 QueryPrimary(piecenum)
 {
+	piecenum = spflare;
+}
+
+QuerySecondary(piecenum)
+{
 	if( Static_Var_1 == 1 )
 	{
 		piecenum = lpflarer;
@@ -612,21 +575,9 @@ QueryPrimary(piecenum)
 	}
 }
 
-QuerySecondary(piecenum)
-{
-	piecenum = spflare;
-}
-
 QueryTertiary(piecenum)
 {
-	if( Static_Var_2 == 1 )
-	{
-		piecenum = gaussflarer;
-	}
-	if( Static_Var_2 == 2 )
-	{
-		piecenum = gaussflarel;
-	}
+	piecenum = torso;
 }
 
 SweetSpot(piecenum)

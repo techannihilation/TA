@@ -6,6 +6,10 @@ Balance :
  - Wolf Talon : Increase Speed 2=>2.3
  - Fido Arm : Decrease Speed 2.3=>1.9
 
+ Improvment :
+  - Supreme Com : Remplace Reflect Green Shield by Blue Absorb shield (10K)
+  - Increase Reflect Shield for Start 1500=>2000
+
  Fix:
  - Tll Armored Geo : Can only be placed on Gaz
 

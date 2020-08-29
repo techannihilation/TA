@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "exoarm.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T4 Unit Research Centre",
 			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_emit_height = 68,
 			shield_power = 12000,

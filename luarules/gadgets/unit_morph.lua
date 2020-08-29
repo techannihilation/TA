@@ -23,7 +23,7 @@ function gadget:GetInfo()
     enabled   = true
   }
 end
--- Changes for TechA 
+-- Changes for TechA
 -- Fix Rc not being factory to unlock morph
 -- Fix level output for our needs
 -- Fix failed morph when unit limit is reached, they now stall until unit limit is lowered
@@ -412,7 +412,7 @@ local function SplitNames(name)
   local Desc = "Morph \n"
   local string = tostring(name)
   local longestword = 1
-  for word in string.gmatch(string,"%w+") do 
+  for word in string.gmatch(string,"%w+") do
     if string.len(word) > longestword then
       longestword = string.len(word)
     end
@@ -504,7 +504,7 @@ local function AddMorphCmdDesc(unitID, unitDefID, teamID, morphDef, teamTech)
     local ud = UnitDefs[morphDef.into]
     local string = SplitNames(ud.humanName)
     local longestword = 1
-    for word in string.gmatch(string,"%w+") do 
+    for word in string.gmatch(string,"%w+") do
       if string.len(word) > longestword then
         longestword = string.len(word)
       end
@@ -544,15 +544,16 @@ end
 
 
 local function ReAssignAssists(newUnit,oldUnit)
-  
+
   local unitDefID = SpGetUnitDefID(oldUnit)
   local isCommander = UnitDefs[unitDefID].customParams.iscommander or nil
   local isBuilder = UnitDefs[unitDefID].isBuilder or nil
-  if isBuilder and not isCommander then 
-	if unitDefID and not nanos[unitDefID] then return end 
+  --if isBuilder and not isCommander then -- Added by skymyj. try to commander unlock Nano level
+  if isBuilder then
+	if unitDefID and not nanos[unitDefID] then return end
   end
   -- for now only reassign command to nanos
-    
+
   local ally = SpGetUnitAllyTeam(newUnit)
   local alliedTeams = SpGetTeamList(ally)
   for n=1,#alliedTeams do
@@ -585,25 +586,25 @@ local function StartMorph(unitID, unitDefID, teamID, morphDef, cmdp)
   -- Spring.Echo(unitID,Spring.GetUnitRulesParam(unitID,"jumpReload"))
   if not isFinished(unitID) or (Spring.GetUnitRulesParam(unitID,"jumpReload") == 0) then return true end
 
-  
+
   local teamsize = #Spring.GetTeamUnits(teamID)
-  
+
     --local _,_,spectator=Spring.GetPlayerInfo(playerId)
     if teamsize > (MAXunits * 0.95) then
       SendToUnsynced("unit_morph_stalled", teamID, teamsize)
       --Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
   end
-  
+
   Spring.SetUnitRulesParam(unitID,"Morphing",1)
   SpSetUnitHealth(unitID, { paralyze = 1.0e9 })    --// turns mexes and mm off (paralyze the unit)
   SpSetUnitResourcing(unitID,"e",0)                --// turns solars off
   SpGiveOrderToUnit(unitID, CMD_ONOFF, { 0 }, { "alt" }) --// turns radars/jammers off
-  
+
   if nanos[unitDefID] then
     SpGiveOrderToUnit(unitID, CMD_NANOBOOST, { 0 }, { "alt" }) --// turn boost mode off for nanos
   end
 
-  
+
 
   morphUnits[unitID] = {
     def = morphDef,
@@ -737,15 +738,15 @@ local function FinishMorph(unitID, morphData)
     { CMD_ONOFF,      { 1 },                            { } },
     { CMD_TRAJECTORY, { states.trajectory and 1 or 0 }, { } },
   })
-  
+
   local unitDefID = SpGetUnitDefID(newUnit)
   if nanos[unitDefID] then
     Spring.GiveOrderToUnit(newUnit, CMD_NANOBOOST, { nanoState }, {})
   end
 
-  
+
   --//copy command queue
-  local cmds = SpGetUnitCommands(unitID,4) --only copy last 4 command as first is skipped 
+  local cmds = SpGetUnitCommands(unitID,4) --only copy last 4 command as first is skipped
   for i = 2, #cmds do  -- skip the first command (CMD_MORPH)
     local cmd = cmds[i]
     SpGiveOrderToUnit(newUnit, cmd.id, cmd.params, cmd.options.coded)
@@ -1057,7 +1058,7 @@ end
 function gadget:GameFrame(n)
 
   -- start pending morphs
-    if (n % 2 == 0) then 
+    if (n % 2 == 0) then
     local i = 0
     for unitid, data in pairs(morphToStart) do
       if i == 5 then break end
@@ -1068,7 +1069,7 @@ function gadget:GameFrame(n)
   end
   --morphToStart = {}
   --]]
-  
+
   if ((n+24)%150<1) then
     local unitCount = #XpMorphUnits
     local i = 1
@@ -1387,14 +1388,14 @@ local function StartMph(cmd, unitID, unitDefID, prog, incr, mID, tID, cmdp)
       tdef = md
       break
     end
-  end  
-  if cmdp ~= nil and cmdp >= 0 then  
+  end
+  if cmdp ~= nil and cmdp >= 0 then
     tdef =(morphDefs[unitDefID] or {})[GG.MorphInfo[unitDefID][cmdp]]
   end
-  if cmdp ~= nil and cmdp < 0 then  
+  if cmdp ~= nil and cmdp < 0 then
     tdef = (morphDefs[unitDefID] or {})[-cmdp]
   end
-    
+
   morphUnits[unitID] = {
     def = tdef,
     progress = prog,
@@ -1415,7 +1416,7 @@ local function ProgMph(cmd, unitID, prog)
 end
 
 local function StalledMph(cmd, teamID, teamsize)
-  local readTeam, spec, specFullView = nil,GetSpectatingState() 
+  local readTeam, spec, specFullView = nil,GetSpectatingState()
   if not spec then
     Spring.Echo("\255\255\255\001Warning Unit Limit Approching - Morph May Stall Reduce Unit Count")
   end
@@ -1425,7 +1426,7 @@ end
 function IsTooHigh()
   local cx, cy, cz = Spring.GetCameraPosition()
   local smoothheight = Spring.GetSmoothMeshHeight(cx,cz)
-  local toohigh = ((cy-smoothheight)^2 >= 2500000) 
+  local toohigh = ((cy-smoothheight)^2 >= 2500000)
   return toohigh
 end
 --]]
@@ -1568,7 +1569,7 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
     local progStr
     if (morphData.progress >= 1.0) and (#Spring.GetTeamUnits(unitTeam) >= MAXunits) then
       progStr = "Stalled"
-    else    
+    else
       progStr = string.format("%.1f%%", 100 * morphData.progress)
     end
     gl.Text(progStr, 0, -20, 9, "oc")
@@ -1578,10 +1579,10 @@ local function DrawMorphUnit(unitID, morphData, localTeamID)
 end
 
 function gadget:DrawWorld()
-  if IsTooHigh or HighPing or pfscount < 8 then 
+  if IsTooHigh or HighPing or pfscount < 8 then
     return
   end
-  
+
   if (not morphUnits) then
     if (not morphUnits) then return end
   end
@@ -1669,4 +1670,3 @@ end
 --------------------------------------------------------------------------------
 --  COMMON
 --------------------------------------------------------------------------------
-
