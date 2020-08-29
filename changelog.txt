@@ -9,6 +9,9 @@ Balance :
  Improvment :
   - Supreme Com : Remplace Reflect Green Shield by Blue Absorb shield (10K)
   - Increase Reflect Shield for Start 1500=>2000
+  - Decrease all energy regen cost (E/s) for Blue Shield (less effective than reflector type but intercept all damage type except lighting and dgun)
+  - Exoarm and Mythril : Increase Shield power 10K => 15K
+  - Corsfus : Decrease Shield power 16K=>12K. Decrease cost by 300m.
 
  Fix:
  - Tll Armored Geo : Can only be placed on Gaz
