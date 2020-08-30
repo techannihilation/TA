@@ -5,6 +5,7 @@ Balance :
  - Mastiif Talon : Increase Range 850=>950. HP 800=>1200. speed 1.5=>1.75
  - Wolf Talon : Increase Speed 2=>2.3
  - Fido Arm : Decrease Speed 2.3=>1.9
+ - Raz : Decrease damage/s -20%
 
  Improvment :
   - Supreme Com : Remplace Reflect Green Shield by Blue Absorb shield (10K)
