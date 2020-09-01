@@ -354,14 +354,14 @@ MotionControl(Func_Var_1, Func_Var_2)
 
 Create()
 {
-	Static_Var_4 = 0;
-	Static_Var_5 = 0;
+	Static_Var_4 = 1;
+	Static_Var_5 = 1;
 	hide flare1;
 	hide flare2;
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_3 = 1;
-	gun_1 = base;
+	gun_1 = 0;
 	Static_Var_6 = 0;
 	restore_delay = 3000;
 	start-script MotionControl();
@@ -404,49 +404,50 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = flare1;
 	if( gun_1 == 1 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 0 )
 	{
 		piecenum = flare2;
 	}
 }
 
 FirePrimary()
-{
-	
-
+{	
 	if( gun_1 == 0 )
 	{
-		Static_Var_4 = Static_Var_4 - 60;
+		gun_1 = 1;
 		emit-sfx 1024 + 0 from flare1;
-		sleep 250;
-		turn gun1 to x-axis <1.000000> * Static_Var_4 speed <200.000000>;
+		sleep 150;
+		turn gun1 to x-axis Static_Var_4 * <60.000000> speed <250.000000>;
 		wait-for-turn gun1 around x-axis;
-		sleep 50;
-		gun_1 = pelvis;
+		
+		++Static_Var_4;
+		if (Static_Var_4 == 7 )
+		{
+			Static_Var_4 = 1;
+		}		
+		
 		return (0);
 	}
 	if( gun_1 == 1 )
 	{
-		Static_Var_5 = Static_Var_5 - 60;
+		gun_1 = 0;
 		emit-sfx 1024 + 0 from flare2;
-		sleep 250;
-		turn gun2 to x-axis <1.000000> * Static_Var_5 speed <200.000000>;
+		sleep 150;
+		turn gun2 to x-axis Static_Var_5 * <60.0000000> speed <250.000000>;
 		wait-for-turn gun2 around x-axis;
-		sleep 50;
-		gun_1 = base;
-	}
-	
-	if (Static_Var_4 == -360)
-	{
-		Static_Var_4 = 0;
-	}
-	
-	if (Static_Var_5 == -360)
-	{
-		Static_Var_5 = 0;
-	}
-	
+		
+		++Static_Var_5;
+		if (Static_Var_5 == 7 )
+		{
+			Static_Var_5 = 1;
+		}
+				
+		return (0);
+	}	
 }
 
 AimPrimary(heading, pitch)
