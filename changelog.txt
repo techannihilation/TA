@@ -6,6 +6,8 @@ Balance :
  - Wolf Talon : Increase Speed 2=>2.3
  - Fido Arm : Decrease Speed 2.3=>1.9
  - Raz : Decrease damage/s -20%
+ - T2 TLL FLak : Decrease Metal cost 2K => 1.6K. Increase Energy 30k=>40k.
+ - T3 Flak : Cost at 14-15KM. Tll at 13k cause less powerfull.
 
  Improvment :
   - Supreme Com : Remplace Reflect Green Shield by Blue Absorb shield (10K)
