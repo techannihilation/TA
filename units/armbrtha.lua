@@ -135,7 +135,6 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
-				metalpershot = 10,
 				name = "BerthaCannon",
 				nogap = 1,
 				noselfdamage = true,

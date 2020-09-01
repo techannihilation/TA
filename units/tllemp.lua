@@ -120,7 +120,7 @@ return {
 				flighttime = 400,
 				impulseboost = 0,
 				impulsefactor = 0,
-				metalpershot = 500,
+				metalpershot = 350,
 				model = "empmisl",
 				name = "EMPMissile",
 				noselfdamage = true,

@@ -126,7 +126,6 @@ return {
 				flighttime = 10,
 				impulseboost = 0,
 				impulsefactor = 0,
-				metalpershot = 50,
 				model = "missile",
 				name = "MineSweeper",
 				noselfdamage = true,

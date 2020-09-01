@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corflak_aoplane.dds",
 		buildpic = "corflak.dds",
-		buildtime = 20112,
+		buildtime = 19000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",

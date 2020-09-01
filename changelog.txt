@@ -14,9 +14,11 @@ Balance :
   - Exoarm and Mythril : Increase Shield power 10K => 15K
   - Corsfus : Decrease Shield power 16K=>12K. Decrease cost by 300m.
   - html TLL : remplace plasma gun by lightning. Same damage.
+  - T3 TLL FLak : Increase model by 25%
 
  Fix:
  - Tll Armored Geo : Can only be placed on Gaz
+ - T3 Tll Flak : Delete Rocket Metal cost.
 
 3.49 -> 3.50
 2020-08-08

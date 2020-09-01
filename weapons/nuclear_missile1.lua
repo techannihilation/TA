@@ -13,7 +13,6 @@ return {
 		flighttime = 400,
 		impulseboost = 0.5,
 		impulsefactor = 0.5,
-		metalpershot = 2000,
 		model = "ballmiss",
 		name = "NuclearMissile",
 		range = 72000,

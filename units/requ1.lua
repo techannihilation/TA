@@ -105,7 +105,7 @@ return {
 				flighttime = 400,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				metalpershot = 750,
+				metalpershot = 550,
 				model = "empmisl1",
 				name = "TacticalNuke",
 				noselfdamage = true,

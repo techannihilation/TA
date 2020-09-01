@@ -13,7 +13,6 @@ return {
 		flighttime = 400,
 		impulseboost = 0.5,
 		impulsefactor = 0.5,
-		metalpershot = 1500,
 		model = "crblmssl",
 		name = "CoreNuclearMissile",
 		range = 72000,
