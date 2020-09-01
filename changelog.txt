@@ -13,6 +13,7 @@ Balance :
   - Decrease all energy regen cost (E/s) for Blue Shield (less effective than reflector type but intercept all damage type except lighting and dgun)
   - Exoarm and Mythril : Increase Shield power 10K => 15K
   - Corsfus : Decrease Shield power 16K=>12K. Decrease cost by 300m.
+  - html TLL : remplace plasma gun by lightning. Same damage.
 
  Fix:
  - Tll Armored Geo : Can only be placed on Gaz

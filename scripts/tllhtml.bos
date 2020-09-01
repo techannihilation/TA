@@ -6,7 +6,7 @@
 piece  torso, luparm, ruparm, pelvis, rthigh, lthigh, rlowarm, llowarm,
        lleg, lfoot, rleg, rfoot, head, barrel1, barrel2, barrel3,
        barrel4, flare1, flare2, base, armor, shoulder, turret, sleeve,
-       t1, flare3, flare4, flare5, flare6;
+       t1, flare5, flare6;
 
 static-var  bMoving, bAiming, Static_Var_3, restore_delay, gun_2,
             Static_Var_6, gun_1;
@@ -573,12 +573,11 @@ Create()
 {
 	hide flare1;
 	hide flare2;
-	hide flare3;
-	hide flare4;
+
 	hide flare5;
 	hide flare6;
-	gun_2 = ruparm;
-	gun_1 = luparm;
+	gun_2 = 1;
+	gun_1 = 1;
 	Static_Var_6 = 1;
 	bMoving = FALSE;
 	bAiming = FALSE;
@@ -641,15 +640,7 @@ QueryPrimary(piecenum)
 	}
 	if( gun_1 == 2 )
 	{
-		piecenum = flare3;
-	}
-	if( gun_1 == 3 )
-	{
 		piecenum = flare2;
-	}
-	if( gun_1 == 4 )
-	{
-		piecenum = flare4;
 	}
 }
 
@@ -667,45 +658,10 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 1 )
+	++gun_1;
+	if(gun_1 == 3)
 	{
-		move barrel1 to z-axis [-2.000000] speed [500.000000];
-		show flare1;
-		sleep 150;
-		move barrel1 to z-axis [0.000000] speed [30.000000];
-		hide flare1;
-		gun_1 = ruparm;
-		return (0);
-	}
-	if( gun_1 == 2 )
-	{
-		move barrel3 to z-axis [-2.000000] speed [500.000000];
-		show flare3;
-		sleep 150;
-		move barrel3 to z-axis [0.000000] speed [30.000000];
-		hide flare3;
-		gun_1 = pelvis;
-		return (0);
-	}
-	if( gun_1 == 3 )
-	{
-		move barrel2 to z-axis [-2.000000] speed [500.000000];
-		show flare2;
-		sleep 150;
-		move barrel2 to z-axis [0.000000] speed [30.000000];
-		hide flare2;
-		gun_1 = rthigh;
-		return (0);
-	}
-	if( gun_1 == 4 )
-	{
-		move barrel4 to z-axis [-2.000000] speed [500.000000];
-		show flare4;
-		sleep 150;
-		move barrel4 to z-axis [0.000000] speed [30.000000];
-		hide flare4;
-		gun_1 = luparm;
-		return (0);
+		gun_1 = 1;
 	}
 }
 
@@ -728,15 +684,10 @@ AimFromSecondary(piecenum)
 
 FireSecondary()
 {
-	if( gun_2 == 1 )
+	++gun_2;
+	if(gun_2 == 3)
 	{
-		gun_2 = ruparm;
-		return (0);
-	}
-	if( gun_2 == 2 )
-	{
-		gun_2 = luparm;
-		return (0);
+		gun_2 = 1;
 	}
 }
 
@@ -779,23 +730,6 @@ Killed(severity, corpsetype)
 		explode rlowarm type NOHEATCLOUD | FALL;
 		explode rthigh type NOHEATCLOUD | FALL | SMOKE;
 		explode ruparm type NOHEATCLOUD | FALL;
-		explode torso type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 2;
-		explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode llowarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rlowarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode torso type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
