@@ -181,7 +181,7 @@ RestoreAfterDelay2()
 	Static_heading = 0;
 }
 
-AimPrimary(heading, pitch)
+AimSecondary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -191,7 +191,7 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
+FireSecondary()
 {
 		gun_1 = 0;
 		sleep 100;
@@ -225,7 +225,7 @@ FirePrimary()
 
 }
 
-QueryPrimary(piecenum)
+QuerySecondary(piecenum)
 {
 	if( gun_1 == 0 )
 	{
@@ -293,7 +293,7 @@ QueryPrimary(piecenum)
 	}
 }
 
-AimSecondary(heading, pitch)
+AimPrimary(heading, pitch)
 {
 	
 	signal SIG_AIM_2;
@@ -309,7 +309,7 @@ AimSecondary(heading, pitch)
 	return (1);
 }
 
-FireSecondary()
+FirePrimary()
 {
 	if( gun_2 == 0 )
 	{
@@ -355,7 +355,7 @@ FireSecondary()
 	}
 }
 
-QuerySecondary(piecenum)
+QueryPrimary(piecenum)
 {
 	if( gun_2 == 0 )
 	{
@@ -383,12 +383,12 @@ QuerySecondary(piecenum)
 	}
 }
 
-AimFromPrimary(piecenum)
+AimFromSecondary(piecenum)
 {
 	piecenum = turret;
 }
 
-AimFromSecondary(piecenum)
+AimFromPrimary(piecenum)
 {
 	piecenum = firepoint;
 }

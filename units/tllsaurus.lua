@@ -201,11 +201,13 @@ corpse = "dead",
 		},
 		weapons = {
 			[1] = {
-				def = "SUPER_BARRAGE",
+				badtargetcategory = "SMALL TINY",
+				def = "ULTIMATE_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "ULTIMATE_GUN",
+				badtargetcategory = "MEDIUM SMALL TINY",
+				def = "SUPER_BARRAGE",
 				onlytargetcategory = "SURFACE",
 			},
 		},
