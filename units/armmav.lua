@@ -58,8 +58,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-6.69805145264 -3.04614644287 13.0918655396",
-				collisionvolumescales = "50.6378936768 10.4806671143 38.4813079834",
+				collisionvolumeoffsets = "-6 -3 13",
+				collisionvolumescales = "50 10 38",
 				collisionvolumetype = "Box",
 				damage = 1539,
 				description = "Maverick Wreckage",
@@ -122,6 +122,7 @@ return {
 			armmav_weapon = {
 				areaofeffect = 8,
 				avoidfeature = false,
+				cegtag = "orcoblaster",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -135,7 +136,6 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "Mavgun2",
-				tolerance = 4000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 500,

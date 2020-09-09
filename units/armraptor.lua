@@ -1,6 +1,7 @@
 return {
 	armraptor = {
 		acceleration = 0.2,
+		autoheal = 100,
 		brakerate = 0.63,
 		buildcostenergy = 486033,
 		buildcostmetal = 28854,
@@ -20,7 +21,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Siege Assault Kbot",
+		description = "All-Terrain Experimental Kbot (Auto-Repair 100)",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 7,
