@@ -336,7 +336,6 @@ return {
 	"armhcrus",
 	"corarbritator",
 	"cormkl",
-	"corlilith",
 	"tllhailstorm",
 	"armolympus",
 	"armpraet",
@@ -356,7 +355,10 @@ return {
 	"tllbarbarus",
 	"talon_skynet",
 	"talon_independence",
+  -- T6 Titan
+	"corlilith",
 	"armarch",
+	"tllsamael",
 	},
 	flamethrowers = {
 	"corpyro",

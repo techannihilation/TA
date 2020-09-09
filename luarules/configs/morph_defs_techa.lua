@@ -1292,6 +1292,11 @@ local morphDefs = {
 		time = 200,
 		xp = 0.125,
 	},
+	tllmcv = {
+		into = 'tllsamael',
+		time = 180,
+		xp = 0.10,
+	},
 	corroy = {
 		into = 'corcrus',
 		time = 45,
