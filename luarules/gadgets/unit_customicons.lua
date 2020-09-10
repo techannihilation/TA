@@ -112,8 +112,9 @@ function gadget:Initialize()
   Spring.AddUnitIcon("talon_mcv.user", "icons/talon_mcv.png", 3)
   Spring.AddUnitIcon("talon_grenat.user", "icons/talon_grenat.png", 4)
   Spring.AddUnitIcon("tllmcv.user", "icons/tllmcv.png", 4)
+  Spring.AddUnitIcon("tllsamael.user", "icons/tllsamael.png", 6)
   Spring.AddUnitIcon("tllcolossus.user", "icons/tllcolossus.png", 4)
-  Spring.AddUnitIcon("tllsaurus.user", "icons/tllsaurus.png", 4)
+  Spring.AddUnitIcon("tllsaurus.user", "icons/tllsaurus.png", 5)
   Spring.AddUnitIcon("gorg.user", "icons/gorg.png", 3)
   Spring.AddUnitIcon("arm_furie.user", "icons/arm_furie.png", 3)
 
@@ -196,6 +197,9 @@ function gadget:Initialize()
 --tllmcv
     elseif (ud.name=="tllmcv") then
           Spring.SetUnitDefIcon(udid, "tllmcv.user")
+--tllsamael
+    elseif (ud.name=="tllsamael") then
+          Spring.SetUnitDefIcon(udid, "tllsamael.user")
 --talon_mcv
     elseif (ud.name=="talon_mcv") then
           Spring.SetUnitDefIcon(udid, "talon_mcv.user")
