@@ -3,9 +3,13 @@
 Balance :
  - Razorback : Decrease HP 14K=>12K. Decrease range 475 => 450. Add Autorepair +50HP/s
  - Exoarm : Increase plasma range by 100 and decrease lightning range by 100.
+ - Raptor : Add Autorepair +100HP/s
 
- Improvment :
-  - Add Titan samael for Tll. Gain with Bahamut morph.
+Improvment :
+ - Add Titan samael for Tll. Gain with Bahamut morph.
+ - Add Animation for tll obliterator (after created, open it like doomsday, tachyon)) 
+ - Add new TLL laser type for obliterator, t3 allterrain kbot, barbarus
+ - Ceddral Talon T2 Air : remplace Rocket weapon by Beam
 
   Fix:
   - Tll Copter: Armor class as gunship
