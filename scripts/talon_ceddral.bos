@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  sleeves, flare1, flare2, flare3, base, body, wing1, wing2, turret;
+piece  sleeves, flare1, flare2, flare3, base, body, wing1, wing2, turret, flare, gun1, gun2, gun3;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, gun_1;
 
@@ -90,6 +90,12 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	hide turret;
+	hide sleeves;
+	hide gun1;
+	hide gun2;
+	hide gun3;
+
 	turn wing1 to z-axis <20.> now;
 	turn wing2 to z-axis <-20.> now;
 	gun_1 = 0;
@@ -114,6 +120,7 @@ RestoreAfterDelay()
 	turn sleeves to x-axis <0.> speed <100.>;
 }
 
+/*
 AimPrimary(heading, pitch)
 {
 	signal 2;
@@ -151,6 +158,28 @@ QueryPrimary(piecenum)
 	{
 		piecenum = flare3;
 	}
+}
+*/
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	return (1);
+}
+
+FirePrimary()
+{
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
 }
 
 SweetSpot(piecenum)
