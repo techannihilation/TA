@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armanni_aoplane.dds",
 		buildpic = "armanni.dds",
-		buildtime = 52071,
+		buildtime = 50000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",

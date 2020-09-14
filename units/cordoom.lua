@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cordoom_aoplane.dds",
 		buildpic = "cordoom.dds",
-		buildtime = 55276,
+		buildtime = 50000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
