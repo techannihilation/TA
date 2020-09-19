@@ -14,7 +14,7 @@ return {
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		description = "Rapid Fire Heavy Kbot",
-		explodeas = "CRAWL_BLAST",
+		explodeas = "BANTHA_NUKE",
 		firestandorders = 1,
 		footprintx = 5,
 		footprintz = 5,

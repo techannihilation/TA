@@ -36,7 +36,7 @@ return {
 		mass = 1059725,
 		maxdamage = 3000150,
 		maxslope = 10,
-		maxvelocity = 0.75,
+		maxvelocity = 0.9,
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "ARCH",
@@ -194,7 +194,7 @@ return {
 					default = 24000,
 					subs = 5,
 				},
-			},	
+			},
 			multi_rocket = {
 				areaofeffect = 80,
 				avoidfeature = false,
@@ -235,7 +235,7 @@ return {
 					default = 960,
 					subs = 5,
 				},
-			},		
+			},
 		},
 		weapons = {
 			[1] = {

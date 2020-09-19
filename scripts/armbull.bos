@@ -44,7 +44,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	start-script SmokeCloud();
+	//start-script SmokeCloud();
 	start-script UnitSpeed();
 	
 	while( TRUE )

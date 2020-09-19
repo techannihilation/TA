@@ -139,7 +139,7 @@ return {
 				intensity = 12,
 				name = "LightningGun",
 				noselfdamage = true,
-				range = 1000,
+				range = 1200,
 				reloadtime = 3,
 				rgbcolor = "0.05 0.9 1",
 				soundstart = "tll_lightning",
