@@ -182,6 +182,8 @@ return {
 			[1] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "K666BLASTER",
+				maindir = "0 0 1",
+				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},

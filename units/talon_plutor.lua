@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		brakerate = 0.825,
 		buildcostenergy = 710074,
-		buildcostmetal = 39281,
+		buildcostmetal = 26281,
 		builder = false,
 		buildpic = "talon_plutor.dds",
 		buildtime = 820000,
