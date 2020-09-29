@@ -1,3 +1,14 @@
+3.52 -> 3.53
+2020-09-29
+Balance :
+ - T3 K666BLASTER : Add Angle limitation (220° front)
+ - Kevlar Talon (Missile turret) : Increase metal cost 240=>2090M
+ - T4 Transporter Air : Decrease metal cost 38KM => 28KM
+ - TllSamel : Increase Range (2750=>3000) and damage (50K/shoot => 60K) for primary weapon. Increase lightning range 1200=>1400
+
+Improvment :
+ - Add Cerberus Titan for Talon. Gain with Mythril morph.
+
 3.51 -> 3.52
 2020-09-09
 Balance :
@@ -8,7 +19,7 @@ Balance :
 
 Improvment :
  - Add Titan samael for Tll. Gain with Bahamut morph.
- - Add Animation for tll obliterator (after created, open it like doomsday, tachyon)) 
+ - Add Animation for tll obliterator (after created, open it like doomsday, tachyon))
  - Add new TLL laser type for obliterator, t3 allterrain kbot, barbarus
  - Ceddral Talon T2 Air : remplace Rocket weapon by Beam
  - T5 independance & skynet : Remplace beamweapon explosion by continue beam.
