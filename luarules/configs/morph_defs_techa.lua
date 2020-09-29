@@ -1094,6 +1094,11 @@ local morphDefs = {
 		time = 30,
 		xp = 0.20,
 	},
+	armmanni1 = {
+		into = 'nsaagriz',
+		time = 90,
+		xp = 0.20,
+	},
 	tllpbot = {
   	into = 'tllartybot',
 		time = 30,
@@ -1297,6 +1302,11 @@ local morphDefs = {
 		time = 180,
 		xp = 0.10,
 	},
+	talon_mythril = {
+		into = 'talon_cerberus',
+		time = 180,
+		xp = 0.10,
+	},
 	corroy = {
 		into = 'corcrus',
 		time = 45,
@@ -1395,6 +1405,11 @@ local morphDefs = {
 		into = 'talon_eak',
 		time = 60,
 		xp = 1.00,
+	},
+	talon_obsidian = {
+		into = 'talon_carbuncle',
+		time = 60,
+		xp = 0.20,
 	},
 	talon_carbuncle = {
 		into = 'talon_grenat',
