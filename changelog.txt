@@ -5,6 +5,7 @@ Balance :
  - Kevlar Talon (Missile turret) : Increase metal cost 240=>290M
  - T4 Transporter Air : Decrease metal cost 38KM => 28KM
  - TllSamel : Increase Range (2750=>3000) and damage (50K/shoot => 60K) for primary weapon. Increase lightning range 1200=>1400
+ - Leopard (Artillery TLL Veh) : Increase range 1750=>1950. Add mortor energy weapon. Damage with duration. (250/s) (like mortor)
 
 Improvment :
  - Delete all naval storage. Add amphibious for all storage.

@@ -8,7 +8,7 @@ modConfig["TA"]["unitList"] =
 								--Arm
 									--Ground Weapons--
 								armclaw = { weapons = { 1 } },
-								amortor = { weapons = { 1 } },
+								--amortor = { weapons = { 1 } },
 								armllt = { weapons = { 1 } },
 								armfllt = { weapons = { 1 } },
 								armllt1 = { weapons = { 1 } },
@@ -64,7 +64,7 @@ modConfig["TA"]["unitList"] =
 								--Core
 									--Ground Weapons--
 								cormaw = { weapons = { 1 } },
-								cmortor = { weapons = { 1 } },
+								--cmortor = { weapons = { 1 } },
 								corexp = { weapons = { 1 } },
 								cormaw = { weapons = { 1 } },
 								corllt = { weapons = { 1 } },
@@ -138,7 +138,7 @@ modConfig["TA"]["unitList"] =
 								tllfllt = { weapons = { 1 } },
 								tllgeo_armored = { weapons = { 1 } },
 								tlllrpt1 = { weapons = { 1 } },
-								tllmortor = { weapons = { 1 } },
+								--tllmortor = { weapons = { 1 } },
 								tllvhlt = { weapons = { 1 } },
 								tllplasma = { weapons = { 1 } },
 								tllpulaser = { weapons = { 1 } },

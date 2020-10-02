@@ -51,7 +51,7 @@ local BlackList = {
    ["armaak_aakflak"] = true,
    ["armflak_armflak_gun"] = true,
    }
-   
+
    local Customlight ={
    ["armpw_emg"] = {r=0.48,g=0.36,b=0,radius=140,beam=false},
    ["armpw1_emg"] = {r=0.48,g=0.36,b=0,radius=160,beam=false},
@@ -73,11 +73,12 @@ local BlackList = {
    ["corkarg1_tawf_banisher2"] = {r=1.2,g=0.2,b=0.2,radius=155,beam=false},
    ["exoarm_lightning"] = {r=0.08,g=0.08,b=0.98,radius=120,beam=true},
    ["exoarm_exo_blast"] = {r=0.08,g=0.08,b=2.9,radius=180,beam=false},
+   ["tllleopard_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    ["tllmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    ["amortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    ["cmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    }
-   
+
    local Armtrails = {
    ["armrock_arm_kbot_rocket"] = true,
    ["armrock1_arm_kbot_rocket1"] = true,
@@ -85,7 +86,7 @@ local BlackList = {
    ["armsam1_armtruck_missile1"] = true,
    ["armcrack_lightartmissarm"] = true,
    }
-      
+
    local Coretrails = {
    ["corstorm_core_kbot_rocket"] = true,
    ["corstorm1_core_kbot_rocket1"] = true,
@@ -95,12 +96,12 @@ local BlackList = {
    ["corrock_lightartmiss"] = true,
    ["tawf114_tawf_banisher"] = true,
    }
-   
+
    local Tlltrails = {
    ["tllannouncer_cortruck_missile"] = true,
    ["tllfireraiser_tll_kbot_rocket"] = true,
    }
-   
+
    local Plasmabatts = {
    ["amortor_mortartillery"] = true,
    ["armguard_armfixed_gun"] = true,
@@ -111,21 +112,21 @@ local BlackList = {
    ["armtrmph_cannon_trmph"] = true,
    ["aseadragon_seadragprime"] = true,
    ["arm_immolator_core_intimidator3"] = true,
-  
+
    --["armbrtha_arm_berthacannon2"] = true,
    ["armbrtha1_arm_berthacannon1"] = true,
    ["armvulc_armvulc_weapon2"] = true,
    ["armvulc1_armvulc_weapon1"] = true,
    ["armvulc2_armvulc_weapon3"] = true,
    ["avtr_arm_berthacannon2"] = true,
-   
+
    ["cmortor_mortartillery"] = true,
    ["corpun_corfixed_gun"] = true,
    ["corpun_corfixed_gun_high"] = true,
    ["corblackhy_hydra_prime"] = true,
    ["cortyrnt_cannon_tyrnt"] = true,
    ["core_immolator_core_intimidator3"] = true,
-   
+
    --["corint_core_intimidator2"] = true,
    ["corint1_core_intimidator1"] = true,
    ["corbuzz_corbuzz_weapon2"] = true,
