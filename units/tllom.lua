@@ -30,7 +30,7 @@ return {
 		maxdamage = 14950,
 		maxslope = 10,
 		maxvelocity = 0.75,
-		maxwaterdepth = 12,
+		maxwaterdepth = 200,
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Om",
