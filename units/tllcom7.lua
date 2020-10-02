@@ -85,7 +85,7 @@ return {
 			[2] = "tllefus",
 			[3] = "tllgeo_armored",
 			[4] = "tllmetalmakerlvl3",
-			[5] = "tllemstor",
+			[5] = "tllemstor1",
 			[6] = "tllmas",
 			[7] = "tlllab",
 			[8] = "tllvp",
