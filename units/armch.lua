@@ -94,8 +94,6 @@ return {
 			[34] = "armtide",
 			[35] = "armuwmex",
 			[36] = "armfmkr",
-			[37] = "armuwms",
-			[38] = "armuwes",
 			[39] = "armfhp",
 			[40] = "aahpns",
 			[41] = "armsy",

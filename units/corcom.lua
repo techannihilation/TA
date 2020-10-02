@@ -95,8 +95,6 @@ return {
 			[15] = "cordl",
 			[16] = "corrl",
 			[17] = "cortide",
-			[18] = "coruwms",
-			[19] = "coruwes",
 			[20] = "coruwmex",
 			[21] = "corfmkr",
 			[22] = "corsy",

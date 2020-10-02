@@ -58,10 +58,10 @@ return {
 		waterline = 1,
 		workertime = 100,
 		buildoptions = {
-			[1] = "talon_geo",				
+			[1] = "talon_geo",
 			[2] = "talon_tide",
-			[3] = "talon_uwms",
-			[4] = "talon_uwes",
+			[3] = "talon_mstor",
+			[4] = "talon_estor",
 			[5] = "talon_uwmex",
 			[6] = "talon_fmkr",
 			[7] = "talon_sy",

@@ -91,8 +91,6 @@ return {
 			[34] = "tllatidal",
 			[35] = "tlluwmex",
 			[36] = "tllwmconv",
-			[37] = "tlluwmstorage",
-			[38] = "tlluwestorage",
 			[39] = "tllhpns",
 			[40] = "tllahpns",
 			[41] = "tllsy",

@@ -24,20 +24,22 @@ end
 -------------------------------------------------------------------------------------
 
 local storageDefs = {
-  --Arm 
+  --Arm
   [ UnitDefNames['armestor'].id ] = true,
   [ UnitDefNames['armuwadves'].id ] = true,
   [ UnitDefNames['armses'].id ] = true,
-  [ UnitDefNames['armuwes'].id ] = true,
-  --Core 
+  --Core
   [ UnitDefNames['corestor'].id ] = true,
   [ UnitDefNames['coruwadves'].id ] = true,
   [ UnitDefNames['corses'].id ] = true,
-  [ UnitDefNames['coruwes'].id ] = true,
   --The Lost Legacy
   [ UnitDefNames['tllestor'].id ] = true,
   [ UnitDefNames['tllemstor'].id ] = true,
-  [ UnitDefNames['tlluwestorage'].id ] = true,
+  [ UnitDefNames['tllemstor1'].id ] = true,
+  --The Lost Legacy
+  --[ UnitDefNames['talon_estor'].id ] = true,
+  --[ UnitDefNames['talon_aestor'].id ] = true,
+  --[ UnitDefNames['talon_eestor'].id ] = true,
  }
 
 local storageunits = {}
@@ -61,7 +63,7 @@ local pairs = pairs
 function gadget:GameFrame(n)
   if (((n+18) % 30) < 0.1) then
     for unitID, _ in pairs(storageunits) do
- 
+
 	   if Spring.GetUnitIsStunned(unitID) then
        local teamID = storageunits[unitID].teamID
        if teamID == nil then return end
@@ -115,7 +117,7 @@ end
 
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-	if (storageDefs[unitDefID]) then 
+	if (storageDefs[unitDefID]) then
 	 storageunits[unitID]= nil
 	end
 end

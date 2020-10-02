@@ -100,8 +100,6 @@ return {
 			--[18] = "tllbuilderlvl2",
 			[19] = "tllshoretorp",
 			[20] = "tlltide",
-			[21] = "tlluwmstorage",
-			[22] = "tlluwestorage",
 			[23] = "tlluwmex",
 			[24] = "tllwmconv",
 			[25] = "tllsy",

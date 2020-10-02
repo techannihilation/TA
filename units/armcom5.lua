@@ -102,8 +102,6 @@ return {
 			--[19] = "abuilderlvl2",
 			[20] = "armjumpdrive",
 			[21] = "armtide",
-			[22] = "armuwms",
-			[23] = "armuwes",
 			[24] = "armuwmex",
 			[25] = "armfmkr",
 			[26] = "armsy",

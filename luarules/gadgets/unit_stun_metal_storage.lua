@@ -24,18 +24,22 @@ end
 -------------------------------------------------------------------------------------
 
 local storageDefs = {
-  --Arm 
+  --Arm
   [ UnitDefNames['armmstor'].id ] = true,
   [ UnitDefNames['armuwadvms'].id ] = true,
-  ---Core 
-  [ UnitDefNames['coruwms'].id ] = true,
+  [ UnitDefNames['cadvmsto'].id ] = true,
+  ---Core
   [ UnitDefNames['cormstor'].id ] = true,
   [ UnitDefNames['coruwadvms'].id ] = true,
-  [ UnitDefNames['cadvmsto'].id ] = true,
+  [ UnitDefNames['corsms'].id ] = true,
   --The Lost Legacy
   [ UnitDefNames['tllmstor'].id ] = true,
   [ UnitDefNames['tllemstor'].id ] = true,
-  [ UnitDefNames['tlluwmstorage'].id ] = true,
+  [ UnitDefNames['tllemstor1'].id ] = true,
+  --Talon
+  [ UnitDefNames['talon_mstor'].id ] = true,
+  [ UnitDefNames['talon_amstor'].id ] = true,
+  [ UnitDefNames['talon_emstor'].id ] = true,
  }
 
 local storageunits = {}
@@ -77,7 +81,7 @@ function gadget:GameFrame(n)
             Spring.SpawnCEG("METAL_STORAGE_LEAK",x,y+height,z,0,0,0)
             end
             storageunits[unitID].isEMPed = true
-            stunnedstorage[unitID] = true 
+            stunnedstorage[unitID] = true
           end
         end
 

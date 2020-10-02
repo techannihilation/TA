@@ -99,8 +99,6 @@ return {
 			[18] = "talon_rl",
 			[19] = "talon_popcorn",
 			[20] = "talon_tide",
-			[21] = "talon_uwms",
-			[22] = "talon_uwes",
 			[23] = "talon_uwmex",
 			[24] = "talon_fmkr",
 			[25] = "talon_sy",

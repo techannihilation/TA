@@ -97,8 +97,6 @@ return {
 			[15] = "tlllmt",
 			[16] = "tllshoretorp",
 			[17] = "tllatidal",
-			[18] = "tlluwmstorage",
-			[19] = "tlluwestorage",
 			[20] = "tllwmconv",
 			[21] = "tllsy",
 			[22] = "tllsonar",

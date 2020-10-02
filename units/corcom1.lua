@@ -100,8 +100,6 @@ return {
 			[18] = "corrl",
 			[19] = "coratidal",
 			--[20] = "coruwlightfus",
-			[21] = "coruwms",
-			[22] = "coruwes",
 			[23] = "corfmkr",
 			[24] = "corsy",
 			[25] = "corsonar",

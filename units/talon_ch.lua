@@ -87,8 +87,6 @@ return {
 			[27] = "talon_cir",
 			[28] = "talon_tide",
 			[29] = "talon_tide1",
-			[30] = "talon_uwms",
-			[31] = "talon_uwes",
 			[32] = "talon_uwmex",
 			[33] = "talon_fmkr",
 			[34] = "talon_hpns",

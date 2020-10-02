@@ -96,7 +96,6 @@ return {
 			[15] = "talon_tide",
 			[16] = "talon_uwfus",
 			[17] = "talon_famkr",
-			[18] = "talon_uwes",
 			[19] = "talon_uwmex",
 			[20] = "talon_fmkr",
 			[21] = "talon_sy",

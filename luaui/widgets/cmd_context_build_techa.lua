@@ -6,14 +6,6 @@ local unitlist={--- Human friendly list. Automatically converted to unitdef IDs 
 {'armmakr','armfmkr'},
 {'cormakr','corfmkr'},
 {'tllmm','tllwmconv'},
---{'armdrag','armfdrag'},  --both can be built in shallow water -> do not touch
---{'cordrag','corfdrag'},  --both can be built in shallow water -> do not touch
-{'armmstor', 'armuwms'},
-{'armestor', 'armuwes'},
-{'tllestor', 'tlluwestorage'},
-{'tllmstor', 'tlluwmstorage'},
-{'cormstor', 'coruwms'},
-{'corestor', 'coruwes'},
 {'armrl','armfrt'},
 {'corrl','corfrt'},
 {'tlllmt','tlllmtns'},--tll
@@ -65,8 +57,6 @@ local unitlist={--- Human friendly list. Automatically converted to unitdef IDs 
 {'talon_rad','talon_frad'},
 {'talon_clone_lab','talon_sy'},
 {'talon_vp','talon_sy'},
-{'talon_mstor','talon_uwms'},
-{'talon_estor','talon_uwes'},
 {'talon_mex','talon_uwmex'},
 {'talon_makr','talon_fmkr'},
 {'talon_drag','talon_fdrag'},

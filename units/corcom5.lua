@@ -102,8 +102,6 @@ return {
 			--[19] = "cbuilderlvl2",
 			[20] = "cortide",
 			[21] = "corupmex",
-			[22] = "coruwms",
-			[23] = "coruwes",
 			[24] = "corfmkr",
 			[25] = "corsy",
 			[26] = "corsonar",

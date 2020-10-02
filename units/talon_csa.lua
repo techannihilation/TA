@@ -78,8 +78,6 @@ return {
 			[17] = "talon_lrpt",
 			[18] = "talon_veloute",
 			[19] = "talon_uwfus",
-			[20] = "talon_uwms",
-			[21] = "talon_uwes",
 			[22] = "talon_famkr",
 			[23] = "talon_uwmme",
 			[24] = "talon_sy",

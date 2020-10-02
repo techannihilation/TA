@@ -101,8 +101,6 @@ return {
 			[18] = "tlljumpdrive",
 			--[19] = "tllbuilderlvl2",
 			[20] = "tlltide",
-			[21] = "tlluwmstorage",
-			[22] = "tlluwestorage",
 			[23] = "tlluwmex",
 			[24] = "tllwmconv",
 			[25] = "tllsy",

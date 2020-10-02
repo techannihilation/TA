@@ -99,8 +99,6 @@ return {
 			[17] = "armrl1",
 			--[18] = "abuilderlvl2",
 			[19] = "armtide",
-			[20] = "armuwms",
-			[21] = "armuwes",
 			[22] = "armuwmex",
 			[23] = "armfmkr",
 			[24] = "armsy",

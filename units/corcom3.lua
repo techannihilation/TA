@@ -99,8 +99,6 @@ return {
 			[17] = "cordl",
 			--[18] = "cbuilderlvl2",
 			[19] = "cortide",
-			[20] = "coruwms",
-			[21] = "coruwes",
 			[22] = "coruwmex",
 			[23] = "corfmkr",
 			[24] = "corsy",

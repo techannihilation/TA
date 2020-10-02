@@ -63,8 +63,6 @@ return {
 			[8] = "tllnanotc",
 			[9] = "tllca",
 			[10] = "tllatidal",
-			[11] = "tlluwmstorage",
-			[12] = "tlluwestorage",
 			[13] = "tllwmconv",
 			[14] = "tllfnanotc",
 		},

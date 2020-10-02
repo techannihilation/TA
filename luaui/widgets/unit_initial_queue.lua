@@ -151,14 +151,6 @@ local TALON_AP = UnitDefNames["talon_ap"].id
 local ARMFRAD = UnitDefNames["armfrad"].id
 local CORFRAD = UnitDefNames["corfrad"].id
 local TALON_FRAD = UnitDefNames["talon_frad"].id
-local ARMUWMS = UnitDefNames["armuwms"].id
-local CORUWMS = UnitDefNames["coruwms"].id
-local TLLUWMSTORAGE = UnitDefNames["tlluwmstorage"].id
-local TALON_UWMS = UnitDefNames["talon_uwms"].id
-local ARMUWES = UnitDefNames["armuwes"].id
-local CORUWES = UnitDefNames["coruwes"].id
-local TLLUWESTORAGE = UnitDefNames["tlluwestorage"].id
-local TALON_UWES = UnitDefNames["talon_uwes"].id
 local ARMFMKR = UnitDefNames["armfmkr"].id
 local CORFMKR = UnitDefNames["corfmkr"].id
 local TLLWMCONV = UnitDefNames["tllwmconv"].id
@@ -196,8 +188,6 @@ ArmToCore[ARMDRAG] = CORDRAG
 ArmToCore[ARMDL] = CORDL
 ArmToCore[ARMAP] = CORAP
 ArmToCore[ARMFRAD] = CORFRAD
-ArmToCore[ARMUWMS] = CORUWMS
-ArmToCore[ARMUWES] = CORUWES
 ArmToCore[ARMFMKR] = CORFMKR
 ArmToCore[ARMFDRAG] = CORFDRAG
 ArmToCore[ARMGEOMINI] = CORGEOMINI
@@ -222,8 +212,6 @@ TllToCore[TllToWER] = COREYES
 TllToCore[TLLDTNS] = CORDRAG
 TllToCore[TLLSHORETORP] = CORDL
 TllToCore[TLLAP] = CORAP
-TllToCore[TLLUWMSTORAGE] = CORUWMS
-TllToCore[TLLUWESTORAGE] = CORUWES
 TllToCore[TLLWMCONV] = CORFMKR
 TllToCore[TLLDTNS] = CORFDRAG
 TllToCore[TllTORP] = CORTL
@@ -249,8 +237,6 @@ TllToArm[TllToWER] = ARMEYES
 TllToArm[TLLDTNS] = ARMDRAG
 TllToArm[TLLSHORETORP] = ARMDL
 TllToArm[TLLAP] = ARMAP
-TllToArm[TLLUWMSTORAGE] = ARMUWMS
-TllToArm[TLLUWESTORAGE] = ARMUWES
 TllToArm[TLLWMCONV] = ARMFMKR
 TllToArm[TLLDTNS] = ARMFDRAG
 TllToArm[TllTORP] = ARMTL
@@ -274,8 +260,6 @@ TalonToTll[TALON_ESTOR] = TLLESTOR
 TalonToTll[TALON_MAKR] = TLLMM
 TalonToTll[TALON_DRAG] = TLLDTNS
 TalonToTll[TALON_AP] = TLLAP
-TalonToTll[TALON_UWMS] = TLLUWMSTORAGE
-TalonToTll[TALON_UWES] = TLLUWESTORAGE
 TalonToTll[TALON_FMKR] = TLLWMCONV
 TalonToTll[TALON_FDRAG] = TLLDTNS
 TalonToTll[TALON_TL] = TllTORP
@@ -300,8 +284,6 @@ TalonToArm[TALON_MAKR] = ARMMAKR
 TalonToArm[TALON_DRAG] = ARMDRAG
 TalonToArm[TALON_AP] = ARMAP
 TalonToArm[TALON_FRAD] = ARMFRAD
-TalonToArm[TALON_UWMS] = ARMUWMS
-TalonToArm[TALON_UWES] = ARMUWES
 TalonToArm[TALON_FMKR] = ARMFMKR
 TalonToArm[TALON_FDRAG] = ARMFDRAG
 TalonToArm[TALON_TL] = ARMTL
@@ -326,8 +308,6 @@ TalonToCore[TALON_MAKR] = CORMAKR
 TalonToCore[TALON_DRAG] = CORDRAG
 TalonToCore[TALON_AP] = CORAP
 TalonToArm[TALON_FRAD] = CORFRAD
-TalonToCore[TALON_UWMS] = CORUWMS
-TalonToCore[TALON_UWES] = CORUWES
 TalonToCore[TALON_FMKR] = CORFMKR
 TalonToCore[TALON_FDRAG] = CORFDRAG
 TalonToCore[TALON_TL] = CORTL
@@ -363,7 +343,7 @@ for uDefID, uDef in pairs(UnitDefs) do
 				local tooltip = UnitDefs[uDef.buildOptions[i]].tooltip
 				local humanName = UnitDefs[uDef.buildOptions[i]].humanName
 				local text = "\255\215\255\215" .. humanName .. "\n\255\240\240\240"
-				local description_long = UnitDefs[uDef.buildOptions[i]].customParams.description_long or "" --Todo atm we don't use this 
+				local description_long = UnitDefs[uDef.buildOptions[i]].customParams.description_long or "" --Todo atm we don't use this
 
 				isBuildableQueue[uDef.buildOptions[i]] = {
 					tooltip = tooltip,
@@ -1300,7 +1280,7 @@ end
 -- 			if 		selDefID == ARMMEX then 	SetSelDefID(ARMUWMEX)
 -- 			elseif 	selDefID == ARMUWMEX then	SetSelDefID(ARMMEX)
 -- 			else								SetSelDefID(ARMMEX)
--- 			end		
+-- 			end
 -- 		elseif key == XKEY then
 -- 			if 		selDefID == RMSOLAR then	SetSelDefID(ARMWIN)
 -- 			elseif 	selDefID == ARMWIN then		SetSelDefID(ARMTIDE)
@@ -1321,14 +1301,14 @@ end
 -- 			elseif 	selDefID == ARMVP then		SetSelDefID(ARMSY)
 -- 			elseif 	selDefID == ARMSY then		SetSelDefID(ARMLAB)
 -- 			else 								SetSelDefID(ARMLAB)
--- 			end			
--- 		end	
+-- 			end
+-- 		end
 -- 	elseif sDef == UnitDefs[CORCOM] then
 -- 		if key == ZKEY then
 -- 			if 		selDefID == CORMEX then 	SetSelDefID(CORUWMEX)
 -- 			elseif 	selDefID == CORUWMEX then	SetSelDefID(CORMEX)
 -- 			else								SetSelDefID(CORMEX)
--- 			end		
+-- 			end
 -- 		elseif key == XKEY then
 -- 			if 		selDefID == CORSOLAR then	SetSelDefID(CORWIN)
 -- 			elseif 	selDefID == CORWIN then		SetSelDefID(CORTIDE)
@@ -1348,15 +1328,15 @@ end
 -- 			if		selDefID == CORLAB then		SetSelDefID(CORVP)
 -- 			elseif 	selDefID == CORVP then		SetSelDefID(CORSY)
 -- 			elseif 	selDefID == CORSY then		SetSelDefID(CORLAB)
--- 			else 								SetSelDefID(CORLAB)		
+-- 			else 								SetSelDefID(CORLAB)
 -- 			end
--- 		end	
+-- 		end
 -- 	elseif sDef == UnitDefs[TLLCOM] then
 -- 		if key == ZKEY then
 -- 			if 		selDefID == TLLMEX then 	SetSelDefID(TLLUWMEX)
 -- 			elseif 	selDefID == TLLUWMEX then	SetSelDefID(TLLMEX)
 -- 			else								SetSelDefID(TLLMEX)
--- 			end		
+-- 			end
 -- 		elseif key == XKEY then
 -- 			if 		selDefID == TLLSOLAR then	SetSelDefID(TLLWIND)
 -- 			elseif 	selDefID == TLLWIND then	SetSelDefID(TLLTIDE)
@@ -1376,9 +1356,9 @@ end
 -- 			if		selDefID == TLLLAB then		SetSelDefID(TLLVP)
 -- 			elseif 	selDefID == TLLVP then		SetSelDefID(TLLSY)
 -- 			elseif 	selDefID == TLLSY then		SetSelDefID(TLLLAB)
--- 			else 								SetSelDefID(TLLLAB)		
+-- 			else 								SetSelDefID(TLLLAB)
 -- 			end
--- 		end	
+-- 		end
 -- 	end
 -- end
 function widget:ViewResize(newX, newY)

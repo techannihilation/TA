@@ -100,8 +100,6 @@ return {
 			[18] = "armrl",
 			[19] = "armatidal",
 			--[20] = "armuwlightfus",
-			[21] = "armuwms",
-			[22] = "armuwes",
 			[23] = "armfmkr",
 			[24] = "armsy",
 			[25] = "armsonar",
