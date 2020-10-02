@@ -2,8 +2,8 @@ return {
 	tllwmconv = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 1135,
-		buildcostmetal = 11,
+		buildcostenergy = 1357,
+		buildcostmetal = 26,
 		builder = false,
 		buildpic = "tllwmconv.dds",
 		buildtime = 1700,

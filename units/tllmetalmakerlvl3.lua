@@ -1,8 +1,8 @@
 return {
 	tllmetalmakerlvl3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1316484,
-		buildcostmetal = 32940,
+		buildcostenergy = 1328530,
+		buildcostmetal = 33826,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "110 80 110",
 		collisionvolumetype = "CylY",
 		corpse = "heap",
-		damagemodifier = 0.25,	
+		damagemodifier = 0.25,
 		scription = "Converts upto 36000 Energy to Metal",
 		explodeas = "nuclear_missile2",
 		floater = false,

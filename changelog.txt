@@ -1,16 +1,20 @@
 3.52 -> 3.53
-2020-09-29
+2020-10-02
 Balance :
- - T3 K666BLASTER : Add Angle limitation (220° front)
+ - TLL Metal Maker : Same Ratio than other factions. Stats cost changed too. (Some changes : Capacity for T2 600=>900, underwater T2 : 900=>100, T3 6000=>9000)
+ - Arm Krypto : Add Angle limitation (220° front)
  - Kevlar Talon (Missile turret) : Increase metal cost 240=>290M
  - T4 Transporter Air : Decrease metal cost 38KM => 28KM
  - TllSamel : Increase Range (2750=>3000) and damage (50K/shoot => 60K) for primary weapon. Increase lightning range 1200=>1400
  - Leopard (Artillery TLL Veh) : Increase range 1750=>1950. Add mortor energy weapon. Damage with duration. (250/s) (like mortor)
+ - Bahamut and Samel : Blast reduce AOE 496=>396
+ - Silver : Increase range 2250 and 2750 for stationnery. Decrease cost 90K=>80KM. Increase Damage 20=>24K 30=>36K for experimental
 
 Improvment :
  - Delete all naval storage. Add amphibious for all storage.
  - Add Cerberus Titan for Talon. Gain with Mythril morph.
  - T3 Kbot Core : Pinchy have Amphibious and All Terrain now
+ - Add Sam for all TLL Engineer
 
 3.51 -> 3.52
 2020-09-09
@@ -18,7 +22,6 @@ Balance :
  - Razorback : Decrease HP 14K=>12K. Decrease range 475 => 450. Add Autorepair +50HP/s
  - Exoarm : Increase plasma range by 100 and decrease lightning range by 100.
  - Raptor : Add Autorepair +100HP/s
- - Silver unit : Decrease cost 90K=>80KM. Increase Damage 20=>24K 30=>32K for experimental
 
 Improvment :
  - Add Titan samael for Tll. Gain with Bahamut morph.
