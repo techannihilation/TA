@@ -1,7 +1,7 @@
 3.52 -> 3.53
 2020-10-02
 Balance :
- - TLL Metal Maker : Same Ratio than other factions. Stats cost changed too. (Some changes : Capacity for T2 600=>900, underwater T2 : 900=>100, T3 6000=>9000)
+ - TLL Metal Maker : Same Ratio than other factions. Stats cost changed too. (Some changes : Capacity for T2 600=>750, T3 6000=>9000)
  - Arm Krypto : Add Angle limitation (220° front)
  - Kevlar Talon (Missile turret) : Increase metal cost 240=>290M
  - T4 Transporter Air : Decrease metal cost 38KM => 28KM

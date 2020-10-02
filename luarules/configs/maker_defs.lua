@@ -41,8 +41,8 @@ local convertCapacities = {
 		[UnitDefNames.tllmm.id]  = { c = 45, e = (AC0) }, -- Normal
 		[UnitDefNames.tllwmconv.id]  = { c = 90, e = (AC1) }, -- Floating
 		[UnitDefNames.tllmetalmakerlvl1.id]  = { c = 135, e = (ACT2) }, -- T1,5
-		[UnitDefNames.tllammaker.id]  = { c = 900, e = (AC4) }, -- Moho
-		[UnitDefNames.tllwmmohoconv.id]  = { c = 1100, e = (AC5) }, -- Underwater
+		[UnitDefNames.tllammaker.id]  = { c = 750, e = (AC4) }, -- Moho
+		[UnitDefNames.tllwmmohoconv.id]  = { c = 900, e = (AC5) }, -- Underwater
 		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 9000, e = (AC6) }, -- T4
 		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 36000, e = (AC7) }, -- T4
 		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) },
