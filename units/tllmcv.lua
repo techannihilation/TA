@@ -152,7 +152,7 @@ return {
 				},
 			},
 			tll_blast = {
-				areaofeffect = 496,
+				areaofeffect = 396,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "banthablaster",
