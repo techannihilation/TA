@@ -56,7 +56,7 @@ return {
 		workertime = 2750,
 		buildoptions = {
 			[1] = "tllefus",
-			[2] = "tllmetalmakerlvl3",
+			[2] = "tllmetalmakerlvl4",
 			[3] = "tllmas",
 			[4] = "tllprototype",
 			[5] = "tllshipyardlvl3",

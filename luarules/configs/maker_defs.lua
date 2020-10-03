@@ -45,6 +45,7 @@ local convertCapacities = {
 		[UnitDefNames.tllwmmohoconv.id]  = { c = 900, e = (AC5) }, -- Underwater
 		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 9000, e = (AC6) }, -- T4
 		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 36000, e = (AC7) }, -- T4
+		[UnitDefNames.tllmetalmakerlvl4.id]  = { c = 168000, e = (AC8) }, -- T5
 		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) },
 
 		--TALON

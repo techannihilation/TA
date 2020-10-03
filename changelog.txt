@@ -1,5 +1,5 @@
 3.52 -> 3.53
-2020-10-02
+2020-10-03
 Balance :
  - TLL Metal Maker : Same Ratio than other factions. Stats cost changed too. (Some changes : Capacity for T2 600=>750, T3 6000=>9000)
  - Arm Krypto : Add Angle limitation (220° front)
@@ -12,6 +12,7 @@ Balance :
 
 Improvment :
  - Delete all naval storage. Add amphibious for all storage.
+ - Add T5 Metal Maker for TLL (168K capacity and 1M storage)
  - Add Cerberus Titan for Talon. Gain with Mythril morph.
  - T3 Kbot Core : Pinchy have Amphibious and All Terrain now
  - Add Sam for all TLL Engineer

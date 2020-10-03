@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "84 95 84",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Enhanced Energy Output / Storage",
+		description = "Produce Energy / Storage (35K)",
 		energymake = 3200,
 		energystorage = 35000,
 		energyuse = 0,

@@ -15,7 +15,7 @@ return {
 		buildtime = 67000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
-		description = "Produces Energy / Storage",
+		description = "Produces Energy",
 		energymake = 1280,
 		energystorage = 2560,
 		energyuse = 0,

@@ -1,0 +1,233 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, MM, door1, door2, door3, engine, rotor, tower, trap01, trap02, trap03, trap04,
+		ring, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, body;
+
+static-var  Static_Var_1, Static_Var_2;
+
+activatescr()
+{
+	
+	move tower to y-axis [15.000000] speed [10.000000];
+	wait-for-move tower along y-axis;
+	
+	turn panel4 to z-axis <20.> speed <75.>;
+	turn panel2 to z-axis <-20.> speed <75.>;
+	turn panel3 to x-axis <20.> speed <75.>;
+	turn panel1 to x-axis <-20.> speed <75.>;	
+	
+	wait-for-turn panel1 around x-axis;
+	
+	turn panel5 to z-axis <20.> speed <75.>;
+	turn panel6 to z-axis <-20.> speed <75.>;
+	turn panel7 to x-axis <20.> speed <75.>;
+	turn panel8 to x-axis <20.> speed <75.>;	
+	
+	turn panel5 to x-axis <-20.> speed <75.>;
+	turn panel6 to x-axis <-20.> speed <75.>;
+	turn panel7 to z-axis <-20.> speed <75.>;
+	turn panel8 to z-axis <20.> speed <75.>;
+	
+	turn panel5 to y-axis <3.> speed <75.>;
+	turn panel6 to y-axis <-3.> speed <75.>;
+	turn panel7 to y-axis <3.> speed <75.>;
+	turn panel8 to y-axis <-3.> speed <75.>;
+	
+	set ARMORED to 0;
+	
+	turn door3 to y-axis <180.000000> speed <600.000000>;
+	wait-for-turn door3 around y-axis;
+	move door3 to y-axis [-7.000000] speed [15.000000];
+	wait-for-move door3 along y-axis;
+	hide door3;
+	turn door2 to y-axis <-180.000000> speed <600.000000>;
+	wait-for-turn door2 around y-axis;
+	move door2 to y-axis [-7.000000] speed [15.000000];
+	wait-for-move door2 along y-axis;
+	hide door2;
+	turn door1 to y-axis <180.000000> speed <600.000000>;
+	wait-for-turn door1 around y-axis;
+	move door1 to y-axis [-7.000000] speed [15.000000];
+	wait-for-move door1 along y-axis;
+	hide door1;
+	show engine;
+	show rotor;
+	move engine to y-axis [0.000000] speed [5.000000];
+	wait-for-move engine along y-axis;
+	spin rotor around y-axis speed <240.000000>;
+	
+}
+
+deactivatescr()
+{
+	move engine to y-axis [-5.000000] speed [10.000000];
+	stop-spin rotor around y-axis;
+	move engine to y-axis [-5.000000] speed [10.000000];
+	wait-for-move engine along y-axis;
+	hide engine;
+	hide rotor;
+	show door1;
+	move door1 to y-axis [0.000000] speed [15.000000];
+	wait-for-move door1 along y-axis;
+	turn door1 to y-axis <0.000000> speed <600.000000>;
+	wait-for-turn door1 around y-axis;
+	show door2;
+	move door2 to y-axis [0.000000] speed [15.000000];
+	wait-for-move door2 along y-axis;
+	turn door2 to y-axis <0.000000> speed <600.000000>;
+	wait-for-turn door2 around y-axis;
+	show door3;
+	move door3 to y-axis [0.000000] speed [15.000000];
+	wait-for-move door3 along y-axis;
+	turn door3 to y-axis <0.000000> speed <600.000000>;
+	wait-for-turn door3 around y-axis;
+
+	turn panel4 to z-axis <0.> speed <75.>;
+	turn panel2 to z-axis <0.> speed <75.>;
+	turn panel3 to x-axis <0.> speed <75.>;
+	turn panel1 to x-axis <0.> speed <75.>;
+	
+	turn panel4 to x-axis <0.> speed <75.>;
+	turn panel2 to x-axis <0.> speed <75.>;
+	turn panel3 to z-axis <0.> speed <75.>;
+	turn panel1 to z-axis <0.> speed <75.>;
+		
+	wait-for-turn panel1 around x-axis;
+	
+	turn panel5 to z-axis <0.> speed <75.>;
+	turn panel6 to z-axis <0.> speed <75.>;
+	turn panel7 to x-axis <0.> speed <75.>;
+	turn panel8 to x-axis <0.> speed <75.>;
+	
+	turn panel5 to x-axis <0.> speed <75.>;
+	turn panel6 to x-axis <0.> speed <75.>;
+	turn panel7 to z-axis <0.> speed <75.>;
+	turn panel8 to z-axis <0.> speed <75.>;
+	
+	turn panel5 to y-axis <0.> speed <75.>;
+	turn panel6 to y-axis <0.> speed <75.>;
+	turn panel7 to y-axis <0.> speed <75.>;
+	turn panel8 to y-axis <0.> speed <75.>;
+	
+	wait-for-turn panel5 around x-axis;
+	set ARMORED to 1;
+	
+	move tower to y-axis [0.000000] speed [10.000000];
+	
+	
+}
+
+Go()
+{
+	call-script activatescr();
+}
+
+Stop()
+{
+	call-script deactivatescr();
+}
+
+Activate()
+{
+	start-script activatescr();
+}
+
+Deactivate()
+{
+	start-script deactivatescr();
+}
+
+MMStatus(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+}
+
+ImAMetalMaker()
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 150;
+	}
+	Static_Var_2 = -1;
+	while( TRUE )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			if( Static_Var_2 != 1 )
+			{
+				call-script Go();
+				Static_Var_2 = 1;
+			}
+		}
+		else if( Static_Var_2 != 0 )
+		{
+			call-script Stop();
+			Static_Var_2 = 0;
+		}
+		sleep 1000;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script ImAMetalMaker();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 66 )
+	{
+		corpsetype = 2;
+		explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode trap01 type SHATTER | FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode trap03 type SHATTER | FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode ring type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode tower type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode door1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode trap01 type SHATTER | FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode trap03 type SHATTER | FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode ring type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode tower type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}
