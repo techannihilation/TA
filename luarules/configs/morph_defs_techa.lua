@@ -779,7 +779,7 @@ local morphDefs = {
 	armmav = {
     		into = 'armraz',
 		time = 60,
-		xp = 1.00,
+		xp = 0.25,
 	},
 	armraz  = {
  		into = 'armraptor',

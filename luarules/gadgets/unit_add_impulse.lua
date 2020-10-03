@@ -64,14 +64,14 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
-		[UnitDefNames.tllmcv.weapons[1].weaponDef] = {
-			impulseBoost = 1000 * multiplier,
+		[UnitDefNames.talon_repentance.weapons[1].weaponDef] = {
+			impulseBoost = 180 * multiplier,
 			weaponNumber = 1
 		},
-		[UnitDefNames.talon_repentance.weapons[1].weaponDef] = {
-			impulseBoost = 2000 * multiplier,
+		[UnitDefNames.tllsamael.weapons[1].weaponDef] = {
+			impulseBoost = 360 * multiplier,
 			weaponNumber = 1
-		}
+		},
 	}
 
 	local GetUnitWeaponTarget = Spring.GetUnitWeaponTarget
