@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, r1, r2, r3;
+piece  base, body, turret, pal1, pal2, pal3;
 
-static-var  statechg_DesiredState, statechg_StateChanging, enabled;
+static-var  statechg_DesiredState, statechg_StateChanging, enabled, onoff;
 static-var	shield_on, nbr_shield, dome_on, nbr_dome ; 
 
 // Signal definitions
@@ -40,16 +40,13 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	spin r1 around y-axis speed <215.131868> / <0.016484> accelerate <2.000000>;
-	spin r2 around y-axis speed <-327.417582> / <0.016484> accelerate <3.000000>;
-	spin r3 around y-axis speed <439.664835> / <0.016484> accelerate <4.000000>;
+	onoff=1;
+	spin turret around y-axis speed <35>;
 }
 
 Stop()
 {
-	spin r1 around y-axis speed <0.000000> accelerate <2.000000>;
-	spin r2 around y-axis speed <0.000000> accelerate <3.000000>;
-	spin r3 around y-axis speed <0.000000> accelerate <4.000000>;
+	onoff=0;
 }
 
 InitState()
@@ -85,13 +82,12 @@ RequestState(requestedstate, currentstate)
 }
 
 
-
 Create()
 {
-	enabled = 0;		
-	turn r1 to y-axis rand(<0>,<360>) now;
-	turn r2 to y-axis rand(<0>,<360>) now;
-	turn r3 to y-axis rand(<0>,<360>) now;	
+	shield_on = 0;
+	dome_on = 0;
+	enabled = 0;	
+	onoff = 0;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -104,7 +100,9 @@ Activate()
 
 Deactivate()
 {
-	enabled = 0;
+	enabled = 0;	
+	onoff=0;	
+	stop-spin turret around y-axis;	
 	start-script RequestState(1);
 }
 
@@ -118,28 +116,27 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
-		explode r1 type NOHEATCLOUD;
-		explode r2 type NOHEATCLOUD;
-		explode r3 type NOHEATCLOUD;
-		return (corpsetype);
+		explode turret type NOHEATCLOUD;
+		explode pal1 type NOHEATCLOUD;
+		explode pal2 type NOHEATCLOUD;
+		explode pal3 type NOHEATCLOUD;
+		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type FALL | NOHEATCLOUD;
-		explode body type FALL | NOHEATCLOUD;
-		explode r1 type FALL | NOHEATCLOUD;
-		explode r2 type FALL | NOHEATCLOUD;
-		explode r3 type FALL | NOHEATCLOUD;
-		return (corpsetype);
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode pal1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pal2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pal3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (0);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode r1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode r2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode r3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode body type BITMAPONLY | BITMAP1;
-	return (corpsetype);
+	explode body type NOHEATCLOUD;
+	explode turret type NOHEATCLOUD;
+	explode pal1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pal2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pal3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 }

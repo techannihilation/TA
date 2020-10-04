@@ -1,5 +1,5 @@
 3.52 -> 3.53
-2020-10-03
+2020-10-04
 Balance :
  - TLL Metal Maker : Same Ratio than other factions. Stats cost changed too. (Some changes : Capacity for T2 600=>750, T3 6000=>9000)
  - Arm Krypto : Add Angle limitation (220° front)
@@ -9,13 +9,16 @@ Balance :
  - Leopard (Artillery TLL Veh) : Increase range 1750=>1950. Add mortor energy weapon. Damage with duration. (250/s) (like mortor)
  - Bahamut and Samel : Blast reduce AOE 496=>396
  - Silver : Increase range 2250 and 2750 for stationnery. Decrease cost 90K=>80KM. Increase Damage 20=>24K 30=>36K for experimental
+ - TLL Flak : Reduce cost and stats. Same as other faction.
 
 Improvment :
  - Delete all naval storage. Add amphibious for all storage.
  - Add T5 Metal Maker for TLL (168K capacity and 1M storage)
+ - Add T3 Jammer for TLL
  - Add Cerberus Titan for Talon. Gain with Mythril morph.
  - T3 Kbot Core : Pinchy have Amphibious and All Terrain now
  - Add Sam for all TLL Engineer
+ - Decrease Flak T2 TLL
 
 3.51 -> 3.52
 2020-09-09

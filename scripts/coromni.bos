@@ -100,20 +100,7 @@ Create()
 	shield_on = 0;
 	dome_on = 0;
 	enabled = 0;
-	
-	dont-shade tower;
-	dont-shade blades1;
-	dont-shade blades2;
-	dont-shade blades3;
-	dont-shade body;
-	
-	dont-cache tower;
-	dont-cache blades1;
-	dont-cache blades2;
-	dont-cache blades3;
-	
 	onoff = 0;
-
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -149,37 +136,28 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode tower type BITMAPONLY | BITMAP1;
-		explode blades1 type BITMAPONLY | BITMAP1;
-		explode blades2 type BITMAPONLY | BITMAP1;
-		explode blades3 type BITMAPONLY | BITMAP1;
-		return (0);
+		explode base type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode blades1 type NOHEATCLOUD;
+		explode blades2 type NOHEATCLOUD;
+		explode blades3 type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP1;
-		explode tower type BITMAPONLY | BITMAP1;
-		explode blades1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode blades2 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode blades3 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type BITMAPONLY | BITMAP1;
-		explode tower type BITMAPONLY | BITMAP1;
-		explode blades1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode blades2 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode blades3 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		explode base type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode blades1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode blades2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode blades3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode tower type BITMAPONLY | BITMAP1;
-	explode blades1 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode blades2 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode blades3 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode base type NOHEATCLOUD;
+	explode tower type NOHEATCLOUD;
+	explode blades1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blades2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blades3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
 }
