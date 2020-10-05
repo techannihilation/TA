@@ -1,13 +1,13 @@
 return {
-	bantha_nuke = {
-		areaofeffect = 1000,
+	exo_blast = {
+		areaofeffect = 1600,
 		avoidfriendly = 0,
 		collidefriendly = 0,
 		commandfire = 1,
 		craterboost = 6,
 		cratermult = 3,
 		edgeeffectiveness = 0.3,
-		explosiongenerator = "custom:FLASHNUKE1280",
+		explosiongenerator = "custom:FLASHNUKE1600",
 		firestarter = 0,
 		impulseboost = 0.5,
 		impulsefactor = 0.5,
@@ -17,8 +17,9 @@ return {
 		soundhit = "xplomed4",
 		soundstart = "misicbm1",
 		damage = {
-			commanders = 2500,
-			default = 5000,
+			commanders = 5000,
+			crawlingbombs = 2500,
+			default = 25000,
 		},
 	},
 }

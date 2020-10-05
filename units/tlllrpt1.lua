@@ -37,7 +37,7 @@ return {
 		objectname = "TLLLRPT1",
 		radaremitheight = 90,
 		seismicsignature = 0,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 273,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

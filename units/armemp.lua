@@ -41,7 +41,7 @@ return {
 		objectname = "ARMEMP",
 		radaremitheight = 35,
 		seismicsignature = 0,
-		selfdestructas = "SPYBOMBX",
+		selfdestructas = "CORGRIPN_BOMB",
 		sightdistance = 455,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,

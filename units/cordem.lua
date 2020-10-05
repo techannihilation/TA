@@ -38,7 +38,7 @@ return {
 		objectname = "CORDEM",
 		radardistance = 0,
 		radaremitheight = 76,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 300,
 		standingfireorder = 2,

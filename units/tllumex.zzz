@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "CylY",
 		description = "Tech Level 5 (Amphibious)",
 		energyuse = 3000,
-		explodeas = "ATOMIC_BLAST",
+		explodeas = "CRAWL_BLAST",
 		extractsmetal = 0.09375,
 		footprintx = 8,
 		footprintz = 8,

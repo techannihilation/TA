@@ -22,25 +22,32 @@ local rgbSpecMults = {0.25, 0.25, 0.25} -- specular RGB scales
 local copyLightDefs = {
 	["TA"] = {
 		--Self-D , Explosion for large units eg corkrog and commanders etc
-		["commander_blast1"          ] = "commander_blast_new",  
+		["commander_blast1"          ] = "commander_blast_new",
 		["commander_blast5"          ] = "commander_blast_new",
 		["commander_blast6"          ] = "commander_blast_new",
 		["commander_blast7"          ] = "commander_blast_new",
 		["commander_blast8"          ] = "commander_blast_new",
 		["commander_selfd"           ] = "commander_blast_new",
-
 		["commander_blast4"          ] = "commander_blast",
-		["nuclear_missile"           ] = "commander_blast_small",  --1420
-		["nuclear_missile1"          ] = "commander_blast_small",  --1280
-		["nuclear_missile2"          ] = "commander_blast_small",
-		["nuclear_missile3"          ] = "commander_blast_small",
-		["nuclear_missile4"          ] = "commander_blast_small",
-		["crblmssl"                  ] = "commander_blast",  --1920
-		["crblmssl1"                 ] = "commander_blast_big",  --2120
-		["crblmssl2"                 ] = "commander_blast_exsmall",  --920
-		["crblmssl4"                 ] = "commander_blast_exbig",  --2720
-		["atomic_blast"              ] = "atomic_blast",
-		["atomic_blastsml"           ] = "atomic_blastsml",
+
+    --["nuclear_missile"           ] = "commander_blast_small",
+		--["nuclear_missile1"          ] = "commander_blast_small",
+
+		["BANTHA_BLAST"          ] = "commander_blast_medium",
+    ["KROG_BLAST"          ] = "commander_blast",
+    ["EXO_BLAST"          ] = "commander_blast_big",
+    ["MKL_BLAST"          ] = "commander_blast_exbig",
+
+
+		--["nuclear_missile3"          ] = "commander_blast_big",
+		--["KROG_BLAST"          ] = "commander_blast_exbig",
+		--["crblmssl"                  ] = "commander_blast",  --1920
+		--["crblmssl1"                 ] = "commander_blast_big",  --2120
+		--["crblmssl2"                 ] = "commander_blast_exsmall",  --920
+		--["EXO_BLAST"                 ] = "commander_blast_exbig",  --2720
+
+		["crawl_blast"              ] = "crawl_blast",
+		["crawl_blastsml"           ] = "crawl_blastsml",
 
 		--Brthas
 		["armbrtha_arm_berthacannon2"] = "berthacannon",
@@ -52,28 +59,38 @@ local copyLightDefs = {
 		--["corint1_core_intimidator1" ] = "berthacannon1",
 		--["armbrtha1_arm_berthacannon1"] = "berthacannon1",
 		["tlldmc_tlldmc"]              = "dark_matter",
-		["corgala_ravagerbeam"  ]      = "galacannon",
+		--["corgala_ravagerbeam"  ]      = "galacannon",
 
 		--Dgun
 		--[[
 		["armcom_arm_disintegrator"  ] = "arm_disintegrator",
 		["armcom1_arm_disintegrator" ] = "arm_disintegrator",
 		["armcom4_arm_disintegrator1"] = "arm_disintegrator",
+    ["armcom_fusion_arm_disintegrator1"] = "arm_disintegrator",
 		["armcom5_arm_disintegrator2"] = "arm_disintegrator",
 		["armcom6_arm_disintegrator2"] = "arm_disintegrator",
 		["armcom7_arm_disintegrator2"] = "arm_disintegrator",
 		["corcom_arm_disintegrator"  ] = "arm_disintegrator",
 		["corcom1_arm_disintegrator" ] = "arm_disintegrator",
 		["corcom3_arm_disintegrator1"] = "arm_disintegrator",
+    ["corcom_fusion_arm_disintegrator1"] = "arm_disintegrator",
 		["corcom5_arm_disintegrator2"] = "arm_disintegrator",
 		["corcom6_arm_disintegrator2"] = "arm_disintegrator",
 		["corcom7_arm_disintegrator2"] = "arm_disintegrator",
 		["tllcom_arm_disintegrator3" ] = "arm_disintegrator",
 		["tllcom1_tll_disintegrator"] = "arm_disintegrator",
 		["tllcom3_tll_disintegrator1"] = "arm_disintegrator",
+    ["tllcom_fusion_tll_disintegrator1"] = "arm_disintegrator",
 		["tllcom5_tll_disintegrator2"] = "arm_disintegrator",
 		["tllcom6_tll_disintegrator2"] = "arm_disintegrator",
 		["tllcom7_tll_disintegrator2"] = "arm_disintegrator",
+    ["talon_com_tal_disintegrator" ] = "arm_disintegrator",
+    ["talon_com1_tal_disintegrator"] = "arm_disintegrator",
+    ["talon_com3_tal_disintegrator"] = "arm_disintegrator",
+    ["talon_com_fusion_tal_disintegrator"] = "arm_disintegrator",
+    ["talon_com5_tal_disintegrator"] = "arm_disintegrator",
+    ["talon_com6_tal_disintegrator"] = "arm_disintegrator",
+    ["talon_com7_tal_disintegrator"] = "arm_disintegrator",
 		--]]
 
 		--nukes
@@ -85,7 +102,7 @@ local copyLightDefs = {
 		--["armsilo1_nuclear_missile1" ] = "nuke_missile1",
 		--["armfsilo_armfsilo_weapon"  ] = "fnuke_missile",
 		["armcybr_arm_pidr"          ] = "mini_nuke",
-		
+
 		--Emp / Tacnuke
 		["armemp_armemp_weapon"      ] = "emp_weapon",
 		["cortron_cortron_weapon"    ] = "tron_weapon",
@@ -95,6 +112,7 @@ local copyLightDefs = {
 		["ajuno_juno_pulse"          ] = "juno",
 		["cjuno_juno_pulse"          ] = "juno",
 		["tlljuno_juno_pulse"          ] = "juno",
+    ["talon_juno_pulse"          ] = "juno",
 	},
 }
 local dynLightDefs = {
@@ -115,7 +133,7 @@ local dynLightDefs = {
 					ttl               = 100000,
 				},
 			},
-		
+
 			-- explodeas/selfdestructas lights for various large units
 			["commander_blast_exbig"] = {
 				explosionLightDef = {
@@ -128,7 +146,7 @@ local dynLightDefs = {
 					altitudeOffset    = 65.0,
 				},
 			},
-			
+
 			["commander_blast_big"] = {
 				explosionLightDef = {
 					diffuseColor      = { 6.0,                    6.0,                    6                  },
@@ -140,7 +158,7 @@ local dynLightDefs = {
 					altitudeOffset    = 65.0,
 				},
 			},
-			["commander_blast"] = { 
+			["commander_blast"] = {
 				explosionLightDef = {
 					diffuseColor      = { 6.0,                    6.0,                    6                  },
 					specularColor     = { 6.0 * rgbSpecMults[1],  6.0 * rgbSpecMults[2],  6 * rgbSpecMults[3]},
@@ -151,7 +169,18 @@ local dynLightDefs = {
 					altitudeOffset    = 65.0,
 				},
 			},
-			["commander_blast_new"] = { 
+      ["commander_blast_medium"] = {
+        explosionLightDef = {
+          diffuseColor      = { 6.0,                    6.0,                    6                  },
+          specularColor     = { 6.0 * rgbSpecMults[1],  6.0 * rgbSpecMults[2],  6 * rgbSpecMults[3]},
+          priority          = 15 * 10,
+          radius            = 1800.0,
+          ttl               = 3 * Game.gameSpeed,
+          decayFunctionType = {0.0, 0.0, 0.0},
+          altitudeOffset    = 65.0,
+        },
+      },
+			["commander_blast_new"] = {
 				explosionLightDef = {
 					diffuseColor      = { 7.0,                    4.0,                    4.0                  },
 					specularColor     = { 7.0 * rgbSpecMults[1],  4.0 * rgbSpecMults[2],  4.0 * rgbSpecMults[3]},
@@ -184,7 +213,7 @@ local dynLightDefs = {
 					altitudeOffset    = 65.0,
 				},
 			},
-			["atomic_blast"] = {
+			["crawl_blast"] = {
 				explosionLightDef = {
 					diffuseColor      = { 6.0,                    5.0,                    4.5                  },
 					specularColor     = { 6.0 * rgbSpecMults[1],  5.0 * rgbSpecMults[2],  4.5 * rgbSpecMults[3]},
@@ -195,7 +224,7 @@ local dynLightDefs = {
 					altitudeOffset    = 25.0,
 				},
 			},
-			["atomic_blastsml"] = {
+			["crawl_blastsml"] = {
 				explosionLightDef = {
 					diffuseColor      = { 5.0,                    4.0,                    3.5                  },
 					specularColor     = { 5.0 * rgbSpecMults[1],  4.0 * rgbSpecMults[2],  3.5 * rgbSpecMults[3]},
@@ -389,7 +418,7 @@ local dynLightDefs = {
 			-- NOTE:
 			--   basically the same as core_artillery
 			--   since these share their CEG, but has
-			
+
 			--   higher priority
 			["berthacannon_light"] = {
 				projectileLightDef = {
@@ -399,7 +428,7 @@ local dynLightDefs = {
 					radius          = 105.0,
 					ttl             = 1000,
 				},
-				
+
 			explosionLightDef = {
 					diffuseColor      = {1.7,                   1.2,                   0.0                  },
 					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
@@ -410,7 +439,7 @@ local dynLightDefs = {
 					altitudeOffset    = 150.0,
 				},
 			},
-			
+
 			["berthacannon"] = {
 				projectileLightDef = {
 					diffuseColor    = {1.6,                   1.2,                   0.0                  },
@@ -419,7 +448,7 @@ local dynLightDefs = {
 					radius          = 125.0,
 					ttl             = 1000,
 				},
-				
+
 				explosionLightDef = {
 					diffuseColor      = {1.7,                   1.2,                   0.0                  },
 					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
@@ -439,7 +468,7 @@ local dynLightDefs = {
 					radius          = 185.0,
 					ttl             = 1000,
 				},
-				
+
 				explosionLightDef = {
 					diffuseColor      = {1.7,                   1.2,                   0.0                  },
 					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
@@ -459,7 +488,7 @@ local dynLightDefs = {
 					radius          = 155.0,
 					ttl             = 100,
 				},
-				
+
 				explosionLightDef = {
 					diffuseColor      = {1.4,                   0.5,                   0.2                  },
 					specularColor     = {1.4 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.2 * rgbSpecMults[3]},
@@ -479,7 +508,7 @@ local dynLightDefs = {
 					radius          = 400.0,
 					ttl             = 1000,
 				},
-				
+
 				explosionLightDef = {
 					diffuseColor      = {1.7,                   1.2,                   0.0                  },
 					specularColor     = {1.7 * rgbSpecMults[1], 1.2 * rgbSpecMults[2], 0.0 * rgbSpecMults[3]},
@@ -530,4 +559,3 @@ if (modLightDefs ~= nil and modCopyDefs ~= nil) then
 end
 
 return dynLightDefs
-

@@ -1,5 +1,5 @@
 return {
-	superblast_building2 = {
+	fusion_superblast2 = {
 		areaofeffect = 4000,
 		craterboost = 1.5,
 		cratermult = 1,
@@ -13,7 +13,8 @@ return {
 		turret = 1,
 		weaponvelocity = 150,
 		damage = {
-			default = 50000,
+			commanders = 10000,
+			default = 90000,
 		},
 	},
 }

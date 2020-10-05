@@ -21,7 +21,7 @@ return {
 		turret = 1,
 		damage = {
 			commanders = 100,
-			default = 4000,
+			default = 10000,
 		},
 	},
 }

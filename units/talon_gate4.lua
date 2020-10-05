@@ -35,7 +35,7 @@ return {
 		radaremitheight = 41,
 		script = "talon_gate.cob",
 		seismicsignature = 0,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

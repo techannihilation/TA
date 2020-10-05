@@ -1,6 +1,6 @@
 return {
-	atomic_nuke2 = {
-		areaofeffect = 650,
+	tsar_death = {
+		areaofeffect = 1550,
 		craterboost = 0,
 		cratermult = 0,
 		edgeeffectiveness = 0.25,
@@ -15,7 +15,7 @@ return {
 		turret = 1,
 		weaponvelocity = 400,
 		damage = {
-			default = 10000,
+			default = 30000,
 		},
 	},
 }

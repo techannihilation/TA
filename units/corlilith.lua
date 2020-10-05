@@ -47,7 +47,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 76,
 		seismicsignature = 48,
-		selfdestructas = "MEGA_BLAST1",
+		selfdestructas = "MEGA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 1400,
 		standingfireorder = 2,

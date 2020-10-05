@@ -15,7 +15,7 @@ return {
 		buildtime = 4400,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		description = "Converts upto 192 Energy to Metal",
-		explodeas = "ARMESTOR_BUILDINGEX",
+		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 4,
 		footprintz = 3,
 		icontype = "building",

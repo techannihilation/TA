@@ -44,7 +44,7 @@ return {
 		objectname = "armarch",
 		radardistance = 0,
 		radaremitheight = 120,
-		selfdestructas = "MEGA_BLAST1",
+		selfdestructas = "MEGA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 1400,
 		turninplaceanglelimit = 360,

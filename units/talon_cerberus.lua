@@ -42,7 +42,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "talon_cerberus",
 		radaremitheight = 145,
-		selfdestructas = "MEGA_BLAST1",
+		selfdestructas = "MEGA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 1400,
 		standingfireorder = 2,

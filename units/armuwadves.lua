@@ -19,7 +19,7 @@ return {
 		downloadable = 1,
 		energystorage = 75000,
 		energyuse = 0,
-		explodeas = "ATOMIC_BLAST",
+		explodeas = "CRAWL_BLAST",
 		footprintx = 4,
 		footprintz = 4,
 		icontype = "building",

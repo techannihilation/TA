@@ -41,7 +41,7 @@ return {
 		objectname = "CORINT1",
 		radaremitheight = 100,
 		seismicsignature = 0,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 273,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

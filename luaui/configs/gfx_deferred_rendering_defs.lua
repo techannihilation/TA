@@ -72,7 +72,7 @@ local BlackList = {
    ["corkarg_tawf_banisher1"] = {r=1.2,g=0.2,b=0.2,radius=105,beam=false},
    ["corkarg1_tawf_banisher2"] = {r=1.2,g=0.2,b=0.2,radius=155,beam=false},
    ["exoarm_lightning"] = {r=0.08,g=0.08,b=0.98,radius=120,beam=true},
-   ["exoarm_exo_blast"] = {r=0.08,g=0.08,b=2.9,radius=180,beam=false},
+   ["exoarm_blast"] = {r=0.08,g=0.08,b=2.9,radius=180,beam=false},
    ["tllleopard_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    ["tllmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    ["amortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},

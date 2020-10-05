@@ -37,7 +37,7 @@ return {
 		objectname = "CORGATE1",
 		radaremitheight = 39,
 		seismicsignature = 0,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

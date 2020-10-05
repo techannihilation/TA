@@ -34,7 +34,7 @@ return {
 		objectname = "ARMGATE1",
 		radaremitheight = 41,
 		seismicsignature = 0,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

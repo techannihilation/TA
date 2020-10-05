@@ -19,7 +19,7 @@ return {
 		energymake = 1280,
 		energystorage = 2560,
 		energyuse = 0,
-		explodeas = "ATOMIC_BLAST_CORE",
+		explodeas = "CRAWL_BLAST_CORE",
 		footprintx = 5,
 		footprintz = 5,
 		hidedamage = true,

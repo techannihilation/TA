@@ -36,7 +36,7 @@ return {
 		onoffable = true,
 		radardistance = 650,
 		radaremitheight = 55,
-		selfdestructas = "ATOMIC_BLAST",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 680,
 		standingfireorder = 2,
 		unitname = "tllobliterator",

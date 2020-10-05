@@ -1,6 +1,6 @@
 return {
 	crawl_blast = {
-		areaofeffect = 400,
+		areaofeffect = 360,
 		craterboost = 0,
 		cratermult = 0,
 		edgeeffectiveness = 0.4,
@@ -14,7 +14,7 @@ return {
 		weaponvelocity = 250,
 		damage = {
 			commanders = 1250,
-			crawlingbombs = 200,
+			crawlingbombs = 250,
 			default = 2500,
 		},
 	},

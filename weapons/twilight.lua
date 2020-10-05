@@ -1,6 +1,6 @@
 return {
 	twilight = {
-		areaofeffect = 300,
+		areaofeffect = 320,
 		commandfire = 1,
 		craterboost = 0,
 		cratermult = 0,

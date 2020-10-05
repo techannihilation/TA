@@ -23,7 +23,7 @@ return {
 		energymake = 1350,
 		energystorage = 2500,
 		energyuse = 0,
-		explodeas = "ATOMIC_BLAST",
+		explodeas = "CRAWL_BLAST",
 		footprintx = 5,
 		footprintz = 4,
 		icontype = "building",

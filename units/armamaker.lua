@@ -19,7 +19,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "box",
 		description = "Converts upto 150 Energy to Metal",
-		explodeas = "ARMESTOR_BUILDINGEX",
+		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 4,
 		footprintz = 4,
 		icontype = "building",

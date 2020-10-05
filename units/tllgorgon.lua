@@ -43,7 +43,7 @@ return {
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,

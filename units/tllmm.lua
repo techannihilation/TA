@@ -15,7 +15,7 @@ return {
 		corpse = "dead",
 		damagemodifier = 0.25,
 		description = "Converts upto 45 Energy into Metal",
-		explodeas = "ARMESTOR_BUILDINGEX",
+		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 3,
 		footprintz = 3,
 		idleautoheal = 5,

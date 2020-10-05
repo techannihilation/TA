@@ -45,7 +45,7 @@ return {
 		objectname = "ARMMCV",
 		onoffable = true,
 		radaremitheight = 38,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 640,
 		standingfireorder = 2,

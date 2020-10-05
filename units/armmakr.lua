@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		damagemodifier = 0.3,
 		description = "Converts upto 50 Energy to Metal",
-		explodeas = "ARMESTOR_BUILDINGEX",
+		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 3,
 		footprintz = 3,
 		icontype = "building",

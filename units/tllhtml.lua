@@ -42,7 +42,7 @@ return {
 		objectname = "TLLHTML",
 		radardistance = 0,
 		radaremitheight = 73,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 650,
 		standingfireorder = 2,

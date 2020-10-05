@@ -43,7 +43,7 @@ return {
 		nochasecategory = "SUB VTOL",
 		objectname = "talon_annubis",
 		radaremitheight = 38,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 450,
 		standingfireorder = 2,

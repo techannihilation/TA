@@ -15,7 +15,7 @@ return {
 		corpse = "dead",
 		description = "Anti-Nuke",
 		energyuse = 0,
-		explodeas = "ATOMIC_BLAST",
+		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,

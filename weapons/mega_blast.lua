@@ -1,6 +1,6 @@
 return {
 	mega_blast = {
-		areaofeffect = 1650,
+		areaofeffect = 2250,
 		craterboost = 6,
 		cratermult = 3,
 		edgeeffectiveness = 0.25,
@@ -11,9 +11,10 @@ return {
 		soundhit = "explosionbig",
 		soundstart = "explosionbig",
 		turret = 1,
+		weaponvelocity = 150,
 		damage = {
-			commanders = 2500,
-			default = 30000,
+			commanders = 7500,
+			default = 100000,
 		},
 	},
 }

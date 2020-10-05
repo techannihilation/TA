@@ -39,7 +39,7 @@ return {
 		objectname = "macross5",
 		radardistance = 0,
 		radaremitheight = 98,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 600,
 		standingfireorder = 2,

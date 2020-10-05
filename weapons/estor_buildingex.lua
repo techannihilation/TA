@@ -14,7 +14,7 @@ return {
 		weaponvelocity = 250,
 		damage = {
 			commanders = 500,
-			crawlingbombs = 50,
+			crawlingbombs = 100,
 			default = 1000,
 		},
 	},

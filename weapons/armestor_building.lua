@@ -1,20 +1,21 @@
 return {
 	armestor_building = {
-		areaofeffect = 260,
+		areaofeffect = 210,
 		craterboost = 0,
 		cratermult = 0,
-		explosiongenerator = "custom:FLASHBIGBUILDING",
+		explosiongenerator = "custom:FLASHBIGBUILDINGEX",
 		impulseboost = 0.123,
 		impulsefactor = 0.123,
 		name = "Smallbuilding",
-		range = 580,
+		range = 550,
 		reloadtime = 3.6,
 		soundhit = "xplolrg4",
 		soundstart = "largegun",
 		turret = 1,
 		weaponvelocity = 250,
 		damage = {
-			default = 950,
+			commanders = 275,
+			default = 550,
 		},
 	},
 }

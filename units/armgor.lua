@@ -39,7 +39,7 @@ return {
 		objectname = "ARMGOR",
 		radardistance = 0,
 		radaremitheight = 86,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 855,
 		standingfireorder = 2,

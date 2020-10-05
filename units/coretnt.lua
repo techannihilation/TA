@@ -38,7 +38,7 @@ return {
 		objectname = "coretnt",
 		radardistance = 0,
 		radaremitheight = 25,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 1,
 		sightdistance = 400,
 		standingfireorder = 0,

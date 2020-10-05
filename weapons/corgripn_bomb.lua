@@ -21,11 +21,8 @@ return {
 		soundstart = "bombrel",
 		tolerance = 7000,
 		damage = {
-			blackhydra = 30,
 			commanders = 100,
-			default = 4000,
-			krogoth = 30,
-			seadragon = 30,
+			default = 5000,
 		},
 	},
 }

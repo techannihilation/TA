@@ -42,7 +42,7 @@ return {
 		objectname = "TLLGRIM",
 		radardistance = 0,
 		radaremitheight = 72,
-		selfdestructas = "NUCLEAR_MISSILE",
+		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 690,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -41,7 +41,7 @@ return {
 		objectname = "TLLJUNO",
 		radaremitheight = 53,
 		seismicsignature = 0,
-		selfdestructas = "ATOMIC_BLAST",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 400,
 		standingfireorder = 2,
 		stealth = true,

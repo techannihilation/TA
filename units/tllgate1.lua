@@ -35,7 +35,7 @@ return {
 		objectname = "TLLGATE1",
 		radardistance = 0,
 		radaremitheight = 25,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 240,
 		unitname = "tllgate",
 		yardmap = "oooo oooo oooo oooo",

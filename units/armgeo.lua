@@ -40,7 +40,7 @@ return {
 		objectname = "ARMGEO",
 		radaremitheight = 51,
 		seismicsignature = 0,
-		selfdestructas = "ATOMIC_BLAST",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

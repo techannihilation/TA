@@ -39,7 +39,7 @@ return {
 		objectname = "talon_lrpt1",
 		radaremitheight = 100,
 		seismicsignature = 0,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 300,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

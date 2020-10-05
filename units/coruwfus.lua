@@ -18,7 +18,7 @@ return {
 		description = "Produces Energy / Storage",
 		energymake = 1496,
 		energystorage = 2992,
-		explodeas = "ATOMIC_BLAST",
+		explodeas = "CRAWL_BLAST",
 		footprintx = 5,
 		footprintz = 5,
 		icontype = "building",

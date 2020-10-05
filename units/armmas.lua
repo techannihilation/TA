@@ -20,7 +20,7 @@ return {
 		description = "Tech Level 4 (Amphibious)",
 		energymake = 0,
 		energyuse = 1000,
-		explodeas = "ATOMIC_BLAST",
+		explodeas = "CRAWL_BLAST",
 		extractsmetal = 0.0375,
 		footprintx = 7,
 		footprintz = 7,

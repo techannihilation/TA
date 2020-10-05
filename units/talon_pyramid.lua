@@ -40,7 +40,7 @@ return {
 		objectname = "talon_pyramid",
 		radaremitheight = 39,
 		seismicsignature = 0,
-		selfdestructas = "BANTHA_DEATH",
+		selfdestructas = "crawl_blast",
 		sightdistance = 500,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

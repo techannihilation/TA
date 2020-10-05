@@ -42,7 +42,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "corhcrus",
 		radaremitheight = 65,
-		selfdestructas = "BANTHA_NUKE",
+		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 650,
 		standingfireorder = 2,
 		standingmoveorder = 1,

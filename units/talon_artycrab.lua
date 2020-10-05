@@ -44,7 +44,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 62,
 		seismicsigniture = 2500,
-		selfdestructas = "NUCLEAR_MISSILE",
+		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 600,
 		standingfireorder = 2,

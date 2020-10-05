@@ -21,7 +21,7 @@ return {
 		corpse = "heap",
 		defaultmissiontype = "Standby",
 		description = "Experimental High Power Shield Kbot",
-		explodeas = "NUCLEAR_MISSILE4",
+		explodeas = "KROG_BLAST",
 		firestandorders = 1,
 		footprintx = 7,
 		footprintz = 7,
@@ -44,7 +44,7 @@ return {
 		objectname = "exoarm",
 		radaremitheight = 150,
 		seismicsignature = 0,
-		selfdestructas = "CRBLMSSL4",
+		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 700,
 		standingfireorder = 2,
@@ -160,7 +160,7 @@ return {
 					subs = 5,
 				},
 			},
-			exo_blast = {
+			blast = {
 				areaofeffect = 164,
 				avoidfeature = false,
 				burnblow = true,
@@ -292,7 +292,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "EXO_BLAST",
+				def = "BLAST",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {

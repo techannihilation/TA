@@ -1148,6 +1148,22 @@ return {
     },
   },
 
+  ["flashnuke1480"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 4,
+      circlegrowth       = 25,
+      flashalpha         = 2.4,
+      flashsize          = 1725,
+      ttl                = 35,
+      color = {
+        [1]  = 1,
+        [2]  = 0.69999998807907,
+        [3]  = 0.69999998807907,
+      },
+    },
+  },
+
   ["flashmediumunit"] = {
     usedefaultexplosions = true,
     groundflash = {
@@ -2293,6 +2309,23 @@ return {
       },
     },
   },
+
+  ["flashnuke1600"] = {
+    usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 4,
+      circlegrowth       = 25,
+      flashalpha         = 2.5,
+      flashsize          = 1900,
+      ttl                = 40,
+      color = {
+        [1]  = 1,
+        [2]  = 0.69999998807907,
+        [3]  = 0.69999998807907,
+      },
+    },
+  },
+
 
   ["flashnuke1920"] = {
     usedefaultexplosions = true,
