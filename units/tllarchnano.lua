@@ -68,7 +68,7 @@ return {
 			[10] = "tllpulaser",
 			[11] = "tllplasma",
 			[12] = "tllobliterator",
-			[13] = "madsam",
+			[13] = "tllsam",
 			[14] = "tllflak",
 			[15] = "tllhmt",
 			[16] = "tllmds",

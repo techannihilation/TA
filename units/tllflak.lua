@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 32403,
 		buildcostmetal = 1191,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 5,
-		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "tllflak_aoplane.dds",
 		buildpic = "tllflak.dds",
 		buildtime = 19000,
 		canattack = true,
@@ -39,7 +35,6 @@ return {
 		sightdistance = 525,
 		standingfireorder = 2,
 		unitname = "tllflak",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooo",
 		customparams = {
 			buildpic = "tllflak.dds",
