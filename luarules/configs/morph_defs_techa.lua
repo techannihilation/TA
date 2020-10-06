@@ -1414,7 +1414,7 @@ local morphDefs = {
 	talon_carbuncle = {
 		into = 'talon_grenat',
 		time = 120,
-		xp = 0.20,
+		xp = 0.30,
 	},
 	armkam = {
 		into = 'armbrawl',

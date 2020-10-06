@@ -1,6 +1,7 @@
 3.52 -> 3.53
-2020-10-04
+2020-10-06
 Balance :
+ - Increase XP to morph carbuncle into Grenat (0.20 => 0.30)
  - TLL Metal Maker : Same Ratio than other factions. Stats cost changed too. (Some changes : Capacity for T2 600=>750, T3 6000=>9000)
  - Arm Krypto : Add Angle limitation (220° front)
  - Kevlar Talon (Missile turret) : Increase metal cost 240=>290M
@@ -12,6 +13,7 @@ Balance :
  - TLL Flak : Reduce cost and stats. Same as other faction.
 
 Improvment :
+ - Fix Experience : not increase reloadtime, power for weapon. Not increase Hp too.
  - Explosion / Selfdestroy : Many changes about Fusion, T3 T4 T5 T6 units. Goal was to harmonize all units.
  - Delete all naval storage. Add amphibious for all storage.
  - Add T5 Metal Maker for TLL (168K capacity and 1M storage)
