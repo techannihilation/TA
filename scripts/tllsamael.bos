@@ -314,7 +314,7 @@ QueryTertiary(piecenum)
 	piecenum = blast2;
 }
 
-Queryweapon4(piecenum)
+QueryWeapon4(piecenum)
 {
 	if( gun_1 == 0 )
 	{
