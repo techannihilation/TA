@@ -27,7 +27,7 @@ local GetUnitDefID = Spring.GetUnitDefID
 local GetUnitExperience = Spring.GetUnitExperience
 local SetUnitExperience = Spring.SetUnitExperience
 local GetGameFrame = Spring.GetGameFrame
-local requestMaverickExpUpdate = GG.requestMaverickExpUpdate
+--local requestMaverickExpUpdate = GG.requestMaverickExpUpdate
 
 --wreckinfos is the only permanent storage across frames
 local wreckInfos = {} -- featureID: unitDefID, experience
@@ -58,7 +58,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDef
 		return --wreck not found
 	end
 	--wreck is created rezFrameDistance frames after unit died
-	local wreckFrame = GetGameFrame() + rezFrameDistance 
+	local wreckFrame = GetGameFrame() + rezFrameDistance
 	local frameList = deadUnits[wreckFrame] or {}
 	local wreckList = frameList[wreckDefID] or {}
 	wreckList[#wreckList+1] = {
@@ -120,20 +120,20 @@ function gadget:FeatureDestroyed(featureID)
 	for unitID, unitPos in pairs(rezzedList) do
 		if sqDist(unitPos,wreckLocation) < distThreshold then
 			SetUnitExperience(unitID,wreckInfo.experience)
-			requestMaverickExpUpdate(unitID)
+			--requestMaverickExpUpdate(unitID)
 			rezzedUnits[wreckInfo.unitDefID][unitID] = nil
 			return
 		end
-	end 
+	end
 end
 
 
 
 function gadget:GameFrame()
 	--wrecks gets created exactly rezFrameDistance frames after unit death
-	
+
 	--UnitCreated gets called BEFORE FeatureDestroyed, but within the same frame
-		
+
 	-- reset dead units vector, if wreck wasn't created since rezFrameDistance+1 frames, it will never be
 	local currentFrame = GetGameFrame()
 	deadUnits[currentFrame-1] = nil
@@ -141,5 +141,3 @@ function gadget:GameFrame()
 	--reset rezzedUnits vector, if unit wasn't rezzed it will never be
 	rezzedUnits = {}
 end
-
-
