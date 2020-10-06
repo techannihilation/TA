@@ -19,7 +19,13 @@ local modrules  = {
     multiReclaim  = 1,
     reclaimMethod = 0,
   },
-
+ 
+  experience = {
+    powerScale = 0, 
+    healthScale = 0, 
+    reloadScale= 0,
+  },
+ 
   sensors = {   
     los = {
       losMipLevel = 3,
