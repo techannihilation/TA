@@ -1,6 +1,7 @@
 3.52 -> 3.53
 2020-10-06
 Balance :
+ - T3 TLL FLak : Increase stats and cost.
  - Increase XP to morph carbuncle into Grenat (0.20 => 0.30)
  - TLL Metal Maker : Same Ratio than other factions. Stats cost changed too. (Some changes : Capacity for T2 600=>750, T3 6000=>9000)
  - Arm Krypto : Add Angle limitation (220° front)
