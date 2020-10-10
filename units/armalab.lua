@@ -37,7 +37,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Advanced Kbot Lab",
+		name = "Kbot Lab",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "ARMALAB",

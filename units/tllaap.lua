@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		metalstorage = 200,
 		mobilestandorders = 1,
-		name = "Advanced Aircraft Plant",
+		name = "Aircraft Plant",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "TLLAAP",

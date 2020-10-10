@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Advanced Aircraft Plant",
+		name = "Aircraft Plant",
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "talon_aap",

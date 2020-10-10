@@ -744,7 +744,6 @@ tllartybot.dds
 tllasgard.dds
 tllasonar.dds
 tllasp.dds
-tllaspns.dds
 tllasship.dds
 tllasy.dds
 tllatidal.dds
