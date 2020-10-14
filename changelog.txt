@@ -1,3 +1,14 @@
+3.53 -> 3.54
+2020-10-14
+Work on Mythril Model remplacement (coming soon)
+
+Improvment :
+- Add new icons for Liche and Krow
+
+Fix :
+- Tl.5 MM. Caused bugs and MM didn't work.
+
+
 3.52 -> 3.53
 2020-10-06
 Balance :
@@ -38,7 +49,7 @@ Improvment :
  - Ceddral Talon T2 Air : remplace Rocket weapon by Beam
  - T5 independance & skynet : Remplace beamweapon explosion by continue beam.
 
-  Fix:
+  Fix :
   - Tll Copter: Armor class as gunship
 
 3.50 -> 3.51
