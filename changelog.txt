@@ -1,12 +1,19 @@
 3.53 -> 3.54
-2020-10-14
-Work on Mythril Model remplacement (coming soon)
+2020-10-18
+
+Balance :
+ - Mythril : Increase stats and cost
+ - Samel : Decrease speed 1.15=>1.05
+ - Saurus : increase rocket range 1550=>1800
+ - Hope : increase rocket range 1550=>1800
+ - Talon Cerberus : decrease metal cost 780K => 720K. Increase Main gun 50K=>60K damage.
 
 Improvment :
-- Add new icons for Liche and Krow
+ - Add new model for Mythril
+ - Add new icons for Liche and Krow
 
 Fix :
-- Tl.5 MM. Caused bugs and MM didn't work.
+ - Tl.5 MM. Caused bugs and MM didn't work.
 
 
 3.52 -> 3.53

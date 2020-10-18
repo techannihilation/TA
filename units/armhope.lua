@@ -128,7 +128,7 @@ return {
 				model = "missile",
 				name = "Barrarge",
 				proximitypriority = -1,
-				range = 1400,
+				range = 1800,
 				reloadtime = 20,
 				smoketrail = true,
 				soundhitdry = "mlrsboom",

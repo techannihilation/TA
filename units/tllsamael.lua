@@ -33,7 +33,7 @@ return {
 		mass = 1085425,
 		maxdamage = 2453000,
 		maxslope = 12,
-		maxvelocity = 1.15,
+		maxvelocity = 1.05,
 		maxwaterdepth = 255,
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
