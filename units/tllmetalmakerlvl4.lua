@@ -11,7 +11,7 @@ return {
 		collisionvolumescales = "170 300 180",
 		collisionvolumetype = "ellipsoid",
 		corpse = "heap",
-		description = "Converts upto 168000 Energy to Metal / Storage (1000K)",
+		description = "Converts upto 168000 Energy to Metal / Energy Storage (1000K)",
 		explodeas = "KROG_BLAST",
 		energystorage = 1000000,
 		floater = false,

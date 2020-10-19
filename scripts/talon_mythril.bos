@@ -12,7 +12,7 @@ piece  base, pelvis, lthigh, lleg, lfoot, rthigh, rleg, rfoot, body, shield_pos,
        rckflare1, rckflare2, rckflare3, rckflare4, rckflare5, rckflare6;
   
 
-static-var  Static_Var_1, gun_1, gatling_1, gatling_2, bMoving, Static_heading, beam_1, msl_1, rck_1, shield_onoff;
+static-var  Static_Var_1, gun_1, gatling_1, gatling_2, bMoving, Main_Gun_Heading, beam_1, msl_1, rck_1, shield_onoff;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -160,7 +160,7 @@ Create()
 	gatling_2 = 0;
 	shield_onoff = 1;
 	start-script SmokeUnit();
-	Static_heading = 0;
+	Main_Gun_Heading = 0;
 }
 
 StartMoving()
@@ -188,10 +188,8 @@ RestoreAfterDelay()
 	sleep 5000;
 	turn body to y-axis <0.000000> speed <25.000000>;
 	turn sleeves to x-axis <0.000000> speed <25.000000>;
-	
-	//Static_heading = Static_heading / 2;
-	//wait-for-turn body around y-axis;
-	//Static_heading = 0;
+	wait-for-turn body around y-axis;
+	Main_Gun_Heading = 0;
 }
 
 RestoreAfterDelay2()
@@ -212,10 +210,11 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn body to y-axis heading speed <55.000000>;
-	Static_heading = heading;
 	turn sleeves to x-axis <0.000000> - pitch speed <35.000000>;
-	wait-for-turn sleeves around x-axis;
+	Main_Gun_Heading = heading;
+	//get PRINT(heading);
 	wait-for-turn body around y-axis;
+	wait-for-turn sleeves around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -317,6 +316,10 @@ AimTertiary(heading, pitch)
 {	
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	wait-for-turn body around y-axis;
 	return (1);
 }
@@ -358,7 +361,11 @@ AimFromWeapon4(piecenum)
 AimWeapon4(heading, pitch)
 {	
 	signal SIG_AIM_4;
-	set-signal-mask SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;	
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	wait-for-turn body around y-axis;
 	return (1);
 }
@@ -414,9 +421,13 @@ AimWeapon5(heading, pitch)
 	signal SIG_AIM_5;
 	set-signal-mask SIG_AIM_5;
 	turn rminigun to x-axis <0.000000> - pitch speed <75.000000>;
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	wait-for-turn body around y-axis;
 	wait-for-turn rminigun around x-axis;
-	start-script RestoreAfterDelay();
+	start-script RestoreAfterDelay2();
 	return (1);
 }
 
@@ -446,9 +457,13 @@ AimWeapon6(heading, pitch)
 	signal SIG_AIM_6;
 	set-signal-mask SIG_AIM_6;
 	turn lminigun to x-axis <0.000000> - pitch speed <75.000000>;
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	wait-for-turn body around y-axis;
 	wait-for-turn lminigun around x-axis;
-	start-script RestoreAfterDelay();
+	start-script RestoreAfterDelay2();
 	return (1);
 }
 
