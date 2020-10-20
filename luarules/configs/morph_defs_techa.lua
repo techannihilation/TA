@@ -1295,12 +1295,12 @@ local morphDefs = {
 	armhope = {
 		into = 'armarch',
 		time = 200,
-		xp = 0.125,
+		xp = 0.10,
 	},
 	tllmcv = {
 		into = 'tllsamael',
 		time = 180,
-		xp = 0.10,
+		xp = 0.20,
 	},
 	talon_mythril = {
 		into = 'talon_cerberus',

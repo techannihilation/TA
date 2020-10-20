@@ -2,8 +2,8 @@ return {
 	tllariman = {
 		acceleration = 0.0295,
 		brakerate = 0.095,
-		buildcostenergy = 1485,
-		buildcostmetal = 291,
+		buildcostenergy = 1985,
+		buildcostmetal = 282,
 		builder = false,
 		buildpic = "tllariman.dds",
 		buildtime = 3300,

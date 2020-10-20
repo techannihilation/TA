@@ -2,11 +2,11 @@ return {
 	armolympus = {
 		acceleration = 0.005,
 		brakerate = 0.18,
-		buildcostenergy = 1389027,
+		buildcostenergy = 1589027,
 		buildcostmetal = 136296,
 		builder = false,
 		buildpic = "armolympus.dds",
-		buildtime = 1050000,
+		buildtime = 1350000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

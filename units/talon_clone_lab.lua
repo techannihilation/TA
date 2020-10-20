@@ -58,14 +58,12 @@ talon_clone_lab = {
 		yardmap = "ooooo ooooo ooocc ooccc",
 		buildoptions = {
 			[1] = "talon_psyker",
-			[2] = "talon_infantry",
-			[3] = "talon_sphere",
-			[4] = "talon_mercenary",
-			[5] = "talon_rebel",
-			[6] = "talon_sniper",
-			[7] = "talon_fox",			
-			--[8] = "talon_biker",
-			
+			[2] = "talon_fox",
+			[3] = "talon_infantry",
+			[4] = "talon_sphere",
+			[5] = "talon_mercenary",
+			[6] = "talon_rebel",
+			[7] = "talon_sniper",		
 		},
 		customparams = {
 			buildpic = "talon_clone_lab.dds",

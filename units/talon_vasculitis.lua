@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "",
+		description = "Missile Destroyer",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		floater = true,
@@ -195,7 +195,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 600,
 				damage = {
-					default = 300,
+					default = 360,
 					subs = 5,
 				},
 			},

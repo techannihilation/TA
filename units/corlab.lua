@@ -57,14 +57,12 @@ return {
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
 			[1] = "corck",
-			[2] = "corpunk",
-			[3] = "corak",
-			[4] = "cornecro",
+			[2] = "cornecro",
+			[3] = "corpunk",
+			[4] = "corak",
 			[5] = "corstorm",
 			[6] = "corthud",
 			[7] = "corcrash",
-			--[8] = "corak1",
-			--[9] = "corrock",
 			[8] = "gladiator",
 		},
 		customparams = {

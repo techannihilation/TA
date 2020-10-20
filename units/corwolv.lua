@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 170,
 		builder = false,
 		buildpic = "corwolv.dds",
-		buildtime = 3254,
+		buildtime = 3000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
