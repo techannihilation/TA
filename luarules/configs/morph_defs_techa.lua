@@ -1416,6 +1416,11 @@ local morphDefs = {
 		time = 120,
 		xp = 0.30,
 	},
+	armweaver = {
+		into = 'armmygalo',
+		time = 120,
+		xp = 0.30,
+	},
 	armkam = {
 		into = 'armbrawl',
 		time = 30,

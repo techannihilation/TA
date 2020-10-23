@@ -336,6 +336,7 @@ return {
 	"armhcrus",
 	"corarbritator",
 	"cormkl",
+	"armmygalo",
 	"tllhailstorm",
 	"armolympus",
 	"armpraet",
