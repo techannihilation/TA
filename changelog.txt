@@ -1,5 +1,5 @@
 3.53 -> 3.54
-2020-10-18
+2020-10-23
 
 Balance :
  - Mythril : Increase stats and cost
@@ -9,8 +9,10 @@ Balance :
  - Talon Cerberus : decrease metal cost 780K => 720K. Increase Main gun 50K=>60K damage.
 
 Improvment :
+ - Add Mygalo, new Arm T4 Spider to counter Black Widow / Saurus / Mythril
+ - Add morph for Weaver spider into Mygalo
  - Add new model for Mythril
- - Add new icons for Liche and Krow
+ - Add new icons for Liche, Krow and Mygalo
 
 Fix :
  - Tl.5 MM. Caused bugs and MM didn't work.

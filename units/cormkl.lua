@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "cormkl_dead",
 		defaultmissiontype = "Standby",
-		description = "Hero Hexapod (Auto-Repair 250)",
+		description = "Experimental Hexapod (Auto-Repair 250)",
 		energystorage = 10000,
 		explodeas = "EXO_BLAST",
 		firestandorders = 1,

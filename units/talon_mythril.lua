@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Ultimate High Power Shield Kbot",
+		description = "Experimental High Power Shield Kbot",
 		energystorage = 10000,
 		explodeas = "EXO_BLAST",
 		firestandorders = 1,
