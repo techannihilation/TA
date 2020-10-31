@@ -12,6 +12,7 @@ Balance :
 
 Improvment :
  - Praetorian : Change model annd trandform unit into shielded spider.
+ - Armshock T3 Arm Kbot : Change model into spider.
  - T2 Beam Laser TLL Turret pop-up : Transform beam into lightning.
  - Arch : Increase lightning density for lightninh weapon (more projectiles)
 

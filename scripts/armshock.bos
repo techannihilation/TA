@@ -3,10 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  body, turret, sleeve, spindle, flare, barrel, leg4, leg3,
-       leg1, head, leg2, foot1, foot2, foot3, foot4, base;
+piece  body, turret, sleeve, flare, barrel, base, 
+		rupleg3, rleg3, rupleg2, rleg2, rupleg1,
+        rleg1, lupleg3, lleg3, lupleg2, lleg2, lupleg1, lleg1;
 
-static-var  bMoving, bAiming, Static_Var_3, gun_1;
+static-var  bMoving, bAiming;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -42,166 +43,196 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 RockUnit(anglex, anglez)
 {
-	turn body to x-axis anglex speed <50.000000>;
-	turn body to z-axis anglez speed <50.000000>;
+	turn base to x-axis anglex speed <50.000000>;
+	turn base to z-axis anglez speed <50.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
-	turn body to z-axis <0.000000> speed <8.000000>;
-	turn body to x-axis <0.000000> speed <8.000000>;
-}
-
-MotionControl()
-{
-	while( bMoving )
-	{
-		if( bAiming )
-		{
-			Static_Var_3 = 1;
-			move leg3 to y-axis [1.000000] speed [1.000000];
-			move leg2 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <-8.000000> speed <13.000000>;
-			turn leg4 to y-axis <45.000000> speed <60.000000>;
-			turn leg3 to y-axis <-30.000000> speed <100.000000>;
-			turn leg2 to y-axis <0.000000> speed <80.000000>;
-			turn leg1 to y-axis <0.000000> speed <35.000000>;
-			turn foot1 to x-axis <20.000000> speed <50.000000>;
-			turn foot2 to x-axis <-20.000000> speed <110.000000>;
-			turn foot3 to x-axis <-30.000000> speed <80.000000>;
-			turn foot4 to x-axis <0.000000> speed <60.000000>;
-			sleep 500;
-			move leg4 to y-axis [1.000000] speed [1.000000];
-			move leg3 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <8.000000> speed <13.000000>;
-			turn leg4 to y-axis <15.000000> speed <100.000000>;
-			turn leg3 to y-axis <-45.000000> speed <80.000000>;
-			turn leg2 to y-axis <-45.000000> speed <35.000000>;
-			turn leg1 to y-axis <0.000000> speed <60.000000>;
-			turn foot2 to x-axis <20.000000> speed <50.000000>;
-			turn foot3 to x-axis <-20.000000> speed <110.000000>;
-			turn foot4 to x-axis <-30.000000> speed <80.000000>;
-			turn foot1 to x-axis <0.000000> speed <60.000000>;
-			sleep 500;
-			move leg1 to y-axis [1.000000] speed [1.000000];
-			move leg4 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <-8.000000> speed <13.000000>;
-			turn leg4 to y-axis <0.000000> speed <80.000000>;
-			turn leg3 to y-axis <0.000000> speed <35.000000>;
-			turn leg2 to y-axis <-45.000000> speed <60.000000>;
-			turn leg1 to y-axis <30.000000> speed <100.000000>;
-			turn foot3 to x-axis <20.000000> speed <50.000000>;
-			turn foot4 to x-axis <-20.000000> speed <110.000000>;
-			turn foot1 to x-axis <-30.000000> speed <80.000000>;
-			turn foot2 to x-axis <0.000000> speed <60.000000>;
-			sleep 500;
-			move leg2 to y-axis [1.000000] speed [1.000000];
-			move leg1 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <8.000000> speed <13.000000>;
-			turn leg4 to y-axis <45.000000> speed <35.000000>;
-			turn leg3 to y-axis <0.000000> speed <60.000000>;
-			turn leg2 to y-axis <-15.000000> speed <100.000000>;
-			turn leg1 to y-axis <45.000000> speed <80.000000>;
-			turn foot4 to x-axis <20.000000> speed <50.000000>;
-			turn foot1 to x-axis <-20.000000> speed <110.000000>;
-			turn foot2 to x-axis <-30.000000> speed <80.000000>;
-			turn foot3 to x-axis <0.000000> speed <60.000000>;
-		}
-		if( !bAiming )
-		{
-			Static_Var_3 = 0;
-			move leg3 to y-axis [1.000000] speed [1.000000];
-			move leg2 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <-8.000000> speed <13.000000>;
-			turn body to z-axis <-5.000000> speed <9.000000>;
-			turn leg4 to y-axis <45.000000> speed <60.000000>;
-			turn leg3 to y-axis <-30.000000> speed <100.000000>;
-			turn leg2 to y-axis <0.000000> speed <80.000000>;
-			turn leg1 to y-axis <0.000000> speed <35.000000>;
-			turn foot1 to x-axis <20.000000> speed <50.000000>;
-			turn foot2 to x-axis <-20.000000> speed <110.000000>;
-			turn foot3 to x-axis <-30.000000> speed <80.000000>;
-			turn foot4 to x-axis <0.000000> speed <60.000000>;
-			sleep 500;
-			move leg4 to y-axis [1.000000] speed [1.000000];
-			move leg3 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <8.000000> speed <13.000000>;
-			turn body to z-axis <0.000000> speed <9.000000>;
-			turn leg4 to y-axis <15.000000> speed <100.000000>;
-			turn leg3 to y-axis <-45.000000> speed <80.000000>;
-			turn leg2 to y-axis <-45.000000> speed <35.000000>;
-			turn leg1 to y-axis <0.000000> speed <60.000000>;
-			turn foot2 to x-axis <20.000000> speed <50.000000>;
-			turn foot3 to x-axis <-20.000000> speed <110.000000>;
-			turn foot4 to x-axis <-30.000000> speed <80.000000>;
-			turn foot1 to x-axis <0.000000> speed <60.000000>;
-			sleep 500;
-			move leg1 to y-axis [1.000000] speed [1.000000];
-			move leg4 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <-8.000000> speed <13.000000>;
-			turn body to z-axis <5.000000> speed <9.000000>;
-			turn leg4 to y-axis <0.000000> speed <80.000000>;
-			turn leg3 to y-axis <0.000000> speed <35.000000>;
-			turn leg2 to y-axis <-45.000000> speed <60.000000>;
-			turn leg1 to y-axis <30.000000> speed <100.000000>;
-			turn foot3 to x-axis <20.000000> speed <50.000000>;
-			turn foot4 to x-axis <-20.000000> speed <110.000000>;
-			turn foot1 to x-axis <-30.000000> speed <80.000000>;
-			turn foot2 to x-axis <0.000000> speed <60.000000>;
-			sleep 500;
-			move leg2 to y-axis [1.000000] speed [1.000000];
-			move leg1 to y-axis [0.000000] speed [1.000000];
-			turn head to x-axis <8.000000> speed <13.000000>;
-			turn body to z-axis <0.000000> speed <9.000000>;
-			turn leg4 to y-axis <45.000000> speed <35.000000>;
-			turn leg3 to y-axis <0.000000> speed <60.000000>;
-			turn leg2 to y-axis <-15.000000> speed <100.000000>;
-			turn leg1 to y-axis <45.000000> speed <80.000000>;
-			turn foot4 to x-axis <20.000000> speed <50.000000>;
-			turn foot1 to x-axis <-20.000000> speed <110.000000>;
-			turn foot2 to x-axis <-30.000000> speed <80.000000>;
-			turn foot3 to x-axis <0.000000> speed <60.000000>;
-		}
-		sleep 500;
-	}
+	turn base to z-axis <0.000000> speed <8.000000>;
+	turn base to x-axis <0.000000> speed <8.000000>;
 }
 
 Create()
 {
-	hide flare;
-	dont-cache flare;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_3 = 1;
-	gun_1 = body;
 	start-script SmokeUnit();
 }
 
 StartMoving()
 {
-	bMoving = TRUE;
+	if( bMoving )
+	{
+		return (0);
+	}
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	start-script MotionControl();
+	bMoving = TRUE;
+	while( bMoving )
+	{
+		if( bMoving )
+		{
+			if( !bAiming )
+			{
+				turn base to x-axis <2.093407> now;
+				turn base to y-axis <1.049451> now;
+			}
+			turn base to x-axis <0.000000> speed <14.000000>;
+			turn base to y-axis <0.000000> speed <2.000000>;
+			turn rupleg1 to y-axis <25.000000> speed <45.000000>;
+			turn rupleg1 to z-axis <0.000000> speed <97.000000>;
+			turn rupleg2 to y-axis <-25.000000> speed <95.000000>;
+			turn rupleg3 to y-axis <0.000000> speed <45.000000>;
+			turn rupleg3 to z-axis <32.500000> speed <67.000000>;
+			turn lupleg1 to y-axis <0.000000> speed <45.000000>;
+			turn lupleg1 to z-axis <-15.200000> speed <67.000000>;
+			turn lupleg2 to y-axis <-25.000000> speed <45.000000>;
+			turn lupleg2 to z-axis <0.000000> speed <97.000000>;
+			turn lupleg3 to y-axis <25.000000> speed <95.000000>;
+			turn rleg1 to z-axis <0.000000> speed <97.000000>;
+			turn rleg3 to z-axis <9.147253> speed <67.000000>;
+			turn lleg1 to z-axis <10.147253> speed <67.000000>;
+			turn lleg2 to z-axis <0.000000> speed <97.000000>;
+			sleep 450;
+		}
+		if( bMoving )
+		{
+			if( !bAiming )
+			{
+				turn base to x-axis <-1.000000> speed <7.000000>;
+			}
+			turn base to y-axis <0.000000> speed <7.000000>;
+			turn rupleg1 to y-axis <0.000000> speed <95.000000>;
+			turn rupleg2 to y-axis <11.247253> speed <45.000000>;
+			turn rupleg2 to z-axis <10.147253> speed <25.000000>;
+			turn rupleg3 to y-axis <8.100000> speed <32.000000>;
+			turn rupleg3 to z-axis <10.147253> speed <25.000000>;
+			turn lupleg1 to y-axis <9.100000> speed <32.000000>;
+			turn lupleg1 to z-axis <9.147253> speed <25.000000>;
+			turn lupleg2 to y-axis <0.000000> speed <95.000000>;
+			turn lupleg3 to y-axis <8.100000> speed <32.000000>;
+			turn lupleg3 to z-axis <9.147253> speed <25.000000>;
+			turn rleg2 to z-axis <-8.115385> speed <25.000000>;
+			turn rleg3 to z-axis <-8.115385> speed <25.000000>;
+			turn lleg1 to z-axis <8.115385> speed <25.000000>;
+			turn lleg3 to z-axis <8.115385> speed <25.000000>;
+			sleep 450;
+		}
+		if( bMoving )
+		{
+			if( !bAiming )
+			{
+				turn base to x-axis <-1.000000> speed <2.000000>;
+				turn base to y-axis <-1.000000> speed <4.000000>;
+			}
+			turn rupleg1 to y-axis <-25.000000> speed <95.000000>;
+			turn rupleg2 to y-axis <0.000000> speed <95.000000>;
+			turn rupleg2 to z-axis <32.500000> speed <67.000000>;
+			turn rupleg3 to y-axis <25.000000> speed <45.000000>;
+			turn rupleg3 to z-axis <0.000000> speed <97.000000>;
+			turn lupleg1 to y-axis <-25.000000> speed <45.000000>;
+			turn lupleg1 to z-axis <0.000000> speed <97.000000>;
+			turn lupleg2 to y-axis <25.000000> speed <45.000000>;
+			turn lupleg3 to y-axis <0.000000> speed <95.000000>;
+			turn lupleg3 to z-axis <-15.200000> speed <67.000000>;
+			turn rleg2 to z-axis <9.147253> speed <67.000000>;
+			turn rleg3 to z-axis <0.000000> speed <97.000000>;
+			turn lleg1 to z-axis <0.000000> speed <97.000000>;
+			turn lleg3 to z-axis <10.147253> speed <67.000000>;
+			sleep 450;
+		}
+		if( bMoving )
+		{
+			turn base to x-axis <0.000000> speed <4.000000>;
+			turn base to y-axis <0.000000> speed <7.000000>;
+			turn rupleg1 to y-axis <9.100000> speed <95.000000>;
+			turn rupleg1 to z-axis <10.147253> speed <25.000000>;
+			turn rupleg2 to y-axis <8.100000> speed <32.000000>;
+			turn rupleg2 to z-axis <10.147253> speed <25.000000>;
+			turn rupleg3 to y-axis <0.000000> speed <95.000000>;
+			turn lupleg1 to y-axis <0.000000> speed <45.000000>;
+			turn lupleg2 to y-axis <8.100000> speed <95.000000>;
+			turn lupleg2 to z-axis <9.147253> speed <25.000000>;
+			turn lupleg3 to y-axis <9.100000> speed <95.000000>;
+			turn lupleg3 to z-axis <9.147253> speed <21.000000>;
+			turn rleg1 to z-axis <-8.115385> speed <25.000000>;
+			turn rleg2 to z-axis <-8.115385> speed <25.000000>;
+			turn lleg2 to z-axis <8.115385> speed <25.000000>;
+			turn lleg3 to z-axis <8.115385> speed <25.000000>;
+			sleep 450;
+		}
+		if( bMoving )
+		{
+			turn base to x-axis <0.000000> speed <9.000000>;
+			if( !bAiming )
+			{
+				turn base to y-axis <1.000000> speed <9.000000>;
+			}
+			turn rupleg1 to y-axis <0.000000> speed <32.000000>;
+			turn rupleg1 to z-axis <32.500000> speed <67.000000>;
+			turn rupleg2 to y-axis <25.000000> speed <32.000000>;
+			turn rupleg2 to z-axis <0.000000> speed <97.000000>;
+			turn rupleg3 to y-axis <-25.000000> speed <95.000000>;
+			turn lupleg1 to y-axis <25.000000> speed <95.000000>;
+			turn lupleg2 to y-axis <0.000000> speed <32.000000>;
+			turn lupleg2 to z-axis <-15.200000> speed <67.000000>;
+			turn lupleg3 to y-axis <-25.000000> speed <45.000000>;
+			turn lupleg3 to z-axis <0.000000> speed <97.000000>;
+			turn rleg1 to z-axis <9.147253> speed <67.000000>;
+			turn rleg2 to z-axis <0.000000> speed <97.000000>;
+			turn lleg2 to z-axis <10.147253> speed <67.000000>;
+			turn lleg3 to z-axis <0.000000> speed <97.000000>;
+			sleep 450;
+		}
+		if( bMoving )
+		{
+			if( !bAiming )
+			{
+				turn base to x-axis <1.000000> speed <4.000000>;
+				turn base to y-axis <1.000000> speed <2.000000>;
+			}
+			turn rupleg1 to y-axis <8.100000> speed <45.000000>;
+			turn rupleg1 to z-axis <10.147253> speed <25.000000>;
+			turn rupleg2 to y-axis <0.000000> speed <95.000000>;
+			turn rupleg3 to y-axis <9.100000> speed <32.000000>;
+			turn rupleg3 to z-axis <10.147253> speed <21.000000>;
+			turn lupleg1 to y-axis <8.100000> speed <32.000000>;
+			turn lupleg1 to z-axis <9.147253> speed <21.000000>;
+			turn lupleg2 to y-axis <9.100000> speed <32.000000>;
+			turn lupleg2 to z-axis <9.147253> speed <21.000000>;
+			turn lupleg3 to y-axis <0.000000> speed <32.000000>;
+			turn rleg1 to z-axis <-8.115385> speed <25.000000>;
+			turn rleg3 to z-axis <-8.115385> speed <25.000000>;
+			turn lleg1 to z-axis <8.115385> speed <25.000000>;
+			turn lleg2 to z-axis <8.115385> speed <25.000000>;
+			sleep 450;
+		}
+	}
+	turn base to x-axis <0.000000> speed <14.000000>;
+	turn base to y-axis <0.000000> speed <2.000000>;
+	turn rupleg1 to y-axis <0.000000> speed <32.000000>;
+	turn rupleg1 to z-axis <0.000000> speed <21.000000>;
+	turn rupleg2 to y-axis <0.000000> speed <32.000000>;
+	turn rupleg2 to z-axis <0.000000> speed <21.000000>;
+	turn rupleg3 to y-axis <0.000000> speed <32.000000>;
+	turn rupleg3 to z-axis <0.000000> speed <21.000000>;
+	turn lupleg1 to y-axis <0.000000> speed <32.000000>;
+	turn lupleg1 to z-axis <0.000000> speed <21.000000>;
+	turn lupleg2 to y-axis <0.000000> speed <32.000000>;
+	turn lupleg2 to z-axis <0.000000> speed <21.000000>;
+	turn lupleg3 to y-axis <0.000000> speed <32.000000>;
+	turn lupleg3 to z-axis <0.000000> speed <21.000000>;
+	turn lleg1 to z-axis <0.000000> speed <21.000000>;
+	turn lleg2 to z-axis <0.000000> speed <21.000000>;
+	turn lleg3 to z-axis <0.000000> speed <21.000000>;
+	turn rleg1 to z-axis <0.000000> speed <21.000000>;
+	turn rleg2 to z-axis <0.000000> speed <21.000000>;
+	turn rleg3 to z-axis <0.000000> speed <21.000000>;
+	sleep 450;
 }
 
 StopMoving()
 {
 	bMoving = FALSE;
-	signal SIG_MOVE;
-	Static_Var_3 = 1;
-	move leg4 to y-axis [0.000000] speed [2.500000];
-	move leg3 to y-axis [0.000000] speed [2.500000];
-	move leg2 to y-axis [0.000000] speed [2.500000];
-	move leg1 to y-axis [0.000000] speed [2.500000];
-	turn head to x-axis <0.000000> speed <50.000000>;
-	turn leg4 to y-axis <0.000000> speed <50.000000>;
-	turn leg3 to y-axis <0.000000> speed <50.000000>;
-	turn leg2 to y-axis <0.000000> speed <50.000000>;
-	turn leg1 to y-axis <0.000000> speed <50.000000>;
-	turn foot1 to x-axis <0.000000> speed <50.000000>;
-	turn foot2 to x-axis <0.000000> speed <50.000000>;
-	turn foot3 to x-axis <0.000000> speed <50.000000>;
-	turn foot4 to x-axis <0.000000> speed <50.000000>;
-	turn body to z-axis <0.000000> speed <50.000000>;
 }
 
 SweetSpot(piecenum)
@@ -211,12 +242,10 @@ SweetSpot(piecenum)
 
 RestoreAfterDelay()
 {
-	sleep 8000;
+	sleep 5000;
 	set-signal-mask 0;
-	turn spindle to x-axis <0.000000> speed <36.000000>;
+	turn sleeve to x-axis <0.000000> speed <36.000000>;
 	turn turret to y-axis <0.000000> speed <30.000000>;
-	wait-for-turn spindle around x-axis;
-	wait-for-turn turret around y-axis;
 	bAiming = FALSE;
 }
 
@@ -234,102 +263,57 @@ AimPrimary(heading, pitch)
 {
 	bAiming = TRUE;
 	signal SIG_AIM;
-	set-signal-mask 0;
 	set-signal-mask SIG_AIM;
-	while( !Static_Var_3 )
-	{
-		sleep 400;
-	}
 	turn turret to y-axis heading speed <40.000000>;
-	turn spindle to x-axis <0.000000> - pitch speed <35.000000>;
+	turn sleeve to x-axis <0.000000> - pitch speed <35.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn spindle around x-axis;
-	while( gun_1 )
-	{
-		sleep 250;
-	}
+	wait-for-turn sleeve around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	gun_1 = turret;
-	show flare;
-	move barrel to z-axis [-2.750000] now;
+	emit-sfx 1024 + 0 from flare;
+	move barrel to z-axis [-1.50000] now;
 	sleep 120;
-	hide flare;
 	move barrel to z-axis [0.000000] speed [1.000000];
 	sleep 100;
-	gun_1 = body;
 }
 
 Killed(severity, corpsetype)
 {
-	hide flare;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
 		explode barrel type NOHEATCLOUD;
-		explode leg1 type NOHEATCLOUD;
-		explode leg2 type NOHEATCLOUD;
-		explode leg3 type NOHEATCLOUD;
-		explode leg4 type NOHEATCLOUD;
+		explode rleg1 type NOHEATCLOUD;
+		explode rleg2 type NOHEATCLOUD;
+		explode lleg3 type NOHEATCLOUD;
+		explode lleg1 type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode head type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
 		explode barrel type NOHEATCLOUD | FALL;
-		explode leg1 type NOHEATCLOUD;
-		explode leg2 type NOHEATCLOUD;
-		explode leg3 type NOHEATCLOUD;
-		explode leg4 type NOHEATCLOUD;
-		explode foot1 type NOHEATCLOUD;
-		explode foot2 type NOHEATCLOUD;
-		explode foot3 type NOHEATCLOUD;
-		explode foot4 type NOHEATCLOUD;
+		explode rleg1 type NOHEATCLOUD;
+		explode rleg2 type NOHEATCLOUD;
+		explode lleg3 type NOHEATCLOUD;
+		explode lleg1 type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD | SHATTER;
-		explode head type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode body type NOHEATCLOUD;
-		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode leg1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-		explode leg2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-		explode leg3 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-		explode leg4 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-		explode foot1 type NOHEATCLOUD;
-		explode foot2 type NOHEATCLOUD;
-		explode foot3 type NOHEATCLOUD;
-		explode foot4 type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | SHATTER | SMOKE | EXPLODE_ON_HIT;
-		explode head type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
 	explode body type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode leg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode leg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode foot1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode foot2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode foot3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode foot4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode rleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD;
-	explode head type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

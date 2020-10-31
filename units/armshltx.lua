@@ -57,8 +57,8 @@ return {
 		buildoptions = {
 			[1] = "armsmc",
 			[2] = "marauder",
-			[3] = "armraz",
-			[4] = "armshock",
+			[3] = "armshock",
+			[4] = "armraz",
 			[5] = "armeak",
 			[6] = "armbanth",
 			[7] = "armjag",

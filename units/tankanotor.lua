@@ -124,7 +124,7 @@ return {
 				burst = 2,
 				burstrate = 0.55,
 				cegtag = "trail_large_rocket_tankonator",
-				craterareaofeffect = 440,
+				craterareaofeffect = 320,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Medium_Rocket",

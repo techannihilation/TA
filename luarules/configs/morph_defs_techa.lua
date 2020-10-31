@@ -614,11 +614,6 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
-	armfido = {
-		into = 'armshock',
-		time = 60,
-		xp = 0.30,
-	},
 	corak = {
 		into = 'corpyro',
 		time = 5,
@@ -999,9 +994,9 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	armbanth = {
-		into = 'armpraet',
-		time = 60,
-		xp = 0.05,
+		into = 'exoarm',
+		time = 120,
+		xp = 0.10,
 	},
 	hyperion = {
 		into = 'tllsaurus',
@@ -1541,6 +1536,12 @@ local morphDefs = {
 		time = 45,
 		xp = 0.40,
 	},
+	tllares = {
+		into = 'tlltelsatnk',
+		time = 60,
+		xp = 0.75,
+	},
+
 }
 
 --

@@ -47,7 +47,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.924,
-		turnrate = 979,
+		turnrate = 400,
 		unitname = "armraven",
 		upright = true,
 		customparams = {

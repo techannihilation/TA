@@ -43,7 +43,7 @@ return {
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.155,
-		turnrate = 1000,
+		turnrate = 510,
 		unitname = "armtarantula",
 		customparams = {
 			buildpic = "armtarantula.dds",
