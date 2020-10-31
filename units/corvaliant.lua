@@ -45,7 +45,7 @@ return {
 		idletime = 1800,
 		immunetoparalyzer = 1,
 		mass = 128316,
-		maxdamage = 310000,
+		maxdamage = 291000,
 		maxvelocity = 1.05,
 		maxwaterdepth = 0,
 		metalmake = 2.5,

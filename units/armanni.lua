@@ -150,7 +150,6 @@ return {
 				thickness = 7,
 				turret = true,
 				weapontype = "BeamLaser",
-				weaponvelocity = 1400,
 				customparams = {
 					light_mult = 1.8,
 					light_radius_mult = 1.2,

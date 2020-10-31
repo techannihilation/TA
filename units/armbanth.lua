@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Assault Mech",
+		description = "Assault Kbot",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 5,
