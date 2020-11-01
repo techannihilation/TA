@@ -3,11 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, torso, point, blaster, caisson, caisson1, caisson2, roue1,
-       roue2, roue3, roue4, roue5, roue6, roue7, roue8, bearing,
-       corp;
+piece  base, torso, blaster, caisson4, caisson1, caisson2, caisson3, roue1,
+       roue2, roue3, roue4, roue5, roue6, roue7, roue8,
+       flare, plate1, plate2;
 
-static-var  restore_delay, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+static-var  restore_delay, Static_Var_2, bAiming, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -52,34 +52,36 @@ HitByWeapon(anglex, anglez)
 
 Go()
 {
-	Static_Var_3 = 2;
-	turn caisson1 to z-axis <-70.016484> speed <20.000000>;
-	turn caisson2 to z-axis <70.016484> speed <20.000000>;
-	turn caisson to x-axis <-70.016484> speed <40.000000>;
-	wait-for-turn caisson around x-axis;
+	turn caisson1 to z-axis <-90.000000> speed <20.000000>;
+	turn caisson2 to z-axis <90.000000> speed <20.000000>;
+	move caisson4 to y-axis [-10.000000] speed [2.000000];
+	move caisson3 to y-axis [-10.000000] speed [2.000000];
+	turn plate1 to z-axis <90.000000> speed <15.000000>;
+	turn plate2 to z-axis <-90.000000> speed <15.000000>;
+	wait-for-turn caisson1 around z-axis;
+	wait-for-turn plate1 around z-axis;
 	set ARMORED to 0;
-	move blaster to y-axis [10.000000] speed [10.000000];
-	move bearing to y-axis [10.000000] speed [10.000000];
-	sleep 1000;
-	set BUSY to 1;
-	set BUSY to 0;
+	bAiming = 1;
+	move blaster to y-axis [6.500000] speed [5.000000];
 }
 
 Stop()
 {
-	Static_Var_3 = 1;
-	set BUSY to 1;
+	bAiming = 0;
+	turn plate1 to z-axis <0.000000> speed <15.000000>;
+	turn plate2 to z-axis <0.000000> speed <15.000000>;
+	wait-for-turn plate1 around z-axis;
 	turn blaster to y-axis <0.000000> speed <30.000000>;
 	wait-for-turn blaster around y-axis;
-	move blaster to y-axis [0.000000] speed [10.000000];
-	move bearing to y-axis [0.000000] speed [10.000000];
-	sleep 2000;
+	move blaster to y-axis [0.000000] speed [5.000000];
 	turn caisson1 to z-axis <0.000000> speed <20.000000>;
 	turn caisson2 to z-axis <0.000000> speed <20.000000>;
-	turn caisson to x-axis <0.000000> speed <40.000000>;
+	move caisson4 to y-axis [0.000000] speed [2.000000];
+	move caisson3 to y-axis [0.000000] speed [2.000000];
+	//move plate1 to y-axis [0.000000] speed [2.000000];
+	//move plate2 to y-axis [0.000000] speed [2.000000];
 	wait-for-turn caisson1 around z-axis;
 	set ARMORED to 1;
-	set BUSY to 0;
 }
 
 InitState()
@@ -128,7 +130,7 @@ Create()
 {
 	set ARMORED to 1;
 	call-script InitState();
-	Static_Var_3 = 1;
+	bAiming = 0;
 	restore_delay = 10000;
 	start-script SmokeUnit();
 }
@@ -164,22 +166,15 @@ SetMaxReloadTime(Func_Var_1)
 
 RestoreAfterDelay()
 {
-	if( Static_Var_3 == 1 )
-	{
-		wait-for-turn blaster around y-axis;
-		sleep restore_delay;
-	}
-	if( Static_Var_2 == 2 )
-	{
-		wait-for-turn blaster around y-axis;
-		sleep restore_delay;
-		turn blaster to y-axis <0.000000> speed <80.000000>;
-	}
+	sleep restore_delay;
+	turn blaster to y-axis <0.000000> speed <80.000000>;
+	wait-for-turn blaster around y-axis;
+	bAiming = 0;
 }
 
 AimPrimary(heading, pitch)
 {
-	if( Static_Var_3 == 2 )
+	if( bAiming == 1 )
 	{
 		signal SIG_AIM;
 		set-signal-mask SIG_AIM;
@@ -192,25 +187,19 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( Static_Var_3 == 2 )
-	{
-		emit-sfx 1024 + 0 from point;
-		sleep 170;
-		return (1);
-	}
+	emit-sfx 1024 + 0 from flare;
+	sleep 170;
+	return (1);
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = point;
+	piecenum = blaster;
 }
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_3 == 2 )
-	{
-		piecenum = point;
-	}
+	piecenum = flare;
 }
 
 SweetSpot(piecenum)
@@ -225,7 +214,6 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode base type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode blaster type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode corp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode caisson1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode caisson2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
@@ -235,17 +223,6 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode base type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode blaster type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode corp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode caisson1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode caisson2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode blaster type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode corp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode caisson1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode caisson2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
@@ -253,7 +230,6 @@ Killed(severity, corpsetype)
 	corpsetype = 3;
 	explode base type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode blaster type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode corp type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode caisson1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode caisson2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);

@@ -11,6 +11,7 @@ Balance :
  - Babarus TLL T5 : Decrease HP 335K => 318K
 
 Improvment :
+ - Rework Krypto Blaster Arm Model
  - Praetorian : Change model annd trandform unit into shielded spider.
  - Armshock T3 Arm Kbot : Change model into spider.
  - T2 Beam Laser TLL Turret pop-up : Transform beam into lightning.

@@ -33,7 +33,7 @@ return {
 		losemitheight = 70,
 		maneuverleashlength = 640,
 		mass = 29101,
-		maxdamage = 36195,
+		maxdamage = 34195,
 		maxslope = 30,
 		maxvelocity = 1,
 		maxwaterdepth = 12,
@@ -126,13 +126,13 @@ return {
 			},
 		},
 		weapondefs = {
-			k666blaster = {
+			k888blaster = {
 				areaofeffect = 16,
 				beamtime = 0.75,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 5000,
+				energypershot = 30000,
 				--explosiongenerator = "custom:hope_lightning",
 				firestarter = 90,
 				impactonly = 1,
@@ -140,8 +140,9 @@ return {
 				impulsefactor = 0,
 				name = "Krypto Blaster",
 				noselfdamage = true,
-				range = 1400,
-				reloadtime = 1,
+				projectiles = 5,
+				range = 1300,
+				reloadtime = 5,
 				rgbcolor = "0.5 0.4 1.0",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
@@ -169,7 +170,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MEDIUM SMALL TINY",
-				def = "K666BLASTER",
+				def = "K888BLASTER",
 				onlytargetcategory = "SURFACE",
 			},
 		},
