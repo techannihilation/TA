@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 20343,
 		buildcostmetal = 1863,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 5,
-		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "armgate2_aoplane.dds",
 		buildpic = "armgate2.dds",
 		buildtime = 25000,
 		canattack = false,
@@ -45,7 +41,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armgate2",
-		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "armgate2.dds",

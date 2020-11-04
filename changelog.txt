@@ -1,21 +1,25 @@
 3.54 -> 3.55
-2020-10-31
+2020-11-04
 
 Balance :
  - All Krypto weapon have been balanced with real damage on panel info (space keyboard)
- - Krypto T3 Arm : Increase Hp 25K => 36K. Damage fixed at 6K / Shot. Decrease Armor reduction 95% => 80%.
- - Pratorian T4 Arm : Increase stats and cost. Fix Beam at 15K / shot with long reload.
- - Hope : Fix Beam at 3K / shot. decrease cost 130KM => 100KM.
- - Arch : fix Beam at 4.5K / shot. Decrease cost by 100KM.
+ - Krypto T3 Arm : Increase Hp 25K => 36K. Damage fixed at 6K / Shot. Decrease Armor reduction 95% => 80%
+ - Pratorian T4 Arm : Increase stats and cost. Fix Beam at 15K / shot with long reload
+ - Hope : Fix Beam at 3K / shot. decrease cost 130KM => 100KM
+ - Arch : fix Beam at 4.5K / shot. Decrease cost by 100KM
  - Valiant T5 : Decrease HP 315K => 295K
  - Babarus TLL T5 : Decrease HP 335K => 318K
 
 Improvment :
  - Rework Krypto Blaster Arm Model
- - Praetorian : Change model annd trandform unit into shielded spider.
- - Armshock T3 Arm Kbot : Change model into spider.
- - T2 Beam Laser TLL Turret pop-up : Transform beam into lightning.
+ - Add new T2 Shield Reflector model for Arm / Core
+ - Praetorian : Change model annd trandform unit into shielded spider
+ - Armshock T3 Arm Kbot : Change model into spider
+ - T2 Beam Laser TLL Turret pop-up : Transform beam into lightning
  - Arch : Increase lightning density for lightninh weapon (more projectiles)
+
+Fix :
+ - tllpulsaer script.
 
 3.53 -> 3.54
 2020-10-23

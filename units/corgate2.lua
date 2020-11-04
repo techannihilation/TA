@@ -37,7 +37,6 @@ return {
 		norestrict = 1,
 		objectname = "CORGATE2",
 		radaremitheight = 25,
-		script = "corgate.cob",
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,
