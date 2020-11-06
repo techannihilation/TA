@@ -1,3 +1,9 @@
+3.55 -> 3.56
+2020-11-06
+
+Improvment :
+ - Add healthScale with Experience. Decrease amout Multiplier : 0.7 => 0.25
+
 3.54 -> 3.55
 2020-11-04
 
@@ -11,6 +17,7 @@ Balance :
  - Babarus TLL T5 : Decrease HP 335K => 318K
 
 Improvment :
+ - Readd healthScale with Experience. decrease amout Multiplier : 0.7 => 0.25
  - Rework Krypto Blaster Arm Model
  - Add new T2 Shield Reflector model for Arm / Core
  - Praetorian : Change model annd trandform unit into shielded spider
