@@ -54,7 +54,7 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	move turret to y-axis [80.000000] speed [15.000000];
+	move turret to y-axis [140.000000] speed [20.000000];
 	turn turret to y-axis <0.000000> + heading speed <15.000000>;
 	turn turret to x-axis <0.000000> - pitch speed <10.000000> ;
 	wait-for-move turret along y-axis;
