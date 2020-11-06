@@ -14,19 +14,19 @@ local modrules  = {
     constructionDecay = (Spring.GetModOptions() and (Spring.GetModOptions().mo_terraforming == "0") and 1)
     and (Spring.GetModOptions() and (Spring.GetModOptions().mo_nanoframedecay == "0") and 1) or 0,
       },
-  
+
   reclaim = {
     multiReclaim  = 1,
     reclaimMethod = 0,
   },
- 
+
   experience = {
-    powerScale = 0, 
-    healthScale = 0, 
+    powerScale = 0,
+    healthScale = 0.25, 
     reloadScale= 0,
   },
- 
-  sensors = {   
+
+  sensors = {
     los = {
       losMipLevel = 3,
       airMipLevel = 4,
@@ -42,16 +42,16 @@ local modrules  = {
   nanospray = {
     allow_team_colors = false,
   },
-  
+
   featureLOS = {
      featureVisibility = 2,
   },
-    
+
   transportability = {
      transportHover  = 1,
      --targetableTransportedUnits = true,
   },
-  
+
   system = {
     pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "qtpfs") and 1) or 0,
     pathFinderRawDistMult = 1.25,
