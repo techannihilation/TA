@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, arm1, arm2, arm3, door, gun,
+piece  base, arm1, arm2, arm3, gun,
        structure, turret, panel;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
@@ -101,7 +101,6 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode door type NOHEATCLOUD;
 		explode arm1 type NOHEATCLOUD;
 		explode arm2 type NOHEATCLOUD;
 		explode arm3 type NOHEATCLOUD;
@@ -112,7 +111,6 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode door type NOHEATCLOUD | FALL;
 		explode arm1 type NOHEATCLOUD | FALL;
 		explode arm2 type NOHEATCLOUD | FALL;
 		explode arm3 type NOHEATCLOUD | FALL;
