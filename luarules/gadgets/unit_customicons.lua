@@ -161,7 +161,7 @@ function gadget:Initialize()
       elseif (ud.name=="cafus") or (ud.name=="corsfus") or (ud.name=="aafus") or (ud.name=="tllcoldfus") or (ud.name=="talon_afus") then
         Spring.SetUnitDefIcon(udid, "e3.user")
 --std fusions
-      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="corsfus") or (ud.name=="crnns") or (ud.name=="tllmedfusion") or (ud.name=="armckfus") or (ud.name=="armdf")
+      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="corsfus") or (ud.name=="crnns") or (ud.name=="tllmedfusion") or (ud.name=="armckfus")
       or (ud.name=="armuwfus") or (ud.name=="armuwfus1") or (ud.name=="coruwfus") or (ud.name=="armckfus") or (ud.name=="tlluwfusion") or (ud.name=="talon_ckfus") then
         Spring.SetUnitDefIcon(udid, "e2.user")
 --Level 2 nanos

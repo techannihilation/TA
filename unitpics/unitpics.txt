@@ -99,7 +99,6 @@ armcv.dds
 armcybr.dds
 armcyclone.dds
 armdark.dds
-armdf.dds
 armdfly.dds
 armdl.dds
 armdrag.dds
@@ -397,7 +396,6 @@ coravp.dds
 corawac.dds
 corawin.dds
 corbats.dds
-corbhmth1.dds
 corbhmth.dds
 corblackhy.dds
 corboucher.dds
@@ -954,7 +952,6 @@ tlltraq.dds
 tlltrid.dds
 tllturtle.dds
 tllturtle_lab.dds
-tllupgweb.dds
 tlluwfusion.dds
 tlluwjam.dds
 tlluwmex.dds

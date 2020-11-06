@@ -42,7 +42,6 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.cmgeo.id,
 	UnitDefNames.coradvsol.id,
 	UnitDefNames.corbhmth.id,
-	UnitDefNames.corbhmth1.id,
 	UnitDefNames.corfus.id,
 	UnitDefNames.corgeo.id,
 	UnitDefNames.corsfus.id,

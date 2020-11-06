@@ -193,47 +193,42 @@ local morphDefs = {
 	armllt = {
 		into = 'armllt1',
 		time = 15,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	corllt = {
 		into = 'corllt1',
 		time = 15,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	tllllt = {
 		into = 'tlllft',
 		time = 15,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	talon_llt = {
 		into = 'talon_llt1',
 		time = 15,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	armhlt = {
 		into = 'armvhlt',
 		time = 30,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	talon_hlt = {
 		into = 'talon_vhlt',
 		time = 30,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	corhlt= {
 		into = 'corvhlt',
 		time = 30,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	tllhlt = {
 		into = 'tllvhlt',
 		time = 30,
-		xp = 0.30,
-	},
-	tllweb = {
-		into = 'tllupgweb',
-		time = 30,
-		xp = 0.50,
+		xp = 0.20,
 	},
 	armguard= {
 		into = 'armamb',
@@ -389,10 +384,10 @@ local morphDefs = {
 		  		tech = 1,
 		},
 	},
-	corbhmth = {
-		into = 'corbhmth1',
-		time = 90,
-		tech = 2,
+	corexp = {
+		into = 'cormexp',
+		time = 60,
+		xp = 0.25,
   },
 	tllgeo = {
 		{

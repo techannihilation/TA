@@ -107,7 +107,6 @@ local pplants = {
 	["cmgeo"] = true,
 	["coradvsol"] = true,
 	["corbhmth"] = true,
-	["corbhmth1"] = true,
 	["corfus"] = true,
 	["corgeo"] = true,
 	["corsfus"] = true,

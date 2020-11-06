@@ -80,7 +80,6 @@ modConfig["TA"]["unitList"] =
 								cjuno = { weapons = { 1 } },
 								coranta = { weapons = { 1 } },
 								corbhmth = { weapons = { 1 } },
-								corbhmth1 = { weapons = { 1 } },
 								corboucher = { weapons = { 1 } },
 								corfhlt = { weapons = { 1 } },  --floating hlt
 								cortl = { weapons = { 1 } }, --torp launcher
@@ -149,7 +148,6 @@ modConfig["TA"]["unitList"] =
 								tllllt = { weapons = { 1 } },
 								tlllft = { weapons = { 1 } },
 								tllweb = { weapons = { 1 } },
-								tllupgweb = { weapons = { 1 } },
 								tlldmc = { weapons = { 1 } },
 								tlllbt = { weapons = { 1,1 } },
 								tlltrid = { weapons = { 1 } },

@@ -131,7 +131,7 @@ Create()
 	set ARMORED to 1;
 	call-script InitState();
 	bAiming = 0;
-	restore_delay = 10000;
+	restore_delay = 7500;
 	start-script SmokeUnit();
 }
 
@@ -168,8 +168,6 @@ RestoreAfterDelay()
 {
 	sleep restore_delay;
 	turn blaster to y-axis <0.000000> speed <80.000000>;
-	wait-for-turn blaster around y-axis;
-	bAiming = 0;
 }
 
 AimPrimary(heading, pitch)
