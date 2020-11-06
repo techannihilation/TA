@@ -4,6 +4,7 @@
 Balance :
  - Behemoth : Decrease range 1750 => 1650
  - Barret TLL : Increase stats, cost, range
+ - Increase HP for T5 turret : +100K. Increase cost by 20KM & 200KE and damage7K/S => 8K.
 
 Improvment :
  - Add healthScale with Experience. Decrease amout Multiplier : 0.7 => 0.25
