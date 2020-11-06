@@ -263,21 +263,6 @@ local pieceCollisionVolume = {					--per piece collision volume definitions
 			["5"]={51,26,213,0,120,0,1,0},
 			trunk = 2
 	},
-	[UnitDefNames["corflu"].id] = {
-			["1"]={350,800,350,0,0,0,1,1},
-			["3"]={48,48,520,0,0,240,1,2},
-			trunk = 1
-	},
-	[UnitDefNames["armtabi"].id] = {
-			["1"]={350,850,350,0,0,0,1,1},
-			["3"]={48,48,700,0,0,72,1,2},
-			trunk = 1
-	},
-	[UnitDefNames["tllvanya"].id] = {
-			["1"]={320,750,320,0,51,0,1,1},
-			["4"]={60,60,375,0,0,120,1,2},
-			trunk = 1
-	},
 	[UnitDefNames["armap"].id] = {
 			["1"]={126,14,96,0,0,0,2,1},
 			["6"]={100,95,30,10,20,-30,2,1},

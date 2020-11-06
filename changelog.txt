@@ -1,8 +1,19 @@
 3.55 -> 3.56
 2020-11-06
 
+Balance :
+ - Behemoth : Decrease range 1750 => 1650
+ - Barret TLL : Increase stats, cost, range
+
 Improvment :
  - Add healthScale with Experience. Decrease amout Multiplier : 0.7 => 0.25
+ - Delete Tesla T1.5 Tll
+ - Delete Behemoth T3
+ - Delete Decoy Fusion Arm
+ - Add Morph for Armed Extractor T1
+ - Increase TSAR model by 60%
+ - Increase T5 Turret model by 50%
+ - Move Barret TLL T3 => T4
 
 3.54 -> 3.55
 2020-11-04

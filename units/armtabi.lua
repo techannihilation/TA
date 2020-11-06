@@ -11,7 +11,7 @@ return {
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		collisionvolumeoffsets = "0 -5 0",
-		collisionvolumescales = "390 390 390",
+		collisionvolumescales = "380 465 380",
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Total Annihilation TSAR bomber (ARM)",
@@ -38,7 +38,6 @@ return {
 		sightdistance = 650,
 		standingfireorder = 2,
 		unitname = "armtabi",
-		usepiececollisionvolumes = true,
 		yardmap = "ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "armtabi.dds",
