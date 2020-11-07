@@ -47,7 +47,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.023,
-		turnrate = 650,
+		turnrate = 500,
 		unitname = "tllsalamander",
 		customparams = {
 			buildpic = "tllsalamander.dds",

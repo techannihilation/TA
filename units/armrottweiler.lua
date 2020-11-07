@@ -35,7 +35,7 @@ return {
 		maxvelocity = 1.4,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "TANK3",
+		movementclass = "HTANK3",
 		name = "Rottweiler",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",

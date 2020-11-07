@@ -5,6 +5,11 @@ Balance :
  - Behemoth : Decrease range 1750 => 1650
  - Barret TLL : Increase stats, cost, range
  - Increase HP for T5 turret : +100K. Increase cost by 20KM & 200KE and damage7K/S => 8K.
+ - Olympus : Decrease range and damage for main weapon : 1950 => 1800. 8K => 7K.
+ - Krypto : Decrease Range 1300 => 1200
+ - Saurus : Increase AOE for main weapon 80=>128 px
+ - T1 heavy vehicles : Rottweiler, corgfbt, obsidian can pass over teeth
+ - Raptor : Increase speed 1.5 => 2.0 Decrease cost (28KM=>19KM) and HP (89K => 59K)
 
 Improvment :
  - Add healthScale with Experience. Decrease amout Multiplier : 0.7 => 0.25
@@ -15,6 +20,7 @@ Improvment :
  - Increase TSAR model by 60%
  - Increase T5 Turret model by 50%
  - Move Barret TLL T3 => T4
+ - Decrease size for raptor -20%
 
 3.54 -> 3.55
 2020-11-04
@@ -29,7 +35,6 @@ Balance :
  - Babarus TLL T5 : Decrease HP 335K => 318K
 
 Improvment :
- - Readd healthScale with Experience. decrease amout Multiplier : 0.7 => 0.25
  - Rework Krypto Blaster Arm Model
  - Add new T2 Shield Reflector model for Arm / Core
  - Praetorian : Change model annd trandform unit into shielded spider

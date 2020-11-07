@@ -36,7 +36,7 @@ return {
 		maxvelocity = 1.5,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "TANK3",
+		movementclass = "HTANK3",
 		name = "Grimani",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",

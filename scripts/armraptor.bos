@@ -415,7 +415,7 @@ FireSecondary()
 	{
 		turn lSchulter to x-axis <15.000000> speed <400.000000>;
 		turn lKanone to x-axis <-18.000000> speed <400.000000>;
-		move l1Lauf to z-axis [-3.000000] speed [300.000000];
+		move l1Lauf to z-axis [-2.500000] speed [300.000000];
 		turn Achse to y-axis <-1.000000> speed <40.000000>;
 		//show l1Blitz;
 		sleep 100;
@@ -433,7 +433,7 @@ FireSecondary()
 		turn rSchulter to x-axis <15.000000> speed <400.000000>;
 		turn rKanone to x-axis <-18.000000> speed <400.000000>;
 		//show r1Blitz;
-		move r1Lauf to z-axis [-3.000000] speed [300.000000];
+		move r1Lauf to z-axis [-2.500000] speed [300.000000];
 		turn Achse to y-axis <1.000000> speed <40.000000>;
 		//sleep 100;
 		move r1Lauf to z-axis [0.000000] speed [3.000000];
@@ -450,7 +450,7 @@ FireSecondary()
 		turn lSchulter to x-axis <15.000000> speed <400.000000>;
 		turn lKanone to x-axis <-18.000000> speed <400.000000>;
 		//show l2Blitz;
-		move l2Lauf to z-axis [-3.000000] speed [300.000000];
+		move l2Lauf to z-axis [-2.500000] speed [300.000000];
 		turn Achse to y-axis <-1.000000> speed <40.000000>;
 		sleep 100;
 		move l2Lauf to z-axis [0.000000] speed [3.000000];
@@ -467,7 +467,7 @@ FireSecondary()
 		turn rSchulter to x-axis <15.000000> speed <400.000000>;
 		turn rKanone to x-axis <-18.000000> speed <400.000000>;
 		//show r2Blitz;
-		move r2Lauf to z-axis [-3.000000] speed [300.000000];
+		move r2Lauf to z-axis [-2.500000] speed [300.000000];
 		turn Achse to y-axis <1.000000> speed <40.000000>;
 		sleep 100;
 		move r2Lauf to z-axis [0.000000] speed [3.000000];
@@ -533,9 +533,9 @@ AimPrimary(heading, pitch)
 	turn roRakWerf to x-axis <-30.000000> speed <60.000000>;
 	wait-for-turn loRakWerf around x-axis;
 	turn Stange to x-axis <0.000000> speed <80.000000>;
-	move Punkt to z-axis [3.000000] speed [4.000000];
-	move luRakWerf to z-axis [3.000000] speed [4.000000];
-	move ruRakWerf to z-axis [3.000000] speed [4.000000];
+	move Punkt to z-axis [2.500000] speed [4.000000];
+	move luRakWerf to z-axis [2.500000] speed [4.000000];
+	move ruRakWerf to z-axis [2.500000] speed [4.000000];
 	wait-for-turn Stange around x-axis;
 	wait-for-move Punkt along z-axis;
 	wait-for-move luRakWerf along z-axis;

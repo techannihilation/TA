@@ -141,7 +141,7 @@ return {
 				name = "Krypto Blaster",
 				noselfdamage = true,
 				projectiles = 5,
-				range = 1300,
+				range = 1200,
 				reloadtime = 5,
 				rgbcolor = "0.5 0.4 1.0",
 				soundhitdry = "",
