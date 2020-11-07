@@ -86,6 +86,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:goliathflare",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
