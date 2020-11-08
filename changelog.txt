@@ -1,5 +1,5 @@
 3.55 -> 3.56
-2020-11-06
+2020-11-08
 
 Balance :
  - Behemoth : Decrease range 1750 => 1650

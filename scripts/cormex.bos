@@ -38,11 +38,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Go()
 {
 	set ARMORED to 0;
-	dont-cache arms;
-	dont-cache hand1;
-	dont-cache hand2;
-	dont-cache hand3;
-	dont-cache stand;
 	move stand to y-axis [6.000000] speed [5.000000];
 	wait-for-move arms along y-axis;
 	spin arms around y-axis speed Static_Var_1 accelerate Static_Var_2;
@@ -56,11 +51,6 @@ Stop()
 	wait-for-turn arms around y-axis;
 	move stand to y-axis [0.000000] speed [10.000000];
 	wait-for-move arms along y-axis;
-	cache arms;
-	cache hand1;
-	cache hand2;
-	cache hand3;
-	cache stand;
 	set ARMORED to 1;
 }
 
