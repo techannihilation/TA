@@ -1,3 +1,12 @@
+3.56 -> 3.57
+2020-11-13
+
+Balance :
+ - T2 Rapid Plasma Canon : Decrease AOE 224=>192px & range at 5K. Decrease special damage vs ship and experimental.
+ - T3 Rapid Plasma Canon : Decrease AOE 224=>192px & range at 6K. Decrease special damage vs ship and experimental.
+ - T2 Bertha : Increase range 5000 => 5250. Decrease special damage vs ship and experimental.
+ - T3 Bertha : Increase range 5500 => 6500. Decrease special damage vs ship and experimental.
+
 3.55 -> 3.56
 2020-11-08
 
