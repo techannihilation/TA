@@ -134,7 +134,7 @@ return {
 		},
 		weapondefs = {
 		mountedantimatteraccelerator = {
-			areaofeffect = 60,
+			areaofeffect = 80,
 			beamtime = 0.85,
 			burnblow = true,
 			collidefriendly = false,
@@ -142,7 +142,7 @@ return {
 			craterareaofeffect = 0,
 			craterboost = 0,
 			cratermult = 0,
-			energypershot = 12500,
+			energypershot = 7500,
 			explosiongenerator = "custom:RAVAGER",
 			firestarter = 20,
 			impulseboost = 0,
@@ -171,6 +171,10 @@ return {
 			turret = true,
 			weapontype = "BeamLaser",
 			weaponvelocity = 1500,
+			customparams = {
+				light_mult = 1.8,
+				light_radius_mult = 1.2,
+			},
 			damage = {
 				commanders = 2500,
 				default = 10000,

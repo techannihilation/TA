@@ -112,7 +112,7 @@ return {
 		},
 		weapondefs = {
 			antimatteraccelerator = {
-				areaofeffect = 60,
+				areaofeffect = 80,
 				beamtime = 1,
 				burnblow = true,
 				collidefriendly = false,
@@ -120,7 +120,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 5000,
+				energypershot = 10000,
 				explosiongenerator = "custom:RAVAGER",
 				firestarter = 20,
 				impulseboost = 0,
@@ -145,10 +145,14 @@ return {
 				texture3 = "NULL",
 				texture4 = "EMG",
 				thickness = 13,
-				tolerance = 1500,
+				tolerance = 2000,
 				turret = false,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
 				damage = {
 					commanders = 2500,
 					default = 12500,

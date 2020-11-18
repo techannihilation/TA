@@ -137,7 +137,7 @@ return {
 			},
 			skynet_weapon = {
 				areaofeffect = 150,
-				beamtime = 4,
+				beamtime = 1,
 				burnblow = true,
 				collidefriendly = true,
 				corethickness = 1,
