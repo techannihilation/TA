@@ -57,7 +57,6 @@ return {
 			[5] = "armgmm",
 			[6] = "armmoho",
 			[7] = "armmmkr",
-			[8] = "armckmakr",
 			[9] = "armuwadves",
 			[10] = "armuwadvms",
 			[11] = "armlab",

@@ -99,7 +99,6 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.armmakr.id,
 	UnitDefNames.armfmkr.id,
 	UnitDefNames.armamaker.id,
-	UnitDefNames.armckmakr.id,
 	UnitDefNames.armmmkr.id,
 	UnitDefNames.armuwmmm.id,
 	UnitDefNames.ametalmakerlvl2.id,

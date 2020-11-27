@@ -592,7 +592,6 @@ local unitheight = {
     ["armcir"] = 58,
     ["armck"] = 27,
     ["armckfus"] = 52,
-    ["armckmakr"] = 25,
     ["armclaw"] = 50,
     ["armcom"] = 42,
     ["armcom1"] = 44,

@@ -79,7 +79,6 @@ armchimera.dds
 armcir.dds
 armck.dds
 armckfus.dds
-armckmakr.dds
 armclaw.dds
 armcom1.dds
 armcom4.dds
