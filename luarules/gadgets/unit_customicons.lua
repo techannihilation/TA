@@ -285,7 +285,7 @@ function gadget:Initialize()
 -- metal extractors and makers
       elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or
 	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or (ud.name=="ametalmakerlvl3") or
-	(ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="corhmakr") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
+	(ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
 	or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv") then
         Spring.SetUnitDefIcon(udid, "m.user")
 -- energy generators

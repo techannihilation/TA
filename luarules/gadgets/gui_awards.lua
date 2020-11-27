@@ -108,7 +108,6 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.cormakr.id,
 	UnitDefNames.corfmkr.id,
 	UnitDefNames.coramaker.id,
-	UnitDefNames.corhmakr.id,
 	UnitDefNames.cormmkr.id,
 	UnitDefNames.coruwmmm.id,
 	UnitDefNames.cmetalmakerlvl2.id,

@@ -57,7 +57,6 @@ return {
 			[5] = "cormoho",
 			[6] = "cormexp",
 			[7] = "cormmkr",
-			[8] = "corhmakr",
 			[9] = "coruwadves",
 			[10] = "coruwadvms",
 			[11] = "corlab",

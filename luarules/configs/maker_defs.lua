@@ -30,7 +30,7 @@ local convertCapacities = {
 		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
 		[UnitDefNames.corfmkr.id]  = { c = 128, e = (AC1) }, -- Floating
 		[UnitDefNames.coramaker.id]  = { c = 192, e = (AC2) }, -- T1,5
-		[UnitDefNames.corhmakr.id]  = { c = 3072, e = (C3) }, -- Cloaked/Hardened
+		--[UnitDefNames.corhmakr.id]  = { c = 3072, e = (C3) }, -- Cloaked/Hardened
 		[UnitDefNames.cormmkr.id]  = { c = 1024, e = (AC4) }, -- Moho
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
 		[UnitDefNames.cmetalmakerlvl2.id]  = { c = 10240, e = (AC6) }, -- T3
