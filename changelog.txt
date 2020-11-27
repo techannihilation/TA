@@ -1,3 +1,15 @@
+3.57 -> 3.58
+2020-11-27
+
+Balance :
+ - T2 Rapid Plasma Canon Mobile Talon : Decrease AOE 224=>192px & range at 4850. Decrease special damage vs ship and experimental.
+
+Improvment :
+  - Delete Cloak MetalMaker T2 Arm.
+  - Delete Armored MetalMaker T2 Core
+  - Add new models for T3 MM arm/core (soon TLL)
+  - Delete T3 bertha from T4 cons menu panel
+
 3.56 -> 3.57
 2020-11-13
 
