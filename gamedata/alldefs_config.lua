@@ -1169,7 +1169,6 @@ local unitheight = {
     ["helepolis"] = 54,
     ["hllt"] = 100,
     ["hyperion"] = 121,
-    ["intruder"] = 38,
     ["irritator"] = 145,
     ["krogtaar"] = 63,
     ["macross"] = 91,
