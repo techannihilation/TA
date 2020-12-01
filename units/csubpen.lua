@@ -63,7 +63,6 @@ return {
 			[7] = "corgarp",
 			[8] = "corseal",
 			[9] = "corparrow",
-			[10] = "intruder",
 			[11] = "corshark",
 			[12] = "corssub",
 		},

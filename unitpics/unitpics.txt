@@ -672,7 +672,6 @@ heavyimpact.dds
 helepolis.dds
 hllt.dds
 hyperion.dds
-intruder.dds
 irritator.dds
 krogtaar.dds
 macross.dds
