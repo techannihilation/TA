@@ -6,7 +6,7 @@
 piece  base, radar, turret, canon, barrel, flare1, flare2, flare3,
        flare4, flare5, flare6, flare7, flare8;
 
-static-var  restore_delay, Static_Var_2;
+static-var  restore_delay, Gun_1, Gun_2, Arm_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -61,15 +61,10 @@ HitByWeapon(anglex, anglez)
 
 Create()
 {
-	Static_Var_2 = 1;
+	Gun_1 = 0;
 	restore_delay = 3000;
 	spin radar around y-axis speed <60.000000>;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -91,50 +86,33 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-Shot1()
-{
-	++Static_Var_2;
-	if( Static_Var_2 == 9 )
-	{
-		Static_Var_2 = 1;
-	}
-	if( Static_Var_2 == 1 )
-	{
-		emit-sfx 1024 + 0 from flare1;
-	}
-	if( Static_Var_2 == 2 )
-	{
-		emit-sfx 1024 + 0 from flare2;
-	}
-	if( Static_Var_2 == 3 )
-	{
-		emit-sfx 1024 + 0 from flare5;
-	}
-	if( Static_Var_2 == 4 )
-	{
-		emit-sfx 1024 + 0 from flare6;
-	}
-	if( Static_Var_2 == 5 )
-	{
-		emit-sfx 1024 + 0 from flare3;
-	}
-	if( Static_Var_2 == 6 )
-	{
-		emit-sfx 1024 + 0 from flare4;
-	}
-	if( Static_Var_2 == 7 )
-	{
-		emit-sfx 1024 + 0 from flare7;
-	}
-	if( Static_Var_2 == 8 )
-	{
-		emit-sfx 1024 + 0 from flare8;
-	}
-}
-
 FirePrimary()
 {
-	sleep 6000;
+	if( Gun_1 == 0 or Gun_1 == 7 )
+	{
+		Gun_1 = 0;
+		sleep 150;
+		++Gun_1;
+		sleep 150;
+		++Gun_1;
+		sleep 150;
+		++Gun_1;
+		return (0);	
+	}
+	
+	if( Gun_1 == 3 )
+	{
+		++Gun_1;
+		sleep 150;
+		++Gun_1;
+		sleep 150;
+		++Gun_1;
+		sleep 150;
+		++Gun_1;
+		sleep 150;
+		//Gun_1 = 0; 
+		return (0);	
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -144,35 +122,35 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_2 == 1 )
+	if( Gun_1 == 0 )
 	{
 		piecenum = flare1;
 	}
-	if( Static_Var_2 == 2 )
+	if( Gun_1 == 1 )
 	{
 		piecenum = flare2;
 	}
-	if( Static_Var_2 == 3 )
-	{
-		piecenum = flare5;
-	}
-	if( Static_Var_2 == 4 )
-	{
-		piecenum = flare6;
-	}
-	if( Static_Var_2 == 5 )
+	if( Gun_1 == 2 )
 	{
 		piecenum = flare3;
 	}
-	if( Static_Var_2 == 6 )
+	if( Gun_1 == 3 )
 	{
 		piecenum = flare4;
 	}
-	if( Static_Var_2 == 7 )
+	if( Gun_1 == 4 )
+	{
+		piecenum = flare5;
+	}
+	if( Gun_1 == 5 )
+	{
+		piecenum = flare6;
+	}
+	if( Gun_1 == 6 )
 	{
 		piecenum = flare7;
 	}
-	if( Static_Var_2 == 8 )
+	if( Gun_1 == 7 )
 	{
 		piecenum = flare8;
 	}
@@ -217,23 +195,6 @@ Killed(severity, corpsetype)
 		explode flare8 type NOHEATCLOUD;
 		explode canon type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flare1 type NOHEATCLOUD;
-		explode flare2 type NOHEATCLOUD;
-		explode flare3 type NOHEATCLOUD;
-		explode flare4 type NOHEATCLOUD;
-		explode flare5 type NOHEATCLOUD;
-		explode flare6 type NOHEATCLOUD;
-		explode flare7 type NOHEATCLOUD;
-		explode flare8 type NOHEATCLOUD;
-		explode canon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
