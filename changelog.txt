@@ -1,17 +1,19 @@
 3.57 -> 3.58
-2020-11-30
+2020-12-01
 
 Balance :
  - T2 Rapid Plasma Canon Mobile Talon : Decrease AOE 224=>192px & range at 4850. Decrease special damage vs ship and experimental
  - Ceddral (T2 gunship beam) Talon : Decreae cost and HP
  - Krow : Decrease cost 6.1KM=>4.7KM (under 5K metal for all T2) and Hp 16K=>12K.
  - Pterodactyl TLL: Decrease cost 6.2KM=>4.8KM (under 5K metal for all T2) and Hp 13K=>11K.
+ - Rework Horgue unit. Missile can track now. Reduce Range at 900. Delete Emp damage.
 
 Improvment :
   - Delete Cloak MetalMaker T2 Arm.
   - Delete Armored MetalMaker T2 Core
   - Add new models for T3 MM arm/core (soon TLL)
   - Delete T3 bertha from T4 cons menu panel
+  - Change order in T2 lab (less to more metalcost)
 
 3.56 -> 3.57
 2020-11-13
