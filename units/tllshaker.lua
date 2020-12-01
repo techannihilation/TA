@@ -3,7 +3,7 @@ return {
 		acceleration = 0.011,
 		brakerate = 0.0297,
 		buildcostenergy = 1984,
-		buildcostmetal = 195,
+		buildcostmetal = 182,
 		builder = false,
 		buildpic = "tllshaker.dds",
 		buildtime = 3000,
