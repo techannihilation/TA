@@ -58,12 +58,12 @@ return {
 		buildoptions = {
 			[1] = "talon_ack1",
 			[2] = "talon_ack",
-			[3] = "talon_wolf",
-			[4] = "talon_crusader",
-			[5] = "talon_mastiff",
-			[6] = "talon_striker",
-			[7] = "talon_herison",
-			[8] = "talon_husher",
+			[3] = "talon_herison",
+			[4] = "talon_husher",
+			[5] = "talon_wolf",
+			[6] = "talon_mastiff",
+			[7] = "talon_crusader",
+			[8] = "talon_striker",
 			[9] = "talon_fdog",
 		},
 		customparams = {

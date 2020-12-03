@@ -58,23 +58,18 @@ return {
 		buildoptions = {
 			[1] = "coracv",
 			[2] = "corassis",
-			[8] = "cormart",
-
-			[3] = "corseal",
-			[4] = "correap",
-
-
-			[9] = "corvroc",
-
-			[11] = "cormabm",
-			[12] = "coreter",
-			[13] = "corvrad",
-
-			[6] = "tawf114",
-			[10] = "corsent",
-			[14] = "trem",
-			[5] = "corgol",
-			[15] = "requ1",
+			[3] = "cormart",
+			[4] = "corseal",
+			[5] = "correap",
+			[6] = "corvroc",
+			[7] = "cormabm",
+			[8] = "coreter",
+			[9] = "corvrad",
+			[10] = "tawf114",
+			[11] = "corsent",
+			[12] = "trem",
+			[13] = "corgol",
+			[14] = "requ1",
 		},
 		customparams = {
 			buildpic = "coravp.dds",
