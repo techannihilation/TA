@@ -49,12 +49,11 @@ return {
 		yardmap = "cccooco	cccccco occccco	occccco	occccco occccco	ocoooco",
 		buildoptions = {
 			[1] = "tllca",
-			--[2] = "tllhtca",
 			[2] = "tlltsetse",
 			[3] = "tllprob",
 			[4] = "tllfight",
-			[5] = "tllbomber",
-			[6] = "tlltplane",
+			[5] = "tlltplane",
+			[6] = "tllbomber",
 			[7] = "tllcop1",
 		},
 		customparams = {

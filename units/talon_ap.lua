@@ -60,10 +60,10 @@ return {
 			[1] = "talon_ca",
 			[2] = "talon_carbon",
 			[3] = "talon_recon",
-			[4] = "talon_token",
-			[5] = "talon_shade",
+			[4] = "talon_drone",
+			[5] = "talon_token",
 			[6] = "talon_wyvern",
-			[7] = "talon_drone",			
+			[7] = "talon_shade",									
 		},
 		customparams = {
 			buildpic = "talon_ap.dds",

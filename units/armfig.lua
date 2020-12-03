@@ -48,7 +48,7 @@ return {
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 6.6,
-		turnrate = 891,
+		turnrate = 850,
 		unitname = "armfig",
 		customparams = {
 			buildpic = "armfig.dds",

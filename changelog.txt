@@ -1,5 +1,5 @@
 3.57 -> 3.58
-2020-12-01
+2020-12-03
 
 Balance :
  - T2 Rapid Plasma Canon Mobile Talon : Decrease AOE 224=>192px & range at 4850. Decrease special damage vs ship and experimental
@@ -7,8 +7,14 @@ Balance :
  - Krow : Decrease cost 6.1KM=>4.7KM (under 5K metal for all T2) and Hp 16K=>12K.
  - Pterodactyl TLL: Decrease cost 6.2KM=>4.8KM (under 5K metal for all T2) and Hp 13K=>11K.
  - Rework Horgue unit. Missile can track now. Reduce Range at 900. Delete Emp damage.
+ - Increase Meteor cost 1.6M => 1.9. 500ME => 600ME
+ - Decrease metalcost for All T1 amphibious tank (200=>180M)
+ - Increase metalcost for all T1 Air transport (70=>100M)
+ - Increase damage for all torpedo bombers (+13dmg/s)
+ - T1 Air Fighter TLL : Decrease cost to balance with other T1
+ - T2 bomber Talon & TLL : Decrease cost to balance with other T2
 
-Improvment :
+ Improvment :
   - Delete Cloak MetalMaker T2 Arm.
   - Delete Armored MetalMaker T2 Core
   - Add new models for T3 MM arm/core (soon TLL)
