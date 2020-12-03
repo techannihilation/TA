@@ -3,21 +3,56 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, winga, wingb, rfin, lfin, nosea, body, Rhull, Lhull, emit1, emit2, emit3, nano;
+piece  base, body, winga, wingb, fin1, fin2, nose, w1,
+       w2, w3, w4, w5, w6, w7, w8, wakes;
 
-static-var  Static_Var_1, Static_Var_2;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
+
+setSFXoccupy(state)
+{
+	Static_Var_3 = state;
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	while( TRUE )
+	{
+		if( Static_Var_3 == 3 )
+		{
+			emit-sfx 256 | 3 from w5;
+			emit-sfx 256 | 3 from w6;
+			emit-sfx 256 | 3 from w3;
+			emit-sfx 256 | 3 from w4;
+			emit-sfx 256 | 3 from w7;
+			emit-sfx 256 | 3 from w8;
+		}
+		sleep 150;
+	}
+}
+
+StopMoving()
+{
+	signal 2;
+}
 
 activatescr()
 {
 	if( TRUE )
 	{
-		turn winga to z-axis <0.> speed <40.>;
-		turn wingb to z-axis <0.> speed <40.>;
+		turn winga to z-axis <0.> speed <62.>;
+		turn wingb to z-axis <0.> speed <62.>;
 		wait-for-turn wingb around z-axis;
-		sleep 150;
+		turn body to z-axis <240.> speed <120.>;
+		wait-for-turn body around z-axis;
+		turn body to z-axis <120.> speed <180.>;
+		wait-for-turn body around z-axis;
+		turn body to z-axis <0.> speed <120.>;
+		sleep 1000;
 	}
-	sleep 25;
+	sleep 23;
 }
 
 deactivatescr()
@@ -26,9 +61,9 @@ deactivatescr()
 	{
 		turn winga to z-axis <-120.> speed <62.>;
 		turn wingb to z-axis <120.> speed <62.>;
-		sleep 150;
+		sleep 1445;
 	}
-	sleep 25;
+	sleep 24;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -94,6 +129,7 @@ Create()
 {
 	call-script InitState();
 	start-script SmokeUnit();
+	Static_Var_3 = 0;
 }
 
 Activate()
@@ -118,7 +154,7 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	piecenum = nano;
+	piecenum = base;
 }
 
 SweetSpot(piecenum)
@@ -131,42 +167,42 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode rfin type NOHEATCLOUD;
-		explode lfin type NOHEATCLOUD;
-		explode nosea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode base type NOHEATCLOUD ;
+		explode fin1 type NOHEATCLOUD;
+		explode fin2 type NOHEATCLOUD;
+		explode nose type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode winga type NOHEATCLOUD;
-		explode wingb type NOHEATCLOUD;
+		explode wingb type NOHEATCLOUD ;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		explode rfin type FALL | NOHEATCLOUD;
-		explode lfin type FALL | NOHEATCLOUD;
-		explode nosea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode winga type FALL | NOHEATCLOUD;
-		explode wingb type SHATTER | NOHEATCLOUD;
+		explode base type NOHEATCLOUD ;
+		explode fin1 type NOHEATCLOUD;
+		explode fin2 type NOHEATCLOUD;
+		explode nose type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode winga type NOHEATCLOUD;
+		explode wingb type NOHEATCLOUD ;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode rfin type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lfin type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode nosea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode winga type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode wingb type SHATTER | NOHEATCLOUD;
+		explode base type NOHEATCLOUD ;
+		explode fin1 type NOHEATCLOUD;
+		explode fin2 type NOHEATCLOUD;
+		explode nose type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode winga type NOHEATCLOUD;
+		explode wingb type NOHEATCLOUD ;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
-	explode rfin type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode lfin type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode nosea type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode winga type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode wingb type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD ;
+	explode fin1 type NOHEATCLOUD;
+	explode fin2 type NOHEATCLOUD;
+	explode nose type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode winga type NOHEATCLOUD;
+	explode wingb type NOHEATCLOUD ;
 	return (corpsetype);
 }
