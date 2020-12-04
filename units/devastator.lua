@@ -2,8 +2,8 @@ return {
 	devastator = {
 		acceleration = 0.11,
 		brakerate = 0.21,
-		buildcostenergy = 21903,
-		buildcostmetal = 1452,
+		buildcostenergy = 15003,
+		buildcostmetal = 1302,
 		builder = false,
 		buildpic = "devastator.dds",
 		buildtime = 27000,

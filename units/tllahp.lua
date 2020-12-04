@@ -48,12 +48,12 @@ return {
 		buildoptions = {
 			[1] = "tllach",
 			[2] = "tllhengi",
-			[3] = "tllhcrus",
-			[4] = "tlldimetrodon",
-			[5] = "tlllochness",
-			[6] = "tllhopomis",
-			[7] = "tllhflak",
-			[8] = "tllhjam",
+			[3] = "tllhjam",
+			[4] = "tllhflak",
+			[5] = "tllhopomis",
+			[6] = "tlldimetrodon",
+			[7] = "tllhcrus",
+			[8] = "tlllochness",
 		},
 		customparams = {
 			buildpic = "tllahp.dds",

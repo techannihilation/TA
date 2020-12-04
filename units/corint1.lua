@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 293062,
 		buildcostmetal = 19395,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 13,
-		buildinggrounddecalsizey = 13,
-		buildinggrounddecaltype = "corint1_aoplane.dds",
 		buildpic = "corint1.dds",
 		buildtime = 405000,
 		canattack = true,
@@ -48,7 +44,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corint1",
-		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "corint1.dds",
