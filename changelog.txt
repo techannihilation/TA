@@ -15,6 +15,7 @@ Balance :
  - T2 bomber Talon & TLL : Decrease cost to balance with other T2
 
  Improvment :
+  - Add Advance Tidal, Windtrap for all T1 cons
   - Delete all seaplane. Sea Air lab can make classic T2 airplane
   - Delete Cloak MetalMaker T2 Arm
   - Delete Armored MetalMaker T2 Core

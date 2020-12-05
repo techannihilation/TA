@@ -96,7 +96,6 @@ return {
 			[14] = "tllllt",
 			[15] = "tlllmt",
 			[16] = "tllshoretorp",
-			[17] = "tllatidal",
 			[20] = "tllwmconv",
 			[21] = "tllsy",
 			[22] = "tllsonar",
