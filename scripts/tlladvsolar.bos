@@ -105,19 +105,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	dont-cache top;
-	dont-cache p1;
-	dont-cache p2;
-	dont-cache p3;
-	dont-cache p4;
-	dont-cache dish1;
-	dont-cache dish2;
-	dont-cache dish3;
-	dont-cache dish4;
-	dont-cache panela;
-	dont-cache panelb;
-	dont-cache panelc;
-	dont-cache paneld;
 	set ARMORED to 0;
 	move anglea to z-axis [5.500000] speed [8.000000];
 	move anglea to x-axis [5.500000] speed [8.000000];
@@ -140,10 +127,10 @@ Go()
 	turn dish2 to z-axis <-70.000000> speed <85.000000>;
 	turn dish4 to z-axis <70.000000> speed <85.000000>;
 	sleep 750;
-	turn p1 to z-axis <-35.000000> speed <30.000000>;
-	turn p3 to z-axis <35.000000> speed <30.000000>;
-	turn p2 to x-axis <-35.000000> speed <30.000000>;
-	turn p4 to x-axis <35.000000> speed <30.000000>;
+	//turn p1 to z-axis <-35.000000> speed <30.000000>;
+	//turn p3 to z-axis <35.000000> speed <30.000000>;
+	//turn p2 to x-axis <-35.000000> speed <30.000000>;
+	//turn p4 to x-axis <35.000000> speed <30.000000>;
 	wait-for-turn dish1 around x-axis;
 	spin top around y-axis speed Static_Var_2;
 	Static_Var_4 = 1;
@@ -185,15 +172,6 @@ Stop()
 	move anglec to x-axis [0.000000] speed [8.000000];
 	move angled to z-axis [0.000000] speed [8.000000];
 	move angled to x-axis [0.000000] speed [8.000000];
-	cache top;
-	cache dish1;
-	cache dish2;
-	cache dish3;
-	cache dish4;
-	cache panela;
-	cache panelb;
-	cache panelc;
-	cache paneld;
 	set ARMORED to 1;
 }
 
@@ -232,26 +210,7 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	hide tower;
-	dont-cache tower;
-	dont-cache top;
-	dont-cache p1;
-	dont-cache p2;
-	dont-cache p3;
-	dont-cache p4;
-	dont-cache dish1;
-	dont-cache dish2;
-	dont-cache dish3;
-	dont-cache dish4;
-	dont-cache panela;
-	dont-cache panelb;
-	dont-cache panelc;
-	dont-cache paneld;
-	dont-shade tower;
-	dont-shade anglea;
-	dont-shade angleb;
-	dont-shade anglec;
-	dont-shade angled;
-	Static_Var_2 = 910;
+	Static_Var_2 = 250;
 	Static_Var_3 = 0;
 	Static_Var_4 = 0;
 	move tower to y-axis [-25.000000] now;
@@ -271,40 +230,6 @@ Activate()
 Deactivate()
 {
 	start-script RequestState(1);
-}
-
-SetSpeed(Func_Var_1, Func_Var_2)
-{
-	if( get BUILD_PERCENT_LEFT == 0 )
-	{
-		Static_Var_2 = Func_Var_1 / 3;
-		if( !Static_Var_4 )
-		{
-			Func_Var_1 = 0;
-		}
-		Func_Var_2 = Func_Var_1 / 3;
-		spin top around y-axis speed Func_Var_2;
-		if( !Static_Var_4 )
-		{
-			turn top to y-axis <0.000000> speed <40.000000>;
-		}
-		sleep 100;
-	}
-	sleep 100;
-}
-
-SetDirection(heading)
-{
-	if( get BUILD_PERCENT_LEFT == 0 )
-	{
-		Static_Var_3 = heading;
-		if( !Static_Var_4 )
-		{
-			heading = 0;
-		}
-		sleep 100;
-	}
-	sleep 100;
 }
 
 SweetSpot(piecenum)

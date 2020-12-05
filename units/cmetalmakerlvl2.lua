@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "92 90 92",
 		collisionvolumetype = "CylY",
 		corpse = "heap",
-		damagemodifier = 0.15,
+		damagemodifier = 0.25,
 		description = "Converts upto 10290 Energy to Metal",
 		explodeas = "BANTHA_BLAST",
 		floater = false,

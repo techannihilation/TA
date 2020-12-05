@@ -16,7 +16,7 @@ return {
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumescales = "30 20 30",
 		collisionvolumetype = "Box",
-		damagemodifier = 0.3,
+		damagemodifier = 0.25,
 		description = "Converts upto 75 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 2,

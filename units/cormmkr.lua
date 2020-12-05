@@ -15,7 +15,7 @@ return {
 		buildtime = 48000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.3,
+		damagemodifier = 0.25,
 		description = "Converts upto 1024 Energy to Metal",
 		explodeas = "CRAWL_BLAST",
 		footprintx = 4,

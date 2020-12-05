@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "-2 0 0",
 		collisionvolumescales = "50 23 50",
 		collisionvolumetype = "CylY",
-		damagemodifier = 0.3,
+		damagemodifier = 0.25,
 		description = "Converts upto 50 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 3,
