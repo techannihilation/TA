@@ -54,9 +54,9 @@ return {
 		unitname = "aach",
 		workertime = 135,
 		buildoptions = {
-			[1] = "armsolar",
-			[2] = "armmex",
-			[3] = "aahp",
+			--[1] = "armsolar",
+			--[2] = "armmex",
+			--[3] = "aahp",
 			[4] = "armnanotc",
 			[5] = "armeyes",
 			[6] = "armarad",
@@ -86,7 +86,7 @@ return {
 			[30] = "armfhlt",
 			[31] = "armfguard",
 			[32] = "armatl",
-			[33] = "armfflak",				
+			[33] = "armfflak",
 		},
 		customparams = {
 			buildpic = "aach.dds",

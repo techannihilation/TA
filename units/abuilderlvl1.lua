@@ -52,9 +52,9 @@ return {
 		unitname = "abuilderlvl1",
 		workertime = 90,
 		buildoptions = {
-			[1] = "armsolar",
-			[2] = "armmex",
-			[3] = "armaap",
+			--[1] = "armsolar",
+			--[2] = "armmex",
+			--[3] = "armaap",
 			[4] = "armnanotc",
 			[5] = "armeyes",
 			[6] = "armveil",

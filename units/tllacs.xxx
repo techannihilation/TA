@@ -63,7 +63,7 @@ return {
 			[5] = "tllsy",
 			[6] = "tllasy",
 			[7] = "tllplat",
-			[8] = "tllsubpen",
+			--[8] = "tllsubpen",
 			[9] = "tllesy",
 			[10] = "tllfnanotc1",
 			[11] = "tllfgate",

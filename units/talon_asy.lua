@@ -52,13 +52,13 @@ return {
 		buildoptions = {
 			[1] = "talon_acs",
 			[2] = "talon_dioptase",
-			[3] = "talon_crus",
+			[3] = "talon_anonymous",
 			[4] = "talon_aas",
 			[5] = "talon_jellyfish",
-			[6] = "talon_anonymous",
-			[7] = "talon_nexus",
-			[8] = "talon_zamak",
-			[9] = "talon_imperator",			
+			[6] = "talon_crus",
+			[7] = "talon_zamak",
+			[8] = "talon_nexus",
+			[9] = "talon_imperator",
 		},
 		customparams = {
 			buildpic = "talon_asy.dds",

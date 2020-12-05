@@ -1,3 +1,27 @@
+3.58 -> 3.60
+2020-12-06
+
+Balance :
+ - AdvSolar are not often played cause of drillers, advwind... Now, their energycost are decrease by 85%. So if a player have Metal, he could transform quickly into Solar or AdvSolar. New gamplay for Blu_fields map and classic map.
+ - Increase Meteor cost 1.6M => 1.9. 500ME => 600ME
+ - Decrease metalcost for All T1 amphibious tank (200=>180M)
+ - Increase metalcost for all T1 Air transport (70=>100M)
+ - Increase damage for all torpedo bombers (+13dmg/s)
+ - T1 Air Fighter TLL : Decrease cost to balance with other T1
+ - T2 bomber Talon & TLL : Decrease cost to balance with other T2
+ - Balance T1/T2 Sub. Delete sub extradamage for T2 sub. Increase cost for Battle Sub.
+
+ Improvment :
+  - All Advance Solar, Tidal, Windtrap for all T1 cons
+  - Delete all Mex and solar from engineers panelmenu
+  - Delete all seaplane. Sea Air lab can make classic T2 airplane
+  - Change order in T1/T2/T3 lab (work in progress)
+  - Adv Solar TLL is not anymore Wind trap
+  - Delete Sub Lab for TLL (Turtle do already jobs)
+  - Delete Whale (missile Sub T2 TLL)
+  - Add Shark (Crawling sub bomb in naval TLL Engineers)
+  - Decrease minwaterdepth for all T3 Sea Lab (should be better to make lab easely)
+
 3.57 -> 3.58
 2020-12-03
 

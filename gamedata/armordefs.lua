@@ -365,16 +365,6 @@ return {
 	raider_resistant = {
 
 	},
-	bomb_resistant = {
-	"armcir",
-	"corerad",
-	"tlltetanos",
-	"mercury",
-	"screamer",
-	"talon_ptr",
-	"tllhmt",
-	"talon_cir",
-	},
 	crawlingbombs = {
 	"armvader",
 	"corroach",

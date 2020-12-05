@@ -115,7 +115,6 @@ return {
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {
-					bomb_resistant = 95,
 					commanders = 95,
 					default = 260,
 					subs = 130,

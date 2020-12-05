@@ -118,7 +118,6 @@ return {
 				targetborder = 0,
 				weapontype = "AircraftBomb",
 				damage = {
-					bomb_resistant = 650,
 					commanders = 650,
 					default = 2000,
 					subs = 1000,

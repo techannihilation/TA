@@ -64,9 +64,9 @@ return {
 		unitname = "talon_ev",
 		workertime = 135,
 		buildoptions = {
-			[1] = "talon_solar",
-			[2] = "talon_mex",
-			[3] = "talon_avp",
+			--[1] = "talon_solar",
+			--[2] = "talon_mex",
+			--[3] = "talon_avp",
 			[4] = "talon_nanotc",
 			[5] = "talon_mine1",
 			[6] = "talon_fort",

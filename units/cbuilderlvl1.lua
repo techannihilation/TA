@@ -57,9 +57,9 @@ return {
 		unitname = "cbuilderlvl1",
 		workertime = 100,
 		buildoptions = {
-			[1] = "corsolar",
-			[2] = "cormex",
-			[3] = "coraap",
+			--[1] = "corsolar",
+			--[2] = "cormex",
+			--[3] = "coraap",
 			[4] = "cornanotc",
 			[5] = "coreyes",
 			[6] = "corshroud",

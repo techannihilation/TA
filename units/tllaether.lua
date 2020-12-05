@@ -123,7 +123,6 @@ return {
 				weapontype = "AircraftBomb",
 				weaponvelocity = 600,
 				damage = {
-					bomb_resistant = 200,
 					commanders = 200,
 					default = 600,
 				},

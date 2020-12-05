@@ -55,9 +55,9 @@ return {
 		workertime = 200,
 		buildoptions = {
 			[1] = "coreyes",
-			[2] = "cortide",
-			[3] = "coruwmex",
-			[4] = "corasy",
+			--[2] = "cortide",
+			--[3] = "coruwmex",
+			--[4] = "corasy",
 			[5] = "corfnanotc",
 			[6] = "corfdrag",
 			[7] = "corfrad",

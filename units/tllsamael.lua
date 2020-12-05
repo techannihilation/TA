@@ -250,7 +250,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1250,
 				damage = {
-					bomb_resistant = 6000,
 					commanders = 3000,
 					default = 30000,
 					experimental_land = 60000,

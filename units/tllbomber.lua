@@ -118,7 +118,6 @@ return {
 				sprayangle = 300,
 				weapontype = "AircraftBomb",
 				damage = {
-					bomb_resistant = 60,
 					commanders = 60,
 					default = 160,
 					subs = 80,

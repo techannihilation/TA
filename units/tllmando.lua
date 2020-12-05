@@ -102,7 +102,7 @@ return {
 			[39] = "tllhpns",
 			[40] = "tllsy",
 			[41] = "tllasy",
-			[42] = "tllsubpen",
+			--[42] = "tllsubpen",
 			[43] = "tllfnanotc",
 			[44] = "tllradarns",
 			[45] = "tllsonar",

@@ -58,9 +58,9 @@ return {
 		unitname = "corassis",
 		workertime = 150,
 		buildoptions = {
-			[1] = "corsolar",
-			[2] = "cormex",
-			[3] = "coravp",
+			--[1] = "corsolar",
+			--[2] = "cormex",
+			--[3] = "coravp",
 			[4] = "cornanotc",
 			[5] = "coreyes",
 			[6] = "corshroud",

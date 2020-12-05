@@ -56,9 +56,9 @@ return {
 		unitname = "tllarchnano",
 		workertime = 180,
 		buildoptions = {
-			[1] = "tllsolar",
-			[2] = "tllmex",
-			[3] = "tllalab",
+			--[1] = "tllsolar",
+			--[2] = "tllmex",
+			--[3] = "tllalab",
 			[4] = "tllnanotc",
 			[5] = "tlladt",
 			[6] = "tlltower",

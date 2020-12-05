@@ -116,7 +116,6 @@ return {
 				tolerance = 7000,
 				weapontype = "AircraftBomb",
 				damage = {
-					bomb_resistant = 1000,
 					commanders = 1000,
 					default = 4000,
 					experimental_land = 6000,

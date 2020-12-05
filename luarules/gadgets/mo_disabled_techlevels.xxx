@@ -36,7 +36,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		[UnitDefNames.armevp.id] = 3, -- T3 Veh
 		[UnitDefNames.armeap.id] = 3, -- T3 Kbot
 		[UnitDefNames.arm_mech_lab.id] = 4, -- T4 Kbot
-		[UnitDefNames.ashipyardlvl3.id] = 5, -- T5 HERO 
+		[UnitDefNames.ashipyardlvl3.id] = 5, -- T5 HERO
 
 		-- CORE --
 		[UnitDefNames.coralab.id] = 2, -- T2 Kbot
@@ -53,24 +53,24 @@ if (gadgetHandler:IsSyncedCode()) then
 		[UnitDefNames.corevp.id] = 3, -- T3 Veh
 		[UnitDefNames.coreap.id] = 3, -- T3 Kbot
 		[UnitDefNames.core_hexapod_lab.id] = 4, -- T4 Kbot
-		[UnitDefNames.cshipyardlvl4.id] = 5, -- T5 HERO 
+		[UnitDefNames.cshipyardlvl4.id] = 5, -- T5 HERO
 
 		-- TLL --
 		[UnitDefNames.tllalab.id] = 2, -- T2 Kbot
 		[UnitDefNames.tllturtle_lab.id] = 2, -- T2 All-Terrian
 		[UnitDefNames.tllavp.id] = 2, -- T2 Veh
-		[UnitDefNames.tllahp.id] = 2, -- T2 Hovercraft 
+		[UnitDefNames.tllahp.id] = 2, -- T2 Hovercraft
 		[UnitDefNames.tllaap.id] = 2, -- T2 Aircraft
 		[UnitDefNames.tllplat.id] = 2, -- T2 Seaplane
 		[UnitDefNames.tllahpns.id] = 2, -- T2 Hovercraft NS
 		[UnitDefNames.tllasy.id] = 2, -- T2 Shipyard
-		[UnitDefNames.tllsubpen.id] = 2, -- T2 Subs
+		--[UnitDefNames.tllsubpen.id] = 2, -- T2 Subs
 
 		[UnitDefNames.tllhtcp.id] = 3, -- T3 Kbot
 		[UnitDefNames.tllevp.id] = 3, -- T3 Veh
-		[UnitDefNames.tlleap.id] = 3, -- T3 Aircraft 
+		[UnitDefNames.tlleap.id] = 3, -- T3 Aircraft
 		[UnitDefNames.tllprototype.id] = 4, -- T4 Kbot
-		[UnitDefNames.tllshipyardlvl3.id] = 5 -- T5 HERO 
+		[UnitDefNames.tllshipyardlvl3.id] = 5 -- T5 HERO
 	}
 
 	GG.ignoredBuilders = Builders

@@ -28,7 +28,7 @@ return {
 		losemitheight = 73,
 		mass = 15977,
 		maxdamage = 10829,
-		minwaterdepth = 86,
+		minwaterdepth = 50,
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
 		noautofire = false,

@@ -50,9 +50,9 @@ return {
 		unitname = "talon_medic",
 		workertime = 90,
 		buildoptions = {
-			[1] = "talon_solar",
-			[2] = "talon_mex",
-			[3] = "talon_aap",
+			--[1] = "talon_solar",
+			--[2] = "talon_mex",
+			--[3] = "talon_aap",
 			[4] = "talon_nanotc",
 			[5] = "talon_mine1",
 			[6] = "talon_fort",

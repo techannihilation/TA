@@ -58,9 +58,9 @@ return {
 		upright = true,
 		workertime = 135,
 		buildoptions = {
-			[1] = "armsolar",
-			[2] = "armmex",
-			[3] = "armalab",
+			--[1] = "armsolar",
+			--[2] = "armmex",
+			--[3] = "armalab",
 			[4] = "armnanotc",
 			[5] = "armeyes",
 			[6] = "armveil",

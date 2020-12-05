@@ -66,7 +66,7 @@ return {
 			[6] = "tllplat",
 			[7] = "tllsy",
 			[8] = "tllasy",
-			[9] = "tllsubpen",
+			--[9] = "tllsubpen",
 			[10] = "tllesy",
 		},
 		customparams = {

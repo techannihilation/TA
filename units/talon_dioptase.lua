@@ -55,9 +55,9 @@ return {
 		unitname = "talon_dioptase",
 		workertime = 200,
 		buildoptions = {
-			[1] = "talon_tide",
-			[2] = "talon_uwmex",
-			[3] = "talon_asy",
+			--[1] = "talon_tide",
+			--[2] = "talon_uwmex",
+			--[3] = "talon_asy",
 			[4] = "talon_fnanotc",
 			[5] = "talon_fnanotc",
 			[6] = "talon_frad",

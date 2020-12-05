@@ -57,9 +57,9 @@ return {
 		unitname = "tllbuilderlvl1",
 		workertime = 180,
 		buildoptions = {
-			[1] = "tllsolar",
-			[2] = "tllmex",
-			[3] = "tllaap",
+			--[1] = "tllsolar",
+			--[2] = "tllmex",
+			--[3] = "tllaap",
 			[4] = "tllnanotc",
 			[5] = "tlladt",
 			[6] = "tlltower",

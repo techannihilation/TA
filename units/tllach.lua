@@ -82,7 +82,7 @@ return {
 			[24] = "tllahpns",
 			[25] = "tllsy",
 			[26] = "tllasy",
-			[27] = "tllsubpen",
+			--[27] = "tllsubpen",
 			[28] = "tllesy",
 			[29] = "tllfnanotc1",
 			[30] = "tllfgate",

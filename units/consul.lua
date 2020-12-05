@@ -64,9 +64,9 @@ return {
 		unitname = "consul",
 		workertime = 135,
 		buildoptions = {
-			[1] = "armsolar",
-			[2] = "armmex",
-			[3] = "armavp",
+			--[1] = "armsolar",
+			--[2] = "armmex",
+			--[3] = "armavp",
 			[4] = "armnanotc",
 			[5] = "armeyes",
 			[6] = "armarad",

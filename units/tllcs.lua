@@ -74,7 +74,7 @@ return {
 			[14] = "tllplat",
 			[15] = "tllhpns",
 			[16] = "tllahpns",
-			[17] = "tllsubpen",
+			--[17] = "tllsubpen",
 			[18] = "tllfnanotc",
 			[19] = "tllradarns",
 			[20] = "tllsonar",

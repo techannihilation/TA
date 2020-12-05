@@ -28,7 +28,7 @@ return {
 		losemitheight = 93,
 		mass = 16080,
 		maxdamage = 10598,
-		minwaterdepth = 89,
+		minwaterdepth = 50,
 		mobilestandorders = 1,
 		name = "Capital Shipyard",
 		noautofire = false,

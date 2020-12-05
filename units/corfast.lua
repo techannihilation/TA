@@ -60,9 +60,9 @@ return {
 		upright = true,
 		workertime = 150,
 		buildoptions = {
-			[1] = "corsolar",
-			[2] = "cormex",
-			[3] = "coralab",
+			--[1] = "corsolar",
+			--[2] = "cormex",
+			--[3] = "coralab",
 			[4] = "cornanotc",
 			[5] = "coreyes",
 			[6] = "corshroud",
