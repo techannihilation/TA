@@ -172,15 +172,16 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-	if( bAiming == 1 )
+	while( bAiming == 0 )
 	{
-		signal SIG_AIM;
-		set-signal-mask SIG_AIM;
-		turn blaster to y-axis heading speed <80.000000>;
-		wait-for-turn blaster around y-axis;
-		start-script RestoreAfterDelay();
-		return (1);
+		sleep 500;
 	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn blaster to y-axis heading speed <80.000000>;
+	wait-for-turn blaster around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
 }
 
 FirePrimary()
