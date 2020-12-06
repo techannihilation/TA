@@ -60,8 +60,6 @@ return {
 			[3] = "armanac",
 			[4] = "armah",
 			[5] = "armmh",
-			[6] = "armthovr",
-			--[7] = "armvisit",
 		},
 		customparams = {
 			buildpic = "armhp.dds",

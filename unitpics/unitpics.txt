@@ -298,7 +298,6 @@ armtabi.dds
 armtarantula.dds
 armtarg.dds
 armtem.dds
-armthovr.dds
 armthund.dds
 armtick.dds
 armtide.dds
@@ -623,7 +622,6 @@ corsumo.dds
 corsy.dds
 cortarg.dds
 cortermite.dds
-corthovr.dds
 corthud1.dds
 corthud.dds
 cortide.dds

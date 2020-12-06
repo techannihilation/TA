@@ -1,3 +1,13 @@
+3.60 -> 3.61
+2020-12-10
+
+Balance :
+ - Plasma T1 Hover : reduce cost. Increase range 320=>350
+
+ Improvment :
+ - Delete Transport Hover
+ - Add new modlels for T1/T1.5 Wind TLL
+
 3.58 -> 3.60
 2020-12-06
 
