@@ -30,7 +30,7 @@ local windDefs = {
   [ UnitDefNames['talon_win1'].id ] = true,
 }
 
-local tllDefs = UnitDefNames['tllawindtrap'].id
+--local tllDefs = UnitDefNames['tllawindtrap'].id
 local windmills = {}
 local groundMin, groundMax = 0,0
 local groundExtreme = 0
@@ -48,7 +48,7 @@ local GetCOBScriptID       = Spring.GetCOBScriptID
 local GetWind              = Spring.GetWind
 local GetUnitDefID         = Spring.GetUnitDefID
 local GetHeadingFromVector = Spring.GetHeadingFromVector
-local windMin              = Game.windMin 
+local windMin              = Game.windMin
 local windMax              = Game.windMax
 local AddUnitResource      = Spring.AddUnitResource
 local SpGetAllUnits        = Spring.GetAllUnits
@@ -119,14 +119,14 @@ end
 
 
 function gadget:UnitTaken(unitID, unitDefID, unitTeam)
-  if (windDefs[unitDefID]) then 
+  if (windDefs[unitDefID]) then
     SetupUnit(unitID,unitDefID)
   end
 end
 
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-  if (windDefs[unitDefID]) then 
+  if (windDefs[unitDefID]) then
     windmills[unitID] = nil
   end
 end
@@ -134,4 +134,3 @@ end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
-
