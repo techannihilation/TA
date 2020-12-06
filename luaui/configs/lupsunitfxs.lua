@@ -563,9 +563,6 @@ talon_handgod = {
   armfig = {
     {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
   },
-  armsfig = {
-    {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
-  },
   armseap = {
     {class='AirJet',options={color={0.3,0.2,0}, width=6, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
@@ -589,10 +586,6 @@ talon_handgod = {
   corveng = {
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrusta1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrusta2", noIconDraw = true, priority=3, onActive=true}},
-  },
-  corsfig = {
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
-    {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
   },
   corseap = {
     {class='AirJet',options={color={0.3,0.1,0}, width=3, length=42, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
@@ -624,9 +617,6 @@ talon_handgod = {
   corawac = {
     {class='AirJet',options={color={0.8,0.45,0}, width=4, length=50, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
-  corhunt = {
-    {class='AirJet',options={color={0.8,0.45,0}, width=4, length=50, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
-  },
   armawac = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=50, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
@@ -641,10 +631,6 @@ talon_handgod = {
     {class='AirJet',options={color={0.1,0.5,0.3}, width=3.5, length=60, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.1,0.5,0.3}, width=3.5, length=60, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
   },
-  corsb = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=76, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.5, length=76, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
-  },
   abuilderlvl1 = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit2", noIconDraw = true, priority=3, onActive=true}},
@@ -658,9 +644,6 @@ talon_handgod = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit5", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit6", noIconDraw = true, priority=3, onActive=true}},
 
-  },
-  armsb = {
-    {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=70, piece="emit1", noIconDraw = true, priority=3, onActive=true}},
   },
   corgripn = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=60, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
@@ -816,9 +799,6 @@ coreca = {
     {class='AirJet',options={color={0,0,1}, width=2, length=18, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=3, length=20, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=3, length=20, piece="thrust5", noIconDraw = true, priority=3, onActive=true}},
- },
- tllseaf = {
-    {class='AirJet',options={color={1,1,1}, width=6, length=18, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
  },
  tllabomber = {
     {class='AirJet',options={color={0,0,1}, width=3, length=24, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},

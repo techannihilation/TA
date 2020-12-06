@@ -145,7 +145,6 @@ local Tlltrailssb = {
   ["tllconvincer_armtruck_rocket"] = true,
   ["tllhoverrocket_tll_vpulse"] = true,
   ["tllhrk_corhrk_rocket"] = true,
-  ["tllwhale_whale_vpulse"] = true,
   ["tlldb_dragon_breath_missile"] = true,
 }
 

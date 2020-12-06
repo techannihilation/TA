@@ -33,14 +33,11 @@ local NO_LAND_DAMAGE = {
   [WeaponDefNames['armlance_armair_torpedo'].id] = true,
   [WeaponDefNames['cortitan_armair_torpedo'].id] = true,
   [WeaponDefNames['tlltorpp_armair_torpedo'].id] = true,
-  [WeaponDefNames['armseap_armseap_weapon1'].id] = true,
-  [WeaponDefNames['corseap_armseap_weapon1'].id] = true,
-  [WeaponDefNames['tllseab_armseap_weapon1'].id] = true,
   [WeaponDefNames['armroy_depthcharge'].id] = true,
   [WeaponDefNames['corroy_depthcharge'].id] = true,
   [WeaponDefNames['armcrus_advdepthcharge'].id] = true,
   [WeaponDefNames['corcrus_advdepthcharge'].id] = true,
-  [WeaponDefNames['armsub_arm_torpedo'].id] = true, 
+  [WeaponDefNames['armsub_arm_torpedo'].id] = true,
   [WeaponDefNames['corsub_arm_torpedo'].id] = true,
   [WeaponDefNames['tllplunger_arm_torpedo'].id] = true,
   [WeaponDefNames['armsubk_armsmart_torpedo'].id] = true,
@@ -53,15 +50,15 @@ local NO_LAND_DAMAGE = {
   [WeaponDefNames['tllorc_corssub_weapon'].id] = true,
   [WeaponDefNames['coramph_coramph_weapon1'].id] = true,
   [WeaponDefNames['tllamphibot_coramph_weapon1'].id] = true,
-  [WeaponDefNames['tlltorpcop_tllair_torpedo'].id] = true,
+  --Add Talon units
 }
 
-function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, 
+function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer,
                             weaponID, projectileID, attackerID, attackerDefID, attackerTeam)
   if NO_LAND_DAMAGE[weaponID] then
-    if select(2,GetUnitBasePosition(unitID)) > 0 then 
+    if select(2,GetUnitBasePosition(unitID)) > 0 then
       return (damage * 0.2),1
-    else 
+    else
       return damage,1
     end
   else

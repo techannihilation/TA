@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "Box",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range Plasma Cannon",
-		explodeas = "NUKE_MINE",
+		explodeas = "CRAWL_BLAST",
 		firestandorders = 2,
 		footprintx = 8,
 		footprintz = 8,

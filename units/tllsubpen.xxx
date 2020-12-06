@@ -59,7 +59,6 @@ return {
 			[8] = "tllleatherback",
 			[9] = "tllmanta",
 			[10] = "tllorc",
-			[11] = "tllwhale",
 			[12] = "tllshark",
 		},
 		customparams = {

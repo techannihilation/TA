@@ -270,7 +270,6 @@ armseap.dds
 armseer.dds
 armsehak.dds
 armses.dds
-armsfig.dds
 armsh175.dds
 armsh.dds
 armshltx1.dds
@@ -598,7 +597,6 @@ corseal.dds
 corseap.dds
 corsent.dds
 corses.dds
-corsfig.dds
 corsfus.dds
 corshad.dds
 corshark.dds
@@ -960,7 +958,6 @@ tllviolator.dds
 tllvisitor.dds
 tllvp.dds
 tllweb.dds
-tllwhale.dds
 tllwindtrap.dds
 tllwmconv.dds
 tllwmmohoconv.dds

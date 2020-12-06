@@ -23,7 +23,7 @@ end
 local GetUnitCommands = Spring.GetUnitCommands
 local SpGiveOrderArrayToUnitArray = Spring.GiveOrderArrayToUnitArray
 local SpGetUnitPosition = Spring.GetUnitPosition
-local SpGetUnitBuildFacing = Spring.GetUnitBuildFacing 
+local SpGetUnitBuildFacing = Spring.GetUnitBuildFacing
 local pairs = pairs
 local CMD_WANTED_SPEED = 38825
 local badfactories={
@@ -32,17 +32,21 @@ local badfactories={
   [UnitDefNames["corfhp"].id] = true,
   [UnitDefNames["cahpns"].id] = true,
   [UnitDefNames["csubpen"].id] = true,
-  
+
   [UnitDefNames["armsy"].id] = true,
   [UnitDefNames["armasy"].id] = true,
   [UnitDefNames["armfhp"].id] = true,
   [UnitDefNames["aahpns"].id] = true,
   [UnitDefNames["asubpen"].id] = true,
-  
-  --[UnitDefNames["tllsy"].id] = true,
+
+  [UnitDefNames["tllturtle_lab"].id] = true,
   [UnitDefNames["tllasy"].id] = true,
   [UnitDefNames["tllhpns"].id] = true,
-  [UnitDefNames["tllsubpen"].id] = true,
+
+  [UnitDefNames["talon_sy"].id] = true,
+  [UnitDefNames["talon_asy"].id] = true,
+  [UnitDefNames["talon_ahpns"].id] = true,
+  [UnitDefNames["talon_hpns"].id] = true,
 }
 
 --------------------------------------------------------------------------------
@@ -68,7 +72,7 @@ end
 
 function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, userOrders)
 	--Spring.Echo('UnitFromFactorycommands:',to_string(Spring.GetUnitCommands(unitID)))
-			
+
 	if userOrders then
 		local cmd=GetUnitCommands(unitID)
 		if cmd and #cmd==1 and cmd[1]['id']==CMD_WANTED_SPEED then
@@ -76,7 +80,7 @@ function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, 
 			--Spring.Echo('UnitFromFactorycommands:',to_string(Spring.GetUnitCommands(unitID)))
 			--Spring.Echo('Factorycommands:',to_string(factcmd))
 			--Spring.Echo('FactorycmdID:',factcmd[1]['id'])
-			
+
 			local newcmd={}
 			--Spring.Echo('newcmd',to_string(newcmd),factcmd)
 			if #factcmd >0 then
