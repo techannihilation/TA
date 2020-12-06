@@ -79,7 +79,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	Static_Var_1 = 800;
+	Static_Var_1 = 0;
 	Static_Var_2 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
