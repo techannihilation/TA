@@ -1,12 +1,17 @@
-3.60 -> 3.61
-2020-12-10
+3.60 -> 3.62
+2020-12-11
 
 Balance :
  - Plasma T1 Hover : reduce cost. Increase range 320=>350
+ - Mako (T2 Ship TLL Shielded) : Decrease stats and cost
 
  Improvment :
  - Delete Transport Hover
  - Add new modlels for T1/T1.5 Wind TLL
+ - Decrease Ares TLL T1 tank model
+
+ Fix:
+ - Script about T3 Air, T2 Shield TLL Ship
 
 3.58 -> 3.60
 2020-12-06

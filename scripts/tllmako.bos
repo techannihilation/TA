@@ -3,81 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1a, flare1b, flare2a, flare2b, base, body, gun,
-       turret, sleeve1, sleeve2, wake1, wake2,
+piece  flare1a, flare1b, flare2a, flare2b, base, body, gun, turret, sleeve1, sleeve2, wake1, wake2,
        barrel1a, barrel1b, barrel2a, barrel2b;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, shieldonoff, 
-            ignite1, ignite2, ignite3;
+static-var  Gun_1, shieldonoff;
 
-
-SetDirection(heading)
-{
-	var Func_Var_2;
-	Func_Var_2 = get ABS(heading);
-	turn body to y-axis heading speed Func_Var_2;
-	turn base to y-axis <0.000000> - heading speed Func_Var_2;
-}
-
-RockOnWaves()
-{
-	while( TRUE )
-	{
-		turn body to x-axis <1.000000> speed <1.000000>;
-		move body to y-axis [0.] speed [0.];
-		wait-for-turn body around x-axis;
-		turn body to x-axis <-1.000000> speed <1.000000>;
-		move body to y-axis [0.] speed [0.];
-		wait-for-move body along y-axis;
-		move body to y-axis [0.] speed [0.];
-		wait-for-turn body around x-axis;
-		turn body to x-axis <1.000000> speed <1.000000>;
-		move body to y-axis [0.] speed [0.];
-		wait-for-move body along y-axis;
-	}
-}
-
-ProjXPW(Func_Var_1, Func_Var_2)
-{
-	if( Func_Var_2 < -21840 )
-	{
-		Static_Var_8 = Func_Var_1 * ( Func_Var_2 + 32760 ) / 10920;
-	}
-	else if( Func_Var_2 > 21840 )
-	{
-		Static_Var_8 = Func_Var_1 * ( 32760 - Func_Var_2 ) / 10920;
-	}
-	else if( Func_Var_2 < -10920 )
-	{
-		Static_Var_8 = 0 - Func_Var_1;
-	}
-	else if( Func_Var_2 > 10920 )
-	{
-		Static_Var_8 = Func_Var_1;
-	}
-	else
-	{
-		Static_Var_8 = Func_Var_1 * Func_Var_2 / 10920;
-	}
-}
-
-RockZ(Func_Var_1, Func_Var_2)
-{
-	signal 16;
-	set-signal-mask 16;
-	call-script ProjXPW(10920 / Func_Var_2,Func_Var_1);
-	Static_Var_9 = Static_Var_9 + Static_Var_8;
-	Static_Var_8 = get ABS(Static_Var_9);
-	while( Static_Var_8 > 91 )
-	{
-		turn base to z-axis Static_Var_9 speed Static_Var_8 * <0.000000>;
-		wait-for-turn base around z-axis;
-		Static_Var_9 = Static_Var_9 * -1 / 2;
-		Static_Var_8 = get ABS(Static_Var_9);
-	}
-	turn base to z-axis <0.000000> speed <2.000000>;
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -117,29 +47,16 @@ Create()
 	hide flare1b;
 	hide flare2a;
 	hide flare2b;	
-	Static_Var_1 = 1;
-	Static_Var_2 = 0;
-	Static_Var_4 = 0;
-	Static_Var_5 = 0;
-	Static_Var_6 = 0;
-	Static_Var_3 = 3000;
-	Static_Var_9 = 0;
+	Gun_1 = 0;
 	start-script SmokeUnit();
-	start-script RockOnWaves();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_3 = Func_Var_1 * 8;
 }
 
 RestoreAfterDelay()
 {
-	sleep Static_Var_3;
-	turn turret to y-axis <0.000000> speed <20.000000>;
+	sleep 3000;
+	turn turret to y-axis <0.000000> speed <30.000000>;
 	turn sleeve1 to x-axis <0.000000> speed <15.000000>;
 	turn sleeve2 to x-axis <0.000000> speed <15.000000>;
-	Static_Var_1 = 0;
 }
 
 StartMoving()
@@ -163,73 +80,45 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	Static_Var_1 = 0;
 	turn turret to y-axis heading speed <30.000000>;
 	turn sleeve1 to x-axis <0.000000> - pitch speed <20.000000>;
+	turn sleeve2 to x-axis <0.000000> - pitch speed <20.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve1 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-AimSecondary(heading, pitch)
-{
-	signal 4;
-	set-signal-mask 4;
-	Static_Var_1 = 1;
-	turn sleeve2 to x-axis <0.000000> - pitch speed <20.000000>;
-	wait-for-turn turret around y-axis;
-	wait-for-turn sleeve2 around x-axis;
-	return (1);
-}
-
-AimWeapon3(heading, pitch)
-{
-	sleep 100;
-	return (Static_Var_1);
-}
-
 FirePrimary()
 {
-	start-script RockZ(-5,Static_Var_7);
-	if( Static_Var_4 == 0 )
+	if( Gun_1 == 0 or Gun_1 == 3)
 	{
+		Gun_1 = 0;
 		emit-sfx 1024 from flare1a;
 		move barrel1a to z-axis [-1.000000] speed [500.000000];
 		sleep 150;
 		move barrel1a to z-axis [0.000000] speed [3.000000];
-		Static_Var_4 = 1;
-		return (0);
-	}
-	if( Static_Var_4 == 1 )
-	{
-		emit-sfx 1024 from flare1b;
+		Gun_1 = 1;
+		emit-sfx 1025 from flare1b;
 		move barrel1b to z-axis [-1.000000] speed [500.000000];
 		sleep 150;
 		move barrel1b to z-axis [0.000000] speed [3.000000];
-		Static_Var_4 = 0;
+		Gun_1 = 2;		
 		return (0);
 	}
-}
-
-FireSecondary()
-{
-	if( Static_Var_2 == 0 )
+	if( Gun_1 == 2 )
 	{
-		emit-sfx 1025 from flare2a;
-		move barrel2a to z-axis [-1.000000] speed [500.000000];
-		sleep 150;
-		move barrel2a to z-axis [0.000000] speed [3.000000];
-		Static_Var_2 = 1;
-		return (0);
-	}
-	if( Static_Var_2 == 1 )
-	{
-		emit-sfx 1025 from flare2b;
+		
+		Gun_1 = 2;
+		emit-sfx 1024 from flare2b;
 		move barrel2b to z-axis [-1.000000] speed [500.000000];
 		sleep 150;
 		move barrel2b to z-axis [0.000000] speed [3.000000];
-		Static_Var_2 = 0;
+		Gun_1 = 3;		
+		emit-sfx 1025 from flare2a;
+		move barrel2a to z-axis [-1.000000] speed [500.000000];
+		sleep 150;
+		move barrel2a to z-axis [0.000000] speed [3.000000];		
 		return (0);
 	}
 }
@@ -241,31 +130,27 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_4 == 0 )
+	if( Gun_1 == 0 )
 	{
 		piecenum = flare1a;
 	}
-	if( Static_Var_4 == 1 )
+	if( Gun_1 == 1 )
 	{
 		piecenum = flare1b;
 	}
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = turret;
-}
-
-QuerySecondary(piecenum)
-{
-	if( Static_Var_2 == 0 )
-	{
-		piecenum = flare2a;
-	}
-	if( Static_Var_2 == 1 )
+	if( Gun_1 == 2 )
 	{
 		piecenum = flare2b;
 	}
+	if( Gun_1 == 3 )
+	{
+		piecenum = flare2a;
+	}
+}
+
+AimWeapon3(heading, pitch)
+{
+	return (shieldonoff);
 }
 
 AimFromWeapon3(piecenum)
@@ -277,6 +162,13 @@ QueryWeapon3(piecenum)
 {
 	piecenum = gun;
 }
+
+FireWeapon3()
+{
+	explode gun type NOHEATCLOUD | FALL;
+	sleep 100;
+}
+
 
 SweetSpot(piecenum)
 {
@@ -317,23 +209,6 @@ Killed(severity, corpsetype)
 		explode turret type NOHEATCLOUD | NOHEATCLOUD;
 		explode wake1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode wake2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode barrel1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode barrel2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode barrel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
-		explode flare1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode flare1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode flare2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode flare2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode turret type NOHEATCLOUD;
-		explode wake1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode wake2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;

@@ -17,7 +17,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Safe Plasma Deflector Kbot",
-		energystorage = 1500,
+		energystorage = 500,
 		explodeas = "BIG_UNIT",
 		footprintx = 4,
 		footprintz = 4,

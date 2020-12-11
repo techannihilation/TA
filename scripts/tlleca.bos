@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, rwing, lwing, wake1, wake2, nano, body;
+piece  base, rwing, lwing, nano, body;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -116,18 +116,6 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	while( TRUE )
-	{
-		if( Static_Var_1 == 3 )
-		{
-			emit-sfx 256 | 3 from body;
-			emit-sfx 256 | 3 from lwing;
-			emit-sfx 256 | 3 from rwing;
-			emit-sfx 256 | 3 from wake1;
-			emit-sfx 256 | 3 from wake2;
-		}
-		sleep 150;
-	}
 }
 
 StopMoving()
@@ -163,43 +151,27 @@ Killed(severity, corpsetype)
 		explode body type NOHEATCLOUD;
 		explode lwing type NOHEATCLOUD;
 		explode rwing type NOHEATCLOUD;
-		explode wake1 type NOHEATCLOUD;
-		explode wake2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
 		explode lwing type NOHEATCLOUD;
 		explode rwing type NOHEATCLOUD;
 		explode body type NOHEATCLOUD | SHATTER;
-		explode wake1 type NOHEATCLOUD | FALL;
-		explode wake2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD;
 		explode lwing type NOHEATCLOUD;
 		explode rwing type NOHEATCLOUD;
 		explode body type NOHEATCLOUD | SHATTER;
-		explode wake1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
-		explode wake2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
 	explode rwing type NOHEATCLOUD;
 	explode lwing type NOHEATCLOUD;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode wake1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
-	explode wake2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
-}
-
-setSFXoccupy(state)
-{
-	Static_Var_1 = state;
 }

@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, winga, wingb, fin1, fin2, nose, w1,
-       w2, w3, w4, w5, w6, w7, w8, wakes;
+piece  base, body, winga, wingb, fin1, fin2, nose;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
@@ -18,19 +17,7 @@ StartMoving()
 {
 	signal 2;
 	set-signal-mask 2;
-	while( TRUE )
-	{
-		if( Static_Var_3 == 3 )
-		{
-			emit-sfx 256 | 3 from w5;
-			emit-sfx 256 | 3 from w6;
-			emit-sfx 256 | 3 from w3;
-			emit-sfx 256 | 3 from w4;
-			emit-sfx 256 | 3 from w7;
-			emit-sfx 256 | 3 from w8;
-		}
-		sleep 150;
-	}
+
 }
 
 StopMoving()

@@ -20,7 +20,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Mobile Armored Safe Plasma Deflector",
-		energystorage = 1500,
+		energystorage = 500,
 		explodeas = "BIG_UNIT",
 		footprintx = 4,
 		footprintz = 4,
