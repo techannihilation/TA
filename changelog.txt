@@ -1,3 +1,13 @@
+3.62 -> 3.63
+2020-12-15
+
+Balance :
+ - ...
+
+ Improvment :
+  - Add first free Com morph for Xmas
+  - Add T4 Core Transporter (can transport until 100K mass = 100k metalcost)
+
 3.60 -> 3.62
 2020-12-11
 

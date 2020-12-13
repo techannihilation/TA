@@ -57,12 +57,12 @@ return {
 		yardmap = "yyooccccccccccccoooo yoooccccccccccccoooy ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo yoooccccccccccccoooy yyooccccccccccccooyy",
 		buildoptions = {
 			[1] = "corcrab",
-			--[2] = "coreak",
-			[3] = "monkeylord",
-			[4] = "corarbritator",
-			[5] = "fatshrew",
-			[6] = "cormkl",
-			[7] = "corshock",
+			[2] = "monkeylord",
+			[3] = "corarbritator",
+			[4] = "fatshrew",
+			[5] = "cormkl",
+			[6] = "corshock",
+			[7] = "corlift",
 		},
 		customparams = {
 			buildpic = "core_hexapod_lab.dds",

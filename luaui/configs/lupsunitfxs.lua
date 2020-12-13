@@ -868,6 +868,18 @@ tllbarbarus = {
     {class='AirJet',options={color={1,0.4,0.4}, width=20, length=25, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,0.4,0.4}, width=20, length=25, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
 },
+corlift = {
+    {class='AirJet',options={color={1.0,0.2,0.3}, width=9, length=40, emitVector = {0,1,0}, piece="flamer1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1.0,0.2,0.3}, width=9, length=40, emitVector = {0,1,0}, piece="flamer2", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={1.0,0.2,0.3}, width=9, length=40, emitVector = {0,1,0}, piece="flamer3", noIconDraw = true, priority=4, onActive=true}},
+    {class='AirJet',options={color={1.0,0.2,0.3}, width=9, length=40, emitVector = {0,1,0}, piece="flamer4", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine5", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine6", noIconDraw = true, priority=3, onActive=true}},
+},
 
 }
 

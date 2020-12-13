@@ -124,6 +124,7 @@ return {
 	"talon_rukh",
 	"talon_tau",
 	"talon_plutor",
+	"corlift",
 },
 
 --### SEA ###
