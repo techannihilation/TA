@@ -64,9 +64,6 @@ return {
 		unitname = "consul",
 		workertime = 135,
 		buildoptions = {
-			--[1] = "armsolar",
-			--[2] = "armmex",
-			--[3] = "armavp",
 			[4] = "armnanotc",
 			[5] = "armeyes",
 			[6] = "armarad",
@@ -74,7 +71,6 @@ return {
 			[8] = "armfort",
 			[9] = "armmine2",
 			[10] = "tawf001",
-			--[11] = "armvhlt",
 			[12] = "armpb",
 			[13] = "armamb",
 			[14] = "armanni",

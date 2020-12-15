@@ -148,7 +148,6 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "flashemg",
 				sprayangle = 1180,
-				tolerance = 5000,
 				turret = true,
 				weapontimer = 0.1,
 				weapontype = "Cannon",

@@ -104,7 +104,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				intensity = 0.8,
+				intensity = 0.7,
 				name = "E.M.G.",
 				noselfdamage = true,
 				range = 380,
