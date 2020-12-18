@@ -33,7 +33,7 @@ return {
 		mass = 3997,
 		maxdamage = 12950,
 		maxslope = 15,
-		maxvelocity = 2.5,
+		maxvelocity = 2.25,
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
 		movementclass = "HKBOT4",
@@ -60,8 +60,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-1.43661499023 -1.36986116943 12.126411438",
-				collisionvolumescales = "61.6002807617 54.8114776611 71.5794219971",
+				collisionvolumeoffsets = "-1.4 -1.3 12.2",
+				collisionvolumescales = "61.6 54.8 71.5",
 				collisionvolumetype = "Box",
 				damage = 9480,
 				description = "Razorback Wreckage",

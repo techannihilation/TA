@@ -59,7 +59,8 @@ return {
 			[6] = "corerex",
 			[7] = "armantar",
 			[8] = "armmlrs",
-			[9] = "nsaagriz",
+			[9] = "armhcrus",
+			[10] = "nsaagriz",
 		},
 		customparams = {
 			buildpic = "armevp.dds",

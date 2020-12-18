@@ -1,11 +1,14 @@
 3.62 -> 3.63
-2020-12-15
+2020-12-16
 
 Balance :
- - ...
+ - HeavyImpact : Decrease Metalcost 7.5KM => 7KM
+ - Razorback : Decrease Speed 2.5=>2.25
 
  Improvment :
+  - Add T3 Hover into T3 Vehicle LAb
   - Add first free Com morph for Xmas
+  - Heavyimpact (T3 artybot Tll) : Add 2 burst / shoot.
   - Add T4 Core Transporter (can transport until 100K mass = 100k metalcost)
 
 3.60 -> 3.62

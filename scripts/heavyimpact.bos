@@ -335,15 +335,15 @@ QueryPrimary(piecenum)
 	}
 	if( gun_1 == 1 )
 	{
-		piecenum = emit2;
+		piecenum = emit4;
 	}
 	if( gun_1 == 2 )
 	{
-		piecenum = emit3;
+		piecenum = emit2;
 	}
 	if( gun_1 == 3 )
 	{
-		piecenum = emit4;
+		piecenum = emit3;
 	}
 }
 
@@ -374,42 +374,36 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 0 )
+
+	if( gun_1 == 0 or gun_1 == 3)
 	{
-		move barrel1 to z-axis [-6.000000] speed [120.000000];
-		emit-sfx 1024 + 0 from emit1;
-		sleep 500;
-		wait-for-move barrel1 along z-axis;
-		move barrel1 to z-axis [0.000000] speed [10.000000];
-	}
-	if( gun_1 == 1 )
-	{
-		move barrel2 to z-axis [-6.000000] speed [120.000000];
-		emit-sfx 1024 + 0 from emit2;
-		sleep 500;
-		wait-for-move barrel2 along z-axis;
-		move barrel2 to z-axis [0.000000] speed [10.000000];
+		Gun_1 = 0;
+		emit-sfx 1024 from emit1;
+		move barrel1 to z-axis [-6.000000] speed [500.000000];
+		sleep 900;
+		move barrel1 to z-axis [0.000000] speed [3.000000];
+		gun_1 = 1;
+		emit-sfx 1024 from emit4;
+		move barrel4 to z-axis [-6.000000] speed [500.000000];
+		sleep 900;
+		move barrel4 to z-axis [0.000000] speed [3.000000];
+		gun_1 = 2;		
+		return (0);
 	}
 	if( gun_1 == 2 )
 	{
-		move barrel3 to z-axis [-6.000000] speed [120.000000];
-		emit-sfx 1024 + 0 from emit3;
-		sleep 500;
-		wait-for-move barrel3 along z-axis;
-		move barrel3 to z-axis [0.000000] speed [10.000000];
-	}
-	if( gun_1 == 3 )
-	{
-		move barrel4 to z-axis [-6.000000] speed [120.000000];
-		emit-sfx 1024 + 0 from emit4;
-		sleep 500;
-		wait-for-move barrel4 along z-axis;
-		move barrel4 to z-axis [0.000000] speed [10.000000];
-	}
-	++gun_1;
-	if( gun_1 == 4 )
-	{
-		gun_1 = base;
+		
+		gun_1 = 2;
+		emit-sfx 1024 from emit2;
+		move barrel2 to z-axis [-6.000000] speed [500.000000];
+		sleep 900;
+		move barrel2 to z-axis [0.000000] speed [3.000000];
+		gun_1 = 3;		
+		emit-sfx 1024 from emit3;
+		move barrel3 to z-axis [-6.000000] speed [500.000000];
+		sleep 900;
+		move barrel3 to z-axis [0.000000] speed [3.000000];		
+		return (0);
 	}
 }
 
@@ -450,25 +444,6 @@ Killed(severity, corpsetype)
 		explode rfoot type NOHEATCLOUD | FALL;
 		explode rupleg type NOHEATCLOUD | FALL;
 		explode rlowleg type NOHEATCLOUD | FALL;
-		explode torso type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode hips type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode gunslots type NOHEATCLOUD | SHATTER;
-		explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode llowleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lupleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode cap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rupleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rlowleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode torso type NOHEATCLOUD;
 		return (corpsetype);
 	}
