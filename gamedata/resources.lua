@@ -78,7 +78,7 @@ local resources = {
 			groundflash='groundflash.tga',
 			groundring='groundring.tga',
 			seismic='circles.tga',
-			
+
 		},
 		projectiletextures = {
 			TELEGREENBLUE1='TELEGREENBLUE1.tga',
@@ -154,10 +154,10 @@ local resources = {
 			flashside1='flashside1.tga',
 			shotgunside='shotgunside.tga',
 			megaparticle='megaparticle.tga',
-			shot='shot.tga',	
+			shot='shot.tga',
 			beamrifle='beamrifle.tga',
 			beamrifletip='beamrifletip.tga',
-			smallflare='GPL/smallflare.tga',			
+			smallflare='GPL/smallflare.tga',
 			dirt='CC/dirt.png',
 			smoke='smoke/smoke00.tga',
 			diamondstar='diamondstar.tga',
@@ -202,7 +202,7 @@ local resources = {
 			--nuke
 			burn='burn.tga',
 			flamenuke='flamenew.tga',
-			odd='odd.tga',	
+			odd='odd.tga',
 			groundflash43='clouds2.tga',
 			clouds2='clouds2.tga',
 			--Tankette
@@ -210,29 +210,30 @@ local resources = {
 			flare1='FlarenSpark/Flare1.TGA',
 			flare2='FlarenSpark/Flare2.TGA',
 			flare3='FlarenSpark/Flare3.TGA',
-			
+
 			lightring='lightring.tga',
 			lightb3='lightningball3.tga',
 			lightb4='lightningball4.tga',
 			lightning2='lightning2.jpg',
-			
+
 			debris='other/debris.tga',
 			debris2='other/debris2.tga',
 			dirtplosion2='other/dirtplosion2.tga',
-				
+
 			nanonew='nano.tga',
 			exploo='explo.jpg',
 			ring='ring.tga',
-			
+
 			--Hot fix for generic lava map ceg
 			map_foam='other/foam_map.tga',
 			map_debris2='other/debris2.tga',
 			map_dirtplosion2='other/dirtplosion2.tga',
-			
+
 			--lightning
 			strike='techa_artwork/strike.png',
 			lightningball_new='techa_artwork/lightningball.png',
-	sunlight_new='techa_artwork/sunlight.png',
+	    sunlight_new='techa_artwork/sunlight.png',
+      sonic_glow='techa_artwork/sonic_glow.png',
 
 			puff='Shine_Smokey_256.png',
 
