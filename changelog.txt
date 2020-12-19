@@ -3,7 +3,8 @@
 
 Balance :
  - Colosus : Increase main weapon range 1400=>1500. change weapontype : Beam => Plasma and no energycost
-  - Obliterator TLL, Barbarus, Crawler : change weapontype  : Beam => Plasma and no energycost
+ - Obliterator TLL, Barbarus, Crawler : change weapontype  : Beam => Plasma and no energycost
+ - Fix to 12 unitnumber for T4 Nuke
 
  Improvment :
   - Add new effect weapon for TLL
