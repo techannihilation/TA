@@ -202,7 +202,7 @@ return {
 				[1] = "kcormov",
 			},
 			select = {
-				[1] = "kccorsel",
+				[1] = "petcore",
 			},
 		},
 		weapondefs = {
