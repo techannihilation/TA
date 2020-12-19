@@ -1,3 +1,14 @@
+3.63 -> 3.64
+2020-12-20
+
+Balance :
+ - Colosus : Increase main weapon range 1400=>1500. change weapontype : Beam => Plasma and no energycost
+  - Obliterator TLL, Barbarus, Crawler : change weapontype  : Beam => Plasma and no energycost
+
+ Improvment :
+  - Add new effect weapon for TLL
+  - New Sounds for Xmas :)
+
 3.62 -> 3.63
 2020-12-16
 
@@ -10,6 +21,7 @@ Balance :
   - Add first free Com morph for Xmas
   - Heavyimpact (T3 artybot Tll) : Add 2 burst / shoot.
   - Add T4 Core Transporter (can transport until 100K mass = 100k metalcost)
+
 
 3.60 -> 3.62
 2020-12-11
