@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "60 150 60",
 		collisionvolumetype = "CylY",
 		corpse = "heap",
-		description = "Universal Deflector",
+		description = "Absorb Shield (15K)",
 		energystorage = 1500,
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
