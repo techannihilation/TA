@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Bantha Brother's",
+		description = "All-Terrain Assault Kbot",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 4,
