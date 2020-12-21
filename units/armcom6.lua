@@ -204,7 +204,7 @@ return {
 				[1] = "kcarmmov",
 			},
 			select = {
-				[1] = "petarm",
+				[1] = "kcarmsel",
 			},
 		},
 		weapondefs = {
