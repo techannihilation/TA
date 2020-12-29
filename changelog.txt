@@ -1,3 +1,12 @@
+3.64 -> 3.65
+2021-01-01
+Balance :
+ - Core T3 Hover : Decrease beam range and dps. Decrease Hp 28=>20K. Decrease main weapon range 2800 => 2650
+
+ Improvment :
+  - Delete Free Morph
+  - Delete Mobile Core Bertha
+
 3.63 -> 3.64
 2020-12-20
 

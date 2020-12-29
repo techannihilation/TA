@@ -53,7 +53,7 @@ return {
 		buildoptions = {
 			[1] = "corecv",
 			[2] = "coramist",
-			[3] = "clb",
+			--[3] = "clb",
 			[4] = "champ",
 			[5] = "armtigre2",
 			[6] = "armsiege",

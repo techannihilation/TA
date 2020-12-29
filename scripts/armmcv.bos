@@ -277,27 +277,27 @@ AimFromTertiary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	if (gun_missile == 1)
+	if (gun_missile == 0)
 	{
 		piecenum = r1;
 	}
-	if (gun_missile == 2)
+	if (gun_missile == 1)
 	{
 		piecenum = r2;
 	}
-	if (gun_missile == 3)
+	if (gun_missile == 2)
 	{
 		piecenum = r3;
 	}
-	if (gun_missile == 4)
+	if (gun_missile == 3)
 	{
 		piecenum = r4;
 	}
-	if (gun_missile == 5)
+	if (gun_missile == 4)
 	{
 		piecenum = r5;
 	}
-	if (gun_missile == 6)
+	if (gun_missile == 5)
 	{
 		piecenum = r6;
 	}
