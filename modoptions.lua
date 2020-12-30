@@ -122,6 +122,14 @@ local options={
     step   = 0.1,
   },
   {
+    key = "mo_debug",
+    name = "Debug_CmdDescrCache",
+    desc = "",
+    type = "bool",
+    def = false,
+    section = "ta_modes",
+  },
+  {
     key = "mo_maxtech",
     name = "Limit game to selected tech level",
     desc = "Limit game to selected tech level\nAutoHost Usage :- mo_maxtech",
