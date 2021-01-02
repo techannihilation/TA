@@ -452,7 +452,6 @@ coreter.dds
 coretnt.dds
 corevp.dds
 core_wind_generator.dds
-corexp.dds
 coreyes.dds
 corfalc.dds
 corfast1.dds

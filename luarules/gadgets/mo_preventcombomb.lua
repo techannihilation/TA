@@ -63,7 +63,7 @@ local DGUN = {
   [WeaponDefNames['corcom3_arm_disintegrator2'].id] = true,
   --The Lost Legacy
   [WeaponDefNames['tllcom_tll_disintegrator'].id] = true,
-  [WeaponDefNames['tllcom1_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['tllcom1_tll_disintegrator2'].id] = true,
   [WeaponDefNames['tllcom2_tll_disintegrator2'].id] = true,
   [WeaponDefNames['tllcom3_tll_disintegrator2'].id] = true,
   --Talon

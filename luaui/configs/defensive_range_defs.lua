@@ -65,7 +65,7 @@ modConfig["TA"]["unitList"] =
 									--Ground Weapons--
 								cormaw = { weapons = { 1 } },
 								--cmortor = { weapons = { 1 } },
-								corexp = { weapons = { 1 } },
+								--corexp = { weapons = { 1 } },
 								cormaw = { weapons = { 1 } },
 								corllt = { weapons = { 1 } },
 								cofllt = { weapons = { 1 } },

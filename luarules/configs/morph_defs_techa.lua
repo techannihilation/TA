@@ -255,11 +255,6 @@ local morphDefs = {
 		  		tech = 1,
 		},
 	},
-	corexp = {
-		into = 'cormexp',
-		time = 60,
-		xp = 0.25,
-  },
 	tllgeo = {
 		{
 			into = 'tllmohogeo',
@@ -535,20 +530,15 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
-    	armmart = {
+  armmart = {
 		into = 'avtr',
 		time = 90,
 		xp = 0.50,
 	},
 	armjanus = {
-		into = 'armjanus1',
-		time = 15,
-		xp = 0.10,
-	},
-	armjanus1 = {
 		into = 'tankanotor',
 		time = 120,
-		xp = 1.00,
+		xp = 1.0,
 	},
 	tankanotor = {
 		into = 'armmlrs',
@@ -601,11 +591,6 @@ local morphDefs = {
 			time = 60,
 			xp = 0.35,
 		},
-	},
-	cormart = {
-		into = 'clb',
-		time = 90,
-		xp = 0.50,
 	},
 	cormist = {
 		into = 'tawf114',
