@@ -78,7 +78,6 @@ armch.dds
 armchimera.dds
 armcir.dds
 armck.dds
-armckfus.dds
 armclaw.dds
 armcom1.dds
 armcom4.dds
@@ -596,7 +595,6 @@ corseal.dds
 corseap.dds
 corsent.dds
 corses.dds
-corsfus.dds
 corshad.dds
 corshark.dds
 corsh.dds

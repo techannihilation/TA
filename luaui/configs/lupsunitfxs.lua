@@ -66,7 +66,6 @@ cafus = {
     {class='SimpleParticles2', options=MergeTable({pos={-9,26.9,0}, delay=40, size=75, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={-9,26.9,0}, size=29, precision=22, repeatEffect=true}},
   },
-  --corsfus see shield lups def
   corefus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=0, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,120,0}, delay=40, size=140, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
@@ -192,6 +191,7 @@ cafus = {
     {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  [[--
    corsfus = {
     --Fusion
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, size=65, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
@@ -201,6 +201,7 @@ cafus = {
     {class='Bursts',options=corsfusBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=180, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  --]]
   exoarm = {
     {class='Bursts',options=exoarmBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},

@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 2354688,
 		buildcostmetal = 254592,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 12,
-		buildinggrounddecalsizey = 12,
-		buildinggrounddecaltype = "corsfus_aoplane.dds",
 		buildpic = "corefus.dds",
 		buildtime = 3000000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -46,7 +42,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corefus",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo",
 		customparams = {
 			buildpic = "corefus.dds",

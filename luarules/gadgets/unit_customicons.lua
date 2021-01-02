@@ -163,11 +163,11 @@ function gadget:Initialize()
       elseif (ud.name=="cfusionplant") or (ud.name=="afusionplant") or (ud.name=="tllmegacoldfus") or (ud.name=="talon_sfus") then
         Spring.SetUnitDefIcon(udid, "e4.user")
 --t2 fusions
-      elseif (ud.name=="cafus") or (ud.name=="corsfus") or (ud.name=="aafus") or (ud.name=="tllcoldfus") or (ud.name=="talon_afus") then
+      elseif (ud.name=="cafus") or (ud.name=="aafus") or (ud.name=="tllcoldfus") or (ud.name=="talon_afus") then
         Spring.SetUnitDefIcon(udid, "e3.user")
 --std fusions
-      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="corsfus") or (ud.name=="crnns") or (ud.name=="tllmedfusion") or (ud.name=="armckfus")
-      or (ud.name=="armuwfus") or (ud.name=="armuwfus1") or (ud.name=="coruwfus") or (ud.name=="armckfus") or (ud.name=="tlluwfusion") or (ud.name=="talon_ckfus") then
+      elseif (ud.name=="armfus") or (ud.name=="corfus") or (ud.name=="crnns") or (ud.name=="tllmedfusion")
+      or (ud.name=="armuwfus") or (ud.name=="armuwfus1") or (ud.name=="coruwfus") or (ud.name=="tlluwfusion") or (ud.name=="talon_ckfus") then
         Spring.SetUnitDefIcon(udid, "e2.user")
 --Level 2 nanos
       elseif (ud.name=="armnanotc1") or (ud.name=="cornanotc1") or (ud.name=="tllnanotc1") or (ud.name=="armfnanotc1") or (ud.name=="corfnanotc1") or (ud.name=="tllfnanotc1") or (ud.name=="talon_nanotc1") or (ud.name=="talon_fnanotc1") then
