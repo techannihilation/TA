@@ -34,38 +34,26 @@ local unitArray = {
   --Core
   "corcom",
   "corcom1",
+  "corcom2",
   "corcom3",
-  "corcom_fusion",
-  "corcom5",
-  "corcom6",
-  "corcom7",
 
 --Arm
   "armcom",
   "armcom1",
-  "armcom4",
-  "armcom_fusion",
-  "armcom5",
-  "armcom6",
-  "armcom7",
+  "armcom2",
+  "armcom3",
 
 --The lost legacy
   "tllcom",
   "tllcom1",
+  "tllcom2",
   "tllcom3",
-  "tllcom_fusion",
-  "tllcom5",
-  "tllcom6",
-  "tllcom7",
 
 --Talon
   "talon_com",
   "talon_com1",
+  "talon_com2",
   "talon_com3",
-  "talon_com_fusion",
-  "talon_com5",
-  "talon_com6",
-  "talon_com7",
 
   --aa units
   "armjeth",
@@ -187,7 +175,7 @@ local unitArray = {
   "corspec",
   "corsjam",
   "blotter",
-  
+
   "tllobscurer",
   "tllmixer",
   "tllconfuser",

@@ -93,9 +93,9 @@ local disabledShieldStun = {}
 
 local ShieldUnits = {
   --Core
-  [UnitDefNames["corcom5"].id] = true,
-  [UnitDefNames["corcom6"].id] = true,
-  [UnitDefNames["corcom7"].id] = true,
+  [UnitDefNames["corcom1"].id] = true,
+  [UnitDefNames["corcom2"].id] = true,
+  [UnitDefNames["corcom3"].id] = true,
   [UnitDefNames["corgate"].id] = true,
   [UnitDefNames["corgate1"].id] = true,
   [UnitDefNames["corgate2"].id] = true,
@@ -107,9 +107,9 @@ local ShieldUnits = {
   [UnitDefNames["monkeylord"].id] = true,
   [UnitDefNames["corcrab"].id] = true,
   --Arm
-  [UnitDefNames["armcom5"].id] = true,
-  [UnitDefNames["armcom6"].id] = true,
-  [UnitDefNames["armcom7"].id] = true,
+  [UnitDefNames["armcom1"].id] = true,
+  [UnitDefNames["armcom2"].id] = true,
+  [UnitDefNames["armcom3"].id] = true,
   [UnitDefNames["armgate"].id] = true,
   [UnitDefNames["armgate1"].id] = true,
   [UnitDefNames["armgate2"].id] = true,
@@ -122,9 +122,9 @@ local ShieldUnits = {
   [UnitDefNames["armsmc"].id] = true,
   [UnitDefNames["armshieldgen"].id] = true,
   --The lost legacy
-  [UnitDefNames["tllcom5"].id] = true,
-  [UnitDefNames["tllcom6"].id] = true,
-  [UnitDefNames["tllcom7"].id] = true,
+  [UnitDefNames["tllcom1"].id] = true,
+  [UnitDefNames["tllcom2"].id] = true,
+  [UnitDefNames["tllcom3"].id] = true,
   [UnitDefNames["tllgate"].id] = true,
   [UnitDefNames["tllfgate"].id] = true,
   [UnitDefNames["tllfgate1"].id] = true,
@@ -136,9 +136,9 @@ local ShieldUnits = {
   [UnitDefNames["tllgorgon"].id] = true,
   [UnitDefNames["tllmako"].id] = true,
   --Talon
-  [UnitDefNames["talon_com5"].id] = true,
-  [UnitDefNames["talon_com6"].id] = true,
-  [UnitDefNames["talon_com7"].id] = true,
+  [UnitDefNames["talon_com1"].id] = true,
+  [UnitDefNames["talon_com2"].id] = true,
+  [UnitDefNames["talon_com3"].id] = true,
   [UnitDefNames["talon_gate"].id] = true,
   [UnitDefNames["talon_gate1"].id] = true,
   [UnitDefNames["talon_gate2"].id] = true,

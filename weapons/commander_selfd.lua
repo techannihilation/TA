@@ -1,6 +1,6 @@
 return {
 	commander_selfd = {
-		areaofeffect = 1010,
+		areaofeffect = 1200,
 		craterboost = 6,
 		cratermult = 3,
 		edgeeffectiveness = 0.25,
@@ -8,15 +8,11 @@ return {
 		impulseboost = 3,
 		impulsefactor = 3,
 		name = "Matter/AntimatterExplosion",
-		range = 880,
-		reloadtime = 3.6,
 		soundhit = "newboom",
 		soundstart = "largegun",
-		turret = 1,
 		weaponvelocity = 250,
 		damage = {
-			commanders = 2800,
-			default = 90000,
+			default = 100000,
 		},
 	},
 }

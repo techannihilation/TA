@@ -211,9 +211,9 @@ local corclogDefID = {}
 
 local allowedArray = {
   --Core
-  [UnitDefNames["corcom5"].id] = true,
-  [UnitDefNames["corcom6"].id] = true,
-  [UnitDefNames["corcom7"].id] = true,
+  [UnitDefNames["corcom1"].id] = true,
+  [UnitDefNames["corcom2"].id] = true,
+  [UnitDefNames["corcom3"].id] = true,
   [UnitDefNames["corach"].id] = true,
   [UnitDefNames["coracv"].id] = true,
   [UnitDefNames["coraca"].id] = true,
@@ -221,9 +221,9 @@ local allowedArray = {
   [UnitDefNames["coracsub"].id] = true,
   [UnitDefNames["corct"].id] = true,
   --Arm
-  [UnitDefNames["armcom5"].id] = true,
-  [UnitDefNames["armcom6"].id] = true,
-  [UnitDefNames["armcom7"].id] = true,
+  [UnitDefNames["armcom1"].id] = true,
+  [UnitDefNames["armcom2"].id] = true,
+  [UnitDefNames["armcom3"].id] = true,
   [UnitDefNames["armaca"].id] = true,
   [UnitDefNames["armacv"].id] = true,
   [UnitDefNames["armach"].id] = true,
@@ -232,9 +232,9 @@ local allowedArray = {
   [UnitDefNames["armcspider"].id] = true,
 
   --The lost legacy
-  [UnitDefNames["tllcom5"].id] = true,
-  [UnitDefNames["tllcom6"].id] = true,
-  [UnitDefNames["tllcom7"].id] = true,
+  [UnitDefNames["tllcom1"].id] = true,
+  [UnitDefNames["tllcom2"].id] = true,
+  [UnitDefNames["tllcom3"].id] = true,
   [UnitDefNames["tllaca"].id] = true,
   [UnitDefNames["tllacv"].id] = true,
   [UnitDefNames["tllack"].id] = true,
@@ -243,9 +243,9 @@ local allowedArray = {
   [UnitDefNames["tllmusk"].id] = true,
 
   --TALON
-  [UnitDefNames["talon_com5"].id] = true,
-  [UnitDefNames["talon_com6"].id] = true,
-  [UnitDefNames["talon_com7"].id] = true,
+  [UnitDefNames["talon_com1"].id] = true,
+  [UnitDefNames["talon_com2"].id] = true,
+  [UnitDefNames["talon_com3"].id] = true,
   [UnitDefNames["talon_aca"].id] = true,
   [UnitDefNames["talon_ack"].id] = true,
   [UnitDefNames["talon_ach"].id] = true,

@@ -80,10 +80,8 @@ armcir.dds
 armck.dds
 armclaw.dds
 armcom1.dds
-armcom4.dds
-armcom5.dds
-armcom6.dds
-armcom7.dds
+armcom2.dds
+armcom3.dds
 armcom.dds
 armcp.dds
 armcrabe.dds

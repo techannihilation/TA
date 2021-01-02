@@ -15,27 +15,27 @@
 ]]--
 
 return {
-	armcom5 = {
+	armcom1 = {
 		{
-			name = "shield_ac5",
+			name = "shield_ac1",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	armcom6 = {
+	armcom2 = {
 		{
-			name = "shield_ac6",
+			name = "shield_ac2",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	armcom7 = {
+	armcom3 = {
 		{
-			name = "shield_ac7",
+			name = "shield_ac3",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
@@ -150,27 +150,27 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	corcom5 = {
+	corcom1 = {
 		{
-			name = "shield_cc5",
+			name = "shield_cc1",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	corcom6 = {
+	corcom2 = {
 		{
-			name = "shield_cc6",
+			name = "shield_cc2",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	corcom7 = {
+	corcom3 = {
 		{
-			name = "shield_cc7",
+			name = "shield_cc3",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
@@ -267,27 +267,27 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	tllcom5 = {
+	tllcom1 = {
 		{
-			name = "shield_tc5",
+			name = "shield_tc1",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	tllcom6 = {
+	tllcom2 = {
 		{
-			name = "shield_tc6",
+			name = "shield_tc2",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	tllcom7 = {
+	tllcom3 = {
 		{
-			name = "shield_tc7",
+			name = "shield_tc3",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
@@ -431,27 +431,27 @@ return {
 		},
 	},
 	--]]
-	talon_com5 = {
+	talon_com1 = {
 		{
-			name = "shield_talc5",
+			name = "shield_talc1",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	talon_com6 = {
+	talon_com2 = {
 		{
-			name = "shield_talc6",
+			name = "shield_talc2",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	talon_com7 = {
+	talon_com3 = {
 		{
-			name = "shield_talc7",
+			name = "shield_talc3",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,

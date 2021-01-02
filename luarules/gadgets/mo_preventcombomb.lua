@@ -47,46 +47,30 @@ local DestroyUnit = Spring.DestroyUnit
 local ValidUnitID = Spring.ValidUnitID
 
 local COM_BLAST = {
-  [WeaponDefNames['commander_blast1'].id] = true,
-  [WeaponDefNames['commander_blast5'].id] = true,
-  [WeaponDefNames['commander_blast6'].id] = true,
-  [WeaponDefNames['commander_blast7'].id] = true,
-  [WeaponDefNames['commander_blast8'].id] = true,
+  [WeaponDefNames['commander_blast'].id] = true,
 }
 
 local DGUN = {
   --Arm
   [WeaponDefNames['armcom_arm_disintegrator'].id] = true,
-  [WeaponDefNames['armcom1_arm_disintegrator'].id] = true,
-  [WeaponDefNames['armcom4_arm_disintegrator1'].id] = true,
-  [WeaponDefNames['armcom_fusion_arm_disintegrator'].id] = true,
-  [WeaponDefNames['armcom5_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['armcom6_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['armcom7_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['armcom1_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['armcom2_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['armcom3_arm_disintegrator2'].id] = true,
   --Core
   [WeaponDefNames['corcom_arm_disintegrator'].id] = true,
-  [WeaponDefNames['corcom1_arm_disintegrator'].id] = true,
-  [WeaponDefNames['corcom3_arm_disintegrator1'].id] = true,
-  [WeaponDefNames['corcom_fusion_arm_disintegrator'].id] = true,
-  [WeaponDefNames['corcom5_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['corcom6_arm_disintegrator2'].id] = true,
-  [WeaponDefNames['corcom7_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['corcom1_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['corcom2_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['corcom3_arm_disintegrator2'].id] = true,
   --The Lost Legacy
-  [WeaponDefNames['tllcom_arm_disintegrator3'].id] = true,
-  [WeaponDefNames['tllcom1_arm_disintegrator'].id] = true,
-  [WeaponDefNames['tllcom3_tll_disintegrator1'].id] = true,
-  [WeaponDefNames['tllcom_fusion_arm_disintegrator'].id] = true,
-  [WeaponDefNames['tllcom5_tll_disintegrator2'].id] = true,
-  [WeaponDefNames['tllcom6_tll_disintegrator2'].id] = true,
-  [WeaponDefNames['tllcom7_tll_disintegrator2'].id] = true,
-    --Talon
+  [WeaponDefNames['tllcom_tll_disintegrator'].id] = true,
+  [WeaponDefNames['tllcom1_arm_disintegrator2'].id] = true,
+  [WeaponDefNames['tllcom2_tll_disintegrator2'].id] = true,
+  [WeaponDefNames['tllcom3_tll_disintegrator2'].id] = true,
+  --Talon
   [WeaponDefNames['talon_com_tal_disintegrator'].id] = true,
   [WeaponDefNames['talon_com1_tal_disintegrator'].id] = true,
+  [WeaponDefNames['talon_com2_tal_disintegrator'].id] = true,
   [WeaponDefNames['talon_com3_tal_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com_fusion_tal_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com5_tal_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com6_tal_disintegrator'].id] = true,
-  [WeaponDefNames['talon_com7_tal_disintegrator'].id] = true,
 }
 
 local COMMANDER = VFS.Include("luarules/configs/comDefs.lua")

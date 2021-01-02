@@ -19,161 +19,52 @@ local devolution = (-1 > 0)
 
 local morphDefs = {
 	armcom = {
-		{
-			into = 'armcom4',
-			time = 30,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-
-		},
-		{
-			into = 'armcom1',
-			time = 45,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-		},
+		into = 'armcom1',
+		time = 45,
 	},
 	armcom1 = {
-		into = 'armcom_fusion',
-        	time = 90,
+		into = 'armcom2',
+    time = 90,
 	},
-	armcom_fusion = {
-		into = 'armcom6',
-        	time = 180,
-	},
-	armcom4 = {
-		into = 'armcom5',
-        	time = 60,
-	},
-	armcom5 = {
-		into = 'armcom6',
-		time = 180,
-	},
-	armcom6 = {
-		into = 'armcom7',
-		time = 360,
+	armcom2 = {
+		into = 'armcom3',
+    time = 135,
 	},
 	talon_com = {
-		{
-			into = 'talon_com3',
-			time = 30,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-
-		},
-		{
-			into = 'talon_com1',
-			time = 45,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-		},
+		into = 'talon_com1',
+		time = 45,
 	},
 	talon_com1 = {
-		into = 'talon_com_fusion',
-        	time = 90,
+		into = 'talon_com2',
+    time = 90,
 	},
-	talon_com_fusion = {
-		into = 'talon_com6',
-        	time = 180,
-	},
-	talon_com3 = {
-		into = 'talon_com5',
-        	time = 60,
-	},
-	talon_com5 = {
-		into = 'talon_com6',
-		time = 180,
-	},
-	talon_com6 = {
-		into = 'talon_com7',
-		time = 360,
+	talon_com2 = {
+		into = 'talon_com3',
+    time = 135,
 	},
 	corcom = {
-		{
-			into = 'corcom3',
-			time = 30,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-
-		},
-		{
-			into = 'corcom1',
-			time = 45,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-
-		},
+		into = 'corcom1',
+		time = 45,
 	},
 	corcom1 = {
-		into = 'corcom_fusion',
-        	time = 90,
+		into = 'corcom2',
+    time = 90,
 	},
-	corcom_fusion = {
-		into = 'corcom6',
-        	time = 180,
-	},
-	corcom3 = {
-		into = 'corcom5',
-		time = 60,
-	},
-	corcom5 = {
-		into = 'corcom6',
-		time = 180,
-	},
-	corcom6 = {
-		into = 'corcom7',
-		time = 360,
+	corcom2 = {
+		into = 'corcom3',
+		time = 135,
 	},
 	tllcom = {
-		{
-			into = 'tllcom3',
-			time = 30,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-
-		},
-		{
-			into = 'tllcom1',
-			time = 45,
-
-			--metal = 0,
-			--energy = 0,
-			--Free For Xmas
-		},
+		into = 'tllcom1',
+		time = 45,
 	},
 	tllcom1 = {
-		into = 'tllcom_fusion',
-        	time = 90,
+		into = 'tllcom2',
+    time = 90,
 	},
-	tllcom_fusion = {
-		into = 'tllcom6',
-        	time = 180,
-	},
-	tllcom3 = {
-		into = 'tllcom5',
-		time = 60,
-	},
-	tllcom5 = {
-		into = 'tllcom6',
-		time = 180,
-	},
-	tllcom6 = {
-		into = 'tllcom7',
-		time = 360,
+	tllcom2 = {
+		into = 'tllcom3',
+		time = 135,
 	},
 	corrl = {
 		into = 'corrl1',

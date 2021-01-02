@@ -221,16 +221,16 @@ function gadget:Initialize()
     elseif (ud.name=="talon_grenat") then
           Spring.SetUnitDefIcon(udid, "talon_grenat.user")
 --armcom
-      elseif (ud.name=="armcom") or (ud.name=="armcom1") or (ud.name=="armcom4") or (ud.name=="armcom_fusion") or (ud.name=="armcom5")or (ud.name=="armcom5") or (ud.name=="armcom6") or (ud.name=="armcom7") then
+      elseif (ud.name=="armcom") or (ud.name=="armcom1") or (ud.name=="armcom2")or (ud.name=="armcom3") then
         Spring.SetUnitDefIcon(udid, "armcom.user")
 --corcom
-      elseif (ud.name=="corcom") or (ud.name=="corcom1") or (ud.name=="corcom3") or (ud.name=="corcom_fusion") or (ud.name=="corcom5") or (ud.name=="corcom6") or (ud.name=="corcom7") then
+      elseif (ud.name=="corcom") or (ud.name=="corcom1") or (ud.name=="corcom2") or (ud.name=="corcom3") then
         Spring.SetUnitDefIcon(udid, "corcom.user")
 --tllcom
-      elseif (ud.name=="tllcom") or (ud.name=="tllcom1") or (ud.name=="tllcom3") or (ud.name=="tllcom_fusion") or (ud.name=="tllcom5") or (ud.name=="tllcom6") or (ud.name=="tllcom7") then
+      elseif (ud.name=="tllcom") or (ud.name=="tllcom1") or (ud.name=="tllcom2") or (ud.name=="tllcom3") then
         Spring.SetUnitDefIcon(udid, "tllcom.user")
 --talon_com
-      elseif (ud.name=="talon_com") or (ud.name=="talon_com1") or (ud.name=="talon_com3") or (ud.name=="talon_com_fusion") or (ud.name=="talon_com5") or (ud.name=="talon_com6") or (ud.name=="talon_com7") then
+      elseif (ud.name=="talon_com") or (ud.name=="talon_com1") or (ud.name=="talon_com2") or (ud.name=="talon_com3") then
         Spring.SetUnitDefIcon(udid, "talon_com.user")
 --krogoth
       elseif (ud.name=="corkrog") then
