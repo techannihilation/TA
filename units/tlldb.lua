@@ -44,7 +44,7 @@ return {
 		standingfireorder = 2,
 		unitname = "tlldb",
 		usebuildinggrounddecal = true,
-		yardmap = "oooo oooo oooo oooo",
+		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "tlldb.dds",
 			faction = "TLL",

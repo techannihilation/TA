@@ -33,7 +33,7 @@ return {
 		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 210,
 		unitname = "talon_metalmakerlvl3",
-		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
+		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "talon_metalmakerlvl3.dds",
 			faction = "TALON",
