@@ -55,7 +55,7 @@ return {
 		mincloakdistance = 40,
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
-		name = "Assault Commander",
+		name = "Advanced Commander",
 		nochasecategory = "ALL SUB",
 		norestrict = 1,
 		objectname = "TLLCOM1",
