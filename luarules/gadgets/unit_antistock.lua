@@ -25,22 +25,17 @@ local isAnti = {
 		[UnitDefNames['armamd'].id] = true, -- Protector
 		[UnitDefNames['armamd1'].id] = true, -- Adv Protector
 		[UnitDefNames['armamd2'].id] = true, -- T4 Antinuke
-		--[UnitDefNames['armscab'].id] = true, -- Mobile Antinuke
-		--[UnitDefNames['armscab1'].id] = true, -- Mobile Antinuke
 		[UnitDefNames['armcarry'].id] = true, -- Colossus (carrier)
 		--Core
 		[UnitDefNames['corfmd'].id] = true, -- Fortitude
 		[UnitDefNames['corfmd1'].id] = true, -- Adv Fortitude
 		[UnitDefNames['corfmd2'].id] = true, -- T4 Antinuke
-		--[UnitDefNames['cormabm'].id] = true, -- Mobile Antinuke
-		--[UnitDefNames['cormabm1'].id] = true, -- Mobile Antinuke
 		[UnitDefNames['corcarry'].id] = true, -- Hive (carrier)
 		--The Lost Legacy
 		[UnitDefNames['tllantinuke'].id] = true, -- Antinuke
 		[UnitDefNames['tllantinuke1'].id] = true, -- Adv Antinuke
 		[UnitDefNames['tllgazelle'].id] = true, -- T4 Antinuke
-		--[UnitDefNames['tllturtle'].id] = true, -- Mobile Antinuke
-	        [UnitDefNames['tllgiant'].id] = true, -- Giant (carrier)
+	  [UnitDefNames['tllgiant'].id] = true, -- Giant (carrier)
 		--Talon
 		[UnitDefNames['talon_damascus'].id] = true, -- Antinuke
 		[UnitDefNames['talon_damascus1'].id] = true, -- Adv Antinuke

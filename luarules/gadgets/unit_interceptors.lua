@@ -21,21 +21,18 @@ if (not gadgetHandler:IsSyncedCode()) then return false end --  no unsynced code
 local antiNukes = {
   --Arm
   [UnitDefNames["armscab"].id] = true,
-  [UnitDefNames["armscab1"].id] = true,
   [UnitDefNames["armamd"].id] = true,
   [UnitDefNames["armamd1"].id] = true,
   [UnitDefNames["armamd2"].id] = true,
   [UnitDefNames["armcarry"].id] = true,
   --Core
   [UnitDefNames["cormabm"].id] = true,
-  [UnitDefNames["cormabm1"].id] = true,
   [UnitDefNames["corfmd"].id] = true,
   [UnitDefNames["corfmd1"].id] = true,
   [UnitDefNames["corfmd2"].id] = true,
   [UnitDefNames["corcarry"].id] = true,
   --The lost legacy
   [UnitDefNames["tllturtle"].id] = true,
-  [UnitDefNames["tllturtle1"].id] = true,
   [UnitDefNames["tllantinuke"].id] = true,
   [UnitDefNames["tllantinuke1"].id] = true,
   [UnitDefNames["tllgazelle"].id] = true,
@@ -46,7 +43,6 @@ local antiNukes = {
   [UnitDefNames["talon_nexus"].id] = true,
   [UnitDefNames["talon_requiem"].id] = true,
   [UnitDefNames["talon_tribulation"].id] = true,
-  [UnitDefNames["talon_tribulation1"].id] = true,
 }
 
 local interceptorsID = {}

@@ -156,26 +156,6 @@ local morphDefs = {
 		time = 60,
 		tech = 2,
 	},
-	armscab = {
-		into = 'armscab1',
-		time = 60,
-		tech = 2,
-	},
-	cormabm = {
-		into = 'cormabm1',
-		time = 60,
-		tech = 2,
-	},
-	tllturtle = {
-		into = 'tllturtle1',
-		time = 60,
-		tech = 2,
-	},
-	talon_tribulation = {
-		into = 'talon_tribulation1',
-		time = 60,
-		tech = 2,
-	},
 	tllantinuke = {
 		into = 'tllantinuke1',
 		time = 60,

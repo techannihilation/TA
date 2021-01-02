@@ -180,7 +180,6 @@ local unitArray = {
   "tllmixer",
   "tllconfuser",
 
-
   "armseer",
   "r75-v",
   "armmark",
@@ -192,26 +191,18 @@ local unitArray = {
   "tlldivine",
   "tllobserver",
 
-
   --antinukes
   "armscab",
-  "armscab1",
   "armcarry",
 
   "cormabm",
-  "cormabm1",
   "corcarry",
 
   "tllcarry",
   "tllturtle",
-  "tllturtle1",
 
-  "talon_damascus",
-  "talon_damascus1",
+  "talon_tribulation",
   "talon_nexus",
-
-  --misc
-
 }
 
 

@@ -257,7 +257,6 @@ armsaber.dds
 armsam1.dds
 armsam.dds
 armsb.dds
-armscab1.dds
 armscab.dds
 armscar.dds
 armscpion.dds
@@ -525,7 +524,6 @@ corlevlr.dds
 corlightfus.dds
 corllt1.dds
 corllt.dds
-cormabm1.dds
 cormabm.dds
 cormakr.dds
 cormart.dds

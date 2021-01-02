@@ -8,6 +8,7 @@ Improvment :
  - Add Drillers for all T2 Construction Unit except Hover, Naval, and Vehicles
  - Add Adv Fusion for T2 Hover Construction (vehicles Already have them)
  - Delete Cloak Fusion for Arm and Armored Shielded Fusion for Core
+ - Delete adv mobile antinuke vehicle/spider/turtle
 
  Fix :
   - tllartybot bos/cob that cause many crash from may. Thank to silver to have find the bug
