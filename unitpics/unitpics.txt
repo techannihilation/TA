@@ -199,6 +199,7 @@ armmech.dds
 arm_mech_lab.dds
 armmedt.dds
 armmerl.dds
+armmex1.dds
 armmex.dds
 armmh.dds
 armmin.dds
@@ -533,6 +534,7 @@ cormaw.dds
 cormddm.dds
 cormds.dds
 cormenacer.dds
+cormex1.dds
 cormex.dds
 cormexp.dds
 cormh.dds
@@ -853,6 +855,7 @@ tllmatamata.dds
 tllmds.dds
 tllmedfusion.dds
 tllmegacoldfus.dds
+tllmex1.dds
 tllmex.dds
 tllmine1.dds
 tllmine2.dds

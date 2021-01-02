@@ -58,7 +58,7 @@ return {
 			[3] = "tllgeo",
 			[4] = "tllmstor",
 			[5] = "tllestor",
-			[6] = "tllmex",
+			[6] = "tllmex1",
 			[7] = "tllmetalmakerlvl1",
 			[8] = "tllnanotc",
 			[9] = "tllca",
