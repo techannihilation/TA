@@ -50,8 +50,8 @@ return {
 		unitname = "corct",
 		workertime = 180,
 		buildoptions = {
-			[1] = "corfus",
-			[2] = "corsfus",
+			[1] = "corgen",
+			[2] = "corfus",
 			[3] = "cmgeo",
 			[4] = "corbhmth",
 			[5] = "cormoho",

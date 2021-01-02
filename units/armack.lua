@@ -58,8 +58,8 @@ return {
 		upright = true,
 		workertime = 160,
 		buildoptions = {
-			[1] = "armfus",
-			[2] = "armckfus",
+			[1] = "armgen",
+			[2] = "armfus",
 			--[3] = "armdf",
 			[4] = "amgeo",
 			[5] = "armgmm",

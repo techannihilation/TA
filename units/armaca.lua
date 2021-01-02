@@ -60,8 +60,8 @@ return {
 		unitname = "armaca",
 		workertime = 90,
 		buildoptions = {
-			[1] = "armfus",
-			[2] = "armckfus",
+			[1] = "armgen",
+			[2] = "armfus",
 			[4] = "amgeo",
 			[5] = "armgmm",
 			[6] = "armmoho",
