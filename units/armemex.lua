@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 68889,
 		buildcostmetal = 3488,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 7,
-		buildinggrounddecalsizey = 7,
-		buildinggrounddecaltype = "armmex1_aoplane.dds",
 		buildpic = "armemex.dds",
 		buildtime = 82000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
@@ -49,7 +45,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armemex",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "armemex.dds",
