@@ -15,7 +15,7 @@ if (gadgetHandler:IsSyncedCode()) then
 end
 
 local minEngineVersion = 103 -- major engine version as number
-local maxEngineVersion = 104 -- don't forget to update it!
+local maxEngineVersion = 105 -- don't forget to update it!
 
 local red = "\255\255\1\1"
 
@@ -29,7 +29,7 @@ function gadget:GameStart()
         elseif tonumber(reportedMajorVersion)>maxEngineVersion then
             Spring.Echo(red .. "WARNING: YOU ARE USING SPRING " .. Engine.version .. " WHICH IS TOO RECENT FOR THIS GAME.")
             Spring.Echo(red .. "PLEASE DOWNGRADE YOUR ENGINE TO SPRING " .. tostring(minEngineVersion) .. " - " .. tostring(maxEngineVersion) .. ".")
-        end           
+        end
     end
 end
 
