@@ -1505,6 +1505,13 @@ local function SetTeamColor(teamID,a)
   end
   local r, g, b = Spring.GetTeamColor(teamID)
   if (r and g and b) then
+    local max = math.max(r, g, b)
+    if max < 0.5 and max >= 0.1 then
+      local norm = 0.5 / max
+      r, g, b = r * norm, g * norm, b * norm
+    elseif max < 0.1 then
+      r, g, b = 0.5, 0.5, 0.5
+    end
     color = { r, g, b }
     teamColors[teamID] = color
     glColor(color)
