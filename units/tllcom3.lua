@@ -127,7 +127,7 @@ return {
 				damage = 200000,
 				description = "Supreme Commander Wreckage",
 				energy = 0,
-				featuredead = "TLLCOM5_HEAP",
+				featuredead = "heap",
 				featurereclamate = "SMUDGE01",
 				footprintx = 2,
 				footprintz = 2,
