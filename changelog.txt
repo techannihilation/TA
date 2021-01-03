@@ -16,6 +16,9 @@ Improvment :
  Fix :
   - tllartybot bos/cob that cause many crash from may. Thank to silver to have find the bug
 
+  Version :
+  - 104 => 105.0 Engine
+
 3.64 -> 3.65
 2021-01-01
 Balance :
