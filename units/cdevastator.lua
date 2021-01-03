@@ -246,36 +246,42 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "1 0 0.2",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "-1 0 0.2",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "1 0 0",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "-1 0 0",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "1 0 -0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "-1 0 -0.2",
 				maxangledif = 180,

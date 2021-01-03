@@ -184,19 +184,19 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				maindir = "0 0 -1",
 				maxangledif = 270,
@@ -215,7 +215,7 @@ return {
 				onlytargetcategory = "VTOL",
 			},
 			[6] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				maindir = "0 0 1",
 				maxangledif = 270,

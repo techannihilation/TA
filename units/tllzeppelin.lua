@@ -240,28 +240,28 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL TINY",
 				def = "MINIION",
 				maindir = "0 0 1",
 				maxangledif = 45,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				maindir = "0 0 -1",
 				maxangledif = 270,
