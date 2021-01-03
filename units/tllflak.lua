@@ -35,7 +35,7 @@ return {
 		sightdistance = 525,
 		standingfireorder = 2,
 		unitname = "tllflak",
-		yardmap = "ooooo",
+		yardmap = "oooo",
 		customparams = {
 			buildpic = "tllflak.dds",
 			faction = "TLL",

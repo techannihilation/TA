@@ -120,7 +120,7 @@ return {
 				damage = 100000,
 				description = "Star Commander Wreckage",
 				energy = 0,
-				featuredead = "TLLCOM2_HEAP",
+				featuredead = "heap",
 				featurereclamate = "SMUDGE01",
 				footprintx = 2,
 				footprintz = 2,
