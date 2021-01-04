@@ -196,16 +196,16 @@ HitByWeapon(anglex, anglez)
 
 Go()
 {
-	turn head to y-axis Static_Var_3 speed <160.000000>;
-	wait-for-turn head around y-axis;
+	//turn head to y-axis Static_Var_3 speed <160.000000>;
+	//wait-for-turn head around y-axis;
 	set INBUILDSTANCE to 1;
 }
 
 Stop()
 {
 	set INBUILDSTANCE to 0;
-	turn head to y-axis <0.000000> speed <160.000000>;
-	wait-for-turn head around y-axis;
+	//turn head to y-axis <0.000000> speed <160.000000>;
+	//wait-for-turn head around y-axis;
 }
 
 InitState()
