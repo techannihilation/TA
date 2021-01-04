@@ -5,6 +5,7 @@ Major Change : From 7 commanders levels, we adopt 4 levels (t1, t2, t3, t4)
 
 Balance :
  - Adv Mex : Decrease metalextraction by 25%. Decrease cost and energyuse too.
+ - Decrease metalcost for solar by 25%. 
 
 Improvment :
  - Add Adv Mex and Adv MetalMaker for all T1 Cons (for arm : delete cloaked Mex. For core ; delete laser beam Mex)

@@ -3,7 +3,7 @@ return {
 		activatewhenbuilt = true,
 		buildangle = 2192,
 		buildcostenergy = 30,
-		buildcostmetal = 232,
+		buildcostmetal = 183,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
