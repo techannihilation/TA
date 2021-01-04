@@ -53,9 +53,9 @@ local modrules  = {
   },
 
   system = {
-    pathFinderSystem = (Spring.GetModOptions() and (Spring.GetModOptions().qtpfs == "qtpfs") and 1) or 0,
-    pathFinderRawDistMult = 1.25,
-    pathFinderUpdateRate = 0.007,
+    pathFinderSystem = 0, -- always default pathfinder
+    pathFinderRawDistMult = 100,
+    pathFinderUpdateRate =  0.0000001,
   },
  }
 
