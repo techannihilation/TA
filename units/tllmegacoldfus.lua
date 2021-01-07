@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 229901,
 		buildcostmetal = 36180,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 10,
-		buildinggrounddecalsizey = 10,
-		buildinggrounddecaltype = "tllmegacoldfus_aoplane.dds",
 		buildpic = "tllmegacoldfus.dds",
 		buildtime = 575000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -40,7 +36,6 @@ return {
 		selfdestructas = "FUSION_BLAST_BIG",
 		sightdistance = 210,
 		unitname = "tllmegacoldfus",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "tllmegacoldfus.dds",

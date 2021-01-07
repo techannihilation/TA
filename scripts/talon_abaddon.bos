@@ -8,60 +8,16 @@ piece  flare1, flare2, flare3, miniflare1, miniflare2, miniflare3, r1, r2, r3, r
        barrel3, minigun1, minigun2, minigun3, minibar1, minibar2, minibar3, rocker1,
        rocker2, body, missile_launcher;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
+static-var  Gun_1, Gun_2, Main_Gun_Heading;
 
-
-InitState()
-{
-	Static_Var_5 = 1;
-	Static_Var_6 = 0;
-}
-
-Go()
+Activate()
 {
 	spin radar around y-axis speed <100.>;
 }
 
-Stop()
-{
-	stop-spin radar around y-axis;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( Static_Var_6 )
-	{
-		Static_Var_5 = requestedstate;
-		return (0);
-	}
-	Static_Var_6 = 1;
-	currentstate = Static_Var_5;
-	Static_Var_5 = requestedstate;
-	while( Static_Var_5 != currentstate )
-	{
-		if( Static_Var_5 == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( Static_Var_5 == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	Static_Var_6 = 0;
-}
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
 Deactivate()
 {
-	start-script RequestState(1);
+	stop-spin radar around y-axis;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -95,44 +51,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-HitByWeapon(anglex, anglez)
-{
-	if( get BUILD_PERCENT_LEFT )
-	{
-		return (0);
-	}
-	Static_Var_9 = anglex;
-	Static_Var_10 = anglez;
-	signal 32;
-	set-signal-mask 32;
-}
-
-monitorhealth(Func_Var_1)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		Func_Var_1 = get HEALTH;
-		if( Func_Var_1 > 15 )
-		{
-			if( Static_Var_7 == 0 )
-			{
-				Static_Var_7 = 1;
-				show barrel1;
-				show barrel2;
-				show barrel3;
-				show sleeves1;
-				show sleeves2;
-				show turret;
-			}
-		}
-		sleep 500;
-	}
-}
-
 Create()
 {
 	hide flare1;
@@ -142,25 +60,10 @@ Create()
 	hide miniflare2;
 	hide miniflare3;
 	turn minigun3 to y-axis <225.000000> now;
-	Static_Var_9 = 0;
-	Static_Var_10 = 0;
-	Static_Var_8 = 0;
-	Static_Var_7 = 1;
-	start-script monitorhealth();
-	Static_Var_2 = 1;
-	Static_Var_3 = 3;
-	Static_Var_4 = 0;
-	Static_Var_1 = 3000;
-	//Static_Var_missile = 0;
+	Gun_1 = 1;
+	Gun_2 = 0;
 	start-script SmokeUnit();
-	call-script InitState();
-	spin radar around y-axis speed <75.000000> accelerate <10.000000>;
-
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_1 = Func_Var_1 * 2;
+	//spin radar around y-axis speed <75.000000> accelerate <10.000000>;
 }
 
 RestoreAfterDelay()
@@ -186,14 +89,11 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	while( Static_Var_7 == 0 )
-	{
-		sleep 500;
-	}
 	turn turret to y-axis heading speed <50.>;
 	turn rocker1 to y-axis heading speed <50.>;
 	turn body to y-axis <0.> - heading speed <50.>;
 	turn sleeves1 to x-axis <0.> - pitch speed <25.>;
+	Main_Gun_Heading = heading;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves1 around x-axis;
 	start-script RestoreAfterDelay();
@@ -209,7 +109,7 @@ FirePrimary()
 	move barrel1 to z-axis [0.] speed [3.];
 	sleep 200;
 	
-	Static_Var_2 = 2;
+	Gun_1 = 2;
 	emit-sfx 1024 from flare2;
 	move barrel2 to z-axis [-3.] speed [500.];
 	sleep 150;
@@ -217,28 +117,28 @@ FirePrimary()
 	move barrel2 to z-axis [0.] speed [3.];
 	sleep 200;
 	
-	Static_Var_2 = 3;
+	Gun_1 = 3;
 	emit-sfx 1024 from flare3;
 	move barrel3 to z-axis [-3.] speed [500.];
 	sleep 150;
 	wait-for-move barrel3 along z-axis;
 	move barrel3 to z-axis [0.] speed [3.];
 	sleep 200;
-	Static_Var_2 = 1;
+	Gun_1 = 1;
 
 }
 
 QueryPrimary(piecenum)
 {
-	if ( Static_Var_2 == 1) 
+	if ( Gun_1 == 1) 
 	{	 
 		piecenum = flare1;
 	}
-	if ( Static_Var_2 == 2) 
+	if ( Gun_1 == 2) 
 	{	 
 		piecenum = flare2;
 	}
-	if ( Static_Var_2 == 3) 
+	if ( Gun_1 == 3) 
 	{	 
 		piecenum = flare3;
 	}
@@ -280,8 +180,11 @@ AimFromSecondary(piecenum)
 AimTertiary(heading, pitch)
 {
 	signal 8;
-	set-signal-mask 8;
-	
+	set-signal-mask 8;	
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	move sleeves2 to y-axis [2.000000] speed [3.000000];
 	turn sleeves2 to x-axis <80.000000> speed <50.>;
 	wait-for-turn turret around y-axis;
@@ -290,28 +193,28 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
-	++Static_Var_4;
-	if( Static_Var_4 == 4 )
+	++Gun_2;
+	if( Gun_2 == 4 )
 	{
-		Static_Var_4 = 0;
+		Gun_2 = 0;
 	}
 }
 
 QueryTertiary(piecenum)
 {
-	if( Static_Var_4 == 0 )
+	if( Gun_2 == 0 )
 	{
 		piecenum = r1;
 	}
-	if( Static_Var_4 == 1 )
+	if( Gun_2 == 1 )
 	{
 		piecenum = r2;
 	}
-	if( Static_Var_4 == 2 )
+	if( Gun_2 == 2 )
 	{
 		piecenum = r3;
 	}
-	if( Static_Var_4 == 3 )
+	if( Gun_2 == 3 )
 	{
 		piecenum = r4;
 	}
