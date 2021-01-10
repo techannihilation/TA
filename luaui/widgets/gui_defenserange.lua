@@ -219,7 +219,7 @@ function UnitDetected( unitID, allyTeam, teamId )
 	local dps
 	local weaponDef
 	
-	if ( #udef.weapons == 0  ) then
+	if not udef.weapons or ( #udef.weapons == 0  ) then
 		--not interesting, has no weapons, lame
 		return
 	end
