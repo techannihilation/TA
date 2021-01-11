@@ -1,13 +1,21 @@
+3.70 > 3.71
+2021-01-xx
+
+Balance :
+ - Bumblee T3 Tll : Decrease cost 16K=>11KM, firepower 1000=>700 dmg/s and HP 68=>48K
+ -
+ Improvment :
+  - adv wind : Decrease model size by 25%
+
 3.65 > 3.70
 2021-01-05
 
-Major Change : From 7 commanders levels, we adopt 4 levels (t1, t2, t3, t4)
-
 Balance :
  - Adv Mex : Decrease metalextraction by 25%. Decrease cost and energyuse too.
- - Decrease metalcost for solar by 25%. 
+ - Decrease metalcost for solar by 25%.
 
 Improvment :
+ - From 7 commanders levels, we adopt 4 levels (t1, t2, t3, t4)
  - Add Adv Mex and Adv MetalMaker for all T1 Cons (for arm : delete cloaked Mex. For core ; delete laser beam Mex)
  - Add Drillers for all T2 Construction Unit except Hover, Naval, and Vehicles
  - Add Adv Fusion for T2 Hover Construction (vehicles Already have them)
@@ -17,7 +25,7 @@ Improvment :
  Fix :
   - tllartybot bos/cob that cause many crash from may. Thank to silver to have find the bug
 
-  Version :
+  Engine Version :
   - 104 => 105.0 Engine
 
 3.64 -> 3.65

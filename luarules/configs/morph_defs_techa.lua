@@ -847,12 +847,17 @@ local morphDefs = {
 	armbanth = {
 		into = 'exoarm',
 		time = 120,
-		xp = 0.10,
+		xp = 0.15,
 	},
 	hyperion = {
 		into = 'tllsaurus',
 		time = 120,
 		xp = 0.10,
+	},
+	tllhtml = {
+		into = 'tllsaurus',
+		time = 120,
+		xp = 0.15,
 	},
 	tllblind = {
 		into = 'tllcolossus',
