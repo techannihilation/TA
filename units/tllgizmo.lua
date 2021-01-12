@@ -36,7 +36,7 @@ return {
 		idletime = 1800,
 		losemitheight = 31,
 		maneuverleashlength = 640,
-		mass = 1598,
+		mass = 1275,
 		maxdamage = 3450,
 		maxslope = 20,
 		maxvelocity = 1.75,

@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 287054,
 		buildcostmetal = 12815,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 10,
-		buildinggrounddecalsizey = 10,
-		buildinggrounddecaltype = "armmas_aoplane.dds",
 		buildpic = "talon_mas.dds",
 		buildtime = 225000,
 		canattack = false,
@@ -42,7 +38,6 @@ return {
 		selfdestructas = "MINE_NUKE",
 		sightdistance = 322,
 		unitname = "talon_mas",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "talon_mas.dds",
