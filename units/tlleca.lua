@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 4662,
 		builddistance = 200,
 		builder = true,
-		buildpic = "tllaca.dds",
+		buildpic = "tlleca.dds",
 		buildtime = 230000,
 		canfly = true,
 		canguard = true,
@@ -75,7 +75,7 @@ return {
 			[19] = "tllhydre2",
 		},
 		customparams = {
-			buildpic = "tllaca.dds",
+			buildpic = "tlleca.dds",
 			faction = "TLL",
 		},
 		nanocolor = {
