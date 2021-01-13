@@ -13,7 +13,6 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		cantbetransported = true,
 		category = "ALL HOVER HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

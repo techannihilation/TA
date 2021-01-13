@@ -12,7 +12,6 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		cantbetransported = true,
 		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -5 10",
 		collisionvolumescales = "100 75 135",

@@ -1,11 +1,15 @@
 3.70 > 3.71
-2021-01-xx
+2021-01-15
 
 Balance :
  - Bumblee T3 Tll : Decrease cost 16K=>11KM, firepower 1000=>700 dmg/s and HP 68=>48K
- -
+ - T3 Super BattleShip all faction : Decrease range 3400=>3000. Increase Hp by 40~50K. (Arm : 100K => 140K)
+
  Improvment :
-  - adv wind : Decrease model size by 25%
+  - Adv wind : Decrease model size by 25%
+  - tll Dragon emp teeth deleted
+  - Kronos Arm : Add new T4 Morph
+  - Delete restriction about Air transport for many units (except Annubis Talon and Krypto Arm).
 
 3.65 > 3.70
 2021-01-05

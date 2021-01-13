@@ -522,8 +522,13 @@ local morphDefs = {
 	},
 	armbull2 = {
 		into = 'armmcv',
-		time = 90,
+		time = 60,
 		xp = 0.30,
+	},
+	armmcv = {
+		into = 'armmcv1',
+		time = 90,
+		xp = 0.10,
 	},
 	tawf013 = {
 		into = 'armmart',

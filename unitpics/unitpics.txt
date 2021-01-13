@@ -500,7 +500,6 @@ corgol.dds
 corgripn.dds
 corhcar.dds
 corhelo.dds
-corhevsenan.dds
 corhind.dds
 corhlt.dds
 corhover3g.dds

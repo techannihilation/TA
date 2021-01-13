@@ -5,7 +5,7 @@
 
 
 piece 	base, body, flare1a, flare1b, flare1c, flare2a, flare2b, flare2c, 
-		r1, r2, r3, r4, r5, r6, turret1, bridge, sleeves1, barrel1a, barrel1b, barrel1c,  
+		rockets, r1, r2, turret1, bridge, sleeves1, barrel1a, barrel1b, barrel1c,  
 		turret2, sleeves2, barrel2a, barrel2b, barrel2c, w1, w2, w3, w4, w5, w6, w7, w8;
 		
 
@@ -254,7 +254,7 @@ AimTertiary(heading, pitch)
 	while (amphib == 3)
 	{ 
 		sleep 1000;
-	}	
+	}
 
 	return (1);
 }
@@ -263,7 +263,7 @@ AimTertiary(heading, pitch)
 FireTertiary()
 {
 	++gun_missile;
-	if (gun_missile == 6)
+	if (gun_missile == 2)
 	{
 		gun_missile = 0;
 	}
@@ -271,7 +271,7 @@ FireTertiary()
 
 AimFromTertiary(piecenum)
 {
-	piecenum = base;
+	piecenum = rockets;
 }
 
 
@@ -284,22 +284,6 @@ QueryTertiary(piecenum)
 	if (gun_missile == 1)
 	{
 		piecenum = r2;
-	}
-	if (gun_missile == 2)
-	{
-		piecenum = r3;
-	}
-	if (gun_missile == 3)
-	{
-		piecenum = r4;
-	}
-	if (gun_missile == 4)
-	{
-		piecenum = r5;
-	}
-	if (gun_missile == 5)
-	{
-		piecenum = r6;
 	}
 }
 

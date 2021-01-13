@@ -81,7 +81,6 @@ return {
 			[22] = "tlljuno",
 			[23] = "tllgate2",
 			[24] = "tlldt",
-			[25] = "tlldt1",
 			[26] = "tllllt",
 			[27] = "tllweb",
 			[28] = "tllhlt",

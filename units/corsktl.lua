@@ -12,7 +12,6 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		cantbetransported = true,
 		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
 		cloakcost = 150,
 		cloakcostmoving = 400,

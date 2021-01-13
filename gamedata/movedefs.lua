@@ -108,6 +108,15 @@ local moveDatas = {
         maxslope = 18,
         maxwaterdepth = 22
     },
+    HTANK8 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 253,
+        footprintx = 8,
+        footprintz = 8,
+        maxslope = 18,
+        maxwaterdepth = 22
+    },
     VHTANK5 = {
         allowrawmovement = true,
         allowterraincollisions = false,

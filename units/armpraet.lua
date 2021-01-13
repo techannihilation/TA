@@ -46,7 +46,7 @@ return {
 		radaremitheight = 100,
 		script = "armpraet.cob",
 		seismicsignature = 48,
-		selfdestructas = "BANTHA_BLAST",
+		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 500,
 		sonardistance = 0,
