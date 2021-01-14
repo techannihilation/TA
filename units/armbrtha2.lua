@@ -43,6 +43,8 @@ return {
 		standingfireorder = 2,
 		unitname = "armbrtha2",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = true,
+		usepieceselectionvolumes = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "armbrtha2.dds",

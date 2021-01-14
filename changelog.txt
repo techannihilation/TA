@@ -9,7 +9,8 @@ Balance :
   - Adv wind : Decrease model size by 25%
   - tll Dragon emp teeth deleted
   - Kronos Arm : Add new T4 Morph
-  - Delete restriction about Air transport for many units (except Annubis Talon and Krypto Arm).
+  - Delete restriction about Air transport for many units (except Annubis Talon and Krypto Arm)
+  - Inverse TLL model between T2 bertha and T2 Emp Bertha
 
 3.65 > 3.70
 2021-01-05
