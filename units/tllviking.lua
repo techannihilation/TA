@@ -31,7 +31,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 7028,
 		maxdamage = 19700,
-		maxvelocity = 1.75,
+		maxvelocity = 1.4,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		movementclass = "DBOAT6",
@@ -46,8 +46,8 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.254,
-		turnrate = 300,
+		turninplacespeedlimit = 1.25,
+		turnrate = 180,
 		unitname = "tllviking",
 		waterline = 2,
 		customparams = {
@@ -170,7 +170,7 @@ return {
 				},
 			},
 			arm_crus = {
-				areaofeffect = 16,
+				areaofeffect = 32,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,

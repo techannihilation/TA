@@ -32,7 +32,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 6750,
 		maxdamage = 17875,
-		maxvelocity = 2,
+		maxvelocity = 1.4,
 		minwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "DBOAT6",
@@ -48,8 +48,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.452,
-		turnrate = 306,
+		turninplacespeedlimit = 1.4,
+		turnrate = 180,
 		unitname = "corbats",
 		customparams = {
 			buildpic = "corbats.dds",
@@ -91,6 +91,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:MEDIUMFLARE",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

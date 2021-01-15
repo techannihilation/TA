@@ -228,11 +228,9 @@ return {
 				soundstart = "Mavgun2",
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 420,
+				weaponvelocity = 450,
 				damage = {
-					experimental_land = 750,
-					experimental_ships = 750,
-					default = 500,
+					default = 600,
 					subs = 5,
 				},
 			},

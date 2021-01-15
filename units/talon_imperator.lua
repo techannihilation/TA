@@ -31,7 +31,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 7600,
 		maxdamage = 16980,
-		maxvelocity = 2,
+		maxvelocity = 1.4,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		movementclass = "DBOAT6",
@@ -46,8 +46,8 @@ return {
 		standingmoveorder = 0,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
-		turnrate = 300,
+		turninplacespeedlimit = 1.30,
+		turnrate = 180,
 		unitname = "talon_imperator",
 		waterline = 8,
 		customparams = {
@@ -78,6 +78,10 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:MEDIUMFLARE",
+				[2] = "custom:goliathflare",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

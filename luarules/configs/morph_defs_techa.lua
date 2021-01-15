@@ -1077,12 +1077,17 @@ local morphDefs = {
 	},
 	cormenacer = {
 		into = 'corhaboob',
-	  	time = 90,
+	  time = 90,
 		xp = 0.25,
 	},
 	coradon = {
 		into = 'corhcrus',
-	  	time = 30,
+	  time = 30,
+		xp = 0.10,
+	},
+	corhcrus = {
+		into = 'corhflag',
+		time = 90,
 		xp = 0.10,
 	},
 	armtem = {

@@ -6,9 +6,9 @@
 piece  base, body, turret1, turret2, turret3, turret4, sleeves1, sleeves2,
        sleeves3, sleeves4, barrel1a, barrel1b, barrel2a, barrel2b, barrel2c, barrel3a,
        barrel3b, barrel4a, barrel4b, barrel4c, flare1a, flare1b, flare2a, flare2b,
-       flare2c, flare3a, flare3b, flare4a, flare4b, flare4c, rockets, r0,
-       r1, r2, r3, r4, r5, r6, r7, r8,
-       r9, wakes, wake1, wake2, wake3, wake4, wake5, wake6;
+       flare2c, flare3a, flare3b, flare4a, flare4b, flare4c, rockets,
+       r1, r2, r3, r4, r5, r6,
+       wakes, wake1, wake2, wake3, wake4, wake5, wake6;
 
 static-var  gun_3, Static_Var_2, gun_1, gun_2, Static_Var_5,
             restore_delay;
@@ -207,19 +207,19 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
+		emit-sfx 1024 from flare1a;
 		move barrel1a to z-axis [-3.000000] speed [500.000000];
-		show flare1a;
 		sleep 150;
 		move barrel1a to z-axis [0.000000] speed [3.000000];
-		hide flare1a;
+		
 	}
 	if( gun_1 == 1 )
 	{
+		emit-sfx 1024 from flare1b;
 		move barrel1b to z-axis [-3.000000] speed [500.000000];
-		show flare1b;
 		sleep 150;
 		move barrel1b to z-axis [0.000000] speed [3.000000];
-		hide flare1b;
+		
 	}
 	gun_1 = !gun_1;
 }
@@ -228,19 +228,17 @@ FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
+		emit-sfx 1024 from flare3a;
 		move barrel3a to z-axis [-3.000000] speed [500.000000];
-		show flare3a;
 		sleep 150;
 		move barrel3a to z-axis [0.000000] speed [3.000000];
-		hide flare3a;
 	}
 	if( gun_2 == 1 )
 	{
+		emit-sfx 1024 from flare3b;
 		move barrel3b to z-axis [-3.000000] speed [500.000000];
-		show flare3b;
 		sleep 150;
 		move barrel3b to z-axis [0.000000] speed [3.000000];
-		hide flare3b;
 	}
 	gun_2 = !gun_2;
 }
@@ -249,27 +247,27 @@ FireTertiary()
 {
 	if( gun_3 == 0 )
 	{
+		emit-sfx 1024 from flare2a;
 		move barrel2a to z-axis [-3.000000] speed [500.000000];
-		show flare2a;
 		sleep 150;
 		move barrel2a to z-axis [0.000000] speed [3.000000];
-		hide flare2a;
+
 	}
 	if( gun_3 == 1 )
 	{
+		emit-sfx 1024 from flare2b;
 		move barrel2b to z-axis [-3.000000] speed [500.000000];
-		show flare2b;
 		sleep 150;
 		move barrel2b to z-axis [0.000000] speed [3.000000];
-		hide flare2b;
+
 	}
 	if( gun_3 == 2 )
 	{
+		emit-sfx 1024 from flare2c;
 		move barrel2c to z-axis [-3.000000] speed [500.000000];
-		show flare2c;
 		sleep 150;
 		move barrel2c to z-axis [0.000000] speed [3.000000];
-		hide flare2c;
+
 	}
 	++gun_3;
 	if( gun_3 >= 3 )
@@ -314,7 +312,7 @@ FireWeapon4()
 FireWeapon5()
 {
 	++Static_Var_2;
-	if( Static_Var_2 == 10 )
+	if( Static_Var_2 == 6 )
 	{
 		Static_Var_2 = 0;
 	}
@@ -338,6 +336,11 @@ AimFromTertiary(piecenum)
 AimFromWeapon4(piecenum)
 {
 	piecenum = turret4;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = rockets;
 }
 
 QueryPrimary(piecenum)
@@ -400,43 +403,27 @@ QueryWeapon5(piecenum)
 {
 	if( Static_Var_2 == 0 )
 	{
-		piecenum = r0;
+		piecenum = r1;
 	}
 	if( Static_Var_2 == 1 )
 	{
-		piecenum = r1;
+		piecenum = r2;
 	}
 	if( Static_Var_2 == 2 )
 	{
-		piecenum = r2;
+		piecenum = r3;
 	}
 	if( Static_Var_2 == 3 )
 	{
-		piecenum = r3;
+		piecenum = r4;
 	}
 	if( Static_Var_2 == 4 )
 	{
-		piecenum = r4;
+		piecenum = r5;
 	}
 	if( Static_Var_2 == 5 )
 	{
-		piecenum = r5;
-	}
-	if( Static_Var_2 == 6 )
-	{
 		piecenum = r6;
-	}
-	if( Static_Var_2 == 7 )
-	{
-		piecenum = r7;
-	}
-	if( Static_Var_2 == 8 )
-	{
-		piecenum = r8;
-	}
-	if( Static_Var_2 == 9 )
-	{
-		piecenum = r9;
 	}
 }
 

@@ -61,6 +61,14 @@ local moveDatas = {
         footprintz = 8,
         minwaterdepth = 15
     },
+    HDBOAT10 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 1400,
+        footprintx = 10,
+        footprintz = 10,
+        minwaterdepth = 16
+    },
     HOVER3 = {
         allowrawmovement = true,
 		badslope = 22,

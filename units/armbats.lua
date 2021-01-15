@@ -32,7 +32,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 7004,
 		maxdamage = 18150,
-		maxvelocity = 1.75,
+		maxvelocity = 1.4,
 		minwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "DBOAT6",
@@ -48,8 +48,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
-		turnrate = 310,
+		turninplacespeedlimit = 1.30,
+		turnrate = 180,
 		unitname = "armbats",
 		customparams = {
 			buildpic = "armbats.dds",
@@ -91,6 +91,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:MEDIUMFLARE",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -148,7 +151,6 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "cannhvy1",
 				stages = 20,
-				tolerance = 5000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 470,

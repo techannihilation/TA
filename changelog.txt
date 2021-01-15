@@ -3,14 +3,20 @@
 
 Balance :
  - Bumblee T3 Tll : Decrease cost 16K=>11KM, firepower 1000=>700 dmg/s and HP 68=>48K
- - T3 Super BattleShip all faction : Decrease range 3400=>3000. Increase Hp by 40~50K. (Arm : 100K => 140K)
+ - T3 Super BattleShip all faction : Decrease range 3400=>2500. Increase Hp by 20~40K. (Arm : 100K => 116K). Increase cost by 20KM & 100KE
+ - T3 Flagship : Decrease range 2200 => 1800. Decrease spped 1.75 => 1.5. Decrease HP 70K => 62K
+ - T2 Batship (Millenium, Viking...) : Decrease speed 2.0 =>1.4
+ - Tllbind : Increase Range 550=>600. Decrease Damage by 25%. Decrease cost -10%
+ - Neptune Hover Core : Increase Metalcost 8800=>9400. Green Beam => Red Beam with less range and damage/s. Delete AA on sides
 
  Improvment :
   - Adv wind : Decrease model size by 25%
   - tll Dragon emp teeth deleted
-  - Kronos Arm : Add new T4 Morph
+  - Kronos Arm (T3 Command Vehicle) : Add new T4 Morph (Bahamut / Silver counter)
+  - Neptune Core (T3 Hover) : Add new T4 Morph (Bahamut / Silver counter)
   - Delete restriction about Air transport for many units (except Annubis Talon and Krypto Arm)
   - Inverse TLL model between T2 bertha and T2 Emp Bertha
+  - Increase T3 Ship model size
 
 3.65 > 3.70
 2021-01-05

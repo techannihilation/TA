@@ -1,0 +1,538 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, reactors, arms, radar, stand, vlaunch, r1, r2, r3, r4, pipes,
+		turret1, sleeves1, barrel1a, barrel1b, barrel1c, barrel1d,
+		flare1a, flare1b, flare1c, flare1d,
+		turret2, sleeves2, barrel2a, barrel2b, barrel2c, barrel2d, flare2a, flare2b, flare2c, flare2d,
+		ltur1, ltur2, ltur3, ltur4, lslv1, lslv2, lslv3, lslv4, 
+		lflare1a, lflare1b, lflare2a, lflare2b, lflare3a, lflare3b, lflare4a, lflare4b,
+		wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8;
+
+
+static-var  Static_Var_1, restore_delay, gun_1, gun_2, beam_1, beam_2, beam_3, beam_4, msl;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+#define SIG_MOVE			256
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	spin radar around y-axis speed <60.000000>;
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+setSFXoccupy(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{		
+		if( Static_Var_1 == 1 )
+		{
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+		}
+		if( Static_Var_1 == 2 )
+		{
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
+		}
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	sleep 150;
+}
+
+Create()
+{
+	hide flare1a;
+	hide flare1b;
+	hide flare1c;
+	hide flare1d;
+	beam_1 = 0;
+	beam_2 = 0;
+	beam_3 = 0;
+	beam_4 = 0;	
+	gun_1 = 0;
+	gun_2 = 0;
+	msl = 0;
+	start-script SmokeUnit();
+}
+
+RestorePrimary()
+{
+	sleep 6000;
+	turn turret1 to y-axis <0> speed <45.000000>;
+	turn sleeves1 to x-axis <0> speed <45.000000>;
+}
+
+RestoreSecondary()
+{
+	sleep 4500;
+	turn turret2 to y-axis <0> speed <50.000000>;
+	turn sleeves2 to x-axis <0> speed <50.000000>;
+}
+
+RestoreBeam()
+{
+	sleep 2500;
+	turn ltur1 to y-axis <0> speed <75.000000>;
+	turn lslv1 to x-axis <0> speed <75.000000>;
+	turn ltur2 to y-axis <0> speed <75.000000>;
+	turn lslv2 to x-axis <0> speed <75.000000>;
+	turn ltur3 to y-axis <0> speed <75.000000>;
+	turn lslv3 to x-axis <0> speed <75.000000>;
+	turn ltur4 to y-axis <0> speed <75.000000>;
+	turn lslv4 to x-axis <0> speed <75.000000>;	
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret1 to y-axis heading speed <45.000000>;
+	turn sleeves1 to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeves1 around x-axis;
+	Start-script RestorePrimary();
+	return (1);
+}
+
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		emit-sfx 1024 + 0 from flare1a;
+		move barrel1a to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel1a to z-axis [0.000000] speed [4.000000];
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1024 + 0 from flare1b;
+		move barrel1b to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel1b to z-axis [0.000000] speed [4.000000];
+	}
+	if( gun_1 == 2 )
+	{
+		emit-sfx 1024 + 0 from flare1c;
+		move barrel1c to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel1c to z-axis [0.000000] speed [4.000000];
+	}
+	if( gun_1 == 3 )
+	{
+		emit-sfx 1024 + 0 from flare1d;
+		move barrel1d to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel1d to z-axis [0.000000] speed [4.000000];
+	}
+	++gun_1;
+	if( gun_1 == 4 )
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret1;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare1b;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare1c;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare1d;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <50.000000>;
+	turn sleeves2 to x-axis <0.000000> - pitch speed <50.000000>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeves2 around x-axis;
+	Start-script RestoreSecondary();
+	return (1);
+}
+
+FireSecondary()
+{
+	++gun_2;
+	if( gun_2 == 4 )
+	{
+		gun_2 = 0;
+	}
+	
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret2;
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare2a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = flare2c;
+	}
+	if( gun_2 == 3 )
+	{
+		piecenum = flare2d;
+	}
+}
+
+//Beam
+//XXXXXX
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn ltur1 to y-axis heading speed <150.000000>;
+	turn lslv1 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn ltur1 around y-axis;
+	wait-for-turn lslv1 around x-axis;
+	Start-script RestoreBeam();
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn ltur2 to y-axis heading speed <150.000000>;
+	turn lslv2 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn ltur2 around y-axis;
+	wait-for-turn lslv2 around x-axis;
+	Start-script RestoreBeam();
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn ltur3 to y-axis heading speed <150.000000>;
+	turn lslv3 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn ltur3 around y-axis;
+	wait-for-turn lslv3 around x-axis;
+	Start-script RestoreBeam();
+	return (1);
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn ltur4 to y-axis heading speed <150.000000>;
+	turn lslv4 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn ltur4 around y-axis;
+	wait-for-turn lslv4 around x-axis;
+	Start-script RestoreBeam();
+	return (1);
+}
+
+FireWeapon3()
+{
+	++beam_1;
+	if( beam_1 == 2 )
+	{
+		beam_1 = 0;
+	}
+}
+
+FireWeapon4()
+{
+	++beam_2;
+	if( beam_2 == 2 )
+	{
+		beam_2 = 0;
+	}
+}
+
+FireWeapon5()
+{
+	++beam_3;
+	if( beam_3 == 2 )
+	{
+		beam_3 = 0;
+	}
+}
+
+FireWeapon6()
+{
+	++beam_4;
+	if( beam_4 == 2 )
+	{
+		beam_4 = 0;
+	}
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = ltur1;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = ltur2;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = ltur3;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = ltur4;
+}
+
+QueryWeapon3(piecenum)
+{
+	if( beam_1 == 0 )
+	{
+		piecenum = lflare1a;
+	}
+	if( beam_1 == 1 )
+	{
+		piecenum = lflare1b;
+	}	
+}
+
+QueryWeapon4(piecenum)
+{
+	if( beam_2 == 0 )
+	{
+		piecenum = lflare2a;
+	}
+	if( beam_2 == 1 )
+	{
+		piecenum = lflare2b;
+	}	
+}
+
+QueryWeapon5(piecenum)
+{
+	if( beam_3 == 0 )
+	{
+		piecenum = lflare3a;
+	}
+	if( beam_3 == 1 )
+	{
+		piecenum = lflare3b;
+	}	
+}
+
+QueryWeapon6(piecenum)
+{
+	if( beam_4 == 0 )
+	{
+		piecenum = lflare4a;
+	}
+	if( beam_4 == 1 )
+	{
+		piecenum = lflare4b;
+	}	
+}
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	return (1);
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = vlaunch;
+}
+
+FireWeapon7()
+{
+	++msl;
+	if( msl == 4 )
+	{
+		msl = 0;
+	}
+}
+
+QueryWeapon7(piecenum)
+{
+	if( msl == 0 )
+	{
+		piecenum = r1;
+	}
+	if( msl == 1 )
+	{
+		piecenum = r2;
+	}
+	if( msl == 2 )
+	{
+		piecenum = r3;
+	}
+	if( msl == 3 )
+	{
+		piecenum = r4;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1a;
+	hide flare1b;
+	hide flare1c;
+	hide flare1d;
+		
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode reactors type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode barrel1b type NOHEATCLOUD;
+		explode sleeves2 type NOHEATCLOUD;
+		explode barrel2a type NOHEATCLOUD;
+		explode ltur1 type NOHEATCLOUD;
+		explode ltur3 type NOHEATCLOUD;
+		explode vlaunch type NOHEATCLOUD;
+		explode reactors type NOHEATCLOUD;
+		explode pipes type NOHEATCLOUD;
+		explode radar type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD | NOHEATCLOUD;
+		explode reactors type NOHEATCLOUD | NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD | NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD | NOHEATCLOUD;
+		explode barrel1b type NOHEATCLOUD | NOHEATCLOUD;
+		explode sleeves2 type NOHEATCLOUD | NOHEATCLOUD;
+		explode barrel2a type NOHEATCLOUD | NOHEATCLOUD;
+		explode ltur1 type NOHEATCLOUD | NOHEATCLOUD;
+		explode ltur3 type NOHEATCLOUD | NOHEATCLOUD;
+		explode vlaunch type NOHEATCLOUD | NOHEATCLOUD;
+		explode reactors type NOHEATCLOUD | NOHEATCLOUD;
+		explode pipes type NOHEATCLOUD | NOHEATCLOUD;
+		explode radar type NOHEATCLOUD | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode reactors type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel1b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeves2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode ltur1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode ltur3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode vlaunch type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode reactors type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pipes type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode radar type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

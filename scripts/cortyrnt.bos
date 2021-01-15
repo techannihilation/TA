@@ -9,7 +9,7 @@ piece  base, body, wake1, wake2, wake3, wake4, wake5, wake6,
        barrel3a, barrel3b, barrel3c, barrel3d, 
        flare1a, flare1b, flare1c, flare1d, flare2, flare3a, flare3b, flare3c, flare3d,
        gun2a, gun2b, gun2c, gun2d, gun2e, gun3a, gun3b, gun3c, gun3d,
-       radar, caps, rockets, r1, r2, r3, r4, r5, r6;
+       radar, caps, rockets, r1, r2, r3, r4;
 
 static-var  gun_2, gun_1, gun_3, gun_4, restore_delay;
 
@@ -70,6 +70,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
+	hide flare1a;
+	hide flare1b;
+	hide flare1c;
+	hide flare1d;
 	gun_2 = 0;
 	gun_3 = 0;
 	gun_1 = 0;
@@ -305,7 +309,7 @@ QueryTertiary(piecenum)
 
 AimFromWeapon4(piecenum)
 {
-	piecenum = body;
+	piecenum = rockets;
 }
 
 AimWeapon4(heading, pitch)
@@ -318,7 +322,7 @@ AimWeapon4(heading, pitch)
 FireWeapon4()
 {
 	++gun_4;
-	if( gun_4 >= 6 )
+	if( gun_4 == 4 )
 	{
 		gun_4 = 0;
 	}
@@ -342,19 +346,11 @@ QueryWeapon4(piecenum)
 	{
 		piecenum = r4;
 	}
-	if( gun_4 == 4 )
-	{
-		piecenum = r5;
-	}
-	if( gun_4 == 5 )
-	{
-		piecenum = r6;
-	}
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = body;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -387,21 +383,6 @@ Killed(severity, corpsetype)
 		explode body type NOHEATCLOUD;
 		explode turret3 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 		explode spindddle type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1c type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1d type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeves3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode body type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode spindddle type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;

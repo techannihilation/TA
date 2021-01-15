@@ -203,7 +203,6 @@ return {
 				range = 600,
 				reloadtime = 1,
 				rgbcolor = "0.6 0.6 0.9",
-				--soundhitdry = "lashit2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "tllspark",
@@ -219,7 +218,7 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					default = 290,
+					default = 175,
 					subs = 5,
 				},
 			},
