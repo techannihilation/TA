@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "30 99 30",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Early Warning System",
+		description = "Tech Level 1",
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 2,
 		footprintz = 2,

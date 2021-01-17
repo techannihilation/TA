@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Radar Jammer Vehicle",
+		description = "Vehicle",
 		energyuse = 100,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,

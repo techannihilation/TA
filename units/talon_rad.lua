@@ -12,7 +12,7 @@ return {
 		canattack = false,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		corpse = "dead",
-		description = "Early Warning System",
+		description = "Tech Level 1",
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 2,
 		footprintz = 2,
