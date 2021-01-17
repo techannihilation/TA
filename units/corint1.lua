@@ -12,7 +12,7 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
-		collisionvolumeoffsets = "0 -126 0",
+		collisionvolumeoffsets = "0 -15 0",
 		collisionvolumescales = "148 174 148",
 		collisionvolumetype = "CylY",
 		corpse = "dead",

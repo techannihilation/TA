@@ -1,3 +1,16 @@
+3.71 > 3.72
+2021-01-18
+
+Balance :
+ - T5 Jammer : Increase energy / s : 8K => 15KM
+
+ Improvment :
+  - Add T5 Jammer for Arm, Core
+  - Add T5 Radar for TLL
+  - Kronos Arm (T3 Command Vehicle) : Add new T4 Morph (Bahamut / Silver counter)
+  - Neptune Core (T3 Hover) : Add new T4 Morph (Bahamut / Silver counter)
+  - Increase T3 Ship model size
+
 3.70 > 3.71
 2021-01-15
 
