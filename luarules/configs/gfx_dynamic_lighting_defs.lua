@@ -22,44 +22,23 @@ local rgbSpecMults = {0.25, 0.25, 0.25} -- specular RGB scales
 local copyLightDefs = {
 	["TA"] = {
 		--Self-D , Explosion for large units eg corkrog and commanders etc
-		["commander_blast1"          ] = "commander_blast_new",
-		["commander_blast5"          ] = "commander_blast_new",
-		["commander_blast6"          ] = "commander_blast_new",
-		["commander_blast7"          ] = "commander_blast_new",
-		["commander_blast8"          ] = "commander_blast_new",
+		["commander_blast"          ] = "commander_blast_new",
 		["commander_selfd"           ] = "commander_blast_new",
-		["commander_blast4"          ] = "commander_blast",
-
-    --["nuclear_missile"           ] = "commander_blast_small",
-		--["nuclear_missile1"          ] = "commander_blast_small",
 
 		["BANTHA_BLAST"          ] = "commander_blast_medium",
     ["KROG_BLAST"          ] = "commander_blast",
     ["EXO_BLAST"          ] = "commander_blast_big",
     ["MKL_BLAST"          ] = "commander_blast_exbig",
 
-
-		--["nuclear_missile3"          ] = "commander_blast_big",
-		--["KROG_BLAST"          ] = "commander_blast_exbig",
-		--["crblmssl"                  ] = "commander_blast",  --1920
-		--["crblmssl1"                 ] = "commander_blast_big",  --2120
-		--["crblmssl2"                 ] = "commander_blast_exsmall",  --920
-		--["EXO_BLAST"                 ] = "commander_blast_exbig",  --2720
-
 		["crawl_blast"              ] = "crawl_blast",
 		["crawl_blastsml"           ] = "crawl_blastsml",
 
 		--Brthas
-		["armbrtha_arm_berthacannon2"] = "berthacannon",
-		["corint_core_intimidator2"  ] = "berthacannon",
-		--["tlllrpt_arm_berthacannon  "] = "berthacannon",
-		--["heavyimpact_cormechart"    ] = "berthacannon",
-		--["clb_core_intimidator2"     ] = "berthacannon_light",
-		--["avtr_arm_berthacannon2"    ] = "berthacannon_light",
-		--["corint1_core_intimidator1" ] = "berthacannon1",
-		--["armbrtha1_arm_berthacannon1"] = "berthacannon1",
+		--["armbrtha_arm_berthacannon2"] = "berthacannon",
+		--["corint_core_intimidator2"  ] = "berthacannon",
+
 		["tlldmc_tlldmc"]              = "dark_matter",
-		--["corgala_ravagerbeam"  ]      = "galacannon",
+
 
 		--Dgun
 		--[[

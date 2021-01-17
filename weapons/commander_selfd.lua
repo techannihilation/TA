@@ -12,6 +12,7 @@ return {
 		soundstart = "largegun",
 		weaponvelocity = 250,
 		damage = {
+			commanders = 50000,
 			default = 100000,
 		},
 	},
