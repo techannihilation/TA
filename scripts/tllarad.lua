@@ -17,36 +17,6 @@ local close = 4
 local spGetUnitIsStunned = Spring.GetUnitIsStunned
 local stunned = 0
 
---[[
-function script.HitByWeapon(anglex, anglez)
-
-	var Func_Var_3
-	Func_Var_3 =  select(1, Spring.GetUnitHealth(unitID) ) / select(2, Spring.GetUnitHealth(unitID) )
-	if  Func_Var_3 <= 60  then
-	
-		if  Static_Var_3 == 0  then
-		
-			Static_Var_3 = 1
-			Hide( dish4)
-			Explode(dish4, SFX.FALL + SFX.SHATTER  + SFX.SMOKE )
-		end
-	end
-	if  Func_Var_3 <= 50  then
-	
-		if  Static_Var_4 == 0  then
-		
-			Static_Var_4 = 1
-			Hide( dish1)
-			Explode(dish1, SFX.FALL + SFX.SHATTER  + SFX.SMOKE )
-		end
-	end
-	Signal( 16)
-	SetSignalMask( 16)
-	set ACTIVATION to 0
-	Sleep(8000)
-	set ACTIVATION to 1
-end
-==]]
 local function StunnedCheck()
 	while true do
 		if select(1, spGetUnitIsStunned(unitID)) and GetUnitValue(COB.ACTIVATION) == 1  then

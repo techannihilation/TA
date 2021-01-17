@@ -1,0 +1,119 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, tower, body, t1, t2, pivot_1, arm_1, pivot_2, arm_2, pivot_3, arm_3, pivot_4, arm_4, pivot_5, arm_5, pivot_6, arm_6,
+	  blade_1, blade_2, blade_3, blade_4, blade_5, blade_6, pod, spinner1, spinner2, dome;
+
+
+static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_ACTIVATE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+	turn pivot_2 to y-axis <-120.000000> now;
+	turn pivot_3 to y-axis <-240.000000> now;
+	turn pivot_5 to y-axis <120.000000> now;
+	turn pivot_6 to y-axis <240.000000> now;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	spin t1 around y-axis speed <-9.000000> accelerate <0.500000>;
+	spin t2 around y-axis speed <27.000000> accelerate <0.500000>;
+	spin dome around y-axis speed <-45.000000> accelerate <2.000000>;
+	spin spinner2 around y-axis speed <120.000000> accelerate <2.000000>;
+	//turn pod to x-axis rand(<-45>,<45>) speed <45>;
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	spin t1 around y-axis speed <0.000000> accelerate <0.500000>;
+	spin t2 around y-axis speed <0.000000> accelerate <0.500000>;
+	spin dome around y-axis speed <0.000000> accelerate <2.000000>;
+	spin spinner2 around y-axis speed <0.000000> accelerate <2.000000>;
+	//turn pod to x-axis <0> speed <45>;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode blade_1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_5 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_6 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode t1 type NOHEATCLOUD;
+		explode t2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode blade_1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_5 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode blade_6 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode t1 type NOHEATCLOUD | FALL;
+		explode t2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode blade_1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode blade_2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode blade_3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode blade_4 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode blade_5 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode blade_6 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode t1 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode t2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

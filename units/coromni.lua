@@ -12,7 +12,7 @@ return {
 		buildtime = 125000,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
-		collisionvolumescales = "30 190 30",
+		collisionvolumescales = "27 160 27",
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Very Long Range Jammer",
