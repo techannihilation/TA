@@ -3,10 +3,12 @@
 
 Balance :
  - T5 Jammer : Increase energy / s : 8K => 15KM
+ - Commader Blast after Autodestroy or SelfD (T1:25Kdmg 720AOE, T2:50Kdmg 840AOE, T1:75Kdmg 960AOE, T1:100Kdmg 1080AOE)
 
  Improvment :
   - Add T5 Jammer for Arm, Core
   - Add T5 Radar for TLL
+  - Add Adv Mex for T1 Naval Ship
   - Kronos Arm (T3 Command Vehicle) : Add new T4 Morph (Bahamut / Silver counter)
   - Neptune Core (T3 Hover) : Add new T4 Morph (Bahamut / Silver counter)
   - Increase T3 Ship model size
