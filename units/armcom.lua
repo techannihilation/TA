@@ -63,7 +63,7 @@ return {
 		reclaimable = false,
 		script = "armcom.cob",
 		seismicsignature = 2,
-		selfdestructas = "COMMANDER_SELFD",
+		selfdestructas = "COMMANDER_BLAST",
 		selfdestructcountdown = 1,
 		shownanospray = false,
 		showplayername = true,

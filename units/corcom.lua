@@ -61,7 +61,7 @@ return {
 		radaremitheight = 55,
 		reclaimable = false,
 		seismicsignature = 2,
-		selfdestructas = "COMMANDER_SELFD",
+		selfdestructas = "COMMANDER_BLAST",
 		selfdestructcountdown = 1,
 		shownanospray = false,
 		showplayername = true,

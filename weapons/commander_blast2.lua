@@ -1,6 +1,6 @@
 return {
 	commander_blast = {
-		areaofeffect = 720,
+		areaofeffect = 960,
 		craterboost = 6,
 		cratermult = 3,
 		edgeeffectiveness = 0.20,
@@ -10,7 +10,7 @@ return {
 		soundhit = "newboom",
 		soundstart = "largegun",
 		damage = {
-			default = 25000,
+			default = 75000,
 		},
 	},
 }

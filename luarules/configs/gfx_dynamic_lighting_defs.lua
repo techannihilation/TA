@@ -23,7 +23,10 @@ local copyLightDefs = {
 	["TA"] = {
 		--Self-D , Explosion for large units eg corkrog and commanders etc
 		["commander_blast"          ] = "commander_blast_new",
-		["commander_selfd"           ] = "commander_blast_new",
+    ["commander_blast1"          ] = "commander_blast_new",
+    ["commander_blast2"          ] = "commander_blast_new",
+    ["commander_blast3"          ] = "commander_blast_new",
+		--["commander_selfd"           ] = "commander_blast_new",
 
 		["BANTHA_BLAST"          ] = "commander_blast_medium",
     ["KROG_BLAST"          ] = "commander_blast",
