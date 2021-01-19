@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 1240002,
 		buildcostmetal = 12561,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 5,
-		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "tllurad_aoplane.dds",
 		buildpic = "tllurad.dds",
 		buildtime = 5050,
 		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
@@ -41,7 +37,6 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 1000,
 		unitname = "tllurad",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "tllurad.dds",

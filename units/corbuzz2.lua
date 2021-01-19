@@ -44,8 +44,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corbuzz2",
-		usepiececollisionvolumes = true,
-		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "corbuzz2.dds",
