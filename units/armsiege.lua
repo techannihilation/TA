@@ -38,7 +38,7 @@ return {
 		movementclass = "VHTANK5",
 		name = "Demolisher",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMSIEGE",
 		radardistance = 0,
 		radaremitheight = 34,

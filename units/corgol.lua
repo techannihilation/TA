@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Goliath",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORGOL",
 		radaremitheight = 29,
 		seismicsignature = 0,

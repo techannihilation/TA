@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 0,
 		name = "Atlas",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMATLAS",
 		radaremitheight = 28.8,
 		releaseheld = true,

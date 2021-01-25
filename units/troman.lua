@@ -34,7 +34,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Troman",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "Troman",
 		radardistance = 0,
 		radaremitheight = 58,

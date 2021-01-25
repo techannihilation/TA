@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "htank4",
 		name = "Spirit",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "armeflak",
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLASTSML",

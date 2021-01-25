@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Eraser",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMASER",
 		onoffable = true,
 		radardistancejam = 450,

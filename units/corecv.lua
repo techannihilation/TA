@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK4",
 		name = "Experimental Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "corecv",
 		radaremitheight = 25,
 		seismicsignature = 0,

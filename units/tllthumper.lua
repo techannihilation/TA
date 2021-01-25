@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Thumper",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLTHUMPER",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",

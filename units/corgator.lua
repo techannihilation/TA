@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Instigator",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORGATOR",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Sapphire",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_sapphire",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -38,7 +38,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "Amphibious Construction Kbot",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tlldoc",
 		radaremitheight = 34,
 		seismicsignature = 0,

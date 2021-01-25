@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK3",
 		name = "Informer",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORVRAD",
 		onoffable = true,
 		radardistance = 2200,

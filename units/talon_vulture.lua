@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vulture",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_vulture",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

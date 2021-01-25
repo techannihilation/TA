@@ -46,7 +46,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Shepherd",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_shepherd",
 		radaremitheight = 51,
 		seismicsignature = 2,

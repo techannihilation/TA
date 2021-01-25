@@ -38,7 +38,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Karganeth",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORKARG",
 		radaremitheight = 54,
 		seismicsignature = 0,

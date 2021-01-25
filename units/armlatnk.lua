@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Panther",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMLATNK",
 		radaremitheight = 25,
 		seismicsignature = 0,

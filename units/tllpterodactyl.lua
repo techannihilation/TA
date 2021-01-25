@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Pterodactyl",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "tllpterodactyl",
 		radaremitheight = 28.8,
 		seismicsignature = 0,

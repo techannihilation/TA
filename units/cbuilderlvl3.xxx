@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Battle Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "cbuilderlvl3",
 		radardistance = 50,
 		radaremitheight = 26,

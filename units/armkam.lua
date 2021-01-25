@@ -39,7 +39,7 @@ return {
 		moverate1 = 3,
 		name = "Banshee",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMKAM",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

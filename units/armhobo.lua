@@ -32,7 +32,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Hobo",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "armhobo",
 		radardistance = 0,
 		radaremitheight = 25,

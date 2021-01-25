@@ -43,7 +43,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Ogopogo",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_ogopogo",
 		onoffable = true,
 		radaremitheight = 25,

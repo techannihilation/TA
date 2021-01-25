@@ -42,7 +42,7 @@ return {
 		mintransportmass = 4000,
 		mobilestandorders = 1,
 		name = "Tau",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "corlift",
 		radaremitheight = 30,
 		releaseheld = true,

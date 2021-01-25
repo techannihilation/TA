@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Husher",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_husher",
 		onoffable = true,
 		radardistancejam = 525,

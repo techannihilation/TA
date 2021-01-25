@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Thud",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORTHUD",
 		radaremitheight = 25,
 		seismicsignature = 0,

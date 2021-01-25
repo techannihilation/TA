@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Whinestone",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_whinestone",
 		radaremitheight = 25,
 		seismicsignature = 0,

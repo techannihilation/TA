@@ -40,7 +40,7 @@ return {
 		metalmake = 0.5,
 		metalstorage = 100,
 		name = "Constructer",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "CBuilderLvl2",
 		radardistance = 0,
 		radaremitheight = 20.7,

@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shadow",
 		noautofire = true,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "CORSHAD",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

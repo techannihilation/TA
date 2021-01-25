@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Diplomat",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORVROC",
 		radaremitheight = 25,
 		seismicsignature = 0,

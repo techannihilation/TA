@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Titan",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "CORTITAN",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

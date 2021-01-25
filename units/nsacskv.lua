@@ -35,7 +35,7 @@ return {
 		movementclass = "TANK2",
 		name = "Absolutor",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "NSACSKV",
 		radardistance = 0,
 		radaremitheight = 25,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Penetrator",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMMANNI",
 		radaremitheight = 52,
 		seismicsignature = 0,

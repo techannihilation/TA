@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Confuser",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLCONFUSER",
 		onoffable = true,
 		radardistancejam = 550,

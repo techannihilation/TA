@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Merl",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMMERL",
 		radaremitheight = 25,
 		seismicsignature = 0,

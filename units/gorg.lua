@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Juggernaut",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "GORG",
 		radaremitheight = 76,
 		seismicsignature = 0,

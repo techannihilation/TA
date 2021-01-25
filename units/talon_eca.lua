@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_eca",
 		radaremitheight = 9,
 		seismicsignature = 0,

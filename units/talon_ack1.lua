@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_ack1",
 		radardistance = 50,
 		radaremitheight = 25,

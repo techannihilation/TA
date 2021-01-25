@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Coyote",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLCOYOTE",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",

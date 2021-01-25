@@ -38,7 +38,7 @@ return {
 		mintransportmass = 50,
 		name = "Robber",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "TLLROBBER",
 		radardistance = 0,
 		radaremitheight = 28.8,

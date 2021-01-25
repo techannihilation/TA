@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Praetorian",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMPRAET",
 		radardistance = 0,
 		radaremitheight = 100,

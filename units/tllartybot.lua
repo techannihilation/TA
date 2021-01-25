@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Troll",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLARTYBOT",
 		radardistance = 0,
 		radaremitheight = 45,

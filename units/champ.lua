@@ -41,7 +41,7 @@ return {
 		movementclass = "htank4",
 		name = "Champion",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "champ",
 		radardistance = 0,
 		radaremitheight = 30,

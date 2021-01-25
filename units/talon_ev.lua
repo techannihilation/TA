@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK3",
 		name = "Emeraude",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_ev",
 		radaremitheight = 25,
 		seismicsignature = 0,

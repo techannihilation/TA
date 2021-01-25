@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Tankanotor",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TANKANOTOR",
 		radardistance = 0,
 		radaremitheight = 33,

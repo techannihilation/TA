@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Wolf",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_wolf",
 		radaremitheight = 27,
 		seismicsignature = 0,

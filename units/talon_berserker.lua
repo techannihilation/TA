@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Berserker",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_berserker",
 		radaremitheight = 58,
 		seismicsignature = 0,

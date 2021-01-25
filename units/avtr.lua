@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Avatar",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "AVTR",
 		radardistance = 0,
 		radaremitheight = 26,

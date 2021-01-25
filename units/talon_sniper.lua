@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Sniper",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_sniper",
 		radaremitheight = 25,
 		seismicsignature = 0,

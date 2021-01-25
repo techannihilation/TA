@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "tlleca",
 		selfdestructas = "BIG_UNIT_VTOL",
 		shownanospray = false,

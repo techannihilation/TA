@@ -38,7 +38,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Haboob",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "corhaboob",
 		radardistance = 0,
 		radaremitheight = 35,

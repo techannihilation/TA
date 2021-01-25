@@ -37,7 +37,7 @@ return {
 		movementclass = "tank3",
 		name = "Mauler",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "clb",
 		radardistance = 0,
 		radaremitheight = 25,

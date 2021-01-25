@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Infantry",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_infantry",
 		radaremitheight = 25,
 		seismicsignature = 0,

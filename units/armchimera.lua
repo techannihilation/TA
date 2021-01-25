@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Chimera",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "armchimera",
 		radaremitheight = 25,
 		seismicsignature = 0,

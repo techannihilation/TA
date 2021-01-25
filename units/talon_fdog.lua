@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Fatdog",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TALON_FDOG",
 		radaremitheight = 33,
 		seismicsignature = 0,

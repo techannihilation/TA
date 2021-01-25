@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Hell Diver",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		norestrict = 1,
 		objectname = "ARMHDPW",
 		radardistance = 0,

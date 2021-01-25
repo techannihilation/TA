@@ -37,7 +37,7 @@ return {
 		movementclass = "kbot2",
 		name = "Assassin",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLSNIPER",
 		radardistance = 0,
 		radaremitheight = 42,

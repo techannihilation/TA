@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Bantha",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMBANTH",
 		radaremitheight = 61,
 		seismicsignature = 0,

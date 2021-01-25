@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Spectre",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORSPEC",
 		onoffable = true,
 		radardistance = 0,

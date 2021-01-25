@@ -33,7 +33,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Matamata",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllmatamata",
 		radardistance = 0,
 		radaremitheight = 25,

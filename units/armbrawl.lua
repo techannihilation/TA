@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Brawler",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMBRAWL",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

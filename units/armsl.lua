@@ -46,7 +46,7 @@ return {
 		moverate2 = 2,
 		name = "Seahook",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMSL",
 		pitchscale = 1,
 		radaremitheight = 28.8,

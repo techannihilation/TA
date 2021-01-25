@@ -43,7 +43,7 @@ return {
 		metalmake = 0.3,
 		metalstorage = 100,
 		name = "Atum",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "tllbuilderlvl1",
 		radardistance = 0,
 		radaremitheight = 27,

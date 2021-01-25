@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "K-74 Taipan",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TAIPAN",
 		onoffable = true,
 		radardistance = 450,

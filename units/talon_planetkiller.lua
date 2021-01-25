@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Planet Killer",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_planetkiller",
 		radardistance = 0,
 		radaremitheight = 25,

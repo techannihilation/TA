@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Dominator",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORHRK",
 		radaremitheight = 25,
 		seismicsignature = 0,

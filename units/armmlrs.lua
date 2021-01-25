@@ -37,7 +37,7 @@ return {
 		movementclass = "htank4",
 		name = "MLRS",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMMLRS",
 		radardistance = 0,
 		radaremitheight = 25,

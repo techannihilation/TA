@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Razorback",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMRAZ",
 		radaremitheight = 58,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Divine",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLDIVINE",
 		onoffable = true,
 		radardistance = 2200,

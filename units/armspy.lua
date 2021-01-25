@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Infiltrator",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMSPY",
 		onoffable = true,
 		radaremitheight = 25,

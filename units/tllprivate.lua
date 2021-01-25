@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Private",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLPRIVATE",
 		radaremitheight = 39,
 		selfdestructas = "SMALL_UNIT",

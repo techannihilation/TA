@@ -33,7 +33,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Advanced Roaster",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLROASTER1",
 		radaremitheight = 35,
 		selfdestructas = "ESTOR_BUILDING",

@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dragonfly",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMDFLY",
 		radaremitheight = 28.8,
 		releaseheld = true,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Obscurer",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLOBSCURER",
 		onoffable = true,
 		radardistancejam = 550,

@@ -35,7 +35,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Verifier",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "coreverifier",
 		onoffable = true,
 		radardistance = 2300,

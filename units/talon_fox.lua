@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Snow Fox",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_fox",
 		radardistance = 50,
 		radaremitheight = 23,

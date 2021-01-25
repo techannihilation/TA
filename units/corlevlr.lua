@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Leveler",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORLEVLR",
 		radaremitheight = 25,
 		seismicsignature = 0,

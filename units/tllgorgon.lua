@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Gorgon",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllgorgon",
 		onoffable = true,
 		radardistance = 0,

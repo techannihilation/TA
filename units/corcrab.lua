@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Shielded Construction Kbot",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "corcrab",
 		radaremitheight = 50,
 		resurrect = 1,

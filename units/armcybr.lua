@@ -40,7 +40,7 @@ return {
 		moverate1 = 9,
 		name = "Liche",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMCYBR",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dark Crow",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "tllcopter",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Jaguar",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMJAG",
 		radardistance = 0,
 		radardistancejam = 0,

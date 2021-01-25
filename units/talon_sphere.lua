@@ -38,7 +38,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Invader",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_sphere",
 		radaremitheight = 25,
 		seismicsignature = 0,

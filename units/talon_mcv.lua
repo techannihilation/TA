@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Silver",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_mcv",
 		radaremitheight = 100,
 		selfdestructas = "EXO_BLAST",

@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Parasite",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORSPY",
 		onoffable = true,
 		radaremitheight = 25,

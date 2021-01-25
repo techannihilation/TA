@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Stratus",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "armstratus",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

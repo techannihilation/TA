@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT1",
 		name = "Flea",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMFLEA",
 		radaremitheight = 25,
 		seismicsignature = 0,

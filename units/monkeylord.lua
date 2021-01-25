@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Cybran Monkeylord Shielded Mech",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "monkeylord",
 		radardistance = 0,
 		radaremitheight = 76,

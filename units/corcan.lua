@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Can",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORCAN",
 		radaremitheight = 29,
 		seismicsignature = 0,

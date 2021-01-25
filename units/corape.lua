@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Rapier",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "CORAPE",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

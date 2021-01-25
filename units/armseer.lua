@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK2",
 		name = "Seer",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMSEER",
 		onoffable = true,
 		radardistance = 2300,

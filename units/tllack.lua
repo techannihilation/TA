@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Construction Kbot",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLACK",
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",

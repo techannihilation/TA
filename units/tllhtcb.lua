@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Weak",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLHTCB",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

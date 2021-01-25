@@ -38,7 +38,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "Shiva",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "SHIVA",
 		radaremitheight = 37,
 		seismicsignature = 0,

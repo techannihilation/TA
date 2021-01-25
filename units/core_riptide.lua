@@ -38,7 +38,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Riptide",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "core_riptide",
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLASTSML",

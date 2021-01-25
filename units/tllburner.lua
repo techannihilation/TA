@@ -35,7 +35,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Burner",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLBURNER",
 		radaremitheight = 29,
 		selfdestructas = "CORPYRO_BLAST",

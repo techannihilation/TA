@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Striker",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_striker",
 		radaremitheight = 27,
 		seismicsignature = 0,

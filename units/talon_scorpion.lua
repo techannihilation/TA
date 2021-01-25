@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Scorpion",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_scorpion",
 		radaremitheight = 62,
 		seismicsigniture = 50,

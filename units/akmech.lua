@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Vengence",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "AKMECH",
 		radardistance = 0,
 		radaremitheight = 55,

@@ -41,7 +41,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "Construction Kbot",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_eck",
 		radaremitheight = 34,
 		seismicsignature = 0,

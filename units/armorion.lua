@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Orion",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMORION",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,

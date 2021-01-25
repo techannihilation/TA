@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Eagle",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMAWAC",
 		radardistance = 1600,
 		radaremitheight = 6,

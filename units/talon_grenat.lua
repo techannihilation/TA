@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Grenat",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_grenat",
 		radaremitheight = 25,
 		seismicsignature = 0,

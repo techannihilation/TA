@@ -39,7 +39,7 @@ return {
 		movementclass = "HTKBOT5",
 		name = "Raptor",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMRAPTOR",
 		radardistance = 40,
 		radaremitheight = 131,

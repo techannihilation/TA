@@ -35,7 +35,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Gorilla",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMGOR",
 		radardistance = 0,
 		radaremitheight = 86,

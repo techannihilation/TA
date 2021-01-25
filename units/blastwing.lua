@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Blastwing",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "BLASTWING",
 		selfdestructas = "BLASTWING",
 		selfdestructcountdown = 1,

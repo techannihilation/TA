@@ -39,7 +39,7 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Ornith",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMOR",
 		radardistance = 0,
 		radaremitheight = 28.8,

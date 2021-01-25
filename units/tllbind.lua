@@ -33,7 +33,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Binder",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLBind",
 		radaremitheight = 34,
 		selfdestructas = "MEDIUM_BUILDING",

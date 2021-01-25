@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Crawler",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllcrawler",
 		radaremitheight = 62,
 		seismicsigniture = 5,

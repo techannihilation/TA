@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Pacifier",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllriot",
 		radardistance = 0,
 		radaremitheight = 25,

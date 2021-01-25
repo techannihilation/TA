@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Fireraiser",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLFIRERAISER",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",

@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Bladewing",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "BLADEW",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

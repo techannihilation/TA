@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK2",
 		name = "Gremlin",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMST",
 		radaremitheight = 25,
 		seismicsignature = 4,

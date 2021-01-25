@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Pampa",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_pampa",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

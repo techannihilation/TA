@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK3",
 		name = "Loki",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLLOKI",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

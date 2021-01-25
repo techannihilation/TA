@@ -34,7 +34,7 @@ return {
 		movementclass = "kbot1",
 		name = "TnT",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "coretnt",
 		radardistance = 0,
 		radaremitheight = 25,

@@ -36,7 +36,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Salamander",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLSALAMANDER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

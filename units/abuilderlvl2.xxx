@@ -41,7 +41,7 @@ return {
 		metalmake = 0.5,
 		metalstorage = 100,
 		name = "Ditawn",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ABuilderLvl2",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

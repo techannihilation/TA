@@ -37,7 +37,7 @@ return {
 		movementclass = "htank4",
 		name = "Naja",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllnaja",
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",

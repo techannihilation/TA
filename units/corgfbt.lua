@@ -39,7 +39,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Grimani",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORGFBT",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

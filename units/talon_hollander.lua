@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Hollander",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_hollander",
 		radaremitheight = 46,
 		seismicsignature = 0,

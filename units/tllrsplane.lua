@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "EC-33",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "TLLRSPLANE",
 		radardistance = 1600,
 		radaremitheight = 6,

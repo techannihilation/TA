@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nuada",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "tllnuada",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

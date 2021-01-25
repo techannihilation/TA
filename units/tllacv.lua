@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLACV",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

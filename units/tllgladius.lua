@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK2",
 		name = "Vampire",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLGLADIUS",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

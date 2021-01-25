@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Fido",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMFIDO",
 		radaremitheight = 27,
 		seismicsignature = 0,

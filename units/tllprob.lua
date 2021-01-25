@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Mosquito",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "tllprob",
 		radardistance = 900,
 		radaremitheight = 9,

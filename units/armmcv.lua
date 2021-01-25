@@ -40,7 +40,7 @@ return {
 		movementclass = "HTANK5",
 		name = "Kronos",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMMCV",
 		onoffable = true,
 		radaremitheight = 38,

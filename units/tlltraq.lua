@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Tracker",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLTRAQ",
 		onoffable = true,
 		radardistance = 450,

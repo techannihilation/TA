@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK4",
 		name = "Tremor",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TREM",
 		radaremitheight = 55,
 		seismicsignature = 0,

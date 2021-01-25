@@ -41,7 +41,7 @@ return {
 		movementclass = "htank4",
 		name = "MRTN",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_mrtn",
 		radardistance = 0,
 		radaremitheight = 25,

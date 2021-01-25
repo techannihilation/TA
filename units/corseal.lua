@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Croc",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORSEAL",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Ghost",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "tllabomber",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 350,

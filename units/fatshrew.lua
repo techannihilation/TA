@@ -41,7 +41,7 @@ return {
 		movementclass = "HTKBOT7",
 		name = "Fatshrew Mech",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "fatshrew",
 		onoffable = true,
 		radardistance = 0,

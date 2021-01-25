@@ -42,7 +42,7 @@ return {
 		metalmake = 3.75,
 		metalstorage = 100,
 		name = "Construction Ship",
-		nochasecategory = "UNDERWATER",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_builderlvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",

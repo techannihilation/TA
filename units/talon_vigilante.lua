@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vigilante",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_vigilante",
 		radardistance = 2250,
 		seismicsignature = 0,

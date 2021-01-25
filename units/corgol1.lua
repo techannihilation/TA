@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Reinforced Goliath",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORGOL1",
 		radaremitheight = 37,
 		script = "corgol1.cob",

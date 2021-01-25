@@ -33,7 +33,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Pitbull",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMBULL2",
 		radardistance = 0,
 		radaremitheight = 25,

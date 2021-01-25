@@ -42,7 +42,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Freaker",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORFAST",
 		radaremitheight = 34,
 		seismicsignature = 0,

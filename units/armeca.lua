@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMECA",
 		radardistance = 50,
 		radaremitheight = 9,

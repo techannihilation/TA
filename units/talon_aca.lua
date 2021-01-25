@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_aca",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -77,7 +77,7 @@ return {
 			[19] = "talon_armistice",
 			[20] = "talon_silo",
 			[21] = "talon_lrpt",
-			[22] = "talon_veloute",				
+			[22] = "talon_veloute",
 		},
 		customparams = {
 			buildpic = "talon_aca.dds",

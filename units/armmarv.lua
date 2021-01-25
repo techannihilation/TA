@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Marvin",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "armmarv",
 		radaremitheight = 25,
 		seismicsignature = 0,

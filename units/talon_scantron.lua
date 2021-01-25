@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Seer",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_scantron",
 		onoffable = true,
 		radardistance = 2500,

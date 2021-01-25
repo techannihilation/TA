@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Rector",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMRECTR",
 		radardistance = 50,
 		radaremitheight = 23,

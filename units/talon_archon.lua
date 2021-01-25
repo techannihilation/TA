@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Master Archon",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_archon",
 		radardistance = 0,
 		radaremitheight = 76,

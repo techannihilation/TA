@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Catapult",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMRAVEN",
 		radaremitheight = 46,
 		seismicsignature = 0,

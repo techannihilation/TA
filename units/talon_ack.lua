@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "ACK",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_ack",
 		radardistance = 50,
 		radaremitheight = 25,

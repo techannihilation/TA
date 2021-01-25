@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK4",
 		name = "Leopard",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllleopard",
 		radaremitheight = 33,
 		selfdestructas = "CRAWL_BLAST",

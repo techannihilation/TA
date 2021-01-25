@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Centurion",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllcenturion",
 		radaremitheight = 25,
 		seismicsignature = 0,

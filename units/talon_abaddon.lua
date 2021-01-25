@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Abaddon",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_abaddon",
 		onoffable = true,
 		pushresistant = true,

@@ -38,7 +38,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Menacer",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORMENACER",
 		radardistance = 0,
 		radaremitheight = 29,

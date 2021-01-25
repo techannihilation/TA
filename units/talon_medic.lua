@@ -37,7 +37,7 @@ return {
 		metalmake = 0.1,
 		metalstorage = 25,
 		name = "Medic",
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_medic",
 		radardistance = 0,
 		repairspeed = 35,

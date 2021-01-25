@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Warrior",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMWAR",
 		radaremitheight = 28,
 		seismicsignature = 0,

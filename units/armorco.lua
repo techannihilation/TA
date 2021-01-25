@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Orcone",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMORCO",
 		radardistance = 0,
 		radaremitheight = 93,

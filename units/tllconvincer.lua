@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK3",
 		name = "Convincer",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "TLLCONVINCER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

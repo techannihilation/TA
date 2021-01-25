@@ -41,7 +41,7 @@ return {
 		movementclass = "VHTANK5",
 		name = "Krypto-Blaster",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "NSAAGRIZ",
 		onoffable = true,
 		radardistance = 1000,

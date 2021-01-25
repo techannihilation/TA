@@ -34,7 +34,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Orbweaver",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "armorbweaver",
 		onoffable = true,
 		radardistance = 0,

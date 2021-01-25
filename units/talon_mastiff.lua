@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Mastiff",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "talon_mastiff",
 		radaremitheight = 27,
 		seismicsignature = 0,

@@ -38,7 +38,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Tick",
 		noautofire = true,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMTICK",
 		radaremitheight = 22,
 		selfdestructas = "BIG_UNITEX",

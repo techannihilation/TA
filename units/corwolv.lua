@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Wolverine",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORWOLV",
 		radaremitheight = 25,
 		seismicsignature = 0,

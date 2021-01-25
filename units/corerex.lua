@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Rex",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "COREREX",
 		radaremitheight = 39,
 		selfdestructas = "CRAWL_BLAST",

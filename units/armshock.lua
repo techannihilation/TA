@@ -38,7 +38,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Vanguard",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "ARMSHOCK",
 		radaremitheight = 50,
 		seismicsignature = 0,

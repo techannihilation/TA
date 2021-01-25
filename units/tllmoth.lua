@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Moth",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "TLLMOTH",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,

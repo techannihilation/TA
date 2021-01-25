@@ -34,7 +34,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Archdemon",
 		noautofire = false,
-		nochasecategory = "UNDERWATER VTOL",
+		nochasecategory = "VTOL",
 		objectname = "CORDEM",
 		radardistance = 0,
 		radaremitheight = 76,
