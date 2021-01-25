@@ -160,6 +160,15 @@ local moveDatas = {
             maxslope = 36,
             maxwaterdepth = 22
     },
+    HKBOT6 = {
+            allowrawmovement = true,
+            allowterraincollisions = false,
+            crushstrength = 253,
+            footprintx = 6,
+            footprintz = 6,
+            maxslope = 36,
+            maxwaterdepth = 22
+    },
     HKBOT7 = {
         allowrawmovement = true,
         allowterraincollisions = false,
@@ -319,6 +328,17 @@ local moveDatas = {
         maxwaterdepth = 5000,
         maxwaterslope = 30
     },
+    VKBOT8 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 12400,
+        depthmod = 0,
+        footprintx = 8,
+        footprintz = 8,
+        maxslope = 24,
+        maxwaterdepth = 15000,
+        maxwaterslope = 30
+    },
     VKBOT9 = {
         allowrawmovement = true,
         allowterraincollisions = false,
@@ -326,6 +346,28 @@ local moveDatas = {
         depthmod = 0,
         footprintx = 9,
         footprintz = 9,
+        maxslope = 24,
+        maxwaterdepth = 15000,
+        maxwaterslope = 30
+    },
+    VKBOT15 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 12400,
+        depthmod = 0,
+        footprintx = 15,
+        footprintz = 15,
+        maxslope = 24,
+        maxwaterdepth = 15000,
+        maxwaterslope = 30
+    },
+    VKBOT25 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 12400,
+        depthmod = 0,
+        footprintx = 25,
+        footprintz = 25,
         maxslope = 24,
         maxwaterdepth = 15000,
         maxwaterslope = 30
