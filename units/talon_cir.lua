@@ -15,7 +15,7 @@ return {
 		buildtime = 20000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "47 80 47",
@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flail",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "talon_cir",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -156,17 +156,16 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1500,
 				damage = {
-					bombers = 135,
+					areoship = 26.25,
 					default = 5,
-					fighters = 105,
-					transporters = 135,
+					priority_air = 135,
 					unclassed_air = 105,
 				},
 			},
 		},
 		weapons = {
 			[3] = {
-				badtargetcategory = "SMALLVTOL TINYVTOL",
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "TALON_CIR",
 				onlytargetcategory = "VTOL",
 

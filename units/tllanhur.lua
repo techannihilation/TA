@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON",
+		category = "ALL MOBILE VTOL",
 		collide = false,
 		cruisealt = 220,
 		decloakonfire = true,
@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Anhur",
 		noautofire = false,
-		nochasecategory = "SUB VTOL",
+		nochasecategory = "UNDERWATER VTOL",
 		objectname = "tllanhur",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
@@ -116,6 +116,7 @@ return {
 				tolerance = 7000,
 				weapontype = "AircraftBomb",
 				damage = {
+					areoship = 6000,
 					commanders = 1000,
 					default = 4000,
 					experimental_land = 6000,
@@ -127,7 +128,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORGRIPN_BOMB",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

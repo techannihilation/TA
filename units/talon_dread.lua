@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -28 0",
 		collisionvolumescales = "90 140 300",
 		collisionvolumetest = 1,
@@ -278,14 +278,14 @@ return {
 				def = "DEPTHCHARGE",
 				maindir = "1 0 0",
 				maxangledif = 220,
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 
 			},
 			[5] = {
 				def = "DEPTHCHARGE",
 				maindir = "-1 0 0",
 				maxangledif = 220,
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 
 		},

@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL SMALL WEAPON SURFACE",
+		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -5 0",
 		collisionvolumescales = "31 31 82",
 		collisionvolumetype = "CylZ",

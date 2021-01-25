@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "corlightfus.dds",
 		buildtime = 25000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "60 32 64",
 		collisionvolumetest = 1,

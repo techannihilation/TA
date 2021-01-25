@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON",
+		category = "ALL MOBILE VTOL",
 		collide = false,
 		cruisealt = 120,
 		defaultmissiontype = "VTOL_standby",
@@ -127,7 +127,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMAIR_TORPEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

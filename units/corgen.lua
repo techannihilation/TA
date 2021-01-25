@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "corgen_aoplane.dds",
 		buildpic = "corgen.dds",
 		buildtime = 8800,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 3 0",
 		collisionvolumescales = "47 37 47",
 		collisionvolumetype = "CylY",

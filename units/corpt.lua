@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL SMALL WEAPON SURFACE",
+		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -5 0",
 		collisionvolumescales = "21 21 64",
 		collisionvolumetype = "CylZ",
@@ -157,11 +157,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					bombers = 105,
+					areoship = 25,
 					default = 5,
-					fighters = 105,
-					transporters = 105,
-					unclassed_air = 105,
+					priority_air = 100,
+					unclassed_air = 100,
 				},
 			},
 			armpt_laser = {
@@ -213,6 +212,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "ARMKBOT_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

@@ -15,7 +15,7 @@ return {
 		buildtime = 250000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "100.4 30.4 90.4",
 		collisionvolumetest = 1,
@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Retaliator",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "ARMSILO",
 		radardistance = 50,
 		radaremitheight = 32,
@@ -165,7 +165,7 @@ return {
 				damage = {
 					commanders = 2500,
 					default = 9500,
-					subs = 5,
+					subs = 4750,
 				},
 				customparams = {
 					light_color = "1 0.6 0.2",
@@ -181,7 +181,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "NUCLEAR_MISSILE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "SURFACE UNDERWATER",
 			},
 		},
 	},

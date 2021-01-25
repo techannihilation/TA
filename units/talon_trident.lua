@@ -17,7 +17,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cansubmerge = false,
-		category = "ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON",
+		category = "ALL MOBILE VTOL",
 		collide = false,
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
@@ -132,7 +132,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TALON_WEAPON",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = true,
-		category = "ALL MEDIUMVTOL MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP VTOL WEAPON",
+		category = "ALL MOBILE VTOL",
 		collide = 0,
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",

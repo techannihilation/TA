@@ -11,7 +11,7 @@ return {
 		buildtime = 300000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		corpse = "dead",
 		description = "Enriched Nuclear Missile Launcher",
 		digger = 1,
@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Rod Of God",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "talon_silo",
 		radardistance = 0,
 		radaremitheight = 69,
@@ -143,11 +143,12 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1300,
 				damage = {
+					areoship = 22000,
 					commanders = 2500,
 					default = 15000,
 					experimental_land = 22000,
 					experimental_ships = 22000,
-					subs = 5,
+					subs = 7500,
 				},
 				customparams = {
 					light_color = "1 0.6 0.2",
@@ -163,7 +164,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "NUCLEAR_MISSILE1",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "SURFACE UNDERWATER",
 			},
 		},
 	},

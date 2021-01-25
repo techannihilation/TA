@@ -8,7 +8,7 @@ return {
 		buildtime = 750000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -5 -3",
 		collisionvolumescales = "145 120 155",
 		collisionvolumetype = "Box",
@@ -141,6 +141,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 700,
 				damage = {
+					areoship = 72000,
 					commanders = 6000,
 					default = 36000,
 					experimental_land = 72000,
@@ -181,6 +182,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 900,
 				damage = {
+					areoship = 32000,
 					commanders = 3000,
 					default = 18000,
 					experimental_land = 32000,

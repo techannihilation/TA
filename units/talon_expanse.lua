@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "70 70 100",
 		collisionvolumetype = "box",
@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Expanse",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "VTOL UNDERWATER",
 		objectname = "talon_expanse",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "talon_expanse.dds",
 			faction = "TALON",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {
@@ -138,10 +139,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					bombers = 320,
+					areoship = 80,
 					default = 5,
-					fighters = 320,
-					transporters = 320,
+					priority_air = 320,
 					unclassed_air = 320,
 				},
 			},
@@ -179,22 +179,21 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1600,
 				damage = {
-					bombers = 2000,
+					areoship = 500,
 					default = 5,
-					fighters = 2000,
-					transporters = 2000,
+					priority_air = 2000,
 					unclassed_air = 2000,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALLVTOL TINYVTOL",
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "SMALLVTOL TINYVTOL",
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "ADVFLAK",
 				onlytargetcategory = "VTOL",
 			},

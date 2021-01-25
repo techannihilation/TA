@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildpic = "talon_uwmex.dds",
 		buildtime = 1875,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER",
+		category = "ALL UNDERWATER",
 		
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "45 60 45",
@@ -36,7 +36,7 @@ return {
 		minwaterdepth = 15,
 		name = "Underwater Metal Extractor",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "talon_uwmex",
 		onoffable = true,
 		radaremitheight = 37,

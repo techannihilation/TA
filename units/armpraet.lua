@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "120 100 120",
 		collisionvolumetype = "CylY",
@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Praetorian",
 		noautofire = false,
-		nochasecategory = "SUB VTOL",
+		nochasecategory = "UNDERWATER VTOL",
 		objectname = "ARMPRAET",
 		radardistance = 0,
 		radaremitheight = 100,
@@ -253,9 +253,11 @@ return {
 			},
 			[2] = {
 				def = "PRAETORIAN_ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[3] = {
 				def = "PRAETORIAN_ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[4] = {
 				def = "Praetorian_Shield",

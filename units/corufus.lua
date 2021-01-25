@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 26,
 		buildpic = "corufus.dds",
 		buildtime = 15000000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -5 -20",
 		collisionvolumescales = "390 400 390",
 		collisionvolumetype = "CylY",

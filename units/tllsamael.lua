@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -25 0",
 		collisionvolumescales = "250 300 470",
 		collisionvolumetype = "CylZ",
@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Samael",
 		noautofire = false,
-		nochasecategory = "SUB VTOL",
+		nochasecategory = "VTOL",
 		objectname = "tllsamael",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",
@@ -174,6 +174,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 900,
 				damage = {
+					areoship = 30000,
 					commanders = 1500,
 					default = 15000,
 					experimental_land = 30000,
@@ -250,6 +251,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1250,
 				damage = {
+					areoship = 60000,
 					commanders = 3000,
 					default = 30000,
 					experimental_land = 60000,

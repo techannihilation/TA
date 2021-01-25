@@ -1,3 +1,21 @@
+3.72 > 3.73
+2021-01-25
+
+Balance :
+ - Hover Core Adonis : Increase damage +25%. Decrease speed 1.2=>1.1. Increase cost 4.9KM=>5.9KM
+ - T4 spider, Saurus, Mythril, Colossus and Titan => Become Amphibious
+ - Air Mine Layer => Reduce HP 450=>250
+
+Improvment :
+ - Rework all CATEGORIES. (some units could not shoot on other (air vs ground, ship vs hover...). Please, report issue https://github.com/techannihilation/TA/issues/1640, if you see)
+ - Hero can be attacked by all AA (damage = unclassed_air * 0.25)
+ Hover Core Adonis : Weapon model changed.
+ - Add T4 AA for Talon
+
+Air Categories :
+ - ALL AA Flak/Missile Priority : All Air except Fighter, Scout & Areoship
+ - Fighter Priority : All Air except Scout & Areoship
+
 3.71 > 3.72
 2021-01-18
 

@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		cloakcost = 75,
 		cloakcostmoving = 250,
 		collisionvolumeoffsets = "0 -6 1",
@@ -233,7 +233,7 @@ return {
 			},
 			[3] = {
 				def = "ARMSCPION_TORPEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

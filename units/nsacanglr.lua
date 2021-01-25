@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "38 25 50",
@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Angler",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "VTOL UNDERWATER",
 		objectname = "NSACANGLR",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -153,7 +153,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COREHEAVYDEPTHCHARGE",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

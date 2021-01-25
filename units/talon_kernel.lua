@@ -11,7 +11,7 @@ return {
 		buildtime = 25000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "35 120 35",
 		collisionvolumetype = "CylY",
@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 5,
 		name = "Kernel",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "talon_kernel",
 		radaremitheight = 32,
 		seismicsignature = 0,
@@ -130,9 +130,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					bombers = 350,
+					areoship = 87.5,
 					default = 5,
-					fighters = 350,
+					priority_air = 350,
 					unclassed_air = 350,
 				},
 
@@ -140,6 +140,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "TALON_FLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},

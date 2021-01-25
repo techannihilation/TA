@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "coratidal.dds",
 		buildtime = 9000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON UNDERWATER SURFACE",
+		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Produces Energy",
 		energystorage = 20,

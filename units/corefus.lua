@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "corefus.dds",
 		buildtime = 3000000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "287 197 287",
 		collisionvolumetype = "CylY",

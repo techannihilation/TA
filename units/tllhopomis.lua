@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER LARGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "45 30 60",
 		collisionvolumetest = 1,
@@ -43,7 +43,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hopomis",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "VTOL UNDERWATER",
 		objectname = "tllhopomis",
 		radardistance = 0,
 		radaremitheight = 28,
@@ -168,7 +168,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TLL_ASEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

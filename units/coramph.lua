@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 3",
 		collisionvolumescales = "32 29 32",
 		collisionvolumetype = "CylY",
@@ -183,7 +183,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORAMPH_WEAPON1",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 			[2] = {
 				def = "CORAMPH_WEAPON2",

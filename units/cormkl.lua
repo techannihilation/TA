@@ -14,13 +14,13 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "263 200 263",
 		collisionvolumetype = "CylY",
 		corpse = "cormkl_dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Hexapod (Auto-Repair 250)",
+		description = "Experimental Amphibious Hexapod (Auto-Repair 250)",
 		energystorage = 10000,
 		explodeas = "EXO_BLAST",
 		firestandorders = 1,
@@ -36,12 +36,12 @@ return {
 		maxdamage = 685000,
 		maxslope = 36,
 		maxvelocity = 1,
-		maxwaterdepth = 520,
+		maxwaterdepth = 255,
 		mobilestandorders = 1,
-		movementclass = "HKBOT7",
+		movementclass = "VKBOT15",
 		name = "Black Widow",
 		noautofire = false,
-		nochasecategory = "SUB VTOL",
+		nochasecategory = "VTOL",
 		objectname = "cormkl",
 		onoffable = true,
 		radardistance = 0,
@@ -297,7 +297,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY MEDIUM",
+				badtargetcategory = "TINY MEDIUM LARGE",
 				def = "MountedAntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 			},
@@ -310,21 +310,27 @@ return {
 			},
 			[4] = {
 				def = "ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[5] = {
 				def = "ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[6] = {
 				def = "ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[7] = {
 				def = "ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[8] = {
 				def = "ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[9] = {
 				def = "ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[10] = {
 				def = "FLAMMER_WEAPON",

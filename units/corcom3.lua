@@ -19,7 +19,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "LEVEL3 ALL COMMANDER CONSTR HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "LEVEL3 ALL COMMANDER MOBILE SURFACE UNDERWATER",
 		cloakcost = 200,
 		cloakcostmoving = 1250,
 		collisionvolumeoffsets = "0 -3 3",
@@ -55,7 +55,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Supreme Commander",
-		nochasecategory = "ALL SUB",
+		nochasecategory = "VTOL",
 		norestrict = 1,
 		objectname = "corcom3",
 		radardistance = 1500,
@@ -360,7 +360,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMCOMLASER5",
-				onlytargetcategory = "NOTSUB",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[2] = {
 				def = "COM_SHIELD2",

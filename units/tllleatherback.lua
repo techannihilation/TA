@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Anti-Submarine Torpedo Turtle",
@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Leatherback",
-		nochasecategory = "ALL SUB",
+		nochasecategory = "VTOL",
 		objectname = "tllleatherback",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -151,7 +151,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "torp",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

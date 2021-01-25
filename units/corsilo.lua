@@ -15,7 +15,7 @@ return {
 		buildtime = 250000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 18 -2",
 		collisionvolumescales = "90 38 84",
 		collisionvolumetype = "Box",
@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Silencer",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "CORSILO",
 		radardistance = 50,
 		radaremitheight = 67,
@@ -165,7 +165,7 @@ return {
 				damage = {
 					commanders = 2500,
 					default = 10000,
-					subs = 5,
+					subs = 4750,
 				},
 				customparams = {
 					light_color = "1 0.6 0.2",
@@ -181,7 +181,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "CRBLMSSL",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "SURFACE UNDERWATER",
 			},
 		},
 	},

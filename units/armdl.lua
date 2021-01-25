@@ -15,7 +15,7 @@ return {
 		buildtime = 4180,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "44 55 44",
 		collisionvolumetype = "CylY",
@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Anemone",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "ARMDL",
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -165,7 +165,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COAX_DEPTHCHARGE",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -7 -2",
 		collisionvolumescales = "110 86 198",
 		collisionvolumetest = 1,
@@ -157,11 +157,12 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1300,
 				damage = {
+					areoship = 22000,
 					commanders = 2500,
 					default = 15000,
 					experimental_land = 22000,
 					experimental_ships = 22000,
-					subs = 5,
+					subs = 7500,
 				},
 			},
 			rocket_krog = {
@@ -209,7 +210,7 @@ return {
 			},
 			[3] = {
 				def = "NUKE_HCAR_CORE",
-				onlytargetcategory = "NOTVTOL",
+				onlytargetcategory = "SURFACE UNDERWATER",
 			},
 		},
 	},

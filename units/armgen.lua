@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "armgen_aoplane.dds",
 		buildpic = "armgen.dds",
 		buildtime = 7800,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "41 43 41",
 		collisionvolumetype = "CylY",

@@ -12,13 +12,13 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -9 0",
 		collisionvolumescales = "104 106 68",
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Assault Kbot",
+		description = "Experimental Amphibious Assault Kbot",
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,
 		footprintx = 5,
@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Orcone",
 		noautofire = false,
-		nochasecategory = "SUB VTOL",
+		nochasecategory = "UNDERWATER VTOL",
 		objectname = "ARMORCO",
 		radardistance = 0,
 		radaremitheight = 93,
@@ -246,6 +246,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ORCO_ROCKET",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[2] = {
 				def = "ARMORCO_BLASTER",
@@ -257,7 +258,7 @@ return {
 				slaveto = 2,
 			},
 			[4] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "TINY MEDIUM",
 				def = "ARMORCO_ATAD",
 				onlytargetcategory = "SURFACE",
 			},

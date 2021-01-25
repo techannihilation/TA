@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "60 80 145",
 		collisionvolumetype = "Box",
@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Dutchman",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "VTOL UNDERWATER",
 		objectname = "talon_dutchman",
 		radardistance = 0,
 		radaremitheight = 35,
@@ -202,6 +202,7 @@ return {
 			},
 			[1] = {
 				def = "RAVE_MISSILE",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 
 		},

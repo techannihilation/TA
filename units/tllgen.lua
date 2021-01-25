@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllgen_aoplane.dds",
 		buildpic = "tllgen.dds",
 		buildtime = 8500,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "42 50 42",
 		collisionvolumetype = "CylY",

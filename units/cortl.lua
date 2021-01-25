@@ -11,7 +11,10 @@ return {
 		buildtime = 4233,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER SURFACE",
+		category = "ALL UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 -4.5 0",
+		collisionvolumescales = "32 24 32",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Torpedo Launcher",
 		explodeas = "MEDIUM_BUILDINGEX",
@@ -29,7 +32,7 @@ return {
 		minwaterdepth = 12,
 		name = "Urchin",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "CORTL",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -49,8 +52,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				collisionvolumeoffsets = "-0.449691772461 -1.59912109332e-06 0.155464172363",
-				collisionvolumescales = "30.8800354004 19.4210968018 32.1831512451",
+				collisionvolumeoffsets = "0 -4.5 0",
+				collisionvolumescales = "32 9 32",
 				collisionvolumetype = "Box",
 				damage = 1994,
 				description = "Urchin Wreckage",
@@ -135,7 +138,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COAX_TORPEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

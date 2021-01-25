@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 -5",
 		collisionvolumescales = "105 35 155",
 		collisionvolumetype = "CylZ",
@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Grenat",
 		noautofire = false,
-		nochasecategory = "SUB VTOL",
+		nochasecategory = "UNDERWATER VTOL",
 		objectname = "talon_grenat",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -292,9 +292,11 @@ return {
 			},
 			[5] = {
 				def = "TALON_STARBURST",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[6] = {
 				def = "TALON_STARBURST",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[7] = {
 				def = "FLAMMER_WEAPON",

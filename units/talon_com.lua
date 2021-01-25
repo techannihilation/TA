@@ -19,7 +19,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "ALL COMMANDER CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL COMMANDER MOBILE SURFACE UNDERWATER",
 		cloakcost = 100,
 		cloakcostmoving = 500,
 		collisionvolumeoffsets = "0 -1 0",
@@ -55,7 +55,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Commander",
-		nochasecategory = "ALL SUB",
+		nochasecategory = "VTOL",
 		norestrict = 1,
 		objectname = "talon_COM",
 		radardistance = 700,
@@ -405,7 +405,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TAL_LASER",
-				onlytargetcategory = "NOTSUB",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[3] = {
 				def = "TAL_DISINTEGRATOR",

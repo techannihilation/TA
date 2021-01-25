@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corses_aoplane.dds",
 		buildpic = "corses.dds",
 		buildtime = 95000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		corpse = "dead",
 		description = "Amphibious - capacity (550K)",
 		energystorage = 550000,

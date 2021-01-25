@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "35 35 47",
@@ -200,7 +200,7 @@ return {
 
 			[2] = {
 				def = "DEPTHCHARGE",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

@@ -13,13 +13,13 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-10 -16 0",
 		collisionvolumescales = "152 193 82",
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Armored Riot Kbot",
+		description = "Experimental Armored Amphibious Riot Kbot",
 		explodeas = "KROG_BLAST",
 		firestandorders = 1,
 		footprintx = 5,
@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Dreadnought",
 		noautofire = false,
-		nochasecategory = "ALL SUB",
+		nochasecategory = "VTOL",
 		objectname = "tllcolossus",
 		radardistance = 0,
 		radaremitheight = 51,
@@ -188,10 +188,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					bombers = 375,
+					areoship = 93.75,
 					default = 5,
-					fighters = 375,
-					transporters = 375,
+					priority_air = 375,
 					unclassed_air = 375,
 				},
 			},
@@ -275,19 +274,19 @@ return {
 				def = "GAUSS_TLL",
 				onlytargetcategory = "SURFACE",
 			},
-
 			[2] = {
 				def = "QUATRO_GUN",
 				onlytargetcategory = "SURFACE",
 			},
-
 			[3] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[4] = {
+				badtargetcategory = "TINY",
 				def = "MINIFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 220,
@@ -297,8 +296,6 @@ return {
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
-
-
 		},
 	},
 }

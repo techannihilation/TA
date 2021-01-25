@@ -11,7 +11,10 @@ return {
 		buildtime = 4120,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON UNDERWATER SURFACE",
+		category = "ALL UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 -4.5 0",
+		collisionvolumescales = "32 24 32",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Torpedo Launcher",
@@ -29,7 +32,7 @@ return {
 		minwaterdepth = 12,
 		name = "Harpoon",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "ARMTL",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -49,8 +52,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				collisionvolumeoffsets = "0.25 -4.24193335938 -0.393661499023",
-				collisionvolumescales = "32.1499938965 9.51611328125 31.9671630859",
+				collisionvolumeoffsets = "0 -4.5 0",
+				collisionvolumescales = "32 9 32",
 				collisionvolumetype = "Box",
 				damage = 1928,
 				description = "Harpoon Wreckage",
@@ -135,7 +138,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COAX_TORPEDO",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "armlightfus.dds",
 		buildtime = 20000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "48 50 52",
 		collisionvolumetest = 1,

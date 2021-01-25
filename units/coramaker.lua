@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "coramaker_aoplane.dds",
 		buildpic = "coramaker.dds",
 		buildtime = 4400,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		description = "Converts upto 192 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
 		footprintx = 4,

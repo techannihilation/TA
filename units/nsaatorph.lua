@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "38 25 50",
 		collisionvolumetest = 1,
@@ -41,7 +41,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Undertow",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "VTOL UNDERWATER",
 		objectname = "NSAATORPH",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -154,7 +154,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARMHEAVYDEPTHCHARGE",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

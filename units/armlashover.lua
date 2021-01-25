@@ -1,8 +1,6 @@
 return {
 	armlashover = {
 		acceleration = 0.15,
-		ai_limit = "limit ARMLASHOVER 8",
-		ai_weight = "weight ARMLASHOVER 2",
 		brakerate = 0.24,
 		buildcostenergy = 6751,
 		buildcostmetal = 361,
@@ -15,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER MEDIUM MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MEDIUM MOBILE SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Lightning Hovercraft",
@@ -37,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Python",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "VTOL UNDERWATER",
 		objectname = "ARMLASHOVER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

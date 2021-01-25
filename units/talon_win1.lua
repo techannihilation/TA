@@ -8,7 +8,7 @@ return {
 		builder = false,
 		buildpic = "talon_win1.dds",
 		buildtime = 6000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -8 0",
 		collisionvolumescales = "42 108 42",
 		collisionvolumetype = "CylY",

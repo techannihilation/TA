@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HOVER HUGE MOBILE NOTDEFENSE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "65 65 185",
 		collisionvolumetype = "box",
@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Thanos",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "VTOL UNDERWATER",
 		objectname = "talon_thanos",
 		radaremitheight = 50,
 		selfdestructas = "KROG_BLAST",
@@ -153,6 +153,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
+					areoship = 25000,
 					commanders = 2500,
 					default = 12500,
 					experimental_land = 25000,
@@ -249,6 +250,7 @@ return {
 			},
 			[3] = {
 				def = "TALON_STARBURST",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 		},
 	},

@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "65 40 78",
 		collisionvolumetype = "CylZ",
@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK5",
 		name = "Carbuncle",
 		noautofire = false,
-		nochasecategory = "SUB VTOL",
+		nochasecategory = "UNDERWATER VTOL",
 		objectname = "talon_carbuncle",
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -246,6 +246,7 @@ return {
 			},
 			[3] = {
 				def = "RAVE_MISSILE",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[4] = {
 				def = "FLAMMER_WEAPON",

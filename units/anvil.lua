@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL HUGE WEAPON SURFACE UNDERWATER",
+		category = "ALL MOBILE HUGE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "66 66 80",
 		collisionvolumetype = "CylZ",
@@ -162,6 +162,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
+					areoship = 100000,
 					default = 25000,
 					experimental_land = 100000,
 					experimental_ships = 100000,

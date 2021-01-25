@@ -19,7 +19,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "LEVEL2 ALL COMMANDER CONSTR LARGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE UNDERWATER",
+		category = "LEVEL2 ALL COMMANDER MOBILE SURFACE UNDERWATER",
 		cloakcost = 200,
 		cloakcostmoving = 1000,
 		collisionvolumeoffsets = "0 -1 0",
@@ -54,7 +54,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Star Commander",
-		nochasecategory = "ALL SUB",
+		nochasecategory = "VTOL",
 		norestrict = 1,
 		objectname = "talon_com2",
 		radardistance = 1250,
@@ -344,7 +344,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "TAL_LASER",
-				onlytargetcategory = "NOTSUB",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[2] = {
 				def = "COM_SHIELD",

@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTVTOL WEAPON SURFACE",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -14 10",
 		collisionvolumescales = "95 95 225",
 		collisionvolumetype = "CylZ",
@@ -242,10 +242,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 950,
 				damage = {
-					bombers = 160,
+					areoship = 40,
 					default = 5,
-					fighters = 160,
-					transporters = 160,
+					priority_air = 160,
 					unclassed_air = 160,
 				},
 			},
@@ -262,6 +261,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "HYDRAMISS",
 				onlytargetcategory = "VTOL",
 			},
@@ -278,6 +278,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "HYDRAMISS",
 				onlytargetcategory = "VTOL",
 			},

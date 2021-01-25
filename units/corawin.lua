@@ -8,7 +8,7 @@ return {
 		builder = false,
 		buildpic = "corawin.dds",
 		buildtime = 6000,
-		category = "ALL NOTDEFENSE NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL NOTWEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -7 0",
 		collisionvolumescales = "60 90 60",
 		collisionvolumetype = "CylY",

@@ -15,7 +15,7 @@ return {
 		buildtime = 4280,
 		canattack = true,
 		canstop = 1,
-		category = "ALL NOTHOVERNOTVTOL NOTMOBILE NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "38 51 38",
 		collisionvolumetype = "CylY",
@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jellyfish",
 		noautofire = false,
-		nochasecategory = "ALL",
+		nochasecategory = "MOBILE",
 		objectname = "CORDL",
 		radaremitheight = 45,
 		seismicsignature = 0,
@@ -165,7 +165,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "COAX_DEPTHCHARGE",
-				onlytargetcategory = "NOTHOVERNOTVTOL",
+				onlytargetcategory = "UNDERWATER",
 			},
 		},
 	},

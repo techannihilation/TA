@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE NOTDEFENSE NOTHOVERNOTVTOL NOTSUB NOTSUBNOTSHIP NOTVTOL WEAPON SURFACE",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "38 38 50",
 		collisionvolumetype = "CylZ",
@@ -40,7 +40,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Vanguard",
 		noautofire = false,
-		nochasecategory = "ALL SUB",
+		nochasecategory = "VTOL",
 		objectname = "talon_vanguard",
 		radaremitheight = 30,
 		seismicsignature = 0,
@@ -154,10 +154,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					bombers = 225,
+					areoship = 56.25,
 					default = 5,
-					fighters = 225,
-					transporters = 225,
+					priority_air = 225,
 					unclassed_air = 225,
 				},
 			},
@@ -198,10 +197,9 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 850,
 				damage = {
-					bombers = 180,
+					areoship = 45,
 					default = 5,
-					fighters = 180,
-					transporters = 180,
+					priority_air = 180,
 					unclassed_air = 180,
 				},
 			},
@@ -209,11 +207,13 @@ return {
 		weapons = {
 
 			[2] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "TALON_STARBURST",
 				onlytargetcategory = "VTOL",
 			},
 
 			[3] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "MOBILEFLAK",
 				onlytargetcategory = "VTOL",
 			},
