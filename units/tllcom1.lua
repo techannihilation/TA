@@ -10,7 +10,7 @@ return {
 		builddistance = 250,
 		builder = true,
 		buildpic = "tllcom1.dds",
-		buildtime = 10000,
+		buildtime = 100000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,

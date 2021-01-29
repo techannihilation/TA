@@ -10,7 +10,7 @@ return {
 		builddistance = 350,
 		builder = true,
 		buildpic = "corcom2.dds",
-		buildtime = 10000,
+		buildtime = 150000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,

@@ -136,7 +136,7 @@ return {
 				model = "shipmissile",
 				name = "HeavyRocket",
 				noselfdamage = true,
-				range = 950,
+				range = 1000,
 				reloadtime = 4,
 				smoketrail = true,
 				--sprayangle = 250,

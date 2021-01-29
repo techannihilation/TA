@@ -6,6 +6,8 @@ Balance :
  - T4 spider, Saurus, Mythril, Colossus and Titan => Become Amphibious
  - Air Mine Layer => Reduce HP 450=>250
  - Decrease SAM T1 range 1000=>900
+ - horgue : change weapon into rocket high trajectory (more damage and random rocket). Increase range 950=>1000
+ - tarantula : increase range 950=>1000
 
 Improvment :
  - Rework all CATEGORIES. (some units could not shoot on other (air vs ground, ship vs hover...). Please, report issue https://github.com/techannihilation/TA/issues/1640, if you see)
