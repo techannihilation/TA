@@ -287,6 +287,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "CANNON_TYRNT",
 				onlytargetcategory = "SURFACE",
 			},

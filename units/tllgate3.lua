@@ -44,7 +44,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllgate3",
-		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo ",
+		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			buildpic = "tllgate3.dds",
 			faction = "TLL",

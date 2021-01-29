@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.5,
 		maxwaterdepth = 10,
 		mobilestandorders = 1,
-		movementclass = "ATANK3",
+		movementclass = "ATANK4",
 		name = "Rex",
 		noautofire = false,
 		nochasecategory = "VTOL",

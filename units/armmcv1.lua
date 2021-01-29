@@ -38,7 +38,7 @@ return {
 		maxvelocity = 1,
 		maxwaterdepth = 255,
 		mobilestandorders = 1,
-		movementclass = "HTANK5",
+		movementclass = "HTANK8",
 		name = "Dark Kronos",
 		noautofire = false,
 		nochasecategory = "VTOL",
@@ -285,10 +285,12 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "CANNON_TRMPH",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "CANNON_TRMPH",
 				maindir = "0 0 1",
 				maxangledif = 270,

@@ -239,6 +239,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "TINY",
 				def = "SEADRAGPRIME",
 				onlytargetcategory = "SURFACE",
 			},
@@ -249,6 +250,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "TINY",
 				def = "SEADRAGPRIME",
 				maindir = "0 0 1",
 				maxangledif = 240,

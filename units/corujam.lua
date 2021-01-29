@@ -41,7 +41,7 @@ return {
 		stealth = true,
 		unitname = "corujam",
 		usebuildinggrounddecal = false,
-		yardmap = "ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo ooooooooo",
+		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		customparams = {
 			buildpic = "corujam.dds",
 			faction = "CORE",

@@ -31,7 +31,7 @@ return {
 		maxvelocity = 1.45,
 		maxwaterdepth = 255,
 		mobilestandorders = 1,
-		movementclass = "ATANK3",
+		movementclass = "ATANK4",
 		name = "Black Tiger",
 		noautofire = false,
 		nochasecategory = "VTOL",
@@ -191,6 +191,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "TINY",
 				def = "TIGRE_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},

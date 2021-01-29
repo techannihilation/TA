@@ -38,7 +38,7 @@ return {
 		unitname = "tllemplrpt",
 		usepiececollisionvolumes = true,
 		usepieceselectionvolumes = true,
-		yardmap = "ooooo ooooo ooooo ooooo ooooo",
+		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "tllemplrpt.dds",
 			canareaattack = 1,
