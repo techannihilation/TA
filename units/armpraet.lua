@@ -45,7 +45,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 100,
 		script = "armpraet.cob",
-		seismicsignature = 48,
+		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 500,

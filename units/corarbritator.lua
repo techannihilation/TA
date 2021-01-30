@@ -46,7 +46,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 76,
 		script = "corarbritator.cob",
-		seismicsignature = 48,
+		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 450,

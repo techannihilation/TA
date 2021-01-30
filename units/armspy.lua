@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		cloakcost = 50,
 		cloakcostmoving = 100,
 		collisionvolumeoffsets = "0 0 0",

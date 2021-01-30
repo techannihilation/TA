@@ -118,6 +118,11 @@ QueryTertiary(piecenum)
 	piecenum = missile;
 }
 
+AimFromPrimary(piecenum)
+{
+	piecenum = fp;
+}
+
 AimFromTertiary(piecenum)
 {
 	piecenum = light;

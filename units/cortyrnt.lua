@@ -291,6 +291,7 @@ return {
 			},
 			[4] = {
 				def = "ROCKET_KROG",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 		},
 	},

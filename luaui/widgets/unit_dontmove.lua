@@ -29,9 +29,7 @@ local unitSet = {}
 
 local unitArray = {
 
-  --comms
-
-  --Core
+--Core
   "corcom",
   "corcom1",
   "corcom2",
@@ -54,86 +52,6 @@ local unitArray = {
   "talon_com1",
   "talon_com2",
   "talon_com3",
-
-  --aa units
-  "armjeth",
-  "armaak",
-  "corcrash",
-  "coraak",
-
-  "armsam",
-  "armyork",
-  "cormist",
-  "corsent",
-  "ahermes",
-  "corjeag",
-
-  "armah",
-  "corah",
-  "armmls",
-  "cormls",
-  "armaas",
-  "corarch",
-
-  "tllaak",
-  "tllsting",
-  "tllhovermissile",
-  "tllfirestarter",
-  "tllhoplit",
-
-  --arty
-  "tawf013",
-  "armham",
-  "corwolv",
-
-  "armmart",
-  "armmerl",
-  "cormart",
-  "corvroc",
-  "trem",
-  "armsnipe",
-  "corhrk",
-
-  "armmh",
-  "cormh",
-  "armroy",
-  "corroy",
-  "tawf009",
-  "corssub",
-
-  "armmship",
-  "cormship",
-  "armbats",
-  "corbats",
-  "armbc",
-  "aseadragon",
-  "corblackhy",
-
-  "armraven",
-  "armraven1",
-  "armshock",
-  "armshock1",
-
-  --skirmishers/fire support
-  "armjanus",
-  "armrock",
-  "corstorm",
-
-  "tawf114",
-  "armmanni",
-  "cormort",
-
-  --scouts
-  "armflea",
-  "armfav",
-  "corfav",
-  "armspy",
-  "tllbug",
-  "tllgladius",
-
-  "armpt",
-  "corpt",
-  "tllotter",
 
   --bombers
   "armblz",
@@ -163,33 +81,6 @@ local unitArray = {
   "talon_shade",
   "talon_handgod",
   "talon_eclipse",
-
-  --shields/jammers/radars
-  "armjam",
-  "armaser",
-  "armjaspd",
-  "armsjam",
-
-  "coreter",
-  "concealer",
-  "corspec",
-  "corsjam",
-  "blotter",
-
-  "tllobscurer",
-  "tllmixer",
-  "tllconfuser",
-
-  "armseer",
-  "r75-v",
-  "armmark",
-
-  "watcher",
-  "corvrad",
-  "corvoyr",
-
-  "tlldivine",
-  "tllobserver",
 
   --antinukes
   "armscab",

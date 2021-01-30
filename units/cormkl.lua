@@ -46,7 +46,7 @@ return {
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
-		seismicsignature = 48,
+		seismicsignature = 0,
 		selfdestructas = "MKL_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 1000,

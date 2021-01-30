@@ -40,7 +40,7 @@ return {
 		noautofire = false,
 		objectname = "armshieldgen",
 		radaremitheight = 35,
-		seismicsignature = 3,
+		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 300,
 		standingmoveorder = 1,

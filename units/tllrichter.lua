@@ -32,7 +32,7 @@ return {
 		onoffable = true,
 		radaremitheight = 31,
 		script = "tllrichter.lua",
-		seismicdistance = 2200,
+		seismicdistance = 1500,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 225,

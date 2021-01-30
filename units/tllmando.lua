@@ -45,7 +45,7 @@ return {
 		objectname = "tllmando",
 		radaremitheight = 25,
 		repairspeed = 75,
-		seismicsignature = 2,
+		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 325,

@@ -249,6 +249,7 @@ return {
 			},
 			[5] = {
 				def = "ROCKET_MCV",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 		},
 	},

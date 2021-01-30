@@ -47,7 +47,7 @@ return {
 		objectname = "talon_ogopogo",
 		onoffable = true,
 		radaremitheight = 25,
-		seismicsignature = 4,
+		seismicsignature = 3,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 450,
 		standingfireorder = 2,

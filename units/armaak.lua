@@ -31,7 +31,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "ARMAAK",
 		radaremitheight = 28,
-		seismicsignature = 1,
+		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 400,
 		steeringmode = 2,

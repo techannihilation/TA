@@ -15,6 +15,7 @@ Improvment :
  Hover Core Adonis : Weapon model changed.
  - Add T4 AA for Talon
  - Add Saturn and Dark Kronos to T4 Lab
+ - delete seismic signature for all no-cloak units
 
 Air Categories :
  - ALL AA Flak/Missile Priority : All Air except Fighter, Scout & Areoship

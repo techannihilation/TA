@@ -35,7 +35,7 @@ return {
 		onoffable = true,
 		radaremitheight = 25,
 		script = "corsd.lua",
-		seismicdistance = 2000,
+		seismicdistance = 1500,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 225,

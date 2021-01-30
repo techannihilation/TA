@@ -207,6 +207,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ROCKET_KROG",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[3] = {
 				def = "NUKE_HCAR_CORE",

@@ -47,7 +47,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Atlantis",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "ALL",
 		objectname = "ARMHCAR",
 		onoffable = true,
 		radardistance = 3500,
@@ -209,6 +209,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ROCKET_MCV",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[3] = {
 				def = "NUKE_HCAR_ARM",

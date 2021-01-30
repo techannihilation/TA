@@ -43,7 +43,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "ARMST",
 		radaremitheight = 25,
-		seismicsignature = 4,
+		seismicsignature = 2,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 500,
 		standingfireorder = 2,

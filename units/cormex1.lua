@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 9999,
 		metalstorage = 25,
-		name = "Metal Extractor",
+		name = "Advanced Metal Extractor",
 		noautofire = false,
 		nochasecategory = "MOBILE",
 		objectname = "CORMEX1",

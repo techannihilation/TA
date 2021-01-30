@@ -84,62 +84,62 @@ local morphDefs = {
 	armllt = {
 		into = 'armllt1',
 		time = 15,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	corllt = {
 		into = 'corllt1',
 		time = 15,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	tllllt = {
 		into = 'tlllft',
 		time = 15,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	talon_llt = {
 		into = 'talon_llt1',
 		time = 15,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	armhlt = {
 		into = 'armvhlt',
 		time = 30,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	talon_hlt = {
 		into = 'talon_vhlt',
 		time = 30,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	corhlt= {
 		into = 'corvhlt',
 		time = 30,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	tllhlt = {
 		into = 'tllvhlt',
 		time = 30,
-		xp = 0.20,
+		xp = 0.10,
 	},
 	armguard= {
 		into = 'armamb',
 		time = 30,
-		xp = 0.25,
+		xp = 0.15,
 	},
 	talon_painless = {
 		into = 'talon_slinger',
 		time = 30,
-		xp = 0.25,
+		xp = 0.15,
 	},
 	corpun= {
 		into = 'cortoast',
 		time = 30,
-		xp = 0.25,
+		xp = 0.15,
 	},
 	tlllbt = {
 		into = 'tllplasma',
 		time = 30,
-		xp = 0.25,
+		xp = 0.15,
 	},
 	armamd = {
 		into = 'armamd1',
@@ -347,32 +347,6 @@ local morphDefs = {
 		time = 90,
 		tech = 3,
 	},
-	--[[
-	correch1 = {
-		into = 'correch2',
-		time = 50,
-	},
-	correch2 = {
-		into = 'correch3',
-		time = 75,
-	},
-	correch3 = {
-		into = 'correch4',
-		time = 100,
-	},
-	armrech1 = {
-		into = 'armrech2',
-		time = 50,
-	},
-	armrech2 = {
-		into = 'armrech3',
-		time = 75,
-	},
-	armrech3 = {
-		into = 'armrech4',
-		time = 100,
-	},
-	--]]
 	armvulc = {
 		into = 'armvulc2',
 		time = 45,

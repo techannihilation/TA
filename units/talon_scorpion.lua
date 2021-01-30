@@ -40,7 +40,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "talon_scorpion",
 		radaremitheight = 62,
-		seismicsigniture = 50,
+		seismicsigniture = 0,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 600,

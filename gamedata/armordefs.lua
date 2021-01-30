@@ -327,7 +327,6 @@ return {
 		"corlilith",
 		"talon_cerberus",
 	},
-
 	--### AREOSHIP ###
 	areoship = {
 		"armarch",
@@ -339,7 +338,6 @@ return {
 		"talon_skynet",
 		"talon_independence",
 	},
-
 	flamethrowers = {
 		"corpyro",
 		"corpyrox",

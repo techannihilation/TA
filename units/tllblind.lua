@@ -42,6 +42,7 @@ return {
 		objectname = "TLLBLIND",
 		radardistance = 0,
 		radaremitheight = 51,
+		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 450,
 		standingfireorder = 2,

@@ -42,7 +42,7 @@ return {
 		objectname = "talon_crab",
 		onoffable = true,
 		radaremitheight = 62,
-		seismicsigniture = 50,
+		seismicsigniture = 0,
 		selfdestructas = "CRAWL_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 600,

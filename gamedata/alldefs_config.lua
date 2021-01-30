@@ -1176,7 +1176,6 @@ local unitheight = {
     ["tawf015"] = 23,
     ["tawf114"] = 22,
     ["tawf116"] = 20,
-    ["terraunit"] = 3,
     ["tllaak"] = 19,
     ["tllaap"] = 59,
     ["tllabomber"] = 20,

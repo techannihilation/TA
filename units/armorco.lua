@@ -41,7 +41,7 @@ return {
 		objectname = "ARMORCO",
 		radardistance = 0,
 		radaremitheight = 93,
-		seismicsignature = 64,
+		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 910,

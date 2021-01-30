@@ -27,7 +27,7 @@ return {
 		nochasecategory = "VTOL",
 		objectname = "coraapod",
 		radaremitheight = 26,
-		seismicsignature = 1,
+		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 390,
 		steeringmode = 2,

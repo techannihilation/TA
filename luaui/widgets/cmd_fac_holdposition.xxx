@@ -29,28 +29,10 @@ end
 local unitSet = {}
 
 local unitArray = {
-  "armlab",
-  "armalab",
-  "armvp",
-  "armavp",
-  "armsy",
-  "armasy",
-  "armhp",
-  "armfhp",
-  "armshtlx",
   "armcom",
-  "armamsub",
-  "corlab",
-  "coralab",
-  "corvp",
-  "coravp",
-  "corsy",
-  "corasy",
-  "corhp",
-  "corfhp",
-  "corgant",
-  "coramsub",
   "corcom",
+  "talon_com",
+  "tllcom",
 }
 ----------------------------------------------
 ------------------------------------------

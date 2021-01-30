@@ -42,7 +42,7 @@ return {
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 62,
-		seismicsigniture = 2500,
+		seismicsigniture = 0,
 		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 600,
