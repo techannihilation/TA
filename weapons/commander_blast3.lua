@@ -1,5 +1,5 @@
 return {
-	commander_blast = {
+	commander_blast3 = {
 		areaofeffect = 1080,
 		craterboost = 6,
 		cratermult = 3,
