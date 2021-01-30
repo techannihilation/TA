@@ -45,7 +45,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HDBOAT8",
 		name = "Nexus",
-		nochasecategory = "VTOL",
+		nochasecategory = "ALL",
 		objectname = "CORHCAR",
 		onoffable = true,
 		radardistance = 3500,

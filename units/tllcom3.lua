@@ -56,7 +56,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Supreme Commander",
-		nochasecategory = "VTOL",
+		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "tllcom3",
 		--onoffable = true,

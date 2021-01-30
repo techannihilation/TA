@@ -54,7 +54,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Star Commander",
-		nochasecategory = "VTOL",
+		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "talon_com2",
 		radardistance = 1250,

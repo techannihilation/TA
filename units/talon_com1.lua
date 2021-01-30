@@ -55,7 +55,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Advanced Commander",
-		nochasecategory = "VTOL",
+		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "talon_com1",
 		radardistance = 1000,

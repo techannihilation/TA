@@ -47,7 +47,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Titan",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		nochasecategory = "ALL",
 		objectname = "tllhcar",
 		onoffable = true,
 		radardistance = 3500,
