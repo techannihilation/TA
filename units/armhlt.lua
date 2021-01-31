@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armhlt_aoplane.dds",
 		buildpic = "armhlt.dds",
-		buildtime = 14362,
+		buildtime = 14000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
@@ -160,7 +160,6 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 800,
 					default = 540,
 					subs = 5,
 				},

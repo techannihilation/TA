@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, turret, guns, gun1, gun2, gun3, gun4;
+piece  base, tower, spindle, turret, flare, side1, side2;
 
 static-var  gun_1;
 
@@ -40,11 +40,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	dont-cache guns;
-	dont-cache turret;
-	dont-shade guns;
-	dont-shade turret;
-	gun_1 = base;
+	gun_1 = 0;
 	start-script SmokeUnit();
 }
 
@@ -52,60 +48,60 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn guns to y-axis heading speed <200.000000>;
-	turn guns to x-axis <0.000000> - pitch speed <200.000000>;
-	wait-for-turn guns around y-axis;
-	wait-for-turn guns around x-axis;
+	turn turret to y-axis heading speed <200.000000>;
+	turn turret to x-axis <0.000000> - pitch speed <200.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
 	return (1);
 }
 
 FirePrimary()
 {
-	if( gun_1 == 0 )
+	if( gun_1  == 0 )
 	{
-		gun_1 = turret;
-		return (0);
+		sleep 250;
+		turn spindle to z-axis <0.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
 	}
-	if( gun_1 == 1 )
+	else if( gun_1 == 1 )
 	{
-		gun_1 = guns;
-		return (0);
+		sleep 250;
+		turn spindle to z-axis <72.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
 	}
-	if( gun_1 == 2 )
+	else if( gun_1 == 2 )
 	{
-		gun_1 = gun1;
-		return (0);
+		sleep 250;
+		turn spindle to z-axis <144.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
 	}
-	if( gun_1 == 3 )
+	else if( gun_1 == 3 )
 	{
-		gun_1 = base;
-		return (0);
+		sleep 250;
+		turn spindle to z-axis <216.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
+	}
+	else if( gun_1== 4 )
+	{
+		sleep 250;
+		turn spindle to z-axis <288.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
+	}
+	++gun_1;
+	if( gun_1 == 5 )
+	{
+		gun_1 = 0;
 	}
 }
 
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = gun1;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = gun2;
-	}
-	if( gun_1 == 2 )
-	{
-		piecenum = gun3;
-	}
-	if( gun_1 == 3 )
-	{
-		piecenum = gun4;
-	}
+	piecenum = flare;
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = guns;
+	piecenum = turret;
 }
 
 SweetSpot(piecenum)
@@ -118,30 +114,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode guns type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode side1 type NOHEATCLOUD;
+		explode side2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		explode guns type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode guns type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | SHATTER;
+		explode tower type NOHEATCLOUD;
+		explode side1 type NOHEATCLOUD;
+		explode side2 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
-	explode guns type NOHEATCLOUD;
-	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode tower type NOHEATCLOUD;
+	explode side1 type NOHEATCLOUD;
+	explode side2 type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

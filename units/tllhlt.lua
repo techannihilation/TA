@@ -1,8 +1,8 @@
 return {
 	tllhlt = {
 		buildangle = 32768,
-		buildcostenergy = 2959,
-		buildcostmetal = 575,
+		buildcostenergy = 3359,
+		buildcostmetal = 515,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -120,7 +120,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 75,
+				energypershot = 60,
 				explosiongenerator = "custom:LARGE_GREEN_LASER_BURN",
 				firestarter = 90,
 				impactonly = 1,
@@ -149,7 +149,6 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 650,
 					default = 450,
 					subs = 5,
 				},

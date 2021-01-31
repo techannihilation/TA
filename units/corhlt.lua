@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corhlt_aoplane.dds",
 		buildpic = "corhlt.dds",
-		buildtime = 14433,
+		buildtime = 14000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
@@ -159,7 +159,6 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 550,
 					default = 360,
 					subs = 5,
 				},
