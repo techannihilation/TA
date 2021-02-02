@@ -427,17 +427,17 @@ local morphDefs = {
 	armfast = {
 		into = 'armjugg',
 		time = 60,
-		xp = 0.75,
+		xp = 0.50,
 	},
 	armhdpw = {
 		into = 'arm_furie',
 		time = 180,
-		xp = 1.00,
+		xp = 0.50,
 	},
 	talon_crab = {
 		into = 'talon_scorpion',
 		time = 90,
-		xp = 0.25,
+		xp = 0.10,
 	},
 	armrock = {
 		into = 'armcrack',

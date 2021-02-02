@@ -5,9 +5,7 @@
 
 piece  base, stands, shell, rotary, dingle1, dingle2, turret1, patch,
        sleeve1, barrel1, flare1, barrel2, flare2, post, turret2, rocketbox,
-       rocket1, rocket2, rocket3, rocket4, smoke1, smoke2, smoke3, smoke4,
-       armor1, armor2, armor3, armor4, armor5, armor6, armor7, armor8,
-       fakeshell;
+       rocket1, rocket2, rocket3, rocket4, smoke1, smoke2, smoke3, smoke4, fakeshell;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, restore_delay,
             gun_1, gun_2, Static_Var_9, Static_Var_10,
@@ -43,46 +41,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-}
-
-RaiseArmor()
-{
-	hide armor8;
-	sleep 40;
-	hide armor7;
-	sleep 40;
-	hide armor6;
-	sleep 40;
-	hide armor5;
-	sleep 40;
-	hide armor4;
-	sleep 40;
-	hide armor3;
-	sleep 40;
-	hide armor2;
-	sleep 40;
-	hide armor1;
-	set ARMORED to 0;
-}
-
-LowerArmor()
-{
-	set ARMORED to 1;
-	show armor1;
-	sleep 40;
-	show armor2;
-	sleep 40;
-	show armor3;
-	sleep 40;
-	show armor4;
-	sleep 40;
-	show armor5;
-	sleep 40;
-	show armor6;
-	sleep 40;
-	show armor7;
-	sleep 40;
-	show armor8;
 }
 
 fixGo()
@@ -224,14 +182,6 @@ Create()
 	hide smoke2;
 	hide smoke3;
 	hide smoke4;
-	hide armor1;
-	hide armor2;
-	hide armor3;
-	hide armor4;
-	hide armor5;
-	hide armor6;
-	hide armor7;
-	hide armor8;
 	hide shell;
 	hide turret1;
 	hide sleeve1;
@@ -410,16 +360,6 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare1;
-	hide flare2;
-	hide armor1;
-	hide armor2;
-	hide armor3;
-	hide armor4;
-	hide armor5;
-	hide armor6;
-	hide armor7;
-	hide armor8;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

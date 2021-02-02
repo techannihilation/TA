@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 34081,
 		buildcostmetal = 3155,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 8,
-		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "cormexp_aoplane.dds",
 		buildpic = "cormexp.dds",
 		buildtime = 32500,
 		canattack = true,
@@ -53,7 +49,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cormexp",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "cormexp.dds",
