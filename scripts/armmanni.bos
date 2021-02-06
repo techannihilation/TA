@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, flash, turret, sensor, barrel, sleeve;
+piece  base, body, flash, turret, sensor, barrel, sleeve;
 
 static-var  restore_delay;
 
@@ -27,7 +27,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -124,7 +124,7 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode barrel type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode flash type NOHEATCLOUD;
 		explode sensor type NOHEATCLOUD;
 		explode sleeve type NOHEATCLOUD;
@@ -135,27 +135,16 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode barrel type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode flash type NOHEATCLOUD | FALL;
 		explode sensor type NOHEATCLOUD | FALL;
 		explode sleeve type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
-		explode flash type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sensor type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
 	corpsetype = 3;
 	explode barrel type NOHEATCLOUD;
-	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode flash type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode sensor type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

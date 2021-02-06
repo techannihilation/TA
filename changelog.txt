@@ -1,3 +1,14 @@
+3.74 > 3.75
+2021-02-06
+
+Balance :
+ - Tll Lizard : Decrease speed 2.2 => 1.7. Decrease dmg/s 180=>170. Deacrease HP 1125=>1095
+ - T2&T3 Tll tllobliterator : Decrease damage by 20%
+ - Decrease Xp 50% for all T1 ground AA morph into T2
+
+ Improvment :
+  - Rework Roaster and adv Roaster main weapon model
+
 3.72 > 3.74
 2021-01-30
 

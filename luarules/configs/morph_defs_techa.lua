@@ -579,22 +579,22 @@ local morphDefs = {
 	armjeth = {
 		into = 'armaak',
 		time = 30,
-		xp = 1.00,
+		xp = 0.50,
 	},
 	armaak = {
 		into = 'armeak',
 		time = 60,
-		xp = 1.25,
+		xp = 1.00,
 	},
 	corcrash = {
 		into = 'coraak',
 		time = 30,
-		xp = 1.00,
+		xp = 0.50,
 	},
 	coraak = {
 		into = 'coreak',
 		time = 60,
-		xp = 1.25,
+		xp = 1.00,
 	},
 	armwar = {
 		into = 'armmav',
@@ -768,23 +768,23 @@ local morphDefs = {
 	},
 	armamph = {
 		into = 'marauder',
-		time = 60,
-		xp = 0.30,
+		time = 45,
+		xp = 0.20,
 	},
 	armanac = {
 		into = 'armhplasma',
 		time = 30,
-		xp = 0.5,
+		xp = 0.50,
 	},
 	corsnap = {
 		into = 'nsacbehe',
-		time = 60,
-		xp = 0.75,
+		time = 45,
+		xp = 0.60,
 	},
 	ahermes = {
 		into = 'armyork',
 		time = 30,
-		xp = 1.00,
+		xp = 0.50,
 	},
 	armyork = {
 		into = 'armeflak',
@@ -794,7 +794,7 @@ local morphDefs = {
 	corjeag = {
     into = 'corsent',
 		time = 30,
-		xp = 1.00,
+		xp = 0.50,
 	},
 	corsent = {
 		into = 'coramist',
@@ -917,17 +917,17 @@ local morphDefs = {
 	tllroaster = {
 		into = 'tllroaster1',
 		time = 30,
-		xp = 0.20,
+		xp = 0.15,
 	},
 	armmanni = {
 		into = 'armmanni1',
 		time = 30,
-		xp = 0.20,
+		xp = 0.15,
 	},
 	armmanni1 = {
 		into = 'nsaagriz',
 		time = 90,
-		xp = 0.20,
+		xp = 0.25,
 	},
 	tllpbot = {
   	into = 'tllartybot',
@@ -957,9 +957,9 @@ local morphDefs = {
 	tllfirestarter = {
 	  into = 'tllaak',
 		time = 30,
-		xp = 1.00,
+		xp = 0.50,
 	},
-	tllfirestarter = {
+	tllaak = {
 		into = 'tlldilophosaurus',
 		time = 60,
 		xp = 1.00,
@@ -967,7 +967,7 @@ local morphDefs = {
 	tllhoplit = {
 	  into = 'tllpuncher',
 		time = 30,
-		xp = 1.00,
+		xp = 0.50,
 	},
 	tllpuncher = {
 		into = 'tllmantis',
@@ -1087,12 +1087,12 @@ local morphDefs = {
 	tllshaker = {
 		into = 'tllleopard',
 	  time = 60,
-		xp = 0.35,
+		xp = 0.50,
 	},
 	talon_sheatiped  = {
 		into = 'talon_vanguard',
 	  time = 30,
-		xp = 0.20,
+		xp = 0.50,
 	},
 	talon_vanguard  = {
 		into = 'talon_expanse',

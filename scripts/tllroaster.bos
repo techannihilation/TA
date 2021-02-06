@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, body, turret1, turret2, turret3, barrel1, barrel2, barrel3,
-       flare1, flare2, flare3, p;
+       flare1, flare2, flare3, sleeve1, support;
 
 static-var  restore_delay, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
@@ -14,50 +14,8 @@ static-var  restore_delay, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_
 #define SIG_AIM_3			8
 
 
-HitByWeapon(anglex, anglez)
-{
-	var Func_Var_3;
-	Func_Var_3 = get HEALTH;
-	if( Func_Var_3 <= 60 )
-	{
-		if( Static_Var_3 == 0 )
-		{
-			Static_Var_3 = 1;
-			hide p;
-			explode p type NOHEATCLOUD | FALL | SHATTER | SMOKE;
-		}
-	}
-	if( Func_Var_3 <= 50 )
-	{
-		if( Static_Var_4 == 0 )
-		{
-			Static_Var_4 = 1;
-			hide p;
-			explode p type NOHEATCLOUD | FALL | SHATTER | SMOKE;
-		}
-	}
-	if( Func_Var_3 <= 35 )
-	{
-		if( Static_Var_5 == 0 )
-		{
-			Static_Var_5 = 1;
-			hide p;
-			explode p type NOHEATCLOUD | FALL | SHATTER | SMOKE;
-		}
-	}
-	turn base to z-axis anglez speed <105.000000>;
-	turn base to x-axis anglex speed <105.000000>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <30.000000>;
-	turn base to x-axis <0.000000> speed <30.000000>;
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
-	Static_Var_3 = 0;
-	Static_Var_4 = 0;
-	Static_Var_5 = 0;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
@@ -65,30 +23,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
-		if( healthpercent >= 40 )
-		{
-			if( Static_Var_5 == 1 )
-			{
-				Static_Var_5 = 0;
-				show p;
-			}
-		}
-		if( healthpercent >= 60 )
-		{
-			if( Static_Var_4 == 1 )
-			{
-				Static_Var_4 = 0;
-				show p;
-			}
-		}
-		if( healthpercent >= 75 )
-		{
-			if( Static_Var_3 == 1 )
-			{
-				Static_Var_3 = 0;
-				show p;
-			}
-		}
 		if( healthpercent < 66 )
 		{
 			smoketype = 256 | 2;
@@ -96,7 +30,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from turret1;
+			emit-sfx smoketype from base;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -117,16 +51,12 @@ Create()
 	start-script SmokeUnit();
 }
 
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
-}
-
 RestoreAfterDelay()
 {
 	set-signal-mask SIG_AIM;
 	sleep restore_delay;
 	turn turret1 to y-axis <0.000000> speed <50.000000>;
+	turn sleeve1 to x-axis <0.000000> speed <50.000000>;
 }
 
 RestoreAfterDelay3()
@@ -142,7 +72,9 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn turret1 to y-axis heading speed <50.000000>;
+	turn sleeve1 to x-axis <1.000000> - pitch speed <50.000000>;
 	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeve1 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -219,22 +151,34 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare1;
-	explode base type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
 		explode turret1 type NOHEATCLOUD;
-		explode body type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode turret3 type NOHEATCLOUD;
+		explode support type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;		
 		return (corpsetype);
 	}
-	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
+		explode turret1 type NOHEATCLOUD | FALL;
+		explode turret2 type NOHEATCLOUD | FALL;
+		explode turret3 type NOHEATCLOUD | FALL;
+		explode support type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;		
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turret1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode turret2 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode turret3 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode support type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode barrel1 type NOHEATCLOUD | FALL;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;	
 	return (corpsetype);
 }

@@ -1,7 +1,7 @@
 return {
 	armwar = {
-		acceleration = 0.072,
-		brakerate = 0.714,
+		acceleration = 0.075,
+		brakerate = 0.7,
 		buildcostenergy = 3142,
 		buildcostmetal = 265,
 		builder = false,
@@ -46,7 +46,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.99,
+		turninplacespeedlimit = 1.0,
 		turnrate = 770,
 		unitname = "armwar",
 		upright = true,
