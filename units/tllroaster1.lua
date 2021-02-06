@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 22971,
 		buildcostmetal = 2375,
 		builder = false,
-		buildpic = "tllroaster.dds",
+		buildpic = "tllroaster1.dds",
 		buildtime = 37500,
 		canattack = true,
 		canguard = true,
@@ -52,7 +52,7 @@ return {
 		turnrate = 175,
 		unitname = "tllroaster1",
 		customparams = {
-			buildpic = "tllroaster.dds",
+			buildpic = "tllroaster1.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
