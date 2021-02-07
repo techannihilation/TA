@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Geothermal Foundry",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLGEO",
 		onoffable = false,
 		radaremitheight = 49,

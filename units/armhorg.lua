@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Horgue",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armhorg",
 		onoffable = true,
 		radardistance = 960,

@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORGANT",
 		radardistance = 50,
 		radaremitheight = 41,

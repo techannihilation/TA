@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Mercenary",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_mercenary",
 		radaremitheight = 25,
 		seismicsignature = 0,

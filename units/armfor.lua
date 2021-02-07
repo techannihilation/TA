@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Atomic Geothermal",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "armFOR",
 		radaremitheight = 73,
 		selfdestructas = "KROG_BLAST",

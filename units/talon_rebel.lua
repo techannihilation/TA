@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Rebel",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_rebel",
 		radaremitheight = 25,
 		seismicsignature = 0,

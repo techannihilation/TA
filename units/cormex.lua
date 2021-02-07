@@ -37,7 +37,7 @@ return {
 		metalstorage = 25,
 		name = "Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORMEX",
 		onoffable = true,
 		radaremitheight = 25,

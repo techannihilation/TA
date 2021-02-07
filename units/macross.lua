@@ -34,7 +34,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Macross",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "macross5",
 		radardistance = 0,
 		radaremitheight = 98,

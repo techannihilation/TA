@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORAP",
 		radardistance = 510,
 		radaremitheight = 54,

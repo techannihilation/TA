@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Steadfast",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMMLS",
 		radaremitheight = 25,
 		seismicsignature = 0,

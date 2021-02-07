@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_win",
 		radaremitheight = 77,
 		seismicsignature = 0,

@@ -36,7 +36,7 @@ return {
 		minwaterdepth = 15,
 		name = "Underwater Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_uwmme",
 		onoffable = true,
 		radaremitheight = 40,

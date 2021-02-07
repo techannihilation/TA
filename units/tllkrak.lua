@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 5,
 		name = "KrakeN",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "tllkrak",
 		onoffable = true,

@@ -29,7 +29,7 @@ return {
 		metalstorage = 0,
 		name = "Moho Hazardous Geothermal Foundry",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TALON_MOHOGEO",
 		onoffable = false,
 		radaremitheight = 61,

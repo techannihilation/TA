@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Wind Trap",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllawindtrap",
 		radardistance = 0,
 		radaremitheight = 57,

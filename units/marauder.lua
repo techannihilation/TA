@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Marauder",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "MARAUDER",
 		radaremitheight = 32,
 		seismicsignature = 0,

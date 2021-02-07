@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Leatherback",
-		nochasecategory = "VTOL",
+		
 		objectname = "tllleatherback",
 		radardistance = 0,
 		radaremitheight = 25,

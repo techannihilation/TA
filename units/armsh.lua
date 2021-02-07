@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Skimmer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMSH",
 		radaremitheight = 25,
 		seismicsignature = 0,

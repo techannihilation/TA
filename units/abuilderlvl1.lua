@@ -39,7 +39,7 @@ return {
 		metalmake = 0.1,
 		metalstorage = 25,
 		name = "Colipper",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "ABuilderLvl1",
 		radardistance = 0,
 		repairspeed = 35,

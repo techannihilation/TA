@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Gravitank Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_hpns",
 		radaremitheight = 25,
 		seismicsignature = 0,

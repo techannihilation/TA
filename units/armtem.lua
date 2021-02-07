@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Tempest",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "ARMTEM",
 		radardistance = 0,
 		radaremitheight = 35,

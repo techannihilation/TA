@@ -34,7 +34,7 @@ return {
 		mincloakdistance = 36,
 		name = "Dragon's Eye",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMEYES",
 		onoffable = false,
 		radaremitheight = 27,

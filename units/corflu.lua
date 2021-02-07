@@ -29,7 +29,7 @@ return {
 		maxslope = 26,
 		maxwaterdepth = 0,
 		name = "Influence",
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFLU",
 		radardistance = 0,
 		radaremitheight = 235,

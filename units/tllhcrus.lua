@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Odin",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "tllhcrus",
 		radardistance = 0,
 		radaremitheight = 25,

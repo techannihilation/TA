@@ -28,7 +28,7 @@ return {
 		maxvelocity = 1.6,
 		movementclass = "AKBOT2",
 		name = "Archangel",
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMAAK",
 		radaremitheight = 28,
 		seismicsignature = 0,

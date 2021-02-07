@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Conqueror",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMCRUS",
 		radaremitheight = 40,
 		seismicsignature = 0,

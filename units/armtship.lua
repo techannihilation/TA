@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Hulk",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMTSHIP",
 		radaremitheight = 74,
 		seismicsignature = 0,

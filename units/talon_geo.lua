@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_geo",
 		radaremitheight = 51,
 		script ="talon_geo_mini.cob",

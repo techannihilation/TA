@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Puncher",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLPUNCHER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

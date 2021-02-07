@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Annihilator",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMANNI",
 		onoffable = true,
 		radardistance = 1500,

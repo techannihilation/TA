@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Talir T2",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "talon_gate",
 		radaremitheight = 33,

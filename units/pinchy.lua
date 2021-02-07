@@ -41,7 +41,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "All-Terrain and Amphibious Construction Kbot",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "pinchy",
 		radaremitheight = 34,
 		seismicsignature = 0,

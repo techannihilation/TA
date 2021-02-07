@@ -38,7 +38,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Weaver",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armweaver",
 		radardistance = 0,
 		radaremitheight = 34,

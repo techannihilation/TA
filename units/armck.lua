@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMCK",
 		radaremitheight = 25,
 		seismicsignature = 0,

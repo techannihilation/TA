@@ -39,7 +39,7 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Muat",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "cormuat",
 		radardistance = 0,
 		radaremitheight = 28.8,

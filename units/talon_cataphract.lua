@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Cataphract",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_cataphract",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Cyclone",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "armcyclone",
 		script = "armcyclone.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",

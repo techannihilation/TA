@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Intimidator",
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORINT",
 		radaremitheight = 92,
 		seismicsignature = 0,

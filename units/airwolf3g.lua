@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Air Wolf",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "Airwolf3g",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

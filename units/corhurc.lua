@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hurricane",
 		noautofire = true,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORHURC",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

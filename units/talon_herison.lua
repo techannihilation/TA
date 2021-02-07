@@ -38,7 +38,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Herison",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_herison",
 		radaremitheight = 25,
 		seismicsignature = 0,

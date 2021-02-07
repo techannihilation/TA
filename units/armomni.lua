@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Jammer Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "armomni",
 		onoffable = true,
 		radardistancejam = 2000,

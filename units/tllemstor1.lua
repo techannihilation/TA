@@ -28,7 +28,7 @@ return {
 		metalstorage = 100000,
 		name = "T3 Energy/Metal Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllemstor1",
 		radardistance = 0,
 		radaremitheight = 50,

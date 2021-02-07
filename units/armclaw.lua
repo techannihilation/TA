@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Claw",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMCLAW",
 		radardistancejam = 8,
 		radaremitheight = 44,

@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Peewee",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMPW",
 		radaremitheight = 25,
 		seismicsignature = 0,

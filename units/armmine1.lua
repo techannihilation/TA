@@ -46,7 +46,7 @@ return {
 		mincloakdistance = 0,
 		name = "Micro",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMMINE1",
 		onoffable = false,
 		radaremitheight = 25,

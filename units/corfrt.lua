@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "Stinger",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFRT",
 		radaremitheight = 47,
 		seismicsignature = 0,

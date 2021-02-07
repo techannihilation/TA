@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Onyx",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_lrpt",
 		radaremitheight = 92,
 		seismicsignature = 0,

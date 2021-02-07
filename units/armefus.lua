@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Heavy Experimental Armored Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "armefus",
 		onoffable = false,
 		radaremitheight = 128,

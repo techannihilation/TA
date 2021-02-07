@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Pterodactyl",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "TLLBOMBER",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

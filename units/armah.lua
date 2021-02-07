@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Swatter",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "ARMAH",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -46,7 +46,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Gizmo",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllgizmo",
 		radaremitheight = 31,
 		seismicsignature = 2,

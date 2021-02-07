@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 70,
 		name = "Ambusher",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMAMB",
 		radaremitheight = 28,
 		seismicsignature = 0,

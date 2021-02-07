@@ -29,7 +29,7 @@ return {
 		maxslope = 16,
 		maxwaterdepth = 0,
 		name = "Vanya",
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLVANYA",
 		radardistance = 0,
 		radaremitheight = 255,

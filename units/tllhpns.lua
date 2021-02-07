@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Platform - NS",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "tllHPNS",
 		radardistance = 0,

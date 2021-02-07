@@ -30,7 +30,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 255,
 		name = "Advanced Metal Maker",
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllmetalmakerlvl1",
 		radardistance = 0,
 		radaremitheight = 25,

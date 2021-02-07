@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMESY",
 		radaremitheight = 73,
 		selfdestructas = "CRAWL_BLAST",

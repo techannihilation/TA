@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Asgard",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLASGARD",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",

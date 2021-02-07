@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Armageddon",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFSILO",
 		radardistance = 0,
 		radaremitheight = 175,

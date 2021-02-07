@@ -38,7 +38,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Birgus",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_crab",
 		onoffable = true,
 		radaremitheight = 62,

@@ -30,7 +30,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "Heavy Elemental Reactor",
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLMEDFUSION",
 		radaremitheight = 44,
 		selfdestructas = "FUSIONX_BLAST",

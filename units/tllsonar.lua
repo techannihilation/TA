@@ -25,7 +25,7 @@ return {
 		minwaterdepth = 8,
 		name = "Sonar Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLSONAR",
 		onoffable = true,

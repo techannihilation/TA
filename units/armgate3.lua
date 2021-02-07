@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Keeper T5",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "armgate3",
 		radaremitheight = 39,

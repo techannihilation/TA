@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "NS Besom",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLLMTNS",
 		radaremitheight = 69,
 		selfdestructas = "MEDIUM_BUILDING",

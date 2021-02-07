@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Triton",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMCROC",
 		radaremitheight = 25,
 		seismicsignature = 0,

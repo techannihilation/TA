@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Turtle Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllturtle_lab",
 		radaremitheight = 34,
 		selfdestructas = "LARGE_BUILDING",

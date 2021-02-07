@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Metal Maker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMMAKR",
 		radaremitheight = 25,
 		seismicsignature = 0,

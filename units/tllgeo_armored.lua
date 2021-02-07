@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Barbecue",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllgeo_armored",
 		onoffable = false,
 		radaremitheight = 25,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Samson",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMSAM",
 		radaremitheight = 25,
 		seismicsignature = 0,

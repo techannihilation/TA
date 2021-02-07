@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Python",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "ARMLASHOVER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

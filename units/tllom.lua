@@ -34,7 +34,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Om",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllom",
 		radaremitheight = 41,
 		selfdestructas = "CRAWL_BLAST",

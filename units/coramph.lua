@@ -37,7 +37,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Gimp",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORAMPH",
 		radardistance = 300,
 		radaremitheight = 26,

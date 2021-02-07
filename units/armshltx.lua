@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMSHLTX",
 		radaremitheight = 47,
 		seismicsignature = 0,

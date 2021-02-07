@@ -30,7 +30,7 @@ return {
 		minwaterdepth = 20,
 		name = "Tidal Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_tide",
 		onoffable = false,
 		radaremitheight = 25,

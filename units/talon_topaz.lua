@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Topaz",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_topaz",
 		radaremitheight = 25,
 		seismicsignature = 0,

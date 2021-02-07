@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Avenger",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORVENG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

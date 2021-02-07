@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Demon",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORPYROX",
 		radaremitheight = 63,
 		selfdestructas = "CRAWL_BLAST",

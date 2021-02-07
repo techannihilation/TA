@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Long Tom",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "SPEEDER",
 		radardistance = 0,
 		radaremitheight = 30,

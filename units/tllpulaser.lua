@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Adder",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLPULASER",
 		radaremitheight = 31,
 		selfdestructas = "MEDIUM_BUILDING",

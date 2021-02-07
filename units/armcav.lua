@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Cavalier",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMCAV",
 		onoffable = true,
 		radaremitheight = 44,

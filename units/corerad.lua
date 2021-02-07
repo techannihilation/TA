@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Eradicator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "corerad",
 		radaremitheight = 49,
 		seismicsignature = 0,

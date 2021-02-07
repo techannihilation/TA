@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shipyard",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORSY",
 		radaremitheight = 71,
 		seismicsignature = 0,

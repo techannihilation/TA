@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Samael",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllsamael",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",

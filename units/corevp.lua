@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Vehicle Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "COREVP",
 		radardistance = 0,
 		radaremitheight = 28,

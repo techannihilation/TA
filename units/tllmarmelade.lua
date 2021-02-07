@@ -42,7 +42,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Amphibious Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllmarmelade",
 		radardistance = 50,
 		radaremitheight = 22,

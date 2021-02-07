@@ -38,7 +38,7 @@ return {
 		movementclass = "VHTANK5",
 		name = "Repentance",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_repentance",
 		radardistance = 0,
 		radaremitheight = 34,

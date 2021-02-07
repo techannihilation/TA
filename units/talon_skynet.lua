@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		metalstorage = 10000,
 		name = "Skynet",
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "talon_skynet",
 		radardistance = 0,
 		radaremitheight = 20,

@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Dark Matter",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllefus",
 		radardistance = 0,
 		radaremitheight = 160,

@@ -35,7 +35,7 @@ return {
 		metalstorage = 200,
 		name = "Mass Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMMAS",
 		onoffable = true,
 		radardistance = 0,

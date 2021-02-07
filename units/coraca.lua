@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORACA",
 		radardistance = 50,
 		radaremitheight = 10.5,

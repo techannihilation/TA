@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Falcon",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tlladvfight",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

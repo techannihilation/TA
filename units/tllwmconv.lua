@@ -23,7 +23,7 @@ return {
 		minwaterdepth = 10,
 		name = "Metal Producer",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "tllWMconv",
 		radaremitheight = 57,

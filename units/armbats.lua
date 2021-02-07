@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Millennium",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMBATS",
 		radaremitheight = 57,
 		seismicsignature = 0,

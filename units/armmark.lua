@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Marky",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMMARK",
 		onoffable = true,
 		radardistance = 2200,

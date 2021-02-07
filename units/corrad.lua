@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORRAD",
 		onoffable = true,
 		radardistance = 2100,

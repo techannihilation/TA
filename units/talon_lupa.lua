@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK3",
 		name = "Lupa",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_lupa",
 		radardistance = 0,
 		radaremitheight = 25,

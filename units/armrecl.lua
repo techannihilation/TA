@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Grim Reaper",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "ARMRECL",
 		radaremitheight = 25,
 		resurrect = 1,

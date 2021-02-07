@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_acv",
 		radardistance = 50,
 		radaremitheight = 25,

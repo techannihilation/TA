@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Snapper",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORSNAP",
 		radaremitheight = 25,
 		seismicsignature = 0,

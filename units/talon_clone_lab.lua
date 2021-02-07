@@ -39,7 +39,7 @@ talon_clone_lab = {
 		mobilestandorders = 1,
 		name = "Infantry Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_clone_lab",
 		radardistance = 50,
 		radaremitheight = 25,

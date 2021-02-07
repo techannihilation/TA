@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 25,
 		name = "Underwater Fusion Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMUWFUS",
 		radaremitheight = 37,
 		seismicsignature = 0,

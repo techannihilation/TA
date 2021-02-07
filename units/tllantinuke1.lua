@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Peacemaker",
 		noautofire = true,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLANTINUKE",
 		radardistance = 0,
 		radaremitheight = 60,

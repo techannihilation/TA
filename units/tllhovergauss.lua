@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Maggot",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "TLLhovergauss",
 		radardistance = 0,
 		radaremitheight = 25,

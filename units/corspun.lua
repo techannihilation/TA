@@ -32,7 +32,7 @@ return {
 		maxslope = 14,
 		name = "Earth Lotus",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "corspun",
 		radaremitheight = 26,
 		seismicsignature = 0,

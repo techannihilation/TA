@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Retaliator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMSILO1",
 		radardistance = 50,
 		radaremitheight = 32,

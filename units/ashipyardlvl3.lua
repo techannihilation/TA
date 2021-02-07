@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 0,
 		name = "Shipyard",
-		nochasecategory = "MOBILE",
+		
 		objectname = "AShipyardLvl3",
 		radardistance = 0,
 		radaremitheight = 101,

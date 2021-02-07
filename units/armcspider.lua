@@ -36,7 +36,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "All-Terrain Construction Spider",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armcspider",
 		radaremitheight = 22,
 		selfdestructas = "BIG_UNIT",

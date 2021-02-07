@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 5,
 		name = "Lotus",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "corfpun",
 		onoffable = true,

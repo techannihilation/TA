@@ -41,7 +41,7 @@ return {
 		movementclass = "VKBOT25",
 		name = "Lilith",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "corlilith",
 		onoffable = true,
 		radardistance = 0,

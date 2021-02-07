@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORACK",
 		radardistance = 50,
 		radaremitheight = 28,

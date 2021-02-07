@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Device",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORJAMT",
 		onoffable = true,
 		radardistancejam = 360,

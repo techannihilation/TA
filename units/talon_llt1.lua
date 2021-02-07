@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "LLT",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_llt1",
 		script = "talon_llt.cob",
 		radaremitheight = 65,

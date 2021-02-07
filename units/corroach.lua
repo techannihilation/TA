@@ -37,7 +37,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Roach",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORROACH",
 		radaremitheight = 25,
 		seismicsignature = 0,

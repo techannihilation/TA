@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Echelon",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_echelon",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

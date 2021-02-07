@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Violator",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLVIOLATOR",
 		radaremitheight = 35,
 		selfdestructas = "BIG_UNIT",

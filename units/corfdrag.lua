@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFDRAG",
 		radaremitheight = 25,
 		seismicsignature = 0,

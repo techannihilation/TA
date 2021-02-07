@@ -42,7 +42,7 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Tau",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_tau",
 		radaremitheight = 30,
 		releaseheld = true,

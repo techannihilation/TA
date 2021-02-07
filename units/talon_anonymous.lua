@@ -37,7 +37,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Anonymous",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_anonymous",
 		onoffable = true,
 		radardistancejam = 1000,

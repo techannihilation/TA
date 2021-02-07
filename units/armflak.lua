@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flakker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFLAK",
 		radaremitheight = 25,
 		seismicsignature = 0,

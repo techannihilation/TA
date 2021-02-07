@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Vamp",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORVAMP",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

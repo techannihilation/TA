@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Matcher",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "CORMATCH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

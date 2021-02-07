@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Earth Shaker",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLSHAKER",
 		radaremitheight = 25,
 		seismicsignature = 0,

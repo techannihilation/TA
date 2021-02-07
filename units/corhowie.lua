@@ -35,7 +35,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Howie",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORHOWIE",
 		radaremitheight = 61,
 		selfdestructas = "CRAWL_BLAST",

@@ -44,7 +44,7 @@ return {
 		moverate2 = 2,
 		name = "Valkyrie",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORVALK",
 		pitchscale = 1,
 		radaremitheight = 28.8,

@@ -27,7 +27,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Richter ",
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLRICHTER",
 		onoffable = true,
 		radaremitheight = 31,

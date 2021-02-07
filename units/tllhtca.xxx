@@ -41,7 +41,7 @@ return {
 		metalmake = 1,
 		metalstorage = 100,
 		name = "Advant",
-		nochasecategory = "VTOL",
+		
 		objectname = "tllhtca",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

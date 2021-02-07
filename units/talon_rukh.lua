@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dragonfly",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_rukh",
 		radaremitheight = 28.8,
 		releaseheld = true,

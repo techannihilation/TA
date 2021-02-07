@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Requiem",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_requiem",
 		radardistance = 50,
 		radaremitheight = 52,

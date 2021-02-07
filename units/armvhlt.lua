@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "High-Energy Sentinel",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMVHLT",
 		radaremitheight = 77,
 		seismicsignature = 0,

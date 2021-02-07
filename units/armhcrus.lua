@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Ray",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "armhcrus",
 		radaremitheight = 65,
 		selfdestructas = "KROG_BLAST",

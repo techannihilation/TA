@@ -15,7 +15,7 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Heavy Mobile Energy Weapon",
+		description = "Heavy Gauss Tank",
 		explodeas = "ESTOR_BUILDING",
 		firestandorders = 1,
 		footprintx = 5,
@@ -33,7 +33,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Advanced Roaster",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLROASTER1",
 		radaremitheight = 35,
 		selfdestructas = "ESTOR_BUILDING",

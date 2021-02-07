@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Pelican",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMAMPH",
 		radaremitheight = 27,
 		seismicsignature = 0,

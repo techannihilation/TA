@@ -39,7 +39,6 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Consulat",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
 		objectname = "AACH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

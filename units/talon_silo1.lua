@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Rod Of God",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_silo",
 		radardistance = 0,
 		radaremitheight = 69,

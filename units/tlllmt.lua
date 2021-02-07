@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Besom",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLLMT",
 		radaremitheight = 81,
 		selfdestructas = "MEDIUM_BUILDING",

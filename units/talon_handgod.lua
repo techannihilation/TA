@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hand God",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_handgod",
 		script = "talon_handgod.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",

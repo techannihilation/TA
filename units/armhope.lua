@@ -49,7 +49,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hope",
 		noautofire = false,
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "armhope",
 		pitchscale = 0.5,
 		radaremitheight = 30,

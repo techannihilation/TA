@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Insulator",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllinsulator",
 		radaremitheight = 60,
 		seismicsignature = 0,

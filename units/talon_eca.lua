@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_eca",
 		radaremitheight = 9,
 		seismicsignature = 0,

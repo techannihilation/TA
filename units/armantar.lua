@@ -36,7 +36,7 @@ return {
 		movementclass = "VHTANK5",
 		name = "Antarion",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMANTAR",
 		onoffable = true,
 		radaremitheight = 50,

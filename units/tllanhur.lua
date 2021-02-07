@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Anhur",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tllanhur",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,

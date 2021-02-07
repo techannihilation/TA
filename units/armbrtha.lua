@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Big Bertha",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMBRTHA",
 		radaremitheight = 81,
 		seismicsignature = 0,

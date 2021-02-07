@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 22,
 		movementclass = "HTKBOT4",
 		name = "Brimstone",
-		nochasecategory = "VTOL",
+		
 		objectname = "COREAK",
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLASTSML",

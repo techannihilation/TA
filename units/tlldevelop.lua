@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 250,
 		name = "Develop Center T4",
-		nochasecategory = "MOBILE",
+		
 		objectname = "tlldevelop",
 		onoffable = true,
 		radardistance = 0,

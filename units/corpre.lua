@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Precipitator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORPRE",
 		radardistance = 1000,
 		radaremitheight = 44,

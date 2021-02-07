@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Zipper",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMFAST",
 		radaremitheight = 36,
 		seismicsignature = 0,

@@ -29,7 +29,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
-		nochasecategory = "MOBILE",
+		
 		objectname = "AMetalMakerLvl2",
 		radaremitheight = 53,
 		selfdestructas = "BANTHA_BLAST",

@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Boosted Defender",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMRL1",
 		radaremitheight = 49,
 		seismicsignature = 0,

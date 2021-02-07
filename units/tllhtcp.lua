@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "High Tech Construction Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLHTCP",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",

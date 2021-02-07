@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Nixer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMH",
 		radaremitheight = 25,
 		seismicsignature = 0,

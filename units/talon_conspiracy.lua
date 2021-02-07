@@ -41,7 +41,7 @@ return {
 		mincloakdistance = 35,
 		name = "Cloakable Jammer Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_conspiracy",
 		onoffable = true,
 		radardistancejam = 450,

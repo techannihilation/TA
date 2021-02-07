@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shipyard",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_sy",
 		radardistance = 50,
 		radaremitheight = 55,

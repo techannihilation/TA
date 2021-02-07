@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Retaliator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMSILO",
 		radardistance = 50,
 		radaremitheight = 32,

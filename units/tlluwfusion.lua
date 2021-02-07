@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 34,
 		name = "Underwater Heavy Elemental Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllUWFUSion",
 		radaremitheight = 42,
 		selfdestructas = "CRAWL_BLAST",

@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORHP",
 		radaremitheight = 22,
 		seismicsignature = 0,

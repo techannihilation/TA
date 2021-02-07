@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 5,
 		name = "Fish Hook",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLshoretorp",
 		radaremitheight = 105,
 		selfdestructas = "MEDIUM_BUILDING",

@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Viper",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORVIPE",
 		radaremitheight = 31,
 		seismicsignature = 0,

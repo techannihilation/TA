@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "core_hexapod_lab",
 		radardistance = 50,
 		radaremitheight = 68,

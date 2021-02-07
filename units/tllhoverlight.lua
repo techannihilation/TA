@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Fox",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "TLLHOVERLIGHT",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

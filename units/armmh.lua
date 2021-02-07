@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Wombat",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMMH",
 		radaremitheight = 25,
 		seismicsignature = 0,

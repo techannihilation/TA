@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT6",
 		name = "Gold",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_gold",
 		radaremitheight = 76,
 		selfdestructas = "KROG_BLAST",

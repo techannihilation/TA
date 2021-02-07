@@ -46,7 +46,7 @@ return {
 		mobilestandorders = 1,
 		name = "Valiant",
 		noautofire = false,
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "corvaliant",
 		pitchscale = 0.5,
 		radardistance = 0,

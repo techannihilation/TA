@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 255,
 		movementclass = "VKBOT4",
 		name = "Seller",
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_eak",
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLASTSML",

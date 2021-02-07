@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 5,
 		name = "Nano Turret Level 4",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFNANOTC3",
 		radaremitheight = 33,
 		reclaimspeed = 1200,

@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Insistent Fireraiser",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllfireraiser1",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",

@@ -32,7 +32,7 @@ return {
 		metalstorage = 10000,
 		name = "T2 Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "ARMUWADVMS",
 		radaremitheight = 43,

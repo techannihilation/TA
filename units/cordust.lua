@@ -48,7 +48,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dust",
 		noautofire = false,
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "cordust",
 		radardistance = 0,
 		radaremitheight = 25,

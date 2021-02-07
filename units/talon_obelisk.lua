@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Obelisk",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "talon_obelisk",
 		radaremitheight = 33,

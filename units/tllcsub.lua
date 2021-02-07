@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Construction Sub",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "TLLCSUB",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

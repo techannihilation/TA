@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Obliterator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllobliterator1",
 		onoffable = true,
 		radardistance = 1200,

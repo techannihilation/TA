@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dart",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_dart",
 		radardistance = 1000,
 		seismicsignature = 0, --Don't work for air unit

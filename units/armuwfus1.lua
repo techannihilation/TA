@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 70,
 		name = "Advanced Underwater Antimater Fusion",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMUWFUS1",
 		radaremitheight = 60,
 		script = "armuwfus1.cob",

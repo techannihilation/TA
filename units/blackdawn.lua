@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "BlackDawn",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "BLACKDAWN",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

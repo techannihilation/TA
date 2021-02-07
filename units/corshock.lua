@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shock",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "corshock",
 		radaremitheight = 28,
 		seismicsignature = 0,

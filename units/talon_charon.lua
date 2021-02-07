@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Charon",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_charon",
 		radaremitheight = 25,
 		seismicsignature = 0,

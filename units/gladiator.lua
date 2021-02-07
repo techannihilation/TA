@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Gladiator",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "Gladiator",
 		radardistance = 0,
 		radaremitheight = 36,

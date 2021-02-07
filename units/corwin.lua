@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORWIN",
 		radaremitheight = 76,
 		seismicsignature = 0,

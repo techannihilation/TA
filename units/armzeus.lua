@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Zeus",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMZEUS",
 		radaremitheight = 46,
 		seismicsignature = 0,

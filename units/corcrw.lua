@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Krow",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORCRW",
 		radaremitheight = 28.8,
 		seismicsignature = 0,

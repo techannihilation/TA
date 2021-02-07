@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Undertow",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_ash",
 		radardistance = 0,
 		radaremitheight = 25,

@@ -37,7 +37,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Escort",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMSJAM",
 		onoffable = true,
 		radardistancejam = 980,

@@ -30,7 +30,7 @@ return {
 		minwaterdepth = 5,
 		name = "NS H.L.T.",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLHLTNS",
 		radaremitheight = 75,

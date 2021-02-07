@@ -34,7 +34,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Seagull",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		noshadow = 1,
 		objectname = "TLLAMPHiBOT",
 		radardistance = 0,

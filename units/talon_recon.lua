@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Recon",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_recon",
 		radardistance = 1000,
 		seismicsignature = 0,

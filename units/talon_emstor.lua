@@ -27,7 +27,7 @@ return {
 		metalstorage = 125000,
 		name = "T3 Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_emstor",
 		radardistance = 0,
 		radaremitheight = 48,

@@ -43,7 +43,6 @@ return {
 		mobilestandorders = 1,
 		name = "Ceddral",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_ceddral",
 		radaremitheight = 28.8,
 		seismicsignature = 0,

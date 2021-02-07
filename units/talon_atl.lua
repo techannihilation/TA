@@ -30,7 +30,7 @@ return {
 		minwaterdepth = 25,
 		name = "Rubix",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_atl",
 		radaremitheight = 27,
 		seismicsignature = 0,

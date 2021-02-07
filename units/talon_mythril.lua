@@ -40,7 +40,7 @@ return {
 		movementclass = "VKBOT8",
 		name = "Mythril",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_mythril",
 		radardistance = 0,
 		radaremitheight = 76,

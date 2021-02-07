@@ -43,7 +43,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Construction Gravitank",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_ach",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

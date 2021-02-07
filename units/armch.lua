@@ -41,7 +41,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "ARMCH",
 		radaremitheight = 22,
 		seismicsignature = 0,

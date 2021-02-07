@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Dutchman",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_dutchman",
 		radardistance = 0,
 		radaremitheight = 35,

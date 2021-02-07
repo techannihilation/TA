@@ -38,7 +38,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Invader",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMVADER",
 		radaremitheight = 25,
 		seismicsignature = 0,

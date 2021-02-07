@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Big Bertha",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "arm_immolator",
 		radardistance = 0,
 		radaremitheight = 30,

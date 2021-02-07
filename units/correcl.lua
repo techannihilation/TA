@@ -36,7 +36,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Death Cavalry",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "CORRECL",
 		radaremitheight = 25,
 		resurrect = 1,

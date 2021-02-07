@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Snake",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "TLLHOVERMISSILE",
 		radardistance = 0,
 		radaremitheight = 25,

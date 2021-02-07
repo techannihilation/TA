@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Xeon",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_xeon",
 		radaremitheight = 25,
 		seismicsignature = 0,

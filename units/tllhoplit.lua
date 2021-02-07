@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Hoplit",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLHOPLIT",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

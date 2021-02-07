@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Barret",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllrlrpc",
 		onoffable = true,
 		radaremitheight = 92,

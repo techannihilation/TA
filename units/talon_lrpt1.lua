@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T3 Onyx",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_lrpt1",
 		radaremitheight = 100,
 		seismicsignature = 0,

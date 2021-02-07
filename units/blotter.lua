@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Blotter",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "BLOTTER",
 		onoffable = true,
 		radardistancejam = 450,

@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Guardian",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMGUARD",
 		radaremitheight = 30,
 		seismicsignature = 0,

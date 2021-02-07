@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Onyx",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TALON_ARTYCRAB",
 		onoffable = true,
 		radardistance = 0,

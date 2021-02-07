@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Stuner",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllstuner",
 		radaremitheight = 72,
 		selfdestructas = "MEDIUM_BUILDING",

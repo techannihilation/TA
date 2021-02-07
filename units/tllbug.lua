@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT1",
 		name = "Bug",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLBUG",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

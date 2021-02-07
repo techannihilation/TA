@@ -34,7 +34,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "SoftShell",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllsoftshell",
 		onoffable = true,
 		radardistancejam = 550,

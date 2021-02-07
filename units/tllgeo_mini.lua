@@ -32,7 +32,7 @@ return {
 		metalstorage = 50,
 		name = "Geothermal Forge",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLGEO_MINI",
 		onoffable = true,
 		radaremitheight = 29,

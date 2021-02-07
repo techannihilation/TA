@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Executioner",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORCRUS",
 		radaremitheight = 34,
 		seismicsignature = 0,

@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aether",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tllaether",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,

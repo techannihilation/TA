@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Viking",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLVIKING",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",

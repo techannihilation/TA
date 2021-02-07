@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 5,
 		name = "Talir T3",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "talon_fgate1",
 		radaremitheight = 41,

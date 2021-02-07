@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Raider",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORRAID",
 		radaremitheight = 25,
 		seismicsignature = 0,

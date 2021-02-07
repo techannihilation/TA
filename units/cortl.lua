@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 12,
 		name = "Urchin",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORTL",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -40,7 +40,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllach",
 		radaremitheight = 25,
 		script = "tllchover.cob",

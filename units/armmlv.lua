@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Podger",
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMMLV",
 		onoffable = false,
 		radaremitheight = 25,

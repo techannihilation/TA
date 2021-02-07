@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Center Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLTARG",
 		onoffable = true,
 		radaremitheight = 39,

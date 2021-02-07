@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 2,
 		name = "Sentry",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFRT",
 		radaremitheight = 54,
 		seismicsignature = 0,

@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Scorpion",
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_squarepants",
 		onoffable = true,
 		radardistance = 800,

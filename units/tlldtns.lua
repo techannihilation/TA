@@ -24,7 +24,7 @@ return {
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLDTNS",
 		radardistance = 0,
 		radaremitheight = 25,

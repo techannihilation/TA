@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Rimpler",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "TLLhplasma",
 		radardistance = 0,
 		radaremitheight = 25,

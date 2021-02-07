@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORSHROUD",
 		onoffable = true,
 		radardistancejam = 700,

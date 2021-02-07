@@ -24,7 +24,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLADT",
 		radardistance = 0,
 		radaremitheight = 61,

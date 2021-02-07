@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Irritator Shielded Mech",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "irritator",
 		radardistance = 0,
 		radaremitheight = 130,

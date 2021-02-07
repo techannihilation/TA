@@ -36,7 +36,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Jethro",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMJETH",
 		radaremitheight = 28,
 		seismicsignature = 0,

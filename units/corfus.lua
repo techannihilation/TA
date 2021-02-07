@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFUS",
 		radaremitheight = 52,
 		seismicsignature = 0,

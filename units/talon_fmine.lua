@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "Mega NS",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TALON_FMINE",
 		radaremitheight = 25,
 		seismicsignature = 0,

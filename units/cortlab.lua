@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Tortoise Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "cortlab",
 		radardistance = 0,
 		radaremitheight = 44,

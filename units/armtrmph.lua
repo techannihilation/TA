@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Triumph",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMTRMPH",
 		radardistance = 2000,
 		radaremitheight = 79,

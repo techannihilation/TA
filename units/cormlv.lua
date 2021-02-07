@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Spoiler",
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMLV",
 		onoffable = false,
 		radaremitheight = 25,

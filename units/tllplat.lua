@@ -28,7 +28,7 @@ return {
 		mobilestandorders = 1,
 		name = "Seaplane Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLPLAT",
 		radardistance = 0,

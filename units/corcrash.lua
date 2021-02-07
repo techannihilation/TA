@@ -36,7 +36,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Crasher",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORCRASH",
 		radaremitheight = 26,
 		seismicsignature = 0,

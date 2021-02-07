@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nano Turret Level 5",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_nanotc4",
 		radaremitheight = 44,
 		reclaimspeed = 3600,

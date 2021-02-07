@@ -38,7 +38,7 @@ return {
 		movementclass = "hkbot5",
 		name = "Heavy Impact",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "heavyimpact",
 		piecetrailcegrange = 4,
 		piecetrailcegtag = "Debree",

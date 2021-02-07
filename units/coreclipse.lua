@@ -41,7 +41,6 @@ return {
 		mobilestandorders = 1,
 		name = "Eclipse",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "coreclipse",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,

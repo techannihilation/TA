@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Shaman",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLSHAM",
 		radaremitheight = 30,
 		resurrect = 1,

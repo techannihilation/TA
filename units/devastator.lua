@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Destruitor",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "Devastator",
 		radardistance = 0,
 		radaremitheight = 48,

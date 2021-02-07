@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 2,
 		name = "Cobra - NS",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORENAA",
 		radaremitheight = 39,
 		seismicsignature = 0,

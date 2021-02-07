@@ -35,7 +35,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Huntsman",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armhuntsman",
 		radardistance = 0,
 		radaremitheight = 25,

@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Epoch",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ASEADRAGON",
 		radardistance = 1500,
 		radaremitheight = 54,

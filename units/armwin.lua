@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMWIN",
 		radaremitheight = 77,
 		seismicsignature = 0,

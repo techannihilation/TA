@@ -24,7 +24,7 @@ return {
 		minwaterdepth = 18,
 		name = "Tidal Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "tllTIDE",
 		onoffable = false,

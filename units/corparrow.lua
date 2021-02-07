@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Poison Arrow",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORPARROW",
 		radaremitheight = 25,
 		seismicsignature = 0,

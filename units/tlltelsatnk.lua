@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Tesla Tank",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLTELSATNK",
 		radardistance = 0,
 		radaremitheight = 25,

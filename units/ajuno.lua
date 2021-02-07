@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Arm Juno",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "AJUNO",
 		radaremitheight = 71,
 		seismicsignature = 0,

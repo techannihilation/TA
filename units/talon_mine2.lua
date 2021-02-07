@@ -45,7 +45,7 @@ return {
 		mincloakdistance = 8,
 		name = "Mega",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_mine2",
 		onoffable = false,
 		radaremitheight = 25,

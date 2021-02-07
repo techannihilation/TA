@@ -41,7 +41,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Venom",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "CORHOVER3G",
 		radardistance = 0,
 		radaremitheight = 26,

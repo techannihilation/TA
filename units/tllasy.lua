@@ -27,7 +27,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLASY",
 		radaremitheight = 49,

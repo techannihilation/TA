@@ -43,7 +43,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hopomis",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "tllhopomis",
 		radardistance = 0,
 		radaremitheight = 28,

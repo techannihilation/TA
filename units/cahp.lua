@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CAHP",
 		radaremitheight = 27,
 		selfdestructas = "LARGE_BUILDING",

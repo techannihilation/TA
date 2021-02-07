@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Pillager",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMART",
 		radaremitheight = 25,
 		seismicsignature = 0,

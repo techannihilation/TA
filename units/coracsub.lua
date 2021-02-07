@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Construction Sub",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "CORACSUB",
 		radardistance = 50,
 		radaremitheight = 22,

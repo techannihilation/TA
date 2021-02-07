@@ -27,7 +27,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Metal Maker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLMM",
 		radaremitheight = 25,
 		selfdestructas = "ARMESTOR_BUILDING",

@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLESTOR",
 		radaremitheight = 26,
 		selfdestructas = "CRAWL_BLASTSML",

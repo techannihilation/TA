@@ -34,7 +34,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Juggernaught",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMJUGG",
 		radardistance = 0,
 		radaremitheight = 73,

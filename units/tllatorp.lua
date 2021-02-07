@@ -26,7 +26,7 @@ return {
 		minwaterdepth = 5,
 		name = "Advanced Torpedo Launcher",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLatorp",
 		radardistance = 0,

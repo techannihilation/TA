@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Hardened Energy Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "talon_aestor",
 		radaremitheight = 42,

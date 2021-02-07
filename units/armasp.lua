@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMASP",
 		onoffable = true,
 		radaremitheight = 42,

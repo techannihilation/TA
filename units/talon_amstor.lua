@@ -32,7 +32,7 @@ return {
 		metalstorage = 10000,
 		name = "Hardened Metal Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "talon_amstor",
 		radaremitheight = 43,

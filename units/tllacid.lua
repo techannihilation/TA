@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Acidic Rain",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllacid",
 		radaremitheight = 42,
 		selfdestructas = "SPYBOMBX",

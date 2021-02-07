@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Neptune",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "corhcrus",
 		radaremitheight = 65,
 		selfdestructas = "BANTHA_BLAST",

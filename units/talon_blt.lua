@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Thea",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_blt",
 		radardistance = 1500,
 		radaremitheight = 79,

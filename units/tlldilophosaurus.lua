@@ -27,7 +27,7 @@ return {
 		maxvelocity = 1.75,
 		movementclass = "HOVER4",
 		name = "Dilophosaurus",
-		nochasecategory = "VTOL",
+		
 		objectname = "tlldilophosaurus",
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLASTSML",

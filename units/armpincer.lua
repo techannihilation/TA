@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Pincer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMPINCER",
 		radaremitheight = 25,
 		seismicsignature = 0,

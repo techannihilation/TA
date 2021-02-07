@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 20,
 		name = "Tidal Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORTIDE",
 		onoffable = false,
 		radaremitheight = 25,

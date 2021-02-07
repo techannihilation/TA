@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Argus",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllomni",
 		onoffable = true,
 		radardistancejam = 2000,

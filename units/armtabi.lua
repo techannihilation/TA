@@ -29,7 +29,7 @@ return {
 		maxslope = 16,
 		maxwaterdepth = 0,
 		name = "Tabitha",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMTABI",
 		radardistance = 0,
 		radaremitheight = 260,

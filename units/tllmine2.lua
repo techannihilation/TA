@@ -46,7 +46,7 @@ return {
 		mincloakdistance = 0,
 		name = "Medium Mine",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLMINE2",
 		onoffable = false,
 		radaremitheight = 25,

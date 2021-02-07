@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Leviathan",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "CORSSUB",
 		radaremitheight = 25,
 		seismicsignature = 0,

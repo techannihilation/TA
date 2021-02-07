@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Vasculitis",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_vasculitis",
 		radaremitheight = 40,
 		seismicsignature = 0,

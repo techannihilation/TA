@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Detector",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "R75V",
 		onoffable = true,
 		radardistance = 1490,

@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Orc",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "TLLORC",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

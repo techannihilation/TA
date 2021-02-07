@@ -33,7 +33,7 @@ return {
 		movementclass = "TANK4",
 		name = "Gargoyle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMDDM",
 		radaremitheight = 44,
 		selfdestructas = "CRAWL_BLAST",

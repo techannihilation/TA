@@ -29,7 +29,7 @@ return {
 		metalstorage = 125000,
 		name = "T3 Metal Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "cadvmsto",
 		radardistance = 0,
 		radaremitheight = 48,

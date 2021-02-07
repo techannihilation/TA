@@ -35,7 +35,7 @@ return {
 		metalstorage = 200,
 		name = "Dildo",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORMAS",
 		onoffable = true,
 		radardistance = 0,

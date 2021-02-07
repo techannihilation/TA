@@ -41,7 +41,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "All-Terrain Construction Kbot",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armspid",
 		radaremitheight = 50,
 		seismicsignature = 0,

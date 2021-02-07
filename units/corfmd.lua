@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Fortitude",
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFMD",
 		radardistance = 50,
 		radaremitheight = 35,

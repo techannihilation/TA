@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Crusader",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMROY",
 		radaremitheight = 35,
 		seismicsignature = 0,

@@ -44,7 +44,7 @@ return {
 		metalmake = 5,
 		metalstorage = 100,
 		name = "Cruiser",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "cbuilderlvl5",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",

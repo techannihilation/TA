@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Third Eye",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_eye",
 		radaremitheight = 137,
 		selfdestructas = "SMALL_BUILDING",

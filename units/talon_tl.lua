@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 12,
 		name = "Harpoon",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_tl",
 		radaremitheight = 25,
 		seismicsignature = 0,

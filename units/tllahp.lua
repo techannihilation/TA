@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllahp",
 		radaremitheight = 37,
 		selfdestructas = "LARGE_BUILDING",

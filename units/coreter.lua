@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK3",
 		name = "Deleter",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORETER",
 		onoffable = true,
 		radardistancejam = 450,

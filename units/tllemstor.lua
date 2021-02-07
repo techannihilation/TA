@@ -32,7 +32,7 @@ return {
 		metalstorage = 8000,
 		name = "T2 - Metal/Energy Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLEMSTOR",
 		radardistance = 0,
 		radaremitheight = 50,

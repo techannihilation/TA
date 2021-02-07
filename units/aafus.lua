@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+
 		objectname = "AAFUS",
 		onoffable = false,
 		radaremitheight = 64,

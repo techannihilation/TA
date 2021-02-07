@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Pyro",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORPYRO",
 		radaremitheight = 33,
 		seismicsignature = 0,

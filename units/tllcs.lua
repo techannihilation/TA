@@ -42,7 +42,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Construction Ship",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLCS",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

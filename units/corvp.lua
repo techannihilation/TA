@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORVP",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Center Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_targ",
 		onoffable = true,
 		radardistance = 0,

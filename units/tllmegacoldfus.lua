@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Super Heavy Elemental Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLMEGACOLDFUS",
 		radaremitheight = 106,
 		selfdestructas = "FUSION_BLAST_BIG",

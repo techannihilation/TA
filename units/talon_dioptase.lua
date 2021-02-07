@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Dioptase",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_dioptase",
 		radaremitheight = 25,
 		seismicsignature = 0,

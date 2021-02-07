@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFORT",
 		radaremitheight = 50,
 		seismicsignature = 0,

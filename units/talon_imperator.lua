@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Imperator",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_imperator",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Janus",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMJANUS",
 		radaremitheight = 25,
 		seismicsignature = 0,

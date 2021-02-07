@@ -29,7 +29,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Hydre",
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllhydre",
 		radaremitheight = 136,
 		seismicsignature = 0,

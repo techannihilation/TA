@@ -25,7 +25,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T5 Metal Maker",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ametalmakerlvl4",
 		radardistance = 0,
 		radaremitheight = 75,

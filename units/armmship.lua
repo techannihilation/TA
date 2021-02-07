@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Ranger",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMMSHIP",
 		radardistance = 1400,
 		radaremitheight = 30,

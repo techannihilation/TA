@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Maverick",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMMAV",
 		radaremitheight = 47,
 		seismicsignature = 0,

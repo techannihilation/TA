@@ -38,7 +38,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Doomsday Machine",
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORDOOM",
 		onoffable = true,
 		radardistance = 1200,

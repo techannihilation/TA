@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Hazardous Geothermal Foundry",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLMOHOGEO",
 		onoffable = false,
 		radaremitheight = 61,

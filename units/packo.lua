@@ -39,7 +39,7 @@ return {
 		mincloakdistance = 72,
 		name = "Pack0 Anticombomb",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "PACKO",
 		radaremitheight = 25,
 		seismicsignature = 0,

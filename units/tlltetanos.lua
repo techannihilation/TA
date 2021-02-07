@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Tetanos",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tlltetanos",
 		radaremitheight = 55,
 		seismicsignature = 0,

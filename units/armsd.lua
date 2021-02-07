@@ -30,7 +30,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Tracer",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMSD",
 		onoffable = true,
 		radaremitheight = 55,

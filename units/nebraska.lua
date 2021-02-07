@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "NEBRASKA",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "Nebraska",
 		radardistance = 0,
 		radaremitheight = 66,

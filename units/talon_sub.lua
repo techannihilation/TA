@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Kraken",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "talon_sub",
 		radaremitheight = 25,
 		seismicsignature = 0,

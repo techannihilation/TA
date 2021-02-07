@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_conspiracy1",
 		onoffable = true,
 		radardistancejam = 750,

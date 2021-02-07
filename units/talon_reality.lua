@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Reality",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_reality",
 		onoffable = true,
 		radardistance = 1750,

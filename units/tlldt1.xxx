@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tlldt1",
 		radardistancejam = 8,
 		radaremitheight = 45,

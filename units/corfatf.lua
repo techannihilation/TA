@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 30,
 		name = "Floating Targeting Facility",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFATF",
 		onoffable = true,
 		radaremitheight = 25,

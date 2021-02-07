@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_ESTOR",
 		radaremitheight = 30,
 		seismicsignature = 0,

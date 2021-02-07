@@ -33,7 +33,7 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLAMEX",
 		onoffable = true,
 		radaremitheight = 44,

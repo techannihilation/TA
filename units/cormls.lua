@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Pathfinder",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMLS",
 		radaremitheight = 25,
 		seismicsignature = 0,

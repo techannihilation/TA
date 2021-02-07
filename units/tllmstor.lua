@@ -32,7 +32,7 @@ return {
 		metalstorage = 4000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllMSTOR",
 		radaremitheight = 43,
 		selfdestructas = "SMALL_BUILDING",

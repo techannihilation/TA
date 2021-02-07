@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Jeffy",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMFAV",
 		radaremitheight = 25,
 		seismicsignature = 0,

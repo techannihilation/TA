@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Lancet",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "ARMLANCE",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 25,
 		name = "Lamprey",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORATL",
 		radaremitheight = 25,
 		seismicsignature = 0,

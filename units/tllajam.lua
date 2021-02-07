@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Jammer Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllajam",
 		onoffable = true,
 		radardistancejam = 900,

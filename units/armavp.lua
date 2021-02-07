@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Vehicle Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMAVP",
 		radaremitheight = 34,
 		seismicsignature = 0,

@@ -43,7 +43,7 @@ return {
 		metalmake = 0.1,
 		metalstorage = 25,
 		name = "Kalupper",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CBuilderLvl1.s3o",
 		radardistance = 0,
 		radaremitheight = 27,

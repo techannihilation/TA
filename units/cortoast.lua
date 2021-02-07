@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Toaster",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORTOAST",
 		radaremitheight = 25,
 		seismicsignature = 0,

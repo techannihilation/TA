@@ -45,7 +45,7 @@ return {
 		mincloakdistance = 8,
 		name = "Kilo",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_mine1",
 		onoffable = false,
 		radaremitheight = 25,

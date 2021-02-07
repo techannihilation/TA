@@ -29,7 +29,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Bagger",
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLBAGGER",
 		radaremitheight = 272,
 		seismicsignature = 0,

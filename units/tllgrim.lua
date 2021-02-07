@@ -38,7 +38,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Grim Reaper",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLGRIM",
 		radardistance = 0,
 		radaremitheight = 72,

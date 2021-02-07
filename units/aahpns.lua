@@ -30,7 +30,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform - NS",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "AAHPNS",
 		radaremitheight = 37,

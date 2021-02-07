@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "ARMCA",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 2,
 		name = "Naval Serie Sprinkler",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_fsprinkler",
 		radaremitheight = 43,
 		seismicsignature = 0,

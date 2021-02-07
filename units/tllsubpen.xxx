@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Sub Pen",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLsubpen",
 		radaremitheight = 31,

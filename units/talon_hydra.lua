@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hydra",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_hydra",
 		radardistance = 0,
 		radaremitheight = 28,

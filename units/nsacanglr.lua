@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Angler",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "NSACANGLR",
 		radardistance = 0,
 		radaremitheight = 25,

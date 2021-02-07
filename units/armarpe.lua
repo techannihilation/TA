@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 3,
 		name = "Surveyor",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		noautofire = false,
 		objectname = "armarpe",
 		scale = 1,

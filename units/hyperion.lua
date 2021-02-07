@@ -39,7 +39,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Hyperion",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "hyperion",
 		radardistance = 0,
 		radaremitheight = 108,

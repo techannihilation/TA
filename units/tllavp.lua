@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Vehicle Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLAVP",
 		radaremitheight = 93,
 		selfdestructas = "LARGE_BUILDING",

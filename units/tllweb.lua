@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Tesla",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLweb",
 		radaremitheight = 62,
 		script = "tllweb.lua",

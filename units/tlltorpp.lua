@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Trawler",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "TLLTORPP",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

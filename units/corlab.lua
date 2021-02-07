@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORLAB",
 		radaremitheight = 29,
 		seismicsignature = 0,

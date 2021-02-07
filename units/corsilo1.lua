@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Silencer",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORSILO1",
 		radardistance = 50,
 		radaremitheight = 67,

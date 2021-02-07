@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 35,
 		name = "Cloakable Jammer Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMJAMT",
 		onoffable = true,
 		radardistancejam = 450,

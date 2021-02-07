@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_alab",
 		radaremitheight = 31,
 		seismicsignature = 0,

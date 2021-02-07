@@ -35,7 +35,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Hickatee",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllhickatee",
 		onoffable = true,
 		radardistance = 2200,

@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "High-Energy Cobalt",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_vhlt",
 		radaremitheight = 79,
 		seismicsignature = 0,

@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Slinger",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORAH",
 		radaremitheight = 25,
 		seismicsignature = 0,

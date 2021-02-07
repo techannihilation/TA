@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Skeeter",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMPT",
 		radaremitheight = 25,
 		seismicsignature = 0,

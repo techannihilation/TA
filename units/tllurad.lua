@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Radar Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllurad",
 		onoffable = true,
 		radardistance = 24000,

@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Capital Shipyard",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORESY",
 		radardistance = 100,
 		radaremitheight = 93,

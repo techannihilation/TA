@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Armadillo",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_armadillo",
 		radaremitheight = 25,
 		seismicsignature = 0,

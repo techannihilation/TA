@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 24,
 		name = "Advanced Sonar Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_asonar",
 		onoffable = true,
 		radaremitheight = 41,

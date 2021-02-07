@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Elixir",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_elixir",
 		radardistance = 0,
 		radaremitheight = 175,

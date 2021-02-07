@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Snakeneck",
-		nochasecategory = "VTOL",
+		
 		objectname = "tllsnakeneck",
 		radardistance = 0,
 		radaremitheight = 27,

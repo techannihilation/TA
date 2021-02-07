@@ -34,7 +34,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Rlik",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLHRK",
 		radardistance = 0,
 		radaremitheight = 25,

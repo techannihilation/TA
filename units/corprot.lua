@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Protos",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORPROT",
 		radardistance = 0,
 		radaremitheight = 65,

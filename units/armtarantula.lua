@@ -32,7 +32,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Tarantula",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armtarantula",
 		radaremitheight = 25,
 		seismicsignature = 0,

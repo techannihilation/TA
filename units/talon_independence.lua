@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		metaluse = 0,
 		name = "Independance",
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "talon_independence",
 		radardistance = 2000,
 		radaremitheight = 50,

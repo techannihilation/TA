@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Archer",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMAAS",
 		radardistance = 900,
 		radaremitheight = 22,

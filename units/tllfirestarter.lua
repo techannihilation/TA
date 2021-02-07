@@ -38,7 +38,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Firestarter",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLFIRESTARTER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

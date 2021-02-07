@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 0,
 		name = "Wyvern",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_wyvern",
 		radaremitheight = 28.8,
 		releaseheld = true,

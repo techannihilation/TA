@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 5,
 		name = "Keeper T2",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "armflosh.s3o",
 		radaremitheight = 25,

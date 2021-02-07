@@ -28,7 +28,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 33,
 		name = "T2 Stuner",
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllemplrpt",
 		radardistance = 0,
 		radaremitheight = 70,

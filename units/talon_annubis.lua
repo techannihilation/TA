@@ -40,7 +40,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Annubis",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_annubis",
 		radaremitheight = 38,
 		selfdestructas = "crawl_blast",

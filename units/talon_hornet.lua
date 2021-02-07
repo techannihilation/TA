@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Hornet",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_hornet",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

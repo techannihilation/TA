@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Reaper",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORREAP",
 		radaremitheight = 25,
 		seismicsignature = 0,

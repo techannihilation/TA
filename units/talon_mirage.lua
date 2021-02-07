@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Mirage",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_mirage",
 		onoffable = true,
 		radardistancejam = 500,

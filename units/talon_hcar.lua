@@ -45,7 +45,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Ocerni Cor",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_hcar",
 		onoffable = true,
 		radardistance = 2500,

@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Umbrella T4",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "TLLGATE1",
 		radardistance = 0,

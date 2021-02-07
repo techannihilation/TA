@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Perseus",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "ARMPERS",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

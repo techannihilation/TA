@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CAFUS",
 		onoffable = false,
 		radaremitheight = 86,

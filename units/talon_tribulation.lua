@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Tribulation",
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_tribulation",
 		radardistance = 0,
 		radaremitheight = 25,

@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Bishop",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_bishop",
 		radaremitheight = 74,
 		seismicsignature = 0,

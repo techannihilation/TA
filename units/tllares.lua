@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK2",
 		name = "Ares",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLARES",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

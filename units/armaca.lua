@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "ARMACA",
 		radaremitheight = 7,
 		seismicsignature = 0,

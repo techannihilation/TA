@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 25,
 		name = "Moray",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMATL",
 		radaremitheight = 27,
 		seismicsignature = 0,

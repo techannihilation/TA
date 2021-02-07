@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Petrel",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLASSHIP",
 		radardistance = 0,
 		radaremitheight = 30,

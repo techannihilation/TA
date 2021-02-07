@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Shielded Construction Kbot",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_cpod",
 		radaremitheight = 50,
 		resurrect = 1,

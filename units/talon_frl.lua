@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "Infac",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_frl",
 		radaremitheight = 54,
 		seismicsignature = 0,

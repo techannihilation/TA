@@ -32,7 +32,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 33,
 		name = "T2 Paralizer",
-		nochasecategory = "MOBILE",
+		
 		objectname = "arm_big_bertha",
 		radardistance = 0,
 		radaremitheight = 66,

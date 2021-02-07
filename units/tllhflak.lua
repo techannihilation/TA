@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Kalen",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "tllhflak",
 		radardistance = 0,
 		radaremitheight = 28,

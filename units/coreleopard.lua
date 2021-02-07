@@ -36,7 +36,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Leopard",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "coreleopard",
 		radardistance = 50,
 		radaremitheight = 22,

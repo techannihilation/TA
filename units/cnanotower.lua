@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nano Turret Level 5",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CNanotower",
 		radaremitheight = 44,
 		reclaimspeed = 4800,

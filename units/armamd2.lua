@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advocat",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMAMD2",
 		radardistance = 50,
 		radaremitheight = 63,

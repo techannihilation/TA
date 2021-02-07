@@ -32,7 +32,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Spider",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armspider",
 		radaremitheight = 25,
 		seismicsignature = 0,

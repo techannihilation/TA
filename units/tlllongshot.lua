@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK4",
 		name = "Longshot",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tlllongshot",
 		radardistance = 0,
 		radaremitheight = 36,

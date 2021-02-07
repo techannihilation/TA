@@ -33,7 +33,7 @@
 		maxslope = 10,
 		maxwaterdepth = 255,
 		name = "OPS Center",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_covertopscentre",
 		onoffable = true,
 		radardistance = 0,

@@ -45,7 +45,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Colossus",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMCARRY",
 		radardistance = 2950,
 		radaremitheight = 54,

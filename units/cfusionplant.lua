@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CFusionPlant",
 		radardistance = 0,
 		radaremitheight = 75,

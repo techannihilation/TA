@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Nunchuck",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_nunchuck",
 		pushresistant = true,
 		radaremitheight = 25,

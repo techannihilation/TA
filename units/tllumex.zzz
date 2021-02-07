@@ -33,7 +33,7 @@ return {
 		metalstorage = 500,
 		name = "Circular Saw",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllumex",
 		onoffable = true,
 		radardistance = 0,

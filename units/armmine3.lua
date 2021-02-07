@@ -46,7 +46,7 @@ return {
 		mincloakdistance = 0,
 		name = "Mega",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMMINE3",
 		onoffable = false,
 		radaremitheight = 25,

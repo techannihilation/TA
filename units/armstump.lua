@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Stumpy",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMSTUMP",
 		radaremitheight = 25,
 		seismicsignature = 0,

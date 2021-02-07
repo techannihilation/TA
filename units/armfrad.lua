@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 5,
 		name = "Floating Radar Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFRAD",
 		onoffable = true,
 		radardistance = 2100,

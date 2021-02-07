@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Decade",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "DECADE",
 		radaremitheight = 25,
 		seismicsignature = 0,

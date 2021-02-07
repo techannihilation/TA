@@ -36,7 +36,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Interceptor",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLBATS2",
 		radardistance = 0,
 		radaremitheight = 43,

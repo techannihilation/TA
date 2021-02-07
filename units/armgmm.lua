@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Prude",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMGMM",
 		radaremitheight = 36,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Pulverizer",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORRL",
 		radaremitheight = 51,
 		seismicsignature = 0,

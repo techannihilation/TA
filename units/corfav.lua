@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Weasel",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORFAV",
 		radaremitheight = 25,
 		seismicsignature = 0,

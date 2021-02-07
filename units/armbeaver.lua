@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Construction Amphibious Vehicle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armbeaver",
 		radaremitheight = 25,
 		seismicsignature = 0,

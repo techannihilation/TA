@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Talos",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_talos",
 		pushresistant = true,
 		radardistance = 0,

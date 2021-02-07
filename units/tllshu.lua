@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Shu",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tllshu",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

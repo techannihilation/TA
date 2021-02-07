@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Snitch",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_snitch",
 		radaremitheight = 25,
 		seismicsignature = 0,

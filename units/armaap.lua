@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMAAP",
 		radaremitheight = 67,
 		seismicsignature = 0,

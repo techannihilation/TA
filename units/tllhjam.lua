@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hippie",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "tllhjam",
 		onoffable = true,
 		radardistance = 1490,

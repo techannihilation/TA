@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Popcorn",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_popcorn",
 		radaremitheight = 25,
 		seismicsignature = 0,

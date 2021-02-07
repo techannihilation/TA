@@ -30,7 +30,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Nemesis",
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORSD",
 		onoffable = true,
 		radaremitheight = 25,

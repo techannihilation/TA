@@ -30,7 +30,7 @@ return {
 		mobilestandorders = 1,
 		name = "Seaplane Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORPLAT",
 		radardistance = 50,
 		radaremitheight = 30,

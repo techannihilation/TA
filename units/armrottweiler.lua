@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Rottweiler",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMROTTWEILER",
 		radardistance = 0,
 		radaremitheight = 25,

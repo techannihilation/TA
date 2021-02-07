@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLALAB",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",

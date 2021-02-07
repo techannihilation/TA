@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Dreadnought",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllcolossus",
 		radardistance = 0,
 		radaremitheight = 51,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Jewel",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_jewel",
 		radaremitheight = 35,
 		seismicsignature = 0,

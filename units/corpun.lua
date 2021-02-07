@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Punisher",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORPUN",
 		radaremitheight = 28,
 		seismicsignature = 0,

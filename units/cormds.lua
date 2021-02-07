@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Neupert",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "cormds",
 		radaremitheight = 79,
 		seismicsignature = 0,

@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORESTOR",
 		radaremitheight = 32,
 		seismicsignature = 0,

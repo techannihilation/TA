@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Talon Juno",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_juno",
 		radaremitheight = 71,
 		seismicsignature = 0,

@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK4",
 		name = "Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLECV",
 		radaremitheight = 22,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Bumblebee",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLHTML",
 		radardistance = 0,
 		radaremitheight = 73,

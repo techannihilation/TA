@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Krogoth",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORKROG",
 		radaremitheight = 147,
 		seismicsignature = 0,

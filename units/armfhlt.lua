@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Stingray",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFHLT",
 		radaremitheight = 43,
 		seismicsignature = 0,

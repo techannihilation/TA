@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Sharpshooter",
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMSNIPE",
 		radardistancejam = 10,
 		radaremitheight = 36,

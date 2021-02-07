@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Voyeur",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORVOYR",
 		onoffable = true,
 		radardistance = 2200,

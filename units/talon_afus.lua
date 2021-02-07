@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Cloakable Advncanced Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_afus",
 		radaremitheight = 50,
 		seismicsignature = 0,

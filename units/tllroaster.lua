@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Mobile Energy Weapon",
+		description = "Gauss Tank",
 		explodeas = "ESTOR_BUILDING",
 		firestandorders = 1,
 		footprintx = 4,
@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Roaster",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLROASTER",
 		radaremitheight = 25,
 		selfdestructas = "ESTOR_BUILDING",

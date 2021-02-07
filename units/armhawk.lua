@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Hawk",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "ARMHAWK",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Helepolis",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "helepolis.3do",
 		piecetrailcegrange = 4,
 		piecetrailcegtag = "Debree",

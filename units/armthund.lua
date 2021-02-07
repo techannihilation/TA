@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Thunder",
 		noautofire = true,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMTHUND",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_talpax",
 		onoffable = true,
 		radardistancejam = 6000,

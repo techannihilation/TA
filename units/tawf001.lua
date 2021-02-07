@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Beamer",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TAWF001",
 		radaremitheight = 76,
 		seismicsignature = 0,

@@ -33,7 +33,7 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_moho",
 		onoffable = true,
 		radaremitheight = 40,

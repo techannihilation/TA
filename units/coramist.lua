@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "htank4",
 		name = "Covid",
-		nochasecategory = "VTOL",
+		
 		objectname = "coramist",
 		radaremitheight = 30,
 		selfdestructas = "BIG_UNITEX",

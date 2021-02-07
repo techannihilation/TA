@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK4",
 		name = "Rex",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "COREREX",
 		radaremitheight = 39,
 		selfdestructas = "CRAWL_BLAST",

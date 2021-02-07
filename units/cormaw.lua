@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Maw",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORMAW",
 		radardistancejam = 8,
 		radaremitheight = 45,

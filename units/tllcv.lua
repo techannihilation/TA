@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLCV",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

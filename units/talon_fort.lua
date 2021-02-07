@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_fort",
 		radaremitheight = 50,
 		seismicsignature = 0,

@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Eclipse",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_eclipse",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,

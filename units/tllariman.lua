@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK2",
 		name = "Ariman",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLARIMAN",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

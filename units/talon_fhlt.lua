@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "Kerberos",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_fhlt",
 		radaremitheight = 43,
 		seismicsignature = 0,

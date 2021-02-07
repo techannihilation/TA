@@ -34,7 +34,7 @@ return {
 		movementclass = "akbot2",
 		name = "Spreader",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLAAK",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

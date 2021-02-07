@@ -39,7 +39,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Skuttle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORSKTL",
 		radaremitheight = 25,
 		seismicsignature = 5,

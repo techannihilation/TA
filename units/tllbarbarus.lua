@@ -45,7 +45,7 @@ return {
 		mobilestandorders = 1,
 		name = "Barbarus",
 		noautofire = false,
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "tllbarbarus",
 		pitchscale = 0.5,
 		radaremitheight = 25,

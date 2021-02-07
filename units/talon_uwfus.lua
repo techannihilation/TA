@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 25,
 		name = "Underwater Fusion Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_uwfus",
 		radaremitheight = 37,
 		seismicsignature = 0,

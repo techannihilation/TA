@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T2 Immolator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLLRPT",
 		onoffable = true,
 		radaremitheight = 65,

@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Envoy",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORTSHIP",
 		radaremitheight = 68,
 		seismicsignature = 0,

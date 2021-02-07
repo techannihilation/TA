@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Overseer T2",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "CORGATE",
 		radaremitheight = 31,

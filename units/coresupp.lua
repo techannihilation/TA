@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Supporter",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORESUPP",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_geo_mini",
 		onoffable = true,
 		radaremitheight = 30,

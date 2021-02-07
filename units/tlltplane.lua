@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 0,
 		name = "Zergon",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "TLLTplane",
 		radaremitheight = 28.8,
 		releaseheld = true,

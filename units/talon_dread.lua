@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Dread",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_dread",
 		pushresistant = true,
 		sonardistance = 750,

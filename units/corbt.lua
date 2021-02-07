@@ -36,7 +36,7 @@ return {
 		movementclass = "VHTANK5",
 		name = "Metron",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORBT",
 		radardistance = 0,
 		radaremitheight = 30,

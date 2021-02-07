@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "U-47",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllfmine3",
 		radaremitheight = 25,
 		seismicsignature = 0,

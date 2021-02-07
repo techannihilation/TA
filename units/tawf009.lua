@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Serpent",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "TAWF009",
 		radaremitheight = 25,
 		seismicsignature = 0,

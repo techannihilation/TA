@@ -24,7 +24,7 @@ return {
 		maxvelocity = 1.4,
 		movementclass = "AMPTBOT",
 		name = "Peacock",
-		nochasecategory = "VTOL",
+		
 		objectname = "coraapod",
 		radaremitheight = 26,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Anemone",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMDL",
 		radaremitheight = 54,
 		seismicsignature = 0,

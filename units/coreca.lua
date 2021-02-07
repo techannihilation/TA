@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Armored Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORECA",
 		radaremitheight = 7.5,
 		seismicsignature = 0,

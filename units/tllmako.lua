@@ -39,7 +39,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Mako",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLmako",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",

@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Iguana",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "ARMIGUANA",
 		radardistance = 0,
 		radaremitheight = 28,

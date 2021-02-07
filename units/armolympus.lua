@@ -39,7 +39,7 @@ return {
 		movementclass = "VHTANK5",
 		name = "Olympus",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armolympus",
 		radaremitheight = 145,
 		selfdestructas = "EXO_BLAST",

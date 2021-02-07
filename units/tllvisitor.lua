@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Visitor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLVISITOR",
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",

@@ -35,7 +35,7 @@ return {
 		metalstorage = 25,
 		name = "Advanced Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_mex1",
 		script = "talon_moho.cob",
 		onoffable = true,

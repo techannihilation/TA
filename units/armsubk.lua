@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Piranha",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "ARMSUBK",
 		radaremitheight = 25,
 		seismicsignature = 0,

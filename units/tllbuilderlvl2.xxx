@@ -41,7 +41,7 @@ return {
 		metalmake = 1,
 		metalstorage = 100,
 		name = "Goose",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tllbuilderlvl2",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

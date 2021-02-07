@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sunspot",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllmds",
 		radaremitheight = 79,
 		seismicsignature = 0,

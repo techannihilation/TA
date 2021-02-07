@@ -41,7 +41,7 @@ talon_psyker = {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_psyker",
 		radaremitheight = 25,
 		--resurrect = 1,

@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Construction Amphibious Vehicle",
-		nochasecategory = "VTOL",
+		
 		noautofire = false,
 		objectname = "tllmando",
 		radaremitheight = 25,

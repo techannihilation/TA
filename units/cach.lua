@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Freaket",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "CACH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

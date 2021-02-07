@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wiper",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLSAM",
 		radardistance = 950,
 		radaremitheight = 32,

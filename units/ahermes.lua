@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK3",
 		name = "Hermes",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "AHERMES",
 		radardistance = 0,
 		radaremitheight = 25,

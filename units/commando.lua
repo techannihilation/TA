@@ -47,7 +47,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Commando",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "COMMANDO",
 		radaremitheight = 51,
 		seismicsignature = 2,

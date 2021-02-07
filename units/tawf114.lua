@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Banisher",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TAWF114",
 		radaremitheight = 25,
 		seismicsignature = 0,

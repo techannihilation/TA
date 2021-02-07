@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFORT",
 		radaremitheight = 53,
 		seismicsignature = 0,

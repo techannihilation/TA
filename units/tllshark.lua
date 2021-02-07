@@ -39,7 +39,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Shark",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "TLLSHARK",
 		radardistance = 0,
 		radaremitheight = 25,

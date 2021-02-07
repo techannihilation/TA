@@ -41,7 +41,6 @@ return {
 		mobilestandorders = 1,
 		name = "Black Lily",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "CORSBOMB",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,

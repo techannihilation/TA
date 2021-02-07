@@ -29,7 +29,7 @@ return {
 		metalstorage = 145000,
 		name = "T3 Metal Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "corsms",
 		radardistance = 0,
 		radaremitheight = 48,

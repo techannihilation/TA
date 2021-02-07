@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 5,
 		name = "Overseer T2",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "corflshd.s3o",
 		radaremitheight = 25,

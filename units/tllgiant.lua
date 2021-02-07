@@ -36,7 +36,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Giant",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLGIANT",
 		onoffable = true,
 		radardistance = 2950,

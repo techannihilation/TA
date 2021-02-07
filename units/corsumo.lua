@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Sumo",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORSUMO",
 		radaremitheight = 29,
 		seismicsignature = 0,

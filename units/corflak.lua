@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Cobra",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFLAK",
 		radaremitheight = 30,
 		seismicsignature = 0,

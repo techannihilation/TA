@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Concealer",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "CONCEALER",
 		onoffable = true,
 		radardistancejam = 480,

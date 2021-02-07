@@ -34,7 +34,7 @@ return {
 		movementclass = "ATANK4",
 		name = "Black Tiger",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMTIGRE2",
 		radaremitheight = 44,
 		selfdestructas = "CRAWL_BLAST",

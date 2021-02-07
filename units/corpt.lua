@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Searcher",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORPT",
 		radaremitheight = 25,
 		seismicsignature = 0,

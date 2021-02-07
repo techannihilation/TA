@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFHP",
 		radardistance = 50,
 		radaremitheight = 22,

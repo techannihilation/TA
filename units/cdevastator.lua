@@ -48,7 +48,7 @@ return {
 		mobilestandorders = 1,
 		name = "DEVASTATOR",
 		noautofire = false,
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "CDevastator",
 		radardistance = 0,
 		radaremitheight = 25,

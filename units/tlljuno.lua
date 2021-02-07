@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Tll Juno",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLJUNO",
 		radaremitheight = 53,
 		seismicsignature = 0,

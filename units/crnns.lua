@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 15,
 		name = "Advanced Antimater Fusion",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "crnns",
 		onoffable = true,

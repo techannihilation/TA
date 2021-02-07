@@ -26,7 +26,7 @@ return {
 		minwaterdepth = 5,
 		name = "Missile Launcher",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLdcsta",
 		radardistance = 1200,

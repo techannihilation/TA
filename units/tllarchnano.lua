@@ -41,7 +41,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Archnano",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLARCHNANO",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

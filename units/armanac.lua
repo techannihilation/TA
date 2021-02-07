@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Anaconda",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "ARMANAC",
 		radaremitheight = 25,
 		seismicsignature = 0,

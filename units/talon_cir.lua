@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flail",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_cir",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",

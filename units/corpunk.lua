@@ -33,7 +33,7 @@ return {
 		movementclass = "KBOT1",
 		name = "Punkie",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORPUNK",
 		radaremitheight = 25,
 		seismicsignature = 0,

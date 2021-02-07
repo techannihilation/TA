@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Gravitank Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_hp",
 		radaremitheight = 25,
 		seismicsignature = 0,

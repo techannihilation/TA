@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Shredder",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORARCH",
 		radardistance = 860,
 		radaremitheight = 27,

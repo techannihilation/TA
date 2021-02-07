@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "LLT",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllfllt",
 		radaremitheight = 65,
 		seismicsignature = 0,

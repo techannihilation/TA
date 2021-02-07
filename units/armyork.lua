@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Phalanx",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMYORK",
 		radaremitheight = 25,
 		seismicsignature = 0,

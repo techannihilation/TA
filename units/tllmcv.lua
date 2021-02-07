@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Bahamut",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllmcv",
 		radaremitheight = 145,
 		selfdestructas = "EXO_BLAST",

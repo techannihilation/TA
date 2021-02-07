@@ -36,7 +36,7 @@ return {
 		mincloakdistance = 55,
 		name = "Pit Bull",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMPB",
 		radaremitheight = 48,
 		seismicsignature = 0,

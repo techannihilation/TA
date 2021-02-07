@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Veil",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMVEIL",
 		onoffable = true,
 		radardistancejam = 760,

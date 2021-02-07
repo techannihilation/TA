@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Maelstrom",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "armbsub",
 		radaremitheight = 45,
 		selfdestructas = "CRAWL_BLAST",

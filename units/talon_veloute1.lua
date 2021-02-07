@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T4 Veloute",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_veloute1",
 		radaremitheight = 272,
 		seismicsignature = 0,

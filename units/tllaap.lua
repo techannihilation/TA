@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLAAP",
 		radardistance = 1000,
 		radaremitheight = 53,

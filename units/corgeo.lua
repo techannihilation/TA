@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORGEO",
 		radaremitheight = 50,
 		seismicsignature = 0,

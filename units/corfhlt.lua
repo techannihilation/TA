@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 5,
 		name = "Thunderbolt",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFHLT",
 		radaremitheight = 55,
 		seismicsignature = 0,

@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
 		name = "Scarab",
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMSCAB",
 		radardistance = 50,
 		radaremitheight = 22,

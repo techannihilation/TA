@@ -38,7 +38,7 @@ corpse = "dead",
 		movementclass = "VKBOT9",
 		name = "King Saurus",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllsaurus",
 		radardistance = 0,
 		radaremitheight = 51,

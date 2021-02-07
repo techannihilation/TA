@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Anvil",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "anvil",
 		radardistance = 0,
 		radaremitheight = 40,

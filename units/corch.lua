@@ -41,7 +41,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORCH",
 		radaremitheight = 22,
 		seismicsignature = 0,

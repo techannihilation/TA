@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK3",
 		name = "Announcer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLANNOUNCER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

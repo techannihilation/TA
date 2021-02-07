@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T2 Energy Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "CORUWADVES",
 		radaremitheight = 31,

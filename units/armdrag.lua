@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMDRAG",
 		radaremitheight = 25,
 		seismicsignature = 0,

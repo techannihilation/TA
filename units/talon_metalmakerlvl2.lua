@@ -30,7 +30,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_metalmakerlvl2",
 		radardistance = 0,
 		radaremitheight = 53,

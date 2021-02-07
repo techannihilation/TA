@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Vehicle Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORAVP",
 		radaremitheight = 29,
 		seismicsignature = 0,

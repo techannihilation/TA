@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Behemoth",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORBHMTH",
 		onoffable = false,
 		radaremitheight = 25,

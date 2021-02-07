@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMAP",
 		radardistance = 500,
 		radaremitheight = 66,

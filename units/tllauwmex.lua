@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 20,
 		name = "Underwater Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLAUWMEX",
 		onoffable = true,
 		radaremitheight = 25,

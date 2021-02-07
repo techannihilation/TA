@@ -36,7 +36,7 @@ return {
 		mincloakdistance = 100,
 		name = "Cloakable Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_ckfus",
 		radaremitheight = 46,
 		seismicsignature = 0,

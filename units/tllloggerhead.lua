@@ -34,7 +34,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Loggerhead",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllloggerhead",
 		radardistance = 0,
 		radaremitheight = 25,

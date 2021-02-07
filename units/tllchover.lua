@@ -40,7 +40,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLCHOVER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

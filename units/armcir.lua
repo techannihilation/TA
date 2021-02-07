@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Chainsaw",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "armcir",
 		radaremitheight = 51,
 		seismicsignature = 0,

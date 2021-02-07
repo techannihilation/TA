@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Manta",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "TLLMANTA",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

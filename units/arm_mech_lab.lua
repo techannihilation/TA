@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "arm_mech_lab",
 		radaremitheight = 174,
 		seismicsignature = 0,

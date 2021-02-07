@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Fred",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "corfred",
 		radaremitheight = 25,
 		seismicsignature = 0,

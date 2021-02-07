@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Wasp",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "TLLCOP1",
 		radardistance = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

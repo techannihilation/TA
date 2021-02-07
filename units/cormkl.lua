@@ -41,7 +41,7 @@ return {
 		movementclass = "VKBOT15",
 		name = "Black Widow",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "cormkl",
 		onoffable = true,
 		radardistance = 0,

@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 5,
 		name = "Kernel",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_kernel",
 		radaremitheight = 32,
 		seismicsignature = 0,

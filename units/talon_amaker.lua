@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_amaker",
 		radaremitheight = 40,
 		seismicsignature = 0,

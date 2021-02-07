@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Uppercut",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "uppercut",
 		radardistance = 0,
 		radaremitheight = 52,

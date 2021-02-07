@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 12,
 		name = "Torpedo Launcher",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLtorp",
 		radaremitheight = 32,

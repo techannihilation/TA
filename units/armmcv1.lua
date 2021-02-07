@@ -41,7 +41,7 @@ return {
 		movementclass = "HTANK8",
 		name = "Dark Kronos",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armmcv1",
 		onoffable = true,
 		radaremitheight = 38,

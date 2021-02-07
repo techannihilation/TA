@@ -31,7 +31,7 @@ return {
 		movementclass = "HKBOT5",
 		name = "Hailstorm",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllhailstorm",
 		radaremitheight = 80,
 		selfdestructas = "BANTHA_BLAST",

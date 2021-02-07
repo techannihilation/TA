@@ -36,7 +36,7 @@ return {
 		moverate1 = 8,
 		name = "Token",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_token",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

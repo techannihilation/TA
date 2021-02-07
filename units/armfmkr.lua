@@ -25,7 +25,7 @@ return {
 		minwaterdepth = 11,
 		name = "Floating Metal Maker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFMKR",
 		radaremitheight = 25,
 		seismicsignature = 0,

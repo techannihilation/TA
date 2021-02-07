@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Defensor",
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFMD2",
 		radardistance = 50,
 		radaremitheight = 53,

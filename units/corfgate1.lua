@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 5,
 		name = "Overseer T3",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "corfgate1",
 		radaremitheight = 41,

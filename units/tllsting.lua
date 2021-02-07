@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Stinger",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLSTING",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",

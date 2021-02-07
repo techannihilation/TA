@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllammaker",
 		radardistance = 0,
 		radaremitheight = 26,

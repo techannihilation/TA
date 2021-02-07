@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Shark",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "CORSHARK",
 		radaremitheight = 25,
 		seismicsignature = 0,

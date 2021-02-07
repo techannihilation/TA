@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMSOLAR",
 		onoffable = true,
 		radaremitheight = 34,

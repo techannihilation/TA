@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Sparrow",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tllfight",
 		radardistance = 0,
 		selfdestructas = "SMALL_UNI_VTOLT",

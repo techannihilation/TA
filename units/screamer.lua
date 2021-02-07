@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Screamer",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "SCREAMER",
 		onoffable = false,
 		radaremitheight = 51,

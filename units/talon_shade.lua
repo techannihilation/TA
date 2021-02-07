@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shade",
 		noautofire = true,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_shade",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

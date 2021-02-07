@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Remover",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFSILO",
 		radardistance = 0,
 		radaremitheight = 136,

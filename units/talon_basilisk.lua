@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Basilisk",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_basilisk",
 		radaremitheight = 25,
 		seismicsignature = 0,

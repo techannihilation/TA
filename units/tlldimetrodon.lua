@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Dimetrodon",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "tlldimetrodon",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

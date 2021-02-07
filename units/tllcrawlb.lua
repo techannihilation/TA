@@ -34,7 +34,7 @@ return {
 		movementclass = "kbot1",
 		name = "Armadillo",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLCRAWLB",
 		radardistance = 0,
 		radaremitheight = 25,

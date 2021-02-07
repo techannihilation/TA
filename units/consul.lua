@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK3",
 		name = "Consul",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CONSUL",
 		radaremitheight = 25,
 		seismicsignature = 0,

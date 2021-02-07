@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Detonator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMEMP",
 		radaremitheight = 35,
 		seismicsignature = 0,

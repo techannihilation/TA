@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "armujam",
 		onoffable = true,
 		radardistancejam = 6000,

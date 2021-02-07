@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Fink",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORFINK",
 		radardistance = 900,
 		radaremitheight = 6,

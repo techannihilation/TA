@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Saturn",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "corhflag",
 		radardistance = 2000,
 		radaremitheight = 65,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Quartz",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_quartz",
 		radaremitheight = 25,
 		seismicsignature = 0,

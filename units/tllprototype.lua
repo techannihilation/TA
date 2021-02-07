@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Mech Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllprototype",
 		radardistance = 50,
 		radaremitheight = 140,

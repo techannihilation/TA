@@ -38,7 +38,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Caretta",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllcaretta",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

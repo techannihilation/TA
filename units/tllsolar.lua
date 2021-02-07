@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLSOLAR",
 		onoffable = true,
 		radardistance = 0,

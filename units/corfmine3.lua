@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "1100 NS",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORFMINE3",
 		radaremitheight = 25,
 		seismicsignature = 0,

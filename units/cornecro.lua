@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Necro",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORNECRO",
 		radardistance = 50,
 		radaremitheight = 36,

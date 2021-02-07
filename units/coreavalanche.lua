@@ -33,7 +33,7 @@ return {
 		movementclass = "AMPHKBOT",
 		name = "Avalanche",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "coreavalanche",
 		radaremitheight = 34,
 		selfdestructas = "BIG_UNIT",

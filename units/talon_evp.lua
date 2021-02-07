@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Vehicle/Gravity Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_evp",
 		radardistance = 0,
 		radaremitheight = 25,

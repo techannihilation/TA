@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Marlin",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "talon_frigate",
 		pushresistant = true,
 		radardistance = 0,

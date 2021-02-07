@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Otter",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLOTTER",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

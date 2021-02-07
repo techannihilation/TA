@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 15,
 		name = "Underwater Moho Metal Maker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORUWMMM",
 		radaremitheight = 31,
 		seismicsignature = 0,

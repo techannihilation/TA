@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_ap",
 		radardistance = 1000,
 		radaremitheight = 66,

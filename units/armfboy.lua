@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Fatboy",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMFBOY",
 		radaremitheight = 33,
 		seismicsignature = 0,

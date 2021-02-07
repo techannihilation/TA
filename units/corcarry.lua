@@ -44,7 +44,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Hive",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORCARRY",
 		radardistance = 2700,
 		radaremitheight = 49,

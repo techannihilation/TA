@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "Tlladvsolar",
 		onoffable = true,
 		radardistance = 0,

@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Enforcer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORROY",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sentinel",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMHLT",
 		radaremitheight = 79,
 		seismicsignature = 0,

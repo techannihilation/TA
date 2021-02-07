@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Hedgehog",
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMABM",
 		radardistance = 0,
 		radaremitheight = 25,

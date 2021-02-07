@@ -31,7 +31,7 @@ return {
 		metalstorage = 3000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_MSTOR",
 		radaremitheight = 28,
 		seismicsignature = 0,

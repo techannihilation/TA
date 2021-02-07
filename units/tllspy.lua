@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Sneak",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllspy",
 		onoffable = true,
 		radaremitheight = 28,

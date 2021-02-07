@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 17,
 		name = "Underwater Advanced Tidal Generator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_tide1",
 		onoffable = false,
 		radardistance = 0,

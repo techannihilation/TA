@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Avalanche",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CMORTOR",
 		radardistance = 0,
 		radaremitheight = 29,

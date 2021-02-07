@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "PTR",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_ptr",
 		onoffable = false,
 		radaremitheight = 51,

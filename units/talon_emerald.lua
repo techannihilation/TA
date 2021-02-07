@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Emerald",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_emerald",
 		radaremitheight = 25,
 		seismicsignature = 0,

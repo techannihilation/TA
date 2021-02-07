@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Bulldog",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMBULL",
 		radaremitheight = 25,
 		seismicsignature = 0,

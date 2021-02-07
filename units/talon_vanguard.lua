@@ -40,7 +40,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Vanguard",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_vanguard",
 		radaremitheight = 30,
 		seismicsignature = 0,

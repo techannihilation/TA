@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Happlic",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllplasma",
 		radaremitheight = 25,
 		selfdestructas = "MEDIUM_BUILDING",

@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vulture",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORAWAC",
 		radardistance = 1600,
 		radaremitheight = 9.5,

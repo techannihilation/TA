@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "thingyness",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_thingyness",
 		radardistance = 0,
 		radaremitheight = 28,

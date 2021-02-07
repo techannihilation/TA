@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Mamba",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "ARMHPLASMA",
 		radardistance = 0,
 		radaremitheight = 25,

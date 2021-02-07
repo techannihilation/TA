@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Morty",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMORT",
 		radaremitheight = 29,
 		seismicsignature = 0,

@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Adonis",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "CORADON",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",

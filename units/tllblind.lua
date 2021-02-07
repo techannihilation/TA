@@ -38,7 +38,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Dreadnought",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLBLIND",
 		radardistance = 0,
 		radaremitheight = 51,

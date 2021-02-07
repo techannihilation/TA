@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Command Center",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLION",
 		radaremitheight = 300,
 		selfdestructas = "KROG_BLAST",

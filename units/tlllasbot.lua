@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Lizard",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLLASBOT",
 		radardistance = 0,
 		radaremitheight = 36,

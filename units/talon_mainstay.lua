@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Mainstay",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_mainstay",
 		radaremitheight = 35,
 		seismicsignature = 0,

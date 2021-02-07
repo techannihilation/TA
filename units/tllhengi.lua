@@ -40,7 +40,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Hengi",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllhengi",
 		radaremitheight = 25,
 		script = "tllchover.cob",

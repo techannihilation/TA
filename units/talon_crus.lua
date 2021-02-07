@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Palladium",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_crus",
 		radaremitheight = 40,
 		seismicsignature = 0,

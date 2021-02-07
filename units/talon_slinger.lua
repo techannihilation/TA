@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 70,
 		name = "Slinger",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_slinger",
 		radaremitheight = 28,
 		seismicsignature = 0,

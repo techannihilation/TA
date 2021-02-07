@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT3",
 		name = "Defiler",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORMONSTA",
 		onoffable = true,
 		radaremitheight = 31,

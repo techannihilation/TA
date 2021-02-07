@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Cracker",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMCRACK",
 		radaremitheight = 33,
 		seismicsignature = 0,

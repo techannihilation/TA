@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 5,
 		name = "Trident",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "armfguard",
 		onoffable = true,

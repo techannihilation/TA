@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "BROADSIDE",
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "ABroadside",
 		radardistance = 0,
 		radaremitheight = 30,

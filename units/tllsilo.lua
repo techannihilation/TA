@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Revenger",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLSILO",
 		radardistance = 0,
 		radaremitheight = 69,

@@ -36,7 +36,7 @@ return {
 		movementclass = "kbot2",
 		name = "Observer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLOBSERVER",
 		onoffable = true,
 		radardistance = 1800,

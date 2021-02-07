@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORACV",
 		radaremitheight = 24,
 		seismicsignature = 0,

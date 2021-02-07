@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Lurker",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "ARMSUB",
 		radaremitheight = 25,
 		seismicsignature = 0,

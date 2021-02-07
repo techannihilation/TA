@@ -40,7 +40,6 @@ return {
 		moverate1 = 8,
 		name = "trident",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "talon_trident",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

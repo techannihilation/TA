@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Metal Maker",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_makr1",
 		radaremitheight = 25,
 		script = "talon_makr.cob",

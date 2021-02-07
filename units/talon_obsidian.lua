@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Obsidian",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_obsidian",
 		radaremitheight = 25,
 		seismicsignature = 0,

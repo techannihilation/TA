@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Destiny",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tllcaps",
 		radardistance = 2000,
 		radaremitheight = 84,

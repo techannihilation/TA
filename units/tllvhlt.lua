@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Gatling Gaat Gun",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLVHLT",
 		radaremitheight = 65,
 		seismicsignature = 0,

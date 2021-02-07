@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Watcher",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "WATCHER",
 		onoffable = true,
 		radardistance = 1600,

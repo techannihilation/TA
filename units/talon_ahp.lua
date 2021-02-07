@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_ahp",
 		radardistance = 50,
 		radaremitheight = 36,

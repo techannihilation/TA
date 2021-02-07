@@ -43,7 +43,7 @@ return {
 		metalmake = 8,
 		metalstorage = 150,
 		name = "Cruiser",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tllbuilderlvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",

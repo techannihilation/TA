@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Scrubber",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORSH",
 		radaremitheight = 25,
 		seismicsignature = 0,

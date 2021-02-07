@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 30,
 		name = "Advanced Sonar Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLASONAR",
 		onoffable = true,

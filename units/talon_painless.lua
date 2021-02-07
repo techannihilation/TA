@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Painless",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_painless",
 		radaremitheight = 30,
 		seismicsignature = 0,

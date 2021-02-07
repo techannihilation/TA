@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jellyfish",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORDL",
 		radaremitheight = 45,
 		seismicsignature = 0,

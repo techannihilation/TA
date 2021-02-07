@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Halberd",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "NSACLASH",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Hammerhead",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "tllbsub",
 		radaremitheight = 45,
 		selfdestructas = "CRAWL_BLAST",

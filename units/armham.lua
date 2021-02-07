@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Hammer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMHAM",
 		radaremitheight = 26,
 		seismicsignature = 0,

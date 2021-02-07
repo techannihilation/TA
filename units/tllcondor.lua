@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Condor",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "tllcondor",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,

@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 5,
 		name = "Umbrella T2",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "tllfgate",
 		radaremitheight = 38,

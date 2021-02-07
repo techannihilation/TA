@@ -29,7 +29,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Vulcan",
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMVULC",
 		radaremitheight = 136,
 		seismicsignature = 0,

@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Stiletto",
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "CORGRIPN",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDINGEX",

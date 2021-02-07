@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Collector",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMADVSOL",
 		onoffable = false,
 		radaremitheight = 25,

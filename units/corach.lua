@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Construction Hover",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "corach",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

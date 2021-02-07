@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Defender",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMRL",
 		radaremitheight = 49,
 		seismicsignature = 0,

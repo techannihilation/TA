@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK3",
 		name = "Sheatiped",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_sheatiped",
 		radaremitheight = 30,
 		seismicsignature = 0,

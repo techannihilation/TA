@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Wolverine",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORWOLV",
 		radaremitheight = 25,
 		seismicsignature = 0,

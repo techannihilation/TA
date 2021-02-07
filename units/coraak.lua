@@ -24,7 +24,7 @@ return {
 		maxvelocity = 1.15,
 		movementclass = "AKBOT2",
 		name = "Manticore",
-		nochasecategory = "VTOL",
+		
 		objectname = "CORAAK",
 		radaremitheight = 26,
 		seismicsignature = 0,

@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Zamak",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_zamak",
 		sonardistance = 600,
 		radaremitheight = 56,

@@ -34,7 +34,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "KrogTaar",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "krogtaar",
 		radardistance = 0,
 		radaremitheight = 56,

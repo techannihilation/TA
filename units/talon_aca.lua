@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "talon_aca",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

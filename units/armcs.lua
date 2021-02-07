@@ -41,7 +41,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Construction Ship",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMCS",
 		radaremitheight = 22,
 		seismicsignature = 0,

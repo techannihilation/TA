@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMLAB",
 		radardistance = 50,
 		radaremitheight = 22,

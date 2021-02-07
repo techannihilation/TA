@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_asp",
 		onoffable = true,
 		radaremitheight = 42,

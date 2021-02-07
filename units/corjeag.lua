@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Jeager",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORJEAG",
 		radardistance = 0,
 		radaremitheight = 25,

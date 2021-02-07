@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Whale",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "TLLWHALE",
 		radaremitheight = 39,
 		selfdestructas = "BIG_UNIT",

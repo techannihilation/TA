@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Sardine",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_aas",
 		radardistance = 900,
 		radaremitheight = 25,

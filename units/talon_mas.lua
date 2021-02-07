@@ -30,7 +30,7 @@ return {
 		metalstorage = 200,
 		name = "Mass Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_mas",
 		onoffable = true,
 		radardistance = 0,

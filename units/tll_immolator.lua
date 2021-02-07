@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Immolator",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tll_immolator",
 		radardistance = 0,
 		radaremitheight = 30,

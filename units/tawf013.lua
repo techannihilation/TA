@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Shellshocker",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TAWF013",
 		radaremitheight = 25,
 		seismicsignature = 0,

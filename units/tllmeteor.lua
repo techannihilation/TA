@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ares",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllmeteor",
 		radaremitheight = 320,
 		selfdestructas = "KROG_BLAST",

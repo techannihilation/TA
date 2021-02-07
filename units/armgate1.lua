@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Keeper T4",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "ARMGATE1",
 		radaremitheight = 41,

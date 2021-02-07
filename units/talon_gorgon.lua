@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Gorgon",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_gorgon",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Biker",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_biker",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "SoulRaiZer",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "TLLSR",
 		radaremitheight = 25,
 		resurrect = 1,

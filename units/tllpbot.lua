@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Rainman",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLpbot",
 		radaremitheight = 40,
 		selfdestructas = "BIG_UNIT",

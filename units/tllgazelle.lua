@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Gazelle",
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllgazelle",
 		radardistance = 50,
 		radaremitheight = 32,

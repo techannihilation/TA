@@ -40,7 +40,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Black Hydra",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORBLACKHY",
 		radardistance = 1500,
 		radaremitheight = 63,

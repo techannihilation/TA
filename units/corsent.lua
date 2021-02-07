@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK3",
 		name = "Copperhead",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORSENT",
 		radaremitheight = 30,
 		seismicsignature = 0,

@@ -41,7 +41,7 @@ return {
 		metalstorage = 25,
 		name = "Armed Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "COREXP",
 		onoffable = true,
 		radaremitheight = 55,

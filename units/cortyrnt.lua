@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Tyrant",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORTYRNT",
 		radardistance = 2000,
 		radaremitheight = 84,

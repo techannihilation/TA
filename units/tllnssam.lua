@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 20,
 		name = "NS Wiper",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		noshadow = 1,
 		objectname = "TLLNSSAM",
 		onoffable = true,

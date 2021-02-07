@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Thanos",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_thanos",
 		radaremitheight = 50,
 		selfdestructas = "KROG_BLAST",

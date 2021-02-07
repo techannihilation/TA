@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Flash",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMFLASH",
 		radaremitheight = 25,
 		seismicsignature = 0,

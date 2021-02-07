@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Behegoli",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "NSACBEHE",
 		radardistance = 0,
 		radaremitheight = 33,

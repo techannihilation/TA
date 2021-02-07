@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Freedom Fighter",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "ARMFIG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

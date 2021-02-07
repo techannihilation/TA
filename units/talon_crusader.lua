@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Crusader",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_crusader",
 		radaremitheight = 27,
 		seismicsignature = 0,

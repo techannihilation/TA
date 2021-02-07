@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Turtle",
-		nochasecategory = "VTOL",
+		
 		objectname = "tllturtle",
 		radardistance = 0,
 		radaremitheight = 25,

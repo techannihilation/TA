@@ -35,7 +35,7 @@ return {
 		minwaterdepth = 24,
 		name = "Advanced Sonar Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORASON",
 		onoffable = true,
 		radaremitheight = 25,

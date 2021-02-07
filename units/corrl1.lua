@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Boosted Pulverizer",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORRL1",
 		radaremitheight = 51,
 		seismicsignature = 0,

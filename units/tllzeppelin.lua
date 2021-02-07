@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Zeppelin",
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "tllzeppelin",
 		radardistance = 0,
 		radaremitheight = 50,

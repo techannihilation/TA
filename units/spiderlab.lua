@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Spider Lab ARM",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "spiderlab",
 		radardistance = 50,
 		radaremitheight = 33,

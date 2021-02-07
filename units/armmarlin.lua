@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Marlin",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "armmarlin",
 		radardistance = 0,
 		radaremitheight = 52,

@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Candlestick",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLFLAK",
 		radaremitheight = 29,
 		selfdestructas = "MEDIUM_BUILDING",

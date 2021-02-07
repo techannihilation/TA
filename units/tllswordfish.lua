@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Swordfish",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "tllswordfish",
 		radardistance = 0,
 		radaremitheight = 52,

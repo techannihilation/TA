@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_avp",
 		radaremitheight = 33,
 		seismicsignature = 0,

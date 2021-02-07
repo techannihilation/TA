@@ -42,7 +42,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Discharge",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLDISCHARGE",
 		radardistance = 0,
 		radaremitheight = 42,

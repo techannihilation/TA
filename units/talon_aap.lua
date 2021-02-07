@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_aap",
 		radaremitheight = 67,
 		seismicsignature = 0,

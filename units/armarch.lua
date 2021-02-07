@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "ARCH",
-		nochasecategory = "UNDERWATER",
+		
 		objectname = "armarch",
 		radardistance = 0,
 		radaremitheight = 120,

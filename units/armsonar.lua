@@ -35,7 +35,7 @@ return {
 		minwaterdepth = 10,
 		name = "Sonar Station",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMSONAR",
 		onoffable = true,
 		radaremitheight = 37,

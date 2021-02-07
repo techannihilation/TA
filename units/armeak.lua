@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 255,
 		movementclass = "VKBOT4",
 		name = "Retribution",
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMEAK",
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLASTSML",

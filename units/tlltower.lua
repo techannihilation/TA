@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Hasseloff",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLtower",
 		radaremitheight = 137,
 		selfdestructas = "SMALL_BUILDING",

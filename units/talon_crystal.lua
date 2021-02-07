@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Crystal",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_crystal",
 		radardistance = 0,
 		radaremitheight = 30,

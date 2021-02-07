@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Pyramid",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "talon_pyramid",
 		radaremitheight = 39,

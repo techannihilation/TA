@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Vandal",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "tllhoverrocket",
 		radardistance = 0,
 		radaremitheight = 25,

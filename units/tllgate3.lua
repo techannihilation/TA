@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Umbrella T5",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "tllgate3",
 		script = "tllgate1.cob",

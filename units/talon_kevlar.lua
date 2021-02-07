@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "talon_kevlar",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_kevlar",
 		radaremitheight = 80,
 		selfdestructas = "MEDIUM_BUILDING",

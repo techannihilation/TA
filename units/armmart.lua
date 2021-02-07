@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Luger",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMMART",
 		radaremitheight = 25,
 		seismicsignature = 0,

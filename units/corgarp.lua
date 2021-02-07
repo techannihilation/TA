@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Garpike",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORGARP",
 		radaremitheight = 25,
 		seismicsignature = 0,

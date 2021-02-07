@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Salamander",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_salamander",
 		radaremitheight = 25,
 		seismicsignature = 0,

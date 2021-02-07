@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sunspot",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_mds",
 		radaremitheight = 79,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFUS",
 		radaremitheight = 50,
 		seismicsignature = 0,

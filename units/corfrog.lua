@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Frog",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "CORFROG",
 		radardistance = 0,
 		radaremitheight = 28,

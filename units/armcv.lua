@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMCV",
 		radardistance = 50,
 		radaremitheight = 24,

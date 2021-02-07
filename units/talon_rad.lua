@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_rad",
 		onoffable = true,
 		radardistance = 2100,

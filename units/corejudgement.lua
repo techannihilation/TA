@@ -38,7 +38,7 @@ return {
 		movementclass = "AMPHKBOT",
 		name = "Judgement",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "corejudgement",
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",

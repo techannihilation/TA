@@ -35,7 +35,7 @@ return {
 		metalstorage = 200,
 		name = "Xenolith",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "tllmas",
 		onoffable = true,
 		radardistance = 0,

@@ -41,7 +41,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Undertow",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "NSAATORPH",
 		radardistance = 0,
 		radaremitheight = 25,

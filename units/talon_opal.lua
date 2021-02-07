@@ -38,7 +38,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "talon_opal",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_opal",
 		radaremitheight = 37,
 		seismicsignature = 0,

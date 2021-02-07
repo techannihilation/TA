@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Intelligence Jump",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMJUMPDRIVE",
 		onoffable = true,
 		radardistance = 0,

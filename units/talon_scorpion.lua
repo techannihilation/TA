@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Scorpion",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_scorpion",
 		radaremitheight = 62,
 		seismicsigniture = 0,

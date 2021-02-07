@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_asy",
 		radaremitheight = 70,
 		seismicsignature = 0,

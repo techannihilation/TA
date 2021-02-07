@@ -41,7 +41,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Gravitank",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_ch",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "htank4",
 		name = "Mantis",
-		nochasecategory = "VTOL",
+		
 		objectname = "tllmantis",
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLASTSML",

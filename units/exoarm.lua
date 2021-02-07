@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Exo",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "exoarm",
 		radaremitheight = 150,
 		seismicsignature = 0,

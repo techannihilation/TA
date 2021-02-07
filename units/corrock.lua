@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Rocketeer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORROCK",
 		radaremitheight = 25,
 		seismicsignature = 0,

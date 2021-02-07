@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK3",
 		name = "Unobtanium ",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_unobtanium",
 		onoffable = true,
 		radardistancejam = 460,

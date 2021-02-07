@@ -35,7 +35,6 @@ return {
 		mobilestandorders = 1,
 		name = "Peeper",
 		noautofire = false,
-		nochasecategory = "UNDERWATER SURFACE",
 		objectname = "ARMPEEP",
 		radardistance = 1000,
 		radaremitheight = 4,

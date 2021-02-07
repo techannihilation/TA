@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Phoenix",
 		noautofire = true,
-		nochasecategory = "SURFACE UNDERWATER",
 		objectname = "ARMPNIX",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

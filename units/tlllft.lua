@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flame Tower",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLLFT",
 		radaremitheight = 74,
 		selfdestructas = "MEDIUM_BUILDING",

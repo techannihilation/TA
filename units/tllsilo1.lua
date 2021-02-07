@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Revenger",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLSILO1",
 		radardistance = 0,
 		radaremitheight = 69,

@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 4",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_NANOTC3",
 		radaremitheight = 37,
 		reclaimspeed = 900,

@@ -30,7 +30,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Ear",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_sd",
 		onoffable = true,
 		radaremitheight = 55,

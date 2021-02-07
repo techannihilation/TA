@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Visitant",
 		noautofire = false,
-		nochasecategory = "VTOL UNDERWATER",
+		
 		objectname = "talon_visitant",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",

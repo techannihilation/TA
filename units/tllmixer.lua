@@ -34,7 +34,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Mixer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLMIXER",
 		onoffable = true,
 		radardistancejam = 715,

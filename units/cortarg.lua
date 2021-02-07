@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Targeting Facility",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORTARG",
 		onoffable = true,
 		radaremitheight = 25,

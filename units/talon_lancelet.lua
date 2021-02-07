@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Lancelet",
 		noautofire = false,
-		nochasecategory = "SURFACE",
+		
 		objectname = "talon_lancelet",
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",

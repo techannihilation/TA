@@ -37,7 +37,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Phantom",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORSJAM",
 		onoffable = true,
 		radardistancejam = 900,

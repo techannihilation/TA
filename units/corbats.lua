@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Warlord",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORBATS",
 		radaremitheight = 74,
 		seismicsignature = 0,

@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "A.K.",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORAK",
 		radaremitheight = 25,
 		seismicsignature = 0,

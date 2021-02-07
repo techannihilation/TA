@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Reliser",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLLBT",
 		radaremitheight = 50,
 		selfdestructas = "MEDIUM_BUILDING",

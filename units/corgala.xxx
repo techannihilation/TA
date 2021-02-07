@@ -39,7 +39,7 @@ return {
 		movementclass = "VKBOT9",
 		name = "Galacticus",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "CORGALA",
 		radaremitheight = 202,
 		selfdestructas = "EXO_BLAST",

@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Equalizer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "TLLEQUALIZER",
 		radaremitheight = 39,
 		selfdestructas = "SMALL_UNIT",

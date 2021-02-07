@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "SR-71",
 		noautofire = false,
-		nochasecategory = "SURFACE UNDERWATER",
+		
 		objectname = "armsr71",
 		radardistance = 1400,
 		radaremitheight = 5,

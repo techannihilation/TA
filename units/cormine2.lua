@@ -46,7 +46,7 @@ return {
 		mincloakdistance = 0,
 		name = 110,
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORMINE2",
 		onoffable = false,
 		radaremitheight = 25,

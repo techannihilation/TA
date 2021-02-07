@@ -38,7 +38,7 @@ return {
 		mincloakdistance = 66,
 		name = "Metal Extractor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMAMEX",
 		onoffable = true,
 		radaremitheight = 25,

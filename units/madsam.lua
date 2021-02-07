@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "SAM Anticombomb",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "MADSAM",
 		radaremitheight = 38,
 		seismicsignature = 0,

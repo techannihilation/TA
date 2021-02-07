@@ -38,7 +38,7 @@ return {
 		mincloakdistance = 100,
 		name = "Cloakable Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMCKFUS",
 		radaremitheight = 46,
 		seismicsignature = 0,

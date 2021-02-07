@@ -41,7 +41,7 @@ return {
 		movementclass = "VKBOT15",
 		name = "Mygalo",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "armmygalo",
 		onoffable = true,
 		radardistance = 0,

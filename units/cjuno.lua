@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Core Juno",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "CJUNO",
 		radaremitheight = 71,
 		seismicsignature = 0,

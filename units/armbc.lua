@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Nemo",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMBC",
 		radardistance = 0,
 		radaremitheight = 60,

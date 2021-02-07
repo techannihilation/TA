@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "The Butcher",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "corboucher",
 		radardistance = 0,
 		radaremitheight = 71,

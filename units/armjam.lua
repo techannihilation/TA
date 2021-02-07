@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Jammer",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "ARMJAM",
 		onoffable = true,
 		radardistance = 0,

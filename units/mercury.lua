@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Mercury",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "MERCURY",
 		radaremitheight = 62,
 		seismicsignature = 0,

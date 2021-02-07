@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Cobalt",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_hlt",
 		radaremitheight = 79,
 		seismicsignature = 0,

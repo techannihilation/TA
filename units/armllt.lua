@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 0,
 		name = "LLT",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMLLT",
 		radaremitheight = 65,
 		seismicsignature = 0,

@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Demon Slayer Mark II",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "tlldemon",
 		radardistance = 0,
 		radaremitheight = 29,

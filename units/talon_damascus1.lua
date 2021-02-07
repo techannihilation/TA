@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Damascus",
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_damascus1",
 		radardistance = 50,
 		radaremitheight = 34,

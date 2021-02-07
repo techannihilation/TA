@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_sfus",
 		radardistance = 0,
 		radaremitheight = 90,

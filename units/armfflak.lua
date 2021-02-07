@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 5,
 		name = "Flakker NS",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "ARMFFLAK",
 		radaremitheight = 25,
 		seismicsignature = 0,

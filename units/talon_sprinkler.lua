@@ -38,7 +38,7 @@ return {
 		mincloakdistance = 55,
 		name = "Sprinkler",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_sprinkler",
 		radaremitheight = 48,
 		seismicsignature = 0,

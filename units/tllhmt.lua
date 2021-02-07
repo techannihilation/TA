@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "H.M.T.",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLHMT",
 		radaremitheight = 37,
 		selfdestructas = "MEDIUM_BUILDING",

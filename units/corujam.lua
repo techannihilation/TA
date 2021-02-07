@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Talpax",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "corujam",
 		onoffable = true,
 		radardistancejam = 6200,

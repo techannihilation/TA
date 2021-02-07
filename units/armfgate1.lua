@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 5,
 		name = "Keeper T3",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		norestrict = 1,
 		objectname = "armfgate1",
 		radaremitheight = 41,

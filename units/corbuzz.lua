@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Buzzsaw",
-		nochasecategory = "MOBILE",
+		
 		objectname = "CORBUZZ",
 		radaremitheight = 170,
 		seismicsignature = 0,

@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Viper",
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_mlv",
 		onoffable = false,
 		radaremitheight = 25,

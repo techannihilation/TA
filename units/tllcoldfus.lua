@@ -33,7 +33,7 @@ return {
 		--metalstorage = 500,
 		name = "Heavy Elemental Reactor",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLCOLDFUS",
 		radaremitheight = 71,
 		selfdestructas = "FUSION_BLAST",

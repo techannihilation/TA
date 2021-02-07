@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Black Diamond",
 		noautofire = false,
-		nochasecategory = "MOBILE",
+		
 		objectname = "talon_dmc",
 		radardistance = 0,
 		radaremitheight = 66,

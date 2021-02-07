@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T3 Immolator",
-		nochasecategory = "MOBILE",
+		
 		objectname = "TLLLRPT1",
 		radaremitheight = 90,
 		seismicsignature = 0,

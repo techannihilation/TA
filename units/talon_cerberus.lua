@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Cerberus",
 		noautofire = false,
-		nochasecategory = "VTOL",
+		
 		objectname = "talon_cerberus",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",
