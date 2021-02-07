@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Abritator",
 		noautofire = false,
-		
+		nochasecategory = "ALL",
 		objectname = "corarbritator",
 		onoffable = true,
 		radardistance = 0,

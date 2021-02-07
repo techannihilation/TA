@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK3",
 		name = "Aegis",
 		noautofire = false,
-		
+		nochasecategory = "ALL",
 		objectname = "REQU1",
 		radaremitheight = 22,
 		selfdestructas = "CRAWL_BLAST",

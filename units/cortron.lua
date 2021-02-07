@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Catalyst",
 		noautofire = false,
-		
+		nochasecategory = "ALL",
 		objectname = "CORTRON",
 		radaremitheight = 42,
 		seismicsignature = 0,

@@ -32,9 +32,8 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 9999,
 		metalstorage = 25,
-		name = "Metal Extractor",
+		name = "Advanced Metal Extractor",
 		noautofire = false,
-		
 		objectname = "tllmex1",
 		onoffable = true,
 		radaremitheight = 70,

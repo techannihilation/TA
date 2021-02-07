@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Freezer",
 		noautofire = false,
-		
+		nochasecategory = "ALL",
 		objectname = "TLLEMP",
 		radardistance = 0,
 		radaremitheight = 118,

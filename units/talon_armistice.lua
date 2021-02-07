@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Armistice",
-		
+		nochasecategory = "ALL",
 		objectname = "talon_armistice",
 		radardistance = 50,
 		radaremitheight = 34,
