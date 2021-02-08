@@ -93,6 +93,8 @@ CALLIN_LIST = {
 	"AllowStartPosition",
 	"AllowUnitCreation",
 	"AllowUnitTransfer",
+	"AllowUnitTransportLoad",
+	"AllowUnitTransportUnload",
 	"AllowUnitBuildStep",
 	"AllowFeatureBuildStep",
 	"AllowFeatureCreation",
