@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Penetrator",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMMANNI",
 		radaremitheight = 52,
 		seismicsignature = 0,

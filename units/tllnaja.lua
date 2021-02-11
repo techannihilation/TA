@@ -37,7 +37,7 @@ return {
 		movementclass = "htank4",
 		name = "Naja",
 		noautofire = false,
-		
+
 		objectname = "tllnaja",
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",
@@ -103,7 +103,7 @@ return {
 				firestarter = 80,
 				flighttime = 6,
 				model = "acidmissile",
-				name = "Chemical Barrarge",
+				name = "Thermite Barrarge",
 				proximitypriority = -1,
 				range = 2050,
 				reloadtime = 20,

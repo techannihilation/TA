@@ -38,7 +38,6 @@ return {
 		movementclass = "VKBOT5",
 		name = "Dreadnought",
 		noautofire = false,
-		
 		objectname = "tllcolossus",
 		radardistance = 0,
 		radaremitheight = 51,
@@ -48,15 +47,14 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
-		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.792,
-		turnrate = 550,
+		turninplaceanglelimit = 120,
+		turninplacespeedlimit = 0.8,
+		turnrate = 370,
 		unitname = "tllcolossus",
 		upright = true,
 		customparams = {
 			buildpic = "tllcolossus.dds",
 			faction = "TLL",
-			--requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

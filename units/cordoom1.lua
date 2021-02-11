@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Doomsday Machine",
-		
+
 		objectname = "CORDOOM1",
 		onoffable = true,
 		radardistance = 1200,
@@ -154,7 +154,7 @@ return {
 			atadr10 = {
 				areaofeffect = 52,
 				beamtime = 1.3,
-				corethickness = 0.45,
+				corethickness = 0.32,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -176,7 +176,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.3,
 				thickness = 10,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
@@ -193,7 +192,7 @@ return {
 			corsumo_weapon10 = {
 				areaofeffect = 12,
 				beamtime = 0.15,
-				corethickness = 0.38,
+				corethickness = 0.32,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -216,10 +215,9 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.25,
 				thickness = 8,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
-				weaponvelocity = 800,
+				weaponvelocity = 1500,
 				customparams = {
 					light_mult = 1.8,
 					light_radius_mult = 1.2,

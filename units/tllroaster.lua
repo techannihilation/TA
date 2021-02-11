@@ -30,13 +30,12 @@ return {
 		mass = 1575,
 		maxdamage = 3250,
 		maxslope = 12,
-		maxvelocity = 1.5,
+		maxvelocity = 1.35,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "HTANK4",
 		name = "Roaster",
 		noautofire = false,
-		
 		objectname = "TLLROASTER",
 		radaremitheight = 25,
 		selfdestructas = "ESTOR_BUILDING",
@@ -157,7 +156,7 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					default = 100,
+					default = 85,
 					subs = 5,
 				},
 			},

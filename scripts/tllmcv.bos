@@ -7,10 +7,11 @@
 piece 	base, body, flare1a, flare1b, flare1c, flare1d, flare2a, flare2b, flare2c, flare2d, 
 		turret1, sleeve1, barrel1a, barrel1b, barrel1c, barrel1d, 
 		turret2, sleeve2, barrel2a, barrel2b, barrel2c, barrel2d, blast, main_turret, main_sleeve,
-		Lturret1, Lturret2, Lturret3, Lturret4, Lsleeve1, Lsleeve2, Lsleeve3, Lsleeve4, Lflare1, Lflare2, Lflare3, Lflare4;
+		Lturret1, Lturret2, Lturret3, Lturret4, Lsleeve1, Lsleeve2, Lsleeve3, Lsleeve4, Lflare1, Lflare2, Lflare3, Lflare4,
+		emit1, emit2, emit3, emit4, emit5, emit6, emit7, emit8, emit9;
 		
 
-static-var is_moving, gun_1, gun_2, wait, aimback;
+static-var is_moving, gun_1, gun_2, wait, aimback, bFiring;
 
 
 #define SIG_AIM 	2
@@ -22,12 +23,44 @@ static-var is_moving, gun_1, gun_2, wait, aimback;
 #define SIG_AIM7 	128
 #define SIG_RESTORE 0
 
+Sparks()
+{
+	while( TRUE )
+	{
+		while( bFiring )
+		{
+			sleep 100;
+		}
+		emit-sfx 1024 + 2 from emit1;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit2;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit3;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit4;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit5;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit6;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit8;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit9;
+		sleep 15;
+		emit-sfx 1024 + 2 from emit9;
+		sleep 200;
+	}
+}
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
+	
+	start-script Sparks();
+	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -38,7 +71,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -53,7 +86,7 @@ Create()
 {
 	gun_1 = 0;
 	gun_2 = 0;
-	
+	bFiring = FALSE;
 	turn turret2 to y-axis <180.000000> now;
 	turn Lturret1 to y-axis <180.000000> now;
 	turn Lturret3 to y-axis <180.000000> now;
@@ -108,7 +141,6 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	
 	turn main_turret to y-axis heading speed <15.000000>;
 	turn main_sleeve to x-axis <0.000000> - pitch speed <7.500000>;
 	wait-for-turn main_turret around y-axis;
@@ -119,8 +151,12 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
+	bFiring = TRUE;
 	sleep 20;
 	emit-sfx 1024 from blast;
+	sleep 2500;
+	bFiring = FALSE;
+	
 }
 
 AimSecondary(heading, pitch)

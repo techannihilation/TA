@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Bahamut",
 		noautofire = false,
-		
+
 		objectname = "tllmcv",
 		radaremitheight = 145,
 		selfdestructas = "EXO_BLAST",
@@ -84,6 +84,7 @@ return {
 			explosiongenerators = {
 				[1] = "custom:tllroaster_muzzle",
 				[2] = "custom:mediumflare_front_only",
+				[3] = "custom:lightning_muzzle_spark",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

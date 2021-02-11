@@ -17,34 +17,6 @@ static-var  shieldonoff ,bMoving, bAiming, Static_Var_3, gun_3, Static_Var_5;
 #define SIG_AIM_3			8
 #define SIG_MOVE			32
 
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from Body;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
-}
-
 Sparks()
 {
 	while( TRUE )
@@ -63,6 +35,34 @@ Sparks()
 		sleep 5;
 		emit-sfx 1024 + 1 from Spark_emit;
 		sleep 200;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script Sparks();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from Body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
 	}
 }
 
@@ -197,7 +197,6 @@ Create()
 	gun_3 = RayTurret;
 	Static_Var_5 = 1;
 	start-script SmokeUnit();
-	start-script Sparks();
 	shieldonoff = 1;
 }
 
