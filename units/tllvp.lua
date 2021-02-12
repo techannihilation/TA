@@ -37,7 +37,6 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Plant",
 		noautofire = false,
-		
 		objectname = "TLLVP",
 		radaremitheight = 42,
 		selfdestructas = "LARGE_BUILDING",

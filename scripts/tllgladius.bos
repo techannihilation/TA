@@ -12,31 +12,12 @@ static-var  restore_delay, gun_1, Static_Var_3, Static_Var_4, Static_Var_5;
 #define SIG_AIM				2
 #define SIG_MOVE			4
 
-
-WheelControl()
-{
-	sleep 33;
-	while( TRUE )
-	{
-		Static_Var_4 = get CURRENT_SPEED * 20 / Static_Var_5;
-		Static_Var_3 = Static_Var_4 * 6;
-		if( Static_Var_4 < 4 )
-		{
-			Static_Var_4 = 4;
-		}
-		spin w1 around x-axis speed <1.000000> * Static_Var_3 * <0.032967> accelerate <13.000000> * Static_Var_4;
-		spin w2 around x-axis speed <1.000000> * Static_Var_3 * <0.032967> accelerate <13.000000> * Static_Var_4;
-		sleep 67;
-	}
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
-	start-script WheelControl();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -72,13 +53,17 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	sleep 1;
+	spin w1 around x-axis speed <500.000000> accelerate <15.000000>;
+	spin w2 around x-axis speed <500.000000> accelerate <15.000000>;
+	sleep 150;
 }
 
 StopMoving()
 {
 	signal SIG_MOVE;
-	sleep 1;
+	spin w1 around x-axis speed <0.000000> accelerate <100.000000>;
+	spin w2 around x-axis speed <0.000000> accelerate <100.000000>;	
+	sleep 150;
 }
 
 Create()
@@ -87,13 +72,7 @@ Create()
 	hide flare2;
 	gun_1 = flare1;
 	restore_delay = 3000;
-	Static_Var_5 = get MAX_SPEED;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -107,7 +86,7 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <200.000000>;
+	turn turret to y-axis heading speed <225.000000>;
 	turn sleeve to x-axis <0.000000> - pitch speed <100.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
@@ -117,12 +96,6 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 0 )
-	{
-	}
-	if( gun_1 == 1 )
-	{
-	}
 	gun_1 = !gun_1;
 }
 
@@ -167,15 +140,6 @@ Killed(severity, corpsetype)
 		explode base type NOHEATCLOUD;
 		explode w1 type NOHEATCLOUD | FALL;
 		explode w2 type NOHEATCLOUD | FALL;
-		explode body type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode w1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode w2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode body type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}

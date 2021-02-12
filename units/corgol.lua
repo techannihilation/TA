@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK4",
 		name = "Goliath",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORGOL",
 		radaremitheight = 29,
 		seismicsignature = 0,
@@ -167,6 +166,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+
 				def = "COR_GOL",
 				onlytargetcategory = "SURFACE",
 			},

@@ -4,13 +4,14 @@
 #include "exptype.h"
 
 piece  base, body, feetparent, FLFoot, FRFoot, RLFoot, RRFoot, rightchunk,
-       leftchunk, hips, turret, axis, barrel1, flare1;
+       leftchunk, hips, turret, upturret, barrela, barrelb, flarea, flareb,
+       upsleeves, upflarea, upflareb, upflarec, sleeves;
 
-static-var  restore_delay, bMoving, Static_Var_3, Static_Var_4, Static_Var_5;
+static-var  restore_delay, bMoving, bAmphibious, gun_1, gun_2, bHeading;
 
 // Signal definitions
 #define SIG_AIM				2
-
+#define SIG_AIM_2			4
 
 walk()
 {
@@ -215,7 +216,7 @@ MotionControl(Func_Var_1)
 
 Bubbles()
 {
-	while( Static_Var_3 >= 0 )
+	while( bAmphibious >= 0 )
 	{
 		if( bMoving )
 		{
@@ -229,9 +230,13 @@ Bubbles()
 
 Create()
 {
-	hide flare1;
+	hide flarea;
+	hide flareb;
 	bMoving = FALSE;
-	Static_Var_3 = 0;
+	bAmphibious = 0;
+	bHeading = 0;
+	gun_1 = 0;
+	gun_2 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 	start-script Bubbles();
@@ -240,7 +245,7 @@ Create()
 
 setSFXoccupy(state)
 {
-	Static_Var_3 = state;
+	bAmphibious = state;
 }
 
 StartMoving()
@@ -253,36 +258,63 @@ StopMoving()
 	bMoving = FALSE;
 }
 
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
-}
-
 RestoreAfterDelay()
 {
 	set-signal-mask SIG_AIM;
+	sleep restore_delay / 2;
+	turn upturret to y-axis <0.000000> speed <100.000000>;
+	turn upsleeves to x-axis <0.000000> speed <100.000000>;
 	sleep restore_delay;
-	turn turret to y-axis <0.000000> speed <130.000000>;
-	turn axis to x-axis <0.000000> speed <65.005495>;
+	turn turret to y-axis <0.000000> speed <50.000000>;
+	turn sleeves to x-axis <0.000000> speed <50.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <130.000000>;
-	turn axis to x-axis <0.000000> - pitch speed <65.005495>;
+	turn turret to y-axis heading speed <75.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <75.000000>;
+	bHeading = heading;
 	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	move barrel1 to z-axis [-2.000000] speed [300.000000];
-	emit-sfx 1024 + 0 from flare1;
-	sleep 150;
-	move barrel1 to z-axis [0.000000] speed [2.500000];
+	if (gun_1 == 0)
+	{
+		move barrela to z-axis [-2.000000] speed [300.000000];
+		emit-sfx 1024 + 0 from flarea;
+		sleep 150;
+		move barrela to z-axis [0.000000] speed [2.500000];
+	}
+	if (gun_1 == 1)
+	{
+		move barrelb to z-axis [-2.000000] speed [300.000000];
+		emit-sfx 1024 + 0 from flareb;
+		sleep 150;
+		move barrelb to z-axis [0.000000] speed [2.500000];
+	}	
+	++gun_1;
+	if (gun_1 == 2)
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if (gun_1 == 0)
+	{
+		piecenum = flarea;
+	}
+	if (gun_1 == 1)
+	{
+		piecenum = flareb;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -290,9 +322,45 @@ AimFromPrimary(piecenum)
 	piecenum = turret;
 }
 
-QueryPrimary(piecenum)
+AimFromTertiary(piecenum)
 {
-	piecenum = flare1;
+	piecenum = upturret;
+}
+
+FireTertiary()
+{
+	++gun_2;
+	if (gun_2 == 3)
+	{
+		gun_2 = 0;
+	}
+}
+
+QueryTertiary(piecenum)
+{
+	if (gun_2 == 0)
+	{
+		piecenum = upflarea;
+	}
+	if (gun_2 == 1)
+	{
+		piecenum = upflareb;
+	}
+	if (gun_2 == 2)
+	{
+		piecenum = upflarec;
+	}
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn upturret to y-axis heading speed <180.000000>;
+	turn upsleeves to x-axis <0.000000> - pitch speed <180.000000>;
+	wait-for-turn upturret around y-axis;
+	wait-for-turn upsleeves around x-axis;
+	return (1);
 }
 
 SweetSpot(piecenum)

@@ -8,8 +8,9 @@ Improvment :
  - Vpulse TLL becomes Rockets and can hit Air (except for T2 and Tactical)
  - Add spray effet for Bahamut
  - Tllcrawler becomes TllLuth Turtle (Sea and Al-terrain)
- - TllOm reworked
- 
+ - TllOm turtle reworked
+ - Tllmatamata turtle reworked
+
 Fix :
  - T3 Hover Arm : Fix AA weapon
  - Fix Load / unload Air Transport Unit (thanks to Silver)
