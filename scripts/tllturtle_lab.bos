@@ -3,64 +3,87 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, na1, na2, nng, ns, nj, ea1, ea2,
-       eng, es, wa1, wa2, wng, ws, ej, wj,
-       np, shadow;
+piece  base, body, gate1, gate2, foot1, foot2, pad, nano1, nano2, nano3, nano4;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+static-var  spray, Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, bAmphibious;
 
 // Signal definitions
-#define SIG_ACTIVATE			2
+#define SIG_ACTIVATE	2
 
-
-Close()
+setSFXoccupy(state)
 {
-	signal 4;
-	turn nng to x-axis <0.000000> speed <500.000000>;
-	turn eng to z-axis <0.000000> speed <500.000000>;
-	turn wng to z-axis <0.000000> speed <500.000000>;
-	wait-for-turn nng around x-axis;
-	turn na2 to x-axis <-5.000000> speed <25.000000>;
-	turn ea2 to z-axis <5.000000> speed <25.000000>;
-	turn wa2 to z-axis <-5.000000> speed <25.000000>;
-	wait-for-turn na2 around x-axis;
-	turn na2 to x-axis <0.000000> speed <5.000000>;
-	turn ea2 to z-axis <0.000000> speed <5.000000>;
-	turn wa2 to z-axis <0.000000> speed <5.000000>;
-	wait-for-turn na2 around x-axis;
-	turn na1 to x-axis <-5.000000> speed <25.000000>;
-	turn ea1 to z-axis <5.000000> speed <25.000000>;
-	turn wa1 to z-axis <-5.000000> speed <25.000000>;
-	wait-for-turn na1 around x-axis;
-	turn na1 to x-axis <0.000000> speed <5.000000>;
-	turn ea1 to z-axis <0.000000> speed <5.000000>;
-	turn wa1 to z-axis <0.000000> speed <5.000000>;
+	bAmphibious = state;
 }
 
-Open()
+deactivatescr()
+{	
+	turn gate1 to y-axis <0.000000> speed <25.000000>;
+	turn gate1 to z-axis <0.000000> speed <25.000000>;
+	turn gate2 to y-axis <0.000000> speed <25.000000>;
+	turn gate2 to z-axis <0.000000> speed <25.000000>;
+	
+	turn foot1 to x-axis <0.000000> speed <25.000000>;
+	turn foot1 to y-axis <0.000000> speed <25.000000>;
+	turn foot1 to z-axis <0.000000> speed <25.000000>;
+	
+	turn foot2 to x-axis <0.000000> speed <25.000000>;
+	turn foot2 to y-axis <0.000000> speed <25.000000>;
+	turn foot2 to z-axis <0.000000> speed <25.000000>;
+	
+	move foot1 to x-axis [0.000000] speed [10.000000];
+	move foot1 to y-axis [0.000000] speed [10.000000];
+	move foot2 to x-axis [0.000000] speed [10.000000];
+	move foot2 to y-axis [0.000000] speed [10.000000];
+	
+	sleep 1500;
+	
+	turn gate1 to x-axis <0.000000> speed <25.000000>;
+	turn gate2 to x-axis <0.000000> speed <25.000000>;
+	wait-for-turn gate1 around x-axis;
+	
+	move gate1 to y-axis [0.0000000] speed [2.000000];
+	move gate2 to y-axis [0.000000] speed [2.000000];
+
+}
+
+activatescr()
 {
-	turn na1 to x-axis <-87.000000> speed <25.000000>;
-	turn ea1 to z-axis <87.000000> speed <25.000000>;
-	turn wa1 to z-axis <-87.000000> speed <25.000000>;
-	wait-for-turn na1 around x-axis;
-	turn na1 to x-axis <-90.000000> speed <5.000000>;
-	turn ea1 to z-axis <90.000000> speed <5.000000>;
-	turn wa1 to z-axis <-90.000000> speed <5.000000>;
-	wait-for-turn na1 around x-axis;
-	turn na2 to x-axis <-87.000000> speed <25.000000>;
-	turn ea2 to z-axis <87.000000> speed <25.000000>;
-	turn wa2 to z-axis <-87.000000> speed <25.000000>;
-	wait-for-turn na2 around x-axis;
-	turn na2 to x-axis <-90.000000> speed <5.000000>;
-	turn ea2 to z-axis <90.000000> speed <5.000000>;
-	turn wa2 to z-axis <-90.000000> speed <5.000000>;
-	wait-for-turn na2 around x-axis;
-	turn nng to x-axis <-130.000000> speed <500.000000>;
-	turn eng to z-axis <130.000000> speed <500.000000>;
-	turn wng to z-axis <-130.000000> speed <500.000000>;
-	sleep 2500;
-	signal 4;
-	set-signal-mask 4;
+		
+	//get PRINT(bAmphibious);
+	if (bAmphibious == 2)
+	{
+	
+		turn gate1 to y-axis <-45.000000> speed <25.000000>;
+		turn gate2 to y-axis <45.000000> speed <25.000000>;
+		wait-for-turn gate1 around x-axis;			
+	
+	}
+	else
+	{
+		move gate1 to y-axis [2.5000000] speed [2.000000];
+		move gate2 to y-axis [2.500000] speed [2.000000];
+		turn gate1 to x-axis <-75.000000> speed <25.000000>;
+		turn gate2 to x-axis <-75.000000> speed <25.000000>;
+		wait-for-turn gate1 around x-axis;
+		
+		turn gate1 to y-axis <-75.000000> speed <25.000000>;
+		turn gate2 to y-axis <75.000000> speed <25.000000>;
+		turn gate1 to z-axis <-75.000000> speed <25.000000>;
+		turn gate2 to z-axis <75.000000> speed <25.000000>;
+	}
+	
+	turn foot1 to x-axis <-30.000000> speed <25.000000>;
+	turn foot1 to y-axis <-30.000000> speed <25.000000>;
+	turn foot1 to z-axis <-90.000000> speed <25.000000>;
+		
+	turn foot2 to x-axis <-30.000000> speed <25.000000>;
+	turn foot2 to y-axis <30.000000> speed <25.000000>;
+	turn foot2 to z-axis <90.000000> speed <25.000000>;
+		
+	move foot1 to x-axis [0.000000] speed [10.000000];
+	move foot1 to y-axis [0.000000] speed [10.000000];
+				
+	sleep 1500;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -79,7 +102,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from na1;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -90,7 +113,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Bla()
+OpenYard()
 {
 	set YARD_OPEN to 1;
 	while( !get YARD_OPEN )
@@ -102,7 +125,7 @@ Bla()
 	set BUGGER_OFF to 0;
 }
 
-Blabla()
+CloseYard()
 {
 	set YARD_OPEN to 0;
 	while( get YARD_OPEN )
@@ -114,138 +137,117 @@ Blabla()
 	set BUGGER_OFF to 0;
 }
 
-Activate()
+Go()
 {
-	while( Static_Var_2 )
-	{
-		sleep 200;
-	}
-	signal SIG_ACTIVATE;
-	Static_Var_2 = 1;
-	if( !Static_Var_3 )
-	{
-		call-script Open();
-		Static_Var_3 = 1;
-	}
-	call-script Bla();
+	call-script activatescr();
+	call-script OpenYard();
 	set INBUILDSTANCE to 1;
-	Static_Var_2 = 0;
 }
 
-Deactivate()
+Stop()
 {
-	while( Static_Var_2 )
-	{
-		sleep 200;
-	}
-	signal SIG_ACTIVATE;
-	set-signal-mask SIG_ACTIVATE;
 	set INBUILDSTANCE to 0;
-	sleep 2500;
-	Static_Var_2 = 1;
-	call-script Blabla();
-	if( Static_Var_3 )
-	{
-		call-script Close();
-		Static_Var_3 = 0;
-	}
-	Static_Var_2 = 0;
+	call-script CloseYard();
+	call-script deactivatescr();
 }
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+		else
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
 
 Create()
 {
-	dont-shade base;
-	dont-shade na1;
-	dont-shade na2;
-	dont-shade nng;
-	dont-shade ns;
-	dont-shade nj;
-	dont-shade ea1;
-	dont-shade ea2;
-	dont-shade eng;
-	dont-shade es;
-	dont-shade wa1;
-	dont-shade wa2;
-	dont-shade wng;
-	dont-shade ws;
-	dont-shade ej;
-	dont-shade wj;
-	dont-shade np;
 	Static_Var_2 = 0;
-	Static_Var_3 = 0;
-	Static_Var_1 = 1;
+	Static_Var_3 = 1;
+	Static_Var_1 = 0;
+	Static_Var_4 = 0;
+	bAmphibious = 0;
 	start-script SmokeUnit();
+	set ARMORED to 1;
 }
 
 QueryNanoPiece(piecenum)
 {
+	if( Static_Var_1 == 0 )
+	{
+		piecenum = nano1;
+	}
 	if( Static_Var_1 == 1 )
 	{
-		piecenum = ns;
+		piecenum = nano2;
 	}
 	if( Static_Var_1 == 2 )
 	{
-		piecenum = es;
+		piecenum = nano3;
 	}
 	if( Static_Var_1 == 3 )
 	{
-		piecenum = ws;
+		piecenum = nano4;
 	}
 	++Static_Var_1;
-	if( Static_Var_1 > 3 )
+	if( Static_Var_1 >= 4 )
 	{
-		Static_Var_1 = 1;
+		Static_Var_1 = 0;
 	}
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	if( !Static_Var_2 )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
 }
 
 StartBuilding()
 {
-	dont-shade base;
-	dont-shade na1;
-	dont-shade na2;
-	dont-shade nng;
-	dont-shade ns;
-	dont-shade nj;
-	dont-shade ea1;
-	dont-shade ea2;
-	dont-shade eng;
-	dont-shade es;
-	dont-shade wa1;
-	dont-shade wa2;
-	dont-shade wng;
-	dont-shade ws;
-	dont-shade ej;
-	dont-shade wj;
-	dont-shade np;
-	dont-cache base;
+	
 }
 
 StopBuilding()
 {
-	dont-shade base;
-	dont-shade na1;
-	dont-shade na2;
-	dont-shade nng;
-	dont-shade ns;
-	dont-shade nj;
-	dont-shade ea1;
-	dont-shade ea2;
-	dont-shade eng;
-	dont-shade es;
-	dont-shade wa1;
-	dont-shade wa2;
-	dont-shade wng;
-	dont-shade ws;
-	dont-shade ej;
-	dont-shade wj;
-	dont-shade np;
-	cache base;
+	
 }
+
 
 QueryBuildInfo(piecenum)
 {
-	piecenum = np;
+	piecenum = pad;
 }
+
 
 SweetSpot(piecenum)
 {
@@ -257,34 +259,28 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode na1 type NOHEATCLOUD;
-		explode ea1 type NOHEATCLOUD;
-		explode wa1 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode gate1 type NOHEATCLOUD;
+		explode gate2 type NOHEATCLOUD;
+		explode foot1 type NOHEATCLOUD;
+		explode foot2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER;
-		explode na1 type NOHEATCLOUD;
-		explode ea1 type NOHEATCLOUD;
-		explode wa1 type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER;
-		explode na1 type NOHEATCLOUD;
-		explode ea1 type NOHEATCLOUD;
-		explode wa1 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode gate1 type NOHEATCLOUD;
+		explode gate2 type NOHEATCLOUD;
+		explode foot1 type NOHEATCLOUD;
+		explode foot2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER;
-	explode na1 type NOHEATCLOUD;
-	explode ea1 type NOHEATCLOUD;
-	explode wa1 type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode gate1 type NOHEATCLOUD;
+	explode gate2 type NOHEATCLOUD;
+	explode foot1 type NOHEATCLOUD;
+	explode foot2 type NOHEATCLOUD;
 	return (corpsetype);
 }

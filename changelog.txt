@@ -10,6 +10,7 @@ Improvment :
  - Tllcrawler becomes TllLuth Turtle (Sea and Al-terrain)
  - TllOm turtle reworked
  - Tllmatamata turtle reworked
+ - Turtle Lab TLL model reworked
 
 Fix :
  - T3 Hover Arm : Fix AA weapon

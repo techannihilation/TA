@@ -66,20 +66,6 @@ CloseYard()
 
 activatescr()
 {
-	dont-cache arm1a;
-	dont-cache arm1b;
-	dont-cache arm2a;
-	dont-cache arm2b;
-	dont-cache arm3a;
-	dont-cache arm3b;
-	dont-cache arm4a;
-	dont-cache arm4b;
-	dont-cache pad;
-	dont-cache p1;
-	dont-cache p2;
-	dont-cache p3;
-	dont-cache p4;
-	dont-cache lights;
 	if( TRUE )
 	{
 		turn arm1a to z-axis <-35.000000> speed <24.000000>;
@@ -117,16 +103,6 @@ deactivatescr()
 		turn arm4a to z-axis <0.000000> speed <30.000000>;
 		sleep 300;
 	}
-	cache lights;
-	cache arm1a;
-	cache arm1b;
-	cache arm2a;
-	cache arm2b;
-	cache arm3a;
-	cache arm3b;
-	cache arm4a;
-	cache arm4b;
-	cache pad;
 }
 
 Go()
@@ -177,16 +153,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade arm1a;
-	dont-shade arm1b;
-	dont-shade arm2a;
-	dont-shade arm2b;
-	dont-shade arm3a;
-	dont-shade arm3b;
-	dont-shade arm4a;
-	dont-shade arm4b;
-	dont-shade pad;
-	dont-shade lights;
 	turn p1 to y-axis <-30.000000> now;
 	turn p2 to y-axis <30.000000> now;
 	turn p3 to y-axis <-30.000000> now;
