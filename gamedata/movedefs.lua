@@ -442,7 +442,7 @@ local moveDatas = {
     },
     AMPTBOT = {
         allowrawmovement = true,
-		crushstrength = 250,
+		    crushstrength = 250,
         depthmodparams = {
             minheight = 1,
             linearcoeff = 0.03,
@@ -453,7 +453,35 @@ local moveDatas = {
         footprintz = 3,
         maxslope = 80,
         maxwaterdepth = 15000
-    }
+    },
+    AMPTBOT4 = {
+        allowrawmovement = true,
+        crushstrength = 2500,
+        depthmodparams = {
+            minheight = 1,
+            linearcoeff = 0.03,
+            maxscale = 0.75,
+            constantcoeff = 0.015
+        },
+        footprintx = 4,
+        footprintz = 4,
+        maxslope = 80,
+        maxwaterdepth = 15000
+    },
+    AMPTBOT5 = {
+        allowrawmovement = true,
+        crushstrength = 5000,
+        depthmodparams = {
+            minheight = 1,
+            linearcoeff = 0.03,
+            maxscale = 0.75,
+            constantcoeff = 0.015
+        },
+        footprintx = 5,
+        footprintz = 5,
+        maxslope = 80,
+        maxwaterdepth = 15000
+    },
 }
 
 --------------------------------------------------------------------------------

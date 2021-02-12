@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Samael",
 		noautofire = false,
-		
+
 		objectname = "tllsamael",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",
@@ -262,7 +262,7 @@ return {
 			rocket = {
 				areaofeffect = 100,
 				avoidfeature = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "tll_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -270,7 +270,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "vpulse",
+				model = "rocket",
 				name = "Vpulse Rocket",
 				range = 1400,
 				reloadtime = 0.5,
@@ -355,7 +355,7 @@ return {
 			},
 			[10] = {
 				def = "ROCKET",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 		},
 	},

@@ -1,5 +1,21 @@
-3.74 > 3.76
-2021-02-12
+3.74 > 3.75
+2021-02-06
+
+Balance :
+- Tllroaster : Decrease speed 1.5 => 1.35. Decrease spray lighting damage 200=>170 / shot. Increase metalcost 1535 => 1635
+
+Improvment :
+ - Vpulse TLL becomes Rockets and can hit Air (except for T2 and Tactical)
+ - Add spray effet for Bahamut
+ - Tllcrawler becomes TllLuth Turtle (Sea and Al-terrain)
+ - TllOm reworked
+ 
+Fix :
+ - T3 Hover Arm : Fix AA weapon
+ - Fix Load / unload Air Transport Unit (thanks to Silver)
+
+3.74 > 3.75
+2021-02-06
 
 Balance :
  - Tll Lizard : Decrease speed 2.2 => 1.7. Decrease dmg/s 180=>170. Deacrease HP 1125=>1095
@@ -9,11 +25,6 @@ Balance :
 
  Improvment :
   - Rework Roaster and adv Roaster main weapon model
-  - Add spray effet for Bahamut
-
-Fix :
- - T3 Hover Arm : Fix AA weapon
- - Fix Load / unload Air Transport Unit (thanks to Silver)
 
 3.72 > 3.74
 2021-01-30

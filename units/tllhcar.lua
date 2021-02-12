@@ -181,7 +181,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "vpulse",
+				model = "rocket",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -211,7 +211,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "ROCKET_PULSE",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[3] = {
 				def = "NUKE_HCAR_ARM",

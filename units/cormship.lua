@@ -38,7 +38,6 @@ return {
 		movementclass = "BOAT5",
 		name = "Messenger",
 		noautofire = false,
-		
 		objectname = "CORMSHIP",
 		radardistance = 1400,
 		radaremitheight = 33,
@@ -176,7 +175,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "corkbmissl1",
+				model = "rocket",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1550,

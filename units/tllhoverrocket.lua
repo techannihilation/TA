@@ -35,7 +35,6 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Vandal",
 		noautofire = false,
-		
 		objectname = "tllhoverrocket",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -117,7 +116,7 @@ return {
 			tll_vpulse = {
 				areaofeffect = 126,
 				avoidfeature = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "tll_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -125,7 +124,7 @@ return {
 				firesubmersed = true,
 				flighttime = 10,
 				metalpershot = 0,
-				model = "vpulse",
+				model = "rocket",
 				name = "Vpulse Rocket",
 				range = 800,
 				reloadtime = 10.5,

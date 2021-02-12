@@ -26,7 +26,6 @@ return {
 		minwaterdepth = 5,
 		name = "Missile Launcher",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "TLLdcsta",
 		radardistance = 1200,
@@ -105,7 +104,7 @@ return {
 			rocket = {
 				areaofeffect = 90,
 				avoidfeature = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "tll_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -116,7 +115,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "vpulse",
+				model = "rocket",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
 				range = 1150,

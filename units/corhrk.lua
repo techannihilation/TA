@@ -36,7 +36,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Dominator",
 		noautofire = false,
-		
 		objectname = "CORHRK",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -134,8 +133,8 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "corkbmissl1",
-				name = "HeavyRockets",
+				model = "rocket",
+				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1350,
 				reloadtime = 7,

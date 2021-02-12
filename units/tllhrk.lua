@@ -34,7 +34,6 @@ return {
 		movementclass = "TKBOT3",
 		name = "Rlik",
 		noautofire = false,
-		
 		objectname = "TLLHRK",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -116,7 +115,7 @@ return {
 			corhrk_rocket = {
 				areaofeffect = 60,
 				avoidfeature = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "tll_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -127,8 +126,8 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "vpulse",
-				name = "Vpulse Rocket",
+				model = "rocket",
+				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1350,
 				reloadtime = 7,

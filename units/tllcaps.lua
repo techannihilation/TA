@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Destiny",
 		noautofire = false,
-		
+
 		objectname = "tllcaps",
 		radardistance = 2000,
 		radaremitheight = 84,
@@ -230,7 +230,7 @@ return {
 			rocket = {
 				areaofeffect = 100,
 				avoidfeature = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "tll_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -238,7 +238,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "vpulse",
+				model = "rocket",
 				name = "Vpulse Rocket",
 				range = 1400,
 				reloadtime = 1,
@@ -283,7 +283,7 @@ return {
 			},
 			[3] = {
 				def = "ROCKET",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[4] = {
 				def = "LIGHTNING",

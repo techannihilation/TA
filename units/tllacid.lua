@@ -121,7 +121,7 @@ return {
 			acidrain_rocket = {
 				areaofeffect = 600,
 				avoidfeature = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "tll_trail_rocket",
 				commandfire = true,
 				craterareaofeffect = 900,
 				craterboost = 0,

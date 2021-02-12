@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Irritator Shielded Mech",
 		noautofire = false,
-		
+
 		objectname = "irritator",
 		radardistance = 0,
 		radaremitheight = 130,
@@ -188,7 +188,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "vpulse",
+				model = "rocket",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
 				range = 1050,
@@ -292,7 +292,7 @@ return {
 			},
 			[3] = {
 				def = "IRRITATOR_ROCKET",
-				onlytargetcategory = "SURFACE",
+				onlytargetcategory = "SURFACE VTOL",
 			},
 			[4] = {
 				def = "Irritator_Shield",

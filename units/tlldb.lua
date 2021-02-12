@@ -156,7 +156,7 @@ return {
 				burst = 4,
 				burstrate = 0.25,
 				canattackground = false,
-				cegtag = "TLLRAVENTRAIL",
+				cegtag = "tll_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

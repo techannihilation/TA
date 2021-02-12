@@ -1381,7 +1381,11 @@ local morphDefs = {
 		time = 60,
 		xp = 0.75,
 	},
-
+	tllom = {
+		into = 'tllluth',
+		time = 60,
+		xp = 0.15,
+	},
 }
 
 --
