@@ -20,10 +20,10 @@ static-var  Static_Var_1, restore_delay, salvo_1, salvo_2, gun_1, gun_2, gun_3, 
 #define SIG_AIM				2
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
-#define SIG_AIM_6			64
-#define SIG_AIM_7			128
-#define SIG_AIM_8			256
-#define SIG_AIM_9			512
+#define SIG_AIM_4			64
+#define SIG_AIM_5			128
+#define SIG_AIM_6			256
+#define SIG_AIM_7			512
 #define SIG_R				1024
 #define SIG_MOVE			2046
 
@@ -428,10 +428,10 @@ QueryTertiary(piecenum)
 
 //Missile AA
 
-AimWeapon6(heading, pitch)
+AimWeapon4(heading, pitch)
 {
-	signal SIG_AIM_6;
-	set-signal-mask SIG_AIM_6;
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
 	turn rk_tur1 to y-axis heading speed <240>;
 	turn rk_slv1 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur1 around y-axis;
@@ -439,10 +439,10 @@ AimWeapon6(heading, pitch)
 	Start-script Restore();
 	return (1);
 }
-AimWeapon7(heading, pitch)
+AimWeapon5(heading, pitch)
 {
-	signal SIG_AIM_7;
-	set-signal-mask SIG_AIM_7;
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
 	turn rk_tur2 to y-axis heading speed <240>;
 	turn rk_slv2 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur2 around y-axis;
@@ -450,10 +450,10 @@ AimWeapon7(heading, pitch)
 	Start-script Restore();
 	return (1);
 }
-AimWeapon8(heading, pitch)
+AimWeapon6(heading, pitch)
 {
-	signal SIG_AIM_8;
-	set-signal-mask SIG_AIM_8;
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
 	turn rk_tur3 to y-axis heading speed <240>;
 	turn rk_slv3 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur3 around y-axis;
@@ -461,10 +461,10 @@ AimWeapon8(heading, pitch)
 	Start-script Restore();
 	return (1);
 }
-AimWeapon9(heading, pitch)
+AimWeapon7(heading, pitch)
 {
-	signal SIG_AIM_9;
-	set-signal-mask SIG_AIM_9;
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
 	turn rk_tur4 to y-axis heading speed <240>;
 	turn rk_slv4 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur4 around y-axis;
@@ -473,7 +473,7 @@ AimWeapon9(heading, pitch)
 	return (1);
 }
 
-FireWeapon6()
+FireWeapon4()
 {
 	++gun_1;
 	if( gun_1 == 3 )
@@ -481,7 +481,7 @@ FireWeapon6()
 		gun_1 = 0;
 	}	
 }
-FireWeapon7()
+FireWeapon5()
 {
 	++gun_2;
 	if( gun_2 == 3 )
@@ -489,7 +489,7 @@ FireWeapon7()
 		gun_2 = 0;
 	}	
 }
-FireWeapon8()
+FireWeapon6()
 {
 	++gun_3;
 	if( gun_3 == 3 )
@@ -497,7 +497,7 @@ FireWeapon8()
 		gun_3 = 0;
 	}	
 }
-FireWeapon9()
+FireWeapon7()
 {
 	++gun_4;
 	if( gun_4 == 3 )
@@ -506,27 +506,27 @@ FireWeapon9()
 	}
 }
 
-AimFromWeapon6(piecenum)
+AimFromWeapon4(piecenum)
 {
 	piecenum = rk_tur1;
 }
 
-AimFromWeapon7(piecenum)
+AimFromWeapon5(piecenum)
 {
 	piecenum = rk_tur2;
 }
 
-AimFromWeapon8(piecenum)
+AimFromWeapon6(piecenum)
 {
 	piecenum = rk_tur3;
 }
 
-AimFromWeapon9(piecenum)
+AimFromWeapon7(piecenum)
 {
 	piecenum = rk_tur4;
 }
 
-QueryWeapon6(piecenum)
+QueryWeapon4(piecenum)
 {
 	if( gun_1 == 0 )
 	{
@@ -542,7 +542,7 @@ QueryWeapon6(piecenum)
 	}
 }
 
-QueryWeapon7(piecenum)
+QueryWeapon5(piecenum)
 {
 	if( gun_2 == 0 )
 	{
@@ -557,7 +557,7 @@ QueryWeapon7(piecenum)
 		piecenum = rk_flare2c;
 	}
 }
-QueryWeapon8(piecenum)
+QueryWeapon6(piecenum)
 {
 	if( gun_3 == 0 )
 	{
@@ -572,7 +572,7 @@ QueryWeapon8(piecenum)
 		piecenum = rk_flare3c;
 	}
 }
-QueryWeapon9(piecenum)
+QueryWeapon7(piecenum)
 {
 	if( gun_4 == 0 )
 	{

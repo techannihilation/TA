@@ -39,7 +39,6 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Ray",
 		noautofire = false,
-		
 		objectname = "armhcrus",
 		radaremitheight = 65,
 		selfdestructas = "KROG_BLAST",
@@ -240,28 +239,28 @@ return {
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			[4] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "AA_MISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
+			[5] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				def = "AA_MISSILE",
+				maindir = "1 0 0",
+				maxangledif = 190,
+				onlytargetcategory = "VTOL",
+			},
+			[6] = {
+				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				def = "AA_MISSILE",
+				maindir = "1 0 0",
+				maxangledif = 190,
+				onlytargetcategory = "VTOL",
+			},
 			[7] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
-				def = "AA_MISSILE",
-				maindir = "1 0 0",
-				maxangledif = 190,
-				onlytargetcategory = "VTOL",
-			},
-			[8] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
-				def = "AA_MISSILE",
-				maindir = "1 0 0",
-				maxangledif = 190,
-				onlytargetcategory = "VTOL",
-			},
-			[9] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "AA_MISSILE",
 				maindir = "-1 0 0",
