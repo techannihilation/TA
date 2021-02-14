@@ -31,7 +31,6 @@ return {
 		mobilestandorders = 1,
 		name = "Shipyard",
 		noautofire = false,
-		
 		objectname = "ARMSY",
 		radardistance = 50,
 		radaremitheight = 55,

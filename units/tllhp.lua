@@ -36,7 +36,6 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Platform",
 		noautofire = false,
-		
 		objectname = "TLLHP",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",

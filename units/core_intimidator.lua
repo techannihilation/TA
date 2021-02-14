@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 33,
 		name = "Intimidator Paralizer",
 		noautofire = false,
-		
+
 		objectname = "core_intimidator",
 		radardistance = 0,
 		radaremitheight = 67,
@@ -134,7 +134,7 @@ return {
 				name = "EMP Cannon",
 				nogap = 1,
 				paralyzer = true,
-				paralyzetime = 16,
+				paralyzetime = 12,
 				range = 6750,
 				reloadtime = 15,
 				rgbcolor = "0.9 0.75 0",

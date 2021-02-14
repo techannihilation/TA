@@ -14,7 +14,7 @@ return {
 		name = "EMPbomb",
 		noselfdamage = 1,
 		paralyzer = 1,
-		paralyzetime = 15,
+		paralyzetime = 12,
 		range = 1280,
 		reloadtime = 0.3,
 		soundhit = "EMGPULS1",

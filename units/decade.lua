@@ -39,7 +39,6 @@ return {
 		movementclass = "BOAT4",
 		name = "Decade",
 		noautofire = false,
-		
 		objectname = "DECADE",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -140,7 +139,6 @@ return {
 				weaponvelocity = 500,
 				damage = {
 					default = 8,
-					raider_resistant = 4,
 					subs = 5,
 				},
 			},

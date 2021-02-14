@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Anhur",
 		noautofire = false,
-		
+
 		objectname = "tllanhur",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
@@ -105,7 +105,7 @@ return {
 				name = "EMPbomb",
 				noselfdamage = true,
 				paralyzer = true,
-				paralyzetime = 20,
+				paralyzetime = 18,
 				range = 1280,
 				reloadtime = 20,
 				soundhitdry = "EMGPULS1",

@@ -131,7 +131,7 @@ return {
 				name = "EMPMissile",
 				noselfdamage = true,
 				paralyzer = true,
-				paralyzetime = 22,
+				paralyzetime = 24,
 				range = 4650,
 				reloadtime = 2,
 				smoketrail = true,

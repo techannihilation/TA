@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flame Tower",
 		noautofire = false,
-		
+
 		objectname = "TLLLFT",
 		radaremitheight = 74,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -140,7 +140,6 @@ return {
 					commanders = 24,
 					default = 12,
 					flamethrowers = 4,
-					raider_resistant = 6,
 					subs = 5,
 				},
 			},

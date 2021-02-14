@@ -41,7 +41,7 @@ return {
 		movementclass = "VKBOT15",
 		name = "Black Widow",
 		noautofire = false,
-		
+
 		objectname = "cormkl",
 		onoffable = true,
 		radardistance = 0,
@@ -290,7 +290,6 @@ return {
 				damage = {
 					default = 60,
 					flamethrowers = 20,
-					raider_resistant = 30,
 					subs = 1,
 				},
 			},

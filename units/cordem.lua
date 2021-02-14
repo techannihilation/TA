@@ -34,7 +34,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Archdemon",
 		noautofire = false,
-		
+
 		objectname = "CORDEM",
 		radardistance = 0,
 		radaremitheight = 76,
@@ -151,7 +151,6 @@ return {
 				damage = {
 					default = 60,
 					flamethrowers = 20,
-					raider_resistant = 30,
 					subs = 1,
 				},
 			},

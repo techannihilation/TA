@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Plant",
 		noautofire = false,
-		
 		objectname = "ARMVP",
 		radaremitheight = 34,
 		seismicsignature = 0,

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flarea1, flarea2, flareb, base, turret, sleeves, w1, w2,
+piece  flarea1, flarea2, flareb, body, base, turret, sleeves, w1, w2,
        w3, w4, w5, w6, w7, w8, w9, w10,
        w11, w12, wakes, barrel1, barrel2, misflare;
 
@@ -14,17 +14,17 @@ RockOnWaves()
 {
 	while( TRUE )
 	{
-		turn base to x-axis <1.> speed <2.>;
-		move base to y-axis [0.] speed [0.];
-		wait-for-turn base around x-axis;
-		turn base to x-axis <-1.> speed <2.>;
-		move base to y-axis [-0.] speed [0.];
-		wait-for-move base along y-axis;
-		move base to y-axis [0.] speed [0.];
-		wait-for-turn base around x-axis;
-		turn base to x-axis <1.> speed <2.>;
-		move base to y-axis [-0.] speed [0.];
-		wait-for-move base along y-axis;
+		turn body to x-axis <1.> speed <2.>;
+		move body to y-axis [0.] speed [0.];
+		wait-for-turn body around x-axis;
+		turn body to x-axis <-1.> speed <2.>;
+		move body to y-axis [-0.] speed [0.];
+		wait-for-move body along y-axis;
+		move body to y-axis [0.] speed [0.];
+		wait-for-turn body around x-axis;
+		turn body to x-axis <1.> speed <2.>;
+		move body to y-axis [-0.] speed [0.];
+		wait-for-move body along y-axis;
 	}
 }
 
@@ -44,7 +44,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -163,7 +163,7 @@ AimFromPrimary(piecenum)
 
 AimFromSecondary(piecenum)
 {
-	piecenum = base;
+	piecenum = body;
 }
 
 QueryPrimary(piecenum)
@@ -218,7 +218,7 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode barrel1 type NOHEATCLOUD;
 		explode barrel2 type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode sleeves type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
@@ -228,27 +228,15 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode barrel1 type NOHEATCLOUD | FALL;
 		explode barrel2 type NOHEATCLOUD | FALL;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode sleeves type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
-		return (0);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
-		explode sleeves type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD;
-		return (corpsetype);
-		return (0);
 	}
 	corpsetype = 3;
 	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode sleeves type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD;
 	return (corpsetype);

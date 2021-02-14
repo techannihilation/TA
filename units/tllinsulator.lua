@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Insulator",
 		noautofire = false,
-		
+
 		objectname = "tllinsulator",
 		radaremitheight = 60,
 		seismicsignature = 0,
@@ -158,7 +158,6 @@ return {
 				damage = {
 					default = 24,
 					flamethrowers = 8,
-					raider_resistant = 12,
 					subs = 5,
 				},
 			},

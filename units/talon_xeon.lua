@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Xeon",
 		noautofire = false,
-		
+
 		objectname = "talon_xeon",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -162,7 +162,6 @@ return {
 				damage = {
 					default = 12,
 					flamethrowers = 4,
-					raider_resistant = 6,
 					subs = 5,
 				},
 			},

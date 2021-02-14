@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Skimmer",
 		noautofire = false,
-		
+
 		objectname = "ARMSH",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -157,7 +157,6 @@ return {
 				},
 				damage = {
 					default = 48,
-					raider_resistant = 24,
 					subs = 5,
 				},
 			},

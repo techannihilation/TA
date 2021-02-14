@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Grenat",
 		noautofire = false,
-		
+
 		objectname = "talon_grenat",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -267,7 +267,6 @@ return {
 				damage = {
 					default = 60,
 					flamethrowers = 20,
-					raider_resistant = 30,
 					subs = 1,
 				},
 			},

@@ -40,7 +40,6 @@ return {
 		maxwaterdepth = 0,
 		name = "LLT",
 		noautofire = false,
-		
 		objectname = "ARMLLT",
 		radaremitheight = 65,
 		seismicsignature = 0,
@@ -152,7 +151,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.1,
 				thickness = 2.5,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 2250,

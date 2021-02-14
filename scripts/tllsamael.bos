@@ -5,7 +5,7 @@
 
 
 piece 	base, body,Rside, Lside, LFchen, LBchen, RFchen, RBchen, head, 
-		mainturret, p1, p2, sleeves, barrel1, barrel2, flare, msl,
+		mainturret, sleeves, barrel1, barrel2, flare, msl,
 		flare3a, flare3b, flare3c, flare3d, flare3e,
 		flare4a, flare4b, flare4c, flare4d, flare4e,
 		turret3, sleeve3, barrel3a, barrel3b, barrel3c, barrel3d, barrel3e, 
@@ -46,7 +46,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from p1;
+			emit-sfx smoketype from body;
 			sleep 50;
 			emit-sfx smoketype from turret1;
 			sleep 50;
@@ -545,8 +545,6 @@ Killed(severity, corpsetype)
 		explode sleeve2 type NOHEATCLOUD | FALL;
 		explode turret3 type NOHEATCLOUD | FALL;
 		explode turret4 type NOHEATCLOUD | FALL;
-		explode p1 type NOHEATCLOUD | FALL;
-		explode p2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 		corpsetype = 3;
@@ -564,7 +562,5 @@ Killed(severity, corpsetype)
 		explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode p1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode p2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 }

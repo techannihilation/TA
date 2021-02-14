@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Stuner",
 		noautofire = false,
-		
+
 		objectname = "tllstuner",
 		radaremitheight = 72,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -128,7 +128,7 @@ return {
 				name = "Frozen Frog",
 				nogap = 1,
 				paralyzer = true,
-				paralyzetime = 12,
+				paralyzetime = 6,
 				range = 3650,
 				reloadtime = 12,
 				rgbcolor = "0.9 0.75 0",

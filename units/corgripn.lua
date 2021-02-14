@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Stiletto",
-		
+
 		objectname = "CORGRIPN",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDINGEX",
@@ -110,7 +110,7 @@ return {
 				name = "EMPbomb",
 				noselfdamage = true,
 				paralyzer = true,
-				paralyzetime = 13,
+				paralyzetime = 12,
 				range = 1280,
 				reloadtime = 10,
 				soundhitdry = "EMGPULS1",

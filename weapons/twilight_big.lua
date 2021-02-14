@@ -12,7 +12,7 @@ return {
 		model = "bomb",
 		name = "EMPboom",
 		paralyzer = 1,
-		paralyzetime = 25,
+		paralyzetime = 24,
 		range = 600,
 		reloadtime = 0.3,
 		soundhit = "EMGPULS1",

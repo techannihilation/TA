@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Barbecue",
 		noautofire = false,
-		
+
 		objectname = "tllgeo_armored",
 		onoffable = false,
 		radaremitheight = 25,
@@ -153,9 +153,8 @@ return {
 				weapontype = "Flame",
 				weaponvelocity = 300,
 				damage = {
-					default = 16,
+					default = 18,
 					flamethrowers = 6,
-					raider_resistant = 8,
 					subs = 5,
 				},
 			},

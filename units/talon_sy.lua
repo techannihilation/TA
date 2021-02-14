@@ -31,8 +31,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_sy",
 		radardistance = 50,
 		radaremitheight = 55,
@@ -55,7 +54,7 @@ return {
 			[3] = "talon_charon",
 			[4] = "talon_vasculitis",
 			[5] = "talon_mainstay",
-			[6] = "talon_bishop",	
+			[6] = "talon_bishop",
 		},
 		customparams = {
 			buildpic = "talon_sy.dds",

@@ -33,7 +33,6 @@ return {
 		mobilestandorders = 1,
 		name = "Spider Lab ARM",
 		noautofire = false,
-		
 		objectname = "spiderlab",
 		radardistance = 50,
 		radaremitheight = 33,
@@ -52,8 +51,8 @@ return {
 			[4] = "armhobo",
 			[5] = "armtarantula",
 			[6] = "armorbweaver",
-			[7] = "armhuntsman",	
-			[8] = "armscab",		
+			[7] = "armhuntsman",
+			[8] = "armscab",
 			[9] = "armweaver",
 		},
 		customparams = {

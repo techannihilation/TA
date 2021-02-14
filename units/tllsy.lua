@@ -25,7 +25,6 @@ return {
 		mobilestandorders = 1,
 		name = "Shipyard",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "TLLSY",
 		radaremitheight = 38,
@@ -41,9 +40,9 @@ return {
 		buildoptions = {
 			[1] = "tllcs",
 			[2] = "tllsr",
-			[3] = "tllplunger",
-			[4] = "tllotter",
-			[5] = "tllboat2",
+			[3] = "tllotter",
+			[4] = "tllboat2",
+			[5] = "tllplunger",
 			[6] = "tllviolator",
 			[7] = "tllambassador",
 		},

@@ -37,8 +37,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "PTR",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_ptr",
 		onoffable = false,
 		radaremitheight = 51,
