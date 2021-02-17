@@ -37,7 +37,6 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Scorpion",
 		noautofire = false,
-		
 		objectname = "talon_scorpion",
 		radaremitheight = 62,
 		seismicsigniture = 0,
@@ -146,7 +145,6 @@ return {
 				thickness = 5,
 				turret = true,
 				weapontype = "LightningCannon",
-				weaponvelocity = 1500,
 				customparams = {
 					light_mult = 1.4,
 					light_radius_mult = 0.9,

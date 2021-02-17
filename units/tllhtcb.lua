@@ -40,8 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Weak",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLHTCB",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

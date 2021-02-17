@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
 		noautofire = false,
-		
 		objectname = "talon_elab",
 		radardistance = 50,
 		radaremitheight = 40,

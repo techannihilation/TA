@@ -36,7 +36,6 @@ return {
 		mobilestandorders = 1,
 		name = "High Tech Construction Plant",
 		noautofire = false,
-		
 		objectname = "TLLHTCP",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -53,7 +52,7 @@ return {
 			[2] = "tlldilophosaurus",
 			[3] = "tllblind",
 			[4] = "heavyimpact",
-			[5] = "tllcrawler",
+			[5] = "tllluth",
 			[6] = "tllhtml",
 			[7] = "tllgrim",
 			[8] = "hyperion",

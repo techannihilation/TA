@@ -41,7 +41,6 @@ return {
 		movementclass = "KBOT2",
 		name = "ACK",
 		noautofire = false,
-		
 		objectname = "talon_ack",
 		radardistance = 50,
 		radaremitheight = 25,
@@ -77,8 +76,9 @@ return {
 			[15] = "talon_ptr",
 			[16] = "talon_mds",
 			[17] = "talon_psyker",
-			[18] = "talon_wolf",
-			[19] = "talon_shepherd",
+			[18] = "talon_herison",
+			[19] = "talon_wolf",
+			[20] = "talon_shepherd",
 		},
 		customparams = {
 			buildpic = "talon_ack.dds",

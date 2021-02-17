@@ -1,10 +1,11 @@
-3.74 > 3.75
-2021-02-15
+3.74 > 3.76
+2021-02-18
 
 Balance :
 - Tllroaster : Decrease speed 1.5 => 1.35. Decrease spray lighting damage 200=>170 / shot. Increase metalcost 1535 => 1635
 
 Improvment :
+ - Add T2 All-Terrain Scorpion Talon (luridae)
  - Vpulse TLL becomes Rockets and can hit Air (except for T2 and Tactical)
  - Add spray effet for Bahamut
  - Tllcrawler becomes TllLuth Turtle (Sea and Al-terrain)

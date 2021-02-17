@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-		
 		objectname = "talon_alab",
 		radaremitheight = 31,
 		seismicsignature = 0,
@@ -64,7 +63,8 @@ return {
 			[6] = "talon_mastiff",
 			[7] = "talon_crusader",
 			[8] = "talon_striker",
-			[9] = "talon_fdog",
+			[9] = "talon_luridae",
+			[10] = "talon_fdog",
 		},
 		customparams = {
 			buildpic = "talon_alab.dds",
