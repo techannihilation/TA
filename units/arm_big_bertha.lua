@@ -13,7 +13,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL UNDERWATER",
+		category = "ALL SURFACE",
 		corpse = "armbrtha_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range EMP Paralizer",
@@ -32,7 +32,6 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 33,
 		name = "T2 Paralizer",
-		
 		objectname = "arm_big_bertha",
 		radardistance = 0,
 		radaremitheight = 66,

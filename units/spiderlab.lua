@@ -47,10 +47,10 @@ return {
 		buildoptions = {
 			[1] = "armcspider",
 			[2] = "armtick",
+			[6] = "armorbweaver",
 			[3] = "armspider",
 			[4] = "armhobo",
 			[5] = "armtarantula",
-			[6] = "armorbweaver",
 			[7] = "armhuntsman",
 			[8] = "armscab",
 			[9] = "armweaver",

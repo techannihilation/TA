@@ -1,3 +1,10 @@
+3.76 > 3.77
+2021-02-18
+
+Fix :
+ - Arm_mech_lab : fix unit blocked in lab
+ - Talon Pod Cons T4, Emp Bertha Arm : can be targeted
+
 3.74 > 3.76
 2021-02-18
 

@@ -53,7 +53,6 @@ Standby()
 		sleep 1000;
 	}
 	sleep 50;
-	start-script Standby();
 }
 
 activatescr()
@@ -106,10 +105,7 @@ deactivatescr()
 	turn nc3 to x-axis <0.000000> speed <90.000000>;
 	turn nc4 to y-axis <0.000000> speed <90.000000>;
 	turn nc5 to x-axis <0.000000> speed <90.000000>;
-	dont-cache glow1;
-	dont-cache glow2;
-	dont-cache glow3;
-	dont-cache glow4;
+
 	move hc_z_mover to z-axis [0.000000] speed [14.000000];
 	move nc_z_mover to z-axis [0.000000] speed [5.000000];
 	wait-for-move hc_z_mover along z-axis;
@@ -126,7 +122,6 @@ deactivatescr()
 	wait-for-move column_z_displacer along z-axis;
 	sleep 100;
 	set ARMORED to 1;
-
 	
 	move head to y-axis [5.000000] speed [30.000000];
 	wait-for-move head along y-axis;
@@ -136,7 +131,6 @@ deactivatescr()
 	wait-for-move head along y-axis;
 	move head to y-axis [0000] speed [3.7500000];
 	wait-for-move head along y-axis;
-	
 	
 	move NE_block to x-axis [0.000000] speed [13.300000];
 	move NE_block to z-axis [0.000000] speed [5.600000];
@@ -245,34 +239,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-cache glow1;
-	dont-cache glow2;
-	dont-cache glow3;
-	dont-cache glow4;
-	dont-cache headglow;
-	dont-shade base;
-	dont-shade NE_block;
-	dont-shade glow1;
-	dont-shade SE_block;
-	dont-shade glow2;
-	dont-shade SW_block;
-	dont-shade glow3;
-	dont-shade NW_block;
-	dont-shade glow4;
-	dont-shade column_z_displacer;
-	dont-shade column;
-	dont-shade head;
-	dont-shade nc1;
-	dont-shade nc2;
-	dont-shade nc3;
-	dont-shade nc4;
-	dont-shade nc5;
-	dont-shade headglow;
-	dont-shade hc1;
-	dont-shade hc2;
-	dont-shade hc3;
-	dont-shade hc4;
-	dont-shade hc5;
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
 	Static_Var_1 = 1;
@@ -361,42 +327,31 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode NE_block type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode NW_block type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode head type NOHEATCLOUD | BITMAPONLY | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode NE_block type NOHEATCLOUD;
+		explode SE_block type NOHEATCLOUD;
+		explode SW_block type NOHEATCLOUD;
+		explode NW_block type NOHEATCLOUD;
+		explode head type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode NE_block type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode NW_block type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode head type NOHEATCLOUD | BITMAPONLY | BITMAP3;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode NE_block type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
-		explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode NW_block type NOHEATCLOUD | SHATTER | BITMAP2;
-		explode head type NOHEATCLOUD | SHATTER | BITMAP3;
+		explode base type NOHEATCLOUD;
+		explode NE_block type NOHEATCLOUD | SHATTER | FALL;
+		explode SE_block type NOHEATCLOUD | SHATTER | FALL;
+		explode SW_block type NOHEATCLOUD | BITMAPONLY | FALL;
+		explode NW_block type NOHEATCLOUD | BITMAPONLY | FALL;
+		explode head type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode NE_block type NOHEATCLOUD | SHATTER | BITMAP2;
-	explode SE_block type NOHEATCLOUD | SHATTER | BITMAP4;
-	explode SW_block type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode NW_block type NOHEATCLOUD | SHATTER | BITMAP2;
-	explode head type NOHEATCLOUD | SHATTER | BITMAP3;
+	explode base type NOHEATCLOUD;
+	explode NE_block type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode SE_block type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode SW_block type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode NW_block type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode head type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

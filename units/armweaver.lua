@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 1",
 		collisionvolumescales = "57 54 57",
 		collisionvolumetype = "CylY",
@@ -38,7 +38,6 @@ return {
 		movementclass = "TKBOT3",
 		name = "Weaver",
 		noautofire = false,
-		
 		objectname = "armweaver",
 		radardistance = 0,
 		radaremitheight = 34,

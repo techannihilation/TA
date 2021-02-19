@@ -31,8 +31,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
 		name = "Hobo",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "armhobo",
 		radardistance = 0,
 		radaremitheight = 25,

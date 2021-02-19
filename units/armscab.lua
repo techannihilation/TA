@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 3 0",
 		collisionvolumescales = "43 23 43",
 		collisionvolumetype = "Box",
@@ -38,7 +38,6 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
 		name = "Scarab",
-		
 		objectname = "ARMSCAB",
 		radardistance = 50,
 		radaremitheight = 22,

@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE  TINY SURFACE UNDERWATER",
+		category = "ALL MOBILE TINY SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Jammer Spider",
@@ -34,7 +34,6 @@ return {
 		movementclass = "TKBOT3",
 		name = "Orbweaver",
 		noautofire = false,
-		
 		objectname = "armorbweaver",
 		onoffable = true,
 		radardistance = 0,

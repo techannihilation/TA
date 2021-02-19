@@ -38,8 +38,7 @@ return {
 		metalstorage = 400,
 		mobilestandorders = 1,
 		name = "Prototype Lab",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "core_hexapod_lab",
 		radardistance = 50,
 		radaremitheight = 68,

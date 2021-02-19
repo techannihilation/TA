@@ -39,8 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMACK",
 		radaremitheight = 26,
 		seismicsignature = 0,

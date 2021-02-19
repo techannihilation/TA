@@ -37,8 +37,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "T1 Intimidator",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "core_immolator",
 		radardistance = 0,
 		radaremitheight = 30,

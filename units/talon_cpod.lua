@@ -14,7 +14,7 @@ return {
 		canpatrol = true,
 		canreclaim = true,
 		canstop = 1,
-		category = "ALL MOBILE",
+		category = "ALL MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 4",
@@ -38,7 +38,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Shielded Construction Kbot",
 		noautofire = false,
-		
 		objectname = "talon_cpod",
 		radaremitheight = 50,
 		resurrect = 1,

@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
+		category = "ALL MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "75 45 75",
 		collisionvolumetest = 1,
@@ -41,7 +41,6 @@ return {
 		movementclass = "HTKBOT4",
 		name = "All-Terrain Construction Kbot",
 		noautofire = false,
-		
 		objectname = "armspid",
 		radaremitheight = 50,
 		seismicsignature = 0,
@@ -72,7 +71,7 @@ return {
 			[12] = "armgate1",
 			[13] = "armamd2",
 			[14] = "armfsilo",
-			[15] = "armvulc1",			
+			[15] = "armvulc1",
 		},
 		customparams = {
 			buildpic = "armspid.dds",

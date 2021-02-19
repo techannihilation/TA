@@ -32,8 +32,7 @@ return {
 		maxslope = 12,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T2 Big Bertha",
-		
+		name = "T2 Big Bertha",		
 		objectname = "ARMBRTHA",
 		radaremitheight = 81,
 		seismicsignature = 0,

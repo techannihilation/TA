@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Stumpy",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMSTUMP",
 		radaremitheight = 25,
 		seismicsignature = 0,

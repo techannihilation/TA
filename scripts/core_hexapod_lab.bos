@@ -220,10 +220,6 @@ CloseYard()
 
 go()
 {
-	cache light1;
-	cache light2;
-	cache light3;
-	cache light4;
 	hide light1;
 	hide light2;
 	hide light3;
@@ -232,10 +228,6 @@ go()
 	show glow2;
 	show glow3;
 	show glow4;
-	dont-cache glow1;
-	dont-cache glow2;
-	dont-cache glow3;
-	dont-cache glow4;
 	call-script activatescr();
 	call-script OpenYard();
 	set 5 to 1;
@@ -248,10 +240,6 @@ stop()
 	set 5 to 0;
 	call-script CloseYard();
 	call-script deactivatescr();
-	cache glow1;
-	cache glow2;
-	cache glow3;
-	cache glow4;
 	hide glow1;
 	hide glow2;
 	hide glow3;
@@ -260,10 +248,6 @@ stop()
 	show light2;
 	show light3;
 	show light4;
-	dont-cache light1;
-	dont-cache light2;
-	dont-cache light3;
-	dont-cache light4;
 	return 0;
 }
 // end of function stop
@@ -303,7 +287,6 @@ RequestState(Var0)
 	StaticVar2 = 0;
 	return 0;
 }
-// end of function RequestState
 
 Create()
 {
@@ -312,43 +295,14 @@ Create()
 	hide nano2;
 	hide nano3;
 	hide nano4;
-	dont-shade glow1;
-	dont-shade glow2;
-	dont-shade glow3;
-	dont-shade glow4;
 	hide glow1;
 	hide glow2;
 	hide glow3;
 	hide glow4;
-	dont-shade pylon1;
-	dont-shade pylon2;
-	dont-shade pylon3;
-	dont-shade pylon4;
-	dont-shade loarm1;
-	dont-shade loarm2;
-	dont-shade loarm3;
-	dont-shade loarm4;
-	dont-shade midarm1;
-	dont-shade midarm2;
-	dont-shade midarm3;
-	dont-shade midarm4;
-	dont-shade higharm1;
-	dont-shade higharm2;
-	dont-shade higharm3;
-	dont-shade higharm4;
-	dont-shade light1;
-	dont-shade light2;
-	dont-shade light3;
-	dont-shade light4;
-	dont-cache light1;
-	dont-cache light2;
-	dont-cache light3;
-	dont-cache light4;
 	call-script InitState();
 	start-script SmokeUnit();
 	return 0;
 }
-// end of function Create
 
 QueryNanoPiece()
 {
@@ -384,7 +338,6 @@ Activate()
 	start-script RequestState(0);
 	return 0;
 }
-// end of function Activate
 
 Deactivate()
 {
@@ -394,7 +347,6 @@ Deactivate()
 	start-script RequestState(1);
 	return 0;
 }
-// end of function Deactivate
 
 QueryBuildInfo()
 {
@@ -402,38 +354,43 @@ QueryBuildInfo()
 	Var0 = 5;
 	return 0;
 }
-// end of function QueryBuildInfo
 
-SweetSpot()
+SweetSpot(piecenum)
 {
-	var Var0;
-	Var0 = 0;
-	return 0;
+	piecenum = base;
 }
-// end of function SweetSpot
 
-Killed()
+Killed(severity, corpsetype)
 {
-	var Var0;
-	var Var1;
-	if ((Var0 <= 25))
+	if( severity <= 25 )
 	{
-	  Var1 = 1;
-	  explode body type NOHEATCLOUD | (32 | 256);
-	  return 0;
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode buildinga type NOHEATCLOUD;
+		explode buildingb type NOHEATCLOUD;
+		explode loarm2 type NOHEATCLOUD;
+		explode loarm3 type NOHEATCLOUD;
+		explode higharm4 type NOHEATCLOUD;
+		return (corpsetype);
 	}
-	if ((Var0 <= 50))
+	if( severity <= 50 )
 	{
-	  Var1 = 2;
-	  explode body type NOHEATCLOUD | (32 | 256);
-	  return 0;
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode buildinga type NOHEATCLOUD | FALL;
+		explode buildingb type NOHEATCLOUD | FALL;
+		explode loarm2 type NOHEATCLOUD | FALL;
+		explode loarm3 type NOHEATCLOUD | FALL;
+		explode higharm4 type NOHEATCLOUD | FALL;
+		return (corpsetype);
 	}
-	if ((Var0 <= 99))
-	{
-	  Var1 = 3;
-	  explode body type NOHEATCLOUD | (32 | 256);
-	  return 0;
-	}
-	return 0;
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode buildinga type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode buildingb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode loarm2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode loarm3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode higharm4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
 }
-// end of function Killed
+
