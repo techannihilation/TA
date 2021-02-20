@@ -33,9 +33,8 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Heavy Experimental Armored Fusion Reactor",
+		name = "Heavy Experimental Fusion Reactor",
 		noautofire = false,
-		
 		objectname = "talon_efus",
 		onoffable = false,
 		radaremitheight = 128,

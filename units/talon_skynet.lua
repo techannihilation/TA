@@ -31,14 +31,13 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 20,
-		mass = 350000,
-		maxdamage = 375000,
+		mass = 116023,
+		maxdamage = 365000,
 		maxslope = 10,
 		maxvelocity = 1.1,
 		maxwaterdepth = 0,
 		metalstorage = 10000,
 		name = "Skynet",
-		
 		objectname = "talon_skynet",
 		radardistance = 0,
 		radaremitheight = 20,
@@ -52,9 +51,6 @@ return {
 		customparams = {
 			buildpic = "talon_skynet.dds",
 			faction = "TALON",
-		},
-		featuredefs = {
-
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -130,8 +126,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 2000,
-					default = 20000,
+					commanders = 1600,
+					default = 16000,
 					subs = 5,
 				},
 			},
@@ -168,8 +164,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1200,
-					default = 12000,
+					commanders = 1000,
+					default = 10000,
 					subs = 5,
 				},
 			},

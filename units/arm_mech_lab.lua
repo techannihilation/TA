@@ -52,7 +52,7 @@ return {
 		turnrate = 0,
 		unitname = "arm_mech_lab",
 		workertime = 1600,
-		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo",
+		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo yooooooooooooooooy yyccccccccccccccyy yyccccccccccccccyy yyccccccccccccccyy yoccccccccccccccoy ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo",
 		buildoptions = {
 			[1] = "armspid",
 			[2] = "armraptor",

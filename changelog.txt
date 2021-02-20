@@ -1,6 +1,9 @@
 3.76 > 3.77
 2021-02-18
 
+Balance :
+ - Talon independence and skynet : decrease damage for central weapon by 20%
+
 Fix :
  - Arm_mech_lab : fix unit blocked in lab
  - Talon Pod Cons T4, Emp Bertha Arm : can be targeted

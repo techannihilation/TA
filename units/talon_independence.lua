@@ -38,7 +38,6 @@ return {
 		maxwaterdepth = 0,
 		metaluse = 0,
 		name = "Independance",
-		
 		objectname = "talon_independence",
 		radardistance = 2000,
 		radaremitheight = 50,
@@ -52,9 +51,6 @@ return {
 		customparams = {
 			buildpic = "talon_independence.dds",
 			faction = "TALON",
-		},
-		featuredefs = {
-
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -168,8 +164,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 2400,
-					default = 24000,
+					commanders = 2000,
+					default = 20000,
 					subs = 5,
 				},
 			},
