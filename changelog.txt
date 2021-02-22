@@ -1,8 +1,12 @@
-3.76 > 3.77
-2021-02-18
+3.76 > 3.78
+2021-02-23
 
 Balance :
  - Talon independence and skynet : decrease damage for central weapon by 20%
+
+ Improvment :
+  - Rework All TLL Lighting Commander effect and sound
+  - Adv solar Tll : Rework Model
 
 Fix :
  - Arm_mech_lab : fix unit blocked in lab
