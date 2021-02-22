@@ -9,7 +9,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL MEDIUM SURFACE UNDERWATER",
+		category = "ALL SURFACE UNDERWATER",
 		corpse = "dead",
 		description = "Floating Plasma Battery",
 		energyuse = 0,
@@ -28,7 +28,6 @@ return {
 		minwaterdepth = 5,
 		name = "KrakeN",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "tllkrak",
 		onoffable = true,

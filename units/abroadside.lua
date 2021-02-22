@@ -39,9 +39,8 @@ return {
 		maxvelocity = 0.9,
 		maxwaterdepth = 255,
 		metalstorage = 1000,
-		name = "BROADSIDE",
-		
-		objectname = "ABroadside",
+		name = "Broadside",
+		objectname = "Abroadside",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "MEGA_BLAST",
@@ -198,7 +197,7 @@ return {
 				badtargetcategory = "SMALL TINY MEDIUM",
 				def = "750MW",
 				maindir = "0 0 -1",
-				maxangledif = 270,
+				maxangledif = 250,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {

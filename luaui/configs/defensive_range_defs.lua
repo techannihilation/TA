@@ -64,7 +64,6 @@ modConfig["TA"]["unitList"] =
 								--Core
 									--Ground Weapons--
 								cormaw = { weapons = { 1 } },
-								--cmortor = { weapons = { 1 } },
 								--corexp = { weapons = { 1 } },
 								cormaw = { weapons = { 1 } },
 								corllt = { weapons = { 1 } },
@@ -137,7 +136,6 @@ modConfig["TA"]["unitList"] =
 								tllfllt = { weapons = { 1 } },
 								tllgeo_armored = { weapons = { 1 } },
 								tlllrpt1 = { weapons = { 1 } },
-								--tllmortor = { weapons = { 1 } },
 								tllvhlt = { weapons = { 1 } },
 								tllplasma = { weapons = { 1 } },
 								tllpulaser = { weapons = { 1 } },
@@ -157,6 +155,26 @@ modConfig["TA"]["unitList"] =
 								tllhydre = { weapons = { 1 } },
 								tllhydre1 = { weapons = { 1 } },
 								tllhydre2 = { weapons = { 1 } },
+
+								--Anti-Air--
+								tlllmt = { weapons = { 2 } },
+								tlllmt1 = { weapons = { 2 } },
+								tlllmtns = { weapons = { 2 } },
+								tllnssam = { weapons = { 2 } },
+								tllflak = { weapons = { 2 } },
+								tllfflak = { weapons = { 2 } },
+								tllsam = { weapons = { 2 } },
+								tlldb = { weapons = { 2 } },
+								tllhmt = { weapons = { 2 } },
+								tlltetanos = { weapons = { 2 } },
+
+								--Anti-Nuke--
+								tllantinuke = { weapons = { 3 } },
+								tllantinuke1 = { weapons = { 3 } },
+								tllgazelle = { weapons = { 3 } },
+
+									--TALON
+									--Ground Weapons--
 								talon_llt = { weapons = { 1 } },
 								talon_llt1 = { weapons = { 1 } },
 								talon_kevlar = { weapons = { 1 } },
@@ -176,18 +194,7 @@ modConfig["TA"]["unitList"] =
 								talon_hlt = { weapons = { 1 } },
 								talon_vhlt = { weapons = { 1 } },
 								talon_juno = { weapons = { 1 } },
-
-									--Anti-Air--
-								tlllmt = { weapons = { 2 } },
-								tlllmt1 = { weapons = { 2 } },
-								tlllmtns = { weapons = { 2 } },
-								tllnssam = { weapons = { 2 } },
-								tllflak = { weapons = { 2 } },
-								tllfflak = { weapons = { 2 } },
-								tllsam = { weapons = { 2 } },
-								tlldb = { weapons = { 2 } },
-								tllhmt = { weapons = { 2 } },
-								tlltetanos = { weapons = { 2 } },
+									-- AntiAir
 								talon_popcorn = { weapons = { 2 } },
 								talon_popcorn1 = { weapons = { 2 } },
 								talon_rl = { weapons = { 2 } },
@@ -196,10 +203,6 @@ modConfig["TA"]["unitList"] =
 								talon_ptr = { weapons = { 2 } },
 								talon_kernel = { weapons = { 2 } },
 
-									--Anti-Nuke--
-								tllantinuke = { weapons = { 3 } },
-								tllantinuke1 = { weapons = { 3 } },
-								tllgazelle = { weapons = { 3 } },
 								talon_damascus = { weapons = { 3 } },
 								talon_damascus1 = { weapons = { 3 } },
 								talon_requiem = { weapons = { 3 } },

@@ -38,8 +38,7 @@ return {
 		metalstorage = 800,
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORGANT",
 		radardistance = 50,
 		radaremitheight = 41,

@@ -8,7 +8,7 @@ piece  groundplane, base, turret1, barrel1A, flare1A, barrel1B, flare1B, barrel1
        turret3, barrel3A, flare3A, barrel3B, flare3B, barrel3C, flare3C, turret4,
        sleeve4, flakbarrel4a, flakbarrel4b, flakflare4a, flakflare4b, 
        turret5, sleeve5, flakbarrel5a, flakbarrel5b, flakflare5a, flakflare5b, 
-       turret6, barrel6a, flare6a, barrel6b, flare6b, barrel6c, flare6c, turbase;
+       turret6, barrel6a, flare6a, barrel6b, flare6b, barrel6c, flare6c;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9;

@@ -818,6 +818,11 @@ local morphDefs = {
 			xp = 0.15,
 		},
 	},
+	troman = {
+		into = 'armgor',
+		time = 30,
+		xp = 0.05,
+	},
 	armorco = {
 		into = 'exoarm',
 		time = 120,
@@ -863,11 +868,6 @@ local morphDefs = {
 	talon_geo_mini = {
     into = 'talon_geo',
 		time = 30,
-	},
-	corprot = {
-    into = 'troman',
-		time = 60,
-		xp = 0.30,
 	},
 	coramph = {
     into = 'shiva',

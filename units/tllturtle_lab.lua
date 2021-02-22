@@ -53,8 +53,8 @@ return {
 			[5] = "tllsnakeneck",
 			[6] = "tllleatherback",
 			[7] = "tllloggerhead",
-			[8] = "tllmatamata",
-			[9] = "tllturtle",
+			[8] = "tllturtle",
+			[9] = "tllmatamata",
 			[10] = "tllom",
 		},
 		customparams = {

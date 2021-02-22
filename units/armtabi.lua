@@ -28,8 +28,7 @@ return {
 		maxdamage = 125000,
 		maxslope = 16,
 		maxwaterdepth = 0,
-		name = "Tabitha",
-		
+		name = "Tabitha",		
 		objectname = "ARMTABI",
 		radardistance = 0,
 		radaremitheight = 260,

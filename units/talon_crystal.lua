@@ -38,7 +38,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Crystal",
 		noautofire = false,
-		
 		objectname = "talon_crystal",
 		radardistance = 0,
 		radaremitheight = 30,

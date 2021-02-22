@@ -13,6 +13,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	spin circle around y-axis speed <250.000000> accelerate <25.000000>;
+	spin circle around z-axis speed <150.000000> accelerate <25.000000>;
+	spin circle around x-axis speed <15.000000> accelerate <25.000000>;
+	spin aimpoint around x-axis speed <250.000000> accelerate <25.000000>;
+	spin aimpoint around z-axis speed <250.000000> accelerate <25.000000>;
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -43,11 +48,6 @@ Create()
 {
 	Restore_Delay = 10000;
 	start-script SmokeUnit();
-	spin circle around y-axis speed <250.000000> accelerate <25.000000>;
-	spin circle around z-axis speed <150.000000> accelerate <25.000000>;
-	spin circle around x-axis speed <15.000000> accelerate <25.000000>;
-	spin aimpoint around x-axis speed <250.000000> accelerate <25.000000>;
-	spin aimpoint around z-axis speed <250.000000> accelerate <25.000000>;
 }
 
 AimPrimary(heading, pitch)

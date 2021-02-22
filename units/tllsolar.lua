@@ -12,6 +12,9 @@ return {
 		buildpic = "tllsolar.dds",
 		buildtime = 2250,
 		category = "ALL SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "50 40 50",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		damagemodifier = 0.25,
 		description = "Produces Energy",
@@ -29,7 +32,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		
 		objectname = "TLLSOLAR",
 		onoffable = true,
 		radardistance = 0,

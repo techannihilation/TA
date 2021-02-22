@@ -16,8 +16,8 @@ return {
 		description = "Produces Energy",
 		energymake = 80,
 		explodeas = "SMALL_BUILDINGEX",
-		footprintx = 4,
-		footprintz = 4,
+		footprintx = 5,
+		footprintz = 5,
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
@@ -28,7 +28,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Generator",
 		noautofire = false,
-		
 		objectname = "Tlladvsolar",
 		onoffable = true,
 		radardistance = 0,
@@ -36,7 +35,7 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 210,
 		unitname = "tlladvsolar",
-		yardmap = "oooo oooo oooo oooo",
+		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "tlladvsolar.dds",
 			faction = "TLL",
