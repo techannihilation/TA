@@ -3,7 +3,7 @@ return {
 		acceleration = 0.06,
 		brakerate = 0.20,
 		buildcostenergy = 1024644,
-		buildcostmetal = 901925,
+		buildcostmetal = 90192,
 		builder = false,
 		buildpic = "coradamantoise.dds",
 		buildtime = 1200000,
@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 35,
 		maneuverleashlength = 640,
-		mass = 901925,
+		mass = 90192,
 		maxdamage = 435150,
 		maxslope = 10,
 		maxvelocity = 0.75,
@@ -120,7 +120,7 @@ return {
 			},
 		},
 		weapondefs = {
-			multicanon = {
+			pepper_canon = {
 				areaofeffect = 220,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
@@ -138,7 +138,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				projectiles = 30,
-				range = 1175,
+				range = 1400,
 				reloadtime = 5,
 				rgbcolor = "0.71 0.39 0",
 				separation = 0.45,
@@ -243,7 +243,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "MULTICANON",
+				def = "PEPER_CANON",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
