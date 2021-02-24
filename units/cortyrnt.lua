@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Tyrant",
 		noautofire = false,
-		
+
 		objectname = "CORTYRNT",
 		radardistance = 2000,
 		radaremitheight = 84,
@@ -188,7 +188,7 @@ return {
 			rocket_krog = {
 				areaofeffect = 80,
 				avoidfeature = false,
-				cegtag = "CORRAVENTRAIL",
+				cegtag = "corstartbursttrail",
 				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -199,7 +199,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "exphvyrock",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

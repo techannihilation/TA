@@ -40,7 +40,6 @@ return {
 		movementclass = "HKBOT7",
 		name = "Exo",
 		noautofire = false,
-		
 		objectname = "exoarm",
 		radaremitheight = 150,
 		seismicsignature = 0,
@@ -118,7 +117,7 @@ return {
 			bantha_rocket1 = {
 				areaofeffect = 196,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "armstartbursttrail",
 				craterareaofeffect = 294,
 				craterboost = 0,
 				cratermult = 0,
@@ -147,9 +146,9 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 150,
-				weapontimer = 1.25,
+				weapontimer = 2,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 2100,
+				weaponvelocity = 4000,
 				customparams = {
 					light_color = "1 0.6 0.15",
 					light_mult = 3.3,

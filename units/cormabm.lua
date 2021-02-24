@@ -145,7 +145,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 150,
-				model = "fmdmisl",
+				model = "antinukemsl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

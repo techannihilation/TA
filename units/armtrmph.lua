@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Triumph",
 		noautofire = false,
-		
+
 		objectname = "ARMTRMPH",
 		radardistance = 2000,
 		radaremitheight = 79,
@@ -178,7 +178,7 @@ return {
 			rocket_mcv = {
 				areaofeffect = 64,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "armstartbursttrail",
 				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,

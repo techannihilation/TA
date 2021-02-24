@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "November",
 		noautofire = false,
-		
+
 		objectname = "talon_november",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -114,7 +114,7 @@ return {
 			talon_rocket = {
 				areaofeffect = 100,
 				avoidfeature = false,
-				cegtag = "CORRAVENTRAIL",
+				cegtag = "talonraventrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

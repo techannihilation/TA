@@ -35,8 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Experimental Vehicle/Gravity Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_evp",
 		radardistance = 0,
 		radaremitheight = 25,

@@ -41,7 +41,7 @@ return {
 		movementclass = "HTANK8",
 		name = "Dark Kronos",
 		noautofire = false,
-		
+
 		objectname = "armmcv1",
 		onoffable = true,
 		radaremitheight = 38,
@@ -163,7 +163,7 @@ return {
 			rocket_mcv = {
 				areaofeffect = 64,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "armstartbursttrail",
 				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -173,7 +173,7 @@ return {
 				flighttime = 5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "missile",
+				model = "exphvyrock",
 				name = "Heavy Guided Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

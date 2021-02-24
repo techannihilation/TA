@@ -239,8 +239,8 @@ armpw.dds
 armrad1.dds
 armrad.dds
 armraptor.dds
-armraven1.dds
-armraven.dds
+corraven1.dds
+corraven.dds
 armraz1.dds
 armraz.dds
 armrech18.dds

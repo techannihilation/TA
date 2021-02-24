@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Defensor",
-		
+
 		objectname = "CORFMD2",
 		radardistance = 50,
 		radaremitheight = 53,
@@ -135,7 +135,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 4,
 				metalpershot = 6780,
-				model = "fmdmisl",
+				model = "antinukemsl1",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

@@ -37,7 +37,6 @@ return {
 		movementclass = "VKBOT5",
 		name = "Talos",
 		noautofire = false,
-		
 		objectname = "talon_talos",
 		pushresistant = true,
 		radardistance = 0,
@@ -230,7 +229,7 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 230,
-				weapontimer = 2,
+				weapontimer = 1,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				damage = {

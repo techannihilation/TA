@@ -37,7 +37,6 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Thanos",
 		noautofire = false,
-		
 		objectname = "talon_thanos",
 		radaremitheight = 50,
 		selfdestructas = "KROG_BLAST",
@@ -227,7 +226,7 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 75,
-				weapontimer = 2,
+				weapontimer = 1,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 650,
 				damage = {

@@ -1,3 +1,4 @@
+-- armstartbursttrail
 -- fireball
 -- nucklearnano
 -- tllraventrail
@@ -18,11 +19,138 @@
 -- popupshine
 -- corraventrail
 -- mavwick
--- armraventrail
 -- vulcanfx
 -- peeweeshine
 
 return {
+  ["armstartbursttrail"] = {
+    usedefaultexplosions = false,
+     engine = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[0.2 0.2 1.0 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[none]],
+        length             = -39,
+        sidetexture        = [[muzzleside]],
+        size               = 4.3,
+        sizegrowth         = 0.9,
+        ttl                = 1,
+      },
+    },
+    smoke = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        airdrag            = 0.9,
+        colormap           = [[0 0.2 1.0 0.01 0.1 0.1 0.1 0.2 0.0 0.0 0.0 0.01]],
+        directional        = false,
+        emitrot            = 0,
+        emitrotspread      = 20,
+        emitvector         = [[dir]],
+        gravity            = [[0.05 r-0.1, 0.05 r-0.1, 0.05 r-0.1]],
+        numparticles       = 5,
+        particlelife       = 15,
+        particlelifespread = 0,
+        particlesize       = 2,
+        particlesizespread = 2,
+        particlespeed      = 3,
+        particlespeedspread = -2,
+        pos                = [[-10 r20,-10 r20,-10 r20]],
+        sizegrowth         = 0.15,
+        sizemod            = 1.0,
+        texture            = [[smoke]],
+      },
+    },
+    spikes = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 2,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 1,
+        alphadecay         = 0.35,
+        color              = [[0.2, 0.4, 1.0]],
+        dir                = [[-6 r12,-6 r12,-6 r12]],
+        length             = 1,
+        width              = 14,
+      },
+    },
+  },
+  ["corstartbursttrail"] = {
+    usedefaultexplosions = false,
+     engine = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[0.8 0.2 0.2 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[none]],
+        length             = -39,
+        sidetexture        = [[muzzleside]],
+        size               = 4.3,
+        sizegrowth         = 0.9,
+        ttl                = 1,
+      },
+    },
+    smoke = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        airdrag            = 0.9,
+        colormap           = [[1.0 0.2 0.0 0.01 0.1 0.1 0.1 0.2 0.0 0.0 0.0 0.01]],
+        directional        = false,
+        emitrot            = 0,
+        emitrotspread      = 20,
+        emitvector         = [[dir]],
+        gravity            = [[0.05 r-0.1, 0.05 r-0.1, 0.05 r-0.1]],
+        numparticles       = 5,
+        particlelife       = 15,
+        particlelifespread = 0,
+        particlesize       = 2,
+        particlesizespread = 2,
+        particlespeed      = 3,
+        particlespeedspread = -2,
+        pos                = [[-10 r20,-10 r20,-10 r20]],
+        sizegrowth         = 0.15,
+        sizemod            = 1.0,
+        texture            = [[smoke]],
+      },
+    },
+    spikes = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 2,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 1,
+        alphadecay         = 0.35,
+        color              = [[1.0, 0.4, 0.2]],
+        dir                = [[-6 r12,-6 r12,-6 r12]],
+        length             = 1,
+        width              = 14,
+      },
+    },
+  },
   ["fireball"] = {
     usedefaultexplosions = false,
     exhale = {
@@ -246,7 +374,7 @@ return {
         ttl                = 1,
       },
     },
-   
+
     spikes = {
       air                = true,
       class              = [[explspike]],
@@ -1182,7 +1310,7 @@ return {
     },
   },
 
-  ["armraventrail"] = {
+  ["corraventrail"] = {
     usedefaultexplosions = false,
    engine = {
       air                = true,
@@ -1474,4 +1602,3 @@ return {
   },
 
 }
-

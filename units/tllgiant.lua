@@ -142,7 +142,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 250,
-				model = "amdrocket",
+				model = "antinukemsl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

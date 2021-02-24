@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Merl",
 		noautofire = false,
-		
+
 		objectname = "ARMMERL",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -130,7 +130,7 @@ return {
 			armtruck_rocket = {
 				areaofeffect = 90,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "armstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

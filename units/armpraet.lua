@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Praetorian",
 		noautofire = false,
-		
+
 		objectname = "ARMPRAET",
 		radardistance = 0,
 		radaremitheight = 100,
@@ -134,7 +134,7 @@ return {
 			praetorian_rocket = {
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "armstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -143,7 +143,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "exphvyrock",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

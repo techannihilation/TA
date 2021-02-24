@@ -10,7 +10,7 @@
 -- What happens:
 -- unitdefs_post.lua calls the _Post functions for unitDefs and any weaponDefs that are contained in the unitdef files
 -- unitdefs_post.lua writes the corresponding unitDefs to customparams (if wanted)
--- weapondefs_post.lua fetches any weapondefs from the unitdefs, 
+-- weapondefs_post.lua fetches any weapondefs from the unitdefs,
 -- weapondefs_post.lua fetches the standlaone weapondefs, calls the _post functions for them, writes them to customparams (if wanted)
 -- strictly speaking, alldefs.lua is a misnomer since this file does not handle armordefs, featuredefs or movedefs
 
@@ -81,7 +81,7 @@ function UnitDef_Post(name, uDef)
 			uDef.mass = math.max(uDef.maxdamage / 6.0, uDef.buildcostmetal)
 		end
 		--Fix unit movement
-		if (uDef.maxvelocity) then 
+		if (uDef.maxvelocity) then
 			uDef.turninplacespeedlimit = (uDef.maxvelocity*0.66) or 0
 			uDef.turninplaceanglelimit = 140
 		end
@@ -105,7 +105,7 @@ function UnitDef_Post(name, uDef)
 				--Spring.Echo('turninplacekbot:',uDef.name)
 				uDef.turninplace=1
 				uDef.turninplaceanglelimit=60
-			elseif (uDef.maxvelocity) then 
+			elseif (uDef.maxvelocity) then
 				uDef.turninplaceanglelimit = 140
 			end
 		end
@@ -158,7 +158,7 @@ function WeaponDef_Post(wname, wd , name)
 	if FixWeaponStats == true then
 		local lower = string.lower
 		--Use this Area for WeaponDef changes
-	
+
 		--Bake deferred rendering custom params
 		--Spring.Echo(" wname, wd ", wname, WeaponDefs)
 		for i,v in pairs(wd) do
@@ -240,19 +240,19 @@ function ModOptions_Post(UnitDefs, WeaponDefs)
 
 	-- transporting enemy coms
 		if (modOptions.mo_transportenemy == "notcoms") then
-			for name,ud in pairs(UnitDefs) do  
+			for name,ud in pairs(UnitDefs) do
 				if Commanders[ud.unitname] then
 					ud.transportbyenemy = false
 				end
 			end
 		elseif (modOptions.mo_transportenemy == "none") then
-			for name, ud in pairs(UnitDefs) do  
+			for name, ud in pairs(UnitDefs) do
 				ud.transportbyenemy = false
 			end
 		end
-		
+
 		if (modOptions.mo_storageowner == "com") then
-			for name, ud in pairs(UnitDefs) do  
+			for name, ud in pairs(UnitDefs) do
 				if (name == "armcom" or name == "corcom" or name =="tllcom" or name =="talon_com") then
 					ud.energyStorage = modOptions.startenergy or 1000
 					ud.metalStorage = modOptions.startmetal or 1000

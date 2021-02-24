@@ -124,7 +124,7 @@ return {
 			armmh_weapon = {
 				areaofeffect = 64,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "arm_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

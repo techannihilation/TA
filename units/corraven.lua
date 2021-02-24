@@ -1,11 +1,11 @@
 return {
-	armraven = {
+	corraven = {
 		acceleration = 0.108,
 		brakerate = 0.56,
 		buildcostenergy = 82114,
 		buildcostmetal = 4856,
 		builder = false,
-		buildpic = "armraven.dds",
+		buildpic = "corraven.dds",
 		buildtime = 125000,
 		canattack = true,
 		canguard = true,
@@ -36,8 +36,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Catapult",
 		noautofire = false,
-		
-		objectname = "ARMRAVEN",
+		objectname = "CORRAVEN",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -48,10 +47,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.924,
 		turnrate = 400,
-		unitname = "armraven",
+		unitname = "corraven",
 		upright = true,
 		customparams = {
-			buildpic = "armraven.dds",
+			buildpic = "corraven.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3637,
-				object = "ARMRAVEN_DEAD",
+				object = "CORRAVEN_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

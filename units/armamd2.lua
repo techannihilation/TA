@@ -35,7 +35,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advocat",
-		
 		objectname = "ARMAMD2",
 		radardistance = 50,
 		radaremitheight = 63,
@@ -135,7 +134,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 4,
 				metalpershot = 6780,
-				model = "amdrocket",
+				model = "antinukemsl1",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

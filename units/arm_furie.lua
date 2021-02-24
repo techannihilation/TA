@@ -38,7 +38,6 @@ return {
 		movementclass = "HKBOT5",
 		name = "Arm Furie",
 		noautofire = false,
-
 		objectname = "ARM_FURIE",
 		radaremitheight = 85,
 		selfdestructas = "KROG_BLAST",

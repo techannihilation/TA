@@ -60,8 +60,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-5.82859039307 -5.26144641113 24.3969650269",
-				collisionvolumescales = "96.1643829346 64.7911071777 125.082168579",
+				collisionvolumeoffsets = "-5 -5 24",
+				collisionvolumescales = "96 64 125",
 				collisionvolumetype = "Box",
 				damage = 53312,
 				description = "Orcone Wreckage",
@@ -197,7 +197,7 @@ return {
 			orco_rocket = {
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "armstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -206,7 +206,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "exphvyrock",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -228,7 +228,7 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 230,
-				weapontimer = 2,
+				weapontimer = 1.25,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				customparams = {

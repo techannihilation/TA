@@ -41,7 +41,6 @@ return {
 		movementclass = "HTKBOT7",
 		name = "Fatshrew Mech",
 		noautofire = false,
-		
 		objectname = "fatshrew",
 		onoffable = true,
 		radardistance = 0,
@@ -211,7 +210,7 @@ return {
 			rocket = {
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "CORRAVENTRAIL",
+				cegtag = "corstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -220,7 +219,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "exphvyrock1",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -237,10 +236,11 @@ return {
 				texture2 = "null",
 				texture3 = "null",
 				texture4 = "null",
-				tolerance = 4000,
+				tolerance = 9000,
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 230,
+				weapontimer = 1.25,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				customparams = {

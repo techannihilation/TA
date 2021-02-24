@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Cyclone",
 		noautofire = false,
-		
+
 		objectname = "armcyclone",
 		script = "armcyclone.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",
@@ -105,7 +105,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.133,
 				interceptedbyshieldtype = 16,
-				model = "exphvyrock1",
+				model = "airbombmsl",
 				name = "Mk-83",
 				noselfdamage = true,
 				range = 2100,

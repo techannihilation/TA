@@ -38,7 +38,6 @@ return {
 		movementclass = "BOAT4",
 		name = "Steadfast",
 		noautofire = false,
-		
 		objectname = "ARMMLS",
 		radaremitheight = 25,
 		seismicsignature = 0,

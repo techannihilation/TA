@@ -62,7 +62,7 @@ return {
 			[8] = "corpcan",
 			[9] = "corraid1",
 			[10] = "corstorm1",
-			[11] = "armraven1",
+			[11] = "corraven1",
 			[12] = "cortl",
 			[13] = "corfhlt",
 			[14] = "corroy",

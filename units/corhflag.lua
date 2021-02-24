@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Saturn",
 		noautofire = false,
-		
+
 		objectname = "corhflag",
 		radardistance = 2000,
 		radaremitheight = 65,
@@ -199,7 +199,7 @@ return {
 			rocket_krog = {
 				areaofeffect = 80,
 				avoidfeature = false,
-				cegtag = "CORRAVENTRAIL",
+				cegtag = "corstartbursttrail",
 				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -210,7 +210,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "exphvyrock1",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -233,7 +233,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 1,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 600,
+				weaponvelocity = 4000,
 				customparams = {
 					light_color = "1 0.6 0.15",
 					light_mult = 3.3,

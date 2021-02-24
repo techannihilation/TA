@@ -217,7 +217,7 @@ return {
 			rocket = {
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "Core_Def_AA_Rocket",
+				cegtag = "corstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -226,7 +226,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "olympus_missile",
+				model = "exphvyrock1",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

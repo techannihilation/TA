@@ -278,7 +278,7 @@ return {
 		"cordem",
 		"corkarg",
 		"shiva",
-		"armraven",
+		"corraven",
 		"corjurgen",
 		"troman",
 		"corhowie",

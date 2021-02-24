@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "ARCH",
-		
+
 		objectname = "armarch",
 		radardistance = 0,
 		radaremitheight = 120,
@@ -186,7 +186,7 @@ return {
 			multi_rocket = {
 				areaofeffect = 80,
 				avoidfeature = false,
-				cegtag = "Core_Def_AA_Rocket",
+				cegtag = "armstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

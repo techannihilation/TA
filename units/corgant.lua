@@ -62,7 +62,7 @@ return {
 			[2] = "shiva",
 			[3] = "corkarg",
 			[4] = "troman",
-			[5] = "armraven",
+			[5] = "corraven",
 			[6] = "coreak",
 			[7] = "corhowie",
 			[8] = "macross",

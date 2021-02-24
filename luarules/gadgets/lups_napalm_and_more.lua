@@ -17,8 +17,8 @@ local FIRE_WEAPONS = {
   ["corhurc_coradvbomb"] = true,
   ["corshad_corebomb"] = true,
   ["corfiend_arm_carpet_bomb"] = true,
-  ["armraven_exp_heavyrocket"] = true,
-  ["armraven1_exp_heavyrocket1"] = true,
+  ["corraven_exp_heavyrocket"] = true,
+  ["corraven1_exp_heavyrocket1"] = true,
   ["corsb_seaadvbomb"] = true,
   ["corpyrox_pyro_rocket"] = true,
 }

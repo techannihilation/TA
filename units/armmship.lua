@@ -127,7 +127,7 @@ return {
 				areaofeffect = 116,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "arm_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

@@ -33,7 +33,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Command Center",
 		noautofire = false,
-		
 		objectname = "TLLION",
 		radaremitheight = 300,
 		selfdestructas = "KROG_BLAST",

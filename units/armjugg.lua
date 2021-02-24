@@ -34,7 +34,6 @@ return {
 		movementclass = "HKBOT4",
 		name = "Juggernaught",
 		noautofire = false,
-		
 		objectname = "ARMJUGG",
 		radardistance = 0,
 		radaremitheight = 73,
@@ -171,7 +170,7 @@ return {
 			armjugg_rocket = {
 				areaofeffect = 80,
 				avoidfeature = false,
-				cegtag = "ARMRAVENTRAIL",
+				cegtag = "armstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -180,7 +179,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "exphvyrock",
 				name = "Heavy Rockets",
 				range = 1050,
 				reloadtime = 2,

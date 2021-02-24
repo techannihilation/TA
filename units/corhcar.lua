@@ -178,7 +178,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "fmdmisl",
+				model = "exphvyrock",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

@@ -49,7 +49,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hope",
 		noautofire = false,
-		
+
 		objectname = "armhope",
 		pitchscale = 0.5,
 		radaremitheight = 30,
@@ -118,7 +118,7 @@ return {
 				burnblow = true,
 				burst = 8,
 				burstrate = 0.15,
-				cegtag = "Core_Def_AA_Rocket",
+				cegtag = "Core_Howie_Rocket",
 				craterareaofeffect = 525,
 				craterboost = 0,
 				cratermult = 0,
@@ -165,7 +165,7 @@ return {
 			rocket = {
 				areaofeffect = 80,
 				avoidfeature = false,
-				cegtag = "Core_Def_AA_Rocket",
+				cegtag = "armstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
