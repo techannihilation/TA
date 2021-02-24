@@ -411,7 +411,7 @@ FirePrimary()
 		move barrelb to z-axis [-4.] now;
 		sleep 150;
 		move barrelb to z-axis [0.] speed [3.];
-		gun_1 = 2;
+		gun_1 = 0;
 		return (0);
 	}
 }
