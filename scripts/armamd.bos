@@ -16,16 +16,12 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <0.000000> now;
-		turn door1 to z-axis <-129.027473> speed <73.000000>;
-		turn door2 to z-axis <0.000000> now;
-		turn door2 to z-axis <131.027473> speed <74.000000>;
-		turn door3 to x-axis <0.000000> now;
-		turn door3 to x-axis <-128.027473> speed <72.000000>;
-		turn door4 to x-axis <0.000000> now;
-		turn door4 to x-axis <129.027473> speed <73.000000>;
-		sleep 1768;
-		spin turret around y-axis speed <30.005495>;
+		turn door1 to z-axis <-130.0> speed <150.000000>;	
+		turn door2 to z-axis <130.0> speed <150.000000>;
+		turn door3 to x-axis <-130.0> speed <150.000000>;
+		turn door4 to x-axis <130.0> speed <150.000000>;
+		sleep 1500;
+		spin turret around y-axis speed <30.0>;
 	}
 	sleep 3;
 }
@@ -34,15 +30,12 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <-129.615385> now;
-		turn door1 to z-axis <0.000000> speed <73.000000>;
-		turn door2 to z-axis <131.401099> now;
-		turn door2 to z-axis <0.000000> speed <74.000000>;
-		turn door3 to x-axis <-128.714286> now;
-		turn door3 to x-axis <0.000000> speed <73.000000>;
-		turn door4 to x-axis <129.615385> now;
-		turn door4 to x-axis <0.000000> speed <73.000000>;
-		sleep 1762;
+		spin turret around y-axis speed <0.0>;
+		turn door1 to z-axis <0.000000> speed <50.000000>;
+		turn door2 to z-axis <0.000000> speed <50.000000>;
+		turn door3 to x-axis <0.000000> speed <50.000000>;
+		turn door4 to x-axis <0.000000> speed <50.000000>;
+		sleep 1500;
 	}
 	sleep 14;
 }
@@ -93,14 +86,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	dont-cache door1;
-	dont-cache door2;
-	dont-cache door3;
-	dont-cache door4;
-	dont-cache rocket1;
-	dont-cache rocket2;
-	dont-cache rocket3;
-	dont-cache turret;
 	call-script activatescr();
 	Static_Var_1 = 1;
 }
@@ -109,14 +94,6 @@ Stop()
 {
 	Static_Var_1 = 0;
 	call-script deactivatescr();
-	cache door1;
-	cache door2;
-	cache door3;
-	cache door4;
-	cache rocket1;
-	cache rocket2;
-	cache rocket3;
-	cache turret;
 }
 
 InitState()
@@ -154,14 +131,6 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	gun_1 = base;
-	dont-shade door1;
-	dont-shade door2;
-	dont-shade door3;
-	dont-shade door4;
-	dont-shade rocket1;
-	dont-shade rocket2;
-	dont-shade rocket3;
-	dont-shade turret;
 	Static_Var_1 = 0;
 	restore_delay = 3000;
 	call-script InitState();
@@ -178,9 +147,10 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-SetMaxReloadTime(Func_Var_1)
+RestoreAfterDelay()
 {
-	restore_delay = Func_Var_1 * 2;
+	sleep 10000;
+	start-script RequestState(1);
 }
 
 AimPrimary(heading, pitch)
@@ -188,6 +158,7 @@ AimPrimary(heading, pitch)
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -214,7 +185,7 @@ FirePrimary()
 	++gun_1;
 	if( gun_1 == 3 )
 	{
-		gun_1 = base;
+		gun_1 = 0;
 	}
 }
 

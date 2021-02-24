@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Protector",
-		objectname = "ARMAMD",
+		objectname = "ARMAMD1",
 		radardistance = 50,
 		radaremitheight = 42,
 		script = "armamd.cob",
