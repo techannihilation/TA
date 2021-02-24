@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Peacemaker",
 		noautofire = true,
-		objectname = "TLLANTINUKE",
+		objectname = "TLLANTINUKE1",
 		radardistance = 0,
 		radaremitheight = 60,
 		script = "tllantinuke.cob",

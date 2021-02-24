@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 193251,
 		buildcostmetal = 14151,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 10,
-		buildinggrounddecalsizey = 10,
-		buildinggrounddecaltype = "armsilo1_aoplane.dds",
 		buildpic = "armsilo1.dds",
 		buildtime = 300000,
 		canattack = true,
@@ -33,7 +29,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Retaliator",
 		noautofire = false,
-		
 		objectname = "ARMSILO1",
 		radardistance = 50,
 		radaremitheight = 32,
@@ -46,7 +41,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armsilo1",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "armsilo1.dds",
