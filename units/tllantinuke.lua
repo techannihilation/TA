@@ -29,7 +29,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Peacemaker",
 		noautofire = true,
-		
 		objectname = "TLLANTINUKE",
 		radardistance = 0,
 		radaremitheight = 60,
@@ -136,8 +135,8 @@ return {
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,
-				weaponacceleration = 100,
-				weapontimer = 2,
+				weaponacceleration = 150,
+				weapontimer = 3,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 3200,
 				damage = {

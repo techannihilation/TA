@@ -34,7 +34,7 @@ return {
 		movementclass = "ATANK4",
 		name = "Black Tiger",
 		noautofire = false,
-		
+
 		objectname = "ARMTIGRE2",
 		radaremitheight = 44,
 		selfdestructas = "CRAWL_BLAST",
@@ -160,7 +160,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "titan_missile",
-				name = "TiTan Rocket",
+				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 900,
@@ -180,7 +180,7 @@ return {
 				tracks = true,
 				turnrate = 35000,
 				weaponacceleration = 150,
-				weapontimer = 0.35,
+				weapontimer = 0.6,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 2100,
 				damage = {

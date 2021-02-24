@@ -40,7 +40,6 @@ return {
 		movementclass = "TANK3",
 		name = "Copperhead",
 		noautofire = false,
-		
 		objectname = "CORSENT",
 		radaremitheight = 30,
 		seismicsignature = 0,

@@ -38,8 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "VHTANK5",
 		name = "Olympus",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "armolympus",
 		radaremitheight = 145,
 		selfdestructas = "EXO_BLAST",

@@ -34,7 +34,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Requiem",
-		
 		objectname = "talon_requiem",
 		radardistance = 50,
 		radaremitheight = 52,
@@ -131,7 +130,7 @@ return {
 				tracks = true,
 				turnrate = 99000,
 				weaponacceleration = 100,
-				weapontimer = 5,
+				weapontimer = 2,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1900,
 				damage = {

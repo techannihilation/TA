@@ -151,7 +151,7 @@ return {
 				tolerance = 4000,
 				turnrate = 32768,
 				weaponacceleration = 80,
-				weapontimer = 10,
+				weapontimer = 4,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 700,
 				customparams = {

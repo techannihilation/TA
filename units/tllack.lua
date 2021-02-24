@@ -37,7 +37,6 @@ return {
 		movementclass = "KBOT3",
 		name = "Construction Kbot",
 		noautofire = false,
-		
 		objectname = "TLLACK",
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",

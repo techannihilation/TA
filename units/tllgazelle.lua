@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Gazelle",
-		
+
 		objectname = "tllgazelle",
 		radardistance = 50,
 		radaremitheight = 32,

@@ -3,10 +3,12 @@
 
 Balance :
  - Talon independence and skynet : decrease damage for central weapon by 20%
+ - All Antinuke : Decrease verticality time for missile. Goal is to gain 1 second to target missile
 
  Improvment :
   - Rework All TLL Lighting Commander effect and sound
   - Adv solar Tll : Rework Model
+  - New Secret unit T4 for core
 
 Fix :
  - Arm_mech_lab : fix unit blocked in lab

@@ -36,8 +36,7 @@ return {
 		metalstorage = 200,
 		mobilestandorders = 1,
 		name = "Advanced Vehicle Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLAVP",
 		radaremitheight = 93,
 		selfdestructas = "LARGE_BUILDING",

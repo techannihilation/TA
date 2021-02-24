@@ -34,7 +34,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Fortitude",
-		
 		objectname = "CORFMD",
 		radardistance = 50,
 		radaremitheight = 35,
@@ -150,8 +149,8 @@ return {
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,
-				weaponacceleration = 100,
-				weapontimer = 2,
+				weaponacceleration = 150,
+				weapontimer = 3,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 3200,
 				damage = {

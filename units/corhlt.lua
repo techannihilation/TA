@@ -37,8 +37,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Gaat Gun",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORHLT",
 		radaremitheight = 79,
 		seismicsignature = 0,

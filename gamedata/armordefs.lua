@@ -322,6 +322,7 @@ return {
 		"talon_grenat",
 		"talon_mcv",
 		"talon_mcv1",
+		"coradamantoise",
 		-- T6 Titan
 		"tllsamael",
 		"corlilith",

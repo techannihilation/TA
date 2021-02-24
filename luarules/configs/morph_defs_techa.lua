@@ -1383,8 +1383,13 @@ local morphDefs = {
 	},
 	tllom = {
 		into = 'tllluth',
-		time = 60,
-		xp = 0.15,
+		time = 45,
+		xp = 0.10,
+	},
+	corejudgement = {
+		into = 'coradamantoise',
+		time = 120,
+		xp = 0.10,
 	},
 }
 

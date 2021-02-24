@@ -37,7 +37,6 @@ return {
 		movementclass = "VKBOT5",
 		name = "Orcone",
 		noautofire = false,
-		
 		objectname = "ARMORCO",
 		radardistance = 0,
 		radaremitheight = 93,

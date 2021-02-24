@@ -34,7 +34,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Protector",
-		
 		objectname = "ARMAMD",
 		radardistance = 50,
 		radaremitheight = 42,
@@ -148,7 +147,7 @@ return {
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 113850,
-				weaponacceleration = 164,
+				weaponacceleration = 175,
 				weapontimer = 3,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 3600,

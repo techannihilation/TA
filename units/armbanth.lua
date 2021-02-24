@@ -37,7 +37,6 @@ return {
 		movementclass = "HKBOT4",
 		name = "Bantha",
 		noautofire = false,
-		
 		objectname = "ARMBANTH",
 		radaremitheight = 61,
 		seismicsignature = 0,
@@ -172,7 +171,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "titan_missile",
-				name = "TiTan Rocket",
+				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 900,
@@ -192,7 +191,7 @@ return {
 				tracks = true,
 				turnrate = 35000,
 				weaponacceleration = 150,
-				weapontimer = 0.35,
+				weapontimer = 0.60,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 2100,
 				damage = {

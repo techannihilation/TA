@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Hedgehog",
-		
 		objectname = "CORMABM",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -150,7 +149,7 @@ return {
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,
-				reloadtime = 2,
+				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundhitwet = "splslrg",
@@ -161,8 +160,8 @@ return {
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,
-				weaponacceleration = 80,
-				weapontimer = 2,
+				weaponacceleration = 150,
+				weapontimer = 3,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 3000,
 				damage = {

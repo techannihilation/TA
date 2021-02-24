@@ -326,6 +326,14 @@ local moveDatas = {
         footprintz = 4,
         maxwaterdepth = 22
     },
+    TKBOT8 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 10000,
+        footprintx = 8,
+        footprintz = 8,
+        maxwaterdepth = 36,
+    },
     VKBOT4 = {
         allowrawmovement = true,
         allowterraincollisions = false,
@@ -411,7 +419,7 @@ local moveDatas = {
     },
     TANKHOVER3 = {
         allowrawmovement = true,
-		crushstrength = 90,
+		    crushstrength = 90,
         depthmod = 0,
         footprintx = 3,
         footprintz = 3,
@@ -423,7 +431,7 @@ local moveDatas = {
     TANKHOVER4 = {
         allowrawmovement = true,
         allowterraincollisions = false,
-		crushstrength = 90,
+		    crushstrength = 90,
         depthmod = 0,
         footprintx = 4,
         footprintz = 4,
@@ -434,7 +442,7 @@ local moveDatas = {
     },
     AMPHKBOT = {
         allowrawmovement = true,
-		crushstrength = 250,
+		    crushstrength = 250,
         footprintx = 3,
         footprintz = 3,
         maxslope = 80,

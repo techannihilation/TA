@@ -35,8 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "VHTANK5",
 		name = "Metron",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORBT",
 		radardistance = 0,
 		radaremitheight = 30,
