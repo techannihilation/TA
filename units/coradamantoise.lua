@@ -243,7 +243,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "PEPER_CANON",
+				def = "PEPPER_CANON",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
