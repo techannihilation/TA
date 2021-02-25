@@ -1,9 +1,10 @@
-3.76 > 3.78
-2021-02-23
+3.76 > 3.79
+2021-02-26
 
 Balance :
  - Talon independence and skynet : decrease damage for central weapon by 20%
  - All Antinuke : Increase velocity for missile. Increase verticality time for missile (Goal is to have less luck to shoot a mountain)
+ - All Flak : T2 range 964=>775. T3 1300 => 1000. T1 Resistant : 1400 = > 1250. T1 Sam 1000 => 900. T1.5 Turret : 965 => 900. Decrease T2 Flak damage 1250=>1000 /s
 
  Improvment :
   - Rework All TLL Lighting Commander effect and sound

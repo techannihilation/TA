@@ -120,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			arm_cir2 = {
-				areaofeffect = 48,
+				areaofeffect = 64,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 2,
@@ -140,8 +140,8 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1400,
-				reloadtime = 0.3,
+				range = 1250,
+				reloadtime = 0.2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splssml",
@@ -161,10 +161,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 2500,
 				damage = {
-					areoship = 26.25,
+					areoship = 35,
 					default = 5,
-					priority_air = 135,
-					unclassed_air = 105,
+					priority_air = 180,
+					unclassed_air = 140,
 				},
 			},
 		},

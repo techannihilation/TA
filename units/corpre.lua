@@ -32,7 +32,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Precipitator",
 		noautofire = false,
-		
 		objectname = "CORPRE",
 		radardistance = 1000,
 		radaremitheight = 44,
@@ -125,7 +124,7 @@ return {
 				impulsefactor = 0,
 				name = "AdvancedFlakCannon",
 				noselfdamage = true,
-				range = 1200,
+				range = 1000,
 				reloadtime = 0.20,
 				rgbcolor = "1 0.3 0.2",
 				soundhitdry = "flakhit",
@@ -139,8 +138,8 @@ return {
 				damage = {
 					areoship = 400,
 					default = 5,
-					priority_air = 2200,
-					unclassed_air = 1600,
+					priority_air = 2000,
+					unclassed_air = 2000,
 				},
 			},
 		},

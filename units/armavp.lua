@@ -39,8 +39,7 @@ return {
 		metalstorage = 200,
 		mobilestandorders = 1,
 		name = "Advanced Vehicle Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMAVP",
 		radaremitheight = 34,
 		seismicsignature = 0,

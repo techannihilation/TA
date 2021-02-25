@@ -116,7 +116,7 @@ return {
 		},
 		weapondefs = {
 			talon_cir = {
-				areaofeffect = 144,
+				areaofeffect = 48,
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
@@ -133,7 +133,7 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
-				range = 1425,
+				range = 1250,
 				reloadtime = 0.15,
 				smoketrail = true,
 				soundhitdry = "xplosml2",

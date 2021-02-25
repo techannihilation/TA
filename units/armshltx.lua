@@ -37,8 +37,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMSHLTX",
 		radaremitheight = 47,
 		seismicsignature = 0,

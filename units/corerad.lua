@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Eradicator",
 		noautofire = false,
-		
 		objectname = "corerad",
 		radaremitheight = 49,
 		seismicsignature = 0,
@@ -121,7 +120,7 @@ return {
 		},
 		weapondefs = {
 			cor_erad2 = {
-				areaofeffect = 48,
+				areaofeffect = 64,
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
@@ -138,7 +137,7 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
-				range = 1375,
+				range = 1250,
 				reloadtime = 0.2,
 				smoketrail = true,
 				soundhitdry = "xplosml2",

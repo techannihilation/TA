@@ -45,7 +45,6 @@ return {
 		mobilestandorders = 1,
 		name = "Barbarus",
 		noautofire = false,
-		
 		objectname = "tllbarbarus",
 		pitchscale = 0.5,
 		radaremitheight = 25,
@@ -140,7 +139,7 @@ return {
 			},
 			miniflak = {
 				accuracy = 1000,
-				areaofeffect = 192,
+				areaofeffect = 140,
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
@@ -155,8 +154,8 @@ return {
 				impulsefactor = 0,
 				name = "FlakCannon",
 				noselfdamage = true,
-				range = 600,
-				reloadtime = 0.75,
+				range = 775,
+				reloadtime = 0.5,
 				rgbcolor = "1.0 0.5 0.0",
 				soundhitdry = "flakhit",
 				soundhitwet = "splslrg",
@@ -167,10 +166,10 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					areoship = 93.75,
-					default = 5,
-					priority_air = 375,
-					unclassed_air = 375,
+				areoship = 62.5,
+				default = 5,
+				priority_air = 250,
+				unclassed_air = 250,
 				},
 			},
 			miniion = {

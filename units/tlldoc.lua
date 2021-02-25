@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HAKBOT4",
 		name = "Amphibious Construction Kbot",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "tlldoc",
 		radaremitheight = 34,
 		seismicsignature = 0,

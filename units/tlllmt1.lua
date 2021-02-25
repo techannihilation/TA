@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Boosted Besom",
 		noautofire = false,
-		
 		objectname = "TLLLMT1",
 		radaremitheight = 81,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -131,7 +130,7 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 965,
+				range = 900,
 				reloadtime = 0.75,
 				smoketrail = true,
 				soundhitdry = "xplomed2",

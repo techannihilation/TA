@@ -35,8 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Experimental Vehicle Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "COREVP",
 		radardistance = 0,
 		radaremitheight = 28,

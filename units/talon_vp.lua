@@ -38,8 +38,7 @@ return {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Vehicle Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_vp",
 		radaremitheight = 33,
 		seismicsignature = 0,

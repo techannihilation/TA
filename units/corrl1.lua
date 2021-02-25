@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Boosted Pulverizer",
 		noautofire = false,
-		
 		objectname = "CORRL1",
 		radaremitheight = 51,
 		seismicsignature = 0,
@@ -135,7 +134,7 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 965,
+				range = 900,
 				reloadtime = 0.75,
 				smoketrail = true,
 				soundhitdry = "xplomed2",

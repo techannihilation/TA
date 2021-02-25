@@ -30,7 +30,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Tetanos",
 		noautofire = false,
-		
 		objectname = "tlltetanos",
 		radaremitheight = 55,
 		seismicsignature = 0,
@@ -131,7 +130,7 @@ return {
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
-				range = 1375,
+				range = 1250,
 				reloadtime = 0.15,
 				smoketrail = true,
 				soundhitdry = "xplosml2",

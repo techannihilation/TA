@@ -40,7 +40,6 @@ return {
 		movementclass = "TANK3",
 		name = "Sheatiped",
 		noautofire = false,
-		
 		objectname = "talon_sheatiped",
 		radaremitheight = 30,
 		seismicsignature = 0,
@@ -141,7 +140,7 @@ return {
 				impulsefactor = 0,
 				name = "FlakCannon",
 				noselfdamage = true,
-				range = 750,
+				range = 500,
 				reloadtime = 1.5,
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,

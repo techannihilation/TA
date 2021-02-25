@@ -28,7 +28,6 @@ return {
 		maxwaterdepth = 22,
 		movementclass = "HTKBOT4",
 		name = "Brimstone",
-		
 		objectname = "COREAK",
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -170,7 +169,7 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 1200,
+				range = 1000,
 				reloadtime = 0.2,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = true,

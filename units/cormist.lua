@@ -37,7 +37,6 @@ return {
 		movementclass = "TANK3",
 		name = "Slasher",
 		noautofire = false,
-		
 		objectname = "CORMIST",
 		radaremitheight = 27,
 		seismicsignature = 0,

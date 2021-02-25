@@ -38,7 +38,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Boosted Defender",
 		noautofire = false,
-		
 		objectname = "ARMRL1",
 		radaremitheight = 49,
 		seismicsignature = 0,
@@ -136,7 +135,7 @@ return {
 				model = "missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 965,
+				range = 900,
 				reloadtime = 0.9,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
