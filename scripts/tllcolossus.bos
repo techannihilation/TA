@@ -7,7 +7,7 @@ piece  torso, luparm, ruparm, pelvis, rthigh, lthigh, lleg, lfoot,
        rleg, rfoot, turretr, turretl, sleever, sleevel, hand, flare1, base, flare, tbase,
        flare2, flare4, flare3, flarer ,flarel, starburst, s1, s2;
 
-static-var  bMoving, bAiming, Static_Var_3, restore_delay, Static_Var_5,
+static-var  bMoving, bAiming, restore_delay, Static_Var_5, Main_Gun_Heading,
             gun_1, gun_2;
 
 // Signal definitions
@@ -554,18 +554,15 @@ MotionControl(Func_Var_1, Func_Var_2)
 		{
 			if( Func_Var_2 )
 			{
-				Static_Var_3 = 1;
 				call-script walklegs2();
 			}
 			if( !Func_Var_2 )
 			{
-				Static_Var_3 = 0;
 				call-script Walk2();
 			}
 		}
 		if( !Func_Var_1 )
 		{
-			Static_Var_3 = 1;
 			call-script stand();
 		}
 	}
@@ -575,10 +572,9 @@ Create()
 {
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_3 = 1;
-	Static_Var_5 = 1;
 	gun_1 = 0;
 	gun_2 = 0;
+	Main_Gun_Heading = 0;
 	restore_delay = 6000;
 	start-script MotionControl();
 	start-script SmokeUnit();
@@ -597,11 +593,6 @@ StopMoving()
 SweetSpot(piecenum)
 {
 	piecenum = torso;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -663,6 +654,10 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	{
+		return (0);
+	}
 	turn ruparm to x-axis <0.000000> - pitch speed <100.000000>;
 	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
@@ -689,6 +684,7 @@ AimPrimary(heading, pitch)
 	bAiming = TRUE;
 	turn torso to y-axis heading speed <75.000000>;
 	turn luparm to x-axis <0.000000> - pitch speed <100.000000>;
+	Main_Gun_Heading = heading;
 	wait-for-turn luparm around x-axis;
 	wait-for-turn torso around y-axis;
 	start-script RestoreAfterDelay();

@@ -238,7 +238,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "rocket",
+				model = "exphvyrock",
 				name = "Vpulse Rocket",
 				range = 1400,
 				reloadtime = 1,

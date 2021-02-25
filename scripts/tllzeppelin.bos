@@ -5,7 +5,7 @@
 
 piece  base, body, barrel1, flare1, barrel2, flare2, flare3, flare4, barrel3, barrel4, sleeve4,
 		s1, s2, turret1, turret2, turret3, turret4, sleeve1, sleeve2, sleeve3, barrel1a, barrel1b, barrel2a, barrel2b, barrel3a, barrel3b, 
-		flare1a, flare2a, flare1b, flare2b, flare3a, flare3b, mainweapon1, mainweapon2, p, engine1, engine2, engine3, engine4;
+		flare1a, flare2a, flare1b, flare2b, flare3a, flare3b, mainweapon1, mainweapon2, engine1, engine2, engine3, engine4;
 
 static-var  gun1, gun2, gun3, gun4, maingun, RestoreDelay;
 
