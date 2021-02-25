@@ -1,12 +1,12 @@
 return {
-	champ = {
+	corchamp = {
 		acceleration = 0.06,
 		activatewhenbuilt = true,
 		brakerate = 0.138,
 		buildcostenergy = 88522,
 		buildcostmetal = 5284,
 		builder = false,
-		buildpic = "champ.dds",
+		buildpic = "corchamp.dds",
 		buildtime = 65000,
 		canattack = true,
 		canguard = true,
@@ -39,10 +39,9 @@ return {
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "htank4",
-		name = "Champion",
+		name = "corchampion",
 		noautofire = false,
-		
-		objectname = "champ",
+		objectname = "corchamp",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,13 +49,18 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
+		trackoffset = 10,
+		trackstrength = 12,
+		trackstretch = 1,
+		tracktype = "StdTank",
+		trackwidth = 55,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.122,
 		turnrate = 244,
-		unitname = "champ",
+		unitname = "corchamp",
 		upright = false,
 		customparams = {
-			buildpic = "champ.dds",
+			buildpic = "corchamp.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -67,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3960,
-				object = "champ_dead",
+				object = "corchamp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

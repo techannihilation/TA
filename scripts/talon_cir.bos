@@ -55,7 +55,7 @@ RestoreAfterDelay()
 	spin turret around y-axis speed <-15.>;
 }
 
-AimTertiary(heading, pitch)
+AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -68,7 +68,7 @@ AimTertiary(heading, pitch)
 	return (1);
 }
 
-FireTertiary()
+FirePrimary()
 {
 	++gun_1;
 	
@@ -78,7 +78,7 @@ FireTertiary()
 	}
 }
 
-QueryTertiary(piecenum)
+QueryPrimary(piecenum)
 {
 	if( gun_1 == 0 )
 	{
@@ -132,11 +132,6 @@ QueryTertiary(piecenum)
 
 
 AimFromPrimary(piecenum)
-{
-	piecenum = turret;
-}
-
-AimFromTertiary(piecenum)
 {
 	piecenum = turret;
 }

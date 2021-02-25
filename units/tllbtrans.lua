@@ -38,8 +38,7 @@ return {
 		maxwaterdepth = 0,
 		mintransportmass = 100,
 		mobilestandorders = 1,
-		name = "Vindicator",
-		
+		name = "Vindicator",		
 		objectname = "tllbtrans",
 		radardistance = 0,
 		radaremitheight = 28.8,

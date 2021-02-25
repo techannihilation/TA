@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK3",
 		name = "Bulldog",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMBULL",
 		radaremitheight = 25,
 		seismicsignature = 0,

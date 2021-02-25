@@ -39,8 +39,7 @@ return {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Vehicle Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORVP",
 		radaremitheight = 25,
 		seismicsignature = 0,

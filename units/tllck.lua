@@ -40,8 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Construction KBot",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLCK",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",

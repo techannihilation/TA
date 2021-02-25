@@ -138,7 +138,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				projectiles = 30,
-				range = 1400,
+				range = 1175,
 				reloadtime = 5,
 				rgbcolor = "0.71 0.39 0",
 				separation = 0.45,

@@ -38,7 +38,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Flail",
 		noautofire = false,
-		
 		objectname = "talon_cir",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -164,14 +163,12 @@ return {
 			},
 		},
 		weapons = {
-			[3] = {
+			[1] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "TALON_CIR",
 				onlytargetcategory = "VTOL",
 
 			},
-
-
 		},
 	},
 }

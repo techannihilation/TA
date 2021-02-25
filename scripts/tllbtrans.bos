@@ -212,7 +212,7 @@ BeginTransport(Func_Var_1)
 
 QueryTransport(Func_Var_1)
 {
-	Func_Var_1 = 26;
+	Func_Var_1 = link;
 }
 
 EndTransport()

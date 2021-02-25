@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Freedom Fighter",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMFIG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
