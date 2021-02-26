@@ -130,7 +130,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Long-Range Missiles",
 				noselfdamage = true,
 				range = 1250,

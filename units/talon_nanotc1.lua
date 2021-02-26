@@ -19,6 +19,9 @@ return {
 		canstop = 1,
 		cantbetransported = true,
 		category = "ALL SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "33 34 33",
+		collisionvolumetype = "CylY",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
 		explodeas = "NANOBOOM3A",
@@ -36,7 +39,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 2",
 		noautofire = false,
-		
 		objectname = "talon_NANOTC1",
 		radaremitheight = 31,
 		reclaimspeed = 225,
@@ -54,6 +56,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 450,
+		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "talon_nanotc1.dds",
 			faction = "TALON",

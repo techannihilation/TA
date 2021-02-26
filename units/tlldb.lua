@@ -165,7 +165,7 @@ return {
 				flighttime = 1.3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Dragons Breath Missile",
 				noselfdamage = true,
 				range = 1500,

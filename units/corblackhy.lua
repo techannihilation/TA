@@ -220,7 +220,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				impactonly = 1,
-				model = "missile",
+				model = "weapon_missile",
 				name = "RapidSamMissile",
 				noselfdamage = true,
 				range = 800,

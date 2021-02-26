@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "LEVEL3 ALL UNDERWATER",
+		category = "LEVEL4 ALL UNDERWATER",
 		collisionvolumeoffsets = "0 0 -5",
 		collisionvolumescales = "220 220 536",
 		collisionvolumetype = "CylZ",
@@ -34,7 +34,6 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 0,
 		name = "Shipyard",
-		
 		objectname = "AShipyardLvl3",
 		radardistance = 0,
 		radaremitheight = 101,

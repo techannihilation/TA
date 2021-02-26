@@ -29,7 +29,7 @@ return {
 		losemitheight = 29,
 		maneuverleashlength = 640,
 		mass = 8295,
-		maxdamage = 6500,
+		maxdamage = 6650,
 		maxslope = 10,
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
@@ -37,7 +37,6 @@ return {
 		movementclass = "HTANK4",
 		name = "Demon Slayer Mark II",
 		noautofire = false,
-		
 		objectname = "tlldemon",
 		radardistance = 0,
 		radaremitheight = 29,
@@ -170,8 +169,6 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "DEMONSLAYER_CANNON",
-				maindir = "0 0 1",
-				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},

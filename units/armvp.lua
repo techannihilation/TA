@@ -61,7 +61,7 @@ return {
 			[3] = "armmlv",
 			[4] = "armfav",
 			[5] = "armflash",
-			[6] = "tawf013",
+			[6] = "armshellshocker",
 			[7] = "armsam",
 			[8] = "ahermes",
 			[9] = "armpincer",

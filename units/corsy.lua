@@ -31,7 +31,6 @@ return {
 		mobilestandorders = 1,
 		name = "Shipyard",
 		noautofire = false,
-		
 		objectname = "CORSY",
 		radaremitheight = 71,
 		seismicsignature = 0,
@@ -55,7 +54,6 @@ return {
 			[5] = "coresupp",
 			[6] = "corroy",
 			[7] = "cortship",
-			--[8] = "corasship",
 		},
 		customparams = {
 			buildpic = "corsy.dds",

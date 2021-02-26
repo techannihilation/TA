@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		
+
 		objectname = "tlleca",
 		selfdestructas = "BIG_UNIT_VTOL",
 		shownanospray = false,
@@ -62,7 +62,7 @@ return {
 			[6] = "tllaap",
 			[7] = "tlleap",
 			[8] = "tllprototype",
-			--[9] = "tlldevelop",
+			--[9] = "",
 			[10] = "tllnanotc2",
 			[11] = "tllomni",
 			[12] = "tllobliterator1",

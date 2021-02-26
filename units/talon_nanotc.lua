@@ -39,7 +39,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 1",
 		noautofire = false,
-		
 		objectname = "TALON_NANOTC",
 		radaremitheight = 28,
 		reclaimspeed = 125,
@@ -56,6 +55,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 250,
+		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "talon_nanotc.dds",
 			faction = "TALON",

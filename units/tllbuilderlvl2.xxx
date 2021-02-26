@@ -41,7 +41,7 @@ return {
 		metalmake = 1,
 		metalstorage = 100,
 		name = "Goose",
-		
+
 		objectname = "tllbuilderlvl2",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -66,7 +66,6 @@ return {
 			[12] = "tllfireraiser1",
 			[13] = "tllriot",
 			[14] = "tllhplasma",
-			[15] = "tllmoth",
 			[16] = "tlldcsta",
 			[17] = "tllhltns",
 			[18] = "tlllmtns",

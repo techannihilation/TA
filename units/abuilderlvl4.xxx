@@ -41,7 +41,6 @@ return {
 		mobilestandorders = 1,
 		name = "Battle Construction Aircraft",
 		noautofire = false,
-		
 		objectname = "abuilderlvl4",
 		radardistance = 50,
 		radaremitheight = 7.5,
@@ -57,7 +56,7 @@ return {
 		unitname = "abuilderlvl4",
 		workertime = 440,
 		buildoptions = {
-			[1] = "ananotower",
+			[1] = "armnanotc4",
 			[2] = "armomni",
 			[3] = "armgate1",
 			[4] = "armanni1",

@@ -17,9 +17,6 @@ local weapons = {
 	talon_juno_juno_pulse = { radius = 950, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 60},
 
 	--mortor_canon
-	--amortor_mortor_cannon =  { radius = 95, damage = 200, duration = 120, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
-	--cmortor_mortor_cannon =  { radius = 95, damage = 200, duration = 120, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
-	--tllmortor_mortor_cannon =  { radius = 95, damage = 200, duration = 120, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
 	tllleopard_mortor_cannon =  { radius = 95, damage = 250, duration = 150, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
 
 }

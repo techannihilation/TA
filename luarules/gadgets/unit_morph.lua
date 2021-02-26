@@ -165,7 +165,7 @@ local CMD_STOP = CMD.STOP
 local CMD_SELFD = CMD.SELFD
 local CMD_WANT_CLOAK = 37382
 
-local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500
+local MAXunits = tonumber(Spring.GetModOptions().maxunits) or 500 --
 
 local morphPenalty = 1.0
 local MAX_MORPH = 0 --// will increase dynamically
@@ -176,22 +176,18 @@ local nanos = {
   [UnitDefNames["armnanotc"].id] = true,
   [UnitDefNames["armnanotc1"].id] = true,
   [UnitDefNames["armnanotc2"].id] = true,
-  --[UnitDefNames["armnanotc3"].id] = true,
-  --[UnitDefNames["ananotower"].id] = true,
   [UnitDefNames["armfnanotc"].id] = true,
   [UnitDefNames["armfnanotc1"].id] = true,
   [UnitDefNames["armfnanotc2"].id] = true,
-  --[UnitDefNames["armfnanotc3"].id] = true,
+
   --Core
   [UnitDefNames["cornanotc"].id] = true,
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
-  --[UnitDefNames["cornanotc3"].id] = true,
-  --[UnitDefNames["cnanotower"].id] = true,
   [UnitDefNames["corfnanotc"].id] = true,
   [UnitDefNames["corfnanotc1"].id] = true,
   [UnitDefNames["corfnanotc2"].id] = true,
-  --[UnitDefNames["corfnanotc3"].id] = true,
+
   --Tll
   [UnitDefNames["tllnanotc"].id] = true,
   [UnitDefNames["tllnanotc1"].id] = true,
@@ -199,6 +195,7 @@ local nanos = {
   [UnitDefNames["tllfnanotc"].id] = true,
   [UnitDefNames["tllfnanotc1"].id] = true,
   [UnitDefNames["tllfnanotc2"].id] = true,
+
   --Talon
   [UnitDefNames["talon_nanotc"].id] = true,
   [UnitDefNames["talon_nanotc1"].id] = true,
@@ -228,9 +225,11 @@ local function GetTechLevel(UnitDefID)
     if     (cats["LEVEL1"]) then return 1
     elseif (cats["LEVEL2"]) then return 2
     elseif (cats["LEVEL3"]) then return 3
+    elseif (cats["LEVEL4"]) then return 4
     elseif (cats["level1"]) then return 1
     elseif (cats["level2"]) then return 2
     elseif (cats["level3"]) then return 3
+    elseif (cats["level4"]) then return 4
     end
   end
   return 0
@@ -1002,6 +1001,16 @@ end
 
 function AddFactory(unitID, unitDefID, teamID)
   if (isFactory(unitDefID)) then
+    local unitTechLevel = GetTechLevel(unitDefID)
+    if (unitTechLevel > teamTechLevel[teamID]) then
+      teamTechLevel[teamID]=unitTechLevel
+    end
+  end
+end
+
+-- add Com to deblock level morph (here i think)
+function AddCommander(unitID, unitDefID, teamID)
+  if (UnitDefs[unitDefID].customParams.iscommander) then
     local unitTechLevel = GetTechLevel(unitDefID)
     if (unitTechLevel > teamTechLevel[teamID]) then
       teamTechLevel[teamID]=unitTechLevel

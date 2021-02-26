@@ -19,6 +19,9 @@ return {
 		canstop = 1,
 		cantbetransported = true,
 		category = "ALL SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "38 36 38",
+		collisionvolumetype = "CylY",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
 		explodeas = "NANOBOOM5A",
@@ -36,7 +39,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 4",
 		noautofire = false,
-		
 		objectname = "ARMNANOTC3",
 		radaremitheight = 37,
 		reclaimspeed = 900,
@@ -54,6 +56,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 1800,
+		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "armnanotc3.dds",
 			faction = "ARM",

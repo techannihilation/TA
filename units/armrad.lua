@@ -32,7 +32,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		
 		objectname = "ARMRAD",
 		onoffable = true,
 		radardistance = 2100,

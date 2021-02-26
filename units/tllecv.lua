@@ -42,7 +42,6 @@ return {
 		movementclass = "TANK4",
 		name = "Construction Vehicle",
 		noautofire = false,
-		
 		objectname = "TLLECV",
 		radaremitheight = 22,
 		seismicsignature = 0,
@@ -72,7 +71,7 @@ return {
 			[6] = "tllavp",
 			[7] = "tllevp",
 			[8] = "tllprototype",
-			--[9] = "tlldevelop",
+			--[9] = "",
 			[10] = "tllnanotc2",
 			[11] = "tllomni",
 			[12] = "tllobliterator1",

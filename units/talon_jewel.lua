@@ -31,13 +31,12 @@ return {
 		mass = 1200,
 		maxdamage = 2485,
 		maxslope = 12,
-		maxvelocity = 1.4,
+		maxvelocity = 1.2,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Jewel",
 		noautofire = false,
-		
 		objectname = "talon_jewel",
 		radaremitheight = 35,
 		seismicsignature = 0,
@@ -167,8 +166,6 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "BLT",
-				maindir = "0 0 1",
-				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},

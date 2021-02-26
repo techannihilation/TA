@@ -40,7 +40,6 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "ARCH",
-
 		objectname = "armarch",
 		radardistance = 0,
 		radaremitheight = 120,
@@ -196,7 +195,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "olympus_missile",
+				model = "weapon_starburstl",
 				name = "Heavy Rockets2",
 				range = 1400,
 				reloadtime = 0.5,

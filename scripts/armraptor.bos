@@ -11,8 +11,8 @@ piece  base, body, Stange, loSchenkel, luSchenkel, lFuss, l1Finger, l2Finger, lD
        Lower, loRakWerf, roRakWerf, RechenArm, RechenBlitz, RechenPunkt, RauchArm, RauchPunkt,
        lBlinker, rBlinker, wake1, wake2;
 
-static-var  gun_1, bMoving, Static_Var_3, bAiming, gun_3,
-            Static_Var_6, Static_Var_7, unitviewer, Static_Var_9, Static_Var_10;
+static-var  gun_1, bMoving, Static_Var_3, bAiming, gun_2,
+            Static_Var_6, Static_Var_7, unitviewer, Static_Var_10;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -232,21 +232,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-HitByWeapon(anglex, anglez)
-{
-	var Func_Var_3;
-	Func_Var_3 = get HEALTH;
-	if( Static_Var_9 - Func_Var_3 >= 5 )
-	{
-		turn Achse to z-axis anglez speed <150.000000>;
-		turn Achse to x-axis anglex speed <150.000000>;
-		wait-for-turn Achse around z-axis;
-		turn Achse to z-axis <0.000000> speed <30.000000>;
-		turn Achse to x-axis <0.000000> speed <30.000000>;
-	}
-	Static_Var_9 = get HEALTH;
-}
-
 Create()
 {
 	hide l1Blitz;
@@ -263,10 +248,9 @@ Create()
 	bMoving = FALSE;
 	bAiming = FALSE;
 	gun_1 = 1;
-	gun_3 = 0;
+	gun_2 = 1;
 	Static_Var_3 = 1;
 	Static_Var_6 = 0;
-	Static_Var_9 = get HEALTH;
 	spin RauchArm around y-axis speed <300.000000>;
 	start-script SmokeUnit();
 }
@@ -342,6 +326,90 @@ RestoreAfterDelay(Func_Var_1)
 	bAiming = FALSE;
 }
 
+AimFromPrimary(piecenum)
+{
+	piecenum = RakTurm;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = lRakBlitz;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = rRakBlitz;
+	}
+}
+
+RestorePrimary()
+{
+	sleep 5000;
+	Static_Var_7 = 0;
+	turn RakTurm to y-axis Static_Var_6 speed <80.000000>;
+	wait-for-turn Punkt around y-axis;
+	wait-for-turn RakTurm around y-axis;
+	turn lmRakWerf to x-axis <0.000000> speed <50.000000>;
+	turn rmRakWerf to x-axis <0.000000> speed <50.000000>;
+	wait-for-turn lmRakWerf around x-axis;
+	move luRakWerf to z-axis [0.000000] speed [4.000000];
+	move ruRakWerf to z-axis [0.000000] speed [4.000000];
+	turn Stange to x-axis <-64.000000> speed <80.000000>;
+	move Punkt to z-axis [0.000000] speed [4.000000];
+	wait-for-move luRakWerf along z-axis;
+	wait-for-turn Stange around x-axis;
+	wait-for-move Punkt along z-axis;
+	turn loRakWerf to x-axis <0.000000> speed <60.000000>;
+	turn roRakWerf to x-axis <0.000000> speed <60.000000>;
+	wait-for-turn loRakWerf around x-axis;
+	hide lmRakWerf;
+	hide rmRakWerf;
+}
+
+AimPrimary(heading, pitch)
+{
+	Static_Var_7 = 1;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	show lmRakWerf;
+	show rmRakWerf;
+	turn loRakWerf to x-axis <-30.000000> speed <60.000000>;
+	turn roRakWerf to x-axis <-30.000000> speed <60.000000>;
+	wait-for-turn loRakWerf around x-axis;
+	turn Stange to x-axis <0.000000> speed <80.000000>;
+	move Punkt to z-axis [2.500000] speed [4.000000];
+	move luRakWerf to z-axis [2.500000] speed [4.000000];
+	move ruRakWerf to z-axis [2.500000] speed [4.000000];
+	wait-for-turn Stange around x-axis;
+	wait-for-move Punkt along z-axis;
+	wait-for-move luRakWerf along z-axis;
+	turn lmRakWerf to x-axis <-25.000000> speed <50.000000>;
+	turn rmRakWerf to x-axis <-25.000000> speed <50.000000>;
+	wait-for-turn lmRakWerf around x-axis;
+	turn RakTurm to y-axis heading speed <120.000000>;
+	wait-for-turn RakTurm around y-axis;
+	wait-for-turn Punkt around y-axis;
+	start-script RestorePrimary();
+	return (1);
+}
+
+FirePrimary()
+{
+	if(gun_1 == 1)
+	{
+		sleep 400;
+		gun_2 = 1;
+		return (0);
+	}
+	if(gun_1 == 2)
+	{
+		sleep 400;		
+		gun_2 = 0;
+		return (0);
+	}
+}
+
 AimFromSecondary(piecenum)
 {
 	piecenum = Torso;
@@ -349,19 +417,19 @@ AimFromSecondary(piecenum)
 
 QuerySecondary(piecenum)
 {
-	if( gun_1 == 1 )
+	if( gun_2 == 1 )
 	{
 		piecenum = l1Blitz;
 	}
-	if( gun_1 == 2 )
+	if( gun_2 == 2 )
 	{
 		piecenum = r1Blitz;
 	}
-	if( gun_1 == 3 )
+	if( gun_2 == 3 )
 	{
 		piecenum = l2Blitz;
 	}
-	if( gun_1 == 4 )
+	if( gun_2 == 4 )
 	{
 		piecenum = r2Blitz;
 	}
@@ -411,7 +479,7 @@ AimSecondary(heading, pitch)
 FireSecondary()
 {
 	turn Achse to x-axis <4.000000> speed <60.000000>;
-	if( gun_1 == 1 )
+	if( gun_2 == 1 )
 	{
 		turn lSchulter to x-axis <15.000000> speed <400.000000>;
 		turn lKanone to x-axis <-18.000000> speed <400.000000>;
@@ -425,10 +493,10 @@ FireSecondary()
 		turn lKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = 2;
+		gun_2 = 2;
 		return (0);
 	}
-	if( gun_1 == 2 )
+	if( gun_2 == 2 )
 	{
 		turn rSchulter to x-axis <15.000000> speed <400.000000>;
 		turn rKanone to x-axis <-18.000000> speed <400.000000>;
@@ -442,10 +510,10 @@ FireSecondary()
 		turn rKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = 3;
+		gun_2 = 3;
 		return (0);
 	}
-	if( gun_1 == 3 )
+	if( gun_2 == 3 )
 	{
 		turn lSchulter to x-axis <15.000000> speed <400.000000>;
 		turn lKanone to x-axis <-18.000000> speed <400.000000>;
@@ -459,10 +527,10 @@ FireSecondary()
 		turn lKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = 4;
+		gun_2 = 4;
 		return (0);
 	}
-	if( gun_1 == 4 )
+	if( gun_2 == 4 )
 	{
 		turn rSchulter to x-axis <15.000000> speed <400.000000>;
 		turn rKanone to x-axis <-18.000000> speed <400.000000>;
@@ -476,101 +544,7 @@ FireSecondary()
 		turn rKanone to x-axis <0.000000> speed <30.000000>;
 		turn Achse to x-axis <0.000000> speed <6.000000>;
 		turn Achse to y-axis <0.000000> speed <4.000000>;
-		gun_1 = 1;
-		return (0);
-	}
-}
-
-RestorePrimary()
-{
-	sleep 5000;
-	Static_Var_7 = 0;
-	turn RakTurm to y-axis Static_Var_6 speed <80.000000>;
-	wait-for-turn Punkt around y-axis;
-	wait-for-turn RakTurm around y-axis;
-	turn lmRakWerf to x-axis <0.000000> speed <50.000000>;
-	turn rmRakWerf to x-axis <0.000000> speed <50.000000>;
-	wait-for-turn lmRakWerf around x-axis;
-	move luRakWerf to z-axis [0.000000] speed [4.000000];
-	move ruRakWerf to z-axis [0.000000] speed [4.000000];
-	turn Stange to x-axis <-64.000000> speed <80.000000>;
-	move Punkt to z-axis [0.000000] speed [4.000000];
-	wait-for-move luRakWerf along z-axis;
-	wait-for-turn Stange around x-axis;
-	wait-for-move Punkt along z-axis;
-	turn loRakWerf to x-axis <0.000000> speed <60.000000>;
-	turn roRakWerf to x-axis <0.000000> speed <60.000000>;
-	wait-for-turn loRakWerf around x-axis;
-	hide lmRakWerf;
-	hide rmRakWerf;
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = RakTurm;
-}
-
-QueryPrimary(piecenum)
-{
-	if( gun_3 == 0 )
-	{
-		piecenum = lRakBlitz;
-	}
-	if( gun_3 == 1 )
-	{
-		piecenum = rRakBlitz;
-	}
-}
-
-AimPrimary(heading, pitch)
-{
-	Static_Var_7 = 1;
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	show lmRakWerf;
-	show rmRakWerf;
-	turn loRakWerf to x-axis <-30.000000> speed <60.000000>;
-	turn roRakWerf to x-axis <-30.000000> speed <60.000000>;
-	wait-for-turn loRakWerf around x-axis;
-	turn Stange to x-axis <0.000000> speed <80.000000>;
-	move Punkt to z-axis [2.500000] speed [4.000000];
-	move luRakWerf to z-axis [2.500000] speed [4.000000];
-	move ruRakWerf to z-axis [2.500000] speed [4.000000];
-	wait-for-turn Stange around x-axis;
-	wait-for-move Punkt along z-axis;
-	wait-for-move luRakWerf along z-axis;
-	turn lmRakWerf to x-axis <-25.000000> speed <50.000000>;
-	turn rmRakWerf to x-axis <-25.000000> speed <50.000000>;
-	wait-for-turn lmRakWerf around x-axis;
-	turn RakTurm to y-axis heading speed <120.000000>;
-	wait-for-turn RakTurm around y-axis;
-	wait-for-turn Punkt around y-axis;
-	start-script RestorePrimary();
-	return (1);
-}
-
-FirePrimary()
-{
-	if(gun_3 == 0)
-	{
-//		show lRakBlitz;
-//		sleep 150;
-//		hide lRakBlitz;
-
-		sleep 400;
-
-		gun_3 = 1;
-		return (0);
-	}
-	if(gun_3 == 1)
-	{
-//		show rRakBlitz;
-//		sleep 150;
-//		hide rRakBlitz;
-
-		sleep 400;
-		
-		gun_3 = 0;
+		gun_2 = 1;
 		return (0);
 	}
 }

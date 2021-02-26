@@ -49,14 +49,14 @@ local morphednanos = { --not in use, look like 125
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
   [UnitDefNames["cornanotc3"].id] = true,
-  [UnitDefNames["cnanotower"].id] = true,
+  [UnitDefNames["cornanotc4"].id] = true,
 
 
 --Arm
   [UnitDefNames["armnanotc1"].id] = true,
   [UnitDefNames["armnanotc2"].id] = true,
   [UnitDefNames["armnanotc3"].id] = true,
-  [UnitDefNames["ananotower"].id] = true,
+  [UnitDefNames["armnanotc4"].id] = true,
 
 
 
@@ -64,7 +64,7 @@ local morphednanos = { --not in use, look like 125
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
   [UnitDefNames["tllnanotc3"].id] = true,
-  [UnitDefNames["tllnanotower"].id] = true,
+  [UnitDefNames["tllnanotc4"].id] = true,
 
 
 

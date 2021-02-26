@@ -44,7 +44,6 @@ return {
 		metalmake = 5,
 		metalstorage = 100,
 		name = "Cruiser",
-		
 		objectname = "cbuilderlvl5",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
@@ -61,7 +60,7 @@ return {
 			[3] = "cmetalmakerlvl3",
 			[4] = "core_hexapod_lab",
 			[5] = "cshipyardlvl4",
-			[6] = "cnanotower",
+			[6] = "cornanotc4",
 			[7] = "corujam",
 			[8] = "corboucher",
 			[9] = "corgate3",

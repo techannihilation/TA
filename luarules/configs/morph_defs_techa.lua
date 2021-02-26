@@ -287,6 +287,11 @@ local morphDefs = {
 		time = 90,
 		tech = 3,
 	},
+	armgate1 = {
+		into = 'armgate3',
+		time = 120,
+		tech = 4,
+	},
 	corgate2 = {
 		into = 'corgate',
 		time = 30,
@@ -306,6 +311,11 @@ local morphDefs = {
 		into = 'corgate1',
 		time = 90,
 		tech = 3,
+	},
+	corgate1 = {
+		into = 'corgate3',
+		time = 120,
+		tech = 4,
 	},
 	tllgate2 = {
 		into = 'tllgate',
@@ -327,6 +337,11 @@ local morphDefs = {
 		time = 90,
 		tech = 3,
 	},
+	tllgate1 = {
+		into = 'tllgate3',
+		time = 120,
+		tech = 4,
+	},
 	talon_gate2 = {
 		into = 'talon_gate',
 		time = 30,
@@ -346,6 +361,11 @@ local morphDefs = {
 		into = 'talon_gate1',
 		time = 90,
 		tech = 3,
+	},
+	talon_gate1 = {
+		into = 'talon_gate3',
+		time = 120,
+		tech = 4,
 	},
 	armvulc = {
 		into = 'armvulc2',
@@ -504,7 +524,7 @@ local morphDefs = {
 		time = 90,
 		xp = 0.10,
 	},
-	tawf013 = {
+	armshellshocker = {
 		into = 'armmart',
 		time = 30,
 		xp = 0.15,
@@ -659,7 +679,12 @@ local morphDefs = {
 	armnanotc2 = {
 		into = 'armnanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
+	},
+	armnanotc3 = {
+		into = 'armnanotc4',
+		tech = 4,
+		time = 100,
 	},
 	armfnanotc = {
 		into = 'armfnanotc1',
@@ -674,7 +699,7 @@ local morphDefs = {
 	armfnanotc2 = {
 		into = 'armfnanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
 	},
 	cornanotc = {
 		into = 'cornanotc1',
@@ -689,7 +714,12 @@ local morphDefs = {
 	cornanotc2 = {
 		into = 'cornanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
+	},
+	cornanotc3 = {
+		into = 'cornanotc4',
+		tech = 4,
+		time = 100,
 	},
 	corfnanotc = {
 		into = 'corfnanotc1',
@@ -704,7 +734,7 @@ local morphDefs = {
 	corfnanotc2 = {
 		into = 'corfnanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
 	},
 	tllnanotc = {
 		into = 'tllnanotc1',
@@ -719,7 +749,12 @@ local morphDefs = {
 	tllnanotc2 = {
 		into = 'tllnanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
+	},
+	tllnanotc3 = {
+		into = 'tllnanotc4',
+		tech = 4,
+		time = 100,
 	},
 	tllfnanotc = {
 		into = 'tllfnanotc1',
@@ -734,7 +769,7 @@ local morphDefs = {
 	tllfnanotc2 = {
 		into = 'tllfnanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
 	},
 	talon_nanotc = {
 		into = 'talon_nanotc1',
@@ -749,7 +784,12 @@ local morphDefs = {
 	talon_nanotc2 = {
 		into = 'talon_nanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
+	},
+	talon_nanotc3 = {
+		into = 'talon_nanotc4',
+		tech = 4,
+		time = 100,
 	},
 	talon_fnanotc = {
 		into = 'talon_fnanotc1',
@@ -764,7 +804,7 @@ local morphDefs = {
 	talon_fnanotc2 = {
 		into = 'talon_fnanotc3',
 		tech = 3,
-		time = 90,
+		time = 80,
 	},
 	armamph = {
 		into = 'marauder',

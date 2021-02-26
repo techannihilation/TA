@@ -126,7 +126,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Rockets",
 				noselfdamage = true,
 				range = 560,

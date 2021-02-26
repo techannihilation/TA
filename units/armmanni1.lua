@@ -31,13 +31,12 @@ return {
 		mass = 2018,
 		maxdamage = 3450,
 		maxslope = 12,
-		maxvelocity = 1.4,
+		maxvelocity = 1.2,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Advanced Penetrator",
 		noautofire = false,
-		
 		objectname = "armmanni1",
 		radaremitheight = 52,
 		seismicsignature = 0,
@@ -171,8 +170,6 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "ATAM",
-				maindir = "0 0 1",
-				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},

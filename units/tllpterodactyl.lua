@@ -43,7 +43,6 @@ return {
 		mobilestandorders = 1,
 		name = "Pterodactyl",
 		noautofire = false,
-		
 		objectname = "tllpterodactyl",
 		radaremitheight = 28.8,
 		seismicsignature = 0,
@@ -143,8 +142,8 @@ return {
 				flighttime = 3.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "podmissile",
-				name = "RavenCatapultRockets",
+				model = "weapon_podrocket",
+				name = "Multi Pod Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 850,

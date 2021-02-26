@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Core Juno",
 		noautofire = false,
-		
+
 		objectname = "CJUNO",
 		radaremitheight = 71,
 		seismicsignature = 0,
@@ -135,7 +135,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 160,
-				model = "epulse",
+				model = "weapon_pulse",
 				name = "AntiSignal",
 				range = 6150,
 				reloadtime = 2,

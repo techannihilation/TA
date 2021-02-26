@@ -199,7 +199,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "exphvyrock",
+				model = "weapon_starburstm",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

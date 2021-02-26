@@ -34,7 +34,6 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform",
 		noautofire = false,
-		
 		objectname = "AAHP",
 		radaremitheight = 37,
 		selfdestructas = "LARGE_BUILDING",
@@ -54,7 +53,7 @@ return {
 			[5] = "armlashover",
 			[6] = "armiguana",
 			[7] = "nsaatorph",
-			[8] = "speeder",
+			--[8] = "speeder",
 			[9] = "armhplasma",
 			[10] = "devastator",
 			[11] = "armtem",

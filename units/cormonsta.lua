@@ -163,7 +163,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "missile",
+				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,

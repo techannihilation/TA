@@ -125,7 +125,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "exphvyrock1",
+				model = "weapon_starburstl",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

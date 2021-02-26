@@ -52,7 +52,7 @@ local nanos = {
   [UnitDefNames["armnanotc1"].id] = true,
   [UnitDefNames["armnanotc2"].id] = true,
   [UnitDefNames["armnanotc3"].id] = true,
-  [UnitDefNames["ananotower"].id] = true,
+  [UnitDefNames["armnanotc4"].id] = true,
   [UnitDefNames["armfnanotc"].id] = true,
   [UnitDefNames["armfnanotc1"].id] = true,
   [UnitDefNames["armfnanotc2"].id] = true,
@@ -62,7 +62,7 @@ local nanos = {
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
   [UnitDefNames["cornanotc3"].id] = true,
-  [UnitDefNames["cnanotower"].id] = true,
+  [UnitDefNames["cornanotc4"].id] = true,
   [UnitDefNames["corfnanotc"].id] = true,
   [UnitDefNames["corfnanotc1"].id] = true,
   [UnitDefNames["corfnanotc2"].id] = true,
@@ -72,7 +72,7 @@ local nanos = {
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
   [UnitDefNames["tllnanotc3"].id] = true,
-  [UnitDefNames["tllnanotower"].id] = true,	
+  [UnitDefNames["tllnanotc4"].id] = true,	
   [UnitDefNames["tllfnanotc"].id] = true,
   [UnitDefNames["tllfnanotc1"].id] = true,
   [UnitDefNames["tllfnanotc2"].id] = true,
@@ -104,7 +104,7 @@ local function AddBuildspeedCmdDesc(unitID)
   if (FindUnitCmdDesc(unitID, CMD_NANOBOOST)) then
     return  -- already exists
   end
-  local insertID = 
+  local insertID =
     FindUnitCmdDesc(unitID, CMD.CLOAK)      or
     FindUnitCmdDesc(unitID, CMD.ONOFF)      or
     FindUnitCmdDesc(unitID, CMD.TRAJECTORY) or
@@ -112,7 +112,7 @@ local function AddBuildspeedCmdDesc(unitID)
     FindUnitCmdDesc(unitID, CMD.MOVE_STATE) or
     FindUnitCmdDesc(unitID, CMD.FIRE_STATE) or
     123456 -- back of the pack
-    
+
     --Remove unused button
     removeButton(unitID, CMD.ATTACK)
     removeButton(unitID, CMD.MOVE)
@@ -132,14 +132,14 @@ local function UpdateButton(unitID, statusStr)
   local tooltip
   if (statusStr == 0) then
     tooltip = 'Nano running in normal opperations\n\255\255\001\001Warning Boost mode all power diverted to Production\nNano will be running in an unstable mode\nDAMAGE WILL OCCUR'
-  else 
+  else
     tooltip = 'Boost: Production at 180%, Reclaim at 0%,\nRepair set at 0%, Select to Revert to normal production.'
    end
 
   buildspeedCmdDesc.params[1] = statusStr
 
-  spEditUnitCmdDesc(unitID, cmdDescID, { 
-    params  = buildspeedCmdDesc.params, 
+  spEditUnitCmdDesc(unitID, cmdDescID, {
+    params  = buildspeedCmdDesc.params,
     tooltip = tooltip,
   })
 end
@@ -158,7 +158,7 @@ local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 		spSetUnitRulesParam(unitID,"nanoPower",buildspeedlist[unitID].speed)
     spSetUnitRulesParam(unitID,"nanoBoosted",0)
 		boostednanos[unitID] = nil
-		
+
 	end
 	buildspeedlist[unitID].mode=cmdParams[1]
 	UpdateButton(unitID, cmdParams[1])
@@ -201,7 +201,7 @@ end
 function gadget:GameFrame(n)
   if n %30 == 0 then
     for unitID in pairs(boostednanos) do
-      	if mrandom(0,1) == 0 then 
+      	if mrandom(0,1) == 0 then
 	  local _,hp = SpGetUnitHealth(unitID)
 	  local damage = mrandom(hp*0.01,(hp*0.25))
 	  --Spring.Echo("hp = " .. hp .."      " .. damage)
@@ -219,7 +219,7 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
 	if cmdID ~= CMD_NANOBOOST or not nanos[unitDefID] then
 		return true
 	end
-	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)  
+	BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	return false
 end
 

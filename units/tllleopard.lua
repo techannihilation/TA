@@ -36,7 +36,6 @@ return {
 		movementclass = "TANK4",
 		name = "Leopard",
 		noautofire = false,
-		
 		objectname = "tllleopard",
 		radaremitheight = 33,
 		selfdestructas = "CRAWL_BLAST",
@@ -164,8 +163,8 @@ return {
 				flighttime = 3.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "podmissile",
-				name = "RavenCatapultRockets",
+				model = "weapon_podrocket",
+				name = "Multi Pod Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1000,

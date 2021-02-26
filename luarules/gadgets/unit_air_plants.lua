@@ -60,7 +60,7 @@ local airCmd = {
       action  = "apAirRepair",
       type    = CMDTYPE.ICON_MODE,
       tooltip = "Plant Repair Level: settings for Aircraft leaving the plant",
-      params  = { '1', 'LandAt 0', 'LandAt 30', 'LandAt 50', 'LandAt 80'}
+      params  = { '0', 'LandAt 0', 'LandAt 30', 'LandAt 50', 'LandAt 80'}
 }
 
 function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
@@ -89,7 +89,7 @@ end
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
   if AIRPLANT[unitDefID] then
-    if (cmdID == 34569) then 
+    if (cmdID == 34569) then
       local cmdDescID = FindUnitCmdDesc(unitID, 34569)
       landCmd.params[1] = cmdParams[1]
       EditUnitCmdDesc(unitID, cmdDescID, landCmd)

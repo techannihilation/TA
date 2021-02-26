@@ -33,8 +33,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CAHP",
 		radaremitheight = 27,
 		selfdestructas = "LARGE_BUILDING",

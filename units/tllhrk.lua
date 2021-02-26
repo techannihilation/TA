@@ -126,7 +126,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "rocket",
+				model = "weapon_starburstm",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1350,

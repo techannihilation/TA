@@ -19,6 +19,9 @@ return {
 		canstop = 1,
 		cantbetransported = true,
 		category = "ALL SURFACE",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "38 36 38",
+		collisionvolumetype = "CylY",
 		defaultmissiontype = "Standby",
 		description = "Repairs and builds in large radius",
 		explodeas = "NANOBOOM5C",
@@ -36,7 +39,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 4",
 		noautofire = false,
-		
 		objectname = "CORNANOTC3",
 		radaremitheight = 37,
 		reclaimspeed = 1200,
@@ -54,6 +56,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 2400,
+		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "cornanotc3.dds",
 			faction = "CORE",

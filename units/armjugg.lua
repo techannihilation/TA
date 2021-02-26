@@ -179,7 +179,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "exphvyrock",
+				model = "weapon_starburstm",
 				name = "Heavy Rockets",
 				range = 1050,
 				reloadtime = 2,

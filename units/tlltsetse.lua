@@ -126,7 +126,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 50,
-				model = "missile",
+				model = "weapon_missile",
 				name = "MineSweeper",
 				noselfdamage = true,
 				range = 700,

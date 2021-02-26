@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Roach",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORROACH",
 		radaremitheight = 25,
 		seismicsignature = 0,

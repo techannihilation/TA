@@ -136,7 +136,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "missile",
+				model = "weapon_missile",
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

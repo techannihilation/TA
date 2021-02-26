@@ -134,7 +134,7 @@ return {
 				impulseboost = 0.023,
 				impulsefactor = 0.023,
 				metalpershot = 750,
-				model = "acidmissile",
+				model = "weapon_acidmissile",
 				name = "Chemical Weapon",
 				noselfdamage = true,
 				range = 2750,

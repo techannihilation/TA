@@ -136,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "exphvyrock",
+				model = "weapon_starburstm",
 				movingaccuracy = 600,
 				name = "RavenCatapultRockets",
 				noselfdamage = true,

@@ -39,7 +39,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 1",
 		noautofire = false,
-		
 		objectname = "CORNANOTC",
 		radaremitheight = 28,
 		reclaimspeed = 150,
@@ -56,6 +55,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 300,
+		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "cornanotc.dds",
 			faction = "CORE",

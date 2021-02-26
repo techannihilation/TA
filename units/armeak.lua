@@ -163,7 +163,7 @@ return {
 				flighttime = 1.5,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

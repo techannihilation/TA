@@ -124,7 +124,7 @@ return {
 				firesubmersed = true,
 				flighttime = 10,
 				metalpershot = 0,
-				model = "rocket",
+				model = "weapon_starburstm",
 				name = "Vpulse Rocket",
 				range = 800,
 				reloadtime = 10.5,

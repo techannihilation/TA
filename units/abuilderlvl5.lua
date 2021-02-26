@@ -40,7 +40,7 @@ return {
 		metalmake = 5,
 		metalstorage = 100,
 		name = "Cruiser",
-		
+
 		objectname = "abuilderlvl5",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
@@ -57,7 +57,7 @@ return {
 			[3] = "armmas",
 			[4] = "arm_mech_lab",
 			[5] = "ashipyardlvl3",
-			[6] = "ananotower",
+			[6] = "armnanotc4",
 			[7] = "armujam",
 			[8] = "nebraska",
 			[9] = "armgate3",

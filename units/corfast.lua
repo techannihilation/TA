@@ -41,8 +41,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Freaker",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORFAST",
 		radaremitheight = 34,
 		seismicsignature = 0,

@@ -36,7 +36,6 @@ return {
 		movementclass = "TANK3",
 		name = "Convincer",
 		noautofire = false,
-
 		objectname = "TLLCONVINCER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -128,8 +127,8 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "rocket",
-				name = "Heavy Rocket",
+				model = "weapon_starburstl",
+				name = "Heavy Rockets",
 				noselfdamage = true,
 				range = 1400,
 				reloadtime = 10,

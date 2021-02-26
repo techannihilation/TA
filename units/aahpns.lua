@@ -30,7 +30,6 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform - NS",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "AAHPNS",
 		radaremitheight = 37,
@@ -51,7 +50,7 @@ return {
 			[5] = "armlashover",
 			[6] = "armiguana",
 			[7] = "nsaatorph",
-			[8] = "speeder",
+			--[8] = "speeder",
 			[9] = "armhplasma",
 			[10] = "devastator",
 			[11] = "armtem",

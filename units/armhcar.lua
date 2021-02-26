@@ -180,7 +180,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Heavy Guided Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

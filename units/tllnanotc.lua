@@ -6,10 +6,6 @@ return {
 		buildcostmetal = 340,
 		builddistance = 400,
 		builder = true,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 5,
-		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "tllnanotc_aoplane.dds",
 		buildpic = "tllnanotc.dds",
 		buildtime = 5000,
 		canguard = true,
@@ -39,7 +35,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 1",
 		noautofire = false,
-		
 		objectname = "tllNANOTC",
 		radaremitheight = 28,
 		reclaimspeed = 150,
@@ -54,8 +49,8 @@ return {
 		turnrate = 1,
 		unitname = "tllnanotc",
 		upright = true,
-		usebuildinggrounddecal = true,
 		workertime = 300,
+		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "tllnanotc.dds",
 			faction = "TLL",

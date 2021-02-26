@@ -188,7 +188,7 @@ return {
 				flighttime = 5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Heavy Guided Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

@@ -13,7 +13,7 @@
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "LEVEL3 ALL SURFACE",
+		category = "LEVEL4 ALL SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "635 150 635",
 		collisionvolumetype = "CylY",
@@ -33,7 +33,6 @@
 		maxslope = 10,
 		maxwaterdepth = 255,
 		name = "OPS Center",
-		
 		objectname = "talon_covertopscentre",
 		onoffable = true,
 		radardistance = 0,
@@ -53,7 +52,7 @@
 		},
 		customparams = {
 			buildpic = "talon_covertopscentre.dds",
-			faction = "TALON",			
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {

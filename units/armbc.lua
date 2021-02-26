@@ -202,7 +202,7 @@ return {
 				cratermult = 0,
 				firestarter = 70,
 				metalpershot = 0,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Missiles",
 				range = 900,
 				reloadtime = 0.25,

@@ -54,7 +54,6 @@ local BlackList = {
 
    local Customlight ={
    ["armpw_emg"] = {r=0.48,g=0.36,b=0,radius=140,beam=false},
-   ["armpw1_emg"] = {r=0.48,g=0.36,b=0,radius=160,beam=false},
    ["armhdpw_arm_emcc3"] = {r=0.48,g=0.36,b=0.1,radius=40,beam=false},
    ["armbanth_armbantha_fire"] = {r=0.48,g=0.48,b=0.9,radius=230,beam=false},
    ["armgor_armgor_fire"] = {r=0.48,g=0.48,b=0.9,radius=230,beam=false},
@@ -70,13 +69,12 @@ local BlackList = {
    ["corraven1_exp_heavyrocket1"] = {r=1.2,g=0.2,b=0.2,radius=110,beam=false},
    ["corraven_exp_heavyrocket"] = {r=1.2,g=0.2,b=0.2,radius=125,beam=false},
    ["corkarg_tawf_banisher1"] = {r=1.2,g=0.2,b=0.2,radius=105,beam=false},
-   ["corkarg1_tawf_banisher2"] = {r=1.2,g=0.2,b=0.2,radius=155,beam=false},
    ["exoarm_lightning"] = {r=0.08,g=0.08,b=0.98,radius=120,beam=true},
    ["exoarm_blast"] = {r=0.08,g=0.08,b=2.9,radius=180,beam=false},
    ["tllleopard_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    ["tllmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
-   ["amortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
-   ["cmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
+   --["amortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
+   --["cmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    }
 
    local Armtrails = {
@@ -103,7 +101,7 @@ local BlackList = {
    }
 
    local Plasmabatts = {
-   ["amortor_mortartillery"] = true,
+   --["amortor_mortartillery"] = true,
    ["armguard_armfixed_gun"] = true,
    ["armguard_armfixed_gun_high"] = true,
    ["armshock_shocker"] = true,
@@ -120,7 +118,7 @@ local BlackList = {
    ["armvulc2_armvulc_weapon3"] = true,
    ["avtr_arm_berthacannon2"] = true,
 
-   ["cmortor_mortartillery"] = true,
+   --["cmortor_mortartillery"] = true,
    ["corpun_corfixed_gun"] = true,
    ["corpun_corfixed_gun_high"] = true,
    ["corblackhy_hydra_prime"] = true,

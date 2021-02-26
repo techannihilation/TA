@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Talon Juno",
 		noautofire = false,
-		
+
 		objectname = "talon_juno",
 		radaremitheight = 71,
 		seismicsignature = 0,
@@ -135,7 +135,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 150,
-				model = "epulse",
+				model = "weapon_pulse",
 				name = "AntiSignal",
 				range = 6000,
 				reloadtime = 2,

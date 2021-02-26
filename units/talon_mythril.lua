@@ -40,7 +40,6 @@ return {
 		movementclass = "VKBOT8",
 		name = "Mythril",
 		noautofire = false,
-		
 		objectname = "talon_mythril",
 		radardistance = 0,
 		radaremitheight = 76,
@@ -333,7 +332,7 @@ return {
 				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",
 				firestarter = 80,
 				flighttime = 4,
-				model = "rocketo",
+				model = "weapon_rocketl",
 				name = "Barrarge",
 				proximitypriority = -1,
 				range = 1800,

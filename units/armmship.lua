@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Ranger",
 		noautofire = false,
-		
+
 		objectname = "ARMMSHIP",
 		radardistance = 1400,
 		radaremitheight = 30,
@@ -137,7 +137,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "rocket",
+				model = "weapon_starburstl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1550,
@@ -182,7 +182,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "missile",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 650,

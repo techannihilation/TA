@@ -16,8 +16,9 @@ akmech.dds
 ametalmakerlvl1.dds
 ametalmakerlvl2.dds
 amgeo.dds
-amortor.dds
-ananotower.dds
+cornanotc4.dds
+armnanotc4.dds
+tllnanotc4.dds
 anvil.dds
 apache.dds
 armaak.dds
@@ -354,8 +355,6 @@ clb.dds
 cmetalmakerlvl1.dds
 cmetalmakerlvl2.dds
 cmgeo.dds
-cmortor.dds
-cnanotower.dds
 commando.dds
 concealer.dds
 consul1.dds
@@ -688,8 +687,8 @@ taipan.dds
 tankanotor.dds
 tawf001.dds
 tawf009.dds
-tawf0131.dds
-tawf013.dds
+armshellshocker1.dds
+armshellshocker.dds
 tawf015.dds
 tawf114.dds
 tawf116.dds
@@ -769,7 +768,6 @@ tlldb.dds
 tlldcsta.dds
 tlldemon.dds
 tlldest.dds
-tlldevelop.dds
 tlldischarge.dds
 tlldivine.dds
 tlldmc.dds
@@ -867,7 +865,6 @@ tllmlv.dds
 tllmm.dds
 tllmohogeo.dds
 tllmortor.dds
-tllmoth.dds
 tllmstor.dds
 tllmusk.dds
 tllnanotc1.dds

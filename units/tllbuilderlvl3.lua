@@ -43,7 +43,6 @@ return {
 		metalmake = 8,
 		metalstorage = 150,
 		name = "Cruiser",
-		
 		objectname = "tllbuilderlvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
@@ -60,7 +59,7 @@ return {
 			[3] = "tllmas",
 			[4] = "tllprototype",
 			[5] = "tllshipyardlvl3",
-			[6] = "tllnanotower",
+			[6] = "tllnanotc4",
 			[7] = "tllurad",
 			[8] = "tlldmc",
 			[9] = "tllgate3",
