@@ -44,7 +44,7 @@ local secondPart = 0
 local mouseDistance = 1000
 
 local notdgun = {
-    [UnitDefNames["uppercut"].id] = true,
+    [UnitDefNames["coruppercut"].id] = true,
     [UnitDefNames["armmarlin"].id] = true,
     [UnitDefNames["armhcar"].id] = true,
     [UnitDefNames["corhcar"].id] = true,

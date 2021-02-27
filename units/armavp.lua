@@ -39,7 +39,7 @@ return {
 		metalstorage = 200,
 		mobilestandorders = 1,
 		name = "Advanced Vehicle Plant",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "ARMAVP",
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -58,7 +58,7 @@ return {
 		yardmap = "occcccoocccccoocccccoocccccoocccccooccccco",
 		buildoptions = {
 			[1] = "armacv",
-			[2] = "consul",
+			[2] = "armconsul",
 			[3] = "armjam",
 			[4] = "armseer",
 			[5] = "armst",

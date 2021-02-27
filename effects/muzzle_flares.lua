@@ -367,7 +367,7 @@ return {
       },
     },
   },
-    ["akmech_muzzle"] = {
+    ["armvengence_muzzle"] = {
     usedefaultexplosions = false,
     largeflash = {
       air                = true,

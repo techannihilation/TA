@@ -1,13 +1,13 @@
 return {
 	talon_sheatiped = {
 		acceleration = 0.03,
-		airsightdistance = 750,
+		airsightdistance = 500,
 		brakerate = 0.4125,
-		buildcostenergy = 2450,
-		buildcostmetal = 180,
+		buildcostenergy = 2050,
+		buildcostmetal = 151,
 		builder = false,
 		buildpic = "talon_sheatiped.dds",
-		buildtime = 3000,
+		buildtime = 2500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -66,8 +66,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.255523681641 -7.00683593813e-06 1.56640625",
-				collisionvolumescales = "32.4752197266 21.8393859863 34.3155517578",
+				collisionvolumeoffsets = "0 -7-06 1",
+				collisionvolumescales = "32 21 34",
 				collisionvolumetype = "Box",
 				damage = 1621,
 				description = "Sheatiped Wreckage",
@@ -151,7 +151,7 @@ return {
 				turret = true,
 				weapontimer = 1,
 				weapontype = "Cannon",
-				weaponvelocity = 1550,
+				weaponvelocity = 1750,
 				damage = {
 					areoship = 56.25,
 					default = 5,

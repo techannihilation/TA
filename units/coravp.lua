@@ -66,7 +66,7 @@ return {
 			[9] = "corvrad",
 			[10] = "corsent",
 			[11] = "corbanisher",
-			[12] = "trem",
+			[12] = "cortremor",
 			[13] = "corgol",
 			[14] = "requ1",
 		},

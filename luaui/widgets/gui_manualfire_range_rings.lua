@@ -11,7 +11,7 @@ function widget:GetInfo()
 end
 
 local ringsToDraw = {
-    [UnitDefNames["uppercut"].id] = 1,
+    [UnitDefNames["coruppercut"].id] = 1,
     [UnitDefNames["armmarlin"].id] = 1,
     [UnitDefNames["armhcar"].id] = 3,
     [UnitDefNames["corhcar"].id] = 3,

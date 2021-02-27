@@ -1,11 +1,11 @@
 return {
-	armtigre2 = {
+	cortigre = {
 		acceleration = 0.09,
 		brakerate = 0.03,
 		buildcostenergy = 106320,
 		buildcostmetal = 5802,
 		builder = false,
-		buildpic = "armtigre2.dds",
+		buildpic = "cortigre.dds",
 		buildtime = 75000,
 		canattack = true,
 		canguard = true,
@@ -35,7 +35,7 @@ return {
 		name = "Black Tiger",
 		noautofire = false,
 
-		objectname = "ARMTIGRE2",
+		objectname = "cortigre",
 		radaremitheight = 44,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -45,9 +45,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,
 		turnrate = 340,
-		unitname = "armtigre2",
+		unitname = "cortigre",
 		customparams = {
-			buildpic = "armtigre2.dds",
+			buildpic = "cortigre.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -72,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 6,
 				metal = 4425,
-				object = "armtigre2_dead",
+				object = "cortigre_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

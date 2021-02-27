@@ -48,14 +48,14 @@ return {
 		buildoptions = {
 			[1] = "armach",
 			[2] = "aach",
-			[3] = "r75v",
+			[3] = "armdetector",
 			[4] = "concealer",
 			[5] = "armlashover",
 			[6] = "armiguana",
 			[7] = "nsaatorph",
 			--[8] = "speeder",
 			[9] = "armhplasma",
-			[10] = "devastator",
+			[10] = "armhanni",
 			[11] = "armtem",
 		},
 		customparams = {

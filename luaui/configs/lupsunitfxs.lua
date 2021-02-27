@@ -175,7 +175,7 @@ cafus = {
     {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-  monkeylord = {
+  cormonkeylord = {
     {class='Bursts',options=monkeylordBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
@@ -608,7 +608,7 @@ talon_handgod = {
   armpers = {
      {class='AirJet',options={color={0.6,0.1,0}, width=5, length=22, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
   },
-  airwolf3g = {
+  armwolf = {
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="fum3", noIconDraw = true, priority=3, onActive=true}},
   },
   shrike = {

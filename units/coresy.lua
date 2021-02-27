@@ -49,7 +49,7 @@ return {
 		buildoptions = {
 			[1] = "corecs",
 			[2] = "corbsub",
-			[3] = "uppercut",
+			[3] = "coruppercut",
 			[4] = "corhcar",
 			[5] = "corblackhy",
 			[6] = "cortyrnt",

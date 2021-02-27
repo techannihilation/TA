@@ -22,7 +22,7 @@ end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
-local dropperID = UnitDefNames['fatshrew'].id
+local dropperID = UnitDefNames['corpokie'].id
 local unitsToDrop = UnitDefNames['cormonsta'].id
 local holding = {}
 local holdingID = {}

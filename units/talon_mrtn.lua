@@ -73,7 +73,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:akmech_muzzle",
+				[1] = "custom:armvengence_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

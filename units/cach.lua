@@ -69,7 +69,7 @@ return {
 			[13] = "cordoom",
 			[14] = "madsam",
 			[15] = "corflak",
-			[16] = "screamer",
+			[16] = "corscreamer",
 			[17] = "cormds",
 			[18] = "cordl",
 			[19] = "corch",

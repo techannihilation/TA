@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "NS Besom",
 		noautofire = false,
-		
+
 		objectname = "TLLLMTNS",
 		radaremitheight = 69,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -127,8 +127,8 @@ return {
 				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 765,
-				reloadtime = 1.5,
+				range = 775,
+				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
@@ -148,10 +148,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 750,
 				damage = {
-				areoship = 33.75,
+				areoship = 22.5,
 				default = 5,
-				priority_air = 135,
-				unclassed_air = 135,
+				priority_air = 90,
+				unclassed_air = 90,
 				},
 			},
 		},

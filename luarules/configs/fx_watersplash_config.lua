@@ -12,7 +12,7 @@ local BlackList = {
      ["armrock1_arm_kbot_rocket1"] = true,
      ["corstorm_core_kbot_rocket"] = true,
      ["corstorm1_core_kbot_rocket1"] = true,
-     ["gladiator_armkbot_missile3"] = true,
+     ["corgladiator_armkbot_missile3"] = true,
      ["tllfireraiser_tll_kbot_rocket"] = true,
      
      ["armrock1_arm_kbot_rocket1"] = true,
@@ -28,7 +28,7 @@ local BlackList = {
      ["armbanth1_bantha_rocket1"] = true,
      ["armmerl_armtruck_rocket"] = true,
      ["armorco_corkrog_rocket"] = true,
-     ["armtigre2_corkrog_rocket"] = true,
+     ["cortigre_corkrog_rocket"] = true,
      ["corhrk_corhrk_rocket"] = true,
      ["corkrog_corkrog_rocket"] = true,
      ["corkrog1_corkrog_rocket1"] = true,

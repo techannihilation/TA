@@ -112,7 +112,7 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_advsam = {
+			weapon_missileaal = {
 				areaofeffect = 800,
 				avoidfeature = false,
 				canattackground = false,
@@ -125,8 +125,8 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "ADVSAM",
-				name = "ADVSAM",
+				model = "weapon_missileaal",
+				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
 				range = 3000,
@@ -156,7 +156,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
-				def = "ARM_ADVSAM",
+				def = "WEAPON_MISSILEAAL",
 				onlytargetcategory = "VTOL",
 			},
 		},

@@ -55,7 +55,7 @@ local ShieldUnits = {
   [UnitDefNames["corflshd"].id] = true,
   [UnitDefNames["corfgate1"].id] = true,
   [UnitDefNames["corshieldgen"].id] = true,
-  [UnitDefNames["monkeylord"].id] = true,
+  [UnitDefNames["cormonkeylord"].id] = true,
   [UnitDefNames["corcrab"].id] = true,
   --Arm
   [UnitDefNames["armcom1"].id] = true,

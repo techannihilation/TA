@@ -40,7 +40,6 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		
 		objectname = "ARMLAB",
 		radardistance = 50,
 		radaremitheight = 22,
@@ -63,8 +62,8 @@ return {
 			[3] = "armflea",
 			[4] = "armpw",
 			[5] = "armrock",
-			[6] = "armham",
-			[7] = "armjeth",
+			[6] = "armjeth",
+			[7] = "armham",
 			[8] = "armwar",
 		},
 		customparams = {

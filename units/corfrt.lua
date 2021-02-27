@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "Stinger",
 		noautofire = false,
-		
+
 		objectname = "CORFRT",
 		radaremitheight = 47,
 		seismicsignature = 0,
@@ -118,7 +118,7 @@ return {
 				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 765,
+				range = 775,
 				reloadtime = 1.7,
 				smoketrail = true,
 				soundhitdry = "xplomed2",

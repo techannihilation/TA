@@ -56,10 +56,10 @@ return {
 		yardmap = "yyooccccccccccccoooo yoooccccccccccccoooy ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo yoooccccccccccccoooy yyooccccccccccccooyy",
 		buildoptions = {
 			[1] = "corcrab",
-			[2] = "monkeylord",
+			[2] = "cormonkeylord",
 			[3] = "corarbritator",
 			[4] = "corhflag",
-			[5] = "fatshrew",
+			[5] = "corpokie",
 			[6] = "cormkl",
 			[7] = "corshock",
 			[8] = "corlift",

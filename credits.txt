@@ -7,7 +7,7 @@ Many files provides from other games and they are copyrighted. We asked them per
 
 - TALON faction models created by TA Universe comunity (TheRegisteredOne). Link to Talon sources : https://www.moddb.com/mods/talon-race
 
-- TAESC models from TA:Escalation created by archdragon, boogie, Wotan and the TheRegisteredOne. Link to TAESC sources : http://taesc.tauniverse.com. It includes : T3 Jammer Arm/Core, T1.5 Bertha Arm/Core, Artillery Overlord, armolympus, armecv, armeca, coreca, corecs, armecs, corvaliant, akmech, ametalmakerlvl3, cmetalmakerlvl3, armemex, coremex, armchimera, armbsub, corbsub, armbrtha1, armbrtha2, corint2, armefus, afusionplant, corefus, cfusionplant, corarbritator, corcrab, cormkl, tllgorgone, corgate1, corgate4.
+- TAESC models from TA:Escalation created by archdragon, boogie, Wotan and the TheRegisteredOne. Link to TAESC sources : http://taesc.tauniverse.com. It includes : T3 Jammer Arm/Core, T1.5 Bertha Arm/Core, Artillery Overlord, armolympus, armecv, armeca, coreca, corecs, armecs, corvaliant, armvengence, ametalmakerlvl3, cmetalmakerlvl3, armemex, coremex, armchimera, armbsub, corbsub, armbrtha1, armbrtha2, corint2, armefus, afusionplant, corefus, cfusionplant, corarbritator, corcrab, cormkl, tllgorgone, corgate1, corgate4.
 
 - Total Annihilation ZERO models created by Vohvelieläin. Link to TA Zero : http://zero.tauniverse.com/. It includes : talon_archon, talon_mythril, talon_cpod, talon_mohogeo, talon_dmc, tllgate1, tllgate2, tllgate3, talon_aestor, talon_eestor, talon_emstor, talon_mas, tllmeteor.
 

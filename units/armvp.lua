@@ -63,7 +63,7 @@ return {
 			[5] = "armflash",
 			[6] = "armshellshocker",
 			[7] = "armsam",
-			[8] = "ahermes",
+			[8] = "armhermes",
 			[9] = "armpincer",
 			[10] = "armstump",
 			[11] = "armjanus",

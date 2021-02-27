@@ -182,7 +182,7 @@ return {
 					subs = 5,
 				},
 			},
-			tawf009_weapon = {
+			armserpent_weapon = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -225,7 +225,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "TAWF009_WEAPON",
+				def = "armserpent_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 110,
 				onlytargetcategory = "UNDERWATER",

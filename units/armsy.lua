@@ -52,7 +52,7 @@ return {
 			[2] = "armrecl",
 			[3] = "armsub",
 			[4] = "armpt",
-			[5] = "decade",
+			[5] = "armdecade",
 			[6] = "armroy",
 			[7] = "armtship",
 		},

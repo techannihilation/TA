@@ -37,7 +37,6 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		
 		objectname = "TLLLAB",
 		radaremitheight = 32,
 		selfdestructas = "LARGE_BUILDING",
@@ -54,8 +53,8 @@ return {
 			[3] = "tllbug",
 			[4] = "tllprivate",
 			[5] = "tllfireraiser",
-			[6] = "tllpbot",
-			[7] = "tllfirestarter",
+			[6] = "tllfirestarter",
+			[7] = "tllpbot",
 			[8] = "tlllasbot",
 		},
 		customparams = {

@@ -3,6 +3,7 @@
 
 Balance :
  - Tankanotor Arm : Increase range 1175 => 1300 and decrease damage by rocket 2030=>1250. Reduce Reloadtime 7=>6s
+ - T1 ground AA : Decrease cost. Fix range to 775. Vehicle ~100dmg/s, Kbot ~90dmg/s
 
 Improvment :
  - Add morph for T4=>T5 for all T4 NANO and T4 Plasma Reflector (given by T5 Lab)
@@ -848,7 +849,7 @@ Fix:
 3.21 -> 3.22
 2019-12-09
 Balance:
- - Gladiator : Increase green laser power (75dmg/s => 100). Decrease range and power for rockets (150dmg=>126dmg for each rocket).
+ - corgladiator : Increase green laser power (75dmg/s => 100). Decrease range and power for rockets (150dmg=>126dmg for each rocket).
  - Decrease 500HP for all drillers
  - Decrease All Energy cost by 50% for Mobile and static Antinuke T2/T3.
  - Decrease Timebuild for Mobile Antinuke. (-25%)
@@ -926,7 +927,7 @@ Balance:
  - Balance T1 Fast Vehicle Topaz (less HP)
  - Talon Solar and Gen increase Timebuild
  - Decrease HP for Talon Psyker
- - Nerf Gladiator (less range for beam = same than arm warrior). Decrease HP by 200.
+ - Nerf corgladiator (less range for beam = same than arm warrior). Decrease HP by 200.
  - Cloak bomber. Increase decloak radius
  - All commando : Reduce HP 25%, CaptureSpeed 50%, Sight 30%. Delete Radar.
  - Increase cost of t2 kbot lab Talon. Delete morph for engi into t2 cons.
@@ -954,11 +955,11 @@ Balance:
  - Delete Totalitarian from T2
  - Increase Tremor, Goliath, TllThump stats and cost
  - Decrease Stats and cost for TLL and Talon T3 Bomber
- - Increase Troman Cost (+500M) and Timebuild (+45K)
+ - Increase cortroman Cost (+500M) and Timebuild (+45K)
  - Decrease Energy cost for Raz (was too high +110KE)
  - Tortoise riptide gain Torpedo and lost starburst. Now, riptide can go in water and is all-terrain (New tortoises will come : radar, jammer, heavy assault, artillery (could be morph in haboob T3)
  - ReduceRange for Talon LLT / Sniper
- - Decrease cost and stats for T2.5 Krogtaar / AKmech (now, they are near from T2 than T3 units)
+ - Decrease cost and stats for T2.5 Krogtaar / armvengence (now, they are near from T2 than T3 units)
  - Reduce Stats and cost for T2.5 Hover.
 
 Improvements:
@@ -983,7 +984,7 @@ Bugs:
 Balance:
  - ARM/CORE Spider / Tortoise became T2. Increase power of some units. Transform Rezzer into Engineer. New units will come in future.
  - T3 All-Terrain decrease stats and cost
- - Decrease Vengence (Akmech) and Krogtaar (T2) stats and cost
+ - Decrease Vengence (armvengence) and Krogtaar (T2) stats and cost
 
 Improvements:
  - Delete all Tech Center, Experimental Nano, Commander constructor
@@ -1063,7 +1064,7 @@ Improvements from last TA version (2019-08-28):
  - Delete Eco structure and add corkrog1 & armbanth1 for T4 RC Cons.
  - Decrease 15% model : ultimate vulcain, bagger, buzz
  - Add new flammer tank core t1.5 (Remplace corfgbt model). Decrease energycost by 10%.
- - Add new model Akmech
+ - Add new model armvengence
  - Add new model for cor RC T3
  - Add new T1.5 Cons Veh (tllmando) TLL and delete T1.5 Cons Air (tllhtca)
  - Add new model for cloak bomber
@@ -1117,7 +1118,7 @@ Balance:
  - Increase cost of ARM Super Vulcan (armvulc1), energyCost 3600000E -> 4553464E, metalCost 422040M -> 622040M
  - Nerf ARM Antarion (armantar), 500dps -> 435dps (experimental_land units)
  - Core Shrike (shrike) morph into Shock (corshock) needs 0.1xp (was 0.5xp)
- - ARM Air Wolf (airwolf3g) morph into Stratus (armstratus) needs 0.1xp (was 0.5xp)
+ - ARM Air Wolf (armwolf) morph into Stratus (armstratus) needs 0.1xp (was 0.5xp)
  - Rebalance Commanders Morph Cost
  - Paratroopers stunTime 5sec, 80% health when dropped
  - TLL Tracker (tlltraq) is paratrooper
@@ -1183,7 +1184,7 @@ Bugs:
  - armmcv : Add Missile Starburst for Vehicle Command (t3 ARM). Now there are 2 independant turrets.
  - armsiege : Deleted the pause after the second shot.
  - champ : Increase size for Champion (T3 Core vehicle).
- - troman : Add starburst.
+ - cortroman : Add starburst.
  - coreavalanche & cordemon : Add flames.
  - tlldmc : increase size.
  - batships (arm & core) : the main turret fires in continue (no more pause after the third shoot)
@@ -1192,7 +1193,7 @@ Bugs:
  Balance:
  - commando have Cloak. Stealthy feature deleted. Paratrooping feature deleted.
  - Balance Tllroaster (turret have angle limit now fixed at 220°).
- - troman : Delete the Sniper weapon and add beam laser. Increase speed and HP.
+ - cortroman : Delete the Sniper weapon and add beam laser. Increase speed and HP.
  - tlldmc : decrease HP and cost.
  - monkeylord : increase cost and timebuild. The weapon rotation has been reduced.
 
@@ -1458,7 +1459,7 @@ Balance:
 - Balance HLT TLL. Decrease stats to have same than ARM / CORE
 - Balance Capital mini Gun from Hero (damage / 2)
 - Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject
-- Delete explosion after death for Troman (T3 Core sniper)
+- Delete explosion after death for cortroman (T3 Core sniper)
 - Increase HP for Armsiege 20K => 29K
 - Balance Cost from all carrier and decrese HP (need approval from team)
 - Reduce explosion for cortron (tactical nuke) and increase energycost by 20%

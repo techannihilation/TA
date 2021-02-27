@@ -249,7 +249,7 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	monkeylord = {
+	cormonkeylord = {
 		{
 			name = "shield_monkey",
 			cob = "Shield",

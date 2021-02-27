@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		
+
 		objectname = "ARMCA",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
@@ -82,12 +82,12 @@ return {
 			[23] = "armdrag",
 			[24] = "armclaw",
 			[25] = "armllt",
-			[26] = "tawf001",
+			[26] = "armbeamer",
 			[27] = "armhlt",
 			[28] = "armguard",
 			[29] = "armbrtha2",
 			[30] = "armrl",
-			[31] = "packo",
+			[31] = "armpack",
 			[32] = "armcir",
 			[33] = "armsy",
 			[34] = "armplat",

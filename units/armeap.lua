@@ -49,7 +49,7 @@ return {
 		buildoptions = {
 			[1] = "armeca",
 			[2] = "armsr71",
-			[3] = "airwolf3g",
+			[3] = "armwolf",
 			[4] = "armpers",
 			[5] = "armor",
 			[6] = "armorion",

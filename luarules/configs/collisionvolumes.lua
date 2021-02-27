@@ -158,7 +158,7 @@ local unitCollisionVolume = {					--dynamic collision volume definitions
 		on={64,20,64,0,0,0,1,1,1},
 		off={38,20,38,0,0,0,1,1,1},
 	},
-	[UnitDefNames["packo"].id] = {
+	[UnitDefNames["armpack"].id] = {
 		on={49,51,49,-0.5,-10,0,1,1,1,0,16,0},
 		off={49,23,49,-0.5,-10,0,1,1,1,0,6,0},
 	},
@@ -186,7 +186,7 @@ local unitCollisionVolume = {					--dynamic collision volume definitions
 		on={152,50,123,0,0,0,2,1,0,0,24,0},
 		off={152,66,123,0,18,0,2,1,0,0,24,0},
 	},
-	[UnitDefNames["uppercut"].id] = {
+	[UnitDefNames["coruppercut"].id] = {
 		on={31,31,156,0,45,0,1,1,2,0,60,0},
 		off={31,31,156,0,0,0,1,1,2,0,20,0},
 	},

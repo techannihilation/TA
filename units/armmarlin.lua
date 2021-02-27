@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Marlin",
 		noautofire = false,
-		
+
 		objectname = "armmarlin",
 		radardistance = 0,
 		radaremitheight = 52,
@@ -143,7 +143,7 @@ return {
 					default = 300,
 				},
 			},
-			tawf009_weapon = {
+			armserpent_weapon = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -179,7 +179,7 @@ return {
 					subs = 1500,
 				},
 			},
-			uppercut_rocket = {
+			tactical_rocket = {
 				areaofeffect = 650,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -221,11 +221,11 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "UPPERCUT_ROCKET",
+				def = "TACTICAL_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "TAWF009_WEAPON",
+				def = "armserpent_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 110,
 				onlytargetcategory = "UNDERWATER",

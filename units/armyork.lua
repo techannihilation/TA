@@ -1,7 +1,7 @@
 return {
 	armyork = {
 		acceleration = 0.0396,
-		airsightdistance = 1000,
+		airsightdistance = 775,
 		brakerate = 0.3795,
 		buildcostenergy = 5806,
 		buildcostmetal = 561,

@@ -12,7 +12,7 @@ modConfig["TA"]["unitList"] =
 								armllt = { weapons = { 1 } },
 								armfllt = { weapons = { 1 } },
 								armllt1 = { weapons = { 1 } },
-								tawf001 = { weapons = { 1 } },
+								armbeamer = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
 								armvhlt = { weapons = { 1 } },
 								armguard = { weapons = { 1, 1 } },
@@ -47,12 +47,12 @@ modConfig["TA"]["unitList"] =
 									--Anti-Air--
 								armrl = { weapons = { 2 } }, --light aa
 								armrl1 = { weapons = { 2 } },
-								packo = { weapons = { 2 } },
+								armpack = { weapons = { 2 } },
 								armcir = { weapons = { 2 } }, --chainsaw
 								armfrt = { weapons = { 2 } },  --floating rocket laucher
 								armflak = { weapons = { 2 } },
 								armfflak = { weapons = { 2 } },
-								mercury = { weapons = { 2 } },
+								armmercury = { weapons = { 2 } },
 								armhys = { weapons = { 2 } },
 
 									--Anti-Nuke--
@@ -109,7 +109,7 @@ modConfig["TA"]["unitList"] =
 								corerad = { weapons = { 2 } },
 								corenaa = { weapons = { 2 } },
 								corflak = { weapons = { 2 } },
-								screamer = { weapons = { 2 } },
+								corscreamer = { weapons = { 2 } },
 								corpre = { weapons = { 2 } },
 
 									--Anti-Nuke--

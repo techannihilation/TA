@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Marlin",
 		noautofire = false,
-		
+
 		objectname = "talon_frigate",
 		pushresistant = true,
 		radardistance = 0,
@@ -177,7 +177,7 @@ return {
 					subs = 1500,
 				},
 			},
-			uppercut_rocket = {
+			tactical_rocket = {
 				areaofeffect = 550,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -219,7 +219,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "UPPERCUT_ROCKET",
+				def = "TACTICAL_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {

@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		
 		objectname = "CORLAB",
 		radaremitheight = 29,
 		seismicsignature = 0,
@@ -61,9 +60,9 @@ return {
 			[3] = "corpunk",
 			[4] = "corak",
 			[5] = "corstorm",
-			[6] = "corthud",
-			[7] = "corcrash",
-			[8] = "gladiator",
+			[6] = "corcrash",
+			[7] = "corthud",
+			[8] = "corgladiator",
 		},
 		customparams = {
 			buildpic = "corlab.dds",

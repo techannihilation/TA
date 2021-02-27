@@ -60,7 +60,7 @@ return {
 			[5] = "armsubk",
 			[6] = "armcrus",
 			[7] = "armmship",
-			[8] = "tawf009",
+			[8] = "armserpent",
 			[9] = "armcarry",			
 			[10] = "armbats",
 		},

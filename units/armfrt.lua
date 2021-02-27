@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 2,
 		name = "Sentry",
 		noautofire = false,
-		
+
 		objectname = "ARMFRT",
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -120,7 +120,7 @@ return {
 				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 765,
+				range = 775,
 				reloadtime = 1.7,
 				smoketrail = true,
 				soundhitdry = "xplomed2",

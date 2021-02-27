@@ -38,8 +38,7 @@ talon_clone_lab = {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Infantry Lab",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_clone_lab",
 		radardistance = 50,
 		radaremitheight = 25,
@@ -63,7 +62,7 @@ talon_clone_lab = {
 			[4] = "talon_sphere",
 			[5] = "talon_mercenary",
 			[6] = "talon_rebel",
-			[7] = "talon_sniper",		
+			[7] = "talon_sniper",
 		},
 		customparams = {
 			buildpic = "talon_clone_lab.dds",

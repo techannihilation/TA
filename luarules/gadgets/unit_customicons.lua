@@ -103,8 +103,8 @@ function gadget:Initialize()
   Spring.AddUnitIcon("mech.user", "icons/mech.tga", 3.60)
   Spring.AddUnitIcon("med_mech.user", "icons/mech.tga", 3.0)
   Spring.AddUnitIcon("small_mech.user", "icons/mech.tga", 2.5)
-  Spring.AddUnitIcon("fatshrew.user", "icons/fatshrew.png", 3)
-  Spring.AddUnitIcon("monkeylord.user", "icons/monkeylord.png", 4)
+  Spring.AddUnitIcon("corpokie.user", "icons/corpokie.png", 3)
+  Spring.AddUnitIcon("cormonkeylord.user", "icons/cormonkeylord.png", 4)
   Spring.AddUnitIcon("cormkl.user", "icons/cormkl.png", 5)
   Spring.AddUnitIcon("armmygalo.user", "icons/armmygalo.png", 5)
   Spring.AddUnitIcon("corlilith.user", "icons/corlilith.png", 6)
@@ -121,7 +121,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("talon_annubis.user", "icons/talon_annubis.png", 4)
   Spring.AddUnitIcon("armpraet.user", "icons/armpraet.png", 3)
   Spring.AddUnitIcon("talon_scorpion.user", "icons/talon_scorpion.png", 3)
-  Spring.AddUnitIcon("gorg.user", "icons/gorg.png", 3)
+  Spring.AddUnitIcon("corgorg.user", "icons/corgorg.png", 3)
   Spring.AddUnitIcon("arm_furie.user", "icons/arm_furie.png", 3)
   Spring.AddUnitIcon("liche.user", "icons/liche.png", 2.5)
   Spring.AddUnitIcon("krow.user", "icons/krow.png", 2.5)
@@ -144,7 +144,7 @@ function gadget:Initialize()
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") or (ud.name=="talon_echelon") or (ud.name=="talon_token") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter.user")
 --t3 fighters
-      elseif (ud.name=="airwolf3g") or (ud.name=="shrike") or (ud.name=="tllshu") or (ud.name=="talon_hornet") then
+      elseif (ud.name=="armwolf") or (ud.name=="shrike") or (ud.name=="tllshu") or (ud.name=="talon_hornet") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user")
 
 --krow
@@ -182,10 +182,10 @@ function gadget:Initialize()
 --Spider
     elseif (ud.name=="corlilith") then
           Spring.SetUnitDefIcon(udid, "corlilith.user")
-    elseif (ud.name=="fatshrew") then
-          Spring.SetUnitDefIcon(udid, "fatshrew.user")
-    elseif (ud.name=="monkeylord") then
-          Spring.SetUnitDefIcon(udid, "monkeylord.user")
+    elseif (ud.name=="corpokie") then
+          Spring.SetUnitDefIcon(udid, "corpokie.user")
+    elseif (ud.name=="cormonkeylord") then
+          Spring.SetUnitDefIcon(udid, "cormonkeylord.user")
     elseif (ud.name=="cormkl") then
           Spring.SetUnitDefIcon(udid, "cormkl.user")
     elseif (ud.name=="armmygalo") then
@@ -194,8 +194,8 @@ function gadget:Initialize()
     elseif (ud.name=="arm_furie") then
           Spring.SetUnitDefIcon(udid, "arm_furie.user")
 --Gorg
-    elseif (ud.name=="gorg") then
-          Spring.SetUnitDefIcon(udid, "gorg.user")
+    elseif (ud.name=="corgorg") then
+          Spring.SetUnitDefIcon(udid, "corgorg.user")
 --Olympus
     elseif (ud.name=="armolympus") then
           Spring.SetUnitDefIcon(udid, "armolympus.user")

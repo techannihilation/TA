@@ -586,7 +586,7 @@ local morphDefs = {
 			xp = 0.15,
 		},
 		{
-			into = 'trem',
+			into = 'cortremor',
 			time = 60,
 			xp = 0.35,
 		},
@@ -631,7 +631,7 @@ local morphDefs = {
         	time = 90,
         	xp = 0.10,
          },
-	akmech = {
+	armvengence = {
 		into = 'armorco',
 		time = 90,
 		xp = 0.15,
@@ -652,7 +652,7 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	helepolis = {
-		into = 'gorg',
+		into = 'corgorg',
 		time = 90,
 		xp = 0.10,
 	},
@@ -821,7 +821,7 @@ local morphDefs = {
 		time = 45,
 		xp = 0.60,
 	},
-	ahermes = {
+	armhermes = {
 		into = 'armyork',
 		time = 30,
 		xp = 0.50,
@@ -841,7 +841,7 @@ local morphDefs = {
 		time = 60,
 		xp = 1.00,
 	},
-	gladiator = {
+	corgladiator = {
 		into = 'krogtaar',
 		time = 90,
 		xp = 0.25,
@@ -858,7 +858,7 @@ local morphDefs = {
 			xp = 0.15,
 		},
 	},
-	troman = {
+	cortroman = {
 		into = 'armgor',
 		time = 30,
 		xp = 0.05,
@@ -1069,7 +1069,7 @@ local morphDefs = {
 		time = 30,
 		tech = 1,
 	},
-	airwolf3g = {
+	armwolf = {
 		into = 'armstratus',
 	  time = 60,
 		xp = 0.10,
@@ -1084,7 +1084,7 @@ local morphDefs = {
 	  	time = 20,
 		xp = 0.05,
 	},
-	trem = {
+	cortremor = {
 		into = 'armsiege',
 	  	time = 90,
 		xp = 0.25,
@@ -1236,7 +1236,7 @@ local morphDefs = {
 		time = 160,
 		xp = 0.50,
 	},
-	tawf009 = {
+	armserpent = {
 		into = 'armbsub',
 		time = 90,
 		xp = 0.25,
@@ -1312,7 +1312,7 @@ local morphDefs = {
 		xp = 0.40,
 	},
 	armhawk = {
-		into = 'airwolf3g',
+		into = 'armwolf',
 		time = 30,
 		xp = 0.40,
 	},
