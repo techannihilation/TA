@@ -30,7 +30,7 @@ return {
 		mass = 1675,
 		maxdamage = 3250,
 		maxslope = 12,
-		maxvelocity = 1.35,
+		maxvelocity = 1.2,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "HTANK4",
@@ -197,8 +197,6 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "GAUSS_TLL",
-				maindir = "0 0 1",
-				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {

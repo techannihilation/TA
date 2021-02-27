@@ -39,7 +39,6 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Loch Ness",
 		noautofire = false,
-		
 		objectname = "tlllochness",
 		radardistance = 0,
 		radaremitheight = 48,
@@ -141,8 +140,6 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "GAUSS_TLL",
-				maindir = "0 0 1",
-				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 		},
