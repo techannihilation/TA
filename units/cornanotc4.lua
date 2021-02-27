@@ -54,7 +54,7 @@ return {
 		turnrate = 1.33,
 		unitname = "cornanotc4",
 		workertime = 9600,
-		yardmap = "ooooooooo",
+		--yardmap = "ooooooooo", --Nano Broken if yardmap.
 		customparams = {
 			buildpic = "cornanotc4.dds",
 			faction = "CORE",

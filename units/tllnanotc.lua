@@ -50,7 +50,6 @@ return {
 		unitname = "tllnanotc",
 		upright = true,
 		workertime = 300,
-		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "tllnanotc.dds",
 			faction = "TLL",

@@ -56,7 +56,6 @@ return {
 		turnrate = 1,
 		unitname = "tllnanotc4",
 		workertime = 10000,
-		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "tllnanotc4.dds",
 			faction = "tll",

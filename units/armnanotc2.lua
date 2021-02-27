@@ -56,7 +56,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 650,
-		yardmap = "ooooooooo",
+		--yardmap = "ooooooooo", --Nano Broken if yardmap.
 		customparams = {
 			buildpic = "armnanotc2.dds",
 			faction = "ARM",

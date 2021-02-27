@@ -52,7 +52,6 @@ return {
 		turnrate = 1,
 		unitname = "talon_nanotc4",
 		workertime = 7200,
-		yardmap = "ooooooooo",
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

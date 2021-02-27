@@ -46,6 +46,7 @@ local hmsz = Game.mapSizeZ/2
 
 local morphednanos = { --not in use, look like 125
 --Core
+  [UnitDefNames["cornanotc"].id] = true,
   [UnitDefNames["cornanotc1"].id] = true,
   [UnitDefNames["cornanotc2"].id] = true,
   [UnitDefNames["cornanotc3"].id] = true,
@@ -53,6 +54,7 @@ local morphednanos = { --not in use, look like 125
 
 
 --Arm
+  [UnitDefNames["armnanotc"].id] = true,
   [UnitDefNames["armnanotc1"].id] = true,
   [UnitDefNames["armnanotc2"].id] = true,
   [UnitDefNames["armnanotc3"].id] = true,
@@ -61,6 +63,7 @@ local morphednanos = { --not in use, look like 125
 
 
 --The lost legacy
+  [UnitDefNames["tllnanotc"].id] = true,
   [UnitDefNames["tllnanotc1"].id] = true,
   [UnitDefNames["tllnanotc2"].id] = true,
   [UnitDefNames["tllnanotc3"].id] = true,
@@ -69,6 +72,7 @@ local morphednanos = { --not in use, look like 125
 
 
 --Talon
+  [UnitDefNames["talon_nanotc"].id] = true,
   [UnitDefNames["talon_nanotc1"].id] = true,
   [UnitDefNames["talon_nanotc2"].id] = true,
   [UnitDefNames["talon_nanotc3"].id] = true,

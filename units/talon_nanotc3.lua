@@ -56,7 +56,6 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		workertime = 1800,
-		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "talon_nanotc3.dds",
 			faction = "TALON",

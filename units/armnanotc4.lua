@@ -53,7 +53,7 @@ return {
 		turnrate = 1,
 		unitname = "armnanotc4",
 		workertime = 7200,
-		yardmap = "ooooooooo",
+		--yardmap = "ooooooooo", --Nano Broken if yardmap.
 		customparams = {
 			buildpic = "armnanotc4.dds",
 			faction = "ARM",

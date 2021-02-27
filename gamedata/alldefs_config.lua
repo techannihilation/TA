@@ -715,6 +715,7 @@ local unitheight = {
     ["armnanotc1"] = 36,
     ["armnanotc2"] = 39,
     ["armnanotc3"] = 42,
+		["armnanotc4"] = 55,
     ["armor"] = 20,
     ["armorbweaver"] = 19,
     ["armorca"] = 19,
