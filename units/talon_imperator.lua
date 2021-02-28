@@ -37,7 +37,6 @@ return {
 		movementclass = "DBOAT6",
 		name = "Imperator",
 		noautofire = false,
-		
 		objectname = "talon_imperator",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
@@ -192,6 +191,8 @@ return {
 			},
 			[2] = {
 				def = "IMPERATOR_GUN",
+				maindir = "0 0 1",
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 		},

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, arms, hand1, hand2, hand3, stand;
+piece  base, ground, arms1, arms2, stand;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
 
@@ -38,29 +38,24 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Go()
 {
 	set ARMORED to 0;
-	dont-cache arms;
-	dont-cache hand1;
-	dont-cache hand2;
-	dont-cache hand3;
-	dont-cache stand;
-	move stand to y-axis [6.000000] speed [5.000000];
-	wait-for-move arms along y-axis;
-	spin arms around y-axis speed Static_Var_1 accelerate Static_Var_2;
+	move stand to y-axis [4.000000] speed [5.000000];
+	move arms2 to y-axis [2.000000] speed [5.000000];
+	wait-for-move stand along y-axis;
+	spin arms1 around y-axis speed Static_Var_1 accelerate Static_Var_2;
+	spin arms2 around y-axis speed 0- Static_Var_1 accelerate Static_Var_2;
 }
 
 Stop()
 {
-	stop-spin arms around y-axis decelerate Static_Var_3;
-	wait-for-turn arms around y-axis;
-	turn arms to y-axis <0.000000> speed <70.000000>;
-	wait-for-turn arms around y-axis;
+	stop-spin arms1 around y-axis decelerate Static_Var_3;
+	stop-spin arms2 around y-axis decelerate Static_Var_3;
+	wait-for-turn arms1 around y-axis;
+	turn arms1 to y-axis <0.000000> speed <70.000000>;
+	turn arms2 to y-axis <0.000000> speed <70.000000>;
+	wait-for-turn arms1 around y-axis;
 	move stand to y-axis [0.000000] speed [10.000000];
-	wait-for-move arms along y-axis;
-	cache arms;
-	cache hand1;
-	cache hand2;
-	cache hand3;
-	cache stand;
+	move arms2 to y-axis [0.000000] speed [10.000000];
+	wait-for-move stand along y-axis;
 	set ARMORED to 1;
 }
 
@@ -101,17 +96,8 @@ Create()
 	Static_Var_1 = 500;
 	Static_Var_2 = 200;
 	Static_Var_3 = 160;
-	dont-shade arms;
-	dont-shade hand1;
-	dont-shade hand2;
-	dont-shade hand3;
-	dont-shade stand;
 	call-script InitState();
 	start-script SmokeUnit();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 250;
-	}
 }
 
 Activate()
@@ -139,26 +125,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arms type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode arms1 type NOHEATCLOUD;
+		explode arms2 type NOHEATCLOUD;
+		explode ground type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arms type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode arms type NOHEATCLOUD | SHATTER;
-		explode base type NOHEATCLOUD;
+		explode arms1 type NOHEATCLOUD;
+		explode arms2 type NOHEATCLOUD | FALL;
+		explode ground type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arms type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD;
+	explode arms1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode arms2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode ground type NOHEATCLOUD;
 	return (corpsetype);
 }

@@ -49,15 +49,15 @@ SweetSpot(piecenum)
 
 Activate()
 {
-	signal SIG_MOVE;
-	set-signal-mask SIG_MOVE;
+	//signal SIG_MOVE;
+	//set-signal-mask SIG_MOVE;
 	sleep 150;
 }
 
 Deactivate()
 {
-	signal SIG_MOVE;
-	set-signal-mask SIG_MOVE;
+	//signal SIG_MOVE;
+	//set-signal-mask SIG_MOVE;
 	sleep 150;
 }
 

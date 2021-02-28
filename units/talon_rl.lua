@@ -1,7 +1,7 @@
 return {
 	talon_rl = {
 		acceleration = 0,
-		airsightdistance = 1000,
+		airsightdistance = 900,
 		brakerate = 0,
 		buildcostenergy = 1990,
 		buildcostmetal = 174,
@@ -34,7 +34,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Infac",
 		noautofire = false,
-		
 		objectname = "talon_rl",
 		radaremitheight = 49,
 		seismicsignature = 0,
@@ -128,7 +127,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 850,
-				reloadtime = 1.6,
+				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
@@ -148,10 +147,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 750,
 				damage = {
-					areoship = 36,
+					areoship = 22.5,
 					default = 5,
-					priority_air = 144,
-					unclassed_air = 144,
+					priority_air = 90,
+					unclassed_air = 90,
 				},
 			},
 			armrl_starburst = {
@@ -171,7 +170,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 900,
-				reloadtime = 1.6,
+				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
@@ -191,13 +190,12 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 800,
 				damage = {
-					areoship = 36,
+					areoship = 22.5,
 					default = 5,
-					priority_air = 144,
-					unclassed_air = 144,
+					priority_air = 90,
+					unclassed_air = 90,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {

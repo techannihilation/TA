@@ -1,6 +1,6 @@
 return {
 	armfig = {
-		acceleration = 0.89843,
+		acceleration = 0.9,
 		airsightdistance = 700,
 		bankscale = 1,
 		blocking = false,
@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Freedom Fighter",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "ARMFIG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",

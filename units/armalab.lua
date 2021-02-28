@@ -38,8 +38,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Kbot Lab",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMALAB",
 		radaremitheight = 31,
 		seismicsignature = 0,

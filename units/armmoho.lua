@@ -36,7 +36,6 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		
 		objectname = "ARMMOHO",
 		onoffable = true,
 		radaremitheight = 40,

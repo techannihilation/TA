@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 235,
 		buildcostmetal = 64,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 5,
-		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "tllmex_aoplane.dds",
 		buildpic = "tllmex.dds",
 		buildtime = 1800,
 		category = "ALL SURFACE",
@@ -34,7 +30,6 @@ return {
 		metalstorage = 35,
 		name = "Metal Extractor",
 		noautofire = false,
-		
 		objectname = "TLLMEX",
 		onoffable = true,
 		radaremitheight = 60,
@@ -42,7 +37,6 @@ return {
 		selfdestructcountdown = 1,
 		sightdistance = 210,
 		unitname = "tllmex",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "tllmex.dds",
