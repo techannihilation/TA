@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 1100,
 		builder = true,
 		buildpic = "armfhp.dds",
-		buildtime = 10000,
+		buildtime = 7500,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -34,7 +34,6 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Platform",
 		noautofire = false,
-		
 		objectname = "ARMFHP",
 		radardistance = 50,
 		radaremitheight = 22,

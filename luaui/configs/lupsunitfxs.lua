@@ -404,6 +404,14 @@ tllmeteor = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet3", noIconDraw = true, priority=3, onActive=true}},
   },
+  armnomad = {
+    {class='ThundAirJet',options={color={0.8,0.2,0}, width=10, length=40, emitVector = {0,1,0}, piece="flame1", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.8,0.2,0}, width=10, length=40, emitVector = {0,1,0}, piece="flame2", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.8,0.2,0}, width=10, length=40, emitVector = {0,1,0}, piece="flame3", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.8,0.2,0}, width=10, length=40, emitVector = {0,1,0}, piece="flame4", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.8,0.2,0}, width=10, length=40, emitVector = {0,1,0}, piece="flame5", noIconDraw = true, priority=3, onActive=true}},
+    {class='ThundAirJet',options={color={0.8,0.2,0}, width=10, length=40, emitVector = {0,1,0}, piece="flame6", noIconDraw = true, priority=3, onActive=true}},
+  },
   armsl = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},

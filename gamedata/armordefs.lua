@@ -337,6 +337,9 @@ return {
 		"tllbarbarus",
 		"talon_skynet",
 		"talon_independence",
+
+		-- OTHER
+		"armnomad",
 	},
 	flamethrowers = {
 		"corpyro",

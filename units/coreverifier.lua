@@ -16,7 +16,7 @@ return {
 		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Mobile Radar/Sonar Turtle",
+		description = "All-Terrain Radar Turtoise",
 		energymake = 10,
 		energyuse = 80,
 		explodeas = "BIG_UNITEX",
@@ -35,7 +35,6 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Verifier",
 		noautofire = false,
-		
 		objectname = "coreverifier",
 		onoffable = true,
 		radardistance = 2300,

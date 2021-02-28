@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armhp_aoplane.dds",
 		buildpic = "armhp.dds",
-		buildtime = 10000,
+		buildtime = 7500,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Platform",
 		noautofire = false,
-		
+
 		objectname = "ARMHP",
 		radaremitheight = 22,
 		seismicsignature = 0,

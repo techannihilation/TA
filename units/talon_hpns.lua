@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 979,
 		builder = true,
 		buildpic = "talon_hpns.dds",
-		buildtime = 10000,
+		buildtime = 7500,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -31,7 +31,6 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Gravitank Platform",
 		noautofire = false,
-		
 		objectname = "talon_hpns",
 		radaremitheight = 25,
 		seismicsignature = 0,

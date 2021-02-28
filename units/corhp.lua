@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corhp_aoplane.dds",
 		buildpic = "corhp.dds",
-		buildtime = 10000,
+		buildtime = 7500,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Platform",
 		noautofire = false,
-		
+
 		objectname = "CORHP",
 		radaremitheight = 22,
 		seismicsignature = 0,

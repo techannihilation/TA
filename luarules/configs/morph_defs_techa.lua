@@ -1431,6 +1431,24 @@ local morphDefs = {
 		time = 120,
 		xp = 0.10,
 	},
+	armnomad = {
+		{
+			into = 'armlab',
+			time = 10,
+		},
+		{
+			into = 'armvp',
+			time = 10,
+		},
+	},
+	armvp = {
+		into = 'armnomad',
+		time = 15,
+	},
+	armlab = {
+		into = 'armnomad',
+		time = 15,
+	},
 }
 
 --

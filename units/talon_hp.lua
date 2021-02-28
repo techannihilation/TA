@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "talon_lab_aoplane.dds",
 		buildpic = "talon_hp.dds",
-		buildtime = 10000,
+		buildtime = 7500,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -37,8 +37,7 @@ return {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Gravitank Platform",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_hp",
 		radaremitheight = 25,
 		seismicsignature = 0,

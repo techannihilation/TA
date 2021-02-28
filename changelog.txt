@@ -1,5 +1,5 @@
 3.76 > 3.79
-2021-02-27
+2021-02-29
 
 Balance :
  - Tankanotor Arm : Increase range 1175 => 1300 and decrease damage by rocket 2030=>1250. Reduce Reloadtime 7=>6s
@@ -11,6 +11,7 @@ Improvment :
  - Rework T5 Arm/Core Nano models
  - Delete T2 Speeder Arm Hover (Light Beam)
  - Delete Angle restriction for mobile Rocket / Beam units (banisher, mobile tachyon, Tankanotor, T3 Rockets...) and reduce speed by 20%
+ - Add armnomad to test (T1 LAb morphed)
 
  Fix :
   - Delete Lock FPS Gadget to unlock First Person Camera ([Q])

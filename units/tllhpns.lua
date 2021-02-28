@@ -4,7 +4,7 @@ return {
 		buildcostmetal = 1303,
 		builder = true,
 		buildpic = "tllhpns.dds",
-		buildtime = 11007,
+		buildtime = 7500,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -31,7 +31,6 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Platform - NS",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "tllHPNS",
 		radardistance = 0,
