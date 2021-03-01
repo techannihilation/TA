@@ -4,6 +4,7 @@
 Balance :
  - Tankanotor Arm : Increase range 1175 => 1300 and decrease damage by rocket 2030=>1250. Reduce Reloadtime 7=>6s
  - T1 ground AA : Decrease cost. Fix range to 775. Vehicle ~100dmg/s, Kbot ~90dmg/s
+ - Nerf Krog / Orco / Hyperion (less hp -10%)
 
 Improvment :
  - Add morph for T4=>T5 for all T4 NANO and T4 Plasma Reflector (given by T5 Lab)
