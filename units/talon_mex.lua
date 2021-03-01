@@ -35,8 +35,7 @@ return {
 		maxwaterdepth = 20,
 		metalstorage = 25,
 		name = "Metal Extractor",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_mex",
 		script = "talon_moho.cob",
 		onoffable = true,
