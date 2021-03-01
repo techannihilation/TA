@@ -35,7 +35,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Adder",
 		noautofire = false,
-		
 		objectname = "TLLPULASER",
 		radaremitheight = 31,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -145,7 +144,6 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					commanders = 85,
 					default = 175,
 					subs = 5,
 				},

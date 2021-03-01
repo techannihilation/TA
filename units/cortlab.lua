@@ -25,7 +25,7 @@ return {
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
-		footprintx = 7,
+		footprintx = 8,
 		footprintz = 7,
 		icontype = "building",
 		idleautoheal = 5,
@@ -48,7 +48,7 @@ return {
 		stealth = true,
 		unitname = "cortlab",
 		workertime = 400,
-		yardmap = "ooooooo oocccoo oocccoo oocccoo oocccoo oocccoo oocccoo",
+		yardmap = "oooooooo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo",
 		buildoptions = {
 			[1] = "corct",
 			[2] = "coreleopard",

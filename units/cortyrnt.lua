@@ -41,7 +41,6 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Tyrant",
 		noautofire = false,
-
 		objectname = "CORTYRNT",
 		radardistance = 2000,
 		radaremitheight = 84,
@@ -203,7 +202,7 @@ return {
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1400,
+				range = 1050,
 				reloadtime = 1,
 				smoketrail = false,
 				soundhitdry = "xplosml2",

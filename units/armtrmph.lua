@@ -41,7 +41,6 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Triumph",
 		noautofire = false,
-
 		objectname = "ARMTRMPH",
 		radardistance = 2000,
 		radaremitheight = 79,
@@ -192,7 +191,7 @@ return {
 				name = "Heavy Guided Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1400,
+				range = 1050,
 				reloadtime = 1,
 				smoketrail = false,
 				soundhitdry = "cent_hit",

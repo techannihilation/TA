@@ -17,7 +17,7 @@ return {
 		collisionvolumescales = "90 72 90",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Produces Energy / Storage",
+		description = "Produces Energy",
 		energymake = 1375,
 		energystorage = 2750,
 		energyuse = 0,
@@ -36,7 +36,6 @@ return {
 		mincloakdistance = 100,
 		name = "Cloakable Fusion Reactor",
 		noautofire = false,
-		
 		objectname = "talon_ckfus",
 		radaremitheight = 46,
 		seismicsignature = 0,

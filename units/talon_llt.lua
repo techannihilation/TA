@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "LLT",
 		noautofire = false,
-		
 		objectname = "talon_llt",
 		radaremitheight = 65,
 		seismicsignature = 0,

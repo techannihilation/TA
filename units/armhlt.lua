@@ -39,7 +39,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Sentinel",
 		noautofire = false,
-		
 		objectname = "ARMHLT",
 		radaremitheight = 79,
 		seismicsignature = 0,
@@ -151,7 +150,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.2,
 				thickness = 3,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 2250,

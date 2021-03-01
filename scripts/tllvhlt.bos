@@ -57,20 +57,20 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 0 )
-	{
-		sleep 250;
-		turn spindle1 to z-axis <180.00000> speed <450.000000>;
-		wait-for-turn spindle1 around z-axis;
-		turn spindle1 to z-axis <0.00000> now;
-	}
-	if( gun_1 == 1 )
-	{
-		sleep 250;
-		turn spindle2 to z-axis <180.000000> speed <450.000000>;
-		wait-for-turn spindle2 around z-axis;
-		turn spindle2 to z-axis <0.00000> now;
-	}
+	//if( gun_1 == 0 )
+	//{
+	//	sleep 250;
+		//turn spindle1 to z-axis <180.00000> speed <450.000000>;
+		//wait-for-turn spindle1 around z-axis;
+		//turn spindle1 to z-axis <0.00000> now;
+	//}
+	//if( gun_1 == 1 )
+	//{
+	//	sleep 250;
+		//turn spindle2 to z-axis <180.000000> speed <450.000000>;
+		//wait-for-turn spindle2 around z-axis;
+		//turn spindle2 to z-axis <0.00000> now;
+	//}
 	
 	++gun_1;
 	if( gun_1 == 2 )

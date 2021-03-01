@@ -40,8 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
 		name = "Archnano",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLARCHNANO",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

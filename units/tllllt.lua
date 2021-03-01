@@ -39,7 +39,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "LLT",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "TLLLLT",
 		radaremitheight = 72,
 		seismicsignature = 0,

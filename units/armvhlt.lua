@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armvhlt_aoplane.dds",
 		buildpic = "armvhlt.dds",
-		buildtime = 24000,
+		buildtime = 20000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
@@ -39,7 +39,6 @@ return {
 		maxwaterdepth = 0,
 		name = "High-Energy Sentinel",
 		noautofire = false,
-		
 		objectname = "ARMVHLT",
 		radaremitheight = 77,
 		seismicsignature = 0,
@@ -156,7 +155,6 @@ return {
 				thickness = 3,
 				turret = true,
 				weapontype = "BeamLaser",
-				weaponvelocity = 2850,
 				customparams = {
 					light_mult = 1.8,
 					light_radius_mult = 1.2,

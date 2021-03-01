@@ -41,7 +41,6 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Destiny",
 		noautofire = false,
-
 		objectname = "tllcaps",
 		radardistance = 2000,
 		radaremitheight = 84,
@@ -240,7 +239,7 @@ return {
 				metalpershot = 0,
 				model = "weapon_starburstm",
 				name = "Heavy Rockets",
-				range = 1400,
+				range = 1050,
 				reloadtime = 1,
 				smoketrail = true,
 				soundhitdry = "vpulsehit",

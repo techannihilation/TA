@@ -5,13 +5,14 @@
 
 piece  base, pelvis, torsotwist, torso, ltorso, lshoulder, lshoulderrecoil, larm,
        larmrecoil, lbarrel, lbarrel2, lflare, rtorso, rshoulder, rshoulderrecoil, rarm,
-       rarmrecoil, rbarrel, rbarrel2, rflare, backpack, packpackcells, head, emit,
-       lleg, lboot, lfoot, rleg, rboot, rfoot;
+       rarmrecoil, rbarrel, rbarrel2, rflare, backpack, missiles, head, emit,
+       lleg, lboot, lfoot, rleg, rboot, rfoot, msl1, msl2;
 
-static-var  bMoving, bAiming, Static_Var_3, gun_1;
+static-var  bMoving, bAiming, Static_Var_3, gun_1, gun_2;
 
 // Signal definitions
 #define SIG_AIM				2
+#define SIG_AIM_2			4
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -328,7 +329,8 @@ Create()
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_3 = 1;
-	gun_1 = rflare;
+	gun_1 = 0;
+	gun_2 = 0;
 	start-script MotionControl();
 	start-script SmokeUnit();
 	spin lflare around z-axis speed <3000.000000>;
@@ -369,16 +371,19 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	if( gun_1 == 0 )
+	{
+		piecenum = rflare;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lflare;
+	}	
 }
 
 AimPrimary(heading, pitch)
 {
 	bAiming = TRUE;
-	while( !Static_Var_3 )
-	{
-		sleep 100;
-	}
 	signal SIG_AIM;
 	set-signal-mask 0;
 	set-signal-mask SIG_AIM;
@@ -398,9 +403,9 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( gun_1 == 19 )
+	if( gun_1 == 0 )
 	{
-		gun_1 = lflare;
+		gun_1 = 1;
 		emit-sfx 1024 + 0 from rflare;
 		sleep 200;
 		move rbarrel2 to z-axis [-9.000000] speed [450.000000];
@@ -411,9 +416,9 @@ FirePrimary()
 		turn rarmrecoil to x-axis <0.000000> speed <10.000000>;
 		return (0);
 	}
-	if( gun_1 == 11 )
+	if( gun_1 == 1 )
 	{
-		gun_1 = rflare;
+		gun_1 = 0;
 		emit-sfx 1024 + 0 from lflare;
 		sleep 200;
 		move lbarrel2 to z-axis [-9.000000] speed [450.000000];
@@ -424,6 +429,40 @@ FirePrimary()
 		turn larmrecoil to x-axis <0.000000> speed <10.000000>;
 		return (0);
 	}
+}
+
+AimTertiary(heading, pitch)
+{
+	bAiming = TRUE;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	return (1);
+}
+
+FireTertiary()
+{
+	++gun_2;
+	if( gun_2 == 2 )
+	{
+		gun_2 = 0;
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = missiles;
+}
+
+QueryTertiary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = msl1;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = msl2;
+	}	
 }
 
 Killed(severity, corpsetype)
@@ -443,21 +482,6 @@ Killed(severity, corpsetype)
 		explode rboot type NOHEATCLOUD;
 		explode lleg type NOHEATCLOUD;
 		explode lboot type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
-		explode torso type NOHEATCLOUD;
-		explode rshoulder type NOHEATCLOUD | FALL;
-		explode lshoulder type NOHEATCLOUD | FALL;
-		explode rarm type NOHEATCLOUD | FALL;
-		explode larm type NOHEATCLOUD | FALL;
-		explode pelvis type NOHEATCLOUD | FALL;
-		explode rleg type NOHEATCLOUD | FALL;
-		explode rboot type NOHEATCLOUD | FALL;
-		explode lleg type NOHEATCLOUD | FALL;
-		explode lboot type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
