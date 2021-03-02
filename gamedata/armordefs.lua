@@ -256,7 +256,7 @@ return {
 		"armmlrs",
 		"champ",
 		"armantar",
-		"corerex",
+		"armrex",
 		"corminotaur",
 		-- arm t3 bots
 		"armorco",

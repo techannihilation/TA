@@ -34,7 +34,6 @@ return {
 		movementclass = "ATANK4",
 		name = "Black Tiger",
 		noautofire = false,
-
 		objectname = "cortigre",
 		radaremitheight = 44,
 		selfdestructas = "CRAWL_BLAST",
@@ -115,10 +114,10 @@ return {
 		},
 		weapondefs = {
 			tigre_weapon = {
-				areaofeffect = 300,
+				areaofeffect = 292,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 380,
+				craterareaofeffect = 292,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:flash192_fakelight",

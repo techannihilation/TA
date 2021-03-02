@@ -440,7 +440,7 @@ core_intimidator.dds
 coreleopard.dds
 corenaa.dds
 corerad.dds
-corerex.dds
+armrex.dds
 core_riptide.dds
 coreslingshot.dds
 corestor.dds
@@ -717,7 +717,7 @@ tllantinuke1.dds
 tllantinuke.dds
 tllap.dds
 tllarad.dds
-tllarch.dds
+armgrape.dds
 tllarchnano.dds
 tllares.dds
 tllariman.dds

@@ -13,6 +13,7 @@ modConfig["TA"]["unitList"] =
 								armfllt = { weapons = { 1 } },
 								armllt1 = { weapons = { 1 } },
 								armbeamer = { weapons = { 1 } },
+								armgrape = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
 								armvhlt = { weapons = { 1 } },
 								armguard = { weapons = { 1, 1 } },

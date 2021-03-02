@@ -143,7 +143,7 @@ return {
 			rocket_mcv = {
 				areaofeffect = 64,
 				avoidfeature = false,
-				cegtag = "talonraventrail",
+				cegtag = "talonstartbursttrail",
 				collidefriendly = false,
 				craterareaofeffect = 0,
 				craterboost = 0,

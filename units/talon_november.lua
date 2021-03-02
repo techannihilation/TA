@@ -114,7 +114,7 @@ return {
 			talon_rocket = {
 				areaofeffect = 100,
 				avoidfeature = false,
-				cegtag = "talonraventrail",
+				cegtag = "talonstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

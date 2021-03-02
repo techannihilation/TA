@@ -3,9 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, turret1, sleeve1, gun1, flare1, turret2, sleeve2, barrel2, flare2;
+piece  base, turret1, sleeve1, gun1, flare1, turret2, barrelB1, barrelB2,
+		canonB1, canonB2, flareB1, flareB2;
 
-static-var  restore_delay;
+static-var  restore_delay, gun_2;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -52,7 +53,9 @@ HitByWeapon(anglex, anglez)
 Create()
 {
 	hide flare1;
-	hide flare2;
+	hide flareB1;
+	hide flareB2;
+	gun_2 = 0;
 	restore_delay = 3000;
 }
 
@@ -71,8 +74,9 @@ RestoreAfterDelay()
 RestoreAfterDelay2()
 {
 	sleep restore_delay;
-	turn turret2 to y-axis <0.000000> speed <50.005495>;
-	turn sleeve2 to x-axis <0.000000> speed <35.005495>;
+	turn turret2 to y-axis <0.000000> speed <50.0>;
+	turn canonB1 to x-axis <0.000000> speed <35.0>;
+	turn canonB2 to x-axis <0.000000> speed <35.0>;
 }
 
 AimPrimary(heading, pitch)
@@ -91,7 +95,7 @@ FirePrimary()
 {
 	show flare1;
 	turn gun1 to z-axis <0.000000> now;
-	turn gun1 to z-axis <60.005495> speed <150.027473>;
+	turn gun1 to z-axis <60.0> speed <150.0>;
 	sleep 150;
 	hide flare1;
 }
@@ -106,31 +110,60 @@ AimFromPrimary(piecenum)
 	piecenum = turret1;
 }
 
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret2;
+}
+
 AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn turret2 to y-axis heading speed <500.000000>;
-	turn sleeve2 to x-axis <0.000000> - pitch speed <250.000000>;
+	turn turret2 to y-axis heading speed <125.000000>;
+	turn canonB1 to x-axis <0.000000> - pitch speed <75.000000>;
+	turn canonB2 to x-axis <0.000000> - pitch speed <75.000000>;
 	wait-for-turn turret2 around y-axis;
-	wait-for-turn sleeve2 around x-axis;
+	wait-for-turn canonB1 around x-axis;	
 	start-script RestoreAfterDelay2();
 	return (1);
 }
 
 FireSecondary()
 {
-		
+	if( gun_2 == 0 )
+	{
+		emit-sfx 1025 from flareB2;
+		//move canonB2 to z-axis [-1.000000] speed [200.000000];
+		//wait-for-move canonB2 along z-axis;
+		move barrelB2 to z-axis [-2.000000] speed [100.000000];
+		wait-for-move barrelB2 along z-axis;
+		move canonB2 to z-axis [0.000000] speed [10.000000];
+		move barrelB2 to z-axis [0.000000] speed [10.000000];
+	}
+	if( gun_2 == 1 )
+	{
+		emit-sfx 1025 from flareB1;
+		//move canonB1 to z-axis [-1.000000] speed [200.000000];
+		//wait-for-move canonB1 along z-axis;
+		move barrelB1 to z-axis [-2.000000] speed [100.000000];
+		wait-for-move barrelB1 along z-axis;
+		move canonB1 to z-axis [0.000000] speed [10.000000];
+		move barrelB1 to z-axis [0.000000] speed [10.000000];
+	}
+	gun_2 = !gun_2;
 }
 
 QuerySecondary(piecenum)
 {
-		piecenum = flare2;
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = turret2;
+	if( gun_2 == 0 )
+	{
+		piecenum = flareB2;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flareB1;
+	}
 }
 
 SweetSpot(piecenum)
@@ -141,7 +174,8 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	hide flare1;
-	hide flare2;
+	hide flareB1;
+	hide flareB2;
 
 	if( severity <= 25 )
 	{
@@ -149,7 +183,6 @@ Killed(severity, corpsetype)
 		explode base type NOHEATCLOUD;
 		explode sleeve1 type NOHEATCLOUD;
 		explode turret1 type NOHEATCLOUD;
-		explode sleeve2 type NOHEATCLOUD;
 		explode turret2 type NOHEATCLOUD;
 		return (1);
 	}
@@ -159,17 +192,6 @@ Killed(severity, corpsetype)
 		explode base type NOHEATCLOUD;
 		explode sleeve1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 		explode turret1 type NOHEATCLOUD | SHATTER;
-		explode sleeve2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-		explode turret2 type NOHEATCLOUD | SHATTER;
-		return (1);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | SHATTER;
-		explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 		explode turret2 type NOHEATCLOUD | SHATTER;
 		return (1);
 	}
@@ -177,7 +199,6 @@ Killed(severity, corpsetype)
 	explode base type NOHEATCLOUD;
 	explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode turret1 type NOHEATCLOUD | SHATTER;
-	explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode turret2 type NOHEATCLOUD | SHATTER;
 	return (1);
 }

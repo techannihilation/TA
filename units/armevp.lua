@@ -54,7 +54,7 @@ return {
 			[2] = "armeflak",
 			[3] = "armchimera",
 			[4] = "avtr",
-			[5] = "corerex",
+			[5] = "armrex",
 			[6] = "armmcv",
 			[7] = "armmlrs",
 			[8] = "armantar",

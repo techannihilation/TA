@@ -72,7 +72,7 @@ return {
 			[7] = "armveil",
 			[8] = "armfort",
 			[9] = "armmine2",
-			[10] = "armbeamer",
+			[10] = "armgrape",
 			[11] = "armvhlt",
 			[12] = "armpb",
 			[13] = "armamb",

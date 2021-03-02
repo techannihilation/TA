@@ -128,7 +128,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "talon_missile",
+				model = "weapon_rocketm",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,
@@ -198,7 +198,7 @@ return {
 			talon_starburst = {
 				areaofeffect = 96,
 				avoidfeature = false,
-				cegtag = "talonraventrail",
+				cegtag = "talonstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

@@ -4,7 +4,7 @@
 Balance :
  - Tankanotor Arm : Increase range 1175 => 1300 and decrease damage by rocket 2030=>1250. Reduce Reloadtime 7=>6s
  - T1 ground AA : Decrease cost. Fix range to 775. Vehicle ~100dmg/s, Kbot ~90dmg/s
- - Nerf Krog / Orco / Hyperion (less hp -10%)
+ - Nerf Krog / Orco / Hyperion (less hp -10%). Hyperion gain a rocket startburst.
 
 Improvment :
  - Add morph for T4=>T5 for all T4 NANO and T4 Plasma Reflector (given by T5 Lab)
@@ -14,6 +14,8 @@ Improvment :
  - Delete Angle restriction for mobile Rocket / Beam units (banisher, mobile tachyon, Tankanotor, T3 Rockets...) and reduce speed by 20%
  - Add armnomad to test (T1 LAb morphed)
  - Rework Adv. Mex for Arm/Core/TLl/Talon
+ - Remplace T1 Beamer Turret by Grape MiniGun (same balance)
+ - Remplace beamer from Rex T3 Arm Amphibious Vehicle for a Minigun
 
  Fix :
   - Delete Lock FPS Gadget to unlock First Person Camera ([Q])

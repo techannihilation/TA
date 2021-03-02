@@ -105,18 +105,6 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	turn pivot to y-axis heading speed <125.000000>;
-	turn turretB to x-axis <0.000000> - pitch speed <75.000000>;
-	wait-for-turn pivot around y-axis;
-	wait-for-turn turretB around x-axis;
-	start-script RestoreAfterDelay2();
-	return (1);
-}
-
 FirePrimary()
 {
 	if( gun_1 == 0 )
@@ -136,6 +124,33 @@ FirePrimary()
 		move barrelA2 to z-axis [0.000000] speed [3.000000];
 	}
 	gun_1 = !gun_1;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turretA;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = gun_1;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turretB;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn pivot to y-axis heading speed <125.000000>;
+	turn turretB to x-axis <0.000000> - pitch speed <75.000000>;
+	wait-for-turn pivot around y-axis;
+	wait-for-turn turretB around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
 }
 
 FireSecondary()
@@ -163,11 +178,6 @@ FireSecondary()
 	gun_2 = !gun_2;
 }
 
-QueryPrimary(piecenum)
-{
-	piecenum = gun_1;
-}
-
 QuerySecondary(piecenum)
 {
 	if( gun_2 == 0 )
@@ -178,11 +188,6 @@ QuerySecondary(piecenum)
 	{
 		piecenum = flareB1;
 	}
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = turretA;
 }
 
 SweetSpot(piecenum)

@@ -63,7 +63,7 @@ return {
 			[7] = "armfort",
 			[8] = "armarad",
 			[9] = "armmine2",
-			[10] = "armbeamer",
+			[10] = "armgrape",
 			--[11] = "",
 			[12] = "armpb",
 			[13] = "armamb",

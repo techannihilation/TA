@@ -197,7 +197,7 @@ return {
 			talon_starburst = {
 				areaofeffect = 130,
 				avoidfeature = false,
-				cegtag = "talonraventrail",
+				cegtag = "talonstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
