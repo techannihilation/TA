@@ -36,7 +36,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Rocko",
 		noautofire = false,
-		
 		objectname = "ARMROCK",
 		radaremitheight = 25,
 		seismicsignature = 0,

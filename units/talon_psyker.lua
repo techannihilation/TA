@@ -40,8 +40,7 @@ talon_psyker = {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_psyker",
 		radaremitheight = 25,
 		--resurrect = 1,

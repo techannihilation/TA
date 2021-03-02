@@ -2,8 +2,8 @@ return {
 	armgrape = {
 		activatewhenbuilt = true,
 		buildangle = 65536,
-		buildcostenergy = 3666,
-		buildcostmetal = 291,
+		buildcostenergy = 3750,
+		buildcostmetal = 276,
 		builder = false,
 		buildtime = 6000,
 		canattack = true,
@@ -20,8 +20,8 @@ return {
 		footprintx = 3,
 		footprintz = 3,
 		losemitheight = 29,
-		mass = 291,
-		maxdamage = 1290,
+		mass = 276,
+		maxdamage = 1525,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Gatling",
@@ -104,7 +104,7 @@ return {
 		},
 		weapondefs = {
 			gun = {
-				accuracy = 100,
+				accuracy = 200,
 				areaofeffect = 48,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -126,8 +126,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 650,
 				damage = {
-					commanders = 75,
-					default = 50,
+					commanders = 110,
+					default = 55,
 					subs = 5,
 				},
 			},
