@@ -37,7 +37,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Rector",
 		noautofire = false,
-		
 		objectname = "ARMRECTR",
 		radardistance = 50,
 		radaremitheight = 23,
@@ -54,7 +53,7 @@ return {
 		turnrate = 1122,
 		unitname = "armrectr",
 		upright = true,
-		workertime = 200,
+		workertime = 160,
 		customparams = {
 			buildpic = "armrectr.dds",
 			faction = "ARM",

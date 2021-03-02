@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE TINY SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
-		collisionvolumescales = "22 20 22",
+		collisionvolumescales = "21 36 18",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -35,8 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Mercenary",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_mercenary",
 		radaremitheight = 25,
 		seismicsignature = 0,

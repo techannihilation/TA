@@ -37,7 +37,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Necro",
 		noautofire = false,
-		
 		objectname = "CORNECRO",
 		radardistance = 50,
 		radaremitheight = 36,
@@ -54,7 +53,7 @@ return {
 		turnrate = 1118,
 		unitname = "cornecro",
 		upright = true,
-		workertime = 200,
+		workertime = 160,
 		customparams = {
 			buildpic = "cornecro.dds",
 			faction = "CORE",

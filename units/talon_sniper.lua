@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE TINY SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
-		collisionvolumescales = "22 20 22",
+		collisionvolumescales = "24 38 24",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -36,7 +36,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Sniper",
 		noautofire = false,
-		
 		objectname = "talon_sniper",
 		radaremitheight = 25,
 		seismicsignature = 0,

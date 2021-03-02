@@ -29,7 +29,7 @@ return {
 		losemitheight = 23,
 		maneuverleashlength = 640,
 		mass = 109,
-		maxdamage = 205,
+		maxdamage = 185,
 		maxslope = 14,
 		maxvelocity = 2.75,
 		maxwaterdepth = 22,
@@ -37,7 +37,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Snow Fox",
 		noautofire = false,
-		
 		objectname = "talon_fox",
 		radardistance = 50,
 		radaremitheight = 23,
@@ -54,7 +53,7 @@ return {
 		turnrate = 1122,
 		unitname = "talon_fox",
 		upright = true,
-		workertime = 200,
+		workertime = 160,
 		customparams = {
 			buildpic = "talon_fox.dds",
 			faction = "TALON",
