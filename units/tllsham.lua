@@ -54,7 +54,7 @@ return {
 		turnrate = 1000,
 		unitname = "tllsham",
 		upright = true,
-		workertime = 160,
+		workertime = 200,
 		customparams = {
 			buildpic = "tllsham.dds",
 			faction = "TLL",

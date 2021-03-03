@@ -53,7 +53,7 @@ return {
 		turnrate = 1122,
 		unitname = "armrectr",
 		upright = true,
-		workertime = 160,
+		workertime = 200,
 		customparams = {
 			buildpic = "armrectr.dds",
 			faction = "ARM",

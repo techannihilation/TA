@@ -6,22 +6,14 @@
 piece  flarer, flarel, emittera, emitterb, base, boxb, boxa, turret2,
        turreta, turretb, wakel, waker, guns, guns2, ground;
 
-static-var  gun_3, restore_delay, gun_2, Static_Var_4;
+static-var  gun_1, restore_delay;
 
 // Signal definitions
 #define SIG_MOVE			2
-#define SIG_AIM_2			4
-#define SIG_AIM_3			8
+#define SIG_AIM_1			4
+#define SIG_AIM_2			8
+#define SIG_AIM_3			16
 
-
-SetDirection(heading)
-{
-	var Func_Var_2;
-	Func_Var_2 = ( get ABS(Static_Var_4) - get ABS(heading) ) / 2;
-	turn ground to y-axis heading speed Func_Var_2;
-	turn base to y-axis <0.000000> - heading speed Func_Var_2;
-	Static_Var_4 = heading;
-}
 
 RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
@@ -73,8 +65,7 @@ Create()
 {
 	hide flarel;
 	hide flarer;
-	gun_3 = flarer;
-	gun_2 = flarer;
+	gun_1 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -113,18 +104,12 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
 		emit-sfx 4 from wakel;
 		emit-sfx 2 from waker;
-		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
-		if( Func_Var_1 < 50 )
-		{
-			Func_Var_1 = 50;
-		}
-		sleep 12000 / Func_Var_1;
+		sleep 250;
 	}
 }
 
@@ -135,8 +120,15 @@ StopMoving()
 	move base to y-axis [0.000000] speed [0.229999];
 }
 
-AimPrimary()
+AimPrimary(heading, pitch)
 {
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turreta to y-axis heading speed <250.000000>;
+	turn boxa to x-axis <0.000000> - pitch speed <250.000000>;
+	wait-for-turn turreta around y-axis;
+	wait-for-turn boxa around x-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -144,20 +136,10 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	if( gun_2 )
-	{
-		turn turretb to y-axis heading speed <455.000000>;
-		turn boxb to x-axis <0.000000> - pitch speed <430.000000>;
-		wait-for-turn turretb around y-axis;
-		wait-for-turn boxb around x-axis;
-	}
-	else
-	{
-		turn turreta to y-axis heading speed <455.000000>;
-		turn boxa to x-axis <0.000000> - pitch speed <430.000000>;
-		wait-for-turn turreta around y-axis;
-		wait-for-turn boxa around x-axis;
-	}
+	turn turretb to y-axis heading speed <250.000000>;
+	turn boxb to x-axis <0.000000> - pitch speed <250.000000>;
+	wait-for-turn turretb around y-axis;
+	wait-for-turn boxb around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -174,42 +156,41 @@ AimTertiary(heading, pitch)
 	return (1);
 }
 
-FireSecondary()
-{
-	gun_2 = !gun_2;
-}
-
 FireTertiary()
 {
-	if( gun_3 )
+	if( gun_1 == 0 )
 	{
 		show flarel;
-		move guns2 to z-axis [-2.400000] speed [500.000000];
+		move guns2 to z-axis [-1.800000] speed [500.000000];
 		sleep 150;
 		hide flarel;
 		wait-for-move guns2 along z-axis;
-		move guns2 to z-axis [0.000000] speed [3.000000];
+		move guns2 to z-axis [0.000000] speed [10.000000];
 	}
-	else
+	if( gun_1 == 1 )
 	{
 		show flarer;
-		move guns to z-axis [-2.400000] speed [500.000000];
+		move guns to z-axis [-1.800000] speed [500.000000];
 		sleep 150;
 		hide flarer;
 		wait-for-move guns along z-axis;
-		move guns to z-axis [0.000000] speed [3.000000];
+		move guns to z-axis [0.000000] speed [10.000000];
 	}
-	gun_3 = !gun_3;
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = base;
+	piecenum = boxa;
 }
 
 AimFromSecondary(piecenum)
 {
-	piecenum = 8 + gun_2;
+	piecenum = boxb;
 }
 
 AimFromTertiary(piecenum)
@@ -219,17 +200,24 @@ AimFromTertiary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = base;
+	piecenum = emittera;
 }
 
 QuerySecondary(piecenum)
 {
-	piecenum = 2 + gun_2;
+	piecenum = emitterb;
 }
 
 QueryTertiary(piecenum)
 {
-	piecenum = gun_3;
+	if( gun_1 == 0 )
+	{
+		piecenum = flarer;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flarel;
+	}	
 }
 
 SweetSpot(piecenum)

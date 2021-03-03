@@ -3,7 +3,7 @@ return {
 		acceleration = 0.0396,
 		airsightdistance = 775,
 		brakerate = 0.3795,
-		buildcostenergy = 5806,
+		buildcostenergy = 6806,
 		buildcostmetal = 561,
 		builder = false,
 		buildpic = "armyork.dds",

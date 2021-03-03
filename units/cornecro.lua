@@ -53,7 +53,7 @@ return {
 		turnrate = 1118,
 		unitname = "cornecro",
 		upright = true,
-		workertime = 160,
+		workertime = 200,
 		customparams = {
 			buildpic = "cornecro.dds",
 			faction = "CORE",

@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Cataphract",
 		noautofire = false,
-		
+
 		objectname = "talon_cataphract",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -134,7 +134,7 @@ return {
 				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 800,
+				range = 775,
 				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed2",

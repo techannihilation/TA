@@ -40,7 +40,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "MEDIUM_BUILDING",
-		sightdistance = 800,
+		sightdistance = 500,
 		standingfireorder = 2,
 		unitname = "tlldb",
 		usebuildinggrounddecal = true,

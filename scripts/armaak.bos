@@ -3,11 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  ground, pelvis, rthigh, rleg, lthigh, lleg, torso, turret,
+piece  base, pelvis, rthigh, rleg, lthigh, lleg, torso, turret,
        flak, flak_fire, turret_fire, rmiss, rmiss_fire, lmiss, lmiss_fire;
 
-static-var  bMoving, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7;
+static-var  bMoving, bHeading, gun_1;
 
 
 walk()
@@ -191,7 +190,6 @@ MotionControl(moving, aiming, justmoved)
 	while( TRUE )
 	{
 		moving = bMoving;
-		aiming = Static_Var_2;
 		if( moving )
 		{
 			call-script walk();
@@ -251,6 +249,8 @@ Create()
 	hide lmiss_fire;
 	hide rmiss_fire;
 	bMoving = FALSE;
+	gun_1 = 0;
+	bHeading = 0;
 	start-script MotionControl();
 	start-script SmokeUnit();
 }
@@ -267,7 +267,7 @@ StopMoving()
 
 SweetSpot(piecenum)
 {
-	piecenum = torso;
+	piecenum = base;
 }
 
 RestoreAfterDelay()
@@ -279,115 +279,72 @@ RestoreAfterDelay()
 	turn lmiss to x-axis <0.000000> speed <90.000000>;
 	turn rmiss to x-axis <0.000000> speed <90.000000>;
 	turn torso to y-axis <0.000000> speed <90.000000>;
-}
-
-QueryWeapon1(piecenum)
-{
-	piecenum = turret_fire;
-}
-
-AimFromWeapon1(piecenum)
-{
-	piecenum = turret;
-}
-
-QueryWeapon2(piecenum)
-{
-	piecenum = turret_fire;
-}
-
-AimFromWeapon2(piecenum)
-{
-	piecenum = turret;
-}
-
-AimWeapon2(heading, pitch)
-{
-	signal 2;
-	set-signal-mask 2;
-	turn turret to y-axis heading speed <250.000000>;
-	wait-for-turn turret around y-axis;
-	start-script RestoreAfterDelay();
-	return (1);
+	bHeading = 0;
 }
 
 FireWeapon2()
 {
+	++gun_1;
+	if (gun_1 == 2)
+	{
+		gun_1 = 0;
+	}
 }
 
-QueryWeapon3(piecenum)
+QueryWeapon2(piecenum)
 {
-	piecenum = rmiss_fire;
+	if (gun_1 == 0)
+	{
+		piecenum = rmiss_fire;
+	}
+	if (gun_1 == 1)
+		{
+		piecenum = lmiss_fire;
+	}
+	
 }
 
-AimFromWeapon3(piecenum)
+AimFromWeapon2(piecenum)
 {
 	piecenum = torso;
 }
 
-AimWeapon3(heading, pitch)
+AimWeapon2(heading, pitch)
 {
 	signal 4;
 	set-signal-mask 4;
 	turn torso to y-axis heading speed <300.000000>;
 	turn lmiss to x-axis <0.000000> - pitch speed <250.000000>;
+	//bHeading = heading;
 	wait-for-turn torso around y-axis;
 	wait-for-turn lmiss around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-FireWeapon3()
-{
-}
-
-QueryWeapon4(piecenum)
-{
-	piecenum = lmiss_fire;
-}
-
-AimFromWeapon4(piecenum)
-{
-	piecenum = torso;
-}
-
-AimWeapon4(heading, pitch)
-{
-	signal 8;
-	set-signal-mask 8;
-	turn torso to y-axis heading speed <300.000000>;
-	turn rmiss to x-axis <0.000000> - pitch speed <250.000000>;
-	wait-for-turn torso around y-axis;
-	wait-for-turn rmiss around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon4()
-{
-}
-
-QueryWeapon5(piecenum)
+QueryWeapon3(piecenum)
 {
 	piecenum = flak_fire;
 }
 
-AimFromWeapon5(piecenum)
+AimFromWeapon3(piecenum)
 {
 	piecenum = flak;
 }
 
-AimWeapon5(heading, pitch)
+AimWeapon3(heading, pitch)
 {
 	signal 16;
 	set-signal-mask 16;
+	turn turret to y-axis heading speed <350.000000>;
 	turn flak to x-axis <0.000000> - pitch speed <350.000000>;
+	wait-for-turn turret around y-axis;
 	wait-for-turn flak around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-FireWeapon5()
+FireWeapon3()
 {
 	show flak_fire;
 	sleep 100;
@@ -399,7 +356,6 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode ground type NOHEATCLOUD;
 		explode pelvis type NOHEATCLOUD;
 		explode rthigh type NOHEATCLOUD;
 		explode rleg type NOHEATCLOUD;
@@ -415,7 +371,6 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode ground type NOHEATCLOUD | FALL;
 		explode pelvis type NOHEATCLOUD | FALL;
 		explode rthigh type NOHEATCLOUD | FALL;
 		explode rleg type NOHEATCLOUD | FALL;
@@ -428,24 +383,7 @@ Killed(severity, corpsetype)
 		explode lmiss type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode ground type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode torso type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flak type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rmiss type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lmiss type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
 	corpsetype = 3;
-	explode ground type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

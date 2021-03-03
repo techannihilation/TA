@@ -40,7 +40,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Vanguard",
 		noautofire = false,
-		
+
 		objectname = "talon_vanguard",
 		radaremitheight = 30,
 		seismicsignature = 0,
@@ -164,7 +164,7 @@ return {
 				areaofeffect = 48,
 				avoidfeature = false,
 				canattackground = false,
-				cegtag = "Talon_Def_AA_Rocket",
+				cegtag = "talon_def_aa_starburst",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

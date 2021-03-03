@@ -197,7 +197,7 @@ return {
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
-				cegtag = "armflak-fx",
+				cegtag = "tllflak-fx",
 				craterareaofeffect = 288,
 				craterboost = 0,
 				cratermult = 0,

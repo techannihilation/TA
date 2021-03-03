@@ -7,7 +7,7 @@ piece  ground, pelvis, lleg, rleg, turret, gunbase, rmiss, rmiss_fire,
        lmiss, lmiss_fire, flak, flak_fire, fire1, fire2, fire3, fire4,
        fire5, fire6;
 
-static-var  bMoving, Static_Var_2;
+static-var  bMoving, Static_Var_2, gun_1, gun_2, Main_Gun_Heading;
 
 
 walk()
@@ -167,7 +167,6 @@ MotionControl(moving, aiming, justmoved)
 	while( TRUE )
 	{
 		moving = bMoving;
-		aiming = Static_Var_2;
 		if( moving )
 		{
 			call-script walk();
@@ -230,18 +229,12 @@ StopMoving()
 
 Create()
 {
-	hide fire1;
-	hide fire2;
-	hide fire3;
-	hide fire4;
-	hide fire5;
-	hide fire6;
-	hide flak_fire;
-	hide lmiss_fire;
-	hide rmiss_fire;
-	start-script MotionControl();
-	start-script SmokeUnit();
 	bMoving = FALSE;
+	gun_1 = 0;
+	gun_2 = 0;
+	Main_Gun_Heading = 0;
+	start-script SmokeUnit();
+	start-script MotionControl();	
 }
 
 SweetSpot(piecenum)
@@ -258,33 +251,43 @@ RestoreAfterDelay()
 	turn lmiss to x-axis <0.000000> speed <90.000000>;
 }
 
-QueryWeapon2(piecenum)
+AimWeapon1(heading, pitch)
 {
-	piecenum = fire1;
-}
-
-AimFromWeapon2(piecenum)
-{
-	piecenum = gunbase;
-}
-
-AimWeapon2(heading, pitch)
-{
-	signal 2;
-	set-signal-mask 2;
+	signal 8;
+	set-signal-mask 8;
 	turn turret to y-axis heading speed <225.000000>;
+	turn gunbase to x-axis <0.000000> - pitch speed <225.000000>;
+	Main_Gun_Heading = heading;
 	wait-for-turn turret around y-axis;
+	wait-for-turn gunbase around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-FireWeapon2()
+AimFromWeapon1(piecenum)
 {
+	piecenum = gunbase;
 }
 
-QueryWeapon3(piecenum)
+FireWeapon1()
 {
-	piecenum = fire2;
+	++gun_2;
+	if(gun_2 == 2)
+	{
+		gun_2 = 0;
+	}
+}
+
+QueryWeapon1(piecenum)
+{
+	if(gun_2 == 0)
+	{
+		piecenum = lmiss_fire;
+	}
+	if(gun_2 == 1)
+	{
+		piecenum = rmiss_fire;
+	}
 }
 
 AimFromWeapon3(piecenum)
@@ -294,187 +297,83 @@ AimFromWeapon3(piecenum)
 
 AimWeapon3(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
-	turn turret to y-axis heading speed <225.000000>;
-	wait-for-turn turret around y-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon3()
-{
-}
-
-QueryWeapon4(piecenum)
-{
-	piecenum = fire3;
-}
-
-AimFromWeapon4(piecenum)
-{
-	piecenum = gunbase;
-}
-
-AimWeapon4(heading, pitch)
-{
-	signal 8;
-	set-signal-mask 8;
-	turn turret to y-axis heading speed <225.000000>;
-	wait-for-turn turret around y-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon4()
-{
-}
-
-QueryWeapon5(piecenum)
-{
-	piecenum = fire4;
-}
-
-AimFromWeapon5(piecenum)
-{
-	piecenum = gunbase;
-}
-
-AimWeapon5(heading, pitch)
-{
-	signal 16;
-	set-signal-mask 16;
-	turn turret to y-axis heading speed <225.000000>;
-	wait-for-turn turret around y-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon5()
-{
-}
-
-QueryWeapon6(piecenum)
-{
-	piecenum = fire5;
-}
-
-AimFromWeapon6(piecenum)
-{
-	piecenum = gunbase;
-}
-
-AimWeapon6(heading, pitch)
-{
 	signal 32;
 	set-signal-mask 32;
-	turn turret to y-axis heading speed <225.000000>;
+	if (heading > (Main_Gun_Heading + 1000) or heading < (Main_Gun_Heading - 1000))
+	{
+		return (0);
+	}
 	wait-for-turn turret around y-axis;
-	start-script RestoreAfterDelay();
+	wait-for-turn gunbase around x-axis;
 	return (1);
 }
 
-FireWeapon6()
-{
-}
-
-QueryWeapon7(piecenum)
-{
-	piecenum = fire6;
-}
-
-AimFromWeapon7(piecenum)
-{
-	piecenum = gunbase;
-}
-
-AimWeapon7(heading, pitch)
-{
-	signal 64;
-	set-signal-mask 64;
-	turn turret to y-axis heading speed <225.000000>;
-	wait-for-turn turret around y-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon7()
-{
-}
-
-QueryWeapon8(piecenum)
-{
-	piecenum = lmiss_fire;
-}
-
-AimFromWeapon8(piecenum)
-{
-	piecenum = lmiss;
-}
-
-AimWeapon8(heading, pitch)
-{
-	signal 128;
-	set-signal-mask 128;
-	turn lmiss to x-axis <0.000000> - pitch speed <225.000000>;
-	wait-for-turn lmiss around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon8()
-{
-}
-
-QueryWeapon9(piecenum)
-{
-	piecenum = rmiss_fire;
-}
-
-AimFromWeapon9(piecenum)
-{
-	piecenum = rmiss;
-}
-
-AimWeapon9(heading, pitch)
-{
-	signal 256;
-	set-signal-mask 256;
-	turn rmiss to x-axis <0.000000> - pitch speed <225.000000>;
-	wait-for-turn lmiss around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon9()
-{
-}
-
-QueryWeapon10(piecenum)
+QueryWeapon3(piecenum)
 {
 	piecenum = flak_fire;
 }
 
-AimFromWeapon10(piecenum)
-{
-	piecenum = flak;
-}
-
-AimWeapon10(heading, pitch)
-{
-	signal 512;
-	set-signal-mask 512;
-	turn flak to x-axis <0.000000> - pitch speed <225.000000>;
-	wait-for-turn flak around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon10()
+FireWeapon3()
 {
 	show flak_fire;
 	sleep 100;
 	hide flak_fire;
+}
+
+FireWeapon2()
+{
+	++gun_1;
+	if(gun_1 == 6)
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryWeapon2(piecenum)
+{
+	if(gun_1 == 0)
+	{
+		piecenum = fire1;
+	}
+	if(gun_1 == 1)
+	{
+		piecenum = fire2;
+	}
+	if(gun_1 == 2)
+	{
+		piecenum = fire3;
+	}
+	if(gun_1 == 3)
+	{
+		piecenum = fire4;
+	}
+	if(gun_1 == 4)
+	{
+		piecenum = fire5;
+	}
+	if(gun_1 == 5)
+	{
+		piecenum = fire6;
+	}
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = gunbase;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal 16;
+	set-signal-mask 16;
+	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	{
+		return (0);
+	}
+	wait-for-turn turret around y-axis;
+	wait-for-turn gunbase around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
 }
 
 Killed(severity, corpsetype)

@@ -53,13 +53,34 @@ return {
       underwater         = 1,
       water              = true,
       properties = {
-        colormap           = [[0.1 0.9 1.0 0.01		0.05 0.45 0.5 0.01	0.0 0.125 0.25 0.01]],
+        colormap           = [[0.3 0.6 1.0 0.01		0.05 0.9 1.0 0.01	0.0 0.125 0.25 0.01]],
         dir                = [[dir]],
         frontoffset        = 0,
         fronttexture       = [[none]],
         length             = 18,
         sidetexture        = [[flashside1]],
-        size               = 5.5,
+        size               = 4.0,
+        sizegrowth         = 0.9,
+        ttl                = 2,
+      },
+    },
+  },
+  ["talon_def_aa_starburst"] = {
+    engine = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[0.15 0.7 0.95 0.25 0 0 0 0.01 0 0 0 0.01]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[none]],
+        length             = -20,
+        sidetexture        = [[muzzleside]],
+        size               = 4.0,
         sizegrowth         = 0.9,
         ttl                = 2,
       },
@@ -109,4 +130,3 @@ return {
   },
 
 }
-

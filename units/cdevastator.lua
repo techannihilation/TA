@@ -48,7 +48,6 @@ return {
 		mobilestandorders = 1,
 		name = "DEVASTATOR",
 		noautofire = false,
-		
 		objectname = "CDevastator",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -135,8 +134,8 @@ return {
 			impulsefactor = 0,
 			name = "FlakCannon",
 			noselfdamage = true,
-			range = 1000,
-			reloadtime = 0.65,
+			range = 775,
+			reloadtime = 0.5,
 			rgbcolor = "1.0 0.5 0.0",
 			size = 5,
 			soundhitdry = "flakhit",
@@ -148,10 +147,10 @@ return {
 			weapontype = "Cannon",
 			weaponvelocity = 1550,
 			damage = {
-				areoship = 162.5,
+				areoship = 125,
 				default = 5,
-				priority_air = 650,
-				unclassed_air = 650,
+				priority_air = 500,
+				unclassed_air = 500,
 			},
 		},
 			devastatorrockets = {

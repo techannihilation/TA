@@ -31,8 +31,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORASY",
 		radaremitheight = 77,
 		seismicsignature = 0,

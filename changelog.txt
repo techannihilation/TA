@@ -1,7 +1,6 @@
 3.79 > 3.80
 2021-02-03
 Balance :
- - All Rezzzer : Decrease workertime 200=>160 (in test)
  - Nerf Krog / Orco / Hyperion (less hp -10%). Hyperion gain a rocket startburst.
 
 Improvment :
@@ -10,7 +9,8 @@ Improvment :
  - Increase Talon T1 Kbot model size by 15%
 
 Fix :
- - Turtoise Lab : Fix yardmpa to let pass big turtoise
+ - Turtoise Lab : Fix yardmap to let pass big turtoise
+ - T2 arm/Core AA ship Bos. AA missile have probs
 
 3.76 > 3.79
 2021-02-29

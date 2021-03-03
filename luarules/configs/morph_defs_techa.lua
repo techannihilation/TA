@@ -848,7 +848,7 @@ local morphDefs = {
 	},
 	krogtaar = {
 		{
-			into = 'armgor',
+			into = 'corgor',
 			time = 45,
 			xp = 0.05,
 		},
@@ -859,7 +859,7 @@ local morphDefs = {
 		},
 	},
 	cortroman = {
-		into = 'armgor',
+		into = 'corgor',
 		time = 30,
 		xp = 0.05,
 	},

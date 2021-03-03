@@ -32,8 +32,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_asy",
 		radaremitheight = 70,
 		seismicsignature = 0,

@@ -37,7 +37,6 @@ return {
 		movementclass = "TANK2",
 		name = "Panther",
 		noautofire = false,
-		
 		objectname = "ARMLATNK",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -159,7 +158,6 @@ return {
 				texture2 = "armsmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tolerance = 9000,
 				tracks = true,
 				turnrate = 48000,
 				turret = true,

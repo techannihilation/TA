@@ -50,10 +50,10 @@ return {
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.716,
-		turnrate = 1122,
+		turnrate = 650,
 		unitname = "talon_fox",
 		upright = true,
-		workertime = 160,
+		workertime = 200,
 		customparams = {
 			buildpic = "talon_fox.dds",
 			faction = "TALON",

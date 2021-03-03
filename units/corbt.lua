@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "VHTANK5",
 		name = "Metron",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "CORBT",
 		radardistance = 0,
 		radaremitheight = 30,
@@ -160,8 +160,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "CORBT_CANNON",
-				maindir = "0 0 1",
-				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 		},

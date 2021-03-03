@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Puncher",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLPUNCHER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

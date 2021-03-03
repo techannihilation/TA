@@ -6,22 +6,14 @@
 piece  flare1, flare2, missileemitt1, missileemitt2, base, missilebox1, missilebox2, turretgun1,
        turretgun2, wake1, wake2, gunbarrel1, gunbarrel2, ground;
 
-static-var  gun_3, restore_delay, gun_2, Static_Var_4;
+static-var  gun_1, restore_delay;
 
 // Signal definitions
 #define SIG_MOVE			2
-#define SIG_AIM_2			4
-#define SIG_AIM_3			8
+#define SIG_AIM_1			4
+#define SIG_AIM_2			8
+#define SIG_AIM_3			16
 
-
-SetDirection(heading)
-{
-	var Func_Var_2;
-	Func_Var_2 = ( get ABS(Static_Var_4) - get ABS(heading) ) / 2;
-	turn ground to y-axis heading speed Func_Var_2;
-	turn base to y-axis <0.000000> - heading speed Func_Var_2;
-	Static_Var_4 = heading;
-}
 
 RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
 {
@@ -73,8 +65,7 @@ Create()
 {
 	hide flare2;
 	hide flare1;
-	gun_3 = flare1;
-	gun_2 = flare1;
+	gun_1 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
 }
@@ -83,6 +74,7 @@ SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = Func_Var_1 * 3;
 }
+
 
 RestoreAfterDelay()
 {
@@ -113,18 +105,12 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	var Func_Var_1;
 	start-script waveSplash();
 	while( TRUE )
 	{
 		emit-sfx 4 from wake1;
 		emit-sfx 2 from wake2;
-		Func_Var_1 = get CURRENT_SPEED * 100 / get MAX_SPEED;
-		if( Func_Var_1 < 50 )
-		{
-			Func_Var_1 = 50;
-		}
-		sleep 12000 / Func_Var_1;
+		sleep 250;
 	}
 }
 
@@ -135,8 +121,16 @@ StopMoving()
 	move base to y-axis [0.000000] speed [0.229999];
 }
 
-AimPrimary()
+
+AimPrimary(heading, pitch)
 {
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn missilebox1 to y-axis heading speed <250.000000>;
+	turn missilebox1 to x-axis <0.000000> - pitch speed <250.000000>;
+	wait-for-turn missilebox1 around y-axis;
+	wait-for-turn missilebox1 around x-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -144,20 +138,10 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	if( gun_2 )
-	{
-		turn missilebox2 to y-axis heading speed <455.000000>;
-		turn missilebox2 to x-axis <0.000000> - pitch speed <430.000000>;
-		wait-for-turn missilebox2 around y-axis;
-		wait-for-turn missilebox2 around x-axis;
-	}
-	else
-	{
-		turn missilebox1 to y-axis heading speed <455.000000>;
-		turn missilebox1 to x-axis <0.000000> - pitch speed <430.000000>;
-		wait-for-turn missilebox1 around y-axis;
-		wait-for-turn missilebox1 around x-axis;
-	}
+	turn missilebox2 to y-axis heading speed <250.000000>;
+	turn missilebox2 to x-axis <0.000000> - pitch speed <250.000000>;
+	wait-for-turn missilebox2 around y-axis;
+	wait-for-turn missilebox2 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -166,50 +150,59 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn turretgun1 to y-axis heading speed <755.000000>;
-	turn turretgun2 to x-axis <0.000000> - pitch speed <730.000000>;
+	turn turretgun1 to y-axis heading speed <400.000000>;
+	turn turretgun2 to x-axis <0.000000> - pitch speed <400.000000>;
 	wait-for-turn turretgun1 around y-axis;
 	wait-for-turn turretgun2 around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
+FirePrimary()
+{
+
+}
+
 FireSecondary()
 {
-	gun_2 = !gun_2;
+
 }
 
 FireTertiary()
 {
-	if( gun_3 )
+	if( gun_1 == 0 )
 	{
 		show flare2;
-		move gunbarrel2 to z-axis [-2.400000] speed [500.000000];
+		move gunbarrel2 to z-axis [-1.500000] speed [500.000000];
 		sleep 150;
 		hide flare2;
 		wait-for-move gunbarrel2 along z-axis;
-		move gunbarrel2 to z-axis [0.000000] speed [3.000000];
+		move gunbarrel2 to z-axis [0.000000] speed [10.000000];
 	}
-	else
+	if( gun_1 == 1 )
 	{
 		show flare1;
-		move gunbarrel1 to z-axis [-2.400000] speed [500.000000];
+		move gunbarrel1 to z-axis [-1.500000] speed [500.000000];
 		sleep 150;
 		hide flare1;
 		wait-for-move gunbarrel1 along z-axis;
-		move gunbarrel1 to z-axis [0.000000] speed [3.000000];
+		move gunbarrel1 to z-axis [0.000000] speed [10.000000];
 	}
-	gun_3 = !gun_3;
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}	
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = base;
+	piecenum = missilebox1;
 }
 
 AimFromSecondary(piecenum)
 {
-	piecenum = 5 + gun_2;
+	piecenum = missilebox2;
 }
 
 AimFromTertiary(piecenum)
@@ -219,17 +212,24 @@ AimFromTertiary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = base;
+	piecenum = missileemitt1;
 }
 
 QuerySecondary(piecenum)
 {
-	piecenum = 2 + gun_2;
+	piecenum = missileemitt2;
 }
 
 QueryTertiary(piecenum)
 {
-	piecenum = gun_3;
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}	
 }
 
 SweetSpot(piecenum)

@@ -620,7 +620,7 @@ RestoreAfterDelay3()
 {
 	sleep restore_delay;
 	turn turretl to y-axis <0.000000> speed <90.000000>;
-	turn sleever to x-axis <0.000000> speed <90.000000>;
+	turn sleevel to x-axis <0.000000> speed <90.000000>;
 	wait-for-turn sleever around x-axis;	
 	wait-for-turn turretl around y-axis;
 }
