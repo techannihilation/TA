@@ -138,11 +138,9 @@ return {
 				startvelocity = 1000,
 				texture2 = "coresmoketrail",
 				tracks = true,
-				trajectoryheight = 0.55,
 				turnrate = 99000,
 				turret = true,
 				weaponacceleration = 300,
-				weapontimer = 5,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1600,
 				damage = {
@@ -198,7 +196,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
-				def = "MISSILE",
+				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
@@ -208,7 +206,7 @@ return {
 			},
 			[3] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
-				def = "ADVANCED_MISSILE",
+				def = "MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 		},

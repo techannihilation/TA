@@ -2,6 +2,7 @@
 2021-02-03
 Balance :
  - Nerf Krog / Orco / Hyperion (less hp -10%). Hyperion gain a rocket startburst.
+ - Paratrooping unit after transporter killed : Stuntime 5=>6s. Damage taken : 20% => 25%.
 
 Improvment :
  - Remplace T1 Beamer Turret by Grape MiniGun (same balance)
@@ -10,7 +11,7 @@ Improvment :
 
 Fix :
  - Turtoise Lab : Fix yardmap to let pass big turtoise
- - T2 arm/Core AA ship Bos. AA missile have probs
+ - T2 arm/Core AA T2 ship, T2 & T3 Kbot. Fix Bos files.
 
 3.76 > 3.79
 2021-02-29

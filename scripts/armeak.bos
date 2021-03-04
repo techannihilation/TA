@@ -7,7 +7,7 @@ piece  pelvis, leftupperleg, leftlowerleg, leftfoot, lefttoea, lefttoeb, lefttoe
        rightlowerleg, rightfoot, righttoea, righttoeb, righttoec, maintorso, leftcannon, rightcannon,
        secfirea, secfireb, terfirea, terfireb, leftflare, rightflare;
 
-static-var  Static_Var_1, gun_1, gun_2, gun_3, bMoving;
+static-var  Static_Var_1, gun_1, bMoving, Main_Gun_Heading;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -53,12 +53,12 @@ walk()
 		turn rightupperleg to x-axis <-40.005495> speed <35.000000>;
 		turn leftfoot to x-axis <-30.005495> speed <55.000000>;
 		turn rightfoot to x-axis <10.000000> speed <35.000000>;
-		turn rightlowerleg to x-axis <-20.000000> speed <55.000000>;
+		turn rightlowerleg to x-axis <-25.000000> speed <55.000000>;
 		turn maintorso to x-axis <6.000000> speed <5.000000>;
 		sleep 505;
 		turn leftfoot to x-axis <40.005495> speed <85.000000>;
 		turn rightfoot to x-axis <20.000000> speed <35.000000>;
-		turn rightlowerleg to x-axis <40.005495> speed <85.000000>;
+		turn rightlowerleg to x-axis <25.005495> speed <85.000000>;
 		turn lefttoea to x-axis <45.010989> speed <85.000000>;
 		turn lefttoeb to x-axis <45.010989> speed <85.000000>;
 		turn lefttoec to x-axis <-45.010989> speed <85.000000>;
@@ -74,10 +74,10 @@ walk()
 		turn leftupperleg to x-axis <-40.005495> speed <35.000000>;
 		turn rightupperleg to x-axis <40.005495> speed <35.000000>;
 		turn rightfoot to x-axis <-40.005495> speed <110.000000>;
-		turn leftlowerleg to x-axis <-40.005495> speed <85.000000>;
+		turn leftlowerleg to x-axis <-25.0> speed <85.000000>;
 		sleep 1050;
-		turn rightfoot to x-axis <40.005495> speed <85.000000>;
-		turn leftlowerleg to x-axis <40.005495> speed <85.000000>;
+		turn rightfoot to x-axis <40.0> speed <85.000000>;
+		turn leftlowerleg to x-axis <25.0> speed <85.000000>;
 		move pelvis to y-axis [0.000000] speed [2.000000];
 		turn lefttoea to x-axis <0.000000> speed <85.000000>;
 		turn lefttoeb to x-axis <0.000000> speed <85.000000>;
@@ -98,11 +98,11 @@ walk()
 			turn leftupperleg to x-axis <40.005495> speed <35.000000>;
 			turn rightupperleg to x-axis <-40.005495> speed <35.000000>;
 			turn leftfoot to x-axis <-40.005495> speed <100.000000>;
-			turn rightlowerleg to x-axis <-40.005495> speed <85.000000>;
+			turn rightlowerleg to x-axis <-25.0> speed <85.000000>;
 			sleep 1050;
 			turn leftfoot to x-axis <40.005495> speed <85.000000>;
 			turn rightfoot to x-axis <40.005495> speed <55.000000>;
-			turn rightlowerleg to x-axis <40.005495> speed <85.000000>;
+			turn rightlowerleg to x-axis <25.0> speed <85.000000>;
 			move pelvis to y-axis [0.000000] speed [2.000000];
 			turn lefttoea to x-axis <45.010989> speed <85.000000>;
 			turn lefttoeb to x-axis <45.010989> speed <85.000000>;
@@ -120,11 +120,11 @@ walk()
 			turn maintorso to x-axis <6.000000> speed <6.000000>;
 			turn leftupperleg to x-axis <-40.005495> speed <35.000000>;
 			turn rightupperleg to x-axis <40.005495> speed <35.000000>;
-			turn rightfoot to x-axis <-40.005495> speed <100.000000>;
-			turn leftlowerleg to x-axis <-40.005495> speed <85.000000>;
+			turn rightfoot to x-axis <-40.0> speed <100.000000>;
+			turn leftlowerleg to x-axis <-25.0> speed <85.000000>;
 			sleep 1050;
 			turn rightfoot to x-axis <40.005495> speed <85.000000>;
-			turn leftlowerleg to x-axis <40.005495> speed <85.000000>;
+			turn leftlowerleg to x-axis <25.0> speed <85.000000>;
 			move pelvis to y-axis [0.000000] speed [2.000000];
 			turn lefttoea to x-axis <0.000000> speed <85.000000>;
 			turn lefttoeb to x-axis <0.000000> speed <85.000000>;
@@ -164,26 +164,12 @@ stop()
 
 Create()
 {
-	cache leftcannon;
-	cache leftlowerleg;
-	cache leftfoot;
-	cache lefttoea;
-	cache lefttoeb;
-	cache lefttoec;
-	cache rightcannon;
-	cache rightlowerleg;
-	cache rightfoot;
-	cache righttoea;
-	cache righttoeb;
-	cache righttoec;
-	cache maintorso;
-	dont-shade leftflare;
-	dont-shade rightflare;
 	hide leftflare;
 	hide rightflare;
-	gun_2 = pelvis;
-	gun_3 = pelvis;
-	bMoving = TRUE;
+	Main_Gun_Heading = 0;
+	gun_1 = 0;
+	bMoving = FALSE;
+	Main_Gun_Heading = 0;
 	Static_Var_1 = 4000;
 	start-script SmokeUnit();
 }
@@ -224,11 +210,12 @@ AimWeapon1(heading, pitch)
 {
     signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
-	//Static_Var_2 = 1;
 	turn maintorso to y-axis heading speed <150.0>;
-	//turn sleeve1 to x-axis <0.0> - pitch speed <100.0>;
+	turn leftcannon to x-axis <0.0> - pitch speed <100.0>;
+	turn rightcannon to x-axis <0.0> - pitch speed <100.0>;
+	Main_Gun_Heading = heading;
 	wait-for-turn maintorso around y-axis;
-	//wait-for-turn sleeve1 around x-axis;
+	wait-for-turn leftcannon around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -243,10 +230,10 @@ FireWeapon1()
 	{
 		emit-sfx 1024 + 0 from rightflare;
 	}
-    gun_1= gun_1 + 1;
+    gun_1 = gun_1 + 1;
 	if( gun_1 >= 2 )
 	{
-	gun_1=0;	
+		gun_1 = 0;	
     }
 }
 
@@ -269,102 +256,41 @@ QueryWeapon1(piecenum)
 
 AimSecondary(heading, pitch)
 {
-	bMoving = FALSE;
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn maintorso to y-axis heading speed <150.000000>;
-	turn leftcannon to x-axis <0.000000> - pitch speed <40.000000>;
-	turn rightcannon to x-axis <0.000000> - pitch speed <40.000000>;
+	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	{
+		return (0);
+	}
 	wait-for-turn maintorso around y-axis;
-	wait-for-turn leftcannon around x-axis;
-	wait-for-turn rightcannon around x-axis;
-	start-script RestoreAfterDelay();
 	return (1);
-}
-
-FireSecondary()
-{
-	if( gun_2 == 0 )
-	{
-		show leftflare;
-		sleep 150;
-		hide leftflare;
-	}
-	if( gun_2 == 1 )
-	{
-		show rightflare;
-		sleep 150;
-		hide rightflare;
-	}
-	gun_2 = !gun_2;
-	bMoving = TRUE;
 }
 
 QuerySecondary(piecenum)
 {
-	if( gun_2 == 0 )
-	{
-		piecenum = secfirea;
-	}
-	if( gun_2 == 1 )
-	{
-		piecenum = secfireb;
-	}
+	piecenum = terfirea;
 }
 
 AimFromSecondary(piecenum)
 {
-	if( gun_2 == 0 )
-	{
-		piecenum = maintorso;
-	}
-	if( gun_2 == 1 )
-	{
-		piecenum = maintorso;
-	}
+	piecenum = maintorso;
 }
 
 AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	//bMoving = TRUE;
-	while( !bMoving )
+	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
 	{
-		sleep 300;
+		return (0);
 	}
-	turn maintorso to y-axis heading speed <150.000000>;
 	wait-for-turn maintorso around y-axis;
-	start-script RestoreAfterDelay();
 	return (1);
-}
-
-FireTertiary()
-{
-	if( gun_3 == 0 )
-	{
-		sleep 150;
-		gun_3 = leftupperleg;
-		return (0);
-	}
-	if( gun_3 == 1 )
-	{
-		sleep 150;
-		gun_3 = pelvis;
-		return (0);
-	}
 }
 
 QueryTertiary(piecenum)
 {
-	if( gun_3 == 0 )
-	{
-		piecenum = terfirea;
-	}
-	if( gun_3 == 1 )
-	{
-		piecenum = terfireb;
-	}
+	piecenum = terfireb;
 }
 
 AimFromTertiary(piecenum)
@@ -420,29 +346,6 @@ Killed(severity, corpsetype)
 		explode leftflare type NOHEATCLOUD | FALL ;
 		explode rightcannon type NOHEATCLOUD | FALL ;
 		explode rightflare type NOHEATCLOUD | FALL ;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode pelvis type NOHEATCLOUD | SHATTER ;
-		explode leftupperleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode leftlowerleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode leftfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode lefttoea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode lefttoeb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode lefttoec type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode rightupperleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode rightlowerleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode rightfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode righttoea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode righttoeb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode righttoec type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode maintorso type NOHEATCLOUD | SHATTER ;
-		explode leftcannon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode leftflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode rightcannon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
-		explode rightflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT ;
 		return (corpsetype);
 	}
 	corpsetype = 3;

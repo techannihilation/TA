@@ -3,19 +3,21 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, pelvis, torso, sleeve1, flare1a, flare1b, flare1c, flare3a, flare3b, flare1ra, flare1rb, flare1rc, sleeve2, flare2a, flare2b, flare2c, flare3c, flare3d, flare2ra, flare2rb, flare2rc, aim, joint1a, joint1b, leg1, joint2a, joint2b, leg2, joint3a, joint3b, leg3, joint4a, joint4b, leg4, gen, joint5a, joint5b, leg5, joint6a, joint6b, leg6;
+piece  base, pelvis, torso, sleeve1, flare1a, flare1b, flare1c,
+		flare1up, flare1down, flare2up, flare2down, sleeve2, flare2a, flare2b, flare2c,
+		aim, joint1a, joint1b, leg1, joint2a, joint2b, leg2, joint3a, joint3b, leg3, joint4a, 
+		joint4b, leg4, gen, joint5a, joint5b, leg5, joint6a, joint6b, leg6;
 
-static-var  gun_1, gun_2, gun_3, terraintype, Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6;
+static-var  gun_1, gun_2, gun_3, terraintype, bMoving, Main_Gun_Heading;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2           4
 #define SIG_AIM_3           8
 
-#define rocketlaunchhev 1024+0
-#define rocketlaunchmed 1024+1
-#define rocketlaunchback 1024+2
+//#define rocketlaunchhev 1024+0
+//#define rocketlaunchmed 1024+1
+//#define rocketlaunchback 1024+2
 
 walk()
 {
@@ -292,36 +294,26 @@ walk()
 
 }
 
-InitState()
-{
-	Static_Var_5 = 1;
-	Static_Var_6 = 0;
-}
-
 MotionControl(moving, aiming, justmoved)
 {
 	justmoved = TRUE;
 	while( TRUE )
 	{
-		moving = Static_Var_1;
-		aiming = Static_Var_2;
+		moving = bMoving;
 		if( moving )
 		{
 			if( aiming )
 			{
-				Static_Var_3 = 1;
 				call-script walk();
 			}
 			if( !aiming )
 			{
-				Static_Var_3 = 0;
 				call-script walk();
 			}
 			justmoved = TRUE;
 		}
 		if( !moving )
 		{
-			Static_Var_3 = 1;
 			if( justmoved )
 			{
 //Front leg left
@@ -412,40 +404,24 @@ setSFXoccupy(setSFXoccupy_argument)
 
 Create()
 {
-        hide flare1a;
-        hide flare1b;
-        hide flare1c;
-        hide flare3a;
-        hide flare3b;
-        hide flare1ra;
-        hide flare1rb;
-        hide flare1rc;
-        hide flare2a;
-        hide flare2b;
-        hide flare2c;
-        hide flare3c;
-        hide flare3d;
-        hide flare2ra;
-        hide flare2rb;
-        hide flare2rc;
-		Static_Var_1 = 0;
-		Static_Var_2 = 0;
-		Static_Var_3 = 1;
-		call-script InitState();
-        start-script DishSpin();
-        start-script setSFXoccupy();
+		bMoving = 0;
+		Main_Gun_Heading = 0;
+		//call-script InitState();
+        hide gen;
+        //start-script DishSpin();
+        //start-script setSFXoccupy();
 		start-script MotionControl();
         start-script SmokeUnit();
 }
 
 StartMoving()
 {
-	Static_Var_1 = 1;
+	bMoving = 1;
 }
 
 StopMoving()
 {
-	Static_Var_1 = 0;
+	bMoving = 0;
 }
 
 RestoreAfterDelay()
@@ -453,21 +429,17 @@ RestoreAfterDelay()
 	sleep 3000;
 	turn torso to y-axis <0.0> speed <70.0>;
 	turn sleeve1 to x-axis <0.0> speed <50.0>;
-        turn sleeve2 to x-axis <0.0> speed <50.0>;
-	Static_Var_2 = 0;
+    turn sleeve2 to x-axis <0.0> speed <50.0>;
 }
 
 AimWeapon1(heading, pitch)
 {
-	while( gun_1 >= 3)
-    {
-        sleep 100;
-    }
     signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	Static_Var_2 = 1;
 	turn torso to y-axis heading speed <150.0>;
 	turn sleeve1 to x-axis <0.0> - pitch speed <100.0>;
+	turn sleeve2 to x-axis <0.0> - pitch speed <100.0>;
+	Main_Gun_Heading = heading;
 	wait-for-turn torso around y-axis;
 	wait-for-turn sleeve1 around x-axis;
 	start-script RestoreAfterDelay();
@@ -476,18 +448,10 @@ AimWeapon1(heading, pitch)
 
 FireWeapon1()
 {
-	if( gun_1 == 0 )
+    gun_1 = gun_1 + 1;
+	if( gun_1 >= 4 )
 	{
-		emit-sfx rocketlaunchhev from flare2a;
-	}
-	if( gun_1 == 1 )
-	{
-		emit-sfx rocketlaunchhev from flare1a;
-	}
-        gun_1= gun_1 + 1;
-	if( gun_1 >= 2 )
-	{
-	gun_1=0;	
+		gun_1 = 0;	
     }
 }
 
@@ -500,52 +464,42 @@ QueryWeapon1(piecenum)
 {
 	if( gun_1 == 0 )
 	{
-		piecenum = flare1a;
+		piecenum = flare1up;
 	}
-        if( gun_1 == 1 )
+    if( gun_1 == 1 )
 	{
-		piecenum = flare2a;
+		piecenum = flare2up;
 	}
-        if( gun_1 == 2 )
+    if( gun_1 == 2 )
 	{
-		piecenum = flare1c;
+		piecenum = flare1down;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare2down;
 	}
 }
 
 AimWeapon2(heading, pitch)
 {
-	while( gun_2 >= 3)
-    {
-        sleep 100;
-    }
     signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn torso to y-axis heading speed <450.0>;
-	turn sleeve2 to x-axis <0.0> - pitch speed <200.0>;
-    wait-for-turn torso around y-axis;
+	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	{
+		return (0);
+	}
+	wait-for-turn torso around y-axis;
 	wait-for-turn sleeve2 around x-axis;
-    start-script RestoreAfterDelay();
 	return (1);
 }
 
 FireWeapon2()
 {
-	if( gun_2 == 0 )
+    gun_2 = gun_2 + 1;
+    
+	if( gun_2 == 3 )
 	{
-		emit-sfx rocketlaunchhev from flare2a;
-	}
-	if( gun_2 == 1 )
-	{
-		emit-sfx rocketlaunchhev from flare2b;
-	}
-        if( gun_2 == 2 )
-	{
-		emit-sfx rocketlaunchhev from flare2c;
-	}
-        gun_2= gun_2 + 1;
-	if( gun_2 >= 3 )
-	{
-	gun_2=0;	
+		gun_2 = 0;	
     }
 }
 
@@ -560,11 +514,11 @@ QueryWeapon2(piecenum)
 	{
 		piecenum = flare2a;
 	}
-        if( gun_2 == 1 )
+    if( gun_2 == 1 )
 	{
 		piecenum = flare2b;
 	}
-        if( gun_2 == 2 )
+    if( gun_2 == 2 )
 	{
 		piecenum = flare2c;
 	}
@@ -572,52 +526,23 @@ QueryWeapon2(piecenum)
 
 AimWeapon3(heading, pitch)
 {
-	while( gun_3 >= 4)
-   {
-        sleep 100;
-    }
     signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn torso to y-axis heading speed <550.0>;
-	turn sleeve1 to x-axis <0.0> - pitch speed <200.0>;
-	turn sleeve2 to x-axis <0.0> - pitch speed <200.0>;
+	if (heading > (Main_Gun_Heading + 4000) or heading < (Main_Gun_Heading - 4000))
+	{
+		return (0);
+	}
     wait-for-turn torso around y-axis;
 	wait-for-turn sleeve1 around x-axis;
-	wait-for-turn sleeve2 around x-axis;
-    start-script RestoreAfterDelay();
 	return (1);
 }
 
 FireWeapon3()
 {
-	if( gun_3 == 0 )
-	{
-		emit-sfx rocketlaunchmed from flare3a;
-        emit-sfx rocketlaunchback from flare1rb;
-		sleep 75;
-	}
-	if( gun_3 == 1 )
-	{
-		emit-sfx rocketlaunchmed from flare3b;
-        emit-sfx rocketlaunchback from flare1rc;
-		sleep 75;
-	}
-        if( gun_3 == 2 )
-	{
-		emit-sfx rocketlaunchmed from flare3c;
-        emit-sfx rocketlaunchback from flare2rb;
-		sleep 75;
-	}
+    gun_3 = gun_3 + 1;
 	if( gun_3 == 3 )
 	{
-		emit-sfx rocketlaunchmed from flare3d;
-        emit-sfx rocketlaunchback from flare2rc;
-		sleep 75;
-	}
-        gun_3= gun_3 + 1;
-	if( gun_3 >= 4 )
-	{
-	gun_3=0;	
+		gun_3 = 0;	
     }
 }
 
@@ -630,25 +555,21 @@ QueryWeapon3(piecenum)
 {
 	if( gun_3 == 0 )
 	{
-		piecenum = flare3a;
+		piecenum = flare1a;
 	}
-        if( gun_3 == 1 )
+    if( gun_3 == 1 )
 	{
-		piecenum = flare3b;
+		piecenum = flare1b;
 	}
-        if( gun_3 == 2 )
+    if( gun_3 == 2 )
 	{
-		piecenum = flare3c;
-	}
-        if( gun_3 == 3 )
-	{
-		piecenum = flare3d;
+		piecenum = flare1c;
 	}
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = pelvis;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
