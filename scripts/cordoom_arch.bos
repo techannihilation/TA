@@ -20,7 +20,7 @@ activatescr()
 	{
 		move body1 to y-axis [0] speed [6];
 		move neck to y-axis [0] speed [6];
-		move body2 to y-axis [-1.8] speed [6];		
+		move body2 to y-axis [-2] speed [6];		
 		move borer to z-axis [0] speed [3];
 		move barrelr to z-axis [0] speed [2];		
 		wait-for-move body1 along y-axis;
@@ -63,15 +63,15 @@ deactivatescr()
 	if( TRUE )
 	{
 		
-		move borer to z-axis [-2.7] speed [6];
-		move barrelr to z-axis [-4.8] speed [6];		
-		move barrelg to z-axis [-0.18] speed [5];
-		move boreg to z-axis [-0.20] speed [2];		
+		move borer to z-axis [-3] speed [6];
+		move barrelr to z-axis [-5] speed [6];		
+		move barrelg to z-axis [-0.2] speed [5];
+		move boreg to z-axis [-0.25] speed [2];		
 		wait-for-move boreg along z-axis;
 		
 		turn turretg to x-axis <180> speed <150>;		
-		move boreb to z-axis [-2.8] speed [2];	
-		move barrelb to z-axis [-2.8] speed [5];	
+		move boreb to z-axis [-3] speed [2];	
+		move barrelb to z-axis [-3] speed [5];	
 		//turn turretb to x-axis <140> speed <60>;
 		//wait-for-move boreb along z-axis;
 		
@@ -82,16 +82,16 @@ deactivatescr()
 	
 	if( TRUE )
 	{
-		move body2 to y-axis [-2.75] speed [6];
-		move neck to y-axis [-2.75] speed [6];
+		move body2 to y-axis [-2.9] speed [6];
+		move neck to y-axis [-2.9] speed [6];
 		wait-for-move body2 along y-axis;
 	}
 	
 	if( TRUE )
 	{
-		move neck to y-axis [-9] speed [6];
-		move body2 to y-axis [-9] speed [6];
-		move body1 to y-axis [-6.2] speed [6];
+		move neck to y-axis [-9.9] speed [6];
+		move body2 to y-axis [-9.9] speed [6];
+		move body1 to y-axis [-7] speed [6];
 		wait-for-move body1 along y-axis;
 	}
 
@@ -178,19 +178,19 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	turn turretb to x-axis <180> now;
-	move boreb to z-axis [-1.8] now;
-	move barrelb to z-axis [-1.8] now;
+	move boreb to z-axis [-2] now;
+	move barrelb to z-axis [-2] now;
 
 	turn turretg to x-axis <180> now;
-	move boreg to z-axis [-0.2] now;
-	move barrelg to z-axis [-1.8] now;
+	move boreg to z-axis [-0.25] now;
+	move barrelg to z-axis [-2] now;
 
-	move borer to z-axis [-2.7] now;
-	move barrelr to z-axis [-4.5] now;
+	move borer to z-axis [-3] now;
+	move barrelr to z-axis [-5] now;
 	
-	move body2 to y-axis [-9] now;
-	move body1 to y-axis [-6.2] now;
-	move neck to y-axis [-9] now;
+	move body2 to y-axis [-9.9] now;
+	move body1 to y-axis [-7] now;
+	move neck to y-axis [-9.9] now;
 	
 	gun_3 = 0;
 	call-script InitState();
