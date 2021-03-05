@@ -436,9 +436,9 @@ AimWeapon1(heading, pitch)
 {
     signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn torso to y-axis heading speed <150.0>;
-	turn sleeve1 to x-axis <0.0> - pitch speed <100.0>;
-	turn sleeve2 to x-axis <0.0> - pitch speed <100.0>;
+	turn torso to y-axis heading speed <300.0>;
+	turn sleeve1 to x-axis <0.0> - pitch speed <250.0>;
+	turn sleeve2 to x-axis <0.0> - pitch speed <250.0>;
 	Main_Gun_Heading = heading;
 	wait-for-turn torso around y-axis;
 	wait-for-turn sleeve1 around x-axis;
@@ -484,7 +484,7 @@ AimWeapon2(heading, pitch)
 {
     signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	if (heading > (Main_Gun_Heading + 5000) or heading < (Main_Gun_Heading - 5000))
 	{
 		return (0);
 	}
@@ -528,7 +528,7 @@ AimWeapon3(heading, pitch)
 {
     signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	if (heading > (Main_Gun_Heading + 4000) or heading < (Main_Gun_Heading - 4000))
+	if (heading > (Main_Gun_Heading + 5000) or heading < (Main_Gun_Heading - 5000))
 	{
 		return (0);
 	}

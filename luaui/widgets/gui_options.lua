@@ -35,7 +35,7 @@ local bgMargin = 6
 local closeButtonSize = 30
 local screenHeight = 520 - bgMargin - bgMargin
 local screenWidth = 1050 - bgMargin - bgMargin
-local textareaMinLines = 10 -- wont scroll down more, will show at least this amount of lines 
+local textareaMinLines = 10 -- wont scroll down more, will show at least this amount of lines
 local customScale = 1
 local startLine = 1
 local vsx, vsy = Spring.GetViewGeometry()
@@ -2854,15 +2854,15 @@ function init()
 			value = GetWidgetToggleValue("Passive builders"),
 			description = 'Sets builders (nanos, labs and cons) on passive mode\n\nPassive mode means that builders will only spend energy when its availible.\nUsage: You could set your most important builders on active and leave the rest on passive'
 		},
-		{
-			id = "autocloakpopups",
-			group = "game",
-			widget = "Auto Cloak Popups",
-			name = "Auto cloak popups",
-			type = "bool",
-			value = GetWidgetToggleValue("Auto Cloak Popups"),
-			description = 'Auto cloaks Pit Bull and Ambusher'
-		},
+		--{
+		--	id = "autocloakpopups",
+		--	group = "game",
+		--	widget = "Auto Cloak Popups",
+		--	name = "Auto cloak popups",
+		--	type = "bool",
+		--	value = GetWidgetToggleValue("Auto Cloak Popups"),
+		--	description = 'Auto cloaks Pit Bull and Ambusher'
+		--},
 		{
 			id = "unitreclaimer",
 			group = "game",
@@ -2907,15 +2907,15 @@ function init()
 			value = GetWidgetToggleValue("FactoryGuard"),
 			description = 'Newly created builders will assist their source factory'
 		},
-		{
-			id = "factoryholdpos",
-			group = "game",
-			widget = "Factory hold position",
-			name = "Factory hold position",
-			type = "bool",
-			value = GetWidgetToggleValue("Factory hold position"),
-			description = 'Sets new factories, and all units they build, to hold position automatically (not aircraft)'
-		},
+		--{
+		--	id = "factoryholdpos",
+		--	group = "game",
+		--	widget = "Factory hold position",
+		--	name = "Factory hold position",
+		--	type = "bool",
+		--	value = GetWidgetToggleValue("Factory hold position"),
+		--	description = 'Sets new factories, and all units they build, to hold position automatically (not aircraft)'
+		--},
 		{
 			id = "factoryrepeat",
 			group = "game",
