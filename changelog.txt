@@ -3,9 +3,12 @@
 Balance :
  - Nerf Krog / Orco / Hyperion (less hp -10%). Hyperion gain a rocket startburst.
  - Paratrooping unit after transporter killed : Stuntime 5=>6s. Damage taken : 20% => 25%.
+ - Nerf big Turtoise speed 0.80 (turtle have 0.80)
+ - Corejudgement : Decrease main weapon range 850 => 800. Decrease HP 24K=>22K
 
 Improvment :
  - Remplace T1 Beamer Turret by Grape MiniGun (same balance)
+ - New model for Doomsday (in test)
  - Remplace beamer from Rex T3 Arm Amphibious Vehicle for a Minigun
  - Increase Talon T1 Kbot model size by 15%
 
