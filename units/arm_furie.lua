@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Very Heavy Experimental Kbot",
+		description = "Experimental Assault Kbot",
 		explodeas = "KROG_BLAST",
 		firestandorders = 1,
 		footprintx = 5,
@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "HKBOT5",
-		name = "Arm Furie",
+		name = "Furie",
 		noautofire = false,
 		objectname = "ARM_FURIE",
 		radaremitheight = 85,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "arm_furie.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

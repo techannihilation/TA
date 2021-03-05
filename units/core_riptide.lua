@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Riptide",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "core_riptide",
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLASTSML",

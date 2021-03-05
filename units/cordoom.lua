@@ -37,8 +37,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Doomsday Machine",
-		
+		name = "Doomsday Machine",		
 		objectname = "CORDOOM",
 		onoffable = true,
 		radardistance = 1200,

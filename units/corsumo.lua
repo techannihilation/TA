@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HKBOT3",
 		name = "Sumo",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORSUMO",
 		radaremitheight = 29,
 		seismicsignature = 0,

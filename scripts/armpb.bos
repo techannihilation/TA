@@ -42,11 +42,11 @@ FOpen()
 	signal 4;
 	set-signal-mask 4;
 	set ARMORED to 0;
-	turn dome to x-axis <-135.027473> speed <550.000000>;
+	turn dome to x-axis <-135.0> speed <550.000000>;
 	wait-for-turn dome around x-axis;
 	move post to y-axis [0.000000] speed [25.000000];
 	move barrel to z-axis [0.000000] speed [15.000000];
-	move gun to x-axis [1.500000] speed [5.000000];
+	//move gun to x-axis [1.500000] speed [5.000000];
 	wait-for-move post along y-axis;
 	wait-for-move barrel along z-axis;
 	wait-for-move gun along x-axis;
