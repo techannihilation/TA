@@ -1,5 +1,5 @@
 3.79 > 3.80
-2021-02-03
+2021-02-07
 Balance :
  - Nerf Krog / Orco / Hyperion (less hp -10%). Hyperion gain a rocket startburst.
  - Paratrooping unit after transporter killed : Stuntime 5=>6s. Damage taken : 20% => 25%.

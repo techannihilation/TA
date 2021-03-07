@@ -592,7 +592,7 @@ local morphDefs = {
 		},
 	},
 	cormist = {
-		into = 'tawf114',
+		into = 'corbanisher',
 		time = 45,
 		xp = 0.30,
 	},
