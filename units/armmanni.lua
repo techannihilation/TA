@@ -127,7 +127,7 @@ return {
 		weapondefs = {
 			atam = {
 				areaofeffect = 12,
-				beamtime = 0.3,
+				beamtime = 0.5,
 				corethickness = 0.3,
 				craterareaofeffect = 0,
 				craterboost = 0,

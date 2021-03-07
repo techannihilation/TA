@@ -807,7 +807,7 @@ local morphDefs = {
 		time = 80,
 	},
 	armamph = {
-		into = 'marauder',
+		into = 'armmarauder',
 		time = 45,
 		xp = 0.20,
 	},

@@ -27,7 +27,7 @@ return {
 		--Transporters
 		"armatlas",
 		"armdfly",
-		"armsl",
+		"corseahook",
 		"corvalk",
 		"tllrobber",
 		"tlltplane",
@@ -265,7 +265,7 @@ return {
 		"armjag",
 		"armjugg",
 		"armraz",
-		"marauder",
+		"armmarauder",
 		"armshock",
 		"armcrabe",
 		"armpod",

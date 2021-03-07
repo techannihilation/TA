@@ -23,7 +23,7 @@ return {
 		collisionvolumetype = "box",
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
-		description = "Air Transport",
+		description = "Air Transport (until 1500 Metal cost unit)",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 0,
 		footprintx = 3,
@@ -44,7 +44,6 @@ return {
 		moverate2 = 2,
 		name = "Valkyrie",
 		noautofire = false,
-		
 		objectname = "CORVALK",
 		pitchscale = 1,
 		radaremitheight = 28.8,

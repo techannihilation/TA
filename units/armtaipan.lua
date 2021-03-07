@@ -1,11 +1,11 @@
 return {
-	taipan = {
+	armtaipan = {
 		acceleration = 0.06,
 		brakerate = 0.63,
 		buildcostenergy = 21583,
 		buildcostmetal = 495,
 		builder = false,
-		buildpic = "taipan.dds",
+		buildpic = "armtaipan.dds",
 		buildtime = 23659,
 		canattack = true,
 		canguard = true,
@@ -38,10 +38,10 @@ return {
 		mincloakdistance = 40,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
-		name = "K-74 Taipan",
+		name = "K-74 armtaipan",
 		noautofire = false,
-		
-		objectname = "TAIPAN",
+
+		objectname = "armtaipan",
 		onoffable = true,
 		radardistance = 450,
 		radaremitheight = 31,
@@ -54,10 +54,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.254,
 		turnrate = 1005,
-		unitname = "taipan",
+		unitname = "armtaipan",
 		upright = true,
 		customparams = {
-			buildpic = "taipan.dds",
+			buildpic = "armtaipan.dds",
 			faction = "ARM",
 			prioritytarget = "air",
 			--requiretech = "Advanced T2 Unit Research Centre",
@@ -66,12 +66,12 @@ return {
 			dead = {
 				blocking = true,
 				damage = 1857,
-				description = "K-74 Taipan Wreckage",
+				description = "K-74 armtaipan Wreckage",
 				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 371,
-				object = "taipan_dead",
+				object = "armtaipan_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 2321,
-				description = "K-74 Taipan Debris",
+				description = "K-74 armtaipan Debris",
 				footprintx = 2,
 				footprintz = 2,
 				metal = 198,

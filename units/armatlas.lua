@@ -19,7 +19,7 @@ return {
 		collide = false,
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
-		description = "Air Transport",
+		description = "Air Transport (until 1500 Metal cost unit)",
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 0,
 		footprintx = 3,
@@ -38,7 +38,6 @@ return {
 		mobilestandorders = 0,
 		name = "Atlas",
 		noautofire = false,
-		
 		objectname = "ARMATLAS",
 		radaremitheight = 28.8,
 		releaseheld = true,

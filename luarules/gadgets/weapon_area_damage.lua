@@ -36,6 +36,15 @@ local scouts = {
   [UnitDefNames["tllbug"].id] = true,
   [UnitDefNames["tllgladius"].id] = true,
   [UnitDefNames["talon_infantry"].id] = true,
+	[UnitDefNames["talon_rebel"].id] = true,
+	[UnitDefNames["talon_sniper"].id] = true,
+	[UnitDefNames["talon_mercenary"].id] = true,
+	[UnitDefNames["armpw"].id] = true,
+	[UnitDefNames["corak"].id] = true,
+	[UnitDefNames["talon_recon"].id] = true,
+	[UnitDefNames["armpeep"].id] = true,
+	[UnitDefNames["corfink"].id] = true,
+	[UnitDefNames["tllprob"].id] = true,
 }
 
 function gadget:Explosion(weaponID, px, py, pz, ownerID)
@@ -95,7 +104,7 @@ function gadget:GameFrame(f)
 							end
 						end
 					end
-				end		
+				end
 			end
 			w.damage = w.damage - w.timeLoss
 			if f >= w.expiry then

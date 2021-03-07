@@ -33,8 +33,7 @@ return {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLAP",
 		radardistance = 550,
 		radaremitheight = 44,

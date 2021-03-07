@@ -63,7 +63,7 @@ return {
 			[7] = "corfort",
 			[8] = "corarad",
 			[9] = "cormine2",
-			[10] = "hllt",
+			[10] = "corhllt",
 			[11] = "corvipe",
 			[12] = "cortoast",
 			[13] = "cordoom",

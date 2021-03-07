@@ -23,7 +23,7 @@ return {
 		collisionvolumetype = "CylZ",
 		cruisealt = 160,
 		defaultmissiontype = "VTOL_standby",
-		description = "Ultimate Air Transport",
+		description = "Ultimate Air Transport (until 100K Metal cost unit)",
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,
 		footprintx = 8,
@@ -41,8 +41,7 @@ return {
 		maxwaterdepth = 0,
 		mintransportmass = 4000,
 		mobilestandorders = 1,
-		name = "Tau",
-		
+		name = "Lift",
 		objectname = "corlift",
 		radaremitheight = 30,
 		releaseheld = true,

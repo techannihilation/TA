@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "heap",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Anti Minefield Energy Pulse Weapon",
+		description = "Anti Minefield (20dmg) and Light Units Weapon (10dmg/s - 750 range)",
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",
 		firestandorders = 1,

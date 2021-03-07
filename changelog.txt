@@ -6,6 +6,8 @@ Balance :
  - Nerf big Turtoise speed 0.80 (turtle have 0.80)
  - Corejudgement : Decrease main weapon range 850 => 800. Decrease HP 24K=>22K
  - Gorg T3 Core : Increase speed 0.6=>0.75
+ - AntiMinefild Juno : Inflict damage to Pewee, Ak, All Talon infantry, T1 Air Scout, all scouts
+ - T2 Air Transport : Decrease Hp by 15% for Tll and Core
 
 Improvment :
  - Remplace T1 Beamer Turret by Grape MiniGun (same balance)
@@ -591,7 +593,7 @@ Fix :
 2020-04-13
 Balance :
  - Tsar All faction : +10M Metal and energy * 2
- - Marauder : increase cost by 10%. decrease AA damage by 15%. Increase plasma gun by 2%.
+ - armmarauder : increase cost by 10%. decrease AA damage by 15%. Increase plasma gun by 2%.
  - Abaddon : decrease range from plasma : 1500 => 1400
  - Repentance : decrease damage 1000/s => 600/s. Decrease range 1500 => 1250. Cost 19KM => 17KM.
  - Metron : Increase Angle for Turret 120 => 220 in front. Decrease HP 47K => 44K. Fix Damage 1000 / projectile (was 1200 for exp unit and 900 by default)
@@ -622,7 +624,7 @@ Balance :
  - Fix Range for all talon laser (yellow)
  - Talon  wolf : Decrease cost  (290=>250M & 7KE=>5kE) and timebuild 7000 => 5250
  - Juggernault Core : decrease HP 490 => 480K. Decrease Cost 36KM => 30KM. decrease Timebuild.
- - Arm/Core LLT1 : Better damage. Less Range. Same cost. (we have llt 435 range, llt1 475 range and beam/hllt 500 range)
+ - Arm/Core LLT1 : Better damage. Less Range. Same cost. (we have llt 435 range, llt1 475 range and beam/corhllt 500 range)
 Improvment :
  - Rework Juggernault Weapon. Add Double llt for top with damage * 2. Rework main weapon. Same range. Add special dammage vs Experimental units.
 

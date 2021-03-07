@@ -36,8 +36,7 @@ return {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMAP",
 		radardistance = 500,
 		radaremitheight = 66,
@@ -64,7 +63,7 @@ return {
 			[5] = "armfig",
 			[6] = "armatlas",
 			[7] = "armthund",
-			[8] = "armkam",	
+			[8] = "armkam",
 		},
 		customparams = {
 			buildpic = "armap.dds",

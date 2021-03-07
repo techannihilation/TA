@@ -36,8 +36,7 @@ return {
 		metalstorage = 500,
 		mobilestandorders = 1,
 		name = "Experimental Air Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_eap",
 		radardistance = 0,
 		radaremitheight = 25,

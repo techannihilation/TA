@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Anti Minefield Energy Pulse Weapon",
+		description = "Anti Minefield (20dmg) and Light Units Weapon (10dmg/s - 750 range)",
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",
 		firestandorders = 1,
@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Core Juno",
 		noautofire = false,
-
 		objectname = "CJUNO",
 		radaremitheight = 71,
 		seismicsignature = 0,

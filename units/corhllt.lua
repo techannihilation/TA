@@ -1,5 +1,5 @@
 return {
-	hllt = {
+	corhllt = {
 		acceleration = 0,
 		brakerate = 0,
 		buildangle = 32768,
@@ -9,8 +9,8 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "hllt_aoplane.dds",
-		buildpic = "hllt.dds",
+		buildinggrounddecaltype = "corhllt_aoplane.dds",
+		buildpic = "corhllt.dds",
 		buildtime = 6000,
 		canattack = true,
 		canstop = 1,
@@ -38,9 +38,9 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "HLLT",
+		name = "corhllt",
 		noautofire = false,
-		objectname = "HLLT",
+		objectname = "corhllt",
 		radaremitheight = 89,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -49,11 +49,11 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "hllt",
+		unitname = "corhllt",
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
-			buildpic = "hllt.dds",
+			buildpic = "corhllt.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -63,13 +63,13 @@ return {
 				collisionvolumescales = "35.5121612549 61.9105224609 33.3319244385",
 				collisionvolumetype = "Box",
 				damage = 1621,
-				description = "HLLT Wreckage",
+				description = "corhllt Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 228,
-				object = "HLLT_DEAD",
+				object = "corhllt_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +78,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 2026,
-				description = "HLLT Debris",
+				description = "corhllt Debris",
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
@@ -124,7 +124,7 @@ return {
 			},
 		},
 		weapondefs = {
-			hllt_bottom = {
+			corhllt_bottom = {
 				areaofeffect = 12,
 				avoidfeature = false,
 				beamtime = 0.12,
@@ -167,7 +167,7 @@ return {
 					subs = 5,
 				},
 			},
-			hllt_top = {
+			corhllt_top = {
 				areaofeffect = 12,
 				beamtime = 0.12,
 				corethickness = 0.175,
@@ -212,11 +212,11 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "HLLT_TOP",
+				def = "corhllt_TOP",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "HLLT_BOTTOM",
+				def = "corhllt_BOTTOM",
 				onlytargetcategory = "SURFACE",
 			},
 		},

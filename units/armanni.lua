@@ -36,7 +36,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Annihilator",
-		
 		objectname = "ARMANNI",
 		onoffable = true,
 		radardistance = 1500,
@@ -123,7 +122,7 @@ return {
 		weapondefs = {
 			ata = {
 				areaofeffect = 16,
-				beamtime = 2,
+				beamtime = 0.5,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,

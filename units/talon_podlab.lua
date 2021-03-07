@@ -38,8 +38,7 @@ return {
 		metalstorage = 800,
 		mobilestandorders = 1,
 		name = "Prototype Gantry",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TALON_PODLAB",
 		radardistance = 50,
 		radaremitheight = 82,

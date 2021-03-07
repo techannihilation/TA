@@ -277,7 +277,7 @@ armsiege.dds
 armsilo1.dds
 armsilo.dds
 armsjam.dds
-armsl.dds
+corseahook.dds
 armsmc.dds
 armsnipe.dds
 armsolar.dds
@@ -656,13 +656,13 @@ corgladiator.dds
 corgorg.dds
 heavyimpact.dds
 helepolis.dds
-hllt.dds
+corhllt.dds
 hyperion.dds
 irritator.dds
 krogtaar.dds
 macross.dds
 madsam.dds
-marauder.dds
+armmarauder.dds
 armmercury.dds
 cormonkeylord.dds
 nebraska.dds
@@ -682,7 +682,7 @@ shrike.dds
 smasher.dds
 speeder.dds
 spiderlab.dds
-taipan.dds
+armtaipan.dds
 tankanotor.dds
 armbeamer.dds
 armserpent.dds

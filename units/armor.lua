@@ -20,7 +20,7 @@ return {
 		category = "ALL MOBILE VTOL",
 		cruisealt = 110,
 		defaultmissiontype = "VTOL_standby",
-		description = "Very Heavy Air Transport",
+		description = "Very Heavy Air Transport (until 20K Metal cost unit)",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 4,
@@ -39,7 +39,6 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Ornith",
-		
 		objectname = "ARMOR",
 		radardistance = 0,
 		radaremitheight = 28.8,

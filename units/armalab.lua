@@ -64,7 +64,7 @@ return {
 			[7] = "armamph",
 			[8] = "armfido",
 			[9] = "armzeus",
-			[10] = "taipan",
+			[10] = "armtaipan",
 			[11] = "armaak",
 			[12] = "armmav",
 			[13] = "armsnipe",

@@ -37,7 +37,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Doomsday Machine",		
+		name = "Doomsday Machine",
 		objectname = "CORDOOM",
 		onoffable = true,
 		radardistance = 1200,
@@ -59,8 +59,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.281730651855 -0.153618286133 3.57356262207",
-				collisionvolumescales = "80.6815948486 91.7637634277 82.1471252441",
+				collisionvolumeoffsets = "0 0 3",
+				collisionvolumescales = "80 91 82",
 				collisionvolumetype = "Box",
 				damage = 7323,
 				description = "Doomsday Machine Wreckage",
@@ -164,7 +164,7 @@ return {
 			},
 			atadr = {
 				areaofeffect = 12,
-				beamtime = 0.9,
+				beamtime = 0.5,
 				corethickness = 0.3,
 				craterareaofeffect = 0,
 				craterboost = 0,

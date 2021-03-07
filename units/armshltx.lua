@@ -55,7 +55,7 @@ return {
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "armsmc",
-			[2] = "marauder",
+			[2] = "armmarauder",
 			[3] = "armshock",
 			[4] = "armraz",
 			[5] = "armeak",

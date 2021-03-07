@@ -35,8 +35,7 @@ return {
 		metalstorage = 200,
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMAAP",
 		radaremitheight = 67,
 		seismicsignature = 0,

@@ -36,7 +36,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Annihilator",
-		
 		objectname = "ARMANNI1",
 		onoffable = true,
 		radardistance = 1500,
@@ -121,7 +120,7 @@ return {
 			ata10 = {
 				areaofeffect = 56,
 				avoidfeature = false,
-				beamtime = 2.4,
+				beamtime = 0.75,
 				corethickness = 0.39,
 				craterareaofeffect = 0,
 				craterboost = 0,

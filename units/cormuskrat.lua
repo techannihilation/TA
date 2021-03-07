@@ -88,7 +88,7 @@ return {
 			[23] = "cordrag",
 			[24] = "cormaw",
 			[25] = "corllt",
-			[26] = "hllt",
+			[26] = "corhllt",
 			[27] = "corhlt",
 			[28] = "corpun",
 			[29] = "corint2",

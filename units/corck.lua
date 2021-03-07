@@ -83,7 +83,7 @@ return {
 			[24] = "cordrag",
 			[25] = "cormaw",
 			[26] = "corllt",
-			[27] = "hllt",
+			[27] = "corhllt",
 			[28] = "corhlt",
 			[29] = "corpun",
 			[30] = "corint2",

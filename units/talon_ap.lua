@@ -38,8 +38,7 @@ return {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_ap",
 		radardistance = 1000,
 		radaremitheight = 66,
@@ -63,7 +62,7 @@ return {
 			[4] = "talon_drone",
 			[5] = "talon_token",
 			[6] = "talon_wyvern",
-			[7] = "talon_shade",									
+			[7] = "talon_shade",
 		},
 		customparams = {
 			buildpic = "talon_ap.dds",

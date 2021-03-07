@@ -31,7 +31,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Doomsday Machine",
-
 		objectname = "CORDOOM1",
 		onoffable = true,
 		radardistance = 1200,
@@ -153,7 +152,7 @@ return {
 			},
 			atadr10 = {
 				areaofeffect = 52,
-				beamtime = 1.3,
+				beamtime = 0.75,
 				corethickness = 0.32,
 				craterareaofeffect = 0,
 				craterboost = 0,

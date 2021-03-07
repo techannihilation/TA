@@ -19,7 +19,7 @@ return {
 		collide = false,
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
-		description = "Air Transport",
+		description = "Air Transport (until 1500 Metal cost unit)",
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 0,
 		footprintx = 3,
@@ -37,7 +37,6 @@ return {
 		mobilestandorders = 0,
 		name = "Zergon",
 		noautofire = false,
-		
 		objectname = "TLLTplane",
 		radaremitheight = 28.8,
 		releaseheld = true,

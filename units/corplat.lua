@@ -55,7 +55,7 @@ return {
 			[5] = "corape",
 			[6] = "corhurc",
 			[7] = "cortitan",
-			[8] = "armsl",
+			[8] = "corseahook",
 			[9] = "corcrw",
 		},
 		customparams = {

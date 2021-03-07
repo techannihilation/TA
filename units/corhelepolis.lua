@@ -1,12 +1,12 @@
 return {
-	helepolis = {
+	corhelepolis = {
 		acceleration = 0.025,
 		bmcode = 1,
 		brakerate = 0.15,
 		buildcostenergy = 101749,
 		buildcostmetal = 6741,
 		builder = false,
-		buildpic = "helepolis.dds",
+		buildpic = "corhelepolis.dds",
 		buildtime = 125000,
 		canattack = true,
 		canguard = true,
@@ -38,10 +38,9 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "HKBOT4",
-		name = "Helepolis",
+		name = "corhelepolis",
 		noautofire = false,
-		
-		objectname = "helepolis.3do",
+		objectname = "corhelepolis",
 		piecetrailcegrange = 4,
 		piecetrailcegtag = "Debree",
 		radardistance = 0,
@@ -55,11 +54,11 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.495,
 		turnrate = 300,
-		unitname = "helepolis",
+		unitname = "corhelepolis",
 		unitnumber = 269,
 		upright = false,
 		customparams = {
-			buildpic = "helepolis.dds",
+			buildpic = "corhelepolis.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -69,13 +68,13 @@ return {
 				collisionvolumescales = "64.8059539795 21.2949981689 66.8361816406",
 				collisionvolumetype = "Box",
 				damage = 25789,
-				description = "Helepolis Wreckage",
+				description = "corhelepolis Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6100,
-				object = "HELEPOLIS_DEAD.3DO",
+				object = "corhelepolis_DEAD.3DO",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +83,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 40026,
-				description = "Helepolis Debris",
+				description = "corhelepolis Debris",
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
@@ -163,7 +162,7 @@ return {
 			},
 			mini_atadr = {
 				areaofeffect = 12,
-				beamtime = 1,
+				beamtime = 0.5,
 				corethickness = 0.3,
 				craterareaofeffect = 0,
 				craterboost = 0,

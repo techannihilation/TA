@@ -11,10 +11,10 @@ local weapons = {
 	tllaether_thermite_bomb = { radius = 64, damage = 900, duration = 150, rangeFall = 0.5, timeFall = 0.5},
 
 	--junos
-	ajuno_juno_pulse = { radius = 950, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 60},
-	cjuno_juno_pulse = { radius = 950, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 60},
-	tlljuno_juno_pulse = { radius = 950, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 60},
-	talon_juno_juno_pulse = { radius = 950, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 60},
+	ajuno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
+	cjuno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
+	tlljuno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
+	talon_juno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
 
 	--mortor_canon
 	tllleopard_mortor_cannon =  { radius = 95, damage = 250, duration = 150, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
