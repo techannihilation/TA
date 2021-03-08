@@ -34,10 +34,6 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},
-		[UnitDefNames.corgol1.weapons[1].weaponDef] = {
-			impulseBoost = 90 * multiplier,
-			weaponNumber = 1
-		},
 		[UnitDefNames.corbt.weapons[1].weaponDef] = {
 			impulseBoost = 90 * multiplier,
 			weaponNumber = 1

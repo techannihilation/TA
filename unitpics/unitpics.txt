@@ -68,7 +68,6 @@ armblz.dds
 armbrawl.dds
 armbrtha1.dds
 armbrtha.dds
-armbull2.dds
 armbull.dds
 armca.dds
 armcarry.dds
@@ -493,7 +492,6 @@ corgen.dds
 corgeo.dds
 corgeo_mini.dds
 corgfbt.dds
-corgol1.dds
 corgol.dds
 corgripn.dds
 corhcar.dds

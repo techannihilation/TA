@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Battle Construction Aircraft",
 		noautofire = false,
-		
+
 		objectname = "abuilderlvl3",
 		radardistance = 50,
 		radaremitheight = 41,
@@ -68,8 +68,8 @@ return {
 			[7] = "armbrtha",
 			[8] = "armzeus1",
 			[9] = "armfboy1",
-			[10] = "armbull2",
-			[11] = "armmanni1",
+			[10] = "",
+			[11] = "",
 			[12] = "armweaver",
 			[13] = "armcrus",
 		},

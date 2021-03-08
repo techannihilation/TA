@@ -510,14 +510,9 @@ local morphDefs = {
 		xp = 0.30,
 	},
 	armbull = {
-		into = 'armbull2',
-		time = 30,
-		xp = 0.15,
-	},
-	armbull2 = {
 		into = 'armmcv',
 		time = 60,
-		xp = 0.30,
+		xp = 0.20,
 	},
 	armmcv = {
 		into = 'armmcv1',
@@ -560,14 +555,9 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corgol = {
-		into = 'corgol1',
-		time = 30,
-		xp = 0.15,
-	},
-	corgol1 = {
 		into = 'corbt',
-		time = 90,
-		xp = 0.50,
+		time = 60,
+		xp = 0.20,
 	},
 	corraid = {
 		into = 'correap',
@@ -960,11 +950,6 @@ local morphDefs = {
 		xp = 0.15,
 	},
 	armmanni = {
-		into = 'armmanni1',
-		time = 30,
-		xp = 0.15,
-	},
-	armmanni1 = {
 		into = 'nsaagriz',
 		time = 90,
 		xp = 0.25,

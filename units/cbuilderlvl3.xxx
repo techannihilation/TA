@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Battle Construction Aircraft",
 		noautofire = false,
-		
+
 		objectname = "cbuilderlvl3",
 		radardistance = 50,
 		radaremitheight = 26,
@@ -66,9 +66,9 @@ return {
 			[5] = "cormds",
 			[6] = "corgate",
 			[7] = "corint",
-			[8] = "corcan1",
-			[9] = "corsumo1",
-			[10] = "corgol1",
+			[8] = "",
+			[9] = "",
+			[10] = "",
 			[11] = "core_riptide",
 			[12] = "corcrus",
 		},

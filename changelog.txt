@@ -1,13 +1,23 @@
+3.80 > 3.81
+2021-02-09
+
+Balance :
+- AntiMinefild Juno : Inflict damage to Pewee, Ak, All Talon infantry, T1 Air Scout, all scouts
+- T2 Air Transport : Decrease Hp by 15% for Tll and Core
+- Bantha & Troman : Increase beam range 800=>950. Balance with decrease other weapon damage.
+
+Improvment :
+ - Delete some T2 morphed units but keep morph into T3 units(Bull=>Command Vehicle, Goliath=>Tron, Mobile Tachyon=>Krypto).
+
 3.79 > 3.80
-2021-02-07
+2021-02-05
 Balance :
  - Nerf Krog / Orco / Hyperion (less hp -10%). Hyperion gain a rocket startburst.
  - Paratrooping unit after transporter killed : Stuntime 5=>6s. Damage taken : 20% => 25%.
  - Nerf big Turtoise speed 0.80 (turtle have 0.80)
  - Corejudgement : Decrease main weapon range 850 => 800. Decrease HP 24K=>22K
  - Gorg T3 Core : Increase speed 0.6=>0.75
- - AntiMinefild Juno : Inflict damage to Pewee, Ak, All Talon infantry, T1 Air Scout, all scouts
- - T2 Air Transport : Decrease Hp by 15% for Tll and Core
+
 
 Improvment :
  - Remplace T1 Beamer Turret by Grape MiniGun (same balance)
