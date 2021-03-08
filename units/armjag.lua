@@ -37,7 +37,6 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Jaguar",
 		noautofire = false,
-
 		objectname = "ARMJAG",
 		radardistance = 0,
 		radardistancejam = 0,
@@ -153,7 +152,7 @@ return {
 			},
 			armjag_head = {
 				areaofeffect = 14,
-				beamtime = 1.05,
+				beamtime = 0.5,
 				corethickness = 0.5,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -186,7 +185,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 1000,
+					commanders = 1250,
 					default = 2500,
 					subs = 5,
 				},

@@ -156,7 +156,7 @@ return {
 			},
 			armorco_atad = {
 				areaofeffect = 12,
-				beamtime = 0.3,
+				beamtime = 0.5,
 				corethickness = 0.5,
 				craterareaofeffect = 0,
 				craterboost = 0,

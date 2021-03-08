@@ -254,7 +254,7 @@ return {
 		"armsiege",
 		"nsaagriz",
 		"armmlrs",
-		"champ",
+		"corchamp",
 		"armantar",
 		"armrex",
 		"corminotaur",

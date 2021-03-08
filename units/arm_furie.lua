@@ -151,7 +151,7 @@ return {
 			},
 			arm_furie_head = {
 				areaofeffect = 8,
-				beamtime = 0.7,
+				beamtime = 0.5,
 				corethickness = 0.3,
 				craterareaofeffect = 0,
 				craterboost = 0,

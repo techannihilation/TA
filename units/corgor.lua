@@ -194,7 +194,7 @@ return {
 			},
 			corgor_head = {
 				areaofeffect = 14,
-				beamtime = 1.05,
+				beamtime = 0.5,
 				corethickness = 0.5,
 				craterareaofeffect = 0,
 				craterboost = 0,

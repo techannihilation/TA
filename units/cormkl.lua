@@ -129,7 +129,7 @@ return {
 		weapondefs = {
 			atad = {
 				areaofeffect = 12,
-				beamtime = 0.75,
+				beamtime = 0.5,
 				corethickness = 0.75,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -162,8 +162,8 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 2500,
-					default = 5000,
+					commanders = 1250,
+					default = 2500,
 					subs = 5,
 				},
 			},

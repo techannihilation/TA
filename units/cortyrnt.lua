@@ -113,7 +113,7 @@ return {
 		weapondefs = {
 			blod_doom = {
 				areaofeffect = 32,
-				beamtime = 0.3,
+				beamtime = 0.5,
 				corethickness = 0.3,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -126,7 +126,7 @@ return {
 				laserflaresize = 22,
 				name = "Doomsday Weapon",
 				noselfdamage = true,
-				range = 1200,
+				range = 950,
 				reloadtime = 2.5,
 				rgbcolor = "0 0 1",
 				soundhitdry = "",
@@ -137,7 +137,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.3,
 				thickness = 6,
-				tolerance = 1000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1000,
@@ -146,8 +145,8 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 1500,
-					default = 3000,
+					commanders = 1250,
+					default = 2500,
 					subs = 5,
 				},
 			},

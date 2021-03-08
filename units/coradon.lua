@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Adonis",
 		noautofire = false,
-		
+
 		objectname = "CORADON",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",
@@ -119,7 +119,7 @@ return {
 		weapondefs = {
 			coradon_atad = {
 				areaofeffect = 32,
-				beamtime = 0.3,
+				beamtime = 0.5,
 				corethickness = 0.3,
 				craterareaofeffect = 0,
 				craterboost = 0,

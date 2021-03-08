@@ -201,7 +201,7 @@ return {
 			},
 			tehlazerofdewm = {
 				areaofeffect = 14,
-				beamtime = 1.05,
+				beamtime = 0.5,
 				corethickness = 0.5,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -214,7 +214,7 @@ return {
 				laserflaresize = 12,
 				name = "Atad",
 				noselfdamage = true,
-				range = 800,
+				range = 950,
 				reloadtime = 5,
 				rgbcolor = "0.2 0.2 1",
 				soundhitdry = "",

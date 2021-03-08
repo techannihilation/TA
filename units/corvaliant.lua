@@ -160,7 +160,7 @@ return {
 				laserflaresize = 12,
 				name = "DEEEEEEEEEEEEEWWWWWMMMM",
 				noselfdamage = true,
-				range = 1000,
+				range = 950,
 				reloadtime = 5,
 				rgbcolor = "0.2 0.2 1",
 				soundhitdry = "",

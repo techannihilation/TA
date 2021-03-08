@@ -134,7 +134,7 @@ return {
 			atadr = {
 				areaofeffect = 12,
 				beamtime = 1,
-				corethickness = 0.3,
+				corethickness = 0.5,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -146,7 +146,7 @@ return {
 				laserflaresize = 22,
 				name = "ATAD",
 				noselfdamage = true,
-				range = 800,
+				range = 950,
 				reloadtime = 8,
 				rgbcolor = "0 0 1",
 				soundhitdry = "",

@@ -348,7 +348,7 @@ cbuilderlvl3.dds
 ccovertopscentre.dds
 cdevastator.dds
 cfusionplant.dds
-champ.dds
+corchamp.dds
 chopper.dds
 cjuno.dds
 clb.dds
