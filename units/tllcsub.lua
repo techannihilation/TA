@@ -41,7 +41,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Construction Sub",
 		noautofire = false,
-		
 		objectname = "TLLCSUB",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
@@ -58,11 +57,11 @@ return {
 		waterline = 30,
 		workertime = 200,
 		buildoptions = {
-			--[1] = "tlltide",
-			--[2] = "tllatidal",
-			--[3] = "tlluwmex",
+			--[1] = "",
+			--[2] = "",
+			--[3] = "",
 			[4] = "tllfnanotc",
-			--[5] = "tllasy",
+			--[5] = "",
 			[6] = "tllradarns",
 			[7] = "tllasonar",
 			[8] = "tllfmine3",

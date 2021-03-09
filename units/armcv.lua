@@ -41,7 +41,6 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-
 		objectname = "ARMCV",
 		radardistance = 50,
 		radaremitheight = 24,

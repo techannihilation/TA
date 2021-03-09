@@ -29,8 +29,7 @@ return {
 		maxdamage = 2400,
 		maxslope = 36,
 		maxwaterdepth = 0,
-		name = "Tracer",
-		
+		name = "Tracer",		
 		objectname = "ARMSD",
 		onoffable = true,
 		radaremitheight = 55,

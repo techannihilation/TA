@@ -28,8 +28,7 @@ return {
 		maxslope = 12,
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "tlljam",
 		onoffable = true,
 		radardistancejam = 550,

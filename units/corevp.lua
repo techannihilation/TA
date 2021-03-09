@@ -52,12 +52,11 @@ return {
 		buildoptions = {
 			[1] = "corecv",
 			[2] = "coramist",
-			--[3] = "clb",
-			[4] = "corchamp",
-			[5] = "cortigre",
-			[6] = "armsiege",
-			[7] = "corhcrus",
-			[8] = "corbt",
+			[3] = "corchamp",
+			[4] = "cortigre",
+			[5] = "armsiege",
+			[6] = "corhcrus",
+			[7] = "corbt",
 		},
 		customparams = {
 			buildpic = "corevp.dds",

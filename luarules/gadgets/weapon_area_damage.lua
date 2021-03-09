@@ -29,22 +29,78 @@ local pairs = pairs
 local ipairs = ipairs
 
 local scouts = {
+
+	--Scouts
   [UnitDefNames["armflea"].id] = true,
   [UnitDefNames["armfav"].id] = true,
   [UnitDefNames["corpunk"].id] = true,
   [UnitDefNames["corfav"].id] = true,
   [UnitDefNames["tllbug"].id] = true,
   [UnitDefNames["tllgladius"].id] = true,
+
+	--Infantry Talon
   [UnitDefNames["talon_infantry"].id] = true,
-	[UnitDefNames["talon_rebel"].id] = true,
-	[UnitDefNames["talon_sniper"].id] = true,
-	[UnitDefNames["talon_mercenary"].id] = true,
-	[UnitDefNames["armpw"].id] = true,
-	[UnitDefNames["corak"].id] = true,
+	--[UnitDefNames["talon_rebel"].id] = true,
+	--[UnitDefNames["talon_sniper"].id] = true,
+	--[UnitDefNames["talon_mercenary"].id] = true,
+
+	--T1 Light Kbot
+	--[UnitDefNames["armpw"].id] = true,
+	--[UnitDefNames["corak"].id] = true,
+	--[UnitDefNames["tllprivate"].id] = true,
+
+	-- Rez Bot
+	[UnitDefNames["armrectr"].id] = true,
+	[UnitDefNames["cornecro"].id] = true,
+	[UnitDefNames["tllsham"].id] = true,
+	[UnitDefNames["talon_fox"].id] = true,
+
+	-- Scout Planes
 	[UnitDefNames["talon_recon"].id] = true,
 	[UnitDefNames["armpeep"].id] = true,
 	[UnitDefNames["corfink"].id] = true,
 	[UnitDefNames["tllprob"].id] = true,
+
+	--Mines Layer
+	[UnitDefNames["armmin"].id] = true,
+	[UnitDefNames["cormin"].id] = true,
+	[UnitDefNames["tlltsetse"].id] = true,
+	[UnitDefNames["talon_carbon"].id] = true,
+	[UnitDefNames["armmlv"].id] = true,
+	[UnitDefNames["cormlv"].id] = true,
+	[UnitDefNames["tllmlv"].id] = true,
+	[UnitDefNames["talon_mlv"].id] = true,
+
+	--T1 Radar
+	[UnitDefNames["armrad"].id] = true,
+	[UnitDefNames["corrad"].id] = true,
+	[UnitDefNames["tllrad"].id] = true,
+	[UnitDefNames["talon_rad"].id] = true,
+
+	--T2 Radar
+	[UnitDefNames["armarad"].id] = true,
+	[UnitDefNames["corarad"].id] = true,
+	[UnitDefNames["tllarad"].id] = true,
+	[UnitDefNames["talon_arad"].id] = true,
+
+	--T3 Jammer
+	[UnitDefNames["armomni"].id] = true,
+	[UnitDefNames["coromni"].id] = true,
+	[UnitDefNames["tllomni"].id] = true,
+	[UnitDefNames["talon_conspiracy2"].id] = true,
+
+	--T2 Jammer
+	[UnitDefNames["armveil"].id] = true,
+	[UnitDefNames["corshroud"].id] = true,
+	[UnitDefNames["tllajam"].id] = true,
+	[UnitDefNames["talon_conspiracy1"].id] = true,
+
+	--T1 Jammer
+	[UnitDefNames["armjamt"].id] = true,
+	[UnitDefNames["corjamt"].id] = true,
+	[UnitDefNames["tlljam"].id] = true,
+	[UnitDefNames["talon_conspiracy"].id] = true,
+
 }
 
 function gadget:Explosion(weaponID, px, py, pz, ownerID)

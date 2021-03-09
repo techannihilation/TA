@@ -28,8 +28,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Argus",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "tllomni",
 		onoffable = true,
 		radardistancejam = 2000,

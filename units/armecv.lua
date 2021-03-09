@@ -40,8 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK4",
 		name = "Construction Vehicle",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMECV",
 		radaremitheight = 27,
 		seismicsignature = 0,

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, turret, base, sleeve, ex1, ex2;
+piece  flare1, flare2, turret, base, body, sleeve, ex1, ex2;
 
 static-var  restore_delay, gun_1;
 
@@ -133,7 +133,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
@@ -141,21 +141,13 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD | SHATTER;
 		explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | SHATTER;
-		explode sleeve type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode sleeve type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);

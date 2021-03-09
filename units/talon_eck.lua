@@ -40,8 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HAKBOT4",
 		name = "Construction Kbot",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_eck",
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -74,7 +73,7 @@ return {
 			[15] = "talon_damascus1",
 			[16] = "talon_silo1",
 			[18] = "talon_lrpt1",
-			[19] = "talon_veloute2",		
+			[19] = "talon_veloute2",
 		},
 		customparams = {
 			buildpic = "talon_eck.dds",

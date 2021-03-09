@@ -15,8 +15,8 @@ end
 if (gadgetHandler:IsSyncedCode()) then
 	local armminDefID = UnitDefNames.armmin.id
 	local corminDefID = UnitDefNames.cormin.id
-	local corminDefID = UnitDefNames.tlltsetse.id
-	local corminDefID = UnitDefNames.talon_carbon.id
+	local tllminDefID = UnitDefNames.tlltsetse.id
+	local talonminDefID = UnitDefNames.talon_carbon.id
 	--local armpcaDefID = UnitDefNames.armpcan.id
 	--local corpcaDefID = UnitDefNames.corpcan.id
 	--local tllcanDefID = UnitDefNames.tllpcan.id
@@ -27,9 +27,9 @@ if (gadgetHandler:IsSyncedCode()) then
 	local CMD_INSERT = CMD.INSERT
 	local SpGiveOrderToUnit = Spring.GiveOrderToUnit
 
-	
+
 	function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
-		if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
+		if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
 			if (UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
 				pilelimit = pilelimit2
 			else

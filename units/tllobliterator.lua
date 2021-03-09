@@ -30,8 +30,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Obliterator",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLOBLITERATOR",
 		onoffable = true,
 		radardistance = 650,

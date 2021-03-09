@@ -33,8 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Veil",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMVEIL",
 		onoffable = true,
 		radardistancejam = 760,

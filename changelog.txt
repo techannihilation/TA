@@ -2,7 +2,7 @@
 2021-02-09
 
 Balance :
-- AntiMinefild Juno : Inflict damage to Pewee, Ak, All Talon infantry, T1 Air Scout, all scouts
+- AntiMinefild Juno : Inflict damage to all T1 Scout (Air & Ground), T1 T2 T3 Radar / Jammer structure, Rez Bot, Mineslayers
 - T2 Air Transport : Decrease Hp by 15% for Tll and Core
 - Bantha & Troman : Increase beam range 800=>950. Balance with decrease other weapon damage.
 

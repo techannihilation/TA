@@ -31,8 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Targeting Facility",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMTARG",
 		onoffable = true,
 		radaremitheight = 35,

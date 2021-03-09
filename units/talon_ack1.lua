@@ -39,8 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_ack1",
 		radardistance = 50,
 		radaremitheight = 25,

@@ -3,10 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, struts, fan, turret, gun, sleeve, barrel1, barrel2,
-       barrel3, flare, shell, vent1, vent2, wake01, wake02, wake03,
-       wake04, wake05, wake06, wake07, wake08, wake09, wake10, wake11,
-       wake12, wake13, wake14, wake15, wake16;
+piece  base, body, struts, fan, turret, gun, sleeve, barrel1, barrel2,
+       barrel3, flare, vent1, vent2, wake01, wake02, wake03, wake04;
 
 static-var  Static_Var_1, restore_delay, gun_1, Static_Var_4, Static_Var_5,
             statechg_DesiredState, statechg_StateChanging, Static_Var_8;
@@ -14,31 +12,23 @@ static-var  Static_Var_1, restore_delay, gun_1, Static_Var_4, Static_Var_5,
 // Signal definitions
 #define SIG_AIM				2
 
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
+Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
 {
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
 	while( TRUE )
 	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
+		while( get ABS(Func_Var_2) < 238 )
 		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
+			Func_Var_3 = 263 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
+			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
+			wait-for-turn base around x-axis;
+			wait-for-turn base around z-axis;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
 		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
 	}
 }
 
@@ -98,26 +88,6 @@ Stop()
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
 	set ARMORED to 1;
-}
-
-Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
-{
-	Func_Var_1 = -18;
-	Func_Var_2 = -18;
-	while( TRUE )
-	{
-		while( get ABS(Func_Var_2) < 238 )
-		{
-			Func_Var_3 = 263 - get ABS(Func_Var_2);
-			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
-			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
-			wait-for-turn base around x-axis;
-			wait-for-turn base around z-axis;
-			Func_Var_2 = Func_Var_2 + Func_Var_1;
-		}
-		Func_Var_1 = 0 - Func_Var_1;
-		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
-	}
 }
 
 Dive()
@@ -210,103 +180,52 @@ ShowBubbles()
 			emit-sfx 3 from wake02;
 			emit-sfx 3 from wake03;
 			emit-sfx 3 from wake04;
-			emit-sfx 3 from wake05;
-			emit-sfx 3 from wake06;
-			emit-sfx 3 from wake07;
-			emit-sfx 3 from wake08;
-			emit-sfx 3 from wake09;
-			emit-sfx 3 from wake10;
-			emit-sfx 3 from wake11;
-			emit-sfx 3 from wake12;
-			emit-sfx 3 from wake13;
-			emit-sfx 3 from wake14;
-			emit-sfx 3 from wake15;
-			emit-sfx 3 from wake16;
 		}
 		sleep 250;
 	}
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script Tangue();
+	spin fan around y-axis speed <600.137363>;
+	start-script RequestState(1);
+	//start-script RestoreAfterDelay();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
-	hide flare;
-	hide shell;
 	hide vent1;
 	hide vent2;
 	hide wake01;
 	hide wake02;
 	hide wake03;
 	hide wake04;
-	hide wake05;
-	hide wake06;
-	hide wake07;
-	hide wake08;
-	hide wake09;
-	hide wake10;
-	hide wake11;
-	hide wake12;
-	hide wake13;
-	hide wake14;
-	hide wake15;
-	hide wake16;
-	dont-cache base;
-	dont-cache struts;
-	dont-cache fan;
-	dont-cache turret;
-	dont-cache gun;
-	dont-cache sleeve;
-	dont-cache barrel1;
-	dont-cache barrel2;
-	dont-cache barrel3;
-	dont-cache flare;
-	dont-cache shell;
-	dont-cache vent1;
-	dont-cache vent2;
-	dont-cache wake01;
-	dont-cache wake02;
-	dont-cache wake03;
-	dont-cache wake04;
-	dont-cache wake05;
-	dont-cache wake06;
-	dont-cache wake07;
-	dont-cache wake08;
-	dont-cache wake09;
-	dont-cache wake10;
-	dont-cache wake11;
-	dont-cache wake12;
-	dont-cache wake13;
-	dont-cache wake14;
-	dont-cache wake15;
-	dont-cache wake16;
-	dont-shade base;
-	dont-shade struts;
-	dont-shade fan;
-	dont-shade turret;
-	dont-shade gun;
-	dont-shade sleeve;
-	dont-shade barrel1;
-	dont-shade barrel2;
-	dont-shade barrel3;
-	dont-shade flare;
-	dont-shade shell;
-	dont-shade vent1;
-	dont-shade vent2;
-	dont-shade wake01;
-	dont-shade wake02;
-	dont-shade wake03;
-	dont-shade wake04;
-	dont-shade wake05;
-	dont-shade wake06;
-	dont-shade wake07;
-	dont-shade wake08;
-	dont-shade wake09;
-	dont-shade wake10;
-	dont-shade wake11;
-	dont-shade wake12;
-	dont-shade wake13;
-	dont-shade wake14;
-	dont-shade wake15;
-	dont-shade wake16;
 	restore_delay = 3000;
 	Static_Var_1 = 1;
 	gun_1 = base;
@@ -318,14 +237,6 @@ Create()
 	start-script ShowBubbles();
 	start-script Sway();
 	start-script RequestState(0);
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 500;
-	}
-	start-script Tangue();
-	spin fan around y-axis speed <600.137363>;
-	set-signal-mask SIG_AIM;
-	start-script RestoreAfterDelay();
 }
 
 RockUnit(anglex, anglez)
@@ -354,11 +265,6 @@ Activate()
 Deactivate()
 {
 	start-script RequestState(1);
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 AimPrimary(heading, pitch)
@@ -412,7 +318,7 @@ FirePrimary()
 	++gun_1;
 	if( gun_1 == 3 )
 	{
-		gun_1 = base;
+		gun_1 = 0;
 	}
 }
 
@@ -433,13 +339,12 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare;
 	hide vent1;
 	hide vent2;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode struts type NOHEATCLOUD;
 		explode fan type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
@@ -448,13 +353,12 @@ Killed(severity, corpsetype)
 		explode barrel1 type NOHEATCLOUD;
 		explode barrel2 type NOHEATCLOUD;
 		explode barrel3 type NOHEATCLOUD;
-		explode shell type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode struts type NOHEATCLOUD;
 		explode fan type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD;
@@ -463,26 +367,10 @@ Killed(severity, corpsetype)
 		explode barrel1 type NOHEATCLOUD;
 		explode barrel2 type NOHEATCLOUD;
 		explode barrel3 type NOHEATCLOUD;
-		explode shell type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode struts type NOHEATCLOUD;
-		explode fan type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD;
-		explode gun type NOHEATCLOUD;
-		explode sleeve type NOHEATCLOUD | SHATTER;
-		explode barrel1 type NOHEATCLOUD;
-		explode barrel2 type NOHEATCLOUD;
-		explode barrel3 type NOHEATCLOUD;
-		explode shell type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode struts type NOHEATCLOUD;
 	explode fan type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD;
@@ -491,6 +379,5 @@ Killed(severity, corpsetype)
 	explode barrel1 type NOHEATCLOUD;
 	explode barrel2 type NOHEATCLOUD;
 	explode barrel3 type NOHEATCLOUD;
-	explode shell type NOHEATCLOUD;
 	return (corpsetype);
 }
