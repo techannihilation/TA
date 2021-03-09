@@ -74,7 +74,7 @@ local scouts = {
 	--T1 Radar
 	[UnitDefNames["armrad"].id] = true,
 	[UnitDefNames["corrad"].id] = true,
-	[UnitDefNames["tllrad"].id] = true,
+	[UnitDefNames["tllradar"].id] = true,
 	[UnitDefNames["talon_rad"].id] = true,
 
 	--T2 Radar

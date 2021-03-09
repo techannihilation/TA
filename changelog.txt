@@ -18,7 +18,6 @@ Balance :
  - Corejudgement : Decrease main weapon range 850 => 800. Decrease HP 24K=>22K
  - Gorg T3 Core : Increase speed 0.6=>0.75
 
-
 Improvment :
  - Remplace T1 Beamer Turret by Grape MiniGun (same balance)
  - New model for Doomsday (in test)

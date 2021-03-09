@@ -39,8 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLCV",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
