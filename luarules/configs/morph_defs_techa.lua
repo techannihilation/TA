@@ -239,9 +239,16 @@ local morphDefs = {
 		tech = 2,
 	},
 	talon_geo = {
-		into = 'talon_mohogeo',
-		time = 120,
-		tech = 1,
+		{
+			into = 'talon_mohogeo',
+			time = 120,
+			tech = 1,
+		},
+		{
+				into = 'talon_pyroclastic',
+					time = 90,
+					tech = 1,
+		},
 	},
 	corgeo = {
     {

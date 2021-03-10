@@ -89,6 +89,7 @@ local pplants = {
 	["talon_efus"] = true,
 	["talon_ufus"] = true,
 	["talon_mohogeo"] = true,
+	["talon_pyroclastic"] = true,	
 	["afusionplant"] = true,
 	["amgeo"] = true,
 	["armadvsol"] = true,

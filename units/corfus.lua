@@ -33,8 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 1,
 		name = "Fusion Reactor",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORFUS",
 		radaremitheight = 52,
 		seismicsignature = 0,

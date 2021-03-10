@@ -38,7 +38,6 @@ return {
 		movementclass = "HTANK5",
 		name = "Carbuncle",
 		noautofire = false,
-
 		objectname = "talon_carbuncle",
 		radaremitheight = 40,
 		seismicsignature = 0,

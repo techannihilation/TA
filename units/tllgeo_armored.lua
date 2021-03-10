@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 37300,
 		buildcostmetal = 4105,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 8,
-		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "corbhmth_aoplane.dds",
 		buildpic = "tllgeo_armored.dds",
 		buildtime = 55000,
 		canattack = true,
@@ -39,7 +35,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Barbecue",
 		noautofire = false,
-
 		objectname = "tllgeo_armored",
 		onoffable = false,
 		radaremitheight = 25,
@@ -51,7 +46,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllgeo_armored",
-		usebuildinggrounddecal = true,
 		yardmap = "GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG",
 		customparams = {
 			buildpic = "tllgeo_armored.dds",

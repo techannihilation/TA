@@ -7,6 +7,7 @@ Balance :
 - Bantha & Troman : Increase beam range 800=>950. Balance with decrease other weapon damage.
 
 Improvment :
+ - Add Armored Talon T2 Geo
  - Delete some T2 morphed units but keep morph into T3 units(Bull=>Command Vehicle, Goliath=>Tron, Mobile Tachyon=>Krypto).
 
 3.79 > 3.80
