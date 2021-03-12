@@ -38,8 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK4",
 		name = "Longshot",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "tlllongshot",
 		radardistance = 0,
 		radaremitheight = 36,

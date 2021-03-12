@@ -6,10 +6,6 @@ return {
 		buildcostenergy = 4612,
 		buildcostmetal = 445,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "armhlt_aoplane.dds",
 		buildpic = "armhlt.dds",
 		buildtime = 14000,
 		canattack = true,
@@ -49,7 +45,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armhlt",
-		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "armhlt.dds",

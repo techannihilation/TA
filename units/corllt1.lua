@@ -6,10 +6,6 @@ return {
 		buildcostenergy = 2956,
 		buildcostmetal = 225,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "corllt1_aoplane.dds",
 		buildpic = "corllt1.dds",
 		buildtime = 5400,
 		canattack = true,
@@ -40,7 +36,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Rapid-Fire LLT",
 		noautofire = false,
-		
 		objectname = "CORLLT1",
 		radaremitheight = 62,
 		seismicsignature = 0,
@@ -51,7 +46,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corllt1",
-		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "corllt1.dds",
