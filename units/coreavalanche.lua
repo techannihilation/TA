@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM ANTIFLAME MOBILE SURFACE",
+		category = "ALL MEDIUM ANTIFLAME MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Flame Thrower Rapid Tortoise",
@@ -32,8 +32,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPHKBOT",
 		name = "Avalanche",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "coreavalanche",
 		radaremitheight = 34,
 		selfdestructas = "BIG_UNIT",

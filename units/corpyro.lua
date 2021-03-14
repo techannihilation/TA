@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE",
+		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -4 -5",
 		collisionvolumescales = "25 31 25",
 		collisionvolumetype = "CylY",
@@ -36,7 +36,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Pyro",
 		noautofire = false,
-		
 		objectname = "CORPYRO",
 		radaremitheight = 33,
 		seismicsignature = 0,

@@ -34,8 +34,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANKHOVER3",
 		name = "Matcher",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORMATCH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

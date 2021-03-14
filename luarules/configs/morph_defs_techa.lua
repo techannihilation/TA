@@ -507,9 +507,16 @@ local morphDefs = {
 		xp = 0.15,
 	},
 	armlatnk = {
-		into = 'armchimera',
-		time = 45,
-		xp = 0.50,
+		{
+			into = 'armchimera',
+			time = 45,
+			xp = 0.50,
+		},
+		{
+			into = 'armthor',
+			time = 90,
+			xp = 0.75,
+		},
 	},
 	armstump = {
 		into = 'armbull',

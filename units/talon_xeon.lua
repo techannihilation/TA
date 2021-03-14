@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE",
+		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "36 22 36",
 		collisionvolumetype = "Box",

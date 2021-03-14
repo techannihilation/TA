@@ -41,7 +41,6 @@ return {
 		movementclass = "VHTANK5",
 		name = "Krypto-Blaster",
 		noautofire = false,
-		
 		objectname = "NSAAGRIZ",
 		onoffable = true,
 		radardistance = 1000,

@@ -35,8 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLALAB",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",

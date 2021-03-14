@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE",
+		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Assault Kbot",
@@ -35,7 +35,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Burner",
 		noautofire = false,
-		
 		objectname = "TLLBURNER",
 		radaremitheight = 29,
 		selfdestructas = "CORPYRO_BLAST",

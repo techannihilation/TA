@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE",
+		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-7 -2 8",
 		collisionvolumescales = "54 66 44",
 		collisionvolumetype = "box",
@@ -37,7 +37,6 @@ return {
 		movementclass = "HKBOT3",
 		name = "Demon",
 		noautofire = false,
-		
 		objectname = "CORPYROX",
 		radaremitheight = 63,
 		selfdestructas = "CRAWL_BLAST",

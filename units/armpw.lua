@@ -35,8 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Peewee",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMPW",
 		radaremitheight = 25,
 		seismicsignature = 0,

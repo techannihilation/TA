@@ -1,3 +1,11 @@
+3.81 > 3.82
+2021-02-15
+Balance :
+ - HellDriver : Decrease Hp (4K=>2K), cost (2.5Km=>1.2KM) and Damage (640/s=>600/s). Increase Speed (1.4=>1.6)
+
+Improvment :
+ - Delete Antarion and remplace by Thor
+
 3.80 > 3.81
 2021-02-09
 
@@ -5,6 +13,7 @@ Balance :
 - AntiMinefild Juno : Inflict damage to all T1 Scout (Air & Ground), T1 T2 T3 Radar / Jammer structure, Rez Bot, Mineslayers
 - T2 Air Transport : Decrease Hp by 15% for Tll and Core
 - Bantha & Troman : Increase beam range 800=>950. Balance with decrease other weapon damage.
+- Tll Anvil : Reduce Emp range 1400=>1200
 
 Improvment :
  - Add Armored Talon T2 Geo

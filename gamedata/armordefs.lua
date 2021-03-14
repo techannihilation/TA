@@ -255,7 +255,9 @@ return {
 		"nsaagriz",
 		"armmlrs",
 		"corchamp",
-		"armantar",
+		--"armantar",
+		"armthor",
+		"armchimera",
 		"armrex",
 		"corminotaur",
 		-- arm t3 bots
