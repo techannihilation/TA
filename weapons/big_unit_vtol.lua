@@ -7,14 +7,10 @@ return {
 		impulseboost = 0.123,
 		impulsefactor = 0.123,
 		name = "Big vtol",
-		range = 480,
-		reloadtime = 3.6,
 		soundhit = "xplolrg3",
 		soundstart = "largegun",
-		turret = 1,
-		weaponvelocity = 250,
 		damage = {
-			default = 60,
+			default = 100,
 		},
 	},
 }

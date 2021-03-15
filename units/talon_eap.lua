@@ -36,7 +36,7 @@ return {
 		metalstorage = 500,
 		mobilestandorders = 1,
 		name = "Experimental Air Plant",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon_eap",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -52,7 +52,7 @@ return {
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		buildoptions = {
 			[1] = "talon_eca",
-			--[2] = "talon_dart",
+			[2] = "talon_erez",
 			[3] = "talon_hornet",
 			[4] = "talon_pampa",
 			[5] = "talon_tau",

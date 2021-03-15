@@ -3,10 +3,19 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, plate, piece1, piece11, piece12, piece2, piece21, piece22,
-       piece3, piece31, piece32, piece4, piece41, piece42, nano1, nano2,
-       nano3, nano4, beam1, beam2, beam3, beam4;
 
+piece  base, body, supports, clamps, arms, 
+	   sup01, sup02, sup03, sup04,
+	   clamp01, block01, clamp02, block02, clamp03, block03,
+	   clamp04, block04, clamp05, block05, clamp06, block06, 
+	   clamp07, block07, clamp08, block08, clamp09, block09,
+	   clamp10, block10,
+	   arm01a, arm01b, lathe01, nano01, arm02a, arm02b, lathe02, nano02,
+	   arm03a, arm03b, lathe03, nano03, arm04a, arm04b, lathe04, nano04,  
+	   arm05a, arm05b, lathe05, nano05, arm06a, arm06b, lathe06, nano06,  
+	   arm07a, arm07b, lathe07, nano07, arm08a, arm08b, lathe08, nano08,
+	   lights, pad, target;
+	   
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
@@ -15,47 +24,169 @@ static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
 activatescr()
 {
-	move piece1 to x-axis [-15.000000] speed [14.000000];
-	move piece1 to z-axis [15.000000] speed [14.000000];
-	move piece2 to x-axis [15.000000] speed [14.000000];
-	move piece2 to z-axis [15.000000] speed [14.000000];
-	move piece3 to x-axis [15.000000] speed [14.000000];
-	move piece3 to z-axis [-15.000000] speed [14.000000];
-	move piece4 to x-axis [-15.000000] speed [14.000000];
-	move piece4 to z-axis [-15.000000] speed [14.000000];
-	sleep 1000;
-	move piece11 to x-axis [15.000000] speed [14.000000];
-	move piece12 to z-axis [-15.000000] speed [14.000000];
-	move piece21 to x-axis [-15.000000] speed [14.000000];
-	move piece22 to z-axis [-15.000000] speed [14.000000];
-	move piece31 to x-axis [-15.000000] speed [14.000000];
-	move piece32 to z-axis [15.000000] speed [14.000000];
-	move piece41 to x-axis [15.000000] speed [14.000000];
-	move piece42 to z-axis [15.000000] speed [14.000000];
-	sleep 800;
-	sleep 100;
+	if( TRUE )
+	{
+		move block02 to x-axis [6.5000] speed [2.700000];
+		move block02 to y-axis [-6.5000] speed [2.700000];
+		move block04 to x-axis [6.5000] speed [2.800000];
+		move block04 to y-axis [-6.5000] speed [2.800000];
+		move block06 to x-axis [6.5000] speed [2.900000];
+		move block06 to y-axis [-6.5000] speed [2.900000];
+		move block08 to x-axis [6.5000] speed [3.000000];
+		move block08 to y-axis [-6.5000] speed [3.000000];
+		move block10 to x-axis [6.5000] speed [2.900000];
+		move block10 to y-axis [-6.5000] speed [2.900000];
+		//move block12 to x-axis [6.5000] speed [2.800000];
+		//move block12 to y-axis [-6.5000] speed [2.800000];
+		
+		move block01 to x-axis [-6.5000] speed [2.700000];
+		move block01 to y-axis [-6.5000] speed [2.700000];
+		move block03 to x-axis [-6.5000] speed [2.800000];
+		move block03 to y-axis [-6.5000] speed [2.800000];
+		move block05 to x-axis [-6.5000] speed [2.900000];
+		move block05 to y-axis [-6.5000] speed [2.900000];
+		move block07 to x-axis [-6.5000] speed [3.000000];
+		move block07 to y-axis [-6.5000] speed [3.000000];
+		move block09 to x-axis [-6.5000] speed [2.900000];
+		move block09 to y-axis [-6.5000] speed [2.900000];
+		//move block11 to x-axis [-6.5000] speed [2.800000];
+		//move block11 to y-axis [-6.5000] speed [2.800000];
+		sleep 500;
+	}	
+	if( TRUE )
+	{
+		move clamp02 to x-axis [19.2000] speed [15.000000];
+		move clamp04 to x-axis [19.2000] speed [16.000000];
+		move clamp06 to x-axis [19.2000] speed [17.000000];
+		move clamp08 to x-axis [19.2000] speed [18.000000];
+		move clamp10 to x-axis [19.2000] speed [17.000000];
+		//move clamp12 to x-axis [19.2000] speed [16.000000];
+				
+		move clamp01 to x-axis [-19.2000] speed [15.000000];
+		move clamp03 to x-axis [-19.2000] speed [16.000000];
+		move clamp05 to x-axis [-19.2000] speed [17.000000];
+		move clamp07 to x-axis [-19.2000] speed [18.000000];
+		move clamp09 to x-axis [-19.2000] speed [17.000000];
+		//move clamp11 to x-axis [-19.2000] speed [16.000000];
+		sleep 500;
+	}
+
+	if( TRUE )
+	{
+		turn arm02a to z-axis <-90.000000> speed <15.000000>;
+		turn arm04a to z-axis <-90.000000> speed <16.000000>;
+		turn arm06a to z-axis <-90.000000> speed <17.000000>;
+		turn arm08a to z-axis <-90.000000> speed <17.000000>;
+		//turn arm10a to z-axis <-90.000000> speed <16.000000>;
+			
+		turn arm01a to z-axis <90.000000> speed <15.000000>;
+		turn arm03a to z-axis <90.000000> speed <16.000000>;
+		turn arm05a to z-axis <90.000000> speed <17.000000>;
+		turn arm07a to z-axis <90.000000> speed <17.000000>;
+		//turn arm09a to z-axis <90.000000> speed <16.000000>;			
+		sleep 500;
+	}
+	if( TRUE )
+	{
+		turn arm02b to z-axis <-45.000000> speed <15.000000>;
+		turn arm04b to z-axis <-45.000000> speed <16.000000>;
+		turn arm06b to z-axis <-45.000000> speed <17.000000>;
+		turn arm08b to z-axis <-45.000000> speed <17.000000>;
+		//turn arm10b to z-axis <-45.000000> speed <16.000000>;
+	
+		turn arm01b to z-axis <45.000000> speed <15.000000>;
+		turn arm03b to z-axis <45.000000> speed <16.000000>;
+		turn arm05b to z-axis <45.000000> speed <17.000000>;
+		turn arm07b to z-axis <45.000000> speed <17.000000>;
+		//turn arm09b to z-axis <45.000000> speed <16.000000>;
+		sleep 2500;
+	}
+	sleep 34;
 }
 
 deactivatescr()
 {
-	move piece11 to x-axis [0.000000] speed [14.000000];
-	move piece12 to z-axis [0.000000] speed [14.000000];
-	move piece21 to x-axis [0.000000] speed [14.000000];
-	move piece22 to z-axis [0.000000] speed [14.000000];
-	move piece31 to x-axis [0.000000] speed [14.000000];
-	move piece32 to z-axis [0.000000] speed [14.000000];
-	move piece41 to x-axis [0.000000] speed [14.000000];
-	move piece42 to z-axis [0.000000] speed [14.000000];
-	sleep 800;
-	move piece1 to x-axis [0.000000] speed [14.000000];
-	move piece1 to z-axis [0.000000] speed [14.000000];
-	move piece2 to x-axis [0.000000] speed [14.000000];
-	move piece2 to z-axis [0.000000] speed [14.000000];
-	move piece3 to x-axis [0.000000] speed [14.000000];
-	move piece3 to z-axis [0.000000] speed [14.000000];
-	move piece4 to x-axis [0.000000] speed [14.000000];
-	move piece4 to z-axis [0.000000] speed [14.000000];
-	sleep 800;
+	
+	if( TRUE )
+	{
+		turn arm02b to z-axis <0.000000> speed <15.000000>;
+		turn arm04b to z-axis <0.000000> speed <15.000000>;
+		turn arm06b to z-axis <0.000000> speed <15.000000>;
+		turn arm08b to z-axis <0.000000> speed <15.000000>;
+		//turn arm10b to z-axis <0.000000> speed <15.000000>;
+				
+		turn arm01b to z-axis <0.000000> speed <15.000000>;
+		turn arm03b to z-axis <0.000000> speed <15.000000>;
+		turn arm05b to z-axis <0.000000> speed <15.000000>;
+		turn arm07b to z-axis <0.000000> speed <15.000000>;
+		//turn arm09b to z-axis <0.000000> speed <15.000000>;	
+		sleep 500;
+	}
+	if( TRUE )
+	{
+		turn arm02a to z-axis <0.000000> speed <15.000000>;
+		turn arm04a to z-axis <0.000000> speed <15.000000>;
+		turn arm06a to z-axis <0.000000> speed <15.000000>;
+		turn arm08a to z-axis <0.000000> speed <15.000000>;
+		//turn arm10a to z-axis <0.000000> speed <15.000000>;
+		
+		turn arm01a to z-axis <0.000000> speed <15.000000>;
+		turn arm03a to z-axis <0.000000> speed <15.000000>;
+		turn arm05a to z-axis <0.000000> speed <15.000000>;
+		turn arm07a to z-axis <0.000000> speed <15.000000>;
+		//turn arm09a to z-axis <0.000000> speed <15.000000>;				
+		sleep 500;
+	}
+	if( TRUE )
+	{
+		move clamp02 to x-axis [0.000000] speed [15.000000];
+		move clamp04 to x-axis [0.000000] speed [15.000000];
+		move clamp06 to x-axis [0.000000] speed [15.000000];
+		move clamp08 to x-axis [0.000000] speed [15.000000];
+		move clamp10 to x-axis [0.000000] speed [15.000000];
+		//move clamp12 to x-axis [0.000000] speed [15.000000];
+				
+		move clamp01 to x-axis [0.000000] speed [15.000000];
+		move clamp03 to x-axis [0.000000] speed [15.000000];
+		move clamp05 to x-axis [0.000000] speed [15.000000];
+		move clamp07 to x-axis [0.000000] speed [15.000000];
+		move clamp09 to x-axis [0.000000] speed [15.000000];
+		//move clamp11 to x-axis [0.000000] speed [15.000000];
+		sleep 500;
+	}
+	if( TRUE )
+	{
+		move block02 to x-axis [0.000000] speed [3.000000];
+		move block02 to y-axis [0.000000] speed [3.000000];
+		move block04 to x-axis [0.000000] speed [3.000000];
+		move block04 to y-axis [0.000000] speed [3.000000];
+		move block06 to x-axis [0.000000] speed [3.000000];
+		move block06 to y-axis [0.000000] speed [3.000000];
+		move block06 to x-axis [0.000000] speed [3.000000];
+		move block06 to y-axis [0.000000] speed [3.000000];
+		move block08 to x-axis [0.000000] speed [3.000000];
+		move block08 to y-axis [0.000000] speed [3.000000];
+		move block10 to x-axis [0.000000] speed [3.000000];
+		move block10 to y-axis [0.000000] speed [3.000000];
+		//move block12 to x-axis [0.000000] speed [3.000000];
+		//move block12 to y-axis [0.000000] speed [3.000000];
+		
+		move block01 to x-axis [0.000000] speed [3.000000];
+		move block01 to y-axis [0.000000] speed [3.000000];
+		move block03 to x-axis [0.000000] speed [3.000000];
+		move block03 to y-axis [0.000000] speed [3.000000];
+		move block05 to x-axis [0.000000] speed [3.000000];
+		move block05 to y-axis [0.000000] speed [3.000000];
+		move block07 to x-axis [0.000000] speed [3.000000];
+		move block07 to y-axis [0.000000] speed [3.000000];
+		move block09 to x-axis [0.000000] speed [3.000000];
+		move block09 to y-axis [0.000000] speed [3.000000];
+		//move block11 to x-axis [0.000000] speed [3.000000];
+		//move block11 to y-axis [0.000000] speed [3.000000];
+		sleep 1000;
+	}	
+	
+	sleep 34;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -109,14 +240,14 @@ CloseYard()
 	set BUGGER_OFF to 0;
 }
 
-Go()
+go()
 {
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
 }
 
-Stop()
+stop()
 {
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
@@ -134,7 +265,6 @@ RequestState(requestedstate, currentstate)
 	if( statechg_StateChanging )
 	{
 		statechg_DesiredState = requestedstate;
-		return (0);
 	}
 	statechg_StateChanging = TRUE;
 	currentstate = statechg_DesiredState;
@@ -143,12 +273,12 @@ RequestState(requestedstate, currentstate)
 	{
 		if( statechg_DesiredState == 0 )
 		{
-			call-script Go();
+			call-script go();
 			currentstate = 0;
 		}
 		if( statechg_DesiredState == 1 )
 		{
-			call-script Stop();
+			call-script stop();
 			currentstate = 1;
 		}
 	}
@@ -166,22 +296,38 @@ QueryNanoPiece(piecenum)
 {
 	if( Static_Var_1 == 1 )
 	{
-		piecenum = beam1;
+		piecenum = nano01;
 	}
 	if( Static_Var_1 == 2 )
 	{
-		piecenum = beam2;
+		piecenum = nano02;
 	}
 	if( Static_Var_1 == 3 )
 	{
-		piecenum = beam3;
+		piecenum = nano03;
 	}
 	if( Static_Var_1 == 4 )
 	{
-		piecenum = beam4;
+		piecenum = nano04;
+	}
+	if( Static_Var_1 == 5 )
+	{
+		piecenum = nano05;
+	}
+	if( Static_Var_1 == 6 )
+	{
+		piecenum = nano06;
+	}
+	if( Static_Var_1 == 7 )
+	{
+		piecenum = nano07;
+	}
+	if( Static_Var_1 == 8 )
+	{
+		piecenum = nano08;
 	}
 	++Static_Var_1;
-	if( Static_Var_1 == 5 )
+	if( Static_Var_1 == 9 )
 	{
 		Static_Var_1 = 1;
 	}
@@ -201,24 +347,14 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-StartBuilding()
-{
-	spin plate around y-axis speed <0.000000>;
-}
-
-StopBuilding()
-{
-	stop-spin plate around y-axis;
-}
-
 QueryBuildInfo(piecenum)
 {
-	piecenum = plate;
+	piecenum = target;
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = base;
+	piecenum = body;
 }
 
 Killed(severity, corpsetype)
@@ -226,46 +362,52 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode piece1 type NOHEATCLOUD;
-		explode piece2 type NOHEATCLOUD;
-		explode piece42 type NOHEATCLOUD;
-		explode nano1 type NOHEATCLOUD;
-		explode plate type NOHEATCLOUD;
-		explode piece31 type NOHEATCLOUD;
+		explode clamp01 type NOHEATCLOUD;
+		explode clamp03 type NOHEATCLOUD;
+		explode clamp06 type NOHEATCLOUD;
+		explode clamp09 type NOHEATCLOUD;
+		explode arm02a type NOHEATCLOUD;
+		explode arm05a type NOHEATCLOUD;
+		explode arm08a type NOHEATCLOUD;
+		explode arm06a type NOHEATCLOUD;
+		explode sup01 type NOHEATCLOUD;
+		explode sup03 type NOHEATCLOUD;
+		explode sup04 type NOHEATCLOUD;		
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		explode piece4 type NOHEATCLOUD;
-		explode nano4 type NOHEATCLOUD;
-		explode nano3 type NOHEATCLOUD;
-		explode piece41 type NOHEATCLOUD;
-		explode plate type NOHEATCLOUD;
-		explode piece32 type NOHEATCLOUD;
+		explode sup01 type NOHEATCLOUD;
+		explode sup03 type NOHEATCLOUD;
+		explode sup04 type NOHEATCLOUD;	
+		explode body type NOHEATCLOUD | FALL;
+		explode clamp01 type NOHEATCLOUD | FALL;
+		explode clamp03 type NOHEATCLOUD | FALL;
+		explode clamp06 type NOHEATCLOUD | FALL;
+		explode clamp09 type NOHEATCLOUD | FALL;
+		explode arm02a type NOHEATCLOUD | FALL;
+		explode arm05a type NOHEATCLOUD | FALL;
+		explode arm08a type NOHEATCLOUD | FALL;
+		explode arm06a type NOHEATCLOUD | FALL;
+		
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode plate type NOHEATCLOUD;
-		explode piece1 type NOHEATCLOUD;
-		explode piece2 type NOHEATCLOUD;
-		explode piece4 type NOHEATCLOUD;
-		explode piece41 type NOHEATCLOUD;
-		explode piece11 type NOHEATCLOUD;
+		explode sup01 type NOHEATCLOUD;
+		explode sup03 type NOHEATCLOUD;
+		explode sup04 type NOHEATCLOUD;	
+		explode body type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode clamp01 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode clamp03 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode clamp06 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode clamp09 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode arm02a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode arm05a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode arm08a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+		explode arm06a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
 		return (corpsetype);
 	}
-	corpsetype = 3;
-	explode base type NOHEATCLOUD;
-	explode piece42 type NOHEATCLOUD;
-	explode piece22 type NOHEATCLOUD;
-	explode piece4 type NOHEATCLOUD;
-	explode piece12 type NOHEATCLOUD;
-	explode piece21 type NOHEATCLOUD;
-	explode plate type NOHEATCLOUD;
-	return (corpsetype);
 }

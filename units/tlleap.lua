@@ -51,11 +51,12 @@ return {
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
 			[1] = "tlleca",
-			[2] = "tllshu",
-			[3] = "tllnuada",
-			[4] = "tllbtrans",
-			[5] = "tllanhur",
-			[6] = "tllaether",
+			[2] = "tllerez",
+			[3] = "tllshu",
+			[4] = "tllnuada",
+			[5] = "tllbtrans",
+			[6] = "tllanhur",
+			[7] = "tllaether",
 		},
 		customparams = {
 			buildpic = "tlleap.dds",

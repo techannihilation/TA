@@ -55,8 +55,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-10.5723800659 -3.06343876953 1.66596221924",
-				collisionvolumescales = "35.5121612549 61.9105224609 33.3319244385",
+				collisionvolumeoffsets = "-10 -3 1",
+				collisionvolumescales = "35 61 33",
 				collisionvolumetype = "Box",
 				damage = 1621,
 				description = "talon_kevlar Wreckage",
@@ -137,10 +137,9 @@ return {
 				model = "shipmissile",
 				name = "HeavyRocket",
 				noselfdamage = true,
-				range = 500,
+				range = 520,
 				reloadtime = 1,
 				smoketrail = true,
-				--sprayangle = 250,
 				soundhitdry = "xplosml1",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.6,
@@ -164,7 +163,6 @@ return {
 					light_radius_mult = 0.7,
 				},
 				damage = {
-					commanders = 252,
 					default = 126,
 					subs = 5,
 				},

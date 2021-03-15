@@ -37,8 +37,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Dragon's Maw",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORMAW",
 		radardistancejam = 8,
 		radaremitheight = 45,

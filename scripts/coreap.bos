@@ -3,95 +3,414 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, lift, nanolift, platform1, platform2, nano1, nano2, rollers,
-       door1, door2, pin1, pin2, pin3, pin4, pin5, pin6,
-       pin7, pin8, pipes, lathe1, lathe2, pointer;
+piece  base, nano1, nano2, nano3, nano4, clamp4b, clamp3b,
+       clamp2b, clamp1b, clamp1, clamp4, clamp2, clamp3, crane, arm1a, arm2a, arm3a, arm4a, arm3b,
+       arm2b, arm4b, arm1b, lathe1, lathe2, lathe3, lathe4, cranetop, pad,
+       pylon1, pylon2, pylon3, pylon4, glow1, glow2, glow3, glow4, 
+       tower1, tower2, light1, light2, housing;
 
-static-var  spray, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging, building;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
 
-
 activatescr()
 {
-	turn door1 to z-axis <90.000000> speed <40.000000>;
-	turn door2 to z-axis <-90.000000> speed <40.000000>;
-	wait-for-turn door1 around z-axis;
-	move door1 to y-axis [-16.662598] speed [5.554193];
-	move door2 to y-axis [-16.662598] speed [5.554193];
-	show pin1;
-	show pin5;
-	turn pin1 to z-axis <180.000000> speed <100.000000>;
-	turn pin5 to z-axis <180.000000> speed <100.000000>;
-	sleep 400;
-	move lift to y-axis [6.665033] speed [2.777100];
-	show pin2;
-	show pin6;
-	turn pin2 to z-axis <180.000000> speed <100.000000>;
-	turn pin6 to z-axis <180.000000> speed <100.000000>;
-	sleep 400;
-	show pin3;
-	show pin7;
-	turn pin3 to z-axis <180.000000> speed <100.000000>;
-	turn pin7 to z-axis <180.000000> speed <100.000000>;
-	sleep 400;
-	move rollers to y-axis [-11.108392] speed [7.775879];
-	show pin4;
-	show pin8;
-	turn pin4 to z-axis <180.000000> speed <100.000000>;
-	turn pin8 to z-axis <180.000000> speed <100.000000>;
-	sleep 1000;
-	move nanolift to z-axis [5.554193] speed [2.777100];
-	wait-for-move nanolift along z-axis;
-	turn platform1 to z-axis <30.000000> speed <20.000000>;
-	turn platform2 to z-axis <-30.000000> speed <20.000000>;
-	turn nano1 to x-axis <-50.000000> speed <20.000000>;
-	turn nano2 to x-axis <-50.000000> speed <20.000000>;
-	wait-for-turn nano1 around x-axis;
-	sleep 100;
+	if( TRUE )
+	{
+		turn clamp4b to z-axis <0.000000> now;
+		turn clamp4b to z-axis <28.851648> speed <94.291209>;
+		turn clamp3b to z-axis <0.000000> now;
+		turn clamp3b to z-axis <34.483516> speed <112.686813>;
+		turn clamp2b to z-axis <0.000000> now;
+		turn clamp2b to z-axis <-32.703297> speed <106.945055>;
+		turn clamp1b to z-axis <0.000000> now;
+		turn clamp1b to z-axis <-30.972527> speed <101.192308>;
+		sleep 306;
+	}
+	if( TRUE )
+	{
+		turn clamp4b to z-axis <49.258242> speed <57.000000>;
+		turn clamp3b to z-axis <49.609890> speed <42.269231>;
+		turn clamp2b to z-axis <-48.906593> speed <45.208791>;
+		turn clamp1b to z-axis <-49.609890> speed <52.082418>;
+		sleep 358;
+	}
+	if( TRUE )
+	{
+		turn clamp4b to z-axis <36.598901> speed <38.604396>;
+		turn clamp3b to z-axis <37.274725> speed <37.543956>;
+		turn clamp2b to z-axis <-39.384615> speed <28.972527>;
+		turn clamp1b to z-axis <-39.054945> speed <32.164835>;
+		sleep 328;
+	}
+	if( TRUE )
+	{
+		move clamp1 to x-axis [10.000000] speed [28.569995];
+		move clamp4 to x-axis [-10.000000] speed [27.109998];
+		turn clamp4b to z-axis <41.164835> speed <14.840659>;
+		turn clamp3b to z-axis <41.164835> speed <12.549451>;
+		turn clamp2b to z-axis <-41.164835> speed <5.697802>;
+		turn clamp1b to z-axis <-42.554945> speed <11.412088>;
+		sleep 308;
+	}
+	if( TRUE )
+	{
+		move clamp1 to x-axis [15.000000] speed [7.000000];
+		move clamp2 to x-axis [10.000000] speed [13.769995];
+		move clamp3 to x-axis [-10.000000] speed [13.169995];
+		move clamp4 to x-axis [-15.000000] speed [8.219995];
+		sleep 657;
+	}
+	if( TRUE )
+	{
+		move clamp1 to x-axis [21.110896] speed [2.229999];
+		move clamp2 to x-axis [15.000000] speed [5.929999];
+		move clamp3 to x-axis [-15.000000] speed [6.350000];
+		move clamp4 to x-axis [-21.110896] speed [1.950000];
+		turn crane to x-axis <-10.192308> speed <14.219780>;
+		turn clamp4b to z-axis <15.818681> speed <35.313187>;
+		turn clamp1b to z-axis <-14.071429> speed <39.758242>;
+		sleep 717;
+	}
+	if( TRUE )
+	{
+		move clamp2 to x-axis [21.110896] speed [3.309998];
+		move clamp3 to x-axis [-21.110896] speed [3.219995];
+		
+		move clamp4b to x-axis [-3.200004] speed [8.469995];
+		move clamp1b to x-axis [3.200004] speed [8.469995];
+		move clamp3b to x-axis [-3.200004] speed [8.800000];
+		move clamp2b to x-axis [3.200004] speed [8.889996];
+
+		move clamp4b to y-axis [-2.504054] speed [10.039996];
+		move clamp1b to y-axis [-2.504054] speed [9.939996];
+		move clamp3b to y-axis [-2.504054] speed [9.659998];
+		move clamp2b to y-axis [-2.504054] speed [9.659998];
+			
+		turn crane to x-axis <-24.961538> speed <27.203297>;
+		turn clamp4b to z-axis <-36.247253> speed <95.901099>;
+		turn clamp3b to z-axis <13.010989> speed <51.840659>;
+		turn clamp2b to z-axis <-13.362637> speed <51.192308>;
+		turn clamp1b to z-axis <39.384615> speed <98.489011>;
+		sleep 543;
+	}
+	if( TRUE )
+	{
+
+		turn crane to x-axis <-37.274725> speed <23.532967>;
+		turn clamp4b to z-axis <0.000000> speed <69.285714>;
+		turn clamp3b to z-axis <-36.934066> speed <95.532967>;
+		turn clamp2b to z-axis <39.769231> speed <101.593407>;
+		turn clamp1b to z-axis <0.000000> speed <75.335165>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+
+		turn crane to x-axis <-48.560440> speed <21.510989>;
+		turn clamp3b to z-axis <0.000000> speed <70.631868>;
+		turn clamp2b to z-axis <0.000000> speed <76.005495>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-64.384615> speed <30.252747>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-83.049451> speed <35.653846>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-95.010989> speed <22.862637>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-92.901099> speed <4.027473>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-89.016484> speed <7.401099>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-90.0> speed <2.0>;
+		move arm1a to z-axis [5.0] speed [3.0];
+		move arm4a to z-axis [5.0] speed [3.0];		
+		sleep 750;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <8.087912> speed <15.461538>;
+				
+		turn arm2a to z-axis <20.043956> speed <38.324176>;
+		turn arm3a to z-axis <-19.340659> speed <36.994505>;
+		turn arm4a to z-axis <-11.247253> speed <21.510989>;
+		sleep 523;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <26.021978> speed <31.302198>;
+		turn arm2a to z-axis <41.868132> speed <38.043956>;
+		turn arm3a to z-axis <-42.554945> speed <40.527473>;
+		turn arm4a to z-axis <-25.324176> speed <24.543956>;
+		turn arm3b to z-axis <-29.912088> speed <52.192308>;
+		turn arm2b to z-axis <26.741758> speed <46.670330>;
+		sleep 573;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <59.461538> speed <60.439560>;
+		turn arm2a to z-axis <73.884615> speed <57.890110>;
+		turn arm3a to z-axis <-73.175824> speed <55.351648>;
+		turn arm4a to z-axis <-53.478022> speed <50.901099>;
+		turn arm4b to z-axis <-36.214286> speed <65.532967>;
+		turn arm3b to z-axis <-74.945055> speed <81.445055>;
+		turn arm2b to z-axis <78.467033> speed <93.527473>;
+		turn arm1b to z-axis <40.467033> speed <73.164835>;
+		sleep 553;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <77.054945> speed <31.813187>;
+		turn arm2a to z-axis <86.565934> speed <22.890110>;
+		turn arm3a to z-axis <-83.747253> speed <19.071429>;
+		turn arm4a to z-axis <-75.285714> speed <39.445055>;
+		turn arm4b to z-axis <-56.291209> speed <36.263736>;
+		turn arm1b to z-axis <68.961538> speed <51.538462>;
+		sleep 553;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <86.906593> speed <18.131868>;
+		turn arm4a to z-axis <-86.906593> speed <21.373626>;
+		turn arm4b to z-axis <-78.115385> speed <40.164835>;
+		turn arm1b to z-axis <77.763736> speed <16.192308>;
+		sleep 543;
+	}
+	if( TRUE )
+	{
+		move pad to z-axis [3.000000] speed [13.119995];
+		sleep 583;
+	}
+	sleep 703;
 }
 
 deactivatescr()
 {
-	turn platform1 to z-axis <0.000000> speed <20.000000>;
-	turn platform2 to z-axis <0.000000> speed <20.000000>;
-	turn nano1 to x-axis <0.000000> speed <20.000000>;
-	turn nano2 to x-axis <0.000000> speed <20.000000>;
-	wait-for-turn platform1 around z-axis;
-	move nanolift to z-axis [0.000000] speed [2.777100];
-	sleep 1000;
-	move rollers to y-axis [0.000000] speed [6.665033];
-	turn pin4 to z-axis <0.000000> speed <100.000000>;
-	turn pin8 to z-axis <0.000000> speed <100.000000>;
-	sleep 400;
-	turn pin3 to z-axis <0.000000> speed <100.000000>;
-	turn pin7 to z-axis <0.000000> speed <100.000000>;
-	sleep 400;
-	move lift to y-axis [0.000000] speed [2.777100];
-	show pin2;
-	show pin6;
-	turn pin2 to z-axis <0.000000> speed <100.000000>;
-	turn pin6 to z-axis <0.000000> speed <100.000000>;
-	sleep 400;
-	move door1 to y-axis [0.000000] speed [5.554193];
-	move door2 to y-axis [0.000000] speed [5.554193];
-	show pin1;
-	show pin5;
-	turn pin1 to z-axis <0.000000> speed <100.000000>;
-	turn pin5 to z-axis <0.000000> speed <100.000000>;
-	wait-for-move door1 along y-axis;
-	hide pin1;
-	hide pin2;
-	hide pin3;
-	hide pin4;
-	hide pin5;
-	hide pin6;
-	hide pin7;
-	hide pin8;
-	turn door1 to z-axis <0.000000> speed <40.000000>;
-	turn door2 to z-axis <0.000000> speed <40.000000>;
-	wait-for-turn door1 around z-axis;
+	if( TRUE )
+	{
+		move pad to z-axis [0.000000] speed [13.119995];
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		move clamp1 to x-axis [17.100000] now;
+		move clamp2 to x-axis [17.209998] now;
+		move clamp3 to x-axis [-17.039996] now;
+		move clamp4 to x-axis [-17.269995] now;
+//		move clamp4b to x-axis [-5.239996] now;
+//		move clamp4b to y-axis [-5.989996] now;
+//		move clamp3b to x-axis [-5.239996] now;
+//		move clamp3b to y-axis [-4.800000] now;
+//		move clamp2b to x-axis [4.419995] now;
+//		move clamp2b to y-axis [-4.800000] now;
+//		move clamp1b to x-axis [4.369995] now;
+//		move clamp1b to y-axis [-4.939996] now;
+
+//		move arm1a to z-axis [-4.659998] now;
+//		move arm4a to z-axis [-4.659998] now;
+
+		turn crane to x-axis <-90.076923> now;
+		turn clamp4b to z-axis <0.000000> now;
+		turn clamp3b to z-axis <0.000000> now;
+		turn clamp2b to z-axis <0.000000> now;
+		turn clamp1b to z-axis <0.000000> now;
+		turn arm1a to z-axis <86.906593> now;
+		turn arm2a to z-axis <86.565934> now;
+		turn arm3a to z-axis <-83.747253> now;
+		turn arm4a to z-axis <-86.906593> now;
+		turn arm4b to z-axis <-78.115385> now;
+		turn arm3b to z-axis <-74.945055> now;
+		turn arm2b to z-axis <78.467033> now;
+		turn arm1b to z-axis <77.763736> now;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <77.054945> speed <49.258242>;
+		turn arm4a to z-axis <-75.285714> speed <58.049451>;
+		turn arm4b to z-axis <-56.291209> speed <109.071429>;
+		turn arm1b to z-axis <68.961538> speed <43.978022>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <59.461538> speed <87.967033>;
+		turn arm2a to z-axis <73.884615> speed <63.335165>;
+		turn arm3a to z-axis <-73.175824> speed <52.780220>;
+		turn arm4a to z-axis <-53.478022> speed <109.071429>;
+		turn arm4b to z-axis <-36.214286> speed <100.269231>;
+		turn arm1b to z-axis <40.467033> speed <142.500000>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		move arm1a to z-axis [0.000000] speed [10.0];
+		move arm4a to z-axis [0.000000] speed [10.0];
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <26.021978> speed <167.148352>;
+		turn arm2a to z-axis <41.868132> speed <160.115385>;
+		turn arm3a to z-axis <-42.554945> speed <153.054945>;
+		turn arm4a to z-axis <-25.324176> speed <140.752747>;
+		turn arm4b to z-axis <0.000000> speed <181.208791>;
+		turn arm3b to z-axis <-29.912088> speed <225.203297>;
+		turn arm2b to z-axis <26.741758> speed <258.642857>;
+		turn arm1b to z-axis <0.000000> speed <202.346154>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <8.087912> speed <89.719780>;
+		turn arm2a to z-axis <20.043956> speed <109.071429>;
+		turn arm3a to z-axis <-19.340659> speed <116.115385>;
+		turn arm4a to z-axis <-11.247253> speed <70.373626>;
+		turn arm3b to z-axis <0.000000> speed <149.554945>;
+		turn arm2b to z-axis <0.000000> speed <133.719780>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn arm1a to z-axis <0.000000> speed <40.467033>;
+		turn arm2a to z-axis <0.000000> speed <100.280220>;
+		turn arm3a to z-axis <0.000000> speed <96.758242>;
+		turn arm4a to z-axis <0.000000> speed <56.291209>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-92.901099> speed <14.071429>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-91.131868> speed <8.791209>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-87.967033> speed <15.818681>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-83.049451> speed <24.620879>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-64.384615> speed <93.241758>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn crane to x-axis <-48.560440> speed <79.164835>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+//		move clamp3b to y-axis [0.000000] speed [25.250000];
+//		move clamp2b to y-axis [0.000000] speed [25.250000];
+
+		turn crane to x-axis <-37.274725> speed <56.291209>;
+		turn clamp3b to z-axis <-36.934066> speed <184.741758>;
+		turn clamp2b to z-axis <39.769231> speed <198.813187>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+//		move clamp4b to y-axis [0.000000] speed [26.250000];
+//		move clamp3b to x-axis [0.000000] speed [23.000000];
+//		move clamp2b to x-axis [0.000000] speed [23.250000];
+//		move clamp1b to y-axis [0.000000] speed [26.000000];
+
+		turn crane to x-axis <-24.961538> speed <61.560440>;
+		turn clamp4b to z-axis <-36.247253> speed <181.219780>;
+		turn clamp3b to z-axis <13.010989> speed <249.846154>;
+		turn clamp2b to z-axis <-13.362637> speed <265.670330>;
+		turn clamp1b to z-axis <39.384615> speed <197.065934>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		move clamp2 to x-axis [12.639996] speed [9.000000];
+		move clamp3 to x-axis [-12.539996] speed [8.750000];
+
+//		move clamp4b to x-axis [0.000000] speed [23.000000];
+//		move clamp1b to x-axis [0.000000] speed [23.000000];
+
+		turn crane to x-axis <-10.192308> speed <73.884615>;
+		turn clamp4b to z-axis <15.818681> speed <260.401099>;
+		turn clamp3b to z-axis <41.164835> speed <140.752747>;
+		turn clamp2b to z-axis <-41.164835> speed <138.989011>;
+		turn clamp1b to z-axis <-14.071429> speed <267.434066>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		move clamp1 to x-axis [12.729999] speed [8.000000];
+		move clamp2 to x-axis [8.600000] speed [21.250000];
+		move clamp3 to x-axis [-8.219995] speed [22.750000];
+		move clamp4 to x-axis [-13.059998] speed [7.000000];
+		turn crane to x-axis <0.000000> speed <51.010989>;
+		turn clamp4b to z-axis <41.164835> speed <126.675824>;
+		turn clamp1b to z-axis <-42.554945> speed <142.510989>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		move clamp1 to x-axis [8.359998] speed [23.000000];
+		move clamp2 to x-axis [0.000000] speed [45.250000];
+		move clamp3 to x-axis [0.000000] speed [43.250000];
+		move clamp4 to x-axis [-7.929999] speed [27.000000];
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		move clamp1 to x-axis [0.000000] speed [44.000000];
+		move clamp4 to x-axis [0.000000] speed [41.750000];
+		turn clamp4b to z-axis <36.598901> speed <22.851648>;
+		turn clamp3b to z-axis <37.274725> speed <19.340659>;
+		turn clamp2b to z-axis <-39.384615> speed <8.791209>;
+		turn clamp1b to z-axis <-39.054945> speed <17.582418>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn clamp4b to z-axis <28.851648> speed <38.708791>;
+		turn clamp3b to z-axis <34.483516> speed <14.071429>;
+		turn clamp2b to z-axis <-32.703297> speed <33.423077>;
+		turn clamp1b to z-axis <-30.972527> speed <40.467033>;
+		sleep 200;
+	}
+	if( TRUE )
+	{
+		turn clamp4b to z-axis <0.000000> speed <144.274725>;
+		turn clamp3b to z-axis <0.000000> speed <172.428571>;
+		turn clamp2b to z-axis <0.000000> speed <163.626374>;
+		turn clamp1b to z-axis <0.000000> speed <154.835165>;
+		sleep 200;
+	}
+	sleep 200;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -123,11 +442,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 OpenYard()
 {
+	building=1;
 	set YARD_OPEN to 1;
 	while( !get YARD_OPEN )
 	{
 		set BUGGER_OFF to 1;
-		sleep 500;
+		sleep 1500;
 		set YARD_OPEN to 1;
 	}
 	set BUGGER_OFF to 0;
@@ -139,20 +459,21 @@ CloseYard()
 	while( get YARD_OPEN )
 	{
 		set BUGGER_OFF to 1;
-		sleep 500;
+		sleep 1500;
 		set YARD_OPEN to 0;
 	}
 	set BUGGER_OFF to 0;
+	building=0;
 }
 
-Go()
+go()
 {
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
 }
 
-Stop()
+stop()
 {
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
@@ -179,12 +500,12 @@ RequestState(requestedstate, currentstate)
 	{
 		if( statechg_DesiredState == 0 )
 		{
-			call-script Go();
+			call-script go();
 			currentstate = 0;
 		}
 		if( statechg_DesiredState == 1 )
 		{
-			call-script Stop();
+			call-script stop();
 			currentstate = 1;
 		}
 	}
@@ -193,34 +514,35 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	spray = base;
-	hide pin1;
-	hide pin2;
-	hide pin3;
-	hide pin4;
-	hide pin5;
-	hide pin6;
-	hide pin7;
-	hide pin8;
+	building=0;
+	Static_Var_1 = 1;
 	call-script InitState();
 	start-script SmokeUnit();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
 }
 
 QueryNanoPiece(piecenum)
 {
-	if( spray == 0 )
+	if( Static_Var_1 == 1 )
 	{
-		piecenum = lathe1;
+		piecenum = nano1;
 	}
-	if( spray != 0 )
+	if( Static_Var_1 == 2 )
 	{
-		piecenum = lathe2;
+		piecenum = nano2;
 	}
-	spray = !spray;
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = nano3;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = nano4;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 5 )
+	{
+		Static_Var_1 = 1;
+	}
 }
 
 Activate()
@@ -233,10 +555,6 @@ Deactivate()
 {
 	signal SIG_ACTIVATE;
 	set-signal-mask SIG_ACTIVATE;
-	if( !Static_Var_2 )
-	{
-		sleep 5000;
-	}
 	set-signal-mask 0;
 	start-script RequestState(1);
 }
@@ -251,7 +569,7 @@ StopBuilding()
 
 QueryBuildInfo(piecenum)
 {
-	piecenum = pointer;
+	piecenum = pad;
 }
 
 SweetSpot(piecenum)
@@ -264,22 +582,100 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | SHATTER;
+		explode arm1a type NOHEATCLOUD;
+		explode arm1b type NOHEATCLOUD;
+		explode arm2a type NOHEATCLOUD;
+		explode arm2b type NOHEATCLOUD;
+		explode arm3a type NOHEATCLOUD;
+		explode arm3b type NOHEATCLOUD;
+		explode arm4a type NOHEATCLOUD;
+		explode arm4b type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode clamp1 type NOHEATCLOUD;
+		explode clamp1b type NOHEATCLOUD;
+		explode clamp2 type NOHEATCLOUD;
+		explode clamp2b type NOHEATCLOUD;
+		explode clamp3 type NOHEATCLOUD ;
+		explode clamp3b type NOHEATCLOUD;
+		explode clamp4 type NOHEATCLOUD;
+		explode clamp4b type NOHEATCLOUD;
+		explode glow1 type NOHEATCLOUD;
+		explode glow2 type NOHEATCLOUD;
+		explode glow3 type NOHEATCLOUD;
+		explode glow4 type NOHEATCLOUD;
+		explode crane type NOHEATCLOUD;
+		explode cranetop type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode light1 type NOHEATCLOUD;
+		explode lathe1 type NOHEATCLOUD;
+		explode lathe2 type NOHEATCLOUD;
+		explode lathe3 type NOHEATCLOUD;
+		explode lathe4 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER;
+		explode arm1a type FALL | NOHEATCLOUD;
+		explode arm1b type FALL | NOHEATCLOUD;
+		explode arm2a type FALL | NOHEATCLOUD;
+		explode arm2b type FALL | NOHEATCLOUD;
+		explode arm3a type FALL | BITMAP5;
+		explode arm3b type FALL | NOHEATCLOUD;
+		explode arm4a type FALL | NOHEATCLOUD;
+		explode arm4b type FALL | NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		explode clamp1 type NOHEATCLOUD ;
+		explode clamp1b type FALL | NOHEATCLOUD;
+		explode clamp2 type NOHEATCLOUD;
+		explode clamp2b type FALL | NOHEATCLOUD;
+		explode clamp3 type NOHEATCLOUD;
+		explode clamp3b type FALL;
+		explode clamp4 type NOHEATCLOUD;
+		explode clamp4b type FALL | NOHEATCLOUD;
+		explode glow1 type FALL | NOHEATCLOUD;
+		explode glow2 type FALL | NOHEATCLOUD;
+		explode glow3 type FALL | NOHEATCLOUD;
+		explode glow4 type FALL | NOHEATCLOUD;
+		explode crane type NOHEATCLOUD;
+		explode cranetop type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode light1 type NOHEATCLOUD;
+		explode lathe1 type FALL | NOHEATCLOUD;
+		explode lathe2 type FALL | NOHEATCLOUD;
+		explode lathe3 type FALL | NOHEATCLOUD;
+		explode lathe4 type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER;
+	explode arm1a type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode arm1b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode arm2a type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode arm2b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode arm3a type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+	explode arm3b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode arm4a type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode arm4b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode base type NOHEATCLOUD | NOHEATCLOUD;
+	explode clamp1 type NOHEATCLOUD | BITMAP5;
+	explode clamp1b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode clamp2 type NOHEATCLOUD | NOHEATCLOUD;
+	explode clamp2b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode clamp3 type NOHEATCLOUD | NOHEATCLOUD;
+	explode clamp3b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+	explode clamp4 type NOHEATCLOUD | NOHEATCLOUD;
+	explode clamp4b type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode glow1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode glow2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode glow3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP5;
+	explode glow4 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode crane type NOHEATCLOUD | NOHEATCLOUD;
+	explode cranetop type NOHEATCLOUD | NOHEATCLOUD;
+	explode pad type NOHEATCLOUD | NOHEATCLOUD;
+	explode light1 type NOHEATCLOUD | BITMAP5;
+	explode lathe1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lathe2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lathe3 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lathe4 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }

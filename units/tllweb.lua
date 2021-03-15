@@ -131,7 +131,7 @@ return {
 				metalpershot = 0,
 				name = "Spray Lightning",
 				noselfdamage = true,
-				range = 480,
+				range = 500,
 				reloadtime = 1,
 				rgbcolor = "0.6 0.6 0.9",
 				soundstart = "tll_lightning",
@@ -146,7 +146,6 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					commanders = 400,
 					default = 200,
 					subs = 5,
 				},

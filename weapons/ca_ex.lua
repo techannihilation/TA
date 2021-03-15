@@ -6,16 +6,11 @@ return {
 		explosiongenerator = "custom:FLASH2",
 		impulseboost = 0.123,
 		impulsefactor = 0.123,
-		name = "ConAir",
-		range = 480,
-		reloadtime = 3.6,
+		name = "",
 		soundhit = "xplolrg3",
 		soundstart = "largegun",
-		turret = 1,
-		weaponvelocity = 250,
 		damage = {
 			default = 25,
-			vtol = 25,
 		},
 	},
 }

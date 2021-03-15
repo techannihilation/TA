@@ -57,11 +57,23 @@ Create()
 
 RestoreAfterDelay()
 {
-	sleep restore_delay / 2;
-	spin rgun around z-axis speed <0.0> accelerate <-150.0>;
-	spin lgun around z-axis speed <0.0> accelerate <-150.0>;
+	sleep 500;
+	spin rgun around z-axis speed <500.0> accelerate <-100.0>;
+	spin lgun around z-axis speed <500.0> accelerate <-100.0>;
 	
-	sleep restore_delay / 2;
+	sleep 350;
+	spin rgun around z-axis speed <350.0> accelerate <-75.0>;
+	spin lgun around z-axis speed <350.0> accelerate <-75.0>;
+	
+	sleep 250;
+	spin rgun around z-axis speed <100.0> accelerate <-50.0>;
+	spin lgun around z-axis speed <100.0> accelerate <-50.0>;
+	
+	sleep 200;
+	spin rgun around z-axis speed <0.0> accelerate <-25.0>;
+	spin lgun around z-axis speed <0.0> accelerate <-25.0>;
+	
+	sleep restore_delay;
 	turn rsleeves to x-axis <0.000000> speed <15.000000>;
 	turn lsleeves to x-axis <0.000000> speed <15.000000>;
 	turn turret to y-axis <0.000000> speed <60.000000>;
