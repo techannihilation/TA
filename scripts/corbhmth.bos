@@ -3,37 +3,36 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, fanbox, vent1, vent2, fan, turret, sleeve, barrel1,
-       flare1, barrel2, flare2, barrel3, flare3;
+piece  base, body, vent1, vent2, vent3, vent4, turret, sleeves, barrel1,
+       flare1, barrel2, flare2, barrel3, flare3, stack1, stack2, stack3, stack4;
 
-static-var  gun_1;
+static-var  gun_1, bFiring;
 
 // Signal definitions
 #define SIG_AIM				2
+#define SIG_VENT			4
 
 SmokeVents()
 {
-	signal 4;
-	set-signal-mask 4;
-	spin fan around y-axis speed <-250.060440>;
+	signal SIG_VENT;
+	set-signal-mask SIG_VENT;
 	
 	while( TRUE )
 	{
-		emit-sfx 257 from vent1;
-		emit-sfx 257 from vent2;
-		emit-sfx 256 from vent1;
-		emit-sfx 256 from vent2;
-		sleep 100;
-		emit-sfx 257 from vent1;
-		emit-sfx 257 from vent2;
-		emit-sfx 256 from vent1;
-		emit-sfx 256 from vent2;
-		sleep 100;
-		emit-sfx 257 from vent1;
-		emit-sfx 257 from vent2;
-		emit-sfx 256 from vent1;
-		emit-sfx 256 from vent2;
-		sleep 800;
+		if (bFiring == FALSE)
+		{
+			emit-sfx 257 from vent1;
+			emit-sfx 257 from vent2;
+			emit-sfx 257 from vent3;
+			emit-sfx 257 from vent4;
+			sleep 250;
+			emit-sfx 257 from vent1;
+			emit-sfx 257 from vent2;
+			emit-sfx 257 from vent3;
+			emit-sfx 257 from vent4;
+			sleep 250;
+		}
+		sleep 250;
 	}
 }
 
@@ -54,7 +53,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -70,6 +69,7 @@ Create()
 	hide flare1;
 	hide flare2;
 	hide flare3;
+	bFiring = FALSE;
 	gun_1 = 0;
 	start-script SmokeUnit();
 }
@@ -79,29 +79,35 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	turn turret to y-axis heading speed <25.000000>;
-	turn sleeve to x-axis <0.000000> - pitch speed <25.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <25.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn sleeve around x-axis;
+	wait-for-turn sleeves around x-axis;
 	return (1);
 }
 
 FirePrimary()
 {
+	bFiring = TRUE;
+	
+	emit-sfx 1024 + 0 from flare1;
 	move barrel1 to z-axis [-3.000000] now;
-	emit-sfx 1024 from flare1;
-	sleep 500;
+	sleep 350;
 	move barrel1 to z-axis [0.000000] speed [1.000000];
 	++gun_1;
+	
+	emit-sfx 1024 + 0 from flare2;
 	move barrel2 to z-axis [-3.000000] now;
-	emit-sfx 1024 from flare2;
-	sleep 500;
+	sleep 350;
 	move barrel2 to z-axis [0.000000] speed [1.000000];
 	++gun_1;
+	
+	emit-sfx 1024 + 0 from flare3;
 	move barrel3 to z-axis [-3.000000] now;
-	emit-sfx 1024 from flare3;
-	sleep 500;
+	sleep 350;
 	move barrel3 to z-axis [0.000000] speed [1.000000];
 	gun_1 = 0;
+	
+	bFiring = FALSE;
 }
 
 QueryPrimary(piecenum)
@@ -122,7 +128,7 @@ QueryPrimary(piecenum)
 
 AimFromPrimary(piecenum)
 {
-	piecenum = sleeve;
+	piecenum = turret;
 }
 
 SweetSpot(piecenum)
@@ -138,11 +144,11 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | SHATTER;
-		explode fanbox type NOHEATCLOUD;
-		explode vent1 type NOHEATCLOUD;
-		explode vent2 type NOHEATCLOUD;
-		explode fan type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode stack1 type NOHEATCLOUD;
+		explode stack2 type NOHEATCLOUD;
+		explode stack3 type NOHEATCLOUD;
+		explode stack4 type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD;
 		explode barrel1 type NOHEATCLOUD;
 		explode barrel2 type NOHEATCLOUD;
@@ -152,37 +158,23 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER;
-		explode fanbox type NOHEATCLOUD;
-		explode vent1 type NOHEATCLOUD;
-		explode vent2 type NOHEATCLOUD;
-		explode fan type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode stack1 type NOHEATCLOUD;
+		explode stack2 type NOHEATCLOUD;
+		explode stack3 type NOHEATCLOUD;
+		explode stack4 type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | FALL | SMOKE;
 		explode barrel1 type NOHEATCLOUD;
 		explode barrel2 type NOHEATCLOUD;
 		explode barrel3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER;
-		explode fanbox type NOHEATCLOUD;
-		explode vent1 type NOHEATCLOUD;
-		explode vent2 type NOHEATCLOUD;
-		explode fan type NOHEATCLOUD | FALL;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel1 type NOHEATCLOUD;
-		explode barrel2 type NOHEATCLOUD;
-		explode barrel3 type NOHEATCLOUD;
-		return (corpsetype);
-	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER;
-	explode fanbox type NOHEATCLOUD;
-	explode vent1 type NOHEATCLOUD;
-	explode vent2 type NOHEATCLOUD;
-	explode fan type NOHEATCLOUD | FALL;
+	explode body type NOHEATCLOUD | SHATTER;
+	explode stack1 type NOHEATCLOUD;
+	explode stack2 type NOHEATCLOUD;
+	explode stack3 type NOHEATCLOUD;
+	explode stack4 type NOHEATCLOUD | FALL;
 	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel1 type NOHEATCLOUD;
 	explode barrel2 type NOHEATCLOUD;
