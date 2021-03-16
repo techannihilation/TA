@@ -1,7 +1,7 @@
--- berthaflare
+-- lrpt
 
 return {
-  ["berthaflare"] = {
+  ["lrpt"] = {
     usedefaultexplosions = true,
     glow = {
       air                = true,

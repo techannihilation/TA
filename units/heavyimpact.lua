@@ -92,7 +92,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:BERTHAFLARE",
+				[1] = "custom:lrpt",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

@@ -1,7 +1,7 @@
--- gray_berthaflare
+-- gray_lrpt
 
 return {
-  ["gray_berthaflare"] = {
+  ["gray_lrpt"] = {
     usedefaultexplosions = true,
     glow = {
       air                = true,

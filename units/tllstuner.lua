@@ -113,7 +113,7 @@ return {
 				areaofeffect = 250,
 				avoidfeature = false,
 				avoidfriendly = false,
-				cegtag = "vulcanfx1",
+				cegtag = "emplrpt",
 				craterareaofeffect = 275,
 				craterboost = 0,
 				cratermult = 0,

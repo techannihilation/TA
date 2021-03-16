@@ -1,7 +1,7 @@
--- vulcanfx1
+-- emplrpt
 
 return {
-  ["vulcanfx1"] = {
+  ["emplrpt"] = {
     usedefaultexplosions = false,
     exhale = {
       air                = true,

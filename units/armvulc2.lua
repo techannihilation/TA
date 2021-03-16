@@ -81,7 +81,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:vulcanflare",
+				[1] = "custom:rapidlrpt",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

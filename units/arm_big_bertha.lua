@@ -81,7 +81,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:BERTHAFLARE",
+				[1] = "custom:lrpt",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -120,7 +120,7 @@ return {
 				areaofeffect = 280,
 				avoidfeature = false,
 				avoidfriendly = false,
-				cegtag = "vulcanfx1",
+				cegtag = "emplrpt",
 				craterareaofeffect = 300,
 				craterboost = 0,
 				cratermult = 0,

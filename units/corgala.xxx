@@ -60,7 +60,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:BERTHAFLARE",
+				[1] = "custom:lrpt",
 				[2] = "custom:gala_flare",
 				[3] = "custom:gala_ring_large",
 				[4] = "custom:gala_ring_small",

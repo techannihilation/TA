@@ -1,7 +1,7 @@
--- vulcanflare
+-- rapidlrpt
 
 return {
-  ["vulcanflare"] = {
+  ["rapidlrpt"] = {
     glow = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -161,4 +161,3 @@ return {
   },
 
 }
-
