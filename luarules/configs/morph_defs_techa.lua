@@ -544,19 +544,24 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	armjanus = {
-		into = 'tankanotor',
+		into = 'armtankanotor',
 		time = 120,
 		xp = 1.0,
 	},
-	tankanotor = {
+	armtankanotor = {
 		into = 'armmlrs',
 		time = 90,
-		xp = 0.50,
+		xp = 0.25,
 	},
 	armsam = {
 		into = 'armhorg',
 		time = 45,
 		xp = 0.25,
+	},
+	armhorgue = {
+		into = 'armmlrs',
+		time = 90,
+		xp = 0.50,
 	},
 	corgator = {
 		into = 'nsacskv',

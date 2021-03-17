@@ -71,7 +71,7 @@ return {
 			[12] = "armmerl",
 			[13] = "armmanni",
 			[14] = "armshieldgen",
-			[15] = "tankanotor",
+			[15] = "armtankanotor",
 		},
 		customparams = {
 			buildpic = "armavp.dds",

@@ -1,11 +1,11 @@
 return {
-	tankanotor = {
+	armtankanotor = {
 		acceleration = 0.012,
 		brakerate = 0.03,
 		buildcostenergy = 38540,
 		buildcostmetal = 2825,
 		builder = false,
-		buildpic = "tankanotor.dds",
+		buildpic = "armtankanotor.dds",
 		buildtime = 40000,
 		canattack = true,
 		canguard = true,
@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Tankanotor",
 		noautofire = false,
-		objectname = "TANKANOTOR",
+		objectname = "ARMTANKANOTOR",
 		radardistance = 0,
 		radaremitheight = 33,
 		selfdestructas = "BIG_UNIT",
@@ -49,11 +49,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,
 		turnrate = 450,
-		unitname = "tankanotor",
+		unitname = "armtankanotor",
 		customparams = {
-			buildpic = "tankanotor.dds",
+			buildpic = "armtankanotor.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -131,7 +130,7 @@ return {
 				flighttime = 4,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missiletankanotor",
+				model = "weapon_missile_tankanotor",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1300,

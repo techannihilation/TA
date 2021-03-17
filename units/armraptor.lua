@@ -160,7 +160,7 @@ return {
 				flighttime = 4,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missiletankanotor",
+				model = "weapon_missile_tankanotor",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1250,

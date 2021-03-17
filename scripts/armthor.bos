@@ -389,7 +389,6 @@ AimFromWeapon4(piecenum)
 QueryWeapon1(piecenum)
 {
 	piecenum = rflare;
-
 }
 
 QueryWeapon2(piecenum)

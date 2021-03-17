@@ -32,8 +32,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HKBOT3",
 		name = "Binder",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLBind",
 		radaremitheight = 34,
 		selfdestructas = "MEDIUM_BUILDING",

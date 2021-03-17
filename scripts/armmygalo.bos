@@ -5,7 +5,7 @@
 
 piece  base, body, engine, leg10, leg11, leg12, leg20, leg21, leg22, leg30, leg31, leg32, 
 		leg40, leg41, leg42, leg50, leg51, leg52, leg60, leg61, leg62, 
-		turret, rminigun, lminigun, rflare, lflare, rbarrel, lbarrel,
+		turret, rminigun, lminigun, rflare, lflare,
 		flare1, flare2, flare3, flare4, flare5, flare6, flare7, flare8 ;
 
 static-var  bMoving, bAiming, gun_1, gatling_1, gatling_2, Main_Gun_Heading ;
@@ -213,6 +213,22 @@ Create()
 
 RestorePrimary()
 {
+	sleep 500;
+	spin lminigun around z-axis speed <500.0> accelerate <-100.0>;
+	spin rminigun around z-axis speed <500.0> accelerate <-100.0>;
+	
+	sleep 350;
+	spin lminigun around z-axis speed <350.0> accelerate <-75.0>;
+	spin rminigun around z-axis speed <350.0> accelerate <-75.0>;
+	
+	sleep 250;
+	spin lminigun around z-axis speed <100.0> accelerate <-50.0>;
+	spin rminigun around z-axis speed <100.0> accelerate <-50.0>;
+	
+	sleep 200;
+	spin lminigun around z-axis speed <0.0> accelerate <-25.0>;
+	spin rminigun around z-axis speed <0.0> accelerate <-25.0>;
+	
 	sleep 8000;
 	bAiming = FALSE;
 	turn turret to y-axis <0.000000> speed <50.000000>;
@@ -269,23 +285,25 @@ QueryTertiary(piecenum)
 FireSecondary()
 {
 	emit-sfx 1024 + 0 from rflare;
-	++gatling_1;
-	if( gatling_1 >= 6 )
-	{
-		gatling_1 = 0;
-	}
-	turn rbarrel to z-axis <60.000000> * gatling_1 speed <500.000000>;
+	spin lminigun around z-axis speed <750.0>;
+	//++gatling_1;
+	//if( gatling_1 >= 6 )
+	//{
+	//	gatling_1 = 0;
+	//}
+	//turn rbarrel to z-axis <60.000000> * gatling_1 speed <500.000000>;
 }
 
 FireTertiary()
 {
 	emit-sfx 1024 + 0 from rflare;
-	++gatling_2;
-	if( gatling_2 >= 6 )
-	{
-		gatling_2 = 0;
-	}
-	turn lbarrel to z-axis <60.000000> * gatling_2 speed <500.000000>;
+	spin rminigun around z-axis speed <750.0>;
+	//++gatling_2;
+	//if( gatling_2 >= 6 )
+	//{
+	//	gatling_2 = 0;
+	//}
+	//turn lbarrel to z-axis <60.000000> * gatling_2 speed <500.000000>;
 }
 
 AimFromPrimary(piecenum)
