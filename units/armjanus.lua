@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Janus",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMJANUS",
 		radaremitheight = 25,
 		seismicsignature = 0,

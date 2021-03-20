@@ -553,11 +553,6 @@ local morphDefs = {
 		time = 90,
 		xp = 0.25,
 	},
-	armsam = {
-		into = 'armhorg',
-		time = 45,
-		xp = 0.25,
-	},
 	armhorgue = {
 		into = 'armmlrs',
 		time = 90,
@@ -601,9 +596,9 @@ local morphDefs = {
 		},
 	},
 	cormist = {
-		into = 'corbanisher',
-		time = 45,
-		xp = 0.30,
+		into = 'corsent',
+		time = 30,
+		xp = 0.50,
 	},
 	armjeth = {
 		into = 'armaak',
@@ -839,11 +834,6 @@ local morphDefs = {
 		into = 'armeflak',
 		time = 60,
 		xp = 1.00,
-	},
-	corjeag = {
-    into = 'corsent',
-		time = 30,
-		xp = 0.50,
 	},
 	corsent = {
 		into = 'coramist',

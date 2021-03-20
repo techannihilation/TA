@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Mastiff",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_mastiff",
 		radaremitheight = 27,
 		seismicsignature = 0,

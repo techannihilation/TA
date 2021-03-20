@@ -54,7 +54,7 @@ return {
 			[3] = "tllmlv",
 			[4] = "tllgladius",
 			[5] = "tllares",
-			[6] = "tllannouncer",
+			--[6] = "tllannouncer",
 			[7] = "tllhoplit",
 			[8] = "tllshaker",
 			[9] = "tllariman",

@@ -15,6 +15,7 @@ Improvment :
  - Add new model for T3 Core Air & Veh Lab
  - Add New model for Behemoth
  - T4 Mygalo Arm : change laser minigun by emc minigun
+ - Delete Missile Truck from T1 Vehicule Plant
 
 
 3.80 > 3.81

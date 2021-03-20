@@ -61,7 +61,7 @@ return {
 			[3] = "cormlv",
 			[4] = "corfav",
 			[5] = "corgator",
-			[8] = "corjeag",
+			--[8] = "corjeag",
 			[6] = "cormist",
 			[7] = "corwolv",
 			[9] = "corgarp",

@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Garpike",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORGARP",
 		radaremitheight = 25,
 		seismicsignature = 0,
