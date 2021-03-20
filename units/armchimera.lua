@@ -37,12 +37,11 @@ return {
 		movementclass = "TANK4",
 		name = "Chimera",
 		noautofire = false,
-		
 		objectname = "armchimera",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
-		sightdistance = 390,
+		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

@@ -4,6 +4,10 @@ Balance :
  - HellDriver : Decrease Hp (4K=>2K), cost (2.5Km=>1.2KM) and Damage (640/s=>600/s). Increase Speed (1.4=>1.6)
  - Cybran : Add special damage (10% from default) vs Air. (goal is not be killed by himself or friendly other cybran)
  - Mygalo : Increase Metal cost (175K => 198K)
+ - Furie : remplace laser by multi plasma for main weapon. Increase damage 3K=>3.2K dps
+ - Gorg : Increase main weapon range 590=>600
+ - All T3/T4 unit (20KM~50KM) : Fix Los at 750 range
+ - All T4 unit (>50KM) : Fix Los at 1000 range
 
 Improvment :
  - Delete Antarion and remplace by Thor
@@ -11,6 +15,7 @@ Improvment :
  - Add new model for T3 Core Air & Veh Lab
  - Add New model for Behemoth
  - T4 Mygalo Arm : change laser minigun by emc minigun
+
 
 3.80 > 3.81
 2021-02-09

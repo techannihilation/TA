@@ -42,7 +42,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
 		selfdestructcountdown = 10,
-		sightdistance = 450,
+		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

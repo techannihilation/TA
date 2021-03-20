@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Medium Combat Tank",
+		description = "Heavy Combat Tank",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK3",
 		name = "Obsidian",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_obsidian",
 		radaremitheight = 25,
 		seismicsignature = 0,

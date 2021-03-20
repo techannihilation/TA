@@ -104,7 +104,7 @@ return {
 		},
 		weapondefs = {
 			emcc = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				avoidfeature = false,
 				burst = 5,
 				burstrate = 0.05,
@@ -117,7 +117,7 @@ return {
 				range = 520,
 				reloadtime = 0.25,
 				rgbcolor = "0.83 0.57 0",
-				soundhitdry = "lasrhit1",
+				--soundhitdry = "lasrhit1",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "armsml2",

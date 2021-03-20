@@ -216,7 +216,7 @@ return {
 				intensity = 4,
 				name = "Core Blaster",
 				noselfdamage = true,
-				range = 590,
+				range = 600,
 				reloadtime = 0.4,
 				rgbcolor = "0.5 0.5 1.0",
 				size = 1,

@@ -15,7 +15,7 @@ return {
 		canstop = 1,
 		category = "LEVEL2 ALL SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
-		collisionvolumescales = "160 50 125",
+		collisionvolumescales = "180 50 115",
 		collisionvolumetype = "box",
 		corpse = "dead",
 		description = "Produces T3 Vehicles",

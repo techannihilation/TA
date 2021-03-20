@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 85,
 		builder = false,
 		buildpic = "talon_sniper.dds",
-		buildtime = 2750,
+		buildtime = 2000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

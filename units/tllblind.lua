@@ -38,7 +38,6 @@ return {
 		movementclass = "hkbot4",
 		name = "Dreadnought",
 		noautofire = false,
-		
 		objectname = "TLLBLIND",
 		radardistance = 0,
 		radaremitheight = 51,
@@ -50,7 +49,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,
-		turnrate = 950,
+		turnrate = 650,
 		unitname = "tllblind",
 		upright = true,
 		customparams = {

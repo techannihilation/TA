@@ -43,7 +43,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
-		sightdistance = 650,
+		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,

@@ -40,7 +40,7 @@ return {
 		objectname = "talon_thanos",
 		radaremitheight = 50,
 		selfdestructas = "KROG_BLAST",
-		sightdistance = 500,
+		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

@@ -3,20 +3,19 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  rgunflare, lgunflare, rmispoint, lmispoint, head, torso, hips, mpack,
+piece  base, rgunflare, lgunflare, rmispoint, lmispoint, head, torso, hips, mpack,
        rleg, rthigh, lthigh, lleg, luparm, ruparm, rarm, rfoot2,
        lfoot2, larm, rbarrel1, lbarrel1, body, rrotate, lrotate, torsoz,
        rrock, lrock, lfoot, rfoot, lrockpoint, rrockpoint, rback, lback;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, isgunone;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Main_Gun_Heading;
 
 
 walk()
 {
 	if( Static_Var_4 )
 	{
-		move hips to y-axis [1.] speed [2.];
+		move hips to y-axis [1.] speed [2.0];
 		turn hips to z-axis <-5.> now;
 		turn rthigh to z-axis <5.> now;
 		turn lthigh to z-axis <5.> now;
@@ -117,28 +116,17 @@ Create()
 	hide rgunflare;
 	hide lrockpoint;
 	hide rrockpoint;
-	isgunone = 0;
 	Static_Var_1 = 0;
 	Static_Var_4 = 0;
-	Static_Var_5 = 0;
 	Static_Var_1 = 0;
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
-	Static_Var_7 = 0;
-	Static_Var_8 = 0;
-	Static_Var_6 = 2000;
 	start-script SmokeUnit();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
 }
 
 StartMoving()
 {
 	Static_Var_4 = 1;
-	signal 16;
-	set-signal-mask 16;
 	start-script walk();
 }
 
@@ -171,64 +159,28 @@ StopMoving()
 RestoreAfterDelay()
 {
 	sleep 3000;
-	isgunone = 0;
-	while( Static_Var_8 OR Static_Var_7 )
-	{
-		sleep 100;
-	}
 	turn torso to y-axis <0.> speed <90.>;
 	turn luparm to x-axis <0.> speed <50.>;
 	turn ruparm to x-axis <0.> speed <50.>;
-	wait-for-turn torso around y-axis;
-	wait-for-turn rarm around x-axis;
-	wait-for-turn larm around x-axis;
-	wait-for-turn head around y-axis;
-	wait-for-turn head around x-axis;
-	Static_Var_5 = 0;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	Static_Var_5 = 1;
-	//turn head to y-axis <360.> speed <161.>;
 	turn torso to y-axis heading speed <75.>;
 	turn ruparm to x-axis <0.> - pitch speed <75.>;
 	turn luparm to x-axis <0.> - pitch speed <75.>;
+	Main_Gun_Heading = heading;
 	wait-for-turn torso around y-axis;
 	wait-for-turn rarm around x-axis;
 	wait-for-turn larm around x-axis;
-	isgunone = 1;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-flare(Func_Var_1)
-{
-	if( Func_Var_1 == 0 )
-	{
-		emit-sfx 1025 from rgunflare;
-	}
-	if( Func_Var_1 == 1 )
-	{
-		emit-sfx 1025 from lgunflare;
-	}
-}
-
 rgun()
 {
-	start-script flare(0);
-	turn torsoz to y-axis <-10.> now;
-	turn rarm to y-axis <10.> now;
-	turn larm to y-axis <10.> now;
-	turn torsoz to y-axis <0.> speed <15.>;
-	turn rarm to y-axis <0.> speed <15.>;
-	turn larm to y-axis <0.> speed <15.>;
-	turn head to y-axis <10.> now;
-	turn head to y-axis <0.> speed <15.>;
-	move rbarrel1 to z-axis [-4.] now;
-	move rbarrel1 to z-axis [0.] speed [8.];
 	sleep 500;
 	turn rrotate to z-axis <120.> speed <200.>;
 	turn rrotate to z-axis <0.> now;
@@ -236,17 +188,6 @@ rgun()
 
 lgun()
 {
-	start-script flare(1);
-	turn torsoz to y-axis <10.> now;
-	turn larm to y-axis <-10.> now;
-	turn rarm to y-axis <-10.> now;
-	turn torsoz to y-axis <0.> speed <15.>;
-	turn larm to y-axis <0.> speed <15.>;
-	turn rarm to y-axis <0.> speed <15.>;
-	turn head to y-axis <-10.> now;
-	turn head to y-axis <0.> speed <15.>;
-	move lbarrel1 to z-axis [-4.] now;
-	move lbarrel1 to z-axis [0.] speed [8.];
 	sleep 500;
 	turn lrotate to z-axis <120.> speed <200.>;
 	turn lrotate to z-axis <0.> now;
@@ -284,18 +225,17 @@ QueryPrimary(piecenum)
 
 SweetSpot(piecenum)
 {
-	piecenum = torso;
+	piecenum = base;
 }
 
 AimSecondary(heading, pitch)
 {
 	signal 4;
 	set-signal-mask 4;
-	while( isgunone ==0)
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
-		sleep 100;
+		return (0);
 	}
-	turn torso to y-axis heading speed <75.>;
 	wait-for-turn torso around y-axis;
 	return (1);
 }
@@ -320,15 +260,6 @@ AimFromSecondary(piecenum)
 
 FireSecondary()
 {	
-	if( Static_Var_2 == 0 )
-	{
-		emit-sfx 1026 from lrockpoint;
-	}
-		if( Static_Var_2 == 1 )
-	{
-		emit-sfx 1026 from rrockpoint;
-	}
-	
 	++Static_Var_2;
 	if( Static_Var_2 == 3 )
 	{
@@ -340,7 +271,6 @@ AimTertiary(heading, pitch)
 {
 	signal 8;
 	set-signal-mask 8;
-	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -421,26 +351,6 @@ Killed(severity, corpsetype)
 		explode rthigh type NOHEATCLOUD | FALL;
 		explode ruparm type NOHEATCLOUD | FALL;
 		explode torso type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode head type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode hips type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lgunflare type NOHEATCLOUD;
-		explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lmispoint type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode luparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rgunflare type NOHEATCLOUD;
-		explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rmispoint type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode ruparm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode torso type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;

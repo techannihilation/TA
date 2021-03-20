@@ -43,7 +43,7 @@ return {
 		radaremitheight = 145,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
-		sightdistance = 640,
+		sightdistance = 1000,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

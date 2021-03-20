@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Razorback",
 		noautofire = false,
-		
+
 		objectname = "ARMRAZ",
 		radaremitheight = 58,
 		seismicsignature = 0,
@@ -123,12 +123,12 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_emcc3 = {
+			arm_emcc = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				burst = 4,
-				burstrate = 0.04,
-				cegtag = "orcoblaster",
+				burstrate = 0.06,
+				cegtag = "Trail_emg",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -137,17 +137,16 @@ return {
 				noselfdamage = true,
 				range = 450,
 				reloadtime = 0.25,
-				rgbcolor = "0.5 0.5 1.0",
+				rgbcolor = "0.83 0.57 0",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
-				soundstart = "razorback_gun",
+				soundstart = "armsml2",
 				soundtrigger = true,
 				sprayangle = 1024,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 750,
+				weaponvelocity = 475,
 				damage = {
-					commanders = 10,
 					default = 20,
 					subs = 5,
 				},
@@ -155,11 +154,11 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARM_EMCC3",
+				def = "ARM_EMCC",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "ARM_EMCC3",
+				def = "ARM_EMCC",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},

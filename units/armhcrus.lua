@@ -42,7 +42,7 @@ return {
 		objectname = "armhcrus",
 		radaremitheight = 65,
 		selfdestructas = "KROG_BLAST",
-		sightdistance = 650,
+		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

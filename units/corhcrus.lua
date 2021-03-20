@@ -38,11 +38,10 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Neptune",
 		noautofire = false,
-		
 		objectname = "corhcrus",
 		radaremitheight = 65,
 		selfdestructas = "BANTHA_BLAST",
-		sightdistance = 650,
+		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

@@ -42,7 +42,7 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "EXO_BLAST",
-		sightdistance = 650,
+		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

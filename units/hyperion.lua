@@ -44,7 +44,7 @@ return {
 		radaremitheight = 108,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
-		sightdistance = 600,
+		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,

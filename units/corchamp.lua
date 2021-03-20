@@ -45,7 +45,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
-		sightdistance = 350,
+		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,

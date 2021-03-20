@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, ground,  flarer1, flarer2, body1, body2, turretg, boreg, barrelg, flareg, neck,
- turretb, boreb, barrelb, flareb, turretr, borer, barrelr;
+ turretb, boreb, barrelb, flareb, turretr, borer, barrelr1, barrelr2, hatch;
 
 static-var  gun_3, restore_delay, bOpening, statechg_DesiredState, statechg_StateChanging;
 
@@ -20,20 +20,22 @@ activatescr()
 	{
 		move body1 to y-axis [0] speed [6];
 		move neck to y-axis [0] speed [6];
-		move body2 to y-axis [-1.8] speed [6];		
-		move borer to z-axis [0] speed [3];
-		move barrelr to z-axis [0] speed [2];		
+		move body2 to y-axis [-1.8] speed [6];			
 		wait-for-move body1 along y-axis;
 	}
 	if( TRUE )
-	{
+	{		
 		move body2 to y-axis [0] speed [6];				
 		turn turretg to x-axis <0> speed <150>;
 		move boreg to z-axis [0] speed [2];		
+		//move hatch to y-axis [-1.50000] speed [1.000000];
+		//move hatch to z-axis [-0.50000] speed [1.000000];
+		turn hatch to x-axis <-179> speed <360>;
 		wait-for-move body2 along y-axis;
 	}
 	if( TRUE )
 	{
+		move borer to z-axis [0.000000] speed [5.000000];
 		turn turretb to x-axis <0> speed <150>;
 		move boreb to z-axis [0] speed [2];		
 		move barrelg to z-axis [0] speed [5];		
@@ -63,12 +65,17 @@ deactivatescr()
 	if( TRUE )
 	{
 		
-		move borer to z-axis [-2.7] speed [6];
-		move barrelr to z-axis [-4.8] speed [6];		
+		move borer to z-axis [-3.5] speed [6];
+		turn barrelr1 to x-axis <0> speed <60>;
+		turn barrelr2 to x-axis <0> speed <60>;
+		
+		//move barrelr to z-axis [-4.8] speed [6];	
+		//move hatch to y-axis [0.00000] speed [4.000000];
+		//move hatch to z-axis [0.00000] speed [2.000000];	
 		move barrelg to z-axis [-0.18] speed [5];
 		move boreg to z-axis [-0.20] speed [2];		
 		wait-for-move boreg along z-axis;
-		
+		turn hatch to x-axis <0> speed <360>;	
 		turn turretg to x-axis <180> speed <150>;		
 		move boreb to z-axis [-2.8] speed [2];	
 		move barrelb to z-axis [-2.8] speed [5];	
@@ -185,9 +192,10 @@ Create()
 	move boreg to z-axis [-0.2] now;
 	move barrelg to z-axis [-1.8] now;
 
-	move borer to z-axis [-2.7] now;
-	move barrelr to z-axis [-4.5] now;
-	
+	move borer to z-axis [-3.5] now;
+	move hatch to y-axis [0.0000] now;
+	move hatch to z-axis [0.0000] now;
+	turn hatch to x-axis <0> now;
 	move body2 to y-axis [-9] now;
 	move body1 to y-axis [-6.2] now;
 	move neck to y-axis [-9] now;
@@ -252,7 +260,10 @@ AimTertiary(heading, pitch)
 		sleep 250;
 	}
 	turn turretr to y-axis heading speed <200.000000>;
+	//turn barrelr1 to x-axis 0 - pitch speed <120>;
+	//turn barrelr2 to x-axis 0 - pitch speed <120>;
 	wait-for-turn turretr around y-axis;
+	//wait-for-turn barrelr1 around x-axis;
 
 	return (1);
 }
@@ -339,7 +350,7 @@ Killed(severity, corpsetype)
 		explode neck type NOHEATCLOUD;
 		explode turretr type NOHEATCLOUD;
 		explode borer type NOHEATCLOUD;
-		explode barrelr type NOHEATCLOUD;
+		explode barrelr1 type NOHEATCLOUD;
 		explode flarer1 type NOHEATCLOUD;
 		explode flarer2 type NOHEATCLOUD;
 		explode body2 type NOHEATCLOUD;
@@ -360,7 +371,7 @@ Killed(severity, corpsetype)
 		explode neck type NOHEATCLOUD | SMOKE | FALL;
 		explode turretr type NOHEATCLOUD | SMOKE | FALL;
 		explode borer type NOHEATCLOUD | SMOKE | FALL;
-		explode barrelr type NOHEATCLOUD | SMOKE | FALL;
+		explode barrelr1 type NOHEATCLOUD | SMOKE | FALL;
 		explode flarer1 type NOHEATCLOUD;
 		explode flarer2 type NOHEATCLOUD | SMOKE | FALL;
 		explode turretb type NOHEATCLOUD | SMOKE | FALL;
@@ -379,7 +390,7 @@ Killed(severity, corpsetype)
 		explode neck type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
 		explode turretr type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
 		explode borer type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
-		explode barrelr type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
+		explode barrelr1 type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
 		explode flarer1 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
 		explode flarer2 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
 		explode body2 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;

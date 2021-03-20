@@ -123,7 +123,7 @@ return {
 		},
 		weapondefs = {
 			emg = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				avoidfeature = false,
 				burst = 3,
 				burstrate = 0.1,

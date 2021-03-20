@@ -60,8 +60,8 @@ talon_clone_lab = {
 			[2] = "talon_fox",
 			[3] = "talon_infantry",
 			[4] = "talon_sphere",
-			[5] = "talon_mercenary",
-			[6] = "talon_rebel",
+			[5] = "talon_rebel",
+			[6] = "talon_mercenary",
 			[7] = "talon_sniper",
 		},
 		customparams = {

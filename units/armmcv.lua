@@ -40,7 +40,6 @@ return {
 		movementclass = "HTANK5",
 		name = "Kronos",
 		noautofire = false,
-
 		objectname = "ARMMCV",
 		onoffable = true,
 		radaremitheight = 38,

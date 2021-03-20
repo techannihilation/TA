@@ -40,7 +40,6 @@ return {
 		movementclass = "HKBOT7",
 		name = "Praetorian",
 		noautofire = false,
-
 		objectname = "ARMPRAET",
 		radardistance = 0,
 		radaremitheight = 100,
@@ -48,7 +47,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
-		sightdistance = 500,
+		sightdistance = 750,
 		sonardistance = 0,
 		standingfireorder = 2,
 		standingmoveorder = 1,
