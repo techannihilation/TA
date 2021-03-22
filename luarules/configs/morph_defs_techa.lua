@@ -825,7 +825,7 @@ local morphDefs = {
 		time = 45,
 		xp = 0.60,
 	},
-	armhermes = {
+	armsam = {
 		into = 'armyork',
 		time = 30,
 		xp = 0.50,
