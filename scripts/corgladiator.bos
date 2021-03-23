@@ -626,13 +626,9 @@ Create()
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_1 = 0;
+	gun_1 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 StartMoving()

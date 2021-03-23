@@ -651,7 +651,7 @@ local morphDefs = {
 		xp = 1.25,
 	},
 	corsumo = {
-		into = 'helepolis',
+		into = 'corhelepolis',
 		time = 45,
 		xp = 0.10,
 	},

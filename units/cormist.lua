@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "cormist.dds",
 			faction = "CORE",
+			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {

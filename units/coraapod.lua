@@ -24,7 +24,6 @@ return {
 		maxvelocity = 1.4,
 		movementclass = "AMPTBOT",
 		name = "Peacock",
-		
 		objectname = "coraapod",
 		radaremitheight = 26,
 		seismicsignature = 0,
@@ -123,7 +122,7 @@ return {
 				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 875,
+				range = 850,
 				reloadtime = 0.2,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = true,

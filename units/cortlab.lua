@@ -21,8 +21,6 @@ return {
 		corpse = "dead",
 		description = "Produces T2 All-Terrain KBots",
 		downloadable = 1,
-		energystorage = 100,
-		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,

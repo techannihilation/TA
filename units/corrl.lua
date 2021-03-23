@@ -24,8 +24,8 @@ return {
 		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
-		footprintx = 3,
-		footprintz = 3,
+		footprintx = 2,
+		footprintz = 2,
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Pulverizer",
 		noautofire = false,
-
 		objectname = "CORRL",
 		radaremitheight = 51,
 		seismicsignature = 0,
@@ -49,7 +48,7 @@ return {
 		turnrate = 0,
 		unitname = "corrl",
 		usebuildinggrounddecal = true,
-		yardmap = "ooooooooo",
+		yardmap = "oooo",
 		customparams = {
 			buildpic = "corrl.dds",
 			faction = "CORE",

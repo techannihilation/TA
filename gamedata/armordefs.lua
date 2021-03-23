@@ -122,6 +122,11 @@ return {
 	"armarpe",
 	"talon_recon",
 	"talon_vigilante",
+	--T3 Raiser
+	"armerez",
+	"corerez",
+	"tllerez",
+	"talon_erez",	
 },
 
 	--### SEA ###
