@@ -40,8 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Construction Amphibious Vehicle",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_leur",
 		radaremitheight = 25,
 		seismicsignature = 0,

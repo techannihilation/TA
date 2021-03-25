@@ -39,8 +39,7 @@ return {
 		metalstorage = 25,
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
-		name = "Construction Amphibious Vehicle",
-		
+		name = "Construction Amphibious Vehicle",		
 		noautofire = false,
 		objectname = "tllmando",
 		radaremitheight = 25,

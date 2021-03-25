@@ -41,7 +41,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Construction Amphibious Vehicle",
 		noautofire = false,
-		
 		objectname = "CORMUSKRAT",
 		radaremitheight = 25,
 		seismicsignature = 0,

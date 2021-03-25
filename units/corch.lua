@@ -41,7 +41,6 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		
 		objectname = "CORCH",
 		radaremitheight = 22,
 		seismicsignature = 0,

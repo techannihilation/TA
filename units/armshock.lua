@@ -23,7 +23,6 @@ return {
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
-		hightrajectory = 2,
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,

@@ -43,7 +43,7 @@ return {
 		objectname = "armnomad",
 		radaremitheight = 35,
 		seismicsignature = 0,
-		selfdestructas = "LARGE_BUILDING",
+		selfdestructas = "LARGE_BUILDINGEX",
 		sightdistance = 125,
 		standingmoveorder = 1,
 		steeringmode = 1,

@@ -1,5 +1,5 @@
 3.81 > 3.82
-2021-02-16
+2021-02-24
 Balance :
  - HellDriver : Decrease Hp (4K=>2K), cost (2.5Km=>1.2KM) and Damage (640/s=>600/s). Increase Speed (1.4=>1.6)
  - Cybran : Add special damage (10% from default) vs Air. (goal is not be killed by himself or friendly other cybran)
