@@ -19,8 +19,6 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Flak Hovercraft",
 		downloadable = 1,
-		energystorage = 100,
-		energyuse = 0.8,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
@@ -38,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Kalen",
 		noautofire = false,
-		
+
 		objectname = "tllhflak",
 		radardistance = 0,
 		radaremitheight = 28,

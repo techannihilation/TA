@@ -31,8 +31,7 @@ return {
 		minwaterdepth = 50,
 		mobilestandorders = 1,
 		name = "Capital Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORESY",
 		radardistance = 100,
 		radaremitheight = 93,

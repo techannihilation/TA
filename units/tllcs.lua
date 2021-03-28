@@ -23,7 +23,6 @@ return {
 		description = "Tech Level 1",
 		energymake = 10,
 		energystorage = 50,
-		energyuse = 0.1,
 		explodeas = "SMALL_UNITEX",
 		floater = true,
 		footprintx = 3,
@@ -42,7 +41,6 @@ return {
 		movementclass = "BOAT4",
 		name = "Construction Ship",
 		noautofire = false,
-		
 		objectname = "TLLCS",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

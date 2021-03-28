@@ -54,7 +54,7 @@ return {
 			[2] = "coramist",
 			[3] = "corchamp",
 			[4] = "cortigre",
-			[5] = "armsiege",
+			[5] = "corsiege",
 			[6] = "corhcrus",
 			[7] = "corbt",
 		},

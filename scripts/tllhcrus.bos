@@ -11,6 +11,7 @@ static-var  Static_Var_1, restore_delay, gun, bAiming;
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
+#define SIG_MOVE			8
 
 PilotLight(Func_Var_1)
 {
@@ -60,69 +61,47 @@ lua_FlameShot(Func_Var_1)
 
 StartMoving()
 {
-	signal 16;
-	set-signal-mask 16;
-	var Func_Var_1, Func_Var_2;
-	Func_Var_1 = 3;
-	Func_Var_2 = 4;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
 	while( TRUE )
 	{
 		if( Static_Var_1 == 1 )
 		{
-			emit-sfx Func_Var_1 from wake1;
-			emit-sfx Func_Var_1 from wake2;
-			emit-sfx Func_Var_1 from wake3;
-			emit-sfx Func_Var_1 from wake4;
-			emit-sfx Func_Var_1 from wake5;
-			emit-sfx Func_Var_1 from wake6;
-			emit-sfx Func_Var_1 from wake7;
-			emit-sfx Func_Var_1 from wake8;
-			emit-sfx Func_Var_2 from wake1;
-			emit-sfx Func_Var_2 from wake2;
-			emit-sfx Func_Var_2 from wake3;
-			emit-sfx Func_Var_2 from wake4;
-			emit-sfx Func_Var_2 from wake5;
-			emit-sfx Func_Var_2 from wake6;
-			emit-sfx Func_Var_2 from wake7;
-			emit-sfx Func_Var_2 from wake8;
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
 		}
 		if( Static_Var_1 == 2 )
 		{
-			emit-sfx Func_Var_1 from wake1;
-			emit-sfx Func_Var_1 from wake2;
-			emit-sfx Func_Var_1 from wake3;
-			emit-sfx Func_Var_1 from wake4;
-			emit-sfx Func_Var_1 from wake5;
-			emit-sfx Func_Var_1 from wake6;
-			emit-sfx Func_Var_1 from wake7;
-			emit-sfx Func_Var_1 from wake8;
-			emit-sfx Func_Var_2 from wake1;
-			emit-sfx Func_Var_2 from wake2;
-			emit-sfx Func_Var_2 from wake3;
-			emit-sfx Func_Var_2 from wake4;
-			emit-sfx Func_Var_2 from wake5;
-			emit-sfx Func_Var_2 from wake6;
-			emit-sfx Func_Var_2 from wake7;
-			emit-sfx Func_Var_2 from wake8;
-		}
-		if( Static_Var_1 == 3 )
-		{
-			emit-sfx Func_Var_1 from wake1;
-			emit-sfx Func_Var_1 from wake2;
-			emit-sfx Func_Var_1 from wake3;
-			emit-sfx Func_Var_1 from wake4;
-			emit-sfx Func_Var_1 from wake5;
-			emit-sfx Func_Var_1 from wake6;
-			emit-sfx Func_Var_1 from wake7;
-			emit-sfx Func_Var_1 from wake8;
-			emit-sfx Func_Var_2 from wake1;
-			emit-sfx Func_Var_2 from wake2;
-			emit-sfx Func_Var_2 from wake3;
-			emit-sfx Func_Var_2 from wake4;
-			emit-sfx Func_Var_2 from wake5;
-			emit-sfx Func_Var_2 from wake6;
-			emit-sfx Func_Var_2 from wake7;
-			emit-sfx Func_Var_2 from wake8;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
 		}
 		sleep 300;
 	}
@@ -130,6 +109,7 @@ StartMoving()
 
 StopMoving()
 {
+	sleep 150;
 }
 
 setSFXoccupy(state)

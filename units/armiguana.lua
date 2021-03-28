@@ -19,9 +19,6 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Flak Hovercraft",
 		downloadable = 1,
-		energymake = 0.3,
-		energystorage = 100,
-		energyuse = 0.8,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
@@ -39,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Iguana",
 		noautofire = false,
-		
+
 		objectname = "ARMIGUANA",
 		radardistance = 0,
 		radaremitheight = 28,

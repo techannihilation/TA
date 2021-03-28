@@ -15,7 +15,7 @@ return {
 		canreclamate = 1,
 		canresurrect = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE",
+		category = "ALL MEDIUM MOBILE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "37 15 48",
 		collisionvolumetype = "box",
@@ -36,7 +36,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Death Cavalry",
 		noautofire = false,
-		
 		objectname = "CORRECL",
 		radaremitheight = 25,
 		resurrect = 1,

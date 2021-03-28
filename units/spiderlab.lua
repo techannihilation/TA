@@ -16,8 +16,6 @@ return {
 		category = "LEVEL1 ALL SURFACE",
 		corpse = "dead",
 		description = "Produces T2 All-terrain Kbots",
-		energystorage = 100,
-		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,

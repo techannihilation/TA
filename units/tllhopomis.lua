@@ -24,8 +24,6 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Sub Exterminator",
 		downloadable = 1,
-		energystorage = 100,
-		energyuse = 0.8,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
@@ -43,7 +41,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hopomis",
 		noautofire = false,
-		
+
 		objectname = "tllhopomis",
 		radardistance = 0,
 		radaremitheight = 28,

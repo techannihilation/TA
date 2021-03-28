@@ -4,8 +4,8 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 16384,
-		buildcostenergy = 6157,
-		buildcostmetal = 575,
+		buildcostenergy = 4796,
+		buildcostmetal = 465,
 		builder = false,
 		buildpic = "armfhlt.dds",
 		buildtime = 10000,
@@ -27,12 +27,11 @@ return {
 		idletime = 1800,
 		losemitheight = 44,
 		mass = 575,
-		maxdamage = 3850,
+		maxdamage = 2450,
 		maxvelocity = 0,
 		minwaterdepth = 2,
 		name = "Stingray",
 		noautofire = false,
-		
 		objectname = "ARMFHLT",
 		radaremitheight = 43,
 		seismicsignature = 0,
@@ -102,8 +101,8 @@ return {
 			},
 		},
 		weapondefs = {
-			corfhlt_laser = {
-				areaofeffect = 8,
+			arm_laserh1 = {
+				areaofeffect = 14,
 				beamtime = 0.15,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
@@ -119,7 +118,7 @@ return {
 				name = "HighEnergyLaser",
 				noselfdamage = true,
 				range = 620,
-				reloadtime = 1.5,
+				reloadtime = 1.8,
 				rgbcolor = "0 1 0",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
@@ -129,16 +128,15 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.2,
 				thickness = 3,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
-				weaponvelocity = 900,
+				weaponvelocity = 2250,
 				customparams = {
 					light_mult = 1.8,
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					default = 525,
+					default = 540,
 					subs = 5,
 				},
 			},
@@ -146,7 +144,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "TINY",
-				def = "CORFHLT_LASER",
+				def = "ARM_LASERH1",
 				onlytargetcategory = "SURFACE",
 			},
 		},

@@ -20,8 +20,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Blazing Flame Tower",
-		energystorage = 100,
-		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -36,7 +34,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Flame Tower",
 		noautofire = false,
-
 		objectname = "TLLLFT",
 		radaremitheight = 74,
 		selfdestructas = "MEDIUM_BUILDING",

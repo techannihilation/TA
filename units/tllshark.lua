@@ -19,8 +19,6 @@ return {
 		collisionvolumetype = "Ell",
 		defaultmissiontype = "Standby",
 		description = "Kamikaze Sub",
-		energymake = 0.5,
-		energyuse = 0.6,
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 2,
@@ -39,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Shark",
 		noautofire = false,
-		
+
 		objectname = "TLLSHARK",
 		radardistance = 0,
 		radaremitheight = 25,

@@ -1,3 +1,18 @@
+3.82 > 3.83
+Balance :
+ - T1 Transport Ship : Increase Metal cost and reduce HP
+ - Decrease stats for T1 High Liser Turret Naval Series (same stats than ground)
+ - T2 Tll Cruser Hover : Increase cost 1.7KM => 2.2K. Increase Hp 8.5K=>10K. Increase range main weapon 550=>580. Decrease dps 250=>200. Decrease speed 1.7=>1.5
+ - T2 Arm Tremor Hover : Decrease stats and cost 4KM=>3.2KM
+ - All Tactical Sub : Decrease Metalcost 15KM=>9KM
+ - Delete Metal & Energy storage with Labs (100E and M)
+
+ Improvment :
+  - tlllochness (tll t2 hover) : Rework Model
+
+ Fix :
+ - Turtle lab can be construct in water
+
 3.81 > 3.82
 2021-02-24
 Balance :
@@ -1237,7 +1252,7 @@ Bugs:
 
  Visual Improvements:
  - armmcv : Add Missile Starburst for Vehicle Command (t3 ARM). Now there are 2 independant turrets.
- - armsiege : Deleted the pause after the second shot.
+ - corsiege : Deleted the pause after the second shot.
  - champ : Increase size for Champion (T3 Core vehicle).
  - cortroman : Add starburst.
  - coreavalanche & cordemon : Add flames.
@@ -1515,7 +1530,7 @@ Balance:
 - Balance Capital mini Gun from Hero (damage / 2)
 - Explosion balance (Crawl Blast, Bantha Nuke, SelfDestroy from Hero, T4...) We will have a Wiki soon on this subject
 - Delete explosion after death for cortroman (T3 Core sniper)
-- Increase HP for Armsiege 20K => 29K
+- Increase HP for corsiege 20K => 29K
 - Balance Cost from all carrier and decrese HP (need approval from team)
 - Reduce explosion for cortron (tactical nuke) and increase energycost by 20%
 

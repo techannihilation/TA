@@ -31,8 +31,7 @@ return {
 		minwaterdepth = 50,
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_esy",
 		radardistance = 500,
 		radaremitheight = 73,

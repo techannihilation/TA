@@ -19,8 +19,6 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Builds Hovercraft",
-		energystorage = 100,
-		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,

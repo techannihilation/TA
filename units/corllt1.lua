@@ -17,8 +17,6 @@ return {
 		corpse = "corllt_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Rapid-fire Light Laser Tower",
-		energystorage = 100,
-		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		floater = true,

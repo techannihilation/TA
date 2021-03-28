@@ -22,8 +22,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Light Lightning Tower",
-		energystorage = 100,
-		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		floater = true,

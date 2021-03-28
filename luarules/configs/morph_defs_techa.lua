@@ -1079,7 +1079,7 @@ local morphDefs = {
 		xp = 0.05,
 	},
 	cortremor = {
-		into = 'armsiege',
+		into = 'corsiege',
 	  	time = 90,
 		xp = 0.25,
 	},
@@ -1089,9 +1089,9 @@ local morphDefs = {
 		xp = 0.25,
 	},
 	coradon = {
-		into = 'corhcrus',
-	  time = 30,
-		xp = 0.10,
+		into = 'corhflag',
+	  time = 120,
+		xp = 0.25,
 	},
 	corhcrus = {
 		into = 'corhflag',

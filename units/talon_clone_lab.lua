@@ -35,7 +35,6 @@ talon_clone_lab = {
 		maxslope = 15,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 100,
 		mobilestandorders = 1,
 		name = "Infantry Lab",
 		noautofire = false,

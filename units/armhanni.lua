@@ -43,7 +43,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "ESTOR_BUILDINGEX",
-		sightdistance = 650,
+		sightdistance = 450,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,

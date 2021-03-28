@@ -11,7 +11,6 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Produces T1 Ships",
-		energystorage = 100,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,

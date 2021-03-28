@@ -19,7 +19,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Floating Anti-Air Tower",
-		energyuse = 0.1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 4,

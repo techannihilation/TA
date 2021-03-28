@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "UBOAT3",
 		name = "Grim Reaper",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMRECL",
 		radaremitheight = 25,
 		resurrect = 1,

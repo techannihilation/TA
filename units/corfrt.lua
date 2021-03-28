@@ -18,7 +18,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Floating Anti-Air Tower",
-		energyuse = 0.1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 4,
@@ -33,7 +32,6 @@ return {
 		minwaterdepth = 2,
 		name = "Stinger",
 		noautofire = false,
-
 		objectname = "CORFRT",
 		radaremitheight = 47,
 		seismicsignature = 0,

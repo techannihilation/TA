@@ -53,10 +53,9 @@ return {
 			[5] = "armlashover",
 			[6] = "armiguana",
 			[7] = "nsaatorph",
-			--[8] = "speeder",
-			[9] = "armhplasma",
-			[10] = "armhanni",
-			[11] = "armtem",
+			[8] = "armhplasma",
+			[9] = "armhanni",
+			[10] = "armtem",
 		},
 		customparams = {
 			buildpic = "aahp.dds",

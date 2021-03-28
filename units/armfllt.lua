@@ -18,7 +18,6 @@ return {
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Floating Light Laser Tower",
-		energystorage = 100,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -33,7 +32,6 @@ return {
 		minwaterdepth = 2,
 		name = "LLT",
 		noautofire = false,
-		
 		objectname = "armfllt",
 		radaremitheight = 65,
 		seismicsignature = 0,

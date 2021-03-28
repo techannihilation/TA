@@ -20,9 +20,6 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Automatically Repairs Aircraft",
-		energymake = 40,
-		energystorage = 100,
-		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		footprintx = 9,
 		footprintz = 9,
@@ -37,7 +34,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,
-		
+
 		objectname = "ARMASP",
 		onoffable = true,
 		radaremitheight = 42,

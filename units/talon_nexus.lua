@@ -16,8 +16,8 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
-		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "90 110 160",
+		collisionvolumeoffsets = "-5 -6 0",
+		collisionvolumescales = "75 60 158",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",
 		corpse = "dead",
@@ -45,7 +45,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Colossus",
 		noautofire = false,
-		
+
 		objectname = "talon_nexus",
 		radardistance = 2950,
 		radaremitheight = 54,
@@ -223,7 +223,7 @@ return {
 				maindir = "0 0 1",
 				maxangledif = 300,
 
-				
+
 			},
 
 		},

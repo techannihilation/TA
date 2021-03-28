@@ -31,8 +31,7 @@ return {
 		minwaterdepth = 50,
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "tllesy",
 		radardistance = 100,
 		radaremitheight = 64,

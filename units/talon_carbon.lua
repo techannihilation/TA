@@ -27,7 +27,6 @@ return {
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Mine Layer",
 		energymake = 5,
-		energyuse = 0.1,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
 		footprintz = 3,

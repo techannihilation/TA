@@ -272,7 +272,7 @@ armshltx1.dds
 armshltx.dds
 armshock1.dds
 armshock.dds
-armsiege.dds
+corsiege.dds
 armsilo1.dds
 armsilo.dds
 armsjam.dds

@@ -256,7 +256,7 @@ return {
 		"cormachn",
 		-- arm t3 vehs
 		"avtr",
-		"armsiege",
+		"corsiege",
 		"nsaagriz",
 		"armmlrs",
 		"corchamp",

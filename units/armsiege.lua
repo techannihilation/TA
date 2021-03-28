@@ -1,12 +1,12 @@
 return {
-	armsiege = {
+	corsiege = {
 		acceleration = 0.037,
 		antiweapons = 1,
 		brakerate = 0.09,
 		buildcostenergy = 119528,
 		buildcostmetal = 7557,
 		builder = false,
-		buildpic = "armsiege.dds",
+		buildpic = "corsiege.dds",
 		buildtime = 140000,
 		canattack = true,
 		canguard = true,
@@ -39,7 +39,7 @@ return {
 		name = "Demolisher",
 		noautofire = false,
 		
-		objectname = "ARMSIEGE",
+		objectname = "corsiege",
 		radardistance = 0,
 		radaremitheight = 34,
 		selfdestructas = "CRAWL_BLAST",
@@ -51,9 +51,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.792,
 		turnrate = 288,
-		unitname = "armsiege",
+		unitname = "corsiege",
 		customparams = {
-			buildpic = "armsiege.dds",
+			buildpic = "corsiege.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5625,
-				object = "ARMSIEGE_dead",
+				object = "corsiege_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

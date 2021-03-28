@@ -20,8 +20,6 @@ return {
 		cruisealt = 110,
 		defaultmissiontype = "VTOL_standby",
 		description = "Fast Gunship",
-		energymake = 0.75,
-		energyuse = 0.8,
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,

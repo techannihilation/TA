@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK3",
 		name = "Coyote",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLCOYOTE",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
