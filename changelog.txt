@@ -9,6 +9,7 @@ Balance :
 
  Improvment :
   - tlllochness (tll t2 hover) : Rework Model
+  - Delete all T1 Missile Trucks. Keep models for Arm/Core and they becomes now AA
 
  Fix :
  - Turtle lab can be construct in water
