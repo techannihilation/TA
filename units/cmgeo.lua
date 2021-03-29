@@ -34,8 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Moho Geothermal Powerplant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CMGEO",
 		radaremitheight = 48,
 		seismicsignature = 0,

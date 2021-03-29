@@ -37,8 +37,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_aap",
 		radaremitheight = 67,
 		seismicsignature = 0,

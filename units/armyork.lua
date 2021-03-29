@@ -30,7 +30,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 10,
 		mass = 561,
-		maxdamage = 1350,
+		maxdamage = 1450,
 		maxslope = 16,
 		maxvelocity = 2,
 		maxwaterdepth = 12,
@@ -129,7 +129,7 @@ return {
 		weapondefs = {
 			mobileflak = {
 				accuracy = 1000,
-				areaofeffect = 116,
+				areaofeffect = 124,
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,

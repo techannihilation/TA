@@ -1108,6 +1108,11 @@ local morphDefs = {
 	  time = 30,
 		xp = 0.30,
 	},
+	tllhcrus = {
+		into = 'tllmosaurus',
+		time = 90,
+		xp = 0.15,
+	},
 	tllsalamander = {
 		into = 'tllcenturion',
 	  time = 45,

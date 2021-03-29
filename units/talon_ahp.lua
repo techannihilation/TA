@@ -33,8 +33,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_ahp",
 		radardistance = 50,
 		radaremitheight = 36,
@@ -56,7 +55,7 @@ return {
 			[6] = "talon_hydra",
 			[7] = "talon_ash",
 			[8] = "talon_november",
-			[9] = "talon_thingyness",		
+			[9] = "talon_thingyness",
 			[10] = "talon_dutchman",
 		},
 		customparams = {

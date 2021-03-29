@@ -3,9 +3,11 @@ local array = {}
 local DAMAGE_PERIOD = 10 -- how often damage is applied
 
 local weapons = {
+
+	-- Acid
 	tllacid_acidrain_rocket = { radius = 400, damage = 100, duration = 625, rangeFall = 0.6, timeFall = 0.5},
-	armsonic_sonic_cannon = { radius = 95, damage = 300, duration = 45, rangeFall = 0.25, timeFall = 0.8, allyScale = 0.5, teamScale = 0.25},
-	tllriot_tllriot_cannon = { radius = 75, damage = 200, duration = 35, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.5},
+
+	-- Thermite Fire
 	thermite_mine = { radius = 64, damage = 250, duration = 150, rangeFall = 0.5, timeFall = 0.5},
 	tllnaja_thermite_barrage = { radius = 64, damage = 450, duration = 150, rangeFall = 0.5, timeFall = 0.5},
 	tllaether_thermite_bomb = { radius = 64, damage = 900, duration = 150, rangeFall = 0.5, timeFall = 0.5},
@@ -16,8 +18,9 @@ local weapons = {
 	tlljuno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
 	talon_juno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
 
-	--mortor_canon
-	tllleopard_mortor_cannon =  { radius = 95, damage = 250, duration = 150, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
+	--Blue Light Explosion
+	tllleopard_mortor_cannon =  { radius = 95, damage = 250, duration = 140, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
+	tllriot_tllriot_cannon = { radius = 75, damage = 200, duration = 35, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.5},
 
 }
 

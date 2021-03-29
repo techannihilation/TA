@@ -16,7 +16,6 @@ return {
 		category = "ALL ANTIFLAME LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "67 35 65",
-		collisionvolumetest = 1,
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

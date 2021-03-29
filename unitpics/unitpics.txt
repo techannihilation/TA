@@ -840,7 +840,7 @@ tlllmt.dds
 tlllmtns.dds
 tllloggerhead.dds
 tllloki.dds
-tlllongshot.dds
+tllmosaurus.dds
 tlllrpt.dds
 tllmanta.dds
 tllmas.dds

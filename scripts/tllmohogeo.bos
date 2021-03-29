@@ -3,52 +3,14 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, arm, elights, mlights, steam1, steam2, flames;
-
-static-var  Static_Var_1, Static_Var_2;
-
+piece  base, body, steam1;
 
 Steam()
 {
 	while( TRUE )
 	{
-		if( Static_Var_1 == 0 )
-		{
-			emit-sfx 257 from steam2;
+			//emit-sfx 257 from steam1;
 			sleep 200;
-		}
-		sleep 1;
-	}
-}
-
-Flamepipe()
-{
-	while( TRUE )
-	{
-		if( Static_Var_1 == 1 )
-		{
-			emit-sfx 1024 + 0 from flames;
-		}
-		sleep 55;
-	}
-}
-
-Standby()
-{
-	while( TRUE )
-	{
-		if( Static_Var_2 == 0 )
-		{
-			turn arm to y-axis <0.000000> speed <30.000000>;
-			wait-for-turn arm around y-axis;
-			Static_Var_1 = 1;
-			sleep 2670;
-			turn arm to y-axis <28.000000> speed <30.000000>;
-			wait-for-turn arm around y-axis;
-			Static_Var_1 = 0;
-			sleep 3670;
-		}
-		sleep 1;
 	}
 }
 
@@ -59,8 +21,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep 400;
 	}
 	start-script Steam();
-	start-script Flamepipe();
-	start-script Standby();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -84,37 +44,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	dont-cache arm;
-	dont-shade mlights;
-	dont-shade elights;
-	dont-shade arm;
-	Static_Var_2 = 0;
-	Static_Var_1 = 0;
 	start-script SmokeUnit();
-}
-
-Activate()
-{
-	cache elights;
-	Static_Var_2 = 0;
-	turn arm to y-axis <28.000000> speed <30.000000>;
-	wait-for-turn arm around y-axis;
-	dont-cache mlights;
-}
-
-Deactivate()
-{
-	Static_Var_2 = 1;
-	wait-for-turn arm around y-axis;
-	cache mlights;
-	turn arm to y-axis <0.000000> speed <30.000000>;
-	wait-for-turn arm around y-axis;
-	dont-cache elights;
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = body;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -123,21 +58,15 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
-		explode arm type NOHEATCLOUD;
-		explode elights type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arm type NOHEATCLOUD | FALL;
-		explode elights type NOHEATCLOUD | FALL;
 		explode body type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode arm type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode mlights type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

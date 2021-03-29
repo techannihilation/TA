@@ -126,7 +126,7 @@ return {
 	"armerez",
 	"corerez",
 	"tllerez",
-	"talon_erez",	
+	"talon_erez",
 },
 
 	--### SEA ###
@@ -239,7 +239,7 @@ return {
 		"tlltelsatnk",
 		"tlldemon",
 		"tllacid",
-		"tlllongshot",
+		"tllmosaurus",
 		-- tll t3 bots
 		"helepolis",
 		"hyperion",

@@ -79,24 +79,20 @@ local BlackList = {
 
    local Armtrails = {
    ["armrock_arm_kbot_rocket"] = true,
-   ["armrock1_arm_kbot_rocket1"] = true,
    ["armsam_armtruck_missile"] = true,
-   ["armsam1_armtruck_missile1"] = true,
    ["armcrack_lightartmissarm"] = true,
    }
 
    local Coretrails = {
    ["corstorm_core_kbot_rocket"] = true,
-   ["corstorm1_core_kbot_rocket1"] = true,
    ["cormist_cortruck_missile"] = true,
-   ["cormist1_cortruck_missile1"] = true,
    ["corgladiator_armkbot_missile3"] = true,
    ["corrock_lightartmiss"] = true,
    ["corbanisher_tawf_banisher"] = true,
    }
 
    local Tlltrails = {
-   ["tllannouncer_cortruck_missile"] = true,
+   --["tllannouncer_cortruck_missile"] = true,
    ["tllfireraiser_tll_kbot_rocket"] = true,
    }
 

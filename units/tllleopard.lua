@@ -120,7 +120,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:lightningexplo",
+				explosiongenerator = "custom:lightningexplobig",
 				gravityaffected = "TRUE",
 				hightrajectory = 1,
 				impulseboost = 0.123,

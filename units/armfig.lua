@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE FIGHTER VTOL",
 		collide = false,
-		cruisealt = 110,
+		cruisealt = 2110,
 		defaultmissiontype = "VTOL_standby",
 		description = "Fighter",
 		explodeas = "SMALL_UNITEX",

@@ -117,7 +117,7 @@ return {
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
-				cegtag = "Arm_Def_AA_Rocket",
+				cegtag = "Tll_Def_AA_Rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
