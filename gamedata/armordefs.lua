@@ -127,6 +127,8 @@ return {
 	"corerez",
 	"tllerez",
 	"talon_erez",
+	-- SATELLITE
+	"sat_radar",
 },
 
 	--### SEA ###
@@ -344,7 +346,6 @@ return {
 		"tllbarbarus",
 		"talon_skynet",
 		"talon_independence",
-
 		-- OTHER
 		"armnomad",
 	},

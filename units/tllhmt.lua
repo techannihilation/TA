@@ -17,7 +17,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Long-Range Anti-Air Tower",
+		description = "Long-Range Missile Tower (Anti Air/Satellite)",
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "H.M.T.",
 		noautofire = false,
-		
+
 		objectname = "TLLHMT",
 		radaremitheight = 37,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -155,7 +155,7 @@ return {
 			[1] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "WEAPON_MISSILEAAL",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 		},
 	},

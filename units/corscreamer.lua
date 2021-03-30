@@ -17,7 +17,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Long-Range Missile Tower",
+		description = "Long-Range Missile Tower (Anti Air/Satellite)",
 		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
@@ -159,7 +159,7 @@ return {
 			[1] = {
 				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
 				def = "WEAPON_MISSILEAAL",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 		},
 	},
