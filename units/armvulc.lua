@@ -28,8 +28,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T2 Vulcan",
-		
+		name = "T2 Vulcan",		
 		objectname = "ARMVULC",
 		radaremitheight = 136,
 		seismicsignature = 0,

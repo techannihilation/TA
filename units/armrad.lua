@@ -17,6 +17,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		description = "Tech Level 1",
+		energyuse = 15,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 2,
 		footprintz = 2,
