@@ -18,29 +18,29 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move body1 to y-axis [0] speed [6];
-		move neck to y-axis [0] speed [6];
-		move body2 to y-axis [-1.8] speed [6];			
+		move body1 to y-axis [0.0] speed [6.0];
+		move neck to y-axis [0.0] speed [6.0];
+		move body2 to y-axis [-1.8] speed [6.0];			
 		wait-for-move body1 along y-axis;
 	}
 	if( TRUE )
 	{		
-		move body2 to y-axis [0] speed [6];				
-		turn turretg to x-axis <0> speed <150>;
-		move boreg to z-axis [0] speed [2];		
-		move barrelc1 to z-axis [3] speed [2];	
-		move barrelc2 to z-axis [3] speed [2];
-		move borec to z-axis [1] speed [2];			
-		turn hatchc to x-axis <-179> speed <360>;
+		move body2 to y-axis [0.0] speed [6.0];				
+		turn turretg to x-axis <0.0> speed <150.0>;
+		move boreg to z-axis [0.0] speed [3.0];		
+		move barrelc1 to z-axis [0.0] speed [4.0];	
+		move barrelc2 to z-axis [0.0] speed [4.0];
+		move borec to z-axis [0.0] speed [1.0];			
+		turn hatchc to x-axis <-179.0> speed <360.0>;
 		wait-for-move body2 along y-axis;
 	}
 	if( TRUE )
 	{
-		turn turretb to x-axis <0> speed <150>;
-		move boreb to z-axis [0] speed [2];		
-		move barrelg to z-axis [0] speed [5];		
+		turn turretb to x-axis <0.0> speed <150.0>;
+		move boreb to z-axis [0.0] speed [2.0];		
+		move barrelg to z-axis [0.0] speed [5.0];		
 		wait-for-turn turretb around x-axis;
-		move barrelb to z-axis [0] speed [5];
+		move barrelb to z-axis [0.0] speed [5.0];
 	}
 	sleep 150;
 }
@@ -63,27 +63,27 @@ deactivatescr()
 	}
 	
 	if( TRUE )
+	{		
+		move borec to z-axis [-2.0] speed [4];
+		move barrelc1 to z-axis [-3.0] speed [6];	
+		move barrelc2 to z-axis [-3.0] speed [6];
+	}
+		
+	if( TRUE )
 	{
-		
-		move borec to z-axis [0] speed [2];
-		move barrelc1 to z-axis [0] speed [5];	
-		move barrelc2 to z-axis [0] speed [5];
-		turn barrelc1 to x-axis <0> speed <60>;
-		turn barrelc2 to x-axis <0> speed <60>;
-		
-		//move barrelr to z-axis [-4.8] speed [6];	
-		//move hatchc to y-axis [0.00000] speed [4.000000];
-		//move hatchc to z-axis [0.00000] speed [2.000000];	
 		move barrelg to z-axis [-0.18] speed [5];
 		move boreg to z-axis [-0.20] speed [2];		
 		wait-for-move boreg along z-axis;
+	}
+	if( TRUE )
+	{
 		turn hatchc to x-axis <0> speed <360>;	
+	}
+	if( TRUE )
+	{	
 		turn turretg to x-axis <180> speed <150>;		
 		move boreb to z-axis [-2.8] speed [2];	
 		move barrelb to z-axis [-2.8] speed [5];	
-		//turn turretb to x-axis <140> speed <60>;
-		//wait-for-move boreb along z-axis;
-		
 		turn turretb to x-axis <180> speed <80>;				
 		wait-for-turn turretg around x-axis;
 		wait-for-turn turretb around x-axis;
@@ -186,19 +186,25 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
+	////Heavy Laser
 	turn turretb to x-axis <180> now;
 	move boreb to z-axis [-1.8] now;
 	move barrelb to z-axis [-1.8] now;
 
+	//Medium Laser
 	turn turretg to x-axis <180> now;
 	move boreg to z-axis [-0.2] now;
 	move barrelg to z-axis [-1.8] now;
-
-	move borec to z-axis [-3.5] now;
+	
+	//Light Laser
+	move borec to z-axis [-2.0] now;
+	move barrelc1 to z-axis [-3.0] now;
+	move barrelc2 to z-axis [-3.0] now;
 	move hatchc to y-axis [0.0000] now;
 	move hatchc to z-axis [0.0000] now;
 	turn hatchc to x-axis <0> now;
-
+	
+	//Structure
 	move body2 to y-axis [-9] now;
 	move body1 to y-axis [-6.2] now;
 	move neck to y-axis [-9] now;
@@ -208,7 +214,6 @@ Create()
 	bOpening = 0;
 	restore_delay = 2000;
 	start-script SmokeUnit();
-	//start-script RequestState(0);
 }
 
 Activate()

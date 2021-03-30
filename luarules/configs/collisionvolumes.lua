@@ -122,14 +122,6 @@ local unitCollisionVolume = {					--dynamic collision volume definitions
 		on={120,34,92,0,0,0,2,1,0},
 		off={90,34,92,0,0,0,2,1,0},
 	},
-	[UnitDefNames["cordoom"].id] = {
-		on={63,112,63,0,12,0,1,1,1},
-		off={45,87,45,0,0,0,2,1,0},
-	},
-	[UnitDefNames["cordoom1"].id] = {
-		on={126,230,126,-2,2,0,1,1,1},
-		off={90,178,90,0,-26,0,2,1,0},
-	},
 	[UnitDefNames["corfmkr"].id] = {
 		on={48,46,48,0,0,0,1,1,1},
 		off={48,43,48,0,-16,0,1,1,1},

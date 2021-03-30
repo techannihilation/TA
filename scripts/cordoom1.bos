@@ -3,12 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, flarea, flareb, flarec1, flarec2, turreta, hatch, shell1a,
-       shell4b, shell3b, shell2b, shell1b, shell2a, shell3a, shell4a, turretb,
-       turretc, hatchc, sleevec, hatchb, barrelc1, barrelc2, collarb, barrelb,
-       barrela, sleevea, sleeveb;
+piece  base, ground, flarec1, flarec2, flarec3, turretr, borec, barrelc1, barrelc2, barrelc3, hatchc,
+		body1, turretg, boreg, spindle, flareg, neck,
+		body2, turretb1, boreb1, barrelb1, flareb1, turretb2, boreb2, barrelb2, flareb2,  pipes;
 
-static-var  gun_3, restore_delay, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+static-var  gun_1, gun_2, gun_3, restore_delay, bOpening, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -20,211 +19,99 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn hatch to z-axis <0.000000> now;
-		turn hatch to z-axis <-31.000000> speed <94.000000>;
-		sleep 150;
+		move body1 to y-axis [0.0] speed [6.0];
+		move neck to y-axis [0.0] speed [6.0];
+		move body2 to y-axis [-3.15] speed [6.0];			
+		wait-for-move body1 along y-axis;
+	}
+	if( TRUE )
+	{		
+		move body2 to y-axis [0.0] speed [6.0];				
+		turn turretg to x-axis <0.0> speed <150.0>;
+		move boreg to z-axis [0.0] speed [3.0];		
+		move barrelc1 to z-axis [0.0] speed [4.0];	
+		move barrelc2 to z-axis [0.0] speed [4.0];
+		move barrelc3 to z-axis [0.0] speed [4.0];
+		move borec to z-axis [0.0] speed [1.0];			
+		turn hatchc to x-axis <-179.0> speed <360.0>;
+		wait-for-move body2 along y-axis;
 	}
 	if( TRUE )
 	{
-		move hatch to x-axis [7.500000] speed [8.000000];
-		move hatch to y-axis [-8.500000] speed [10.000000];
-		turn hatch to z-axis <-49.000000> speed <52.000000>;
-		sleep 150;
+		turn turretb1 to x-axis <0.0> speed <150.0>;
+		turn turretb2 to x-axis <0.0> speed <150.0>;
+		move boreb1 to z-axis [0.0] speed [2.0];		
+		move boreb2 to z-axis [0.0] speed [2.0];
+		wait-for-turn turretb1 around x-axis;
+		move barrelb1 to z-axis [0.0] speed [5.0];
+		move barrelb2 to z-axis [0.0] speed [5.0];
 	}
-	if( TRUE )
-	{
-		move shell4b to x-axis [-10.000000] speed [12.000000];
-		move shell3b to z-axis [-10.000000] speed [12.000000];
-		move shell2b to x-axis [10.000000] speed [10.000000];
-		move shell1b to z-axis [10.000000] speed [10.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move shell1a to x-axis [8.60000] speed [8.000000];
-		move shell2a to z-axis [-8.60000] speed [8.000000];
-		move shell3a to x-axis [-8.60000] speed [8.000000];
-		move shell4a to z-axis [8.600000] speed [8.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move shell1a to y-axis [-33.00000] speed [34.000000];
-		move shell2a to y-axis [-33.00000] speed [34.000000];
-		move shell3a to y-axis [-33.00000] speed [32.000000];
-		move shell4a to y-axis [-32.00000] speed [32.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		sleep 100;
-	}
-	if( TRUE )
-	{
-		move turreta to y-axis [8.800000] speed [12.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move turreta to y-axis [17.600000] speed [12.000000];
-		move turretb to y-axis [8.800000] speed [12.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move turreta to y-axis [23.200000] speed [8.000000];
-		move turretb to y-axis [14.400000] speed [6.000000];
-		move turretc to y-axis [5.600000] speed [6.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move hatchc to y-axis [3.200000] speed [4.000000];
-		move hatchc to z-axis [-1.600000] speed [2.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move sleevec to z-axis [8.000000] speed [12.000000];
-		move hatchb to x-axis [5.600000] speed [8.000000];
-		move hatchb to z-axis [-6.400000] speed [8.000000];
-		turn hatchb to y-axis <-46.000000> speed <137.000000>;
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move barrelc1 to z-axis [6.400000] speed [16.000000];
-		move barrelc2 to z-axis [6.400000] speed [16.000000];
-		move collarb to z-axis [7.200000] speed [16.000000];
-		move barrelb to z-axis [7.200000] speed [20.000000];
-		move barrela to z-axis [7.200000] speed [20.000000];
-		sleep 120;
-	}
-	sleep 22;
+	sleep 150;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		stop-spin turreta around y-axis;
-		stop-spin turretb around y-axis;
-		stop-spin turretc around y-axis;
-		stop-spin sleevea around x-axis;
-		stop-spin sleeveb around x-axis;
-		stop-spin sleevec around x-axis;
-		move turreta to y-axis [23.200000] now;
-		move turretb to y-axis [14.400000] now;
-		move turretc to y-axis [5.600000] now;
-		move shell1a to x-axis [6.400000] now;
-		move shell1a to y-axis [-23.200000] now;
-		move shell1a to z-axis [0.000000] now;
-		move shell2a to y-axis [-23.200000] now;
-		move shell2a to z-axis [-6.400000] now;
-		move shell3a to x-axis [-6.400000] now;
-		move shell3a to y-axis [-23.200000] now;
-		move shell4a to y-axis [-23.200000] now;
-		move shell4a to z-axis [6.400000] now;
-		move shell4b to x-axis [-8.000000] now;
-		move shell3b to z-axis [-8.000000] now;
-		move shell2b to x-axis [8.000000] now;
-		move shell1b to z-axis [8.000000] now;
-		move hatch to x-axis [6.400000] now;
-		move hatch to y-axis [-7.200000] now;
-		move hatchc to y-axis [3.200000] now;
-		move hatchc to z-axis [-1.600000] now;
-		move sleevec to z-axis [8.000000] now;
-		move barrelc1 to z-axis [6.400000] now;
-		move barrelc2 to z-axis [6.400000] now;
-		move collarb to z-axis [7.200000] now;
-		move hatchb to x-axis [5.600000] now;
-		move hatchb to z-axis [-6.400000] now;
-		move barrelb to z-axis [7.200000] now;
-		move barrela to z-axis [7.200000] now;
-		move barrela to z-axis [0.000000] speed [10.000000];
-		turn hatch to z-axis <-49.000000> now;
-		turn hatchb to y-axis <-47.000000> now;
-		move barrelb to z-axis [0.000000] speed [10.000000];
-		move barrelc1 to z-axis [0.000000] speed [8.000000];
-		move barrelc2 to z-axis [0.000000] speed [8.000000];
-		move collarb to z-axis [0.000000] speed [8.000000];
-		sleep 150;
+		sleep 500;
+	}
+	
+	if( TRUE )
+	{
+		turn turretr to y-axis <0> speed <100>;	
+		turn body1 to y-axis <0> speed <75>;	
+		turn body2 to y-axis <0> speed <37.5>;	
+		wait-for-turn turretr around y-axis;
+		wait-for-turn body1 around y-axis;
+		wait-for-turn body2 around y-axis;		
+	}
+	
+	if( TRUE )
+	{		
+		move borec to z-axis [-3.0] speed [4];
+		move barrelc1 to z-axis [-4.5] speed [6];	
+		move barrelc2 to z-axis [-4.5] speed [6];
+		move barrelc3 to z-axis [-4.5] speed [6];
+	}
+		
+	if( TRUE )
+	{
+		move boreg to z-axis [-0.30] speed [2];		
+		wait-for-move boreg along z-axis;
 	}
 	if( TRUE )
 	{
-		move sleevec to z-axis [0.000000] speed [12.000000];
-		move hatchb to x-axis [0.000000] speed [8.000000];
-		move hatchb to z-axis [0.000000] speed [8.000000];
-		turn hatchb to y-axis <0.000000> speed <137.000000>;
-		sleep 150;
+		turn hatchc to x-axis <0> speed <360>;	
 	}
 	if( TRUE )
-	{
-		move hatchc to y-axis [0.000000] speed [4.000000];
-		move hatchc to z-axis [0.000000] speed [2.000000];
-		sleep 150;
+	{	
+		turn turretg to x-axis <180> speed <150>;		
+		move boreb1 to z-axis [-5.0] speed [2];	
+		move boreb2 to z-axis [-5.0] speed [2];	
+		move barrelb1 to z-axis [-5.0] speed [5];	
+		move barrelb2 to z-axis [-5.0] speed [5];	
+		turn turretb1 to x-axis <180> speed <80>;				
+		turn turretb2 to x-axis <180> speed <80>;				
+		wait-for-turn turretg around x-axis;
+		wait-for-turn turretb1 around x-axis;
 	}
+	
 	if( TRUE )
 	{
-		move turreta to y-axis [17.600000] speed [8.000000];
-		move turretb to y-axis [8.800000] speed [8.000000];
-		move turretc to y-axis [0.000000] speed [8.000000];
-		sleep 150;
+		move body2 to y-axis [-2.75] speed [6];
+		move neck to y-axis [-2.75] speed [6];
+		wait-for-move body2 along y-axis;
 	}
+	
 	if( TRUE )
 	{
-		move turreta to y-axis [8.800000] speed [12.000000];
-		move turretb to y-axis [0.000000] speed [12.000000];
-		sleep 150;
+		move neck to y-axis [-15.75] speed [6];
+		move body2 to y-axis [-15.75] speed [6];
+		move body1 to y-axis [-9.5] speed [6];
+		wait-for-move body1 along y-axis;
 	}
-	if( TRUE )
-	{
-		move turreta to y-axis [0.000000] speed [12.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		sleep 100;
-	}
-	if( TRUE )
-	{
-		move shell1a to y-axis [0.000000] speed [34.000000];
-		move shell2a to y-axis [0.000000] speed [34.000000];
-		move shell3a to y-axis [0.000000] speed [34.000000];
-		move shell4a to y-axis [0.000000] speed [34.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move shell1a to x-axis [0.000000] speed [10.000000];
-		move shell1a to z-axis [0.000000] speed [0.000000];
-		move shell2a to z-axis [0.000000] speed [10.000000];
-		move shell3a to x-axis [0.000000] speed [10.000000];
-		move shell4a to z-axis [0.000000] speed [10.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move shell1a to z-axis [0.000000] speed [0.000000];
-		move shell4b to x-axis [0.000000] speed [12.000000];
-		move shell3b to z-axis [0.000000] speed [12.000000];
-		move shell2b to x-axis [0.000000] speed [12.000000];
-		move shell1b to z-axis [0.000000] speed [10.000000];
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		move hatch to x-axis [0.000000] speed [8.000000];
-		move hatch to y-axis [0.000000] speed [10.000000];
-		turn hatch to z-axis <-31.000000> speed <53.000000>;
-		sleep 150;
-	}
-	if( TRUE )
-	{
-		turn hatch to z-axis <0.000000> speed <96.000000>;
-		sleep 150;
-	}
-	sleep 27;
+
+	sleep 150;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -256,71 +143,20 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	dont-cache barrela;
-	dont-cache barrelb;
-	dont-cache barrelc1;
-	dont-cache barrelc2;
-	dont-cache collarb;
-	dont-cache flarea;
-	dont-cache flareb;
-	dont-cache flarec1;
-	dont-cache flarec2;
-	dont-cache hatch;
-	dont-cache hatchb;
-	dont-cache hatchc;
-	dont-cache shell1a;
-	dont-cache shell1b;
-	dont-cache shell2a;
-	dont-cache shell2b;
-	dont-cache shell3a;
-	dont-cache shell3b;
-	dont-cache shell4a;
-	dont-cache shell4b;
-	dont-cache sleevea;
-	dont-cache sleeveb;
-	dont-cache sleevec;
-	dont-cache turreta;
-	dont-cache turretb;
-	dont-cache turretc;
 	set ARMORED to 0;
-	if( !Static_Var_3 )
+	if( !bOpening )
 	{
 		call-script activatescr();
 	}
-	Static_Var_3 = 1;
+	bOpening = 1;
 }
 
 Stop()
 {
-	Static_Var_3 = 0;
+	bOpening = 0;
 	call-script deactivatescr();
 	set ARMORED to 1;
-	cache barrela;
-	cache barrelb;
-	cache barrelc1;
-	cache barrelc2;
-	cache collarb;
-	cache flarea;
-	cache flareb;
-	cache flarec1;
-	cache flarec2;
-	cache hatch;
-	cache hatchb;
-	cache hatchc;
-	cache shell1a;
-	cache shell1b;
-	cache shell2a;
-	cache shell2b;
-	cache shell3a;
-	cache shell3b;
-	cache shell4a;
-	cache shell4b;
-	cache sleevea;
-	cache sleeveb;
-	cache sleevec;
-	cache turreta;
-	cache turretb;
-	cache turretc;
+
 }
 
 InitState()
@@ -357,44 +193,37 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	hide flarea;
-	hide flareb;
-	hide flarec1;
-	hide flarec2;
-	dont-shade barrela;
-	dont-shade barrelb;
-	dont-shade barrelc1;
-	dont-shade barrelc2;
-	dont-shade collarb;
-	dont-shade flarea;
-	dont-shade flareb;
-	dont-shade flarec1;
-	dont-shade flarec2;
-	dont-shade hatch;
-	dont-shade hatchb;
-	dont-shade hatchc;
-	dont-shade shell1a;
-	dont-shade shell1b;
-	dont-shade shell2a;
-	dont-shade shell2b;
-	dont-shade shell3a;
-	dont-shade shell3b;
-	dont-shade shell4a;
-	dont-shade shell4b;
-	dont-shade sleevea;
-	dont-shade sleeveb;
-	dont-shade sleevec;
-	dont-shade turreta;
-	dont-shade turretb;
-	dont-shade turretc;
-	gun_3 = flarea;
+	////Heavy Laser
+	turn turretb1 to x-axis <180> now;
+	turn turretb2 to x-axis <180> now;
+	move boreb1 to z-axis [-3.15] now;
+	move boreb2 to z-axis [-3.15] now;
+	move barrelb1 to z-axis [-3.15] now;
+	move barrelb2 to z-axis [-3.15] now;
+
+	//Medium Laser
+	turn turretg to x-axis <180> now;
+	move boreg to z-axis [-0.315] now;
+	
+	//Light Laser
+	move borec to z-axis [-3.0] now;
+	move barrelc1 to z-axis [-4.5] now;
+	move barrelc2 to z-axis [-4.5] now;
+	move barrelc3 to z-axis [-4.5] now;
+	move hatchc to y-axis [0.0000] now;
+	move hatchc to z-axis [0.0000] now;
+	turn hatchc to x-axis <0> now;
+	
+	//Structure
+	move body2 to y-axis [-15.0] now;
+	move body1 to y-axis [-9.0] now;
+	move neck to y-axis [-15.0] now;
+	
+	gun_1 = 0;
+	gun_3 = 0;
 	call-script InitState();
-	Static_Var_3 = 0;
+	bOpening = 0;
 	restore_delay = 2000;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 250;
-	}
 	start-script SmokeUnit();
 }
 
@@ -411,23 +240,19 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 4;
-}
-
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !Static_Var_3 )
+	while( !bOpening )
 	{
 		sleep 250;
 	}
-	turn turreta to y-axis heading speed <50.000000>;
-	turn sleevea to x-axis <0.000000> - pitch speed <50.000000>;
-	wait-for-turn turreta around y-axis;
-	wait-for-turn sleevea around x-axis;
+	turn body2 to y-axis heading speed <75.000000>;
+	turn turretb1 to x-axis <0.0> - pitch speed <75.000000>;
+	turn turretb2 to x-axis <0.0> - pitch speed <75.000000>;
+	wait-for-turn body2 around y-axis;
+	wait-for-turn turretb1 around x-axis;
 	return (1);
 }
 
@@ -435,14 +260,14 @@ AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	while( !Static_Var_3 )
+	while( !bOpening )
 	{
 		sleep 250;
 	}
-	turn turretb to y-axis heading speed <200.000000>;
-	turn sleeveb to x-axis <0.000000> - pitch speed <200.000000>;
-	wait-for-turn turretb around y-axis;
-	wait-for-turn sleeveb around x-axis;
+	turn body1 to y-axis heading speed <150.000000>;
+	turn turretg to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn body1 around y-axis;
+	wait-for-turn turretg around x-axis;
 	return (1);
 }
 
@@ -450,86 +275,119 @@ AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	while( !Static_Var_3 )
+	while( !bOpening )
 	{
 		sleep 250;
 	}
-	turn turretc to y-axis heading speed <300.000000>;
-	turn sleevec to x-axis <0.000000> - pitch speed <300.000000>;
-	wait-for-turn turretc around y-axis;
-	wait-for-turn sleevec around x-axis;
+	turn turretr to y-axis heading speed <200.000000>;
+	wait-for-turn turretr around y-axis;
 	return (1);
 }
 
 FirePrimary()
 {
-	show flarea;
-	sleep 150;
-	hide flarea;
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
 }
 
 FireSecondary()
 {
-	show flareb;
-	sleep 150;
-	hide flareb;
+	if( gun_2  == 0 )
+	{
+		sleep 250;
+		turn spindle to z-axis <0.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
+	}
+	else if( gun_2 == 1 )
+	{
+		sleep 250;
+		turn spindle to z-axis <72.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
+	}
+	else if( gun_2 == 2 )
+	{
+		sleep 250;
+		turn spindle to z-axis <144.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
+	}
+	else if( gun_2 == 3 )
+	{
+		sleep 250;
+		turn spindle to z-axis <216.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
+	}
+	else if( gun_2== 4 )
+	{
+		sleep 250;
+		turn spindle to z-axis <288.000000> speed <400.000000>;
+		wait-for-turn spindle around z-axis;
+	}
+	++gun_2;
+	if( gun_2 == 5 )
+	{
+		gun_2 = 0;
+	}
+
 }
 
 FireTertiary()
 {
-	if( gun_3 == 1 )
+	++gun_3;
+	if( gun_3 == 3 )
 	{
-		show flarec1;
-		sleep 150;
-		hide flarec1;
-		gun_3 = flareb;
-		return (0);
-	}
-	if( gun_3 == 2 )
-	{
-		show flarec2;
-		sleep 150;
-		hide flarec2;
-		gun_3 = flarea;
-		return (0);
+		gun_3 = 0;
 	}
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = turreta;
+	piecenum = body2;
 }
 
 AimFromSecondary(piecenum)
 {
-	piecenum = turretb;
+	piecenum = body1;
 }
 
 AimFromTertiary(piecenum)
 {
-	piecenum = turretc;
+	piecenum = turretr;
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = flarea;
+	if( gun_1 == 0 )
+	{
+		piecenum = flareb1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flareb2;
+	}
 }
 
 QuerySecondary(piecenum)
 {
-	piecenum = flareb;
+	piecenum = flareg;
 }
 
 QueryTertiary(piecenum)
 {
-	if( gun_3 == 1 )
+	if( gun_3 == 0 )
 	{
 		piecenum = flarec1;
 	}
-	if( gun_3 == 2 )
+	if( gun_3 == 1  )
 	{
 		piecenum = flarec2;
 	}
+	if( gun_3 == 2  )
+	{
+		piecenum = flarec3;
+	}	
 }
 
 SweetSpot(piecenum)
@@ -539,133 +397,60 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flarea;
-	hide flareb;
-	hide flarec1;
-	hide flarec2;
 	if( severity <= 25 )
 	{
-		corpsetype = 1;
-		explode barrela type NOHEATCLOUD;
-		explode barrelb type NOHEATCLOUD;
+		corpsetype = 1 ;
+		explode ground type NOHEATCLOUD;
+		explode body1 type NOHEATCLOUD;
+		explode body2 type NOHEATCLOUD;
+		explode spindle type NOHEATCLOUD;
+		explode flareg type NOHEATCLOUD;
+		explode neck type NOHEATCLOUD;
+		explode turretr type NOHEATCLOUD;
+		explode borec type NOHEATCLOUD;
 		explode barrelc1 type NOHEATCLOUD;
-		explode barrelc2 type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
-		explode collarb type NOHEATCLOUD;
-		explode flarea type NOHEATCLOUD;
-		explode flareb type NOHEATCLOUD;
 		explode flarec1 type NOHEATCLOUD;
 		explode flarec2 type NOHEATCLOUD;
-		explode hatch type NOHEATCLOUD;
-		explode hatchb type NOHEATCLOUD;
-		explode hatchc type NOHEATCLOUD;
-		explode shell1a type NOHEATCLOUD;
-		explode shell1b type NOHEATCLOUD;
-		explode shell2a type NOHEATCLOUD;
-		explode shell2b type NOHEATCLOUD;
-		explode shell3a type NOHEATCLOUD;
-		explode shell3b type NOHEATCLOUD;
-		explode shell4a type NOHEATCLOUD;
-		explode shell4b type NOHEATCLOUD;
-		explode sleevea type NOHEATCLOUD;
-		explode sleeveb type NOHEATCLOUD;
-		explode sleevec type NOHEATCLOUD;
-		explode turreta type NOHEATCLOUD;
-		explode turretb type NOHEATCLOUD;
-		explode turretc type NOHEATCLOUD;
-		return (corpsetype);
+		explode body2 type NOHEATCLOUD;
+		explode turretb1 type NOHEATCLOUD;
+		explode boreb2 type NOHEATCLOUD;
+		explode barrelb1 type NOHEATCLOUD;
+		return(corpsetype);
 	}
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
-		explode barrela type NOHEATCLOUD | FALL;
-		explode barrelb type NOHEATCLOUD | FALL;
-		explode barrelc1 type NOHEATCLOUD | FALL;
-		explode barrelc2 type NOHEATCLOUD | FALL;
-		explode base type NOHEATCLOUD;
-		explode collarb type NOHEATCLOUD | FALL;
-		explode flarea type NOHEATCLOUD | FALL;
-		explode flareb type NOHEATCLOUD | FALL;
-		explode flarec1 type NOHEATCLOUD | FALL;
-		explode flarec2 type NOHEATCLOUD | FALL;
-		explode hatch type NOHEATCLOUD | FALL;
-		explode hatchb type NOHEATCLOUD | FALL;
-		explode hatchc type NOHEATCLOUD | FALL;
-		explode shell1a type NOHEATCLOUD;
-		explode shell1b type NOHEATCLOUD;
-		explode shell2a type NOHEATCLOUD;
-		explode shell2b type NOHEATCLOUD;
-		explode shell3a type NOHEATCLOUD;
-		explode shell3b type NOHEATCLOUD;
-		explode shell4a type NOHEATCLOUD;
-		explode shell4b type NOHEATCLOUD;
-		explode sleevea type NOHEATCLOUD | FALL;
-		explode sleeveb type NOHEATCLOUD | FALL;
-		explode sleevec type NOHEATCLOUD | FALL;
-		explode turreta type NOHEATCLOUD;
-		explode turretb type NOHEATCLOUD;
-		explode turretc type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
+		corpsetype = 2 ;
+		explode ground type NOHEATCLOUD;
+		explode body1 type NOHEATCLOUD;
+		explode body2 type NOHEATCLOUD;
+		explode spindle type NOHEATCLOUD | SMOKE | FALL;
+		explode flareg type NOHEATCLOUD;
+		explode neck type NOHEATCLOUD | SMOKE | FALL;
+		explode turretr type NOHEATCLOUD | SMOKE | FALL;
+		explode borec type NOHEATCLOUD | SMOKE | FALL;
+		explode barrelc1 type NOHEATCLOUD | SMOKE | FALL;
+		explode flarec1 type NOHEATCLOUD;
+		explode flarec2 type NOHEATCLOUD | SMOKE | FALL;
+		explode turretb1 type NOHEATCLOUD | SMOKE | FALL;
+		explode boreb2 type NOHEATCLOUD;
+		explode barrelb1 type NOHEATCLOUD;
+		return(corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrela type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrelb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrelc1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrelc2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
-		explode collarb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flarea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flareb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flarec1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flarec2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode hatch type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode hatchb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode hatchc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode shell1a type NOHEATCLOUD;
-		explode shell1b type NOHEATCLOUD;
-		explode shell2a type NOHEATCLOUD;
-		explode shell2b type NOHEATCLOUD;
-		explode shell3a type NOHEATCLOUD;
-		explode shell3b type NOHEATCLOUD;
-		explode shell4a type NOHEATCLOUD;
-		explode shell4b type NOHEATCLOUD;
-		explode sleevea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeveb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleevec type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turreta type NOHEATCLOUD;
-		explode turretb type NOHEATCLOUD;
-		explode turretc type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	corpsetype = 3;
-	explode barrela type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrelb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrelc1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrelc2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD;
-	explode collarb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode flarea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode flareb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode flarec1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode flarec2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode hatch type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode hatchb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode hatchc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode shell1a type NOHEATCLOUD;
-	explode shell1b type NOHEATCLOUD;
-	explode shell2a type NOHEATCLOUD;
-	explode shell2b type NOHEATCLOUD;
-	explode shell3a type NOHEATCLOUD;
-	explode shell3b type NOHEATCLOUD;
-	explode shell4a type NOHEATCLOUD;
-	explode shell4b type NOHEATCLOUD;
-	explode sleevea type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeveb type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleevec type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turreta type NOHEATCLOUD;
-	explode turretb type NOHEATCLOUD;
-	explode turretc type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	return (corpsetype);
+	corpsetype = 3 ;
+		explode ground type NOHEATCLOUD;
+		explode body1 type NOHEATCLOUD;
+		explode body2 type NOHEATCLOUD;
+		explode spindle type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
+		explode flareg type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
+		explode neck type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+		explode turretr type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+		explode borec type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
+		explode barrelc1 type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
+		explode flarec1 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+		explode flarec2 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+		explode body2 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+		explode turretb1 type EXPLODE_ON_HIT | NOHEATCLOUD | SMOKE | FALL;
+		explode boreb2 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+		explode barrelb1 type EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+	return corpsetype;
 }
