@@ -135,7 +135,7 @@ return {
 				range = 775,
 				reloadtime = 0.25,
 				rgbcolor = "1.0 0.5 0.0",
-				size = 5,
+				size = 2,
 				soundhitdry = "flakhit",
 				soundhitwet = "splsmed",
 				soundhitwetvolume = 0.6,

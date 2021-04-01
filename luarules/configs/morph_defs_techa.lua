@@ -1428,7 +1428,7 @@ local morphDefs = {
 	corejudgement = {
 		into = 'coradamantoise',
 		time = 120,
-		xp = 0.10,
+		xp = 0.15,
 	},
 	armnomad = {
 		{

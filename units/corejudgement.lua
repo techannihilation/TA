@@ -41,7 +41,7 @@ return {
 		objectname = "corejudgement",
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",
-		sightdistance = 480,
+		sightdistance = 500,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
