@@ -276,7 +276,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 220,

@@ -281,14 +281,14 @@ return {
 				onlytargetcategory = "SURFACE UNDERWATER",
 			},
 			[4] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "mobileflak",
 				onlytargetcategory = "VTOL",
 				maindir = "0 0 -1",
 				maxangledif = 320,
 			},
 			[5] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "mobileflak",
 				onlytargetcategory = "VTOL",
 				maindir = "0 0 1",

@@ -286,17 +286,17 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[7] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "CORFLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},
 			[8] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "CORFLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},
 			[9] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "CORFLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},

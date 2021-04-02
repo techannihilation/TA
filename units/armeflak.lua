@@ -199,12 +199,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "ARM_FLAK",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "AA_STARBURST",
 				onlytargetcategory = "VTOL",
 			},

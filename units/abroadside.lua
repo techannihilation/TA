@@ -201,14 +201,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "ARMFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "ARMFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 200,

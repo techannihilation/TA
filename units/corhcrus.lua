@@ -260,7 +260,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "AA_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 220,

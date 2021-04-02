@@ -1,3 +1,13 @@
+3.83 > 3.84
+2021-04-03
+Balance :
+ - All AA (ground and Air) : bad target category = scout & areoship (hero). So send fighters with bombers/transport to increase luck to pass over AA defenses
+
+ Improvment :
+ - Add T3 Satellite Radar in T3 Air Lab for each faction. Can be killed only by T2 Long Range Missile Turret
+ - Add Mosaurus T3 Hover on veh LAB
+ - Delete all strong T1 vehicle from labs (flammer core, rottweiler arm, obsidian talon)
+
 3.82 > 3.83
 2021-03-30
 Balance :
@@ -10,13 +20,11 @@ Balance :
  - Delete Metal & Energy storage with Labs (100E and M)
 
  Improvment :
-  - Add T3 Satellite Radar in T3 Air Lab for each faction. Can be killed only by T2 Long Range Missile Turret
-  - Add Mosaurus T3 Hover on veh LAB
-  - Delete Longshot (T3 EMP TLL Vehicle)
-  - tlllochness (tll t2 hover) : Rework Model
-  - T2 Moho Geo TLL : Rework Model
-  - T3 TLL Vehicle Lavb : Rework Model
-  - Delete all T1 Missile Trucks. Keep models for Arm/Core and they become now AA
+ - Delete Longshot (T3 EMP TLL Vehicle)
+ - tlllochness (tll t2 hover) : Rework Model
+ - T2 Moho Geo TLL : Rework Model
+ - T3 TLL Vehicle Lavb : Rework Model
+ - Delete all T1 Missile Trucks. Keep models for Arm/Core and they become now AA
 
  Fix :
  - Turtle lab can be construct in water

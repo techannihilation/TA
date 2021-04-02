@@ -309,14 +309,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[8] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "MINIFLAK",
 				maindir = "-0.8 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
 			[9] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "MINIFLAK",
 				maindir = "0 0 -1",
 				maxangledif = 270,

@@ -267,7 +267,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "dragon_breath_gun",
 				onlytargetcategory = "VTOL",
 			},

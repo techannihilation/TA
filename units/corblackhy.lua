@@ -260,7 +260,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "HYDRAMISS",
 				maindir = "1 0 1",
 				maxangledif = 240,
@@ -279,7 +279,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
-				badtargetcategory = "SCOUT FIGHTER SUPERSHIP",
+				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "HYDRAMISS",
 				maindir = "-1 0 1",
 				maxangledif = 240,
