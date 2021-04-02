@@ -64,7 +64,7 @@ return {
 			[9] = "corgarp",
 			[10] = "corraid",
 			[11] = "corlevlr",
-			[12] = "corgfbt",
+			--[12] = "corgfbt",
 		},
 		customparams = {
 			buildpic = "corvp.dds",

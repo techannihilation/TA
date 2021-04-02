@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK3",
 		name = "Rottweiler",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMROTTWEILER",
 		radardistance = 0,
 		radaremitheight = 25,
