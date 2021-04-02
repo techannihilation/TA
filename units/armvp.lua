@@ -64,7 +64,7 @@ return {
 			[9] = "armpincer",
 			[10] = "armstump",
 			[11] = "armjanus",
-			[12] = "armrottweiler",
+			--[12] = "armrottweiler",
 		},
 		customparams = {
 			buildpic = "armvp.dds",
