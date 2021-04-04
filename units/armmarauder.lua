@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "armmarauder",
 		noautofire = false,
-		
+
 		objectname = "armmarauder",
 		radaremitheight = 32,
 		seismicsignature = 0,
@@ -156,10 +156,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					areoship = 25,
+					areoship = 20,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					priority_air = 80,
+					unclassed_air = 80,
 				},
 			},
 			armmech_cannon = {

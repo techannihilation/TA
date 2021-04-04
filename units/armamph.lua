@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Pelican",
 		noautofire = false,
-		
+
 		objectname = "ARMAMPH",
 		radaremitheight = 27,
 		seismicsignature = 0,
@@ -163,8 +163,8 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					priority_air = 80,
+					unclassed_air = 80,
 				},
 			},
 			armamph_weapon1 = {

@@ -3,8 +3,8 @@ return {
 		acceleration = 0.096,
 		airsightdistance = 700,
 		brakerate = 0.336,
-		buildcostenergy = 4267,
-		buildcostmetal = 245,
+		buildcostenergy = 3067,
+		buildcostmetal = 235,
 		builder = false,
 		buildpic = "corah.dds",
 		buildtime = 3652,
@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		maneuverleashlength = 640,
-		mass = 245,
+		mass = 235,
 		maxdamage = 1008,
 		maxslope = 16,
 		maxvelocity = 3.2,
@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Slinger",
 		noautofire = false,
-		
+
 		objectname = "CORAH",
 		radaremitheight = 25,
 		seismicsignature = 0,

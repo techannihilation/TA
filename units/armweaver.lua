@@ -158,10 +158,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1400,
 				damage = {
-					areoship = 25,
+					areoship = 20,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					priority_air = 80,
+					unclassed_air = 80,
 				},
 			},
 			armweaver_laser = {

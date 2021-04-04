@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK3",
 		name = "Coyote",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "TLLCOYOTE",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -155,10 +155,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					areoship = 25,
+					areoship = 20,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					priority_air = 80,
+					unclassed_air = 80,
 				},
 			},
 			tll_canon = {

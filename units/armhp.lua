@@ -36,7 +36,6 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Platform",
 		noautofire = false,
-
 		objectname = "ARMHP",
 		radaremitheight = 22,
 		seismicsignature = 0,

@@ -35,7 +35,6 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Snake",
 		noautofire = false,
-		
 		objectname = "TLLHOVERMISSILE",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -133,7 +132,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,
-				reloadtime = 2.2,
+				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",

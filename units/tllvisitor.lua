@@ -119,7 +119,7 @@ return {
 				areaofeffect = 64,
 				avoidfeature = false,
 				burst = 2,
-				burstrate = 0.4,
+				burstrate = 0.25,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
 				craterareaofeffect = 0,
@@ -157,10 +157,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 820,
 				damage = {
-					areoship = 25,
+					areoship = 20,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					priority_air = 80,
+					unclassed_air = 80,
 				},
 			},
 			visitor_vpulse = {
