@@ -94,8 +94,9 @@ function gadget:Initialize()
   Spring.AddUnitIcon("x.user", "icons/x.png")
   Spring.AddUnitIcon("rc.user", "icons/rc.png", 1.4)
   Spring.AddUnitIcon("rc1.user", "icons/rc.png", 2)
-  Spring.AddUnitIcon("t4ships.user", "icons/t4ships.png", 5)
-  Spring.AddUnitIcon("t5ships.user", "icons/t4ships.png", 8)
+  Spring.AddUnitIcon("t5ships.user", "icons/t5ships.png", 5)
+  Spring.AddUnitIcon("t5bigships.user", "icons/t5ships.png", 6.5)
+  Spring.AddUnitIcon("t6ships.user", "icons/t5ships.png", 8)
   Spring.AddUnitIcon("bships.user", "icons/bship.png", 2.5)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png", 3.6)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png", 0.65)
@@ -125,6 +126,8 @@ function gadget:Initialize()
   Spring.AddUnitIcon("arm_furie.user", "icons/arm_furie.png", 3)
   Spring.AddUnitIcon("liche.user", "icons/liche.png", 2.5)
   Spring.AddUnitIcon("krow.user", "icons/krow.png", 2.5)
+  Spring.AddUnitIcon("satellite.user", "icons/satellite.png", 3)
+  Spring.AddUnitIcon("coradamantoise.user", "icons/coradamantoise.png", 4.5)
 
   -- Setup the unitdef icons
   for udid,ud in pairs(UnitDefs) do
@@ -146,7 +149,9 @@ function gadget:Initialize()
 --t3 fighters
       elseif (ud.name=="armwolf") or (ud.name=="shrike") or (ud.name=="tllshu") or (ud.name=="talon_hornet") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user")
-
+--satellite
+    elseif (ud.name=="sat_radar") then
+      Spring.SetUnitDefIcon(udid, "satellite.user")
 --krow
       elseif (ud.name=="corcrw") then
         Spring.SetUnitDefIcon(udid, "krow.user")
@@ -190,6 +195,8 @@ function gadget:Initialize()
           Spring.SetUnitDefIcon(udid, "cormkl.user")
     elseif (ud.name=="armmygalo") then
           Spring.SetUnitDefIcon(udid, "armmygalo.user")
+    elseif (ud.name=="coradamantoise") then
+          Spring.SetUnitDefIcon(udid, "coradamantoise.user")
 --Furie
     elseif (ud.name=="arm_furie") then
           Spring.SetUnitDefIcon(udid, "arm_furie.user")
@@ -264,12 +271,15 @@ function gadget:Initialize()
 --last rc
       elseif (ud.name=="correch4") or (ud.name=="armrech4") then
         Spring.SetUnitDefIcon(udid, "rc1.user")
---broadside etc
-      elseif (ud.name=="abroadside") or (ud.name=="armhope") or (ud.name=="cdevastator") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllzeppelin") or (ud.name=="tllbarbarus") or (ud.name=="talon_independence") or (ud.name=="talon_skynet") then
-        Spring.SetUnitDefIcon(udid, "t4ships.user")
---broadside etc
-      elseif (ud.name=="armarch") then
+--T5 Medium / Small Hero
+      elseif (ud.name=="armhope") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllbarbarus") or (ud.name=="talon_skynet") then
         Spring.SetUnitDefIcon(udid, "t5ships.user")
+--T5 Big Hero
+      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllzeppelin") then
+        Spring.SetUnitDefIcon(udid, "t5bigships.user")
+--T6 Arch or independance
+      elseif (ud.name=="armarch") or (ud.name=="talon_independence") then
+        Spring.SetUnitDefIcon(udid, "t6ships.user")
 
 --battleships
       elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") or (ud.name=="talon_imperator") then
