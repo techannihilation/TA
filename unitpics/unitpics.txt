@@ -659,7 +659,7 @@ hyperion.dds
 irritator.dds
 krogtaar.dds
 macross.dds
-madsam.dds
+corsam.dds
 armmarauder.dds
 armmercury.dds
 cormonkeylord.dds

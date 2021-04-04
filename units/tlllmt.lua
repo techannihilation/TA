@@ -2,8 +2,8 @@ return {
 	tlllmt = {
 		airsightdistance = 700,
 		buildangle = 1768,
-		buildcostenergy = 542,
-		buildcostmetal = 93,
+		buildcostenergy = 742,
+		buildcostmetal = 88,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Besom",
 		noautofire = false,
-
 		objectname = "TLLLMT",
 		radaremitheight = 81,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -152,10 +151,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 750,
 				damage = {
-					areoship = 22.5,
+					areoship = 20,
 					default = 5,
-					priority_air = 90,
-					unclassed_air = 90,
+					priority_air = 80,
+					unclassed_air = 80,
 				},
 			},
 		},

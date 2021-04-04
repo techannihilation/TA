@@ -1,12 +1,17 @@
 3.83 > 3.84
-2021-04-03
+2021-04-05
 Balance :
  - All AA (ground and Air) : bad target category = scout & areoship (hero). So send fighters with bombers/transport to increase luck to pass over AA defenses
+ - T1 arm/Core/TLL Tower AA : Decrease damage 90dps=>80dps.
+ - T1 Battery AA : Decrease damage 400dps=>200dps. Decrease range 900=>850. Decrease cost by 15%.
+ - T1 Talon Tower AA : Increase Timebuild and cost by 20%.
+ - T1 Long Range Chainsaw : Decrease range 1200 => 1045. Decrease damage 1200dps => 640 dps. Decrease cost by 50% & buildtime by 40%.
+ - T1 Obsidian Talon : decrease stats (cost and power). Keep teeth crush.
 
  Improvment :
  - Add T3 Satellite Radar in T3 Air Lab for each faction. Can be killed only by T2 Long Range Missile Turret
  - Add Mosaurus T3 Hover on veh LAB
- - Delete all strong T1 vehicle from labs (flammer core, rottweiler arm, obsidian talon)
+ - Delete all strong T1 vehicle from labs (flammer core, rottweiler arm). Talon Obsidian decrease stats and cost
 
 3.82 > 3.83
 2021-03-30

@@ -62,7 +62,7 @@ return {
 			[7] = "talon_lupa",
 			[8] = "talon_sheatiped",
 			[9] = "talon_whinestone",
-			--[10] = "talon_obsidian",
+			[10] = "talon_obsidian",
 		},
 		customparams = {
 			buildpic = "talon_vp.dds",

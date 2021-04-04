@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 15644,
 		builder = false,
 		buildpic = "armthor.dds",
-		buildtime = 150000,
+		buildtime = 215000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

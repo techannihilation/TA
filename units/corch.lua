@@ -87,7 +87,7 @@ return {
 			[28] = "corpun",
 			[29] = "corint2",
 			[30] = "corrl",
-			[31] = "madsam",
+			[31] = "corsam",
 			[32] = "corerad",
 			[33] = "cordl",
 			[34] = "cortide",

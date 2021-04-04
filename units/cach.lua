@@ -67,7 +67,7 @@ return {
 			[11] = "corvipe",
 			[12] = "cortoast",
 			[13] = "cordoom",
-			[14] = "madsam",
+			[14] = "corsam",
 			[15] = "corflak",
 			[16] = "corscreamer",
 			[17] = "cormds",

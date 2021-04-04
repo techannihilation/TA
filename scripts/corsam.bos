@@ -1,0 +1,187 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, turret, Rlauncher, fire1, fire2, fire3,
+       fire4, Llauncher, fire5, fire6, fire7, fire8, turrettop;
+
+static-var  gun_1, Static_Var_2, Static_Var_3, Static_Var_4, bAiming;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	turn Llauncher to x-axis <-55.000000> speed <60.000000>;
+	turn Rlauncher to x-axis <-55.000000> speed <60.000000>;
+	wait-for-turn Llauncher around x-axis;
+	wait-for-turn Rlauncher around x-axis;
+	spin turret around y-axis speed <25.000000>;
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = 1;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 5500;
+	turn Llauncher to x-axis <-55.000000> speed <60.000000>;
+	turn Rlauncher to x-axis <-55.000000> speed <60.000000>;
+	wait-for-turn Llauncher around x-axis;
+	wait-for-turn Rlauncher around x-axis;
+	spin turret around y-axis speed <25.000000>;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = fire1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = fire2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = fire3;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = fire4;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = fire5;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = fire6;
+	}
+	if( gun_1 == 7 )
+	{
+		piecenum = fire7;
+	}
+	if( gun_1 == 8 )
+	{
+		piecenum = fire8;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <245.000000>;
+	turn Llauncher to x-axis <0.000000> - pitch speed <185.000000>;
+	turn Rlauncher to x-axis <0.000000> - pitch speed <185.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn Rlauncher around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	
+	if(gun_1 == 1)
+	{
+		gun_1 = 1;
+		sleep 150;
+		gun_1 = 2;
+		sleep 150;
+		gun_1 = 3;
+		sleep 150;
+		gun_1 = 4;
+		sleep 150;
+		gun_1 = 5;
+		return (0);
+	}
+	if(gun_1 == 5)
+	{
+		gun_1 = 5;
+		sleep 150;
+		gun_1 = 6;
+		sleep 150;
+		gun_1 = 7;
+		sleep 150;
+		gun_1 = 8;
+		sleep 150;
+		gun_1 = 1;
+		return (0);
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode Rlauncher type NOHEATCLOUD;
+		explode Llauncher type NOHEATCLOUD;
+		explode turrettop type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode Rlauncher type NOHEATCLOUD | SHATTER;
+		explode Llauncher type NOHEATCLOUD | SHATTER;
+		explode turrettop type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SHATTER;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Rlauncher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Llauncher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turrettop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

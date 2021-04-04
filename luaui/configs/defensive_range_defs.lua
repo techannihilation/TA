@@ -106,7 +106,7 @@ modConfig["TA"]["unitList"] =
 								corfrt = { weapons = { 2 } }, --floating rocket laucher
 								corrl = { weapons = { 2 } },
 								corrl1 = { weapons = { 2 } },
-								madsam = { weapons = { 2 } },
+								corsam = { weapons = { 2 } },
 								corerad = { weapons = { 2 } },
 								corenaa = { weapons = { 2 } },
 								corflak = { weapons = { 2 } },
