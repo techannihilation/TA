@@ -1,5 +1,5 @@
 3.83 > 3.84
-2021-04-05
+2021-04-06
 Balance :
  - All AA (ground and Air) : bad target category = scout & areoship (hero). So send fighters with bombers/transport to increase luck to pass over AA defenses
  - T1 arm/Core/TLL Tower AA : Decrease damage 90dps=>80dps.
@@ -13,6 +13,9 @@ Balance :
  - Add Mosaurus T3 Hover on veh LAB
  - Delete all strong T1 vehicle from labs (flammer core, rottweiler arm).
  - Delete T1/T2 Underwater Mex. Add Amphibious feature to ground T1/T2 mex
+
+ Fix :
+ - Naval Mines now explode (for hover, ship or subs) with autodestection like ground mines
 
 3.82 > 3.83
 2021-03-30
