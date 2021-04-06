@@ -37,7 +37,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Plunger",
 		noautofire = false,
-		
 		objectname = "TLLPLUNGER",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",

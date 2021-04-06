@@ -46,7 +46,6 @@ return {
 		mincloakdistance = 0,
 		name = "Micro",
 		noautofire = false,
-		
 		objectname = "ARMMINE1",
 		onoffable = false,
 		radaremitheight = 25,
@@ -129,34 +128,8 @@ return {
 					mines = 100,
 				},
 			},
-			mine_dummy = {
-				areaofeffect = 0,
-				craterareaofeffect = 0,
-				craterboost = 0,
-				cratermult = 0,
-				edgeeffectiveness = 0,
-				explosiongenerator = "",
-				firesubmersed = true,
-				impulseboost = 0,
-				impulsefactor = 0,
-				name = "Crawlingbomb Dummy Weapon",
-				range = 64,
-				reloadtime = 0.1,
-				soundhitwet = "sizzle",
-				soundhitwetvolume = 0.5,
-				tolerance = 100000,
-				weapontype = "Melee",
-				weaponvelocity = 100000,
-				damage = {
-					default = 0,
-				},
-			},
 		},
 		weapons = {
-			[1] = {
-				def = "MINE_DUMMY",
-				onlytargetcategory = "SURFACE",
-			},
 			[2] = {
 				def = "MINE_DETONATOR",
 				onlytargetcategory = "SURFACE",

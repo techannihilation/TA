@@ -150,7 +150,7 @@ return {
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.5,
 				soundstart = "rocklit1",
-				startvelocity = 250,
+				startvelocity = 200,
 				targetable = 16,
 				texture1 = "null",
 				texture2 = "null",
@@ -162,7 +162,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 2.5,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 750,
+				weaponvelocity = 1000,
 				damage = {
 					default = 960,
 					subs = 5,

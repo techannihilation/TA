@@ -14,6 +14,7 @@ return {
 			default = 1500,
 			minelayers = 25,
 			mines = 0.5,
+			subs = 750,
 		},
 	},
 }

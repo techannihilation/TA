@@ -3,8 +3,8 @@ return {
 		acceleration = 0,
 		blocking = false,
 		brakerate = 0,
-		buildcostenergy = 2445,
-		buildcostmetal = 85,
+		buildcostenergy = 1860,
+		buildcostmetal = 75,
 		builder = false,
 		buildpic = "talon_fmine.dds",
 		buildtime = 150,
@@ -23,7 +23,7 @@ return {
 		defaultmissiontype = "Standby_Mine",
 		description = "Heavy Mine - Naval Series",
 		energyuse = 0,
-		explodeas = "FMINE_HEAVY",
+		explodeas = "MINE_HEAVY",
 		firestandorders = 0,
 		firestate = 2,
 		footprintx = 1,
@@ -40,8 +40,8 @@ return {
 		minwaterdepth = 0,
 		name = "Mega NS",
 		noautofire = false,
-		
-		objectname = "TALON_FMINE",
+		objectname = "MINE_HEAVY",
+		script = "mines_lus.lua",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FMINE_HEAVY",
@@ -57,8 +57,10 @@ return {
 		waterline = 0,
 		customparams = {
 			buildpic = "talon_fmine.dds",
+			detonaterange = "64",
 			faction = "TALON",
 			initcloaked = true,
+			requiretech = "T2 Factory",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

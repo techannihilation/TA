@@ -38,8 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "BOAT5",
 		name = "Conqueror",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMCRUS",
 		radaremitheight = 40,
 		seismicsignature = 0,

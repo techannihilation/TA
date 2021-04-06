@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HOVER3",
 		name = "Anaconda",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMANAC",
 		radaremitheight = 25,
 		seismicsignature = 0,

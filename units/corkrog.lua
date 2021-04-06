@@ -231,10 +231,10 @@ return {
 				tolerance = 9000,
 				tracks = true,
 				turnrate = 50000,
-				weaponacceleration = 230,
+				weaponacceleration = 200,
 				weapontimer = 1.25,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 4000,
+				weaponvelocity = 1000,
 				customparams = {
 					light_color = "1 0.6 0.15",
 					light_mult = 3.3,

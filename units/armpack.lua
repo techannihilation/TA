@@ -122,8 +122,6 @@ return {
 			armpack_missile = {
 				areaofeffect = 48,
 				avoidfeature = false,
-				burst = 2,
-				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Arm_Def_AA_Rocket",
 				craterareaofeffect = 0,
@@ -142,7 +140,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = 1,
 				range = 850,
-				reloadtime = 0.8,
+				reloadtime = 0.4,
 				smoketrail = true,
 				soundhitdry = "packohit",
 				soundhitwet = "splshbig",

@@ -8,6 +8,9 @@ return {
 		buildpic = "tlltide.dds",
 		buildtime = 2100,
 		category = "ALL UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 -5 0",
+		collisionvolumescales = "30 25 30",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",
 		energyuse = 0,
@@ -24,7 +27,6 @@ return {
 		minwaterdepth = 18,
 		name = "Tidal Generator",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "tllTIDE",
 		onoffable = false,

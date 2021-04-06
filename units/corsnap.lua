@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "32 16 32",
 		collisionvolumetype = "CylY",
@@ -37,7 +37,6 @@ return {
 		movementclass = "HOVER3",
 		name = "Snapper",
 		noautofire = false,
-		
 		objectname = "CORSNAP",
 		radaremitheight = 25,
 		seismicsignature = 0,

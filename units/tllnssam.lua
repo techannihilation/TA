@@ -108,6 +108,8 @@ return {
 			packo_missile = {
 				areaofeffect = 48,
 				avoidfeature = false,
+				burst = 2,
+				burstrate = 0.2,
 				canattackground = false,
 				cegtag = "Tll_Def_AA_Rocket",
 				craterareaofeffect = 0,

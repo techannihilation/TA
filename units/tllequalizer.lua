@@ -39,7 +39,6 @@ return {
 		movementclass = "BOAT5",
 		name = "Equalizer",
 		noautofire = false,
-		
 		objectname = "TLLEQUALIZER",
 		radaremitheight = 39,
 		selfdestructas = "SMALL_UNIT",
@@ -186,15 +185,14 @@ return {
 			[1] = {
 				def = "ARM_CRUS",
 				maindir = "0 0 1",
-				maxangledif = 290,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "ARM_CRUS",
 				maindir = "0 0 -1",
-				maxangledif = 290,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
-				slaveto = 1,
 			},
 			[3] = {
 				def = "ADVDEPTHCHARGE",

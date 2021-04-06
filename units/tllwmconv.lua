@@ -8,6 +8,9 @@ return {
 		buildpic = "tllwmconv.dds",
 		buildtime = 1700,
 		category = "ALL UNDERWATER SURFACE",
+		collisionvolumeoffsets = "0 -6 0",
+		collisionvolumescales = "36 26 36",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Converts upto 90 Energy into Metal",
 		explodeas = "SMALL_BUILDINGEX",
@@ -23,7 +26,6 @@ return {
 		minwaterdepth = 10,
 		name = "Metal Producer",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "tllWMconv",
 		radaremitheight = 57,

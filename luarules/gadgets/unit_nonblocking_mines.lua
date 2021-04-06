@@ -20,9 +20,7 @@ end
 ----------------------------------------------------------------
 -- Var
 ----------------------------------------------------------------
-local minedefs ={ 
-	[UnitDefNames["armfmine3"].id] = true,
-	[UnitDefNames["corfmine3"].id] = true,
+local minedefs ={
 	[UnitDefNames["armmine1"].id] = true,
 	[UnitDefNames["armmine2"].id] = true,
 	[UnitDefNames["armmine3"].id] = true,
@@ -38,12 +36,17 @@ local minedefs ={
 	[UnitDefNames["tllmine4"].id] = true,
 	[UnitDefNames["tllmine5"].id] = true,
 	[UnitDefNames["tllmine6"].id] = true,
-	[UnitDefNames["tllfmine3"].id] = true,
 	[UnitDefNames["talon_mine1"].id] = true,
 	[UnitDefNames["talon_mine2"].id] = true,
 	[UnitDefNames["talon_mine3"].id] = true,
 	[UnitDefNames["talon_mine4"].id] = true,
+
+	--Naval Mines
+	[UnitDefNames["tllfmine3"].id] = true,
+	[UnitDefNames["armfmine3"].id] = true,
+	[UnitDefNames["corfmine3"].id] = true,
 	[UnitDefNames["talon_fmine"].id] = true,
+
 }
 local mines={}
 local nummines=0
@@ -72,7 +75,7 @@ function gadget:UnitDestroyed(uID, uDefID, uTeam)
         spSetUnitBlocking(uID,false,false,false) -- ( number unitID, boolean blocking [, boolean collide [, boolean crushable]] )
     end
 end
-function gadget:AllowUnitCreation(unitDefID, builderID,builderTeam, x, y, z) 
+function gadget:AllowUnitCreation(unitDefID, builderID,builderTeam, x, y, z)
 	if x and y and z then
 		local footprintx= UnitDefs[unitDefID]['xsize'] * 4+8 --add 8 for the mines size too
 		local footprintz= UnitDefs[unitDefID]['zsize'] * 4+8  --size is 2x footprint in engine
@@ -82,7 +85,7 @@ function gadget:AllowUnitCreation(unitDefID, builderID,builderTeam, x, y, z)
 					-- local udef = UnitDefs[builderID]
 					-- Spring.Echo( udef.humanName  .. ": Can't build on top of mines!" )
 				-- end
-				
+
 				return false
 			end
 		end
