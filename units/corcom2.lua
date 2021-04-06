@@ -96,7 +96,7 @@ return {
 			[18] = "corupmex",
 			[19] = "coruwfus",
 			[20] = "coruwmmm",
-			[21] = "coruwmme",
+			--[21] = "",
 			[22] = "corsy",
 			[23] = "corason",
 			[24] = "corfhlt",

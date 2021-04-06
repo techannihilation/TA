@@ -38,7 +38,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Caretta",
 		noautofire = false,
-		
+
 		objectname = "tllcaretta",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -53,9 +53,9 @@ return {
 		unitname = "tllcaretta",
 		workertime = 220,
 		buildoptions = {
-			--[1] = "tllsolar",
-			--[2] = "tllmex",
-			--[3] = "tllturtle_lab",
+			--[1] = "",
+			--[2] = "",
+			--[3] = "",
 			[4] = "tllnanotc",
 			[5] = "tlladt",
 			[6] = "tlltower",
@@ -74,8 +74,8 @@ return {
 			[19] = "tllamphibot",
 			[20] = "tllck",
 			[21] = "tllgizmo",
-			--[22] = "tlltide",
-			--[23] = "tlluwmex",
+			--[22] = "",
+			--[23] = "",
 			[24] = "tllfnanotc",
 			[25] = "tllradarns",
 			[26] = "tllasonar",

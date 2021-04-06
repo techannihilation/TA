@@ -42,7 +42,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Advanced Construction Sub",
 		noautofire = false,
-		
 		objectname = "TLLACSUB",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
@@ -58,15 +57,16 @@ return {
 		waterline = 30,
 		workertime = 510,
 		buildoptions = {
-			[1] = "tllturtle_lab",
-			[2] = "tlluwfusion",
-			[3] = "tllauwmex",
+			[1] = "tllemstor",
+			[2] = "tllamex",
+			[3] = "tllturtle_lab",
+			[4] = "tlluwfusion",
 			[4] = "tllwmmohoconv",
 			[5] = "tllfgate",
 			[6] = "tllplat",
 			[7] = "tllsy",
 			[8] = "tllasy",
-			--[9] = "tllsubpen",
+			--[9] = "",
 			[10] = "tllesy",
 		},
 		customparams = {

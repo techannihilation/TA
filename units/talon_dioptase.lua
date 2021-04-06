@@ -39,7 +39,6 @@ return {
 		movementclass = "BOAT4",
 		name = "Dioptase",
 		noautofire = false,
-		
 		objectname = "talon_dioptase",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -55,9 +54,9 @@ return {
 		unitname = "talon_dioptase",
 		workertime = 200,
 		buildoptions = {
-			--[1] = "talon_tide",
-			--[2] = "talon_uwmex",
-			--[3] = "talon_asy",
+			--[1] = "",
+			--[2] = "",
+			--[3] = "",
 			[4] = "talon_fnanotc",
 			[5] = "talon_fnanotc",
 			[6] = "talon_frad",

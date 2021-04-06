@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "42 34 42",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Amphibious - capacity (12000)",
+		description = "12K Capacity (Amphibious)",
 		energystorage = 12000,
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",
@@ -35,7 +35,6 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		
 		objectname = "ARMESTOR",
 		radaremitheight = 30,
 		seismicsignature = 0,

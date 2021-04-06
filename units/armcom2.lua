@@ -97,7 +97,7 @@ return {
 			[15] = "armjumpdrive",
 			[16] = "armuwfus",
 			[17] = "armuwmmm",
-			[18] = "armuwmme",
+			--[18] = "",
 			[19] = "armsy",
 			[20] = "armason",
 			[21] = "armfhlt",

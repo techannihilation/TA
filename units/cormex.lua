@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		damagemodifier = 0.4,
-		description = "Tech Level 1",
+		description = "Tech Level 1 (Amphibious)",
 		energyuse = 3,
 		explodeas = "SMALL_BUILDINGEX",
 		extractsmetal = 0.001,
@@ -33,11 +33,11 @@ return {
 		maxdamage = 175,
 		maxslope = 20,
 		maxvelocity = 0,
-		maxwaterdepth = 20,
+		maxwaterdepth = 9999,
 		metalstorage = 25,
 		name = "Metal Extractor",
 		noautofire = false,
-		
+
 		objectname = "CORMEX",
 		onoffable = true,
 		radaremitheight = 25,

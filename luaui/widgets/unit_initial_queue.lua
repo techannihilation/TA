@@ -69,10 +69,6 @@ local ARMMEX = UnitDefNames["armmex"].id
 local CORMEX = UnitDefNames["cormex"].id
 local TLLMEX = UnitDefNames["tllmex"].id
 local TALON_MEX = UnitDefNames["talon_mex"].id
-local ARMUWMEX = UnitDefNames["armuwmex"].id
-local CORUWMEX = UnitDefNames["coruwmex"].id
-local TLLUWMEX = UnitDefNames["tlluwmex"].id
-local TALON_UWMEX = UnitDefNames["talon_uwmex"].id
 local ARMSOLAR = UnitDefNames["armsolar"].id
 local CORSOLAR = UnitDefNames["corsolar"].id
 local TLLSOLAR = UnitDefNames["tllsolar"].id
@@ -167,7 +163,6 @@ local ArmToCore = {}
 -- to check if OTA icon exist, defs table
 local OtaIconExist = {}
 ArmToCore[ARMMEX] = CORMEX
-ArmToCore[ARMUWMEX] = CORUWMEX
 ArmToCore[ARMSOLAR] = CORSOLAR
 ArmToCore[ARMWIN] = CORWIN
 ArmToCore[ARMTIDE] = CORTIDE
@@ -193,7 +188,6 @@ ArmToCore[ARMFDRAG] = CORFDRAG
 ArmToCore[ARMGEOMINI] = CORGEOMINI
 local TllToCore = {}
 TllToCore[TLLMEX] = CORMEX
-TllToCore[TLLUWMEX] = CORUWMEX
 TllToCore[TLLSOLAR] = CORSOLAR
 TllToCore[TLLWIND] = CORWIN
 TllToCore[TLLTIDE] = CORTIDE
@@ -218,7 +212,6 @@ TllToCore[TllTORP] = CORTL
 TllToCore[TLLGEOMINI] = CORGEOMINI
 local TllToArm = {}
 TllToArm[TLLMEX] = ARMMEX
-TllToArm[TLLUWMEX] = ARMUWMEX
 TllToArm[TLLSOLAR] = ARMSOLAR
 TllToArm[TLLWIND] = ARMWIN
 TllToArm[TLLTIDE] = ARMTIDE
@@ -243,7 +236,6 @@ TllToArm[TllTORP] = ARMTL
 TllToArm[TLLGEOMINI] = ARMGEOMINI
 local TalonToTll = {}
 TalonToTll[TALON_MEX] = TLLMEX
-TalonToTll[TALON_UWMEX] = TLLUWMEX
 TalonToTll[TALON_SOLAR] = TLLSOLAR
 TalonToTll[TALON_WIND] = TLLWIND
 TalonToTll[TALON_TIDE] = TLLTIDE
@@ -266,7 +258,6 @@ TalonToTll[TALON_TL] = TllTORP
 TalonToTll[TALON_GEOMINI] = TLLGEOMINI
 local TalonToArm = {}
 TalonToArm[TALON_MEX] = ARMMEX
-TalonToArm[TALON_UWMEX] = ARMUWMEX
 TalonToArm[TALON_SOLAR] = ARMSOLAR
 TalonToArm[TALON_WIND] = ARMWIN
 TalonToArm[TALON_TIDE] = ARMTIDE
@@ -290,7 +281,6 @@ TalonToArm[TALON_TL] = ARMTL
 TalonToArm[TALON_GEOMINI] = ARMGEOMINI
 local TalonToCore = {}
 TalonToCore[TALON_MEX] = CORMEX
-TalonToCore[TALON_UWMEX] = CORUWMEX
 TalonToCore[TALON_SOLAR] = CORSOLAR
 TalonToCore[TALON_WIND] = CORWIN
 TalonToCore[TALON_TIDE] = CORTIDE
@@ -1267,100 +1257,6 @@ function widget:MouseRelease(mx, my, mButton)
 	end
 end
 
--- ------------------------------------------------------------
--- -- Keyboard -- This will only work with BA!
--- ------------------------------------------------------------
--- local ZKEY = 122
--- local XKEY = 120
--- local CKEY = 99
--- local VKEY = 118
--- function widget:KeyPress(key,mods,isrepeat)
--- 	if sDef == UnitDefs[ARMCOM] then
--- 		if key == ZKEY then
--- 			if 		selDefID == ARMMEX then 	SetSelDefID(ARMUWMEX)
--- 			elseif 	selDefID == ARMUWMEX then	SetSelDefID(ARMMEX)
--- 			else								SetSelDefID(ARMMEX)
--- 			end
--- 		elseif key == XKEY then
--- 			if 		selDefID == RMSOLAR then	SetSelDefID(ARMWIN)
--- 			elseif 	selDefID == ARMWIN then		SetSelDefID(ARMTIDE)
--- 			elseif 	selDefID == ARMTIDE then	SetSelDefID(ARMSOLAR)
--- 			else 								SetSelDefID(ARMSOLAR)
--- 			end
--- 		elseif key == CKEY then
--- 			if		selDefID == ARMLLT then		SetSelDefID(ARMRAD)
--- 			elseif 	selDefID == ARMRAD then		SetSelDefID(ARMRL)
--- 			elseif 	selDefID == ARMRL then 		SetSelDefID(ARMTL)
--- 			elseif 	selDefID == ARMTL then 		SetSelDefID(ARMSONAR)
--- 			elseif 	selDefID == ARMSONAR then	SetSelDefID(ARMFRT)
--- 			elseif 	selDefID == ARMFRT then		SetSelDefID(ARMLLT)
--- 			else 								SetSelDefID(ARMLLT)
--- 			end
--- 		elseif key == VKEY then
--- 			if		selDefID == ARMLAB then		SetSelDefID(ARMVP)
--- 			elseif 	selDefID == ARMVP then		SetSelDefID(ARMSY)
--- 			elseif 	selDefID == ARMSY then		SetSelDefID(ARMLAB)
--- 			else 								SetSelDefID(ARMLAB)
--- 			end
--- 		end
--- 	elseif sDef == UnitDefs[CORCOM] then
--- 		if key == ZKEY then
--- 			if 		selDefID == CORMEX then 	SetSelDefID(CORUWMEX)
--- 			elseif 	selDefID == CORUWMEX then	SetSelDefID(CORMEX)
--- 			else								SetSelDefID(CORMEX)
--- 			end
--- 		elseif key == XKEY then
--- 			if 		selDefID == CORSOLAR then	SetSelDefID(CORWIN)
--- 			elseif 	selDefID == CORWIN then		SetSelDefID(CORTIDE)
--- 			elseif 	selDefID == CORTIDE then	SetSelDefID(CORSOLAR)
--- 			else 								SetSelDefID(CORSOLAR)
--- 			end
--- 		elseif key == CKEY then
--- 			if		selDefID == CORLLT then		SetSelDefID(CORRAD)
--- 			elseif 	selDefID == CORRAD then		SetSelDefID(CORRL)
--- 			elseif 	selDefID == CORRL then 		SetSelDefID(CORTL)
--- 			elseif 	selDefID == CORTL then 		SetSelDefID(CORSONAR)
--- 			elseif 	selDefID == CORSONAR then	SetSelDefID(CORFRT)
--- 			elseif 	selDefID == CORFRT then		SetSelDefID(CORLLT)
--- 			else 								SetSelDefID(CORLLT)
--- 			end
--- 		elseif key == VKEY then
--- 			if		selDefID == CORLAB then		SetSelDefID(CORVP)
--- 			elseif 	selDefID == CORVP then		SetSelDefID(CORSY)
--- 			elseif 	selDefID == CORSY then		SetSelDefID(CORLAB)
--- 			else 								SetSelDefID(CORLAB)
--- 			end
--- 		end
--- 	elseif sDef == UnitDefs[TLLCOM] then
--- 		if key == ZKEY then
--- 			if 		selDefID == TLLMEX then 	SetSelDefID(TLLUWMEX)
--- 			elseif 	selDefID == TLLUWMEX then	SetSelDefID(TLLMEX)
--- 			else								SetSelDefID(TLLMEX)
--- 			end
--- 		elseif key == XKEY then
--- 			if 		selDefID == TLLSOLAR then	SetSelDefID(TLLWIND)
--- 			elseif 	selDefID == TLLWIND then	SetSelDefID(TLLTIDE)
--- 			elseif 	selDefID == TLLTIDE then	SetSelDefID(TLLSOLAR)
--- 			else 								SetSelDefID(TLLSOLAR)
--- 			end
--- 		elseif key == CKEY then
--- 			if		selDefID == TLLLLT then		SetSelDefID(TLLRADAR)
--- 			elseif 	selDefID == TLLRADAR then	SetSelDefID(TLLLMT)
--- 			elseif 	selDefID == TLLLMT then 	SetSelDefID(TllToRP)
--- 			elseif 	selDefID == TllToRP then 	SetSelDefID(TLLSONAR)
--- 			elseif 	selDefID == TLLSONAR then	SetSelDefID(TLLLMTNS)
--- 			elseif 	selDefID == TLLLMTNS then	SetSelDefID(TLLLLT)
--- 			else 								SetSelDefID(TLLLLT)
--- 			end
--- 		elseif key == VKEY then
--- 			if		selDefID == TLLLAB then		SetSelDefID(TLLVP)
--- 			elseif 	selDefID == TLLVP then		SetSelDefID(TLLSY)
--- 			elseif 	selDefID == TLLSY then		SetSelDefID(TLLLAB)
--- 			else 								SetSelDefID(TLLLAB)
--- 			end
--- 		end
--- 	end
--- end
 function widget:ViewResize(newX, newY)
 	vsx, vsy = newX, newY
 	widgetScale = (0.6 + (vsx * vsy / 4000000)) * customScale

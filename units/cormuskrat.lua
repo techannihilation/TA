@@ -97,7 +97,7 @@ return {
 			[33] = "cordl",
 			[34] = "cortide",
 			[35] = "coratidal",
-			[36] = "coruwmex",
+			--[36] = "",
 			[37] = "corfmkr",
 			[38] = "corfhp",
 			[39] = "corsy",

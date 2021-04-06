@@ -29,7 +29,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 	function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
-		if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
+		if UnitID and (UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID or UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
 			if (UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
 				pilelimit = pilelimit2
 			else

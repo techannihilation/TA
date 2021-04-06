@@ -43,8 +43,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			buildpic = "tllllt.dds",
 			faction = "TLL",
-			requiretech = "Battle Commander",
 		},
 		featuredefs = {
 			dead = {

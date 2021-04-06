@@ -54,9 +54,9 @@ return {
 		workertime = 200,
 		buildoptions = {
 			[1] = "armeyes",
-			--[2] = "armtide",
-			--[3] = "armuwmex",
-			--[4] = "armasy",
+			--[2] = "",
+			--[3] = "",
+			--[4] = "",
 			[5] = "armfnanotc",
 			[6] = "armfdrag",
 			[7] = "armfrad",

@@ -25,7 +25,7 @@ local unbinds={
 
     "bind , prevmenu",
     "bind . nextmenu",
-    
+
     -- hotfixes for 98.0
     "bind backspace	mousestate", --http://springrts.com/mantis/view.php?id=4578
 }
@@ -37,7 +37,7 @@ function MakeBindsTable (swapYZ)
     if swapYZ==nil then swapYZ=false end
     local Y = swapYZ and "z" or "y"
     local Z = swapYZ and "y" or "z"
-    
+
     local _binds = {
     -- building hotkeys
     "bind any+b buildspacing inc",
@@ -59,22 +59,7 @@ function MakeBindsTable (swapYZ)
 	"bind shift+z buildunit_cormoho",
 	"bind z buildunit_tllamex",
 	"bind shift+z buildunit_tllamex",
-	"bind z buildunit_cormexp",
-	"bind shift+z buildunit_cormexp",
-	"bind z buildunit_coruwmex",
-	"bind shift+z buildunit_coruwmex",
-	"bind z buildunit_armuwmex",
-	"bind shift+z buildunit_armuwmex",
-	"bind z buildunit_tlluwmex",
-	"bind shift+z buildunit_tlluwmex",
-	"bind z buildunit_coruwmme",
-	
-	"bind shift+z buildunit_coruwmme",
-	"bind z buildunit_armuwmme",
-	"bind shift+z buildunit_armuwmme",
-	"bind z buildunit_tllauwmex",
-	"bind shift+z buildunit_tllauwmex",
-	
+
 	"bind x buildunit_armsolar",
 	"bind shift+x buildunit_armsolar",
 	"bind x buildunit_armwin",
@@ -87,37 +72,37 @@ function MakeBindsTable (swapYZ)
 	"bind shift+x buildunit_tllwindtrap",
 	"bind x buildunit_tllsolar",
 	"bind shift+x buildunit_tllsolar",
-	
+
 	"bind x buildunit_armadvsol",
 	"bind shift+x buildunit_armadvsol",
 	"bind x buildunit_coradvsol",
 	"bind shift+x buildunit_coradvsol",
 	"bind x buildunit_tlladvsolar",
 	"bind shift+x buildunit_tlladvsolar",
-	
+
 	"bind x buildunit_armfus",
 	"bind shift+x buildunit_armfus",
 	"bind x buildunit_armmmkr",
 	"bind shift+x buildunit_armmmkr",
 	"bind x buildunit_corfus",
 	"bind shift+x buildunit_corfus",
-	
+
 	"bind x buildunit_cormmkr",
 	"bind shift+x buildunit_cormmkr",
 	"bind x buildunit_tllmedfusion",
 	"bind shift+x buildunit_tllmedfusion",
 	"bind x buildunit_tllcoldfus",
 	"bind shift+x buildunit_tllcoldfus",
-	
+
 	--Adv eco
 	"bind z buildunit_armmex1",
-	"bind shift+z buildunit_armmex1",	
+	"bind shift+z buildunit_armmex1",
 	"bind z buildunit_cormex1",
 	"bind shift+z buildunit_cormex1",
 	"bind z buildunit_tllmex1",
-	"bind shift+z buildunit_tllmex1", 
+	"bind shift+z buildunit_tllmex1",
 	"bind x buildunit_armgen",
-	"bind shift+x buildunit_armgen",	
+	"bind shift+x buildunit_armgen",
 	"bind x buildunit_corgen",
 	"bind shift+x buildunit_corgen",
 	"bind x buildunit_tllgen",
@@ -132,7 +117,7 @@ function MakeBindsTable (swapYZ)
 	"bind x buildunit_corawin",
 	"bind shift+x buildunit_corawin",
 	"bind x buildunit_tllawindtrap",
-	"bind shift+x buildunit_tllawindtrap",		
+	"bind shift+x buildunit_tllawindtrap",
 	"bind x buildunit_armlightfus",
 	"bind shift+x buildunit_armlightfus",
 	"bind x buildunit_corlightfus",
@@ -140,40 +125,40 @@ function MakeBindsTable (swapYZ)
 	"bind x buildunit_armatidal",
 	"bind shift+x buildunit_armatidal",
 	"bind x buildunit_coratidal",
-	"bind shift+x buildunit_armatidal",	
+	"bind shift+x buildunit_armatidal",
 	"bind x buildunit_armuwlightfus",
 	"bind shift+x buildunit_armuwlightfus",
 	"bind x buildunit_coruwlightfus",
 	"bind shift+x buildunit_coruwlightfus",
-	
+
 	"bind x buildunit_armtide",
 	"bind shift+x buildunit_armtide",
 	"bind x buildunit_cortide",
 	"bind shift+x buildunit_cortide",
 	"bind x buildunit_tlltide",
 	"bind shift+x buildunit_tlltide",
-	
+
 	"bind x buildunit_armuwfus",
 	"bind shift+x buildunit_armuwfus",
 	"bind x buildunit_coruwfus",
 	"bind shift+x buildunit_coruwfus",
 	"bind x buildunit_tlluwfusion",
 	"bind shift+x buildunit_tlluwfusion",
-	
+
 	"bind x buildunit_armuwmmm",
 	"bind shift+x buildunit_armuwmmm",
 	"bind x buildunit_coruwmmm",
 	"bind shift+x buildunit_coruwmmm",
 	"bind x buildunit_tllwmmohoconv",
 	"bind shift+x buildunit_tllwmmohoconv",
-	
+
 	"bind c buildunit_armllt",
 	"bind shift+c buildunit_armllt",
 	"bind c buildunit_corllt",
 	"bind shift+c buildunit_corllt",
 	"bind c buildunit_tllllt",
 	"bind shift+c buildunit_tllllt",
-	
+
 	"bind c buildunit_armrad",
 	"bind shift+c buildunit_armrad",
 	"bind c buildunit_corrad",
@@ -187,7 +172,7 @@ function MakeBindsTable (swapYZ)
 	"bind shift+c buildunit_armrl",
 	"bind c buildunit_tlllmt",
 	"bind shift+c buildunit_tlllmt",
-	
+
 	"bind c buildunit_armpb",
 	"bind shift+c buildunit_armpb",
 	"bind c buildunit_armflak",
@@ -200,44 +185,44 @@ function MakeBindsTable (swapYZ)
 	"bind shift+c buildunit_tllpulaser",
 	"bind c buildunit_tllflak",
 	"bind shift+c buildunit_tllflak",
-	
+
 	"bind c buildunit_armtl",
 	"bind shift+c buildunit_armtl",
 	"bind c buildunit_cortl",
 	"bind shift+c buildunit_cortl",
 	"bind c buildunit_tllshoretorp",
 	"bind shift+c buildunit_tllshoretorp",
-	
+
 	"bind c buildunit_armsonar",
 	"bind shift+c buildunit_armsonar",
 	"bind c buildunit_corsonar",
 	"bind shift+c buildunit_corsonar",
 	"bind c buildunit_tllsonar",
 	"bind shift+c buildunit_tllsonar",
-	
+
 	"bind c buildunit_armfrad",
 	"bind shift+c buildunit_armfrad",
 	"bind c buildunit_corfrad",
 	"bind shift+c buildunit_corfrad",
 	"bind c buildunit_tllradarns",
 	"bind shift+c buildunit_tllradarns",
-	
-	
+
+
 	"bind c buildunit_armfrt",
 	"bind shift+c buildunit_armfrt",
 	"bind c buildunit_corfrt",
 	"bind shift+c buildunit_corfrt",
 	"bind c buildunit_tlllmtns",
 	"bind shift+c buildunit_tlllmtns",
-	
-	
+
+
 	"bind v buildunit_cornanotc",
 	"bind shift+v buildunit_cornanotc",
 	"bind v buildunit_armnanotc",
 	"bind shift+v buildunit_armnanotc",
 	"bind v buildunit_tllnanotc",
 	"bind shift+v buildunit_tllnanotc",
-	
+
 	"bind v buildunit_armlab",
 	"bind shift+v buildunit_armlab",
 	"bind v buildunit_armvp",
@@ -247,12 +232,12 @@ function MakeBindsTable (swapYZ)
 	"bind shift+v buildunit_corlab",
 	"bind v buildunit_corvp",
 	"bind shift+v buildunit_corvp",
-	
+
 	"bind v buildunit_tlllab",
 	"bind shift+v buildunit_tlllab",
 	"bind v buildunit_tllvp",
 	"bind shift+v buildunit_tllvp",
-	
+
 	"bind v buildunit_armsy",
 	"bind shift+v buildunit_armsy",
 	"bind v buildunit_corsy",
@@ -295,9 +280,9 @@ function LoadBindings()
 	for k,v in ipairs(unbinds) do
 		Spring.SendCommands("un"..v)
 	end
-    
+
     MakeBindsTable(WG.swapYZbinds) -- in case Y/Z swap has changed since last load
-    
+
 	for k,v in ipairs(binds) do
 		Spring.SendCommands(v)
 	end
@@ -319,9 +304,9 @@ function ReloadBindings()
 end
 
 function widget:Initialize()
-    MakeBindsTable(WG.swapYZbinds)    
+    MakeBindsTable(WG.swapYZbinds)
     LoadBindings()
-    
+
     WG.Reload_BA_Hotkeys = ReloadBindings
 end
 

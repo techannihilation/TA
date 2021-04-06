@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "90 65 90",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Amphibious - capacity (64000)",
+		description = "64K Capacity (Amphibious)",
 		downloadable = 1,
 		energystorage = 64000,
 		energyuse = 0,
@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T2 Energy Storage",
 		noautofire = false,
-		
+
 		noshadow = 1,
 		objectname = "CORUWADVES",
 		radaremitheight = 31,

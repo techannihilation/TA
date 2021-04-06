@@ -307,8 +307,6 @@ armuwadvms.dds
 armuwfus1.dds
 armuwfus.dds
 armuwlightfus.dds
-armuwmex.dds
-armuwmme.dds
 armuwmmm.dds
 armvader.dds
 armveil.dds
@@ -625,8 +623,6 @@ coruwadves.dds
 coruwadvms.dds
 coruwfus.dds
 coruwlightfus.dds
-coruwmex.dds
-coruwmme.dds
 coruwmmm.dds
 corvalk.dds
 corvamp.dds
@@ -727,7 +723,6 @@ tllasship.dds
 tllasy.dds
 tllatidal.dds
 tllatorp.dds
-tllauwmex.dds
 tllavp.dds
 tllawindtrap.dds
 tllbats2.dds
@@ -933,7 +928,6 @@ tllturtle.dds
 tllturtle_lab.dds
 tlluwfusion.dds
 tlluwjam.dds
-tlluwmex.dds
 tllvaliant.dds
 tllvanya.dds
 tllvhlt.dds

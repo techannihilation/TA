@@ -40,7 +40,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Construction Sub",
 		noautofire = false,
-		
 		objectname = "ARMACSUB",
 		radardistance = 50,
 		radaremitheight = 22,
@@ -60,9 +59,9 @@ return {
 		buildoptions = {
 			[1] = "armuwadves",
 			[2] = "armuwadvms",
-			[3] = "armuwfus",
-			--[4] = "armuwfus1",
-			[5] = "armuwmme",
+			[3] = "armmoho",
+			[4] = "armuwfus",
+			--[5] = "",
 			[6] = "armuwmmm",
 			[7] = "armsy",
 			[8] = "asubpen",

@@ -98,7 +98,7 @@ return {
 			[34] = "armcir",
 			[35] = "armtide",
 			[36] = "armatidal",
-			[37] = "armuwmex",
+			--[37] = "",
 			[38] = "armfmkr",
 			[39] = "armfhp",
 			[40] = "armsy",

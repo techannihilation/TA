@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "66 45 66",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Amphibious - capacity (3000)",
+		description = "3K Capacity (Amphibious)",
 		energyuse = 0,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 4,
@@ -31,7 +31,6 @@ return {
 		metalstorage = 3000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		
 		objectname = "talon_MSTOR",
 		radaremitheight = 28,
 		seismicsignature = 0,

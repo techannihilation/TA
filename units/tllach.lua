@@ -40,7 +40,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		
+
 		objectname = "tllach",
 		radaremitheight = 25,
 		script = "tllchover.cob",
@@ -77,7 +77,7 @@ return {
 			[19] = "tlllrpt",
 			[20] = "tllhydre",
 			[21] = "tlluwfusion",
-			[22] = "tllauwmex",
+			--[22] = "",
 			[23] = "tllwmmohoconv",
 			[24] = "tllhpns",
 			[25] = "tllahpns",

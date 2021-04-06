@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Pathfinder",
 		noautofire = false,
-		
+
 		objectname = "CORMLS",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -55,9 +55,9 @@ return {
 		workertime = 200,
 		buildoptions = {
 			[1] = "coreyes",
-			--[2] = "cortide",
-			--[3] = "coruwmex",
-			--[4] = "corasy",
+			--[2] = "",
+			--[3] = "",
+			--[4] = "",
 			[5] = "corfnanotc",
 			[6] = "corfdrag",
 			[7] = "corfrad",

@@ -80,7 +80,7 @@ return {
 			[21] = "talon_veloute",
 			[22] = "talon_uwfus",
 			[23] = "talon_famkr",
-			[24] = "talon_uwmme",
+			--[24] = "",
 			[25] = "talon_sy",
 			[26] = "talon_asy",
 			[27] = "talon_esy",

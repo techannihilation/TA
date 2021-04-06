@@ -53,9 +53,6 @@ return {
 		unitname = "armtick",
 		workertime = 135,
 		buildoptions = {
-			[1] = "",
-			[2] = "",
-			[3] = "",
 			[4] = "armnanotc",
 			[5] = "armeyes",
 			[6] = "armveil",
@@ -63,7 +60,7 @@ return {
 			[8] = "armarad",
 			[9] = "armmine2",
 			[10] = "armgrape",
-			[11] = "",
+			--[11] = "",
 			[12] = "armpb",
 			[13] = "armamb",
 			[14] = "armanni",

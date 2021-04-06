@@ -41,7 +41,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Gravitank",
 		noautofire = false,
-		
+
 		objectname = "talon_ch",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -89,7 +89,7 @@ return {
 			[29] = "talon_cir",
 			[30] = "talon_tide",
 			[31] = "talon_tide1",
-			[32] = "talon_uwmex",
+			--[32] = "",
 			[33] = "talon_fmkr",
 			[34] = "talon_hpns",
 			[35] = "talon_ahpns",

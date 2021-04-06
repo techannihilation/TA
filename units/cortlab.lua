@@ -46,7 +46,7 @@ return {
 		stealth = true,
 		unitname = "cortlab",
 		workertime = 400,
-		yardmap = "oooooooo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo",
+		yardmap = "oooooooo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo",
 		buildoptions = {
 			[1] = "corct",
 			[2] = "coreleopard",

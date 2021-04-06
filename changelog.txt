@@ -11,7 +11,8 @@ Balance :
  Improvment :
  - Add T3 Satellite Radar in T3 Air Lab for each faction. Can be killed only by T2 Long Range Missile Turret
  - Add Mosaurus T3 Hover on veh LAB
- - Delete all strong T1 vehicle from labs (flammer core, rottweiler arm). Talon Obsidian decrease stats and cost
+ - Delete all strong T1 vehicle from labs (flammer core, rottweiler arm).
+ - Delete T1/T2 Underwater Mex. Add Amphibious feature to ground T1/T2 mex
 
 3.82 > 3.83
 2021-03-30

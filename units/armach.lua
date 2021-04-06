@@ -73,7 +73,7 @@ return {
 			[18] = "armvulc",
 			[19] = "armuwfus",
 			[20] = "armuwmmm",
-			[21] = "armuwmme",
+			--[21] = "",
 			[22] = "armsy",
 			[23] = "armplat",
 			[24] = "armasy",

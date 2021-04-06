@@ -50,9 +50,6 @@ return {
 		unitname = "coreleopard",
 		workertime = 200,
 		buildoptions = {
-			[1] = "",
-			[2] = "",
-			[3] = "",
 			[4] = "cornanotc",
 			[5] = "coreyes",
 			[6] = "corshroud",
@@ -60,7 +57,7 @@ return {
 			[8] = "corarad",
 			[9] = "cormine2",
 			[10] = "corhllt",
-			[11] = "",
+			--[11] = "",
 			[12] = "corvipe",
 			[13] = "cortoast",
 			[14] = "cordoom",

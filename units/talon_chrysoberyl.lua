@@ -44,7 +44,7 @@ return {
 		name = "Chrysoberyl",
 		metalmake = 0.15,
 		noautofire = false,
-		
+
 		objectname = "talon_chrysoberyl",
 		radaremitheight = 25,
 		script = "talon_ch.cob",
@@ -60,9 +60,9 @@ return {
 		unitname = "talon_chrysoberyl",
 		workertime = 135,
 		buildoptions = {
-			--[1] = "talon_solar",
-			--[2] = "talon_mex",
-			--[3] = "talon_ahp",
+			--[1] = "",
+			--[2] = "",
+			--[3] = "",
 			[4] = "talon_nanotc",
 			[5] = "talon_mine1",
 			[6] = "talon_fort",
@@ -78,8 +78,8 @@ return {
 			[16] = "talon_mds",
 			[17] = "talon_ch",
 			[18] = "talon_gorgon",
-			--[19] = "talon_tide",
-			--[20] = "talon_uwmex",
+			--[19] = "",
+			--[20] = "",
 			[21] = "talon_fnanotc",
 			[23] = "talon_frad",
 			[24] = "talon_sonar",

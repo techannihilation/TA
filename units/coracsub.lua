@@ -41,7 +41,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Construction Sub",
 		noautofire = false,
-		
 		objectname = "CORACSUB",
 		radardistance = 50,
 		radaremitheight = 22,
@@ -61,9 +60,9 @@ return {
 		buildoptions = {
 			[1] = "coruwadves",
 			[2] = "coruwadvms",
-			[3] = "coruwfus",
-			--[4] = "crnns",
-			[5] = "coruwmme",
+			[3] = "cormoho",
+			[4] = "coruwfus",
+			--[5] = "",
 			[6] = "coruwmmm",
 			[7] = "corsy",
 			[8] = "csubpen",
@@ -75,7 +74,7 @@ return {
 			[14] = "corfnanotc1",
 			[15] = "corfatf",
 			[16] = "corason",
-			[17] = "corflshd",				
+			[17] = "corflshd",
 		},
 		customparams = {
 			buildpic = "coracsub.dds",

@@ -98,7 +98,7 @@ return {
 			[17] = "tllatidal",
 			[18] = "tlluwfusion",
 			[19] = "tllwmmohoconv",
-			[20] = "tllauwmex",
+			--[20] = "",
 			[21] = "tllsy",
 			[22] = "tllasonar",
 			[23] = "tlldtns",

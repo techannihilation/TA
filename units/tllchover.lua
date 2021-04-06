@@ -40,7 +40,6 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		
 		objectname = "TLLCHOVER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -90,7 +89,7 @@ return {
 			[34] = "tllshoretorp",
 			[35] = "tlltide",
 			[36] = "tllatidal",
-			[37] = "tlluwmex",
+			--[37] = "",
 			[38] = "tllwmconv",
 			[39] = "tllhpns",
 			[40] = "tllahpns",

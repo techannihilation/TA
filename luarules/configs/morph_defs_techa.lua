@@ -519,16 +519,9 @@ local morphDefs = {
 		},
 	},
 	armstump = {
-		{
-			into = 'armrottweiler',
-			time = 15,
-			xp = 0.15,
-		},
-		{
-			into = 'armbull',
-			time = 30,
-			xp = 0.30,
-		},
+		into = 'armbull',
+		time = 30,
+		xp = 0.30,
 	},
 	armbull = {
 		into = 'armmcv',
@@ -571,16 +564,9 @@ local morphDefs = {
 		xp = 0.15,
 	},
 	corlevlr = {
-		{
-			into = 'corgfbt',
-			time = 15,
-			xp = 0.15,
-		},
-		{
-			into = 'corgol',
-			time = 45,
-			xp = 0.50,
-		},
+		into = 'corgol',
+		time = 45,
+		xp = 0.50,
 	},
 	corgol = {
 		into = 'corbt',

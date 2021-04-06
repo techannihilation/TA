@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "50 30 50",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Amphibious - capacity (12000)",
+		description = "12K Capacity (Amphibious)",
 		energystorage = 12000,
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",
@@ -31,7 +31,6 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		
 		objectname = "talon_ESTOR",
 		radaremitheight = 30,
 		seismicsignature = 0,

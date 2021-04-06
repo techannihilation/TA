@@ -98,7 +98,7 @@ return {
 			[17] = "armatidal",
 			[18] = "armuwfus",
 			[19] = "armuwmmm",
-			[20] = "armuwmme",
+			--[20] = "",
 			[21] = "armfmkr",
 			[22] = "armsy",
 			[23] = "armason",

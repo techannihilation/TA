@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Construction Hover",
 		noautofire = false,
-		
+
 		objectname = "corach",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -73,7 +73,7 @@ return {
 			[17] = "corint",
 			[18] = "corbuzz",
 			[19] = "coruwfus",
-			[20] = "coruwmme",
+			--[20] = "",
 			[21] = "coruwmmm",
 			[22] = "corsy",
 			[23] = "corplat",

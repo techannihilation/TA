@@ -96,7 +96,7 @@ return {
 			[16] = "armrl",
 			[17] = "armdl",
 			[18] = "armtide",
-			[21] = "armuwmex",
+			--[21] = "",
 			[22] = "armfmkr",
 			[23] = "armsy",
 			[24] = "armsonar",

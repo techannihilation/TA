@@ -99,7 +99,7 @@ return {
 			[19] = "coratidal",
 			[20] = "coruwfus",
 			[21] = "coruwmmm",
-			[22] = "coruwmme",
+			--[22] = "",
 			[23] = "corsy",
 			[24] = "corason",
 			[25] = "corfdrag",
