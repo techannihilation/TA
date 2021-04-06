@@ -62,7 +62,7 @@ return {
 			[3] = "talon_emex",
 			[4] = "talon_metalmakerlvl2",
 			[5] = "talon_podlab",
-			[6] = "talon_uwfus",
+			[6] = "talon_uwefus",
 			[7] = "talon_sy",
 			[8] = "talon_asy",
 			[9] = "talon_esy",

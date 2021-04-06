@@ -43,7 +43,6 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Construction Hover",
 		noautofire = false,
-		
 		objectname = "talon_ech",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -76,7 +75,7 @@ return {
 			[16] = "talon_silo1",
 			[17] = "talon_lrpt1",
 			[18] = "talon_veloute2",
-			[19] = "talon_uwfus",
+			[19] = "talon_uwefus",
 			[20] = "talon_famkr",
 			[21] = "talon_esy",
 			[22] = "talon_hpns",

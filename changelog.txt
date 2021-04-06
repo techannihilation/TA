@@ -11,6 +11,7 @@ Balance :
  Improvment :
  - Add T3 Satellite Radar in T3 Air Lab for each faction. Can be killed only by T2 Long Range Missile Turret
  - Add Mosaurus T3 Hover on veh LAB
+ - Add T3 Underwater Fusion for Talon / Tll
  - Delete all strong T1 vehicle from labs (flammer core, rottweiler arm).
  - Delete T1/T2 Underwater Mex. Add Amphibious feature to ground T1/T2 mex
 

@@ -1,6 +1,5 @@
 return {
 	crnns = {
-		activatewhenbuilt = true,
 		buildangle = 16000,
 		buildcostenergy = 322560,
 		buildcostmetal = 32573,
@@ -12,7 +11,9 @@ return {
 		buildpic = "crnns.dds",
 		buildtime = 560000,
 		category = "ALL UNDERWATER SURFACE",
-		damagemodifier = 0.9,
+		collisionvolumeoffsets = "0 -30 0",
+		collisionvolumescales = "110 25 90",
+		collisionvolumetype = "CylZ",
 		description = "Produces Energy / Storage",
 		energymake = 9600,
 		energystorage = 19200,
@@ -28,10 +29,8 @@ return {
 		minwaterdepth = 15,
 		name = "Advanced Antimater Fusion",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "crnns",
-		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 56,
 		selfdestructas = "FUSION_BLAST_CORE",

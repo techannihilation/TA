@@ -7,34 +7,6 @@ piece  base, dish1, dish2, dish3, dish4;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
 
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
-}
-
 Go()
 {
 	turn dish1 to x-axis <-90.021978> speed <60.010989>;
@@ -93,6 +65,36 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script RequestState(0);
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
 	call-script InitState();
@@ -101,14 +103,15 @@ Create()
 
 Activate()
 {
-	start-script RequestState(0);
+	//start-script RequestState(0);
 }
 
 Deactivate()
 {
-	start-script RequestState(1);
+	//start-script RequestState(1);
 }
 
+/*
 HitByWeapon(anglex, anglez)
 {
 	signal 2;
@@ -117,6 +120,7 @@ HitByWeapon(anglex, anglez)
 	sleep 8000;
 	set ACTIVATION to 1;
 }
+*/
 
 SweetSpot(piecenum)
 {

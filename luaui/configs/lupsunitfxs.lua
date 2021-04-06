@@ -15,6 +15,10 @@ talon_uwfus = {
 	{class='SimpleParticles2', options=MergeTable({pos={0,60,6}, delay=0, size=45, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
 	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,60,6}, size=12, precision=22, repeatEffect=true}},
 },
+talon_uwefus = {
+	{class='SimpleParticles2', options=MergeTable({pos={0,80,0}, delay=0, size=80, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
+	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,60,6}, size=12, precision=22, repeatEffect=true}},
+},
 talon_afus = {
 	{class='SimpleParticles2', options=MergeTable({pos={0,55,10}, delay=0, size=80, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
 	{class='SimpleParticles2', options=MergeTable({pos={0,55,10}, delay=60, size=55, count=2, colormap={{0.6, 1.0, 0.70, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},

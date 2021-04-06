@@ -41,7 +41,6 @@ return {
 		movementclass = "BOAT5",
 		name = "Construction Ship",
 		noautofire = false,
-		
 		objectname = "tllecs",
 		radardistance = 50,
 		radaremitheight = 22,
@@ -63,7 +62,7 @@ return {
 			[2] = "tllmetalmakerlvl2",
 			[3] = "tllemstor1",
 			[4] = "tllprototype",
-			[5] = "tlluwfusion",
+			[5] = "tlluwefusion",
 			[6] = "tllsy",
 			[7] = "tllasy",
 			[8] = "tllesy",

@@ -3,8 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, Lblock1, Lblock2, Lblock3, Ublock1, Ublock2,
-       Ublock3, Emitters, pipe1, pipe2, pipe3, glow;
+piece  base, body, 
+		Lblock1, Lblock2, Lblock3, Ublock1, Ublock2, Ublock3,
+		Lblock4, Lblock5, Lblock6, Ublock4, Ublock5, Ublock6,
+		Lblock7, Lblock8, Lblock9, Ublock7, Ublock8, Ublock9,
+        Emitters, glow;
 
 static-var  Static_Var_1;
 
@@ -71,13 +74,13 @@ Killed(severity, corpsetype)
 		explode Emitters type NOHEATCLOUD;
 		explode Lblock1 type NOHEATCLOUD;
 		explode Ublock1 type NOHEATCLOUD;
-		explode pipe1 type NOHEATCLOUD;
+		explode Ublock4 type NOHEATCLOUD;
 		explode Lblock2 type NOHEATCLOUD;
 		explode Ublock2 type NOHEATCLOUD;
-		explode pipe2 type NOHEATCLOUD;
+		explode Ublock9 type NOHEATCLOUD;
 		explode Lblock2 type NOHEATCLOUD;
 		explode Ublock2 type NOHEATCLOUD;
-		explode pipe2 type NOHEATCLOUD;
+		explode Ublock6 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -87,13 +90,13 @@ Killed(severity, corpsetype)
 		explode Emitters type NOHEATCLOUD | FALL;
 		explode Lblock1 type NOHEATCLOUD | FALL;
 		explode Ublock1 type NOHEATCLOUD | FALL;
-		explode pipe1 type NOHEATCLOUD | FALL;
+		explode Ublock5 type NOHEATCLOUD | FALL;
 		explode Lblock2 type NOHEATCLOUD | FALL;
 		explode Ublock2 type NOHEATCLOUD | FALL;
-		explode pipe2 type NOHEATCLOUD | FALL;
+		explode Ublock6 type NOHEATCLOUD | FALL;
 		explode Lblock2 type NOHEATCLOUD | FALL;
 		explode Ublock2 type NOHEATCLOUD | FALL;
-		explode pipe2 type NOHEATCLOUD | FALL;
+		explode Ublock9 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -102,12 +105,12 @@ Killed(severity, corpsetype)
 	explode Emitters type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Lblock1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Ublock1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode pipe1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Ublock7 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Lblock2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Ublock2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode pipe2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Ublock9 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Lblock2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Ublock2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode pipe2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode Ublock5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

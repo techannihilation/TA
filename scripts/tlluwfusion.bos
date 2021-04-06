@@ -8,7 +8,7 @@ piece  base, emit1, body, lights;
 
 Create()
 {
-	dont-cache lights;
+
 }
 
 Activate()
