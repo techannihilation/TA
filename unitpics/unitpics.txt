@@ -46,7 +46,7 @@ armanni.dds
 armantar.dds
 armap.dds
 armarad.dds
-armarpe.dds
+corarpe.dds
 armarty.dds
 armaser.dds
 armason.dds
@@ -728,7 +728,7 @@ tllawindtrap.dds
 tllbats2.dds
 tllbind.dds
 tllblind.dds
-tllboat2.dds
+tllshrinker.dds
 tllbomber.dds
 tllbug.dds
 tllbuilderlvl1.dds

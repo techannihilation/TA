@@ -31,8 +31,7 @@ return {
 		minwaterdepth = 50,
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMESY",
 		radaremitheight = 73,
 		selfdestructas = "CRAWL_BLAST",

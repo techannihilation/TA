@@ -146,6 +146,7 @@ return {
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 75,
+				targetable = 4,
 				tolerance = 4000,
 				turnrate = 32768,
 				weaponacceleration = 180,
@@ -153,7 +154,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1200,
 				damage = {
-					commanders = 500,
+					commanders = 1250,
 					default = 2500,
 					subs = 5,
 				},

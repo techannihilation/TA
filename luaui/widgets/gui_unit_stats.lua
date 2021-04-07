@@ -89,7 +89,7 @@ local pplants = {
 	["talon_efus"] = true,
 	["talon_ufus"] = true,
 	["talon_mohogeo"] = true,
-	["talon_pyroclastic"] = true,	
+	["talon_pyroclastic"] = true,
 	["afusionplant"] = true,
 	["amgeo"] = true,
 	["armadvsol"] = true,
@@ -707,6 +707,10 @@ function widget:DrawScreen()
 
 				if uWep.coverageRange and uWep.interceptor == 16 then
 			  		DrawText("MDS:", format("%d Interceptor Range", uWep.coverageRange))
+				end
+
+				if uWep.coverageRange and uWep.interceptor == 4 then
+						DrawText("MDS:", format("%d Interceptor Range", uWep.coverageRange))
 				end
 
 				if uWep.targetable == 16 then

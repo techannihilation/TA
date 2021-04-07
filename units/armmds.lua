@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sunspot",
 		noautofire = false,
-		
+
 		objectname = "armmds",
 		radaremitheight = 79,
 		seismicsignature = 0,
@@ -122,7 +122,7 @@ return {
 				areaofeffect = 300,
 				avoidfeature = false,
 				collidefeature = false,
-				coverage = 1000,
+				coverage = 3000,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -133,7 +133,7 @@ return {
 				interceptor = 16,
 				name = "Missile/Rocket Interceptor",
 				noselfdamage = true,
-				range = 1200,
+				range = 3000,
 				reloadtime = 1.5,
 				rgbcolor = "0.000 0.012 1.000",
 				soundhitdry = "lasrhvy2",

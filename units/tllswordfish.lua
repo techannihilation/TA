@@ -168,6 +168,7 @@ return {
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 105,
+				targetable = 4,
 				tolerance = 4000,
 				turnrate = 32700,
 				waterweapon = true,

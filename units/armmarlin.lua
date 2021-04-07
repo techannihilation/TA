@@ -135,7 +135,7 @@ return {
 				turret = false,
 				waterweapon = true,
 				weaponacceleration = 20,
-				weapontimer = 3,
+				weapontimer = 4,
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 200,
 				damage = {
@@ -204,6 +204,7 @@ return {
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 105,
+				targetable = 4,
 				tolerance = 4000,
 				turnrate = 32700,
 				waterweapon = true,

@@ -58,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3277,
-				object = "talon_uwefus_DEAD",
+				object = "talon_uwefus_dead",
 				reclaimable = true,
 			},
 			heap = {

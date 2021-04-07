@@ -40,7 +40,7 @@ return {
 			[1] = "tllcs",
 			[2] = "tllsr",
 			[3] = "tllotter",
-			[4] = "tllboat2",
+			[4] = "tllshrinker",
 			[5] = "tllplunger",
 			[6] = "tllviolator",
 			[7] = "tllambassador",

@@ -60,7 +60,7 @@ return {
 			[5] = "corveng",
 			[6] = "corvalk",
 			[7] = "corshad",
-			[8] = "armarpe",
+			[8] = "corarpe",
 		},
 		customparams = {
 			buildpic = "corap.dds",

@@ -1,5 +1,5 @@
 return {
-	armarpe = {
+	corarpe = {
 		acceleration = 0.154,
 		bankscale = 1,
 		blocking = false,
@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 12225,
 		buildcostmetal = 465,
 		builder = 0,
-		buildpic = "ARMARPE.dds",
+		buildpic = "corarpe.dds",
 		buildtime = 15000,
 		canattack = true,
 		canfly = true,
@@ -42,7 +42,7 @@ return {
 		moverate1 = 3,
 		name = "Surveyor",
 		noautofire = false,
-		objectname = "armarpe",
+		objectname = "corarpe",
 		scale = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,10 +55,10 @@ return {
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 3.3,
 		turnrate = 693,
-		unitname = "armarpe",
+		unitname = "corarpe",
 		usesmoothmesh = 0,
 		customparams = {
-			buildpic = "ARMARPE.dds",
+			buildpic = "corarpe.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T1 Unit Research Centre",
 		},

@@ -5,8 +5,6 @@ return {
 		airStrafe  = true,
 		airHoverFactor = 1,
 		bankingAllowed = false,
-		--bankscale = 1,
-
 		blocking = false,
 		brakerate = 0.01,
 		buildcostenergy = 100000,
@@ -21,7 +19,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE SATELLITE",
 		collide = false,
-		cruisealt = 3500,
+		cruisealt = 2250,
 		description = "Radar/Sonar Stealth Satellite",
 		energyuse = 0,
 		explodeas = "BIG_UNITEX",

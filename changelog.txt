@@ -1,4 +1,12 @@
 3.83 > 3.84
+2021-04-10
+Balance :
+
+Improvment :
+ - Delete T3 All terrain Macross Core and Jaguar Arm
+
+
+3.83 > 3.84
 2021-04-06
 Balance :
  - All AA (ground and Air) : bad target category = scout & areoship (hero). So send fighters with bombers/transport to increase luck to pass over AA defenses
