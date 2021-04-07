@@ -119,7 +119,7 @@ return {
 	"tllbuilderlvl3",
 	"tllhtca",
 	"blastwing",
-	"armarpe",
+	"corarpe",
 	"talon_recon",
 	"talon_vigilante",
 	--T3 Raiser
@@ -129,6 +129,7 @@ return {
 	"talon_erez",
 	-- SATELLITE
 	"sat_radar",
+	"sat_interceptor",
 },
 
 	--### SEA ###
@@ -165,7 +166,7 @@ return {
 		"armhls",
 		"tllcs",
 		"tllotter",
-		"tllboat2",
+		"tllshrinker",
 		"tllviolator",
 		"tllambassador",
 		"corcs",

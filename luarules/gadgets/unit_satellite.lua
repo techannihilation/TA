@@ -43,6 +43,7 @@ local spSetUnitRulesParam  = Spring.SetUnitRulesParam
 local satellite = {
   --Arm
   [UnitDefNames["sat_radar"].id] = true,
+  [UnitDefNames["sat_interceptor"].id] = true,
 
   --Core
 
