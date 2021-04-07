@@ -65,7 +65,7 @@ return {
 			[5] = "corraven",
 			[6] = "coreak",
 			[7] = "corhowie",
-			[8] = "macross",
+			--[8] = "macross",
 			[9] = "corkrog",
 			[10] = "corgorg",
 		},
