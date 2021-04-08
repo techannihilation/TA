@@ -1,8 +1,8 @@
 return {
 	tllplasma = {
 		buildangle = 8200,
-		buildcostenergy = 15074,
-		buildcostmetal = 2951,
+		buildcostenergy = 18074,
+		buildcostmetal = 2401,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.125,
+		damagemodifier = 0.25,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Pop-Up Heavy Plasma Cannon",
 		downloadable = 1,
@@ -27,13 +27,12 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 25,
-		mass = 2951,
+		mass = 2401,
 		maxdamage = 3790,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Happlic",
 		noautofire = false,
-		
 		objectname = "tllplasma",
 		radaremitheight = 25,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -110,8 +109,8 @@ return {
 		},
 		weapondefs = {
 			armamb_gun = {
-				accuracy = 400,
-				areaofeffect = 150,
+				accuracy = 150,
+				areaofeffect = 144,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -139,10 +138,10 @@ return {
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 450,
+				weaponvelocity = 475,
 				damage = {
 					default = 240,
-					experimental_ships = 480,
+					experimental_ships = 360,
 					ships = 360,
 					subs = 5,
 				},

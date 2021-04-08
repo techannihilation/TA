@@ -1,7 +1,6 @@
 return {
 	cortron = {
-		acceleration = 0,
-		antiweapons = 1,
+		acceleration = 0,	
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 16533,
@@ -43,7 +42,7 @@ return {
 		radaremitheight = 42,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
-		sightdistance = 455,
+		sightdistance = 300,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

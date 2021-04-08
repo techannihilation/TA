@@ -1,6 +1,8 @@
 3.84 > 3.85
 2021-04-08
 Balance :
+ - Squarepants T2 Talon : Decrease stats and cost. Increaase Speed. Delete Lighning weapons.
+
 Improvment :
  - Delete T3 All terrain Macross Core and Jaguar Arm
 

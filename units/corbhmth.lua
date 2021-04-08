@@ -12,8 +12,8 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
-		collisionvolumeoffsets = "0 -1 0",
-		collisionvolumescales = "95 45 95",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "110 52 110",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -22,8 +22,8 @@ return {
 		energystorage = 2048,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
-		footprintx = 5,
-		footprintz = 5,
+		footprintx = 6,
+		footprintz = 6,
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
@@ -46,7 +46,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corbhmth",
-		yardmap = "coooc ooooo ooGoo ooooo coooc",
+		yardmap = "cooooc oooooo ooGGoo ooGGoo oooooo cooooc",
 		customparams = {
 			buildpic = "corbhmth.dds",
 			faction = "CORE",
@@ -112,7 +112,7 @@ return {
 			},
 		},
 		weapondefs = {
-			corbhmth_weapon1 = {
+			corbhmth_weapon = {
 				accuracy = 780,
 				areaofeffect = 192,
 				avoidfeature = false,
@@ -156,7 +156,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
-				def = "CORBHMTH_WEAPON1",
+				def = "CORBHMTH_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},
 		},

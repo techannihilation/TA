@@ -38,7 +38,6 @@ return {
 		movementclass = "BOAT4",
 		name = "Pathfinder",
 		noautofire = false,
-
 		objectname = "CORMLS",
 		radaremitheight = 25,
 		seismicsignature = 0,

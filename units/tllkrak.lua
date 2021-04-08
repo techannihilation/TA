@@ -1,8 +1,8 @@
 return {
 	tllkrak = {
 		buildangle = 32768,
-		buildcostenergy = 16633,
-		buildcostmetal = 2738,
+		buildcostenergy = 19633,
+		buildcostmetal = 2538,
 		builder = false,
 		buildpic = "tllkrak.dds",
 		buildtime = 25000,
@@ -110,7 +110,7 @@ return {
 		weapondefs = {
 			floating_plasma = {
 				accuracy = 400,
-				areaofeffect = 150,
+				areaofeffect = 144,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -141,7 +141,7 @@ return {
 				weaponvelocity = 450,
 				damage = {
 					default = 240,
-					experimental_ships = 480,
+					experimental_ships = 360,
 					ships = 360,
 					subs = 5,
 				},

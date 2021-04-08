@@ -34,8 +34,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMASY",
 		radardistance = 50,
 		radaremitheight = 71,
@@ -61,7 +60,7 @@ return {
 			[6] = "armcrus",
 			[7] = "armmship",
 			[8] = "armserpent",
-			[9] = "armcarry",			
+			[9] = "armcarry",
 			[10] = "armbats",
 		},
 		customparams = {

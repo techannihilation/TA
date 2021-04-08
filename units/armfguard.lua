@@ -2,7 +2,7 @@ return {
 	armfguard = {
 		buildangle = 32768,
 		buildcostenergy = 23636,
-		buildcostmetal = 2518,
+		buildcostmetal = 2318,
 		builder = false,
 		buildpic = "armfguard.dds",
 		buildtime = 25000,
@@ -21,13 +21,12 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 27,
-		mass = 2518,
+		mass = 2318,
 		maxdamage = 3450,
 		maxslope = 14,
 		minwaterdepth = 5,
 		name = "Trident",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "armfguard",
 		onoffable = true,
@@ -111,7 +110,7 @@ return {
 		weapondefs = {
 			floating_plasma = {
 				accuracy = 400,
-				areaofeffect = 160,
+				areaofeffect = 128,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -141,8 +140,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 452,
 				damage = {
-					default = 165,
-					experimental_ships = 350,
+					default = 160,
+					experimental_ships = 240,
 					ships = 240,
 					subs = 5,
 				},

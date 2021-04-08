@@ -1,8 +1,8 @@
 return {
 	corfpun = {
 		buildangle = 32768,
-		buildcostenergy = 30655,
-		buildcostmetal = 2827,
+		buildcostenergy = 26655,
+		buildcostmetal = 2527,
 		builder = false,
 		buildpic = "corfpun.dds",
 		buildtime = 28000,
@@ -12,7 +12,6 @@ return {
 		category = "ALL MEDIUM SURFACE UNDERWATER",
 		corpse = "dead",
 		description = "Floating Plasma Battery",
-		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		floater = true,
@@ -23,12 +22,11 @@ return {
 		idletime = 1800,
 		losemitheight = 30,
 		mass = 2827,
-		maxdamage = 3050,
+		maxdamage = 2527,
 		maxslope = 14,
 		minwaterdepth = 5,
 		name = "Lotus",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "corfpun",
 		onoffable = true,
@@ -112,7 +110,7 @@ return {
 		weapondefs = {
 			floating_plasma = {
 				accuracy = 400,
-				areaofeffect = 140,
+				areaofeffect = 128,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
 				craterareaofeffect = 0,
@@ -142,9 +140,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 452,
 				damage = {
-					default = 180,
-					experimental_ships = 360,
-					ships = 280,
+					default = 170,
+					experimental_ships = 255,
+					ships = 255,
 					subs = 5,
 				},
 			},
