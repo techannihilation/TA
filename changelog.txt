@@ -4,6 +4,7 @@ Balance :
  - Squarepants T2 Talon : Decrease stats and cost. Increaase Speed. Delete Lighning weapons.
 
 Improvment :
+ - Delete Metal Maker from all Drillers
  - Delete T3 All terrain Macross Core and Jaguar Arm
 
 3.83 > 3.84

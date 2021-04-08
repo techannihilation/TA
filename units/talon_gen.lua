@@ -35,7 +35,7 @@ return {
 		noautofire = false,
 		objectname = "talon_gen",
 		radaremitheight = 32,
-		selfdestructas = "LIGHTSHIPBLAST",
+		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 250,
 		unitname = "talon_gen",
 		usebuildinggrounddecal = true,

@@ -7,6 +7,14 @@ piece  base, top, emit;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
+EffectWatch()
+{
+	while( TRUE )
+	{
+		emit-sfx 1024 + 0 from emit;
+		sleep 150;
+	}
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -14,6 +22,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	start-script EffectWatch();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -47,6 +56,7 @@ Stop()
 	Static_Var_3 = 0;
 }
 
+/*
 MMStatus(Func_Var_1)
 {
 	Static_Var_2 = Func_Var_1;
@@ -77,19 +87,7 @@ ImAMetalMaker()
 		sleep 1000;
 	}
 }
-
-EffectWatch()
-{
-	while( TRUE )
-	{
-		while( Static_Var_3 == 1 )
-		{
-			emit-sfx 1024 + 0 from emit;
-			sleep 33;
-		}
-		sleep 333;
-	}
-}
+*/
 
 MovementWatch()
 {
@@ -110,11 +108,10 @@ MovementWatch()
 
 Create()
 {
-	Static_Var_3 = 0;
+	//Static_Var_3 = 0;
 	start-script SmokeUnit();
-	start-script ImAMetalMaker();
-	start-script EffectWatch();
-	start-script MovementWatch();
+	//start-script ImAMetalMaker();
+	//start-script MovementWatch();
 }
 
 SweetSpot(piecenum)

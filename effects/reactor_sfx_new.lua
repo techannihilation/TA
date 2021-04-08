@@ -24,7 +24,7 @@ return {
       properties = {
         airdrag            = 0.2,
         alwaysvisible      = false,
-        colormap           = [[1.0 1.0 0 0.84	0.8 1.0 0.0 0.71	0.8 1.0 0.0 0.91	0.1 0.1 0.0 0.01]],
+        colormap           = [[0.1 0.1 0.6 0.84	0.2 0.2 0.4 0.71	0.1 0.1 0.6 0.91	0.1 0.1 0.0 0.01]],
         directional        = false,
         emitrot            = 45,
         emitrotspread      = 32,
@@ -106,4 +106,3 @@ return {
     },
   },
 }
-

@@ -12,7 +12,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL UNDERWATER",
+		category = "ALL SURFACE",
 		corpse = "corint_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range EMP Paralizer",

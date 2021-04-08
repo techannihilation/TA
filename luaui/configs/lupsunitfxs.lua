@@ -59,6 +59,12 @@ cafus = {
     {class='ShieldJitter',options={priority=2,layer=-16, life=math.huge, pos={0,58.9,-4.5}, size=24.5, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
+
+  corgen = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,25,0}, delay=0, size=30, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+    {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,25,0}, size=10, precision=20, repeatEffect=true}},
+    --{class='GroundFlash',options=groundFlashBlue},
+  },
   corfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},

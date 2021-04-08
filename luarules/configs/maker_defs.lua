@@ -23,8 +23,7 @@ local convertCapacities = {
 		[UnitDefNames.ametalmakerlvl2.id]  = { c = 8000, e = (AC6) }, -- T3
 		[UnitDefNames.ametalmakerlvl3.id]  = { c = 32000, e = (AC7) }, -- T4
 		[UnitDefNames.ametalmakerlvl4.id]  = { c = 192000, e = (AC8) }, -- T5
-
-		[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) },
+		--[UnitDefNames.armgen.id]  = { c = UnitDefNames.armgen.energyMake, e = (ACZ) },
 
 		--CORE
 		[UnitDefNames.cormakr.id]  = { c = 64, e = (AC0) }, -- Normal
@@ -35,7 +34,7 @@ local convertCapacities = {
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC5) }, -- Underwater
 		[UnitDefNames.cmetalmakerlvl2.id]  = { c = 10240, e = (AC6) }, -- T3
 		[UnitDefNames.cmetalmakerlvl3.id]  = { c = 40960, e = (AC7) }, -- T4
-		[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) },
+		--[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) },
 
 		--TLL
 		[UnitDefNames.tllmm.id]  = { c = 45, e = (AC0) }, -- Normal
@@ -46,7 +45,7 @@ local convertCapacities = {
 		[UnitDefNames.tllmetalmakerlvl2.id]  = { c = 9000, e = (AC6) }, -- T4
 		[UnitDefNames.tllmetalmakerlvl3.id]  = { c = 36000, e = (AC7) }, -- T4
 		[UnitDefNames.tllmetalmakerlvl4.id]  = { c = 168000, e = (AC8) }, -- T5
-		[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) },
+		--[UnitDefNames.tllgen.id]  = { c = UnitDefNames.tllgen.energyMake, e = (ACZ) },
 
 		--TALON
 		[UnitDefNames.talon_makr.id]  = { c = 75, e = (AC0) }, -- Normal

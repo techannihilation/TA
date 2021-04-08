@@ -7,6 +7,19 @@ piece  base, body, towers, holo, lights, metal, emit;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
+EffectWatch()
+{
+	while( TRUE )
+	{
+		while( TRUE )
+		{
+			emit-sfx 1024 + 0 from emit;
+			sleep 1600;
+			//call-script Go();
+		}
+		sleep 333;
+	}
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -14,6 +27,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	//start-script EffectWatch();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -53,6 +67,8 @@ Stop()
 	dont-cache lights;
 }
 
+/*
+
 MMStatus(Func_Var_1)
 {
 	Static_Var_2 = Func_Var_1;
@@ -83,28 +99,13 @@ ImAMetalMaker()
 		sleep 1000;
 	}
 }
-
-EffectWatch()
-{
-	while( TRUE )
-	{
-		while( Static_Var_3 == 1 )
-		{
-			emit-sfx 1024 + 0 from emit;
-			sleep 1600;
-		}
-		sleep 333;
-	}
-}
+*/
 
 Create()
 {
-	Static_Var_3 = 0;
-	dont-shade metal;
-	dont-cache lights;
 	start-script SmokeUnit();
-	start-script ImAMetalMaker();
-	start-script EffectWatch();
+//	start-script ImAMetalMaker();
+
 }
 
 SweetSpot(piecenum)
