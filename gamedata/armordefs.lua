@@ -130,6 +130,12 @@ return {
 	-- SATELLITE
 	"sat_radar",
 	"sat_interceptor",
+	"sat_strike",
+	"sat_antiair",
+	"armcsat",
+	"tllcsat",
+	"corcsat",
+	"talon_csat",
 },
 
 	--### SEA ###

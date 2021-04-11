@@ -6,10 +6,6 @@ return {
 		buildcostenergy = 3051,
 		buildcostmetal = 254,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "corhllt_aoplane.dds",
 		buildpic = "corhllt.dds",
 		buildtime = 6000,
 		canattack = true,
@@ -50,7 +46,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corhllt",
-		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "corhllt.dds",

@@ -144,7 +144,7 @@ return {
 				model = "crblmssl",
 				name = "CoreNuclearMissile",
 				range = 72000,
-				reloadtime = 2,
+				reloadtime = 20,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",

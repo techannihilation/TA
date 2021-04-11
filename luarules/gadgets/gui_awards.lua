@@ -84,6 +84,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.corefus.id,
 	UnitDefNames.corufus.id,
 	UnitDefNames.tllefus.id,
+  UnitDefNames.tlluwefusion.id,
   UnitDefNames.talon_solar.id,
   UnitDefNames.talon_advsolar.id,
   UnitDefNames.talon_win.id,
@@ -94,6 +95,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.talon_afus.id,
 	UnitDefNames.talon_efus.id,
 	UnitDefNames.talon_uwfus.id,
+  UnitDefNames.talon_uwefus.id,
   UnitDefNames.talon_pyroclastic.id,
 	--Metal Makers
 	UnitDefNames.armmakr.id,

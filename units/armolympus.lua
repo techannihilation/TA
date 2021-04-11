@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Mobile Command Vehicle",
+		description = "Experimental Weapon Vehicle",
 		downloadable = 1,
 		explodeas = "KROG_BLAST",
 		firestandorders = 1,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "armolympus.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T4 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

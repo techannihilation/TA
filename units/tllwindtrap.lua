@@ -27,8 +27,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Wind Trap",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "Tllwindtrap",
 		radardistance = 0,
 		radaremitheight = 38,

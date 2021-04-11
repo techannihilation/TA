@@ -30,7 +30,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Rod Of God",
 		noautofire = false,
-		
 		objectname = "talon_silo",
 		radardistance = 0,
 		radaremitheight = 69,
@@ -125,7 +124,7 @@ return {
 				model = "ballmiss",
 				name = "NuclearMissile",
 				range = 72000,
-				reloadtime = 1.5,
+				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",

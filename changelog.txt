@@ -2,8 +2,11 @@
 2021-04-08
 Balance :
  - Squarepants T2 Talon : Decrease stats and cost. Increaase Speed. Delete Lighning weapons.
+ - Increase Mertalcost for all Long Range Missile AA T2. Decrease AOE 800=>600. Decrease range 3K=>2.4K
 
 Improvment :
+ - Add Satellite T3 Lab for T2 Air cons
+ - Add Cons Sat, Anti-Air sat, Strike sat, Mds Sat, Radar Sat to Sat Lab
  - Delete Metal Maker from all Drillers
  - Delete T3 All terrain Macross Core and Jaguar Arm
 

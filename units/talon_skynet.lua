@@ -172,22 +172,26 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "LARGE MEDIUM SMALL TINY",
 				def = "skynet_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "LARGE MEDIUM SMALL TINY",
 				def = "MountedAntimatterAccelerator",
 				maindir = "0 0 1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "LARGE MEDIUM SMALL TINY",
 				def = "MountedAntimatterAccelerator",
 				maindir = "-1 0 -1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
+				badtargetcategory = "LARGE MEDIUM SMALL TINY",
 				def = "MountedAntimatterAccelerator",
 				maindir = "1 0 -1",
 				maxangledif = 160,

@@ -31,7 +31,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Revenger",
 		noautofire = false,
-		
 		objectname = "TLLSILO1",
 		radardistance = 0,
 		radaremitheight = 69,
@@ -131,7 +130,7 @@ return {
 				model = "crblmssl",
 				name = "NuclearMissile",
 				range = 72000,
-				reloadtime = 1.5,
+				reloadtime = 20,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",

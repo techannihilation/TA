@@ -150,7 +150,8 @@ function gadget:Initialize()
       elseif (ud.name=="armwolf") or (ud.name=="shrike") or (ud.name=="tllshu") or (ud.name=="talon_hornet") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user")
 --satellite
-    elseif (ud.name=="sat_radar") or (ud.name=="sat_interceptor") then
+    elseif (ud.name=="sat_radar") or (ud.name=="sat_interceptor") or (ud.name=="sat_strike") or (ud.name=="sat_antiair")
+    or (ud.name=="armcsat") or (ud.name=="tllcsat") or (ud.name=="talon_csat") or (ud.name=="corcsat") then
       Spring.SetUnitDefIcon(udid, "satellite.user")
 --krow
       elseif (ud.name=="corcrw") then

@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Silencer",
 		noautofire = false,
-		
 		objectname = "CORSILO1",
 		radardistance = 50,
 		radaremitheight = 67,
@@ -143,7 +142,7 @@ return {
 				model = "crblmssl",
 				name = "CoreNuclearMissile",
 				range = 72000,
-				reloadtime = 1.8,
+				reloadtime = 20,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",

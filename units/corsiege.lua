@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
-		collisionvolumeoffsets = "-1 -9 -22",
+		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "65 48 85",
 		collisionvolumetype = "box",
 		corpse = "dead",
@@ -38,7 +38,6 @@ return {
 		movementclass = "VHTANK5",
 		name = "Demolisher",
 		noautofire = false,
-		
 		objectname = "corsiege",
 		radardistance = 0,
 		radaremitheight = 34,

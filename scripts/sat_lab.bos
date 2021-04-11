@@ -1,0 +1,292 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece base, body, tower, bloc, barrel, beam, colonn, pad, flash, fan, 
+		lever1, lever2, cover, nano, beam1, beam2, beam3, blink1, blink2;
+
+static-var spray, unitview, statechg_DesiredState, statechg_StateChanging, bWorking, Static_Var_1;
+
+#define SIG_ACTIVATE		2
+
+
+Standby()
+{
+	while( TRUE )
+	{
+		emit-sfx 1024 from blink1;
+		//sleep 150;
+		emit-sfx 1025 from blink2;
+		sleep 5000;
+		emit-sfx 1024 from blink2;
+		//sleep 150;
+		emit-sfx 1025 from blink1;
+		sleep 5000;
+	}
+	sleep 250;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn cover to z-axis <-90> speed <15.0>;
+		wait-for-turn cover around z-axis;
+	}
+	sleep 50;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn cover to z-axis <0.0> speed <15.0>;
+		move bloc to y-axis [0.0] speed [5.0];
+		wait-for-turn cover around z-axis;
+	}
+	sleep 50;
+}
+
+WhenBuilding()
+{
+	while( TRUE )
+	{
+		if(bWorking == 1)
+		{
+			spin nano around y-axis speed <20.0>;
+			spin pad around y-axis speed <5.0>;
+			move bloc to y-axis [30.0] speed [10];
+			wait-for-move bloc along y-axis;
+			sleep 300;
+			move bloc to y-axis [0.0] speed [10];
+			wait-for-move bloc along y-axis;
+			sleep 300;
+		}
+		if(bWorking == 0)
+		{
+			spin nano around y-axis speed <0.0> accelerate <-2.0>;
+			spin pad around y-axis speed <0.0>;
+			move bloc to y-axis [0.0] speed [5.0];
+			wait-for-move bloc along y-axis;
+			sleep 500;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	spin barrel around y-axis speed <-8.0>;
+	spin fan around y-axis speed <185.0>;
+	start-script Standby();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	unitview = FALSE;
+	spray = 0;
+	bWorking = 0;
+	Static_Var_1 = 800;
+	call-script InitState();
+	start-script whenbuilding();
+	start-script SmokeUnit();
+}
+
+SweetSpot (piecenum)
+{
+	piecenum = base;
+}
+
+Demo()
+{
+	unitview = TRUE;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	bWorking = 1;
+}
+
+StopBuilding()
+{
+	bWorking = 0;
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if(spray == 1)
+	{
+		piecenum = beam;
+	}
+	if(spray == 2)
+	{
+		piecenum = beam1;
+	}
+	if(spray == 3)
+	{
+		piecenum = beam2;
+	}
+	if(spray == 4)
+	{
+		piecenum = beam3;
+	}
+	++spray;
+	if(spray == 5)
+	{
+		spray = 1;
+	}
+}
+
+Killed(severity, corpsetype)
+	{
+	if (severity <= 25)
+		{
+		corpsetype = 1;
+		explode body type	NOHEATCLOUD;
+		explode tower type	NOHEATCLOUD;
+		explode barrel type	NOHEATCLOUD;
+		explode colonn type	NOHEATCLOUD;
+		explode bloc type	NOHEATCLOUD;
+		explode cover type	NOHEATCLOUD;
+		explode flash type	NOHEATCLOUD;
+		explode fan type	NOHEATCLOUD;
+		return(corpsetype);
+		}
+	if (severity <= 50)
+		{
+		corpsetype = 2;
+		explode body type	NOHEATCLOUD;
+		explode tower type	NOHEATCLOUD;
+		explode barrel type	NOHEATCLOUD | FALL;
+		explode colonn type	NOHEATCLOUD;
+		explode bloc type	NOHEATCLOUD | FALL;
+		explode cover type	NOHEATCLOUD | FALL;
+		explode flash type	NOHEATCLOUD | FALL;
+		explode fan type	NOHEATCLOUD | FALL;
+		return(corpsetype);
+		}
+	corpsetype = 3;
+	explode body type	NOHEATCLOUD;
+	explode tower type	NOHEATCLOUD;
+	explode barrel type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode colonn type	NOHEATCLOUD;
+	explode bloc type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode cover type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode flash type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode fan type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return(corpsetype);
+	}
