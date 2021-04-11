@@ -118,7 +118,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("tllcolossus.user", "icons/tllcolossus.png", 4)
   Spring.AddUnitIcon("tllsaurus.user", "icons/tllsaurus.png", 5)
   Spring.AddUnitIcon("talon_mythril.user", "icons/talon_mythril.png", 5)
-  Spring.AddUnitIcon("nsaagriz.user", "icons/nsaagriz.png", 3)
+  Spring.AddUnitIcon("armkrypto.user", "icons/armkrypto.png", 3)
   Spring.AddUnitIcon("talon_annubis.user", "icons/talon_annubis.png", 4)
   Spring.AddUnitIcon("armpraet.user", "icons/armpraet.png", 3)
   Spring.AddUnitIcon("talon_scorpion.user", "icons/talon_scorpion.png", 3)
@@ -253,8 +253,8 @@ function gadget:Initialize()
       elseif (ud.name=="talon_annubis") then
         Spring.SetUnitDefIcon(udid, "talon_annubis.user")
 --t3 Krypto
-      elseif (ud.name=="nsaagriz") then
-        Spring.SetUnitDefIcon(udid, "nsaagriz.user")
+      elseif (ud.name=="armkrypto") then
+        Spring.SetUnitDefIcon(udid, "armkrypto.user")
 --t4 mechs
       elseif (ud.name=="talon_mythril") then
         Spring.SetUnitDefIcon(udid, "talon_mythril.user")

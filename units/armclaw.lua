@@ -20,7 +20,6 @@ return {
 		description = "Pop-Up Lightning Turret",
 		digger = 1,
 		downloadable = 1,
-		energystorage = 15,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -36,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Claw",
 		noautofire = false,
-		
+
 		objectname = "ARMCLAW",
 		radardistancejam = 8,
 		radaremitheight = 44,

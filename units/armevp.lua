@@ -58,7 +58,7 @@ return {
 			[7] = "armmlrs",
 			[8] = "armthor",
 			[9] = "armhcrus",
-			[10] = "nsaagriz",
+			[10] = "armkrypto",
 		},
 		customparams = {
 			buildpic = "armevp.dds",

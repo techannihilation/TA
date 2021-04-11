@@ -34,7 +34,7 @@ return {
 		maxdamage = 1595,
 		maxvelocity = 2.3,
 		metalmake = 0.2,
-		metalstorage = 50,
+		metalstorage = 20,
 		minwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "BOAT4",

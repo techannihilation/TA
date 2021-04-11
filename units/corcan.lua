@@ -20,7 +20,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Armored Assault Kbot (Sniper Resistant)",
-		energystorage = 25,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -38,7 +37,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Can",
 		noautofire = false,
-		
+
 		objectname = "CORCAN",
 		radaremitheight = 29,
 		seismicsignature = 0,

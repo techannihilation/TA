@@ -54,7 +54,7 @@ return {
 			[6] = "nsacanglr",
 			[7] = "corfrog",
 			[8] = "corhover3g",
-			[9] = "nsacbehe",
+			[9] = "corhgol",
 			[10] = "coradon",
 		},
 		customparams = {

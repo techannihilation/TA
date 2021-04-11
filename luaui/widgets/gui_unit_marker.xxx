@@ -111,7 +111,7 @@ unitList["TA"] = {
 
 --Anti Experimental Cannon
 [UnitDefNames["corboucher"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
-[UnitDefNames["nebraska"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
+[UnitDefNames["armnebraska"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 [UnitDefNames["tlldmc"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 [UnitDefNames["talon_dmc"].id] = 	{["en"]="Anti Experimental", ["de"]="", ["fr"]="" },
 

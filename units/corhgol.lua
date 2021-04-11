@@ -1,11 +1,11 @@
 return {
-	nsacbehe = {
+	corhgol = {
 		acceleration = 0.03,
 		brakerate = 0.69,
 		buildcostenergy = 27521,
 		buildcostmetal = 2381,
 		builder = false,
-		buildpic = "nsacbehe.dds",
+		buildpic = "corhgol.dds",
 		buildtime = 30000,
 		canattack = true,
 		canguard = true,
@@ -36,8 +36,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Behegoli",
 		noautofire = false,
-		
-		objectname = "NSACBEHE",
+
+		objectname = "corhgol",
 		radardistance = 0,
 		radaremitheight = 33,
 		selfdestructas = "BIG_UNIT",
@@ -49,9 +49,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.792,
 		turnrate = 169,
-		unitname = "nsacbehe",
+		unitname = "corhgol",
 		customparams = {
-			buildpic = "nsacbehe.dds",
+			buildpic = "corhgol.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1777,
-				object = "nsacbehe_dead",
+				object = "corhgol_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

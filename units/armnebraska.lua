@@ -1,10 +1,10 @@
 return {
-	nebraska = {
+	armnebraska = {
 		buildangle = 8192,
 		buildcostenergy = 646189,
 		buildcostmetal = 53932,
 		builder = false,
-		buildpic = "nebraska.dds",
+		buildpic = "armnebraska.dds",
 		buildtime = 750000,
 		canattack = true,
 		canstop = 1,
@@ -28,31 +28,31 @@ return {
 		maxdamage = 168450,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "NEBRASKA",
+		name = "armnebraska",
 		noautofire = false,
-		
-		objectname = "Nebraska",
+
+		objectname = "armnebraska",
 		radardistance = 0,
 		radaremitheight = 66,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 1500,
 		standingfireorder = 2,
-		unitname = "nebraska",
+		unitname = "armnebraska",
 		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo",
 		customparams = {
-			buildpic = "nebraska.dds",
+			buildpic = "armnebraska.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				damage = 27385,
-				description = "NEBRASKA Wreckage",
+				description = "armnebraska Wreckage",
 				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 23812,
-				object = "NEBRASKA_dead",
+				object = "armnebraska_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -61,7 +61,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 34231,
-				description = "NEBRASKA Debris",
+				description = "armnebraska Debris",
 				footprintx = 4,
 				footprintz = 4,
 				metal = 12700,
@@ -104,7 +104,7 @@ return {
 			},
 		},
 		weapondefs = {
-			nebraska_weapon = {
+			armnebraska_weapon = {
 				areaofeffect = 180,
 				avoidfeature = false,
 				cegtag = "Trail_dmc_cannon",
@@ -149,7 +149,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "LARGE MEDIUM SMALL TINY",
-				def = "NEBRASKA_WEAPON",
+				def = "armnebraska_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},
 		},

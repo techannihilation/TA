@@ -16,7 +16,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Jammer Spider",
-		energymake = 15,
 		energyuse = 35,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,

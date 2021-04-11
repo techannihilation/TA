@@ -23,7 +23,7 @@ return {
 		description = "Tech Level 2",
 		downloadable = 1,
 		energymake = 15,
-		energystorage = 50,
+		energystorage = 15,
 		energyuse = 0,
 		explodeas = "SMALL_UNITEX",
 		footprintx = 3,

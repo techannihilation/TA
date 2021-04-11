@@ -58,7 +58,7 @@ return {
 			[5] = "ashipyardlvl3",
 			[6] = "armnanotc4",
 			[7] = "armujam",
-			[8] = "nebraska",
+			[8] = "armnebraska",
 			[9] = "armgate3",
 			[10] = "armamd2",
 			[11] = "armfsilo",

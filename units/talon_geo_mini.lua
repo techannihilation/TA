@@ -12,7 +12,7 @@ return {
 		buildtime = 6200,
 		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
-		description = "Produces Energy",
+		description = "Produces Energy (Amphibious)",
 		energymake = 180,
 		energystorage = 360,
 		energyuse = 0,
@@ -31,7 +31,6 @@ return {
 		maxwaterdepth = 9999,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
-		
 		objectname = "talon_geo_mini",
 		onoffable = true,
 		radaremitheight = 30,

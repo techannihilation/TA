@@ -558,11 +558,11 @@ local morphDefs = {
 		time = 90,
 		xp = 0.50,
 	},
-	corgator = {
-		into = 'nsacskv',
-		time = 20,
-		xp = 0.15,
-	},
+	--corgator = {
+	--	into = 'nsacskv',
+	--	time = 20,
+	--	xp = 0.15,
+	--},
 	corlevlr = {
 		into = 'corgol',
 		time = 45,
@@ -626,14 +626,14 @@ local morphDefs = {
 		xp = 0.25,
 	},
 	armmav = {
-    		into = 'armraz',
+    into = 'armraz',
 		time = 60,
 		xp = 0.25,
 	},
 	armraz  = {
  		into = 'armraptor',
-        	time = 90,
-        	xp = 0.10,
+    time = 90,
+    xp = 0.10,
          },
 	armvengence = {
 		into = 'armorco',
@@ -657,12 +657,7 @@ local morphDefs = {
 	},
 	helepolis = {
 		into = 'corgorg',
-		time = 90,
-		xp = 0.10,
-	},
-	armzeus = {
-		into = 'armcav',
-		time = 20,
+		time = 45,
 		xp = 0.10,
 	},
 	armfboy = {
@@ -821,7 +816,7 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corsnap = {
-		into = 'nsacbehe',
+		into = 'corhgol',
 		time = 45,
 		xp = 0.60,
 	},
@@ -953,13 +948,8 @@ local morphDefs = {
 		time = 120,
 		xp = 0.60,
 	},
-	tllroaster = {
-		into = 'tllroaster1',
-		time = 30,
-		xp = 0.15,
-	},
 	armmanni = {
-		into = 'nsaagriz',
+		into = 'armkrypto',
 		time = 90,
 		xp = 0.25,
 	},

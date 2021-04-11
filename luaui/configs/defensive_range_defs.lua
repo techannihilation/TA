@@ -97,7 +97,7 @@ modConfig["TA"]["unitList"] =
 								core_immolator = { weapons = { 1 } },
 								core_immolator1	 = { weapons = { 1 } },
 								corhllt = { weapons = { 1 } },
-								nebraska = { weapons = { 1 } },
+								armnebraska = { weapons = { 1 } },
 								core_intimidator = { weapons = { 1 } },
 								corpcan = { weapons = { 1 } },
 								cormmds = { weapons = { 3 } }, --Missile Defence System

@@ -4,7 +4,7 @@
 -- explosion_huge_tesla_controller
 
 return {
-  ["explosion_huge_talon_base"] = {
+  ["explosion_talon"] = {
     smoke = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -270,7 +270,7 @@ return {
         damage             = [[0 r100]],
         delay              = 0,
         dir                = [[0,1,0]],
-        explosiongenerator = [[custom:Explosion_Huge_Tesla_Controller]],
+        explosiongenerator = [[custom:explosion_talon_controller]],
         pos                = [[0,0,0]],
         speed              = [[0,0,0]],
       },
@@ -333,7 +333,7 @@ return {
     },
   },
 
-  ["explosion_hugelight_talon"] = {
+  ["explosion_light_talon"] = {
     explosionball = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -568,7 +568,7 @@ return {
         damage             = [[0 r100]],
         delay              = 0,
         dir                = [[0,1,0]],
-        explosiongenerator = [[custom:Explosion_Huge_Tesla_Controller]],
+        explosiongenerator = [[custom:explosion_talon_controller]],
         pos                = [[0,0,0]],
         speed              = [[0,0,0]],
       },
@@ -631,7 +631,7 @@ return {
     },
   },
 
-  ["explosion_huge_talon_controller"] = {
+  ["explosion_talon_controller"] = {
     trails = {
       air                = true,
       class              = [[CExpGenSpawner]],
@@ -642,7 +642,7 @@ return {
         damage             = [[0 i0.5]],
         delay              = [[8 i3.0]],
         dir                = [[0,1,0]],
-        explosiongenerator = [[custom:Explosion_Huge_Tesla_Base]],
+        explosiongenerator = [[custom:explosion_talon]],
         pos                = [[1 d.03 y1 i2 x1 y0 d1 s1 x0,-1 y1 i.5 p2 x1 y1 2 x0 a1,1.58 d1 s1 x0]],
         speed              = [[0,0,0]],
       },

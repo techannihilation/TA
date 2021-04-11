@@ -18,7 +18,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Tech Level 2",
 		energymake = 20,
-		energystorage = 100,
+		energystorage = 20,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
 		footprintz = 3,
@@ -31,12 +31,12 @@ return {
 		maxvelocity = 1.1,
 		maxwaterdepth = 27,
 		metalmake = 0.2,
-		metalstorage = 50,
+		metalstorage = 20,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
 		name = "All-Terrain Construction Tortoise",
 		noautofire = false,
-		
+
 		objectname = "CORCT",
 		radaremitheight = 22,
 		selfdestructas = "BIG_UNIT",

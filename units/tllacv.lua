@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Tech Level 2",
 		energymake = 10,
-		energystorage = 50,
+		energystorage = 10,
 		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		footprintx = 3,
@@ -37,12 +37,12 @@ return {
 		maxvelocity = 1.6,
 		maxwaterdepth = 18,
 		metalmake = 0.3,
-		metalstorage = 50,
+		metalstorage = 30,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		
+
 		objectname = "TLLACV",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",

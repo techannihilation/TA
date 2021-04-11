@@ -659,11 +659,11 @@ corsam.dds
 armmarauder.dds
 armmercury.dds
 cormonkeylord.dds
-nebraska.dds
-nsaagriz.dds
+armnebraska.dds
+armkrypto.dds
 nsaatorph.dds
 nsacanglr.dds
-nsacbehe.dds
+corhgol.dds
 nsaclash.dds
 nsacskv.dds
 armpack.dds

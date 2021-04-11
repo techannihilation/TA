@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "63 45 59",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Produces Energy / Storage",
+		description = "Produces Energy (Amphibious)",
 		energymake = 640,
 		energystorage = 1280,
 		energyuse = 0,
@@ -35,8 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORGEO",
 		radaremitheight = 50,
 		seismicsignature = 0,

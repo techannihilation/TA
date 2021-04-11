@@ -1,11 +1,11 @@
 return {
-	nsaagriz = {
+	armkrypto = {
 		acceleration = 0.015,
 		brakerate = 0.28,
 		buildcostenergy = 480133,
 		buildcostmetal = 29101,
 		builder = false,
-		buildpic = "nsaagriz.dds",
+		buildpic = "armkrypto.dds",
 		buildtime = 400000,
 		canattack = true,
 		canguard = true,
@@ -41,7 +41,7 @@ return {
 		movementclass = "VHTANK5",
 		name = "Krypto-Blaster",
 		noautofire = false,
-		objectname = "NSAAGRIZ",
+		objectname = "armkrypto",
 		onoffable = true,
 		radardistance = 1000,
 		radaremitheight = 70,
@@ -55,9 +55,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.66,
 		turnrate = 150,
-		unitname = "nsaagriz",
+		unitname = "armkrypto",
 		customparams = {
-			buildpic = "nsaagriz.dds",
+			buildpic = "armkrypto.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
@@ -70,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21750,
-				object = "nsaagriz_dead",
+				object = "armkrypto_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

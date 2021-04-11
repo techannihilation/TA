@@ -12,8 +12,6 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Produces Energy",
-		energystorage = 20,
-		energyuse = 0,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 6,
 		footprintz = 6,

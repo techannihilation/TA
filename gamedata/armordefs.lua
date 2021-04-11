@@ -266,7 +266,7 @@ return {
 		-- arm t3 vehs
 		"avtr",
 		"corsiege",
-		"nsaagriz",
+		"armkrypto",
 		"armmlrs",
 		"corchamp",
 		--"armantar",

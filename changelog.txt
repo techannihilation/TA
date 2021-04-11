@@ -9,6 +9,7 @@ Improvment :
  - Add Cons Sat, Anti-Air sat, Strike sat, Mds Sat, Radar Sat to Sat Lab
  - Delete Metal Maker from all Drillers
  - Delete T3 All terrain Macross Core and Jaguar Arm
+ - Add Amphibious for All Geo except Moho with Weapon
 
 3.83 > 3.84
 2021-04-06
@@ -776,7 +777,7 @@ Improvments:
 2020-03-11
 Balance :
  - Decrease range for Silver Talon and Bahamut TLL Unit
- - Increase Range of T5 Turrets: The Butcher 1560 -> 1700, Nebraska 1500 -> 1650, Tll DMC 1480 -> 1600
+ - Increase Range of T5 Turrets: The Butcher 1560 -> 1700, armnebraska 1500 -> 1650, Tll DMC 1480 -> 1600
  - Decrease command Vehicle Arm Hp 45K => 43K
  - Decrease Metron HP 54K => 49K
  - TLLColossus : Decrease Range for minion weapon 1500=>1400. Decrease damage for plasma 4000 => 3600
@@ -1192,7 +1193,7 @@ Improvements from last TA version (2019-08-28):
 
 Balance:
  - Bahamut explode and self-destruct as Super Arm Furie
- - Move Boucher/Nebraska/Dark Matter Cannon from T3 into T4
+ - Move Boucher/armnebraska/Dark Matter Cannon from T3 into T4
  - Arm_furie, fatshrew, krogoth have same rocket type.
  - ALL TLL fusion ratio between E/M outpout have been changed. Metal production / 2 and Energy Production * 2.5
  - T3 & T4 Fusion : Buildtime reduced for T3 and increased for T4.
@@ -1235,7 +1236,7 @@ Balance:
  - CORE Commando (commando) is paratrooper, captureSpeed 3112, 1000dps (emp), moveSpeed 64.5
  - ARM Rambo (armrambo) is paratrooper, captureSpeed 2600, 900dps (emp), moveSpeed 82.5 (as reference peewee moveSpeed is 84)
  - TLL Gizmo (tllgizmo) is paratrooper, captureSpeed 4121, 1458dps (emp), moveSpeed 57
- - Remove ARM Nebraska (nebraska), CORE Butcher (corboucher), TLL DMC (tlldmc) from T2 Cons, now avaible in T3 Cons
+ - Remove ARM armnebraska (armnebraska), CORE Butcher (corboucher), TLL DMC (tlldmc) from T2 Cons, now avaible in T3 Cons
  - Nerf ARM Kronos (armmcv), StarburstLauncher Damage 200dps -> 150dps (default)
 
 
@@ -1350,7 +1351,7 @@ Bugs:
  Balance:
  - Increase Juno Time to 8sec
  - TLLGrim (TLL T3 Sniper) : Decrease cost and firerate by 20%. Decrease range 1550 -> 1400
- - nsacbehe (Goliath Hover) : Increase HP 6500 -> 8500. Decrease velocity 1.4 -> 1.2
+ - corhgol (Goliath Hover) : Increase HP 6500 -> 8500. Decrease velocity 1.4 -> 1.2
  - tllleatherback (anti submarine turtle) : increase timebuild 6500 -> 9000. Decrease HP 3250 -> 2850
  - Vengence : HP Decrease 38K-> 35K. Weapons modification but same balance.
  - T3 Cons : Increase timebuild 200K -> 300K. Lock them with T3 RC. (to validate)
