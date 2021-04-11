@@ -1,5 +1,5 @@
 3.84 > 3.85
-2021-04-08
+2021-04-11
 Balance :
  - Squarepants T2 Talon : Decrease stats and cost. Increaase Speed. Delete Lighning weapons.
  - Increase Mertalcost for all Long Range Missile AA T2. Decrease AOE 800=>600. Decrease range 3K=>2.4K
