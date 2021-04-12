@@ -1,0 +1,155 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, flare1, flare2, turret, sleeves, barrel1, barrel2, tracks;
+
+static-var  restore_delay, gun_1;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	turn base to z-axis anglez speed <105.016484>;
+	turn base to x-axis anglex speed <105.016484>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.005495>;
+	turn base to x-axis <0.000000> speed <30.005495>;
+}
+
+Create()
+{
+	gun_1 = 0;
+	restore_delay = 3000;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <80.0>;
+	turn sleeves to x-axis <0.000000> speed <30.0>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <160.0>;
+	turn sleeves to x-axis <0.000000> - pitch speed <60.0>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		move barrel1 to z-axis [-1.500000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare1;
+		sleep 150;
+		wait-for-move barrel1 along z-axis;
+		move barrel1 to z-axis [0.000000] speed [3.500000];
+		gun_1 = 1;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		move barrel2 to z-axis [-1.500000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare2;
+		sleep 150;
+		wait-for-move barrel2 along z-axis;
+		move barrel2 to z-axis [0.000000] speed [3.500000];
+		gun_1 = 0;
+		return (0);
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode tracks type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;
+		explode tracks type NOHEATCLOUD | FALL;
+		explode sleeves type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode tracks type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeves type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD;
+	return (corpsetype);
+}

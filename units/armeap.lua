@@ -55,7 +55,6 @@ return {
 			[6] = "armor",
 			[7] = "armorion",
 			[8] = "armcyclone",
-			[9] = "sat_radar",
 		},
 		customparams = {
 			buildpic = "armeap.dds",

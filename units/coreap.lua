@@ -56,7 +56,6 @@ return {
 			[5] = "cormuat",
 			[6] = "corsbomb",
 			[7] = "coreclipse",
-			[8] = "sat_radar",
 		},
 		customparams = {
 			buildpic = "coreap.dds",

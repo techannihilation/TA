@@ -28,8 +28,7 @@ return {
 		maxdamage = 156200,
 		maxslope = 26,
 		maxwaterdepth = 0,
-		name = "Influence",
-		
+		name = "Influence",		
 		objectname = "CORFLU",
 		radardistance = 0,
 		radaremitheight = 235,

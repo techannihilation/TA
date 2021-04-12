@@ -57,7 +57,6 @@ return {
 			[5] = "tllbtrans",
 			[6] = "tllanhur",
 			[7] = "tllaether",
-			[8] = "sat_radar",
 		},
 		customparams = {
 			buildpic = "tlleap.dds",

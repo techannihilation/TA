@@ -6,6 +6,7 @@ Balance :
 
 Improvment :
  - Add Satellite T3 Lab for T2 Air cons
+ - Add Absolutor to T3 Core Lab Vehicle (was T2.5 unit). Add new model
  - Add Cons Sat, Anti-Air sat, Strike sat, Mds Sat, Radar Sat to Sat Lab
  - Delete Metal Maker from all Drillers
  - Delete T3 All terrain Macross Core and Jaguar Arm

@@ -430,7 +430,6 @@ corecv.dds
 coredauber.dds
 corefus.dds
 core_hexapod_lab.dds
-corehingeback.dds
 corehpad.dds
 core_immolator.dds
 core_intimidator.dds
@@ -665,7 +664,7 @@ nsaatorph.dds
 nsacanglr.dds
 corhgol.dds
 nsaclash.dds
-nsacskv.dds
+corabsolutor.dds
 armpack.dds
 pinchy.dds
 r75v.dds

@@ -558,11 +558,11 @@ local morphDefs = {
 		time = 90,
 		xp = 0.50,
 	},
-	--corgator = {
-	--	into = 'nsacskv',
-	--	time = 20,
-	--	xp = 0.15,
-	--},
+	corgator = {
+		into = 'corabsolutor',
+		time = 60,
+		xp = 0.50,
+	},
 	corlevlr = {
 		into = 'corgol',
 		time = 45,
