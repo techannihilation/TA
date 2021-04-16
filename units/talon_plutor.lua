@@ -182,14 +182,14 @@ return {
 				maindir = "-1 0 0.75",
 				maxangledif = 220,
 				def = "ADVANCED_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[3] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "ADVANCED_MISSILE",
 				maindir = "1 0 0.75",
 				maxangledif = 220,
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 		},
 	},

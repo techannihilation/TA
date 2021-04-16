@@ -12,13 +12,13 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
+		category = "ALL SMALL MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "29 15 35",
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Light Mobile Artillery",
+		description = "Light Artillery Vehicle",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Wolverine",
 		noautofire = false,
-		
+
 		objectname = "CORWOLV",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -116,9 +116,9 @@ return {
 			},
 		},
 		weapondefs = {
-			corwolv_gun = {
+			small_mortar = {
 				accuracy = 300,
-				areaofeffect = 68,
+				areaofeffect = 120,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 0,
@@ -154,9 +154,9 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CORWOLV_GUN",
+				def = "SMALL_MORTAR",
 				maindir = "0 0 1",
-				maxangledif = 180,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 		},

@@ -14,7 +14,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Stealthy Very Heavy All-terrain Anti-Air Kbot",
+		description = "Stealthy All-terrain Anti-Air & Anti-Satellite Kbot",
 		explodeas = "BIG_UNITEX",
 		footprintx = 4,
 		footprintz = 4,
@@ -197,7 +197,7 @@ return {
 			[1] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "ADVANCED_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[2] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA

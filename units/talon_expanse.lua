@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Anti-Air Flak Gravitytank",
+		description = "Experimental Anti-Air & Anti-satellite Gravitytank",
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 6,
@@ -154,7 +154,7 @@ return {
 				edgeeffectiveness = 0.25,
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
 				firestarter = 90,
-				flighttime = 3,
+				flighttime = 2,
 				impulseboost = 0,
 				impulsefactor = 0,
 				model = "weapon_missileaal",
@@ -189,7 +189,7 @@ return {
 			[1] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "ADVANCED_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[2] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA

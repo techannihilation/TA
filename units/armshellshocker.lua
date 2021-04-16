@@ -130,9 +130,9 @@ return {
 			},
 		},
 		weapondefs = {
-			tawf113_weapon = {
+			small_mortar = {
 				accuracy = 300,
-				areaofeffect = 80,
+				areaofeffect = 120,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
 				craterareaofeffect = 0,
@@ -168,9 +168,9 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "TAWF113_WEAPON",
+				def = "SMALL_MORTAR",
 				maindir = "0 0 1",
-				maxangledif = 180,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 		},

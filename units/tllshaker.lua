@@ -12,13 +12,13 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
+		category = "ALL SMALL MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "36 19 30",
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Light Mobile Artillery",
+		description = "Light Artillery Vehicle",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
@@ -38,7 +38,6 @@ return {
 		movementclass = "TANK2",
 		name = "Earth Shaker",
 		noautofire = false,
-		
 		objectname = "TLLSHAKER",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -116,7 +115,7 @@ return {
 			},
 		},
 		weapondefs = {
-			tllshaker_gun = {
+			small_mortar = {
 				accuracy = 300,
 				areaofeffect = 68,
 				avoidfeature = false,
@@ -154,9 +153,9 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "TLLSHAKER_GUN",
+				def = "SMALL_MORTAR",
 				maindir = "0 0 1",
-				maxangledif = 180,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 		},

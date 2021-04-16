@@ -1,7 +1,7 @@
 return {
 	armstratus = {
 		acceleration = 0.02,
-		airsightdistance = 1400,
+		airsightdistance = 1200,
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.04,
@@ -37,7 +37,6 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Stratus",
-		
 		objectname = "armstratus",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -95,14 +94,14 @@ return {
 				edgeeffectiveness = 0.25,
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
 				firestarter = 90,
-				flighttime = 3,
+				flighttime = 2,
 				impulseboost = 0,
 				impulsefactor = 0,
 				model = "weapon_missileaal",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
-				range = 1750,
+				range = 1500,
 				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "impact",
@@ -218,12 +217,12 @@ return {
 			[2] = {
 				badtargetcategory = "SCOUT SUPERSHIP",
 				def = "ADVANCED_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[3] = {
 				badtargetcategory = "SCOUT SUPERSHIP",
 				def = "ADVANCED_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[4] = {
 				badtargetcategory = "SCOUT SUPERSHIP",

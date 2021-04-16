@@ -94,8 +94,8 @@ return {
 			},
 		},
 		weapondefs = {
-			advanced_missile = {
-				areaofeffect = 400,
+			medium_missile = {
+				areaofeffect = 200,
 				avoidfeature = false,
 				canattackground = false,
 				craterareaofeffect = 1200,
@@ -104,11 +104,11 @@ return {
 				edgeeffectiveness = 0.25,
 				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
 				firestarter = 90,
-				flighttime = 3,
+				flighttime = 1.2,
 				impulseboost = 0,
 				impulsefactor = 0,
 				model = "weapon_missileaal",
-				name = "Long Range Missile",
+				name = "Medium Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
 				range = 1200,
@@ -137,12 +137,12 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
-				def = "ADVANCED_MISSILE",
+				def = "MEDIUM_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
-				def = "ADVANCED_MISSILE",
+				def = "MEDIUM_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 		},
