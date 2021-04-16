@@ -68,6 +68,23 @@ local unitlist={--- Human friendly list. Automatically converted to unitdef IDs 
   {'talon_makr','talon_fmkr'},
   {'talon_drag','talon_fdrag'},
   {'talon_mine1','talon_fmine'},
+  -- Nano
+  {'talon_nanotc','talon_fnanotc'},
+  {'talon_nanotc1','talon_fnanotc1'},
+  {'talon_nanotc2','talon_fnanotc2'},
+  {'talon_nanotc3','talon_fnanotc3'},
+  {'armnanotc','armnanotc'},
+  {'armnanotc1','armnanotc1'},
+  {'armnanotc2','armnanotc2'},
+  {'armnanotc3','armnanotc3'},
+  {'cornanotc','cornanotc'},
+  {'cornanotc1','cornanotc1'},
+  {'cornanotc2','cornanotc2'},
+  {'cornanotc3','cornanotc3'},
+  {'tllnanotc','tllnanotc'},
+  {'tllnanotc1','tllnanotc1'},
+  {'tllnanotc2','tllnanotc2'},
+  {'tllnanotc3','tllnanotc3'},
 }
 
 function widget:GetInfo()

@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Mobile Command Vehicle",
 		downloadable = 1,
-		explodeas = "ESTOR_BUILDING",
+		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 8,
 		footprintz = 8,
@@ -39,7 +39,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Abaddon",
 		noautofire = false,
-		
 		objectname = "talon_abaddon",
 		onoffable = true,
 		pushresistant = true,

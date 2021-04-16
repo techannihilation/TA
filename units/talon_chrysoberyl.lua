@@ -44,7 +44,6 @@ return {
 		name = "Chrysoberyl",
 		metalmake = 0.15,
 		noautofire = false,
-
 		objectname = "talon_chrysoberyl",
 		radaremitheight = 25,
 		script = "talon_ch.cob",
