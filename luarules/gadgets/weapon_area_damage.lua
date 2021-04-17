@@ -50,10 +50,10 @@ local scouts = {
 	--[UnitDefNames["tllprivate"].id] = true,
 
 	-- Rez Bot
-	[UnitDefNames["armrectr"].id] = true,
-	[UnitDefNames["cornecro"].id] = true,
-	[UnitDefNames["tllsham"].id] = true,
-	[UnitDefNames["talon_fox"].id] = true,
+	--[UnitDefNames["armrectr"].id] = true,
+	--[UnitDefNames["cornecro"].id] = true,
+	--[UnitDefNames["tllsham"].id] = true,
+	--[UnitDefNames["talon_fox"].id] = true,
 
 	-- Scout Planes
 	[UnitDefNames["talon_recon"].id] = true,
