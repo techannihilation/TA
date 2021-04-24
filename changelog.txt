@@ -1,3 +1,16 @@
+3.85 > 3.86
+2021-04-16
+
+Improvment :
+ - Reduce Rez Sub model by 25%
+ - Delete raizers Damage from Juno
+
+Fix :
+ - Talon Sea nano : they work now.
+ - Talon T1 Hover : Fiw category (was targeted by torpedo)
+ - Talon grenat : Add selfdestroy counter 10s
+
+
 3.84 > 3.85
 2021-04-16
 Balance :

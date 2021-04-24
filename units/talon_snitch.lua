@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
+		category = "ALL MOBILE SMALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "31 31 40",
 		collisionvolumetype = "CylZ",
@@ -37,7 +37,6 @@ return {
 		movementclass = "HOVER3",
 		name = "Snitch",
 		noautofire = false,
-		
 		objectname = "talon_snitch",
 		radaremitheight = 25,
 		seismicsignature = 0,

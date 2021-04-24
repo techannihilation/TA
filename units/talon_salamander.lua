@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "31 35 45",
@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HOVER3",
 		name = "Salamander",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_salamander",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -48,11 +48,12 @@ return {
 		yardmap = "wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw",
 		buildoptions = {
 			[1] = "talon_cs",
-			[2] = "talon_sub",
+			--[2] = "",
 			[3] = "talon_charon",
 			[4] = "talon_vasculitis",
-			[5] = "talon_mainstay",
-			[6] = "talon_bishop",
+			[5] = "talon_sub",
+			[6] = "talon_mainstay",
+			[7] = "talon_bishop",
 		},
 		customparams = {
 			buildpic = "talon_sy.dds",

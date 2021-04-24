@@ -37,9 +37,9 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
+		mincloakdistance = 100,
 		name = "Cloakable Advncanced Fusion Reactor",
 		noautofire = false,
-		
 		objectname = "talon_afus",
 		radaremitheight = 50,
 		seismicsignature = 0,

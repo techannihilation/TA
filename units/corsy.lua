@@ -48,9 +48,9 @@ return {
 		buildoptions = {
 			[1] = "corcs",
 			[2] = "correcl",
-			[3] = "corsub",
-			[4] = "corpt",
-			[5] = "coresupp",
+			[3] = "corpt",
+			[4] = "coresupp",
+			[5] = "corsub",
 			[6] = "corroy",
 			[7] = "cortship",
 		},

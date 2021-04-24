@@ -14,7 +14,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
+		category = "ALL MOBILE SMALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "31 31 45",
 		collisionvolumetype = "CylZ",
@@ -41,7 +41,6 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Gravitank",
 		noautofire = false,
-
 		objectname = "talon_ch",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -50,7 +50,6 @@ return {
 		upright = true,
 		waterline = 1,
 		workertime = 450,
-		yardmap = "wwwwwwwww",
 		customparams = {
 			buildpic = "talon_fnanotc1.dds",
 			faction = "TALON",
