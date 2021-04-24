@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armmoho_aoplane.dds",
 		buildpic = "talon_moho.dds",
 		buildtime = 15000,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		corpse = "dead",
 		description = "Tech Level 2 (Amphibious)",
 		energyuse = 75,

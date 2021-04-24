@@ -35,8 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		metalstorage = 100,
 		name = "Metal Extractor",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "armemex",
 		onoffable = true,
 		radaremitheight = 35,

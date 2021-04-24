@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armmex_aoplane.dds",
 		buildpic = "armmex.dds",
 		buildtime = 1800,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "50 28 50",
 		collisionvolumetype = "CylY",

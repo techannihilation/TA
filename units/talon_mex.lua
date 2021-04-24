@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_mex.dds",
 		buildtime = 1800,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "45 20 45",
 		collisionvolumetype = "CylY",

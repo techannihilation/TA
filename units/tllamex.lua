@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllamex_aoplane.dds",
 		buildpic = "tllamex.dds",
 		buildtime = 15000,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "79 37 79",
 		collisionvolumetype = "CylY",

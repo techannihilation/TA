@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armmoho_aoplane.dds",
 		buildpic = "armmoho.dds",
 		buildtime = 15000,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "70 46 70",
 		collisionvolumetype = "CylY",

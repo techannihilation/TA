@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "cormex_aoplane.dds",
 		buildpic = "cormex.dds",
 		buildtime = 1874,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 8 0",
 		collisionvolumescales = "50 35 50",
 		collisionvolumetype = "CylY",
@@ -37,7 +37,6 @@ return {
 		metalstorage = 25,
 		name = "Metal Extractor",
 		noautofire = false,
-
 		objectname = "CORMEX",
 		onoffable = true,
 		radaremitheight = 25,

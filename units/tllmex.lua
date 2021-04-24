@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "tllmex.dds",
 		buildtime = 1800,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 12 -7",
 		collisionvolumescales = "46 42 46",
 		collisionvolumetype = "CylY",
