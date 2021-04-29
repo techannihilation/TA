@@ -1,14 +1,17 @@
 3.85 > 3.86
-2021-04-24
+2021-04-29
 
 Improvment :
  - Reduce Rez Sub model by 25%
  - Delete raizers Damage from Juno
+ - Delete Arm Horgue (t2 missile vehicle)
+ - Change T4 Core Anti Nuke Model
 
 Fix :
- - Talon Sea nano : they work now.
+ - Talon Sea nano : they work now
  - Talon T1 Hover : Fiw category (was targeted by torpedo)
  - Talon grenat : Add selfdestroy counter 10s
+ - TLL Lightning t1 Hover : weapon works now
 
 
 3.84 > 3.85
@@ -1213,9 +1216,8 @@ Balance:
  - Move Boucher/armnebraska/Dark Matter Cannon from T3 into T4
  - Arm_furie, fatshrew, krogoth have same rocket type.
  - ALL TLL fusion ratio between E/M outpout have been changed. Metal production / 2 and Energy Production * 2.5
- - T3 & T4 Fusion : Buildtime reduced for T3 and increased for T4.
- - Armhorgue - increase paralyse time 10s -> 12s
- - Balance all T1 Kbot Vehicle AA. Decrease power and cost.
+ - T3 & T4 Fusion : Buildtime reduced for T3 and increased for T4
+ - Balance all T1 Kbot Vehicle AA. Decrease power and cost
  - Balance Warrior - increase timebuild +15% and decrease damage 55 -> 42 (damage / shoot)
  - Abroadside : The middle turret can shoot at 360° (vs front before)
  - Rescale T4 TLL Ultimate Dark Matter to fit CORE/ARM scale

@@ -223,7 +223,7 @@ function gadget:Initialize()
     elseif (ud.name=="tllsamael") then
           Spring.SetUnitDefIcon(udid, "tllsamael.user")
 --talon_mcv
-    elseif (ud.name=="talon_mcv") then
+    elseif (ud.name=="talon_mcv") or (ud.name=="talon_mcv1") then
           Spring.SetUnitDefIcon(udid, "talon_mcv.user")
 --talon_grenat
     elseif (ud.name=="talon_grenat") then

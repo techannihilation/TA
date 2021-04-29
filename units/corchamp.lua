@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Fast Experiumental Tank",
+		description = "Experimental Tank",
 		downloadable = 1,
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,

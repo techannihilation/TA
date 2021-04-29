@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, rocket1, rocket2, rocket3, turret, door1, door2, door3,
-       door4;
+piece  base, body, rocket1, rocket2, rocket3, tower,
+		 gate1, gate2, gate3, gate4;
 
 static-var  Static_Var_1, restore_delay, gun_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -16,35 +16,43 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <0.000000> now;
-		turn door1 to z-axis <-129.027473> speed <73.000000>;
-		turn door2 to z-axis <0.000000> now;
-		turn door2 to z-axis <131.027473> speed <74.000000>;
-		turn door3 to x-axis <0.000000> now;
-		turn door3 to x-axis <-128.027473> speed <72.000000>;
-		turn door4 to x-axis <0.000000> now;
-		turn door4 to x-axis <129.027473> speed <73.000000>;
-		sleep 1768;
-		spin turret around y-axis speed <30.005495>;
+		move gate1 to x-axis [-5.000000] speed [10.0];
+		move gate1 to z-axis [-5.000000] speed [10.0];
+		
+		move gate2 to x-axis [5.000000] speed [10.0];
+		move gate2 to z-axis [-5.000000] speed [10.0];
+		
+		move gate3 to x-axis [5.000000] speed [10.0];
+		move gate3 to z-axis [5.000000] speed [10.0];
+		
+		move gate4 to x-axis [-5.000000] speed [10.0];
+		move gate4 to z-axis [5.000000] speed [10.0];
+		
+		sleep 750;
+		
 	}
-	sleep 3;
+	sleep 25;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <-129.615385> now;
-		turn door1 to z-axis <0.000000> speed <73.000000>;
-		turn door2 to z-axis <131.401099> now;
-		turn door2 to z-axis <0.000000> speed <74.000000>;
-		turn door3 to x-axis <-128.714286> now;
-		turn door3 to x-axis <0.000000> speed <73.000000>;
-		turn door4 to x-axis <129.615385> now;
-		turn door4 to x-axis <0.000000> speed <73.000000>;
-		sleep 1762;
+		move gate1 to x-axis [0.000000] speed [10.0];
+		move gate1 to z-axis [0.000000] speed [10.0];
+		
+		move gate2 to x-axis [0.000000] speed [10.0];
+		move gate2 to z-axis [0.000000] speed [10.0];
+		
+		move gate3 to x-axis [0.000000] speed [10.0];
+		move gate3 to z-axis [0.000000] speed [10.0];
+		
+		move gate4 to x-axis [0.000000] speed [10.0];
+		move gate4 to z-axis [0.000000] speed [10.0];
+		
+		sleep 750;
 	}
-	sleep 14;
+	sleep 25;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -64,22 +72,14 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			Func_Var_4 = Rand( 1, 4 );
+			Func_Var_4 = Rand( 1, 2 );
 			if( Func_Var_4 == 1 )
 			{
-				emit-sfx smoketype from door1;
+				emit-sfx smoketype from gate1;
 			}
 			if( Func_Var_4 == 2 )
 			{
-				emit-sfx smoketype from door2;
-			}
-			if( Func_Var_4 == 3 )
-			{
-				emit-sfx smoketype from door3;
-			}
-			if( Func_Var_4 == 4 )
-			{
-				emit-sfx smoketype from door4;
+				emit-sfx smoketype from gate3;
 			}
 		}
 		sleeptime = healthpercent * 50;
@@ -93,14 +93,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	dont-cache door1;
-	dont-cache door2;
-	dont-cache door3;
-	dont-cache door4;
-	dont-cache rocket1;
-	dont-cache rocket2;
-	dont-cache rocket3;
-	dont-cache turret;
 	call-script activatescr();
 	Static_Var_1 = 1;
 }
@@ -109,14 +101,6 @@ Stop()
 {
 	Static_Var_1 = 0;
 	call-script deactivatescr();
-	cache door1;
-	cache door2;
-	cache door3;
-	cache door4;
-	cache rocket1;
-	cache rocket2;
-	cache rocket3;
-	cache turret;
 }
 
 InitState()
@@ -153,17 +137,9 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade door1;
-	dont-shade door2;
-	dont-shade door3;
-	dont-shade door4;
-	dont-shade rocket1;
-	dont-shade rocket2;
-	dont-shade rocket3;
-	dont-shade turret;
 	Static_Var_1 = 0;
-	gun_1 = rocket1;
-	restore_delay = 3000;
+	gun_1 = 1;
+	restore_delay = 10000;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -178,9 +154,10 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-SetMaxReloadTime(Func_Var_1)
+RestoreAfterDelay()
 {
-	restore_delay = Func_Var_1 * 2;
+	sleep 10000;
+	start-script RequestState(1);
 }
 
 AimPrimary(heading, pitch)
@@ -188,6 +165,7 @@ AimPrimary(heading, pitch)
 	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
@@ -214,7 +192,7 @@ FirePrimary()
 	++gun_1;
 	if( gun_1 == 4 )
 	{
-		gun_1 = rocket1;
+		gun_1 = 1;
 	}
 }
 
@@ -236,18 +214,7 @@ QueryPrimary(piecenum)
 
 AimFromPrimary(piecenum)
 {
-	if( gun_1 == 1 )
-	{
-		piecenum = rocket1;
-	}
-	if( gun_1 == 2 )
-	{
-		piecenum = rocket2;
-	}
-	if( gun_1 == 3 )
-	{
-		piecenum = rocket3;
-	}
+	piecenum = tower;
 }
 
 SweetSpot(piecenum)
@@ -260,54 +227,40 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode door1 type NOHEATCLOUD;
-		explode door2 type NOHEATCLOUD;
-		explode door3 type NOHEATCLOUD;
-		explode door4 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode gate1 type NOHEATCLOUD;
+		explode gate2 type NOHEATCLOUD;
+		explode gate3 type NOHEATCLOUD;
+		explode gate4 type NOHEATCLOUD;
 		explode rocket1 type NOHEATCLOUD;
 		explode rocket2 type NOHEATCLOUD;
 		explode rocket3 type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		explode door1 type NOHEATCLOUD;
-		explode door2 type NOHEATCLOUD;
-		explode door3 type NOHEATCLOUD;
-		explode door4 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode gate1 type NOHEATCLOUD;
+		explode gate2 type NOHEATCLOUD;
+		explode gate3 type NOHEATCLOUD;
+		explode gate4 type NOHEATCLOUD;
 		explode rocket1 type NOHEATCLOUD | FALL;
 		explode rocket2 type NOHEATCLOUD | FALL;
 		explode rocket3 type NOHEATCLOUD | FALL;
-		explode turret type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode door1 type NOHEATCLOUD;
-		explode door2 type NOHEATCLOUD;
-		explode door3 type NOHEATCLOUD;
-		explode door4 type NOHEATCLOUD;
-		explode rocket1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rocket2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rocket3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret type NOHEATCLOUD | SHATTER;
+		explode tower type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
-	explode door1 type NOHEATCLOUD;
-	explode door2 type NOHEATCLOUD;
-	explode door3 type NOHEATCLOUD;
-	explode door4 type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode gate1 type NOHEATCLOUD;
+	explode gate2 type NOHEATCLOUD;
+	explode gate3 type NOHEATCLOUD;
+	explode gate4 type NOHEATCLOUD;
 	explode rocket1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rocket2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rocket3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode tower type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

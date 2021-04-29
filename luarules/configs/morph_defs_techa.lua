@@ -553,11 +553,6 @@ local morphDefs = {
 		time = 90,
 		xp = 0.25,
 	},
-	armhorgue = {
-		into = 'armmlrs',
-		time = 90,
-		xp = 0.50,
-	},
 	corgator = {
 		into = 'corabsolutor',
 		time = 60,

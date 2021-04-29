@@ -159,7 +159,6 @@ armhevsenan.dds
 armhls.dds
 armhlt.dds
 armhobo.dds
-armhorg.dds
 armhp.dds
 armhplasma.dds
 armhuntsman.dds

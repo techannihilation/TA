@@ -30,7 +30,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Elixir",
 		noautofire = false,
-		
 		objectname = "talon_elixir",
 		radardistance = 0,
 		radaremitheight = 175,
@@ -126,6 +125,7 @@ return {
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 150,
+				--stockpiletime = 5,
 				targetable = 4,
 				texture1 = "null",
 				texture2 = "null",

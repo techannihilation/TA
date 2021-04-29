@@ -647,7 +647,6 @@ local unitheight = {
     ["armhls"] = 28,
     ["armhlt"] = 88,
     ["armhobo"] = 19,
-    ["armhorg"] = 27,
     ["armhp"] = 18,
     ["armhplasma"] = 19,
     ["armhuntsman"] = 22,

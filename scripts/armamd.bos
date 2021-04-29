@@ -130,7 +130,7 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	gun_1 = base;
+	gun_1 = 0;
 	Static_Var_1 = 0;
 	restore_delay = 3000;
 	call-script InitState();

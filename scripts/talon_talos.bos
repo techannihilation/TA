@@ -16,9 +16,9 @@ walk()
 	if( Static_Var_4 )
 	{
 		move hips to y-axis [1.] speed [2.0];
-		turn hips to z-axis <-5.> now;
-		turn rthigh to z-axis <5.> now;
-		turn lthigh to z-axis <5.> now;
+		turn hips to z-axis <-5.> speed <10.0>;
+		turn rthigh to z-axis <5.> speed <10.0>;
+		turn lthigh to z-axis <5.> speed <10.0>;
 		turn body to z-axis <6.> speed <100.>;
 		turn lleg to x-axis <15.> speed <110.>;
 		turn lfoot to x-axis <-15.> speed <110.>;
@@ -35,9 +35,9 @@ walk()
 		move hips to y-axis [0.] speed [2.];
 		sleep 200;
 		move hips to y-axis [1.] speed [2.];
-		turn hips to z-axis <5.> now;
-		turn lthigh to z-axis <-5.> now;
-		turn rthigh to z-axis <-5.> now;
+		turn hips to z-axis <5.> speed <10.0>;
+		turn lthigh to z-axis <-5.> speed <10.0>;
+		turn rthigh to z-axis <-5.> speed <10.0>;
 		turn body to z-axis <-6.> speed <100.>;
 	}
 	while( Static_Var_4 )
@@ -56,9 +56,9 @@ walk()
 			move hips to y-axis [0.] speed [2.];
 			sleep 400;
 			move hips to y-axis [1.] speed [2.];
-			turn hips to z-axis <-5.> now;
-			turn rthigh to z-axis <5.> now;
-			turn lthigh to z-axis <5.> now;
+			turn hips to z-axis <-5.> speed <10.0>;
+			turn rthigh to z-axis <5.> speed <10.0>;
+			turn lthigh to z-axis <5.> speed <10.0>;
 			turn body to z-axis <6.> speed <100.>;
 		}
 		if( Static_Var_4 )
@@ -75,9 +75,9 @@ walk()
 			move hips to y-axis [0.] speed [2.];
 			sleep 400;
 			move hips to y-axis [1.] speed [2.];
-			turn hips to z-axis <5.> now;
-			turn lthigh to z-axis <-5.> now;
-			turn rthigh to z-axis <-5.> now;
+			turn hips to z-axis <5.> speed <10.0>;
+			turn lthigh to z-axis <-5.> speed <10.0>;
+			turn rthigh to z-axis <-5.> speed <10.0>;
 			turn body to z-axis <-6.> speed <100.>;
 		}
 	}

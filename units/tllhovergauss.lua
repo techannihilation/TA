@@ -35,7 +35,6 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Maggot",
 		noautofire = false,
-		
 		objectname = "TLLhovergauss",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -154,7 +153,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARM_LIGHTLASER",
+				def = "LIGHTNING",
 				onlytargetcategory = "SURFACE",
 			},
 		},

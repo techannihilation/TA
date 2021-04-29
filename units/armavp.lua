@@ -66,7 +66,7 @@ return {
 			[7] = "armmart",
 			[8] = "armcroc",
 			[9] = "armyork",
-			[10] = "armhorg",
+			--[10] = "armhorg",
 			[11] = "armbull",
 			[12] = "armmerl",
 			[13] = "armmanni",
