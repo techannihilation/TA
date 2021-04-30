@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 375,
 		builder = false,
 		buildpic = "armmart.dds",
-		buildtime = 5500,
+		buildtime = 5000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -31,13 +31,12 @@ return {
 		mass = 375,
 		maxdamage = 620,
 		maxslope = 12,
-		maxvelocity = 1.75,
+		maxvelocity = 1.5,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Luger",
 		noautofire = false,
-		
 		objectname = "ARMMART",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -166,8 +165,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "ARM_ARTILLERY",
-				maindir = "0 0 1",
-				maxangledif = 120,
 				onlytargetcategory = "SURFACE",
 			},
 		},

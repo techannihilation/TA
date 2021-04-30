@@ -8,18 +8,18 @@ piece  base, rgunflare, lgunflare, rmispoint, lmispoint, head, torso, hips, mpac
        lfoot2, larm, rbarrel1, lbarrel1, body, rrotate, lrotate, torsoz,
        rrock, lrock, lfoot, rfoot, lrockpoint, rrockpoint, rback, lback;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Main_Gun_Heading;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Bmoving, Main_Gun_Heading;
 
 
 walk()
 {
-	if( Static_Var_4 )
+	if( Bmoving )
 	{
 		move hips to y-axis [1.] speed [2.0];
 		turn hips to z-axis <-5.> speed <10.0>;
 		turn rthigh to z-axis <5.> speed <10.0>;
 		turn lthigh to z-axis <5.> speed <10.0>;
-		turn body to z-axis <6.> speed <100.>;
+		turn body to z-axis <6.> speed <5.>;
 		turn lleg to x-axis <15.> speed <110.>;
 		turn lfoot to x-axis <-15.> speed <110.>;
 		move hips to y-axis [0.] speed [2.];
@@ -38,11 +38,11 @@ walk()
 		turn hips to z-axis <5.> speed <10.0>;
 		turn lthigh to z-axis <-5.> speed <10.0>;
 		turn rthigh to z-axis <-5.> speed <10.0>;
-		turn body to z-axis <-6.> speed <100.>;
+		turn body to z-axis <-6.> speed <5.>;
 	}
-	while( Static_Var_4 )
+	while( Bmoving )
 	{
-		if( Static_Var_4 )
+		if( Bmoving )
 		{
 			turn rthigh to x-axis <30.> speed <55.>;
 			turn rfoot2 to x-axis <-30.> speed <55.>;
@@ -59,9 +59,9 @@ walk()
 			turn hips to z-axis <-5.> speed <10.0>;
 			turn rthigh to z-axis <5.> speed <10.0>;
 			turn lthigh to z-axis <5.> speed <10.0>;
-			turn body to z-axis <6.> speed <100.>;
+			turn body to z-axis <6.> speed <5.0>;
 		}
-		if( Static_Var_4 )
+		if( Bmoving )
 		{
 			turn lthigh to x-axis <30.> speed <60.>;
 			turn lfoot2 to x-axis <-30.> speed <60.>;
@@ -78,7 +78,7 @@ walk()
 			turn hips to z-axis <5.> speed <10.0>;
 			turn lthigh to z-axis <-5.> speed <10.0>;
 			turn rthigh to z-axis <-5.> speed <10.0>;
-			turn body to z-axis <-6.> speed <100.>;
+			turn body to z-axis <-6.> speed <5.0>;
 		}
 	}
 }
@@ -117,7 +117,7 @@ Create()
 	hide lrockpoint;
 	hide rrockpoint;
 	Static_Var_1 = 0;
-	Static_Var_4 = 0;
+	Bmoving = 0;
 	Static_Var_1 = 0;
 	Static_Var_2 = 0;
 	Static_Var_3 = 0;
@@ -126,13 +126,13 @@ Create()
 
 StartMoving()
 {
-	Static_Var_4 = 1;
+	Bmoving = 1;
 	start-script walk();
 }
 
 StopMoving()
 {
-	Static_Var_4 = 0;
+	Bmoving = 0;
 	signal 32;
 	set-signal-mask 32;
 	turn lthigh to x-axis <0.> speed <100.>;

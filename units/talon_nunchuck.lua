@@ -37,7 +37,6 @@ return {
 		movementclass = "TANK3",
 		name = "Nunchuck",
 		noautofire = false,
-		
 		objectname = "talon_nunchuck",
 		pushresistant = true,
 		radaremitheight = 25,
@@ -90,7 +89,7 @@ return {
 				reclaimable = true,
 			},
 		},
-		sfxtypes = {	
+		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:armvengence_muzzle",
 			},
@@ -126,7 +125,7 @@ return {
 		},
 		weapondefs = {
 			talon_artillery = {
-				accuracy = 300,
+				accuracy = 500,
 				burst = 2,
 				burstrate = 0.3,
 				areaofeffect = 140,
@@ -143,7 +142,7 @@ return {
 				name = "PlasmaCannon",
 				noselfdamage = true,
 				range = 1350,
-				reloadtime = 2.5,
+				reloadtime = 2,
 				rgbcolor = "0.65 0.28 0",
 				separation = 0.45,
 				size = 2,
@@ -158,7 +157,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 425,
 				damage = {
-					default = 150,
+					default = 120,
 					subs = 5,
 				},
 			},

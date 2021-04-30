@@ -6,6 +6,7 @@ Improvment :
  - Delete raizers Damage from Juno
  - Delete Arm Horgue (t2 missile vehicle)
  - Change T4 Core Anti Nuke Model
+ - Delete Angle Limitation for Artillery T2 Vehicles
 
 Fix :
  - Talon Sea nano : they work now

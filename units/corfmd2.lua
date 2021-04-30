@@ -18,6 +18,7 @@ return {
 		description = "Ultimate Anti-Nuke (Block Only T4 ICBM)",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
+		digger = 1,
 		firestandorders = 1,
 		footprintx = 6,
 		footprintz = 6,
