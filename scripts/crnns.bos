@@ -3,67 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, dish1, dish2, dish3, dish4;
+piece  base, body, dents, box;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
-
-Go()
-{
-	turn dish1 to x-axis <-90.021978> speed <60.010989>;
-	turn dish2 to x-axis <90.021978> speed <60.010989>;
-	turn dish3 to z-axis <-90.021978> speed <60.010989>;
-	turn dish4 to z-axis <90.021978> speed <60.010989>;
-	wait-for-turn dish1 around x-axis;
-	wait-for-turn dish2 around x-axis;
-	wait-for-turn dish3 around z-axis;
-	wait-for-turn dish4 around z-axis;
-	set ARMORED to 0;
-}
-
-Stop()
-{
-	set ARMORED to 1;
-	turn dish1 to x-axis <0.000000> speed <120.027473>;
-	turn dish2 to x-axis <0.000000> speed <120.027473>;
-	turn dish3 to z-axis <0.000000> speed <120.027473>;
-	turn dish4 to z-axis <0.000000> speed <120.027473>;
-	wait-for-turn dish1 around x-axis;
-	wait-for-turn dish2 around x-axis;
-	wait-for-turn dish3 around z-axis;
-	wait-for-turn dish4 around z-axis;
-}
-
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -71,8 +13,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	
-	start-script RequestState(0);
 	
 	while( TRUE )
 	{
@@ -97,30 +37,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	call-script InitState();
 	start-script SmokeUnit();
 }
-
-Activate()
-{
-	//start-script RequestState(0);
-}
-
-Deactivate()
-{
-	//start-script RequestState(1);
-}
-
-/*
-HitByWeapon(anglex, anglez)
-{
-	signal 2;
-	set-signal-mask 2;
-	set ACTIVATION to 0;
-	sleep 8000;
-	set ACTIVATION to 1;
-}
-*/
 
 SweetSpot(piecenum)
 {
@@ -132,38 +50,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode dish1 type NOHEATCLOUD;
-		explode dish2 type NOHEATCLOUD;
-		explode dish3 type NOHEATCLOUD;
-		explode dish4 type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode box type NOHEATCLOUD;
+		explode dents type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode dish1 type NOHEATCLOUD | FALL;
-		explode dish2 type NOHEATCLOUD | FALL;
-		explode dish3 type NOHEATCLOUD | FALL;
-		explode dish4 type NOHEATCLOUD | FALL;
-		explode base type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode dish1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode dish2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode dish3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode dish4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
+		explode box type NOHEATCLOUD | FALL;
+		explode dents type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode dish1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode dish2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode dish3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode dish4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode box type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode dents type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

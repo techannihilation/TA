@@ -93,7 +93,7 @@ return {
 			[14] = "corarad",
 			[15] = "corvipe",
 			[16] = "corflak",
-			[18] = "corupmex",
+			--[18] = "corupmex",
 			[19] = "coruwfus",
 			[20] = "coruwmmm",
 			--[21] = "",

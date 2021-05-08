@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 3454,
 		builder = false,
 		buildpic = "coramist.dds",
-		buildtime = 70000,
+		buildtime = 50000,
 		canattack = true,
 		canguard = true,
 		canmove = true,

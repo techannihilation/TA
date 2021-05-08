@@ -92,7 +92,7 @@ return {
 			[12] = "talon_fort",
 			[13] = "talon_eye",
 			[14] = "talon_arad",
-			[15] = "talon_jump",
+			--[15] = "talon_jump",
 			[16] = "talon_sprinkler",
 			[17] = "talon_blt",
 			[18] = "talon_popcorn",

@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTKBOT4",
 		name = "Karganeth",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORKARG",
 		radaremitheight = 54,
 		seismicsignature = 0,

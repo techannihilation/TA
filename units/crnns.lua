@@ -4,10 +4,6 @@ return {
 		buildcostenergy = 322560,
 		buildcostmetal = 32573,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 11,
-		buildinggrounddecalsizey = 11,
-		buildinggrounddecaltype = "crnns_aoplane.dds",
 		buildpic = "crnns.dds",
 		buildtime = 560000,
 		category = "ALL UNDERWATER SURFACE",
@@ -36,7 +32,6 @@ return {
 		selfdestructas = "FUSION_BLAST_CORE",
 		sightdistance = 210,
 		unitname = "crnns",
-		usebuildinggrounddecal = true,
 		waterline = 10,
 		yardmap = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
 		customparams = {

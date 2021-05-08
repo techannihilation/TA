@@ -71,7 +71,6 @@ armbrtha.dds
 armbull.dds
 armca.dds
 armcarry.dds
-armcav.dds
 armcbomb.dds
 armcd.dds
 armch.dds

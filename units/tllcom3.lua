@@ -98,7 +98,7 @@ return {
 			[15] = "tllobliterator",
 			[16] = "tllflak",
 			[17] = "tllack",
-			[18] = "tlljumpdrive",
+			--[18] = "tlljumpdrive",
 			--[19] = "",
 			[20] = "tllprototype",
 			--[21] = "",

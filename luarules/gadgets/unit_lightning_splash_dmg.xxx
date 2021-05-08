@@ -23,14 +23,11 @@ if (gadgetHandler:IsSyncedCode()) then
 
 local sparkWeapons = {
     [WeaponDefNames.armzeus_lightning.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits = 2, radius = 60},
-    [WeaponDefNames.armcav_lightning.id] = {ceg = "ZEUS_FLASH_SUB", forkdamage = 0.5, maxunits = 2, radius = 60},
-    --[WeaponDefNames.armclaw_dclaw.id] = {ceg = "CLAW_FLASH_SUB", forkdamage = 0.325, maxunits = 2, radius = 60},
 }
 
 local immuneToSplash = {
     [UnitDefNames["armzeus"].id] = true,
     [UnitDefNames["armclaw"].id] = true,
-    [UnitDefNames["armcav"].id] = true,
 }
 
 local mRandom = math.random

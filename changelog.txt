@@ -1,6 +1,16 @@
+3.86 > 3.87
+2021-05-09
+Balance :
+ - Raptor : Decrease speed 2=>1.5
+ - Talon Talos : Increase energy cost and timebuild. Decrease speed 1.05=>1.00
+ - Arm Hope : Remplace big Starburst, by Medium. (Less range and damage)
+
+ Improvment :
+  - Delete all jumpdrive. all commander can jump without restriction
+  - Decrease commander jump range and increase jump time
+
 3.85 > 3.86
 2021-04-29
-
 Improvment :
  - Reduce Rez Sub model by 25%
  - Delete raizers Damage from Juno
@@ -13,7 +23,6 @@ Fix :
  - Talon T1 Hover : Fiw category (was targeted by torpedo)
  - Talon grenat : Add selfdestroy counter 10s
  - TLL Lightning t1 Hover : weapon works now
-
 
 3.84 > 3.85
 2021-04-16

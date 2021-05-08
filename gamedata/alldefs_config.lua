@@ -566,7 +566,6 @@ local unitheight = {
     ["armbull"] = 20,
     ["armca"] = 16,
     ["armcarry"] = 61,
-    ["armcav"] = 33,
     ["armcbomb"] = 14,
     ["armcd"] = 18,
     ["armch"] = 13,

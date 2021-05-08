@@ -3,7 +3,7 @@
 		Tech Tree gadget
 ------------------------------------------------------------
 To make use of this gadget:
-	Edit the FBI of your units, 
+	Edit the FBI of your units,
 	adding RequireTech and ProvideTech tags
 	in the CustomParams section of UnitInfo.
 
@@ -312,7 +312,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local ignoredunits={
  		[UnitDefNames["tlldischarge"].id] = true,
  		--[UnitDefNames["armkrmi"].id] = true,
- 		[UnitDefNames["armcav"].id] = true,
+ 		--[UnitDefNames["armcav"].id] = true,
 	}
 	local ignoredBuilders = GG.ignoredBuilders or {}
 
@@ -691,9 +691,9 @@ if (gadgetHandler:IsSyncedCode()) then
 
 
 		if ignoredunits[ud] or ignoredBuilders[ud] then
-			return 
+			return
 		end
-		
+
 		-- Sub-functions
 		local function GrantingToolTip(u,ucd,cmd)
 			if not GrantDesc[cmd] then

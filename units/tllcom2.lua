@@ -94,7 +94,7 @@ return {
 			[13] = "tllarad",
 			[14] = "tllpulaser",
 			[15] = "tllflak",
-			[16] = "tlljumpdrive",
+			--[16] = "tlljumpdrive",
 			[18] = "tlluwfusion",
 			[19] = "tllwmmohoconv",
 			--[20] = "",
