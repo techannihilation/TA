@@ -1433,6 +1433,14 @@ local morphDefs = {
 		into = 'armnomad',
 		time = 15,
 	},
+	armorbital = {
+		into = 'armorbital1',
+		time = 1,
+	},
+	armorbital1 = {
+		into = 'armorbital',
+		time = 1,
+	},
 }
 
 --

@@ -46,7 +46,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "tllgeo_armored",
-		yardmap = "GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG",
+		yardmap = "oooggooo oooggooo ooggggoo ooggggoo ooggggoo ooggggoo oooggooo oooggooo",
 		customparams = {
 			buildpic = "tllgeo_armored.dds",
 			faction = "TLL",

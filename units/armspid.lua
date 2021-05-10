@@ -71,7 +71,8 @@ return {
 			[12] = "armgate1",
 			[13] = "armamd2",
 			[14] = "armfsilo",
-			[15] = "armvulc1",
+			[15] = "armorbital",
+			[16] = "armvulc1",
 		},
 		customparams = {
 			buildpic = "armspid.dds",

@@ -31,7 +31,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Ares",
 		noautofire = false,
-		
 		objectname = "tllmeteor",
 		radaremitheight = 320,
 		selfdestructas = "KROG_BLAST",
@@ -119,7 +118,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 5,
-				model = "meteor",
+				model = "weapon_meteor",
 				name = "Meteor",
 				noselfdamage = false,
 				range = 40000,

@@ -1,11 +1,12 @@
 3.86 > 3.87
-2021-05-09
+2021-05-10
 Balance :
  - Raptor : Decrease speed 2=>1.5
  - Talon Talos : Increase energy cost and timebuild. Decrease speed 1.05=>1.00
  - Arm Hope : Remplace big Starburst, by Medium. (Less range and damage)
 
  Improvment :
+  - Add Orbital Launcher Arm Canon (lvl4)
   - Delete all jumpdrive. all commander can jump without restriction
   - Decrease commander jump range and increase jump time
 

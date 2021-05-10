@@ -130,7 +130,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "torpedo",
+				model = "weapon_torpedo",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 600,

@@ -133,7 +133,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "torpedo",
+				model = "weapon_torpedo",
 				name = "guided torpedo pack",
 				noselfdamage = true,
 				range = 500,

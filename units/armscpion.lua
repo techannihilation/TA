@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Scorpion",
-		
+
 		objectname = "ARMSCPION",
 		radardistance = 620,
 		radardistancejam = 50,
@@ -198,7 +198,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "torpedo5",
+				model = "weapon_torpedo",
 				name = "Guided Torpedo",
 				range = 450,
 				reloadtime = 2,
