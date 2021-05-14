@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-		
+
 		objectname = "CORALAB",
 		radaremitheight = 60,
 		seismicsignature = 0,
@@ -70,7 +70,7 @@ return {
 			[12] = "corsumo",
 			[13] = "corshieldgen",
 			[14] = "corprot",
-			[15] = "krogtaar",
+			[15] = "corkrogtaar",
 		},
 		customparams = {
 			buildpic = "coralab.dds",

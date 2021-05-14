@@ -1,3 +1,13 @@
+3.87 > 3.88
+2021-05-15
+Balance :
+ - Champion, krogtaar, Bantha, Gorilla : Increase maingun range 450=>500
+ - T1 Talon cons : Reduce energy produce 10/s=>5/s
+ - T3 Tll Hover Mosaurus : decrease cost 27KM =>20KM. Increase range 950=>1000 for main weapon
+
+ Improvment :
+  - T2 Core Sniper (Protos) : decrease model by 10%
+
 3.86 > 3.87
 2021-05-10
 Balance :

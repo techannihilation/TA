@@ -165,7 +165,6 @@ armhys.dds
 armiguana.dds
 arm_immolator.dds
 armjade.dds
-armjag.dds
 armjam.dds
 armjamt.dds
 armjanus1.dds
@@ -650,8 +649,7 @@ helepolis.dds
 corhllt.dds
 hyperion.dds
 irritator.dds
-krogtaar.dds
-macross.dds
+corkrogtaar.dds
 corsam.dds
 armmarauder.dds
 armmercury.dds

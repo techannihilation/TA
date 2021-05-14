@@ -135,7 +135,7 @@ return {
 				explosiongenerator = "custom:VEHROCKET_EXPLOSION",
 				firestarter = 70,
 				impulsefactor = 1,
-				model = "megamisl",
+				model = "weapon_janusrocket",
 				name = "HeavyRocket",
 				noselfdamage = true,
 				range = 380,

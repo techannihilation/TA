@@ -831,7 +831,7 @@ local morphDefs = {
 		xp = 1.00,
 	},
 	corgladiator = {
-		into = 'krogtaar',
+		into = 'corkrogtaar',
 		time = 90,
 		xp = 0.25,
 	},

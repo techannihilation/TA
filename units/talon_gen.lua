@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 8151,
 		buildcostmetal = 551,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 5,
-		buildinggrounddecalsizey = 5,
-		buildinggrounddecaltype = "armgen_aoplane.dds",
 		buildpic = "talon_gen.dds",
 		buildtime = 10500,
 		category = "ALL SURFACE",
@@ -38,7 +34,6 @@ return {
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 250,
 		unitname = "talon_gen",
-		usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "talon_gen.dds",

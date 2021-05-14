@@ -1,11 +1,11 @@
 return {
-	krogtaar = {
+	corkrogtaar = {
 		acceleration = 0.125,
 		brakerate = 0.7,
 		buildcostenergy = 70233,
 		buildcostmetal = 4873,
 		builder = false,
-		buildpic = "krogtaar.dds",
+		buildpic = "corkrogtaar.dds",
 		buildtime = 55000,
 		canattack = true,
 		canguard = true,
@@ -34,8 +34,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "KrogTaar",
 		noautofire = false,
-		
-		objectname = "krogtaar",
+		objectname = "corkrogtaar",
 		radardistance = 0,
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
@@ -47,12 +46,11 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.957,
 		turnrate = 650,
-		unitname = "krogtaar",
+		unitname = "corkrogtaar",
 		upright = true,
 		customparams = {
-			buildpic = "krogtaar.dds",
+			buildpic = "corkrogtaar.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 4612,
-				object = "krogtaar_dead",
+				object = "corkrogtaar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +134,7 @@ return {
 				intensity = 4,
 				name = "KrogTaarBlaster",
 				noselfdamage = true,
-				range = 450,
+				range = 500,
 				reloadtime = 0.5,
 				rgbcolor = "0.5 0.5 1.0",
 				size = 1.5,

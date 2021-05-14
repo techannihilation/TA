@@ -150,7 +150,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.3,
 				thickness = 3,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,

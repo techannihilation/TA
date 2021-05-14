@@ -129,7 +129,7 @@ return {
 				intensity = 4,
 				name = "KrogTaarBlaster",
 				noselfdamage = true,
-				range = 450,
+				range = 510,
 				reloadtime = 0.5,
 				rgbcolor = "0.5 0.5 1.0",
 				size = 1.5,

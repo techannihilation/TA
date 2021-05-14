@@ -139,7 +139,7 @@ return {
 				intensity = 4,
 				name = "BanthaBlaster",
 				noselfdamage = true,
-				range = 450,
+				range = 500,
 				reloadtime = 0.5,
 				rgbcolor = "1 0.48 0.26",
 				size = 1,
