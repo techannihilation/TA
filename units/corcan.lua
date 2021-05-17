@@ -37,7 +37,6 @@ return {
 		movementclass = "HKBOT3",
 		name = "Can",
 		noautofire = false,
-
 		objectname = "CORCAN",
 		radaremitheight = 29,
 		seismicsignature = 0,

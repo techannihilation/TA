@@ -3,10 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, gun, barrel1, barrel2, flare1, flare2,
+piece  base, body, turret, gun, flare,
        leghl, foothl, leghr, foothr, legfr, footfr, legfl, footfl;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+static-var  bMoving, Static_Var_2, Static_Var_3;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -40,7 +40,7 @@ Walk()
 {
 	while( TRUE )
 	{
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <0.> now;
 			turn legfr to x-axis <0.> now;
@@ -59,7 +59,7 @@ Walk()
 			turn footfl to x-axis <-15.> speed <225.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <40.> speed <300.>;
 			turn legfr to x-axis <-20.> speed <75.>;
@@ -71,7 +71,7 @@ Walk()
 			turn footfl to x-axis <0.> speed <225.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <50.> speed <150.>;
 			turn legfr to x-axis <-15.> speed <75.>;
@@ -82,7 +82,7 @@ Walk()
 			turn footfl to x-axis <10.> speed <150.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <40.> speed <150.>;
 			turn legfr to x-axis <0.> speed <225.>;
@@ -94,7 +94,7 @@ Walk()
 			turn footfl to x-axis <15.> speed <75.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <20.> speed <300.>;
 			turn legfr to x-axis <15.> speed <225.>;
@@ -106,7 +106,7 @@ Walk()
 			turn footfl to x-axis <10.> speed <75.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <0.> speed <300.>;
 			turn legfr to x-axis <30.> speed <225.>;
@@ -118,7 +118,7 @@ Walk()
 			turn footfl to x-axis <0.> speed <150.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <-20.> speed <300.>;
 			turn legfr to x-axis <35.> speed <75.>;
@@ -128,7 +128,7 @@ Walk()
 			turn foothl to x-axis <-20.> speed <300.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <-30.> speed <150.>;
 			turn legfr to x-axis <30.> speed <75.>;
@@ -140,7 +140,7 @@ Walk()
 			turn footfl to x-axis <10.> speed <150.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <-20.> speed <150.>;
 			turn legfr to x-axis <15.> speed <225.>;
@@ -152,7 +152,7 @@ Walk()
 			turn footfl to x-axis <15.> speed <75.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( Static_Var_1 )
+		if( bMoving )
 		{
 			turn leghr to x-axis <0.> speed <300.>;
 			turn legfr to x-axis <0.> speed <225.>;
@@ -164,7 +164,7 @@ Walk()
 			turn footfl to x-axis <0.> speed <225.>;
 			wait-for-turn leghr around x-axis;
 		}
-		if( !Static_Var_1 )
+		if( !bMoving )
 		{
 			turn leghr to x-axis <0.> speed <400.>;
 			turn legfr to x-axis <0.> speed <300.>;
@@ -181,11 +181,6 @@ Walk()
 
 Create()
 {
-	hide flare1;
-	dont-cache flare1;
-	hide flare2;
-	dont-cache flare2;
-	Static_Var_1 = 0;
 	Static_Var_3 = 0;
 	Static_Var_2 = 3000;
 	start-script Walk();
@@ -195,11 +190,6 @@ Create()
 SweetSpot(piecenum)
 {
 	piecenum = base;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_2 = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -212,24 +202,17 @@ RestoreAfterDelay()
 
 StartMoving()
 {
-	Static_Var_1 = 1;
+	bMoving = TRUE;
 }
 
 StopMoving()
 {
-	Static_Var_1 = 0;
+	bMoving = FALSE;
 }
 
 QueryPrimary(piecenum)
 {
-	if( Static_Var_3 == 0 )
-	{
-		piecenum = flare1;
-	}
-	if( Static_Var_3 == 1 )
-	{
-		piecenum = flare2;
-	}
+	piecenum = flare;
 }
 
 AimFromPrimary(piecenum)
@@ -251,26 +234,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( Static_Var_3 == 0 )
-	{
-		emit-sfx 1025 from flare1;
-		move barrel1 to z-axis [-1.5] speed [200.];
-		sleep 150;
-		move barrel1 to z-axis [0.] speed [5.];
-		
-	}	if( Static_Var_3 == 1 )
-	{
-		emit-sfx 1025 from flare2;
-		move barrel2 to z-axis [-1.5] speed [200.];
-		sleep 150;
-		move barrel2 to z-axis [0.] speed [5.];
-	}
-	++Static_Var_3;
-	if( Static_Var_3 == 2 )
-	{
-		Static_Var_3 = 0;
-	}
-	
+	emit-sfx 1025 from flare;	
 }
 
 Killed(severity, corpsetype)
@@ -280,7 +244,7 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode body type NOHEATCLOUD ;
 		explode turret type NOHEATCLOUD ;
-		explode barrel1 type NOHEATCLOUD ;
+		explode gun type NOHEATCLOUD ;
 		explode foothr type NOHEATCLOUD ;
 		explode footfr type NOHEATCLOUD ;
 		explode foothl type NOHEATCLOUD ;
@@ -292,39 +256,17 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode body type NOHEATCLOUD  | FALL ;
 		explode turret type SHATTER | NOHEATCLOUD;
-		explode gun type NOHEATCLOUD;
-		explode barrel1 type FALL | NOHEATCLOUD;
-		explode barrel2 type NOHEATCLOUD;
+		explode gun type  FALL | NOHEATCLOUD;
 		explode foothr type NOHEATCLOUD;
 		explode footfr type NOHEATCLOUD;
 		explode foothl type NOHEATCLOUD;
 		explode footfl type NOHEATCLOUD;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode body type SHATTER | NOHEATCLOUD ;
-		explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode gun type FALL | BITMAP3;
-		explode barrel1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode barrel2 type FALL | NOHEATCLOUD;
-		explode leghr type NOHEATCLOUD;
-		explode legfr type NOHEATCLOUD;
-		explode leghl type NOHEATCLOUD;
-		explode legfl type NOHEATCLOUD;
-		explode foothr type FALL | NOHEATCLOUD;
-		explode footfr type FALL | NOHEATCLOUD;
-		explode foothl type FALL | NOHEATCLOUD;
-		explode footfl type FALL | NOHEATCLOUD;
-		return (corpsetype);
-	}
 	corpsetype = 3;
 	explode body type SHATTER | NOHEATCLOUD ;
 	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode gun type FALL | BITMAP3;
-	explode barrel1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode barrel2 type FALL | NOHEATCLOUD;
+	explode gun type FALL | NOHEATCLOUD;
 	explode leghr type NOHEATCLOUD;
 	explode legfr type NOHEATCLOUD;
 	explode leghl type NOHEATCLOUD;
