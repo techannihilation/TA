@@ -68,7 +68,7 @@ return {
 			[11] = "corbanisher",
 			[12] = "cortremor",
 			[13] = "corgol",
-			[14] = "requ1",
+			[14] = "coraegis",
 		},
 		customparams = {
 			buildpic = "coravp.dds",

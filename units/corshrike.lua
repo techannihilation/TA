@@ -1,5 +1,5 @@
 return {
-	shrike = {
+	corshrike = {
 		acceleration = 1.59921,
 		airsightdistance = 900,
 		bankscale = 1,
@@ -7,7 +7,7 @@ return {
 		brakerate = 0.09,
 		buildcostenergy = 70612,
 		buildcostmetal = 580,
-		buildpic = "shrike.dds",
+		buildpic = "corshrike.dds",
 		buildtime = 18000,
 		canattack = true,
 		canfly = true,
@@ -35,9 +35,8 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "Shrike",
-		
-		objectname = "SHRIKE",
+		name = "corshrike",
+		objectname = "corshrike",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,
@@ -48,9 +47,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 9.9,
 		turnrate = 1280,
-		unitname = "shrike",
+		unitname = "corshrike",
 		customparams = {
-			buildpic = "shrike.dds",
+			buildpic = "corshrike.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

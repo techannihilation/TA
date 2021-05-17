@@ -25,7 +25,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			impulseBoost = 30 * multiplier,
 			weaponNumber = 1
 		},
-		[UnitDefNames.shiva.weapons[1].weaponDef] = {
+		[UnitDefNames.corshiva.weapons[1].weaponDef] = {
 			impulseBoost = 90 * multiplier,
 			weaponNumber = 1
 		},

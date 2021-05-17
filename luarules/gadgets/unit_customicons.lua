@@ -147,7 +147,7 @@ function gadget:Initialize()
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") or (ud.name=="talon_echelon") or (ud.name=="talon_token") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter.user")
 --t3 fighters
-      elseif (ud.name=="armwolf") or (ud.name=="shrike") or (ud.name=="tllshu") or (ud.name=="talon_hornet") then
+      elseif (ud.name=="armwolf") or (ud.name=="corshrike") or (ud.name=="tllshu") or (ud.name=="talon_hornet") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user")
 --satellite
     elseif (ud.name=="sat_radar") or (ud.name=="sat_interceptor") or (ud.name=="sat_strike") or (ud.name=="sat_antiair")

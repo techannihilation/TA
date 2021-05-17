@@ -154,7 +154,7 @@ local unitCollisionVolume = {					--dynamic collision volume definitions
 		on={49,51,49,-0.5,-10,0,1,1,1,0,16,0},
 		off={49,23,49,-0.5,-10,0,1,1,1,0,6,0},
 	},
-	[UnitDefNames["shiva"].id] = {
+	[UnitDefNames["corshiva"].id] = {
 		on={50,50,50,0,2,-1,1,1,1},
 		off={54,45,54,0,-4,-1,1,1,1},
 	},

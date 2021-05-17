@@ -1,11 +1,11 @@
 return {
-	requ1 = {
+	coraegis = {
 		acceleration = 0.024,
 		brakerate = 0.024,
 		buildcostenergy = 65188,
 		buildcostmetal = 4104,
 		builder = false,
-		buildpic = "requ1.dds",
+		buildpic = "coraegis.dds",
 		buildtime = 125000,
 		canattack = true,
 		canbuild = true,
@@ -37,7 +37,7 @@ return {
 		name = "Aegis",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "REQU1",
+		objectname = "coraegis",
 		radaremitheight = 22,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 300,
@@ -53,11 +53,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.561,
 		turnrate = 165,
-		unitname = "requ1",
+		unitname = "coraegis",
 		customparams = {
-			buildpic = "requ1.dds",
+			buildpic = "coraegis.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

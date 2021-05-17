@@ -51,7 +51,7 @@ return {
 		buildoptions = {
 			[1] = "coreca",
 			[2] = "corerez",
-			[3] = "shrike",
+			[3] = "corshrike",
 			[4] = "blackdawn",
 			[5] = "cormuat",
 			[6] = "corsbomb",

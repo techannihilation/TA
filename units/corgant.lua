@@ -59,7 +59,7 @@ return {
 		yardmap = "oooooooooooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco",
 		buildoptions = {
 			[1] = "corpinchy",
-			[2] = "shiva",
+			[2] = "corshiva",
 			[3] = "corkarg",
 			[4] = "cortroman",
 			[5] = "corraven",

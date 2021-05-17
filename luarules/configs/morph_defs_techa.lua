@@ -899,7 +899,7 @@ local morphDefs = {
 		time = 30,
 	},
 	coramph = {
-    into = 'shiva',
+    into = 'corshiva',
 		time = 60,
 		xp = 0.25,
 	},
@@ -1053,7 +1053,7 @@ local morphDefs = {
 	  time = 60,
 		xp = 0.10,
 	},
-	shrike = {
+	corshrike = {
 		into = 'corshock',
 	  	time = 60,
 		xp = 0.10,
@@ -1346,7 +1346,7 @@ local morphDefs = {
 		xp = 0.40,
 	},
 	corvamp = {
-		into = 'shrike',
+		into = 'corshrike',
 		time = 30,
 		xp = 0.40,
 	},

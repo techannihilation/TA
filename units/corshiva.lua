@@ -1,12 +1,12 @@
 return {
-	shiva = {
+	corshiva = {
 		acceleration = 0.06,
 		amphibious = 1,
 		brakerate = 0.714,
 		buildcostenergy = 87187,
 		buildcostmetal = 3711,
 		builder = false,
-		buildpic = "shiva.dds",
+		buildpic = "corshiva.dds",
 		buildtime = 35000,
 		canattack = true,
 		canguard = true,
@@ -36,10 +36,10 @@ return {
 		maxwaterdepth = 32,
 		mobilestandorders = 1,
 		movementclass = "HAKBOT4",
-		name = "Shiva",
+		name = "corshiva",
 		noautofire = false,
 
-		objectname = "SHIVA",
+		objectname = "corshiva",
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -50,10 +50,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.32,
 		turnrate = 616,
-		unitname = "shiva",
+		unitname = "corshiva",
 		upright = true,
 		customparams = {
-			buildpic = "shiva.dds",
+			buildpic = "corshiva.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -63,13 +63,13 @@ return {
 				collisionvolumescales = "48.4013214111 35.5686035156 49.8471069336",
 				collisionvolumetype = "Box",
 				damage = 8095,
-				description = "Shiva Wreckage",
+				description = "corshiva Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2600,
-				object = "SHIVA_DEAD",
+				object = "corshiva_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +78,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 10119,
-				description = "Shiva Debris",
+				description = "corshiva Debris",
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
@@ -122,7 +122,7 @@ return {
 			},
 		},
 		weapondefs = {
-			shiva_gun = {
+			corshiva_gun = {
 				areaofeffect = 292,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
@@ -233,7 +233,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "SHIVA_GUN",
+				def = "corshiva_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {

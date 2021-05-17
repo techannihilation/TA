@@ -1,5 +1,5 @@
 return {
-	spiderlab = {
+	armslab = {
 		buildangle = 950,
 		buildcostenergy = 52745,
 		buildcostmetal = 3217,
@@ -7,8 +7,8 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
-		buildinggrounddecaltype = "spiderlab_aoplane.dds",
-		buildpic = "spiderlab.dds",
+		buildinggrounddecaltype = "armslab_aoplane.dds",
+		buildpic = "armslab.dds",
 		buildtime = 34000,
 		canmove = true,
 		canpatrol = true,
@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Spider Lab ARM",
 		noautofire = false,
-		objectname = "spiderlab",
+		objectname = "armslab",
 		radardistance = 50,
 		radaremitheight = 33,
 		selfdestructas = "LARGE_BUILDING",
@@ -39,7 +39,7 @@ return {
 		sightdistance = 220,
 		standingfireorder = 2,
 		standingmoveorder = 1,
-		unitname = "spiderlab",
+		unitname = "armslab",
 		workertime = 400,
 		yardmap = "oooooooo occcccco occcccco occcccco occcccco occcccco yyyyyyyy yyyyyyyy",
 		buildoptions = {
@@ -54,7 +54,7 @@ return {
 			[9] = "armweaver",
 		},
 		customparams = {
-			buildpic = "spiderlab.dds",
+			buildpic = "armslab.dds",
 			faction = "ARM",
 			providetech = "T2 Factory",
 		},
@@ -68,7 +68,7 @@ return {
 				footprintx = 6,
 				footprintz = 7,
 				metal = 735,
-				object = "spiderlab_dead",
+				object = "armslab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

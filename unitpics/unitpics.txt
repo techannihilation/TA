@@ -664,13 +664,13 @@ corabsolutor.dds
 armpack.dds
 pinchy.dds
 r75v.dds
-requ1.dds
+coraegis.dds
 corscreamer.dds
-shiva.dds
-shrike.dds
+corshiva.dds
+corshrike.dds
 smasher.dds
 speeder.dds
-spiderlab.dds
+armslab.dds
 armtaipan.dds
 tankanotor.dds
 armbeamer.dds

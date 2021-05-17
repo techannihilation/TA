@@ -69,7 +69,7 @@ return {
 			[10] = "armmakr",
 			[11] = "armamaker",
 			[12] = "armlab",
-			[13] = "spiderlab",
+			[13] = "armslab",
 			[14] = "armalab",
 			[15] = "armvp",
 			[16] = "armap",

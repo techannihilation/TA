@@ -541,7 +541,7 @@ talon_handgod = {
   armhawk = {
     {class='AirJet',options={color={0.3,0.1,0}, width=6, length=75, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
   },
-  shrike = {
+  corshrike = {
     {class='AirJet',options={color={0.3,0.1,0}, width=4, length=75, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.3,0.1,0}, width=4, length=75, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.3,0.1,0}, width=4, length=75, piece="cthrust", noIconDraw = true, priority=3, onActive=true}},
@@ -629,7 +629,7 @@ talon_handgod = {
   armwolf = {
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="fum3", noIconDraw = true, priority=3, onActive=true}},
   },
-  shrike = {
+  corshrike = {
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
