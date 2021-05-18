@@ -12,6 +12,7 @@ return {
 		builder = false,
 		buildpic = "sat_strike.dds",
 		buildtime = 300000,
+		canattack = false,
 		canfly = true,
 		canguard = true,
 		canmove = true,
@@ -119,7 +120,7 @@ return {
 				weaponvelocity = 2000,
 				damage = {
 					commanders = 1000,
-					default = 10000,					
+					default = 10000,
 					subs = 5,
 				},
 			},

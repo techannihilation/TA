@@ -22,7 +22,6 @@ return {
 		collide = false,
 		cruisealt = 1750,
 		description = "Anti-Air & Anti-Satellite",
-		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		footprintx = 5,
 		footprintz = 5,

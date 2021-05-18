@@ -1,14 +1,16 @@
 3.87 > 3.88
-2021-05-18
+2021-05-19
 Balance :
+ - Decrease all MetalMaker Metal production. Metal/1KE : 8M for t1, 10M for adv t1, 11M for t2, 12M for t3, 13M for t4, 14M for t5
+ - T2 Talon Crusader : remplace beam by lighting. Decrease Damage/s 250=>150. Decrease Range 300=>285. Increase HP 1700=>2500
+ - T2 Talon Carbuncle : Decrease HP 18K=>16K, speed 1.7=>1.3, range 650=>500. Increase damage 360=>600
  - Champion, krogtaar, Bantha, Gorilla : Increase maingun range 450=>500
  - T1 Talon cons : Reduce energy produce 10/s=>5/s
  - T3 Tll Hover Mosaurus : decrease cost 27KM =>20KM. Increase range 950=>1000 for main weapon
- - T2 Talon Crusader : remplace beam by lighting. Decrease Damage/s 250=>150. Decrease Range 300=>285. Increase HP 1700=>2500
- - T2 Talon Carbuncle : Decrease HP 18K=>16K, speed 1.7=>1.3, range 650=>500. Increase damage 360=>600
 
  Improvment :
   - T2 Core Sniper (Protos) : decrease model by 10%
+  - PlanetKiller become Satellite
 
 3.86 > 3.87
 2021-05-10

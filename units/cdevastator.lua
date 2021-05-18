@@ -60,8 +60,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.627,
-		turnrate = 86.45,
+		turninplacespeedlimit = 0.65,
+		turnrate = 90,
 		unitname = "cdevastator",
 		customparams = {
 			buildpic = "cdevastator.dds",
