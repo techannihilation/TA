@@ -354,7 +354,7 @@ QueryBuildInfo(piecenum)
 
 SweetSpot(piecenum)
 {
-	piecenum = body;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -362,6 +362,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
+		explode body type NOHEATCLOUD;
 		explode clamp01 type NOHEATCLOUD;
 		explode clamp03 type NOHEATCLOUD;
 		explode clamp06 type NOHEATCLOUD;
@@ -372,7 +373,7 @@ Killed(severity, corpsetype)
 		explode arm06a type NOHEATCLOUD;
 		explode sup01 type NOHEATCLOUD;
 		explode sup03 type NOHEATCLOUD;
-		explode sup04 type NOHEATCLOUD;		
+		explode sup04 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -389,25 +390,21 @@ Killed(severity, corpsetype)
 		explode arm02a type NOHEATCLOUD | FALL;
 		explode arm05a type NOHEATCLOUD | FALL;
 		explode arm08a type NOHEATCLOUD | FALL;
-		explode arm06a type NOHEATCLOUD | FALL;
-		
+		explode arm06a type NOHEATCLOUD | FALL;		
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode sup01 type NOHEATCLOUD;
-		explode sup03 type NOHEATCLOUD;
-		explode sup04 type NOHEATCLOUD;	
-		explode body type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode clamp01 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode clamp03 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode clamp06 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode clamp09 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode arm02a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode arm05a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode arm08a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		explode arm06a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
-		return (corpsetype);
-	}
+	corpsetype = 3;
+	explode sup01 type NOHEATCLOUD;
+	explode sup03 type NOHEATCLOUD;
+	explode sup04 type NOHEATCLOUD;	
+	explode body type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode clamp01 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode clamp03 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode clamp06 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode clamp09 type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode arm02a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode arm05a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode arm08a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	explode arm06a type NOHEATCLOUD | FIRE | SMOKE | EXPLODE_ON_HIT | FALL;
+	return (corpsetype);
 }

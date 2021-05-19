@@ -1,6 +1,7 @@
 3.87 > 3.88
 2021-05-19
 Balance :
+ - Decrease Bonus Eco for T1 Fusion cost -10% => 5% (T2 minifus = 0%, T2 = 5%, T2 adv Fus = 10%, T3 = 12% T4 = 15%, T5 = 17%)
  - Decrease all MetalMaker Metal production. Metal/1KE : 8M for t1, 10M for adv t1, 11M for t2, 12M for t3, 13M for t4, 14M for t5
  - T2 Talon Crusader : remplace beam by lighting. Decrease Damage/s 250=>150. Decrease Range 300=>285. Increase HP 1700=>2500
  - T2 Talon Carbuncle : Decrease HP 18K=>16K, speed 1.7=>1.3, range 650=>500. Increase damage 360=>600
@@ -11,6 +12,9 @@ Balance :
  Improvment :
   - T2 Core Sniper (Protos) : decrease model by 10%
   - PlanetKiller become Satellite
+
+ Fix :
+ - Corprot Script
 
 3.86 > 3.87
 2021-05-10

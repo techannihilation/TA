@@ -6,7 +6,7 @@
 piece  base, bassin, koc, lthigh, lrotule, lleg, lfoot, rthigh,
        rrotule, rleg, rfoot, axe, torso, head, pivot, lshould,
        luparm, larm, lhand, rshould, ruparm, rarm, rhand, gun,
-       clip, barrel, flare, shell;
+       barrel, flare, shell;
 
 static-var  Static_Var_1, gun_1, bMoving, bAiming, Static_Var_5,
             restore_delay, statechg_DesiredState, statechg_StateChanging;
@@ -27,7 +27,7 @@ walk()
 	turn larm to x-axis <0.000000> speed <50.000000>;
 	turn lhand to x-axis <25.005495> speed <50.000000>;
 	sleep 450;
-	move lleg to y-axis [-0.900000] speed [15.000000];
+	move lleg to y-axis [-1.000000] speed [15.000000];
 	turn lfoot to x-axis <13.000000> speed <100.000000>;
 	turn lleg to x-axis <20.000000> speed <700.000000>;
 	sleep 50;
@@ -57,7 +57,7 @@ walk()
 	sleep 100;
 	move lleg to y-axis [0.000000] speed [5.000000];
 	sleep 350;
-	move rleg to y-axis [-0.900000] speed [15.000000];
+	move rleg to y-axis [-1.000000] speed [15.000000];
 	turn rfoot to x-axis <13.000000> speed <100.000000>;
 	turn rleg to x-axis <20.000000> speed <700.000000>;
 	sleep 50;
@@ -106,7 +106,7 @@ walklegs()
 	turn lthigh to x-axis <-30.005495> speed <225.000000>;
 	turn lfoot to x-axis <12.000000> speed <100.000000>;
 	sleep 450;
-	move lleg to y-axis [-0.900000] speed [15.000000];
+	move lleg to y-axis [-1.000000] speed [15.000000];
 	turn lfoot to x-axis <13.000000> speed <100.000000>;
 	turn lleg to x-axis <20.000000> speed <700.000000>;
 	sleep 50;
@@ -124,7 +124,7 @@ walklegs()
 	sleep 100;
 	move lleg to y-axis [0.000000] speed [5.000000];
 	sleep 350;
-	move rleg to y-axis [-0.900000] speed [15.000000];
+	move rleg to y-axis [-1.000000] speed [15.000000];
 	turn rfoot to x-axis <13.000000> speed <100.000000>;
 	turn rleg to x-axis <20.000000> speed <700.000000>;
 	sleep 50;
@@ -154,7 +154,7 @@ ready2()
 	turn lshould to z-axis <30.005495> speed <15.000000>;
 	turn pivot to x-axis <-90.016484> speed <150.000000>;
 	turn rhand to y-axis <90.016484> speed <40.000000>;
-	move barrel to y-axis [-6.300000] speed [8.000000];
+	move barrel to y-axis [-6.000000] speed [8.000000];
 	turn lhand to y-axis <45.005495> speed <35.000000>;
 	sleep 200;
 	turn head to z-axis <-25.005495> speed <13.000000>;
@@ -299,10 +299,16 @@ Create()
 	Static_Var_1 = 0;
 	hide base;
 	hide flare;
+	spin flare around y-axis speed <100.016484>;
 	restore_delay = 2000;
 	call-script InitState();
 	start-script MotionControl();
 	start-script SmokeUnit();
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
 }
 
 StartMoving()
@@ -346,10 +352,15 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 + 0 from flare;
-	turn head to x-axis <-7.000000> speed <150.000000>;
-	sleep 50;
-	turn head to x-axis <0.000000> speed <30.000000>;
+	sleep 20;
 	explode shell type NOHEATCLOUD | EXPLODE_ON_HIT;
+	turn head to x-axis <-7.000000> speed <150.000000>;
+	move barrel to y-axis [-1.800000] speed [200.000000];
+	move pivot to z-axis [-0.900000] speed [40.000000];
+	sleep 80;
+	turn head to x-axis <0.000000> speed <30.000000>;
+	move pivot to z-axis [0.000000] speed [6.000000];
+	move barrel to y-axis [-6.000000] speed [20.000000];
 }
 
 AimFromPrimary(piecenum)
@@ -358,16 +369,6 @@ AimFromPrimary(piecenum)
 }
 
 QueryPrimary(piecenum)
-{
-	piecenum = flare;
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = axe;
-}
-
-QuerySecondary(piecenum)
 {
 	piecenum = flare;
 }
@@ -382,7 +383,6 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode bassin type NOHEATCLOUD;
 		explode koc type NOHEATCLOUD;
 		explode lthigh type NOHEATCLOUD;
@@ -408,14 +408,11 @@ Killed(severity, corpsetype)
 		explode flare type NOHEATCLOUD;
 		explode barrel type NOHEATCLOUD | FALL | SMOKE;
 		explode lhand type NOHEATCLOUD | FALL;
-		explode clip type NOHEATCLOUD | SHATTER;
-		explode shell type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
 		explode bassin type NOHEATCLOUD;
 		explode koc type NOHEATCLOUD | FALL;
 		explode lthigh type NOHEATCLOUD | FALL;
@@ -441,12 +438,10 @@ Killed(severity, corpsetype)
 		explode flare type NOHEATCLOUD;
 		explode axe type NOHEATCLOUD;
 		explode barrel type NOHEATCLOUD | FALL | SMOKE;
-		explode clip type NOHEATCLOUD | SHATTER;
 		explode shell type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
 	explode koc type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -471,7 +466,6 @@ Killed(severity, corpsetype)
 	explode axe type NOHEATCLOUD;
 	explode flare type NOHEATCLOUD;
 	explode barrel type NOHEATCLOUD | FALL | SMOKE;
-	explode clip type NOHEATCLOUD | SHATTER;
 	explode shell type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

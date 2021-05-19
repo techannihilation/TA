@@ -8,12 +8,8 @@ return {
 		impulseboost = 0.25,
 		impulsefactor = 0.25,
 		name = "NuclearMine",
-		range = 1000,
-		reloadtime = 3.6,
 		soundhit = "xplonuk3",
 		soundstart = "largegun",
-		waterweapon = 1,
-		weaponvelocity = 250,
 		damage = {
 			commanders = 1500,
 			default = 4500,

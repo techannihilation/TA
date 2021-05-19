@@ -1,7 +1,7 @@
 return {
 	tllmedfusion = {
 		activatewhenbuilt = true,
-		buildcostenergy = 18150,
+		buildcostenergy = 19965,
 		buildcostmetal = 2864,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -24,13 +24,11 @@ return {
 		idleautoheal = 5,
 		idletime = 2000,
 		losemitheight = 45,
-		--makesmetal = 4,
 		mass = 3889,
 		maxdamage = 4280,
 		maxslope = 20,
 		maxwaterdepth = 0,
-		name = "Heavy Elemental Reactor",
-		
+		name = "Fusion Reactor",
 		objectname = "TLLMEDFUSION",
 		radaremitheight = 44,
 		selfdestructas = "FUSIONX_BLAST",

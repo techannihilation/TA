@@ -40,7 +40,6 @@ return {
 		movementclass = "HKBOT3",
 		name = "Protos",
 		noautofire = false,
-		
 		objectname = "CORPROT",
 		radardistance = 0,
 		radaremitheight = 65,
@@ -57,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "corprot.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
