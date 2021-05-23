@@ -126,7 +126,7 @@ return {
 				intensity = 3,
 				name = "Carbuncle Blaster",
 				noselfdamage = true,
-				range = 750,
+				range = 500,
 				reloadtime = 0.25,
 				rgbcolor = "0.05 0.9 1.0",
 				size = 1.2,
@@ -138,7 +138,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					default = 200,
+					default = 300,
 					subs = 5,
 				},
 			},

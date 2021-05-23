@@ -558,7 +558,6 @@ corpt.dds
 corpun.dds
 corpunk.dds
 corpyro.dds
-corpyrox1.dds
 corpyrox.dds
 corrad1.dds
 corrad.dds

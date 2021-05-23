@@ -357,7 +357,6 @@ return {
 	flamethrowers = {
 		"corpyro",
 		"corpyrox",
-		"corpyrox1",
 		"tllburner",
 		"tlllft",
 		"cormaw",

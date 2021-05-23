@@ -1,9 +1,10 @@
 return {
 	talon_skynet = {
-		acceleration = 0.009,
-		airhoverfactor = 0,
-		airstrafe = false,
-		brakerate = 0.04,
+		acceleration = 0.005,
+		airStrafe  = true,
+		airHoverFactor = 1,
+		bankingAllowed = false,
+		brakerate = 0.01,
 		buildcostenergy = 1595098,
 		buildcostmetal = 116023,
 		builder = false,
@@ -45,8 +46,8 @@ return {
 		selfdestructcountdown = 10,
 		sightdistance = 1500,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.66,
-		turnrate = 100,
+		turninplacespeedlimit = 0.6,
+		turnrate = 120,
 		unitname = "talon_skynet",
 		customparams = {
 			buildpic = "talon_skynet.dds",
@@ -172,9 +173,10 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
 				def = "skynet_WEAPON",
 				onlytargetcategory = "SURFACE",
+				maindir = "0 -1 0",
+				maxangledif = 30,
 			},
 			[2] = {
 				badtargetcategory = "LARGE MEDIUM SMALL TINY",

@@ -265,13 +265,6 @@ function gadget:Initialize()
       elseif (ud.name=="armpraet") then
         Spring.SetUnitDefIcon(udid, "armpraet.user")
 
---RC
-      elseif (ud.name=="armrech1") or (ud.name=="armrech2") or (ud.name=="armrech3")
-      or (ud.name=="correch1") or (ud.name=="correch2") or (ud.name=="correch3") then
-        Spring.SetUnitDefIcon(udid, "rc.user")
---last rc
-      elseif (ud.name=="correch4") or (ud.name=="armrech4") then
-        Spring.SetUnitDefIcon(udid, "rc1.user")
 --T5 Medium / Small Hero
       elseif (ud.name=="armhope") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllbarbarus") or (ud.name=="talon_skynet") then
         Spring.SetUnitDefIcon(udid, "t5ships.user")

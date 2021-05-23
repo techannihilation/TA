@@ -1,9 +1,10 @@
 return {
 	talon_independence = {
 		acceleration = 0.005,
-		airhoverfactor = 0,
-		airstrafe = false,
-		brakerate = 0.04,
+		airStrafe  = true,
+		airHoverFactor = 1,
+		bankingAllowed = false,
+		brakerate = 0.01,
 		buildcostenergy = 8500412,
 		buildcostmetal = 870021,
 		builder = false,
@@ -45,8 +46,8 @@ return {
 		selfdestructcountdown = 10,
 		sightdistance = 1500,
 		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 0.627,
-		turnrate = 50,
+		turninplacespeedlimit = 0.6,
+		turnrate = 120,
 		unitname = "talon_independence",
 		customparams = {
 			buildpic = "talon_independence.dds",

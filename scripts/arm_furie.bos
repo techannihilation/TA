@@ -4,11 +4,10 @@
 #include "exptype.h"
 
 piece  torso, luparm, ruparm, pelvis, rthigh, lthigh, rlowarm, llowarm,
-       lleg, rleg, head, gun1, gun2, gun3, gat, flame1,
-       lmsl, flame2, gun2b, flame1b, gat2, douille1, douille2;
+       lleg, rleg, head, gun1, gun2a, gun2b, gun3, gat2b, flame2a,
+       lmsl, flame2b, gat2a;
 
-static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
-            restore_delay, gun_2;
+static-var  bMoving, bAiming, restore_delay;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -521,19 +520,16 @@ MotionControl(moving, aiming, justmoved)
 		{
 			if( aiming )
 			{
-				Static_Var_5 = 1;
 				call-script walklegs();
 			}
 			if( !aiming )
 			{
-				Static_Var_5 = 0;
 				call-script walk();
 			}
 			justmoved = TRUE;
 		}
 		if( !moving )
 		{
-			Static_Var_5 = 1;
 			if( justmoved )
 			{
 				call-script stand();
@@ -550,20 +546,11 @@ MotionControl(moving, aiming, justmoved)
 
 Create()
 {
-	turn flame1 to x-axis <90.000000> now;
-	turn flame1b to x-axis <90.000000> now;
-	turn flame2 to x-axis <90.000000> now;
-	hide flame1;
-	hide flame1b;
-	hide flame2;
-	dont-cache head;
+	turn flame2a to x-axis <90.000000> now;
+	turn flame2b to x-axis <90.000000> now;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_3 = 0;
-	Static_Var_5 = 1;
-	Static_Var_4 = 0;
-	gun_2 = luparm;
-	restore_delay = 1500;
+	restore_delay = 3000;
 	start-script SmokeUnit();
 	start-script MotionControl();
 }
@@ -588,28 +575,19 @@ RestorePrimary()
 {
 	sleep restore_delay;
 	bAiming = FALSE;
-	if( !Static_Var_3 )
-	{
-		Static_Var_4 = 0;
-	}
 	call-script RestoreArms();
 }
 
 RestoreSecondary()
 {
 	sleep 500;
-	stop-spin gat around y-axis decelerate <5.000000>;
-	stop-spin gat2 around y-axis decelerate <5.000000>;
+	stop-spin gat2a around y-axis decelerate <5.000000>;
+	stop-spin gat2b around y-axis decelerate <5.000000>;
 	sleep restore_delay;
 	turn head to y-axis <0.000000> speed <200.000000>;
 	turn head to x-axis <0.000000> speed <200.000000>;
 	wait-for-turn head around y-axis;
 	wait-for-turn head around x-axis;
-	Static_Var_3 = 0;
-	if( !bAiming )
-	{
-		Static_Var_4 = 0;
-	}
 }
 
 AimfromPrimary(piecenum)
@@ -622,11 +600,6 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
-	Static_Var_4 = 1;
-	while( !Static_Var_5 )
-	{
-		sleep 250;
-	}
 	turn head to y-axis heading speed <80.000000>;
 	turn head to x-axis <0.000000> - pitch speed <80.000000>;
 	wait-for-turn head around x-axis;
@@ -656,20 +629,18 @@ AimFromweapon3(piecenum)
 
 QuerySecondary(piecenum)
 {
-	piecenum = flame1;
+	piecenum = flame2a;
 }
 
 QueryWeapon3(piecenum)
 {
-	piecenum = flame1b;
+	piecenum = flame2b;
 }
 
 AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	Static_Var_3 = 1;
-	Static_Var_4 = 1;
 	turn torso to y-axis heading speed <75.000000>;
 	turn ruparm to x-axis <-85.000000> speed <60.000000>;
 	turn luparm to x-axis <-85.000000> speed <60.000000>;
@@ -680,7 +651,7 @@ AimSecondary(heading, pitch)
 	wait-for-turn luparm around x-axis;
 	wait-for-turn rlowarm around x-axis;
 	wait-for-turn llowarm around x-axis;
-	spin gat around y-axis speed <640.000000> accelerate <60.000000>;
+	spin gat2a around y-axis speed <640.000000> accelerate <60.000000>;
 	start-script RestoreSecondary();
 	return (1);
 }
@@ -694,7 +665,7 @@ AimWeapon3(heading, pitch)
 	wait-for-turn luparm around x-axis;
 	wait-for-turn rlowarm around x-axis;
 	wait-for-turn llowarm around x-axis;
-	spin gat2 around y-axis speed <640.000000> accelerate <60.000000>;
+	spin gat2b around y-axis speed <640.000000> accelerate <60.000000>;
 	return (1);
 }
 
@@ -715,7 +686,7 @@ AimFromWeapon4(piecenum)
 
 FireWeapon4()
 {
-	emit-sfx 1024 + 1 from flame2;
+	
 }
 
 QueryWeapon4(piecenum)
@@ -747,21 +718,6 @@ Killed(severity, corpsetype)
 		explode rlowarm type NOHEATCLOUD | FALL;
 		explode rthigh type NOHEATCLOUD | FALL | SMOKE;
 		explode ruparm type NOHEATCLOUD | FALL;
-		explode torso type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 2;
-		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode llowarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rlowarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode torso type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}

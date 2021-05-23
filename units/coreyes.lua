@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "coreyes.dds",
 		buildtime = 1500,
-		category = "ALL UNDERWATER",
+		category = "ALL SURFACE UNDERWATER",
 		cloakcost = 10,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "16 26 16",
@@ -33,8 +33,7 @@ return {
 		maxwaterdepth = 99999,
 		mincloakdistance = 36,
 		name = "Dragon's Eye",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "COREYES",
 		onoffable = false,
 		radaremitheight = 27,

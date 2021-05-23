@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "armeyes.dds",
 		buildtime = 1500,
-		category = "ALL UNDERWATER",
+		category = "ALL SURFACE UNDERWATER",
 		cloakcost = 10,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "16 26 16",
@@ -34,7 +34,6 @@ return {
 		mincloakdistance = 36,
 		name = "Dragon's Eye",
 		noautofire = false,
-		
 		objectname = "ARMEYES",
 		onoffable = false,
 		radaremitheight = 27,
