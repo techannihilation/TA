@@ -42,7 +42,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Amphibious Construction Vehicle",
 		noautofire = false,
-		
 		objectname = "tllmarmelade",
 		radardistance = 50,
 		radaremitheight = 22,

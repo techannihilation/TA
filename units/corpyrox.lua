@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Hell Fire Captain (Auto-Repair 50)",
+		description = "Heavy Assault Kbot (Auto-Repair 50)",
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		footprintx = 3,

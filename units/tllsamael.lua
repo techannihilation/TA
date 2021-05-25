@@ -39,7 +39,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Samael",
 		noautofire = false,
-
 		objectname = "tllsamael",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",
@@ -143,7 +142,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 742,
 				damage = {
-					commanders = 250,
+					commanders = 375,
 					default = 750,
 					subs = 5,
 				},
@@ -169,7 +168,6 @@ return {
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "Lasrhvy2",
-				tolerance = 10000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 900,
@@ -251,11 +249,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1250,
 				damage = {
-					areoship = 60000,
-					commanders = 3000,
-					default = 30000,
-					experimental_land = 60000,
-					experimental_ships = 60000,
+					commanders = 4000,
+					default = 40000,
 					subs = 5,
 				},
 			},

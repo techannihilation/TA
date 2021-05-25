@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "htank4",
-		name = "corchampion",
+		name = "Champion",
 		noautofire = false,
 		objectname = "corchamp",
 		radardistance = 0,

@@ -34,7 +34,6 @@ return {
 		movementclass = "hkbot4",
 		name = "Archdemon",
 		noautofire = false,
-
 		objectname = "CORDEM",
 		radardistance = 0,
 		radaremitheight = 76,

@@ -47,8 +47,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.594,
-		turnrate = 560,
+		turninplacespeedlimit = 0.6,
+		turnrate = 390,
 		unitname = "arm_furie",
 		customparams = {
 			buildpic = "arm_furie.dds",
