@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, pad, towers, doors, lights, post1, post2, nano1,
+piece  base, body, pad, towers, doors, lights, post1, post2, nano1,
        nano2, tower1, tower2, spray1, spray2, radar;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
@@ -16,16 +16,6 @@ RestoreAfterDelay()
 
 activatescr()
 {
-	if( TRUE )
-	{
-		dont-cache doors;
-		dont-cache lights;
-		dont-cache nano1;
-		dont-cache nano2;
-		dont-cache post1;
-		dont-cache post2;
-		set ARMORED to 0;
-	}
 	if( TRUE )
 	{
 		move doors to z-axis [-2.] speed [4.];
@@ -43,30 +33,12 @@ activatescr()
 		turn nano2 to x-axis <90.> speed <100.>;
 		wait-for-turn nano1 around x-axis;
 	}
-	if( TRUE )
-	{
-		cache doors;
-		cache nano1;
-		cache nano2;
-		cache post1;
-		cache post2;
-	}
 }
 
 deactivatescr()
 {
 	signal 4;
 	set-signal-mask 4;
-	if( TRUE )
-	{
-		dont-cache doors;
-		dont-cache lights;
-		dont-cache nano1;
-		dont-cache nano2;
-		dont-cache post1;
-		dont-cache post2;
-		sleep 300;
-	}
 	if( TRUE )
 	{
 		turn nano1 to x-axis <0.> speed <100.>;
@@ -83,16 +55,6 @@ deactivatescr()
 	{
 		move doors to z-axis [0.] speed [4.];
 		wait-for-move doors along z-axis;
-	}
-	if( TRUE )
-	{
-		cache doors;
-		cache lights;
-		cache nano1;
-		cache nano2;
-		cache post1;
-		cache post2;
-		set ARMORED to 1;
 	}
 }
 
@@ -264,7 +226,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode pad type NOHEATCLOUD;
 		explode doors type NOHEATCLOUD;
 		explode towers type NOHEATCLOUD;
@@ -281,7 +243,7 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
 		explode pad type NOHEATCLOUD | FALL;
 		explode doors type NOHEATCLOUD | FALL; 
 		explode towers type NOHEATCLOUD | FALL;
@@ -295,25 +257,8 @@ Killed(severity, corpsetype)
 		explode spray2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode pad type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode doors type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode towers type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode post1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode post2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode nano1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode nano2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode tower1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode tower2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode spray1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		explode spray2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode pad type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doors type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode towers type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;

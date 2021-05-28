@@ -1,3 +1,11 @@
+3.88 > 3.89
+2021-05-29
+Balance :
+ - T3 Arm Marauder : Increase cost 1.6KM => 1.7KM. Decrease HP 7K=>6K
+
+ Improvment :
+  - Add T4 Core Nightmare Tower Defense
+
 3.87 > 3.88
 2021-05-23
 Balance :

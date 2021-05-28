@@ -19,7 +19,7 @@ return {
 		corpse = "dead1",
 		defaultmissiontype = "Standby",
 		description = "Experimental Heavily Armored Assault Kbot",
-		explodeas = "KROG_BLAST",
+		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,
 		footprintx = 5,
 		footprintz = 5,

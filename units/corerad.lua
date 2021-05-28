@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "corerad_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Bomb-Resistant Missile Battery",
+		description = "Heavy Missile Battery",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 4,

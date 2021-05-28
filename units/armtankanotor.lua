@@ -63,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2655,
-				object = "tankanotor_dead",
+				object = "armtankanotor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
