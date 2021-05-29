@@ -41,8 +41,7 @@ return {
 		maxwaterdepth = 0,
 		metalmake = 3.75,
 		metalstorage = 100,
-		name = "Construction Ship",
-		
+		name = "Construction Ship",		
 		objectname = "talon_builderlvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",

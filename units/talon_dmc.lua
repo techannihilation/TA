@@ -1,8 +1,8 @@
 return {
 	talon_dmc = {
 		buildangle = 8192,
-		buildcostenergy = 686111,
-		buildcostmetal = 51401,
+		buildcostenergy = 1009114,
+		buildcostmetal = 71401,
 		builder = false,
 		buildpic = "talon_dmc.dds",
 		buildtime = 750000,
@@ -26,12 +26,11 @@ return {
 		idletime = 1800,
 		losemitheight = 67,
 		mass = 51401,
-		maxdamage = 162410,
+		maxdamage = 222410,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Black Diamond",
 		noautofire = false,
-		
 		objectname = "talon_dmc",
 		radardistance = 0,
 		radaremitheight = 66,
@@ -42,7 +41,7 @@ return {
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		customparams = {
 			buildpic = "talon_dmc.dds",
-			faction = "ARM",
+			faction = "TALON",
 		},
 		featuredefs = {
 			dead = {
@@ -124,7 +123,7 @@ return {
 				name = "Dark Matter Cannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1600,
+				range = 1700,
 				reloadtime = 2.5,
 				rgbcolor = "1 0.15 0.15",
 				size = 4.5,
@@ -138,11 +137,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 900,
 				damage = {
-					areoship = 16000,
-					commanders = 1500,
-					default = 9000,
-					experimental_land = 16000,
-					experimental_ships = 16000,
+					commanders = 1600,
+					default = 16000,
 					subs = 5,
 				},
 			},
