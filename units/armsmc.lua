@@ -39,7 +39,6 @@ return {
 		movementclass = "HKBOT5",
 		name = "Shielded Construction Kbot",
 		noautofire = false,
-		
 		objectname = "armsmc",
 		radaremitheight = 34,
 		seismicsignature = 0,

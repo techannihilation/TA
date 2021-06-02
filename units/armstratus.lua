@@ -217,12 +217,12 @@ return {
 			[2] = {
 				badtargetcategory = "SCOUT SUPERSHIP",
 				def = "ADVANCED_MISSILE",
-				onlytargetcategory = "VTOL SATELLITE",
+				onlytargetcategory = "VTOL",
 			},
 			[3] = {
 				badtargetcategory = "SCOUT SUPERSHIP",
 				def = "ADVANCED_MISSILE",
-				onlytargetcategory = "VTOL SATELLITE",
+				onlytargetcategory = "VTOL",
 			},
 			[4] = {
 				badtargetcategory = "SCOUT SUPERSHIP",
