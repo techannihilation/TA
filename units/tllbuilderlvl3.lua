@@ -54,7 +54,7 @@ return {
 		unitname = "tllbuilderlvl3",
 		workertime = 2750,
 		buildoptions = {
-			[1] = "tllefus",
+			[1] = "tllufus",
 			[2] = "tllmetalmakerlvl4",
 			[3] = "tllmas",
 			[4] = "tllprototype",

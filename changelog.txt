@@ -5,7 +5,7 @@ Balance :
 
  Improvment :
   - Add T4 Core Nightmare Tower Defense
-  - Add T5 Arm Fusion (T5 TLL will come soon)
+  - Add T5 Arm & TLL Fusion
   - Add T5 Core MM  (T5 Talon will come soon)
   - Change T4 Core MM model
 

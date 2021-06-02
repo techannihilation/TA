@@ -118,6 +118,11 @@ cafus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=40, size=70, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,90,0}, size=30.9, precision=22, repeatEffect=true}},
   },
+  tllufus = {
+    {class='SimpleParticles2', options=MergeTable({pos={0,180,0}, delay=0, size=160, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
+    {class='SimpleParticles2', options=MergeTable({pos={0,180,0}, delay=40, size=160, count=2, colormap={{1.0, 0.1, 0.1, 0.005}, {0.9, 0.5, 0.2, 0.01}, {1.0, 0.1, 0.1, 0.005}}},plasmaball_fusion)},
+    {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,180,0}, size=75, precision=22, repeatEffect=true}},
+  },
   aafus = {
     {class='SimpleParticles2', options=MergeTable({pos={-38,70,-10}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={21,70,-10}, delay=60, lifeSpread=300},sparks)},
