@@ -51,7 +51,7 @@ return {
 		unitname = "abuilderlvl5",
 		workertime = 2500,
 		buildoptions = {
-			[1] = "armefus",
+			[1] = "armufus",
 			[2] = "ametalmakerlvl4",
 			[3] = "armmas",
 			[4] = "arm_mech_lab",
@@ -62,8 +62,9 @@ return {
 			[9] = "armgate3",
 			[10] = "armamd2",
 			[11] = "armfsilo",
-			[12] = "armvulc1",
-			[13] = "armtabi",
+			[12] = "armorbital",
+			[13] = "armvulc1",
+			[14] = "armtabi",
 		},
 		customparams = {
 			buildpic = "abuilderlvl5.dds",

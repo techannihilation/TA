@@ -57,7 +57,7 @@ return {
 		buildoptions = {
 			[1] = "corufus",
 			[2] = "cormas",
-			[3] = "cmetalmakerlvl3",
+			[3] = "cmetalmakerlvl4",
 			[4] = "core_hexapod_lab",
 			[5] = "cshipyardlvl4",
 			[6] = "cornanotc4",

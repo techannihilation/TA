@@ -137,16 +137,19 @@ cafus = {
   armefus = {
     {class='SimpleParticles2', options=MergeTable({pos={-67.2,112,32}, delay=10, lifeSpread=300},sparks)},
     {class='SimpleParticles2', options=MergeTable({pos={44.8,112,32}, delay=10, lifeSpread=300},sparks)},
-	{class='SimpleParticles2', options=MergeTable({pos={-19.2,128,-65.28}, delay=10, lifeSpread=300},sparks)},
+	  {class='SimpleParticles2', options=MergeTable({pos={-19.2,128,-65.28}, delay=10, lifeSpread=300},sparks)},
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={-56,104,32}, size=18, precision=22, repeatEffect=true}},
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={56,104,32}, size=18, precision=22, repeatEffect=true}},
-	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
+	  {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,104,-64}, size=18, precision=22, repeatEffect=true}},
+  },
+  armufus = {
+    {class='ShieldJitter',options={life=math.huge, priority=2, pos={80,220,80}, size=35, precision=20, repeatEffect=true}},
+    {class='ShieldJitter',options={life=math.huge, priority=2, pos={80,220,-80}, size=35, precision=20, repeatEffect=true}},
+    {class='ShieldJitter',options={life=math.huge, priority=2, pos={-80,220,-80}, size=35, precision=20, repeatEffect=true}},
+    {class='ShieldJitter',options={life=math.huge, priority=2, pos={-80,220,80}, size=35, precision=20, repeatEffect=true}},
   },
 
   --// SHIELDS //--------------------------
-  cmetalmakerlvl3 = {
-    {class='StaticParticles',options=cmetelmakerlvl3Effect},
-  },
   corshieldgen = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
     {class='Bursts',options=shieldBursts300},

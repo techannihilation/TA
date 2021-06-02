@@ -34,8 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Heavy Experimental Armored Fusion Reactor",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "armefus",
 		onoffable = false,
 		radaremitheight = 128,

@@ -4,8 +4,8 @@
 #include "exptype.h"
 
 piece  base, body, glow, tower,
-		p1, p2, p3, p4,
-		b01, b02, b03, b04, b05, b06, b07, b08;
+		p01, p02, p03, p04, p05, p06, p07, p08,
+		b01, b02, b03, b04, b05, b06, b07, b08, b09, b10, b11, b12, b13, b14, b15, b16;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -124,10 +124,14 @@ Killed(severity, corpsetype)
 		explode b02 type NOHEATCLOUD;
 		explode b03 type NOHEATCLOUD;
 		explode b08 type NOHEATCLOUD;
-		explode p1 type NOHEATCLOUD;
-		explode p2 type NOHEATCLOUD;
-		explode p3 type NOHEATCLOUD;
-		explode p4 type NOHEATCLOUD;
+		explode b15 type NOHEATCLOUD;
+		explode b11 type NOHEATCLOUD;
+		explode p01 type NOHEATCLOUD;
+		explode p03 type NOHEATCLOUD;
+		explode p05 type NOHEATCLOUD;
+		explode p07 type NOHEATCLOUD;
+		explode p08 type NOHEATCLOUD;
+		explode p02 type NOHEATCLOUD;
 		explode tower type NOHEATCLOUD ;
 		explode body type NOHEATCLOUD;
 		return (corpsetype);
@@ -137,10 +141,14 @@ Killed(severity, corpsetype)
 	explode b02 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode b03 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode b08 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode p1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode p2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode p3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode p4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode b15 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode b11 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode p01 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode p03 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode p05 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode p07 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode p08 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode p02 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode tower type NOHEATCLOUD ;
 	explode body type NOHEATCLOUD ;
 	return (corpsetype);

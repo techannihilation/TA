@@ -21,7 +21,7 @@ return {
 		description = "Produces Energy",
 		energymake = 86400,
 		energystorage = 172800,
-		explodeas = "FUSION_SUPERBLAST_BUILDING",
+		explodeas = "FUSION_SUPERBLAST",
 		footprintx = 15,
 		footprintz = 15,
 		icontype = "building",

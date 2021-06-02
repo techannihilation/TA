@@ -160,7 +160,7 @@ function gadget:Initialize()
       elseif (ud.name=="armcybr") then
         Spring.SetUnitDefIcon(udid, "liche.user")
 --t5 fusions
-      elseif (ud.name=="talon_ufus") or (ud.name=="corufus") then
+      elseif (ud.name=="talon_ufus") or (ud.name=="corufus") or (ud.name=="armufus") then
         Spring.SetUnitDefIcon(udid, "e6.user")
 --t4 fusions
       elseif (ud.name=="armefus") or (ud.name=="corefus") or (ud.name=="tllefus") or (ud.name=="talon_efus") then

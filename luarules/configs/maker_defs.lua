@@ -26,6 +26,7 @@ local convertCapacities = {
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC2) }, -- Underwater
 		[UnitDefNames.cmetalmakerlvl2.id]  = { c = 10240, e = (AC3) }, -- T3
 		[UnitDefNames.cmetalmakerlvl3.id]  = { c = 40960, e = (AC4) }, -- T4
+		[UnitDefNames.cmetalmakerlvl4.id]  = { c = 245000, e = (AC5) }, -- T5		
 		--[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) },
 
 		--TLL

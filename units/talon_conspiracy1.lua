@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 21875,
 		buildcostmetal = 245,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "armjamt_aoplane.dds",
 		buildpic = "talon_conspiracy1.dds",
 		buildtime = 10000,
 		canattack = false,
@@ -38,7 +34,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		
 		objectname = "talon_conspiracy1",
 		onoffable = true,
 		radardistancejam = 750,
@@ -50,7 +45,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_conspiracy",
-		usebuildinggrounddecal = true,
 		yardmap = "oo oo",
 		customparams = {
 			buildpic = "talon_conspiracy1.dds",

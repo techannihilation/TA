@@ -3,21 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  Base, Body, Extension,pattes, pattes10,
-       pattes11, pattes12, pattes13, pattes14, stomp1, pattes20, pattes21, pattes22,
-       pattes23, pattes24, stomp2, pattes30, pattes31, pattes32, pattes33, pattes34,
-       stomp3, pattes40, pattes41, pattes42, pattes43, pattes44, stomp4, pattes50,
-       pattes51, pattes52, pattes53, pattes54, stomp5, pattes60, pattes61, pattes62,
-       pattes63, pattes64, stomp6,
-       Platform, Turret, Arm, Sleeve, Wings, Spindle, Spin_Light, Barrel1,
-       Barrel1_Light, Barrel2, Barrel2_Light, Barrel3, Barrel3_Light, Flare3, Angular1, Point1,
-       Stride1, Point4, Stride4, Point5, Stride5, AnglePoint1, Angular2, Point2,
-       Stride2, Point3, Stride3, Point6, Stride6, AnglePoint2, ecraseur_epaule, ecraseur_bras,
-       Abdomen, Light, Head, Connect, Bridge, Glow, Emit1,
-       Emit2, Emit3, Emit4, Launchers, Pod1, Pod2, Pod3, Pod4,
-       Pod5, Pod6, Pipes, Doo, Dad, R1, R2, R3,
-       R4, R5, R6, R7, R8, R9, R10, R11,
-       R12, R13, R14, R15, R16, R17, R18, aimpoint1, aimpoint2, aimpoint3, beamweapon, flame;
+piece  Base, Body, pattes, pattes10, pattes11, pattes12, pattes13, pattes20, pattes21, pattes22,
+       pattes23, pattes30, pattes31, pattes32, pattes33, pattes40, pattes41, pattes42, pattes43, pattes50,
+       pattes51, pattes52, pattes53, pattes60, pattes61, pattes62,
+       pattes63, Turret, Sleeve, Spindle, Flare3,
+       Abdomen, Head, Connect, Bridge, Emit1, Emit2, Emit3, Emit4, 
+       R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, 
+       aimpoint1, aimpoint2, aimpoint3, flame;
 
 static-var  Static_Var_1, Static_Var_4, maingun, Static_Var_9, Static_Var_10, Static_Var_12, Static_Var_11, bmoving, baiming, 
 			Static_Var_13, Static_Var_14, starburst1, starburst2, starburst3, starburst4, starburst5, starburst6, gun;
@@ -52,21 +44,9 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		sleep 400;
 		while( !bMoving )
 		{
-			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			sleep 100;			
 		}
-		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp3);
-		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
-		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
-		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp3)) - get PIECE_Y(ecraseur_epaule) now;
-		if( Static_Var_11 == 5 AND bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] now;
-		}
-		if( Static_Var_11 != 5 OR !bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
-		}
+		
 		turn pattes31 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
 		turn pattes32 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
 		turn pattes33 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
@@ -75,7 +55,7 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
 		turn pattes30 to y-axis <-14.000000> speed <15.000000> * <2.747253> / <2.197802>;
 		turn pattes60 to y-axis <-16.000000> speed <15.000000> * <2.747253> / <2.197802>;
@@ -88,20 +68,9 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
-		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp2);
-		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
-		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
-		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp2)) - get PIECE_Y(ecraseur_epaule) now;
-		if( Static_Var_10 == 5 AND bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] now;
-		}
-		if( Static_Var_10 != 5 OR !bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
-		}
+		
 		turn pattes21 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
 		turn pattes22 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
 		turn pattes23 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
@@ -110,7 +79,7 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
 		turn pattes20 to y-axis <29.000000> speed <15.000000> * <2.747253> / <2.197802>;
 		turn pattes60 to y-axis <-31.000000> speed <15.000000> * <2.747253> / <2.197802>;
@@ -123,20 +92,9 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
-		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp5);
-		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
-		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
-		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp5)) - get PIECE_Y(ecraseur_epaule) now;
-		if( Static_Var_13 == 5 AND bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] now;
-		}
-		if( Static_Var_13 != 5 OR !bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
-		}
+		
 		turn pattes51 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
 		turn pattes52 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
 		turn pattes53 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
@@ -145,7 +103,7 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
 		turn pattes50 to y-axis <1.000000> speed <15.000000> * <2.747253> / <2.197802>;
 		turn pattes60 to y-axis <-45.000000> speed <15.000000> * <2.747253> / <2.197802>;
@@ -158,20 +116,9 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
-		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp4);
-		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
-		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
-		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp4)) - get PIECE_Y(ecraseur_epaule) now;
-		if( Static_Var_12 == 5 AND bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] now;
-		}
-		if( Static_Var_12 != 5 OR !bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
-		}
+	
 		turn pattes41 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
 		turn pattes42 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
 		turn pattes43 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
@@ -180,7 +127,7 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
 		turn pattes40 to y-axis <14.000000> speed <15.000000> * <2.747253> / <2.197802>;
 		turn pattes30 to y-axis <30.000000> speed <15.000000> * <2.747253> / <2.197802>;
@@ -193,20 +140,9 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
-		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp1);
-		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
-		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
-		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp1)) - get PIECE_Y(ecraseur_epaule) now;
-		if( Static_Var_9 == 5 AND bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] now;
-		}
-		if( Static_Var_9 != 5 OR !bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
-		}
+		
 		turn pattes11 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
 		turn pattes12 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
 		turn pattes13 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
@@ -215,7 +151,7 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
 		turn pattes10 to y-axis <-29.000000> speed <15.000000> * <2.747253> / <2.197802>;
 		turn pattes20 to y-axis <-15.000000> speed <15.000000> * <2.747253> / <2.197802>;
@@ -228,20 +164,9 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
-		Func_Var_2 = get PIECE_XZ(base) - get PIECE_XZ(stomp6);
-		turn ecraseur_epaule to y-axis get XZ_ATAN(Func_Var_2) now;
-		move ecraseur_bras to z-axis get XZ_HYPOT(Func_Var_2) + [0.000000] - [20.000000] now;
-		move ecraseur_bras to y-axis get GROUND_HEIGHT(get PIECE_XZ(stomp6)) - get PIECE_Y(ecraseur_epaule) now;
-		if( Static_Var_14 == 5 AND bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] now;
-		}
-		if( Static_Var_14 != 5 OR !bMoving )
-		{
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
-		}
+		
 		turn pattes61 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
 		turn pattes62 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
 		turn pattes63 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
@@ -250,7 +175,7 @@ TexasRanger(Func_Var_1, Func_Var_2)
 		while( !bMoving )
 		{
 			sleep 100;
-			move ecraseur_epaule to y-axis [0.000000] - [13107.199982] now;
+			
 		}
 	}
 	turn pattes21 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
@@ -378,7 +303,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from Body;
+			emit-sfx smoketype from Abdomen;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -460,37 +386,16 @@ FirePrimary()
 	{
 		sleep 1000;
 		turn Spindle to z-axis <120.> speed <270.>;
-		turn Barrel1 to z-axis <-120.> speed <270.>;
-		turn Barrel2 to z-axis <-120.> speed <270.>;
-		turn Barrel3 to z-axis <-120.> speed <270.>;
-		wait-for-turn Spindle around z-axis;
-		wait-for-turn Barrel1 around z-axis;
-		wait-for-turn Barrel2 around z-axis;
-		wait-for-turn Barrel3 around z-axis;
 	}
 	if( maingun == 1 )
 	{
 		sleep 1000;
 		turn Spindle to z-axis <240.> speed <270.>;
-		turn Barrel1 to z-axis <-240.> speed <270.>;
-		turn Barrel2 to z-axis <-240.> speed <270.>;
-		turn Barrel3 to z-axis <-240.> speed <270.>;
-		wait-for-turn Spindle around z-axis;
-		wait-for-turn Barrel1 around z-axis;
-		wait-for-turn Barrel2 around z-axis;
-		wait-for-turn Barrel3 around z-axis;
 	}
 	if( maingun == 2 )
 	{
 		sleep 1000;
 		turn Spindle to z-axis <0.> speed <270.>;
-		turn Barrel1 to z-axis <0.> speed <270.>;
-		turn Barrel2 to z-axis <0.> speed <270.>;
-		turn Barrel3 to z-axis <0.> speed <270.>;
-		wait-for-turn Spindle around z-axis;
-		wait-for-turn Barrel1 around z-axis;
-		wait-for-turn Barrel2 around z-axis;
-		wait-for-turn Barrel3 around z-axis;
 	}
 	++maingun;
 	if( maingun == 3 )
@@ -528,10 +433,6 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {	
-	move beamweapon to z-axis [-1.000000] now;
-	sleep 250;
-	move beamweapon to z-axis [0.000000] speed [0.500000];
-	sleep 750;
 	++gun;
 	
 	if (gun == 3) 
@@ -644,27 +545,27 @@ FireWeapon9()
 
 AimFromWeapon4(piecenum)
 {
-	piecenum = Pod4;
+	piecenum = R10;
 }
 AimFromWeapon5(piecenum)
 {
-	piecenum = Pod5;
+	piecenum = R13;
 }
 AimFromWeapon6(piecenum)
 {
-	piecenum = Pod6;
+	piecenum = R16;
 }
 AimFromWeapon7(piecenum)
 {
-	piecenum = Pod1;
+	piecenum = R1;
 }
 AimFromWeapon8(piecenum)
 {
-	piecenum = Pod2;
+	piecenum = R4;
 }
 AimFromWeapon9(piecenum)
 {
-	piecenum = Pod3;
+	piecenum = R7;
 }
 
 QueryWeapon4(piecenum)
@@ -798,12 +699,8 @@ Killed(severity, corpsetype)
 	{	
 		corpsetype = 1;
 		explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode Turret type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode Spindle type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 		explode Abdomen type NOHEATCLOUD ;
 		explode Pattes60 type NOHEATCLOUD;
 		explode Pattes61 type NOHEATCLOUD;
@@ -821,12 +718,8 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode Turret type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode Spindle type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 		explode Abdomen type NOHEATCLOUD ;
 		explode Pattes60 type FALL | NOHEATCLOUD;
 		explode Pattes61 type FALL | NOHEATCLOUD;
@@ -840,37 +733,10 @@ Killed(severity, corpsetype)
 		explode Turret type SHATTER | NOHEATCLOUD;
 		return (corpsetype);
 	}	
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Abdomen type NOHEATCLOUD ;
-		explode Pattes60 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes61 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes52 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes40 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes32 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes20 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes21 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes12 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Pattes10 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode Turret type SHATTER | NOHEATCLOUD;
-		return (corpsetype);
-	}
 	corpsetype = 3;
 	explode Bridge type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel2 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pod1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Barrel1 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode Pod6 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Turret type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode Spindle type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 	explode Abdomen type NOHEATCLOUD ;
 	explode Pattes60 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 	explode Pattes61 type SHATTER | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;

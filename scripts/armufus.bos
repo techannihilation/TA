@@ -1,0 +1,119 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, bridge1, bridge2, bridge3, bridge4,
+	fusion1, pipe1a, pipe1b, pipe1c, pipe1d, side1a, side1b, top1, owen1a, owen1b,
+	fusion2, pipe2a, pipe2b, pipe2c, pipe2d, side2a, side2b, top2, owen2a, owen2b,
+	fusion3, pipe3a, pipe3b, pipe3c, pipe3d, side3a, side3b, top3, owen3a, owen3b,
+	fusion4, pipe4a, pipe4b, pipe4c, pipe4d, side4a, side4b, top4, owen4a, owen4b;
+
+SmokeUnit(healthpercent, sleeptime, smoketype, smokepiece)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from fusion1;
+			emit-sfx smoketype from fusion2;
+			emit-sfx smoketype from fusion3;
+			emit-sfx smoketype from fusion4;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	spin top1 around y-axis speed <5.000000>;
+	spin top2 around y-axis speed <5.000000>;
+	spin top3 around y-axis speed <5.000000>;
+	spin top4 around y-axis speed <5.000000>;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode fusion1 type NOHEATCLOUD;
+		explode fusion2 type NOHEATCLOUD;
+		explode fusion3 type NOHEATCLOUD;
+		explode fusion4 type NOHEATCLOUD;
+		
+		explode pipe1c type NOHEATCLOUD;
+		explode pipe2b type NOHEATCLOUD;
+		explode pipe3d type NOHEATCLOUD;
+		explode pipe4a type NOHEATCLOUD;
+		
+		explode top1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode top2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode top3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode top4 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		
+		explode bridge1 type NOHEATCLOUD;
+		explode bridge2 type NOHEATCLOUD;
+		explode bridge3 type NOHEATCLOUD;
+		explode bridge4 type NOHEATCLOUD;
+		
+		explode owen1a type NOHEATCLOUD;
+		explode owen2b type NOHEATCLOUD;
+		explode owen3a type NOHEATCLOUD;
+		explode owen4b type NOHEATCLOUD;
+		
+		return (corpsetype);
+	}
+
+	corpsetype = 3;
+	explode fusion1 type NOHEATCLOUD;
+	explode fusion2 type NOHEATCLOUD;
+	explode fusion3 type NOHEATCLOUD;
+	explode fusion4 type NOHEATCLOUD;
+	
+	explode pipe1c type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pipe2b type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pipe3d type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pipe4a type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	
+	explode top1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode top2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode top3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode top4 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode bridge1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode bridge2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode bridge3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode bridge4 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	
+	explode owen1a type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode owen2b type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode owen3a type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode owen4b type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+
+	return (corpsetype);
+}
