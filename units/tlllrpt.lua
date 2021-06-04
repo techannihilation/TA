@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T2 Immolator",
 		noautofire = false,
-		
+
 		objectname = "TLLLRPT",
 		onoffable = true,
 		radaremitheight = 65,
@@ -119,8 +119,8 @@ return {
 				energypershot = 5200,
 				explosiongenerator = "custom:flash192_fakelight",
 				gravityaffected = "TRUE",
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				leadbonus = 0,
 				name = "BerthaCannon",
 				nogap = 1,

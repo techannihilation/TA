@@ -1,12 +1,12 @@
 return {
-	anvil = {
+	tllanvil = {
 		acceleration = 0.4,
 		badtargetcategory = "VTOL",
 		brakerate = 1.2,
 		buildcostenergy = 225014,
 		buildcostmetal = 17673,
 		builder = false,
-		buildpic = "anvil.dds",
+		buildpic = "tllanvil.dds",
 		buildtime = 803500,
 		canattack = true,
 		canguard = true,
@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Anvil",
 		noautofire = false,
-		objectname = "anvil",
+		objectname = "tllanvil",
 		radardistance = 0,
 		radaremitheight = 40,
 		selfdestructas = "twilight_big",
@@ -49,9 +49,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,
 		turnrate = 300,
-		unitname = "anvil",
+		unitname = "tllanvil",
 		customparams = {
-			buildpic = "anvil.dds",
+			buildpic = "tllanvil.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 13162,
-				object = "anvil_dead",
+				object = "tllanvil_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

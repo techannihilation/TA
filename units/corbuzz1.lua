@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T4 Buzzsaw",
-		
+
 		objectname = "CORBUZZ1",
 		radaremitheight = 341,
 		seismicsignature = 0,
@@ -114,8 +114,8 @@ return {
 				energypershot = 64800,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				gravityaffected = true,
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				name = "RapidfireLRPC",
 				nogap = 1,
 				noselfdamage = true,

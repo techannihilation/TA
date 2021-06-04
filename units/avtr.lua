@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Avatar",
 		noautofire = false,
-		
+
 		objectname = "AVTR",
 		radardistance = 0,
 		radaremitheight = 26,
@@ -136,8 +136,8 @@ return {
 				energypershot = 5000,
 				explosiongenerator = "custom:flash192_fakelight",
 				gravityaffected = "TRUE",
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				metalpershot = 0,
 				name = "BerthaCannon",
 				nogap = 1,

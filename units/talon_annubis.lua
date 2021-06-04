@@ -40,7 +40,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Annubis",
 		noautofire = false,
-		
+
 		objectname = "talon_annubis",
 		radaremitheight = 38,
 		selfdestructas = "crawl_blast",
@@ -136,8 +136,8 @@ return {
 				energypershot = 12000,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				gravityaffected = true,
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				name = "RapidfireLRPC",
 				nogap = 1,
 				noselfdamage = true,

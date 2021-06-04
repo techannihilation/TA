@@ -19,7 +19,7 @@ amgeo.dds
 cornanotc4.dds
 armnanotc4.dds
 tllnanotc4.dds
-anvil.dds
+tllanvil.dds
 apache.dds
 armaak.dds
 armaap.dds

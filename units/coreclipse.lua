@@ -107,7 +107,7 @@ return {
 				impulseboost = 0.15,
 				impulsefactor = 0.15,
 				interceptedbyshieldtype = 16,
-				model = "missile10",
+				model = "weapon_missile_bomber",
 				name = "ClusterBombs",
 				noselfdamage = true,
 				range = 2100,

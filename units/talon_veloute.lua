@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Veloute",
-		
+
 		objectname = "talon_veloute",
 		radaremitheight = 136,
 		seismicsignature = 0,
@@ -127,8 +127,8 @@ return {
 				energypershot = 14000,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				gravityaffected = true,
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				name = "RapidfireLRPC",
 				nogap = 1,
 				noselfdamage = true,

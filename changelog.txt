@@ -1,9 +1,12 @@
 3.88 > 3.89
-2021-06-03
+2021-06-05
 Balance :
+ - All Long Range Missile AA / Anti-Sat : Decrease AOE. For mobile, decrease damage/shoot 2K=>1.5K
+ - Decrease impulse boost for all bertha 
  - T3 Arm Marauder : Increase cost 1.6KM => 1.7KM. Decrease HP 7K=>6K
 
  Improvment :
+  - Add T3 Multirole Rocket tank : Can morph into Long Range Rocket (naja) - Medium (demon) - TLL Anti SAt (chameleons)
   - Add T4 Core Nightmare Tower Defense
   - Add T5 Arm & TLL Fusion
   - Add T5 Core MM  (T5 Talon will come soon)
@@ -140,7 +143,7 @@ Balance :
 - AntiMinefild Juno : Inflict damage to all T1 Scout (Air & Ground), T1 T2 T3 Radar / Jammer structure, Rez Bot, Mineslayers
 - T2 Air Transport : Decrease Hp by 15% for Tll and Core
 - Bantha & Troman : Increase beam range 800=>950. Balance with decrease other weapon damage.
-- Tll Anvil : Reduce Emp range 1400=>1200
+- Tll tllanvil : Reduce Emp range 1400=>1200
 
 Improvment :
  - Add Armored Talon T2 Geo

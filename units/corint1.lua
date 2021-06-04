@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T3 Intimidator",
-		
+
 		objectname = "CORINT1",
 		radaremitheight = 100,
 		seismicsignature = 0,
@@ -128,8 +128,8 @@ return {
 				energypershot = 25000,
 				explosiongenerator = "custom:flash292_fakelight",
 				gravityaffected = "TRUE",
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				metalpershot = 0,
 				name = "IntimidatorCannon",
 				nogap = 1,

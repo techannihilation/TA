@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aether",
 		noautofire = false,
-		
+
 		objectname = "tllaether",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
@@ -104,7 +104,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				model = "missile10",
+				model = "weapon_missile_bomber",
 				name = "ClusterBombs",
 				noselfdamage = true,
 				range = 2100,

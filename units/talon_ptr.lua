@@ -112,7 +112,7 @@ return {
 		},
 		weapondefs = {
 			weapon_missileaal = {
-				areaofeffect = 600,
+				areaofeffect = 500,
 				avoidfeature = false,
 				canattackground = false,
 				craterareaofeffect = 0,

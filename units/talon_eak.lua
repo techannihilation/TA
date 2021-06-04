@@ -113,7 +113,7 @@ return {
 		},
 		weapondefs = {
 			advanced_missile = {
-				areaofeffect = 400,
+				areaofeffect = 250,
 				avoidfeature = false,
 				canattackground = false,
 				craterareaofeffect = 1200,
@@ -145,10 +145,10 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1600,
 				damage = {
-					areoship = 500,
+					areoship = 375,
 					default = 5,
-					priority_air = 2000,
-					unclassed_air = 2000,
+					priority_air = 1500,
+					unclassed_air = 1500,
 				},
 			},
 			aa_starburst = {

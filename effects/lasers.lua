@@ -243,7 +243,7 @@ return {
     },
   },
 
-  ["anvil"] = {
+  ["tllanvil"] = {
     usedefaultexplosions = false,
     groundflash = {
       circlealpha        = 0.7,

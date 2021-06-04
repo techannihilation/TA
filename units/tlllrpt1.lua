@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T3 Immolator",
-		
+
 		objectname = "TLLLRPT1",
 		radaremitheight = 90,
 		seismicsignature = 0,
@@ -129,8 +129,8 @@ return {
 				energypershot = 36000,
 				explosiongenerator = "custom:flash292_fakelight",
 				gravityaffected = "TRUE",
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				name = "lrpt_cannon",
 				nogap = 1,
 				noselfdamage = true,

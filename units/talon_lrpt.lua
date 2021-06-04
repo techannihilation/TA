@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T2 Onyx",
-		
+
 		objectname = "talon_lrpt",
 		radaremitheight = 92,
 		seismicsignature = 0,
@@ -130,8 +130,8 @@ return {
 				energypershot = 5500,
 				explosiongenerator = "custom:flash208_fakelight",
 				gravityaffected = "TRUE",
-				impulseboost = 0.5,
-				impulsefactor = 0.5,
+				impulseboost = 0.123,
+				impulsefactor = 0.123,
 				metalpershot = 10,
 				name = "IntimidatorCannon",
 				nogap = 1,

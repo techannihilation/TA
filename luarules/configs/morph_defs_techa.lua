@@ -448,12 +448,12 @@ local morphDefs = {
 		{
 			into = 'armfast',
 			time = 5,
-			xp = 0.30,
+			xp = 0.25,
 		},
 		{
 			into = 'armhdpw',
-			time = 45,
-			xp = 0.50,
+			time = 30,
+			xp = 0.40,
 		},
 	},
 	armfast = {
@@ -484,7 +484,7 @@ local morphDefs = {
 	corak = {
 		into = 'corpyro',
 		time = 5,
-		xp = 0.30,
+		xp = 0.25,
 	},
 	corpyro = {
 		into = 'corpyrox',
@@ -1432,19 +1432,41 @@ local morphDefs = {
 	},
 	armvp = {
 		into = 'armnomad',
-		time = 15,
+		time = 10,
 	},
 	armlab = {
 		into = 'armnomad',
-		time = 15,
+		time = 10,
 	},
-	armorbital = {
-		into = 'armorbital1',
-		time = 1,
+	tllnaja = {
+		{
+			into = 'tlldemon',
+			time = 10,
+		},
+		{
+			into = 'tllchameleons',
+			time = 10,
+		},
 	},
-	armorbital1 = {
-		into = 'armorbital',
-		time = 1,
+	tlldemon = {
+		{
+			into = 'tllnaja',
+			time = 10,
+		},
+		{
+			into = 'tllchameleons',
+			time = 10,
+		},
+	},
+	tllchameleons = {
+		{
+			into = 'tllnaja',
+			time = 10,
+		},
+		{
+			into = 'tlldemon',
+			time = 10,
+		},
 	},
 }
 

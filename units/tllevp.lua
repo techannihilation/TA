@@ -52,9 +52,8 @@ return {
 			[5] = "tllinsulator",
 			[6] = "tllacid",
 			[7] = "tlldemon",
-			[8] = "tllnaja",
-			[9] = "anvil",
-			[10] = "tllmosaurus",
+			[8] = "tllanvil",
+			[9] = "tllmosaurus",
 		},
 		customparams = {
 			buildpic = "tllevp.dds",
