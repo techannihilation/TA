@@ -1,5 +1,5 @@
 return {
-	blastwing = {
+	armblastwing = {
 		areaofeffect = 200,
 		craterboost = 0,
 		cratermult = 0,

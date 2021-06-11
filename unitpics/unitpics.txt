@@ -325,11 +325,11 @@ ashipyardlvl3.dds
 aspdbunk.dds
 asubpen.dds
 avtr.dds
-blackdawn.dds
+corblackdawn.dds
 blade.dds
-bladew.dds
-blastwing.dds
-blotter.dds
+corbladew.dds
+armblastwing.dds
+corblotter.dds
 cach.dds
 cadvmsto.dds
 cafus.dds
@@ -350,7 +350,7 @@ cmetalmakerlvl1.dds
 cmetalmakerlvl2.dds
 cmgeo.dds
 commando.dds
-concealer.dds
+armconcealer.dds
 armconsul.dds
 coraak.dds
 coraap.dds
@@ -487,7 +487,7 @@ corgeo.dds
 corgeo_mini.dds
 corgfbt.dds
 corgol.dds
-corgripn.dds
+armgripn.dds
 corhcar.dds
 corhelo.dds
 corhind.dds
@@ -655,7 +655,7 @@ armmercury.dds
 cormonkeylord.dds
 armnebraska.dds
 armkrypto.dds
-nsaatorph.dds
+armundertow.dds
 nsacanglr.dds
 corhgol.dds
 nsaclash.dds

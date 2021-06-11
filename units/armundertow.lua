@@ -1,12 +1,12 @@
 return {
-	nsaatorph = {
+	armundertow = {
 		acceleration = 0.04,
 		activatewhenbuilt = true,
 		brakerate = 0.24,
 		buildcostenergy = 4218,
 		buildcostmetal = 390,
 		builder = false,
-		buildpic = "nsaatorph.dds",
+		buildpic = "armundertow.dds",
 		buildtime = 7500,
 		canattack = true,
 		canguard = true,
@@ -41,8 +41,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Undertow",
 		noautofire = false,
-		
-		objectname = "NSAATORPH",
+		objectname = "armundertow",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -55,9 +54,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.716,
 		turnrate = 230,
-		unitname = "nsaatorph",
+		unitname = "armundertow",
 		customparams = {
-			buildpic = "nsaatorph.dds",
+			buildpic = "armundertow.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 292,
-				object = "nsaatorph_dead",
+				object = "armundertow_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

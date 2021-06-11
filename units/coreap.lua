@@ -52,7 +52,7 @@ return {
 			[1] = "coreca",
 			[2] = "corerez",
 			[3] = "corshrike",
-			[4] = "blackdawn",
+			[4] = "corblackdawn",
 			[5] = "cormuat",
 			[6] = "corsbomb",
 			[7] = "coreclipse",

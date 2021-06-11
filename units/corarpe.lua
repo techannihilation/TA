@@ -94,7 +94,7 @@ return {
 			},
 		},
 		weapondefs = {
-			bladewing_lyzer = {
+			corbladewing_lyzer = {
 				areaofeffect = 8,
 				beamtime = 0.1,
 				corethickness = 0.2,
@@ -178,11 +178,11 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "BLADEWING_LYZER",
+				def = "corbladewING_LYZER",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				def = "BLADEWING_LYZER",
+				def = "corbladewING_LYZER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

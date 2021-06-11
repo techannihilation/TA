@@ -1,5 +1,5 @@
 return {
-	corgripn = {
+	armgripn = {
 		acceleration = 0.17249,
 		attackrunlength = 180,
 		bankscale = 1,
@@ -7,7 +7,7 @@ return {
 		brakerate = 0.04,
 		buildcostenergy = 15509,
 		buildcostmetal = 325,
-		buildpic = "corgripn.dds",
+		buildpic = "armgripn.dds",
 		buildtime = 20000,
 		canattack = true,
 		canfly = true,
@@ -40,8 +40,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Stiletto",
-
-		objectname = "CORGRIPN",
+		objectname = "armgripn",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDINGEX",
 		sightdistance = 390,
@@ -52,9 +51,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 8.25,
 		turnrate = 396,
-		unitname = "corgripn",
+		unitname = "armgripn",
 		customparams = {
-			buildpic = "corgripn.dds",
+			buildpic = "armgripn.dds",
 			faction = "ARM",
 		},
 		sfxtypes = {
@@ -89,7 +88,7 @@ return {
 			},
 		},
 		weapondefs = {
-			corgripn_bomb = {
+			armgripn_bomb = {
 				areaofeffect = 240,
 				avoidfeature = false,
 				burst = 5,
@@ -127,7 +126,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CORGRIPN_BOMB",
+				def = "armgripn_BOMB",
 				onlytargetcategory = "SURFACE",
 			},
 		},

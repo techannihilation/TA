@@ -73,7 +73,7 @@ return {
 			[18] = "armdl",
 			[19] = "armch",
 			[20] = "armlashover",
-			[21] = "nsaatorph",
+			[21] = "armundertow",
 			[22] = "armtide",
 			--[23] = "",
 			[24] = "aahpns",

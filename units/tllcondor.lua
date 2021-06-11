@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Condor",
-		
+
 		objectname = "tllcondor",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,
@@ -137,10 +137,10 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "SUPERMISSILE",
+				model = "weapon_missileaal",
 				name = "GuidedMissiles",
 				noselfdamage = true,
-				range = 1100,
+				range = 1000,
 				reloadtime = 0.5,
 				smoketrail = true,
 				soundhitdry = "xplosml2",

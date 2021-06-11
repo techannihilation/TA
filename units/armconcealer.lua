@@ -1,12 +1,12 @@
 return {
-	concealer = {
+	armconcealer = {
 		acceleration = 0.06,
 		activatewhenbuilt = true,
 		brakerate = 0.18,
 		buildcostenergy = 1994,
 		buildcostmetal = 168,
 		builder = false,
-		buildpic = "concealer.dds",
+		buildpic = "armconcealer.dds",
 		buildtime = 6156,
 		canguard = true,
 		canhover = true,
@@ -36,8 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Concealer",
 		noautofire = false,
-		
-		objectname = "CONCEALER",
+		objectname = "armconcealer",
 		onoffable = true,
 		radardistancejam = 480,
 		radaremitheight = 25,
@@ -50,9 +49,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.782,
 		turnrate = 260,
-		unitname = "concealer",
+		unitname = "armconcealer",
 		customparams = {
-			buildpic = "concealer.dds",
+			buildpic = "armconcealer.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 152,
-				object = "CONCEALER_dead",
+				object = "armconcealer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

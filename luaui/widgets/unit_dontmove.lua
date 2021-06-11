@@ -62,7 +62,7 @@ local unitArray = {
   "armsb",
   "armthund",
   "armcyclone",
-  "corgripn",
+  "armgripn",
   "corhurc",
   "corsb",
   "corshad",

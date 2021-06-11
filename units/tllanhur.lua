@@ -84,7 +84,7 @@ return {
 			},
 		},
 		weapondefs = {
-			corgripn_bomb = {
+			armgripn_bomb = {
 				areaofeffect = 240,
 				avoidfeature = false,
 				burst = 16,
@@ -127,7 +127,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CORGRIPN_BOMB",
+				def = "armgripn_BOMB",
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

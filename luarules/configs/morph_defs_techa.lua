@@ -1366,7 +1366,7 @@ local morphDefs = {
 		xp = 0.60,
 	},
 	corape = {
-		into = 'blackdawn',
+		into = 'corblackdawn',
 		time = 45,
 		xp = 0.20,
 	},

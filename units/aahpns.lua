@@ -45,11 +45,11 @@ return {
 		buildoptions = {
 			[1] = "armach",
 			[2] = "aach",
-			[3] = "concealer",
+			[3] = "armconcealer",
 			[4] = "armdetector",
 			[5] = "armlashover",
 			[6] = "armiguana",
-			[7] = "nsaatorph",
+			[7] = "armundertow",
 			--[8] = "speeder",
 			[9] = "armhplasma",
 			[10] = "armhanni",

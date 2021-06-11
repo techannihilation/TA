@@ -182,8 +182,8 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armsmc = {
-    {class='Bursts',options=armsmcBursts},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,30,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armpraet = {
     {class='Bursts',options=armpraetBursts},
@@ -625,7 +625,7 @@ talon_handgod = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=7, length=11, piece="emit6", noIconDraw = true, priority=3, onActive=true}},
 
   },
-  corgripn = {
+  armgripn = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=60, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
   blade = {
@@ -642,7 +642,7 @@ talon_handgod = {
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
      {class='AirJet',options={color={0.6,0.1,0}, width=3.7, length=50, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
   },
-  blackdawn = {
+  corblackdawn = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
   },
@@ -746,7 +746,7 @@ coreca = {
     {class='Ribbon', options={width=1, size=8, piece="ribbon1", priority=3, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=8, piece="ribbon2", priority=3, noIconDraw = true}},
  },
- bladew = {
+ corbladew = {
     {class='Ribbon', options={width=1, size=8, piece="lribbon", priority=4, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=8, piece="rribbon", priority=4, noIconDraw = true}},
  },

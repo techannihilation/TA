@@ -1,5 +1,5 @@
 return {
-	blackdawn = {
+	corblackdawn = {
 		acceleration = 0.1121,
 		bankscale = 1,
 		blocking = false,
@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 44205,
 		buildcostmetal = 6151,
 		builder = false,
-		buildpic = "blackdawn.dds",
+		buildpic = "corblackdawn.dds",
 		buildtime = 73800,
 		canattack = true,
 		canfly = true,
@@ -36,10 +36,9 @@ return {
 		maxvelocity = 4.9,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "BlackDawn",
+		name = "Blackdawn",
 		noautofire = false,
-		
-		objectname = "BLACKDAWN",
+		objectname = "corblackdawn",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 480,
@@ -49,9 +48,9 @@ return {
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 3.498,
 		turnrate = 590,
-		unitname = "blackdawn",
+		unitname = "corblackdawn",
 		customparams = {
-			buildpic = "blackdawn.dds",
+			buildpic = "corblackdawn.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {

@@ -1,11 +1,11 @@
 return {
-	bladew = {
+	corbladew = {
 		acceleration = 0.264,
 		blocking = false,
 		brakerate = 0.55,
 		buildcostenergy = 1285,
 		buildcostmetal = 58,
-		buildpic = "bladew.dds",
+		buildpic = "corbladew.dds",
 		buildtime = 2073,
 		canattack = true,
 		canfly = true,
@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Bladewing",
 		noautofire = false,
-		objectname = "BLADEW",
+		objectname = "corbladew",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 364,
@@ -46,11 +46,11 @@ return {
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 6.831,
 		turnrate = 1144,
-		unitname = "bladew",
+		unitname = "corbladew",
 		upright = true,
 		usesmoothmesh = 0,
 		customparams = {
-			buildpic = "bladew.dds",
+			buildpic = "corbladew.dds",
 			faction = "CORE",
 		},
 		sfxtypes = {
@@ -85,7 +85,7 @@ return {
 			},
 		},
 		weapondefs = {
-			bladewing_lyzer = {
+			corbladewing_lyzer = {
 				areaofeffect = 8,
 				beamtime = 0.1,
 				corethickness = 0.2,
@@ -126,7 +126,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "BLADEWING_LYZER",
+				def = "corbladewING_LYZER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

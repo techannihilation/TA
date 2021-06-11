@@ -1,12 +1,12 @@
 return {
-	blotter = {
+	corblotter = {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
 		brakerate = 0.21,
 		buildcostenergy = 2133,
 		buildcostmetal = 158,
 		builder = false,
-		buildpic = "blotter.dds",
+		buildpic = "corblotter.dds",
 		buildtime = 6456,
 		canguard = true,
 		canhover = true,
@@ -35,8 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Blotter",
 		noautofire = false,
-		
-		objectname = "BLOTTER",
+		objectname = "corblotter",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 25,
@@ -49,22 +48,22 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.65,
 		turnrate = 250,
-		unitname = "blotter",
+		unitname = "corblotter",
 		customparams = {
-			buildpic = "blotter.dds",
+			buildpic = "corblotter.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				damage = 865,
-				description = "Blotter Wreckage",
+				description = "corblotter Wreckage",
 				featuredead = "heap",
 				featurereclaimate = "smudge01",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "blotter_dead",
+				object = "corblotter_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 1082,
-				description = "Blotter Debris",
+				description = "corblotter Debris",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,

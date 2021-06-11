@@ -1,0 +1,231 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece base, building1, building2, decor1, decor2, decor3, decor4, 
+		system1, system2, light1, light2, pillar, beam1, beam2, buildpad;
+
+static-var spray, unitview, statechg_DesiredState, statechg_StateChanging, bWorking, Static_Var_1;
+
+#define SIG_ACTIVATE		2
+
+
+Standby()
+{
+	while( TRUE )
+	{
+		emit-sfx 1024 from light1;
+		//sleep 150;
+		emit-sfx 1025 from light2;
+		sleep 5000;
+		emit-sfx 1024 from light2;
+		//sleep 150;
+		emit-sfx 1025 from light1;
+		sleep 5000;
+	}
+	sleep 250;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script Standby();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from building1;
+			emit-sfx smoketype from building2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	//call-script activatescr();
+	//call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	//call-script CloseYard();
+	//call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	unitview = FALSE;
+	spray = 0;
+	Static_Var_1 = 800;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+SweetSpot (piecenum)
+{
+	piecenum = base;
+}
+
+Demo()
+{
+	unitview = TRUE;
+}
+
+Activate()
+{
+	signal SIG_ACTIVATE;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+
+}
+
+StopBuilding()
+{
+	
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = buildpad;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if(spray == 1)
+	{
+		piecenum = beam1;
+	}
+	if(spray == 2)
+	{
+		piecenum = beam2;
+	}
+	++spray;
+	if(spray == 3)
+	{
+		spray = 1;
+	}
+}
+
+Killed(severity, corpsetype)
+	{
+	if (severity <= 25)
+		{
+		corpsetype = 1;
+		explode building1 type	NOHEATCLOUD;
+		explode building2 type	NOHEATCLOUD;
+		explode decor1 type	NOHEATCLOUD;
+		explode decor3 type	NOHEATCLOUD;
+		explode pillar type	NOHEATCLOUD;
+		explode system1 type	NOHEATCLOUD;
+		explode system2 type	NOHEATCLOUD;
+		return(corpsetype);
+		}
+	if (severity <= 50)
+		{
+		corpsetype = 2;
+		explode building1 type	NOHEATCLOUD;
+		explode building2 type	NOHEATCLOUD;
+		explode decor1 type	NOHEATCLOUD | FALL;
+		explode decor3 type	NOHEATCLOUD;
+		explode pillar type	NOHEATCLOUD;
+		explode system1 type NOHEATCLOUD | FALL;
+		explode system1 type NOHEATCLOUD | FALL;
+		return(corpsetype);
+		}
+	corpsetype = 3;
+	explode building1 type	NOHEATCLOUD;
+	explode building2 type	NOHEATCLOUD;
+	explode decor1 type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode decor3 type	NOHEATCLOUD;
+	explode pillar type	NOHEATCLOUD;
+	explode system1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return(corpsetype);
+	}

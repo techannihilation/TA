@@ -1,5 +1,5 @@
 return {
-	corgripn_bomb = {
+	armgripn_bomb = {
 		areaofeffect = 240,
 		collidefriendly = 0,
 		commandfire = 1,

@@ -12,7 +12,7 @@ end
 
 --fixed for 0.83 (by vbs)
 
-local bombers={armblz=true, corfiend=true, armlance=true, armsb=true, armcyclone=true, corsb=true, armpnix=true, armcybr=true, corgripn=true, armthund=true, armsb=true, corhurc=true, corsb=true, corshad=true, cortitan=true, tllbomber=true, tllabomber=true, tlltorpp=true, coreclipse=true, tllseab=true, corseap=true, armseap=true}
+local bombers={armlance=true, armsb=true, armcyclone=true, corsb=true, armpnix=true, armcybr=true, armgripn=true, armthund=true, armsb=true, corhurc=true, corsb=true, corshad=true, cortitan=true, tllbomber=true, tllabomber=true, tlltorpp=true, coreclipse=true, tllseab=true, corseap=true, armseap=true, talon_shade, talon_handgod, talon_eclipse, talon_trident}
 local bomber_uds={}
 
 local GetUnitWeaponState   = Spring.GetUnitWeaponState
@@ -42,12 +42,12 @@ local function AddUnit(unit_id, unit_udid_)
 		local ud=UnitDefs[unit_udid]
 		if ud and bomber_uds[unit_udid] then
 			if  ud.primaryWeapon then
-				local _,reloaded_,reloadFrame = GetUnitWeaponState(unit_id,ud.primaryWeapon)		
+				local _,reloaded_,reloadFrame = GetUnitWeaponState(unit_id,ud.primaryWeapon)
 				my_bombers[unit_id]={reloaded=reloaded_, reload_frame}
 				--Spring.Echo("bomber added")
 			end
 		end
-	end	
+	end
 end
 
 function widget:UnitCreated(unit_id, unit_udid, unit_tid)
@@ -69,7 +69,7 @@ function widget:UnitGiven(unit_id, unit_udid, old_team, new_team)
 	RemoveUnit(unit_id)
 	if new_team==GetMyTeamID() then
 		AddUnit(unit_id,unit_udid)
-	end	
+	end
 end
 
 
@@ -157,7 +157,5 @@ function widget:Update(dt)
 				end
 			end
 		end
-	end	
+	end
 end
-
-

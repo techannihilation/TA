@@ -2,7 +2,7 @@ return {
 	talon_mohogeo = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 54200,
+		buildcostenergy = 84200,
 		buildcostmetal = 5910,
 		builder = false,
 		buildpic = "talon_mohogeo.dds",

@@ -53,7 +53,7 @@ return {
 			[4] = "armhawk",
 			[5] = "armbrawl",
 			[6] = "armpnix",
-			[7] = "corgripn",
+			[7] = "armgripn",
 			[8] = "armlance",
 			[9] = "armdfly",
 			[10] = "armcybr",

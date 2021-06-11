@@ -20,7 +20,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Long Range Vertical Missile Vehicle",
-		explodeas = "CORGRIPN_BOMB",
+		explodeas = "armgripn_BOMB",
 		firestandorders = 1,
 		firestate = 0,
 		footprintx = 4,

@@ -52,7 +52,7 @@ return {
 			[1] = "corach",
 			[2] = "cach",
 			[3] = "corwatcher",
-			[4] = "blotter",
+			[4] = "corblotter",
 			[5] = "cormatch",
 			[6] = "nsacanglr",
 			[7] = "corfrog",

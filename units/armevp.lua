@@ -7,7 +7,7 @@ return {
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 7,
-		buildinggrounddecaltype = "armevp_aoplane.dds",
+		buildinggrounddecaltype = "asphalt512.dds",
 		buildpic = "armevp.dds",
 		buildtime = 200000,
 		canmove = true,
