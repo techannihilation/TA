@@ -4,6 +4,7 @@ Balance :
 - T3 Arm Kbot Cons : Reduce Shield Radius
 
  Improvment :
+ - Add T3 Core Tank Minotaur
  - T3 Talon & TLL Sat Lab : change Model
  - T3 Talon rez Ship : change Model
 

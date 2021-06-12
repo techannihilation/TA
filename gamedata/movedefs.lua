@@ -311,6 +311,15 @@ local moveDatas = {
         maxslope = 18,
         maxwaterdepth = 22
     },
+    TANK6 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 10000,
+        footprintx = 6,
+        footprintz = 6,
+        maxslope = 18,
+        maxwaterdepth = 36,
+    },
     TKBOT3 = {
         allowrawmovement = true,
         crushstrength = 15,

@@ -58,6 +58,7 @@ return {
 			[6] = "corsiege",
 			[7] = "corhcrus",
 			[8] = "corbt",
+			[9] = "corminotaur",
 		},
 		customparams = {
 			buildpic = "corevp.dds",
