@@ -22,7 +22,7 @@ return {
 		idletime = 1800,
 		losemitheight = 53,
 		mass = 25000,
-		maxdamage = 41455,
+		maxdamage = 35055,
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T4 Metal Maker",

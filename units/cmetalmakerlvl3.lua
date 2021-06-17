@@ -25,7 +25,7 @@ return {
 		idletime = 1800,
 		losemitheight = 95,
 		mass = 40531,
-		maxdamage = 22455,
+		maxdamage = 12455,
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "Armored T4 Metal Maker",

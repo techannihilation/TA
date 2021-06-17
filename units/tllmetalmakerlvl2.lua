@@ -29,7 +29,6 @@ return {
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
 		noautofire = false,
-		
 		objectname = "tllmetalmakerlvl2",
 		radardistance = 0,
 		radaremitheight = 40,
