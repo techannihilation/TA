@@ -26,11 +26,10 @@ return {
 		idletime = 1800,
 		losemitheight = 90,
 		mass = 51553,
-		maxdamage = 12250,
+		maxdamage = 13250,
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T4 Metal Maker",
-		
 		objectname = "tllmetalmakerlvl3",
 		radardistance = 0,
 		radaremitheight = 85,

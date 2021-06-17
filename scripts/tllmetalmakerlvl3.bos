@@ -153,6 +153,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	start-script SmokeUnit();
+	set ARMORED to 1;
 }
 
 SweetSpot(piecenum)
