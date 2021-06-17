@@ -114,6 +114,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.coruwmmm.id,
 	UnitDefNames.cmetalmakerlvl2.id,
 	UnitDefNames.cmetalmakerlvl3.id,
+  UnitDefNames.cmetalmakerlvl4.id,
 	UnitDefNames.corgen.id,
 	UnitDefNames.tllmm.id,
 	UnitDefNames.tllwmconv.id,
@@ -127,6 +128,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
 	UnitDefNames.talon_makr1.id,
 	UnitDefNames.talon_metalmakerlvl2.id,
 	UnitDefNames.talon_metalmakerlvl3.id,
+  UnitDefNames.talon_metalmakerlvl4.id,
 }
 
 

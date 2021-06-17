@@ -26,7 +26,7 @@ local convertCapacities = {
 		[UnitDefNames.coruwmmm.id]  = { c = 1280, e = (AC2) }, -- Underwater
 		[UnitDefNames.cmetalmakerlvl2.id]  = { c = 10240, e = (AC3) }, -- T3
 		[UnitDefNames.cmetalmakerlvl3.id]  = { c = 40960, e = (AC4) }, -- T4
-		[UnitDefNames.cmetalmakerlvl4.id]  = { c = 245000, e = (AC5) }, -- T5		
+		[UnitDefNames.cmetalmakerlvl4.id]  = { c = 245000, e = (AC5) }, -- T5
 		--[UnitDefNames.corgen.id]  = { c = UnitDefNames.corgen.energyMake, e = (ACZ) },
 
 		--TLL
@@ -48,6 +48,7 @@ local convertCapacities = {
 		[UnitDefNames.talon_famkr.id]  = { c = 1375, e = (AC2) }, -- Underwater
 		[UnitDefNames.talon_metalmakerlvl2.id]  = { c = 12000, e = (AC3) }, -- T3
 		[UnitDefNames.talon_metalmakerlvl3.id]  = { c = 48000, e = (AC4) }, -- T4
+		[UnitDefNames.talon_metalmakerlvl4.id]  = { c = 300000, e = (AC5) }, -- T5
 		--[UnitDefNames.talon_gen.id]  = { c = UnitDefNames.talon_gen.energyMake, e = (ACZ) },
     }
 

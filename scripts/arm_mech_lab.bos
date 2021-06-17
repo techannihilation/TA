@@ -10,7 +10,7 @@ piece  base, NE_block, glow1, SE_block, glow2, SW_block, glow3, NW_block,
        ncp2, ncp3, ncp4, ncp5, ncpp1, ncpp2, ncpp4, ncpp5, blink1, blink2, blink3,
        blink4, blink5, blink6,blink7, blink8, blink9;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+static-var  statechg_DesiredState, statechg_StateChanging, spray;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -57,44 +57,55 @@ Standby()
 
 activatescr()
 {
-	move NE_block to x-axis [-19.950000] speed [13.300000];
-	move NE_block to z-axis [-8.400000] speed [5.600000];
-	move SE_block to x-axis [-17.850000] speed [11.900000];
-	move SE_block to z-axis [3.150000] speed [2.100000];
-	move SW_block to x-axis [17.850000] speed [11.900000];
-	move SW_block to z-axis [3.150000] speed [2.100000];
-	move NW_block to x-axis [19.950000] speed [13.300000];
-	move NW_block to z-axis [-8.400000] speed [5.600000];
-	wait-for-move NE_block along x-axis;
-	sleep 500;
-	set ARMORED to 0;	
-	move head to y-axis [45.000000] speed [30.000000];
-	wait-for-move head along y-axis;
-	move head to y-axis [52.500000] speed [15.000000];
-	wait-for-move head along y-axis;
-	move head to y-axis [56.500000] speed [7.500000];
-	wait-for-move head along y-axis;
-	move head to y-axis [58.125000] speed [3.750000];
-	wait-for-move head along y-axis;
-	sleep 500;
-	move hc1 to x-axis [-1.400000] speed [1.400000];
-	move hc1 to y-axis [3.000000] speed [3.000000];
-	move hc2 to x-axis [-2.000000] speed [2.000000];
-	move hc2 to y-axis [-1.000000] speed [1.000000];
-	move hc3 to y-axis [-2.000000] speed [2.000000];
-	move hc4 to x-axis [2.000000] speed [2.000000];
-	move hc4 to y-axis [-1.000000] speed [1.000000];
-	move hc5 to x-axis [1.400000] speed [1.400000];
-	move hc5 to y-axis [3.000000] speed [3.000000];
-	wait-for-move hc1 along x-axis;
-	sleep 500;
-	move hc_z_mover to z-axis [-14.000000] speed [14.000000];
-	turn nc1 to x-axis <-90.000000> speed <90.000000>;
-	turn nc2 to y-axis <90.000000> speed <90.000000>;
-	turn nc3 to x-axis <90.000000> speed <90.000000>;
-	turn nc4 to y-axis <-90.000000> speed <90.000000>;
-	turn nc5 to x-axis <-90.000000> speed <90.000000>;
-	wait-for-move hc_z_mover along z-axis;
+	if (TRUE)
+	{	
+		move NE_block to x-axis [-19.950000] speed [13.300000];
+		move NE_block to z-axis [-8.400000] speed [5.600000];
+		move SE_block to x-axis [-20.500000] speed [11.900000];
+		move SE_block to z-axis [3.150000] speed [2.100000];
+		move SW_block to x-axis [20.50000] speed [11.900000];
+		move SW_block to z-axis [3.150000] speed [2.100000];
+		move NW_block to x-axis [19.950000] speed [13.300000];
+		move NW_block to z-axis [-8.400000] speed [5.600000];
+		sleep 500;
+	}
+	
+	if (TRUE)
+	{
+		move head to y-axis [52.500000] speed [20.000000];
+		sleep 500;
+	}
+	
+	if (TRUE)
+	{
+		move head to y-axis [58.125000] speed [10.000000];
+		sleep 500;
+	}
+	
+	if (TRUE)
+	{
+		move hc1 to x-axis [-1.400000] speed [1.400000];
+		move hc1 to y-axis [3.000000] speed [3.000000];
+		move hc2 to x-axis [-2.000000] speed [2.000000];
+		move hc2 to y-axis [-1.000000] speed [1.000000];
+		move hc3 to y-axis [-2.000000] speed [2.000000];
+		move hc4 to x-axis [2.000000] speed [2.000000];
+		move hc4 to y-axis [-1.000000] speed [1.000000];
+		move hc5 to x-axis [1.400000] speed [1.400000];
+		move hc5 to y-axis [3.000000] speed [3.000000];
+		wait-for-move hc1 along x-axis;
+	}
+	
+	if (TRUE)
+	{
+		move hc_z_mover to z-axis [-14.000000] speed [14.000000];
+		turn nc1 to x-axis <-90.000000> speed <90.000000>;
+		turn nc2 to y-axis <90.000000> speed <90.000000>;
+		turn nc3 to x-axis <90.000000> speed <90.000000>;
+		turn nc4 to y-axis <-90.000000> speed <90.000000>;
+		turn nc5 to x-axis <-90.000000> speed <90.000000>;
+		wait-for-move hc_z_mover along z-axis;
+	}
 }
 
 deactivatescr()
@@ -121,7 +132,6 @@ deactivatescr()
 	move hc5 to y-axis [0.000000] speed [3.000000];
 	wait-for-move column_z_displacer along z-axis;
 	sleep 100;
-	set ARMORED to 1;
 	
 	move head to y-axis [5.000000] speed [30.000000];
 	wait-for-move head along y-axis;
@@ -201,6 +211,7 @@ Go()
 {
 	call-script activatescr();
 	call-script OpenYard();
+	sleep 2150;
 	set INBUILDSTANCE to 1;
 }
 
@@ -211,37 +222,42 @@ Stop()
 	call-script deactivatescr();
 }
 
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
 RequestState(requestedstate, currentstate)
 {
-	if( Static_Var_3 )
+	if( statechg_StateChanging )
 	{
-		Static_Var_2 = requestedstate;
+		statechg_DesiredState = requestedstate;
 		return (0);
 	}
-	Static_Var_3 = 1;
-	currentstate = Static_Var_2;
-	Static_Var_2 = requestedstate;
-	while( Static_Var_2 != currentstate )
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
 	{
-		if( Static_Var_2 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-		else
+		if( statechg_DesiredState == 0 )
 		{
 			call-script Go();
 			currentstate = 0;
 		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
 	}
-	Static_Var_3 = 0;
+	statechg_StateChanging = FALSE;
 }
 
 Create()
 {
-	Static_Var_2 = 0;
-	Static_Var_3 = 0;
-	Static_Var_1 = 1;
+	spray = 1;
+	
 	turn ncp1 to z-axis <31.000000> now;
 	turn ncp2 to z-axis <16.000000> now;
 	turn ncp4 to z-axis <-16.000000> now;
@@ -255,36 +271,36 @@ Create()
 	turn column to x-axis <-31.500000> now;
 	turn head to x-axis <31.500000> now;
 	
-	set ARMORED to 1;
+	call-script InitState();
 	start-script SmokeUnit();
 }
 
 QueryNanoPiece(piecenum)
 {
-	if( Static_Var_1 == 1 )
+	if( spray == 1 )
 	{
 		piecenum = nanogun1;
 	}
-	if( Static_Var_1 == 2 )
+	if( spray == 2 )
 	{
 		piecenum = nanogun2;
 	}
-	if( Static_Var_1 == 3 )
+	if( spray == 3 )
 	{
 		piecenum = nanogun3;
 	}
-	if( Static_Var_1 == 4 )
+	if( spray == 4 )
 	{
 		piecenum = nanogun4;
 	}
-	if( Static_Var_1 == 5 )
+	if( spray == 5 )
 	{
 		piecenum = nanogun5;
 	}
-	++Static_Var_1;
-	if( Static_Var_1 > 5 )
+	++spray;
+	if( spray > 5 )
 	{
-		Static_Var_1 = 1;
+		spray = 1;
 	}
 }
 
@@ -341,8 +357,8 @@ Killed(severity, corpsetype)
 		explode base type NOHEATCLOUD;
 		explode NE_block type NOHEATCLOUD | SHATTER | FALL;
 		explode SE_block type NOHEATCLOUD | SHATTER | FALL;
-		explode SW_block type NOHEATCLOUD | BITMAPONLY | FALL;
-		explode NW_block type NOHEATCLOUD | BITMAPONLY | FALL;
+		explode SW_block type NOHEATCLOUD | FALL;
+		explode NW_block type NOHEATCLOUD | FALL;
 		explode head type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}

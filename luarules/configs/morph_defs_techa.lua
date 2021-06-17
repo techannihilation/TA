@@ -569,8 +569,8 @@ local morphDefs = {
 		xp = 0.50,
 	},
 	corgol = {
-		into = 'corbt',
-		time = 60,
+		into = 'corminotaur',
+		time = 90,
 		xp = 0.20,
 	},
 	corraid = {
@@ -582,6 +582,11 @@ local morphDefs = {
 		into = 'corchamp',
 		time = 60,
 		xp = 0.50,
+	},
+	corchamp = {
+		into = 'corminotaur',
+		time = 30,
+		xp = 0.10,
 	},
 	corwolv = {
 		{

@@ -41,7 +41,7 @@ return {
 		maxwaterdepth = 0,
 		metalmake = 3.75,
 		metalstorage = 100,
-		name = "Construction Ship",		
+		name = "Construction Ship",
 		objectname = "talon_builderlvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
@@ -55,7 +55,7 @@ return {
 		buildoptions = {
 			[1] = "talon_ufus",
 			[2] = "talon_mas",
-			[3] = "talon_metalmakerlvl3",
+			[3] = "talon_metalmakerlvl4",
 			[4] = "talon_podlab",
 			[5] = "talon_covertopscentre",
 			[6] = "talon_nanotc4",

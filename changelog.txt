@@ -1,12 +1,16 @@
 3.89 > 3.90
-2021-06-xx
+2021-06-18
 Balance :
 - T3 Arm Kbot Cons : Reduce Shield Radius
 
  Improvment :
+ - Add T5 MM Talon
  - Add T3 Core Tank Minotaur
  - T3 Talon & TLL Sat Lab : change Model
  - T3 Talon rez Ship : change Model
+
+Fix :
+ - Decrease T4 Arm Lab OpenTime
 
 3.88 > 3.89
 2021-06-05

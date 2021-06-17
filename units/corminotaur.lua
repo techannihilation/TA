@@ -15,7 +15,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Siege Tank",
+		description = "Experimental Armored Assault Tank",
 		downloadable = 1,
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,

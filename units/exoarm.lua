@@ -252,7 +252,7 @@ return {
 			},
 			tehlazerofdewm1 = {
 				areaofeffect = 64,
-				beamtime = 1.65,
+				beamtime = 0.3,
 				corethickness = 0.5,
 				craterareaofeffect = 0,
 				craterboost = 0,
