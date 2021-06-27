@@ -2,7 +2,7 @@ return {
 	armbanth = {
 		acceleration = 0.125,
 		brakerate = 0.65,
-		buildcostenergy = 142511,
+		buildcostenergy = 189511,
 		buildcostmetal = 8943,
 		builder = false,
 		buildpic = "armbanth.dds",
@@ -29,7 +29,7 @@ return {
 		losemitheight = 61,
 		maneuverleashlength = 640,
 		mass = 8943,
-		maxdamage = 35545,
+		maxdamage = 32450,
 		maxslope = 17,
 		maxvelocity = 1.45,
 		maxwaterdepth = 12,

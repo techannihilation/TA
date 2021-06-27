@@ -1473,6 +1473,16 @@ local morphDefs = {
 			time = 10,
 		},
 	},
+	corraven = {
+		into = 'corraven1',
+		xp = 0.30,
+		time = 120,
+	},
+	corhowie = {
+		into = 'corraven1',
+		xp = 0.20,
+		time = 100,
+	},
 }
 
 --

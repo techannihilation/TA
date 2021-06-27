@@ -1,5 +1,17 @@
+3.90 > 3.91
+2021-06-28
+Balance :
+- T2 Catapult : Increase rockets 32=>40. Decrease damage by rocket to have same amount damage
+- Orion (T3 bomber) : Reduce speed (same than T2 bomber). Increase turnrate, they could now bombs with circle maneuver
+- Bantha : Decrease HP 35.5K=>33K. Increase Energycost 145KE => 190KE
+- Pretorian : Increase energycost 600K => 800K. Decrease speed 1.2=>1.1
+- Monkeylord : Increase energycost 450K => 600K
+
+ Improvment :
+ - Add T4 cataclysm Core secret Morph
+
 3.89 > 3.90
-2021-06-18
+2021-06-14
 Balance :
 - T3 Arm Kbot Cons : Reduce Shield Radius
 

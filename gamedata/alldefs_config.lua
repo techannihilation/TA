@@ -724,6 +724,7 @@ local unitheight = {
     ["armrad1"] = 74,
     ["armraptor"] = 146,
     ["corraven"] = 52,
+		["corraven1"] = 130,
     ["armraz"] = 66,
     ["armrecl"] = 10,
     ["armrectr"] = 26,

@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		brakerate = 2.97,
-		buildcostenergy = 450039,
+		buildcostenergy = 620039,
 		buildcostmetal = 36463,
 		builder = false,
 		buildpic = "cormonkeylord.dds",

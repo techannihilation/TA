@@ -96,11 +96,11 @@ return {
 		},
 		weapondefs = {
 			asm = {
-				areaofeffect = 384,
+				areaofeffect = 375,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "Core_Howie_Rocket",
-				craterareaofeffect = 636,
+				craterareaofeffect = 375,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",

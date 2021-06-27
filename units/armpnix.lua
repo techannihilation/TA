@@ -47,7 +47,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 6.138,
+		turninplacespeedlimit = 6.0,
 		turnrate = 402,
 		unitname = "armpnix",
 		customparams = {
