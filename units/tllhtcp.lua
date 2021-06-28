@@ -51,11 +51,11 @@ return {
 			[1] = "tlldoc",
 			[2] = "tlldilophosaurus",
 			[3] = "tllblind",
-			[4] = "heavyimpact",
+			[4] = "tllheavyimpact",
 			[5] = "tllluth",
 			[6] = "tllhtml",
 			[7] = "tllgrim",
-			[8] = "hyperion",
+			[8] = "tllhyperion",
 		},
 		customparams = {
 			buildpic = "tllhtcp.dds",

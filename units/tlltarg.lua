@@ -30,8 +30,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Center Station",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLTARG",
 		onoffable = true,
 		radaremitheight = 39,

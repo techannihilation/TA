@@ -12,7 +12,7 @@ return {
 		buildtime = 10955,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		description = "Seismic System",
+		description = "Detect Invisible Units",
 		energyuse = 125,
 		explodeas = "LARGE_BUILDINGEX",
 		footprintx = 5,
@@ -26,8 +26,7 @@ return {
 		maxdamage = 2500,
 		maxslope = 36,
 		maxwaterdepth = 0,
-		name = "Richter ",
-		
+		name = "Countermeasure System",
 		objectname = "TLLRICHTER",
 		onoffable = true,
 		radaremitheight = 31,

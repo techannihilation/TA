@@ -34,7 +34,6 @@ return {
 		metalstorage = 100,
 		name = "Metal Extractor",
 		noautofire = false,
-		
 		objectname = "coremex",
 		onoffable = true,
 		radardistance = 0,

@@ -5,7 +5,7 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.09,
-		buildcostenergy = 43829,
+		buildcostenergy = 93829,
 		buildcostmetal = 5138,
 		buildpic = "tllcondor.dds",
 		buildtime = 50000,
@@ -35,7 +35,6 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Condor",
-
 		objectname = "tllcondor",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,

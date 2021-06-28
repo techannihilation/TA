@@ -118,7 +118,7 @@ local ShieldUnits = {
   [UnitDefNames["armflosh"].id] = true,
   [UnitDefNames["armfgate1"].id] = true,
   [UnitDefNames["armpraet"].id] = true,
-  [UnitDefNames["exoarm"].id] = true,
+  [UnitDefNames["armexo"].id] = true,
   [UnitDefNames["armsmc"].id] = true,
   [UnitDefNames["armshieldgen"].id] = true,
   --The lost legacy
@@ -132,7 +132,7 @@ local ShieldUnits = {
   [UnitDefNames["tllgate2"].id] = true,
   [UnitDefNames["tllgate3"].id] = true,
   [UnitDefNames["tllgate4"].id] = true,
-  [UnitDefNames["irritator"].id] = true,
+  [UnitDefNames["tllirritator"].id] = true,
   [UnitDefNames["tllgorgon"].id] = true,
   [UnitDefNames["tllmako"].id] = true,
   --Talon

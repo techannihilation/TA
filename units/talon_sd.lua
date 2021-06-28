@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "45 50 45",
 		collisionvolumetype = "CylY",
 		corpse = "heap",
-		description = "Intrusion Countermeasure System",
+		description = "Detect Invisible Units",
 		energyuse = 125,
 		explodeas = "LARGE_BUILDINGEX",
 		footprintx = 4,
@@ -29,8 +29,7 @@ return {
 		maxdamage = 2400,
 		maxslope = 36,
 		maxwaterdepth = 0,
-		name = "Ear",
-		
+		name = "Countermeasure System",
 		objectname = "talon_sd",
 		onoffable = true,
 		radaremitheight = 55,

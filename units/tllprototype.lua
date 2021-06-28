@@ -38,7 +38,6 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Mech Lab",
 		noautofire = false,
-		
 		objectname = "tllprototype",
 		radardistance = 50,
 		radaremitheight = 140,
@@ -56,8 +55,8 @@ return {
 		yardmap = "oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo",
 		buildoptions = {
 			[1] = "tllmarmelade",
-			--[2] = "tllmantis",
-			[3] = "irritator",
+			--[2] = "",
+			[3] = "tllirritator",
 			[4] = "tllhailstorm",
 			[5] = "tllgorgon",
 			[6] = "tllmcv",

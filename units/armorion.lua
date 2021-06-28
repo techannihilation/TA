@@ -6,11 +6,11 @@ return {
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.015,
-		buildcostenergy = 48070,
-		buildcostmetal = 2913,
+		buildcostenergy = 108070,
+		buildcostmetal = 2013,
 		builder = false,
 		buildpic = "armorion.dds",
-		buildtime = 35000,
+		buildtime = 70000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
@@ -34,7 +34,7 @@ return {
 		mass = 2913,
 		maxdamage = 4500,
 		maxslope = 10.5,
-		maxvelocity = 9.3,
+		maxvelocity = 10,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Orion",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armorion.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

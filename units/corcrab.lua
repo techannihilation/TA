@@ -65,7 +65,7 @@ return {
 			[8] = "cshipyardlvl4",
 			[9] = "cornanotc3",
 			[10] = "coromni",
-			[11] = "cornightmare",
+			--[11] = "cornightmare",
 			[12] = "corpre",
 			[13] = "corgate1",
 			[14] = "corfmd2",

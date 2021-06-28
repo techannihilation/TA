@@ -148,7 +148,7 @@ corsfusBursts = {
   priority   = 3,
   count      = 2,
 }
-exoarmBursts = {
+armexoBursts = {
   layer      = -35,
   life       = math.huge,
   piece      = "shield_pos",
@@ -285,7 +285,7 @@ corcrabBursts = {
   count      = 2,
 }
 
-irritatorBursts = {
+tllirritatorBursts = {
   layer      = -35,
   life       = math.huge,
   piece      = "shield_pos",

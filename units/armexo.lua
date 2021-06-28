@@ -1,12 +1,12 @@
 return {
-	exoarm = {
+	armexo = {
 		acceleration = 0.1,
 		activatewhenbuilt = true,
 		brakerate = 0.715,
 		buildcostenergy = 1500703,
 		buildcostmetal = 129144,
 		builder = false,
-		buildpic = "exoarm.dds",
+		buildpic = "armexo.dds",
 		buildtime = 1250000,
 		canattack = true,
 		canguard = true,
@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Exo",
 		noautofire = false,
-		objectname = "exoarm",
+		objectname = "armexo",
 		radaremitheight = 150,
 		seismicsignature = 0,
 		selfdestructas = "EXO_BLAST",
@@ -52,10 +52,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.792,
 		turnrate = 360,
-		unitname = "exoarm",
+		unitname = "armexo",
 		upright = true,
 		customparams = {
-			buildpic = "exoarm.dds",
+			buildpic = "armexo.dds",
 			faction = "ARM",
 			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_emit_height = 68,

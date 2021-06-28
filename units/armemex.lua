@@ -1,11 +1,9 @@
 return {
 	armemex = {
-		acceleration = 0,
 		activatewhenbuilt = true,
-		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 68889,
-		buildcostmetal = 3488,
+		buildcostmetal = 3588,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 7,
@@ -35,7 +33,7 @@ return {
 		maxwaterdepth = 9999,
 		metalstorage = 100,
 		name = "Metal Extractor",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "armemex",
 		onoffable = true,
 		radaremitheight = 35,

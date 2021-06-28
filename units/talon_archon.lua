@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		brakerate = 2.97,
-		buildcostenergy = 480039,
+		buildcostenergy = 600039,
 		buildcostmetal = 34463,
 		builder = false,
 		buildpic = "talon_archon.dds",
@@ -40,7 +40,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Master Archon",
 		noautofire = false,
-		
+
 		objectname = "talon_archon",
 		radardistance = 0,
 		radaremitheight = 76,

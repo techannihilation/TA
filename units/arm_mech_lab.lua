@@ -58,7 +58,7 @@ return {
 			[2] = "armraptor",
 			[3] = "armpraet",
 			[4] = "armmcv1",
-			[5] = "exoarm",
+			[5] = "armexo",
 			[6] = "armolympus",
 			[7] = "armmygalo",
 			[8] = "armstratus",

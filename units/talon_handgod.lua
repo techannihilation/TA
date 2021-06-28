@@ -1,17 +1,15 @@
 return {
 	talon_handgod = {
 		acceleration = 0.06828,
-		ai_limit = "limit Tu95-A 6",
-		ai_weight = "weight Tu95-A 4",
 		altfromsealevel = 1,
 		attackrunlength = 302,
 		bankscale = 1.3,
 		brakerate = 0.045,
-		buildcostenergy = 160139,
+		buildcostenergy = 260139,
 		buildcostmetal = 11281,
 		builder = false,
 		buildpic = "talon_handgod.dds",
-		buildtime = 150000,
+		buildtime = 225000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
@@ -43,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hand God",
 		noautofire = false,
-		
+
 		objectname = "talon_handgod",
 		script = "talon_handgod.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",

@@ -267,6 +267,11 @@ local morphDefs = {
 		  		tech = 1,
 		},
 	},
+	corbhmth = {
+		into = 'corbhmth1',
+		time = 120,
+		tech = 2,
+	},
 	tllgeo = {
 		{
 			into = 'tllmohogeo',
@@ -863,16 +868,16 @@ local morphDefs = {
 		xp = 0.05,
 	},
 	armorco = {
-		into = 'exoarm',
+		into = 'armexo',
 		time = 120,
 		xp = 0.10,
 	},
 	armbanth = {
-		into = 'exoarm',
+		into = 'armexo',
 		time = 120,
 		xp = 0.15,
 	},
-	hyperion = {
+	tllhyperion = {
 		into = 'tllsaurus',
 		time = 120,
 		xp = 0.10,
@@ -964,7 +969,7 @@ local morphDefs = {
 		xp = 0.15,
 	},
 	tllartybot = {
-    into = 'heavyimpact',
+    into = 'tllheavyimpact',
 		time = 45,
 		xp = 0.50,
 	},

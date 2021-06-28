@@ -114,7 +114,7 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	exoarm = {
+	armexo = {
 		{
 			name = "shield_exo",
 			cob = "Shield",
@@ -357,7 +357,7 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	irritator = {
+	tllirritator = {
 		{
 			name = "shield_irr",
 			cob = "Shield",

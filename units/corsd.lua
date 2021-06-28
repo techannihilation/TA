@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "65 10 60",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Intrusion Countermeasure System",
+		description = "Detect Invisible Units",
 		energyuse = 125,
 		explodeas = "LARGE_BUILDINGEX",
 		footprintx = 4,
@@ -29,8 +29,7 @@ return {
 		maxdamage = 2500,
 		maxslope = 36,
 		maxwaterdepth = 0,
-		name = "Nemesis",
-		
+	  name = "Countermeasure System",
 		objectname = "CORSD",
 		onoffable = true,
 		radaremitheight = 25,

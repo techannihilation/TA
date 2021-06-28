@@ -1,11 +1,11 @@
 return {
-	hyperion = {
+	tllhyperion = {
 		acceleration = 0.08,
 		brakerate = 0.42,
 		buildcostenergy = 355116,
 		buildcostmetal = 29502,
 		builder = false,
-		buildpic = "hyperion.dds",
+		buildpic = "tllhyperion.dds",
 		buildtime = 375000,
 		canattack = true,
 		canguard = true,
@@ -17,7 +17,7 @@ return {
 		collisionvolumescales = "125 142 92",
 		collisionvolumetest = 1,
 		collisionvolumetype = "ellipsoid",
-		corpse = "hyperion_dead",
+		corpse = "tllhyperion_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Amphibious Assault Kbot",
 		downloadable = 1,
@@ -39,7 +39,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Hyperion",
 		noautofire = false,
-		objectname = "hyperion",
+		objectname = "tllhyperion",
 		radardistance = 0,
 		radaremitheight = 108,
 		selfdestructas = "KROG_BLAST",
@@ -51,32 +51,32 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.056,
 		turnrate = 450,
-		unitname = "hyperion",
+		unitname = "tllhyperion",
 		upright = true,
 		customparams = {
-			buildpic = "hyperion.dds",
+			buildpic = "tllhyperion.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
-			hyperion_dead = {
+			tllhyperion_dead = {
 				blocking = true,
 				damage = 76337,
-				description = "Hyperion Wreckage",
+				description = "tllhyperion Wreckage",
 				energy = 0,
-				featuredead = "hyperion_heap",
+				featuredead = "tllhyperion_heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 55125,
-				object = "HYPERION_DEAD",
+				object = "tllhyperion_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
 				},
 			},
-			hyperion_heap = {
+			tllhyperion_heap = {
 				blocking = false,
 				damage = 95421,
-				description = "Hyperion Debris",
+				description = "tllhyperion Debris",
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
@@ -123,7 +123,7 @@ return {
 			},
 		},
 		weapondefs = {
-			hyperion_cannon = {
+			tllhyperion_cannon = {
 				accuracy = 100,
 				areaofeffect = 220,
 				beamtime = 0.55,
@@ -215,7 +215,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "HYPERION_CANNON",
+				def = "tllhyperion_CANNON",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {

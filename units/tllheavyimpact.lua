@@ -1,11 +1,11 @@
 return {
-	heavyimpact = {
+	tllheavyimpact = {
 		acceleration = 0.06,
 		brakerate = 0.3,
 		buildcostenergy = 82708,
 		buildcostmetal = 7066,
 		builder = false,
-		buildpic = "heavyimpact.dds",
+		buildpic = "tllheavyimpact.dds",
 		buildtime = 100000,
 		canattack = true,
 		canguard = true,
@@ -17,7 +17,7 @@ return {
 		collisionvolumescales = "82 98 62",
 		collisionvolumetest = 1,
 		collisionvolumetype = "ellipsoid",
-		corpse = "heavyimpact_dead",
+		corpse = "tllheavyimpact_dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Artillery Amphibious Mech",
 		explodeas = "BIG_UNIT",
@@ -38,8 +38,7 @@ return {
 		movementclass = "hkbot5",
 		name = "Heavy Impact",
 		noautofire = false,
-		
-		objectname = "heavyimpact",
+		objectname = "tllheavyimpact",
 		piecetrailcegrange = 4,
 		piecetrailcegtag = "Debree",
 		radaremitheight = 62,
@@ -52,30 +51,30 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.726,
 		turnrate = 400,
-		unitname = "heavyimpact",
+		unitname = "tllheavyimpact",
 		upright = true,
 		customparams = {
-			buildpic = "heavyimpact.dds",
+			buildpic = "tllheavyimpact.dds",
 			canareaattack = 1,
 			faction = "TLL",
 		},
 		featuredefs = {
-			heavyimpact_dead = {
+			tllheavyimpact_dead = {
 				blocking = true,
 				damage = 9118,
 				description = "Heavy Impact Wreckage",
 				energy = 0,
-				featuredead = "heavyimpact_heap",
+				featuredead = "tllheavyimpact_heap",
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5587,
-				object = "HEAVYIMPACT_DEAD",
+				object = "tllheavyimpact_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
 				},
 			},
-			heavyimpact_heap = {
+			tllheavyimpact_heap = {
 				blocking = false,
 				damage = 11397,
 				description = "Heavy Impact Debris",
@@ -133,7 +132,7 @@ return {
 				burstrate = 1,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 256,
+				craterareaofeffect = 224,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.6,
