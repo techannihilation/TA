@@ -1,7 +1,7 @@
 return {
 	armor = {
 		acceleration = 0.05,
-		antiweapons = 1,
+		
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.825,

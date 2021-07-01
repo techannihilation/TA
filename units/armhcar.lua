@@ -2,7 +2,7 @@ return {
 	armhcar = {
 		acceleration = 0.02,
 		activatewhenbuilt = true,
-		antiweapons = 1,
+		
 		brakerate = 0.06,
 		buildangle = 16384,
 		buildcostenergy = 225452,

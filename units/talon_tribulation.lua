@@ -1,7 +1,7 @@
 return {
 	talon_tribulation = {
 		acceleration = 0.015,
-		antiweapons = 1,
+		
 		brakerate = 0.3,
 		buildcostenergy = 50300,
 		buildcostmetal = 1675,

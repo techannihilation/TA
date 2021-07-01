@@ -1,7 +1,7 @@
 return {
 	talon_repentance = {
 		acceleration = 0.037,
-		antiweapons = 1,
+		
 		brakerate = 0.09,
 		buildcostenergy = 209001,
 		buildcostmetal = 16078,

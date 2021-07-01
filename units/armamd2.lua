@@ -1,7 +1,6 @@
 return {
 	armamd2 = {
 		acceleration = 0,
-		antiweapons = 1,
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 842068,

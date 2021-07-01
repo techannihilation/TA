@@ -1,7 +1,7 @@
 return {
 	armvulc1 = {
 		acceleration = 0,
-		antiweapons = 1,
+		
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 4553464,

@@ -1,7 +1,7 @@
 return {
 	armemp = {
 		acceleration = 0,
-		antiweapons = 1,
+		
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 32193,

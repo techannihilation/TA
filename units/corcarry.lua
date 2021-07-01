@@ -2,7 +2,7 @@ return {
 	corcarry = {
 		acceleration = 0.025,
 		activatewhenbuilt = true,
-		antiweapons = 1,
+		
 		brakerate = 0.069,
 		buildangle = 16384,
 		buildcostenergy = 166089,

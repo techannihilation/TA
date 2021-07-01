@@ -1,7 +1,7 @@
 return {
 	tllbagger = {
 		acceleration = 0,
-		antiweapons = 1,
+		
 		brakerate = 0,
 		buildangle = 29090,
 		buildcostenergy = 3064366,

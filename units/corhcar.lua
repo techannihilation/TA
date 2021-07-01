@@ -2,7 +2,7 @@ return {
 	corhcar = {
 		acceleration = 0.015,
 		activatewhenbuilt = true,
-		antiweapons = 1,
+		
 		brakerate = 0.06,
 		buildangle = 16384,
 		buildcostenergy = 230011,

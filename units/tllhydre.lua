@@ -1,7 +1,7 @@
 return {
 	tllhydre = {
 		acceleration = 0,
-		antiweapons = 1,
+		
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 245431,

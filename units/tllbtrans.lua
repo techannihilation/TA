@@ -1,7 +1,7 @@
 return {
 	tllbtrans = {
 		acceleration = 0.2,
-		antiweapons = 1,
+		
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.625,

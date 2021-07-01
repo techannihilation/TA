@@ -1,7 +1,7 @@
 return {
 	cormabm = {
 		acceleration = 0.0198,
-		antiweapons = 1,
+		
 		brakerate = 0.1122,
 		buildcostenergy = 50037,
 		buildcostmetal = 1552,

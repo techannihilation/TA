@@ -1,7 +1,7 @@
 return {
 	corsiege = {
 		acceleration = 0.037,
-		antiweapons = 1,
+		
 		brakerate = 0.09,
 		buildcostenergy = 119528,
 		buildcostmetal = 7557,

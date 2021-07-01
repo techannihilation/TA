@@ -4,7 +4,6 @@ return {
 		activatewhenbuilt = false,
 		airStrafe  = true,
 		airHoverFactor = 1,
-		antiweapons = 1,
 		bankingAllowed = false,
 		blocking = false,
 		brakerate = 0.01,

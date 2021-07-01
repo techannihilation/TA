@@ -1,7 +1,7 @@
 return {
 	corsilo1 = {
 		acceleration = 0,
-		antiweapons = 1,
+		
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 194551,

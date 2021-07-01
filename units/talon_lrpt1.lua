@@ -1,7 +1,7 @@
 return {
 	talon_lrpt1 = {
 		acceleration = 0,
-		antiweapons = 1,
+		
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 306003,

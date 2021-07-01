@@ -2,7 +2,7 @@ return {
 	tllturtle = {
 		acceleration = 0.015,
 		amphibious = 1,
-		antiweapons = 1,
+		
 		brakerate = 0.081,
 		buildcostenergy = 48640,
 		buildcostmetal = 1698,

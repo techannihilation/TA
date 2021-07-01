@@ -1,7 +1,7 @@
 return {
 	corint1 = {
 		acceleration = 0,
-		antiweapons = 1,
+		
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 293062,
