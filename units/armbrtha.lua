@@ -35,7 +35,7 @@ return {
 		objectname = "ARMBRTHA",
 		radaremitheight = 81,
 		seismicsignature = 0,
-		selfdestructas = "NUKE_MINE",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,
 		standingfireorder = 0,
 		turninplaceanglelimit = 140,

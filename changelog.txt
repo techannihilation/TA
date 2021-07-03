@@ -1,9 +1,10 @@
 3.91 > 3.92
 2021-07-02
-Balance :
+Improvment :
+- Add T3 arm Geo into T3 Cons panel menu
 
 Fix :
- - T1 AA Kbot can now reach target
+- T1 AA Kbot can now reach target
 
 
 3.90 > 3.91

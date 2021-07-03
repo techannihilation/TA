@@ -18,7 +18,7 @@ return {
 		corpse = "dead",
 		description = "Plasma Deflector",
 		energystorage = 1500,
-		explodeas = "NUKE_MINE",
+		explodeas = "CRAWL_BLAST",
 		footprintx = 5,
 		footprintz = 5,
 		icontype = "building",

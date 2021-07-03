@@ -40,7 +40,7 @@ return {
 		objectname = "talon_lrpt",
 		radaremitheight = 92,
 		seismicsignature = 0,
-		selfdestructas = "NUKE_MINE",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,

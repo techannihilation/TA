@@ -22,7 +22,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range Plasma Cannon",
-		explodeas = "NUKE_MINE",
+		explodeas = "CRAWL_BLAST",
 		firestandorders = 0,
 		footprintx = 8,
 		footprintz = 8,

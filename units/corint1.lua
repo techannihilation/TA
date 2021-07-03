@@ -19,7 +19,7 @@ return {
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range Plasma Cannon",
 		energyuse = 0,
-		explodeas = "NUKE_MINE",
+		explodeas = "CRAWL_BLAST",
 		firestandorders = 2,
 		footprintx = 10,
 		footprintz = 10,

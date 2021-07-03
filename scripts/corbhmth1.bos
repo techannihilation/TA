@@ -19,7 +19,7 @@ SmokeVents()
 	signal SIG_VENT;
 	set-signal-mask SIG_VENT;
 	
-	while( FALSE )
+	while( TRUE )
 	{
 		if (bFiring == FALSE)
 		{

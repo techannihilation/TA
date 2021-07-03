@@ -32,7 +32,7 @@ return {
 		objectname = "TLLLRPT",
 		onoffable = true,
 		radaremitheight = 65,
-		selfdestructas = "NUKE_MINE",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 210,
 		standingfireorder = 2,
 		unitname = "tlllrpt",
