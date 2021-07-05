@@ -1,11 +1,12 @@
 3.91 > 3.92
-2021-07-05
+2021-07-06
 Balance :
  - Add T3 arm Geo into T3 Cons panel menu
  - Decrease speed for tll t2 roaster 1.2=>1.0
  - Liche (atomic bomber) : Decrease Cost (3.5KM => 3KM) and Reload 15s=>3s. Add cost amunition (max : 2, 6KE, 300M). You can now choose 2 targets.
 
 Improvment :
+ - Add T5 Radar for Arm / Core
  - Add T2 Mobile Plasma Reflector Vehicle Talon
  - Rework Cons satellite model for Core
 

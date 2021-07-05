@@ -30,8 +30,7 @@ return {
 		maxslope = 12,
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Tower",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "armujam",
 		onoffable = true,
 		radardistancejam = 6000,
