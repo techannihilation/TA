@@ -102,7 +102,7 @@ local ShieldUnits = {
   [UnitDefNames["talon_cpod"].id] = true,
   [UnitDefNames["talon_archon"].id] = true,
   [UnitDefNames["talon_mythril"].id] = true,
-  [UnitDefNames["armshieldgen"].id] = true,
+  [UnitDefNames["talon_shieldgen"].id] = true,
 }
 
 --------------------------------------------------------------------------------
