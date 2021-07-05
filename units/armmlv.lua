@@ -44,7 +44,6 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Podger",
-		
 		objectname = "ARMMLV",
 		onoffable = false,
 		radaremitheight = 25,
@@ -84,8 +83,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.399993896484 1.98730468792e-06 0.533332824707",
-				collisionvolumescales = "20.5333251953 11.8133239746 27.7333221436",
+				collisionvolumeoffsets = "0 1 0",
+				collisionvolumescales = "20 11 27",
 				collisionvolumetype = "Box",
 				damage = 295,
 				description = "Podger Wreckage",
@@ -159,7 +158,7 @@ return {
 				areaofeffect = 512,
 				avoidfeature = false,
 				collidefriendly = false,
-				craterareaofeffect = 768,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,

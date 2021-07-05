@@ -22,7 +22,7 @@ return {
 		category = "LEVEL3 ALL COMMANDER MOBILE SURFACE UNDERWATER",
 		cloakcost = 250,
 		cloakcostmoving = 1250,
-		collisionvolumeoffsets = "-5 1 0",
+		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "56 66 30",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",

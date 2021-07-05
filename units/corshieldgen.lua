@@ -50,10 +50,10 @@ return {
 		customparams = {
 			buildpic = "corshieldgen.dds",
 			faction = "CORE",
-			shield_emit_height = 54.8,
-			shield_emit_offset = -9.37,
-			shield_power = 2500,
-			shield_radius = 300,
+			--shield_emit_height = 35,
+			--shield_emit_offset = 0,
+			shield_power = 3000,
+			shield_radius = 250,
 		},
 		featuredefs = {
 			dead = {
@@ -111,7 +111,7 @@ return {
 				shieldpower = 2500,
 				shieldpowerregen = 37.5,
 				shieldpowerregenenergy = 375,
-				shieldradius = 300,
+				shieldradius = 250,
 				shieldrepulser = true,
 				smartshield = true,
 				soundhitwet = "sizzle",

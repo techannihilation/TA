@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Viper",
-		
+
 		objectname = "talon_mlv",
 		onoffable = false,
 		radaremitheight = 25,
@@ -150,7 +150,7 @@ return {
 				areaofeffect = 512,
 				avoidfeature = false,
 				collidefriendly = false,
-				craterareaofeffect = 768,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,

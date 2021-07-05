@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "corcsat",
-		script = "sat_construction.cob",
 		radaremitheight = 6,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 750,

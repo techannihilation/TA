@@ -116,7 +116,7 @@ return {
 				areaofeffect = 512,
 				avoidfeature = false,
 				commandfire = true,
-				craterareaofeffect = 768,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 1,

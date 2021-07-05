@@ -3,26 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare, f1, turret, base, sleeves, barrel, stats, cat,
-       l_turret, l_flare, l_turn, mover, minigun1, minigun2, minibar1, minibar2, miniflare1, miniflare2;
+piece  flare, turret, base, sleeves, barrel, stats, cat,
+       minigun1, minigun2, minibar1, minibar2, miniflare1, miniflare2;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
-
-StartMoving()
-{
-	signal 4;
-	set-signal-mask 4;
-	Static_Var_3 = 1;
-	move f1 to y-axis [0.] now;
-}
-
-StopMoving()
-{
-	signal 4;
-	Static_Var_3 = 0;
-	move f1 to y-axis [-3277.] now;
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -56,20 +41,9 @@ Create()
 	hide flare;
 	hide miniflare1 ;
 	hide miniflare2;
-	dont-cache flare;
-	spin l_turret around y-axis speed <200.>;
-	spin l_turn around y-axis speed <2000.>;
 	Static_Var_2 = 0;
 	Static_Var_1 = 3000;
 	start-script SmokeUnit();
-	set ARMORED to 1;
-	start-script StopMoving();
-	move l_turret to y-axis [128.] now;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_1 = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -130,7 +104,7 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-	emit-sfx 1026 from miniflare1;
+	//emit-sfx 1026 from miniflare1;
 	sleep 100;
 }
 
@@ -158,7 +132,7 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
-	emit-sfx 1026 from miniflare2;
+	//emit-sfx 1026 from miniflare2;
 	sleep 100;
 }
 

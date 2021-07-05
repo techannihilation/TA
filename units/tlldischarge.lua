@@ -42,7 +42,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Discharge",
 		noautofire = false,
-		
 		objectname = "TLLDISCHARGE",
 		radardistance = 0,
 		radaremitheight = 42,

@@ -134,6 +134,7 @@ return {
 				metalpershot = 0,
 				model = "weapon_missile_demon",
 				name = "Experimental Missile",
+				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1200,
 				reloadtime = 8,

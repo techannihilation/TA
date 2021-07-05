@@ -143,7 +143,16 @@ return {
 	},
 	armshieldgen = {
 		{
-			name = "shield_smc",
+			name = "shield_armveh",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	talon_shieldgen = {
+		{
+			name = "shield_talonveh",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
