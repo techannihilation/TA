@@ -8,7 +8,7 @@ Balance :
 Improvment :
  - Add T5 Radar for Arm / Core
  - Add T2 Mobile Plasma Reflector Vehicle Talon
- - Rework Cons satellite model for Core
+ - Rework Core Lab & construction Satellite
 
 Fix :
  - T1 AA Kbot can now reach target

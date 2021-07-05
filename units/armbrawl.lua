@@ -37,8 +37,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Brawler",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMBRAWL",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

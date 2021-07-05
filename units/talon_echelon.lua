@@ -34,8 +34,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "Echelon",
-		
+		name = "Echelon",		
 		objectname = "talon_echelon",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
