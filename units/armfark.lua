@@ -40,7 +40,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Fark",
 		noautofire = false,
-
 		objectname = "ARMFARK",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 9003,
 		buildcostmetal = 138,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "armjamt_aoplane.dds",
 		buildpic = "talon_conspiracy.dds",
 		buildtime = 10000,
 		canattack = false,
@@ -41,7 +37,6 @@ return {
 		mincloakdistance = 35,
 		name = "Cloakable Jammer Tower",
 		noautofire = false,
-		
 		objectname = "talon_conspiracy",
 		onoffable = true,
 		radardistancejam = 450,
@@ -53,7 +48,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_conspiracy",
-		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "talon_conspiracy.dds",

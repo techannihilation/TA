@@ -38,7 +38,6 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Caretta",
 		noautofire = false,
-
 		objectname = "tllcaretta",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -87,7 +86,6 @@ return {
 			[32] = "tllnssam",
 			[33] = "tllfflak",
 			[34] = "tllcs",
-			[35] = "tllshark",
 			[36] = "tllmanta",
 		},
 		customparams = {

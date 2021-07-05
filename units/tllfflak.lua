@@ -11,7 +11,7 @@ return {
 		buildtime = 26000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Anti-Air Flak Gun - Naval Series",
@@ -30,7 +30,6 @@ return {
 		minwaterdepth = 5,
 		name = "Flakker NS",
 		noautofire = false,
-		
 		objectname = "TLLFFLAK",
 		radaremitheight = 32,
 		seismicsignature = 0,

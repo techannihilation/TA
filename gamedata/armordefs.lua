@@ -203,7 +203,6 @@ return {
 		"tllplunger",
 		"tllmanta",
 		"tllorc",
-		"tllshark",
 		"correcl",
 		"corshark",
 		"corssub",

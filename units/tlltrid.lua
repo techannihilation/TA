@@ -9,7 +9,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL MEDIUM SURFACE UNDERWATER",
+		category = "ALL SURFACE UNDERWATER",
 		corpse = "dead",
 		description = "Floating Energy weapon",
 		energyuse = 0,

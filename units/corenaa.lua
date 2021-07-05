@@ -12,7 +12,7 @@ return {
 		buildtime = 23129,
 		canattack = true,
 		canstop = 1,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "42 44 42",
 		collisionvolumetype = "CylY",
@@ -34,7 +34,6 @@ return {
 		minwaterdepth = 2,
 		name = "Cobra - NS",
 		noautofire = false,
-		
 		objectname = "CORENAA",
 		radaremitheight = 39,
 		seismicsignature = 0,

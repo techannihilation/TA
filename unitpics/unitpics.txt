@@ -888,7 +888,6 @@ tllseab.dds
 tllseaf.dds
 tllshaker.dds
 tllsham.dds
-tllshark.dds
 tllshipyardlvl3.dds
 tllshoretorp.dds
 tllshu.dds

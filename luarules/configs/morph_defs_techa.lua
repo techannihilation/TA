@@ -171,11 +171,6 @@ local morphDefs = {
 		time = 90,
 		xp = 1,
 	},
-	cordoom1 = {
-		into = 'cornightmare',
-		time = 90,
-		xp = 1,
-	},
 	tllobliterator = {
 		into = 'tllobliterator1',
 		time = 90,

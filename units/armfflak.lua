@@ -11,7 +11,7 @@ return {
 		buildtime = 21855,
 		canattack = true,
 		canstop = 1,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "42 44 42",
 		collisionvolumetype = "CylY",
@@ -33,7 +33,6 @@ return {
 		minwaterdepth = 5,
 		name = "Flakker NS",
 		noautofire = false,
-		
 		objectname = "ARMFFLAK",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -11,7 +11,7 @@ return {
 		buildtime = 25000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "35 120 35",
 		collisionvolumetype = "CylY",
@@ -33,7 +33,6 @@ return {
 		minwaterdepth = 5,
 		name = "Kernel",
 		noautofire = false,
-		
 		objectname = "talon_kernel",
 		radaremitheight = 32,
 		seismicsignature = 0,

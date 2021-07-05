@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "corpse",
 		defaultmissiontype = "Standby",
-		description = "Crawling Bomb",
+		description = "Amphibious Crawling Bomb",
 		explodeas = "CRAWL_BLASTSML",
 		firestandorders = 1,
 		firestate = 2,
@@ -38,7 +38,6 @@ return {
 		movementclass = "AKBOT2",
 		name = "Invader",
 		noautofire = false,
-		
 		objectname = "ARMVADER",
 		radaremitheight = 25,
 		seismicsignature = 0,

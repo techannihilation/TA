@@ -71,7 +71,6 @@ return {
 			[12] = "tllnssam",
 			[13] = "tllfflak",
 			[14] = "tllcs",
-			[15] = "tllshark",
 			[16] = "tllmanta",
 			[17] = "tllequalizer",
 		},

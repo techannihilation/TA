@@ -9,6 +9,8 @@ Improvment :
  - Add T5 Radar for Arm / Core
  - Add T2 Mobile Plasma Reflector Vehicle Talon
  - Rework Core Lab & construction Satellite
+ - Tll shark : deleted.
+ - Add amphibious for T2 mine crawler
 
 Fix :
  - T1 AA Kbot can now reach target
