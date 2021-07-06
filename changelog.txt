@@ -14,6 +14,8 @@ Improvment :
 
 Fix :
  - T1 AA Kbot can now reach target
+ - Fix Talon T5 NAnao : add boost
+ - Fix T3 Arm Geo : Fix them (could be made anywhere! My bad)
 
 
 3.90 > 3.91
