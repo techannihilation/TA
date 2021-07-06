@@ -35,7 +35,7 @@ return {
 		sightdistance = 250,
 		unitname = "armfor",
 		usebuildinggrounddecal = true,
-		yardmap = "oooo oooo oooo oooo",
+		yardmap = "oooo oGGo oGGo oooo",
 		customparams = {
 			buildpic = "armfor.dds",
 			faction = "ARM",
