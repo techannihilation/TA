@@ -5,7 +5,7 @@
 
 piece  base, body1, doodad1, doodad2, doodad3, doodad4, doodad5, doodad6, doodad7,
 	   doodad8, doodad9, doodad10, doodad11, doodad12, doodad13, doodad14, 
-	   body2, clamp1, clamp2, clamp3, clamp4, clamp5, clamp6, 
+	   body2, clamp1, clamp2, clamp3, clamp4, clamp5, 
 	   glow1, bldg1, bldg2 ;
 
 static-var  Static_Var_1, Static_Var_2;

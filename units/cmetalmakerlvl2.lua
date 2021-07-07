@@ -29,7 +29,7 @@ return {
 		maxdamage = 7210,
 		maxslope = 20,
 		maxwaterdepth = 0,
-		name = "T3 Metal Maker",		
+		name = "T3 Metal Maker",
 		objectname = "cmetalmakerlvl2",
 		radardistance = 0,
 		radaremitheight = 40,
@@ -50,7 +50,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 10200,
-				object = "CMetalMakerLvl2_heap",
+				object = "4x4f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

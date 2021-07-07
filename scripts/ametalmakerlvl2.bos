@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, body1, doodad1, doodad2, doodad3, doodad4, doodad5, doodad6,
-	   body2, clamp1, clamp2, clamp3, system1, system2, system3;
+	   body2, clamp1, clamp2, clamp3, glow;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -114,18 +114,13 @@ Killed(severity, corpsetype)
 		explode clamp1 type NOHEATCLOUD;
 		explode clamp2 type NOHEATCLOUD;
 		explode clamp3 type NOHEATCLOUD;
-		explode clamp1 type NOHEATCLOUD;
-		explode clamp2 type NOHEATCLOUD;
-		explode clamp3 type NOHEATCLOUD;
+		explode glow type NOHEATCLOUD;
 		explode doodad1 type NOHEATCLOUD;
 		explode doodad2 type NOHEATCLOUD;
 		explode doodad3 type NOHEATCLOUD;
 		explode doodad4 type NOHEATCLOUD;
 		explode doodad5 type NOHEATCLOUD;
 		explode doodad6 type NOHEATCLOUD;
-		explode system1 type NOHEATCLOUD;
-		explode system2 type NOHEATCLOUD;
-		explode system3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -134,35 +129,25 @@ Killed(severity, corpsetype)
 		explode clamp1 type NOHEATCLOUD | FALL;
 		explode clamp2 type NOHEATCLOUD | FALL;
 		explode clamp3 type NOHEATCLOUD| FALL;
-		explode clamp1 type NOHEATCLOUD| FALL;
-		explode clamp2 type NOHEATCLOUD| FALL;
-		explode clamp3 type NOHEATCLOUD| FALL;
+		explode glow type NOHEATCLOUD;
 		explode doodad1 type NOHEATCLOUD| FALL;
 		explode doodad2 type NOHEATCLOUD| FALL;
 		explode doodad3 type NOHEATCLOUD| FALL;
 		explode doodad4 type NOHEATCLOUD| FALL;
 		explode doodad5 type NOHEATCLOUD| FALL;
 		explode doodad6 type NOHEATCLOUD| FALL;
-		explode system1 type NOHEATCLOUD| FALL;
-		explode system2 type NOHEATCLOUD| FALL;
-		explode system3 type NOHEATCLOUD| FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode clamp1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode clamp2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode clamp3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode glow type NOHEATCLOUD;
 	explode doodad1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doodad2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doodad3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doodad4 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doodad5 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	explode doodad6 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode system1 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode system2 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode system3 type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

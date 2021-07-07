@@ -12,7 +12,7 @@ return {
 		buildtime = 300000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "100 45 100",
+		collisionvolumescales = "85 40 85",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Converts upto 8000 Energy to Metal",
@@ -62,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4860,
-				object = "AMetalMakerLvl2_heap",
+				object = "4x4f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
