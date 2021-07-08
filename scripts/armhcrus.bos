@@ -10,8 +10,8 @@ piece  base, body, rk_tur1, rk_slv1, rk_flare1a, rk_flare1b, rk_flare1c, rk_tur2
 	   rk_tur3, rk_slv3, rk_flare3a, rk_flare3b, rk_flare3c, rk_tur4, rk_slv4, rk_flare4a, rk_flare4b, rk_flare4c, sides, 
 	   wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8,
 	   turret1, sleeve1a, gun1a, flare1a, sleeve1b, gun1b, flare1b, 
-	   turret2, sleeve21, sleeve22, load21, load22, flare21, flare22, barrel21a, barrel21b, barrel21c, barrel22a, barrel22b, barrel22c,
-	   turret3, sleeve31, sleeve32, load31, load32, flare31, flare32, barrel31a, barrel31b, barrel31c, barrel32a, barrel32b, barrel32c,
+	   turret2, sleeve21, sleeve22, flare21, flare22, barrel21a, barrel21b, barrel21c, barrel22a, barrel22b, barrel22c,
+	   turret3, sleeve31, sleeve32, flare31, flare32, barrel31a, barrel31b, barrel31c, barrel32a, barrel32b, barrel32c,
 	   spin21, spin22, spin31, spin32;
 
 static-var  Static_Var_1, restore_delay, salvo_1, salvo_2, gun_1, gun_2, gun_3, gun_4, minigun;
@@ -160,10 +160,16 @@ Create()
 }
 
 
-Restore()
+Restore1()
 {
-	signal SIG_R;
-	set-signal-mask SIG_R;
+	sleep 4000;
+	turn turret1 to y-axis <0> speed <30.000000>;
+	turn sleeve1a to x-axis <0> speed <20.000000>;
+	turn sleeve1b to x-axis <0> speed <20.000000>;
+}
+
+Restore4()
+{
 	sleep 3000;
 	turn rk_tur1 to y-axis <0> speed <80.000000>;
 	turn rk_slv1 to x-axis <0> speed <60.000000>;
@@ -173,20 +179,23 @@ Restore()
 	turn rk_slv3 to x-axis <0> speed <60.000000>;
 	turn rk_tur4 to y-axis <0> speed <80.000000>;
 	turn rk_slv4 to x-axis <0> speed <60.000000>;
+}
 	
+Restore2()
+{
+	sleep 2500;
 	turn turret2 to y-axis <0> speed <60.000000>;
 	turn sleeve21 to x-axis <0> speed <60.000000>;
 	turn sleeve22 to x-axis <0> speed <60.000000>;
+}
+
+Restore3()
+{
+	sleep 2500;	
 	turn turret3 to y-axis <0> speed <60.000000>;
 	turn sleeve31 to x-axis <0> speed <60.000000>;
 	turn sleeve32 to x-axis <0> speed <60.000000>;
-	
-	sleep 2000;
-	turn turret1 to y-axis <0> speed <30.000000>;
-	turn sleeve1a to x-axis <0> speed <20.000000>;
-	turn sleeve1b to x-axis <0> speed <20.000000>;
 }
-
 
 AimPrimary(heading, pitch)
 {
@@ -198,7 +207,7 @@ AimPrimary(heading, pitch)
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn sleeve1a around x-axis;
 	wait-for-turn sleeve1b around x-axis;
-	Start-script Restore();
+	Start-script Restore1();
 	return (1);
 }
 
@@ -255,7 +264,7 @@ AimSecondary(heading, pitch)
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn sleeve21 around x-axis;
 	wait-for-turn sleeve22 around x-axis;
-	Start-script Restore();
+	Start-script Restore2();
 	return (1);
 }
 
@@ -346,7 +355,7 @@ AimTertiary(heading, pitch)
 	wait-for-turn turret3 around y-axis;
 	wait-for-turn sleeve31 around x-axis;
 	wait-for-turn sleeve32 around x-axis;
-	Start-script Restore();
+	Start-script Restore3();
 	return (1);
 }
 
@@ -436,7 +445,7 @@ AimWeapon4(heading, pitch)
 	turn rk_slv1 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur1 around y-axis;
 	wait-for-turn rk_slv1 around x-axis;
-	Start-script Restore();
+	Start-script Restore4();
 	return (1);
 }
 AimWeapon5(heading, pitch)
@@ -447,7 +456,7 @@ AimWeapon5(heading, pitch)
 	turn rk_slv2 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur2 around y-axis;
 	wait-for-turn rk_slv2 around x-axis;
-	Start-script Restore();
+	Start-script Restore4();
 	return (1);
 }
 AimWeapon6(heading, pitch)
@@ -458,7 +467,7 @@ AimWeapon6(heading, pitch)
 	turn rk_slv3 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur3 around y-axis;
 	wait-for-turn rk_slv3 around x-axis;
-	Start-script Restore();
+	Start-script Restore4();
 	return (1);
 }
 AimWeapon7(heading, pitch)
@@ -469,7 +478,7 @@ AimWeapon7(heading, pitch)
 	turn rk_slv4 to x-axis <0.000000> - pitch speed <120.000000>;
 	wait-for-turn rk_tur4 around y-axis;
 	wait-for-turn rk_slv4 around x-axis;
-	Start-script Restore();
+	Start-script Restore4();
 	return (1);
 }
 

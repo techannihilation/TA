@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Fido",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMFIDO",
 		radaremitheight = 27,
 		seismicsignature = 0,

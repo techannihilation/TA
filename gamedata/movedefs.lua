@@ -245,6 +245,15 @@ local moveDatas = {
         maxslope = 80,
         maxwaterdepth = 22
     },
+    HTKBOT6 = {
+        allowrawmovement = true,
+        allowterraincollisions = false,
+        crushstrength = 9999,
+        footprintx = 6,
+        footprintz = 6,
+        maxslope = 80,
+        maxwaterdepth = 28
+    },
     HTKBOT7 = {
         allowrawmovement = true,
         allowterraincollisions = false,

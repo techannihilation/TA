@@ -38,8 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HKBOT7",
 		name = "Cerberus",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_cerberus",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",

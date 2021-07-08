@@ -57,7 +57,7 @@ return {
 			[6] = "armmcv",
 			[7] = "armmlrs",
 			[8] = "armthor",
-			[9] = "armhcrus",
+			--[9] = "armhcrus",
 			[10] = "armkrypto",
 		},
 		customparams = {

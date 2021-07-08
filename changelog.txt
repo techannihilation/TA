@@ -6,6 +6,8 @@ Balance :
  - Liche (atomic bomber) : Decrease Cost (3.5KM => 3KM) and Reload 15s=>3s. Add cost amunition (max : 2, 6KE, 300M). You can now choose 2 targets.
 
 Improvment :
+ - Add T3 Fox terrier Arm for Fido Morph
+ - Rework T3 Cruser Hover Model. Delete from T3 Vehicle Lab (too large for the lab). Morph T2 hover to get it.
  - Add T5 Radar for Arm / Core
  - Add T2 Mobile Plasma Reflector Vehicle Talon
  - Rework Core Lab & construction Satellite

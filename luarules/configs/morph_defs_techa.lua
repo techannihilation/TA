@@ -481,6 +481,11 @@ local morphDefs = {
 		time = 30,
 		xp = 0.15,
 	},
+	armfido = {
+		into = 'armfox',
+		time = 90,
+		xp = 0.30,
+	},
 	corak = {
 		into = 'corpyro',
 		time = 5,
@@ -1092,6 +1097,11 @@ local morphDefs = {
 		into = 'corhflag',
 		time = 90,
 		xp = 0.10,
+	},
+	armhplasma = {
+		into = 'armhcrus',
+		time = 90,
+		xp = 0.25,
 	},
 	armtem = {
 		into = 'armhcrus',

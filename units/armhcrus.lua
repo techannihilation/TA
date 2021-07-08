@@ -1,6 +1,7 @@
 return {
 	armhcrus = {
 		acceleration = 0.09,
+		airsightdistance = 700,
 		brakerate = 0.135,
 		buildcostenergy = 271709,
 		buildcostmetal = 19055,
@@ -16,7 +17,7 @@ return {
 		cantbetransported = true,
 		category = "ALL HUGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 3 0",
-		collisionvolumescales = "120 48 120",
+		collisionvolumescales = "110 48 120",
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
 		corpse = "dead",
@@ -138,7 +139,7 @@ return {
 				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
-				range = 850,
+				range = 700,
 				reloadtime = 0.5,
 				rgbcolor = "1.000 0.5 0",
 				smoketrail = true,
