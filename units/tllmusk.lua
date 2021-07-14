@@ -40,7 +40,6 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Construction Turtle",
 		noautofire = true,
-
 		objectname = "tllmusk",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNITEX",

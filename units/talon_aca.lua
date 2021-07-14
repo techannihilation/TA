@@ -66,7 +66,7 @@ return {
 			[10] = "talon_aap",
 			[11] = "talon_eap",
 			[12] = "talon_sp",
-			[13] = "talon_plat",
+			--[13] = "",
 			[14] = "talon_asp",
 			[15] = "talon_nanotc1",
 			[16] = "talon_targ",
@@ -78,6 +78,8 @@ return {
 			[22] = "talon_silo",
 			[23] = "talon_lrpt",
 			[24] = "talon_veloute",
+			[25] = "talon_plat",
+			[26] = "talon_eplat",
 		},
 		customparams = {
 			buildpic = "talon_aca.dds",

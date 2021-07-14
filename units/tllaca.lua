@@ -64,7 +64,7 @@ return {
 			[9] = "tllaap",
 			[10] = "tlleap",
 			[11] = "tllsp",
-			[12] = "tllplat",
+			--[12] = "",
 			[13] = "tllasp",
 			[14] = "tllnanotc1",
 			[15] = "tlltarg",
@@ -76,6 +76,8 @@ return {
 			[21] = "tlllrpt",
 			[22] = "tllemplrpt",
 			[23] = "tllhydre",
+			[24] = "tllplat",
+			[25] = "tlleplat",
 		},
 		customparams = {
 			buildpic = "tllaca.dds",

@@ -4,10 +4,6 @@ return {
 		buildcostenergy = 411042,
 		buildcostmetal = 17985,
 		builder = true,
-		buildinggrounddecaldecayspeed = 3000,
-		buildinggrounddecalsizex = 9,
-		buildinggrounddecalsizey = 7,
-		buildinggrounddecaltype = "armevp_aoplane.dds",
 		buildpic = "talon_eap.dds",
 		buildtime = 300000,
 		canmove = true,
@@ -47,7 +43,6 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		unitname = "talon_eap",
-		usebuildinggrounddecal = true,
 		workertime = 800,
 		yardmap = "oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo oooooooooo",
 		buildoptions = {

@@ -36,8 +36,7 @@ return {
 		minwaterdepth = 25,
 		mobilestandorders = 1,
 		name = "Amphibious Complex",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CSUBPEN",
 		radaremitheight = 31,
 		seismicsignature = 0,

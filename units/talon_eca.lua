@@ -74,6 +74,8 @@ return {
 			[17] = "talon_silo1",
 			[18] = "talon_lrpt1",
 			[19] = "talon_veloute2",
+			[20] = "talon_plat",
+			[21] = "talon_eplat",
 		},
 		customparams = {
 			buildpic = "talon_eca.dds",

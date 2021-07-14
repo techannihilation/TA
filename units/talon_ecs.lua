@@ -66,8 +66,10 @@ return {
 			[7] = "talon_sy",
 			[8] = "talon_asy",
 			[9] = "talon_esy",
-			[10] = "talon_fnanotc2",
-			[11] = "talon_fgate1",
+			--[10] = "talon_eplat",
+			[11] = "talon_fnanotc2",
+			[12] = "talon_fgate1",
+
 		},
 		customparams = {
 			buildpic = "talon_ecs.dds",

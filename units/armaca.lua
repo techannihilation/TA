@@ -71,7 +71,7 @@ return {
 			[12] = "armaap",
 			[13] = "armeap",
 			[14] = "armsp",
-			[15] = "armplat",
+			--[15] = "",
 			[16] = "armasp",
 			[17] = "armnanotc1",
 			[18] = "armtarg",
@@ -83,6 +83,8 @@ return {
 			[24] = "arm_big_bertha",
 			[25] = "armbrtha",
 			[26] = "armvulc",
+			[27] = "armplat",
+			[28] = "armeplat",
 		},
 		customparams = {
 			buildpic = "armaca.dds",

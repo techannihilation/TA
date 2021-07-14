@@ -1,0 +1,411 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  beam1, beam2, beam3, beam4, beam5, beam6, beam7, beam8,
+       pivot1, pivot2, pivot3, pivot4, pivot5, pivot6, pivot7, pivot8,
+       post1, post2, post3, post4, post5, post6, post7, post8,
+       nano1, nano2, nano3, nano4, nano5, nano6, nano7, nano8,
+       door1, door2, door3, door4, door5, door6, door7, door8,
+       base, body, platform, glow, pad, slats, heightstick;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7;
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move platform to y-axis [0.] now;
+		move platform to y-axis [10.] speed [10.];
+		sleep 735;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [10.] speed [0.];
+		turn door1 to z-axis <-90.> speed <159.>;
+		turn door2 to z-axis <-90.> speed <159.>;
+		turn door3 to z-axis <-90.> speed <159.>;
+		turn door4 to z-axis <-90.> speed <159.>;
+		turn door5 to z-axis <90.> speed <159.>;
+		turn door6 to z-axis <90.> speed <159.>;
+		turn door7 to z-axis <90.> speed <159.>;
+		turn door8 to z-axis <90.> speed <159.>;
+		sleep 565;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [10.] speed [0.];
+		move door1 to y-axis [-5.] speed [7.];
+		move door2 to y-axis [-4.] speed [7.];
+		move door3 to y-axis [-5.] speed [7.];
+		move door4 to y-axis [-4.] speed [7.];
+		move door5 to y-axis [-5.] speed [7.];
+		move door6 to y-axis [-4.] speed [7.];
+		move door7 to y-axis [-5.] speed [7.];
+		move door8 to y-axis [-4.] speed [7.];
+		sleep 570;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [10.] speed [0.];
+		move post1 to y-axis [13.] speed [21.];
+		move post2 to y-axis [13.] speed [21.];
+		move post3 to y-axis [13.] speed [21.];
+		move post4 to y-axis [13.] speed [21.];
+		move post5 to y-axis [13.] speed [21.];
+		move post6 to y-axis [13.] speed [21.];
+		move post7 to y-axis [13.] speed [21.];
+		move post8 to y-axis [13.] speed [21.];
+		sleep 571;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [10.] speed [0.];
+		turn nano1 to z-axis <-99.> speed <174.>;
+		turn nano2 to z-axis <-99.> speed <174.>;
+		turn nano3 to z-axis <-99.> speed <174.>;
+		turn nano4 to z-axis <-99.> speed <174.>;
+		turn nano5 to z-axis <99.> speed <173.>;
+		turn nano6 to z-axis <99.> speed <173.>;
+		turn nano7 to z-axis <99.> speed <173.>;
+		turn nano8 to z-axis <99.> speed <173.>;
+		sleep 571;
+	}
+	sleep 28;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move platform to y-axis [10.] now;
+		move platform to y-axis [10.] speed [0.];
+		move post1 to y-axis [13.] now;
+		move post2 to y-axis [13.] now;
+		move post3 to y-axis [13.] now;
+		move post4 to y-axis [13.] now;
+		move post5 to y-axis [13.] now;
+		move post6 to y-axis [13.] now;
+		move post7 to y-axis [13.] now;
+		move post8 to y-axis [13.] now;
+		move door1 to y-axis [-5.] now;
+		move door2 to y-axis [-5.] now;
+		move door3 to y-axis [-5.] now;
+		move door4 to y-axis [-5.] now;
+		move door5 to y-axis [-5.] now;
+		move door6 to y-axis [-5.] now;
+		move door7 to y-axis [-5.] now;
+		move door8 to y-axis [-5.] now;
+		turn door1 to z-axis <-90.> now;
+		turn door2 to z-axis <-90.> now;
+		turn door3 to z-axis <-90.> now;
+		turn door4 to z-axis <-90.> now;
+		turn door5 to z-axis <90.> now;
+		turn door6 to z-axis <90.> now;
+		turn door7 to z-axis <90.> now;
+		turn door8 to z-axis <90.> now;
+		turn nano1 to z-axis <-99.> now;
+		turn nano2 to z-axis <-99.> now;
+		turn nano3 to z-axis <-99.> now;
+		turn nano4 to z-axis <-99.> now;
+		turn nano5 to z-axis <99.> now;
+		turn nano6 to z-axis <99.> now;
+		turn nano7 to z-axis <99.> now;
+		turn nano8 to z-axis <99.> now;
+		sleep 565;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [10.] speed [0.];
+		move post1 to y-axis [0.] speed [21.];
+		move post2 to y-axis [0.] speed [21.];
+		move post3 to y-axis [0.] speed [21.];
+		move post4 to y-axis [0.] speed [21.];
+		move post5 to y-axis [0.] speed [21.];
+		move post6 to y-axis [0.] speed [21.];
+		move post7 to y-axis [0.] speed [21.];
+		move post8 to y-axis [0.] speed [21.];
+		sleep 570;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [10.] speed [0.];
+		move door1 to y-axis [0.] speed [7.];
+		move door2 to y-axis [0.] speed [7.];
+		move door3 to y-axis [0.] speed [7.];
+		move door4 to y-axis [0.] speed [7.];
+		move door5 to y-axis [0.] speed [7.];
+		move door6 to y-axis [0.] speed [7.];
+		move door7 to y-axis [0.] speed [7.];
+		move door8 to y-axis [0.] speed [7.];
+		sleep 571;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [10.] speed [0.];
+		turn door1 to z-axis <0.> speed <157.>;
+		turn door2 to z-axis <0.> speed <157.>;
+		turn door3 to z-axis <0.> speed <157.>;
+		turn door4 to z-axis <0.> speed <157.>;
+		turn door5 to z-axis <0.> speed <157.>;
+		turn door6 to z-axis <0.> speed <157.>;
+		turn door7 to z-axis <0.> speed <157.>;
+		turn door8 to z-axis <0.> speed <157.>;
+		sleep 571;
+	}
+	if( TRUE )
+	{
+		move platform to y-axis [0.] speed [10.];
+		sleep 738;
+	}
+	sleep 28;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+	Static_Var_5 = 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+	set ARMORED to 1;
+	Static_Var_5 = 0;
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_7 = 0;
+	Static_Var_6 = 0;
+	Static_Var_5 = 0;
+	turn pivot1 to y-axis <-68.> now;
+	turn pivot2 to y-axis <-23.> now;
+	turn pivot3 to y-axis <23.> now;
+	turn pivot4 to y-axis <68.> now;
+	turn pivot5 to y-axis <-68.> now;
+	turn pivot6 to y-axis <-23.> now;
+	turn pivot7 to y-axis <23.> now;
+	turn pivot8 to y-axis <68.> now;
+
+	Static_Var_2 = 0;
+	Static_Var_1 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	set ARMORED to 1;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 0 )
+	{
+		piecenum = beam1;
+	}
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = beam2;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = beam3;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = beam4;
+	}
+	if( Static_Var_1 == 4 )
+	{
+		piecenum = beam5;
+	}
+	if( Static_Var_1 == 5 )
+	{
+		piecenum = beam6;
+	}
+	if( Static_Var_1 == 6 )
+	{
+		piecenum = beam7;
+	}
+	if( Static_Var_1 == 7 )
+	{
+		piecenum = beam8;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 8 )
+	{
+		Static_Var_1 = 0;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	if( !Static_Var_2 )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode beam1 type NOHEATCLOUD;
+		explode beam2 type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode nano1 type NOHEATCLOUD;
+		explode nano2 type NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode platform type NOHEATCLOUD;
+		explode post1 type NOHEATCLOUD;
+		explode post2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode beam1 type FALL | NOHEATCLOUD;
+		explode beam2 type FALL | NOHEATCLOUD;
+		explode door1 type FALL | NOHEATCLOUD;
+		explode door2 type FALL | NOHEATCLOUD;
+		explode nano1 type FALL | NOHEATCLOUD;
+		explode nano2 type FALL | NOHEATCLOUD;
+		explode pad type NOHEATCLOUD;
+		explode platform type NOHEATCLOUD;
+		explode post1 type FALL | NOHEATCLOUD;
+		explode post2 type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode beam1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode beam2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nano1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nano2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pad type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode platform type NOHEATCLOUD;
+	explode post1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode post2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

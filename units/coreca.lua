@@ -75,6 +75,8 @@ return {
 			[19] = "corsilo1",
 			[20] = "corint1",
 			[21] = "corbuzz2",
+			[22] = "corplat",	
+			[23] = "coreplat",
 		},
 		customparams = {
 			buildpic = "coreca.dds",

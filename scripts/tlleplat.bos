@@ -4,9 +4,11 @@
 #include "exptype.h"
 
 piece  base, body, pad, doors, door1, door2, door3, door4,
-       arms, arm1, arm2, arm3, arm4, flo1, flo2, flo3,
-       flo4, nano1, nano2, wake1, wake2, wake3, wake4,
-       beam1, beam2;
+       arms1, arm1, arm2, arm3, arm4, flo1, flo2, flo3, flo4, 
+       arms2, arm5, arm6, arm7, arm8, flo5, flo6, flo7, flo8,
+       nano1, nano2, nano3, nano5, nano6, nano8, nano4, nano7,
+       beam1, beam2, beam3, beam4, beam5, beam6, beam7, beam8,
+       wake1, wake2, wake3, wake4;
 
 static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
 
@@ -23,8 +25,8 @@ Tangue(Func_Var_1, Func_Var_2, Func_Var_3)
 		while( get ABS(Func_Var_2) < 238 )
 		{
 			Func_Var_3 = 263 - get ABS(Func_Var_2);
-			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
-			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.027473>;
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.007473>;
+			turn base to z-axis Func_Var_2 speed Func_Var_3 * <0.007473>;
 			wait-for-turn base around x-axis;
 			wait-for-turn base around z-axis;
 			Func_Var_2 = Func_Var_2 + Func_Var_1;
@@ -38,15 +40,26 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move body to y-axis [12.500000] speed [3.000000];
-		turn arm1 to x-axis <45.000000> speed <13.000000>;
-		turn flo1 to x-axis <-45.000000> speed <13.000000>;
-		turn arm2 to x-axis <-45.000000> speed <13.000000>;
-		turn flo2 to x-axis <45.000000> speed <13.000000>;
-		turn arm3 to z-axis <45.000000> speed <13.000000>;
-		turn flo3 to z-axis <-45.000000> speed <13.000000>;
-		turn arm4 to z-axis <-45.000000> speed <13.000000>;
-		turn flo4 to z-axis <45.000000> speed <13.000000>;
+		move body to y-axis [18.000000] speed [3.000000];
+		
+		turn arm1 to z-axis <45.000000> speed <13.000000>;
+		turn flo1 to z-axis <-45.000000> speed <13.000000>;
+		turn arm2 to z-axis <-45.000000> speed <13.000000>;
+		turn flo2 to z-axis <45.000000> speed <13.000000>;
+		turn arm3 to x-axis <-45.000000> speed <13.000000>;
+		turn flo3 to x-axis <45.000000> speed <13.000000>;
+		turn arm4 to x-axis <45.000000> speed <13.000000>;
+		turn flo4 to x-axis <-45.000000> speed <13.000000>;
+		
+		turn arm5 to z-axis <45.000000> speed <13.000000>;
+		turn flo5 to z-axis <-45.000000> speed <13.000000>;
+		turn arm6 to z-axis <-45.000000> speed <13.000000>;
+		turn flo6 to z-axis <45.000000> speed <13.000000>;
+		turn arm7 to x-axis <-45.000000> speed <13.000000>;
+		turn flo7 to x-axis <45.000000> speed <13.000000>;
+		turn arm8 to x-axis <45.000000> speed <13.000000>;
+		turn flo8 to x-axis <-45.000000> speed <13.000000>;
+		
 		wait-for-move body along y-axis;
 	}
 	if( TRUE )
@@ -55,7 +68,7 @@ activatescr()
 		turn door2 to z-axis <50.000000> speed <20.000000>;
 		turn door3 to x-axis <-50.000000> speed <20.000000>;
 		turn door4 to x-axis <50.000000> speed <20.000000>;
-		move doors to y-axis [-10.000000] speed [3.000000];
+		move doors to y-axis [-15.000000] speed [3.000000];
 		emit-sfx 256 | 3 from door1;
 		emit-sfx 256 | 3 from door2;
 		emit-sfx 256 | 3 from door3;
@@ -78,8 +91,14 @@ activatescr()
 	if( TRUE )
 	{
 		move pad to y-axis [2.000000] speed [5.000000];
-		move nano1 to y-axis [3.200000] speed [5.000000];
-		move nano2 to y-axis [3.200000] speed [5.000000];
+		move nano1 to y-axis [5.000000] speed [5.000000];
+		move nano2 to y-axis [5.000000] speed [5.000000];
+		move nano3 to y-axis [5.000000] speed [5.000000];
+		move nano4 to y-axis [5.000000] speed [5.000000];
+		move nano5 to y-axis [5.000000] speed [5.000000];
+		move nano6 to y-axis [5.000000] speed [5.000000];
+		move nano7 to y-axis [5.000000] speed [5.000000];
+		move nano8 to y-axis [5.000000] speed [5.000000];
 	}
 	sleep 800;
 }
@@ -89,8 +108,14 @@ deactivatescr()
 	if( TRUE )
 	{
 		move pad to y-axis [0.000000] speed [7.000000];
-		move nano1 to y-axis [0.000000] speed [5.000000];
-		move nano2 to y-axis [0.000000] speed [5.000000];
+		move nano1 to y-axis [0.000000] speed [8.000000];
+		move nano2 to y-axis [0.000000] speed [8.000000];
+		move nano3 to y-axis [0.000000] speed [8.000000];
+		move nano4 to y-axis [0.000000] speed [8.000000];
+		move nano5 to y-axis [0.000000] speed [8.000000];
+		move nano6 to y-axis [0.000000] speed [8.000000];
+		move nano7 to y-axis [0.000000] speed [8.000000];
+		move nano8 to y-axis [0.000000] speed [8.000000];
 		sleep 1000;
 	}
 	if( TRUE )
@@ -113,6 +138,16 @@ deactivatescr()
 		turn flo3 to z-axis <0.000000> speed <12.000000>;
 		turn arm4 to z-axis <0.000000> speed <12.000000>;
 		turn flo4 to z-axis <0.000000> speed <12.000000>;
+		
+		turn arm5 to x-axis <0.000000> speed <12.000000>;
+		turn flo5 to x-axis <0.000000> speed <12.000000>;
+		turn arm6 to x-axis <0.000000> speed <12.000000>;
+		turn flo6 to x-axis <0.000000> speed <12.000000>;
+		turn arm7 to z-axis <0.000000> speed <12.000000>;
+		turn flo7 to z-axis <0.000000> speed <12.000000>;
+		turn arm8 to z-axis <0.000000> speed <12.000000>;
+		turn flo8 to z-axis <0.000000> speed <12.000000>;
+		
 		emit-sfx 256 | 3 from door1;
 		emit-sfx 256 | 3 from door2;
 		emit-sfx 256 | 3 from door3;
@@ -152,9 +187,6 @@ CloseYard()
 
 Go()
 {
-	dont-cache nano1;
-	dont-cache nano2;
-	dont-cache pad;
 	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
@@ -165,9 +197,6 @@ Stop()
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
 	call-script deactivatescr();
-	cache nano1;
-	cache nano2;
-	cache pad;
 }
 
 InitState()
@@ -204,18 +233,10 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade door1;
-	dont-shade door2;
-	dont-shade door3;
-	dont-shade door4;
-	dont-shade nano1;
-	dont-shade nano2;
-	dont-shade pad;
-	dont-shade body;
 	turn doors to y-axis <-45.000000> now;
-	turn arms to y-axis <45.000000> now;
+	turn arms2 to y-axis <45.000000> now;
 	unitviewer = FALSE;
-	spray = base;
+	spray = 0;
 	call-script InitState();
 	start-script Tangue();
 }
@@ -226,11 +247,39 @@ QueryNanoPiece(piecenum)
 	{
 		piecenum = beam1;
 	}
-	if( spray != 0 )
+	if( spray == 1 )
 	{
 		piecenum = beam2;
 	}
-	spray = !spray;
+	if( spray == 2 )
+	{
+		piecenum = beam3;
+	}
+	if( spray == 3 )
+	{
+		piecenum = beam4;
+	}
+	if( spray == 4 )
+	{
+		piecenum = beam5;
+	}
+	if( spray == 5 )
+	{
+		piecenum = beam6;
+	}
+	if( spray == 6 )
+	{
+		piecenum = beam7;
+	}
+	if( spray == 7 )
+	{
+		piecenum = beam8;
+	}
+	++spray;
+	if( spray == 8 )
+	{
+		spray = 0;
+	}
 }
 
 Demo()

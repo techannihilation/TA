@@ -100,10 +100,11 @@ Create()
 {
 	hide m1;
 	hide m2;
+	turn wing1 to z-axis <95.000000> now;
+	turn wing2 to z-axis <-95.000000> now;
 	gun_2 = m2;
 	Static_Var_1 = 3000;
 	call-script InitState();
-	call-script deactivatescr();
 	start-script SmokeUnit();
 }
 

@@ -36,7 +36,6 @@ return {
 		movementclass = "TKBOT3",
 		name = "All-Terrain Construction Tortoise",
 		noautofire = false,
-
 		objectname = "CORCT",
 		radaremitheight = 22,
 		selfdestructas = "BIG_UNIT",
