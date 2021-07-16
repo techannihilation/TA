@@ -368,9 +368,9 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn xtur to y-axis heading speed <50.000000>;
-	turn sleeve1a to x-axis <0.000000> - pitch speed <20.000000>;
-	turn sleeve1b to x-axis <0.000000> - pitch speed <20.000000>;
+	turn xtur to y-axis heading speed <60.000000>;
+	turn sleeve1a to x-axis <0.000000> - pitch speed <45.000000>;
+	turn sleeve1b to x-axis <0.000000> - pitch speed <45.000000>;
 	wait-for-turn xtur around y-axis;
 	wait-for-turn sleeve1a around x-axis;
 	wait-for-turn sleeve1b around x-axis;
@@ -382,18 +382,16 @@ FirePrimary()
 {
 	if( minigun == 0 )
 	{
-		emit-sfx 1024 + 0 from flare1a;
 		turn gun1a to z-axis <0.000000> now;
-		turn gun1a to z-axis <60.000000> speed <150.000000>;
-		sleep 450;
+		turn gun1a to z-axis <60.000000> speed <225.000000>;
+		//sleep 25;
 		
 	}
 	if( minigun == 1 )
 	{
-		emit-sfx 1024 + 0 from flare1b;
 		turn gun1b to z-axis <0.000000> now;
-		turn gun1b to z-axis <60.000000> speed <150.000000>;
-		sleep 450;
+		turn gun1b to z-axis <60.000000> speed <225.000000>;
+		//sleep 25;
 		
 	}
 	++minigun;

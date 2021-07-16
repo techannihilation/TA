@@ -40,16 +40,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-HitByWeapon(anglex, anglez)
-{
-	turn base to z-axis anglez speed <105.016484>;
-	turn base to x-axis anglex speed <105.016484>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <30.005495>;
-	turn base to x-axis <0.000000> speed <30.005495>;
-}
-
 Create()
 {
 	hide flare1;
@@ -57,11 +47,6 @@ Create()
 	hide flareB2;
 	gun_2 = 0;
 	restore_delay = 3000;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -73,7 +58,7 @@ RestoreAfterDelay()
 
 RestoreAfterDelay2()
 {
-	sleep restore_delay;
+	sleep restore_delay / 2 ;
 	turn turret2 to y-axis <0.000000> speed <50.0>;
 	turn canonB1 to x-axis <0.000000> speed <35.0>;
 	turn canonB2 to x-axis <0.000000> speed <35.0>;
@@ -83,8 +68,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret1 to y-axis heading speed <45.000000>;
-	turn sleeve1 to x-axis <0.000000> - pitch speed <20.000000>;
+	turn turret1 to y-axis heading speed <60.000000>;
+	turn sleeve1 to x-axis <0.000000> - pitch speed <45.000000>;
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn sleeve1 around x-axis;
 	start-script RestoreAfterDelay();
@@ -93,11 +78,11 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	show flare1;
+	//show flare1;
 	turn gun1 to z-axis <0.000000> now;
-	turn gun1 to z-axis <60.0> speed <150.0>;
-	sleep 150;
-	hide flare1;
+	turn gun1 to z-axis <60.0> speed <250.0>;
+	//sleep 150;
+	//hide flare1;
 }
 
 QueryPrimary(piecenum)
@@ -136,7 +121,7 @@ FireSecondary()
 		emit-sfx 1025 from flareB2;
 		//move canonB2 to z-axis [-1.000000] speed [200.000000];
 		//wait-for-move canonB2 along z-axis;
-		move barrelB2 to z-axis [-2.000000] speed [100.000000];
+		move barrelB2 to z-axis [-0.500000] speed [100.000000];
 		wait-for-move barrelB2 along z-axis;
 		move canonB2 to z-axis [0.000000] speed [10.000000];
 		move barrelB2 to z-axis [0.000000] speed [10.000000];
@@ -146,7 +131,7 @@ FireSecondary()
 		emit-sfx 1025 from flareB1;
 		//move canonB1 to z-axis [-1.000000] speed [200.000000];
 		//wait-for-move canonB1 along z-axis;
-		move barrelB1 to z-axis [-2.000000] speed [100.000000];
+		move barrelB1 to z-axis [-0.500000] speed [100.000000];
 		wait-for-move barrelB1 along z-axis;
 		move canonB1 to z-axis [0.000000] speed [10.000000];
 		move barrelB1 to z-axis [0.000000] speed [10.000000];
