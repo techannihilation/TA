@@ -448,18 +448,18 @@ local morphDefs = {
 		{
 			into = 'armfast',
 			time = 5,
-			xp = 0.25,
+			xp = 0.10,
 		},
 		{
 			into = 'armhdpw',
-			time = 30,
-			xp = 0.40,
+			time = 20,
+			xp = 0.20,
 		},
 	},
 	armfast = {
 		into = 'armjugg',
-		time = 60,
-		xp = 0.50,
+		time = 30,
+		xp = 0.10,
 	},
 	armhdpw = {
 		into = 'arm_furie',

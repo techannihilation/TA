@@ -5,6 +5,9 @@ Balance :
  - Thor T3 Tank Arm : Decrease Metal Cost (15KM=>14KM)
 
 Improvment :
+ - Rework T2 Fast Model.
+ - Rework T3 Juggernault Arm. New name = Juggo. Decrease model size, stats & cost. Add jump Feature.
+ - T3 Gunship Air : Increase modelsize
  - Add T3 Air Sea Lab for all faction
  - Pluton gun Arm (Dog T3 fox, T3 cruser, Rex T3 Amphibious) : Decrease Reload and damage / S. Same Balance
 

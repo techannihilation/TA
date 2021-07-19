@@ -17,7 +17,7 @@ local ringsToDraw = {
     [UnitDefNames["corhcar"].id] = 3,
     [UnitDefNames["tllswordfish"].id] = 1,
     [UnitDefNames["corarbritator"].id] = 1,
-    [UnitDefNames["tlldischarge"].id] = 2,
+    --[UnitDefNames["tlldischarge"].id] = 2,
 }
 
 local pairs = pairs
@@ -37,17 +37,17 @@ local ringsDefs = {}
 
 local ringedUnits = {}
 
--- opacity control 
+-- opacity control
 local darkOpacity = 0.5
 local lightOpacity = 0.5
 
-function SetOpacity(dark, light) 
-    darkOpacity = dark 
-    lightOpacity = light 
-end 
+function SetOpacity(dark, light)
+    darkOpacity = dark
+    lightOpacity = light
+end
 
 function widget:Initialize()
-    widgetHandler:RegisterGlobal('SetOpacity_Missingrings', SetOpacity) 
+    widgetHandler:RegisterGlobal('SetOpacity_Missingrings', SetOpacity)
     for uDefId, ud in ipairs(UnitDefs) do
         if ringsToDraw[uDefId] then
             ringsDefs[uDefId] = { r = 1 , g = 0, b = 0, radius = WeaponDefs[UnitDefs[uDefId].weapons[ringsToDraw[uDefId]].weaponDef].range}
@@ -93,7 +93,7 @@ function widget:DrawWorld()
     glColor(1, 1, 1, 1)
 end
 
-function widget:GameOver() 
-    widgetHandler:DeregisterGlobal('SetOpacity_Missingrings', SetOpacity) 
-    widgetHandler:RemoveWidget(self) 
-end 
+function widget:GameOver()
+    widgetHandler:DeregisterGlobal('SetOpacity_Missingrings', SetOpacity)
+    widgetHandler:RemoveWidget(self)
+end

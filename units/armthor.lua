@@ -171,6 +171,7 @@ return {
 				avoidfeature = false,
 				burst = 6,
 				burstrate = 0.03,
+				cegtag = "Trail_emg",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

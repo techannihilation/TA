@@ -51,6 +51,7 @@ jumpClassGroups = {
 	},
 	jumpbot = {
   	"tlldischarge",
+    "armjugg",
 	},
 }
 

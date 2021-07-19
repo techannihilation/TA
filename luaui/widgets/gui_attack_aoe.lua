@@ -10,7 +10,7 @@ function widget:GetInfo()
     author    = "Evil4Zerggin",
     date      = "26 September 2008",
     license   = "GNU LGPL, v2.1 or later",
-    layer     = 1, 
+    layer     = 1,
     enabled   = true  --  loaded by default?
   }
 end
@@ -36,7 +36,7 @@ local dgunInfo = {}
 local hasSelection = false
 local aoeUnitDefID
 local dgunUnitDefID
-local notdgunUnitDefID 
+local notdgunUnitDefID
 local aoeUnitID
 local dgunUnitID
 local circleList
@@ -50,7 +50,7 @@ local notdgun = {
     [UnitDefNames["corhcar"].id] = true,
     [UnitDefNames["tllswordfish"].id] = true,
     [UnitDefNames["corarbritator"].id] = true,
-    [UnitDefNames["tlldischarge"].id] = true,
+    --[UnitDefNames["tlldischarge"].id] = true,
 }
 --------------------------------------------------------------------------------
 --speedups
@@ -59,7 +59,7 @@ local GetActiveCommand       = Spring.GetActiveCommand
 local GetCameraPosition      = Spring.GetCameraPosition
 local GetFeaturePosition     = Spring.GetFeaturePosition
 local GetGroundHeight        = Spring.GetGroundHeight
-local GetMouseState          = Spring.GetMouseState 
+local GetMouseState          = Spring.GetMouseState
 local GetSelectedUnitsSorted = Spring.GetSelectedUnitsSorted
 local GetUnitPosition        = Spring.GetUnitPosition
 local GetUnitRadius          = Spring.GetUnitRadius
@@ -108,7 +108,7 @@ end
 
 local function Normalize(x, y, z)
   local mag = sqrt(x*x + y*y + z*z)
-  if (mag == 0) 
+  if (mag == 0)
     then return nil
     else return x/mag, y/mag, z/mag, mag
   end
@@ -123,7 +123,7 @@ end
 local function GetMouseTargetPosition()
   local mx, my = GetMouseState()
   local mouseTargetType, mouseTarget = TraceScreenRay(mx, my)
-  
+
   if (mouseTargetType == "ground") then
     return mouseTarget[1], mouseTarget[2], mouseTarget[3]
   elseif (mouseTargetType == "unit") then
@@ -160,9 +160,9 @@ local function DrawCircle(x, y, z, radius)
   glPushMatrix()
   glTranslate(x, y, z)
   glScale(radius, radius, radius)
-  
+
   glCallList(circleList)
-  
+
   glPopMatrix()
 end
 
@@ -177,10 +177,10 @@ end
 
 local function SetupUnitDef(unitDefID, unitDef)
   if (not unitDef.weapons) then return end
-  
+
   local maxSpread = minSpread
   local maxWeaponDef
-  
+
   for _, weapon in ipairs(unitDef.weapons) do
     if (weapon.weaponDef) then
       local weaponDef = WeaponDefs[weapon.weaponDef]
@@ -198,9 +198,9 @@ local function SetupUnitDef(unitDefID, unitDef)
       end
     end
   end
-  
+
   if (not maxWeaponDef) then return end
-  
+
   local weaponType = maxWeaponDef.type
   local scatter = maxWeaponDef.accuracy + maxWeaponDef.sprayAngle
   local aoe = maxWeaponDef.damageAreaOfEffect
@@ -208,7 +208,7 @@ local function SetupUnitDef(unitDefID, unitDef)
   local mobile = unitDef.speed > 0
   local waterWeapon = maxWeaponDef.waterWeapon
   local ee = maxWeaponDef.edgeEffectiveness
-  
+
   if (maxWeaponDef.cylinderTargeting >= 100) then
     aoeDefInfo[unitDefID] = {type = "orbital", scatter = scatter}
   elseif (weaponType == "Cannon") then
@@ -249,7 +249,7 @@ local function SetupUnitDef(unitDefID, unitDef)
   else
     aoeDefInfo[unitDefID] = {type = "direct", scatter = scatter, range = maxWeaponDef.range}
   end
-  
+
   aoeDefInfo[unitDefID].aoe = aoe
   aoeDefInfo[unitDefID].cost = cost
   aoeDefInfo[unitDefID].mobile = mobile
@@ -274,7 +274,7 @@ end
 
 local function UpdateSelection()
   local sel = GetSelectedUnitsSorted()
-    
+
   local maxCost = 0
   dgunUnitDefID = nil
   notdgunUnitDefID = nil
@@ -282,20 +282,20 @@ local function UpdateSelection()
   dgunUnitID = nil
   aoeUnitID = nil
   hasSelection = false
-  
+
   for unitDefID, unitIDs in pairs(sel) do
-  	if (notdgun[unitDefID]) then 
+  	if (notdgun[unitDefID]) then
       notdgunUnitDefID = unitDefID
       --dgunUnitID = unitIDs[1]
       hasSelection = true
   	end
 
-    if (dgunInfo[unitDefID]) then 
+    if (dgunInfo[unitDefID]) then
       dgunUnitDefID = unitDefID
       dgunUnitID = unitIDs[1]
       hasSelection = true
     end
-  
+
     if (aoeDefInfo[unitDefID]) then
       local currCost = UnitDefs[unitDefID].cost * #unitIDs
       if (currCost > maxCost) then
@@ -314,7 +314,7 @@ end
 
 local function DrawAoE(tx, ty, tz, aoe, ee, alphaMult, offset)
   glLineWidth(aoeLineWidthMult * aoe / mouseDistance)
-  
+
   for i=1,numAoECircles do
     local proportion = i / (numAoECircles + 1)
     local radius = aoe * proportion
@@ -331,29 +331,29 @@ end
 --dgun/noexplode
 --------------------------------------------------------------------------------
 local function DrawNoExplode(aoe, fx, fy, fz, tx, ty, tz, range)
-  
+
   local dx = tx - fx
   local dy = ty - fy
   local dz = tz - fz
-  
+
   local bx, by, bz, dist = Normalize(dx, dy, dz)
-  
+
   if (not bx or dist > range) then return end
-  
+
   local br = sqrt(bx*bx + bz*bz)
-  
+
   local wx = -aoe * bz / br
   local wz = aoe * bx / br
-  
+
   local ex = range * bx / br
   local ez = range * bz / br
-  
+
   local vertices = {{fx + wx, fy, fz + wz}, {fx + ex + wx, ty, fz + ez + wz},
                     {fx - wx, fy, fz - wz}, {fx + ex - wx, ty, fz + ez - wz}}
   local alpha = (1 - GetSecondPart()) * aoeColor[4]
   glColor(aoeColor[1], aoeColor[2], aoeColor[3], alpha)
   glLineWidth(scatterLineWidthMult / mouseDistance)
-  
+
   glBeginEnd(GL_LINES, VertexList, vertices)
 
   glColor(1,1,1,1)
@@ -367,30 +367,30 @@ end
 local function GetBallisticVector(v, dx, dy, dz, trajectory, range)
   local dr_sq = dx*dx + dz*dz
   local dr = sqrt(dr_sq)
-  
+
   if (dr > range) then return nil end
-  
+
   local d_sq = dr_sq + dy*dy
-  
+
   if (d_sq == 0) then
     return 0, v * trajectory, 0
   end
-  
+
   local root1 = v*v*v*v - 2*v*v*g*dy - g*g*dr_sq
   if (root1 < 0) then return nil end
-  
+
   local root2 = 2*dr_sq*d_sq*(v*v - g*dy - trajectory*sqrt(root1))
-  
+
   if (root2 < 0) then return nil end
-  
+
   local vr = sqrt(root2)/(2*d_sq)
   local vy
-  
-  if (r == 0 or vr == 0) 
+
+  if (r == 0 or vr == 0)
     then vy = v
     else vy = vr*dy/dr + dr*g/(2*vr)
   end
-  
+
   local bx = dx*vr/dr
   local bz = dz*vr/dr
   local by = vy
@@ -405,17 +405,17 @@ local function GetBallisticImpactPoint(v, fx, fy, fz, bx, by, bz)
   local px = fx
   local py = fy
   local pz = fz
-  
+
   local ttl = 4 * v_f / g_f
-  
+
   for i=1,ttl do
     px = px + vx_f
     py = py + vy_f
     pz = pz + vz_f
     vy_f = vy_f - g_f
-    
+
     local gwh = max(GetGroundHeight(px, pz), 0)
-    
+
     if (py < gwh) then
       local interpolate = min((py - gwh) / vy_f, 1)
       local x = px - interpolate * vx_f
@@ -423,7 +423,7 @@ local function GetBallisticImpactPoint(v, fx, fy, fz, bx, by, bz)
       return {x, max(GetGroundHeight(x, z), 0), z}
     end
   end
-  
+
   return {px, py, pz}
 end
 
@@ -435,14 +435,14 @@ local function DrawBallisticScatter(scatter, v, fx, fy, fz, tx, ty, tz, trajecto
   local dy = ty - fy
   local dz = tz - fz
   if (dx == 0 and dz == 0) then return end
-  
+
   local bx, by, bz = GetBallisticVector(v, dx, dy, dz, trajectory, range)
-  
+
   --don't draw anything if out of range
   if (not bx) then return end
-  
+
   local br = sqrt(bx*bx + bz*bz)
-  
+
   --bars
   local rx = dx / br
   local rz = dz / br
@@ -459,14 +459,14 @@ local function DrawBallisticScatter(scatter, v, fx, fy, fz, tx, ty, tz, trajecto
   local wsz = scatter * (rx - barX)
   local wlx = -scatter * (rz + barZ)
   local wlz = scatter * (rx + barX)
-  
+
   local bars = {{tx + wx, ty, tz + wz}, {tx - wx, ty, tz - wz},
                 {sx + wsx, ty, sz + wsz}, {lx + wlx, ty, lz + wlz},
                 {sx - wsx, ty, sz - wsz}, {lx - wlx, ty, lz - wlz}}
-  
+
   local scatterDiv = scatter / numScatterPoints
   local vertices = {}
-  
+
   --trace impact points
   for i = -numScatterPoints, numScatterPoints do
     local currScatter = i * scatterDiv
@@ -475,10 +475,10 @@ local function DrawBallisticScatter(scatter, v, fx, fy, fz, tx, ty, tz, trajecto
     local bx_c = bx * rMult
     local by_c = by * currScatterCos + br * currScatter
     local bz_c = bz * rMult
-    
+
     vertices[i+numScatterPoints+1] = GetBallisticImpactPoint(v, fx, fy, fz, bx_c, by_c, bz_c)
   end
-  
+
   glLineWidth(scatterLineWidthMult / mouseDistance)
   glPointSize(pointSizeMult / mouseDistance)
   glColor(scatterColor)
@@ -498,9 +498,9 @@ local function DrawWobbleScatter(scatter, fx, fy, fz, tx, ty, tz, rangeScatter, 
   local dx = tx - fx
   local dy = ty - fy
   local dz = tz - fz
-  
+
   local bx, by, bz, d = Normalize(dx, dy, dz)
-  
+
   glColor(scatterColor)
   glLineWidth(scatterLineWidthMult / mouseDistance)
   if d and range then
@@ -521,22 +521,22 @@ local function DrawDirectScatter(scatter, fx, fy, fz, tx, ty, tz, range, unitRad
   local dx = tx - fx
   local dy = ty - fy
   local dz = tz - fz
-  
+
   local bx, by, bz, d = Normalize(dx, dy, dz)
-  
+
   if (not bx or d == 0 or d > range) then return end
-  
+
   local ux = bx * unitRadius / sqrt(1 - by*by)
   local uz = bz * unitRadius / sqrt(1 - by*by)
-  
+
   local cx = -scatter * uz
   local cz = scatter * ux
   local wx = -scatter * dz / sqrt(1 - by*by)
   local wz = scatter * dx / sqrt(1 - by*by)
-  
+
   local vertices = {{fx + ux + cx, fy, fz + uz + cz}, {tx + wx, ty, tz + wz},
                     {fx + ux - cx, fy, fz + uz - cz}, {tx - wx, ty, tz - wz}}
-  
+
   glColor(scatterColor)
   glLineWidth(scatterLineWidthMult / mouseDistance)
   glBeginEnd(GL_LINES, VertexList, vertices)
@@ -550,22 +550,22 @@ end
 local function DrawDroppedScatter(aoe, ee, scatter, v, fx, fy, fz, tx, ty, tz, salvoSize, salvoDelay)
   local dx = tx - fx
   local dz = tz - fz
-  
+
   local bx, _, bz = Normalize(dx, 0, dz)
-  
+
   if (not bx) then return end
-  
+
   local vertices = {}
   local currScatter = scatter * v * sqrt(2*fy/g)
   local alphaMult = min(v * salvoDelay / aoe, 1)
-  
+
   for i=1,salvoSize do
     local delay = salvoDelay * (i - (salvoSize + 1) / 2)
     local dist = v * delay
     local px_c = dist * bx + tx
     local pz_c = dist * bz + tz
     local py_c = max(GetGroundHeight(px_c, pz_c), 0)
-    
+
     DrawAoE(px_c, py_c, pz_c, aoe, ee, alphaMult, -delay)
     glColor(scatterColor[1], scatterColor[2], scatterColor[3], scatterColor[4] * alphaMult)
     glLineWidth(scatterLineWidthMult / mouseDistance)
@@ -609,16 +609,16 @@ function widget:Shutdown()
 end
 
 function widget:DrawWorld()
- 
+
   if not hasSelection then return end
   local _, cmd, _ = GetActiveCommand()
-  
+
   if (cmd == CMD_MANUALFIRE and dgunUnitDefID) then
     mouseDistance = GetMouseDistance() or 1000
     local tx, ty, tz = GetMouseTargetPosition()
     if (not tx) then return end
     local info = dgunInfo[dgunUnitDefID]
-    local fx, fy, fz = GetUnitPosition(dgunUnitID)   
+    local fx, fy, fz = GetUnitPosition(dgunUnitID)
     if (not fx) then return end
     local angle = math.atan2(fx-tx,fz-tz) + (math.pi/2.1)
 	local offset_x = (sin(angle)*13)
@@ -632,30 +632,30 @@ function widget:DrawWorld()
     glColor(1,1,1,1)
     return
   end
-  
-  if (cmd == CMD_ATTACK and notdgunUnitDefID) or (cmd ~= CMD_ATTACK or not aoeUnitDefID) and not (cmd == CMD_MANUALFIRE and notdgunUnitDefID) then 
+
+  if (cmd == CMD_ATTACK and notdgunUnitDefID) or (cmd ~= CMD_ATTACK or not aoeUnitDefID) and not (cmd == CMD_MANUALFIRE and notdgunUnitDefID) then
     UpdateSelection()
-    return 
+    return
   end
 
   if overrideselectionID then
     aoeUnitDefID = overrideselectionID
   end
-  
+
   mouseDistance = GetMouseDistance() or 1000
   local tx, ty, tz = GetMouseTargetPosition()
   if (not tx) then return end
-  
+
   local info = aoeDefInfo[aoeUnitDefID]
-  
+
   local fx, fy, fz = GetUnitPosition(aoeUnitID)
   if (not fx) then return end
   if (not info.mobile) then fy = fy + GetUnitRadius(aoeUnitID) end
-  
+
   if (not info.waterWeapon) then ty = max(0, ty) end
-  
+
   local weaponType = info.type
-  
+
   if (weaponType == "ballistic") then
     local states = GetUnitStates(aoeUnitID)
     local trajectory

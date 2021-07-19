@@ -34,7 +34,7 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 1000,
 		unitname = "corurad",
-		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
+		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			buildpic = "corurad.dds",
 			faction = "CORE",

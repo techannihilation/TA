@@ -23,8 +23,8 @@ return {
 		downloadable = 1,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
-		footprintx = 3,
-		footprintz = 3,
+		footprintx = 4,
+		footprintz = 4,
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nuada",
 		noautofire = false,
-		
+
 		objectname = "tllnuada",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
