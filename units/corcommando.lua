@@ -1,12 +1,12 @@
 return {
-	commando = {
+	corcommando = {
 		acceleration = 0.1,
 		brakerate = 0.45,
 		buildcostenergy = 18776,
 		buildcostmetal = 1186,
 		builddistance = 250,
 		builder = true,
-		buildpic = "commando.dds",
+		buildpic = "corcommando.dds",
 		buildtime = 15000,
 		canassist = false,
 		canattack = true,
@@ -45,10 +45,10 @@ return {
 		mincloakdistance = 75,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
-		name = "Commando",
+		name = "corcommando",
 		noautofire = false,
 
-		objectname = "COMMANDO",
+		objectname = "corcommando",
 		radaremitheight = 51,
 		seismicsignature = 2,
 		selfdestructas = "SMALL_UNIT",
@@ -61,7 +61,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.419,
 		turnrate = 1016,
-		unitname = "commando",
+		unitname = "corcommando",
 		upright = true,
 		workertime = 1750,
 		buildoptions = {
@@ -76,7 +76,7 @@ return {
 			[9] = "cormine5",
 		},
 		customparams = {
-			buildpic = "commando.dds",
+			buildpic = "corcommando.dds",
 			faction = "CORE",
 			paralyzemultiplier = 0.15,
 		},
@@ -121,7 +121,7 @@ return {
 			},
 		},
 		weapondefs = {
-			commandolas = {
+			corcommandolas = {
 				areaofeffect = 8,
 				beamtime = 0.1,
 				burstrate = 0.2,
@@ -163,7 +163,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
-				def = "COMMANDOLAS",
+				def = "corcommandoLAS",
 				onlytargetcategory = "SURFACE",
 			},
 		},

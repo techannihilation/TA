@@ -41,9 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Tracker",
 		noautofire = false,
-		
 		objectname = "TLLTRAQ",
-		onoffable = true,
 		radardistance = 450,
 		radaremitheight = 45,
 		selfdestructas = "BIG_UNITEX",

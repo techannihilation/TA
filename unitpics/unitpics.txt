@@ -349,7 +349,7 @@ clb.dds
 cmetalmakerlvl1.dds
 cmetalmakerlvl2.dds
 cmgeo.dds
-commando.dds
+corcommando.dds
 armconcealer.dds
 armconsul.dds
 coraak.dds
