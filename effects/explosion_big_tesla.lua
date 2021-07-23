@@ -1,39 +1,6 @@
--- explosion_big_tesla_base
 -- explosion_big_tesla
--- explosion_big_tesla_controller
 
 return {
-  ["explosion_big_tesla_base"] = {
-    smoke = {
-      air                = true,
-      class              = [[CSimpleParticleSystem]],
-      count              = 2,
-      ground             = true,
-      water              = true,
-      properties = {
-        airdrag            = 1,
-        colormap           = [[0 0 0 0  0.6 0.6 1 .1     0.7 .7 0.95 .8  	0 0 0 0.01]],
-        directional        = true,
-        emitrot            = 30,
-        emitrotspread      = [[0 r-360 r360]],
-        emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 0 r.15, 0]],
-        numparticles       = 1,
-        particlelife       = 15,
-        particlelifespread = 5,
-        particlesize       = 0.8,
-        particlesizespread = 8,
-        particlespeed      = 0,
-        particlespeedspread = 0,
-        pos                = [[0 r-10 r10, 5 r20, 0 r-10 r10]],
-        sizegrowth         = [[0.50 r1.6 r-1.6]],
-        sizemod            = 1.0,
-        texture            = [[GenericSmokeCloud1]],
-        useairlos          = true,
-      },
-    },
-  },
-
   ["explosion_big_tesla"] = {
     explosionball = {
       air                = true,
@@ -147,21 +114,6 @@ return {
         ttl                = [[80 r-4 r4]],
       },
     },
-    trails = {
-      air                = false,
-      class              = [[CExpGenSpawner]],
-      count              = 1,
-      ground             = true,
-      water              = true,
-      properties = {
-        damage             = [[0 r100]],
-        delay              = 0,
-        dir                = [[0,1,0]],
-        explosiongenerator = [[custom:Explosion_big_Tesla_Controller]],
-        pos                = [[0,0,0]],
-        speed              = [[0,0,0]],
-      },
-    },
     waterball = {
       air                = false,
       class              = [[CSimpleParticleSystem]],
@@ -219,23 +171,4 @@ return {
       },
     },
   },
-
-  ["explosion_big_tesla_controller"] = {
-    trails = {
-      air                = true,
-      class              = [[CExpGenSpawner]],
-      count              = 70,
-      ground             = true,
-      water              = true,
-      properties = {
-        damage             = [[0 i0.5]],
-        delay              = [[8 i3.0]],
-        dir                = [[0,1,0]],
-        explosiongenerator = [[custom:Explosion_big_Tesla_Base]],
-        pos                = [[1 d.03 y1 i2 x1 y0 d1 s1 x0,-1 y1 i.5 p2 x1 y1 2 x0 a1,1.58 d1 s1 x0]],
-        speed              = [[0,0,0]],
-      },
-    },
-  },
-
 }
