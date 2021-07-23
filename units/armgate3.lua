@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "175 40 100",
 		collisionvolumetype = "CylX",
 		corpse = "dead",
-		description = "Plasma Deflector",
+		description = "Tech Level 5",
 		energystorage = 15000,
 		energyuse = 0,
 		explodeas = "crawl_blast",
@@ -34,9 +34,8 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Keeper T5",
+		name = "Plasma Deflector",
 		noautofire = false,
-		
 		norestrict = 1,
 		objectname = "armgate3",
 		radaremitheight = 39,
@@ -52,7 +51,7 @@ return {
 		customparams = {
 			buildpic = "armgate3.dds",
 			faction = "ARM",
-			shield_power = 600000,
+			shield_power = 450000,
 			shield_radius = 2200,
 		},
 		featuredefs = {
@@ -130,7 +129,7 @@ return {
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldmaxspeed = 3500,
-				shieldpower = 500000,
+				shieldpower = 450000,
 				shieldpowerregen = 3000,
 				shieldpowerregenenergy = 30000,
 				shieldradius = 2200,

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, axis, barrel, flare;
+piece  base, body, turret, axis, flare;
 
 static-var  restore_delay;
 
@@ -55,11 +55,6 @@ Create()
 	start-script SmokeUnit();
 }
 
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
-}
-
 RestoreAfterDelay()
 {
 	sleep restore_delay;
@@ -100,23 +95,25 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare;
-	explode base type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode barrel type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode axis type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
-	explode turret type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
-	explode barrel type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
+		explode body type NOHEATCLOUD | FALL;
+		explode axis type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL;
+	explode axis type NOHEATCLOUD | FALL;
+	explode turret type NOHEATCLOUD | FALL;
 	return (corpsetype);
 }

@@ -1,7 +1,7 @@
 3.93 > 3.94
 2021-07-23
 Balance :
- - T5 Plasma Deflector : Decrease Power
+ - T5 Plasma Deflector : Decrease Power -15%)
  - Gorg T3 Core : Decrease Hp 385K=>345K
 
 Improvment :
