@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, pad, beam1a, beam1b, beam2a, beam2b, beam3a, beam3b,
-       wheel1, wheel2, wheel3, radar, nano1, nano2,
+       wheel1, wheel2, wheel3, nano1, nano2,
        nano3, supports;
 
 static-var  Static_Var_1, unitviewer, statechg_DesiredState, statechg_StateChanging;
@@ -114,21 +114,12 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade wheel1;
-	dont-shade wheel2;
-	dont-shade wheel3;
-	dont-shade radar;
-	turn pad to y-axis <90.021978> now;
+	turn pad to y-axis <90.0> now;
 	hide pad;
 	unitviewer = FALSE;
 	Static_Var_1 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
-	spin radar around y-axis speed <30.005495>;
 }
 
 QueryNanoPiece(piecenum)
@@ -227,7 +218,6 @@ Killed(severity, corpsetype)
 		explode wheel2 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
 		explode wheel3 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
 		explode pad type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode radar type NOHEATCLOUD | SMOKE;
 		explode supports type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
@@ -245,25 +235,6 @@ Killed(severity, corpsetype)
 		explode wheel2 type NOHEATCLOUD | SMOKE | BITMAP5;
 		explode wheel3 type NOHEATCLOUD | SMOKE | BITMAP5;
 		explode pad type NOHEATCLOUD | FIRE | BITMAP5;
-		explode radar type NOHEATCLOUD | FIRE;
-		explode supports type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode beam1a type NOHEATCLOUD | FIRE | BITMAP2;
-		explode beam2a type NOHEATCLOUD | FIRE | BITMAP3;
-		explode beam1b type NOHEATCLOUD | FIRE | BITMAP2;
-		explode beam2b type NOHEATCLOUD | FIRE | BITMAP3;
-		explode beam3a type NOHEATCLOUD | FIRE | BITMAP2;
-		explode beam3b type NOHEATCLOUD | FIRE | BITMAP3;
-		explode wheel1 type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode wheel2 type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode wheel3 type NOHEATCLOUD | SHATTER | BITMAP5;
-		explode pad type NOHEATCLOUD | FIRE | BITMAP5;
-		explode radar type NOHEATCLOUD | FIRE;
 		explode supports type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
@@ -279,7 +250,6 @@ Killed(severity, corpsetype)
 	explode wheel2 type NOHEATCLOUD | SHATTER | BITMAP5;
 	explode wheel3 type NOHEATCLOUD | SHATTER | BITMAP5;
 	explode pad type NOHEATCLOUD | FIRE | BITMAP5;
-	explode radar type NOHEATCLOUD | FIRE;
 	explode supports type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

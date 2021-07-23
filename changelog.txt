@@ -1,12 +1,21 @@
+3.93 > 3.94
+2021-07-23
+Balance :
+ - T5 Plasma Deflector : Decrease Power
+ - Gorg T3 Core : Decrease Hp 385K=>345K
+
+Improvment :
+ - All TSAR : Increase Energy / Metal cost, Timebuild and reload Time and cost by 100%
+ - PlanetKiller Talon : Increase Energy by 120% and Metal cost by 80%. Decrease range 72K=>12K and increase Aoe and damage (5K=>25K)
+ - Rework T2 Fast Model.
+ - Rework T3 Juggernault Arm. New name = Juggo. Decrease model size, stats & cost. Add jump Feature.
+
 3.92 > 3.93
 2021-07-16
-
 Balance :
  - Thor T3 Tank Arm : Decrease Metal Cost (15KM=>14KM)
 
 Improvment :
- - Rework T2 Fast Model.
- - Rework T3 Juggernault Arm. New name = Juggo. Decrease model size, stats & cost. Add jump Feature.
  - T3 Gunship Air : Increase modelsize
  - Add T3 Air Sea Lab for all faction
  - Pluton gun Arm (Dog T3 fox, T3 cruser, Rex T3 Amphibious) : Decrease Reload and damage / S. Same Balance

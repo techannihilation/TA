@@ -2,7 +2,7 @@ return {
 	corgorg = {
 		acceleration = 0.05,
 		brakerate = 0.375,
-		buildcostenergy = 505007,
+		buildcostenergy = 475007,
 		buildcostmetal = 30023,
 		builder = false,
 		buildpic = "corgorg.dds",
@@ -28,7 +28,7 @@ return {
 		losemitheight = 77,
 		maneuverleashlength = 640,
 		mass = 30023,
-		maxdamage = 385475,
+		maxdamage = 345475,
 		maxslope = 14,
 		maxvelocity = 0.75,
 		maxwaterdepth = 12,
