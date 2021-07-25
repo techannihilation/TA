@@ -57,7 +57,7 @@ return {
 		turnrate = 1210,
 		unitname = "corfast",
 		upright = true,
-		workertime = 150,
+		workertime = 90,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

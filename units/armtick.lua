@@ -51,7 +51,7 @@ return {
 		turninplacespeedlimit = 1.518,
 		turnrate = 925,
 		unitname = "armtick",
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			[4] = "armnanotc",
 			[5] = "armeyes",

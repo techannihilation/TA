@@ -49,7 +49,7 @@ return {
 		turninplacespeedlimit = 6.6,
 		turnrate = 513,
 		unitname = "abuilderlvl1",
-		workertime = 90,
+		workertime = 45,
 		buildoptions = {
 			[1] = "armnanotc",
 			[2] = "armeyes",

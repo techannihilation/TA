@@ -52,7 +52,7 @@ return {
 		turninplacespeedlimit = 1.584,
 		turnrate = 388,
 		unitname = "talon_dioptase",
-		workertime = 200,
+		workertime = 100,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

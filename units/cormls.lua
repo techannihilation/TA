@@ -34,7 +34,7 @@ return {
 		maxdamage = 1400,
 		maxvelocity = 2.1,
 		metalmake = 0.2,
-		metalstorage = 20,		
+		metalstorage = 20,
 		minwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "BOAT4",
@@ -53,7 +53,7 @@ return {
 		turninplacespeedlimit = 1.386,
 		turnrate = 377,
 		unitname = "cormls",
-		workertime = 200,
+		workertime = 120,
 		buildoptions = {
 			[1] = "coreyes",
 			--[2] = "",

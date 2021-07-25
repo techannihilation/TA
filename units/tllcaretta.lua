@@ -3,7 +3,7 @@ return {
 		acceleration = 0.075,
 		brakerate = 0.12,
 		buildcostenergy = 4205,
-		buildcostmetal = 455,
+		buildcostmetal = 255,
 		builddistance = 150,
 		builder = true,
 		buildpic = "tllcaretta.dds",
@@ -50,7 +50,7 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 1020,
 		unitname = "tllcaretta",
-		workertime = 220,
+		workertime = 90,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

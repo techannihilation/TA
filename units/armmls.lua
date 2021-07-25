@@ -51,7 +51,7 @@ return {
 		turninplacespeedlimit = 1.584,
 		turnrate = 388,
 		unitname = "armmls",
-		workertime = 200,
+		workertime = 100,
 		buildoptions = {
 			[1] = "armeyes",
 			--[2] = "",

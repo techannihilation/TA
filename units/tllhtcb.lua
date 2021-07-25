@@ -53,7 +53,7 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 550,
 		unitname = "tllhtcb",
-		workertime = 300,
+		workertime = 270,
 		buildoptions = {
 			--[1] = "tllsolar",
 			--[2] = "tllmex",

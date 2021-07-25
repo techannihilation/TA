@@ -48,7 +48,7 @@ return {
 		turninplacespeedlimit = 0.66,
 		turnrate = 1020,
 		unitname = "coreleopard",
-		workertime = 200,
+		workertime = 90,
 		buildoptions = {
 			[4] = "cornanotc",
 			[5] = "coreyes",

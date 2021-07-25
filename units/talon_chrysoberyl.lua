@@ -57,7 +57,7 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 220,
 		unitname = "talon_chrysoberyl",
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",
@@ -98,7 +98,7 @@ return {
 			dead = {
 				blocking = true,
 				damage = 2323,
-				description = "Combat engineer Hover Wreckage",
+				description = "Hover Wreckage",
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,

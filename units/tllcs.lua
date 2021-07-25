@@ -54,7 +54,7 @@ return {
 		turnrate = 421,
 		unitname = "tllcs",
 		waterline = 4,
-		workertime = 130,
+		workertime = 120,
 		buildoptions = {
 			[1] = "tllmstor",
 			[2] = "tllestor",

@@ -56,7 +56,7 @@ return {
 		turnrate = 990,
 		unitname = "talon_ack",
 		upright = true,
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			--[1] = "talon_solar",
 			--[2] = "talon_mex",

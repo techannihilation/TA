@@ -55,7 +55,7 @@ return {
 		turnrate = 1100,
 		unitname = "armfark",
 		upright = true,
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			[1] = "armnanotc",
 			[2] = "armeyes",

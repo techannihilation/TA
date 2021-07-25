@@ -53,10 +53,10 @@ return {
 		trackwidth = 31,
 		turninplace = 1,
 		turninplaceanglelimit = 60,
-		turninplacespeedlimit = 1.83678,
+		turninplacespeedlimit = 1.8,
 		turnrate = 635,
 		unitname = "corassis",
-		workertime = 150,
+		workertime = 90,
 		buildoptions = {
 			--[1] = "corsolar",
 			--[2] = "cormex",

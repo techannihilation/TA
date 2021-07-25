@@ -3,7 +3,7 @@ return {
 		acceleration = 0.36,
 		brakerate = 0.21,
 		buildcostenergy = 3605,
-		buildcostmetal = 403,
+		buildcostmetal = 223,
 		builddistance = 160,
 		builder = true,
 		buildpic = "tllarchnano.dds",
@@ -53,7 +53,7 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 1020,
 		unitname = "tllarchnano",
-		workertime = 180,
+		workertime = 90,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

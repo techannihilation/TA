@@ -1,4 +1,3 @@
-//Core Combat Engineer - 'Combat Engineer'
 #define TA
 
 piece flare, nanopoint, GP, pelvis, torso, lthigh, rthigh, lleg, rleg, ruparm, luparm, nanoarm, laser, barrel;
@@ -65,7 +64,7 @@ walk()
 			turn rleg to x-axis <22.857143> now;
 			turn lleg to x-axis <43.604396> now;
 			if (bAiming == FALSE)
-				{			
+				{
 				turn torso to x-axis <0.000000> now;
 				turn luparm to x-axis <0.000000> now;
 				turn ruparm to x-axis <-13.714286> now;
@@ -296,7 +295,7 @@ walk()
 			turn lleg to x-axis <22.857143> now;
 			if (bAiming == FALSE)
 				{
-				turn torso to x-axis <0.000000> now;	
+				turn torso to x-axis <0.000000> now;
 				turn luparm to x-axis <-7.032967> now;
 				turn ruparm to x-axis <0.000000> now;
 				turn laser to x-axis <-12.659341> now;
@@ -315,7 +314,7 @@ walk()
 			turn rleg to x-axis <37.274725> now;
 			turn lleg to x-axis <25.318681> now;
 			if (bAiming == FALSE)
-				{ 
+				{
 				turn torso to x-axis <-2.637363> now;
 				turn luparm to x-axis <-11.956044> now;
 				turn ruparm to x-axis <7.906593> now;
@@ -356,7 +355,7 @@ walk()
 			turn rleg to x-axis <26.021978> now;
 			turn lleg to x-axis <25.489011> now;
 			if (bAiming == FALSE)
-				{	
+				{
 				turn torso to x-axis <-2.637363> now;
 				turn luparm to x-axis <-22.505495> now;
 				turn ruparm to x-axis <31.648352> now;
@@ -436,7 +435,7 @@ walk()
 			turn rleg to x-axis <11.252747> now;
 			turn lleg to x-axis <58.373626> now;
 			if (bAiming == FALSE)
-				{	
+				{
 				turn torso to x-axis <7.736264> now;
 				turn luparm to x-axis <-24.967033> now;
 				turn ruparm to x-axis <34.104396> now;
@@ -486,10 +485,10 @@ walk()
 
 StopWalk()
 	{
-	
+
 		turn pelvis to y-axis <0> speed <100>;
-		turn pelvis to z-axis <0> speed <100>; 
-		
+		turn pelvis to z-axis <0> speed <100>;
+
 		if (bAiming == 0)
 			{
 			turn torso to x-axis <0> speed <100>;
@@ -498,73 +497,73 @@ StopWalk()
 			turn laser to x-axis <0> speed <100>;
 			turn nanoarm to x-axis <0> speed <100>;
 			}
-			
+
 		turn rthigh to x-axis <0> now;
 		turn rleg to x-axis <0> now;
 		turn lthigh to x-axis <0> now;
 		turn lleg to x-axis <0> now;
-	
+
 	}
-	
+
 StartMoving()
 	{
-	
+
 		signal SIG_MOVE;
 		set-signal-mask SIG_MOVE;
 		bMoving = TRUE;
 		call-script walk();
-		
+
 	}
-	
+
 StopMoving()
 	{
-	
+
 		signal SIG_MOVE;
 		bMoving = FALSE;
 		call-script StopWalk();
-		
+
 	}
-	
+
 Create()
 	{
 		restore_delay = 2000;
 		hide flare;
 		bAiming = 0;
 		bMoving = FALSE;
-				
+
 	}
-		
+
 RestoreAfterDelay()
 	{
-	
+
 		sleep 4000;
 		turn torso to y-axis <0> speed <100>;
 		//turn luparm to x-axis <0> speed <100>;
 		//turn nanoarm to x-axis <0> speed <100>;
 		turn ruparm to x-axis <0> speed <100>;
 		turn laser to x-axis <0> speed <100>;
-		
+
 		wait-for-turn torso around y-axis;
 		//wait-for-turn luparm around x-axis;
 		//wait-for-turn nanoarm around x-axis;
 		wait-for-turn ruparm around x-axis;
 		wait-for-turn laser around x-axis;
-		
+
 		bAiming = 0;
-		
+
 	}
-	
+
 SweetSpot(piecenum)
 {
 		piecenum = GP;
 }
-	
+
 QueryNanoPiece(piecenum)
 {
-	
+
 		piecenum = nanopoint;
 }
-	
+
 AimPrimary(heading, pitch)
 {
 		bAiming = 1;
@@ -573,54 +572,54 @@ AimPrimary(heading, pitch)
 		turn torso to y-axis heading speed <120>;
 		turn ruparm to x-axis <-45.000000> speed <50>;
 		turn laser to x-axis <-45.000000> - pitch speed <50>;
-		wait-for-turn torso around y-axis;   
+		wait-for-turn torso around y-axis;
 		wait-for-turn ruparm around x-axis;
 		wait-for-turn laser around x-axis;
 		start-script RestoreAfterDelay();
 		return (TRUE);
 }
-	
+
 FirePrimary()
 {
 		show flare;
 		sleep 120;
 		hide flare;
 }
-	
+
 QueryPrimary(piecenum)
 {
 		piecenum = flare;
 }
-	
+
 AimFromPrimary(piecenum)
-{	
+{
 		piecenum = torso;
 }
-	
+
 StartBuilding(heading, pitch)
-{		
+{
 		signal SIG_AIM;
 		set-signal-mask SIG_AIM;
-		
+
 		bAiming = 1;
-		
+
 		turn torso to y-axis heading speed <100>;
-		
+
 		turn luparm to x-axis <-50> speed <100>;
 		turn nanoarm to x-axis <-20> speed <100>;
-		
+
 		wait-for-turn torso around y-axis;
 		wait-for-turn luparm around x-axis;
 		wait-for-turn luparm around x-axis;
-			
+
 		set INBUILDSTANCE to TRUE;
 }
-	
+
 StopBuilding()
-{	
+{
 		set INBUILDSTANCE to FALSE;
 		call-script RestoreAfterDelay();
-}	
+}
 
 Killed(severity, corpsetype)
 {
@@ -668,6 +667,5 @@ Killed(severity, corpsetype)
 	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode laser type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	return(corpsetype);	
+	return(corpsetype);
 }
-	

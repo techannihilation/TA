@@ -41,7 +41,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Fred",
 		noautofire = false,
-
 		objectname = "corfred",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -61,7 +60,7 @@ return {
 		turninplacespeedlimit = 0.9504,
 		turnrate = 300,
 		unitname = "corfred",
-		workertime = 150,
+		workertime = 90,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

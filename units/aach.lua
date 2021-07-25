@@ -51,7 +51,7 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 350,
 		unitname = "aach",
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

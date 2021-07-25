@@ -4,6 +4,7 @@ return {
 		brakerate = 1.125,
 		buildcostenergy = 4674,
 		buildcostmetal = 189,
+		builddistance = 180,
 		builder = false,
 		buildpic = "armfast.dds",
 		buildtime = 3250,

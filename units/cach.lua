@@ -39,7 +39,6 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Freaket",
 		noautofire = false,
-
 		objectname = "CACH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -52,7 +51,7 @@ return {
 		turninplacespeedlimit = 1.056,
 		turnrate = 350,
 		unitname = "cach",
-		workertime = 150,
+		workertime = 90,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

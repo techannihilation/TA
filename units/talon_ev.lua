@@ -60,7 +60,7 @@ return {
 		turninplacespeedlimit = 1.782,
 		turnrate = 535,
 		unitname = "talon_ev",
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			--[1] = "talon_solar",
 			--[2] = "talon_mex",

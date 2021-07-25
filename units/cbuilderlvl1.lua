@@ -43,7 +43,6 @@ return {
 		metalmake = 0.1,
 		metalstorage = 25,
 		name = "Kalupper",
-		
 		objectname = "CBuilderLvl1.s3o",
 		radardistance = 0,
 		radaremitheight = 27,
@@ -55,7 +54,7 @@ return {
 		turninplacespeedlimit = 5.28,
 		turnrate = 353,
 		unitname = "cbuilderlvl1",
-		workertime = 100,
+		workertime = 50,
 		buildoptions = {
 			--[1] = "corsolar",
 			--[2] = "cormex",

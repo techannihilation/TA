@@ -41,7 +41,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Marvin",
 		noautofire = false,
-
 		objectname = "armmarv",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -61,7 +60,7 @@ return {
 		turninplacespeedlimit = 0.9834,
 		turnrate = 311,
 		unitname = "armmarv",
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			--[1] = "",
 			--[2] = "",

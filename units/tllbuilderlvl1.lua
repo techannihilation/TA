@@ -54,7 +54,7 @@ return {
 		turninplacespeedlimit = 4.62,
 		turnrate = 353,
 		unitname = "tllbuilderlvl1",
-		workertime = 180,
+		workertime = 120,
 		buildoptions = {
 			--[1] = "tllsolar",
 			--[2] = "tllmex",

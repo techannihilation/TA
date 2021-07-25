@@ -42,7 +42,6 @@ return {
 		movementclass = "TANK3",
 		name = "armconsul",
 		noautofire = false,
-
 		objectname = "armconsul",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -62,7 +61,7 @@ return {
 		turninplacespeedlimit = 1.782,
 		turnrate = 635,
 		unitname = "armconsul",
-		workertime = 135,
+		workertime = 80,
 		buildoptions = {
 			[4] = "armnanotc",
 			[5] = "armeyes",
