@@ -1,15 +1,17 @@
 3.93 > 3.94
 2021-07-23
 Balance :
+ - All TSAR : Increase Energy / Metal cost, Timebuild and reload Time and cost by 100%
+ - PlanetKiller Talon : Increase Energy by 120% and Metal cost by 80%. Decrease range 72K=>12K and increase Aoe and damage (5K=>25K)
  - T5 Plasma Deflector : Decrease Power -15%)
  - Gorg T3 Core : Decrease Hp 385K=>345K
  - All engineer : set buildpower same than t1 Cons
+ - Decrease HP for T4 MEX (18K=>15K)
 
 Improvment :
- - All TSAR : Increase Energy / Metal cost, Timebuild and reload Time and cost by 100%
- - PlanetKiller Talon : Increase Energy by 120% and Metal cost by 80%. Decrease range 72K=>12K and increase Aoe and damage (5K=>25K)
- - Rework T2 Fast Model.
- - Rework T3 Juggernault Arm. New name = Juggo. Decrease model size, stats & cost. Add jump Feature.
+ - Rework TLL Sat Cons Model
+ - Rework T2 Fast Model
+ - Rework T3 Juggernault Arm. New name = Juggo. Decrease model size, stats & cost. Add jump Feature
 
 3.92 > 3.93
 2021-07-16

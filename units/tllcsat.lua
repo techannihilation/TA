@@ -43,7 +43,6 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "tllcsat",
-		script = "sat_construction.cob",
 		radaremitheight = 6,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 750,
@@ -58,7 +57,7 @@ return {
 		unitname = "tllcsat",
 		usepiececollisionvolumes = true,
 		usepieceselectionvolumes = true,
-		workertime = 270,
+		workertime = 300,
 		buildoptions = {
 			[1] = "tllmegacoldfus",
 			[2] = "tllemex",
