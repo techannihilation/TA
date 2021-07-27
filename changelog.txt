@@ -1,5 +1,5 @@
 3.93 > 3.94
-2021-07-23
+2021-07-27
 Balance :
  - All TSAR : Increase Energy / Metal cost, Timebuild and reload Time and cost by 100%
  - PlanetKiller Talon : Increase Energy by 120% and Metal cost by 80%. Decrease range 72K=>12K and increase Aoe and damage (5K=>25K)
