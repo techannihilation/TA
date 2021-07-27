@@ -45,6 +45,8 @@ return {
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
+		reclaimspeed = 300,
+		repairspeed = 300,
 		selfdestructas = "SMALL_UNIT",
 		shownanospray = false,
 		sightdistance = 300,

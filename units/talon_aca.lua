@@ -42,6 +42,8 @@ return {
 		noautofire = false,
 		objectname = "talon_aca",
 		seismicsignature = 0,
+		reclaimspeed = 45,
+		repairspeed = 45,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 383.5,
 		shownanospray = false,

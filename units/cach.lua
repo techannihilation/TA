@@ -41,6 +41,8 @@ return {
 		noautofire = false,
 		objectname = "CACH",
 		radaremitheight = 25,
+		reclaimspeed = 45,
+		repairspeed = 45,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 270,

@@ -41,6 +41,8 @@ return {
 		noautofire = false,
 		objectname = "corach",
 		radaremitheight = 25,
+		reclaimspeed = 90,
+		repairspeed = 90,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 270,

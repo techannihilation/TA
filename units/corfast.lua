@@ -44,6 +44,8 @@ return {
 		noautofire = false,
 		objectname = "CORFAST",
 		radaremitheight = 34,
+		reclaimspeed = 45,
+		repairspeed = 45,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,

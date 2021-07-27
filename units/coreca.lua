@@ -42,7 +42,8 @@ return {
 		noautofire = false,
 		objectname = "CORECA",
 		radaremitheight = 7.5,
-		seismicsignature = 0,
+		reclaimspeed = 150,
+		repairspeed = 150,
 		selfdestructas = "BIG_UNIT_VTOL",
 		shownanospray = false,
 		sightdistance = 450,
@@ -75,7 +76,7 @@ return {
 			[19] = "corsilo1",
 			[20] = "corint1",
 			[21] = "corbuzz2",
-			[22] = "corplat",	
+			[22] = "corplat",
 			[23] = "coreplat",
 		},
 		customparams = {

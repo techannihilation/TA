@@ -43,7 +43,8 @@ return {
 		name = "Construction Aircraft",
 		noautofire = false,
 		objectname = "ARMCA",
-		seismicsignature = 0,
+		reclaimspeed = 20,
+		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		shownanospray = false,
 		sightdistance = 390,
@@ -54,7 +55,7 @@ return {
 		turninplacespeedlimit = 5.2404,
 		turnrate = 110,
 		unitname = "armca",
-		workertime = 45,
+		workertime = 40,
 		buildoptions = {
 			[1] = "armsolar",
 			[2] = "armadvsol",

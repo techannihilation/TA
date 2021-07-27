@@ -41,10 +41,10 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-
 		objectname = "CORACV",
 		radaremitheight = 24,
-		seismicsignature = 0,
+		reclaimspeed = 90,
+		repairspeed = 90,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 295,

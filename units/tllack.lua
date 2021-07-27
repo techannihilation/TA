@@ -39,6 +39,8 @@ return {
 		noautofire = false,
 		objectname = "TLLACK",
 		radaremitheight = 36,
+		reclaimspeed = 100,
+		repairspeed = 100,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 250,

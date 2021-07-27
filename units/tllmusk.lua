@@ -42,6 +42,8 @@ return {
 		noautofire = true,
 		objectname = "tllmusk",
 		radaremitheight = 25,
+		reclaimspeed = 100,
+		repairspeed = 100,
 		selfdestructas = "BIG_UNITEX",
 		shownanospray = false,
 		sightdistance = 260,

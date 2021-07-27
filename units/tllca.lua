@@ -42,6 +42,8 @@ return {
 		name = "Construction Aircraft",
 		noautofire = false,
 		objectname = "TLLCA",
+		reclaimspeed = 25,
+		repairspeed = 25,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		shownanospray = false,
 		sightdistance = 280,
@@ -51,7 +53,7 @@ return {
 		turninplacespeedlimit = 4.62,
 		turnrate = 92,
 		unitname = "tllca",
-		workertime = 55,
+		workertime = 50,
 		buildoptions = {
 			[1] = "tllsolar",
 			[2] = "tlladvsolar",

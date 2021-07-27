@@ -34,7 +34,6 @@ return {
 		noautofire = false,
 		objectname = "armspider",
 		radaremitheight = 25,
-		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 360,
 		standingfireorder = 2,

@@ -40,10 +40,11 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-
 		objectname = "tllach",
 		radaremitheight = 25,
-		script = "tllchover.cob",
+		reclaimspeed = 100,
+		repairspeed = 100,
+		script = "tllchover.cob",		
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 310,

@@ -40,6 +40,8 @@ return {
 		noautofire = false,
 		objectname = "CORASSIS",
 		radaremitheight = 25,
+		reclaimspeed = 45,
+		repairspeed = 45,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,

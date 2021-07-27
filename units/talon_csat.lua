@@ -43,6 +43,8 @@ return {
 		noautofire = false,
 		nochasecategory = "ALL",
 		objectname = "talon_csat",
+		reclaimspeed = 135,
+		repairspeed = 135,
 		script = "sat_construction.cob",
 		radaremitheight = 6,
 		selfdestructas = "BIG_UNIT",

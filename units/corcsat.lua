@@ -44,6 +44,8 @@ return {
 		nochasecategory = "ALL",
 		objectname = "corcsat",
 		radaremitheight = 6,
+		reclaimspeed = 150,
+		repairspeed = 150,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 750,
 		standingmoveorder = 1,

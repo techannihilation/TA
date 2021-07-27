@@ -42,9 +42,10 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-
 		objectname = "TLLACV",
 		radaremitheight = 25,
+		reclaimspeed = 100,
+		repairspeed = 100,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 230,

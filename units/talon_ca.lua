@@ -41,7 +41,8 @@ return {
 		name = "Construction Aircraft",
 		noautofire = false,
 		objectname = "talon_ca",
-		seismicsignature = 0,
+		reclaimspeed = 20,
+		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		shownanospray = false,
 		sightdistance = 390,
@@ -52,7 +53,7 @@ return {
 		turninplacespeedlimit = 5.2404,
 		turnrate = 110,
 		unitname = "talon_ca",
-		workertime = 50,
+		workertime = 40,
 		buildoptions = {
 			[1] = "talon_solar",
 			[2] = "talon_advsolar",

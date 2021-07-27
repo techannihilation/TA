@@ -43,6 +43,8 @@ return {
 		noautofire = false,
 		objectname = "TLLHTCB",
 		radaremitheight = 25,
+		reclaimspeed = 125,
+		repairspeed = 125,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 300,
@@ -53,7 +55,7 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 550,
 		unitname = "tllhtcb",
-		workertime = 270,
+		workertime = 250,
 		buildoptions = {
 			--[1] = "tllsolar",
 			--[2] = "tllmex",

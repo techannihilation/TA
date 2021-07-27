@@ -46,6 +46,8 @@ return {
 		noautofire = false,
 		objectname = "talon_chrysoberyl",
 		radaremitheight = 25,
+		reclaimspeed = 40,
+		repairspeed = 40,
 		script = "talon_ch.cob",
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,

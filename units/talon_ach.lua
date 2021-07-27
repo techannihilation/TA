@@ -45,6 +45,8 @@ return {
 		noautofire = false,
 		objectname = "talon_ach",
 		radaremitheight = 25,
+		reclaimspeed = 80,
+		repairspeed = 80,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 270,

@@ -44,6 +44,8 @@ return {
 		noautofire = false,
 		objectname = "CORCA",
 		radardistance = 50,
+		reclaimspeed = 22.5,
+		repairspeed = 22.5,
 		radaremitheight = 13,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -56,7 +58,7 @@ return {
 		turninplacespeedlimit = 5.082,
 		turnrate = 94,
 		unitname = "corca",
-		workertime = 50,
+		workertime = 45,
 		buildoptions = {
 			[1] = "corsolar",
 			[2] = "coradvsol",

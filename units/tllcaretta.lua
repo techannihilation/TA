@@ -40,6 +40,8 @@ return {
 		noautofire = false,
 		objectname = "tllcaretta",
 		radaremitheight = 25,
+		reclaimspeed = 45,
+		repairspeed = 45,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 400,

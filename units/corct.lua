@@ -38,6 +38,8 @@ return {
 		noautofire = false,
 		objectname = "CORCT",
 		radaremitheight = 22,
+		reclaimspeed = 90,
+		repairspeed = 90,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 235,

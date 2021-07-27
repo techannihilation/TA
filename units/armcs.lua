@@ -44,6 +44,8 @@ return {
 		objectname = "ARMCS",
 		radaremitheight = 22,
 		seismicsignature = 0,
+		reclaimspeed = 50,
+		repairspeed = 50,
 		selfdestructas = "SMALL_UNIT",
 		shownanospray = false,
 		sightdistance = 291.20001,

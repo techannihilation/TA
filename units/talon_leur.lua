@@ -43,6 +43,8 @@ return {
 		noautofire = false,
 		objectname = "talon_leur",
 		radaremitheight = 25,
+		reclaimspeed = 50,
+		repairspeed = 50,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,

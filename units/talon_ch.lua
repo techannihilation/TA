@@ -44,6 +44,8 @@ return {
 		objectname = "talon_ch",
 		radaremitheight = 25,
 		seismicsignature = 0,
+		reclaimspeed = 50,
+		repairspeed = 50,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 351,

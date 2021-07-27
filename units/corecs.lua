@@ -41,11 +41,12 @@ return {
 		movementclass = "BOAT5",
 		name = "Construction Ship",
 		noautofire = false,
-		
 		objectname = "corecs",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
+		reclaimspeed = 310,
+		repairspeed = 310,
 		selfdestructas = "SMALL_UNIT",
 		shownanospray = false,
 		sightdistance = 300,

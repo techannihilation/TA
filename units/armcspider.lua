@@ -38,6 +38,8 @@ return {
 		noautofire = false,
 		objectname = "armcspider",
 		radaremitheight = 22,
+		reclaimspeed = 80,
+		repairspeed = 80,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 300,

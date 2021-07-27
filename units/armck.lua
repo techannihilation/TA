@@ -42,6 +42,8 @@ return {
 		noautofire = false,
 		objectname = "ARMCK",
 		radaremitheight = 25,
+		reclaimspeed = 40,
+		repairspeed = 40,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,

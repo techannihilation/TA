@@ -42,6 +42,8 @@ return {
 		noautofire = false,
 		objectname = "TLLCHOVER",
 		radaremitheight = 25,
+		reclaimspeed = 60,
+		repairspeed = 60,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 310,

@@ -7,6 +7,7 @@ Balance :
  - Gorg T3 Core : Decrease Hp 385K=>345K
  - All engineer : set buildpower same than t1 Cons
  - Decrease HP for T4 MEX (18K=>15K)
+ - All Mobile Cons : Decrease Reclaim and repair Speed by 50% 90
 
 Improvment :
  - Rework TLL Sat Cons Model

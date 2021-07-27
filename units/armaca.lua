@@ -45,6 +45,8 @@ return {
 		name = "Construction Aircraft",
 		noautofire = false,
 		objectname = "ARMACA",
+		reclaimspeed = 45,
+		repairspeed = 45,
 		radaremitheight = 7,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

@@ -40,6 +40,8 @@ return {
 		noautofire = true,
 		objectname = "ARMTICK",
 		radaremitheight = 22,
+		reclaimspeed = 40,
+		repairspeed = 40,
 		selfdestructas = "BIG_UNITEX",
 		shownanospray = false,
 		sightdistance = 360,

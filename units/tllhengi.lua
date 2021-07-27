@@ -41,6 +41,8 @@ return {
 		name = "Hengi",
 		noautofire = false,
 		objectname = "tllhengi",
+		reclaimspeed = 45,
+		repairspeed = 45,
 		radaremitheight = 25,
 		script = "tllchover.cob",
 		selfdestructas = "BIG_UNIT",

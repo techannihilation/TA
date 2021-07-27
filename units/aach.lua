@@ -41,6 +41,8 @@ return {
 		noautofire = false,
 		objectname = "AACH",
 		radaremitheight = 25,
+		reclaimspeed = 40,
+		repairspeed = 40,
 		selfdestructas = "BIG_UNIT",
 		shownanospray = false,
 		sightdistance = 270,
