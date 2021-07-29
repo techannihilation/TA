@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 3754,
 		builder = true,
 		buildpic = "tllgiant.dds",
-		buildtime = 155000,
+		buildtime = 80000,
 		canassist = false,
 		canguard = true,
 		canmove = true,
@@ -36,7 +36,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Giant",
 		noautofire = false,
-		
+
 		objectname = "TLLGIANT",
 		onoffable = true,
 		radardistance = 2950,

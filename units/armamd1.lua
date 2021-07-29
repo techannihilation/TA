@@ -1,7 +1,5 @@
 return {
 	armamd1 = {
-		acceleration = 0,
-		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 97791,
 		buildcostmetal = 3565,
@@ -11,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armamd1_aoplane.dds",
 		buildpic = "armamd1.dds",
-		buildtime = 200000,
+		buildtime = 100000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "28 48 28",

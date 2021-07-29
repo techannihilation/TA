@@ -1,8 +1,5 @@
 return {
 	corfmd1 = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 100605,
 		buildcostmetal = 3035,
@@ -12,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corfmd1_aoplane.dds",
 		buildpic = "corfmd1.dds",
-		buildtime = 200000,
+		buildtime = 100000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "36 78 36",

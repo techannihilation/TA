@@ -1,8 +1,5 @@
 return {
 	tllgazelle = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 481827,
 		buildcostmetal = 33521,
@@ -12,15 +9,13 @@ return {
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "tllgazelle_aoplane.dds",
 		buildpic = "tllgazelle.dds",
-		buildtime = 835972,
+		buildtime = 250000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -3 -1",
 		collisionvolumescales = "80 34 76",
 		collisionvolumetype = "box",
 		corpse = "dead",
-		damagemodifier = 0.5,
 		description = "Ultimate Anti-Nuke (Block Only T4 ICBM)",
-		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 6,
@@ -35,7 +30,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Gazelle",
-
 		objectname = "tllgazelle",
 		radardistance = 50,
 		radaremitheight = 32,

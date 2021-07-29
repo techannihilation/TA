@@ -1,7 +1,6 @@
 return {
 	talon_damascus = {
 		acceleration = 0,
-		
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 58185,
@@ -11,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildpic = "talon_damascus.dds",
-		buildtime = 125000,
+		buildtime = 65000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "40 90 40",

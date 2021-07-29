@@ -2,14 +2,13 @@ return {
 	talon_nexus = {
 		acceleration = 0.026,
 		activatewhenbuilt = true,
-		
 		brakerate = 0.072,
 		buildangle = 16384,
 		buildcostenergy = 189000,
 		buildcostmetal = 3150,
 		builder = true,
 		buildpic = "talon_nexus.dds",
-		buildtime = 160000,
+		buildtime = 80000,
 		canassist = false,
 		canguard = true,
 		canmove = true,

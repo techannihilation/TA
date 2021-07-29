@@ -23,7 +23,7 @@ local infoMessage = {}
 
 --table.insert(infoMessage, "Merry Xmas From TECHA 1st morph is free")
 
---table.insert(infoMessage, "To Switch to OTA style icon use option widget")
+table.insert(infoMessage, "Experimentation Phase : All Anti-nuke have 0 ammo after being built")
 
 if Spring.GetModOptions() then
 	if Spring.GetModOptions().deathmode then

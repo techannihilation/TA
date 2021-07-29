@@ -2,14 +2,13 @@ return {
 	corcarry = {
 		acceleration = 0.025,
 		activatewhenbuilt = true,
-		
 		brakerate = 0.069,
 		buildangle = 16384,
 		buildcostenergy = 166089,
 		buildcostmetal = 3454,
 		builder = true,
 		buildpic = "corcarry.dds",
-		buildtime = 165000,
+		buildtime = 80000,
 		canassist = false,
 		canguard = true,
 		canmove = true,
@@ -44,7 +43,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Hive",
 		noautofire = false,
-		
+
 		objectname = "CORCARRY",
 		radardistance = 2700,
 		radaremitheight = 49,

@@ -1,14 +1,11 @@
 return {
 	corfmd2 = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 761942,
 		buildcostmetal = 23582,
 		builder = false,
 		buildpic = "corfmd2.dds",
-		buildtime = 496450,
+		buildtime = 250000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "48 78 48",

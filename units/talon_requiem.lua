@@ -1,8 +1,5 @@
 return {
 	talon_requiem = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 831000,
 		buildcostmetal = 21450,
@@ -12,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_requiem.dds",
-		buildtime = 500000,
+		buildtime = 250000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "70 90 70",

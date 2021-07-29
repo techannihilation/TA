@@ -1,3 +1,12 @@
+3.94 > 3.95
+2021-07-30
+Balance :
+ - All Antinuke have 0 munition after made. Decrease timebuild for Carrier and Structure by 50%.
+
+ Improvment :
+ - Add T4 Core SeaLab, T4 Hover Cons, T4 Urbanus Ship
+ - Tll Sat & Arm T3 Sea construction : New model
+
 3.93 > 3.94
 2021-07-27
 Balance :

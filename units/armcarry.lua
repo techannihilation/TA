@@ -2,14 +2,13 @@ return {
 	armcarry = {
 		acceleration = 0.026,
 		activatewhenbuilt = true,
-		
 		brakerate = 0.072,
 		buildangle = 16384,
 		buildcostenergy = 175270,
 		buildcostmetal = 3167,
 		builder = true,
 		buildpic = "armcarry.dds",
-		buildtime = 160000,
+		buildtime = 80000,
 		canassist = false,
 		canguard = true,
 		canmove = true,

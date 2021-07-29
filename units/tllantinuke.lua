@@ -1,6 +1,5 @@
 return {
 	tllantinuke = {
-		
 		buildangle = 4096,
 		buildcostenergy = 38225,
 		buildcostmetal = 2354,
@@ -10,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "tllantinuke_aoplane.dds",
 		buildpic = "tllantinuke.dds",
-		buildtime = 125000,
+		buildtime = 65000,
 		category = "ALL SURFACE",
 		corpse = "dead",
 		description = "Anti-Nuke",
