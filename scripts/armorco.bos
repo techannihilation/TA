@@ -277,7 +277,6 @@ Create()
 
 RestoreAfterDelay()
 {
-	set-signal-mask SIG_AIM;
 	sleep 7500;
 	turn body to y-axis <0.000000> speed <80.000000>;
 	turn ruparm to x-axis <0.000000> speed <60.000000>;
@@ -521,7 +520,6 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
 		explode ruparm type NOHEATCLOUD;
 		explode Rarm type NOHEATCLOUD;
@@ -581,7 +579,6 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER;
 		explode body type NOHEATCLOUD | SHATTER;
 		explode ruparm type NOHEATCLOUD | SHATTER;
 		explode Rarm type NOHEATCLOUD | SHATTER;
@@ -639,7 +636,6 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Rarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

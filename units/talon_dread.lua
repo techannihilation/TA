@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Dread",
 		noautofire = false,
-		
+
 		objectname = "talon_dread",
 		pushresistant = true,
 		sonardistance = 750,
@@ -197,11 +197,11 @@ return {
 				flighttime = 2.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 750,
-				reloadtime = 2,
+				reloadtime = 1,
 				soundhitdry = "xplodep2",
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
@@ -216,8 +216,8 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 225,
 				damage = {
-					default = 250,
-					subs = 500,
+					default = 125,
+					subs = 250,
 				},
 			},
 			blt = {

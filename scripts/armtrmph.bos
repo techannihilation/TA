@@ -6,7 +6,7 @@
 piece  base, body, turret1, turret2, turret3, turret4, sleeves1, sleeves2,
        sleeves3, sleeves4, barrel1a, barrel1b, barrel2a, barrel2b, barrel2c, barrel3a,
        barrel3b, barrel4a, barrel4b, barrel4c, flare1a, flare1b, flare2a, flare2b,
-       flare2c, flare3a, flare3b, flare4a, flare4b, flare4c, rockets,
+       flare2c, flare3a, flare3b, flare4a, flare4b, flare4c, rockets, depthcharge,
        r1, r2, r3, r4, r5, r6,
        wakes, wake1, wake2, wake3, wake4, wake5, wake6;
 
@@ -14,10 +14,13 @@ static-var  gun_3, Static_Var_2, gun_1, gun_2, Static_Var_5,
             restore_delay;
 
 // Signal definitions
-#define SIG_AIM_3			2
-#define SIG_AIM				8
+#define SIG_AIM				2
 #define SIG_AIM_2			16
-#define SIG_MOVE			32
+#define SIG_AIM_3			32
+#define SIG_AIM_4			64
+#define SIG_AIM_5			128
+#define SIG_AIM_6			256
+#define SIG_MOVE			512
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -186,8 +189,8 @@ AimTertiary(heading, pitch)
 
 AimWeapon4(heading, pitch)
 {
-	signal 1;
-	set-signal-mask 1;
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
 	turn turret4 to y-axis heading speed <60.000000>;
 	turn sleeves4 to x-axis <0.000000> - pitch speed <30.000000>;
 	wait-for-turn turret4 around y-axis;
@@ -198,8 +201,15 @@ AimWeapon4(heading, pitch)
 
 AimWeapon5(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	return (1);
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
 	return (1);
 }
 
@@ -343,6 +353,11 @@ AimFromWeapon5(piecenum)
 	piecenum = rockets;
 }
 
+AimFromWeapon6(piecenum)
+{
+	piecenum = depthcharge;
+}
+
 QueryPrimary(piecenum)
 {
 	if( gun_1 == 0 )
@@ -427,6 +442,11 @@ QueryWeapon5(piecenum)
 	}
 }
 
+QueryWeapon6(piecenum)
+{
+	piecenum = depthcharge;
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -466,23 +486,6 @@ Killed(severity, corpsetype)
 		explode base type NOHEATCLOUD;
 		explode wake1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 		explode wake2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel4a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel3b type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel4c type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
-		explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;

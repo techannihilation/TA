@@ -1,0 +1,1176 @@
+#include "sfxtype.h"
+#include "exptype.h"
+
+
+piece	base, hull, frontmast, bridge, depthcharge,
+		turret1, sleeves1, barrel1a, barrel1b, barrel1c, barrel1d, flare1a, flare1b, flare1c, flare1d, 
+		turret2, sleeves2, barrel2a, barrel2b, barrel2c, barrel2d, flare2a, flare2b, flare2c, flare2d,      
+		turret3, sleeves3, barrel3a, barrel3b, barrel3c, flare3a, flare3b, flare3c, 
+		turret4, sleeves4, barrel4a, barrel4b, barrel4c, flare4a, flare4b, flare4c,
+		laserturret1, spindddle1, laserflare1, laserturret2, spindddle2, laserflare2,
+		flakturret8, flakpivot8, flakbarrel8a, flakflare8a, flakbarrel8b, flakflare8b, 
+		flakturret7, flakpivot7, flakbarrel7a, flakflare7a, flakbarrel7b, flakflare7b, 
+		flakturret6, flakpivot6, flakbarrel6a, flakflare6a, flakbarrel6b, flakflare6b, 
+		flakturret5, flakpivot5, flakbarrel5a, flakflare5a, flakbarrel5b, flakflare5b, 
+		flakturret4, flakpivot4, flakbarrel4a, flakflare4a, flakbarrel4b, flakflare4b, 
+		flakturret3, flakpivot3, flakbarrel3a, flakflare3a, flakbarrel3b, flakflare3b, 
+		flakturret2, flakpivot2, flakbarrel2a, flakflare2a, flakbarrel2b, flakflare2b, 
+		flakturret1, flakpivot1, flakbarrel1a, flakflare1a, flakbarrel1b, flakflare1b,
+		depth1a, depth1b, depth1c, depth2a, depth2b, depth2c,
+		wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8;
+	
+static-var gun_1, gun_2, gun_3, gun_4, laser_1, laser_2, depth_1, depth_2, flak_1, flak_2, flak_3, flak_4, flak_5, flak_6, flak_7, flak_8;
+
+#define SIG_AIM1 2
+#define SIG_AIM2 4
+#define SIG_AIM3 8
+#define SIG_AIM4 16
+#define SIG_AIM5 32
+#define SIG_AIM6 64
+#define SIG_AIM7 128
+#define SIG_AIM8 256
+#define SIG_AIM9 512
+#define SIG_AIM10 1024
+#define SIG_AIM11 2046
+#define SIG_AIM12 4096
+#define SIG_AIM13 8192
+#define SIG_AIM14 16384
+#define SIG_AIM15 32768
+#define SIG_AIM16 65536
+#define SIG_MOVE 131072
+
+#define RESTORE_DELAY1 7000
+#define RESTORE_DELAY2 3500
+#define RESTORE_DELAY3 2500
+
+#define FLAK_TURRET_HEADING_SPEED <420>
+#define FLAK_TURRET_PITCH_SPEED <360>
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+			emit-sfx smoketype from turret1;
+			emit-sfx smoketype from turret2;
+			emit-sfx smoketype from turret3;
+			emit-sfx smoketype from turret4;
+			
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = 0;
+	gun_2 = 0;
+	gun_3 = 0;
+	gun_4 = 0;
+	laser_1 = 0;
+	laser_2 = 0;
+	depth_1 = 0;
+	depth_2 = 0;
+	flak_1 = 0;
+	flak_2 = 0;
+	flak_3 = 0;
+	flak_4 = 0;
+	flak_5 = 0;
+	flak_6 = 0;
+	flak_7 = 0;
+	flak_8 = 0;
+	
+	turn turret2 to y-axis <180.0> now;
+	turn turret4 to y-axis <180.0> now;
+	
+	turn laserturret1 to y-axis <-90.0> now;
+	turn laserturret2 to y-axis <90.0> now;
+	
+	turn flakturret1 to y-axis <-90.0> now;
+	turn flakturret2 to y-axis <90.0> now;
+	turn flakturret3 to y-axis <-90.0> now;
+	turn flakturret4 to y-axis <90.0> now;
+	turn flakturret5 to y-axis <90.0> now;
+	turn flakturret6 to y-axis <-90.0> now;
+	turn flakturret7 to y-axis <-90.0> now;
+	turn flakturret8 to y-axis <90.0> now;
+	
+	hide flare1a;hide flare2a;hide flare3a;
+	hide flare1b;hide flare2b;hide flare3b;
+	hide flare1c;hide flare2c;hide flare3c;
+	hide flare1d;hide flare2d;hide flare4a;
+	hide flare4b;hide flare4c;
+	hide flakflare8a;hide flakflare8b;hide flakflare7a;hide flakflare7b;
+	hide flakflare6a;hide flakflare6b;hide flakflare5a;hide flakflare5b;
+	hide flakflare4a;hide flakflare4b;hide flakflare3a;	hide flakflare3b;
+	hide flakflare2a;hide flakflare2b;hide flakflare1a;hide flakflare1b;
+}
+
+waveSplash()
+{
+	while( TRUE )
+	{
+		turn base to x-axis <-1.000000> speed <0.400000>;
+		move base to y-axis [0.229999] speed [0.17];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <0.000000> speed <0.400000>;
+		move base to y-axis [0.000000] speed [0.17];
+		wait-for-turn base around x-axis;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script waveSplash();
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		emit-sfx 2 from wake4;
+		emit-sfx 2 from wake5;
+		emit-sfx 2 from wake6;
+		emit-sfx 2 from wake7;
+		emit-sfx 2 from wake8;		
+		sleep 250;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn base to x-axis <0.000000> speed <1.000000>;
+	move base to y-axis [0.000000] speed [0.169995];
+}
+
+// Definition for all RESTORE WEAPON
+
+RestoreWeapon1()
+{
+	sleep RESTORE_DELAY1;
+	turn turret1 to y-axis <0.000000> speed <25.000000>;
+	turn sleeves1 to x-axis <0.000000> speed <12.000000>;
+}
+
+RestoreWeapon2()
+{
+	sleep RESTORE_DELAY1;
+	turn turret2 to y-axis <180.000000> speed <25.000000>;
+	turn sleeves2 to x-axis <0.000000> speed <12.000000>;
+}
+
+RestoreWeapon3()
+{
+	sleep RESTORE_DELAY2;
+	turn turret3 to y-axis <0.000000> speed <40.000000>;
+	turn sleeves3 to x-axis <0.000000> speed <25.000000>;
+}
+
+RestoreWeapon4()
+{
+	sleep RESTORE_DELAY2;
+	turn turret4 to y-axis <180.000000> speed <40.000000>;
+	turn sleeves4 to x-axis <0.000000> speed <25.000000>;
+}
+
+RestoreWeapon5()
+{
+	sleep RESTORE_DELAY3;
+	turn laserturret1 to y-axis <-90.000000> speed <75.000000>;
+}
+
+RestoreWeapon6()
+{
+	sleep RESTORE_DELAY3;
+	turn laserturret2 to y-axis <90.000000> speed <75.000000>;
+}
+
+RestoreFlakLeft()
+{
+	sleep RESTORE_DELAY3;
+	turn flakturret2 to y-axis <90.000000> speed <150.000000>;
+	turn flakturret4 to y-axis <90.000000> speed <150.000000>;
+	turn flakturret5 to y-axis <90.000000> speed <150.000000>;
+	turn flakturret8 to y-axis <90.000000> speed <150.000000>;
+	turn flakpivot2 to x-axis <0.000000> speed <150.000000>;
+	turn flakpivot4 to x-axis <0.000000> speed <150.000000>;
+	turn flakpivot5 to x-axis <0.000000> speed <150.000000>;
+	turn flakpivot8 to x-axis <0.000000> speed <150.000000>;
+}
+
+RestoreFlakRight()
+{
+	sleep RESTORE_DELAY3;
+	turn flakturret1 to y-axis <-90.000000> speed <150.000000>;
+	turn flakturret3 to y-axis <-90.000000> speed <150.000000>;
+	turn flakturret6 to y-axis <-90.000000> speed <150.000000>;
+	turn flakturret7 to y-axis <-90.000000> speed <150.000000>;
+	turn flakpivot1 to x-axis <0.000000> speed <150.000000>;
+	turn flakpivot3 to x-axis <0.000000> speed <150.000000>;
+	turn flakpivot6 to x-axis <0.000000> speed <150.000000>;
+	turn flakpivot7 to x-axis <0.000000> speed <150.000000>;
+}
+
+// Definition for all AIM FROM WEAPON
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret1;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = turret2;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turret3;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turret4;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = laserturret1;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = laserturret2;
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = depthcharge;
+}
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = depthcharge;
+}
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = flakturret1;
+}
+
+AimFromWeapon10(piecenum)
+{
+	piecenum = flakturret2;
+}
+
+AimFromWeapon11(piecenum)
+{
+	piecenum = flakturret3;
+}
+
+AimFromWeapon12(piecenum)
+{
+	piecenum = flakturret4;
+}
+
+AimFromWeapon13(piecenum)
+{
+	piecenum = flakturret5;
+}
+
+AimFromWeapon14(piecenum)
+{
+	piecenum = flakturret6;
+}
+
+AimFromWeapon15(piecenum)
+{
+	piecenum = flakturret7;
+}
+
+AimFromWeapon16(piecenum)
+{
+	piecenum = flakturret8;
+}
+
+
+// MAIN GUN //
+
+AimWeapon1(heading,pitch)
+{
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn turret1 to y-axis heading speed <50.000000>;
+	turn sleeves1 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeves1 around x-axis;
+	start-script RestoreWeapon1();
+	return (1);
+}
+
+AimWeapon2(heading,pitch)
+{
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+	turn turret2 to y-axis heading speed <50.000000>;
+	turn sleeves2 to x-axis <0.000000> - pitch speed <25.000000>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeves2 around x-axis;
+	start-script RestoreWeapon2();
+	return (1);
+}
+
+FireWeapon1()
+{
+	if( gun_1 == 0 )
+	{
+		move barrel1a to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare1a;
+		sleep 150;
+		move barrel1a to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_1 == 1 )
+	{
+		move barrel1b to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare1b;
+		sleep 150;
+		move barrel1b to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_1 == 2 )
+	{
+		move barrel1c to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare1c;
+		sleep 150;
+		move barrel1c to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_1 == 3 )
+	{
+		move barrel1d to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare1d;
+		sleep 150;
+		move barrel1d to z-axis [0.000000] speed [3.000000];
+	}
+	++gun_1;
+	if( gun_1 >= 4 )
+	{
+		gun_1 = 0;
+	}
+}
+
+FireWeapon2()
+{
+	if( gun_2 == 0 )
+	{
+		move barrel2a to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare2a;
+		sleep 150;
+		move barrel2a to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_2 == 1 )
+	{
+		move barrel2b to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare2b;
+		sleep 150;
+		move barrel2b to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_2 == 2 )
+	{
+		move barrel2c to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare2c;
+		sleep 150;
+		move barrel2c to z-axis [0.000000] speed [3.000000];
+	}
+	if( gun_2 == 3 )
+	{
+		move barrel2d to z-axis [-2.000000] speed [500.000000];
+		emit-sfx 1024 + 0 from flare2d;
+		sleep 150;
+		move barrel2d to z-axis [0.000000] speed [3.000000];
+	}
+	++gun_2;
+	if( gun_2 >= 4 )
+	{
+		gun_2 = 0;
+	}
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare1b;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare1c;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare1d;
+	}
+}
+
+QueryWeapon2(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare2a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+	if( gun_2== 2 )
+	{
+		piecenum = flare2c;
+	}
+	if( gun_2 == 3 )
+	{
+		piecenum = flare2d;
+	}
+}
+
+// SECONDARY WEAPON Plasma
+
+AimWeapon3(heading,pitch)
+{
+	signal SIG_AIM3;
+	set-signal-mask SIG_AIM3;
+	turn turret3 to y-axis heading speed <55.000000>;
+	turn sleeves3 to x-axis <0.000000> - pitch speed <30.000000>;
+	wait-for-turn turret3 around y-axis;
+	wait-for-turn sleeves3 around x-axis;
+	start-script RestoreWeapon3();
+	return (1);
+}
+
+AimWeapon4(heading,pitch)
+{
+	signal SIG_AIM4;
+	set-signal-mask SIG_AIM4;
+	turn turret4 to y-axis heading speed <55.000000>;
+	turn sleeves4 to x-axis <0.000000> - pitch speed <30.000000>;
+	wait-for-turn turret4 around y-axis;
+	wait-for-turn sleeves4 around x-axis;
+	start-script RestoreWeapon4();
+	return (1);
+}
+
+FireWeapon3()
+{
+	if( gun_3 == 0 )
+	{
+		emit-sfx 1025 from flare3a;
+		move barrel3a to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel3a to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_3 == 1 )
+	{
+		emit-sfx 1025 from flare3b;
+		move barrel3b to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel3b to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_3 == 2 )
+	{
+		emit-sfx 1025 from flare3c;
+		move barrel3c to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel3c to z-axis [0.000000] speed [2.000000];
+	}
+	++gun_3;
+	if( gun_3 == 3 )
+	{
+		gun_3 = 0;
+	}
+}
+
+FireWeapon4()
+{
+	if( gun_4 == 0 )
+	{
+		emit-sfx 1025 from flare4a;
+		move barrel4a to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel4a to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_4 == 1 )
+	{
+		emit-sfx 1025 from flare4b;
+		move barrel4b to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel4b to z-axis [0.000000] speed [2.000000];
+	}
+	if( gun_4 == 2 )
+	{
+		emit-sfx 1025 from flare4c;
+		move barrel4c to z-axis [-2.500000] now;
+		sleep 150;
+		move barrel4c to z-axis [0.000000] speed [2.000000];
+	}
+	++gun_4;
+	if( gun_4 == 3 )
+	{
+		gun_4 = 0;
+	}
+}
+
+QueryWeapon3(piecenum)
+{	
+	if( gun_3 == 0 )
+	{
+		piecenum = flare3a;
+	}
+	if( gun_3 == 1 )
+	{
+		piecenum = flare3b;
+	}
+	if( gun_3 == 2 )
+	{
+		piecenum = flare3c;
+	}
+}
+
+QueryWeapon4(piecenum)
+{	
+	if( gun_4 == 0 )
+	{
+		piecenum = flare4a;
+	}
+	if( gun_4 == 1 )
+	{
+		piecenum = flare4b;
+	}
+	if( gun_4 == 2 )
+	{
+		piecenum = flare4c;
+	}
+}
+
+// LASER TURRET
+
+AimWeapon5(heading,pitch)
+{
+	signal SIG_AIM5;
+	set-signal-mask SIG_AIM5;
+	turn laserturret1 to y-axis heading speed <100.000000>;
+	wait-for-turn laserturret1 around y-axis;
+	start-script RestoreWeapon5();
+	return (1);
+}
+
+AimWeapon6(heading,pitch)
+{
+	signal SIG_AIM6;
+	set-signal-mask SIG_AIM6;
+	turn laserturret2 to y-axis heading speed <100.000000>;
+	wait-for-turn laserturret2 around y-axis;
+	start-script RestoreWeapon6();
+	return (1);
+}
+
+FireWeapon5()
+{
+	if( laser_1 == 0 )
+	{
+		sleep 250;
+		turn spindddle1 to z-axis <0.000000> speed <400.000000>;
+		wait-for-turn spindddle1 around z-axis;
+	}
+	else if( laser_1 == 1 )
+	{
+		sleep 250;
+		turn spindddle1 to z-axis <72.000000> speed <400.000000>;
+		wait-for-turn spindddle1 around z-axis;
+	}
+	else if( laser_1 == 2 )
+	{
+		sleep 250;
+		turn spindddle1 to z-axis <144.000000> speed <400.000000>;
+		wait-for-turn spindddle1 around z-axis;
+	}
+	else if( laser_1 == 3 )
+	{
+		sleep 250;
+		turn spindddle1 to z-axis <216.000000> speed <400.000000>;
+		wait-for-turn spindddle1 around z-axis;
+	}
+	else if( laser_1 == 4 )
+	{
+		sleep 250;
+		turn spindddle1 to z-axis <288.000000> speed <400.000000>;
+		wait-for-turn spindddle1 around z-axis;
+	}
+	++laser_1;
+	if( laser_1 == 5 )
+	{
+		laser_1 = 0;
+	}
+}
+
+FireWeapon6()
+{
+	if( laser_2 == 0 )
+	{
+		sleep 250;
+		turn spindddle2 to z-axis <0.000000> speed <400.000000>;
+		wait-for-turn spindddle2 around z-axis;
+	}
+	else if( laser_2 == 1 )
+	{
+		sleep 250;
+		turn spindddle2 to z-axis <72.000000> speed <400.000000>;
+		wait-for-turn spindddle2 around z-axis;
+	}
+	else if( laser_2 == 2 )
+	{
+		sleep 250;
+		turn spindddle2 to z-axis <144.000000> speed <400.000000>;
+		wait-for-turn spindddle2 around z-axis;
+	}
+	else if( laser_2 == 3 )
+	{
+		sleep 250;
+		turn spindddle2 to z-axis <216.000000> speed <400.000000>;
+		wait-for-turn spindddle2 around z-axis;
+	}
+	else if( laser_2 == 4 )
+	{
+		sleep 250;
+		turn spindddle2 to z-axis <288.000000> speed <400.000000>;
+		wait-for-turn spindddle2 around z-axis;
+	}
+	++laser_2;
+	if( laser_2 == 5 )
+	{
+		laser_2 = 0;
+	}
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = laserflare1;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = laserflare2;
+}
+
+
+// DEPTHCHARGE
+
+AimWeapon7(heading,pitch)
+{
+	signal SIG_AIM7;
+	set-signal-mask SIG_AIM7;
+	return (1);
+}
+
+AimWeapon8(heading,pitch)
+{
+	signal SIG_AIM8;
+	set-signal-mask SIG_AIM8;
+	return (1);
+}
+
+FireWeapon7()
+{
+	++depth_1;
+	if( depth_1 == 3 )
+	{
+		depth_1 = 0;
+	}
+}
+
+FireWeapon8()
+{
+	++depth_2;
+	if( depth_2 == 3 )
+	{
+		depth_2 = 0;
+	}
+}
+
+QueryWeapon7(piecenum)
+{
+	if( depth_1 == 0 )
+	{
+		piecenum = depth1a;
+	}
+	if( depth_1 == 1 )
+	{
+		piecenum = depth1b;
+	}
+	if( depth_1 == 2 )
+	{
+		piecenum = depth1c;
+	}
+}
+
+QueryWeapon8(piecenum)
+{
+	if( depth_2 == 0 )
+	{
+		piecenum = depth2a;
+	}
+	if( depth_2 == 1 )
+	{
+		piecenum = depth2b;
+	}
+	if( depth_2 == 2 )
+	{
+		piecenum = depth2c;
+	}
+}
+
+//FLAK GUN
+
+AimWeapon9(heading,pitch)
+{
+	signal SIG_AIM9;
+	set-signal-mask SIG_AIM9;
+	turn flakturret1 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot1 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret1 around y-axis;
+	wait-for-turn flakpivot1 around x-axis;
+	start-script RestoreFlakRight();
+	return (1);
+}
+
+AimWeapon10(heading,pitch)
+{
+	signal SIG_AIM10;
+	set-signal-mask SIG_AIM10;
+	turn flakturret2 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot2 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret2 around y-axis;
+	wait-for-turn flakpivot2 around x-axis;
+	start-script RestoreFlakLeft();
+	return (1);
+}
+
+AimWeapon11(heading,pitch)
+{
+	signal SIG_AIM11;
+	set-signal-mask SIG_AIM11;
+	turn flakturret3 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot3 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret3 around y-axis;
+	wait-for-turn flakpivot3 around x-axis;
+	start-script RestoreFlakRight();
+	return (1);
+}
+
+AimWeapon12(heading,pitch)
+{
+	signal SIG_AIM12;
+	set-signal-mask SIG_AIM12;
+	turn flakturret4 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot4 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret4 around y-axis;
+	wait-for-turn flakpivot4 around x-axis;
+	start-script RestoreFlakLeft();
+	return (1);
+}
+
+AimWeapon13(heading,pitch)
+{
+	signal SIG_AIM13;
+	set-signal-mask SIG_AIM13;
+	turn flakturret5 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot5 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret5 around y-axis;
+	wait-for-turn flakpivot5 around x-axis;
+	start-script RestoreFlakLeft();
+	return (1);
+}
+
+AimWeapon14(heading,pitch)
+{
+	signal SIG_AIM14;
+	set-signal-mask SIG_AIM14;
+	turn flakturret6 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot6 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret6 around y-axis;
+	wait-for-turn flakpivot6 around x-axis;
+	start-script RestoreFlakRight();
+	return (1);
+}
+
+AimWeapon15(heading,pitch)
+{
+	signal SIG_AIM15;
+	set-signal-mask SIG_AIM15;
+	turn flakturret7 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot7 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret7 around y-axis;
+	wait-for-turn flakpivot7 around x-axis;
+	start-script RestoreFlakRight();
+	return (1);
+}
+
+AimWeapon16(heading,pitch)
+{
+	signal SIG_AIM16;
+	set-signal-mask SIG_AIM16;
+	turn flakturret8 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flakpivot8 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flakturret8 around y-axis;
+	wait-for-turn flakpivot8 around x-axis;
+	start-script RestoreFlakLeft();
+	return (1);
+}
+
+FireWeapon9()
+{
+	if(flak_1 == 0)
+	{
+		move flakbarrel1a to z-axis [-2.0] now;
+		show flakflare1a;
+		sleep 50;		
+		hide flakflare1a;
+		move flakbarrel1a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_1 == 1)
+	{
+		move flakbarrel1b to z-axis [-2.0] now;
+		show flakflare1b;
+		sleep 50;		
+		hide flakflare1b;
+		move flakbarrel1b to z-axis [0.0] speed [1.0];
+	}			
+	++flak_1;
+	if(flak_1 == 2)
+	{
+		flak_1 = 0;
+	}
+}
+
+FireWeapon10()
+{
+	if(flak_2 == 0)
+	{
+		move flakbarrel2a to z-axis [-2.0] now;
+		show flakflare2a;
+		sleep 50;		
+		hide flakflare2a;
+		move flakbarrel2a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_2 == 1)
+	{
+		move flakbarrel2b to z-axis [-2.0] now;
+		show flakflare2b;
+		sleep 50;		
+		hide flakflare2b;
+		move flakbarrel2b to z-axis [0.0] speed [1.0];
+	}
+	++flak_2;
+	if(flak_2 == 2)
+	{
+		flak_2 = 0;
+	}
+}
+
+FireWeapon11()
+{
+	if(flak_3 == 0)
+	{
+		move flakbarrel3a to z-axis [-2.0] now;
+		show flakflare3a;
+		sleep 50;		
+		hide flakflare3a;
+		move flakbarrel3a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_3 == 1)
+	{
+		move flakbarrel3b to z-axis [-2.0] now;
+		show flakflare3b;
+		sleep 50;		
+		hide flakflare3b;
+		move flakbarrel3b to z-axis [0.0] speed [1.0];
+	}
+	++flak_3;
+	if(flak_3 == 2)
+	{
+		flak_3 = 0;
+	}
+}
+
+FireWeapon12()
+{
+	if(flak_4 == 0)
+	{
+		move flakbarrel4a to z-axis [-2.0] now;
+		show flakflare4a;
+		sleep 50;		
+		hide flakflare4a;
+		move flakbarrel4a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_4 == 1)
+	{
+		move flakbarrel4b to z-axis [-2.0] now;
+		show flakflare4b;
+		sleep 50;		
+		hide flakflare4b;
+		move flakbarrel4b to z-axis [0.0] speed [1.0];
+	}
+	++flak_4;
+	if(flak_4 == 2)
+	{
+		flak_4 = 0;
+	}
+}
+
+FireWeapon13()
+{
+	if(flak_5 == 0)
+	{
+		move flakbarrel5a to z-axis [-2.0] now;
+		show flakflare5a;
+		sleep 50;		
+		hide flakflare5a;
+		move flakbarrel5a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_5 == 1)
+	{
+		move flakbarrel5b to z-axis [-2.0] now;
+		show flakflare5b;
+		sleep 50;		
+		hide flakflare5b;
+		move flakbarrel5b to z-axis [0.0] speed [1.0];
+	}
+	++flak_5;
+	if(flak_5 == 2)
+	{
+		flak_5 = 0;
+	}
+}
+
+FireWeapon14()
+{
+	if(flak_6 == 0)
+	{
+		move flakbarrel6a to z-axis [-2.0] now;
+		show flakflare6a;
+		sleep 50;		
+		hide flakflare6a;
+		move flakbarrel6a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_6 == 1)
+	{
+		move flakbarrel6b to z-axis [-2.0] now;
+		show flakflare6b;
+		sleep 50;		
+		hide flakflare6b;
+		move flakbarrel6b to z-axis [0.0] speed [1.0];
+	}
+	++flak_6;
+	if(flak_6 == 2)
+	{
+		flak_6 = 0;
+	}
+}
+
+FireWeapon15()
+{
+	if(flak_7 == 0)
+	{
+		move flakbarrel7a to z-axis [-2.0] now;
+		show flakflare7a;
+		sleep 50;		
+		hide flakflare7a;
+		move flakbarrel7a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_7 == 1)
+	{
+		move flakbarrel7b to z-axis [-2.0] now;
+		show flakflare7b;
+		sleep 50;		
+		hide flakflare7b;
+		move flakbarrel7b to z-axis [0.0] speed [1.0];
+	}
+	++flak_7;
+	if(flak_7 == 2)
+	{
+		flak_7 = 0;
+	}
+}
+
+FireWeapon16()
+{
+	if(flak_8 == 0)
+	{
+		move flakbarrel8a to z-axis [-2.0] now;
+		show flakflare8a;
+		sleep 50;		
+		hide flakflare8a;
+		move flakbarrel8a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_8 == 1)
+	{
+		move flakbarrel8b to z-axis [-2.0] now;
+		show flakflare8b;
+		sleep 50;		
+		hide flakflare8b;
+		move flakbarrel8b to z-axis [0.0] speed [1.0];
+	}
+	++flak_8;
+	if(flak_8 == 2)
+	{
+		flak_8 = 0;
+	}
+}
+
+	
+QueryWeapon9(piecenum)
+{
+	if(flak_1 == 0)
+	{
+		piecenum = flakflare1a;
+	}
+	if(flak_1 == 1)
+	{
+		piecenum = flakflare1b;
+	}
+}
+
+QueryWeapon10(piecenum)
+{
+	if(flak_2 == 0)
+	{
+		piecenum = flakflare2a;
+	}
+	if(flak_2 == 1)
+	{
+		piecenum = flakflare2b;
+	}
+}
+
+QueryWeapon11(piecenum)
+{
+	if(flak_3 == 0)
+	{
+		piecenum = flakflare3a;
+	}
+	if(flak_3 == 1) 
+	{
+		piecenum = flakflare3b;
+	}
+}
+
+QueryWeapon12(piecenum)
+{
+	if(flak_4 == 0)
+	{
+		piecenum = flakflare4a;
+	}
+	if(flak_4 == 1)
+	{
+		piecenum = flakflare4b;
+	}
+}
+
+QueryWeapon13(piecenum)
+{
+	if(flak_5 == 0)
+	{
+		piecenum = flakflare5a;
+	}
+	if(flak_5 == 1)
+	{
+		piecenum = flakflare5b;
+	}
+}
+
+QueryWeapon14(piecenum)
+{
+	if(flak_6 == 0)
+	{
+		piecenum = flakflare6a;
+	}
+	if(flak_6 == 1)
+	{
+		piecenum = flakflare6b;
+	}
+}
+
+QueryWeapon15(piecenum)
+{
+	if(flak_7 == 0)
+	{
+		piecenum = flakflare7a;
+	}
+	if(flak_7 == 1)
+	{
+		piecenum = flakflare7b;
+	}
+}
+
+QueryWeapon16(piecenum)
+{
+	if(flak_8 == 0)
+	{
+		piecenum = flakflare8a;
+	}
+	if(flak_8 == 1)
+	{
+		piecenum = flakflare8b;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+
+Killed(severity,corpsetype)
+{
+	corpsetype=1;
+	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode bridge type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode frontmast type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode sleeves1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode sleeves2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode sleeves3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode sleeves4 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode barrel1a type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode barrel2a type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode turret1 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode turret2 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode turret3 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode turret4 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode flakturret1 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode flakturret3 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode flakturret4 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode flakturret6 type FALL | SMOKE | FIRE | NOHEATCLOUD ;	
+	explode barrel4b type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	explode barrel3c type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	return (corpsetype);
+}

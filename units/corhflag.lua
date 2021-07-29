@@ -37,10 +37,9 @@ return {
 		maxvelocity = 1.3,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		movementclass = "TANKHOVER4",
+		movementclass = "TANKHOVER8",
 		name = "Saturn",
 		noautofire = false,
-
 		objectname = "corhflag",
 		radardistance = 2000,
 		radaremitheight = 65,

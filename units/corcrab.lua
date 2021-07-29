@@ -71,6 +71,7 @@ return {
 			[14] = "corfmd2",
 			[15] = "corfsilo",
 			[16] = "corbuzz1",
+			[17] = "corusy",
 		},
 		customparams = {
 			buildpic = "corcrab.dds",
@@ -82,8 +83,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.0 -5.0193 1.03799438477",
-				collisionvolumescales = "20.0 11.0 10.0759887695",
+				collisionvolumeoffsets = "0 -5 1",
+				collisionvolumescales = "20 11 10",
 				collisionvolumetype = "Box",
 				damage = 23357,
 				description = "Crab Wreckage",

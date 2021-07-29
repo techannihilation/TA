@@ -9,11 +9,13 @@ piece  base, body, wake1, wake2, wake3, wake4, wake5, wake6,
        barrel3a, barrel3b, barrel3c, barrel3d, 
        flare1a, flare1b, flare1c, flare1d, flare2, flare3a, flare3b, flare3c, flare3d,
        gun2a, gun2b, gun2c, gun2d, gun2e, gun3a, gun3b, gun3c, gun3d,
-       radar, caps, rockets, r1, r2, r3, r4;
+       radar, caps, rockets, r1, r2, r3, r4, depthcharge, depth01, depth02, depth03, depth04;
 
-static-var  gun_2, gun_1, gun_3, gun_4, restore_delay;
+static-var  gun_2, gun_1, gun_3, gun_4, restore_delay, depth_1, depth_2;
 
 // Signal definitions
+#define SIG_AIM_6			256
+#define SIG_AIM_5			128
 #define SIG_AIM_4			64
 #define SIG_AIM_3			2
 #define SIG_AIM_2			4
@@ -78,6 +80,8 @@ Create()
 	gun_3 = 0;
 	gun_1 = 0;
 	gun_4 = 0;
+	depth_1 = 0;
+	depth_2 = 0;
 	restore_delay = 5000;
 	start-script SmokeUnit();
 }
@@ -345,6 +349,73 @@ QueryWeapon4(piecenum)
 	if( gun_4 == 3 )
 	{
 		piecenum = r4;
+	}
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = depthcharge;
+}
+
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	return (1);
+}
+
+FireWeapon5(piecenum)
+{
+	++depth_1;
+	if ( depth_1 == 4 ) 
+	{
+		depth_1 = 0;
+	}
+}
+
+QueryWeapon5(piecenum)
+{
+	if ( depth_1 == 0 ) 
+	{
+		piecenum = depth01;
+	}
+	if ( depth_1 == 1 ) 
+	{
+		piecenum = depth02;
+	}
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = depthcharge;
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	return (1);
+}
+
+FireWeapon6(piecenum)
+{
+	++depth_2;
+	if ( depth_2 == 2 ) 
+	{
+		depth_2 = 0;
+	}
+}
+
+QueryWeapon6(piecenum)
+{
+	if ( depth_2 == 0 ) 
+	{
+		piecenum = depth02;
+	}
+	if ( depth_2 == 1 ) 
+	{
+		piecenum = depth04;
 	}
 }
 

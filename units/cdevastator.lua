@@ -153,7 +153,7 @@ return {
 				unclassed_air = 500,
 			},
 		},
-			devastatorrockets = {
+		devastatorrockets = {
 				areaofeffect = 350,
 				avoidfeature = false,
 				burnblow = true,

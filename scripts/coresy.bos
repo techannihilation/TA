@@ -15,73 +15,49 @@ static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateCha
 
 activatescr()
 {
-	move base to y-axis [24.000000] speed [15.000000];
-	wait-for-move base along y-axis;
-	dont-cache guna1;
-	dont-cache gunb1;
+	//move base to y-axis [24.000000] speed [15.000000];
+	//wait-for-move base along y-axis;
+	
 	turn guna1 to z-axis <-90.000000> speed <90.000000>;
 	turn gunb1 to z-axis <90.000000> speed <90.000000>;
 	sleep 200;
-	dont-cache guna2;
-	dont-cache gunb2;
+	
 	turn guna2 to z-axis <-90.000000> speed <90.000000>;
 	turn gunb2 to z-axis <90.000000> speed <90.000000>;
 	sleep 200;
-	dont-cache guna3;
-	dont-cache gunb3;
+	
 	turn guna3 to z-axis <-90.000000> speed <90.000000>;
 	turn gunb3 to z-axis <90.000000> speed <90.000000>;
 	sleep 200;
-	dont-cache guna4;
-	dont-cache gunb4;
+
 	turn guna4 to z-axis <-90.000000> speed <90.000000>;
 	turn gunb4 to z-axis <90.000000> speed <90.000000>;
 	sleep 1;
 	wait-for-turn guna4 around z-axis;
-	cache guna1;
-	cache gunb1;
-	cache guna2;
-	cache gunb2;
-	cache guna3;
-	cache gunb3;
-	cache guna4;
-	cache gunb4;
 	sleep 200;
 }
 
 deactivatescr()
 {
-	dont-cache guna1;
-	dont-cache gunb1;
 	turn guna1 to z-axis <0.000000> speed <45.000000>;
 	turn gunb1 to z-axis <0.000000> speed <45.000000>;
 	sleep 400;
-	dont-cache guna2;
-	dont-cache gunb2;
+
 	turn guna2 to z-axis <0.000000> speed <45.000000>;
 	turn gunb2 to z-axis <0.000000> speed <45.000000>;
 	sleep 400;
-	dont-cache guna3;
-	dont-cache gunb3;
+
 	turn guna3 to z-axis <0.000000> speed <45.000000>;
 	turn gunb3 to z-axis <0.000000> speed <45.000000>;
 	sleep 400;
-	dont-cache guna4;
-	dont-cache gunb4;
+	
 	turn guna4 to z-axis <0.000000> speed <45.000000>;
 	turn gunb4 to z-axis <0.000000> speed <45.000000>;
 	sleep 1;
 	wait-for-turn guna4 around z-axis;
-	cache guna1;
-	cache gunb1;
-	cache guna2;
-	cache gunb2;
-	cache guna3;
-	cache gunb3;
-	cache guna4;
-	cache gunb4;
-	move base to y-axis [0.000000] speed [15.000000];
-	wait-for-move base along y-axis;
+	
+	//move base to y-axis [0.000000] speed [15.000000];
+	//wait-for-move base along y-axis;
 	sleep 400;
 }
 
@@ -186,17 +162,6 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	Static_Var_1 = 1;
-	dont-shade guna1;
-	dont-shade guna2;
-	dont-shade guna3;
-	dont-shade guna4;
-	dont-shade gunb1;
-	dont-shade gunb2;
-	dont-shade gunb3;
-	dont-shade gunb4;
-	dont-shade body;
-	dont-shade lights;
-	dont-cache lights;
 	Static_Var_5 = 0;
 	call-script InitState();
 	start-script SmokeUnit();

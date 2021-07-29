@@ -1,7 +1,5 @@
 return {
 	core_hexapod_lab = {
-		acceleration = 0,
-		brakerate = 0,
 		buildcostenergy = 1552296,
 		buildcostmetal = 86632,
 		builder = true,
@@ -38,7 +36,7 @@ return {
 		metalstorage = 400,
 		mobilestandorders = 1,
 		name = "Prototype Lab",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core_hexapod_lab",
 		radardistance = 50,
 		radaremitheight = 68,

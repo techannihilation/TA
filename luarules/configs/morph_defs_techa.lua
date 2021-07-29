@@ -1235,6 +1235,11 @@ local morphDefs = {
 		time = 120,
 		xp = 0.40,
 	},
+	cortyrnt = {
+		into = 'corurbanus',
+		time = 60,
+		xp = 0.10,
+	},
 	talon_imperator = {
 		into = 'talon_dread',
 		time = 160,

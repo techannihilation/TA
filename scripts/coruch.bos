@@ -1,0 +1,278 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, beam, door1, door2, boom, neck, gun, body, gear, controller,
+	   wake01, wake02, wake03, wake04, wake05, wake06, wake07, wake08;
+
+static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging, Static_Deployed;
+;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		//turn door1 to z-axis <0.000000> now;
+		turn door1 to z-axis <210.0> speed <120.000000>;
+		//turn door2 to z-axis <0.000000> now;
+		turn door2 to z-axis <-210.0> speed <120.000000>;
+		sleep 750;
+	}
+	if( TRUE )
+	{
+		turn boom to x-axis <43.005495> speed <62.000000>;
+		turn neck to x-axis <-43.005495> speed <62.000000>;
+		sleep 750;
+	}
+	Static_Deployed = 1;
+	sleep 25;
+}
+
+deactivatescr()
+{
+	Static_Deployed = 0;
+
+	if( TRUE )
+	{
+		turn boom to x-axis <0.000000> speed <64.000000>;
+		turn neck to x-axis <0.000000> speed <64.000000>;
+		sleep 750;
+	}
+	if( TRUE )
+	{
+		turn door1 to z-axis <0.000000> speed <120.000000>;
+		turn door2 to z-axis <0.000000> speed <120.000000>;
+		sleep 750;
+	}
+	sleep 25;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	set INBUILDSTANCE to 1;
+	call-script activatescr();
+	//turn gun to y-axis Static_Var_2 speed <160.000000>;
+	//wait-for-turn gun around y-axis;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn gun to y-axis <0.000000> speed <160.000000>;
+	wait-for-turn gun around y-axis;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		if( Static_Var_1 == 1 )
+		{
+			emit-sfx 5 from wake01;
+			emit-sfx 5 from wake02;
+			emit-sfx 5 from wake03;
+			emit-sfx 5 from wake04;
+			emit-sfx 5 from wake05;
+			emit-sfx 5 from wake06;
+			emit-sfx 3 from wake07;
+			emit-sfx 3 from wake08;
+			emit-sfx 3 from wake01;
+			emit-sfx 3 from wake02;
+			emit-sfx 3 from wake03;
+			emit-sfx 3 from wake04;
+			emit-sfx 3 from wake05;
+			emit-sfx 3 from wake06;
+			emit-sfx 5 from wake07;
+			emit-sfx 5 from wake08;
+		}
+		if( Static_Var_1 == 2 )
+		{
+			emit-sfx 5 from wake01;
+			emit-sfx 5 from wake02;
+			emit-sfx 5 from wake03;
+			emit-sfx 5 from wake04;
+			emit-sfx 5 from wake05;
+			emit-sfx 5 from wake06;
+			emit-sfx 3 from wake07;
+			emit-sfx 3 from wake08;
+			emit-sfx 3 from wake01;
+			emit-sfx 3 from wake02;
+			emit-sfx 3 from wake03;
+			emit-sfx 3 from wake04;
+			emit-sfx 3 from wake05;
+			emit-sfx 3 from wake06;
+			emit-sfx 5 from wake07;
+			emit-sfx 5 from wake08;
+		}
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	sleep 150;
+}
+
+setSFXoccupy(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+}
+
+Create()
+{
+	Static_Var_2 = 0;
+	Static_Deployed = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+	
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	start-script RequestState(0);
+	while( Static_Deployed == 0 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn gear to y-axis Func_Var_1 speed <160.000000>;
+	wait-for-turn gear around y-axis;
+	set INBUILDSTANCE to 1;
+
+}
+
+StopBuilding()
+{
+	signal 4;
+	set-signal-mask 4;
+	sleep 5000;
+	set-signal-mask 0;
+	signal 4;
+	start-script RequestState(1);
+
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = beam;
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_2 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode boom type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
+		explode neck type NOHEATCLOUD;
+		explode controller type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{	
+		corpsetype = 2;
+		explode boom type FALL | NOHEATCLOUD | FIRE | EXPLODE_ON_HIT;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode gun type NOHEATCLOUD;
+		explode neck type FALL | NOHEATCLOUD | FIRE | EXPLODE_ON_HIT;
+		explode controller type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode boom type FALL | NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode door1 type FALL | NOHEATCLOUD;
+	explode door2 type FALL | NOHEATCLOUD;
+	explode gun type FALL | NOHEATCLOUD;
+	explode neck type FALL | NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode controller type NOHEATCLOUD;
+	return (corpsetype);
+}

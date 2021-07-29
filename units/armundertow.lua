@@ -128,7 +128,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "Depth Charge",
 				range = 400,
 				reloadtime = 2,
