@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Epoch",
 		noautofire = false,
-		
+
 		objectname = "ASEADRAGON",
 		radardistance = 1500,
 		radaremitheight = 54,
@@ -182,7 +182,7 @@ return {
 				name = "FlakCannon",
 				noselfdamage = true,
 				range = 775,
-				reloadtime = 1.0,
+				reloadtime = 0.5,
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
@@ -194,10 +194,10 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					areoship = 80,
+					areoship = 62.5,
 					default = 5,
-					priority_air = 320,
-					unclassed_air = 320,
+					priority_air = 250,
+					unclassed_air = 250,
 				},
 			},
 			seadragprime = {

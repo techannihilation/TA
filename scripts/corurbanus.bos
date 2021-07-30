@@ -1152,10 +1152,57 @@ SweetSpot(piecenum)
 
 Killed(severity,corpsetype)
 {
-	corpsetype=1;
-	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode bridge type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode frontmast type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD ;
+		explode bridge type  NOHEATCLOUD ;
+		explode frontmast type NOHEATCLOUD ;
+		explode sleeves1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeves2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeves3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeves4 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode barrel1a type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode barrel2a type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret1 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret2 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret3 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret4 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret1 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret3 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret4 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret6 type FALL | SMOKE | FIRE | NOHEATCLOUD ;	
+		explode barrel4b type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode barrel3c type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD ;
+		explode bridge type FALL | NOHEATCLOUD ;
+		explode frontmast type FALL | NOHEATCLOUD ;
+		explode sleeves1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeves2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeves3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeves4 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode barrel1a type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode barrel2a type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret1 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret2 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret3 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode turret4 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret1 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret3 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret4 type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode flakturret6 type FALL | SMOKE | FIRE | NOHEATCLOUD ;	
+		explode barrel4b type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+		explode barrel3c type FALL | SMOKE | FIRE | NOHEATCLOUD ;
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD ;
+	explode bridge type SHATTER | EXPLODE_ON_HIT | FALL | NOHEATCLOUD ;
+	explode frontmast type SHATTER | EXPLODE_ON_HIT | FALL | NOHEATCLOUD ;
 	explode sleeves1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
 	explode sleeves2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
 	explode sleeves3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
@@ -1172,5 +1219,4 @@ Killed(severity,corpsetype)
 	explode flakturret6 type FALL | SMOKE | FIRE | NOHEATCLOUD ;	
 	explode barrel4b type FALL | SMOKE | FIRE | NOHEATCLOUD ;
 	explode barrel3c type FALL | SMOKE | FIRE | NOHEATCLOUD ;
-	return (corpsetype);
 }

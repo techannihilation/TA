@@ -1,0 +1,784 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  beam1, beam2, beam3, beam4, doors1, doors2, plate1, plate2,
+       plate3, plate4, post1, post2, post3, post4, nano1, nano2,
+       nano3, nano4, fusion1, fusion2, dome1a, dome1b, dome2a, dome2b,
+       base, body, yard, pad, arrow, shield;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7;
+
+
+Detect()
+{
+	sleep Rand( 500, 1500 );
+	var Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9, Func_Var_10, Func_Var_11;
+	Func_Var_6 = get MAX_ID;
+	Func_Var_7 = get UNKNOWN_UNIT_VALUE(69);
+	while( TRUE )
+	{
+		Static_Var_7 = 0;
+		Func_Var_11 = 0;
+		Func_Var_2 = Func_Var_7;
+		while( Func_Var_2 <= Func_Var_6 )
+		{
+			if( get UNIT_ALLIED(Func_Var_2) == 1 )
+			{
+				if( get UNIT_HEIGHT(Func_Var_2) == 8192000 OR get UNIT_HEIGHT(Func_Var_2) == 8601600 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) >= 1 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 > 268697600 )
+						{
+							Func_Var_11 = 0;
+						}
+						if( Func_Var_1 <= 268697600 )
+						{
+							Func_Var_11 = 6;
+						}
+						if( Func_Var_1 <= 201523200 )
+						{
+							Func_Var_11 = 5;
+						}
+						if( Func_Var_1 <= 134348800 )
+						{
+							Func_Var_11 = 4;
+						}
+						if( Func_Var_1 <= 67174400 )
+						{
+							Func_Var_11 = 3;
+						}
+						if( Func_Var_1 <= 49152000 )
+						{
+							Func_Var_11 = 2;
+						}
+						if( Func_Var_1 <= 16711680 )
+						{
+							Func_Var_11 = 1;
+						}
+					}
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) == 0 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 > 268697600 )
+						{
+							Func_Var_11 = 0;
+						}
+						if( Func_Var_1 <= 268697600 )
+						{
+							Func_Var_11 = 6;
+						}
+						if( Func_Var_1 <= 201523200 )
+						{
+							Func_Var_11 = 5;
+						}
+						if( Func_Var_1 <= 134348800 )
+						{
+							Func_Var_11 = 4;
+						}
+						if( Func_Var_1 <= 67174400 )
+						{
+							Func_Var_11 = 3;
+						}
+						if( Func_Var_1 <= 49152000 )
+						{
+							Func_Var_11 = 2;
+						}
+						if( Func_Var_1 <= 16711680 )
+						{
+							Func_Var_11 = 1;
+							++Static_Var_7;
+						}
+					}
+				}
+				if( get UNIT_HEIGHT(Func_Var_2) == 10485760 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) >= 1 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 24739840 )
+						{
+							Func_Var_11 = 2;
+						}
+					}
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) == 0 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 24739840 )
+						{
+							Func_Var_11 = 1;
+							++Static_Var_7;
+						}
+					}
+				}
+				if( get UNIT_HEIGHT(Func_Var_2) == 10608640 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) >= 1 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 33095680 )
+						{
+							Func_Var_11 = 2;
+						}
+					}
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) == 0 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 33095680 )
+						{
+							Func_Var_11 = 1;
+							++Static_Var_7;
+						}
+					}
+				}
+				if( get UNIT_HEIGHT(Func_Var_2) == 10649600 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) == 0 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 37355520 )
+						{
+							Func_Var_11 = 1;
+							++Static_Var_7;
+						}
+					}
+				}
+				if( get UNIT_HEIGHT(Func_Var_2) == 10649600 )
+				{
+					if( get UNIT_BUILD_PERCENT_LEFT(Func_Var_2) >= 1 )
+					{
+						Func_Var_3 = get UNIT_XZ(Func_Var_2) - get PIECE_XZ(base);
+						if( Func_Var_3 < 0 )
+						{
+							Func_Var_3 = 0 - Func_Var_3;
+						}
+						Func_Var_4 = Func_Var_3 / 65536;
+						Func_Var_5 = Func_Var_3 - Func_Var_4 * 65536;
+						if( Func_Var_5 > 32767 )
+						{
+							Func_Var_5 = 65536 - Func_Var_5;
+							Func_Var_4 = Func_Var_4 + ( Func_Var_3 > 0 );
+						}
+						if( 707333111 < get XZ_HYPOT(Func_Var_4 / 2 * 65536 + Func_Var_5 / 2) )
+						{
+							Func_Var_3 = 500333222;
+						}
+						Func_Var_1 = get XZ_HYPOT(Func_Var_3);
+						if( Func_Var_1 <= 24739840 )
+						{
+							Func_Var_11 = 1;
+							--Static_Var_7;
+						}
+					}
+				}
+			}
+			++Func_Var_2;
+		}
+		if( Static_Var_7 >= 1 )
+		{
+			if( !Static_Var_6 )
+			{
+				if( get MAX_SPEED(get MY_ID) )
+				{
+					show shield;
+				}
+				Static_Var_6 = 1;
+				sleep 50;
+				set ARMORED to 1;
+			}
+		}
+		if( Static_Var_7 == 0 )
+		{
+			if( Static_Var_6 )
+			{
+				hide shield;
+				Static_Var_6 = 0;
+				sleep 50;
+				set ARMORED to 0;
+			}
+		}
+		if( Func_Var_11 == 0 )
+		{
+			sleep Rand( 90000, 120000 );
+		}
+		if( Func_Var_11 == 1 )
+		{
+			sleep Rand( 4500, 9000 );
+		}
+		if( Func_Var_11 == 2 )
+		{
+			sleep Rand( 10000, 15000 );
+		}
+		if( Func_Var_11 == 3 )
+		{
+			sleep Rand( 16000, 24000 );
+		}
+		if( Func_Var_11 == 4 )
+		{
+			sleep Rand( 25000, 37500 );
+		}
+		if( Func_Var_11 == 5 )
+		{
+			sleep Rand( 40000, 60000 );
+		}
+		if( Func_Var_11 == 6 )
+		{
+			sleep Rand( 64000, 85000 );
+		}
+	}
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		turn doors1 to z-axis <0.> now;
+		turn doors1 to z-axis <-90.> speed <175.>;
+		turn doors2 to z-axis <0.> now;
+		turn doors2 to z-axis <90.> speed <175.>;
+		sleep 514;
+	}
+	if( TRUE )
+	{
+		move plate1 to y-axis [6.] speed [7.];
+		move plate2 to y-axis [6.] speed [7.];
+		move plate3 to y-axis [6.] speed [7.];
+		move plate4 to y-axis [6.] speed [7.];
+		sleep 519;
+	}
+	if( TRUE )
+	{
+		turn nano1 to y-axis <90.> speed <173.>;
+		turn nano2 to y-axis <-90.> speed <173.>;
+		turn nano3 to y-axis <-90.> speed <173.>;
+		turn nano4 to y-axis <90.> speed <173.>;
+		sleep 519;
+	}
+	sleep 13;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move plate1 to y-axis [6.] now;
+		move plate2 to y-axis [6.] now;
+		move plate3 to y-axis [6.] now;
+		move plate4 to y-axis [6.] now;
+		turn doors1 to z-axis <-90.> now;
+		turn doors2 to z-axis <90.> now;
+		turn nano1 to y-axis <90.> now;
+		turn nano2 to y-axis <-90.> now;
+		turn nano3 to y-axis <-90.> now;
+		turn nano4 to y-axis <90.> now;
+		sleep 518;
+	}
+	if( TRUE )
+	{
+		turn nano1 to y-axis <0.> speed <173.>;
+		turn nano2 to y-axis <0.> speed <173.>;
+		turn nano3 to y-axis <0.> speed <173.>;
+		turn nano4 to y-axis <0.> speed <173.>;
+		sleep 520;
+	}
+	if( TRUE )
+	{
+		move plate1 to y-axis [0.] speed [7.];
+		move plate2 to y-axis [0.] speed [7.];
+		move plate3 to y-axis [0.] speed [7.];
+		move plate4 to y-axis [0.] speed [7.];
+		sleep 519;
+	}
+	if( TRUE )
+	{
+		turn doors1 to z-axis <0.> speed <173.>;
+		turn doors2 to z-axis <0.> speed <173.>;
+		sleep 520;
+	}
+	sleep 23;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+OpenYard()
+{
+	set YARD_OPEN to 1;
+	while( !get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 1;
+	}
+	set BUGGER_OFF to 0;
+}
+
+CloseYard()
+{
+	set YARD_OPEN to 0;
+	while( get YARD_OPEN )
+	{
+		set BUGGER_OFF to 1;
+		sleep 1500;
+		set YARD_OPEN to 0;
+	}
+	set BUGGER_OFF to 0;
+}
+
+Go()
+{
+	dont-cache beam1;
+	dont-cache beam2;
+	dont-cache beam3;
+	dont-cache beam4;
+	dont-cache doors1;
+	dont-cache doors2;
+	dont-cache plate1;
+	dont-cache plate2;
+	dont-cache plate3;
+	dont-cache plate4;
+	dont-cache post1;
+	dont-cache post2;
+	dont-cache post3;
+	dont-cache post4;
+	dont-cache nano1;
+	dont-cache nano2;
+	dont-cache nano3;
+	dont-cache nano4;
+	call-script activatescr();
+	call-script OpenYard();
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script CloseYard();
+	call-script deactivatescr();
+	cache beam1;
+	cache beam2;
+	cache beam3;
+	cache beam4;
+	cache doors1;
+	cache doors2;
+	cache plate1;
+	cache plate2;
+	cache plate3;
+	cache plate4;
+	cache post1;
+	cache post2;
+	cache post3;
+	cache post4;
+	cache nano1;
+	cache nano2;
+	cache nano3;
+	cache nano4;
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_7 = 0;
+	Static_Var_6 = 0;
+	Static_Var_5 = 0;
+	hide arrow;
+	hide shield;
+	dont-cache shield;
+	move shield to y-axis [81.] now;
+	move shield to z-axis [-10.] now;
+	move pad to z-axis [2.] now;
+	dont-shade arrow;
+	dont-cache arrow;
+	dont-shade beam1;
+	dont-shade beam2;
+	dont-shade beam3;
+	dont-shade beam4;
+	dont-shade doors1;
+	dont-shade doors2;
+	dont-shade plate1;
+	dont-shade plate2;
+	dont-shade plate3;
+	dont-shade plate4;
+	dont-shade post1;
+	dont-shade post2;
+	dont-shade post3;
+	dont-shade post4;
+	dont-shade nano1;
+	dont-shade nano2;
+	dont-shade nano3;
+	dont-shade nano4;
+	dont-shade dome1a;
+	dont-shade dome1b;
+	dont-shade dome2a;
+	dont-shade dome2b;
+	dont-shade pad;
+	dont-cache pad;
+	Static_Var_1 = 0;
+	call-script InitState();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script Detect();
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 0 )
+	{
+		piecenum = beam1;
+	}
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = beam2;
+	}
+	if( Static_Var_1 == 2 )
+	{
+		piecenum = beam3;
+	}
+	if( Static_Var_1 == 3 )
+	{
+		piecenum = beam4;
+	}
+	++Static_Var_1;
+	if( Static_Var_1 == 4 )
+	{
+		Static_Var_1 = 0;
+	}
+}
+
+Demo()
+{
+	Static_Var_2 = 1;
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	if( !Static_Var_2 )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = pad;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	if( heading > 16380 AND heading < 49140 )
+	{
+		turn pad to y-axis <180.> now;
+		move pad to z-axis [-2.] now;
+		return (1);
+	}
+	turn pad to y-axis <0.> now;
+	move pad to z-axis [2.] now;
+	while( Static_Var_5 )
+	{
+		sleep 50;
+	}
+	return (1);
+}
+
+FireTertiary()
+{
+	signal 8;
+	set-signal-mask 8;
+	if( get MAX_SPEED(get MY_ID) )
+	{
+		Static_Var_5 = 1;
+		show arrow;
+		move arrow to y-axis [5.] now;
+		move arrow to z-axis [40.] now;
+		move arrow to z-axis [50.] speed [20.];
+		sleep 500;
+		move arrow to z-axis [40.] now;
+		move arrow to z-axis [50.] speed [20.];
+		sleep 500;
+		move arrow to z-axis [40.] now;
+		move arrow to z-axis [50.] speed [20.];
+		sleep 500;
+		move arrow to z-axis [40.] now;
+		move arrow to z-axis [50.] speed [20.];
+		sleep 500;
+		hide arrow;
+		Static_Var_5 = 0;
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = pad;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = pad;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode beam1 type BITMAPONLY | BITMAP1;
+		explode beam2 type BITMAPONLY | BITMAP1;
+		explode doors1 type BITMAPONLY | BITMAP1;
+		explode doors2 type BITMAPONLY | BITMAP5;
+		explode plate1 type BITMAPONLY | BITMAP1;
+		explode plate2 type BITMAPONLY | BITMAP1;
+		explode post1 type BITMAPONLY | BITMAP1;
+		explode post2 type BITMAPONLY | BITMAP1;
+		explode nano1 type BITMAPONLY | BITMAP5;
+		explode nano2 type BITMAPONLY | BITMAP1;
+		explode pad type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode beam1 type FALL | BITMAP1;
+		explode beam2 type FALL | BITMAP1;
+		explode doors1 type BITMAPONLY | BITMAP1;
+		explode doors2 type BITMAPONLY | BITMAP5;
+		explode plate1 type BITMAPONLY | BITMAP1;
+		explode plate2 type BITMAPONLY | BITMAP1;
+		explode post1 type FALL | BITMAP1;
+		explode post2 type FALL | BITMAP1;
+		explode nano1 type FALL | BITMAP5;
+		explode nano2 type SHATTER | BITMAP1;
+		explode pad type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode beam1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode beam2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode doors1 type BITMAPONLY | BITMAP1;
+		explode doors2 type BITMAPONLY | BITMAP5;
+		explode plate1 type BITMAPONLY | BITMAP1;
+		explode plate2 type BITMAPONLY | BITMAP1;
+		explode post1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode post2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode nano1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode nano2 type SHATTER | BITMAP1;
+		explode pad type BITMAPONLY | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode beam1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode beam2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode doors1 type BITMAPONLY | BITMAP1;
+	explode doors2 type BITMAPONLY | BITMAP5;
+	explode plate1 type BITMAPONLY | BITMAP1;
+	explode plate2 type BITMAPONLY | BITMAP1;
+	explode post1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode post2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode nano1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode nano2 type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode pad type BITMAPONLY | BITMAP1;
+}

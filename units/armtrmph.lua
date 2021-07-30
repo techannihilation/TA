@@ -226,7 +226,7 @@ return {
 					subs = 5,
 				},
 			},
-			depthcharge = {
+			advdepthcharge = {
 				areaofeffect = 64,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -291,7 +291,7 @@ return {
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[6] = {
-				def = "DEPTHCHARGE",
+				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

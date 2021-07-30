@@ -17,16 +17,8 @@ static-var  Static_Var_1, unitviewer, Static_Var_3, statechg_DesiredState, state
 
 activatescr()
 {
-	move base to y-axis [22.000000] speed [15.000000];
-	wait-for-move base along y-axis;
-	dont-cache rtower1;
-	dont-cache rtower2;
-	dont-cache ltower1;
-	dont-cache ltower2;
-	dont-cache rnano1;
-	dont-cache rnano2;
-	dont-cache lnano1;
-	dont-cache lnano2;
+	//move base to y-axis [22.000000] speed [15.000000];
+	//wait-for-move base along y-axis;
 	turn lnano1 to z-axis <25.000000> speed <60.000000>;
 	turn rnano1 to z-axis <-25.000000> speed <60.000000>;
 	turn lnano2 to z-axis <25.000000> speed <60.000000>;
@@ -50,16 +42,8 @@ deactivatescr()
 	turn rtower1 to y-axis <0.000000> speed <30.000000>;
 	wait-for-turn rtower1 around y-axis;
 	wait-for-turn lnano1 around z-axis;
-	cache rtower1;
-	cache rtower2;
-	cache ltower1;
-	cache ltower2;
-	cache rnano1;
-	cache rnano2;
-	cache lnano1;
-	cache lnano2;
-	move base to y-axis [0.000000] speed [15.000000];
-	wait-for-move base along y-axis;
+	//move base to y-axis [0.000000] speed [15.000000];
+	//wait-for-move base along y-axis;
 	sleep 600;
 }
 
@@ -164,14 +148,6 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	Static_Var_1 = 1;
-	dont-shade lnano1;
-	dont-shade rnano1;
-	dont-shade lnano2;
-	dont-shade rnano2;
-	dont-shade ltower1;
-	dont-shade rtower1;
-	dont-shade ltower2;
-	dont-shade rtower2;
 	unitviewer = FALSE;
 	Static_Var_6 = 0;
 	call-script InitState();

@@ -3,30 +3,37 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, beam, door1, door2, boom, neck, gun, body, gear, controller,
-	   wake01, wake02, wake03, wake04, wake05, wake06, wake07, wake08;
+piece  base, pentas, beam, nanogun, door1, door2, plate, post, wake1a,
+       wake2a, wake3a, wake4a, wake5a, wake6a, wake7a, wake8a, wake1b,
+       wake2b, wake3b, wake4b, wake5b, wake6b, wake7b, wake8b, fusions,
+       turret, wakes_fore,
+       wakes_aft, body;
 
 static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging, Static_Deployed;
 
 // Signal definitions
 #define SIG_MOVE			2
 
-
 activatescr()
 {
 	if( TRUE )
 	{
-		//turn door1 to z-axis <0.000000> now;
-		turn door1 to z-axis <210.0> speed <120.000000>;
-		//turn door2 to z-axis <0.000000> now;
-		turn door2 to z-axis <-210.0> speed <120.000000>;
-		sleep 750;
+		turn door1 to z-axis <0.> now;
+		turn door1 to z-axis <-67.> speed <99.>;
+		turn door2 to z-axis <0.> now;
+		turn door2 to z-axis <67.> speed <99.>;
+		sleep 677;
 	}
 	if( TRUE )
 	{
-		turn boom to x-axis <43.005495> speed <62.000000>;
-		turn neck to x-axis <-43.005495> speed <62.000000>;
-		sleep 750;
+		move plate to y-axis [2.] speed [5.];
+		sleep 688;
+	}
+	if( TRUE )
+	{
+		turn post to x-axis <90.> speed <131.>;
+		turn nanogun to x-axis <-90.> speed <131.>;
+		sleep 687;
 	}
 	Static_Deployed = 1;
 	sleep 25;
@@ -35,20 +42,29 @@ activatescr()
 deactivatescr()
 {
 	Static_Deployed = 0;
-
 	if( TRUE )
 	{
-		turn boom to x-axis <0.000000> speed <64.000000>;
-		turn neck to x-axis <0.000000> speed <64.000000>;
-		sleep 750;
+		move plate to y-axis [2.] now;
+		turn door1 to z-axis <-67.> now;
+		turn door2 to z-axis <67.> now;
+		turn post to x-axis <90.> now;
+		turn post to x-axis <0.> speed <197.>;
+		turn nanogun to x-axis <-90.> now;
+		turn nanogun to x-axis <0.> speed <197.>;
+		sleep 457;
 	}
 	if( TRUE )
 	{
-		turn door1 to z-axis <0.000000> speed <120.000000>;
-		turn door2 to z-axis <0.000000> speed <120.000000>;
-		sleep 750;
+		move plate to y-axis [0.] speed [8.];
+		sleep 471;
 	}
-	sleep 25;
+	if( TRUE )
+	{
+		turn door1 to z-axis <0.> speed <143.>;
+		turn door2 to z-axis <0.> speed <143.>;
+		sleep 469;
+	}
+	sleep 27;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -89,8 +105,8 @@ Go()
 Stop()
 {
 	set INBUILDSTANCE to 0;
-	turn gun to y-axis <0.000000> speed <160.000000>;
-	wait-for-turn gun around y-axis;
+	turn turret to y-axis <0.000000> speed <160.000000>;
+	wait-for-turn turret around y-axis;
 	call-script deactivatescr();
 }
 
@@ -133,41 +149,41 @@ StartMoving()
 	{
 		if( Static_Var_1 == 1 )
 		{
-			emit-sfx 5 from wake01;
-			emit-sfx 5 from wake02;
-			emit-sfx 5 from wake03;
-			emit-sfx 5 from wake04;
-			emit-sfx 5 from wake05;
-			emit-sfx 5 from wake06;
-			emit-sfx 3 from wake07;
-			emit-sfx 3 from wake08;
-			emit-sfx 3 from wake01;
-			emit-sfx 3 from wake02;
-			emit-sfx 3 from wake03;
-			emit-sfx 3 from wake04;
-			emit-sfx 3 from wake05;
-			emit-sfx 3 from wake06;
-			emit-sfx 5 from wake07;
-			emit-sfx 5 from wake08;
+			emit-sfx 5 from wake1a;
+			emit-sfx 5 from wake2a;
+			emit-sfx 5 from wake3a;
+			emit-sfx 5 from wake4a;
+			emit-sfx 5 from wake5a;
+			emit-sfx 5 from wake6a;
+			emit-sfx 3 from wake7a;
+			emit-sfx 3 from wake8a;
+			emit-sfx 3 from wake1b;
+			emit-sfx 3 from wake2b;
+			emit-sfx 3 from wake3b;
+			emit-sfx 3 from wake4b;
+			emit-sfx 3 from wake5b;
+			emit-sfx 3 from wake6b;
+			emit-sfx 5 from wake7b;
+			emit-sfx 5 from wake8b;
 		}
 		if( Static_Var_1 == 2 )
 		{
-			emit-sfx 5 from wake01;
-			emit-sfx 5 from wake02;
-			emit-sfx 5 from wake03;
-			emit-sfx 5 from wake04;
-			emit-sfx 5 from wake05;
-			emit-sfx 5 from wake06;
-			emit-sfx 3 from wake07;
-			emit-sfx 3 from wake08;
-			emit-sfx 3 from wake01;
-			emit-sfx 3 from wake02;
-			emit-sfx 3 from wake03;
-			emit-sfx 3 from wake04;
-			emit-sfx 3 from wake05;
-			emit-sfx 3 from wake06;
-			emit-sfx 5 from wake07;
-			emit-sfx 5 from wake08;
+			emit-sfx 5 from wake1a;
+			emit-sfx 5 from wake2a;
+			emit-sfx 5 from wake3a;
+			emit-sfx 5 from wake4a;
+			emit-sfx 5 from wake5a;
+			emit-sfx 5 from wake6a;
+			emit-sfx 3 from wake7a;
+			emit-sfx 3 from wake8a;
+			emit-sfx 3 from wake1b;
+			emit-sfx 3 from wake2b;
+			emit-sfx 3 from wake3b;
+			emit-sfx 3 from wake4b;
+			emit-sfx 3 from wake5b;
+			emit-sfx 3 from wake6b;
+			emit-sfx 5 from wake7b;
+			emit-sfx 5 from wake8b;
 		}
 		sleep 300;
 	}
@@ -210,8 +226,8 @@ StartBuilding(Func_Var_1)
 		sleep 100;
 	}
 	signal 4;
-	turn gear to y-axis Func_Var_1 speed <160.000000>;
-	wait-for-turn gear around y-axis;
+	turn turret to y-axis Func_Var_1 speed <160.000000>;
+	wait-for-turn turret around y-axis;
 	set INBUILDSTANCE to 1;
 
 }
@@ -247,31 +263,31 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 1;
-		explode boom type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode door1 type NOHEATCLOUD;
 		explode door2 type NOHEATCLOUD;
-		explode gun type NOHEATCLOUD;
-		explode neck type NOHEATCLOUD;
-		explode controller type NOHEATCLOUD;
+		explode fusions type NOHEATCLOUD;
+		explode pentas type NOHEATCLOUD;
+		explode nanogun type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{	
 		corpsetype = 2;
-		explode boom type FALL | NOHEATCLOUD | FIRE | EXPLODE_ON_HIT;
+		explode body type FALL | NOHEATCLOUD | FIRE | EXPLODE_ON_HIT;
 		explode door1 type NOHEATCLOUD;
 		explode door2 type NOHEATCLOUD;
-		explode gun type NOHEATCLOUD;
-		explode neck type FALL | NOHEATCLOUD | FIRE | EXPLODE_ON_HIT;
-		explode controller type NOHEATCLOUD;
+		explode fusions type NOHEATCLOUD;
+		explode pentas type FALL | NOHEATCLOUD | FIRE | EXPLODE_ON_HIT;
+		explode nanogun type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode boom type FALL | NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type FALL | NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode door1 type FALL | NOHEATCLOUD;
 	explode door2 type FALL | NOHEATCLOUD;
-	explode gun type FALL | NOHEATCLOUD;
-	explode neck type FALL | NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode controller type NOHEATCLOUD;
+	explode fusions type FALL | NOHEATCLOUD;
+	explode pentas type FALL | NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode nanogun type NOHEATCLOUD;
 	return (corpsetype);
 }

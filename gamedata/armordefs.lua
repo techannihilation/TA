@@ -239,6 +239,9 @@ return {
 		"talon_ecs",
 		"talon_dread",
 		"talon_hcar",
+		--T4 Ship
+		"corurbanus",
+		"armcentrum",
 	},
 
 	--### LAND ###

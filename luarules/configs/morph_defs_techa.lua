@@ -1230,6 +1230,11 @@ local morphDefs = {
 			xp = 0.40,
 		},
 	},
+	armtrmph = {
+		into = 'armcentrum',
+		time = 60,
+		xp = 0.10,
+	},
 	corbats = {
 		into = 'corblackhy',
 		time = 120,
