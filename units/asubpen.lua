@@ -37,7 +37,6 @@ return {
 		mobilestandorders = 1,
 		name = "Amphibious Complex",
 		noautofire = false,
-		
 		objectname = "ASUBPEN",
 		radaremitheight = 36,
 		seismicsignature = 0,

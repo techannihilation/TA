@@ -70,9 +70,10 @@ return {
 			[11] = "corfpun",
 			[13] = "coratl",
 			[14] = "corenaa",
-			[15] = "corcs",
-			[16] = "corshark",
-			[17] = "corcrus",
+			[15] = "corfscreamer",
+			[16] = "corcs",
+			[17] = "corshark",
+			[18] = "corcrus",
 		},
 		customparams = {
 			buildpic = "cormls.dds",

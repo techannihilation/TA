@@ -87,7 +87,8 @@ return {
 			[31] = "tlltrid",
 			[32] = "tllnssam",
 			[33] = "tllfflak",
-			[34] = "tllcs",
+			[34] = "tllfhmt",
+			[35] = "tllcs",
 			[36] = "tllmanta",
 		},
 		customparams = {

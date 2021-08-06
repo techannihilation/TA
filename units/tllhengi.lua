@@ -89,6 +89,7 @@ return {
 			[30] = "tlltrid",
 			[31] = "tllnssam",
 			[32] = "tllfflak",
+			[33] = "tllfhmt",
 		},
 		customparams = {
 			buildpic = "tllhengi.dds",

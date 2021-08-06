@@ -91,6 +91,7 @@ return {
 			[29] = "talon_fsprinkler",
 			[30] = "talon_frl",
 			[31] = "talon_kernel",
+			[32] = "talon_fptr",
 		},
 		customparams = {
 			buildpic = "talon_chrysoberyl.dds",

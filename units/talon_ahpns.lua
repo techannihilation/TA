@@ -30,8 +30,7 @@ return {
 		maxslope = 10,
 		mobilestandorders = 1,
 		name = "Advanced Hovercraft Platform - NS",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_ahpns",
 		radardistance = 50,
 		radaremitheight = 36,

@@ -88,6 +88,7 @@ return {
 			[31] = "corfpun",
 			[32] = "coratl",
 			[33] = "corenaa",
+			[34] = "corfscreamer",
 		},
 		customparams = {
 			buildpic = "cach.dds",

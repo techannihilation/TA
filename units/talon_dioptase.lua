@@ -70,9 +70,10 @@ return {
 			[12] = "talon_fsprinkler",
 			[13] = "talon_frl",
 			[14] = "talon_kernel",
-			[15] = "talon_cs",
-			[16] = "talon_jellyfish",
-			[17] = "talon_crus",
+			[15] = "talon_fptr",
+			[16] = "talon_cs",
+			[17] = "talon_jellyfish",
+			[18] = "talon_crus",
 		},
 		customparams = {
 			buildpic = "talon_dioptase.dds",

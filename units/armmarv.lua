@@ -96,8 +96,9 @@ return {
 			[31] = "armfguard",
 			[32] = "armatl",
 			[33] = "armfflak",
-			[34] = "armcs",
-			[35] = "armsubk",
+			[34] = "armfmercury",
+			[35] = "armcs",
+			[36] = "armsubk",
 		},
 		customparams = {
 			buildpic = "armmarv.dds",

@@ -98,8 +98,9 @@ return {
 			[32] = "corfpun",
 			[33] = "coratl",
 			[34] = "corenaa",
-			[35] = "corcs",
-			[36] = "corshark",
+			[35] = "corfscreamer",
+			[36] = "corcs",
+			[37] = "corshark",
 		},
 		customparams = {
 			buildpic = "corfred.dds",

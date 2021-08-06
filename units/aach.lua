@@ -76,7 +76,7 @@ return {
 			[19] = "armch",
 			[20] = "armlashover",
 			[21] = "armundertow",
-			[22] = "armtide",
+			--[22] = "",
 			--[23] = "",
 			[24] = "aahpns",
 			[25] = "armfnanotc",
@@ -88,6 +88,7 @@ return {
 			[31] = "armfguard",
 			[32] = "armatl",
 			[33] = "armfflak",
+			[34] = "armfmercury",
 		},
 		customparams = {
 			buildpic = "aach.dds",
