@@ -35,7 +35,7 @@ return {
 		maxdamage = 2600,
 		maxslope = 14,
 		maxwaterdepth = 0,
-		name = "H.L.T.",
+		name = "Electro",
 		noautofire = false,
 		objectname = "TLLHLT",
 		radaremitheight = 83,

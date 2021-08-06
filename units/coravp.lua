@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Advanced Vehicle Plant",
+		name = "Vehicle Plant",
 		noautofire = false,
 		objectname = "CORAVP",
 		radaremitheight = 29,

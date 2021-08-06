@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		metalstorage = 200,
 		mobilestandorders = 1,
-		name = "Advanced Vehicle Plant",
+		name = "Vehicle Plant",
 		noautofire = false,
 		objectname = "ARMAVP",
 		radaremitheight = 34,

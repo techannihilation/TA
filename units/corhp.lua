@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "120 32 106",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Builds Hovercraft",
+		description = "Produces Hovercraft",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,
