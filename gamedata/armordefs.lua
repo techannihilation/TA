@@ -242,6 +242,8 @@ return {
 		--T4 Ship
 		"corurbanus",
 		"armcentrum",
+		"talon_paladium",
+		"tllpliosaurus",
 	},
 
 	--### LAND ###

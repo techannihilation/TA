@@ -5,8 +5,7 @@
 
 piece  base, body, nanoturd, nanobase, nanoturn, door1, door2, nano1, nano4, lath4,
        nano2, nano3, lath1, lath2, lath3, w1, w2, w3,
-       w4, w5, w6, w7, w8, w9, w10, w11,
-       w12, wakes;
+       w4, w5, w6, w7, w8, wakes;
 
 static-var  Aiming, Static_Var_Sea, Emit, statechg_DesiredState, statechg_StateChanging;
 
@@ -38,9 +37,9 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to y-axis <180.> speed <-180.>;
-		turn door2 to y-axis <180.> speed <-180.>;
-		wait-for-turn door1 around y-axis;
+		move door1 to x-axis [-2.0] speed [4.];
+		move door2 to x-axis [2.0] speed [4.];
+		wait-for-move door1 along x-axis;
 	}
 	if( TRUE )
 	{
@@ -92,9 +91,9 @@ deactivatescr()
 	}
 	if( TRUE )
 	{
-		turn door1 to y-axis <0.> speed <-180.>;
-		turn door2 to y-axis <0.> speed <-180.>;
-		wait-for-turn door1 around y-axis;
+		move door1 to x-axis [0.0] speed [4.];
+		move door2 to x-axis [0.0] speed [4.];
+		wait-for-move door1 along x-axis;
 	}
 	sleep 50;
 }
@@ -193,10 +192,6 @@ waking()
 			emit-sfx 3 from w6;
 			emit-sfx 3 from w7;
 			emit-sfx 3 from w8;
-			emit-sfx 3 from w9;
-			emit-sfx 3 from w10;
-			emit-sfx 3 from w11;
-			emit-sfx 3 from w12;
 			emit-sfx 5 from w1;
 			emit-sfx 5 from w2;
 			emit-sfx 5 from w3;
@@ -205,10 +200,6 @@ waking()
 			emit-sfx 5 from w6;
 			emit-sfx 5 from w7;
 			emit-sfx 5 from w8;
-			emit-sfx 5 from w9;
-			emit-sfx 5 from w10;
-			emit-sfx 5 from w11;
-			emit-sfx 5 from w12;
 		}
 		sleep 325;
 	}

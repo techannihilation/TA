@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Battleship",
+		description = "Flagship",
 		energystorage = 1500,
 		explodeas = "KROG_BLAST",
 		firestandorders = 1,

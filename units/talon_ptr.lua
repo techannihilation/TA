@@ -35,7 +35,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "PTR",
+		name = "Sodium",
 		noautofire = false,
 		objectname = "talon_ptr",
 		onoffable = false,

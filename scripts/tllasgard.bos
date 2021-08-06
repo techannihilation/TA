@@ -156,7 +156,7 @@ FireTertiary()
 		emit-sfx 1024 + 0 from flare1;
 		sleep 150;
 		move barrel1 to z-axis [0.000000] speed [3.000000];
-		gun_2 = 1;
+		gun_3 = 1;
 		return (0);
 	}
 	if( gun_3 == 1 )
@@ -165,7 +165,7 @@ FireTertiary()
 		emit-sfx 1024 + 0 from flare2;
 		sleep 150;
 		move barrel2 to z-axis [0.000000] speed [3.000000];
-		gun_2 = 0;
+		gun_3 = 0;
 		return (0);
 	}
 }

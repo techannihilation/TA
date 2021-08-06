@@ -76,6 +76,7 @@ return {
 			[15] = "corfsilo",
 			[16] = "corbuzz1",
 			[17] = "corusy",
+			[18] = "corfnanotc3",
 		},
 		customparams = {
 			buildpic = "coruch.dds",

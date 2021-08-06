@@ -1,8 +1,5 @@
 return {
 	armemp = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 32193,
 		buildcostmetal = 1575,
@@ -21,7 +18,6 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "EMP Missile Launcher",
-		energyuse = 0,
 		explodeas = "armgripn_BOMB",
 		firestandorders = 1,
 		footprintx = 4,

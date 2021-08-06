@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Battleship",
+		description = "Flagship",
 		energystorage = 1500,
 		explodeas = "KROG_BLAST",
 		firestandorders = 1,
@@ -257,10 +257,10 @@ return {
 			core_bats = {
 				accuracy = 400,
 				alphadecay = 0.3,
-				areaofeffect = 196,
+				areaofeffect = 292,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
-				craterareaofeffect = 64,
+				craterareaofeffect = 292,
 				craterboost = 0,
 				cratermult = 0,
 				explosiongenerator = "custom:FLASH96",
@@ -294,13 +294,13 @@ return {
 			[1] = {
 				def = "CANNON_TYRNT",
 				maindir = "0 0 1",
-				maxangledif = 240,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "CANNON_TYRNT",
 				maindir = "0 0 -1",
-				maxangledif = 240,
+				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {

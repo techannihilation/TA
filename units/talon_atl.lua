@@ -107,7 +107,7 @@ return {
 				explosiongenerator = "custom:FLASH3",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "Advtorpedo",
+				model = "weapon_advtorpedo",
 				name = "LongRangeTorpedo",
 				noselfdamage = true,
 				range = 950,

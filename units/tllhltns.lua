@@ -1,4 +1,4 @@
-return {
+oreturn {
 	tllhltns = {
 		buildangle = 32768,
 		buildcostenergy = 3506,
@@ -15,7 +15,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Heavy Laser Tower - Naval Series",
+		description = "Naval Heavy Lightning Tower",
 		energystorage = 200,
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
@@ -31,7 +31,7 @@ return {
 		maxdamage = 2710,
 		maxslope = 14,
 		minwaterdepth = 5,
-		name = "NS H.L.T.",
+		name = "H.L.T.",
 		noautofire = false,
 		noshadow = 1,
 		objectname = "TLLHLTNS",

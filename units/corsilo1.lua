@@ -1,7 +1,7 @@
 return {
 	corsilo1 = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 194551,
@@ -122,23 +122,23 @@ return {
 		},
 		weapondefs = {
 			crblmssl1 = {
-				areaofeffect = 1280,
+				areaofeffect = 1560,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_nuke",
 				collidefriendly = false,
 				commandfire = true,
-				craterareaofeffect = 1920,
+				craterareaofeffect = 1560,
 				craterboost = 0.72,
 				cratermult = 0.36,
 				edgeeffectiveness = 0,
-				energypershot = 260000,
-				explosiongenerator = "custom:nuke_explo_1280",
+				energypershot = 300000,
+				explosiongenerator = "custom:nuke_explo_1560",
 				firestarter = 0,
 				flighttime = 400,
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
-				metalpershot = 1850,
+				metalpershot = 2500,
 				model = "crblmssl",
 				name = "CoreNuclearMissile",
 				range = 72000,

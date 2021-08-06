@@ -1,7 +1,7 @@
 return {
 	corsilo = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 104789,
@@ -124,17 +124,17 @@ return {
 		},
 		weapondefs = {
 			crblmssl = {
-				areaofeffect = 1650,
+				areaofeffect = 1280,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_Large_Rocket",
 				collidefriendly = false,
 				commandfire = true,
-				craterareaofeffect = 2475,
+				craterareaofeffect = 1280,
 				craterboost = 0.72,
 				cratermult = 0.36,
 				edgeeffectiveness = 0.3,
-				energypershot = 135000,
+				energypershot = 150000,
 				explosiongenerator = "custom:nuke_explo_1280",
 				firestarter = 0,
 				flighttime = 400,
@@ -164,7 +164,7 @@ return {
 				damage = {
 					commanders = 2500,
 					default = 10000,
-					subs = 4750,
+					subs = 5000,
 				},
 				customparams = {
 					light_color = "1 0.6 0.2",

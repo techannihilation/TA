@@ -1,8 +1,5 @@
 return {
 	armsilo = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 112037,
 		buildcostmetal = 8176,
@@ -130,17 +127,17 @@ return {
 				cegtag = "Trail_Large_Rocket",
 				collidefriendly = false,
 				commandfire = true,
-				craterareaofeffect = 1920,
+				craterareaofeffect = 1280,
 				craterboost = 0.72,
 				cratermult = 0.36,
 				edgeeffectiveness = 0.3,
-				energypershot = 125000,
+				energypershot = 150000,
 				explosiongenerator = "custom:nuke_explo_1280",
 				firestarter = 0,
 				flighttime = 400,
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
-				metalpershot = 1000,
+				metalpershot = 1250,
 				model = "ballmiss",
 				name = "NuclearMissile",
 				range = 72000,
@@ -163,8 +160,8 @@ return {
 				weaponvelocity = 1300,
 				damage = {
 					commanders = 2500,
-					default = 9500,
-					subs = 4750,
+					default = 10000,
+					subs = 5000,
 				},
 				customparams = {
 					light_color = "1 0.6 0.2",

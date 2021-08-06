@@ -74,6 +74,8 @@ return {
 			[12] = "tllgazelle",
 			[13] = "tllion",
 			[14] = "tllbagger",
+			[15] = "tllusy",
+			[16] = "tllfnanotc3",
 		},
 		customparams = {
 			buildpic = "tllmarmelade.dds",

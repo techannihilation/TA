@@ -5,9 +5,9 @@
 #include "exptype.h"
 
 piece  base, body, trap, missile, w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14,
-		turret1, turret2, turret3, sleeve1, sleeve2, sleeve3,
-		barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, barrel7, barrel8, barrel9,
-		flare1, flare2, flare3, flare4, flare5, flare6, flare7, flare8, flare9,
+		turret1, turret2, turret3, sleeve1, sleeve2,
+		barrel1, barrel2, barrel3, barrel4, barrel5, barrel6,
+		flare1, flare2, flare3, flare4, flare5, flare6,
 		airsleeve2, airsleeve3, airbarrel2a, airbarrel2b, airbarrel3a, airbarrel3b, airflare2a, airflare2b, airflare3a, airflare3b, 
 		torpedo1, torpedo2, torpedo3, torpedo4, flare1a, flare1b, flare2a, flare2b, flare3a, flare3b, flare4a, flare4b,
 		pad1, pad2, pad3, pad4, pads, aimpad, light, land1, land2, land3, land4 ;
@@ -92,9 +92,6 @@ Create()
 	hide flare4;
 	hide flare5;
 	hide flare6;
-	hide flare7;
-	hide flare8;
-	hide flare9;
 	hide airflare2a;
 	hide airflare2b;
 	hide airflare3a;
@@ -178,7 +175,6 @@ RestoreAfterDelay()
 	sleep restore_delay * 2;
 	turn sleeve1 to x-axis <0> speed <50>;
 	turn sleeve2 to x-axis <0> speed <50>;
-	turn sleeve3 to x-axis <0> speed <50>;
 	turn turret1 to y-axis <0.000000> speed <25>;
 	gun_1 = 0;
 	gun_2 = 0;
@@ -205,7 +201,6 @@ AimPrimary(heading, pitch)
 	turn turret1 to y-axis heading speed <25>;
 	turn sleeve1 to x-axis <0.000000> - pitch speed <75>;
 	turn sleeve2 to x-axis <0.000000> - pitch speed <75>;
-	turn sleeve3 to x-axis <0.000000> - pitch speed <75>;
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn sleeve1 around x-axis;
 	start-script RestoreAfterDelay();
@@ -242,18 +237,6 @@ QueryPrimary(piecenum)
 	if (gun_1 == 5)
 	{
 		piecenum = flare6;
-	}
-	if (gun_1 == 6)
-	{
-		piecenum = flare7;
-	}
-	if (gun_1 == 7)
-	{
-		piecenum = flare8;
-	}
-	if (gun_1 == 8)
-	{
-		piecenum = flare9;
 	}
 }
 
@@ -307,32 +290,8 @@ FirePrimary()
 			hide flare6;
 			move barrel6 to z-axis [0.000000] speed [3.000000];
 		}
-		if( gun_1 == 6 )
-		{
-			move barrel7 to z-axis [-2.400000] now;
-			show flare7;
-			sleep 50;
-			hide flare7;
-			move barrel7 to z-axis [0.000000] speed [3.000000];
-		}
-		if( gun_1 == 7 )
-		{
-			move barrel8 to z-axis [-2.400000] now;
-			show flare8;
-			sleep 50;
-			hide flare8;
-			move barrel8 to z-axis [0.000000] speed [3.000000];
-		}
-		if( gun_1 == 8 )
-		{
-			move barrel9 to z-axis [-2.400000] now;
-			show flare9;
-			sleep 50;
-			hide flare9;
-			move barrel9 to z-axis [0.000000] speed [3.000000];
-		}
 		++gun_1;
-		if( gun_1 == 9 )
+		if( gun_1 == 6 )
 		{
 			gun_1 = 0;
 		}

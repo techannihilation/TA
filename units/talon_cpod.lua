@@ -66,6 +66,7 @@ return {
 			[10] = "talon_requiem",
 			[11] = "talon_elixir",
 			[12] = "talon_veloute1",
+			[13] = "talon_usy",
 		},
 		customparams = {
 			buildpic = "talon_cpod.dds",

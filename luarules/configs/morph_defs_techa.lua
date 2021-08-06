@@ -1221,34 +1221,44 @@ local morphDefs = {
 	armbats = {
 		{
 			into = 'armbc',
-			time = 90,
-			xp = 0.30,
+			time = 60,
+			xp = 0.10,
 		},
 		{
 			into = 'aseadragon',
-			time = 120,
-			xp = 0.40,
+			time = 60,
+			xp = 0.20,
 		},
 	},
 	armtrmph = {
 		into = 'armcentrum',
-		time = 60,
+		time = 80,
 		xp = 0.10,
 	},
 	corbats = {
 		into = 'corblackhy',
-		time = 120,
-		xp = 0.40,
+		time = 60,
+		xp = 0.20,
 	},
 	cortyrnt = {
 		into = 'corurbanus',
-		time = 60,
+		time = 80,
+		xp = 0.10,
+	},
+	tllcaps = {
+		into = 'tllpliosaurus',
+		time = 80,
 		xp = 0.10,
 	},
 	talon_imperator = {
 		into = 'talon_dread',
-		time = 160,
-		xp = 0.50,
+		time = 90,
+		xp = 0.30,
+	},
+	talon_dread = {
+		into = 'talon_paladium',
+		time = 80,
+		xp = 0.10,
 	},
 	armserpent = {
 		into = 'armbsub',

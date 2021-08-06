@@ -94,7 +94,7 @@ return {
 			[33] = "armpack",
 			[34] = "armcir",
 			[35] = "armtide",
-			--[36] = "",
+			[36] = "armatidal",
 			[37] = "armfmkr",
 			[38] = "armfhp",
 			[39] = "aahpns",

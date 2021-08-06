@@ -1,0 +1,390 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, plat, tower,
+		nanoturd1, nanobase1, nanoturn1, door1a, door1b, nano1a, nano1d, lath1d, nano1b, nano1c, lath1a, lath1b, lath1c,
+		nanoturd2, nanobase2, nanoturn2, door2a, door2b, nano2a, nano2d, lath2d, nano2b, nano2c, lath2a, lath2b, lath2c,
+		w1, w2, w3, w4, w5, w6, w7, w8, wakes;
+
+static-var  Aiming, Static_Var_Sea, Emit, statechg_DesiredState, statechg_StateChanging;
+
+
+WobbleUnit()
+{
+	while( TRUE )
+	{
+		move base to y-axis [1.1] speed [1.];
+		wait-for-move base along y-axis;
+		move base to y-axis [-0.] speed [1.];
+		sleep 500;
+	}
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 4;
+	set-signal-mask 4;
+	turn body to z-axis <0.> * anglez speed <105.>;
+	turn body to x-axis <0.> * anglex speed <105.>;
+	wait-for-turn body around z-axis;
+	wait-for-turn body around x-axis;
+	turn body to z-axis <0.> speed <30.>;
+	turn body to x-axis <0.> speed <30.>;
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move door1a to x-axis [-4.08] speed [6.];
+		move door2a to x-axis [-4.08] speed [6.];
+		move door1b to x-axis [4.08] speed [6.];
+		move door2b to x-axis [4.08] speed [6.];
+		
+		wait-for-move door1a along x-axis;
+	}
+	if( TRUE )
+	{
+		move nano1a to y-axis [6.] speed [6.];
+		move nano1b to y-axis [8.] speed [8.];
+		move nano1c to y-axis [10.] speed [10.];
+		move nano1d to y-axis [10.] speed [12.];
+		
+		move nano2a to y-axis [6.] speed [6.];
+		move nano2b to y-axis [8.] speed [8.];
+		move nano2c to y-axis [10.] speed [10.];
+		move nano2d to y-axis [10.] speed [12.];
+		
+		wait-for-move nano1a along y-axis;
+	}
+	if( TRUE )
+	{
+		spin nano1a around y-axis speed <120.>;
+		spin nano1b around y-axis speed <90.>;
+		spin nano1c around y-axis speed <150.>;
+		spin nano1d around y-axis speed <180.>;
+		
+		spin nano2a around y-axis speed <210.>;
+		spin nano2b around y-axis speed <240.>;
+		spin nano2c around y-axis speed <270.>;
+		spin nano2d around y-axis speed <300.>;
+	}
+	sleep 750;
+}
+
+deactivatescr()
+{
+	set INBUILDSTANCE to 0;
+	move nanobase1 to z-axis [0.] speed [15.];
+	
+	turn nanoturd1 to y-axis <0.> speed <100.>;
+	
+	move nanobase2 to z-axis [0.] speed [15.];
+	
+	turn nanoturd2 to y-axis <0.> speed <100.>;
+	
+	if( TRUE )
+	{
+		stop-spin nano1a around y-axis;
+		stop-spin nano1b around y-axis;
+		stop-spin nano1c around y-axis;
+		stop-spin nano1d around y-axis;
+		
+		stop-spin nano2a around y-axis;
+		stop-spin nano2b around y-axis;
+		stop-spin nano2c around y-axis;
+		stop-spin nano2d around y-axis;
+		
+		turn nano1a to y-axis <0.> speed <360.>;
+		turn nano1b to y-axis <0.> speed <360.>;
+		turn nano1c to y-axis <0.> speed <360.>;
+		turn nano1d to y-axis <0.> speed <360.>;
+		
+		turn nano2a to y-axis <0.> speed <360.>;
+		turn nano2b to y-axis <0.> speed <360.>;
+		turn nano2c to y-axis <0.> speed <360.>;
+		turn nano2d to y-axis <0.> speed <360.>;
+		
+		wait-for-turn nano1a around y-axis;
+		wait-for-turn nano1b around y-axis;
+		wait-for-turn nano1c around y-axis;
+		wait-for-turn nano1d around y-axis;
+	}
+	if( TRUE )
+	{
+		move nano1a to y-axis [0.] speed [6.];
+		move nano1b to y-axis [0.] speed [8.];
+		move nano1c to y-axis [0.] speed [10.];
+		move nano1d to y-axis [0.] speed [12.];
+		
+		move nano2a to y-axis [0.] speed [6.];
+		move nano2b to y-axis [0.] speed [8.];
+		move nano2c to y-axis [0.] speed [10.];
+		move nano2d to y-axis [0.] speed [12.];
+		
+		wait-for-move nano1a along y-axis;
+	}
+	if( TRUE )
+	{
+		move door1a to x-axis [0.] speed [6.];
+		move door2a to x-axis [0.] speed [6.];
+		move door1b to x-axis [0.] speed [6.];
+		move door2b to x-axis [0.] speed [6.];
+		wait-for-turn door1a around y-axis;
+	}
+	sleep 50;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+			Aiming = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+			Aiming = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	move nanobase1 to z-axis [0.] speed [15.];
+	turn nanoturd1 to y-axis <0.> now;
+	
+	move nanobase2 to z-axis [0.] speed [15.];
+	turn nanoturd2 to y-axis <0.> now;
+	
+	call-script deactivatescr();
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+waking()
+{
+	while( TRUE )
+	{
+		if( Static_Var_Sea == 2 OR Static_Var_Sea == 1 )
+		{
+			emit-sfx 3 from w1;
+			emit-sfx 3 from w2;
+			emit-sfx 3 from w3;
+			emit-sfx 3 from w4;
+			emit-sfx 3 from w5;
+			emit-sfx 3 from w6;
+			emit-sfx 3 from w7;
+			emit-sfx 3 from w8;
+			emit-sfx 5 from w1;
+			emit-sfx 5 from w2;
+			emit-sfx 5 from w3;
+			emit-sfx 5 from w4;
+			emit-sfx 5 from w5;
+			emit-sfx 5 from w6;
+			emit-sfx 5 from w7;
+			emit-sfx 5 from w8;
+		}
+		sleep 325;
+	}
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_Sea = state;
+}
+
+Create()
+{
+	start-script waking();
+	Aiming = 1;
+	Emit = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script WobbleUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	start-script RequestState(0);
+	while( Aiming )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn nanoturd1 to y-axis Func_Var_1 speed <180.>;
+	move nanobase1 to z-axis [30.] speed [15.];
+	
+	turn nanoturd2 to y-axis Func_Var_1 speed <180.>;
+	move nanobase2 to z-axis [30.] speed [15.];
+	
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	signal 4;
+	set-signal-mask 4;
+	sleep 2000;
+	set-signal-mask 0;
+	signal 4;
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Emit == 1 )
+	{
+		piecenum = lath1a;
+	}
+	if( Emit == 2 )
+	{
+		piecenum = lath1b;
+	}
+	if( Emit == 3 )
+	{
+		piecenum = lath1c;
+	}
+	if( Emit == 4 )
+	{
+		piecenum = lath1d;
+	}
+	if( Emit == 5 )
+	{
+		piecenum = lath2a;
+	}
+	if( Emit == 6 )
+	{
+		piecenum = lath2b;
+	}
+	if( Emit == 7 )
+	{
+		piecenum = lath2c;
+	}
+	if( Emit == 8 )
+	{
+		piecenum = lath2d;
+	}
+	++Emit;
+	if( Emit == 9 )
+	{
+		Emit = 1;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode lath1a type NOHEATCLOUD;
+		explode lath1b type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode nano1a type NOHEATCLOUD;
+		explode nano2c type NOHEATCLOUD;
+		explode door1a type NOHEATCLOUD;
+		explode door2b type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode plat type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode lath1a type NOHEATCLOUD;
+		explode lath1b type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode nano1a type NOHEATCLOUD;
+		explode nano2c type NOHEATCLOUD;
+		explode door1a type NOHEATCLOUD;
+		explode door2b type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode plat type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode lath2a type NOHEATCLOUD;
+	explode lath1b type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode nano1a type NOHEATCLOUD;
+	explode nano2c type NOHEATCLOUD;
+	explode door1a type NOHEATCLOUD;
+	explode door2b type NOHEATCLOUD;
+	explode tower type NOHEATCLOUD;
+	explode plat type NOHEATCLOUD;
+	return (corpsetype);
+}

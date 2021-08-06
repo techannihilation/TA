@@ -32,7 +32,7 @@ static-var gun_1, gun_2, gun_3, gun_4, gun_5, gun_6, gun_7 , flak_1, flak_2, fla
 #define SIG_AIM8 256
 #define SIG_AIM9 512
 #define SIG_AIM10 1024
-#define SIG_AIM11 2046
+#define SIG_AIM11 2048
 #define SIG_AIM12 4096
 #define SIG_AIM13 8192
 #define SIG_AIM14 16384
@@ -102,6 +102,9 @@ Create()
 	
 	hide oly_flare1a;hide oly_flare1b;hide oly_flare1c;
 	hide oly_flare2a;hide oly_flare2b;hide oly_flare2c;
+	
+	start-script SmokeUnit();
+	
 }
 
 waveSplash()

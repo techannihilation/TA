@@ -6,10 +6,10 @@
 piece  turret1, turret2, sleeve1, sleeve2, base,
 		barrel1, barrel2, barrel3, barrel4, barrel5, barrel6, flare1, flare2, flare3, flare4, flare5, flare6,
 		cover1, cover2, cover3, cover4, cover5, cover6, 
-		w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, flare21, flare22, flare23, flare24, 
-		wakes1, wakes2, mis1, mis2, body, cycle, aimfrom, depth_aim1, depth_aim2;
+		w1, w2, w3, w4, w5, w6, w7, flare21, flare22, flare23, flare24, 
+		wakes1, body, torpedo1, torpedo2, flaret1a, flaret1b, flaret2a, flaret2b;
 
-static-var  gun_1, restore_delay, gun_2, turret_1, laser, beforehealth;
+static-var  gun_1, restore_delay, gun_2, turret_1, laser, beforehealth, torpedo_1, torpedo_2;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -37,9 +37,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			}
 			emit-sfx smoketype from base;
 			emit-sfx smoketype from wakes1;
-			emit-sfx smoketype from wakes2;
-			emit-sfx smoketype from mis1;
-			emit-sfx smoketype from mis2;
 			emit-sfx smoketype from turret2;
 			emit-sfx smoketype from turret1;
 		}
@@ -65,14 +62,11 @@ Create()
 	gun_1 = 0;
 	gun_2 = 7;
 	laser = 0;
+	torpedo_1 = 0;
+	torpedo_2 = 0;
 	
 	restore_delay = 6000;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -84,11 +78,27 @@ RestoreAfterDelay()
 	gun_1 = 0;
 	gun_2 = 0;
 }
+
 RestoreAfterDelay2()
 {
 	sleep restore_delay / 2;
 	turn turret2 to y-axis <180.000000> speed <50>;
 }
+
+RestoreTorpedo1()
+{
+	sleep restore_delay / 2;
+	turn torpedo1 to y-axis <0.000000> speed <75>;
+	turn torpedo1 to x-axis <0.000000> speed <75>;
+}
+
+RestoreTorpedo2()
+{
+	sleep restore_delay / 2;
+	turn torpedo2 to y-axis <0.000000> speed <75>;
+	turn torpedo2 to x-axis <0.000000> speed <75>;
+}
+
 StartMoving()
 {
 	signal SIG_MOVE;
@@ -102,11 +112,6 @@ StartMoving()
 		emit-sfx 3 from w5;
 		emit-sfx 3 from w6;
 		emit-sfx 3 from w7;
-		emit-sfx 3 from w8;
-		emit-sfx 3 from w9;
-		emit-sfx 3 from w10;
-		emit-sfx 3 from w11;
-		emit-sfx 3 from w12;
 		emit-sfx 5 from w1;
 		emit-sfx 5 from w2;
 		emit-sfx 5 from w3;
@@ -114,11 +119,6 @@ StartMoving()
 		emit-sfx 5 from w5;
 		emit-sfx 5 from w6;
 		emit-sfx 5 from w7;
-		emit-sfx 5 from w8;
-		emit-sfx 5 from w9;
-		emit-sfx 5 from w10;
-		emit-sfx 5 from w11;
-		emit-sfx 5 from w12;
 		sleep 500;
 	}
 }
@@ -242,7 +242,7 @@ AimSecondary(heading, pitch)
 	set-signal-mask SIG_AIM_2;
 	turn turret2 to y-axis heading speed <90.000000>;
 	wait-for-turn turret2 around y-axis;
-	//start-script RestoreAfterDelay2();
+	start-script RestoreAfterDelay2();
 	return (1);
 }
 
@@ -276,7 +276,7 @@ FireSecondary()
 	}
 }
 
-
+/*
 AimFromTertiary(piecenum)
 {
 	piecenum = mis1;
@@ -311,49 +311,82 @@ QueryTertiary(piecenum)
 	}
 
 }
+*/
 
 AimFromWeapon4(piecenum)
 {
-	piecenum = depth_aim1;
+	piecenum = torpedo1;
 }
 
 AimWeapon4(heading, pitch)
 {
 	signal SIG_AIM_4;
 	set-signal-mask SIG_AIM_4;
+	turn torpedo1 to y-axis heading speed <75>;
+	turn torpedo1 to x-axis <0> - pitch speed <75>;
+	wait-for-turn torpedo1 around y-axis;
+	wait-for-turn torpedo1 around x-axis;
+	start-script RestoreTorpedo1();
 	return (1);
 }
 
 FireWeapon4()
 {
-	//explode mis2 type NOHEATCLOUD;
+	++torpedo_1;
+	if (torpedo_1 == 2)
+	{
+		torpedo_1 = 0;
+	}
 }
 
 QueryWeapon4(piecenum)
 {
-	piecenum = depth_aim1;
+	if (torpedo_1 == 0)
+	{
+		piecenum = flaret1a;
+	}
+	if (torpedo_1 == 1)
+	{
+		piecenum = flaret1b;
+	}
 }
 
 AimFromWeapon5(piecenum)
 {
-	piecenum = depth_aim1;
+	piecenum = torpedo2;
 }
 
 AimWeapon5(heading, pitch)
 {
 	signal SIG_AIM_5;
 	set-signal-mask SIG_AIM_5;
+	turn torpedo2 to y-axis heading speed <75>;
+	turn torpedo2 to x-axis <0> - pitch speed <75>;
+	wait-for-turn torpedo2 around y-axis;
+	wait-for-turn torpedo2 around x-axis;
+	start-script RestoreTorpedo1();
 	return (1);
 }
 
 FireWeapon5()
 {
-	//explode mis2 type NOHEATCLOUD;
+	++torpedo_2;
+	if (torpedo_2 == 2)
+	{
+		torpedo_2 = 0;
+	}
 }
 
 QueryWeapon5(piecenum)
 {
-	piecenum = depth_aim2;
+	if (torpedo_2 == 0)
+	{
+		piecenum = flaret2a;
+	}
+	if (torpedo_2 == 1)
+	{
+		piecenum = flaret2b;
+	}
 }
 
 SweetSpot(piecenum)
@@ -374,9 +407,7 @@ Killed(severity, corpsetype)
 	explode sleeve2 type NOHEATCLOUD;
 	explode barrel3 type NOHEATCLOUD;
 	explode barrel6 type NOHEATCLOUD;
-	explode base type NOHEATCLOUD;
-	explode mis1 type NOHEATCLOUD;
-	explode mis2 type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -390,9 +421,7 @@ Killed(severity, corpsetype)
 	explode sleeve2 type NOHEATCLOUD |FALL;
 	explode barrel3 type NOHEATCLOUD |FALL;
 	explode barrel6 type NOHEATCLOUD |FALL;
-	explode base type NOHEATCLOUD |FALL;
-	explode mis1 type NOHEATCLOUD |FALL;
-	explode mis2 type NOHEATCLOUD |FALL;
+	explode body type NOHEATCLOUD;
 	return (corpsetype);
 	}
 	corpsetype = 3;
@@ -404,8 +433,6 @@ Killed(severity, corpsetype)
 	explode sleeve2 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel3 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel6 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode mis1 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode mis2 type NOHEATCLOUD |FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
 	return (corpsetype);
 }

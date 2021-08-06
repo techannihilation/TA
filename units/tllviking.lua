@@ -37,7 +37,6 @@ return {
 		movementclass = "DBOAT6",
 		name = "Viking",
 		noautofire = false,
-		
 		objectname = "TLLVIKING",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
@@ -133,7 +132,7 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_bats = {
+			tll_bats = {
 				accuracy = 350,
 				areaofeffect = 96,
 				avoidfeature = false,
@@ -169,7 +168,7 @@ return {
 					subs = 5,
 				},
 			},
-			arm_crus = {
+			tll_crus = {
 				areaofeffect = 32,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
@@ -200,17 +199,17 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARM_BATS",
+				def = "TLL_BATS",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "ARM_CRUS",
+				def = "TLL_CRUS",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				def = "ARM_CRUS",
+				def = "TLL_CRUS",
 				maindir = "0 0 -1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",

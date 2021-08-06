@@ -67,8 +67,9 @@ return {
 			[6] = "tllsy",
 			[7] = "tllasy",
 			[8] = "tllesy",
-			[9] = "tllfnanotc2",
-			[10] = "tllfgate1",
+			[9] = "tllusy",
+			[10] = "tllfnanotc2",
+			[11] = "tllfgate1",
 		},
 		customparams = {
 			buildpic = "tllecs.dds",

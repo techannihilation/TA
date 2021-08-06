@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Super Battleship",
+		description = "Experimental Battleship",
 		energystorage = 3000,
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,

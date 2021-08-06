@@ -43,24 +43,6 @@ Create()
 {
 	hide flare1;
 	hide flare2;
-	dont-shade foundation;
-	dont-shade turret;
-	dont-shade flare1;
-	dont-shade flare2;
-	dont-shade arm1;
-	dont-shade arm2;
-	dont-shade ammo1;
-	dont-shade ammo2;
-	dont-shade ammo3;
-	dont-shade ammo4;
-	cache foundation;
-	cache turret;
-	cache flare1;
-	cache flare2;
-	cache ammo1;
-	cache ammo2;
-	cache ammo3;
-	cache ammo4;
 	gun_1 = base;
 	Static_Var_2 = 0;
 	Static_Var_3 = 5000;

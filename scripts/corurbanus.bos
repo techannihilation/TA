@@ -31,7 +31,7 @@ static-var gun_1, gun_2, gun_3, gun_4, laser_1, laser_2, depth_1, depth_2, flak_
 #define SIG_AIM8 256
 #define SIG_AIM9 512
 #define SIG_AIM10 1024
-#define SIG_AIM11 2046
+#define SIG_AIM11 2048
 #define SIG_AIM12 4096
 #define SIG_AIM13 8192
 #define SIG_AIM14 16384
@@ -122,6 +122,8 @@ Create()
 	hide flakflare6a;hide flakflare6b;hide flakflare5a;hide flakflare5b;
 	hide flakflare4a;hide flakflare4b;hide flakflare3a;	hide flakflare3b;
 	hide flakflare2a;hide flakflare2b;hide flakflare1a;hide flakflare1b;
+	
+	start-script SmokeUnit();
 }
 
 waveSplash()
