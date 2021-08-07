@@ -37,7 +37,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Zeus",
 		noautofire = false,
-		
 		objectname = "ARMZEUS",
 		radaremitheight = 46,
 		seismicsignature = 0,
@@ -58,8 +57,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-4.33491516113 -5.09323153076 2.83627319336",
-				collisionvolumescales = "39.0425720215 11.3397369385 32.5729980469",
+				collisionvolumeoffsets = "-4 -5 2",
+				collisionvolumescales = "39 11 32",
 				collisionvolumetype = "Box",
 				damage = 2726,
 				description = "Zeus Wreckage",

@@ -138,11 +138,11 @@ BoomExtend(posxz, posy)
 	start-script StartDoorOpen();
 	turn turret to y-axis Static_Var_2 speed <50.>;
 	turn magnet to x-axis Static_Var_3 speed <30.>;
-	turn boom to x-axis <0.> - Static_Var_3 speed <30.>;
-	move arm1 to z-axis Static_Var_1 / [0.] speed [30.];
-	move arm2 to z-axis Static_Var_1 / [0.] speed [30.];
-	move arm3 to z-axis Static_Var_1 / [0.] speed [30.];
-	move arm4 to z-axis Static_Var_1 / [0.] speed [30.];
+	turn boom to x-axis <0.> - Static_Var_3 speed <50.>;
+	move arm1 to z-axis Static_Var_1 / [0.00005] speed [50.];
+	move arm2 to z-axis Static_Var_1 / [0.00005] speed [50.];
+	move arm3 to z-axis Static_Var_1 / [0.00005] speed [50.];
+	move arm4 to z-axis Static_Var_1 / [0.00005] speed [50.];
 	wait-for-turn turret around y-axis;
 	wait-for-turn boom around x-axis;
 	wait-for-move arm1 along z-axis;

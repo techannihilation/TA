@@ -1,4 +1,4 @@
-oreturn {
+return {
 	tllhltns = {
 		buildangle = 32768,
 		buildcostenergy = 3506,

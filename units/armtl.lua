@@ -32,7 +32,6 @@ return {
 		minwaterdepth = 12,
 		name = "Harpoon",
 		noautofire = false,
-		
 		objectname = "ARMTL",
 		radaremitheight = 25,
 		seismicsignature = 0,

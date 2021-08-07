@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE",
+		category = "ALL MOBILE TINY SURFACE UNDERWATER",
 		corpse = "armflea_dead",
 		defaultmissiontype = "Standby",
 		description = "Stealthy Scout Kbot",
@@ -32,8 +32,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT1",
 		name = "Punkie",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORPUNK",
 		radaremitheight = 25,
 		seismicsignature = 0,

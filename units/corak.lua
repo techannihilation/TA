@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE",
+		category = "ALL MOBILE TINY SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "22 28 22",
 		collisionvolumetype = "CylY",
@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "A.K.",
 		noautofire = false,
-		
+
 		objectname = "CORAK",
 		radaremitheight = 25,
 		seismicsignature = 0,

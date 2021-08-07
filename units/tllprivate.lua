@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE",
+		category = "ALL MOBILE TINY SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -8 0",
 		collisionvolumescales = "24 46 24",
 		collisionvolumetype = "CylY",
@@ -36,7 +36,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Private",
 		noautofire = false,
-		
 		objectname = "TLLPRIVATE",
 		radaremitheight = 39,
 		selfdestructas = "SMALL_UNIT",

@@ -37,8 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "DBOAT6",
 		name = "Millennium",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMBATS",
 		radaremitheight = 57,
 		seismicsignature = 0,

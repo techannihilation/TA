@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  flare1, flare2, turret, base, sleeve, barrel1, barrel2, 
-		missile1, missile2, missile3, missile4;
+		missile1, missile2, missile3, missile4, aimpoint;
 
 static-var  restore_delay, gun_1;
 
@@ -153,7 +153,7 @@ QuerySecondary(piecenum)
 
 AimFromSecondary(piecenum)
 {
-	piecenum = turret;
+	piecenum = aimpoint;
 }
 
 SweetSpot(piecenum)

@@ -1,15 +1,19 @@
 3.94 > 3.95
-2021-08-07
+2021-08-08
 Balance :
  - All Antinuke have 0 munition after made. Decrease timebuild for Carrier and Structure by 50%.
  - ICBM T2 : Increase Ammo cost 1KM => 1.25KM ; 135KE => 150KE
  - ICBM T3 : Increase Ammo cost 1.85KM => 2.5KM ; 265KE => 300KE. Increase AOE 1280 => 1560
+ - Reduce speed for T2 Cruser -25% and Destroyer T1 -25%
 
   Improvment :
  - Add T4 SeaLab, T4 Hover Cons, T4 Flagship for all factions
  - Add Naval Series Long Range Missile (Anti SAt) for all factions
  - Move All T3 Tactical Sub into T4 SeaLab
  - Tll Sat & Arm T3 Sea construction : New model
+
+ Fix :
+ - Some units can't shoot in water like talon wolf, tankanotor
 
 3.93 > 3.94
 2021-07-27

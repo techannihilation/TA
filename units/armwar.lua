@@ -35,8 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Warrior",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMWAR",
 		radaremitheight = 28,
 		seismicsignature = 0,

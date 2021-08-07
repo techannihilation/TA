@@ -94,7 +94,7 @@ FirePrimary()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = turret;
+	piecenum = launcher;
 }
 
 QueryPrimary(piecenum)
@@ -124,7 +124,7 @@ FireSecondary()
 
 AimFromSecondary(piecenum)
 {
-	piecenum = turret;
+	piecenum = launcher;
 }
 
 QuerySecondary(piecenum)
