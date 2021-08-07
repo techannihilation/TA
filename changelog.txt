@@ -13,7 +13,7 @@ Balance :
  - Tll Sat & Arm T3 Sea construction : New model
 
  Fix :
- - Some units can't shoot in water like talon wolf, tankanotor
+ - Some units couldn't shoot in water like talon wolf, tankanotor. If you see other units, tell me.
 
 3.93 > 3.94
 2021-07-27
