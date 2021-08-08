@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  tube2, tube1, base, body, wake1, wake2, wake3, wake4,
-       badge, turret3, firept3, missile1, flare1;
+piece  base, body, wake1, wake2, turret, firept, aimpoint;
 
 static-var  gun_1, restore_delay;
 
@@ -14,21 +13,44 @@ static-var  gun_1, restore_delay;
 #define SIG_AIM_2			8
 #define SIG_AIM_3			16
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
-	restore_delay = 1000;
-	gun_1 = tube1;
+	start-script SmokeUnit();
+	restore_delay = 1000;	
 }
 
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	//turn turret1 to x-axis <0.000000> speed <30.000000>;
-	//turn turret2 to x-axis <0.000000> speed <30.000000>;
-	turn turret3 to x-axis <0.000000> speed <30.000000>;
-	//turn turret1 to y-axis <0.000000> speed <30.000000>;
-	//turn turret2 to y-axis <0.000000> speed <30.000000>;
-	turn turret3 to y-axis <0.000000> speed <30.000000>;
+	turn turret to x-axis <0.000000> speed <30.000000>;
+	turn turret to y-axis <0.000000> speed <30.000000>;
 }
 
 StartMoving()
@@ -39,8 +61,6 @@ StartMoving()
 	{
 		emit-sfx 259 from wake1;
 		emit-sfx 259 from wake2;
-		emit-sfx 259 from wake3;
-		emit-sfx 259 from wake4;
 		sleep 250;
 	}
 }
@@ -50,58 +70,43 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
-AimPrimary()
+AimFromPrimary(piecenum)
 {
-	return (1);
+	piecenum = aimpoint;
 }
 
-FirePrimary()
+AimPrimary()
 {
-	gun_1 = !gun_1;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	piecenum = aimpoint;
 }
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	return (1);
-}
-
-FireSecondary()
-{
-}
-
-QuerySecondary(piecenum)
-{
-		piecenum = flare1;
-}
-
 
 AimTertiary(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn turret3 to y-axis heading speed <45.000000>;
-	turn turret3 to x-axis <0.000000> - pitch speed <45.000000>;
-	wait-for-turn turret3 around y-axis;
-	wait-for-turn turret3 around x-axis;
+	turn turret to y-axis heading speed <45.000000>;
+	turn turret to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 AimFromTertiary(piecenum)
 {
-	piecenum = turret3;
+	piecenum = turret;
 }
 
 QueryTertiary(piecenum)
 {
-	piecenum = firept3;
+	piecenum = firept;
 }
 
 SweetSpot(piecenum)
@@ -114,25 +119,16 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		return (0);
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		return (0);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-		explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		return (0);
+		explode body type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | BITMAP1;
-	explode body type NOHEATCLOUD | BITMAPONLY | BITMAP2;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
 }

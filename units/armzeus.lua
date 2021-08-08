@@ -124,7 +124,7 @@ return {
 			},
 		},
 		weapondefs = {
-			lightning = {
+			arm_lightning = {
 				areaofeffect = 8,
 				avoidfeature = false,
 				beamttl = 10,
@@ -154,7 +154,6 @@ return {
 				thickness = 10,
 				turret = true,
 				weapontype = "LightningCannon",
-				weaponvelocity = 400,
 				customparams = {
 					light_mult = 1.4,
 					light_radius_mult = 0.9,
@@ -167,7 +166,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "LIGHTNING",
+				def = "ARM_LIGHTNING",
 				onlytargetcategory = "SURFACE",
 			},
 		},

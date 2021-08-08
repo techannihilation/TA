@@ -1,6 +1,6 @@
 return {
 	cortron = {
-		acceleration = 0,	
+		acceleration = 0,
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 16533,
@@ -124,7 +124,7 @@ return {
 				areaofeffect = 512,
 				avoidfeature = false,
 				commandfire = true,
-				craterareaofeffect = 768,
+				craterareaofeffect = 512,
 				craterboost = 0.48,
 				cratermult = 0.21,
 				edgeeffectiveness = 0.4,

@@ -26,8 +26,7 @@ return {
 		maxvelocity = 0,
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMFDRAG",
 		radaremitheight = 38,
 		seismicsignature = 0,

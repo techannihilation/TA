@@ -178,10 +178,6 @@ local unitCollisionVolume = {					--dynamic collision volume definitions
 		on={152,50,123,0,0,0,2,1,0,0,24,0},
 		off={152,66,123,0,18,0,2,1,0,0,24,0},
 	},
-	[UnitDefNames["coruppercut"].id] = {
-		on={31,31,156,0,45,0,1,1,2,0,60,0},
-		off={31,31,156,0,0,0,1,1,2,0,20,0},
-	},
 	[UnitDefNames["tllap"].id] = {
 		on={150,65,150,0,5,0,1,1,1,0,32,0},
 		off={110,55,110,0,7,0,1,1,1,0,27,0},

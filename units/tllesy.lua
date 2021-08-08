@@ -46,7 +46,7 @@ return {
 		yardmap = "WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW WCCCCCCCCCCW",
 		buildoptions = {
 			[1] = "tllecs",
-			--[2] = "tllswordfish",
+			[2] = "tllswordfish",
 			[3] = "tllbsub",
 			[4] = "tllasgard",
 			[5] = "tllhcar",

@@ -3,17 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, wake1, wake2, sirip1, sirip2, sirip3, turret1,
-       turret2, turret3, pros, firept1a, firept1b, firept2a, firept2b, firept3;
-
-static-var  restore_delay, gun_1, gun_2;
+piece  base, body, wakes1, wakes2, wakes3, wakes4, flare1, flare2, 
+		door1, door2, aimpoint;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
-#define SIG_AIM_3			8
 #define SIG_MOVE			16
 
+static-var gun_1, Bopening;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -44,8 +42,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	gun_1 = base;
-	restore_delay = 1000;
+	gun_1 = 1;
+	Bopening = FALSE;
 	start-script SmokeUnit();
 }
 
@@ -53,29 +51,14 @@ StartMoving()
 {
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
-	spin pros around z-axis speed <1000.236264>;
 	while( TRUE )
 	{
-		emit-sfx 3 from wake1;
-		emit-sfx 3 from wake2;
+		emit-sfx 256 | 3 from wakes1;
+		emit-sfx 256 | 3 from wakes2;
+		emit-sfx 256 | 3 from wakes3;
+		emit-sfx 256 | 3 from wakes4;
 		sleep 120;
 	}
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
-}
-
-RestoreAfterDelay()
-{
-	sleep restore_delay;
-	turn turret1 to x-axis <0.000000> speed <30.000000>;
-	turn turret2 to x-axis <0.000000> speed <30.000000>;
-	turn turret3 to x-axis <0.000000> speed <30.000000>;
-	turn turret1 to y-axis <0.000000> speed <30.000000>;
-	turn turret2 to y-axis <0.000000> speed <30.000000>;
-	turn turret3 to y-axis <0.000000> speed <30.000000>;
 }
 
 StopMoving()
@@ -83,126 +66,83 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
-AimPrimary(heading, pitch)
+OpenDoors()
 {
+	move door1 to x-axis [-2.0] speed [1.0]; 
+	move door2 to x-axis [2.0] speed [1.0];
+	wait-for-move door1 along x-axis;
+	Bopening = TRUE;
+}
+
+closeDoors()
+{
+	sleep 2000;
+	move door1 to x-axis [0.0] speed [1.0]; 
+	move door2 to x-axis [0.0] speed [1.0];
+	wait-for-move door1 along x-axis;
+	Bopening = FALSE;
+}
+
+AimWeapon1(heading, pitch)
+{
+	start-script OpenDoors();
+	while (Bopening == FALSE)
+	{
+		sleep 250;	
+	}
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret1 to y-axis heading speed <55.000000>;
-	turn turret1 to x-axis <0.000000> - pitch speed <45.000000>;
-	wait-for-turn turret1 around y-axis;
-	wait-for-turn turret1 around x-axis;
-	start-script RestoreAfterDelay();
 	return (1);
 }
 
-FirePrimary()
+FireWeapon1(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		emit-sfx 259 from firept1a;
-		sleep 250;
-		sleep 50;
-	}
-	if( gun_1 == 1 )
-	{
-		emit-sfx 259 from firept1b;
-		sleep 250;
-		sleep 50;
-	}
-	++gun_1;
-	if( gun_1 == 2 )
-	{
-		gun_1 = base;
-	}
+	start-script closeDoors();
+	sleep 500;
 }
 
-QueryPrimary(piecenum)
+QueryWeapon1(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = firept1a;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = firept1b;
-	}
+	piecenum = aimpoint;
 }
 
-AimSecondary(heading, pitch)
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = aimpoint;
+}
+
+AimWeapon2(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn turret2 to y-axis heading speed <40.000000>;
-	turn turret2 to x-axis <0.000000> - pitch speed <40.000000>;
-	wait-for-turn turret2 around y-axis;
-	wait-for-turn turret2 around x-axis;
-	start-script RestoreAfterDelay();
 	return (1);
 }
 
-FireSecondary()
+AimFromWeapon2(piecenum)
 {
-	if( gun_2 == 0 )
+	piecenum = body;
+}
+
+FireWeapon2(piecenum)
+{
+	++gun_1;
+	if(gun_1==3)
 	{
-		emit-sfx 259 from firept2a;
-		sleep 250;
-		sleep 50;
-	}
-	if( gun_2 == 1 )
-	{
-		emit-sfx 259 from firept2b;
-		sleep 250;
-		sleep 50;
-	}
-	++gun_2;
-	if( gun_2 == 2 )
-	{
-		gun_2 = base;
+		gun_1 = 1;
 	}
 }
 
-QuerySecondary(piecenum)
+QueryWeapon2(piecenum)
 {
-	if( gun_1 == 0 )
+	if(gun_1==1)
 	{
-		piecenum = firept2a;
+		piecenum = flare1;
 	}
-	if( gun_1 == 1 )
+	else
 	{
-		piecenum = firept2b;
+		piecenum = flare2;
 	}
-}
-
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	turn turret3 to y-axis heading speed <45.000000>;
-	turn turret3 to x-axis <0.000000> - pitch speed <45.000000>;
-	wait-for-turn turret3 around y-axis;
-	wait-for-turn turret3 around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = firept3;
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = turret1;
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = turret2;
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = turret3;
 }
 
 SweetSpot(piecenum)
@@ -215,24 +155,21 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode hull type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP2;
-		explode sirip1 type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode pros type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-		explode sirip2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
-		explode hull type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-		explode pros type NOHEATCLOUD | SHATTER | BITMAP1;
+		explode body type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | BITMAPONLY | BITMAP1;
-	explode sirip1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | BITMAP1;
-	explode hull type NOHEATCLOUD | BITMAPONLY | BITMAP5;
-	explode pros type NOHEATCLOUD | SHATTER | BITMAP1;
+	explode body type NOHEATCLOUD;
+	explode door1 type NOHEATCLOUD;
+	explode door2 type NOHEATCLOUD;
 }

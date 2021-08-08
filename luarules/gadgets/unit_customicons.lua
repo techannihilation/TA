@@ -99,6 +99,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("t6ships.user", "icons/t5ships.png", 8)
   Spring.AddUnitIcon("bships.user", "icons/bship.png", 2.5)
   Spring.AddUnitIcon("bsships.user", "icons/bship.png", 3.6)
+  Spring.AddUnitIcon("flagship.user", "icons/bship.png", 5)
   Spring.AddUnitIcon("tiny-sphere.user", "icons/sphere.png", 0.65)
   Spring.AddUnitIcon("blank.user", "icons/sphere.png", 0.0)
   Spring.AddUnitIcon("mech.user", "icons/mech.tga", 3.60)
@@ -286,6 +287,10 @@ function gadget:Initialize()
 	 elseif (ud.name=="corblackhy") or (ud.name=="cortyrnt") or (ud.name=="aseadragon")
       or (ud.name=="armtrmph") or (ud.name=="armbc") or (ud.name=="tllcaps") or (ud.name=="talon_dread") or (ud.name=="talon_fcar") then
         Spring.SetUnitDefIcon(udid, "bsships.user")
+--t4 ships
+        elseif (ud.name=="talon_paladium") or (ud.name=="corurbanus") or (ud.name=="armcentrum") or (ud.name=="tllpliosaurus") then
+          Spring.SetUnitDefIcon(udid, "flagship.user")
+
       elseif (ud.isFactory) then
 -- factories
         Spring.SetUnitDefIcon(udid, "square_x_factory.user")

@@ -24,16 +24,20 @@ end
 local canDGun = {}
 
 local nukes = {
-    [UnitDefNames["coruppercut"].id] = true,
-    [UnitDefNames["armmarlin"].id] = true,
     [UnitDefNames["armhcar"].id] = true,
     [UnitDefNames["corhcar"].id] = true,
-    [UnitDefNames["tllswordfish"].id] = true,
+		[UnitDefNames["tllhcar"].id] = true,
+		[UnitDefNames["talon_hcar"].id] = true,
+}
+
+local tacnukes = {
+    [UnitDefNames["coruppercut"].id] = true,
     [UnitDefNames["corarbritator"].id] = true,
 }
 
 local emp = {
-    --[UnitDefNames["tlldischarge"].id] = true,
+		[UnitDefNames["armmarlin"].id] = true,
+		[UnitDefNames["tllswordfish"].id] = true,
 }
 ----------------------------------------------------------------
 -- Speedups
@@ -77,17 +81,25 @@ function gadget:UnitCreated(uID, uDefID, uTeam)
                 spEditUnitCmdDesc(uID, cmdIdx, cmdDesc)
             end
         end
+		elseif tacnukes[uDefID] then
+				local cmdIdx = spFindUnitCmdDesc(uID, CMD_MANUALFIRE)
+				if cmdIdx then
+						local cmdDesc = spGetUnitCmdDescs(uID, cmdIdx, cmdIdx)[1]
+						if cmdDesc then
+					cmdDesc['name'] = 'MiniNuke'
+								cmdDesc.type = CMDTYPE_ICON_UNIT_OR_MAP
+								spEditUnitCmdDesc(uID, cmdIdx, cmdDesc)
+								end
+						end
     elseif emp[uDefID] then
         local cmdIdx = spFindUnitCmdDesc(uID, CMD_MANUALFIRE)
         if cmdIdx then
             local cmdDesc = spGetUnitCmdDescs(uID, cmdIdx, cmdIdx)[1]
             if cmdDesc then
-				cmdDesc['name'] = 'E M P'
+				cmdDesc['name'] = 'E.M.P.'
                 cmdDesc.type = CMDTYPE_ICON_UNIT_OR_MAP
                 spEditUnitCmdDesc(uID, cmdIdx, cmdDesc)
             end
         end
     end
 end
-
-    
