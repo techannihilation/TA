@@ -37,7 +37,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Gimp",
 		noautofire = false,
-		
+
 		objectname = "CORAMPH",
 		radardistance = 300,
 		radaremitheight = 26,
@@ -124,19 +124,18 @@ return {
 				noselfdamage = true,
 				predictboost = 0,
 				range = 400,
-				reloadtime = 8,
+				reloadtime = 6,
 				soundhitdry = "xplodep2",
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
-				startvelocity = 75,
+				startvelocity = 100,
 				turret = true,
 				waterweapon = true,
-				weaponacceleration = 5,
-				weapontimer = 3,
+				weaponacceleration = 15,
 				weapontype = "TorpedoLauncher",
-				weaponvelocity = 100,
+				weaponvelocity = 160,
 				damage = {
-					default = 200,
+					default = 300,
 				},
 			},
 			coramph_weapon2 = {

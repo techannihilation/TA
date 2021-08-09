@@ -177,7 +177,7 @@ armkamo.dds
 armkrmi.dds
 armlab.dds
 armlance.dds
-armlashover.dds
+armlhover.dds
 armlatnk.dds
 armlightfus.dds
 armllt1.dds
@@ -492,7 +492,7 @@ corhcar.dds
 corhelo.dds
 corhind.dds
 corhlt.dds
-corhover3g.dds
+corlhover.dds
 corhowie.dds
 corhp.dds
 corhrk.dds
@@ -656,7 +656,7 @@ cormonkeylord.dds
 armnebraska.dds
 armkrypto.dds
 armundertow.dds
-nsacanglr.dds
+corangler.dds
 corhgol.dds
 nsaclash.dds
 corabsolutor.dds

@@ -1,12 +1,12 @@
 return {
-	nsacanglr = {
+	corangler = {
 		acceleration = 0.04,
 		activatewhenbuilt = true,
 		brakerate = 0.69,
 		buildcostenergy = 3951,
 		buildcostmetal = 375,
 		builder = false,
-		buildpic = "nsacanglr.dds",
+		buildpic = "corangler.dds",
 		buildtime = 7000,
 		canattack = true,
 		canguard = true,
@@ -40,8 +40,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Angler",
 		noautofire = false,
-		
-		objectname = "NSACANGLR",
+
+		objectname = "corangler",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -54,9 +54,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.65,
 		turnrate = 169,
-		unitname = "nsacanglr",
+		unitname = "corangler",
 		customparams = {
-			buildpic = "nsacanglr.dds",
+			buildpic = "corangler.dds",
 			faction = "CORE",
 		},
 		featuredefs = {
@@ -69,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 281,
-				object = "nsacanglr_dead",
+				object = "corangler_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

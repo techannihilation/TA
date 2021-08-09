@@ -50,7 +50,7 @@ return {
 			[2] = "aach",
 			[3] = "armdetector",
 			[4] = "armconcealer",
-			[5] = "armlashover",
+			[5] = "armlhover",
 			[6] = "armiguana",
 			[7] = "armundertow",
 			[8] = "armhplasma",

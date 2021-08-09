@@ -1,11 +1,12 @@
 3.94 > 3.95
-2021-08-09
+2021-08-10
 Balance :
  - All Antinuke have 0 munition after made. Decrease timebuild for Carrier and Structure by 50%.
  - ICBM T2 : Increase Ammo cost 1KM => 1.25KM ; 135KE => 150KE
  - ICBM T3 : Increase Ammo cost 1.85KM => 2.5KM ; 265KE => 300KE. Increase AOE 1280 => 1560
  - Reduce speed for T2 Cruser -25% and Destroyer T1 -25%
  - Panther : decrease damage / shot 300=>260. decrease range 300=>280
+ - Scorpion (T2 arm amphi) : Delete Cloak and stealth. remplace plasma gun by annihilator beam. Increase Metalcost +30%  and decrease HP 9K=>6.2K
 
   Improvment :
  - Add T4 SeaLab, T4 Hover Cons, T4 Flagship for all factions
@@ -14,6 +15,7 @@ Balance :
  - Tll Sat & Arm T3 Sea construction : New model
  - T4 Tac Sub Core and T3 Arm Tac Sub: Change model
  - Change Lightning Arm effect. All units have same effect than Zeus.
+ - Many T2 Arm / Core hover : change model
 
  Fix :
  - Some units couldn't shoot in water like talon wolf, tankanotor. If you see other units, tell me.

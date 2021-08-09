@@ -39,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-
 		objectname = "CORALAB",
 		radaremitheight = 60,
 		seismicsignature = 0,

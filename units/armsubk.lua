@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Submarine Killer",
+		description = "Fast Submarine",
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,
@@ -37,7 +37,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Piranha",
 		noautofire = false,
-		
 		objectname = "ARMSUBK",
 		radaremitheight = 25,
 		seismicsignature = 0,

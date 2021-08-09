@@ -75,7 +75,7 @@ return {
 			[18] = "cordl",
 			[19] = "corch",
 			[20] = "cormatch",
-			[21] = "nsacanglr",
+			[21] = "corangler",
 			--[22] = "",
 			--[23] = "",
 			--[24] = "",

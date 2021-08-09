@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, body, post, nanogun, beam, door1, door2, wake1,
-       wake2, wake3, wake4, wake5, wake6, wake7, wake8;
+       wake2, wake3, wake4, wake5, wake6, wake7, wake8, neck, boom;
 
 static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
 
@@ -16,34 +16,44 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <-160.038462> speed <99.000000>;
-		turn door2 to z-axis <160.038462> speed <99.000000>;
-		sleep 677;
+		turn door1 to z-axis <-200.> speed <309.>;
+		turn door2 to z-axis <200.> speed <308.>;
+		move  post to y-axis [3.0] speed [2.0];
+		sleep 683;
 	}
 	if( TRUE )
 	{
-		turn post to x-axis <90.016484> speed <131.000000>;
-		turn nanogun to x-axis <-90.016484> speed <131.000000>;
-		sleep 687;
+		turn boom to x-axis <43.> speed <62.>;
+		turn neck to x-axis <-43.> speed <62.>;
+		sleep 689;
 	}
-	sleep 39;
+	sleep 11;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
-		turn nanogun to x-axis <0.000000> speed <196.000000>;
-		turn post to x-axis <0.000000> speed <196.000000>;
-		sleep 457;
+		turn door1 to z-axis <-211.> now;
+		turn door2 to z-axis <210.> now;
+		turn boom to x-axis <43.> now;
+		turn boom to x-axis <0.> speed <64.>;
+		turn neck to x-axis <-43.> now;
+		turn neck to x-axis <0.> speed <64.>;
+		sleep 672;
 	}
 	if( TRUE )
 	{
-		turn door1 to z-axis <0.000000> speed <143.000000>;
-		turn door2 to z-axis <0.000000> speed <143.000000>;
-		sleep 469;
+		move  post to y-axis [0.0] speed [1.0];
+		sleep 250;
 	}
-	sleep 27;
+	if( TRUE )
+	{
+		turn door1 to z-axis <0.> speed <306.>;
+		turn door2 to z-axis <0.> speed <305.>;
+		sleep 689;
+	}
+	sleep 12;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)

@@ -41,7 +41,6 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Venom",
 		noautofire = false,
-
 		objectname = "corlhover",
 		radardistance = 0,
 		radaremitheight = 26,
@@ -210,7 +209,7 @@ return {
 			[2] = {
 				def = "CORE_LIGHTLASER",
 				maindir = "0 0 1",
-				maxangledif = 270,
+				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 		},

@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "armcybr.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -135,6 +134,7 @@ return {
 					commanders = 1500,
 					default = 7500,
 					priority_air = 750,
+					subs = 3750,
 					unclassed_air = 750,
 				},
 			},

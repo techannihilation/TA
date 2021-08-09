@@ -47,7 +47,7 @@ return {
 			[2] = "aach",
 			[3] = "armconcealer",
 			[4] = "armdetector",
-			[5] = "armlashover",
+			[5] = "armlhover",
 			[6] = "armiguana",
 			[7] = "armundertow",
 			--[8] = "speeder",

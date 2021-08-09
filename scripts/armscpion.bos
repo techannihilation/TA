@@ -116,12 +116,7 @@ AimTertiary(heading, pitch)
 
 FirePrimary()
 {
-	show flare1;
-	move barrel1 to z-axis [-3.000000] now;
-	sleep 150;
-	hide flare1;
-	wait-for-move barrel1 along z-axis;
-	move barrel1 to z-axis [0.000000] speed [6.000000];
+
 }
 
 FireSecondary()

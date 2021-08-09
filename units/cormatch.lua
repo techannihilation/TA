@@ -14,7 +14,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL ANTIFLAME MEDIUM MOBILE SURFACE",
-		corpse = "corsnap_dead",
+		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Flamethrower Hovertank",
 		downloadable = 1,
@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANKHOVER3",
 		name = "Matcher",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "CORMATCH",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -52,22 +52,22 @@ return {
 			faction = "CORE",
 		},
 		featuredefs = {
-			corsnap_dead = {
+			dead = {
 				blocking = false,
 				damage = 1414,
 				description = "Matcher Wreckage",
 				energy = 0,
-				featuredead = "corsnap_heap",
+				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 258,
-				object = "CORSNAP_DEAD",
+				object = "CORMATCH_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
 				},
 			},
-			corsnap_heap = {
+			heap = {
 				blocking = false,
 				damage = 1767,
 				description = "Matcher Debris",

@@ -74,7 +74,7 @@ return {
 			[17] = "armmds",
 			[18] = "armdl",
 			[19] = "armch",
-			[20] = "armlashover",
+			[20] = "armlhover",
 			[21] = "armundertow",
 			--[22] = "",
 			--[23] = "",
