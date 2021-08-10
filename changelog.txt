@@ -7,6 +7,7 @@ Balance :
  - Reduce speed for T2 Cruser -25% and Destroyer T1 -25%
  - Panther : decrease damage / shot 300=>260. decrease range 300=>280
  - Scorpion (T2 arm amphi) : Delete Cloak and stealth. remplace plasma gun by annihilator beam. Increase Metalcost +30%  and decrease HP 9K=>6.2K
+ - Decrease all t1/t2 submarine speed
 
   Improvment :
  - Add T4 SeaLab, T4 Hover Cons, T4 Flagship for all factions

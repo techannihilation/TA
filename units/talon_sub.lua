@@ -31,13 +31,12 @@ return {
 		maneuverleashlength = 640,
 		mass = 694,
 		maxdamage = 845,
-		maxvelocity = 2.65,
+		maxvelocity = 2.6,
 		minwaterdepth = 20,
 		mobilestandorders = 1,
 		movementclass = "UBOAT3",
 		name = "Kraken",
 		noautofire = false,
-		
 		objectname = "talon_sub",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -149,7 +148,7 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 160,
 				damage = {
-					default = 350,
+					default = 300,
 				},
 			},
 		},
@@ -157,7 +156,7 @@ return {
 			[1] = {
 				def = "TALON_TORPEDO",
 				maindir = "0 0 1",
-				maxangledif = 60,
+				maxangledif = 90,
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

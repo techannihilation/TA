@@ -31,7 +31,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 694,
 		maxdamage = 835,
-		maxvelocity = 2.77,
+		maxvelocity = 2.5,
 		minwaterdepth = 20,
 		mobilestandorders = 1,
 		movementclass = "UBOAT3",

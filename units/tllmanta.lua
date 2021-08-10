@@ -37,7 +37,6 @@ return {
 		movementclass = "UBOAT3",
 		name = "Manta",
 		noautofire = false,
-		
 		objectname = "TLLMANTA",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
@@ -160,7 +159,7 @@ return {
 			[1] = {
 				def = "ARMSMART_TORPEDO",
 				maindir = "0 0 1",
-				maxangledif = 110,
+				maxangledif = 150,
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

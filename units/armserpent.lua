@@ -31,7 +31,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 1707,
 		maxdamage = 2190,
-		maxvelocity = 2.65,
+		maxvelocity = 1.75,
 		minwaterdepth = 20,
 		mobilestandorders = 1,
 		movementclass = "UBOAT3",
@@ -162,7 +162,7 @@ return {
 			[1] = {
 				def = "armserpent_WEAPON",
 				maindir = "0 0 1",
-				maxangledif = 75,
+				maxangledif = 90,
 				onlytargetcategory = "UNDERWATER",
 			},
 		},
