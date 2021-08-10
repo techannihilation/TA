@@ -52,7 +52,6 @@ return {
 		sightdistance = 286,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		terraformspeed = 750,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.518,
 		turnrate = 426,

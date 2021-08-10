@@ -50,7 +50,6 @@ return {
 		shownanospray = false,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		terraformspeed = 1220,
 		turninplace = 1,
 		turninplaceanglelimit = 60,
 		turninplacespeedlimit = 0.759,

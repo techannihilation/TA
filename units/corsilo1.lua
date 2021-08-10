@@ -165,7 +165,7 @@ return {
 					default = 15000,
 					experimental_land = 22000,
 					experimental_ships = 22000,
-					subs = 7500,
+					subs = 1500,
 				},
 				customparams = {
 					light_color = "1 0.6 0.2",

@@ -116,9 +116,9 @@ return {
 				weapontype = "AircraftBomb",
 				weaponvelocity = 600,
 				damage = {
-					commanders = 2500,
+					commanders = 1875,
 					default = 7500,
-					subs = 3750,
+					subs = 5,
 				},
 			},
 			talon_laser = {

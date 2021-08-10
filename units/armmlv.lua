@@ -55,7 +55,6 @@ return {
 		standingmoveorder = 1,
 		stealth = true,
 		steeringmode = 1,
-		terraformspeed = 120,
 		trackoffset = 12,
 		trackstrength = 5,
 		trackstretch = 1,

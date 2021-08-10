@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Pterodactyl",
 		noautofire = false,
-		
+
 		objectname = "TLLBOMBER",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -118,9 +118,9 @@ return {
 				sprayangle = 300,
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 60,
+					commanders = 40,
 					default = 160,
-					subs = 80,
+					subs = 5,
 				},
 			},
 		},

@@ -126,8 +126,9 @@ return {
 				weapontype = "AircraftBomb",
 				weaponvelocity = 600,
 				damage = {
-					commanders = 800,
+					commanders = 600,
 					default = 2400,
+					subs = 5,
 				},
 			},
 		},

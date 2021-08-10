@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shadow",
 		noautofire = true,
-		
+
 		objectname = "CORSHAD",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -115,9 +115,9 @@ return {
 				sprayangle = 300,
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 50,
+					commanders = 37.5,
 					default = 150,
-					subs = 75,
+					subs = 5,
 				},
 			},
 		},

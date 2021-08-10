@@ -1,5 +1,5 @@
 3.94 > 3.95
-2021-08-10
+2021-08-12
 Balance :
  - All Antinuke have 0 munition after made. Decrease timebuild for Carrier and Structure by 50%.
  - ICBM T2 : Increase Ammo cost 1KM => 1.25KM ; 135KE => 150KE
@@ -8,6 +8,7 @@ Balance :
  - Panther : decrease damage / shot 300=>260. decrease range 300=>280
  - Scorpion (T2 arm amphi) : Delete Cloak and stealth. remplace plasma gun by annihilator beam. Increase Metalcost +30%  and decrease HP 9K=>6.2K
  - Decrease all t1/t2 submarine speed
+ - All Bomber : all bombs inflict damage at 5dmg vs submarine. Vs commander -66%=>-75%
 
   Improvment :
  - Add T4 SeaLab, T4 Hover Cons, T4 Flagship for all factions
@@ -20,6 +21,7 @@ Balance :
 
  Fix :
  - Some units couldn't shoot in water like talon wolf, tankanotor. If you see other units, tell me.
+ - Terraforming (allowed only for t2/t3/t4 commander and t4/t5 cons) - allowed with !mo_terraforming 1
 
 3.93 > 3.94
 2021-07-27

@@ -121,7 +121,7 @@ return {
 					default = 4000,
 					experimental_land = 6000,
 					experimental_ships = 6000,
-					subs = 2000,
+					subs = 5,
 				},
 			},
 		},

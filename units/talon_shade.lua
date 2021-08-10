@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shade",
 		noautofire = true,
-		
+
 		objectname = "talon_shade",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -114,9 +114,9 @@ return {
 				sprayangle = 300,
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 55,
+					commanders = 37.5,
 					default = 150,
-					subs = 75,
+					subs = 5,
 				},
 			},
 		},

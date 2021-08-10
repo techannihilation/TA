@@ -119,8 +119,9 @@ return {
 				tolerance = 7000,
 				weapontype = "AircraftBomb",
 				damage = {
+					commanders = 1000,
 					default = 4000,
-					subs = 2000,
+					subs = 5,
 				},
 			},
 		},

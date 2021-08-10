@@ -8,7 +8,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL UNDERWATER SURFACE",
+		category = "LEVEL1 ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Produces T2 Aircraft",
 		downloadable = 1,

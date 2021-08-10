@@ -121,9 +121,9 @@ return {
 				waterbounce = true,
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 100,
+					commanders = 75,
 					default = 300,
-					subs = 150,
+					subs = 5,
 				},
 			},
 		},

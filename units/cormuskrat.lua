@@ -49,7 +49,6 @@ return {
 		sightdistance = 260,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		terraformspeed = 240,
 		trackoffset = 8,
 		trackstrength = 5,
 		trackstretch = 1,

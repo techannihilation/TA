@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Ghost",
 		noautofire = false,
-		
+
 		objectname = "tllabomber",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 350,
@@ -115,9 +115,9 @@ return {
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 95,
+					commanders = 65,
 					default = 260,
-					subs = 130,
+					subs = 5,
 				},
 			},
 		},

@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hurricane",
 		noautofire = true,
-		
+
 		objectname = "CORHURC",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -113,9 +113,9 @@ return {
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 100,
+					commanders = 70,
 					default = 280,
-					subs = 140,
+					subs = 5,
 				},
 			},
 		},
