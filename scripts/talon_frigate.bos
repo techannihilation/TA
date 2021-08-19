@@ -3,9 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece   flare1, flare2, flare3, base, body, drone1, drone2, drone3, dronebase, turret, flare, torpedo_point, wake1, wake2;
+piece   aimpoint, flare1, flare2, flare3,
+		base, body, drone1, drone2, drone3, 
+		dronebase, flare, wake1, wake2;
 
-static-var  gun_1, gun_2;
+static-var  gun_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -66,15 +68,7 @@ StartMoving()
 Create()
 {
 	gun_1 = 0;
-	gun_2 = 0;
 	start-script SmokeUnit();
-}
-
-
-RestoreAfterDelay() 
-{
-	sleep 3000;
-	turn turret to y-axis <0.000000> speed <50>;
 }
 
 AimPrimary(heading, pitch)
@@ -95,44 +89,24 @@ FirePrimary()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = body;
+	piecenum = aimpoint;
 }
 
 QueryPrimary(piecenum)
 {
-	if (gun_1 == 0)
-	{
-		piecenum = flare1;
-	}
-	if (gun_1 == 1)
-	{
-		piecenum = flare2;
-	}
-	if (gun_1 == 2)
-	{
-		piecenum = flare3;
-	}
-
+	piecenum = aimpoint;
 }
 
 AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn turret to y-axis heading speed <50>;
-	wait-for-turn turret around y-axis;
-	start-script RestoreAfterDelay();
 	return (1);
-}
-
-FireSecondary()
-{
-
 }
 
 AimFromSecondary(piecenum)
 {
-	piecenum = turret;
+	piecenum = flare;
 }
 
 QuerySecondary(piecenum)
@@ -140,31 +114,9 @@ QuerySecondary(piecenum)
 	piecenum = flare ;
 }
 
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	return (1);
-}
-
-FireTertiary()
-{
-
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = body;
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = torpedo_point ;
-}
-
 SweetSpot(piecenum)
 {
-	piecenum = gun_1;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -172,42 +124,25 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
 		explode drone1 type NOHEATCLOUD;
 		explode drone2 type NOHEATCLOUD;
 		explode drone3 type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | FALL;
 		explode body type NOHEATCLOUD | FALL;
 		explode drone1 type NOHEATCLOUD;
 		explode drone2 type NOHEATCLOUD;
 		explode drone3 type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | FALL;
-		explode body type NOHEATCLOUD;
-		explode drone1 type NOHEATCLOUD;
-		explode drone2 type NOHEATCLOUD;
-		explode drone3 type NOHEATCLOUD | FALL;
-		explode turret type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL;
 	explode body type NOHEATCLOUD;
 	explode drone1 type NOHEATCLOUD;
 	explode drone2 type NOHEATCLOUD;
 	explode drone3 type NOHEATCLOUD | FALL;
-	explode turret type NOHEATCLOUD | FALL;
 	return (corpsetype);
 }

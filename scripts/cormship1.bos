@@ -1,0 +1,486 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, wake1, wake2, wake3, wake4, wake5, wake6,
+		turret1, pivot1, launcher1, flare1a, flare1b,
+		turret2, pivot2, launcher2, flare2a, flare2b,
+		turret3, pivot3, launcher3, flare3a, flare3b,
+		turret4, sleeves4, flare4a, flare4b,
+		turret5, sleeves5, flare5a, flare5b,
+		turret6, sleeves6, flare6a, flare6b,
+		turret7, sleeves7, flare7a, flare7b;
+
+static-var  gun_1, gun_2, gun_3, gun_4, gun_5, gun_6, gun_7, restore_delay;
+
+// Signal definitions
+#define SIG_MOVE			1024
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+
+RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
+{
+	Func_Var_1 = -18;
+	Func_Var_2 = -18;
+	while( TRUE )
+	{
+		while( get ABS(Func_Var_2) < 202 )
+		{
+			Func_Var_3 = 227 - get ABS(Func_Var_2);
+			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.005495>;
+			wait-for-turn base around x-axis;
+			Func_Var_2 = Func_Var_2 + Func_Var_1;
+		}
+		Func_Var_1 = 0 - Func_Var_1;
+		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	start-script RockOnWaves();
+	var Func_Var_4;
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			Func_Var_4 = Rand( 1, 3 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from body;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from turret1;
+			}
+			if( Func_Var_4 == 3 )
+			{
+				emit-sfx smoketype from turret2;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = 0;
+	gun_2 = 0;
+	gun_3 = 0;
+	gun_4 = 0;
+	gun_5 = 0;
+	gun_6 = 0;
+	gun_7 = 0;
+	turn turret2 to y-axis <180.000000> now;
+	restore_delay = 3000;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay1()
+{
+	sleep restore_delay;
+	turn pivot1 to x-axis <0.000000> speed <10.000000>;
+	turn launcher1 to x-axis <0.000000> speed <10.000000>;
+	wait-for-turn pivot1 around x-axis;
+	wait-for-turn launcher1 around x-axis;	
+	turn turret1 to y-axis <0.000000> speed <35.000000>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep restore_delay;
+	turn pivot2 to x-axis <0.000000> speed <10.000000>;
+	turn launcher2 to x-axis <0.000000> speed <10.000000>;
+	wait-for-turn pivot2 around x-axis;
+	wait-for-turn launcher2 around x-axis;	
+	turn turret2 to y-axis <180.000000> speed <35.000000>;
+}
+
+RestoreAfterDelay3()
+{
+	sleep restore_delay;
+	turn pivot3 to x-axis <0.000000> speed <10.000000>;
+	turn launcher3 to x-axis <0.000000> speed <10.000000>;
+	wait-for-turn pivot3 around x-axis;
+	wait-for-turn launcher3 around x-axis;	
+	turn turret3 to y-axis <0.000000> speed <35.000000>;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay / 2;
+	turn turret4 to y-axis <0.000000> speed <125.000000>;
+	turn sleeves4 to x-axis <0.000000> speed <125.000000>;
+	turn turret5 to y-axis <0.000000> speed <125.000000>;
+	turn sleeves5 to x-axis <0.000000> speed <125.000000>;
+	turn turret6 to y-axis <0.000000> speed <125.000000>;
+	turn sleeves6 to x-axis <0.000000> speed <125.000000>;
+	turn turret7 to y-axis <0.000000> speed <125.000000>;
+	turn sleeves7 to x-axis <0.000000> speed <125.000000>;
+}
+
+waveSplash()
+{
+	while( TRUE )
+	{
+		turn body to x-axis <-1.000000> speed <1.000000>;
+		move body to y-axis [0.229999] speed [0.169989];
+		wait-for-turn body around x-axis;
+		turn body to x-axis <0.000000> speed <1.000000>;
+		move body to y-axis [0.000000] speed [0.169989];
+		wait-for-turn body around x-axis;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script waveSplash();
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		emit-sfx 2 from wake4;
+		emit-sfx 2 from wake5;
+		emit-sfx 2 from wake6;
+		sleep 500;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn body to x-axis <0.000000> speed <1.000000>;
+	move body to y-axis [0.000000] speed [0.169989];
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret1;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret1 to y-axis heading speed <35.000000>;	
+	turn pivot1 to x-axis <45.000000> speed <20.000000>;
+	turn launcher1 to x-axis <-75.000000> speed <20.000000>;	
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn pivot1 around x-axis;
+	wait-for-turn launcher1 around x-axis;
+	start-script RestoreAfterDelay1();
+	return (1);
+}
+
+FireWeapon1()
+{
+	gun_1 = 0;	
+	sleep 350;
+
+	move launcher1 to z-axis [0.000000] speed [500.000000];
+	sleep 50;
+	
+	sleep 350;
+	gun_1 = 1;
+}
+
+QueryWeapon1(piecenum)
+{
+	if(gun_1 == 0)
+	{
+		piecenum = flare1a;
+	}
+	else
+	{
+		piecenum = flare1b;
+	}
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = turret2;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <35.000000>;	
+	turn pivot2 to x-axis <45.000000> speed <20.000000>;
+	turn launcher2 to x-axis <-75.000000> speed <20.000000>;	
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn pivot2 around x-axis;
+	wait-for-turn launcher2 around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FireWeapon2()
+{
+	gun_2 = 0;	
+	sleep 350;
+
+	move launcher2 to z-axis [0.000000] speed [500.000000];
+	sleep 50;
+	
+	sleep 350;
+	gun_2 = 1;
+}
+
+QueryWeapon2(piecenum)
+{
+	if(gun_2 == 0)
+	{
+		piecenum = flare2a;
+	}
+	else
+	{
+		piecenum = flare2b;
+	}
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turret3;
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret3 to y-axis heading speed <35.000000>;	
+	turn pivot3 to x-axis <45.000000> speed <20.000000>;
+	turn launcher3 to x-axis <-75.000000> speed <20.000000>;	
+	wait-for-turn turret3 around y-axis;
+	wait-for-turn pivot3 around x-axis;
+	wait-for-turn launcher3 around x-axis;
+	start-script RestoreAfterDelay3();
+	return (1);
+}
+
+FireWeapon3()
+{
+	gun_3 = 0;	
+	sleep 350;
+
+	move launcher3 to z-axis [0.000000] speed [500.000000];
+	sleep 50;
+	
+	sleep 350;
+	gun_3 = 1;
+}
+
+QueryWeapon3(piecenum)
+{
+	if(gun_3 == 0)
+	{
+		piecenum = flare3a;
+	}
+	else
+	{
+		piecenum = flare3b;
+	}
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turret4;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn turret4 to y-axis heading speed <200.000000>;
+	turn sleeves4 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turret4 around y-axis;
+	wait-for-turn sleeves4 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon4()
+{
+	gun_4 = !gun_4;
+}
+
+QueryWeapon4(piecenum)
+{
+	if(gun_4 == 0)
+	{
+		piecenum = flare4a;
+	}
+	else
+	{
+		piecenum = flare4b;
+	}
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = turret5;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn turret5 to y-axis heading speed <200.000000>;
+	turn sleeves5 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turret5 around y-axis;
+	wait-for-turn sleeves5 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon5()
+{
+	gun_5 = !gun_5;
+}
+
+QueryWeapon5(piecenum)
+{
+	if(gun_5 == 0)
+	{
+		piecenum = flare5a;
+	}
+	else
+	{
+		piecenum = flare5b;
+	}
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = turret6;
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn turret6 to y-axis heading speed <200.000000>;
+	turn sleeves6 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turret6 around y-axis;
+	wait-for-turn sleeves6 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon6()
+{
+	gun_6 = !gun_6;
+}
+
+QueryWeapon6(piecenum)
+{
+	if(gun_6 == 0)
+	{
+		piecenum = flare6a;
+	}
+	else
+	{
+		piecenum = flare6b;
+	}
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = turret7;
+}
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn turret7 to y-axis heading speed <200.000000>;
+	turn sleeves7 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turret7 around y-axis;
+	wait-for-turn sleeves7 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon7()
+{
+	gun_7 = !gun_7;
+}
+
+QueryWeapon7(piecenum)
+{
+	if(gun_7 == 0)
+	{
+		piecenum = flare7a;
+	}
+	else
+	{
+		piecenum = flare7b;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode turret5 type NOHEATCLOUD;
+		explode turret3 type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode turret4 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode turret6 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode turret5 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+		explode turret6 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+		explode turret2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+		explode turret3 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+		explode turret4 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode wake1 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+		explode wake2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode turret5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode turret1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode wake1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode wake2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -33,7 +33,7 @@ return {
 		maneuverleashlength = 640,
 		mass = 1045,
 		maxdamage = 1975,
-		maxvelocity = 3,
+		maxvelocity = 2.65,
 		minwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "BOAT4",

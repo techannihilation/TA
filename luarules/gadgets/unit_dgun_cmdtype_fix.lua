@@ -38,6 +38,7 @@ local tacnukes = {
 local emp = {
 		[UnitDefNames["armmarlin"].id] = true,
 		[UnitDefNames["tllswordfish"].id] = true,
+		[UnitDefNames["talon_frigate"].id] = true,
 }
 ----------------------------------------------------------------
 -- Speedups

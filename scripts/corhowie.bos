@@ -3,11 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  TurretBase, howitzer, fire1, fire2, fire3, fire4, waist, rleg, rfoot, lleg, lfoot, lupleg,
-       rupleg, base, HowitzerBack;
+piece  turretBase, howitzer, fire1, fire2, fire3, fire4, waist, rleg, rfoot, lleg, lfoot, lupleg,
+       rupleg, base, pelvis;
 
-static-var  bMoving, bAiming, Static_Var_3, gun_1, gun_3,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
+static-var  bMoving, bAiming, gun_1, Static_Var_10;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -61,7 +60,6 @@ MotionControl()
 	{
 		if( !bAiming )
 		{
-			Static_Var_3 = 0;
 			if( !Static_Var_10 )
 			{
 				turn rupleg to x-axis <-35.000000> speed <140.000000>;
@@ -107,7 +105,6 @@ MotionControl()
 		}
 		if( bAiming )
 		{
-			Static_Var_3 = 1;
 			if( !Static_Var_10 )
 			{
 				turn rupleg to x-axis <-35.000000> speed <140.000000>;
@@ -155,10 +152,7 @@ Create()
 	bMoving = FALSE;
 	bAiming = FALSE;
 	Static_Var_10 = 1;
-	gun_1 = TurretBase;
-	Static_Var_7 = 0;
-	Static_Var_6 = 0;
-	Static_Var_8 = 0;
+	gun_1 = 0;
 	start-script SmokeUnit();
 }
 
@@ -169,10 +163,6 @@ RestoreAfterDelay()
 	turn TurretBase to x-axis <0.000000> speed <40.000000>;
 	wait-for-turn TurretBase around x-axis;
 	bAiming = FALSE;
-	if( !Static_Var_7 )
-	{
-		gun_1 = TurretBase;
-	}
 }
 
 StartMoving()
@@ -187,7 +177,6 @@ StopMoving()
 {
 	signal SIG_MOVE;
 	bMoving = FALSE;
-	Static_Var_3 = 1;
 	Static_Var_10 = 1;
 	turn rupleg to x-axis <0.000000> speed <100.000000>;
 	turn rleg to x-axis <0.000000> speed <70.000000>;
@@ -206,20 +195,14 @@ StopMoving()
 
 SweetSpot(piecenum)
 {
-	piecenum = TurretBase;
+	piecenum = base;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
-	set-signal-mask 0;
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
-	if( !Static_Var_3 )
-	{
-		turn waist to x-axis <0.000000> speed <20.000000>;
-		Static_Var_3 = 1;
-	}
 	turn TurretBase to y-axis heading speed <80.000000>;
 	turn TurretBase to x-axis <0.000000> - pitch speed <45.000000>;
 	wait-for-turn TurretBase around y-axis;
@@ -227,15 +210,12 @@ AimPrimary(heading, pitch)
 	start-script RestoreAfterDelay();
 	return (1);
 }
-
+/*
 FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
 		show fire1;
-		move HowitzerBack to z-axis [-1.000000] now;
-		move howitzer to z-axis [-1.500000] speed [200.000000];
-		sleep 140;
 		hide fire1;
 		gun_1 = howitzer;
 		wait-for-move howitzer along z-axis;
@@ -283,6 +263,38 @@ FirePrimary()
 		move HowitzerBack to z-axis [0.000000] speed [1.000000];
 		return (0);
 	}
+}
+*/
+
+FirePrimary()
+{
+	gun_1 = 0;	
+	sleep 350;
+
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
+	
+	sleep 350;
+	gun_1 = 1;
+
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
+	
+	sleep 350;
+	gun_1 = 2;
+	
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
+	
+	sleep 350;
+	gun_1 = 3;
+
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
 }
 
 QueryPrimary(piecenum)
