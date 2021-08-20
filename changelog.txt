@@ -7,6 +7,7 @@ Balance :
 
  Improvment :
  - Delete ExoArm T4 Shield from Lab (you can have it by morph)
+ - Tempest (T2 Arm hover) : Change Model and stats
  - Add T4 Arm Air Transport
  - Add T3 Core Missile Ship
  - Add 4 bursts for Howie. Decrease damage by rocket to balance
