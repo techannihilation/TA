@@ -57,7 +57,7 @@ return {
 			[2] = "armmarv",
 			[3] = "armaak",
 			[4] = "armvader",
-			[5] = "armpincer",
+			--[5] = "armpincer",
 			[6] = "armcroc",
 			[7] = "armscpion",
 			[8] = "armsubk",

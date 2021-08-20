@@ -1,7 +1,7 @@
 return {
 	armscpion = {
 		acceleration = 0.03,
-		brakerate = 0.2289,
+		brakerate = 0.2,
 		buildcostenergy = 23990,
 		buildcostmetal = 2484,
 		builder = false,
@@ -41,6 +41,7 @@ return {
 		radardistancejam = 50,
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",
+		sonardistance = 400,
 		sightdistance = 350,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -163,7 +164,7 @@ return {
 				},
 			},
 			arm_lightning = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				avoidfeature = false,
 				beamttl = 10,
 				craterareaofeffect = 0,

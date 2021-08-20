@@ -188,8 +188,7 @@ QueryPrimary(piecenum)
 AimSecondary(heading, pitch)
 {
 	signal 4;
-	set-signal-mask 4;
-	
+	set-signal-mask 4;	
 	turn aa1 to y-axis heading speed <720.000000>;
 	turn sleeve1 to x-axis <0.000000> - pitch speed <720.000000>;
 	wait-for-turn aa1 around y-axis;
@@ -242,8 +241,8 @@ AimWeapon4(heading, pitch)
 {
 	signal 6;
 	set-signal-mask 6;
-	turn flakmis1 to y-axis heading speed <150.000000>;
-	turn launcher1 to x-axis <0.000000> - pitch speed <50.000000>;
+	turn flakmis1 to y-axis heading speed <250.000000>;
+	turn launcher1 to x-axis <0.000000> - pitch speed <150.000000>;
 	wait-for-turn flakmis1 around y-axis;
 	wait-for-turn launcher1 around y-axis;
 	
@@ -255,8 +254,8 @@ AimWeapon5(heading, pitch)
 {	
 	signal 8;
 	set-signal-mask 8;
-	turn flakmis2 to y-axis heading speed <150.000000>;
-	turn launcher2 to x-axis <0.000000> - pitch speed <50.000000>;
+	turn flakmis2 to y-axis heading speed <250.000000>;
+	turn launcher2 to x-axis <0.000000> - pitch speed <150.000000>;
 	wait-for-turn flakmis2 around y-axis;
 	wait-for-turn launcher2 around y-axis;
 	start-script RestoreAfterDelay2();

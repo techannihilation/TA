@@ -1,7 +1,5 @@
 return {
 	csubpen = {
-		acceleration = 0,
-		brakerate = 0,
 		buildcostenergy = 27366,
 		buildcostmetal = 3371,
 		builder = true,
@@ -36,7 +34,7 @@ return {
 		minwaterdepth = 25,
 		mobilestandorders = 1,
 		name = "Amphibious Complex",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "CSUBPEN",
 		radaremitheight = 31,
 		seismicsignature = 0,
@@ -59,7 +57,7 @@ return {
 			[4] = "corroach",
 			[5] = "corsktl",
 			[6] = "coramph",
-			[7] = "corgarp",
+			--[7] = "corgarp",
 			[8] = "corseal",
 			[9] = "corparrow",
 			[11] = "corshark",

@@ -173,7 +173,7 @@ return {
 				},
 			},
 			arm_lightningxl = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				avoidfeature = false,
 				beamttl = 10,
 				craterareaofeffect = 0,
@@ -212,7 +212,7 @@ return {
 				},
 			},
 			arm_lightning = {
-				areaofeffect = 8,
+				areaofeffect = 16,
 				avoidfeature = false,
 				beamttl = 10,
 				craterareaofeffect = 0,

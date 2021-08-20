@@ -1,0 +1,271 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, link, 
+		flakmis1, launcher1, misa1, misb1, 
+		flakmis2, launcher2, misa2, misb2,
+      thruster1, thruster2, thruster3, thruster4, thruster5, thruster6, 
+      flamer1, flamer2, flamer3, flamer4, flamer5, flamer6;
+
+static-var  unitviewer, statechg_DesiredState, statechg_StateChanging, gun_1, gun_2, restore_delay;
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move thruster1 to x-axis [-3.000000] speed [5.000000];
+		move thruster3 to x-axis [-3.000000] speed [5.000000];
+		move thruster5 to x-axis [-3.000000] speed [5.000000];	
+	}
+	if( TRUE )
+	{
+		move thruster2 to x-axis [3.000000] speed [5.000000];
+		move thruster4 to x-axis [3.000000] speed [5.000000];
+		move thruster6 to x-axis [3.000000] speed [5.000000];	
+	}
+	sleep 50;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move thruster1 to x-axis [0.000000] speed [5.000000];
+		move thruster3 to x-axis [0.000000] speed [5.000000];
+		move thruster5 to x-axis [0.000000] speed [5.000000];	
+	}
+	if( TRUE )
+	{
+		move thruster2 to x-axis [0.000000] speed [5.000000];
+		move thruster4 to x-axis [0.000000] speed [5.000000];
+		move thruster6 to x-axis [0.000000] speed [5.000000];	
+	}
+	sleep 50;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn flakmis1 to y-axis <0.000000> speed <128.000000>;
+	turn launcher1 to x-axis <0.000000> speed <128.000000>;
+	turn flakmis2 to y-axis <0.000000> speed <128.000000>;
+	turn launcher2 to x-axis <0.000000> speed <128.000000>;
+}
+
+Create()
+{
+	unitviewer = FALSE;
+	restore_delay = 2000;
+	gun_1 = 0;
+	gun_2 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal 6;
+	set-signal-mask 6;
+	turn flakmis1 to y-axis heading speed <250.000000>;
+	turn launcher1 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn flakmis1 around y-axis;
+	wait-for-turn launcher1 around y-axis;	
+	start-script RestoreAfterDelay();
+	return (1);
+}
+	
+AimWeapon2(heading, pitch)
+{	
+	signal 8;
+	set-signal-mask 8;
+	turn flakmis2 to y-axis heading speed <250.000000>;
+	turn launcher2 to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn flakmis2 around y-axis;
+	wait-for-turn launcher2 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = flakmis1;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = flakmis2;
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = misa1;
+	}
+	if( gun_1 == 0 )
+	{
+		piecenum = misb1;
+	}
+}
+
+QueryWeapon2(piecenum)
+{
+	if( gun_2 == 1 )
+	{
+		piecenum = misa2;
+	}
+	if( gun_2 == 0 )
+	{
+		piecenum = misb2;
+	}
+}
+
+FireWeapon1(Func_Var_1)
+{
+	++gun_1;		
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
+}
+
+FireWeapon2(Func_Var_1)
+{
+	++gun_2;		
+	if( gun_2 == 2 )
+	{
+		gun_2 = 0;
+	}
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryTransport(Func_Var_1)
+{
+	Func_Var_1 = 2;
+}
+
+Activate()
+{
+	if( unitviewer )
+	{
+		start-script RequestState(0);
+	}
+}
+
+BeginTransport(Func_Var_1)
+{
+	move link to y-axis [0.000000] - Func_Var_1 now;
+	move link to z-axis [0.000000] now;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	if( unitviewer )
+	{
+		start-script RequestState(1);
+		move link to y-axis [0.000000] now;
+		move link to z-axis [0.000000] now;
+	}
+}
+
+EndTransport()
+{
+	start-script RequestState(1);
+}
+
+StartMoving()
+{
+	signal 2;
+}
+
+
+StopMoving()
+{
+	signal 2;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode thruster1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thruster2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode thruster3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thruster4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thruster5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode thruster6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flakmis1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flakmis2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -6,6 +6,8 @@ Balance :
  - Talon Frigate T3 Sub : Remplace Tac Nuke by EMP Nuke
 
  Improvment :
+ - Delete ExoArm T4 Shield from Lab (you can have it by morph)
+ - Add T4 Arm Air Transport
  - Add T3 Core Missile Ship
  - Add 4 bursts for Howie. Decrease damage by rocket to balance
 
