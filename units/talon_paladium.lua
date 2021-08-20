@@ -48,7 +48,7 @@ return {
 		selfdestructas = "MKL_BLAST",
 		selfdestructcountdown = 10,
 		sightdistance = 1500,
-		sonardistance = 0,
+		sonardistance = 850,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
