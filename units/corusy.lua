@@ -43,8 +43,9 @@ return {
 		buildoptions = {
 			[1] = "coruch",
 			[2] = "coruppercut",
-			[3] = "corhflag",
-			[4] = "corurbanus",
+			[3] = "corucar",
+			[4] = "corhflag",
+			[5] = "corurbanus",
 		},
 		customparams = {
 			buildpic = "corusy.dds",

@@ -89,6 +89,7 @@ local antiNukes = {
   [UnitDefNames["corfmd1"].id] = true,
   [UnitDefNames["corfmd2"].id] = true,
   [UnitDefNames["corcarry"].id] = true,
+  [UnitDefNames["corucar"].id] = true,
 --The lost legacy
   [UnitDefNames["tllturtle"].id] = true,
   [UnitDefNames["tllantinuke"].id] = true,

@@ -1,0 +1,533 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, land_01, land_02, land_03, land_04, land_05, land_06, land_07,
+       land_08, land_09, land_10, land_11, land_12, land_13, land_14, body, tower, bridge, turret,
+       sleeve, dish, sensors, ant, dish2, sensors2, ant2, dish3, sensors3, ant3, front,
+       mtur2, mslv2, mflr2a, mflr2b, mtur3, mslv3, mflr3a, mflr3b,
+       mtur4, mslv4, mflr4a, mflr4b, mtur5, mslv5, mflr5a, mflr5b,
+       mtur6, mslv6, mflr6a, mflr6b, mtur7, mslv7, mflr7a, mflr7b,
+       mtur8, mslv8, mflr8a, mflr8b, mtur9, mslv9, mflr9a, mflr9b,
+       pentons, back, flare, anti,
+       wake1, wake2, wake3, wake4, wake5, wake6;
+
+static-var  restore_delay, gun_2, gun_3, gun_4, gun_5,
+            gun_6, gun_7, gun_8, gun_9;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+#define SIG_AIM_8			256
+#define SIG_AIM_9			512
+#define SIG_MOVE			1024
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	turn mtur2 to y-axis <0.> speed <100.>;
+	turn mslv2 to x-axis <0.> speed <100.>;
+	turn mtur3 to y-axis <0.> speed <100.>;
+	turn mslv3 to x-axis <0.> speed <100.>;
+	turn mtur4 to y-axis <0.> speed <100.>;
+	turn mslv4 to x-axis <0.> speed <100.>;
+	turn mtur5 to y-axis <0.> speed <100.>;
+	turn mslv5 to x-axis <0.> speed <100.>;
+	turn mtur6 to y-axis <-180.> speed <100.>;
+	turn mslv6 to x-axis <0.> speed <100.>;
+	turn mtur7 to y-axis <-180.> speed <100.>;
+	turn mslv7 to x-axis <0.> speed <100.>;
+	turn mtur8 to y-axis <-180.> speed <100.>;
+	turn mslv8 to x-axis <0.> speed <100.>;
+	turn mtur9 to y-axis <-180.> speed <100.>;
+	turn mslv9 to x-axis <0.> speed <100.>;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( 1 OR get HEALTH < 30 )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx 256 | 2 from mtur9;
+			emit-sfx 256 | 2 from mtur4;
+			emit-sfx 256 | 2 from mslv7;
+			emit-sfx 256 | 2 from mslv2;
+			emit-sfx 256 | 2 from dish3;
+			emit-sfx 256 | 2 from land_03;
+			emit-sfx 256 | 2 from land_07;
+			emit-sfx 256 | 2 from land_12;
+		}		
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_2 = 0;
+	gun_3 = 0;
+	gun_4 = 0;
+	gun_5 = 0;
+	gun_6 = 0;
+	gun_7 = 0;
+	gun_8 = 0;
+	gun_9 = 0;	
+	turn mtur6 to y-axis <-180.> now;
+	turn mtur7 to y-axis <-180.> now;
+	turn mtur8 to y-axis <-180.> now;
+	turn mtur9 to y-axis <-180.> now;
+	turn sleeve to x-axis <-45.> now;
+	start-script SmokeUnit();
+}
+
+Deactivate()
+{
+	spin turret around y-axis speed <0.0> accelerate <-1.0>;
+}
+
+Activate()
+{
+	spin turret around y-axis speed <4.0> accelerate <-2.0>;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		emit-sfx 2 from wake4;
+		emit-sfx 2 from wake5;
+		emit-sfx 2 from wake6;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	sleep 150;
+}
+
+QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9, Func_Var_10, Func_Var_11, Func_Var_12, Func_Var_13, Func_Var_14)
+{
+	Func_Var_1 = land_01;
+	Func_Var_2 = land_02;
+	Func_Var_3 = land_03;
+	Func_Var_4 = land_04;
+	Func_Var_5 = land_05;
+	Func_Var_6 = land_06;
+	Func_Var_7 = land_07;
+	Func_Var_8 = land_08;
+	Func_Var_9 = land_09;
+	Func_Var_10 = land_10;
+	Func_Var_11 = land_11;
+	Func_Var_12 = land_12;
+	Func_Var_13 = land_13;
+	Func_Var_14 = land_14;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	return (1);
+}
+
+FirePrimary()
+{
+
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+// Missile Turret Weapon
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = mtur2;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn mtur2 to y-axis heading speed <400.>;
+	turn mslv2 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur2 around y-axis;
+	wait-for-turn mslv2 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon2()
+{
+	++gun_2;
+	if( gun_2 == 2 )
+	{
+		gun_2 = 0;	
+	}
+}
+
+QueryWeapon2(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = mflr2a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = mflr2b;
+	}	
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = mtur3;
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn mtur3 to y-axis heading speed <400.>;
+	turn mslv3 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur3 around y-axis;
+	wait-for-turn mslv3 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon3()
+{
+	++gun_3;
+	if( gun_3 == 2 )
+	{
+		gun_3 = 0;	
+	}
+}
+
+QueryWeapon3(piecenum)
+{
+	if( gun_3 == 0 )
+	{
+		piecenum = mflr3a;
+	}
+	if( gun_3 == 1 )
+	{
+		piecenum = mflr3b;
+	}	
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = mtur4;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn mtur4 to y-axis heading speed <400.>;
+	turn mslv4 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur4 around y-axis;
+	wait-for-turn mslv4 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon4()
+{
+	++gun_4;
+	if( gun_4 == 2 )
+	{
+		gun_4 = 0;	
+	}
+}
+
+QueryWeapon4(piecenum)
+{
+	if( gun_4 == 0 )
+	{
+		piecenum = mflr4a;
+	}
+	if( gun_4 == 1 )
+	{
+		piecenum = mflr4b;
+	}	
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = mtur5;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn mtur5 to y-axis heading speed <400.>;
+	turn mslv5 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur5 around y-axis;
+	wait-for-turn mslv5 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon5()
+{
+	++gun_5;
+	if( gun_5 == 2 )
+	{
+		gun_5 = 0;	
+	}
+}
+
+QueryWeapon5(piecenum)
+{
+	if( gun_5 == 0 )
+	{
+		piecenum = mflr5a;
+	}
+	if( gun_5 == 1 )
+	{
+		piecenum = mflr5b;
+	}	
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = mtur2;
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn mtur6 to y-axis heading speed <400.>;
+	turn mslv6 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur6 around y-axis;
+	wait-for-turn mslv6 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon6()
+{
+	++gun_6;
+	if( gun_6 == 2 )
+	{
+		gun_6 = 0;	
+	}
+}
+
+QueryWeapon6(piecenum)
+{
+	if( gun_6 == 0 )
+	{
+		piecenum = mflr6a;
+	}
+	if( gun_6 == 1 )
+	{
+		piecenum = mflr6b;
+	}	
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = mtur7;
+}
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn mtur7 to y-axis heading speed <400.>;
+	turn mslv7 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur7 around y-axis;
+	wait-for-turn mslv7 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon7()
+{
+	++gun_7;
+	if( gun_7 == 2 )
+	{
+		gun_7 = 0;	
+	}
+}
+
+QueryWeapon7(piecenum)
+{
+	if( gun_7 == 0 )
+	{
+		piecenum = mflr7a;
+	}
+	if( gun_7 == 1 )
+	{
+		piecenum = mflr7b;
+	}	
+}
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = mtur8;
+}
+
+AimWeapon8(heading, pitch)
+{
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	turn mtur8 to y-axis heading speed <400.>;
+	turn mslv8 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur8 around y-axis;
+	wait-for-turn mslv8 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon8()
+{
+	++gun_8;
+	if( gun_8 == 2 )
+	{
+		gun_8 = 0;	
+	}
+}
+
+QueryWeapon8(piecenum)
+{
+	if( gun_8 == 0 )
+	{
+		piecenum = mflr8a;
+	}
+	if( gun_8 == 1 )
+	{
+		piecenum = mflr8b;
+	}	
+}
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = mtur9;
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal SIG_AIM_9;
+	set-signal-mask SIG_AIM_9;
+	turn mtur9 to y-axis heading speed <400.>;
+	turn mslv9 to x-axis <0.> - pitch speed <400.>;
+	wait-for-turn mtur9 around y-axis;
+	wait-for-turn mslv9 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon9()
+{
+	++gun_9;
+	if( gun_9 == 2 )
+	{
+		gun_9 = 0;	
+	}
+}
+
+QueryWeapon9(piecenum)
+{
+	if( gun_9 == 0 )
+	{
+		piecenum = mflr9a;
+	}
+	if( gun_9 == 1 )
+	{
+		piecenum = mflr9b;
+	}	
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 66 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD ;
+		explode back type NOHEATCLOUD ;
+		explode front type NOHEATCLOUD ;
+		explode mtur2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mtur3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mtur4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mtur5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mslv6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mtur6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mslv7 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mtur7 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mslv8 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mtur9 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode mslv9 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode ant type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode ant2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode ant3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode bridge type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode dish type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD ;
+	explode back type NOHEATCLOUD ;
+	explode front type NOHEATCLOUD ;
+	explode mtur2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mtur3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mtur4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mtur5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mslv6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mtur6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mslv7 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mtur7 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mslv8 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mtur9 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode mslv9 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode ant type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode ant2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode ant3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode bridge type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode sleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode dish type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	return (corpsetype);
+}
