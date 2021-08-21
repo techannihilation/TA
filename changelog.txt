@@ -6,7 +6,7 @@ Balance :
  - Talon Frigate T3 Sub : Remplace Tac Nuke by EMP Nuke
 
  Improvment :
- - Add T4 Antinuke Carrier for Arm (coming for other factions)
+ - Add T4 Antinuke Carrier for Arm/Core (coming for other factions)
  - Delete ExoArm T4 Shield from Lab (you can have it by morph)
  - Tempest (T2 Arm hover) : Change Model and stats
  - Add T4 Arm Air Transport
