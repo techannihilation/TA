@@ -154,7 +154,7 @@ return {
 		"tllequalizer",
 		"tllviking",
 		"tllmako",
-		"tllgiant",
+		"tllcarry",
 		"tllvisitor",
 		"tllmixer",
 		"cormls",
@@ -191,7 +191,7 @@ return {
 		"talon_crus",
 		"talon_dioptase",
 		"talon_aas",
-		"talon_nexus",
+		"talon_carry",
 		"talon_zamak",
 		"talon_imperator",
 	},
@@ -244,6 +244,10 @@ return {
 		"armcentrum",
 		"talon_paladium",
 		"tllpliosaurus",
+		"cormship1",
+		"tllucar",
+		"corucar",
+		"armucar",
 	},
 
 	--### LAND ###

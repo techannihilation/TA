@@ -49,7 +49,7 @@ return {
 			[7] = "tllequalizer",
 			[8] = "tllvisitor",
 			[9] = "tllorc",
-			[10] = "tllgiant",
+			[10] = "tllcarry",
 			[11] = "tllmako",
 			[12] = "tllviking",
 		},

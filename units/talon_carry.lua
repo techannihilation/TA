@@ -1,5 +1,5 @@
 return {
-	talon_nexus = {
+	talon_carry = {
 		acceleration = 0.026,
 		activatewhenbuilt = true,
 		brakerate = 0.072,
@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 189000,
 		buildcostmetal = 3150,
 		builder = true,
-		buildpic = "talon_nexus.dds",
+		buildpic = "talon_carry.dds",
 		buildtime = 80000,
 		canassist = false,
 		canguard = true,
@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Aircraft Carrier with long range Anti-Nuke",
+		description = "Anti-Nuke",
 		energymake = 55,
 		energystorage = 1500,
 		energyuse = 0,
@@ -42,9 +42,9 @@ return {
 		minwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "DBOAT6",
-		name = "Colossus",
+		name = "Aircraft Carrier",
 		noautofire = false,
-		objectname = "talon_nexus",
+		objectname = "talon_carry",
 		radardistance = 2500,
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -57,11 +57,11 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.782,
 		turnrate = 175,
-		unitname = "talon_nexus",
+		unitname = "talon_carry",
 		workertime = 4000,
 		customparams = {
 			isairbase = true,
-			buildpic = "talon_nexus.dds",
+			buildpic = "talon_carry.dds",
 			faction = "TALON",
 		},
 		featuredefs = {
@@ -77,7 +77,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1237,
-				object = "talon_nexus_DEAD",
+				object = "talon_carry_DEAD",
 				reclaimable = true,
 			},
 			heap = {

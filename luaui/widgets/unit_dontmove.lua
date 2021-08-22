@@ -85,15 +85,19 @@ local unitArray = {
   --antinukes
   "armscab",
   "armcarry",
+  "armucar",
 
   "cormabm",
   "corcarry",
+  "corucar",
 
   "tllcarry",
   "tllturtle",
+  "tllucar",
 
   "talon_tribulation",
-  "talon_nexus",
+  "talon_carry",
+  "talon_ucar",
 }
 
 

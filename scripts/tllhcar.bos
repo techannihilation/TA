@@ -3,14 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, wake1, wake2, wake3, pad1, pad2, pad3, pad4, land1,
-       land2, land3, land4, radar, anti, nano, box;
+piece  base, body, bridge, wake1, wake2, wake3, pad1, pad2, pad3, pad4, land1,
+       land2, land3, land4, radar, nuke, nukeflare, mslflare;
 
 static-var  Static_Var_1;
 
 // Signal definitions
 #define SIG_MOVE			2
-#define SIG_AIM				4
+#define SIG_AIM_1			4
+#define SIG_AIM_2			8
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -57,11 +58,6 @@ Create()
 {
 	Static_Var_1 = 0;
 	start-script SmokeUnit();
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
-	spin radar around y-axis speed <60.000000>;
 }
 
 StartMoving()
@@ -85,17 +81,11 @@ StopMoving()
 Activate()
 {
 	spin radar around y-axis speed <60.000000> accelerate <1.000000>;
-	dont-cache pad1;
-	dont-cache pad2;
-	dont-cache radar;
 }
 
 Deactivate()
 {
 	stop-spin radar around y-axis decelerate <1.000000>;
-	cache pad1;
-	cache pad2;
-	cache radar;
 }
 
 QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4 )
@@ -111,20 +101,32 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
+AimFromPrimary(piecenum)
+{
+	piecenum = mslflare;
+}
+
 AimPrimary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
 	return (1);
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = box;
+	piecenum = mslflare;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = nuke;
 }
 
 AimTertiary(heading, pitch)
 {
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	return (1);
 }
 
@@ -135,12 +137,7 @@ FireTertiary()
 
 QueryTertiary(piecenum)
 {
-	piecenum = anti;
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = anti;
+	piecenum = nukeflare;
 }
 
 Killed(severity, corpsetype)
@@ -148,8 +145,7 @@ Killed(severity, corpsetype)
 	explode body type NOHEATCLOUD;
 	explode pad1 type NOHEATCLOUD;
 	explode radar type NOHEATCLOUD;
-	explode wake1 type NOHEATCLOUD;
-	explode wake2 type NOHEATCLOUD;
+	explode bridge type NOHEATCLOUD;
 	explode pad1 type NOHEATCLOUD;
 	if( severity <= 25 )
 	{

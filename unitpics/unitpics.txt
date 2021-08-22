@@ -787,7 +787,7 @@ tllgen.dds
 tllgeo_armored.png
 tllgeo.dds
 tllgeo_mini.dds
-tllgiant.dds
+tllcarry.dds
 tllgladius.dds
 tllgrim.dds
 tllhailstorm.dds

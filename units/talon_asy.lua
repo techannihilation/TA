@@ -56,7 +56,7 @@ return {
 			[5] = "talon_jellyfish",
 			[6] = "talon_crus",
 			[7] = "talon_zamak",
-			[8] = "talon_nexus",
+			[8] = "talon_carry",
 			[9] = "talon_imperator",
 		},
 		customparams = {

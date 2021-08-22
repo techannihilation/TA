@@ -1,0 +1,273 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, bridge, tower, 
+		anti, doors, gate1, gate2, gate3, gate4, flare,
+		radar, pitch1, pitch2, pitch3, dish1, dish2, dish3,
+		wake1, wake2, wake3, wake4, wake5, wake6,
+		 pad1, pad2, pad3, pad4, pad5, pad6, pad7, pad8, pad9, pad10,
+		 land1, land2, land3, land4, land5, land6, land7, land8, land9, land10;
+		  
+
+static-var  restore_delay, gun_1, statechg_DesiredState, statechg_StateChanging;
+
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM_1			4
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 4 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from land1;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from land9;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from land5;
+			}
+			if( Func_Var_4 == 3 )
+			{
+				emit-sfx smoketype from radar;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	if( TRUE )
+	{
+		//turn gate1 to y-axis <-90.000000> speed <300.0>;
+		turn gate1 to x-axis <-90.000000> speed <250.0>;
+		
+		//turn gate2 to y-axis <-90.000000> speed <300.0>;
+		turn gate2 to x-axis <-90.000000> speed <250.0>;
+		
+		//turn gate3 to y-axis <-90.000000> speed <300.0>;
+		turn gate3 to x-axis <90.000000> speed <250.0>;
+		
+		//turn gate4 to y-axis <-90.000000> speed <300.0>;
+		turn gate4 to x-axis <90.000000> speed <250.0>;
+		
+		sleep 750;
+		
+	}
+	sleep 25;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		turn gate1 to y-axis <0.000000> speed <10.0>;
+		turn gate1 to x-axis <0.000000> speed <10.0>;
+		
+		turn gate2 to y-axis <0.000000> speed <10.0>;
+		turn gate2 to x-axis <0.000000> speed <10.0>;
+		
+		turn gate3 to y-axis <0.000000> speed <10.0>;
+		turn gate3 to x-axis <0.000000> speed <10.0>;
+		
+		turn gate4 to y-axis <0.000000> speed <10.0>;
+		turn gate4 to x-axis <0.000000> speed <10.0>;
+		
+		sleep 750;
+	}
+	sleep 25;
+}
+
+Go()
+{
+	call-script activatescr();
+}
+
+Stop()
+{
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	restore_delay = 10000;
+	turn pitch1 to y-axis <120.000000> now;
+	turn pitch2 to y-axis <240.000000> now;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		emit-sfx 2 from wake4;
+		emit-sfx 2 from wake5;
+		emit-sfx 2 from wake6;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+Activate()
+{
+	spin radar around y-axis speed <10.000000> accelerate <0.5>;
+	turn dish1 to x-axis <-30.000000> speed <5.000000>;
+	turn dish2 to x-axis <-30.000000> speed <5.000000>;
+	turn dish3 to x-axis <-30.000000> speed <5.000000>;
+}
+
+Deactivate()
+{	
+	spin radar around y-axis speed <0.000000> accelerate <0.5>;
+	turn dish1 to x-axis <0.000000> speed <5.000000>;
+	turn dish2 to x-axis <0.000000> speed <5.000000>;
+	turn dish3 to x-axis <0.000000> speed <5.000000>;	
+}
+
+QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9, Func_Var_10)
+{
+	Func_Var_1 = land1;
+	Func_Var_2 = land2;
+	Func_Var_3 = land3;
+	Func_Var_4 = land4;
+	Func_Var_5 = land5;
+	Func_Var_6 = land6;
+	Func_Var_7 = land7;
+	Func_Var_8 = land8;
+	Func_Var_9 = land9;
+	Func_Var_10 = land10;
+}
+
+RestoreAfterDelay()
+{
+	sleep 10000;
+	start-script RequestState(1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	wait-for-turn gate1 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	explode body type NOHEATCLOUD;
+	explode tower type NOHEATCLOUD;
+	explode bridge type NOHEATCLOUD;
+	explode pad2 type NOHEATCLOUD;
+	explode pad1 type NOHEATCLOUD;
+	explode pad3 type NOHEATCLOUD;
+	explode pad4 type NOHEATCLOUD;
+	explode pad5 type NOHEATCLOUD;
+	explode pad6 type NOHEATCLOUD;
+	explode pad1 type NOHEATCLOUD;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode radar type NOHEATCLOUD | FALL | SMOKE | EXPLODE_ON_HIT;
+	explode pitch1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode pitch2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode pitch3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode radar type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode pitch1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode pitch2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode pitch3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
