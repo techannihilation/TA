@@ -1,7 +1,7 @@
 return {
 	corejudgement = {
-		acceleration = 0.07629,
-		brakerate = 0.22887,
+		acceleration = 0.07,
+		brakerate = 0.2,
 		buildcostenergy = 64644,
 		buildcostmetal = 4925,
 		builder = false,
@@ -46,7 +46,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0.66,
+		turninplacespeedlimit = 0.6,
 		turnrate = 510,
 		unitname = "corejudgement",
 		upright = false,
