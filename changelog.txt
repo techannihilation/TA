@@ -4,6 +4,7 @@ Balance :
  - Cataclysm Core T4 : Decrease stats and cost by 33%
  - Vasculatis (T1 cruiser missile Talon ship) : Increase range for starburst
  - Talon Frigate T3 Sub : Remplace Tac Nuke by EMP Nuke
+ - T3 Talon Carrier : Decrease stats and cost. Delete Main Turret
 
  Improvment :
  - Add T4 Antinuke Carrier for factions
@@ -12,6 +13,7 @@ Balance :
  - Add T4 Arm Air Transport
  - Add T3 Core Missile Ship
  - Add 4 bursts for Howie. Decrease damage by rocket to balance
+ - Decrease Modelsize for talon T3 Carrier
 
 3.94 > 3.95
 2021-08-12
