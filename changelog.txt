@@ -1,12 +1,12 @@
 3.95 > 3.96
-2021-08-21
+2021-08-23
 Balance :
  - Cataclysm Core T4 : Decrease stats and cost by 33%
  - Vasculatis (T1 cruiser missile Talon ship) : Increase range for starburst
  - Talon Frigate T3 Sub : Remplace Tac Nuke by EMP Nuke
 
  Improvment :
- - Add T4 Antinuke Carrier for Arm/Core (coming for other factions)
+ - Add T4 Antinuke Carrier for factions
  - Delete ExoArm T4 Shield from Lab (you can have it by morph)
  - Tempest (T2 Arm hover) : Change Model and stats
  - Add T4 Arm Air Transport

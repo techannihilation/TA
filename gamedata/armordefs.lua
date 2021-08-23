@@ -248,6 +248,7 @@ return {
 		"tllucar",
 		"corucar",
 		"armucar",
+		"talon_ucar",
 	},
 
 	--### LAND ###

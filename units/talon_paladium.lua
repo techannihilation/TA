@@ -1,7 +1,7 @@
 return {
 	talon_paladium = {
 		acceleration = 0.015,
-		airsightdistance = 775,
+		airsightdistance = 1000,
 		activatewhenbuilt = true,
 		brakerate = 0.015,
 		buildangle = 16384,
@@ -214,7 +214,7 @@ return {
 			},
 			talon_flak_gun = {
 				accuracy = 1000,
-				areaofeffect = 192,
+				areaofeffect = 144,
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,
@@ -229,8 +229,8 @@ return {
 				impulsefactor = 0,
 				name = "FlakCannon",
 				noselfdamage = true,
-				range = 775,
-				reloadtime = 0.20,
+				range = 1000,
+				reloadtime = 0.2,
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",

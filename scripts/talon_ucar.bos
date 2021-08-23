@@ -1,0 +1,619 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, front, fore, bridge, deck1, deck2, flare, neck,
+		land1, land2, land3, land4, land5, land6, land7, land8, 
+		land9, land10, land11, land12, land13, land14, 
+		trap, radar, tower, frontturret, backturret,		
+		sleeve1, barrel1a, barrel1b, barrel1c, barrel1d,  barrel1e, barrel1f, barrel1g, flare1a, flare1b, flare1c, flare1d, flare1e, flare1f, flare1g,
+		sleeve2, barrel2a, barrel2b, barrel2c, barrel2d,  barrel2e, barrel2f, barrel2g, flare2a, flare2b, flare2c, flare2d, flare2e, flare2f, flare2g,
+		sleeve3, barrel3a, barrel3b, barrel3c, barrel3d,  barrel3e, barrel3f, barrel3g, flare3a, flare3b, flare3c, flare3d, flare3e, flare3f, flare3g,
+		sleeve4, barrel4a, barrel4b, barrel4c, barrel4d,  barrel4e, barrel4f, barrel4g, flare4a, flare4b, flare4c, flare4d, flare4e, flare4f, flare4g,
+     	wake1, wake2, wake3, wake4, wake5, wake6;
+
+static-var  restore_delay, flak_1, flak_2, flak_3, flak_4;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_MOVE			1024
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+			emit-sfx smoketype from radar;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	flak_1 = 0;
+	flak_2 = 0;
+	flak_3 = 0;
+	flak_4 = 0;
+	turn backturret to y-axis <-180.0> now;
+	restore_delay = 7500;
+	start-script SmokeUnit();
+}
+
+Deactivate()
+{
+	spin radar around y-axis speed <0.0> accelerate <-1.0>;
+}
+
+Activate()
+{
+	spin radar around y-axis speed <4.0> accelerate <-2.0>;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		emit-sfx 2 from wake4;
+		emit-sfx 2 from wake5;
+		emit-sfx 2 from wake6;
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+}
+
+QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6, Func_Var_7, Func_Var_8, Func_Var_9, Func_Var_10, Func_Var_11, Func_Var_12, Func_Var_13, Func_Var_14)
+{
+	Func_Var_1 = land1;
+	Func_Var_2 = land2;
+	Func_Var_3 = land3;
+	Func_Var_4 = land4;
+	Func_Var_5 = land5;
+	Func_Var_6 = land6;
+	Func_Var_7 = land7;
+	Func_Var_8 = land8;
+	Func_Var_9 = land9;
+	Func_Var_10 = land10;
+	Func_Var_11 = land11;
+	Func_Var_12 = land12;
+	Func_Var_13 = land13;
+	Func_Var_14 = land14;
+}
+
+RestoreFrontFlak()
+{
+	sleep restore_delay / 2;
+	turn frontturret to y-axis <0.000000> speed <100.000000>;
+	turn sleeve1 to x-axis <0.000000> speed <100.000000>;
+	turn sleeve2 to x-axis <0.000000> speed <100.000000>;
+}
+
+RestoreBackFlak()
+{
+	sleep restore_delay / 2;
+	turn backturret to y-axis <180.000000> speed <100.000000>;
+	turn sleeve3 to x-axis <0.000000> speed <100.000000>;
+	turn sleeve4 to x-axis <0.000000> speed <100.000000>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+CloseTrap()
+{
+	sleep restore_delay;
+	turn trap to x-axis <0.000000> speed <30.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn trap to x-axis <120.000000> speed <180.000000>;
+	wait-for-turn trap around x-axis;
+	start-script CloseTrap();
+	return (1);
+}
+
+FirePrimary()
+{
+	sleep 150;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = frontturret;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = frontturret;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = backturret;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = backturret;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn frontturret to y-axis heading speed <700.000000>;
+	turn sleeve1 to x-axis <0.000000> - pitch speed <550.000000>;
+	wait-for-turn frontturret around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	start-script RestoreFrontFlak();
+	return (1);
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn sleeve2 to x-axis <0.000000> - pitch speed <550.000000>;
+	wait-for-turn frontturret around y-axis;
+	wait-for-turn sleeve2 around x-axis;
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn backturret to y-axis heading speed <700.000000>;
+	turn sleeve3 to x-axis <0.000000> - pitch speed <550.000000>;
+	wait-for-turn backturret around y-axis;
+	wait-for-turn sleeve3 around x-axis;
+	start-script RestoreBackFlak();
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn sleeve4 to x-axis <0.000000> - pitch speed <550.000000>;
+	wait-for-turn backturret around y-axis;
+	wait-for-turn sleeve4 around x-axis;
+	return (1);
+}
+
+FireWeapon2()
+{
+	if(flak_1 == 0)
+	{
+		move barrel1a to z-axis [-2.0] now;
+		sleep 50;
+		move barrel1a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_1 == 1)
+	{
+		move barrel1b to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel1b to z-axis [0.0] speed [1.0];
+	}
+	if(flak_1 == 2)
+	{
+		move barrel1c to z-axis [-2.0] now;
+		sleep 50;
+		move barrel1c to z-axis [0.0] speed [1.0];
+	}
+	if(flak_1 == 3)
+	{
+		move barrel1d to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel1d to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_1 == 4)
+	{
+		move barrel1e to z-axis [-2.0] now;
+		sleep 50;
+		move barrel1e to z-axis [0.0] speed [1.0];
+	}
+	if(flak_1 == 5)
+	{
+		move barrel1f to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel1f to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_1 == 6)
+	{
+		move barrel1g to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel1g to z-axis [0.0] speed [1.0];
+	}			
+	++flak_1;
+	if(flak_1 == 7)
+	{
+		flak_1 = 0;
+	}
+}
+
+FireWeapon3()
+{
+	if(flak_2 == 0)
+	{
+		move barrel2a to z-axis [-2.0] now;
+		sleep 50;
+		move barrel2a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_2 == 1)
+	{
+		move barrel2b to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel2b to z-axis [0.0] speed [1.0];
+	}
+	if(flak_2 == 2)
+	{
+		move barrel2c to z-axis [-2.0] now;
+		sleep 50;
+		move barrel2c to z-axis [0.0] speed [1.0];
+	}
+	if(flak_2 == 3)
+	{
+		move barrel2d to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel2d to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_2 == 4)
+	{
+		move barrel2e to z-axis [-2.0] now;
+		sleep 50;
+		move barrel2e to z-axis [0.0] speed [1.0];
+	}
+	if(flak_2 == 5)
+	{
+		move barrel2f to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel2f to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_2 == 6)
+	{
+		move barrel2g to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel2g to z-axis [0.0] speed [1.0];
+	}			
+	++flak_2;
+	if(flak_2 == 7)
+	{
+		flak_2 = 0;
+	}
+}
+
+FireWeapon4()
+{
+	if(flak_3 == 0)
+	{
+		move barrel3a to z-axis [-2.0] now;
+		sleep 50;
+		move barrel3a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_3 == 1)
+	{
+		move barrel3b to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel3b to z-axis [0.0] speed [1.0];
+	}
+	if(flak_3 == 2)
+	{
+		move barrel3c to z-axis [-2.0] now;
+		sleep 50;
+		move barrel3c to z-axis [0.0] speed [1.0];
+	}
+	if(flak_3 == 3)
+	{
+		move barrel3d to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel3d to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_3 == 4)
+	{
+		move barrel3e to z-axis [-2.0] now;
+		sleep 50;
+		move barrel3e to z-axis [0.0] speed [1.0];
+	}
+	if(flak_3 == 5)
+	{
+		move barrel1f to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel1f to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_1 == 6)
+	{
+		move barrel3g to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel3g to z-axis [0.0] speed [1.0];
+	}			
+	++flak_3;
+	if(flak_3 == 7)
+	{
+		flak_3 = 0;
+	}
+}
+
+FireWeapon5()
+{
+	if(flak_4 == 0)
+	{
+		move barrel4a to z-axis [-2.0] now;
+		sleep 50;
+		move barrel4a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_4 == 1)
+	{
+		move barrel4b to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel4b to z-axis [0.0] speed [1.0];
+	}
+	if(flak_4 == 2)
+	{
+		move barrel4c to z-axis [-2.0] now;
+		sleep 50;
+		move barrel4c to z-axis [0.0] speed [1.0];
+	}
+	if(flak_4 == 3)
+	{
+		move barrel4d to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel4d to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_4 == 4)
+	{
+		move barrel4e to z-axis [-2.0] now;
+		sleep 50;
+		move barrel4e to z-axis [0.0] speed [1.0];
+	}
+	if(flak_4 == 5)
+	{
+		move barrel4f to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel4f to z-axis [0.0] speed [1.0];
+	}	
+	if(flak_4 == 6)
+	{
+		move barrel4g to z-axis [-2.0] now;
+		sleep 50;		
+		move barrel4g to z-axis [0.0] speed [1.0];
+	}			
+	++flak_4;
+	if(flak_4 == 7)
+	{
+		flak_4 = 0;
+	}
+}
+
+QueryWeapon2(piecenum)
+{
+	if(flak_1 == 0)
+	{
+		piecenum = flare1a;
+	}
+	if(flak_1 == 1)
+	{
+		piecenum = flare1b;
+	}
+	if(flak_1 == 2)
+	{
+		piecenum = flare1c;
+	}
+	if(flak_1 == 3)
+	{
+		piecenum = flare1d;
+	}
+	if(flak_1 == 4)
+	{
+		piecenum = flare1e;
+	}
+	if(flak_1 == 5)
+	{
+		piecenum = flare1f;
+	}
+	if(flak_1 == 6)
+	{
+		piecenum = flare1g;
+	}
+}
+
+QueryWeapon3(piecenum)
+{
+	if(flak_2 == 0)
+	{
+		piecenum = flare2a;
+	}
+	if(flak_2 == 1)
+	{
+		piecenum = flare2b;
+	}
+	if(flak_2 == 2)
+	{
+		piecenum = flare2c;
+	}
+	if(flak_2 == 3)
+	{
+		piecenum = flare2d;
+	}
+	if(flak_2 == 4)
+	{
+		piecenum = flare2e;
+	}
+	if(flak_2 == 5)
+	{
+		piecenum = flare2f;
+	}
+	if(flak_2 == 6)
+	{
+		piecenum = flare2g;
+	}
+}
+
+QueryWeapon4(piecenum)
+{
+	if(flak_3 == 0)
+	{
+		piecenum = flare3a;
+	}
+	if(flak_3 == 1)
+	{
+		piecenum = flare3b;
+	}
+	if(flak_3 == 2)
+	{
+		piecenum = flare3c;
+	}
+	if(flak_3 == 3)
+	{
+		piecenum = flare3d;
+	}
+	if(flak_3 == 4)
+	{
+		piecenum = flare3e;
+	}
+	if(flak_3 == 5)
+	{
+		piecenum = flare3f;
+	}
+	if(flak_3 == 6)
+	{
+		piecenum = flare3g;
+	}
+}
+
+QueryWeapon5(piecenum)
+{
+	if(flak_4 == 0)
+	{
+		piecenum = flare4a;
+	}
+	if(flak_4 == 1)
+	{
+		piecenum = flare4b;
+	}
+	if(flak_4 == 2)
+	{
+		piecenum = flare4c;
+	}
+	if(flak_4 == 3)
+	{
+		piecenum = flare4d;
+	}
+	if(flak_4 == 4)
+	{
+		piecenum = flare4e;
+	}
+	if(flak_4 == 5)
+	{
+		piecenum = flare4f;
+	}
+	if(flak_4 == 6)
+	{
+		piecenum = flare4g;
+	}
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode neck type NOHEATCLOUD;
+		explode front type NOHEATCLOUD;
+		explode radar type NOHEATCLOUD;		
+		explode fore type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD;
+		explode trap type NOHEATCLOUD;
+		explode frontturret type NOHEATCLOUD;
+		explode backturret type NOHEATCLOUD;
+		explode sleeve3 type NOHEATCLOUD;
+		explode sleeve2 type NOHEATCLOUD;
+		explode deck1 type NOHEATCLOUD;
+		explode deck2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode neck type NOHEATCLOUD;
+		explode front type NOHEATCLOUD;
+		explode radar type NOHEATCLOUD | FALL;		
+		explode fore type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD | FALL;
+		explode trap type NOHEATCLOUD | FALL;
+		explode frontturret type NOHEATCLOUD | FALL;
+		explode backturret type NOHEATCLOUD | FALL;
+		explode sleeve3 type NOHEATCLOUD | FALL;
+		explode sleeve2 type NOHEATCLOUD | FALL;
+		explode deck1 type NOHEATCLOUD;
+		explode deck2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode neck type NOHEATCLOUD;
+	explode front type NOHEATCLOUD;
+	explode radar type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;		
+	explode fore type NOHEATCLOUD;
+	explode bridge type NOHEATCLOUD;
+	explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode trap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode frontturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode backturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode deck1 type NOHEATCLOUD;
+	explode deck2 type NOHEATCLOUD;
+	return (corpsetype);
+}

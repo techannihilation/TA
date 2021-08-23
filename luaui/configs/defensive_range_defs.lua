@@ -64,7 +64,7 @@ modConfig["TA"]["unitList"] =
 								armcarry = { weapons = { 1 } }, --antinuke
 								armucar = { weapons = { 1 } }, --antinuke
 								corucar = { weapons = { 1 } }, --antinuke
-								
+
 								--Core
 									--Ground Weapons--
 								cormaw = { weapons = { 1 } },
@@ -122,6 +122,8 @@ modConfig["TA"]["unitList"] =
 								corfmd2 = { weapons = { 3 } },
 								cortron = { weapons = { 3 } },
 								corarbritator = { weapons = { 3 } },
+								talon_carry = { weapons = { 1 } },
+								talon_ucar = { weapons = { 1 } },
 
 								--TLL
 									--Ground Weapons--

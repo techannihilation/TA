@@ -134,7 +134,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-					areoship = 240,
+					areoship = 375,
 					default = 5,
 					priority_air = 1500,
 					unclassed_air = 1500,

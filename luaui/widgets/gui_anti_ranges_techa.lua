@@ -103,6 +103,7 @@ local antiNukes = {
   [UnitDefNames["talon_carry"].id] = true,
   [UnitDefNames["talon_requiem"].id] = true,
   [UnitDefNames["talon_tribulation"].id] = true,
+  [UnitDefNames["talon_ucar"].id] = true,
 }
 
 for unitDefID, _ in pairs(antiNukes) do
