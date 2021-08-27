@@ -93,7 +93,7 @@ return {
 		},
 		weapondefs = {
 			asm = {
-				accuracy = 200,
+				accuracy = 1000,
 				areaofeffect = 375,
 				avoidfeature = false,
 				burnblow = true,
@@ -127,13 +127,13 @@ return {
 				texture4 = "null",
 				tracks = false,
 				trajectoryheight = 1.65,
-				turnrate = 0,
+				turnrate = 2500,
 				turret = true,
 				weaponacceleration = 120,
 				weapontimer = 6,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 900,
-				wobble = 1000,
+				wobble = 6000,
 				damage = {
 					commanders = 1500,
 					default = 3000,

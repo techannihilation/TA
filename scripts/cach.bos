@@ -16,16 +16,16 @@ activatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <-200.> speed <309.>;
-		turn door2 to z-axis <200.> speed <308.>;
-		move  post to y-axis [3.0] speed [2.0];
-		sleep 683;
+		turn door1 to z-axis <120.> speed <309.>;
+		turn door2 to z-axis <-120.> speed <308.>;
+		move  post to y-axis [2.25] speed [2.0];
+		sleep 500;
 	}
 	if( TRUE )
 	{
 		turn boom to x-axis <43.> speed <62.>;
 		turn neck to x-axis <-43.> speed <62.>;
-		sleep 689;
+		sleep 500;
 	}
 	sleep 11;
 }
@@ -34,24 +34,20 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		turn door1 to z-axis <-211.> now;
-		turn door2 to z-axis <210.> now;
-		turn boom to x-axis <43.> now;
 		turn boom to x-axis <0.> speed <64.>;
-		turn neck to x-axis <-43.> now;
 		turn neck to x-axis <0.> speed <64.>;
-		sleep 672;
+		sleep 500;
 	}
 	if( TRUE )
 	{
 		move  post to y-axis [0.0] speed [1.0];
-		sleep 250;
+		sleep 500;
 	}
 	if( TRUE )
 	{
-		turn door1 to z-axis <0.> speed <306.>;
-		turn door2 to z-axis <0.> speed <305.>;
-		sleep 689;
+		turn door1 to z-axis <0.> speed <120.>;
+		turn door2 to z-axis <0.> speed <120.>;
+		sleep 500;
 	}
 	sleep 12;
 }

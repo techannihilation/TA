@@ -48,7 +48,7 @@ return {
 		yardmap = "wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw",
 		buildoptions = {
 			[1] = "talon_cs",
-			--[2] = "",
+			[2] = "talon_jellyfish",
 			[3] = "talon_charon",
 			[4] = "talon_vasculitis",
 			[5] = "talon_sub",

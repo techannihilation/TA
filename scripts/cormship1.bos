@@ -100,31 +100,28 @@ Create()
 RestoreAfterDelay1()
 {
 	sleep restore_delay;
-	turn pivot1 to x-axis <0.000000> speed <10.000000>;
-	turn launcher1 to x-axis <0.000000> speed <10.000000>;
-	wait-for-turn pivot1 around x-axis;
-	wait-for-turn launcher1 around x-axis;	
 	turn turret1 to y-axis <0.000000> speed <35.000000>;
+	wait-for-turn turret1 around y-axis;
+	turn pivot1 to x-axis <0.000000> speed <10.000000>;
+	turn launcher1 to x-axis <0.000000> speed <10.000000>;	
 }
 
 RestoreAfterDelay2()
 {
 	sleep restore_delay;
+	turn turret2 to y-axis <180.000000> speed <35.000000>;
+	wait-for-turn turret2 around y-axis;
 	turn pivot2 to x-axis <0.000000> speed <10.000000>;
 	turn launcher2 to x-axis <0.000000> speed <10.000000>;
-	wait-for-turn pivot2 around x-axis;
-	wait-for-turn launcher2 around x-axis;	
-	turn turret2 to y-axis <180.000000> speed <35.000000>;
 }
 
 RestoreAfterDelay3()
 {
 	sleep restore_delay;
+	turn turret3 to y-axis <0.000000> speed <35.000000>;
+	wait-for-turn turret3 around y-axis;	
 	turn pivot3 to x-axis <0.000000> speed <10.000000>;
 	turn launcher3 to x-axis <0.000000> speed <10.000000>;
-	wait-for-turn pivot3 around x-axis;
-	wait-for-turn launcher3 around x-axis;	
-	turn turret3 to y-axis <0.000000> speed <35.000000>;
 }
 
 RestoreAfterDelay()

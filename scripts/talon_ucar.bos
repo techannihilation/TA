@@ -6,14 +6,15 @@
 piece  base, body, front, fore, bridge, deck1, deck2, flare, neck,
 		land1, land2, land3, land4, land5, land6, land7, land8, 
 		land9, land10, land11, land12, land13, land14, 
-		trap, radar, tower, frontturret, backturret,		
+		trap, radar, tower, frontturret, backturret,
+		torpedo1, torpedo2, tflare1a, tflare1b, tflare2a, tflare2b,	
 		sleeve1, barrel1a, barrel1b, barrel1c, barrel1d,  barrel1e, barrel1f, barrel1g, flare1a, flare1b, flare1c, flare1d, flare1e, flare1f, flare1g,
 		sleeve2, barrel2a, barrel2b, barrel2c, barrel2d,  barrel2e, barrel2f, barrel2g, flare2a, flare2b, flare2c, flare2d, flare2e, flare2f, flare2g,
 		sleeve3, barrel3a, barrel3b, barrel3c, barrel3d,  barrel3e, barrel3f, barrel3g, flare3a, flare3b, flare3c, flare3d, flare3e, flare3f, flare3g,
 		sleeve4, barrel4a, barrel4b, barrel4c, barrel4d,  barrel4e, barrel4f, barrel4g, flare4a, flare4b, flare4c, flare4d, flare4e, flare4f, flare4g,
      	wake1, wake2, wake3, wake4, wake5, wake6;
 
-static-var  restore_delay, flak_1, flak_2, flak_3, flak_4;
+static-var  restore_delay, flak_1, flak_2, flak_3, flak_4, torpedo_1, torpedo_2;
 
 // Signal definitions
 #define SIG_AIM_1			2
@@ -21,6 +22,10 @@ static-var  restore_delay, flak_1, flak_2, flak_3, flak_4;
 #define SIG_AIM_3			8
 #define SIG_AIM_4			16
 #define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+#define SIG_AIM_8			256
+#define SIG_AIM_9			512
 #define SIG_MOVE			1024
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -57,6 +62,8 @@ Create()
 	flak_2 = 0;
 	flak_3 = 0;
 	flak_4 = 0;
+	torpedo_1 = 0;
+	torpedo_2 = 0;
 	turn backturret to y-axis <-180.0> now;
 	restore_delay = 7500;
 	start-script SmokeUnit();
@@ -127,7 +134,23 @@ RestoreBackFlak()
 	turn sleeve4 to x-axis <0.000000> speed <100.000000>;
 }
 
-AimFromPrimary(piecenum)
+RestoreTorpedo1()
+{
+	sleep restore_delay;
+	turn torpedo1 to y-axis <0> speed <75>;
+	wait-for-turn torpedo1 around y-axis;
+}
+
+RestoreTorpedo2()
+{
+	sleep restore_delay;
+	turn torpedo2 to y-axis <0> speed <75>;
+	wait-for-turn torpedo2 around y-axis;
+}
+
+// ANTI
+
+AimFromWeapon6(piecenum)
 {
 	piecenum = flare;
 }
@@ -138,22 +161,22 @@ CloseTrap()
 	turn trap to x-axis <0.000000> speed <30.000000>;
 }
 
-AimPrimary(heading, pitch)
+AimWeapon6(heading, pitch)
 {
-	signal SIG_AIM_1;
-	set-signal-mask SIG_AIM_1;
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
 	turn trap to x-axis <120.000000> speed <180.000000>;
 	wait-for-turn trap around x-axis;
 	start-script CloseTrap();
 	return (1);
 }
 
-FirePrimary()
+FireWeapon6()
 {
 	sleep 150;
 }
 
-QueryPrimary(piecenum)
+QueryWeapon6(piecenum)
 {
 	piecenum = flare;
 }
@@ -554,6 +577,73 @@ QueryWeapon5(piecenum)
 	}
 }
 
+// Torpedo
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn torpedo1 to y-axis heading speed <75>;
+	turn torpedo1 to x-axis <0> - pitch speed <75>;
+	wait-for-turn torpedo1 around y-axis;
+	wait-for-turn torpedo1 around x-axis;
+	start-script RestoreTorpedo1();
+	return (1);
+}
+
+AimWeapon8(heading, pitch)
+{
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	turn torpedo2 to y-axis heading speed <75>;
+	turn torpedo2 to x-axis <0> - pitch speed <75>;
+	wait-for-turn torpedo2 around y-axis;
+	wait-for-turn torpedo2 around x-axis;
+	start-script RestoreTorpedo2();
+	return (1);
+}
+
+FireWeapon7()
+{
+	++torpedo_1;
+	if (torpedo_1 == 2)
+	{
+		torpedo_1 = 0;
+	}
+}
+
+FireWeapon8()
+{
+	++torpedo_2;
+	if (torpedo_2 == 2)
+	{
+		torpedo_2 = 0;
+	}
+}
+
+QueryWeapon7(piecenum)
+{
+	if (torpedo_1 == 0)
+	{
+		piecenum = tflare1a;
+	}
+	if (torpedo_1 == 1)
+	{
+		piecenum = tflare1b;
+	}
+}
+
+QueryWeapon8(piecenum)
+{
+	if (torpedo_2 == 0)
+	{
+		piecenum = tflare2a;
+	}
+	if (torpedo_2 == 1)
+	{
+		piecenum = tflare2b;
+	}
+}
 
 SweetSpot(piecenum)
 {

@@ -90,7 +90,7 @@ return {
 		},
 		weapondefs = {
 			barrage = {
-				accuracy = 400,
+				accuracy = 1000,
 				areaofeffect = 256,
 				avoidfeature = false,
 				burnblow = true,
@@ -122,14 +122,14 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tracks = false,
-				trajectoryheight = 1.65,
-				turnrate = 0,
+				trajectoryheight = 1.5,
+				turnrate = 2500,
 				turret = true,
 				weaponacceleration = 150,
 				weapontimer = 6,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 900,
-				wobble = 1200,
+				wobble = 6000,
 				damage = {
 					commanders = 1000,
 					default = 2000,

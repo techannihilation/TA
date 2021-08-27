@@ -148,7 +148,6 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "Mavgun2",
 				sprayangle = 200,
-				tolerance = 10000,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 350,

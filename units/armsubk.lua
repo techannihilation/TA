@@ -147,7 +147,7 @@ return {
 				tolerance = 18000,
 				tracks = true,
 				turnrate = 12000,
-				turret = false,
+				turret = true,
 				waterweapon = true,
 				weaponacceleration = 20,
 				weapontimer = 3,
@@ -162,7 +162,7 @@ return {
 			[1] = {
 				def = "ARMSMART_TORPEDO",
 				maindir = "0 0 1",
-				maxangledif = 150,
+				maxangledif = 90,
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

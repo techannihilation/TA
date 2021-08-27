@@ -123,7 +123,7 @@ modConfig["TA"]["unitList"] =
 								cortron = { weapons = { 3 } },
 								corarbritator = { weapons = { 3 } },
 								talon_carry = { weapons = { 1 } },
-								talon_ucar = { weapons = { 1 } },
+								talon_ucar = { weapons = { 6 } },
 
 								--TLL
 									--Ground Weapons--

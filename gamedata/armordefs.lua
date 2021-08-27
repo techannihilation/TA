@@ -221,6 +221,7 @@ return {
 		"talon_jellyfish",
 		"talon_lancelet",
 		"talon_frigate",
+		"talon_coral",
 	},
 	experimental_ships = {
 		"armtrmph",

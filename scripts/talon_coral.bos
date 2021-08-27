@@ -3,12 +3,12 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, wake, aimpoint, rotor1, rotor2;
+piece  base, body, wake1, wake2, aimpoint;
 
 static-var  gun_1, bmoving;
 
 // Signal definitions
-#define SIG_MOVE			2
+#define SIG_MOVE	2
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -46,11 +46,10 @@ StartMoving()
 	signal SIG_MOVE;
 	set-signal-mask SIG_MOVE;
 	bmoving = TRUE;
-	spin rotor1 around z-axis speed <325.000000> accelerate <10.000000>;
-	spin rotor2 around z-axis speed <-325.000000> accelerate <10.000000>; 
 	while( bmoving )
 	{
-		emit-sfx 256 | 3 from wake;
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;		
 		sleep 250;
 	}
 }
@@ -58,29 +57,27 @@ StartMoving()
 StopMoving()
 {
 	signal SIG_MOVE;
-	stop-spin rotor1 around z-axis;
-	stop-spin rotor2 around z-axis;
 	bmoving = FALSE;
 }
 
-StartBuilding(Func_Var_1)
+AimPrimary()
 {
-	set INBUILDSTANCE to 1;
+	return (1);
 }
 
-StopBuilding()
+FirePrimary()
 {
-	set INBUILDSTANCE to 0;
+
 }
 
-QueryNanoPiece(piecenum)
+QueryPrimary(piecenum)
 {
 	piecenum = aimpoint;
 }
 
-TargetHeading(Func_Var_1)
+AimFromPrimary(piecenum)
 {
-	//Static_Var_1 = 0 - Func_Var_1;
+	piecenum = aimpoint;
 }
 
 SweetSpot(piecenum)
@@ -91,8 +88,7 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode wake type NOHEATCLOUD;
-	explode base type NOHEATCLOUD;
+	explode wake1 type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

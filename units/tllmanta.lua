@@ -159,7 +159,7 @@ return {
 			[1] = {
 				def = "ARMSMART_TORPEDO",
 				maindir = "0 0 1",
-				maxangledif = 150,
+				maxangledif = 90,
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

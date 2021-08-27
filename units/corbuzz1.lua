@@ -1,7 +1,6 @@
 return {
 	corbuzz1 = {
 		acceleration = 0,
-		
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 4638274,
@@ -33,7 +32,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T4 Buzzsaw",
-
 		objectname = "CORBUZZ1",
 		radaremitheight = 341,
 		seismicsignature = 0,
