@@ -15,7 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
-		damagemodifier = 0.75,
+		damagemodifier = 0.25,
 		defaultmissiontype = "Standby",
 		description = "Mobile Radar Kbot",
 		energymake = 15,
@@ -36,7 +36,7 @@ return {
 		movementclass = "kbot2",
 		name = "Observer",
 		noautofire = false,
-		
+
 		objectname = "TLLOBSERVER",
 		onoffable = true,
 		radardistance = 1800,

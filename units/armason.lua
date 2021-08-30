@@ -16,7 +16,6 @@ return {
 		canattack = false,
 		category = "ALL UNDERWATER",
 		corpse = "dead",
-		damagemodifier = 0.46,
 		description = "Extended Sonar",
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 4,
@@ -33,7 +32,6 @@ return {
 		minwaterdepth = 24,
 		name = "Advanced Sonar Station",
 		noautofire = false,
-		
 		objectname = "ARMASON",
 		onoffable = true,
 		radaremitheight = 41,

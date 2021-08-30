@@ -16,7 +16,6 @@ return {
 		collisionvolumescales = "75 44 75",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		--damagemodifier = 0.75,
 		description = "Tech Level 2",
 		energyuse = 75,
 		explodeas = "SMALL_BUILDINGEX",
@@ -37,7 +36,7 @@ return {
 		metalstorage = 500,
 		name = "Armed Moho Exploiter",
 		noautofire = false,
-		
+
 		objectname = "CORMEXP",
 		onoffable = true,
 		radaremitheight = 49,

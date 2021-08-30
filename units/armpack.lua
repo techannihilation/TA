@@ -14,7 +14,7 @@ return {
 		category = "ALL SURFACE",
 		cloakcost = 20,
 		corpse = "dead",
-		damagemodifier = 0.2,
+		damagemodifier = 0.25,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Pop-Up Anti-Air Battery",
 		digger = 1,

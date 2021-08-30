@@ -15,7 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
 		corpse = "dead",
-		damagemodifier = 0.75,
+		damagemodifier = 0.25,
 		defaultmissiontype = "Standby",
 		description = "Radar Jammer Kbot",
 		energymake = 10,
@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Confuser",
 		noautofire = false,
-		
+
 		objectname = "TLLCONFUSER",
 		onoffable = true,
 		radardistancejam = 550,

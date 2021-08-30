@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.125,
+		damagemodifier = 0.25,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Pop-Up Heavy Lightning",
 		digger = 1,

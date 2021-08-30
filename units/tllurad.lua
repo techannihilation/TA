@@ -12,7 +12,6 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		damagemodifier = 0.8,
 		description = "Tech Level 5",
 		energyuse = 7500,
 		explodeas = "SMALL_BUILDINGEX",

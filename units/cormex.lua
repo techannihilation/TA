@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "50 35 50",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		damagemodifier = 0.4,
+		damagemodifier = 0.25,
 		description = "Tech Level 1 (Amphibious)",
 		energyuse = 3,
 		explodeas = "SMALL_BUILDINGEX",

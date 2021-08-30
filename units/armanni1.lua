@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.25,
+		damagemodifier = 0.10,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Super Tachyon Accelerator",
 		energystorage = 2000,

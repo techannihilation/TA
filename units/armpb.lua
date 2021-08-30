@@ -16,7 +16,7 @@ return {
 		category = "ALL SURFACE",
 		cloakcost = 20,
 		corpse = "dead",
-		damagemodifier = 0.5,
+		damagemodifier = 0.25,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Pop-Up Gauss Cannon",
 		digger = 1,
@@ -36,7 +36,7 @@ return {
 		mincloakdistance = 55,
 		name = "Pit Bull",
 		noautofire = false,
-		
+
 		objectname = "ARMPB",
 		radaremitheight = 48,
 		seismicsignature = 0,

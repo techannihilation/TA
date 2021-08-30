@@ -16,7 +16,7 @@ return {
 		canstop = 1,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.5,
+		damagemodifier = 0.25,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Pop-Up Sabot Battery",
 		digger = 1,
@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Viper",
 		noautofire = false,
-		
+
 		objectname = "CORVIPE",
 		radaremitheight = 31,
 		seismicsignature = 0,

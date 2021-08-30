@@ -17,7 +17,6 @@ return {
 		collisionvolumescales = "40 65 65",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		damagemodifier = 1,
 		defaultmissiontype = "Standby",
 		description = "Mobile Missile Launcher",
 		explodeas = "BIG_UNITEX",
@@ -38,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Armadillo",
 		noautofire = false,
-		
+
 		objectname = "talon_armadillo",
 		radaremitheight = 25,
 		seismicsignature = 0,

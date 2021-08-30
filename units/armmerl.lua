@@ -17,7 +17,6 @@ return {
 		collisionvolumescales = "40 40 50",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
-		damagemodifier = 1,
 		defaultmissiontype = "Standby",
 		description = "Mobile Missile Launcher",
 		explodeas = "BIG_UNITEX",

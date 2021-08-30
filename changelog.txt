@@ -1,5 +1,5 @@
 3.96 > 3.97
-2021-08-28
+2021-09-01
 Balance :
  - All Sub Angle fixed at 90° in front
  - Laser Core T2 : Increase Metal by 10%
@@ -12,6 +12,7 @@ Balance :
 
 Fix :
  - Storage and Behemoth : add underwater category to be targeted by sub weapon
+ - Fix DamageModifier for some units
 
 3.95 > 3.96
 2021-08-23

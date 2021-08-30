@@ -15,7 +15,6 @@ return {
 		collisionvolumescales = "38 68 38",
 		collisionvolumetype = "Box",
 		corpse = "armamd1_dead",
-		damagemodifier = 0.5,
 		description = "Ultimate Anti-Nuke (Block Only T4 ICBM)",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

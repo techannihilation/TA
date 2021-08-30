@@ -13,7 +13,7 @@ return {
 		buildtime = 5050,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.8,
+		damagemodifier = 0.25,
 		description = "Tech Level 2",
 		energyuse = 60,
 		explodeas = "SMALL_BUILDINGEX",

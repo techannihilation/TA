@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "133 127 133",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		damagemodifier = 0.2,
+		damagemodifier = 0.10,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "High Energy weapon",
 		energystorage = 1500,
@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Obliterator",
 		noautofire = false,
-		
+
 		objectname = "tllobliterator1",
 		onoffable = true,
 		radardistance = 1200,

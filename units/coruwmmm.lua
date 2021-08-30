@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "120 120 120",
 		collisionvolumetype = "Ell",
 		corpse = "dead",
-		damagemodifier = 0.275,
+		damagemodifier = 0.25,
 		description = "Converts upto 1280 Energy to Metal",
 		explodeas = "CRAWL_BLASTSML",
 		footprintx = 5,
@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 15,
 		name = "Underwater Moho Metal Maker",
 		noautofire = false,
-		
+
 		objectname = "CORUWMMM",
 		radaremitheight = 31,
 		seismicsignature = 0,
