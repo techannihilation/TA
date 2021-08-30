@@ -28,8 +28,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 125000,
 		name = "T3 Metal Storage",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "cadvmsto",
 		radardistance = 0,
 		radaremitheight = 48,

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllmstor_aoplane.dds",
 		buildpic = "tllmstor.dds",
 		buildtime = 3125,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-3 -33 -2",
 		collisionvolumescales = "55 62 55",
 		collisionvolumetype = "CylY",
@@ -32,7 +32,6 @@ return {
 		metalstorage = 4000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		
 		objectname = "tllMSTOR",
 		radaremitheight = 43,
 		selfdestructas = "SMALL_BUILDING",

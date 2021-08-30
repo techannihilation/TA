@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "tllemstor_aoplane.dds",
 		buildpic = "tllemstor.dds",
 		buildtime = 35000,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "112 59 109",
 		collisionvolumetype = "box",

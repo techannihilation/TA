@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "corestor_aoplane.dds",
 		buildpic = "corestor.dds",
 		buildtime = 3900,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "57.6 37.6 57.6",
 		collisionvolumetype = "CylY",
@@ -35,7 +35,6 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-
 		objectname = "CORESTOR",
 		radaremitheight = 32,
 		seismicsignature = 0,

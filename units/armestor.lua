@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armestor_aoplane.dds",
 		buildpic = "armestor.dds",
 		buildtime = 3900,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "42 34 42",
 		collisionvolumetype = "CylY",

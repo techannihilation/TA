@@ -170,59 +170,12 @@ return {
 					subs = 5,
 				},
 			},
-			nexus_laser = {
-				areaofeffect = 12,
-				beamtime = 0.12,
-				corethickness = 0.175,
-				craterareaofeffect = 0,
-				craterboost = 0,
-				cratermult = 0,
-				explosiongenerator = "custom:SMALL_RED_BURN",
-				firestarter = 30,
-				impactonly = 1,
-				impulseboost = 0,
-				impulsefactor = 0,
-				laserflaresize = 10,
-				name = "LightLaser",
-				noselfdamage = true,
-				range = 620,
-				reloadtime = 0.3,
-				rgbcolor = "1.0 0.8 0.25",
-				rgbcolor2= "1.0 1.0 1.00";
-				soundhitdry = "talongunhit",
-				soundhitwet = "sizzle",
-				soundhitwetvolume = 0.5,
-				soundstart = "talongunfirerapid",
-				soundtrigger = 1,
-				sweepfire = false,
-				targetmoveerror = 0.1,
-				thickness = 1,
-				tolerance = 500,
-				turret = true,
-				weapontype = "LaserCannon",
-				weaponvelocity = 850,
-				damage = {
-					default = 45,
-					subs = 5,
-				},
-
-			},
-
 		},
 		weapons = {
 			[1] = {
 				def = "AMD_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
-				def = "NEXUS_LASER",
-				onlytargetcategory = "SURFACE",
-				maindir = "0 0 1",
-				maxangledif = 300,
-
-
-			},
-
 		},
 	},
 }

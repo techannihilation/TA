@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "tllemstor1.dds",
 		buildtime = 135000,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "150 55 150",
 		collisionvolumetype = "box",

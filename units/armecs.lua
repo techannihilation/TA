@@ -61,7 +61,7 @@ return {
 		buildoptions = {
 			[1] = "armfor",
 			[2] = "armses",
-			[3] = "armfor",
+			--[3] = "",
 			[4] = "cadvmsto",
 			[5] = "armemex",
 			[6] = "ametalmakerlvl2",

@@ -229,7 +229,7 @@ return {
 				tracks = true,
 				turnrate = 50000,
 				weaponacceleration = 230,
-				weapontimer = 1,
+				weapontimer = 1.25,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 4000,
 				damage = {

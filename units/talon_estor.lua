@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "talon_estor.dds",
 		buildtime = 3900,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionspherescale = 0.5,
 		collisionvolumescales = "50 30 50",
 		collisionvolumetype = "Box",

@@ -13,7 +13,7 @@ return {
 		buildinggrounddecaltype = "armses_aoplane.dds",
 		buildpic = "armses.dds",
 		buildtime = 90000,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		corpse = "dead",
 		description = "Amphibious - capacity (500K)",
 		energystorage = 500000,

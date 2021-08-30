@@ -15,41 +15,12 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3, restore_delay, Static_Var_
 // Signal definitions
 #define SIG_MOVE			128
 
-
-SetDirection(heading)
-{
-	var Func_Var_2;
-	Func_Var_2 = ( get ABS(Static_Var_5) - get ABS(heading) ) / 2;
-	turn base to y-axis heading speed Func_Var_2;
-	turn body to y-axis <0.000000> - heading speed Func_Var_2;
-	Static_Var_5 = heading;
-}
-
-RockOnWaves(Func_Var_1, Func_Var_2, Func_Var_3)
-{
-	Func_Var_1 = -18;
-	Func_Var_2 = -18;
-	while( TRUE )
-	{
-		while( get ABS(Func_Var_2) < 202 )
-		{
-			Func_Var_3 = 227 - get ABS(Func_Var_2);
-			turn base to x-axis Func_Var_2 speed Func_Var_3 * <0.005495>;
-			wait-for-turn base around x-axis;
-			Func_Var_2 = Func_Var_2 + Func_Var_1;
-		}
-		Func_Var_1 = 0 - Func_Var_1;
-		Func_Var_2 = Func_Var_2 + Func_Var_1 + Func_Var_1;
-	}
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 500;
 	}
-	start-script RockOnWaves();
 	spin radar around y-axis speed <60.000000>;
 	var Func_Var_4;
 	while( TRUE )
@@ -85,47 +56,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-ProjXPW(Func_Var_1, Func_Var_2)
-{
-	if( Func_Var_2 < -21840 )
-	{
-		Static_Var_6 = Func_Var_1 * ( Func_Var_2 + 32760 ) / 10920;
-	}
-	else if( Func_Var_2 > 21840 )
-	{
-		Static_Var_6 = Func_Var_1 * ( 32760 - Func_Var_2 ) / 10920;
-	}
-	else if( Func_Var_2 < -10920 )
-	{
-		Static_Var_6 = 0 - Func_Var_1;
-	}
-	else if( Func_Var_2 > 10920 )
-	{
-		Static_Var_6 = Func_Var_1;
-	}
-	else
-	{
-		Static_Var_6 = Func_Var_1 * Func_Var_2 / 10920;
-	}
-}
-
-RockZ(Func_Var_1, Func_Var_2)
-{
-	signal 16;
-	set-signal-mask 16;
-	call-script ProjXPW(10920 / Func_Var_2,Func_Var_1);
-	Static_Var_7 = Static_Var_7 + Static_Var_6;
-	Static_Var_6 = get ABS(Static_Var_7);
-	while( Static_Var_6 > 91 )
-	{
-		turn base to z-axis Static_Var_7 speed Static_Var_6 * <0.005495>;
-		wait-for-turn base around z-axis;
-		Static_Var_7 = Static_Var_7 * -1 / 2;
-		Static_Var_6 = get ABS(Static_Var_7);
-	}
-	turn base to z-axis <0.000000> speed <1.500000>;
-}
-
 Create()
 {
 	hide flare1a;
@@ -145,11 +75,6 @@ Create()
 	Static_Var_2 = 0;
 	restore_delay = 3000;
 	start-script SmokeUnit();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 RestoreAfterDelay()
@@ -249,7 +174,6 @@ AimWeapon1(heading, pitch)
 
 FireWeapon1()
 {
-	start-script RockZ(-13,Static_Var_8);
 	if( Static_Var_1 == 0 )
 	{
 		move barrel1a to z-axis [-2.000000] speed [500.000000];

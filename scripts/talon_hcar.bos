@@ -4,24 +4,17 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, trap, missile, w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14,
-		turret2, airsleeve2, airbarrel2a, airbarrel2b, airflare2a, airflare2b,
-		turret3, airsleeve3, airbarrel3a, airbarrel3b, airflare3a, airflare3b, 
-		torpedo1, torpedo2, flare1a, flare1b, flare2a, flare2b,
-		pad1, pad2, pad3, pad4, pads, aimpad, light, land1, land2, land3, land4 ;
+piece  base, body, trap, missile, deck1, deck2,
+		w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, 
+		msl1, msl2, msl3, msl4, msl,
+		pad1, pad2, pad3, pad4, pad5, pad6, pads, land1, land2, land3, land4, land5, land6 ;
 
-static-var  gun_1, gun_2, gun_3, gun_4, gun_5, gun_6, gun_7, restore_delay;
+static-var  gun_1, restore_delay;
 
 // Signal definitions
-#define SIG_AIM				2
+#define SIG_AIM_1			2
 #define SIG_AIM_3			4
-#define SIG_AIM_4			8
-#define SIG_AIM_5			16
-#define SIG_AIM_6			32
-#define SIG_AIM_7			64
-#define SIG_AIM_8			128
-#define SIG_AIM_9			256
-#define SIG_MOVE			512
+#define SIG_MOVE			8
 
 RockOnWaves()
 {
@@ -61,8 +54,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			emit-sfx smoketype from missile;
 			emit-sfx smoketype from body;
 			emit-sfx smoketype from pad1;
-			emit-sfx smoketype from pad4;
-			emit-sfx smoketype from turret3;			
+			emit-sfx smoketype from pad4;			
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -76,22 +68,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	gun_1 = 0;
-	gun_2 = 0;
-	gun_3 = 0;
-	gun_4 = 0;
-	gun_5 = 0;
-	gun_6 = 0;
-	gun_7 = 0;	
-	
-	restore_delay = 3000;
-	
-	hide airflare2a;
-	hide airflare2b;
-	hide airflare3a;
-	hide airflare3b;
-	turn turret2 to y-axis <180.000000> now;
-	turn airsleeve2 to x-axis <-30.000000> now;
-	turn airsleeve3 to x-axis <-30.000000> now;
+	restore_delay = 5000;
 	start-script SmokeUnit();	
 }
 
@@ -124,17 +101,19 @@ StopMoving()
 	signal SIG_MOVE;
 }
 
-QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4)
+QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3, Func_Var_4, Func_Var_5, Func_Var_6)
 {
 	Func_Var_1 = land1;
 	Func_Var_2 = land2;
 	Func_Var_3 = land3;
 	Func_Var_4 = land4;
+	Func_Var_5 = land5;
+	Func_Var_6 = land6;
 }
 
 CloseTrap()
 {
-	sleep restore_delay * 1.5;
+	sleep restore_delay;
 	turn trap to x-axis <0.000000> speed <30.000000>;
 }
 
@@ -155,217 +134,48 @@ QueryTertiary(piecenum)
 
 AimFromTertiary(piecenum)
 {
-	piecenum = light;
+	piecenum = missile;
 }
 
-RestoreAfterDelay2()
+AimFromWeapon1(piecenum)
 {
-	sleep restore_delay;
-	turn turret2 to y-axis <180> speed <50>;
-	turn airsleeve2 to x-axis <-30> speed <50>;
+	piecenum = msl;
 }
 
-RestoreAfterDelay3()
+AimWeapon1(heading, pitch)
 {
-	sleep restore_delay;
-	turn turret3 to y-axis <0> speed <50>;
-	turn airsleeve3 to x-axis <-30> speed <50>;
-}
-
-AimFromWeapon4(piecenum)
-{
-	piecenum = turret2;
-}
-
-AimFromWeapon5(piecenum)
-{
-	piecenum = turret3;
-}
-
-AimWeapon4(heading, pitch)
-{
-	signal SIG_AIM_4;
-	set-signal-mask SIG_AIM_4;
-	turn turret2 to y-axis heading speed <275>;
-	turn airsleeve2 to x-axis <0.000000> - pitch speed <275>;
-	wait-for-turn turret2 around y-axis;
-	wait-for-turn airsleeve2 around x-axis;
-	start-script RestoreAfterDelay2();
-	return (1);
-}
-
-AimWeapon5(heading, pitch)
-{
-	signal SIG_AIM_5;
-	set-signal-mask SIG_AIM_5;
-	turn turret3 to y-axis heading speed <275>;
-	turn airsleeve3 to x-axis <0.000000> - pitch speed <275>;
-	wait-for-turn turret3 around y-axis;
-	wait-for-turn airsleeve3 around x-axis;
-	start-script RestoreAfterDelay3();
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
 	return (1);
 }
 
 FireWeapon4()
 {
-	if( gun_2 == 0 )
+	++gun_1;
+	if( gun_1 == 4 )
 	{
-		emit-sfx 1026 from airflare2a;
-		move airbarrel2a to z-axis [-3.] now;
-		sleep 80;
-		move airbarrel2a to z-axis [0.] speed [5.];
-	}
-	if( gun_2 == 1 )
-	{
-		emit-sfx 1026 from airflare2b;
-		move airbarrel2b to z-axis [-3.] now;
-		sleep 80;
-		move airbarrel2b to z-axis [0.] speed [5.];
-	}
-	++gun_2;
-	if( gun_2 == 2 )
-	{
-		gun_2 = 0;
+		gun_1 = 0;
 	}
 }
 
-FireWeapon5()
+QueryWeapon1(piecenum)
 {
-	if( gun_3 == 0 )
+	if( gun_1 == 0 )
 	{
-		emit-sfx 1026 from airflare3a;
-		move airbarrel3a to z-axis [-3.] now;
-		sleep 80;
-		move airbarrel3a to z-axis [0.] speed [5.];
+		piecenum = msl1;
 	}
-	if( gun_3 == 1 )
+	if( gun_1 == 1 )
 	{
-		emit-sfx 1026 from airflare3b;
-		move airbarrel3b to z-axis [-3.] now;
-		sleep 80;
-		move airbarrel3b to z-axis [0.] speed [5.];
+		piecenum = msl2;
 	}
-	++gun_3;
-	if( gun_3 == 2 )
+	if( gun_1 == 2 )
 	{
-		gun_3 = 0;
+		piecenum = msl3;
 	}
-}
-
-QueryWeapon4(piecenum)
-{
-	if( gun_2 == 0 )
+	if( gun_1 == 3 )
 	{
-		piecenum = airflare2a;
+		piecenum = msl4;
 	}
-	if( gun_2 == 1 )
-	{
-		piecenum = airflare2b;
-	}
-}
-
-QueryWeapon5(piecenum)
-{
-	if( gun_3 == 0 )
-	{
-		piecenum = airflare3a;
-	}
-	if( gun_3 == 1 )
-	{
-		piecenum = airflare3b;
-	}
-}
-
-//torpedo
-
-RestoreTorpedo1()
-{
-	sleep restore_delay;
-	turn torpedo1 to y-axis <0> speed <75>;
-	wait-for-turn torpedo1 around y-axis;
-}
-
-RestoreTorpedo2()
-{
-	sleep restore_delay;
-	turn torpedo2 to y-axis <0> speed <75>;
-	wait-for-turn torpedo2 around y-axis;
-}
-
-AimWeapon6(heading, pitch)
-{
-	signal SIG_AIM_6;
-	set-signal-mask SIG_AIM_6;
-	turn torpedo1 to y-axis heading speed <75>;
-	turn torpedo1 to x-axis <0> - pitch speed <75>;
-	wait-for-turn torpedo1 around y-axis;
-	wait-for-turn torpedo1 around x-axis;
-	start-script RestoreTorpedo1();
-	return (1);
-}
-
-AimWeapon7(heading, pitch)
-{
-	signal SIG_AIM_7;
-	set-signal-mask SIG_AIM_7;
-	turn torpedo2 to y-axis heading speed <75>;
-	turn torpedo2 to x-axis <0> - pitch speed <75>;
-	wait-for-turn torpedo2 around y-axis;
-	wait-for-turn torpedo2 around x-axis;
-	start-script RestoreTorpedo2();
-	return (1);
-}
-
-FireWeapon6()
-{
-	++gun_4;
-	if (gun_4 == 2)
-	{
-		gun_4 = 0;
-	}
-}
-
-FireWeapon7()
-{
-	++gun_5;
-	if (gun_5 == 2)
-	{
-		gun_5 = 0;
-	}
-}
-
-QueryWeapon6(piecenum)
-{
-	if (gun_4 == 0)
-	{
-		piecenum = flare1a;
-	}
-	if (gun_4 == 1)
-	{
-		piecenum = flare1b;
-	}
-}
-
-QueryWeapon7(piecenum)
-{
-	if (gun_5 == 0)
-	{
-		piecenum = flare2a;
-	}
-	if (gun_5 == 1)
-	{
-		piecenum = flare2b;
-	}
-}
-
-AimFromWeapon6(piecenum)
-{
-	piecenum = torpedo1;
-}
-
-AimFromWeapon7(piecenum)
-{
-	piecenum = torpedo2;
 }
 
 SweetSpot(piecenum)
@@ -379,10 +189,8 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD;
-		explode turret3 type NOHEATCLOUD;
-		explode airsleeve2 type NOHEATCLOUD;
-		explode airsleeve3 type NOHEATCLOUD;
+		explode deck1 type NOHEATCLOUD;
+		explode deck2 type NOHEATCLOUD;
 		explode trap type NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -390,18 +198,15 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD | FALL;
-		explode turret3 type NOHEATCLOUD | FALL;
-		explode airsleeve2 type NOHEATCLOUD | FALL;
-		explode airsleeve3 type NOHEATCLOUD | FALL;
+		explode deck1 type NOHEATCLOUD | FALL;
+		explode deck2 type NOHEATCLOUD | FALL;
+		explode trap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD;
-	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode airsleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode airsleeve3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode deck1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode deck2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode trap type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

@@ -11,7 +11,7 @@ return {
 		buildinggrounddecaltype = "cadvmsto_aoplane.dds",
 		buildpic = "corsms.dds",
 		buildtime = 66125,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		corpse = "dead",
 		description = "Amphibious - capacity (145000)",
 		downloadable = 1,
@@ -29,7 +29,6 @@ return {
 		metalstorage = 145000,
 		name = "T3 Metal Storage",
 		noautofire = false,
-		
 		objectname = "corsms",
 		radardistance = 0,
 		radaremitheight = 48,

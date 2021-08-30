@@ -190,7 +190,7 @@ return {
 			[2] = {
 				def = "TALON_HEAVY_TORPEDO",
 				maindir = "0 0 1",
-				maxangledif = 75,
+				maxangledif = 90,
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

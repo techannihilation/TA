@@ -3,12 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  pad, flare, turret, barrel, sleeve, base, dish, w1, w2,
+piece  pad, base, body, dish, w1, w2,
        w3, w4, w5, w6, w7, w8, w9, w10, anti, antinuke,
        w11, w12, wakes, land1, land2, land3;
-
-static-var  Static_Var_1, Static_Var_2;
-
 
 RockOnWaves()
 {
@@ -57,20 +54,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-RestoreAfterDelay()
-{
-	sleep 1000;
-	stop-spin barrel around z-axis;
-	sleep 2000;
-	turn turret to y-axis <0.000000> speed <90.000000>;
-	turn sleeve to x-axis <0.000000> speed <50.000000>;
-
-}
-
 Create()
 {
-	hide flare;
-	Static_Var_1 = 0;
 	start-script SmokeUnit();
 }
 
@@ -113,10 +98,7 @@ StopMoving()
 	signal 2;
 }
 
-SweetSpot(piecenum)
-{
-	piecenum = base;
-}
+
 
 QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3)
 {
@@ -127,6 +109,8 @@ QueryLandingPad(Func_Var_1, Func_Var_2, Func_Var_3)
 
 AimPrimary(heading, pitch)
 {
+	signal 4;
+	set-signal-mask 4;
 	return (1);
 }
 
@@ -145,40 +129,9 @@ AimFromPrimary(piecenum)
 	piecenum = anti;
 }
 
-AimTertiary(heading, pitch)
+SweetSpot(piecenum)
 {
-	signal 2;
-	set-signal-mask 2;
-	turn turret to y-axis heading speed <100.000000>;
-	turn sleeve to x-axis <0> - pitch speed <100.000000> ;
-	wait-for-turn turret around y-axis;
-	wait-for-turn sleeve around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-
-}
-
-FireTertiary()
-{
-	signal 16;
-	set-signal-mask 16;
-	
-	emit-sfx 1025 from flare;
-	move sleeve to z-axis [-1.] now;
-	move sleeve to z-axis [0.] speed [1.];
-	spin barrel around z-axis speed <300.000000>;	
-	sleep 300;
-
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = flare;
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = turret;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -186,34 +139,22 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode dish type NOHEATCLOUD;
 		explode pad type NOHEATCLOUD;
-		explode turret type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode dish type SHATTER;
 		explode pad type FALL;
-		explode turret type FALL | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode dish type SHATTER;
-		explode pad type FALL;
-		explode turret type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode dish type SHATTER;
 	explode pad type FALL;
-	explode turret type FALL | NOHEATCLOUD;
 	return (corpsetype);
 }

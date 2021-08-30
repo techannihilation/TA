@@ -198,7 +198,7 @@ return {
 				tolerance = 20000,
 				turnrate = 90000,
 				weaponacceleration = 600,
-				weapontimer = 1,
+				weapontimer = 1.25,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 800,
 				customparams = {
@@ -207,7 +207,6 @@ return {
 					light_radius_mult = 1.9,
 				},
 				damage = {
-					commanders = 250,
 					default = 500,
 					subs = 5,
 				},

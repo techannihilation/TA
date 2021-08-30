@@ -40,7 +40,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Annubis",
 		noautofire = false,
-
 		objectname = "talon_annubis",
 		radaremitheight = 38,
 		selfdestructas = "crawl_blast",

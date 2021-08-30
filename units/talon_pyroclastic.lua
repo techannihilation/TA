@@ -11,7 +11,7 @@ return {
 		buildtime = 100000,
 		canattack = true,
 		canstop = 1,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "115 40 115",
 		collisionvolumetype = "box",

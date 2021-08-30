@@ -9,7 +9,7 @@ return {
 		builder = false,
 		buildpic = "talon_mstor.dds",
 		buildtime = 2925,
-		category = "ALL SURFACE",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "66 45 66",
 		collisionvolumetype = "CylY",
