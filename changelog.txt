@@ -7,6 +7,7 @@ Balance :
  - T3 Talon Carrier : Delete torpedo and Flak. Add Starburst
 
  Improvment :
+ - Add T3 EMP Invisible Bomber for Talon
  - Add Rez Sub for Talon
  - Change model for talon adv tide & T3 Carrier
 

@@ -766,6 +766,10 @@ coreca = {
     {class='Ribbon', options={width=1, size=12, piece="ribbon1", priority=3, noIconDraw = true}},
     {class='Ribbon', options={width=1, size=12, piece="ribbon2", priority=3, noIconDraw = true}},
  },
+ talon_spirit = {
+    {class='Ribbon', options={width=1, size=12, piece="ribbon1", priority=3, noIconDraw = true}},
+    {class='Ribbon', options={width=1, size=12, piece="ribbon2", priority=3, noIconDraw = true}},
+ },
  tllca = {
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=6, length=15, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},

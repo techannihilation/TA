@@ -1,0 +1,159 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, leftwing, rightwing, backwing, flare, ribbon1, ribbon2;
+
+static-var  statechg_DesiredState, statechg_StateChanging;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move leftwing to x-axis [-4.0] speed [1.0];
+		move leftwing to z-axis [-1.0] speed [1.0];
+		
+		move rightwing to x-axis [4.0] speed [1.0];
+		move rightwing to z-axis [-1.0] speed [1.0];
+		
+		move backwing to z-axis [-1.0] speed [1.0];		
+		sleep 1000;
+	}
+	sleep 25;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move leftwing to x-axis [0.0] speed [1.0];
+		move leftwing to z-axis [0.0] speed [1.0];
+		sleep 1000;
+	}
+	sleep 25;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+AimPrimary()
+{
+	return (1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = body;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode leftwing type NOHEATCLOUD;
+		explode rightwing type NOHEATCLOUD;
+		explode backwing type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode leftwing type NOHEATCLOUD | SHATTER;
+		explode rightwing type NOHEATCLOUD | FALL;
+		explode backwing type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode leftwing type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode rightwing type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode backwing type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -104,7 +104,7 @@ return {
 				firestarter = 10,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				model = "bombe",
+				model = "weapon_advbomb",
 				mygravity = 0.2,
 				name = "Very Heavy Bombs",
 				noselfdamage = true,

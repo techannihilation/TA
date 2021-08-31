@@ -176,7 +176,7 @@ return {
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
 				explosiongenerator = "custom:EMPFLASH240",
-				model = "bomb",
+				model = "weapon_bomb",
 				name = "Stun Bomb",
 				nogap = 1,
 				noselfdamage = true,

@@ -128,7 +128,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.2,
 				impulsefactor = 0.2,
-				model = "bomb",
+				model = "weapon_bomb",
 				name = "Pepper spray",
 				nogap = 1,
 				noselfdamage = true,

@@ -50,8 +50,9 @@ return {
 			[2] = "talon_erez",
 			[3] = "talon_hornet",
 			[4] = "talon_pampa",
-			[5] = "talon_tau",
-			[6] = "talon_handgod",
+			[5] = "talon_spirit",
+			[6] = "talon_tau",
+			[7] = "talon_handgod",
 		},
 		customparams = {
 			buildpic = "talon_eap.dds",

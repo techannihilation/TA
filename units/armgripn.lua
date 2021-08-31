@@ -95,7 +95,7 @@ return {
 				burstrate = 0.19,
 				collidefriendly = false,
 				commandfire = false,
-				craterareaofeffect = 360,
+				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,

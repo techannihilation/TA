@@ -9,7 +9,7 @@ return {
 		firestarter = 90,
 		impulseboost = 4,
 		impulsefactor = 6,
-		model = "bomb",
+		model = "weapon_bomb",
 		name = "Shockwave",
 		range = 600,
 		reloadtime = 0.3,

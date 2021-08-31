@@ -7,7 +7,7 @@ return {
 		explosiongenerator = "custom:EMPFLASH240",
 		impulseboost = 0,
 		impulsefactor = 0,
-		model = "bomb",
+		model = "weapon_bomb",
 		name = "EMPboom",
 		paralyzer = true,
 		paralyzetime = 12,

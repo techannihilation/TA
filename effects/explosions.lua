@@ -96,6 +96,25 @@ return {
     },
   },
 
+  ["empflash480"] = {
+    air                = true,
+    ground             = true,
+    usedefaultexplosions = false,
+    water              = true,
+    groundflash = {
+      circlealpha        = 1.8,
+      circlegrowth       = 9,
+      flashalpha         = 0.9,
+      flashsize          = 480,
+      ttl                = 10,
+      color = {
+        [1]  = 0.9,
+        [2]  = 0.75,
+        [3]  = 0,
+      },
+    },
+  },
+
   ["flashmediumbuildingex"] = {
     usedefaultexplosions = true,
     groundflash = {

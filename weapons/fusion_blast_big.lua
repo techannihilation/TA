@@ -11,7 +11,6 @@ return {
 		firestarter = 0,
 		impulseboost = 0.5,
 		impulsefactor = 0.5,
-		model = "ballmiss",
 		name = "NuclearMissile",
 		reloadtime = 120,
 		smoketrail = 1,

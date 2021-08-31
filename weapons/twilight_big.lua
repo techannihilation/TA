@@ -9,7 +9,7 @@ return {
 		firestarter = 90,
 		impulseboost = 0,
 		impulsefactor = 0,
-		model = "bomb",
+		model = "weapon_bomb",
 		name = "EMPboom",
 		paralyzer = 1,
 		paralyzetime = 24,

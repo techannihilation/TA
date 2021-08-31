@@ -11,7 +11,6 @@ return {
 		firestarter = 0,
 		impulseboost = 0.5,
 		impulsefactor = 0.5,
-		model = "ballmiss",
 		name = "NuclearMissile",
 		smoketrail = 1,
 		soundhit = "xplomed4",

@@ -103,7 +103,7 @@ return {
 				impulseboost = 0.15,
 				impulsefactor = 0.15,
 				interceptedbyshieldtype = 16,
-				model = "bombe",
+				model = "weapon_advbomb",
 				mygravity = 0.2,
 				name = "ClusterBombs",
 				noselfdamage = true,
