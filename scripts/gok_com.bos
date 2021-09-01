@@ -1,0 +1,472 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, torsotwist, torso, lshoulderrecoil, lshoulder, larmrecoil, larm,
+       lfire, lfire2, llathe, lsystem, lsystem2, rshoulderrecoil, rshoulder, rarmrecoil,
+       rarm, rfire, rfire2, rlathe, rsystem, rsystem2, head, eyeflare,
+       backpack, uppertorso, lleg, lboot, rleg, rboot;
+
+static-var  bMoving, bAiming, bBuilding, spray, gun_1, gun_3;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_DGUN		4
+
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = bMoving;
+		aiming = bAiming;
+		if( moving )
+		{
+			if( aiming )
+			{
+				gun_3 = 1;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <75.>;
+					turn lboot to x-axis <30.> speed <75.>;
+					turn rleg to x-axis <-75.> speed <225.>;
+					turn rboot to x-axis <45.> speed <188.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn torso to x-axis <0.> speed <8.>;
+					turn torsotwist to z-axis <5.> speed <10.>;
+					turn pelvis to z-axis <-10.> speed <20.>;
+					move pelvis to x-axis [1.] speed [2.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <75.>;
+					turn lboot to x-axis <15.> speed <38.>;
+					turn rleg to x-axis <-90.> speed <38.>;
+					turn rboot to x-axis <90.> speed <113.>;
+					move pelvis to y-axis [0.] speed [5.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <75.>;
+					turn lboot to x-axis <-30.> speed <113.>;
+					turn rleg to x-axis <-15.> speed <188.>;
+					turn rboot to x-axis <30.> speed <150.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn torso to x-axis <10.> speed <25.>;
+					turn torsotwist to z-axis <-5.> speed <5.>;
+					turn pelvis to z-axis <10.> speed <10.>;
+					move pelvis to x-axis [-1.] speed [2.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <225.>;
+					turn lboot to x-axis <45.> speed <188.>;
+					turn rleg to x-axis <15.> speed <75.>;
+					turn rboot to x-axis <30.> speed <75.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn torso to x-axis <0.> speed <8.>;
+					turn torsotwist to z-axis <-5.> speed <10.>;
+					turn pelvis to z-axis <10.> speed <20.>;
+					move pelvis to x-axis [-1.] speed [2.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <38.>;
+					turn lboot to x-axis <90.> speed <113.>;
+					turn rleg to x-axis <45.> speed <75.>;
+					turn rboot to x-axis <15.> speed <38.>;
+					move pelvis to y-axis [0.] speed [5.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <188.>;
+					turn lboot to x-axis <30.> speed <150.>;
+					turn rleg to x-axis <15.> speed <75.>;
+					turn rboot to x-axis <-30.> speed <113.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn torso to x-axis <10.> speed <25.>;
+					turn torsotwist to z-axis <5.> speed <5.>;
+					turn pelvis to z-axis <-10.> speed <10.>;
+					move pelvis to x-axis [1.] speed [2.];
+					sleep 400;
+				}
+			}
+			if( !aiming )
+			{
+				gun_3 = 0;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <75.>;
+					turn lboot to x-axis <30.> speed <75.>;
+					turn rleg to x-axis <-75.> speed <225.>;
+					turn rboot to x-axis <45.> speed <188.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn larm to x-axis <70.> speed <38.>;
+					turn rarm to x-axis <70.> speed <38.>;
+					turn lshoulder to x-axis <-30.> speed <38.>;
+					turn rshoulder to x-axis <30.> speed <38.>;
+					turn torso to x-axis <0.> speed <8.>;
+					turn torsotwist to z-axis <5.> speed <10.>;
+					turn pelvis to z-axis <-10.> speed <20.>;
+					move pelvis to x-axis [1.] speed [2.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <75.>;
+					turn lboot to x-axis <15.> speed <38.>;
+					turn rleg to x-axis <-90.> speed <38.>;
+					turn rboot to x-axis <90.> speed <113.>;
+					move pelvis to y-axis [0.] speed [5.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <75.>;
+					turn lboot to x-axis <-30.> speed <113.>;
+					turn rleg to x-axis <-15.> speed <188.>;
+					turn rboot to x-axis <30.> speed <150.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn larm to x-axis <90.> speed <75.>;
+					turn rarm to x-axis <90.> speed <75.>;
+					turn lshoulder to x-axis <30.> speed <38.>;
+					turn rshoulder to x-axis <-30.> speed <38.>;
+					turn torso to x-axis <10.> speed <25.>;
+					turn torsotwist to z-axis <-5.> speed <5.>;
+					turn pelvis to z-axis <10.> speed <10.>;
+					move pelvis to x-axis [-1.] speed [2.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <225.>;
+					turn lboot to x-axis <45.> speed <188.>;
+					turn rleg to x-axis <15.> speed <75.>;
+					turn rboot to x-axis <30.> speed <75.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn larm to x-axis <70.> speed <38.>;
+					turn rarm to x-axis <70.> speed <38.>;
+					turn lshoulder to x-axis <30.> speed <38.>;
+					turn rshoulder to x-axis <-30.> speed <38.>;
+					turn torso to x-axis <0.> speed <8.>;
+					turn torsotwist to z-axis <-5.> speed <10.>;
+					turn pelvis to z-axis <10.> speed <20.>;
+					move pelvis to x-axis [-1.] speed [2.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <38.>;
+					turn lboot to x-axis <90.> speed <113.>;
+					turn rleg to x-axis <45.> speed <75.>;
+					turn rboot to x-axis <15.> speed <38.>;
+					move pelvis to y-axis [0.] speed [5.];
+					sleep 400;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <188.>;
+					turn lboot to x-axis <30.> speed <150.>;
+					turn rleg to x-axis <15.> speed <75.>;
+					turn rboot to x-axis <-30.> speed <113.>;
+					move pelvis to y-axis [2.] speed [5.];
+					turn larm to x-axis <90.> speed <75.>;
+					turn rarm to x-axis <90.> speed <75.>;
+					turn lshoulder to x-axis <-30.> speed <38.>;
+					turn rshoulder to x-axis <30.> speed <38.>;
+					turn torso to x-axis <10.> speed <25.>;
+					turn torsotwist to z-axis <5.> speed <5.>;
+					turn pelvis to z-axis <-10.> speed <10.>;
+					move pelvis to x-axis [1.] speed [2.];
+					sleep 400;
+				}
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			gun_3 = 1;
+			if( justmoved )
+			{
+				turn lleg to x-axis <0.> speed <90.>;
+				turn lboot to x-axis <0.> speed <90.>;
+				turn rleg to x-axis <0.> speed <90.>;
+				turn rboot to x-axis <0.> speed <90.>;
+				move pelvis to y-axis [0.] speed [4.];
+				turn torsotwist to z-axis <0.> speed <8.>;
+				turn torso to x-axis <0.> speed <7.>;
+				turn pelvis to z-axis <0.> speed <16.>;
+				move pelvis to x-axis [0.] speed [2.];
+				if( !aiming )
+				{
+					turn larm to x-axis <80.> speed <60.>;
+					turn rarm to x-axis <80.> speed <60.>;
+					turn lshoulder to x-axis <0.> speed <120.>;
+					turn rshoulder to x-axis <0.> speed <120.>;
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+Create()
+{
+	spray = 0;
+	bMoving = 0;
+	bAiming = 0;
+	gun_1 = 0;
+	gun_3 = 0;
+	bBuilding = 0;
+	start-script MotionControl();
+	turn larm to x-axis <80.> now;
+	turn rarm to x-axis <80.> now;
+}
+
+ResumeBuilding()
+{
+	sleep 400;
+	if( bBuilding AND !gun_1 )
+	{
+		turn torso to y-axis <0.0> speed <150.000000>;
+		turn larm to x-axis <-30.000000> speed <45.000000>;
+		turn rarm to x-axis <-30.000000> speed <45.000000>;
+	}
+}
+
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 0 )
+	{
+		piecenum = llathe;
+		spray = 1;
+		return (0);
+	}
+	if( spray == 1 )
+	{
+		piecenum = rlathe;
+		spray = 0;
+		return (0);
+	}
+}
+
+RestorePosition()
+{
+	turn torso to y-axis <0.> speed <80.>;
+	turn lshoulder to x-axis <0.> speed <120.>;
+	turn rshoulder to x-axis <0.> speed <120.>;
+	turn larm to x-axis <80.> speed <60.>;
+	turn rarm to x-axis <80.> speed <60.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	bAiming = 0;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = rfire;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lfire;
+	}
+}
+
+AimPrimary(heading, pitch)
+{
+	if( gun_3 == 1 )
+	{
+		return (0);
+	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = 1;
+	turn torso to y-axis heading speed <305.>;
+	turn lshoulder to x-axis <-30.> - pitch speed <190.>;
+	turn rshoulder to x-axis <-30.> - pitch speed <190.>;
+	turn larm to x-axis <30.> speed <90.>;
+	turn rarm to x-axis <30.> speed <90.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+	wait-for-turn rarm around x-axis;
+	if( bBuilding == 1 )
+	{
+		start-script ResumeBuilding();
+	}
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		gun_1 = 1;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		gun_1 = 0;
+		return (0);
+	}
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryWeapon4(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = rfire;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lfire;
+	}
+}
+
+AimWeapon4(heading, pitch)
+{
+	if( gun_3 == 1 )
+	{
+		return (0);
+	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = 1;
+	turn torso to y-axis heading speed <305.>;
+	turn lshoulder to x-axis <-30.> - pitch speed <190.>;
+	turn rshoulder to x-axis <-30.> - pitch speed <190.>;
+	turn larm to x-axis <30.> speed <90.>;
+	turn rarm to x-axis <30.> speed <90.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+	wait-for-turn rarm around x-axis;
+	if( bBuilding == 1 )
+	{
+		start-script ResumeBuilding();
+	}
+	return (1);
+}
+
+FireWeapon4()
+{
+	if( gun_1 == 0 )
+	{
+		gun_1 = 1;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		gun_1 = 0;
+		return (0);
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = eyeflare;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_DGUN;
+	set-signal-mask SIG_AIM_DGUN;
+	bAiming = 1;
+	turn torso to y-axis heading speed <300.>;
+	turn eyeflare to x-axis <0.> - pitch speed <250.000000>;
+	wait-for-turn torso around y-axis;
+	return (1);
+}
+
+FireTertiary()
+{
+	show eyeflare;
+	sleep 150;
+	hide eyeflare;
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{
+	bAiming = 1;
+	bBuilding = 1;
+	while( !gun_3 )
+	{
+		sleep 100;
+	}
+	turn torso to y-axis Func_Var_1 speed <205.>;
+	turn lshoulder to x-axis <-30.> - Func_Var_2 speed <120.>;
+	turn rshoulder to x-axis <-30.> - Func_Var_2 speed <120.>;
+	turn larm to x-axis <30.> speed <60.>;
+	turn rarm to x-axis <30.> speed <60.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+	wait-for-turn rarm around x-axis;
+	set INBUILDSTANCE to 1;
+}
+
+TargetCleared(Func_Var_1)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	call-script RestorePosition();
+}
+
+StopBuilding()
+{
+	bBuilding = 0;
+	set INBUILDSTANCE to 0;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	call-script RestorePosition();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 1;
+	return (corpsetype);
+}

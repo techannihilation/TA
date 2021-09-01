@@ -76,7 +76,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 17625,
-				object = "tllirritator_DEAD",
+				object = "tllirritator_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

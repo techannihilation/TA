@@ -137,7 +137,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
 				metalpershot = 2500,
-				model = "hcar_nuke1",
+				model = "weapon_nuke",
 				name = "Operational Nuclear Missile",
 				range = 72000,
 				reloadtime = 3,

@@ -135,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 550,
-				model = "empmisl",
+				model = "weapon_missile_emp",
 				name = "TacticalNuke",
 				noselfdamage = true,
 				range = 2750,

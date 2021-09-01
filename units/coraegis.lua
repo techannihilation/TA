@@ -90,7 +90,7 @@ return {
 			},
 		},
 		weapondefs = {
-			cortron_weapon2 = {
+			tac_nuke = {
 				areaofeffect = 480,
 				avoidfeature = false,
 				commandfire = true,
@@ -105,7 +105,8 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 550,
-				model = "empmisl1",
+				--model = "weapon_missile_emp",
+				model = "weapon_missile",
 				name = "TacticalNuke",
 				noselfdamage = true,
 				range = 2550,
@@ -131,7 +132,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MOBILE",
-				def = "CORTRON_WEAPON2",
+				def = "TAC_NUKE",
 				onlytargetcategory = "SURFACE",
 			},
 		},

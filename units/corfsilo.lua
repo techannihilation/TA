@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Remover",
 		noautofire = false,
-		
+
 		objectname = "CORFSILO",
 		radardistance = 0,
 		radaremitheight = 136,
@@ -122,7 +122,7 @@ return {
 				firestarter = 100,
 				flighttime = 450,
 				metalpershot = 18000,
-				model = "corfnuke",
+				model = "weapon_nuke_adv",
 				name = "Ultimate Nuclear Missile",
 				range = 80000,
 				reloadtime = 2,

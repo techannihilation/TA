@@ -116,7 +116,7 @@ return {
 				firestarter = 100,
 				flighttime = 450,
 				metalpershot = 16000,
-				model = "fnuke",
+				model = "weapon_nuke_adv",
 				name = "Ultimate Nuclear Missile",
 				range = 80000,
 				reloadtime = 2,

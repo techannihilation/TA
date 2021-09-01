@@ -2,7 +2,7 @@
 2021-09-01
 Balance :
  - All Sub Angle fixed at 90° in front
- - Laser Core T2 : Increase Metal by 10%
+ - Hover Laser Core T2 : Increase Metal by 10%
  - T2 Talon Carrier : Delete turret weapon
  - T3 Talon Carrier : Delete torpedo and Flak. Add Starburst
 

@@ -1,7 +1,6 @@
 return {
 	tllanhur = {
 		acceleration = 0.03594,
-		amphibious = 1,
 		blocking = false,
 		brakerate = 0.015,
 		buildcostenergy = 98013,
@@ -83,7 +82,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armgripn_bomb = {
+			emp_bomb = {
 				areaofeffect = 240,
 				avoidfeature = false,
 				burst = 16,
@@ -123,8 +122,8 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "armgripn_BOMB",
-				onlytargetcategory = "UNDERWATER",
+				def = "EMP_BOMB",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -9,7 +9,6 @@ return {
 		firestarter = 90,
 		impulseboost = 0,
 		impulsefactor = 0,
-		model = "weapon_bomb",
 		name = "Thermite Blast",
 		range = 600,
 		reloadtime = 0.3,

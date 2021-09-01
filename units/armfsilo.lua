@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Armageddon",
 		noautofire = false,
-		
+
 		objectname = "ARMFSILO",
 		radardistance = 0,
 		radaremitheight = 175,
@@ -123,7 +123,7 @@ return {
 				firestarter = 100,
 				flighttime = 450,
 				metalpershot = 16000,
-				model = "fnuke",
+				model = "weapon_nuke_adv",
 				name = "Ultimate Nuclear Missile",
 				range = 80000,
 				reloadtime = 2,

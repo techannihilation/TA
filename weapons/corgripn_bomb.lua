@@ -10,7 +10,6 @@ return {
 		firestarter = 90,
 		impulseboost = 0,
 		impulsefactor = 0,
-		model = "weapon_bomb",
 		name = "EMPbomb",
 		noselfdamage = 1,
 		paralyzer = 1,
@@ -21,8 +20,8 @@ return {
 		soundstart = "bombrel",
 		tolerance = 7000,
 		damage = {
-			commanders = 100,
-			default = 5000,
+			commanders = 1000,
+			default = 4000,
 		},
 	},
 }
