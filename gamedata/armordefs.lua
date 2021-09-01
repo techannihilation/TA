@@ -38,6 +38,7 @@ return {
 		"talon_rukh",
 		"talon_tau",
 		"talon_plutor",
+		"talon_spirit",
 		"corlift",
 	},
 	unclassed_air = {
