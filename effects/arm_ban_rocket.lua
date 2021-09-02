@@ -1,7 +1,5 @@
--- talon_ban_rocket
-
 return {
-  ["talon_ban_rocket"] = {
+  ["arm_ban_rocket"] = {
     usedefaultexplosions = false,
     engine = {
       air                = true,
@@ -11,7 +9,7 @@ return {
       underwater         = 1,
       water              = true,
       properties = {
-        colormap           = [[0.1 0.9 1.0 0.01 0.05 0.55 0.75 0.01 0 0 0 0.01]],
+        colormap           = [[0.2 0.2 1.0 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01]],
         dir                = [[dir]],
         frontoffset        = 0,
         fronttexture       = [[laserend]],

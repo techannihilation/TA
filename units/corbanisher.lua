@@ -155,7 +155,7 @@ return {
 				startvelocity = 400,
 				targetable = 16,
 				texture1 = "null",
-				texture2 = "coresmoketrail",
+				texture2 = "null",
 				texture3 = "null",
 				texture4 = "null",
 				tracks = true,

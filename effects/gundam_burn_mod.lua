@@ -255,7 +255,7 @@ return {
     },
   },
 
-  
+
   ["burn"] = {
     burnpop = {
       air                = true,
@@ -378,6 +378,65 @@ return {
       },
     },
   },
-
+  ["small_purple_burn"] = {
+    usedefaultexplosions = false,
+    burnpop = {
+      air                = true,
+      class              = [[heatcloud]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        heat               = 10,
+        heatfalloff        = 0.6,
+        maxheat            = 15,
+        pos                = [[r-2 r2, r0 r1, r-2 r2]],
+        size               = 4,
+        sizegrowth         = 0.4,
+        speed              = [[0, 0, 0]],
+        texture            = [[redexplo]],
+      },
+    },
+    groundflash = {
+      circlealpha        = 1,
+      circlegrowth       = 1,
+      flashalpha         = 0.9,
+      flashsize          = 9,
+      ttl                = 3,
+      color = {
+        [1]  = 0.78,
+        [2]  = 0.08,
+        [3]  = 0.52,
+      },
+    },
+    searingflame = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 2,
+      ground             = false,
+      unit               = 1,
+      properties = {
+        airdrag            = 0.8,
+        alwaysvisible      = true,
+        colormap           = [[0.78 0.08 0.52 0.04	0.9 0.9 0.9 0.01	0.1 0.1 0.1 0.01]],
+        directional        = true,
+        emitrot            = 45,
+        emitrotspread      = 32,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, -0.01, 0]],
+        numparticles       = 1,
+        particlelife       = 4,
+        particlelifespread = 7,
+        particlesize       = 12,
+        particlesizespread = 0,
+        particlespeed      = 3,
+        particlespeedspread = 4,
+        pos                = [[0, 2, 0]],
+        sizegrowth         = 1,
+        sizemod            = 0.5,
+        texture            = [[gunshot]],
+        useairlos          = false,
+      },
+    },
+  },
 }
-
