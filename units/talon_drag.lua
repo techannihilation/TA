@@ -27,8 +27,7 @@ return {
 		maxslope = 64,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Dragon's Teeth",
-		
+		name = "Dragon's Teeth",		
 		objectname = "talon_drag",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -104,4 +103,3 @@ return {
 		},
 	},
 }
-

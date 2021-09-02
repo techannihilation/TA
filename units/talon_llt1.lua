@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "LLT",
 		noautofire = false,
-		
+
 		objectname = "talon_llt1",
 		script = "talon_llt.cob",
 		radaremitheight = 65,
@@ -135,7 +135,7 @@ return {
 				range = 485,
 				reloadtime = 0.25,
 				rgbcolor = "1.0 0.8 0.25",
-				rgbcolor2= "1.0 1.0 1.00";
+				rgbcolor2= "1.0 1.0 1.00",
 				soundhitdry = "talongunhit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

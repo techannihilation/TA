@@ -31,8 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Metal Maker",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_makr",
 		radaremitheight = 25,
 		seismicsignature = 0,
