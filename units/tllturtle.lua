@@ -1,7 +1,7 @@
 return {
 	tllturtle = {
 		acceleration = 0.015,
-		amphibious = 1,		
+		amphibious = 1,
 		brakerate = 0.081,
 		buildcostenergy = 48640,
 		buildcostmetal = 1698,
@@ -140,7 +140,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
-				stockpiletime = 90,
+				stockpiletime = 80,
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,

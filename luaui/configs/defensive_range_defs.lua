@@ -177,7 +177,7 @@ modConfig["TA"]["unitList"] =
 								--Anti-Nuke--
 								tllantinuke = { weapons = { 3 } },
 								tllantinuke1 = { weapons = { 3 } },
-								tllgazelle = { weapons = { 3 } },
+								tllantinuke2 = { weapons = { 3 } },
 
 									--TALON
 									--Ground Weapons--
@@ -211,7 +211,7 @@ modConfig["TA"]["unitList"] =
 
 								talon_damascus = { weapons = { 3 } },
 								talon_damascus1 = { weapons = { 3 } },
-								talon_requiem = { weapons = { 3 } },
+								talon_damascus2 = { weapons = { 3 } },
 								talon_armistice = { weapons = { 3 } },
 								talon_mds = { weapons = { 3 } }, --Missile Defence System
 								armmds = { weapons = { 3 } }, --Missile Defence System

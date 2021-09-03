@@ -1,7 +1,6 @@
 return {
 	corsilo = {
 		acceleration = 0,
-
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 104789,
@@ -20,7 +19,7 @@ return {
 		collisionvolumescales = "90 38 84",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Nuclear ICBM Launcher",
+		description = "Tech Level 2",
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
@@ -35,7 +34,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Silencer",
+		name = "Nuclear ICBM Launcher",
 		noautofire = false,
 		objectname = "CORSILO",
 		radardistance = 50,

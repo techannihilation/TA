@@ -63,7 +63,7 @@ return {
 			[7] = "talon_talpax",
 			[8] = "talon_pyramid",
 			[9] = "talon_gate3",
-			[10] = "talon_requiem",
+			[10] = "talon_damascus2",
 			[11] = "talon_elixir",
 			[12] = "talon_dmc",
 			[13] = "talon_veloute1",

@@ -1,7 +1,7 @@
 return {
 	talon_tribulation = {
 		acceleration = 0.015,
-		
+
 		brakerate = 0.3,
 		buildcostenergy = 50300,
 		buildcostmetal = 1675,
@@ -150,7 +150,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
-				stockpiletime = 90,
+				stockpiletime = 80,
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,

@@ -51,10 +51,10 @@ unitList["TA"] = {
 [UnitDefNames["talon_elixir"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
 
 --Uber Anti-Nukes
-[UnitDefNames["tllgazelle"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllantinuke2"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["armamd2"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
 [UnitDefNames["corfmd2"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
-[UnitDefNames["talon_requiem"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_damascus2"].id] = 	{["en"]="Ultimate Anti Nuke", ["de"]="", ["fr"]="" },
 
 --Tac Nuke Style static units
 [UnitDefNames["armemp"].id] = 	{["en"]="EMP Silo", ["de"]="", ["fr"]="" },

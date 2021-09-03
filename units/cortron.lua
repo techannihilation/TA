@@ -144,7 +144,7 @@ return {
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",
 				stockpile = true,
-				stockpiletime = 75,
+				stockpiletime = 90,
 				targetable = 4,
 				tolerance = 4000,
 				turnrate = 32768,

@@ -94,14 +94,14 @@ local antiNukes = {
   [UnitDefNames["tllturtle"].id] = true,
   [UnitDefNames["tllantinuke"].id] = true,
   [UnitDefNames["tllantinuke1"].id] = true,
-  [UnitDefNames["tllgazelle"].id] = true,
+  [UnitDefNames["tllantinuke2"].id] = true,
   [UnitDefNames["tllcarry"].id] = true,
   [UnitDefNames["tllucar"].id] = true,
 --Talon
   [UnitDefNames["talon_damascus"].id] = true,
   [UnitDefNames["talon_damascus1"].id] = true,
   [UnitDefNames["talon_carry"].id] = true,
-  [UnitDefNames["talon_requiem"].id] = true,
+  [UnitDefNames["talon_damascus2"].id] = true,
   [UnitDefNames["talon_tribulation"].id] = true,
   [UnitDefNames["talon_ucar"].id] = true,
 }

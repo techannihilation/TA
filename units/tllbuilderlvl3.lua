@@ -63,7 +63,7 @@ return {
 			[7] = "tllurad",
 			[8] = "tlldmc",
 			[9] = "tllgate3",
-			[10] = "tllgazelle",
+			[10] = "tllantinuke2",
 			[11] = "tllion",
 			[12] = "tllbagger",
 			[13] = "tllmeteor",

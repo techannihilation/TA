@@ -1,10 +1,13 @@
 3.96 > 3.97
-2021-09-01
+2021-09-04
 Balance :
  - All Sub Angle fixed at 90° in front
  - Hover Laser Core T2 : Increase Metal by 10%
  - T2 Talon Carrier : Delete turret weapon
  - T3 Talon Carrier : Delete torpedo and Flak. Add Starburst
+ - T2 Judgement Turtoise Core : Decrease range 800=>775. Decrease mainweapon damage 500/s=>450/s
+ - Decrease stockpiletime for t2 anti 100=>60 - t3 anti 60=>50 - mobile t2 90=>80 - t4 anti 90=>75
+ - Increase stockpiletime for all core tac nuke 75=>90
 
  Improvment :
  - Add T3 EMP Invisible Bomber for Talon

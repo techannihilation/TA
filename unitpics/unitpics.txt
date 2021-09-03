@@ -782,7 +782,7 @@ tllfnanotc.dds
 tllgate1.dds
 tllgate2.dds
 tllgate.dds
-tllgazelle.dds
+tllantinuke2.dds
 tllgen.dds
 tllgeo_armored.png
 tllgeo.dds

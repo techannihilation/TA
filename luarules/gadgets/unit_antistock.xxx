@@ -34,12 +34,12 @@ local isAnti = {
 		--The Lost Legacy
 		[UnitDefNames['tllantinuke'].id] = true, -- Antinuke
 		[UnitDefNames['tllantinuke1'].id] = true, -- Adv Antinuke
-		[UnitDefNames['tllgazelle'].id] = true, -- T4 Antinuke
+		[UnitDefNames['tllantinuke2'].id] = true, -- T4 Antinuke
 	  [UnitDefNames['tllcarry'].id] = true, -- Giant (carrier)
 		--Talon
 		[UnitDefNames['talon_damascus'].id] = true, -- Antinuke
 		[UnitDefNames['talon_damascus1'].id] = true, -- Adv Antinuke
-		[UnitDefNames['talon_requiem'].id] = true, -- T4 Antinuke
+		[UnitDefNames['talon_damascus2'].id] = true, -- T4 Antinuke
 		[UnitDefNames['talon_carry'].id] = true, -- Hive (carrier)
 	}
 

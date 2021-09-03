@@ -1,7 +1,6 @@
 return {
 	cormabm = {
 		acceleration = 0.0198,
-		
 		brakerate = 0.1122,
 		buildcostenergy = 50037,
 		buildcostmetal = 1552,
@@ -156,7 +155,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
-				stockpiletime = 90,
+				stockpiletime = 80,
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,

@@ -1,7 +1,7 @@
 return {
 	armscab = {
 		acceleration = 0.018,
-		
+
 		brakerate = 0.102,
 		buildcostenergy = 51302,
 		buildcostmetal = 1551,
@@ -149,7 +149,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "Rockhvy1",
 				stockpile = true,
-				stockpiletime = 90,
+				stockpiletime = 80,
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,

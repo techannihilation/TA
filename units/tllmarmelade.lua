@@ -71,7 +71,7 @@ return {
 			[9] = "tllrlrpc",
 			[10] = "tlldb",
 			[11] = "tllgate1",
-			[12] = "tllgazelle",
+			[12] = "tllantinuke2",
 			[13] = "tllion",
 			[14] = "tllbagger",
 			[15] = "tllusy",

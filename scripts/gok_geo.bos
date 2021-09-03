@@ -24,7 +24,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	//start-script Activate();
+	start-script Activate();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
