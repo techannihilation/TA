@@ -493,13 +493,13 @@ local morphDefs = {
 	},
 	corpyro = {
 		into = 'corpyrox',
-		time = 45,
-		xp = 0.50,
+		time = 30,
+		xp = 0.25,
 	},
 	corpyrox = {
 		into = 'cordem',
 		time = 45,
-		xp = 0.10,
+		xp = 0.05,
 	},
 	corstorm = {
 		into = 'corrock',
