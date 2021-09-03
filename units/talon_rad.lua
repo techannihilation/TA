@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 640,
 		buildcostmetal = 58,
 		builder = false,
-		buildtime = 1137,
+		buildtime = 1250,
 		buildpic = "talon_rad.dds",
 		canattack = false,
 		category = "ALL SURFACE",

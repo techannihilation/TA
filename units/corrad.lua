@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corrad_aoplane.dds",
 		buildpic = "corrad.dds",
-		buildtime = 1137,
+		buildtime = 1250,
 		canattack = false,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 1 0",

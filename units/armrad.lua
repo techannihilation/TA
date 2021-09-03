@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armrad_aoplane.dds",
 		buildpic = "armrad.dds",
-		buildtime = 1137,
+		buildtime = 1250,
 		canattack = false,
 		category = "ALL SURFACE",
 		corpse = "dead",

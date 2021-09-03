@@ -1,0 +1,205 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, building, pan1, panel1, pan2, panel2, pan3, panel3,
+       pan4, panel4, pan5, panel5, pan6, panel6, color;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from building;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Go()
+{
+	turn panel1 to x-axis <0.> speed <90.>;
+	turn panel2 to z-axis <0.> speed <90.>;
+	turn panel3 to z-axis <0.> speed <90.>;
+	turn panel4 to x-axis <0.> speed <90.>;
+	turn panel5 to z-axis <0.> speed <90.>;
+	turn panel6 to z-axis <0.> speed <90.>;
+	move pan1 to y-axis [0.] speed [3.];
+	move pan2 to y-axis [0.] speed [3.];
+	move pan3 to y-axis [0.] speed [3.];
+	move pan4 to y-axis [0.] speed [3.];
+	move pan5 to y-axis [0.] speed [3.];
+	move pan6 to y-axis [0.] speed [3.];
+	wait-for-turn panel1 around x-axis;
+	wait-for-turn panel2 around z-axis;
+	wait-for-turn panel3 around z-axis;
+	wait-for-turn panel4 around x-axis;
+	wait-for-turn panel5 around z-axis;
+	wait-for-turn panel6 around z-axis;
+	set ARMORED to 0;
+}
+
+Stop()
+{
+	turn panel1 to x-axis <-75.> speed <90.>;
+	turn panel2 to z-axis <75.> speed <90.>;
+	turn panel3 to z-axis <75.> speed <90.>;
+	turn panel4 to x-axis <75.> speed <90.>;
+	turn panel5 to z-axis <-75.> speed <90.>;
+	turn panel6 to z-axis <-75.> speed <90.>;
+	move pan1 to y-axis [3.] speed [4.];
+	move pan2 to y-axis [3.] speed [4.];
+	move pan3 to y-axis [3.] speed [4.];
+	move pan4 to y-axis [3.] speed [4.];
+	move pan5 to y-axis [3.] speed [4.];
+	move pan6 to y-axis [3.] speed [4.];
+	wait-for-turn panel1 around x-axis;
+	wait-for-turn panel2 around z-axis;
+	wait-for-turn panel3 around z-axis;
+	wait-for-turn panel4 around x-axis;
+	wait-for-turn panel5 around z-axis;
+	wait-for-turn panel6 around z-axis;
+	set ARMORED to 1;
+}
+
+InitState()
+{
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( Static_Var_1 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_1 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	turn panel2 to y-axis <30.> now;
+	turn panel3 to y-axis <-30.> now;
+	turn panel5 to y-axis <30.> now;
+	turn panel6 to y-axis <-30.> now;
+	turn panel1 to x-axis <-55.> now;
+	turn panel2 to z-axis <55.> now;
+	turn panel3 to z-axis <55.> now;
+	turn panel4 to x-axis <55.> now;
+	turn panel5 to z-axis <-55.> now;
+	turn panel6 to z-axis <-55..> now;
+	move pan1 to y-axis [3.] now;
+	move pan2 to y-axis [3.] now;
+	move pan3 to y-axis [3.] now;
+	move pan4 to y-axis [3.] now;
+	move pan5 to y-axis [3.] now;
+	move pan6 to y-axis [3.] now;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+HitByWeapon(anglex, anglez)
+{
+	signal 2;
+	set-signal-mask 2;
+	if( get BUILD_PERCENT_LEFT )
+	{
+		return (0);
+	}
+	set ACTIVATION to 0;
+	sleep 12000;
+	set ACTIVATION to 1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode building type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode panel1 type NOHEATCLOUD;
+		explode panel2 type NOHEATCLOUD;
+		explode panel3 type NOHEATCLOUD;
+		explode panel4 type NOHEATCLOUD;
+		explode panel5 type NOHEATCLOUD;
+		explode panel6 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode building type FALL | SMOKE | NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode panel1 type NOHEATCLOUD | NOHEATCLOUD;
+		explode panel2 type FALL | NOHEATCLOUD;
+		explode panel3 type BITMAPONLY | NOHEATCLOUD;
+		explode panel4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode panel5 type NOHEATCLOUD;
+		explode panel6 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode building type SHATTER | NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode panel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode panel2 type SHATTER | NOHEATCLOUD;
+	explode panel3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode panel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode panel5 type SHATTER | NOHEATCLOUD;
+	explode panel6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

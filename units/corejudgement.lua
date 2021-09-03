@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corejudgement.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			corgol_heap = {
@@ -136,7 +135,7 @@ return {
 				name = "HeavyCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 800,
+				range = 775,
 				reloadtime = 0.5,
 				rgbcolor = "0.87 0.63 0",
 				separation = 0.45,
@@ -151,8 +150,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 450,
 				damage = {
-					commanders = 125,
-					default = 250,
+					commanders = 112.5,
+					default = 225,
 					subs = 5,
 				},
 			},

@@ -1,0 +1,162 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, ceil, turret, pitchturret, rsystem, rsleeve1, rsleeve2, rbarrel1,
+       rbarrel2, rflare1, rflare2, lsystem, lsleeve1, lsleeve2, lbarrel1, lbarrel2,
+       lflare1, lflare2;
+
+static-var  gun_1;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from turret;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide rflare1;
+	hide rflare2;
+	hide lflare1;
+	hide lflare2;
+	gun_1 = 0;
+	start-script SmokeUnit();
+	turn lsystem to x-axis <0.> speed <90.>;
+	turn rsystem to x-axis <0.> speed <90.>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = rflare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = lflare1;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = rflare2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = lflare2;
+	}
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <240.>;
+	turn lsystem to x-axis <0.> - pitch speed <180.>;
+	turn rsystem to x-axis <0.> - pitch speed <180.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn lsystem around x-axis;
+	wait-for-turn rsystem around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		show rflare1;
+		move rbarrel1 to z-axis [-2.] speed [100.];
+		sleep 150;
+		hide rflare1;
+		move rbarrel1 to z-axis [0.] speed [3.];
+	}
+	if( gun_1 == 1 )
+	{
+		show lflare1;
+		move lbarrel1 to z-axis [-2.] speed [100.];
+		sleep 150;
+		hide lflare1;
+		move lbarrel1 to z-axis [0.] speed [3.];
+	}
+	if( gun_1 == 2 )
+	{
+		show rflare2;
+		move rbarrel2 to z-axis [-2.] speed [100.];
+		sleep 150;
+		hide rflare2;
+		move rbarrel2 to z-axis [0.] speed [3.];
+	}
+	if( gun_1 == 3 )
+	{
+		show lflare2;
+		move lbarrel2 to z-axis [-2.] speed [100.];
+		sleep 150;
+		hide lflare2;
+		move lbarrel2 to z-axis [0.] speed [3.];
+	}
+	++gun_1;
+	if( gun_1 == 4 )
+	{
+		gun_1 = 0;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide lflare1;
+	hide lflare2;
+	hide rflare1;
+	hide rflare2;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rbarrel1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lbarrel1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode turret type SHATTER | NOHEATCLOUD;
+	explode rbarrel1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rbarrel2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lbarrel1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lbarrel2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

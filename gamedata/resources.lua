@@ -235,6 +235,10 @@ local resources = {
 	    sunlight_new='techa_artwork/sunlight.png',
       sonic_glow='techa_artwork/sonic_glow.png',
 
+      --Gok
+      directionalspark='techa_artwork/directionalspark.png',
+      goklightning='techa_artwork/goklightning.png',
+
 			puff='Shine_Smokey_256.png',
 
 			cloud='sky1.png',

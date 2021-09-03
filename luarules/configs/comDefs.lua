@@ -19,6 +19,6 @@ local comDefs = {
 	[UnitDefNames["talon_com2"].id] = true,
 	[UnitDefNames["talon_com3"].id] = true,
 	--Gok
-	--[UnitDefNames["gok_com"].id] = true,
+	[UnitDefNames["gok_com"].id] = true,
 }
 return comDefs

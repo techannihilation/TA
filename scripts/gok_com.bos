@@ -26,7 +26,7 @@ MotionControl(moving, aiming, justmoved)
 		{
 			if( aiming )
 			{
-				gun_3 = 1;
+				//gun_3 = 1;
 				if( bMoving )
 				{
 					turn lleg to x-axis <15.> speed <75.>;
@@ -100,7 +100,7 @@ MotionControl(moving, aiming, justmoved)
 			}
 			if( !aiming )
 			{
-				gun_3 = 0;
+				//gun_3 = 0;
 				if( bMoving )
 				{
 					turn lleg to x-axis <15.> speed <75.>;
@@ -192,7 +192,7 @@ MotionControl(moving, aiming, justmoved)
 		}
 		if( !moving )
 		{
-			gun_3 = 1;
+			//gun_3 = 1;
 			if( justmoved )
 			{
 				turn lleg to x-axis <0.> speed <90.>;
@@ -234,7 +234,7 @@ Create()
 ResumeBuilding()
 {
 	sleep 400;
-	if( bBuilding AND !gun_1 )
+	if( bBuilding AND !bAiming )
 	{
 		turn torso to y-axis <0.0> speed <150.000000>;
 		turn larm to x-axis <-30.000000> speed <45.000000>;
@@ -357,7 +357,15 @@ QueryWeapon4(piecenum)
 
 AimWeapon4(heading, pitch)
 {
+	if( get PIECE_Y(head) > -7 )
+	{
+		return (0);
+	}
 	if( gun_3 == 1 )
+	{
+		return (0);
+	}
+	if( bBuilding == 1 )
 	{
 		return (0);
 	}
@@ -374,10 +382,6 @@ AimWeapon4(heading, pitch)
 	wait-for-turn rshoulder around x-axis;
 	wait-for-turn larm around x-axis;
 	wait-for-turn rarm around x-axis;
-	if( bBuilding == 1 )
-	{
-		start-script ResumeBuilding();
-	}
 	return (1);
 }
 
@@ -418,19 +422,20 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {
-	show eyeflare;
+	//show eyeflare;
 	sleep 150;
-	hide eyeflare;
+	//hide eyeflare;
 }
 
 StartBuilding(Func_Var_1, Func_Var_2)
 {
 	bAiming = 1;
 	bBuilding = 1;
-	while( !gun_3 )
-	{
-		sleep 100;
-	}
+	gun_3 = 1;
+	//while( !gun_3 )
+	//{
+	//	sleep 100;
+	//}
 	turn torso to y-axis Func_Var_1 speed <205.>;
 	turn lshoulder to x-axis <-30.> - Func_Var_2 speed <120.>;
 	turn rshoulder to x-axis <-30.> - Func_Var_2 speed <120.>;
@@ -454,6 +459,7 @@ TargetCleared(Func_Var_1)
 StopBuilding()
 {
 	bBuilding = 0;
+	gun_3 = 0;
 	set INBUILDSTANCE to 0;
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;

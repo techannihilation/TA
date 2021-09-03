@@ -24,3 +24,5 @@ talonlogo64dark00
 blanklogogouraud00
 talonlogogouraud00
 talonveh00
+gokcolor2_100
+gokgradient1_100
