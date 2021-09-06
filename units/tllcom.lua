@@ -79,7 +79,7 @@ return {
 		workertime = 300,
 		buildoptions = {
 			[1] = "tllsolar",
-			[2] = "tllwindtrap",
+			[2] = "tllwin",
 			[3] = "tllgeo_mini",
 			[4] = "tllmstor",
 			[5] = "tllestor",

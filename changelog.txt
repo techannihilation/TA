@@ -1,3 +1,11 @@
+3.97 > 3.98
+2021-09-07
+Balance :
+ - All Rezzer T1 : Decrease Speed 2.7=>2.0 and increase enregy cost by 80%
+
+ Improvment :
+ - Windtrap TLL (+adv) : Change Model
+
 3.96 > 3.97
 2021-09-04
 Balance :

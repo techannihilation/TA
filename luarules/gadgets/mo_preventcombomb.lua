@@ -71,6 +71,8 @@ local DGUN = {
   [WeaponDefNames['talon_com1_tal_disintegrator'].id] = true,
   [WeaponDefNames['talon_com2_tal_disintegrator'].id] = true,
   [WeaponDefNames['talon_com3_tal_disintegrator'].id] = true,
+    --Gok
+    [WeaponDefNames['gok_com_gok_disintegrator'].id] = true,
 }
 
 local COMMANDER = VFS.Include("luarules/configs/comDefs.lua")

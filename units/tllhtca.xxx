@@ -53,7 +53,7 @@ return {
 		unitname = "tllhtca",
 		workertime = 125,
 		buildoptions = {
-			[1] = "tllawindtrap",
+			[1] = "tllwin1",
 			[2] = "tllgen",
 			[3] = "tllgeo",
 			[4] = "tllmstor",

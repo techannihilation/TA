@@ -2,7 +2,7 @@ return {
 	armrecl = {
 		acceleration = 0.048,
 		brakerate = 0.75,
-		buildcostenergy = 7372,
+		buildcostenergy = 8372,
 		buildcostmetal = 441,
 		builddistance = 112,
 		builder = true,
@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "UBOAT3",
 		name = "Grim Reaper",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "ARMRECL",
 		radaremitheight = 25,
 		resurrect = 1,

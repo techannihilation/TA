@@ -2,7 +2,7 @@ return {
 	correcl = {
 		acceleration = 0.038,
 		brakerate = 0.75,
-		buildcostenergy = 7006,
+		buildcostenergy = 8006,
 		buildcostmetal = 444,
 		builddistance = 112,
 		builder = true,

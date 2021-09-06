@@ -1,11 +1,11 @@
 return {
-	tllawindtrap = {
+	gok_win1 = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
 		buildcostenergy = 894,
 		buildcostmetal = 167,
 		builder = false,
-		buildpic = "tllawindtrap.dds",
+		buildpic = "gok_win1.dds",
 		buildtime = 6000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -8 0",
@@ -26,17 +26,17 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Wind Trap",
 		noautofire = false,
-		
-		objectname = "tllawindtrap",
+		noautofire = false,
+		objectname = "gok_win1",
 		radardistance = 0,
 		radaremitheight = 57,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 280,
-		unitname = "tllawindtrap",
+		unitname = "gok_win1",
 		windgenerator = 90,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
-			buildpic = "tllawindtrap.dds",
+			buildpic = "gok_win1.dds",
 			energymultiplier = 4,
 			faction = "TLL",
 		},

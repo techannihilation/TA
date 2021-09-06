@@ -24,29 +24,9 @@ deactivatescr()
 	set ARMORED to 1;
 }
 
-Go()
-{
-	call-script activatescr();
-}
-
-Stop()
-{
-	call-script deactivatescr();
-}
-
-Activate()
-{
-	start-script activatescr();
-}
-
-Deactivate()
-{
-	start-script deactivatescr();
-}
-
 MMStatus(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
+	Static_Var_2 = Func_Var_1;
 }
 
 ImAMetalMaker()
@@ -55,21 +35,27 @@ ImAMetalMaker()
 	{
 		sleep 150;
 	}
-	Static_Var_2 = -1;
+	Static_Var_1 = -1;
 	while( TRUE )
 	{
-		if( Static_Var_1 == 1 )
+		if( Static_Var_2 == 1 )
 		{
-			if( Static_Var_2 != 1 )
+			if( Static_Var_1 != 1 )
 			{
-				call-script Go();
-				Static_Var_2 = 1;
+				set ARMORED to 0;
+				turn core to x-axis <180.> speed <500.>;
+				//move graycop to y-axis [-1.0] speed [10.];
+				//wait-for-move graycop along y-axis;	
+				Static_Var_1 = 1;
 			}
 		}
-		else if( Static_Var_2 != 0 )
+		else if( Static_Var_1 != 0 )
 		{
-			call-script Stop();
-			Static_Var_2 = 0;
+			turn core to x-axis <0.> speed <500.>;
+			//move graycop to y-axis [0.0] speed [10.];
+			//wait-for-move graycop along y-axis;
+			set ARMORED to 1;
+			Static_Var_1 = 0;
 		}
 		sleep 1000;
 	}
@@ -106,7 +92,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	start-script SmokeUnit();
-	set ARMORED to 1;
+	start-script ImAMetalMaker();
 }
 
 SweetSpot(piecenum)

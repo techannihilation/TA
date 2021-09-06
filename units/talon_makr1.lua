@@ -30,9 +30,8 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Metal Maker",
+		name = "Advanced Metal Maker",
 		noautofire = false,
-		
 		objectname = "talon_makr1",
 		radaremitheight = 25,
 		script = "talon_makr.cob",

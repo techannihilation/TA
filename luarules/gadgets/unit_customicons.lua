@@ -49,6 +49,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("corcom.user", "icons/corcom.png", 2)
   Spring.AddUnitIcon("tllcom.user", "icons/tllcom.png", 2)
   Spring.AddUnitIcon("talon_com.user", "icons/talon_com.png", 2)
+  Spring.AddUnitIcon("gok_com.user", "icons/gok_com.png", 2)
   Spring.AddUnitIcon("cross.user", "icons/cross.png")
   Spring.AddUnitIcon("diamond.user", "icons/diamond.png", 1.1)
   Spring.AddUnitIcon("e.user", "icons/e.png")
@@ -140,10 +141,10 @@ function gadget:Initialize()
       end
 
 --wind
-      if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwindtrap") or (ud.name=="talon_win") then
+      if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwin") or (ud.name=="talon_win") then
         Spring.SetUnitDefIcon(udid, "e.user")
 -- t1.5 wind/tidals
-      elseif (ud.name=="armawin")  or (ud.name=="talon_tide1")  or (ud.name=="talon_win1") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or (ud.name=="tllatide") or (ud.name=="tllawindtrap") then
+      elseif (ud.name=="armawin")  or (ud.name=="talon_tide1")  or (ud.name=="talon_win1") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or (ud.name=="tllatide") or (ud.name=="tllwin1") then
         Spring.SetUnitDefIcon(udid, "e1.user")
 --fighters
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") or (ud.name=="talon_echelon") or (ud.name=="talon_token") then
@@ -245,6 +246,9 @@ function gadget:Initialize()
 --talon_com
       elseif (ud.name=="talon_com") or (ud.name=="talon_com1") or (ud.name=="talon_com2") or (ud.name=="talon_com3") then
         Spring.SetUnitDefIcon(udid, "talon_com.user")
+--gok_com
+      elseif (ud.name=="gok_com") or (ud.name=="gok_com1") or (ud.name=="gok_com2") or (ud.name=="gok_com3") then
+        Spring.SetUnitDefIcon(udid, "gok_com.user")
 --krogoth
       elseif (ud.name=="corkrog") then
         Spring.SetUnitDefIcon(udid, "krogoth.user")

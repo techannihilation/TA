@@ -1,0 +1,384 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, torsotwist, torso, lshoulderrecoil, lshoulder, larmrecoil, larm,
+       lsystem, lbarrel, lfire, rshoulderrecoil, rshoulder, rarmrecoil, rarm,
+       rsystem, rbarrel, rfire, lleg, lboot, rleg, rboot,
+       loinplate, backpack;
+
+static-var  bMoving, bAiming, gun_1;
+
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = bMoving;
+		aiming = bAiming;
+		if( moving )
+		{
+			if( aiming )
+			{
+				//Static_Var_3 = 1;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <60.>;
+					turn lboot to x-axis <30.> speed <60.>;
+					turn rleg to x-axis <-75.> speed <180.>;
+					turn rboot to x-axis <45.> speed <150.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn torso to x-axis <0.> speed <10.>;
+					turn torsotwist to z-axis <5.> speed <8.>;
+					turn pelvis to z-axis <-10.> speed <16.>;
+					move pelvis to x-axis [1.] speed [1.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <60.>;
+					turn lboot to x-axis <15.> speed <30.>;
+					turn rleg to x-axis <-90.> speed <30.>;
+					turn rboot to x-axis <90.> speed <90.>;
+					move pelvis to y-axis [0.] speed [4.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <60.>;
+					turn lboot to x-axis <-30.> speed <90.>;
+					turn rleg to x-axis <-15.> speed <150.>;
+					turn rboot to x-axis <30.> speed <120.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn torso to x-axis <15.> speed <30.>;
+					turn torsotwist to z-axis <-5.> speed <4.>;
+					turn pelvis to z-axis <10.> speed <8.>;
+					move pelvis to x-axis [-1.] speed [2.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <180.>;
+					turn lboot to x-axis <45.> speed <150.>;
+					turn rleg to x-axis <15.> speed <60.>;
+					turn rboot to x-axis <30.> speed <60.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn torso to x-axis <0.> speed <10.>;
+					turn torsotwist to z-axis <-5.> speed <8.>;
+					turn pelvis to z-axis <10.> speed <16.>;
+					move pelvis to x-axis [-1.] speed [1.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <30.>;
+					turn lboot to x-axis <90.> speed <90.>;
+					turn rleg to x-axis <45.> speed <60.>;
+					turn rboot to x-axis <15.> speed <30.>;
+					move pelvis to y-axis [0.] speed [4.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <150.>;
+					turn lboot to x-axis <30.> speed <120.>;
+					turn rleg to x-axis <15.> speed <60.>;
+					turn rboot to x-axis <-30.> speed <90.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn torso to x-axis <15.> speed <30.>;
+					turn torsotwist to z-axis <5.> speed <4.>;
+					turn pelvis to z-axis <-10.> speed <8.>;
+					move pelvis to x-axis [1.] speed [2.];
+					sleep 500;
+				}
+			}
+			if( !aiming )
+			{
+				//Static_Var_3 = 0;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <60.>;
+					turn lboot to x-axis <30.> speed <60.>;
+					turn rleg to x-axis <-75.> speed <180.>;
+					turn rboot to x-axis <45.> speed <150.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn larm to x-axis <70.> speed <30.>;
+					turn rarm to x-axis <70.> speed <30.>;
+					turn lshoulder to x-axis <-30.> speed <30.>;
+					turn rshoulder to x-axis <30.> speed <30.>;
+					turn torso to x-axis <0.> speed <5.>;
+					turn torsotwist to z-axis <5.> speed <8.>;
+					turn pelvis to z-axis <-10.> speed <16.>;
+					move pelvis to x-axis [1.] speed [1.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <60.>;
+					turn lboot to x-axis <15.> speed <30.>;
+					turn rleg to x-axis <-90.> speed <30.>;
+					turn rboot to x-axis <90.> speed <90.>;
+					move pelvis to y-axis [0.] speed [4.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <60.>;
+					turn lboot to x-axis <-30.> speed <90.>;
+					turn rleg to x-axis <-15.> speed <150.>;
+					turn rboot to x-axis <30.> speed <120.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn larm to x-axis <90.> speed <60.>;
+					turn rarm to x-axis <90.> speed <60.>;
+					turn lshoulder to x-axis <30.> speed <30.>;
+					turn rshoulder to x-axis <-30.> speed <30.>;
+					turn torso to x-axis <8.> speed <15.>;
+					turn torsotwist to z-axis <-5.> speed <4.>;
+					turn pelvis to z-axis <10.> speed <8.>;
+					move pelvis to x-axis [-1.] speed [2.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <180.>;
+					turn lboot to x-axis <45.> speed <150.>;
+					turn rleg to x-axis <15.> speed <60.>;
+					turn rboot to x-axis <30.> speed <60.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn larm to x-axis <70.> speed <30.>;
+					turn rarm to x-axis <70.> speed <30.>;
+					turn lshoulder to x-axis <30.> speed <30.>;
+					turn rshoulder to x-axis <-30.> speed <30.>;
+					turn torso to x-axis <0.> speed <5.>;
+					turn torsotwist to z-axis <-5.> speed <8.>;
+					turn pelvis to z-axis <10.> speed <16.>;
+					move pelvis to x-axis [-1.] speed [1.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <30.>;
+					turn lboot to x-axis <90.> speed <90.>;
+					turn rleg to x-axis <45.> speed <60.>;
+					turn rboot to x-axis <15.> speed <30.>;
+					move pelvis to y-axis [0.] speed [4.];
+					sleep 500;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <150.>;
+					turn lboot to x-axis <30.> speed <120.>;
+					turn rleg to x-axis <15.> speed <60.>;
+					turn rboot to x-axis <-30.> speed <90.>;
+					move pelvis to y-axis [2.] speed [4.];
+					turn larm to x-axis <90.> speed <60.>;
+					turn rarm to x-axis <90.> speed <60.>;
+					turn lshoulder to x-axis <-30.> speed <30.>;
+					turn rshoulder to x-axis <30.> speed <30.>;
+					turn torso to x-axis <8.> speed <15.>;
+					turn torsotwist to z-axis <5.> speed <4.>;
+					turn pelvis to z-axis <-10.> speed <8.>;
+					move pelvis to x-axis [1.] speed [2.];
+					sleep 500;
+				}
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			//Static_Var_3 = 1;
+			if( justmoved )
+			{
+				turn lleg to x-axis <0.> speed <90.>;
+				turn lboot to x-axis <0.> speed <90.>;
+				turn rleg to x-axis <0.> speed <90.>;
+				turn rboot to x-axis <0.> speed <90.>;
+				move pelvis to y-axis [0.] speed [4.];
+				turn torsotwist to z-axis <0.> speed <8.>;
+				turn torso to x-axis <0.> speed <10.>;
+				turn pelvis to z-axis <0.> speed <16.>;
+				move pelvis to x-axis [0.] speed [2.];
+				if( !aiming )
+				{
+					turn larm to x-axis <80.> speed <30.>;
+					turn rarm to x-axis <80.> speed <30.>;
+					turn lshoulder to x-axis <0.> speed <30.>;
+					turn rshoulder to x-axis <0.> speed <30.>;
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide rfire;
+	hide lfire;
+	bMoving = 0;
+	bAiming = 0;
+	gun_1 = 0;
+	turn larm to x-axis <80.> now;
+	turn rarm to x-axis <80.> now;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = torso;
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	bAiming = 0;
+	turn torso to y-axis <0.> speed <30.>;
+	turn rshoulder to x-axis <0.> speed <30.>;
+	turn lshoulder to x-axis <0.> speed <30.>;
+	turn rarm to x-axis <80.> speed <30.>;
+	turn larm to x-axis <80.> speed <30.>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = gun_1;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn torso to y-axis heading speed <160.>;
+	turn lshoulder to x-axis <-20.> - pitch speed <90.>;
+	turn rshoulder to x-axis <-20.> - pitch speed <90.>;
+	turn larm to x-axis <20.> speed <90.>;
+	turn rarm to x-axis <20.> speed <90.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+	wait-for-turn rarm around x-axis;
+	bAiming = 1;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		turn lshoulderrecoil to x-axis <15.> speed <100.>;
+		turn larmrecoil to x-axis <-15.> speed <100.>;
+		move lbarrel to z-axis [-1.] speed [50.];
+		show lfire;
+		sleep 100;
+		hide lfire;
+		turn lshoulderrecoil to x-axis <0.> speed <25.>;
+		turn larmrecoil to x-axis <0.> speed <25.>;
+		move lbarrel to z-axis [0.] speed [1.];
+		gun_1 = 1;
+		sleep 250;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		turn rshoulderrecoil to x-axis <15.> speed <100.>;
+		turn rarmrecoil to x-axis <-15.> speed <100.>;
+		move rbarrel to z-axis [-1.] speed [50.];
+		show rfire;
+		sleep 100;
+		hide rfire;
+		turn rshoulderrecoil to x-axis <0.> speed <25.>;
+		turn rarmrecoil to x-axis <0.> speed <25.>;
+		move rbarrel to z-axis [0.] speed [1.];
+		gun_1 = 0;
+		sleep 250;
+		return (0);
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	hide rfire;
+	hide lfire;
+
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode torso type NOHEATCLOUD | BITMAP5;
+		explode rarm type NOHEATCLOUD | BITMAP5;
+		explode larm type NOHEATCLOUD | BITMAP5;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode torso type SHATTER | NOHEATCLOUD;
+		explode rshoulder type FALL | NOHEATCLOUD;
+		explode lshoulder type FALL | NOHEATCLOUD;
+		explode rarm type FALL | NOHEATCLOUD;
+		explode larm type FALL | NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD;
+		explode rboot type FALL | NOHEATCLOUD;
+		explode lboot type FALL | NOHEATCLOUD;
+		explode loinplate type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode torso type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rshoulder type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lshoulder type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pelvis type NOHEATCLOUD;
+	explode rboot type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lboot type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode loinplate type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

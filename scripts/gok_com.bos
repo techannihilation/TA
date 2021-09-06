@@ -4,8 +4,8 @@
 #include "exptype.h"
 
 piece  base, pelvis, torsotwist, torso, lshoulderrecoil, lshoulder, larmrecoil, larm,
-       lfire, lfire2, llathe, lsystem, lsystem2, rshoulderrecoil, rshoulder, rarmrecoil,
-       rarm, rfire, rfire2, rlathe, rsystem, rsystem2, head, eyeflare,
+       lfire, lfire2, llathe, lsystem2, rshoulderrecoil, rshoulder, rarmrecoil,
+       rarm, rfire, rfire2, rlathe, rsystem2, head, eyeflare,
        backpack, uppertorso, lleg, lboot, rleg, rboot;
 
 static-var  bMoving, bAiming, bBuilding, spray, gun_1, gun_3;

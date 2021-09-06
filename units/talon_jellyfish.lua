@@ -2,7 +2,7 @@ return {
 	talon_jellyfish = {
 		acceleration = 0.048,
 		brakerate = 0.75,
-		buildcostenergy = 8072,
+		buildcostenergy = 9072,
 		buildcostmetal = 428,
 		builddistance = 112,
 		builder = true,

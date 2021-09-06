@@ -26,11 +26,12 @@ end
 local windDefs = {
   [ UnitDefNames['armawin'].id ] = true,
   [ UnitDefNames['corawin'].id ] = true,
-  [ UnitDefNames['tllawindtrap'].id ] = true,
+  [ UnitDefNames['tllwin1'].id ] = true,
   [ UnitDefNames['talon_win1'].id ] = true,
+  [ UnitDefNames['gok_win1'].id ] = true,
 }
 
---local tllDefs = UnitDefNames['tllawindtrap'].id
+local tllDefs = UnitDefNames['tllwin1'].id
 local windmills = {}
 local groundMin, groundMax = 0,0
 local groundExtreme = 0

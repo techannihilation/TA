@@ -23,8 +23,7 @@ return {
 		maxvelocity = 0,
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_fdrag",
 		radaremitheight = 38,
 		seismicsignature = 0,

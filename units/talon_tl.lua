@@ -31,7 +31,6 @@ return {
 		minwaterdepth = 12,
 		name = "Harpoon",
 		noautofire = false,
-		
 		objectname = "talon_tl",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -127,7 +126,6 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 320,
 				damage = {
-					commanders = 260,
 					default = 280,
 				},
 			},

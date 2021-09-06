@@ -718,7 +718,7 @@ tllasy.dds
 tllatidal.dds
 tllatorp.dds
 tllavp.dds
-tllawindtrap.dds
+tllwin1.dds
 tllbats2.dds
 tllbind.dds
 tllblind.dds
@@ -929,7 +929,7 @@ tllviolator.dds
 tllvisitor.dds
 tllvp.dds
 tllweb.dds
-tllwindtrap.dds
+tllwin.dds
 tllwmconv.dds
 tllwmmohoconv.dds
 trem.dds

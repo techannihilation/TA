@@ -42,6 +42,10 @@ local morphDefs = {
 		into = 'talon_com3',
     time = 135,
 	},
+	gok_com = {
+		into = 'talon_com1',
+		time = 45,
+	},
 	corcom = {
 		into = 'corcom1',
 		time = 45,

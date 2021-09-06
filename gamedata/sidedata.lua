@@ -16,5 +16,8 @@ return {
         name = 'TALON',
         startunit = 'talon_com',
 	},
-
+  {
+        name = 'GOK',
+        startunit = 'gok_com',
+	},
 }

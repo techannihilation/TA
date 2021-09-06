@@ -57,8 +57,8 @@ return {
 		buildoptions = {
 			[1] = "tllsolar",
 			[2] = "tlladvsolar",
-			[3] = "tllwindtrap",
-			[4] = "tllawindtrap",
+			[3] = "tllwin",
+			[4] = "tllwin1",
 			[5] = "tllgeo",
 			[6] = "tllmstor",
 			[7] = "tllestor",
