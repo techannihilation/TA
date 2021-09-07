@@ -2,7 +2,7 @@ return {
 	tllsham = {
 		acceleration = 0.5,
 		brakerate = 1.5,
-		buildcostenergy = 2002,
+		buildcostenergy = 1002,
 		buildcostmetal = 128,
 		builddistance = 132,
 		builder = true,
@@ -34,7 +34,7 @@ return {
 		mass = 128,
 		maxdamage = 245,
 		maxslope = 14,
-		maxvelocity = 2,
+		maxvelocity = 2.5,
 		maxwaterdepth = 255,
 		mincloakdistance = 10,
 		mobilestandorders = 1,

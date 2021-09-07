@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armsonar_aoplane.dds",
 		buildpic = "armsonar.dds",
-		buildtime = 912,
+		buildtime = 1000,
 		canattack = false,
 		category = "ALL UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
@@ -35,7 +35,6 @@ return {
 		minwaterdepth = 10,
 		name = "Sonar Station",
 		noautofire = false,
-		
 		objectname = "ARMSONAR",
 		onoffable = true,
 		radaremitheight = 37,

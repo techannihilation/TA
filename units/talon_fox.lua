@@ -2,7 +2,7 @@ return {
 	talon_fox = {
 		acceleration = 0.2,
 		brakerate = 0.75,
-		buildcostenergy = 2825,
+		buildcostenergy = 1725,
 		buildcostmetal = 111,
 		builddistance = 145,
 		builder = true,
@@ -31,7 +31,7 @@ return {
 		mass = 109,
 		maxdamage = 185,
 		maxslope = 14,
-		maxvelocity = 2.25,
+		maxvelocity = 2.85,
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",

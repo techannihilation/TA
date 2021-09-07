@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corsonar_aoplane.dds",
 		buildpic = "corsonar.dds",
-		buildtime = 900,
+		buildtime = 1000,
 		canattack = false,
 		category = "ALL UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
@@ -34,8 +34,7 @@ return {
 		maxvelocity = 0,
 		minwaterdepth = 10,
 		name = "Sonar Station",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORSONAR",
 		onoffable = true,
 		radaremitheight = 29,

@@ -63,7 +63,7 @@ return {
 		workertime = 80,
 		buildoptions = {
 			[1] = "gok_solar",
-			--[2] = "gok_advsolar",
+			[2] = "gok_advsolar",
 			[3] = "gok_win",
 			[4] = "gok_win1",
 			[5] = "gok_geo",
@@ -90,8 +90,10 @@ return {
 			--[26] = "gok_hlt",
 			--[27] = "gok_painless",
 			--[28] = "gok_rl",
-			--[29] = "gok_cir",
+			[29] = "gok_cir",
 			--[30] = "gok_sy",
+			[31] = "gok_frad",
+			[32] = "gok_sonar",
 		},
 		customparams = {
 			buildpic = "gok_cv.dds",

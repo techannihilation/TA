@@ -1,5 +1,5 @@
 return {
-	talon_frad = {
+	gok_frad = {
 		acceleration = 0,
 		activatewhenbuilt = true,
 		brakerate = 0,
@@ -7,12 +7,12 @@ return {
 		buildcostenergy = 1051,
 		buildcostmetal = 135,
 		builder = false,
-		buildpic = "talon_frad.dds",
+		buildpic = "gok_frad.dds",
 		buildtime = 1500,
 		canattack = false,
 		category = "ALL SURFACE UNDERWATER",
-		collisionvolumeoffsets = "0 -7 0",
-		collisionvolumescales = "36 70 36",
+		collisionvolumeoffsets = "0 -8 0",
+		collisionvolumescales = "36 50 36",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Early Warning System",
@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 5,
 		name = "Floating Radar Tower",
 		noautofire = false,
-		objectname = "talon_frad",
+		objectname = "gok_frad",
 		onoffable = true,
 		radardistance = 2100,
 		radaremitheight = 52,
@@ -41,12 +41,12 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "talon_frad",
-		waterline = 5,
+		unitname = "gok_frad",
+		waterline = 2,
 		yardmap = "wwwwwwwww",
 		customparams = {
-			buildpic = "talon_frad.dds",
-			faction = "TALON",
+			buildpic = "gok_frad.dds",
+			faction = "gok",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 101,
-				object = "talon_frad_DEAD",
+				object = "gok_frad_DEAD",
 				reclaimable = true,
 			},
 		},

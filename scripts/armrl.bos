@@ -43,14 +43,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	hide flare;
-	dont-cache barrel;
-	dont-cache launcher;
-	dont-cache turret;
-	dont-cache flare;
-	dont-shade barrel;
-	dont-shade launcher;
-	dont-shade turret;
-	dont-shade flare;
 	gun_1 = flare;
 	start-script SmokeUnit();
 }

@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 23,
 		builder = false,
 		buildpic = "tllsonar.dds",
-		buildtime = 931,
+		buildtime = 1000,
 		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Locates Water Units",
@@ -24,8 +24,7 @@ return {
 		maxslope = 10,
 		minwaterdepth = 8,
 		name = "Sonar Station",
-		noautofire = false,
-		
+		noautofire = false,		
 		noshadow = 1,
 		objectname = "TLLSONAR",
 		onoffable = true,

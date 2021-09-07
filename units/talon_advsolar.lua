@@ -32,8 +32,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Solar Collector",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_advsolar",
 		onoffable = false,
 		radaremitheight = 49,

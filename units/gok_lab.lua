@@ -53,7 +53,7 @@ return {
 		buildoptions = {
 			[1] = "gok_cv",
 			--[2] = "",
-			--[3] = "",
+			[3] = "gok_bloodletter",
 			--[4] = "",
 			--[5] = "",
 			--[6] = "",

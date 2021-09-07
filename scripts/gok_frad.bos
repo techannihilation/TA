@@ -1,0 +1,149 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, ring, ceil, dome, buoy, node, sphere, circle,
+       plate1, plate2, plate3, plate4, glowpillar;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from ceil;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( !Static_Var_1 )
+		{
+			show glowpillar;
+			move sphere to y-axis [0.] speed [2.];
+			sleep 250;
+			move sphere to y-axis [0.] speed [4.];
+			sleep 250;
+			move node to y-axis [0.] speed [2.];
+			sleep 250;
+			spin circle around y-axis speed <90.> accelerate <2.>;
+			move node to y-axis [0.] speed [4.];
+			sleep 250;
+			move node to y-axis [0.] speed [6.];
+			sleep 250;
+			move node to y-axis [0.] speed [8.];
+			sleep 250;
+			move node to y-axis [0.] speed [6.];
+			sleep 250;
+			move node to y-axis [0.] speed [4.];
+			sleep 250;
+			move node to y-axis [0.] speed [2.];
+			sleep 500;
+			currentstate = 0;
+		}
+		if( Static_Var_1 )
+		{
+			spin circle around y-axis speed <0.> accelerate <-2.>;
+			move node to y-axis [-7.] speed [2.];
+			sleep 250;
+			move node to y-axis [-7.] speed [4.];
+			sleep 250;
+			move node to y-axis [-7.] speed [6.];
+			sleep 250;
+			move node to y-axis [-7.] speed [8.];
+			sleep 250;
+			move node to y-axis [-7.] speed [6.];
+			move sphere to y-axis [-4.] speed [4.];
+			sleep 250;
+			move node to y-axis [-7.] speed [4.];
+			sleep 250;
+			move node to y-axis [-7.] speed [2.];
+			wait-for-move node along y-axis;
+			wait-for-move sphere along y-axis;
+			hide glowpillar;
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	hide glowpillar;
+	spin glowpillar around y-axis speed <-12.>;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	start-script SmokeUnit();
+	move node to y-axis [-7.] now;
+	move sphere to y-axis [-4.] now;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = ring;
+}
+
+Killed(severity, corpsetype)
+{
+	hide glowpillar;
+	explode node type BITMAPONLY | BITMAP5;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode dome type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode dome type BITMAPONLY | BITMAP2;
+		explode plate1 type FALL | BITMAP3;
+		explode plate3 type FALL | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode dome type BITMAPONLY | BITMAP1;
+	explode plate1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode plate3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+}

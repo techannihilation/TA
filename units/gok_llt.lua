@@ -115,13 +115,14 @@ return {
 			},
 		},
 		weapondefs = {
-			gok_lightlaser = {
+			gok_laser = {
 				areaofeffect = 12,
-				beamtime = 0.06,
+				beamtime = 0.03,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
+				energypershot = 20,
 				explosiongenerator = "custom:SMALL_PURPLE_BURN",
 				firestarter = 30,
 				impactonly = 1,
@@ -131,7 +132,7 @@ return {
 				name = "gok Gun",
 				noselfdamage = true,
 				range = 440,
-				reloadtime = 0.5,
+				reloadtime = 0.4,
 				rgbcolor = "0.78 0.08 0.52",
 				rgbcolor2= "1.0 1.0 1.0",
 				soundhitdry = "armgunhit",
@@ -144,10 +145,10 @@ return {
 				thickness = 1,
 				turret = true,
 				weapontype = "LaserCannon",
-				weaponvelocity = 600,
+				weaponvelocity = 800,
 				damage = {
-					commanders = 150,
-					default = 75,
+					commanders = 120,
+					default = 60,
 					subs = 5,
 				},
 			},
@@ -155,7 +156,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MEDIUM LARGE HUGE",
-				def = "gok_LIGHTLASER",
+				def = "GOK_LASER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

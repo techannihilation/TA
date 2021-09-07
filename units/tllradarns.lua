@@ -31,7 +31,6 @@ return {
 		minwaterdepth = 5,
 		name = "Floating Radar Tower",
 		noautofire = false,
-		
 		objectname = "TLLRADARNS",
 		onoffable = true,
 		radardistance = 2000,

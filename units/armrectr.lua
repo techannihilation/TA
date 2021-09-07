@@ -2,7 +2,7 @@ return {
 	armrectr = {
 		acceleration = 0.2,
 		brakerate = 0.75,
-		buildcostenergy = 2493,
+		buildcostenergy = 1493,
 		buildcostmetal = 109,
 		builddistance = 145,
 		builder = true,
@@ -31,7 +31,7 @@ return {
 		mass = 109,
 		maxdamage = 200,
 		maxslope = 14,
-		maxvelocity = 2.0,
+		maxvelocity = 2.6,
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",

@@ -1,0 +1,95 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, socle, turret, pitchturret, system1, system2, system3, system4, system5, system6, system7, flare, gem1,gem2;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0);
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+AimFromPrimary(pieceNum)
+{
+	pieceNum = pitchturret;
+}
+
+QueryPrimary(pieceNum)
+{
+	pieceNum = flare;
+}
+
+RestoreAfterDelay()
+{
+	sleep 3500;
+	move pitchturret to y-axis [0.00] speed [5.00];
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	move pitchturret to y-axis [5.00] speed [15.00];
+	turn turret to y-axis heading speed <250.00>;
+	turn pitchturret to x-axis <0.00> - pitch speed <180.00>;	
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	wait-for-move pitchturret along y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	explode turret type NOHEATCLOUD ;
+	
+	if( Severity <= 50 )
+	{
+		CorpseType = 1;
+		explode pitchturret type NOHEATCLOUD | FALL;
+		explode system1 type NOHEATCLOUD | FALL;
+		explode system3 type NOHEATCLOUD | FALL;
+		explode system5 type NOHEATCLOUD | FALL;
+		return (CorpseType);
+	}	
+	CorpseType = 3;	
+	explode system1 type NOHEATCLOUD | FALL;
+	explode system3 type NOHEATCLOUD | FALL;
+	explode system5 type NOHEATCLOUD | FALL;
+	explode pitchturret type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (CorpseType);
+}
