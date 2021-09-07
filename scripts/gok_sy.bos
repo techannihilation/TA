@@ -1,0 +1,249 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, ring, arms, arm1, system1, arm2, system2, arm3,
+       system3, arm4, arm5, building1, observatory1, turret1, lathe1, beam1,
+       building2, observatory2, turret2, lathe2, beam2, plate,
+       supports, sup1, sup2, sup3;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from observatory1;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from observatory2;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( !Static_Var_3 )
+		{
+			move turret1 to y-axis [-4.] speed [8.];
+			move turret2 to y-axis [-4.] speed [8.];
+			wait-for-move turret1 along y-axis;
+			wait-for-move turret2 along y-axis;
+			move turret1 to x-axis [4.] speed [8.];
+			move turret1 to z-axis [2.] speed [4.];
+			move turret2 to x-axis [-4.] speed [8.];
+			move turret2 to z-axis [2.] speed [4.];
+			wait-for-move turret1 along x-axis;
+			wait-for-move turret1 along z-axis;
+			wait-for-move turret2 along x-axis;
+			wait-for-move turret2 along z-axis;
+			turn lathe1 to z-axis <-15.> speed <30.>;
+			turn lathe2 to z-axis <15.> speed <30.>;
+			wait-for-turn lathe1 around z-axis;
+			wait-for-turn lathe2 around z-axis;
+			set ARMORED to 0;
+			set YARD_OPEN to 1;
+			while( !get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 1;
+			}
+			set BUGGER_OFF to 0;
+			set INBUILDSTANCE to 1;
+			currentstate = 0;
+		}
+		if( Static_Var_3 )
+		{
+			set INBUILDSTANCE to 0;
+			set YARD_OPEN to 0;
+			while( get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 0;
+			}
+			set BUGGER_OFF to 0;
+			set ARMORED to 1;
+			turn lathe1 to z-axis <0.> speed <30.>;
+			turn lathe2 to z-axis <0.> speed <30.>;
+			wait-for-turn turret1 around z-axis;
+			wait-for-turn turret2 around z-axis;
+			move turret1 to x-axis [0.] speed [8.];
+			move turret1 to z-axis [0.] speed [4.];
+			move turret2 to x-axis [0.] speed [8.];
+			move turret2 to z-axis [0.] speed [4.];
+			wait-for-move turret1 along x-axis;
+			wait-for-move turret1 along z-axis;
+			wait-for-move turret2 along x-axis;
+			wait-for-move turret2 along z-axis;
+			move turret1 to y-axis [0.] speed [8.];
+			move turret2 to y-axis [0.] speed [8.];
+			wait-for-move lathe1 along y-axis;
+			wait-for-move lathe2 along y-axis;
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 15;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	turn turret1 to y-axis <30.> now;
+	turn turret2 to y-axis <-30.> now;
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_1 == 15 )
+	{
+		piecenum = beam1;
+		Static_Var_1 = 21;
+		return (0);
+	}
+	if( Static_Var_1 == 21 )
+	{
+		piecenum = beam2;
+		Static_Var_1 = 15;
+		return (0);
+	}
+}
+
+Demo()
+{
+	Static_Var_2 = 1;
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	if( !Static_Var_2 )
+	{
+		sleep 5000;
+	}
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+QueryBuildInfo(piecenum)
+{
+	piecenum = base;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	explode beam1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode beam2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode ring type BITMAPONLY | BITMAP1;
+		explode system1 type BITMAPONLY | BITMAP1;
+		explode system2 type BITMAPONLY | BITMAP1;
+		explode system3 type BITMAPONLY | BITMAP1;
+		explode building1 type BITMAPONLY | BITMAP1;
+		explode building2 type BITMAPONLY | BITMAP1;
+		explode observatory1 type BITMAPONLY | BITMAP2;
+		explode lathe1 type BITMAPONLY | BITMAP1;
+		explode observatory2 type BITMAPONLY | BITMAP2;
+		explode lathe2 type BITMAPONLY | BITMAP1;
+		explode plate type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode ring type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+		explode system1 type BITMAPONLY | BITMAP1;
+		explode system2 type BITMAPONLY | BITMAP1;
+		explode system3 type BITMAPONLY | BITMAP1;
+		explode building1 type BITMAPONLY | BITMAP1;
+		explode building2 type BITMAPONLY | BITMAP1;
+		explode observatory1 type BITMAPONLY | BITMAP2;
+		explode lathe1 type FALL | SMOKE | BITMAP1;
+		explode observatory2 type BITMAPONLY | BITMAP2;
+		explode lathe2 type FALL | SMOKE | BITMAP1;
+		explode plate type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode ring type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+	explode arm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode system1 type BITMAPONLY | BITMAP1;
+	explode arm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode system2 type BITMAPONLY | BITMAP1;
+	explode arm3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode system3 type BITMAPONLY | BITMAP1;
+	explode arm4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode building1 type BITMAPONLY | BITMAP1;
+	explode arm5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode building2 type BITMAPONLY | BITMAP1;
+	explode observatory1 type BITMAPONLY | BITMAP2;
+	explode lathe1 type FALL | SMOKE | BITMAP1;
+	explode observatory2 type BITMAPONLY | BITMAP2;
+	explode lathe2 type FALL | SMOKE | BITMAP1;
+	explode plate type BITMAPONLY | BITMAP2;
+}

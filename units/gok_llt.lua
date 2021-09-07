@@ -135,7 +135,7 @@ return {
 				reloadtime = 0.4,
 				rgbcolor = "0.78 0.08 0.52",
 				rgbcolor2= "1.0 1.0 1.0",
-				soundhitdry = "armgunhit",
+				--soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "gokball",

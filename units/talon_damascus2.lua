@@ -4,10 +4,6 @@ return {
 		buildcostenergy = 831000,
 		buildcostmetal = 21450,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 9,
-		buildinggrounddecalsizey = 9,
-		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_damascus2.dds",
 		buildtime = 250000,
 		category = "ALL SURFACE",
@@ -43,7 +39,6 @@ return {
 		turnrate = 0,
 		unitname = "talon_damascus2",
 		unitrestricted = 8,
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "talon_damascus2.dds",

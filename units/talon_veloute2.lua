@@ -1,7 +1,6 @@
 return {
 	talon_veloute2 = {
 		acceleration = 0,
-		
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 658002,
@@ -33,7 +32,6 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T3 Veloute",
-
 		objectname = "talon_veloute2",
 		radaremitheight = 136,
 		seismicsignature = 0,
@@ -44,7 +42,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "talon_veloute2",
-		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {

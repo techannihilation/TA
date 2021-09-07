@@ -99,6 +99,10 @@ local skipUnits = {
 	['talon_drag'] = true,
 	['talon_fort'] = true,
 
+	['gok_drag'] = true,
+	['gok_fdrag'] = true,
+	['gok_fort'] = true,
+	
 }
 
 

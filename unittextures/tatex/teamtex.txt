@@ -28,3 +28,4 @@ gokcolor2_100
 gokgradient1_100
 goklogo
 goklogolight
+goklogoblue

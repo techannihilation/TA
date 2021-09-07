@@ -28,8 +28,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_fort",
 		radaremitheight = 50,
 		seismicsignature = 0,

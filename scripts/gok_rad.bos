@@ -82,20 +82,20 @@ RequestState(requestedstate, currentstate)
 		if( Static_Var_1 )
 		{
 			spin circle around y-axis speed <0.> accelerate <-1.>;
-			move node to y-axis [-20.] speed [5.];
+			move node to y-axis [-12.] speed [5.];
 			sleep 250;
-			move node to y-axis [-20.] speed [10.];
+			move node to y-axis [-12.] speed [10.];
 			sleep 250;
-			move node to y-axis [-20.] speed [18.];
+			move node to y-axis [-12.] speed [18.];
 			sleep 250;
-			move node to y-axis [-20.] speed [24.];
+			move node to y-axis [-12.] speed [24.];
 			sleep 250;
-			move node to y-axis [-20.] speed [18.];
-			move sphere to y-axis [-8.] speed [8.];
+			move node to y-axis [-12.] speed [18.];
+			move sphere to y-axis [-6.] speed [8.];
 			sleep 250;
-			move node to y-axis [-20.] speed [10.];
+			move node to y-axis [-12.] speed [10.];
 			sleep 250;
-			move node to y-axis [-20.] speed [5.];
+			move node to y-axis [-12.] speed [5.];
 			wait-for-move node along y-axis;
 			wait-for-move sphere along y-axis;
 			currentstate = 1;
@@ -109,8 +109,8 @@ Create()
 	Static_Var_1 = 1;
 	Static_Var_2 = 0;
 	start-script SmokeUnit();
-	move node to y-axis [-20.] now;
-	move sphere to y-axis [-8.] now;
+	move node to y-axis [-12.] now;
+	move sphere to y-axis [-6.] now;
 }
 
 Activate()

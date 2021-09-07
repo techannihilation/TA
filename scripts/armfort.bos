@@ -8,6 +8,5 @@ piece  base;
 
 Create()
 {
-	dont-shade base;
-	dont-cache base;
+
 }

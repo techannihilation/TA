@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, ring, ceil, dome, buoy, node, sphere, circle,
-       plate1, plate2, plate3, plate4, glowpillar;
+       plate1, plate2, plate3, plate4;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -50,7 +50,6 @@ RequestState(requestedstate, currentstate)
 	{
 		if( !Static_Var_1 )
 		{
-			show glowpillar;
 			move sphere to y-axis [0.] speed [2.];
 			sleep 250;
 			move sphere to y-axis [0.] speed [4.];
@@ -75,23 +74,22 @@ RequestState(requestedstate, currentstate)
 		if( Static_Var_1 )
 		{
 			spin circle around y-axis speed <0.> accelerate <-2.>;
-			move node to y-axis [-7.] speed [2.];
+			move node to y-axis [-12.] speed [2.];
 			sleep 250;
-			move node to y-axis [-7.] speed [4.];
+			move node to y-axis [-12.] speed [4.];
 			sleep 250;
-			move node to y-axis [-7.] speed [6.];
+			move node to y-axis [-12.] speed [6.];
 			sleep 250;
-			move node to y-axis [-7.] speed [8.];
+			move node to y-axis [-12.] speed [8.];
 			sleep 250;
-			move node to y-axis [-7.] speed [6.];
-			move sphere to y-axis [-4.] speed [4.];
+			move node to y-axis [-12.] speed [6.];
+			move sphere to y-axis [-6.] speed [4.];
 			sleep 250;
-			move node to y-axis [-7.] speed [4.];
+			move node to y-axis [-12.] speed [4.];
 			sleep 250;
-			move node to y-axis [-7.] speed [2.];
+			move node to y-axis [-12.] speed [2.];
 			wait-for-move node along y-axis;
 			wait-for-move sphere along y-axis;
-			hide glowpillar;
 			currentstate = 1;
 		}
 	}
@@ -100,13 +98,11 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	hide glowpillar;
-	spin glowpillar around y-axis speed <-12.>;
 	Static_Var_1 = 1;
 	Static_Var_2 = 0;
 	start-script SmokeUnit();
-	move node to y-axis [-7.] now;
-	move sphere to y-axis [-4.] now;
+	move node to y-axis [-12.] now;
+	move sphere to y-axis [-6.] now;
 }
 
 Activate()
@@ -126,24 +122,24 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide glowpillar;
-	explode node type BITMAPONLY | BITMAP5;
+	explode node type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode dome type BITMAPONLY | BITMAP5;
-		return (0);
+		explode dome type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode dome type BITMAPONLY | BITMAP2;
-		explode plate1 type FALL | BITMAP3;
-		explode plate3 type FALL | BITMAP3;
-		return (0);
+		explode dome type NOHEATCLOUD;
+		explode plate1 type FALL | NOHEATCLOUD;
+		explode plate3 type FALL | NOHEATCLOUD;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode dome type BITMAPONLY | BITMAP1;
-	explode plate1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode plate3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode dome type NOHEATCLOUD;
+	explode plate1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode plate3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
 }
