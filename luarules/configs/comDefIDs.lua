@@ -1,9 +1,9 @@
-local comDefs = {
+local comDefIDs = {
 	[UnitDefNames["corcom"].id] = true,
 	[UnitDefNames["corcom1"].id] = true,
 	[UnitDefNames["corcom2"].id] = true,
 	[UnitDefNames["corcom3"].id] = true,
-		--Arm
+	--Arm
 	[UnitDefNames["armcom"].id] = true,
 	[UnitDefNames["armcom1"].id] = true,
 	[UnitDefNames["armcom2"].id] = true,
@@ -21,4 +21,5 @@ local comDefs = {
 	--Gok
 	[UnitDefNames["gok_com"].id] = true,
 }
-return comDefs
+
+return comDefIDs

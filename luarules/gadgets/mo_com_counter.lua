@@ -18,7 +18,7 @@ local enabled = (tostring(Spring.GetModOptions().mo_enemycomcount) == "1") or fa
 if not enabled then return false end
 if not (gadgetHandler:IsSyncedCode()) then return false end --synced only
 local teamComs = {} -- format is enemyComs[teamID] = total # of coms in enemy teams
-local comDefs = VFS.Include("luarules/configs/comDefs.lua")
+local comDefs = VFS.Include("luarules/configs/comDefIDs.lua")
 
 local function UpdateCount()
 	for teamID, _ in pairs(teamComs) do

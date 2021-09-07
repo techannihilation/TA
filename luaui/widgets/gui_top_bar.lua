@@ -17,7 +17,7 @@ local borderPadding = 5
 local showConversionSlider = true
 local bladeSpeedMultiplier = 0.22
 
-comDefs = VFS.Include("luarules/configs/comDefs.lua")
+comDefs = VFS.Include("luarules/configs/comDefIDs.lua")
 
 local bgcorner = LUAUI_DIRNAME.."Images/bgcorner.png"
 local barbg									= ":n:"..LUAUI_DIRNAME.."Images/resbar.dds"

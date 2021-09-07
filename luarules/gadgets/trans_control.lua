@@ -30,7 +30,7 @@ end
 
 local CMD_UNLOAD_UNIT = CMD.UNLOAD_UNIT
 
-local COMMANDER = VFS.Include("luarules/configs/comDefs.lua")
+local COMMANDER = VFS.Include("luarules/configs/comDefIDs.lua")
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced)
   local Gametime = Spring.GetGameSeconds()
