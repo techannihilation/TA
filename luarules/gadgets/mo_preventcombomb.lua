@@ -75,7 +75,7 @@ local DGUN = {
     [WeaponDefNames['gok_com_gok_disintegrator'].id] = true,
 }
 
-local COMMANDER = VFS.Include("luarules/configs/comDefs.lua")
+local COMMANDER = VFS.Include("luarules/configs/comDefIDs.lua")
 
 local immuneDgunList = {}
 local ctrlCom = {}

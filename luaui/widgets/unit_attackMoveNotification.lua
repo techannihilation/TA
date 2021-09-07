@@ -29,7 +29,7 @@ local lastCommanderAlarmTime        = nil
 local localTeamID                   = nil
 ----------------------------------------------------------------------------
 
-local COMMANDER = VFS.Include("luarules/configs/comDefs.lua")
+local COMMANDER = VFS.Include("luarules/configs/comDefIDs.lua")
 
 function widget:Initialize()
     CheckSpecState()

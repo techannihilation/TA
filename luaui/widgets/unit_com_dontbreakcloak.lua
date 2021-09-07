@@ -14,7 +14,7 @@ end
 ----------------------------------------------------------------
 -- Var
 ----------------------------------------------------------------
-local isCommander = VFS.Include("luarules/configs/comDefs.lua")
+local isCommander = VFS.Include("luarules/configs/comDefIDs.lua")
 
 ----------------------------------------------------------------
 -- Speedups
