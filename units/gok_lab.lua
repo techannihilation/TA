@@ -52,6 +52,7 @@ return {
 		turnrate = 0,
 		unitname = "gok_lab",
 		usebuildinggrounddecal = true,
+		usepiececollisionvolumes = true,
 		workertime = 225,
 		yardmap = "cccooccc cccccccc cccccccc cccccccc cccccccc occcccco occcccco",
 		buildoptions = {
@@ -59,10 +60,10 @@ return {
 			--[2] = "",
 			[2] = "gok_bloodletter",
 			--[4] = "",
-			--[5] = "",
-			--[6] = "",
-			[3] = "gok_immortal",
-			[4] = "gok_disciple",
+			[3] = "gok_godhammer",
+			[4] = "gok_moonstrike",
+			[5] = "gok_immortal",
+			[6] = "gok_disciple",
 		},
 		customparams = {
 			buildpic = "gok_lab.dds",

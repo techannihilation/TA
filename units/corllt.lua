@@ -16,7 +16,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Light Laser Tower",
+		description = "Anti-Spam",
 		energystorage = 60,
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",

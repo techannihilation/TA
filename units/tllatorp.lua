@@ -110,7 +110,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "weapon_tlltorpedo",
+				model = "weapon_torpedo_tll",
 				name = "Torpedo Launcher",
 				range = 900,
 				reloadtime = 4,

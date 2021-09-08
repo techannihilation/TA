@@ -432,6 +432,12 @@ return {
 		"talon_fnanotc1",
 		"talon_fnanotc2",
 		"talon_fnanotc3",
+		"gok_nanotc",
+		"gok_nanotc1",
+		"gok_nanotc2",
+		"gok_nanotc3",
+		"gok_nanotc4",
+
 	},
 	mines = {
 		"armmine1",

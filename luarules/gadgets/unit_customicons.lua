@@ -179,14 +179,14 @@ function gadget:Initialize()
       or (ud.name=="armuwfus") or (ud.name=="armuwfus1") or (ud.name=="coruwfus") or (ud.name=="tlluwfusion") or (ud.name=="talon_ckfus") then
         Spring.SetUnitDefIcon(udid, "e2.user")
 --Level 2 nanos
-      elseif (ud.name=="armnanotc1") or (ud.name=="cornanotc1") or (ud.name=="tllnanotc1") or (ud.name=="armfnanotc1") or (ud.name=="corfnanotc1") or (ud.name=="tllfnanotc1") or (ud.name=="talon_nanotc1") or (ud.name=="talon_fnanotc1") then
+      elseif (ud.name=="armnanotc1") or (ud.name=="cornanotc1") or (ud.name=="tllnanotc1") or (ud.name=="armfnanotc1") or (ud.name=="corfnanotc1") or (ud.name=="tllfnanotc1") or (ud.name=="talon_nanotc1") or (ud.name=="talon_fnanotc1") or (ud.name=="gok_nanotc1") then
           Spring.SetUnitDefIcon(udid, "square_+1.user")
 --Level 3 nanos
-    elseif (ud.name=="armnanotc2") or (ud.name=="cornanotc2") or (ud.name=="tllnanotc2") or (ud.name=="armfnanotc2") or (ud.name=="corfnanotc2") or (ud.name=="tllfnanotc2") or (ud.name=="talon_nanotc2") or (ud.name=="talon_fnanotc2") then
+    elseif (ud.name=="armnanotc2") or (ud.name=="cornanotc2") or (ud.name=="tllnanotc2") or (ud.name=="armfnanotc2") or (ud.name=="corfnanotc2") or (ud.name=="tllfnanotc2") or (ud.name=="talon_nanotc2") or (ud.name=="talon_fnanotc2") or (ud.name=="gok_nanotc2") then
           Spring.SetUnitDefIcon(udid, "square_+2.user")
 --Level 4 nanos
-    elseif (ud.name=="armnanotc3") or (ud.name=="cornanotc3") or (ud.name=="tllnanotc3") or (ud.name=="armfnanotc3") or (ud.name=="corfnanotc3") or (ud.name=="tllfnanotc3") or (ud.name=="talon_nanotc3") or (ud.name=="talon_fnanotc3")
-    or (ud.name=="armnanotc4") or (ud.name=="cornanotc4") or (ud.name=="tllnanotc4") or (ud.name=="talon_nanotc4") then
+    elseif (ud.name=="armnanotc3") or (ud.name=="cornanotc3") or (ud.name=="tllnanotc3") or (ud.name=="armfnanotc3") or (ud.name=="corfnanotc3") or (ud.name=="tllfnanotc3") or (ud.name=="talon_nanotc3") or (ud.name=="talon_fnanotc3") or (ud.name=="gok_nanotc3")
+    or (ud.name=="armnanotc4") or (ud.name=="cornanotc4") or (ud.name=="tllnanotc4") or (ud.name=="talon_nanotc4") or (ud.name=="gok_nanotc4") then
           Spring.SetUnitDefIcon(udid, "square_+3.user")
 --Spider
     elseif (ud.name=="corlilith") then

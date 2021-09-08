@@ -1,0 +1,180 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, stand, core, turret, plate1, plate2, system, pitchturret, beam, aimpoint;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Activatescr()
+{
+	move plate1 to z-axis [-1.] speed [2.];
+	move plate2 to z-axis [-1.] speed [2.];
+	turn plate1 to y-axis <10.> speed <20.>;
+	turn plate2 to y-axis <-10.> speed <20.>;
+	move turret to y-axis [0.] speed [12.];
+	sleep 500;
+}
+
+Deactivatescr()
+{
+	move turret to y-axis [-8.] speed [12.];
+	move plate1 to z-axis [0.] speed [2.];
+	move plate2 to z-axis [0.] speed [2.];
+	turn plate1 to y-axis <0.> speed <20.>;
+	turn plate2 to y-axis <0.> speed <20.>;
+	sleep 500;
+}
+
+Go()
+{
+	call-script Activatescr();
+	turn turret to y-axis Static_Var_1 speed <380.>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	call-script Deactivatescr();
+}
+
+InitState()
+{
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( Static_Var_3 == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( Static_Var_3 == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+RestoreAfterDelay()
+{
+	sleep 1500;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+Create()
+{
+	Static_Var_1 = 10;
+	Static_Var_2 = 5000;
+	move turret to y-axis [-8.] now;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = beam;
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode plate1 type NOHEATCLOUD;
+		explode plate2 type NOHEATCLOUD;		
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type SHATTER | NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		explode plate1 type SHATTER | NOHEATCLOUD;
+		explode plate2 type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type SHATTER | NOHEATCLOUD;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode plate1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode plate2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

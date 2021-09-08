@@ -1,7 +1,7 @@
 return {
 	gok_cir = {
 		acceleration = 0,
-		airsightdistance = 1045,
+		airsightdistance = 975,
 		brakerate = 0,
 		buildangle = 65536,
 		buildcostenergy = 11560,
@@ -132,7 +132,7 @@ return {
 				rgbcolor = "0.78 0.08 0.52",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "tllspark",
+				soundstart = "gokelechit",
 				--sprayangle = 500,
 				texture1 = "strike",
 				thickness = 1.5,

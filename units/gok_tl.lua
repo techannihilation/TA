@@ -108,7 +108,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_goktorpedo",
+				model = "weapon_torpedo_gok",
 				name = "Level1TorpedoLauncher",
 				noselfdamage = true,
 				range = 600,

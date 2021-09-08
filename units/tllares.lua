@@ -2,7 +2,7 @@ return {
 	tllares = {
 		acceleration = 0.08,
 		brakerate = 0.3,
-		buildcostenergy = 894,
+		buildcostenergy = 994,
 		buildcostmetal = 135,
 		builder = false,
 		buildpic = "tllares.dds",
@@ -36,7 +36,6 @@ return {
 		movementclass = "TANK2",
 		name = "Ares",
 		noautofire = false,
-		
 		objectname = "TLLARES",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -131,7 +130,7 @@ return {
 				noselfdamage = true,
 				projectiles = 2,
 				range = 210,
-				reloadtime = 1,
+				reloadtime = 1.1,
 				rgbcolor = "0.6 0.6 0.9",
 				--soundhitdry = "lashit2",
 				soundhitwet = "sizzle",

@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Instigator",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORGATOR",
 		radaremitheight = 25,
 		seismicsignature = 0,

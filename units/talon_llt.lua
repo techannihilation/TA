@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Light Laser Tower",
+		description = "Anti-Spam",
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,
 		floater = true,

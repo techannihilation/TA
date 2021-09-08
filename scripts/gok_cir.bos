@@ -57,6 +57,7 @@ RestoreAfterDelay()
 {
 	sleep 3500;
 	move pitchturret to y-axis [0.00] speed [5.00];
+	turn pitchturret to x-axis <0.00> speed <75.00>;
 }
 
 AimPrimary(heading, pitch)

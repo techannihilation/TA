@@ -2,7 +2,7 @@ return {
 	talon_frl = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		airsightdistance = 900,
+		airsightdistance = 850,
 		brakerate = 0,
 		buildangle = 16384,
 		buildcostenergy = 2675,

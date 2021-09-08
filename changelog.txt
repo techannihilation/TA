@@ -2,6 +2,9 @@
 2021-09-07
 Balance :
 
+Balance :
+ - Ares (T1 TLL) : Increase reloadtime : 1 => 1.1. Increase energycost +100E
+
  Improvment :
  - Windtrap TLL (+adv) : Change Model
 

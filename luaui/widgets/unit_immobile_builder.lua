@@ -78,6 +78,13 @@ local morphednanos = { --not in use, look like 125
   [UnitDefNames["talon_nanotc3"].id] = true,
   [UnitDefNames["talon_nanotc4"].id] = true,
 
+--Gok
+  [UnitDefNames["gok_nanotc"].id] = true,
+  --[UnitDefNames["gok_nanotc1"].id] = true,
+  --[UnitDefNames["gok_nanotc2"].id] = true,
+  --[UnitDefNames["gok_nanotc3"].id] = true,
+  --[UnitDefNames["gok_nanotc4"].id] = true,
+
 }
 
 
