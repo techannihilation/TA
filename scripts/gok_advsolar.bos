@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, building, pan1, panel1, pan2, panel2, pan3, panel3,
-       pan4, panel4, pan5, panel5, pan6, panel6, color;
+piece  base, body, socle, panel1,panel2, panel3, panel4, panel5;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -22,7 +21,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from building;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -35,18 +34,17 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	turn pan2 to y-axis <-30.> now;
-	turn pan3 to y-axis <30.> now;
-	turn pan5 to y-axis <-30.> now;
-	turn pan6 to y-axis <30.> now;
+	//turn pan2 to y-axis <-30.> now;
+	//turn pan3 to y-axis <30.> now;
+	//turn pan5 to y-axis <-30.> now;
+	//turn pan6 to y-axis <30.> now;
+	//turn panel4 to x-axis <5.> now;
+	//turn panel1 to x-axis <-5.> now;
 	
-	turn panel4 to x-axis <5.> now;
-	turn panel1 to x-axis <-5.> now;
-	
-	turn panel2 to z-axis <5.> now;
-	turn panel3 to z-axis <5.> now;
-	turn panel5 to z-axis <-5.> now;
-	turn panel6 to z-axis <-5.> now;
+	//turn panel2 to z-axis <5.> now;
+	//turn panel3 to z-axis <5.> now;
+	//turn panel5 to z-axis <-5.> now;
+	//turn panel6 to z-axis <-5.> now;
 
 	start-script SmokeUnit();
 }
@@ -61,36 +59,36 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode building type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode panel1 type NOHEATCLOUD;
 		explode panel2 type NOHEATCLOUD;
 		explode panel3 type NOHEATCLOUD;
 		explode panel4 type NOHEATCLOUD;
 		explode panel5 type NOHEATCLOUD;
-		explode panel6 type NOHEATCLOUD;
+		explode socle type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode building type FALL | SMOKE | NOHEATCLOUD;
+		explode body type FALL | SMOKE | NOHEATCLOUD;
 		explode panel1 type BITMAPONLY | NOHEATCLOUD;
 		explode panel2 type FALL | NOHEATCLOUD;
 		explode panel3 type BITMAPONLY | NOHEATCLOUD;
 		explode panel4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode panel5 type BITMAPONLY | NOHEATCLOUD;
-		explode panel6 type FALL | NOHEATCLOUD;
+		explode socle type FALL | NOHEATCLOUD;
 		explode base type BITMAPONLY | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode building type SHATTER | NOHEATCLOUD;
+	explode body type SHATTER | NOHEATCLOUD;
 	explode panel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode panel2 type SHATTER | NOHEATCLOUD;
 	explode panel3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode panel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode panel5 type SHATTER | NOHEATCLOUD;
-	explode panel6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode socle type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode base type BITMAPONLY | NOHEATCLOUD;
 	return (corpsetype);
 }

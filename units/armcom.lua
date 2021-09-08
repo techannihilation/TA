@@ -94,7 +94,7 @@ return {
 			[14] = "armllt",
 			[15] = "armdl",
 			[16] = "armrl",
-			[17] = "armdl",
+			--[17] = "",
 			[18] = "armtide",
 			--[21] = "",
 			[22] = "armfmkr",

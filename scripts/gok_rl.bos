@@ -36,7 +36,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	start-script SmokeUnit();
-	move base to y-axis [10.] now;
 }
 
 SweetSpot(PieceNum)

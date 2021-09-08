@@ -94,7 +94,6 @@ return {
 			[14] = "gok_llt",
 			--[15] = "armdl",
 			[16] = "gok_rl",
-			--[17] = "armdl",
 			[18] = "gok_tide",
 			--[21] = "",
 			[22] = "gok_fmkr",

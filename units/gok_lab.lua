@@ -54,7 +54,7 @@ return {
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
 		workertime = 225,
-		yardmap = "cccooccc cccccccc cccccccc cccccccc cccccccc occcccco occcccco",
+		yardmap = "cccooccc cccooccc cccccccc cccccccc cccccccc cccccccc ooccccoo occcccco",
 		buildoptions = {
 			[1] = "gok_cv",
 			--[2] = "",

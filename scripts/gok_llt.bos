@@ -41,7 +41,6 @@ Create()
 	hide lflare1;
 	gun_1 = 0;
 	start-script SmokeUnit();
-	move base to y-axis [10.] now;
 }
 
 AimFromPrimary(piecenum)

@@ -51,8 +51,13 @@ RequestState(RequestedState, CurrentState)
 		if( !DesiredState )
 			{		
 			move building1 to z-axis [-9.00] speed [9.00];
-			move building2 to z-axis [-9.00] speed [9.00];
-			move building3 to z-axis [-9.00] speed [9.00];
+			//move building2 to z-axis [-9.00] speed [9.00];
+			//move building3 to z-axis [-9.00] speed [9.00];
+			
+			move building2 to z-axis [4.5] speed [4.5];
+			move building2 to x-axis [7.8] speed [7.8];
+			move building3 to z-axis [4.5] speed [4.5];			
+			move building3 to x-axis [-7.8] speed [7.8];
 			
 			set YARD_OPEN to 1;
 			
@@ -84,8 +89,11 @@ RequestState(RequestedState, CurrentState)
 			set BUGGER_OFF to 0;
 						
 			move building1 to z-axis [0.00] speed [9.00];
-			move building2 to z-axis [0.00] speed [9.00];
-			move building3 to z-axis [0.00] speed [9.00];
+			move building2 to z-axis [0.00] speed [4.5];
+			move building3 to z-axis [0.00] speed [4.5];
+		
+			move building2 to x-axis [0.0] speed [7.8];
+			move building3 to x-axis [0.0] speed [7.8];
 			sleep 1000;			
 			CurrentState = 1;
 			}
@@ -99,8 +107,8 @@ Create()
 	DesiredState = 1;
 	StateChanging = 0;
 	Spray = spray1;	
-	turn building2turn to y-axis <120.00> now;
-	turn building3turn to y-axis <-120.00> now;
+	//turn building2turn to y-axis <120.00> now;
+	//turn building3turn to y-axis <-120.00> now;
 	start-script SmokeUnit();	
 }
 
