@@ -38,7 +38,6 @@ return {
 		mobilestandorders = 1,
 		name = "Hurricane",
 		noautofire = true,
-
 		objectname = "CORHURC",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -87,13 +86,13 @@ return {
 		},
 		weapondefs = {
 			coradvbomb = {
-				areaofeffect = 220,
+				areaofeffect = 196,
 				avoidfeature = false,
 				burst = 8,
 				burstrate = 0.2,
 				collidefriendly = false,
 				commandfire = false,
-				craterareaofeffect = 330,
+				craterareaofeffect = 196,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.7,
@@ -106,7 +105,7 @@ return {
 				name = "AdvancedBombs",
 				noselfdamage = true,
 				range = 1280,
-				reloadtime = 7,
+				reloadtime = 10,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,

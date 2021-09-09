@@ -34,8 +34,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "CORAAP",
 		radaremitheight = 50,
 		seismicsignature = 0,

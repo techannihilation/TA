@@ -38,7 +38,6 @@ return {
 		mobilestandorders = 1,
 		name = "Pterodactyl",
 		noautofire = false,
-
 		objectname = "TLLBOMBER",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -91,13 +90,13 @@ return {
 		weapondefs = {
 			tllbomb = {
 				accuracy = 500,
-				areaofeffect = 150,
+				areaofeffect = 128,
 				avoidfeature = false,
 				burst = 6,
 				burstrate = 0.25,
 				collidefriendly = false,
 				commandfire = false,
-				craterareaofeffect = 0,
+				craterareaofeffect = 128,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.25,
@@ -110,7 +109,7 @@ return {
 				name = "Bombs",
 				noselfdamage = true,
 				range = 1280,
-				reloadtime = 6,
+				reloadtime = 10,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
