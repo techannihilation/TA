@@ -87,8 +87,8 @@ return {
 			[7] = "gok_makr",
 			[8] = "gok_lab",
 			--[9] = "armvp",
-			--[10] = "armap",
-			--[11] = "armeyes",
+			[10] = "gok_ap",
+			[11] = "gok_eyes",
 			[12] = "gok_rad",
 			[13] = "gok_drag",
 			[14] = "gok_llt",
@@ -249,7 +249,7 @@ return {
 					default = 999999,
 				},
 			},
-			gok_laser = {
+			gok_plasma = {
 				accuracy = 100,
 				areaofeffect = 32,
 				avoidfeature = false,
@@ -329,7 +329,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "GOK_LASER",
+				def = "GOK_PLASMA",
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[3] = {

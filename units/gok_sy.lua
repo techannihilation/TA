@@ -52,7 +52,7 @@ return {
 			--[3] = "gok_charon",
 			--[4] = "gok_vasculitis",
 			--[5] = "gok_sub",
-			--[6] = "gok_mainstay",
+			[6] = "gok_roy",
 			--[7] = "gok_bishop",
 		},
 		customparams = {
