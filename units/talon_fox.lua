@@ -46,7 +46,6 @@ return {
 		shownanospray = false,
 		sightdistance = 430,
 		standingmoveorder = 1,
-		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.716,

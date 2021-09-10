@@ -132,7 +132,7 @@ return {
 				intensity = 1,
 				name = "Gok Blaster",
 				noselfdamage = true,
-				range = 425,
+				range = 450,
 				reloadtime = 0.75,
 				rgbcolor = "0.78 0.08 0.52",
 				size = 0.25,
@@ -150,7 +150,7 @@ return {
 				},
 			},
 			depthcharge = {
-				areaofeffect = 32,
+				areaofeffect = 96,
 				avoidfeature = false,
 				avoidfriendly = false,
 				burnblow = true,

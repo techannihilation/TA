@@ -55,8 +55,8 @@ return {
 		buildoptions = {
 			[1] = "gok_ca",
 			[2] = "gok_vision",
-			--[3] = "gok_recon",
-			--[4] = "gok_drone",
+			[3] = "gok_angel",
+			[4] = "gok_chariot",
 			[5] = "gok_dirgesinger",
 			[6] = "gok_specter",
 		},

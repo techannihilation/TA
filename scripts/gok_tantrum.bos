@@ -1,0 +1,226 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lleg, lboot, rleg, rboot, torso, pitchturret,
+       barrel, flare, sensorpack;
+
+static-var  bMoving, Static_Var_3;
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = bMoving;
+		if( moving )
+		{
+				Static_Var_3 = 0;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <240.>;
+					turn lboot to x-axis <30.> speed <240.>;
+					turn rleg to x-axis <-75.> speed <720.>;
+					turn rboot to x-axis <45.> speed <500.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <0.> speed <80.>;
+					turn torso to x-axis <0.> speed <40.>;
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <230.>;
+					turn lboot to x-axis <15.> speed <120.>;
+					turn rleg to x-axis <-90.> speed <120.>;
+					turn rboot to x-axis <90.> speed <360.>;
+					move pelvis to y-axis [0.] speed [16.];
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <240.>;
+					turn lboot to x-axis <-30.> speed <360.>;
+					turn rleg to x-axis <-15.> speed <600.>;
+					turn rboot to x-axis <30.> speed <480.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <20.> speed <160.>;
+					turn torso to x-axis <15.> speed <120.>;
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <720.>;
+					turn lboot to x-axis <45.> speed <600.>;
+					turn rleg to x-axis <15.> speed <240.>;
+					turn rboot to x-axis <30.> speed <240.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <0.> speed <80.>;
+					turn torso to x-axis <0.> speed <40.>;
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <120.>;
+					turn lboot to x-axis <90.> speed <360.>;
+					turn rleg to x-axis <45.> speed <240.>;
+					turn rboot to x-axis <15.> speed <120.>;
+					move pelvis to y-axis [0.] speed [16.];
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <600.>;
+					turn lboot to x-axis <30.> speed <480.>;
+					turn rleg to x-axis <15.> speed <240.>;
+					turn rboot to x-axis <-30.> speed <360.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <20.> speed <160.>;
+					turn torso to x-axis <15.> speed <120.>;
+					sleep 125;
+				}
+			
+		justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+				turn lleg to x-axis <0.> speed <360.>;
+				turn lboot to x-axis <0.> speed <360.>;
+				turn rleg to x-axis <0.> speed <360.>;
+				turn rboot to x-axis <0.> speed <360.>;
+				move pelvis to y-axis [0.] speed [16.];
+				turn torso to x-axis <0.> speed <40.>;
+				if( !aiming )
+				{
+					turn pitchturret to x-axis <0.> speed <120.>;
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	Static_Var_3 = 1;
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = barrel;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{	
+	while( !Static_Var_3 )
+	{
+		sleep 100;
+	}
+	signal 4;	
+	turn torso to y-axis Func_Var_1 speed <240.000000>;
+	//turn pitchturret to x-axis <0.> - Func_Var_2 speed <240.>;
+	wait-for-turn torso around y-axis;
+	//wait-for-turn pitchturret around x-axis;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	signal 4;
+	set-signal-mask 4;
+	sleep 2000;
+	set-signal-mask 0;
+	signal 4;	
+	turn torso to y-axis <0.> speed <90.>;
+	//turn pitchturret to x-axis <0.> speed <90.>;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = flare;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode torso type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode torso type SHATTER | NOHEATCLOUD;
+		explode barrel type FALL | NOHEATCLOUD;
+		explode rboot type FALL | NOHEATCLOUD;
+		explode lboot type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode torso type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rboot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lboot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -141,10 +141,10 @@ function gadget:Initialize()
       end
 
 --wind
-      if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwin") or (ud.name=="talon_win") then
+      if (ud.name=="armwin") or (ud.name=="corwin") or (ud.name=="tllwin") or (ud.name=="talon_win") or (ud.name=="gok_win") then
         Spring.SetUnitDefIcon(udid, "e.user")
 -- t1.5 wind/tidals
-      elseif (ud.name=="armawin")  or (ud.name=="talon_tide1")  or (ud.name=="talon_win1") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or (ud.name=="tllatide") or (ud.name=="tllwin1") then
+      elseif (ud.name=="armawin")  or (ud.name=="talon_tide1")  or (ud.name=="talon_win1") or (ud.name=="corawin") or (ud.name=="armatidal") or (ud.name=="coratidal") or (ud.name=="tllatide") or (ud.name=="tllwin1") or (ud.name=="gok_tide1") or (ud.name=="gok_win1") then
         Spring.SetUnitDefIcon(udid, "e1.user")
 --fighters
       elseif (ud.name=="armfig") or (ud.name=="corveng") or (ud.name=="tllfight") or (ud.name=="armhawk") or (ud.name=="corvamp") or (ud.name=="tlladvfight") or (ud.name=="talon_echelon") or (ud.name=="talon_token") then
@@ -387,6 +387,7 @@ function gadget:Initialize()
   Spring.SetUnitDefIcon(UnitDefNames["tllbug"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllgladius"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllprivate"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["gok_cut"].id, "tiny-sphere.user")
 end
 
 local function IsUnitProducedByAnyFactoryFromList(factories, unitDefId)

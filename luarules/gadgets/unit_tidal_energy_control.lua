@@ -28,6 +28,7 @@ local tideDefs = {
   [ UnitDefNames['coratidal'].id ] = true,
   [ UnitDefNames['tllatidal'].id ] = true,
   [ UnitDefNames['talon_tide1'].id ] = true,
+  [ UnitDefNames['gok_tide1'].id ] = true,
 }
 
 local tidals = {}
@@ -95,14 +96,14 @@ end
 
 
 function gadget:UnitTaken(unitID, unitDefID, unitTeam)
-  if (tideDefs[unitDefID]) then 
+  if (tideDefs[unitDefID]) then
     SetupUnit(unitID)
   end
 end
 
 
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-  if (tideDefs[unitDefID]) then 
+  if (tideDefs[unitDefID]) then
     tidals[unitID] = nil
   end
 end
@@ -110,4 +111,3 @@ end
 
 -------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------
-

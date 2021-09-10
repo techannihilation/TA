@@ -40,8 +40,12 @@ return {
 		"talon_plutor",
 		"talon_spirit",
 		"corlift",
+		"gok_chariot",
+		"gok_dirgesinger",
+
 	},
 	unclassed_air = {
+
 	--Fighters
 	"armwolf",
 	"armfig",
@@ -58,6 +62,8 @@ return {
 	"talon_token",
 	"talon_echelon",
 	"talon_hornet",
+	"gok_angel",
+
 	--Construction
 	"abuilderlvl1",
 	"abuilderlvl2",
@@ -83,6 +89,8 @@ return {
 	"talon_aca",
 	"talon_eca",
 	"talon_medic",
+	"gok_ca",
+
 	--Gunships
 	"armbrawl",
 	"armkam",
@@ -102,6 +110,8 @@ return {
 	"talon_vulture",
 	"talon_pampa",
 	"talon_ceddral",
+	"gok_specter",
+
 	-- Scout planes
 	"armawac",
 	"armpeep",
@@ -123,11 +133,14 @@ return {
 	"corarpe",
 	"talon_recon",
 	"talon_vigilante",
+	"gok_vision",
+
 	--T3 Raiser
 	"armerez",
 	"corerez",
 	"tllerez",
 	"talon_erez",
+
 	-- SATELLITE
 	"sat_radar",
 	"sat_interceptor",
@@ -436,7 +449,7 @@ return {
 		"gok_nanotc1",
 		"gok_nanotc2",
 		"gok_nanotc3",
-		"gok_nanotc4",
+		"gok_nanotc4",Z
 
 	},
 	mines = {
