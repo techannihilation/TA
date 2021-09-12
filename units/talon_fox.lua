@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Stealthy Rez Kbot",
+		description = "Rez Kbot",
 		explodeas = "BIG_UNITEX",
 		footprintx = 2,
 		footprintz = 2,

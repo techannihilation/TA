@@ -113,7 +113,7 @@ Create()
 	Static_Var_2 = 5000;
 	move turret to y-axis [-8.] now;
 	start-script SmokeUnit();
-	move base to y-axis [25.000000] now;
+	//move base to y-axis [25.000000] now;
 }
 
 Activate()
