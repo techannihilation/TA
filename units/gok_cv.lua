@@ -97,7 +97,7 @@ return {
 			[34] = "gok_fmkr",
 			--[35] = "gok_hpns",
 			[36] = "gok_sy",
-			[37] = "gok_asy",
+			--[37] = "gok_asy",
 			[38] = "gok_fnanotc",
 			[39] = "gok_frad",
 			[40] = "gok_sonar",

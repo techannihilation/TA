@@ -844,6 +844,41 @@ local morphDefs = {
 		tech = 3,
 		time = 80,
 	},
+	gok_nanotc = {
+		into = 'gok_nanotc1',
+		time = 30,
+		tech = 1,
+	},
+	gok_nanotc1 = {
+		into = 'gok_nanotc2',
+		tech = 2,
+		time = 60,
+	},
+	gok_nanotc2 = {
+		into = 'gok_nanotc3',
+		tech = 3,
+		time = 80,
+	},
+	gok_nanotc3 = {
+		into = 'gok_nanotc4',
+		tech = 4,
+		time = 100,
+	},
+	gok_fnanotc = {
+		into = 'gok_fnanotc1',
+		time = 30,
+		tech = 1,
+	},
+	gok_fnanotc1 = {
+		into = 'gok_fnanotc2',
+		tech = 2,
+		time = 60,
+	},
+	gok_fnanotc2 = {
+		into = 'gok_fnanotc3',
+		tech = 3,
+		time = 80,
+	},
 	armamph = {
 		into = 'armmarauder',
 		time = 45,
@@ -940,6 +975,10 @@ local morphDefs = {
 	},
 	talon_geo_mini = {
     into = 'talon_geo',
+		time = 30,
+	},
+	gok_geo_mini = {
+		into = 'gok_geo',
 		time = 30,
 	},
 	coramph = {
