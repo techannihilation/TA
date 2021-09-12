@@ -207,6 +207,9 @@ local nanos = {
   [UnitDefNames["talon_fnanotc"].id] = true,
   [UnitDefNames["talon_fnanotc1"].id] = true,
   [UnitDefNames["talon_fnanotc2"].id] = true,
+
+  --Gok
+  --[UnitDefNames["gok_nanotc"].id] = true,
 }
 
 --------------------------------------------------------------------------------

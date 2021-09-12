@@ -82,11 +82,16 @@ local nanos = {
   [UnitDefNames["talon_nanotc1"].id] = true,
   [UnitDefNames["talon_nanotc2"].id] = true,
   [UnitDefNames["talon_nanotc3"].id] = true,
-  [UnitDefNames["talon_nanotc4"].id] = true,  
+  [UnitDefNames["talon_nanotc4"].id] = true,
   [UnitDefNames["talon_fnanotc"].id] = true,
   [UnitDefNames["talon_fnanotc1"].id] = true,
   [UnitDefNames["talon_fnanotc2"].id] = true,
   [UnitDefNames["talon_fnanotc3"].id] = true,
+
+  --Gok
+  [UnitDefNames["gok_nanotc"].id] = true,
+
+  [UnitDefNames["gok_fnanotc"].id] = true,
 }
 
 local buildspeedCmdDesc = {

@@ -1,4 +1,3 @@
-
 function widget:GetInfo()
 	return {
 		name	= 'Faction Change',
@@ -51,12 +50,13 @@ local armcomDefID = UnitDefNames.armcom.id
 local corcomDefID = UnitDefNames.corcom.id
 local tllcomDefID = UnitDefNames.tllcom.id
 local taloncomDefID = UnitDefNames.talon_com.id
+local gokcomDefID = UnitDefNames.gok_com.id
 
 local commanderDefID = spGetTeamRulesParam(myTeamID, 'startUnit')
 local amNewbie = (spGetTeamRulesParam(myTeamID, 'isNewbie') == 1)
 
 local factionChangeList
-local px, py = wWidth - 280, 0.63*wHeight
+local px, py = wWidth - 320, 0.63*wHeight
 
 --------------------------------------------------------------------------------
 -- Funcs
@@ -66,6 +66,7 @@ local function QuadVerts(x, y, z, r)
 	glTexCoord(1, 0); glVertex(x + r, y, z - r)
 	glTexCoord(1, 1); glVertex(x + r, y, z + r)
 	glTexCoord(0, 1); glVertex(x - r, y, z + r)
+	glTexCoord(0, 1); glVertex(x + r, y, z + r)
 end
 
 --------------------------------------------------------------------------------
@@ -103,8 +104,11 @@ function widget:DrawWorld()
 			elseif teamStartUnit == tllcomDefID then
 				  glTexture('LuaUI/Images/tll.png')
 				  glBeginEnd(GL_QUADS, QuadVerts, tsx, spGetGroundHeight(tsx, tsz), tsz, 64)
-                elseif teamStartUnit == taloncomDefID then
+      elseif teamStartUnit == taloncomDefID then
 				  glTexture('LuaUI/Images/talon.png')
+				  glBeginEnd(GL_QUADS, QuadVerts, tsx, spGetGroundHeight(tsx, tsz), tsz, 64)
+			elseif teamStartUnit == gokcomDefID then
+				  glTexture('LuaUI/Images/gok.png')
 				  glBeginEnd(GL_QUADS, QuadVerts, tsx, spGetGroundHeight(tsx, tsz), tsz, 64)
 			end
 		end
@@ -129,15 +133,15 @@ function widget:DrawScreen()
 	if factionChangeList then
 
 		glCallList(factionChangeList)
-	else 
+	else
 		factionChangeList = glCreateList(FactionChangeList)
 	end
-	glPopMatrix()	
+	glPopMatrix()
 end
 
 function FactionChangeList()
 	-- Panel
-	glRect(0, 0, 255, 80)
+	glRect(0, 0, 320, 80)
 		-- Highlight
 	glColor(1, 1, 0, 0.5)
         if commanderDefID == armcomDefID then
@@ -148,8 +152,10 @@ function FactionChangeList()
             glRect(129, 1, 191, 63)
         elseif commanderDefID == taloncomDefID then
             glRect(193, 1, 255, 63)
+				elseif commanderDefID == gokcomDefID then
+		        glRect(257, 1, 319, 63)
         end
-        
+
         -- Icons
         glColor(1, 1, 1, 1)
         glTexture('LuaUI/Images/ARM.png')
@@ -160,15 +166,18 @@ function FactionChangeList()
         glTexRect(136, 8, 184, 56)
         glTexture('LuaUI/Images/TALON.png')
         glTexRect(200, 8, 248, 56)
+				glTexture('LuaUI/Images/GOK.png')
+        glTexRect(264, 8, 312, 56)
         glTexture(false)
-        
+
         -- Text
         glBeginText()
-            glText('Select Desired Faction', 127, 64, 12, 'cd')
+            glText('Select Desired Faction', 160, 64, 12, 'cd')
             glText('ARM', 32, 0, 12, 'cd')
             glText('CORE', 96, 0, 12, 'cd')
             glText('TLL', 160, 0, 12, 'cd')
             glText('TALON', 224, 0, 12, 'cd')
+						glText('GOK', 288, 0, 12, 'cd')
         glEndText()
 end
 
@@ -196,27 +205,29 @@ function widget:MousePress(mx, my, mButton)
 				newCom = corcomDefID
 			elseif mx < px + 192 then
 				newCom = tllcomDefID
-            elseif mx < px + 256 then
+      elseif mx < px + 256 then
 				newCom = taloncomDefID
+			elseif mx < px + 320 then
+				newCom = gokcomDefID
 			end
 			if newCom then
 				commanderDefID = newCom
 				-- tell initial_spawn
-				spSendLuaRulesMsg('\138' .. tostring(commanderDefID)) 
+				spSendLuaRulesMsg('\138' .. tostring(commanderDefID))
 				-- tell initial_queue
-				if WG["faction_change"] then 
+				if WG["faction_change"] then
 					WG["faction_change"](commanderDefID)
 				end
-				
+
 				--Remake gui
 				if factionChangeList then
 					glDeleteList(factionChangeList)
 				end
 				factionChangeList = glCreateList(FactionChangeList)
-			
+
 				return true
 			end
-			
+
 		elseif (mButton == 2 or mButton == 3) and mx < px + 192 then
 			-- Dragging
 			return true
@@ -235,4 +246,3 @@ end
 function widget:GameStart()
 	widgetHandler:RemoveWidget(self)
 end
-

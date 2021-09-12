@@ -1,5 +1,9 @@
-3.97 > 3.98
+3.98 => 4.00
 2021-09-13
+Add New GOK Faction
+
+3.97 > 3.98
+2021-09-12
 Balance :
  - Ares (T1 TLL) : Increase reloadtime : 1 => 1.1. Increase energycost +100E
  - All T1 T2 bombers : increase ReloadTilme 6=>10s. Decrease AOE 128 for t1 and 196 for t2
@@ -8,8 +12,7 @@ Balance :
  - Windtrap TLL (+adv) : Change Model
 
  Fix :
- - Armgate close/open when active/desactive shield. Get 75% armor w<hen closed. 
-
+ - Armgate close/open when active/desactive shield. Get 75% armor w<hen closed.
 
 3.96 > 3.97
 2021-09-04

@@ -3,10 +3,12 @@ local icontypes = {
     size=1.3,
     radiusadjust=1,
   },
+  
   armcommander = {
     bitmap="icons/armcom.tga",
     size=2,
   },
+
   corcommander = {
     bitmap="icons/corcom.tga",
     size=2,

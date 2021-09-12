@@ -327,7 +327,7 @@ for uDefID, uDef in pairs(UnitDefs) do
 		isMex[uDefID] = true
 	end
 
-	if ARMCOM == uDefID or CORCOM == uDefID or TLLCOM == uDefID or TALON_COM == uDefID then
+	if ARMCOM == uDefID or CORCOM == uDefID or TLLCOM == uDefID or TALON_COM == uDefID or GOK_COM == uDefID then
 		if uDef.buildOptions then
 			for i = 1, #uDef.buildOptions do
 				local tooltip = UnitDefs[uDef.buildOptions[i]].tooltip
