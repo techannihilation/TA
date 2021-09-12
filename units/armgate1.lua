@@ -12,6 +12,7 @@ return {
 		canattack = false,
 		category = "ALL SURFACE",
 		corpse = "dead",
+		damagemodifier = 0.25,
 		description = "Tech Level 4",
 		energystorage = 1500,
 		energyuse = 0,

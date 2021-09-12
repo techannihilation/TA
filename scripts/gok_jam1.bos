@@ -1,0 +1,141 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, ceil, turret, coil1, coil2, coil3;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from base;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from base;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( !Static_Var_1 )
+		{
+			spin coil1 around z-axis speed <60.> accelerate <1.>;
+			sleep 250;
+			spin turret around y-axis speed <30.> accelerate <1.>;
+			sleep 250;
+			spin coil3 around y-axis speed <60.> accelerate <1.>;
+			sleep 250;
+			spin coil2 around x-axis speed <60.> accelerate <1.>;
+			sleep 250;
+			currentstate = 0;
+		}
+		if( Static_Var_1 )
+		{
+			spin coil1 around z-axis speed <0.> accelerate <-1.>;
+			spin coil2 around x-axis speed <0.> accelerate <-1.>;
+			spin coil3 around y-axis speed <0.> accelerate <-1.>;
+			spin turret around y-axis speed <0.> accelerate <-1.>;
+			sleep 1000;
+			turn coil2 to x-axis <0.> speed <60.>;
+			turn coil3 to y-axis <0.> speed <60.>;
+			wait-for-turn coil2 around x-axis;
+			wait-for-turn coil3 around y-axis;
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	dont-shade coil3;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD | BITMAP5;
+		explode turret type NOHEATCLOUD | BITMAP2;
+		explode coil1 type NOHEATCLOUD | BITMAP5;
+		explode coil3 type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | BITMAP1;
+		explode ceil type FALL | NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode coil1 type SHATTER | NOHEATCLOUD;
+		explode coil2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode coil3 type FALL | SMOKE | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode ceil type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret type NOHEATCLOUD | BITMAP1;
+	explode coil1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode coil2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode coil3 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -7,7 +7,7 @@ return {
 		builder = false,
 		buildpic = "gok_tide1.dds",
 		buildtime = 9000,
-		category = "ALL UNDERWATER",
+		category = "ALL SURFACE UNDERWATER",
 		collisionvolumescales = "60 55 60",
 		collisionvolumetype = "Box",
 		corpse = "dead",

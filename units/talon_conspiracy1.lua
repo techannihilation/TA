@@ -28,7 +28,7 @@ return {
 		losemitheight = 74,
 		mass = 235,
 		maxangledif1 = 1,
-		maxdamage = 1310,
+		maxdamage = 1010,
 		maxslope = 32,
 		maxvelocity = 0,
 		maxwaterdepth = 0,

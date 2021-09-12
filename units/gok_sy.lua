@@ -49,9 +49,9 @@ return {
 		buildoptions = {
 			[1] = "gok_csub",
 			--[2] = "gok_jellyfish",
-			--[3] = "gok_charon",
-			--[4] = "gok_vasculitis",
-			--[5] = "gok_sub",
+			[3] = "gok_ssub",
+			[4] = "gok_corvette",
+			[5] = "gok_sub",
 			[6] = "gok_roy",
 			--[7] = "gok_bishop",
 		},

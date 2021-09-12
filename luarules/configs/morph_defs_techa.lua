@@ -43,7 +43,7 @@ local morphDefs = {
     time = 135,
 	},
 	gok_com = {
-		into = 'talon_com1',
+		into = 'armcom1',
 		time = 45,
 	},
 	corcom = {
@@ -379,6 +379,31 @@ local morphDefs = {
 		tech = 3,
 	},
 	talon_gate1 = {
+		into = 'talon_gate3',
+		time = 120,
+		tech = 4,
+	},
+	gok_gate2 = {
+		into = 'gok_gate',
+		time = 30,
+		tech = 1,
+	},
+	gok_gate = {
+		into = 'gok_gate4',
+		time = 60,
+		tech = 2,
+	},
+	gok_fgate = {
+		into = 'gok_fgate1',
+		time = 60,
+		tech = 2,
+	},
+	gok_gate4 = {
+		into = 'gok_gate1',
+		time = 90,
+		tech = 3,
+	},
+	gok_gate1 = {
 		into = 'talon_gate3',
 		time = 120,
 		tech = 4,

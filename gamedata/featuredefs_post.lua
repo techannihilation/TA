@@ -102,7 +102,8 @@ local skipUnits = {
 	['gok_drag'] = true,
 	['gok_fdrag'] = true,
 	['gok_fort'] = true,
-	
+	['gok_claw'] = true,
+
 }
 
 

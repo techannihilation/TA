@@ -566,4 +566,95 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	-- GOK
+	gok_gate = {
+		{
+			name = "shield_gokg",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_fgate = {
+		{
+			name = "shield_gokfg",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_fgate1 = {
+		{
+			name = "shield_gokfg1",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_gate1 = {
+		{
+			name = "shield_gokg1",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_gate2 = {
+		{
+			name = "shield_gokg2",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_gate3 = {
+		{
+			name = "shield_gokg3",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_gate4 = {
+		{
+			name = "shield_gokg4",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_com1 = {
+		{
+			name = "shield_gokc1",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_com2 = {
+		{
+			name = "shield_gokc2",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	gok_com3 = {
+		{
+			name = "shield_gokc3",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 }

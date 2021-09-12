@@ -60,7 +60,7 @@ return {
 			[2] = "gok_tantrum",
 			[3] = "gok_cut",
 			[4] = "gok_bloodletter",
-			--[5] = "",
+			[5] = "gok_earthstrike",
 			[6] = "gok_godhammer",
 			[7] = "gok_moonstrike",
 			[8] = "gok_immortal",

@@ -40,7 +40,7 @@ return {
 		radaremitheight = 44,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
-		sightdistance = 440,
+		sightdistance = 200,
 		standingfireorder = 2,
 		stealth = true,
 		turnrate = 0,

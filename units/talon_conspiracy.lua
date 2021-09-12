@@ -30,7 +30,7 @@ return {
 		losemitheight = 74,
 		mass = 235,
 		maxangledif1 = 1,
-		maxdamage = 712,
+		maxdamage = 412,
 		maxslope = 32,
 		maxvelocity = 0,
 		maxwaterdepth = 0,

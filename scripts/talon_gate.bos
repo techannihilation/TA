@@ -68,28 +68,6 @@ AimFromPrimary(piecenum)
 	piecenum = base;
 }
 
-AimSecondary(heading, pitch)
-{
-	sleep 100;
-	return (Static_Var_1);
-}
-
-FireSecondary()
-{
-	explode gun type NOHEATCLOUD | FALL;
-	sleep 100;
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = base;
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = base;
-}
-
 SweetSpot(piecenum)
 {
 	piecenum = base;

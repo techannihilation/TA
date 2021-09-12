@@ -12,7 +12,7 @@ return {
 		canstop = 1,
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -50 0",
-		collisionvolumescales = "116 63 116",
+		collisionvolumescales = "116 80 116",
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces T1 Ships",

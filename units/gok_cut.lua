@@ -130,7 +130,7 @@ return {
 				impactonly = 1,
 				name = "Saw",
 				noselfdamage = true,
-				range = 35,
+				range = 40,
 				reloadtime = 0.1,
 				rgbcolor = "0.0 0.0 0.0",
 				rgbcolor2= "0.0 0.0 0.0",

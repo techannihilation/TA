@@ -1,0 +1,163 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare, base, hull, aft1, aft2, turret, pitchturret,
+       wake1, wake2, system1, system2;
+
+static-var  restore_delay, Static_Var_4, Static_Var_5,
+            Static_Var_6;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			4
+
+RockZ(Func_Var_1, Func_Var_2)
+{
+	signal 8;
+	set-signal-mask 8;
+	Static_Var_5 = Static_Var_5 + Static_Var_4;
+	Static_Var_4 = get ABS(Static_Var_5);
+	while( Static_Var_4 > 91 )
+	{
+		turn base to z-axis Static_Var_5 speed Static_Var_4 * <0.016484>;
+		wait-for-turn base around z-axis;
+		Static_Var_5 = Static_Var_5 * -1 / 2;
+		Static_Var_4 = get ABS(Static_Var_5);
+	}
+	turn base to z-axis <0.000000> speed <1.500000>;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 500;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flare;
+	restore_delay = 2500;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <75.000000>;
+	move pitchturret to y-axis [0.00] speed [5.00];
+	turn pitchturret to x-axis <0.00> speed <90.00>;
+}
+
+waveSplash()
+{
+	while( TRUE )
+	{
+		turn base to x-axis <-3.000000> speed <3.000000>;
+		move base to y-axis [0.319995] speed [0.319995];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <0.000000> speed <3.000000>;
+		move base to y-axis [0.000000] speed [0.319995];
+		wait-for-turn base around x-axis;
+		sleep 150;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script waveSplash();
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		sleep 150;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn base to x-axis <0.000000> speed <3.000000>;
+	move base to y-axis [0.000000] speed [0.319995];
+}
+
+AimFromPrimary(pieceNum)
+{
+	pieceNum = pitchturret;
+}
+
+QueryPrimary(pieceNum)
+{
+	pieceNum = flare;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	move pitchturret to y-axis [2.50] speed [15.00];
+	turn turret to y-axis heading speed <250.00>;
+	turn pitchturret to x-axis <0.00> - pitch speed <180.00>;	
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	wait-for-move pitchturret along y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode system1 type NOHEATCLOUD;
+		explode system2 type NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode system1 type NOHEATCLOUD | FALL;
+		explode system2 type NOHEATCLOUD | FALL;
+		explode hull type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode system1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode system2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode hull type NOHEATCLOUD;
+	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

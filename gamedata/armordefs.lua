@@ -236,6 +236,9 @@ return {
 		"talon_lancelet",
 		"talon_frigate",
 		"talon_coral",
+		"gok_ssub",
+		"gok_sub",
+		"gok_csub",
 	},
 	experimental_ships = {
 		"armtrmph",

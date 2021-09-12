@@ -19,6 +19,7 @@ return {
 		collisionvolumescales = "175 40 100",
 		collisionvolumetype = "CylX",
 		corpse = "dead",
+		damagemodifier = 0.25,
 		description = "Tech Level 5",
 		energystorage = 15000,
 		energyuse = 0,

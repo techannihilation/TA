@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armjamt_aoplane.dds",
 		buildpic = "armjamt.dds",
-		buildtime = 9955,
+		buildtime = 10000,
 		canattack = false,
 		category = "ALL SURFACE",
 		cloakcost = 25,
@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 35,
 		name = "Cloakable Jammer Tower",
 		noautofire = false,
-		
+
 		objectname = "ARMJAMT",
 		onoffable = true,
 		radardistancejam = 450,

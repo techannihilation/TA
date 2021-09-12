@@ -2,7 +2,7 @@
 
 
 effectUnitDefs = {
- --// FUSIONS //--------------------------
+ ---- FUSIONS ----------------------------
   talon_gen = {
 	{class='SimpleParticles2', options=MergeTable({pos={0,28,0}, delay=0, size=15, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_gen)},
 	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,28,0}, size=6, precision=22, repeatEffect=true}},
@@ -154,7 +154,7 @@ cafus = {
     {class='ShieldJitter',options={life=math.huge, priority=2, pos={-80,220,80}, size=35, precision=20, repeatEffect=true}},
   },
 
-  --// SHIELDS //--------------------------
+  ---- SHIELDS ----------------------------
   corshieldgen = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
     {class='Bursts',options=shieldBursts300},
@@ -214,6 +214,7 @@ cafus = {
     {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  --T1 Gate
   armgate2 = {
     {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -226,6 +227,15 @@ cafus = {
     {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  talon_gate2 = {
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  gok_gate2 = {
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  -- T2 GATE
   armgate = {
     {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -238,11 +248,24 @@ cafus = {
     {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  talon_gate = {
+    {class='Bursts',options=shieldBursts400},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  gok_gate = {
+    {class='Bursts',options=shieldBursts400},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  --T2 SEA GATE
   tllfgate = {
     {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_fgate = {
+    {class='Bursts',options=shieldBursts400},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  gok_fgate = {
     {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
@@ -254,6 +277,7 @@ cafus = {
     {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  --T3 GATE
   armgate4 = {
     {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -270,6 +294,11 @@ cafus = {
     {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  gok_gate4 = {
+    {class='Bursts',options=shieldBursts700},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  --T3 SEA GATE
   armfgate1 = {
     {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -286,6 +315,11 @@ cafus = {
     {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  gok_fgate1 = {
+    {class='Bursts',options=shieldBursts700},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  --T4 GATE
   armgate1 = {
     {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -298,26 +332,15 @@ cafus = {
     {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-  talon_gate2 = {
-    {class='Bursts',options=shieldBursts300},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-  },
-  talon_gate = {
-    {class='Bursts',options=shieldBursts400},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-  },
   talon_gate1 = {
     {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-  talon_obelisk = {
-    {class='Bursts',options=obeliskBursts},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  gok_gate1 = {
+    {class='Bursts',options=shieldBursts1000},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-  talon_pyramid = {
-    {class='Bursts',options=pyramidBursts},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,5,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-  },
+  --T5 GATE
   armgate3 = {
     {class='Bursts',options=shieldBursts2200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={30,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -334,11 +357,23 @@ cafus = {
     {class='Bursts',options=shieldBursts2200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  gok_gate3 = {
+    {class='Bursts',options=shieldBursts2200},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  -- Special Blue Shied
+  talon_obelisk = {
+    {class='Bursts',options=obeliskBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  talon_pyramid = {
+    {class='Bursts',options=pyramidBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,5,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
 
 
 
-
-  --// OTHER //--------------------------
+  ---- OTHER ----------------------------
  armmex1 = {
     {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
   },
@@ -405,7 +440,7 @@ tllmeteor = {
     {class='GroundFlash',options=groundFlashJuno},
   },
 
-  --// ENERGY STORAGE //--------------------
+  ---- ENERGY STORAGE ----------------------
 
  corestor = {
     {class='GroundFlash',options=groundFlashCorestor},
@@ -420,7 +455,7 @@ tllmeteor = {
     {class='GroundFlash',options=groundFlashArmses},
   },
 
-  --// PLANES still need to do work here //----------------------------
+  ---- PLANES still need to do work here ------------------------------
   armatlas = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
@@ -877,7 +912,7 @@ corlift = {
     {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine6", noIconDraw = true, priority=3, onActive=true}},
 },
 
---// SATELLITE//--
+---- SATELLITE----
 sat_radar = {
    {class='Ribbon', options={width=2, size=15, piece="ribbon1", priority=3, noIconDraw = true}},
    {class='Ribbon', options={width=2, size=15, piece="ribbon2", priority=3, noIconDraw = true}},
@@ -885,7 +920,7 @@ sat_radar = {
 
 }
 
- --// COMMANDER XMAS HATS //--------------------------
+ ---- COMMANDER XMAS HATS ----------------------------
 
  effectUnitDefsXmas = {
 -- Special units
@@ -965,4 +1000,22 @@ sat_radar = {
     {class='Bursts',options=shieldBursts200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  gok_com = {
+     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.1,1,0}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+   },
+  gok_com1 = {
+     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+     {class='Bursts',options=shieldBursts100},
+     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+   },
+  gok_com2 = {
+     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+     {class='Bursts',options=shieldBursts150},
+     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+   },
+  gok_com3 = {
+     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
+     {class='Bursts',options=shieldBursts200},
+     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+   },
 }

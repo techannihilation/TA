@@ -88,7 +88,6 @@ Create()
 {
 	call-script InitState();
 	start-script SmokeUnit();
-	move base to y-axis [25.000000] now;
 }
 
 Activate()

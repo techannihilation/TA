@@ -1,0 +1,115 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, hullshadow, flare, system, system2, cockpit, 
+		turret, pitchturret, launcher, barrel;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 2500;
+	turn turret to y-axis <0.0> speed <120.00>;
+	turn pitchturret to x-axis <0.00> speed <120.00>;	
+}
+
+AimFromTertiary(PieceNum)
+{
+	PieceNum = pitchturret;
+}
+
+AimTertiary(Heading, Pitch)
+{
+	signal 2;
+	set-signal-mask 2;	
+	turn turret to y-axis Heading speed <280.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <280.00>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return(1);
+}
+
+FireTertiary()
+{
+	move launcher to z-axis [-0.75] speed [500.00];
+	sleep 25;
+	move launcher to z-axis [0.00] speed [1.50];
+}
+
+
+QueryTertiary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		explode system type NOHEATCLOUD;
+		explode system2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode system type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pitchturret type FALL | BITMAP3;
+		explode system2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD | SHATTER;
+	explode turret type NOHEATCLOUD | SHATTER;
+	explode system type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode pitchturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

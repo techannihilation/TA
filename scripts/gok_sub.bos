@@ -1,0 +1,101 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, mainhull, lwing, rwing, wake1, wake2, rfire, lfire, weapon;
+
+static-var  Static_Var_1;
+
+#define SIG_AIM				4
+#define SIG_MOVE			2
+
+Create()
+{
+	Static_Var_1 = 1;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	turn rwing to y-axis <-30.0> speed <50.>;
+	turn lwing to y-axis <30.0> speed <50.>;
+	while( TRUE )
+	{
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+		sleep 250;
+	}
+
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn rwing to y-axis <0.0> speed <50.>;
+	turn lwing to y-axis <-0.0> speed <50.>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = weapon;
+}
+
+AimPrimary() 
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+FirePrimary()
+{
+	++Static_Var_1;
+	
+	if( Static_Var_1 == 3 )
+	{
+		Static_Var_1 = 1;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( Static_Var_1 == 1 )
+	{
+		piecenum = lfire;
+	}
+		if( Static_Var_1 == 2 )
+	{
+		piecenum = rfire;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode mainhull type NOHEATCLOUD | SMOKE | EXPLODE_ON_HIT;
+		explode rwing type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode mainhull type NOHEATCLOUD | SMOKE | EXPLODE_ON_HIT;
+		explode rwing type NOHEATCLOUD;
+		explode lwing type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode mainhull type NOHEATCLOUD | SMOKE | EXPLODE_ON_HIT;
+	explode rwing type NOHEATCLOUD;
+	explode lwing type NOHEATCLOUD;
+}

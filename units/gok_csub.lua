@@ -56,7 +56,7 @@ return {
 		turnrate = 356,
 		unitname = "gok_csub",
 		upright = true,
-		waterline = 30,
+		waterline = 38,
 		workertime = 100,
 		buildoptions = {
 			[1] = "gok_tide",
