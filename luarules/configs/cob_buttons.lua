@@ -657,4 +657,13 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	gok_antichrist = {
+		{
+			name = "shield_gok_antichrist",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 }

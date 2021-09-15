@@ -50,7 +50,7 @@ return {
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "gok_gate.dds",
-			faction = "gok",
+			faction = "GOK",
 			shield_power = 7500,
 			shield_radius = 400,
 		},

@@ -114,6 +114,7 @@ local ShieldUnits = {
   --[UnitDefNames["gok_gate4"].id] = true,
   --[UnitDefNames["gok_fgate"].id] = true,
   --[UnitDefNames["gok_fgate1"].id] = true,
+    [UnitDefNames["gok_antichrist"].id] = true,
 }
 
 --------------------------------------------------------------------------------

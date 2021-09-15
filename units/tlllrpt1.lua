@@ -1,7 +1,7 @@
 return {
 	tlllrpt1 = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 216373,
@@ -17,7 +17,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Long Range Plasma Cannon",
+		description = "Tech Level 3",
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 2,
@@ -32,8 +32,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T3 Immolator",
-
+		name = "Long Range Plasma Cannon",
 		objectname = "TLLLRPT1",
 		radaremitheight = 90,
 		seismicsignature = 0,

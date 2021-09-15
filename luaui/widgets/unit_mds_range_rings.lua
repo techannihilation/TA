@@ -37,6 +37,9 @@ local ringsDefs = {
     [UnitDefNames.talon_mds.id] = {
         { color = {1, 0.2, 0, 0.8}, lineWidth = 1.5, radius = 1000 },
     },
+    [UnitDefNames.gok_mds.id] = {
+        { color = {1, 0.2, 0, 0.8}, lineWidth = 1.5, radius = 1000 },
+    },
 }
 
 local ringedUnits = {}

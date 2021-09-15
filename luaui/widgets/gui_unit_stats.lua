@@ -157,7 +157,22 @@ local pplants = {
 	["armefus"] = true,
 	["corefus"] = true,
 	["tllefus"] = true,
-	["tllgeo_armored"] = true
+	["tllgeo_armored"] = true,
+
+--T5
+	["corufus"] = true,
+	["armufus"] = true,
+	["tllufus"] = true,
+	["talon_ufus"] = true,
+
+	--Gok
+	["gok_solar"] = true,
+	["gok_advsolar"] = true,
+	["gok_fus"] = true,
+	["gok_gen"] = true,
+	["gok_geo_mini"] = true,
+	["gok_geo"] = true,
+	--["gok_gen"] = true,
 }
 
 local tidalStrength = Game.tidal

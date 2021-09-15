@@ -3,7 +3,19 @@
 
 effectUnitDefs = {
  ---- FUSIONS ----------------------------
-  talon_gen = {
+--GOK
+ gok_gen = {
+ {class='SimpleParticles2', options=MergeTable({pos={0,10,0}, delay=60, size=5, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+ {class='SimpleParticles2', options=MergeTable({pos={0,14,0}, delay=0, size=4, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+ {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,12,0}, size=6, precision=22, repeatEffect=true}},
+},
+gok_fusion = {
+{class='SimpleParticles2', options=MergeTable({pos={0,16,0}, delay=60, size=10, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+{class='SimpleParticles2', options=MergeTable({pos={0,20,0}, delay=0, size=8, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,14,0}, size=8, precision=22, repeatEffect=true}},
+},
+--TALON
+talon_gen = {
 	{class='SimpleParticles2', options=MergeTable({pos={0,28,0}, delay=0, size=15, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_gen)},
 	{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,28,0}, size=6, precision=22, repeatEffect=true}},
 },
@@ -1018,4 +1030,8 @@ sat_radar = {
      {class='Bursts',options=shieldBursts200},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
+   gok_antichrist = {
+      {class='Bursts',options=shieldBursts100},
+      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+    },
 }

@@ -1,7 +1,7 @@
 return {
 	armuwadvms = {
 		buildangle = 5049,
-		buildcostenergy = 11193,
+		buildcostenergy = 5193,
 		buildcostmetal = 752,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -25,14 +25,13 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 44,
-		mass = 1550,
+		mass = 752,
 		maxdamage = 9300,
 		maxslope = 20,
 		maxwaterdepth = 9999,
 		metalstorage = 10000,
 		name = "T2 Storage",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "ARMUWADVMS",
 		radaremitheight = 43,

@@ -7,6 +7,10 @@ return {
 		buildcostenergy = 271,
 		buildcostmetal = 105,
 		builder = false,
+		buildinggrounddecaldecayspeed = 30,
+		buildinggrounddecalsizex = 2,
+		buildinggrounddecalsizey = 2,
+		buildinggrounddecaltype = "gok_aoplane.dds",
 		buildpic = "gok_mstor.dds",
 		buildtime = 1500,
 		category = "ALL SURFACE UNDERWATER",
@@ -40,6 +44,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "gok_mstor",
+		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "gok_MSTOR.dds",

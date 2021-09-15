@@ -1581,6 +1581,11 @@ local morphDefs = {
 		xp = 0.20,
 		time = 100,
 	},
+	gok_disciple = {
+		into = 'gok_antichrist',
+		xp = 0.25,
+		time = 45,
+	},
 }
 
 --

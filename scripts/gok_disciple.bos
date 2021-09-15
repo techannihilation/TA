@@ -200,7 +200,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	
+
 	start-script MotionControl();
 	
 	while( TRUE )
@@ -266,6 +266,9 @@ RestoreAfterDelay()
 {
 	sleep 1500;
 	
+	MeleeAttack = FALSE;
+	GunAttack = FALSE;
+	
 	turn larm to x-axis <45.00> speed <90.00>;
 	turn rarm to x-axis <45.00> speed <90.00>;
 	turn lwrist to x-axis <80.00> speed <160.00>;
@@ -300,9 +303,6 @@ RestoreAfterDelay()
 	turn torsorecoil to y-axis <0.00> speed <75.00>;
 	turn armpitch to x-axis <0.00> speed <180.00>;
 	turn pitchturret to x-axis <0.00> speed <180.00>;
-	
-	MeleeAttack = FALSE;
-	GunAttack = FALSE;
 }
 
 // LASER GUN
@@ -315,6 +315,12 @@ AimFromPrimary(PieceNum)
 QueryPrimary(PieceNum)
 {
 	PieceNum = fire;
+}
+
+FirePrimary()
+{
+	sleep 150;
+	GunAttack = TRUE;
 }
 
 AimPrimary(Heading, Pitch)
@@ -416,8 +422,7 @@ AimPrimary(Heading, Pitch)
 	turn pitchturret to x-axis <0.00> - Pitch speed <350.00>;
 	turn armpitch to x-axis <0.00> speed <180.00>;	
 	wait-for-turn torso around y-axis;
-	wait-for-turn pitchturret around x-axis;
-	
+	wait-for-turn pitchturret around x-axis;	
 	GunAttack = TRUE;
 	start-script RestoreAfterDelay();
 	return (1);
@@ -446,10 +451,9 @@ AimTertiary(Heading, Pitch)
 	{
 		signal SIG_AIM_GUN;
 		GunAttack = FALSE;
-		sleep 350;
+		sleep 150;
 	}
 
-	//MeleeAttack = TRUE;
 	GunAttack = FALSE;
 
 	if( AttackType == 1 )//Whirlwind from the left
@@ -476,21 +480,19 @@ AimTertiary(Heading, Pitch)
 		turn pitchhit to x-axis <0.00> - Pitch speed <720.00>;
 		turn armpitch to x-axis <0.00> - Pitch speed <720.00>;
 		turn pitchturret to x-axis <0.00> speed <180.00>;
-		
 		wait-for-turn torso around y-axis;
 		wait-for-turn torsorecoil around y-axis;
 		wait-for-turn pitchhit around x-axis;
 		wait-for-turn lhandz around z-axis;
 		wait-for-turn rhandz around z-axis;
-		
+		MeleeAttack = TRUE;
 		GunAttack = FALSE;
 		start-script RestoreAfterDelay();
 		return (1);
 	}
 	if( AttackType == 2 )//Whirlwind from the right
 	{
-		move pelvis to y-axis [0.00] speed [6.00];
-		
+		move pelvis to y-axis [0.00] speed [6.00];		
 		turn rarm to x-axis <0.00> speed <280.00>;
 		turn larm to x-axis <-45.00> speed <280.00>;
 		turn rarmz to z-axis <30.00> speed <180.00>;
@@ -502,22 +504,20 @@ AimTertiary(Heading, Pitch)
 		turn rhandx to x-axis <0.00> speed <280.00>;
 		turn lhandx to x-axis <70.00> speed <280.00>;
 		turn rhandz to z-axis <-90.00> speed <480.00>;
-		turn lhandz to z-axis <-30.00> speed <480.00>;
-		
+		turn lhandz to z-axis <-30.00> speed <480.00>;		
 		turn torso to y-axis Heading speed <360.00>;
 		turn torsorecoil to y-axis <-60.00> speed <280.00>;
 		turn headturn to y-axis <60.00> - Heading speed <360.00>;
 		turn head to y-axis Heading speed <480.00>;
 		turn pitchhit to x-axis <0.00> - Pitch speed <720.00>;
 		turn armpitch to x-axis <0.00> - Pitch speed <720.00>;
-		turn pitchturret to x-axis <0.00> speed <180.00>;
-		
+		turn pitchturret to x-axis <0.00> speed <180.00>;		
 		wait-for-turn torso around y-axis;
 		wait-for-turn torsorecoil around y-axis;
 		wait-for-turn pitchhit around x-axis;
 		wait-for-turn lhandz around z-axis;
 		wait-for-turn rhandz around z-axis;
-		
+		MeleeAttack = TRUE;
 		GunAttack = FALSE;
 		start-script RestoreAfterDelay();
 		return (1);
@@ -570,10 +570,7 @@ FireTertiary()
 		turn rboot to x-axis <0.00> speed <480.00>;
 		turn rfoot to x-axis <30.00> speed <480.00>;
 		sleep 300;
-		move pelvis to y-axis [0.00] speed [6.00];
-		
-		MeleeAttack = FALSE;
-		
+		move pelvis to y-axis [0.00] speed [6.00];		
 		return (0);
 	}
 	if( AttackType == 2 )//Whirlwind from the right
@@ -618,9 +615,6 @@ FireTertiary()
 		turn lfoot to x-axis <30.00> speed <480.00>;
 		sleep 300;
 		move pelvis to y-axis [0.00] speed [6.00];
-		
-		MeleeAttack = FALSE;
-		
 		return (0);
 	}
 }

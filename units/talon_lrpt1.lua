@@ -1,7 +1,7 @@
 return {
 	talon_lrpt1 = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 306003,
@@ -20,7 +20,7 @@ return {
 		collisionvolumescales = "90 200 90",
 		collisionvolumetype = "Box",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Long Range Plasma Cannon",
+		description = "Tech Level 3",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 2,
 		footprintx = 8,
@@ -34,8 +34,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T3 Onyx",
-
+		name = "Long Range Plasma Cannon",
 		objectname = "talon_lrpt1",
 		radaremitheight = 100,
 		seismicsignature = 0,

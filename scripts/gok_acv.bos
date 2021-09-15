@@ -1,0 +1,179 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, control1, control2, control3, control4, shelter1, shelter1b,
+       door1, shelter2, shelter2b, door2, backpack, turretbase, turret, arm1,
+       arm2, llathe, lbeam, rlathe, rbeam, decor1, decor2, decor3;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from control4;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from arm2;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_3 )
+	{
+		Static_Var_2 = requestedstate;
+		return (0);
+	}
+	Static_Var_3 = 1;
+	currentstate = Static_Var_2;
+	Static_Var_2 = requestedstate;
+	while( Static_Var_2 != currentstate )
+	{
+		if( !Static_Var_2 )
+		{
+			turn door1 to z-axis <-35.> speed <35.>;
+			move door1 to y-axis [-1.] speed [1.];
+			turn door2 to z-axis <35.> speed <35.>;
+			move door2 to y-axis [-1.] speed [1.];
+			sleep 1000;
+			turn arm1 to x-axis <-65.> speed <65.>;
+			turn arm2 to x-axis <65.> speed <65.>;
+			sleep 500;
+			turn turret to y-axis Static_Var_1 speed <60.>;
+			sleep 500;
+			wait-for-turn turret around y-axis;
+			set INBUILDSTANCE to 1;
+			currentstate = 0;
+		}
+		if( Static_Var_2 )
+		{
+			set INBUILDSTANCE to 0;
+			turn turret to y-axis <0.> speed <60.>;
+			wait-for-turn turret around y-axis;
+			turn arm1 to x-axis <0.> speed <65.>;
+			turn arm2 to x-axis <0.> speed <65.>;
+			sleep 1000;
+			turn door1 to z-axis <0.> speed <35.>;
+			move door1 to y-axis [0.] speed [1.];
+			turn door2 to z-axis <0.> speed <35.>;
+			move door2 to y-axis [0.] speed [1.];
+			sleep 1000;
+			currentstate = 1;
+		}
+	}
+	Static_Var_3 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 1;
+	Static_Var_3 = 0;
+	Static_Var_4 = 18;
+	start-script SmokeUnit();
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_1 = 0 - Func_Var_1;
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+	start-script RequestState(0);
+}
+
+StopBuilding()
+{
+	start-script RequestState(1);
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( Static_Var_4 == 18 )
+	{
+		piecenum = lbeam;
+		Static_Var_4 = 20;
+		return (0);
+	}
+	if( Static_Var_4 == 20 )
+	{
+		piecenum = rbeam;
+		Static_Var_4 = 18;
+		return (0);
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode backpack type NOHEATCLOUD;
+		explode control1 type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode shelter2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode backpack type NOHEATCLOUD | NOHEATCLOUD;
+		explode control1 type NOHEATCLOUD | NOHEATCLOUD;
+		explode door1 type FALL | BITMAP2;
+		explode door2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode shelter1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode shelter2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode llathe type FALL | BITMAP2;
+		explode rlathe type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (0);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD | BITMAP1;
+	explode backpack type NOHEATCLOUD | BITMAP1;
+	explode control1 type NOHEATCLOUD | BITMAP1;
+	explode shelter1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode shelter2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode llathe type FALL | NOHEATCLOUD;
+	explode rlathe type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+}

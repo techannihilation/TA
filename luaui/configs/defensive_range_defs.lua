@@ -214,6 +214,7 @@ modConfig["TA"]["unitList"] =
 								talon_damascus2 = { weapons = { 3 } },
 								talon_armistice = { weapons = { 3 } },
 								talon_mds = { weapons = { 3 } }, --Missile Defence System
+								gok_mds = { weapons = { 3 } }, --Missile Defence System
 								armmds = { weapons = { 3 } }, --Missile Defence System
 							}
 

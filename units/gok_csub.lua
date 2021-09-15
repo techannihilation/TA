@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Combat Engineer",
+		description = "Tech Level 1",
 		energymake = 20,
 		energystorage = 20,
 		energyuse = 0,

@@ -1,7 +1,7 @@
 return {
 	coruwadvms = {
 		buildangle = 6093,
-		buildcostenergy = 11093,
+		buildcostenergy = 5241,
 		buildcostmetal = 757,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -25,14 +25,13 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 37,
-		mass = 1675,
+		mass = 757,
 		maxdamage = 10050,
 		maxslope = 20,
 		maxwaterdepth = 9999,
 		metalstorage = 10000,
 		name = "T2 Metal Storage",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "CORUWADVMS",
 		radaremitheight = 37,

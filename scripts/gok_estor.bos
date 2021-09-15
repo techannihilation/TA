@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, dome, supports, s1, s2, s3, s4, s5, s6, s7, s8, supports2, s9, s10, s11, s12;
+piece  base, body, supports, s1, s2, s3, s4, s5, s6, s7, s8;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -53,26 +53,19 @@ Killed(severity, corpsetype)
 	explode s6 type NOHEATCLOUD | SHATTER;
 	explode s7 type NOHEATCLOUD | SHATTER;
 	explode s8 type NOHEATCLOUD | SHATTER;
-	explode s9 type NOHEATCLOUD | SHATTER;
-	explode s10 type NOHEATCLOUD | SHATTER;
-	explode s11 type NOHEATCLOUD | SHATTER;
-	explode s12 type NOHEATCLOUD | SHATTER;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode dome type NOHEATCLOUD | SHATTER;
-		explode base type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode dome type NOHEATCLOUD | SHATTER;
-		explode base type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode dome type NOHEATCLOUD | SHATTER;
-	explode base type NOHEATCLOUD | EXPLODE_ON_HIT | SHATTER;
+	explode body type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

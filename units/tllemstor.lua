@@ -2,7 +2,7 @@ return {
 	tllemstor = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 25645,
+		buildcostenergy = 23645,
 		buildcostmetal = 1720,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 51,
-		mass = 7720,
+		mass = 1720,
 		maxdamage = 10200,
 		maxslope = 10,
 		maxwaterdepth = 9999,

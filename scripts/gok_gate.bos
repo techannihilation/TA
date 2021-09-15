@@ -138,7 +138,7 @@ Create()
 AimPrimary(heading, pitch)
 {
 	sleep 100;
-	return (Static_Var_1);
+	return (Static_Var_3);
 }
 
 FirePrimary()

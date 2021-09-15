@@ -1,0 +1,130 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, flare1, flare2, turret, sup, core,
+		pitchturret1, launcher1, barrel1,
+		pitchturret2, launcher2, barrel2;
+
+static-var  gun_1;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = 0;
+	start-script SmokeUnit();
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = turret;
+}
+
+AimPrimary(Heading, Pitch)
+{
+	signal 2;
+	set-signal-mask 2;	
+	turn turret to y-axis Heading speed <450.00>;
+	turn pitchturret1 to x-axis <0.00> - Pitch speed <300.00>;
+	turn pitchturret2 to x-axis <0.00> - Pitch speed <300.00>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret1 around x-axis;
+	return(1);
+}
+
+FirePrimary()
+{
+	if (gun_1 == 0)
+	{
+		move launcher1 to z-axis [-0.75] speed [500.00];
+		sleep 25;
+		move launcher1 to z-axis [0.00] speed [1.50];
+	}
+	if (gun_1 == 1)
+	{
+		move launcher2 to z-axis [-0.75] speed [500.00];
+		sleep 25;
+		move launcher2 to z-axis [0.00] speed [1.50];
+	}
+	++gun_1;
+	if (gun_1 == 2)
+	{
+		gun_1 = 0;
+	}
+}
+
+
+QueryPrimary(piecenum)
+{
+	if (gun_1 == 0)
+	{
+		piecenum = flare1;
+	}
+	if (gun_1 == 1)
+	{
+		piecenum = flare2;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode pitchturret1 type NOHEATCLOUD;
+		explode sup type NOHEATCLOUD;
+		explode pitchturret2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode sup type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pitchturret1 type FALL | BITMAP3;
+		explode pitchturret2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD | SHATTER;
+	explode turret type NOHEATCLOUD | SHATTER;
+	explode sup type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode pitchturret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pitchturret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

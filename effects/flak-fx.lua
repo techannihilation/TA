@@ -155,7 +155,7 @@ return {
         water              = true,
         properties = {
           airdrag            = 0.8,
-          colormap           = [[0.78 0.08 0.52 0.1   0.6 0.02 0.30 0.2   0.0 0.0 0.0 0.01]],
+          colormap           = [[0.9 0.25 0.75 0.1   0.78 0.08 0.52 0.2   0.0 0.0 0.0 0.01]],
           directional        = false,
           emitrot            = 80,
           emitrotspread      = 5,
@@ -210,7 +210,7 @@ return {
         properties = {
           alpha              = 1,
           alphadecay         = 0.35,
-          color              = [[0.8, 0.1, 0.4]],
+          color              = [[0.8, 0.5, 0.6]],
           dir                = [[-10 r20,-10 r20,-10 r20]],
           length             = 1,
           width              = 17,

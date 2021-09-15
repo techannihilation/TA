@@ -1,0 +1,98 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, dome, dome2, plates, plate1, plate2, plate3, plate4,
+       plate5, plate6, plate7, plate8, socle, core, cor1, cor2,
+       cor3, cor4, cor5, cor6, cor7, cor8;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	spin plates around y-axis speed <25.0>;	
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from dome2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		explode dome type NOHEATCLOUD;
+		explode cor1 type SHATTER | EXPLODE_ON_HIT;
+		explode cor4 type SHATTER | EXPLODE_ON_HIT;
+		explode plate1 type NOHEATCLOUD;
+		explode plate2 type NOHEATCLOUD;
+		explode plate3 type NOHEATCLOUD;
+		explode plate4 type NOHEATCLOUD;
+		explode plate5 type NOHEATCLOUD;
+		explode plate6 type NOHEATCLOUD;
+		explode plate7 type NOHEATCLOUD;
+		explode plate8 type NOHEATCLOUD;
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		explode dome type NOHEATCLOUD;
+		explode cor1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode cor4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode plate1 type NOHEATCLOUD;
+		explode plate2 type NOHEATCLOUD;
+		explode plate3 type NOHEATCLOUD;
+		explode plate4 type NOHEATCLOUD;
+		explode plate5 type NOHEATCLOUD;
+		explode plate6 type NOHEATCLOUD;
+		explode plate7 type NOHEATCLOUD;
+		explode plate8 type NOHEATCLOUD;
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	explode dome type NOHEATCLOUD;
+	explode cor1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode cor4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate4 type NOHEATCLOUD;
+	explode plate5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate6 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate7 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode plate8 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	corpsetype = 3;
+	return (corpsetype);
+}

@@ -1,7 +1,7 @@
 return {
 	corint = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 65125,
@@ -18,7 +18,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Long Range Plasma Cannon",
+		description = "Tech Level 2",
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 2,
@@ -33,8 +33,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T2 Intimidator",
-
+		name = "Long Range Plasma Cannon",
 		objectname = "CORINT",
 		radaremitheight = 92,
 		seismicsignature = 0,

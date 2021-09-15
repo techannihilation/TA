@@ -10,9 +10,6 @@ static-var  spray, statechg_DesiredState, statechg_StateChanging;
 
 Go()
 {
-	dont-cache lights;
-	dont-cache nano1;
-	dont-cache nano2;
 	move nano1 to y-axis [3.000000] speed [10.000000];
 	move nano2 to y-axis [3.000000] speed [10.000000];
 	sleep 100;
@@ -20,9 +17,6 @@ Go()
 
 Stop()
 {
-	cache lights;
-	cache nano1;
-	cache nano2;
 	move nano1 to y-axis [0.000000] speed [10.000000];
 	move nano2 to y-axis [0.000000] speed [10.000000];
 	sleep 100;

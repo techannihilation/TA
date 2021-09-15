@@ -1,7 +1,7 @@
 return {
 	armbrtha1 = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 282325,
@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Long Range Plasma Cannon",
+		description = "Tech Level 3",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 0,
 		footprintx = 8,
@@ -35,8 +35,7 @@ return {
 		maxslope = 12,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T3 Big Bertha",
-
+		name = "Long Range Plasma Cannon",
 		objectname = "ARMBRTHA1",
 		radaremitheight = 90,
 		seismicsignature = 0,

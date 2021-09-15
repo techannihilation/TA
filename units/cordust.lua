@@ -48,7 +48,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dust",
 		noautofire = false,
-		
+
 		objectname = "cordust",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -168,8 +168,8 @@ return {
 				firestarter = 0,
 				flighttime = 7,
 				impulseboost = 0,
-				model = "DevastatorRocket",
-				name = "DevastatorRockets",
+				model = "weapon_rocket_devastator",
+				name = "Heavy Rockets",
 				noselfdamage = true,
 				range = 1800,
 				reloadtime = 2,

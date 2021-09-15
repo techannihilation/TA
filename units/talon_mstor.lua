@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 325,
 		builder = false,
 		buildpic = "talon_mstor.dds",
-		buildtime = 2925,
+		buildtime = 3000,
 		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "66 45 66",
