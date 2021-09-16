@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "50 30 50",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "12K Capacity (Amphibious)",
+		description = "8K Capacity (Amphibious)",
 		energystorage = 8000,
 		energyuse = 0,
 		explodeas = "ESTOR_BUILDING",

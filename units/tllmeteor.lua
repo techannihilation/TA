@@ -113,7 +113,7 @@ return {
 				avoidfeature = false,
 				burnblow = true,
 				craterareaofeffect = 256,
-				energypershot = 90000,
+				--energypershot = 90000,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,

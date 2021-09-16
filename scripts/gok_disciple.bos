@@ -307,23 +307,23 @@ RestoreAfterDelay()
 
 // LASER GUN
 
-AimFromPrimary(PieceNum)
+AimFromWeapon3(PieceNum)
 {
 	PieceNum = pitchturret;
 }
 
-QueryPrimary(PieceNum)
+QueryWeapon3(PieceNum)
 {
 	PieceNum = fire;
 }
 
-FirePrimary()
+FireWeapon3()
 {
 	sleep 150;
 	GunAttack = TRUE;
 }
 
-AimPrimary(Heading, Pitch)
+AimWeapon3(Heading, Pitch)
 {
 	signal SIG_AIM_GUN;
 	set-signal-mask SIG_AIM_GUN;
@@ -430,17 +430,17 @@ AimPrimary(Heading, Pitch)
 
 //// BLADE ////
 
-AimFromTertiary(PieceNum)
+AimFromWeapon1(PieceNum)
 {
 	PieceNum = torso;
 }
 
-QueryTertiary(PieceNum)
+QueryWeapon1(PieceNum)
 {
 	PieceNum = hit;
 }
 
-AimTertiary(Heading, Pitch)
+AimWeapon1(Heading, Pitch)
 {
 	GunAttack = FALSE;
 	
@@ -524,7 +524,7 @@ AimTertiary(Heading, Pitch)
 	}
 }
 
-FireTertiary()
+FireWeapon1()
 {
 	//Hard targets in close combat!
 		

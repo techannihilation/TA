@@ -20,7 +20,6 @@ local FIRE_WEAPONS = {
   ["corraven_exp_heavyrocket"] = true,
   ["corraven1_exp_heavyrocket1"] = true,
   ["corsb_seaadvbomb"] = true,
-  ["corpyrox_pyro_rocket"] = true,
 }
 
 local DISTORT_WEAPONS = {

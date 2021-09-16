@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, pad, bridge, system2, system3, system2b, system3b;
+piece  base, body, land1, bridge, system2, system3, system2b, system3b;
 
 static-var  spray, statechg_DesiredState, statechg_StateChanging;
 
@@ -47,9 +47,9 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
-QueryLandingPad(Func_Var_1, Func_Var_2)
+QueryLandingPad(Func_Var_1)
 {
-	Func_Var_1 = pad;
+	Func_Var_1 = land1;
 }
 
 QueryNanoPiece(piecenum)

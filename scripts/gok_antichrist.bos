@@ -361,19 +361,19 @@ RestoreAfterDelay()
 	GunAttack = FALSE;
 }
 
-AimFromPrimary(piecenum)
+AimFromWeapon2(piecenum)
 {
 	piecenum = larm;
 }
 
-QueryPrimary(piecenum)
+QueryWeapon2(piecenum)
 {
 	piecenum = lfire;
 }
 
 // LASER GUN
 
-AimPrimary(heading, pitch)
+AimWeapon2(heading, pitch)
 {
 	signal SIG_AIM_GUN;
 	set-signal-mask SIG_AIM_GUN;
@@ -403,7 +403,7 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
+FireWeapon2()
 {
 	sleep 150;
 	GunAttack = TRUE;
@@ -411,17 +411,17 @@ FirePrimary()
 
 // BLADE
 
-AimFromSecondary(piecenum)
+AimFromWeapon1(piecenum)
 {
 	piecenum = torso;
 }
 
-QuerySecondary(piecenum)
+QueryWeapon1(piecenum)
 {
 	piecenum = hit;
 }
 
-AimSecondary(heading, pitch)
+AimWeapon1(heading, pitch)
 {
 	GunAttack = FALSE;
 		
@@ -493,7 +493,7 @@ AimSecondary(heading, pitch)
 	}
 }
 
-FireSecondary()
+FireWeapon1()
 {
 	MeleeAttack = TRUE;
 	if( AttackType == 1 )

@@ -520,16 +520,6 @@ local morphDefs = {
 		time = 5,
 		xp = 0.25,
 	},
-	corpyro = {
-		into = 'corpyrox',
-		time = 30,
-		xp = 0.25,
-	},
-	corpyrox = {
-		into = 'cordem',
-		time = 45,
-		xp = 0.05,
-	},
 	corstorm = {
 		into = 'corrock',
 		time = 10,
@@ -1585,6 +1575,11 @@ local morphDefs = {
 		into = 'gok_antichrist',
 		xp = 0.25,
 		time = 45,
+	},
+	gok_hellfire = {
+		into = 'gok_demonfire',
+		time = 45,
+		xp = 0.10,
 	},
 }
 

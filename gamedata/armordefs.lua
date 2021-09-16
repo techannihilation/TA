@@ -383,7 +383,7 @@ return {
 	},
 	flamethrowers = {
 		"corpyro",
-		"corpyrox",
+		"gok_hellfire",
 		"tllburner",
 		"tlllft",
 		"cormaw",

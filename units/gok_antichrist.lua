@@ -175,7 +175,7 @@ return {
 		weapondefs = {
 			blade = {
 				areaofeffect = 196,
-				beamtime = 0.10,
+				beamtime = 0.25,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -184,14 +184,14 @@ return {
 				impactonly = 1,
 				name = "Blade",
 				noselfdamage = true,
-				range = 125,
+				range = 150,
 				reloadtime = 1,
 				rgbcolor = "0.0 0.0 0.0",
 				rgbcolor2= "0.0 0.0 0.0",
 				soundstart = "gokzealhit",
 				soundtrigger = 1,
 				turret = true,
-				weapontype = "BeamLaser",
+				weapontype = "LaserCannon",
 				weaponvelocity = 2000,
 				damage = {
 					default = 666,
@@ -263,11 +263,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "GOK_LASER",
-				onlytargetcategory = "SURFACE VTOL",
+				def = "BLADE",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "BLADE",
+				def = "GOK_LASER",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "COM_SHIELD",

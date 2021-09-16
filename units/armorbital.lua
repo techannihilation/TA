@@ -1,7 +1,7 @@
 return {
 	armorbital = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 1758043,
@@ -70,7 +70,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 4387,
-				description = "PeeWee Cannon Debris",
+				description = "Orbital Cannon Debris",
 				energy = 0,
 				footprintx = 3,
 				footprintz = 3,
@@ -117,7 +117,7 @@ return {
 			},
 		},
 		weapondefs = {
-			peewee_cannon = {
+			zeus_cannon = {
 				accuracy = 500,
 				areaofeffect = 20,
 				avoidfeature = false,
@@ -134,7 +134,7 @@ return {
 				commandfire = true,
 				metalpershot = 452,
 				model = "weapon_unitshell",
-				name = "PeeWee Cannon",
+				name = "Zeus Cannon",
 				noselfdamage = true,
 				range = 12000,
 				reloadtime = 0.5,
@@ -156,7 +156,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "PEEWEE_CANNON",
+				def = "zeus_cannon",
 				onlytargetcategory = "SURFACE",
 			},
 		},

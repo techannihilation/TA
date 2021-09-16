@@ -125,7 +125,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "MED_EMG",
+				def = "GOK_LASER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

@@ -117,7 +117,7 @@ return {
 			gok_starburst = {
 				areaofeffect = 64,
 				avoidfeature = false,
-				cegtag = "talonstartbursttrail",
+				cegtag = "gokstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

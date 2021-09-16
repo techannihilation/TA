@@ -133,14 +133,14 @@ return {
 				impactonly = 1,
 				name = "Blade",
 				noselfdamage = true,
-				range = 75,
+				range = 100,
 				reloadtime = 1,
 				rgbcolor = "0.0 0.0 0.0",
 				rgbcolor2= "0.0 0.0 0.0",
 				soundstart = "gokzealhit",
 				soundtrigger = 1,
 				turret = true,
-				weapontype = "BeamLaser",
+				weapontype = "LaserCannon",
 				weaponvelocity = 2000,
 				damage = {
 					default = 200,
@@ -185,11 +185,11 @@ return {
 		},
 		weapons = {
 		[1] = {
-			def = "GOK_LASER",
+			def = "BLADE",
 			onlytargetcategory = "SURFACE",
 		},
 		[3] = {
-				def = "BLADE",
+				def = "GOK_LASER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

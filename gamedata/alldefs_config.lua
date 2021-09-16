@@ -1031,7 +1031,6 @@ local unitheight = {
     ["corpun"] = 28,
     ["corpunk"] = 12,
     ["corpyro"] = 38,
-    ["corpyrox"] = 71,
     ["corrad"] = 100,
     ["corrad1"] = 100,
     ["corrag"] = 23,
