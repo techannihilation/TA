@@ -58,9 +58,10 @@ return {
 		buildoptions = {
 			[1] = "gok_acv",
 			[2] = "gok_engineerk",
-			--[3] = "gok_herison",
-			--[4] = "gok_husher",
-			--[5] = "gok_wolf",
+			[3] = "gok_mjam",
+			[4] = "gok_mrad",
+			[5] = "gok_valkyrie",
+			[6] = "gok_zealot",
 			--[6] = "gok_mastiff",
 			--[7] = "gok_crusader",
 			--[8] = "gok_striker",

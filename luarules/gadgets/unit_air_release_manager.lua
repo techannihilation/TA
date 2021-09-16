@@ -19,6 +19,7 @@ local paraTroppers = {
 		[UnitDefNames["armmav"].id] = true,
 		[UnitDefNames["tlltraq"].id] = true,
     [UnitDefNames["talon_berserker"].id] = true,
+    [UnitDefNames["gok_zealot"].id] = true,
 	}
 
 

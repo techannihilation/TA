@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 215,
 		builder = false,
 		buildpic = "corpyro.dds",
-		buildtime = 5050,
+		buildtime = 5100,
 		canattack = true,
 		canguard = true,
 		canmove = true,

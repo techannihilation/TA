@@ -38,8 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Unobtanium ",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_unobtanium",
 		onoffable = true,
 		radardistancejam = 460,

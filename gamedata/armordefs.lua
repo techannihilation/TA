@@ -305,7 +305,6 @@ return {
 		"armorco",
 		"arm_furie",
 		"armbanth",
-		"armjugg",
 		"armraz",
 		"armmarauder",
 		"armshock",

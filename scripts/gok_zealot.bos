@@ -1,0 +1,639 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, torsoaim, torso, backpack, head, uppertorso, lshoulder,
+       luparmy, luparmx, luparmz, larm, lelbow, rarmaim, rshoulder, ruparmy,
+       ruparmx, ruparmz, rarm, relbow, handx, grip, naginata,
+       lleg, lboot, rleg, rboot, loinplate, damagepoint;
+
+static-var  bMoving, bAiming, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, bMoving0;
+
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = bMoving;
+		aiming = bAiming;
+		if( moving )
+		{
+			if( aiming )
+			{
+				Static_Var_3 = 1;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <120.>;
+					turn lboot to x-axis <30.> speed <120.>;
+					turn rleg to x-axis <-75.> speed <360.>;
+					turn rboot to x-axis <45.> speed <300.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn torso to x-axis <0.> speed <20.>;
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <120.>;
+					turn lboot to x-axis <15.> speed <60.>;
+					turn rleg to x-axis <-90.> speed <60.>;
+					turn rboot to x-axis <90.> speed <180.>;
+					move pelvis to y-axis [0.] speed [12.];
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <120.>;
+					turn lboot to x-axis <30.> speed <60.>;
+					turn rleg to x-axis <-15.> speed <300.>;
+					turn rboot to x-axis <30.> speed <240.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn torso to x-axis <15.> speed <60.>;
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <360.>;
+					turn lboot to x-axis <45.> speed <60.>;
+					turn rleg to x-axis <15.> speed <120.>;
+					turn rboot to x-axis <30.> speed <120.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn torso to x-axis <0.> speed <20.>;
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <60.>;
+					turn lboot to x-axis <90.> speed <180.>;
+					turn rleg to x-axis <45.> speed <120.>;
+					turn rboot to x-axis <15.> speed <60.>;
+					move pelvis to y-axis [0.] speed [12.];
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <300.>;
+					turn lboot to x-axis <30.> speed <240.>;
+					turn rleg to x-axis <15.> speed <120.>;
+					turn rboot to x-axis <-30.> speed <180.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn torso to x-axis <15.> speed <60.>;
+					sleep 250;
+				}
+			}
+			if( !aiming )
+			{
+				Static_Var_3 = 0;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <120.>;
+					turn lboot to x-axis <30.> speed <120.>;
+					turn rleg to x-axis <-75.> speed <360.>;
+					turn rboot to x-axis <45.> speed <300.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn larm to x-axis <-30.> speed <40.>;
+					turn rarm to x-axis <-30.> speed <40.>;
+					turn luparmx to x-axis <-15.> speed <30.>;
+					turn ruparmx to x-axis <15.> speed <30.>;
+					turn lshoulder to x-axis <-15.> speed <30.>;
+					turn rshoulder to x-axis <15.> speed <30.>;
+					turn torso to x-axis <0.> speed <20.>;
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <120.>;
+					turn lboot to x-axis <15.> speed <60.>;
+					turn rleg to x-axis <-90.> speed <60.>;
+					turn rboot to x-axis <90.> speed <180.>;
+					move pelvis to y-axis [0.] speed [12.];
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <120.>;
+					turn lboot to x-axis <30.> speed <60.>;
+					turn rleg to x-axis <-15.> speed <300.>;
+					turn rboot to x-axis <30.> speed <240.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn larm to x-axis <-10.> speed <80.>;
+					turn rarm to x-axis <-10.> speed <80.>;
+					turn luparmx to x-axis <15.> speed <30.>;
+					turn ruparmx to x-axis <-15.> speed <30.>;
+					turn lshoulder to x-axis <15.> speed <30.>;
+					turn rshoulder to x-axis <-15.> speed <30.>;
+					turn torso to x-axis <15.> speed <60.>;
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <360.>;
+					turn lboot to x-axis <45.> speed <60.>;
+					turn rleg to x-axis <15.> speed <120.>;
+					turn rboot to x-axis <30.> speed <120.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn larm to x-axis <-30.> speed <40.>;
+					turn rarm to x-axis <-30.> speed <40.>;
+					turn luparmx to x-axis <15.> speed <30.>;
+					turn ruparmx to x-axis <-15.> speed <30.>;
+					turn lshoulder to x-axis <15.> speed <30.>;
+					turn rshoulder to x-axis <-15.> speed <30.>;
+					turn torso to x-axis <0.> speed <20.>;
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <60.>;
+					turn lboot to x-axis <90.> speed <180.>;
+					turn rleg to x-axis <45.> speed <120.>;
+					turn rboot to x-axis <15.> speed <60.>;
+					move pelvis to y-axis [0.] speed [12.];
+					sleep 250;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <300.>;
+					turn lboot to x-axis <30.> speed <240.>;
+					turn rleg to x-axis <15.> speed <120.>;
+					turn rboot to x-axis <-30.> speed <180.>;
+					move pelvis to y-axis [3.] speed [12.];
+					turn larm to x-axis <-10.> speed <80.>;
+					turn rarm to x-axis <-10.> speed <80.>;
+					turn luparmx to x-axis <-15.> speed <30.>;
+					turn ruparmx to x-axis <15.> speed <30.>;
+					turn lshoulder to x-axis <-15.> speed <30.>;
+					turn rshoulder to x-axis <15.> speed <30.>;
+					turn torso to x-axis <15.> speed <60.>;
+					sleep 250;
+				}
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+				turn lleg to x-axis <0.> speed <180.>;
+				turn lboot to x-axis <0.> speed <180.>;
+				turn rleg to x-axis <0.> speed <180.>;
+				turn rboot to x-axis <0.> speed <180.>;
+				move pelvis to y-axis [0.] speed [8.];
+				turn torso to x-axis <0.> speed <20.>;
+				if( !aiming )
+				{
+					turn larm to x-axis <0.> speed <60.>;
+					turn rarm to x-axis <0.> speed <60.>;
+					turn luparmx to x-axis <0.> speed <60.>;
+					turn ruparmx to x-axis <0.> speed <60.>;
+					turn lshoulder to x-axis <0.> speed <60.>;
+					turn rshoulder to x-axis <0.> speed <60.>;
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+Attack1()
+{
+	set-signal-mask 0;
+	Static_Var_5 = 1;
+	turn torso to y-axis <-45.> speed <180.>;
+	turn lshoulder to x-axis <-45.> speed <180.>;
+	turn luparmy to y-axis <-45.> speed <180.>;
+	turn luparmx to x-axis <-45.> speed <180.>;
+	turn luparmz to z-axis <0.> speed <0.>;
+	turn larm to x-axis <-90.> speed <360.>;
+	turn rshoulder to x-axis <45.> speed <180.>;
+	turn ruparmy to y-axis <45.> speed <180.>;
+	turn ruparmx to x-axis <45.> speed <180.>;
+	turn ruparmz to z-axis <0.> speed <0.>;
+	turn rarm to x-axis <-90.> speed <360.>;
+	turn handx to x-axis <45.> speed <180.>;
+	move grip to z-axis [3.5] speed [16.];
+	sleep 250;
+	turn torso to y-axis <45.> speed <360.>;
+	turn lshoulder to x-axis <45.> speed <360.>;
+	turn luparmy to y-axis <0.> speed <180.>;
+	turn luparmx to x-axis <45.> speed <360.>;
+	turn luparmz to z-axis <15.> speed <60.>;
+	turn larm to x-axis <-120.> speed <120.>;
+	turn rshoulder to x-axis <-60.> speed <420.>;
+	turn ruparmy to y-axis <-45.> speed <360.>;
+	turn ruparmx to x-axis <-60.> speed <420.>;
+	turn rarm to x-axis <0.> speed <360.>;
+	turn handx to x-axis <60.> speed <60.>;
+	move grip to z-axis [5.] speed [8.];
+	sleep 250;
+	turn torso to y-axis <-15.> speed <180.>;
+	turn lshoulder to x-axis <-45.> speed <360.>;
+	turn luparmy to y-axis <-45.> speed <180.>;
+	turn luparmx to x-axis <-45.> speed <360.>;
+	turn luparmz to z-axis <0.> speed <60.>;
+	turn larm to x-axis <-30.> speed <360.>;
+	turn rshoulder to x-axis <30.> speed <360.>;
+	turn ruparmy to y-axis <15.> speed <240.>;
+	turn ruparmx to x-axis <30.> speed <360.>;
+	turn rarm to x-axis <-45.> speed <180.>;
+	turn handx to x-axis <0.> speed <240.>;
+	move grip to z-axis [0.] speed [24.];
+	sleep 250;
+	turn torso to y-axis <0.> speed <60.>;
+	turn lshoulder to x-axis <0.> speed <180.>;
+	turn luparmy to y-axis <0.> speed <180.>;
+	turn luparmx to x-axis <0.> speed <180.>;
+	turn larm to x-axis <0.> speed <120.>;
+	turn rshoulder to x-axis <0.> speed <120.>;
+	turn ruparmy to y-axis <0.> speed <60.>;
+	turn ruparmx to x-axis <0.> speed <120.>;
+	turn rarm to x-axis <0.> speed <180.>;
+	Static_Var_4 = 0;
+}
+
+Attack2()
+{
+	set-signal-mask 0;
+	Static_Var_5 = 2;
+	turn torso to y-axis <-45.> speed <180.>;
+	turn lshoulder to x-axis <-45.> speed <180.>;
+	turn luparmy to y-axis <-45.> speed <180.>;
+	turn luparmx to x-axis <-45.> speed <180.>;
+	turn luparmz to z-axis <0.> speed <0.>;
+	turn larm to x-axis <-90.> speed <360.>;
+	turn rshoulder to x-axis <-90.> speed <360.>;
+	turn ruparmy to y-axis <40.> speed <160.>;
+	turn ruparmx to x-axis <-135.> speed <540.>;
+	turn ruparmz to z-axis <0.> speed <0.>;
+	turn rarm to x-axis <-90.> speed <360.>;
+	turn handx to x-axis <30.> speed <120.>;
+	move grip to z-axis [5.] speed [24.];
+	sleep 250;
+	turn torso to y-axis <15.> speed <240.>;
+	turn lshoulder to x-axis <45.> speed <360.>;
+	turn luparmy to y-axis <0.> speed <180.>;
+	turn luparmx to x-axis <45.> speed <360.>;
+	turn luparmz to z-axis <15.> speed <60.>;
+	turn larm to x-axis <-120.> speed <120.>;
+	turn rshoulder to x-axis <-60.> speed <120.>;
+	turn ruparmy to y-axis <-15.> speed <220.>;
+	turn ruparmx to x-axis <-60.> speed <300.>;
+	turn ruparmz to z-axis <-10.> speed <40.>;
+	turn rarm to x-axis <0.> speed <360.>;
+	turn handx to x-axis <60.> speed <240.>;
+	sleep 250;
+	turn torso to y-axis <-15.> speed <120.>;
+	turn lshoulder to x-axis <-45.> speed <360.>;
+	turn luparmy to y-axis <-45.> speed <180.>;
+	turn luparmx to x-axis <-45.> speed <360.>;
+	turn luparmz to z-axis <0.> speed <60.>;
+	turn larm to x-axis <-30.> speed <360.>;
+	turn rshoulder to x-axis <-30.> speed <120.>;
+	turn ruparmy to y-axis <15.> speed <120.>;
+	turn ruparmx to x-axis <-30.> speed <120.>;
+	turn ruparmz to z-axis <0.> speed <40.>;
+	turn rarm to x-axis <-45.> speed <180.>;
+	turn handx to x-axis <75.> speed <60.>;
+	move grip to z-axis [0.] speed [24.];
+	sleep 250;
+	turn torso to y-axis <0.> speed <60.>;
+	turn lshoulder to x-axis <0.> speed <180.>;
+	turn luparmy to y-axis <0.> speed <180.>;
+	turn luparmx to x-axis <0.> speed <180.>;
+	turn larm to x-axis <0.> speed <120.>;
+	turn rshoulder to x-axis <0.> speed <120.>;
+	turn ruparmy to y-axis <0.> speed <60.>;
+	turn ruparmx to x-axis <0.> speed <120.>;
+	turn rarm to x-axis <0.> speed <180.>;
+	turn handx to x-axis <0.> speed <300.>;
+	Static_Var_4 = 0;
+}
+
+Attack3()
+{
+	set-signal-mask 0;
+	Static_Var_5 = 3;
+	turn torso to y-axis <45.> speed <180.>;
+	turn lshoulder to x-axis <-15.> speed <60.>;
+	turn luparmy to y-axis <0.> speed <0.>;
+	turn luparmx to x-axis <-15.> speed <60.>;
+	turn luparmz to z-axis <15.> speed <60.>;
+	turn larm to x-axis <-45.> speed <180.>;
+	turn rshoulder to x-axis <-30.> speed <120.>;
+	turn ruparmy to y-axis <60.> speed <240.>;
+	turn ruparmx to x-axis <0.> speed <0.>;
+	turn ruparmz to z-axis <60.> speed <240.>;
+	turn rarm to x-axis <-60.> speed <240.>;
+	turn handx to x-axis <0.> speed <0.>;
+	move grip to z-axis [1.65] speed [8.];
+	sleep 250;
+	turn torso to y-axis <-30.> speed <300.>;
+	turn lshoulder to x-axis <30.> speed <180.>;
+	turn luparmy to y-axis <45.> speed <180.>;
+	turn luparmx to x-axis <0.> speed <60.>;
+	turn luparmz to z-axis <-45.> speed <240.>;
+	turn larm to x-axis <0.> speed <180.>;
+	turn rshoulder to x-axis <45.> speed <300.>;
+	turn ruparmy to y-axis <-45.> speed <420.>;
+	turn ruparmz to z-axis <75.> speed <60.>;
+	turn rarm to x-axis <0.> speed <240.>;
+	turn handx to x-axis <60.> speed <240.>;
+	move grip to z-axis [5.] speed [32.];
+	sleep 250;
+	turn torso to y-axis <-45.> speed <60.>;
+	turn lshoulder to x-axis <15.> speed <60.>;
+	turn luparmy to y-axis <0.> speed <180.>;
+	turn luparmx to x-axis <15.> speed <60.>;
+	turn luparmz to z-axis <-15.> speed <120.>;
+	turn rshoulder to x-axis <30.> speed <60.>;
+	turn ruparmy to y-axis <30.> speed <300.>;
+	turn ruparmx to x-axis <30.> speed <120.>;
+	turn ruparmz to z-axis <0.> speed <300.>;
+	turn rarm to x-axis <-45.> speed <180.>;
+	turn handx to x-axis <0.> speed <240.>;
+	move grip to z-axis [3.5] speed [8.];
+	sleep 250;
+	turn torso to y-axis <0.> speed <180.>;
+	turn lshoulder to x-axis <0.> speed <60.>;
+	turn luparmx to x-axis <0.> speed <60.>;
+	turn luparmz to z-axis <0.> speed <60.>;
+	turn rshoulder to x-axis <0.> speed <120.>;
+	turn ruparmy to y-axis <0.> speed <120.>;
+	turn ruparmx to x-axis <0.> speed <120.>;
+	turn rarm to x-axis <0.> speed <180.>;
+	move grip to z-axis [0.] speed [16.];
+	Static_Var_4 = 0;
+}
+
+Attack4()
+{
+	set-signal-mask 0;
+	Static_Var_5 = 4;
+	turn torso to y-axis <-45.> speed <180.>;
+	turn lshoulder to x-axis <-45.> speed <180.>;
+	turn luparmy to y-axis <-45.> speed <180.>;
+	turn luparmx to x-axis <-45.> speed <180.>;
+	turn luparmz to z-axis <0.> speed <0.>;
+	turn larm to x-axis <-90.> speed <360.>;
+	turn rshoulder to x-axis <0.> speed <0.>;
+	turn ruparmy to y-axis <-90.> speed <720.>;
+	turn ruparmx to x-axis <0.> speed <0.>;
+	turn ruparmz to z-axis <0.> speed <0.>;
+	turn rarm to x-axis <-90.> speed <720.>;
+	turn handx to x-axis <60.> speed <480.>;
+	move grip to z-axis [3.5] speed [32.];
+	sleep 125;
+	turn rshoulder to x-axis <0.> speed <0.>;
+	turn ruparmy to y-axis <-180.> speed <720.>;
+	turn ruparmx to x-axis <0.> speed <0.>;
+	turn ruparmz to z-axis <-60.> speed <480.>;
+	turn rarm to x-axis <-30.> speed <480.>;
+	turn handx to x-axis <45.> speed <120.>;
+	move grip to z-axis [5.] speed [16.];
+	sleep 125;
+	turn torso to y-axis <60.> speed <420.>;
+	turn lshoulder to x-axis <45.> speed <360.>;
+	turn luparmy to y-axis <30.> speed <300.>;
+	turn luparmx to x-axis <0.> speed <180.>;
+	turn luparmz to z-axis <-60.> speed <240.>;
+	turn larm to x-axis <0.> speed <360.>;
+	turn rshoulder to x-axis <-90.> speed <360.>;
+	turn ruparmy to y-axis <-90.> speed <360.>;
+	turn ruparmz to z-axis <-120.> speed <240.>;
+	turn rarm to x-axis <0.> speed <120.>;
+	turn handx to x-axis <60.> speed <60.>;
+	sleep 250;
+	turn torso to y-axis <15.> speed <180.>;
+	turn luparmy to y-axis <0.> speed <120.>;
+	turn luparmx to x-axis <45.> speed <180.>;
+	turn luparmz to z-axis <0.> speed <240.>;
+	turn larm to x-axis <-45.> speed <180.>;
+	turn rshoulder to x-axis <-30.> speed <240.>;
+	turn ruparmy to y-axis <45.> speed <540.>;
+	turn ruparmx to x-axis <-30.> speed <120.>;
+	turn ruparmz to z-axis <0.> speed <480.>;
+	turn rarm to x-axis <-15.> speed <60.>;
+	turn handx to x-axis <15.> speed <180.>;
+	move grip to z-axis [0.] speed [24.];
+	sleep 250;
+	turn torso to y-axis <0.> speed <60.>;
+	turn lshoulder to x-axis <0.> speed <180.>;
+	turn luparmx to x-axis <0.> speed <180.>;
+	turn luparmz to z-axis <0.> speed <0.>;
+	turn larm to x-axis <0.> speed <180.>;
+	turn rshoulder to x-axis <0.> speed <120.>;
+	turn ruparmy to y-axis <0.> speed <180.>;
+	turn ruparmx to x-axis <0.> speed <120.>;
+	turn rarm to x-axis <0.> speed <60.>;
+	turn handx to x-axis <0.> speed <60.>;
+	Static_Var_4 = 0;
+}
+
+RandomAttack(Func_Var_1)
+{
+	if( Static_Var_5 <= 1 )
+	{
+		Func_Var_1 = Rand( 1, 3 );
+		if( Func_Var_1 <= 1 )
+		{
+			start-script Attack2();
+			return (0);
+		}
+		if( Func_Var_1 <= 2 )
+		{
+			start-script Attack3();
+			return (0);
+		}
+		start-script Attack4();
+		return (0);
+	}
+	if( Static_Var_5 <= 2 )
+	{
+		Func_Var_1 = Rand( 1, 3 );
+		if( Func_Var_1 <= 1 )
+		{
+			start-script Attack1();
+			return (0);
+		}
+		if( Func_Var_1 <= 2 )
+		{
+			start-script Attack3();
+			return (0);
+		}
+		start-script Attack4();
+		return (0);
+	}
+	if( Static_Var_5 <= 3 )
+	{
+		Func_Var_1 = Rand( 1, 3 );
+		if( Func_Var_1 <= 1 )
+		{
+			start-script Attack1();
+			return (0);
+		}
+		if( Func_Var_1 <= 2 )
+		{
+			start-script Attack2();
+			return (0);
+		}
+		start-script Attack4();
+		return (0);
+	}
+	Func_Var_1 = Rand( 1, 3 );
+	if( Func_Var_1 <= 1 )
+	{
+		start-script Attack1();
+		return (0);
+	}
+	if( Func_Var_1 <= 2 )
+	{
+		start-script Attack2();
+		return (0);
+	}
+	start-script Attack3();
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = 0;
+	bAiming = 0;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	Static_Var_5 = 5;
+	Static_Var_6 = 0;
+	Static_Var_7 = 0;
+	Static_Var_8 = 0;
+	Static_Var_9 = 400;
+	bMoving0 = 400;
+	start-script SmokeUnit();	
+	Static_Var_6 = 1;
+	Static_Var_7 = 1;
+	Static_Var_8 = 600;
+	set ARMORED to 1;
+
+}
+
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = pelvis;
+}
+
+RestoreAfterDelay()
+{
+	sleep 2500;
+	set-signal-mask 0;
+	bAiming = 0;
+	Static_Var_4 = 0;
+	turn torsoaim to y-axis <0.> speed <90.>;
+	turn rarmaim to x-axis <0.> speed <60.>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = head;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = damagepoint;
+}
+
+AimPrimary(heading, pitch)
+{
+	bAiming = 1;
+	signal 2;
+	set-signal-mask 0;
+	set-signal-mask 2;
+	turn torsoaim to y-axis heading speed <480.>;
+	turn rarmaim to x-axis <0.> - pitch speed <240.>;
+	wait-for-turn torsoaim around y-axis;
+	wait-for-turn rarmaim around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( Static_Var_4 == 0 )
+	{
+		Static_Var_4 = 1;
+		start-script RandomAttack();
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode torso type NOHEATCLOUD;
+		explode rshoulder type NOHEATCLOUD;
+		explode lshoulder type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode torso type NOHEATCLOUD;
+		explode rshoulder type FALL | NOHEATCLOUD;
+		explode lshoulder type FALL | NOHEATCLOUD;
+		explode rarm type FALL | NOHEATCLOUD;
+		explode larm type FALL | NOHEATCLOUD;
+		explode rboot type FALL | NOHEATCLOUD;
+		explode lboot type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode torso type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rshoulder type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lshoulder type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode larm type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rboot type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lboot type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode head type NOHEATCLOUD;
+	return (corpsetype);
+}

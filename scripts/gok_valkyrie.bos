@@ -1,0 +1,944 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lleg, lboot, lfoot, rleg, rboot, rfoot,
+       torso, headturn, head, larm, larmrecoil, larmz, lgunrecoil, lgun,
+       lfire, lflare, rarm, rarmrecoil, rarmz, rgunrecoil, rgun, rfire,
+       rflare, lwing, lwing1, lwing2, lwing3, lwing4, rwing, rwing1,
+       rwing2, rwing3, rwing4, engine, thrustturn, thrust, realgem, aim;
+
+static-var  bMoving, bAiming, bJumping, gun_1, Static_Var_3, Static_Var_4, Static_Var_5;
+
+
+BeginJump()
+{
+	bJumping = 1;
+	turn larm to x-axis <30.> speed <400.>;
+	turn rarm to x-axis <30.> speed <400.>;
+	turn lboot to x-axis <30.> speed <400.>;
+	turn rboot to x-axis <30.> speed <400.>;
+	sleep 500;
+	turn larm to x-axis <-90.> speed <200.>;
+	turn rarm to x-axis <-45.> speed <200.>;
+	turn lboot to x-axis <-30.> speed <200.>;
+	turn lleg to x-axis <110.> speed <200.>;
+	turn rboot to z-axis <-20.> speed <200.>;
+	turn rboot to x-axis <-80.> speed <200.>;
+	turn rleg to x-axis <-10.> speed <200.>;
+	
+	turn lwing to y-axis <-90.> speed <144.>;
+	turn rwing to y-axis <90.> speed <144.>;
+	
+}
+
+EndJump()
+{
+	bJumping = 0;
+	turn larm to x-axis <0.> speed <900.>;
+	turn rarm to x-axis <0.> speed <900.>;
+	turn lboot to x-axis <0.> speed <900.>;
+	turn rboot to x-axis <0.> speed <900.>;
+	turn rboot to z-axis <0.> speed <900.>;
+	turn rleg to x-axis <0.> speed <900.>;
+	turn lleg to x-axis <0.> speed <900.>;
+	turn lwing to y-axis <-72.> speed <144.>;
+	turn rwing to y-axis <72.> speed <144.>;
+}
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		if( !bJumping )
+		{
+			if( bMoving )
+			{
+				//turn loin1 to x-axis <20.> speed <20.>;
+				//turn loin2 to x-axis <20.> speed <20.>;
+				if( Static_Var_5 == 1 )
+				{
+					hide thrust;
+					turn lleg to x-axis <30.> speed <125.>;
+					turn lboot to x-axis <-10.> speed <50.>;
+					turn lfoot to x-axis <-20.> speed <100.>;
+					turn rleg to x-axis <-60.> speed <300.>;
+					turn rboot to x-axis <100.> speed <50.>;
+					turn rfoot to x-axis <0.> speed <0.>;
+					move pelvis to y-axis [1.] speed [8.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					if( !bAiming )
+					{
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <-20.> speed <13.>;
+						turn rarm to x-axis <20.> speed <13.>;
+						turn lgun to x-axis <15.> speed <50.>;
+						turn rgun to x-axis <15.> speed <50.>;
+						turn torso to y-axis <-10.> speed <50.>;
+						turn head to y-axis <15.> speed <75.>;
+					}
+				}
+				if( Static_Var_5 == 2 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <5.> speed <30.>;
+					turn larmz to z-axis <-10.> speed <60.>;
+					turn rarmz to z-axis <10.> speed <60.>;
+					turn larm to x-axis <15.> speed <120.>;
+					turn rarm to x-axis <15.> speed <120.>;
+					turn lgun to x-axis <30.> speed <60.>;
+					turn rgun to x-axis <30.> speed <60.>;
+				}
+				if( Static_Var_5 == 3 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <-10.> speed <30.>;
+					turn larmz to z-axis <-30.> speed <60.>;
+					turn rarmz to z-axis <30.> speed <60.>;
+					turn larm to x-axis <-15.> speed <120.>;
+					turn rarm to x-axis <-15.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 == 4 AND bAiming == 0 )
+				{
+					turn pelvis to x-axis <15.> speed <30.>;
+					turn larmz to z-axis <0.> speed <60.>;
+					turn rarmz to z-axis <0.> speed <60.>;
+					turn larm to x-axis <5.> speed <120.>;
+					turn rarm to x-axis <5.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 >= 2 )
+				{
+					show thrust;
+					turn lwing to y-axis <-72.> speed <288.>;
+					turn rwing to y-axis <72.> speed <288.>;
+					turn lwing1 to x-axis <0.> speed <140.>;
+					turn lwing2 to x-axis <0.> speed <140.>;
+					turn lwing3 to x-axis <0.> speed <140.>;
+					turn lwing4 to x-axis <0.> speed <140.>;
+					turn rwing1 to x-axis <0.> speed <140.>;
+					turn rwing2 to x-axis <0.> speed <140.>;
+					turn rwing3 to x-axis <0.> speed <140.>;
+					turn rwing4 to x-axis <0.> speed <140.>;
+					turn lleg to x-axis <-30.> speed <150.>;
+					turn lboot to x-axis <60.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <10.> speed <150.>;
+					turn rboot to x-axis <10.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					if( Static_Var_5 == 3 )
+					{
+						turn lleg to x-axis <-60.> speed <150.>;
+						turn rleg to x-axis <-20.> speed <150.>;
+						//turn loin1 to x-axis <35.> speed <120.>;
+						//turn loin2 to x-axis <40.> speed <120.>;
+					}
+					if( Static_Var_5 == 4 AND bAiming == 1 )
+					{
+						hide thrust;
+					}
+				}
+				sleep 200;
+			}
+			if( bMoving )
+			{
+				//turn loin1 to x-axis <30.> speed <40.>;
+				//turn loin2 to x-axis <30.> speed <40.>;
+				if( Static_Var_5 == 1 )
+				{
+					hide thrust;
+					turn lleg to x-axis <50.> speed <100.>;
+					turn lboot to x-axis <20.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <-40.> speed <100.>;
+					turn rboot to x-axis <10.> speed <450.>;
+					turn rfoot to x-axis <20.> speed <100.>;
+					move pelvis to y-axis [-1.] speed [10.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					if( !bAiming )
+					{
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <-20.> speed <6.>;
+						turn rarm to x-axis <20.> speed <6.>;
+					}
+				}
+				if( Static_Var_5 == 2 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <5.> speed <30.>;
+					turn larmz to z-axis <-10.> speed <60.>;
+					turn rarmz to z-axis <10.> speed <60.>;
+					turn larm to x-axis <15.> speed <120.>;
+					turn rarm to x-axis <15.> speed <120.>;
+					turn lgun to x-axis <30.> speed <60.>;
+					turn rgun to x-axis <30.> speed <60.>;
+				}
+				if( Static_Var_5 == 3 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <-10.> speed <30.>;
+					turn larmz to z-axis <-30.> speed <60.>;
+					turn rarmz to z-axis <30.> speed <60.>;
+					turn larm to x-axis <-15.> speed <120.>;
+					turn rarm to x-axis <-15.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 == 4 AND bAiming == 0 )
+				{
+					turn pelvis to x-axis <15.> speed <30.>;
+					turn larmz to z-axis <0.> speed <60.>;
+					turn rarmz to z-axis <0.> speed <60.>;
+					turn larm to x-axis <5.> speed <120.>;
+					turn rarm to x-axis <5.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 >= 2 )
+				{
+					show thrust;
+					turn lwing to y-axis <-72.> speed <288.>;
+					turn rwing to y-axis <72.> speed <288.>;
+					turn lwing1 to x-axis <0.> speed <140.>;
+					turn lwing2 to x-axis <0.> speed <140.>;
+					turn lwing3 to x-axis <0.> speed <140.>;
+					turn lwing4 to x-axis <0.> speed <140.>;
+					turn rwing1 to x-axis <0.> speed <140.>;
+					turn rwing2 to x-axis <0.> speed <140.>;
+					turn rwing3 to x-axis <0.> speed <140.>;
+					turn rwing4 to x-axis <0.> speed <140.>;
+					turn lleg to x-axis <-30.> speed <150.>;
+					turn lboot to x-axis <60.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <10.> speed <150.>;
+					turn rboot to x-axis <10.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					if( Static_Var_5 == 3 )
+					{
+						turn lleg to x-axis <-60.> speed <150.>;
+						turn rleg to x-axis <-20.> speed <150.>;
+						//turn loin1 to x-axis <35.> speed <120.>;
+						//turn loin2 to x-axis <40.> speed <120.>;
+					}
+					if( Static_Var_5 == 4 AND bAiming == 1 )
+					{
+						hide thrust;
+					}
+				}
+				sleep 200;
+			}
+			if( bMoving )
+			{
+				//turn loin1 to x-axis <15.> speed <40.>;
+				//turn loin2 to x-axis <15.> speed <40.>;
+				if( Static_Var_5 == 1 )
+				{
+					hide thrust;
+					turn lleg to x-axis <0.> speed <250.>;
+					turn lboot to x-axis <90.> speed <350.>;
+					turn lfoot to x-axis <0.> speed <50.>;
+					turn rleg to x-axis <5.> speed <225.>;
+					turn rboot to x-axis <0.> speed <50.>;
+					turn rfoot to x-axis <0.> speed <100.>;
+					move pelvis to y-axis [-1.] speed [3.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					if( !bAiming )
+					{
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <20.> speed <6.>;
+						turn rarm to x-axis <-20.> speed <6.>;
+						turn lgun to x-axis <30.> speed <75.>;
+						turn rgun to x-axis <30.> speed <75.>;
+						turn torso to y-axis <0.> speed <50.>;
+						turn head to y-axis <0.> speed <75.>;
+					}
+				}
+				if( Static_Var_5 == 2 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <5.> speed <30.>;
+					turn larmz to z-axis <-10.> speed <60.>;
+					turn rarmz to z-axis <10.> speed <60.>;
+					turn larm to x-axis <15.> speed <120.>;
+					turn rarm to x-axis <15.> speed <120.>;
+					turn lgun to x-axis <30.> speed <60.>;
+					turn rgun to x-axis <30.> speed <60.>;
+				}
+				if( Static_Var_5 == 3 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <-10.> speed <30.>;
+					turn larmz to z-axis <-30.> speed <60.>;
+					turn rarmz to z-axis <30.> speed <60.>;
+					turn larm to x-axis <-15.> speed <120.>;
+					turn rarm to x-axis <-15.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 == 4 AND bAiming == 0 )
+				{
+					turn pelvis to x-axis <15.> speed <30.>;
+					turn larmz to z-axis <0.> speed <60.>;
+					turn rarmz to z-axis <0.> speed <60.>;
+					turn larm to x-axis <5.> speed <120.>;
+					turn rarm to x-axis <5.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 >= 2 )
+				{
+					show thrust;
+					turn lwing to y-axis <-72.> speed <288.>;
+					turn rwing to y-axis <72.> speed <288.>;
+					turn lwing1 to x-axis <0.> speed <140.>;
+					turn lwing2 to x-axis <0.> speed <140.>;
+					turn lwing3 to x-axis <0.> speed <140.>;
+					turn lwing4 to x-axis <0.> speed <140.>;
+					turn rwing1 to x-axis <0.> speed <140.>;
+					turn rwing2 to x-axis <0.> speed <140.>;
+					turn rwing3 to x-axis <0.> speed <140.>;
+					turn rwing4 to x-axis <0.> speed <140.>;
+					turn lleg to x-axis <-30.> speed <150.>;
+					turn lboot to x-axis <60.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <10.> speed <150.>;
+					turn rboot to x-axis <10.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					if( Static_Var_5 == 3 )
+					{
+						turn lleg to x-axis <-60.> speed <150.>;
+						turn rleg to x-axis <-20.> speed <150.>;
+						//turn loin1 to x-axis <35.> speed <120.>;
+						//turn loin2 to x-axis <40.> speed <120.>;
+					}
+					if( Static_Var_5 == 4 AND bAiming == 1 )
+					{
+						hide thrust;
+					}
+				}
+				sleep 200;
+			}
+			if( bMoving )
+			{
+				//turn loin1 to x-axis <20.> speed <20.>;
+				//turn loin2 to x-axis <20.> speed <20.>;
+				if( Static_Var_5 == 1 )
+				{
+					hide thrust;
+					turn lleg to x-axis <-60.> speed <300.>;
+					turn lboot to x-axis <100.> speed <50.>;
+					turn lfoot to x-axis <0.> speed <0.>;
+					turn rleg to x-axis <30.> speed <125.>;
+					turn rboot to x-axis <-10.> speed <50.>;
+					turn rfoot to x-axis <-20.> speed <100.>;
+					move pelvis to y-axis [1.] speed [8.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					if( !bAiming )
+					{
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <20.> speed <13.>;
+						turn rarm to x-axis <-20.> speed <13.>;
+						turn lgun to x-axis <15.> speed <50.>;
+						turn rgun to x-axis <15.> speed <50.>;
+						turn torso to y-axis <10.> speed <50.>;
+						turn head to y-axis <-15.> speed <75.>;
+					}
+				}
+				if( Static_Var_5 == 2 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <5.> speed <30.>;
+					turn larmz to z-axis <-10.> speed <60.>;
+					turn rarmz to z-axis <10.> speed <60.>;
+					turn larm to x-axis <15.> speed <120.>;
+					turn rarm to x-axis <15.> speed <120.>;
+					turn lgun to x-axis <30.> speed <60.>;
+					turn rgun to x-axis <30.> speed <60.>;
+				}
+				if( Static_Var_5 == 3 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <-10.> speed <30.>;
+					turn larmz to z-axis <-30.> speed <60.>;
+					turn rarmz to z-axis <30.> speed <60.>;
+					turn larm to x-axis <-15.> speed <120.>;
+					turn rarm to x-axis <-15.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 == 4 AND bAiming == 0 )
+				{
+					turn pelvis to x-axis <15.> speed <30.>;
+					turn larmz to z-axis <0.> speed <60.>;
+					turn rarmz to z-axis <0.> speed <60.>;
+					turn larm to x-axis <5.> speed <120.>;
+					turn rarm to x-axis <5.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 >= 2 )
+				{
+					show thrust;
+					turn lwing to y-axis <-72.> speed <288.>;
+					turn rwing to y-axis <72.> speed <288.>;
+					turn lwing1 to x-axis <0.> speed <140.>;
+					turn lwing2 to x-axis <0.> speed <140.>;
+					turn lwing3 to x-axis <0.> speed <140.>;
+					turn lwing4 to x-axis <0.> speed <140.>;
+					turn rwing1 to x-axis <0.> speed <140.>;
+					turn rwing2 to x-axis <0.> speed <140.>;
+					turn rwing3 to x-axis <0.> speed <140.>;
+					turn rwing4 to x-axis <0.> speed <140.>;
+					turn lleg to x-axis <-30.> speed <150.>;
+					turn lboot to x-axis <60.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <10.> speed <150.>;
+					turn rboot to x-axis <10.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					if( Static_Var_5 == 3 )
+					{
+						turn lleg to x-axis <-60.> speed <150.>;
+						turn rleg to x-axis <-20.> speed <150.>;
+					//turn loin1 to x-axis <35.> speed <120.>;
+					//turn loin2 to x-axis <40.> speed <120.>;
+					}
+					if( Static_Var_5 == 4 AND bAiming == 1 )
+					{
+						hide thrust;
+					}
+				}
+				sleep 200;
+			}
+			if( bMoving )
+			{
+				//turn loin1 to x-axis <30.> speed <40.>;
+				//turn loin2 to x-axis <30.> speed <40.>;
+				if( Static_Var_5 == 1 )
+				{
+					hide thrust;
+					turn lleg to x-axis <-40.> speed <100.>;
+					turn lboot to x-axis <10.> speed <450.>;
+					turn lfoot to x-axis <20.> speed <100.>;
+					turn rleg to x-axis <50.> speed <100.>;
+					turn rboot to x-axis <20.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					move pelvis to y-axis [-1.] speed [10.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					if( !bAiming )
+					{
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <20.> speed <6.>;
+						turn rarm to x-axis <-20.> speed <6.>;
+					}
+				}
+				if( Static_Var_5 == 2 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <5.> speed <30.>;
+					turn larmz to z-axis <-10.> speed <60.>;
+					turn rarmz to z-axis <10.> speed <60.>;
+					turn larm to x-axis <15.> speed <120.>;
+					turn rarm to x-axis <15.> speed <120.>;
+					turn lgun to x-axis <30.> speed <60.>;
+					turn rgun to x-axis <30.> speed <60.>;
+				}
+				if( Static_Var_5 == 3 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <-10.> speed <30.>;
+					turn larmz to z-axis <-30.> speed <60.>;
+					turn rarmz to z-axis <30.> speed <60.>;
+					turn larm to x-axis <-15.> speed <120.>;
+					turn rarm to x-axis <-15.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 == 4 AND bAiming == 0 )
+				{
+					turn pelvis to x-axis <15.> speed <30.>;
+					turn larmz to z-axis <0.> speed <60.>;
+					turn rarmz to z-axis <0.> speed <60.>;
+					turn larm to x-axis <5.> speed <120.>;
+					turn rarm to x-axis <5.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 >= 2 )
+				{
+					show thrust;
+					turn lwing to y-axis <-72.> speed <288.>;
+					turn rwing to y-axis <72.> speed <288.>;
+					turn lwing1 to x-axis <0.> speed <140.>;
+					turn lwing2 to x-axis <0.> speed <140.>;
+					turn lwing3 to x-axis <0.> speed <140.>;
+					turn lwing4 to x-axis <0.> speed <140.>;
+					turn rwing1 to x-axis <0.> speed <140.>;
+					turn rwing2 to x-axis <0.> speed <140.>;
+					turn rwing3 to x-axis <0.> speed <140.>;
+					turn rwing4 to x-axis <0.> speed <140.>;
+					turn lleg to x-axis <-30.> speed <150.>;
+					turn lboot to x-axis <60.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <10.> speed <150.>;
+					turn rboot to x-axis <10.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					if( Static_Var_5 == 3 )
+					{
+						turn lleg to x-axis <-60.> speed <150.>;
+						turn rleg to x-axis <-20.> speed <150.>;
+						//turn loin1 to x-axis <35.> speed <120.>;
+						//turn loin2 to x-axis <40.> speed <120.>;
+					}
+					if( Static_Var_5 == 4 AND bAiming == 1 )
+					{
+						hide thrust;
+					}
+				}
+				sleep 200;
+			}
+			if( bMoving )
+			{
+				//turn loin1 to x-axis <0.> speed <40.>;
+				//turn loin2 to x-axis <0.> speed <40.>;
+				if( Static_Var_5 == 1 )
+				{
+					hide thrust;
+					turn lleg to x-axis <5.> speed <225.>;
+					turn lboot to x-axis <0.> speed <50.>;
+					turn lfoot to x-axis <0.> speed <100.>;
+					turn rleg to x-axis <0.> speed <250.>;
+					turn rboot to x-axis <90.> speed <350.>;
+					turn rfoot to x-axis <0.> speed <50.>;
+					move pelvis to y-axis [-1.] speed [3.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					turn lwing to y-axis <-31.> speed <72.>;
+					turn rwing to y-axis <31.> speed <72.>;
+					turn lwing1 to x-axis <-35.> speed <35.>;
+					turn lwing2 to x-axis <-25.> speed <35.>;
+					turn lwing3 to x-axis <-15.> speed <35.>;
+					turn lwing4 to x-axis <-5.> speed <35.>;
+					turn rwing1 to x-axis <-35.> speed <35.>;
+					turn rwing2 to x-axis <-25.> speed <35.>;
+					turn rwing3 to x-axis <-15.> speed <35.>;
+					turn rwing4 to x-axis <-5.> speed <35.>;
+					if( !bAiming )
+					{
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <-20.> speed <6.>;
+						turn rarm to x-axis <20.> speed <6.>;
+						turn lgun to x-axis <30.> speed <75.>;
+						turn rgun to x-axis <30.> speed <75.>;
+						turn torso to y-axis <0.> speed <50.>;
+						turn head to y-axis <0.> speed <75.>;
+					}
+				}
+				if( Static_Var_5 == 2 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <5.> speed <30.>;
+					turn larmz to z-axis <-10.> speed <60.>;
+					turn rarmz to z-axis <10.> speed <60.>;
+					turn larm to x-axis <15.> speed <120.>;
+					turn rarm to x-axis <15.> speed <120.>;
+					turn lgun to x-axis <30.> speed <60.>;
+					turn rgun to x-axis <30.> speed <60.>;
+				}
+				if( Static_Var_5 == 3 )
+				{
+					turn torso to y-axis <0.> speed <360.>;
+					move pelvis to y-axis [12.] speed [20.];
+					turn pelvis to x-axis <-10.> speed <30.>;
+					turn larmz to z-axis <-30.> speed <60.>;
+					turn rarmz to z-axis <30.> speed <60.>;
+					turn larm to x-axis <-15.> speed <120.>;
+					turn rarm to x-axis <-15.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 == 4 AND bAiming == 0 )
+				{
+					turn pelvis to x-axis <15.> speed <30.>;
+					turn larmz to z-axis <0.> speed <60.>;
+					turn rarmz to z-axis <0.> speed <60.>;
+					turn larm to x-axis <5.> speed <120.>;
+					turn rarm to x-axis <5.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+				}
+				if( Static_Var_5 >= 2 )
+				{
+					show thrust;
+					turn lwing to y-axis <-72.> speed <288.>;
+					turn rwing to y-axis <72.> speed <288.>;
+					turn lwing1 to x-axis <0.> speed <140.>;
+					turn lwing2 to x-axis <0.> speed <140.>;
+					turn lwing3 to x-axis <0.> speed <140.>;
+					turn lwing4 to x-axis <0.> speed <140.>;
+					turn rwing1 to x-axis <0.> speed <140.>;
+					turn rwing2 to x-axis <0.> speed <140.>;
+					turn rwing3 to x-axis <0.> speed <140.>;
+					turn rwing4 to x-axis <0.> speed <140.>;
+					turn lleg to x-axis <-30.> speed <150.>;
+					turn lboot to x-axis <60.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <10.> speed <150.>;
+					turn rboot to x-axis <10.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					if( Static_Var_5 == 3 )
+					{
+						turn lleg to x-axis <-60.> speed <150.>;
+						turn rleg to x-axis <-20.> speed <150.>;
+						//turn loin1 to x-axis <35.> speed <120.>;
+						//turn loin2 to x-axis <40.> speed <120.>;
+					}
+					if( Static_Var_5 == 4 AND bAiming == 1 )
+					{
+						hide thrust;
+					}
+				}
+				sleep 200;
+			}
+			justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			if( justmoved )
+			{
+				turn pelvis to x-axis <0.> speed <30.>;
+				//turn loin1 to x-axis <0.> speed <20.>;
+				//turn loin2 to x-axis <0.> speed <20.>;
+				if( Static_Var_5 == 1 )
+				{
+					turn lwing to y-axis <-31.> speed <72.>;
+					turn rwing to y-axis <31.> speed <72.>;
+					turn lwing1 to x-axis <-35.> speed <35.>;
+					turn lwing2 to x-axis <-25.> speed <35.>;
+					turn lwing3 to x-axis <-15.> speed <35.>;
+					turn lwing4 to x-axis <-5.> speed <35.>;
+					turn rwing1 to x-axis <-35.> speed <35.>;
+					turn rwing2 to x-axis <-25.> speed <35.>;
+					turn rwing3 to x-axis <-15.> speed <35.>;
+					turn rwing4 to x-axis <-5.> speed <35.>;
+					turn lleg to x-axis <0.> speed <150.>;
+					turn lboot to x-axis <0.> speed <150.>;
+					turn lfoot to x-axis <0.> speed <150.>;
+					turn rleg to x-axis <0.> speed <150.>;
+					turn rboot to x-axis <0.> speed <150.>;
+					turn rfoot to x-axis <0.> speed <150.>;
+					move pelvis to y-axis [0.] speed [15.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					if( !bAiming )
+					{
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <5.> speed <120.>;
+						turn rarm to x-axis <5.> speed <120.>;
+						turn lgun to x-axis <15.> speed <60.>;
+						turn rgun to x-axis <15.> speed <60.>;
+						turn torso to y-axis <0.> speed <40.>;
+						turn head to y-axis <0.> speed <60.>;
+					}
+				}
+				if( Static_Var_5 > 1 AND Static_Var_5 < 4 )
+				{
+					Static_Var_5 = 1;
+					turn lwing to y-axis <-31.> speed <72.>;
+					turn rwing to y-axis <31.> speed <72.>;
+					turn lwing1 to x-axis <-35.> speed <35.>;
+					turn lwing2 to x-axis <-25.> speed <35.>;
+					turn lwing3 to x-axis <-15.> speed <35.>;
+					turn lwing4 to x-axis <-5.> speed <35.>;
+					turn rwing1 to x-axis <-35.> speed <35.>;
+					turn rwing2 to x-axis <-25.> speed <35.>;
+					turn rwing3 to x-axis <-15.> speed <35.>;
+					turn rwing4 to x-axis <-5.> speed <35.>;
+					turn lleg to x-axis <0.> speed <150.>;
+					turn lboot to x-axis <0.> speed <150.>;
+					turn lfoot to x-axis <0.> speed <150.>;
+					turn rleg to x-axis <0.> speed <150.>;
+					turn rboot to x-axis <0.> speed <150.>;
+					turn rfoot to x-axis <0.> speed <150.>;
+					move pelvis to y-axis [0.] speed [15.];
+					turn pelvis to x-axis <0.> speed <30.>;
+					turn larmz to z-axis <0.> speed <60.>;
+					turn rarmz to z-axis <0.> speed <60.>;
+					turn larm to x-axis <5.> speed <120.>;
+					turn rarm to x-axis <5.> speed <120.>;
+					turn lgun to x-axis <15.> speed <60.>;
+					turn rgun to x-axis <15.> speed <60.>;
+					turn torso to y-axis <0.> speed <40.>;
+					turn head to y-axis <0.> speed <60.>;
+				}
+				if( Static_Var_5 == 4 )
+				{
+					turn lwing to y-axis <-72.> speed <288.>;
+					turn rwing to y-axis <72.> speed <288.>;
+					turn lwing1 to x-axis <0.> speed <140.>;
+					turn lwing2 to x-axis <0.> speed <140.>;
+					turn lwing3 to x-axis <0.> speed <140.>;
+					turn lwing4 to x-axis <0.> speed <140.>;
+					turn rwing1 to x-axis <0.> speed <140.>;
+					turn rwing2 to x-axis <0.> speed <140.>;
+					turn rwing3 to x-axis <0.> speed <140.>;
+					turn rwing4 to x-axis <0.> speed <140.>;
+					turn lleg to x-axis <-30.> speed <150.>;
+					turn lboot to x-axis <60.> speed <150.>;
+					turn lfoot to x-axis <10.> speed <150.>;
+					turn rleg to x-axis <10.> speed <150.>;
+					turn rboot to x-axis <10.> speed <150.>;
+					turn rfoot to x-axis <10.> speed <150.>;
+					if( !bAiming )
+					{
+						turn pelvis to x-axis <0.> speed <15.>;
+						turn larmz to z-axis <0.> speed <60.>;
+						turn rarmz to z-axis <0.> speed <60.>;
+						turn larm to x-axis <5.> speed <120.>;
+						turn rarm to x-axis <5.> speed <120.>;
+						turn lgun to x-axis <15.> speed <60.>;
+						turn rgun to x-axis <15.> speed <60.>;
+						turn torso to y-axis <0.> speed <40.>;
+						turn head to y-axis <0.> speed <60.>;
+					}
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	turn lwing to y-axis <-72.> speed <144.>;
+	turn rwing to y-axis <72.> speed <144.>;
+	turn lwing1 to x-axis <0.> speed <70.>;
+	turn lwing2 to x-axis <0.> speed <70.>;
+	turn lwing3 to x-axis <0.> speed <70.>;
+	turn lwing4 to x-axis <0.> speed <70.>;
+	turn rwing1 to x-axis <0.> speed <70.>;
+	turn rwing2 to x-axis <0.> speed <70.>;
+	turn rwing3 to x-axis <0.> speed <70.>;
+	turn rwing4 to x-axis <0.> speed <70.>;
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = 0;
+	bAiming = 0;
+	bJumping = 0;
+	gun_1 = 16;
+	Static_Var_3 = 0;
+	Static_Var_4 = get PIECE_Y(base);
+	Static_Var_5 = 1;
+	turn larm to x-axis <5.> now;
+	turn rarm to x-axis <5.> now;
+	turn lgun to x-axis <15.> now;
+	turn rgun to x-axis <15.> now;
+	turn thrustturn to x-axis <-30.> now;
+	turn lwing to y-axis <-31.> now;
+	turn rwing to y-axis <31.> now;
+	turn lwing1 to x-axis <-35.> now;
+	turn lwing2 to x-axis <-25.> now;
+	turn lwing3 to x-axis <-15.> now;
+	turn lwing4 to x-axis <-5.> now;
+	turn rwing1 to x-axis <-35.> now;
+	turn rwing2 to x-axis <-25.> now;
+	turn rwing3 to x-axis <-15.> now;
+	turn rwing4 to x-axis <-5.> now;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+RestoreAfterDelay()
+{
+	signal 16;
+	set-signal-mask 16;
+	sleep 2000;
+	bAiming = 0;
+	turn torso to y-axis <0.> speed <120.>;
+	turn headturn to y-axis <0.> speed <120.>;
+	turn head to y-axis <0.> speed <240.>;
+	turn larm to x-axis <5.> speed <120.>;
+	turn rarm to x-axis <5.> speed <120.>;
+	turn lgun to x-axis <15.> speed <60.>;
+	turn rgun to x-axis <15.> speed <60.>;
+	turn lgun to y-axis <0.> speed <20.>;
+	turn rgun to y-axis <0.> speed <20.>;
+	turn larmz to z-axis <0.> speed <60.>;
+	turn rarmz to z-axis <0.> speed <60.>;
+	sleep 1000;
+	gun_1 = 0;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aim;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = gun_1;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	while( Static_Var_5 > 1 AND Static_Var_5 < 4 )
+	{
+		sleep 100;
+	}
+	bAiming = 1;
+	turn pelvis to x-axis <0.> speed <30.>;
+	turn torso to y-axis heading speed <240.>;
+	turn headturn to y-axis <0.> - heading speed <240.>;
+	turn head to y-axis heading speed <480.>;
+	turn larm to x-axis <-10.> - pitch speed <120.>;
+	turn rarm to x-axis <-10.> - pitch speed <120.>;
+	turn lgun to x-axis <10.> speed <120.>;
+	turn rgun to x-axis <10.> speed <120.>;
+	turn lgun to y-axis <-5.> speed <20.>;
+	turn rgun to y-axis <5.> speed <20.>;
+	turn larmz to z-axis <-10.> speed <20.>;
+	turn rarmz to z-axis <10.> speed <20.>;
+	while( Static_Var_5 > 1 AND Static_Var_5 < 4 )
+	{
+		sleep 50;
+	}
+	wait-for-turn torso around y-axis;
+	wait-for-turn larm around x-axis;
+	wait-for-turn lgun around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary(Func_Var_1)
+{
+	if( gun_1 == 16 )
+	{
+		turn larmrecoil to x-axis <10.> speed <50.>;
+		turn lgunrecoil to x-axis <0.> speed <50.>;
+		sleep 100;
+		gun_1 = 23;
+		turn larmrecoil to x-axis <0.> speed <50.>;
+		turn lgunrecoil to x-axis <10.> speed <50.>;
+		return (0);
+	}
+	turn rarmrecoil to x-axis <10.> speed <50.>;
+	turn rgunrecoil to x-axis <0.> speed <50.>;
+	sleep 100;
+	gun_1 = 16;
+	turn rarmrecoil to x-axis <0.> speed <50.>;
+	turn rgunrecoil to x-axis <10.> speed <50.>;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 33 )
+	{
+		corpsetype = 1;
+		explode pelvis type NOHEATCLOUD;
+		explode torso type NOHEATCLOUD;
+		explode rwing1 type SHATTER | NOHEATCLOUD;
+		explode rwing2 type SHATTER | NOHEATCLOUD;
+		explode rwing3 type SHATTER | NOHEATCLOUD;
+		explode lwing1 type SHATTER | NOHEATCLOUD;
+		explode lwing2 type SHATTER | NOHEATCLOUD;
+		explode lwing3 type SHATTER | NOHEATCLOUD;
+		explode larm type NOHEATCLOUD;
+		explode rarm type NOHEATCLOUD;
+		explode head type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 66 )
+	{
+		corpsetype = 2;
+		explode pelvis type SHATTER | NOHEATCLOUD;
+		explode torso type SHATTER | NOHEATCLOUD;
+		explode rwing1 type SHATTER | NOHEATCLOUD;
+		explode rwing2 type SHATTER | NOHEATCLOUD;
+		explode rwing3 type SHATTER | NOHEATCLOUD;
+		explode lwing1 type SHATTER | NOHEATCLOUD;
+		explode lwing2 type SHATTER | NOHEATCLOUD;
+		explode lwing3 type SHATTER | NOHEATCLOUD;
+		explode larm type NOHEATCLOUD;
+		explode rarm type NOHEATCLOUD;
+		explode head type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pelvis type SHATTER | NOHEATCLOUD;
+	explode torso type SHATTER | NOHEATCLOUD;
+	explode rwing1 type SHATTER | FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rwing2 type SHATTER | FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rwing3 type SHATTER | FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lwing1 type SHATTER | FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lwing2 type SHATTER | FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lwing3 type SHATTER | FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode larm type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rarm type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode head type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

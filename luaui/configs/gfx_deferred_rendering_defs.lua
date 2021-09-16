@@ -150,7 +150,6 @@ local Tlltrailssb = {
   ["armjag_armjag_miss"] = true,
   ["armmship_armmship_rocket"] = true,
   ["armtem_armtem_rocket"] = true,
-  ["armjugg_armjugg_rocket"] = true,
   ["armorco_corkrog_rocket"] = true,
   ["armbanth_bantha_rocket"] = true,
   ["armmh_armmh_weapon"] = true,

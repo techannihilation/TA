@@ -40,6 +40,10 @@ local airbaseDefIDs = {
     [UnitDefNames["talon_carry"].id] = 100 ^ 2,
     [UnitDefNames["talon_hcar"].id] = 100 ^ 2,
     [UnitDefNames["talon_ucar"].id] = 100 ^ 2,
+
+    --Gok
+      [UnitDefNames["gok_asp"].id] = 100 ^ 2,
+
 }
 local tractorDist = 100 ^ 2 -- default sqr tractor distance, if not found in table
 

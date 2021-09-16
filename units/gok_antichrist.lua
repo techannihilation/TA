@@ -211,7 +211,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				laserflaresize = 12,
-				name = "gok Gun",
+				name = "Gok Laser",
 				noselfdamage = true,
 				range = 350,
 				reloadtime = 0.3,
