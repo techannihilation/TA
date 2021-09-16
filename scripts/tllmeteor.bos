@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, sup1, sup2, sup3, sup4, sup5, target, aimer;
+piece  base, sup1, sup2, sup3, sup4, sup5, target, aimer, aim;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -44,7 +44,7 @@ Create()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = aimer;
+	piecenum = aim;
 }
 
 AimPrimary(heading, pitch)
