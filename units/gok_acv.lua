@@ -84,7 +84,8 @@ return {
 			[18] = "gok_antinuke",
 			[19] = "gok_silo",
 			[20] = "gok_lrpt",
-			[21] = "gok_asp",
+			[21] = "gok_meteor",
+			[22] = "gok_asp",
 		},
 		customparams = {
 			buildpic = "gok_acv.dds",

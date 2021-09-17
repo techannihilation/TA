@@ -66,7 +66,7 @@ return {
 			--[6] = "gok_",
 			--[7] = "gok_",
 			--[8] = "gok_",
-			--[9] = "gok_",
+			[9] = "gok_morningstar",
 			[10] = "gok_antichrist",
 		},
 		customparams = {

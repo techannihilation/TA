@@ -52,7 +52,7 @@ local antiNukes = {
   --[UnitDefNames["gok_antinuke"].id] = true,
   --[UnitDefNames["gok_antinuke"].id] = true,
   --[UnitDefNames["gok_antinuke"].id] = true,
-  --[UnitDefNames["gok_antinuke"].id] = true,
+  [UnitDefNames["gok_morningstar"].id] = true,
   --[UnitDefNames["gok_antinuke"].id] = true,
 }
 

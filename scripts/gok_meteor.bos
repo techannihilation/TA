@@ -1,0 +1,130 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, sup1, sup2, sup3, aim, antenn1, antenn2, antenn3, gem1, gem2, gem3, turret, aimer;
+
+static-var  bActivate;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+		
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Activate()
+{
+	spin turret around y-axis speed <10.0>;
+	bActivate = TRUE;
+}
+
+Deactivate()
+{
+	spin turret around y-axis speed <0.0>;
+	bActivate = FALSE;
+}
+
+Create()
+{
+	bActivate = TRUE;
+	move aimer to y-axis [5000.000000] now;
+	start-script SmokeUnit();
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = aim;
+}
+
+AimPrimary(heading, pitch)
+{
+	while (!bActivate)
+	{
+		sleep 250;
+	}
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+FirePrimary()
+{
+	sleep 15;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = aimer;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 40 )
+	{
+		corpsetype = 1;
+		explode sup1 type NOHEATCLOUD;
+		explode sup2 type NOHEATCLOUD;
+		explode sup3 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode antenn1 type NOHEATCLOUD;
+		explode antenn2 type NOHEATCLOUD;
+		explode antenn3 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 60 )
+	{
+		corpsetype = 2;
+		explode sup1 type NOHEATCLOUD | SHATTER;
+		explode sup2 type NOHEATCLOUD | SHATTER;
+		explode sup3 type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode antenn1 type NOHEATCLOUD;
+		explode antenn2 type NOHEATCLOUD | FALL;
+		explode antenn3 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode sup1 type NOHEATCLOUD | FALL | SHATTER;
+	explode sup2 type NOHEATCLOUD | SHATTER;
+	explode sup3 type NOHEATCLOUD | FALL | SHATTER;
+	explode body type NOHEATCLOUD;
+	explode turret type NOHEATCLOUD | SHATTER;
+	explode antenn1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode antenn2 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode antenn3 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

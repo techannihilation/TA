@@ -1,8 +1,5 @@
 return {
 	armvulc = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 320177,
 		buildcostmetal = 28722,
@@ -123,7 +120,7 @@ return {
 				avoidground = false,
 				cegtag = "Trail_cannon_med",
 				collidefriendly = false,
-				craterareaofeffect = 224,
+				craterareaofeffect = 192,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,

@@ -41,7 +41,7 @@ return {
 		minwaterdepth = 15,
 		mobilestandorders = 1,
 		movementclass = "HDBOAT12",
-		name = "Aircraft Carrier",
+		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
 		objectname = "armucar",
 		onoffable = true,

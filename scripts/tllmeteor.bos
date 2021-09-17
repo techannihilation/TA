@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, sup1, sup2, sup3, sup4, sup5, target, aimer, aim;
+piece  base, sup1, sup2, sup3, sup4, sup5, aimer, aim, light;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -36,6 +36,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+Activate()
+{
+	sleep 150;
+}
+
 Create()
 {
 	move aimer to y-axis [5000.000000] now;
@@ -65,7 +70,7 @@ FirePrimary()
 
 QueryPrimary(piecenum)
 {
-	piecenum = target;
+	piecenum = aimer;
 }
 
 SweetSpot(piecenum)

@@ -3,6 +3,28 @@ VFS.Include("LuaRules/Utilities/tablefunctions.lua")
 ----------------------------------------------------------------------------
 -- GROUNDFLASHES -----------------------------------------------------------
 ----------------------------------------------------------------------------
+skyMeteor = {
+  life       = math.huge,
+  size       = 250,
+  texture    = "bitmaps/GPL/Lups/gf_corestor.png",
+  colormap   = { {0.9, 0.9, 0.0, 0.15},{0.9, 0.9, 0.0, 0.20},{0.9, 0.9, 0.0, 0.20},{0.9, 0.9, 0.0, 0.15}, },
+  directional        = false,
+  emitrot            = 0,
+  emitrotspread      = 0,
+  emitVector         = {0,0,0},
+  gravity            = {0,0,0},
+  numparticles       = 1,
+  particlelife       = 522,
+  particlelifespread = 0,
+  particlesize       = 256,
+  particlesizespread = 0,
+  particlespeed      = 20,
+  particlespeedspread = 0,
+  pos                = [[0, 0, 0]],
+  sizegrowth         = 0,
+  sizemod            = 1,
+  priority = 3,
+}
 
 groundFlashBlue = {
   life       = 20,

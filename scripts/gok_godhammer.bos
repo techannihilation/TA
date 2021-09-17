@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, sleeve1, sleeve2, barrel1, barrel2, flare1, flare2;
+piece  base, body, hull, rtrack, ltrack, turret, sleeve1, sleeve2, barrel1, barrel2, flare1, flare2;
 
 static-var  gun_1;
 
@@ -132,6 +132,8 @@ Killed(severity, corpsetype)
 		explode turret type NOHEATCLOUD | FALL;
 		explode sleeve1 type NOHEATCLOUD | FALL;
 		explode sleeve2 type NOHEATCLOUD | FALL;
+		explode rtrack type NOHEATCLOUD | FALL;
+		explode ltrack type NOHEATCLOUD | FALL;
 		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
@@ -141,6 +143,8 @@ Killed(severity, corpsetype)
 	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode sleeve1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode sleeve2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rtrack type NOHEATCLOUD | FALL;
+	explode ltrack type NOHEATCLOUD | FALL;
 	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);

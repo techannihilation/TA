@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, hullshadow, flare, system, system2, cockpit, 
-		turret, pitchturret, launcher, barrel;
+piece  base, body, hull, ltrack, rtrack, flare, turret, pitchturret, launcher, barrel;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
@@ -88,28 +87,30 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode hull type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		explode pitchturret type NOHEATCLOUD;
-		explode system type NOHEATCLOUD;
-		explode system2 type NOHEATCLOUD;
+		explode rtrack type NOHEATCLOUD;
+		explode ltrack type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode hull type NOHEATCLOUD | SHATTER;
+		explode body type NOHEATCLOUD | SHATTER;
 		explode turret type NOHEATCLOUD | SHATTER;
-		explode system type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode pitchturret type FALL | BITMAP3;
-		explode system2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode pitchturret type FALL | NOHEATCLOUD;
+		explode rtrack type FALL | SMOKE | FIRE | NOHEATCLOUD;
+		explode ltrack type FALL | SMOKE | FIRE | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode hull type NOHEATCLOUD | SHATTER;
+	explode body type NOHEATCLOUD | SHATTER;
 	explode turret type NOHEATCLOUD | SHATTER;
-	explode system type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode pitchturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode system2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rtrack type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode ltrack type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }
