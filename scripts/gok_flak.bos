@@ -4,8 +4,8 @@
 #include "exptype.h"
 
 piece  base, body, flare1, flare2, turret, sup, core,
-		pitchturret1, launcher1, barrel1,
-		pitchturret2, launcher2, barrel2;
+		pitchturret1, launcher1,
+		pitchturret2, launcher2;
 
 static-var  gun_1;
 

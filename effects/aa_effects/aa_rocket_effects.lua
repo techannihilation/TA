@@ -149,5 +149,25 @@ return {
       },
     },
   },
-
+  ["gok_def_aa_rocket"] = {
+    engine = {
+      air                = true,
+      class              = [[CBitmapMuzzleFlame]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      water              = true,
+      properties = {
+        colormap           = [[0.6 0.0 0.2 0.01	0.78 0.06 0.55 0.01 0 0 0 0]],
+        dir                = [[dir]],
+        frontoffset        = 0,
+        fronttexture       = [[none]],
+        length             = 18,
+        sidetexture        = [[flashside1]],
+        size               = 5.5,
+        sizegrowth         = 0.9,
+        ttl                = 2,
+      },
+    },
+  },
 }

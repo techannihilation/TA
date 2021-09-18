@@ -1,7 +1,7 @@
 return {
 	corsent = {
 		acceleration = 0.0528,
-		airsightdistance = 800,
+		airsightdistance = 775,
 		brakerate = 0.4125,
 		buildcostenergy = 7073,
 		buildcostmetal = 532,

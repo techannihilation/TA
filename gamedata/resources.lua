@@ -236,7 +236,7 @@ local resources = {
       sonic_glow='techa_artwork/sonic_glow.png',
 
       --Gok
-      directionalspark='techa_artwork/directionalspark.png',
+      gokbeam='techa_artwork/gokbeam.png',
       goklightning='techa_artwork/goklightning.png',
 
 			puff='Shine_Smokey_256.png',

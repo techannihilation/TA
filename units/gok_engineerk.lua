@@ -69,7 +69,7 @@ return {
 			[7] = "gok_arad",
 			[8] = "gok_jam1",
 			[9] = "gok_blackdawn",
-			--[10] = "gok_sprinkler",
+			[10] = "gok_slesh",
 			[11] = "gok_orchid",
 			--[12] = "gok_blt",
 			[13] = "gok_rl",

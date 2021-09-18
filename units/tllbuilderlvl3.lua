@@ -66,7 +66,7 @@ return {
 			[10] = "tllantinuke2",
 			[11] = "tllion",
 			[12] = "tllbagger",
-			[13] = "tllmeteor",
+			--[13] = "tllmeteor",
 			[14] = "tllvanya",
 		},
 		customparams = {

@@ -5,7 +5,6 @@
 -- zeus_flash
 -- burn
 -- lightning_flash
--- purpleimpact1
 -- flashnuke280
 -- pilot
 -- red_explosion
@@ -247,58 +246,6 @@ return {
         size               = 10,
         sizegrowth         = 0.2,
         speed              = [[-1 r2, r2, -1 r2]],
-      },
-    },
-  },
-  ["purpleimpact1"] = {
-    dirt = {
-      count              = 2,
-      ground             = true,
-      water              = true,
-      properties = {
-        alphafalloff       = 2,
-        color              = [[1, 0.2, 1]],
-        pos                = [[-10 r20, 20, -10 r20]],
-        size               = 10,
-        speed              = [[0.75 r-1.5, 1.7 r1.6, 0.75 r-1.5]],
-      },
-    },
-    gfx = {
-      count              = 25,
-      water              = true,
-      properties = {
-        color              = 200,
-        creationtime       = 2,
-        lifetime           = 10,
-        pos                = [[-8 r8, 0 r15, -8 r8]],
-        speed              = [[0.5 r-0.5, 0.7 r1.6, 0.5 r-0.5]],
-      },
-    },
-    groundflash = {
-      circlealpha        = 0.4,
-      circlegrowth       = 10,
-      flashalpha         = 5,
-      flashsize          = 50,
-      ttl                = 10,
-      color = {
-        [1]  = 0.80000001192093,
-        [2]  = 0,
-        [3]  = 0.80000001192093,
-      },
-    },
-    heatcloud = {
-      air                = false,
-      count              = 6,
-      ground             = true,
-      underwater         = 0,
-      water              = true,
-      properties = {
-        heat               = 10,
-        heatfalloff        = 1,
-        maxheat            = 10,
-        pos                = [[0, 20, 0]],
-        size               = 20,
-        sizegrowth         = 0.2,
       },
     },
   },
@@ -978,6 +925,71 @@ return {
         [1]  = 1,
         [2]  = 0.89999997615814,
         [3]  = 0.80000001192093,
+      },
+    },
+  },
+
+  ["gok-flash"] = {
+    air                = true,
+    --usedefaultexplosions = true,
+    groundflash = {
+      circlealpha        = 2,
+      circlegrowth       = 8,
+      flashalpha         = 2.2,
+      flashsize          = 96,
+      ttl                = 18,
+      color = {
+        [1]  = 0.78,
+        [2]  = 0.08,
+        [3]  = 0.52,
+      },
+    },
+  },
+
+  ["gok-air"] = {
+    sphere = {
+        air                = true,
+        class              = [[CSpherePartSpawner]],
+        count              = 1,
+        ground             = true,
+        water              = true,
+        properties = {
+          alpha              = 0.5,
+          alwaysvisible      = true,
+          color              = [[0.78,0.05,0.5]],
+          expansionspeed     = 24,
+          ttl                = 5,
+        },
+      },
+      pikes = {
+        air                = true,
+        class              = [[explspike]],
+        count              = 6,
+        ground             = true,
+        water              = true,
+        properties = {
+          alpha              = 0.4,
+          alphadecay         = 0.08,
+          alwaysvisible      = true,
+          color              = [[0.8,0.1,0.8]],
+          dir                = [[-2 r2, -2 r2, -2 r2]],
+          length             = 1.0,
+          lengthgrowth       = 1.0,
+          length             = 0.0001,
+          width              = 10,
+        },
+      },
+      cloud = {
+      air                = true,
+      class              = [[CExpGenSpawner]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        delay              = 10,
+        dir                = [[dir]],
+        explosiongenerator = [[custom:smoke]],
+        pos                = [[0, 0, 0]],
       },
     },
   },
