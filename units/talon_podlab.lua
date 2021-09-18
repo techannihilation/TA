@@ -38,7 +38,7 @@ return {
 		metalstorage = 800,
 		mobilestandorders = 1,
 		name = "Prototype Gantry",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "TALON_PODLAB",
 		radardistance = 50,
 		radaremitheight = 82,
@@ -56,7 +56,7 @@ return {
 		workertime = 1600,
 		yardmap = "ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ",
 		buildoptions = {
-			[1] = "talon_cpod",
+			[1] = "talon_uch",
 			[2] = "talon_gold",
 			[3] = "talon_archon",
 			[4] = "talon_scorpion",
