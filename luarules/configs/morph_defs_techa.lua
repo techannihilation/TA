@@ -684,7 +684,7 @@ local morphDefs = {
 		time = 45,
 		xp = 0.10,
 	},
-	helepolis = {
+	corhelepolis = {
 		into = 'corgorg',
 		time = 45,
 		xp = 0.10,
@@ -1577,7 +1577,7 @@ local morphDefs = {
 		time = 45,
 	},
 	gok_hellfire = {
-		into = 'gok_demonfire',
+		into = 'gok_ifrit',
 		time = 45,
 		xp = 0.10,
 	},

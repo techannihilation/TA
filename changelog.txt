@@ -4,6 +4,7 @@ Balance :
  - T2 Talon Sprinkler : Decrease cost
 
  Improvment :
+  - Add T2 Gok units
   - Delete T5 Meteor for TLL
   - Change T4 Cons for Talon (Delete Pod to remplace by Hover)
 

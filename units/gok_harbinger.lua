@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 16,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "Hobo",
+		name = "Harbinger",
 		noautofire = false,
 		objectname = "gok_harbinger",
 		radardistance = 0,

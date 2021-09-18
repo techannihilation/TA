@@ -22,7 +22,7 @@ return {
 		cloakcost = 25,
 		decloakspherical = false,
 		defaultmissiontype = "Standby_Mine",
-		description = "Camouflaged Nuke Warhead",
+		description = "Nuke Warhead",
 		energyuse = 0,
 		explodeas = "mine_nuke",
 		firestandorders = 1,

@@ -20,7 +20,7 @@ return {
 		category = "ALL MINE SURFACE",
 		cloakcost = 25,
 		defaultmissiontype = "Standby_Mine",
-		description = "Camouflaged Nuke Warhead",
+		description = "Nuke Warhead",
 		energyuse = 0,
 		explodeas = "mine_nuke",
 		firestandorders = 1,

@@ -1,0 +1,206 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, socle, building1, lathe1, spray1a, spray1b, building2turn, building2, lathe2, spray2a, spray2b, building3turn, building3, lathe3, spray3a, spray3b, buildpad;
+
+static-var  DesiredState, StateChanging, DamageNow, LastDamage, ShieldOn, ShieldBlocks, ShieldPower, Spray;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from building1;
+			emit-sfx smoketype from building2;
+			emit-sfx smoketype from building3;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(RequestedState, CurrentState)
+	{
+	if( StateChanging )
+		{
+		DesiredState = RequestedState;
+		return;
+		}
+	
+	StateChanging = 1;
+	CurrentState = DesiredState;
+	DesiredState = RequestedState;
+	
+	while( DesiredState != CurrentState )
+		{
+		if( !DesiredState )
+			{		
+			move building1 to z-axis [-18.40] speed [9.00];						
+			move building2 to z-axis [9.45] speed [4.5];
+			move building2 to x-axis [16.0] speed [7.8];
+			move building3 to z-axis [9.45] speed [4.5];			
+			move building3 to x-axis [-16.0] speed [7.8];
+			wait-for-move building1 along z-axis;
+			set YARD_OPEN to 1;
+			
+			while( !get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 1;
+			}
+			
+			set BUGGER_OFF to 0;
+			set INBUILDSTANCE to 1;
+			
+			sleep 1000;
+			CurrentState = 0;
+		}
+		if( DesiredState )
+		{
+			set INBUILDSTANCE to 0;
+			set YARD_OPEN to 0;
+			
+			while( get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 0;
+			}
+			
+			set BUGGER_OFF to 0;
+						
+			move building1 to z-axis [0.00] speed [9.00];
+			move building2 to z-axis [0.00] speed [4.5];
+			move building3 to z-axis [0.00] speed [4.5];
+		
+			move building2 to x-axis [0.0] speed [7.8];
+			move building3 to x-axis [0.0] speed [7.8];
+			sleep 1000;			
+			CurrentState = 1;
+			}
+		}
+	
+	StateChanging = 0;
+	}
+
+Create()
+{
+	DesiredState = 1;
+	StateChanging = 0;
+	Spray = 0;	
+	start-script SmokeUnit();	
+}
+
+QueryNanoPiece(PieceNum)
+{
+	if( Spray == 0 )
+	{
+		PieceNum = spray1a;
+	}
+	if( Spray == 1 )
+	{
+		PieceNum = spray2a;
+	}
+	if( Spray == 2 )
+	{
+		PieceNum = spray1b;
+	}
+	if( Spray == 3 )
+	{
+		PieceNum = spray2b;
+	}
+	if( Spray == 4 )
+	{
+		PieceNum = spray3a;
+	}
+	if( Spray == 5 )
+	{
+		PieceNum = spray3b;
+	}
+	
+	++Spray;
+	if (Spray == 6)
+	{
+		Spray = 0;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	
+	sleep 2000;
+	
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(PieceNum)
+{
+	PieceNum = buildpad;
+}
+
+StartBuilding()
+{
+
+}
+
+StopBuilding()
+{
+
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode building1 type NOHEATCLOUD ;
+		explode building2 type NOHEATCLOUD ;
+		explode building3 type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode building1 type NOHEATCLOUD | SHATTER ;
+		explode building2 type NOHEATCLOUD | SHATTER ;
+		explode building3 type NOHEATCLOUD | SHATTER ;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode building1 type NOHEATCLOUD | SHATTER;
+	explode building2 type NOHEATCLOUD | SHATTER;
+	explode building3 type NOHEATCLOUD | SHATTER ;
+	return (corpsetype);
+}

@@ -74,7 +74,7 @@ return {
 			[8] = "gok_aestor",
 			[9] = "gok_lab",
 			[10] = "gok_alab",
-			--[11] = "",
+			[11] = "gok_elab",
 			[12] = "gok_nanotc1",
 			--[13] = "gok_targ",
 			--[14] = "gok_sd",

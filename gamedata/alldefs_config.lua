@@ -887,7 +887,6 @@ local unitheight = {
     ["corct"] = 25,
     ["corcut"] = 28,
     ["corcv"] = 24,
-    ["cordem"] = 85,
     ["cordl"] = 51,
     ["cordoom"] = 88,
     ["cordoom1"] = 225,

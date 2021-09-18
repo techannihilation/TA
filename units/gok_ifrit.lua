@@ -1,12 +1,12 @@
 return {
-	cordem = {
+	gok_ifrit = {
 		acceleration = 0.1,
 		autoheal = 125,
 		brakerate = 0.45,
 		buildcostenergy = 185237,
 		buildcostmetal = 11333,
 		builder = false,
-		buildpic = "cordem.dds",
+		buildpic = "gok_ifrit.dds",
 		buildtime = 235000,
 		canattack = true,
 		canguard = true,
@@ -32,9 +32,9 @@ return {
 		maxvelocity = 1.5,
 		mobilestandorders = 1,
 		movementclass = "hkbot4",
-		name = "Archdemon",
+		name = "Ifrit",
 		noautofire = false,
-		objectname = "CORDEM",
+		objectname = "gok_ifrit",
 		radardistance = 0,
 		radaremitheight = 76,
 		selfdestructas = "BANTHA_BLAST",
@@ -46,11 +46,11 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.99,
 		turnrate = 590,
-		unitname = "cordem",
+		unitname = "gok_ifrit",
 		upright = true,
 		customparams = {
-			buildpic = "cordem.dds",
-			faction = "CORE",
+			buildpic = "gok_ifrit.dds",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 8475,
-				object = "cordem_dead",
+				object = "gok_ifrit_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

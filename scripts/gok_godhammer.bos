@@ -34,16 +34,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-RockUnit(anglex, anglez)
-{
-	turn base to x-axis anglex speed <50.>;
-	turn base to z-axis anglez speed <50.>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.> speed <20.>;
-	turn base to x-axis <0.> speed <20.>;
-}
-
 Create()
 {
 	hide flare1;

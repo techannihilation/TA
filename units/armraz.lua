@@ -39,7 +39,6 @@ return {
 		movementclass = "HKBOT4",
 		name = "Razorback",
 		noautofire = false,
-
 		objectname = "ARMRAZ",
 		radaremitheight = 58,
 		seismicsignature = 0,

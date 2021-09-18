@@ -51,7 +51,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "gok_alab",
-		--usebuildinggrounddecal = true,
+		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
 		workertime = 400,
 		yardmap = "cccooooccc cccooooccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc oooccccooo ooccccccoo",

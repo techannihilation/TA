@@ -64,7 +64,7 @@ return {
 			--[2] = "",
 			--[3] = "",
 			--[4] = "",
-			--[5] = "gok_mine1",
+			[5] = "gok_mine1",
 			[6] = "gok_fort",
 			[7] = "gok_arad",
 			[8] = "gok_jam1",
@@ -78,7 +78,7 @@ return {
 			[16] = "gok_mds",
 			[17] = "gok_cv",
 			--[18] = "gok_herison",
-			--[19] = "gok_wolf",
+			[19] = "gok_zealot",
 			--[20] = "gok_shepherd",
 		},
 		customparams = {

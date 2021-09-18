@@ -979,20 +979,7 @@ return {
           width              = 10,
         },
       },
-      cloud = {
-      air                = true,
-      class              = [[CExpGenSpawner]],
-      count              = 1,
-      ground             = true,
-      water              = true,
-      properties = {
-        delay              = 10,
-        dir                = [[dir]],
-        explosiongenerator = [[custom:smoke]],
-        pos                = [[0, 0, 0]],
-      },
     },
-  },
 
   ["flash1"] = {
     air                = true,

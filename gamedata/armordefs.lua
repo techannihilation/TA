@@ -314,7 +314,6 @@ return {
 		"corkrog",
 		"armgor",
 		"gorg",
-		"cordem",
 		"corkarg",
 		"corshiva",
 		"corraven",
@@ -335,6 +334,9 @@ return {
 		"talon_mrtn",
 		"talon_visitant",
 		"talon_thanos",
+		--gok t3 Kbot
+		"gok_ifrit",
+
 		-- t4
 		"armraptor",
 		"tllsaurus",
