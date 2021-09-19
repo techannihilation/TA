@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, body, bulk, pillar, hammers, hammer1, hammer2, hammer3, hammer4,
-       sledge1, sledge2, sledge3, sledge4, color;
+       sledge1, sledge2, sledge3, sledge4;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6;

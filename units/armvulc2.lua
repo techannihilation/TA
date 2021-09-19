@@ -1,8 +1,5 @@
 return {
 	armvulc2 = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 604315,
 		buildcostmetal = 46183,

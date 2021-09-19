@@ -1,0 +1,252 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, bulk, pillar, hammers, 
+		hammer1, hammer2, hammer3, hammer4, hammer5, hammer6, hammer7, hammer8,
+       sledge1, sledge2, sledge3, sledge4, sledge5, sledge6, sledge7, sledge8;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
+
+
+FirstHammer()
+{
+	move hammer1 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer1 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge1;
+	sleep 200;
+	move hammer1 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge1;
+	sleep 100;
+	move hammer1 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge1;
+}
+
+SecondHammer()
+{
+	move hammer2 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer2 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge2;
+	sleep 200;
+	move hammer2 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge2;
+	sleep 100;
+	move hammer2 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge2;
+}
+
+ThirdHammer()
+{
+	move hammer3 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer3 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge3;
+	sleep 200;
+	move hammer3 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge3;
+	sleep 100;
+	move hammer3 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge3;
+}
+
+FourthHammer()
+{
+	move hammer4 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer4 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 200;
+	move hammer4 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 100;
+	move hammer4 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge4;
+}
+
+HammerFive()
+{
+	move hammer5 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer5 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 200;
+	move hammer5 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 100;
+	move hammer5 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge4;
+}
+
+HammerSix()
+{
+	move hammer6 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer6 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 200;
+	move hammer6 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 100;
+	move hammer6 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge4;
+}
+
+HammerSeven()
+{
+	move hammer7 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer7 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 200;
+	move hammer7 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 100;
+	move hammer7 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge4;
+}
+
+HammerHeight()
+{
+	move hammer8 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer8 to y-axis [7.0] speed [5.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 200;
+	move hammer8 to y-axis [4.2] speed [20.];
+	emit-sfx 256 | 3 from sledge4;
+	sleep 100;
+	move hammer8 to y-axis [0.] speed [60.];
+	emit-sfx 256 | 3 from sledge4;
+}
+
+Go()
+{
+		start-script FirstHammer();
+		sleep Static_Var_1;
+		start-script SecondHammer();
+		sleep Static_Var_1;
+		start-script ThirdHammer();
+		sleep Static_Var_1;
+		start-script FourthHammer();
+		sleep Static_Var_1;
+		start-script HammerFive();
+		sleep Static_Var_1;
+		start-script HammerSix();
+		sleep Static_Var_1;
+		start-script HammerSeven();
+		sleep Static_Var_1;
+		start-script HammerHeight();
+		sleep Static_Var_1;
+}
+
+Stop()
+{
+	wait-for-move hammer1 along y-axis;
+	wait-for-move hammer2 along y-axis;
+	wait-for-move hammer3 along y-axis;
+	wait-for-move hammer4 along y-axis;
+	wait-for-move hammer5 along y-axis;
+	wait-for-move hammer6 along y-axis;
+	wait-for-move hammer7 along y-axis;
+	wait-for-move hammer8 along y-axis;
+}
+
+InitState()
+{
+	Static_Var_4 = 1;
+	Static_Var_5 = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_5 )
+	{
+		Static_Var_4 = requestedstate;
+		return (0);
+	}
+	Static_Var_5 = 1;
+	currentstate = Static_Var_4;
+	Static_Var_4 = requestedstate;
+	while( Static_Var_4 != currentstate )
+	{
+		if( Static_Var_4 == 0 )
+		{
+			start-script Go();
+			currentstate = 0;
+			Static_Var_6 = 1;
+		}
+		if( Static_Var_4 == 1 )
+		{
+			start-script Stop();
+			currentstate = 1;
+			Static_Var_6 = 0;
+		}
+	}
+	Static_Var_5 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 91;
+	Static_Var_3 = 182;
+	call-script InitState();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+SetSpeed(Func_Var_1)
+{
+	Static_Var_1 = 1400 - Func_Var_1 / 2;
+	if( Static_Var_1 <= 325 )
+	{
+		Static_Var_1 = 325;
+	}
+}
+
+Killed(severity, corpsetype)
+{
+	explode body type NOHEATCLOUD;
+	explode pillar type NOHEATCLOUD;
+	explode sledge1 type NOHEATCLOUD;
+	explode sledge2 type NOHEATCLOUD;
+	explode sledge5 type NOHEATCLOUD;
+	explode sledge7 type NOHEATCLOUD;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	explode sledge3 type NOHEATCLOUD;
+	explode sledge4 type NOHEATCLOUD;
+	explode sledge6 type NOHEATCLOUD;
+	explode sledge8 type NOHEATCLOUD;
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	explode hammer2 type NOHEATCLOUD | FALL;
+	explode hammer4 type NOHEATCLOUD | FALL;
+	explode hammer6 type NOHEATCLOUD | FALL;
+	explode hammer8 type NOHEATCLOUD | FALL;
+	corpsetype = 3;
+	return (corpsetype);
+}

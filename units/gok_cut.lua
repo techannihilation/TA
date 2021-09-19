@@ -130,7 +130,7 @@ return {
 				impactonly = 1,
 				name = "Saw",
 				noselfdamage = true,
-				range = 40,
+				range = 45,
 				reloadtime = 0.1,
 				rgbcolor = "0.0 0.0 0.0",
 				rgbcolor2= "0.0 0.0 0.0",
@@ -138,7 +138,7 @@ return {
 				soundstart = "goksaw",
 				soundtrigger = 1,
 				turret = true,
-				weapontype = "BeamLaser",
+				weapontype = "LaserCannon",
 				weaponvelocity = 2000,
 				damage = {
 					default = 10,

@@ -254,6 +254,11 @@ local morphDefs = {
 					tech = 1,
 		},
 	},
+	gok_geo = {
+		into = 'gok_mohogeo',
+		time = 120,
+		tech = 1,
+	},
 	corgeo = {
     {
 				into = 'cmgeo',
@@ -410,6 +415,11 @@ local morphDefs = {
 	},
 	armvulc = {
 		into = 'armvulc2',
+		time = 45,
+		xp = 0.15,
+	},
+	gok_meteor = {
+		into = 'gok_meteor2',
 		time = 45,
 		xp = 0.15,
 	},

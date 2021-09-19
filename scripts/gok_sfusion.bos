@@ -1,0 +1,95 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, dome, dome2,  socle, ceil,
+		s1, s2, s3, s4, s5, s6, s7, s8;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from dome2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		explode dome type NOHEATCLOUD;
+		explode ceil type NOHEATCLOUD;
+		explode dome2 type SHATTER | EXPLODE_ON_HIT;
+		explode s3 type NOHEATCLOUD;
+		explode s2 type NOHEATCLOUD;
+		explode s3 type NOHEATCLOUD;
+		explode s4 type NOHEATCLOUD;
+		explode s5 type NOHEATCLOUD;
+		explode s6 type NOHEATCLOUD;
+		explode s7 type NOHEATCLOUD;
+		explode s8 type NOHEATCLOUD;
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		explode dome type NOHEATCLOUD;
+		explode s1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode s4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode dome2 type NOHEATCLOUD;
+		explode s2 type NOHEATCLOUD;
+		explode ceil type NOHEATCLOUD;
+		explode s4 type NOHEATCLOUD;
+		explode s5 type NOHEATCLOUD;
+		explode s6 type NOHEATCLOUD;
+		explode s7 type NOHEATCLOUD;
+		explode s8 type NOHEATCLOUD;
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	explode dome type NOHEATCLOUD;
+	explode s1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode ceil type NOHEATCLOUD;
+	explode dome2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode s2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode s3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode s4 type NOHEATCLOUD;
+	explode s5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode s6 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode s7 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode s8 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	corpsetype = 3;
+	return (corpsetype);
+}

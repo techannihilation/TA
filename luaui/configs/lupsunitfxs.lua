@@ -7,6 +7,12 @@ effectUnitDefs = {
 gok_meteor = {
   {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=3, onActive=true}},
 },
+gok_meteor2 = {
+  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=3, onActive=true}},
+},
+gok_meteor1 = {
+  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=3, onActive=true}},
+},
  gok_gen = {
  {class='SimpleParticles2', options=MergeTable({pos={0,10,0}, delay=60, size=5, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
  {class='SimpleParticles2', options=MergeTable({pos={0,14,0}, delay=0, size=4, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
@@ -16,6 +22,11 @@ gok_fusion = {
 {class='SimpleParticles2', options=MergeTable({pos={0,16,0}, delay=60, size=10, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
 {class='SimpleParticles2', options=MergeTable({pos={0,20,0}, delay=0, size=8, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
 {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,14,0}, size=8, precision=22, repeatEffect=true}},
+},
+gok_sfusion = {
+{class='SimpleParticles2', options=MergeTable({pos={0,25,0}, delay=60, size=14, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+{class='SimpleParticles2', options=MergeTable({pos={0,30,0}, delay=0, size=10, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,28,0}, size=8, precision=22, repeatEffect=true}},
 },
 --TALON
 talon_gen = {

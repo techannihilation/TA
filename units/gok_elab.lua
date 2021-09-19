@@ -59,7 +59,7 @@ return {
 		buildoptions = {
 			[1] = "gok_ech",
 			[2] = "gok_hellspawn",
-			[3] = "gok_hellspawn",
+			--[3] = "gok_hellspawn",
 			[4] = "gok_ifrit",
 		},
 		customparams = {
