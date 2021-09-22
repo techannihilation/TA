@@ -1,8 +1,5 @@
 return {
 	armorbital = {
-		acceleration = 0,
-
-		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 1758043,
 		buildcostmetal = 299162,
@@ -136,7 +133,7 @@ return {
 				model = "weapon_unitshell",
 				name = "Zeus Cannon",
 				noselfdamage = true,
-				range = 10000,
+				range = 8000,
 				reloadtime = 0.5,
 				soundhitdry = "",
 				soundhitwet = "",

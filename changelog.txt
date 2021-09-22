@@ -9,7 +9,7 @@ Balance :
   - Change T4 Cons for Talon (Delete Pod to remplace by Hover)
 
 Fix :
- - armorbital (zeus luancher T4) : Fix range. Now can shoot at 9K.
+ - armorbital (zeus luancher T4) : Fix range. Now can shoot at 8K.
 
 3.98 => 4.00
 2021-09-13
