@@ -9,47 +9,12 @@ piece  flare, body, base, turret, w1, w2, w3, w4,
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
-
-BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
-{
-	while( TRUE )
-	{
-		Func_Var_1 = get PIECE_XZ(base);
-		Func_Var_3 = 0;
-		if( get XZ_HYPOT(Func_Var_1 - Func_Var_2) >= 163840 )
-		{
-			Func_Var_3 = 0 - get XZ_ATAN(Func_Var_2 - Func_Var_1) * 80 / 40;
-		}
-		turn body to z-axis Func_Var_3 speed <60.>;
-		Func_Var_2 = Func_Var_1;
-		sleep 300;
-	}
-}
-
-WobbleUnit()
-{
-	while( TRUE )
-	{
-		if( Static_Var_3 )
-		{
-			move base to y-axis [2.] speed [3.];
-		}
-		else
-		{
-			move base to y-axis [-0.] speed [3.];
-		}
-		Static_Var_3 = !Static_Var_3;
-		sleep 750;
-	}
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
-	start-script WobbleUnit();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -153,7 +118,6 @@ Create()
 	dont-cache flare;
 	Static_Var_2 = 3000;
 	start-script SmokeUnit();
-	start-script BankClerck();
 }
 
 SetMaxReloadTime(Func_Var_1)

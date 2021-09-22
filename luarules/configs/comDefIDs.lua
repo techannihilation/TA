@@ -20,6 +20,9 @@ local comDefIDs = {
 	[UnitDefNames["talon_com3"].id] = true,
 	--Gok
 	[UnitDefNames["gok_com"].id] = true,
+	[UnitDefNames["gok_com1"].id] = true,
+	[UnitDefNames["gok_com2"].id] = true,
+	[UnitDefNames["gok_com3"].id] = true,
 }
 
 return comDefIDs

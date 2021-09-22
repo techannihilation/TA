@@ -153,9 +153,9 @@ local ShieldUnits = {
   [UnitDefNames["talon_mythril"].id] = true,
   [UnitDefNames["talon_shieldgen"].id] = true,
   --Gok
-  --[UnitDefNames["gok_com1"].id] = true,
-  --[UnitDefNames["gok_com2"].id] = true,
-  --[UnitDefNames["gok_com3"].id] = true,
+  [UnitDefNames["gok_com1"].id] = true,
+  [UnitDefNames["gok_com2"].id] = true,
+  [UnitDefNames["gok_com3"].id] = true,
   [UnitDefNames["gok_gate"].id] = true,
   --[UnitDefNames["gok_gate1"].id] = true,
   [UnitDefNames["gok_gate2"].id] = true,

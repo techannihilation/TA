@@ -123,7 +123,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.02,
-				energypershot = 5,
 				explosiongenerator = "custom:SMALL_YELLOW_BURN",
 				firestarter = 50,
 				impactonly = 1,

@@ -77,7 +77,7 @@ return {
 			[13] = "gok_lab",
 			[14] = "gok_alab",
 			[15] = "gok_ap",
-			--[16] = "gok_hp",
+			[16] = "gok_hp",
 			[17] = "gok_nanotc",
 			[18] = "gok_eyes",
 			[19] = "gok_rad",

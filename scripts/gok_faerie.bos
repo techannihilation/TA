@@ -1,0 +1,143 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, plate1, plate1b, plate2, plate2b, head, turretbase,
+       turret, pitchturret, launcher, launch, whirl, emit1, emit2;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+StartMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+	while( TRUE )
+	{
+		if( Static_Var_1 <= 9 )
+		{
+			emit-sfx 3 from emit1;
+			emit-sfx 5 from emit2;
+		}
+		sleep 100;
+	}
+}
+
+StopMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+	sleep 150;
+}
+
+Create()
+{
+	hide whirl;
+	hide emit1;
+	hide emit2;
+	Static_Var_1 = 0;
+
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	turn turret to y-axis <0.> speed <120.>;
+	turn pitchturret to x-axis <0.> speed <60.>;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = launch;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <240.>;
+	turn pitchturret to x-axis <0.> - pitch speed <120.>;
+	turn turret to y-axis heading speed <240.>;
+	turn pitchturret to x-axis <0.> - pitch speed <120.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	//show launch;
+	move launcher to z-axis [-1.] speed [10.];
+	sleep 150;
+	//hide launch;
+	move launcher to z-axis [0.] speed [1.];
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode launcher type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD;
+	explode turret type NOHEATCLOUD;
+	explode pitchturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode launcher type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

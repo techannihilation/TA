@@ -2,11 +2,11 @@ return {
 	talon_basilisk = {
 		acceleration = 0.084,
 		brakerate = 0.336,
-		buildcostenergy = 5600,
-		buildcostmetal = 510,
+		buildcostenergy = 8951,
+		buildcostmetal = 513,
 		builder = false,
 		buildpic = "talon_basilisk.dds",
-		buildtime = 6500,
+		buildtime = 7000,
 		canattack = true,
 		canguard = true,
 		canhover = true,
@@ -28,10 +28,10 @@ return {
 		idletime = 1800,
 		losemitheight = 25,
 		maneuverleashlength = 640,
-		mass = 350,
-		maxdamage = 2055,
+		mass = 513,
+		maxdamage = 2255,
 		maxslope = 16,
-		maxvelocity = 1.8,
+		maxvelocity = 1.5,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "HOVER3",
@@ -39,6 +39,7 @@ return {
 		noautofire = false,
 		objectname = "talon_basilisk",
 		radaremitheight = 25,
+		sonardistance = 400,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 500,
@@ -151,7 +152,6 @@ return {
 				},
 
 			},
-
 			depthcharge = {
 				areaofeffect = 32,
 				avoidfeature = false,
@@ -196,7 +196,6 @@ return {
 				def = "TALON_LASER",
 				onlytargetcategory = "SURFACE",
 			},
-
 			[2] = {
 				def = "DEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",

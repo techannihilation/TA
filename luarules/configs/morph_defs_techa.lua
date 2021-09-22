@@ -43,8 +43,16 @@ local morphDefs = {
     time = 135,
 	},
 	gok_com = {
-		into = 'armcom1',
+		into = 'gok_com1',
 		time = 45,
+	},
+	gok_com1 = {
+		into = 'gok_com2',
+		time = 90,
+	},
+	gok_com2 = {
+		into = 'gok_com3',
+		time = 135,
 	},
 	corcom = {
 		into = 'corcom1',
@@ -1116,6 +1124,11 @@ local morphDefs = {
 		time = 30,
 		tech = 1,
 	},
+	gok_rad = {
+		into = 'gok_arad',
+		time = 30,
+		tech = 1,
+	},
 	armjamt = {
 		into = 'armveil',
 		time = 30,
@@ -1128,6 +1141,16 @@ local morphDefs = {
 	},
 	tlljam = {
 		into = 'tllajam',
+		time = 30,
+		tech = 1,
+	},
+	talon_conspiracy = {
+		into = 'talon_conspiracy1',
+		time = 30,
+		tech = 1,
+	},
+	gok_jam = {
+		into = 'gok_jam1',
 		time = 30,
 		tech = 1,
 	},

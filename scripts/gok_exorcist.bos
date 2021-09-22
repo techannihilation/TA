@@ -1,0 +1,116 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, fronthull, head, cockpit, weapon, fire, plate1,
+       plate1b, plate2, plate2b, plate3, whirl, emit1, emit2;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+	while( TRUE )
+	{
+		if( Static_Var_1 <= 9 )
+		{
+			emit-sfx 3 from emit1;
+			emit-sfx 5 from emit2;
+		}
+		sleep 100;
+	}
+}
+
+StopMoving()
+{
+	signal 4;
+	set-signal-mask 4;
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+Create()
+{
+	start-script Smokeunit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+AimPrimary(heading, pitch)
+{
+	return (1);
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD ;
+		explode hull type NOHEATCLOUD;
+		explode fronthull type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
+		explode fronthull type NOHEATCLOUD;
+		explode plate3 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode hull type NOHEATCLOUD;
+	explode fronthull type NOHEATCLOUD | BITMAP2;
+	explode weapon type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode plate3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

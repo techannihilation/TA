@@ -1,0 +1,227 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, buildpad, building1, flag1, flag1a, flag1b, flag1c, flag2, flag2a, flag2b, flag2c, lathe1, spray1, lathe2, spray2, lathe3, spray3, 
+		building2, flag3, flag3a, flag3b, flag3c, flag4, flag4a, flag4b, flag4c, lathe4, spray4, lathe5, spray5, lathe6, spray6;
+
+static-var  DesiredState, StateChanging, Spray;
+
+ControlFlag(Random)
+{
+	//Flag wavering
+	while (TRUE)
+	{
+		Random = rand( 1, 3 );
+			
+		if( Random == 1 )
+		{
+				turn flag1a to x-axis <5.00> speed <5.00>;
+				turn flag1b to x-axis <5.00> speed <5.00>;
+				turn flag1c to x-axis <-10.00> speed <10.00>;
+				turn flag2a to x-axis <5.00> speed <5.00>;
+				turn flag2b to x-axis <-10.00> speed <10.00>;
+				turn flag2c to x-axis <5.00> speed <5.00>;
+				
+				turn flag3a to x-axis <5.00> speed <5.00>;
+				turn flag3b to x-axis <5.00> speed <5.00>;
+				turn flag3c to x-axis <-10.00> speed <10.00>;
+				turn flag4a to x-axis <5.00> speed <5.00>;
+				turn flag4b to x-axis <-10.00> speed <10.00>;
+				turn flag4c to x-axis <5.00> speed <5.00>;
+		}
+		if( Random == 2 )
+		{
+				turn flag1a to x-axis <5.00> speed <5.00>;
+				turn flag1b to x-axis <-10.00> speed <10.00>;
+				turn flag1c to x-axis <5.00> speed <5.00>;
+				turn flag2a to x-axis <-10.00> speed <10.00>;
+				turn flag2b to x-axis <5.00> speed <5.00>;
+				turn flag2c to x-axis <5.00> speed <5.00>;
+				
+				turn flag3a to x-axis <5.00> speed <5.00>;
+				turn flag3b to x-axis <-10.00> speed <10.00>;
+				turn flag3c to x-axis <5.00> speed <5.00>;
+				turn flag4a to x-axis <-10.00> speed <10.00>;
+				turn flag4b to x-axis <5.00> speed <5.00>;
+				turn flag4c to x-axis <5.00> speed <5.00>;
+		}
+		if( Random == 3 )
+		{
+				turn flag1a to x-axis <-10.00> speed <10.00>;
+				turn flag1b to x-axis <5.00> speed <5.00>;
+				turn flag1c to x-axis <5.00> speed <5.00>;
+				turn flag2a to x-axis <5.00> speed <5.00>;
+				turn flag2b to x-axis <5.00> speed <5.00>;
+				turn flag2c to x-axis <-10.00> speed <10.00>;
+				
+				turn flag3a to x-axis <-10.00> speed <10.00>;
+				turn flag3b to x-axis <5.00> speed <5.00>;
+				turn flag3c to x-axis <5.00> speed <5.00>;
+				turn flag4a to x-axis <5.00> speed <5.00>;
+				turn flag4b to x-axis <5.00> speed <5.00>;
+				turn flag4c to x-axis <-10.00> speed <10.00>;
+		}
+		
+		sleep 350;
+	}
+		
+}
+
+RequestState(RequestedState, CurrentState)
+{
+	if( StateChanging )
+	{
+		DesiredState = RequestedState;
+		return;
+	}
+	
+	StateChanging = 1;
+	CurrentState = DesiredState;
+	DesiredState = RequestedState;
+	
+	while( DesiredState != CurrentState )
+	{
+		if( !DesiredState )
+		{					
+			set YARD_OPEN to 1;
+			
+			while( !get YARD_OPEN )
+				{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 1;
+				}
+			
+			set BUGGER_OFF to 0;
+			set INBUILDSTANCE to 1;
+			CurrentState = 0;
+		}
+		if( DesiredState == 1 )
+		{
+			set INBUILDSTANCE to 0;
+			set YARD_OPEN to 0;
+			
+			while( get YARD_OPEN )
+				{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 0;
+				}
+			
+			set BUGGER_OFF to 0;			
+			CurrentState = 1;
+		}
+	}
+	
+	StateChanging = 0;
+}
+
+Create()
+{
+	DesiredState = 1;
+	StateChanging = 0;
+	Spray = spray1;
+	start-script ControlFlag();
+}
+
+QueryNanoPiece(PieceNum)
+{
+	if( Spray == spray1 )
+	{
+		PieceNum = spray1;
+		Spray = spray2;
+		return;
+	}
+	if( Spray == spray2 )
+	{
+		PieceNum = spray2;
+		Spray = spray3;
+		return;
+	}
+	if( Spray == spray3 )
+	{
+		PieceNum = spray3;
+		Spray = spray4;
+		return;
+	}
+	if( Spray == spray4 )
+	{
+		PieceNum = spray4;
+		Spray = spray5;
+		return;
+	}
+		if( Spray == spray5 )
+	{
+		PieceNum = spray5;
+		Spray = spray6;
+		return;
+	}
+	if( Spray == spray6 )
+	{
+		PieceNum = spray6;
+		Spray = spray1;
+		return;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	
+	sleep 5000;
+	
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(PieceNum)
+{
+	PieceNum = buildpad;
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(Severity, CorpseType, Random)
+{	
+	if( severity <= 25 )
+	{
+		CorpseType = 1;	
+		explode building1 type SHATTER | NOHEATCLOUD;
+		explode building2 type SHATTER | NOHEATCLOUD;
+		explode buildpad type SHATTER | NOHEATCLOUD;
+		return (CorpseType);
+	}	
+	if( severity <= 25 )
+	{
+		CorpseType = 2;	
+		explode building1 type SHATTER | NOHEATCLOUD;
+		explode building2 type SHATTER | NOHEATCLOUD;
+		explode buildpad type SHATTER | NOHEATCLOUD;
+		return (CorpseType);
+	}
+	CorpseType = 3;	
+	explode building1 type SHATTER | NOHEATCLOUD;
+	explode building2 type SHATTER | NOHEATCLOUD;
+	explode buildpad type SHATTER | NOHEATCLOUD;
+	return (CorpseType);
+}

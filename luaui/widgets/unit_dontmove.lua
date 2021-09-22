@@ -53,11 +53,11 @@ local unitArray = {
   "talon_com2",
   "talon_com3",
 
-  --Gok
-    "gok_com",
-    "gok_com1",
-    "gok_com2",
-    "gok_com3",
+--Gok
+  "gok_com",
+  "gok_com1",
+  "gok_com2",
+  "gok_com3",
 
   --bombers
   "armblz",

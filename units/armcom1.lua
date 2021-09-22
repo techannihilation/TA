@@ -323,7 +323,6 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.05,
 				thickness = 5,
-				tolerance = 10000,
 				turret = true,
 				waterweapon = true,
 				weapontype = "BeamLaser",

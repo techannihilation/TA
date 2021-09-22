@@ -6,14 +6,18 @@
 piece  base, pelvis, torsotwist, torso, lshoulderrecoil, lshoulder, larmrecoil, larm,
        lfire, lfire2, llathe, lsystem2, rshoulderrecoil, rshoulder, rarmrecoil,
        rarm, rfire, rfire2, rlathe, rsystem2, head, eyeflare,
-       backpack, uppertorso, lleg, lboot, rleg, rboot;
+       backpack, uppertorso, lleg, lboot, rleg, rboot, gun;
 
-static-var  bMoving, bAiming, bBuilding, spray, gun_1, gun_3;
+static-var  bMoving, bAiming, bBuilding, spray, gun_1, gun_3, Static_Shield;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_DGUN		4
 
+Shield()
+{
+	Static_Shield = !Static_Shield;
+}
 
 MotionControl(moving, aiming, justmoved)
 {
@@ -226,6 +230,7 @@ Create()
 	gun_1 = 0;
 	gun_3 = 0;
 	bBuilding = 0;
+	Static_Shield = 1;
 	start-script MotionControl();
 	turn larm to x-axis <80.> now;
 	turn rarm to x-axis <80.> now;
@@ -427,6 +432,31 @@ FireTertiary()
 	//hide eyeflare;
 }
 
+// SHIELD
+
+AimFromSecondary(piecenum)
+{
+	piecenum = gun;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = gun;
+}
+
+AimSecondary(heading, pitch)
+{
+	if( Static_Shield )
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+// CONSTRUCTION
 StartBuilding(Func_Var_1, Func_Var_2)
 {
 	bAiming = 1;

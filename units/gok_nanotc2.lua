@@ -54,7 +54,7 @@ return {
 		turnrate = 1,
 		unitname = "gok_nanotc2",
 		upright = true,
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		workertime = 650,
 		customparams = {
 			buildpic = "gok_nanotc2.dds",

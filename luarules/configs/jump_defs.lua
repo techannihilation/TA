@@ -42,12 +42,14 @@ jumpClassGroups = {
   	"corcom2",
   	"tllcom2",
   	"talon_com2",
+    "gok_com2",
 	},
 	supremecom = {
   	"armcom3",
   	"corcom3",
   	"tllcom3",
   	"talon_com3",
+    "gok_com3",
 	},
 	jumpbot = {
   	"tlldischarge",

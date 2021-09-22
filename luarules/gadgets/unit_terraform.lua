@@ -238,6 +238,14 @@ local allowedArray = {
   [UnitDefNames["talon_uch"].id] = true,
   [UnitDefNames["talon_cpod"].id] = true,
   [UnitDefNames["talon_builderlvl3"].id] = true,
+
+  --TALON
+  [UnitDefNames["gok_com1"].id] = true,
+  [UnitDefNames["gok_com2"].id] = true,
+  [UnitDefNames["gok_com3"].id] = true,
+  --[UnitDefNames["gok_uch"].id] = true,
+  --[UnitDefNames["talon_cpod"].id] = true,
+  --[UnitDefNames["talon_builderlvl3"].id] = true,
 }
 
 --------------------------------------------------------------------------------

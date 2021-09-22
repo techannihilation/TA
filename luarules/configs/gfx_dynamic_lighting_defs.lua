@@ -62,6 +62,9 @@ local copyLightDefs = {
     ["talon_com2_tal_disintegrator"] = "arm_disintegrator",
     ["talon_com3_tal_disintegrator"] = "arm_disintegrator",
     ["gok_com_gok_disintegrator"  ] = "arm_disintegrator",
+    ["gok_com1_gok_disintegrator"  ] = "arm_disintegrator",
+    ["gok_com2_gok_disintegrator"  ] = "arm_disintegrator",
+    ["gok_com3_gok_disintegrator"  ] = "arm_disintegrator",
 		--]]
 
 		--nukes

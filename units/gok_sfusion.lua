@@ -9,7 +9,7 @@ return {
 		buildtime = 825000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "150 90 150",
+		collisionvolumescales = "175 90 175",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		corpse = "dead",
@@ -42,7 +42,7 @@ return {
 		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo",
 		customparams = {
 			buildpic = "gok_sfusion.dds",
-			faction = "TALON",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {

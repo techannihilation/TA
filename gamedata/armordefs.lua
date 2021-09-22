@@ -507,5 +507,8 @@ return {
 		"talon_com2",
 		"talon_com3",
 		"gok_com",
+		"gok_com1",
+		"gok_com2",
+		"gok_com3",
 	}
 }
