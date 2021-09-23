@@ -1,7 +1,7 @@
 return {
 	tllasy = {
-		buildcostenergy = 40114,
-		buildcostmetal = 4296,
+		buildcostenergy = 12360,
+		buildcostmetal = 3305,
 		builder = true,
 		buildpic = "tllasy.dds",
 		buildtime = 36000,

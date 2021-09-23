@@ -2,8 +2,8 @@ return {
 	gok_asy = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 50955,
-		buildcostmetal = 3891,
+		buildcostenergy = 18012,
+		buildcostmetal = 3030,
 		builder = true,
 		buildpic = "gok_asy.dds",
 		buildtime = 36000,

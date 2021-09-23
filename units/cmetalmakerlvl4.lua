@@ -1,8 +1,8 @@
 return {
 	cmetalmakerlvl4 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 11603200,
-		buildcostmetal = 234465,
+		buildcostenergy = 10878000,
+		buildcostmetal = 242550,
 		builder = false,
 		buildpic = "cmetalmakerlvl4.dds",
 		buildtime = 9500000,

@@ -2,8 +2,8 @@ return {
 	talon_eplat = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 419667,
-		buildcostmetal = 19292,
+		buildcostenergy = 411042,
+		buildcostmetal = 17985,
 		builder = true,
 		buildpic = "talon_eplat.dds",
 		buildtime = 300000,

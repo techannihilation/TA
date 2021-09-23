@@ -1,7 +1,7 @@
 return {
 	armusy = {
-		buildcostenergy = 1552296,
-		buildcostmetal = 86632,
+		buildcostenergy = 1152296,
+		buildcostmetal = 76632,
 		builder = true,
 		buildpic = "armusy.dds",
 		buildtime = 200000,

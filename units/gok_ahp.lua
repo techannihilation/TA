@@ -1,7 +1,7 @@
 return {
 	gok_ahp = {
-		buildcostenergy = 69780,
-		buildcostmetal = 3180,
+		buildcostenergy = 29780,
+		buildcostmetal = 3295,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,

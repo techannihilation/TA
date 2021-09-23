@@ -2,8 +2,8 @@ return {
 	tllammaker = {
 		activatewhenbuilt = false,
 		buildangle = 8192,
-		buildcostenergy = 22613,
-		buildcostmetal = 544,
+		buildcostenergy = 13568,
+		buildcostmetal = 522,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -28,8 +28,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "tllammaker",
 		radardistance = 0,
 		radaremitheight = 26,

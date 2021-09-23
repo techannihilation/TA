@@ -14,7 +14,7 @@ return {
 		corpse = "dead",
 		description = "Produces Energy",
 		energymake = 12000,
-		energystorage = 24000,
+		energystorage = 12000,
 		energyuse = 0,
 		explodeas = "FUSION_BLAST_BIG",
 		floater = false,
@@ -29,8 +29,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "AFusionPlant",
 		radardistance = 0,
 		radaremitheight = 110,

@@ -1,7 +1,7 @@
 return {
 	tllmetalmakerlvl1 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 3256,
+		buildcostenergy = 1628,
 		buildcostmetal = 78,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tllmetalmakerlvl1_aoplane.dds",
 		buildpic = "tllmetalmakerlvl1.dds",
-		buildtime = 4550,
+		buildtime = 3750,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "55 30 55",
@@ -29,8 +29,7 @@ return {
 		maxdamage = 290,
 		maxslope = 10,
 		maxwaterdepth = 255,
-		name = "Advanced Metal Maker",
-		
+		name = "Advanced Metal Maker",		
 		objectname = "tllmetalmakerlvl1",
 		radardistance = 0,
 		radaremitheight = 25,

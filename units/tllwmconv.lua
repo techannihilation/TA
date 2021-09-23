@@ -2,11 +2,11 @@ return {
 	tllwmconv = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 1357,
+		buildcostenergy = 814,
 		buildcostmetal = 26,
 		builder = false,
 		buildpic = "tllwmconv.dds",
-		buildtime = 1700,
+		buildtime = 1500,
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "36 26 36",

@@ -22,7 +22,7 @@ return {
 		corpse = "dead",
 		description = "Produces Energy",
 		energymake = 1000,
-		energystorage = 2000,
+		energystorage = 1000,
 		explodeas = "CRAWL_BLAST",
 		footprintx = 5,
 		footprintz = 4,

@@ -1,8 +1,8 @@
 return {
 	ametalmakerlvl3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1514822,
-		buildcostmetal = 26438,
+		buildcostenergy = 1237600,
+		buildcostmetal = 26112,
 		builder = false,
 		buildpic = "ametalmakerlvl3.dds",
 		buildtime = 1500000,

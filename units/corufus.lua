@@ -1,8 +1,6 @@
 return {
 	corufus = {
-		acceleration = 0,
 		activatewhenbuilt = true,
-		brakerate = 0,
 		buildangle = 16000,
 		buildcostenergy = 18063360,
 		buildcostmetal = 1988813,
@@ -16,7 +14,7 @@ return {
 		corpse = "dead",
 		description = "Produces Energy / Storage",
 		energymake = 614400,
-		energystorage = 1000000,
+		energystorage = 614400,
 		energyuse = 0,
 		explodeas = "FUSION_SUPERBLAST2",
 		footprintx = 20,

@@ -1,8 +1,8 @@
 return {
 	talon_metalmakerlvl3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 2560118,
-		buildcostmetal = 34992,
+		buildcostenergy = 2091600,
+		buildcostmetal = 34560,
 		builder = false,
 		buildpic = "talon_metalmakerlvl3.dds",
 		buildtime = 1750000,

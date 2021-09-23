@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 3268,
+		buildcostenergy = 1961,
 		buildcostmetal = 34,
 		builder = false,
 		buildpic = "talon_fmkr.dds",

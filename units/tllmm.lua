@@ -2,8 +2,8 @@ return {
 	tllmm = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
-		buildcostenergy = 678,
-		buildcostmetal = 9,
+		buildcostenergy = 407,
+		buildcostmetal = 13,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -26,8 +26,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Metal Maker",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLMM",
 		radaremitheight = 25,
 		selfdestructas = "ARMESTOR_BUILDING",

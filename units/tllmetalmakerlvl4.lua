@@ -1,8 +1,8 @@
 return {
 	tllmetalmakerlvl4 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 6807629,
-		buildcostmetal = 178023,
+		buildcostenergy = 6686064,
+		buildcostmetal = 192931,
 		builder = false,
 		buildpic = "tllmetalmakerlvl4.dds",
 		buildtime = 9000000,

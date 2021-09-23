@@ -1,7 +1,7 @@
 return {
 	tllesy = {
-		buildcostenergy = 170230,
-		buildcostmetal = 21422,
+		buildcostenergy = 185030,
+		buildcostmetal = 18180,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,

@@ -1,7 +1,7 @@
 return {
 	coresy = {
-		buildcostenergy = 238950,
-		buildcostmetal = 20112,
+		buildcostenergy = 248950,
+		buildcostmetal = 17112,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 18,

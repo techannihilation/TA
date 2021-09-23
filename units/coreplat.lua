@@ -2,8 +2,8 @@ return {
 	coreplat = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 399667,
-		buildcostmetal = 19492,
+		buildcostenergy = 403068,
+		buildcostmetal = 18347,
 		builder = true,
 		buildpic = "coreplat.dds",
 		buildtime = 300000,

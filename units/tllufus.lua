@@ -1,8 +1,6 @@
 return {
 	tllufus = {
-		acceleration = 0,
 		activatewhenbuilt = true,
-		brakerate = 0,
 		buildangle = 16000,
 		buildcostenergy = 10164000,
 		buildcostmetal = 1601568,
@@ -16,7 +14,7 @@ return {
 		corpse = "dead",
 		description = "Produces Energy / Storage",
 		energymake = 480000,
-		energystorage = 960000,
+		energystorage = 480000,
 		energyuse = 0,
 		explodeas = "FUSION_SUPERBLAST2",
 		footprintx = 20,

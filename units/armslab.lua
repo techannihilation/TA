@@ -1,7 +1,7 @@
 return {
 	armslab = {
 		buildangle = 950,
-		buildcostenergy = 52745,
+		buildcostenergy = 27745,
 		buildcostmetal = 3217,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

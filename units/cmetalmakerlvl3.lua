@@ -1,8 +1,8 @@
 return {
 	cmetalmakerlvl3 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 1947746,
-		buildcostmetal = 38320,
+		buildcostenergy = 1515520,
+		buildcostmetal = 36045,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

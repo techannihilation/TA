@@ -1,7 +1,7 @@
 return {
 	tllplat = {
-		buildcostenergy = 59097,
-		buildcostmetal = 4433,
+		buildcostenergy = 27854,
+		buildcostmetal = 4005,
 		builder = true,
 		buildpic = "tllplat.dds",
 		buildtime = 36000,

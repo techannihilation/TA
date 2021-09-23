@@ -2,8 +2,8 @@ return {
 	talon_asy = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 50955,
-		buildcostmetal = 3891,
+		buildcostenergy = 23685,
+		buildcostmetal = 2904,
 		builder = true,
 		buildpic = "talon_asy.dds",
 		buildtime = 36000,

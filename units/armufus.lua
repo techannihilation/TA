@@ -1,8 +1,6 @@
 return {
 	armufus = {
-		acceleration = 0,
 		activatewhenbuilt = true,
-		brakerate = 0,
 		buildangle = 16000,
 		buildcostenergy = 19192320,
 		buildcostmetal = 1811923,
@@ -17,9 +15,9 @@ return {
 		collisionvolumescales = "390 254 390",
 		collisionvolumetype = "box",
 		corpse = "dead",
-		description = "Produces Energy / Storage",
+		description = "Produces Energy",
 		energymake = 576000,
-		energystorage = 1000000,
+		energystorage = 576000,
 		energyuse = 0,
 		explodeas = "FUSION_SUPERBLAST2",
 		footprintx = 25,

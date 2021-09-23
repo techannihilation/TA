@@ -1,7 +1,7 @@
 return {
 	tllavp = {
 		buildangle = 1024,
-		buildcostenergy = 46580,
+		buildcostenergy = 23580,
 		buildcostmetal = 3695,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

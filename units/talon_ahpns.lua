@@ -1,6 +1,6 @@
 return {
 	talon_ahpns = {
-		buildcostenergy = 69780,
+		buildcostenergy = 32780,
 		buildcostmetal = 3180,
 		builder = true,
 		buildpic = "talon_ahpns.dds",

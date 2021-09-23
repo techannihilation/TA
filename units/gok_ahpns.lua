@@ -1,7 +1,7 @@
 return {
 	gok_ahpns = {
-		buildcostenergy = 69780,
-		buildcostmetal = 3180,
+		buildcostenergy = 29780,
+		buildcostmetal = 3295,
 		builder = true,
 		buildpic = "gok_ahpns.dds",
 		buildtime = 36000,

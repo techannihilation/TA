@@ -1,7 +1,5 @@
 return {
 	tlleplat = {
-		acceleration = 0,
-		brakerate = 0,
 		buildcostenergy = 315001,
 		buildcostmetal = 20415,
 		builder = true,

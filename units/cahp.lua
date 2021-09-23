@@ -1,7 +1,7 @@
 return {
 	cahp = {
-		buildcostenergy = 57454,
-		buildcostmetal = 3421,
+		buildcostenergy = 28454,
+		buildcostmetal = 3410,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 12,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 27,
-		mass = 4651,
+		mass = 3410,
 		maxdamage = 4205,
 		maxslope = 10,
 		maxwaterdepth = 0,

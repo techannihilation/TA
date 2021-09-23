@@ -2,8 +2,8 @@ return {
 	corplat = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 88042,
-		buildcostmetal = 4044,
+		buildcostenergy = 34010,
+		buildcostmetal = 3715,
 		builder = true,
 		buildpic = "corplat.dds",
 		buildtime = 36000,

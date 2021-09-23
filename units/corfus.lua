@@ -17,7 +17,7 @@ return {
 		corpse = "dead",
 		description = "Produces Energy",
 		energymake = 1280,
-		energystorage = 2560,
+		energystorage = 1280,
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST_CORE",
 		footprintx = 5,

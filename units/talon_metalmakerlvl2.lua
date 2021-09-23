@@ -1,8 +1,8 @@
 return {
 	talon_metalmakerlvl2 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 727877,
-		buildcostmetal = 9720,
+		buildcostenergy = 501984,
+		buildcostmetal = 9072,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,

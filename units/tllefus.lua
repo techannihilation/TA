@@ -19,7 +19,7 @@ return {
 		description = "Produces Energy",
 		downloadable = 1,
 		energymake = 60000,
-		energystorage = 120000,
+		energystorage = 60000,
 		explodeas = "FUSION_SUPERBLAST",
 		footprintx = 12,
 		footprintz = 12,
@@ -34,7 +34,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Dark Matter",
 		noautofire = false,
-		
 		objectname = "tllefus",
 		radardistance = 0,
 		radaremitheight = 160,
