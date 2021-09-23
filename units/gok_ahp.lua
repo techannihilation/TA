@@ -48,8 +48,9 @@ return {
 		yardmap = "oooccccooo oooccccooo oooccccooo oooccccooo oooccccooo oooccccooo oooccccooo oooccccooo",
 		buildoptions = {
 			[1] = "gok_ach",
-			[2] = "gok_seastrike1",
-			[3] = "gok_nightfall",
+			[2] = "gok_agrat",
+			[3] = "gok_seastrike1",
+			[4] = "gok_nightfall",
 		},
 		customparams = {
 			buildpic = "gok_ahp.dds",

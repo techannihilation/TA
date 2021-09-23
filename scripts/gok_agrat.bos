@@ -1,12 +1,12 @@
-#define TA			// This is a TA script
+#define TA
 
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, barrels, wake1, wake2, wake3, wake4, wake5,
-       wake6, wake7, wake8, flare1, flare2;
+piece  base, hull, turret, pitchturret, flare, gem,  thrust,
+		wake1, wake2, wake3, wake4, wake5, wake6;
 
-static-var  Static_Var_1, restore_delay, gun_1;
+static-var  Static_Var_1;
 
 // Signal definitions
 #define SIG_AIM				22
@@ -44,16 +44,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-RockUnit(anglex, anglez)
-{
-	turn base to x-axis anglex speed <50.000000>;
-	turn base to z-axis anglez speed <50.000000>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <20.000000>;
-	turn base to x-axis <0.000000> speed <20.000000>;
-}
-
 HitByWeapon(anglex, anglez)
 {
 	turn base to z-axis anglez speed <105.000000>;
@@ -70,7 +60,7 @@ StartMoving()
 	set-signal-mask SIG_MOVE;
 	while( TRUE )
 	{
-		if( Static_Var_1 == 2 == 1 )
+		if( Static_Var_1 == 2 or Static_Var_1 == 1 )
 		{
 			emit-sfx 3 from wake1;
 			emit-sfx 3 from wake2;
@@ -78,16 +68,12 @@ StartMoving()
 			emit-sfx 3 from wake4;
 			emit-sfx 3 from wake5;
 			emit-sfx 3 from wake6;
-			emit-sfx 3 from wake7;
-			emit-sfx 3 from wake8;
 			emit-sfx 5 from wake1;
 			emit-sfx 5 from wake2;
 			emit-sfx 5 from wake3;
 			emit-sfx 5 from wake4;
 			emit-sfx 5 from wake5;
 			emit-sfx 5 from wake6;
-			emit-sfx 5 from wake7;
-			emit-sfx 5 from wake8;
 		}
 		sleep 300;
 	}
@@ -106,30 +92,36 @@ setSFXoccupy(state)
 
 Create()
 {
-	hide flare1;
-	hide flare2;
-	restore_delay = 3000;
-	gun_1 = turret;
+	hide flare;
 	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
-	sleep restore_delay;
+	sleep 1500;
 	turn turret to y-axis <0.000000> speed <90.000000>;
-	turn barrels to x-axis <0.000000> speed <90.000000>;
+	turn pitchturret to x-axis <0.000000> speed <90.000000>;
 }
 
-AimPrimary(heading, pitch)
+QueryPrimary(PieceNum)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <150.000000>;
-	turn barrels to x-axis <0.000000> - pitch speed <90.000000>;
+	PieceNum = flare;
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = pitchturret;
+}
+
+AimPrimary(Heading, Pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis Heading speed <180.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <60.00>;	
 	wait-for-turn turret around y-axis;
-	wait-for-turn barrels around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
+	wait-for-turn pitchturret around x-axis;
+	return(1);
 }
 
 Shot1()
@@ -140,67 +132,38 @@ Shot1()
 
 FirePrimary()
 {
-	if( gun_1 == 0 )
-	{
-		show flare2;
-		sleep 150;
-		hide flare2;
-	}
-	if( gun_1 == 1 )
-	{
-		show flare1;
-		sleep 150;
-		hide flare1;
-	}
-	gun_1 = !gun_1;
+	show flare;
+	sleep 150;
+	hide flare;
 }
 
-AimFromPrimary(piecenum)
+SweetSpot(PieceNum)
 {
-	piecenum = turret;
+	PieceNum = base;
 }
 
-QueryPrimary(piecenum)
+Killed(Severity, CorpseType, Random)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = flare1;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = flare2;
-	}
-	gun_1 = !gun_1;
-}
-
-SweetSpot(piecenum)
-{
-	piecenum = base;
-}
-
-Killed(severity, corpsetype)
-{
-	hide flare1;
-	hide flare2;
+	hide flare;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode barrels type NOHEATCLOUD;
-		explode body type NOHEATCLOUD;
+		explode gem type NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode barrels type NOHEATCLOUD | FALL;
-		explode body type NOHEATCLOUD;
+		explode gem type NOHEATCLOUD | FALL;
+		explode hull type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode barrels type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode body type NOHEATCLOUD;
+	explode gem type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode hull type NOHEATCLOUD;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	return (corpsetype);
+	return (corpsetype);	
 }

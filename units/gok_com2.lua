@@ -79,7 +79,7 @@ return {
 		workertime = 900,
 		buildoptions = {
 			[1] = "gok_gen",
-			[2] = "gok_sfusion,",
+			[2] = "gok_sfusion",
 			[3] = "gok_mohogeo",
 			[4] = "gok_emex",
 			[5] = "gok_metalmakerlvl2",

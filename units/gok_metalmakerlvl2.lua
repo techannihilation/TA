@@ -33,7 +33,7 @@ return {
 		objectname = "gok_metalmakerlvl2",
 		radardistance = 0,
 		radaremitheight = 53,
-		script = "gok_amaker.cob",
+		script = "gok_makr.cob",
 		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 210,
 		unitname = "gok_metalmakerlvl2",
