@@ -38,7 +38,6 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "November",
 		noautofire = false,
-
 		objectname = "talon_november",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -153,7 +152,7 @@ return {
 				},
 				damage = {
 					commanders = 1000,
-					default = 1900,
+					default = 2000,
 					subs = 5,
 				},
 			},

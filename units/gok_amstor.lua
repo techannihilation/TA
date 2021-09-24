@@ -40,7 +40,7 @@ return {
 		sightdistance = 195,
 		unitname = "gok_amstor",
 		--usebuildinggrounddecal = true,
-		yardmap = "oooooooooooooooo",
+		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "gok_amstor.dds",
 			faction = "GOK",

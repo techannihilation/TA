@@ -84,7 +84,7 @@ return {
 			[24] = "gok_llt",
 			--[25] = "",
 			[26] = "gok_blackdawn",
-			--[27] = "gok_painless",
+			--[27] = "",
 			[28] = "gok_rl",
 			[29] = "gok_cir",
 			[30] = "gok_tide",
@@ -100,7 +100,7 @@ return {
 			[40] = "gok_sonar",
 			[41] = "gok_fdrag",
 			[42] = "gok_tl",
-			--[43] = "gok_fhlt",
+			--[43] = "",
 			[44] = "gok_frl",
 		},
 		customparams = {

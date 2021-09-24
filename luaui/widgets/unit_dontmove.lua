@@ -88,6 +88,9 @@ local unitArray = {
   "talon_handgod",
   "talon_eclipse",
 
+  --GOK
+  "gok_dirgesinger",
+
   --antinukes
   "armscab",
   "armcarry",

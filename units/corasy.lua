@@ -2,7 +2,7 @@ return {
 	corasy = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 16545
+		buildcostenergy = 16545,
 		buildcostmetal = 3091,
 		builder = true,
 		buildpic = "corasy.dds",
@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "CORASY",
 		radaremitheight = 77,
 		seismicsignature = 0,

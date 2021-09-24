@@ -15,10 +15,14 @@ if (not gadgetHandler:IsSyncedCode()) then
 end
 
 local paraTroppers = {
-		[UnitDefNames["corpyro"].id] = true,
-		[UnitDefNames["armmav"].id] = true,
-		[UnitDefNames["tlltraq"].id] = true,
+	   [UnitDefNames["corpyro"].id] = true,
+    [UnitDefNames["armmav"].id] = true,
+    [UnitDefNames["tlltraq"].id] = true,
+    [UnitDefNames["corcommando"].id] = true,
+    [UnitDefNames["armrambo"].id] = true,
+    [UnitDefNames["tllgizmo"].id] = true,
     [UnitDefNames["talon_berserker"].id] = true,
+    [UnitDefNames["talon_shepherd"].id] = true,
     [UnitDefNames["gok_zealot"].id] = true,
 	}
 

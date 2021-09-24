@@ -35,7 +35,7 @@ return {
 		maxvelocity = 8.5,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Shade",
+		name = "Dirgesinger",
 		noautofire = true,
 		objectname = "gok_dirgesinger",
 		seismicsignature = 0,
@@ -84,7 +84,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armbomb = {
+			gok_bomb = {
 				accuracy = 500,
 				areaofeffect = 196,
 				avoidfeature = false,
@@ -121,7 +121,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARMBOMB",
+				def = "GOK_BOMB",
 				onlytargetcategory = "SURFACE",
 			},
 		},

@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 352,
 		builder = false,
 		buildpic = "gok_blackdawn.dds",
-		buildtime = 10000,
+		buildtime = 7000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

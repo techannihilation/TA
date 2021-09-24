@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 445,
 		builder = false,
 		buildpic = "armhlt.dds",
-		buildtime = 14000,
+		buildtime = 10000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

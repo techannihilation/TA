@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 90,
 		builder = false,
 		buildpic = "corllt.dds",
-		buildtime = 2650,
+		buildtime = 2500,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

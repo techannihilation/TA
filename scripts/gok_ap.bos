@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece base, socle, plate, building1, building2, building3, building4, building5, buildpad,
-	spray1, spray2, spray3, spray4, spray5, spray6;
+piece base, socle, plate, building1, building2, building3, buildpad,
+	spray1, spray2, spray3;
 
 static-var spray, unitview, statechg_DesiredState, statechg_StateChanging, bWorking, Static_Var_1;
 
@@ -167,20 +167,8 @@ QueryNanoPiece(piecenum)
 	{
 		piecenum = spray3;
 	}
-	if(spray == 4)
-	{
-		piecenum = spray4;
-	}
-	if(spray == 5)
-	{
-		piecenum = spray5;
-	}
-	if(spray == 6)
-	{
-		piecenum = spray6;
-	}
 	++spray;
-	if(spray == 7)
+	if(spray == 4)
 	{
 		spray = 1;
 	}
@@ -199,8 +187,6 @@ Killed(severity, corpsetype)
 		explode building1 type NOHEATCLOUD;
 		explode building2 type NOHEATCLOUD;
 		explode building3 type NOHEATCLOUD;
-		explode building4 type NOHEATCLOUD;
-		explode building5 type NOHEATCLOUD;
 		explode socle type NOHEATCLOUD;
 		explode plate type NOHEATCLOUD;
 		return(corpsetype);
@@ -211,8 +197,6 @@ Killed(severity, corpsetype)
 		explode building1 type NOHEATCLOUD | FALL;
 		explode building2 type NOHEATCLOUD | FALL;
 		explode building3 type NOHEATCLOUD | FALL;
-		explode building4 type NOHEATCLOUD | FALL;
-		explode building5 type NOHEATCLOUD | FALL;
 		explode socle type NOHEATCLOUD | FALL;
 		explode plate type NOHEATCLOUD | FALL;
 		return(corpsetype);
@@ -221,8 +205,6 @@ Killed(severity, corpsetype)
 	explode building1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode building2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode building3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode building4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode building5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode socle type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode plate type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return(corpsetype);

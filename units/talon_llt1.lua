@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildpic = "talon_llt.dds",
-		buildtime = 5300,
+		buildtime = 5000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

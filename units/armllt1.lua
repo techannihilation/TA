@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armllt1_aoplane.dds",
 		buildpic = "armllt1.dds",
-		buildtime = 5300,
+		buildtime = 5000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

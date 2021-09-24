@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 472,
 		builder = false,
 		buildpic = "talon_hlt.dds",
-		buildtime = 14000,
+		buildtime = 10000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

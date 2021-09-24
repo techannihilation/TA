@@ -1,0 +1,170 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, lwing1, rwing1, lwing2, rwing2, thrust, spray;
+
+static-var  statechg_DesiredState, statechg_StateChanging, Static_Var_3;
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		move lwing1 to x-axis [0.0] speed [1.75];
+		move rwing1 to x-axis [0.0] speed [1.75];
+		
+		move lwing2 to x-axis [0.0] speed [1.80];
+		move rwing2 to x-axis [0.0] speed [1.8];
+		
+		sleep 908;
+	}
+	sleep 40;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		move lwing1 to x-axis [1.0] speed [1.75];
+		move rwing1 to x-axis [-1.0] speed [1.75];
+		
+		move lwing2 to x-axis [0.65] speed [1.80];
+		move rwing2 to x-axis [-0.65] speed [1.80];
+		
+		sleep 908;
+	}
+	sleep 40;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			if( Static_Var_3 == 0 )
+			{
+				call-script deactivatescr();
+				currentstate = 1;
+			}
+			sleep 100;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	Static_Var_3 = 0;
+	move lwing1 to x-axis [1.0] now;
+	move rwing1 to x-axis [-1.0] now;
+	move lwing2 to x-axis [0.65] now;
+	move rwing2 to x-axis [-0.65] now;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	Static_Var_3 = 1;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	Static_Var_3 = 0;
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = base;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode lwing1 type NOHEATCLOUD;
+		explode rwing1 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode lwing1 type NOHEATCLOUD;
+		explode rwing1 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD;
+	explode lwing1 type NOHEATCLOUD;
+	explode rwing1 type NOHEATCLOUD;
+	return (corpsetype);
+}

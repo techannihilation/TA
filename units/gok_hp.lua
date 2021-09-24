@@ -51,7 +51,7 @@ return {
 		unitname = "gok_hp",
 		--usebuildinggrounddecal = true,
 		workertime = 250,
-		yardmap = "oocccoo oocccoo oocccoo oocccoo oocccoo oocccoo oocccoo",
+		yardmap = "oocccoo oocccoo oocccoo oocccoo oocccoo oocccoo",
 		buildoptions = {
 			[1] = "gok_ch",
 			[2] = "gok_faerie",

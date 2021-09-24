@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, head, lside, rside, lwing, rwing, engine,
-       drop;
+piece  base, hull, rwing1, lwing1, rwing2, lwing2, engine,
+       flare;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -29,11 +29,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			Func_Var_4 = Rand( 1, 2 );
 			if( Func_Var_4 == 1 )
 			{
-				emit-sfx smoketype from lside;
+				emit-sfx smoketype from lwing1;
 			}
 			if( Func_Var_4 == 2 )
 			{
-				emit-sfx smoketype from rside;
+				emit-sfx smoketype from rwing1;
 			}
 		}
 		sleeptime = healthpercent * 50;
@@ -45,51 +45,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-RequestState(requestedstate, currentstate)
-{
-	if( Static_Var_2 )
-	{
-		Static_Var_1 = requestedstate;
-		return (0);
-	}
-	Static_Var_2 = 1;
-	currentstate = Static_Var_1;
-	Static_Var_1 = requestedstate;
-	while( Static_Var_1 != currentstate )
-	{
-		if( !Static_Var_1 )
-		{
-			turn lwing to y-axis <70.> speed <70.>;
-			turn rwing to y-axis <-70.> speed <70.>;
-			sleep 1000;
-			currentstate = 0;
-		}
-		if( Static_Var_1 )
-		{
-			turn lwing to y-axis <0.> speed <70.>;
-			turn rwing to y-axis <0.> speed <70.>;
-			sleep 1000;
-			currentstate = 1;
-		}
-	}
-	Static_Var_2 = 0;
-}
-
 Create()
 {
 	Static_Var_1 = 1;
 	Static_Var_2 = 0;
 	start-script SmokeUnit();
-}
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
 }
 
 SweetSpot(piecenum)
@@ -99,12 +59,12 @@ SweetSpot(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = drop;
+	piecenum = flare;
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = base;
+	piecenum = flare;
 }
 
 AimPrimary(heading, pitch)
@@ -122,11 +82,11 @@ FirePrimary()
 Killed(severity, corpsetype)
 {
 	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode lwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode rwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lwing2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rwing2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode engine type NOHEATCLOUD;
-	explode lside type NOHEATCLOUD;
-	explode rside type NOHEATCLOUD;
+	explode lwing1 type NOHEATCLOUD;
+	explode rwing1 type NOHEATCLOUD;
 	corpsetype = 3;
 	return (corpsetype);
 }

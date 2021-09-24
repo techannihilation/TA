@@ -112,8 +112,9 @@ return {
 				soundtrigger = 1,
 				sweepfire = false,
 				targetmoveerror = 0.1,
+				tolerance = 6000,
+				turret = false,
 				thickness = 1,
-				turret = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 800,
 				damage = {

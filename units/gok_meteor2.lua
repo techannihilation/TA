@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 640172,
 		buildcostmetal = 45522,
 		builder = false,
-		buildpic = "gok_meteor.dds",
+		buildpic = "gok_meteor2.dds",
 		buildtime = 850000,
 		canattack = true,
 		canstop = 1,

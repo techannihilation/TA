@@ -139,7 +139,6 @@ return {
 				soundstart = "Rockhvy1",
 				stockpile = true,
 				stockpiletime = 60,
-				stockpiletime = 5,
 				tolerance = 4000,
 				tracks = true,
 				turnrate = 99000,

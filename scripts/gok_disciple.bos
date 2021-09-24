@@ -327,7 +327,7 @@ AimWeapon3(Heading, Pitch)
 {
 	signal SIG_AIM_GUN;
 	set-signal-mask SIG_AIM_GUN;
-	
+	set-signal-mask SIG_AIM_BLADE;
 	while( MeleeAttack )
 	{
 		sleep 150;

@@ -386,6 +386,7 @@ return {
 	flamethrowers = {
 		"corpyro",
 		"gok_hellfire",
+		"gok_agrat",
 		"tllburner",
 		"tlllft",
 		"cormaw",

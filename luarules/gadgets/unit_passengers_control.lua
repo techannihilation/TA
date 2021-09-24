@@ -39,6 +39,7 @@ local paraTroopers={
   [UnitDefNames["tllgizmo"].id] = true,
   [UnitDefNames["talon_berserker"].id] = true,
   [UnitDefNames["talon_shepherd"].id] = true,
+  [UnitDefNames["gok_zealot"].id] = true,
 }
 
 local crawlingBombs = {

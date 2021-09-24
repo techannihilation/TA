@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildpic = "gok_llt.dds",
-		buildtime = 2600,
+		buildtime = 2500,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

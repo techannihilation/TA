@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TANKHOVER3",
-		name = "Matcher",
+		name = "Agrat",
 		noautofire = false,
 		objectname = "gok_agrat",
 		radaremitheight = 25,
