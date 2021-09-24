@@ -57,14 +57,14 @@ return {
 		buildoptions = {
 			[1] = "gok_aca",
 			--[2] = "abuilderlvl1",
-			--[3] = "gok_awac",
+			[3] = "gok_demoneye",
 			[4] = "gok_sucub",
 			--[5] = "gok_brawl",
 			[6] = "gok_hookah",
 			--[7] = "gok_gripn",
 			--[8] = "gok_lance",
-			--[9] = "gok_dfly",
-			--[10] = "gok_cybr",
+			[9] = "gok_wordbearer",
+			[10] = "gok_nosferatu",
 		},
 		customparams = {
 			buildpic = "gok_aap.dds",

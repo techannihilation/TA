@@ -24,6 +24,8 @@ return {
 		"talon_shade",
 		"talon_eclipse",
 		"talon_handgod",
+		"gok_dirgesinger",
+		"gok_hookah",
 		--Transporters
 		"armatlas",
 		"armdfly",
@@ -41,7 +43,7 @@ return {
 		"talon_spirit",
 		"corlift",
 		"gok_chariot",
-		"gok_dirgesinger",
+		"gok_wordbearer",
 
 	},
 	unclassed_air = {
@@ -63,6 +65,7 @@ return {
 	"talon_echelon",
 	"talon_hornet",
 	"gok_angel",
+	"gok_sucub",
 
 	--Construction
 	"abuilderlvl1",
@@ -111,6 +114,7 @@ return {
 	"talon_pampa",
 	"talon_ceddral",
 	"gok_specter",
+	"gok_nosferatu",
 
 	-- Scout planes
 	"armawac",
@@ -134,6 +138,7 @@ return {
 	"talon_recon",
 	"talon_vigilante",
 	"gok_vision",
+	"gok_demoneye",
 
 	--T3 Raiser
 	"armerez",

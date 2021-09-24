@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, lwing, rwing, engine, flare1, flare2;
+piece  base, hull, lwing, rwing, rengine, lengine, flare1, flare2;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -132,10 +132,10 @@ FireSecondary()
 
 Killed(severity, corpsetype)
 {
+	corpsetype = 3;
 	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode lwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode rwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode engine type NOHEATCLOUD;
-	corpsetype = 3;
+	explode rengine type NOHEATCLOUD;
 	return (corpsetype);
 }

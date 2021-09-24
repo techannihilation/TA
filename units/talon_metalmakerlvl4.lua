@@ -25,7 +25,7 @@ return {
 		maxdamage = 35055,
 		maxslope = 20,
 		maxwaterdepth = 0,
-		name = "T4 Metal Maker",
+		name = "T5 Metal Maker",
 		objectname = "talon_metalmakerlvl4",
 		radardistance = 0,
 		radaremitheight = 53,
