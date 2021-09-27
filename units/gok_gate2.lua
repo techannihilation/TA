@@ -37,7 +37,6 @@ return {
 		norestrict = 1,
 		objectname = "gok_gate2",
 		radaremitheight = 25,
-		--script = "gok_gate.cob",
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,
@@ -45,7 +44,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "gok_gate2",
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "gok_gate2.dds",

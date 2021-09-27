@@ -3,11 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, core, circle, plates, platesb, decor, decor1, decor2,
-       decor3, decor4, turret, turretrecoil, arm, arm2, pitchturret, cannon,
-       system2, plate1, plate2, barrel, bar1, bar2,
-       bar2b, bar3, bar3b, fire, emit, lightnings, lig1, lig2,
-       lig2b, lig3, lig3b, lig4, lig5, system, backpack, backpack2,
+piece  base, turret, turretrecoil, arm, arm2, pitchturret, cannon,
+       plate1, plate2, barrel, bar1, bar2,
+       bar2b, bar3, bar3b, fire, system, backpack, backpack2,
        backpack3;
 
 
@@ -47,216 +45,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Recharge()
-{
-	move lig4 to z-axis [0.] now;
-	move lig5 to z-axis [0.] now;
-	show lig4;
-	sleep 75;
-	hide lig4;
-	sleep 50;
-	move lig4 to z-axis [0.] now;
-	move lig5 to z-axis [0.] now;
-	show lig5;
-	sleep 75;
-	hide lig5;
-	sleep 50;
-	move lig4 to z-axis [0.] now;
-	move lig5 to z-axis [0.] now;
-	show lig4;
-	show lig5;
-	sleep 75;
-	hide lig4;
-	hide lig5;
-	sleep 50;
-	move lig4 to z-axis [4.] now;
-	move lig5 to z-axis [0.] now;
-	show lig4;
-	sleep 75;
-	hide lig4;
-	sleep 50;
-	move lig4 to z-axis [0.] now;
-	move lig5 to z-axis [2.] now;
-	show lig5;
-	sleep 75;
-	hide lig5;
-	sleep 50;
-	move lig4 to z-axis [0.] now;
-	move lig5 to z-axis [6.] now;
-	show lig4;
-	show lig5;
-	sleep 75;
-	hide lig4;
-	hide lig5;
-	sleep 50;
-	move lig4 to z-axis [2.] now;
-	move lig5 to z-axis [4.] now;
-	show lig4;
-	show lig5;
-	sleep 75;
-	hide lig4;
-	hide lig5;
-	sleep 50;
-	move lig4 to z-axis [4.] now;
-	move lig5 to z-axis [0.] now;
-	show lig4;
-	sleep 75;
-	hide lig4;
-	sleep 50;
-	move lig4 to z-axis [0.] now;
-	move lig5 to z-axis [2.] now;
-	show lig4;
-	show lig5;
-	sleep 75;
-	hide lig4;
-	hide lig5;
-	sleep 50;
-	move lig4 to z-axis [0.] now;
-	move lig5 to z-axis [0.] now;
-	show lig5;
-	sleep 75;
-	hide lig5;
-	sleep 50;
-	move lig4 to z-axis [4.] now;
-	move lig5 to z-axis [0.] now;
-	show lig4;
-	sleep 75;
-	hide lig4;
-}
-
-Blossom()
-{
-	turn lig1 to z-axis <0.> now;
-	turn lig2 to z-axis <-120.> now;
-	turn lig3 to z-axis <120.> now;
-	show lig1;
-	show lig2b;
-	show lig3b;
-	sleep 75;
-	hide lig1;
-	hide lig2b;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <180.> now;
-	turn lig2 to z-axis <60.> now;
-	turn lig3 to z-axis <300.> now;
-	show lig1;
-	show lig2b;
-	show lig3b;
-	sleep 75;
-	hide lig1;
-	hide lig2b;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <240.> now;
-	turn lig2 to z-axis <120.> now;
-	turn lig3 to z-axis <0.> now;
-	show lig1;
-	show lig2b;
-	show lig3b;
-	sleep 75;
-	hide lig1;
-	hide lig2b;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <60.> now;
-	turn lig2 to z-axis <-60.> now;
-	turn lig3 to z-axis <180.> now;
-	show lig1;
-	show lig2b;
-	show lig3b;
-	sleep 75;
-	hide lig1;
-	hide lig2b;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <120.> now;
-	turn lig2 to z-axis <0.> now;
-	turn lig3 to z-axis <240.> now;
-	show lig1;
-	show lig2b;
-	show lig3b;
-	sleep 75;
-	hide lig1;
-	hide lig2b;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <300.> now;
-	turn lig2 to z-axis <180.> now;
-	turn lig3 to z-axis <60.> now;
-	show lig1;
-	show lig2b;
-	show lig3b;
-	sleep 75;
-	hide lig1;
-	hide lig2b;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <0.> now;
-	turn lig2 to z-axis <-120.> now;
-	turn lig3 to z-axis <120.> now;
-	show lig2b;
-	show lig3b;
-	sleep 75;
-	hide lig2b;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <180.> now;
-	turn lig2 to z-axis <60.> now;
-	turn lig3 to z-axis <300.> now;
-	show lig3b;
-	sleep 75;
-	hide lig3b;
-	sleep 50;
-	turn lig1 to z-axis <240.> now;
-	turn lig2 to z-axis <120.> now;
-	turn lig3 to z-axis <0.> now;
-	show lig1;
-	sleep 75;
-	hide lig1;
-	sleep 50;
-	turn lig1 to z-axis <60.> now;
-	turn lig2 to z-axis <-60.> now;
-	turn lig3 to z-axis <180.> now;
-	show lig1;
-	show lig2b;
-	sleep 75;
-	hide lig1;
-	hide lig2b;
-	sleep 50;
-	turn lig1 to z-axis <120.> now;
-	turn lig2 to z-axis <0.> now;
-	turn lig3 to z-axis <240.> now;
-	show lig1;
-	sleep 75;
-	hide lig1;
-	sleep 50;
-	turn lig1 to z-axis <300.> now;
-	turn lig2 to z-axis <180.> now;
-	turn lig3 to z-axis <60.> now;
-	show lig3b;
-	sleep 75;
-	hide lig3b;
-}
-
 Create()
 {
-	hide lig1;
-	hide lig2b;
-	hide lig3b;
-	hide lig4;
-	hide lig5;
-	start-script SmokeUnit();
 	turn bar2 to z-axis <-120.> now;
 	turn bar3 to z-axis <120.> now;
-	turn lig2 to z-axis <-120.> now;
-	turn lig3 to z-axis <120.> now;
-	spin lightnings around z-axis speed <5.>;
-	spin lig1 around y-axis speed <290.>;
-	spin lig2b around y-axis speed <300.>;
-	spin lig3b around y-axis speed <310.>;
-	spin lig4 around z-axis speed <2900.>;
-	spin lig5 around z-axis speed <3100.>;
+	start-script SmokeUnit();	
 }
 
 AimPrimary(heading, pitch)
@@ -272,7 +65,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	emit-sfx 1024 from emit;
+	emit-sfx 1024 from fire;
 	move barrel to z-axis [-3.] speed [25.];
 	turn turretrecoil to x-axis <-10.> speed <37.>;
 	sleep 100;
@@ -291,15 +84,12 @@ FirePrimary()
 	sleep 25;
 	turn turretrecoil to x-axis <-10.> speed <5.>;
 	sleep 75;
-	start-script Blossom();
 	turn turretrecoil to x-axis <0.> speed <4.>;
 	move barrel to z-axis [0.] speed [1.];
 	turn bar1 to x-axis <0.> speed <14.>;
 	turn bar2b to x-axis <0.> speed <14.>;
 	turn bar3b to x-axis <0.> speed <14.>;
 	sleep 250;
-	start-script Recharge();
-	sleep 300;
 }
 
 QueryPrimary(piecenum)
@@ -319,12 +109,6 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode plates type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode platesb type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode decor1 type NOHEATCLOUD;
-	explode decor2 type NOHEATCLOUD;
-	explode decor3 type NOHEATCLOUD;
-	explode decor4 type NOHEATCLOUD;
 	explode backpack type NOHEATCLOUD | BITMAP1;
 	explode backpack2 type NOHEATCLOUD;
 	explode backpack3 type NOHEATCLOUD;

@@ -4,8 +4,7 @@
 #include "exptype.h"
 
 piece  base, ceil, pillar, silo, core, circle, shelter, udoor,
-       ddoor, ldoor, rdoor, rocket1, decor, decor1, decor2, decor3, decor4,
-       decor5, decor6, decor7, decor8;
+       ddoor, ldoor, rdoor, rocket1, decor, decor1, decor2, decor3, decor4;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6;
@@ -155,9 +154,9 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	explode decor1 type SHATTER | NOHEATCLOUD;
+	explode decor2 type SHATTER | NOHEATCLOUD;
+	explode decor3 type SHATTER | NOHEATCLOUD;
 	explode decor4 type SHATTER | NOHEATCLOUD;
-	explode decor5 type SHATTER | NOHEATCLOUD;
-	explode decor7 type SHATTER | NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

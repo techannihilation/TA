@@ -49,11 +49,10 @@ local antiNukes = {
   [UnitDefNames["talon_ucar"].id] = true,
   --Gok
   [UnitDefNames["gok_antinuke"].id] = true,
-  --[UnitDefNames["gok_antinuke"].id] = true,
+  [UnitDefNames["gok_antinuke1"].id] = true,
   --[UnitDefNames["gok_antinuke"].id] = true,
   --[UnitDefNames["gok_antinuke"].id] = true,
   [UnitDefNames["gok_morningstar"].id] = true,
-  --[UnitDefNames["gok_antinuke"].id] = true,
 }
 
 local interceptorsID = {}

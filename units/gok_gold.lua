@@ -1,5 +1,5 @@
 return {
-	talon_gold = {
+	gok_gold = {
 		airsightdistance = 1400,
 		acceleration = 0.12,
 		activatewhenbuilt = true,
@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 540039,
 		buildcostmetal = 29463,
 		builder = false,
-		buildpic = "talon_gold.dds",
+		buildpic = "gok_gold.dds",
 		buildtime = 1250000,
 		canattack = true,
 		canguard = true,
@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT6",
 		name = "Gold",
 		noautofire = false,
-		objectname = "talon_gold",
+		objectname = "gok_gold",
 		radaremitheight = 76,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -51,11 +51,11 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.792,
 		turnrate = 225,
-		unitname = "talon_gold",
+		unitname = "gok_gold",
 		upright = true,
 		customparams = {
-			buildpic = "talon_gold.dds",
-			faction = "TALON",
+			buildpic = "gok_gold.dds",
+			faction = "GOK",
 			prioritytarget = "air",
 		},
 		featuredefs = {
@@ -64,11 +64,11 @@ return {
 				damage = 33488,
 				description = "Gold Wreckage",
 				energy = 0,
-				featuredead = "talon_gold_heap",
+				featuredead = "gok_gold_heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "talon_gold_DEAD",
+				object = "gok_gold_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +126,7 @@ return {
 				areaofeffect = 256,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "talonflak-fx",
+				cegtag = "gokflak-fx",
 				craterareaofeffect = 384,
 				craterboost = 0,
 				cratermult = 0,

@@ -236,7 +236,6 @@ local allowedArray = {
   [UnitDefNames["talon_com2"].id] = true,
   [UnitDefNames["talon_com3"].id] = true,
   [UnitDefNames["talon_uch"].id] = true,
-  [UnitDefNames["talon_cpod"].id] = true,
   [UnitDefNames["talon_builderlvl3"].id] = true,
 
   --TALON
@@ -244,8 +243,7 @@ local allowedArray = {
   [UnitDefNames["gok_com2"].id] = true,
   [UnitDefNames["gok_com3"].id] = true,
   --[UnitDefNames["gok_uch"].id] = true,
-  --[UnitDefNames["talon_cpod"].id] = true,
-  --[UnitDefNames["talon_builderlvl3"].id] = true,
+  [UnitDefNames["gok_ucp"].id] = true,
 }
 
 --------------------------------------------------------------------------------

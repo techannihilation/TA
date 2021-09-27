@@ -1,0 +1,131 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, dome, weapon, turret, pitchturret, fire, spinner, pillar, plates1, plates2, plates3;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from weapon;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from pillar;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	turn pitchturret to x-axis <-90.> now;
+	move weapon to y-axis [-7.2] now;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 1000;
+	spin spinner around z-axis speed <150.0> accelerate <15.0>;
+	sleep 4000;
+	spin spinner around z-axis speed <0.0> accelerate <5.0>;
+	turn turret to y-axis <0.> speed <60.>;
+	turn pitchturret to x-axis <-90.> speed <60.>;
+	move weapon to y-axis [-7.2] speed [2.];
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	move weapon to y-axis [0.] speed [9.];
+	spin spinner around z-axis speed <400.0> accelerate <8.0>;
+	wait-for-move weapon along y-axis;
+	turn turret to y-axis heading speed <180.>;
+	turn pitchturret to x-axis <0.> - pitch speed <180.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = dome;
+}
+
+Killed(severity, corpsetype)
+{
+	explode body type NOHEATCLOUD;
+	explode dome type NOHEATCLOUD;
+	explode pillar type NOHEATCLOUD;
+
+	explode pitchturret type SHATTER | EXPLODE_ON_HIT;
+	
+	if( severity <= 50 )
+	{
+		explode plates1 type NOHEATCLOUD | FALL;
+		explode plates2 type NOHEATCLOUD | FALL;
+		explode plates3 type NOHEATCLOUD | FALL;
+		explode spinner type NOHEATCLOUD | FALL;
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	
+	
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		return (corpsetype);
+		explode plates1 type NOHEATCLOUD | FALL | SHATTER;
+		explode plates2 type NOHEATCLOUD | FALL | SHATTER;
+		explode plates3 type NOHEATCLOUD | FALL | SHATTER;
+		explode spinner type NOHEATCLOUD | FALL | SHATTER;
+		
+	}
+	corpsetype = 3;
+	explode plates1 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode plates2 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode plates3 type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;
+	explode spinner type NOHEATCLOUD | FALL | SHATTER | EXPLODE_ON_HIT;	
+	return (corpsetype);
+}

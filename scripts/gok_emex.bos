@@ -7,9 +7,35 @@ piece  base, body, bulk, pillar, hammers,
 		hammer1, hammer2, hammer3, hammer4, hammer5, hammer6, hammer7, hammer8,
        sledge1, sledge2, sledge3, sledge4, sledge5, sledge6, sledge7, sledge8;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+static-var  Static_Var_1, Static_Var_2, Static_Var_4, Static_Var_5,
             Static_Var_6;
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
 
 FirstHammer()
 {
@@ -72,13 +98,13 @@ HammerFive()
 	move hammer5 to y-axis [8.4] speed [6.];
 	sleep 750;
 	move hammer5 to y-axis [7.0] speed [5.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge5;
 	sleep 200;
 	move hammer5 to y-axis [4.2] speed [20.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge5;
 	sleep 100;
 	move hammer5 to y-axis [0.] speed [60.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge5;
 }
 
 HammerSix()
@@ -86,13 +112,13 @@ HammerSix()
 	move hammer6 to y-axis [8.4] speed [6.];
 	sleep 750;
 	move hammer6 to y-axis [7.0] speed [5.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge6;
 	sleep 200;
 	move hammer6 to y-axis [4.2] speed [20.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge6;
 	sleep 100;
 	move hammer6 to y-axis [0.] speed [60.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge6;
 }
 
 HammerSeven()
@@ -100,13 +126,13 @@ HammerSeven()
 	move hammer7 to y-axis [8.4] speed [6.];
 	sleep 750;
 	move hammer7 to y-axis [7.0] speed [5.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge7;
 	sleep 200;
 	move hammer7 to y-axis [4.2] speed [20.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge7;
 	sleep 100;
 	move hammer7 to y-axis [0.] speed [60.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge7;
 }
 
 HammerHeight()
@@ -114,17 +140,19 @@ HammerHeight()
 	move hammer8 to y-axis [8.4] speed [6.];
 	sleep 750;
 	move hammer8 to y-axis [7.0] speed [5.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge8;
 	sleep 200;
 	move hammer8 to y-axis [4.2] speed [20.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge8;
 	sleep 100;
 	move hammer8 to y-axis [0.] speed [60.];
-	emit-sfx 256 | 3 from sledge4;
+	emit-sfx 256 | 3 from sledge8;
 }
 
 Go()
 {
+	while( Static_Var_6 == 1 )
+	{	
 		start-script FirstHammer();
 		sleep Static_Var_1;
 		start-script SecondHammer();
@@ -140,7 +168,8 @@ Go()
 		start-script HammerSeven();
 		sleep Static_Var_1;
 		start-script HammerHeight();
-		sleep Static_Var_1;
+		sleep Static_Var_1;	
+	}
 }
 
 Stop()
@@ -192,9 +221,8 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	Static_Var_1 = 0;
-	Static_Var_2 = 91;
-	Static_Var_3 = 182;
 	call-script InitState();
+	start-script SmokeUnit();
 }
 
 Activate()
@@ -214,7 +242,7 @@ SweetSpot(piecenum)
 
 SetSpeed(Func_Var_1)
 {
-	Static_Var_1 = 1400 - Func_Var_1 / 2;
+	Static_Var_1 = Func_Var_1 / 12;
 	if( Static_Var_1 <= 325 )
 	{
 		Static_Var_1 = 325;

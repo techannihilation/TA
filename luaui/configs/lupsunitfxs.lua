@@ -28,6 +28,11 @@ gok_sfusion = {
 {class='SimpleParticles2', options=MergeTable({pos={0,30,0}, delay=0, size=10, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
 {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,28,0}, size=8, precision=22, repeatEffect=true}},
 },
+gok_efusion = {
+{class='SimpleParticles2', options=MergeTable({pos={0,38,0}, delay=80, size=18, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+{class='SimpleParticles2', options=MergeTable({pos={0,35,0}, delay=0, size=15, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,35,0}, size=12, precision=24, repeatEffect=true}},
+},
 --TALON
 talon_gen = {
 	{class='SimpleParticles2', options=MergeTable({pos={0,28,0}, delay=0, size=15, count=3, colormap={{0.1, 0.9, 1.0, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_gen)},
@@ -219,7 +224,7 @@ cafus = {
     {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-  talon_archon = {
+  gok_archon = {
     {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
@@ -232,7 +237,7 @@ cafus = {
     {class='Bursts',options=corcrabBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=180, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-  talon_cpod = {
+  gok_ucp = {
     {class='Bursts',options=corcrabBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=180, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },

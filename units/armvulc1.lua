@@ -1,8 +1,5 @@
 return {
 	armvulc1 = {
-		acceleration = 0,
-		
-		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 4553464,
 		buildcostmetal = 622339,
@@ -135,8 +132,6 @@ return {
 				damage = {
 					commanders = 1000,
 					default = 6100,
-					experimental_ships = 10000,
-					ships = 10000,
 					subs = 5,
 				},
 			},

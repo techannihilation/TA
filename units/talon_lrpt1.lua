@@ -1,8 +1,5 @@
 return {
 	talon_lrpt1 = {
-		acceleration = 0,
-
-		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 306003,
 		buildcostmetal = 18993,
@@ -135,11 +132,11 @@ return {
 				name = "IntimidatorCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 6500,
+				range = 6600,
 				reloadtime = 10,
 				rgbcolor = "0.85 0.6 0",
 				separation = 0.45,
-				size = 6.01,
+				size = 6.0,
 				sizedecay = -0.15,
 				soundhitdry = "xplonuk1",
 				soundhitwet = "splslrg",
@@ -151,8 +148,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1150,
 				damage = {
-					commanders = 2000,
-					default = 4000,
+					commanders = 1900,
+					default = 3800,
 					subs = 5,
 				},
 			},

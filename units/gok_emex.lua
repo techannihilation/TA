@@ -39,7 +39,6 @@ return {
 		objectname = "gok_emex",
 		onoffable = true,
 		radaremitheight = 35,
-		script = "gok_moho.cob",
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
 		selfdestructcountdown = 1,

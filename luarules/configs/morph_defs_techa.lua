@@ -183,6 +183,11 @@ local morphDefs = {
 		time = 90,
 		xp = 1,
 	},
+	gok_slesh = {
+		into = 'gok_slesh1',
+		time = 90,
+		xp = 1,
+	},
 	tllobliterator = {
 		into = 'tllobliterator1',
 		time = 90,

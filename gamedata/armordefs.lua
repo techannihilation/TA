@@ -364,7 +364,7 @@ return {
 		"cormonkeylord",
 		"tllirritator",
 		"talon_mythril",
-		"talon_archon",
+		"gok_archon",
 		"talon_scorpion",
 		"talon_grenat",
 		"talon_mcv",

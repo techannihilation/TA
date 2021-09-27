@@ -1,0 +1,237 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, socle, buildpad,
+		stand1, lathe1, spray1a, spray1b, 
+		stand2, lathe2, spray2a, spray2b, 
+		stand3, lathe3, spray3a, spray3b,
+		stand4, lathe4, spray4a, spray4b,
+		stand5, lathe5, spray5a, spray5b;
+
+static-var  DesiredState, StateChanging, Spray;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from stand1;
+			emit-sfx smoketype from stand2;
+			emit-sfx smoketype from stand3;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(RequestedState, CurrentState)
+	{
+	if( StateChanging )
+		{
+		DesiredState = RequestedState;
+		return;
+		}
+	
+	StateChanging = 1;
+	CurrentState = DesiredState;
+	DesiredState = RequestedState;
+	
+	while( DesiredState != CurrentState )
+		{
+		if( !DesiredState )
+			{		
+			move stand1 to z-axis [0.0] speed [8.00];						
+			move stand2 to x-axis [0.0] speed [8.0];
+			move stand3 to x-axis [0.0] speed [8.0];
+			move stand4 to x-axis [0.0] speed [8.0];			
+			move stand5 to x-axis [0.0] speed [8.0];
+			wait-for-move stand1 along z-axis;
+			set YARD_OPEN to 1;
+			
+			while( !get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 1;
+			}
+			
+			set BUGGER_OFF to 0;
+			set INBUILDSTANCE to 1;
+			
+			sleep 1000;
+			CurrentState = 0;
+		}
+		if( DesiredState )
+		{
+			set INBUILDSTANCE to 0;
+			set YARD_OPEN to 0;
+			
+			while( get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 0;
+			}
+			
+			set BUGGER_OFF to 0;
+						
+			move stand1 to z-axis [-12.0] speed [8.00];						
+			move stand2 to x-axis [10.0] speed [8.0];
+			move stand3 to x-axis [-10.0] speed [8.0];
+			move stand4 to x-axis [10.0] speed [8.0];			
+			move stand5 to x-axis [-10.0] speed [8.0];
+			sleep 1000;			
+			CurrentState = 1;
+			}
+		}
+	
+	StateChanging = 0;
+	}
+
+Create()
+{
+	move stand1 to z-axis [-12.0] now;						
+	move stand2 to x-axis [10.0] now;
+	move stand3 to x-axis [-10.0] now;
+	move stand4 to x-axis [10.0] now;			
+	move stand5 to x-axis [-10.0] now;
+	DesiredState = 1;
+	StateChanging = 0;
+	Spray = 0;	
+	start-script SmokeUnit();	
+}
+
+QueryNanoPiece(PieceNum)
+{
+	if( Spray == 0 )
+	{
+		PieceNum = spray1a;
+	}
+	if( Spray == 1 )
+	{
+		PieceNum = spray2a;
+	}
+	if( Spray == 2 )
+	{
+		PieceNum = spray1b;
+	}
+	if( Spray == 3 )
+	{
+		PieceNum = spray2b;
+	}
+	if( Spray == 4 )
+	{
+		PieceNum = spray3a;
+	}
+	if( Spray == 5 )
+	{
+		PieceNum = spray3b;
+	}
+	if( Spray == 6 )
+	{
+		PieceNum = spray4a;
+	}
+	if( Spray == 7 )
+	{
+		PieceNum = spray4b;
+	}
+	if( Spray == 8 )
+	{
+		PieceNum = spray5a;
+	}
+	if( Spray == 9 )
+	{
+		PieceNum = spray5b;
+	}
+	
+	++Spray;
+	if (Spray == 10)
+	{
+		Spray = 0;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	
+	sleep 2000;
+	
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(PieceNum)
+{
+	PieceNum = buildpad;
+}
+
+StartBuilding()
+{
+
+}
+
+StopBuilding()
+{
+
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode stand1 type NOHEATCLOUD ;
+		explode stand2 type NOHEATCLOUD ;
+		explode stand3 type NOHEATCLOUD ;
+		explode stand4 type NOHEATCLOUD ;
+		explode stand5 type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode stand1 type NOHEATCLOUD | SHATTER ;
+		explode stand2 type NOHEATCLOUD | SHATTER ;
+		explode stand3 type NOHEATCLOUD | SHATTER ;
+		explode stand4 type NOHEATCLOUD ;
+		explode stand5 type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode stand1 type NOHEATCLOUD | SHATTER;
+	explode stand2 type NOHEATCLOUD | SHATTER;
+	explode stand3 type NOHEATCLOUD | SHATTER;
+	explode stand4 type NOHEATCLOUD ;
+	explode stand5 type NOHEATCLOUD ;
+	return (corpsetype);
+}

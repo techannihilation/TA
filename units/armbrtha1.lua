@@ -1,8 +1,5 @@
 return {
 	armbrtha1 = {
-		acceleration = 0,
-
-		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 282325,
 		buildcostmetal = 20322,

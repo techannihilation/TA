@@ -63,7 +63,7 @@ return {
       },
     },
   },
-  
+
   ["might_and_magic"] = {
     sparkles = {
      air                = true,
@@ -94,7 +94,7 @@ return {
       },
     },
   },
-  
+
  ["tlldischarge"] = {
     unit_sparkles = {
       air                = true,
@@ -565,6 +565,36 @@ return {
       },
     },
   },
+  ["gok_muzzle"] = {
+    glow = {
+     air                = true,
+     class              = [[CSimpleParticleSystem]],
+     count              = 1,
+     ground             = true,
+     water              = true,
+     properties = {
+       airdrag            = 1,
+       alwaysvisible      = true,
+       colormap           = [[0.78 0.1 0.6 0.007    0.3 0 0.15 0.007              0 0 0 0.01]],
+       directional        = true,
+       emitrot            = 0,
+       emitrotspread      = 0,
+       emitvector         = [[0, 0, 0]],
+       gravity            = [[0, 0.00, 0]],
+       numparticles       = 1,
+       particlelife       = 18,
+       particlelifespread = 0,
+       particlesize       = 20,
+       particlesizespread = 10,
+       particlespeed      = 1,
+       particlespeedspread = 0,
+       pos                = [[0, 2, 0]],
+       sizegrowth         = 0,
+       sizemod            = 1.0,
+       texture            = [[flare1]],
+     },
+   },
+ },
    ["zeus_explosion"] = {
     usedefaultexplosions = false,
     groundflash = {
@@ -808,4 +838,3 @@ return {
     },
   },
 }
-

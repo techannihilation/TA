@@ -75,7 +75,7 @@ function gadget:GameFrame (currentFrame)
       tID = fromtrans[currentFrame][uID]
       if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
         local health,maxHealth,_,_,_ = Spring.GetUnitHealth(uID)
-        Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime, health = 0.75 * health })
+        Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime, health = 0.50 * health })
         Spring.GiveOrderToUnit(uID, CMD.STOP, {}, {})
       end
     end

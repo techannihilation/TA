@@ -11,7 +11,7 @@ return {
 		buildtime = 150000,
 		canattack = false,
 		category = "ALL SURFACE",
-		talon_pse = "dead",
+		corpse = "dead",
 		description = "Tech Level 3",
 		energystorage = 1500,
 		energyuse = 0,

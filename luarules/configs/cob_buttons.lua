@@ -548,18 +548,18 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	talon_archon = {
+	gok_archon = {
 		{
-			name = "shield_talarchon",
+			name = "shield_gokarchon",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	talon_cpod = {
+	gok_ucp = {
 		{
-			name = "shield_talcpod",
+			name = "shield_gokucp",
 			cob = "Shield",
 			tooltip = "Toggle shield activation",
 			type = CMDTYPE.ICON_MODE,

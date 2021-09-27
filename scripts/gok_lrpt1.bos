@@ -1,0 +1,143 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, socle, turret, recoil, pitchturretrecoil, pitchturret, barrel,
+       system1, system2, system3, fire, system2turn, system3turn;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from socle;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from barrel;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	turn system2turn to z-axis <-120.> now;
+	turn system3turn to z-axis <120.> now;
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <7.>;
+	turn pitchturret to x-axis <0.> - pitch speed <4.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	emit-sfx 1024 from fire;
+	move barrel to z-axis [-3.] speed [25.];
+	turn pitchturretrecoil to x-axis <-10.> speed <37.>;
+	sleep 100;
+	turn system1 to x-axis <-30.> speed <150.>;
+	turn system2 to x-axis <-30.> speed <150.>;
+	turn system3 to x-axis <-30.> speed <150.>;
+	sleep 100;
+	turn pitchturretrecoil to x-axis <-10.> speed <15.>;
+	turn system1 to x-axis <-30.> speed <90.>;
+	turn system2 to x-axis <-30.> speed <90.>;
+	turn system3 to x-axis <-30.> speed <90.>;
+	sleep 100;
+	turn system1 to x-axis <-30.> speed <30.>;
+	turn system2 to x-axis <-30.> speed <30.>;
+	turn system3 to x-axis <-30.> speed <30.>;
+	sleep 25;
+	turn pitchturretrecoil to x-axis <-10.> speed <5.>;
+	sleep 75;
+	turn pitchturretrecoil to x-axis <0.> speed <4.>;
+	move barrel to z-axis [0.] speed [1.];
+	turn system1 to x-axis <0.> speed <14.>;
+	turn system2 to x-axis <0.> speed <14.>;
+	turn system3 to x-axis <0.> speed <14.>;
+	sleep 250;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = barrel;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode socle type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode recoil type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode socle type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode recoil type NOHEATCLOUD | SHATTER;
+		explode pitchturret type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode socle type NOHEATCLOUD;
+	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode recoil type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pitchturret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

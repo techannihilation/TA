@@ -99,8 +99,7 @@ local ShieldUnits = {
   [UnitDefNames["talon_fgate1"].id] = true,
   [UnitDefNames["talon_obelisk"].id] = true,
   [UnitDefNames["talon_pyramid"].id] = true,
-  [UnitDefNames["talon_cpod"].id] = true,
-  [UnitDefNames["talon_archon"].id] = true,
+  [UnitDefNames["gok_archon"].id] = true,
   [UnitDefNames["talon_mythril"].id] = true,
   [UnitDefNames["talon_shieldgen"].id] = true,
   --Gok
@@ -111,10 +110,11 @@ local ShieldUnits = {
   --[UnitDefNames["gok_gate1"].id] = true,
   [UnitDefNames["gok_gate2"].id] = true,
   --[UnitDefNames["gok_gate3"].id] = true,
-  --[UnitDefNames["gok_gate4"].id] = true,
+  [UnitDefNames["gok_gate4"].id] = true,
   --[UnitDefNames["gok_fgate"].id] = true,
   --[UnitDefNames["gok_fgate1"].id] = true,
     [UnitDefNames["gok_antichrist"].id] = true,
+    [UnitDefNames["gok_ucp"].id] = true,
 }
 
 --------------------------------------------------------------------------------

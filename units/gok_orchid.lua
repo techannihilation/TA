@@ -84,7 +84,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				--[1] = "custom:mediumflare",
+				[1] = "custom:GOKFLARE",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -119,7 +119,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armamb_gun = {
+			gok_gun = {
 				accuracy = 200,
 				areaofeffect = 256,
 				avoidfeature = false,
@@ -128,7 +128,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.5,
-				explosiongenerator = "custom:FLASHSMALLBUILDINGEX",
+				explosiongenerator = "custom:GOK-FLASH",
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 2,
@@ -161,7 +161,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "TINY",
-				def = "ARMAMB_GUN",
+				def = "GOK_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 		},

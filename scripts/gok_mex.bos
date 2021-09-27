@@ -128,17 +128,6 @@ Create()
 	Static_Var_1 = 0;
 	Static_Var_2 = 91;
 	Static_Var_3 = 182;
-	dont-shade bulk;
-	dont-shade pillar;
-	dont-shade hammer1;
-	dont-shade hammer2;
-	dont-shade hammer3;
-	dont-shade hammer4;
-	dont-shade sledge1;
-	dont-shade sledge2;
-	dont-shade sledge3;
-	dont-shade sledge4;
-	dont-shade color;
 	call-script InitState();
 }
 

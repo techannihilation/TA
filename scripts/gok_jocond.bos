@@ -1,0 +1,269 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, tyre1, tyre2, tyre3, tyre4, tyre5, tyre6, hull,
+       arm1, arm2, arm3, arm3a, arm3b, arm4, turret, pitchturret,
+       backpack, recoil, lsleeve, rsleeve, lbarrel, rbarrel, flare,
+       plate1, plate2;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10,
+            Static_Var_11;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from hull;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from recoil;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	spin tyre1 around x-axis speed <95.> accelerate <5.>;
+	spin tyre2 around x-axis speed <95.> accelerate <5.>;
+	spin tyre3 around x-axis speed <95.> accelerate <5.>;
+	spin tyre4 around x-axis speed <95.> accelerate <5.>;
+	spin tyre5 around x-axis speed <95.> accelerate <5.>;
+	spin tyre6 around x-axis speed <95.> accelerate <5.>;
+}
+
+StopMoving()
+{
+	spin tyre1 around x-axis speed <0.> accelerate <-40.>;
+	spin tyre2 around x-axis speed <0.> accelerate <-40.>;
+	spin tyre3 around x-axis speed <0.> accelerate <-40.>;
+	spin tyre4 around x-axis speed <0.> accelerate <-40.>;
+	spin tyre5 around x-axis speed <0.> accelerate <-40.>;
+	spin tyre6 around x-axis speed <0.> accelerate <-40.>;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( !Static_Var_3 )
+		{
+			turn arm1 to x-axis <15.> speed <8.>;
+			turn plate1 to z-axis <40.> speed <20.>;
+			turn plate2 to z-axis <-40.> speed <20.>;
+			sleep 750;
+			set ARMORED to 0;
+			Static_Var_6 = 0;
+			if( Static_Var_8 == 1 )
+			{
+				set ARMORED to 1;
+			}
+			sleep 750;
+			turn arm2 to x-axis <-30.> speed <15.>;
+			turn arm3 to x-axis <75.> speed <38.>;
+			turn arm4 to x-axis <-60.> speed <30.>;
+			sleep 1500;
+			Static_Var_1 = 1;
+			currentstate = 0;
+		}
+		if( Static_Var_3 )
+		{
+			Static_Var_1 = 0;
+			turn turret to y-axis <0.> speed <60.>;
+			turn pitchturret to x-axis <0.> speed <45.>;
+			wait-for-turn turret around y-axis;
+			wait-for-turn pitchturret around x-axis;
+			turn arm2 to x-axis <0.> speed <15.>;
+			turn arm3 to x-axis <0.> speed <38.>;
+			turn arm4 to x-axis <0.> speed <30.>;
+			sleep 1500;
+			turn arm1 to x-axis <0.> speed <8.>;
+			turn plate1 to z-axis <0.> speed <20.>;
+			turn plate2 to z-axis <0.> speed <20.>;
+			sleep 2000;
+			set ARMORED to 1;
+			Static_Var_6 = 1;
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+RestoreAfterDelay()
+{
+	sleep 6000;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+Create()
+{
+	hide flare;
+	Static_Var_1 = 0;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	Static_Var_5 = 35;
+	Static_Var_6 = 0;
+	Static_Var_7 = 0;
+	Static_Var_8 = 0;
+	Static_Var_9 = 0;
+	Static_Var_10 = 6000;
+	Static_Var_11 = 6000;
+	start-script Smokeunit();
+}
+
+Activate()
+{
+	Static_Var_2 = 1;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	Static_Var_2 = 0;
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = pitchturret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	while( !Static_Var_1 )
+	{
+		start-script RequestState(0);
+		sleep 500;
+	}
+	signal 2;
+	set-signal-mask 0;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <60.>;
+	turn pitchturret to x-axis <0.> - pitch speed <45.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	turn lbarrel to y-axis <12.> speed <48.>;
+	turn rbarrel to y-axis <-12.> speed <48.>;
+	move recoil to z-axis [-2.] speed [16.];
+	emit-sfx 1024 + 0 from flare;
+	sleep 250;
+	turn lbarrel to y-axis <0.> speed <12.>;
+	turn rbarrel to y-axis <0.> speed <12.>;
+	move recoil to z-axis [0.] speed [1.];
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode tyre1 type NOHEATCLOUD | BITMAP5;
+		explode tyre2 type NOHEATCLOUD | BITMAP5;
+		explode tyre3 type NOHEATCLOUD | BITMAP5;
+		explode tyre4 type NOHEATCLOUD | BITMAP5;
+		explode tyre5 type NOHEATCLOUD | BITMAP5;
+		explode tyre6 type NOHEATCLOUD | BITMAP5;
+		explode hull type NOHEATCLOUD | BITMAP1;
+		explode arm1 type NOHEATCLOUD | BITMAP5;
+		explode arm2 type NOHEATCLOUD | BITMAP5;
+		explode arm3a type NOHEATCLOUD | BITMAP5;
+		explode arm3b type NOHEATCLOUD | BITMAP5;
+		explode arm4 type NOHEATCLOUD | BITMAP5;
+		explode turret type NOHEATCLOUD | BITMAP5;
+		explode plate1 type NOHEATCLOUD | BITMAP5;
+		explode plate2 type NOHEATCLOUD | BITMAP5;		
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode tyre1 type NOHEATCLOUD | BITMAP5;
+		explode tyre2 type NOHEATCLOUD | BITMAP2;
+		explode tyre3 type NOHEATCLOUD | BITMAP2;
+		explode tyre4 type NOHEATCLOUD | BITMAP5;
+		explode tyre5 type NOHEATCLOUD | BITMAP2;
+		explode tyre6 type NOHEATCLOUD | BITMAP5;
+		explode hull type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+		explode arm1 type NOHEATCLOUD | BITMAP1;
+		explode arm2 type NOHEATCLOUD | BITMAP2;
+		explode arm3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode arm3b type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP2;
+		explode arm4 type NOHEATCLOUD | BITMAP5;
+		explode turret type SHATTER | BITMAP4;
+		explode plate1 type NOHEATCLOUD | BITMAP5;
+		explode plate2 type NOHEATCLOUD | BITMAP5;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode tyre1 type NOHEATCLOUD | BITMAP2;
+	explode tyre2 type NOHEATCLOUD | BITMAP1;
+	explode tyre3 type NOHEATCLOUD | BITMAP1;
+	explode tyre4 type NOHEATCLOUD | BITMAP2;
+	explode tyre5 type NOHEATCLOUD | BITMAP1;
+	explode tyre6 type NOHEATCLOUD | BITMAP2;
+	explode hull type SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	explode arm1 type NOHEATCLOUD | BITMAP1;
+	explode arm2 type NOHEATCLOUD | BITMAP2;
+	explode arm3a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode arm3b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode arm4 type NOHEATCLOUD | BITMAP5;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode plate1 type NOHEATCLOUD | BITMAP5;
+	explode plate2 type NOHEATCLOUD | BITMAP5;
+	return (corpsetype);
+}

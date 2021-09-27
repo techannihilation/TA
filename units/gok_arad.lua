@@ -40,7 +40,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "gok_arad",
-		usepiececollisionvolumes = 1,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "gok_arad.dds",

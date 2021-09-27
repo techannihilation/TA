@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, socle, supports, sup2, sup4,
-       sup6, sup8, nexus, nex1, nex2, nex3, nex4,
-       nex5, nex6, nex7, nex8, ceil, gun;
+piece  base, socle, supports, sup1, sup4,
+       sup2, sup3, nexus, nex1, nex2, nex3, nex4,
+       ceil, gun;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 
@@ -34,10 +34,6 @@ RequestState(requestedstate, currentstate)
 			turn nex2 to x-axis <0.> speed <40.>;
 			turn nex3 to x-axis <0.> speed <40.>;
 			turn nex4 to x-axis <0.> speed <40.>;
-			turn nex5 to x-axis <0.> speed <40.>;
-			turn nex6 to x-axis <0.> speed <40.>;
-			turn nex7 to x-axis <0.> speed <40.>;
-			turn nex8 to x-axis <0.> speed <40.>;
 			set ARMORED to 0;
 			sleep 2500;
 			currentstate = 0;
@@ -48,10 +44,6 @@ RequestState(requestedstate, currentstate)
 			turn nex2 to x-axis <-90.> speed <40.>;
 			turn nex3 to x-axis <-90.> speed <40.>;
 			turn nex4 to x-axis <-90.> speed <40.>;
-			turn nex5 to x-axis <-90.> speed <40.>;
-			turn nex6 to x-axis <-90.> speed <40.>;
-			turn nex7 to x-axis <-90.> speed <40.>;
-			turn nex8 to x-axis <-90.> speed <40.>;
 			sleep 1000;
 			move nexus to y-axis [-4.5] speed [3.];
 			sleep 1000;
@@ -117,21 +109,15 @@ Create()
 	Static_Var_1 = 1;
 	Static_Var_2 = 0;
 	Static_Var_3 = 1;
-	turn nex2 to y-axis <-45.> now;
-	turn nex3 to y-axis <-90.> now;
-	turn nex4 to y-axis <-135.> now;
-	turn nex5 to y-axis <180.> now;
-	turn nex6 to y-axis <135.> now;
-	turn nex7 to y-axis <90.> now;
-	turn nex8 to y-axis <45.> now;
+	turn nex2 to y-axis <-90.> now;
+	turn nex3 to y-axis <-180.> now;
+	turn nex4 to y-axis <90.> now;
+	
+	
 	turn nex1 to x-axis <-90.> now;
 	turn nex2 to x-axis <-90.> now;
 	turn nex3 to x-axis <-90.> now;
 	turn nex4 to x-axis <-90.> now;
-	turn nex5 to x-axis <-90.> now;
-	turn nex6 to x-axis <-90.> now;
-	turn nex7 to x-axis <-90.> now;
-	turn nex8 to x-axis <-90.> now;
 	move nexus to y-axis [-6.] now;
 }
 
@@ -171,10 +157,6 @@ Killed(severity, corpsetype)
 	explode nex2 type NOHEATCLOUD;
 	explode nex3 type NOHEATCLOUD;
 	explode nex4 type NOHEATCLOUD;
-	explode nex5 type NOHEATCLOUD;
-	explode nex6 type NOHEATCLOUD;
-	explode nex7 type NOHEATCLOUD;
-	explode nex8 type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;

@@ -1,7 +1,6 @@
 return {
 	corsiege = {
 		acceleration = 0.037,
-		
 		brakerate = 0.09,
 		buildcostenergy = 119528,
 		buildcostmetal = 7557,
@@ -42,7 +41,7 @@ return {
 		radardistance = 0,
 		radaremitheight = 34,
 		selfdestructas = "CRAWL_BLAST",
-		sightdistance = 625,
+		sightdistance = 500,
 		standingfireorder = 1,
 		standingmoveorder = 0,
 		steeringmode = 1,

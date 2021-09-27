@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "tlldb_aoplane.dds",
 		buildpic = "tlldb.dds",
-		buildtime = 235000,
+		buildtime = 160000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

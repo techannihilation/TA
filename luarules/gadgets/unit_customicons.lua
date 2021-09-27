@@ -256,7 +256,7 @@ function gadget:Initialize()
       elseif (ud.name=="armbanth") or (ud.name=="armgor") or (ud.name=="talon_talos") then
         Spring.SetUnitDefIcon(udid, "small_mech.user")
 --med mech
-      elseif (ud.name=="armorco") or (ud.name=="armraptor") or (ud.name=="talon_archon") then
+      elseif (ud.name=="armorco") or (ud.name=="armraptor") or (ud.name=="gok_archon") then
         Spring.SetUnitDefIcon(udid, "med_mech.user")
 --t3 Annubis
       elseif (ud.name=="talon_annubis") then

@@ -1,8 +1,5 @@
 return {
 	talon_damascus1 = {
-		acceleration = 0,
-
-		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 116455,
 		buildcostmetal = 2795,

@@ -1,0 +1,220 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, building, sup1, sup2, sup3, sup4, sup5, elevator,
+		hammer1, hammer2, hammer3, hammer4, hammer5;
+
+static-var  Static_Var_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging, bCrushing;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+FirstHammer()
+{
+	move hammer1 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer1 to y-axis [7.0] speed [5.];
+	sleep 200;
+	move hammer1 to y-axis [4.2] speed [20.];
+	sleep 100;
+	move hammer1 to y-axis [0.] speed [60.];
+
+}
+
+SecondHammer()
+{
+	move hammer2 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer2 to y-axis [7.0] speed [5.];
+	sleep 200;
+	move hammer2 to y-axis [4.2] speed [20.];
+	sleep 100;
+	move hammer2 to y-axis [0.] speed [60.];
+}
+
+ThirdHammer()
+{
+	move hammer3 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer3 to y-axis [7.0] speed [5.];
+	sleep 200;
+	move hammer3 to y-axis [4.2] speed [20.];
+	sleep 100;
+	move hammer3 to y-axis [0.] speed [60.];
+}
+
+FourthHammer()
+{
+	move hammer4 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer4 to y-axis [7.0] speed [5.];
+	sleep 200;
+	move hammer4 to y-axis [4.2] speed [20.];
+	sleep 100;
+	move hammer4 to y-axis [0.] speed [60.];
+}
+
+HammerFive()
+{
+	move hammer5 to y-axis [8.4] speed [6.];
+	sleep 750;
+	move hammer5 to y-axis [7.0] speed [5.];
+	sleep 200;
+	move hammer5 to y-axis [4.2] speed [20.];
+	sleep 100;
+	move hammer5 to y-axis [0.] speed [60.];
+}
+
+Go()
+{
+	move elevator to y-axis [20.0] speed [6.];
+	spin elevator around y-axis speed Static_Var_1;
+	
+	while( bCrushing )
+	{
+		start-script FirstHammer();
+		sleep Static_Var_2;
+		start-script SecondHammer();
+		sleep Static_Var_2;
+		start-script ThirdHammer();
+		sleep Static_Var_2;
+		start-script FourthHammer();
+		sleep Static_Var_2;
+		start-script HammerFive();
+		sleep Static_Var_2;
+	}
+}
+
+Stop()
+{
+	spin elevator around y-axis speed <0.0>;
+	move elevator to y-axis [0.0] speed [6.];
+	wait-for-move hammer1 along y-axis;
+	wait-for-move hammer2 along y-axis;
+	wait-for-move hammer3 along y-axis;
+	wait-for-move hammer4 along y-axis;
+	wait-for-move hammer5 along y-axis;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Activate()
+{
+	start-script RequestState(0);
+	bCrushing = 1;
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+	bCrushing = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 750;
+	call-script InitState();
+	start-script SmokeUnit();	
+}
+
+SetSpeed(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1;
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode building type NOHEATCLOUD;
+		explode elevator type NOHEATCLOUD;
+		explode sup1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode building type NOHEATCLOUD | SHATTER;
+		explode elevator type NOHEATCLOUD | SHATTER;
+		explode sup1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	}
+	corpsetype = 3;
+	explode building type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode elevator type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

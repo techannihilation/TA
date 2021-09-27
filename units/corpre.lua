@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corpre_aoplane.dds",
 		buildpic = "corpre.dds",
-		buildtime = 225000,
+		buildtime = 150000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
