@@ -1,5 +1,5 @@
 return {
-	gok_ptr  = {
+	gok_ptr = {
 		activatewhenbuilt = true,
 		airsightdistance = 1200,
 		brakerate = 0,
@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "talon_aoplane.dds",
-		buildpic = "gok_ptr .dds",
+		buildpic = "gok_ptr.dds",
 		buildtime = 60000,
 		canattack = true,
 		canstop = 1,
@@ -50,8 +50,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
-			buildpic = "gok_ptr .png",
-			faction = "TALON",
+			buildpic = "gok_ptr.dds",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {
