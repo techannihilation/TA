@@ -19,7 +19,7 @@ return {
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		firestate = 0,
-		footprintx = 8,
+		footprintx = 6,
 		footprintz = 6,
 		icontype = "building",
 		idleautoheal = 5,

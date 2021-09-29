@@ -1,8 +1,8 @@
 return {
 	corflu = {
 		buildangle = 4096,
-		buildcostenergy = 313935149,
-		buildcostmetal = 39777014,
+		buildcostenergy = 253935149,
+		buildcostmetal = 36777014,
 		builder = false,
 		buildpic = "corflu.dds",
 		buildtime = 60000000,

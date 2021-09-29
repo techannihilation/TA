@@ -293,14 +293,7 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = rfire;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = lfire;
-	}
+	piecenum = rfire;
 }
 
 AimPrimary(heading, pitch)
@@ -313,14 +306,14 @@ AimPrimary(heading, pitch)
 	set-signal-mask SIG_AIM;
 	bAiming = 1;
 	turn torso to y-axis heading speed <305.>;
-	turn lshoulder to x-axis <-30.> - pitch speed <190.>;
+	//turn lshoulder to x-axis <-30.> - pitch speed <190.>;
 	turn rshoulder to x-axis <-30.> - pitch speed <190.>;
-	turn larm to x-axis <30.> speed <90.>;
+	//turn larm to x-axis <30.> speed <90.>;
 	turn rarm to x-axis <30.> speed <90.>;
 	wait-for-turn torso around y-axis;
-	wait-for-turn lshoulder around x-axis;
+	//wait-for-turn lshoulder around x-axis;
 	wait-for-turn rshoulder around x-axis;
-	wait-for-turn larm around x-axis;
+	//wait-for-turn larm around x-axis;
 	wait-for-turn rarm around x-axis;
 	if( bBuilding == 1 )
 	{
@@ -331,6 +324,7 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
+/*	
 	if( gun_1 == 0 )
 	{
 		gun_1 = 1;
@@ -341,6 +335,7 @@ FirePrimary()
 		gun_1 = 0;
 		return (0);
 	}
+*/
 }
 
 AimFromWeapon4(piecenum)
@@ -350,14 +345,7 @@ AimFromWeapon4(piecenum)
 
 QueryWeapon4(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = rfire;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = lfire;
-	}
+	piecenum = rfire;
 }
 
 AimWeapon4(heading, pitch)
@@ -378,20 +366,21 @@ AimWeapon4(heading, pitch)
 	set-signal-mask SIG_AIM;
 	bAiming = 1;
 	turn torso to y-axis heading speed <305.>;
-	turn lshoulder to x-axis <-30.> - pitch speed <190.>;
+	//turn lshoulder to x-axis <-30.> - pitch speed <190.>;
 	turn rshoulder to x-axis <-30.> - pitch speed <190.>;
-	turn larm to x-axis <30.> speed <90.>;
+	//turn larm to x-axis <30.> speed <90.>;
 	turn rarm to x-axis <30.> speed <90.>;
 	wait-for-turn torso around y-axis;
-	wait-for-turn lshoulder around x-axis;
+	//wait-for-turn lshoulder around x-axis;
 	wait-for-turn rshoulder around x-axis;
-	wait-for-turn larm around x-axis;
+	//wait-for-turn larm around x-axis;
 	wait-for-turn rarm around x-axis;
 	return (1);
 }
 
 FireWeapon4()
 {
+/*
 	if( gun_1 == 0 )
 	{
 		gun_1 = 1;
@@ -402,6 +391,7 @@ FireWeapon4()
 		gun_1 = 0;
 		return (0);
 	}
+*/	
 }
 
 AimFromTertiary(piecenum)
@@ -411,7 +401,7 @@ AimFromTertiary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	piecenum = eyeflare;
+	piecenum = lfire;
 }
 
 AimTertiary(heading, pitch)
@@ -419,9 +409,20 @@ AimTertiary(heading, pitch)
 	signal SIG_AIM_DGUN;
 	set-signal-mask SIG_AIM_DGUN;
 	bAiming = 1;
-	turn torso to y-axis heading speed <300.>;
-	turn eyeflare to x-axis <0.> - pitch speed <250.000000>;
+	//turn torso to y-axis heading speed <300.>;
+	//turn eyeflare to x-axis <0.> - pitch speed <250.000000>;
+	//wait-for-turn torso around y-axis;
+	
+	turn torso to y-axis heading speed <305.>;
+	turn lshoulder to x-axis <-30.> - pitch speed <190.>;
+	//turn rshoulder to x-axis <-30.> - pitch speed <190.>;
+	turn larm to x-axis <30.> speed <90.>;
+	//turn rarm to x-axis <30.> speed <90.>;
 	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	//wait-for-turn rshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+	
 	return (1);
 }
 

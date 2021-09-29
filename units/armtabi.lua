@@ -1,8 +1,8 @@
 return {
 	armtabi = {
 		buildangle = 4096,
-		buildcostenergy = 289450664,
-		buildcostmetal = 40387146,
+		buildcostenergy = 269450664,
+		buildcostmetal = 36387146,
 		builder = false,
 		buildpic = "armtabi.dds",
 		buildtime = 60000000,

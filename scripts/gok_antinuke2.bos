@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, ceil, pillar, silo, core, circle, shelter, udoor,
+piece  base, core, circle, shelter, udoor, silo,
        ddoor, ldoor, rdoor, rocket1, decor, decor1, decor2, decor3, decor4;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
@@ -27,7 +27,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from ceil;
+			emit-sfx smoketype from core;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -53,7 +53,7 @@ RequestState(requestedstate, currentstate)
 		if( !Static_Var_3 )
 		{
 			show rocket1;
-			move silo to y-axis [0.0] speed [20.0];
+			move silo to y-axis [20.0] speed [30.0];
 			spin silo around y-axis speed <0>;
 			wait-for-move silo along y-axis;			
 			turn udoor to x-axis <-90.> speed <250.>;
@@ -94,7 +94,6 @@ Create()
 	Static_Var_2 = 12;
 	Static_Var_3 = 1;
 	Static_Var_4 = 0;
-	move silo to y-axis [-10.0] now;
 	start-script SmokeUnit();
 }
 

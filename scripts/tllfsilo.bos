@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, fusee, door1, door2, door3, door4,
-       p1, p2, p3, p4, fire;
+piece  base, body, fusee, gate1, gate2, socle1, socle2, fire, socle1turn, socle2turn;
 
 static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
@@ -41,34 +40,37 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Activatescr()
 {
-	if( TRUE )
-	{
-		//move door1 to y-axis [-0.500000] speed [1.000000];
-		//move door2 to y-axis [-0.500000] speed [1.000000];
-		//move door3 to y-axis [-0.500000] speed [1.000000];
-		//move door4 to y-axis [-0.500000] speed [1.000000];
-		turn door1 to x-axis <0.0> speed <15.000000>;
-		turn door2 to z-axis <0.000000> speed <15.000000>;
-		turn door3 to x-axis <0.000000> speed <15.000000>;
-		turn door4 to z-axis <0.000000> speed <15.000000>;
-		sleep 7500;
-		gun_1 = body;
-	}
-	sleep 25;
+	move socle1 to x-axis [10.000000] speed [4.50000];
+	move socle2 to x-axis [-10.00000] speed [4.50000];
+	wait-for-move socle1 along x-axis;
+	move fusee to y-axis [50.000000] speed [5.0];
+	wait-for-move fusee along y-axis;
+	turn gate1 to y-axis <-90.0> speed <50.000000>;
+	turn gate2 to y-axis <-90.0> speed <50.000000>;
+	wait-for-turn gate1 around y-axis;
+	wait-for-turn gate2 around y-axis;	
+	gun_1 = 1;
 }
 
 Deactivatescr()
 {
 	if( TRUE )
 	{
-		gun_1 = base;
-		turn door1 to x-axis <90.0> speed <50.000000>;
-		turn door2 to z-axis <-90.0> speed <50.000000>;
-		turn door3 to x-axis <-90.0> speed <50.000000>;
-		turn door4 to z-axis <90.0> speed <50.000000>;
-		sleep 300;
+		gun_1 = 0;
+		move fusee to y-axis [0.000000] speed [5.0];
+		wait-for-move fusee along y-axis;
+		turn gate1 to y-axis <0.0> speed <50.000000>;
+		turn gate2 to y-axis <0.0> speed <50.000000>;
+		wait-for-turn gate1 around y-axis;
+		wait-for-turn gate2 around y-axis;		
 	}
-	sleep 15;
+	if( TRUE )
+	{
+		move socle1 to x-axis [0.000000] speed [5.000000];
+		move socle2 to x-axis [0.000000] speed [5.000000];
+		wait-for-move socle1 along x-axis;
+	}
+	hide fusee;
 }
 
 Go()
@@ -118,11 +120,10 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	hide fusee;
-	turn door1 to x-axis <90.0> now;
-	turn door2 to z-axis <-90.0> now;
-	turn door3 to x-axis <-90.0> now;
-	turn door4 to z-axis <90.0> now;
-	gun_1 = base;
+	turn socle1turn to y-axis <-60.0> now;
+	turn socle2turn to y-axis <-60.0> now;
+	call-script Deactivatescr();
+	gun_1 = 0;
 	restore_delay = 3000;
 	call-script InitState();
 	start-script SmokeUnit();
@@ -141,7 +142,7 @@ Deactivate()
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	set-signal-mask 0;
+	//set-signal-mask 0;
 	start-script RequestState(1);
 }
 
@@ -161,9 +162,8 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 from fire;
-	sleep 2000;
 	hide fusee;
-	gun_1 = base;
+	gun_1 = 0;
 	start-script RequestState(1);
 }
 
@@ -187,10 +187,10 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode p1 type NOHEATCLOUD;
-		explode p2 type NOHEATCLOUD;
-		explode p3 type NOHEATCLOUD;
-		explode p4 type NOHEATCLOUD;
+		explode gate1 type NOHEATCLOUD;
+		explode gate2 type NOHEATCLOUD;
+		explode socle1 type NOHEATCLOUD;
+		explode socle2 type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -198,17 +198,17 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
-		explode p1 type NOHEATCLOUD | SHATTER;
-		explode p2 type NOHEATCLOUD | SHATTER;
-		explode p3 type NOHEATCLOUD | SHATTER;
-		explode p4 type NOHEATCLOUD | SHATTER;
+		explode gate1 type NOHEATCLOUD | SHATTER;
+		explode gate2 type NOHEATCLOUD | SHATTER;
+		explode socle1 type NOHEATCLOUD | SHATTER;
+		explode socle2 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD;
-	explode p1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode p2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode p3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode p4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode gate1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode gate2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode socle1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode socle2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

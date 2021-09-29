@@ -275,7 +275,7 @@ return {
 				--sprayangle = 200,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 350,
+				weaponvelocity = 500,
 				damage = {
 					default = 200,
 					subs = 5,
