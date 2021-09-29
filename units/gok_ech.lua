@@ -71,7 +71,7 @@ return {
 			[10] = "gok_elab",
 			[11] = "gok_nanotc2",
 			[12] = "gok_slesh1",
-			--[13] = "gok_popcorn1",
+			[13] = "gok_eflak",
 			[14] = "gok_gate4",
 			[15] = "gok_antinuke1",
 			[16] = "gok_silo1",

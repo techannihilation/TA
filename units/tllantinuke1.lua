@@ -23,7 +23,7 @@ return {
 		idletime = 1800,
 		losemitheight = 61,
 		mass = 3655,
-		maxdamage = 6795,
+		maxdamage = 4295,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Advanced Anti-Nuke",
