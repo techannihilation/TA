@@ -100,7 +100,7 @@ return {
 				soundstart = "xplomas2",
 				stages = 20,
 				stockpile = true,
-				stockpiletime = 720,
+				stockpiletime = 240,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 1340,

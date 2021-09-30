@@ -60,8 +60,8 @@ return {
 		workertime = 480,
 		buildoptions = {
 			[1] = "gok_sfusion",
-			--[2] = "gok_emstor",
-			--[3] = "gok_eestor",
+			[2] = "gok_emstor",
+			[3] = "gok_eestor",
 			[4] = "gok_emex",
 			[5] = "gok_metalmakerlvl2",
 			[6] = "gok_hp",
