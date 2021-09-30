@@ -68,7 +68,7 @@ return {
 			[7] = "gok_ahp",
 			[8] = "gok_lab",
 			[9] = "gok_alab",
-			[10] = "gok_elab",
+			[10] = "gok_ulab",
 			[11] = "gok_nanotc2",
 			[12] = "gok_slesh1",
 			[13] = "gok_eflak",
