@@ -1,7 +1,7 @@
 return {
 	talon_armistice = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 36200,
@@ -20,7 +20,7 @@ return {
 		corpse = "dead",
 		description = "EMP Tactical",
 		energyuse = 0,
-		explodeas = "LARGE_BUILDINGEX",
+		explodeas = "EMP_EXPLOSION",
 		firestandorders = 1,
 		footprintx = 4,
 		footprintz = 4,
@@ -39,7 +39,7 @@ return {
 		radardistance = 50,
 		radaremitheight = 34,
 		seismicsignature = 0,
-		selfdestructas = "LARGE_BUILDING",
+		selfdestructas = "EMP_EXPLOSION",
 		sightdistance = 300,
 		standingfireorder = 2,
 		turninplaceanglelimit = 140,
@@ -113,7 +113,7 @@ return {
 		},
 		weapondefs = {
 			talonemp_weapon = {
-				areaofeffect = 272,
+				areaofeffect = 256,
 				avoidfeature = false,
 				commandfire = true,
 				craterareaofeffect = 384,

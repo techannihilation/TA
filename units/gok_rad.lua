@@ -11,6 +11,8 @@ return {
 		buildpic = "gok_rad.dds",
 		canattack = false,
 		category = "ALL SURFACE",
+		collisionvolumescales = "30 50 30",
+		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 1",
 		energyuse = 15,

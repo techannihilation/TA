@@ -15,7 +15,7 @@ return {
 		category = "ALL MEDIUM MOBILE UNDERWATER",
 		defaultmissiontype = "Standby",
 		description = "Very Heavy Crawling Bomb",
-		explodeas = "CORMINE6",
+		explodeas = "MINE_NUKE",
 		firestandorders = 1,
 		footprintx = 1,
 		footprintz = 1,
@@ -34,7 +34,6 @@ return {
 		movementclass = "kbot1",
 		name = "TnT",
 		noautofire = false,
-		
 		objectname = "coretnt",
 		radardistance = 0,
 		radaremitheight = 25,

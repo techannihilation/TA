@@ -11,9 +11,10 @@ return {
 		soundhit = "xplonuk3",
 		soundstart = "largegun",
 		damage = {
-			commanders = 1500,
+			commanders = 2250,
+			crawlingbombs = 450,
 			default = 4500,
-			mines = 50,
+			mines = 45,
 		},
 	},
 }

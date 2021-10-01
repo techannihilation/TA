@@ -56,7 +56,7 @@ return {
 		yardmap = "ooooooooooo ooooooooooo ooooooooooo ooooooooooo ooooooooooo ooooooooooo ooooooooooo ooooooooooo ooooooooooo ooooooooooo ooooooooooo",
 		buildoptions = {
 			[1] = "gok_aca",
-			--[2] = "abuilderlvl1",
+			[2] = "gok_engineera",
 			[3] = "gok_demoneye",
 			[4] = "gok_sucub",
 			--[5] = "gok_brawl",
