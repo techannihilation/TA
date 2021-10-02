@@ -173,6 +173,11 @@ local morphDefs = {
 		time = 60,
 		tech = 2,
 	},
+	gok_antinuke = {
+		into = 'gok_antinuke1',
+		time = 60,
+		tech = 2,
+	},
 	armanni = {
 		into = 'armanni1',
 		time = 90,
@@ -235,6 +240,11 @@ local morphDefs = {
 	},
 	talon_silo = {
 		into = 'talon_silo1',
+		tech = 2,
+		time = 60,
+	},
+	gok_silo = {
+		into = 'gok_silo1',
 		tech = 2,
 		time = 60,
 	},
@@ -488,6 +498,11 @@ local morphDefs = {
 	},
 	talon_lrpt = {
 		into = 'talon_lrpt1',
+		time = 45,
+		xp = 0.25,
+	},
+	gok_lrpt = {
+		into = 'gok_lrpt1',
 		time = 45,
 		xp = 0.25,
 	},
