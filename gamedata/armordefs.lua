@@ -66,6 +66,7 @@ return {
 	"talon_hornet",
 	"gok_angel",
 	"gok_sucub",
+	"gok_wraith",
 
 	--Construction
 	"abuilderlvl1",

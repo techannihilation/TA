@@ -1,6 +1,6 @@
 return {
 	talon_hornet = {
-		acceleration = 1.20209,
+		acceleration = 1.2,
 		airsightdistance = 900,
 		bankscale = 1,
 		brakerate = 0.07,
@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Hornet",
-		
+
 		objectname = "talon_hornet",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
