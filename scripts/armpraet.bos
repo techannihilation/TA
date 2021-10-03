@@ -6,15 +6,20 @@
 piece  base, body, engine, leg11, leg12, leg21, leg22, leg31, leg32, 
 		leg41, leg42, leg51, leg52, leg61, leg62,
 		msl1, msl2, msl11, msl12, msl13, msl14, msl21, msl22, msl23, msl24, 
-		turret, flare, aimmsl1, aimmsl2;
+		turret, flare, aimmsl1, aimmsl2, shield_pos;
 
-static-var  bMoving, bAiming, msl_1, msl_2 ;
+static-var  bMoving, bAiming, msl_1, msl_2, shield_onoff;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
 #define SIG_MOVE			16
+
+Shield()
+{
+	shield_onoff = !shield_onoff;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -199,7 +204,7 @@ Create()
 	turn msl2 to z-axis <-15.000000> now;
 	turn msl1 to y-axis <15.000000> now;
 	turn msl2 to y-axis <-15.000000> now;
-	
+	shield_onoff = 1;
 	msl_1 = 0;	
 	msl_2 = 0;	
 	bMoving = FALSE;
@@ -317,12 +322,23 @@ AimPrimary(heading, pitch)
 
 QueryPrimary(piecenum)
 {
-		piecenum = flare;
+	piecenum = flare;
 }
 
-FirePrimary()
-{
 
+AimWeapon4(heading, pitch)
+{
+	return (shield_onoff);
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = shield_pos;
 }
 
 SweetSpot(piecenum)

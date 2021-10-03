@@ -421,6 +421,7 @@ AimWeapon5(heading, pitch)
 	signal SIG_AIM_5;
 	set-signal-mask SIG_AIM_5;
 	turn rminigun to x-axis <0.000000> - pitch speed <75.000000>;
+	turn lminigun to x-axis <0.000000> - pitch speed <75.000000>;
 	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
 		return (0);
@@ -433,18 +434,25 @@ AimWeapon5(heading, pitch)
 
 QueryWeapon5(piecenum)
 {
-	piecenum = rflare;
+	if( gatling_1 == 1 or gatling_1 == 3 or gatling_1 == 5 )
+	{
+		piecenum = lflare;
+	}
+	else
+	{
+		piecenum = rflare;
+	}
 }
 
 FireWeapon5()
 {
-	emit-sfx 1024 + 0 from rflare;
 	++gatling_1;
 	if( gatling_1 >= 6 )
 	{
 		gatling_1 = 0;
 	}
 	turn rbarrel to z-axis <60.000000> * gatling_1 speed <500.000000>;
+	turn lbarrel to z-axis <60.000000> * gatling_1 speed <500.000000>;
 }
 
 AimFromWeapon5(piecenum)
@@ -452,6 +460,7 @@ AimFromWeapon5(piecenum)
 	piecenum = body;
 }
 
+/*
 AimWeapon6(heading, pitch)
 {
 	signal SIG_AIM_6;
@@ -487,22 +496,23 @@ AimFromWeapon6(piecenum)
 {
 	piecenum = body;
 }
+*/
 
-AimWeapon7(heading, pitch)
+AimWeapon6(heading, pitch)
 {
 	return (shield_onoff);
 }
 
-FireWeapon7()
+FireWeapon6()
 {
 }
 
-AimFromWeapon7(piecenum)
+AimFromWeapon6(piecenum)
 {
 	piecenum = shield_pos;
 }
 
-QueryWeapon7(piecenum)
+QueryWeapon6(piecenum)
 {
 	piecenum = shield_pos;
 }

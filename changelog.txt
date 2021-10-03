@@ -1,10 +1,12 @@
 4.01 => 4.02
-2021-09-30
+2021-09-04
 Balance :
  - Delete Ammo for Tsar after made it. Decrease cost by 10%
  - Decrease Hp for all T2/T3 AntiNuke by 50%
+ - Mythril : Decrease Gatling damage 6K/S => 4.5K. Increase Metalcost and Hp.
 
  Improvment :
+  - Add T4 Shielded Talon unit
   - Add Wreckage for T1 Arm / Core / TLL Mini Fusion
   - Add T3/T4 Gok units
 

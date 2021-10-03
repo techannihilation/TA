@@ -1292,10 +1292,10 @@ local morphDefs = {
 		time = 180,
 		xp = 0.20,
 	},
-	talon_mythril = {
+	talon_boxer = {
 		into = 'talon_cerberus',
 		time = 180,
-		xp = 0.10,
+		xp = 0.15,
 	},
 	corroy = {
 		into = 'corcrus',

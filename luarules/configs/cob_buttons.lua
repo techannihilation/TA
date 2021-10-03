@@ -114,6 +114,15 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	talon_boxer = {
+		{
+			name = "shield_talboxer",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	armexo = {
 		{
 			name = "shield_exo",

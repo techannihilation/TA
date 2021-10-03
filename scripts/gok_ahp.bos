@@ -123,6 +123,7 @@ Create()
 	DesiredState = 1;
 	StateChanging = 0;
 	Spray = spray1;
+	//move base to y-axis [15] now;
 	start-script ControlFlag();
 }
 
