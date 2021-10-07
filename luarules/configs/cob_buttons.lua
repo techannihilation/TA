@@ -675,4 +675,13 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	gok_satan = {
+		{
+			name = "shield_gok_satan",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 }

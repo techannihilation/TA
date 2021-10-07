@@ -113,6 +113,11 @@ local morphDefs = {
 		time = 15,
 		xp = 0.10,
 	},
+	gok_llt = {
+		into = 'gok_llt1',
+		time = 15,
+		xp = 0.10,
+	},
 	armhlt = {
 		into = 'armvhlt',
 		time = 30,
@@ -1628,6 +1633,11 @@ local morphDefs = {
 		into = 'gok_antichrist',
 		xp = 0.25,
 		time = 45,
+	},
+	gok_antichrist = {
+		into = 'gok_satan',
+		xp = 0.25,
+		time = 60,
 	},
 	gok_hellfire = {
 		into = 'gok_ifrit',

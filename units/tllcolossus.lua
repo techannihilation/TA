@@ -217,6 +217,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				turnrate = 90000,
+				tracks = true,
 				weaponacceleration = 600,
 				weapontimer = 1.25,
 				weapontype = "StarburstLauncher",

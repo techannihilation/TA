@@ -55,6 +55,7 @@ jumpClassGroups = {
   	"tlldischarge",
     "armjugg",
     "gok_valkyrie",
+    "gok_satan",
 	},
 }
 

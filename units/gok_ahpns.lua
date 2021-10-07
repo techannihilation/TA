@@ -46,10 +46,11 @@ return {
 		yardmap = "wwccccww wwccccww wwccccww wwccccww wwccccww wwccccww wwccccww wwccccww",
 		buildoptions = {
 			[1] = "gok_ach",
-			[2] = "gok_agrat",
-			[3] = "gok_seastrike1",
-			[4] = "gok_sunstrike",
-			[5] = "gok_nightfall",
+			[2] = "gok_engineerh",
+			[3] = "gok_agrat",
+			[4] = "gok_seastrike1",
+			[5] = "gok_sunstrike",
+			[6] = "gok_nightfall",
 		},
 		customparams = {
 			buildpic = "gok_ahpns.dds",

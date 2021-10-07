@@ -71,7 +71,7 @@ return {
 			[9] = "gok_blackdawn",
 			[10] = "gok_slesh",
 			[11] = "gok_orchid",
-			--[12] = "gok_blt",
+			--[12] = "",
 			[13] = "gok_rl",
 			[14] = "gok_flak",
 			[15] = "gok_ptr",

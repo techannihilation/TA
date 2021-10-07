@@ -7,23 +7,19 @@ piece  base, pelvis, torsotwist, torso, lshoulder, larm, llathe, rshoulderrecoil
        rshoulder, rarmrecoil, rarm, system1, barrel, flare, backpack,
        lleg, lboot, rleg, rboot;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-	           Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
+static-var  Static_Var_1, bAiming, bMoving, gun_1;
 
 
-MotionControl(moving, aiming, justmoved)
+MotionControl(justmoved)
 {
 	justmoved = TRUE;
 	while( TRUE )
 	{
-		moving = Static_Var_1;
-		aiming = Static_Var_2;
-		if( moving )
+		if( bMoving )
 		{
-			if( aiming )
+			if( bAiming )
 			{
-				Static_Var_3 = 1;
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <15.> speed <75.>;
 					turn lboot to x-axis <30.> speed <75.>;
@@ -36,7 +32,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to x-axis [2.] speed [2.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <45.> speed <75.>;
 					turn lboot to x-axis <15.> speed <38.>;
@@ -45,7 +41,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to y-axis [0.] speed [5.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <15.> speed <75.>;
 					turn lboot to x-axis <-30.> speed <113.>;
@@ -58,7 +54,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to x-axis [-2.] speed [3.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <-75.> speed <225.>;
 					turn lboot to x-axis <45.> speed <188.>;
@@ -71,7 +67,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to x-axis [-2.] speed [2.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <-90.> speed <38.>;
 					turn lboot to x-axis <90.> speed <113.>;
@@ -80,7 +76,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to y-axis [0.] speed [5.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <-15.> speed <188.>;
 					turn lboot to x-axis <30.> speed <150.>;
@@ -94,10 +90,9 @@ MotionControl(moving, aiming, justmoved)
 					sleep 400;
 				}
 			}
-			if( !aiming )
+			if( !bAiming )
 			{
-				Static_Var_3 = 0;
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <15.> speed <75.>;
 					turn lboot to x-axis <30.> speed <75.>;
@@ -114,7 +109,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to x-axis [2.] speed [2.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <45.> speed <75.>;
 					turn lboot to x-axis <15.> speed <38.>;
@@ -123,7 +118,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to y-axis [0.] speed [5.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <15.> speed <75.>;
 					turn lboot to x-axis <-30.> speed <113.>;
@@ -140,7 +135,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to x-axis [-2.] speed [3.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <-75.> speed <225.>;
 					turn lboot to x-axis <45.> speed <188.>;
@@ -157,7 +152,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to x-axis [-2.] speed [2.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <-90.> speed <38.>;
 					turn lboot to x-axis <90.> speed <113.>;
@@ -166,7 +161,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to y-axis [0.] speed [5.];
 					sleep 400;
 				}
-				if( Static_Var_1 )
+				if( bMoving )
 				{
 					turn lleg to x-axis <-15.> speed <188.>;
 					turn lboot to x-axis <30.> speed <150.>;
@@ -186,9 +181,8 @@ MotionControl(moving, aiming, justmoved)
 			}
 			justmoved = TRUE;
 		}
-		if( !moving )
+		if( !bMoving )
 		{
-			Static_Var_3 = 1;
 			if( justmoved )
 			{
 				turn lleg to x-axis <0.> speed <90.>;
@@ -200,7 +194,7 @@ MotionControl(moving, aiming, justmoved)
 				turn torso to x-axis <0.> speed <10.>;
 				turn pelvis to z-axis <0.> speed <16.>;
 				move pelvis to x-axis [0.] speed [2.];
-				if( !aiming )
+				if( !bAiming )
 				{
 					turn larm to x-axis <0.> speed <30.>;
 					turn rarm to x-axis <0.> speed <30.>;
@@ -244,27 +238,20 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	Static_Var_5 = 13;
-	Static_Var_1 = 0;
-	Static_Var_2 = 0;
-	Static_Var_3 = 1;
-	Static_Var_4 = 0;
-	Static_Var_6 = 0;
-	Static_Var_7 = 0;
-	Static_Var_8 = 0;
-	Static_Var_9 = 2160;
-	Static_Var_10 = 2160;
+	gun_1 = 0;
+	bMoving = 0;
+	bAiming = 0;
 	start-script SmokeUnit();
 }
 
 StartMoving()
 {
-	Static_Var_1 = 1;
+	bMoving = 1;
 }
 
 StopMoving()
 {
-	Static_Var_1 = 0;
+	bMoving = 0;
 }
 
 SweetSpot(piecenum)
@@ -279,7 +266,6 @@ QueryNanoPiece(piecenum)
 
 RestorePosition()
 {
-	Static_Var_4 = 0;
 	turn torso to y-axis <0.> speed <80.>;
 	turn lshoulder to x-axis <0.> speed <30.>;
 	turn rshoulder to x-axis <0.> speed <30.>;
@@ -289,7 +275,7 @@ RestorePosition()
 	wait-for-turn torso around y-axis;
 	wait-for-turn lshoulder around x-axis;
 	wait-for-turn rshoulder around x-axis;
-	Static_Var_2 = 0;
+	bAiming = 0;
 }
 
 AimFromPrimary(piecenum)
@@ -304,17 +290,9 @@ QueryPrimary(piecenum)
 
 AimPrimary(heading, pitch)
 {
-	if( Static_Var_4 == 1 )
-	{
-		return (0);
-	}
 	signal 2;
 	set-signal-mask 2;
-	Static_Var_2 = 1;
-	while( !Static_Var_3 )
-	{
-		sleep 100;
-	}
+	bAiming = 1;
 	turn torso to y-axis heading speed <180.>;
 	turn lshoulder to x-axis <0.> speed <140.>;
 	turn rshoulder to x-axis <0.> speed <140.>;
@@ -331,35 +309,31 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	if( Static_Var_5 == 13 )
+	if( gun_1 == 0 )
 	{
 		turn rshoulderrecoil to x-axis <15.> speed <150.>;
 		turn rarmrecoil to x-axis <-15.> speed <150.>;
 		sleep 100;
 		turn rshoulderrecoil to x-axis <0.> speed <125.>;
 		turn rarmrecoil to x-axis <0.> speed <125.>;
-		Static_Var_5 = 14;
+		gun_1 = 1;
 		return (0);
 	}
-	if( Static_Var_5 == 14 )
+	if( gun_1 == 1 )
 	{
 		turn rshoulderrecoil to x-axis <20.> speed <200.>;
 		turn rarmrecoil to x-axis <-20.> speed <200.>;
 		sleep 100;
 		turn rshoulderrecoil to x-axis <0.> speed <125.>;
 		turn rarmrecoil to x-axis <0.> speed <125.>;
-		Static_Var_5 = 13;
+		gun_1 = 0;
 		return (0);
 	}
 }
 
 StartBuilding(Func_Var_1, Func_Var_2)
 {
-	Static_Var_2 = 1;
-	while( !Static_Var_3 )
-	{
-		sleep 100;
-	}
+	bAiming = 1;
 	turn torso to y-axis Func_Var_1 speed <100.>;
 	turn lshoulder to x-axis <-30.> speed <90.>;
 	turn larm to x-axis <-15.> - Func_Var_2 speed <120.>;

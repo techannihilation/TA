@@ -1,3 +1,14 @@
+4.02 => 4.03
+2021-09-08
+Balance :
+ - Titan TLL :Decrease range from secondary plasma weapon. Decrease damage for main gun (-10%)
+
+Improvment :
+  - TLL T4 Nuke : Change Model
+
+Fix:
+  - All starburst TLL have track feature (can't kill Air)
+
 4.01 => 4.02
 2021-09-04
 Balance :

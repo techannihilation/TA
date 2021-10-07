@@ -5,13 +5,13 @@ effectUnitDefs = {
  ---- FUSIONS ----------------------------
 --GOK
 gok_meteor = {
-  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=3, onActive=true}},
+  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
 },
 gok_meteor2 = {
-  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=3, onActive=true}},
+  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
 },
 gok_meteor1 = {
-  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=3, onActive=true}},
+  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
 },
  gok_gen = {
  {class='SimpleParticles2', options=MergeTable({pos={0,10,0}, delay=60, size=5, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
@@ -99,7 +99,7 @@ cafus = {
   corfus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=0, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
     {class='SimpleParticles2', options=MergeTable({pos={0,50,-5}, delay=40, size=70, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-    {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
+    {class='ShieldJitter',options={life=math.huge, priority=1, pos={0,50,-5}, size=25, precision=22, repeatEffect=true}},
     {class='GroundFlash',options=groundFlashBlue},
   },
   crnns = {
@@ -1018,6 +1018,10 @@ sat_radar = {
      {class='Bursts',options=shieldBursts150},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
+   gok_satan = {
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   gok_com3 = {
      {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
      {class='Bursts',options=shieldBursts200},
