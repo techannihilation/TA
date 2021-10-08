@@ -8,6 +8,7 @@ Improvment :
 
 Fix:
   - All starburst TLL have track feature (can't kill Air)
+  - Fix armor category for t4 arm transport
 
 4.01 => 4.02
 2021-09-04
