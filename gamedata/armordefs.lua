@@ -42,6 +42,7 @@ return {
 		"talon_plutor",
 		"talon_spirit",
 		"corlift",
+		"armlift",
 		"gok_chariot",
 		"gok_wordbearer",
 
