@@ -3,6 +3,9 @@ return {
 		buildcostenergy = 2492966,
 		buildcostmetal = 149897,
 		builder = true,
+		buildinggrounddecalsizex = 20,
+		buildinggrounddecalsizey = 35,
+		buildinggrounddecaltype = "gok_aoplane.dds",
 		buildpic = "gok_yard.dds",
 		buildtime = 2500000,
 		canmove = true,
@@ -37,6 +40,7 @@ return {
 		shownanospray = false,
 		sightdistance = 220,
 		unitname = "gok_yard",
+		usebuildinggrounddecal = true,
 		workertime = 3800,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {

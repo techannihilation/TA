@@ -8,10 +8,6 @@ return {
 		buildcostenergy = 2765331,
 		buildcostmetal = 411751,
 		builder = false,
-		buildinggrounddecaldecayspeed = 0.01,
-		buildinggrounddecalsizex = 16,
-		buildinggrounddecalsizey = 22,
-		buildinggrounddecaltype = "gok_aoplane.dds",
 		buildpic = "gok_apocalypse.dds",
 		buildtime = 4000000,
 		canattack = true,
@@ -67,7 +63,6 @@ return {
 		turninplacespeedlimit = 0.65,
 		turnrate = 90,
 		unitname = "gok_apocalypse",
-		usebuildinggrounddecal = true,
 		customparams = {
 			buildpic = "gok_apocalypse.dds",
 			faction = "GOK",

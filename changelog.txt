@@ -4,6 +4,7 @@ Balance :
  - Titan TLL :Decrease range from secondary plasma weapon. Decrease damage for main gun (-10%)
 
 Improvment :
+  - Add T4 Shielded Talon unit
   - TLL T4 Nuke : Change Model
 
 Fix:
@@ -18,7 +19,6 @@ Balance :
  - Mythril : Decrease Gatling damage 6K/S => 4.5K. Increase Metalcost and Hp.
 
  Improvment :
-  - Add T4 Shielded Talon unit
   - Add Wreckage for T1 Arm / Core / TLL Mini Fusion
   - Add T3/T4 Gok units
 

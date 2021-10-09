@@ -58,7 +58,7 @@ return {
 		buildoptions = {
 			[1] = "talon_uch",
 			--[2] = "talon_gold",
-			[3] = "gok_boxer",
+			[3] = "talon_boxer",
 			[4] = "talon_scorpion",
 			[5] = "talon_grenat",
 			[6] = "talon_mcv",
