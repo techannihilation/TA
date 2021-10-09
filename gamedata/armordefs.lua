@@ -388,6 +388,7 @@ return {
 		"tllbarbarus",
 		"talon_skynet",
 		"talon_independence",
+		"gok_apocalypse",
 		-- OTHER
 		"armnomad",
 	},

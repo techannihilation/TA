@@ -44,7 +44,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "gok_mstor",
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "gok_MSTOR.dds",

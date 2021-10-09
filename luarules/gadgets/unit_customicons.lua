@@ -278,7 +278,7 @@ function gadget:Initialize()
       elseif (ud.name=="armhope") or (ud.name=="cordust") or (ud.name=="corvaliant") or (ud.name=="tllbarbarus") or (ud.name=="talon_skynet") then
         Spring.SetUnitDefIcon(udid, "t5ships.user")
 --T5 Big Hero
-      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllzeppelin") then
+      elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllzeppelin") or (ud.name=="gok_apocalypse") then
         Spring.SetUnitDefIcon(udid, "t5bigships.user")
 --T6 Arch or independance
       elseif (ud.name=="armarch") or (ud.name=="talon_independence") then

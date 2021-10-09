@@ -260,21 +260,6 @@ return {
         useairlos          = true,
       },
     },
-    trails = {
-      air                = false,
-      class              = [[CExpGenSpawner]],
-      count              = 3,
-      ground             = true,
-      water              = true,
-      properties = {
-        damage             = [[0 r100]],
-        delay              = 0,
-        dir                = [[0,1,0]],
-        explosiongenerator = [[custom:explosion_talon_controller]],
-        pos                = [[0,0,0]],
-        speed              = [[0,0,0]],
-      },
-    },
     waterball = {
       air                = false,
       class              = [[CSimpleParticleSystem]],
@@ -558,21 +543,6 @@ return {
         useairlos          = true,
       },
     },
-    trails = {
-      air                = false,
-      class              = [[CExpGenSpawner]],
-      count              = 3,
-      ground             = true,
-      water              = true,
-      properties = {
-        damage             = [[0 r100]],
-        delay              = 0,
-        dir                = [[0,1,0]],
-        explosiongenerator = [[custom:explosion_talon_controller]],
-        pos                = [[0,0,0]],
-        speed              = [[0,0,0]],
-      },
-    },
     waterball = {
       air                = false,
       class              = [[CSimpleParticleSystem]],
@@ -648,5 +618,4 @@ return {
       },
     },
   },
-
 }

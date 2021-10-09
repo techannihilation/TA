@@ -21,8 +21,6 @@ local infoMessage = {}
 
 --table.insert(infoMessage, "Merry Xmas From TECHA 1st morph is free")
 
-table.insert(infoMessage, "Experimentation Phase : Add new GOK Faction. Carreful : Only T3 is available.")
-
 if Spring.GetModOptions() then
 	if Spring.GetModOptions().deathmode then
 		if Spring.GetModOptions().deathmode == "com" then
