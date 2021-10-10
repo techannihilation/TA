@@ -32,7 +32,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Popcorn",
+		name = "Baahl",
 		noautofire = false,
 		objectname = "gok_flak",
 		radaremitheight = 25,

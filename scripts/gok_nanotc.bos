@@ -5,7 +5,7 @@
 
 piece  base, stand, core, turret, plate1, plate2, system, pitchturret, beam, aimpoint;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -46,6 +46,7 @@ Activatescr()
 
 Deactivatescr()
 {
+	set INBUILDSTANCE to 0;
 	move turret to y-axis [-8.] speed [12.];
 	move plate1 to z-axis [0.] speed [2.];
 	move plate2 to z-axis [0.] speed [2.];
@@ -57,9 +58,6 @@ Deactivatescr()
 Go()
 {
 	call-script Activatescr();
-	turn turret to y-axis Static_Var_1 speed <380.>;
-	wait-for-turn turret around y-axis;
-	set INBUILDSTANCE to 1;
 }
 
 Stop()
@@ -68,36 +66,32 @@ Stop()
 	call-script Deactivatescr();
 }
 
-InitState()
-{
-	Static_Var_3 = 1;
-	Static_Var_4 = 0;
-}
-
 RequestState(requestedstate, currentstate)
 {
-	if( Static_Var_4 )
+	if( Static_Var_2 )
 	{
-		Static_Var_3 = requestedstate;
+		Static_Var_1 = requestedstate;
 		return (0);
 	}
-	Static_Var_4 = 1;
-	currentstate = Static_Var_3;
-	Static_Var_3 = requestedstate;
-	while( Static_Var_3 != currentstate )
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
 	{
-		if( Static_Var_3 == 0 )
+		if( Static_Var_1 )
 		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( Static_Var_3 == 1 )
-		{
-			call-script Stop();
+			call-script deactivatescr();
+			Static_Var_3 = 1;
 			currentstate = 1;
 		}
+		else
+		{
+			call-script activatescr();
+			Static_Var_3 = 0;
+			currentstate = 0;
+		}
 	}
-	Static_Var_4 = 0;
+	Static_Var_2 = 0;
 }
 
 RestoreAfterDelay()
@@ -109,8 +103,10 @@ RestoreAfterDelay()
 
 Create()
 {
-	Static_Var_1 = 10;
-	Static_Var_2 = 5000;
+	Static_Var_3 = 1;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	Static_Var_4 = 0;
 	move turret to y-axis [-8.] now;
 	start-script SmokeUnit();
 	//move base to y-axis [25.000000] now;
@@ -128,12 +124,24 @@ Deactivate()
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	while( Static_Var_5 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn turret to y-axis Func_Var_1 speed <270.0>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 4000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
 

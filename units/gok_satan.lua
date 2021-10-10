@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "KBOT4",
-		name = "Anti Christ",
+		name = "Satan",
 		nochasecategory = "ALL",
 		objectname = "gok_satan",
 		radaremitheight = 63,

@@ -142,7 +142,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -1.5,
 				range = 775,
-				reloadtime = 1,
+				reloadtime = 4,
 				smoketrail = true,
 				soundhitdry = "impact",
 				soundstart = "launch",

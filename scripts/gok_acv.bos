@@ -9,6 +9,35 @@ piece  base, hull, control1, control2, control3, control4, shelter1, shelter1b,
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4;
 
+activatescr()
+{
+	turn door1 to z-axis <-35.> speed <35.>;
+	move door1 to y-axis [-1.] speed [1.];
+	turn door2 to z-axis <35.> speed <35.>;
+	move door2 to y-axis [-1.] speed [1.];
+	sleep 1000;
+	turn arm1 to x-axis <-65.> speed <65.>;
+	turn arm2 to x-axis <65.> speed <65.>;
+	sleep 500;
+	//turn turret to y-axis Static_Var_1 speed <60.>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+deactivatescr()
+{
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.> speed <60.>;
+	wait-for-turn turret around y-axis;
+	turn arm1 to x-axis <0.> speed <65.>;
+	turn arm2 to x-axis <0.> speed <65.>;
+	sleep 1000;
+	turn door1 to z-axis <0.> speed <35.>;
+	move door1 to y-axis [0.] speed [1.];
+	turn door2 to z-axis <0.> speed <35.>;
+	move door2 to y-axis [0.] speed [1.];
+	sleep 1000;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -48,57 +77,38 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 RequestState(requestedstate, currentstate)
 {
-	if( Static_Var_3 )
+	if( Static_Var_2 )
 	{
-		Static_Var_2 = requestedstate;
+		Static_Var_1 = requestedstate;
 		return (0);
 	}
-	Static_Var_3 = 1;
-	currentstate = Static_Var_2;
-	Static_Var_2 = requestedstate;
-	while( Static_Var_2 != currentstate )
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
 	{
-		if( !Static_Var_2 )
+		if( Static_Var_1 )
 		{
-			turn door1 to z-axis <-35.> speed <35.>;
-			move door1 to y-axis [-1.] speed [1.];
-			turn door2 to z-axis <35.> speed <35.>;
-			move door2 to y-axis [-1.] speed [1.];
-			sleep 1000;
-			turn arm1 to x-axis <-65.> speed <65.>;
-			turn arm2 to x-axis <65.> speed <65.>;
-			sleep 500;
-			turn turret to y-axis Static_Var_1 speed <60.>;
-			sleep 500;
-			wait-for-turn turret around y-axis;
-			set INBUILDSTANCE to 1;
-			currentstate = 0;
-		}
-		if( Static_Var_2 )
-		{
-			set INBUILDSTANCE to 0;
-			turn turret to y-axis <0.> speed <60.>;
-			wait-for-turn turret around y-axis;
-			turn arm1 to x-axis <0.> speed <65.>;
-			turn arm2 to x-axis <0.> speed <65.>;
-			sleep 1000;
-			turn door1 to z-axis <0.> speed <35.>;
-			move door1 to y-axis [0.] speed [1.];
-			turn door2 to z-axis <0.> speed <35.>;
-			move door2 to y-axis [0.] speed [1.];
-			sleep 1000;
+			call-script deactivatescr();
+			Static_Var_3 = 1;
 			currentstate = 1;
 		}
+		else
+		{
+			call-script activatescr();
+			Static_Var_3 = 0;
+			currentstate = 0;
+		}
 	}
-	Static_Var_3 = 0;
+	Static_Var_2 = 0;
 }
 
 Create()
 {
-	Static_Var_1 = 0;
-	Static_Var_2 = 1;
-	Static_Var_3 = 0;
-	Static_Var_4 = 18;
+	Static_Var_3 = 1;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	Static_Var_4 = 0;
 	start-script SmokeUnit();
 }
 
@@ -109,27 +119,39 @@ TargetHeading(Func_Var_1)
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	while( Static_Var_3 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn turret to y-axis Func_Var_1 + <0.0> speed <160.0>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 4000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
 
 QueryNanoPiece(piecenum)
 {
-	if( Static_Var_4 == 18 )
+	if( Static_Var_4 == 0 )
 	{
 		piecenum = lbeam;
-		Static_Var_4 = 20;
+		Static_Var_4 = 1;
 		return (0);
 	}
-	if( Static_Var_4 == 20 )
+	if( Static_Var_4 == 1 )
 	{
 		piecenum = rbeam;
-		Static_Var_4 = 18;
+		Static_Var_4 = 0;
 		return (0);
 	}
 }
