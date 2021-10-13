@@ -1,3 +1,12 @@
+4.03 => 4.04
+2021-09-14
+Balance :
+ - All Nuke Max Ammunition set at 3
+ - All AntiNuke Max Ammunition set at 8
+
+ Improvment :
+   - Decrease all Nuke / Antinuke models by 20%
+
 4.02 => 4.03
 2021-09-08
 Balance :

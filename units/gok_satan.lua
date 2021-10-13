@@ -153,7 +153,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:BEAMWEAPON_HIT_ORANGE",
+				--explosiongenerator = "custom:SMALL_PURPLE_BURN",
 				firestarter = 30,
 				impactonly = 1,
 				name = "Blade",

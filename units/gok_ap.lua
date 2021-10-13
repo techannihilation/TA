@@ -54,11 +54,12 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		buildoptions = {
 			[1] = "gok_ca",
-			[2] = "gok_vision",
-			[3] = "gok_angel",
-			[4] = "gok_chariot",
-			[5] = "gok_dirgesinger",
-			[6] = "gok_specter",
+			[2] = "gok_min",
+			[3] = "gok_vision",
+			[4] = "gok_angel",
+			[5] = "gok_chariot",
+			[6] = "gok_dirgesinger",
+			[7] = "gok_specter",
 		},
 		customparams = {
 			buildpic = "gok_ap.dds",

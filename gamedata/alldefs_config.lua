@@ -1270,7 +1270,6 @@ local unitheight = {
     ["tllhtcb"] = 20,
     ["tllhtcp"] = 29,
     ["tllhtml"] = 82,
-    ["tllion"] = 335,
     ["tlljam"] = 91,
     ["tlljumpdrive"] = 25,
     ["tlljuno"] = 60,

@@ -130,6 +130,7 @@ return {
 	"armsr71",
 	"armmin",
 	"cormin",
+	"gok_min",
 	"talon_carbon",
 	"tllbuilderlvl1",
 	"tllbuilderlvl2",

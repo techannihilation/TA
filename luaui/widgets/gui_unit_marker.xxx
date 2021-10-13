@@ -45,7 +45,7 @@ unitList["TA"] = {
 [UnitDefNames["talon_silo1"].id] = 	{["en"]="Advanced Nuke", ["de"]="", ["fr"]="" },
 
 --Uber Nukes
-[UnitDefNames["tllion"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
+[UnitDefNames["tllfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
 [UnitDefNames["armfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
 [UnitDefNames["corfsilo"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },
 [UnitDefNames["talon_elixir"].id] = 	{["en"]="Ultimate Nuke Missile Silo", ["de"]="", ["fr"]="" },

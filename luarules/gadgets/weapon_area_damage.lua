@@ -67,6 +67,8 @@ local scouts = {
 	[UnitDefNames["cormin"].id] = true,
 	[UnitDefNames["tlltsetse"].id] = true,
 	[UnitDefNames["talon_carbon"].id] = true,
+	[UnitDefNames["gok_min"].id] = true,
+	
 	[UnitDefNames["armmlv"].id] = true,
 	[UnitDefNames["cormlv"].id] = true,
 	[UnitDefNames["tllmlv"].id] = true,

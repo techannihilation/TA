@@ -1,0 +1,130 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, lwing, rwing, engine, flare;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( !Static_Var_1 )
+		{
+			turn lwing to y-axis <0.> speed <70.>;
+			turn rwing to y-axis <0.> speed <70.>;
+			sleep 1000;
+			currentstate = 0;
+		}
+		if( Static_Var_1 )
+		{
+			turn lwing to y-axis <-20.> speed <70.>;
+			turn rwing to y-axis <20.> speed <70.>;
+			sleep 1000;
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+Create()
+{
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	turn lwing to y-axis <-20.> now;
+	turn rwing to y-axis <20.> now;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding()
+{
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = flare;
+}
+
+AimPrimary()
+{
+	return (1);
+}
+
+FirePrimary()
+{
+	sleep 50;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rwing type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode engine type NOHEATCLOUD;
+	corpsetype = 3;
+	return (corpsetype);
+}

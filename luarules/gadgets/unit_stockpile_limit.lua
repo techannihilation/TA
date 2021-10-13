@@ -13,28 +13,77 @@ end
 
 -- SYNCED --
 if (gadgetHandler:IsSyncedCode()) then
+
+  -- minelayer
 	local armminDefID = UnitDefNames.armmin.id
 	local corminDefID = UnitDefNames.cormin.id
 	local tllminDefID = UnitDefNames.tlltsetse.id
 	local talonminDefID = UnitDefNames.talon_carbon.id
+	local gokminDefID = UnitDefNames.gok_min.id
 	local armcybrDefID = UnitDefNames.armcybr.id
 
+  -- Nuke
+	local armsiloDefID = UnitDefNames.armsilo.id
+	local armsilo1DefID = UnitDefNames.armsilo1.id
+	local armsilo2DefID = UnitDefNames.armfsilo.id
+	local corsiloDefID = UnitDefNames.corsilo.id
+	local corsilo1DefID = UnitDefNames.corsilo1.id
+	local corsilo2efID = UnitDefNames.corfsilo.id
+	local tllsiloDefID = UnitDefNames.tllsilo.id
+	local tllsilo1DefID = UnitDefNames.tllsilo1.id
+	local tllsilo2DefID = UnitDefNames.tllfsilo.id
+	local talonsiloDefID = UnitDefNames.talon_silo.id
+	local talonsilo1DefID = UnitDefNames.talon_silo1.id
+	local talonsilo2DefID = UnitDefNames.talon_elixir.id
+	local goksiloDefID = UnitDefNames.gok_silo.id
+	local goksilo1DefID = UnitDefNames.gok_silo1.id
+	local goksilo2DefID = UnitDefNames.gok_silo2.id
+
+	-- AntiNuke
+	local armantinukeDefID = UnitDefNames.armamd.id
+	local armantinuke1DefID = UnitDefNames.armamd1.id
+	local armantinuke2DefID = UnitDefNames.armamd2.id
+	local corantinukeDefID = UnitDefNames.corfmd.id
+	local corantinuke1DefID = UnitDefNames.corfmd1.id
+	local corantinuke2DefID = UnitDefNames.corfmd2.id
+	local tllantinukeDefID = UnitDefNames.tllantinuke.id
+	local tllantinuke1DefID = UnitDefNames.tllantinuke1.id
+	local tllantinuke2DefID = UnitDefNames.tllantinuke2.id
+	local talonantinukeDefID = UnitDefNames.talon_damascus.id
+	local talonantinuke1DefID = UnitDefNames.talon_damascus1.id
+	local talonantinuke2DefID = UnitDefNames.talon_damascus2.id
+	local gokantinukeDefID = UnitDefNames.gok_antinuke.id
+	local gokantinuke1DefID = UnitDefNames.gok_antinuke1.id
+	local gokantinuke2DefID = UnitDefNames.gok_antinuke2.id
+
 	local pilelimit
-	local pilelimit1 = 2
-	local pilelimit2 = 10
+	local minelayer = 2
+	local nuke = 3
+	local antinuke = 8
+
 	local CMD_STOCKPILE = CMD.STOCKPILE
 	local CMD_INSERT = CMD.INSERT
 	local SpGiveOrderToUnit = Spring.GiveOrderToUnit
 
-
 	function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
-		if UnitID and (UnitDefID == armcybrDefID or UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID) then
-			if (UnitDefID == armpcaDefID or UnitDefID == corpcaDefID or UnitDefID == tllcanDefID) then
-				pilelimit = pilelimit2
-			else
-				pilelimit = pilelimit1
+		if UnitID then
+			if (UnitDefID == gokminDefID or UnitDefID == armcybrDefID or UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID) then
+				pilelimit = minelayer
 			end
-
+			if (UnitDefID == armsiloDefID or UnitDefID == armsilo1DefID or UnitDefID == armsilo2DefID
+			or UnitDefID == corsiloDefID or UnitDefID == corsilo1DefID or UnitDefID == corsilo2DefID
+			or UnitDefID == tllsiloDefID or UnitDefID == tllsilo1DefID or UnitDefID == tllsilo2DefID
+			or UnitDefID == talonsiloDefID or UnitDefID == talonsilo1DefID or UnitDefID == talonsilo2DefID
+			or UnitDefID == goksiloDefID or UnitDefID == goksilo1DefID or UnitDefID == goksilo2DefID) then
+				pilelimit = nuke
+			end
+			if (UnitDefID == armantinukeDefID or UnitDefID == armantinuke1DefID or UnitDefID == armantinuke2DefID
+			or UnitDefID == corantinukeDefID or UnitDefID == corantinuke1DefID or UnitDefID == corantinuke2DefID
+			or UnitDefID == tllantinukeDefID or UnitDefID == tllantinuke1DefID or UnitDefID == tllantinuke2DefID
+			or UnitDefID == talonantinukeDefID or UnitDefID == talonantinuke1DefID or UnitDefID == talonantinuke2DefID
+			or UnitDefID == gokantinukeDefID or UnitDefID == gokantinuke1DefID or UnitDefID == gokantinuke2DefID) then
+				pilelimit = antinuke
+			end
 			if cmdID == CMD_STOCKPILE or (cmdID == CMD_INSERT and cmdParams[2] == CMD_STOCKPILE) then
 				local pile, pileQ = Spring.GetUnitStockpile(UnitID)
 				local addQ = 1
