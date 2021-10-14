@@ -3,6 +3,7 @@
 Balance :
  - All Nuke Max Ammunition set at 3
  - All AntiNuke Max Ammunition set at 8
+ - Fix T4 Nuke damage on commander at 10k
 
  Improvment :
    - Decrease all Nuke / Antinuke models by 20%

@@ -161,7 +161,7 @@ return {
 				weaponvelocity = 1300,
 				damage = {
 					areoship = 22000,
-					commanders = 2500,
+					commanders = 3750,
 					default = 15000,
 					experimental_land = 22000,
 					experimental_ships = 22000,
