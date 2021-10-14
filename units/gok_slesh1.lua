@@ -126,7 +126,7 @@ return {
 				impulsefactor = 0,
 				name = "666 Beam",
 				noselfdamage = true,
-				range = 1550,
+				range = 1500,
 				reloadtime = 2,
 				rgbcolor = "0.78 0.08 0.52",
 				soundhitdry = "",

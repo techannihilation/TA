@@ -59,7 +59,7 @@ return {
 			[1] = "gok_ucp",
 			[2] = "gok_gold",
 			[3] = "gok_archon",
-			--[4] = "gok_scorpion",
+			[4] = "gok_azaroth",
 			--[5] = "gok_grenat",
 			--[6] = "gok_mcv",
 			--[7] = "gok_mythril",

@@ -216,6 +216,10 @@ cafus = {
     {class='Bursts',options=armexoBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  gok_azaroth = {
+    {class='Bursts',options=armexoBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   armsmc = {
     {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,30,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},

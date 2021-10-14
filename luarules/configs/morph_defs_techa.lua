@@ -994,6 +994,11 @@ local morphDefs = {
 		time = 120,
 		xp = 0.10,
 	},
+	gok_everchosen = {
+		into = 'gok_azaroth',
+		time = 120,
+		xp = 0.10,
+	},	
 	armgeo_mini = {
     into = 'armgeo',
 		time = 30,
