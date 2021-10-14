@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_elixir.dds",
-		buildtime = 540000,
+		buildtime = 5000000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 192006,
 		builder = false,
 		buildpic = "tllfsilo.dds",
-		buildtime = 2000000,
+		buildtime = 5000000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

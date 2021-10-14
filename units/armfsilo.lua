@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 164149,
 		builder = false,
 		buildpic = "armfsilo.dds",
-		buildtime = 2000000,
+		buildtime = 5000000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

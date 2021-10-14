@@ -148,12 +148,12 @@ return {
 		},
 		weapondefs = {
 			blade = {
-				areaofeffect = 320,
-				beamtime = 0.25,
+				areaofeffect = 196,
+				beamtime = 0.10,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				--explosiongenerator = "custom:SMALL_PURPLE_BURN",
+				--explosiongenerator = "custom:BEAMWEAPON_HIT_ORANGE",
 				firestarter = 30,
 				impactonly = 1,
 				name = "Blade",

@@ -5,12 +5,12 @@
 
 piece  base, pelvis, lleg, lboot, lfoot, rleg, rboot, rfoot,
        torso, torsorecoil, headturn, head, larm, larmrecoil, larmz, lwrist,
-       lbarrel, lfingers, lthumb, lfire, lspray, rarm,
+       lfingers, lthumb, lspray, rarm,
        rarmrecoil, rarmz, rwrist, rwristy, rhandz, rhandx, sword, hit,
        rfingers, rthumb, system1, system2, loin1, loin1a, loin1b, loin1c,
        loin2, loin2a, loin2b, loin2c, gem, gun;
 
-static-var  bMoving, MeleeAttack, GunAttack, AttackType, Static_Shield  ;
+static-var  bMoving, MeleeAttack, AttackType, Static_Shield  ;
 
 // Signal definitions
 #define SIG_AIM_GUN			2
@@ -74,7 +74,7 @@ MotionControl(moving, aiming, justmoved)
 				move pelvis to y-axis [1.] speed [5.];
 				turn loin1 to x-axis <20.> speed <16.>;
 				turn loin2 to x-axis <20.> speed <16.>;
-				if( !MeleeAttack or !GunAttack )
+				if( !MeleeAttack )
 				{
 					turn larm to x-axis <25.> speed <32.>;
 					turn larmz to z-axis <-10.> speed <48.>;
@@ -106,7 +106,7 @@ MotionControl(moving, aiming, justmoved)
 				move pelvis to y-axis [-1.] speed [6.];
 				turn loin1 to x-axis <30.> speed <32.>;
 				turn loin2 to x-axis <30.> speed <32.>;
-				if( !MeleeAttack or !GunAttack )
+				if( !MeleeAttack )
 				{
 					turn torsorecoil to x-axis <0.> speed <16.>;
 				}
@@ -123,7 +123,7 @@ MotionControl(moving, aiming, justmoved)
 				move pelvis to y-axis [-1.] speed [2.];
 				turn loin1 to x-axis <15.> speed <30.>;
 				turn loin2 to x-axis <15.> speed <30.>;
-				if( !MeleeAttack or !GunAttack )
+				if( !MeleeAttack )
 				{
 					turn larm to x-axis <35.> speed <32.>;
 					turn larmz to z-axis <-10.> speed <48.>;
@@ -149,7 +149,7 @@ MotionControl(moving, aiming, justmoved)
 				move pelvis to y-axis [1.] speed [5.];
 				turn loin1 to x-axis <20.> speed <16.>;
 				turn loin2 to x-axis <20.> speed <16.>;
-				if( !MeleeAttack or !GunAttack )
+				if( !MeleeAttack )
 				{
 					turn larm to x-axis <45.> speed <32.>;
 					turn larmz to z-axis <-10.> speed <48.>;
@@ -181,7 +181,7 @@ MotionControl(moving, aiming, justmoved)
 				move pelvis to y-axis [-1.] speed [6.];
 				turn loin1 to x-axis <30.> speed <32.>;
 				turn loin2 to x-axis <30.> speed <32.>;
-				if( !MeleeAttack or !GunAttack )
+				if( !MeleeAttack )
 				{
 					turn torsorecoil to x-axis <0.> speed <16.>;
 				}
@@ -198,7 +198,7 @@ MotionControl(moving, aiming, justmoved)
 				move pelvis to y-axis [-1.] speed [2.];
 				turn loin1 to x-axis <0.> speed <30.>;
 				turn loin2 to x-axis <0.> speed <30.>;
-				if( !MeleeAttack or !GunAttack )
+				if( !MeleeAttack )
 				{
 					turn larm to x-axis <35.> speed <32.>;
 					turn larmz to z-axis <-10.> speed <48.>;
@@ -230,7 +230,7 @@ MotionControl(moving, aiming, justmoved)
 				turn rfoot to x-axis <0.> speed <100.>;
 				turn loin1 to x-axis <0.> speed <20.>;
 				turn loin2 to x-axis <0.> speed <20.>;
-				if( !MeleeAttack or !GunAttack )
+				if( !MeleeAttack )
 				{
 					turn larm to x-axis <35.> speed <50.>;
 					turn larmz to z-axis <0.> speed <25.>;
@@ -289,10 +289,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	bMoving = FALSE;
-	MeleeAttack = FALSE;	
+	bMoving = FALSE;	
 	Static_Shield = 1;
-	GunAttack = FALSE;
+	MeleeAttack = FALSE;
 	AttackType = 1;
 	
 	turn larm to x-axis <35.> now;
@@ -358,56 +357,6 @@ RestoreAfterDelay()
 	turn rhandx to x-axis <0.> speed <100.>;
 	turn rhandz to z-axis <0.> speed <100.>;
 	MeleeAttack = FALSE;
-	GunAttack = FALSE;
-}
-
-AimFromWeapon2(piecenum)
-{
-	piecenum = larm;
-}
-
-QueryWeapon2(piecenum)
-{
-	piecenum = lfire;
-}
-
-// LASER GUN
-
-AimWeapon2(heading, pitch)
-{
-	signal SIG_AIM_GUN;
-	set-signal-mask SIG_AIM_GUN;
-	set-signal-mask SIG_AIM_BLADE;
-	while( MeleeAttack )
-	{
-		sleep 150;
-	}
-	turn rarm to x-axis <35.> speed <60.>;
-	turn rarmz to z-axis <20.> speed <30.>;
-	turn rwrist to x-axis <45.> speed <120.>;
-	turn rwristy to y-axis <0.> speed <30.>;
-	turn rhandz to z-axis <0.> speed <30.>;
-	turn rhandx to x-axis <0.> speed <30.>;
-	turn torso to y-axis <-30.> + heading speed <250.>;
-	turn torsorecoil to y-axis <0.> speed <250.>;
-	turn headturn to y-axis <30.> - heading speed <250.>;
-	turn head to y-axis heading speed <400.>;
-	turn larm to x-axis <-60.> - pitch speed <250.>;
-	turn larmz to z-axis <-30.> speed <125.>;
-	turn lwrist to x-axis <60.> speed <250.>;
-	turn lfingers to y-axis <0.> speed <120.>;
-	turn lthumb to y-axis <0.> speed <180.>;
-	wait-for-turn torso around y-axis;
-	wait-for-turn larm around x-axis;
-	GunAttack = TRUE;		
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireWeapon2()
-{
-	sleep 150;
-	GunAttack = TRUE;
 }
 
 // BLADE
@@ -424,20 +373,8 @@ QueryWeapon1(piecenum)
 
 AimWeapon1(heading, pitch)
 {
-	GunAttack = FALSE;
-		
 	signal SIG_AIM_BLADE;
-	set-signal-mask SIG_AIM_BLADE;
-
-	while( GunAttack )
-	{
-		signal SIG_AIM_GUN;
-		GunAttack = FALSE;
-		sleep 150;
-	}
-	
-	GunAttack = FALSE;
-	
+	set-signal-mask SIG_AIM_BLADE;	
 	if( AttackType == 1 )
 	{
 		turn larm to x-axis <35.> speed <60.>;
@@ -461,7 +398,6 @@ AimWeapon1(heading, pitch)
 		wait-for-turn rhandx around x-axis;
 		wait-for-turn rhandz around z-axis;
 		MeleeAttack = TRUE;
-		GunAttack = FALSE;
 		start-script RestoreAfterDelay();
 		return (1);
 	}
@@ -488,7 +424,6 @@ AimWeapon1(heading, pitch)
 		wait-for-turn rhandx around x-axis;
 		wait-for-turn rhandz around z-axis;
 		MeleeAttack = TRUE;
-		GunAttack = FALSE;
 		start-script RestoreAfterDelay();
 		return (1);
 	}
@@ -576,7 +511,7 @@ StartBuilding(Func_Var_1, Func_Var_2)
 	{
 		sleep 100;
 	}
-	while( GunAttack )
+	while( MeleeAttack )
 	{
 		sleep 100;
 	}

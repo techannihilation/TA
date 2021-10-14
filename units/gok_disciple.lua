@@ -32,7 +32,7 @@ return {
 		mass = 305,
 		maxdamage = 1625,
 		maxslope = 17,
-		maxvelocity = 2.15,
+		maxvelocity = 2.25,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
@@ -143,7 +143,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 2000,
 				damage = {
-					default = 200,
+					default = 222,
 					subs = 5,
 				},
 			},
@@ -188,10 +188,12 @@ return {
 			def = "BLADE",
 			onlytargetcategory = "SURFACE",
 		},
-		[3] = {
-				def = "GOK_LASER",
-				onlytargetcategory = "SURFACE",
-			},
+		--[3] = {
+		--		def = "GOK_LASER",
+		--		maindir = "1 0 0",
+		--		maxangledif = 300,
+		--		onlytargetcategory = "SURFACE",
+		--	},
 		},
 	},
 }

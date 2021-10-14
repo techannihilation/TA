@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "gok_aoplane.dds",
 		buildpic = "gok_silo2.dds",
-		buildtime = 540000,
+		buildtime = 5000000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

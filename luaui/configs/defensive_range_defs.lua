@@ -199,20 +199,43 @@ modConfig["TA"]["unitList"] =
 								talon_atl = { weapons = { 1 } },
 								talon_hlt = { weapons = { 1 } },
 								talon_vhlt = { weapons = { 1 } },
+
+								gok_slesh = { weapons = { 1 } },
+								gok_slesh1 = { weapons = { 1 } },
+								gok_blackdawn = { weapons = { 1 } },
+								gok_llt = { weapons = { 1 } },
+								gok_llt1 = { weapons = { 1 } },
+								gok_lrpt = { weapons = { 1 } },
+								gok_lrpt1 = { weapons = { 1 } },
+								gok_meteor = { weapons = { 1 } },
+								gok_meteor1 = { weapons = { 1 } },
+								gok_meteor2 = { weapons = { 1 } },
+
 								talon_juno = { weapons = { 1 } },
 									-- AntiAir
 								talon_popcorn = { weapons = { 2 } },
 								talon_popcorn1 = { weapons = { 2 } },
+								gok_flak = { weapons = { 2 } },
+								gok_eflak = { weapons = { 2 } },
 								talon_rl = { weapons = { 2 } },
+								gok_rl = { weapons = { 2 } },
+								gok_frl = { weapons = { 2 } },
 								talon_frl = { weapons = { 2 } },
 								talon_cir = { weapons = { 2 } },
+								gok_cir = { weapons = { 2 } },
 								talon_ptr = { weapons = { 2 } },
+								gok_ptr = { weapons = { 2 } },
 								talon_kernel = { weapons = { 2 } },
 
 								talon_damascus = { weapons = { 3 } },
 								talon_damascus1 = { weapons = { 3 } },
 								talon_damascus2 = { weapons = { 3 } },
 								talon_armistice = { weapons = { 3 } },
+
+								gok_antinuke = { weapons = { 3 } },
+								gok_antinuke1 = { weapons = { 3 } },
+								gok_antinuke2 = { weapons = { 3 } },
+
 								talon_mds = { weapons = { 3 } }, --Missile Defence System
 								gok_mds = { weapons = { 3 } }, --Missile Defence System
 								armmds = { weapons = { 3 } }, --Missile Defence System
