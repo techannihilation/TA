@@ -216,7 +216,11 @@ FirePrimary()
 {
 	emit-sfx 1024 + 0 from lflare;
 	move lbarrel to z-axis [-3.000000] now;
+	//turn torso to y-axis <2.0> now;
+	//turn lweapon to x-axis <5.0> now;
 	sleep 150;
+	//turn lweapon to y-axis <0.0> speed <50.0>;
+	//turn lweapon to x-axis <0.0> speed <50.0>;	
 	move lbarrel to z-axis [0.000000] speed [1.000000];
 }
 

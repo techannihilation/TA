@@ -56,7 +56,7 @@ return {
 		turninplacespeedlimit = 1.122,
 		turnrate = 200,
 		unitname = "talon_frigate",
-		waterline = 40,
+		waterline = 50,
 		customparams = {
 			buildpic = "talon_frigate.dds",
 			faction = "TALON",

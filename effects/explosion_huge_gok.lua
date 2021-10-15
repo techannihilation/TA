@@ -3,7 +3,7 @@
 -- explosion_hugelight_gok
 
 return {
-  ["explosion_talon"] = {
+  ["explosion_gok"] = {
     smoke = {
       air                = true,
       class              = [[CSimpleParticleSystem]],

@@ -39,6 +39,13 @@ if (gadgetHandler:IsSyncedCode()) then
 	local goksilo1DefID = UnitDefNames.gok_silo1.id
 	local goksilo2DefID = UnitDefNames.gok_silo2.id
 
+	-- T3 Carrier Nuke
+	local armmsiloDefID = UnitDefNames.armhcar.id
+	local cormsiloDefID = UnitDefNames.corhcar.id
+	local tllmsiloDefID = UnitDefNames.tllhcar.id
+	local talonmsiloDefID = UnitDefNames.talon_hcar.id
+	--local gokmsiloDefID = UnitDefNames.gok_hcar.id
+
 	-- AntiNuke
 	local armantinukeDefID = UnitDefNames.armamd.id
 	local armantinuke1DefID = UnitDefNames.armamd1.id
@@ -56,6 +63,24 @@ if (gadgetHandler:IsSyncedCode()) then
 	local gokantinuke1DefID = UnitDefNames.gok_antinuke1.id
 	local gokantinuke2DefID = UnitDefNames.gok_antinuke2.id
 
+	-- Mobile AntiNuke
+	local armcarryDefID = UnitDefNames.armcarry.id
+	local armucarryDefID = UnitDefNames.armucar.id
+	local armmobileantinukeDefID = UnitDefNames.armscab.id
+	local corcarryDefID = UnitDefNames.corcarry.id
+	local corucarryDefID = UnitDefNames.corucar.id
+	local cormobileantinukeDefID = UnitDefNames.cormabm.id
+	local tllcarryDefID = UnitDefNames.tllcarry.id
+	local tllucarryDefID = UnitDefNames.tllucar.id
+	local tllmobileantinukeDefID = UnitDefNames.tllturtle.id
+	local taloncarryDefID = UnitDefNames.talon_carry.id
+	local talonucarryDefID = UnitDefNames.talon_ucar.id
+	local talonmobileantinukeDefID = UnitDefNames.talon_tribulation.id
+	--local gokcarryDefID = UnitDefNames.armamd.id --Add on if after
+	--local gokucarryDefID = UnitDefNames.armamd.id --Add on if after
+	local gokmobileantinukeDefID = UnitDefNames.gok_morningstar.id
+
+	--Variable
 	local pilelimit
 	local minelayer = 2
 	local nuke = 3
@@ -67,9 +92,12 @@ if (gadgetHandler:IsSyncedCode()) then
 
 	function gadget:AllowCommand(UnitID, UnitDefID, teamID, cmdID, cmdParams, cmdOptions, cmdTag, synced) -- Can't use StockPileChanged because that doesn't get called when the stockpile queue changes
 		if UnitID then
+			pilelimit = 5 --Default
+
 			if (UnitDefID == gokminDefID or UnitDefID == armcybrDefID or UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID) then
 				pilelimit = minelayer
 			end
+
 			if (UnitDefID == armsiloDefID or UnitDefID == armsilo1DefID or UnitDefID == armsilo2DefID
 			or UnitDefID == corsiloDefID or UnitDefID == corsilo1DefID or UnitDefID == corsilo2DefID
 			or UnitDefID == tllsiloDefID or UnitDefID == tllsilo1DefID or UnitDefID == tllsilo2DefID
@@ -77,6 +105,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			or UnitDefID == goksiloDefID or UnitDefID == goksilo1DefID or UnitDefID == goksilo2DefID) then
 				pilelimit = nuke
 			end
+
 			if (UnitDefID == armantinukeDefID or UnitDefID == armantinuke1DefID or UnitDefID == armantinuke2DefID
 			or UnitDefID == corantinukeDefID or UnitDefID == corantinuke1DefID or UnitDefID == corantinuke2DefID
 			or UnitDefID == tllantinukeDefID or UnitDefID == tllantinuke1DefID or UnitDefID == tllantinuke2DefID
@@ -84,6 +113,21 @@ if (gadgetHandler:IsSyncedCode()) then
 			or UnitDefID == gokantinukeDefID or UnitDefID == gokantinuke1DefID or UnitDefID == gokantinuke2DefID) then
 				pilelimit = antinuke
 			end
+
+			if (UnitDefID == armcarryDefID or UnitDefID == armucarryDefID or UnitDefID == armmobileantinukeDefID
+			or UnitDefID == corcarryDefID or UnitDefID == corucarryDefID or UnitDefID == cormobileantinukeDefID
+			or UnitDefID == tllcarryDefID or UnitDefID == tllucarryDefID or UnitDefID == tllmobileantinukeDefID
+			or UnitDefID == taloncarryDefID or UnitDefID == talonucarryDefID or UnitDefID == talonmobileantinukeDefID
+			or UnitDefID == gokmobileantinukeDefID) then
+				pilelimit = antinuke
+			end
+
+			-- too much values if we add tac :(
+
+			if (UnitDefID == armmsiloDefID or UnitDefID == cormsiloDefID or UnitDefID == tllmsiloDefID or UnitDefID == talonmsiloDefID) then
+				pilelimit = nuke
+			end
+
 			if cmdID == CMD_STOCKPILE or (cmdID == CMD_INSERT and cmdParams[2] == CMD_STOCKPILE) then
 				local pile, pileQ = Spring.GetUnitStockpile(UnitID)
 				local addQ = 1

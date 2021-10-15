@@ -17,12 +17,12 @@ static-var  gun_1;
 
 Activate()
 {
-	move body to y-axis [-10] speed [20];
+	//move body to y-axis [-10] speed [20];
 }
 
 Deactivate()
 {
-	move body to y-axis [0] speed [20];
+	//move body to y-axis [0] speed [20];
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
