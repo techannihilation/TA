@@ -1,9 +1,10 @@
 4.03 => 4.04
-2021-09-14
+2021-09-18
 Balance :
  - All Nuke Max Ammunition set at 3
  - All AntiNuke Max Ammunition set at 8
  - Fix T4 Nuke damage on commander at 10k. Increase buildtime 2M=>5M
+ - Satan : Decrease Speed 1.75 => 1.5. Decrease HP 46K=>42K
 
  Improvment :
    - Decrease all Nuke / Antinuke models by 20%
