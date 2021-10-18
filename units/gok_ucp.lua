@@ -60,7 +60,7 @@ return {
 			[4] = "gok_ulab",
 			[5] = "gok_yard",
 			[6] = "gok_nanotc3",
-			--[7] = "gok_gate1",
+			[7] = "gok_gate1",
 			[8] = "gok_antinuke2",
 			[9] = "gok_silo2",
 			[10] = "gok_meteor1",

@@ -107,7 +107,7 @@ local ShieldUnits = {
   [UnitDefNames["gok_com2"].id] = true,
   [UnitDefNames["gok_com3"].id] = true,
   [UnitDefNames["gok_gate"].id] = true,
-  --[UnitDefNames["gok_gate1"].id] = true,
+  [UnitDefNames["gok_gate1"].id] = true,
   [UnitDefNames["gok_gate2"].id] = true,
   --[UnitDefNames["gok_gate3"].id] = true,
   [UnitDefNames["gok_gate4"].id] = true,
@@ -116,7 +116,7 @@ local ShieldUnits = {
     [UnitDefNames["gok_antichrist"].id] = true,
     [UnitDefNames["gok_archon"].id] = true,
     [UnitDefNames["gok_ucp"].id] = true,
-    [UnitDefNames["gok_azaroth"].id] = true,    
+    [UnitDefNames["gok_azaroth"].id] = true,
 }
 
 --------------------------------------------------------------------------------
