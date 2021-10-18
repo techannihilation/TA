@@ -62,7 +62,7 @@ return {
 			--[5] = "gok_brawl",
 			[6] = "gok_hookah",
 			--[7] = "gok_gripn",
-			--[8] = "gok_lance",
+			[8] = "gok_revenant",
 			[9] = "gok_wordbearer",
 			[10] = "gok_nosferatu",
 		},

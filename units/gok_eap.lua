@@ -48,9 +48,9 @@ return {
 		buildoptions = {
 			[1] = "gok_eca",
 			--[2] = "gok_erez",
-			[3] = "gok_wraith",
+			[2] = "gok_wraith",
 			--[4] = "gok_pampa",
-			--[5] = "gok_spirit",
+			[3] = "gok_nurgle",
 			--[6] = "gok_tau",
 			--[7] = "gok_handgod",
 		},

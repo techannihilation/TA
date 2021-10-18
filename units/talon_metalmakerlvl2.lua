@@ -30,7 +30,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
-		
+
 		objectname = "talon_metalmakerlvl2",
 		radardistance = 0,
 		radaremitheight = 53,
@@ -51,7 +51,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 7860,
-				object = "ametalmakerlvl2_heap",
+				object = "3x3c",
 				reclaimable = true,
 			},
 		},
