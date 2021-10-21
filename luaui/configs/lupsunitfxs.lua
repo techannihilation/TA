@@ -33,7 +33,7 @@ gok_efusion = {
 {class='SimpleParticles2', options=MergeTable({pos={0,35,0}, delay=0, size=15, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
 {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,35,0}, size=12, precision=24, repeatEffect=true}},
 },
---gok_ufusion = {
+gok_ufusion = {
 {class='SimpleParticles2', options=MergeTable({pos={0,305,0}, delay=30, size=230, count=12, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
 {class='SimpleParticles2', options=MergeTable({pos={0,245,0}, delay=20, size=220, count=12, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
 {class='SimpleParticles2', options=MergeTable({pos={0,185,0}, delay=10, size=210, count=12, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
