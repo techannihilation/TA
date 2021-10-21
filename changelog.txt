@@ -1,12 +1,14 @@
 4.03 => 4.04
-2021-09-19
+2021-09-23
 Balance :
  - All Nuke Max Ammunition set at 3
  - All AntiNuke Max Ammunition set at 8
  - Fix T4 Nuke damage on commander at 10k. Increase buildtime 2M=>5M
- - Satan : Decrease Speed 1.75 => 1.5. Decrease HP 46K=>42K
+ - Satan : Decrease Speed 1.75 => 1.5. Decrease HP 46K=>42K. Increase cost 17KM=>21KM
+ - Move T5 Radar into T4 constructors
 
 Improvment :
+  - Add T5 Gok Level structures except Tsar
   - Decrease all Nuke / Antinuke models by 20%
   - Torpedo Bomber : All bomber with 2 bursts or 1 adv burst (same balance)
 

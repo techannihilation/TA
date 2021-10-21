@@ -602,7 +602,32 @@ sunlight_gen = {
       repeatEffect = true,
       noIconDraw = false,
       priority   = 1,
-      }
+    }
+    goklight_gen = {
+          speed        = 0.3,
+          speedSpread  = 3.5,
+          emitRotSpread  = 32,
+          life         = 28,
+          lifeSpread   = 30,
+          partpos      = "0,0,0",
+          rotSpeed     = 0.0,
+          rotFactor    = 0.0,
+          rotFactorSpread = 0.0,
+          rotairdrag   = 0.0,
+          rotSpread    = 360,
+          size         = 4,
+          rotExp       = 1,
+          sizeExp      = 2,
+          sizeSpread   = 3.2,
+          sizeGrowth   = 2,
+          emitVector   = {0,0,0},
+          emitRotSpread = 20,
+          texture      = 'bitmaps/techa_artwork/goklightning.png',
+          repeatEffect = true,
+          noIconDraw = false,
+          priority   = 1,
+    }
+
 
 ----------------------------------------------------------------------------
 -- Other -------------------------------------------------------------------

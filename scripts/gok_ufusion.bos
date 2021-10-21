@@ -1,0 +1,120 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, structure1, structure2, structure3, structure4, structure5, 
+		wing1, wing2, wing3, wing4, wing5, wing6, wing7, wing8, wing9, wing10, wing11, wing12;
+
+static-var  Static_Var_1, Static_Var_2;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	spin wing1 around y-axis speed <3.> accelerate <1.>;
+	spin wing2 around y-axis speed <3.> accelerate <1.>;
+	spin wing3 around y-axis speed <3.> accelerate <1.>;
+	spin wing4 around y-axis speed <4.> accelerate <1.>;
+	spin wing5 around y-axis speed <4.> accelerate <1.>;
+	spin wing6 around y-axis speed <5.> accelerate <1.>;
+	spin wing7 around y-axis speed <5.> accelerate <1.>;
+	spin wing8 around y-axis speed <5.> accelerate <1.>;
+	spin wing9 around y-axis speed <3.> accelerate <1.>;
+	spin wing10 around y-axis speed <3.> accelerate <1.>;
+	spin wing11 around y-axis speed <3.> accelerate <1.>;
+	spin wing12 around y-axis speed <2.> accelerate <1.>;
+		
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 5 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from structure1;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from structure2;
+			}
+			if( Func_Var_4 == 3 )
+			{
+				emit-sfx smoketype from structure3;
+			}
+			if( Func_Var_4 == 4 )
+			{
+				emit-sfx smoketype from structure4;
+			}
+			if( Func_Var_4 == 5 )
+			{
+				emit-sfx smoketype from structure5;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	explode wing1 type NOHEATCLOUD;
+	explode wing2 type NOHEATCLOUD;
+	explode wing3 type NOHEATCLOUD;
+	explode wing4 type NOHEATCLOUD;
+	explode wing5 type NOHEATCLOUD;
+	
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode structure1 type NOHEATCLOUD;
+		explode structure2 type NOHEATCLOUD;
+		explode structure3 type NOHEATCLOUD;
+		explode structure4 type NOHEATCLOUD;
+		explode structure5 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode structure1 type FALL | NOHEATCLOUD;
+		explode structure2 type FALL | NOHEATCLOUD;
+		explode structure3 type FALL | NOHEATCLOUD;
+		explode structure4 type FALL | NOHEATCLOUD;
+		explode structure5 type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode structure1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode structure2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode structure3 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode structure4 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode structure5 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

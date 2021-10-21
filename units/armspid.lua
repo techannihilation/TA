@@ -66,7 +66,7 @@ return {
 			[6] = "arm_mech_lab",
 			[7] = "ashipyardlvl3",
 			[8] = "armnanotc3",
-			[9] = "armomni",
+			[9] = "armurad",
 			[10] = "armanni1",
 			[11] = "armhys",
 			[12] = "armgate1",

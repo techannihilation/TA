@@ -46,7 +46,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "gok_gate",
-		usebuildinggrounddecal = false,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			buildpic = "gok_gate.dds",

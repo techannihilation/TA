@@ -67,7 +67,7 @@ return {
 			[5] = "tllprototype",
 			[6] = "tllshipyardlvl3",
 			[7] = "tllnanotc3",
-			[8] = "tlltarg",
+			[8] = "tllurad",
 			[9] = "tllrlrpc",
 			[10] = "tlldb",
 			[11] = "tllgate1",

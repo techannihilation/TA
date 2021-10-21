@@ -57,7 +57,7 @@ return {
 			[4] = "arm_mech_lab",
 			[5] = "ashipyardlvl3",
 			[6] = "armnanotc4",
-			[7] = "armurad",
+			--[7] = "armurad",
 			[8] = "armujam",
 			[9] = "armnebraska",
 			[10] = "armgate3",
