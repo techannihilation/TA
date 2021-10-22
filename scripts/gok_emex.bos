@@ -242,7 +242,7 @@ SweetSpot(piecenum)
 
 SetSpeed(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1 / 12;
+	Static_Var_1 = 1400 - Func_Var_1 / 2;
 	if( Static_Var_1 <= 325 )
 	{
 		Static_Var_1 = 325;

@@ -7,7 +7,7 @@ piece  base, bulk, pillar, hammers,
 		hammer1, hammer2, hammer3, hammer4, hammer5, hammer6, hammer7, hammer8,
        sledge1, sledge2, sledge3, sledge4, sledge5, sledge6, sledge7, sledge8, color;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
+static-var  Static_Var_1, Static_Var_4, Static_Var_5,
             Static_Var_6;
 
 
@@ -196,8 +196,6 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	Static_Var_1 = 0;
-	Static_Var_2 = 91;
-	Static_Var_3 = 182;
 	call-script InitState();
 }
 

@@ -107,7 +107,7 @@ return {
 			core_boucher = {
 				areaofeffect = 180,
 				avoidfeature = false,
-				cegtag = "Trail_dmc_cannon",
+				cegtag = "Trail_dmc_core",
 				collidefriendly = false,
 				craterareaofeffect = 200,
 				craterboost = 0,

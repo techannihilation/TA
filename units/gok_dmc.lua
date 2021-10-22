@@ -107,7 +107,7 @@ return {
 			gok_dmc_weapon = {
 				areaofeffect = 180,
 				avoidfeature = false,
-				cegtag = "Trail_dmc_cannon",
+				cegtag = "Trail_dmc_gok",
 				collidefriendly = false,
 				craterareaofeffect = 200,
 				craterboost = 0,
@@ -125,7 +125,7 @@ return {
 				noselfdamage = true,
 				range = 1700,
 				reloadtime = 2.5,
-				rgbcolor = "1 0.15 0.15",
+				rgbcolor = "0.78 0.08 0.55",
 				size = 4.5,
 				sizedecay = -0.25,
 				soundhitdry = "xplolrg1",
