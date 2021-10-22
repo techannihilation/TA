@@ -8,37 +8,30 @@ gok_meteor = {
   {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
 },
 gok_meteor2 = {
-  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
+  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=12, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
 },
 gok_meteor1 = {
-  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
+  {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=15, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
 },
  gok_gen = {
- {class='SimpleParticles2', options=MergeTable({pos={0,10,0}, delay=60, size=5, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
- {class='SimpleParticles2', options=MergeTable({pos={0,14,0}, delay=0, size=4, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
- {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,12,0}, size=6, precision=22, repeatEffect=true}},
+ {class='SimpleParticles2', options=MergeTable({pos={0,12.5,0}, delay=0, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+ {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,-1,0}, width=14, length=40, piece="base", noIconDraw = true, priority=2}},
 },
 gok_fusion = {
-{class='SimpleParticles2', options=MergeTable({pos={0,16,0}, delay=60, size=10, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
-{class='SimpleParticles2', options=MergeTable({pos={0,20,0}, delay=0, size=8, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
-{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,14,0}, size=8, precision=22, repeatEffect=true}},
+  {class='SimpleParticles2', options=MergeTable({pos={0,25,0}, delay=0, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
+  {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,-1,0}, width=22, length=85, piece="base", noIconDraw = true, priority=2}},
 },
 gok_sfusion = {
-{class='SimpleParticles2', options=MergeTable({pos={0,25,0}, delay=60, size=14, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
-{class='SimpleParticles2', options=MergeTable({pos={0,30,0}, delay=0, size=10, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_gen)},
-{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,28,0}, size=8, precision=22, repeatEffect=true}},
+  {class='SimpleParticles2', options=MergeTable({pos={0,50,0}, delay=0, size=10, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
+  {class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,-1,0}, width=26, length=100, piece="base", noIconDraw = true, priority=2}},
 },
 gok_efusion = {
-{class='SimpleParticles2', options=MergeTable({pos={0,38,0}, delay=80, size=18, count=10, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
-{class='SimpleParticles2', options=MergeTable({pos={0,35,0}, delay=0, size=15, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
-{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,35,0}, size=12, precision=24, repeatEffect=true}},
+{class='SimpleParticles2', options=MergeTable({pos={0,90,0}, delay=0, count=10, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
+{class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,-1,0}, width=32, length=200, piece="base", noIconDraw = true, priority=2}},
 },
 gok_ufusion = {
-{class='SimpleParticles2', options=MergeTable({pos={0,305,0}, delay=30, size=230, count=12, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
-{class='SimpleParticles2', options=MergeTable({pos={0,245,0}, delay=20, size=220, count=12, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
-{class='SimpleParticles2', options=MergeTable({pos={0,185,0}, delay=10, size=210, count=12, colormap={{0.78, 0.08, 0.52, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
-{class='SimpleParticles2', options=MergeTable({pos={0,125,0}, delay=0, size=200, count=12, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_fusion)},
-{class='ShieldJitter',options={life=math.huge, priority=2, pos={0,240,0}, size=80, precision=24, repeatEffect=true}},
+{class='SimpleParticles2', options=MergeTable({pos={0,125,0}, delay=0, count=12, colormap={{0.68, 0.06, 0.46, 0.005}, {0.5, 0.05, 0.38, 0.01}, {0.2, 0.0, 0.09, 0.005}}},goklight_advfusion)},
+{class='AirJet',options={color={0.78,0.08,0.55}, emitVector = {0,-1,0}, width=48, length=350, piece="base", noIconDraw = true, priority=2}},
 },
 --TALON
 talon_gen = {
