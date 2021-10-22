@@ -497,6 +497,10 @@ return {
 		"talon_mine3",
 		"talon_mine4",
 		"talon_fmine",
+		"gok_mine1",
+		"gok_mine2",
+		"gok_mine3",
+		"gok_fmine",
 	},
 	minelayers = {
 		"armmlv",
