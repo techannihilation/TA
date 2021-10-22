@@ -1,8 +1,8 @@
 return {
 	gok_metalmakerlvl4 = {
 		activatewhenbuilt = true,
-		buildcostenergy = 12549602,
-		buildcostmetal = 194404,
+		buildcostenergy = 14379751,
+		buildcostmetal = 222752,
 		builder = false,
 		buildpic = "gok_metalmakerlvl4.dds",
 		buildtime = 10000000,
@@ -12,7 +12,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "heap",
 		damagemodifier = 0.25,
-		description = "Converts upto 300K Energy to Metal",
+		description = "Converts upto 275K Energy to Metal",
 		explodeas = "KROG_BLAST",
 		floater = false,
 		footprintx = 13,
@@ -21,7 +21,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 53,
-		mass = 194404,
+		mass = 222752,
 		maxdamage = 31055,
 		maxslope = 20,
 		maxwaterdepth = 0,
