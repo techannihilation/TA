@@ -437,7 +437,7 @@ local morphDefs = {
 		tech = 3,
 	},
 	gok_gate1 = {
-		into = 'talon_gate3',
+		into = 'gok_gate3',
 		time = 120,
 		tech = 4,
 	},
