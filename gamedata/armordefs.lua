@@ -26,6 +26,7 @@ return {
 		"talon_handgod",
 		"gok_dirgesinger",
 		"gok_hookah",
+		"gok_nurgle",
 		--Transporters
 		"armatlas",
 		"armdfly",
