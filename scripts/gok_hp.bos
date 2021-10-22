@@ -124,7 +124,6 @@ Create()
 	StateChanging = 0;
 	Spray = spray1;
 	start-script ControlFlag();
-	move base to y-axis [15] now;
 }
 
 QueryNanoPiece(PieceNum)

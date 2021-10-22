@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, hull, base, turret, pitchturret, launcher, wake1, wake2, wake3, wake4, wake5, wake6;
+piece  flare1, flare2, hull, base, turret, pitchturret, wake1, wake2, wake3, wake4, wake5, wake6;
 
 static-var  Static_Var_1, gun_1;
 
