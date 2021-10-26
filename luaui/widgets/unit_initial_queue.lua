@@ -659,6 +659,8 @@ function widget:DrawScreen()
 	gl.PopMatrix()
 end
 
+local previousCommander
+
 function widget:DrawWorld()
 	--don"t draw anything once the game has started; after that engine can draw queues itself
 	if gameStarted then return end
@@ -686,20 +688,19 @@ function widget:DrawWorld()
 	if startChosen then
 		-- Correction for start positions in the air
 		sy = Spring.GetGroundHeight(sx, sz)
-
 		-- Draw the starting unit at start position
 		sDefID = sDef.id
-
 		DrawUnitDef(sDefID, myTeamID, sx, sy, sz)
 		gl.Color(buildDistanceColor)
 		gl.DrawGroundCircle(sx, sy, sz, sDef.buildDistance, 40)
 	end
 
 	-- Check for faction change
-	for b = 1, #buildQueue do
-		--Spring.Echo(math.random())
-		local buildData = buildQueue[b]
-		local buildDataId = buildData[1]
+	if previousCommander ~= COMMANDER[sDef.id] then
+		for b = 1, #buildQueue do
+			local buildData = buildQueue[b]
+			local buildDataId = buildData[1]
+
 			for i, v in ipairs(CONVERT_TABLE) do
 				if v[buildDataId] then
 					for j, faction in pairs(v) do
@@ -710,7 +711,9 @@ function widget:DrawWorld()
 					end
 				end
 			end
+		end
 	end
+	previousCommander = COMMANDER[sDef.id]
 
 	-- Draw all the buildings
 	local queueLineVerts = startChosen and {
