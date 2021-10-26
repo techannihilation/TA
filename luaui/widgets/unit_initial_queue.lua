@@ -17,9 +17,47 @@ end
 -- 20 march 2013: added keyboard support with BA keybinds (Bluestone)
 -- august 2013: send queue length to cmd_idle_players (BrainDamage)
 -- june 2015: guishader + rounded corners + hover effect + widget scales with resolution + remembers queue after /luaui reload (Floris)
+-- 26 october 2021: v1.7: Simplify faction change ([MOL]Silver)
 ------------------------------------------------------------
 -- Config
 ------------------------------------------------------------
+
+-- Building ids
+local COMMANDER = {
+[UnitDefNames["armcom"].id] = "ARM",
+[UnitDefNames["corcom"].id] = "CORE",
+[UnitDefNames["tllcom"].id] = "TLL",
+[UnitDefNames["talon_com"].id] = "TALON",
+[UnitDefNames["gok_com"].id] = "GOK",
+}
+
+local CONVERT_TABLE = {
+[1] =  {[UnitDefNames["armsolar"].id] = "ARM", 		[UnitDefNames["corsolar"].id] = "CORE",		[UnitDefNames["tllsolar"].id] = "TLL", 		[UnitDefNames["talon_solar"].id] = "TALON", 		[UnitDefNames["gok_solar"].id] = "GOK"			},
+[2] =  {[UnitDefNames["armwin"].id] = "ARM", 		[UnitDefNames["corwin"].id] = "CORE",		[UnitDefNames["tllwin"].id] = "TLL", 		[UnitDefNames["talon_win"].id] = "TALON", 			[UnitDefNames["gok_win"].id] = "GOK"			},
+[3] =  {[UnitDefNames["armgeo_mini"].id] = "ARM",	[UnitDefNames["corgeo_mini"].id] = "CORE", 	[UnitDefNames["tllgeo_mini"].id] = "TLL",	[UnitDefNames["talon_geo_mini"].id] = "TALON", 		[UnitDefNames["gok_geo_mini"].id] = "GOK"		},
+[4] =  {[UnitDefNames["armmstor"].id] = "ARM", 		[UnitDefNames["cormstor"].id] = "CORE", 	[UnitDefNames["tllmstor"].id] = "TLL",		[UnitDefNames["talon_mstor"].id] = "TALON", 		[UnitDefNames["gok_mstor"].id] = "GOK"			},
+[5] =  {[UnitDefNames["armestor"].id] = "ARM", 		[UnitDefNames["corestor"].id] = "CORE", 	[UnitDefNames["tllestor"].id] = "TLL",		[UnitDefNames["talon_estor"].id] = "TALON", 		[UnitDefNames["gok_estor"].id] = "GOK"			},
+[6] =  {[UnitDefNames["armmex"].id] = "ARM", 		[UnitDefNames["cormex"].id] = "CORE",		[UnitDefNames["tllmex"].id] = "TLL", 		[UnitDefNames["talon_mex"].id] = "TALON", 			[UnitDefNames["gok_mex"].id] = "GOK"			},
+[7] =  {[UnitDefNames["armmakr"].id] = "ARM", 		[UnitDefNames["cormakr"].id] = "CORE", 		[UnitDefNames["tllmm"].id] = "TLL", 		[UnitDefNames["talon_makr"].id] = "TALON", 			[UnitDefNames["gok_makr"].id] = "GOK"			},
+[8] =  {[UnitDefNames["armlab"].id] = "ARM", 		[UnitDefNames["corlab"].id] = "CORE", 		[UnitDefNames["tlllab"].id] = "TLL", 		[UnitDefNames["talon_clone_lab"].id] = "TALON", 	[UnitDefNames["gok_lab"].id] = "GOK"			},
+[9] =  {[UnitDefNames["armvp"].id] = "ARM", 		[UnitDefNames["corvp"].id] = "CORE", 		[UnitDefNames["tllvp"].id] = "TLL", 		[UnitDefNames["talon_vp"].id] = "TALON", 			[UnitDefNames["gok_lab"].id] = "GOK"			},
+[10] = {[UnitDefNames["armap"].id] = "ARM", 		[UnitDefNames["corap"].id] = "CORE", 		[UnitDefNames["tllap"].id] = "TLL",  		[UnitDefNames["talon_ap"].id] = "TALON", 			[UnitDefNames["gok_ap"].id] = "GOK"				},
+[11] = {[UnitDefNames["armeyes"].id] = "ARM", 		[UnitDefNames["coreyes"].id] = "CORE", 		[UnitDefNames["tlltower"].id] = "TLL",		[UnitDefNames["talon_eye"].id] = "TALON", 			[UnitDefNames["gok_eyes"].id] = "GOK",			},
+[12] = {[UnitDefNames["armrad"].id] = "ARM", 		[UnitDefNames["corrad"].id] = "CORE",		[UnitDefNames["tllradar"].id] = "TLL", 		[UnitDefNames["talon_rad"].id] = "TALON", 			[UnitDefNames["gok_rad"].id] = "GOK"			},
+[13] = {[UnitDefNames["armdrag"].id] = "ARM", 		[UnitDefNames["cordrag"].id] = "CORE", 		[UnitDefNames["tlldt"].id] = "TLL",			[UnitDefNames["talon_drag"].id] = "TALON", 			[UnitDefNames["gok_drag"].id] = "GOK"			},
+[14] = {[UnitDefNames["armllt"].id] = "ARM", 		[UnitDefNames["corllt"].id] = "CORE",		[UnitDefNames["tllllt"].id] = "TLL", 		[UnitDefNames["talon_llt"].id] = "TALON", 			[UnitDefNames["gok_llt"].id] = "GOK"			},
+[15] = {[UnitDefNames["armdl"].id] = "ARM", 		[UnitDefNames["cordl"].id] = "CORE", 		[UnitDefNames["tllshoretorp"].id] = "TLL",  																									},
+[16] = {[UnitDefNames["armrl"].id] = "ARM", 		[UnitDefNames["corrl"].id] = "CORE",		[UnitDefNames["tlllmt"].id] = "TLL",  		[UnitDefNames["talon_rl"].id] = "TALON", 			[UnitDefNames["gok_rl"].id] = "GOK"				},
+[17] = {[UnitDefNames["armtide"].id] = "ARM", 		[UnitDefNames["cortide"].id] = "CORE",		[UnitDefNames["tlltide"].id] = "TLL", 		[UnitDefNames["talon_tide"].id] = "TALON", 			[UnitDefNames["gok_tide"].id] = "GOK"			},
+[18] = {[UnitDefNames["armfmkr"].id] = "ARM", 		[UnitDefNames["corfmkr"].id] = "CORE", 		[UnitDefNames["tllwmconv"].id] = "TLL",		[UnitDefNames["talon_fmkr"].id] = "TALON", 			[UnitDefNames["gok_fmkr"].id] = "GOK"			},
+[19] = {[UnitDefNames["armsy"].id] = "ARM", 		[UnitDefNames["corsy"].id] = "CORE", 		[UnitDefNames["tllsy"].id] = "TLL", 		[UnitDefNames["talon_sy"].id] = "TALON", 			[UnitDefNames["gok_sy"].id] = "GOK"				},
+[20] = {[UnitDefNames["armsonar"].id] = "ARM", 		[UnitDefNames["corsonar"].id] = "CORE", 	[UnitDefNames["tllsonar"].id] = "TLL", 		[UnitDefNames["talon_sonar"].id] = "TALON", 		[UnitDefNames["gok_sonar"].id] = "GOK"			},
+[21] = {[UnitDefNames["armfdrag"].id] = "ARM", 		[UnitDefNames["corfdrag"].id] = "CORE", 	[UnitDefNames["tlldtns"].id] = "TLL", 		[UnitDefNames["talon_fdrag"].id] = "TALON", 		[UnitDefNames["gok_fdrag"].id] = "GOK"			},
+[22] = {[UnitDefNames["armtl"].id] = "ARM", 		[UnitDefNames["cortl"].id] = "CORE", 		[UnitDefNames["tlltorp"].id] = "TLL", 		[UnitDefNames["talon_tl"].id] = "TALON", 			[UnitDefNames["gok_tl"].id] = "GOK" 		 	},
+[23] = {[UnitDefNames["armfllt"].id] = "ARM", 		[UnitDefNames["corfllt"].id] = "CORE", 		[UnitDefNames["tllfllt"].id] = "TLL",															[UnitDefNames["gok_fllt"].id] = "GOK",			},
+[24] = {[UnitDefNames["armfrt"].id] = "ARM", 		[UnitDefNames["corfrt"].id] = "CORE", 		[UnitDefNames["tlllmtns"].id] = "TLL",		[UnitDefNames["talon_frl"].id] = "TALON", 			[UnitDefNames["gok_frl"].id] = "GOK", 			},
+}
+
 -- Panel
 local iconWidth = 55
 local iconHeight = 52
@@ -28,12 +66,11 @@ local borderSize = 0
 local maxCols = 5
 local fontSize = 17
 local margin = 1
-local drawTooltip = true -- drawBigTooltip = true... this needs to be true aswell
+local drawTooltip = true
 local drawBigTooltip = false
 local borderPadding = 1
 
 local borderColor = {1, 1, 1, 0.025}
-
 
 local hoverColor = {1, 1, 1, 0.25}
 
@@ -72,14 +109,6 @@ local GL_ONE_MINUS_SRC_ALPHA = GL.ONE_MINUS_SRC_ALPHA
 local GL_SRC_ALPHA = GL.SRC_ALPHA
 local glBlending = gl.Blending
 
--- Building ids
-local commanders = {
-	[UnitDefNames["armcom"].id] = true,
-	[UnitDefNames["corcom"].id] = true,
-	[UnitDefNames["tllcom"].id] = true,
-	[UnitDefNames["talon_com"].id] = true,
-	[UnitDefNames["gok_com"].id] = true,
-}
 
 -- to check if OTA icon exist, defs table
 local OtaIconExist = {}
@@ -91,7 +120,7 @@ for uDefID, uDef in pairs(UnitDefs) do
 		isMex[uDefID] = true
 	end
 
-	if commanders[uDefID] then
+	if COMMANDER[uDefID] then
 		if uDef.buildOptions then
 			for i = 1, #uDef.buildOptions do
 				local tooltip = UnitDefs[uDef.buildOptions[i]].tooltip
@@ -121,7 +150,7 @@ end
 ------------------------------------------------------------
 --local sDefID -- Starting unit def ID
 --local sDef -- UnitDefs[sDefID]
-local selDefID = nil -- Currently selected def ID
+local selDefID = nil 
 local buildQueue = {}
 local buildNameToID = {}
 local gameStarted = false
@@ -132,12 +161,8 @@ local panelList = nil -- Display list for panel
 local areDragging = false
 local isMex = {} -- isMex[uDefID] = true / nil
 local weaponRange = {} -- weaponRange[uDefID] = # / nil
-local changeStartUnitRegex = "^\138(%d+)$"
-local startUnitParamName = "startUnit"
 local myTeamID = Spring.GetMyTeamID()
-local myPlayerID = Spring.GetMyPlayerID()
 local amNewbie = (Spring.GetTeamRulesParam(myTeamID, "isNewbie") == 1)
-local totalTime
 
 ------------------------------------------------------------
 -- Local functions
@@ -574,25 +599,25 @@ function widget:DrawScreen()
 		gl.Translate(-((iconWidth * widgetScale) * col), -((iconHeight * widgetScale) * row), 0)
 		gl.Texture(buttonhighlight)
 		gl.Color(hoverColor)
-		DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+		DrawRect(iconPadding * widgetScale, iconPadding * widgetScale, iconWidth - iconPadding * widgetScale, iconHeight - iconPadding * widgetScale)
 		gl.Color(hoverColor[1], hoverColor[2], hoverColor[3], hoverColor[4] / 1.5)
 		glBlending(GL_SRC_ALPHA, GL_ONE)
-		DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+		DrawRect(iconPadding * widgetScale, iconPadding * widgetScale, (iconWidth - iconPadding) * widgetScale, (iconHeight - iconPadding) * widgetScale)
 		glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
 		if CurMouseState[3] then
 			gl.Color(clickColor)
-			DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+			DrawRect(iconPadding * widgetScale, iconPadding * widgetScale, (iconWidth - iconPadding) * widgetScale, (iconHeight - iconPadding) * widgetScale)
 			gl.Color(clickColor[1], clickColor[2], clickColor[3], clickColor[4] / 1.5)
 			glBlending(GL_SRC_ALPHA, GL_ONE)
-			DrawRect((iconPadding * widgetScale), (iconPadding * widgetScale), ((iconWidth - iconPadding) * widgetScale), ((iconHeight - iconPadding) * widgetScale))
+			DrawRect(iconPadding * widgetScale, iconPadding * widgetScale, (iconWidth - iconPadding) * widgetScale, (iconHeight - iconPadding) * widgetScale)
 			glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 			lastClickedRow = row
 			lastClickedCol = col
 		end
 
 		gl.Texture(false)
-		gl.Translate(((iconWidth * widgetScale) * col), ((iconHeight * widgetScale) * row), 0)
+		gl.Translate(iconWidth * widgetScale * col, iconHeight * widgetScale * row, 0)
 
 		if drawTooltip and WG["tooltip"] ~= nil then
 			local udefid = TraceDefID(CurMouseState[1], CurMouseState[2])
@@ -663,18 +688,28 @@ function widget:DrawWorld()
 		sy = Spring.GetGroundHeight(sx, sz)
 
 		-- Draw the starting unit at start position
-		if sDef.id == ARMCOM then
-			sDefID = sDef.id
-		elseif sDef.id == CORCOM then
-			sDefID = sDef.id
-		else
-			sDefID = sDef.id
-		end
+		sDefID = sDef.id
 
 		DrawUnitDef(sDefID, myTeamID, sx, sy, sz)
-		-- Draw start units build radius
 		gl.Color(buildDistanceColor)
 		gl.DrawGroundCircle(sx, sy, sz, sDef.buildDistance, 40)
+	end
+
+	-- Check for faction change
+	for b = 1, #buildQueue do
+		--Spring.Echo(math.random())
+		local buildData = buildQueue[b]
+		local buildDataId = buildData[1]
+			for i, v in ipairs(CONVERT_TABLE) do
+				if v[buildDataId] then
+					for j, faction in pairs(v) do
+						if faction == COMMANDER[sDef.id] then
+							buildData[1] = j
+							buildQueue[b] = buildData
+						end
+					end
+				end
+			end
 	end
 
 	-- Draw all the buildings
@@ -764,6 +799,7 @@ function widget:GameFrame(n)
 
 		for u = 1, #units do
 			local uID = units[u]
+
 			if GetUnitCanCompleteQueue(uID) then
 				tasker = uID
 				if Spring.GetUnitRulesParam(uID, "startingOwner") == Spring.GetMyPlayerID() then break end --we found our com even if cooping, assigning queue to this particular unit
@@ -776,6 +812,7 @@ function widget:GameFrame(n)
 
 				Spring.GiveOrderToUnit(tasker, -buildData[1], {buildData[2], buildData[3], buildData[4], buildData[5]}, {"shift"})
 			end
+
 			widgetHandler:RemoveWidget(self)
 		end
 	end
@@ -854,7 +891,6 @@ function widget:MousePress(mx, my, mButton)
 					bx = WG["PreGameMexPos"].bx
 					by = WG["PreGameMexPos"].by
 					bz = WG["PreGameMexPos"].bz
-					--buildFacing = WG["PreGameMexPos"].buildFacing
 				end
 
 				if Spring.TestBuildOrder(selDefID, bx, by, bz, buildFacing) ~= 0 then
