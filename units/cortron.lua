@@ -3,7 +3,7 @@ return {
 		acceleration = 0,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 16533,
+		buildcostenergy = 25533,
 		buildcostmetal = 1921,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -139,7 +139,7 @@ return {
 				name = "TacticalNuke",
 				noselfdamage = true,
 				range = 2750,
-				reloadtime = 2,
+				reloadtime = 5,
 				smoketrail = true,
 				soundhitdry = "xplomed4",
 				soundstart = "misicbm1",
@@ -161,7 +161,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MOBILE",
 				def = "CORTRON_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},

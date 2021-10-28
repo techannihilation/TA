@@ -121,6 +121,7 @@ modConfig["TA"]["unitList"] =
 								corfmd1 = { weapons = { 3 } },
 								corfmd2 = { weapons = { 3 } },
 								cortron = { weapons = { 3 } },
+								gok_eveningstar = { weapons = { 3 } },
 								corarbritator = { weapons = { 3 } },
 								talon_carry = { weapons = { 1 } },
 								talon_ucar = { weapons = { 6 } },
@@ -235,6 +236,7 @@ modConfig["TA"]["unitList"] =
 								gok_antinuke = { weapons = { 3 } },
 								gok_antinuke1 = { weapons = { 3 } },
 								gok_antinuke2 = { weapons = { 3 } },
+								gok_carry = { weapons = { 1 } },
 
 								talon_mds = { weapons = { 3 } }, --Missile Defence System
 								gok_mds = { weapons = { 3 } }, --Missile Defence System

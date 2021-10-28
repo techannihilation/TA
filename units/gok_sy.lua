@@ -48,7 +48,7 @@ return {
 		yardmap = "wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw",
 		buildoptions = {
 			[1] = "gok_csub",
-			--[2] = "gok_jellyfish",
+			--[2] = "",
 			[3] = "gok_ssub",
 			[4] = "gok_corvette",
 			[5] = "gok_sub",

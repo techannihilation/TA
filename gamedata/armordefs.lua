@@ -219,6 +219,12 @@ return {
 		"talon_carry",
 		"talon_zamak",
 		"talon_imperator",
+		"gok_engineers",
+		"gok_crus",
+		"gok_mship",
+		"gok_carry",
+		"gok_corvette",
+		"gok_roy",		
 	},
 	subs = {
 		"corsub",

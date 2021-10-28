@@ -9,6 +9,42 @@ piece  base, plate, pillar, turret, lsystem, llathe, rsystem, rlathe,
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10;
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from base;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from turret;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 StartMoving()
 {
 	signal 2;
@@ -26,100 +62,99 @@ StopMoving()
 	signal 2;
 }
 
+activatescr()
+{
+	show pillar;
+	move door1 to x-axis [3.] speed [6.];
+	move door1 to y-axis [-1.] speed [2.];
+	move door2 to x-axis [-3.] speed [6.];
+	move door2 to y-axis [-1.] speed [2.];
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	sleep 250;
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	sleep 250;
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	move pillar to y-axis [7.] speed [7.];
+	sleep 1000;
+	turn lsystem to y-axis <90.> speed <180.>;
+	turn rsystem to y-axis <-90.> speed <180.>;
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	sleep 500;
+	turn lsystem to x-axis <-90.> speed <180.>;
+	turn rsystem to x-axis <90.> speed <180.>;
+	turn turret to y-axis <90.> + Static_Var_1 speed <90.>;
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	sleep 50;
+}
+
+deactivatescr()
+{
+	set INBUILDSTANCE to 0;
+	turn lsystem to x-axis <0.> speed <180.>;
+	turn rsystem to x-axis <0.> speed <180.>;
+	turn turret to y-axis <0.> speed <90.>;
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	sleep 500;
+	wait-for-turn turret around y-axis;
+	turn lsystem to y-axis <0.> speed <180.>;
+	turn rsystem to y-axis <0.> speed <180.>;
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	sleep 500;
+	move pillar to y-axis [0.] speed [7.];
+	emit-sfx 256 | 3 from llathe;
+	emit-sfx 256 | 3 from rlathe;
+	sleep 1000;
+	move door1 to x-axis [0.] speed [6.];
+	move door1 to y-axis [0.] speed [2.];
+	move door2 to x-axis [0.] speed [6.];
+	move door2 to y-axis [0.] speed [2.];
+	sleep 500;
+	hide pillar;	
+}
+
 RequestState(requestedstate, currentstate)
 {
-	if( Static_Var_3 )
+	if( Static_Var_2 )
 	{
-		Static_Var_2 = requestedstate;
+		Static_Var_1 = requestedstate;
 		return (0);
 	}
-	Static_Var_3 = 1;
-	currentstate = Static_Var_2;
-	Static_Var_2 = requestedstate;
-	while( Static_Var_2 != currentstate )
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
 	{
-		if( !Static_Var_2 )
+		if( Static_Var_1 )
 		{
-			show pillar;
-			move door1 to x-axis [3.] speed [6.];
-			move door1 to y-axis [-1.] speed [2.];
-			move door2 to x-axis [-3.] speed [6.];
-			move door2 to y-axis [-1.] speed [2.];
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			sleep 250;
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			sleep 250;
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			move pillar to y-axis [7.] speed [7.];
-			sleep 1000;
-			turn lsystem to y-axis <90.> speed <180.>;
-			turn rsystem to y-axis <-90.> speed <180.>;
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			sleep 500;
-			turn lsystem to x-axis <-90.> speed <180.>;
-			turn rsystem to x-axis <90.> speed <180.>;
-			turn turret to y-axis <90.> + Static_Var_1 speed <90.>;
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			sleep 500;
-			wait-for-turn turret around y-axis;
-			set INBUILDSTANCE to 1;
-			currentstate = 0;
-		}
-		if( Static_Var_2 )
-		{
-			set INBUILDSTANCE to 0;
-			turn lsystem to x-axis <0.> speed <180.>;
-			turn rsystem to x-axis <0.> speed <180.>;
-			turn turret to y-axis <0.> speed <90.>;
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			sleep 500;
-			wait-for-turn turret around y-axis;
-			turn lsystem to y-axis <0.> speed <180.>;
-			turn rsystem to y-axis <0.> speed <180.>;
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			sleep 500;
-			move pillar to y-axis [0.] speed [7.];
-			emit-sfx 256 | 3 from llathe;
-			emit-sfx 256 | 3 from rlathe;
-			sleep 1000;
-			move door1 to x-axis [0.] speed [6.];
-			move door1 to y-axis [0.] speed [2.];
-			move door2 to x-axis [0.] speed [6.];
-			move door2 to y-axis [0.] speed [2.];
-			sleep 500;
-			hide pillar;
+			call-script deactivatescr();
+			Static_Var_3 = 1;
 			currentstate = 1;
 		}
+		else
+		{
+			call-script activatescr();
+			Static_Var_3 = 0;
+			currentstate = 0;
+		}
 	}
-	Static_Var_3 = 0;
+	Static_Var_2 = 0;
 }
 
 Create()
 {
-	Static_Var_1 = 0;
-	Static_Var_2 = 1;
-	Static_Var_3 = 0;
-	Static_Var_4 = 5;
-	Static_Var_5 = 16;
-	Static_Var_6 = 0;
-	Static_Var_7 = 0;
-	Static_Var_8 = 0;
-	Static_Var_9 = 1100;
-	Static_Var_10 = 1100;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
-	Static_Var_6 = 1;
-	Static_Var_7 = 1;
-	Static_Var_8 = 600;
+	Static_Var_3 = 1;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	Static_Var_4 = 0;
+	hide pillar;
+	start-script SmokeUnit();
 }
 
 TargetHeading(Func_Var_1)
@@ -129,27 +164,39 @@ TargetHeading(Func_Var_1)
 
 StartBuilding(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1;
 	start-script RequestState(0);
+	while( Static_Var_3 )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn turret to y-axis Func_Var_1 + <90.0> speed <160.0>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
 }
 
 StopBuilding()
 {
+	signal 4;
+	set-signal-mask 4;
+	sleep 3000;
+	set-signal-mask 0;
+	signal 4;
 	start-script RequestState(1);
 }
 
 QueryNanoPiece(piecenum)
 {
-	if( Static_Var_4 == 5 )
+	if( Static_Var_4 == 0 )
 	{
 		piecenum = llathe;
-		Static_Var_4 = 7;
+		Static_Var_4 = 1;
 		return (0);
 	}
-	if( Static_Var_4 == 7 )
+	if( Static_Var_4 == 1 )
 	{
 		piecenum = rlathe;
-		Static_Var_4 = 5;
+		Static_Var_4 = 0;
 		return (0);
 	}
 }
@@ -164,36 +211,37 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode lsystem type BITMAPONLY | BITMAP2;
-		explode rsystem type BITMAPONLY | BITMAP2;
-		explode door1 type BITMAPONLY | BITMAP2;
-		explode door2 type BITMAPONLY | BITMAP2;
-		explode control1 type BITMAPONLY | BITMAP1;
-		explode control2 type BITMAPONLY | BITMAP1;
-		explode tail type BITMAPONLY | BITMAP1;
-		return (0);
+		explode base type NOHEATCLOUD;
+		explode lsystem type NOHEATCLOUD;
+		explode rsystem type NOHEATCLOUD;
+		explode door1 type NOHEATCLOUD;
+		explode door2 type NOHEATCLOUD;
+		explode control1 type NOHEATCLOUD;
+		explode control2 type NOHEATCLOUD;
+		explode tail type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type BITMAPONLY | BITMAP1;
-		explode lsystem type BITMAPONLY | BITMAP2;
-		explode rsystem type BITMAPONLY | BITMAP2;
-		explode door1 type FALL | BITMAP2;
-		explode door2 type FALL | BITMAP2;
-		explode control1 type BITMAPONLY | BITMAP1;
-		explode control2 type BITMAPONLY | BITMAP1;
-		explode tail type BITMAPONLY | BITMAP1;
-		return (0);
+		explode base type NOHEATCLOUD;
+		explode lsystem type NOHEATCLOUD;
+		explode rsystem type NOHEATCLOUD;
+		explode door1 type FALL | NOHEATCLOUD;
+		explode door2 type FALL | NOHEATCLOUD;
+		explode control1 type NOHEATCLOUD;
+		explode control2 type NOHEATCLOUD;
+		explode tail type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type BITMAPONLY | BITMAP1;
-	explode lsystem type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode rsystem type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode door1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode door2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | BITMAP2;
-	explode control1 type BITMAPONLY | BITMAP1;
-	explode control2 type BITMAPONLY | BITMAP1;
-	explode tail type BITMAPONLY | BITMAP1;
+	explode base type NOHEATCLOUD | BITMAP1;
+	explode lsystem type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rsystem type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door1 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode door2 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode control1 type NOHEATCLOUD;
+	explode control2 type NOHEATCLOUD;
+	explode tail type NOHEATCLOUD;
+	return (corpsetype);
 }

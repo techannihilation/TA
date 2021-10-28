@@ -1,0 +1,278 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, wake1, wake2, wake3, wake4, hull, bridge, control, nose, s1, s2,
+		weapon1, shelter1, udoor1, ddoor1, ldoor1, rdoor1, fire1, color1, 
+		weapon2, shelter2, udoor2, ddoor2, ldoor2, rdoor2, fire2, color2, 
+		weapon3, fire3,
+		node, sphere, circle;
+
+static-var  gun_1;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_RADAR			8
+#define SIG_MOVE			16
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from control;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from hull;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = 0;
+	move node to y-axis [-5.] now;
+	move sphere to y-axis [-4.] now;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	signal SIG_RADAR;
+	set-signal-mask SIG_RADAR;
+	move sphere to y-axis [0.] speed [2.];
+	sleep 250;
+	move sphere to y-axis [0.] speed [4.];
+	sleep 250;
+	move node to y-axis [0.] speed [2.];
+	sleep 250;
+	spin circle around y-axis speed <90.> accelerate <2.>;
+	move node to y-axis [0.] speed [4.];
+	sleep 250;
+	move node to y-axis [0.] speed [6.];
+	sleep 250;
+	move node to y-axis [0.] speed [8.];
+	sleep 250;
+	move node to y-axis [0.] speed [6.];
+	sleep 250;
+	move node to y-axis [0.] speed [4.];
+	sleep 250;
+	move node to y-axis [0.] speed [2.];
+}
+
+Deactivate()
+{
+	signal SIG_RADAR;
+	set-signal-mask SIG_RADAR;
+	spin circle around y-axis speed <0.> accelerate <-2.>;
+	move node to y-axis [-5.] speed [2.];
+	sleep 250;
+	move node to y-axis [-5.] speed [4.];
+	sleep 250;
+	move node to y-axis [-5.] speed [6.];
+	sleep 250;
+	move node to y-axis [-5.] speed [8.];
+	sleep 250;
+	move node to y-axis [-5.] speed [6.];
+	move sphere to y-axis [-4.] speed [4.];
+	sleep 250;
+	move node to y-axis [-5.] speed [4.];
+	sleep 250;
+	move node to y-axis [-5.] speed [2.];
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake4;
+		sleep 150;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		move hull to y-axis [1.] speed [1.];
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	move hull to y-axis [0.] speed [0.];
+}
+
+RestoreAfterDelay()
+{
+	sleep 6000;
+	turn udoor1 to x-axis <0.> speed <180.>;
+	turn ddoor1 to x-axis <0.> speed <180.>;
+	turn ldoor1 to z-axis <0.> speed <180.>;
+	turn rdoor1 to z-axis <0.> speed <180.>;
+	turn udoor2 to x-axis <0.> speed <180.>;
+	turn ddoor2 to x-axis <0.> speed <180.>;
+	turn ldoor2 to z-axis <0.> speed <180.>;
+	turn rdoor2 to z-axis <0.> speed <180.>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = fire3;
+}
+
+AimPrimary(heading, pitch)
+{
+
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	
+	if (gun_1 == 0)
+	{
+		//start-script RequestState(0);
+		turn udoor1 to x-axis <-90.> speed <180.>;
+		turn ddoor1 to x-axis <90.> speed <180.>;
+		turn ldoor1 to z-axis <90.> speed <180.>;
+		turn rdoor1 to z-axis <-90.> speed <180.>;
+		wait-for-turn udoor1 around x-axis;
+	}
+	
+	else
+	{
+		//start-script RequestState(1);
+		turn udoor2 to x-axis <-90.> speed <180.>;
+		turn ddoor2 to x-axis <90.> speed <180.>;
+		turn ldoor2 to z-axis <90.> speed <180.>;
+		turn rdoor2 to z-axis <-90.> speed <180.>;
+		wait-for-turn udoor2 around x-axis;
+	}	
+		
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		
+		sleep 500;
+		turn udoor1 to x-axis <0.> speed <30.>;
+		turn ddoor1 to x-axis <0.> speed <30.>;
+		turn ldoor1 to z-axis <0.> speed <30.>;
+		turn rdoor1 to z-axis <0.> speed <30.>;	
+	}
+	if( gun_1 == 1 )
+	{
+		sleep 500;
+		turn udoor2 to x-axis <0.> speed <30.>;
+		turn ddoor2 to x-axis <0.> speed <30.>;
+		turn ldoor2 to z-axis <0.> speed <30.>;
+		turn rdoor2 to z-axis <0.> speed <30.>;	
+	}
+	
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
+	//Static_Var_1 = 0;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = fire1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = fire2;
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = fire3;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	return (1);
+}
+
+FireTertiary()
+{
+	
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = fire3;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode nose type NOHEATCLOUD;
+		explode s2 type NOHEATCLOUD;
+		explode s1 type NOHEATCLOUD;
+		explode control type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode nose type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode s1 type NOHEATCLOUD;
+		explode s2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode bridge type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode control type FALL | BITMAP3;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD;
+	explode s1 type NOHEATCLOUD | BITMAP1;
+	explode s2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode nose type NOHEATCLOUD;
+	explode bridge type NOHEATCLOUD;
+	explode control type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

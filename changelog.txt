@@ -1,3 +1,9 @@
+4.04 => 4.05
+2021-09-29
+Improvment :
+  - Add Initial Queue Gadget. Thank to Silver.
+  - Add Rapid Tactical Nuke T2 for Gok
+
 4.03 => 4.04
 2021-09-23
 Balance :

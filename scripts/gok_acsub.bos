@@ -1,0 +1,122 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, side1, side2, gem,
+		plate1, plate2, plate3, plate4,
+		sprayturn, spray, system, 
+       wake1, wake2, wake3;
+
+static-var  Static_Var_Sea;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+	while( TRUE )
+	{
+		emit-sfx 3 from wake1;
+		emit-sfx 3 from wake2;
+		emit-sfx 3 from wake3;
+		sleep 325;
+	}
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(PieceNum)
+{
+	PieceNum = spray;
+}
+
+StartBuilding(Heading, Pitch)
+{
+	signal 4;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;	
+	signal 4;
+	set-signal-mask 4;
+	sleep 2000;
+	set-signal-mask 0;
+	signal 4;
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	explode hull type SHATTER | NOHEATCLOUD;
+	
+	if( Severity <= 25 )
+	{
+		CorpseType = 1;		
+		explode gem type NOHEATCLOUD;
+		explode side1 type NOHEATCLOUD | SHATTER;
+		explode side2 type NOHEATCLOUD | SHATTER;
+		return (CorpseType);
+	}
+	if( Severity <= 50 )
+	{
+		CorpseType = 2;		
+		explode gem type NOHEATCLOUD;
+		explode side1 type NOHEATCLOUD | SHATTER;
+		explode plate3 type NOHEATCLOUD | SHATTER;
+		return (CorpseType);
+	}
+	CorpseType = 3;
+	explode gem type NOHEATCLOUD;
+	explode side1 type NOHEATCLOUD | SHATTER;
+	explode plate3 type NOHEATCLOUD | SHATTER;
+	explode side2 type NOHEATCLOUD | SHATTER;
+	explode plate4 type NOHEATCLOUD | SHATTER;
+	explode plate2 type NOHEATCLOUD | SHATTER;
+	return (CorpseType);
+}

@@ -1,0 +1,199 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, core, weapon1, shelter1, udoor1, ddoor1, ldoor1, rdoor1,
+       fire1, color1, shelter4, udoor4, ddoor4,
+       ldoor4, rdoor4;
+
+static-var  bOpenning, Static_Var_2, Static_Var_3, Static_Var_4;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_4 )
+	{
+		Static_Var_3 = requestedstate;
+		return (0);
+	}
+	Static_Var_4 = 1;
+	currentstate = Static_Var_3;
+	Static_Var_3 = requestedstate;
+	while( Static_Var_3 != currentstate )
+	{
+		if( !Static_Var_3 )
+		{
+			turn udoor4 to x-axis <0.> speed <180.>;
+			turn ddoor4 to x-axis <0.> speed <180.>;
+			turn ldoor4 to z-axis <0.> speed <180.>;
+			turn rdoor4 to z-axis <0.> speed <180.>;
+			wait-for-turn udoor4 around x-axis;
+			wait-for-turn ddoor4 around x-axis;
+			wait-for-turn ldoor4 around z-axis;
+			wait-for-turn rdoor4 around z-axis;
+			turn udoor1 to x-axis <0.> speed <180.>;
+			turn ddoor1 to x-axis <0.> speed <180.>;
+			turn ldoor1 to z-axis <0.> speed <180.>;
+			turn rdoor1 to z-axis <0.> speed <180.>;
+			wait-for-turn udoor1 around x-axis;
+			wait-for-turn ddoor1 around x-axis;
+			wait-for-turn ldoor1 around z-axis;
+			wait-for-turn rdoor1 around z-axis;
+			bOpenning = TRUE;
+			currentstate = 0;
+		}
+		if( Static_Var_3 )
+		{
+			bOpenning = FALSE;
+			turn udoor1 to x-axis <90.> speed <180.>;
+			turn ddoor1 to x-axis <-90.> speed <180.>;
+			turn ldoor1 to z-axis <-90.> speed <180.>;
+			turn rdoor1 to z-axis <90.> speed <180.>;
+			wait-for-turn udoor1 around x-axis;
+			wait-for-turn ddoor1 around x-axis;
+			wait-for-turn ldoor1 around z-axis;
+			wait-for-turn rdoor1 around z-axis;
+			turn udoor4 to x-axis <90.> speed <180.>;
+			turn ddoor4 to x-axis <-90.> speed <180.>;
+			turn ldoor4 to z-axis <-90.> speed <180.>;
+			turn rdoor4 to z-axis <90.> speed <180.>;
+			wait-for-turn udoor4 around x-axis;
+			wait-for-turn ddoor4 around x-axis;
+			wait-for-turn ldoor4 around z-axis;
+			wait-for-turn rdoor4 around z-axis;
+			currentstate = 1;
+		}
+	}
+	Static_Var_4 = 0;
+}
+
+RestoreAfterDelay()
+{
+	sleep 1500;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+Create()
+{
+	bOpenning = FALSE;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	Static_Var_4 = 0;
+	turn udoor1 to x-axis <90.> now;
+	turn ddoor1 to x-axis <-90.> now;
+	turn ldoor1 to z-axis <-90.> now;
+	turn rdoor1 to z-axis <90.> now;
+	turn udoor4 to x-axis <90.> now;
+	turn ddoor4 to x-axis <-90.> now;
+	turn ldoor4 to z-axis <-90.> now;
+	turn rdoor4 to z-axis <90.> now;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	Static_Var_2 = 1;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	Static_Var_2 = 0;
+	start-script RequestState(1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire1;
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script RequestState(0);
+	while( !bOpenning )
+	{
+		sleep 250;
+	}
+	signal 2;
+	set-signal-mask 2;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode weapon1 type NOHEATCLOUD;
+		explode core type NOHEATCLOUD;
+		explode ddoor4 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD | FALL;
+		explode weapon1 type NOHEATCLOUD | FALL;
+		explode core type NOHEATCLOUD | FALL;
+		explode udoor4 type SHATTER | NOHEATCLOUD;
+		explode ddoor4 type SHATTER | NOHEATCLOUD;
+		explode ldoor4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rdoor4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type SHATTER | NOHEATCLOUD;
+	explode weapon1 type NOHEATCLOUD | FALL;
+	explode core type NOHEATCLOUD | FALL;
+	explode udoor4 type SHATTER | NOHEATCLOUD;
+	explode ddoor4 type SHATTER | NOHEATCLOUD;
+	explode ldoor4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rdoor4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -36,7 +36,7 @@ return {
 		maxvelocity = 5.0,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Brawler",
+		name = "Revenant",
 		noautofire = false,
 		objectname = "gok_revenant",
 		seismicsignature = 0,

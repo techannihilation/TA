@@ -56,7 +56,7 @@ local convertCapacities = {
 		[UnitDefNames.gok_fmkr.id]  = { c = 120, e = (AC0) }, -- Floating
 		[UnitDefNames.gok_makr1.id]  = { c = 180, e = (AC1) }, -- T1,5
 		[UnitDefNames.gok_amaker.id]  = { c = 1000, e = (AC2) }, -- Moho
-		--[UnitDefNames.gok_famkr.id]  = { c = 1375, e = (AC2) }, -- Underwater
+		[UnitDefNames.gok_famkr.id]  = { c = 1150, e = (AC2) }, -- Underwater
 		[UnitDefNames.gok_metalmakerlvl2.id]  = { c = 10000, e = (AC3) }, -- T3
 		[UnitDefNames.gok_metalmakerlvl3.id]  = { c = 45000, e = (AC4) }, -- T4
 		[UnitDefNames.gok_metalmakerlvl4.id]  = { c = 275000, e = (AC5) }, -- T5

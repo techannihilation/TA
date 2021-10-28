@@ -76,7 +76,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local taloncarryDefID = UnitDefNames.talon_carry.id
 	local talonucarryDefID = UnitDefNames.talon_ucar.id
 	local talonmobileantinukeDefID = UnitDefNames.talon_tribulation.id
-	--local gokcarryDefID = UnitDefNames.armamd.id --Add on if after
+	local gokcarryDefID = UnitDefNames.gok_carry.id
 	--local gokucarryDefID = UnitDefNames.armamd.id --Add on if after
 	local gokmobileantinukeDefID = UnitDefNames.gok_morningstar.id
 
@@ -118,7 +118,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			or UnitDefID == corcarryDefID or UnitDefID == corucarryDefID or UnitDefID == cormobileantinukeDefID
 			or UnitDefID == tllcarryDefID or UnitDefID == tllucarryDefID or UnitDefID == tllmobileantinukeDefID
 			or UnitDefID == taloncarryDefID or UnitDefID == talonucarryDefID or UnitDefID == talonmobileantinukeDefID
-			or UnitDefID == gokmobileantinukeDefID) then
+			or UnitDefID == gokcarryDefID or UnitDefID == gokmobileantinukeDefID) then
 				pilelimit = antinuke
 			end
 

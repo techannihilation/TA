@@ -1,0 +1,82 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, sup1, sup2, sup3, sup4, sup5, spinner, building;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from building;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		explode spinner type SHATTER | EXPLODE_ON_HIT;
+		explode building type SHATTER | EXPLODE_ON_HIT;
+		explode sup1 type NOHEATCLOUD;
+		explode sup2 type NOHEATCLOUD;
+		explode sup3 type NOHEATCLOUD;
+		explode sup4 type NOHEATCLOUD;
+		explode sup5 type NOHEATCLOUD;
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		explode spinner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode building type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+		explode sup1 type NOHEATCLOUD;
+		explode sup2 type NOHEATCLOUD;
+		explode sup3 type NOHEATCLOUD;
+		explode sup4 type NOHEATCLOUD;
+		explode sup5 type NOHEATCLOUD;
+		corpsetype = 2;
+		return (corpsetype);
+	}
+	explode spinner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode building type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode sup4 type NOHEATCLOUD;
+	explode sup5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	corpsetype = 3;
+	return (corpsetype);
+}

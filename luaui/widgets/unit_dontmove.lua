@@ -107,6 +107,8 @@ local unitArray = {
   "talon_tribulation",
   "talon_carry",
   "talon_ucar",
+
+  "gok_carry",
 }
 
 
