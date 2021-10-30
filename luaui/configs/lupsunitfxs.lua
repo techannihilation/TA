@@ -203,6 +203,10 @@ cafus = {
      {class='Bursts',options=shieldBursts300},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
  },
+ gok_bats = {
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+},
   tllgorgon = {
     {class='ShieldSphere',options=tllgorgonSphere},
     {class='Bursts',options=shieldBursts700},

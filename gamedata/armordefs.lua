@@ -224,7 +224,9 @@ return {
 		"gok_mship",
 		"gok_carry",
 		"gok_corvette",
-		"gok_roy",		
+		"gok_roy",
+		"gok_bats",
+		"gok_aas",
 	},
 	subs = {
 		"corsub",

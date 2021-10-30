@@ -4,14 +4,15 @@
 #include "exptype.h"
 
 piece  flare, base, hull, aft1, aft2, turret, pitchturret,
-       wake1, wake2, system1, system2;
+       wake1, wake2, system1, system2, msl;
 
 static-var  restore_delay, Static_Var_4, Static_Var_5,
             Static_Var_6;
 
 // Signal definitions
-#define SIG_AIM				2
-#define SIG_MOVE			4
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_MOVE			8
 
 RockZ(Func_Var_1, Func_Var_2)
 {
@@ -117,8 +118,8 @@ QueryPrimary(pieceNum)
 
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
 	move pitchturret to y-axis [2.50] speed [15.00];
 	turn turret to y-axis heading speed <250.00>;
 	turn pitchturret to x-axis <0.00> - pitch speed <180.00>;	
@@ -126,6 +127,23 @@ AimPrimary(heading, pitch)
 	wait-for-turn pitchturret around x-axis;
 	wait-for-move pitchturret along y-axis;
 	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimFromSecondary(pieceNum)
+{
+	pieceNum = msl;
+}
+
+QuerySecondary(pieceNum)
+{
+	pieceNum = msl;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	return (1);
 }
 

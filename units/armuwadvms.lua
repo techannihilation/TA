@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armuwadvms_aoplane.dds",
 		buildpic = "armuwadvms.dds",
-		buildtime = 20391,
+		buildtime = 20000,
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "45 48 45",

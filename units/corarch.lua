@@ -170,7 +170,7 @@ return {
 			},
 			mobileflak = {
 				accuracy = 1000,
-				areaofeffect = 140,
+				areaofeffect = 144,
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,

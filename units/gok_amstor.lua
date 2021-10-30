@@ -1,7 +1,7 @@
 return {
 	gok_amstor = {
 		buildangle = 5049,
-		buildcostenergy = 2993,
+		buildcostenergy = 3993,
 		buildcostmetal = 415,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
@@ -26,7 +26,7 @@ return {
 		idletime = 1800,
 		losemitheight = 44,
 		mass = 415,
-		maxdamage = 9300,
+		maxdamage = 5300,
 		maxslope = 20,
 		maxwaterdepth = 9999,
 		metalstorage = 4000,

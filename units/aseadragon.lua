@@ -165,7 +165,7 @@ return {
 			},
 			seadragonflak = {
 				accuracy = 1000,
-				areaofeffect = 128,
+				areaofeffect = 144,
 				avoidfeature = false,
 				burnblow = true,
 				canattackground = false,

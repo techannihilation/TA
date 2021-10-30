@@ -111,12 +111,13 @@ local ShieldUnits = {
   [UnitDefNames["gok_gate2"].id] = true,
   [UnitDefNames["gok_gate3"].id] = true,
   [UnitDefNames["gok_gate4"].id] = true,
-  --[UnitDefNames["gok_fgate"].id] = true,
-    [UnitDefNames["gok_satan"].id] = true,
-    [UnitDefNames["gok_antichrist"].id] = true,
-    [UnitDefNames["gok_archon"].id] = true,
-    [UnitDefNames["gok_ucp"].id] = true,
-    [UnitDefNames["gok_azaroth"].id] = true,
+  [UnitDefNames["gok_fgate"].id] = true,
+  [UnitDefNames["gok_bats"].id] = true,
+  [UnitDefNames["gok_satan"].id] = true,
+  [UnitDefNames["gok_antichrist"].id] = true,
+  [UnitDefNames["gok_archon"].id] = true,
+  [UnitDefNames["gok_ucp"].id] = true,
+  [UnitDefNames["gok_azaroth"].id] = true,
 }
 
 --------------------------------------------------------------------------------

@@ -30,7 +30,6 @@ MotionControl(moving, aiming, justmoved)
 					turn rleg to x-axis <-75.> speed <180.>;
 					turn rboot to x-axis <45.> speed <150.>;
 					move pelvis to y-axis [2.] speed [4.];
-					turn torso to x-axis <0.> speed <10.>;
 					turn torsotwist to z-axis <5.> speed <8.>;
 					turn pelvis to z-axis <-10.> speed <16.>;
 					move pelvis to x-axis [1.] speed [1.];
@@ -52,7 +51,6 @@ MotionControl(moving, aiming, justmoved)
 					turn rleg to x-axis <-15.> speed <150.>;
 					turn rboot to x-axis <30.> speed <120.>;
 					move pelvis to y-axis [2.] speed [4.];
-					turn torso to x-axis <15.> speed <30.>;
 					turn torsotwist to z-axis <-5.> speed <4.>;
 					turn pelvis to z-axis <10.> speed <8.>;
 					move pelvis to x-axis [-1.] speed [2.];
@@ -65,7 +63,6 @@ MotionControl(moving, aiming, justmoved)
 					turn rleg to x-axis <15.> speed <60.>;
 					turn rboot to x-axis <30.> speed <60.>;
 					move pelvis to y-axis [2.] speed [4.];
-					turn torso to x-axis <0.> speed <10.>;
 					turn torsotwist to z-axis <-5.> speed <8.>;
 					turn pelvis to z-axis <10.> speed <16.>;
 					move pelvis to x-axis [-1.] speed [1.];
@@ -87,7 +84,6 @@ MotionControl(moving, aiming, justmoved)
 					turn rleg to x-axis <15.> speed <60.>;
 					turn rboot to x-axis <-30.> speed <90.>;
 					move pelvis to y-axis [2.] speed [4.];
-					turn torso to x-axis <15.> speed <30.>;
 					turn torsotwist to z-axis <5.> speed <4.>;
 					turn pelvis to z-axis <-10.> speed <8.>;
 					move pelvis to x-axis [1.] speed [2.];
@@ -287,13 +283,21 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = gun_1;
+	if (gun_1 == 0)
+	{
+		piecenum = lfire;
+	}
+	if (gun_1 == 1)
+	{
+		piecenum = rfire;
+	}
 }
 
 AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
+	bAiming = 1;
 	turn torso to y-axis heading speed <160.>;
 	turn lshoulder to x-axis <-20.> - pitch speed <90.>;
 	turn rshoulder to x-axis <-20.> - pitch speed <90.>;
@@ -303,8 +307,7 @@ AimPrimary(heading, pitch)
 	wait-for-turn lshoulder around x-axis;
 	wait-for-turn rshoulder around x-axis;
 	wait-for-turn larm around x-axis;
-	wait-for-turn rarm around x-axis;
-	bAiming = 1;
+	wait-for-turn rarm around x-axis;	
 	start-script RestoreAfterDelay();
 	return (1);
 }
