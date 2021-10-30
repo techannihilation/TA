@@ -104,6 +104,7 @@ return {
 			[27] = "gok_tl",
 			[28] = "gok_fllt",
 			[29] = "gok_frl",
+			[29] = "halloween",
 		},
 		customparams = {
 			buildpic = "gok_com.dds",

@@ -1,0 +1,26 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+
+Create()
+{
+
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -1,8 +1,15 @@
 4.04 => 4.05
-2021-09-29
+2021-09-31
+
+Halloween Party !
+
 Improvment :
   - Add Initial Queue Gadget. Thank to Silver.
   - Add Rapid Tactical Nuke T2 for Gok
+  - Add T2 Sea Gok
+
+Fix :
+ - Immortal Gok Script
 
 4.03 => 4.04
 2021-09-23
