@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Anemone",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "ARMDL",
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -163,6 +163,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "COAX_DEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},

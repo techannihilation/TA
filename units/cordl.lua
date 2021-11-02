@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jellyfish",
 		noautofire = false,
-		
+
 		objectname = "CORDL",
 		radaremitheight = 45,
 		seismicsignature = 0,
@@ -164,6 +164,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "COAX_DEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},

@@ -292,12 +292,14 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "TINY SMALL MEDIUM",
 				def = "CANNON_TYRNT",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "TINY SMALL MEDIUM",
 				def = "CANNON_TYRNT",
 				maindir = "0 0 -1",
 				maxangledif = 270,
@@ -328,12 +330,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[7] = {
+				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
 			[8] = {
+				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				maindir = "-1 0 0",
 				maxangledif = 220,

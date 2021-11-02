@@ -153,6 +153,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "gok_TORPEDO",
 				maindir = "0 0 1",
 				maxangledif = 90,

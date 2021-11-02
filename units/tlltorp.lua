@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 346,
 		builder = false,
 		buildpic = "tlltorp.dds",
-		buildtime = 4204,
+		buildtime = 4000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL UNDERWATER SURFACE",
@@ -25,11 +25,10 @@ return {
 		idletime = 1800,
 		losemitheight = 33,
 		mass = 365,
-		maxdamage = 1990,
+		maxdamage = 1190,
 		minwaterdepth = 12,
 		name = "Torpedo Launcher",
 		noautofire = false,
-		
 		noshadow = 1,
 		objectname = "TLLtorp",
 		radaremitheight = 32,
@@ -143,6 +142,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "COAX_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

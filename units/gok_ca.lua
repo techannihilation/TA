@@ -69,7 +69,6 @@ return {
 			--[13] = "",
 			[14] = "gok_ap",
 			[15] = "gok_aap",
-			--[16] = "gok_plat",
 			[17] = "gok_hp",
 			[18] = "gok_nanotc",
 			[19] = "gok_eyes",
@@ -85,6 +84,7 @@ return {
 			[29] = "gok_rl",
 			[30] = "gok_cir",
 			[31] = "gok_sy",
+			[32] = "gok_plat",
 		},
 		customparams = {
 			buildpic = "gok_ca.dds",

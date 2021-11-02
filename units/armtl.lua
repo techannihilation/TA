@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 322,
 		builder = false,
 		buildpic = "armtl.dds",
-		buildtime = 4120,
+		buildtime = 4000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL UNDERWATER SURFACE",
@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		mass = 322,
-		maxdamage = 1890,
+		maxdamage = 1290,
 		maxvelocity = 0,
 		minwaterdepth = 12,
 		name = "Harpoon",
@@ -136,6 +136,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "COAX_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

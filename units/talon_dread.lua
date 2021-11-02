@@ -228,6 +228,7 @@ return {
 			--	def = "ROCKET_MCV",
 			--},
 			[4] = {
+				badtargetcategory = "SURFACE",				
 				def = "adv_torpedo",
 				maindir = "1 0 0",
 				maxangledif = 220,
@@ -235,6 +236,7 @@ return {
 
 			},
 			[5] = {
+				badtargetcategory = "SURFACE",
 				def = "adv_torpedo",
 				maindir = "-1 0 0",
 				maxangledif = 220,

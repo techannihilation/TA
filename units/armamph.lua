@@ -2,7 +2,7 @@ return {
 	armamph = {
 		acceleration = 0.12,
 		brakerate = 0.564,
-		buildcostenergy = 2607,
+		buildcostenergy = 3607,
 		buildcostmetal = 263,
 		builder = false,
 		buildpic = "armamph.dds",
@@ -38,7 +38,6 @@ return {
 		movementclass = "HOVER3",
 		name = "Pelican",
 		noautofire = false,
-
 		objectname = "ARMAMPH",
 		radaremitheight = 27,
 		seismicsignature = 0,

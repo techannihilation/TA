@@ -1,6 +1,12 @@
 4.04 => 4.05
 2021-11-02
 
+Balance :
+  - Add Priority for UNDERWATER Units for all Sub, Depthcharge & Torpedo launcher
+  - Decrease HP for all torpedo T1 (1800=>~1250)
+  - Increase HP for all torpedo T1 (1500=>~2500)
+  - Amphibious T2 TLL Kbot become a swimming Kbot. remplace missile by lightning
+
 Improvment :
   - Add Initial Queue Gadget. Thank to Silver.
   - Add Rapid Tactical Nuke T2 for Gok
@@ -9,6 +15,7 @@ Improvment :
 Fix :
  - Immortal Gok Script
  - Armorbital ammuition to 50
+ - Gok Air Lab
 
 4.03 => 4.04
 2021-09-23

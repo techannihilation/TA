@@ -3,7 +3,6 @@ return {
 		acceleration = 0.015,
 		activatewhenbuilt = true,
 		amphibious = 1,
-		
 		brakerate = 0.081,
 		buildcostenergy = 1903,
 		buildcostmetal = 651,
@@ -34,7 +33,6 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Leatherback",
-		
 		objectname = "tllleatherback",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -150,6 +148,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "torp",
 				onlytargetcategory = "UNDERWATER",
 			},

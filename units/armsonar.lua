@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "28 41 28",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Locates Water Units",
+		description = "Tech Level 1",
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 2,
 		footprintz = 2,

@@ -199,6 +199,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},

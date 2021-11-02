@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 337,
 		builder = false,
 		buildpic = "cortl.dds",
-		buildtime = 4233,
+		buildtime = 4000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL UNDERWATER SURFACE",
@@ -26,13 +26,12 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		mass = 337,
-		maxdamage = 1977,
+		maxdamage = 1175,
 		maxslope = 10,
 		maxvelocity = 0,
 		minwaterdepth = 12,
 		name = "Urchin",
 		noautofire = false,
-		
 		objectname = "CORTL",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -100,7 +99,7 @@ return {
 			},
 		},
 		weapondefs = {
-			coax_torpedo = {
+			torpedo = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -137,7 +136,8 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "COAX_TORPEDO",
+				badtargetcategory = "SURFACE",
+				def = "TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

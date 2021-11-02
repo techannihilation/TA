@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 5,
 		name = "Fish Hook",
 		noautofire = false,
-		
+
 		objectname = "TLLshoretorp",
 		radaremitheight = 105,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -151,7 +151,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "SURFACE",
 				def = "TLL_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

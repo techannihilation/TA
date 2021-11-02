@@ -148,6 +148,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "TALONSUB_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 60,

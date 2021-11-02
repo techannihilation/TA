@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Undertow",
 		noautofire = false,
-		
+
 		objectname = "talon_ash",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -146,6 +146,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "ARMHEAVYDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},

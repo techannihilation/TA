@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Petrel",
 		noautofire = false,
-		
+
 		objectname = "TLLASSHIP",
 		radardistance = 0,
 		radaremitheight = 30,
@@ -158,6 +158,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "TLL_ASEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 1340,
 		builder = false,
 		buildpic = "talon_atl.dds",
-		buildtime = 9500,
+		buildtime = 12000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL UNDERWATER",
@@ -24,7 +24,7 @@ return {
 		losemitheight = 27,
 		mass = 1000,
 		maxangledif1 = 1,
-		maxdamage = 1290,
+		maxdamage = 2490,
 		maxslope = 10,
 		maxvelocity = 0,
 		minwaterdepth = 25,
@@ -130,7 +130,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "SURFACE",
 				def = "talon_atl_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

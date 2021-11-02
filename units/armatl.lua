@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 1042,
 		builder = false,
 		buildpic = "armatl.dds",
-		buildtime = 10000,
+		buildtime = 12000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL UNDERWATER SURFACE",
@@ -24,7 +24,7 @@ return {
 		idletime = 1800,
 		losemitheight = 27,
 		mass = 1042,
-		maxdamage = 1520,
+		maxdamage = 2520,
 		maxvelocity = 0,
 		minwaterdepth = 25,
 		name = "Moray",
@@ -133,7 +133,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "SURFACE",
 				def = "ARMATL_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

@@ -12,7 +12,7 @@ return {
 		canattack = false,
 		category = "ALL UNDERWATER",
 		corpse = "dead",
-		description = "Locates Water Units",
+		description = "Tech Level 1",
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 2,
 		footprintz = 2,

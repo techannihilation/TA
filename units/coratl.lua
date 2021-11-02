@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 1151,
 		builder = false,
 		buildpic = "coratl.dds",
-		buildtime = 10500,
+		buildtime = 12000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL UNDERWATER SURFACE",
@@ -24,7 +24,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		mass = 1151,
-		maxdamage = 1560,
+		maxdamage = 2560,
 		maxvelocity = 0,
 		minwaterdepth = 25,
 		name = "Lamprey",
@@ -134,7 +134,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "SURFACE",
 				def = "CORATL_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

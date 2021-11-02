@@ -196,7 +196,7 @@ return {
 					subs = 5,
 				},
 			},
-			coramph = {
+			torpedo = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -235,7 +235,8 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "CORAMPH",
+				badtargetcategory = "SURFACE",
+				def = "TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},
 			[3] = {

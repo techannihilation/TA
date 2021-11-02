@@ -183,30 +183,35 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "SUB_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 30,
 				onlytargetcategory = "UNDERWATER",
 			},
 			[2] = {
+				badtargetcategory = "SURFACE",
 				def = "TORPEDO",
 				maindir = "-1 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "UNDERWATER",
 			},
 			[3] = {
+				badtargetcategory = "SURFACE",
 				def = "TORPEDO",
 				maindir = "-1 0 -0.25",
 				maxangledif = 230,
 				onlytargetcategory = "UNDERWATER",
 			},
 			[4] = {
+				badtargetcategory = "SURFACE",
 				def = "TORPEDO",
 				maindir = "1 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "UNDERWATER",
 			},
 			[5] = {
+				badtargetcategory = "SURFACE",
 				def = "TORPEDO",
 				maindir = "1 0 -0.25",
 				maxangledif = 230,

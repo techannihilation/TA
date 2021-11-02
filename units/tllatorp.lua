@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 1297,
 		builder = false,
 		buildpic = "tllatorp.dds",
-		buildtime = 11000,
+		buildtime = 12000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
@@ -22,7 +22,7 @@ return {
 		idletime = 1800,
 		losemitheight = 22,
 		mass = 1297,
-		maxdamage = 1610,
+		maxdamage = 2710,
 		minwaterdepth = 5,
 		name = "Advanced Torpedo Launcher",
 		noautofire = false,
@@ -134,7 +134,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "SURFACE",
 				def = "TLL_ADVEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

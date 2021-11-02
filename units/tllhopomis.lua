@@ -165,6 +165,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "TLL_ASEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

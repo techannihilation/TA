@@ -309,6 +309,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "TINY SMALL",
 				def = "CANNON_TYRNT",
 				onlytargetcategory = "SURFACE",
 			},
@@ -329,12 +330,14 @@ return {
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[5] = {
+				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
 			[6] = {
+				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				maindir = "1 0 0",
 				maxangledif = 220,

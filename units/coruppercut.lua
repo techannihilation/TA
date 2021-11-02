@@ -187,12 +187,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "SURFACE",
 				def = "SUB_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 45,
 				onlytargetcategory = "UNDERWATER",
 			},
 			[3] = {
+				badtargetcategory = "SURFACE",
 				def = "SUB_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 45,

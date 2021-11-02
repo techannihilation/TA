@@ -149,6 +149,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				onlytargetcategory = "SUB",
 			},

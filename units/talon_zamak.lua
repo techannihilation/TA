@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Zamak",
 		noautofire = false,
-		
+
 		objectname = "talon_zamak",
 		sonardistance = 600,
 		radaremitheight = 56,
@@ -193,6 +193,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			}

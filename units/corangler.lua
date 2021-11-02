@@ -120,7 +120,7 @@ return {
 			},
 		},
 		weapondefs = {
-			coreheavydepthcharge = {
+			depthcharge = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				burnblow = true,
@@ -151,7 +151,8 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "COREHEAVYDEPTHCHARGE",
+				badtargetcategory = "SURFACE",
+				def = "DEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},
 		},

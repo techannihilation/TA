@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 281,
 		builder = false,
 		buildpic = "tlltorpp.dds",
-		buildtime = 15000,
+		buildtime = 4000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
@@ -126,6 +126,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "ARMAIR_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

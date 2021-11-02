@@ -130,6 +130,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SURFACE",
 				def = "TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

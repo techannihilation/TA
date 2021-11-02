@@ -283,12 +283,14 @@ return {
 				def = "AMD_ROCKET2",
 			},
 			[7] = {
+				badtargetcategory = "SURFACE",
 				def = "ADV_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 				maindir = "1 0 0",
 				maxangledif = 220,
 			},
 			[8] = {
+				badtargetcategory = "SURFACE",
 				def = "ADV_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 				maindir = "-1 0 0",

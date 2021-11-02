@@ -37,7 +37,6 @@ return {
 		movementclass = "AKBOT2",
 		name = "Gimp",
 		noautofire = false,
-
 		objectname = "CORAMPH",
 		radardistance = 300,
 		radaremitheight = 26,
@@ -106,7 +105,7 @@ return {
 			},
 		},
 		weapondefs = {
-			coramph_weapon1 = {
+			torpedo = {
 				areaofeffect = 16,
 				avoidfeature = false,
 				avoidfriendly = false,
@@ -138,7 +137,7 @@ return {
 					default = 300,
 				},
 			},
-			coramph_weapon2 = {
+			core_beam = {
 				areaofeffect = 12,
 				beamtime = 0.15,
 				corethickness = 0.2,
@@ -181,11 +180,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "CORAMPH_WEAPON1",
+				badtargetcategory = "SURFACE",
+				def = "TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},
 			[2] = {
-				def = "CORAMPH_WEAPON2",
+				def = "CORE_BEAM",
 				onlytargetcategory = "SURFACE",
 			},
 		},

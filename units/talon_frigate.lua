@@ -188,6 +188,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "SURFACE",				
 				def = "TALON_HEAVY_TORPEDO",
 				maindir = "0 0 1",
 				maxangledif = 90,

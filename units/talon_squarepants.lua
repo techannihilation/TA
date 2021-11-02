@@ -191,6 +191,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "SURFACE",
 				def = "SQUAREPANTS_TORPEDO",
 				onlytargetcategory = "UNDERWATER",
 			},

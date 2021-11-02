@@ -195,10 +195,12 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "SURFACE",
 				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},
 			[4] = {
+				badtargetcategory = "SURFACE",
 				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},

@@ -290,10 +290,12 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "OLY_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "OLY_GUN",
 				maindir = "0 0 1",
 				maxangledif = 270,
@@ -330,10 +332,12 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[8] = {
+				badtargetcategory = "SURFACE",
 				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},
 			[9] = {
+				badtargetcategory = "SURFACE",
 				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},
