@@ -1,8 +1,6 @@
 return {
 	armap = {
-		acceleration = 0,
 		activatewhenbuilt = false,
-		brakerate = 0,
 		buildcostenergy = 2052,
 		buildcostmetal = 907,
 		builder = true,

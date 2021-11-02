@@ -71,7 +71,7 @@ return {
 			[14] = "gok_asp",
 			[15] = "gok_nanotc1",
 			--[16] = "gok_targ",
-			--[17] = "gok_sd",
+			[17] = "gok_sd",
 			[18] = "gok_gate",
 			[19] = "gok_eveningstar",
 			--[20] = "",
