@@ -104,7 +104,6 @@ return {
 			[26] = "armtl",
 			[27] = "armfllt",
 			[28] = "armfrt",
-			[29] = "halloween",
 		},
 		customparams = {
 			buildpic = "armcom.dds",
