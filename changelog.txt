@@ -1,7 +1,5 @@
 4.04 => 4.05
-2021-09-31
-
-Halloween Party !
+2021-11-02
 
 Improvment :
   - Add Initial Queue Gadget. Thank to Silver.
@@ -10,6 +8,7 @@ Improvment :
 
 Fix :
  - Immortal Gok Script
+ - Armorbital ammuition to 50
 
 4.03 => 4.04
 2021-09-23

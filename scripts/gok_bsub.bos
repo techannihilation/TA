@@ -1,0 +1,129 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, engine1, engine2, engine3, wake1, wake2, wake3,
+       turret, pitchturret, barrel1, barrel2, fire, gem;
+
+static-var  Firing;
+
+StartMoving(Wave)
+{
+	set-signal-mask 256;
+	Wave = 1;
+	
+	while( TRUE )
+	{
+		emit-sfx 3 from wake1;
+		
+		if( Wave )
+		{
+			emit-sfx 3 from wake2;
+		}
+		if( !Wave )
+		{
+			emit-sfx 3 from wake3;
+		}
+		Wave = !Wave;
+		sleep 250;
+	}
+}
+
+StopMoving()
+{
+	signal 256;
+}
+
+Create()
+{
+	Firing = 0;
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = pitchturret;
+}
+
+QueryPrimary(PieceNum)
+{
+	PieceNum = fire;
+}
+
+AimPrimary(Heading, Pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	
+	while( Firing )
+	{
+		sleep 100;
+	}
+	
+	move turret to y-axis [2.00] speed [8.00];
+	turn turret to y-axis Heading speed <160.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <60.00>;
+	
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return(1);
+	}
+
+FirePrimary()
+{
+	Firing = 1;	
+	move pitchturret to z-axis [-1.00] speed [10.00];
+	move barrel1 to z-axis [-0.50] speed [5.00];
+	move barrel1 to x-axis [-1.00] speed [10.00];
+	move barrel2 to z-axis [-0.50] speed [5.00];
+	move barrel2 to x-axis [1.00] speed [10.00];
+	sleep 100;
+	
+	move pitchturret to z-axis [0.00] speed [0.75];
+	move barrel1 to z-axis [0.00] speed [0.75];
+	move barrel1 to x-axis [0.00] speed [1.50];
+	move barrel2 to z-axis [0.00] speed [0.75];
+	move barrel2 to x-axis [0.00] speed [1.50];
+	sleep 300;
+	Firing = 0;	
+	sleep 1000;
+}
+
+AimFromSecondary(PieceNum)
+{
+	PieceNum = base;
+}
+
+QuerySecondary(PieceNum)
+{
+	PieceNum = base;
+}
+
+AimSecondary(Heading, Pitch)
+{
+	return(0);
+}
+
+Killed(Severity, CorpseType)
+{
+	if( Severity <= 50 )
+	{
+		CorpseType = 1;
+		explode hull type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+	}
+	if( Severity <= 50 )
+	{
+		CorpseType = 2;
+		return (CorpseType);
+	}
+	CorpseType = 3;
+	return (CorpseType);
+	
+}

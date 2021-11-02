@@ -67,9 +67,9 @@ return {
 			[10] = "gok_fblackdawn",
 			--[11] = "gok_fsprinkler",
 			[12] = "gok_frl",
-			--[13] = "gok_kernel",
+			[13] = "gok_fflak",
 			[14] = "gok_csub",
-			--[15] = "gok_jellyfish",
+			[15] = "gok_drac",
 			[16] = "gok_crus",
 		},
 		customparams = {

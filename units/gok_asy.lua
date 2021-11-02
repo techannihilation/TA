@@ -53,7 +53,7 @@ return {
 			[2] = "gok_engineers",
 			--[3] = "gok_anonymous",
 			[4] = "gok_aas",
-			--[5] = "gok_coral",
+			[5] = "gok_drac",
 			[6] = "gok_crus",
 			[7] = "gok_mship",
 			[8] = "gok_carry",

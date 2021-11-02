@@ -1,8 +1,5 @@
 return {
 	talon_armistice = {
-		acceleration = 0,
-
-		brakerate = 0,
 		buildangle = 4096,
 		buildcostenergy = 36200,
 		buildcostmetal = 1455,
