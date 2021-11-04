@@ -101,6 +101,9 @@ return {
 	"talon_eca",
 	"talon_medic",
 	"gok_ca",
+	"gok_aca",
+	"gok_eca",
+	"gok_engineera",
 
 	--Gunships
 	"armbrawl",
@@ -123,6 +126,7 @@ return {
 	"talon_ceddral",
 	"gok_specter",
 	"gok_nosferatu",
+	"gok_revenant",
 
 	-- Scout planes
 	"armawac",

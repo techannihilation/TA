@@ -25,7 +25,7 @@ return {
 		idletime = 1800,
 		losemitheight = 64,
 		mass = 9018,
-		maxdamage = 3035,
+		maxdamage = 16930,
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Slesh",

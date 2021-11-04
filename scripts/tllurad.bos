@@ -12,11 +12,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	
-	turn pitch1 to y-axis <0.000000> now;
-	turn pitch2 to y-axis <120.000000> now;
-	turn pitch3 to y-axis <240.000000> now;
-	
+		
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -40,6 +36,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
+	turn pitch1 to y-axis <0.000000> now;
+	turn pitch2 to y-axis <120.000000> now;
+	turn pitch3 to y-axis <240.000000> now;
 	start-script SmokeUnit();
 }
 

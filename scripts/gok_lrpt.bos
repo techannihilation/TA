@@ -47,6 +47,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
+	hide fire;
 	turn bar2 to z-axis <-120.> now;
 	turn bar3 to z-axis <120.> now;
 	start-script SmokeUnit();	

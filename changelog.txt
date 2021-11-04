@@ -1,5 +1,5 @@
 4.04 => 4.05
-2021-11-02
+2021-11-05
 
 Balance :
   - Add Priority for UNDERWATER Units for all Sub, Depthcharge & Torpedo launcher
@@ -16,6 +16,8 @@ Fix :
  - Immortal Gok Script
  - Armorbital ammuition to 50
  - Gok Air Lab
+ - Armor for some Air Gok Units
+ - Armjugg Walk function COB (division by 0)
 
 4.03 => 4.04
 2021-09-23

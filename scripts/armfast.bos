@@ -225,16 +225,19 @@ walk()
 		//turn lhand to y-axis <-48.516484> speed <4.258242> * bSpeed / <0.549451>;
 		sleep 4000 / bSpeed;
 	}
-	move pelvis to y-axis [-0.159998] speed [0.477106] * bSpeed / [0.000610];
-	turn torso to y-axis <-7.027473> speed <12.516484> * bSpeed / <0.549451>;
-	turn rthigh to x-axis <-29.527473> speed <142.604396> * bSpeed / <0.549451>;
-	turn lthigh to x-axis <16.170330> speed <46.071429> * bSpeed / <0.549451>;
-	turn lleg to x-axis <68.560440> speed <171.967033> * bSpeed / <0.549451>;
-	turn rleg to x-axis <41.489011> speed <29.225275> * bSpeed / <0.549451>;
-	turn rfoot to x-axis <-17.571429> speed <125.763736> * bSpeed / <0.549451>;
-	turn ruparm to x-axis <23.538462> speed <21.098901> * bSpeed / <0.549451>;
-	turn luparm to x-axis <-21.093407> speed <54.521978> * bSpeed / <0.549451>;
-	turn lloarm to x-axis <-101.604396> speed <8.384615> * bSpeed / <0.549451>;
+	if( bMoving )
+	{
+		move pelvis to y-axis [-0.159998] speed [0.477106] * bSpeed / [0.000610];
+		turn torso to y-axis <-7.027473> speed <12.516484> * bSpeed / <0.549451>;
+		turn rthigh to x-axis <-29.527473> speed <142.604396> * bSpeed / <0.549451>;
+		turn lthigh to x-axis <16.170330> speed <46.071429> * bSpeed / <0.549451>;
+		turn lleg to x-axis <68.560440> speed <171.967033> * bSpeed / <0.549451>;
+		turn rleg to x-axis <41.489011> speed <29.225275> * bSpeed / <0.549451>;
+		turn rfoot to x-axis <-17.571429> speed <125.763736> * bSpeed / <0.549451>;
+		turn ruparm to x-axis <23.538462> speed <21.098901> * bSpeed / <0.549451>;
+		turn luparm to x-axis <-21.093407> speed <54.521978> * bSpeed / <0.549451>;
+		turn lloarm to x-axis <-101.604396> speed <8.384615> * bSpeed / <0.549451>;
+	}
 	//turn lhand to y-axis <-48.170330> speed <4.126374> * bSpeed / <0.549451>;
 	sleep 5000 / bSpeed;
 }
