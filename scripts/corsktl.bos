@@ -61,30 +61,6 @@ StopMoving()
 	sleep 150;
 }
 
-QueryWeapon1(piecenum)
-{
-	piecenum = base;
-}
-
-AimFromWeapon1(piecenum)
-{
-	piecenum = base;
-}
-
-QueryWeapon2(piecenum)
-{
-	piecenum = base;
-}
-
-AimFromWeapon2(piecenum)
-{
-	piecenum = base;
-}
-
-FireWeapon2()
-{
-}
-
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -105,17 +81,4 @@ Killed(severity, corpsetype)
 	explode Tail type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 	explode Hump type NOHEATCLOUD | FALL | EXPLODE_ON_HIT;
 	return (corpsetype);
-}
-
-Go()
-{
-}
-
-Stop()
-{
-}
-
-FireWeapon1()
-{
-	emit-sfx 4096 + 1 from base;
 }

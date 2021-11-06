@@ -55,7 +55,7 @@ return {
 			[3] = "armsr71",
 			[4] = "armwolf",
 			[5] = "armpers",
-			[6] = "armor",
+			[6] = "armmuat",
 			[7] = "armorion",
 			[8] = "armcyclone",
 		},

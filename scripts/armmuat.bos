@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, link, arm1, arm2, arm3, jet1, jet2, jet3,
-       jet4, flare1, flare2, gun, arm4;
+piece  base, body, link, wing1, wing2, wing3, jet1, jet2, jet3,
+       jet4, wing4, turret, launcher, misA, misB;
 
 static-var  Static_Var_1, unitviewer, statechg_DesiredState, statechg_StateChanging, gun_1;
 
@@ -28,10 +28,10 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move arm1 to x-axis [3.000000] speed [15.000000];
-		move arm2 to x-axis [-3.000000] speed [15.000000];
-		move arm3 to x-axis [2.000000] speed [10.000000];
-		move arm4 to x-axis [-2.000000] speed [10.000000];
+		move wing1 to x-axis [-3.000000] speed [15.000000];
+		move wing2 to x-axis [3.000000] speed [15.000000];
+		move wing3 to x-axis [-2.000000] speed [10.000000];
+		move wing4 to x-axis [2.000000] speed [10.000000];
 		sleep 998;
 	}
 	sleep 44;
@@ -41,10 +41,10 @@ deactivatescr()
 {
 	if( TRUE )
 	{
-		move arm1 to x-axis [0.000000] speed [3.000000];
-		move arm2 to x-axis [0.000000] speed [3.000000];
-		move arm3 to x-axis [0.000000] speed [2.000000];
-		move arm4 to x-axis [0.000000] speed [2.000000];
+		move wing1 to x-axis [0.000000] speed [3.000000];
+		move wing2 to x-axis [0.000000] speed [3.000000];
+		move wing3 to x-axis [0.000000] speed [2.000000];
+		move wing4 to x-axis [0.000000] speed [2.000000];
 		sleep 998;
 	}
 	sleep 44;
@@ -86,8 +86,8 @@ InitState()
 RestoreAfterDelay()
 {
 	sleep 3000;
-	turn gun to y-axis <0.000000> speed <90.016484>;
-	turn gun to x-axis <0.000000> speed <50.005495>;
+	turn turret to y-axis <0.000000> speed <90.0>;
+	turn launcher to x-axis <0.000000> speed <50.0>;
 }
 
 RequestState(requestedstate, currentstate)
@@ -119,49 +119,48 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	Static_Var_1 = 0;
-	gun_1 = flare1;
+	gun_1 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	hide flare1;
-	hide flare2;
 }
 
-QueryPrimary(piecenum)
+AimWeapon1(heading, pitch)
 {
-	piecenum = gun_1;
-}
-
-FirePrimary()
-{
-	gun_1 = !gun_1;
-	if( gun_1 == 0 )
-	{
-		show flare1;
-		sleep 150;
-		hide flare1;
-		return (0);
-	}
-	if( gun_1 == 1 )
-	{
-		show flare2;
-		sleep 150;
-		hide flare2;
-		return (0);
-	}
-}
-
-AimPrimary(heading, pitch)
-{
-	turn gun to y-axis heading speed <390.093407>;
-	wait-for-turn gun around y-axis;
-	wait-for-turn gun around x-axis;
+	signal 6;
+	set-signal-mask 6;
+	turn turret to y-axis heading speed <250.000000>;
+	turn launcher to x-axis <0.000000> - pitch speed <150.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn launcher around y-axis;	
 	start-script RestoreAfterDelay();
 	return (1);
 }
+	
 
-AimFromPrimary(piecenum)
+AimFromWeapon1(piecenum)
 {
-	piecenum = gun;
+	piecenum = turret;
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = misa;
+	}
+	if( gun_1 == 0 )
+	{
+		piecenum = misb;
+	}
+}
+
+FireWeapon1(Func_Var_1)
+{
+	++gun_1;		
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
 }
 
 Demo()
@@ -176,7 +175,7 @@ SweetSpot(piecenum)
 
 QueryTransport(Func_Var_1)
 {
-	Func_Var_1 = 1;
+	Func_Var_1 = link;
 }
 
 BeginTransport(Func_Var_1)
@@ -225,50 +224,37 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arm1 type NOHEATCLOUD;
-		explode arm2 type NOHEATCLOUD;
-		explode arm3 type NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode wing1 type NOHEATCLOUD;
+		explode wing2 type NOHEATCLOUD;
+		explode wing3 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
 		explode jet1 type NOHEATCLOUD;
 		explode jet2 type NOHEATCLOUD;
 		explode jet3 type NOHEATCLOUD;
-		explode link type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arm1 type NOHEATCLOUD;
-		explode arm2 type NOHEATCLOUD;
-		explode arm3 type NOHEATCLOUD | SHATTER;
-		explode base type NOHEATCLOUD;
+		explode wing1 type NOHEATCLOUD;
+		explode wing2 type NOHEATCLOUD;
+		explode wing3 type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD;
 		explode jet1 type NOHEATCLOUD | FALL;
 		explode jet2 type NOHEATCLOUD | FALL;
 		explode jet3 type NOHEATCLOUD | FALL;
-		explode link type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode arm1 type NOHEATCLOUD;
-		explode arm2 type NOHEATCLOUD;
-		explode arm3 type NOHEATCLOUD | SHATTER;
-		explode base type NOHEATCLOUD;
-		explode jet1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode jet2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode jet3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arm1 type NOHEATCLOUD;
-	explode arm2 type NOHEATCLOUD;
-	explode arm3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode base type NOHEATCLOUD;
+	explode wing1 type NOHEATCLOUD;
+	explode wing2 type NOHEATCLOUD;
+	explode wing3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD;
 	explode jet1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode jet2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode jet3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode link type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

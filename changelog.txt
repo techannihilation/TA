@@ -1,16 +1,18 @@
 4.04 => 4.05
-2021-11-05
+2021-11-07
 
 Balance :
   - Add Priority for UNDERWATER Units for all Sub, Depthcharge & Torpedo launcher
   - Decrease HP for all torpedo T1 (1800=>~1250)
   - Increase HP for all torpedo T1 (1500=>~2500)
   - Amphibious T2 TLL Kbot become a swimming Kbot. remplace missile by lightning
+  - Satan : Boost speed 1.5=>1.6. decrease Metalcost 21K=>18K
 
 Improvment :
   - Add Initial Queue Gadget. Thank to Silver.
   - Add Rapid Tactical Nuke T2 for Gok
   - Add T2 Sea Gok
+  -  T3 Arm Air Transport : Change Model. Add Missile AA turret.
 
 Fix :
  - Immortal Gok Script

@@ -34,7 +34,7 @@ return {
 		"corvalk",
 		"tllrobber",
 		"tlltplane",
-		"armor",
+		"armmuat",
 		"tllbtrans",
 		"cormuat",
 		"talon_wyvern",
@@ -438,6 +438,7 @@ return {
 		"coretnt",
 		"talon_herison",
 		"talon_sphere",
+		"gok_blackheart",
 	},
 	nanos = {
 		"armnanotc",

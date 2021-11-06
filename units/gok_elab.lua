@@ -58,11 +58,12 @@ return {
 		yardmap = "ccccoooocccc ccccoooocccc ccccoooocccc cccccccccccc cccccccccccc cccccccccccc cccccccccccc cccccccccccc cccccccccccc oooccccccooo ooccccccccoo occcccccccco",
 		buildoptions = {
 			[1] = "gok_ech",
-			[2] = "gok_hellspawn",
-			[3] = "gok_jocond",
-			[4] = "gok_ifrit",
-			[5] = "gok_satan",
-			[6] = "gok_everchosen",
+			[2] = "gok_blackheart",
+			[3] = "gok_hellspawn",
+			[4] = "gok_jocond",
+			[5] = "gok_ifrit",
+			[6] = "gok_satan",
+			[7] = "gok_everchosen",
 		},
 		customparams = {
 			buildpic = "gok_elab.dds",

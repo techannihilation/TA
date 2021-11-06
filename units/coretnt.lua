@@ -22,7 +22,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		kamikaze = true,
-		kamikazedistance = 42,
+		kamikazedistance = 40,
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 751,

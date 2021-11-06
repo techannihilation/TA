@@ -121,38 +121,9 @@ StopMoving()
 	bMoving = FALSE;
 }
 
-FireWeapon1()
-{
-	emit-sfx 4097 from leg1;
-}
-
-QueryWeapon1(piecenum)
-{
-	piecenum = base;
-}
-
-AimFromWeapon1(piecenum)
-{
-	piecenum = base;
-}
-
-QueryWeapon2(piecenum)
-{
-	piecenum = base;
-}
-
-AimFromWeapon2(piecenum)
-{
-	piecenum = base;
-}
-
-FireWeapon2()
-{
-}
-
 SweetSpot(piecenum)
 {
-	piecenum = leg1;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)

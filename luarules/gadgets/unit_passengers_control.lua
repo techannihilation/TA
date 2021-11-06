@@ -49,6 +49,7 @@ local crawlingBombs = {
   [UnitDefNames.tllcrawlb.id] = true,
   [UnitDefNames.coretnt.id] = true,
   [UnitDefNames.talon_herison.id] = true,
+  [UnitDefNames.gok_blackheart.id] = true,
 }
 
 local toKill = {}
