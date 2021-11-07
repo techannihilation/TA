@@ -359,6 +359,10 @@ return {
 		"talon_thanos",
 		--gok t3 Kbot
 		"gok_ifrit",
+		"gok_asmodee",
+		"gok_hellspawn",
+		"gok_jocond",
+		"gok_satan",
 
 		-- t4
 		"armraptor",

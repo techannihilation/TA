@@ -63,7 +63,8 @@ return {
 			[4] = "gok_jocond",
 			[5] = "gok_ifrit",
 			[6] = "gok_satan",
-			[7] = "gok_everchosen",
+			--[7] = "gok_everchosen",
+			[7] = "gok_asmodee",
 		},
 		customparams = {
 			buildpic = "gok_elab.dds",

@@ -28,7 +28,7 @@ return {
 		maxdamage = 16930,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Slesh",
+		name = "Dark Slesh",
 		noautofire = false,
 		objectname = "gok_slesh1",
 		radaremitheight = 64,

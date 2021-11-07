@@ -5,9 +5,9 @@
 
 piece  base, pelvis, lflegy, lfleg, lfleg2, lfleg3, lfleg4, lflegy2, rflegy, rfleg, rfleg2, rfleg3, rfleg4, rflegy2,
        lblegy, lbleg, lbleg2, lbleg3, lbleg4, lblegy2, rblegy, rbleg, rbleg2, rbleg3, rbleg4, rblegy2,
-       turret, turretrecoil, shield_pos, emit1, emit2, emit3, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15;
+       turret, neck, sleeves, barrel1, barrel2, flare1, flare2;
 
-static-var  bMoving, bAiming, shieldonoff, gun_1;
+static-var  bMoving, bAiming, gun_1;
 
 // Signal definitions
 #define SIG_AIM_1				2
@@ -247,20 +247,6 @@ MotionControl(Moving, Aiming, JustMoved)
 		}
 }
 
-lighting()
-{
-	While ( !bAiming )
-	{
-		spin emit3 around y-axis speed <10.>;
-		emit-sfx 1024 + 0 from q11;
-		emit-sfx 1024 + 0 from q12;
-		emit-sfx 1024 + 0 from q13;
-		emit-sfx 1024 + 0 from q14;
-		emit-sfx 1024 + 0 from q15;
-		sleep 2500;
-	}	
-}
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
@@ -269,7 +255,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 	
 	start-script MotionControl();
-	start-script lighting();
 	
 	while( TRUE )
 	{
@@ -292,92 +277,29 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-
-Shield()
-{
-	shieldonoff = !shieldonoff;
-}
-
 Create()
 {
-	hide q1;
-	hide q2;
-	hide q3;
-	hide q4;
-	hide q5;
-	hide q6;
-	hide q7;
-	hide q8;
-	hide q9;
-	hide q10;
-	hide q11;
-	hide q12;
-	hide q13;
-	hide q14;
-	hide q15;	
 	bMoving = 0;
 	bAiming = 0;
-	gun_1 = 1;
+	gun_1 = 0;
 	turn lflegy to y-axis <-45.00> now;
 	turn rflegy to y-axis <45.00> now;
 	turn lblegy to y-axis <45.00> now;
 	turn rblegy to y-axis <-45.00> now;
 	start-script Smokeunit();
-	shieldonoff = 1;
-}
-
-activatescr()
-{
-	if( TRUE )
-	{
-		move emit1 to y-axis [25.] speed [15.];
-		move emit2 to y-axis [25.] speed [15.];
-	}
-	if( TRUE )
-	{
-		spin emit1 around y-axis speed <500.>;
-		spin emit2 around y-axis speed <-150.>;
-		
-		emit-sfx 1024 + 0 from q1;
-		emit-sfx 1024 + 0 from q2;
-		emit-sfx 1024 + 0 from q3;
-		emit-sfx 1024 + 0 from q4;
-		emit-sfx 1024 + 0 from q5;
-		emit-sfx 1024 + 0 from q6;
-		emit-sfx 1024 + 0 from q7;
-		emit-sfx 1024 + 0 from q8;
-		emit-sfx 1024 + 0 from q9;
-		emit-sfx 1024 + 0 from q10;		
-	}
-	sleep 50;
-}
-
-deactivatescr()
-{
-	if( TRUE )
-	{
-		stop-spin emit1 around y-axis;
-		stop-spin emit2 around y-axis;
-	}
-	if( TRUE )
-	{
-		move emit1 to y-axis [0.] speed [100.];
-		move emit2 to y-axis [0.] speed [100.];
-	}
 }
 
 RestoreAfterDelay()
 {
-	sleep 6000;
+	sleep 4500;
 	bAiming = 0;
-	call-script deactivatescr();
 	turn turret to y-axis <0.> speed <25.000000>;
-	wait-for-turn turret around y-axis;	
+	turn sleeves to x-axis <0.> speed <25.000000>;
 }
 
 AimFromPrimary(PieceNum)
 {
-	PieceNum = turretrecoil;
+	PieceNum = sleeves;
 }
 
 AimPrimary(heading, Pitch)
@@ -385,313 +307,34 @@ AimPrimary(heading, Pitch)
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
 	bAiming = 1;
-	call-script activatescr();
 	turn turret to y-axis heading speed <50.000000>;
+	turn sleeves to x-axis <1.0> - pitch speed <50.000000>;
 	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
 	start-script RestoreAfterDelay();
 	return(1);
 }
 
 FirePrimary()
 {
-		emit-sfx 1024 + 0 from q2;
-		gun_1 = 2;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q3;
-		gun_1 = 3;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q4;
-		gun_1 = 4;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q5;
-		gun_1 = 5;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q6;
-		gun_1 = 6;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q7;
-		gun_1 = 7;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q8;
-		gun_1 = 8;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q9;
-		gun_1 = 9;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q10;
-		gun_1 = 10;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q1;
-		gun_1 = 1;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q2;
-		gun_1 = 2;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q3;
-		gun_1 = 3;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q4;
-		gun_1 = 4;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q5;
-		gun_1 = 5;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q6;
-		gun_1 = 6;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q7;
-		gun_1 = 7;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q8;
-		gun_1 = 8;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q9;
-		gun_1 = 9;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q10;
-		gun_1 = 10;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q1;
-		gun_1 = 1;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q2;
-		gun_1 = 2;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q3;
-		gun_1 = 3;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q4;
-		gun_1 = 4;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q5;
-		gun_1 = 5;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q6;
-		gun_1 = 6;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q7;
-		gun_1 = 7;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q8;
-		gun_1 = 8;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q9;
-		gun_1 = 9;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q10;
-		gun_1 = 10;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q1;
-		gun_1 = 1;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q2;
-		gun_1 = 2;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q3;
-		gun_1 = 3;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q4;
-		gun_1 = 4;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q5;
-		gun_1 = 5;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q6;
-		gun_1 = 6;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q7;
-		gun_1 = 7;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q8;
-		gun_1 = 8;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q9;
-		gun_1 = 9;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q10;
-		gun_1 = 10;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q1;
-		gun_1 = 1;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q2;
-		gun_1 = 2;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q3;
-		gun_1 = 3;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q4;
-		gun_1 = 4;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q5;
-		gun_1 = 5;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q6;
-		gun_1 = 6;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q7;
-		gun_1 = 7;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q8;
-		gun_1 = 8;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q9;
-		gun_1 = 9;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q10;
-		gun_1 = 10;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q1;
-		gun_1 = 1;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q2;
-		gun_1 = 2;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q3;
-		gun_1 = 3;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q4;
-		gun_1 = 4;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q5;
-		gun_1 = 5;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q6;
-		gun_1 = 6;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q7;
-		gun_1 = 7;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q8;
-		gun_1 = 8;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q9;
-		gun_1 = 9;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q10;
-		gun_1 = 10;
-		sleep 10;
-		
-		emit-sfx 1024 + 0 from q1;
-		gun_1 = 1;
-		sleep 10;
+	sleep 850;
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
 }
 
 QueryPrimary(PieceNum)
 {
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
 	if( gun_1 == 1 )
 	{
-		piecenum = q1;
+		piecenum = flare2;
 	}
-	if( gun_1 == 2 )
-	{
-		piecenum = q2;
-	}
-	if( gun_1 == 3 )
-	{
-		piecenum = q3;
-	}
-	if( gun_1 == 4 )
-	{
-		piecenum = q4;
-	}
-	if( gun_1 == 5 )
-	{
-		piecenum = q5;
-	}
-	if( gun_1 == 6 )
-	{
-		piecenum = q6;
-	}	
-	if( gun_1 == 7 )
-	{
-		piecenum = q7;
-	}
-	if( gun_1 == 8 )
-	{
-		piecenum = q8;
-	}
-	if( gun_1 == 9 )
-	{
-		piecenum = q9;
-	}
-	if( gun_1 == 10 )
-	{
-		piecenum = q10;
-	}
-}
-
-AimFromWeapon4(piecenum)
-{
-	piecenum = shield_pos;
-}
-
-AimWeapon4(heading, pitch)
-{
-	return (shieldonoff);
-}
-
-QueryWeapon4(piecenum)
-{
-	piecenum = shield_pos;
 }
 
 StartMoving()
@@ -715,22 +358,18 @@ Killed(severity, corpseType)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode pelvis type NOHEATCLOUD ;
+		explode pelvis type NOHEATCLOUD;
+		explode neck type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode pelvis type NOHEATCLOUD  | BITMAP1;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
 		explode pelvis type NOHEATCLOUD  | SHATTER;
+		explode neck type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-
+	explode pelvis type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode neck type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
 }
