@@ -121,8 +121,8 @@ AimTertiary(heading, pitch)
 {
 	signal 4;
 	set-signal-mask 4;
-	turn turret to y-axis heading speed <320.>;
-	turn sleeve to x-axis <0.> - pitch speed <320.>;
+	turn turret to y-axis heading speed <350.>;
+	turn sleeve to x-axis <0.> - pitch speed <350.>;
 	//turn turret2base to y-axis <0.> - heading speed <250.>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;

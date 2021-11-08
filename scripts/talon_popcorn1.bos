@@ -77,49 +77,49 @@ FirePrimary()
 	{
 		emit-sfx 1025 from flare1;
 		move barrel1 to z-axis [-3.] now;
-		sleep 80;
+		sleep 30;
 		move barrel1 to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 1 )
 	{
 		emit-sfx 1025 from flare2;
 		move barrel2 to z-axis [-3.] now;
-		sleep 80;
+		sleep 30;
 		move barrel2 to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 2 )
 	{
 		emit-sfx 1025 from flare3;
 		move barrel3 to z-axis [-3.] now;
-		sleep 80;
+		sleep 30;
 		move barrel3 to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 3 )
 	{
 		emit-sfx 1025 from flare4;
 		move barrel4 to z-axis [-3.] now;
-		sleep 80;
+		sleep 30;
 		move barrel4 to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 4 )
 	{
 		emit-sfx 1025 from flare5;
 		move barrel5 to z-axis [-3.] now;
-		sleep 80;
+		sleep 30;
 		move barrel5 to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 5 )
 	{
 		emit-sfx 1025 from flare6;
 		move barrel6 to z-axis [-3.] now;
-		sleep 80;
+		sleep 30;
 		move barrel6 to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 6 )
 	{
 		emit-sfx 1025 from flare7;
 		move barrel7 to z-axis [-3.] now;
-		sleep 80;
+		sleep 30;
 		move barrel7 to z-axis [0.] speed [5.];
 	}
 	++Static_Var_1;
