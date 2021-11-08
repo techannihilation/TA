@@ -94,7 +94,7 @@ local unitArray = {
   --antinukes
   "armscab",
   "armcarry",
-  "armucar",
+  -- "armucar",
 
   "cormabm",
   "corcarry",
