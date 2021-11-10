@@ -24,22 +24,22 @@ local airbaseDefIDs = {
     [UnitDefNames["armasp"].id] = 100 ^ 2, -- distance in elmos for snap onto pad
     [UnitDefNames["armcarry"].id] = 100 ^ 2,
     [UnitDefNames["armhcar"].id] = 100 ^ 2,
-    -- [UnitDefNames["armucar"].id] = 100 ^ 2,
+    --[UnitDefNames["armucar"].id] = 100 ^ 2,
     --Core
     [UnitDefNames["corasp"].id] = 100 ^ 2,
     [UnitDefNames["corcarry"].id] = 100 ^ 2,
     [UnitDefNames["corhcar"].id] = 100 ^ 2,
-    [UnitDefNames["corucar"].id] = 100 ^ 2,
+    --[UnitDefNames["corucar"].id] = 100 ^ 2,
     --The Lost Legacy
     [UnitDefNames["tllasp"].id] = 100 ^ 2,
     [UnitDefNames["tllcarry"].id] = 100 ^ 2,
     [UnitDefNames["tllhcar"].id] = 100 ^ 2,
-    [UnitDefNames["tllucar"].id] = 100 ^ 2,
+    --[UnitDefNames["tllucar"].id] = 100 ^ 2,
 	--Talon
     [UnitDefNames["talon_asp"].id] = 100 ^ 2,
     [UnitDefNames["talon_carry"].id] = 100 ^ 2,
     [UnitDefNames["talon_hcar"].id] = 100 ^ 2,
-    [UnitDefNames["talon_ucar"].id] = 100 ^ 2,
+    --[UnitDefNames["talon_ucar"].id] = 100 ^ 2,
 
     --Gok
       [UnitDefNames["gok_asp"].id] = 100 ^ 2,
