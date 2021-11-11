@@ -288,7 +288,7 @@ return {
 		"cormship1",
 		"tllucar",
 		"corucar",
-		"armucar",
+		-- "armucar",
 		"talon_ucar",
 	},
 
