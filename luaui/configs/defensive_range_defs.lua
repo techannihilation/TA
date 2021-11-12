@@ -62,7 +62,7 @@ modConfig["TA"]["unitList"] =
 								armamd2 = { weapons = { 3 } }, --antinuke
 								armmds = { weapons = { 3 } }, --Missile Defence System
 								armcarry = { weapons = { 1 } }, --antinuke
-								-- armucar = { weapons = { 1 } }, --antinuke
+								armucar = { weapons = { 1 } }, --antinuke
 								corucar = { weapons = { 1 } }, --antinuke
 
 								--Core

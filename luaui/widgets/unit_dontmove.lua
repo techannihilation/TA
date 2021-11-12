@@ -94,7 +94,7 @@ local unitArray = {
   --antinukes
   "armscab",
   "armcarry",
-  -- "armucar",
+  "armucar",
 
   "cormabm",
   "corcarry",
@@ -109,6 +109,7 @@ local unitArray = {
   "talon_ucar",
 
   "gok_carry",
+  "gok_eveningstar",
 }
 
 

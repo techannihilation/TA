@@ -82,7 +82,7 @@ local antiNukes = {
   [UnitDefNames["armamd1"].id] = true,
   [UnitDefNames["armamd2"].id] = true,
   [UnitDefNames["armcarry"].id] = true,
-  -- [UnitDefNames["armucar"].id] = true,
+  [UnitDefNames["armucar"].id] = true,
 --Core
   [UnitDefNames["cormabm"].id] = true,
   [UnitDefNames["corfmd"].id] = true,
@@ -109,7 +109,7 @@ local antiNukes = {
   [UnitDefNames["gok_antinuke1"].id] = true,
   [UnitDefNames["gok_antinuke2"].id] = true,
   [UnitDefNames["gok_carry"].id] = true,
-  --[UnitDefNames["gok_antinuke"].id] = true,
+  --[UnitDefNames[""].id] = true,
   [UnitDefNames["gok_morningstar"].id] = true,
 }
 

@@ -196,48 +196,27 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode body type BITMAPONLY | BITMAP1;
-		explode top type BITMAPONLY | BITMAP1;
-		explode beam type BITMAPONLY | BITMAP2;
-		explode peddle1 type BITMAPONLY | BITMAP3;
-		explode peddle2 type BITMAPONLY | BITMAP2;
-		explode peddle3 type BITMAPONLY | BITMAP3;
-		explode peddle4 type BITMAPONLY | BITMAP4;
-		explode peddle5 type BITMAPONLY | BITMAP3;
-		explode peddle6 type SHATTER | BITMAP2;
-		explode t1 type BITMAPONLY | BITMAP3;
-		explode t2 type BITMAPONLY | BITMAP2;
-		explode t3 type BITMAPONLY | BITMAP3;
-		explode t4 type BITMAPONLY | BITMAP4;
-		explode t5 type BITMAPONLY | BITMAP3;
-		explode t6 type FALL | FIRE | SMOKE | BITMAP2;
-		return (0);
-	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
 		explode base type NOHEATCLOUD;
-		explode body type SHATTER;
-		explode top type SHATTER;
+		explode body type NOHEATCLOUD;
+		explode top type NOHEATCLOUD;
 		explode beam type NOHEATCLOUD;
 		explode peddle1 type NOHEATCLOUD;
-		explode peddle2 type SHATTER;
-		explode peddle3 type SHATTER;
+		explode peddle2 type NOHEATCLOUD;
+		explode peddle3 type NOHEATCLOUD;
 		explode peddle4 type NOHEATCLOUD;
 		explode peddle5 type NOHEATCLOUD;
 		explode peddle6 type SHATTER;
 		explode t1 type NOHEATCLOUD;
-		explode t2 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
-		explode t3 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode t2 type NOHEATCLOUD;
+		explode t3 type NOHEATCLOUD;
 		explode t4 type NOHEATCLOUD;
 		explode t5 type NOHEATCLOUD;
-		explode t6 type NOHEATCLOUD | FALL | FIRE | SMOKE | EXPLODE_ON_HIT;
+		explode t6 type FALL | FIRE | SMOKE | NOHEATCLOUD;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
+	if( severity <= 50 )
 	{
-		corpsetype = 3;
+		corpsetype = 2;
 		explode base type NOHEATCLOUD;
 		explode body type SHATTER;
 		explode top type SHATTER;

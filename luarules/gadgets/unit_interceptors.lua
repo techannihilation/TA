@@ -25,7 +25,7 @@ local antiNukes = {
   [UnitDefNames["armamd1"].id] = true,
   [UnitDefNames["armamd2"].id] = true,
   [UnitDefNames["armcarry"].id] = true,
-  -- [UnitDefNames["armucar"].id] = true,
+  [UnitDefNames["armucar"].id] = true,
   --Core
   [UnitDefNames["cormabm"].id] = true,
   [UnitDefNames["corfmd"].id] = true,
