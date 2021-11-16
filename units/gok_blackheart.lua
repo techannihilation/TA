@@ -17,7 +17,6 @@ return {
 		collisionvolumeoffsets = "0 2 0",
 		collisionvolumescales = "17 13 17",
 		collisionvolumetype = "Box",
-		corpse = "corpse",
 		defaultmissiontype = "Standby",
 		description = "Amphibious & All-Terrain Crawling Bomb",
 		explodeas = "KROG_BLAST",
@@ -32,7 +31,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 10000,
-		maxdamage = 10495,
+		maxdamage = 9495,
 		maxslope = 32,
 		maxvelocity = 1.65,
 		maxwaterdepth = 112,
@@ -57,35 +56,6 @@ return {
 		customparams = {
 			buildpic = "gok_blackheart.dds",
 			faction = "GOK",
-		},
-		featuredefs = {
-			corpse = {
-				blocking = true,
-				damage = 601,
-				description = "Invader Wreckage",
-				featuredead = "heap",
-				footprintx = 1,
-				footprintz = 1,
-				metal = 48,
-				object = "gok_blackheart_DEAD",
-				reclaimable = true,
-				customparams = {
-					fromunit = 1,
-				},
-			},
-			heap = {
-				blocking = false,
-				damage = 752,
-				description = "Invader Debris",
-				footprintx = 1,
-				footprintz = 1,
-				metal = 26,
-				object = "1X1B",
-				reclaimable = true,
-				customparams = {
-					fromunit = 1,
-				},
-			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

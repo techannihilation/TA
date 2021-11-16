@@ -1,5 +1,9 @@
-4.07 => 4.08 (released)
-2021-11-12
+4.07 => 4.08
+2021-11-17
+
+Balance :
+  - T1 Bug scout Tll : decrease Timeparalyse 6s=>2s. Decrease daamge 340=>300
+  - All T2/T3 energy storage HP fixed
 
 Improvement:
   - Add small helper for mods based on TechA.

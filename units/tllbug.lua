@@ -131,7 +131,7 @@ return {
 				name = "EMP Laser",
 				noselfdamage = true,
 				paralyzer = true,
-				paralyzetime = 6,
+				paralyzetime = 2,
 				range = 180,
 				reloadtime = 1,
 				rgbcolor = "0 0 1",
@@ -146,7 +146,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 1000,
 				damage = {
-					default = 360,
+					default = 300,
 					subs = 5,
 				},
 			},

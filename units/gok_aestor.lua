@@ -27,7 +27,7 @@ return {
 		idletime = 1800,
 		losemitheight = 42,
 		mass = 1750,
-		maxdamage = 10500,
+		maxdamage = 3250,
 		maxslope = 20,
 		maxwaterdepth = 9999,
 		name = "T2 Energy Storage",
