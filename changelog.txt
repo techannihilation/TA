@@ -7,7 +7,7 @@ Balance :
 
 Improvement:
  - Add T3 Naval Gok units
- - Add T3 Gok Geo
+ - Add T3 Gok Geo / Juno
 
 Fix :
  - T4 TacNuke Sub : Tactical Weapon can shoot
