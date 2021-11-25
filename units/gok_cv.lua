@@ -82,7 +82,7 @@ return {
 			[18] = "gok_eyes",
 			[19] = "gok_rad",
 			[20] = "gok_jam",
-			--[21] = "gok_juno",
+			[21] = "gok_juno",
 			[22] = "gok_gate2",
 			[23] = "gok_drag",
 			[24] = "gok_claw",

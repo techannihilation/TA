@@ -169,7 +169,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0,
 				impulsefactor = 0,
-				name = "666 Beam",
+				name = "Slesh Beam",
 				noselfdamage = true,
 				range = 1500,
 				reloadtime = 2,

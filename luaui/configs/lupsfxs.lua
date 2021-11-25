@@ -675,6 +675,17 @@ tlljunoShieldSphere = {
   colormap2 = { {0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1} },
   repeatEffect=true
 }
+
+gokjunoShieldSphere = {
+  layer=-35,
+  life=20,
+  pos = {0,42,0},
+  size=10,
+  colormap1 = { {0.55,0.55,0.9, 0.8},{0.55,0.55,0.9, 0.8},{0.55,0.55,0.9, 0.8},{0.55,0.55,0.9, 0.8} },
+  colormap2 = { {0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1},{0, 0, 0, 1} },
+  repeatEffect=true
+}
+
 roostDirt = {
   layer        = 10,
   speed        = 0,

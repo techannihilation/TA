@@ -262,6 +262,7 @@ return {
 		"gok_ssub",
 		"gok_sub",
 		"gok_csub",
+		"gok_bsub",
 	},
 	experimental_ships = {
 		"armtrmph",
@@ -290,6 +291,7 @@ return {
 		"corucar",
 		"armucar",
 		"talon_ucar",
+		"gok_valefor",
 	},
 
 	--### LAND ###

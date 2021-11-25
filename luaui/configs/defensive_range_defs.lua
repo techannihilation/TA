@@ -211,6 +211,7 @@ modConfig["TA"]["unitList"] =
 								gok_meteor = { weapons = { 1 } },
 								gok_meteor1 = { weapons = { 1 } },
 								gok_meteor2 = { weapons = { 1 } },
+								gok_juno = { weapons = { 1 } },
 
 								talon_juno = { weapons = { 1 } },
 									-- AntiAir

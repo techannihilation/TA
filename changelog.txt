@@ -1,12 +1,16 @@
-4.07 => 4.08
-2021-11-17
-
+4.07 => 4.09
+2021-11-27
 Balance :
-  - T1 Bug scout Tll : decrease Timeparalyse 6s=>2s. Decrease daamge 340=>300
-  - All T2/T3 energy storage HP fixed
+ - T1 EMP Core Air : decrease Timeparalyse 6s=>2s. Decrease daamge 360=>300
+ - T1 Bug scout Tll : decrease Timeparalyse 6s=>2s. Decrease damage 360=>300
+ - All T2/T3 energy storage HP fixed
 
 Improvement:
-  - Add small helper for mods based on TechA.
+ - Add T3 Naval Gok units
+ - Add T3 Gok Geo
+
+Fix :
+ - T4 TacNuke Sub : Tactical Weapon can shoot
 
 4.06 => 4.07 (released)
 2021-11-10

@@ -1,0 +1,273 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, gun, wake1, wake2, wake3, aft, rfloat, lfloat, control,
+		pitchturretrecoil, turret1, sleeves1, recoil,
+		antihull, turret2, pitchturret2, fire2, ring,
+		barrel1, flare1, system1a, system1b, system1c, system1bturn, system1cturn, 
+		barrel2, flare2, system2a, system2b, system2c, system2bturn, system2cturn;
+
+static-var  gun_1, shieldonoff;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Shield()
+{
+	shieldonoff = !shieldonoff;
+}
+
+Create()
+{
+	shieldonoff = 1;
+	hide flare1;
+	hide flare2;
+	
+	turn pitchturret2 to x-axis <-90.> now;
+	move turret2 to y-axis [-1.5] now;
+	
+	turn system1bturn to z-axis <-120.> now;
+	turn system1cturn to z-axis <120.> now;
+	turn system2bturn to z-axis <-120.> now;
+	turn system2cturn to z-axis <120.> now;
+	
+	gun_1 = 0;
+	start-script SmokeUnit();
+	//move base to y-axis [15] now;
+}
+
+RestoreAfterDelay1()
+{
+	sleep 3000;
+	turn turret1 to y-axis <0.000000> speed <25.000000>;
+	turn sleeves1 to x-axis <0.000000> speed <15.000000>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 1000;
+	spin ring around z-axis speed <0.0> accelerate <-3.0>;
+	turn turret2 to y-axis <0.000000> speed <60.000000>;
+	turn pitchturret2 to x-axis <-90.000000> speed <50.000000>;
+}
+
+StartMoving()
+{
+	signal 16;
+	set-signal-mask 16;
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		emit-sfx 2 from wake3;
+		sleep 150;
+	}
+}
+
+StopMoving()
+{
+	signal 8;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret1 to y-axis heading speed <30.000000>;
+	turn sleeves1 to x-axis <0.000000> - pitch speed <20.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeves1 around x-axis;
+	start-script RestoreAfterDelay1();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		move barrel1 to z-axis [-2.0] speed [25.];
+		
+		sleep 100;
+		turn system1a to x-axis <-15.> speed <150.>;
+		turn system1b to x-axis <-15.> speed <150.>;
+		turn system1c to x-axis <-15.> speed <150.>;
+		sleep 100;
+		
+		turn system1a to x-axis <-15.> speed <90.>;
+		turn system1b to x-axis <-15.> speed <90.>;
+		turn system1c to x-axis <-15.> speed <90.>;
+		sleep 100;
+		
+		turn system1a to x-axis <0.> speed <14.>;
+		turn system1b to x-axis <0.> speed <14.>;
+		turn system1c to x-axis <0.> speed <14.>;
+		sleep 250;
+		move barrel1 to z-axis [0.] speed [1.];
+	}
+	if( gun_1 == 1 )
+	{
+		move barrel2 to z-axis [-2.0] speed [25.];
+		
+		sleep 100;
+		turn system2a to x-axis <-15.> speed <150.>;
+		turn system2b to x-axis <-15.> speed <150.>;
+		turn system2c to x-axis <-15.> speed <150.>;
+		sleep 100;
+		
+		turn system2a to x-axis <-15.> speed <90.>;
+		turn system2b to x-axis <-15.> speed <90.>;
+		turn system2c to x-axis <-15.> speed <90.>;
+		sleep 100;
+		
+		turn system2a to x-axis <0.> speed <14.>;
+		turn system2b to x-axis <0.> speed <14.>;
+		turn system2c to x-axis <0.> speed <14.>;
+		sleep 250;
+		move barrel2 to z-axis [0.] speed [1.];
+	}
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = sleeves1;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	spin ring around z-axis speed <15.0>;
+	move turret2 to y-axis [0.] speed [9.];
+	wait-for-move turret2 along y-axis;
+	turn turret2 to y-axis Heading speed <180.00>;
+	turn pitchturret2 to x-axis <0.00> - Pitch speed <120.00>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn pitchturret2 around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FireSecondary()
+{
+
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = pitchturret2;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = fire2;
+}
+
+AimWeapon3(heading, pitch)
+{
+	return (shieldonoff);
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = gun;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = gun;
+}
+
+FireWeapon3()
+{
+	explode gun type NOHEATCLOUD | FALL;
+	sleep 100;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode rfloat type NOHEATCLOUD;
+		explode lfloat type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode control type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode rfloat type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lfloat type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD | NOHEATCLOUD;
+		explode turret2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode control type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode rfloat type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lfloat type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
+	explode turret1 type NOHEATCLOUD;
+	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode control type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -67,7 +67,6 @@ AimWeapon1(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	sleep 1500;
 	return (1);
 }
 
@@ -100,6 +99,10 @@ AimFromWeapon3(piecenum)
 	piecenum = flare2;
 }
 
+FireWeapon1()
+{
+	sleep 25;
+}
 
 QueryWeapon1(piecenum)
 {

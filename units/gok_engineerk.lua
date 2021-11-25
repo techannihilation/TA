@@ -181,7 +181,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "GOK_LASER",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

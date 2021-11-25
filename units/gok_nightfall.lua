@@ -114,7 +114,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0,
 				impulsefactor = 0,
-				name = "Krypto Blaster",
+				name = "Slesh Beam",
 				noselfdamage = true,
 				range = 900,
 				reloadtime = 3,

@@ -164,6 +164,7 @@ local settingsShieldUnits = {
 	  gok_fgate1 = true,
 	  gok_ucp = true,
 	  gok_bats = true,
+    gok_valefor = true,
 	  gok_azaroth = true,
 	  gok_satan = true,
 	  gok_antichrist = true,

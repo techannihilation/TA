@@ -203,6 +203,10 @@ cafus = {
      {class='Bursts',options=shieldBursts300},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
  },
+ gok_valefor = {
+    {class='Bursts',options=shieldBursts300},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+},
  gok_bats = {
     {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -437,21 +441,25 @@ tllmeteor = {
 	{class='SimpleParticles2', options=MergeTable({pos={-50,265,20}, delay=12, lifeSpread=30},sparksr1)},
 },
  cjuno = {
-    {class='ShieldSphere',options=junoShieldSphere},
+    {class='ShieldSphere',options=junoShieldSphere, priority=1},
     {class='GroundFlash',options=groundFlashJuno},
   },
  ajuno = {
-    {class='ShieldSphere',options=junoShieldSphere},
+    {class='ShieldSphere',options=junoShieldSphere, priority=1},
     {class='GroundFlash',options=groundFlashJuno},
   },
  tlljuno = {
-    {class='ShieldSphere',options=tlljunoShieldSphere},
+    {class='ShieldSphere',options=tlljunoShieldSphere, priority=1},
     {class='GroundFlash',options=groundFlashJuno},
   },
  talon_juno = {
-    {class='ShieldSphere',options=tlljunoShieldSphere},
+    {class='ShieldSphere',options=tlljunoShieldSphere, priority=1},
     {class='GroundFlash',options=groundFlashJuno},
   },
+ gok_juno = {
+     {class='ShieldSphere',options=gokjunoShieldSphere, priority=1},
+     {class='GroundFlash',options=groundFlashJuno},
+   },
 
   ---- ENERGY STORAGE ----------------------
 

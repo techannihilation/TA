@@ -5,34 +5,8 @@
 
 piece  base, flare1;
 
-static-var  gun_1, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
-
 // Signal definitions
 #define SIG_AIM				2
-
-
-Activatescr()
-{
-	sleep 1;
-}
-
-Deactivatescr()
-{
-	sleep 1;
-}
-
-Go()
-{
-	call-script Activatescr();
-	gun_1 = flare1;
-}
-
-Stop()
-{
-	gun_1 = base;
-	sleep 4000;
-	call-script Deactivatescr();
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -61,41 +35,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-InitState()
-{
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
-	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-
 Create()
 {
-	call-script InitState();
 	start-script SmokeUnit();
 }
 
@@ -105,22 +46,14 @@ RestoreAfterDelay()
 
 AimPrimary(heading, pitch)
 {
-	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !gun_1 )
-	{
-		sleep 250;
-	}
-	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
 	explode flare1 type NOHEATCLOUD;
-	gun_1 = base;
-	start-script RequestState(1);
 }
 
 QueryPrimary(piecenum)
@@ -130,17 +63,7 @@ QueryPrimary(piecenum)
 
 SweetSpot(piecenum)
 {
-	piecenum = flare1;
-}
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -155,12 +78,6 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 3;
 		explode base type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;

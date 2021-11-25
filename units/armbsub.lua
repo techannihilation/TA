@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0.057,
 		buildcostenergy = 265664,
-		buildcostmetal = 13277,
+		buildcostmetal = 14677,
 		builder = false,
 		buildpic = "armbsub.dds",
 		buildtime = 150000,

@@ -12,6 +12,7 @@ local BlackList = {
    ["armbrtha1_arm_berthacannon1"] = true,
    ["tlldmc_tlldmc"] = true,
    ["ajuno_juno_pulse"] = true,
+   ["gok_juno_juno_pulse"] = true,
    ["cjuno_juno_pulse"] = true,
    ["corsilo_crblmssl"] = true,
    ["corsilo1_crblmssl1"] = true,

@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cjuno_aoplane.dds",
 		buildpic = "cjuno.dds",
-		buildtime = 22000,
+		buildtime = 20000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

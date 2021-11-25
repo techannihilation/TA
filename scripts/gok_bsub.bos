@@ -1,129 +1,162 @@
-#define TA
+#define TA			// This is a TA script
 
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, engine1, engine2, engine3, wake1, wake2, wake3,
-       turret, pitchturret, barrel1, barrel2, fire, gem;
+piece  base, hull, gem, flare1, flare2, turret, pitchturret, fire, barrel1, barrel2, wake1, wake2, wake3, aim;
 
-static-var  Firing;
+static-var  torpedo1;
 
-StartMoving(Wave)
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM2			4
+#define SIG_MOVE			8
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
 {
-	set-signal-mask 256;
-	Wave = 1;
-	
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
 	while( TRUE )
 	{
-		emit-sfx 3 from wake1;
-		
-		if( Wave )
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
 		{
-			emit-sfx 3 from wake2;
+			smoketype = 256 | 3;
+			emit-sfx smoketype from base;
 		}
-		if( !Wave )
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
 		{
-			emit-sfx 3 from wake3;
+			sleeptime = 200;
 		}
-		Wave = !Wave;
-		sleep 250;
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	torpedo1 = 0;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		emit-sfx 256 | 3 from wake1;
+		emit-sfx 256 | 3 from wake2;
+		emit-sfx 256 | 3 from wake3;
+		sleep 300;
 	}
 }
 
 StopMoving()
 {
-	signal 256;
+	signal SIG_MOVE;
 }
 
-Create()
-{
-	Firing = 0;
-}
 
-SweetSpot(PieceNum)
+Restore1()
 {
-	PieceNum = base;
-}
-
-AimFromPrimary(PieceNum)
-{
-	PieceNum = pitchturret;
-}
-
-QueryPrimary(PieceNum)
-{
-	PieceNum = fire;
-}
-
-AimPrimary(Heading, Pitch)
-{
-	signal 2;
-	set-signal-mask 2;
-	
-	while( Firing )
-	{
-		sleep 100;
-	}
-	
-	move turret to y-axis [2.00] speed [8.00];
-	turn turret to y-axis Heading speed <160.00>;
-	turn pitchturret to x-axis <0.00> - Pitch speed <60.00>;
-	
+	sleep 3500;
+	turn turret to y-axis <0.000000> speed <40.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn pitchturret around x-axis;
-	return(1);
-	}
+	move turret to y-axis [0.000000] speed [1.000000];
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	move turret to y-axis [3.000000] speed [1.000000];
+	wait-for-move turret along y-axis;
+	turn turret to y-axis heading speed <40.000000>;
+	wait-for-turn turret around y-axis;
+	start-script Restore1();
+	return (1);
+}
 
 FirePrimary()
 {
-	Firing = 1;	
-	move pitchturret to z-axis [-1.00] speed [10.00];
-	move barrel1 to z-axis [-0.50] speed [5.00];
-	move barrel1 to x-axis [-1.00] speed [10.00];
-	move barrel2 to z-axis [-0.50] speed [5.00];
-	move barrel2 to x-axis [1.00] speed [10.00];
+	turn barrel1 to y-axis <2.0> speed <500.000000>;
+	turn barrel2 to y-axis <-2.0> speed <500.000000>;
+	move pitchturret to z-axis [-2.000000] speed [200.000000];
 	sleep 100;
-	
-	move pitchturret to z-axis [0.00] speed [0.75];
-	move barrel1 to z-axis [0.00] speed [0.75];
-	move barrel1 to x-axis [0.00] speed [1.50];
-	move barrel2 to z-axis [0.00] speed [0.75];
-	move barrel2 to x-axis [0.00] speed [1.50];
-	sleep 300;
-	Firing = 0;	
-	sleep 1000;
+	turn barrel1 to y-axis <0.0> speed <10.000000>;
+	turn barrel2 to y-axis <0.0> speed <10.000000>;
+	move pitchturret to z-axis [0.000000] speed [2.000000];
 }
 
-AimFromSecondary(PieceNum)
+AimFromPrimary(piecenum)
 {
-	PieceNum = base;
+	piecenum = fire;
 }
 
-QuerySecondary(PieceNum)
+QueryPrimary(piecenum)
 {
-	PieceNum = base;
+	piecenum = fire;
 }
 
-AimSecondary(Heading, Pitch)
+AimTertiary(heading, pitch)
 {
-	return(0);
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+	return (1);
 }
 
-Killed(Severity, CorpseType)
+FireTertiary()
 {
-	if( Severity <= 50 )
+	++torpedo1;
+	if ( torpedo1 == 2)
 	{
-		CorpseType = 1;
+		torpedo1 = 0;
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = aim;
+}
+
+QueryTertiary(piecenum)
+{
+	if ( torpedo1 == 0)
+	{
+		piecenum = flare1;
+	}
+	if ( torpedo1 == 1)
+	{
+		piecenum = flare2;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
 		explode hull type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode pitchturret type NOHEATCLOUD;
+		return (corpsetype);
 	}
-	if( Severity <= 50 )
+	if( severity <= 50 )
 	{
-		CorpseType = 2;
-		return (CorpseType);
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | FALL;
+		return (corpsetype);
 	}
-	CorpseType = 3;
-	return (CorpseType);
-	
+	corpsetype = 3;
+	explode hull type BITMAPONLY;
+	explode turret type NOHEATCLOUD;
+	return (corpsetype);
 }
