@@ -24,8 +24,7 @@ return {
 		maxwaterdepth = 255,
 		minwaterdepth = 17,
 		name = "Underwater Advanced Tidal Generator",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "tllatidal",
 		onoffable = false,
 		radardistance = 0,

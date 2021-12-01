@@ -1,3 +1,12 @@
+4.09 => 4.10
+2021-12-02
+Balance :
+ - Colossus T4 TLL. Decrease HP 530K=>510K
+
+Improvement:
+ - Dreadnought T3 TLL. Delete AA weapon. Add miniburst. Increase model by 8%.
+ - Add T3 Underwater Fusion for all T3/T4 Commanders
+
 4.07 => 4.09
 2021-11-27
 Balance :

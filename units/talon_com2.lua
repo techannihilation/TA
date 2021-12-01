@@ -95,7 +95,7 @@ return {
 			[15] = "talon_sprinkler",
 			[16] = "talon_popcorn",
 			[17] = "talon_tide1",
-			[18] = "talon_uwfus",
+			[18] = "talon_uwefus",
 			[19] = "talon_famkr",
 			[20] = "talon_sy",
 			[21] = "talon_asonar",
