@@ -11,6 +11,7 @@ Improvement:
  - Dreadnought T3 TLL. Delete AA weapon. Add miniburst. Increase model by 8%.
  - Add T3 Underwater Fusion for all T3/T4 Commanders
  - Add T3 Gok Geo
+ - Add T4 Arm Dragon Teeth (will coming soon for all faction)
 
  Fix :
  - Add proper crushResistance for all fortification and crushStrength for all movement class (in attempt to T4 fortification)
