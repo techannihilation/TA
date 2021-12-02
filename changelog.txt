@@ -1,8 +1,11 @@
 4.09 => 4.10
-2021-12-02
+2021-12-03
 Balance :
  - Colossus T4 TLL. Decrease HP 530K=>510K
  - Ground Rezzers : Increase Timebuild by 30%
+ - T1 teeth cost 11M=>12M & 200E=>150E & Buildtime 250=>300. HP => 2500
+ - Sea T1 Teeth cost 20=>15M & 450=>200E & Buildtime 900=>450. HP => 2500
+ - T2 Fortification cost 29=>45M & 950E=>750E & Buildtime 900=>1000. HP => 15000 (Breakable vs T4 units and T3 Abaddon)
 
 Improvement:
  - Dreadnought T3 TLL. Delete AA weapon. Add miniburst. Increase model by 8%.
