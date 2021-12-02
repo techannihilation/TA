@@ -60,7 +60,7 @@
 		waterline = 30,
 		workertime = 600,
 		buildoptions = {
-      --[1] = "gokfor",
+      [1] = "gok_egeo",
       [2] = "gok_emstor",
       [4] = "gok_eestor",
       [5] = "gok_emex",

@@ -304,6 +304,11 @@ local morphDefs = {
 		time = 120,
 		tech = 2,
 	},
+	gok_mohogeo = {
+		into = 'gok_egeo',
+		time = 120,
+		tech = 2,
+	},
 	tllgeo = {
 		{
 			into = 'tllmohogeo',
@@ -556,7 +561,7 @@ local morphDefs = {
 	armfido = {
 		into = 'armfox',
 		time = 90,
-		xp = 0.30,
+		xp = 0.20,
 	},
 	corak = {
 		into = 'corpyro',

@@ -7,7 +7,7 @@ return {
 		builddistance = 112,
 		builder = true,
 		buildpic = "armrecl.dds",
-		buildtime = 9259,
+		buildtime = 10000,
 		canassist = false,
 		canguard = true,
 		canmove = true,

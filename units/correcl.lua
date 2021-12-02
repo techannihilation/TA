@@ -7,7 +7,7 @@ return {
 		builddistance = 112,
 		builder = true,
 		buildpic = "correcl.dds",
-		buildtime = 9495,
+		buildtime = 10000,
 		canassist = false,
 		canguard = true,
 		canmove = true,

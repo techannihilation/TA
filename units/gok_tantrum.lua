@@ -7,7 +7,7 @@ return {
 		builddistance = 145,
 		builder = true,
 		buildpic = "gok_tantrum.dds",
-		buildtime = 2400,
+		buildtime = 3000,
 		canassist = false,
 		canmove = true,
 		canpatrol = true,
