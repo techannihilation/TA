@@ -9,7 +9,7 @@ local moveDatas = {
         maxwaterslope = 50
     },
     ATANK3 = {
-        crushstrength = 30,
+        crushstrength = 50,
         depthmod = 0,
         footprintx = 3,
         footprintz = 3,
@@ -18,6 +18,7 @@ local moveDatas = {
         maxwaterslope = 80
     },
     ATANK4 = {
+        -- Tigre & Rex Amphibious
         crushstrength = 250,
         depthmod = 0,
         footprintx = 4,
@@ -26,18 +27,9 @@ local moveDatas = {
         maxwaterdepth = 5000,
         maxwaterslope = 80
     },
-    ATANK8 = {
-        crushstrength = 500,
-        depthmod = 0,
-        footprintx = 8,
-        footprintz = 8,
-        maxslope = 36,
-        maxwaterdepth = 5000,
-        maxwaterslope = 80
-    },
     BOAT4 = {
         allowterraincollisions = false,
-        crushstrength = 40,
+        crushstrength = 50,
         footprintx = 4,
         footprintz = 4,
         minwaterdepth = 5
@@ -51,14 +43,14 @@ local moveDatas = {
     },
     DBOAT6 = {
         allowterraincollisions = false,
-        crushstrength = 70,
+        crushstrength = 50,
         footprintx = 6,
         footprintz = 6,
         minwaterdepth = 15
     },
     HAKBOT4 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         depthmod = 0,
         footprintx = 4,
         footprintz = 4,
@@ -68,21 +60,21 @@ local moveDatas = {
     },
     HDBOAT8 = {
         allowterraincollisions = false,
-        crushstrength = 1400,
+        crushstrength = 250,
         footprintx = 8,
         footprintz = 8,
         minwaterdepth = 15
     },
     HDBOAT10 = {
         allowterraincollisions = false,
-        crushstrength = 1400,
+        crushstrength = 250,
         footprintx = 10,
         footprintz = 10,
         minwaterdepth = 16
     },
     HDBOAT12 = {
         allowterraincollisions = false,
-        crushstrength = 1400,
+        crushstrength = 250,
         footprintx = 12,
         footprintz = 12,
         minwaterdepth = 18
@@ -90,7 +82,7 @@ local moveDatas = {
     HOVER2 = {
         badslope = 22,
         badwaterslope = 255,
-        crushstrength = 25,
+        crushstrength = 50,
         footprintx = 2,
         footprintz = 2,
         maxslope = 22,
@@ -99,7 +91,7 @@ local moveDatas = {
     HOVER3 = {
         badslope = 22,
         badwaterslope = 255,
-        crushstrength = 25,
+        crushstrength = 50,
         footprintx = 3,
         footprintz = 3,
         maxslope = 22,
@@ -109,14 +101,14 @@ local moveDatas = {
         allowterraincollisions = false,
         badslope = 22,
         badwaterslope = 255,
-        crushstrength = 25,
+        crushstrength = 50,
         footprintx = 4,
         footprintz = 4,
         maxslope = 22,
         maxwaterslope = 255
     },
     HTANK3 = {
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 3,
         footprintz = 3,
         maxslope = 18,
@@ -124,7 +116,7 @@ local moveDatas = {
     },
     HTANK4 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 4,
         footprintz = 4,
         maxslope = 18,
@@ -132,30 +124,38 @@ local moveDatas = {
     },
     HTANK5 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 5,
         footprintz = 5,
+        maxslope = 18,
+        maxwaterdepth = 22
+    },
+    HTANK6 = {
+        allowterraincollisions = false,
+        crushstrength = 250,
+        footprintx = 6,
+        footprintz = 6,
         maxslope = 18,
         maxwaterdepth = 22
     },
     HTANK8 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 1000,
         footprintx = 8,
         footprintz = 8,
         maxslope = 18,
         maxwaterdepth = 22
     },
-    VHTANK5 = {
+    HTANK10 = {
         allowterraincollisions = false,
-        crushstrength = 1400,
-        footprintx = 5,
-        footprintz = 5,
+        crushstrength = 1000,
+        footprintx = 10,
+        footprintz = 10,
         maxslope = 18,
         maxwaterdepth = 22
     },
     HKBOT3 = {
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 3,
         footprintz = 3,
         maxslope = 36,
@@ -163,7 +163,7 @@ local moveDatas = {
     },
     HKBOT4 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 4,
         footprintz = 4,
         maxslope = 36,
@@ -171,7 +171,7 @@ local moveDatas = {
     },
     HKBOT5 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 5,
         footprintz = 5,
         maxslope = 36,
@@ -179,7 +179,7 @@ local moveDatas = {
     },
     HKBOT6 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 6,
         footprintz = 6,
         maxslope = 36,
@@ -187,13 +187,8 @@ local moveDatas = {
     },
     HKBOT7 = {
         allowterraincollisions = false,
-        crushstrength = 12400,
+        crushstrength = 1000,
         depthmod = 0,
-        depthModParams = {
-            minHeight = 4,
-            linearCoeff = 0.03,
-            maxValue = 0.7
-        },
         footprintx = 7,
         footprintz = 7,
         maxslope = 36,
@@ -201,20 +196,15 @@ local moveDatas = {
     },
     HKBOT8 = {
         allowterraincollisions = false,
-        crushstrength = 14500,
+        crushstrength = 1000,
         depthmod = 0,
-        depthModParams = {
-            minHeight = 4,
-            linearCoeff = 0.03,
-            maxValue = 0.7
-        },
         footprintx = 8,
         footprintz = 8,
         maxslope = 38,
         maxwaterdepth = 32
     },
     HTKBOT3 = {
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 3,
         footprintz = 3,
         maxslope = 80,
@@ -222,7 +212,7 @@ local moveDatas = {
     },
     HTKBOT4 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 4,
         footprintz = 4,
         maxslope = 80,
@@ -230,7 +220,7 @@ local moveDatas = {
     },
     HTKBOT5 = {
         allowterraincollisions = false,
-        crushstrength = 253,
+        crushstrength = 250,
         footprintx = 5,
         footprintz = 5,
         maxslope = 80,
@@ -238,7 +228,7 @@ local moveDatas = {
     },
     HTKBOT6 = {
         allowterraincollisions = false,
-        crushstrength = 9999,
+        crushstrength = 250,
         footprintx = 6,
         footprintz = 6,
         maxslope = 80,
@@ -246,49 +236,49 @@ local moveDatas = {
     },
     HTKBOT7 = {
         allowterraincollisions = false,
-        crushstrength = 12400,
+        crushstrength = 1000,
         footprintx = 7,
         footprintz = 7,
         maxslope = 80,
         maxwaterdepth = 22
     },
     KBOT1 = {
-        crushstrength = 5,
+        crushstrength = 50,
         footprintx = 1,
         footprintz = 1,
         maxslope = 36,
         maxwaterdepth = 5
     },
     KBOT2 = {
-        crushstrength = 10,
+        crushstrength = 50,
         footprintx = 2,
         footprintz = 2,
         maxslope = 36,
         maxwaterdepth = 22
     },
     KBOT3 = {
-        crushstrength = 30,
+        crushstrength = 50,
         footprintx = 3,
         footprintz = 3,
         maxslope = 36,
         maxwaterdepth = 21
     },
     KBOT4 = {
-        crushstrength = 30,
+        crushstrength = 50,
         footprintx = 4,
         footprintz = 4,
         maxslope = 36,
         maxwaterdepth = 21
     },
     TANK2 = {
-        crushstrength = 15,
+        crushstrength = 50,
         footprintx = 2,
         footprintz = 2,
         maxslope = 18,
         maxwaterdepth = 22
     },
     TANK3 = {
-        crushstrength = 30,
+        crushstrength = 50,
         footprintx = 3,
         footprintz = 3,
         maxslope = 18,
@@ -296,7 +286,7 @@ local moveDatas = {
     },
     TANK4 = {
         allowterraincollisions = false,
-        crushstrength = 30,
+        crushstrength = 50,
         footprintx = 4,
         footprintz = 4,
         maxslope = 18,
@@ -304,35 +294,36 @@ local moveDatas = {
     },
     TANK6 = {
         allowterraincollisions = false,
-        crushstrength = 10000,
+        crushstrength = 250,
         footprintx = 6,
         footprintz = 6,
         maxslope = 18,
         maxwaterdepth = 36,
     },
     TKBOT3 = {
-        crushstrength = 15,
+        crushstrength = 50,
         footprintx = 3,
         footprintz = 3,
         maxwaterdepth = 22
     },
     TKBOT4 = {
         allowterraincollisions = false,
-        crushstrength = 15,
+        crushstrength = 50,
         footprintx = 4,
         footprintz = 4,
         maxwaterdepth = 22
     },
     TKBOT8 = {
+        -- Core Adamantoise. Kill T3 fortification.
         allowterraincollisions = false,
-        crushstrength = 10000,
+        crushstrength = 7500,
         footprintx = 8,
         footprintz = 8,
         maxwaterdepth = 36,
     },
     VKBOT4 = {
         allowterraincollisions = false,
-        crushstrength = 1400,
+        crushstrength = 250,
         depthmod = 0,
         footprintx = 4,
         footprintz = 4,
@@ -342,7 +333,7 @@ local moveDatas = {
     },
     VKBOT5 = {
         allowterraincollisions = false,
-        crushstrength = 1400,
+        crushstrength = 250,
         depthmod = 0,
         footprintx = 5,
         footprintz = 5,
@@ -352,7 +343,7 @@ local moveDatas = {
     },
     VKBOT8 = {
         allowterraincollisions = false,
-        crushstrength = 12400,
+        crushstrength = 1000,
         depthmod = 0,
         footprintx = 8,
         footprintz = 8,
@@ -362,7 +353,7 @@ local moveDatas = {
     },
     VKBOT9 = {
         allowterraincollisions = false,
-        crushstrength = 12400,
+        crushstrength = 1000,
         depthmod = 0,
         footprintx = 9,
         footprintz = 9,
@@ -372,7 +363,7 @@ local moveDatas = {
     },
     VKBOT12 = {
         allowterraincollisions = false,
-        crushstrength = 12400,
+        crushstrength = 1000,
         depthmod = 0,
         footprintx = 12,
         footprintz = 12,
@@ -382,7 +373,7 @@ local moveDatas = {
     },
     VKBOT25 = {
         allowterraincollisions = false,
-        crushstrength = 12400,
+        crushstrength = 10000,
         depthmod = 0,
         footprintx = 25,
         footprintz = 25,
@@ -394,14 +385,14 @@ local moveDatas = {
         footprintx = 2,
         footprintz = 2,
         minwaterdepth = 25,
-        crushstrength = 2.5,
+        crushstrength = 50,
         subMarine = 1
     },
     UBOAT3 = {
         footprintx = 3,
         footprintz = 3,
         minwaterdepth = 35,
-        crushstrength = 5,
+        crushstrength = 50,
         subMarine = 1
     },
     UBOAT5 = {
@@ -409,11 +400,11 @@ local moveDatas = {
         footprintx = 5,
         footprintz = 5,
         minwaterdepth = 60,
-        crushstrength = 5,
+        crushstrength = 50,
         subMarine = 1
     },
     TANKHOVER3 = {
-        crushstrength = 90,
+        crushstrength = 50,
         depthmod = 0,
         footprintx = 3,
         footprintz = 3,
@@ -424,7 +415,7 @@ local moveDatas = {
     },
     TANKHOVER4 = {
         allowterraincollisions = false,
-        crushstrength = 90,
+        crushstrength = 50,
         depthmod = 0,
         footprintx = 4,
         footprintz = 4,
@@ -435,7 +426,7 @@ local moveDatas = {
     },
     TANKHOVER8 = {
         allowterraincollisions = false,
-        crushstrength = 5000,
+        crushstrength = 250,
         depthmod = 0,
         footprintx = 8,
         footprintz = 8,
@@ -453,12 +444,6 @@ local moveDatas = {
     },
     AMPTBOT = {
         crushstrength = 250,
-        depthmodparams = {
-            minheight = 1,
-            linearcoeff = 0.03,
-            maxscale = 0.75,
-            constantcoeff = 0.015
-        },
         footprintx = 3,
         footprintz = 3,
         maxslope = 80,
@@ -466,25 +451,13 @@ local moveDatas = {
     },
     AMPTBOT4 = {
         crushstrength = 2500,
-        depthmodparams = {
-            minheight = 1,
-            linearcoeff = 0.03,
-            maxscale = 0.75,
-            constantcoeff = 0.015
-        },
         footprintx = 4,
         footprintz = 4,
         maxslope = 80,
         maxwaterdepth = 15000
     },
     AMPTBOT5 = {
-        crushstrength = 5000,
-        depthmodparams = {
-            minheight = 1,
-            linearcoeff = 0.03,
-            maxscale = 0.75,
-            constantcoeff = 0.015
-        },
+        crushstrength = 250,
         footprintx = 5,
         footprintz = 5,
         maxslope = 80,

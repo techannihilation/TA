@@ -26,6 +26,7 @@ talonlogogouraud00
 talonveh00
 gokcolor2_100
 gokgradient1_100
+gokcolor1_100
 goklogo
 goklogolight
 goklogoblue

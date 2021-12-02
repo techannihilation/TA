@@ -40,8 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "VKBOT25",
 		name = "Lilith",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "corlilith",
 		onoffable = true,
 		radardistance = 0,

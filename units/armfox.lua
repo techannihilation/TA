@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.65,
 		maxwaterdepth = 24,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT6",
+		movementclass = "HKBOT6",
 		name = "Fox Terrier",
 		noautofire = false,
 		objectname = "armfox",

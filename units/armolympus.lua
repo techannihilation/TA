@@ -36,7 +36,7 @@ return {
 		maxvelocity = 1,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "VHTANK5",
+		movementclass = "HTANK10",
 		name = "Olympus",
 		noautofire = false,
 		objectname = "armolympus",

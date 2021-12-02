@@ -38,7 +38,7 @@ return {
 		maxvelocity = 1,
 		maxwaterdepth = 12,
 		mobilestanorders = 1,
-		movementclass = "VHTANK5",
+		movementclass = "HTANK5",
 		name = "Krypto-Blaster",
 		noautofire = false,
 		objectname = "armkrypto",

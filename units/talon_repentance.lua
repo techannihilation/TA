@@ -1,6 +1,6 @@
 return {
 	talon_repentance = {
-		acceleration = 0.037,		
+		acceleration = 0.037,
 		brakerate = 0.09,
 		buildcostenergy = 209001,
 		buildcostmetal = 16078,
@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		movementclass = "VHTANK5",
+		movementclass = "HTANK6",
 		name = "Repentance",
 		noautofire = false,
 

@@ -33,7 +33,7 @@ return {
 		maxvelocity = 1.15,
 		maxwaterdepth = 20,
 		mobilestandorders = 1,
-		movementclass = "VHTANK5",
+		movementclass = "HTANK5",
 		name = "Metron",
 		noautofire = false,
 		objectname = "CORBT",

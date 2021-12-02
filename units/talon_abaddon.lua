@@ -36,7 +36,7 @@ return {
 		maxvelocity = 1.2,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "ATANK3",
+		movementclass = "HTANK8",
 		name = "Abaddon",
 		noautofire = false,
 		objectname = "talon_abaddon",

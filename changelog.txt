@@ -9,6 +9,9 @@ Improvement:
  - Add T3 Underwater Fusion for all T3/T4 Commanders
  - Add T3 Gok Geo
 
+ Fix :
+ - Add proper crushResistance for all fortification and crushStrength for all movement class (in attempt to T4 fortification)
+
 4.07 => 4.09
 2021-11-27
 Balance :

@@ -35,7 +35,7 @@ return {
 		maxvelocity = 1.4,
 		maxwaterdepth = 15,
 		mobilestandorders = 1,
-		movementclass = "HTANK3",
+		movementclass = "HTANK8",
 		name = "Grenat",
 		noautofire = false,
 		objectname = "talon_grenat",

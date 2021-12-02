@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.2,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		movementclass = "VHTANK5",
+		movementclass = "HTANK5",
 		name = "Demolisher",
 		noautofire = false,
 		objectname = "corsiege",

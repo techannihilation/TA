@@ -344,6 +344,8 @@ function gadget:Initialize()
 --Dragon teeth
       elseif (ud.name=="cordrag") or (ud.name=="corfdrag") or (ud.name=="corfort") or
 	     (ud.name=="armdrag") or (ud.name=="armfdrag") or (ud.name=="armfort") or
+       (ud.name=="gok_drag") or (ud.name=="gok_fdrag") or (ud.name=="gok_fort") or
+       (ud.name=="talon_drag") or (ud.name=="talon_fdrag") or (ud.name=="talon_fort") or
 	     (ud.name=="tlldtns") or (ud.name=="tlladt") or (ud.name=="tlldt") then
       Spring.SetUnitDefIcon(udid, "blank.user")
 -- defenders and other buildings

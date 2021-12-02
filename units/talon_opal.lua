@@ -38,7 +38,6 @@ return {
 		movementclass = "HAKBOT4",
 		name = "talon_opal",
 		noautofire = false,
-		
 		objectname = "talon_opal",
 		radaremitheight = 37,
 		seismicsignature = 0,
@@ -59,8 +58,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "2.34152984619 -0.363798242187 4.68096923828",
-				collisionvolumescales = "48.4013214111 35.5686035156 49.8471069336",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "48 35 49",
 				collisionvolumetype = "Box",
 				damage = 8095,
 				description = "talon_opal Wreckage",
