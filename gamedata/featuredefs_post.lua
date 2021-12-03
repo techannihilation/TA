@@ -90,6 +90,7 @@ local skipUnits = {
 	['armdrag'] = true,
 	['armfdrag'] = true,
 	['armfort'] = true,
+	['armedrag'] = true,
 
 	['tlldtns'] = true,
 	['tlladt'] = true,
