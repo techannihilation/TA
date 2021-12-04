@@ -46,7 +46,6 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
-		--stealth = true,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.0,
 		turnrate = 1000,
@@ -143,7 +142,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 2000,
 				damage = {
-					default = 200,
+					default = 222,
 					subs = 5,
 				},
 			},
