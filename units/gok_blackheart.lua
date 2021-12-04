@@ -3,7 +3,7 @@ return {
 		acceleration = 0.132,
 		activatewhenbuilt = true,
 		brakerate = 0.486,
-		buildcostenergy = 150857,
+		buildcostenergy = 170857,
 		buildcostmetal = 1218,
 		builder = false,
 		buildpic = "gok_blackheart.dds",
