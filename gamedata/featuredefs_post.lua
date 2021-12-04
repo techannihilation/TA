@@ -85,6 +85,7 @@ local skipUnits = {
 	['cordrag'] = true,
 	['corfdrag'] = true,
 	['corfort'] = true,
+	['coredrag'] = true,
 
 	['armclaw'] = true,
 	['armdrag'] = true,
@@ -95,16 +96,18 @@ local skipUnits = {
 	['tlldtns'] = true,
 	['tlladt'] = true,
 	['tlldt'] = true,
+	['tlledrag'] = true,
 
 	['talon_fdrag'] = true,
 	['talon_drag'] = true,
 	['talon_fort'] = true,
+	['talon_edrag'] = true,
 
 	['gok_drag'] = true,
 	['gok_fdrag'] = true,
 	['gok_fort'] = true,
 	['gok_claw'] = true,
-
+	['gok_edrag'] = true,
 }
 
 

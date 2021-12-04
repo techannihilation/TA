@@ -1,17 +1,20 @@
 4.09 => 4.10
-2021-12-03
+2021-12-05
 Balance :
  - Colossus T4 TLL. Decrease HP 530K=>510K
  - Ground Rezzers : Increase Timebuild by 30%
  - T1 teeth cost 11M=>12M & 200E=>150E & Buildtime 250=>300. HP => 2500
  - Sea T1 Teeth cost 20=>15M & 450=>200E & Buildtime 900=>450. HP => 2500
  - T2 Fortification cost 29=>45M & 950E=>750E & Buildtime 900=>1000. HP => 15000 (Breakable vs T4 units and T3 Abaddon)
+ - Gok Disciple :  Increase damage 222=>333
+ - Gok Satan : Increase Speed 1.6=>1.75
+ - Gok AntiChrist : Increase Speed 1.75=>2.0
 
 Improvement:
  - Dreadnought T3 TLL. Delete AA weapon. Add miniburst. Increase model by 8%.
  - Add T3 Underwater Fusion for all T3/T4 Commanders
  - Add T3 Gok Geo
- - Add T4 Arm Dragon Teeth (will coming soon for all faction)
+ - Add T4 Dragon Teeth for all faction
 
  Fix :
  - Add proper crushResistance for all fortification and crushStrength for all movement class (in attempt to T4 fortification)

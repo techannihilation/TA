@@ -27,8 +27,8 @@ return {
 		name = "Experimental Wall",
 		noautofire = false,
 		objectname = "armedrag",
-		radaremitheight = 50,
-		script = "armdrag.cob",
+		radaremitheight = 100,
+		script = "drag.lua",
 		unitname = "armedrag",
 		yardmap = "ffff ffff ffff ffff",
 		customparams = {
