@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "HTANK5",
-		name = "Demolisher",
+		name = "Jocond",
 		noautofire = false,
 		objectname = "gok_jocond",
 		radardistance = 0,

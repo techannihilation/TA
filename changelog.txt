@@ -1,5 +1,5 @@
 4.09 => 4.10
-2021-12-05
+2021-12-08
 Balance :
  - Colossus T4 TLL. Decrease HP 530K=>510K
  - Ground Rezzers : Increase Timebuild by 30%
@@ -9,6 +9,7 @@ Balance :
  - Gok Disciple :  Increase damage 222=>333
  - Gok Satan : Increase Speed 1.6=>1.75
  - Gok AntiChrist : Increase Speed 1.75=>2.0
+ - Fat Dog Talon : Change weapon effect. Decrease AOE by 200%, increase damage by 200%. Decrease range 650=>500
 
 Improvement:
  - Dreadnought T3 TLL. Delete AA weapon. Add miniburst. Increase model by 8%.

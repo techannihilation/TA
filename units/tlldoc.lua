@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canreclaim = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 3",
