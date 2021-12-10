@@ -1,3 +1,11 @@
+4.10 => 4.11
+2021-12-11
+Balance :
+ - Morph into T2=>T3 Arm Geo : decrease time 90=>60s
+
+ Improvement:
+  - Add T3 TALON / TLL GEO
+
 4.09 => 4.10
 2021-12-08
 Balance :

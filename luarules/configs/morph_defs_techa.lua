@@ -267,7 +267,7 @@ local morphDefs = {
 	},
 	armgmm = {
 		into = 'armfor',
-		time = 90,
+		time = 60,
 		tech = 2,
 	},
 	talon_geo = {
@@ -282,10 +282,10 @@ local morphDefs = {
 					tech = 1,
 		},
 	},
-	gok_geo = {
-		into = 'gok_mohogeo',
-		time = 120,
-		tech = 1,
+	talon_mohogeo = {
+		into = 'talon_egeo',
+		time = 75,
+		tech = 2,
 	},
 	corgeo = {
     {
@@ -304,6 +304,11 @@ local morphDefs = {
 		time = 120,
 		tech = 2,
 	},
+	gok_geo = {
+		into = 'gok_mohogeo',
+		time = 120,
+		tech = 1,
+	},
 	gok_mohogeo = {
 		into = 'gok_egeo',
 		time = 120,
@@ -320,6 +325,11 @@ local morphDefs = {
 			time = 90,
 			tech = 1,
 		},
+	},
+	tllmohogeo = {
+		into = 'tllegeo',
+		time = 100,
+		tech = 2,
 	},
 	armgate2 = {
 		into = 'armgate',
