@@ -19,7 +19,7 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "34 31 54",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		cruisealt = 90,
 		description = "Tech Level 2",

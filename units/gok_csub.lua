@@ -16,7 +16,7 @@ return {
 		category = "ALL MEDIUM MOBILE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "21 21 51",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

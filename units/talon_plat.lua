@@ -13,7 +13,7 @@ return {
 		category = "LEVEL1 ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -7 0",
 		collisionvolumescales = "110 40 110",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produces T2 Aircraft",

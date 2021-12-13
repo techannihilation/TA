@@ -44,7 +44,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "corbhmth1",
-		yardmap = "ccoooocc cooGGooc oooGGooo oooGGooo oooGGooo oooGGooo cooGGooc ccoooocc",
+		yardmap = "yyooooyy yooGGooy oooGGooo oooGGooo oooGGooo oooGGooo yooGGooy yyooooyy",
 		customparams = {
 			buildpic = "corbhmth1.dds",
 			faction = "CORE",

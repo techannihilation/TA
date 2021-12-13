@@ -52,7 +52,7 @@ return {
 			[4] = "corhcar",
 			[5] = "corblackhy",
 			[6] = "cortyrnt",
-			--[7] = "corurbanus",
+			--[7] = "",
 		},
 		customparams = {
 			buildpic = "coresy.dds",

@@ -66,7 +66,7 @@ return {
 				blocking = false,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "120 26 108",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 2966,
 				description = "Floating Hovercraft Platform Wreckage",

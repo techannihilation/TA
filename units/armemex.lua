@@ -14,7 +14,7 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "95 60 95",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		description = "Tech Level 3 (Amphibious)",
 		energyuse = 300,

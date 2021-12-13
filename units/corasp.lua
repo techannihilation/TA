@@ -59,7 +59,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "135 20 135",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 2197,
 				description = "Air Repair Pad Wreckage",

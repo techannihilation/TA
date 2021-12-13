@@ -65,7 +65,7 @@ return {
 				blocking = false,
 				collisionvolumeoffsets = -7,
 				collisionvolumescales = "116 52 116",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 2720,
 				description = "Shipyard Wreckage",

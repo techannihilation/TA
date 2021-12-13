@@ -62,7 +62,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -11 0",
 				collisionvolumescales = "96 88 134",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Ell",
 				damage = 57435,
 				description = "Krogoth Wreckage",

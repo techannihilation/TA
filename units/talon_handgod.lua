@@ -20,7 +20,7 @@ return {
 		category = "ALL MOBILE VTOL",
 		collisionvolumeoffsets = "0 -1 -5",
 		collisionvolumescales = "85 45 130",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "Ell",
 		collide = false,
 		cruisealt = 220,

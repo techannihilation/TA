@@ -1,8 +1,8 @@
 return {
 	aseadragon = {
-		acceleration = 0.028,
+		acceleration = 0.020,
 		activatewhenbuilt = true,
-		airsightdistance = 1075,
+		airsightdistance = 775,
 		brakerate = 0.063,
 		buildangle = 16384,
 		buildcostenergy = 386255,
@@ -52,8 +52,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.188,
-		turnrate = 272,
+		turninplacespeedlimit = 2.0,
+		turnrate = 200,
 		unitname = "aseadragon",
 		waterline = 8,
 		customparams = {

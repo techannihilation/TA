@@ -17,7 +17,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 5 0",
 		collisionvolumescales = "120 60 120",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

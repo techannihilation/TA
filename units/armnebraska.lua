@@ -11,7 +11,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -60 0",
 		collisionvolumescales = "215 180 215",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",

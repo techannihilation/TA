@@ -9,7 +9,7 @@ return {
 		buildtime = 750000,
 		category = "ALL SURFACE",
 		collisionvolumescales = "135 150 135",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 4",

@@ -14,7 +14,7 @@ return {
 		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "96 50 59",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		description = "16K Capacity (Amphibious)",

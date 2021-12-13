@@ -1,7 +1,5 @@
 return {
 	armfdrag = {
-		acceleration = 0,
-		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 200,
 		buildcostmetal = 15,
@@ -41,20 +39,15 @@ return {
 			floatingteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-				category = "dragonteeth",
 				crushResistance = 250,
 				damage = 2500,
 				description = "Shark's Teeth",
 				floating = true,
 				footprintx = 2,
 				footprintz = 2,
-				height = 75,
-				hitdensity = 100,
 				metal = 16,
-				nodrawundergray = true,
 				object = "armfdrag",
 				reclaimable = true,
-				world = "allworld",
 				customparams = {
 					fromunit = 1,
 				},

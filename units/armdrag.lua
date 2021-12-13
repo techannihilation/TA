@@ -27,7 +27,7 @@ return {
 		losemitheight = 22,
 		mass = 12,
 		maxdamage = 100,
-		maxslope = 64,
+		maxslope = 72,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
@@ -46,11 +46,11 @@ return {
 			dragonsteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-				category = "dragonteeth",
+				
 				crushResistance = 250,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "32 22 32",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "CylY",
 				damage = 2500,
 				description = "Dragon's Teeth",
@@ -74,7 +74,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				category = "rocks",
+
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,

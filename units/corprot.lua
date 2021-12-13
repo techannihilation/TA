@@ -17,7 +17,7 @@ return {
 		cloakcostmoving = 700,
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "53.1 73.1 53.1",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

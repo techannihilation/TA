@@ -18,7 +18,7 @@ return {
 		category = "LEVEL1 ALL SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "80 68 90",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "box",
 		corpse = "dead1",
 		description = "Produces T2 Kbots",
@@ -76,7 +76,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 -1",
 				collisionvolumescales = "73 56 89",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "CylZ",
 				damage = 3261,
 				description = "Advanced Kbot Lab Wreckage",

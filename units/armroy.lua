@@ -49,8 +49,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.98,
-		turnrate = 199,
+		turninplacespeedlimit = 2.0,
+		turnrate = 200,
 		unitname = "armroy",
 		waterline = 1,
 		customparams = {

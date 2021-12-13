@@ -10,7 +10,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "175 90 175",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",

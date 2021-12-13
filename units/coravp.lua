@@ -80,7 +80,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -6 0",
 				collisionvolumescales = "124 30 104",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 3788,
 				description = "Advanced Vehicle Plant Wreckage",

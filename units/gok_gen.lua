@@ -9,7 +9,7 @@ return {
 		buildtime = 10000,
 		category = "ALL SURFACE",
 		collisionvolumescales = "45 38 45",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produce Energy",

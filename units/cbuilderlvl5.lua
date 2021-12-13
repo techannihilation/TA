@@ -20,7 +20,7 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "77 60 140",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		cruisealt = 180,

@@ -13,7 +13,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "55 30 55",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "box",
 		damagemodifier = 0.25,
 		description = "Converts upto 135 Energy to Metal",

@@ -16,7 +16,7 @@ return {
 		category = "ALL LEVEL2 SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "211 81 211",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		description = "Produces T3 Kbot",

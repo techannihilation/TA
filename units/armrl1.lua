@@ -13,7 +13,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "36 57 36",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "armrl_dead",
 		defaultmissiontype = "GUARD_NOMOVE",

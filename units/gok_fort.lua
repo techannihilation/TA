@@ -22,7 +22,7 @@ return {
 		losemitheight = 50,
 		mass = 45,
 		maxdamage = 500,
-		maxslope = 24,
+		maxslope = 36,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
@@ -41,11 +41,11 @@ return {
 			fortification = {
 				autoreclaimable = 0,
 				blocking = true,
-				category = "dragonteeth",
+				
 				crushResistance = 1000,
 				collisionvolumeoffsets = "0 -3 0",
 				collisionvolumescales = "32 50 32",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "CylY",
 				damage = 15000,
 				description = "Fortification Wall",
@@ -70,7 +70,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = true,
-				category = "rocks",
+
 				damage = 5000,
 				description = "Rubble",
 				footprintx = 2,

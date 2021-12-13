@@ -39,7 +39,7 @@ return {
 			tllfloatingteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-				category = "dragonteeth",
+				
 				crushResistance = 250,
 				damage = 2500,
 				description = "Dragon's Teeth - NS",

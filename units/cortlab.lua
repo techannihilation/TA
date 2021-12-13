@@ -16,7 +16,7 @@ return {
 		category = "LEVEL1 ALL SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "125 45 110",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "box",
 		corpse = "dead",
 		description = "Produces T2 All-Terrain KBots",

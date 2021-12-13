@@ -19,7 +19,7 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "27 27 50",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "box",
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",

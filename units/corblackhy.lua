@@ -51,8 +51,8 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.32,
-		turnrate = 260,
+		turninplacespeedlimit = 2.0,
+		turnrate = 200,
 		unitname = "corblackhy",
 		waterline = 5,
 		customparams = {
@@ -62,8 +62,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				collisionvolumeoffsets = "17.3217697144 -6.85541303711 2.43087005615",
-				collisionvolumescales = "88.47706604 56.7307739258 178.029220581",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "88 56 175",
 				collisionvolumetype = "Box",
 				damage = 28950,
 				description = "Black Hydra Wreckage",

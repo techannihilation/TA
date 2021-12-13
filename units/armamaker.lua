@@ -16,7 +16,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "48.6 29.6 54.6",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "box",
 		description = "Converts upto 150 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",

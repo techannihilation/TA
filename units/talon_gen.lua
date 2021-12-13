@@ -10,7 +10,7 @@ return {
 		category = "ALL SURFACE",
 		cloakcost = 15,
 		collisionvolumescales = "45 38 45",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produce Energy",

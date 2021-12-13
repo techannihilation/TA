@@ -19,7 +19,7 @@ return {
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "47 80 47",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Missile Battery",

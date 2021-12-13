@@ -58,7 +58,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -27 -1",
 				collisionvolumescales = "60 112 58",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Ell",
 				damage = 1267,
 				description = "Advanced Solar Collector Wreckage",

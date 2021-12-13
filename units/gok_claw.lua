@@ -79,7 +79,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				category = "rocks",
+				
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,

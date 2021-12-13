@@ -13,7 +13,7 @@ return {
 		category = "ALL UNDERWATER",
 		collisionvolumeoffsets = "0 -3000 0",
 		collisionvolumescales = "32 32 32",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "box",
 		description = "Spent: 0",
 		footprintx = 2,

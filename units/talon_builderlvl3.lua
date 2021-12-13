@@ -18,7 +18,7 @@ return {
 		category = "ALL MOBILE VTOL",
 		collide = false,
 		collisionvolumescales = "115 50 115",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		cruisealt = 180,

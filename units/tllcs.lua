@@ -16,7 +16,7 @@ return {
 		category = "ALL MEDIUM MOBILE UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -7 -2",
 		collisionvolumescales = "31.767078399658 39.767078399658 64.767074584961",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

@@ -16,7 +16,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "59.9 119.9 59.9",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "heap",
 		defaultmissiontype = "GUARD_NOMOVE",

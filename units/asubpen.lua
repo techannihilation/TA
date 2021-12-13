@@ -70,7 +70,7 @@ return {
 				blocking = false,
 				collisionvolumeoffsets = "0 0 2",
 				collisionvolumescales = "118 35 107",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 2306,
 				description = "Amphibious Complex Wreckage",

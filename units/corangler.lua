@@ -18,7 +18,7 @@ return {
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "38 25 50",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		defaultmissiontype = "Standby",
 		description = "Anti-Submarine HoverCraft",

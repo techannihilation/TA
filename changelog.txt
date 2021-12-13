@@ -2,9 +2,12 @@
 2021-12-11
 Balance :
  - Morph into T2=>T3 Arm Geo : decrease time 90=>60s
+ - Increase Teeth MaxSlope 64°=>72°, T2 Fortification 24°=>36°
 
  Improvement:
   - Add T3 TALON / TLL GEO
+  - Add Experimental Fortification Teeth for All T3 cons and T3/T4 Commander
+  - T3 Experimental Fortification can be built into water with maxdepth at 95
 
 4.09 => 4.10
 2021-12-08

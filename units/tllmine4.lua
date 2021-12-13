@@ -22,7 +22,7 @@ return {
 		cloakcost = 4,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "16 14 16",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		decloakspherical = false,
 		defaultmissiontype = "Standby_Mine",

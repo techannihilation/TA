@@ -20,11 +20,11 @@ return {
 		losemitheight = 62,
 		mass = 45,
 		maxdamage = 500,
-		maxslope = 24,
+		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		objectname = "TLLADT",		
+		objectname = "TLLADT",
 		radaremitheight = 61,
 		script = "drag.lua",
 		unitname = "tlladt",
@@ -39,7 +39,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				category = "rocks",
+
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,
@@ -58,11 +58,11 @@ return {
 			tllfortification = {
 				autoreclaimable = 0,
 				blocking = true,
-				category = "dragonteeth",
+				
 				crushResistance = 1000,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "31 68 31",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 15000,
 				description = "Fortification Wall",

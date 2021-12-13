@@ -13,7 +13,7 @@ return {
 		canattack = false,
 		category = "ALL SURFACE",
 		collisionvolumescales = "150 165 150",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 5",

@@ -81,7 +81,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 0",
 				collisionvolumescales = "98 52 88",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "CylZ",
 				damage = 3429,
 				description = "Advanced Kbot Lab Wreckage",

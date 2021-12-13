@@ -36,7 +36,7 @@ return {
 			floatingteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-				category = "dragonteeth",
+				
 				crushResistance = 250,
 				damage = 2500,
 				description = "Shark's Teeth",

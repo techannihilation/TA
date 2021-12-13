@@ -16,7 +16,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "105 160 105",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "heap",
 		defaultmissiontype = "Standby",

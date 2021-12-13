@@ -26,7 +26,7 @@ return {
 		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
 		collide = false,
 		collisionvolumescales = "100 60 170",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "Box",
 		cruisealt = 40,
 		defaultmissiontype = "VTOL_standby",

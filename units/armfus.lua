@@ -17,7 +17,7 @@ return {
 		cloakcost = 50,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "98 59 62",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",

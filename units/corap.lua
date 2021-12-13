@@ -71,7 +71,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -14 -23",
 				collisionvolumescales = "110 33 50",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 1955,
 				description = "Aircraft Plant Wreckage",

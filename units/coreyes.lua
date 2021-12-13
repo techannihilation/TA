@@ -13,7 +13,7 @@ return {
 		cloakcost = 10,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "16 26 16",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "cdragonseyes_dead",
 		description = "Perimeter Camera",

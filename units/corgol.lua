@@ -64,7 +64,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "60 16 60",
-				collisionvolumetest = 1,
+				
 				collisionvolumetype = "Box",
 				damage = 6216,
 				description = "Goliath Wreckage",

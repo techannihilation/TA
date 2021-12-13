@@ -22,7 +22,7 @@ return {
 		cruisealt = 70,
 		collisionvolumeoffsets = "0 -15 -15",
 		collisionvolumescales = "120 50 140",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "ellipsoid",
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Superiority Flying Fortress",

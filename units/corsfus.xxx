@@ -16,7 +16,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -30 0",
 		collisionvolumescales = "55 115 55",
-		collisionvolumetest = 1,
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produces Energy / Storage - Absorb Shield (12K)",
