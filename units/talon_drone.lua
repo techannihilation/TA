@@ -32,7 +32,6 @@ return {
 		mobilestandorders = 1,
 		name = "Oblivion",
 		noautofire = false,
-		
 		objectname = "talon_drone",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNITEX",

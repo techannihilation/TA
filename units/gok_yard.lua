@@ -46,7 +46,7 @@ return {
 		buildoptions = {
 			[1] = "gok_builderlvl5",
 			[2] = "gok_apocalypse",
-			--[3] = "tllzeppelin",
+			[3] = "gok_tzenth",
 		},
 		customparams = {
 			buildpic = "gok_yard.dds",

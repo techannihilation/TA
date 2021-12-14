@@ -147,6 +147,7 @@ AimPrimary()
 {
 	signal 2;
 	set-signal-mask 2;
+	return (1);
 }
 AimSecondary(heading, pitch)
 {
@@ -167,7 +168,6 @@ AimTertiary(heading, pitch)
 	turn sleeve2 to x-axis <0.000000> - pitch speed <150.000000> ;
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn sleeve2 around x-axis;
-
 	start-script RestoreAfterDelay();
 	return (1);
 }

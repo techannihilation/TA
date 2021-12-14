@@ -46,7 +46,7 @@ return {
 		"armlift",
 		"gok_chariot",
 		"gok_wordbearer",
-
+		"gok_tzenth",
 	},
 	unclassed_air = {
 
@@ -389,6 +389,7 @@ return {
 		"tllirritator",
 		"talon_mythril",
 		"gok_archon",
+		"gok_cut1",
 		"gok_azaroth",
 		"talon_boxer",
 		"talon_scorpion",

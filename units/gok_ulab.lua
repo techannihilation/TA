@@ -58,12 +58,10 @@ return {
 		buildoptions = {
 			[1] = "gok_ucp",
 			[2] = "gok_gold",
-			[3] = "gok_archon",
-			[4] = "gok_azaroth",
-			--[5] = "",
-			--[6] = "",
-			--[7] = "",
-			--[8] = "",
+			[3] = "gok_cut1",
+			[4] = "gok_archon",
+			[5] = "gok_azaroth",
+			--[6] = "gok_tzenth",
 		},
 		customparams = {
 			buildpic = "gok_ulab.dds",
