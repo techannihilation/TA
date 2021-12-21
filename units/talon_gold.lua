@@ -22,7 +22,8 @@ return {
 		collisionvolumeoffsets = "0 -13 -3",
 		collisionvolumescales = "80 23 76",
 		collisionvolumetype = "CylY",
-		cruisealt = 200,
+		corpse = "heap",
+		cruisealt = 190,
 		defaultmissiontype = "VTOL_standby",
 		description = "Ultimate Gunship",
 		explodeas = "BANTHA_BLAST",
@@ -58,6 +59,21 @@ return {
 		customparams = {
 			buildpic = "talon_gold.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 89641,
+				description = "Experimental Aircraft Debris",
+				footprintx = 10,
+				footprintz = 10,
+				metal = 32192,
+				object = "10X10Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
