@@ -127,6 +127,7 @@ return {
 	"gok_specter",
 	"gok_nosferatu",
 	"gok_revenant",
+	"talon_gold",
 
 	-- Scout planes
 	"armawac",
@@ -388,6 +389,7 @@ return {
 		"cormonkeylord",
 		"tllirritator",
 		"talon_mythril",
+		"gok_pandora",
 		"gok_archon",
 		"gok_cut1",
 		"gok_azaroth",
@@ -488,8 +490,7 @@ return {
 		"gok_nanotc1",
 		"gok_nanotc2",
 		"gok_nanotc3",
-		"gok_nanotc4",Z
-
+		"gok_nanotc4",
 	},
 	mines = {
 		"armmine1",

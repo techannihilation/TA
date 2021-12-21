@@ -57,7 +57,7 @@ return {
 		yardmap = "oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo",
 		buildoptions = {
 			[1] = "gok_ucp",
-			[2] = "gok_gold",
+			[2] = "gok_pandora",
 			[3] = "gok_cut1",
 			[4] = "gok_archon",
 			[5] = "gok_azaroth",

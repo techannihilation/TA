@@ -17,7 +17,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "263 200 263",
-		collisionvolumetype = "CylY",
+		collisionvolumetype = "Ell",
 		corpse = "armmygalo_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Amphibious Spider (Auto-Repair 250)",

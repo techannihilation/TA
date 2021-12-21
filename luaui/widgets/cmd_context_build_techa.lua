@@ -85,6 +85,10 @@ local unitlist={--- Human friendly list. Automatically converted to unitdef IDs 
   {'tllnanotc1','tllfnanotc1'},
   {'tllnanotc2','tllfnanotc2'},
   {'tllnanotc3','tllfnanotc3'},
+  {'gok_nanotc','gok_fnanotc'},
+  {'gok_nanotc1','gok_fnanotc1'},
+  {'gok_nanotc2','gok_fnanotc2'},
+  {'gok_nanotc3','gok_fnanotc3'},
 }
 
 function widget:GetInfo()

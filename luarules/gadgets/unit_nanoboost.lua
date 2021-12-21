@@ -90,8 +90,14 @@ local nanos = {
 
   --Gok
   [UnitDefNames["gok_nanotc"].id] = true,
-
+  [UnitDefNames["gok_nanotc1"].id] = true,
+  [UnitDefNames["gok_nanotc2"].id] = true,
+  [UnitDefNames["gok_nanotc3"].id] = true,
+  [UnitDefNames["gok_nanotc4"].id] = true,
   [UnitDefNames["gok_fnanotc"].id] = true,
+  [UnitDefNames["gok_fnanotc1"].id] = true,
+  [UnitDefNames["gok_fnanotc2"].id] = true,
+  --[UnitDefNames["gok_fnanotc3"].id] = true,
 }
 
 local buildspeedCmdDesc = {

@@ -1,5 +1,5 @@
 4.10 => 4.11
-2021-12-11
+2021-12-22
 Balance :
  - Morph into T2=>T3 Arm Geo : decrease time 90=>60s
  - Increase Teeth MaxSlope 64°=>72°, T2 Fortification 24°=>36°
@@ -10,6 +10,11 @@ Improvement:
   - T3 Experimental Fortification can be built into water with maxdepth at 95
   - Add Melee T4 Gok unit
   - Add Bomber T5 Gok unit
+  - Add Gunship T5 Talon
+
+  Fix :
+  - Mygalo T4 Arm Spider Collision Box
+  - Nanoboost for all Gok nano
 
 4.09 => 4.10
 2021-12-08

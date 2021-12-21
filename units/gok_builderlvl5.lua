@@ -66,7 +66,7 @@ return {
 			[10] = "gok_antinuke2",
 			[11] = "gok_silo2",
 			[12] = "gok_dmc",
-			[13] = "gok_meteor2",
+			[13] = "gok_meteor1",
 			--[14] = "gok_planetkiller",
 		},
 		customparams = {
