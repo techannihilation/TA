@@ -21,6 +21,7 @@ return {
 		collisionvolumeoffsets = "1 1 5",
 		collisionvolumescales = "52 21 52",
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Stealthy Armed Transport (until 5000 Metal cost unit)",
@@ -64,6 +65,21 @@ return {
 		customparams = {
 			buildpic = "armdfly.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 4341,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 126,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

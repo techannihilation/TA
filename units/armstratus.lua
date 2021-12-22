@@ -18,6 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 260,
 		defaultmissiontype = "VTOL_standby",
 		description = "Experimental Air Fortress",

@@ -22,13 +22,14 @@ return {
 		cantbetransported = true,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 320,
 		defaultmissiontype = "VTOL_standby",
 		description = "Precise Bomber",
 		downloadable = 1,
 		explodeas = "BIG_UNITEX",
-		footprintx = 3,
-		footprintz = 3,
+		footprintx = 4,
+		footprintz = 4,
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 7,
@@ -55,7 +56,21 @@ return {
 		customparams = {
 			buildpic = "armcyclone.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T3 Unit Research Centre",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 89641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 32192,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

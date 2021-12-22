@@ -18,6 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 125,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 3",
@@ -88,6 +89,21 @@ return {
 			[1] = 0.144,
 			[2] = 0.544,
 			[3] = 0.144,
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 19641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 2192,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

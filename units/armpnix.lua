@@ -19,6 +19,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 220,
 		defaultmissiontype = "VTOL_standby",
 		description = "Strategic Bomber",
@@ -53,6 +54,21 @@ return {
 		customparams = {
 			buildpic = "armpnix.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 4341,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 126,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -18,7 +18,6 @@ return {
 		corpse = "dead1",
 		description = "Produces T2 Aircraft",
 		energystorage = 200,
-		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,
@@ -35,7 +34,7 @@ return {
 		metalstorage = 200,
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "ARMAAP",
 		radaremitheight = 67,
 		seismicsignature = 0,
@@ -75,7 +74,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 -23",
 				collisionvolumescales = "106 40 48",
-				
+
 				collisionvolumetype = "Box",
 				damage = 2968,
 				description = "Advanced Aircraft Plant Wreckage",

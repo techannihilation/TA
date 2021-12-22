@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 120,
 		defaultmissiontype = "VTOL_standby",
 		description = "Torpedo Bomber",
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "armlance.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 4341,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 126,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

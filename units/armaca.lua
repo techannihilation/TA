@@ -18,7 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
-		corpse = "1_dead",
+		corpse = "heap",
 		cruisealt = 80,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 2",
@@ -92,14 +92,14 @@ return {
 			faction = "ARM",
 		},
 		featuredefs = {
-			["1_dead"] = {
-				blocking = true,
-				damage = 2146,
-				description = "Advanced Construction Aircraft Wreckage",
+			heap = {
+				blocking = false,
+				damage = 4641,
+				description = "Aircraft Debris",
 				footprintx = 2,
 				footprintz = 2,
-				metal = 2175,
-				object = "ARMACA_DEAD",
+				metal = 192,
+				object = "2X2Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

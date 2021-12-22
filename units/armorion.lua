@@ -19,13 +19,14 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 220,
 		defaultmissiontype = "VTOL_standby",
 		description = "Heavy Carpet Bomber",
 		explodeas = "BIG_UNIT",
 		firestandorders = 1,
-		footprintx = 3,
-		footprintz = 3,
+		footprintx = 4,
+		footprintz = 4,
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "armorion.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 12641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1492,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

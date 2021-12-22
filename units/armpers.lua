@@ -16,6 +16,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
+		corpse = "heap",
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",
 		description = "Advanced Gunship - Anti T3/T4",
@@ -50,6 +51,21 @@ return {
 		customparams = {
 			buildpic = "armpers.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 19641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 2192,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

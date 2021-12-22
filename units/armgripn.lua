@@ -19,6 +19,7 @@ return {
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "24 9 24",
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 220,
 		defaultmissiontype = "VTOL_standby",
 		description = "EMP Bomber",
@@ -54,6 +55,21 @@ return {
 		customparams = {
 			buildpic = "armgripn.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 4341,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 126,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Gunship",
@@ -37,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Brawler",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "ARMBRAWL",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "armbrawl.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 4341,
+				description = "Aircraft Debris",
+				footprintx = 2,
+				footprintz = 2,
+				metal = 122,
+				object = "2X2Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			explosiongenerators = {

@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 150,
 		defaultmissiontype = "VTOL_standby",
 		description = "Atomic Bomber",
@@ -24,8 +25,8 @@ return {
 		energyuse = 0,
 		explodeas = "SMALL_BUILDING",
 		firestate = 0,
-		footprintx = 3,
-		footprintz = 3,
+		footprintx = 4,
+		footprintz = 4,
 		icontype = "air",
 		idleautoheal = 5,
 		idletime = 1800,
@@ -54,6 +55,21 @@ return {
 		customparams = {
 			buildpic = "armcybr.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 10341,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1326,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
