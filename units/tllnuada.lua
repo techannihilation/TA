@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 55,
 		defaultmissiontype = "VTOL_standby",
 		description = "Advanced Gunship [Anti T3/T4]",
@@ -38,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Nuada",
 		noautofire = false,
-
 		objectname = "tllnuada",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -53,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "tllnuada.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 3013,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -16,6 +16,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Gunship",
@@ -50,6 +51,21 @@ return {
 		customparams = {
 			buildpic = "talon_vulture.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 113,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			explosiongenerators = {

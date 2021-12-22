@@ -2,7 +2,7 @@
 2021-12-24
 
 Improvement:
-  - Add wreckage for all Bomber / Gunship
+  - Add wreckage for all LVL1-2-3-4-5 Bomber / LVL2-3-4 Gunship / LVL2-3-4 Transport
 
 4.10 => 4.11
 2021-12-22

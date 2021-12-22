@@ -20,6 +20,7 @@ return {
 		collisionvolumeoffsets = "1 -3 0",
 		collisionvolumescales = "52 21 52",
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Heavy Transport (until 5000 Metal cost unit)",
@@ -68,6 +69,21 @@ return {
 		customparams = {
 			buildpic = "corseahook.dds",
 			faction = "CORE",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 9641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 212,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

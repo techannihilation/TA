@@ -21,6 +21,7 @@ return {
 		collisionvolumeoffsets = "0 -5 0",
 		collisionvolumescales = "100 100 250",
 		collisionvolumetype = "CylZ",
+		corpse = "heap",
 		cruisealt = 160,
 		defaultmissiontype = "VTOL_standby",
 		description = "Ultimate Air Transport (until 100K Metal cost unit)",
@@ -61,6 +62,21 @@ return {
 		customparams = {
 			buildpic = "corlift.dds",
 			faction = "CORE",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 59641,
+				description = "Aircraft Debris",
+				footprintx = 7,
+				footprintz = 7,
+				metal = 12212,
+				object = "7X7Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

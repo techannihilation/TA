@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 55,
 		defaultmissiontype = "VTOL_standby",
 		description = "Gunship",
@@ -37,7 +38,6 @@ return {
 		mobilestandorders = 1,
 		name = "Dark Crow",
 		noautofire = false,
-		
 		objectname = "tllcopter",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -52,6 +52,21 @@ return {
 		customparams = {
 			buildpic = "tllcopter.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 253,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

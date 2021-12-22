@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 80,
 		defaultmissiontype = "VTOL_standby",
 		description = "Torpedo Gunship",
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "gok_revenant.dds",
 			faction = "GOK",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 150,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			explosiongenerators = {

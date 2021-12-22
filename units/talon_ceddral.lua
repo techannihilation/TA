@@ -19,15 +19,16 @@ return {
 		category = "ALL MOBILE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 -13 -3",
-		collisionvolumescales = "80 23 76",		
+		collisionvolumescales = "80 23 76",
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 115,
 		defaultmissiontype = "VTOL_standby",
 		description = "Very Heavy Gunship",
 		explodeas = "SMALL_BUILDING",
 		firestandorders = 1,
-		footprintx = 3,
-		footprintz = 3,
+		footprintx = 4,
+		footprintz = 4,
 		hoverattack = true,
 		icontype = "air",
 		idleautoheal = 5,
@@ -58,6 +59,21 @@ return {
 		customparams = {
 			buildpic = "talon_ceddral.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 2213,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

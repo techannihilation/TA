@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 55,
 		defaultmissiontype = "VTOL_standby",
 		description = "Advanced Gunship [Anti T3/T4]",
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "corblackdawn.dds",
 			faction = "CORE",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 19641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 2992,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

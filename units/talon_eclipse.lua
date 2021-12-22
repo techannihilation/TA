@@ -21,6 +21,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "65 25 65",
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 200,
 		defaultmissiontype = "VTOL_standby",
 		description = "Strategic Bomber",
@@ -31,7 +32,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		maneuverleashlength = 1280,
-		mass = 299,
+		mass = 325,
 		maxdamage = 1145,
 		maxslope = 10,
 		maxvelocity = 9.10,
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "talon_eclipse.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 141,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -20,8 +20,8 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 -1 -2",
 		collisionvolumescales = "80 28 76",
-		
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Flying Fortress",
@@ -59,6 +59,21 @@ return {
 		customparams = {
 			buildpic = "tllpterodactyl.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 30641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1913,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			explosiongenerators = {

@@ -18,6 +18,7 @@ return {
 		category = "ALL MOBILE VTOL",
 		collide = false,
 		cruisealt = 120,
+		corpse = "heap",
 		defaultmissiontype = "VTOL_standby",
 		description = "Torpedo Bomber",
 		explodeas = "BIG_UNITEX",
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "cortitan.dds",
 			faction = "CORE",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 9641,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 99,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

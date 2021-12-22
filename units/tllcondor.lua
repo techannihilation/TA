@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 220,
 		defaultmissiontype = "VTOL_standby",
 		description = "Supersonic Fighter",
@@ -49,6 +50,21 @@ return {
 		customparams = {
 			buildpic = "tllcondor.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 2213,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

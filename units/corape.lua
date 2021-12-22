@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Gunship",
@@ -52,6 +53,21 @@ return {
 		customparams = {
 			buildpic = "corape.dds",
 			faction = "CORE",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 9641,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 122,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

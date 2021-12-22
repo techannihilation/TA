@@ -19,6 +19,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 185,
 		defaultmissiontype = "VTOL_standby",
 		description = "Strategic Bomber",
@@ -38,7 +39,6 @@ return {
 		mobilestandorders = 1,
 		name = "Ghost",
 		noautofire = false,
-
 		objectname = "tllabomber",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 350,
@@ -52,6 +52,21 @@ return {
 		customparams = {
 			buildpic = "tllabomber.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 9641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 203,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

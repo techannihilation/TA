@@ -17,6 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 80,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 2",
@@ -86,6 +87,21 @@ return {
 		customparams = {
 			buildpic = "gok_aca.dds",
 			faction = "gok",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 2,
+				footprintz = 2,
+				metal = 213,
+				object = "2X2Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		nanocolor = {
 			[1] = 0.144,

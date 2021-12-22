@@ -18,6 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 165,
 		defaultmissiontype = "VTOL_standby",
 		description = "Bomber",
@@ -51,6 +52,21 @@ return {
 		customparams = {
 			buildpic = "gok_dirgesinger.dds",
 			faction = "GOK",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 9641,
+				description = "Aircraft Debris",
+				footprintx = 3,
+				footprintz = 3,
+				metal = 70,
+				object = "3X3Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

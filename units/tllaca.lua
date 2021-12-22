@@ -18,6 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 75,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 2",
@@ -82,6 +83,21 @@ return {
 		customparams = {
 			buildpic = "tllaca.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 9641,
+				description = "Aircraft Debris",
+				footprintx = 2,
+				footprintz = 2,
+				metal = 311,
+				object = "2X2Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		nanocolor = {
 			[1] = 0.47,

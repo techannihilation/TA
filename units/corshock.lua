@@ -22,7 +22,6 @@ return {
 		cruisealt = 70,
 		collisionvolumeoffsets = "0 -15 -15",
 		collisionvolumescales = "120 50 140",
-		
 		collisionvolumetype = "ellipsoid",
 		defaultmissiontype = "VTOL_standby",
 		description = "Air Superiority Flying Fortress",
@@ -60,6 +59,21 @@ return {
 		customparams = {
 			buildpic = "corshock.dds",
 			faction = "CORE",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 6213,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

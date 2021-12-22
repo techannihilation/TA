@@ -21,6 +21,7 @@ return {
 		collisionvolumeoffsets = "0 -5 10",
 		collisionvolumescales = "60 60 90",
 		collisionvolumetype = "CylZ",
+		corpse = "heap",
 		cruisealt = 120,
 		defaultmissiontype = "VTOL_standby",
 		description = "Very Heavy Air Transport (until 20K Metal cost unit)",
@@ -61,6 +62,21 @@ return {
 		customparams = {
 			buildpic = "talon_tau.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1413,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

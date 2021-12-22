@@ -18,7 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
-		corpse = "1_dead",
+		corpse = "heap",
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_Standby",
 		description = "Tech Level 2",
@@ -88,21 +88,7 @@ return {
 			buildpic = "coraca.dds",
 			faction = "CORE",
 		},
-		featuredefs = {
-			["1_dead"] = {
-				blocking = true,
-				damage = 2149,
-				description = "Advanced Construction Aircraft Wreckage",
-				footprintx = 2,
-				footprintz = 2,
-				metal = 1184,
-				object = "CORACA_DEAD",
-				reclaimable = true,
-				customparams = {
-					fromunit = 1,
-				},
-			},
-		},
+
 		nanocolor = {
 			[1] = 0.144,
 			[2] = 0.494,

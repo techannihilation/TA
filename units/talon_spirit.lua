@@ -20,6 +20,7 @@ return {
 		cloakcostmoving = 1000,
 		cloaktimeout = 480,
 		collide = false,
+		corpse = "heap",
 		cruisealt = 220,
 		decloakonfire = true,
 		decloakspherical = true,
@@ -54,6 +55,21 @@ return {
 		customparams = {
 			buildpic = "talon_spirit.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 30641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1213,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -20,6 +20,7 @@ return {
 		cloakcostmoving = 2000,
 		cloaktimeout = 480,
 		collide = false,
+		corpse = "heap",
 		cruisealt = 220,
 		decloakonfire = true,
 		decloakspherical = true,
@@ -54,7 +55,21 @@ return {
 		customparams = {
 			buildpic = "corsbomb.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T3 Unit Research Centre",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 19641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1292,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

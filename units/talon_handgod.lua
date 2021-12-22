@@ -20,9 +20,9 @@ return {
 		category = "ALL MOBILE VTOL",
 		collisionvolumeoffsets = "0 -1 -5",
 		collisionvolumescales = "85 45 130",
-		
 		collisionvolumetype = "Ell",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 220,
 		defaultmissiontype = "VTOL_standby",
 		description = "Experimental Bomber",
@@ -41,7 +41,6 @@ return {
 		mobilestandorders = 1,
 		name = "Hand God",
 		noautofire = false,
-
 		objectname = "talon_handgod",
 		script = "talon_handgod.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",
@@ -56,6 +55,21 @@ return {
 		customparams = {
 			buildpic = "talon_handgod.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 38641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 6213,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

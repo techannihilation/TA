@@ -16,6 +16,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
+		corpse = "heap",
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
 		description = "Heavy Transport (until 5000 Metal cost unit)",
@@ -56,6 +57,21 @@ return {
 		customparams = {
 			buildpic = "tllrobber.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 18641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 413,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

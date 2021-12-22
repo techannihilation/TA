@@ -20,15 +20,15 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 -13 -3",
 		collisionvolumescales = "80 23 76",
-		
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Flying Fortress",
 		explodeas = "SMALL_BUILDING",
 		firestandorders = 1,
-		footprintx = 3,
-		footprintz = 3,
+		footprintx = 4,
+		footprintz = 4,
 		hoverattack = true,
 		icontype = "air",
 		idleautoheal = 5,
@@ -43,7 +43,6 @@ return {
 		mobilestandorders = 1,
 		name = "Krow",
 		noautofire = false,
-		
 		objectname = "CORCRW",
 		radaremitheight = 28.8,
 		seismicsignature = 0,
@@ -60,7 +59,21 @@ return {
 		customparams = {
 			buildpic = "corcrw.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T2 Unit Research Centre",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 19641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1992,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -22,6 +22,7 @@ return {
 		cantbetransported = true,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 320,
 		defaultmissiontype = "VTOL_standby",
 		description = "Experimental Bomber",
@@ -54,7 +55,21 @@ return {
 		customparams = {
 			buildpic = "coreclipse.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T3 Unit Research Centre",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 19641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 2492,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

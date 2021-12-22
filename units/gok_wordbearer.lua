@@ -21,6 +21,7 @@ return {
 		collisionvolumeoffsets = "1 1 5",
 		collisionvolumescales = "52 21 52",
 		collisionvolumetype = "CylY",
+		corpse = "heap",
 		cruisealt = 100,
 		defaultmissiontype = "VTOL_standby",
 		description = "Armed Transport (until 5000 Metal cost unit)",
@@ -34,7 +35,7 @@ return {
 		idletime = 1800,
 		losemitheight = 15,
 		maneuverleashlength = 1280,
-		mass = 585,
+		mass = 609,
 		maxdamage = 3805,
 		maxslope = 15,
 		maxvelocity = 6,
@@ -64,6 +65,21 @@ return {
 		customparams = {
 			buildpic = "gok_wordbearer.dds",
 			faction = "ARM",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 30641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 313,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

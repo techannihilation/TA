@@ -18,6 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
+		corpse = "heap",
 		cruisealt = 125,
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 3",
@@ -82,6 +83,21 @@ return {
 		customparams = {
 			buildpic = "talon_eca.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 39641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				metal = 1213,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		nanocolor = {
 			[1] = 0.144,
