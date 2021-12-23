@@ -116,7 +116,7 @@ return {
 				model = "weapon_missile",
 				name = "Sabotrocket",
 				noselfdamage = true,
-				range = 600,
+				range = 625h,
 				reloadtime = 0.5,
 				smoketrail = true,
 				soundhitdry = "SabotHit",

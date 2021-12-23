@@ -1,6 +1,9 @@
 4.11 => 4.12
 2021-12-24
-
+Balance :
+ - Juggernaut T3 Arm : Decrease speed 3.15=>3.0
+ - Increase range for all T3 Gunship +25. Goal is to take less damage from explosion
+ 
 Improvement:
   - Add wreckage for all LVL1-2-3-4-5 Bomber / LVL2-3-4 Gunship / LVL2-3-4 Transport
 

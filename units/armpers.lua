@@ -116,7 +116,7 @@ return {
 				impulsefactor = 0.123,
 				intensity = 0.7,
 				name = "E.M.G.",
-				range = 600,
+				range = 625,
 				reloadtime = 0.2,
 				rgbcolor = "1 0.95 0.4",
 				soundhitdry = "lasrhit1",
