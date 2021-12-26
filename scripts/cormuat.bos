@@ -74,8 +74,14 @@ EndTransport()
 
 Killed(severity, corpsetype)
 {
-	corpsetype = 3;
 	explode body type NOHEATCLOUD;
+	
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	corpsetype = 3;
 	return (corpsetype);
 }
 

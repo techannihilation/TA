@@ -257,6 +257,20 @@ StopMoving()
 
 Killed(severity, corpsetype)
 {
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode thruster1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thruster2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode body type NOHEATCLOUD;
+		explode thruster3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thruster4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thruster5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode thruster6 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flakmis1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flakmis2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
 	corpsetype = 3;
 	explode thruster1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode thruster2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

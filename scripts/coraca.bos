@@ -138,22 +138,9 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode body type NOHEATCLOUD;
-		explode door1 type NOHEATCLOUD;
-		explode door2 type NOHEATCLOUD;
-		explode thrusta1 type NOHEATCLOUD;
-		explode thrusta2 type NOHEATCLOUD;
-		explode thrustb type NOHEATCLOUD;
-		explode wing1 type NOHEATCLOUD;
-		explode wing2 type NOHEATCLOUD;
-		return (corpsetype);
-	}
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
+		corpsetype = 1;
 		explode body type NOHEATCLOUD;
 		explode door1 type NOHEATCLOUD;
 		explode door2 type NOHEATCLOUD;

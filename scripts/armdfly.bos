@@ -259,25 +259,9 @@ AimFromPrimary(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode wing1 type NOHEATCLOUD;
-		explode wing2 type NOHEATCLOUD;
-		explode wing3 type NOHEATCLOUD;
-		explode wing4 type NOHEATCLOUD;
-		explode leg1 type NOHEATCLOUD;
-		explode leg2 type NOHEATCLOUD;
-		explode leg3 type NOHEATCLOUD;
-		explode leg4 type NOHEATCLOUD;
-		explode leg5 type NOHEATCLOUD;
-		explode leg6 type NOHEATCLOUD;
-		return (corpsetype);
-	}
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
+		corpsetype = 1;
 		explode base type NOHEATCLOUD;
 		explode wing1 type NOHEATCLOUD;
 		explode wing2 type NOHEATCLOUD;
@@ -288,22 +272,6 @@ Killed(severity, corpsetype)
 		explode leg3 type NOHEATCLOUD;
 		explode leg4 type NOHEATCLOUD;
 		explode leg5 type NOHEATCLOUD | FALL;
-		explode leg6 type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | SHATTER;
-		explode wing1 type NOHEATCLOUD;
-		explode wing2 type NOHEATCLOUD;
-		explode wing3 type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode wing4 type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode leg1 type NOHEATCLOUD;
-		explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode leg3 type NOHEATCLOUD;
-		explode leg4 type NOHEATCLOUD;
-		explode leg5 type NOHEATCLOUD | FALL | SMOKE | FIRE;
 		explode leg6 type NOHEATCLOUD;
 		return (corpsetype);
 	}

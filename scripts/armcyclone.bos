@@ -205,7 +205,7 @@ Killed(severity, corpsetype)
 {
 	hide m1;
 	hide m2;
-	if( severity <= 25 )
+	if( severity <= 50 )
 	{
 		corpsetype = 1;
 		explode base type NOHEATCLOUD;
@@ -214,32 +214,6 @@ Killed(severity, corpsetype)
 		explode m2 type NOHEATCLOUD | FALL;
 		explode tail type NOHEATCLOUD | FALL;
 		explode ex type NOHEATCLOUD | FALL;
-		explode wing1 type NOHEATCLOUD | SHATTER;
-		explode wing2 type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		explode drop type NOHEATCLOUD | FALL;
-		explode m1 type NOHEATCLOUD | FALL;
-		explode m2 type NOHEATCLOUD | FALL;
-		explode tail type NOHEATCLOUD | FALL;
-		explode ex type NOHEATCLOUD | FALL;
-		explode wing1 type NOHEATCLOUD | SHATTER;
-		explode wing2 type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode drop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode m1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode m2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode tail type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode ex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode wing1 type NOHEATCLOUD | SHATTER;
 		explode wing2 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);

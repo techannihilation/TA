@@ -45,7 +45,7 @@ Create()
 RestoreAfterDelay()
 {
 	sleep 1000;
-	spin saw around y-axis speed <-45.0> accelerate <-20.0>;
+	spin saw around y-axis speed <25.0> accelerate <20.0>;
 }
 
 

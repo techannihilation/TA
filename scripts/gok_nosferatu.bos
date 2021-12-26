@@ -125,23 +125,9 @@ SweetSpot(PieceNum)
 
 Killed(Severity, CorpseType)
 {
-
-	if( severity <= 45 )
-	{
-		corpsetype = 1;
-		explode hull type NOHEATCLOUD;
-		explode spinner type NOHEATCLOUD;
-		explode engine1 type NOHEATCLOUD;
-		explode engine2 type NOHEATCLOUD;
-		explode lwing type NOHEATCLOUD;
-		explode rwing type NOHEATCLOUD;
-		explode pitchturret type SHATTER | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-	
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
+		corpsetype = 1;
 		explode hull type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 		explode spinner type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 		explode engine1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
@@ -149,6 +135,7 @@ Killed(Severity, CorpseType)
 		explode lwing type NOHEATCLOUD;
 		explode rwing type NOHEATCLOUD;
 		explode pitchturret type SHATTER | EXPLODE_ON_HIT;
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode hull type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;

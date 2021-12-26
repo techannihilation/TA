@@ -244,15 +244,29 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode turreta type NOHEATCLOUD;
+		explode turretb type NOHEATCLOUD;
+		explode reactor1 type NOHEATCLOUD;
+		explode reactor2 type NOHEATCLOUD;
+		explode gun1 type NOHEATCLOUD;
+		explode gun2 type NOHEATCLOUD;
+		explode wing1 type NOHEATCLOUD;
+		explode wing2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
 	corpsetype = 3;
-	explode body type 128;
-	explode turreta type 128;
-	explode turretb type 128;
-	explode reactor1 type 128;
-	explode reactor2 type 128;
-	explode gun1 type 128;
-	explode gun2 type 128;
-	explode wing1 type 128;
-	explode wing2 type 128;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turreta type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turretb type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode reactor1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode reactor2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode gun1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode gun2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode wing1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode wing2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

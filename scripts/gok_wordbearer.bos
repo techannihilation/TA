@@ -159,6 +159,18 @@ Deactivate()
 
 Killed(severity, corpsetype)
 {
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode head type NOHEATCLOUD;
+		explode tail type NOHEATCLOUD;
+		explode backbone type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lbengine type FALL | SMOKE | NOHEATCLOUD;
+		explode rbengine type FALL | SMOKE | NOHEATCLOUD;
+		explode lfengine type FALL | SMOKE | NOHEATCLOUD;
+		explode rfengine type FALL | SMOKE | NOHEATCLOUD;
+		return (corpsetype);
+	}
 	corpsetype = 3;
 	explode head type NOHEATCLOUD;
 	explode tail type NOHEATCLOUD;
@@ -167,4 +179,5 @@ Killed(severity, corpsetype)
 	explode rbengine type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode lfengine type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode rfengine type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
 }

@@ -159,35 +159,15 @@ StopMoving()
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode base type NOHEATCLOUD ;
-		explode jet1 type NOHEATCLOUD ;
-		explode jet2 type NOHEATCLOUD ;
-		explode jet3 type NOHEATCLOUD ;
-		explode link type NOHEATCLOUD ;
-		return (0);
-	}
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
+		corpsetype = 1;
 		explode base type NOHEATCLOUD;
 		explode jet1 type FALL | NOHEATCLOUD;
 		explode jet2 type FALL | NOHEATCLOUD;
 		explode jet3 type FALL | NOHEATCLOUD;
 		explode link type FALL | NOHEATCLOUD;
-		return (0);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode jet1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode jet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode jet3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode link type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (0);
+		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode base type NOHEATCLOUD;
@@ -195,4 +175,5 @@ Killed(severity, corpsetype)
 	explode jet2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode jet3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode link type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
 }

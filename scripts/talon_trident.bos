@@ -200,29 +200,9 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode base type NOHEATCLOUD ;
-		explode missle1 type NOHEATCLOUD ;
-		explode missle2 type NOHEATCLOUD ;
-		explode winga type NOHEATCLOUD ;
-		explode wingb type NOHEATCLOUD ;
-		return (corpsetype);
-	}
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
-		explode base type NOHEATCLOUD ;
-		explode missle1 type NOHEATCLOUD ;
-		explode missle2 type NOHEATCLOUD ;
-		explode winga type NOHEATCLOUD ;
-		explode wingb type NOHEATCLOUD ;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
+		corpsetype = 1;
 		explode base type NOHEATCLOUD ;
 		explode missle1 type NOHEATCLOUD ;
 		explode missle2 type NOHEATCLOUD ;

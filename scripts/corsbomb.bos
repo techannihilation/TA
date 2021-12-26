@@ -64,7 +64,12 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	corpsetype = 3;
 	explode fuselage type NOHEATCLOUD | SMOKE | FIRE | EXPLODE_ON_HIT;
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		return (corpsetype);
+	}
+	corpsetype = 3;
 	return (corpsetype);
 }

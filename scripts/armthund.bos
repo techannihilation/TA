@@ -131,21 +131,9 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode jets type NOHEATCLOUD;
-		explode nose type NOHEATCLOUD;
-		explode vertjet1 type NOHEATCLOUD;
-		explode vertjet2 type NOHEATCLOUD;
-		explode wing1 type NOHEATCLOUD;
-		explode wing2 type NOHEATCLOUD;
-		return (corpsetype);
-	}
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
+		corpsetype = 1;
 		explode base type NOHEATCLOUD;
 		explode jets type NOHEATCLOUD | SHATTER;
 		explode nose type NOHEATCLOUD | FALL;
@@ -153,18 +141,6 @@ Killed(severity, corpsetype)
 		explode vertjet2 type NOHEATCLOUD | FALL;
 		explode wing1 type NOHEATCLOUD | FALL;
 		explode wing2 type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode jets type NOHEATCLOUD | SHATTER;
-		explode nose type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode vertjet1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode vertjet2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode wing1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode wing2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;

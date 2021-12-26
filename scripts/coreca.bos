@@ -130,35 +130,9 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode ring type NOHEATCLOUD;
-		explode bridge type NOHEATCLOUD;
-		explode pod1 type NOHEATCLOUD;
-		explode pod2 type NOHEATCLOUD;
-		explode pod3 type NOHEATCLOUD;
-		explode pod4 type NOHEATCLOUD;
-		explode pod5 type NOHEATCLOUD;
-		explode pod6 type NOHEATCLOUD;
-		return (corpsetype);
-	}
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
-		explode ring type NOHEATCLOUD;
-		explode bridge type NOHEATCLOUD;
-		explode pod1 type NOHEATCLOUD;
-		explode pod2 type NOHEATCLOUD;
-		explode pod3 type NOHEATCLOUD;
-		explode pod4 type NOHEATCLOUD;
-		explode pod5 type NOHEATCLOUD;
-		explode pod6 type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
+		corpsetype = 1;
 		explode ring type NOHEATCLOUD;
 		explode bridge type NOHEATCLOUD;
 		explode pod1 type NOHEATCLOUD;
