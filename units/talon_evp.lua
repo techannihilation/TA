@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Experimental Vehicle/Gravity Plant",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon_evp",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -48,7 +48,7 @@ return {
 		unitname = "talon_evp",
 		usebuildinggrounddecal = true,
 		workertime = 800,
-		yardmap = "oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo oooccccccooo",
+		yardmap = "ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo",
 		buildoptions = {
 			[1] = "talon_ech",
 			[2] = "talon_mrtn",
