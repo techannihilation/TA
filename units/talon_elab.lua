@@ -15,9 +15,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "LEVEL2 ALL SURFACE",
-		collisionvolumeoffsets = "0 -45 5",
-		collisionvolumescales = "160 90 140",
-		collisionvolumetype = "CylZ",
+		collisionvolumeoffsets = "0 0 0",
+		collisionvolumescales = "120 60 150",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Heavy T3 Units",
 		energystorage = 500,
@@ -74,7 +74,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -21 0",
 				collisionvolumescales = "114 74 129",
-				
+
 				collisionvolumetype = "CylZ",
 				damage = 9570,
 				description = "Experimental Gantry Wreckage",

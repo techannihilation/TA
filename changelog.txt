@@ -9,6 +9,7 @@ Improvement:
 
 Fix :
  - T3 Vehicle Factory yardmap Talon. Abbadon not more stucked
+ - T3 Kbot Factory Talon, Talos and T3 AA CollisionVolume. Talos and AA should benot more stucked
 
 4.10 => 4.11
 2021-12-22
