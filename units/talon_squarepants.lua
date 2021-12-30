@@ -16,8 +16,7 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "38 38 54",
-		
-		collisionvolumetype = "CylZ",
+		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Stealth Amphibious Tank",
@@ -57,7 +56,7 @@ return {
 		trackwidth = 25,
 		turninplace = 0,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.056,
+		turninplacespeedlimit = 1.0,
 		turnrate = 350,
 		unitname = "talon_squarepants",
 		customparams = {

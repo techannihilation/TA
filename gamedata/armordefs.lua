@@ -126,6 +126,8 @@ return {
 	"talon_ceddral",
 	"gok_specter",
 	"gok_nosferatu",
+	"gok_spook",
+	"gok_dvergar",
 	"gok_revenant",
 	"talon_gold",
 
@@ -353,7 +355,7 @@ return {
 		"talon_hollander",
 		"talon_talos",
 		"talon_crab",
-		"talon_artycrab",
+		"gok_artycrab",
 		-- talon t3 veh
 		"talon_abaddon",
 		"talon_repentance",

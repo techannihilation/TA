@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Visitant",
 		noautofire = false,
-		
+
 		objectname = "talon_visitant",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",
@@ -152,8 +152,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "talon_visitant_WEAPON",
-				maindir = "0 0 1",
-				maxangledif = 210,
 				onlytargetcategory = "SURFACE",
 			},
 		},

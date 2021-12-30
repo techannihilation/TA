@@ -59,7 +59,7 @@ return {
 			[2] = "gok_engineera",
 			[3] = "gok_demoneye",
 			[4] = "gok_sucub",
-			--[5] = "gok_brawl",
+			[5] = "gok_spook",
 			[6] = "gok_hookah",
 			--[7] = "gok_gripn",
 			[8] = "gok_revenant",
@@ -76,7 +76,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 -23",
 				collisionvolumescales = "106 40 48",
-				
+
 				collisionvolumetype = "Box",
 				damage = 2968,
 				description = "Advanced Aircraft Plant Wreckage",

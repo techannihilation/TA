@@ -1,11 +1,11 @@
 return {
-	talon_artycrab = {
+	gok_artycrab = {
 		acceleration = 0.55,
 		brakerate = 0.75,
 		buildcostenergy = 145016,
 		buildcostmetal = 8675,
 		builder = false,
-		buildpic = "talon_artycrab.dds",
+		buildpic = "gok_artycrab.dds",
 		buildtime = 160000,
 		canattack = true,
 		canguard = true,
@@ -15,7 +15,6 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-3 -19 2",
 		collisionvolumescales = "100 97 93",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,8 +36,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Onyx",
 		noautofire = false,
-		
-		objectname = "TALON_ARTYCRAB",
+		objectname = "gok_ARTYCRAB",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 62,
@@ -52,10 +50,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.627,
 		turnrate = 100,
-		unitname = "talon_artycrab",
+		unitname = "gok_artycrab",
 		customparams = {
-			buildpic = "talon_artycrab.dds",
-			faction = "TALON",
+			buildpic = "gok_artycrab.dds",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 8962,
-				object = "talon_artycrab_dead",
+				object = "gok_artycrab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,8 +86,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:MEDIUMFLARE",
-				[2] = "custom:muzzle_flare_rocket",
+				[1] = "custom:GOKFLARE",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -122,37 +119,48 @@ return {
 			},
 		},
 		weapondefs = {
-			crabe_gauss = {
-				areaofeffect = 200,
+			gok_gun = {
+				accuracy = 400,
+				areaofeffect = 256,
 				avoidfeature = false,
-				craterareaofeffect = 0,
+				cegtag = "gokblaster",
+				craterareaofeffect = 256,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:BERTHASHOT_LOWP",
-				name = "Crabe Cannon",
+				edgeeffectiveness = 0.5,
+				explosiongenerator = "custom:GOK-FLASH",
+				gravityaffected = "TRUE",
+				impulseboost = 0.123,
+				impulsefactor = 2,
+				name = "Jocond Canon",
 				nogap = 1,
+				noselfdamage = true,
+				proximitypriority = -2,
 				range = 1300,
-				reloadtime = 3,
-				rgbcolor = "0.76 0.46 0",
-				size = 5,
-				soundhitdry = "XPLOSML1",
+				reloadtime = 4.5,
+				rgbcolor = "0.78 0.08 0.52",
+				separation = 0.45,
+				size = 3.0,
+				sizedecay = -0.15,
+				soundhitdry = "xplomed2",
 				soundhitwet = "splslrg",
 				soundhitwetvolume = 0.6,
-				soundstart = "AMATIR",
-				stages = 10,
+				soundstart = "cannhvy5",
+				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 385,
+				weaponvelocity = 440,
 				damage = {
-					commanders = 637.5,
-					default = 1275,
+					commanders = 900,
+					default = 1800,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				def = "CRABE_GAUSS",
+				badtargetcategory = "SMALL TINY MEDIUM",
+				def = "GOK_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 		},

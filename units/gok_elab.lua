@@ -60,7 +60,7 @@ return {
 			[1] = "gok_ech",
 			[2] = "gok_blackheart",
 			[3] = "gok_hellspawn",
-			[4] = "gok_jocond",
+			[4] = "gok_artycrab",
 			[5] = "gok_ifrit",
 			[6] = "gok_satan",
 			--[7] = "gok_everchosen",
@@ -76,7 +76,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -21 0",
 				collisionvolumescales = "114 74 129",
-				
+
 				collisionvolumetype = "CylZ",
 				damage = 9570,
 				description = "Experimental Gantry Wreckage",

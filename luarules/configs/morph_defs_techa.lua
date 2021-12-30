@@ -1297,10 +1297,10 @@ local morphDefs = {
 		into = 'talon_mcv',
 	  time = 12,
 	},
-	talon_jewel  = {
-		into = 'talon_mrtn',
-	  time = 60,
-		xp = 0.25,
+	talon_squarepants  = {
+		into = 'talon_azul',
+	  time = 45,
+		xp = 0.10,
 	},
 	cormkl = {
 		into = 'corlilith',
@@ -1571,6 +1571,36 @@ local morphDefs = {
 		time = 45,
 		xp = 0.40,
 	},
+	gok_specter = {
+		into = 'gok_spook',
+		time = 30,
+		xp = 0.20,
+	},
+	gok_spook = {
+		into = 'gok_dvergar',
+		time = 45,
+		xp = 0.20,
+	},
+	gok_angel = {
+		into = 'gok_sucub',
+		time = 30,
+		xp = 0.40,
+	},
+	gok_sucub = {
+		into = 'gok_wraith',
+		time = 30,
+		xp = 0.40,
+	},
+	gok_dirgesinger = {
+		into = 'gok_hookah',
+		time = 30,
+		xp = 0.60,
+	},
+	gok_hookah = {
+		into = 'gok_nurgle',
+		time = 45,
+		xp = 0.60,
+	},
 	tllsniper = {
 		into = 'tllgrim',
 		time = 45,
@@ -1663,6 +1693,11 @@ local morphDefs = {
 		into = 'gok_ifrit',
 		time = 45,
 		xp = 0.10,
+	},
+	gok_imp = {
+		into = 'gok_cacodemon',
+		time = 30,
+		xp = 0.30,
 	},
 }
 

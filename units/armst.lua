@@ -39,8 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Gremlin",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMST",
 		radaremitheight = 25,
 		seismicsignature = 2,

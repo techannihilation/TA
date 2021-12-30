@@ -63,8 +63,9 @@ return {
 			[5] = "gok_earthstrike",
 			[6] = "gok_godhammer",
 			[7] = "gok_moonstrike",
-			[8] = "gok_immortal",
-			[9] = "gok_disciple",
+			[8] = "gok_imp",
+			[9] = "gok_immortal",
+			[10] = "gok_disciple",
 		},
 		customparams = {
 			buildpic = "gok_lab.dds",
@@ -76,7 +77,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -7 0",
 				collisionvolumescales = "95 22 95",
-				
+
 				collisionvolumetype = "Box",
 				damage = 2512,
 				description = "Kbot Lab Wreckage",

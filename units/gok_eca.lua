@@ -78,7 +78,7 @@ return {
 			[20] = "gok_lrpt1",
 			[21] = "gok_meteor2",
 			[22] = "gok_plat",
-			--[23] = "gok_eplat",
+			[23] = "gok_eplat",
 		},
 		customparams = {
 			buildpic = "gok_eca.dds",

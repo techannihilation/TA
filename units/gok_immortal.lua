@@ -121,7 +121,7 @@ return {
 		weapondefs = {
 			gok_gun = {
 				accuracy = 100,
-				areaofeffect = 32,
+				areaofeffect = 96,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "gokblaster",

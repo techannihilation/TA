@@ -3,8 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, ground, turret, canon, barrel1, barrel2, flare1, leg1, leg2,
-       leg3, leg4;
+piece  base, ground, turret, pitchturret, 
+		barrel, bar1, bar2, bar2b, bar3, bar3b, fire,
+		leg1, leg2, leg3, leg4;
 
 static-var  bMoving, Static_Var_2;
 
@@ -70,33 +71,6 @@ walkscr()
 	}
 }
 
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
-}
-
 MotionControl(Func_Var_1)
 {
 	while( TRUE )
@@ -122,11 +96,40 @@ MotionControl(Func_Var_1)
 	}
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
-	hide flare1;
+	hide fire;
+	turn bar2 to z-axis <-120.> now;
+	turn bar3 to z-axis <120.> now;
 	bMoving = FALSE;
-	start-script MotionControl();
 	start-script SmokeUnit();
 }
 
@@ -144,30 +147,43 @@ RestoreAfterDelay()
 {
 	sleep 3000;
 	turn turret to y-axis <0.000000> speed <70.000000>;
-	turn canon to x-axis <0.000000> speed <50.000000>;
+	turn pitchturret to x-axis <0.000000> speed <50.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <70.000000>;
-	turn canon to x-axis <0.000000> - pitch speed <50.000000>;
+	turn turret to y-axis heading speed <50.>;
+	turn pitchturret to x-axis <0.> - pitch speed <75.>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn canon around x-axis;
+	wait-for-turn pitchturret around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	move barrel1 to z-axis [-1.000000] now;
-	emit-sfx 1024 + 0 from flare1;
-	sleep 150;
-	move barrel2 to z-axis [-1.000000] now;
-	wait-for-move barrel2 along z-axis;
-	move barrel1 to z-axis [0.000000] speed [3.000000];
-	move barrel2 to z-axis [0.000000] speed [3.000000];
+	emit-sfx 1024 from fire;
+	move barrel to z-axis [-0.6] speed [25.];
+	sleep 100;
+	turn bar1 to x-axis <-30.> speed <150.>;
+	turn bar2b to x-axis <-30.> speed <150.>;
+	turn bar3b to x-axis <-30.> speed <150.>;
+	sleep 100;
+	turn bar1 to x-axis <-30.> speed <120.>;
+	turn bar2b to x-axis <-30.> speed <120.>;
+	turn bar3b to x-axis <-30.> speed <120.>;
+	sleep 100;
+	turn bar1 to x-axis <-30.> speed <60.>;
+	turn bar2b to x-axis <-30.> speed <60.>;
+	turn bar3b to x-axis <-30.> speed <60.>;
+	sleep 25;
+	move barrel to z-axis [0.] speed [0.5];
+	turn bar1 to x-axis <0.> speed <14.>;
+	turn bar2b to x-axis <0.> speed <14.>;
+	turn bar3b to x-axis <0.> speed <14.>;
+	sleep 250;
 }
 
 
@@ -178,7 +194,7 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = flare1;
+	piecenum = fire;
 }
 
 SweetSpot(piecenum)

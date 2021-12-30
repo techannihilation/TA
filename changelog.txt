@@ -1,3 +1,18 @@
+4.12 => 4.13
+2022-12-01
+Balance :
+ - Disciple T1 Melee : Add Invisible (-5E/S and -20E/S while moving)
+ - Decrease MEtal cost for all T3 Gunship by 50%. Increase EnergyCost by 100%. Decrease HP by 20%.
+
+Improvement:
+ - Delete T3 Vehicle Talon Beam. Remplace by Amphibious Azul
+ - Delete Arty Crab T3 Talon. Add it for Gok faction
+ - Move T3 Arty Gok Vehicle into T2 Lab. Decrease cost / Stats / Model by 20%
+ - Add T2/T3 Gok Gunship
+ - Add T3 Gok Plat (Naval Aircraft Lab)
+ - Add T1/T2 Plasma Tank Gok
+ - Add T3 Gunship Gok
+
 4.11 => 4.12
 2021-12-27
 Balance :
