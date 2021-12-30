@@ -155,7 +155,7 @@ return {
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 418.92722,
+				weaponvelocity = 425,
 				damage = {
 					default = 80,
 					subs = 5,

@@ -1,0 +1,119 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, flare1, flare2, flare3, turret, sleeves, launcher1, launcher2, launcher3, korn;
+
+static-var  Gun_1;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	Gun_1 = 0;
+	start-script SmokeUnit();
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <30.0>;
+	turn sleeves to x-axis <0.000000> - pitch speed <45.0>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+FireWeapon1()
+{
+	++Gun_1;
+	if( Gun_1 == 3 )
+	{
+		Gun_1 = 0;
+	}
+}
+
+QueryWeapon1(piecenum)
+{
+	if( Gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( Gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+	if( Gun_1 == 2 )
+	{
+		piecenum = flare3;
+	}
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode launcher1 type NOHEATCLOUD;
+		explode launcher2 type NOHEATCLOUD;
+		explode launcher3 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode korn type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode launcher1 type NOHEATCLOUD | FALL;
+		explode launcher2 type NOHEATCLOUD | FALL;
+		explode launcher3 type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;
+		explode korn type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode launcher1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode launcher2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode launcher3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode korn type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -80,7 +80,7 @@ return {
 			[25] = "gok_claw",
 			[26] = "gok_llt",
 			[27] = "gok_blackdawn",
-			--[28] = "gok_painless",
+			[28] = "gok_blackpollen",
 			[29] = "gok_rl",
 			[30] = "gok_cir",
 			[31] = "gok_sy",

@@ -79,6 +79,15 @@ local moveDatas = {
         footprintz = 12,
         minwaterdepth = 18
     },
+    HOVER1 = {
+        badslope = 22,
+        badwaterslope = 255,
+        crushstrength = 50,
+        footprintx = 1,
+        footprintz = 1,
+        maxslope = 22,
+        maxwaterslope = 255
+    },
     HOVER2 = {
         badslope = 22,
         badwaterslope = 255,

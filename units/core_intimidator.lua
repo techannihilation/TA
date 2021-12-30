@@ -33,7 +33,6 @@ return {
 		maxwaterdepth = 33,
 		name = "Intimidator Paralizer",
 		noautofire = false,
-
 		objectname = "core_intimidator",
 		radardistance = 0,
 		radaremitheight = 67,

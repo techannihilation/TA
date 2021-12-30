@@ -86,6 +86,9 @@ if (gadgetHandler:IsSyncedCode()) then
 	-- Arm Orbital
 	local armorbitalDefID = UnitDefNames.armorbital.id
 
+	-- Gok Cut Launcher
+	local gok_blackpollenDefID = UnitDefNames.gok_blackpollen.id
+
 	--Tactical
 	local corarbritatorDefID = UnitDefNames.corarbritator.id
 	local coraegisDefID = UnitDefNames.coraegis.id
@@ -105,6 +108,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local nuke = 3
 	local antinuke = 8
 	local orbital = 50
+	local blackpollen = 30
 
 	local CMD_STOCKPILE = CMD.STOCKPILE
 	local CMD_INSERT = CMD.INSERT
@@ -120,6 +124,10 @@ if (gadgetHandler:IsSyncedCode()) then
 
 			if (UnitDefID == armorbitalDefID) then
 				pilelimit = orbital
+			end
+
+			if (UnitDefID == gok_blackpollenDefID) then
+				pilelimit = blackpollen
 			end
 
 			if (UnitDefID == corarbritatorDefID or UnitDefID == cortronDefID or UnitDefID == coruppercutDefID or UnitDefID == coraegisDefID

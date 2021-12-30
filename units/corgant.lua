@@ -65,9 +65,8 @@ return {
 			[5] = "corraven",
 			[6] = "coreak",
 			[7] = "corhowie",
-			--[8] = "macross",
+			[8] = "corgorg",
 			[9] = "corkrog",
-			[10] = "corgorg",
 		},
 		customparams = {
 			buildpic = "corgant.dds",
@@ -79,7 +78,6 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -21 0",
 				collisionvolumescales = "114 74 129",
-				
 				collisionvolumetype = "CylZ",
 				damage = 9570,
 				description = "Experimental Gantry Wreckage",
