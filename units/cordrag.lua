@@ -45,11 +45,9 @@ return {
 			dragonsteeth_core = {
 				autoreclaimable = 0,
 				blocking = true,
-				
 				crushResistance = 250,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "32 22 32",
-				
 				collisionvolumetype = "CylY",
 				damage = 2500,
 				description = "Dragon's Teeth",
@@ -59,12 +57,12 @@ return {
 				footprintz = 2,
 				height = 20,
 				hitdensity = 100,
-				metal = 7,
+				metal = 12,
 				nodrawundergray = true,
 				object = "cordrag",
 				reclaimable = true,
+				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
-				world = "allworld",
 				customparams = {
 					fromunit = 1,
 				},
@@ -73,7 +71,6 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,
@@ -84,7 +81,6 @@ return {
 				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
-				world = "greenworld",
 				customparams = {
 					fromunit = 1,
 				},

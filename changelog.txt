@@ -5,6 +5,7 @@ Balance :
  - Decrease MEtal cost for all T3 Gunship by 50%. Increase EnergyCost by 100%. Decrease HP by 20%.
  - Add Hover Movment for T1 Melee Cut Gok
  - Gorg Core T3 : Decrease HP 345K=>255K. Decrease Metalcost 30K=>26KM & Energy 475KE => 400KE.
+ - Increase Time Reclaim by 100% for all Teeth / Fortification. Reclaim give same Metal than Metal cost
 
 Improvement:
  - Delete T3 Vehicle Talon Beam. Remplace by Amphibious Azul

@@ -50,9 +50,10 @@ return {
 				footprintz = 2,
 				height = 20,
 				hitdensity = 100,
-				metal = 7,
+				metal = 12,
 				object = "talon_drag",
 				reclaimable = true,
+				reclaimtime = 600,
 				customparams = {
 					fromunit = 1,
 				},

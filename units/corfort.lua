@@ -44,11 +44,9 @@ return {
 			fortification_core = {
 				autoreclaimable = 0,
 				blocking = true,
-				
 				crushResistance = 1000,
 				collisionvolumeoffsets = "0 -4 0",
 				collisionvolumescales = "32 52 32",
-				
 				collisionvolumetype = "CylY",
 				damage = 15000,
 				description = "Fortification Wall",
@@ -58,11 +56,11 @@ return {
 				footprintz = 2,
 				height = 55,
 				hitdensity = 100,
-				metal = 15,
+				metal = 45,
 				nodrawundergray = true,
 				object = "corfort",
 				reclaimable = true,
-				reclaimtime = 800,
+				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
 				world = "allworld",
 				customparams = {

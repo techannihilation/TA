@@ -43,11 +43,10 @@ return {
 		featuredefs = {
 			fortification = {
 				autoreclaimable = 0,
-				blocking = true,				
+				blocking = true,
 				crushResistance = 1000,
 				collisionvolumeoffsets = "0 -3 0",
 				collisionvolumescales = "32 50 32",
-				
 				collisionvolumetype = "CylY",
 				damage = 15000,
 				description = "Fortification Wall",
@@ -57,13 +56,12 @@ return {
 				footprintz = 2,
 				height = 55,
 				hitdensity = 100,
-				metal = 18,
+				metal = 45,
 				nodrawundergray = true,
 				object = "armfort",
 				reclaimable = true,
-				reclaimtime = 800,
+				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
-				world = "allworld",
 				customparams = {
 					fromunit = 1,
 				},
@@ -72,7 +70,6 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = true,
-
 				damage = 5000,
 				description = "Rubble",
 				footprintx = 2,

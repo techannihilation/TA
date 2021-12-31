@@ -107,8 +107,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local minelayer = 2
 	local nuke = 3
 	local antinuke = 8
-	local orbital = 50
-	local blackpollen = 30
+	local unitlauncher = 50
 
 	local CMD_STOCKPILE = CMD.STOCKPILE
 	local CMD_INSERT = CMD.INSERT
@@ -122,12 +121,8 @@ if (gadgetHandler:IsSyncedCode()) then
 				pilelimit = minelayer
 			end
 
-			if (UnitDefID == armorbitalDefID) then
-				pilelimit = orbital
-			end
-
-			if (UnitDefID == gok_blackpollenDefID) then
-				pilelimit = blackpollen
+			if (UnitDefID == armorbitalDefID or UnitDefID == gok_blackpollenDefID) then
+				pilelimit = unitlauncher
 			end
 
 			if (UnitDefID == corarbritatorDefID or UnitDefID == cortronDefID or UnitDefID == coruppercutDefID or UnitDefID == coraegisDefID

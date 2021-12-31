@@ -38,11 +38,10 @@ return {
 			dragonsteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-				
+
 				crushResistance = 250,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "30 20 30",
-				
 				collisionvolumetype = "CylY",
 				damage = 2500,
 				description = "Dragon's Teeth",
@@ -52,12 +51,12 @@ return {
 				footprintz = 2,
 				height = 20,
 				hitdensity = 100,
-				metal = 7,
+				metal = 12,
 				nodrawundergray = true,
 				object = "gok_drag",
 				reclaimable = true,
+				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
-				world = "allworld",
 				customparams = {
 					fromunit = 1,
 				},
@@ -66,7 +65,6 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,
