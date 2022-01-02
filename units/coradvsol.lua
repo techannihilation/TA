@@ -36,7 +36,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Collector",
 		noautofire = false,
-		
 		objectname = "CORADVSOL",
 		onoffable = false,
 		radaremitheight = 49,
@@ -58,11 +57,9 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -27 -1",
 				collisionvolumescales = "60 112 58",
-				
 				collisionvolumetype = "Ell",
 				damage = 1267,
-				description = "Advanced Solar Collector Wreckage",
-				energy = 0,
+				description = "Advanced Solar Collector Wreckage",                                
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,

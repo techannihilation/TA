@@ -19,7 +19,7 @@ return {
 		collisionvolumeoffsets = "0 -16 0",
 		collisionvolumescales = "100 34 90",
 		collisionvolumetype = "Box",
-		corpse = "dead1",
+		corpse = "dead",
 		description = "Produces T2 Kbots",
 		energystorage = 200,
 		energyuse = 0,
@@ -77,30 +77,27 @@ return {
 			providetech = "T2 Factory",
 		},
 		featuredefs = {
-			dead1 = {
+			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 0",
 				collisionvolumescales = "98 52 88",
-				
 				collisionvolumetype = "CylZ",
 				damage = 3429,
 				description = "Advanced Kbot Lab Wreckage",
-				energy = 1100,
-				featuredead = "heap1",
+				featuredead = "heap",
 				footprintx = 5,
 				footprintz = 6,
-				metal = 3087,
+				metal = 2687,
 				object = "CORALAB_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
 				},
 			},
-			heap1 = {
+			heap = {
 				blocking = false,
 				damage = 4286,
 				description = "Advanced Kbot Lab Debris",
-				energy = 600,
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1646,

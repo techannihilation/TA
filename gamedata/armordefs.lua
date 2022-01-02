@@ -419,6 +419,8 @@ return {
 		"gok_apocalypse",
 		-- OTHER
 		"armnomad",
+		"gok_dome",
+		"gok_dome1",
 	},
 	flamethrowers = {
 		"corpyro",

@@ -18,7 +18,6 @@ return {
 		category = "LEVEL1 ALL SURFACE",
 		collisionvolumeoffsets = "0 -10 1",
 		collisionvolumescales = "78.6 29.6 84.6",
-		
 		collisionvolumetype = "box",
 		corpse = "dead1",
 		description = "Produces T2 Kbots",
@@ -81,26 +80,23 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 -1",
 				collisionvolumescales = "73 56 89",
-				
 				collisionvolumetype = "CylZ",
 				damage = 3261,
 				description = "Advanced Kbot Lab Wreckage",
-				energy = 8000,
-				featuredead = "heap1",
+				featuredead = "heap",
 				footprintx = 5,
 				footprintz = 6,
-				metal = 3080,
+				metal = 2680,
 				object = "ARMALAB_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
 				},
 			},
-			heap1 = {
+			heap = {
 				blocking = false,
 				damage = 4076,
 				description = "Advanced Kbot Lab Debris",
-				energy = 4000,
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1642,

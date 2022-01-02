@@ -12,8 +12,7 @@ return {
 		buildtime = 3750,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "55 30 55",
-		
+		collisionvolumescales = "55 30 55",		
 		collisionvolumetype = "box",
 		damagemodifier = 0.25,
 		description = "Converts upto 135 Energy to Metal",
@@ -29,7 +28,7 @@ return {
 		maxdamage = 290,
 		maxslope = 10,
 		maxwaterdepth = 255,
-		name = "Advanced Metal Maker",		
+		name = "Advanced Metal Maker",
 		objectname = "tllmetalmakerlvl1",
 		radardistance = 0,
 		radaremitheight = 25,

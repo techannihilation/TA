@@ -80,12 +80,10 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -6 0",
 				collisionvolumescales = "124 30 104",
-				
 				collisionvolumetype = "Box",
 				damage = 3788,
 				description = "Advanced Vehicle Plant Wreckage",
-				energy = 1600,
-				featuredead = "heap1",
+				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 2913,
@@ -95,11 +93,10 @@ return {
 					fromunit = 1,
 				},
 			},
-			heap1 = {
+			heap = {
 				blocking = false,
 				damage = 4735,
 				description = "Advanced Vehicle Plant Debris",
-				energy = 800,
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1554,

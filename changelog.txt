@@ -1,11 +1,12 @@
 4.12 => 4.13
-2022-12-01
+2022-12-03
 Balance :
  - Disciple T1 Melee : Add Invisible (-5E/S and -20E/S while moving)
  - Decrease MEtal cost for all T3 Gunship by 50%. Increase EnergyCost by 100%. Decrease HP by 20%.
  - Add Hover Movment for T1 Melee Cut Gok
  - Gorg Core T3 : Decrease HP 345K=>255K. Decrease Metalcost 30K=>26KM & Energy 475KE => 400KE.
  - Increase Time Reclaim by 100% for all Teeth / Fortification. Reclaim give same Metal than Metal cost
+ - All Meteor : Increase range to have same than rapid lrpt
 
 Improvement:
  - Delete T3 Vehicle Talon Beam. Remplace by Amphibious Azul
@@ -15,6 +16,7 @@ Improvement:
  - Add T3 Gok Plat (Naval Aircraft Lab)
  - Add T1/T2 Plasma Tank Gok
  - Add T1 Gok Launcher (Cut Melee Shell)
+ - Add Air LAb Morph for T1 / T2 Gok Lab
 
 4.11 => 4.12
 2021-12-27

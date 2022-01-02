@@ -1,12 +1,12 @@
 return {
-	armnomad = {
+	gok_dome = {
 		acceleration = 0.010,
 		blocking = false,
 		brakerate = 0.35,
 		buildcostenergy = 3000,
 		buildcostmetal = 850,
 		builder = false,
-		buildpic = "armnomad.dds",
+		buildpic = "gok_dome.dds",
 		buildtime = 7500,
 		canfly = true,
 		canguard = true,
@@ -22,7 +22,7 @@ return {
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 0,
 		footprintx = 6,
-		footprintz = 8,
+		footprintz = 6,
 		icontype = "building",
 		hoverattack = true,
 		factoryHeadingTakeoff  = true,
@@ -30,7 +30,7 @@ return {
 		idletime = 1800,
 		losemitheight = 14.5,
 		maneuverleashlength = 1280,
-		mass = 950,
+		mass = 850,
 		maxdamage = 2850,
 		maxslope = 10,
 		maxvelocity = 4.5,
@@ -39,7 +39,7 @@ return {
 		moverate1 = 8,
 		name = "Air Morphed Lab",
 		noautofire = false,
-		objectname = "armnomad",
+		objectname = "gok_dome",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDINGEX",
@@ -49,10 +49,10 @@ return {
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 1.5,
 		turnrate = 180,
-		unitname = "armnomad",
+		unitname = "gok_dome",
 		customparams = {
-			buildpic = "armnomad.dds",
-			faction = "ARM",
+			buildpic = "gok_dome.dds",
+			faction = "GOK",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -67,18 +67,17 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-5 0 0",
-				collisionvolumescales = "110 34 92",
-
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "90 34 90",
 				collisionvolumetype = "Box",
 				damage = 2575,
-				description = "Nomad Plant Wreckage",
+				description = "Plant Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 594,
-				object = "ARMNOMAD_DEAD",
+				object = "gok_dome_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,8 +86,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 3219,
-				description = "Nomad Plant Debris",
-				energy = 0,
+				description = "Plant Debris",
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,

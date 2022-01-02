@@ -1622,21 +1622,33 @@ local morphDefs = {
 		xp = 0.15,
 	},
 	armnomad = {
-		{
-			into = 'armlab',
-			time = 10,
-		},
-		{
-			into = 'armvp',
-			time = 10,
-		},
+		into = 'armvp',
+		time = 10,
 	},
 	armvp = {
 		into = 'armnomad',
 		time = 10,
 	},
-	armlab = {
-		into = 'armnomad',
+	gok_lab = {
+		into = 'gok_dome',
+		time = 10,
+	},
+	gok_dome = {
+		{
+			into = 'gok_lab',
+			time = 10,
+		},
+		{
+			into = 'gok_dome1',
+			time = 45,
+		},
+	},
+	gok_alab = {
+		into = 'gok_dome1',
+		time = 10,
+	},
+	gok_dome1 = {
+		into = 'gok_alab',
 		time = 10,
 	},
 	tllnaja = {
