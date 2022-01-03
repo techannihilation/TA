@@ -61,7 +61,7 @@ walk()
 		turn lfoot to x-axis <-5.005495> speed <60.000000>;
 		turn rfoot to x-axis <1.600000> speed <45.000000>;
 		turn rleg to x-axis <-10.000000> speed <50.000000>;
-		turn body to x-axis <3.000000> speed <5.000000>;
+		//turn body to x-axis <3.000000> speed <5.000000>;
 		sleep 505;
 		turn lfoot to x-axis <7.005495> speed <60.000000>;
 		turn rfoot to x-axis <3.500000> speed <45.000000>;
@@ -131,13 +131,12 @@ stop()
 	turn pelvis to z-axis <0.000000> speed <20.000000>;
 	turn rfoot to x-axis <0.000000> speed <80.000000>;
 	turn lfoot to x-axis <0.000000> speed <80.000000>;
-	wait-for-turn body around x-axis;
+	//wait-for-turn body around x-axis;
 	turn pelvis to x-axis <10.000000> speed <46.000000>;
 	//turn lgun to x-axis <-10.000000> speed <46.000000>;
 	//turn rgun to x-axis <-10.000000> speed <46.000000>;
-	wait-for-turn body around x-axis;
+	//wait-for-turn body around x-axis;
 	turn pelvis to x-axis <-3.000000> speed <46.000000>;
-	wait-for-turn body around x-axis;
 	turn pelvis to x-axis <0.000000> speed <46.000000>;
 	//turn lgun to x-axis <0.000000> speed <46.000000>;
 	//turn rgun to x-axis <0.000000> speed <46.000000>;

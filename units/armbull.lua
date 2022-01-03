@@ -96,7 +96,7 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:MEDIUMFLARE",
-				[2] = "custom:DUST_CLOUD_CHEAP",
+				--[2] = "custom:DUST_CLOUD_CHEAP",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -165,6 +165,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "TINY",
 				def = "ARM_BULL",
 				onlytargetcategory = "SURFACE",
 			},

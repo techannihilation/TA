@@ -159,6 +159,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "TINY",
 				def = "GOK_PLASMA",
 				onlytargetcategory = "SURFACE",
 			},

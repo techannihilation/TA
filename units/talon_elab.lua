@@ -61,7 +61,7 @@ return {
 			[4] = "talon_eak",
 			[5] = "talon_opal",
 			[6] = "talon_hollander",
-			[7] = "talon_artycrab",
+			[7] = "talon_collier",
 			[8] = "talon_talos",
 		},
 		customparams = {
