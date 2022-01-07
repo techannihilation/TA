@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "120 34 92",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Produces T1 Vehicles",
+		description = "Tech Level 1",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,
@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Vehicle Plant",
+		name = "Vehicle Lab",
 		noautofire = false,
 		objectname = "ARMVP",
 		radaremitheight = 34,
@@ -76,7 +76,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "-5 0 0",
 				collisionvolumescales = "110 34 92",
-				
+
 				collisionvolumetype = "Box",
 				damage = 2575,
 				description = "Vehicle Plant Wreckage",

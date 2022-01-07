@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "151 73 151",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Produces T2 Kbots",
+		description = "Tech Level 2",
 		energystorage = 200,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

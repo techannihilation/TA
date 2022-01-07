@@ -2,7 +2,6 @@ return {
 	armmark = {
 		acceleration = 0.045,
 		activatewhenbuilt = true,
-		ai_limit = "limit ARMMARK 0",
 		brakerate = 0.054,
 		buildcostenergy = 1229,
 		buildcostmetal = 101,
@@ -21,7 +20,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Radar Kbot",
-		downloadable = 1,
 		energymake = 8,
 		energyuse = 20,
 		explodeas = "BIG_UNITEX",
@@ -40,7 +38,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Marky",
 		noautofire = false,
-		
 		objectname = "ARMMARK",
 		onoffable = true,
 		radardistance = 2200,

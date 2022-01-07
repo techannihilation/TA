@@ -1,3 +1,16 @@
+4.13 => 4.14
+2022-12-09
+Balance :
+ - T3 Arty TLL Kbot : Increase HP
+ - Talos T3 : Decrease MEtal 28KM=>26KM & Decrease HP 133K=>121K
+ - Tankanator : Increase ReloadTime : 6S=>8S (dmg 400/s=>300/S)
+ - Increase Metalcost / Energycost for Pyro, Panther, Xeon by 10%
+
+ Improvement:
+  - Add Air LAb Morph for T1 / T2 Gok Lab
+  - Add T3 Arty Kbot
+  - Split T1/T2 Gok Lab into Tank and Kbot : New units added.
+
 4.12 => 4.13
 2022-12-03
 Balance :
@@ -16,7 +29,6 @@ Improvement:
  - Add T3 Gok Plat (Naval Aircraft Lab)
  - Add T1/T2 Plasma Tank Gok
  - Add T1 Gok Launcher (Cut Melee Shell)
- - Add Air LAb Morph for T1 / T2 Gok Lab
 
 4.11 => 4.12
 2021-12-27

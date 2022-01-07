@@ -66,7 +66,7 @@ return {
 			[10] = "gok_makr",
 			[11] = "gok_makr1",
 			[12] = "gok_lab",
-			--[13] = "",
+			[13] = "gok_vp",
 			[14] = "gok_ap",
 			[15] = "gok_aap",
 			[17] = "gok_hp",

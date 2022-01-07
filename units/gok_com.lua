@@ -24,7 +24,6 @@ return {
 		cloakcostmoving = 500,
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "36 44 26",
-		
 		collisionvolumetype = "Ell",
 		commander = true,
 		corpse = "8_dead",
@@ -86,7 +85,7 @@ return {
 			[6] = "gok_mex",
 			[7] = "gok_makr",
 			[8] = "gok_lab",
-			--[9] = "armvp",
+			[9] = "gok_vp",
 			[10] = "gok_ap",
 			[11] = "gok_eyes",
 			[12] = "gok_rad",

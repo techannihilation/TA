@@ -15,7 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		description = "Produces T1 Aircraft",
+		description = "Tech Level 1",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,
@@ -69,7 +69,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "11 -17 -23",
 				collisionvolumescales = "85 39 49",
-				
+
 				collisionvolumetype = "Box",
 				damage = 1897,
 				description = "Aircraft Plant Wreckage",

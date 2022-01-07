@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Kbot Biomechanics",
+		description = "All-Terrain Artillery Quadrupod",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
 		footprintx = 4,

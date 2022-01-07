@@ -1,0 +1,298 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pod, ring, support, servo, leg, boot, claw,
+       support2, servo2, leg2, boot2, claw2, support3, servo3, leg3,
+       boot3, claw3, support4, servo4, leg4, boot4, claw4, turret,
+       pitchturret, system1, system2, system3, flare;
+
+static-var  bMoving, gun_1;
+
+MotionControl(Func_Var_1, Func_Var_2)
+{
+	Func_Var_2 = 1;
+	while( TRUE )
+	{
+		Func_Var_1 = bMoving;
+		if( Func_Var_1 )
+		{
+			if( bMoving )
+			{
+				turn servo to y-axis <65.> speed <220.>;
+				turn leg to z-axis <30.> speed <40.>;
+				turn boot to z-axis <15.> speed <60.>;
+				turn claw to z-axis <-5.> speed <40.>;
+				turn servo2 to y-axis <10.> speed <200.>;
+				turn leg2 to z-axis <0.> speed <20.>;
+				turn boot2 to z-axis <30.> speed <40.>;
+				turn claw2 to z-axis <-35.> speed <80.>;
+				turn servo3 to y-axis <-35.> speed <220.>;
+				turn leg3 to z-axis <5.> speed <20.>;
+				turn boot3 to z-axis <-35.> speed <20.>;
+				turn claw3 to z-axis <25.> speed <100.>;
+				turn servo4 to y-axis <30.> speed <140.>;
+				turn leg4 to z-axis <-40.> speed <40.>;
+				turn boot4 to z-axis <0.> speed <60.>;
+				turn claw4 to z-axis <-5.> speed <40.>;
+				turn pod to z-axis <5.> speed <20.>;
+				sleep 250;
+			}
+			if( bMoving )
+			{
+				turn servo to y-axis <70.> speed <20.>;
+				turn leg to z-axis <-10.> speed <160.>;
+				turn boot to z-axis <30.> speed <60.>;
+				turn claw to z-axis <-10.> speed <20.>;
+				turn servo2 to y-axis <25.> speed <60.>;
+				turn leg2 to z-axis <-15.> speed <60.>;
+				turn boot2 to z-axis <45.> speed <60.>;
+				turn servo3 to y-axis <-70.> speed <100.>;
+				turn leg3 to z-axis <-10.> speed <60.>;
+				turn boot3 to z-axis <30.> speed <260.>;
+				turn claw3 to z-axis <-10.> speed <140.>;
+				turn servo4 to y-axis <5.> speed <100.>;
+				turn leg4 to z-axis <-15.> speed <100.>;
+				turn boot4 to z-axis <45.> speed <180.>;
+				turn claw4 to z-axis <-35.> speed <120.>;
+				turn pod to x-axis <5.> speed <20.>;
+				turn pod to z-axis <0.> speed <10.>;
+				sleep 250;
+			}
+			if( bMoving )
+			{
+				turn servo to y-axis <40.> speed <120.>;
+				turn leg to z-axis <5.> speed <60.>;
+				turn boot to z-axis <-20.> speed <200.>;
+				turn claw to z-axis <15.> speed <100.>;
+				turn servo2 to y-axis <-10.> speed <140.>;
+				turn leg2 to z-axis <-40.> speed <100.>;
+				turn boot2 to z-axis <0.> speed <180.>;
+				turn claw2 to z-axis <-5.> speed <120.>;
+				turn servo3 to y-axis <-65.> speed <20.>;
+				turn leg3 to z-axis <30.> speed <160.>;
+				turn boot3 to z-axis <15.> speed <60.>;
+				turn claw3 to z-axis <-5.> speed <20.>;
+				turn servo4 to y-axis <-20.> speed <100.>;
+				turn leg4 to z-axis <0.> speed <60.>;
+				turn boot4 to z-axis <40.> speed <20.>;
+				turn claw4 to z-axis <-25.> speed <40.>;
+				turn pod to x-axis <0.> speed <20.>;
+				sleep 250;
+			}
+			if( bMoving )
+			{
+				turn servo to y-axis <-10.> speed <200.>;
+				turn leg to z-axis <0.> speed <20.>;
+				turn boot to z-axis <-30.> speed <40.>;
+				turn claw to z-axis <35.> speed <80.>;
+				turn servo2 to y-axis <-65.> speed <220.>;
+				turn leg2 to z-axis <-30.> speed <40.>;
+				turn boot2 to z-axis <-15.> speed <60.>;
+				turn claw2 to z-axis <5.> speed <40.>;
+				turn servo3 to y-axis <-30.> speed <140.>;
+				turn leg3 to z-axis <40.> speed <40.>;
+				turn boot3 to z-axis <0.> speed <60.>;
+				turn claw3 to z-axis <5.> speed <40.>;
+				turn servo4 to y-axis <35.> speed <220.>;
+				turn leg4 to z-axis <-5.> speed <20.>;
+				turn boot4 to z-axis <35.> speed <20.>;
+				turn pod to z-axis <-5.> speed <20.>;
+				sleep 250;
+			}
+			if( bMoving )
+			{
+				turn servo to y-axis <-25.> speed <60.>;
+				turn leg to z-axis <15.> speed <60.>;
+				turn boot to z-axis <-45.> speed <60.>;
+				turn servo2 to y-axis <-70.> speed <20.>;
+				turn leg2 to z-axis <10.> speed <160.>;
+				turn boot2 to z-axis <-30.> speed <60.>;
+				turn claw2 to z-axis <10.> speed <20.>;
+				turn servo3 to y-axis <-5.> speed <100.>;
+				turn leg3 to z-axis <15.> speed <100.>;
+				turn boot3 to z-axis <-45.> speed <180.>;
+				turn claw3 to z-axis <35.> speed <120.>;
+				turn servo4 to y-axis <70.> speed <140.>;
+				turn leg4 to z-axis <10.> speed <60.>;
+				turn boot4 to z-axis <-30.> speed <260.>;
+				turn claw4 to z-axis <10.> speed <140.>;
+				turn pod to x-axis <5.> speed <20.>;
+				turn pod to z-axis <0.> speed <10.>;
+				sleep 250;
+			}
+			if( bMoving )
+			{
+				turn servo to y-axis <10.> speed <140.>;
+				turn leg to z-axis <40.> speed <100.>;
+				turn boot to z-axis <0.> speed <180.>;
+				turn claw to z-axis <5.> speed <120.>;
+				turn servo2 to y-axis <-40.> speed <120.>;
+				turn leg2 to z-axis <-5.> speed <60.>;
+				turn boot2 to z-axis <20.> speed <200.>;
+				turn claw2 to z-axis <-15.> speed <100.>;
+				turn servo3 to y-axis <20.> speed <100.>;
+				turn leg3 to z-axis <0.> speed <60.>;
+				turn boot3 to z-axis <-40.> speed <20.>;
+				turn claw3 to z-axis <25.> speed <40.>;
+				turn servo4 to y-axis <65.> speed <20.>;
+				turn leg4 to z-axis <-30.> speed <160.>;
+				turn boot4 to z-axis <-15.> speed <60.>;
+				turn claw4 to z-axis <5.> speed <20.>;
+				turn pod to x-axis <0.> speed <20.>;
+				sleep 250;
+			}
+			Func_Var_2 = 1;
+		}
+		if( !Func_Var_1 )
+		{
+			if( Func_Var_2 )
+			{
+				turn servo to y-axis <45.> speed <90.>;
+				turn leg to z-axis <0.> speed <90.>;
+				turn boot to z-axis <0.> speed <90.>;
+				turn claw to z-axis <0.> speed <90.>;
+				turn servo2 to y-axis <-45.> speed <90.>;
+				turn leg2 to z-axis <0.> speed <90.>;
+				turn boot2 to z-axis <0.> speed <90.>;
+				turn claw2 to z-axis <0.> speed <90.>;
+				turn servo3 to y-axis <-45.> speed <90.>;
+				turn leg3 to z-axis <0.> speed <90.>;
+				turn boot3 to z-axis <0.> speed <90.>;
+				turn claw3 to z-axis <0.> speed <90.>;
+				turn servo4 to y-axis <45.> speed <90.>;
+				turn leg4 to z-axis <0.> speed <90.>;
+				turn boot4 to z-axis <0.> speed <90.>;
+				turn claw4 to z-axis <0.> speed <90.>;
+				turn pod to x-axis <0.> speed <10.>;
+				turn pod to z-axis <0.> speed <10.>;
+				Func_Var_2 = 0;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	turn servo to y-axis <45.> now;
+	turn servo2 to y-axis <-45.> now;
+	turn servo3 to y-axis <-45.> now;
+	turn servo4 to y-axis <45.> now;
+	gun_1 = 0;
+	bMoving = 0;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+AimFromPrimary(pieceNum)
+{
+	pieceNum = pitchturret;
+}
+
+QueryPrimary(pieceNum)
+{
+	pieceNum = flare;
+}
+
+RestoreAfterDelay()
+{
+	sleep 3500;
+	turn turret to y-axis <0.0>  speed <90.00>;
+	move pitchturret to y-axis [0.00] speed [5.00];
+	turn pitchturret to x-axis <0.00> speed <90.00>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal 2;
+	set-signal-mask 2;
+	move pitchturret to y-axis [2.50] speed [15.00];
+	turn turret to y-axis heading speed <250.00>;
+	turn pitchturret to x-axis <0.00> - pitch speed <180.00>;	
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	wait-for-move pitchturret along y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode pod type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode system1 type NOHEATCLOUD;
+		explode system2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode pod type NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		explode boot type FALL | NOHEATCLOUD;
+		explode boot3 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pod type NOHEATCLOUD;
+	explode ring type SHATTER | NOHEATCLOUD;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode boot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode leg2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode boot3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode leg4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

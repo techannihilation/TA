@@ -435,6 +435,7 @@ return {
 		"tllhcrus",
 		"corgfbt",
 		"talon_xeon",
+		"gok_mahlat",
 	},
 	sniper_resistant = {
 		"armzeus",

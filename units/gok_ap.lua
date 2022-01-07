@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "90 60 90",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Produces T1 Aircraft",
+		description = "Tech Level 1",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 7,

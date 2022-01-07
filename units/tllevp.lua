@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "189 51 138",
 		collisionvolumetype = "box",
 		corpse = "dead",
-		description = "Produces T3 Vehicles",
+		description = "Tech Level 3",
 		downloadable = 1,
 		energystorage = 500,
 		explodeas = "LARGE_BUILDINGEX",

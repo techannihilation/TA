@@ -15,7 +15,7 @@ return {
 		collisionvolumescales = "200 60 200",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		description = "Produces T3 Aircraft",
+		description = "Tech Level 3",
 		energystorage = 200,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

@@ -16,7 +16,7 @@ return {
 		canstop = 1,
 		category = "LEVEL1 ALL SURFACE",
 		corpse = "dead1",
-		description = "Produces T2 Aircraft",
+		description = "Tech Level 2",
 		energystorage = 200,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

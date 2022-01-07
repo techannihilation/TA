@@ -6,10 +6,12 @@
 piece  base, ceil, turret, pitchturret, 
 		rsystem, rsleeve1, rbarrel1, rflare1, 
 		lsystem, lsleeve1, lbarrel1, lflare1,
-		msystem, msleeve1, mbarrel1, mflare1;
+		rsleeve2, rbarrel2, rflare2, 
+		lsleeve2, lbarrel2, lflare2;
+		
 		
 
-static-var  gun_1;
+static-var gun_1;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -62,7 +64,11 @@ QueryPrimary(piecenum)
 	}
 	if( gun_1 == 2 )
 	{
-		piecenum = mflare1;
+		piecenum = rflare2;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = lflare2;
 	}
 	
 }
@@ -99,12 +105,18 @@ FirePrimary()
 	}
 	if( gun_1 == 2 )
 	{
-		move mbarrel1 to z-axis [-2.] speed [100.];
+		move rbarrel2 to z-axis [-2.] speed [100.];
 		sleep 150;
-		move mbarrel1 to z-axis [0.] speed [3.];
+		move rbarrel2 to z-axis [0.] speed [3.];
+	}
+	if( gun_1 == 3 )
+	{
+		move lbarrel2 to z-axis [-2.] speed [100.];
+		sleep 150;
+		move lbarrel2 to z-axis [0.] speed [3.];
 	}
 	++gun_1;
-	if( gun_1 == 3 )
+	if( gun_1 == 4 )
 	{
 		gun_1 = 0;
 	}

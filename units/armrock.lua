@@ -138,7 +138,7 @@ return {
 				name = "Rockets",
 				noselfdamage = true,
 				range = 475,
-				reloadtime = 3.5,
+				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
@@ -161,7 +161,7 @@ return {
 					light_radius_mult = 0.7,
 				},
 				damage = {
-					default = 126,
+					default = 120,
 					subs = 5,
 				},
 			},

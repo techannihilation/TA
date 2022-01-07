@@ -15,7 +15,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -13 0",
 		collisionvolumescales = "41 45 69",
-		
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -135,7 +134,7 @@ return {
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1300,
-				reloadtime = 6,
+				reloadtime = 8,
 				smoketrail = true,
 				soundhitdry = "tankahit",
 				soundhitwet = "splslrg",

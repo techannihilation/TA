@@ -179,17 +179,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade doo2;
-	dont-shade door1;
-	dont-shade nano1;
-	dont-shade nano2;
-	dont-shade pad;
-	dont-shade plate1;
-	dont-shade plate2;
-	dont-shade post1;
-	dont-shade post2;
-	dont-shade side1;
-	dont-shade side2;
 	Static_Var_2 = 0;
 	spray = base;
 	set ARMORED to 1;

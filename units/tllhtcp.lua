@@ -19,7 +19,7 @@ return {
 		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
-		description = "Produces T3 Kbot",
+		description = "Tech Level 3",
 		energystorage = 500,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,

@@ -10,7 +10,7 @@ return {
 		canstop = 1,
 		category = "LEVEL1 ALL UNDERWATER SURFACE",
 		corpse = "dead",
-		description = "Produces T2 Aircraft",
+		description = "Tech Level 2",
 		downloadable = 1,
 		energystorage = 250,
 		energyuse = 0,

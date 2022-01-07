@@ -165,13 +165,8 @@ Create()
 	Static_Var_5 = 0;
 	gun_1 = pelvis;
 	Static_Var_3 = 2000;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
 	start-script SmokeUnit();
 	start-script PilotLight();
-	start-script RestoreAfterDelay();
 }
 
 StartMoving()

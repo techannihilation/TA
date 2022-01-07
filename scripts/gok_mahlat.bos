@@ -1,0 +1,148 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, hull, flare, turret, pitchturret;
+
+static-var  restore_delay, bAiming;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_ROCK2			4
+
+PilotLight(Func_Var_1)
+{
+	while( TRUE )
+	{
+		while( bAiming )
+		{
+			sleep 100;
+		}
+		emit-sfx 1024 + 0 from flare;
+		sleep 155;
+	}
+}
+
+lua_FlameShot(Func_Var_1)
+{
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	//start-script PilotLight();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+HitByWeapon(Func_Var_1, Func_Var_2)
+{
+	signal SIG_ROCK2;
+	set-signal-mask SIG_ROCK2;
+	turn base to z-axis Func_Var_2 speed <105.021978>;
+	turn base to x-axis Func_Var_1 speed <105.021978>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.005495>;
+	turn base to x-axis <0.000000> speed <30.005495>;
+}
+
+Create()
+{
+	hide flare;
+	restore_delay = 3000;
+	bAiming = 0;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <90.0>;
+	turn pitchturret to x-axis <0.000000> speed <50.0>;
+	bAiming = 0;
+
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = 1;
+	turn turret to y-axis heading speed <200.0>;
+	turn pitchturret to x-axis <0.000000> - pitch speed <80.0>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+Shot1()
+{
+	call-script lua_FlameShot(1);
+	return (1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode pitchturret type NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode pitchturret type FALL | NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pitchturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode hull type NOHEATCLOUD;
+	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

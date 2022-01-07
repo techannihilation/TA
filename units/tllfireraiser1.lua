@@ -2,8 +2,8 @@ return {
 	tllfireraiser1 = {
 		acceleration = 0.17,
 		brakerate = 0.63,
-		buildcostenergy = 1151,
-		buildcostmetal = 261,
+		buildcostenergy = 1951,
+		buildcostmetal = 231,
 		builder = false,
 		buildpic = "tllfireraiser1.dds",
 		buildtime = 2000,
@@ -27,8 +27,8 @@ return {
 		idletime = 1800,
 		losemitheight = 26,
 		maneuverleashlength = 640,
-		mass = 261,
-		maxdamage = 1075,
+		mass = 231,
+		maxdamage = 895,
 		maxslope = 14,
 		maxvelocity = 1.6,
 		maxwaterdepth = 12,
@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Insistent Fireraiser",
 		noautofire = false,
-		
+
 		objectname = "tllfireraiser1",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",
@@ -129,7 +129,7 @@ return {
 				model = "weapon_missile",
 				name = "Rockets",
 				noselfdamage = true,
-				range = 560,
+				range = 550,
 				reloadtime = 3,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
@@ -152,7 +152,7 @@ return {
 					light_radius_mult = 0.7,
 				},
 				damage = {
-					default = 126,
+					default = 120,
 					subs = 5,
 				},
 			},

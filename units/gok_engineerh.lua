@@ -76,7 +76,7 @@ return {
 			[14] = "gok_flak",
 			[15] = "gok_ptr",
 			[16] = "gok_mds",
-			[17] = "gok_cv",
+			[17] = "gok_ch",
 			[18] = "gok_agrat",
 			--[20] = "",
 			[21] = "gok_fnanotc",

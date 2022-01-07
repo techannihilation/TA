@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "88 28 88",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Produces T1 Kbots",
+		description = "Tech Level 1",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 6,

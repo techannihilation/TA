@@ -3,16 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, hull, ltrack, rtrack, flare, turret, pitchturret, launcher;
-
-static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+piece  base, body, turret, hull, rtrack, ltrack,
+       pitchturret, system1, system2, system3, flare;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
-	}
+	}	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -39,41 +38,36 @@ Create()
 	start-script SmokeUnit();
 }
 
+AimFromWeapon3(pieceNum)
+{
+	pieceNum = pitchturret;
+}
+
+QueryWeapon3(pieceNum)
+{
+	pieceNum = flare;
+}
+
 RestoreAfterDelay()
 {
-	sleep 2500;
-	turn turret to y-axis <0.0> speed <120.00>;
-	turn pitchturret to x-axis <0.00> speed <120.00>;	
+	sleep 3500;
+	turn turret to y-axis <0.0>  speed <90.00>;
+	move pitchturret to y-axis [0.00] speed [5.00];
+	turn pitchturret to x-axis <0.00> speed <90.00>;
 }
 
-AimFromTertiary(PieceNum)
-{
-	PieceNum = pitchturret;
-}
-
-AimTertiary(Heading, Pitch)
+AimWeapon3(heading, pitch)
 {
 	signal 2;
-	set-signal-mask 2;	
-	turn turret to y-axis Heading speed <280.00>;
-	turn pitchturret to x-axis <0.00> - Pitch speed <280.00>;
+	set-signal-mask 2;
+	move pitchturret to y-axis [2.50] speed [15.00];
+	turn turret to y-axis heading speed <250.00>;
+	turn pitchturret to x-axis <0.00> - pitch speed <180.00>;	
 	wait-for-turn turret around y-axis;
 	wait-for-turn pitchturret around x-axis;
+	wait-for-move pitchturret along y-axis;
 	start-script RestoreAfterDelay();
-	return(1);
-}
-
-FireTertiary()
-{
-	move launcher to z-axis [-0.75] speed [500.00];
-	sleep 25;
-	move launcher to z-axis [0.00] speed [1.50];
-}
-
-
-QueryTertiary(piecenum)
-{
-	piecenum = flare;
+	return (1);
 }
 
 SweetSpot(piecenum)
@@ -83,34 +77,31 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide flare;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode pitchturret type NOHEATCLOUD;
-		explode rtrack type NOHEATCLOUD;
-		explode ltrack type NOHEATCLOUD;
+		explode system1 type NOHEATCLOUD;
+		explode system2 type NOHEATCLOUD;
+		explode body type FALL | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | SHATTER;
-		explode turret type NOHEATCLOUD | SHATTER;
-		explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode pitchturret type FALL | NOHEATCLOUD;
-		explode rtrack type FALL | SMOKE | FIRE | NOHEATCLOUD;
-		explode ltrack type FALL | SMOKE | FIRE | NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
+		explode turret type SHATTER | NOHEATCLOUD;
+		explode body type FALL | NOHEATCLOUD;
+		explode system1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | SHATTER;
-	explode turret type NOHEATCLOUD | SHATTER;
-	explode hull type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode pitchturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode rtrack type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode ltrack type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode hull type NOHEATCLOUD;
+	explode body type SHATTER | NOHEATCLOUD;
+	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;	
 	return (corpsetype);
 }

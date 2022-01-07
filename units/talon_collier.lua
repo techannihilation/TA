@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.30,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
-		movementclass = "TKBOT4",
+		movementclass = "HKBOT4",
 		name = "Collier",
 		noautofire = false,
 		objectname = "talon_collier",

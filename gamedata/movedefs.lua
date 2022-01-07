@@ -309,6 +309,12 @@ local moveDatas = {
         maxslope = 18,
         maxwaterdepth = 36,
     },
+    TKBOT2 = {
+        crushstrength = 50,
+        footprintx = 2,
+        footprintz = 2,
+        maxwaterdepth = 22
+    },
     TKBOT3 = {
         crushstrength = 50,
         footprintx = 3,

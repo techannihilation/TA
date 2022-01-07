@@ -1,0 +1,260 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lleg, lboot, rleg, rboot, torso, pitchturret,
+       barrel, flare, sensorpack, radar, sphere, circle, plate1, plate2, plate3, plate4;
+
+static-var  bMoving, Static_Var_1, Static_Var_2, Static_Var_3;
+
+RequestState(requestedstate, currentstate)
+{
+	if( Static_Var_2 )
+	{
+		Static_Var_1 = requestedstate;
+		return (0);
+	}
+	Static_Var_2 = 1;
+	currentstate = Static_Var_1;
+	Static_Var_1 = requestedstate;
+	while( Static_Var_1 != currentstate )
+	{
+		if( !Static_Var_1 )
+		{
+			move radar to y-axis [0.] speed [2.];
+			sleep 250;
+			spin circle around y-axis speed <90.> accelerate <2.>;
+			move radar to y-axis [0.] speed [4.];
+			sleep 250;
+			move radar to y-axis [0.] speed [6.];
+			sleep 250;
+			move radar to y-axis [0.] speed [8.];
+			sleep 250;
+			move radar to y-axis [0.] speed [6.];
+			sleep 250;
+			move radar to y-axis [0.] speed [4.];
+			sleep 250;
+			move radar to y-axis [0.] speed [2.];
+			sleep 500;
+			currentstate = 0;
+		}
+		if( Static_Var_1 )
+		{
+			spin circle around y-axis speed <0.>;
+			turn circle to y-axis <0.> speed <60.>;
+			move radar to y-axis [-2.] speed [2.];
+			sleep 250;
+			move radar to y-axis [-2.] speed [4.];
+			sleep 250;
+			move radar to y-axis [-2.] speed [6.];
+			sleep 250;
+			move radar to y-axis [-2.] speed [8.];
+			sleep 250;
+			move radar to y-axis [-2.] speed [6.];
+			sleep 250;
+			move radar to y-axis [-2.] speed [4.];
+			sleep 250;
+			move radar to y-axis [-2.] speed [2.];
+			wait-for-move radar along y-axis;
+			currentstate = 1;
+		}
+	}
+	Static_Var_2 = 0;
+}
+
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = bMoving;
+		if( moving )
+		{
+				Static_Var_3 = 0;
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <101.>;
+					turn lboot to x-axis <30.> speed <101.>;
+					turn rleg to x-axis <-75.> speed <152.>;
+					turn rboot to x-axis <45.> speed <153.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <0.> speed <80.>;
+					turn torso to x-axis <0.> speed <40.>;
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <230.>;
+					turn lboot to x-axis <15.> speed <120.>;
+					turn rleg to x-axis <-90.> speed <120.>;
+					turn rboot to x-axis <90.> speed <112.>;
+					move pelvis to y-axis [0.] speed [16.];
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <101.>;
+					turn lboot to x-axis <-30.> speed <112.>;
+					turn rleg to x-axis <-15.> speed <105.>;
+					turn rboot to x-axis <30.> speed <120.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <20.> speed <110.>;
+					turn torso to x-axis <15.> speed <120.>;
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <152.>;
+					turn lboot to x-axis <45.> speed <102.>;
+					turn rleg to x-axis <15.> speed <101.>;
+					turn rboot to x-axis <30.> speed <101.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <0.> speed <80.>;
+					turn torso to x-axis <0.> speed <40.>;
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <120.>;
+					turn lboot to x-axis <90.> speed <112.>;
+					turn rleg to x-axis <45.> speed <101.>;
+					turn rboot to x-axis <15.> speed <120.>;
+					move pelvis to y-axis [0.] speed [16.];
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <120.>;
+					turn lboot to x-axis <30.> speed <90.>;
+					turn rleg to x-axis <15.> speed <101.>;
+					turn rboot to x-axis <-30.> speed <112.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn pitchturret to x-axis <20.> speed <105.>;
+					turn torso to x-axis <15.> speed <120.>;
+					sleep 350;
+				}
+			
+		justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			Static_Var_3 = 1;
+			if( justmoved )
+			{
+				turn lleg to x-axis <0.> speed <112.>;
+				turn lboot to x-axis <0.> speed <112.>;
+				turn rleg to x-axis <0.> speed <112.>;
+				turn rboot to x-axis <0.> speed <112.>;
+				move pelvis to y-axis [0.] speed [16.];
+				turn torso to x-axis <0.> speed <40.>;
+				if( !aiming )
+				{
+					turn pitchturret to x-axis <0.> speed <120.>;
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	Static_Var_1 = 1;
+	Static_Var_2 = 0;
+	Static_Var_3 = 1;
+	move radar to y-axis [-4.] now;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = flare;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode torso type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode torso type SHATTER | NOHEATCLOUD;
+		explode barrel type FALL | NOHEATCLOUD;
+		explode rboot type FALL | NOHEATCLOUD;
+		explode lboot type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode torso type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rboot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lboot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

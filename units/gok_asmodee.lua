@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Battle quadrupod",
+		description = "All-Terrain Battle Quadrupod",
 		energystorage = 0,
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,

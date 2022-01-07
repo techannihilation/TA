@@ -1,0 +1,311 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, leg1, leg2, leg3, leg4, turret, body, rdoor,
+       ldoor, rnano, rspray, lspray, lnano;
+
+static-var  statechg_DesiredState, statechg_StateChanging, bMoving, spray, Static_Var_5,
+            Static_Var_6, Static_Var_7, Static_Var_8;
+
+
+walk()
+{
+	while( bMoving )
+	{
+		if( bMoving )
+		{
+			turn leg1 to y-axis <45.000000> speed <40.000000>;
+			turn leg1 to z-axis <10.000000> speed <40.000000>;
+			turn leg2 to z-axis <10.000000> speed <40.000000>;
+			turn leg3 to y-axis <-60.000000> speed <40.000000>;
+			turn leg3 to z-axis <-10.000000> speed <40.000000>;
+			turn leg4 to y-axis <0.000000> speed <40.000000>;
+			turn leg4 to z-axis <0.000000> speed <40.000000>;
+			turn body to x-axis <5.000000> speed <10.000000>;
+			turn body to z-axis <5.000000> speed <10.000000>;
+			sleep 300;
+		}
+		if( bMoving )
+		{
+			turn leg1 to z-axis <0.000000> speed <40.000000>;
+			turn leg2 to y-axis <54.000000> speed <40.000000>;
+			turn leg2 to z-axis <51.000000> speed <40.000000>;
+			turn leg3 to y-axis <0.000000> speed <40.000000>;
+			turn leg3 to z-axis <0.000000> speed <40.000000>;
+			turn leg4 to y-axis <0.000000> speed <40.000000>;
+			turn leg4 to z-axis <-10.000000> speed <40.000000>;
+			turn body to x-axis <0.000000> speed <10.000000>;
+			turn body to y-axis <5.000000> speed <10.000000>;
+			sleep 300;
+		}
+		if( bMoving )
+		{
+			turn leg1 to y-axis <0.000000> speed <40.000000>;
+			turn leg1 to z-axis <10.000000> speed <40.000000>;
+			turn leg2 to y-axis <54.000000> speed <40.000000>;
+			turn leg2 to z-axis <0.000000> speed <40.000000>;
+			turn leg3 to y-axis <0.000000> speed <40.000000>;
+			turn leg3 to z-axis <-10.000000> speed <40.000000>;
+			turn leg4 to y-axis <-51.000000> speed <40.000000>;
+			turn leg4 to z-axis <-10.000000> speed <40.000000>;
+			turn body to x-axis <-5.000000> speed <10.000000>;
+			turn body to z-axis <-5.000000> speed <10.000000>;
+			sleep 300;
+		}
+		turn leg1 to y-axis <-10.000000> speed <40.000000>;
+		turn leg1 to z-axis <0.000000> speed <40.000000>;
+		turn leg2 to y-axis <0.000000> speed <40.000000>;
+		turn leg2 to z-axis <0.000000> speed <40.000000>;
+		turn leg3 to y-axis <-60.000000> speed <40.000000>;
+		turn leg3 to z-axis <-11.000000> speed <40.000000>;
+		turn leg4 to y-axis <-57.000000> speed <40.000000>;
+		turn leg4 to z-axis <0.000000> speed <40.000000>;
+		turn body to x-axis <0.000000> speed <10.000000>;
+		turn body to y-axis <-5.000000> speed <10.000000>;
+		sleep 300;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+MotionControl(Func_Var_1)
+{
+	while( TRUE )
+	{
+		Func_Var_1 = bMoving;
+		if( Func_Var_1 )
+		{
+			call-script walk();
+		}
+		if( !Func_Var_1 )
+		{
+			sleep 100;
+			turn leg1 to y-axis <0.000000> speed <100.000000>;
+			turn leg1 to z-axis <0.000000> speed <100.000000>;
+			turn leg2 to y-axis <0.000000> speed <100.000000>;
+			turn leg2 to z-axis <0.000000> speed <100.000000>;
+			turn leg3 to y-axis <0.000000> speed <100.000000>;
+			turn leg3 to z-axis <0.000000> speed <100.000000>;
+			turn leg4 to y-axis <0.000000> speed <100.000000>;
+			turn leg4 to z-axis <0.000000> speed <100.000000>;
+			turn body to x-axis <0.000000> speed <10.000000>;
+			turn body to y-axis <0.000000> speed <10.000000>;
+			turn body to z-axis <0.000000> speed <10.000000>;
+		}
+	}
+}
+
+open()
+{
+	move rdoor to x-axis [3.000000] speed [5.000000];
+	move ldoor to x-axis [-3.000000] speed [5.000000];
+	wait-for-move rdoor along x-axis;
+	move rnano to z-axis [3.000000] speed [5.000000];
+	move lnano to z-axis [3.000000] speed [5.000000];
+	wait-for-move rnano along z-axis;
+}
+
+close()
+{
+	move rnano to z-axis [0.000000] speed [5.000000];
+	move lnano to z-axis [0.000000] speed [5.000000];
+	wait-for-move rnano along z-axis;
+	move rdoor to x-axis [0.000000] speed [5.000000];
+	move ldoor to x-axis [0.000000] speed [5.000000];
+}
+
+Go()
+{
+	Static_Var_6 = 1;
+	call-script open();
+	turn turret to y-axis Static_Var_7 speed <160.000000>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	turn turret to y-axis <0.000000> speed <160.000000>;
+	wait-for-turn turret around y-axis;
+	call-script close();
+	Static_Var_6 = 0;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	bMoving = FALSE;
+	Static_Var_6 = 0;
+	Static_Var_8 = 1;
+	spray = base;
+	Static_Var_7 = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+	start-script MotionControl();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+StartBuilding(Func_Var_1)
+{
+	Static_Var_7 = Func_Var_1;
+	start-script RequestState(0);
+	signal 4;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	signal 4;
+	set-signal-mask 4;
+	sleep 6000;
+	set-signal-mask 0;
+	signal 4;
+	start-script RequestState(1);
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 0 )
+	{
+		piecenum = rspray;
+	}
+	if( spray != 0 )
+	{
+		piecenum = lspray;
+	}
+	spray = !spray;
+}
+
+TargetHeading(Func_Var_1)
+{
+	Static_Var_7 = 0 - Func_Var_1;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = turret;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode leg1 type NOHEATCLOUD;
+		explode leg2 type NOHEATCLOUD;
+		explode leg3 type NOHEATCLOUD;
+		explode leg4 type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode rdoor type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD;
+		explode leg1 type NOHEATCLOUD | FALL;
+		explode leg2 type NOHEATCLOUD | FALL;
+		explode leg3 type NOHEATCLOUD | FALL;
+		explode leg4 type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type NOHEATCLOUD;
+		explode leg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode leg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD;
+	explode leg1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leg2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leg3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode leg4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

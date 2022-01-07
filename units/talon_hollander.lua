@@ -35,8 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HKBOT3",
 		name = "Hollander",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_hollander",
 		radaremitheight = 46,
 		seismicsignature = 0,

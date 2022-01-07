@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "120 32 106",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Builds Hovercraft",
+		description = "Tech Level 1",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 8,
@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		metalstorage = 200,
 		mobilestandorders = 1,
-		name = "Hovercraft Platform",
+		name = "Hovercraft Lab",
 		noautofire = false,
 		objectname = "ARMHP",
 		radaremitheight = 22,
@@ -68,7 +68,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "116 20 104",
-				
+
 				collisionvolumetype = "Box",
 				damage = 2730,
 				description = "Hovercraft Platform Wreckage",
