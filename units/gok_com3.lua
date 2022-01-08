@@ -85,7 +85,7 @@ return {
 			[6] = "gok_emstor",
 			[7] = "gok_eestor",
 			[8] = "gok_lab",
-			[9] = "",
+			[9] = "gok_vp",
 			[10] = "gok_ap",
 			[11] = "gok_ulab",
 			[12] = "gok_edrag",
