@@ -140,7 +140,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 3,
-				name = "Carbuncle Blaster",
+				name = "Ligthning Blaster",
 				noselfdamage = true,
 				range = 500,
 				reloadtime = 0.5,

@@ -9,7 +9,7 @@ return {
 		buildtime = 750000,
 		category = "ALL SURFACE",
 		collisionvolumescales = "135 150 135",
-		
+
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 4",
@@ -61,7 +61,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 184,
-				object = "armurad_head",
+				object = "armurad_heap",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

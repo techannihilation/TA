@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1526,
-				object = "gok_damascus_DEAD",
+				object = "gok_antinuke_DEAD",
 				reclaimable = true,
 			},
 			heap = {

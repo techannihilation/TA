@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "85 40 85",
 		collisionvolumetype = "CylY",
-		corpse = "dead",
+		corpse = "heap",
 		description = "Converts upto 8000 Energy to Metal",
 		explodeas = "BANTHA_BLAST",
 		floater = false,
@@ -41,20 +41,6 @@ return {
 			faction = "ARM",
 		},
 		featuredefs = {
-			dead = {
-				blocking = true,
-				damage = 4000,
-				description = "T3 Metal Maker Wreckage",
-				featuredead = "heap",
-				footprintx = 4,
-				footprintz = 4,
-				metal = 7737,
-				object = "AMetalMakerLvl2_dead",
-				reclaimable = true,
-				customparams = {
-					fromunit = 1,
-				},
-			},
 			heap = {
 				blocking = false,
 				damage = 5000,
@@ -62,7 +48,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4860,
-				object = "4x4f",
+				object = "6x6F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -15,7 +15,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "38.6 39.6 54.6",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -57,8 +56,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "1.35855102539 -5.79698309326 2.2872467041",
-				collisionvolumescales = "33.431427002 25.3690338135 53.5839233398",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "33 25 53",
 				collisionvolumetype = "Box",
 				damage = 5148,
 				description = "FatDog Wreckage",
@@ -90,7 +89,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:goliathflare",
+				[1] = "custom:arm_furie_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -136,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 3,
-				name = "FatDog Blaster",
+				name = "Ligthning Blaster",
 				noselfdamage = true,
 				range = 500,
 				reloadtime = 0.5,

@@ -53,7 +53,7 @@ return {
 			--[2] = "gok_erez",
 			[2] = "gok_wraith",
 			[3] = "gok_nurgle",
-			[4] = "gok_dvergar",			
+			[4] = "gok_dvergar",
 			--[6] = "gok_",
 			--[7] = "gok_",
 		},
@@ -74,7 +74,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3360,
-				object = "gok_eplat_DEAD",
+				object = "GOK_EAP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

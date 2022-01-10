@@ -13,6 +13,9 @@ Balance :
   - Split T1/T2 Gok Lab into Tank and Kbot : New units added.
   - Add T2 Arty Kbot for GOK
 
+Fix :
+ - Heap & Corpse for some units gerated errors in infolog. Thank to Abma
+
 4.12 => 4.13
 2022-12-03
 Balance :
