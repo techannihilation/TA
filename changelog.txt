@@ -1,15 +1,17 @@
 4.13 => 4.14
-2022-12-09
+2022-12-11
 Balance :
  - T3 Arty TLL Kbot : Increase HP
  - Talos T3 : Decrease MEtal 28KM=>26KM & Decrease HP 133K=>121K
  - Tankanator : Increase ReloadTime : 6S=>8S (dmg 400/s=>300/S)
  - Increase Metalcost / Energycost for Pyro, Panther, Xeon by 10%
+ - T2 Arm Vengence : decrease HP 18K=>15K. Increase Buildtime 50K=>70K
 
  Improvement:
   - Add Air LAb Morph for T1 / T2 Gok Lab
   - Add T3 Arty Kbot
   - Split T1/T2 Gok Lab into Tank and Kbot : New units added.
+  - Add T2 Arty Kbot for GOK
 
 4.12 => 4.13
 2022-12-03

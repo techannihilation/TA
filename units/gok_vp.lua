@@ -24,7 +24,7 @@ return {
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
-		footprintx = 8,
+		footprintx = 7,
 		footprintz = 8,
 		icontype = "building",
 		idleautoheal = 5,
@@ -54,7 +54,7 @@ return {
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
 		workertime = 225,
-		yardmap = "cccooccc cccooccc cccccccc cccccccc cccccccc cccccccc ooccccoo occcccco",
+		yardmap = "ccccccc ccccccc ccccccc ccooocc ccooocc ccooocc ccooocc ccooocc",
 		buildoptions = {
 			[1] = "gok_cv",
 			--[2] = "",

@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 2757,
 		builder = false,
 		buildpic = "gok_jocond.dds",
-		buildtime = 60000,
+		buildtime = 40000,
 		canattack = true,
 		canguard = true,
 		canhover = false,

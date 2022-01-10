@@ -53,7 +53,7 @@ return {
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
 		workertime = 400,
-		yardmap = "cccooooccc cccooooccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc oooccccooo ooccccccoo",
+		yardmap = "cccooooccc cccooooccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc cccccccccc oooccccooo oooccccooo",
 		buildoptions = {
 			[1] = "gok_ack",
 			[2] = "gok_engineerk",
@@ -63,7 +63,8 @@ return {
 			[6] = "gok_harbinger",
 			[7] = "gok_hellfire",
 			[8] = "gok_valkyrie",
-			[9] = "gok_antichrist",
+			[9] = "gok_amon",
+			[10] = "gok_antichrist",
 		},
 		customparams = {
 			buildpic = "gok_alab.dds",

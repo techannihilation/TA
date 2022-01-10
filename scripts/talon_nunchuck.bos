@@ -6,7 +6,7 @@
 piece  flare1, flare2, body, base, turret, sleeves, barrel1, barrel2,
        shell, aimer;
 
-static-var  gun_1, Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5, Static_Var_6;
+static-var  gun_1;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -60,97 +60,57 @@ HitByWeapon(anglex, anglez)
 	turn body to x-axis <0.> speed <30.>;
 }
 
-StartMoving()
-{
-	signal 4;
-	set-signal-mask 4;
-	Static_Var_5 = 1;
-}
-
-StopMoving()
-{
-	signal 4;
-}
-
-setSFXoccupy(state)
-{
-	Static_Var_1 = state;
-}
-
 Create()
 {
 	hide flare1;
 	hide flare2;
 	gun_1 = 0;
-	Static_Var_6 = 1;
-	Static_Var_2 = 100;
-	start-script SmokeUnit();
-	Static_Var_3 = 0;
 	turn turret to x-axis <-45.> now;
 	turn sleeves to x-axis <45.> now;
-	Static_Var_5 = 1;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_2 = Func_Var_1 * 2;
+	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
 	sleep 2500;
-	Static_Var_5 = 1;
 	turn aimer to y-axis <0.> speed <45.>;
 	turn sleeves to x-axis <0.> speed <45.>;
 	wait-for-turn aimer around y-axis;
 	wait-for-turn sleeves around x-axis;
 	turn turret to x-axis <-45.> speed <85.>;
 	turn sleeves to x-axis <45.> speed <85.>;
-	wait-for-turn turret around x-axis;
-	wait-for-turn sleeves around x-axis;
-	Static_Var_3 = 0;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	if( Static_Var_5 == 1 )
-	{
-		turn turret to x-axis <0.> speed <85.000000>;
-		turn sleeves to x-axis <0.> speed <85.000000>;
-		wait-for-turn turret around x-axis;
-		wait-for-turn sleeves around x-axis;
-		Static_Var_5 = 0;
-	}
+	turn turret to x-axis <0.> speed <85.000000>;
+	turn sleeves to x-axis <0.> speed <85.000000>;
+	wait-for-turn turret around x-axis;
+	wait-for-turn sleeves around x-axis;
 	turn aimer to y-axis heading speed <60.>;
 	turn sleeves to x-axis <0.000000> - pitch speed <60.000000>;
 	wait-for-turn aimer around y-axis;
 	wait-for-turn sleeves around x-axis;
-
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	if( Static_Var_3 == 0 )
-	{
-		emit-sfx 1024 from flare1;
-		move barrel1 to z-axis [-3.] now;
-		move barrel1 to z-axis [0.] speed [2.];	
-		explode shell type FALL;
-		sleep 200;
-		gun_1 = 1;
-		emit-sfx 1024 from flare2;
-		explode shell type FALL;	
-		move barrel2 to z-axis [-3.] now;
-		move barrel2 to z-axis [0.] speed [2.];
-		sleep 600;
-		gun_1 = 0;
-		return (1);
-	}
-	
+	emit-sfx 1024 from flare1;
+	move barrel1 to z-axis [-3.] now;
+	move barrel1 to z-axis [0.] speed [2.];	
+	explode shell type FALL;
+	sleep 200;
+	gun_1 = 1;
+	emit-sfx 1024 from flare2;
+	explode shell type FALL;	
+	move barrel2 to z-axis [-3.] now;
+	move barrel2 to z-axis [0.] speed [2.];
+	sleep 600;
+	gun_1 = 0;	
 }
 
 AimFromPrimary(piecenum)
@@ -194,16 +154,6 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode barrel1 type FALL | NOHEATCLOUD;
 		explode barrel2 type FALL | NOHEATCLOUD;
-		explode body type NOHEATCLOUD;
-		explode turret type SHATTER | NOHEATCLOUD;
-		explode sleeves type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
 		explode turret type SHATTER | NOHEATCLOUD;
 		explode sleeves type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;

@@ -1,0 +1,393 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, flare, barmor, tarmor, pitchturret, barrel,
+		lflegy, lfleg, lfleg2, lfleg3, 
+		rflegy, rfleg, rfleg2, rfleg3, 
+		lblegy, lbleg, lbleg2, lbleg3, 
+		rblegy, rbleg, rbleg2, rbleg3;
+
+static-var  bMoving, bAiming;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+
+MotionControl(Moving, Aiming, JustMoved)
+	{
+	while( TRUE )
+		{
+		Moving = bMoving;
+		Aiming = bAiming;
+		if( Moving )
+			{
+			if( bMoving )
+				{
+				move body to y-axis [0.00] speed [2.00];
+				move body to z-axis [0.50] speed [4.00];
+				
+				turn lblegy to y-axis <62.50> speed <40.00>;
+				//turn lblegy2 to y-axis <-17.50> speed <40.00>;
+				turn lbleg to z-axis <-20.00> speed <60.00>;
+				turn lbleg2 to z-axis <50.00> speed <110.00>;
+				turn lbleg3 to z-axis <-55.00> speed <110.00>;
+				//turn lbleg4 to z-axis <25.00> speed <40.00>;
+				
+				turn rblegy to y-axis <0.00> speed <60.00>;
+				//turn rblegy2 to y-axis <-45.00> speed <60.00>;
+				turn rbleg to z-axis <-20.00> speed <15.00>;
+				turn rbleg2 to z-axis <50.00> speed <15.00>;
+				turn rbleg3 to z-axis <-30.00> speed <25.00>;
+				//turn rbleg4 to z-axis <0.00> speed <35.00>;
+				
+				turn lflegy to y-axis <-45.00> speed <40.00>;
+				//turn lflegy2 to y-axis <17.50> speed <40.00>;
+				turn lfleg to z-axis <-10.00> speed <30.00>;
+				turn lfleg2 to z-axis <-10.00> speed <90.00>;
+				turn lfleg3 to z-axis <-25.00> speed <70.00>;
+				//turn lfleg4 to z-axis <25.00> speed <8.00>;
+				
+				turn rflegy to y-axis <0.00> speed <60.00>;
+				//turn rflegy2 to y-axis <62.00> speed <60.00>;
+				turn rfleg to z-axis <-20.00> speed <12.00>;
+				turn rfleg2 to z-axis <30.00> speed <25.00>;
+				turn rfleg3 to z-axis <-15.00> speed <20.00>;
+				//turn rfleg4 to z-axis <5.00> speed <8.00>;
+				
+				sleep 250;
+				}
+			
+			if( bMoving )
+				{
+				//move body to y-axis [-0.50] speed [2.00];
+				move body to z-axis [0.00] speed [2.00];
+				turn lbleg to z-axis <-10.00> speed <18.00>;
+				turn lbleg2 to z-axis <10.00> speed <70.00>;
+				turn lbleg3 to z-axis <-25.00> speed <55.00>;
+				turn rbleg2 to z-axis <30.00> speed <30.00>;
+				turn rbleg3 to z-axis <-15.00> speed <25.00>;
+				//turn rbleg4 to z-axis <5.00> speed <8.00>;
+				turn lfleg to z-axis <-20.00> speed <18.00>;
+				turn lfleg2 to z-axis <-15.00> speed <70.00>;
+				turn lfleg3 to z-axis <-20.00> speed <55.00>;
+				turn rfleg2 to z-axis <30.00> speed <35.00>;
+				turn rfleg3 to z-axis <-30.00> speed <25.00>;
+				//turn rfleg4 to z-axis <0.00> speed <8.00>;
+				sleep 250;
+				}
+			
+			if( bMoving )
+				{
+				//move body to y-axis [0.00] speed [2.00];
+				move body to z-axis [-0.50] speed [2.00];				
+				turn lblegy to y-axis <37.50> speed <40.00>;
+				//turn lblegy2 to y-axis <7.50> speed <40.00>;
+				turn lbleg to z-axis <10.00> speed <30.00>;
+				turn lbleg2 to z-axis <-40.00> speed <90.00>;
+				turn lbleg3 to z-axis <15.00> speed <70.00>;
+				//turn lbleg4 to z-axis <20.00> speed <8.00>;
+				
+				turn rblegy to y-axis <-37.50> speed <60.00>;
+				//turn rblegy2 to y-axis <-7.50> speed <60.00>;
+				turn rbleg to z-axis <-12.50> speed <12.00>;
+				turn rbleg2 to z-axis <15.00> speed <25.00>;
+				turn rbleg3 to z-axis <-2.50> speed <20.00>;
+				//turn rbleg4 to z-axis <0.00> speed <8.00>;
+				
+				turn lflegy to y-axis <-37.50> speed <40.00>;
+				//turn lflegy2 to y-axis <-7.50> speed <40.00>;
+				turn lfleg to z-axis <12.50> speed <60.00>;
+				turn lfleg2 to z-axis <-15.00> speed <90.00>;
+				turn lfleg3 to z-axis <2.50> speed <90.00>;
+				//turn lfleg4 to z-axis <0.00> speed <40.00>;
+				
+				turn rflegy to y-axis <37.50> speed <60.00>;
+				//turn rflegy2 to y-axis <7.50> speed <60.00>;
+				turn rfleg to z-axis <-10.00> speed <18.00>;
+				turn rfleg2 to z-axis <30.00> speed <18.00>;
+				turn rfleg3 to z-axis <-15.00> speed <25.00>;
+				//turn rfleg4 to z-axis <-20.00> speed <30.00>;
+				
+				sleep 250;
+				}
+			////
+			if( bMoving )
+				{
+				//move body to y-axis [0.00] speed [2.00];
+				move body to z-axis [0.50] speed [4.00];
+				
+				turn lblegy to y-axis <0.00> speed <25.00>;
+				//turn lblegy2 to y-axis <45.00> speed <25.00>;
+				turn lbleg to z-axis <20.00> speed <18.00>;
+				turn lbleg2 to z-axis <-50.00> speed <18.00>;
+				turn lbleg3 to z-axis <30.00> speed <25.00>;
+				//turn lbleg4 to z-axis <0.00> speed <35.00>;
+				
+				turn rblegy to y-axis <-62.50> speed <40.00>;
+				//turn rblegy2 to y-axis <17.50> speed <40.00>;
+				turn rbleg to z-axis <20.00> speed <50.00>;
+				turn rbleg2 to z-axis <-50.00> speed <95.00>;
+				turn rbleg3 to z-axis <55.00> speed <90.00>;
+				//turn rbleg4 to z-axis <-25.00> speed <40.00>;
+				
+				turn lflegy to y-axis <0.00> speed <65.00>;
+				//turn lflegy2 to y-axis <-60.00> speed <65.00>;
+				turn lfleg to z-axis <20.00> speed <30.00>;
+				turn lfleg2 to z-axis <-20.00> speed <25.00>;
+				turn lfleg3 to z-axis <15.00> speed <20.00>;
+				//turn lfleg4 to z-axis <-5.00> speed <20.00>;
+				
+				turn rflegy to y-axis <45.50> speed <40.00>;
+				//turn rflegy2 to y-axis <-17.50> speed <40.00>;
+				turn rfleg to z-axis <10.00> speed <35.00>;
+				turn rfleg2 to z-axis <0.00> speed <200.00>;
+				turn rfleg3 to z-axis <25.00> speed <60.00>;
+				//turn rfleg4 to z-axis <-25.00> speed <20.00>;
+				
+				sleep 250;
+				}
+			
+			if( bMoving )
+				{
+				//move body to y-axis [-0.50] speed [2.00];
+				move body to z-axis [0.00] speed [2.00];
+				turn lbleg2 to z-axis <-30.00> speed <35.00>;
+				turn lbleg3 to z-axis <15.00> speed <25.00>;
+				//turn lbleg4 to z-axis <-5.00> speed <20.00>;
+				turn rbleg to z-axis <10.00> speed <18.00>;
+				turn rbleg2 to z-axis <-10.00> speed <60.00>;
+				turn rbleg3 to z-axis <25.00> speed <60.00>;
+				turn lfleg2 to z-axis <-30.00> speed <35.00>;
+				turn lfleg3 to z-axis <30.00> speed <25.00>;
+				//turn lfleg4 to z-axis <0.00> speed <20.00>;
+				turn rfleg to z-axis <20.00> speed <18.00>;
+				turn rfleg2 to z-axis <-15.00> speed <60.00>;
+				turn rfleg3 to z-axis <30.00> speed <60.00>;				
+				sleep 250;
+				}
+			
+			if( bMoving )
+				{
+				move body to y-axis [0.00] speed [2.00];
+				move body to z-axis [-0.50] speed [2.00];
+				
+				turn lblegy to y-axis <37.50> speed <60.00>;
+				//turn lblegy2 to y-axis <7.50> speed <0.00>;
+				turn lbleg to z-axis <12.50> speed <30.00>;
+				turn lbleg2 to z-axis <-15.00> speed <25.00>;
+				turn lbleg3 to z-axis <2.50> speed <50.00>;
+				//turn lbleg4 to z-axis <0.00> speed <20.00>;
+				
+				turn rblegy to y-axis <-37.50> speed <40.00>;
+				//turn rblegy2 to y-axis <-7.50> speed <40.00>;
+				turn rbleg to z-axis <-10.00> speed <35.00>;
+				turn rbleg2 to z-axis <18.00> speed <80.00>;
+				turn rbleg3 to z-axis <-15.00> speed <55.00>;
+				//turn rbleg4 to z-axis <-20.00> speed <20.00>;
+				
+				turn lflegy to y-axis <-37.50> speed <60.00>;
+				//turn lflegy2 to y-axis <-7.50> speed <60.00>;
+				turn lfleg to z-axis <10.00> speed <18.00>;
+				turn lfleg2 to z-axis <-30.00> speed <18.00>;
+				turn lfleg3 to z-axis <15.00> speed <25.00>;
+				//turn lfleg4 to z-axis <20.00> speed <35.00>;
+				
+				turn rflegy to y-axis <37.50> speed <40.00>;
+				//turn rflegy2 to y-axis <7.50> speed <40.00>;
+				turn rfleg to z-axis <-12.50> speed <50.00>;
+				turn rfleg2 to z-axis <15.00> speed <90.00>;
+				turn rfleg3 to z-axis <-2.50> speed <90.00>;
+				//turn rfleg4 to z-axis <0.00> speed <40.00>;
+				
+				sleep 250;
+				}
+			JustMoved = 1;
+			}
+		if( !Moving )
+			{
+			if( JustMoved )
+				{
+				move body to y-axis [0.00] speed [2.00];
+				move body to z-axis [0.00] speed [2.00];
+				
+				turn lblegy to y-axis <45.00> speed <55.00>;
+				//turn lblegy2 to y-axis <0.00> speed <55.00>;
+				turn lbleg to z-axis <0.00> speed <55.00>;
+				turn lbleg2 to z-axis <0.00> speed <55.00>;
+				turn lbleg3 to z-axis <0.00> speed <55.00>;
+				//turn lbleg4 to z-axis <0.00> speed <55.00>;
+				
+				turn rblegy to y-axis <-45.00> speed <55.00>;
+				//turn rblegy2 to y-axis <0.00> speed <55.00>;
+				turn rbleg to z-axis <0.00> speed <55.00>;
+				turn rbleg2 to z-axis <0.00> speed <55.00>;
+				turn rbleg3 to z-axis <0.00> speed <55.00>;
+				//turn rbleg4 to z-axis <0.00> speed <55.00>;
+				
+				turn lflegy to y-axis <-45.00> speed <55.00>;
+				//turn lflegy2 to y-axis <0.00> speed <55.00>;
+				turn lfleg to z-axis <0.00> speed <55.00>;
+				turn lfleg2 to z-axis <-30.00> speed <55.00>;
+				turn lfleg3 to z-axis <0.00> speed <55.00>;
+				//turn lfleg4 to z-axis <0.00> speed <55.00>;
+				
+				turn rflegy to y-axis <45.00> speed <55.00>;
+				//turn rflegy2 to y-axis <0.00> speed <55.00>;
+				turn rfleg to z-axis <0.00> speed <55.00>;
+				turn rfleg2 to z-axis <0.00> speed <55.00>;
+				turn rfleg3 to z-axis <0.00> speed <55.00>;
+				//turn rfleg4 to z-axis <0.00> speed <55.00>;
+				
+				JustMoved = 0;
+				}
+			sleep 40;
+			}
+		}
+}
+
+RestoreAfterDelay()
+{
+	sleep 4000;
+	turn pitchturret to x-axis <0.000000> speed <25.000000>;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script RestoreAfterDelay();
+	start-script MotionControl();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flare;
+	turn rfleg to z-axis <45.000000> now;
+	turn rfleg2 to z-axis <-60.000000> now;
+	turn lfleg to z-axis <-45.000000> now;
+	turn lfleg2 to z-axis <60.000000> now;
+	turn pitchturret to x-axis <80.000000> now;
+	start-script Smokeunit();
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = pitchturret;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn pitchturret to x-axis <0.000000> + pitch speed <25.000000>;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	move barrel to z-axis [2.000000] speed [500.0];
+	emit-sfx 1024 + 0 from flare;
+	sleep 50;
+	move barrel to z-axis [0.000000] speed [3.000000];
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	bMoving = FALSE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		explode lfleg type NOHEATCLOUD;
+		explode rfleg type NOHEATCLOUD;
+		explode lfleg2 type NOHEATCLOUD;
+		explode rfleg3 type NOHEATCLOUD;
+		explode lbleg type NOHEATCLOUD;
+		explode rbleg type NOHEATCLOUD;
+		explode lbleg2 type NOHEATCLOUD;
+		explode rbleg3 type NOHEATCLOUD;
+		explode tarmor type NOHEATCLOUD;
+		explode barmor type NOHEATCLOUD;		
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		explode lfleg type NOHEATCLOUD | FALL;
+		explode rfleg type NOHEATCLOUD | FALL;
+		explode lfleg2 type NOHEATCLOUD | FALL;
+		explode rfleg3 type NOHEATCLOUD | FALL;
+		explode lbleg type NOHEATCLOUD | FALL;
+		explode rbleg type NOHEATCLOUD | FALL;
+		explode lbleg2 type NOHEATCLOUD | FALL;
+		explode rbleg3 type NOHEATCLOUD | FALL;
+		explode tarmor type NOHEATCLOUD;
+		explode barmor type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode pitchturret type NOHEATCLOUD;
+	explode lfleg type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode rfleg type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode lfleg2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode rfleg3 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode lbleg type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode rbleg type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode lbleg2 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode rbleg3 type NOHEATCLOUD | FALL | EXPLODE_ON_HIT | SMOKE | FIRE;
+	explode tarmor type NOHEATCLOUD | FALL;
+	explode barmor type NOHEATCLOUD | FALL;
+	return (corpsetype);
+}
