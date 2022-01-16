@@ -1,5 +1,5 @@
 4.13 => 4.14
-2022-12-11
+2022-12-17
 Balance :
  - T3 Arty TLL Kbot : Increase HP
  - Talos T3 : Decrease MEtal 28KM=>26KM & Decrease HP 133K=>121K
@@ -15,6 +15,7 @@ Balance :
 
 Fix :
  - Heap & Corpse for some units gerated errors in infolog. Thank to Abma
+ - Gok Vehicle Lab. Units couldn't leave.
 
 4.12 => 4.13
 2022-12-03

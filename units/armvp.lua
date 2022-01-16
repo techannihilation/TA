@@ -51,7 +51,7 @@ return {
 		unitname = "armvp",
 		usebuildinggrounddecal = true,
 		workertime = 250,
-		yardmap = "ooooooooooccccooooccccooooccccooooccccooooccccoo",
+		yardmap = "oooooooo ooccccoo ooccccoo ooccccoo ooccccoo ooccccoo",
 		buildoptions = {
 			[1] = "armcv",
 			[2] = "armbeaver",

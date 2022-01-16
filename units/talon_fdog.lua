@@ -46,7 +46,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.66,
-		turnrate = 450,
+		turnrate = 350,
 		unitname = "talon_fdog",
 		upright = false,
 		customparams = {
