@@ -653,7 +653,7 @@ local morphDefs = {
 	corgol = {
 		into = 'corminotaur',
 		time = 90,
-		xp = 0.20,
+		xp = 0.15,
 	},
 	corraid = {
 		into = 'correap',

@@ -26,47 +26,47 @@ activatescr()
 {
 	if( TRUE )
 	{
-		move block02 to x-axis [6.5000] speed [2.700000];
-		move block02 to y-axis [-6.5000] speed [2.700000];
-		move block04 to x-axis [6.5000] speed [2.800000];
-		move block04 to y-axis [-6.5000] speed [2.800000];
-		move block06 to x-axis [6.5000] speed [2.900000];
-		move block06 to y-axis [-6.5000] speed [2.900000];
-		move block08 to x-axis [6.5000] speed [3.000000];
-		move block08 to y-axis [-6.5000] speed [3.000000];
-		move block10 to x-axis [6.5000] speed [2.900000];
-		move block10 to y-axis [-6.5000] speed [2.900000];
+		move block02 to x-axis [7.5000] speed [2.700000];
+		move block02 to y-axis [-7.5000] speed [2.700000];
+		move block04 to x-axis [7.5000] speed [2.800000];
+		move block04 to y-axis [-7.5000] speed [2.800000];
+		move block06 to x-axis [7.5000] speed [2.900000];
+		move block06 to y-axis [-7.5000] speed [2.900000];
+		move block08 to x-axis [7.5000] speed [3.000000];
+		move block08 to y-axis [-7.5000] speed [3.000000];
+		move block10 to x-axis [7.5000] speed [2.900000];
+		move block10 to y-axis [-7.5000] speed [2.900000];
 		//move block12 to x-axis [6.5000] speed [2.800000];
 		//move block12 to y-axis [-6.5000] speed [2.800000];
 		
-		move block01 to x-axis [-6.5000] speed [2.700000];
-		move block01 to y-axis [-6.5000] speed [2.700000];
-		move block03 to x-axis [-6.5000] speed [2.800000];
-		move block03 to y-axis [-6.5000] speed [2.800000];
-		move block05 to x-axis [-6.5000] speed [2.900000];
-		move block05 to y-axis [-6.5000] speed [2.900000];
-		move block07 to x-axis [-6.5000] speed [3.000000];
-		move block07 to y-axis [-6.5000] speed [3.000000];
-		move block09 to x-axis [-6.5000] speed [2.900000];
-		move block09 to y-axis [-6.5000] speed [2.900000];
+		move block01 to x-axis [-7.5000] speed [2.700000];
+		move block01 to y-axis [-7.5000] speed [2.700000];
+		move block03 to x-axis [-7.5000] speed [2.800000];
+		move block03 to y-axis [-7.5000] speed [2.800000];
+		move block05 to x-axis [-7.5000] speed [2.900000];
+		move block05 to y-axis [-7.5000] speed [2.900000];
+		move block07 to x-axis [-7.5000] speed [3.000000];
+		move block07 to y-axis [-7.5000] speed [3.000000];
+		move block09 to x-axis [-7.5000] speed [2.900000];
+		move block09 to y-axis [-7.5000] speed [2.900000];
 		//move block11 to x-axis [-6.5000] speed [2.800000];
 		//move block11 to y-axis [-6.5000] speed [2.800000];
 		sleep 500;
 	}	
 	if( TRUE )
 	{
-		move clamp02 to x-axis [19.2000] speed [15.000000];
-		move clamp04 to x-axis [19.2000] speed [16.000000];
-		move clamp06 to x-axis [19.2000] speed [17.000000];
-		move clamp08 to x-axis [19.2000] speed [18.000000];
-		move clamp10 to x-axis [19.2000] speed [17.000000];
+		move clamp02 to x-axis [20.5] speed [15.000000];
+		move clamp04 to x-axis [20.5] speed [16.000000];
+		move clamp06 to x-axis [20.5] speed [17.000000];
+		move clamp08 to x-axis [20.5] speed [18.000000];
+		move clamp10 to x-axis [20.5] speed [17.000000];
 		//move clamp12 to x-axis [19.2000] speed [16.000000];
 				
-		move clamp01 to x-axis [-19.2000] speed [15.000000];
-		move clamp03 to x-axis [-19.2000] speed [16.000000];
-		move clamp05 to x-axis [-19.2000] speed [17.000000];
-		move clamp07 to x-axis [-19.2000] speed [18.000000];
-		move clamp09 to x-axis [-19.2000] speed [17.000000];
+		move clamp01 to x-axis [-20.5] speed [15.000000];
+		move clamp03 to x-axis [-20.5] speed [16.000000];
+		move clamp05 to x-axis [-20.5] speed [17.000000];
+		move clamp07 to x-axis [-20.5] speed [18.000000];
+		move clamp09 to x-axis [-20.5] speed [17.000000];
 		//move clamp11 to x-axis [-19.2000] speed [16.000000];
 		sleep 500;
 	}

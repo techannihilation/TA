@@ -6,15 +6,13 @@
 piece  base, body, turret, sleeves, rotate1, rotate2, 
 		barrel1a, barrel1b, barrel2a, barrel2b, 
 		flare1a, flare1b, flare2a, flare2b,
-		s1, s2;
+		msl1, msl2, msl3, msl4;
 
-static-var  restore_delay, gun_1, gun_3;
+static-var  restore_delay, gun_1, gun_2;
 
 // Signal definitions
 #define SIG_AIM				2
 #define SIG_AIM_2			4
-#define SIG_AIM_3			8
-
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -51,7 +49,7 @@ Create()
 	hide flare2b;
 	start-script SmokeUnit();
 	gun_1 = 0;
-	gun_3 = 0;
+	gun_2 = 0;
 	restore_delay = 4000;
 }
 
@@ -76,8 +74,8 @@ AimPrimary(heading, pitch)
 
 AimTertiary(heading, pitch)
 {
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	return (1);
 }
 
@@ -120,10 +118,10 @@ FirePrimary()
 
 FireTertiary()
 {
-	++gun_3;
-	if( gun_3 == 2 )
+	++gun_2;
+	if( gun_2 == 4 )
 	{
-		gun_3 = 0;
+		gun_2 = 0;
 	}
 }
 
@@ -160,13 +158,21 @@ QueryPrimary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	if( gun_3 == 0 )
+	if( gun_2 == 0 )
 	{
-		piecenum = s1;
+		piecenum = msl1;
 	}
-	if( gun_3 == 1 )
+	if( gun_2 == 1 )
 	{
-		piecenum = s2;
+		piecenum = msl2;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = msl3;
+	}
+	if( gun_2 == 3 )
+	{
+		piecenum = msl4;
 	}
 }
 

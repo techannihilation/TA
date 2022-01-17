@@ -12,6 +12,7 @@ Balance :
   - Add T3 Arty Kbot
   - Split T1/T2 Gok Lab into Tank and Kbot : New units added.
   - Add T2 Arty Kbot for GOK
+  - T3 Minotaur : Change Model. Same Balance. Add feature to destroy T2 teeth.
 
 Fix :
  - Heap & Corpse for some units gerated errors in infolog. Thank to Abma
