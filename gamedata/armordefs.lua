@@ -533,6 +533,7 @@ return {
 		"cormlv",
 		"tllmlv",
 		"talon_mlv",
+		"gok_mlv",
 	},
 	commanders = {
 		"armcom",

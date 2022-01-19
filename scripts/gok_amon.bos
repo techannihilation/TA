@@ -229,7 +229,7 @@ MotionControl(Moving, Aiming, JustMoved)
 				turn lflegy to y-axis <-45.00> speed <55.00>;
 				//turn lflegy2 to y-axis <0.00> speed <55.00>;
 				turn lfleg to z-axis <0.00> speed <55.00>;
-				turn lfleg2 to z-axis <-30.00> speed <55.00>;
+				turn lfleg2 to z-axis <0.00> speed <55.00>;
 				turn lfleg3 to z-axis <0.00> speed <55.00>;
 				//turn lfleg4 to z-axis <0.00> speed <55.00>;
 				

@@ -16,19 +16,14 @@ Steering(Func_Var_1, Func_Var_2, Func_Var_3)
 	while( TRUE )
 	{
 		Func_Var_1 = get HEADING;
-		Func_Var_2 = ( Func_Var_1 - Static_Var_5 ) * 3;
+		Func_Var_2 = ( Func_Var_1 - Static_Var_5 ) * 3;	
 		turn tire1 to y-axis Func_Var_2 speed <180.000000>;
 		turn tire2 to y-axis Func_Var_2 speed <180.000000>;
-		Func_Var_3 = 713 * get CURRENT_SPEED * 100 / get MAX_SPEED;
-		if( Func_Var_3 < 18200 )
-		{
-			Func_Var_3 = 18200;
-		}
-		spin tire1 around x-axis speed Func_Var_3;
-		spin tire2 around x-axis speed Func_Var_3;
-		spin tire3 around x-axis speed Func_Var_3;
-		spin tire4 around x-axis speed Func_Var_3;
-		sleep 66;
+		spin tire1 around x-axis speed <250>;
+		spin tire2 around x-axis speed <250>;
+		spin tire3 around x-axis speed <250>;
+		spin tire4 around x-axis speed <250>;
+		sleep 150;
 		Static_Var_5 = Func_Var_1;
 	}
 }

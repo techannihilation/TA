@@ -8,7 +8,7 @@ return {
 		builddistance = 100,
 		builder = true,
 		buildpic = "talon_mlv.dds",
-		buildtime = 3650,
+		buildtime = 2000,
 		canassist = false,
 		canguard = false,
 		canmove = true,

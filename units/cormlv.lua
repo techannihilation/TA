@@ -8,7 +8,7 @@ return {
 		builddistance = 96,
 		builder = true,
 		buildpic = "cormlv.dds",
-		buildtime = 3640,
+		buildtime = 2000,
 		canassist = true,
 		canbeassisted = true,
 		canguard = true,

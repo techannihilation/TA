@@ -1,5 +1,5 @@
 4.13 => 4.14
-2022-12-17
+2022-12-20
 Balance :
  - T3 Arty TLL Kbot : Increase HP
  - Talos T3 : Decrease MEtal 28KM=>26KM & Decrease HP 133K=>121K
@@ -13,6 +13,7 @@ Balance :
   - Split T1/T2 Gok Lab into Tank and Kbot : New units added.
   - Add T2 Arty Kbot for GOK
   - T3 Minotaur : Change Model. Same Balance. Add feature to destroy T2 teeth.
+  - Add T1 Vehicle Gok MinesLayer
 
 Fix :
  - Heap & Corpse for some units gerated errors in infolog. Thank to Abma
