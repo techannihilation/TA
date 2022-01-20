@@ -196,6 +196,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "SMALL TINY MEDIUM LARGE VTOL",
 				def = "ultimate_psychic1",
 			},
 			[4] = {

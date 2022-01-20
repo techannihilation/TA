@@ -249,15 +249,20 @@ MotionControl(Moving, Aiming, JustMoved)
 
 lighting()
 {
-	While ( !bAiming )
+	While ( TRUE )
 	{
-		spin emit3 around y-axis speed <10.>;
-		emit-sfx 1024 + 0 from q11;
-		emit-sfx 1024 + 0 from q12;
-		emit-sfx 1024 + 0 from q13;
-		emit-sfx 1024 + 0 from q14;
-		emit-sfx 1024 + 0 from q15;
-		sleep 2500;
+		
+		if (!bAiming)
+		{
+			spin emit3 around y-axis speed <10.>;
+			emit-sfx 1024 + 0 from q11;
+			emit-sfx 1024 + 0 from q12;
+			emit-sfx 1024 + 0 from q13;
+			emit-sfx 1024 + 0 from q14;
+			emit-sfx 1024 + 0 from q15;
+			sleep 2500;
+		}
+		sleep 250;
 	}	
 }
 
@@ -715,22 +720,28 @@ Killed(severity, corpseType)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode pelvis type NOHEATCLOUD ;
+		explode pelvis type NOHEATCLOUD;
+		explode lbleg2 type NOHEATCLOUD;
+		explode rbleg2 type NOHEATCLOUD;
+		explode rfleg2 type NOHEATCLOUD;
+		explode lfleg2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode pelvis type NOHEATCLOUD  | BITMAP1;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode pelvis type NOHEATCLOUD  | SHATTER;
+		explode pelvis type NOHEATCLOUD;
+		explode lbleg2 type NOHEATCLOUD | FALL;
+		explode rbleg2 type NOHEATCLOUD | FALL;
+		explode rfleg2 type NOHEATCLOUD | FALL;
+		explode lfleg2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE ;
-
+	explode pelvis type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode lbleg2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode rbleg2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode rfleg2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode lfleg2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	return (corpsetype);
 }

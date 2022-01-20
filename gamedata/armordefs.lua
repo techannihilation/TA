@@ -46,7 +46,6 @@ return {
 		"armlift",
 		"gok_chariot",
 		"gok_wordbearer",
-		"gok_tzenth",
 	},
 	unclassed_air = {
 
@@ -417,10 +416,15 @@ return {
 		"talon_skynet",
 		"talon_independence",
 		"gok_apocalypse",
+		"gok_octopus",
+
 		-- OTHER
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
+
+		--T5 AIR
+		"gok_tzenth",
 	},
 	flamethrowers = {
 		"corpyro",
