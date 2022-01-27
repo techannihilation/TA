@@ -128,12 +128,7 @@ StartMoving()
 		emit-sfx 2 from wake4;
 		emit-sfx 2 from wake5;
 		emit-sfx 2 from wake6;
-		Func_Var_1 = get CURRENT_SPEED * 100 / Static_Var_9;
-		if( Func_Var_1 < 50 )
-		{
-			Func_Var_1 = 50;
-		}
-		sleep 12000 / Func_Var_1;
+		sleep 500;
 	}
 }
 

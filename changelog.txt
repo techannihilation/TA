@@ -2,9 +2,14 @@
 2022-12-21
 Balance :
  - Gok T5 Bomber can be target by Ground weapon. change Armor class and become a supership (dmg from Air weapon divide by 4)
+ - Jug Arm : Decrease stats and cost
 
  Improvement:
   - Add T5 Destroyer AreoShip for Gok
+  - Add Secret Hero for Gok
+
+ Fix :
+ - Black Hydre script
 
 4.13 => 4.14
 2022-12-20

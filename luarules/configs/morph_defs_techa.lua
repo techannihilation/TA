@@ -1312,6 +1312,11 @@ local morphDefs = {
 		time = 200,
 		xp = 0.10,
 	},
+	gok_octopus = {
+		into = 'gok_squid',
+		time = 200,
+		xp = 0.10,
+	},
 	tllmcv = {
 		into = 'tllsamael',
 		time = 180,

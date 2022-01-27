@@ -417,6 +417,7 @@ return {
 		"talon_independence",
 		"gok_apocalypse",
 		"gok_octopus",
+		"gok_squid",
 
 		-- OTHER
 		"armnomad",

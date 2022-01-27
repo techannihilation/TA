@@ -281,7 +281,7 @@ function gadget:Initialize()
       elseif (ud.name=="abroadside") or (ud.name=="cdevastator") or (ud.name=="tllzeppelin") or (ud.name=="gok_apocalypse") then
         Spring.SetUnitDefIcon(udid, "t5bigships.user")
 --T6 Arch or independance
-      elseif (ud.name=="armarch") or (ud.name=="talon_independence") then
+      elseif (ud.name=="armarch") or (ud.name=="talon_independence") or (ud.name=="gok_squid") then
         Spring.SetUnitDefIcon(udid, "t6ships.user")
 
 --battleships
