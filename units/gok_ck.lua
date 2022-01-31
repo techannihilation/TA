@@ -87,6 +87,7 @@ return {
 			[27] = "gok_blackpollen",
 			[28] = "gok_rl",
 			[29] = "gok_cir",
+			[30] = "gok_sy",
 		},
 		customparams = {
 			buildpic = "gok_ck.dds",
