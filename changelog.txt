@@ -1,3 +1,9 @@
+4.16 => 4.17
+2022-03-06
+Balance :
+ - Talon T5 Gunship : decrease HP 245K=>225K
+ - Jug Arm : Decrease speed 3=>2.8
+
 4.14 => 4.16
 2022-02-01
 Balance :
