@@ -129,7 +129,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armamph_missile = {
+			aa_missile = {
 				areaofeffect = 48,
 				avoidfeature = false,
 				canattackground = false,
@@ -143,7 +143,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "weapon_missile",
-				name = "Missiles",
+				name = "Anti-Air Missile",
 				noselfdamage = true,
 				range = 600,
 				reloadtime = 2,
@@ -218,7 +218,7 @@ return {
 			},
 			[3] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
-				def = "ARMAMPH_MISSILE",
+				def = "AA_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 		},

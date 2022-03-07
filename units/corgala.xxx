@@ -16,7 +16,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -15 0",
 		collisionvolumescales = "180.02865600586 262.02865600586 129.02865600586",
-		
+
 		collisionvolumetype = "ellipsoid",
 		defaultmissiontype = "Standby",
 		description = "Anti T3/T4 Very Heavy Kbot",
@@ -39,7 +39,7 @@ return {
 		movementclass = "VKBOT9",
 		name = "Galacticus",
 		noautofire = false,
-		
+
 		objectname = "CORGALA",
 		radaremitheight = 202,
 		selfdestructas = "EXO_BLAST",
@@ -155,9 +155,7 @@ return {
 				weaponvelocity = 800,
 				damage = {
 					commanders = 4000,
-					default = 40000,
-					experimental_land = 70000,
-					experimental_ships = 70000,
+					default = 60000,
 					subs = 5,
 				},
 			},

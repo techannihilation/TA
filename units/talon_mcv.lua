@@ -140,11 +140,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 900,
 				damage = {
-					areoship = 28000,
-					commanders = 1400,
-					default = 14000,
-					experimental_land = 28000,
-					experimental_ships = 28000,
+					commanders = 5000,
+					default = 20000,
 					subs = 5,
 				},
 			},

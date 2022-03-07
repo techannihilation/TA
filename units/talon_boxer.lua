@@ -181,7 +181,6 @@ return {
 				texture2 = "NULL",
 				texture3 = "NULL",
 				thickness = 1.5,
-				tolerance = 500,
 				turret = true,
 				weapontimer = 1,
 				weapontype = "LaserCannon",
@@ -245,16 +244,18 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "TINY",
 				def = "TALON_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 320,
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "TINY",
 				def = "TALON_MISSILE",
 				maindir = "0 0 1",
 				maxangledif = 320,
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "SHIELD",

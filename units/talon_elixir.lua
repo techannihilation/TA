@@ -138,10 +138,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 8000,
-					default = 32000,
-					experimental_land = 48000,
-					experimental_ships = 48000,
+					commanders = 8500,
+					default = 36000,
 					subs = 5,
 				},
 			},

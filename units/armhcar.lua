@@ -17,7 +17,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 1",
 		collisionvolumescales = "128 94 206",
-		
+
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -161,8 +161,6 @@ return {
 					areoship = 22000,
 					commanders = 2500,
 					default = 15000,
-					experimental_land = 22000,
-					experimental_ships = 22000,
 					subs = 7500,
 				},
 			},

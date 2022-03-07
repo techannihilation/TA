@@ -1,13 +1,17 @@
 4.16 => 4.17
-2022-03-06
+2022-03-08
 Balance :
- - Talon T5 Gunship : decrease HP 245K=>225K
+ - Talon T5 Gunship : decrease HP 245K=>215K. Decrease Gatling range 1400=>1000 and damage 5K=>2.5K
  - Jug Arm : Decrease speed 3=>2.8
+
+ Improvement:
+ - Delete special damage vs experimental units (T3-T4-T5-T6). Weapon will now inflict max damage * 0.8 to all units (default damage = 0.8 * special damage except some units). This way to add special feature (sniper or flamer protection..)
+ - T5 Tzenth Bomber and Gold Gunship Talon : Armor = unclassed_air. Can be targeted by ground units.
 
 4.14 => 4.16
 2022-02-01
 Balance :
- - Gok T5 Bomber can be target by Ground weapon. change Armor class and become a supership (dmg from Air weapon divide by 4)
+ - Gok T5 Bomber can be target by Ground weapon. Change Armor class and become a supership (dmg from Air weapon divide by 4)
  - Jug Arm : Decrease stats and cost
 
  Improvement:

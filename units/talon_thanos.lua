@@ -152,11 +152,8 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					areoship = 25000,
-					commanders = 2500,
-					default = 12500,
-					experimental_land = 25000,
-					experimental_ships = 25000,
+					commanders = 5000,
+					default = 2000,
 					subs = 5,
 				},
 			},

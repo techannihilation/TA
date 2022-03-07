@@ -148,11 +148,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1300,
 				damage = {
-					areoship = 22000,
 					commanders = 3750,
 					default = 15000,
-					experimental_land = 22000,
-					experimental_ships = 22000,
 					subs = 1500,
 				},
 				customparams = {

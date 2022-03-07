@@ -238,12 +238,13 @@ return {
 					subs = 5,
 				},
 			},
-			ga6 = {
+			aa_missile = {
 				areaofeffect = 64,
 				avoidfeature = false,
 				burst = 4,
 				burstrate = 0.25,
 				canattackground = false,
+				cegtag = "Arm_Def_AA_Rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -254,7 +255,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "weapon_missile",
-				name = "AA2Missile",
+				name = "Anti-Air Missile",
 				noselfdamage = true,
 				range = 800,
 				reloadtime = 1,
@@ -308,14 +309,14 @@ return {
 			},
 			[5] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
-				def = "GA6",
+				def = "AA_MISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "VTOL",
 			},
 			[6] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
-				def = "GA6",
+				def = "AA_MISSILE",
 				maindir = "1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "VTOL",

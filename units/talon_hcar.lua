@@ -18,7 +18,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -50 0",
 		collisionvolumescales = "120 160 280",
-		
+
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -197,11 +197,8 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 1300,
 				damage = {
-					areoship = 22000,
 					commanders = 2500,
 					default = 15000,
-					experimental_land = 22000,
-					experimental_ships = 22000,
 					subs = 7500,
 				},
 			},

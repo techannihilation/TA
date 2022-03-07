@@ -15,7 +15,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -30 -2",
 		collisionvolumescales = "68 105 35",
-		
+
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -38,7 +38,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Grim Reaper",
 		noautofire = false,
-		
+
 		objectname = "TLLGRIM",
 		radardistance = 0,
 		radaremitheight = 72,
@@ -148,12 +148,9 @@ return {
 				weapontype = "Rifle",
 				weaponvelocity = 3000,
 				damage = {
-					areoship = 32000,
-					commanders = 3200,
-					default = 16000,
-					experimental_land = 32000,
-					experimental_ships = 32000,
-					sniper_resistant = 8000,
+					commanders = 7500,
+					default = 30000,
+					sniper_resistant = 7500,
 					subs = 5,
 				},
 			},

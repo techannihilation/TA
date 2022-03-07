@@ -48,7 +48,6 @@ return {
 		"gok_wordbearer",
 	},
 	unclassed_air = {
-
 	--Fighters
 	"armwolf",
 	"armfig",
@@ -128,7 +127,6 @@ return {
 	"gok_spook",
 	"gok_dvergar",
 	"gok_revenant",
-	"talon_gold",
 
 	-- Scout planes
 	"armawac",
@@ -167,6 +165,10 @@ return {
 	"tllcsat",
 	"corcsat",
 	"talon_csat",
+
+	--T5 AIR
+	"gok_tzenth",
+	"talon_gold",
 },
 
 	--### SEA ###
@@ -296,120 +298,12 @@ return {
 		"gok_valefor",
 	},
 
-	--### LAND ###
-	experimental_land = {
-		-- tll t3 vechiles
-		"tlltelsatnk",
-		"tlldemon",
-		"tllacid",
-		"tllmosaurus",
-		-- tll t3 bots
-		"helepolis",
-		"tllhyperion",
-		"tllheavyimpact",
-		"tllhtcb",
-		"tllhtml",
-		"tllgrim",
-		"tllmlrpc",
-		-- core t3 vehs
-		"clb",
-		"cortigre",
-		"armmcv",
-		"corbt",
-		"cormachn",
-		-- arm t3 vehs
-		"avtr",
-		"corsiege",
-		"armkrypto",
-		"armmlrs",
-		"corchamp",
-		--"armantar",
-		"armthor",
-		"armchimera",
-		"armrex",
-		"corminotaur",
-		-- arm t3 bots
-		"armorco",
-		"arm_furie",
-		"armbanth",
-		"armraz",
-		"armmarauder",
-		"armshock",
-		"armcrabe",
-		"armpod",
-		-- core t3 bots
-		"corkrog",
-		"armgor",
-		"gorg",
-		"corkarg",
-		"corshiva",
-		"corraven",
-		"corraven1",
-		"corjurgen",
-		"cortroman",
-		"corhowie",
-		--talon t3 kbot
-		"talon_berserker",
-		"talon_opal",
-		"talon_hollander",
-		"talon_talos",
-		"talon_crab",
-		"gok_artycrab",
-		-- talon t3 veh
-		"talon_abaddon",
-		"talon_repentance",
-		"talon_mrtn",
-		"talon_visitant",
-		"talon_thanos",
-		--gok t3 Kbot
-		"gok_ifrit",
-		"gok_asmodee",
-		"gok_hellspawn",
-		"gok_jocond",
-		"gok_satan",
-
-		-- t4
-		"armraptor",
-		"tllsaurus",
-		"tllcolossus",
-		"corpokie",
-		"armexo",
-		"armspid",
-		"tllgorgon",
-		"corhaboob",
-		"corhcrus",
-		"corhflag",
-		"armhcrus",
-		"armmcv1",
-		"corarbritator",
-		"cormkl",
-		"armmygalo",
-		"tllhailstorm",
-		"armolympus",
-		"armpraet",
-		"cormonkeylord",
-		"tllirritator",
-		"talon_mythril",
-		"gok_pandora",
-		"gok_archon",
-		"gok_cut1",
-		"gok_azaroth",
-		"talon_boxer",
-		"talon_scorpion",
-		"talon_grenat",
-		"talon_mcv",
-		"talon_mcv1",
-		"coradamantoise",
-		-- T6 Titan
-		"tllsamael",
-		"corlilith",
-		"talon_cerberus",
-	},
-	--### AREOSHIP ###
+	--### AREOSHIP - SUPERSHIP ###
 	areoship = {
-		"armarch",
-		"cdevastator",
+		-- T5 SUPERSHIP
 		"abroadside",
+		"armhope",
+		"cdevastator",
 		"corvaliant",
 		"tllzeppelin",
 		"tllbarbarus",
@@ -417,15 +311,15 @@ return {
 		"talon_independence",
 		"gok_apocalypse",
 		"gok_octopus",
+
+		-- T6 SUPERSHIP
 		"gok_squid",
+		"armarch",
 
 		-- OTHER
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
-
-		--T5 AIR
-		"gok_tzenth",
 	},
 	flamethrowers = {
 		"corpyro",
@@ -441,6 +335,9 @@ return {
 		"corgfbt",
 		"talon_xeon",
 		"gok_mahlat",
+		"talon_grenat",
+		"gok_ifrit",
+		"cormkl",
 	},
 	sniper_resistant = {
 		"armzeus",
@@ -501,6 +398,11 @@ return {
 		"gok_nanotc2",
 		"gok_nanotc3",
 		"gok_nanotc4",
+		"gok_nanotc",
+		"gok_fnanotc1",
+		"gok_fnanotc2",
+		"gok_fnanotc3",
+		--"gok_nanotc4",
 	},
 	mines = {
 		"armmine1",

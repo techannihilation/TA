@@ -90,7 +90,7 @@ return {
 		weapondefs = {
 			mountedantimatteraccelerator = {
 				areaofeffect = 60,
-				beamtime = 1.65,
+				beamtime = 0.75,
 				burnblow = true,
 				collidefriendly = false,
 				corethickness = 0.4,
@@ -108,7 +108,7 @@ return {
 				noexplode = true,
 				noselfdamage = true,
 				range = 1700,
-				reloadtime = 4,
+				reloadtime = 2,
 				rgbcolor = "0.1 0.9 1.0",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
@@ -127,8 +127,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 3200,
-					default = 32000,
+					commanders = 4500,
+					default = 18000,
 					subs = 5,
 				},
 			},

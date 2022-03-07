@@ -18,7 +18,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
 		collisionvolumescales = "220 90 220",
-		
+
 		collisionvolumetype = "CylY",
 		collide = false,
 		cruisealt = 150,
@@ -90,7 +90,7 @@ return {
 		weapondefs = {
 			mountedantimatteraccelerator = {
 				areaofeffect = 60,
-				beamtime = 1.65,
+				beamtime = 0.75,
 				burnblow = true,
 				collidefriendly = false,
 				corethickness = 0.4,
@@ -108,7 +108,7 @@ return {
 				noexplode = true,
 				noselfdamage = true,
 				range = 1500,
-				reloadtime = 4,
+				reloadtime = 3,
 				rgbcolor = "0.1 0.9 1.0",
 				soundhitdry = "",
 				soundhitwet = "sizzle",
@@ -127,8 +127,8 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					commanders = 1600,
-					default = 16000,
+					commanders = 3000,
+					default = 12000,
 					subs = 5,
 				},
 			},
