@@ -62,9 +62,10 @@ return {
 		buildoptions = {
 			[1] = "armgen",
 			[2] = "armfus",
-			[4] = "amgeo",
-			[5] = "armgmm",
-			[6] = "armmoho",
+			[3] = "amgeo",
+			[4] = "armgmm",
+			[5] = "armmoho",
+			[6] = "armimoho",
 			[7] = "armmmkr",
 			[9] = "armuwadves",
 			[10] = "armuwadvms",
