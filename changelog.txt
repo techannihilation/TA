@@ -1,13 +1,16 @@
 4.16 => 4.17
 2022-03-08
 Balance :
- - Talon T5 Gunship : decrease HP 245K=>215K. Decrease Gatling range 1400=>1000 and damage 5K=>2.5K
+ - Talon T5 Gunship : decrease HP 245K=>155K. Decrease Gatling range 1400=>1000 and damage 5K=>2.5K. Decrease Speed 3.8=>2.8
  - Jug Arm : Decrease speed 3=>2.8
 
  Improvement:
  - Add T2 Mex Cloackable & Stealth for Arm (No Amphibious)
  - Delete special damage vs experimental units (T3-T4-T5-T6). Weapon will now inflict max damage * 0.8 to all units (default damage = 0.8 * special damage except some units). This way to add special feature (sniper or flamer protection..)
  - T5 Tzenth Bomber and Gold Gunship Talon : Armor = unclassed_air. Can be targeted by ground units.
+
+Fix :
+ - Gok Silo Limit added and fixed to 12
 
 4.14 => 4.16
 2022-02-01
