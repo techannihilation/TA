@@ -167,6 +167,7 @@ return {
 				firestarter = 0,
 				flighttime = 7,
 				impulseboost = 0,
+				impulsefactor = 0,
 				model = "weapon_rocket_devastator",
 				name = "Heavy Rockets",
 				noselfdamage = true,
