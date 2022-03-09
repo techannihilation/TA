@@ -3,6 +3,7 @@
 Balance :
  - Talon T5 Gunship : decrease HP 245K=>155K. Decrease Gatling range 1400=>1000 and damage 5K=>2.5K. Decrease Speed 3.8=>2.8
  - Jug Arm : Decrease speed 3=>2.8
+ - T1 Medium Tank. Decrease speed by 5%, HP by 50. Increase Metal by 4%
 
  Improvement:
  - Add T2 Mex Cloackable & Stealth for Arm (No Amphibious)
