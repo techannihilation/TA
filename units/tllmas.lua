@@ -15,7 +15,6 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "90 112 90",
-		
 		collisionvolumetype = "CylY",
 		description = "Tech Level 4 (Amphibious)",
 		energymake = 0,
@@ -58,6 +57,27 @@ return {
 				[4] = "piecetrail3",
 				[5] = "piecetrail4",
 				[6] = "piecetrail6",
+			},
+		},
+		sounds = {
+			activate = "mexrun1",
+			canceldestruct = "cancel2",
+			deactivate = "mexoff1",
+			underattack = "warning1",
+			working = "mexrun1",
+			count = {
+				[1] = "count6",
+				[2] = "count5",
+				[3] = "count4",
+				[4] = "count3",
+				[5] = "count2",
+				[6] = "count1",
+			},
+			ok = {
+				[1] = "servmed2",
+			},
+			select = {
+				[1] = "mexon1",
 			},
 		},
 	},
