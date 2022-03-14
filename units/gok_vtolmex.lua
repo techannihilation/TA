@@ -19,7 +19,7 @@ return {
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",
 		--description = "Tech Level 2",
-		--description = "In test. doesn't Work. Don't make it!",
+		description = "In test. doesn't Work. Don't make it!",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 0,
 		footprintx = 5,
