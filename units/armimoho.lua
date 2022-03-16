@@ -18,7 +18,7 @@ return {
 		description = "Tech Level 2",
 		energyuse = 75,
 		explodeas = "TWILIGHT",
-		extractsmetal = 0.001,
+		extractsmetal = 0.005,
 		footprintx = 5,
 		footprintz = 5,
 		icontype = "building",
