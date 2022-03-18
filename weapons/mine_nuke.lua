@@ -14,7 +14,7 @@ return {
 			commanders = 2250,
 			crawlingbombs = 450,
 			default = 4500,
-			mines = 45,
+			mines = 5,
 		},
 	},
 }

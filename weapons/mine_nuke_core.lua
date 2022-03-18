@@ -17,7 +17,7 @@ return {
 		damage = {
 			commanders = 1500,
 			default = 3500,
-			mines = 20,
+			mines = 5,
 		},
 	},
 }

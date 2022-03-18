@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 1305,
 		buildcostmetal = 125,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 3,
-		buildinggrounddecalsizey = 3,
-		buildinggrounddecaltype = "tllmine4_aoplane.dds",
 		buildpic = "tllmine4.dds",
 		buildtime = 150,
 		canattack = false,
@@ -22,7 +18,6 @@ return {
 		cloakcost = 4,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "16 14 16",
-		
 		collisionvolumetype = "CylY",
 		decloakspherical = false,
 		defaultmissiontype = "Standby_Mine",

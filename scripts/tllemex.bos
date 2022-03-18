@@ -3,47 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, p, body, lights01, lights02, rotor;
+piece  base, body, lights01, lights02, rotor, pipes;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
-
-
-HitByWeapon(anglex, anglez)
-{
-	var Func_Var_3;
-	Func_Var_3 = get HEALTH;
-	if( Func_Var_3 <= 60 )
-	{
-		if( Static_Var_4 == 0 )
-		{
-			Static_Var_4 = 1;
-			hide p;
-			explode p type NOHEATCLOUD | FALL | SHATTER | SMOKE;
-		}
-	}
-	if( Func_Var_3 <= 50 )
-	{
-		if( Static_Var_5 == 0 )
-		{
-			Static_Var_5 = 1;
-			hide p;
-			explode p type NOHEATCLOUD | FALL | SHATTER | SMOKE;
-		}
-	}
-	if( Func_Var_3 <= 35 )
-	{
-		if( Static_Var_6 == 0 )
-		{
-			Static_Var_6 = 1;
-			hide p;
-			explode p type NOHEATCLOUD | FALL | SHATTER | SMOKE;
-		}
-	}
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -62,7 +28,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			if( Static_Var_6 == 1 )
 			{
 				Static_Var_6 = 0;
-				show p;
+				show pipes;
 			}
 		}
 		if( healthpercent >= 60 )
@@ -70,7 +36,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			if( Static_Var_5 == 1 )
 			{
 				Static_Var_5 = 0;
-				show p;
+				show body;
 			}
 		}
 		if( healthpercent >= 75 )
@@ -78,7 +44,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			if( Static_Var_4 == 1 )
 			{
 				Static_Var_4 = 0;
-				show p;
+				show pipes;
 			}
 		}
 		if( healthpercent < 66 )

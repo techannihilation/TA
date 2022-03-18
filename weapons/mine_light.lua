@@ -16,7 +16,7 @@ return {
 		damage = {
 			default = 325,
 			minelayers = 10,
-			mines = 1,
+			mines = 5,
 		},
 	},
 }

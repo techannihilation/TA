@@ -44,8 +44,7 @@ return {
 		maxwaterdepth = 0,
 		mincloakdistance = 8,
 		name = "Kilo",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "talon_mine1",
 		onoffable = false,
 		radaremitheight = 25,

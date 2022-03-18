@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 250,
 		buildcostmetal = 10,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 3,
-		buildinggrounddecalsizey = 3,
-		buildinggrounddecaltype = "cormine1_aoplane.dds",
 		buildpic = "cormine1.dds",
 		buildtime = 50,
 		canattack = false,
@@ -46,7 +42,6 @@ return {
 		mincloakdistance = 0,
 		name = 11,
 		noautofire = false,
-		
 		objectname = "CORMINE1",
 		onoffable = false,
 		radaremitheight = 25,
@@ -61,7 +56,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "cormine1",
-		usebuildinggrounddecal = true,
 		customparams = {
 			buildpic = "cormine1.dds",
 			detonaterange = "64",

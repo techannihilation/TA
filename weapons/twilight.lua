@@ -17,6 +17,7 @@ return {
 		soundstart = "bombrel",
 		turret = 1,
 		damage = {
+			mines = 5,
 			commanders = 100,
 			default = 5000,
 		},
