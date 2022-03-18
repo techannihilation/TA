@@ -1,12 +1,17 @@
 4.17 => 4.18
 2022-03-18
 
+<<<<<<< HEAD
 Balance :
  - TllEMP and other EMP mines : When explodes, don't EMP other mines
 
 Fix :
  - Script for TLL MEx
 
+=======
+Fix :
+ - Release 4.17 for DRD.
+>>>>>>> 08b05770aa5684d9a23e203d4d85980616bf0be0
 
 4.16 => 4.17
 2022-03-10
