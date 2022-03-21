@@ -476,7 +476,33 @@ tllmeteor = {
     {class='GroundFlash',options=groundFlashArmses},
   },
 
-  ---- PLANES still need to do work here ------------------------------
+  -- PLANES
+  gok_angel = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=3, length=28, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=3, length=28, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
+  },
+  gok_sucub = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=2, length=24, piece="thrust1a", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=2, length=24, piece="thrust2a", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=2, length=24, piece="thrust1b", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=2, length=24, piece="thrust2b", noIconDraw = true, priority=3, onActive=true}},
+  },
+  gok_wraith  = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=4, length=36, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=4, length=36, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
+  },
+  gok_dirgesinger = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=5, length=36, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
+  },
+  gok_hookah = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=6, length=45, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
+  },
+  gok_nurgle = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=8, length=54, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
+  },
+
+
+
   armatlas = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
@@ -574,7 +600,6 @@ talon_handgod = {
 	{class='AirJet',options={color={0.2,0.9,1}, width=3, length=30, piece="emit5", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.2,0.9,1}, width=3, length=30, piece="emit6", noIconDraw = true, priority=3, onActive=true}},
   },
-
   armor = {
     {class='ThundAirJet',options={color={0.1,0.4,0.6}, width=7, length=35, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.1,0.4,0.6}, width=7, length=35, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
@@ -714,12 +739,8 @@ talon_handgod = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=30, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
   },
- armblz = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
-  },
-   corfiend = {
-    {class='AirJet',options={color={0.6,0.1,0}, width=5.7, length=45, piece="emit", noIconDraw = true, priority=3, onActive=true}},
-  },
+
+-- Construction Aircraft
 abuilderlvl2 = {
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lfthrust", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lbthrust", noIconDraw = true, priority=3, onActive=true}},

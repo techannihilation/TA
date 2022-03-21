@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, hull, rwing1, lwing1, rwing2, lwing2, engine,
-       flare;
+       flare, thrust;
 
 static-var  Static_Var_1, Static_Var_2;
 

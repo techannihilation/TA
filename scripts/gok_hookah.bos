@@ -3,8 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, lwing1, rwing1, lwing2, rwing2, engine,
-       flare;
+piece  base, hull, lwing1, rwing1, lwing2, rwing2, engine, thrust, flare;
 
 static-var  Static_Var_1, Static_Var_2;
 

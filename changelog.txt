@@ -3,6 +3,10 @@
 
 Balance :
  - TllEMP and other EMP mines : When explodes, don't EMP other mines
+ - T1 Veh Arm Janus : Increase range 380=>420
+
+ Improvement:
+ - Add LUAI for thrust air Gok (Fighters/Bombers)
 
 Fix :
  - Script for TLL MEx

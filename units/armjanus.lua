@@ -138,7 +138,7 @@ return {
 				model = "weapon_janusrocket",
 				name = "HeavyRocket",
 				noselfdamage = true,
-				range = 380,
+				range = 420,
 				reloadtime = 8,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
