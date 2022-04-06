@@ -16,11 +16,10 @@ return {
 		category = "ALL MOBILE HUGE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "70 150 70",
-		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Shielded Melee Kbot (Auto-Repair 250)",
+		description = "Shielded Melee Kbot (Auto-Repair 250 & Sniper Resistant)",
 		energystorage = 1000,
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,

@@ -345,6 +345,9 @@ return {
 		"tllbind",
 		"tllblind",
 		"talon_crusader",
+		"gok_disciple",
+		"gok_antichrist",
+		"gok_satan",		
 	},
 	crawlingbombs = {
 		"armvader",

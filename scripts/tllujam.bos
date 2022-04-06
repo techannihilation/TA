@@ -3,9 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, pal1, pal2, pal3;
+piece  base, body, tower, turret, tower1, tower2, tower3,
+		turret1, turret2, turret3, top;
 
-static-var  statechg_DesiredState, statechg_StateChanging;
+static-var  statechg_DesiredState, statechg_StateChanging, onoff;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -26,7 +27,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -39,12 +40,13 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	spin turret around y-axis speed <35>;
+	onoff=1;
+	spin turret around y-axis speed <18>;
 }
 
 Stop()
 {
-
+	onoff=0;
 }
 
 InitState()
@@ -81,7 +83,8 @@ RequestState(requestedstate, currentstate)
 
 
 Create()
-{
+{	
+	onoff = 0;
 	call-script InitState();
 	start-script SmokeUnit();
 }
@@ -109,9 +112,9 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode pal1 type NOHEATCLOUD;
-		explode pal2 type NOHEATCLOUD;
-		explode pal3 type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode turret3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -119,16 +122,16 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode pal1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode pal2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode pal3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD;
 	explode turret type NOHEATCLOUD;
-	explode pal1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode pal2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode pal3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }

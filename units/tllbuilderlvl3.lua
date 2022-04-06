@@ -60,7 +60,7 @@ return {
 			[4] = "tllprototype",
 			[5] = "tllshipyardlvl3",
 			[6] = "tllnanotc4",
-			--[7] = "tllurad",
+			[7] = "tllujam",
 			[8] = "tlldmc",
 			[9] = "tllgate3",
 			[10] = "tllantinuke2",
