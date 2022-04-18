@@ -1,5 +1,6 @@
 return {
 	gok_stung = {
+		airsightdistance = 775,
 		acceleration = 0.12,
 		brakerate = 0.45,
 		airsightdistance = 775,
@@ -7,7 +8,7 @@ return {
 		buildcostmetal = 122,
 		builder = false,
 		buildpic = "gok_stung.dds",
-		buildtime = 14500,
+		buildtime = 2250,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -36,7 +37,7 @@ return {
 		objectname = "gok_stung",
 		radardistance = 0,
 		radaremitheight = 25,
-		selfdestructas = "BIG_UNIT",
+		selfdestructas = "BIG_UNITEX",
 		sightdistance = 330,
 		standingfireorder = 2,
 		standingmoveorder = 1,

@@ -70,7 +70,7 @@ return {
 			--[12] = "",
 			[13] = "gok_rl",
 			[14] = "gok_flak",
-			--[15] = "gok_ptr",
+			[15] = "gok_ptr",
 			[16] = "gok_mds",
 			[17] = "gok_cv",
 			[18] = "gok_zealot",

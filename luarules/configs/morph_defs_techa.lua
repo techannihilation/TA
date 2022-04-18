@@ -707,6 +707,16 @@ local morphDefs = {
 		time = 60,
 		xp = 1.00,
 	},
+	gok_stung = {
+		into = 'gok_harbinger',
+		time = 30,
+		xp = 0.50,
+	},
+	gok_harbinger = {
+		into = 'gok_curred',
+		time = 60,
+		xp = 1.00,
+	},
 	armwar = {
 		into = 'armmav',
 		time = 30,
@@ -1002,7 +1012,7 @@ local morphDefs = {
 	tllblind = {
 		into = 'tllcolossus',
 		time = 120,
-		xp = 0.10,
+		xp = 0.15,
 	},
 	talon_talos = {
 		into = 'talon_mythril',

@@ -15,8 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "125 142 92",
-		
+		collisionvolumescales = "125 142 92",		
 		collisionvolumetype = "ellipsoid",
 		corpse = "gok_everchosen_dead",
 		defaultmissiontype = "Standby",

@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Swimming Melee Hover",
+		description = "Experimental Melee Hover",
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,
 		footprintx = 8,
