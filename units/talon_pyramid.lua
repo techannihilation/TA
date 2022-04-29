@@ -32,7 +32,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Pyramid",
 		noautofire = false,
-		
 		norestrict = 1,
 		objectname = "talon_pyramid",
 		radaremitheight = 39,
@@ -121,7 +120,6 @@ return {
 				shieldforce = 7,
 				shieldgoodcolor = "0.1 0.3 0.9 0.30",
 				shieldintercepttype = 31,
-				shieldmaxspeed = 2500,
 				shieldpower = 150000,
 				shieldpowerregen = 1500,
 				shieldpowerregenenergy = 7500,

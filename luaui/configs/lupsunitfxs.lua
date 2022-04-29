@@ -217,7 +217,7 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armexo = {
-    {class='Bursts',options=armexoBursts},
+    {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_mythril = {
@@ -225,7 +225,7 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_azaroth = {
-    {class='Bursts',options=armexoBursts},
+    {class='Bursts',options=shieldBursts250},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armsmc = {
@@ -421,18 +421,6 @@ cafus = {
 
 
   ---- OTHER ----------------------------
- armmex1 = {
-    {class='SimpleParticles2', options=MergeTable({pos={-6,15,0}, delay=10, lifeSpread=300},sparks)},
-  },
- cormex1 = {
-    {class='SimpleParticles2', options=MergeTable({pos={-6,20,0}, delay=20, lifeSpread=300},sparks)},
-  },
- tllamex = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,34,0}, delay=10, lifeSpread=300},sparks)},
-  },
- talon_mex1 = {
-    {class='SimpleParticles2', options=MergeTable({pos={-12,28,0}, delay=10, lifeSpread=300},sparks)},
-  },
 tllmeteor = {
 	{class='SimpleParticles2', options=MergeTable({pos={32,265,-40}, delay=10, lifeSpread=30},sparksr1)},
 	{class='SimpleParticles2', options=MergeTable({pos={-32,265,-40}, delay=15, lifeSpread=30},sparksr1)},
@@ -500,9 +488,6 @@ tllmeteor = {
   gok_nurgle = {
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=8, length=54, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
-
-
-
   armatlas = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
@@ -1065,7 +1050,7 @@ sat_radar = {
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
    gok_antichrist = {
-      {class='Bursts',options=shieldBursts100},
+      {class='Bursts',options=ShieldBursts100},
       {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
     },
 }

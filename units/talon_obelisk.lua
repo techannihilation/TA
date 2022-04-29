@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Obelisk",
 		noautofire = false,
-		
+
 		norestrict = 1,
 		objectname = "talon_obelisk",
 		radaremitheight = 33,
@@ -108,7 +108,6 @@ return {
 				shieldforce = 7,
 				shieldgoodcolor = "0.1 0.3 0.9 0.30",
 				shieldintercepttype = 31,
-				shieldmaxspeed = 2500,
 				shieldpower = 15000,
 				shieldpowerregen = 150,
 				shieldpowerregenenergy = 750,

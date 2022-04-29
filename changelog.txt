@@ -1,3 +1,13 @@
+4.20 => 4.21
+2022-04-30
+
+Balance :
+ - T5 Air (Gok Bomber and Talon Gunship) : Delete SURFACE Class. They can't be targeted by no AA Weapon.
+
+ Improvement:
+  - Mobile Unit with Plasma Reflector Gok gain the gold shield (Deflect all projectiles)
+  - ArmExo : Delete blue Absorb Shield and gain green Reflector
+
 4.19 => 4.20
 2022-04-19
 

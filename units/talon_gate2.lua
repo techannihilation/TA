@@ -116,9 +116,6 @@ return {
 		},
 		weapondefs = {
 			repulsor2 = {
-				craterareaofeffect = 0,
-				craterboost = 0,
-				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 300,
 				shieldbadcolor = "1 0.2 0.2 0.30",
@@ -126,15 +123,12 @@ return {
 				shieldforce = 7,
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
-				shieldmaxspeed = 1250,
 				shieldpower = 2500,
 				shieldpowerregen = 37.5,
 				shieldpowerregenenergy = 375,
 				shieldradius = 300,
 				shieldrepulser = true,
 				smartshield = true,
-				soundhitwet = "sizzle",
-				soundhitwetvolume = 0.5,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

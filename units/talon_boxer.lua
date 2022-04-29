@@ -139,7 +139,6 @@ return {
 				shieldforce = 8,
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
-				shieldmaxspeed = 200,
 				shieldpower = 2600,
 				shieldpowerregen = 29,
 				shieldpowerregenenergy = 260,

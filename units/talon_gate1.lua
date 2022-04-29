@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Plasma Deflector",
-		noautofire = false,		
+		noautofire = false,
 		norestrict = 1,
 		objectname = "talon_gate1",
 		radaremitheight = 45,
@@ -116,9 +116,6 @@ return {
 		},
 		weapondefs = {
 			repulsor1 = {
-				craterareaofeffect = 0,
-				craterboost = 0,
-				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 1000,
 				shieldbadcolor = "1 0.2 0.2 0.30",
@@ -126,7 +123,6 @@ return {
 				shieldforce = 7,
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
-				shieldmaxspeed = 3500,
 				shieldpower = 60000,
 				shieldpowerregen = 300,
 				shieldpowerregenenergy = 3000,

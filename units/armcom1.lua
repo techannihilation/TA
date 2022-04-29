@@ -24,7 +24,7 @@ return {
 		cloakcostmoving = 750,
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "38 50 26",
-		
+
 		collisionvolumetype = "Ell",
 		commander = true,
 		corpse = "dead",
@@ -346,7 +346,6 @@ return {
 				shieldforce = 8,
 				shieldgoodcolor = "0.2 1 0.2 0.35",
 				shieldintercepttype = 1,
-				shieldmaxspeed = 3500,
 				shieldpower = 1000,
 				shieldpowerregen = 20,
 				shieldpowerregenenergy = 200,

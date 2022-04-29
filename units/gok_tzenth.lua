@@ -17,7 +17,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL MOBILE SURFACE VTOL",
+		category = "ALL MOBILE VTOL",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "180 55 420",
 		collisionvolumetype = "Ell",
