@@ -15,8 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL LEVEL2 SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "211 81 211",
-		
+		collisionvolumescales = "211 81 211",		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		description = "Tech Level 3",

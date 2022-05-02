@@ -57,10 +57,11 @@ return {
 		yardmap = "oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo",
 		buildoptions = {
 			[1] = "gok_ucp",
-			[2] = "gok_pandora",			
+			[2] = "gok_pandora",
 			[3] = "gok_archon",
-			[4] = "gok_cut1",
-			[5] = "gok_azaroth",
+			[4] = "gok_snipe",
+			[5] = "gok_cut1",
+			[6] = "gok_azaroth",
 		},
 		customparams = {
 			buildpic = "gok_ulab.dds",
