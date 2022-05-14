@@ -37,6 +37,7 @@ local scouts = {
   [UnitDefNames["corfav"].id] = true,
   [UnitDefNames["tllbug"].id] = true,
   [UnitDefNames["tllgladius"].id] = true,
+	[UnitDefNames["talon_topaz"].id] = true,
 	[UnitDefNames["gok_cut"].id] = true,
 
 	--Infantry Talon

@@ -18,7 +18,6 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
 		collisionvolumescales = "220 90 220",
-
 		collisionvolumetype = "CylY",
 		collide = false,
 		cruisealt = 150,

@@ -984,6 +984,11 @@ local morphDefs = {
 			xp = 0.15,
 		},
 	},
+	corkrog = {
+		into = 'corskrog',
+		time = 120,
+		xp = 0.25,
+	},
 	cortroman = {
 		into = 'corgor',
 		time = 30,

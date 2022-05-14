@@ -1,10 +1,13 @@
 4.20 => 4.21
-2022-05-02
+2022-05-15
 
 Balance :
  - T5 Air (Gok Bomber and Talon Gunship) : Delete SURFACE Class. They can't be targeted by no AA Weapon.
+ - Topaz (Talon scout vehicle) is damaged by Juno now
+ - Independance (Pizza) : decrease stats & cost by 50%
 
  Improvement:
+  - Add Secret Unit anti-Pizza
   - Add T4 Gok Predator (Sniper Kbot)
   - Mobile Unit with Plasma Reflector Gok gain the gold shield (Deflect all projectiles)
   - ArmExo : Delete blue Absorb Shield and gain green Reflector
