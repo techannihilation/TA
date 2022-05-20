@@ -38,7 +38,7 @@ return {
 		onoffable = false,
 		radaremitheight = 27,
 		seismicsignature = 0,
-		sightdistance = 560,
+		sightdistance = 860,
 		stealth = true,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
