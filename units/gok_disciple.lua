@@ -1,13 +1,13 @@
 return {
 	gok_disciple = {
 		acceleration = 0.5,
-		autoheal = 30,
+		autoheal = 50,
 		brakerate = 0.7,
 		buildcostenergy = 4242,
 		buildcostmetal = 315,
 		builder = false,
 		buildpic = "gok_disciple.dds",
-		buildtime = 4000,
+		buildtime = 3500,
 		canattack = true,
 		canguard = true,
 		canmove = true,
