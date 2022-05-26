@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, pipes, body, lights, rotor;
+piece  base, body, lights, rotor;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, statechg_DesiredState, statechg_StateChanging;
@@ -28,7 +28,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			if( Static_Var_6 == 1 )
 			{
 				Static_Var_6 = 0;
-				show pipes;
 			}
 		}
 		if( healthpercent >= 60 )
@@ -36,7 +35,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			if( Static_Var_5 == 1 )
 			{
 				Static_Var_5 = 0;
-				show pipes;
 			}
 		}
 		if( healthpercent >= 75 )
@@ -44,7 +42,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			if( Static_Var_4 == 1 )
 			{
 				Static_Var_4 = 0;
-				show pipes;
 			}
 		}
 		if( healthpercent < 66 )

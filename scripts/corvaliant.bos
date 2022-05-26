@@ -562,6 +562,28 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
+	if (severity <= 25) 
+	{
+		corpsetype = 2;
+		explode barrel1a type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel1b type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel1c type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2a type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2b type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2c type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode blodbarrel3 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode blodbarrel4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode blodbarrel5 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode blodbarrel6 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeves1 type NOHEATCLOUD;
+		explode sleeves2 type NOHEATCLOUD;
+		explode blodsleeve1 type NOHEATCLOUD;
+		explode blodsleeve2 type NOHEATCLOUD;
+		explode platform1 type NOHEATCLOUD;
+		explode platform2 type NOHEATCLOUD;
+		explode platform3 type NOHEATCLOUD;
+		return (corpsetype);
+	}	
 	corpsetype = 3;
 	explode barrel1a type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode barrel1b type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;

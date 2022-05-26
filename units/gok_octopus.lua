@@ -27,6 +27,7 @@ return {
 		collisionvolumescales = "250 65 300",
 		collisionvolumetype = "Ell",
 		collide = false,
+		corpse = "dead",
 		cruisealt = 75,
 		defaultmissiontype = "VTOL_standby",
 		description = "Destroyer Areoship",
@@ -64,6 +65,21 @@ return {
 		unitname = "gok_octopus",
 		customparams = {
 			faction = "GOK",
+		},
+		featuredefs = {
+			dead = {
+				blocking = true,
+				damage = 212731,
+				description = "Octopus Wreckage",
+				footprintx = 12,
+				footprintz = 12,
+				metal = 721250,
+				object = "gok_octopus_dead",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		nanocolor = {
 			[1] = 0.56,

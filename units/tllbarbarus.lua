@@ -24,6 +24,7 @@ return {
 		collisionvolumeoffsets = "0 -24 4",
 		collisionvolumescales = "118 118 243",
 		collisionvolumetype = "CylZ",
+
 		cruisealt = 50,
 		defaultmissiontype = "VTOL_standby",
 		description = "Destroyer Areoship",
@@ -63,6 +64,20 @@ return {
 		customparams = {
 			buildpic = "tllbarbarus.dds",
 			faction = "TLL",
+		},
+		featuredefs = {
+			dead = {
+				blocking = true,
+				damage = 82731,
+				description = "Barbarus Wreckage",
+				footprintx = 25,
+				footprintz = 25,
+				object = "tllbarbarus_dead",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		nanocolor = {
 			[1] = 0.56,

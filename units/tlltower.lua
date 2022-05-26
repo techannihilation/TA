@@ -31,11 +31,10 @@ return {
 		maxwaterdepth = 0,
 		name = "Hasseloff",
 		noautofire = false,
-		
 		objectname = "TLLtower",
 		radaremitheight = 137,
 		selfdestructas = "SMALL_BUILDING",
-		sightdistance = 1000,
+		sightdistance = 1200,
 		unitname = "tlltower",
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",

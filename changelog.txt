@@ -1,11 +1,13 @@
 4.21 => 4.22
-2022-05-21
+2022-05-26
 
 Balance :
  - Increase T1 Dragon's Eyes (Perimeter Camera) LOS by 50% (arm, core, gok)
+ - Increase T1 watching Tower LOS by 20% (talon, tll)
  - Remove Cloak from Gok Disciple, Acceleration from 0.15 to 0.5, Autoheal 25 to 50, Speed +5%, buildtime -14%
 
  Improvment:
+ - Add Wreckage for T5 destroyer ships
  - Add gadget to disable water units on non water maps.
 
 4.20 => 4.21

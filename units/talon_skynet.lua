@@ -20,6 +20,7 @@ return {
 		collisionvolumescales = "220 90 220",
 		collisionvolumetype = "CylY",
 		collide = false,
+		corpse = "dead",
 		cruisealt = 150,
 		description = "Assault Ship",
 		dontland = 1,
@@ -51,6 +52,20 @@ return {
 		customparams = {
 			buildpic = "talon_skynet.dds",
 			faction = "TALON",
+		},
+		featuredefs = {
+			dead = {
+				blocking = true,
+				damage = 82731,
+				description = "Skynet Wreckage",
+				footprintx = 14,
+				footprintz = 14,
+				object = "talon_skynet_dead",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

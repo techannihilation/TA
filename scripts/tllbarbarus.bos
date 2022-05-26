@@ -252,6 +252,27 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
+	
+	if(severity <= 25)
+	{
+		corpsetype = 2;
+		explode body type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret3 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeve1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeve2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeve3 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeve4 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode jammer type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode socle type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode tower1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode tower2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode canon1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode canon2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);	
+	}
 	corpsetype = 3;
 	explode body type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode turret1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;

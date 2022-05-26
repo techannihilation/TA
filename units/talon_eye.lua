@@ -30,11 +30,10 @@ return {
 		maxwaterdepth = 0,
 		name = "Third Eye",
 		noautofire = false,
-		
 		objectname = "talon_eye",
 		radaremitheight = 137,
 		selfdestructas = "SMALL_BUILDING",
-		sightdistance = 1000,
+		sightdistance = 1200,
 		unitname = "talon_eye",
 		usebuildinggrounddecal = false,
 		yardmap = "oooo",

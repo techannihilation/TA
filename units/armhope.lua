@@ -4,7 +4,6 @@ return {
 		activatewhenbuilt = true,
 		airhoverfactor = 0,
 		airstrafe = false,
-		autoheal = 5,
 		bankscale = 1,
 		brakerate = 0.375,
 		buildcostenergy = 1165140,
@@ -22,8 +21,8 @@ return {
 		collide = false,
 		collisionvolumescales = "100 60 170",
 		collisionvolumetype = "Box",
+		corpse = "dead",
 		cruisealt = 40,
-		defaultmissiontype = "VTOL_standby",
 		description = "Destroyer Areoship",
 		dontland = 1,
 		energystorage = 20000,
@@ -49,7 +48,6 @@ return {
 		reclaimable = true,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
-		showplayername = true,
 		sightdistance = 750,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -60,6 +58,20 @@ return {
 		unitname = "armhope",
 		customparams = {
 			faction = "ARM",
+		},
+		featuredefs = {
+			dead = {
+				blocking = true,
+				damage = 82731,
+				description = "Hope Wreckage",
+				footprintx = 10,
+				footprintz = 10,
+				object = "armhope_dead",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		nanocolor = {
 			[1] = 0.56,

@@ -205,7 +205,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 5000,
-				explosiongenerator = "custom:RAVAGER",
+				--explosiongenerator = "custom:RAVAGER",
 				firestarter = 20,
 				impulseboost = 0,
 				impulsefactor = 0,
