@@ -987,7 +987,7 @@ local morphDefs = {
 	corkrog = {
 		into = 'corskrog',
 		time = 120,
-		xp = 0.25,
+		xp = 0.20,
 	},
 	cortroman = {
 		into = 'corgor',
@@ -1335,7 +1335,7 @@ local morphDefs = {
 	tllmcv = {
 		into = 'tllsamael',
 		time = 180,
-		xp = 0.20,
+		xp = 0.25,
 	},
 	talon_boxer = {
 		into = 'talon_cerberus',
