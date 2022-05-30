@@ -695,7 +695,7 @@ tllaether.dds
 tllajam.dds
 tllalab.dds
 tllambassador.dds
-tllamex.dds
+tllmoho.dds
 tllammaker.dds
 tllamphibot.dds
 tllanhur.dds

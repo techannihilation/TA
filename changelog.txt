@@ -1,5 +1,12 @@
+4.22 => 4.23
+2022-05-30
+
+Improvment:
+- Add T2 cloak Moho for GOK
+- Add T2 Armored Moho for TLL
+
 4.21 => 4.22
-2022-05-26
+2022-05-30
 
 Balance :
  - Increase T1 Dragon's Eyes (Perimeter Camera) LOS by 50% (arm, core, gok)
@@ -7,6 +14,7 @@ Balance :
  - Remove Cloak from Gok Disciple, Acceleration from 0.15 to 0.5, Autoheal 25 to 50, Speed +5%, buildtime -14%
 
  Improvment:
+ - Add T2 cloak Mex for Gok
  - Add Wreckage for T5 destroyer ships
  - Add gadget to disable water units on non water maps.
 

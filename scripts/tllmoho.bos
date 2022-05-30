@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, lights, rotor;
+piece  base, body, rotor;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, statechg_DesiredState, statechg_StateChanging;
@@ -64,13 +64,11 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	dont-cache lights;
 	spin rotor around y-axis speed Static_Var_1 accelerate Static_Var_2;
 }
 
 Stop()
 {
-	cache lights;
 	stop-spin rotor around x-axis decelerate Static_Var_3;
 }
 
@@ -111,9 +109,6 @@ Create()
 	Static_Var_1 = 0;
 	Static_Var_2 = 45;
 	Static_Var_3 = 182;
-	dont-shade rotor;
-	dont-cache rotor;
-	dont-shade lights;
 	call-script InitState();
 	while( get BUILD_PERCENT_LEFT )
 	{

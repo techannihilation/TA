@@ -1671,10 +1671,6 @@ local morphDefs = {
 		into = 'gok_alab',
 		time = 10,
 	},
-	--gok_moho = {
-	--	into = 'gok_vtolmex',
-	--	time = 10,
-	--},
 	gok_vtolmex = {
 		into = 'gok_moho',
 		time = 10,

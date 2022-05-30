@@ -57,8 +57,8 @@ function MakeBindsTable (swapYZ)
 	"bind shift+z buildunit_armmoho",
 	"bind z buildunit_cormoho",
 	"bind shift+z buildunit_cormoho",
-	"bind z buildunit_tllamex",
-	"bind shift+z buildunit_tllamex",
+	"bind z buildunit_tllmoho",
+	"bind shift+z buildunit_tllmoho",
 
 	"bind x buildunit_armsolar",
 	"bind shift+x buildunit_armsolar",

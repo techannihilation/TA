@@ -9,6 +9,51 @@ piece  base, structure1, structure2, structure3, structure4, structure5,
 static-var  Static_Var_1, Static_Var_2;
 
 
+Activate()
+{
+	show wing1;
+	show wing2;
+	show wing3;
+	show wing4;
+	show wing5;
+	show wing6;
+	show wing7;
+	show wing8;
+	show wing9;
+	show wing10;
+	show wing11;
+	show wing12;
+	
+
+	move wing1 to y-axis [30.0] speed [2.5];
+	move wing2 to y-axis [30.0] speed [2.5];
+	move wing3 to y-axis [45.0] speed [5.0];
+	move wing4 to y-axis [45.0] speed [5.0];
+	move wing5 to y-axis [60.0] speed [7.0];
+	move wing6 to y-axis [60.0] speed [7.0];
+	move wing7 to y-axis [75.0] speed [8.5];
+	move wing8 to y-axis [75.0] speed [8.5];
+	move wing9 to y-axis [90.0] speed [10.0];
+	move wing10 to y-axis [90.0] speed [10.0];
+	move wing11 to y-axis [115.0] speed [12.0];
+	move wing12 to y-axis [115.0] speed [12.0];
+	
+	spin wing1 around y-axis speed <6.> accelerate <1.>;
+	spin wing2 around y-axis speed <6.> accelerate <1.>;
+	spin wing3 around y-axis speed <5.> accelerate <1.>;
+	spin wing4 around y-axis speed <5.> accelerate <1.>;
+	spin wing5 around y-axis speed <4.> accelerate <1.>;
+	spin wing6 around y-axis speed <4.> accelerate <1.>;
+	spin wing7 around y-axis speed <3.> accelerate <1.>;
+	spin wing8 around y-axis speed <3.> accelerate <1.>;
+	spin wing9 around y-axis speed <2.> accelerate <1.>;
+	spin wing10 around y-axis speed <2.> accelerate <1.>;
+	spin wing11 around y-axis speed <1.> accelerate <1.>;
+	spin wing12 around y-axis speed <1.> accelerate <1.>;
+
+
+}
+
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	var Func_Var_4;
@@ -17,19 +62,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep 400;
 	}
 	
-	spin wing1 around y-axis speed <3.> accelerate <1.>;
-	spin wing2 around y-axis speed <3.> accelerate <1.>;
-	spin wing3 around y-axis speed <3.> accelerate <1.>;
-	spin wing4 around y-axis speed <4.> accelerate <1.>;
-	spin wing5 around y-axis speed <4.> accelerate <1.>;
-	spin wing6 around y-axis speed <5.> accelerate <1.>;
-	spin wing7 around y-axis speed <5.> accelerate <1.>;
-	spin wing8 around y-axis speed <5.> accelerate <1.>;
-	spin wing9 around y-axis speed <3.> accelerate <1.>;
-	spin wing10 around y-axis speed <3.> accelerate <1.>;
-	spin wing11 around y-axis speed <3.> accelerate <1.>;
-	spin wing12 around y-axis speed <2.> accelerate <1.>;
-		
+	start-script Activate();
 	
 	while( TRUE )
 	{
@@ -74,6 +107,18 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
+	hide wing1;
+	hide wing2;
+	hide wing3;
+	hide wing4;
+	hide wing5;
+	hide wing6;
+	hide wing7;
+	hide wing8;
+	hide wing9;
+	hide wing10;
+	hide wing11;
+	hide wing12;
 	start-script SmokeUnit();
 }
 

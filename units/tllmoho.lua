@@ -1,5 +1,5 @@
 return {
-	tllamex = {
+	tllmoho = {
 		activatewhenbuilt = true,
 		buildangle = 2048,
 		buildcostenergy = 6754,
@@ -8,8 +8,8 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "tllamex_aoplane.dds",
-		buildpic = "tllamex.dds",
+		buildinggrounddecaltype = "tllmoho_aoplane.dds",
+		buildpic = "tllmoho.dds",
 		buildtime = 15000,
 		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",
@@ -33,16 +33,16 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "TLLAMEX",
+		objectname = "tllmoho",
 		onoffable = true,
 		radaremitheight = 44,
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 210,
-		unitname = "tllamex",
+		unitname = "tllmoho",
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "tllamex.dds",
+			buildpic = "tllmoho.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -54,7 +54,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 403,
-				object = "tllamex_dead",
+				object = "tllmoho_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

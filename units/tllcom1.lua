@@ -24,7 +24,6 @@ return {
 		cloakcostmoving = 750,
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "48 58 30",
-
 		collisionvolumetype = "Ell",
 		commander = true,
 		corpse = "dead",
@@ -85,7 +84,7 @@ return {
 			[4] = "tllmohogeo",
 			[5] = "tllammaker",
 			[6] = "tllemstor",
-			[7] = "tllamex",
+			[7] = "tllmoho",
 			[8] = "tlllab",
 			[9] = "tllvp",
 			[10] = "tllap",
