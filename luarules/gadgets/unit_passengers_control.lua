@@ -28,7 +28,7 @@ end
 
 if (not gadgetHandler:IsSyncedCode()) then return end
 
-local stunTime = 6
+local stunTime = 8
 
 local paraTroopers={
   [UnitDefNames["corpyro"].id] = true,
@@ -76,7 +76,7 @@ function gadget:GameFrame (currentFrame)
       tID = fromtrans[currentFrame][uID]
       if ((not Spring.GetUnitIsDead(uID)) and (Spring.GetUnitIsDead(tID) or (Spring.GetUnitMoveTypeData(tID).aircraftState=="crashing"))) then
         local health,maxHealth,_,_,_ = Spring.GetUnitHealth(uID)
-        Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime, health = 0.50 * health })
+        Spring.SetUnitHealth(uID,{ paralyze = maxHealth + (maxHealth/40)*stunTime, health = 0.40 * health })
         Spring.GiveOrderToUnit(uID, CMD.STOP, {}, {})
       end
     end
