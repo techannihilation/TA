@@ -27,6 +27,8 @@ local groundScouts = {
     [UnitDefNames["talon_sniper"].id] = true,
     [UnitDefNames["talon_topaz"].id] = true,
     [UnitDefNames["gok_cut"].id] = true,
+    [UnitDefNames["gok_negator"].id] = true,
+    [UnitDefNames["gok_hellbiker"].id] = true,
 }
 
 local min = math.min

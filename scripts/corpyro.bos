@@ -598,27 +598,6 @@ Killed(severity, corpsetype)
 		explode torso type NOHEATCLOUD;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode firept type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flame1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flame2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flame3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode ground type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode lloarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE;
-		explode ruparm type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode torso type NOHEATCLOUD;
-		return (corpsetype);
-	}
 	corpsetype = 3;
 	explode firept type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode flame1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

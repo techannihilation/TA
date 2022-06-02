@@ -58,7 +58,7 @@ return {
 		buildoptions = {
 			[1] = "gok_cv",
 			[2] = "gok_mlv",
-			[3] = "gok_cut",
+			[3] = "gok_hellbiker",
 			--[4] = "",
 			[5] = "gok_earthstrike",
 			[6] = "gok_godhammer",

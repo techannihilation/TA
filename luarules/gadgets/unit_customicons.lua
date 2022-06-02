@@ -393,6 +393,8 @@ function gadget:Initialize()
   Spring.SetUnitDefIcon(UnitDefNames["tllgladius"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllprivate"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["gok_cut"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["gok_negator"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["gok_hellbiker"].id, "tiny-sphere.user")
 end
 
 local function IsUnitProducedByAnyFactoryFromList(factories, unitDefId)

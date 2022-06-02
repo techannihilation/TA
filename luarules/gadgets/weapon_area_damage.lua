@@ -39,12 +39,14 @@ local scouts = {
   [UnitDefNames["tllgladius"].id] = true,
 	[UnitDefNames["talon_topaz"].id] = true,
 	[UnitDefNames["gok_cut"].id] = true,
+	[UnitDefNames["gok_negator"].id] = true,
+	[UnitDefNames["gok_hellbiker"].id] = true,
 
 	--Infantry Talon
   [UnitDefNames["talon_infantry"].id] = true,
-	--[UnitDefNames["talon_rebel"].id] = true,
-	--[UnitDefNames["talon_sniper"].id] = true,
-	--[UnitDefNames["talon_mercenary"].id] = true,
+	[UnitDefNames["talon_rebel"].id] = true,
+	[UnitDefNames["talon_sniper"].id] = true,
+	[UnitDefNames["talon_mercenary"].id] = true,
 
 	--T1 Light Kbot
 	--[UnitDefNames["armpw"].id] = true,
@@ -81,12 +83,14 @@ local scouts = {
 	[UnitDefNames["corrad"].id] = true,
 	[UnitDefNames["tllradar"].id] = true,
 	[UnitDefNames["talon_rad"].id] = true,
+	[UnitDefNames["gok_rad"].id] = true,
 
 	--T2 Radar
 	[UnitDefNames["armarad"].id] = true,
 	[UnitDefNames["corarad"].id] = true,
 	[UnitDefNames["tllarad"].id] = true,
 	[UnitDefNames["talon_arad"].id] = true,
+	[UnitDefNames["gok_arad"].id] = true,
 
 	--T3 Jammer
 	[UnitDefNames["armomni"].id] = true,
@@ -94,17 +98,20 @@ local scouts = {
 	[UnitDefNames["tllomni"].id] = true,
 	[UnitDefNames["talon_conspiracy2"].id] = true,
 
+
 	--T2 Jammer
 	[UnitDefNames["armveil"].id] = true,
 	[UnitDefNames["corshroud"].id] = true,
 	[UnitDefNames["tllajam"].id] = true,
 	[UnitDefNames["talon_conspiracy1"].id] = true,
+	[UnitDefNames["gok_jam"].id] = true,
 
 	--T1 Jammer
 	[UnitDefNames["armjamt"].id] = true,
 	[UnitDefNames["corjamt"].id] = true,
 	[UnitDefNames["tlljam"].id] = true,
 	[UnitDefNames["talon_conspiracy"].id] = true,
+	[UnitDefNames["gok_jam1"].id] = true,
 
 }
 

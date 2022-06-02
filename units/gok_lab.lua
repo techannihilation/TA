@@ -58,7 +58,7 @@ return {
 		buildoptions = {
 			[1] = "gok_ck",
 			[2] = "gok_tantrum",
-			[3] = "gok_cut",
+			[3] = "gok_negator",
 			[4] = "gok_bloodletter",
 			[5] = "gok_stung",
 			[6] = "gok_withering",

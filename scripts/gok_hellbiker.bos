@@ -3,10 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare, body, base, barrel, wheel1, wheel2;
+piece  flare, body, base, wheel1, wheel2, pitchturret, launcher;
 
 static-var  Static_Var_1, Static_Var_2;
 
+lua_FlameShot(Func_Var_1)
+{
+}
 
 BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
 {
@@ -30,6 +33,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	
+	start-script BankClerck();
+	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -105,9 +111,7 @@ Create()
 {
 	Static_Var_2 = 0;
 	hide flare;
-	dont-cache flare;
 	start-script SmokeUnit();
-	start-script BankClerck();
 }
 
 AimPrimary(heading, pitch)
@@ -115,15 +119,6 @@ AimPrimary(heading, pitch)
 	signal 2;
 	set-signal-mask 2;
 	return (1);
-}
-
-FirePrimary()
-{
-	move barrel to z-axis [-1.] now;
-	show flare;
-	sleep 150;
-	hide flare;
-	move barrel to z-axis [0.] speed [3.];
 }
 
 AimFromPrimary(piecenum)
@@ -136,6 +131,12 @@ QueryPrimary(piecenum)
 	piecenum = flare;
 }
 
+Shot1()
+{
+	call-script lua_FlameShot(1);
+	return (1);
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -144,37 +145,31 @@ SweetSpot(piecenum)
 Killed(severity, corpsetype)
 {
 	hide flare;
-	corpsetype = Rand( 1, 6 );
 	if( severity <= 25 )
 	{
-		explode barrel type NOHEATCLOUD;
+		corpsetype = 1;
+		explode pitchturret type NOHEATCLOUD;
 		explode body type NOHEATCLOUD ;
-		explode wheel1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode launcher type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
 		explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
-		explode barrel type NOHEATCLOUD ;
+		corpsetype = 2;
+		explode pitchturret type NOHEATCLOUD ;
 		explode body type NOHEATCLOUD ;
-		explode wheel1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode launcher type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
 		explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
 		explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
+		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		explode barrel type NOHEATCLOUD;
-		explode body type NOHEATCLOUD ;
-		explode wheel1 type SHATTER | EXPLODE_ON_HIT | BITMAP4;
-		explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		return (0);
-	}
-	explode barrel type NOHEATCLOUD;
+	corpsetype = 3;
+	explode pitchturret type NOHEATCLOUD;
 	explode body type NOHEATCLOUD;
-	explode wheel1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode launcher type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD ;
 	explode wheel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
 	explode wheel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	return (corpsetype);
 }
