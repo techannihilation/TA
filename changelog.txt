@@ -1,5 +1,5 @@
 4.22 => 4.23
-2022-05-30
+2022-06-02
 
 Balance :
  - Samael Titan : Decrease speed 1.0=>0.8. Morph increased 0.20 => 0.25
