@@ -84,7 +84,7 @@ FirePrimary()
 		sleep 100;
 		move barrel1a to z-axis [0.000000] speed [20.000000];
 		turn spindlea to x-axis <60.000000> * gun_1 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_2 == 0 )
 	{
@@ -94,7 +94,7 @@ FirePrimary()
 		sleep 100;
 		move barrel1b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_1 == 1 )
 	{
@@ -106,7 +106,7 @@ FirePrimary()
 		move barrel2a to y-axis [0.000000] speed [20.000000];
 		move barrel2a to z-axis [0.000000] speed [20.000000];
 		turn spindlea to x-axis <60.000000> * gun_1 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_2 == 1 )
 	{
@@ -118,7 +118,7 @@ FirePrimary()
 		move barrel2b to y-axis [0.000000] speed [20.000000];
 		move barrel2b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_1 == 2 )
 	{
@@ -130,7 +130,7 @@ FirePrimary()
 		move barrel3a to y-axis [0.000000] speed [20.000000];
 		move barrel3a to z-axis [0.000000] speed [20.000000];
 		turn spindlea to x-axis <60.000000> * gun_1 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_2 == 2 )
 	{
@@ -142,7 +142,7 @@ FirePrimary()
 		move barrel3b to y-axis [0.000000] speed [20.000000];
 		move barrel3b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_1 == 3 )
 	{
@@ -152,7 +152,7 @@ FirePrimary()
 		sleep 100;
 		move barrel4a to z-axis [0.000000] speed [20.000000];
 		turn spindlea to x-axis <60.000000> * gun_1 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_2 == 3 )
 	{
@@ -162,7 +162,7 @@ FirePrimary()
 		sleep 100;
 		move barrel4b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_1 == 4 )
 	{
@@ -174,7 +174,7 @@ FirePrimary()
 		move barrel5a to y-axis [0.000000] speed [20.000000];
 		move barrel5a to z-axis [0.000000] speed [20.000000];
 		turn spindlea to x-axis <60.000000> * gun_1 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_2 == 4)
 	{
@@ -186,7 +186,7 @@ FirePrimary()
 		move barrel5b to y-axis [0.000000] speed [20.000000];
 		move barrel5b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_1 == 5 )
 	{
@@ -198,7 +198,7 @@ FirePrimary()
 		move barrel6a to y-axis [0.000000] speed [20.000000];
 		move barrel6a to z-axis [0.000000] speed [20.000000];
 		turn spindlea to x-axis <60.000000> * gun_1 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	if( gun_2 == 5 )
 	{
@@ -210,70 +210,63 @@ FirePrimary()
 		move barrel6b to y-axis [0.000000] speed [20.000000];
 		move barrel6b to z-axis [0.000000] speed [20.000000];
 		turn spindleb to x-axis <60.000000> * gun_2 speed <180.000000>;
-		return 1;
+		return (1);
 	}
 	
 }
 
-TargetCleared(Func_Var_1)
-{
-	if( Func_Var_1 == 1 )
-	{
-		signal SIG_AIM;
-		stop-spin turret around y-axis;
-	}
-}
-
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 0 )
+	if( gun_1 == 0 AND gun_2 != 5)
 	{
 		piecenum = flare6a;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = flare1a;
-	}
-	if( gun_1 == 2 )
-	{
-		piecenum = flare2a;
-	}
-	if( gun_1 == 3 )
-	{
-		piecenum = flare3a;
-	}
-	if( gun_1 == 4 )
-	{
-		piecenum = flare4a;
-	}
-	if( gun_1 == 5 )
-	{
-		piecenum = flare5a;
 	}
 	if( gun_2 == 0 )
 	{
 		piecenum = flare6b;
 	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare1a;
+	}
 	if( gun_2 == 1 )
 	{
 		piecenum = flare1b;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare2a;
 	}
 	if( gun_2 == 2 )
 	{
 		piecenum = flare2b;
 	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare3a;
+	}
 	if( gun_2 == 3 )
 	{
 		piecenum = flare3b;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare4a;
 	}
 	if( gun_2 == 4 )
 	{
 		piecenum = flare4b;
 	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare5a;
+	}
 	if( gun_2 == 5 )
 	{
 		piecenum = flare5b;
 	}
+	
+	
 }
 
 AimFromPrimary(piecenum)

@@ -97,7 +97,7 @@ local scouts = {
 	[UnitDefNames["coromni"].id] = true,
 	[UnitDefNames["tllomni"].id] = true,
 	[UnitDefNames["talon_conspiracy2"].id] = true,
-
+	[UnitDefNames["gok_ejam"].id] = true,
 
 	--T2 Jammer
 	[UnitDefNames["armveil"].id] = true,

@@ -69,7 +69,7 @@ return {
 			[11] = "gok_ulab",
 			[12] = "gok_nanotc2",
 			[13] = "gok_edrag",
-			--[14] = "gok_conspiracy2",
+			[14] = "gok_ejam",
 			[15] = "gok_slesh1",
 			[16] = "gok_eflak",
 			[17] = "gok_gate4",

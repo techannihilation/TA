@@ -1,5 +1,5 @@
 4.22 => 4.23
-2022-06-02
+2022-06-03
 
 Balance :
  - Samael Titan : Decrease speed 1.0=>0.8. Morph increased 0.20 => 0.25
@@ -8,6 +8,7 @@ Balance :
  - Paratrooping unit : increase Stun time 6s=>8s. Decrease Hp left : 50%=>40%
 
 Improvment:
+- Add T3 Gok Jammer
 - Add T1 Scout Kbot and Vehicle for Gok. Remplace Hover Cut to have better balance on sea map.
 - Add T2 cloak Moho for GOK
 - Add T2 Armored Moho for TLL
