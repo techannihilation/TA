@@ -60,9 +60,9 @@ return {
 		workertime = 160,
 		buildoptions = {
 			[1] = "gok_fusion",
-			--[2] = "gok_afus",
+			--[2] = "",
 			[3] = "gok_mohogeo",
-			--[4] = "gok_pyroclastic",
+			--[4] = "",
 			[5] = "gok_amaker",
 			[6] = "gok_moho",
 			[7] = "gok_imoho",
