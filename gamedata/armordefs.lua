@@ -296,6 +296,7 @@ return {
 		"armucar",
 		"talon_ucar",
 		"gok_valefor",
+		"gok_hcar",
 	},
 
 	--### AREOSHIP - SUPERSHIP ###
@@ -347,7 +348,7 @@ return {
 		"talon_crusader",
 		"gok_disciple",
 		"gok_antichrist",
-		"gok_satan",		
+		"gok_satan",
 	},
 	crawlingbombs = {
 		"armvader",

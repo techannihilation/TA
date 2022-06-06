@@ -28,6 +28,7 @@ local nukes = {
     [UnitDefNames["corhcar"].id] = true,
 		[UnitDefNames["tllhcar"].id] = true,
 		[UnitDefNames["talon_hcar"].id] = true,
+		[UnitDefNames["gok_hcar"].id] = true,
 }
 
 local tacnukes = {

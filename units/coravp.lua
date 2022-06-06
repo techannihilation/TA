@@ -1,7 +1,5 @@
 return {
 	coravp = {
-		acceleration = 0,
-		brakerate = 0,
 		buildangle = 1024,
 		buildcostenergy = 28365,
 		buildcostmetal = 3479,

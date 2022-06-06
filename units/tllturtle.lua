@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 200,
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
-		name = "Turtle",
+		name = "Gizmoand",
 		objectname = "tllturtle",
 		radardistance = 0,
 		radaremitheight = 25,

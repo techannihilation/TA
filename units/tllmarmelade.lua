@@ -70,7 +70,6 @@ return {
 			[8] = "tlledrag",
 			[9] = "tllurad",
 			[10] = "tllrlrpc",
-			[11] = "tlldb",
 			[12] = "tllgate1",
 			[13] = "tllantinuke2",
 			[14] = "tllfsilo",

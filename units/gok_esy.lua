@@ -42,7 +42,7 @@ return {
 		buildoptions = {
 			[1] = "gok_ecsub",
 			[2] = "gok_bsub",
-			--[3] = "",
+			[3] = "gok_hcar",
 			[4] = "gok_valefor",
 			--[5] = "",
 			--[6] = "",

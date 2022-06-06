@@ -52,7 +52,7 @@ local notdgun = {
     [UnitDefNames["talon_hcar"].id] = true,
     [UnitDefNames["tllswordfish"].id] = true,
     [UnitDefNames["corarbritator"].id] = true,
-    --[UnitDefNames["tlldischarge"].id] = true,
+    [UnitDefNames["gok_hcar"].id] = true,
 }
 --------------------------------------------------------------------------------
 --speedups

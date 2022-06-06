@@ -19,7 +19,7 @@ local ringsToDraw = {
     [UnitDefNames["talon_hcar"].id] = 3,
     [UnitDefNames["tllswordfish"].id] = 1,
     [UnitDefNames["corarbritator"].id] = 1,
-    --[UnitDefNames["tlldischarge"].id] = 2,
+    [UnitDefNames["gok_hcar"].id] = 3,
 }
 
 local pairs = pairs

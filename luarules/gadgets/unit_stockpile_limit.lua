@@ -47,7 +47,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local cormsiloDefID = UnitDefNames.corhcar.id
 	local tllmsiloDefID = UnitDefNames.tllhcar.id
 	local talonmsiloDefID = UnitDefNames.talon_hcar.id
-	--local gokmsiloDefID = UnitDefNames.gok_hcar.id
+	local gokmsiloDefID = UnitDefNames.gok_hcar.id
 
 	-- AntiNuke
 	--local armantinukeDefID = UnitDefNames.armamd.id
@@ -157,7 +157,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			--	pilelimit = antinuke
 			--end
 
-			if (UnitDefID == armmsiloDefID or UnitDefID == cormsiloDefID or UnitDefID == tllmsiloDefID or UnitDefID == talonmsiloDefID) then
+			if (UnitDefID == armmsiloDefID or UnitDefID == cormsiloDefID or UnitDefID == tllmsiloDefID or UnitDefID == talonmsiloDefID or UnitDef == gokmsiloDefID) then
 				pilelimit = nuke
 			end
 
