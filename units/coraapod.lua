@@ -22,7 +22,7 @@ return {
 		mass = 641,
 		maxdamage = 1390,
 		maxvelocity = 1.4,
-		movementclass = "AMPTBOT",
+		movementclass = "TKBOT3",
 		name = "Peacock",
 		objectname = "coraapod",
 		radaremitheight = 26,
