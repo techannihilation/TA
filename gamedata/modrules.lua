@@ -4,7 +4,7 @@ local modrules  = {
   movement = {
     allowAirPlanesToLeaveMap = true,
     allowPushingEnemyUnits   = true, -- defaults to false
-    allowCrushingAlliedUnits = false,
+    allowCrushingAlliedUnits = (Spring.GetModOptions().mo_crushallieunits == "1"),
     allowUnitCollisionDamage = false,
     allowUnitCollisionOverlap = false,	-- defaults to true
     allowGroundUnitGravity = false,

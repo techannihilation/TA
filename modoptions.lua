@@ -190,6 +190,14 @@ local options = {
     section = "ta_options",
   },
   {
+    key = "mo_crushallieunits",
+    name = "Allow Crushing Allied Units",
+    desc = "Allow Crushing Allied Units\nAutoHost Usage :- mo_crushallieunits",
+    type = "bool",
+    def = false,
+    section = "ta_options",
+  },
+  {
     key = "mo_preventdraw",
     name = "Commander Ends No Draw",
     desc = "Last Com alive is immune to comblast, D-gunning the last enemy Com with your last Com disqualifies you\nAutoHost Usage :- mo_preventdraw",
