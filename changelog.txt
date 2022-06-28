@@ -1,5 +1,5 @@
 4.22 => 4.23
-2022-06-07
+2022-06-28
 
 Balance :
  - Samael Titan : Decrease speed 1.0=>0.8. Morph increased 0.20 => 0.25
@@ -14,6 +14,9 @@ Improvment:
  - Add T1 Scout Kbot and Vehicle for Gok. Remplace Hover Cut to have better balance on sea map.
  - Add T2 cloak Moho for GOK
  - Add T2 Armored Moho for TLL
+
+Fix :
+ - SuperKrog Animation
 
 4.21 => 4.22
 2022-05-30
