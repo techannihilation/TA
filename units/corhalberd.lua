@@ -1,11 +1,11 @@
 return {
-	nsaclash = {
+	corhalberd = {
 		acceleration = 0.072,
 		brakerate = 0.225,
 		buildcostenergy = 9246,
 		buildcostmetal = 633,
 		builder = false,
-		buildpic = "nsaclash.dds",
+		buildpic = "corhalberd.dds",
 		buildtime = 11000,
 		canattack = true,
 		canguard = true,
@@ -37,8 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Halberd",
 		noautofire = false,
-		
-		objectname = "NSACLASH",
+		objectname = "corhalberd",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -50,17 +49,16 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.023,
 		turnrate = 410,
-		unitname = "nsaclash",
+		unitname = "corhalberd",
 		customparams = {
-			buildpic = "nsaclash.dds",
+			buildpic = "corhalberd.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
 				blocking = false,
-				collisionvolumeoffsets = "0.0 1.56313830078 -0.150825500488",
-				collisionvolumescales = "30.5680847168 11.9420166016 35.7424163818",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "30 11 35",
 				collisionvolumetype = "Box",
 				damage = 3126,
 				description = "Halberd Wreckage",
@@ -69,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 517,
-				object = "NSACLASH_DEAD",
+				object = "corhalberd_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

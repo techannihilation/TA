@@ -57,7 +57,7 @@ return {
 			[3] = "corsnap",
 			[4] = "corah",
 			[5] = "cormh",
-			[6] = "nsaclash",
+			[6] = "corhalberd",
 		},
 		customparams = {
 			buildpic = "corhp.dds",
