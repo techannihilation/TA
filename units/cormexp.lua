@@ -36,7 +36,6 @@ return {
 		metalstorage = 500,
 		name = "Armed Moho Exploiter",
 		noautofire = false,
-
 		objectname = "CORMEXP",
 		onoffable = true,
 		radaremitheight = 49,

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, drill, GP, spinner, smoker, hub1, hub2a, hub2b;
+piece  base, drill, building, spinner, hub1, hub2a, hub2b, hammer1, hammer2, hammer3, hammer4;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
 
@@ -40,12 +40,11 @@ Activatescr()
 	spin hub1 around z-axis speed Static_Var_1;
 	spin hub2a around z-axis speed -1 * Static_Var_1;
 	spin hub2b around z-axis speed -1 * Static_Var_1;
-	spin drill around z-axis speed Static_Var_1;	
+	spin drill around z-axis speed Static_Var_1;
 }
 
 Deactivatescr()
 {
-	cache drill;
 	turn drill to z-axis <0.000000> speed <75.000000>;
 	turn hub2b to z-axis <0.000000> speed <75.000000>;
 	turn hub2a to z-axis <0.000000> speed <75.000000>;
@@ -54,8 +53,7 @@ Deactivatescr()
 	wait-for-turn hub1 around z-axis;
 	wait-for-turn hub2a around z-axis;
 	wait-for-turn hub2b around z-axis;
-	wait-for-turn drill around z-axis;
-	
+	wait-for-turn drill around z-axis;	
 }
 
 InitState()
@@ -113,7 +111,7 @@ Deactivate()
 
 SetSpeed(Func_Var_1)
 {
-	Static_Var_1 = Func_Var_1 * 4;
+	Static_Var_1 = Func_Var_1 * 2;
 }
 
 SweetSpot(piecenum)
@@ -127,24 +125,30 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode drill type NOHEATCLOUD;
-		explode GP type NOHEATCLOUD;
+		explode building type NOHEATCLOUD;
 		explode spinner type  NOHEATCLOUD;
-		explode smoker type NOHEATCLOUD;
+		explode hammer1 type NOHEATCLOUD;
+		explode hammer2 type NOHEATCLOUD;
+		explode hammer3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode drill type NOHEATCLOUD | FALL;
-		explode GP type NOHEATCLOUD | FALL;
+		explode building type NOHEATCLOUD | FALL;
 		explode spinner type  NOHEATCLOUD | FALL;
-		explode smoker type NOHEATCLOUD | FALL;
+		explode hammer1 type NOHEATCLOUD | FALL;
+		explode hammer2 type NOHEATCLOUD | FALL;
+		explode hammer3 type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode drill type NOHEATCLOUD;
-	explode GP type NOHEATCLOUD;
-	explode spinner type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode smoker type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	return (corpsetype);
+		explode drill type NOHEATCLOUD;
+		explode building type NOHEATCLOUD;
+		explode spinner type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode hammer1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode hammer2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode hammer3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		return (corpsetype);
 }
