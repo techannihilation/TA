@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 49,
 		mass = 3155,
-		maxdamage = 3500,
+		maxdamage = 6450,
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
