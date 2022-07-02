@@ -2,7 +2,7 @@
 2022-07-01
 
 Balance :
- - Armed Moho T2 Core : Increase HP 3500 => 6450
+ - Armed Moho T2 Core / TLL : Increase HP 3500 => ~5800
 
 Improvment:
  - Add T2 Armored Mex for Talon
