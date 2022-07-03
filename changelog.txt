@@ -3,6 +3,7 @@
 
 Balance :
  - Armed Moho T2 Core / TLL : Increase HP 3500 => ~5800
+ - Buff ArmKrypto HP +25%, Armor +18% (when closed)
 
 Improvment:
  - Add T2 Armored Mex for Talon
