@@ -125,7 +125,7 @@ return {
 				intensity = 12,
 				name = "Gok Lightning",
 				noselfdamage = true,
-				range = 1500,
+				range = 1700,
 				reloadtime = 8,
 				rgbcolor = "0.78 0.08 0.55",
 				soundhitdry = "lashit",
