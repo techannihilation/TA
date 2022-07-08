@@ -4,6 +4,9 @@
 Balance :
  - Armed Moho T2 Core / TLL : Increase HP 3500 => ~5800
  - Buff ArmKrypto HP +25%, Armor +18% (when closed)
+ - Increase crusealt for t5 Air.
+ - Increase range for Meteor Gok by 5%
+ - T3 Tachyon Vehicle Arm : Increase Hp by 25%
 
 Improvment:
  - Add T2 Armored Mex for Talon

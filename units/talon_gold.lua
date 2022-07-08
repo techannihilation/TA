@@ -23,7 +23,7 @@ return {
 		collisionvolumescales = "80 23 76",
 		collisionvolumetype = "CylY",
 		corpse = "heap",
-		cruisealt = 125,
+		cruisealt = 300,
 		defaultmissiontype = "VTOL_standby",
 		description = "Ultimate Gunship",
 		explodeas = "BANTHA_BLAST",

@@ -65,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 152,
-				object = "armimoho_DEAD",
+				object = "ARMIMOHO_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

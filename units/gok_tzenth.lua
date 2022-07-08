@@ -23,7 +23,7 @@ return {
 		collisionvolumetype = "Ell",
 		collide = false,
 		corpse = "heap",
-		cruisealt = 300,
+		cruisealt = 350,
 		defaultmissiontype = "VTOL_standby",
 		description = "Ultimate Bomber",
 		explodeas = "BANTHA_BLAST",
