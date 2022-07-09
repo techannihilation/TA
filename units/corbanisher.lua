@@ -139,7 +139,7 @@ return {
 				edgeeffectiveness = 0.4,
 				explosiongenerator = "custom:thermite_explosion",
 				firestarter = 20,
-				flighttime = 3,
+				flighttime = 1.85,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				model = "weapon_rocketm",
