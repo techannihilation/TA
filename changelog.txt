@@ -1,5 +1,5 @@
 4.23 => 4.24
-2022-07-10
+2022-07-18
 
 Balance :
  - Armed Moho T2 Core / TLL : Increase HP 3500 => ~5800
@@ -9,6 +9,7 @@ Balance :
  - T3 Tachyon Vehicle Arm : Increase Hp by 25%
 
 Improvment:
+ - Change Krow Core model. ~ Same Balance.
  - Add T2 Armored Mex for Talon
  - Add T3 rezer Gok on Air Lab
 

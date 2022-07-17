@@ -128,7 +128,6 @@ function gadget:Initialize()
   Spring.AddUnitIcon("corgorg.user", "icons/corgorg.png", 3)
   Spring.AddUnitIcon("arm_furie.user", "icons/arm_furie.png", 3)
   Spring.AddUnitIcon("liche.user", "icons/liche.png", 2.5)
-  Spring.AddUnitIcon("krow.user", "icons/krow.png", 2.5)
   Spring.AddUnitIcon("satellite.user", "icons/satellite.png", 3)
   Spring.AddUnitIcon("corraven1.user", "icons/corraven1.png", 4)
   Spring.AddUnitIcon("coradamantoise.user", "icons/coradamantoise.png", 4.5)
@@ -157,9 +156,6 @@ function gadget:Initialize()
     elseif (ud.name=="sat_radar") or (ud.name=="sat_interceptor") or (ud.name=="sat_strike") or (ud.name=="sat_antiair")
     or (ud.name=="armcsat") or (ud.name=="tllcsat") or (ud.name=="talon_csat") or (ud.name=="corcsat") then
       Spring.SetUnitDefIcon(udid, "satellite.user")
---krow
-      elseif (ud.name=="corcrw") then
-        Spring.SetUnitDefIcon(udid, "krow.user")
 --liche
       elseif (ud.name=="armcybr") then
         Spring.SetUnitDefIcon(udid, "liche.user")
