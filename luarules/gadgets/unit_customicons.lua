@@ -52,6 +52,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("gok_com.user", "icons/gok_com.png", 2)
   Spring.AddUnitIcon("cross.user", "icons/cross.png")
   Spring.AddUnitIcon("diamond.user", "icons/diamond.png", 1.1)
+  Spring.AddUnitIcon("diamond4.user", "icons/diamond.png", 4)
   Spring.AddUnitIcon("e.user", "icons/e.png")
   Spring.AddUnitIcon("e1.user", "icons/e.png", 1.2)
   Spring.AddUnitIcon("e2.user", "icons/e.png", 1.5)
@@ -287,7 +288,7 @@ function gadget:Initialize()
       elseif (ud.name=="corbats") or (ud.name=="armbats") or (ud.name=="tllviking") or (ud.name=="talon_imperator") then
         Spring.SetUnitDefIcon(udid, "bships.user")
 --uber ships
-	 elseif (ud.name=="corblackhy") or (ud.name=="cortyrnt") or (ud.name=="aseadragon")
+  elseif (ud.name=="corblackhy") or (ud.name=="cortyrnt") or (ud.name=="aseadragon")
       or (ud.name=="armtrmph") or (ud.name=="armbc") or (ud.name=="tllcaps") or (ud.name=="talon_dread") or (ud.name=="talon_fcar") then
         Spring.SetUnitDefIcon(udid, "bsships.user")
 --t4 ships
@@ -306,7 +307,7 @@ function gadget:Initialize()
         end
 -- nuke / antinuke ( stockpile weapon anyway )
       elseif (ud.stockpileWeaponDef ~= nil) then
-      	Spring.SetUnitDefIcon(udid, "nuke.user")
+        Spring.SetUnitDefIcon(udid, "nuke.user")
 -- aircraft
       elseif (ud.canFly) then
         Spring.SetUnitDefIcon(udid, "tri-up.user")
@@ -315,16 +316,16 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "hemi-up.user")
 -- metal extractors and makers
       elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or
-	(ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or (ud.name=="ametalmakerlvl3") or
-	(ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
-	or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv") then
+        (ud.name=="armmakr") or (ud.name=="armfmkr") or (ud.name=="ametalmakerlvl1") or (ud.name=="armamaker") or (ud.name=="armmmkr") or (ud.name=="armuwmmm") or (ud.name=="ametalmakerlvl2") or (ud.name=="ametalmakerlvl3") or
+  (ud.name=="cormakr") or (ud.name=="corfmkr") or (ud.name=="cmetalmakerlvl1") or (ud.name=="coramaker") or (ud.name=="cormmkr") or (ud.name=="coruwmmm")or (ud.name=="cmetalmakerlvl2")
+  or (ud.name=="tllmm") or (ud.name=="tlluwconv") or (ud.name=="tllammaker") or (ud.name=="tllwmmohoconv") then
         Spring.SetUnitDefIcon(udid, "m.user")
 -- energy generators
       elseif ((ud.totalEnergyOut > 10) and (ud.speed <= 0)) then
         Spring.SetUnitDefIcon(udid, "e.user")
 -- transports
       elseif (ud.isTransport) then
-        Spring.SetUnitDefIcon(udid, "diamond.user")
+              Spring.SetUnitDefIcon(udid, "diamond.user")
 -- submarines
       elseif ((ud.minWaterDepth > 0) and (ud.speed > 0) and (ud.waterline > 10)) then
         Spring.SetUnitDefIcon(udid, "tri-down.user")
@@ -342,38 +343,23 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "hourglass.user")
 --Dragon teeth
       elseif (ud.name=="cordrag") or (ud.name=="corfdrag") or (ud.name=="corfort") or
-	     (ud.name=="armdrag") or (ud.name=="armfdrag") or (ud.name=="armfort") or
-       (ud.name=="gok_drag") or (ud.name=="gok_fdrag") or (ud.name=="gok_fort") or
-       (ud.name=="talon_drag") or (ud.name=="talon_fdrag") or (ud.name=="talon_fort") or
-	     (ud.name=="tlldtns") or (ud.name=="tlladt") or (ud.name=="tlldt") then
+        (ud.name=="armdrag") or (ud.name=="armfdrag") or (ud.name=="armfort") or
+        (ud.name=="gok_drag") or (ud.name=="gok_fdrag") or (ud.name=="gok_fort") or
+        (ud.name=="talon_drag") or (ud.name=="talon_fdrag") or (ud.name=="talon_fort") or
+        (ud.name=="tlldtns") or (ud.name=="tlladt") or (ud.name=="tlldt") then
       Spring.SetUnitDefIcon(udid, "blank.user")
 -- defenders and other buildings
       elseif (ud.isBuilding or (ud.speed <= 0)) then
-         if (not ud.weaponCount) then
-            ud.weaponCount = 0
-         end
-       if (#ud.weapons <= 0) then
-          Spring.SetUnitDefIcon(udid, "square.user")
-        else
-		  if ud.weapons[1].onlyTargets["vtol"] then
-			Spring.SetUnitDefIcon(udid, "slash.user")
-		  else
-			Spring.SetUnitDefIcon(udid, "x.user")
-		  end
-        end
+       if (not ud.weaponCount) then
+        ud.weaponCount = 0
+      end
+      if (#ud.weapons <= 0) then
+        Spring.SetUnitDefIcon(udid, "square.user")
       else
-      	if ud.customParams.requiretech == "Advanced T1 Unit Research Centre" then
-      	  Spring.SetUnitDefIcon(udid, "sphere1point5.user")
-        elseif ud.customParams.requiretech == "Advanced T2 Unit Research Centre" then
-      	  Spring.SetUnitDefIcon(udid, "sphere2point5.user")
-        elseif ud.customParams.requiretech == "Advanced T3 Unit Research Centre" then
-      	  Spring.SetUnitDefIcon(udid, "sphere3point5.user")
-        elseif (IsTech2Unit(udid)) then
-          Spring.SetUnitDefIcon(udid, "sphere2.user")
-        elseif (IsTech3Unit(udid)) then
-          Spring.SetUnitDefIcon(udid, "sphere3.user")
+        if ud.weapons[1].onlyTargets["vtol"] then
+          Spring.SetUnitDefIcon(udid, "slash.user")
         else
-          Spring.SetUnitDefIcon(udid, "sphere.user")
+          Spring.SetUnitDefIcon(udid, "x.user")
         end
       end
     end
@@ -382,15 +368,19 @@ function gadget:Initialize()
 -- Shrink scouts
   Spring.SetUnitDefIcon(UnitDefNames["corfav"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["armfav"].id, "tiny-sphere.user")
-  Spring.SetUnitDefIcon(UnitDefNames["corak"].id, "tiny-sphere.user")
-  Spring.SetUnitDefIcon(UnitDefNames["armpw"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["corpunk"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["armflea"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllbug"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["tllgladius"].id, "tiny-sphere.user")
-  Spring.SetUnitDefIcon(UnitDefNames["tllprivate"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["gok_cut"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["gok_negator"].id, "tiny-sphere.user")
   Spring.SetUnitDefIcon(UnitDefNames["gok_hellbiker"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["talon_infantry"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["talon_rebel"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["talon_mercenary"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["talon_sniper"].id, "tiny-sphere.user")
+  Spring.SetUnitDefIcon(UnitDefNames["talon_topaz"].id, "tiny-sphere.user")
+
 end
 
 local function IsUnitProducedByAnyFactoryFromList(factories, unitDefId)
@@ -407,15 +397,4 @@ local function IsUnitProducedByAnyFactoryFromList(factories, unitDefId)
   end
   return false
 end
-
-function IsTech2Unit(unitDefId)
-  local t2factories = { "armalab", "armavp", "coralab", "coravp", "tllalab", "tllavp" }
-  return IsUnitProducedByAnyFactoryFromList(t2factories, unitDefId)
-end
-
-function IsTech3Unit(unitDefId)
-  local t3factories = { "armshltx", "tllhtcp", "corgant" }
-  return IsUnitProducedByAnyFactoryFromList(t3factories, unitDefId)
-end
-
 --------------------------------------------------------------------------------

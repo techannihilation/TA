@@ -1,3 +1,12 @@
+4.24 => 4.25
+2022-07-22
+
+Balance :
+ - Gorilla Core ; Decrease speed 1.8=>1.65
+
+ Improvment:
+  - Change Krow Core model. ~ Same Balance.
+
 4.23 => 4.24
 2022-07-18
 
@@ -9,7 +18,6 @@ Balance :
  - T3 Tachyon Vehicle Arm : Increase Hp by 25%
 
 Improvment:
- - Change Krow Core model. ~ Same Balance.
  - Add T2 Armored Mex for Talon
  - Add T3 rezer Gok on Air Lab
 
