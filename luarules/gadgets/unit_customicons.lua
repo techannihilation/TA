@@ -350,16 +350,17 @@ function gadget:Initialize()
       Spring.SetUnitDefIcon(udid, "blank.user")
 -- defenders and other buildings
       elseif (ud.isBuilding or (ud.speed <= 0)) then
-       if (not ud.weaponCount) then
-        ud.weaponCount = 0
-      end
-      if (#ud.weapons <= 0) then
-        Spring.SetUnitDefIcon(udid, "square.user")
-      else
-        if ud.weapons[1].onlyTargets["vtol"] then
-          Spring.SetUnitDefIcon(udid, "slash.user")
+        if (not ud.weaponCount) then
+          ud.weaponCount = 0
+        end
+        if (#ud.weapons <= 0) then
+          Spring.SetUnitDefIcon(udid, "square.user")
         else
-          Spring.SetUnitDefIcon(udid, "x.user")
+          if ud.weapons[1].onlyTargets["vtol"] then
+            Spring.SetUnitDefIcon(udid, "slash.user")
+          else
+            Spring.SetUnitDefIcon(udid, "x.user")
+        end
         end
       end
     end
