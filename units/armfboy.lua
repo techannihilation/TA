@@ -137,7 +137,7 @@ return {
 				name = "HeavyPlasma",
 				nogap = 1,
 				noselfdamage = true,
-				range = 700,
+				range = 900,
 				reloadtime = 8,
 				rgbcolor = "0.75 0.45 0",
 				separation = 0.45,

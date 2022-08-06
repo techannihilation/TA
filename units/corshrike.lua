@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "corshrike",
+		name = "Shrike",
 		objectname = "corshrike",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

@@ -132,7 +132,7 @@ return {
 				laserflaresize = 12,
 				name = "Gok Laser",
 				noselfdamage = true,
-				range = 350,
+				range = 700,
 				reloadtime = 0.15,
 				rgbcolor = "0.78 0.08 0.52",
 				rgbcolor2= "1.0 1.0 1.0",
