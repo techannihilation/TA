@@ -101,7 +101,7 @@ local validUnits = {}
 
 for i=1, #UnitDefs do
 	local ud = UnitDefs[i]
-	if (ud.canAttack and ud.maxWeaponRange and ud.maxWeaponRange > 0) and not ud.isFactory then
+	if (ud.canAttack and ud.maxWeaponRange and ud.maxWeaponRange > 0) or ud.isFactory then
 		validUnits[i] = true
 	end
 end
