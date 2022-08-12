@@ -128,7 +128,7 @@ return {
 				model = "GOK_CUT",
 				name = "Cut Launcher",
 				noselfdamage = true,
-				range = 2800,
+				range = 2400,
 				reloadtime = 0.3,
 				soundhitdry = "flakhit",
 				soundhitwet = "",

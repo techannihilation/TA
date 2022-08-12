@@ -135,7 +135,7 @@ return {
 				name = "PlasmaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1100,
+				range = 850,
 				reloadtime = 1.5,
 				rgbcolor = "1 0.88 0.26",
 				separation = 0.45,
