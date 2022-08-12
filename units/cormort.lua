@@ -36,7 +36,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Morty",
 		noautofire = false,
-		
 		objectname = "CORMORT",
 		radaremitheight = 29,
 		seismicsignature = 0,
@@ -135,7 +134,7 @@ return {
 				name = "PlasmaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 850,
+				range = 950,
 				reloadtime = 1.5,
 				rgbcolor = "1 0.88 0.26",
 				separation = 0.45,

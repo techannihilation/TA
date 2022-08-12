@@ -24,7 +24,6 @@ return {
 		cloakcostmoving = 750,
 		collisionvolumeoffsets = "0 -2 1",
 		collisionvolumescales = "36 51 26",
-
 		collisionvolumetype = "Ell",
 		commander = true,
 		corpse = "dead",

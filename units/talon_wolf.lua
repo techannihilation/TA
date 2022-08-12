@@ -37,7 +37,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Wolf",
 		noautofire = false,
-
 		objectname = "talon_wolf",
 		radaremitheight = 27,
 		seismicsignature = 0,
@@ -130,7 +129,7 @@ return {
 				laserflaresize = 10,
 				name = "Light Rapid Talon Gun",
 				noselfdamage = true,
-				range = 520,
+				range = 550,
 				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
 				rgbcolor2= "1.0 1.0 1.00",

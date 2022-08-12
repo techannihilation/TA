@@ -39,18 +39,6 @@ Create()
 {
 	hide flare1;
 	hide flare2;
-	dont-cache flare1;
-	dont-cache flare2;
-	dont-cache barrel1;
-	dont-cache barrel2;
-	dont-cache sleeves;
-	dont-cache turret;
-	dont-shade flare1;
-	dont-shade flare2;
-	dont-shade barrel1;
-	dont-shade barrel2;
-	dont-shade sleeves;
-	dont-shade turret;
 	Static_Var_1 = 0;
 	Static_Var_2 = 0;
 	start-script SmokeUnit();
@@ -76,8 +64,8 @@ AimWeapon1(heading, pitch)
 	{
 		return (0);
 	}
-	turn turret to y-axis heading speed <30.005495>;
-	turn sleeves to x-axis <0.000000> - pitch speed <45.005495>;
+	turn turret to y-axis heading speed <30.0>;
+	turn sleeves to x-axis <0.000000> - pitch speed <45.0>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves around x-axis;
 	return (1);
@@ -120,8 +108,8 @@ AimWeapon2(heading, pitch)
 	{
 		return (0);
 	}
-	turn turret to y-axis heading speed <30.005495>;
-	turn sleeves to x-axis <0.000000> - pitch speed <45.005495>;
+	turn turret to y-axis heading speed <30.0>;
+	turn sleeves to x-axis <0.000000> - pitch speed <45.0>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves around x-axis;
 	return (1);
@@ -189,18 +177,6 @@ Killed(severity, corpsetype)
 		explode base type NOHEATCLOUD;
 		explode flare1 type NOHEATCLOUD | FALL;
 		explode flare1 type NOHEATCLOUD | FALL;
-		explode sleeves type NOHEATCLOUD | SHATTER;
-		explode turret type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode base type NOHEATCLOUD;
-		explode flare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode sleeves type NOHEATCLOUD | SHATTER;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);

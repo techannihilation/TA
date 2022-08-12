@@ -135,7 +135,7 @@ return {
 				name = "BattleShipCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1300,
+				range = 1400,
 				reloadtime = 1.125,
 				rgbcolor = "0.86 0.62 0",
 				separation = 0.45,

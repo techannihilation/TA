@@ -14,22 +14,18 @@ end
 
 
 if (gadgetHandler:IsSyncedCode()) then
-  
+
 local SHOCK_WEAPONS = {
     --Arm
     ["armguard_armfixed_gun"] = true,
     ["armguard_armfixed_gun_high"] = true,
     ["armthund_armbomb"] = true,
     ["armcybr_arm_pidr"] = true,
-    ["armpnix_armadvbomb"] = true,
     ["armsb_seaadvbomb"] = true,
-    ["armblz_napalm"] = true,
     ["armshock_shocker"] = true,
-    ["armshock1_shocker1"] = true,
     ["armfboy_arm_fatboy_notalaser"] = true,
-    ["armfboy1_arm_fatboy_notalaser1"] = true,
     --Core
-    
+
     --The Lost Legacy
     ["tllhtml_tll_gauss2"] = true,
     ["tlldemon_demonslayer_cannon"] = true,
@@ -63,7 +59,7 @@ local SHOCK_WEAPONS = {
     --else
 	local shockwave = hasShockwave[weaponID]
 	if shockwave then
-      
+
     --local growth = wd.explosionSpeed
     --local life = wd.damageAreaOfEffect / wd.explosionSpeed
     local growth = (wd.damageAreaOfEffect*1.1)/20*shockwave.speed

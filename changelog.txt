@@ -1,11 +1,28 @@
 4.24 => 4.25
-2022-07-22
+2022-08-13
+
+Thanks to Batfalls for many new balance.
+Join the Team Dev if you want create new units or new balances.
 
 Balance :
  - Gorilla Core ; Decrease speed 1.8=>1.65
+ - Zeus Arm T2 : Hp increase : 3005 => 3450. Decrease Reload : 2=>1.25
+ - FatBoy Arm T2 : Increase range 700 => 875
+ - Mortar Core T2 : Increase range 850 => 950
+ - Vengence arm T2 : Increase Range 1250 => 1300. Delete Blue Laser. Add Mini Reflect Shield.
+ - Black Pollen Cut Launcher : Range 2400 => 2800
+ - Anti-Christ : HP 11500 => 13100 & BuildPower 600 => 800
+ - Zealot : Increase damage 222/s => 333/s
+ - Talon Wolf T2 : Increase range 520 => 550
+ - All T3 Artillery Units : +100 range
+ - Turtoise Artillery. Decrease range 1750=>1350. Decerase cost 3.8km => 2.8km. Increase HP 10K=>11K.
+ - Valkyrie : Increase range 350=>400
 
  Improvment:
+  - Desactive Sattelite Lab. Except for Core. Become T4 Lab with only 1 satellite.
+  - Add T4 satellite for core. Pyro Invaders.
   - Change Krow Core model. ~ Same Balance.
+  - Add new AOE Ammunition for Olympus (T4 Arm)
 
 4.23 => 4.24
 2022-07-18

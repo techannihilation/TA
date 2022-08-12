@@ -128,7 +128,6 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.1,
 				impulsefactor = 0.1,
-				commandfire = true,
 				metalpershot = 452,
 				model = "weapon_unitshell",
 				name = "Zeus Cannon",

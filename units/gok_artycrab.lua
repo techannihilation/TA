@@ -136,7 +136,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				proximitypriority = -2,
-				range = 1300,
+				range = 1400,
 				reloadtime = 4.5,
 				rgbcolor = "0.78 0.08 0.52",
 				separation = 0.45,

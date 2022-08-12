@@ -68,7 +68,7 @@ return {
 			[10] = "talon_ap",
 			[11] = "talon_aap",
 			[12] = "talon_eap",
-			[13] = "talon_sp",
+			--[13] = "talon_sp",
 			[14] = "talon_asp",
 			[15] = "talon_nanotc1",
 			[16] = "talon_targ",

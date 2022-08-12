@@ -5,10 +5,6 @@ return {
 		buildcostenergy = 6754,
 		buildcostmetal = 741,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 8,
-		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "tllmoho_aoplane.dds",
 		buildpic = "tllmoho.dds",
 		buildtime = 15000,
 		category = "ALL SURFACE UNDERWATER",
@@ -39,7 +35,6 @@ return {
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 210,
 		unitname = "tllmoho",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
 			buildpic = "tllmoho.dds",

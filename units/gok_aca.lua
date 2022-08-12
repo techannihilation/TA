@@ -68,7 +68,7 @@ return {
 			[10] = "gok_ap",
 			[11] = "gok_aap",
 			[12] = "gok_eap",
-			[13] = "gok_sp",
+			--[13] = "gok_sp",
 			[14] = "gok_asp",
 			[15] = "gok_nanotc1",
 			[16] = "gok_targ",
