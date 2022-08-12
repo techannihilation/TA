@@ -1,3 +1,79 @@
+ 4.25 => 4.26
+2022-08-03
+
+Balance:
+
+Gok : Fighter Rebalance (So they are not clones of Talon)
+T1 Fighter : Angel
+ - HP 315 => 300 & Speed 294 => 315
+ - Metal 82 => 88 & Energy 2430 => 2222
+ - Range 500 => 480 & Reload 1.00 => 0.50 & Damage (Priority Air) 160 => 120
+ - Corrected Icon
+T2 Fighter : Succubus
+ - HP 630 => 600 & Speed 375 => 400
+ - Metal 120 => 222 & Energy 11800 => 8888
+ - Range 540 => 490 & Reload .80 => .40 & Damage (Priority Air) 240 => 140
+ - Corrected Icon
+T3 Fighter : Wraith
+ - HP 2435 => 2400 & Speed 456 => 477
+ - Metal 690 => 666 & Energy 62850 => 66666
+ - Range 600 => 500 & Reload .25 => .20 & Damage (Priority Air) 600 => 700
+
+Arm Balance:
+ - Zeus : HP 3005 => 3805 & Reload 2.00 => 1.00
+ - FatBoy : Range 700 => 900
+ - Vengence : Range 1250 => 1400
+
+Core Balance:
+ - Morty : Range 850 => 1100
+ - Catapult : Range 1350 => 1550
+
+TLL Balance:
+ - Private : Range 160 => 210
+ - Heavy Impact : Range 1300 => 1500
+
+Talon Balance:
+ - Crusader : HP 2580 => 2980 & Reload 2.00 => 1.50 
+ - Wolf : Range 520 => 560
+ - Collier : Range 1300 => 1600
+
+Gok Balance:
+ - Black Pollen Cut Launcher : Range 2400 => 2800
+ - Onyx : Range 1300 => 2250
+ - Anti-Christ : HP 11500 => 13300 & BuildPower 600 => 1200
+ - Valkyrie : Range 350 => 700	
+ - Zealot : Damage 222 => 444
+ - T3 Gok Air now has Rezer
+
+Anti Air Balance:
+ - All Unupgraded T1 AA : Reload 1.0 => .80
+ - All Upgraded T1 AA : Reload .5 => .4
+ - All Chainsaw : Reload .13 => .10 (Gok .50 => .40 & Removed E Cost)
+ - All T2 Flak : Range 775 => 850
+ - Arm/Core/TLL Sam : Range 850 => 1400
+ - Arm/Core/TLL/Talon Long Range AA : Range 2400 => 3200 & Reload 10.0 => 5.0
+ - Gok Long Range AA : Range 2250 => 3000 & Reload 5.0 => 2.5
+ - Talon T3 Flak : AoE 96 => 128
+ - TLL T3 Flak : Dragon Breath Missiles Range 1500 => 2100
+ - Core T3 Flak : Range 1000 => 1150
+ - Arm T3 Flak : Range 1000 => 1100
+ - Gok T3 AA : Range 1000 => 1500
+ - Gok T4 AA : Range 1600 => 2500 & Removed E Cost
+
+Com Build Rework:
+ - The 1st row of Build options are all Energy Generation
+ - The 2nd row of Build options are Mex, 2 MMs, and 2 Storage Units
+ - The 3rd row of Build options are Radar, 3 Labs, Tower/Camera or T4 Lab
+ - The 4th row of Build options are Wall, Turrets, and Misc/Sea
+ - The Remaining rows are sea related
+ - T3 Com Build power 900 => 1200
+ - T4 Com Build power 1200 => 2400
+
+Bug Fix:
+ - Shrike : Corrected name
+ - Corrected Scales of T4 Coms for Core TLL and Talon
+ - Corrected Scale of T3 Com for Talon
+
 4.24 => 4.25
 2022-07-22
 
