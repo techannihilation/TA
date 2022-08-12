@@ -139,7 +139,7 @@ function gadget:Initialize()
         -- t1.5 wind/tidals
       elseif (ud.name == "armawin") or (ud.name == "talon_tide1") or (ud.name == "talon_win1") or (ud.name == "corawin") or (ud.name == "armatidal") or (ud.name == "coratidal") or (ud.name == "tllatide") or (ud.name == "tllwin1") or (ud.name == "gok_tide1") or (ud.name == "gok_win1") then
         Spring.SetUnitDefIcon(udid, "e1.user")
-      elseif (ud.name == "armfig") or (ud.name == "corveng") or (ud.name == "tllfight") or (ud.name == "armhawk") or (ud.name == "corvamp") or (ud.name == "tlladvfight") or (ud.name == "talon_echelon") or (ud.name == "talon_token") or (ud.name == "gok_sucub") or (ud.name == "gok_angel") then
+      elseif (ud.name == "armfig") or (ud.name == "corveng") or (ud.name == "tllfight") or (ud.name == "armhawk") or (ud.name == "corvamp") or (ud.name == "tlladvfight") or (ud.name == "talon_echelon") or (ud.name == "talon_token") then
         --fighters
         Spring.SetUnitDefIcon(udid, "tri-up_fighter.user")
       elseif (ud.name == "armwolf") or (ud.name == "corshrike") or (ud.name == "tllshu") or (ud.name == "talon_hornet") then

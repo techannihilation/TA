@@ -127,7 +127,7 @@ return {
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
-				range = 1400,
+				range = 850,
 				reloadtime = 0.4,
 				smoketrail = true,
 				soundhitdry = "packohit",
