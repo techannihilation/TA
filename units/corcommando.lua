@@ -47,6 +47,7 @@ return {
 		movementclass = "KBOT2",
 		name = "corcommando",
 		noautofire = false,
+
 		objectname = "corcommando",
 		radaremitheight = 51,
 		seismicsignature = 2,

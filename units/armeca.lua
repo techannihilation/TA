@@ -66,7 +66,7 @@ return {
 			[7] = "armap",
 			[8] = "armaap",
 			[9] = "armeap",
-			--[10] = "armsp",
+			[10] = "armsp",
 			[11] = "arm_mech_lab",
 			[12] = "armnanotc2",
 			[13] = "armedrag",

@@ -39,6 +39,7 @@ return {
 		name = "Gorgon",
 		noautofire = false,
 		objectname = "tllgorgon",
+		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
 		selfdestructas = "BANTHA_BLAST",

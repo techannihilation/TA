@@ -21,6 +21,7 @@ return {
 		collide = false,
 		corpse = "heap",
 		cruisealt = 165,
+		defaultmissiontype = "VTOL_standby",
 		description = "Bomber",
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,

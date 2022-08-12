@@ -336,6 +336,9 @@ return {
 				},
 			},
 			com_shield = {
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
 				name = "PersonalShield",
 				shieldbadcolor = "1 0.2 0.2 0.35",
 				shieldenergyuse = 200,
@@ -348,6 +351,8 @@ return {
 				shieldradius = 100,
 				shieldrepulser = true,
 				smartshield = true,
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

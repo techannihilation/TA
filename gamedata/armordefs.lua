@@ -164,7 +164,6 @@ return {
 	"armcsat",
 	"tllcsat",
 	"corcsat",
-	"corslander",
 	"talon_csat",
 
 	--T5 AIR

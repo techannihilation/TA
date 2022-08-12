@@ -141,7 +141,7 @@ return {
 				name = "RavenCatapultRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1450,
+				range = 1350,
 				reloadtime = 15,
 				smoketrail = true,
 				soundhitdry = "rockhit",

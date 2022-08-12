@@ -159,24 +159,6 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
-	armvengence = {
-		{
-			name = "shield_arm_vengence",
-			cob = "Shield",
-			tooltip = "Toggle shield activation",
-			type = CMDTYPE.ICON_MODE,
-			params = {'1', 'Shield Off', 'Shield On'},
-		},
-	},
-	corsingularity = {
-		{
-			name = "shield_core_singularity",
-			cob = "Shield",
-			tooltip = "Toggle shield activation",
-			type = CMDTYPE.ICON_MODE,
-			params = {'1', 'Shield Off', 'Shield On'},
-		},
-	},
 	talon_shieldgen = {
 		{
 			name = "shield_talonveh",
@@ -456,13 +438,13 @@ return {
 			params = {'1', 'Surface', 'Dive'},
 		},
 	},
-	armolympus = {
+	cormcv = {
 		{
-			name = "weapon_toggle_olympus",
+			name = "weapon_cormcv",
 			cob = "Dive",
-			tooltip = "Amunition change",
+			tooltip = "High / low",
 			type = CMDTYPE.ICON_MODE,
-			params = {'1', 'Gauss', 'Plasma'},
+			params = {'1', 'Low Trajectory', 'High Trajectory'},
 		},
 	},
 	--[[

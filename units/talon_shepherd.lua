@@ -46,6 +46,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Shepherd",
 		noautofire = false,
+
 		objectname = "talon_shepherd",
 		radaremitheight = 51,
 		seismicsignature = 2,

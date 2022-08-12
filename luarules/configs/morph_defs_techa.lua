@@ -731,7 +731,12 @@ local morphDefs = {
  		into = 'armraptor',
     time = 90,
     xp = 0.10,
-  },
+         },
+	armvengence = {
+		into = 'armorco',
+		time = 90,
+		xp = 0.15,
+	},
 	armmerl = {
 		into = 'armmlrs',
 		time = 90,

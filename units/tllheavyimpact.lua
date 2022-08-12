@@ -142,7 +142,7 @@ return {
 				name = "HeavyCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1400,
+				range = 1300,
 				reloadtime = 4,
 				rgbcolor = "0.67 0.31 0",
 				separation = 0.45,

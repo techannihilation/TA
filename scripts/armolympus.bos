@@ -14,21 +14,15 @@ piece 	base, body, turret, sleeve, barrel, barrel2, emit, flare, arm1, plat1,
 		turret4, sleeves4, barrel4a, barrel4b, barrel4c, flare4a, flare4b, flare4c;
 
 	    
-static-var is_moving, firedelay, firing, missile_1, gun_1, gun_2, gun_3, gun_4, amunition;
+static-var is_moving, firedelay, firing, missile_1, gun_1, gun_2, gun_3, gun_4;
 
 #define SIG_AIM 	2
-#define SIG_AIM_BIS 4
-#define SIG_AIM3	8
-#define SIG_AIM4	16
-#define SIG_AIM5	32
-#define SIG_AIM6	64
-#define SIG_AIM7	128
-#define SIG_MOVE 	256
-
-Dive()
-{
-	amunition = !amunition;
-}
+#define SIG_AIM3	4
+#define SIG_AIM4	8
+#define SIG_AIM5	16
+#define SIG_AIM6	32
+#define SIG_AIM7	64
+#define SIG_MOVE 	128
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -61,6 +55,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+
+
 Create()
 {	
 	turn turret2 to y-axis <180.000000> now;
@@ -70,7 +66,6 @@ Create()
 	gun_2 = 0;
 	gun_3 = 0;
 	gun_4 = 0;
-	amunition = 0;
 	start-script SmokeUnit();	
 }
 
@@ -88,10 +83,6 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	if (amunition == 1)
-	{
-		return (0);
-	}
 	turn turret to y-axis heading speed <18.000000>;
 	turn sleeve to x-axis <0.000000> - pitch speed <4.500000>;
 	wait-for-turn turret around y-axis;
@@ -117,43 +108,6 @@ QueryPrimary(piecenum)
 }
 
 AimFromPrimary(piecenum)
-{
-	piecenum = sleeve;
-}
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_BIS;
-	set-signal-mask SIG_AIM_BIS;
-	if (amunition == 0)
-	{
-		return (0);
-	}
-	turn turret to y-axis heading speed <18.000000>;
-	turn sleeve to x-axis <0.000000> - pitch speed <4.500000>;
-	wait-for-turn turret around y-axis;
-	wait-for-turn sleeve around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireSecondary()
-{
-	move barrel2 to z-axis [-12.000000] speed [400.000000];	
-	move barrel to z-axis [-4.000000] speed [250.000000];
-	emit-sfx 1024 from emit;
-	wait-for-move barrel along z-axis;
-	sleep 250;
-	move barrel2 to z-axis [0.000000] speed [2.000000];
-	move barrel to z-axis [0.000000] speed [1.000000];
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = emit;
-}
-
-AimFromSecondary(piecenum)
 {
 	piecenum = sleeve;
 }

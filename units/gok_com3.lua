@@ -94,7 +94,7 @@ return {
 			--[15] = "",
 			[16] = "gok_slesh",
 			[17] = "gok_flak",
-			[18] = "gok_uwfusion",
+			[18] = "gok_uwfus",
 			[19] = "gok_uwefus",
 			[20] = "gok_famkr",
 			[21] = "gok_sy",

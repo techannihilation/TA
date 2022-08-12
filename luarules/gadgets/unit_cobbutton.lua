@@ -57,7 +57,6 @@ local ShieldUnits = {
   [UnitDefNames["corshieldgen"].id] = true,
   [UnitDefNames["cormonkeylord"].id] = true,
   [UnitDefNames["corcrab"].id] = true,
-  [UnitDefNames["corsingularity"].id] = true,
   --Arm
   [UnitDefNames["armcom1"].id] = true,
   [UnitDefNames["armcom2"].id] = true,
@@ -73,7 +72,6 @@ local ShieldUnits = {
   [UnitDefNames["armexo"].id] = true,
   [UnitDefNames["armsmc"].id] = true,
   [UnitDefNames["armshieldgen"].id] = true,
-  [UnitDefNames["armvengence"].id] = true,
   --The lost legacy
   [UnitDefNames["tllcom1"].id] = true,
   [UnitDefNames["tllcom2"].id] = true,
@@ -116,7 +114,7 @@ local ShieldUnits = {
   [UnitDefNames["gok_fgate"].id] = true,
   [UnitDefNames["gok_fgate1"].id] = true,
   [UnitDefNames["gok_bats"].id] = true,
-  [UnitDefNames["gok_valefor"].id] = true,
+  [UnitDefNames["gok_valefor"].id] = true,  
   [UnitDefNames["gok_satan"].id] = true,
   [UnitDefNames["gok_antichrist"].id] = true,
   [UnitDefNames["gok_archon"].id] = true,
