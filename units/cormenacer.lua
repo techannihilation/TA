@@ -15,7 +15,6 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -7 4",
 		collisionvolumescales = "62 63 63",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -38,7 +37,6 @@ return {
 		movementclass = "TKBOT3",
 		name = "Menacer",
 		noautofire = false,
-		
 		objectname = "CORMENACER",
 		radardistance = 0,
 		radaremitheight = 29,
@@ -55,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "cormenacer.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T1 Unit Research Centre",
 		},
 		featuredefs = {
 			corgol_heap = {
@@ -135,7 +132,7 @@ return {
 				name = "PlasmaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 1140,
+				range = 1265,
 				reloadtime = 3,
 				rgbcolor = "0.65 0.28 0",
 				separation = 0.45,

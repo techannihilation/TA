@@ -136,7 +136,7 @@ return {
 				name = "Experimental Missile",
 				noselfdamage = true,
 				proximitypriority = -1,
-				range = 1200,
+				range = 1300,
 				reloadtime = 8,
 				smoketrail = true,
 				soundhitdry = "rockhit",

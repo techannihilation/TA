@@ -1,0 +1,179 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, bridge, pentons, engines, mstors, estor, doodads,
+       energy, pipes, blods, winglets, launch1, launch2, launch3, launch4, launch5, launch6,
+       blod_pad_01, blod_pad_02, blod_pad_03, blod_pad_04, blod_pad_05, blod_pad_06,
+       wing_01, wing_02, wing_03, wing_04,
+       wing_05, wing_06, wing_07, wing_08,
+       wing_09, wing_10, wing_11, wing_12,
+       wing_13, wing_14, wing_15, wing_16;
+
+static-var  statechg_DesiredState, statechg_StateChanging, gun;
+
+// Signal definitions
+#define SIG_AIM				4
+
+Activatescr()
+{
+	sleep 20;
+}
+
+Deactivatescr()
+{
+
+	sleep 20;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Activatescr();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Deactivatescr();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+
+Create()
+{
+	gun = 0;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	sleep 20;
+}
+
+Deactivate()
+{
+	sleep 20;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = base;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	return (1);
+}
+
+FirePrimary()
+{
+	++gun;
+	if ( gun == 6)
+	{
+		gun = 0;
+	}
+	sleep 20;
+}
+
+QueryPrimary(piecenum)
+{
+	if ( gun == 0)
+	{
+		piecenum = launch1;
+	}
+	if ( gun == 1)
+	{
+		piecenum = launch2;
+	}
+	if ( gun == 2)
+	{
+		piecenum = launch3;
+	}
+	if ( gun == 3)
+	{
+		piecenum = launch4;
+	}
+	if ( gun == 4)
+	{
+		piecenum = launch5;
+	}
+	if ( gun == 5)
+	{
+		piecenum = launch6;
+	}	
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode wing_01 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wing_03 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wing_06 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wing_09 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wing_12 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode wing_15 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode bridge type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode doodads type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode energy type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blod_pad_01 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blod_pad_03 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode blod_pad_05 type FALL | FIRE | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

@@ -132,7 +132,7 @@ return {
 				name = "Spray Lightning",
 				noselfdamage = true,
 				projectiles = 2,
-				range = 210,
+				range = 160,
 				reloadtime = 0.6,
 				rgbcolor = "0.6 0.6 0.9",
 				--soundhitdry = "lashit2",

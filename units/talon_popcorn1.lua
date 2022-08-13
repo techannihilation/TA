@@ -108,7 +108,7 @@ return {
 		weapondefs = {
 			advflak = {
 				accuracy = 650,
-				areaofeffect = 256,
+				areaofeffect = 192,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "talonflak-fx",

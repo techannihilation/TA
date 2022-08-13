@@ -3,14 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece 	base, rflare1, lflare1, rflare2, lflare2, rlas_flare, llas_flare, 
-	    hips, rthigh, rleg, rfoot, rtoe1, rtoe2, rheel, lthigh, lleg, lfoot, ltoe1, ltoe2, lheel,
+piece 	base, rflare1, lflare1, rflare2, lflare2, 
+	    pelvis, rthigh, rleg, rfoot, rtoe1, rtoe2, rheel, lthigh, lleg, lfoot, ltoe1, ltoe2, lheel,
 	    rshoulder, ruparm, rpivot, rbarrel1, rbarrel2, 
 	    lshoulder, luparm, lpivot, lbarrel1, lbarrel2, 
-	    rlas_slv, rlas_bar,  llas_slv, llas_bar,
-	    aimfrom_arm, aimfrom_flare, aimfrom_head, shaker, torso, arse, tube1, tube2;
+	    aimfrom_head, shaker, torso, arse, tube1, tube2;
 
-static-var  gun_1, gun_3, Main_Gun_Heading;
+static-var  gun_1, Static_Shield, Main_Gun_Heading;
 
 #define SIG_AIM1			2
 #define SIG_AIM3			4
@@ -28,8 +27,8 @@ StartWalk()
 			sleep 100;
 //			move lthigh to y-axis [1] now;
 //			move lthigh to y-axis [0] speed [0.5];
-//			move hips to y-axis [1] now;
-//			move hips to y-axis [0] speed [0.5];
+//			move pelvis to y-axis [1] now;
+//			move pelvis to y-axis [0] speed [0.5];
 			turn shaker to x-axis <5> now;
 			turn shaker to x-axis 0 speed <5>;
 			turn shaker to z-axis <-5> now;
@@ -60,8 +59,8 @@ StartWalk()
 			sleep 100;
 //			move rthigh to y-axis [1] now;
 //			move rthigh to y-axis [0] speed [0.5];
-//			move hips to y-axis [1] now;
-//			move hips to y-axis [0] speed [0.5];
+//			move pelvis to y-axis [1] now;
+//			move pelvis to y-axis [0] speed [0.5];
 			turn shaker to x-axis <5> now;
 			turn shaker to x-axis 0 speed <5>;
 			turn shaker to z-axis <5> now;
@@ -96,8 +95,8 @@ Walk()
 			sleep 100;
 //			move lthigh to y-axis [1] now;
 //			move lthigh to y-axis [0] speed [0.5];
-//			move hips to y-axis [1] now;
-//			move hips to y-axis [0] speed [0.5];
+//			move pelvis to y-axis [1] now;
+//			move pelvis to y-axis [0] speed [0.5];
 			turn shaker to x-axis <5> now;
 			turn shaker to x-axis 0 speed <5>;
 			turn shaker to z-axis <-5> now;
@@ -128,8 +127,8 @@ Walk()
 			sleep 100;
 //			move rthigh to y-axis [1] now;
 //			move rthigh to y-axis [0] speed [0.5];
-//			move hips to y-axis [1] now;
-//			move hips to y-axis [0] speed [0.5];
+//			move pelvis to y-axis [1] now;
+//			move pelvis to y-axis [0] speed [0.5];
 			turn shaker to x-axis <5> now;
 			turn shaker to x-axis 0 speed <5>;
 			turn shaker to z-axis <5> now;
@@ -164,7 +163,7 @@ StopWalk()
 			turn rthigh to x-axis <0> speed <50>;
 			turn lleg to x-axis <0> speed <100>;
 			turn rleg to x-axis <0> speed <100>;
-			turn hips to z-axis <0> speed <20>;
+			turn pelvis to z-axis <0> speed <20>;
 			turn rtoe1 to x-axis <0> speed <100>;
 			turn rtoe2 to x-axis <0> speed <100>;
 			turn rheel to x-axis <0> speed <100>;
@@ -208,7 +207,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	gun_1 = 0;
-	gun_3 = 0;
+	Static_Shield = 1;
 	start-script SmokeUnit();
 }
 
@@ -328,42 +327,32 @@ AimFromPrimary(piecenum)
 	piecenum = torso;
 }
 
-AimTertiary(heading, pitch)
+//Shield Weapon
+Shield()
 {
-	signal SIG_AIM3;
-	set-signal-mask SIG_AIM3;
-	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	Static_Shield = !Static_Shield;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = base;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = base;
+}
+
+AimWeapon3(heading, pitch)
+{
+	if( Static_Shield )
+	{
+		return (1);
+	}
+	else
 	{
 		return (0);
 	}
-	wait-for-turn torso around y-axis;
-	return (1);
-}
-
-FireTertiary()
-{
-	++gun_3;
-	if (gun_3 == 2)
-	{
-		gun_3 = 0;
-	}
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = arse;
-}
-
-QueryTertiary(piecenum)
-{
-	if (gun_3 == 0)
-	{
-		piecenum = rlas_flare;
-	}
-	if (gun_3 == 1)
-	{
-		piecenum = llas_flare;
-	}	
 }
 
 Killed(severity, corpsetype)
@@ -371,7 +360,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode hips type NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD;
 		explode torso type NOHEATCLOUD;
 		explode lfoot type NOHEATCLOUD;
 		explode rleg type NOHEATCLOUD;
@@ -384,8 +373,6 @@ Killed(severity, corpsetype)
 		explode rbarrel1 type NOHEATCLOUD;
 		explode rbarrel2 type NOHEATCLOUD;
 		explode lbarrel1 type NOHEATCLOUD;
-		explode llas_slv type NOHEATCLOUD;
-		explode rlas_slv type NOHEATCLOUD;
 		explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
@@ -393,7 +380,7 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode hips type NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD;
 		explode torso type NOHEATCLOUD;
 		explode lfoot type NOHEATCLOUD | FALL;
 		explode rleg type NOHEATCLOUD | FALL;
@@ -406,36 +393,12 @@ Killed(severity, corpsetype)
 		explode rbarrel1 type NOHEATCLOUD | FALL;
 		explode rbarrel2 type NOHEATCLOUD | FALL;
 		explode lbarrel1 type NOHEATCLOUD | FALL;
-		explode llas_slv type NOHEATCLOUD | FALL;
-		explode rlas_slv type NOHEATCLOUD | FALL;
-		explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode hips type NOHEATCLOUD;
-		explode torso type NOHEATCLOUD;
-		explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode ltoe2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rshoulder type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lshoulder type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lpivot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rbarrel1 type NOHEATCLOUD;
-		explode rbarrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode lbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode llas_slv type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rlas_slv type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode hips type NOHEATCLOUD;
+	explode pelvis type NOHEATCLOUD;
 	explode torso type NOHEATCLOUD;
 	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -448,8 +411,6 @@ Killed(severity, corpsetype)
 	explode rbarrel1 type NOHEATCLOUD;
 	explode rbarrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode llas_slv type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rlas_slv type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode tube1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode tube2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);

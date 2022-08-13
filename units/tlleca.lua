@@ -60,7 +60,7 @@ return {
 			[6] = "tllap",
 			[7] = "tllaap",
 			[8] = "tlleap",
-			[9] = "tllsp",
+			--[9] = "tllsp",
 			[10] = "tllprototype",
 			[11] = "tllnanotc2",
 			[12] = "tlledrag",

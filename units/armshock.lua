@@ -141,7 +141,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				predictboost = 1,
-				range = 1350,
+				range = 1450,
 				reloadtime = 5,
 				rgbcolor = "0.81 0.54 0",
 				separation = 0.45,

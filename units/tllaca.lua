@@ -65,7 +65,7 @@ return {
 			[9] = "tllap",
 			[10] = "tllaap",
 			[11] = "tlleap",
-			[12] = "tllsp",
+			--[12] = "tllsp",
 			[13] = "tllasp",
 			[14] = "tllnanotc1",
 			[15] = "tlltarg",

@@ -155,6 +155,7 @@ return {
 	"corerez",
 	"tllerez",
 	"talon_erez",
+	"gok_erez",
 
 	-- SATELLITE
 	"sat_radar",
@@ -165,6 +166,7 @@ return {
 	"tllcsat",
 	"corcsat",
 	"talon_csat",
+	"corslander",
 
 	--T5 AIR
 	"gok_tzenth",

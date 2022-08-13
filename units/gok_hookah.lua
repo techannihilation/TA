@@ -38,7 +38,7 @@ return {
 		maxvelocity = 9.10,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Hookah",
+		name = "Eclipse",
 		noautofire = false,
 		objectname = "gok_hookah",
 		selfdestructas = "BIG_UNIT_VTOL",
