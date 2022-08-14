@@ -1,5 +1,5 @@
 4.24 => 4.25
-2022-08-13
+2022-08-15
 
 Balance :
  - Gorilla Core ; Decrease speed 1.8=>1.65
@@ -19,6 +19,7 @@ Balance :
   - Add T4 satellite for core. Pyro Invaders.
   - Change Krow Core model. ~ Same Balance.
   - Add new AOE Ammunition for Olympus (T4 Arm)
+  - Add T4 Mobile Shield for Core
 
 Fix:
  - Scale for all Supreme Commander. Thanks to Batfalls.
