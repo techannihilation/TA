@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "heap",
 		defaultmissiontype = "Standby",
-		description = "Experimental High Power Kbot - Absorb Shield (15K)",
+		description = "Experimental Shielded Kbot",
 		explodeas = "KROG_BLAST",
 		firestandorders = 1,
 		footprintx = 7,

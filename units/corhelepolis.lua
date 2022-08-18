@@ -38,7 +38,7 @@ return {
 		metalstorage = 0,
 		mobilestandorders = 1,
 		movementclass = "HKBOT4",
-		name = "corhelepolis",
+		name = "Helepolis",
 		noautofire = false,
 		objectname = "corhelepolis",
 		piecetrailcegrange = 4,
