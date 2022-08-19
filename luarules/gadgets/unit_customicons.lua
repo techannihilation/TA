@@ -124,6 +124,9 @@ function gadget:Initialize()
   Spring.AddUnitIcon("liche.user", "icons/liche.png", 2.5)
   Spring.AddUnitIcon("satellite.user", "icons/satellite.png", 3)
   Spring.AddUnitIcon("corraven1.user", "icons/corraven1.png", 4)
+  Spring.AddUnitIcon("armmcv1.user", "icons/armmcv1.png", 4)
+  Spring.AddUnitIcon("corhflag.user", "icons/corhflag.png", 4)
+  Spring.AddUnitIcon("gok_cut1.user", "icons/gok_cut1.png", 3)
   Spring.AddUnitIcon("coradamantoise.user", "icons/coradamantoise.png", 4.5)
 
   -- Setup the unitdef icons
@@ -214,6 +217,19 @@ function gadget:Initialize()
       elseif ud.name == "tllmcv" then
         --tllmcv
         Spring.SetUnitDefIcon(udid, "tllmcv.user")
+
+      elseif ud.name == "gok_cut1" then
+        --gok_cut1
+        Spring.SetUnitDefIcon(udid, "gok_cut1.user")
+
+      elseif ud.name == "armmcv1" then
+        --armmcv1
+        Spring.SetUnitDefIcon(udid, "armmcv1.user")
+
+      elseif ud.name == "corhflag" then
+        --corhflag
+        Spring.SetUnitDefIcon(udid, "corhflag.user")
+                
       elseif ud.name == "tllsamael" then
         --tllsamael
         Spring.SetUnitDefIcon(udid, "tllsamael.user")
