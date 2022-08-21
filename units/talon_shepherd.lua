@@ -71,7 +71,7 @@ return {
 			[6] = "talon_fort",
 			[7] = "talon_mine2",
 			[8] = "talon_mine3",
-			[9] = "talon_mine4",
+			--[9] = "talon_mine4",
 		},
 		customparams = {
 			buildpic = "talon_shepherd.dds",

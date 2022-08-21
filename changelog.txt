@@ -1,3 +1,10 @@
+4.25 => 4.26
+2022-08-22
+
+Balance :
+ - All T2 Flak : Decrease Energy cost by 25%. Decrease buildtime 19K=>18K
+ - Delete nuke Mines from Talon Commando
+
 4.24 => 4.25
 2022-08-19
 

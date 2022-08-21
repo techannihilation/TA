@@ -2,11 +2,11 @@ return {
 	tllflak = {
 		airsightdistance = 1000,
 		buildangle = 8192,
-		buildcostenergy = 15403,
+		buildcostenergy = 11403,
 		buildcostmetal = 1191,
 		builder = false,
 		buildpic = "tllflak.dds",
-		buildtime = 19000,
+		buildtime = 18000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
