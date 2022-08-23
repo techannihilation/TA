@@ -70,12 +70,11 @@ Create()
 RestoreAfterDelay()
 {
 	sleep 3000;
-
-	turn turret1 to y-axis <-90.000000> speed <75.000000>;
-	turn sleeves1 to x-axis <90.000000> speed <75.000000>;
 	
-	turn turret2 to y-axis <-90.000000> speed <75.000000>;
-	turn sleeves2 to x-axis <90.000000> speed <75.000000>;
+	turn turret1 to y-axis <90.000000> speed <75.000000>;
+	turn sleeves1 to x-axis <-90.000000> speed <75.000000>;
+	turn turret2 to y-axis <-90.000000>  speed <75.000000>;
+	turn sleeves2 to x-axis <-90.000000> speed <75.000000>;
 
 }
 

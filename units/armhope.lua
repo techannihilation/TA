@@ -1,14 +1,12 @@
 return {
 	armhope = {
 		acceleration = 0.01,
-		activatewhenbuilt = true,
 		airhoverfactor = 0,
 		airstrafe = false,
 		bankscale = 1,
 		brakerate = 0.375,
 		buildcostenergy = 1165140,
 		buildcostmetal = 101150,
-		builder = true,
 		buildpic = "armhope.dds",
 		buildtime = 980000,
 		canattack = true,
@@ -31,7 +29,6 @@ return {
 		footprintx = 8,
 		footprintz = 8,
 		hoverattack = true,
-		icontype = "gunship",
 		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,

@@ -158,19 +158,16 @@ return {
 	"gok_erez",
 
 	-- SATELLITE
-	"sat_radar",
-	"sat_interceptor",
-	"sat_strike",
-	"sat_antiair",
-	"armcsat",
-	"tllcsat",
-	"corcsat",
-	"talon_csat",
+	--"sat_radar",
+	--"sat_interceptor",
+	--"sat_strike",
+	--"sat_antiair",
+	--"armcsat",
+	--"tllcsat",
+	--"corcsat",
+	--"talon_csat",
 	"corslander",
-
-	--T5 AIR
-	"gok_tzenth",
-	"talon_gold",
+	"talon_skynet",
 },
 
 	--### SEA ###
@@ -269,6 +266,7 @@ return {
 		"gok_sub",
 		"gok_csub",
 		"gok_bsub",
+		"gok_tzenth",
 	},
 	experimental_ships = {
 		"armtrmph",
@@ -314,6 +312,7 @@ return {
 		"talon_independence",
 		"gok_apocalypse",
 		"gok_octopus",
+		"talon_gold",
 
 		-- T6 SUPERSHIP
 		"gok_squid",

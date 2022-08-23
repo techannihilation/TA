@@ -47,9 +47,8 @@
 		yardmap = "ooooooooooooooooooooooooooooooooooo occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco occccccccccccccccccccccccccccccccco ooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
 			[1] = "talon_builderlvl3",
-			[2] = "talon_skynet",
+			[2] = "talon_gold",
 			[3] = "talon_independence",
-      [4] = "talon_gold",
 		},
 		customparams = {
 			buildpic = "talon_covertopscentre.dds",

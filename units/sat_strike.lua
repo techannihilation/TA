@@ -1,7 +1,6 @@
 return {
 	sat_strike = {
 		acceleration = 0.005,
-		activatewhenbuilt = false,
 		airStrafe  = true,
 		airHoverFactor = 1,
 		bankingAllowed = false,
@@ -22,7 +21,6 @@ return {
 		collide = false,
 		cruisealt = 1750,
 		description = "Precision Strike Satellite",
-		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		footprintx = 8,
 		footprintz = 8,
@@ -45,7 +43,6 @@ return {
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 750,
 		standingmoveorder = 1,
-		stealth = true,
 		steeringmode = 1,
 		turninplaceanglelimit = 50,
 		turninplacespeedlimit = 2,

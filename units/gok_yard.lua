@@ -47,7 +47,7 @@ return {
 			[1] = "gok_builderlvl5",
 			[2] = "gok_octopus",
 			[3] = "gok_apocalypse",
-			[4] = "gok_tzenth",
+			--[4] = "gok_tzenth",
 		},
 		customparams = {
 			buildpic = "gok_yard.dds",

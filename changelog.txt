@@ -5,6 +5,14 @@ Balance :
  - All T2 Flak : Decrease Energy cost by 25%. Decrease buildtime 19K=>18K
  - Delete nuke Mines from Talon Commando
 
+ Improvment:
+  - Delete T5 Air (Talon & Gok)
+  - Remplace Skynet Supership by Sattelite (precision strike sat)
+  - Add T4 Sat Lab for Talon
+  - Remplace Gold Air by Supership
+  - Gok tzenth will become T4 Sub
+
+
 4.24 => 4.25
 2022-08-19
 

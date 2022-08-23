@@ -148,7 +148,7 @@ function gadget:Initialize()
       elseif (ud.name == "armwolf") or (ud.name == "corshrike") or (ud.name == "tllshu") or (ud.name == "talon_hornet") then
         --t3 fighters
         Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user")
-      elseif (ud.name == "sat_radar") or (ud.name == "sat_interceptor") or (ud.name == "sat_strike") or (ud.name == "sat_antiair") or (ud.name == "armcsat") or (ud.name == "tllcsat") or (ud.name == "talon_csat") or (ud.name == "corcsat") then
+      elseif (ud.name == "sat_radar") or (ud.name == "sat_interceptor") or (ud.name == "sat_strike") or (ud.name == "sat_antiair") or (ud.name == "armcsat") or (ud.name == "tllcsat") or (ud.name == "talon_skynet") or (ud.name == "corslander") then
         --satellite
         Spring.SetUnitDefIcon(udid, "satellite.user")
       elseif ud.name == "armcybr" then
@@ -229,7 +229,7 @@ function gadget:Initialize()
       elseif ud.name == "corhflag" then
         --corhflag
         Spring.SetUnitDefIcon(udid, "corhflag.user")
-                
+
       elseif ud.name == "tllsamael" then
         --tllsamael
         Spring.SetUnitDefIcon(udid, "tllsamael.user")
@@ -278,7 +278,7 @@ function gadget:Initialize()
       elseif ud.name == "armpraet" then
         --t4 mechs
         Spring.SetUnitDefIcon(udid, "armpraet.user")
-      elseif (ud.name == "armhope") or (ud.name == "cordust") or (ud.name == "corvaliant") or (ud.name == "tllbarbarus") or (ud.name == "talon_skynet") then
+      elseif (ud.name == "armhope") or (ud.name == "cordust") or (ud.name == "corvaliant") or (ud.name == "tllbarbarus") or (ud.name == "talon_gold") then
         --T5 Medium / Small Hero
         Spring.SetUnitDefIcon(udid, "t5ships.user")
       elseif (ud.name == "abroadside") or (ud.name == "cdevastator") or (ud.name == "tllzeppelin") or (ud.name == "gok_apocalypse") then
