@@ -35,8 +35,8 @@ local modrules  = {
   },
 
   fireAtDead = {
-    fireAtKilled   = tonumber(Spring.GetMopOptions().mo_fireAtDead),
-    fireAtCrashing = tonumber(Spring.GetModOptions().mo_fireAtDead),
+    fireAtKilled   = false,
+    fireAtCrashing = true,
   },
 
   nanospray = {
