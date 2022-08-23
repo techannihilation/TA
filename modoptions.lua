@@ -101,6 +101,14 @@ local options = {
     section = "ta_modes",
   },
   {
+    key = "mo_fireAtDead",
+    name = "Fire At Dead",
+    desc = "Will units continue to target and fire on enemies which are running their Killed() animation?",
+    type = "bool",
+    def = false,
+    section = "ta_modes",
+  },
+  {
     key = "mo_preventcombomb",
     name = "Prevent Combombs",
     desc = "Commanders survive DGuns and other commanders explosions\nAutoHost Usage :- mo_preventcombomb",
