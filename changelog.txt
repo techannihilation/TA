@@ -11,7 +11,7 @@ Balance :
   - Add T4 Sat Lab for Talon
   - Remplace Gold Air by Supership
   - Gok tzenth will become T4 Sub
-
+  - All Air fighters now perform OTA style crashes (40% of them), and a new widget to split AA targets has been added
 
 4.24 => 4.25
 2022-08-19
