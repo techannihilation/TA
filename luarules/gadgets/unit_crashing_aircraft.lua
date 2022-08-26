@@ -38,7 +38,7 @@ function gadget:GetInfo()
    	if paralyzer then return damage, 1 end --OOPS FORGOT THIS
    	if crashing[unitID] then return 0, 0 end --hacky
 
-   	if crashable[unitDefID] and (damage > GetUnitHealth(unitID)) and random() < 0.55 then
+   	if crashable[unitDefID] and (damage > GetUnitHealth(unitID)) and random() < 0.40 then
    		--NOTE: strafe airmovetype aircraft DO NOT CRASH, only regular stuff like bombers
    		--Spring.Echo('CRASHING AIRCRAFT',unitID)
    		crashingCount = crashingCount + 1
