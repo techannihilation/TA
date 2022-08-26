@@ -34,7 +34,7 @@ return {
 		losemitheight = 41,
 		maneuverleashlength = 640,
 		mass = 4152,
-		maxdamage = 13300,
+		maxdamage = 13100,
 		maxslope = 20,
 		maxvelocity = 2,
 		maxwaterdepth = 12,
@@ -57,7 +57,7 @@ return {
 		turnrate = 1000,
 		unitname = "gok_antichrist",
 		upright = true,
-		workertime = 1200,
+		workertime = 800,
 		buildoptions = {
 			[1] = "gok_nanotc",
 			[5] = "gok_mine1",

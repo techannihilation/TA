@@ -15,7 +15,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 1",
 		collisionvolumescales = "38.6 39.6 54.6",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,7 +36,6 @@ return {
 		movementclass = "KBOT3",
 		name = "Fatboy",
 		noautofire = false,
-		
 		objectname = "ARMFBOY",
 		radaremitheight = 33,
 		seismicsignature = 0,
@@ -58,8 +56,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "1.35855102539 -5.79698309326 2.2872467041",
-				collisionvolumescales = "33.431427002 25.3690338135 53.5839233398",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "33 25 53",
 				collisionvolumetype = "Box",
 				damage = 5148,
 				description = "Fatboy Wreckage",
@@ -137,7 +135,7 @@ return {
 				name = "HeavyPlasma",
 				nogap = 1,
 				noselfdamage = true,
-				range = 900,
+				range = 875,
 				reloadtime = 8,
 				rgbcolor = "0.75 0.45 0",
 				separation = 0.45,
