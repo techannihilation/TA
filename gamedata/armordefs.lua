@@ -297,6 +297,7 @@ return {
 		"talon_ucar",
 		"gok_valefor",
 		"gok_hcar",
+		"gok_ucar",
 	},
 
 	--### AREOSHIP - SUPERSHIP ###

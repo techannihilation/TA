@@ -9,7 +9,6 @@ return {
 		buildtime = 750000,
 		category = "ALL SURFACE",
 		collisionvolumescales = "135 150 135",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 4",
@@ -61,7 +60,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 184,
-				object = "gok_urad_head",
+				object = "6X6C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

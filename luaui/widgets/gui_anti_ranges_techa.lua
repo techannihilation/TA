@@ -89,14 +89,14 @@ local antiNukes = {
   [UnitDefNames["corfmd1"].id] = true,
   [UnitDefNames["corfmd2"].id] = true,
   [UnitDefNames["corcarry"].id] = true,
-  --[UnitDefNames["corucar"].id] = true,
+  [UnitDefNames["corucar"].id] = true,
 --The lost legacy
   [UnitDefNames["tllturtle"].id] = true,
   [UnitDefNames["tllantinuke"].id] = true,
   [UnitDefNames["tllantinuke1"].id] = true,
   [UnitDefNames["tllantinuke2"].id] = true,
   [UnitDefNames["tllcarry"].id] = true,
-  --[UnitDefNames["tllucar"].id] = true,
+  [UnitDefNames["tllucar"].id] = true,
 --Talon
   [UnitDefNames["talon_damascus"].id] = true,
   [UnitDefNames["talon_damascus1"].id] = true,
@@ -109,7 +109,7 @@ local antiNukes = {
   [UnitDefNames["gok_antinuke1"].id] = true,
   [UnitDefNames["gok_antinuke2"].id] = true,
   [UnitDefNames["gok_carry"].id] = true,
-  --[UnitDefNames[""].id] = true,
+  [UnitDefNames["gok_ucar"].id] = true,
   [UnitDefNames["gok_morningstar"].id] = true,
 }
 

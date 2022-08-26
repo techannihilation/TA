@@ -1,0 +1,184 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, side1, side2turn, side2, side3turn, side3, side4turn, side4,
+	 	side5turn, side5, side6turn, side6, side7turn, side7, side8turn, side8,
+		sprayturn, spray,
+       gem, wake1, wake2, wake3, wake4, wake5, wake6;
+
+static-var  Static_Var_Sea;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal 2;
+	set-signal-mask 2;
+}
+
+StopMoving()
+{
+	signal 2;
+}
+
+waking()
+{
+	while( TRUE )
+	{
+		if( Static_Var_Sea == 2 OR Static_Var_Sea == 1 )
+		{
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+		}
+		sleep 325;
+	}
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_Sea = state;
+}
+
+Create()
+{
+	turn side2turn to y-axis <-45.00> now;
+	turn side3turn to y-axis <-90.00> now;
+	turn side4turn to y-axis <-135.00> now;
+	turn side5turn to y-axis <-180.00> now;
+	turn side6turn to y-axis <-225.00> now;
+	turn side7turn to y-axis <-270.00> now;
+	turn side8turn to y-axis <-315.00> now;
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	
+}
+
+Deactivate()
+{
+	
+}
+
+QueryNanoPiece(PieceNum)
+{
+	PieceNum = spray;
+}
+
+StartBuilding(Heading, Pitch)
+{
+	signal 4;
+	move side1 to z-axis [3.25] speed [4.0];
+	move side2 to z-axis [3.25] speed [4.0];
+	move side3 to z-axis [3.25] speed [4.0];
+	move side4 to z-axis [3.25] speed [4.0];
+	move side5 to z-axis [3.25] speed [4.0];
+	move side6 to z-axis [3.25] speed [4.0];
+	move side7 to z-axis [3.25] speed [4.0];
+	move side8 to z-axis [3.25] speed [4.0];
+	wait-for-move side1 along z-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Stop()
+{
+	set INBUILDSTANCE to 0;
+	
+	move side1 to z-axis [0.0] speed [3.75];
+	move side2 to z-axis [0.0] speed [3.75];
+	move side3 to z-axis [0.0] speed [3.75];
+	move side4 to z-axis [0.0] speed [3.75];
+	move side5 to z-axis [0.0] speed [3.75];
+	move side6 to z-axis [0.0] speed [3.75];
+	move side7 to z-axis [0.0] speed [3.75];
+	move side8 to z-axis [0.0] speed [3.75];
+}
+
+StopBuilding()
+{
+	//signal 32;
+	set INBUILDSTANCE to 0;
+	
+	signal 4;
+	set-signal-mask 4;
+	sleep 2000;
+	set-signal-mask 0;
+	signal 4;
+	
+	move side1 to z-axis [0.0] speed [3.75];
+	move side2 to z-axis [0.0] speed [3.75];
+	move side3 to z-axis [0.0] speed [3.75];
+	move side4 to z-axis [0.0] speed [3.75];
+	move side5 to z-axis [0.0] speed [3.75];
+	move side6 to z-axis [0.0] speed [3.75];
+	move side7 to z-axis [0.0] speed [3.75];
+	move side8 to z-axis [0.0] speed [3.75];
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+
+Killed(Severity, CorpseType, Random)
+{
+	explode hull type SHATTER | NOHEATCLOUD;
+	
+	if( Severity <= 25 )
+	{
+		CorpseType = 1;		
+		explode gem type NOHEATCLOUD;
+		explode side1 type NOHEATCLOUD | SHATTER;
+		explode side2 type NOHEATCLOUD | SHATTER;
+		return (CorpseType);
+	}
+	if( Severity <= 50 )
+	{
+		CorpseType = 2;		
+		explode gem type NOHEATCLOUD;
+		explode side1 type NOHEATCLOUD | SHATTER;
+		explode side3 type NOHEATCLOUD | SHATTER;
+		return (CorpseType);
+	}
+	CorpseType = 3;
+	explode gem type NOHEATCLOUD;
+	explode side1 type NOHEATCLOUD | SHATTER;
+	explode side3 type NOHEATCLOUD | SHATTER;
+	explode side2 type NOHEATCLOUD | SHATTER;
+	explode side4 type NOHEATCLOUD | SHATTER;
+	explode side5 type NOHEATCLOUD | SHATTER;
+	return (CorpseType);
+}

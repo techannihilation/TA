@@ -21,7 +21,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 4",
-		energystorage = 7500,
 		energyuse = 3750,
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,

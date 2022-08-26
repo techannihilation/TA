@@ -72,6 +72,7 @@ return {
 			[13] = "armfsilo",
 			[14] = "armorbital",
 			[15] = "armvulc1",
+			[16] = "armusy",
 		},
 		customparams = {
 			buildpic = "armspid.dds",

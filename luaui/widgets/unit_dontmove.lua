@@ -110,6 +110,7 @@ local unitArray = {
 
   "gok_carry",
   "gok_eveningstar",
+  "gok_ucar",
 }
 
 

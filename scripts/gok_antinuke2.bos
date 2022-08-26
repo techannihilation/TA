@@ -120,8 +120,7 @@ AimPrimary(heading, pitch)
 
 	while( !Static_Var_1 OR Static_Var_4 )
 	{
-		sleep 50;
-		
+		sleep 50;		
 	}
 	signal 2;
 	set-signal-mask 2;

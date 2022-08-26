@@ -1,5 +1,5 @@
 4.25 => 4.26
-2022-08-22
+2022-08-26
 
 Balance :
  - All T2 Flak : Decrease Energy cost by 25%. Decrease buildtime 19K=>18K
@@ -7,11 +7,12 @@ Balance :
 
  Improvment:
   - Delete T5 Air (Talon & Gok)
-  - Remplace Skynet Supership by Sattelite (precision strike sat)
+  - Remplace Skynet category "Supership" by "Sattelite" (precision strike sat)
+  - Remplace Gold Talon Category "Air" by "Supership"
+  - Remplace Gok Tzenth Category "Air" by "Sub"
   - Add T4 Sat Lab for Talon
-  - Remplace Gold Air by Supership
-  - Gok tzenth will become T4 Sub
-
+  - Add T4 Carrier for Gok
+  - Add T4 Sea Lab for Gok (include Hover Cut, Carrier, Tzenth Sub)
 
 4.24 => 4.25
 2022-08-19
