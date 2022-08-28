@@ -36,7 +36,7 @@ local modrules  = {
 
   fireAtDead = {
     fireAtKilled   = false,
-    fireAtCrashing = true,
+    fireAtCrashing = false,
   },
 
   nanospray = {
