@@ -1,3 +1,17 @@
+ 4.28 => 4.29
+2022-08-25
+
+Com Build Rework:
+ - The 1st row of Build options are all Energy Generation
+ - The 2nd row of Build options are Mex, 2 MMs, and 2 Storage Units
+ - The 3rd row of Build options are Radar, 3 Labs, Tower/Camera or T4 Lab
+ - The 4th row of Build options are Wall, Turrets, and Misc/Sea
+ - The Remaining rows are sea related
+ - T3 Com Build power 900 => 1200
+ - T4 Com Build power 1200 => 2400
+ - Corrected Scales of T4 Coms for Core TLL and Talon
+ - Corrected Scale of T3 Com for Talon
+
 4.25 => 4.28
 2022-08-25
 
@@ -33,9 +47,6 @@ Balance :
   - Add new AOE Ammunition for Olympus (T4 Arm)
   - Add T4 Mobile Shield for Core
   - Add icons for some t4 units
-
-Fix:
- - Scale for all Supreme Commander. Thanks to Batfalls.
 
 4.23 => 4.24
 2022-07-18
