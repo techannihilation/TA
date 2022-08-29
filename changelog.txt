@@ -1,6 +1,21 @@
  4.28 => 4.29
 2022-08-25
 
+Anti Air Balance:
+ - All Unupgraded T1 AA : Reload 1.0 => .80
+ - All Upgraded T1 AA : Reload .5 => .4
+ - All Chainsaw : Reload .13 => .10 (Gok .50 => .40 & Removed E Cost)
+ - All T2 Flak : Range 775 => 850
+ - Arm/Core/TLL Sam : Range 850 => 1400
+ - Arm/Core/TLL/Talon Long Range AA : Range 2400 => 3200 & Reload 10.0 => 5.0
+ - Gok Long Range AA : Range 2250 => 3000 & Reload 5.0 => 2.5
+ - Talon T3 Flak : AoE 96 => 128
+ - TLL T3 Flak : Dragon Breath Missiles Range 1500 => 2100
+ - Core T3 Flak : Range 1000 => 1150
+ - Arm T3 Flak : Range 1000 => 1100
+ - Gok T3 AA : Range 1000 => 1500
+ - Gok T4 AA : Range 1600 => 2500 & Removed E Cost
+
 Com Build Rework:
  - The 1st row of Build options are all Energy Generation
  - The 2nd row of Build options are Mex, 2 MMs, and 2 Storage Units
