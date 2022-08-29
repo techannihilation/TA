@@ -1,6 +1,29 @@
  4.28 => 4.29
 2022-08-25
 
+Gok : Fighter Rebalance (So they are not clones of Talon)
+T1 Fighter : Angel
+ - HP 315 => 300 & Speed 294 => 315
+ - Metal 82 => 88 & Energy 2430 => 2222
+ - Range 500 => 480 & Reload 1.00 => 0.50 
+ - Damage (Priority Air) 160 => 120 (Unclassed Air 1/2 value)
+ - Corrected Icon
+T2 Fighter : Succubus
+ - HP 630 => 600 & Speed 375 => 400
+ - Metal 120 => 222 & Energy 11800 => 8888
+ - Range 540 => 490 & Reload .80 => .40 
+ - Damage (Priority Air) 240 => 140 (Unclassed Air 1/2 value)
+ - Corrected Icon
+T3 Fighter : Wraith
+ - HP 2435 => 2400 & Speed 456 => 477
+ - Metal 690 => 666 & Energy 62850 => 66666
+ - Range 600 => 500 & Reload .25 => .20 
+ - Damage (Priority Air) 600 => 700 (Unclassed Air 1/2 value)
+
+Core T1 Fighter
+ - Damage (Priority Air) 160 => 150
+ - Damage (Unclassed Air) 120 => 75
+
 Anti Air Balance:
  - All Unupgraded T1 AA : Reload 1.0 => .80
  - All Upgraded T1 AA : Reload .5 => .4
