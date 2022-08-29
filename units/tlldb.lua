@@ -168,7 +168,7 @@ return {
 				model = "weapon_missile",
 				name = "Dragons Breath Missile",
 				noselfdamage = true,
-				range = 1500,
+				range = 2100,
 				reloadtime = 5,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = true,
