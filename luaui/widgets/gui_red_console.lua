@@ -491,7 +491,14 @@ local function processLine(line,g,cfg,newlinecolor)
 			ignoreThisMessage = true
 		end
 	end
-	
+
+	if sfind(line,"Sync error for ") then
+		name = ssub(line,16,sfind(line," in frame ")-1)
+		if names[name] ~= nil then
+			ignoreThisMessage = true
+		end
+	end
+
 	-- filter Sync error when its a spectator
 	if sfind(line,"^Error: %[DESYNC WARNING%] ") then
 		name = ssub(line,sfind(line," %(")+2,sfind(line,"%) ")-1)
