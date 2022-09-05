@@ -1,6 +1,6 @@
 function widget:GetInfo()
     return {
-        name = "split air target manager",
+        name = "Split air target manager",
         desc = "To enable select AA and press Alt+Space, to disable deselect any unit and press Alt+Space two times",
         author = "[MOL]Silver",
         version = "1.4",
@@ -12,7 +12,7 @@ function widget:GetInfo()
 end
 
 local maxTargetsPerEnemy = 2 -- if "weak" AA
-local minPower = 0 -- skip t1 air scouts
+local minPower = 0.040 -- skip t1 air scouts
 local rangeMultiplier = 1.25
 local CMD_UNIT_SET_TARGET = 34923
 local CMD_UNIT_CANCEL_TARGET = 34924
@@ -80,7 +80,8 @@ function widget:Initialize()
             local power = cost / 1000
             for i, name in ipairs(PriorityTargets) do
                 if name == udefs.name then
-                    power = math.pow(cost, 5)
+                    power = math.pow(cost / 10, 5)
+
                 end
             end
             unitDefsCached[udefs.id] = {
