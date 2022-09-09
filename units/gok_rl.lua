@@ -127,7 +127,7 @@ return {
 				noselfdamage = true,
 				projectiles = 1,
 				range = 775,
-				reloadtime = 0.8,
+				reloadtime = 1.0,
 				rgbcolor = "0.78 0.08 0.52",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

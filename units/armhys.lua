@@ -123,7 +123,7 @@ return {
 				impulsefactor = 0,
 				name = "AdvancedFlakCannon",
 				noselfdamage = true,
-				range = 1100,
+				range = 1000,
 				reloadtime = 0.25,
 				rgbcolor = "0.2 0.3 0.9",
 				soundhitdry = "flakhit",

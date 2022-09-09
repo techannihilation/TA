@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 -11",
 		collisionvolumescales = "60 40 95",
 		collisionvolumetype = "box",
@@ -37,7 +37,6 @@ return {
 		movementclass = "HTANK4",
 		name = "Avatar",
 		noautofire = false,
-
 		objectname = "AVTR",
 		radardistance = 0,
 		radaremitheight = 26,
