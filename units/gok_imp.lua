@@ -127,7 +127,6 @@ return {
 		},
 		weapondefs = {
 			gok_plasma = {
-				accuracy = 100,
 				areaofeffect = 96,
 				avoidfeature = false,
 				burnblow = true,

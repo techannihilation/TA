@@ -1,0 +1,396 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+
+piece 	base, body, msl1, msl2, msl3, msl4, msl,
+		turret, sleeves, barrel1, barrel2, flare1, flare2,
+				
+		bturret1, bsleeves1, bbarrel1, bflare1,
+		bturret2, bsleeves2, bbarrel2, bflare2,
+		fturret1, fsleeves1, fbarrel1, fflare1,
+		fturret2, fsleeves2, fbarrel2, fflare2,
+		brtrack, bltrack, frtrack, fltrack, 
+		brsupport, blsupport, frsupport, flsupport,
+		brside, blside, 
+		brprotect, blprotect, frprotect, flprotect;
+		
+		
+static-var gun_1, gun_missile, amphib, bMoving;
+
+
+#define SIG_AIM1	2
+#define SIG_AIM2 	4
+#define SIG_AIM3 	8
+#define SIG_AIM4 	16
+#define SIG_AIM5 	32
+#define SIG_AIM6 	64
+#define SIG_AIM7 	128
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	//start-script track_tracks();
+		
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+			emit-sfx smoketype from fturret1;
+			emit-sfx smoketype from bturret2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	hide flare1;
+	hide flare2;
+	hide fflare1;
+	hide fflare2;
+	hide bflare1;
+	hide bflare2;
+	gun_1 = 0;
+	gun_missile = 0;
+	start-script SmokeUnit();
+}
+
+setSFXoccupy(Func_Var_1)
+{
+	amphib = Func_Var_1;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+RestoreMainWeapon()
+{
+	sleep 6000;
+	turn turret to y-axis <0.000000> speed <40.000000>;
+	turn sleeves to x-axis <0.000000> speed <40.000000>;
+}
+
+RestoreWeapon3()
+{
+	sleep 3000;
+	turn fturret1 to y-axis <0.000000> speed <60.000000>;
+	turn fsleeves1 to x-axis <0.000000> speed <60.000000>;
+}
+
+RestoreWeapon4()
+{
+	sleep 3000;
+	turn fturret2 to y-axis <0.000000> speed <60.000000>;
+	turn fsleeves2 to x-axis <0.000000> speed <60.000000>;
+}
+
+RestoreWeapon5()
+{
+	sleep 3000;
+	turn bturret1 to y-axis <0.000000> speed <60.000000>;
+	turn bsleeves1 to x-axis <0.000000> speed <60.000000>;
+}
+
+RestoreWeapon6()
+{
+	sleep 3000;
+	turn bturret2 to y-axis <0.000000> speed <60.000000>;
+	turn bsleeves2 to x-axis <0.000000> speed <60.000000>;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+	while (amphib == 3)
+	{ 
+		sleep 1000;
+	}	
+	return (1);
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;	
+	turn turret to y-axis heading speed <40.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <40.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;	
+	Start-script RestoreMainWeapon();
+	return (1);
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM3;
+	set-signal-mask SIG_AIM3;	
+	turn fturret1 to y-axis heading speed <60.000000>;
+	turn fsleeves1 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn fturret1 around y-axis;
+	wait-for-turn fsleeves1 around x-axis;	
+	Start-script RestoreWeapon3();
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM4;
+	set-signal-mask SIG_AIM4;	
+	turn fturret2 to y-axis heading speed <60.000000>;
+	turn fsleeves2 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn fturret2 around y-axis;
+	wait-for-turn fsleeves2 around x-axis;	
+	Start-script RestoreWeapon4();
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM5;
+	set-signal-mask SIG_AIM5;	
+	turn bturret1 to y-axis heading speed <250.000000>;
+	turn bsleeves1 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn bturret1 around y-axis;
+	wait-for-turn bsleeves1 around x-axis;	
+	Start-script RestoreWeapon5();
+	return (1);
+}
+
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM6;
+	set-signal-mask SIG_AIM6;	
+	turn bturret2 to y-axis heading speed <250.000000>;
+	turn bsleeves2 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn bturret2 around y-axis;
+	wait-for-turn bsleeves2 around x-axis;	
+	Start-script RestoreWeapon6();
+	return (1);
+}
+
+FireSecondary()
+{
+	++gun_missile;
+	if( gun_missile == 4 )
+	{
+		gun_missile = 0;	
+	}
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		emit-sfx 1024 from flare1;
+		move barrel1 to z-axis [-2.500000] speed [500.000000];
+		wait-for-move barrel1 along z-axis;
+		move barrel1 to z-axis [0.000000] speed [3.000000];
+
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1024 from flare2;
+		move barrel2 to z-axis [-2.500000] speed [500.000000];
+		wait-for-move barrel2 along z-axis;
+		move barrel2 to z-axis [0.000000] speed [3.000000];
+
+	}	
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;	
+	}
+}
+
+FireWeapon3()
+{
+	//emit-sfx 1024 from fflare1;
+	move fbarrel1 to z-axis [-1.600000] speed [500.000000];
+	wait-for-move fbarrel1 along z-axis;
+	move fbarrel1 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon4()
+{
+	//emit-sfx 1024 from fflare2;
+	move fbarrel2 to z-axis [-1.600000] speed [500.000000];
+	wait-for-move barrel2 along z-axis;
+	move fbarrel2 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon5()
+{
+	//emit-sfx 1024 from bflare1;
+	move bbarrel1 to z-axis [-1.600000] speed [500.000000];
+	wait-for-move bbarrel1 along z-axis;
+	move bbarrel1 to z-axis [0.000000] speed [3.000000];
+}
+
+FireWeapon6()
+{
+	//emit-sfx 1024 from bflare2;
+	move bbarrel2 to z-axis [-1.600000] speed [500.000000];
+	wait-for-move bbarrel2 along z-axis;
+	move bbarrel2 to z-axis [0.000000] speed [3.000000];
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = msl;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = fturret1;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = fturret2;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = bturret1;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = bturret2;
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_missile == 0 )
+	{
+		piecenum = msl1;
+	}
+	if( gun_missile == 1 )
+	{
+		piecenum = msl2;
+	}
+	if( gun_missile == 2 )
+	{
+		piecenum = msl3;
+	}
+	if( gun_missile == 3 )
+	{
+		piecenum = msl4;
+	}
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2;
+	}
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = fflare1;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = fflare2;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = bflare1;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = bflare2;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode fturret1 type NOHEATCLOUD;
+		explode fturret2 type NOHEATCLOUD;
+		explode bturret1 type NOHEATCLOUD;
+		explode bturret2 type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode flsupport type NOHEATCLOUD;
+		explode brprotect type NOHEATCLOUD;
+		explode frtrack type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode fbarrel2 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode fturret1 type NOHEATCLOUD | FALL;
+		explode fturret2 type NOHEATCLOUD | FALL;
+		explode bturret1 type NOHEATCLOUD | FALL;
+		explode bturret2 type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD;
+		explode flsupport type NOHEATCLOUD | FALL;
+		explode brprotect type NOHEATCLOUD | FALL;
+		explode frtrack type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode fbarrel2 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode fturret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode fturret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode bturret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode bturret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode flsupport type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode brprotect type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode frtrack type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode fbarrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

@@ -1,43 +1,35 @@
- 4.28 => 4.29
-2022-08-25
+4.29 => 4.30
+2022-09-09
+
+Balance :
+- Revert changes for all AA
+- Mobile Tackyon : Increase cost 1.2KM=>1.4K. Decrease speed 1.2=>1.1
+
+4.28 => 4.29
+2022-09-09
 
 Gok : Fighter Rebalance (So they are not clones of Talon)
 T1 Fighter : Angel
  - HP 315 => 300 & Speed 294 => 315
  - Metal 82 => 88 & Energy 2430 => 2222
- - Range 500 => 480 & Reload 1.00 => 0.50 
+ - Range 500 => 480 & Reload 1.00 => 0.50
  - Damage (Priority Air) 160 => 120 (Unclassed Air 1/2 value)
  - Corrected Icon
 T2 Fighter : Succubus
  - HP 630 => 600 & Speed 375 => 400
  - Metal 120 => 222 & Energy 11800 => 8888
- - Range 540 => 490 & Reload .80 => .40 
+ - Range 540 => 490 & Reload .80 => .40
  - Damage (Priority Air) 240 => 140 (Unclassed Air 1/2 value)
  - Corrected Icon
 T3 Fighter : Wraith
  - HP 2435 => 2400 & Speed 456 => 477
  - Metal 690 => 666 & Energy 62850 => 66666
- - Range 600 => 500 & Reload .25 => .20 
+ - Range 600 => 500 & Reload .25 => .20
  - Damage (Priority Air) 600 => 700 (Unclassed Air 1/2 value)
 
 Core T1 Fighter
  - Damage (Priority Air) 160 => 150
  - Damage (Unclassed Air) 120 => 75
-
-Anti Air Balance:
- - All Unupgraded T1 AA : Reload 1.0 => .80
- - All Upgraded T1 AA : Reload .5 => .4
- - All Chainsaw : Reload .13 => .10 (Gok .50 => .40 & Removed E Cost)
- - All T2 Flak : Range 775 => 850
- - Arm/Core/TLL Sam : Range 850 => 1400
- - Arm/Core/TLL/Talon Long Range AA : Range 2400 => 3200 & Reload 10.0 => 5.0
- - Gok Long Range AA : Range 2250 => 3000 & Reload 5.0 => 2.5
- - Talon T3 Flak : AoE 96 => 128
- - TLL T3 Flak : Dragon Breath Missiles Range 1500 => 2100
- - Core T3 Flak : Range 1000 => 1150
- - Arm T3 Flak : Range 1000 => 1100
- - Gok T3 AA : Range 1000 => 1500
- - Gok T4 AA : Range 1600 => 2500 & Removed E Cost
 
 Com Build Rework:
  - The 1st row of Build options are all Energy Generation
