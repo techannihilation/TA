@@ -1730,6 +1730,16 @@ local morphDefs = {
 		time = 30,
 		xp = 0.30,
 	},
+	gok_cacodemon = {
+		into = 'gok_diablo',
+		time = 90,
+		xp = 0.15,
+	},
+	gok_nightfall = {
+		into = 'gok_abyss',
+		time = 60,
+		xp = 0.20,
+	},
 }
 
 --

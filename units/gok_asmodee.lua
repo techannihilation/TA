@@ -63,7 +63,7 @@ return {
 			dead = {
 				blocking = false,
 				damage = 33488,
-				description = "Cybran gok_asmodee Shielded Mech Wreckage",
+				description = "Asmodee Mech Wreckage",
 				energy = 0,
 				featuredead = "gok_asmodee_heap",
 				footprintx = 6,
@@ -78,7 +78,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 41860,
-				description = "Cybran gok_asmodee Shielded Mech Debris",
+				description = "Asmodee Mech Debris",
 				energy = 0,
 				footprintx = 6,
 				footprintz = 6,
