@@ -126,8 +126,7 @@ return {
 		},
 		weapondefs = {
 			gok_plasma = {
-				accuracy = 196,
-				areaofeffect = 96,
+				areaofeffect = 156,
 				avoidfeature = false,
 				burnblow = true,
 				cegtag = "gokblaster",

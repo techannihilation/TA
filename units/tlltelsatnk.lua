@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK4",
 		name = "Tesla Tank",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "TLLTELSATNK",
 		radardistance = 0,
 		radaremitheight = 25,
