@@ -170,8 +170,6 @@ return {
 			[3] = {
 				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
 				def = "GOK_AA_MISSILE",
-				maindir = "0 0 -1",
-				maxangledif = 300,
 				onlytargetcategory = "VTOL",
 			},
 		},

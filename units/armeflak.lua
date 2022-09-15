@@ -17,7 +17,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "57 40 60",
-		
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -33,7 +32,7 @@ return {
 		losemitheight = 26,
 		maneuverleashlength = 1200,
 		mass = 6554,
-		maxdamage = 8185,
+		maxdamage = 9485,
 		maxslope = 18,
 		maxvelocity = 1.75,
 		maxwaterdepth = 12,
