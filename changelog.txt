@@ -1,9 +1,10 @@
-4.29 => 4.30
+ 4.29 => 4.30
 2022-09-09
 
 Balance :
 - Revert changes for all AA
 - Mobile Tackyon : Increase cost 1.2KM=>1.4K. Decrease speed 1.2=>1.1
+- Increase Nuke limit to 15 (from 12)
 
 4.28 => 4.29
 2022-09-09
