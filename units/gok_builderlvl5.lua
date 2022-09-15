@@ -67,7 +67,7 @@ return {
 			[11] = "gok_silo2",
 			[12] = "gok_dmc",
 			[13] = "gok_meteor1",
-			--[14] = "gok_planetkiller",
+			[14] = "gok_cain",
 		},
 		customparams = {
 			buildpic = "gok_builderlvl5.dds",

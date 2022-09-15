@@ -134,7 +134,7 @@ return {
 				texture2 = "NULL",
 				texture3 = "NULL",
 				texture4 = "EMG",
-				thickness = 13,
+				thickness = 26,
 				turret = true,
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
