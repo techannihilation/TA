@@ -70,7 +70,7 @@
 			[10] = "gok_asy",
 			[11] = "gok_esy",
 			[12] = "gok_plat",
-			--[13] = "",
+      [13] = "gok_ehpns",
 			[14] = "gok_fnanotc1",
 			[15] = "gok_fgate",
 		},

@@ -5,10 +5,20 @@
 
 piece  base, body, bigsphere, sphere, support,
        turret, sleeves, flare1, flare2,
-       turret2, msl11, msl12, msl13, msl14, msl15, msl16;
+       turret2, msl11, msl12, msl13, msl14, msl15, msl16,
+       wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8;
 
-static-var  gun_1, gun_2;
+static-var  gun_1, gun_2, bStating;
 
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM2			4
+#define SIG_MOVE			8
+
+setSFXoccupy(state)
+{
+	bStating = state;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -37,6 +47,83 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	var Func_Var_1, Func_Var_2;
+	Func_Var_1 = 3;
+	Func_Var_2 = 4;
+	while( TRUE )
+	{
+		if( bStating == 1 )
+		{
+			emit-sfx Func_Var_1 from wake1;
+			emit-sfx Func_Var_1 from wake2;
+			emit-sfx Func_Var_1 from wake3;
+			emit-sfx Func_Var_1 from wake4;
+			emit-sfx Func_Var_1 from wake5;
+			emit-sfx Func_Var_1 from wake6;
+			emit-sfx Func_Var_1 from wake7;
+			emit-sfx Func_Var_1 from wake8;
+			emit-sfx Func_Var_2 from wake1;
+			emit-sfx Func_Var_2 from wake2;
+			emit-sfx Func_Var_2 from wake3;
+			emit-sfx Func_Var_2 from wake4;
+			emit-sfx Func_Var_2 from wake5;
+			emit-sfx Func_Var_2 from wake6;
+			emit-sfx Func_Var_2 from wake7;
+			emit-sfx Func_Var_2 from wake8;
+		}
+		if( bStating == 2 )
+		{
+			emit-sfx Func_Var_1 from wake1;
+			emit-sfx Func_Var_1 from wake2;
+			emit-sfx Func_Var_1 from wake3;
+			emit-sfx Func_Var_1 from wake4;
+			emit-sfx Func_Var_1 from wake5;
+			emit-sfx Func_Var_1 from wake6;
+			emit-sfx Func_Var_1 from wake7;
+			emit-sfx Func_Var_1 from wake8;
+			emit-sfx Func_Var_2 from wake1;
+			emit-sfx Func_Var_2 from wake2;
+			emit-sfx Func_Var_2 from wake3;
+			emit-sfx Func_Var_2 from wake4;
+			emit-sfx Func_Var_2 from wake5;
+			emit-sfx Func_Var_2 from wake6;
+			emit-sfx Func_Var_2 from wake7;
+			emit-sfx Func_Var_2 from wake8;
+		}
+		if( bStating == 3 )
+		{
+			emit-sfx Func_Var_1 from wake1;
+			emit-sfx Func_Var_1 from wake2;
+			emit-sfx Func_Var_1 from wake3;
+			emit-sfx Func_Var_1 from wake4;
+			emit-sfx Func_Var_1 from wake5;
+			emit-sfx Func_Var_1 from wake6;
+			emit-sfx Func_Var_1 from wake7;
+			emit-sfx Func_Var_1 from wake8;
+			emit-sfx Func_Var_2 from wake1;
+			emit-sfx Func_Var_2 from wake2;
+			emit-sfx Func_Var_2 from wake3;
+			emit-sfx Func_Var_2 from wake4;
+			emit-sfx Func_Var_2 from wake5;
+			emit-sfx Func_Var_2 from wake6;
+			emit-sfx Func_Var_2 from wake7;
+			emit-sfx Func_Var_2 from wake8;
+		}
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	sleep 25;
+}
+
 Create()
 {
 	gun_1 = 0;
@@ -62,8 +149,8 @@ RestoreAfterDelay2()
 
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
 	move turret to y-axis [4.00] speed [15.00];
 	turn turret to y-axis heading speed <300.>;
 	turn sleeves to x-axis <0.> - pitch speed <300.>;
@@ -75,8 +162,8 @@ AimPrimary(heading, pitch)
 
 AimTertiary(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
 	move turret2 to y-axis [2.50] speed [15.00];
 	turn turret2 to y-axis heading speed <300.>;
 	turn turret2 to x-axis <0.> - pitch speed <300.>;
