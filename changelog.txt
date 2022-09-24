@@ -1,25 +1,17 @@
-<<<<<<< HEAD
 4.30 => 4.31
 2022-09-24
-=======
- 4.30 => 4.31
-2022-09-16
->>>>>>> 90e951c6e233be61df7b22dea276b1a0ddf138dd
 
 Balance :
 - Add 1K HP for all T3 Construction units
 - Expanse (T3 talon Hover) : Decrease stats and cost
-- Decrese covarage range of anties by around -10% for T2, -20% for T4 
+- Decrese covarage range of anties by around -10% for T2, -20% for T4
 
 Improvment :
  - Add TSAR Weapon for Gok
  - Add T3 Vehicle / Hover + naval series lab for Gok
  - Add T3 AA hover, T3 Beam Hover, T3 Amphibious Tank for Gok
  - Add T4 Nano naval for Gok
-<<<<<<< HEAD
  - Add T3 Construction Bot for Gok (remplace hover)
-=======
->>>>>>> 90e951c6e233be61df7b22dea276b1a0ddf138dd
 
 4.29 => 4.30
 2022-09-09
