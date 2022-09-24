@@ -1050,6 +1050,10 @@ sat_radar = {
     {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  gok_eck = {
+   {class='Bursts',options=shieldBursts150},
+   {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+ },
   gok_com3 = {
      {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
      {class='Bursts',options=shieldBursts200},

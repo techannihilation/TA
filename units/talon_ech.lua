@@ -33,7 +33,7 @@ return {
 		losemitheight = 25,
 		maneuverleashlength = 640,
 		mass = 4593,
-		maxdamage = 3795,
+		maxdamage = 4895,
 		maxslope = 16,
 		maxvelocity = 2,
 		maxwaterdepth = 0,

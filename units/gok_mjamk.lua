@@ -69,7 +69,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 60,
-				object = "gok_mjamk_DEAD",
+				object = "gok_mradk_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

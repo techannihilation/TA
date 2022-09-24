@@ -720,4 +720,13 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	gok_eck = {
+		{
+			name = "shield_gok_eck",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 }

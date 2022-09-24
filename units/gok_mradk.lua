@@ -53,7 +53,7 @@ return {
 		unitname = "gok_mradk",
 		customparams = {
 			buildpic = "gok_mradk.dds",
-			faction = "ARM",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {
