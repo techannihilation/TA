@@ -248,7 +248,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	
 	start-script ControlUnit();
 	start-script MotionControl();
-	//start-script PilotLight();
+	start-script PilotLight();
 	
 	while( TRUE )
 	{

@@ -4,10 +4,6 @@ return {
 		buildcostenergy = 131501,
 		buildcostmetal = 7095,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "gok_aoplane.dds",
 		buildpic = "gok_silo.dds",
 		buildtime = 250000,
 		canattack = true,
@@ -20,7 +16,7 @@ return {
 		firestandorders = 1,
 		firestate = 0,
 		footprintx = 6,
-		footprintz = 6,
+		footprintz = 8,
 		icontype = "building",
 		idleautoheal = 5,
 		idletime = 1800,
@@ -38,11 +34,10 @@ return {
 		sightdistance = 350,
 		standingfireorder = 0,
 		unitname = "gok_silo",
-		--usebuildinggrounddecal = true,
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "gok_silo.dds",
-			faction = "gok",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {

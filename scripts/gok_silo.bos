@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, fusee, door1, door2, door3, door4,
-       p1, p2, p3, p4, fire;
+piece  base, body, fusee,fire, 
+	   udoor, ddoor, ldoor, rdoor;
 
 static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
@@ -43,16 +43,21 @@ Activatescr()
 {
 	if( TRUE )
 	{
-		//move door1 to y-axis [-0.500000] speed [1.000000];
-		//move door2 to y-axis [-0.500000] speed [1.000000];
-		//move door3 to y-axis [-0.500000] speed [1.000000];
-		//move door4 to y-axis [-0.500000] speed [1.000000];
-		turn door1 to x-axis <0.0> speed <15.000000>;
-		turn door2 to z-axis <0.000000> speed <15.000000>;
-		turn door3 to x-axis <0.000000> speed <15.000000>;
-		turn door4 to z-axis <0.000000> speed <15.000000>;
-		sleep 7500;
-		gun_1 = body;
+		show fusee;
+		//turn udoor to x-axis <-30.> speed <50.>;
+		//turn ddoor to x-axis <30.> speed <50.>;
+		//turn ldoor to z-axis <30.> speed <50.>;
+		//turn rdoor to z-axis <-30.> speed <50.>;
+		//wait-for-turn udoor around x-axis;
+		//wait-for-turn ddoor around x-axis;
+		//wait-for-turn ldoor around z-axis;
+		//wait-for-turn rdoor around z-axis;
+		
+		move fusee to y-axis [8.0] speed [1.25];
+		wait-for-move fusee along y-axis;
+		
+		sleep 2000;
+		gun_1 = 1;
 	}
 	sleep 25;
 }
@@ -61,19 +66,22 @@ Deactivatescr()
 {
 	if( TRUE )
 	{
-		gun_1 = base;
-		turn door1 to x-axis <90.0> speed <50.000000>;
-		turn door2 to z-axis <-90.0> speed <50.000000>;
-		turn door3 to x-axis <-90.0> speed <50.000000>;
-		turn door4 to z-axis <90.0> speed <50.000000>;
-		sleep 300;
+		gun_1 = 0;
+		//turn udoor to x-axis <0.> speed <100.>;
+		//turn ddoor to x-axis <0.> speed <100.>;
+		//turn ldoor to z-axis <0.> speed <100.>;
+		//turn rdoor to z-axis <0.> speed <100.>;
+		//wait-for-turn udoor around x-axis;
+		//wait-for-turn ddoor around x-axis;
+		//wait-for-turn ldoor around z-axis;
+		//wait-for-turn rdoor around z-axis;
+		move fusee to y-axis [0.0] now;
 	}
-	sleep 15;
+	sleep 300;
 }
 
 Go()
 {
-	show fusee;
 	call-script Activatescr();
 }
 
@@ -118,11 +126,7 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	hide fusee;
-	turn door1 to x-axis <90.0> now;
-	turn door2 to z-axis <-90.0> now;
-	turn door3 to x-axis <-90.0> now;
-	turn door4 to z-axis <90.0> now;
-	gun_1 = base;
+	gun_1 = 0;
 	restore_delay = 3000;
 	call-script InitState();
 	start-script SmokeUnit();
@@ -161,9 +165,8 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 from fire;
-	sleep 2000;
 	hide fusee;
-	gun_1 = base;
+	gun_1 = 0;
 	start-script RequestState(1);
 }
 
@@ -187,10 +190,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode p1 type NOHEATCLOUD;
-		explode p2 type NOHEATCLOUD;
-		explode p3 type NOHEATCLOUD;
-		explode p4 type NOHEATCLOUD;
+
 		explode body type NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -198,17 +198,11 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
-		explode p1 type NOHEATCLOUD | SHATTER;
-		explode p2 type NOHEATCLOUD | SHATTER;
-		explode p3 type NOHEATCLOUD | SHATTER;
-		explode p4 type NOHEATCLOUD | SHATTER;
+		
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD;
-	explode p1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode p2 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode p3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode p4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	
 	return (corpsetype);
 }
