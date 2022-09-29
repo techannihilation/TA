@@ -167,7 +167,6 @@ return {
 	--"corcsat",
 	--"talon_csat",
 	"corslander",
-	"talon_skynet",
 },
 
 	--### SEA ###
@@ -404,7 +403,6 @@ return {
 		"gok_nanotc2",
 		"gok_nanotc3",
 		"gok_nanotc4",
-		"gok_nanotc",
 		"gok_fnanotc1",
 		"gok_fnanotc2",
 		"gok_fnanotc3",

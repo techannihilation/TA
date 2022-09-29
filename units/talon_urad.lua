@@ -60,7 +60,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 184,
-				object = "talon_urad_head",
+				--object = "talon_urad_head",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

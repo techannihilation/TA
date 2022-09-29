@@ -49,7 +49,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				object = "gok_emstor_dead",
+				--object = "gok_emstor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

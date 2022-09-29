@@ -62,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 1087,
-				object = "gok_famkr_DEAD",
+				--object = "gok_famkr_DEAD",
 				reclaimable = true,
 			},
 			heap = {

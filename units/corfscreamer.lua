@@ -65,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1359,
-				object = "corfscreamer_DEAD",
+				--object = "corfscreamer_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

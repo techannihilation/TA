@@ -73,7 +73,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 764,
-				object = "gok_hpns_DEAD",
+				--object = "gok_hpns_DEAD",
 				reclaimable = true,
 			},
 			heap = {

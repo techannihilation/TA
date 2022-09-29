@@ -74,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 420,
-				object = "gok_pains_DEAD",
+				--object = "gok_pains_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

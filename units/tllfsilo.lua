@@ -49,7 +49,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 121500,
-				object = "tllfsilo_dead",
+				--object = "tllfsilo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

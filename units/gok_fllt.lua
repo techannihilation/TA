@@ -62,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "gok_fllt_DEAD",
+				--object = "gok_fllt_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

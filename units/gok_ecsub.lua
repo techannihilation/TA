@@ -88,7 +88,7 @@
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2037,
-				object = "gok_ecsub_dead",
+				--object = "gok_ecsub_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

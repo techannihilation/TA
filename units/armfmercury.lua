@@ -63,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1237,
-				object = "armfmercury_DEAD",
+				--object = "armfmercury_DEAD", -- not exist yet
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

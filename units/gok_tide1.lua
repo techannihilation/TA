@@ -49,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 159,
-				object = "gok_tide1_dead",
+				--object = "gok_tide1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
