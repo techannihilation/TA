@@ -60,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3192,
-				object = "5X5Z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

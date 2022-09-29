@@ -66,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 198,
-				object = "chicken_DEAD",
+				--object = "chicken_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

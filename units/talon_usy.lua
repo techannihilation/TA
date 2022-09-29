@@ -60,7 +60,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 12000,
-				object = "talon_usy_DEAD",
+				--object = "talon_usy_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

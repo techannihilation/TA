@@ -63,7 +63,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 15360,
-				object = "SAT_LAB_DEAD",
+				--object = "SAT_LAB_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

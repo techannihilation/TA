@@ -60,7 +60,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 12000,
-				object = "tllusy_DEAD",
+				--object = "tllusy_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

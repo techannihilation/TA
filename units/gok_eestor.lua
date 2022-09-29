@@ -55,7 +55,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7500,
-				object = "gok_eestor_DEAD",
+				--object = "gok_eestor_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
