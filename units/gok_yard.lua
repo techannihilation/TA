@@ -42,12 +42,12 @@ return {
 		unitname = "gok_yard",
 		usebuildinggrounddecal = true,
 		workertime = 3800,
-		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
+		yardmap = "oooooooooooooooooooo oooooooooooooooooooo ooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo ooooooooooooooooooo oooooooooooooooooooo oooooooooooooooooooo",
 		buildoptions = {
 			[1] = "gok_builderlvl5",
 			[2] = "gok_octopus",
 			[3] = "gok_apocalypse",
-			--[4] = "gok_tzenth",
+			--[4] = "",
 		},
 		customparams = {
 			buildpic = "gok_yard.dds",

@@ -45,7 +45,7 @@ return {
 		unitname = "gok_ehpns",
 		waterline = 5,
 		workertime = 400,
-		yardmap = "wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww",
+		yardmap = "wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww wwwwccccccccwwww",
 		buildoptions = {
 			[1] = "gok_ech",
 			[2] = "gok_abyss",

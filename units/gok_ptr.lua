@@ -48,7 +48,7 @@ return {
 		turnrate = 0,
 		unitname = "gok_ptr ",
 		usebuildinggrounddecal = true,
-		yardmap = "oooooooooooooooo",
+		yardmap = "oooooo oooooo oooooo oooooo oooooo oooooo",
 		customparams = {
 			buildpic = "gok_ptr.dds",
 			faction = "GOK",

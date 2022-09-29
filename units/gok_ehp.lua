@@ -46,7 +46,7 @@ return {
 		unitname = "gok_ehp",
 		usebuildinggrounddecal = true,
 		workertime = 400,
-		yardmap = "ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo",
+		yardmap = "ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo",
 		buildoptions = {
 			[1] = "gok_ech",
 			[2] = "gok_abyss",

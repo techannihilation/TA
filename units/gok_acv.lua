@@ -70,7 +70,7 @@ return {
 			--[4] = "",
 			[5] = "gok_amaker",
 			[6] = "gok_moho",
-			[7] = "gok_moho",
+			[7] = "gok_imoho",
 			[8] = "gok_amstor",
 			[9] = "gok_aestor",
 			[10] = "gok_vp",

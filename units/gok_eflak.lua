@@ -44,7 +44,7 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "gok_eflak",
-		yardmap = "oo oo",
+		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "gok_eflak.dds",
 			faction = "gok",
