@@ -31,13 +31,15 @@ for i = 1, #UnitDefs do
 end
 
 local cbackground, cborder = include("Configs/ui_config.lua")
+local sy_offset = 94
+local clampY = CanvasY - sy_offset
 
 local Config = {
 	tooltip = {
 		px = 0, --default start position
-		py = CanvasY - 94,
+		py = clampY,
 		sx = 320, --background size
-		sy = 94,
+		sy = sy_offset,
 		fontsize = 13,
 		margin = 5, --distance from background border
 		cbackground = cbackground,
@@ -393,7 +395,14 @@ end
 --load config
 function widget:SetConfigData(data)
 	if data.Config ~= nil then
-		data.Config.tooltip.px = Config.tooltip.px
-		data.Config.tooltip.py = Config.tooltip.py
+		Config.tooltip.px = data.Config.tooltip.px
+		Config.tooltip.py = data.Config.tooltip.py
+
+		if Config.tooltip.py < 1 then
+			Config.tooltip.py = clampY
+		end
+		if Config.tooltip.py > clampY then
+			Config.tooltip.py = clampY
+		end
 	end
 end
