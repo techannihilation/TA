@@ -3249,6 +3249,9 @@ function widget:Initialize()
 	if not WG["background_opacity_custom"] then
 		WG["background_opacity_custom"] = {0, 0, 0, 0.5}
 	end
+	if WG.Lups then
+		Spring.SetConfigInt("LupsPriority", Spring.GetConfigInt("LupsPriority", 1))
+	end
 
 	--if Platform ~= nil and Platform.gpuVendor ~= "Nvidia" then	-- because UsePBO displays tiled map texture bug for ATI/AMD cards
 	Spring.SetConfigInt("UsePBO", 0)
