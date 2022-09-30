@@ -13,7 +13,7 @@ function widget:GetInfo()
 end
 
 local NeededFrameworkVersion = 8
-local CanvasX, CanvasY = 1440, 900 --resolution in which the widget was made (for 1:1 size)
+local CanvasX, CanvasY = 0, 800
 local iconsizeMaster = 96
 local iconsize = iconsizeMaster
 local oldUnitpicsDir = LUAUI_DIRNAME .. "Images/oldunitpics/"
@@ -393,7 +393,7 @@ end
 --load config
 function widget:SetConfigData(data)
 	if data.Config ~= nil then
-		Config.tooltip.px = data.Config.tooltip.px
-		Config.tooltip.py = data.Config.tooltip.py
+		data.Config.tooltip.px = Config.tooltip.px
+		data.Config.tooltip.py = Config.tooltip.py
 	end
 end
