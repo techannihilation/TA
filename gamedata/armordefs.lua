@@ -403,10 +403,7 @@ return {
 		"gok_nanotc2",
 		"gok_nanotc3",
 		"gok_nanotc4",
-<<<<<<< HEAD
 		"gok_fnanotc",
-=======
->>>>>>> ff1d4f26ecb5ae50fe3e88f296f2526e9bd2e828
 		"gok_fnanotc1",
 		"gok_fnanotc2",
 		"gok_fnanotc3",
