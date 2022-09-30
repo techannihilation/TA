@@ -34,7 +34,7 @@ return {
 		sightdistance = 350,
 		standingfireorder = 0,
 		unitname = "gok_silo",
-		yardmap = "oooo oooo oooo oooo",
+		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			buildpic = "gok_silo.dds",
 			faction = "GOK",
