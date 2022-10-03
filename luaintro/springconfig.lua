@@ -36,12 +36,10 @@ Spring.SetConfigFloat("CrossAlpha", 0)
 Spring.SetConfigInt("UnitLodDist", 999999)
 Spring.SetConfigInt("Vsync", 0)
 Spring.SetConfigInt("MaxParticles", 9000)
+Spring.SetConfigInt("MaxNanoParticles", 0)
+
 Spring.SetConfigInt("AllowDeferredMapRendering", 1)
 Spring.SetConfigInt("AllowDeferredModelRendering", 1)
-
-if Spring.GetConfigInt("MSAALevel", 0) == 0 then
-	Spring.SetConfigInt("MSAALevel", 4)
-end
 
 if Spring.GetConfigInt("UnitIconDist", 0) == 0 then
 	Spring.SetConfigInt("UnitIconDist", 120)
@@ -52,23 +50,11 @@ if Spring.GetConfigInt("Shadows", 0) == 2 then
 end
 
 Spring.SetConfigInt("MiniMapDrawProjectiles", 0)
-
 Spring.SetConfigInt("MiniMapDrawCommands", 0)
 
 Spring.SetConfigInt("BlockCompositing", 1)
-
 Spring.SetConfigInt("HardwareCursor", 1)
-
 Spring.SetConfigInt("MapBorder", 1)
-
 Spring.SetConfigInt("EdgeMoveWidth", 0)
 Spring.SetConfigInt("EdgeMoveDynamic", 0)
 Spring.SetConfigInt("CamMode", 1)
-
-if Spring.GetConfigInt("OverheadScrollSpeed", 0) == 10 then
-	Spring.SetConfigInt("OverheadScrollSpeed", 35)
-end
-
-if Spring.GetConfigInt("ScrollWheelSpeed", 0) == 25 then
-	Spring.SetConfigInt("ScrollWheelSpeed", 35)
-end
