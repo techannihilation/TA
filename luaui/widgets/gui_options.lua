@@ -1940,7 +1940,7 @@ function init()
 			name = "Anti Aliasing",
 			type = "slider",
 			min = 0,
-			max = 4,
+			max = 8,
 			step = 1,
 			value = tonumber(Spring.GetConfigInt("MSAALevel", 1) or 2),
 			description = "Enables multisample anti-aliasing. NOTE: Can be expensive!\n\nChanges will be applied next game"
@@ -3253,24 +3253,6 @@ function widget:Initialize()
 		Spring.SetConfigInt("LupsPriority", Spring.GetConfigInt("LupsPriority", 1))
 	end
 
-	--if Platform ~= nil and Platform.gpuVendor ~= "Nvidia" then	-- because UsePBO displays tiled map texture bug for ATI/AMD cards
-	Spring.SetConfigInt("UsePBO", 0)
-	--end
-	--Spring.SendCommands("minimap unitsize "..minimapIconsize)		-- spring wont remember what you set with "/minimap iconssize #"
-	-- making sure a redui console is displayed without the alternatives in play
-	--[[
-	if widgetHandler.orderList["Red Console (old)"] ~= nil and widgetHandler.orderList["Red Console (In-game chat only)"] ~= nil and widgetHandler.orderList["Red Console (Battle and autohosts)"] ~= nil then
-		if widgetHandler.orderList["Red Console (old)"] == 0 and (widgetHandler.orderList["Red Console (In-game chat only)"] == 0 or widgetHandler.orderList["Red Console (Battle and autohosts)"] == 0) then
-			widgetHandler:EnableWidget("Red Console (In-game chat only)")
-			widgetHandler:EnableWidget("Red Console (Battle and autohosts)")
-			Spring.SendCommands("luarules reloadluaui")
-		elseif widgetHandler.orderList["Red Console (old)"] > 0 and (widgetHandler.orderList["Red Console (In-game chat only)"] > 0 or widgetHandler.orderList["Red Console (Battle and autohosts)"] > 0) then
-			widgetHandler:DisableWidget("Red Console (In-game chat only)")
-			widgetHandler:DisableWidget("Red Console (Battle and autohosts)")
-			Spring.SendCommands("luarules reloadluaui")
-		end
-	end
---]]
 	Spring.SendCommands({"bind f10 options"})
 	WG["options"] = {}
 

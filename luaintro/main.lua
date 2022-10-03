@@ -53,6 +53,7 @@ VFS.Include("LuaHandler/Utilities/utils.lua", nil, VFS.DEF_MODE)
 
 --// the addon handler
 include "LuaHandler/handler.lua"
+include "springconfig.lua"
 
 --// print Lua & LuaUI version
 Spring.Log(LUA_NAME, "info", LUA_VERSION .. " (" .. _VERSION .. ")")

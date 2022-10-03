@@ -191,9 +191,9 @@ function widget:Shutdown()
 	for i=1,#drawlist do
 		glDeleteList(drawlist[i])
 	end
-	Spring.SendCommands("fps 1")
-	Spring.SendCommands("clock 1")
-	Spring.SendCommands("speed 1")
+	--Spring.SendCommands("fps 1")
+	--Spring.SendCommands("clock 1")
+	--Spring.SendCommands("speed 1")
 	WG['displayinfo'] = nil
 end
 

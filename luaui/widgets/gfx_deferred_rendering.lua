@@ -310,9 +310,6 @@ function widget:Initialize()
 		widgetHandler:RemoveWidget(self)
 		return
 	end
-	
-	Spring.SetConfigInt("AllowDeferredMapRendering", 1)
-	Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 
 	if (Spring.GetConfigString("AllowDeferredMapRendering") == '0' or Spring.GetConfigString("AllowDeferredModelRendering") == '0') then
 		Spring.Echo('Deferred Rendering (gfx_deferred_rendering.lua) requires  AllowDeferredMapRendering and AllowDeferredModelRendering to be enabled in springsettings.cfg!') 
