@@ -52,7 +52,7 @@ end
 Spring.SetConfigInt("MiniMapDrawProjectiles", 0)
 Spring.SetConfigInt("MiniMapDrawCommands", 0)
 
-Spring.SetConfigInt("BlockCompositing", 0) -- old hardware not support 1 !
+Spring.SetConfigInt("BlockCompositing", 1)
 Spring.SetConfigInt("HardwareCursor", 1)
 Spring.SetConfigInt("MapBorder", 1)
 Spring.SetConfigInt("EdgeMoveWidth", 0)
