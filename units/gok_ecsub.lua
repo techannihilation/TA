@@ -16,7 +16,6 @@
 		category = "ALL LARGE MOBILE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "55 30 80",
-		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -71,7 +70,7 @@
       [10] = "gok_sy",
       [11] = "gok_asy",
       [12] = "gok_esy",
-      --[13] = "gok_usy",
+      [13] = "gok_usy",
       [14] = "gok_fnanotc2",
       [15] = "gok_fgate1",
 		},

@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "LEVEL2 ALL UNDERWATER SURFACE",
-		collisionvolumeoffsets = "0 30 0",
+		collisionvolumeoffsets = "0 -30 0",
 		collisionvolumescales = "227 123 227",
 		collisionvolumetype = "Box",
 		corpse = "dead",
