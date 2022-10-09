@@ -1937,11 +1937,11 @@ function init()
 		{
 			id = "msaa",
 			group = "gfx",
-			name = "Anti Aliasing",
+			name = "Anti Aliasing (MSAA)",
 			type = "slider",
 			min = 0,
-			max = 8,
-			step = 1,
+			max = 16,
+			step = 2,
 			value = tonumber(Spring.GetConfigInt("MSAALevel", 1) or 2),
 			description = "Enables multisample anti-aliasing. NOTE: Can be expensive!\n\nChanges will be applied next game"
 		},
