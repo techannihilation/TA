@@ -48,7 +48,7 @@ return {
 		yardmap = "wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw",
 		buildoptions = {
 			[1] = "gok_csub",
-			--[2] = "",
+			[2] = "gok_recl",
 			[3] = "gok_ssub",
 			[4] = "gok_corvette",
 			[5] = "gok_sub",
@@ -65,7 +65,7 @@ return {
 				blocking = false,
 				collisionvolumeoffsets = -7,
 				collisionvolumescales = "116 52 116",
-				
+
 				collisionvolumetype = "Box",
 				damage = 2720,
 				description = "Shipyard Wreckage",

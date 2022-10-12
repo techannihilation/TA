@@ -48,9 +48,10 @@ return {
 			[1] = "gok_ach",
 			[2] = "gok_engineerh",
 			[3] = "gok_agrat",
-			[4] = "gok_seastrike1",
-			[5] = "gok_sunstrike",
-			[6] = "gok_nightfall",
+			[4] = "gok_cancer",
+			[5] = "gok_seastrike1",
+			[6] = "gok_sunstrike",
+			[7] = "gok_nightfall",
 		},
 		customparams = {
 			buildpic = "gok_ahpns.dds",

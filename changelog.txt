@@ -1,3 +1,10 @@
+ 4.31 => 4.32
+2022-09-24
+
+Improvment :
+ - Add Rez Sub for Gok
+ - Add AntiSub Hover T2 for Gok
+
  4.30 => 4.31
 2022-09-24
 
