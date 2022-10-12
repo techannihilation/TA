@@ -7,7 +7,7 @@ function gadget:GetInfo()
 		date = '01/11/2021',
 		license = 'WTFPL',
 		layer = 0,
-		enabled = true
+		enabled = false
 	}
 end
 
