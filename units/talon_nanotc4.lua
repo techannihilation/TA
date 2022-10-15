@@ -52,16 +52,6 @@ return {
 		turnrate = 1,
 		unitname = "talon_nanotc4",
 		workertime = 7200,
-		buildoptions = {
-			--[1] = "",
-			--[2] = "",
-			--[3] = "",
-			--[4] = "",
-			--[5] = "",
-			--[6] = "",
-			--[7] = "",
-			--[8] = "",
-		},
 		customparams = {
 			buildpic = "talon_nanotc4.dds",
 			faction = "TALON",

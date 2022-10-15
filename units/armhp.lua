@@ -62,6 +62,7 @@ return {
 			buildpic = "armhp.dds",
 			faction = "ARM",
 			providetech = "T1 Factory",
+			labTechLevel = 1,
 		},
 		featuredefs = {
 			dead = {
