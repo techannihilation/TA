@@ -53,6 +53,7 @@
 		customparams = {
 			buildpic = "talon_covertopscentre.dds",
 			faction = "TALON",
+			providetech = "T5 Factory",
 		},
 		featuredefs = {
 			dead = {

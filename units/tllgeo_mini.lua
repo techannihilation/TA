@@ -29,7 +29,7 @@ return {
 		maxdamage = 595,
 		maxslope = 20,
 		maxwaterdepth = 9999,
-		name = "Geothermal Powerplant",
+		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
 		objectname = "TLLGEO_MINI",
 		onoffable = true,
