@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 727,
 		builder = false,
 		buildpic = "gok_imoho.dds",
-		buildtime = 1800,
+		buildtime = 18000,
 		category = "ALL SURFACE",
 		cloakcost = 25,
 		collisionvolumeoffsets = "0 0 0",
