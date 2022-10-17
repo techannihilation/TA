@@ -17,7 +17,7 @@ if not gadgetHandler:IsSyncedCode() then return false end
 --------------------------------------------------------------------------------
 -- Speedups
 --------------------------------------------------------------------------------
-local StartingPowerPercent = 30
+local StartingPowerPercent = 5
 local SetUnitShieldState = Spring.SetUnitShieldState
 
 --------------------------------------------------------------------------------

@@ -1,6 +1,9 @@
  4.31 => 4.32
 2022-09-24
 
+Major Balance :
+ - Shields starts at 5% instaed 30%
+
 Balance :
  - Balance all T4 Lab buildtime (1M)
  - Gok T2 Invisible Mex : Increase buildtime to 18K
