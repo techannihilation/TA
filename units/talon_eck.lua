@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canreclaim = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -9 0",
 		collisionvolumescales = "60 80 60",
 		collisionvolumetype = "Ell",

@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 14,
 		buildinggrounddecaltype = "talon_lab_aoplane.dds",
 		buildpic = "talon_podlab.dds",
-		buildtime = 342000,
+		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

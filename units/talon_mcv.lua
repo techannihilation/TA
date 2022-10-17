@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Experimental Siege Tank",
 		downloadable = 1,
-		explodeas = "KROG_BLASTER",
+		explodeas = "KROG_BLAST",
 		firestandorders = 1,
 		footprintx = 8,
 		footprintz = 8,

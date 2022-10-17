@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 24,
 		buildinggrounddecaltype = "gok_aoplane.dds",
 		buildpic = "gok_ulab.dds",
-		buildtime = 342000,
+		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,

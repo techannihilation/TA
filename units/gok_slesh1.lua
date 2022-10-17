@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizey = 7,
 		buildinggrounddecaltype = "gok_aoplane.dds",
 		buildpic = "gok_slesh1.dds",
-		buildtime = 28000,
+		buildtime = 145000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

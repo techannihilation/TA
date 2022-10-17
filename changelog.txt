@@ -1,9 +1,18 @@
  4.31 => 4.32
 2022-09-24
 
+Balance :
+ - Balance all T4 Lab buildtime (1M)
+ - Gok T2 Invisible Mex : Increase buildtime to 18K
+ - Gok T3 Beam Def : Increase buildtime to 145K
+
 Improvment :
  - Add Rez Sub for Gok
  - Add AntiSub Hover T2 for Gok
+ - Ultimate Core Fusion : Increase X/Z pixel to 25*25 (same as Arm)
+
+Fix :
+- Talon T3 Kbot Cons can be targetable
 
  4.30 => 4.31
 2022-09-24
