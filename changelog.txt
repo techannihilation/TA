@@ -9,6 +9,7 @@ Balance :
  - Gok T2 Invisible Mex : Increase buildtime to 18K
  - Gok T3 Beam Def : Increase buildtime to 145K
  - Delete Tesla TLL Tower. Remplace it by Flamer.
+ - Reduce time for T2=>T3 Arm Geo morphing. Reduce buildtime 250K=>125K
 
 Improvment :
  - Add Rez Sub for Gok

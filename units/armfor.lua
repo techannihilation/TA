@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armfor_aoplane.dds",
 		buildpic = "armfor.dds",
-		buildtime = 250000,
+		buildtime = 125000,
 		category = "ALL SURFACE UNDERWATER",
 		description = "Produces Energy (Amphibious)",
 		energymake = 5000,

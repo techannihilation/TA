@@ -267,7 +267,7 @@ local morphDefs = {
 	},
 	armgmm = {
 		into = 'armfor',
-		time = 60,
+		time = 25,
 		tech = 2,
 	},
 	talon_geo = {
