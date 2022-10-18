@@ -82,7 +82,7 @@ return {
 			[23] = "tllgate2",
 			[24] = "tlldt",
 			[26] = "tllllt",
-			[27] = "tllweb",
+			[27] = "tlllft",
 			[28] = "tllhlt",
 			[29] = "tlllbt",
 			[30] = "tllstuner",

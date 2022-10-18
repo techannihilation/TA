@@ -8,6 +8,7 @@ Balance :
  - Balance all T4 Lab buildtime (1M)
  - Gok T2 Invisible Mex : Increase buildtime to 18K
  - Gok T3 Beam Def : Increase buildtime to 145K
+ - Delete Tesla TLL Tower. Remplace it by Flamer.
 
 Improvment :
  - Add Rez Sub for Gok
