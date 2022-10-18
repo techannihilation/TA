@@ -48,7 +48,7 @@ return {
 		unitname = "talon_evp",
 		usebuildinggrounddecal = true,
 		workertime = 800,
-		yardmap = "ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo ooccccccccoo",
+		yardmap = "occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco occcccccccco",
 		buildoptions = {
 			[1] = "talon_ech",
 			[2] = "talon_azul",
