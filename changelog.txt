@@ -10,6 +10,7 @@ Balance :
  - Gok T3 Beam Def : Increase buildtime to 145K
  - Delete Tesla TLL Tower. Remplace it by Flamer.
  - Reduce time for T2=>T3 Arm Geo morphing. Reduce buildtime 250K=>125K
+ - T2 Gok Amon became a T3 LRPT High Trahjectory
 
 Improvment :
  - Add Rez Sub for Gok
