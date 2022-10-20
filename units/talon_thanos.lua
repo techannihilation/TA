@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Anti T3/T4 Gravitytank",
+		description = "Experimental Gravitytank",
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,
 		footprintx = 10,
