@@ -63,7 +63,7 @@ return {
 			[6] = "gok_harbinger",
 			[7] = "gok_hellfire",
 			[8] = "gok_valkyrie",
-			--[9] = "gok_amon",
+			[9] = "gok_junglenaut",
 			[10] = "gok_antichrist",
 		},
 		customparams = {

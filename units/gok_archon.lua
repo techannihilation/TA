@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-Terrain Psychic Shield quadrupod",
+		description = "All-Terrain Psychic Shield Quadrupod",
 		energystorage = 10000,
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,

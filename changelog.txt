@@ -11,11 +11,13 @@ Balance :
  - Delete Tesla TLL Tower. Remplace it by Flamer.
  - Reduce time for T2=>T3 Arm Geo morphing. Reduce buildtime 250K=>125K
  - T2 Gok Amon became a T3 LRPT High Trahjectory
+ - Gok Abyss : Decrease HP 22K=>20K
 
 Improvment :
  - Add Rez Sub for Gok
  - Add AntiSub Hover T2 for Gok
  - Ultimate Core Fusion : Increase X/Z pixel to 25*25 (same as Arm)
+ - Add T2 Gok Sumo (Junglenaut)
 
 Fix :
 - Talon T3 Kbot Cons can be targetable
