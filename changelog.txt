@@ -18,6 +18,7 @@ Improvment :
  - Add AntiSub Hover T2 for Gok
  - Ultimate Core Fusion : Increase X/Z pixel to 25*25 (same as Arm)
  - Add T2 Gok Sumo (Junglenaut)
+ - Add Rocket T2 Gok Quadrupod
 
 Fix :
 - Talon T3 Kbot Cons can be targetable
