@@ -57,7 +57,7 @@ return {
 			[5] = "talon_abaddon",
 			[6] = "talon_crystal",
 			[7] = "talon_repentance",
-			[8] = "talon_thanos",
+			[8] = "talon_sirius",
 			[9] = "talon_annubis",
 		},
 		customparams = {

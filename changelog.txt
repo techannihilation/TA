@@ -21,6 +21,7 @@ Improvment :
 
 Fix :
 - Talon T3 Kbot Cons can be targetable
+- Talon Sirius (Ex Thanos) µIncrease damage from 200 => 2000
 
  4.30 => 4.31
 2022-09-24
