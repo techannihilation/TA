@@ -125,7 +125,7 @@ return {
 		weapondefs = {
 			gok_lrpt = {
 				accuracy = 400,
-				areaofeffect = 192,
+				areaofeffect = 256,
 				avoidfeature = false,
 				cegtag = "gokblaster",
 				collidefriendly = false,
