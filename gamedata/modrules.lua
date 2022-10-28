@@ -22,7 +22,7 @@ local modrules  = {
 
   experience = {
     powerScale = 0,
-    healthScale = 0.25, 
+    healthScale = 0, -- disable 
     reloadScale= 0,
   },
 
