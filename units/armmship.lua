@@ -201,7 +201,7 @@ return {
 				turnrate = 30000,
 				turret = true,
 				weaponacceleration = 90,
-				weapontimer = 5,
+				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 450,
 				damage = {

@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT3",
 		name = "Defiler",
 		noautofire = false,
-		
+
 		objectname = "CORMONSTA",
 		onoffable = true,
 		radaremitheight = 31,
@@ -175,7 +175,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
-				startvelocity = 520,
+				startvelocity = 600,
 				texture1 = "null",
 				texture2 = "coresmoketrail",
 				texture3 = "null",
@@ -184,10 +184,10 @@ return {
 				tracks = true,
 				turnrate = 68000,
 				turret = true,
-				weaponacceleration = 160,
+				weaponacceleration = 200,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 700,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 15,
 					default = 5,

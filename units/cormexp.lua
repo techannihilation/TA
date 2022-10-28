@@ -142,7 +142,7 @@ return {
 				startvelocity = 450,
 				turret = true,
 				weaponacceleration = 150,
-				weapontimer = 5,
+				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 750,
 				damage = {

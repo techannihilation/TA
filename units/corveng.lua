@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Avenger",
 		noautofire = false,
-		
+
 		objectname = "CORVENG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
@@ -114,10 +114,10 @@ return {
 				tolerance = 8000,
 				tracks = true,
 				turnrate = 24000,
-				weaponacceleration = 150,
-				weapontimer = 5,
+				weaponacceleration = 200,
+				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 750,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 30,
 					default = 5,

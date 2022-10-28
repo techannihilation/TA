@@ -15,7 +15,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "180 105 190",
-		
+
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -189,7 +189,7 @@ return {
 				turnrate = 22000,
 				turret = true,
 				weaponacceleration = 150,
-				weapontimer = 5,
+				weapontimer = 2,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 600,
 				damage = {

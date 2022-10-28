@@ -18,7 +18,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 3 0",
 		collisionvolumescales = "110 48 120",
-		
+
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -148,7 +148,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "packolau",
 				soundtrigger = true,
-				startvelocity = 520,
+				startvelocity = 600,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -156,10 +156,10 @@ return {
 				tracks = true,
 				turnrate = 68000,
 				turret = true,
-				weaponacceleration = 160,
-				weapontimer = 5,
+				weaponacceleration = 200,
+				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 800,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 12.5,
 					default = 5,

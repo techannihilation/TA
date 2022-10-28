@@ -111,10 +111,10 @@ return {
 				tolerance = 8000,
 				tracks = true,
 				turnrate = 24000,
-				weaponacceleration = 150,
-				weapontimer = 5,
+				weaponacceleration = 200,
+				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 750,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 20,
 					default = 5,
