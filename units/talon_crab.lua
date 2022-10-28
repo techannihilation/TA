@@ -16,7 +16,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-3 -5 2",
 		collisionvolumescales = "65 60 55",
-		
+
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -185,7 +185,7 @@ return {
 				soundstart = "rocklit1",
 				soundtrigger = true,
 				sprayangle = 250,
-				startvelocity = 750,
+				startvelocity = 600,
 				texture2 = "coresmoketrail",
 				tracks = true,
 				turnrate = 25000,
@@ -193,7 +193,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 3,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 850,
+				weaponvelocity = 1200,
 				wobble = 1800,
 				damage = {
 					areoship = 30,

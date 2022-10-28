@@ -162,7 +162,7 @@ return {
 				trajectoryheight = 0.45,
 				turnrate = 22000,
 				turret = true,
-				weaponacceleration = 70,
+				weaponacceleration = 100,
 				weapontimer = 5,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 800,

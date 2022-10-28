@@ -16,7 +16,7 @@ return {
 		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 -4",
 		collisionvolumescales = "27 27 33",
-		
+
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -146,7 +146,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
-				startvelocity = 650,
+				startvelocity = 600,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -155,10 +155,10 @@ return {
 				tracks = true,
 				turnrate = 48000,
 				turret = true,
-				weaponacceleration = 141,
+				weaponacceleration = 200,
 				weapontimer = 5,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 850,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 20,
 					default = 5,

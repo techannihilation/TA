@@ -145,7 +145,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
-				startvelocity = 400,
+				startvelocity = 600,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -156,7 +156,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 3,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 1400,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 20,
 					default = 5,

@@ -16,7 +16,7 @@ return {
 		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 1",
 		collisionvolumescales = "37 37 37",
-		
+
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -140,7 +140,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
-				startvelocity = 650,
+				startvelocity = 600,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -148,10 +148,10 @@ return {
 				tracks = true,
 				turnrate = 63000,
 				turret = true,
-				weaponacceleration = 150,
+				weaponacceleration = 200,
 				weapontimer = 5,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 850,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 22.5,
 					default = 5,

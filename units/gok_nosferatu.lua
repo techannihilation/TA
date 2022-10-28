@@ -165,7 +165,7 @@ return {
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
 				soundstart = "rockhvy2",
-				startvelocity = 650,
+				startvelocity = 600,
 				texture1 = "null",
 				texture2 = "armsmoketrail",
 				texture3 = "null",
@@ -177,7 +177,7 @@ return {
 				weaponacceleration = 200,
 				weapontimer = 0.35,
 				weapontype = "StarburstLauncher",
-				weaponvelocity = 1000,
+				weaponvelocity = 1200,
 				damage = {
 					areoship = 26.25,
 					default = 5,
