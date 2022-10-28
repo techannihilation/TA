@@ -23,8 +23,7 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 -24 4",
 		collisionvolumescales = "118 118 243",
-		collisionvolumetype = "CylZ",
-
+		collisionvolumetype = "Ell",
 		cruisealt = 50,
 		defaultmissiontype = "VTOL_standby",
 		description = "Destroyer Areoship",

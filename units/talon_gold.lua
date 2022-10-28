@@ -21,7 +21,7 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 -13 -3",
 		collisionvolumescales = "80 23 76",
-		collisionvolumetype = "CylY",
+		collisionvolumetype = "Ell",
 		corpse = "heap",
 		cruisealt = 40,
 		description = "Destroyer Areoship",

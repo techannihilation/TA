@@ -19,7 +19,7 @@ return {
 		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 0 10",
-		collisionvolumescales = "280 200 520",
+		collisionvolumescales = "280 200 300",
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		cruisealt = 50,

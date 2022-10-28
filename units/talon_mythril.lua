@@ -392,12 +392,6 @@ return {
 				onlytargetcategory = "SURFACE",
 				--slaveTo = 1,
 			},
-			--[6] = {
-			--	badtargetcategory = "SMALL TINY MEDIUM",
-			--	def = "GATLING",
-			--	onlytargetcategory = "SURFACE",
-			--	slaveTo = 5,
-			--},
 			[6] = {
 				def = "SHIELD",
 				onlytargetcategory = "SURFACE",

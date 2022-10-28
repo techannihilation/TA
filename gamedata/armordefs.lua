@@ -158,10 +158,6 @@ return {
 	"gok_erez",
 
 	-- SATELLITE
-	--"sat_radar",
-	--"sat_interceptor",
-	--"sat_strike",
-	--"sat_antiair",
 	--"armcsat",
 	--"tllcsat",
 	--"corcsat",
@@ -323,6 +319,7 @@ return {
 		"gok_dome",
 		"gok_dome1",
 	},
+
 	flamethrowers = {
 		"corpyro",
 		"gok_hellfire",
