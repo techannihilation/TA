@@ -1,3 +1,16 @@
+4.32 => 4.33
+2022-10-29
+
+Balance :
+ - Fix all Missile from ground AA : Velocity start at 600 until 1200.
+
+Improvment :
+ - Add T4 AA Tower for Arm
+ - Add Corpse for talon Independence
+
+Fix :
+- T5 Aeroship collision Box (They took no damage vs beam weapon)
+
  4.31 => 4.32
 2022-10-22
 
