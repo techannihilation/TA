@@ -30,7 +30,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Dark Flail",
+		name = "Sun",
 		noautofire = false,
 		objectname = "arm_ucir",
 		onoffable = true,

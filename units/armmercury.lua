@@ -31,7 +31,7 @@ return {
 		maxslope = 20,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "armmercury",
+		name = "Mercury",
 		noautofire = false,
 		objectname = "armmercury",
 		radaremitheight = 62,

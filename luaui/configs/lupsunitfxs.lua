@@ -217,7 +217,10 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corsingularity = {
-    --{class='ShieldSphere',options=tllgorgonSphere},
+    {class='Bursts',options=shieldBursts700},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  armbeetle = {
     {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },

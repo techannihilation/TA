@@ -168,6 +168,15 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	armbeetle = {
+		{
+			name = "shield_arm_beetle",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	corsingularity = {
 		{
 			name = "shield_core_singularity",

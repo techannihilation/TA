@@ -15,8 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -15 0",
-		collisionvolumescales = "115 125 105",
-		
+		collisionvolumescales = "115 125 105",		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

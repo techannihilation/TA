@@ -35,7 +35,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "corsam",
+		name = "Cobra",
 		noautofire = false,
 		objectname = "corsam",
 		radaremitheight = 38,

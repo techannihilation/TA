@@ -56,9 +56,9 @@ return {
 		buildoptions = {
 			[1] = "armspid",
 			[2] = "armraptor",
-			[3] = "armpraet",
-			[4] = "armmcv1",
-			--[5] = "armexo",
+			[3] = "armbeetle",
+			[4] = "armpraet",
+			[5] = "armmcv1",
 			[6] = "armolympus",
 			[7] = "armmygalo",
 			[8] = "armstratus",

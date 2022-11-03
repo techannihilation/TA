@@ -1,0 +1,370 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, engine, teeth1, teeth2,
+		leg11, leg12, leg21, leg22, leg31, leg32, 
+		leg41, leg42, leg51, leg52, leg61, leg62,
+		tower, petal1,petal2, petal3, petal4, petal5, petal6,
+		emitter1, emitter2, emitter3, emitter4, emitter5, emitter6,
+		shield_pos;
+
+static-var  bMoving, bAiming, shield_onoff, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			16
+
+Shield()
+{
+	shield_onoff = !shield_onoff;
+}
+
+ShieldOn()
+{
+	turn emitter1 to x-axis <60.000000> speed <15.000000>;
+	turn emitter2 to x-axis <60.000000> speed <15.000000>;
+	turn emitter3 to x-axis <60.000000> speed <15.000000>;
+	turn emitter4 to x-axis <60.000000> speed <15.000000>;
+	turn emitter5 to x-axis <60.000000> speed <15.000000>;	
+	turn emitter6 to x-axis <60.000000> speed <15.000000>;
+}
+
+ShieldOff()
+{
+	turn emitter1 to x-axis <0.000000> speed <15.000000>;
+	turn emitter2 to x-axis <0.000000> speed <15.000000>;
+	turn emitter3 to x-axis <0.000000> speed <15.000000>;
+	turn emitter4 to x-axis <0.000000> speed <15.000000>;
+	turn emitter5 to x-axis <0.000000> speed <15.000000>;	
+	turn emitter6 to x-axis <0.000000> speed <15.000000>;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script ShieldOn();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script ShieldOff();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+
+
+Sensor()
+{
+	while (TRUE)
+	{
+		if(shield_onoff == 1)
+		{
+			start-script RequestState(0);
+		}
+		else
+		{
+			start-script RequestState(1);
+		}
+	
+	sleep 250;
+	
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script Sensor();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 66 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 66 | 1;
+			}
+			emit-sfx smoketype from body;
+			sleep 50;
+			emit-sfx smoketype from tower;
+			sleep 50;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	bMoving = TRUE;
+	while( bMoving )
+	{
+		if( bMoving )
+		{
+			turn leg21 to y-axis <6.000000> speed <39.000000>;
+			turn leg21 to z-axis <0.000000> speed <27.000000>;
+			turn leg41 to y-axis <-6.000000> speed <27.000000>;
+			turn leg61 to y-axis <0.000000> speed <39.000000>;
+			turn leg61 to z-axis <32.500000> speed <39.000000>;
+			turn leg11 to y-axis <0.000000> speed <39.000000>;
+			turn leg11 to z-axis <-32.500000> speed <24.000000>;
+			turn leg31 to y-axis <-6.000000> speed <39.000000>;
+			turn leg31 to z-axis <0.000000> speed <39.000000>;
+			turn leg51 to y-axis <6.000000> speed <27.000000>;
+			turn leg22 to z-axis <0.000000> speed <27.000000>;
+			turn leg62 to z-axis <-35.100000> speed <24.000000>;
+			turn leg12 to z-axis <35.100000> speed <24.000000>;
+			turn leg32 to z-axis <0.000000> speed <27.000000>;
+			sleep 300;
+		}
+		if( bMoving )
+		{
+			turn leg21 to y-axis <0.000000> speed <0.000000>;
+			turn leg41 to y-axis <11.24763> speed <39.000000>;
+			turn leg41 to z-axis <35.100000> speed <27.000000>;
+			turn leg61 to y-axis <12.500000> speed <39.000000>;
+			turn leg61 to z-axis <35.100000> speed <24.000000>;
+			turn leg11 to y-axis <-12.500000> speed <39.000000>;
+			turn leg11 to z-axis <-35.100000> speed <24.000000>;
+			turn leg31 to y-axis <0.000000> speed <39.000000>;
+			turn leg51 to y-axis <12.500000> speed <39.000000>;
+			turn leg51 to z-axis <-35.100000> speed <24.000000>;
+			turn leg42 to z-axis <-8.115385> speed <24.000000>;
+			turn leg62 to z-axis <-8.115385> speed <24.000000>;
+			turn leg12 to z-axis <8.115385> speed <24.000000>;
+			turn leg52 to z-axis <8.115385> speed <24.000000>;
+			sleep 300;
+		}
+		if( bMoving )
+		{
+			turn leg21 to y-axis <-6.000000> speed <39.000000>;
+			turn leg41 to y-axis <0.000000> speed <39.000000>;
+			turn leg41 to z-axis <32.500000> speed <24.000000>;
+			turn leg61 to y-axis <6.000000> speed <39.000000>;
+			turn leg61 to z-axis <0.000000> speed <27.000000>;
+			turn leg11 to y-axis <-6.000000> speed <39.000000>;
+			turn leg11 to z-axis <0.000000> speed <27.000000>;
+			turn leg31 to y-axis <6.000000> speed <39.000000>;
+			turn leg51 to y-axis <0.000000> speed <39.000000>;
+			turn leg51 to z-axis <-32.500000> speed <24.000000>;
+			turn leg42 to z-axis <-35.100000> speed <24.000000>;
+			turn leg62 to z-axis <0.000000> speed <27.000000>;
+			turn leg12 to z-axis <0.000000> speed <27.000000>;
+			turn leg52 to z-axis <35.100000> speed <24.000000>;
+			sleep 300;
+		}
+		if( bMoving )
+		{
+			turn base to x-axis <0.000000> speed <24.000000>;
+			turn base to y-axis <0.000000> speed <27.000000>;
+			turn leg21 to y-axis <-12.500000> speed <39.000000>;
+			turn leg21 to z-axis <35.100000> speed <24.000000>;
+			turn leg41 to y-axis <12.500000> speed <39.000000>;
+			turn leg41 to z-axis <35.100000> speed <24.000000>;
+			turn leg61 to y-axis <0.000000> speed <39.000000>;
+			turn leg11 to y-axis <0.000000> speed <39.000000>;
+			turn leg31 to y-axis <12.500000> speed <39.000000>;
+			turn leg31 to z-axis <-35.100000> speed <24.000000>;
+			turn leg51 to y-axis <-12.500000> speed <39.000000>;
+			turn leg51 to z-axis <-16.247253> speed <27.000000>;
+			turn leg22 to z-axis <-8.115385> speed <24.000000>;
+			turn leg42 to z-axis <-8.115385> speed <24.000000>;
+			turn leg32 to z-axis <8.115385> speed <24.000000>;
+			turn leg52 to z-axis <8.115385> speed <24.000000>;
+			sleep 300;
+		}
+		if( bMoving )
+		{
+			turn base to x-axis <0.000000> speed <27.000000>;
+			turn leg21 to y-axis <0.000000> speed <39.000000>;
+			turn leg21 to z-axis <32.500000> speed <24.000000>;
+			turn leg41 to y-axis <7.000000> speed <39.000000>;
+			turn leg41 to z-axis <0.000000> speed <27.000000>;
+			turn leg61 to y-axis <-7.000000> speed <39.000000>;
+			turn leg11 to y-axis <7.000000> speed <39.000000>;
+			turn leg31 to y-axis <0.000000> speed <39.000000>;
+			turn leg31 to z-axis <-32.500000> speed <24.000000>;
+			turn leg51 to y-axis <-7.000000> speed <39.000000>;
+			turn leg51 to z-axis <0.000000> speed <27.000000>;
+			turn leg22 to z-axis <-16.24773> speed <24.000000>;
+			turn leg42 to z-axis <0.000000> speed <27.000000>;
+			turn leg32 to z-axis <16.24773> speed <24.000000>;
+			turn leg52 to z-axis <0.000000> speed <27.000000>;
+			sleep 300;
+		}
+		if( bMoving )
+		{
+			turn leg21 to y-axis <12.500000> speed <39.000000>;
+			turn leg21 to z-axis <16.24773> speed <24.000000>;
+			turn leg41 to y-axis <0.000000> speed <39.000000>;
+			turn leg61 to y-axis <-12.500000> speed <39.000000>;
+			turn leg61 to z-axis <16.24773> speed <27.000000>;
+			turn leg11 to y-axis <12.500000> speed <39.000000>;
+			turn leg11 to z-axis <-16.24773> speed <27.000000>;
+			turn leg31 to y-axis <-12.500000> speed <39.000000>;
+			turn leg31 to z-axis <-16.24773> speed <27.000000>;
+			turn leg51 to y-axis <0.000000> speed <39.000000>;
+			turn leg22 to z-axis <-8.115385> speed <24.000000>;
+			turn leg62 to z-axis <-8.115385> speed <24.000000>;
+			turn leg12 to z-axis <8.115385> speed <24.000000>;
+			turn leg32 to z-axis <8.115385> speed <24.000000>;
+			sleep 300;
+		}
+	}
+	turn leg21 to y-axis <0.000000> speed <39.000000>;
+	turn leg21 to z-axis <0.000000> speed <27.000000>;
+	turn leg41 to y-axis <0.000000> speed <39.000000>;
+	turn leg41 to z-axis <0.000000> speed <27.000000>;
+	turn leg61 to y-axis <0.000000> speed <39.000000>;
+	turn leg61 to z-axis <0.000000> speed <27.000000>;
+	turn leg11 to y-axis <0.000000> speed <39.000000>;
+	turn leg11 to z-axis <0.000000> speed <27.000000>;
+	turn leg31 to y-axis <0.000000> speed <39.000000>;
+	turn leg31 to z-axis <0.000000> speed <27.000000>;
+	turn leg51 to y-axis <0.000000> speed <39.000000>;
+	turn leg51 to z-axis <0.000000> speed <27.000000>;
+	turn leg12 to z-axis <0.000000> speed <27.000000>;
+	turn leg32 to z-axis <0.000000> speed <27.000000>;
+	turn leg52 to z-axis <0.000000> speed <27.000000>;
+	turn leg22 to z-axis <0.000000> speed <27.000000>;
+	turn leg42 to z-axis <0.000000> speed <27.000000>;
+	turn leg62 to z-axis <0.000000> speed <27.000000>;
+	sleep 210;
+}
+
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+Create()
+{
+	shield_onoff = 1;
+	turn petal1 to y-axis <0.000000> now;
+	turn petal2 to y-axis <60.000000> now;
+	turn petal3 to y-axis <120.000000> now;
+	turn petal4 to y-axis <180.000000> now;
+	turn petal5 to y-axis <240.000000> now;
+	turn petal6 to y-axis <300.000000> now;
+	bMoving = FALSE;
+	bAiming = FALSE;
+	start-script SmokeUnit();
+	call-script InitState();
+}
+
+AimTertiary(heading, pitch)
+{
+	sleep 100;
+	return (shield_onoff);
+}
+
+FireTertiary()
+{
+	explode shield_pos type NOHEATCLOUD | FALL;
+	sleep 100;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 33 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD | SHATTER;
+		explode leg41 type NOHEATCLOUD | SHATTER;
+		explode leg61 type NOHEATCLOUD | SHATTER;
+		explode leg12 type NOHEATCLOUD | SHATTER;
+		explode leg42 type NOHEATCLOUD | SHATTER;
+		explode leg52 type NOHEATCLOUD | SHATTER;
+		explode teeth1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode teeth2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;		
+		return (corpsetype);
+	}
+	if( severity <= 66 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode tower type NOHEATCLOUD | FALL | SHATTER;
+		explode leg41 type NOHEATCLOUD | FALL | SHATTER;
+		explode leg61 type NOHEATCLOUD | FALL | SHATTER;
+		explode leg12 type NOHEATCLOUD | FALL | SHATTER;
+		explode leg42 type NOHEATCLOUD | FALL | SHATTER;
+		explode leg52 type NOHEATCLOUD | FALL | SHATTER;
+		explode teeth1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode teeth2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+		explode emitter4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;		
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode tower type NOHEATCLOUD | SHATTER;
+	explode leg41 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode leg61 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode leg12 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode leg42 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode leg52 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode teeth1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode teeth2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode emitter1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode emitter2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode emitter3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	explode emitter4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT | SHATTER;
+	return (corpsetype);
+}
