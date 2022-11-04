@@ -1,5 +1,5 @@
  4.32 => 4.33
-2022-11-04
+2022-11-05
 
 Balance :
  - Fix all Missile from ground AA : Velocity start at 600 until 1200.
@@ -8,6 +8,7 @@ Improvment :
  - Add T4 Shield Beetle for Arm
  - Add T4 AA Tower for Arm
  - Add Corpse for talon Independence
+ - Gok Juno : Change model
 
 Fix :
 - T5 Aeroship collision Box (They took no damage vs beam weapon)

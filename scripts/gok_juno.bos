@@ -3,10 +3,57 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, tower, flare;
+piece  base, body, support1, support2, support3, support4, flare,
+       tower;
+
+static-var  gun_1, restore_delay, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_AIM				2
+
+
+activatescr()
+{
+	if( TRUE )
+	{
+		spin tower around y-axis speed <10.0>;
+		sleep 250;
+		spin tower around y-axis speed <40.0>;
+		sleep 250;
+		spin tower around y-axis speed <60.0>;
+		sleep 250;
+		spin tower around y-axis speed <90.0>;
+		sleep 250;
+		spin tower around y-axis speed <120.0>;
+		sleep 250;
+		spin tower around y-axis speed <150.0>;
+		sleep 250;
+		spin tower around y-axis speed <190.0>;
+		sleep 250;
+		spin tower around y-axis speed <250.0>;
+		sleep 250;
+		spin tower around y-axis speed <370.0>;
+		sleep 250;
+		spin tower around y-axis speed <500.0>;
+		sleep 250;
+	}
+	sleep 500;
+}
+
+deactivatescr()
+{
+	if( TRUE )
+	{
+		spin tower around y-axis speed <400.0>;
+		sleep 550;
+		spin tower around y-axis speed <320.0>;
+		sleep 550;
+		spin tower around y-axis speed <200.0>;
+		sleep 750;
+		turn tower to y-axis <0.000000> speed <90.0>;
+		sleep 1000;
+	}
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -35,21 +82,104 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
+go()
+{
+	call-script activatescr();
+	gun_1 = 1;
+}
+
+stop()
+{
+	gun_1 = 0;
+	sleep 4000;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
 Create()
 {
+	call-script InitState();
+	gun_1 = 0;
+	restore_delay = 3000;
 	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = tower;
 }
 
 AimPrimary(heading, pitch)
 {
+	start-script RequestState(0);
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
+	while( !gun_1 )
+	{
+		sleep 1000;
+		start-script RequestState(0);
+	}
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	explode flare type NOHEATCLOUD;
+	gun_1 = 0;
+	move tower to y-axis [-2.000000] speed [250.000000];
+	show flare;
+	sleep 250;
+	hide flare;
+	move tower to y-axis [0.000000] speed [1.000000];
+	start-script RequestState(1);
 }
 
 QueryPrimary(piecenum)
@@ -66,20 +196,32 @@ Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
 	{
-		corpsetype = 3;
+		corpsetype = 1;
 		explode body type NOHEATCLOUD;
+		explode support1 type NOHEATCLOUD;
+		explode support2 type NOHEATCLOUD;
+		explode support3 type NOHEATCLOUD;
+		explode support4 type NOHEATCLOUD;
 		explode tower type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | FALL;
+		corpsetype = 2;
+		explode body type NOHEATCLOUD | SHATTER;
+		explode support1 type NOHEATCLOUD | FALL;
+		explode support2 type NOHEATCLOUD | FALL;
+		explode support3 type NOHEATCLOUD | FALL;
+		explode support4 type NOHEATCLOUD | FALL;
 		explode tower type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode support1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode support2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode support3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode support4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode tower type NOHEATCLOUD;
 	return (corpsetype);
 }

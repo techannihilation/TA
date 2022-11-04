@@ -453,10 +453,6 @@ tllmeteor = {
     {class='ShieldSphere',options=tlljunoShieldSphere, priority=1},
     {class='GroundFlash',options=groundFlashJuno},
   },
- gok_juno = {
-     {class='ShieldSphere',options=gokjunoShieldSphere, priority=1},
-     {class='GroundFlash',options=groundFlashJuno},
-   },
 
   ---- ENERGY STORAGE ----------------------
 
