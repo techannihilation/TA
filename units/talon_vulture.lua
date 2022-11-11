@@ -129,8 +129,8 @@ return {
 				sweepfire = false,
 				targetmoveerror = 0.1,
 				thickness = 1,
-				tolerance = 500,
-				turret = true,
+				tolerance = 6000,
+				turret = false,
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {

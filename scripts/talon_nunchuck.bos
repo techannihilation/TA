@@ -38,8 +38,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 RockUnit(anglex, anglez)
 {
-	signal 8;
-	set-signal-mask 8;
+	signal 4;
+	set-signal-mask 4;
 	turn body to x-axis anglex speed <50.>;
 	turn body to z-axis anglez speed <50.>;
 	wait-for-turn body around z-axis;
@@ -65,33 +65,23 @@ Create()
 	hide flare1;
 	hide flare2;
 	gun_1 = 0;
-	turn turret to x-axis <-45.> now;
-	turn sleeves to x-axis <45.> now;
 	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
-	sleep 2500;
-	turn aimer to y-axis <0.> speed <45.>;
-	turn sleeves to x-axis <0.> speed <45.>;
-	wait-for-turn aimer around y-axis;
-	wait-for-turn sleeves around x-axis;
-	turn turret to x-axis <-45.> speed <85.>;
-	turn sleeves to x-axis <45.> speed <85.>;
+	sleep 3500;
+	turn turret to y-axis <0.> speed <85.>;
+	turn sleeves to x-axis <0.> speed <85.>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn turret to x-axis <0.> speed <85.000000>;
-	turn sleeves to x-axis <0.> speed <85.000000>;
-	wait-for-turn turret around x-axis;
-	wait-for-turn sleeves around x-axis;
-	turn aimer to y-axis heading speed <60.>;
+	turn turret to y-axis heading speed <60.>;
 	turn sleeves to x-axis <0.000000> - pitch speed <60.000000>;
-	wait-for-turn aimer around y-axis;
+	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);

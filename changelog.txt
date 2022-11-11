@@ -1,5 +1,5 @@
  4.32 => 4.33
-2022-11-05
+2022-11-12
 
 Balance :
  - Fix all Missile from ground AA : Velocity start at 600 until 1200.
@@ -12,6 +12,8 @@ Improvment :
 
 Fix :
 - T5 Aeroship collision Box (They took no damage vs beam weapon)
+- T2 Artillery Nunchuck Talon
+- Collision Box for T5 Gold Talon
 
  4.31 => 4.32
 2022-10-22
