@@ -575,11 +575,16 @@ function widget:DrawScreen()
 		------------------------------------------------------------------------------------
 
 		--DrawText('Height:', uDefs[spGetUnitDefID(uID)].height)
-
+		local metalCost = Spring.GetUnitRulesParam(unitID, "metalCost") or uDef.metalCost
+		local energyCost = Spring.GetUnitRulesParam(unitID, "energyCost") or uDef.energyCost
+		local buildTime = Spring.GetUnitRulesParam(unitID, "buildTime") or uDef.buildTime
+		local weaponMulti = Spring.GetUnitRulesParam(unitID, "weaponMulti") or 1
+		local rangeMulti = Spring.GetUnitRulesParam(unitID, "rangeMulti") or 1
 		DrawText("Cost:", format(metalColor .. '%d' .. white .. ' / ' ..
 								energyColor .. '%d' .. white .. ' / ' ..
-								buildColor .. '%d', uDef.metalCost, uDef.energyCost, uDef.buildTime)
+								buildColor .. '%d', metalCost, energyCost, buildTime)
 				)
+		
 
 		if not (uDef.isBuilding or uDef.isFactory) then
 			if not Spring.GetUnitMoveTypeData(uID) then
@@ -737,8 +742,9 @@ function widget:DrawScreen()
 				local reloadBonus = reload ~= 0 and (uWep.reload/reload-1) or 0
 				local accuracyBonus = accuracy ~= 0 and (uWep.accuracy/accuracy-1) or 0
 				local moveErrorBonus = moveError ~= 0 and (uWep.targetMoveError/moveError-1) or 0
-				local range = spGetUnitWeaponState(uID,weaponNums[i] or -1,"range") or uWep.range
+				local range = spGetUnitWeaponState(uID,weaponNums[i] or -1,"range") or uWep.range 
 				local rangeBonus = range ~= 0 and (range/uWep.range-1) or 0
+			
 				if uExp ~= 0 then
 					DrawText("Exp:", format("+%d%% accuracy, +%d%% aim, +%d%% firerate, +%d%% range", accuracyBonus*100, moveErrorBonus*100, reloadBonus*100, rangeBonus*100 ))
 				end
@@ -746,7 +752,7 @@ function widget:DrawScreen()
 				if wpnName == "Death explosion" or wpnName == "Self Destruct" then
 					infoText = format("%d aoe, %d%% edge", uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
 				else
-					infoText = format("%d range, %d aoe, %d%% edge", useExp and range or uWep.range, uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
+					infoText = format("%d range, %d aoe, %d%% edge", useExp and range * rangeMulti or uWep.range * rangeMulti, uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
 				end
 				if uWep.damages.paralyzeDamageTime > 0 then
 					infoText = format("%s, %ds paralyze", infoText, uWep.damages.paralyzeDamageTime)
@@ -761,9 +767,9 @@ function widget:DrawScreen()
 
 				local defaultDamage = uWep.damages[0]
 				for cat=0, #uWep.damages do
-					local oDmg = uWep.damages[cat]
+					local oDmg = uWep.damages[cat] * weaponMulti
 					local catName = Game.armorTypes[cat]
-					if catName and oDmg and (oDmg ~= defaultDamage or cat == 0) then
+					if catName and oDmg and (oDmg ~= defaultDamage * weaponMulti or cat == 0) then
 						local dmgString
 						if oBurst > 1 then
 							dmgString = format(yellow .. "%d (x%d)" .. white .. " / " .. yellow .. "%.2f\s" .. white .. " = " .. yellow .. "%.2f \d\p\s", oDmg, oBurst, oRld, oBurst * oDmg / oRld)
