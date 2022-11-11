@@ -3,6 +3,7 @@
 
 Balance :
  - Fix all Missile from ground AA : Velocity start at 600 until 1200.
+ - Independence Talon : Increase Metalcost 515K=>565K
 
 Improvment :
  - Add T4 Shield Beetle for Arm
