@@ -1666,10 +1666,6 @@ local morphDefs = {
 		into = 'gok_alab',
 		time = 10,
 	},
-	gok_vtolmex = {
-		into = 'gok_moho',
-		time = 10,
-	},
 	tllnaja = {
 		{
 			into = 'tlldemon',
