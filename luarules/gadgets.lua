@@ -1533,29 +1533,13 @@ function gadgetHandler:UnitPreDamaged(unitID, unitDefID, unitTeam,
   return rDam, rImp
 end
 
-
-local UnitDamaged_first = true
-local UnitDamaged_count = 0
-local UnitDamaged_gadgets = {}
-
 function gadgetHandler:UnitDamaged(unitID, unitDefID, unitTeam,
                                    damage, paralyzer, weaponID, projectileID,
                                    attackerID, attackerDefID, attackerTeam)
-
-  if UnitDamaged_first then
-    for _,g in r_ipairs(self.UnitDamagedList) do
-      UnitDamaged_count = UnitDamaged_count + 1
-      UnitDamaged_gadgets[UnitDamaged_count] = g
-    end
-    UnitDamaged_first = false
-  end
-
-  local g
-  for i = 1, UnitDamaged_count do
-    g = UnitDamaged_gadgets[i]
+  for _,g in r_ipairs(self.UnitDamagedList) do
     g:UnitDamaged(unitID, unitDefID, unitTeam,
-        damage, paralyzer, weaponID,
-        attackerID, attackerDefID, attackerTeam)
+                  damage, paralyzer, weaponDefID, projectileID,
+                  attackerID, attackerDefID, attackerTeam)
   end
   return
 end
