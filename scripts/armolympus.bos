@@ -70,7 +70,7 @@ Create()
 	gun_2 = 0;
 	gun_3 = 0;
 	gun_4 = 0;
-	amunition = 0;
+	amunition = 1;
 	start-script SmokeUnit();	
 }
 

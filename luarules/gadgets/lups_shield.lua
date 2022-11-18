@@ -154,6 +154,7 @@ talon_pyramid = true,
 talon_boxer = true,
 talon_mythril = true,
 talon_shieldgen = true,
+talon_seth = true,
 --Gok
 gok_com1 = true,
 gok_com2 = true,

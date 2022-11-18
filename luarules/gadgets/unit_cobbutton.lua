@@ -72,7 +72,7 @@ local ShieldUnits = {
   [UnitDefNames["armpraet"].id] = true,
   [UnitDefNames["armexo"].id] = true,
   [UnitDefNames["armsmc"].id] = true,
-  [UnitDefNames["armbeetle"].id] = true,  
+  [UnitDefNames["armbeetle"].id] = true,
   [UnitDefNames["armshieldgen"].id] = true,
   [UnitDefNames["armvengence"].id] = true,
   --The lost legacy
@@ -105,6 +105,7 @@ local ShieldUnits = {
   [UnitDefNames["talon_boxer"].id] = true,
   [UnitDefNames["talon_mythril"].id] = true,
   [UnitDefNames["talon_shieldgen"].id] = true,
+  [UnitDefNames["talon_seth"].id] = true,
   --Gok
   [UnitDefNames["gok_com1"].id] = true,
   [UnitDefNames["gok_com2"].id] = true,

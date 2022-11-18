@@ -7,7 +7,7 @@ function gadget:GetInfo()
 		date = '01/11/2021',
 		license = 'WTFPL',
 		layer = 0,
-		enabled = false
+		enabled = true
 	}
 end
 
@@ -21,9 +21,6 @@ if (gadgetHandler:IsSyncedCode()) then
 	local talonminDefID = UnitDefNames.talon_carbon.id
 	local gokminDefID = UnitDefNames.gok_min.id
 	local armcybrDefID = UnitDefNames.armcybr.id
-
-	--Tac Acid Tll
-	local tllacidDefID = UnitDefNames.tllacid.id
 
   -- Nuke
 	local armsiloDefID = UnitDefNames.armsilo.id
@@ -41,54 +38,16 @@ if (gadgetHandler:IsSyncedCode()) then
 	local goksiloDefID = UnitDefNames.gok_silo.id
 	local goksilo1DefID = UnitDefNames.gok_silo1.id
 	local goksilo2DefID = UnitDefNames.gok_silo2.id
-
-	-- T3 Carrier Nuke
 	local armmsiloDefID = UnitDefNames.armhcar.id
 	local cormsiloDefID = UnitDefNames.corhcar.id
 	local tllmsiloDefID = UnitDefNames.tllhcar.id
 	local talonmsiloDefID = UnitDefNames.talon_hcar.id
 	local gokmsiloDefID = UnitDefNames.gok_hcar.id
 
-	-- AntiNuke
-	--local armantinukeDefID = UnitDefNames.armamd.id
-	--local armantinuke1DefID = UnitDefNames.armamd1.id
-	--local armantinuke2DefID = UnitDefNames.armamd2.id
-	--local corantinukeDefID = UnitDefNames.corfmd.id
-	--local corantinuke1DefID = UnitDefNames.corfmd1.id
-	--local corantinuke2DefID = UnitDefNames.corfmd2.id
-	--local tllantinukeDefID = UnitDefNames.tllantinuke.id
-	--local tllantinuke1DefID = UnitDefNames.tllantinuke1.id
-	--local tllantinuke2DefID = UnitDefNames.tllantinuke2.id
-	--local talonantinukeDefID = UnitDefNames.talon_damascus.id
-	--local talonantinuke1DefID = UnitDefNames.talon_damascus1.id
-	--local talonantinuke2DefID = UnitDefNames.talon_damascus2.id
-	--local gokantinukeDefID = UnitDefNames.gok_antinuke.id
-	--local gokantinuke1DefID = UnitDefNames.gok_antinuke1.id
-	--local gokantinuke2DefID = UnitDefNames.gok_antinuke2.id
-
-	-- Mobile AntiNuke
-	--local armcarryDefID = UnitDefNames.armcarry.id
-	--local armucarryDefID = UnitDefNames.armucar.id
-	--local armmobileantinukeDefID = UnitDefNames.armscab.id
-	--local corcarryDefID = UnitDefNames.corcarry.id
-	--local corucarryDefID = UnitDefNames.corucar.id
-	--local cormobileantinukeDefID = UnitDefNames.cormabm.id
-	--local tllcarryDefID = UnitDefNames.tllcarry.id
-	--local tllucarryDefID = UnitDefNames.tllucar.id
-	--local tllmobileantinukeDefID = UnitDefNames.tllturtle.id
-	--local taloncarryDefID = UnitDefNames.talon_carry.id
-	--local talonucarryDefID = UnitDefNames.talon_ucar.id
-	--local talonmobileantinukeDefID = UnitDefNames.talon_tribulation.id
-	--local gokcarryDefID = UnitDefNames.gok_carry.id
-	--local gokucarryDefID = UnitDefNames.armamd.id --Add on if after
-	--local gokmobileantinukeDefID = UnitDefNames.gok_morningstar.id
-
-	-- Arm Orbital
+  -- Launcher
+	local gok_blackpollenDefID = UnitDefNames.gok_blackpollen.id
 	local armorbitalDefID = UnitDefNames.armorbital.id
 	local corslanderDefID = UnitDefNames.corslander.id
-
-	-- Gok Cut Launcher
-	local gok_blackpollenDefID = UnitDefNames.gok_blackpollen.id
 
 	--Tactical
 	local corarbritatorDefID = UnitDefNames.corarbritator.id
@@ -102,6 +61,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local tllempDefID = UnitDefNames.tllemp.id
 	local tllswordfishDefID = UnitDefNames.tllswordfish.id
 	local gok_eveningstarDefID = UnitDefNames.gok_eveningstar.id
+	local tllacidDefID = UnitDefNames.tllacid.id
 
 	--Variable
 	local pilelimit
@@ -118,7 +78,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if UnitID then
 			pilelimit = 8 --Default
 
-			if (UnitDefID == gokminDefID or UnitDefID == armcybrDefID or UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID or UnitDefID == tllacidDefID) then
+			if (UnitDefID == gokminDefID or UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID or UnitDefID == tllacidDefID) then
 				pilelimit = minelayer
 			end
 
@@ -138,7 +98,8 @@ if (gadgetHandler:IsSyncedCode()) then
 			or UnitDefID == corsiloDefID or UnitDefID == corsilo1DefID or UnitDefID == corsilo2DefID
 			or UnitDefID == tllsiloDefID or UnitDefID == tllsilo1DefID or UnitDefID == tllsilo2DefID
 			or UnitDefID == talonsiloDefID or UnitDefID == talonsilo1DefID or UnitDefID == talonsilo2DefID
-			or UnitDefID == goksiloDefID or UnitDefID == goksilo1DefID or UnitDefID == goksilo2DefID) then
+			or UnitDefID == goksiloDefID or UnitDefID == goksilo1DefID or UnitDefID == goksilo2DefID)
+			or UnitDefID == armcybrDefID then
 				pilelimit = nuke
 			end
 
