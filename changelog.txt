@@ -1,10 +1,12 @@
 4.33 => 4.34
-2022-11-19
+2022-11-20
 
 Balance :
  - Grenat Talon : Increase Metalcost 84KM => 89KM & Energycost 1.1ME => 1.2ME
 
  Improvment :
+ - Delete many morph except Deflector Shield, Nano, Commander and Geo
+ - Now to morph, unit have to reach lvl required & Xp. (Special morph for Talon, TLL and Gok are coming)
  - Add T4 Shield vehicle for Talon
 
  4.32 => 4.33

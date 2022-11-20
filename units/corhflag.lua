@@ -17,8 +17,7 @@ return {
 		cantbetransported = true,
 		category = "ALL HUGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 3 0",
-		collisionvolumescales = "130 120 170",
-		
+		collisionvolumescales = "130 120 170",		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
