@@ -82,8 +82,6 @@ function gadget:AllowWeaponInterceptTarget(interceptorUnitID, interceptorWeaponI
   local coverageRange = interceptorsID[interceptorUnitID]
   --Spring.GetProjectileTarget( number projectileID ) -> nil | [number targetTypeInt, number targetID | table targetPos = {x, y, z}]
   if not coverageRange then
-	  local unitDefID = Spring.GetUnitDefID(interceptorUnitID)
-	  Spring.Echo("Missing Interceptor: " .. unitDefID .. " name: " .. UnitDefs[unitDefID].name)
     return false
   end
   if projectileTargetCache[targetProjectileID] and projectileTargetCache[targetProjectileID][1] then

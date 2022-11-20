@@ -80,7 +80,6 @@ return {
 		customparams = {
 			buildpic = "armsmc.dds",
 			faction = "ARM",
-			providetech = "T3 Factory",
 			shield_emit_height = 30,
 			shield_power = 2000,
 			shield_radius = 150,

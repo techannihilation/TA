@@ -63,7 +63,6 @@ return {
 		customparams = {
 			buildpic = "talon_evp.dds",
 			faction = "TALON",
-			providetech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {

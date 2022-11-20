@@ -64,7 +64,6 @@ return {
 		customparams = {
 			buildpic = "corlab.dds",
 			faction = "CORE",
-			providetech = "T1 Factory",
 		},
 		featuredefs = {
 			dead = {

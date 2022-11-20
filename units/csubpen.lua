@@ -66,7 +66,6 @@ return {
 		customparams = {
 			buildpic = "csubpen.dds",
 			faction = "CORE",
-			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {

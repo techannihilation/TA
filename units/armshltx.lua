@@ -67,7 +67,6 @@ return {
 		customparams = {
 			buildpic = "armshltx.dds",
 			faction = "ARM",
-			providetech = "T3 Factory",
 		},
 		featuredefs = {
 			armshlt_dead = {

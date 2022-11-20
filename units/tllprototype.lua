@@ -67,7 +67,6 @@ return {
 		customparams = {
 			buildpic = "tllprototype.dds",
 			faction = "TLL",
-			providetech = "T4 Factory, T3 Factory, T2 Factory",
 		},
 		featuredefs = {
 			heap = {

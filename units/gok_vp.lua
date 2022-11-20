@@ -70,7 +70,6 @@ return {
 		customparams = {
 			buildpic = "gok_vp.dds",
 			faction = "GOK",
-			providetech = "T1 Factory",
 		},
 		featuredefs = {
 			dead = {

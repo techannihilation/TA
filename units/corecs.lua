@@ -76,7 +76,6 @@ return {
 		customparams = {
 			buildpic = "corecs.dds",
 			faction = "CORE",
-			providetech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {

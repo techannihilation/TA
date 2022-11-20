@@ -66,7 +66,6 @@ return {
 		customparams = {
 			buildpic = "core_hexapod_lab.dds",
 			faction = "CORE",
-			providetech = "T4 Factory",
 		},
 		featuredefs = {
 			heap = {

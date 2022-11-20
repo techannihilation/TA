@@ -85,7 +85,6 @@ return {
 		customparams = {
 			buildpic = "gok_eck.dds",
 			faction = "GOK",
-			providetech = "T3 Factory",
 			shield_emit_height = 33.0,
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 2000,

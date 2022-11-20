@@ -73,7 +73,6 @@ return {
 		customparams = {
 			buildpic = "armalab.dds",
 			faction = "ARM",
-			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead1 = {

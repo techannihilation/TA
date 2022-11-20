@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "tllhtcp.dds",
 			faction = "TLL",
-			providetech = "T3 Factory, T2 Factory",
 		},
 		featuredefs = {
 			dead = {

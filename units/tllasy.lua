@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "tllasy.dds",
 			faction = "TLL",
-			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {

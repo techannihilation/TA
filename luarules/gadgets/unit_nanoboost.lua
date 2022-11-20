@@ -211,7 +211,7 @@ function gadget:Initialize()
 end
 
 function gadget:GameFrame(n)
-  if n %30 == 0 then
+  if n %45 == 0 then
     for unitID in pairs(boostednanos) do
       	if mrandom(0,1) == 0 then
 	  local _,hp = SpGetUnitHealth(unitID)

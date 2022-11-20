@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "tllturtle_lab.dds",
 			faction = "TLL",
-			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {

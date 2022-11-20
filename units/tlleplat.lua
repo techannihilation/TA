@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "tlleplat.dds",
 			faction = "TLL",
-			providetech = "T3 Factory",
 		},
 		featuredefs = {
 			dead = {

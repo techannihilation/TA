@@ -66,7 +66,6 @@ talon_clone_lab = {
 		customparams = {
 			buildpic = "talon_clone_lab.dds",
 			faction = "TALON",
-			providetech = "T1 Factory",
 		},
 		featuredefs = {
 			dead = {

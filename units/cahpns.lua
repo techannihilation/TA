@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "cahpns.dds",
 			faction = "CORE",
-			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {

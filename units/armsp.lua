@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "armsp.dds",
 			faction = "ARM",
-			providetech = "T2 Factory",
 		},
 		featuredefs = {
 			dead = {

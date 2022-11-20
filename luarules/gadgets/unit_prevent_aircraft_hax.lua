@@ -7,7 +7,7 @@ function gadget:GetInfo()
         desc = "Prevent outside-of-map hax",
         author = "Beherith", -- imporved performance by Silver
         date = "3 27 2011",
-        license = "CC BY SA",
+        license = "GNU GPL, v2 or later",
         layer = 0,
         enabled = true --  loaded by default?
     }
@@ -25,14 +25,15 @@ end
 
 local mapX = Game.mapSizeX
 local mapZ = Game.mapSizeZ
-local maxDist = 1500
-local checkDist = 10000
+local minDist = 2000
+local checkRange = 10000
 function gadget:GameFrame(f)
-    if (f % 31 == 0) then
-        left_side_units = GetUnitsInRectangle(-checkDist, -checkDist, -maxDist, mapZ + checkDist)
-        right_side_units = GetUnitsInRectangle(mapX + maxDist, -checkDist, mapX + checkDist, mapZ + checkDist)
-        bottom_side_units = GetUnitsInRectangle(-checkDist, mapZ + maxDist, mapX + checkDist, mapZ + checkDist)
-        top_side_units = GetUnitsInRectangle(-checkDist, -checkDist, mapX + checkDist, -maxDist)
+    if (f % 60 == 0) then
+
+        left_side_units = GetUnitsInRectangle(-checkRange, -checkRange, -minDist, mapZ + checkRange)
+        right_side_units = GetUnitsInRectangle(mapX + minDist, -checkRange, mapX + checkRange, mapZ + checkRange)
+        bottom_side_units = GetUnitsInRectangle(-checkRange, mapZ + minDist, mapX + checkRange, mapZ + checkRange)
+        top_side_units = GetUnitsInRectangle(-checkRange, -checkRange, mapX + checkRange, -minDist)
         for i = 1, #left_side_units do
             DestroyUnit(left_side_units[i])
         end

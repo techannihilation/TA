@@ -67,8 +67,6 @@ return {
 		customparams = {
 			buildpic = "armaap.dds",
 			faction = "ARM",
-			providetech = "T2 Factory",
-			labTechLevel = '1',
 		},
 		featuredefs = {
 			dead1 = {

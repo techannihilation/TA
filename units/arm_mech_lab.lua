@@ -67,7 +67,6 @@ return {
 		customparams = {
 			buildpic = "arm_mech_lab.dds",
 			faction = "ARM",
-			providetech = "T4 Factory",
 		},
 		featuredefs = {
 			heap = {
