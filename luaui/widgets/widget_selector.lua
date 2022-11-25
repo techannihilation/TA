@@ -102,6 +102,7 @@ end
 
 -------------------------------------------------------------------------------
 function widget:Initialize()
+  DisableCallIns()
   widgetHandler.knownChanged = true
   Spring.SendCommands("unbindkeyset f11")
 
