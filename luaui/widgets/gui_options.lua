@@ -215,6 +215,19 @@ local presets = {
 
 local customPresets = {}
 
+local function DisableCallIns()
+	widgetHandler:RemoveWidgetCallIn("DrawScreen", widget)
+	widgetHandler:RemoveWidgetCallIn("IsAbove", widget)
+	widgetHandler:RemoveWidgetCallIn("Update", widget)
+end
+
+local function UpdateCallIns()
+	widgetHandler:UpdateWidgetCallIn("DrawScreen", widget)
+	widgetHandler:UpdateWidgetCallIn("IsAbove", widget)
+	widgetHandler:UpdateWidgetCallIn("Update", widget)
+end
+
+
 function widget:ViewResize()
 	vsx, vsy = Spring.GetViewGeometry()
 	screenX = (vsx * 0.5) - (screenWidth / 2)
@@ -757,7 +770,9 @@ function widget:DrawScreen()
 	end
 
 	-- draw the window
-	if not windowList then end --windowList = gl.CreateList(DrawWindow)
+	if not windowList then 
+		windowList = gl.CreateList(DrawWindow)
+	end 
 
 	-- update new slider value
 	if sliderValueChanged then
@@ -766,7 +781,7 @@ function widget:DrawScreen()
 		sliderValueChanged = nil
 	end
 
-	if show or showOnceMore then
+	if windowList and (show or showOnceMore) then
 		-- draw the options panel
 		glPushMatrix()
 		glTranslate(-(vsx * (widgetScale - 1)) / 2, -(vsy * (widgetScale - 1)) / 2, 0)
@@ -1433,6 +1448,7 @@ end
 function widget:KeyPress(key)
 	-- ESC
 	if key == 27 then
+		DisableCallIns()
 		show = false
 	end
 end
@@ -1452,6 +1468,7 @@ function widget:IsAbove(x, y)
 
 		return IsOnRect(x, y, rectX1, rectY2, rectX2, rectY1)
 	else
+		DisableCallIns()
 		return false
 	end
 end
@@ -3013,6 +3030,7 @@ function savePreset(name)
 end
 
 function widget:Initialize()
+	DisableCallIns()
 	if not WG["background_opacity_custom"] then
 		WG["background_opacity_custom"] = {0, 0, 0, 0.5}
 	end
@@ -3030,6 +3048,9 @@ function widget:Initialize()
 			show = state
 		else
 			show = not show
+		end
+		if show then
+			UpdateCallIns()
 		end
 	end
 

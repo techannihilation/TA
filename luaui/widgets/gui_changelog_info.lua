@@ -67,6 +67,16 @@ local versions = {}
 local changelogLines = {}
 local totalChangelogLines = 0
 
+local function DisableCallIns()
+	widgetHandler:RemoveCallIn("DrawScreen")
+	widgetHandler:RemoveCallIn("IsAbove")
+end
+
+local function UpdateCallIns()
+	widgetHandler:UpdateCallIn("DrawScreen")
+	widgetHandler:UpdateCallIn("IsAbove")
+end
+
 function widget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
   screenX = (vsx*0.5) - (screenWidth/2)
@@ -446,6 +456,7 @@ end
 
 function widget:KeyPress(key)
 	if key == 27 then	-- ESC
+		DisableCallIns()
 		show = false
 	end
 end
@@ -467,6 +478,7 @@ function widget:IsAbove(x, y)
 		local rectY2 = ((screenY-screenHeight-bgMargin) * widgetScale) - ((vsy * (widgetScale-1))/2)
 		return IsOnRect(x, y, rectX1, rectY2, rectX2, rectY1)
 	else
+		DisableCallIns()
 		return false
 	end
 end
@@ -625,6 +637,7 @@ function lines(str)
 end
 
 function widget:Initialize()
+		DisableCallIns()
     if not WG["background_opacity_custom"] then
         WG["background_opacity_custom"] = {0,0,0,0.5}
     end
@@ -636,6 +649,9 @@ function widget:Initialize()
 				show = state
 			else
 				show = not show
+			end
+			if show then
+				UpdateCallIns()
 			end
 		end
 	

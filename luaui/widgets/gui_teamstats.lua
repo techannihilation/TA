@@ -146,6 +146,20 @@ local SIsuffixes = {"p","n","u","m","","k","M","G","T"}
 local borderRemap = {left={"x","min",-1},right={"x","max",1},top={"y","max",1},bottom={"y","min",-1}}
 
 
+local function DisableCallIns()
+	widgetHandler:RemoveCallIn("DrawScreen")
+	widgetHandler:RemoveCallIn("IsAbove")
+	widgetHandler:RemoveCallIn("Update")
+	widgetHandler:RemoveCallIn("GameFrame")
+end
+
+local function UpdateCallIns()
+	widgetHandler:UpdateCallIn("DrawScreen")
+	widgetHandler:UpdateCallIn("IsAbove")
+	widgetHandler:UpdateCallIn("Update")
+	widgetHandler:UpdateCallIn("GameFrame")
+end
+
 function roundNumber(num,useFirstDecimal)
 	return useFirstDecimal and format("%0.1f",round(num,1)) or round(num)
 end
@@ -399,6 +413,7 @@ end
 
 function widget:Initialize()
 	guiData.mainPanel.visible = false
+	DisableCallIns()
 	local vsx,vsy = widgetHandler:GetViewSizes()
 	widget:ViewResize(vsx,vsy)
 	local _,_, paused = Spring.GetGameSpeed()
@@ -408,12 +423,15 @@ function widget:Initialize()
 
 	WG['teamstats'] = {}
 	WG['teamstats'].toggle = function(state)
+
 		if state ~= nil then
 			guiData.mainPanel.visible = state
 		else
 			guiData.mainPanel.visible = not guiData.mainPanel.visible
+
 		end
 		if guiData.mainPanel.visible then
+			UpdateCallIns()
 			widget:GameFrame(GetGameFrame(),true)
 		end
 	end
@@ -422,6 +440,7 @@ end
 
 function widget:KeyPress(key)
 	if key == 27 then	-- ESC
+		DisableCallIns()
 		guiData.mainPanel.visible = false
 	end
 end
@@ -574,7 +593,10 @@ end
 
 
 function widget:IsAbove(x,y)
-	if not guiData.mainPanel.visible then return false end
+	if not guiData.mainPanel.visible then 
+		DisableCallIns()
+		return false 
+	end
 	return isAbove({x=x,y=y},guiData)
 end
 
