@@ -90,6 +90,16 @@ local buttonFontSize = 14
 local buttonHeight = 20
 local buttonTop = 20 -- offset between top of buttons and bottom of widget
 
+local function DisableCallIns()
+  widgetHandler:RemoveWidgetCallIn("DrawScreen", widget)
+  widgetHandler:RemoveWidgetCallIn("IsAbove", widget)
+end
+
+local function UpdateCallIns()
+  widgetHandler:UpdateWidgetCallIn("DrawScreen", widget)
+  widgetHandler:UpdateWidgetCallIn("IsAbove", widget)
+end
+
 -------------------------------------------------------------------------------
 function widget:Initialize()
   widgetHandler.knownChanged = true
@@ -331,6 +341,13 @@ end
 
 -------------------------------------------------------------------------------
 function widget:KeyPress(key, mods, isRepeat)
+
+  if show and key == KEYSYMS.F11 and not isRepeat then
+      DisableCallIns()
+  elseif not show and key == KEYSYMS.F11 and not isRepeat then
+      UpdateCallIns()
+  end
+
   if show and (key == KEYSYMS.ESCAPE) or ((key == KEYSYMS.F11) and not isRepeat and not (mods.alt or mods.ctrl or mods.meta or mods.shift)) then
     show = not show
 
@@ -579,7 +596,7 @@ function widget:MousePress(x, y, button)
 
   if not namedata then
     show = false
-
+    DisableCallIns()
     return false
   end
 

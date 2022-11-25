@@ -136,6 +136,16 @@ local vsx, vsy = Spring.GetViewGeometry()
 local changelogLines = {}
 local totalChangelogLines = 0
 
+local function DisableCallIns()
+	widgetHandler:RemoveCallIn("DrawScreen")
+	widgetHandler:RemoveCallIn("IsAbove")
+end
+
+local function UpdateCallIns()
+	widgetHandler:UpdateCallIn("DrawScreen")
+	widgetHandler:UpdateCallIn("IsAbove")
+end
+
 function widget:ViewResize()
   vsx,vsy = Spring.GetViewGeometry()
   screenX = (vsx*0.5) - (screenWidth/2)
@@ -492,6 +502,7 @@ function mouseEvent(x, y, button, release)
 				if release then
 					showOnceMore = true		-- show once more because the guishader lags behind, though this will not fully fix it
 					show = not show
+					DisableCallIns()
 				end
 				return true
 			end
@@ -506,6 +517,7 @@ function mouseEvent(x, y, button, release)
 			if release then
 				showOnceMore = true		-- show once more because the guishader lags behind, though this will not fully fix it
 				show = false
+				DisableCallIns()
 			end
 			return true
 		end
@@ -542,10 +554,14 @@ function toggle()
 	show = not show
 	if show then
 		hideWindows()
+			UpdateCallIns()
+	else
+			DisableCallIns()
 	end
 end
 
 function widget:Initialize()
+		DisableCallIns()
     if not WG["background_opacity_custom"] then
         WG["background_opacity_custom"] = {0,0,0,0.5}
     end

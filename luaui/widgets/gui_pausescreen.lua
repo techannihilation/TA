@@ -77,7 +77,17 @@ local xCut = nil
 local mouseOverClose = false
 local forceHideWindow = false
 
+local function DisableCallIns()
+	widgetHandler:RemoveCallIn("DrawScreen")
+	widgetHandler:RemoveCallIn("IsAbove")
+	widgetHandler:RemoveCallIn("Update")
+end
 
+local function UpdateCallIns()
+	widgetHandler:UpdateCallIn("DrawScreen")
+	widgetHandler:UpdateCallIn("IsAbove")
+	widgetHandler:UpdateCallIn("Update")
+end
 
 function widget:Initialize()
 	myFont = glLoadFont( fontPath, fontSizeHeadline )
@@ -86,6 +96,15 @@ end
 
 function widget:Shutdown()
 	glDeleteFont( myFont )
+end
+
+local pState = true
+
+function widget:KeyPress(key)
+	if key == 19 then -- Pause
+			UpdateCallIns()
+			_, _, pState = spGetGameSpeed() -- will be still false just after pressing pause
+	end
 end
 
 function widget:DrawScreen()
@@ -110,6 +129,8 @@ function widget:DrawScreen()
 		
 	if ( paused or ( ( now - pauseTimestamp) <= slideTime ) ) then
 		drawPause()
+	elseif ( ( now - pauseTimestamp ) > slideTime + 1 ) and pState then
+		DisableCallIns()
 	end
 	
 	ResetGl()
