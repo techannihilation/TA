@@ -11,7 +11,7 @@ function widget:GetInfo()
 end
 
 local iconTexture = ":n:LuaUI/Images/mapmarksfx/eraser.dds"
-local iconSize = 16
+local iconSize = 22
 
 local glTranslate				= gl.Translate
 local glPushMatrix          	= gl.PushMatrix

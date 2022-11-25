@@ -86,7 +86,7 @@ local buttons = {
 }
 
 local titleFontSize = 16
-local buttonFontSize = 14
+local buttonFontSize = 24
 local buttonHeight = 20
 local buttonTop = 20 -- offset between top of buttons and bottom of widget
 
