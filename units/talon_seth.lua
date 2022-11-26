@@ -181,6 +181,8 @@ return {
 			[1] = {
 				badtargetcategory = "SMALL TINY",
 				def = "CARBUNCLE_RC",
+				maindir = "0 0 1",
+				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {

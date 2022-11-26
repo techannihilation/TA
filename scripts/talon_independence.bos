@@ -258,7 +258,7 @@ Killed(severity, corpsetype)
 {
 	if( severity <= 50 )
 	{
-		corpsetype = 2;
+		corpsetype = 1;
 		explode base type NOHEATCLOUD;
 		explode ring1 type NOHEATCLOUD;
 		explode ring5 type NOHEATCLOUD;

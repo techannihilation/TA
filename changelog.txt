@@ -3,11 +3,13 @@
 
 Balance :
  - Grenat Talon : Increase Metalcost 84KM => 89KM & Energycost 1.1ME => 1.2ME
+ - Archon Gok : Increase damage 1800/s => 2250. Decrease HP 150K=>130K
 
  Improvment :
  - Delete many morph except Deflector Shield, Nano, Commander and Geo
  - Now to morph, unit have to reach lvl required & Xp. (Special morph for Talon, TLL and Gok are coming)
  - Add T4 Shield vehicle for Talon
+ - Increase Hope and Valiant Model by 20%
 
  4.32 => 4.33
 2022-11-12
