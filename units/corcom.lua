@@ -24,7 +24,6 @@ return {
 		cloakcostmoving = 500,
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "36 44 26",
-		
 		collisionvolumetype = "Ell",
 		commander = true,
 		corpse = "8_dead",
@@ -79,12 +78,12 @@ return {
 		buildoptions = {
 			[1] = "corwin",
 			[2] = "corsolar",
-			[3] = "coradvsol",
+			--[3] = "coradvsol",
 			[4] = "corgeo_mini",
-			[5] = "corgeo",
+			--[5] = "corgeo",
 			[6] = "cormex",
 			[7] = "cormakr",
-			[8] = "coramaker",
+			--[8] = "coramaker",
 			[9] = "cormstor",
 			[10] = "corestor",
 			[11] = "corrad",

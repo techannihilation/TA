@@ -11,7 +11,7 @@ modConfig["TA"]["unitList"] =
 								--amortor = { weapons = { 1 } },
 								armllt = { weapons = { 1 } },
 								armfllt = { weapons = { 1 } },
-								armllt1 = { weapons = { 1 } },
+								--armllt1 = { weapons = { 1 } },
 								armbeamer = { weapons = { 1 } },
 								armgrape = { weapons = { 1 } },
 								armhlt = { weapons = { 1 } },
@@ -47,7 +47,7 @@ modConfig["TA"]["unitList"] =
 
 									--Anti-Air--
 								armrl = { weapons = { 2 } }, --light aa
-								armrl1 = { weapons = { 2 } },
+								--armrl1 = { weapons = { 2 } },
 								armpack = { weapons = { 2 } },
 								armcir = { weapons = { 2 } }, --chainsaw
 								armfrt = { weapons = { 2 } },  --floating rocket laucher
@@ -72,7 +72,7 @@ modConfig["TA"]["unitList"] =
 								cormaw = { weapons = { 1 } },
 								corllt = { weapons = { 1 } },
 								cofllt = { weapons = { 1 } },
-								corllt1 = { weapons = { 1 } },
+								--corllt1 = { weapons = { 1 } },
 								corhllt = { weapons = { 1 } },
 								corhlt = { weapons = { 1 } },
 								corvhlt = { weapons = { 1 } },
@@ -108,7 +108,7 @@ modConfig["TA"]["unitList"] =
 									--Anti-Air--
 								corfrt = { weapons = { 2 } }, --floating rocket laucher
 								corrl = { weapons = { 2 } },
-								corrl1 = { weapons = { 2 } },
+								--corrl1 = { weapons = { 2 } },
 								corsam = { weapons = { 2 } },
 								corerad = { weapons = { 2 } },
 								corenaa = { weapons = { 2 } },
@@ -165,7 +165,7 @@ modConfig["TA"]["unitList"] =
 
 								--Anti-Air--
 								tlllmt = { weapons = { 2 } },
-								tlllmt1 = { weapons = { 2 } },
+								--tlllmt1 = { weapons = { 2 } },
 								tlllmtns = { weapons = { 2 } },
 								tllnssam = { weapons = { 2 } },
 								tllflak = { weapons = { 2 } },
@@ -183,7 +183,7 @@ modConfig["TA"]["unitList"] =
 									--TALON
 									--Ground Weapons--
 								talon_llt = { weapons = { 1 } },
-								talon_llt1 = { weapons = { 1 } },
+								--talon_llt1 = { weapons = { 1 } },
 								talon_kevlar = { weapons = { 1 } },
 								talon_blt = { weapons = { 1 } },
 								talon_blt1 = { weapons = { 1 } },
@@ -205,7 +205,7 @@ modConfig["TA"]["unitList"] =
 								gok_slesh1 = { weapons = { 1 } },
 								gok_blackdawn = { weapons = { 1 } },
 								gok_llt = { weapons = { 1 } },
-								gok_llt1 = { weapons = { 1 } },
+								--gok_llt1 = { weapons = { 1 } },
 								gok_lrpt = { weapons = { 1 } },
 								gok_lrpt1 = { weapons = { 1 } },
 								gok_meteor = { weapons = { 1 } },

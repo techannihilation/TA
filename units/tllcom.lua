@@ -24,7 +24,6 @@ return {
 		cloakcostmoving = 500,
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "40 48 30",
-		
 		collisionvolumetype = "Ell",
 		commander = true,
 		corpse = "dead",
@@ -80,12 +79,12 @@ return {
 		buildoptions = {
 			[1] = "tllwin",
 			[2] = "tllsolar",
-			[3] = "tlladvsolar",
+			--[3] = "tlladvsolar",
 			[4] = "tllgeo_mini",
-			[5] = "tllgeo",
+			--[5] = "tllgeo",
 			[6] = "tllmex",
 			[7] = "tllmm",
-			[8] = "tllmetalmakerlvl1",
+			--[8] = "tllmetalmakerlvl1",
 			[9] = "tllmstor",
 			[10] = "tllestor",
 			[11] = "tllradar",
