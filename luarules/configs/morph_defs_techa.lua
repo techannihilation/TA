@@ -547,6 +547,12 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	corejudgement = {
+		into = 'core_turbulence',
+		tech = 2,
+		time = 60,
+		xp = 0.10,
+	},
+	core_turbulence = {
 		into = 'coradamantoise',
 		tech = 3,
 		time = 60,

@@ -10,7 +10,6 @@ return {
 		category = "ALL SURFACE",
 		cloakcost = 15,
 		collisionvolumescales = "45 38 45",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produce Energy",
@@ -26,6 +25,7 @@ return {
 		maxdamage = 1185,
 		maxslope = 10,
 		maxwaterdepth = 0,
+		mincloakdistance = 80,
 		name = "Cloakable Mini Fusion Reactor",
 		noautofire = false,
 		objectname = "talon_gen",
