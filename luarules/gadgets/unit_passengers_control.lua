@@ -28,7 +28,7 @@ end
 
 if (not gadgetHandler:IsSyncedCode()) then return end
 
-local stunTime = 8
+local stunTime = 14
 
 local paraTroopers={
   [UnitDefNames["corpyro"].id] = true,
