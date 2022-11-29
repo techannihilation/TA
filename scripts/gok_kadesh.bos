@@ -9,7 +9,7 @@ piece  base, pelvis, torso, shield, rarm, larm, sleeves,
        tail1, tail2, barrel, flare, circle,
        rfirept, lfirept, torsoflare01, torsoflare02, torsoflare03, torsoflare04;
 
-static-var  bMoving, bAiming, bFlaming, gun_1, gun_2;
+static-var  bMoving, bAiming, bFlaming, gun_1, gun_2, Main_Gun_Heading;
 
 // Signal definitions
 #define SIG_AIM_1				2
@@ -25,7 +25,7 @@ PilotLight(Func_Var_1)
 {
 	while( TRUE )
 	{
-		while( bAiming )
+		while( bFlaming )
 		{
 			sleep 100;
 		}
@@ -302,6 +302,7 @@ Create()
 	bAiming = 0;
 	gun_1 = 0;
 	gun_2 = 0;
+	Main_Gun_Heading = 0;
 	turn lflegy to y-axis <-45.00> now;
 	turn rflegy to y-axis <45.00> now;
 	turn lblegy to y-axis <45.00> now;
@@ -314,6 +315,7 @@ RestoreAfterDelay()
 	sleep 500;
 	spin circle around z-axis speed <0.> accelerate <-1.0>;
 	sleep 4500;
+	Main_Gun_Heading = 0;
 	bAiming = 0;
 	bFlaming = 0;	
 	turn torso to y-axis <0.> speed <20.000000>;
@@ -332,6 +334,7 @@ AimPrimary(heading, Pitch)
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
 	bAiming = 1;
+	Main_Gun_Heading = heading;
 	turn torso to y-axis heading speed <50.000000>;
 	turn barrel to x-axis <-12.0> - pitch speed <50.000000>;
 	turn tail1 to x-axis <12.0> speed <50.000000>;
@@ -362,6 +365,10 @@ AimSecondary(heading, Pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	wait-for-turn torso around y-axis;
 	return(1);
 }
@@ -404,6 +411,10 @@ AimWeapon3(heading, Pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	bFlaming = 1;
 	turn sleeves to x-axis <0.0> - pitch speed <50.000000>;	
 	wait-for-turn torso around y-axis;
@@ -431,6 +442,10 @@ AimWeapon4(heading, Pitch)
 {
 	signal SIG_AIM_4;
 	set-signal-mask SIG_AIM_4;
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
 	bFlaming = 1;
 	wait-for-turn torso around y-axis;
 	wait-for-turn sleeves around x-axis;

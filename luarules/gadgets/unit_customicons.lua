@@ -129,7 +129,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("gok_cut1.user", "icons/gok_cut1.png", 3)
   Spring.AddUnitIcon("coradamantoise.user", "icons/coradamantoise.png", 4.5)
   Spring.AddUnitIcon("corskrog.user", "icons/corskrog.png", 5)
-  Spring.AddUnitIcon("gok_kadesh.user", "icons/gok_kadesh.png", 5)
+  Spring.AddUnitIcon("gok_kadesh.user", "icons/gok_kadesh.png", 6)
 
   -- Setup the unitdef icons
   for udid, ud in pairs(UnitDefs) do
