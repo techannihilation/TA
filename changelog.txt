@@ -1,4 +1,4 @@
-4.33 => 4.34
+ 4.33 => 4.34
 2022-11-28
 
 Balance :
@@ -7,14 +7,14 @@ Balance :
 
  Improvment :
  - Rework all Commanders Menu Panel.
- - Increase Stun time for paratroopers 8=>10s
+ - Increase Stun time for paratroopers 8=>12s
  - Delete many morph except Deflector Shield, Nano, Commander and Geo.
  - Now to morph, unit have to reach lvl required & Xp. (Special morph for Talon, TLL and Gok are coming).
  - Add Morph for Turtoise Judgement into T3 Tortoise Turbulence. Turbulence could morph into T4 Adamantoise.
  - Add T4 Shield vehicle for Talon.
  - Increase Hope and Valiant Model by 20%.
 
- 4.32 => 4.33
+4.32 => 4.33
 2022-11-12
 
 Balance :
@@ -32,7 +32,7 @@ Fix :
 - T2 Artillery Nunchuck Talon
 - Collision Box for T5 Gold Talon
 
- 4.31 => 4.32
+4.31 => 4.32
 2022-10-22
 
 Major Balance :
@@ -58,7 +58,7 @@ Fix :
 - Talon T3 Kbot Cons can be targetable
 - Talon Sirius (Ex Thanos) µIncrease damage from 200 => 2000
 
- 4.30 => 4.31
+4.30 => 4.31
 2022-09-24
 
 Balance :
