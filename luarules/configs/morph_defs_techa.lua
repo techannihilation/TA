@@ -594,6 +594,12 @@ local morphDefs = {
 		tech = 3,
 		xp = 0.10,
 	},
+	gok_asmodee = {
+		into = 'gok_kadesh',
+		time = 60,
+		tech = 3,
+		xp = 0.10,
+	},
 	--gok_everchosen = {
 	--	into = 'gok_azaroth',
 	--	time = 120,

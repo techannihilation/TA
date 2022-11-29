@@ -405,10 +405,20 @@ local moveDatas = {
     },
     VKBOT12 = {
         allowterraincollisions = false,
-        crushstrength = 1000,
+        crushstrength = 10000,
         depthmod = 0,
         footprintx = 12,
         footprintz = 12,
+        maxslope = 24,
+        maxwaterdepth = 15000,
+        maxwaterslope = 30
+    },
+    VKBOT20 = {
+        allowterraincollisions = false,
+        crushstrength = 10000,
+        depthmod = 0,
+        footprintx = 20,
+        footprintz = 20,
         maxslope = 24,
         maxwaterdepth = 15000,
         maxwaterslope = 30

@@ -1,3 +1,15 @@
+ 4.34 => 4.35
+2022-11-30
+
+Balance :
+ - Increase Stun time for paratroopers 8=>12s
+
+ Improvment :
+ - Rework all Commanders Menu Panel.
+ - Add Kadesh unit for GOKadesh
+ - Decrease model for Super Krog by 10%
+ - Add Morph for Turtoise Judgement into T3 Tortoise Turbulence. Turbulence could morph into T4 Adamantoise.
+
  4.33 => 4.34
 2022-11-28
 
@@ -6,11 +18,8 @@ Balance :
  - Archon Gok : Increase damage 1800/s => 2250. Decrease HP 150K=>130K.
 
  Improvment :
- - Rework all Commanders Menu Panel.
- - Increase Stun time for paratroopers 8=>12s
  - Delete many morph except Deflector Shield, Nano, Commander and Geo.
  - Now to morph, unit have to reach lvl required & Xp. (Special morph for Talon, TLL and Gok are coming).
- - Add Morph for Turtoise Judgement into T3 Tortoise Turbulence. Turbulence could morph into T4 Adamantoise.
  - Add T4 Shield vehicle for Talon.
  - Increase Hope and Valiant Model by 20%.
 

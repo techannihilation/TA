@@ -321,6 +321,7 @@ return {
 	},
 
 	flamethrowers = {
+		"gok_negator",
 		"corpyro",
 		"gok_hellfire",
 		"gok_agrat",
@@ -337,6 +338,7 @@ return {
 		"talon_grenat",
 		"gok_ifrit",
 		"cormkl",
+		"gok_kadesh",
 	},
 	sniper_resistant = {
 		"armzeus",
