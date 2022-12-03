@@ -552,14 +552,20 @@ local morphDefs = {
 		time = 60,
 		xp = 0.10,
 	},
+	corhcrus = {
+		into = 'corhflag',
+		time = 60,
+		tech = 3,
+		xp = 0.10,
+	},
 	armbanth = {
 		into = 'armexo',
 		time = 60,
 		tech = 3,
 		xp = 0.10,
 	},
-	tllblind = {
-		into = 'tllcolossus',
+	armmcv = {
+		into = 'armmcv1',
 		time = 60,
 		tech = 3,
 		xp = 0.10,
@@ -578,6 +584,12 @@ local morphDefs = {
 	},
 	gok_asmodee = {
 		into = 'gok_kadesh',
+		time = 60,
+		tech = 3,
+		xp = 0.10,
+	},
+	tllblind = {
+		into = 'tllcolossus',
 		time = 60,
 		tech = 3,
 		xp = 0.10,
@@ -614,6 +626,7 @@ local morphDefs = {
 		time = 120,
 		xp = 0.10,
 	},
+
 	--Special units morph
 	talon_mcv  = {
 		into = 'talon_mcv1',
