@@ -1,5 +1,5 @@
  4.34 => 4.35
-2022-11-30
+2022-11-04
 
 Balance :
  - Increase Stun time for paratroopers 8=>12s

@@ -130,6 +130,8 @@ function gadget:Initialize()
   Spring.AddUnitIcon("coradamantoise.user", "icons/coradamantoise.png", 4.5)
   Spring.AddUnitIcon("corskrog.user", "icons/corskrog.png", 5)
   Spring.AddUnitIcon("gok_kadesh.user", "icons/gok_kadesh.png", 6)
+  Spring.AddUnitIcon("talon_repentance.user", "icons/talon_repentance.png", 5)
+  Spring.AddUnitIcon("gok_satan.user", "icons/gok_satan.png", 3)
 
   -- Setup the unitdef icons
   for udid, ud in pairs(UnitDefs) do
@@ -211,13 +213,10 @@ function gadget:Initialize()
         --tllsaurus
         Spring.SetUnitDefIcon(udid, "tllsaurus.user")
       elseif ud.name == "tllcolossus" then
-        --tllcolossus
         Spring.SetUnitDefIcon(udid, "tllcolossus.user")
       elseif ud.name == "corraven1" then
-        --cataclysm
         Spring.SetUnitDefIcon(udid, "corraven1.user")
       elseif ud.name == "tllmcv" then
-        --tllmcv
         Spring.SetUnitDefIcon(udid, "tllmcv.user")
 
       elseif ud.name == "gok_kadesh" then
@@ -227,132 +226,152 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "corskrog.user")
 
       elseif ud.name == "gok_cut1" then
-        --gok_cut1
         Spring.SetUnitDefIcon(udid, "gok_cut1.user")
 
       elseif ud.name == "armmcv1" then
-        --armmcv1
         Spring.SetUnitDefIcon(udid, "armmcv1.user")
 
       elseif ud.name == "corhflag" then
-        --corhflag
         Spring.SetUnitDefIcon(udid, "corhflag.user")
 
+      elseif ud.name == "gok_satan" then
+        Spring.SetUnitDefIcon(udid, "gok_satan.user")
+
+      elseif ud.name == "talon_repentance" then
+        Spring.SetUnitDefIcon(udid, "talon_repentance.user")
+
       elseif ud.name == "tllsamael" then
-        --tllsamael
         Spring.SetUnitDefIcon(udid, "tllsamael.user")
+
       elseif (ud.name == "talon_mcv") or (ud.name == "talon_mcv1") then
-        --talon_mcv
         Spring.SetUnitDefIcon(udid, "talon_mcv.user")
+
       elseif ud.name == "talon_grenat" then
-        --talon_grenat
         Spring.SetUnitDefIcon(udid, "talon_grenat.user")
+
+      elseif ud.name == "corkrog" then
+        Spring.SetUnitDefIcon(udid, "krogoth.user")
+
+      --Commanders
       elseif (ud.name == "armcom") or (ud.name == "armcom1") or (ud.name == "armcom2") or (ud.name == "armcom3") then
-        --armcom
         Spring.SetUnitDefIcon(udid, "armcom.user")
       elseif (ud.name == "corcom") or (ud.name == "corcom1") or (ud.name == "corcom2") or (ud.name == "corcom3") then
-        --corcom
         Spring.SetUnitDefIcon(udid, "corcom.user")
       elseif (ud.name == "tllcom") or (ud.name == "tllcom1") or (ud.name == "tllcom2") or (ud.name == "tllcom3") then
-        --tllcom
         Spring.SetUnitDefIcon(udid, "tllcom.user")
       elseif (ud.name == "talon_com") or (ud.name == "talon_com1") or (ud.name == "talon_com2") or (ud.name == "talon_com3") then
-        --talon_com
         Spring.SetUnitDefIcon(udid, "talon_com.user")
       elseif (ud.name == "gok_com") or (ud.name == "gok_com1") or (ud.name == "gok_com2") or (ud.name == "gok_com3") then
-        --gok_com
         Spring.SetUnitDefIcon(udid, "gok_com.user")
-      elseif ud.name == "corkrog" then
-        --krogoth
-        Spring.SetUnitDefIcon(udid, "krogoth.user")
+
+      --Medium mech
       elseif (ud.name == "armbanth") or (ud.name == "armgor") or (ud.name == "talon_talos") then
-        --small mech
         Spring.SetUnitDefIcon(udid, "small_mech.user")
+
+      --Heavy mech
       elseif (ud.name == "armorco") or (ud.name == "armraptor") or (ud.name == "gok_archon") then
-        --med mech
         Spring.SetUnitDefIcon(udid, "med_mech.user")
+
       elseif ud.name == "talon_annubis" then
-        --t3 Annubis
         Spring.SetUnitDefIcon(udid, "talon_annubis.user")
+
       elseif ud.name == "armkrypto" then
-        --t3 Krypto
         Spring.SetUnitDefIcon(udid, "armkrypto.user")
+
       elseif ud.name == "talon_mythril" then
-        --t4 mechs
         Spring.SetUnitDefIcon(udid, "talon_mythril.user")
+
       elseif ud.name == "talon_scorpion" then
-        --t4 mechs
         Spring.SetUnitDefIcon(udid, "talon_scorpion.user")
+
       elseif ud.name == "armpraet" then
-        --t4 mechs
         Spring.SetUnitDefIcon(udid, "armpraet.user")
+
+      --T5 Medium / Small Hero
       elseif (ud.name == "armhope") or (ud.name == "cordust") or (ud.name == "corvaliant") or (ud.name == "tllbarbarus") or (ud.name == "talon_gold") then
-        --T5 Medium / Small Hero
         Spring.SetUnitDefIcon(udid, "t5ships.user")
+
+      --T5 Heavy Hero
       elseif (ud.name == "abroadside") or (ud.name == "cdevastator") or (ud.name == "tllzeppelin") or (ud.name == "gok_apocalypse") then
-        --T5 Big Hero
         Spring.SetUnitDefIcon(udid, "t5bigships.user")
+
+      --T6 Hero
       elseif (ud.name == "armarch") or (ud.name == "talon_independence") or (ud.name == "gok_squid") then
-        --T6 Arch or independance
         Spring.SetUnitDefIcon(udid, "t6ships.user")
-      elseif (ud.name == "corbats") or (ud.name == "armbats") or (ud.name == "tllviking") or (ud.name == "talon_imperator") then
-        --battleships
+
+      -- T2 Battleships
+      elseif (ud.name == "corbats") or (ud.name == "armbats") or (ud.name == "tllviking") or (ud.name == "talon_imperator") or (ud.name == "gok_bats") then
         Spring.SetUnitDefIcon(udid, "bships.user")
-      elseif (ud.name == "corblackhy") or (ud.name == "cortyrnt") or (ud.name == "aseadragon") or (ud.name == "armtrmph") or (ud.name == "armbc") or (ud.name == "tllcaps") or (ud.name == "talon_dread") or (ud.name == "talon_fcar") then
-        --uber ships
+
+      --T3 Battleships
+      elseif (ud.name == "corblackhy") or (ud.name == "cortyrnt") or (ud.name == "aseadragon") or (ud.name == "armtrmph") or (ud.name == "armbc") or (ud.name == "tllcaps") or (ud.name == "talon_dread") or (ud.name == "talon_fcar") or (ud.name == "gok_valefor")  then
         Spring.SetUnitDefIcon(udid, "bsships.user")
+
+      --T4 Battleships
       elseif (ud.name == "talon_paladium") or (ud.name == "corurbanus") or (ud.name == "armcentrum") or (ud.name == "tllpliosaurus") then
-        --t4 ships
         Spring.SetUnitDefIcon(udid, "flagship.user")
+
+      -- Factories
       elseif ud.isFactory then
-        -- factories
         Spring.SetUnitDefIcon(udid, "square_x_factory.user")
+
+      -- Builders
       elseif ud.isBuilder then
-        -- builders
         if (ud.speed > 0) and ud.canMove then
           Spring.SetUnitDefIcon(udid, "cross.user") -- mobile
         else
           Spring.SetUnitDefIcon(udid, "square_+.user") -- immobile
         end
+
+      -- Nuke / Antinuke ( stockpile weapon anyway )
       elseif ud.stockpileWeaponDef ~= nil then
-        -- nuke / antinuke ( stockpile weapon anyway )
         Spring.SetUnitDefIcon(udid, "nuke.user")
+
+      -- Aircraft
       elseif ud.canFly then
-        -- aircraft
         Spring.SetUnitDefIcon(udid, "tri-up.user")
+
+      -- Immobile shields
       elseif (ud.speed <= 0) and ud.shieldWeaponDef then
-        -- immobile shields
         Spring.SetUnitDefIcon(udid, "hemi-up.user")
+
+      -- Metal extractors and makers
       elseif ((ud.extractsMetal > 0) or (ud.makesMetal > 0)) or (ud.name == "armmakr") or (ud.name == "armfmkr") or (ud.name == "ametalmakerlvl1") or (ud.name == "armamaker") or (ud.name == "armmmkr") or (ud.name == "armuwmmm") or (ud.name == "ametalmakerlvl2") or (ud.name == "ametalmakerlvl3") or (ud.name == "cormakr") or (ud.name == "corfmkr") or (ud.name == "cmetalmakerlvl1") or (ud.name == "coramaker") or (ud.name == "cormmkr") or (ud.name == "coruwmmm") or (ud.name == "cmetalmakerlvl2") or (ud.name == "tllmm") or (ud.name == "tlluwconv") or (ud.name == "tllammaker") or (ud.name == "tllwmmohoconv") then
-        -- metal extractors and makers
         Spring.SetUnitDefIcon(udid, "m.user")
+
+      -- Energy generators
       elseif (ud.totalEnergyOut > 10) and (ud.speed <= 0) then
-        -- energy generators
         Spring.SetUnitDefIcon(udid, "e.user")
+
+      -- Transports
       elseif ud.isTransport then
-        -- transports
         Spring.SetUnitDefIcon(udid, "diamond.user")
+
+      -- Submarines
       elseif (ud.minWaterDepth > 0) and (ud.speed > 0) and (ud.waterline > 10) then
-        -- submarines
         Spring.SetUnitDefIcon(udid, "tri-down.user")
+
+      -- Ships
       elseif (ud.minWaterDepth > 0) and (ud.speed > 0) then
-        -- ships
         Spring.SetUnitDefIcon(udid, "hemi-down.user")
+
+      -- Sensors
       elseif ((ud.radarRadius > 1) or (ud.sonarRadius > 1) or (ud.seismicRadius > 1)) and (ud.speed <= 0) and (#ud.weapons <= 0) then
-        -- sensors
         Spring.SetUnitDefIcon(udid, "hourglass-side.user")
+
+      -- Jammers
       elseif ((ud.jammerRadius > 1) or (ud.sonarJamRadius > 1)) and (ud.speed <= 0) then
-        -- jammers
         Spring.SetUnitDefIcon(udid, "hourglass.user")
+
+      --Dragon teeth
       elseif (ud.name == "cordrag") or (ud.name == "corfdrag") or (ud.name == "corfort") or (ud.name == "armdrag") or (ud.name == "armfdrag") or (ud.name == "armfort") or (ud.name == "gok_drag") or (ud.name == "gok_fdrag") or (ud.name == "gok_fort") or (ud.name == "talon_drag") or (ud.name == "talon_fdrag") or (ud.name == "talon_fort") or (ud.name == "tlldtns") or (ud.name == "tlladt") or (ud.name == "tlldt") then
-        --Dragon teeth
         Spring.SetUnitDefIcon(udid, "blank.user")
+
+      -- Defenders and other buildings
       elseif ud.isBuilding or (ud.speed <= 0) then
-        -- defenders and other buildings
         if not ud.weaponCount then
           ud.weaponCount = 0
         end
-
         if #ud.weapons <= 0 then
           Spring.SetUnitDefIcon(udid, "square.user")
         else
@@ -363,6 +382,7 @@ function gadget:Initialize()
           end
         end
       end
+
     end
   end
 
