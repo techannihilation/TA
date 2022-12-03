@@ -66,7 +66,7 @@ return {
 			[7] = "talon_clone_lab",
 			[8] = "talon_alab",
 			[9] = "talon_elab",
-			[10] = "talon_podlab",
+			[10] = "talon_ulab",
 			[11] = "talon_nanotc2",
 			[12] = "talon_edrag",
 			[13] = "talon_conspiracy2",

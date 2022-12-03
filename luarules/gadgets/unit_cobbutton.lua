@@ -104,6 +104,7 @@ local ShieldUnits = {
   [UnitDefNames["talon_pyramid"].id] = true,
   [UnitDefNames["talon_boxer"].id] = true,
   [UnitDefNames["talon_mythril"].id] = true,
+  [UnitDefNames["talon_repentance"].id] = true,
   [UnitDefNames["talon_shieldgen"].id] = true,
   [UnitDefNames["talon_seth"].id] = true,
   --Gok

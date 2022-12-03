@@ -1,5 +1,5 @@
 return {
-	talon_podlab = {
+	talon_ulab = {
 		acceleration = 0,
 		brakerate = 0,
 		buildcostenergy = 618667,
@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 14,
 		buildinggrounddecaltype = "talon_lab_aoplane.dds",
-		buildpic = "talon_podlab.dds",
+		buildpic = "talon_ulab.dds",
 		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Gantry",
 		noautofire = false,
-		objectname = "TALON_PODLAB",
+		objectname = "talon_ulab",
 		radardistance = 50,
 		radaremitheight = 82,
 		seismicsignature = 0,
@@ -51,7 +51,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "talon_podlab",
+		unitname = "talon_ulab",
 		usebuildinggrounddecal = true,
 		workertime = 1600,
 		yardmap = "ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ",
@@ -66,7 +66,7 @@ return {
 			[8] = "talon_plutor",
 		},
 		customparams = {
-			buildpic = "talon_podlab.dds",
+			buildpic = "talon_ulab.dds",
 			faction = "TALON",
 		},
 		featuredefs = {
@@ -79,7 +79,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 67200,
-				object = "talon_podlab_dead",
+				object = "talon_ulab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

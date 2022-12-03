@@ -217,7 +217,7 @@ return {
 				targetmoveerror = 0.1,
 				thickness = 0.75,
 				turret = false,
-				tolerance = 6000,
+				tolerance = 8000,
 				weapontype = "LaserCannon",
 				weaponvelocity = 1000,
 				damage = {

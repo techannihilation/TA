@@ -66,7 +66,7 @@ return {
 			[8] = "talon_aap",
 			[9] = "talon_eap",
 			--[10] = "talon_sp",
-			[11] = "talon_podlab",
+			[11] = "talon_ulab",
 			[12] = "talon_nanotc2",
 			[13] = "talon_edrag",
 			[14] = "talon_conspiracy2",

@@ -3,11 +3,28 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare, turret, base, sleeves, barrel, stats, cat,
-       minigun1, minigun2, minibar1, minibar2, miniflare1, miniflare2;
+piece  base, body, turret, sleeves, barrel, flare, stats, cat,
+       lturret, rturret, rsleeves, lsleeves,
+       flturret, frturret, frsleeves, flsleeves,
+       rminigun, lminigun, rflare, lflare, 
+       frminigun, flminigun, frflare, flflare, 
+       bturret, bsleeves, bminigun, bflare,
+       shield_pos;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+static-var  Gatling_1, Gatling_2, Gatling_3, Gatling_4, Gatling_5, shield_onoff;
 
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+
+Shield()
+{
+	shield_onoff = !shield_onoff;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -39,31 +56,81 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	hide flare;
-	hide miniflare1 ;
-	hide miniflare2;
-	Static_Var_2 = 0;
-	Static_Var_1 = 3000;
+
+	Gatling_1 = 0;
+	Gatling_2 = 0;
+	shield_onoff = 1;
+	
+	turn rturret to y-axis <90.000000> now;
+	turn lturret to y-axis <-90.000000> now;
+	turn bturret to y-axis <180.000000> now;
+	turn frturret to y-axis <90.000000> now;
+	turn flturret to y-axis <-90.000000> now;
+	
+	turn rsleeves to x-axis <-90.000000> now;	
+	turn lsleeves to x-axis <-90.000000> now;
+	turn frsleeves to x-axis <-90.000000> now;
+	turn flsleeves to x-axis <-90.000000> now;
+	turn bsleeves to x-axis <-90.000000> now;
+	
 	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
-	signal 16;
-	set-signal-mask 16;
-	sleep 10000;
+	sleep 7500;
 	turn turret to y-axis <0.> speed <15.>;
 	turn sleeves to x-axis <0.> speed <15.>;
-	turn minigun1 to y-axis <0.> speed <50.>;
-	turn minibar1 to x-axis <0.> speed <25.>;
-	turn minigun2 to y-axis <0.> speed <50.>;
-	turn minibar2 to x-axis <0.> speed <25.>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 5000;
+	turn rturret to y-axis <90.> speed <15.>;
+	turn rsleeves to x-axis <-90.> speed <15.>;
+}
+
+RestoreAfterDelay3()
+{
+	sleep 5000;
+	turn lturret to y-axis <-90.> speed <15.>;
+	turn lsleeves to x-axis <-90.> speed <15.>;	
+}
+
+
+RestoreAfterDelay4()
+{
+	sleep 5000;
+	turn bturret to y-axis <180.> speed <15.>;
+	turn bsleeves to x-axis <-90.> speed <15.>;	
+}
+
+
+RestoreAfterDelay5()
+{
+	sleep 5000;
+	turn frturret to y-axis <90.> speed <15.>;
+	turn frsleeves to x-axis <-90.> speed <15.>;	
+}
+
+
+RestoreAfterDelay6()
+{
+	sleep 5000;
+	turn flturret to y-axis <-90.> speed <15.>;
+	turn flsleeves to x-axis <-90.> speed <15.>;	
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = flare;
 }
 
 AimPrimary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
-	turn turret to y-axis heading speed <25.>;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret to y-axis heading speed <30.>;
 	turn sleeves to x-axis <0.> - pitch speed <15.>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves around x-axis;
@@ -85,65 +152,194 @@ QueryPrimary(piecenum)
 	piecenum = flare;
 }
 
-AimFromPrimary(piecenum)
+AimFromSecondary(piecenum)
 {
-	piecenum = flare;
+	piecenum = rsleeves;
 }
 
 AimSecondary(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
-	turn minigun1 to y-axis heading speed <200.>;
-	turn minibar1 to x-axis <0.> - pitch speed <100.>;
-	wait-for-turn minigun1 around y-axis;
-	wait-for-turn minibar1 around x-axis;
-	start-script RestoreAfterDelay();
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn rturret to y-axis heading speed <200.>;
+	turn rsleeves to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn rturret around y-axis;
+	wait-for-turn rsleeves around x-axis;
+	start-script RestoreAfterDelay2();
 	return (1);
 }
 
 FireSecondary()
 {
-	//emit-sfx 1026 from miniflare1;
-	sleep 100;
+	emit-sfx 1024 + 0 from rflare;
+	++Gatling_1;
+	if( Gatling_1 >= 6 )
+	{
+		Gatling_1 = 0;
+	}
+	turn rminigun to z-axis <60.> * Gatling_1 speed <500.>;
 }
 
 QuerySecondary(piecenum)
 {
-	piecenum = miniflare1;
+	piecenum = rflare;
 }
 
-AimFromSecondary(piecenum)
+
+AimFromTertiary(piecenum)
 {
-	piecenum = minigun1;
+	piecenum = lsleeves;
 }
 
 AimTertiary(heading, pitch)
 {
-	signal 8;
-	set-signal-mask 8;
-	turn minigun2 to y-axis heading speed <100.>;
-	turn minibar2 to x-axis <0.> - pitch speed <50.>;
-	wait-for-turn minigun2 around y-axis;
-	wait-for-turn minibar2 around x-axis;
-	start-script RestoreAfterDelay();
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn lturret to y-axis heading speed <200.>;
+	turn lsleeves to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn lturret around y-axis;
+	wait-for-turn lsleeves around x-axis;
+	start-script RestoreAfterDelay3();
 	return (1);
 }
 
 FireTertiary()
 {
-	//emit-sfx 1026 from miniflare2;
-	sleep 100;
+	emit-sfx 1024 + 0 from lflare;
+	++Gatling_2;
+	if( Gatling_2 >= 6 )
+	{
+		Gatling_2 = 0;
+	}
+	turn lminigun to z-axis <60.> * Gatling_2 speed <500.>;
 }
 
 QueryTertiary(piecenum)
 {
-	piecenum = miniflare2;
+	piecenum = lflare;
 }
 
-AimFromTertiary(piecenum)
+//Back Minigun
+
+AimFromWeapon4(piecenum)
 {
-	piecenum = minigun2;
+	piecenum = bsleeves;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn bturret to y-axis heading speed <200.>;
+	turn bsleeves to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn bturret around y-axis;
+	wait-for-turn bsleeves around x-axis;
+	start-script RestoreAfterDelay4();
+	return (1);
+}
+
+FireWeapon4()
+{
+	emit-sfx 1024 + 0 from bflare;
+	++Gatling_3;
+	if( Gatling_3 >= 6 )
+	{
+		Gatling_3 = 0;
+	}
+	turn bminigun to z-axis <60.> * Gatling_3 speed <500.>;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = bflare;
+}
+
+// Front Minigun
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = frsleeves;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn frturret to y-axis heading speed <200.>;
+	turn frsleeves to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn frturret around y-axis;
+	wait-for-turn frsleeves around x-axis;
+	start-script RestoreAfterDelay5();
+	return (1);
+}
+
+FireWeapon5()
+{
+	emit-sfx 1024 + 0 from frflare;
+	++Gatling_4;
+	if( Gatling_4 >= 6 )
+	{
+		Gatling_4 = 0;
+	}
+	turn frminigun to z-axis <60.> * Gatling_4 speed <500.>;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = frflare;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = flsleeves;
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn flturret to y-axis heading speed <200.>;
+	turn flsleeves to x-axis <0.> - pitch speed <100.>;
+	wait-for-turn flturret around y-axis;
+	wait-for-turn flsleeves around x-axis;
+	start-script RestoreAfterDelay6();
+	return (1);
+}
+
+FireWeapon6()
+{
+	emit-sfx 1024 + 0 from flflare;
+	++Gatling_5;
+	if( Gatling_5 >= 6 )
+	{
+		Gatling_5 = 0;
+	}
+	turn flminigun to z-axis <60.> * Gatling_5 speed <500.>;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = flflare;
+}
+
+
+AimWeapon7(heading, pitch)
+{
+	return (shield_onoff);
+}
+
+FireWeapon7()
+{
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = shield_pos;
 }
 
 SweetSpot(piecenum)
@@ -158,27 +354,33 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode barrel type  NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode stats type NOHEATCLOUD;
 		explode sleeves type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
+		explode lturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode barrel type SHATTER | FALL | NOHEATCLOUD;
-		explode base type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode stats type SHATTER | FALL | NOHEATCLOUD;
 		explode sleeves type SHATTER | NOHEATCLOUD;
 		explode turret type SHATTER | FALL | NOHEATCLOUD;
+		explode lturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode barrel type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode base type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode stats type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode sleeves type SHATTER | NOHEATCLOUD;
 	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }

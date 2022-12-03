@@ -236,6 +236,10 @@ cafus = {
     {class='Bursts',options=armexoBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  talon_repentance = {
+    {class='Bursts',options=repentanceBursts},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   gok_azaroth = {
     {class='Bursts',options=shieldBursts250},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},

@@ -3,9 +3,12 @@
 
 Balance :
  - Increase Stun time for paratroopers 8=>12s
+ - Talon Grenat : Decrease HP 330K=>310K
 
  Improvment :
  - Rework all Commanders Menu Panel.
+ - Repentance become T4 Shielded Unit by morphing from Abaddon
+ - Add T3 Fox Arm & Gorilla Core in T3 Lab
  - Add Kadesh unit for GOKadesh
  - Decrease model for Super Krog by 10%
  - Add Morph for Turtoise Judgement into T3 Tortoise Turbulence. Turbulence could morph into T4 Adamantoise.

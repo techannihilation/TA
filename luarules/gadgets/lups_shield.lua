@@ -153,6 +153,7 @@ talon_obelisk = true,
 talon_pyramid = true,
 talon_boxer = true,
 talon_mythril = true,
+talon_repentance = true,
 talon_shieldgen = true,
 talon_seth = true,
 --Gok

@@ -56,7 +56,7 @@ return {
 			[1] = "talon_ufus",
 			[2] = "talon_mas",
 			[3] = "talon_metalmakerlvl4",
-			[4] = "talon_podlab",
+			[4] = "talon_ulab",
 			[5] = "talon_covertopscentre",
 			[6] = "talon_nanotc4",
 			--[7] = "talon_urad",

@@ -61,8 +61,9 @@ return {
 			[5] = "armraz",
 			[6] = "armeak",
 			[7] = "armbanth",
-			[8] = "armorco",
-			[9] = "arm_furie",
+			[8] = "armfox",
+			[9] = "armorco",
+			[10] = "arm_furie",
 		},
 		customparams = {
 			buildpic = "armshltx.dds",

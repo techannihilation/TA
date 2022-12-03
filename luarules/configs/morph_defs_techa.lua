@@ -528,18 +528,6 @@ local morphDefs = {
 	},
 
 	-- Special Units
-	corkrogtaar = {
-		into = 'corgor',
-		time = 60,
-		tech = 2,
-		xp = 0.10,
-	},
-	corkrogtaar = {
-		into = 'corgor',
-		time = 60,
-		tech = 2,
-		xp = 0.10,
-	},
 	corkrog = {
 		into = 'corskrog',
 		time = 60,
@@ -564,18 +552,6 @@ local morphDefs = {
 		time = 60,
 		xp = 0.10,
 	},
-	armpw = {
-		into = 'armhdpw',
-		time = 60,
-		tech = 1,
-		xp = 0.10,
-	},
-	armfido = {
-		into = 'armfox',
-		time = 60,
-		tech = 2,
-		xp = 0.10,
-	},
 	armbanth = {
 		into = 'armexo',
 		time = 60,
@@ -594,17 +570,19 @@ local morphDefs = {
 		tech = 3,
 		xp = 0.10,
 	},
+	talon_abaddon = {
+		into = 'talon_repentance',
+		time = 60,
+		tech = 3,
+		xp = 0.10,
+	},
 	gok_asmodee = {
 		into = 'gok_kadesh',
 		time = 60,
 		tech = 3,
 		xp = 0.10,
 	},
-	--gok_everchosen = {
-	--	into = 'gok_azaroth',
-	--	time = 120,
-	--	xp = 0.10,
-	--},
+
 	-- Titan
 	cormkl = {
 		into = 'corlilith',

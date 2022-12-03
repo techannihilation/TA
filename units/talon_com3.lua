@@ -91,7 +91,7 @@ return {
 			[12] = "talon_clone_lab",
 			[13] = "talon_vp",
 			[14] = "talon_ap",
-			[15] = "talon_podlab",
+			[15] = "talon_ulab",
 			[16] = "talon_edrag",
 			--[17] = "talon_llt1",
 			[18] = "talon_sprinkler",

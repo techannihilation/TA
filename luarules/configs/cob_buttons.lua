@@ -141,6 +141,15 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	talon_repentance = {
+		{
+			name = "shield_repentance",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	armsmc = {
 		{
 			name = "shield_smc",

@@ -86,7 +86,7 @@ unitList["TA"] = {
 [UnitDefNames["core_hexapod_lab"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["arm_mech_lab"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllprototype"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
-[UnitDefNames["talon_podlab"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["talon_ulab"].id] = 	{["en"]="T4 Lab", ["de"]="", ["fr"]="" },
 
 --T4 Mex
 [UnitDefNames["armmas"].id] = 	{["en"]="T4 Mex", ["de"]="", ["fr"]="" },

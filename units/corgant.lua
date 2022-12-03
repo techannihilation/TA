@@ -65,8 +65,9 @@ return {
 			[5] = "corraven",
 			[6] = "coreak",
 			[7] = "corhowie",
-			[8] = "corgorg",
-			[9] = "corkrog",
+			[8] = "corgor",
+			[9] = "corgorg",
+			[10] = "corkrog",
 		},
 		customparams = {
 			buildpic = "corgant.dds",

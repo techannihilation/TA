@@ -805,21 +805,21 @@ RestoreBody()
 	sleep 10000;
 	set-signal-mask 0;
 	start-script RequestState(1);
-	turn torso to y-axis <0.000000> speed <90.000000>;
+	turn torso to y-axis <0.000000> speed <50.000000>;
 }
 
 RestoreHead()
 {
 	sleep 9000;
 	set-signal-mask 0;
-	turn head to y-axis <0.000000> speed <110.000000>;
+	turn head to y-axis <0.000000> speed <90.000000>;
 }
 
 AimWeapon2(heading, pitch)
 {
 	signal 4;
 	set-signal-mask 4;
-	turn head to y-axis heading speed <130.000000>;
+	turn head to y-axis heading speed <90.000000>;
 	wait-for-turn head around y-axis;
 	start-script RestoreHead();
 	return (1);
@@ -871,7 +871,7 @@ AimWeapon1(heading, pitch)
 	{
 		sleep 250;
 	}
-	turn torso to y-axis heading speed <50.000000>;
+	turn torso to y-axis heading speed <75.000000>;
 	wait-for-turn torso around y-axis;
 	start-script RestoreBody();
 	return (1);

@@ -64,7 +64,7 @@ return {
 			[3] = "talon_metalmakerlvl3",
 			[4] = "talon_emstor",
 			[5] = "talon_eestor",
-			[6] = "talon_podlab",
+			[6] = "talon_ulab",
 			[7] = "talon_sp",
 			[8] = "talon_covertopscentre",
 			[9] = "talon_nanotc3",

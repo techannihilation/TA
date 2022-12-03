@@ -298,7 +298,7 @@ AimPrimary(heading, pitch)
 	
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn body to y-axis heading speed <65.000000>;
+	turn body to y-axis heading speed <75.000000>;
 	Static_heading = heading;
 	turn rgun to x-axis <0.000000> - pitch speed <35.000000>;
 	turn lgun to x-axis <0.000000> - pitch speed <35.000000>;

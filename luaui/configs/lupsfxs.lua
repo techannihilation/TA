@@ -189,6 +189,25 @@ armexoBursts = {
   priority   = 3,
   count      = 4,
 }
+repentanceBursts = {
+  layer      = -35,
+  life       = math.huge,
+  piece      = "shield_pos",
+  rotSpeed   = 0.50,
+  rotSpread  = 0,
+  arc        = 50,
+  arcSpread  = 0,
+  size       = 500,
+  sizeSpread = 50,
+  texture    = "bitmaps/GPL/Lups/shieldbursts5.png",
+  colormap   = {{0.1, 0.55, 1, 0.1}, {1, 0.2, 0.2, 0.1}},
+  directional= true,
+  repeatEffect = true,
+  noIconDraw = true,
+  disableabovelevel = 3,
+  priority   = 3,
+  count      = 4,
+}
 obeliskBursts = {
   layer      = -35,
   life       = math.huge,
