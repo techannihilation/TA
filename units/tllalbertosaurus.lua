@@ -34,7 +34,7 @@ return {
 		maxvelocity = 1.35,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		movementclass = "TANKHOVER4",
+		movementclass = "TANKHOVER12",
 		name = "Albertosaurus",
 		noautofire = false,
 		objectname = "tllalbertosaurus",
