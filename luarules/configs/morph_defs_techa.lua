@@ -594,6 +594,12 @@ local morphDefs = {
 		tech = 3,
 		xp = 0.10,
 	},
+	tllmosaurus = {
+		into = 'tllalbertosaurus',
+		time = 60,
+		tech = 3,
+		xp = 0.10,
+	},
 
 	-- Titan
 	cormkl = {

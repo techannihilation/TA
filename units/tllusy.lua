@@ -43,7 +43,8 @@ return {
 		buildoptions = {
 			[1] = "tllmarmelade",
 			[2] = "tllucar",
-			[3] = "tllpliosaurus",
+			[3] = "tllalbertosaurus",
+			[4] = "tllpliosaurus",
 		},
 		customparams = {
 			buildpic = "tllusy.dds",

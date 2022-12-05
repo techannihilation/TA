@@ -1,0 +1,480 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, lsupport, rsupport, bridge, pipes,
+		turret1, sleeves1, rminigun, lminigun, flare1a, flare1b,
+		turret2, sleeves2, flare2a, flare2b,
+		rturret1, lturret1, rflare1, lflare1,
+		rturret2, lturret2, rflare2, lflare2,
+		rturret3, lturret3, rflare3, lflare3,
+		lflakturret, lflaksleeve, lflakflare,
+		rflakturret, rflaksleeve, rflakflare,		
+		wakes, wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8;
+
+static-var  gun_1, gun_2, bAiming, bStating;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+#define SIG_AIM_8			256
+#define SIG_AIM_9			512
+#define SIG_AIM_10			1024
+#define SIG_MOVE			2048
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		if( bStating == 1 )
+		{
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 5 from wake5;
+			emit-sfx 5 from wake6;
+			emit-sfx 5 from wake7;
+			emit-sfx 5 from wake8;
+		}
+		if( bStating == 2 )
+		{
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+			emit-sfx 3 from wake5;
+			emit-sfx 3 from wake6;
+			emit-sfx 3 from wake7;
+			emit-sfx 3 from wake8;
+		}
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	sleep 150;
+}
+
+setSFXoccupy(state)
+{
+	bStating = state;
+}
+
+Create()
+{	
+	gun_1 = 0;
+	gun_2 = 0;
+	turn rturret3 to y-axis <180.000000> now;
+	turn lturret3 to y-axis <180.000000> now;
+	start-script SmokeUnit();
+}
+
+RestorePrimary()
+{
+	sleep 6000;
+	turn turret1 to y-axis <0.000000> speed <30.000000>;
+	turn sleeves1 to x-axis <0.000000> speed <20.000000>;
+}
+
+RestoreSecondary()
+{
+	sleep 4500;
+	turn turret2 to y-axis <0.> speed <45.000000>;
+	turn sleeves2 to x-axis <0.000000> speed <30.000000>;
+}
+
+RestoreLightning()
+{
+	sleep 2500;
+	turn lturret1 to y-axis <0.> speed <80.000000>;
+	turn rturret1 to y-axis <0.> speed <80.000000>;
+	turn lturret2 to y-axis <0.> speed <80.000000>;
+	turn rturret2 to y-axis <0.> speed <80.000000>;
+	turn lturret3 to y-axis <180.> speed <80.000000>;
+	turn rturret3 to y-axis <180.> speed <80.000000>;
+}
+
+RestoreFlak()
+{
+	sleep 2500;
+	turn lflakturret to y-axis <0.> speed <80.000000>;
+	turn lflaksleeve to x-axis <0.> speed <80.000000>;
+	turn rflakturret to y-axis <0.> speed <80.000000>;
+	turn rflaksleeve to x-axis <0.> speed <80.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret1 to y-axis heading speed <45.000000>;
+	turn sleeves1 to x-axis <0.> - pitch speed <30.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeves1 around x-axis;
+	start-script RestorePrimary();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		turn rminigun to z-axis <0.000000> now;
+		turn rminigun to z-axis <90.000000> speed <200.000000>;		
+	}
+	if( gun_1 == 1 )
+	{
+		turn lminigun to z-axis <0.000000> now;
+		turn lminigun to z-axis <90.000000> speed <200.000000>;		
+	}
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret1;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare1b;
+	}
+}
+
+AimWeapon2(heading, pitch)
+{	
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <65.000000>;
+	turn sleeves2 to x-axis <0.> - pitch speed <50.000000>;
+	wait-for-turn sleeves2 around y-axis;
+	wait-for-turn turret2 around x-axis;
+	start-script RestoreSecondary();
+	return (1);
+}
+
+FireWeapon2()
+{
+	++gun_2;
+	if( gun_2 == 2)
+	{
+		gun_2 = 0;
+	}
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = turret2;
+}
+
+QueryWeapon2(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare2a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+}
+
+AimWeapon3(heading, pitch)
+{	
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn lturret1 to y-axis heading speed <120.000000>;
+	wait-for-turn lturret1 around y-axis;
+	start-script RestoreLightning();
+	return (1);
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = lturret1;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = lflare1;
+}
+
+AimWeapon4(heading, pitch)
+{	
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn lturret2 to y-axis heading speed <120.000000>;
+	wait-for-turn lturret2 around y-axis;
+	start-script RestoreLightning();
+	return (1);
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = lturret2;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = lflare2;
+}
+
+AimWeapon5(heading, pitch)
+{	
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn lturret3 to y-axis heading speed <120.000000>;
+	wait-for-turn lturret3 around y-axis;
+	start-script RestoreLightning();
+	return (1);
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = lturret3;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = lflare3;
+}
+
+AimWeapon6(heading, pitch)
+{	
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn rturret1 to y-axis heading speed <120.000000>;
+	wait-for-turn rturret1 around y-axis;
+	start-script RestoreLightning();
+	return (1);
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = rturret1;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = rflare1;
+}
+
+AimWeapon7(heading, pitch)
+{	
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn rturret2 to y-axis heading speed <120.000000>;
+	wait-for-turn rturret2 around y-axis;
+	start-script RestoreLightning();
+	return (1);
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = rturret2;
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = rflare2;
+}
+
+AimWeapon8(heading, pitch)
+{	
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	turn rturret3 to y-axis heading speed <120.000000>;
+	wait-for-turn rturret3 around y-axis;
+	start-script RestoreLightning();
+	return (1);
+}
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = rturret3;
+}
+
+QueryWeapon8(piecenum)
+{
+	piecenum = rflare3;
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal SIG_AIM_9;
+	set-signal-mask SIG_AIM_9;
+	turn lflakturret to y-axis heading speed <480.000000>;
+	turn lflaksleeve to x-axis <0.000000> - pitch speed <500.000000> ;
+	wait-for-turn lflakturret around y-axis;
+	wait-for-turn lflaksleeve around x-axis;
+	start-script RestoreFlak();
+	return(1);
+}	
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = lflakturret;
+}
+
+QueryWeapon9(piecenum)
+{
+	piecenum = lflakflare;
+}
+
+AimWeapon10(heading, pitch)
+{
+	signal SIG_AIM_10;
+	set-signal-mask SIG_AIM_10;
+	turn rflakturret to y-axis heading speed <480.000000>;
+	turn rflaksleeve to x-axis <0.000000> - pitch speed <500.000000> ;
+	wait-for-turn rflakturret around y-axis;
+	wait-for-turn rflaksleeve around x-axis;
+	start-script RestoreFlak();
+	return(1);
+}	
+
+AimFromWeapon10(piecenum)
+{
+	piecenum = rflakturret;
+}
+
+QueryWeapon10(piecenum)
+{
+	piecenum = rflakflare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD;
+		explode pipes type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;		
+		explode sleeves1 type NOHEATCLOUD;
+		explode sleeves2 type NOHEATCLOUD;		
+		explode lturret2 type NOHEATCLOUD;
+		explode rturret2 type NOHEATCLOUD;
+		explode rturret1 type NOHEATCLOUD;
+		explode lturret1 type NOHEATCLOUD;
+		explode rminigun type NOHEATCLOUD;
+		explode lminigun type NOHEATCLOUD;
+		explode lflakturret type NOHEATCLOUD;
+		explode rflakturret type NOHEATCLOUD;
+		explode lsupport type NOHEATCLOUD;
+		explode rsupport type NOHEATCLOUD;		
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD | FALL;
+		explode pipes type NOHEATCLOUD | FALL;
+		explode turret1 type NOHEATCLOUD | FALL;
+		explode turret2 type NOHEATCLOUD | FALL;		
+		explode sleeves1 type NOHEATCLOUD | FALL;
+		explode sleeves2 type NOHEATCLOUD | FALL;		
+		explode lturret2 type NOHEATCLOUD | FALL;
+		explode rturret2 type NOHEATCLOUD | FALL;
+		explode rturret1 type NOHEATCLOUD | FALL;
+		explode lturret1 type NOHEATCLOUD | FALL;
+		explode rminigun type NOHEATCLOUD | FALL;
+		explode lminigun type NOHEATCLOUD | FALL;
+		explode lflakturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rflakturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lsupport type NOHEATCLOUD | FALL;
+		explode rsupport type NOHEATCLOUD | FALL;	
+
+		return (corpsetype);
+	}
+	corpsetype = 3;
+		explode body type NOHEATCLOUD;
+		explode bridge type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode pipes type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;		
+		explode sleeves1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sleeves2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;		
+		explode lturret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rturret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rturret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lturret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rminigun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lminigun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lflakturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rflakturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lsupport type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rsupport type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;	
+		return (corpsetype);
+}

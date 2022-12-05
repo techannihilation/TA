@@ -168,7 +168,7 @@ return {
 				impulsefactor = 0,
 				intensity = 1,
 				name = "Talon Gatling",
-				range = 1000,
+				range = 1200,
 				reloadtime = 0.20,
 				rgbcolor = "0.15 0.15 1",
 				soundhitdry = "xplomed2",
