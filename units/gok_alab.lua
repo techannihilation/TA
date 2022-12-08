@@ -63,9 +63,10 @@ return {
 			[6] = "gok_harbinger",
 			[7] = "gok_hellfire",
 			[8] = "gok_valkyrie",
-			[9] = "gok_blackcoconut",
-			[10] = "gok_junglenaut",
-			[11] = "gok_antichrist",
+			[9] = "gok_mask",
+			[10] = "gok_blackcoconut",
+			[11] = "gok_junglenaut",
+			[12] = "gok_antichrist",
 		},
 		customparams = {
 			buildpic = "gok_alab.dds",

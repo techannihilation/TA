@@ -433,9 +433,23 @@ cafus = {
     {class='Bursts',options=pyramidBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,5,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
-
-
-
+  gok_satan = {
+    {class='Bursts',options=shieldBursts150},
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  gok_eck = {
+   {class='Bursts',options=shieldBursts150},
+   {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+   },
+   gok_antichrist = {
+      {class='Bursts',options=ShieldBursts100},
+      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  armvengence = {
+     {class='Bursts',options=ShieldBursts100},
+     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+   },
+   
   ---- OTHER ----------------------------
 tllmeteor = {
 	{class='SimpleParticles2', options=MergeTable({pos={32,265,-40}, delay=10, lifeSpread=30},sparksr1)},
@@ -717,9 +731,6 @@ talon_handgod = {
   },
   armgripn = {
     {class='AirJet',options={color={0.1,0.4,0.6}, width=3.7, length=60, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
-  },
-  blade = {
-    {class='AirJet',options={color={0.1,0.5,0.3}, width=3.7, length=28, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
   },
   armpers = {
      {class='AirJet',options={color={0.6,0.1,0}, width=5, length=22, piece="rearthrust", noIconDraw = true, priority=3, onActive=true}},
@@ -1052,25 +1063,9 @@ sat_radar = {
      {class='Bursts',options=shieldBursts150},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
-   gok_satan = {
-    {class='Bursts',options=shieldBursts150},
-    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-  },
-  gok_eck = {
-   {class='Bursts',options=shieldBursts150},
-   {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
- },
   gok_com3 = {
      {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
      {class='Bursts',options=shieldBursts200},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
-   gok_antichrist = {
-      {class='Bursts',options=ShieldBursts100},
-      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-    },
-    armvengence = {
-       {class='Bursts',options=ShieldBursts100},
-       {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
-     },
 }

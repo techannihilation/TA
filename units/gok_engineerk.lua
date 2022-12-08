@@ -79,7 +79,7 @@ return {
 			[17] = "gok_cv",
 			--[18] = "gok_herison",
 			[19] = "gok_zealot",
-			--[20] = "gok_shepherd",
+			[20] = "gok_mask",
 		},
 		customparams = {
 			buildpic = "gok_engineerk.dds",

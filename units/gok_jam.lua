@@ -13,8 +13,7 @@ return {
 		category = "ALL SURFACE",
 		--cloakcost = 25,
 		collisionvolumeoffsets = "-1 -9 0",
-		collisionvolumescales = "32.6 89.6 34.6",
-		
+		collisionvolumescales = "32.6 89.6 34.6",		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		description = "Tech Level 1",

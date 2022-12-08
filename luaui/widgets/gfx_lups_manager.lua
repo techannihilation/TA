@@ -30,14 +30,14 @@ end
 
 function MergeTable(table1,table2)
   local result = {}
-  for i,v in pairs(table2) do 
+  for i,v in pairs(table2) do
     if (type(v)=='table') then
       result[i] = MergeTable(v,{})
     else
       result[i] = v
     end
   end
-  for i,v in pairs(table1) do 
+  for i,v in pairs(table1) do
     if (result[i]==nil) then
       if (type(v)=='table') then
         if (type(result[i])~='table') then result[i] = {} end
@@ -146,16 +146,16 @@ local function ClearFx(unitID, fxIDtoDel)
   local newTable = {}
     for i=1,#particleIDs[unitID] do
       local fxID = particleIDs[unitID][i]
-      if fxID == fxIDtoDel then 
+      if fxID == fxIDtoDel then
         Lups.RemoveParticles(fxID)
-      else 
+      else
         newTable[#newTable+1] = fxID
       end
     end
 
-    if #newTable == 0 then 
+    if #newTable == 0 then
       particleIDs[unitID] = nil
-    else 
+    else
       particleIDs[unitID] = newTable
     end
   end
@@ -216,10 +216,10 @@ end
 
 local function UnitEnteredLos(_,unitID)
   local spec, fullSpec = spGetSpectatingState()
-  if (spec and fullSpec) then 
-    return 
+  if (spec and fullSpec) then
+    return
   end
-  
+
   --[[
   if registeredUnits[unitID] then
     return
@@ -266,7 +266,7 @@ local function PlayerChanged(_,playerID)
     --// clear all FXs
     for _,unitFxIDs in pairs(particleIDs) do
       for i=1,#unitFxIDs do
-	local fxID = unitFxIDs[i]    
+	local fxID = unitFxIDs[i]
         Lups.RemoveParticles(fxID)
       end
     end

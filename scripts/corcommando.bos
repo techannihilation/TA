@@ -467,19 +467,6 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
-{
-	move gunbarrel to y-axis [-0.200000] speed [1.328857];
-	show flare;
-	sleep 100;
-	hide flare;
-	move gunbarrel to y-axis [0.000000] now;
-}
-
-FireSecondary()
-{
-}
-
 AimSecondary(heading, pitch)
 {
 	return (1);

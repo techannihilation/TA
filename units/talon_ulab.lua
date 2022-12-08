@@ -19,7 +19,7 @@ return {
 		collisionvolumeoffsets = "0 -110 0",
 		collisionvolumescales = "275 75 210",
 		collisionvolumetype = "CylZ",
-		description = "Produces T4 Pod",
+		description = "Produces T4 Units",
 		energystorage = 1400,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
