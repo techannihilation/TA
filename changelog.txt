@@ -1,10 +1,11 @@
  4.35 => 4.36
-2022-11-10
+2022-11-13
 
 Balance :
  - T4 Cut Gok : Decrease speed 2.7=>2.5
 
 Improvment :
+- Add T4 AA TLL
 - Add Paratrooper Gok (Stealth Op)
 - Repentance become T4 Shielded Unit by morphing from Abaddon
 - Add T4 TLL Albertosaurus (Morphing Mosaurus or in T4 Sea Lab)
