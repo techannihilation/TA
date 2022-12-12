@@ -1,7 +1,6 @@
 return {
 	talon_veloute = {
 		acceleration = 0,
-		
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 340045,
@@ -14,11 +13,10 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "100 100 110",
-		
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Rapid Long Range Plasma Cannon",
+		description = "Tech Level 2",
 		explodeas = "crawl_blast",
 		firestandorders = 1,
 		footprintx = 8,
@@ -32,8 +30,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T2 Veloute",
-
+		name = "Rapid Long Range Plasma Cannon",
 		objectname = "talon_veloute",
 		radaremitheight = 136,
 		seismicsignature = 0,

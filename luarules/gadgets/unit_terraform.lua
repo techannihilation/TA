@@ -228,7 +228,7 @@ local allowedArray = {
   [UnitDefNames["tllcom1"].id] = true,
   [UnitDefNames["tllcom2"].id] = true,
   [UnitDefNames["tllcom3"].id] = true,
-  [UnitDefNames["tllmarmelade"].id] = true,
+  [UnitDefNames["tllucv"].id] = true,
   [UnitDefNames["tllbuilderlvl3"].id] = true,
 
   --TALON
@@ -238,12 +238,12 @@ local allowedArray = {
   [UnitDefNames["talon_uch"].id] = true,
   [UnitDefNames["talon_builderlvl3"].id] = true,
 
-  --TALON
+  --GOK
   [UnitDefNames["gok_com1"].id] = true,
   [UnitDefNames["gok_com2"].id] = true,
   [UnitDefNames["gok_com3"].id] = true,
-  --[UnitDefNames["gok_uch"].id] = true,
-  [UnitDefNames["gok_ucp"].id] = true,
+  [UnitDefNames["gok_uch"].id] = true,
+  [UnitDefNames["gok_builderlvl5"].id] = true,
 }
 
 --------------------------------------------------------------------------------

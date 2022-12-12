@@ -53,6 +53,20 @@ return {
 			buildpic = "armstratus.dds",
 			faction = "ARM",
 		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 89641,
+				description = "Aircraft Debris",
+				footprintx = 4,
+				footprintz = 4,
+				object = "4X4Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
+		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

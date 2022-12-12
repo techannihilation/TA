@@ -120,7 +120,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0,
 				impulsefactor = 0,
-				name = "AdvancedFlakCannon",
+				name = "Advanced Flak",
 				noselfdamage = true,
 				range = 1000,
 				reloadtime = 0.15,

@@ -1,7 +1,7 @@
 return {
 	tllbagger = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 29090,
 		buildcostenergy = 3064366,
@@ -14,7 +14,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Rapid Long-Range Plasma Cannon",
+		description = "Tech Level 4",
 		explodeas = "crawl_blast",
 		firestandorders = 1,
 		footprintx = 14,
@@ -28,8 +28,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Bagger",
-
+		name = "Rapid Long-Range Plasma Cannon",
 		objectname = "TLLBAGGER",
 		radaremitheight = 272,
 		seismicsignature = 0,

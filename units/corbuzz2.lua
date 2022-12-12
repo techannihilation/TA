@@ -1,7 +1,7 @@
 return {
 	corbuzz2 = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 581373,
@@ -14,11 +14,10 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -19 0",
 		collisionvolumescales = "65 150 90",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Rapid Long Range Plasma Cannon",
+		description = "Tech Level 3",
 		explodeas = "crawl_blast",
 		firestandorders = 3,
 		footprintx = 6,
@@ -32,8 +31,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T3 Buzzsaw",
-
+		name = "Rapid Long Range Plasma Cannon",
 		objectname = "CORBUZZ2",
 		radaremitheight = 170,
 		seismicsignature = 0,

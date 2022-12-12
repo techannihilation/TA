@@ -52,7 +52,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.957,
-		turnrate = 968,
+		turnrate = 900,
 		unitname = "corpinchy",
 		upright = true,
 		workertime = 540,

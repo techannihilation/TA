@@ -1,7 +1,7 @@
 return {
 	tllhydre = {
 		acceleration = 0,
-		
+
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 245431,
@@ -14,7 +14,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Rapid Long Range Plasma Cannon",
+		description = "Tech Level 2",
 		explodeas = "crawl_blast",
 		firestandorders = 1,
 		footprintx = 8,
@@ -28,8 +28,7 @@ return {
 		maxslope = 13,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "T2 Hydre",
-
+		name = "Rapid Long Range Plasma Cannon",
 		objectname = "tllhydre",
 		radaremitheight = 136,
 		seismicsignature = 0,

@@ -54,7 +54,7 @@ return {
 		workertime = 1700,
 		yardmap = "oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo",
 		buildoptions = {
-			[1] = "tllmarmelade",
+			[1] = "tllucv",
 			--[2] = "",
 			[3] = "tllirritator",
 			[4] = "tllhailstorm",
