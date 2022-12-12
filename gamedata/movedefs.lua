@@ -529,7 +529,7 @@ local moveDatas = {
         maxwaterdepth = 15000
     },
     AMPTBOT4 = {
-        crushstrength = 2500,
+        crushstrength = 250,
         footprintx = 4,
         footprintz = 4,
         maxslope = 80,
@@ -537,6 +537,13 @@ local moveDatas = {
     },
     AMPTBOT5 = {
         crushstrength = 250,
+        footprintx = 5,
+        footprintz = 5,
+        maxslope = 80,
+        maxwaterdepth = 15000
+    },
+    AMPTBOT8 = {
+        crushstrength = 1000,
         footprintx = 5,
         footprintz = 5,
         maxslope = 80,

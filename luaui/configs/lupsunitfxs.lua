@@ -212,7 +212,6 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
 },
   tllgorgon = {
-    {class='ShieldSphere',options=tllgorgonSphere},
     {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
@@ -449,7 +448,7 @@ cafus = {
      {class='Bursts',options=ShieldBursts100},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
-   
+
   ---- OTHER ----------------------------
 tllmeteor = {
 	{class='SimpleParticles2', options=MergeTable({pos={32,265,-40}, delay=10, lifeSpread=30},sparksr1)},

@@ -5,6 +5,8 @@ Balance :
  - T4 Cut Gok : Decrease speed 2.7=>2.5
 
 Improvment :
+- TLL Gorgon becomes a Turtle. More HP but less speed. Weapon EMP deleted
+- Tll Plasma Deflector T1 & T2 : change Model
 - Add T4 AA TLL
 - Add Paratrooper Gok (Stealth Op)
 - Repentance become T4 Shielded Unit by morphing from Abaddon

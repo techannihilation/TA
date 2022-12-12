@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, arm, dish, light;
+piece  base, body, system1, system3, system5, system6, sp, gun;
 
 static-var  Static_Var_1, statechg_DesiredState, statechg_StateChanging;
 
@@ -42,12 +42,8 @@ Shield()
 
 Create()
 {
-	dont-shade dish;
-	dont-shade arm;
-	dont-shade light;
 	Static_Var_1 = 1;
 	start-script SmokeUnit();
-	set ARMORED to 1;
 }
 
 RestoreAfterDelay()
@@ -62,7 +58,7 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	piecenum = body;
+	piecenum = sp;
 }
 
 FirePrimary()
@@ -86,25 +82,24 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
-		explode arm type NOHEATCLOUD;
+		explode system1 type NOHEATCLOUD;
+		explode system3 type NOHEATCLOUD;
+		explode system5 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode dish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		explode dish type NOHEATCLOUD;
+		explode system1 type NOHEATCLOUD;
+		explode system3 type NOHEATCLOUD;
+		explode system5 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode dish type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode system1 type NOHEATCLOUD;
+	explode system3 type NOHEATCLOUD;
+	explode system5 type NOHEATCLOUD;
 	return (corpsetype);
 }
