@@ -26,6 +26,13 @@ function gadget:Initialize()
 	local modOptions = Spring.GetModOptions() or {}
 	local startMetal  = tonumber(modOptions.startmetal)  or 1000
 	local startEnergy = tonumber(modOptions.startenergy) or 1000
+    if startMetal > 100000000 then
+        startMetal = math.huge
+    end
+    if startEnergy > 100000000 then
+        startEnergy = math.huge
+    end
+    local tea
 	local teamResources = true 
 
 	if ((modOptions.mo_storageowner) and (modOptions.mo_storageowner == "com")) then
