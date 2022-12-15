@@ -47,10 +47,9 @@ return {
 			[1] = "gok_eca",
 			[2] = "gok_erez",
 			[3] = "gok_wraith",
-			[4] = "gok_nurgle",
-			[5] = "gok_dvergar",
-			--[6] = "gok_",
-			--[7] = "gok_",
+			[4] = "gok_benne",
+			[5] = "gok_nurgle",
+			[6] = "gok_dvergar",
 		},
 		customparams = {
 			buildpic = "gok_eap.dds",
