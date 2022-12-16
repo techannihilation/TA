@@ -1,5 +1,5 @@
  4.35 => 4.36
-2022-11-16
+2022-11-17
 
 Balance :
  - T4 Cut Gok : Decrease speed 2.7=>2.5
@@ -8,7 +8,7 @@ Improvment :
 - Add T3 Air Transport for GOK
 - TLL Gorgon becomes a Turtle. More HP but less speed. Weapon EMP deleted
 - Tll Plasma Deflector T1 & T2 : change Model
-- Add T4 AA TLL
+- Add T4 AA TLL & Core
 - Add Paratrooper Gok (Stealth Op)
 - Repentance become T4 Shielded Unit by morphing from Abaddon
 - Add T4 TLL Albertosaurus (Morphing Mosaurus or in T4 Sea Lab)
