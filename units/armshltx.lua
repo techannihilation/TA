@@ -52,7 +52,7 @@ return {
 		unitname = "armshltx",
 		usebuildinggrounddecal = true,
 		workertime = 800,
-		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
+		yardmap = "ooooooooo ooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco",
 		buildoptions = {
 			[1] = "armsmc",
 			[2] = "armmarauder",
