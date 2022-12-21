@@ -7,7 +7,7 @@ function gadget:GetInfo()
 		date = "2022",
 		license = "GNU GPL, v2 or later",
 		layer = 0,
-		enabled = true
+		enabled = false
 	}
 end
 
@@ -22,7 +22,7 @@ local GetTeamList = Spring.GetTeamList
 -- CONSTANS
 --------------------------------------------------------------------------------
 local maxUnits = 1
-local unitsList = {"umex"} -- you can add other too e.g. {"umex", "armpw", "armck"} etc. 
+local unitsList = {"umex"} -- you can add other too e.g. {"umex", "armpw", "armck"} etc.
 local XmasUnits = {}
 
 for _, v in pairs(unitsList) do
