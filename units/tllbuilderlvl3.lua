@@ -66,8 +66,8 @@ return {
 			[10] = "tllantinuke2",
 			[11] = "tllfsilo",
 			[12] = "tllbagger",
-			--[13] = "tllmeteor",
-			[14] = "tllvanya",
+			[13] = "tllvanya",
+			[14] = "tllsamael",
 		},
 		customparams = {
 			buildpic = "tllbuilderlvl3.dds",

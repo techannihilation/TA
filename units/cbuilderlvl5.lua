@@ -20,7 +20,6 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "77 60 140",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		cruisealt = 180,
@@ -69,6 +68,7 @@ return {
 			[12] = "corfsilo",
 			[13] = "corbuzz1",
 			[14] = "corflu",
+			[15] = "corlilith",
 		},
 		customparams = {
 			buildpic = "cbuilderlvl5.dds",

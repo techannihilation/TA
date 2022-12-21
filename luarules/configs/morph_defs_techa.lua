@@ -704,6 +704,28 @@ local morphDefs = {
 	},
 }
 
+--XMAS Special Morph
+gok_mex = {
+	into = 'umex',
+	time = 60,
+},
+talon_mex = {
+	into = 'umex',
+	time = 60,
+},
+tllmex = {
+	into = 'umex',
+	time = 60,
+},
+armmex = {
+	into = 'umex',
+	time = 60,
+},
+cormex = {
+	into = 'umex',
+	time = 60,
+},
+
 --
 -- Here's an example of why active configuration
 -- scripts are better then static TDF files...

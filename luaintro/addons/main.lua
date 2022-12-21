@@ -19,7 +19,7 @@ local infoMessage = {}
 
 --table.insert(infoMessage, "Spring Engine version 101.0.1-201 or above is needed for this version")
 
-table.insert(infoMessage, "Merry Xmas From TECHA. Only One T5 Mex available on each Team.")
+table.insert(infoMessage, "Merry Xmas From TECHA. T5 Mex & Titan are available")
 
 if Spring.GetModOptions() then
 	if Spring.GetModOptions().deathmode then

@@ -1,6 +1,6 @@
  4.36 => 4.37
 2022-11-21
- - Xmas Mex : T5 Mex for all Commander lvl 1. Only 1 Mex on each Team.
+ - Xmas Mex : T5 Mex (by Morph) & Titan (on T5 Builder) are available
 
  4.35 => 4.36
 2022-11-17
