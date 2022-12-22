@@ -702,25 +702,25 @@ local morphDefs = {
 			time = 10,
 		},
 	},
-	
+
 	--XMAS Special Morph
-	gok_mex = {
+	gok_mas = {
 		into = 'umex',
 		time = 60,
 	},
-	talon_mex = {
+	talon_mas = {
 		into = 'umex',
 		time = 60,
 	},
-	tllmex = {
+	tllmas = {
 		into = 'umex',
 		time = 60,
 	},
-	armmex = {
+	armmas = {
 		into = 'umex',
 		time = 60,
 	},
-	cormex = {
+	cormas = {
 		into = 'umex',
 		time = 60,
 	},
