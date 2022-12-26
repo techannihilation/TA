@@ -193,36 +193,46 @@ AimSecondary(heading, pitch)
 
 FireSecondary()
 {
-		gun_1 = 0;
+	if (gun_1 == 0)
+	{
 		sleep 100;
-		gun_1 = 9;
-		sleep 100;
-		gun_1 = 2;
-		sleep 100;
-		gun_1 = 13;
-		sleep 100;
-		gun_1 = 4;
-		sleep 100;
-		gun_1 = 15;
-		sleep 100;
-		gun_1 = 1;
-		sleep 100;
-		gun_1 = 10;
+		gun_1 = 7;
 		sleep 100;
 		gun_1 = 3;
 		sleep 100;
-		gun_1 = 14;
+		gun_1 = 4;
 		sleep 100;
-		gun_1 = 5;
-		sleep 100;
-		gun_1 = 11;
+		gun_1 = 1;
 		sleep 100;
 		gun_1 = 6;
 		sleep 100;
-		gun_1 = 13;
+		gun_1 = 2;
+		sleep 100;
+		gun_1 = 5;
+		sleep 100;
+		gun_1 = 8;
+		return (0);
+	}
+	if (gun_1 == 8)
+	{
+		sleep 100;
+		gun_1 = 11;
+		sleep 100;
+		gun_1 = 15;
 		sleep 100;
 		gun_1 = 12;
-
+		sleep 100;
+		gun_1 = 14;
+		sleep 100;
+		gun_1 = 10;
+		sleep 100;
+		gun_1 = 13;
+		sleep 100;
+		gun_1 = 9;
+		sleep 100;
+		gun_1 = 0;
+		return (0);
+	}
 }
 
 QuerySecondary(piecenum)

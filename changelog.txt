@@ -1,6 +1,10 @@
  4.36 => 4.37
-2022-11-21
+2022-11-27
  - Xmas Mex : T5 Mex (by Morph) & Titan (on T5 Builder) are available
+
+ Balance :
+  - Add Thermite to rocket for Saurus, bumbleeblee, Pterodactyle, Leopard. Same damage + Termite damage (Metal cost + 5%).
+
 
  4.35 => 4.36
 2022-11-17

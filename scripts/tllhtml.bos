@@ -32,8 +32,6 @@ Walk2()
 		turn rthigh to x-axis <-16.291209> speed <0.791209>;
 		turn lthigh to x-axis <-53.093407> now;
 		turn lthigh to x-axis <-58.890110> speed <27.390110>;
-		turn head to x-axis <0.000000> now;
-		turn head to x-axis <-7.692308> speed <36.500000>;
 		turn lleg to x-axis <70.692308> now;
 		turn lleg to x-axis <66.291209> speed <20.692308>;
 		turn lfoot to x-axis <18.291209> now;
@@ -56,7 +54,6 @@ Walk2()
 		turn torso to y-axis <2.093407> speed <15.390110>;
 		turn rthigh to x-axis <-16.500000> speed <0.791209>;
 		turn lthigh to x-axis <-64.692308> speed <25.390110>;
-		turn head to x-axis <-7.000000> speed <3.093407>;
 		turn lleg to x-axis <61.890110> speed <19.291209>;
 		turn lfoot to x-axis <18.593407> speed <0.593407>;
 		turn rleg to x-axis <33.390110> speed <35.500000>;
@@ -73,7 +70,6 @@ Walk2()
 		turn torso to y-axis <3.890110> speed <8.192308>;
 		turn rthigh to x-axis <-13.692308> speed <13.093407>;
 		turn lthigh to x-axis <-57.500000> speed <33.500000>;
-		turn head to x-axis <0.000000> speed <32.692308>;
 		turn lleg to x-axis <47.291209> speed <67.890110>;
 		turn lfoot to x-axis <22.390110> speed <17.692308>;
 		turn rleg to x-axis <35.890110> speed <11.390110>;
@@ -124,7 +120,6 @@ Walk2()
 		turn torso to y-axis <6.692308> speed <3.192308>;
 		turn rthigh to x-axis <24.291209> speed <161.291209>;
 		turn lthigh to x-axis <-32.390110> speed <82.291209>;
-		turn head to x-axis <9.791209> speed <90.291209>;
 		turn lleg to x-axis <25.291209> speed <33.890110>;
 		turn lfoot to x-axis <3.890110> speed <102.192308>;
 		turn rleg to x-axis <40.791209> speed <38.692308>;
@@ -140,7 +135,6 @@ Walk2()
 		turn torso to y-axis <4.593407> speed <30.093407>;
 		turn rthigh to x-axis <-13.500000> speed <539.000000>;
 		turn lthigh to x-axis <-24.390110> speed <113.000000>;
-		turn head to x-axis <5.593407> speed <60.291209>;
 		turn lleg to x-axis <21.593407> speed <52.692308>;
 		turn lleg to y-axis <0.000000> speed <0.000000>;
 		turn lfoot to x-axis <-2.291209> speed <87.890110>;
@@ -157,7 +151,6 @@ Walk2()
 		turn torso to y-axis <1.791209> speed <19.500000>;
 		turn rthigh to x-axis <-51.192308> speed <262.000000>;
 		turn lthigh to x-axis <-16.500000> speed <54.890110>;
-		turn head to x-axis <3.192308> speed <17.093407>;
 		turn lleg to x-axis <17.890110> speed <25.593407>;
 		turn lleg to y-axis <0.000000> speed <0.000000>;
 		turn lfoot to x-axis <-8.390110> speed <42.692308>;
@@ -174,7 +167,6 @@ Walk2()
 		turn pelvis to x-axis <5.390110> speed <11.093407>;
 		turn torso to y-axis <-1.390110> speed <17.390110>;
 		turn rthigh to x-axis <-58.000000> speed <37.593407>;
-		turn head to x-axis <-3.890110> speed <38.593407>;
 		turn lleg to x-axis <25.500000> speed <41.692308>;
 		turn lfoot to x-axis <-14.500000> speed <33.390110>;
 		turn lfoot to y-axis <0.000000> speed <0.000000>;
@@ -189,7 +181,6 @@ Walk2()
 		turn pelvis to x-axis <3.291209> speed <10.390110>;
 		turn torso to y-axis <-5.291209> speed <19.791209>;
 		turn rthigh to x-axis <-64.890110> speed <35.093407>;
-		turn head to x-axis <-10.890110> speed <36.093407>;
 		turn lleg to x-axis <33.093407> speed <39.000000>;
 		turn lfoot to x-axis <-20.593407> speed <31.192308>;
 		turn lfoot to y-axis <0.000000> speed <0.000000>;
@@ -205,7 +196,6 @@ Walk2()
 		turn torso to y-axis <-9.500000> speed <20.390110>;
 		turn rthigh to x-axis <-51.791209> speed <63.291209>;
 		turn lthigh to x-axis <1.000000> speed <84.890110>;
-		turn head to x-axis <0.000000> speed <52.692308>;
 		turn lleg to x-axis <18.291209> speed <71.500000>;
 		turn lleg to y-axis <0.000000> speed <0.000000>;
 		turn lfoot to x-axis <-22.692308> speed <10.192308>;
@@ -258,7 +248,6 @@ Walk2()
 		turn torso to y-axis <-10.500000> speed <10.692308>;
 		turn rthigh to x-axis <-31.593407> speed <35.500000>;
 		turn lthigh to x-axis <40.390110> speed <110.093407>;
-		turn head to x-axis <14.791209> speed <149.192308>;
 		turn lleg to x-axis <25.692308> speed <111.890110>;
 		turn lfoot to x-axis <22.500000> speed <238.593407>;
 		turn rleg to x-axis <25.291209> speed <28.390110>;
@@ -275,7 +264,6 @@ Walk2()
 		turn torso to y-axis <-7.390110> speed <45.890110>;
 		turn rthigh to x-axis <-23.890110> speed <112.093407>;
 		turn lthigh to x-axis <-6.291209> speed <677.791209>;
-		turn head to x-axis <5.291209> speed <137.593407>;
 		turn lleg to x-axis <48.192308> speed <326.192308>;
 		turn lfoot to x-axis <20.390110> speed <30.192308>;
 		turn rleg to x-axis <21.093407> speed <61.192308>;
