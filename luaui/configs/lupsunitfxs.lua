@@ -910,9 +910,10 @@ coreca = {
     {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.6,0.1,0}, width=17, length=30, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
  },
- abroadside = {
+ arm_broadside = {
     {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=30, length=35, piece="mthrust", noIconDraw = true, priority=3, onActive=true}},
  },
  armarch = {
     {class='AirJet',options={color={0.8,0.8,1}, width=30, length=35, piece="enginea", noIconDraw = true, priority=3, onActive=true}},

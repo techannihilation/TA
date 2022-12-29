@@ -1,0 +1,305 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, tower1, tower2, front,
+		turret1, turret2, turret3, turret4,
+		flare1, flare2, flare3, flare4,
+		rthrust, lthrust, mthrust,
+		flak_tur2, flaksleeve2, flakbarrel2a, flakflare2a, flakbarrel2b, flakflare2b, 
+		flak_tur1, flaksleeve1, flakbarrel1a, flakflare1a, flakbarrel1b, flakflare1b;
+		
+static-var  flak_1, flak_2;
+
+#define SIG_AIM_1 2
+#define SIG_AIM_2 4
+#define SIG_AIM_3 8
+#define SIG_AIM_4 16
+#define SIG_AIM_5 32
+#define SIG_AIM_6 64
+#define FLAK_TURRET_HEADING_SPEED <420>
+#define FLAK_TURRET_PITCH_SPEED <360>
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+			emit-sfx smoketype from turret1;
+			emit-sfx smoketype from turret2;
+			emit-sfx smoketype from tower2;
+			emit-sfx smoketype from front;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RestoreAfterDelay()
+{
+	sleep 4000;
+	turn turret1 to y-axis <0.000000> speed <55.000000>;
+	turn turret2 to y-axis <0.000000> speed <55.000000>;
+	turn turret3 to y-axis <0.000000> speed <55.000000>;
+	turn turret4 to y-axis <0.000000> speed <55.000000>;
+}
+
+RestoreFlak()
+{
+	sleep 3000;
+	turn flak_tur1 to y-axis <0.000000> speed <150.000000>;
+	turn flak_tur2 to y-axis <0.000000> speed <150.000000>;
+	turn flaksleeve1 to x-axis <0.000000> speed <150.000000>;
+	turn flaksleeve2 to x-axis <0.000000> speed <150.000000>;
+}
+
+Create()
+{
+	flak_1 = 0;
+	flak_2 = 0;
+	start-script SmokeUnit();
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret1 to y-axis heading speed <45.000000>;
+	wait-for-turn turret1 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <45.000000>;
+	wait-for-turn turret2 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret3 to y-axis heading speed <45.000000>;
+	wait-for-turn turret3 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn turret4 to y-axis heading speed <45.000000>;
+	wait-for-turn turret3 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret1;
+}
+
+QueryWeapon1(piecenum)
+{
+	
+	piecenum = flare1;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = turret2;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = flare2;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = turret3;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = flare3;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = turret4;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = flare4;
+}
+
+// FLAK WEAPONS
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = flak_tur1;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = flak_tur2;
+}
+
+AimWeapon5(heading,pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn flak_tur1 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flaksleeve1 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flak_tur1 around y-axis;
+	wait-for-turn flaksleeve1 around x-axis;
+	start-script RestoreFlak();
+	return (1);
+}
+
+AimWeapon6(heading,pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn flak_tur2 to y-axis heading speed (FLAK_TURRET_HEADING_SPEED);
+	turn flaksleeve2 to x-axis <0.0> - pitch speed (FLAK_TURRET_PITCH_SPEED);
+	wait-for-turn flak_tur2 around y-axis;
+	wait-for-turn flaksleeve2 around x-axis;
+	start-script RestoreFlak();
+	return (1);
+}
+
+FireWeapon5()
+{
+	if(flak_1 == 0)
+	{
+		move flakbarrel1a to z-axis [-2.0] now;
+		show flakflare1a;
+		sleep 50;		
+		hide flakflare1a;
+		move flakbarrel1a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_1 == 1)
+	{
+		move flakbarrel1b to z-axis [-2.0] now;
+		show flakflare1b;
+		sleep 50;		
+		hide flakflare1b;
+		move flakbarrel1b to z-axis [0.0] speed [1.0];
+	}
+	++flak_1;
+	if(flak_1 == 2)
+	{
+		flak_1 = 0;
+	}
+}
+
+FireWeapon6()
+{
+	if(flak_2 == 0)
+	{
+		move flakbarrel2a to z-axis [-2.0] now;
+		show flakflare2a;
+		sleep 50;		
+		hide flakflare2a;
+		move flakbarrel2a to z-axis [0.0] speed [1.0];
+	}
+	if(flak_2 == 1)
+	{
+		move flakbarrel2b to z-axis [-2.0] now;
+		show flakflare2b;
+		sleep 50;		
+		hide flakflare2b;
+		move flakbarrel2b to z-axis [0.0] speed [1.0];
+	}
+	++flak_2;
+	if(flak_2 == 2)
+	{
+		flak_2 = 0;
+	}
+}
+
+QueryWeapon5(piecenum)
+{
+	if(flak_1 == 0)
+	{
+		piecenum = flakflare1a;
+	}
+	if(flak_1 == 1)
+	{
+		piecenum = flakflare1b;
+	}
+}
+
+QueryWeapon6(piecenum)
+{
+	if(flak_2 == 0)
+	{
+		piecenum = flakflare2a;
+	}
+	if(flak_2 == 1) 
+	{
+		piecenum = flakflare2b;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode front type NOHEATCLOUD;
+		explode tower1 type NOHEATCLOUD | FALL;
+		explode tower2 type NOHEATCLOUD | FALL;
+		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flak_tur1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode flak_tur2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode front type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode tower1 type NOHEATCLOUD | FALL;
+	explode tower2 type NOHEATCLOUD | FALL;
+	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flak_tur1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode flak_tur2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

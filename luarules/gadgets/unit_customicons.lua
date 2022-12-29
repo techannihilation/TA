@@ -292,7 +292,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "t5ships.user")
 
       --T5 Heavy Hero
-      elseif (ud.name == "abroadside") or (ud.name == "cdevastator") or (ud.name == "tllzeppelin") or (ud.name == "gok_apocalypse") then
+      elseif (ud.name == "arm_broadside") or (ud.name == "cdevastator") or (ud.name == "tllzeppelin") or (ud.name == "gok_apocalypse") then
         Spring.SetUnitDefIcon(udid, "t5bigships.user")
 
       --T6 Hero

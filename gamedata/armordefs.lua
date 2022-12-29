@@ -299,7 +299,7 @@ return {
 	--### AREOSHIP - SUPERSHIP ###
 	areoship = {
 		-- T5 SUPERSHIP
-		"abroadside",
+		"arm_broadside",
 		"armhope",
 		"cdevastator",
 		"corvaliant",

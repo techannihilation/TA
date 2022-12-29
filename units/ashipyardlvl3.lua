@@ -47,7 +47,7 @@ return {
 		buildoptions = {
 			[1] = "abuilderlvl5",
 			[2] = "armhope",
-			[3] = "abroadside",
+			[3] = "arm_broadside",
 		},
 		customparams = {
 			buildpic = "ashipyardlvl3.dds",

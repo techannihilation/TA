@@ -1,13 +1,15 @@
  4.36 => 4.37
-2022-11-27
+2022-12-30
  - Xmas Mex : T5 Mex (by Morph) & Titan (on T5 Builder) are available
 
  Balance :
   - Add Thermite to rocket for Saurus, bumbleeblee, Pterodactyle, Leopard. Same damage + Termite damage (Metal cost + 5%).
 
+  Improvment :
+  - Rework T5 Broadside Cruser Arm
 
  4.35 => 4.36
-2022-11-17
+2022-12-17
 
 Balance :
  - T4 Cut Gok : Decrease speed 2.7=>2.5
@@ -22,7 +24,7 @@ Improvment :
 - Add T4 TLL Albertosaurus (Morphing Mosaurus or in T4 Sea Lab)
 
  4.34 => 4.35
-2022-11-04
+2022-12-04
 
 Balance :
  - Increase Stun time for paratroopers 8=>12s

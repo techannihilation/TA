@@ -177,7 +177,7 @@ return {
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					commanders = 2400,
+					commanders = 600,
 					default = 2400,
 					subs = 5,
 				},
@@ -226,28 +226,28 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM LARGE",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM LARGE",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM LARGE",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "-1 0 0",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL TINY MEDIUM LARGE",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "1 0 0",
 				maxangledif = 270,

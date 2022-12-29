@@ -149,7 +149,7 @@ unitList["TA"] = {
 
 --Super Ships
 [UnitDefNames["cdevastator"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
-[UnitDefNames["abroadside"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
+[UnitDefNames["arm_broadside"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
 [UnitDefNames["tllzeppelin"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
 [UnitDefNames["talon_independence"].id] = 	{["en"]="Holy Shit!", ["de"]="", ["fr"]="" },
 
