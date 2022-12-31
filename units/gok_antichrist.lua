@@ -207,7 +207,7 @@ return {
 				shieldradius = 100,
 				shieldrepulser = true,
 				smartshield = true,
-				visibleshield = true,
+				
 				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
