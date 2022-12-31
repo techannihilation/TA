@@ -336,7 +336,7 @@ return {
 				shieldrepulser = false,
 				smartshield = true,
 				visibleshield = true,
-				visibleshieldrepulse = false,
+				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
 					default = 100,

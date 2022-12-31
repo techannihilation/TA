@@ -337,7 +337,7 @@ return {
 				soundhitwetvolume = 0.5,
 				visibleshield = true,
 				visibleshieldhitframes = 70,
-				visibleshieldrepulse = false,
+				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
 					default = 100,
