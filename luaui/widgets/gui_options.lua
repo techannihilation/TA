@@ -3036,7 +3036,7 @@ function widget:Initialize()
 	end
 
 	if WG.Lups then
-		Spring.SetConfigInt("LupsPriority", Spring.GetConfigInt("LupsPriority", 1))
+		Spring.SetConfigInt("LupsPriority", 3) --Spring.GetConfigInt("LupsPriority", 1)
 	end
 
 	Spring.SendCommands({"bind f10 options"})

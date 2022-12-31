@@ -117,7 +117,7 @@ return {
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				visibleshield = true,
-				visibleshieldrepulse = true,
+				visibleshieldrepulse = false,
 				weapontype = "Shield",
 				damage = {
 					default = 100,

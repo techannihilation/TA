@@ -188,264 +188,201 @@ cafus = {
   ---- SHIELDS ----------------------------
   corshieldgen = {
     {class='ShieldSphere',options=corshieldgenShieldSphere},
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
    armshieldgen = {
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_shieldgen = {
-   {class='Bursts',options=shieldBursts300},
    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllmako = {
-     {class='Bursts',options=shieldBursts300},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
  },
  gok_valefor = {
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
 },
  gok_bats = {
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
 },
   tllgorgon = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corsingularity = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armbeetle = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_seth = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,22,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armexo = {
-    {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_mythril = {
-    {class='Bursts',options=armexoBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_repentance = {
-    {class='Bursts',options=repentanceBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_azaroth = {
-    {class='Bursts',options=shieldBursts250},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armsmc = {
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,30,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armpraet = {
-    {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_boxer = {
-    {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_archon = {
-    {class='Bursts',options=armpraetBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   cormonkeylord = {
-    {class='Bursts',options=monkeylordBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corcrab = {
     {class='ShieldSphere',options=corcrabSphere},
-    {class='Bursts',options=corcrabBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=180, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_ucp = {
-    {class='Bursts',options=corcrabBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=180, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllirritator = {
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=230, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   --T1 Gate
   armgate2 = {
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corgate2 = {
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllgate2 = {
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_gate2 = {
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_gate2 = {
-    {class='Bursts',options=shieldBursts300},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   -- T2 GATE
   armgate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corgate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllgate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_gate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_gate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   --T2 SEA GATE
   tllfgate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_fgate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_fgate = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armflosh = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corflshd = {
-    {class='Bursts',options=shieldBursts400},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   --T3 GATE
   armgate4 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corgate4 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllgate4 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_gate4 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_gate4 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   --T3 SEA GATE
   armfgate1 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corfgate1 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllfgate1 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_fgate1 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_fgate1 = {
-    {class='Bursts',options=shieldBursts700},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   --T4 GATE
   armgate1 = {
-    {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corgate1 = {
-    {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllgate1 = {
-    {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_gate1 = {
-    {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_gate1 = {
-    {class='Bursts',options=shieldBursts1000},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   --T5 GATE
   armgate3 = {
-    {class='Bursts',options=shieldBursts2200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={30,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   corgate3 = {
-    {class='Bursts',options=shieldBursts2200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={-30,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   tllgate3 = {
-    {class='Bursts',options=shieldBursts2200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_gate3 = {
-    {class='Bursts',options=shieldBursts2200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_gate3 = {
-    {class='Bursts',options=shieldBursts2200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   -- Special Blue Shied
   talon_obelisk = {
-    {class='Bursts',options=obeliskBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=350, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   talon_pyramid = {
-    {class='Bursts',options=pyramidBursts},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,5,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_satan = {
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_eck = {
-   {class='Bursts',options=shieldBursts150},
    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
    gok_antichrist = {
-      {class='Bursts',options=ShieldBursts100},
       {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   armvengence = {
-     {class='Bursts',options=ShieldBursts100},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
 
@@ -983,17 +920,14 @@ sat_radar = {
   },
  armcom1 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-    {class='Bursts',options=shieldBursts100},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  armcom2 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  armcom3 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,4,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=8, piece="head"}},
-    {class='Bursts',options=shieldBursts200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  corcom = {
@@ -1001,17 +935,14 @@ sat_radar = {
   },
  corcom1 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-    {class='Bursts',options=shieldBursts100},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  corcom2 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  corcom3 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,0,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=16, piece="head"}},
-    {class='Bursts',options=shieldBursts200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  tllcom = {
@@ -1019,17 +950,14 @@ sat_radar = {
   },
  tllcom1 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-    {class='Bursts',options=shieldBursts100},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  tllcom2 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  tllcom3 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,8.8,0.35}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-    {class='Bursts',options=shieldBursts200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  talon_com = {
@@ -1037,17 +965,14 @@ sat_radar = {
   },
  talon_com1 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-    {class='Bursts',options=shieldBursts100},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  talon_com2 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-    {class='Bursts',options=shieldBursts150},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
  talon_com3 = {
     {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-    {class='Bursts',options=shieldBursts200},
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_com = {
@@ -1055,17 +980,14 @@ sat_radar = {
    },
   gok_com1 = {
      {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-     {class='Bursts',options=shieldBursts100},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
   gok_com2 = {
      {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-     {class='Bursts',options=shieldBursts150},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
   gok_com3 = {
      {class='SantaHat',options={color={1,0.1,0,1}, pos={0,7,2}, emitVector={0.3,1,0.2}, width=2.7, height=6, ballSize=0.7, piecenum=11, piece="head"}},
-     {class='Bursts',options=shieldBursts200},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
 }
