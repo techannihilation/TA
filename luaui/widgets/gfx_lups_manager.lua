@@ -381,7 +381,7 @@ function widget:Shutdown()
     end
     particleIDs = {}
   end
-
+  widgetHandler:DisableWidget("Lups")
   Spring.SendLuaRulesMsg("lups shutdown","allies")
 end
 
