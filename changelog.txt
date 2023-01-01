@@ -1,3 +1,11 @@
+4.37 => 4.38
+2023-01-01
+- Bye Xmas Features and Happy new Year !
+
+ Improvment :
+ - Rework All TLL Lightning / Plasma Lightning
+ - Rework TLL Irritator Weapon
+
  4.36 => 4.37
 2022-12-30
  - Xmas Mex : T5 Mex (by Morph) & Titan (on T5 Builder) are available

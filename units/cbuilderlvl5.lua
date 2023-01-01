@@ -68,7 +68,7 @@ return {
 			[12] = "corfsilo",
 			[13] = "corbuzz1",
 			[14] = "corflu",
-			[15] = "corlilith",
+			--[15] = "corlilith",
 		},
 		customparams = {
 			buildpic = "cbuilderlvl5.dds",

@@ -14,7 +14,7 @@ return {
 		corpse = "dead",
 		--damagemodifier = 0.15,
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Melee Turret",
+		description = "Melee",
 		digger = 1,
 		downloadable = 1,
 		explodeas = "MEDIUM_BUILDINGEX",
@@ -79,7 +79,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				
+
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,
@@ -97,9 +97,6 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				[1] = "custom:tllroaster1_muzzle",
-			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

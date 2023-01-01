@@ -87,7 +87,6 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				[1] = "custom:mediumflare_front_only",
-				[2] = "custom:tllroaster_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

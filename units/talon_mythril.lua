@@ -97,9 +97,6 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				--[1] = "custom:tllroaster1_muzzle",
-			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -229,7 +226,7 @@ return {
 				shieldradius = 250,
 				shieldrepulser = false,
 				smartshield = true,
-				
+
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

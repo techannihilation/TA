@@ -11,7 +11,7 @@ return {
       properties = {
         airdrag            = 0.8,
         alwaysvisible      = true,
-        colormap           = [[0.3 0.3 0.8 0.01	0.3 0.4 0.8 0.01		0 0 0 0.0]],
+        colormap           = [[0.9 0.9 0.2 0.01	0.5 0.5 0.1 0.01		0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
         emitrotspread      = [[0 r20]],
@@ -40,7 +40,7 @@ return {
       properties = {
         airdrag            = 0.8,
         alwaysvisible      = true,
-        colormap           = [[0.3 0.3 0.8 0.02         .03 .03 .08 0.01		      0 0 0 0.0]],
+        colormap           = [[0.9 0.9 0.2 0.02         0.03 0.03 0 0.01		      0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
         emitrotspread      = 80,
@@ -68,7 +68,7 @@ return {
       water              = true,
       properties = {
         alwaysvisible      = true,
-        colormap           = [[0.3 0.3 0.8 1 	0.2 0.2 0.6 1		0.0 0.0 0.0 0.0]],
+        colormap           = [[0.9 0.9 0.2 1 	0.6 0.6 0.1 1		0.0 0.0 0.0 0.0]],
         size               = 50,
         sizegrowth         = -0.3,
         texture            = [[groundflash]],
@@ -87,7 +87,7 @@ return {
       properties = {
         airdrag            = 0.8,
         alwaysvisible      = true,
-        colormap           = [[0.3 0.3 0.8 0.01	0.3 0.4 0.8 0.01		0 0 0 0.0]],
+        colormap           = [[0.9 0.9 0.2 0.01	0.6 0.6 0.1 0.01		0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
         emitrotspread      = [[0 r20]],
@@ -116,7 +116,7 @@ return {
       properties = {
         airdrag            = 0.8,
         alwaysvisible      = true,
-        colormap           = [[0.3 0.3 0.8 0.02         .03 .03 .08 0.01		      0 0 0 0.0]],
+        colormap           = [[0.8 0.8 0.2 0.02         0.07 0.07 0.02 0.01		      0 0 0 0.0]],
         directional        = false,
         emitrot            = 90,
         emitrotspread      = 80,
@@ -144,7 +144,7 @@ return {
       water              = true,
       properties = {
         alwaysvisible      = true,
-        colormap           = [[0.3 0.3 0.8 1 	0.2 0.2 0.6 1		0.0 0.0 0.0 0.0]],
+        colormap           = [[0.8 0.8 0.2 1 	0.6 0.6 0.2 1		0.0 0.0 0.0 0.0]],
         size               = 135,
         sizegrowth         = -0.3,
         texture            = [[groundflash]],

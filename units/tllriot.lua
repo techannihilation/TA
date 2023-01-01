@@ -37,7 +37,6 @@ return {
 		movementclass = "TANK2",
 		name = "Pacifier",
 		noautofire = false,
-		
 		objectname = "tllriot",
 		radardistance = 0,
 		radaremitheight = 25,
@@ -86,7 +85,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:BANTHAMUZZLE",
+				[1] = "custom:TLL_MUZZLE_FIRE",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -123,7 +122,7 @@ return {
 				areaofeffect = 185,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "banthablaster",
+				cegtag = "tllblaster",
 				corethickness = 0.5,
 				craterareaofeffect = 277.5,
 				craterboost = 0,
@@ -139,7 +138,7 @@ return {
 				noselfdamage = true,
 				range = 340,
 				reloadtime = 1.8,
-				rgbcolor = "0.5 0.5 1.0",
+				rgbcolor = "0.9 0.9 0.2",
 				size = 2.5,
 				soundhitdry = "debris4",
 				soundhitwet = "splslrg",

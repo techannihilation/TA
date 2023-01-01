@@ -125,6 +125,7 @@ local resources = {
 			blueexplo='blueexplo.tga',
 			pinkexplo='pinkexplo.tga',
 			brightblueexplo='brightblueexplo.tga',
+      brightyellowexplo='brightyellowexplo.tga',
 			bluenovaexplo='bluenovaexplo.tga',
 			muzzleside='muzzleside.png',
 			muzzlefront='muzzlefront.png',
@@ -231,6 +232,7 @@ local resources = {
 
 			--lightning
 			strike='techa_artwork/strike.png',
+      spray='techa_artwork/spray.png',
 			lightningball_new='techa_artwork/lightningball.png',
 	    sunlight_new='techa_artwork/sunlight.png',
       sonic_glow='techa_artwork/sonic_glow.png',

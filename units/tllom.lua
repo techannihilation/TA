@@ -82,8 +82,8 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tllroaster_muzzle",
-				[2] = "custom:tllroaster1_muzzle",
+				[1] = "custom:tll_spray_muzzle",
+				[2] = "custom:arm_lightning_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

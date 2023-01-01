@@ -113,7 +113,7 @@ return {
 				cratermult = 0,
 				duration = 0.3,
 				energypershot = 15000,
-				explosiongenerator = "custom:tlllighning_exp",
+				explosiongenerator = "custom:arm_lightning_exp",
 				firestarter = 50,
 				impactonly = 1,
 				impulseboost = 0,

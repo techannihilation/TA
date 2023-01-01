@@ -78,7 +78,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:MEDIUMFLARE",
+				[1] = "custom:TLL_MUZZLE_FIRE",
 				[2] = "custom:DUST_CLOUD_CHEAP",
 			},
 			pieceexplosiongenerators = {
@@ -116,7 +116,7 @@ return {
 				accuracy = 500,
 				areaofeffect = 192,
 				avoidfeature = false,
-				cegtag = "banthablaster",
+				cegtag = "tllblaster",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -129,7 +129,7 @@ return {
 				nogap = 1,
 				range = 1850,
 				reloadtime = 2,
-				rgbcolor = "0.5 0.5 1.0",
+				rgbcolor = "0.9 0.9 0.2",
 				separation = 0.45,
 				size = 1.58,
 				sizedecay = -0.15,
@@ -139,7 +139,6 @@ return {
 				soundstart = "cannhvy2",
 				stages = 20,
 				tolerance = 5000,
-				--turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 750,
 				wobble = 1000,

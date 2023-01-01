@@ -122,7 +122,7 @@ return {
 				cratermult = 0,
 				duration = 10,
 				energypershot = 35,
-				explosiongenerator = "custom:tlllighning_exp",
+				explosiongenerator = "custom:talon_lightning_exp",
 				firestarter = 50,
 				firesubmersed = true,
 				impactonly = 1,

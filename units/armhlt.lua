@@ -13,7 +13,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "36 89 36",
-		
+
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -147,7 +147,6 @@ return {
 				thickness = 3,
 				turret = true,
 				weapontype = "BeamLaser",
-				weaponvelocity = 2250,
 				customparams = {
 					light_mult = 1.8,
 					light_radius_mult = 1.2,

@@ -1,7 +1,7 @@
 -- flashbantha
--- banthablaster
+-- armblaster
 -- krogtaarblaster
--- banthamuzzle
+-- armmuzzle
 
 return {
   ["flashbantha"] = {
@@ -117,7 +117,7 @@ return {
         texture            = [[lightb2]],
       },
     },
-       unit_pop = {
+     unit_pop = {
       air                = true,
       class              = [[heatcloud]],
       count              = 1,
@@ -137,7 +137,7 @@ return {
     },
   },
 
-  ["banthablaster"] = {
+  ["armblaster"] = {
     sparkles = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -192,7 +192,62 @@ return {
       },
     },
   },
-  ["banthamuzzle"] = {
+  ["tllblaster"] = {
+    sparkles = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      unit               = 1,
+      water              = true,
+      properties = {
+        airdrag            = 0.95,
+        colormap           = [[0 0 0 0	0.9 0.9 0.2 0.2	  0.8 0.8 0.8 0.4	  0.3 0.3 0.3 0.2	  0.1 0.1 0.1 0.1	  0 0 0 0.01]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 360,
+        emitvector         = [[0, 0.10, 0]],
+        gravity            = [[0,0,0]],
+        numparticles       = 2,
+        particlelife       = 1,
+        particlelifespread = 5,
+        particlesize       = 12,
+        particlesizespread = 7,
+        particlespeed      = 1,
+        particlespeedspread = 2,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = 1.0,
+        sizemod            = -1.0,
+        texture            = [[lightb2]],
+      },
+    },
+    splashes = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      ground             = true,
+      properties = {
+        airdrag            = .96,
+        colormap           = [[0.9 0.9 0.2 0.01   0.5 0.5 0.1 0.01   0.2 0.2 0 0]],
+        directional        = false,
+        emitrot            = 0,
+        emitrotspread      = 30,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, 0, 0]],
+        numparticles       = 2,
+        particlelife       = 1,
+        particlelifespread = 1,
+        particlesize       = 12,
+        particlesizespread = 4,
+        particlespeed      = 1,
+        particlespeedspread = 2,
+        pos                = [[0, 1.0, 0]],
+        sizegrowth         = -.2,
+        sizemod            = 1,
+        texture            = [[lightningball_new]],
+      },
+    },
+  },
+  ["armmuzzle"] = {
       glow = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
@@ -237,7 +292,51 @@ return {
       },
     },
   },
-
+  ["tll_muzzle_fire"] = {
+      glow = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        airdrag            = 1,
+        alwaysvisible      = true,
+        colormap           = [[1 1 1 0.007    1 1 1 0.007              0 0 0 0.01]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 0,
+        emitvector         = [[0, 0, 0]],
+        gravity            = [[0, 0.00, 0]],
+        numparticles       = 1,
+        particlelife       = 10,
+        particlelifespread = 0,
+        particlesize       = 20,
+        particlesizespread = 10,
+        particlespeed      = 1,
+        particlespeedspread = 0,
+        pos                = [[0, 2, 0]],
+        sizegrowth         = 0,
+        sizemod            = 1.0,
+        texture            = [[flare1]],
+      },
+    },
+    spikes = {
+      air                = true,
+      class              = [[explspike]],
+      count              = 4,
+      ground             = true,
+      water              = true,
+      properties = {
+        alpha              = 1,
+        alphadecay         = 0.15,
+        color              = [[0.9, 0.9, 0.2]],
+        dir                = [[-4 r8,-4 r8,-4 r8]],
+        length             = 1,
+        width              = 3,
+      },
+    },
+  },
   ["blaster_sparkels"] = {
     sparkels = {
       air                = true,
@@ -669,7 +768,7 @@ return {
       water              = true,
       properties = {
         airdrag            = 0.95,
-        colormap           = [[0.1 0.2 1 0  0.1 0.2 1 0.2   0.15 0.3 0.9 0.4   0.3 0.6 0.8 0.2   0.1 0.1 0.1 0.1   0 0 0 0.01]],
+        colormap           = [[0.9 0.9 0.2 0  0.6 0.6 0.1 0.2   0.3 0.3 0 0.4   0.3 0.3 0 0.2   0.1 0.1 0.1 0.1   0 0 0 0.01]],
         directional        = true,
         emitrot            = 0,
         emitrotspread      = 360,
@@ -694,7 +793,7 @@ return {
       ground             = true,
       properties = {
         airdrag            = 0.5,
-        colormap           = [[0.1 0.2 1 0.01   0.15 0.3 0.9 0.01   0.3 0.6 0.8 0]],
+        colormap           = [[0.9 0.9 0.2 0.01   0.5 0.5 0.1 0.01   0.3 0.3 0.05 0]],
         directional        = false,
         emitrot            = 0,
         emitrotspread      = 30,

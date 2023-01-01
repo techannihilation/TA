@@ -77,7 +77,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tllroaster1_muzzle",
+				[1] = "custom:arm_lightning_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -218,9 +218,8 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 5000,
-				--explosiongenerator = "custom:hope_lightning",
-				firestarter = 90,
-				impactonly = 1,
+				explosiongenerator = "custom:arm_lightning_exp",
+				impactonly = true,
 				impulseboost = 0,
 				impulsefactor = 0,
 				name = "Krypto Blaster",

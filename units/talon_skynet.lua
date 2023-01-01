@@ -149,7 +149,7 @@ return {
 				areaofeffect = 350,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "banthablaster",
+				cegtag = "armblaster",
 				craterareaofeffect = 225,
 				energypershot = 10000,
 				explosiongenerator = "custom:explosion_light_talon",

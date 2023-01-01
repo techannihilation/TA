@@ -50,7 +50,7 @@ return {
 			[4] = "tllfight",
 			[5] = "tlltplane",
 			[6] = "tllbomber",
-			[7] = "tllcop1",
+			[7] = "tll_wasp",
 		},
 		customparams = {
 			buildpic = "tllap.dds",

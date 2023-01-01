@@ -113,7 +113,7 @@ return {
 	"corape",
 	"corcrw",
 	"ferret",
-	"tllcop1",
+	"tll_wasp",
 	"tllcopter",
 	"tllpterodactyl",
 	"talon_drone",

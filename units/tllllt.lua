@@ -17,7 +17,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "22 75 22",
-		
+
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -89,7 +89,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tllllt_glow",
+				[1] = "custom:tll_spray_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -124,42 +124,39 @@ return {
 			},
 		},
 		weapondefs = {
-			spam_lightning = {
+			llt_lightning = {
 				areaofeffect = 10,
 				beamttl = 10,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				duration = 1.9,
+				duration = 1,
 				energypershot = 25,
-				explosiongenerator = "custom:tllweb_exp",
-				firestarter = 85,
+				explosiongenerator = "custom:tll_spray_exp",
+				firestarter = 50,
 				impulseboost = 0,
 				impulsefactor = 0,
-				intensity = 12,
+				impactonly = true,
 				name = "Spray Lightning",
 				noselfdamage = true,
-				projectiles = 2,
-				range = 400,
-				reloadtime = 1,
-				rgbcolor = "0.6 0.6 0.9",
+				range = 380,
+				reloadtime = 0.5,
+				rgbcolor = "0.9 0.9 0.2",
+				soundhitdry = "lashit2",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "tllspark",
-				sprayangle = 500,
-				texture1 = "strike",
-				thickness = 2,
+				texture1 = "spray",
+				thickness = 8,
 				turret = true,
-				weapontimer = 1,
 				weapontype = "LightningCannon",
-				weaponvelocity = 2250,
 				customparams = {
 					light_mult = 1.4,
 					light_radius_mult = 0.9,
 				},
 				damage = {
-					commanders = 170,
-					default = 85,
+					commanders = 200,
+					default = 100,
 					subs = 5,
 				},
 			},
@@ -167,7 +164,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MEDIUM LARGE HUGE",
-				def = "SPAM_LIGHTNING",
+				def = "LLT_LIGHTNING",
 				onlytargetcategory = "SURFACE",
 			},
 		},

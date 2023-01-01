@@ -78,7 +78,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tllroaster1_muzzle",
+				[1] = "custom:arm_lightning_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -120,7 +120,7 @@ return {
 				cratermult = 0,
 				duration = 0.25,
 				energypershot = 35,
-				explosiongenerator = "custom:tlllighning_exp",
+				explosiongenerator = "custom:talon_lightning_exp",
 				firestarter = 50,
 				impactonly = 1,
 				impulseboost = 0,

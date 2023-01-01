@@ -1,4 +1,3 @@
--- explosion_huge_tesla_base
 -- explosion_huge_gok
 -- explosion_hugelight_gok
 

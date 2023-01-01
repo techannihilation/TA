@@ -3,13 +3,14 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  RayTurret, raygun, RayMount, RayFocus, LMFront, RMFront, LMBack, RMBack,
-       RayFire, Flare, Body, rlleg, rfoot, llleg, lfoot, lupleg,
-       rupleg, base, LMF, RMF, LMB, RMB, LMFFlare, RMFFlare,
-       LMBFlare, RMBFlare, Spark_emit,
-       Emit1, Emit2, Emit3, Emit4,shield_pos;
+piece  base, body,
+		turret, main_sleeve, barrel, blast,
+		LMFront, RMFront, LMBack, RMBack,
+		rlleg, rfoot, llleg, lfoot, lupleg, rupleg, 
+		LMF, RMF, LMB, RMB, LMFFlare, RMFFlare, LMBFlare, RMBFlare,
+		emit1, emit2, emit3, emit4, emit5, emit6, emit7, emit8, emit9, shield_pos;
 
-static-var  shieldonoff ,bMoving, bAiming, Static_Var_3, gun_3, Static_Var_5;
+static-var  shieldonoff ,bMoving, bAiming, bFiring, missile_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -21,22 +22,31 @@ Sparks()
 {
 	while( TRUE )
 	{
-		while( !bAiming )
+		while( bFiring )
 		{
 			sleep 100;
 		}
-		emit-sfx 1024 + 1 from Emit1;
-		sleep 5;
-		emit-sfx 1024 + 1 from Emit2;
-		sleep 5;
-		emit-sfx 1024 + 1 from Emit3;
-		sleep 5;
-		emit-sfx 1024 + 1 from Emit4;
-		sleep 5;
-		emit-sfx 1024 + 1 from Spark_emit;
+		emit-sfx 1024 + 1 from emit1;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit2;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit3;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit4;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit5;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit6;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit8;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit9;
+		sleep 15;
+		emit-sfx 1024 + 1 from emit9;
 		sleep 200;
 	}
 }
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -70,95 +80,50 @@ MotionControl()
 {
 	while( TRUE )
 	{
-		if( !bAiming )
+		if( TRUE )
 		{
-			Static_Var_3 = 0;
-			if( !Static_Var_5 )
-			{
-				turn rupleg to x-axis <-35.000000> speed <100.000000>;
-				turn lupleg to x-axis <28.000000> speed <50.395604>;
-			}
-			if( Static_Var_5 )
-			{
-				turn rupleg to x-axis <-35.000000> speed <49.000000>;
-				turn lupleg to x-axis <28.000000> speed <37.395604>;
-			}
-			turn llleg to x-axis <-15.000000> speed <21.000000>;
-			turn lfoot to x-axis <-18.000000> speed <25.395604>;
-			sleep 525;
-			turn Body to x-axis <0.000000> speed <39.197802>;
-			
-			turn rupleg to x-axis <10.000000> speed <60.664835>;
-			turn rlleg to x-axis <5.000000> speed <12.329670>;
-			turn lupleg to x-axis <35.000000> speed <16.664835>;
-			turn llleg to x-axis <10.000000> speed <60.664835>;
-			turn lfoot to x-axis <5.000000> speed <42.000000>;
-			sleep 322;
-			turn Body to x-axis <-8.500000> speed <22.000000>;
-			turn Body to y-axis <2.000000> speed <3.000000>;
-
-			turn lupleg to x-axis <-35.000000> speed <100.000000>;
-			turn rupleg to x-axis <28.000000> speed <51.395604>;
-			turn rlleg to x-axis <-15.000000> speed <21.000000>;
-			turn rfoot to x-axis <-18.000000> speed <25.395604>;
-			sleep 525;
-			turn Body to x-axis <0.000000> speed <28.000000>;
-			
-			turn lupleg to x-axis <10.000000> speed <57.664835>;
-			turn llleg to x-axis <5.000000> speed <12.329670>;
-			turn rupleg to x-axis <35.000000> speed <17.664835>;
-			turn rlleg to x-axis <10.000000> speed <58.664835>;
-			turn rfoot to x-axis <5.000000> speed <42.000000>;
-			if( Static_Var_5 )
-			{
-				Static_Var_5 = 0;
-			}
+			turn body to x-axis <1.500000> speed <15.0>;
+			turn rupleg to x-axis <-25.000000> speed <50.0>;
+			turn lupleg to x-axis <28.000000> speed <25.0>;
+			turn rupleg to x-axis <-25.000000> speed <25.0>;
+			turn lupleg to x-axis <20.000000> speed <15.0>;
+			turn llleg to x-axis <-15.000000> speed <12.0>;
+			turn lfoot to x-axis <-18.000000> speed <12.0>;
+			sleep 800;
 		}
-		if( bAiming )
-		{
-			Static_Var_3 = 1;
-			if( !Static_Var_5 )
-			{
-				turn rupleg to x-axis <-35.000000> speed <100.000000>;
-				turn lupleg to x-axis <28.000000> speed <53.395604>;
-			}
-			if( Static_Var_5 )
-			{
-				turn rupleg to x-axis <-35.000000> speed <50.000000>;
-				turn lupleg to x-axis <28.000000> speed <39.395604>;
-			}
-			turn llleg to x-axis <-15.000000> speed <21.000000>;
-			turn lfoot to x-axis <-18.000000> speed <25.395604>;
-			sleep 525;
-			turn rupleg to x-axis <10.000000> speed <59.664835>;
-			turn rlleg to x-axis <5.000000> speed <12.329670>;
-			turn lupleg to x-axis <35.000000> speed <17.664835>;
-			turn llleg to x-axis <10.000000> speed <59.664835>;
-			turn lfoot to x-axis <5.000000> speed <42.000000>;
-			sleep 322;
 		
-			turn lupleg to x-axis <-35.000000> speed <100.000000>;
-			turn rupleg to x-axis <28.000000> speed <53.395604>;
-			turn rlleg to x-axis <-15.000000> speed <21.000000>;
-			turn rfoot to x-axis <-18.000000> speed <25.395604>;
-			sleep 525;
-
-			turn lupleg to x-axis <10.000000> speed <59.664835>;
-			turn llleg to x-axis <5.000000> speed <12.329670>;
-			turn rupleg to x-axis <35.000000> speed <17.664835>;
-			turn rlleg to x-axis <10.000000> speed <59.664835>;
-			turn rfoot to x-axis <5.000000> speed <42.000000>;
-			if( Static_Var_5 )
-			{
-				Static_Var_5 = 0;
-			}
-		}
-		sleep 322;
-		if( !bAiming )
+		if( TRUE )
 		{
-			turn Body to x-axis <-8.500000> speed <30.796703>;
-			turn Body to y-axis <-2.000000> speed <4.197802>;
+			turn body to x-axis <0.000000> speed <20.0>;			
+			turn rupleg to x-axis <10.000000> speed <30.0>;
+			turn rlleg to x-axis <5.000000> speed <8.0>;
+			turn lupleg to x-axis <25.000000> speed <8.0>;
+			turn llleg to x-axis <10.000000> speed <30.0>;
+			turn lfoot to x-axis <5.000000> speed <20.0>;
+			sleep 800;
 		}
+		if( TRUE )
+		{
+			turn body to x-axis <-1.500000> speed <11.0>;
+			turn body to y-axis <2.000000> speed <3.0>;
+			turn lupleg to x-axis <-30.000000> speed <50.0>;
+			turn rupleg to x-axis <30.000000> speed <25.0>;
+			turn rlleg to x-axis <-15.000000> speed <25.0>;
+			turn rfoot to x-axis <-18.000000> speed <15.0>;
+			sleep 800;
+		}
+		if( TRUE )
+		{
+			turn body to x-axis <0.000000> speed <15.0>;
+			turn lupleg to x-axis <10.000000> speed <25.0>;
+			turn llleg to x-axis <5.000000> speed <8.0>;
+			turn rupleg to x-axis <-20.000000> speed <10.0>;
+			turn rlleg to x-axis <10.000000> speed <30.0>;
+			turn rfoot to x-axis <5.000000> speed <20.0>;
+			sleep 800;
+		}
+		
+		sleep 250;
 	}
 }
 
@@ -169,36 +134,19 @@ Shield()
 
 Create()
 {
-	hide Flare;
-	dont-cache Flare;
-	spin Flare around z-axis speed <300.000000>;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_3 = 1;
-	gun_3 = RayTurret;
-	Static_Var_5 = 1;
+	bFiring = FALSE;
+	missile_1 = 0;
 	start-script SmokeUnit();
 	shieldonoff = 1;
 }
 
 RestoreAfterDelay()
 {
-	sleep 5000;
-	set-signal-mask 0;
-	bAiming = FALSE;
-	cache RayFire;
-	move RayFocus to z-axis [0.000000] speed [2.500000];
-	turn RayMount to y-axis <0.000000> speed <35.000000>;
-	turn raygun to x-axis <0.000000> speed <40.000000>;
-	wait-for-turn RayMount around y-axis;
-	wait-for-turn raygun around x-axis;
-}
-
-RestoreSecondary()
-{
-	sleep 4000;
-	set-signal-mask 0;
-	bAiming = FALSE;
+	sleep 10000;
+	turn turret to y-axis <0.000000> speed <20.0>;
+	turn main_sleeve to x-axis <0.000000> speed <10.0>;
 }
 
 StartMoving()
@@ -213,8 +161,6 @@ StopMoving()
 {
 	signal SIG_MOVE;
 	bMoving = FALSE;
-	Static_Var_3 = 1;
-	Static_Var_5 = 1;
 	
 	turn rupleg to x-axis <0.000000> speed <70.000000>;
 	turn rlleg to x-axis <0.000000> speed <50.000000>;
@@ -224,80 +170,62 @@ StopMoving()
 	turn lfoot to x-axis <0.000000> speed <42.000000>;
 	if( !bAiming )
 	{
-		turn Body to x-axis <0.000000> speed <8.395604>;
-		turn Body to y-axis <0.000000> speed <1.395604>;
+		turn Body to x-axis <0.000000> speed <8.0>;
+		turn Body to y-axis <0.000000> speed <1.0>;
 	}
-}
-
-SweetSpot(piecenum)
-{
-	piecenum = RayTurret;
 }
 
 AimPrimary(heading, pitch)
 {
-	move RayFocus to z-axis [4.000000] speed [4.000000];
-	dont-cache RayFire;
-	bAiming = TRUE;
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	while( !Static_Var_3 )
-	{
-		sleep 250;
-	}
-	turn RayMount to y-axis heading speed <70.000000>;
-	turn raygun to x-axis <0.000000> - pitch speed <75.000000>;
-	wait-for-move RayFocus along z-axis;
-	wait-for-turn RayMount around y-axis;
-	wait-for-turn raygun around x-axis;
-	start-script RestoreAfterDelay();
+	turn turret to y-axis heading speed <30.0>;
+	turn main_sleeve to x-axis <0.000000> - pitch speed <12.0>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn main_sleeve around x-axis;
+	Start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	dont-cache Flare;
-	emit-sfx 1024 from Flare;
-	spin RayFocus around z-axis speed <325.000000>;
-	move RayFocus to z-axis [2.000000] now;
-	move RayFire to z-axis [2.000000] now;
-	sleep 120;
-	move RayFocus to z-axis [4.000000] speed [8.000000];
-	move RayFire to z-axis [0.000000] speed [8.000000];
-	sleep 150;
-	stop-spin RayFocus around z-axis decelerate <15.000000>;
+	bFiring = TRUE;
+	sleep 20;
+	emit-sfx 1024 from blast;
+	sleep 2500;
+	bFiring = FALSE;
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = RayFire;
+	piecenum = blast;
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = raygun;
+	piecenum = turret;
 }
 
 AimFromTertiary(piecenum)
 {
-	piecenum = Body;
+	piecenum = body;
 }
 
 QueryTertiary(piecenum)
 {
-	if( gun_3 == 0 )
+	if( missile_1 == 0 )
 	{
 		piecenum = LMFFlare;
 	}
-	if( gun_3 == 1 )
+	if( missile_1 == 1 )
 	{
 		piecenum = RMFFlare;
 	}
-	if( gun_3 == 2 )
+	if( missile_1 == 2 )
 	{
 		piecenum = LMBFlare;
 	}
-	if( gun_3 == 3 )
+	if( missile_1 == 3 )
 	{
 		piecenum = RMBFlare;
 	}
@@ -305,36 +233,24 @@ QueryTertiary(piecenum)
 
 FireTertiary()
 {
-	if( gun_3 == 0 )
+	if( missile_1 == 0 )
 	{
-		gun_3 = raygun;
-		move LMFront to y-axis [-1.000000] speed [20.000000];
-		wait-for-move LMFront along z-axis;
-		move LMFront to y-axis [0.000000] speed [1.000000];
+		missile_1 = 1;
 		return (0);
 	}
-	if( gun_3 == 1 )
+	if( missile_1 == 1 )
 	{
-		gun_3 = RayMount;
-		move RMFront to y-axis [-1.000000] speed [20.000000];
-		wait-for-move RMFront along z-axis;
-		move RMFront to y-axis [0.000000] speed [1.000000];
+		missile_1 = 2;
 		return (0);
 	}
-	if( gun_3 == 2 )
+	if( missile_1 == 2 )
 	{
-		gun_3 = RayFocus;
-		move LMBack to y-axis [-1.000000] speed [20.000000];
-		wait-for-move LMBack along z-axis;
-		move LMBack to y-axis [0.000000] speed [1.000000];
+		missile_1 = 3;
 		return (0);
 	}
-	if( gun_3 == 3 )
+	if( missile_1 == 3 )
 	{
-		gun_3 = RayTurret;
-		move RMBack to y-axis [-1.000000] speed [20.000000];
-		wait-for-move RMBack along z-axis;
-		move RMBack to y-axis [0.000000] speed [1.000000];
+		missile_1 = 0;
 		return (0);
 	}
 }
@@ -365,14 +281,17 @@ FireWeapon4(Func_Var_1)
 {
 }
 
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
 Killed(severity, corpsetype)
 {
-	hide Flare;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
-		explode raygun type NOHEATCLOUD;
+		explode main_sleeve type NOHEATCLOUD;
 		explode lfoot type NOHEATCLOUD;
 		explode LMF type NOHEATCLOUD;
 		explode RMF type NOHEATCLOUD;
@@ -380,18 +299,17 @@ Killed(severity, corpsetype)
 		explode RMB type NOHEATCLOUD | FALL;
 		explode llleg type NOHEATCLOUD;
 		explode lupleg type NOHEATCLOUD;
-		explode Body type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode rfoot type NOHEATCLOUD;
 		explode rlleg type NOHEATCLOUD;
 		explode rupleg type NOHEATCLOUD;
-		explode RayTurret type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | FALL;
-		explode raygun type NOHEATCLOUD | SHATTER;
+		explode main_sleeve type NOHEATCLOUD | FALL;
 		explode lfoot type NOHEATCLOUD;
 		explode LMF type NOHEATCLOUD | FALL;
 		explode RMF type NOHEATCLOUD | FALL;
@@ -399,35 +317,15 @@ Killed(severity, corpsetype)
 		explode RMB type NOHEATCLOUD | FALL;
 		explode llleg type NOHEATCLOUD;
 		explode lupleg type NOHEATCLOUD;
-		explode Body type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
 		explode rfoot type NOHEATCLOUD;
 		explode rlleg type NOHEATCLOUD;
 		explode rupleg type NOHEATCLOUD;
-		explode RayTurret type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode raygun type NOHEATCLOUD | SHATTER;
-		explode lfoot type NOHEATCLOUD;
-		explode LMF type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode RMF type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode LMB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode RMB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode llleg type NOHEATCLOUD;
-		explode lupleg type NOHEATCLOUD;
-		explode Body type NOHEATCLOUD;
-		explode rfoot type NOHEATCLOUD;
-		explode rlleg type NOHEATCLOUD;
-		explode rupleg type NOHEATCLOUD;
-		explode RayTurret type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode raygun type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode main_sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lfoot type NOHEATCLOUD;
 	explode LMF type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode RMF type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -435,10 +333,10 @@ Killed(severity, corpsetype)
 	explode RMB type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode llleg type NOHEATCLOUD;
 	explode lupleg type NOHEATCLOUD;
-	explode Body type NOHEATCLOUD;
+	explode body type NOHEATCLOUD;
 	explode rfoot type NOHEATCLOUD;
 	explode rlleg type NOHEATCLOUD;
 	explode rupleg type NOHEATCLOUD;
-	explode RayTurret type NOHEATCLOUD | SHATTER;
+	explode turret type NOHEATCLOUD | SHATTER;
 	return (corpsetype);
 }

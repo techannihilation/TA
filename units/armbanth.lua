@@ -91,7 +91,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:BANTHAMUZZLE",
+				[1] = "custom:armmuzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -129,7 +129,7 @@ return {
 				areaofeffect = 64,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "banthablaster",
+				cegtag = "armblaster",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -137,7 +137,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 4,
-				name = "BanthaBlaster",
+				name = "armblaster",
 				noselfdamage = true,
 				range = 500,
 				reloadtime = 0.5,

@@ -81,7 +81,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tllroaster_muzzle",
+				[1] = "custom:tll_spray_muzzle",
 				[2] = "custom:mediumflare_front_only",
 			},
 			pieceexplosiongenerators = {
@@ -119,7 +119,7 @@ return {
 				areaofeffect = 350,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "banthablaster",
+				cegtag = "armblaster",
 				craterareaofeffect = 225,
 				energypershot = 10000,
 				explosiongenerator = "custom:explosion_light_talon",

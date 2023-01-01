@@ -118,7 +118,6 @@ return {
 				cratermult = 0,
 				duration = 0.35,
 				energypershot = 50,
-				--explosiongenerator = "custom:tllweb_exp",
 				firestarter = 85,
 				impulseboost = 0,
 				impulsefactor = 0,

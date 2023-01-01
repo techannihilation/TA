@@ -16,7 +16,6 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-3 -5 2",
 		collisionvolumescales = "65 60 55",
-
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -87,7 +86,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tllroaster1_muzzle",
+				[1] = "custom:arm_lightning_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -128,9 +127,8 @@ return {
 				cratermult = 0,
 				duration = 10,
 				energypershot = 70,
-				explosiongenerator = "custom:tlllighning_exp",
+				explosiongenerator = "custom:talon_lightning_exp",
 				firestarter = 50,
-				firesubmersed = true,
 				impactonly = 1,
 				impulseboost = 0,
 				impulsefactor = 0,
