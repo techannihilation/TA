@@ -608,7 +608,7 @@ local morphDefs = {
 		time = 120,
 		xp = 0.10,
 	},
-	armhope = {
+	arm_broadside = {
 		into = 'armarch',
 		tech = 4,
 		time = 120,

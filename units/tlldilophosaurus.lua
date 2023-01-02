@@ -208,7 +208,7 @@ return {
 				soundhitwetvolume = 0.5,
 				soundstart = "tllspark",
 				texture1 = "spray",
-				thickness = 2,
+				thickness = 8,
 				turret = true,
 				weapontype = "LightningCannon",
 				customparams = {
