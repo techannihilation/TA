@@ -131,7 +131,7 @@ return {
 				noselfdamage = true,
 				range = 950,
 				reloadtime = 4,
-				rgbcolor = "0.2 0.2 1.0",
+				rgbcolor = "0.9 0.9 0.2",
 				size = 0.8,
 				sizedecay = -0.1,
 				soundhitdry = "soft_crunch",

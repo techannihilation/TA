@@ -121,7 +121,7 @@ return {
 				noselfdamage = true,
 				range = 1200,
 				reloadtime = 2,
-				rgbcolor = "0.2 0.2 1.0",
+				rgbcolor = "0.9 0.9 0.2",
 				--separation = 0.15,
 				size = 0.8,
 				sizedecay = -0.1,

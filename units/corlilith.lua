@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "VKBOT25",
 		name = "Lilith",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "corlilith",
 		onoffable = true,
 		radardistance = 0,
@@ -160,7 +160,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 650,
 				damage = {
-					commanders = 1000,
+					commanders = 2500,
 					default = 10000,
 					subs = 5,
 				},
@@ -200,7 +200,7 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 650,
 				damage = {
-					commanders = 1000,
+					commanders = 1250,
 					default = 5000,
 					subs = 5,
 				},
@@ -239,7 +239,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 1000,
+					commanders = 1250,
 					default = 2500,
 					subs = 5,
 				},

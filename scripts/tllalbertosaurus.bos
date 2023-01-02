@@ -173,12 +173,12 @@ FirePrimary()
 	if( gun_1 == 0 )
 	{
 		turn rminigun to z-axis <0.000000> now;
-		turn rminigun to z-axis <90.000000> speed <200.000000>;		
+		turn rminigun to z-axis <90.000000> speed <115.000000>;		
 	}
 	if( gun_1 == 1 )
 	{
 		turn lminigun to z-axis <0.000000> now;
-		turn lminigun to z-axis <90.000000> speed <200.000000>;		
+		turn lminigun to z-axis <90.000000> speed <115.000000>;		
 	}
 	++gun_1;
 	if( gun_1 == 2 )

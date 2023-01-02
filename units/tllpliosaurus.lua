@@ -158,8 +158,7 @@ return {
 				noselfdamage = true,
 				range = 1200,
 				reloadtime = 2,
-				rgbcolor = "0.2 0.2 1.0",
-				--separation = 0.15,
+				rgbcolor = "0.9 0.9 0.2",
 				size = 0.8,
 				sizedecay = -0.1,
 				soundhitdry = "soft_crunch",
@@ -211,7 +210,7 @@ return {
 					default = 500,
 					subs = 5,
 				},
-			},			
+			},
 		},
 		weapons = {
 			[1] = {

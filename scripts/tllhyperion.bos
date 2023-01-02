@@ -4,52 +4,15 @@
 #include "exptype.h"
 
 piece  base, pelvis, torsotwist, torso, ltorso, lshoulder, lshoulderrecoil, larm,
-       larmrecoil, lbarrel, lbarrel2, lflare, rtorso, rshoulder, rshoulderrecoil, rarm,
-       rarmrecoil, rbarrel, rbarrel2, rflare, backpack, missiles, head, emit,
+       larmrecoil, lbarrel, lminigun, lflare, rtorso, rshoulder, rshoulderrecoil, rarm,
+       rarmrecoil, rbarrel, rminigun, rflare, backpack, missiles, head,
        lleg, lboot, lfoot, rleg, rboot, rfoot, msl1, msl2;
 
-static-var  bMoving, bAiming, Static_Var_3, gun_1, gun_2;
+static-var  bMoving, bAiming, gun_1, missile_1;
 
 // Signal definitions
-#define SIG_AIM				2
-#define SIG_AIM_2			4
-
-
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	var Func_Var_4;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			Func_Var_4 = Rand( 1, 2 );
-			if( Func_Var_4 == 1 )
-			{
-				emit-sfx smoketype from backpack;
-			}
-			if( Func_Var_4 == 2 )
-			{
-				emit-sfx smoketype from head;
-			}
-		}
-		sleeptime = healthpercent * 25;
-		if( sleeptime < 100 )
-		{
-			sleeptime = 100;
-		}
-		sleep sleeptime;
-	}
-}
+#define SIG_AIM_1			2
+#define SIG_AIM_3			4
 
 MotionControl(moving, aiming, justmoved)
 {
@@ -62,7 +25,6 @@ MotionControl(moving, aiming, justmoved)
 		{
 			if( aiming )
 			{
-				Static_Var_3 = 1;
 				if( bMoving )
 				{
 					turn lleg to x-axis <15.000000> speed <30.000000>;
@@ -76,14 +38,7 @@ MotionControl(moving, aiming, justmoved)
 					turn torsotwist to z-axis <2.500000> speed <2.000000>;
 					turn pelvis to z-axis <-5.000000> speed <4.000000>;
 					move pelvis to x-axis [2.500000] speed [1.500000];
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
+					sleep 1000;
 				}
 				if( bMoving )
 				{
@@ -94,14 +49,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to y-axis [0.000000] speed [3.500000];
 					turn lfoot to x-axis <0.000000> speed <45.000000>;
 					turn rfoot to x-axis <0.000000> speed <15.000000>;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
+					sleep 1000;
 				}
 				if( bMoving )
 				{
@@ -116,14 +64,7 @@ MotionControl(moving, aiming, justmoved)
 					turn torsotwist to z-axis <-2.500000> speed <1.000000>;
 					turn pelvis to z-axis <5.000000> speed <2.000000>;
 					move pelvis to x-axis [-2.500000] speed [2.000000];
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
+					sleep 1000;
 				}
 				if( bMoving )
 				{
@@ -138,14 +79,7 @@ MotionControl(moving, aiming, justmoved)
 					turn torsotwist to z-axis <-2.500000> speed <2.000000>;
 					turn pelvis to z-axis <5.000000> speed <4.000000>;
 					move pelvis to x-axis [-2.500000] speed [1.500000];
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
+					sleep 1000;
 				}
 				if( bMoving )
 				{
@@ -156,14 +90,7 @@ MotionControl(moving, aiming, justmoved)
 					move pelvis to y-axis [0.000000] speed [3.500000];
 					turn lfoot to x-axis <0.000000> speed <15.000000>;
 					turn rfoot to x-axis <0.000000> speed <45.000000>;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
+					sleep 1000;
 				}
 				if( bMoving )
 				{
@@ -178,19 +105,11 @@ MotionControl(moving, aiming, justmoved)
 					turn torsotwist to z-axis <2.500000> speed <1.000000>;
 					turn pelvis to z-axis <-5.000000> speed <2.000000>;
 					move pelvis to x-axis [2.500000] speed [2.000000];
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
-					emit-sfx 256 | 1 from emit;
-					sleep 250;
+					sleep 1000;
 				}
 			}
 			if( !aiming )
 			{
-				Static_Var_3 = 0;
 				if( bMoving )
 				{
 					turn lleg to x-axis <15.000000> speed <30.000000>;
@@ -294,7 +213,6 @@ MotionControl(moving, aiming, justmoved)
 		}
 		if( !moving )
 		{
-			Static_Var_3 = 1;
 			if( justmoved )
 			{
 				turn lleg to x-axis <0.000000> speed <45.000000>;
@@ -322,19 +240,52 @@ MotionControl(moving, aiming, justmoved)
 	}
 }
 
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from backpack;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from head;
+			}
+		}
+		sleeptime = healthpercent * 25;
+		if( sleeptime < 100 )
+		{
+			sleeptime = 100;
+		}
+		sleep sleeptime;
+	}
+}
+
 Create()
 {
-	hide lflare;
-	hide rflare;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_3 = 1;
 	gun_1 = 0;
-	gun_2 = 0;
-	start-script MotionControl();
+	missile_1 = 0;
 	start-script SmokeUnit();
-	spin lflare around z-axis speed <3000.000000>;
-	spin rflare around z-axis speed <-3000.000000>;
 }
 
 StartMoving()
@@ -347,15 +298,9 @@ StopMoving()
 	bMoving = FALSE;
 }
 
-SweetSpot(piecenum)
-{
-	piecenum = pelvis;
-}
-
 RestoreAfterDelay()
 {
-	sleep 8000;
-	set-signal-mask 0;
+	sleep 4000;
 	bAiming = FALSE;
 	turn torso to y-axis <0.000000> speed <20.000000>;
 	turn rshoulder to x-axis <0.000000> speed <20.000000>;
@@ -366,7 +311,7 @@ RestoreAfterDelay()
 
 AimFromPrimary(piecenum)
 {
-	piecenum = gun_1;
+	piecenum = torso;
 }
 
 QueryPrimary(piecenum)
@@ -384,10 +329,9 @@ QueryPrimary(piecenum)
 AimPrimary(heading, pitch)
 {
 	bAiming = TRUE;
-	signal SIG_AIM;
-	set-signal-mask 0;
-	set-signal-mask SIG_AIM;
-	turn torso to y-axis heading speed <56.000000>;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn torso to y-axis heading speed <75.000000>;
 	turn lshoulder to x-axis <0.000000> - pitch speed <28.000000>;
 	turn rshoulder to x-axis <0.000000> - pitch speed <28.000000>;
 	turn larm to x-axis <0.000000> speed <28.000000>;
@@ -405,46 +349,34 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		gun_1 = 1;
-		emit-sfx 1024 + 0 from rflare;
-		sleep 200;
-		move rbarrel2 to z-axis [-9.000000] speed [450.000000];
-		turn rshoulderrecoil to x-axis <15.000000> speed <120.000000>;
-		turn rarmrecoil to x-axis <-10.000000> speed <120.000000>;
-		move rbarrel2 to z-axis [0.000000] speed [3.000000];
-		turn rshoulderrecoil to x-axis <0.000000> speed <15.000000>;
-		turn rarmrecoil to x-axis <0.000000> speed <10.000000>;
-		return (0);
+		turn rminigun to z-axis <0.000000> now;
+		turn rminigun to z-axis <90.000000> speed <97.000000>;		
 	}
 	if( gun_1 == 1 )
 	{
+		turn lminigun to z-axis <0.000000> now;
+		turn lminigun to z-axis <90.000000> speed <97.000000>;		
+	}
+	++gun_1;
+	if( gun_1 == 2 )
+	{
 		gun_1 = 0;
-		emit-sfx 1024 + 0 from lflare;
-		sleep 200;
-		move lbarrel2 to z-axis [-9.000000] speed [450.000000];
-		turn lshoulderrecoil to x-axis <15.000000> speed <120.000000>;
-		turn larmrecoil to x-axis <-10.000000> speed <120.000000>;
-		move lbarrel2 to z-axis [0.000000] speed [3.000000];
-		turn lshoulderrecoil to x-axis <0.000000> speed <15.000000>;
-		turn larmrecoil to x-axis <0.000000> speed <10.000000>;
-		return (0);
 	}
 }
 
 AimTertiary(heading, pitch)
 {
-	bAiming = TRUE;
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
 	return (1);
 }
 
 FireTertiary()
 {
-	++gun_2;
-	if( gun_2 == 2 )
+	++missile_1;
+	if( missile_1 == 2 )
 	{
-		gun_2 = 0;
+		missile_1 = 0;
 	}
 }
 
@@ -455,14 +387,19 @@ AimFromTertiary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	if( gun_2 == 0 )
+	if( missile_1 == 0 )
 	{
 		piecenum = msl1;
 	}
-	if( gun_2 == 1 )
+	if( missile_1 == 1 )
 	{
 		piecenum = msl2;
 	}	
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)

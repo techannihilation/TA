@@ -136,7 +136,6 @@ return {
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
 				soundstart = "tllspark",
-				sprayangle = 500,
 				texture1 = "spray",
 				thickness = 8,
 				turret = true,

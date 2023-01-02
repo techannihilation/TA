@@ -275,7 +275,7 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
+	if( severity <= 50 )
 	{
 		corpsetype = 1;
 		explode hull type NOHEATCLOUD;

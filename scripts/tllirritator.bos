@@ -3,14 +3,12 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body,
-		turret, main_sleeve, barrel, blast,
+piece  base, body, turret, sleeve, barrel, minigun, flare,
 		LMFront, RMFront, LMBack, RMBack,
 		rlleg, rfoot, llleg, lfoot, lupleg, rupleg, 
-		LMF, RMF, LMB, RMB, LMFFlare, RMFFlare, LMBFlare, RMBFlare,
-		emit1, emit2, emit3, emit4, emit5, emit6, emit7, emit8, emit9, shield_pos;
+		LMF, RMF, LMB, RMB, LMFFlare, RMFFlare, LMBFlare, RMBFlare, shield_pos;
 
-static-var  shieldonoff ,bMoving, bAiming, bFiring, missile_1;
+static-var  shieldonoff ,bMoving, missile_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -18,43 +16,12 @@ static-var  shieldonoff ,bMoving, bAiming, bFiring, missile_1;
 #define SIG_AIM_3			8
 #define SIG_MOVE			32
 
-Sparks()
-{
-	while( TRUE )
-	{
-		while( bFiring )
-		{
-			sleep 100;
-		}
-		emit-sfx 1024 + 1 from emit1;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit2;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit3;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit4;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit5;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit6;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit8;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit9;
-		sleep 15;
-		emit-sfx 1024 + 1 from emit9;
-		sleep 200;
-	}
-}
-
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
 	}
-	start-script Sparks();
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -142,8 +109,6 @@ Shield()
 Create()
 {
 	bMoving = FALSE;
-	bAiming = FALSE;
-	bFiring = FALSE;
 	missile_1 = 0;
 	start-script SmokeUnit();
 	shieldonoff = 1;
@@ -151,9 +116,9 @@ Create()
 
 RestoreAfterDelay()
 {
-	sleep 10000;
-	turn turret to y-axis <0.000000> speed <20.0>;
-	turn main_sleeve to x-axis <0.000000> speed <10.0>;
+	sleep 4500;
+	turn turret to y-axis <0.000000> speed <30.000000>;
+	turn sleeve to x-axis <0.000000> speed <20.000000>;
 }
 
 StartMoving()
@@ -167,45 +132,38 @@ StartMoving()
 StopMoving()
 {
 	signal SIG_MOVE;
-	bMoving = FALSE;
-	
+	bMoving = FALSE;	
 	turn rupleg to x-axis <0.000000> speed <70.000000>;
 	turn rlleg to x-axis <0.000000> speed <50.000000>;
 	turn rfoot to x-axis <0.000000> speed <42.000000>;
 	turn lupleg to x-axis <0.000000> speed <70.000000>;
 	turn llleg to x-axis <0.000000> speed <50.000000>;
 	turn lfoot to x-axis <0.000000> speed <42.000000>;
-	if( !bAiming )
-	{
-		turn Body to x-axis <0.000000> speed <8.0>;
-		turn Body to y-axis <0.000000> speed <1.0>;
-	}
+	turn body to x-axis <0.000000> speed <8.0>;
+	turn body to y-axis <0.000000> speed <1.0>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <30.0>;
-	turn main_sleeve to x-axis <0.000000> - pitch speed <12.0>;
+	turn turret to y-axis heading speed <50.000000>;
+	turn sleeve to x-axis <0.> - pitch speed <25.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn main_sleeve around x-axis;
-	Start-script RestoreAfterDelay();
+	wait-for-turn sleeve around x-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	bFiring = TRUE;
-	sleep 20;
-	emit-sfx 1024 from blast;
-	sleep 2500;
-	bFiring = FALSE;
+	turn minigun to z-axis <0.000000> now;
+	turn minigun to z-axis <90.000000> speed <115.000000>;		
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = blast;
+	piecenum = flare;
 }
 
 AimFromPrimary(piecenum)
@@ -298,7 +256,7 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode main_sleeve type NOHEATCLOUD;
+		explode sleeve type NOHEATCLOUD;
 		explode lfoot type NOHEATCLOUD;
 		explode LMF type NOHEATCLOUD;
 		explode RMF type NOHEATCLOUD;
@@ -311,12 +269,13 @@ Killed(severity, corpsetype)
 		explode rlleg type NOHEATCLOUD;
 		explode rupleg type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
+		explode minigun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode main_sleeve type NOHEATCLOUD | FALL;
+		explode sleeve type NOHEATCLOUD | FALL;
 		explode lfoot type NOHEATCLOUD;
 		explode LMF type NOHEATCLOUD | FALL;
 		explode RMF type NOHEATCLOUD | FALL;
@@ -329,10 +288,11 @@ Killed(severity, corpsetype)
 		explode rlleg type NOHEATCLOUD;
 		explode rupleg type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
+		explode minigun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode main_sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lfoot type NOHEATCLOUD;
 	explode LMF type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode RMF type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
@@ -345,5 +305,6 @@ Killed(severity, corpsetype)
 	explode rlleg type NOHEATCLOUD;
 	explode rupleg type NOHEATCLOUD;
 	explode turret type NOHEATCLOUD | SHATTER;
+	explode minigun type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

@@ -1,10 +1,10 @@
 4.37 => 4.38
-2023-01-01
+2023-01-03
 - Bye Xmas Features and Happy new Year !
 
  Improvment :
  - Rework All TLL Lightning / Plasma Lightning
- - Rework TLL Irritator Weapon
+ - Rework TLL Irritator, Mosaurus, Zeppelin, Barbarus, Hyperion
 
  4.36 => 4.37
 2022-12-30
