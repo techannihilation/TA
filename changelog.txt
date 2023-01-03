@@ -2,6 +2,9 @@
 2023-01-03
 - Bye Xmas Features and Happy new Year !
 
+Balance :
+ - All T1 AA Turret : Increase damage by 20% 
+
  Improvment :
  - Rework All TLL Lightning / Plasma Lightning
  - Rework TLL Irritator, Mosaurus, Zeppelin, Barbarus, Hyperion

@@ -15,7 +15,6 @@ return {
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "47 80 47",
-		
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Tech Level 1",
@@ -129,7 +128,7 @@ return {
 				noselfdamage = true,
 				projectiles = 1,
 				range = 775,
-				reloadtime = 1.0,
+				reloadtime = 0.8,
 				rgbcolor = "0.78 0.08 0.52",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

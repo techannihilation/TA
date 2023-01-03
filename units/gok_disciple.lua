@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Invisible Melee Kbot (Auto-Repair 50 & Sniper Resistant)",
+		description = "Melee Kbot (Auto-Repair 50 & Sniper Resistant)",
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		footprintx = 2,
