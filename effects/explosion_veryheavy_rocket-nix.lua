@@ -1,8 +1,8 @@
--- explosion_veryheavy_rocket-nix
+-- Explosion_Rocket_L
 -- sparks_spawned
 
 return {
-  ["explosion_veryheavy_rocket-nix"] = {
+  ["Explosion_Rocket_L"] = {
     fakelight = {
       air                = false,
       class              = [[CSimpleGroundFlash]],

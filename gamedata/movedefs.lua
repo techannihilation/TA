@@ -363,6 +363,13 @@ local moveDatas = {
         footprintz = 4,
         maxwaterdepth = 22
     },
+    TKBOT6 = {
+        allowterraincollisions = false,
+        crushstrength = 1000,
+        footprintx = 6,
+        footprintz = 6,
+        maxwaterdepth = 36,
+    },
     TKBOT8 = {
         -- Core Adamantoise. Kill T3 fortification.
         allowterraincollisions = false,

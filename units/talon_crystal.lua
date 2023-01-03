@@ -124,7 +124,7 @@ return {
 				craterareaofeffect = 525,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",
+				explosiongenerator = "custom:Explosion_Rocket_L",
 				firestarter = 80,
 				flighttime = 6,
 				model = "weapon_rocketl",

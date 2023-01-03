@@ -3,11 +3,14 @@
 - Bye Xmas Features and Happy new Year !
 
 Balance :
- - All T1 AA Turret : Increase damage by 20% 
+ - All T1 AA Turret : Increase damage by 20%
+ - Catapult T3 Core : Increase Stats and cost
 
  Improvment :
  - Rework All TLL Lightning / Plasma Lightning
  - Rework TLL Irritator, Mosaurus, Zeppelin, Barbarus, Hyperion
+ - Add T3 Core Turtoise into T3 Lab Kbot (Morph into Adamantoise)
+ - Delete Howie Core
 
  4.36 => 4.37
 2022-12-30

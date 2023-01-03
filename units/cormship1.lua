@@ -142,7 +142,7 @@ return {
 				craterareaofeffect = 375,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:Explosion_VeryHeavy_Rocket-nix",
+				explosiongenerator = "custom:Explosion_Rocket_L",
 				firestarter = 80,
 				flighttime = 5,
 				metalpershot = 0,
