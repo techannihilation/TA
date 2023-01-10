@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE ANTIFLAME MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR ANTIFLAME MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "220 300 220",
 		collisionvolumetype = "CylY",
@@ -241,11 +241,12 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "GOK_KADESH_BEAM",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY MEDIUM LARGE",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GOK_BEAM",
 				onlytargetcategory = "SURFACE",
 			},

@@ -238,7 +238,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "CARBUNCLE_RC",
 				onlytargetcategory = "SURFACE",
 			},

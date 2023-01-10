@@ -16,7 +16,6 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -35 0",
 		collisionvolumescales = "90 100 300",
-		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -228,7 +227,7 @@ return {
 			--	def = "ROCKET_MCV",
 			--},
 			[4] = {
-				badtargetcategory = "SURFACE",				
+				badtargetcategory = "SURFACE",
 				def = "adv_torpedo",
 				maindir = "1 0 0",
 				maxangledif = 220,

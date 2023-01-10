@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Assault Tank",
@@ -190,7 +190,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "TIGRE_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},

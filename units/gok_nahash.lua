@@ -189,12 +189,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL SATELLITE",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "GOK_AA_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 260,

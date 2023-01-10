@@ -274,12 +274,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "TALON_BLT",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "LIGHTNING_SCORPION",
 				maindir = "0 0 1",
 				maxangledif = 90,

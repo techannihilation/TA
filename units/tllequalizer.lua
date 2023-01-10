@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 -11 -5",
 		collisionvolumescales = "44 40 98",

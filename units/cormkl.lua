@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "263 200 263",
 		collisionvolumetype = "CylY",
@@ -295,38 +295,44 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY MEDIUM LARGE",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "ATAD",
 				maindir = "0 0 1",
 				maxangledif = 90,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[5] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[6] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[7] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[8] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[9] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},

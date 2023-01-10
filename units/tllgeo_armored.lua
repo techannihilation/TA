@@ -87,7 +87,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				--[1] = "custom:muzzleflaretiny",
+				--[1] = "custom:muzzleflareMINOR",
 				[2] = "custom:PILOT",
 			},
 			pieceexplosiongenerators = {
@@ -155,12 +155,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "TLL_FLAME",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "TLL_FLAME",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,

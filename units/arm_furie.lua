@@ -230,7 +230,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "ARM_FURIE_HEAD",
 				onlytargetcategory = "SURFACE",
 			},

@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		cloakcost = 200,
 		cloakcostmoving = 400,
 		corpse = "dead",
@@ -37,7 +37,7 @@ return {
 		movementclass = "kbot2",
 		name = "Assassin",
 		noautofire = false,
-		
+
 		objectname = "TLLSNIPER",
 		radardistance = 0,
 		radaremitheight = 42,
@@ -157,7 +157,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "CORPROT_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},

@@ -162,7 +162,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "DEMONSLAYER_CANNON",
 				onlytargetcategory = "SURFACE",
 			},

@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 -10 4",
 		collisionvolumescales = "78 78 155",
@@ -241,7 +241,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ARMBC_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

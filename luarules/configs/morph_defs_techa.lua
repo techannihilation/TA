@@ -588,7 +588,7 @@ local morphDefs = {
 		tech = 3,
 		xp = 0.10,
 	},
-	tllmosaurus = {
+	tllmosasaurus = {
 		into = 'tllalbertosaurus',
 		time = 60,
 		tech = 3,
@@ -615,7 +615,7 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	tllmcv = {
-		into = 'tllsamael',
+		into = 'tll_tyranosaurus',
 		tech = 4,
 		time = 120,
 		xp = 0.10,

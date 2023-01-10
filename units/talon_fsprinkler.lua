@@ -136,12 +136,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "TALON_LASER",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "TALON_LASER",
 				onlytargetcategory = "SURFACE",
 			},

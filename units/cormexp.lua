@@ -193,12 +193,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "CORSUMO_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "CORMEXP_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},

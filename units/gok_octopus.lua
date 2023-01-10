@@ -22,7 +22,7 @@ return {
 		canrestore = false,
 		canresurrect = false,
 		canstop = 1,
-		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
+		category = "ALL MOBILE MAJOR SURFACE VTOL",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "250 65 300",
 		collisionvolumetype = "Ell",
@@ -164,7 +164,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY MEDIUM LARGE VTOL",
+				badtargetcategory = "SMALL MINOR MEDIUM LARGE VTOL",
 				def = "ultimate_psychic2",
 				maindir = "0 0 1",
 				maxangledif = 270,

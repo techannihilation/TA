@@ -16,7 +16,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "ALL MOBILE HUGE SURFACE UNDERWATER",
+		category = "ALL MOBILE LARGE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "40 90 32",
 		collisionvolumetype = "Ell",
@@ -207,7 +207,7 @@ return {
 				shieldradius = 100,
 				shieldrepulser = true,
 				smartshield = true,
-				
+
 				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",

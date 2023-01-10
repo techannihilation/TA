@@ -219,19 +219,19 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY SMALL MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "GOK_BLAST",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY SMALL",
+				badtargetcategory = "MINOR SMALL",
 				def = "GOK_BEAM",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "REPULSOR3",
 			},
 		},

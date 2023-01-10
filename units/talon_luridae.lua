@@ -194,7 +194,7 @@ return {
 				maxangledif = 270,
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "TLLLIGHT_PARALYZER",
 				maindir = "0 0 1",
 				maxangledif = 80,

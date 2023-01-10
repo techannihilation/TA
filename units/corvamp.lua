@@ -129,12 +129,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORVTOL_ADVMISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORVTOL_ADVMISSILE",
 				onlytargetcategory = "VTOL",
 			},

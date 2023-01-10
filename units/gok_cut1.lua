@@ -146,7 +146,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY MEDIUM LARGE",
+				badtargetcategory = "MINOR MEDIUM",
 				def = "SAW",
 				onlytargetcategory = "SURFACE",
 			},

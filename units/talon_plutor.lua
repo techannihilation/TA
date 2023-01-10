@@ -178,14 +178,14 @@ return {
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[2] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				maindir = "-1 0 0.75",
 				maxangledif = 220,
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ADVANCED_MISSILE",
 				maindir = "1 0 0.75",
 				maxangledif = 220,

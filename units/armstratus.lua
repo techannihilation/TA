@@ -224,29 +224,29 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "ARMVTOL_ADVMISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[4] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "MISSILE_TURRET",
 				maindir = "0 1 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "MISSILE_TURRET",
 				maindir = "0 1 0",
 				maxangledif = 220,

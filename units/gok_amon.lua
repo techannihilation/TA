@@ -163,7 +163,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "GOK_LRPT",
 				maindir = "0 0 -1",
 				maxangledif = 30,

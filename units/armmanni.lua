@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -5 2",
 		collisionvolumescales = "39 51 39",
 		collisionvolumetype = "CylY",
@@ -167,7 +167,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "ATAM",
 				onlytargetcategory = "SURFACE",
 			},

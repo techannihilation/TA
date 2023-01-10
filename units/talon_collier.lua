@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "55 90 40",
 		collisionvolumetype = "Ell",
@@ -157,7 +157,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "TALON_BATS",
 				onlytargetcategory = "SURFACE",
 			},

@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -5 0",
 		collisionvolumescales = "180 320 155",
 		collisionvolumetype = "CylY",
@@ -265,23 +265,22 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GOK_BLAST",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MOUNTEDANTIMATTERACCELERATOR",
 				onlytargetcategory = "SURFACE",
-				--slaveTo = 1,
 			},
 			[3] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR",
 				def = "GOK_BEAM",
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "GOK_BEAM",
 				onlytargetcategory = "SURFACE",
 			},

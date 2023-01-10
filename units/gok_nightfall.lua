@@ -142,7 +142,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "GOK_BEAM",
 				maindir = "0 0 1",
 				maxangledif = 160,

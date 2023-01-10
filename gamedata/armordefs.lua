@@ -296,9 +296,9 @@ return {
 		"gok_ucar",
 	},
 
-	--### AREOSHIP - SUPERSHIP ###
+	--### AREOSHIP - MAJOR ###
 	areoship = {
-		-- T5 SUPERSHIP
+		-- T5 MAJOR
 		"arm_broadside",
 		"armhope",
 		"cdevastator",
@@ -310,7 +310,7 @@ return {
 		"gok_octopus",
 		"talon_gold",
 
-		-- T6 SUPERSHIP
+		-- T6 MAJOR
 		"gok_squid",
 		"armarch",
 

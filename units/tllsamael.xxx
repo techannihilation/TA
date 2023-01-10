@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -25 0",
 		collisionvolumescales = "250 300 470",
 		collisionvolumetype = "CylZ",

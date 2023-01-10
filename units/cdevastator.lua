@@ -16,7 +16,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
+		category = "ALL MOBILE MAJOR SURFACE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 -30 0",
 		collisionvolumescales = "150 150 300",
@@ -242,59 +242,59 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "1 0 0.2",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "-1 0 0.2",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "1 0 0",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "-1 0 0",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "1 0 -0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "MountedAntimatterAccelerator",
 				maindir = "-1 0 -0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 			[7] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},
 			[8] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},
 			[9] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},

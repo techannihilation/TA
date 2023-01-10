@@ -17,7 +17,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
+		category = "ALL MOBILE MAJOR SURFACE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 0 -3",
 		collisionvolumescales = "120 40 100",
@@ -229,12 +229,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY LARGE",
+				badtargetcategory = "SMALL MINOR LARGE",
 				def = "AntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY LARGE",
+				badtargetcategory = "SMALL MINOR LARGE",
 				def = "AntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
@@ -252,12 +252,12 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_FLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},
 			[6] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_FLAK_GUN",
 				onlytargetcategory = "VTOL",
 				slaveto = 5,

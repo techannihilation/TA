@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "77 77 210",
 		collisionvolumetype = "CylZ",
@@ -224,49 +224,49 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				def = "ASM",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				def = "ASM",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				def = "ASM",
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILES",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILES",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[6] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILES",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[7] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILES",
 				maindir = "-1 0 0",
 				maxangledif = 220,

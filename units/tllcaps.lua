@@ -39,7 +39,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		movementclass = "HDBOAT8",
-		name = "Destiny",
+		name = "DesMINOR",
 		noautofire = false,
 		objectname = "tllcaps",
 		radardistance = 2000,
@@ -309,14 +309,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[8] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				maindir = "-0.8 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
 			[9] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				maindir = "0 0 -1",
 				maxangledif = 270,

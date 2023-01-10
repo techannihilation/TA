@@ -150,7 +150,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "TLL_LIGHTNING",
 				onlytargetcategory = "SURFACE",
 			},

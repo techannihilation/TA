@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "180 320 200",
 		collisionvolumetype = "CylY",
@@ -243,15 +243,17 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "CORSKROG_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY MEDIUM LARGE",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "CORSKROG_BEAM",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "CORSKROG_FIRE",
 				onlytargetcategory = "SURFACE",
 			},

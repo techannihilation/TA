@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "130 65 360",
 		collisionvolumetype = "CylZ",
@@ -249,14 +249,14 @@ return {
 		},
 		weapons = {
 			[2] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 1",
 				maxangledif = 270,
@@ -264,14 +264,14 @@ return {
 				slaveto = 2,
 			},
 			[4] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,

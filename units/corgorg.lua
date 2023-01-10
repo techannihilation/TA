@@ -235,7 +235,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY MEDIUM",
+				badtargetcategory = "MINOR MEDIUM",
 				def = "COR_JUG",
 				onlytargetcategory = "SURFACE",
 			},

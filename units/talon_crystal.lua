@@ -12,9 +12,9 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
-		collisionvolumescales = "52 50 100",		
+		collisionvolumescales = "52 50 100",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -194,7 +194,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "BARRAGE",
 				onlytargetcategory = "SURFACE",
 			},

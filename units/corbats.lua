@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -15 -2",
 		collisionvolumescales = "62 62 139",
 		collisionvolumetype = "CylZ",
@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Warlord",
 		noautofire = false,
-		
+
 		objectname = "CORBATS",
 		radaremitheight = 74,
 		seismicsignature = 0,

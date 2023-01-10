@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -16 -6",
 		collisionvolumescales = "69 69 63",
 		collisionvolumetype = "CylZ",
@@ -193,12 +193,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "MORTOR_CANNON",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "THERMITE_BARRAGE",
 				onlytargetcategory = "SURFACE",
 			},

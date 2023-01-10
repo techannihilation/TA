@@ -250,7 +250,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY MEDIUM",
+				badtargetcategory = "MINOR MEDIUM",
 				def = "ATAD",
 				onlytargetcategory = "SURFACE",
 			},

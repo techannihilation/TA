@@ -167,7 +167,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "CORMECHART",
 				onlytargetcategory = "SURFACE",
 			},

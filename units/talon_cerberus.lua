@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -15 45",
 		collisionvolumescales = "175 260 375",
 		collisionvolumetype = "CylZ",
@@ -237,7 +237,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "ULTIMATE_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},
@@ -254,14 +254,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MOUNTEDANTIMATTERACCELERATOR",
 				maindir = "1 0 -0.1",
 				maxangledif = 120,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MOUNTEDANTIMATTERACCELERATOR",
 				maindir = "-1 0 -0.1",
 				maxangledif = 120,

@@ -15,9 +15,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE SURFACE",
+		category = "ALL MAJOR  MOBILE SURFACE",
 		collisionvolumeoffsets = "0 3 0",
-		collisionvolumescales = "130 120 170",		
+		collisionvolumescales = "130 120 170",
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -285,11 +285,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "CANNON_TYRNT",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "BLOD_DOOM",
 				maindir = "0 0 1",
 				maxangledif = 180,

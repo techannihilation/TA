@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE UNDERWATER",
+		category = "ALL MOBILE MINOR SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "21 36 18",
 		collisionvolumetype = "CylY",
@@ -156,7 +156,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

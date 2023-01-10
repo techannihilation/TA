@@ -187,14 +187,14 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "TLLFIXED_GUN",
 				maindir = "0 1 0",
 				maxangledif = 230,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "TLLFIXED_GUN_HIGH",
 				onlytargetcategory = "SURFACE",
 			},

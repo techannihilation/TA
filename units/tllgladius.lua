@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE",
+		category = "ALL MOBILE MINOR SURFACE",
 		collisionvolumeoffsets = "0 -3 -1",
 		collisionvolumescales = "23 17 27",
 		collisionvolumetype = "box",

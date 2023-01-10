@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Corvette",
@@ -199,7 +199,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ARMTRUCK_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

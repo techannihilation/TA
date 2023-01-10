@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 -1",
 		collisionvolumescales = "50 50 50",
 		collisionvolumetype = "CylZ",
@@ -63,7 +63,7 @@ return {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
-				collisionvolumescales = "60 16 60",				
+				collisionvolumescales = "60 16 60",
 				collisionvolumetype = "Box",
 				damage = 6216,
 				description = "Goliath Wreckage",
@@ -165,7 +165,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "COR_GOL",
 				onlytargetcategory = "SURFACE",
 			},

@@ -14,10 +14,9 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -32 0",
-		collisionvolumescales = "130 160 470",
-		
+		collisionvolumescales = "130 160 470",		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -288,28 +287,28 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY SMALL LARGE",
+				badtargetcategory = "MINOR SMALL LARGE",
 				def = "rapid_cannon_talon",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY SMALL LARGE",
+				badtargetcategory = "MINOR SMALL LARGE",
 				def = "cannon_talon",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "TINY SMALL LARGE",
+				badtargetcategory = "MINOR SMALL LARGE",
 				def = "cannon_talon",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "TINY SMALL LARGE",
+				badtargetcategory = "MINOR SMALL LARGE",
 				def = "GATLING",
 				maindir = "0 0 -1",
 				maxangledif = 160,
@@ -344,28 +343,28 @@ return {
 				onlytargetcategory = "UNDERWATER",
 			},
 			[9] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "talon_flak_gun",
 				maindir = "0.8 0 -0.2",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[10] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "talon_flak_gun",
 				maindir = "0.8 0 0.2",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[11] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "talon_flak_gun",
 				maindir = "-0.8 0 -0.2",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[12] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "talon_flak_gun",
 				maindir = "-0.8 0 0.2",
 				maxangledif = 220,

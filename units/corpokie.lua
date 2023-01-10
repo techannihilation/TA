@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "263 132 263",
 		collisionvolumetype = "CylY",
@@ -254,22 +254,25 @@ return {
 			},
 		},
 		weapons = {
+			[1] = {
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
+				def = "GATLING",
+				onlytargetcategory = "SURFACE",
+			},
 			[2] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "ATAD",
 				maindir = "0 0 1",
 				maxangledif = 85,
 				onlytargetcategory = "SURFACE",
 			},
-			[1] = {
-				def = "GATLING",
-				onlytargetcategory = "SURFACE",
-			},
 			[5] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[6] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE VTOL",
 			},

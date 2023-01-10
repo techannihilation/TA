@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-10 -16 0",
 		collisionvolumescales = "152 193 82",
 		collisionvolumetype = "box",
@@ -267,7 +267,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "GAUSS_TLL",
 				onlytargetcategory = "SURFACE",
 			},
@@ -276,14 +276,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[4] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "MINIFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 220,

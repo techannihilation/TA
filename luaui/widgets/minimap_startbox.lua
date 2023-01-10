@@ -110,7 +110,7 @@ local glBillboard           = gl.Billboard
 local glDrawFuncAtUnit      = gl.DrawFuncAtUnit
 local glDrawListAtUnit      = gl.DrawListAtUnit
 local GL_GREATER          = GL.GREATER
-local GL_SRC_ALPHA        = GL.SRC_ALPHA  
+local GL_SRC_ALPHA        = GL.SRC_ALPHA
 local GL_ONE_MINUS_SRC_ALPHA  = GL.ONE_MINUS_SRC_ALPHA
 local glBlending              = gl.Blending
 local glScale               = gl.Scale
@@ -188,7 +188,7 @@ local function createComnameList(x, y, name, teamID, color)
       end
       font:SetTextColor(outlineColor)
       font:SetOutlineColor(outlineColor)
-      
+
       font:Print(name, x-(usedFontSize/38), y-(usedFontSize/33), usedFontSize, "con")
       font:Print(name, x+(usedFontSize/38), y-(usedFontSize/33), usedFontSize, "con")
     end
@@ -202,7 +202,7 @@ end
 
 local function DrawName(x, y, name, teamID, color)
   -- not optimal, everytime you move camera the x and y are different so it has to recreate the drawlist
-  if comnameList[teamID] == nil or comnameList[teamID]['x'] ~= math.floor(x) or comnameList[teamID]['y'] ~= math.floor(y) then    -- using floor because the x and y values had a a tiny change each frame
+  if comnameList[teamID] == nil or comnameList[teamID]['x'] ~= math.floor(x) or comnameList[teamID]['y'] ~= math.floor(y) then    -- using floor because the x and y values had a a minor change each frame
     if comnameList[teamID] ~= nil then
       gl.DeleteList(comnameList[teamID]['list'])
     end
@@ -222,7 +222,7 @@ function widget:Initialize()
     gl.Color(1,1,1,0.5)
     gl.Text(infotext, 0,0, infotextFontsize, "cno")
   end)
-  
+
   -- get the gaia teamID and allyTeamID
   gaiaTeamID = Spring.GetGaiaTeamID()
   if (gaiaTeamID) then
@@ -333,7 +333,7 @@ local function GetTeamColor(teamID)
     return color
   end
   local r,g,b = Spring.GetTeamColor(teamID)
-  
+
   color = { r, g, b }
   teamColors[teamID] = color
   return color
@@ -430,7 +430,7 @@ function widget:DrawWorld()
       end
     end
   end
-  
+
   gl.Fog(true)
 end
 
@@ -450,9 +450,9 @@ function widget:DrawScreenEffects()
       if (x ~= nil and x > 0 and z > 0 and y > -500) then
         local sx, sy, sz = Spring.WorldToScreenCoords(x, y + 120, z)
         if (sz < 1) then
-          
+
       DrawName(sx, sy, name, teamID, GetTeamColor(teamID))
-  
+
         end
       end
     end

@@ -292,14 +292,14 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY SMALL MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "CANNON_TYRNT",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY SMALL MEDIUM",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "CANNON_TYRNT",
 				maindir = "0 0 -1",
 				maxangledif = 270,
@@ -344,56 +344,56 @@ return {
 				onlytargetcategory = "UNDERWATER",
 			},
 			[9] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[10] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[11] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[12] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[13] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[14] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[15] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[16] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,

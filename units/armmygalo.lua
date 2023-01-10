@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "263 200 263",
 		collisionvolumetype = "Ell",
@@ -187,17 +187,17 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY MEDIUM",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MYGALO_MULTILASER",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY MEDIUM",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "EMCC",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "TINY MEDIUM",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "EMCC",
 				onlytargetcategory = "SURFACE",
 				slaveto = 2,

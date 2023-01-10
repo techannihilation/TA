@@ -18,7 +18,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
+		category = "ALL MOBILE MAJOR SURFACE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 -21 -40",
 		collisionvolumescales = "180 180 473",

@@ -236,21 +236,21 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "GATLING",
 				maindir = "0 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "TALON_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 320,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "TALON_MISSILE",
 				maindir = "0 0 1",
 				maxangledif = 320,

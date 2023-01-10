@@ -149,7 +149,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "Floating_Plasma",
 				onlytargetcategory = "SURFACE",
 			},

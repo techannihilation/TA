@@ -238,7 +238,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "SEADRAGPRIME",
 				onlytargetcategory = "SURFACE",
 			},
@@ -249,7 +249,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "SEADRAGPRIME",
 				maindir = "0 0 1",
 				maxangledif = 240,
@@ -268,14 +268,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "SEADRAGONFLAK",
 				maindir = "1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "VTOL",
 			},
 			[7] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "SEADRAGONFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 200,

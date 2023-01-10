@@ -159,7 +159,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GOK_SNIPE_GUN",
 				onlytargetcategory = "SURFACE",
 			},

@@ -16,7 +16,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
+		category = "ALL MOBILE MAJOR SURFACE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "420 200 950",
@@ -147,7 +147,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY MEDIUM LARGE VTOL",
+				badtargetcategory = "SMALL MINOR MEDIUM LARGE VTOL",
 				def = "ultimate_psychic3",
 				maindir = "0 0 1",
 				maxangledif = 270,

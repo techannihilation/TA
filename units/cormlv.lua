@@ -19,7 +19,7 @@ return {
 		canrepair = true,
 		canrestore = false,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE",
+		category = "ALL MOBILE MINOR SURFACE",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "19 10 29",
 		collisionvolumetype = "Box",

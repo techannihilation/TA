@@ -1,11 +1,11 @@
 return {
-	tllmosaurus = {
+	tllmosasaurus = {
 		acceleration = 0.002,
 		brakerate = 0.09,
 		buildcostenergy = 340661,
 		buildcostmetal = 22840,
 		builder = false,
-		buildpic = "tllmosaurus.dds",
+		buildpic = "tllmosasaurus.dds",
 		buildtime = 275000,
 		canattack = true,
 		canguard = true,
@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Mosaurus",
 		noautofire = false,
-		objectname = "tllmosaurus",
+		objectname = "tllmosasaurus",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "KROG_BLAST",
@@ -46,9 +46,9 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.9,
 		turnrate = 150,
-		unitname = "tllmosaurus",
+		unitname = "tllmosasaurus",
 		customparams = {
-			buildpic = "tllmosaurus.dds",
+			buildpic = "tllmosasaurus.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -60,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 13875,
-				object = "tllmosaurus_dead",
+				object = "tllmosasaurus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -186,7 +186,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MINIGUN_GAUSS_TLL",
 				onlytargetcategory = "SURFACE",
 			},

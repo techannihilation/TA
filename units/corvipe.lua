@@ -176,7 +176,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "VIPERSABOT",
 				onlytargetcategory = "SURFACE",
 			},

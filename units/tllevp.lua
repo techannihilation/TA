@@ -53,7 +53,7 @@ return {
 			[6] = "tllacid",
 			[7] = "tlldemon",
 			[8] = "tllanvil",
-			[9] = "tllmosaurus",
+			[9] = "tllmosasaurus",
 		},
 		customparams = {
 			buildpic = "tllevp.dds",

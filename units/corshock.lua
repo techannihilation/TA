@@ -144,7 +144,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ADVFLAK",
 				maindir = "0 1 0",
 				maxangledif = 220,

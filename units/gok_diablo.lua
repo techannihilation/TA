@@ -226,7 +226,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "DIABLO_CANON",
 				onlytargetcategory = "SURFACE",
 			},

@@ -11,7 +11,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE SURFACE UNDERWATER",
+		category = "ALL MAJOR SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -5 10",
 		collisionvolumescales = "100 75 135",
 		collisionvolumetype = "CylZ",
@@ -141,7 +141,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "TALON_BLAST_OVERCHARGED",
 				onlytargetcategory = "SURFACE",
 			},

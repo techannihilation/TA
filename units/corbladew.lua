@@ -11,7 +11,7 @@ return {
 		canfly = true,
 		canguard = true,
 		canmove = true,
-		category = "ALL MOBILE TINY VTOL",
+		category = "ALL MOBILE MINOR VTOL",
 		collide = false,
 		cruisealt = 78,
 		defaultmissiontype = "VTOL_standby",

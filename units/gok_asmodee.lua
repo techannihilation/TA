@@ -166,7 +166,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "gok_beam",
 				onlytargetcategory = "SURFACE",
 			},

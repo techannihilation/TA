@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE SCOUT VTOL",
+		category = "ALL MOBILE MINOR VTOL",
 		collide = false,
 		cruisealt = 180,
 		defaultmissiontype = "VTOL_standby",

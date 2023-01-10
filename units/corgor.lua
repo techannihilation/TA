@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Fast Experimental Kbot",

@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE UNDERWATER",
+		category = "ALL MOBILE MINOR SURFACE UNDERWATER",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "All-Terrain Jammer Spider",

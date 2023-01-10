@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -3 -15",
 		collisionvolumescales = "190 270 145",
 		collisionvolumetype = "Box",
@@ -201,12 +201,11 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "ULTIMATE_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
 				def = "THERMITE_BARRAGE",
 				onlytargetcategory = "SURFACE",
 			},

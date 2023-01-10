@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Scout Boat/Light Anti-Air",
+		description = "MINOR Boat/Light Anti-Air",
 		explodeas = "SMALL_UNITEX",
 		firestandorders = 1,
 		floater = true,
@@ -208,7 +208,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ARMKBOT_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

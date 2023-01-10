@@ -241,12 +241,12 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_STARBURST",
 				onlytargetcategory = "VTOL",
 			},

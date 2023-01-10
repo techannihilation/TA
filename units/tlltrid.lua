@@ -142,7 +142,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "GAUSS_TLL",
 				onlytargetcategory = "SURFACE",
 			},

@@ -1,4 +1,14 @@
-4.37 => 4.38
+ 4.38 => 4.39
+2023-01-11
+
+Balance :
+ - Talon Grenat : Change Starburst for Raven straburst.
+
+ Improvment :
+ - Delete Samael titan and remplace by Tyranosaurus Titan. Samel will be reworked.
+ - Rework all Class Categories : minor - small - medium - large - huge - major
+
+ 4.37 => 4.38
 2023-01-03
 - Bye Xmas Features and Happy new Year !
 
@@ -318,7 +328,7 @@ Fix :
 4.14 => 4.16
 2022-02-01
 Balance :
- - Gok T5 Bomber can be target by Ground weapon. Change Armor class and become a supership (dmg from Air weapon divide by 4)
+ - Gok T5 Bomber can be target by Ground weapon. Change Armor class and become a MAJOR (dmg from Air weapon divide by 4)
  - Jug Arm : Decrease stats and cost
 
  Improvement:

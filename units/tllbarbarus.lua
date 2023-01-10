@@ -19,7 +19,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE SUPERSHIP SURFACE VTOL",
+		category = "ALL MOBILE MAJOR SURFACE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 -24 4",
 		collisionvolumescales = "118 118 243",
@@ -188,28 +188,28 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GAUSS_TLL",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GAUSS_TLL",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 190,

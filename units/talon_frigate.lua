@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE UNDERWATER",
+		category = "ALL LARGE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "65 65 160",
 		collisionvolumetype = "CylZ",
@@ -188,7 +188,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "SURFACE",				
+				badtargetcategory = "SURFACE",
 				def = "TALON_HEAVY_TORPEDO",
 				maindir = "0 0 1",
 				maxangledif = 90,

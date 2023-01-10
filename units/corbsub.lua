@@ -13,10 +13,9 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE UNDERWATER",
+		category = "ALL LARGE MOBILE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "120 40 150",
-		
+		collisionvolumescales = "120 40 150",		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

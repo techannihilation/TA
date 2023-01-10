@@ -19,11 +19,11 @@ end
 -- To give a command at a point: select command, left click and don't drag
 -- To area attack (bombers etc only): select command, hold alt, left click and drag
 -- To deselect non-default command and return to default command: right click and don't drag
--- To deselect default command: left click 
+-- To deselect default command: left click
 -- 29/05/13 -- Dots are of consistent size depending on zoom and terrain height
 -- 25/05/13 -- Fixed crash bug that was triggered by pressing the left mouse button during line drawing with right mouse button. Also improved visuals.
--- 13/04/13 -- Visuals remade by PixelOfDeath 
--- 23/03/13 -- Attack order y-coord placement remade by Bluestone for spring 94+ 
+-- 13/04/13 -- Visuals remade by PixelOfDeath
+-- 23/03/13 -- Attack order y-coord placement remade by Bluestone for spring 94+
 --------------------------------------------------------------------------------
 -- User Configurable Constants
 --------------------------------------------------------------------------------
@@ -54,8 +54,8 @@ local formationCmds = {
 
 }
 
---[CMD.MANUALFIRE] = true -- emp/tacnukes -- disabled becouse dgun is affected 
--- What commands require alt to be held 
+--[CMD.MANUALFIRE] = true -- emp/tacnukes -- disabled becouse dgun is affected
+-- What commands require alt to be held
 local requiresAlt = {} --nothing!
 
 -- Context-based default commands that can be overridden (meaning that cf2 doesn't touch the command i.e. guard/attack when mouseover unit)
@@ -569,7 +569,7 @@ function widget:MouseRelease(mx, my, mButton)
 		--if (#fNodes == 1) then
 		if fDists[#fNodes] < minFormationLength then
 			-- We should check if any units are able to execute it,
-			-- but the order is small enough network-wise that the tiny bug potential isn't worth it.
+			-- but the order is small enough network-wise that the MINOR bug potential isn't worth it.
 			-- Check if this order was meant to target a unit
 			local targetID
 

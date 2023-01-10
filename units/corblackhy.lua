@@ -248,7 +248,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "HYDRA_PRIME",
 				onlytargetcategory = "SURFACE",
 			},
@@ -259,7 +259,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "HYDRAMISS",
 				maindir = "1 0 1",
 				maxangledif = 240,
@@ -278,7 +278,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "HYDRAMISS",
 				maindir = "-1 0 1",
 				maxangledif = 240,

@@ -14,7 +14,7 @@ return {
 		canpatrol = true,
 		canreclamate = 1,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE",
+		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 2 0",
 		collisionvolumescales = "80 40 195",
 		collisionvolumetype = "Ell",

@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-3 -19 2",
 		collisionvolumescales = "100 97 93",
 		collisionvolumetype = "ellipsoid",
@@ -159,7 +159,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "GOK_GUN",
 				onlytargetcategory = "SURFACE",
 			},

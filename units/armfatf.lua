@@ -30,8 +30,7 @@ return {
 		maxvelocity = 0,
 		minwaterdepth = 30,
 		name = "Floating Targeting Facility",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMFATF",
 		onoffable = true,
 		radaremitheight = 32,

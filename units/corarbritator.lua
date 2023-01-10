@@ -248,7 +248,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "CORTRON_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},

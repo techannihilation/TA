@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE UNDERWATER",
+		category = "ALL LARGE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "31 31 156",
 		collisionvolumetype = "CylZ",

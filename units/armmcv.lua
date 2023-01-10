@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "65 65 90",
 		collisionvolumetype = "box",
@@ -201,14 +201,14 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "ARM_BATSAFTX",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "ARM_BATSAFTX",
 				onlytargetcategory = "SURFACE",
 			},

@@ -15,10 +15,9 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		cantbetransported = true,
-		category = "ALL HUGE MOBILE SURFACE",
+		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 3 0",
 		collisionvolumescales = "110 48 120",
-
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -240,28 +239,28 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILE",
 				maindir = "1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
 			[6] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILE",
 				maindir = "1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
 			[7] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 190,

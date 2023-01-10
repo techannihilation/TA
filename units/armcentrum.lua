@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -22 0",
 		collisionvolumescales = "130 140 450",
 		collisionvolumetype = "Ell",
@@ -289,12 +289,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "OLY_GUN",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "MEDIUM SMALL TINY",
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "OLY_GUN",
 				maindir = "0 0 1",
 				maxangledif = 270,
@@ -341,28 +341,28 @@ return {
 				onlytargetcategory = "UNDERWATER",
 			},
 			[10] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ARMFLAK_GUN",
 				maindir = "-0.2 0 0.8",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[11] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ARMFLAK_GUN",
 				maindir = "0.2 0 0.8",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[12] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ARMFLAK_GUN",
 				maindir = "-0.2 0 -0.8",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[13] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "ARMFLAK_GUN",
 				maindir = "0.2 0 -0.8",
 				maxangledif = 220,

@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE TINY SURFACE",
+		category = "ALL MOBILE MINOR SURFACE",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "20 17 32",

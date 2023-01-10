@@ -125,7 +125,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "GOKVTOL_ADVMISSILE",
 				onlytargetcategory = "VTOL",
 			},

@@ -257,7 +257,7 @@ return {
 				slaveto = 2,
 			},
 			[4] = {
-				badtargetcategory = "TINY MEDIUM",
+				badtargetcategory = "MINOR MEDIUM",
 				def = "ARMORCO_ATAD",
 				onlytargetcategory = "SURFACE",
 			},

@@ -39,11 +39,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	hide flare;
-	dont-cache gun;
-	dont-cache barrel;
-	dont-cache sleeves;
-	dont-cache flare;
-	dont-cache turret;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 1000;
@@ -63,8 +58,8 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <1000.000000>;
-	turn sleeves to x-axis <0.000000> - pitch speed <850.000000>;
+	turn turret to y-axis heading speed <500.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <400.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeves around x-axis;
 	start-script RestoreAfterDelay();

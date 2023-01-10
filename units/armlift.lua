@@ -155,14 +155,14 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "MISSILE_TURRET",
 				maindir = "0 1 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-				badtargetcategory = "SCOUT SUPERSHIP",
+				badtargetcategory = "MINOR MAJOR",
 				def = "MISSILE_TURRET",
 				maindir = "0 1 0",
 				maxangledif = 220,

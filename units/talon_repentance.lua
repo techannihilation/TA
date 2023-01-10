@@ -14,7 +14,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "160 200 210",
 		collisionvolumetype = "box",
@@ -199,7 +199,7 @@ return {
 				shieldradius = 500,
 				shieldrepulser = false,
 				smartshield = true,
-				
+
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
@@ -209,35 +209,40 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY MEDIUM",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "CANNON_SIEGE",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "GATLING",
 				maindir = "1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "GATLING",
 				maindir = "-1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "GATLING",
 				maindir = "0 0 -1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "GATLING",
 				maindir = "1 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
+				badtargetcategory = "SMALL MINOR",
 				def = "GATLING",
 				maindir = "-1 0 1",
 				maxangledif = 220,

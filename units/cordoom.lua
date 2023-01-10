@@ -235,12 +235,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "ATADR",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "CORSUMO_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},

@@ -157,7 +157,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "TINY",
+				badtargetcategory = "MINOR",
 				def = "ARMFIXED_GUN",
 				maindir = "0 1 0",
 				maxangledif = 230,

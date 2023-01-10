@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE",
+		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 3 0",
 		collisionvolumescales = "65 45 65",
 		collisionvolumetype = "CylY",
@@ -258,7 +258,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 220,

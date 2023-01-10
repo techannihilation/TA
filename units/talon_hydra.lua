@@ -154,7 +154,7 @@ return {
 		},
 		weapons = {
 			[2] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MOBILEFLAK",
 				onlytargetcategory = "VTOL",
 			},

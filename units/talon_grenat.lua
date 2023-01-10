@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 -5",
 		collisionvolumescales = "105 35 155",
 		collisionvolumetype = "CylZ",
@@ -272,7 +272,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL TINY",
+				badtargetcategory = "SMALL MINOR",
 				def = "LIGHTNING_GRENAT",
 				onlytargetcategory = "SURFACE",
 			},

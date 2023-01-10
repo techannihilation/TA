@@ -145,7 +145,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "gok_dmc_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},

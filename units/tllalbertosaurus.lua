@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL HUGE MOBILE SURFACE",
+		category = "ALL MAJOR MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -20 10",
 		collisionvolumescales = "180 130 250",
 		collisionvolumetype = "ellipsoid",
@@ -250,68 +250,68 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MINIGUN_GAUSS_TLL",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "LARGE MEDIUM SMALL TINY",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GAUSS_TLL",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				badtargetcategory = "HUGE",
+				badtargetcategory = "MAJOR HUGE",
 				def = "LIGHTNING",
 				maindir = "-1 0 0.7",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "HUGE",
+				badtargetcategory = "MAJOR HUGE",
 				def = "LIGHTNING",
 				maindir = "-1 0 0.6",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "HUGE",
+				badtargetcategory = "MAJOR HUGE",
 				def = "LIGHTNING",
 				maindir = "-1 0 -1",
 				maxangledif = 100,
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
-				badtargetcategory = "HUGE",
+				badtargetcategory = "MAJOR HUGE",
 				def = "LIGHTNING",
 				maindir = "1 0 0.7",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[7] = {
-				badtargetcategory = "HUGE",
+				badtargetcategory = "MAJOR HUGE",
 				def = "LIGHTNING",
 				maindir = "1 0 0.6",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
 			[8] = {
-				badtargetcategory = "HUGE",
+				badtargetcategory = "MAJOR HUGE",
 				def = "LIGHTNING",
 				maindir = "1 0 -1",
 				maxangledif = 100,
 				onlytargetcategory = "SURFACE",
 			},
 			[9] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[10] = {
-				badtargetcategory = "SCOUT SUPERSHIP", --Ground AA
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 220,
