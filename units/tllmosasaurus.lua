@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TANKHOVER4",
-		name = "Mosaurus",
+		name = "Mosasaurus",
 		noautofire = false,
 		objectname = "tllmosasaurus",
 		radardistance = 0,

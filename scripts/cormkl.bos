@@ -178,72 +178,6 @@ TexasRanger(Func_Var_1, Func_Var_2)
 			
 		}
 	}
-	turn pattes21 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes22 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes23 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes23 around z-axis;
-	turn pattes20 to y-axis <45.000000> speed <60.000000> * <2.747253> / <2.197802>;
-	wait-for-turn pattes20 around y-axis;
-	turn pattes21 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes22 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes23 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes23 around z-axis;
-	turn pattes20 to y-axis <-15.000000> speed <15.000000> * <2.747253> / <2.197802>;
-	turn pattes51 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes52 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes53 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes53 around z-axis;
-	turn pattes50 to y-axis <-15.000000> speed <60.000000> * <2.747253> / <2.197802>;
-	wait-for-turn pattes50 around y-axis;
-	turn pattes51 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes52 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes53 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes53 around z-axis;
-	turn pattes50 to y-axis <45.000000> speed <15.000000> * <2.747253> / <2.197802>;
-	turn pattes41 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes42 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes43 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes43 around z-axis;
-	turn pattes40 to y-axis <30.000000> speed <60.000000> * <2.747253> / <2.197802>;
-	wait-for-turn pattes40 around y-axis;
-	turn pattes41 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes42 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes43 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes43 around z-axis;
-	turn pattes40 to y-axis <-30.000000> speed <15.000000> * <2.747253> / <2.197802>;
-	turn pattes11 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes12 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes13 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes13 around z-axis;
-	turn pattes10 to y-axis <-45.000000> speed <60.000000> * <2.747253> / <2.197802>;
-	wait-for-turn pattes10 around y-axis;
-	turn pattes11 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes12 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes13 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes13 around z-axis;
-	turn pattes10 to y-axis <15.000000> speed <15.000000> * <2.747253> / <2.197802>;
-	turn pattes61 to z-axis <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes62 to z-axis <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes63 to z-axis <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes63 around z-axis;
-	turn pattes60 to y-axis <15.000000> speed <60.000000> * <2.747253> / <2.197802>;
-	wait-for-turn pattes60 around y-axis;
-	turn pattes61 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes62 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes63 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes63 around z-axis;
-	turn pattes60 to y-axis <-45.000000> speed <15.000000> * <2.747253> / <2.197802>;
-	turn pattes31 to z-axis <0.000000> - <30.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes32 to z-axis <0.000000> - <45.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes33 to z-axis <0.000000> - <7.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes33 around z-axis;
-	turn pattes30 to y-axis <-30.000000> speed <60.000000> * <2.747253> / <2.197802>;
-	wait-for-turn pattes30 around y-axis;
-	turn pattes31 to z-axis <0.000000> speed <30.000000> * <5.494505> / <2.197802>;
-	turn pattes32 to z-axis <0.000000> speed <45.000000> * <5.494505> / <2.197802>;
-	turn pattes33 to z-axis <0.000000> speed <7.000000> * <5.494505> / <2.197802>;
-	wait-for-turn pattes33 around z-axis;
-	turn pattes30 to y-axis <30.000000> speed <15.000000> * <2.747253> / <2.197802>;
 }
 
 StartMoving()
@@ -291,6 +225,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep 400;
 	}
 	
+	start-script TexasRanger();		
 	start-script PilotLight();
 	
 	while( TRUE )
@@ -349,7 +284,6 @@ Create()
 	turn pattes60 to y-axis <-50.> now;
 		
 	start-script SmokeUnit();
-	start-script TexasRanger();	
 }
 
 RestoreAfterDelay()

@@ -123,6 +123,27 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
+	hide sflare1a;
+	hide sflare1b;
+	hide sflare1c;
+	hide sflare1d;
+	hide sflare2a;
+	hide sflare2b;
+	hide sflare2c;
+	hide sflare2d;
+	hide sflare3a;
+	hide sflare3b;
+	hide sflare3c;
+	hide sflare3d;
+	hide sflare4a;
+	hide sflare4b;
+	hide sflare4c;
+	hide sflare4d;
+	hide sflare5a;
+	hide sflare5b;
+	hide sflare5c;
+	hide sflare5d;
+	
 	sgun_1 = 0;
 	sgun_2 = 0;
 	sgun_3 = 0;
@@ -807,10 +828,10 @@ FireWeapon12(piecenum)
 			wait-for-move sbarrel5d along z-axis;
 			move sbarrel5d to z-axis [0.000000] speed [3.000000];
 		}
-	++sgun_1;
-	if( sgun_1 == 4 )
+	++sgun_5;
+	if( sgun_5 == 4 )
 	{
-		sgun_1 = 0;
+		sgun_5 = 0;
 	
 	}	
 }

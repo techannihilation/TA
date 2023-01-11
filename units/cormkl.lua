@@ -295,7 +295,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 			},

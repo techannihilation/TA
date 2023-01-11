@@ -3,6 +3,7 @@
 
 Balance :
  - Talon Grenat : Change Starburst for Raven straburst.
+ - Reworl All-Terrain T4 Spider Core. Decrease cost by 10KM. Increase Main Gun Range. Decrease Speed.
 
  Improvment :
  - Delete Samael titan and remplace by Tyranosaurus Titan. Samel will be reworked.
