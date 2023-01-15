@@ -58,8 +58,10 @@ return {
 		customparams = {
 			buildpic = "gok_valefor.dds",
 			faction = "GOK",
-			shield_power = 2500,
-			shield_radius = 300,
+			shield_emit_height = 25.0,
+			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
+			shield_power = 5000,
+			shield_radius = 230,
 		},
 		featuredefs = {
 			dead = {
@@ -96,6 +98,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:GOKFLARE",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -195,20 +200,19 @@ return {
 				},
 			},
 			repulsor3 = {
-				name = "PlasmaRepulsor",
+				name = "Universal Repulsor",
 				shieldbadcolor = "1 0.2 0.2 0.30",
-				shieldenergyuse = 375,
+				shieldenergyuse = 900,
 				shieldforce = 8,
-				shieldgoodcolor = "0.2 1 0.2 0.30",
-				shieldintercepttype = 1,
-				shieldpower = 2500,
-				shieldpowerregen = 37.5,
-				shieldpowerregenenergy = 375,
-				shieldradius = 300,
+				shieldgoodcolor = "0.9 0.9 0.45 0.35",
+				shieldintercepttype = 31,
+				shieldpower = 5000,
+				shieldpowerregen = 45,
+				shieldpowerregenenergy = 500,
+				shieldradius = 230,
 				shieldrepulser = true,
 				smartshield = true,
 				soundhitwet = "sizzle",
-				soundhitwetvolume = 0.5,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

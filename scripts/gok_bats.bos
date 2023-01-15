@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, gun, wake1, wake2, wake3, aft, rfloat, lfloat, control,
+piece  base, body, gun, wake1, wake2, wake3, aft, rfloat, lfloat, control, pitchturretrecoil,
 		turret2, pitchturret2, barrel2a, barrel2b, barrel2c, flare2a, flare2b, flare2c,
-		turret1, pitchturret1, flare1, barrel1a, barrel1b, turretrecoil;
+		turret1, sleeves1, barrel1, flare1, system1a, system1b, system1c, system1bturn, system1cturn;
 
 static-var  gun_1, shieldonoff;
 
@@ -44,6 +44,8 @@ Shield()
 Create()
 {
 	shieldonoff = 1;
+	turn system1bturn to z-axis <-120.> now;
+	turn system1cturn to z-axis <120.> now;
 	hide flare1;	
 	gun_1 = 0;
 	start-script SmokeUnit();
@@ -54,7 +56,7 @@ RestoreAfterDelay1()
 {
 	sleep 3000;
 	turn turret1 to y-axis <0.000000> speed <45.000000>;
-	turn pitchturret1 to x-axis <0.000000> speed <30.000000>;
+	turn sleeves1 to x-axis <0.000000> speed <30.000000>;
 }
 
 RestoreAfterDelay2()
@@ -87,9 +89,9 @@ AimPrimary(heading, pitch)
 	signal 2;
 	set-signal-mask 2;
 	turn turret1 to y-axis heading speed <30.000000>;
-	turn pitchturret1 to x-axis <0.000000> - pitch speed <20.000000>;
+	turn sleeves1 to x-axis <0.000000> - pitch speed <20.000000>;
 	wait-for-turn turret1 around y-axis;
-	wait-for-turn pitchturret1 around x-axis;
+	wait-for-turn sleeves1 around x-axis;
 	start-script RestoreAfterDelay1();
 	return (1);
 }
@@ -97,13 +99,29 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 + 0 from flare1;
-	turn turretrecoil to x-axis <-10.> speed <37.>;
-	sleep 150;
-	turn turretrecoil to x-axis <-10.> speed <15.>;
-	sleep 150;
-	turn turretrecoil to x-axis <-10.> speed <5.>;
-	sleep 150;
-	turn turretrecoil to x-axis <0.> speed <4.>;
+	move barrel1 to z-axis [-2.0] speed [25.];		
+	sleep 100;
+	
+	turn pitchturretrecoil to x-axis <-10.> speed <25.>;
+	turn system1a to x-axis <-15.> speed <150.>;
+	turn system1b to x-axis <-15.> speed <150.>;
+	turn system1c to x-axis <-15.> speed <150.>;
+	sleep 100;
+		
+	turn pitchturretrecoil to x-axis <-10.> speed <10.>;
+	turn system1a to x-axis <-15.> speed <90.>;
+	turn system1b to x-axis <-15.> speed <90.>;
+	turn system1c to x-axis <-15.> speed <90.>;
+	sleep 100;
+		
+	turn pitchturretrecoil to x-axis <-10.> speed <5.>;
+	turn system1a to x-axis <0.> speed <14.>;
+	turn system1b to x-axis <0.> speed <14.>;
+	turn system1c to x-axis <0.> speed <14.>;
+	sleep 250;
+	
+	turn pitchturretrecoil to x-axis <0.> speed <4.>;
+	move barrel1 to z-axis [0.] speed [1.];
 }
 
 AimFromPrimary(piecenum)
@@ -215,7 +233,7 @@ Killed(severity, corpsetype)
 		explode body type NOHEATCLOUD;
 		explode turret1 type NOHEATCLOUD;
 		explode turret2 type NOHEATCLOUD;
-		explode control type NOHEATCLOUD;
+		explode sleeves1 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -228,7 +246,7 @@ Killed(severity, corpsetype)
 		explode body type NOHEATCLOUD;
 		explode turret1 type NOHEATCLOUD | NOHEATCLOUD;
 		explode turret2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode control type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode sleeves1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -239,6 +257,6 @@ Killed(severity, corpsetype)
 	explode body type NOHEATCLOUD;
 	explode turret1 type NOHEATCLOUD;
 	explode turret2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode control type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeves1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }

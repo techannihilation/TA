@@ -55,7 +55,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 225,
 		unitname = "gok_archon",
-		--upright = true,
 		customparams = {
 			buildpic = "gok_archon.dds",
 			faction = "GOK",
@@ -171,12 +170,12 @@ return {
 			gok_archon_shield = {
 				name = "Universal Repulsor",
 				shieldbadcolor = "1 0.2 0.2 0.30",
-				shieldenergyuse = 500,
+				shieldenergyuse = 900,
 				shieldforce = 8,
 				shieldgoodcolor = "0.9 0.9 0.45 0.35",
 				shieldintercepttype = 31,
 				shieldpower = 5000,
-				shieldpowerregen = 25,
+				shieldpowerregen = 45,
 				shieldpowerregenenergy = 500,
 				shieldradius = 230,
 				shieldrepulser = true,
