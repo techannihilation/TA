@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Armored Rocket Quadrupod",
+		description = "All-Terrain Rocket Quadrupod",
 		energymake = 0,
 		explodeas = "BIG_UNIT",
 		firestandorders = 1,

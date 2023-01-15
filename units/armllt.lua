@@ -13,7 +13,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "22 75 22",
-		
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -154,15 +153,15 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 156,
-					default = 78,
+					commanders = 160,
+					default = 80,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM LARGE HUGE",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
 				def = "ARM_LIGHTLASER",
 				onlytargetcategory = "SURFACE",
 			},

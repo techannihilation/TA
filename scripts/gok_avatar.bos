@@ -63,23 +63,27 @@ Create()
 RestoreAfterDelay()
 {
 	sleep 3000;
-	Static_Var_1 = 12;
 	turn turret to y-axis <0.> speed <80.>;
 	turn sleeve1 to x-axis <0.> speed <40.>;
 	turn sleeve2 to x-axis <0.> speed <40.>;
 }
 
-SweetSpot(piecenum)
-{
-	piecenum = base;
-}
-
 QueryPrimary(piecenum)
 {
-	piecenum = Static_Var_1;
+	piecenum = flare1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare2;
 }
 
 AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromSecondary(piecenum)
 {
 	piecenum = turret;
 }
@@ -88,10 +92,7 @@ AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn turret to y-axis heading speed <120.>;
-	turn sleeve1 to x-axis <0.> - pitch speed <60.>;
-	turn sleeve2 to x-axis <0.> - pitch speed <60.>;
-	turn turret to y-axis heading speed <120.>;
+	turn turret to y-axis heading speed <150.>;
 	turn sleeve1 to x-axis <0.> - pitch speed <60.>;
 	turn sleeve2 to x-axis <0.> - pitch speed <60.>;
 	wait-for-turn turret around y-axis;
@@ -101,22 +102,19 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
+AimSecondary(heading, pitch)
 {
-	if( Static_Var_1 == 12 )
-	{
-		
-		move barrel1 to z-axis [-2.] speed [100.];
-		sleep 150;
-		move barrel1 to z-axis [0.] speed [3.];
-		Static_Var_1 = 13;
-		return (0);
-	}
-	
-	move barrel2 to z-axis [-2.] speed [100.];
-	sleep 150;
-	move barrel2 to z-axis [0.] speed [3.];
-	Static_Var_1 = 12;
+	signal 4;
+	set-signal-mask 4;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+	return (1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)

@@ -156,15 +156,15 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 156,
-					default = 78,
+					commanders = 160,
+					default = 80,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM LARGE HUGE",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
 				def = "CORE_LIGHTLASER",
 				onlytargetcategory = "SURFACE",
 			},

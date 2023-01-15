@@ -16,7 +16,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "22 46 22",
-		
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -133,7 +132,6 @@ return {
 				range = 440,
 				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
-				--rgbcolor2= "1.0 1.0 1.00",
 				soundhitdry = "talongunhit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
@@ -154,7 +152,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM LARGE HUGE",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
 				def = "TALON_LIGHTLASER",
 				onlytargetcategory = "SURFACE",
 			},

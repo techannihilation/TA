@@ -3,7 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, link, pillar1, pillar2, pillar3, pillar4, turret, flare1, flare2;
+piece  base, hull, link, pillar1, pillar2, pillar3, pillar4, 
+		turret, sleeve1, sleeve2, barrel1, barrel2, flare1, flare2;
 
 static-var  unitviewer, statechg_DesiredState, statechg_StateChanging, gun_1;
 
@@ -167,40 +168,56 @@ MoveRate3()
 	set-signal-mask SIG_MOVE;
 }
 
+RestoreAfterDelay()
+{
+	sleep 3000;
+	turn turret to y-axis <0.> speed <80.>;
+	turn sleeve1 to x-axis <0.> speed <40.>;
+	turn sleeve2 to x-axis <0.> speed <40.>;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare2;
+}
+
 AimFromPrimary(piecenum)
 {
 	piecenum = turret;
 }
 
-QueryPrimary(piecenum)
+AimFromSecondary(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = flare1;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = flare2;
-	}
-	
+	piecenum = turret;
 }
 
 AimPrimary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <180.>;
+	signal 2;
+	set-signal-mask 2;
+	turn turret to y-axis heading speed <150.>;
+	turn sleeve1 to x-axis <0.> - pitch speed <60.>;
+	turn sleeve2 to x-axis <0.> - pitch speed <60.>;
 	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
-FirePrimary()
+AimSecondary(heading, pitch)
 {
-	++gun_1;
-	if( gun_1 == 2 )
-	{
-		gun_1 = 0;
-	}
+	signal 4;
+	set-signal-mask 4;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve2 around x-axis;
+	return (1);
 }
 
 SweetSpot(piecenum)

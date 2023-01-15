@@ -80,11 +80,6 @@ RestoreAfterDelay()
 	turn pitchturret to x-axis <0.> speed <60.>;
 }
 
-SweetSpot(piecenum)
-{
-	piecenum = base;
-}
-
 QueryPrimary(piecenum)
 {
 	piecenum = launch;
@@ -109,13 +104,9 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
+SweetSpot(piecenum)
 {
-	//show launch;
-	move launcher to z-axis [-1.] speed [10.];
-	sleep 150;
-	//hide launch;
-	move launcher to z-axis [0.] speed [1.];
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)

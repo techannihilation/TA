@@ -4,8 +4,7 @@
 #include "exptype.h"
 
 piece  base, link, backbone, head, stick, lside, lfengine, lfthrust,
-       rside, rfengine, rfthrust, lasturret, sleeve1, barrel1, flare1, sleeve2,
-       barrel2, flare2, plate, magnet, tail, tailstick, lwing,
+       rside, rfengine, rfthrust, plate, magnet, tail, tailstick, lwing,
        lbengine, lbthrust, rwing, rbengine, rbthrust;
 
 static-var  Static_Var_1;
@@ -78,50 +77,6 @@ Create()
 {
 	Static_Var_1 = 0;
 	start-script SmokeUnit();
-}
-
-QueryPrimary(piecenum)
-{
-	if( Static_Var_1 == 0 )
-	{
-		piecenum = flare1;
-	}
-	if( Static_Var_1 == 1 )
-	{
-		piecenum = flare2;
-	}
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = lasturret;
-}
-
-AimPrimary(heading, pitch)
-{
-	signal 2;
-	set-signal-mask 2;
-	return (1);
-}
-
-FirePrimary()
-{
-	if( Static_Var_1 == 0 )
-	{
-		Static_Var_1 = 1;
-		move barrel1 to z-axis [-2.] speed [100.];
-		sleep 150;
-		move barrel1 to z-axis [0.] speed [3.];
-		return (0);
-	}
-	if( Static_Var_1 == 1 )
-	{
-		Static_Var_1 = 0;
-		move barrel2 to z-axis [-2.] speed [100.];
-		sleep 150;
-		move barrel2 to z-axis [0.] speed [3.];
-		return (0);
-	}
 }
 
 SweetSpot(piecenum)

@@ -35,7 +35,7 @@ return {
 		maxvelocity = 2.3,
 		maxwaterdepth = 22,
 		mobilestandorders = 1,
-		movementclass = "TKBOT3",
+		movementclass = "TKBOT2",
 		name = "Tick",
 		noautofire = true,
 		objectname = "ARMTICK",

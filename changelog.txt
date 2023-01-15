@@ -1,3 +1,13 @@
+ 4.39 => 4.4
+2023-01-16
+
+ Balance :
+ - Gator (Light Core Tank) : Add 3 Energy for shot
+
+ Improvment :
+ - Rework All Laser Gok. transform into Beam
+ - Rework TLL T2 Storage visual
+
  4.38 => 4.39
 2023-01-11
 

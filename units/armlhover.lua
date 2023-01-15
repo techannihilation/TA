@@ -13,7 +13,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE SURFACE",
+		category = "ALL SMALL MOBILE SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
 		description = "Lightning Hovercraft",

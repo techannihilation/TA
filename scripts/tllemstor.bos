@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body;
+piece  base, body, estore1, estore2;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -49,15 +49,21 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
+		explode estore1 type NOHEATCLOUD;
+		explode estore2 type NOHEATCLOUD;		
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
+		explode estore1 type NOHEATCLOUD;
+		explode estore2 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD;
+	explode estore1 type NOHEATCLOUD;
+	explode estore2 type NOHEATCLOUD;
 	return (corpsetype);
 }

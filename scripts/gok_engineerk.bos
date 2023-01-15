@@ -4,10 +4,10 @@
 #include "exptype.h"
 
 piece  base, pelvis, torsotwist, torso, lshoulder, larm, llathe, rshoulderrecoil,
-       rshoulder, rarmrecoil, rarm, system1, barrel, flare, backpack,
+       rshoulder, rarmrecoil, rarm, barrel, flare1, flare2, backpack,
        lleg, lboot, rleg, rboot;
 
-static-var  Static_Var_1, bAiming, bMoving, gun_1;
+static-var  bAiming, bMoving;
 
 
 MotionControl(justmoved)
@@ -238,25 +238,19 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	gun_1 = 0;
-	bMoving = 0;
-	bAiming = 0;
+	bMoving = FALSE;
+	bAiming = FALSE;
 	start-script SmokeUnit();
 }
 
 StartMoving()
 {
-	bMoving = 1;
+	bMoving = TRUE;
 }
 
 StopMoving()
 {
-	bMoving = 0;
-}
-
-SweetSpot(piecenum)
-{
-	piecenum = torso;
+	bMoving = FALSE;
 }
 
 QueryNanoPiece(piecenum)
@@ -266,6 +260,7 @@ QueryNanoPiece(piecenum)
 
 RestorePosition()
 {
+	sleep 1500;
 	turn torso to y-axis <0.> speed <80.>;
 	turn lshoulder to x-axis <0.> speed <30.>;
 	turn rshoulder to x-axis <0.> speed <30.>;
@@ -283,9 +278,19 @@ AimFromPrimary(piecenum)
 	piecenum = rarm;
 }
 
+AimFromSecondary(piecenum)
+{
+	piecenum = rarm;
+}
+
 QueryPrimary(piecenum)
 {
-	piecenum = flare;
+	piecenum = flare1;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = flare2;
 }
 
 AimPrimary(heading, pitch)
@@ -298,37 +303,25 @@ AimPrimary(heading, pitch)
 	turn rshoulder to x-axis <0.> speed <140.>;
 	turn larm to x-axis <0.> - pitch speed <120.>;
 	turn rarm to x-axis <0.> - pitch speed <120.>;
-	spin barrel around z-axis speed <600.> accelerate <900.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+	wait-for-turn rarm around x-axis;
+	Start-script RestorePosition();
+	return (1);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
 	wait-for-turn torso around y-axis;
 	wait-for-turn lshoulder around x-axis;
 	wait-for-turn rshoulder around x-axis;
 	wait-for-turn larm around x-axis;
 	wait-for-turn rarm around x-axis;
 	return (1);
-}
-
-FirePrimary()
-{
-	if( gun_1 == 0 )
-	{
-		turn rshoulderrecoil to x-axis <15.> speed <150.>;
-		turn rarmrecoil to x-axis <-15.> speed <150.>;
-		sleep 100;
-		turn rshoulderrecoil to x-axis <0.> speed <125.>;
-		turn rarmrecoil to x-axis <0.> speed <125.>;
-		gun_1 = 1;
-		return (0);
-	}
-	if( gun_1 == 1 )
-	{
-		turn rshoulderrecoil to x-axis <20.> speed <200.>;
-		turn rarmrecoil to x-axis <-20.> speed <200.>;
-		sleep 100;
-		turn rshoulderrecoil to x-axis <0.> speed <125.>;
-		turn rarmrecoil to x-axis <0.> speed <125.>;
-		gun_1 = 0;
-		return (0);
-	}
 }
 
 StartBuilding(Func_Var_1, Func_Var_2)
@@ -356,6 +349,11 @@ StopBuilding()
 	signal 2;
 	set-signal-mask 2;
 	call-script RestorePosition();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)

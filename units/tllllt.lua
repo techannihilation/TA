@@ -4,7 +4,7 @@ return {
 		brakerate = 0,
 		buildangle = 32768,
 		buildcostenergy = 435,
-		buildcostmetal = 82,
+		buildcostmetal = 92,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
@@ -17,7 +17,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "22 75 22",
-
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -31,7 +30,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 72,
-		mass = 82,
+		mass = 92,
 		maxdamage = 605,
 		maxslope = 14,
 		maxvelocity = 0,
@@ -163,7 +162,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM LARGE HUGE",
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
 				def = "LLT_LIGHTNING",
 				onlytargetcategory = "SURFACE",
 			},

@@ -120,15 +120,6 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
-FirePrimary()
-{
-	++gun_1;	
-	if (gun_1 == 2) 
-	{
-		gun_1 = 0;
-	}
-}
-
 AimFromPrimary(piecenum)
 {
 	piecenum = body;
@@ -136,14 +127,24 @@ AimFromPrimary(piecenum)
 
 QueryPrimary(piecenum)
 {
-	if (gun_1 == 0) 
-	{
-		piecenum = lfire;
-	} 
-		if (gun_1 == 1) 
-	{
-		piecenum = rfire;
-	} 
+	piecenum = lfire;
+}
+
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	return (1);
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = body;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = rfire;
 }
 
 SweetSpot(piecenum)

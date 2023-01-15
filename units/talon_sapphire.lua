@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -7 0",
 		collisionvolumescales = "45 23 48",
 		collisionvolumetype = "CylZ",
@@ -37,7 +37,6 @@ return {
 		movementclass = "HTANK3",
 		name = "Sapphire",
 		noautofire = false,
-
 		objectname = "talon_sapphire",
 		radaremitheight = 25,
 		seismicsignature = 0,

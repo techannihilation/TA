@@ -37,7 +37,6 @@ return {
 		movementclass = "TANK2",
 		name = "Flash",
 		noautofire = false,
-		
 		objectname = "ARMFLASH",
 		radaremitheight = 25,
 		seismicsignature = 0,

@@ -7,7 +7,7 @@ piece  base, pelvis, torso, lshoulderrecoil, lshoulder, larmrecoil, larm, lsyste
        lfire, rshoulderrecoil, rshoulder, rarmrecoil, rarm, rsystem, rfire, head,
        lleg, lboot, rleg, rboot;
 
-static-var  bMoving, bAiming, gun_1;
+static-var  bMoving, bAiming;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -202,15 +202,10 @@ MotionControl(moving, aiming, justmoved)
 
 Create()
 {
-	hide rfire;
-	hide lfire;
 	bMoving = 0;
 	bAiming = 0;
-	gun_1 = 0;
 	start-script MotionControl();
 	start-script SmokeUnit();
-	spin lfire around z-axis speed <3000.>;
-	spin rfire around z-axis speed <-3000.>;
 }
 
 StartMoving()
@@ -223,21 +218,19 @@ StopMoving()
 	bMoving = 0;
 }
 
-SweetSpot(piecenum)
-{
-	piecenum = torso;
-}
-
 RestoreAfterDelay()
 {
 	sleep 1500;
-	set-signal-mask 0;
 	bAiming = 0;
 	turn torso to y-axis <0.> speed <90.>;
 	turn rshoulder to x-axis <0.> speed <90.>;
 	turn lshoulder to x-axis <0.> speed <90.>;
 	turn rarm to x-axis <0.> speed <90.>;
 	turn larm to x-axis <0.> speed <90.>;
+	turn lshoulderrecoil to x-axis <0.> speed <70.>;
+	turn larmrecoil to x-axis <0.> speed <50.>;
+	turn rshoulderrecoil to x-axis <0.> speed <70.>;
+	turn rarmrecoil to x-axis <0.> speed <50.>;
 }
 
 AimFromPrimary(piecenum)
@@ -245,21 +238,23 @@ AimFromPrimary(piecenum)
 	piecenum = torso;
 }
 
+AimFromSecondary(piecenum)
+{
+	piecenum = torso;
+}
+
 QueryPrimary(piecenum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = lfire;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = rfire;
-	}
+	piecenum = lfire;
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = rfire;
 }
 
 AimPrimary(heading, pitch)
 {
-
 	signal 2;
 	set-signal-mask 2;
 	turn torso to y-axis heading speed <260.>;
@@ -277,39 +272,39 @@ AimPrimary(heading, pitch)
 	return (1);
 }
 
+AimSecondary(heading, pitch)
+{
+	signal 4;
+	set-signal-mask 4;
+	wait-for-turn torso around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn rshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+	wait-for-turn rarm around x-axis;
+	return (1);
+}
+
 FirePrimary()
 {
-	if( gun_1 == 0 )
-	{
-		turn lshoulderrecoil to x-axis <40.> speed <250.>;
-		turn larmrecoil to x-axis <-30.> speed <250.>;
-		//show lfire;
-		sleep 150;
-		//hide lfire;
-		turn lshoulderrecoil to x-axis <0.> speed <70.>;
-		turn larmrecoil to x-axis <0.> speed <50.>;
-	}
-	if( gun_1 == 1 )
-	{
-		turn rshoulderrecoil to x-axis <40.> speed <250.>;
-		turn rarmrecoil to x-axis <-30.> speed <250.>;
-		//show rfire;
-		sleep 150;
-		//hide rfire;
-		turn rshoulderrecoil to x-axis <0.> speed <70.>;
-		turn rarmrecoil to x-axis <0.> speed <50.>;
-	}
-	++gun_1;
-	if( gun_1 == 2 )
-	{
-		gun_1 = 0;
-	}
+	turn lshoulderrecoil to x-axis <40.> speed <250.>;
+	turn larmrecoil to x-axis <-30.> speed <250.>;
+	sleep 150;
+}
+
+FireSecondary()
+{
+	turn rshoulderrecoil to x-axis <40.> speed <250.>;
+	turn rarmrecoil to x-axis <-30.> speed <250.>;
+	sleep 150;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = torso;
 }
 
 Killed(severity, corpsetype)
 {
-	hide rfire;
-	hide lfire;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
