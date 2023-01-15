@@ -12,7 +12,6 @@ static-var  bMoving, bAiming, gun_1;
 // Signal definitions
 #define SIG_AIM_1				2
 #define SIG_AIM_2				4
-#define SIG_AIM_3				8
 
 MotionControl(Moving, Aiming, JustMoved)
 	{
@@ -302,6 +301,11 @@ AimFromPrimary(PieceNum)
 	PieceNum = sleeves;
 }
 
+AimFromSecondary(PieceNum)
+{
+	PieceNum = sleeves;
+}
+
 AimPrimary(heading, Pitch)
 {
 	signal SIG_AIM_1;
@@ -315,26 +319,23 @@ AimPrimary(heading, Pitch)
 	return(1);
 }
 
-FirePrimary()
+AimSecondary(heading, Pitch)
 {
-	sleep 850;
-	++gun_1;
-	if( gun_1 == 2 )
-	{
-		gun_1 = 0;
-	}
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return(1);
 }
 
 QueryPrimary(PieceNum)
 {
-	if( gun_1 == 0 )
-	{
-		piecenum = flare1;
-	}
-	if( gun_1 == 1 )
-	{
-		piecenum = flare2;
-	}
+	piecenum = flare1;
+}
+
+QuerySecondary(PieceNum)
+{
+	piecenum = flare2;
 }
 
 StartMoving()
