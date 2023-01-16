@@ -50,9 +50,10 @@ return {
 			[1] = "gok_csub",
 			[2] = "gok_recl",
 			[3] = "gok_ssub",
-			[4] = "gok_corvette",
-			[5] = "gok_sub",
-			[6] = "gok_roy",
+			[4] = "gok_kafka",
+			[5] = "gok_corvette",
+			[6] = "gok_sub",
+			[7] = "gok_roy",
 			--[7] = "gok_bishop",
 		},
 		customparams = {

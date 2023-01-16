@@ -7,6 +7,7 @@
  Improvment :
  - Rework All Laser Gok. transform into Beam
  - Rework TLL T2 Storage visual
+ - Decrease LLT model size by 20%
 
  4.38 => 4.39
 2023-01-11

@@ -6,32 +6,32 @@
 piece  base, gun, door1, door2, door3, door4, stand, turret,
        barrel, flare;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6;
+static-var  bActivating, bFiring, statechg_StateChanging, statechg_DesiredState;
 
 
 activatescr()
 {
 	if( TRUE )
 	{
+		bActivating = 1;
 		turn door2 to z-axis <0.> speed <222.>;
 		turn door4 to z-axis <0.> speed <222.>;
 		turn door3 to x-axis <0.> speed <222.>;
 		turn door1 to x-axis <0.> speed <222.>;
 		move turret to y-axis [0.] speed [66.];
-		wait-for-turn door1 around x-axis;
 		turn gun to x-axis <-90.> speed <222.>;
+		wait-for-turn door1 around x-axis;		
 		wait-for-turn gun around x-axis;
 		wait-for-move turret along y-axis;
-		sleep 10;
+		
 	}
-	sleep 25;
 }
 
 deactivatescr()
 {
 	if( TRUE )
 	{
+		bActivating = 1;
 		move turret to y-axis [-3.] speed [8.];
 		turn gun to x-axis <-90.> speed <288.>;
 		turn turret to y-axis <0.> speed <288.>;
@@ -42,11 +42,72 @@ deactivatescr()
 		turn door4 to z-axis <90.> speed <288.>;
 		turn door3 to x-axis <90.> speed <288.>;
 		turn door1 to x-axis <-90.> speed <288.>;
-		wait-for-turn door1 around x-axis;
-		sleep 320;
+		wait-for-turn door1 around x-axis;	
+		
 	}
-	sleep 17;
 }
+
+Go()
+{
+	if( !bActivating && !bFiring )
+	{
+		call-script activatescr();
+	}
+	bActivating = 0;
+	set ARMORED to 0;
+}
+
+Stop()
+{
+	if( !bActivating && !bFiring )
+	{
+		call-script deactivatescr();
+	}
+	bActivating = 0;
+	set ARMORED to 1;	
+}
+
+InitState()
+{
+	statechg_DesiredState = 1;
+	statechg_StateChanging = 0;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = 1;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = 0;
+}
+
+RestoreAfterDelay()
+{
+	sleep 1000;
+	spin barrel around z-axis speed <0.> accelerate <-10.>;
+	sleep 1000;
+	bFiring = 0;
+	start-script RequestState(1);
+}
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -54,6 +115,10 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	
+	sleep 500;
+	start-script RequestState(1);
+	
 	while( TRUE )
 	{
 		healthpercent = get HEALTH;
@@ -75,139 +140,40 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-Go()
-{
-	if( !Static_Var_1 )
-	{
-		call-script activatescr();
-	}
-	Static_Var_1 = 1;
-	set ARMORED to 0;
-}
-
-Stop()
-{
-	set ARMORED to 1;
-	Static_Var_1 = 0;
-	call-script deactivatescr();
-}
-
-InitState()
-{
-	Static_Var_3 = 1;
-	Static_Var_4 = 0;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( Static_Var_4 )
-	{
-		Static_Var_3 = requestedstate;
-		return (0);
-	}
-	Static_Var_4 = 1;
-	currentstate = Static_Var_3;
-	Static_Var_3 = requestedstate;
-	while( Static_Var_3 != currentstate )
-	{
-		if( Static_Var_3 == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( Static_Var_3 == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	Static_Var_4 = 0;
-}
-
-RestoreAfterDelay()
-{
-	sleep 1000;
-	spin barrel around z-axis speed <0.> accelerate <-10.>;
-	Static_Var_5 = 100;
-	sleep 1000;
-	set-signal-mask 0;
-	start-script RequestState(1);
-}
-
 Create()
 {
-	Static_Var_5 = 100;
-	Static_Var_6 = 0;
 	hide flare;
-	dont-cache flare;
-	Static_Var_1 = 1;
-	start-script SmokeUnit();
+	bActivating = 1;
+	bFiring = 0;
 	call-script InitState();
 	start-script RequestState(0);
 	set-signal-mask 2;
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 1000;
-	}
-	start-script RestoreAfterDelay();
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_2 = Func_Var_1 * 2;
+	start-script SmokeUnit();	
 }
 
 AimPrimary(heading, pitch)
 {
-	start-script RequestState(0);
 	signal 2;
 	set-signal-mask 2;
-	while( !Static_Var_1 )
-	{
-		sleep 250;
-	}
-	if( Static_Var_5 > 0 )
-	{
-		turn turret to y-axis heading speed <40000.> / Static_Var_5;
-		turn gun to x-axis <0.> - pitch speed <40000.> / Static_Var_5;
-		wait-for-turn turret around y-axis;
-		wait-for-turn gun around x-axis;
-	}
-	if( Static_Var_5 <= 0 )
-	{
-		turn turret to y-axis heading now;
-		turn gun to x-axis <0.> - pitch now;
-	}
-	while( Static_Var_6 )
-	{
-		sleep 1;
-	}
+	call-script RequestState(0);
+	turn turret to y-axis heading speed <300.0>;
+	turn gun to x-axis <0.> - pitch speed <200.0>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn gun around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
-flarez()
+FirePrimary()
 {
-	signal 4;
-	set-signal-mask 4;
+	bFiring = 1;
 	show flare;
 	sleep 75;
 	hide flare;
 	move gun to z-axis [-1.] now;
 	move gun to z-axis [0.] speed [6.];
-}
-
-FirePrimary()
-{
-	Static_Var_6 = 1;
-	start-script flarez();
-	if( Static_Var_5 > 0 )
-	{
-		spin barrel around z-axis speed <600.> - Static_Var_5 * <1.>;
-	}
-	sleep Static_Var_5;
-	Static_Var_5 = Static_Var_5 - 2;
-	Static_Var_6 = 0;
+	spin barrel around z-axis speed <500.>;
+	sleep 100;
 }
 
 AimFromPrimary(piecenum)
