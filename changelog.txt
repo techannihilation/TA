@@ -1,13 +1,16 @@
  4.39 => 4.4
-2023-01-16
+2023-01-19
 
  Balance :
  - Gator (Light Core Tank) : Add 3 Energy for shot
+ - Pokie : Decrease cost. Decrease mainweapon range 1500=>1400 & damage 5000=>4000
 
  Improvment :
+ - Rework Core Devastator, Dust, Valiant
  - Rework All Laser Gok. transform into Beam
  - Rework TLL T2 Storage visual
  - Decrease LLT model size by 20%
+ - Increase model size by 15% for Hope, Barbarus, Valiant
 
  4.38 => 4.39
 2023-01-11

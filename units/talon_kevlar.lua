@@ -16,7 +16,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "35 65 35",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -156,7 +155,6 @@ return {
 				weaponacceleration = 120,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 450,
-				--wobble = 6000,
 				customparams = {
 					light_color = "0.05 0.9 1.0",
 					light_mult = 3,

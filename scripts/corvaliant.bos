@@ -6,7 +6,7 @@
 piece	flare1a, flare1b, flare1c, 
 		flare2a, flare2b, flare2c, 
 		blodflare1, blodflare2, blodflare3, blodflare4, blodflare5, blodflare6, blodflare7, blodflare8, blodflare9, blodflare10,
-		base, body, stand1, stand2, turret1, turret2, sleeves1, sleeves2, sleeve1, sleeve2, 
+		base, body, stand1, stand2, turret1, turret2, sleeves1, sleeves2, 
 		barrel1a, barrel1b, barrel1c, barrel2a, barrel2b, barrel2c, 
 		platform1, platform2, platform3, platform4, platform5,
 		blodturret1, blodturret2, blodturret3, blodturret4, blodturret5, blodturret6, blodturret7, blodturret8, blodturret9, blodturret10, 
@@ -58,8 +58,12 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	turn turret1 to y-axis <0.0> now;
-	
+	hide flare1a;
+	hide flare1b;
+	hide flare1c;
+	hide flare2a;
+	hide flare2b;
+	hide flare2c;
 	gun_1 = 0;
 	gun_2 = 0;
 	bAiming = FALSE;
@@ -178,16 +182,19 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
+		emit-sfx 1024 from flare1a;
 		move barrel1a to z-axis [-4] now;
 		move barrel1a to z-axis [0.000000] speed [3.000000];
 	}
 	if( gun_1 == 1 )
 	{
+		emit-sfx 1024 from flare1b;
 		move barrel1b to z-axis [-4] now;
 		move barrel1b to z-axis [0.000000] speed [3.000000];
 	}
 	if( gun_1 == 2 )
 	{
+		emit-sfx 1024 from flare1c;
 		move barrel1c to z-axis [-4] now;
 		move barrel1c to z-axis [0.000000] speed [3.000000];
 	}
@@ -202,16 +209,19 @@ FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
+		emit-sfx 1024 from flare2a;
 		move barrel2a to z-axis [-4] now;
 		move barrel2a to z-axis [0.000000] speed [3.000000];
 	}
 	if( gun_2 == 1 )
 	{
+		emit-sfx 1024 from flare2b;
 		move barrel2b to z-axis [-4] now;
 		move barrel2b to z-axis [0.000000] speed [3.000000];
 	}
 	if( gun_2 == 2 )
 	{
+		emit-sfx 1024 from flare2c;
 		move barrel2c to z-axis [-4] now;
 		move barrel2c to z-axis [0.000000] speed [3.000000];
 	}
