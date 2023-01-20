@@ -900,7 +900,7 @@ corlift = {
 },
 
 ---- SATELLITE----
-sat_radar = {
+arm_sat_radar = {
    {class='Ribbon', options={width=2, size=15, piece="ribbon1", priority=3, noIconDraw = true}},
    {class='Ribbon', options={width=2, size=15, piece="ribbon2", priority=3, noIconDraw = true}},
 },

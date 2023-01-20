@@ -1,3 +1,13 @@
+ 4.4 => 4.41
+2023-01-19
+
+ Improvment :
+ - Add T3 Sattelite for Arm (Constructor, MDS, Radar & Precision Strike)
+ - Add T4 Sattelite for Core (Constructor coming, Pyro Launcher)
+ - Add T4 Sattelite for Talon (Constructor coming, Beam Strike)
+ - Add Autocloak and Hold Fire for all stealth and invisible units
+
+
  4.39 => 4.4
 2023-01-19
 

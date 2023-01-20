@@ -1,5 +1,5 @@
 return {
-	sat_interceptor = {
+	arm_sat_interceptor = {
 		acceleration = 0.005,
 		activatewhenbuilt = false,
 		airStrafe  = true,
@@ -10,7 +10,7 @@ return {
 		buildcostenergy = 161141,
 		buildcostmetal = 4642,
 		builder = false,
-		buildpic = "sat_interceptor.dds",
+		buildpic = "arm_sat_interceptor.dds",
 		buildtime = 125000,
 		canfly = true,
 		canguard = true,
@@ -39,7 +39,7 @@ return {
 		name = "Cataract",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "sat_interceptor",
+		objectname = "arm_sat_interceptor",
 		radaremitheight = 6,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 750,
@@ -49,12 +49,12 @@ return {
 		turninplaceanglelimit = 50,
 		turninplacespeedlimit = 2,
 		turnrate = 120,
-		unitname = "sat_interceptor",
+		unitname = "arm_sat_interceptor",
 		usepiececollisionvolumes = true,
 		usepieceselectionvolumes = true,
 		customparams = {
-			buildpic = "sat_interceptor.dds",
-			faction = "ALL",
+			buildpic = "arm_sat_interceptor.dds",
+			faction = "ARM",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

@@ -141,50 +141,60 @@ function gadget:Initialize()
         ud.origIconType = ud.iconType
       end
 
-      --wind
+      -- Wind
       if (ud.name == "armwin") or (ud.name == "corwin") or (ud.name == "tllwin") or (ud.name == "talon_win") or (ud.name == "gok_win") then
         Spring.SetUnitDefIcon(udid, "e.user")
-        -- t1.5 wind/tidals
+
+      -- t1.5 wind/tidals
       elseif (ud.name == "armawin") or (ud.name == "talon_tide1") or (ud.name == "talon_win1") or (ud.name == "corawin") or (ud.name == "armatidal") or (ud.name == "coratidal") or (ud.name == "tllatide") or (ud.name == "tllwin1") or (ud.name == "gok_tide1") or (ud.name == "gok_win1") then
         Spring.SetUnitDefIcon(udid, "e1.user")
+
+      -- fighters
       elseif (ud.name == "armfig") or (ud.name == "corveng") or (ud.name == "tllfight") or (ud.name == "armhawk") or (ud.name == "corvamp") or (ud.name == "tlladvfight") or (ud.name == "talon_echelon") or (ud.name == "talon_token") or (ud.name == "gok_sucub") or (ud.name == "gok_angel") then
-        --fighters
         Spring.SetUnitDefIcon(udid, "tri-up_fighter.user")
-      elseif (ud.name == "armwolf") or (ud.name == "corshrike") or (ud.name == "tllshu") or (ud.name == "talon_hornet") then
+
         --t3 fighters
+      elseif (ud.name == "armwolf") or (ud.name == "corshrike") or (ud.name == "tllshu") or (ud.name == "talon_hornet") then
         Spring.SetUnitDefIcon(udid, "tri-up_fighter1.user")
-      elseif (ud.name == "sat_radar") or (ud.name == "sat_interceptor") or (ud.name == "sat_strike") or (ud.name == "sat_antiair") or (ud.name == "armcsat") or (ud.name == "tllcsat") or (ud.name == "talon_skynet") or (ud.name == "corslander") then
-        --satellite
+
+      -- Satellite
+      elseif (ud.name == "arm_sat_radar") or (ud.name == "arm_sat_mds") or (ud.name == "arm_sat_strike") or (ud.name == "arm_sat_constructor") or (ud.name == "core_sat_constructor") or (ud.name == "talon_sat_constructor") or (ud.name == "talon_skynet") or (ud.name == "core_sat_lander") then
         Spring.SetUnitDefIcon(udid, "satellite.user")
-      elseif ud.name == "armcybr" then
-        --liche
-        Spring.SetUnitDefIcon(udid, "liche.user")
-      elseif (ud.name == "talon_ufus") or (ud.name == "corufus") or (ud.name == "armufus") or (ud.name == "tllufus") then
-        --t5 fusions
+
+      -- t5 fusions
+      elseif (ud.name == "talon_ufus") or (ud.name == "corufus") or (ud.name == "armufus") or (ud.name == "tllufus") or (ud.name == "gok_ufusion") then
         Spring.SetUnitDefIcon(udid, "e6.user")
-      elseif (ud.name == "armefus") or (ud.name == "corefus") or (ud.name == "tllefus") or (ud.name == "talon_efus") then
-        --t4 fusions
+
+      -- t4 fusions
+      elseif (ud.name == "armefus") or (ud.name == "corefus") or (ud.name == "tllefus") or (ud.name == "talon_efus") or (ud.name == "gok_efusion") then
         Spring.SetUnitDefIcon(udid, "e5.user")
-      elseif (ud.name == "cfusionplant") or (ud.name == "afusionplant") or (ud.name == "tllmegacoldfus") or (ud.name == "talon_sfus") then
-        --t3 fusions
+
+      -- t3 fusions
+      elseif (ud.name == "cfusionplant") or (ud.name == "afusionplant") or (ud.name == "tllmegacoldfus") or (ud.name == "talon_sfus") or (ud.name == "gok_sfusion") then
         Spring.SetUnitDefIcon(udid, "e4.user")
+
+      -- t2 fusions
       elseif (ud.name == "cafus") or (ud.name == "aafus") or (ud.name == "tllcoldfus") or (ud.name == "talon_afus") then
-        --t2 fusions
         Spring.SetUnitDefIcon(udid, "e3.user")
+
+      -- std fusions
       elseif (ud.name == "armfus") or (ud.name == "corfus") or (ud.name == "crnns") or (ud.name == "tllmedfusion") or (ud.name == "armuwfus") or (ud.name == "armuwfus1") or (ud.name == "coruwfus") or (ud.name == "tlluwfusion") or (ud.name == "talon_ckfus") then
-        --std fusions
         Spring.SetUnitDefIcon(udid, "e2.user")
+
+      --Level 2 nanos
       elseif (ud.name == "armnanotc1") or (ud.name == "cornanotc1") or (ud.name == "tllnanotc1") or (ud.name == "armfnanotc1") or (ud.name == "corfnanotc1") or (ud.name == "tllfnanotc1") or (ud.name == "talon_nanotc1") or (ud.name == "talon_fnanotc1") or (ud.name == "gok_nanotc1") then
-        --Level 2 nanos
         Spring.SetUnitDefIcon(udid, "square_+1.user")
+      --Level 3 nanos
       elseif (ud.name == "armnanotc2") or (ud.name == "cornanotc2") or (ud.name == "tllnanotc2") or (ud.name == "armfnanotc2") or (ud.name == "corfnanotc2") or (ud.name == "tllfnanotc2") or (ud.name == "talon_nanotc2") or (ud.name == "talon_fnanotc2") or (ud.name == "gok_nanotc2") then
-        --Level 3 nanos
         Spring.SetUnitDefIcon(udid, "square_+2.user")
+      --Level 4 nanos
       elseif (ud.name == "armnanotc3") or (ud.name == "cornanotc3") or (ud.name == "tllnanotc3") or (ud.name == "armfnanotc3") or (ud.name == "corfnanotc3") or (ud.name == "tllfnanotc3") or (ud.name == "talon_nanotc3") or (ud.name == "talon_fnanotc3") or (ud.name == "gok_nanotc3") or (ud.name == "armnanotc4") or (ud.name == "cornanotc4") or (ud.name == "tllnanotc4") or (ud.name == "talon_nanotc4") or (ud.name == "gok_nanotc4") then
-        --Level 4 nanos
         Spring.SetUnitDefIcon(udid, "square_+3.user")
+
+      -- Customs units
+      elseif ud.name == "armcybr" then
+        Spring.SetUnitDefIcon(udid, "liche.user")
       elseif ud.name == "corlilith" then
-        --Spider
         Spring.SetUnitDefIcon(udid, "corlilith.user")
       elseif ud.name == "corpokie" then
         Spring.SetUnitDefIcon(udid, "corpokie.user")
@@ -199,19 +209,14 @@ function gadget:Initialize()
       elseif ud.name == "coradamantoise" then
         Spring.SetUnitDefIcon(udid, "coradamantoise.user")
       elseif ud.name == "arm_furie" then
-        --Furie
         Spring.SetUnitDefIcon(udid, "arm_furie.user")
       elseif ud.name == "corgorg" then
-        --Gorg
         Spring.SetUnitDefIcon(udid, "corgorg.user")
       elseif ud.name == "armolympus" then
-        --Olympus
         Spring.SetUnitDefIcon(udid, "armolympus.user")
       elseif ud.name == "armexo" then
-        --armexo
         Spring.SetUnitDefIcon(udid, "armexo.user")
       elseif ud.name == "tllsaurus" then
-        --tllsaurus
         Spring.SetUnitDefIcon(udid, "tllsaurus.user")
       elseif ud.name == "tllcolossus" then
         Spring.SetUnitDefIcon(udid, "tllcolossus.user")
@@ -279,15 +284,15 @@ function gadget:Initialize()
       elseif ud.name == "armpraet" then
         Spring.SetUnitDefIcon(udid, "armpraet.user")
 
-      --T5 Medium / Small Hero
+      --T5 Destroyers
       elseif (ud.name == "armhope") or (ud.name == "cordust") or (ud.name == "corvaliant") or (ud.name == "tllbarbarus") or (ud.name == "talon_gold") then
         Spring.SetUnitDefIcon(udid, "t5ships.user")
 
-      --T5 Heavy Hero
+      --T5 Crusers
       elseif (ud.name == "arm_broadside") or (ud.name == "cdevastator") or (ud.name == "tllzeppelin") or (ud.name == "gok_apocalypse") then
         Spring.SetUnitDefIcon(udid, "t5bigships.user")
 
-      --T6 Hero
+      --T6 Crusers
       elseif (ud.name == "armarch") or (ud.name == "talon_independence") or (ud.name == "gok_squid") then
         Spring.SetUnitDefIcon(udid, "t6ships.user")
 
@@ -356,7 +361,11 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "hourglass.user")
 
       --Dragon teeth
-      elseif (ud.name == "cordrag") or (ud.name == "corfdrag") or (ud.name == "corfort") or (ud.name == "armdrag") or (ud.name == "armfdrag") or (ud.name == "armfort") or (ud.name == "gok_drag") or (ud.name == "gok_fdrag") or (ud.name == "gok_fort") or (ud.name == "talon_drag") or (ud.name == "talon_fdrag") or (ud.name == "talon_fort") or (ud.name == "tlldtns") or (ud.name == "tlladt") or (ud.name == "tlldt") then
+      elseif (ud.name == "cordrag") or (ud.name == "corfdrag") or (ud.name == "corfort") or (ud.name == "coredrag")
+      or (ud.name == "armdrag") or (ud.name == "armfdrag") or (ud.name == "armfort") or (ud.name == "armedrag")
+      or (ud.name == "gok_drag") or (ud.name == "gok_fdrag") or (ud.name == "gok_fort") or (ud.name == "talon_edrag")
+      or (ud.name == "talon_drag") or (ud.name == "talon_fdrag") or (ud.name == "talon_fort") or (ud.name == "gok_edrag")
+      or (ud.name == "tlldtns") or (ud.name == "tlladt") or (ud.name == "tlldt") or (ud.name == "tlledrag") then
         Spring.SetUnitDefIcon(udid, "blank.user")
 
       -- Defenders and other buildings

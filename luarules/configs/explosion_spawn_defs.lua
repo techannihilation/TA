@@ -5,7 +5,7 @@
 
 local spawn_defs = {
 	armorbital_zeus_cannon = {name = "armzeus", cost = 0, expire = 0},
-	corslander_pyro_cannon = {name = "corpyro", cost = 0, expire = 0},
+	core_sat_lander_pyro_cannon = {name = "corpyro", cost = 0, expire = 0},
 	gok_blackpollen_cut_launcher = {name = "gok_cut", cost = 0, expire = 0},
 }
 

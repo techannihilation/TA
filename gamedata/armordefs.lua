@@ -158,12 +158,12 @@ return {
 	"gok_erez",
 
 	-- SATELLITE
-	--"armcsat",
-	--"tllcsat",
-	--"corcsat",
-	--"talon_csat",
+	"arm_sat_mds",
+	"arm_sat_radar",
+	"arm_sat_strike",
+	"arm_sat_constructor",
 	"talon_skynet",
-	"corslander",
+	"core_sat_lander",
 },
 
 	--### SEA ###

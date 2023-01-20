@@ -47,7 +47,7 @@ if (gadgetHandler:IsSyncedCode()) then
   -- Launcher
 	local gok_blackpollenDefID = UnitDefNames.gok_blackpollen.id
 	local armorbitalDefID = UnitDefNames.armorbital.id
-	local corslanderDefID = UnitDefNames.corslander.id
+	local core_sat_landerDefID = UnitDefNames.core_sat_lander.id
 
 	--Tactical
 	local corarbritatorDefID = UnitDefNames.corarbritator.id
@@ -82,7 +82,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				pilelimit = minelayer
 			end
 
-			if (UnitDefID == armorbitalDefID or UnitDefID == gok_blackpollenDefID or UnitDefID == corslanderDefID) then
+			if (UnitDefID == armorbitalDefID or UnitDefID == gok_blackpollenDefID or UnitDefID == core_sat_landerDefID) then
 				pilelimit = unitlauncher
 			end
 

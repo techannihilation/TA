@@ -1,9 +1,9 @@
 return {
-	talon_sp = {
+	talon_sat_production = {
 		buildcostenergy = 1539667,
 		buildcostmetal = 54550,
 		builder = true,
-		buildpic = "talon_sp.dds",
+		buildpic = "talon_sat_production.dds",
 		buildtime = 800000,
 		canbeassisted = true,
 		canmove = true,
@@ -30,7 +30,7 @@ return {
 		mobilestandorders = 1,
 		name = "Satellite Plant",
 		noautofire = false,
-		objectname = "talon_sp",
+		objectname = "talon_sat_production",
 		radaremitheight = 110,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -39,14 +39,14 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		turnrate = 0,
-		unitname = "talon_sp",
+		unitname = "talon_sat_production",
 		workertime = 1600,
 		yardmap = "oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo oooooooooooooooooooooooooooooo",
 		buildoptions = {
 			[1] = "talon_skynet",
 		},
 		customparams = {
-			buildpic = "talon_sp.dds",
+			buildpic = "talon_sat_production.dds",
 			faction = "TALON",
 		},
 		featuredefs = {
@@ -59,7 +59,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 15360,
-				object = "TALON_SP_DEAD",
+				object = "talon_sat_production_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

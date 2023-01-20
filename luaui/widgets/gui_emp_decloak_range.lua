@@ -1,7 +1,7 @@
 function widget:GetInfo()
     return {
         name      = "EMP + decloak range",
-        desc      = "When spy or gremlin is selected, it displays its decloack range (orange) and emp range (blue)",
+        desc      = "When spy or HoldFire is selected, it displays its decloack range (orange) and emp range (blue)",
         author    = "[teh]decay aka [teh]undertaker",
         date      = "14 feb 2015",
         license   = "The BSD License",
@@ -15,7 +15,7 @@ end
 
 --Changelog
 -- v2 [teh]decay Don't draw circles when GUI is hidden
--- v3 [teh]decay Added gremlin decloack range + set them on hold fire and hold pos
+-- v3 [teh]decay Added HoldFire decloack range + set them on hold fire and hold pos
 -- v4 Floris Added fade on camera distance changed to thicker and more transparant line style + options + onlyDrawRangeWhenSelected
 -- v5 Floris: Renamed to EMP + decloack range and disabled autocloack
 
@@ -26,7 +26,7 @@ end
 
 local onlyDrawRangeWhenSelected	= true
 local fadeOnCameraDistance		= true
-local showLineGlow 				= true		-- a ticker but faint 2nd line will be drawn underneath	
+local showLineGlow 				= true		-- a ticker but faint 2nd line will be drawn underneath
 local opacityMultiplier			= 1.3
 local fadeMultiplier			= 1.2		-- lower value: fades out sooner
 local circleDivs				= 64		-- detail of range circle
@@ -72,9 +72,6 @@ local spies  = {
     [UnitDefNames.tllspy.id] = true,
 }
 
-local armGremlinId = UnitDefNames["armst"].id
-
-
 local units = {}
 
 local spectatorMode = false
@@ -84,7 +81,7 @@ function cloackSpy(unitID)
     spGiveOrderToUnit(unitID, cmdcloak, { 1 }, {})
 end
 
-function processGremlin(unitID)
+function processHoldFire(unitID)
     spGiveOrderToUnit(unitID, cmdcloak, { 1 }, {})
     spGiveOrderToUnit(unitID, CMD_MOVE_STATE, { 0 }, {}) -- 0 == hold pos
     spGiveOrderToUnit(unitID, cmdFireState, { 0 }, {}) -- hold fire
@@ -97,8 +94,8 @@ function isSpy(unitDefID)
     return false
 end
 
-function isGremlin(unitDefID)
-    if unitDefID == armGremlinId then
+function isHoldFire(unitDefID)
+    if unitDefID == UnitDefNames["armst"].id or UnitDefNames["talon_ogopogo"].id or UnitDefNames["tlltraq"].id or UnitDefNames["gok_mask"].id then
         return true
     end
     return false
@@ -112,9 +109,9 @@ function widget:UnitFinished(unitID, unitDefID, unitTeam)
 		end
     end
 
-    if isGremlin(unitDefID) then
-		addGremlin(unitID, unitDefID)
-        processGremlin(unitID)
+    if isHoldFire(unitDefID) then
+		addHoldFire(unitID, unitDefID)
+        processHoldFire(unitID)
     end
 end
 
@@ -131,38 +128,38 @@ function widget:UnitEnteredLos(unitID, unitTeam)
 			addSpy(unitID, unitDefID)
         end
 
-        if isGremlin(unitDefID) then
-			addGremlin(unitID, unitDefID)
+        if isHoldFire(unitDefID) then
+			addHoldFire(unitID, unitDefID)
         end
     end
 end
 
 
 function addSpy(unitID, unitDefID)
-	
+
 	local udef = udefTab[unitDefID]
 	local selfdBlastId = weapNamTab[lower(udef[selfdTag])].id
 	local selfdBlastRadius = weapTab[selfdBlastId][aoeTag]
 	units[unitID] = {udef["decloakDistance"],selfdBlastRadius}
 end
 
-function addGremlin(unitID, unitDefID)
-	
+function addHoldFire(unitID, unitDefID)
+
 	local udef = udefTab[unitDefID]
 	units[unitID] = {udef["decloakDistance"],0}
 end
 
 function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
 	if not spValidUnitID(unitID) then return end --because units can be created AND destroyed on the same frame, in which case luaui thinks they are destroyed before they are created
-		
+
     if isSpy(unitDefID) then
 		addSpy(unitID, unitDefID)
         cloackSpy(unitID)
     end
 
-    if isGremlin(unitDefID) then
-		addGremlin(unitID, unitDefID)
-        processGremlin(unitID)
+    if isHoldFire(unitDefID) then
+		addHoldFire(unitID, unitDefID)
+        processHoldFire(unitID)
     end
 end
 
@@ -172,9 +169,9 @@ function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
         cloackSpy(unitID)
     end
 
-    if isGremlin(unitDefID) then
-		addGremlin(unitID, unitDefID)
-        processGremlin(unitID)
+    if isHoldFire(unitDefID) then
+		addHoldFire(unitID, unitDefID)
+        processHoldFire(unitID)
     end
 end
 
@@ -185,9 +182,9 @@ function widget:UnitGiven(unitID, unitDefID, unitTeam, oldTeam)
         cloackSpy(unitID)
     end
 
-    if isGremlin(unitDefID) then
-		addGremlin(unitID, unitDefID)
-        processGremlin(unitID)
+    if isHoldFire(unitDefID) then
+		addHoldFire(unitID, unitDefID)
+        processHoldFire(unitID)
     end
 end
 
@@ -214,14 +211,14 @@ function widget:DrawWorldPreUnit()
     if spIsGUIHidden() then return end
 
 	local camX, camY, camZ = spGetCameraPosition()
-	
+
     glDepthTest(true)
 
     for unitID, property in pairs(units) do
         local x,y,z = spGetUnitPosition(unitID)
 		if ((onlyDrawRangeWhenSelected and spIsUnitSelected(unitID)) or onlyDrawRangeWhenSelected == false) and spIsSphereInView(x,y,z,math.max(property[1],property[2])) then
-			local camDistance = diag(camX-x, camY-y, camZ-z) 
-			
+			local camDistance = diag(camX-x, camY-y, camZ-z)
+
 			local lineWidthMinus = (camDistance/2000)
 			if lineWidthMinus > 2 then
 				lineWidthMinus = 2
@@ -289,8 +286,8 @@ function detectSpectatorView()
 					addSpy(unitID, unitDefID)
                 end
 
-                if isGremlin(unitDefID) then
-					addGremlin(unitID, unitDefID)
+                if isHoldFire(unitDefID) then
+					addHoldFire(unitID, unitDefID)
                 end
             end
         end

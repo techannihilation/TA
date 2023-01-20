@@ -72,7 +72,7 @@ return {
 			[8] = "armfort",
 			[9] = "armmine2",
 			[10] = "armgrape",
-			[11] = "armvhlt",
+			--[11] = "",
 			[12] = "armpb",
 			[13] = "armamb",
 			[14] = "armanni",
