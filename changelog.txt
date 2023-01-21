@@ -1,6 +1,9 @@
  4.4 => 4.41
 2023-01-19
 
+Balance :
+ - Add Turret for hellbiker gok scout
+
  Improvment :
  - Add T3 Sattelite for Arm (Constructor, MDS, Radar & Precision Strike)
  - Add T4 Sattelite for Core (Constructor coming, Pyro Launcher)

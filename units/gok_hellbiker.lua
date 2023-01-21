@@ -1,6 +1,6 @@
 return {
 	gok_hellbiker = {
-		acceleration = 0.25,
+		acceleration = 0.8,
 		brakerate = 0.495,
 		buildcostenergy = 1025,
 		buildcostmetal = 45,
@@ -51,8 +51,8 @@ return {
 		tracktype = "StdTank",
 		trackwidth = 2,
 		turninplace = 0,
-		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 4.224,
+		turninplaceanglelimit = 160,
+		turninplacespeedlimit = 4.0,
 		turnrate = 275,
 		unitname = "gok_hellbiker",
 		unitrestricted = 200,
@@ -131,8 +131,8 @@ return {
 				soundstart = "Flamhvy1",
 				soundtrigger = false,
 				sprayangle = 600,
-				tolerance = 10000,
-				turret = false,
+				tolerance = 2500,
+				turret = true,
 				weapontimer = 1.5,
 				weapontype = "Flame",
 				weaponvelocity = 265,
@@ -146,6 +146,8 @@ return {
 		weapons = {
 			[1] = {
 				def = "FLAME",
+				maindir = "0 0 1",
+				maxangledif = 280,
 				onlytargetcategory = "SURFACE",
 			},
 		},

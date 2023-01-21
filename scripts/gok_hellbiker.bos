@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare, body, base, wheel1, wheel2, pitchturret, launcher;
+piece  base, body, flare, wheel1, wheel2, turret, pitchturret, launcher;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -114,16 +114,25 @@ Create()
 	start-script SmokeUnit();
 }
 
+RestoreAfterDelay()
+{
+	sleep 2000;
+	turn turret to y-axis <0.> speed <100.>;
+}
+
 AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
+	turn turret to y-axis heading speed <200.>;
+	wait-for-turn turret around y-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = flare;
+	piecenum = turret;
 }
 
 QueryPrimary(piecenum)

@@ -72,6 +72,13 @@ local spies  = {
     [UnitDefNames.tllspy.id] = true,
 }
 
+local holdfireunits  = {
+    [UnitDefNames.armst.id] = true,
+    [UnitDefNames.talon_ogopogo.id] = true,
+    [UnitDefNames.tlltraq.id] = true,
+    [UnitDefNames.gok_mask.id] = true,
+}
+
 local units = {}
 
 local spectatorMode = false
@@ -95,7 +102,7 @@ function isSpy(unitDefID)
 end
 
 function isHoldFire(unitDefID)
-    if unitDefID == UnitDefNames["armst"].id or UnitDefNames["talon_ogopogo"].id or UnitDefNames["tlltraq"].id or UnitDefNames["gok_mask"].id then
+    if holdfireunits[unitDefID] then
         return true
     end
     return false
