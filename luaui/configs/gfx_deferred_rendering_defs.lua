@@ -55,27 +55,18 @@ local BlackList = {
 
    local Customlight ={
    ["armpw_emg"] = {r=0.48,g=0.36,b=0,radius=140,beam=false},
-   ["armhdpw_arm_emcc3"] = {r=0.48,g=0.36,b=0.1,radius=40,beam=false},
+   --["armhdpw_arm_emcc3"] = {r=0.48,g=0.36,b=0.1,radius=40,beam=false},
    ["armbanth_armbantha_fire"] = {r=0.48,g=0.48,b=0.9,radius=230,beam=false},
    ["armgor_armgor_fire"] = {r=0.48,g=0.48,b=0.9,radius=230,beam=false},
    ["tllriot_tllriot_cannon"] = {r=0.48,g=0.48,b=0.9,radius=180,beam=false},
-   ["tllhailstorm_tll_hailstorm"] = {r=0.8,g=0.6,b=0.2,radius=240,beam=false},
    ["tllasgard_hailstorm"] = {r=0.8,g=0.6,b=0.2,radius=440,beam=false},
    ["krogtaar_cor_taar_rc"] = {r=0.98,g=0.28,b=0.3,radius=120,beam=false},
-   --["armlatnk_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
-   --["armlhover_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
-   --["armhobo_armlatnk_weapon"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
-   --["armscpion_armscpion_lightning"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
-   --["armclaw_dclaw"] = {r=0.08,g=0.08,b=0.98,radius=90,beam=true},
-   --["corraven1_exp_heavyrocket1"] = {r=1.2,g=0.2,b=0.2,radius=110,beam=false},
    ["corraven_exp_heavyrocket"] = {r=1.2,g=0.2,b=0.2,radius=125,beam=false},
    ["corkarg_tawf_banisher1"] = {r=1.2,g=0.2,b=0.2,radius=105,beam=false},
-   --["armexo_lightning"] = {r=0.08,g=0.08,b=0.98,radius=120,beam=true},
    ["armexo_blast"] = {r=0.08,g=0.08,b=2.9,radius=180,beam=false},
    ["tllleopard_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    ["tllmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
-   --["amortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
-   --["cmortor_energy_cannon"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
+   ["tllhailstorm_tll_hailstorm"] = {r=0.08,g=0.08,b=2.9,radius=200,beam=false},
    }
 
    local Armtrails = {

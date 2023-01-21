@@ -66,7 +66,6 @@ return {
 		customparams = {
 			buildpic = "gok_mask.dds",
 			faction = "GOK",
-			paralyzemultiplier = 0.15,
 		},
 		nanocolor = {
 			[1] = 0.8,

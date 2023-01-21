@@ -38,7 +38,7 @@ return {
 		noautofire = false,
 		objectname = "tllleopard",
 		radaremitheight = 33,
-		selfdestructas = "CRAWL_BLAST",
+		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 400,
 		standingfireorder = 2,
 		standingmoveorder = 1,
@@ -127,7 +127,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Mortar Cannon",
 				nogap = 1,
-				range = 1850,
+				range = 1800,
 				reloadtime = 2,
 				rgbcolor = "0.9 0.9 0.2",
 				separation = 0.45,
@@ -140,7 +140,7 @@ return {
 				stages = 20,
 				tolerance = 5000,
 				weapontype = "Cannon",
-				weaponvelocity = 750,
+				weaponvelocity = 500,
 				wobble = 1000,
 				damage = {
 					default = 500,
@@ -193,7 +193,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "SMALL MINOR",
+				badtargetcategory = "MOBILE",
 				def = "MORTOR_CANNON",
 				onlytargetcategory = "SURFACE",
 			},

@@ -95,6 +95,9 @@ return {
 			},
 		},
 		sfxtypes = {
+			explosiongenerators = {
+				[1] = "custom:MEDIUMFLARE",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",
@@ -142,7 +145,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				proximitypriority = -3,
-				range = 1500,
+				range = 1600,
 				reloadtime = 0.35,
 				rgbcolor = "0.7 0.37 0",
 				separation = 0.45,

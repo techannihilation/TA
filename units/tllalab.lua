@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "TLLALAB",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -63,6 +63,7 @@ return {
 			[13] = "tllsniper",
 			[14] = "tllturtle",
 			[15] = "tllbind",
+			[16] = "tllhailstorm",
 		},
 		customparams = {
 			buildpic = "tllalab.dds",

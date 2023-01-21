@@ -29,6 +29,7 @@ local weapons = {
 
 	--Blue Light Explosion
 	tllleopard_mortor_cannon =  { radius = 95, damage = 250, duration = 140, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
+	tllhailstorm_rapid_cannon =  { radius = 95, damage = 250, duration = 140, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},
 	tllriot_tllriot_cannon = { radius = 75, damage = 200, duration = 70, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.5},
 
 }
