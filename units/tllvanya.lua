@@ -89,7 +89,7 @@ return {
 				firestarter = 75,
 				gravityaffected = "TRUE",
 				metalpershot = 500000,
-				model = "obusnuke",
+				model = "weapon_tsar",
 				name = "Tabitha Cannon",
 				nogap = 1,
 				range = 72000,

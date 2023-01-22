@@ -89,7 +89,7 @@ return {
 				firestarter = 0,
 				gravityaffected = "TRUE",
 				metalpershot = 100000,
-				model = "obusnuke",
+				model = "weapon_tsar",
 				name = "Influence Cannon",
 				nogap = 1,
 				range = 72000,

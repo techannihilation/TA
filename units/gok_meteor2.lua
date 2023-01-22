@@ -123,7 +123,7 @@ return {
 				model = "weapon_meteor",
 				name = "Meteor",
 				noselfdamage = false,
-				range = 6300,
+				range = 5950,
 				reloadtime = 0.5,
 				size = 4,
 				soundhitdry = "supergun_bass_boost",

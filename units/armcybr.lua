@@ -121,7 +121,7 @@ return {
 				impulsefactor = 0.5,
 				interceptedbyshieldtype = 16,
 				metalpershot = 300,
-				model = "plasmafire",
+				model = "weapon_cybr",
 				name = "PlasmaImplosionDumpRocket",
 				noselfdamage = true,
 				range = 500,

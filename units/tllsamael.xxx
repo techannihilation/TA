@@ -227,7 +227,7 @@ return {
 				firestarter = 0,
 				gravityaffected = "TRUE",
 				--metalpershot = 2500,
-				--model = "obusnuke1",
+				--model = "weapon_tsar1",
 				name = "MiniTsar Cannon",
 				nogap = 1,
 				range = 3000,
