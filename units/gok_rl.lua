@@ -14,7 +14,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "47 80 47",
+		collisionvolumescales = "32 50 32",
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Tech Level 1",

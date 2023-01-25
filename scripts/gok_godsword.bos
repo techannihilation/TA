@@ -1,0 +1,376 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, support, rside, lside,
+       turret, sleeves, flare,
+       turret1, sleeves1, flare1, 
+	   turret2, sleeves2, flare2,
+	   turret3, sleeves3, flare3,
+	   turret4, sleeves4, flare4,
+       msl1, msl2,
+       wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8;
+
+static-var  gun_1, bStating, bAiming;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_MOVE			128
+
+PilotLight(Func_Var_1)
+{
+	while( TRUE )
+	{
+		while( bAiming )
+		{
+			sleep 100;
+		}
+		emit-sfx 1024 + 0 from flare;
+		sleep 155;
+	}
+}
+
+lua_FlameShot(Func_Var_1)
+{
+}
+
+setSFXoccupy(state)
+{
+	bStating = state;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script PilotLight();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	var Func_Var_1, Func_Var_2;
+	Func_Var_1 = 3;
+	Func_Var_2 = 4;
+	while( TRUE )
+	{
+		if( bStating == 1 )
+		{
+			emit-sfx Func_Var_1 from wake1;
+			emit-sfx Func_Var_1 from wake2;
+			emit-sfx Func_Var_1 from wake3;
+			emit-sfx Func_Var_1 from wake4;
+			emit-sfx Func_Var_1 from wake5;
+			emit-sfx Func_Var_1 from wake6;
+			emit-sfx Func_Var_1 from wake7;
+			emit-sfx Func_Var_1 from wake8;
+			emit-sfx Func_Var_2 from wake1;
+			emit-sfx Func_Var_2 from wake2;
+			emit-sfx Func_Var_2 from wake3;
+			emit-sfx Func_Var_2 from wake4;
+			emit-sfx Func_Var_2 from wake5;
+			emit-sfx Func_Var_2 from wake6;
+			emit-sfx Func_Var_2 from wake7;
+			emit-sfx Func_Var_2 from wake8;
+		}
+		if( bStating == 2 )
+		{
+			emit-sfx Func_Var_1 from wake1;
+			emit-sfx Func_Var_1 from wake2;
+			emit-sfx Func_Var_1 from wake3;
+			emit-sfx Func_Var_1 from wake4;
+			emit-sfx Func_Var_1 from wake5;
+			emit-sfx Func_Var_1 from wake6;
+			emit-sfx Func_Var_1 from wake7;
+			emit-sfx Func_Var_1 from wake8;
+			emit-sfx Func_Var_2 from wake1;
+			emit-sfx Func_Var_2 from wake2;
+			emit-sfx Func_Var_2 from wake3;
+			emit-sfx Func_Var_2 from wake4;
+			emit-sfx Func_Var_2 from wake5;
+			emit-sfx Func_Var_2 from wake6;
+			emit-sfx Func_Var_2 from wake7;
+			emit-sfx Func_Var_2 from wake8;
+		}
+		if( bStating == 3 )
+		{
+			emit-sfx Func_Var_1 from wake1;
+			emit-sfx Func_Var_1 from wake2;
+			emit-sfx Func_Var_1 from wake3;
+			emit-sfx Func_Var_1 from wake4;
+			emit-sfx Func_Var_1 from wake5;
+			emit-sfx Func_Var_1 from wake6;
+			emit-sfx Func_Var_1 from wake7;
+			emit-sfx Func_Var_1 from wake8;
+			emit-sfx Func_Var_2 from wake1;
+			emit-sfx Func_Var_2 from wake2;
+			emit-sfx Func_Var_2 from wake3;
+			emit-sfx Func_Var_2 from wake4;
+			emit-sfx Func_Var_2 from wake5;
+			emit-sfx Func_Var_2 from wake6;
+			emit-sfx Func_Var_2 from wake7;
+			emit-sfx Func_Var_2 from wake8;
+		}
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	sleep 25;
+}
+
+Create()
+{
+	gun_1 = 0;
+	hide flare;
+	turn turret1 to y-axis <45.00> now;
+	turn turret2 to y-axis <-45.00> now;
+	turn turret3 to y-axis <135.00> now;
+	turn turret4 to y-axis <-135.00> now;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	turn sleeves to x-axis <0.0> speed <100.>;
+	turn turret to y-axis <0.> speed <80.>;
+	bAiming = 0;
+}
+
+RestoreAfterDelay2()
+{
+	sleep 2500;
+	turn turret1 to y-axis <45.00> speed <50.000000>;
+	turn turret2 to y-axis <-45.00> speed <50.000000>;
+	turn turret3 to y-axis <135.00> speed <50.000000>;
+	turn turret4 to y-axis <-135.00> speed <50.000000>;	
+	turn turret1 to x-axis <0.> speed <50.000000>;
+	turn turret2 to x-axis <0.> speed <50.000000>;
+	turn turret3 to x-axis <0.> speed <50.000000>;
+	turn turret4 to x-axis <0.> speed <50.000000>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	bAiming = 1;
+	turn turret to y-axis heading speed <150.>;
+	turn sleeves to x-axis <0.0> - pitch speed <120.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+Shot1()
+{
+	call-script lua_FlameShot(1);
+	return (1);
+}
+
+QueryWeapon1(PieceNum)
+{
+	piecenum = flare;
+}
+
+// BEAM
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = sleeves1;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = sleeves2;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = sleeves3;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = sleeves4;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret1 to y-axis heading speed <150.000000>;
+	turn turret1 to x-axis <0.0> - pitch speed <100.000000>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn turret1 around x-axis;
+	start-script RestoreAfterDelay2();
+	return(1);
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret2 to y-axis heading speed <150.000000>;
+	turn turret2 to x-axis <0.0> - pitch speed <100.000000>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn turret2 around x-axis;
+	start-script RestoreAfterDelay2();
+	return(1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn turret3 to y-axis heading speed <150.000000>;
+	turn turret3 to x-axis <0.0> - pitch speed <100.000000>;
+	wait-for-turn turret3 around y-axis;
+	wait-for-turn turret3 around x-axis;
+	start-script RestoreAfterDelay2();
+	return(1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn turret4 to y-axis heading speed <150.000000>;
+	turn turret4 to x-axis <0.0> - pitch speed <1001.000000>;
+	wait-for-turn turret4 around y-axis;
+	wait-for-turn turret4 around x-axis;
+	start-script RestoreAfterDelay2();
+	return(1);
+}
+
+QueryWeapon2(PieceNum)
+{
+	piecenum = flare1;
+}
+
+QueryWeapon3(PieceNum)
+{
+	piecenum = flare2;
+}
+
+QueryWeapon4(PieceNum)
+{
+	piecenum = flare3;
+}
+
+QueryWeapon5(PieceNum)
+{
+	piecenum = flare4;
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	return (1);
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = body;
+}
+
+FireWeapon6()
+{
+	++gun_1;
+	if( gun_1 == 2 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QueryWeapon6(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = msl1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = msl2;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode rside type NOHEATCLOUD;
+		explode lside type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode turret2 type NOHEATCLOUD | SHATTER;
+		explode rside type NOHEATCLOUD | SHATTER;
+		explode lside type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode sleeves type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	explode rside type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	explode lside type NOHEATCLOUD | FALL | SMOKE | FIRE;
+	return (corpsetype);
+}

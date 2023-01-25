@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "TANK2",
-		name = "GodHammer",
+		name = "God Hammer",
 		noautofire = false,
 		objectname = "gok_godhammer",
 		radaremitheight = 25,

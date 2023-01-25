@@ -49,9 +49,10 @@ return {
 		yardmap = "ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo ooooccccccccoooo",
 		buildoptions = {
 			[1] = "gok_ech",
-			[2] = "gok_abyss",
-			[3] = "gok_nahash",
-			[4] = "gok_diablo",
+			[2] = "gok_godsword",
+			[3] = "gok_abyss",
+			[4] = "gok_nahash",
+			[5] = "gok_diablo",
 			--[6] = "",
 		},
 		customparams = {
