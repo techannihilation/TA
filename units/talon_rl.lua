@@ -58,7 +58,7 @@ return {
 				description = "Infac Wreckage",
 				energy = 0,
 				featuredead = "heap",
-				footprintx = 2
+				footprintx = 2,
 				footprintz = 2,
 				metal = 63,
 				object = "talon_rl_DEAD",
@@ -108,7 +108,7 @@ return {
 			},
 		},
 		weapondefs = {
-			armrl_missile = {
+			talon_rl_missile = {
 				areaofeffect = 48,
 				avoidfeature = false,
 				canattackground = false,
@@ -152,7 +152,7 @@ return {
 					unclassed_air = 80,
 				},
 			},
-			armrl_starburst = {
+			talon_rl_starburst = {
 				areaofeffect = 52,
 				avoidfeature = false,
 				canattackground = false,
@@ -199,12 +199,12 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MINOR MAJOR", --Ground AA
-				def = "ARMRL_MISSILE",
+				def = "TALON_RL_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
 			[3] = {
 				badtargetcategory = "MINOR MAJOR", --Ground AA
-				def = "ARMRL_STARBURST",
+				def = "TALON_RL_STARBURST",
 				onlytargetcategory = "VTOL",
 			},
 

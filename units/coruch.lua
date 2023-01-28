@@ -64,7 +64,7 @@ return {
 			[4] = "corses",
 			[5] = "corsms",
 			[6] = "core_hexapod_lab",
-			--[7] = "core_sat_production",
+			--[7] = "",
 			[8] = "cshipyardlvl4",
 			[9] = "cornanotc3",
 			[10] = "coredrag",

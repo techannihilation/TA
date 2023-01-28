@@ -65,7 +65,7 @@ return {
 			[4] = "talon_emstor",
 			[5] = "talon_eestor",
 			[6] = "talon_ulab",
-			--[7] = "talon_sat_production",
+			--[7] = "",
 			[8] = "talon_covertopscentre",
 			[9] = "talon_nanotc3",
 			[10] = "talon_edrag",

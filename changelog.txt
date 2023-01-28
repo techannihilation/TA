@@ -3,6 +3,7 @@
 
 Balance :
  - Meteors : Decrease range by 5%
+ - Gok Coconuts : Decrease Hp 10.5K=>10.1K. Increase Metal 1.9K => 2.2KM
 
 Improvment :
 - Remove Sattelite
