@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, pelvis, lthigh, lleg, lfoot, rthigh, rleg, rfoot, torso, shield_pos,
-		lflare, lbarrel, lweapon, 
+		lflare, lweapon, 
 		rflare, rweapon, 
 		turret1, turret2, sleeve1, sleeve2, flare1, flare2;
   
@@ -214,14 +214,14 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	emit-sfx 1024 + 0 from lflare;
-	move lbarrel to z-axis [-3.000000] now;
+	//emit-sfx 1024 + 0 from lflare;
+	//move lbarrel to z-axis [-3.000000] now;
 	//turn torso to y-axis <2.0> now;
 	//turn lweapon to x-axis <5.0> now;
-	sleep 150;
+	//sleep 150;
 	//turn lweapon to y-axis <0.0> speed <50.0>;
 	//turn lweapon to x-axis <0.0> speed <50.0>;	
-	move lbarrel to z-axis [0.000000] speed [1.000000];
+	//move lbarrel to z-axis [0.000000] speed [1.000000];
 }
 
 QueryPrimary(piecenum)
@@ -307,7 +307,7 @@ AimWeapon4(heading, pitch)
 {	
 	signal SIG_AIM_4;
 	set-signal-mask SIG_AIM_4;	
-	if (pitch < -9000)
+	if (pitch < -7000)
 	{
 		return (0);
 	}
@@ -372,7 +372,6 @@ Killed(severity, corpsetype)
 		explode rleg type NOHEATCLOUD;
 		explode rthigh type NOHEATCLOUD;
 		explode torso type NOHEATCLOUD;
-		explode lbarrel type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 66 )
@@ -388,7 +387,6 @@ Killed(severity, corpsetype)
 		explode rleg type NOHEATCLOUD | FALL;
 		explode rthigh type NOHEATCLOUD | FALL;
 		explode torso type NOHEATCLOUD | FALL;
-		explode lbarrel type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -401,7 +399,6 @@ Killed(severity, corpsetype)
 	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode lbarrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode torso type NOHEATCLOUD ;
 	return (corpsetype);
 }
