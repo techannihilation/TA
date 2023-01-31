@@ -1,5 +1,5 @@
 4.41 => 4.42
-2023-01-26
+2023-01-31
 
 Balance :
  - Meteors : Decrease range by 5%
@@ -8,6 +8,7 @@ Balance :
 Improvment :
 - Remove Sattelite
 - Add T3 Gok Rapid Hover in T3 Hover Lab
+- Add new visual effects for Gok Bombers
 
  4.4 => 4.41
 2023-01-19

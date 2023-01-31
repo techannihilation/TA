@@ -61,7 +61,7 @@ return {
 			[7] = "tllaap",
 			[8] = "tlleap",
 			--[9] = "tllsp",
-			[10] = "tllprototype",
+			[10] = "tll_ulab",
 			[11] = "tllnanotc2",
 			[12] = "tlledrag",
 			[13] = "tllomni",

@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Centurion",
 		noautofire = false,
-		
+
 		objectname = "tllcenturion",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -152,7 +152,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 325,
 				damage = {
-					commanders = 450,
 					default = 900,
 					subs = 5,
 				},

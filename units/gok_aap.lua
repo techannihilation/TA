@@ -61,10 +61,9 @@ return {
 			[4] = "gok_sucub",
 			[5] = "gok_spook",
 			[6] = "gok_hookah",
-			--[7] = "gok_gripn",
-			[8] = "gok_revenant",
-			[9] = "gok_wordbearer",
-			[10] = "gok_nosferatu",
+			[7] = "gok_revenant",
+			[8] = "gok_wordbearer",
+			[9] = "gok_nosferatu",
 		},
 		customparams = {
 			buildpic = "gok_aap.dds",

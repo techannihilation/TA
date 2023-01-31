@@ -71,7 +71,7 @@ return {
 			[6] = "tllvp",
 			[7] = "tllavp",
 			[8] = "tllevp",
-			[9] = "tllprototype",
+			[9] = "tll_ulab",
 			[10] = "tllnanotc2",
 			[11] = "tlledrag",
 			[12] = "tllomni",

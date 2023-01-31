@@ -94,7 +94,7 @@ return {
 			[12] = "tlllab",
 			[13] = "tllvp",
 			[14] = "tllap",
-			[15] = "tllprototype",
+			[15] = "tll_ulab",
 			[16] = "tlledrag",
 			--[17] = "tlllft",
 			[18] = "tllpulaser",

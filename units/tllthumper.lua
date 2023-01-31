@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Thumper",
 		noautofire = false,
-		
+
 		objectname = "TLLTHUMPER",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -143,7 +143,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 313.92676,
 				damage = {
-					commanders = 750,
 					default = 1500,
 					subs = 5,
 				},

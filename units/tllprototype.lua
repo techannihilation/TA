@@ -1,5 +1,5 @@
 return {
-	tllprototype = {
+	tll_ulab = {
 		acceleration = 0,
 		brakerate = 0,
 		buildcostenergy = 1125665,
@@ -8,8 +8,8 @@ return {
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
-		buildinggrounddecaltype = "tllprototype_aoplane.dds",
-		buildpic = "tllprototype.dds",
+		buildinggrounddecaltype = "tll_ulab_aoplane.dds",
+		buildpic = "tll_ulab.dds",
 		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Mech Lab",
 		noautofire = false,
-		objectname = "tllprototype",
+		objectname = "tll_ulab",
 		radardistance = 50,
 		radaremitheight = 140,
 		seismicsignature = 0,
@@ -50,7 +50,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "tllprototype",
+		unitname = "tll_ulab",
 		workertime = 1700,
 		yardmap = "oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo oocccccccccccoo",
 		buildoptions = {
@@ -63,7 +63,7 @@ return {
 			[7] = "tllcondor",
 		},
 		customparams = {
-			buildpic = "tllprototype.dds",
+			buildpic = "tll_ulab.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -62,7 +62,7 @@ return {
 			[6] = "tlllab",
 			[7] = "tllalab",
 			[8] = "tllhtcp",
-			[9] = "tllprototype",
+			[9] = "tll_ulab",
 			[10] = "tllnanotc2",
 			[11] = "tlledrag",
 			[12] = "tllomni",
