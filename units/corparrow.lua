@@ -37,7 +37,6 @@ return {
 		movementclass = "ATANK3",
 		name = "Poison Arrow",
 		noautofire = false,
-		
 		objectname = "CORPARROW",
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -59,13 +58,12 @@ return {
 		customparams = {
 			buildpic = "corparrow.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "4.526512146 -4.16978120361 3.13526153564",
-				collisionvolumescales = "36.4536895752 11.1021575928 54.8021697998",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "36 11 54",
 				collisionvolumetype = "Box",
 				damage = 5065,
 				description = "Poison Arrow Wreckage",

@@ -1,5 +1,5 @@
 return {
-		--### AIR ###
+
 	priority_air = {
 		--Bombers
 		"armcybr",
@@ -47,6 +47,7 @@ return {
 		"gok_chariot",
 		"gok_wordbearer",
 	},
+
 	unclassed_air = {
 	--Fighters
 	"armwolf",
@@ -156,73 +157,8 @@ return {
 	"tllerez",
 	"talon_erez",
 	"gok_erez",
-},
-
-	--### SEA ###
-	ships = {
-		"armmls",
-		"armaas",
-		"armcrus",
-		"armbats",
-		"armmship",
-		"armcarry",
-		"armsjam",
-		"tllacs",
-		"tllasship",
-		"tllbats2",
-		"tllsting",
-		"tllequalizer",
-		"tllviking",
-		"tllmako",
-		"tllcarry",
-		"tllvisitor",
-		"tllmixer",
-		"cormls",
-		"corarch",
-		"corcrus",
-		"corbats",
-		"cormship",
-		"corcarry",
-		"corsjam",
-		"armcs",
-		"armpt",
-		"armdecade",
-		"armroy",
-		"armtship",
-		"armhls",
-		"tllcs",
-		"tllotter",
-		"tllshrinker",
-		"tllviolator",
-		"tllambassador",
-		"corcs",
-		"corpt",
-		"coresupp",
-		"corroy",
-		"cortship",
-		"corasship",
-		"talon_cs",
-		"talon_charon",
-		"talon_vasculitis",
-		"talon_mainstay",
-		"talon_bishop",
-		"talon_acs",
-		"talon_anonymous",
-		"talon_crus",
-		"talon_dioptase",
-		"talon_aas",
-		"talon_carry",
-		"talon_zamak",
-		"talon_imperator",
-		"gok_engineers",
-		"gok_crus",
-		"gok_mship",
-		"gok_carry",
-		"gok_corvette",
-		"gok_roy",
-		"gok_bats",
-		"gok_aas",
 	},
+
 	subs = {
 		"corsub",
 		"armsub",
@@ -255,40 +191,8 @@ return {
 		"gok_csub",
 		"gok_bsub",
 		"gok_tzenth",
-	},
-	experimental_ships = {
-		"armtrmph",
-		"armhcar",
-		"aseadragon",
-		"armbc",
-		"cortyrnt",
-		"corhcar",
-		"corblackhy",
-		"tllasgard",
-		"tllhcar",
-		"tllcaps",
-		"armecs",
-		"corecs",
-		"tllecs",
-		"talon_ecs",
-		"talon_dread",
-		"talon_hcar",
-		--T4 Ship
-		"corurbanus",
-		"armcentrum",
-		"talon_paladium",
-		"tllpliosaurus",
-		"cormship1",
-		"tllucar",
-		"corucar",
-		"armucar",
-		"talon_ucar",
-		"gok_valefor",
-		"gok_hcar",
-		"gok_ucar",
-	},
+		},
 
-	--### AREOSHIP - MAJOR ###
 	areoship = {
 		-- T5 MAJOR
 		"arm_broadside",
@@ -332,16 +236,19 @@ return {
 		"cormkl",
 		"gok_kadesh",
 	},
+
 	sniper_resistant = {
 		"armzeus",
 		"corcan",
 		"tllbind",
 		"tllblind",
+		"tllcolossus",
 		"talon_crusader",
 		"gok_disciple",
 		"gok_antichrist",
 		"gok_satan",
 	},
+
 	crawlingbombs = {
 		"armvader",
 		"corroach",
@@ -352,6 +259,7 @@ return {
 		"talon_sphere",
 		"gok_blackheart",
 	},
+
 	nanos = {
 		"armnanotc",
 		"armnanotc1",
@@ -400,6 +308,7 @@ return {
 		"gok_fnanotc3",
 		"gok_fnanotc4",
 	},
+
 	mines = {
 		"armmine1",
 		"armmine2",

@@ -156,7 +156,6 @@ return {
 				},
 				damage = {
 					default = 300,
-					ships = 350,
 					subs = 5,
 				},
 			},

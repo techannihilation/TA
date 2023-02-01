@@ -137,10 +137,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1350,
 				damage = {
-					commanders = 1000,
+					commanders = 3050,
 					default = 6100,
-					experimental_ships = 10000,
-					ships = 10000,
 					subs = 5,
 				},
 			},

@@ -138,7 +138,7 @@ return {
 				model = "weapon_missile",
 				name = "HeavyRocket",
 				noselfdamage = true,
-				range = 1050,
+				range = 1000,
 				reloadtime = 0.2,
 				smoketrail = true,
 				--sprayangle = 250,

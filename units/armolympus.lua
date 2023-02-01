@@ -199,7 +199,7 @@ return {
 				weapontype = "EmgCannon",
 				weaponvelocity = 750,
 				damage = {
-					commanders = 700,
+					commanders = 1750,
 					default = 7000,
 					subs = 5,
 				},
@@ -235,7 +235,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					commanders = 2500,
+					commanders = 7500,
 					default = 25000,
 					subs = 5,
 				},

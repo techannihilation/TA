@@ -143,7 +143,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 470,
 				damage = {
-					commanders = 150,
 					default = 300,
 					subs = 5,
 				},
@@ -163,7 +162,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				range = 780,
-				reloadtime = 5,
+				reloadtime = 3,
 				rgbcolor = "0.72 0.4 0",
 				separation = 0.45,
 				size = 2.85,
@@ -177,8 +176,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 313.92676,
 				damage = {
-					commanders = 750,
-					default = 1500,
+					default = 900,
 					subs = 5,
 				},
 			},

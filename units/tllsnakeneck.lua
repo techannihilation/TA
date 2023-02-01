@@ -30,8 +30,7 @@ return {
 		maxwaterdepth = 200,
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
-		name = "Snakeneck",
-		
+		name = "Snakeneck",		
 		objectname = "tllsnakeneck",
 		radardistance = 0,
 		radaremitheight = 27,
@@ -140,8 +139,6 @@ return {
 				weaponvelocity = 413.24933,
 				damage = {
 					default = 120,
-					experimental_ships = 200,
-					ships = 200,
 					subs = 5,
 				},
 			},

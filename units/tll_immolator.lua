@@ -12,7 +12,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "59.1 59.1 59.1",
-		
+
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -143,10 +143,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 850,
 				damage = {
-					commanders = 350,
+					commanders = 375,
 					default = 750,
-					experimental_ships = 1250,
-					ships = 1000,
 					subs = 5,
 				},
 			},

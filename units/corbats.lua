@@ -155,7 +155,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 400,
 				damage = {
-					commanders = 150,
 					default = 300,
 					subs = 5,
 				},
@@ -196,7 +195,6 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 150,
 					default = 300,
 					subs = 5,
 				},

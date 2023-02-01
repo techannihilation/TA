@@ -70,7 +70,7 @@ return {
 			[12] = "cornanotc2",
 			[13] = "coredrag",
 			[14] = "coromni",
-			--[15] = "corspun",
+			[15] = "corspun",
 			[16] = "cordoom1",
 			[17] = "corpre",
 			[18] = "corgate4",

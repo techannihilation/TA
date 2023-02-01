@@ -15,7 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -19 0",
-		collisionvolumescales = "95 125 310",		
+		collisionvolumescales = "95 125 310",
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -140,7 +140,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 470,
 				damage = {
-					commanders = 112.5,
 					default = 225,
 					subs = 5,
 				},
@@ -172,7 +171,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 742,
 				damage = {
-					commanders = 500,
 					default = 1000,
 					subs = 5,
 				},
@@ -220,7 +218,6 @@ return {
 					light_radius_mult = 1.9,
 				},
 				damage = {
-					commanders = 250,
 					default = 500,
 					subs = 5,
 				},

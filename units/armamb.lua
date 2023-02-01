@@ -173,8 +173,6 @@ return {
 				weaponvelocity = 450,
 				damage = {
 					default = 320,
-					experimental_ships = 480,
-					ships = 480,
 					subs = 5,
 				},
 			},
@@ -211,8 +209,6 @@ return {
 				weaponvelocity = 450,
 				damage = {
 					default = 640,
-					experimental_ships = 960,
-					ships = 960,
 					subs = 5,
 				},
 			},

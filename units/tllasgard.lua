@@ -193,8 +193,8 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 700,
 				damage = {
-					commanders = 175,
 					default = 350,
+					subs = 5,
 				},
 			},
 		},

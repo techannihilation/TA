@@ -1,11 +1,14 @@
 4.41 => 4.42
-2023-01-31
+2023-02-02
 
 Balance :
  - Meteors : Decrease range by 5%
- - Gok Coconuts : Decrease Hp 10.5K=>10.1K. Increase Metal 1.9K => 2.2KM
+ - Delete special damage vs ship & experimental ship.
+ - Delete special damage vs commander for all plasma except LRPT
+ - Gok Coconuts : Decrease Hp 10.5K=>10.1K. Increase Metal 1.9K => 2.2KM. Decrease range 1050=>1000
 
 Improvment :
+- Add T3 Artillery Turret for Core
 - Remove Sattelite
 - Add T3 Gok Rapid Hover in T3 Hover Lab
 - Add new visual effects for Gok Bombers

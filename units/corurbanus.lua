@@ -16,7 +16,7 @@ return {
 		canstop = 1,
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -22 0",
-		collisionvolumescales = "140 140 450",		
+		collisionvolumescales = "140 140 450",
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -136,9 +136,8 @@ return {
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 742,
+				weaponvelocity = 750,
 				damage = {
-					commanders = 750,
 					default = 1500,
 					subs = 5,
 				},
@@ -175,7 +174,6 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 700,
 				damage = {
-					commanders = 150,
 					default = 300,
 					subs = 5,
 				},
@@ -283,7 +281,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 450,
 				damage = {
-					commanders = 450,
 					default = 900,
 					subs = 5,
 				},
