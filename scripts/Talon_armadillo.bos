@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, v1, v2, v3, v4, hatchesA, hatchesB, body, aimpoint, turret, sleeve, barrel, flare;
+piece  base, v1, v2, v3, v4, hatchesa, hatchesb, body, aimpoint, armor;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5;
+static-var  gun_1;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -24,7 +24,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -37,33 +37,23 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	Static_Var_1 = 1;
-	Static_Var_2 = 2500;
-	hide flare;
+	gun_1 = 1;
 	start-script SmokeUnit();
-}
-
-RestoreAfterDelay()
-{
-	sleep 1000;
-	spin barrel around z-axis speed <0.000000> accelerate <-10.000000>;
-	sleep 2000a;
-	turn body to y-axis <0.000000> speed <40.000000>;
 }
 
 RestoreHatche()
 {
 	sleep 5000;
-	turn hatchesA to z-axis <0.000000> speed <40.000000>;
-	turn hatchesB to z-axis <0.000000> speed <40.000000>;
+	turn hatchesa to z-axis <0.000000> speed <40.000000>;
+	turn hatchesb to z-axis <0.000000> speed <40.000000>;
 }
 
 AimPrimary(heading, pitch)
 {
 	signal 2;
 	set-signal-mask 2;
-	turn hatchesA to z-axis <180.000000> speed <40.000000>;
-	turn hatchesB to z-axis <-180.000000> speed <40.000000>;
+	turn hatchesa to z-axis <180.000000> speed <80.000000>;
+	turn hatchesb to z-axis <-180.000000> speed <80.000000>;
 	wait-for-turn hatchesA around z-axis;
 	wait-for-turn hatchesB around z-axis;	
 	start-script RestoreHatche();
@@ -72,10 +62,10 @@ AimPrimary(heading, pitch)
 
 FirePrimary()
 {
-	++Static_Var_1;
-	if( Static_Var_1 == 5 )
+	++gun_1;
+	if( gun_1 == 5 )
 	{
-		Static_Var_1 = 1;
+		gun_1 = 1;
 	}
 
 }
@@ -83,19 +73,19 @@ FirePrimary()
 QueryPrimary(piecenum)
 {
 	
-	if( Static_Var_1 == 1 )
+	if( gun_1 == 1 )
 	{
 		piecenum = v1;
 	}
-	if( Static_Var_1 == 2 )
+	if( gun_1 == 2 )
 	{
 		piecenum = v2;
 	}
-	if( Static_Var_1 == 3 )
+	if( gun_1 == 3 )
 	{
 		piecenum = v3;
 	}
-	if( Static_Var_1 == 4 )
+	if( gun_1 == 4 )
 	{
 		piecenum = v4;
 	}
@@ -104,39 +94,6 @@ QueryPrimary(piecenum)
 AimFromPrimary(piecenum)
 {
 	piecenum = aimpoint;
-}
-
-AimSecondary(heading, pitch)
-{
-	signal 4;
-	set-signal-mask 4;
-	turn body to y-axis heading speed <55.000000>;
-	wait-for-turn body around y-axis;	
-	start-script RestoreAfterDelay();
-	return (1);
-
-}
-
-FireSecondary()
-{
-	emit-sfx 1025 from flare;
-	move sleeve to z-axis [-1.000000] now;
-	move sleeve to z-axis [0.000000] speed [1.];
-	move barrel to z-axis [-1.000000] now;
-	move barrel to z-axis [0.000000] speed [1.];
-	spin barrel around z-axis speed <300.000000>;	
-	sleep 300;
-}
-
-Querysecondary(piecenum)
-{
-	piecenum = flare;
-}
-
-AimFromSecondary(piecenum)
-{
-	piecenum = turret;
-
 }
 
 SweetSpot(piecenum)
@@ -149,46 +106,19 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
-		explode barrel type NOHEATCLOUD;
-		explode v1 type NOHEATCLOUD;
-		explode v2 type NOHEATCLOUD;
-		explode v3 type NOHEATCLOUD;
-		explode v4 type NOHEATCLOUD;
+		explode armor type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | FALL;
-		explode body type NOHEATCLOUD | FALL;
-		explode barrel type NOHEATCLOUD | FALL ;
-		explode v1 type NOHEATCLOUD | FALL ;
-		explode v2 type NOHEATCLOUD | FALL ;
-		explode v3 type NOHEATCLOUD | FALL ;
-		explode v4 type NOHEATCLOUD | FALL ;
+		explode body type NOHEATCLOUD;
+		explode armor type NOHEATCLOUD | FALL ;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL;
-	explode body type NOHEATCLOUD | FALL;
-	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	return (corpsetype);
-	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL;
-	explode body type NOHEATCLOUD | FALL;
-	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode v4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD;
+	explode armor type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

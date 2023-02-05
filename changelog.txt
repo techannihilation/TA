@@ -1,7 +1,8 @@
 4.41 => 4.42
-2023-02-02
+2023-02-06
 
 Balance :
+ - Gok Mask : Decrease Capture Power by 50%
  - Meteors : Decrease range by 5%
  - Delete special damage vs ship & experimental ship.
  - Delete special damage vs commander for all plasma except LRPT

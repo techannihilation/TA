@@ -19,7 +19,7 @@ return {
 		category = "ALL MOBILE MAJOR SURFACE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "420 200 950",
+		collisionvolumescales = "350 200 350",
 		collisionvolumetype = "ell",
 		corpse = "dead",
 		cruisealt = 75,

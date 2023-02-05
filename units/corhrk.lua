@@ -56,8 +56,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.59033203125 -0.11500802002 -0.125",
-				collisionvolumescales = "31.73046875 27.05418396 31.9737854004",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "31 27 31",
 				collisionvolumetype = "Box",
 				damage = 1068,
 				description = "Dominator Wreckage",
@@ -122,7 +122,7 @@ return {
 			corhrk_rocket = {
 				areaofeffect = 60,
 				avoidfeature = false,
-				cegtag = "CORRAVENTRAIL",
+				cegtag = "corstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -133,7 +133,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburst_core",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1350,
@@ -145,7 +145,7 @@ return {
 				soundstart = "Rockhvy1",
 				targetable = 16,
 				texture1 = "null",
-				texture2 = "null",
+				texture2 = "coresmoketrail",
 				texture3 = "null",
 				texture4 = "null",
 				turnrate = 28384,
@@ -159,7 +159,6 @@ return {
 					light_radius_mult = 1.9,
 				},
 				damage = {
-					commanders = 350,
 					default = 700,
 					subs = 5,
 				},

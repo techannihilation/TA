@@ -62,7 +62,7 @@ return {
 		turnrate = 600,
 		unitname = "gok_mask",
 		upright = true,
-		workertime = 1000,
+		workertime = 500,
 		customparams = {
 			buildpic = "gok_mask.dds",
 			faction = "GOK",
