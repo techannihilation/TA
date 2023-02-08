@@ -162,7 +162,7 @@ return {
 				reloadtime = 1,
 				rgbcolor = "0.0 0.0 0.0",
 				rgbcolor2= "0.0 0.0 0.0",
-				soundstart = "gokzealhit",
+				soundstart = "techa_sounds/gok_sword",
 				soundtrigger = 1,
 				turret = true,
 				weapontype = "LaserCannon",

@@ -130,7 +130,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.6,
-				soundstart = "gokcannon",
+				soundstart = "techa_sounds/gok_plasma",
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 350,

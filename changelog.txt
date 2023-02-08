@@ -1,8 +1,17 @@
-4.41 => 4.42
+ 4.42 => 4.43
+2023-02-09
+Balance :
+ - Gok Mask : Decrease cost. Delete capture feature. Can create other mask
+ - Gok Disciple : Decrease Repair 50=>25 hp/s and cost
+
+ Balance :
+  - Add new sound for lightning Gok Hero (thank to Silver)
+  - decrease model size for Flame Tower TLL
+
+ 4.41 => 4.42
 2023-02-06
 
 Balance :
- - Gok Mask : Decrease Capture Power by 50%
  - Meteors : Decrease range by 5%
  - Delete special damage vs ship & experimental ship.
  - Delete special damage vs commander for all plasma except LRPT

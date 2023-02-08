@@ -130,7 +130,7 @@ return {
 				rgbcolor = "0.78 0.08 0.52",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "gokelechit",
+				soundstart = "techa_sounds/gok_lightning",
 				--sprayangle = 500,
 				texture1 = "strike",
 				thickness = 1.5,

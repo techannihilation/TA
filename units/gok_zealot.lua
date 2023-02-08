@@ -58,7 +58,7 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0 -5 6",
+				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "37 10 42",
 				collisionvolumetype = "Box",
 				damage = 1456,
@@ -127,7 +127,6 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				--explosiongenerator = "custom:BEAMWEAPON_HIT_ORANGE",
 				firestarter = 30,
 				impactonly = 1,
 				name = "Blade",
@@ -136,7 +135,7 @@ return {
 				reloadtime = 1,
 				rgbcolor = "0.0 0.0 0.0",
 				rgbcolor2= "0.0 0.0 0.0",
-				soundstart = "gokzealhit",
+				soundstart = "techa_sounds/gok_sword",
 				soundtrigger = 1,
 				turret = true,
 				weapontype = "LaserCannon",

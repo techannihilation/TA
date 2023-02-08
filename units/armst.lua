@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Gremlin",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "ARMST",
 		radaremitheight = 25,
 		seismicsignature = 2,
@@ -66,8 +66,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-0.198936462402 -1.72446488037 0.38102722168",
-				collisionvolumescales = "28.9706878662 18.1388702393 29.5620422363",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "28 18 29",
 				collisionvolumetype = "Box",
 				damage = 1151,
 				description = "Gremlin Wreckage",

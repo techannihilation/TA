@@ -15,7 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL ANTIFLAME SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "22 84 22",
+		collisionvolumescales = "18 70 18",
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",

@@ -1,8 +1,9 @@
 return {
 	gok_squid = {
-		acceleration = 0.01,
+		acceleration = 0.009,
 		airhoverfactor = 0,
 		airstrafe = false,
+		bankingallowed = false,
 		blocking = false,
 		brakerate = 0.04,
 		buildcostenergy = 12092412,
@@ -131,7 +132,7 @@ return {
 				soundhitdry = "lashit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "gokelechit",
+				soundstart = "techa_sounds/gok_hero_lighting",
 				soundtrigger = true,
 				sprayangle = 850,
 				texture1 = "strike",

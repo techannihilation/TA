@@ -207,7 +207,7 @@ return {
 				[1] = "kcarmmov",
 			},
 			select = {
-				[1] = "kcarmsel",
+				[1] = "techa_sounds/gok_commander",
 			},
 		},
 		weapondefs = {
@@ -267,7 +267,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.6,
-				soundstart = "gokcannon",
+				soundstart = "techa_sounds/gok_plasma",
 				--sprayangle = 200,
 				turret = true,
 				weapontype = "Cannon",
@@ -335,7 +335,7 @@ return {
 				shieldradius = 200,
 				shieldrepulser = false,
 				smartshield = true,
-				
+
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

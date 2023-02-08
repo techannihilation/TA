@@ -98,7 +98,7 @@ return {
 				[6] = "count1",
 			},
 			select = {
-				[1] = "gokrad",
+				[1] = "techa_sounds/gok_rad",
 			},
 		},
 	},

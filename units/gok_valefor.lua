@@ -181,7 +181,7 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "gokbeam",
+				soundstart = "techa_sounds/gok_beam",
 				soundtrigger = 1,
 				texture1 = "gokbeam",
 				texture2 = "null",

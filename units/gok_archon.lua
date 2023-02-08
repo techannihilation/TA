@@ -153,7 +153,7 @@ return {
 				soundhitdry = "lashit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "gokelechit",
+				soundstart = "techa_sounds/gok_hero_lighting",
 				soundtrigger = true,
 				sprayangle = 850,
 				texture1 = "strike",
