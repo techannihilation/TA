@@ -65,7 +65,7 @@ return {
 			[9] = "tlllab",
 			[10] = "tllalab",
 			[11] = "tllturtle_lab",
-			[12] = "tllhtcp",
+			[12] = "tll_elab",
 			[13] = "tllnanotc1",
 			[14] = "tlltarg",
 			[15] = "tllrichter",
@@ -75,7 +75,7 @@ return {
 			[19] = "tllsilo",
 			[20] = "tlllrpt",
 			[21] = "tllemplrpt",
-			[22] = "tllhydre",
+			[22] = "tll_hydre",
 		},
 		customparams = {
 			buildpic = "tllack.dds",

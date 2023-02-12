@@ -1,5 +1,5 @@
  4.42 => 4.43
-2023-02-09
+2023-02-14
 Balance :
  - Gok Mask : Decrease cost. Delete capture feature. Can create other mask
  - Gok Disciple : Decrease Repair 50=>25 hp/s and cost
@@ -7,6 +7,8 @@ Balance :
  Balance :
   - Add new sound for lightning Gok Hero (thank to Silver)
   - decrease model size for Flame Tower TLL
+  - Hydre TLL T2 & T3 : Change models
+  - Ham T1 Arm : Rework & Fix model
 
  4.41 => 4.42
 2023-02-06

@@ -77,7 +77,7 @@ return {
 			[18] = "tllsilo",
 			[19] = "tlllrpt",
 			[20] = "tllemplrpt",
-			[21] = "tllhydre",
+			[21] = "tll_hydre",
 		},
 		customparams = {
 			buildpic = "tllacv.dds",

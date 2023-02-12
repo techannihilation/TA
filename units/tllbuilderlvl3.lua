@@ -65,7 +65,7 @@ return {
 			[9] = "tllgate3",
 			[10] = "tllantinuke2",
 			[11] = "tllfsilo",
-			[12] = "tllbagger",
+			[12] = "tll_hydre1",
 			[13] = "tllvanya",
 			--[14] = "tllsamael",
 		},

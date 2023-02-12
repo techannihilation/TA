@@ -1,13 +1,10 @@
 return {
-	tllbagger = {
-		acceleration = 0,
-
-		brakerate = 0,
+	tll_hydre1 = {
 		buildangle = 29090,
 		buildcostenergy = 3064366,
 		buildcostmetal = 660533,
 		builder = false,
-		buildpic = "tllbagger.dds",
+		buildpic = "tll_hydre1.dds",
 		buildtime = 4100000,
 		canattack = true,
 		canstop = 1,
@@ -29,7 +26,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Rapid Long-Range Plasma Cannon",
-		objectname = "TLLBAGGER",
+		objectname = "tll_hydre1",
 		radaremitheight = 272,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -38,13 +35,13 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "tllbagger",
+		unitname = "tll_hydre1",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
 		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo oooooooooooooo ",
 		customparams = {
-			buildpic = "tllbagger.dds",
+			buildpic = "tll_hydre1.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -60,7 +57,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 30525,
-				object = "TLLBAGGER_DEAD",
+				object = "tll_hydre1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

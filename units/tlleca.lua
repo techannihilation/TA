@@ -71,7 +71,7 @@ return {
 			[17] = "tllantinuke1",
 			[18] = "tllsilo1",
 			[19] = "tlllrpt1",
-			[20] = "tllhydre2",
+			[20] = "tll_hydre2",
 			[21] = "tllplat",
 			[22] = "tlleplat",
 		},

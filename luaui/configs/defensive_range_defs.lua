@@ -139,7 +139,7 @@ modConfig["TA"]["unitList"] =
 								tllobliterator1 = { weapons = { 1 } },
 								tll_immolator = { weapons = { 1 } },
 								tllarch = { weapons = { 1 } },
-								tllbagger = { weapons = { 1 } },
+								tll_hydre1 = { weapons = { 1 } },
 								tllfllt = { weapons = { 1 } },
 								tllgeo_armored = { weapons = { 1 } },
 								tlllrpt1 = { weapons = { 1 } },
@@ -158,9 +158,9 @@ modConfig["TA"]["unitList"] =
 								tllkrak = { weapons = { 1 } },
 								tlljuno = { weapons = { 1 } },
 								tllpcan = { weapons = { 1 } },
-								tllhydre = { weapons = { 1 } },
-								tllhydre1 = { weapons = { 1 } },
-								tllhydre2 = { weapons = { 1 } },
+								tll_hydre = { weapons = { 1 } },
+								tll_hydre1 = { weapons = { 1 } },
+								tll_hydre2 = { weapons = { 1 } },
 
 								--Anti-Air--
 								tlllmt = { weapons = { 2 } },

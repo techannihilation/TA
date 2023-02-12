@@ -193,7 +193,7 @@ function GiveCat(_,line)
     for _,uDID in ipairs(UnitDefNames["armevp"].buildOptions) do
         t3Units[uDID] = true
     end
-    for _,uDID in ipairs(UnitDefNames["tllhtcp"].buildOptions) do
+    for _,uDID in ipairs(UnitDefNames["tll_elab"].buildOptions) do
         t3Units[uDID] = true
     end
     for _,uDID in ipairs(UnitDefNames["tllevp"].buildOptions) do

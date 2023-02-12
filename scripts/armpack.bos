@@ -160,11 +160,6 @@ RestoreAfterDelay()
 
 Create()
 {
-	dont-shade base;
-	dont-shade door1;
-	dont-shade door2;
-	dont-shade door3;
-	dont-shade door4;
 	Static_Var_1 = 1;
 	Static_Var_6 = 1;
 	gun_1 = door1;
@@ -264,26 +259,7 @@ Killed(severity, corpsetype)
 		explode door4 type NOHEATCLOUD;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD;
-		if( Static_Var_1 )
-		{
-			explode launcher type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-		}
-		if( !Static_Var_1 )
-		{
-			explode launcher type NOHEATCLOUD;
-		}
-		explode door1 type NOHEATCLOUD;
-		explode door2 type NOHEATCLOUD;
-		explode door3 type NOHEATCLOUD;
-		explode door4 type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	corpsetype = 4;
+	corpsetype = 3;
 	explode base type NOHEATCLOUD;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode launcher type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;

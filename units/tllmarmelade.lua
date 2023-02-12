@@ -73,7 +73,7 @@ return {
 			[12] = "tllgate1",
 			[13] = "tllantinuke2",
 			[14] = "tllfsilo",
-			[15] = "tllbagger",
+			[15] = "tll_hydre1",
 			[16] = "tllusy",
 			[17] = "tllfnanotc3",
 		},

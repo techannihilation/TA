@@ -1,12 +1,12 @@
 return {
-	tllhydre2 = {
+	tll_hydre2 = {
 		acceleration = 0,
 		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 526735,
 		buildcostmetal = 48534,
 		builder = false,
-		buildpic = "tllhydre.dds",
+		buildpic = "tll_hydre.dds",
 		buildtime = 850000,
 		canattack = true,
 		canstop = 1,
@@ -28,7 +28,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Rapid Long Range Plasma Cannon",
-		objectname = "tllhydre2",
+		objectname = "tll_hydre2",
 		radaremitheight = 136,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -37,12 +37,12 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "tllhydre2",
+		unitname = "tll_hydre2",
 		usepiececollisionvolumes = true,
 		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "tllhydre.dds",
+			buildpic = "tll_hydre.dds",
 			faction = "TLL",
 		},
 		featuredefs = {
@@ -58,7 +58,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 30525,
-				object = "TLLHYDRE_DEAD",
+				object = "tll_hydre_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

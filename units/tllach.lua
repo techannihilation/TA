@@ -77,7 +77,7 @@ return {
 			[18] = "tllsilo",
 			[19] = "tlllrpt",
 			[20] = "tlllrpt",
-			[21] = "tllhydre",
+			[21] = "tll_hydre",
 			[22] = "tlluwfusion",
 			[23] = "tllwmmohoconv",
 			[24] = "tllhpns",

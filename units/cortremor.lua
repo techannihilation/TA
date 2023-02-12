@@ -63,8 +63,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "1.25984954834 -1.01012474365 0.475593566895",
-				collisionvolumescales = "55.5426483154 42.2261505127 61.5749359131",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "55 42 61",
 				collisionvolumetype = "Box",
 				damage = 2689,
 				description = "cortremoror Wreckage",
@@ -145,7 +145,7 @@ return {
 				nogap = 1,
 				noselfdamage = true,
 				proximitypriority = -3,
-				range = 1600,
+				range = 1500,
 				reloadtime = 0.35,
 				rgbcolor = "0.7 0.37 0",
 				separation = 0.45,
