@@ -72,7 +72,7 @@ return {
 			[7] = "armvp",
 			[8] = "armavp",
 			[9] = "armevp",
-			[10] = "arm_mech_lab",
+			[10] = "arm_ulab",
 			[11] = "armnanotc2",
 			[12] = "armedrag",
 			[13] = "armomni",

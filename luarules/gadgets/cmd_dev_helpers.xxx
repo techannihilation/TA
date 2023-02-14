@@ -212,7 +212,7 @@ function GiveCat(_,line)
     techSuffix['t3'] = 't3'
 
     local t4Units = {}
-	for _,uDID in ipairs(UnitDefNames["arm_mech_lab"].buildOptions) do
+	for _,uDID in ipairs(UnitDefNames["arm_ulab"].buildOptions) do
         t4Units[uDID] = true
     end
     for _,uDID in ipairs(UnitDefNames["core_hexapod_lab"].buildOptions) do

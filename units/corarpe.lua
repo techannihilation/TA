@@ -19,7 +19,7 @@ return {
 		collide = 0,
 		cruisealt = 60,
 		defaultmissiontype = "VTOL_standby",
-		description = "Laser/EMP Gunship",
+		description = "Laser & EMP Gunship",
 		energymake = 0,
 		energystorage = 0,
 		explodeas = "BIG_UNITEX",
@@ -60,7 +60,20 @@ return {
 		customparams = {
 			buildpic = "corarpe.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T1 Unit Research Centre",
+		},
+		featuredefs = {
+			heap = {
+				blocking = false,
+				damage = 89641,
+				description = "Aircraft Debris",
+				footprintx = 2,
+				footprintz = 2,
+				object = "2X2Z",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
+			},
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

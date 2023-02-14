@@ -320,7 +320,7 @@ local dynamicPieceCollisionVolume = {			--dynamic per piece collision volume def
 			trunk = 1
 		}
 	},
-	[UnitDefNames["arm_mech_lab"].id] = {
+	[UnitDefNames["arm_ulab"].id] = {
 		on = {
 			["1"]={220,125,220,0,-25,20,1,2},
 			["20"]={65,175,65,0,65,0,1,1},

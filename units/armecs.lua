@@ -65,7 +65,7 @@ return {
 			[4] = "cadvmsto",
 			[5] = "armemex",
 			[6] = "ametalmakerlvl2",
-			[7] = "arm_mech_lab",
+			[7] = "arm_ulab",
 			[8] = "armedrag",
 			[9] = "armuwfus1",
 			[10] = "armsy",

@@ -85,7 +85,7 @@ return {
 			[27] = "tlllft",
 			[28] = "tllhlt",
 			[29] = "tlllbt",
-			[30] = "tllstuner",
+			--[30] = "tllstuner",
 			[31] = "tlllrpt2",
 			[32] = "tlllmt",
 			[33] = "tllsam",

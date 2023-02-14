@@ -54,7 +54,7 @@ return {
 			[1] = "armufus",
 			[2] = "ametalmakerlvl4",
 			[3] = "armmas",
-			[4] = "arm_mech_lab",
+			[4] = "arm_ulab",
 			[5] = "ashipyardlvl3",
 			[6] = "armnanotc4",
 			--[7] = "armurad",

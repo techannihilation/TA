@@ -1,5 +1,5 @@
 return {
-	arm_mech_lab = {
+	arm_ulab = {
 		acceleration = 0,
 		brakerate = 0,
 		buildcostenergy = 1479051,
@@ -8,14 +8,14 @@ return {
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
-		buildinggrounddecaltype = "arm_mech_lab_aoplane.dds",
-		buildpic = "arm_mech_lab.dds",
+		buildinggrounddecaltype = "arm_ulab_aoplane.dds",
+		buildpic = "arm_ulab.dds",
 		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
 		category = "LEVEL3 ALL SURFACE",
-		corpse = "heap",
+		corpse = "dead",
 		collisionvolumeoffsets = "0 -5 -20",
 		collisionvolumescales = "250 200 235",
 		collisionvolumetype = "Box",
@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Lab",
 		noautofire = false,
-		objectname = "arm_mech_lab",
+		objectname = "arm_ulab",
 		radaremitheight = 174,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -50,7 +50,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "arm_mech_lab",
+		unitname = "arm_ulab",
 		workertime = 1600,
 		yardmap = "oooooooooooooooooo oooooooooooooooooo oooooooooooooooooo yooooooooooooooooy yyccccccccccccccyy yyccccccccccccccyy yyccccccccccccccyy yoccccccccccccccoy ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo ooccccccccccccccoo",
 		buildoptions = {
@@ -65,11 +65,26 @@ return {
 			[9] = "armlift",
 		},
 		customparams = {
-			buildpic = "arm_mech_lab.dds",
+			buildpic = "arm_ulab.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
-			heap = {
+		dead = {
+			blocking = true,
+			damage = 39519,
+			description = "Prototype Pod Wreckage",
+			energy = 0,
+			featuredead = "heap",
+			footprintx = 16,
+			footprintz = 16,
+			metal = 67200,
+			object = "arm_ulab_dead",
+			reclaimable = true,
+			customparams = {
+				fromunit = 1,
+			},
+		},
+		heap = {
 				blocking = false,
 				damage = 49399,
 				description = "Prototype Mech Lab Debris",

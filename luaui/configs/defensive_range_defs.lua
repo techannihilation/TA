@@ -148,7 +148,7 @@ modConfig["TA"]["unitList"] =
 								tllpulaser = { weapons = { 1 } },
 								tllrlrpc = { weapons = { 1 } },
 								tllshoretorp = { weapons = { 1 } },
-								tllstuner = { weapons = { 1 } },
+								--tllstuner = { weapons = { 1 } },
 								tlltorp = { weapons = { 1 } },
 								tllllt = { weapons = { 1 } },
 								tlllft = { weapons = { 1 } },

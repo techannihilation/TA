@@ -65,7 +65,7 @@ return {
 			[7] = "armlab",
 			[8] = "armalab",
 			[9] = "armshltx",
-			[10] = "arm_mech_lab",
+			[10] = "arm_ulab",
 			[11] = "armnanotc2",
 			[12] = "armedrag",
 			[13] = "armomni",

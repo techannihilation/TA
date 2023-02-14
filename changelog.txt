@@ -1,10 +1,17 @@
+4.43 => 4.44
+2023-02-15
+
+Improvment :
+ - Delete EMP Bertha T1 for TLL
+
  4.42 => 4.43
 2023-02-14
 Balance :
  - Gok Mask : Decrease cost. Delete capture feature. Can create other mask
  - Gok Disciple : Decrease Repair 50=>25 hp/s and cost
+ - Talon Sniper ! Decrease speed 1.25=>1.15
 
- Balance :
+ Improvment :
   - Add new sound for lightning Gok Hero (thank to Silver)
   - decrease model size for Flame Tower TLL
   - Hydre TLL T2 & T3 : Change models
@@ -956,7 +963,7 @@ Balance :
   - Add T4 Core Adamantoise
 
 Fix :
- - Arm_mech_lab : fix unit blocked in lab
+ - arm_ulab : fix unit blocked in lab
  - Talon Pod Cons T4, Emp Bertha Arm : can be targeted
 
 3.74 > 3.76

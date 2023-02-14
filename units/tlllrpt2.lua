@@ -33,9 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Immolator",
 		noautofire = false,
-		
 		objectname = "tlllrpt2",
-		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 300,
