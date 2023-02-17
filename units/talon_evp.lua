@@ -20,7 +20,6 @@ return {
 		corpse = "dead",
 		description = "Tech Level 3",
 		energystorage = 500,
-		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 12,

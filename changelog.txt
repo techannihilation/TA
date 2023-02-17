@@ -3,6 +3,7 @@
 
 Improvment :
  - Delete EMP Bertha T1 for TLL
+ - Rework Talon Amphibious Opal Mech T3
 
  4.42 => 4.43
 2023-02-14

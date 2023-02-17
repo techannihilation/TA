@@ -146,11 +146,9 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 850,
 				damage = {
-					commanders = 22.5,
 					default = 45,
 					subs = 5,
 				},
-
 			},
 		},
 		weapons = {

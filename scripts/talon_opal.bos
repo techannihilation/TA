@@ -3,11 +3,16 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  torso, lpflarer, lpflarel, rarm, larm, pelvis, turret, spflare, rleg, rfoot, lleg, lfoot, lthigh, rthigh, base;
+piece  base, torso, aim,
+		lflare, rarm, larm, pelvis, rflare, rleg, rfoot, lleg, lfoot, lthigh, rthigh,
+		rbarrel, lbarrel, rtorpedo, ltorpedo;
 
-static-var  Static_Var_1, Static_Var_2, bMoving, bAiming, bAimTorso,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Move, Static_Turn;
+static-var  bMoving, bAiming, Static_Move, Static_Turn, gun_1;
 
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
 
 walk()
 {
@@ -21,11 +26,8 @@ walk()
 		move lleg to z-axis [0.] speed Static_Move * [1.000000];
 		move lfoot to z-axis [0.] speed Static_Move * [1.000000];
 		move rarm to x-axis [0.] speed Static_Move * [1.000000];
-		move lpflarer to x-axis [0.] speed Static_Move * [1.000000];
 		move larm to x-axis [0.] speed Static_Move * [1.000000];
-		move lpflarel to x-axis [0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <11.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-42.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-5.> speed Static_Turn * <1.000000>;
@@ -37,8 +39,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-2.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <34.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-28.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-7.> speed Static_Turn * <1.000000>;
@@ -50,8 +51,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <29.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-19.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-4.> speed Static_Turn * <1.000000>;
@@ -63,8 +63,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-6.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-4.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <13.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <0.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <3.> speed Static_Turn * <1.000000>;
@@ -76,8 +75,6 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <12.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-19.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <2.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <8.> speed Static_Turn * <1.000000>;
@@ -89,8 +86,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <12.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-2.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-32.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <13.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <23.> speed Static_Turn * <1.000000>;
@@ -101,8 +97,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <0.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-36.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <44.> speed Static_Turn * <1.000000>;
 		turn rfoot to x-axis <-43.> speed Static_Turn * <1.000000>;
@@ -114,7 +109,6 @@ walk()
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-42.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <13.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <61.> speed Static_Turn * <1.000000>;
@@ -126,8 +120,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-2.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-33.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <34.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <24.> speed Static_Turn * <1.000000>;
@@ -139,8 +132,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-4.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-25.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <29.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <11.> speed Static_Turn * <1.000000>;
@@ -152,8 +144,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-6.> speed Static_Turn * <1.000000>;
-		turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-12.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-0.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-12.> speed Static_Turn * <1.000000>;
@@ -165,7 +156,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-4.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <0.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-19.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-20.> speed Static_Turn * <1.000000>;
@@ -177,7 +168,7 @@ walk()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-2.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <9.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-29.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-25.> speed Static_Turn * <1.000000>;
@@ -187,8 +178,7 @@ walk()
 		sleep 80;
 	}
 	move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-	turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
-	turn torso to x-axis <13.> speed Static_Turn * <1.000000>;
+	turn pelvis to x-axis <0.> speed Static_Turn * <1.000000>;
 	turn lthigh to x-axis <11.> speed Static_Turn * <1.000000>;
 	turn rthigh to x-axis <-37.> speed Static_Turn * <1.000000>;
 	turn rleg to x-axis <-9.> speed Static_Turn * <1.000000>;
@@ -210,9 +200,7 @@ walklegs()
 		move lleg to z-axis [0.] speed Static_Move * [1.000000];
 		move lfoot to z-axis [0.] speed Static_Move * [1.000000];
 		move rarm to x-axis [0.] speed Static_Move * [1.000000];
-		move lpflarer to x-axis [0.] speed Static_Move * [1.000000];
 		move larm to x-axis [0.] speed Static_Move * [1.000000];
-		move lpflarel to x-axis [0.] speed Static_Move * [1.000000];
 		turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <11.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-42.> speed Static_Turn * <1.000000>;
@@ -225,7 +213,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-2.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <34.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-28.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-7.> speed Static_Turn * <1.000000>;
@@ -237,7 +225,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-4.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <29.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-19.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-4.> speed Static_Turn * <1.000000>;
@@ -249,7 +237,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-6.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-4.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <13.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <0.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <3.> speed Static_Turn * <1.000000>;
@@ -261,7 +249,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-19.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <2.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <8.> speed Static_Turn * <1.000000>;
@@ -273,7 +261,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-2.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-32.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <13.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <23.> speed Static_Turn * <1.000000>;
@@ -307,7 +295,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-1.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-33.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <34.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <24.> speed Static_Turn * <1.000000>;
@@ -319,7 +307,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-4.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <-25.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <29.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <11.> speed Static_Turn * <1.000000>;
@@ -331,7 +319,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Turn * <1.000000>;
-		turn pelvis to x-axis <-6.> speed Static_Move * [1.000000];
+		turn pelvis to x-axis <-5.> speed Static_Move * [1.000000];
 		turn lthigh to x-axis <-12.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-0.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-12.> speed Static_Turn * <1.000000>;
@@ -343,7 +331,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-5.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <0.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-19.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-20.> speed Static_Turn * <1.000000>;
@@ -355,7 +343,7 @@ walklegs()
 	if( bMoving )
 	{
 		move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-		turn pelvis to x-axis <-3.> speed Static_Turn * <1.000000>;
+		turn pelvis to x-axis <-2.> speed Static_Turn * <1.000000>;
 		turn lthigh to x-axis <9.> speed Static_Turn * <1.000000>;
 		turn rthigh to x-axis <-29.> speed Static_Turn * <1.000000>;
 		turn rleg to x-axis <-25.> speed Static_Turn * <1.000000>;
@@ -365,7 +353,7 @@ walklegs()
 		sleep 80;
 	}
 	move pelvis to y-axis [-0.] speed Static_Move * [1.000000];
-	turn pelvis to x-axis <-0.> speed Static_Turn * <1.000000>;
+	turn pelvis to x-axis <0.> speed Static_Turn * <1.000000>;
 	turn lthigh to x-axis <11.> speed Static_Turn * <1.000000>;
 	turn rthigh to x-axis <-37.> speed Static_Turn * <1.000000>;
 	turn rleg to x-axis <-9.> speed Static_Turn * <1.000000>;
@@ -426,6 +414,7 @@ MotionControl(moving, aiming, justmoved)
 			if( justmoved )
 			{
 				move pelvis to y-axis [0.] speed [4.000000];
+				turn pelvis to x-axis <0.> speed Static_Turn * <1.000000>;
 				turn rthigh to x-axis <0.> speed Static_Turn * <1.000000>;
 				turn rleg to x-axis <0.> speed Static_Turn * <1.000000>;
 				turn rfoot to x-axis <0.> speed Static_Turn * <1.000000>;
@@ -447,16 +436,13 @@ MotionControl(moving, aiming, justmoved)
 
 Create()
 {
+	hide lflare;
+	hide rflare;
 	bMoving = 0;
 	bAiming = 0;
-	bAimTorso = 0;
-	Static_Var_1 = 1;
-	Static_Var_2 = 1;
-	Static_Var_6 = 0;
-	Static_Var_8 = 32;
-	Static_Var_9 = 1;
 	Static_Move = 5;
 	Static_Turn = 90;
+	gun_1 = 0;
 	start-script MotionControl();
 	start-script SmokeUnit();
 }
@@ -473,43 +459,39 @@ StopMoving()
 
 RestoreAfterDelay()
 {
-	sleep 2000;
+	sleep 1000;
+	spin rbarrel around z-axis speed <0.000000> accelerate <-10.000000>;
+	spin lbarrel around z-axis speed <0.000000> accelerate <-10.000000>;
+	sleep 1500;
 	turn torso to y-axis <0.> speed <45.>;
-	turn torso to x-axis <0.> speed <45.>;
-	turn turret to y-axis <0.> speed <90.>;
 	turn larm to x-axis <0.> speed <45.>;
 	turn rarm to x-axis <0.> speed <45.>;
-	turn turret to y-axis <0.000000> speed <40.>;
-	turn turret to x-axis <0.000000> speed <25.>;
-	wait-for-turn torso around y-axis;
-	wait-for-turn torso around x-axis;
 	bAiming = 0;
-	bAimTorso = 0;
 }
 
 AimPrimary(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
-	turn turret to y-axis heading - bAimTorso speed <85.000000>;
-	wait-for-turn turret around y-axis;
-	turn turret to x-axis <0.000000> - pitch speed <25.000000>;
-	wait-for-turn turret around y-axis;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	bAiming = 1;
+	turn pelvis to x-axis <0.> speed Static_Turn * <1.000000>;
+	turn torso to y-axis heading speed <85.000000>;
+	turn rarm to x-axis <0.0> - pitch speed <90.>;
+	turn larm to x-axis <0.0> - pitch speed <90.>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn rarm around y-axis;
+	wait-for-turn larm around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 AimSecondary(heading, pitch)
 {
-	signal 2;
-	set-signal-mask 2;
-	bAiming = 1;
-	bAimTorso = heading;
-	turn torso to y-axis heading speed <90.>;
-	turn rarm to x-axis <0.> - pitch speed <90.>;
-	turn larm to x-axis <0.> - pitch speed <90.>;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	wait-for-turn torso around y-axis;
-	start-script RestoreAfterDelay();
+	wait-for-turn rarm around y-axis;
+	wait-for-turn larm around y-axis;
 	return (1);
 }
 
@@ -517,72 +499,76 @@ AimTertiary(heading, pitch)
 {
 	signal 8;
 	set-signal-mask 8;
+	turn pelvis to x-axis <0.> speed Static_Turn * <1.000000>;
+	turn torso to y-axis heading speed <85.000000>;
+	wait-for-turn torso around y-axis;
+	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-
+	emit-sfx 1025 from rflare;
+	spin rbarrel around z-axis speed <300.000000>;	
+	sleep 300;
 }
 
 FireSecondary()
 {
-	if( Static_Var_1 == 1 )
-	{
-		Static_Var_1 = 2;
-		return (0);
-	}
-	if( Static_Var_1 == 2 )
-	{
-		Static_Var_1 = 1;
-		return (0);
-	}
+	emit-sfx 1025 from lflare;
+	spin lbarrel around z-axis speed <300.000000>;	
+	sleep 300;
 }
 
 FireTertiary()
 {
+	++gun_1;
+	if (gun_1 == 2)
+	{
+		gun_1 = 0;
+	}
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = torso;
+	piecenum = aim;
 }
 
 AimFromSecondary(piecenum)
 {
-	piecenum = torso;
+	piecenum = aim;
 }
 
 AimFromTertiary(piecenum)
 {
-	piecenum = torso;
+	piecenum = aim;
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = spflare;
+	piecenum = rflare;
 }
 
 QuerySecondary(piecenum)
 {
-	if( Static_Var_1 == 1 )
-	{
-		piecenum = lpflarer;
-	}
-	if( Static_Var_1 == 2 )
-	{
-		piecenum = lpflarel;
-	}
+	piecenum = lflare;
 }
 
 QueryTertiary(piecenum)
 {
-	piecenum = torso;
+	if (gun_1 == 0)
+	{
+		piecenum = rtorpedo;	
+	}
+	if (gun_1 == 1)
+	{
+		piecenum = ltorpedo;	
+	}
 }
 
 SweetSpot(piecenum)
 {
-	piecenum = torso;
+	piecenum = base;
 }
 
 Killed(severity, corpsetype)
@@ -590,73 +576,46 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type BITMAPONLY | BITMAP1;
-		explode turret type BITMAPONLY | BITMAP2;
-		explode lpflarel type BITMAPONLY | BITMAP3;
-		explode lfoot type BITMAPONLY | BITMAP4;
-		explode lleg type BITMAPONLY | BITMAP5;
-		explode larm type BITMAPONLY | BITMAP1;
-		explode lthigh type BITMAPONLY | BITMAP2;
-		explode pelvis type BITMAPONLY | BITMAP4;
-		explode lpflarer type BITMAPONLY | BITMAP5;
-		explode rfoot type BITMAPONLY | BITMAP1;
-		explode rleg type BITMAPONLY | BITMAP2;
-		explode rarm type BITMAPONLY | BITMAP3;
-		explode rthigh type BITMAPONLY | BITMAP4;
-		explode torso type BITMAPONLY | BITMAP1;
-		return (0);
+		explode pelvis type NOHEATCLOUD;
+		explode lfoot type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		explode larm type NOHEATCLOUD;
+		explode lthigh type NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		explode rarm type NOHEATCLOUD;
+		explode rthigh type NOHEATCLOUD;
+		explode torso type NOHEATCLOUD;
+		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type FALL | BITMAP1;
-		explode turret type FALL | BITMAP2;
-		explode lpflarel type FALL | BITMAP3;
-		explode lfoot type FALL | BITMAP4;
-		explode lleg type FALL | BITMAP5;
-		explode larm type FALL | BITMAP1;
-		explode lthigh type FALL | BITMAP2;
-		explode pelvis type FALL | BITMAP4;
-		explode lpflarer type FALL | BITMAP5;
-		explode rfoot type FALL | BITMAP1;
-		explode rleg type FALL | BITMAP2;
-		explode rarm type FALL | BITMAP3;
-		explode rthigh type FALL | BITMAP4;
-		explode torso type SHATTER | BITMAP1;
-		return (0);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode lpflarel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode lpflarer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-		explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-		explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-		explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-		explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-		explode torso type SHATTER | BITMAP1;
-		return (0);
+		explode pelvis type FALL | NOHEATCLOUD;
+		explode lfoot type FALL | NOHEATCLOUD;
+		explode lleg type FALL | NOHEATCLOUD;
+		explode larm type FALL | NOHEATCLOUD;
+		explode lthigh type FALL | NOHEATCLOUD;
+		explode pelvis type FALL | NOHEATCLOUD;
+		explode rfoot type FALL | NOHEATCLOUD;
+		explode rleg type FALL | NOHEATCLOUD;
+		explode rarm type FALL | NOHEATCLOUD;
+		explode rthigh type FALL | NOHEATCLOUD;
+		explode torso type SHATTER | NOHEATCLOUD;
+		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode turret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode lpflarel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode lpflarer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
-	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
-	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
-	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
-	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
-	explode torso type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode torso type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
 }
