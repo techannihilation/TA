@@ -28,7 +28,6 @@ return {
 		maxwaterdepth = 0,
 		name = "T2 Immolator",
 		noautofire = false,
-
 		objectname = "TLLLRPT",
 		onoffable = true,
 		radaremitheight = 65,
@@ -108,16 +107,16 @@ return {
 			},
 		},
 		weapondefs = {
-			arm_berthacannon = {
-				accuracy = 300,
-				areaofeffect = 192,
+			tll_berthacannon = {
+				accuracy = 500,
+				areaofeffect = 128,
 				avoidfeature = false,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 224,
+				craterareaofeffect = 128,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 5200,
-				explosiongenerator = "custom:flash192_fakelight",
+				energypershot = 10000,
+				explosiongenerator = "custom:flash128_fakelight",
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
@@ -125,7 +124,7 @@ return {
 				name = "BerthaCannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 5250,
+				range = 5000,
 				reloadtime = 8,
 				rgbcolor = "1 0.87 0.15",
 				separation = 0.45,
@@ -140,15 +139,14 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1100,
 				damage = {
-					commanders = 700,
-					default = 1400,
+					default = 1000,
 					subs = 5,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				def = "ARM_BERTHACANNON",
+				def = "TLL_BERTHACANNON",
 				onlytargetcategory = "SURFACE",
 			},
 		},

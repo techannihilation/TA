@@ -109,10 +109,10 @@ return {
 		weapondefs = {
 			meteor = {
 				accuracy = 1200,
-				areaofeffect = 192,
+				areaofeffect = 128,
 				avoidfeature = false,
-				craterareaofeffect = 192,
-				energypershot = 13000,
+				craterareaofeffect = 128,
+				energypershot = 10000,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
@@ -129,8 +129,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1200,
 				damage = {
-					commanders = 750,
-					default = 1500,
+					default = 1000,
 					subs = 50,
 				},
 	},

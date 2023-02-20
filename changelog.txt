@@ -1,5 +1,12 @@
 4.43 => 4.44
-2023-02-15
+2023-02-21
+
+Balance LongRangePplasmaTower :
+ - Decrease all damage between 25% and 33%
+ - All vulc/buzz have same range than bertha/intimidator for same tech level (T3 bertha gain 500 more range, T4 Buzz lost 2K range)
+ - Mobile units have 4000 range (lost 500 range) and 20% less damage than bertha
+ - Energy / shot have been balanced too. Same cost beween mobile and static. Less energy for Buzz/vulc, and more for Bertha
+ - Decrease T4 Buzz Metal cost by 33%
 
 Improvment :
  - Delete EMP Bertha T1 for TLL

@@ -1,8 +1,5 @@
 return {
 	tll_hydre = {
-		acceleration = 0,
-
-		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 245431,
 		buildcostmetal = 32546,
@@ -49,8 +46,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-30.100944519 -5.74996727295 19.3314819336",
-				collisionvolumescales = "169.401870728 123.486465454 147.862945557",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "169 123 147",
 				collisionvolumetype = "Box",
 				damage = 8861,
 				description = "Hydre Wreckage",
@@ -117,16 +114,16 @@ return {
 		weapondefs = {
 			hydra_weapon = {
 				accuracy = 700,
-				areaofeffect = 192,
+				areaofeffect = 128,
 				avoidfeature = false,
 				avoidground = false,
 				cegtag = "Trail_cannon_med",
 				collidefriendly = false,
-				craterareaofeffect = 224,
+				craterareaofeffect = 128,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
-				energypershot = 12000,
+				energypershot = 10000,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				gravityaffected = true,
 				impulseboost = 0.123,
@@ -150,8 +147,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 950,
 				damage = {
-					commanders = 700,
-					default = 1400,
+					default = 1000,
 					subs = 5,
 				},
 			},

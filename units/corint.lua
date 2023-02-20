@@ -1,8 +1,5 @@
 return {
 	corint = {
-		acceleration = 0,
-
-		brakerate = 0,
 		buildangle = 32700,
 		buildcostenergy = 65125,
 		buildcostmetal = 4310,
@@ -56,8 +53,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.0 0.0987820556641 -0.0",
-				collisionvolumescales = "86.25 91.6069641113 74.6947021484",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "86 91 74",
 				collisionvolumetype = "Box",
 				damage = 3757,
 				description = "Intimidator Wreckage",
@@ -123,23 +120,23 @@ return {
 		},
 		weapondefs = {
 			core_intimidator2 = {
-				accuracy = 535,
-				areaofeffect = 192,
+				accuracy = 500,
+				areaofeffect = 128,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon_med",
-				craterareaofeffect = 224,
+				craterareaofeffect = 128,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 5000,
-				explosiongenerator = "custom:flash208_fakelight",
+				energypershot = 10000,
+				explosiongenerator = "custom:flash128_fakelight",
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				name = "IntimidatorCannon",
+				name = "Intimidator Cannon",
 				nogap = 1,
 				noselfdamage = true,
-				range = 5250,
+				range = 5000,
 				reloadtime = 8,
 				rgbcolor = "0.85 0.6 0",
 				separation = 0.45,
@@ -152,10 +149,9 @@ return {
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 958.12317,
+				weaponvelocity = 950,
 				damage = {
-					commanders = 700,
-					default = 1400,
+					default = 1000,
 					subs = 5,
 				},
 			},

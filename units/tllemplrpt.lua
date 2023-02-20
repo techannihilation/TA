@@ -9,7 +9,7 @@ return {
 		canattack = true,
 		canguard = true,
 		canstop = 1,
-		category = "ALL UNDERWATER",
+		category = "ALL SURFACE",
 		corpse = "tllemplrpt_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range EMP Canon",
@@ -28,7 +28,6 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 33,
 		name = "T2 Stuner",
-		
 		objectname = "tllemplrpt",
 		radardistance = 0,
 		radaremitheight = 70,
@@ -148,7 +147,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1100,
 				damage = {
-					default = 5100,
+					default = 5000,
 					subs = 5,
 				},
 			},

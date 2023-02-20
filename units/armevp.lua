@@ -52,7 +52,7 @@ return {
 			[1] = "armecv",
 			[2] = "armchimera",
 			[3] = "armeflak",
-			[4] = "avtr",
+			[4] = "arm_avatar",
 			[5] = "armrex",
 			[6] = "armmcv",
 			[7] = "armmlrs",

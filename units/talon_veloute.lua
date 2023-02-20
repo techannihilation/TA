@@ -1,7 +1,5 @@
 return {
 	talon_veloute = {
-		acceleration = 0,
-		brakerate = 0,
 		buildangle = 29096,
 		buildcostenergy = 340045,
 		buildcostmetal = 28717,
@@ -112,21 +110,21 @@ return {
 		weapondefs = {
 			talon_veloute_weapon2 = {
 				accuracy = 700,
-				areaofeffect = 192,
+				areaofeffect = 128,
 				avoidfeature = false,
 				avoidground = false,
 				cegtag = "Trail_cannon_med",
 				collidefriendly = false,
-				craterareaofeffect = 224,
+				craterareaofeffect = 128,
 				craterboost = 0,
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
-				energypershot = 14000,
+				energypershot = 10000,
 				explosiongenerator = "custom:flashbigbuilding_buzz",
 				gravityaffected = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				name = "RapidfireLRPC",
+				name = "Rapidfire LRPC",
 				nogap = 1,
 				noselfdamage = true,
 				range = 5000,
@@ -145,8 +143,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 950,
 				damage = {
-					commanders = 750,
-					default = 1500,
+					default = 1000,
 					subs = 5,
 				},
 			},
