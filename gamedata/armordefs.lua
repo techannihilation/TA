@@ -46,6 +46,7 @@ return {
 		"armlift",
 		"gok_chariot",
 		"gok_wordbearer",
+		"gok_benne",
 	},
 
 	unclassed_air = {
