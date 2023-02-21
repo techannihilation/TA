@@ -28,6 +28,8 @@ local name
 
 
 jumpCategory = {
+  jumphover = {
+    range = 300, height = 100, speed = 2,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
   jumpbot = {
     range = 400, height = 200, speed = 3,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
   starcom = {
@@ -57,6 +59,9 @@ jumpClassGroups = {
     "gok_valkyrie",
     "gok_satan",
 	},
+  jumphover = {
+    "talon_dutchman",
+  },
 }
 
 for name,data in pairs(UnitDefNames) do

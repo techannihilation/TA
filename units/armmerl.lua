@@ -29,7 +29,7 @@ return {
 		losemitheight = 22,
 		maneuverleashlength = 640,
 		mass = 920,
-		maxdamage = 1100,
+		maxdamage = 1600,
 		maxslope = 16,
 		maxvelocity = 0.95,
 		maxwaterdepth = 12,
@@ -37,7 +37,6 @@ return {
 		movementclass = "TANK3",
 		name = "Merl",
 		noautofire = false,
-
 		objectname = "ARMMERL",
 		radaremitheight = 25,
 		seismicsignature = 0,

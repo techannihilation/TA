@@ -3,13 +3,12 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  flare1, flare2, flare3, flare4, barrel1, barrel2,
-       barrel3, barrel4,  base, body, turret1, sleeve1,
-       turret2, sleeve2, w1, w2, w3, w4, w5, w6,
-       w7, w8, w9, wakes, boob, miss1, miss2, aimmsl;
+piece  base, body, 
+		turret1, sleeve1a, sleeve1b, flare1a, flare1b, barrel1a, barrel1b,
+		turret2, sleeve2a, sleeve2b, flare2a, flare2b, barrel2a, barrel2b,
+        w1, w2, w3, w4, w5, w6, w7, w8, w9, miss1, miss2, aimmsl, jet1, jet2;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
-            Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9, Static_Var_10, gun_miss;
+static-var  gun_1, gun_2, gun_miss, bStating, bJumping;
 
 // Signal definitions
 #define SIG_AIM_1			2
@@ -18,28 +17,35 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5
 #define SIG_MOVE			16
 #define SIG_ROCK			32
 
-
-WobbleUnit()
+ProcessFlame()
 {
 	while( TRUE )
 	{
-		if( Static_Var_7 )
+		if( bJumping == 1 )
 		{
-			move base to y-axis [1.] speed [0.4];
+			emit-sfx 1024 + 0 from jet1;
+			emit-sfx 1024 + 0 from jet2;
 		}
-		else
-		{
-			move base to y-axis [-1.] speed [0.4];
-		}
-		Static_Var_7 = !Static_Var_7;
-		sleep 750;
+		sleep 100;
 	}
+}
+
+BeginJump()
+{
+	bJumping = 1;
+	sleep 500;
+}
+
+EndJump()
+{
+	bJumping = 0;
+	sleep 500;
 }
 
 HitByWeapon(anglex, anglez)
 {
-	signal 8;
-	set-signal-mask 8;
+	signal SIG_ROCK;
+	set-signal-mask SIG_ROCK;
 	turn body to z-axis <0.1> * anglez * 0.5 speed <105.>;
 	turn body to x-axis <0.1> * anglex * 0.5 speed <105.>;
 	wait-for-turn body around z-axis;
@@ -48,27 +54,11 @@ HitByWeapon(anglex, anglez)
 	turn body to x-axis <0.> speed <30.>;
 }
 
-BankClerck(Func_Var_1, Func_Var_2, Func_Var_3)
+Wave()
 {
 	while( TRUE )
 	{
-		Func_Var_1 = get PIECE_XZ(base);
-		Func_Var_3 = 0;
-		if( get XZ_HYPOT(Func_Var_1 - Func_Var_2) >= 163840 )
-		{
-			Func_Var_3 = 0 - get XZ_ATAN(Func_Var_2 - Func_Var_1) * 40 / 20;
-		}
-		turn body to z-axis Func_Var_3 speed <20.>;
-		Func_Var_2 = Func_Var_1;
-		sleep 300;
-	}
-}
-
-wakes2()
-{
-	while( TRUE )
-	{
-		if( Static_Var_6 == 2 OR Static_Var_6 == 1 )
+		if( bStating == 2 OR bStating == 1 )
 		{
 			emit-sfx 3 from w1;
 			emit-sfx 3 from w2;
@@ -99,9 +89,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
-	start-script WobbleUnit();
-	start-script wakes2();
-	start-script BankClerck();
+	
+	start-script Wave();
+	start-script ProcessFlame();
 	
 	while( TRUE )
 	{
@@ -113,7 +103,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from base;
+			emit-sfx smoketype from body;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -127,30 +117,38 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	turn turret2 to y-axis <180.> now;
-	hide flare1;
-	hide flare2;
-	hide flare3;
-	hide flare4;
+	hide flare1a;
+	hide flare2a;
+	hide flare1b;
+	hide flare2b;
+	hide jet1;
+	hide jet2;
 	gun_miss = 1;
-	Static_Var_3 = 0;
-	Static_Var_4 = 0;
-	Static_Var_1 = 0;
-	Static_Var_2 = 0;
+	gun_1 = 0;
+	gun_2 = 0;
+	bJumping = 0;
 	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
+	sleep 1000;
+	spin barrel1a around z-axis speed <0.000000> accelerate <-10.000000>;
+	spin barrel1b around z-axis speed <0.000000> accelerate <-10.000000>;
+	spin barrel2a around z-axis speed <0.000000> accelerate <-10.000000>;
+	spin barrel2b around z-axis speed <0.000000> accelerate <-10.000000>;
 	sleep 3000;
-	turn sleeve2 to x-axis <0.> speed <60.>;
-	turn turret2 to y-axis <180.> speed <30.>;
-	turn sleeve1 to x-axis <0.> speed <60.>;
+	turn sleeve1a to x-axis <0.> speed <60.>;
+	turn sleeve1b to x-axis <0.> speed <60.>;
+	turn sleeve2a to x-axis <0.> speed <60.>;
+	turn sleeve2b to x-axis <0.> speed <60.>;
 	turn turret1 to y-axis <0.> speed <30.>;
+	turn turret2 to y-axis <180.> speed <30.>;
 }
 
 setSFXoccupy(state)
 {
-	Static_Var_6 = state;
+	bStating = state;
 }
 
 StartMoving()
@@ -198,55 +196,34 @@ QueryPrimary(piecenum)
 	}
 }
 
-Rock()
-{
-	signal SIG_ROCK;
-	set-signal-mask SIG_ROCK;
-	turn body to x-axis <1.> speed <50.>;
-	turn body to z-axis <1.> speed <50.>;
-	wait-for-turn body around z-axis;
-	wait-for-turn body around x-axis;
-	turn body to z-axis <0.> speed <20.>;
-	turn body to x-axis <0.> speed <20.>;
-}
-
 AimSecondary(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
-	turn turret1 to y-axis heading speed <75.>;
-	turn sleeve1 to x-axis <0.> - pitch speed <75.>;
+	turn turret1 to y-axis heading speed <100.000000>;
+	turn sleeve1a to x-axis <0.0> - pitch speed <100.000000>;
+	turn sleeve1b to x-axis <0.0> - pitch speed <100.000000>;
 	wait-for-turn turret1 around y-axis;
-	wait-for-turn sleeve1 around x-axis;
+	wait-for-turn sleeve1a around x-axis;
+	wait-for-turn sleeve1b around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FireSecondary()
 {
-	start-script Rock();
-	if( Static_Var_1 == 0 )
+	if(gun_1 == 0)
 	{
-		emit-sfx 1025 from flare1;
-		move barrel1 to z-axis [-2.] now;
-		sleep 150;
-		move barrel1 to z-axis [0.] speed [2.];
-		sleep 150;
+		spin barrel1a around z-axis speed <425.000000>;	
 	}
-	if( Static_Var_1 == 1 )
+	if(gun_1 == 1)
 	{
-		emit-sfx 1025 from flare2;
-		move barrel2 to z-axis [-2.] now;
-		sleep 150;
-		move barrel2 to z-axis [0.] speed [2.];
-		sleep 150;
+		spin barrel1b around z-axis speed <425.000000>;	
 	}
-	
-	++Static_Var_1;
-	
-	if (Static_Var_1 == 2)
+	++gun_1;
+	if(gun_1 == 2)
 	{
-		Static_Var_1 = 0;
+		gun_1 = 0;
 	}
 }
 
@@ -257,55 +234,45 @@ AimFromSecondary(piecenum)
 
 QuerySecondary(piecenum)
 {
-	if( Static_Var_1 == 0 )
+	if(gun_1 == 0)
 	{
-		piecenum = flare1;
+		piecenum = flare1a;
 	}
-	if( Static_Var_1 == 1 )
+	if(gun_1 == 1)
 	{
-		piecenum = flare2;
+		piecenum = flare1b;
 	}
 }
 
 AimTertiary(heading, pitch)
 {
-	signal 4;
-	set-signal-mask 4;
-	turn turret2 to y-axis heading speed <75.>;
-	turn sleeve2 to x-axis <0.> - pitch speed <75.>;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret2 to y-axis heading speed <100.000000>;
+	turn sleeve2a to x-axis <0.0> - pitch speed <100.000000>;
+	turn sleeve2b to x-axis <0.0> - pitch speed <100.000000>;
 	wait-for-turn turret2 around y-axis;
-	wait-for-turn sleeve2 around x-axis;
+	wait-for-turn sleeve2a around x-axis;
+	wait-for-turn sleeve2b around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FireTertiary()
 {
-	start-script Rock();
-	if( Static_Var_2 == 0 )
+	if(gun_2 == 0)
 	{
-		emit-sfx 1025 from flare3;
-		move barrel3 to z-axis [-3.] now;
-		sleep 150;
-		move barrel3 to z-axis [0.] speed [1.];
-		sleep 150;
+		spin barrel2a around z-axis speed <425.000000>;	
 	}
-	if( Static_Var_2 == 1 )
+	if(gun_2 == 1)
 	{
-		emit-sfx 1025 from flare4;
-		move barrel4 to z-axis [-3.] now;
-		sleep 150;
-		move barrel4 to z-axis [0.] speed [1.];
-		sleep 150;
+		spin barrel2b around z-axis speed <425.000000>;	
 	}
-	
-	++Static_Var_2;
-	
-	if (Static_Var_2 == 2)
+	++gun_2;
+	if(gun_2 == 2)
 	{
-		Static_Var_2 = 0;
+		gun_2 = 0;
 	}
-
 }
 
 AimFromTertiary(piecenum)
@@ -315,15 +282,14 @@ AimFromTertiary(piecenum)
 
 QueryTertiary(piecenum)
 {
-	if( Static_Var_2 == 0 )
+	if(gun_2 == 0)
 	{
-		piecenum = flare3;
+		piecenum = flare2a;
 	}
-	if( Static_Var_2 == 1 )
+	if(gun_2 == 1)
 	{
-		piecenum = flare4;
-	}
-	
+		piecenum = flare2b;
+	}	
 }
 
 SweetSpot(piecenum)
@@ -336,43 +302,28 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
-		explode sleeve2 type NOHEATCLOUD;
+		explode sleeve2a type NOHEATCLOUD;
 		explode turret2 type NOHEATCLOUD;
-		explode sleeve1 type NOHEATCLOUD;
+		explode sleeve1a type NOHEATCLOUD;
 		explode turret1 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD | FALL;
 		explode body type NOHEATCLOUD | FALL;
-		explode sleeve2 type NOHEATCLOUD | FALL;
+		explode sleeve2a type NOHEATCLOUD | FALL;
 		explode turret2 type NOHEATCLOUD | FALL;
-		explode sleeve1 type NOHEATCLOUD | FALL;
+		explode sleeve1a type NOHEATCLOUD | FALL;
 		explode turret1 type NOHEATCLOUD | FALL;
-		return (corpsetype);
-		return (0);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve2a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sleeve1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sleeve1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

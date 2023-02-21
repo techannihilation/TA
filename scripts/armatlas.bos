@@ -155,20 +155,6 @@ EndTransport()
 	start-script RequestState(1);
 }
 
-ProcessFlames()
-{
-	while( TRUE )
-	{
-		if( Static_Var_1 == 1 OR Static_Var_1 == 2 )
-		{
-			emit-sfx 0 from jet1;
-			emit-sfx 0 from jet2;
-			emit-sfx 0 from jet3;
-		}
-		sleep 67;
-	}
-}
-
 StopMoving()
 {
 	signal 2;
@@ -179,7 +165,6 @@ MoveRate1()
 {
 	signal 2;
 	set-signal-mask 2;
-	//start-script ProcessFlames();
 	Static_Var_1 = 1;
 }
 
@@ -187,7 +172,6 @@ MoveRate2()
 {
 	signal 2;
 	set-signal-mask 2;
-	//start-script ProcessFlames();
 	Static_Var_1 = 2;
 }
 

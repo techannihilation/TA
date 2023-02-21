@@ -12,9 +12,8 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE UNDERWATER",
-		collisionvolumeoffsets = "0 1 0",
-		collisionvolumescales = "42 60 42",
-		
+		collisionvolumeoffsets = "0 -20 0",
+		collisionvolumescales = "42 65 42",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",

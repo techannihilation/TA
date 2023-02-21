@@ -1,5 +1,5 @@
 4.43 => 4.44
-2023-02-21
+2023-02-22
 
 Balance LongRangePplasmaTower :
  - Decrease all damage between 25% and 33%
@@ -11,6 +11,8 @@ Balance LongRangePplasmaTower :
 Improvment :
  - Delete EMP Bertha T1 for TLL
  - Rework Talon Amphibious Opal Mech T3
+ - Add Jump to Dutchman Talon hover
+ - Rework Bat & Dutchman Talon & T3 Amphibious Opal (remplace heavy plasma by rapid laser)
 
  4.42 => 4.43
 2023-02-14
