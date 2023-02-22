@@ -81,7 +81,7 @@ return {
 			[18] = "armemp",
 			[19] = "armamd",
 			[20] = "armsilo",
-			[21] = "arm_big_bertha",
+			[21] = "arm_emp_lrpt",
 			[22] = "armbrtha",
 			[23] = "armvulc",
 		},

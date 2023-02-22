@@ -38,7 +38,7 @@ modConfig["TA"]["unitList"] =
 								armemp = { weapons = { 1 } },
 								armbrtha = { weapons = { 1 } },
 								armbrtha1 = { weapons = { 1 } },
-								arm_big_bertha = { weapons = { 1 } },
+								arm_emp_lrpt = { weapons = { 1 } },
 								armvulc = { weapons = { 1 } },
 								armvulc1 = { weapons = { 1 } },
 								armvulc2 = { weapons = { 1 } },
@@ -101,7 +101,7 @@ modConfig["TA"]["unitList"] =
 								core_immolator1	 = { weapons = { 1 } },
 								corhllt = { weapons = { 1 } },
 								armnebraska = { weapons = { 1 } },
-								core_intimidator = { weapons = { 1 } },
+								core_emp_lrpt = { weapons = { 1 } },
 								corpcan = { weapons = { 1 } },
 								cormmds = { weapons = { 3 } }, --Missile Defence System
 

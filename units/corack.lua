@@ -77,7 +77,7 @@ return {
 			[17] = "cortron",
 			[18] = "corfmd",
 			[19] = "corsilo",
-			[20] = "core_intimidator",
+			[20] = "core_emp_lrpt",
 			[21] = "corint",
 			[22] = "corbuzz",
 		},

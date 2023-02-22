@@ -7,12 +7,14 @@ Balance LongRangePplasmaTower :
  - Mobile units have 4000 range (lost 500 range) and 20% less damage than bertha
  - Energy / shot have been balanced too. Same cost beween mobile and static. Less energy for Buzz/vulc, and more for Bertha
  - Decrease T4 Buzz Metal cost by 33%
+ - EMP Bertha : Decrease range 6750 => 6000. Decrease reload 15s=>10s.
 
 Improvment :
  - Delete EMP Bertha T1 for TLL
  - Rework Talon Amphibious Opal Mech T3
  - Add Jump to Dutchman Talon hover
  - Rework Bat & Dutchman Talon & T3 Amphibious Opal (remplace heavy plasma by rapid laser)
+ - Rework Avatar Arm LRPT Model
 
  4.42 => 4.43
 2023-02-14

@@ -80,7 +80,7 @@ return {
 			[21] = "cortron",
 			[22] = "corfmd",
 			[23] = "corsilo",
-			[24] = "core_intimidator",
+			[24] = "core_emp_lrpt",
 			[25] = "corint",
 			[26] = "corbuzz",
 		},
