@@ -3,10 +3,6 @@ return {
 		buildcostenergy = 62235,
 		buildcostmetal = 4414,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 8,
-		buildinggrounddecalsizey = 8,
-		buildinggrounddecaltype = "core_emp_lrpt_aoplane.dds",
 		buildpic = "core_emp_lrpt.dds",
 		buildtime = 75000,
 		canattack = true,
@@ -40,7 +36,6 @@ return {
 		sightdistance = 367.5,
 		standingfireorder = 2,
 		unitname = "core_emp_lrpt",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
 			buildpic = "core_emp_lrpt.dds",
