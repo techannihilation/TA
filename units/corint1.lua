@@ -1,8 +1,8 @@
 return {
 	corint1 = {
 		buildangle = 32700,
-		buildcostenergy = 293062,
-		buildcostmetal = 19395,
+		buildcostenergy = 333062,
+		buildcostmetal = 27395,
 		builder = false,
 		buildpic = "corint1.dds",
 		buildtime = 400000,

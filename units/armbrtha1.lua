@@ -1,15 +1,15 @@
 return {
 	armbrtha1 = {
 		buildangle = 32700,
-		buildcostenergy = 282325,
-		buildcostmetal = 20322,
+		buildcostenergy = 342325,
+		buildcostmetal = 27322,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "armbrtha1_aoplane.dds",
 		buildpic = "armbrtha1.dds",
-		buildtime = 382500,
+		buildtime = 400000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

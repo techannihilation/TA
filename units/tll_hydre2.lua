@@ -6,7 +6,7 @@ return {
 		buildcostenergy = 526735,
 		buildcostmetal = 48534,
 		builder = false,
-		buildpic = "tll_hydre.dds",
+		buildpic = "tll_hydre2.dds",
 		buildtime = 850000,
 		canattack = true,
 		canstop = 1,
@@ -42,7 +42,7 @@ return {
 		usepieceselectionvolumes = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
-			buildpic = "tll_hydre.dds",
+			buildpic = "tll_hydre2.dds",
 			faction = "TLL",
 		},
 		featuredefs = {

@@ -1,14 +1,14 @@
 return {
 	talon_lrpt1 = {
 		buildangle = 32700,
-		buildcostenergy = 306003,
-		buildcostmetal = 18993,
+		buildcostenergy = 346003,
+		buildcostmetal = 27093,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildpic = "talon_lrpt1.dds",
-		buildtime = 410000,
+		buildtime = 400000,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
