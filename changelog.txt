@@ -1,5 +1,5 @@
 4.43 => 4.44
-2023-02-22
+2023-02-24
 
 Balance LongRangePplasmaTower :
  - Decrease all damage between 25% and 33%
@@ -10,6 +10,7 @@ Balance LongRangePplasmaTower :
  - EMP Bertha : Decrease range 6750 => 6000. Decrease reload 15s=>10s.
 
 Improvment :
+ - Add T4 Talon AA Kbot
  - Delete EMP Bertha T1 for TLL
  - Rework Talon Amphibious Opal Mech T3
  - Add Jump to Dutchman Talon hover

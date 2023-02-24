@@ -1,0 +1,517 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, torso, hips, sleeves,
+       rleg, rthigh, lthigh, lleg, rfoot2, lfoot2, lfoot, rfoot, 
+       flare1a, flare2a, flare3a, flare4a, flare5a, flare6a, flare7a,
+       barrel1a, barrel2a, barrel3a, barrel4a, barrel5a, barrel6a, barrel7a,
+       flare1b, flare2b, flare3b, flare4b, flare5b, flare6b, flare7b,
+       barrel1b, barrel2b, barrel3b, barrel4b, barrel5b, barrel6b, barrel7b,
+       rmsl, lmsl, rmultimsl, lmultimsl;
+
+static-var  gun_1, gun_2, msl_1, Bmoving, Baiming, Main_Gun_Heading;
+
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_MOVE			64
+
+walk()
+{
+	if( Bmoving )
+	{
+		move hips to y-axis [1.] speed [2.0];
+		turn hips to z-axis <-5.> speed <10.0>;
+		turn rthigh to z-axis <5.> speed <10.0>;
+		turn lthigh to z-axis <5.> speed <10.0>;
+		turn hips to z-axis <6.> speed <5.>;
+		turn lleg to x-axis <15.> speed <110.>;
+		turn lfoot to x-axis <-15.> speed <110.>;
+		move hips to y-axis [0.] speed [2.];
+		turn lthigh to x-axis <20.> speed <60.>;
+		turn lfoot2 to x-axis <-20.> speed <60.>;
+		turn rthigh to x-axis <-20.> speed <55.>;
+		turn rfoot2 to x-axis <20.> speed <240.>;
+		turn rleg to x-axis <-15.> speed <115.>;
+		turn rfoot to x-axis <15.> speed <115.>;
+		sleep 500;
+		turn rleg to x-axis <15.> speed <105.>;
+		turn rfoot to x-axis <-15.> speed <105.>;
+		move hips to y-axis [0.] speed [2.];
+		sleep 200;
+		move hips to y-axis [1.] speed [2.];
+		turn hips to z-axis <5.> speed <10.0>;
+		turn lthigh to z-axis <-5.> speed <10.0>;
+		turn rthigh to z-axis <-5.> speed <10.0>;
+		turn hips to z-axis <-6.> speed <5.>;
+	}
+	while( Bmoving )
+	{
+		if( Bmoving )
+		{
+			turn rthigh to x-axis <30.> speed <55.>;
+			turn rfoot2 to x-axis <-30.> speed <55.>;
+			turn lthigh to x-axis <-30.> speed <60.>;
+			turn lfoot2 to x-axis <30.> speed <360.>;
+			turn lleg to x-axis <-20.> speed <110.>;
+			turn lfoot to x-axis <20.> speed <110.>;
+			sleep 700;
+			turn lleg to x-axis <20.> speed <110.>;
+			turn lfoot to x-axis <-20.> speed <110.>;
+			move hips to y-axis [0.] speed [2.];
+			sleep 400;
+			move hips to y-axis [1.] speed [2.];
+			turn hips to z-axis <-5.> speed <10.0>;
+			turn rthigh to z-axis <5.> speed <10.0>;
+			turn lthigh to z-axis <5.> speed <10.0>;
+			turn hips to z-axis <6.> speed <5.0>;
+		}
+		if( Bmoving )
+		{
+			turn lthigh to x-axis <30.> speed <60.>;
+			turn lfoot2 to x-axis <-30.> speed <60.>;
+			turn rthigh to x-axis <-30.> speed <55.>;
+			turn rfoot2 to x-axis <30.> speed <360.>;
+			turn rleg to x-axis <-20.> speed <115.>;
+			turn rfoot to x-axis <20.> speed <115.>;
+			sleep 700;
+			turn rleg to x-axis <20.> speed <105.>;
+			turn rfoot to x-axis <-20.> speed <105.>;
+			move hips to y-axis [0.] speed [2.];
+			sleep 400;
+			move hips to y-axis [1.] speed [2.];
+			turn hips to z-axis <5.> speed <10.0>;
+			turn lthigh to z-axis <-5.> speed <10.0>;
+			turn rthigh to z-axis <-5.> speed <10.0>;
+			turn hips to z-axis <-6.> speed <5.0>;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = 0;
+	Bmoving = FALSE;
+	Baiming = FALSE;
+	gun_1 = 0;
+	msl_1 = 0;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	Bmoving = TRUE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script walk();
+}
+
+StopMoving()
+{
+	Bmoving = FALSE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	turn lthigh to x-axis <0.> speed <100.>;
+	turn rthigh to x-axis <0.> speed <100.>;
+	turn lleg to x-axis <0.> speed <200.>;
+	turn rleg to x-axis <0.> speed <200.>;
+	turn lthigh to z-axis <0.> speed <100.>;
+	turn rthigh to z-axis <0.> speed <100.>;
+	turn lleg to z-axis <0.> speed <200.>;
+	turn rleg to z-axis <0.> speed <200.>;
+	move hips to y-axis [0.] speed [40.];
+	turn hips to z-axis <0.> now;
+	turn rfoot2 to x-axis <0.> speed <200.>;
+	turn lfoot2 to x-axis <0.> speed <200.>;
+	turn rfoot to x-axis <0.> speed <200.>;
+	turn lfoot to x-axis <0.> speed <200.>;
+	turn rfoot2 to z-axis <0.> speed <200.>;
+	turn lfoot2 to z-axis <0.> speed <200.>;
+	turn rfoot to z-axis <0.> speed <200.>;
+	turn lfoot to z-axis <0.> speed <200.>;
+	turn hips to z-axis <0.> speed <200.>;
+}
+
+RestoreAfterDelay()
+{
+	sleep 2500;
+	Baiming = FALSE;
+	turn torso to y-axis <0.> speed <120.0>;
+	turn sleeves to x-axis <0.> speed <90.0>;
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	if (Baiming == FALSE)
+	{
+		turn torso to y-axis heading speed <400.0>;
+		turn sleeves to x-axis <0.> - pitch speed <350.0>;	
+	}
+	else if (heading > (Main_Gun_Heading + 3500) or heading < (Main_Gun_Heading - 3500))
+	{
+		start-script RestoreAfterDelay();
+		return (0);
+	}
+	wait-for-turn torso around y-axis;
+	wait-for-turn sleeves around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon3()
+{
+	++msl_1;
+	if( msl_1 == 2 )
+	{
+		msl_1 = 0;
+	}
+	
+}
+
+QueryWeapon3(piecenum)
+{
+	if( msl_1 == 0 )
+	{
+		 piecenum = rmsl;
+	}
+	if( msl_1 == 1 )
+	{
+		 piecenum = lmsl;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	if (heading > (Main_Gun_Heading + 3500) or heading < (Main_Gun_Heading - 3500))
+	{
+		return (0);
+	}
+	wait-for-turn torso around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = torso;
+}
+
+FireSecondary()
+{	
+	if( gun_1 == 0 )
+	{
+		emit-sfx 1025 from flare1a;
+		move barrel1a to z-axis [-3.] now;
+		sleep 30;
+		move barrel1a to z-axis [0.] speed [5.];
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1025 from flare2a;
+		move barrel2a to z-axis [-3.] now;
+		sleep 30;
+		move barrel2a to z-axis [0.] speed [5.];
+	}
+	if( gun_1 == 2 )
+	{
+		emit-sfx 1025 from flare3a;
+		move barrel3a to z-axis [-3.] now;
+		sleep 30;
+		move barrel3a to z-axis [0.] speed [5.];
+	}
+	if( gun_1 == 3 )
+	{
+		emit-sfx 1025 from flare4a;
+		move barrel4a to z-axis [-3.] now;
+		sleep 30;
+		move barrel4a to z-axis [0.] speed [5.];
+	}
+	if( gun_1 == 4 )
+	{
+		emit-sfx 1025 from flare5a;
+		move barrel5a to z-axis [-3.] now;
+		sleep 30;
+		move barrel5a to z-axis [0.] speed [5.];
+	}
+	if( gun_1 == 5 )
+	{
+		emit-sfx 1025 from flare6a;
+		move barrel6a to z-axis [-3.] now;
+		sleep 30;
+		move barrel6a to z-axis [0.] speed [5.];
+	}
+	if( gun_1 == 6 )
+	{
+		emit-sfx 1025 from flare7a;
+		move barrel7a to z-axis [-3.] now;
+		sleep 30;
+		move barrel7a to z-axis [0.] speed [5.];
+	}
+	++gun_1;
+	if( gun_1 == 7 )
+	{
+		gun_1 = 0;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare2a;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = flare3a;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = flare4a;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = flare5a;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = flare6a;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = flare7a;
+	}
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	Baiming = TRUE;
+	turn torso to y-axis heading speed <400.0>;
+	turn sleeves to x-axis <0.> - pitch speed <350.0>;
+	Main_Gun_Heading = heading;
+	wait-for-turn torso around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare1b;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = flare3b;
+	}
+	if( gun_2 == 3 )
+	{
+		piecenum = flare4b;
+	}
+	if( gun_2 == 4 )
+	{
+		piecenum = flare5b;
+	}
+	if( gun_2 == 5 )
+	{
+		piecenum = flare6b;
+	}
+	if( gun_2 == 6 )
+	{
+		piecenum = flare7b;
+	}
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = torso;
+}
+
+FireWeapon1()
+{
+	if( gun_2 == 0 )
+	{
+		emit-sfx 1025 from flare1b;
+		move barrel1b to z-axis [-3.] now;
+		sleep 30;
+		move barrel1b to z-axis [0.] speed [5.];
+	}
+	if( gun_2 == 1 )
+	{
+		emit-sfx 1025 from flare2b;
+		move barrel2b to z-axis [-3.] now;
+		sleep 30;
+		move barrel2b to z-axis [0.] speed [5.];
+	}
+	if( gun_2 == 2 )
+	{
+		emit-sfx 1025 from flare3b;
+		move barrel3b to z-axis [-3.] now;
+		sleep 30;
+		move barrel3b to z-axis [0.] speed [5.];
+	}
+	if( gun_2 == 3 )
+	{
+		emit-sfx 1025 from flare4b;
+		move barrel4b to z-axis [-3.] now;
+		sleep 30;
+		move barrel4b to z-axis [0.] speed [5.];
+	}
+	if( gun_2 == 4 )
+	{
+		emit-sfx 1025 from flare5b;
+		move barrel5b to z-axis [-3.] now;
+		sleep 30;
+		move barrel5b to z-axis [0.] speed [5.];
+	}
+	if( gun_2 == 5 )
+	{
+		emit-sfx 1025 from flare6b;
+		move barrel6b to z-axis [-3.] now;
+		sleep 30;
+		move barrel6b to z-axis [0.] speed [5.];
+	}
+	if( gun_2 == 6 )
+	{
+		emit-sfx 1025 from flare7b;
+		move barrel7b to z-axis [-3.] now;
+		sleep 30;
+		move barrel7b to z-axis [0.] speed [5.];
+	}
+	++gun_1;
+	if( gun_1 == 7 )
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = torso;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	if (heading > (Main_Gun_Heading + 5000) or heading < (Main_Gun_Heading - 5000))
+	{
+		return (0);
+	}
+	wait-for-turn torso around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+QueryWeapon4(piecenum)
+{
+	 piecenum = lmultimsl;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = torso;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	if (heading > (Main_Gun_Heading + 5000) or heading < (Main_Gun_Heading - 5000))
+	{
+		return (0);
+	}
+	wait-for-turn torso around y-axis;
+	wait-for-turn sleeves around x-axis;
+	return (1);
+}
+
+QueryWeapon5(piecenum)
+{
+	 piecenum = rmultimsl;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hips type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		explode lthigh type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		explode rthigh type NOHEATCLOUD;
+		explode torso type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hips type NOHEATCLOUD | FALL;
+		explode lleg type NOHEATCLOUD | FALL;
+		explode lthigh type NOHEATCLOUD | FALL;
+		explode rleg type NOHEATCLOUD | FALL;
+		explode rthigh type NOHEATCLOUD | FALL;
+		explode torso type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hips type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode torso type NOHEATCLOUD;
+	return (corpsetype);
+}

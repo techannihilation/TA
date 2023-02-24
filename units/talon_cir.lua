@@ -19,7 +19,6 @@ return {
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "47 80 47",
-
 		collisionvolumetype = "CylY",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Missile Battery",
@@ -167,7 +166,6 @@ return {
 				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_CIR",
 				onlytargetcategory = "VTOL",
-
 			},
 		},
 	},

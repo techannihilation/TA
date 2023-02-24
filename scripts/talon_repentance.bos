@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, sleeves, barrel, flare, stats, cat,
+piece  base, body, turret, sleeves, barrel, flare, cat,
        lturret, rturret, rsleeves, lsleeves,
        flturret, frturret, frsleeves, flsleeves,
        rminigun, lminigun, rflare, lflare, 
@@ -355,7 +355,6 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode barrel type  NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
-		explode stats type NOHEATCLOUD;
 		explode sleeves type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		explode lturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
@@ -367,7 +366,6 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode barrel type SHATTER | FALL | NOHEATCLOUD;
 		explode body type NOHEATCLOUD;
-		explode stats type SHATTER | FALL | NOHEATCLOUD;
 		explode sleeves type SHATTER | NOHEATCLOUD;
 		explode turret type SHATTER | FALL | NOHEATCLOUD;
 		explode lturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
@@ -377,7 +375,6 @@ Killed(severity, corpsetype)
 	corpsetype = 3;
 	explode barrel type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode body type NOHEATCLOUD;
-	explode stats type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode sleeves type SHATTER | NOHEATCLOUD;
 	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode lturret type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
