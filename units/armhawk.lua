@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL FIGHTER MOBILE VTOL",
+		category = "ALL MOBILE VTOL",
 		collide = false,
 		cruisealt = 160,
 		defaultmissiontype = "VTOL_standby",

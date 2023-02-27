@@ -1,3 +1,9 @@
+ 4.44 => 4.45
+2023-02-28
+
+ Improvment :
+ - Delete Priority Air Class Armor. Fighter lost the 100% more damage vs bombers and transporters.
+
 4.43 => 4.44
 2023-02-24
 
