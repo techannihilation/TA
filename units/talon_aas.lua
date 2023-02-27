@@ -155,8 +155,8 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					
+					air = 100,
 				},
 			},
 			mobileflak = {
@@ -189,8 +189,8 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
-					priority_air = 160,
-					unclassed_air = 160,
+					
+					air = 160,
 				},
 			},
 		},

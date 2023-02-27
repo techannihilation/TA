@@ -292,7 +292,7 @@ return {
 				damage = {
 					default = 80,
 					subs = 5,
-					unclassed_air = 160,
+					air = 160,
 				},
 			},
 			corcomsealaser = {

@@ -132,10 +132,9 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					areoship = 105,
+					areoship = 100,
 					default = 5,
-					priority_air = 840,
-					unclassed_air = 420,
+					air = 400,
 				},
 			},
 			supermissile = {
@@ -174,8 +173,7 @@ return {
 				damage = {
 					areoship = 200,
 					default = 5,
-					priority_air = 1600,
-					unclassed_air = 800,
+					air = 800,
 				},
 			},
 		},

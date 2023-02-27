@@ -133,8 +133,8 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					priority_air = 1500,
-					unclassed_air = 1500,
+					
+					air = 1500,
 				},
 			},
 			armvtol_advmissile = {
@@ -174,8 +174,8 @@ return {
 				damage = {
 					areoship = 45,
 					default = 5,
-					priority_air = 240,
-					unclassed_air = 180,
+					
+					air = 180,
 				},
 			},
 			missile_turret = {
@@ -217,8 +217,8 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					priority_air = 120,
-					unclassed_air = 120,
+					
+					air = 120,
 				},
 			},
 		},

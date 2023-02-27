@@ -144,8 +144,8 @@ return {
 				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
-				range = 650,
-				reloadtime = 1.5,
+				range = 600,
+				reloadtime = 2,
 				rgbcolor = "1.000 0.000 0.000",
 				smoketrail = true,
 				soundhitdry = "xplosml2",
@@ -166,10 +166,9 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
 				damage = {
-					areoship = 30,
+					areoship = 20,
 					default = 5,
-					priority_air = 120,
-					unclassed_air = 120,
+					air = 80,
 				},
 			},
 			arm_lightningxl = {

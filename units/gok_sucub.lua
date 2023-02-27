@@ -119,8 +119,7 @@ return {
 				damage = {
 				areoship = 30,
 				default = 5,
-				priority_air = 140,
-				unclassed_air = 70,
+				air = 70,
 				},
 			},
 		},

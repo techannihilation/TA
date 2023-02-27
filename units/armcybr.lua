@@ -149,9 +149,9 @@ return {
 				damage = {
 					commanders = 1500,
 					default = 7500,
-					priority_air = 750,
+					
 					subs = 3750,
-					unclassed_air = 750,
+					air = 750,
 				},
 			},
 		},

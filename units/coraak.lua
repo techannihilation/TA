@@ -143,8 +143,7 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					priority_air = 500,
-					unclassed_air = 500,
+					air = 500,
 				},
 			},
 			coraakbot_missile2 = {
@@ -185,8 +184,7 @@ return {
 				damage = {
 					areoship = 7.5,
 					default = 5,
-					priority_air = 30,
-					unclassed_air = 30,
+					air = 30,
 				},
 			},
 			coraakbot_missile1 = {
@@ -228,8 +226,7 @@ return {
 				damage = {
 					areoship = 15,
 					default = 5,
-					priority_air = 60,
-					unclassed_air = 60,
+					air = 60,
 				},
 			},
 		},

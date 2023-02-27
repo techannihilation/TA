@@ -158,8 +158,8 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					priority_air = 80,
-					unclassed_air = 80,
+					
+					air = 80,
 				},
 			},
 			armpt_laser = {

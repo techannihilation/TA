@@ -166,9 +166,8 @@ return {
 				weaponvelocity = 1200,
 				damage = {
 					areoship = 20,
-					default = 5,
-					priority_air = 80,
-					unclassed_air = 80,
+					default = 5,					
+					air = 80,
 				},
 			},
 			arm_lightning = {

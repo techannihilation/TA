@@ -1,6 +1,6 @@
 return {
 
-	priority_air = {
+	air = {
 		--Bombers
 		"armcybr",
 		"armlance",
@@ -27,6 +27,7 @@ return {
 		"gok_dirgesinger",
 		"gok_hookah",
 		"gok_nurgle",
+
 		--Transporters
 		"armatlas",
 		"armdfly",
@@ -47,9 +48,7 @@ return {
 		"gok_chariot",
 		"gok_wordbearer",
 		"gok_benne",
-	},
 
-	unclassed_air = {
 	--Fighters
 	"armwolf",
 	"armfig",

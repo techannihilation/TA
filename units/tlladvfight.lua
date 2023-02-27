@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Falcon",
-		
+
 		objectname = "tlladvfight",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -123,8 +123,8 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					priority_air = 240,
-					unclassed_air = 120,
+
+					air = 120,
 				},
 			},
 			corvtol_advmissile = {
@@ -163,8 +163,7 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-					priority_air = 200,
-					unclassed_air = 100,
+					air = 100,
 				},
 			},
 		},

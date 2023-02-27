@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Vamp",
-		
+
 		objectname = "CORVAMP",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -122,8 +122,7 @@ return {
 				damage = {
 					areoship = 17.5,
 					default = 5,
-					priority_air = 140,
-					unclassed_air = 70,
+					air = 70,
 				},
 			},
 		},

@@ -151,8 +151,8 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-					priority_air = 250,
-					unclassed_air = 250,
+					
+					air = 250,
 				},
 			},
 			advanced_missile = {
@@ -190,8 +190,8 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					priority_air = 1500,
-					unclassed_air = 1500,
+					
+					air = 1500,
 				},
 			},
 			talon_msl = {
@@ -236,8 +236,8 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					
+					air = 100,
 				},
 			},
 		},

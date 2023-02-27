@@ -266,7 +266,7 @@ return {
 				damage = {
 					default = 60,
 					subs = 5,
-					unclassed_air = 120,
+					air = 120,
 				},
 			},
 			tal_sealaser = {

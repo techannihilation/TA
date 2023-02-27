@@ -146,8 +146,8 @@ return {
 				damage = {
 					areoship = 625,
 					default = 5,
-					priority_air = 2500,
-					unclassed_air = 2500,
+					
+					air = 2500,
 				},
 			},
 			dragon_breath_missile = {
@@ -187,8 +187,8 @@ return {
 				damage = {
 					areoship = 187.5,
 					default = 5,
-					priority_air = 750,
-					unclassed_air = 750,
+					
+					air = 750,
 				},
 			},
 		},

@@ -144,8 +144,8 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					priority_air = 1500,
-					unclassed_air = 1500,
+					
+					air = 1500,
 				},
 			},
 			gok_flak = {
@@ -181,8 +181,8 @@ return {
 				damage = {
 					areoship = 625,
 					default = 5,
-					priority_air = 2500,
-					unclassed_air = 2500,
+					
+					air = 2500,
 				},
 			},
 		},

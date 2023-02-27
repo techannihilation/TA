@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Shu",
-		
+
 		objectname = "tllshu",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -103,7 +103,7 @@ return {
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 620,
-				reloadtime = 0.6,
+				reloadtime = 0.5,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
@@ -119,10 +119,9 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					areoship = 105,
+					areoship = 87.5,
 					default = 5,
-					priority_air = 840,
-					unclassed_air = 420,
+					air = 350,
 				},
 			},
 		},

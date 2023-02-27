@@ -210,8 +210,8 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					priority_air = 500,
-					unclassed_air = 500,
+					
+					air = 500,
 				},
 			},
 			arm_bats = {

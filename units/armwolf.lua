@@ -120,8 +120,7 @@ return {
 				damage = {
 					areoship = 50,
 					default = 5,
-					priority_air = 400,
-					unclassed_air = 200,
+					air = 200,
 				},
 			},
 			corvtol_advmissile1 = {
@@ -160,8 +159,7 @@ return {
 				damage = {
 					areoship = 100,
 					default = 5,
-					priority_air = 800,
-					unclassed_air = 400,
+					air = 400,
 				},
 			},
 		},

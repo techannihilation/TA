@@ -155,9 +155,8 @@ return {
 				weaponvelocity = 1550,
 				damage = {
 					areoship = 56.25,
-					default = 5,
-					priority_air = 225,
-					unclassed_air = 225,
+					default = 5,					
+					air = 225,
 				},
 			},
 			talon_starburst = {
@@ -199,8 +198,7 @@ return {
 				damage = {
 					areoship = 45,
 					default = 5,
-					priority_air = 180,
-					unclassed_air = 180,
+					air = 180,
 				},
 			},
 		},

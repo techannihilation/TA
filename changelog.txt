@@ -397,7 +397,7 @@ Balance :
  - Add New Model for T3 Mex Talon
  - Add T2 Mex Cloackable & Stealth for Arm (No Amphibious)
  - Delete special damage vs experimental units (T3-T4-T5-T6). Weapon will now inflict max damage * 0.8 to all units (default damage = 0.8 * special damage except some units). This way to add special feature (sniper or flamer protection..)
- - T5 Tzenth Bomber and Gold Gunship Talon : Armor = unclassed_air. Can be targeted by ground units.
+ - T5 Tzenth Bomber and Gold Gunship Talon : Armor = air. Can be targeted by ground units.
 
 Fix :
  - Gok Silo Limit added and fixed to 12
@@ -1024,7 +1024,7 @@ Balance :
 
 Improvment :
  - Rework all CATEGORIES. (some units could not shoot on other (air vs ground, ship vs hover...). Please, report issue https://github.com/techannihilation/TA/issues/1640, if you see)
- - Hero can be attacked by all AA (damage = unclassed_air * 0.25)
+ - Hero can be attacked by all AA (damage = air * 0.25)
  Hover Core Adonis : Weapon model changed.
  - Add T4 AA for Talon
  - Add Saturn and Dark Kronos to T4 Lab

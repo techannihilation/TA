@@ -143,8 +143,8 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					priority_air = 500,
-					unclassed_air = 500,
+
+					air = 500,
 				},
 			},
 			armaakbot_missile = {
@@ -190,8 +190,8 @@ return {
 				damage = {
 					areoship = 11.25,
 					default = 5,
-					priority_air = 45,
-					unclassed_air = 45,
+
+					air = 45,
 				},
 			},
 		},

@@ -149,8 +149,8 @@ return {
 				damage = {
 					areoship = 162.5,
 					default = 5,
-					priority_air = 650,
-					unclassed_air = 650,
+					
+					air = 650,
 				},
 			},
 			devastatorrockets = {

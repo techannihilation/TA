@@ -120,8 +120,8 @@ return {
 					damage = {
 					areoship = 100,
 					default = 5,
-					priority_air = 800,
-					unclassed_air = 400,
+
+					air = 400,
 				},
 			},
 			armvtol_advmissile1 = {
@@ -141,8 +141,8 @@ return {
 				model = "weapon_missile",
 				name = "GuidedMissiles",
 				noselfdamage = true,
-				range = 620,
-				reloadtime = 0.6,
+				range = 600,
+				reloadtime = 0.5,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
@@ -158,10 +158,9 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
 				damage = {
-					areoship = 112.5,
+					areoship = 100,
 					default = 5,
-					priority_air = 900,
-					unclassed_air = 450,
+					air = 400,
 				},
 			},
 		},

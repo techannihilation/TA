@@ -220,8 +220,8 @@ return {
 				damage = {
 				areoship = 62.5,
 				default = 5,
-				priority_air = 250,
-				unclassed_air = 250,
+				
+				air = 250,
 				},
 			},
 			rocket = {

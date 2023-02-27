@@ -148,8 +148,8 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
-					priority_air = 160,
-					unclassed_air = 160,
+					
+					air = 160,
 				},
 			},
 			gok_aa_missile = {
@@ -191,8 +191,8 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					priority_air = 500,
-					unclassed_air = 500,
+					
+					air = 500,
 				},
 			},
 		},

@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "Echelon",		
+		name = "Echelon",
 		objectname = "talon_echelon",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -119,8 +119,7 @@ return {
 				damage = {
 				areoship = 30,
 				default = 5,
-				priority_air = 240,
-				unclassed_air = 120,
+				air = 120,
 				},
 			},
 		},

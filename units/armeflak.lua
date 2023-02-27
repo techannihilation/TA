@@ -148,8 +148,8 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					priority_air = 500,
-					unclassed_air = 500,
+					
+					air = 500,
 				},
 			},
 			aa_starburst = {
@@ -191,8 +191,8 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-					priority_air = 100,
-					unclassed_air = 100,
+					
+					air = 100,
 				},
 			},
 		},

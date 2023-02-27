@@ -144,8 +144,8 @@ return {
 				damage = {
 					areoship = 60,
 					default = 5,
-					priority_air = 240,
-					unclassed_air = 240,
+					
+					air = 240,
 				},
 			},
 			advanced_missile = {
@@ -182,8 +182,8 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					priority_air = 1500,
-					unclassed_air = 1500,
+					
+					air = 1500,
 				},
 			},
 		},
