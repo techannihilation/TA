@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 199,
 		builder = false,
 		buildpic = "tllspy.dds",
-		buildtime = 20345,
+		buildtime = 20000,
 		canguard = false,
 		canmove = true,
 		canpatrol = true,
@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Sneak",
 		noautofire = false,
-		
+
 		objectname = "tllspy",
 		onoffable = true,
 		radaremitheight = 28,

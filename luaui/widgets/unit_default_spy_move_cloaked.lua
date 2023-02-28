@@ -14,6 +14,7 @@ local spies  = {
 	[UnitDefNames.armspy.id] = true,
 	[UnitDefNames.corspy.id] = true,
 	[UnitDefNames.tllspy.id] = true,
+	[UnitDefNames.gok_spy.id] = true,
 }
 
 local GetSelectedUnitsSorted = Spring.GetSelectedUnitsSorted
@@ -61,7 +62,7 @@ function widget:Update(dt)
 				if selectedUnittypes[spyDefID] then
 					for _,unitID in pairs(selectedUnittypes[spyDefID]) do
 						if GetUnitIsCloaked(unitID) then
-							spySelected = true	
+							spySelected = true
 						end
 					end
 				end

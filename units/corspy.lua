@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 166,
 		builder = false,
 		buildpic = "corspy.dds",
-		buildtime = 22247,
+		buildtime = 20000,
 		canguard = false,
 		canmove = true,
 		canpatrol = true,
@@ -39,7 +39,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Parasite",
 		noautofire = false,
-		
 		objectname = "CORSPY",
 		onoffable = true,
 		radaremitheight = 25,

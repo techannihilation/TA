@@ -1,8 +1,10 @@
  4.44 => 4.45
-2023-02-28
+2023-02-29
 
  Improvment :
  - Delete Priority Air Class Armor. Fighter lost the 100% more damage vs bombers and transporters.
+ - Add Gok Spy
+
 
 4.43 => 4.44
 2023-02-24

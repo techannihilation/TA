@@ -70,6 +70,7 @@ local spies  = {
     [UnitDefNames.armspy.id] = true,
     [UnitDefNames.corspy.id] = true,
     [UnitDefNames.tllspy.id] = true,
+    [UnitDefNames.gok_spy.id] = true,
 }
 
 local holdfireunits  = {

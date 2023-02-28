@@ -59,8 +59,8 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.136978149414 4.50317382814e-05 -6.27960205078",
-				collisionvolumescales = "28.490814209 34.7166900635 16.3992004395",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "28 34 16",
 				collisionvolumetype = "Box",
 				damage = 490,
 				description = "Eraser Wreckage",
@@ -69,7 +69,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 60,
-				object = "gok_mradk_DEAD",
+				object = "gok_mradk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -1,0 +1,173 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hips, lleg, lboot, rleg, rboot, torso;
+
+static-var  bMoving;
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		moving = bMoving;
+		if( moving )
+		{
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <101.>;
+					turn lboot to x-axis <30.> speed <101.>;
+					turn rleg to x-axis <-75.> speed <152.>;
+					turn rboot to x-axis <45.> speed <153.>;
+					move hips to y-axis [2.] speed [16.];
+					turn torso to x-axis <0.> speed <40.>;
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <45.> speed <230.>;
+					turn lboot to x-axis <15.> speed <120.>;
+					turn rleg to x-axis <-90.> speed <120.>;
+					turn rboot to x-axis <90.> speed <112.>;
+					move hips to y-axis [0.] speed [16.];
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <15.> speed <101.>;
+					turn lboot to x-axis <-30.> speed <112.>;
+					turn rleg to x-axis <-15.> speed <105.>;
+					turn rboot to x-axis <30.> speed <120.>;
+					move hips to y-axis [2.] speed [16.];
+					turn torso to x-axis <15.> speed <120.>;
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-75.> speed <152.>;
+					turn lboot to x-axis <45.> speed <102.>;
+					turn rleg to x-axis <15.> speed <101.>;
+					turn rboot to x-axis <30.> speed <101.>;
+					move hips to y-axis [2.] speed [16.];
+					turn torso to x-axis <0.> speed <40.>;
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-90.> speed <120.>;
+					turn lboot to x-axis <90.> speed <112.>;
+					turn rleg to x-axis <45.> speed <101.>;
+					turn rboot to x-axis <15.> speed <120.>;
+					move hips to y-axis [0.] speed [16.];
+					sleep 350;
+				}
+				if( bMoving )
+				{
+					turn lleg to x-axis <-15.> speed <120.>;
+					turn lboot to x-axis <30.> speed <90.>;
+					turn rleg to x-axis <15.> speed <101.>;
+					turn rboot to x-axis <-30.> speed <112.>;
+					move hips to y-axis [2.] speed [16.];
+					turn torso to x-axis <15.> speed <120.>;
+					sleep 350;
+				}
+			
+		justmoved = TRUE;
+		}
+		if( !moving )
+		{
+			if( justmoved )
+			{
+				turn lleg to x-axis <0.> speed <112.>;
+				turn lboot to x-axis <0.> speed <112.>;
+				turn rleg to x-axis <0.> speed <112.>;
+				turn rboot to x-axis <0.> speed <112.>;
+				move hips to y-axis [0.] speed [16.];
+				turn torso to x-axis <0.> speed <40.>;
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hips type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hips type NOHEATCLOUD;
+		explode torso type SHATTER | NOHEATCLOUD;
+		explode lleg type FALL | NOHEATCLOUD;
+		explode rboot type FALL | NOHEATCLOUD;
+		explode lboot type FALL | NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hips type NOHEATCLOUD;
+	explode torso type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rboot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lboot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}
