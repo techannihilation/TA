@@ -54,8 +54,8 @@ return {
 		workertime = 400,
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
-			[1] = "talon_ack1",
-			[2] = "talon_ack",
+			[1] = "talon_ack",
+			[2] = "talon_engineerk",
 			[3] = "talon_herison",
 			[4] = "talon_husher",
 			[5] = "talon_wolf",

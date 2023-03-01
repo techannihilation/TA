@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, hips, body, jammer, rshoulder, rarm, rlathe, lshoulder,
-       larm, llathe, rthigh, rfoot, lthigh, lfoot, lspray, rspray, shield_pos;
+       larm, llathe, rthigh, rfoot, lthigh, lfoot, lspray, rspray;
 
 static-var  bMoving, Shield_Toggle, Static_Var_2, Static_Var_3;
 
@@ -176,29 +176,6 @@ Create()
 	dont-shade jammer;
 	start-script walk();
 }
-
-AimFromPrimary(piecenum)
-{
-	piecenum = shield_pos;
-}
-
-QueryPrimary(piecenum)
-{
-	piecenum = shield_pos;
-}
-
-AimPrimary(heading, pitch)
-{
-	if( Shield_Toggle )
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-
 
 SweetSpot(piecenum)
 {

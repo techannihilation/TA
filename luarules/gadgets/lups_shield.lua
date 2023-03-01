@@ -121,7 +121,6 @@ armfgate1 = true,
 armpraet = true,
 armbeetle = true,
 armexo = true,
-armsmc = true,
 armshieldgen = true,
 armvengence = true,
 --The lost legacy

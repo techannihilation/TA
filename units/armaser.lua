@@ -39,7 +39,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Eraser",
 		noautofire = false,
-		
 		objectname = "ARMASER",
 		onoffable = true,
 		radardistancejam = 450,

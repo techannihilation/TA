@@ -19,6 +19,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Tech Level 3",
 		energymake = 50,
+		energyuse = 100,
 		energystorage = 100,
 		explodeas = "BIG_UNITEX",
 		footprintx = 4,
@@ -37,11 +38,13 @@ return {
 		metalstorage = 100,
 		mobilestandorders = 1,
 		movementclass = "KBOT4",
-		name = "Shielded Construction Kbot",
+		name = "Jammer Construction Kbot",
+		onoffable = true,
 		noautofire = false,
 		objectname = "armsmc",
 		radaremitheight = 34,
 		seismicsignature = 0,
+		radardistancejam = 450,
 		reclaimspeed = 240,
 		repairspeed = 240,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -80,9 +83,6 @@ return {
 		customparams = {
 			buildpic = "armsmc.dds",
 			faction = "ARM",
-			shield_emit_height = 30,
-			shield_power = 2000,
-			shield_radius = 150,
 		},
 		featuredefs = {
 			dead = {
@@ -153,32 +153,6 @@ return {
 			},
 			select = {
 				[1] = "kbcorsel",
-			},
-		},
-		weapondefs = {
-			repulsor2 = {
-				name = "PersonalShield",
-				shieldbadcolor = "1 0.2 0.2 0.35",
-				shieldenergyuse = 300,
-				shieldforce = 8,
-				shieldgoodcolor = "0.2 1 0.2 0.35",
-				shieldintercepttype = 1,
-				shieldpower = 2000,
-				shieldpowerregen = 30,
-				shieldpowerregenenergy = 300,
-				shieldradius = 150,
-				shieldrepulser = true,
-				smartshield = true,
-				visibleshieldrepulse = true,
-				weapontype = "Shield",
-				damage = {
-					default = 100,
-				},
-			},
-		},
-		weapons = {
-			[1] = {
-				def = "REPULSOR2",
 			},
 		},
 	},
