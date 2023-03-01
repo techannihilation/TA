@@ -1,5 +1,5 @@
  4.44 => 4.45
-2023-02-29
+2023-03-02
 
  Improvment :
  - Delete Priority Air Class Armor. Fighter lost the 100% more damage vs bombers and transporters.
@@ -7,7 +7,7 @@
  - Rework T2 & T3 Kbot Talon model
 
   Next work :
-  - Spy Talon Kbot
+  - Gok Commando
   - Gok TSAR Rework
 
 4.43 => 4.44

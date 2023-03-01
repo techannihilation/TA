@@ -57,11 +57,11 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				collisionvolumeoffsets = "0.979118347168 -0.453806965332 -0.796119689941",
-				collisionvolumescales = "30.1392364502 18.4953460693 29.797164917",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "30 18 29",
 				collisionvolumetype = "Box",
 				damage = 484,
-				description = "Peewee Wreckage",
+				description = "Infantry Wreckage",
 				energy = 0,
 				featuredead = "heap",
 				footprintx = 2,

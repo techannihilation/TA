@@ -64,8 +64,8 @@ return {
 		workertime = 1600,
 		buildoptions = {
 			[1] = "talon_wyvern",
-			--[2] = "armspy",
-			--[3] = "armeyes",
+			[2] = "talon_spy",
+			[3] = "talon_eye",
 			[4] = "talon_rad",
 			[5] = "talon_conspiracy",
 			[6] = "talon_fort",
