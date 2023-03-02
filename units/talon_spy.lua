@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Radar-Invisible Spy Kbot",
+		description = "Invisible Spy Kbot",
 		footprintx = 1,
 		footprintz = 1,
 		idleautoheal = 5,

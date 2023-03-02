@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Radar-Invisible Spy Kbot",
+		description = "Invisible Spy Kbot",
 		footprintx = 2,
 		footprintz = 2,
 		idleautoheal = 5,
@@ -39,7 +39,6 @@ return {
 		movementclass = "KBOT2",
 		name = "Infiltrator",
 		noautofire = false,
-
 		objectname = "ARMSPY",
 		onoffable = true,
 		radaremitheight = 25,
