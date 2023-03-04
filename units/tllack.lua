@@ -74,7 +74,7 @@ return {
 			[18] = "tllantinuke",
 			[19] = "tllsilo",
 			[20] = "tlllrpt",
-			[21] = "tllemplrpt",
+			[21] = "tll_emp_lrpt",
 			[22] = "tll_hydre",
 		},
 		customparams = {

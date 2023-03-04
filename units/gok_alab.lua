@@ -1,7 +1,5 @@
 return {
 	gok_alab = {
-		acceleration = 0,
-		brakerate = 0,
 		buildangle = 1024,
 		buildcostenergy = 29760,
 		buildcostmetal = 3573,
@@ -46,9 +44,6 @@ return {
 		sightdistance = 300,
 		standingfireorder = 2,
 		standingmoveorder = 1,
-		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 0,
-		turnrate = 0,
 		unitname = "gok_alab",
 		usebuildinggrounddecal = true,
 		usepiececollisionvolumes = true,
