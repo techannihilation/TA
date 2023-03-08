@@ -1,3 +1,13 @@
+4.45 => 4.46
+2023-03-09
+
+Balance :
+ - Decrease range for TLL Leopard Mortal T2 Vehicle
+ - Decrease Damage for Tremor 1000=>750/s
+
+Improvment :
+- Add T4 Missile Turret Talon
+
  4.44 => 4.45
 2023-03-02
 

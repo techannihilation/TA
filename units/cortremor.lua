@@ -146,7 +146,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -3,
 				range = 1500,
-				reloadtime = 0.35,
+				reloadtime = 0.4,
 				rgbcolor = "0.7 0.37 0",
 				separation = 0.45,
 				size = 2.26,
@@ -160,7 +160,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 425,
 				damage = {
-					default = 350,
+					default = 300,
 					subs = 5,
 				},
 			},

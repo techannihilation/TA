@@ -155,7 +155,6 @@ return {
 				weaponvelocity = 900,
 				wobble = 1200,
 				damage = {
-					commanders = 1250,
 					default = 2500,
 					subs = 5,
 				},

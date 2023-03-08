@@ -127,7 +127,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Mortar Cannon",
 				nogap = 1,
-				range = 1800,
+				range = 1500,
 				reloadtime = 2,
 				rgbcolor = "0.9 0.9 0.2",
 				separation = 0.45,
@@ -143,7 +143,7 @@ return {
 				weaponvelocity = 500,
 				wobble = 1000,
 				damage = {
-					default = 500,
+					default = 450,
 					subs = 5,
 				},
 			},
@@ -185,7 +185,6 @@ return {
 				weaponvelocity = 510,
 				wobble = 2000,
 				damage = {
-					commanders = 150,
 					default = 300,
 					subs = 5,
 				},
