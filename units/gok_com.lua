@@ -98,7 +98,7 @@ return {
 			[19] = "gok_tide",
 			[20] = "gok_fmkr",
 			--[21] = "",
-			--[22] = "armdl",
+			[22] = "gok_dl",
 			[23] = "gok_sy",
 			[24] = "gok_sonar",
 			[25] = "gok_frad",

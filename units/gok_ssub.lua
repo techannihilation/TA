@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "MINOR Submarine",
+		description = "Scout Submarine",
 		explodeas = "FLEA_EX",
 		firestandorders = 1,
 		footprintx = 2,

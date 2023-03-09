@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Heavy Artillery Vehicle",
+		description = "Heavy Artillery Vehicle (Amphibious)",
 		downloadable = 1,
 		explodeas = "CRAW_BLAST",
 		firestandorders = 1,

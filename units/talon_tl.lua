@@ -126,7 +126,7 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 320,
 				damage = {
-					default = 280,
+					default = 300,
 				},
 			},
 		},

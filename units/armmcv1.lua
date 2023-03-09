@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Advanced Command Vehicle",
+		description = "Experimental Artillery Vehicle (Amphibious)",
 		downloadable = 1,
 		explodeas = "KROG_BLAST",
 		firestandorders = 1,
