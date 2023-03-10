@@ -8,7 +8,7 @@ Balance :
 
 Improvment :
 - Add T4 Missile Turret Talon
-- Add DepthLuancher for Gok
+- Add DepthLuancher for Gok & Talon
 
  4.44 => 4.45
 2023-03-02
