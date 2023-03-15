@@ -56,11 +56,13 @@ RestoreAfterDelay()
 	turn g1 to z-axis <0.0> speed <180.000000>;
 	turn g3 to z-axis <0.0> speed <180.000000>;
 	sleep 100;	
+	set ARMORED to 1;
 }
 
 Create()
 {
 	gun_1 = 0;
+	set ARMORED to 1;
 	start-script SmokeUnit();
 }
 
@@ -78,7 +80,7 @@ AimPrimary(heading, pitch)
 	wait-for-turn g2 around z-axis;	
 	move tower to y-axis [22.000000] speed [10.000000];
 	wait-for-move tower along y-axis;
-		
+	set ARMORED to 0;	
 	turn turret to y-axis heading speed <80.000000>;
 	turn sleeves to x-axis <0.000000> - pitch speed <40.000000>;
 	wait-for-turn turret around y-axis;

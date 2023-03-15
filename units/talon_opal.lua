@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 32,
 		mobilestandorders = 1,
 		movementclass = "HAKBOT4",
-		name = "talon_opal",
+		name = "Opal",
 		noautofire = false,
 		objectname = "talon_opal",
 		radaremitheight = 37,

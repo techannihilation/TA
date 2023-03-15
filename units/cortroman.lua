@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 75,
 		mobilestandorders = 1,
 		movementclass = "HKBOT3",
-		name = "cortroman",
+		name = "Troman",
 		noautofire = false,
 		objectname = "cortroman",
 		radardistance = 0,

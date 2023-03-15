@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 32,
 		mobilestandorders = 1,
 		movementclass = "HAKBOT4",
-		name = "corshiva",
+		name = "Shiva",
 		noautofire = false,
 		objectname = "corshiva",
 		radaremitheight = 37,

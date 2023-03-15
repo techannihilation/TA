@@ -256,25 +256,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	dont-cache arm;
-	dont-cache barrel;
-	dont-cache case1;
-	dont-cache case2;
-	dont-cache case3;
-	dont-cache case4;
-	dont-cache case5;
-	dont-cache case6;
-	dont-cache container1;
-	dont-cache container2;
-	dont-cache door1;
-	dont-cache door2;
-	dont-cache energy;
-	dont-cache flare;
-	dont-cache gun;
-	dont-cache plate1;
-	dont-cache plate2;
-	dont-cache radar;
-	dont-cache turret;
 	set ARMORED to 0;
 	if( !Static_Var_1 )
 	{
@@ -292,25 +273,6 @@ Stop()
 	wait-for-turn radar around x-axis;
 	call-script deactivatescr();
 	set ARMORED to 1;
-	cache arm;
-	cache barrel;
-	cache case1;
-	cache case2;
-	cache case3;
-	cache case4;
-	cache case5;
-	cache case6;
-	cache container1;
-	cache container2;
-	cache door1;
-	cache door2;
-	cache energy;
-	cache flare;
-	cache gun;
-	cache plate1;
-	cache plate2;
-	cache radar;
-	cache turret;
 }
 
 InitState()

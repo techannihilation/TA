@@ -1,5 +1,5 @@
 4.45 => 4.46
-2023-03-09
+2023-03-16
 
 Balance :
  - Decrease range for TLL Leopard Mortal T2 Vehicle
@@ -9,6 +9,9 @@ Balance :
 Improvment :
 - Add T4 Missile Turret Talon
 - Add DepthLuancher for Gok & Talon
+
+Fix :
+ - T4 Spider Constructor ARM Movement class
 
  4.44 => 4.45
 2023-03-02

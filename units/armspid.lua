@@ -37,7 +37,7 @@ return {
 		metalmake = 2,
 		metalstorage = 100,
 		mobilestandorders = 1,
-		movementclass = "HTKBOT4",
+		movementclass = "HTKBOT6",
 		name = "All-Terrain Construction Kbot",
 		noautofire = false,
 		objectname = "armspid",
