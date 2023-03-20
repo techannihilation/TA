@@ -1270,8 +1270,6 @@ end
 local gameFrame;
 local SYNCED = SYNCED
 local CallAsTeam = CallAsTeam
-local spairs = spairs
-local snext = snext
 
 local GetGameFrame        = Spring.GetGameFrame
 local GetSpectatingState  = Spring.GetSpectatingState
