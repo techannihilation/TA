@@ -179,7 +179,7 @@ end
 local function changeBlockList()
 	local blockList = SYNCED.SentBlockList
 	if type(blockList) == "table" then
-		for i, v in spairs(blockList) do
+		for i, v in pairs(blockList) do
 			ChangeTextureBlock(v.x, v.z, v.tex)
 		end
 	end
