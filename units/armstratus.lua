@@ -133,7 +133,6 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					
 					air = 1500,
 				},
 			},
@@ -174,7 +173,6 @@ return {
 				damage = {
 					areoship = 45,
 					default = 5,
-					
 					air = 180,
 				},
 			},
@@ -206,7 +204,6 @@ return {
 				soundstartvolume = 7.5,
 				startvelocity = 600,
 				texture2 = "coresmoketrail",
-				tolerance = 9000,
 				tracks = true,
 				turnrate = 36000,
 				turret = true,
@@ -217,7 +214,6 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					
 					air = 120,
 				},
 			},
