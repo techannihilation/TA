@@ -7,6 +7,7 @@ Balance :
  - Increase damage for all T1 torpedo
  - Increase damage for Gok light tank T1 by 10%
  - Increase range for Olympus T4 Arm 1800=>2000
+ - TSAR Gok : Remplace beam Weapon by classic plasma ammunition (same than Arm/TLL/Core)
 
 Improvment :
 - Add T4 Missile Turret Talon
