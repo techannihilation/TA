@@ -51,3 +51,4 @@ Spring.SetConfigInt("UnitLodDist", 999999)
 Spring.SetConfigInt("UseHighResTimer", 1)
 Spring.SetConfigInt("UseVBO", 1)
 Spring.SetConfigInt("Vsync", 0)
+Spring.SetConfigInt("VSync", 0) -- BAR
