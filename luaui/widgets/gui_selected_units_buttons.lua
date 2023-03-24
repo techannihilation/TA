@@ -295,9 +295,9 @@ end
 function DrawPicList()
   --Spring.Echo(Spring.GetGameFrame()..'  '..math.random())
   prevUnitCount = unitCounts
-  unitCounts = spGetSelectedUnitsCounts()
+  unitCounts, unitDefsCount = spGetSelectedUnitsCounts()
 
-  unitTypes = unitCounts.n;
+  unitTypes = unitDefsCount;
   if (unitTypes <= 0) then
     countsTable = {}
     activePress = false
