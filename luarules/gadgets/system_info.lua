@@ -152,9 +152,8 @@ else
 						s_osVersion = line
 					end
 				end
-				if s_configs_os == nil and string.find(line, 'Operating System:') then
-					local charStart = string.find(line, 'Operating System:')
-					s_os = string.sub(line, 19 + charStart)
+				if s_osVersion == nil and string.find(line, 'Operating System:') then
+					s_osVersion = string.match(line, '^%[t=[^%]]+%]%s+Operating System:%s+(.+)')
 				end
 
 				if s_config ~= nil and configEnd == nil and line == '============== </User Config> ==============' then
