@@ -123,22 +123,32 @@ else
 						ds = '  |  '
 					end
 					if string.find(line, 'Physical CPU Cores') then
-						s_cpuCoresPhysical = string.match(line, '([0-9].*)')
+						s_cpuCoresPhysical = string.match(line, '^%[t=[^%]]+%]%s+Physical CPU Cores: ([0-9].*)')
 					end
 					if string.find(line, 'Logical CPU Cores') then
-						s_cpuCoresLogical = string.match(line, '([0-9].*)')
+						s_cpuCoresLogical = string.match(line, '^%[t=[^%]]+%]%s+Logical CPU Cores: ([0-9].*)')
 					end
-					if s_osVersion ~= nil and s_cpu == nil and s_cpuCoresPhysical == nil and (string.find(line:lower(), 'intel') or string.find(line:lower(), 'amd')) then
-						s_cpu = string.match(line, '([\+a-zA-Z0-9 ()@._-]*)')
-						s_cpu = string.gsub(s_cpu, " Processor", "")
-						s_cpu = string.gsub(s_cpu, " Eight[-]Core", "")
-						s_cpu = string.gsub(s_cpu, " Six[-]Core", "")
-						s_cpu = string.gsub(s_cpu, " Quad[-]Core", "")
-						s_cpu = string.gsub(s_cpu, "%((.*)%)", "")
+					-- here we check also for mb ram and hardware config because if data dir / log has somehow in the name "Linux" it can trigger the next line to be recognized as hardware config which is wrong 
+					if s_osVersion ~= nil and s_cpu == nil and s_cpuCoresPhysical == nil and (string.find(line:lower(), 'intel') or string.find(line:lower(), 'amd')) and string.find(line:lower(), 'hardware config') and string.find(line:lower(), 'mb ram') then
+						s_cpu = string.match(line, '^%[t=[^%]]+%]%s+(.+)')
+						if s_cpu ~= nil then
+							s_cpu = string.gsub(s_cpu, " Processor", "")
+							s_cpu = string.gsub(s_cpu, " Eight[-]Core", "")
+							s_cpu = string.gsub(s_cpu, " Six[-]Core", "")
+							s_cpu = string.gsub(s_cpu, " Quad[-]Core", "")
+							s_cpu = string.gsub(s_cpu, "%((.*)%)", "")
+							
+						else
+							s_cpu = "Unknown CPU"
+						end
 						s_ram = string.match(line, '([0-9]*MB RAM)')
-						s_ram = string.gsub(s_ram, " RAM", "")
+						if s_ram ~= nil then
+							s_ram = string.gsub(s_ram, " RAM", "")
+						else
+							s_ram = "0MB" -- Dummy value to not have fatal result if wrong line
+						end
 					end
-					if s_osVersion == nil and cpu == nil and s_cpuCoresPhysical == nil and (string.find(line:lower(), 'microsoft') or string.find(line:lower(), 'linux') or string.find(line:lower(), 'unix')) then
+					if s_osVersion == nil and cpu == nil and s_cpuCoresPhysical == nil and (string.find(line:lower(), 'microsoft') or string.find(line:lower(), 'linux') or string.find(line:lower(), 'unix')) and string.find(line:lower(), 'operating system') then
 						s_osVersion = line
 					end
 				end
