@@ -1,13 +1,11 @@
 local lups_effects = {
-   cbrutus_cbrutus_missile = {
-    {class = "Ribbon", options={width=3, size=8, color={1,0,0,1},priority=2},},
-    },
-   arm_furie_arm_furie_fire = {
-    {class = "Ribbon", options={width=3, size=4, color={1,0.3,0.3,1},priority=2},},
-    },
-   arm_furie1_arm_furie_fire = {
-    {class = "Ribbon", options={width=10, size=10, color={1,0.2,0.1,0.25},priority=2},},
-    },
+
+  rumad_artybot_rumad_plasma = {
+    {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
+  },
+  rumad_artybot_rumad_gauss = {
+     {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
+  },
 }
 local projectile_effects = {}
 

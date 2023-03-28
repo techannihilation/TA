@@ -30,3 +30,4 @@ gokcolor1_100
 goklogo
 goklogolight
 goklogoblue
+rumad_flag200

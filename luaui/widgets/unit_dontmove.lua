@@ -59,6 +59,10 @@ local unitArray = {
   "gok_com2",
   "gok_com3",
 
+--Rumad
+  "rumad_king",
+
+
   --bombers
   "armblz",
   "corfiend",

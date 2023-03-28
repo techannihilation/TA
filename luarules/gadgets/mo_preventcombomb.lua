@@ -76,6 +76,9 @@ local DGUN = {
   [WeaponDefNames['gok_com1_gok_disintegrator'].id] = true,
   [WeaponDefNames['gok_com2_gok_disintegrator'].id] = true,
   [WeaponDefNames['gok_com3_gok_disintegrator'].id] = true,
+
+    --Rumad
+    [WeaponDefNames['rumad_king_rumad_disintegrator'].id] = true,
 }
 
 local COMMANDER = VFS.Include("luarules/configs/comDefIDs.lua")

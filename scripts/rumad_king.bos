@@ -1,0 +1,676 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, chest, lbody, lshoulder, larm, lhand, lathe1,
+       lathe2, lathe3, lathe4, lpada, lpadb, rockfire1, rockfire3, rockfire5,
+       rockfire7, rbody, rshoulder, rarm, barrel1, rfire1, barrel2, rfire2,
+       barrel3, rfire3, barrel4, rfire4, rpada, rpadb, rockfire2, rockfire4,
+       rockfire6, rockfire8, torsocover, back, lthigh, lleg, lfoot, lftoes,
+       lleftoe, rthigh, rleg, rfoot, rftoes, rrightoe, headrest, head,
+       headfire, headsupport, rshoulderholder;
+
+static-var  unitviewer, Static_Var_3, Static_Var_4, Main_Gun_Heading,
+            gun_1, msl_1, bMoving, bAiming, spray, bBuilding;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_MOVE			16
+
+
+Walk()
+{
+	while( bMoving )
+	{
+		turn rthigh to x-axis <-35.000000> speed <103.390110>;
+		turn rftoes to x-axis <25.000000> speed <48.000000>;
+		turn rleg to x-axis <20.000000> speed <32.000000>;
+		
+		if( !bAiming )
+		{
+			move rbody to y-axis [0.300000] speed [0.400000];
+			turn rshoulder to x-axis <20.000000> speed <30.192308>;
+			move head to y-axis [0.269983] speed [0.400000];
+			move rshoulder to y-axis [0.500000] speed [0.350000];
+			turn lshoulder to x-axis <-25.000000> speed <35.192308>;
+			turn larm to x-axis <-5.000000> speed <5.000000>;
+			turn lhand to x-axis <-2.000000> speed <2.000000>;
+			turn rarm to x-axis <0.000000> speed <15.000000>;
+			move head to x-axis [0.250000] speed [0.300000];
+		}
+		
+		turn rfoot to x-axis <12.000000> speed <16.791209>;
+		turn lthigh to x-axis <43.000000> speed <55.791209>;
+		turn lleg to x-axis <-8.000000> speed <10.791209>;
+		turn lfoot to x-axis <-15.000000> speed <29.049451>;
+		turn lftoes to x-axis <-14.000000> speed <18.236264>;
+		sleep 250;
+
+		if( !bAiming )
+		{
+			move head to y-axis [0.000000] speed [0.400000];
+			move rbody to y-axis [0.000000] speed [0.229999];
+		}
+		sleep 250;
+		turn rthigh to x-axis <-8.000000> speed <72.000000>;
+		turn rleg to x-axis <8.000000> speed <16.071429>;
+		turn rfoot to x-axis <0.000000> speed <32.000000>;
+		turn rftoes to x-axis <0.000000> speed <66.670330>;
+		turn lthigh to x-axis <44.000000> speed <2.659341>;
+		turn lleg to x-axis <12.000000> speed <53.324176>;
+		turn lfoot to x-axis <5.000000> speed <53.324176>;
+		turn lftoes to x-axis <40.000000> speed <90.000000>;
+		sleep 375;
+		turn lthigh to x-axis <-35.000000> speed <99.967033>;
+		turn lftoes to x-axis <25.000000> speed <48.000000>;
+		turn lleg to x-axis <20.000000> speed <32.000000>;
+		turn lfoot to x-axis <12.000000> speed <16.791209>;
+		turn rthigh to x-axis <43.000000> speed <55.791209>;
+		turn rleg to x-axis <-8.000000> speed <10.791209>;
+		turn rfoot to x-axis <-15.000000> speed <29.049451>;
+		turn rftoes to x-axis <-14.000000> speed <18.236264>;
+		
+		if( !bAiming )
+		{
+				turn chest to y-axis <5.000000> speed <2.000000>;
+				move lbody to y-axis [0.300000] speed [0.500000];
+				turn lshoulder to x-axis <16.000000> speed <10.192308>;
+				turn lhand to x-axis <8.000000> speed <6.000000>;
+				move head to y-axis [0.269983] speed [0.439972];
+				move lshoulder to y-axis [0.500000] speed [0.400000];
+				turn rshoulder to x-axis <-25.000000> speed <10.192308>;
+				turn rarm to x-axis <-5.000000> speed <5.000000>;
+				turn larm to x-axis <0.000000> speed <15.000000>;
+				turn lhand to x-axis <0.000000> speed <14.000000>;
+				move head to x-axis [0.250000] speed [0.150000];
+		}
+
+		sleep 250;
+		
+		if( !bAiming )
+		{
+			turn rarm to x-axis <-15.000000> speed <20.390110>;
+		}
+		turn lleg to x-axis <2.000000> speed <27.692308>;
+		
+		sleep 292;
+		
+		if( !bAiming )
+		{
+			move head to y-axis [0.000000] speed [0.400000];
+			move lbody to y-axis [0.000000] speed [0.229999];
+		}
+		sleep 250;
+		turn lthigh to x-axis <-8.000000> speed <72.000000>;
+		turn lleg to x-axis <8.000000> speed <16.071429>;
+		turn lfoot to x-axis <0.000000> speed <32.000000>;
+		turn lftoes to x-axis <0.000000> speed <66.670330>;
+		turn rthigh to x-axis <44.000000> speed <2.659341>;
+		turn rleg to x-axis <12.000000> speed <53.324176>;
+		turn rfoot to x-axis <5.000000> speed <53.324176>;
+		turn rftoes to x-axis <40.000000> speed <90.000000>;
+		sleep 375;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from chest;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	set-signal-mask SIG_MOVE;
+	sleep 200;
+	bMoving = 1;
+	start-script Walk();
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	bMoving = 0;
+	turn rthigh to x-axis <0.000000> speed <135.000000>;
+	turn rleg to x-axis <0.000000> speed <80.000000>;
+	turn rfoot to x-axis <0.000000> speed <150.000000>;
+	turn rftoes to x-axis <0.000000> speed <180.000000>;
+	turn lthigh to x-axis <0.000000> speed <135.000000>;
+	turn lleg to x-axis <0.000000> speed <80.000000>;
+	turn lfoot to x-axis <0.000000> speed <150.000000>;
+	turn lftoes to x-axis <0.000000> speed <180.000000>;
+	move rbody to y-axis [0.000000] speed [1.000000];
+	move head to y-axis [0.000000] speed [3.000000];
+	move rshoulder to y-axis [0.000000] speed [2.800000];
+	move head to x-axis [0.000000] speed [2.000000];
+	if( !bAiming )
+	{
+		turn chest to y-axis <0.000000> speed <10.000000>;
+		turn rshoulder to x-axis <0.000000> speed <100.000000>;
+		turn lshoulder to x-axis <0.000000> speed <100.000000>;
+		turn larm to x-axis <0.000000> speed <45.000000>;
+		turn lhand to x-axis <0.000000> speed <45.000000>;
+		turn rarm to x-axis <0.000000> speed <45.000000>;
+		turn lhand to z-axis <0.000000> speed <50.000000>;
+	}
+}
+
+Create()
+{
+	unitviewer = FALSE;
+	Static_Var_3 = 0;
+	Static_Var_4 = 0;	
+	gun_1 = 1;
+	msl_1 = 1;
+	bMoving = 0;
+	bAiming = 0;
+	spray = 1;
+	bBuilding = 0;
+	Main_Gun_Heading = 0;
+	start-script SmokeUnit();
+}
+
+RestorePrimary()
+{
+	sleep 3000;
+	signal SIG_AIM_1;
+	turn chest to y-axis <0.000000> speed <60.000000>;
+	bAiming = 0;
+}
+
+RestoreSecondary()
+{
+	sleep 2000;
+	signal SIG_AIM_2;
+	turn rarm to x-axis <0.000000> speed <65.000000>;	
+	turn rshoulder to x-axis <0.000000> speed <50.000000>;
+	turn chest to y-axis <0.000000> speed <60.000000>;
+	bAiming = 0;
+}
+
+RestorePosition()
+{
+	sleep 2000;
+	if( !bBuilding )
+	{
+		turn lshoulder to x-axis <0.000000> speed <40.000000>;
+		turn larm to x-axis <0.000000> speed <40.000000>;
+	}
+	if( bAiming OR bBuilding )
+	{
+		return (0);
+	}
+	sleep 1500;
+	if( bAiming OR bBuilding )
+	{
+		return (0);
+	}
+	turn chest to y-axis <0.000000> speed <60.000000>;
+	wait-for-turn chest around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	wait-for-turn larm around x-axis;
+}
+
+Demo()
+{
+	unitviewer = TRUE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = chest;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	while( bBuilding )
+	{
+		sleep 500;
+	}
+	bAiming = 1;
+	Main_Gun_Heading = heading;
+	turn chest to y-axis heading speed <120.000000>;	
+	wait-for-turn chest around y-axis;
+	start-script RestorePrimary();
+	return (1);
+}
+
+FireWeapon1()
+{
+	while(TRUE)
+	{
+		sleep 150;	
+		++msl_1;
+		if (msl_1 == 4)
+		{
+			msl_1 = 5;
+			return (0);		
+		}
+		if (msl_1 == 8)
+		{
+			msl_1 = 1;
+			return (0);		
+		}
+	}
+}
+
+QueryWeapon1(piecenum)
+{
+	if( msl_1 == 1 )
+	{
+		piecenum = rockfire1;
+	}
+	if( msl_1 == 2 )
+	{
+		piecenum = rockfire3;
+	}
+	if( msl_1 == 3 )
+	{
+		piecenum = rockfire5;
+	}
+	if( msl_1 == 4 )
+	{
+		piecenum = rockfire7;
+	}
+	if( msl_1 == 5 )
+	{
+		piecenum = rockfire2;
+	}
+	if( msl_1 == 6 )
+	{
+		piecenum = rockfire4;
+	}
+	if( msl_1 == 7 )
+	{
+		piecenum = rockfire6;
+	}
+	if( msl_1 == 8 )
+	{
+		piecenum = rockfire8;
+	}
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = rarm;
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	while( bBuilding )
+	{
+		sleep 500;
+	}
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
+	bAiming = 1;
+	turn rarm to x-axis <-45.000000> speed <65.000000>;	
+	turn rshoulder to x-axis <-45.000000> - pitch speed <50.000000>;
+	wait-for-turn chest around y-axis;
+	wait-for-turn rarm around x-axis;	
+	wait-for-turn rshoulder around x-axis;
+	start-script RestoreSecondary();
+	return (1);
+}
+
+FireWeapon2()
+{
+	if( gun_1 == 1 )
+	{
+		gun_1 = 2;
+		move barrel1 to y-axis [1.000000] speed [500.000000];
+		turn rshoulderholder to x-axis <-3.000000> speed <150.000000>;
+		sleep 150;
+		turn rshoulderholder to x-axis <0.000000> speed <10.000000>;
+		move barrel1 to y-axis [0.000000] speed [2.0];
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		gun_1 = 3;
+		move barrel2 to y-axis [1.000000] speed [500.000000];
+		turn rshoulderholder to x-axis <-3.000000> speed <150.000000>;
+		sleep 150;
+		turn rshoulderholder to x-axis <0.000000> speed <10.000000>;
+		move barrel2 to y-axis [0.000000] speed [2.0];
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		gun_1 = 4;
+		move barrel3 to y-axis [1.000000] speed [500.000000];
+		turn rshoulderholder to x-axis <-3.000000> speed <150.000000>;
+		sleep 150;
+		turn rshoulderholder to x-axis <0.000000> speed <10.000000>;
+		move barrel3 to y-axis [0.000000] speed [2.0];
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		gun_1 = 1;
+		move barrel4 to y-axis [1.000000] speed [500.000000];
+		turn rshoulderholder to x-axis <-3.000000> speed <150.000000>;
+		sleep 150;
+		turn rshoulderholder to x-axis <0.000000> speed <10.000000>;
+		move barrel4 to y-axis [0.000000] speed [2.0];
+		return (0);
+	}
+}
+
+QueryWeapon2(piecenum)
+{
+	if( gun_1 == 1 )
+	{
+		piecenum = rfire1;
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = rfire2;
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = rfire3;
+		return (0);
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = rfire4;
+		return (0);
+	}
+}
+
+AimFromTertiary(piecenum)
+{
+	piecenum = head;
+}
+
+AimTertiary(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	bAiming = 1;
+	turn chest to y-axis heading speed <120.000000>;	
+	wait-for-turn chest around y-axis;
+	start-script RestorePrimary();
+	return (1);
+}
+
+FireTertiary()
+{
+	show headfire;
+	sleep 180;
+	hide headfire;
+}
+
+QueryTertiary(piecenum)
+{
+	piecenum = headfire;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 1 )
+	{
+		spray = 2;
+		piecenum = lathe1;
+		return (0);
+	}
+	if( spray == 2 )
+	{
+		spray = 3;
+		piecenum = lathe2;
+		return (0);
+	}
+	if( spray == 3 )
+	{
+		spray = 4;
+		piecenum = lathe3;
+		return (0);
+	}
+	if( spray == 4 )
+	{
+		spray = 1;
+		piecenum = lathe4;
+		return (0);
+	}
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{
+	signal 32;
+	sleep 10;
+	signal SIG_AIM_1;
+	signal SIG_AIM_2;
+	signal SIG_AIM_3;
+	bBuilding = 1;
+	if( bAiming )
+	{
+		bAiming = 0;
+	}
+	while( bMoving )
+	{
+		sleep 100;
+	}
+	turn rarm to x-axis <0.000000> speed <15.000000>;
+	turn rshoulder to x-axis <0.000000> speed <15.000000>;
+	turn larm to x-axis <-60.000000> speed <70.000000>;
+	wait-for-turn larm around x-axis;
+	turn lhand to z-axis <-10.000000> speed <30.000000>;
+	turn lshoulder to x-axis <0.000000> - Func_Var_2 - <0.159341> speed <40.000000>;
+	turn chest to y-axis Func_Var_1 speed <90.000000>;
+	wait-for-turn chest around y-axis;
+	wait-for-turn lshoulder around x-axis;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+	bBuilding = 0;
+	signal SIG_AIM_1;
+	signal SIG_AIM_2;
+	signal SIG_AIM_3;
+	turn chest to y-axis <0.000000> speed <65.000000>;²
+	set-signal-mask SIG_AIM_2;
+	call-script RestorePosition();
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD ;
+		explode pelvis type NOHEATCLOUD ;
+		explode chest type NOHEATCLOUD ;
+		explode lbody type NOHEATCLOUD ;
+		explode lshoulder type NOHEATCLOUD ;
+		explode larm type NOHEATCLOUD ;
+		explode lhand type NOHEATCLOUD ;
+		explode lathe1 type NOHEATCLOUD ;
+		explode lathe2 type NOHEATCLOUD ;
+		explode lathe3 type NOHEATCLOUD ;
+		explode lathe4 type NOHEATCLOUD ;
+		explode lpada type NOHEATCLOUD ;
+		explode lpadb type NOHEATCLOUD ;
+		explode rockfire1 type NOHEATCLOUD ;
+		explode rockfire3 type NOHEATCLOUD ;
+		explode rockfire5 type NOHEATCLOUD ;
+		explode rockfire7 type NOHEATCLOUD ;
+		explode rbody type NOHEATCLOUD ;
+		explode rshoulder type NOHEATCLOUD ;
+		explode rarm type NOHEATCLOUD ;
+		explode barrel1 type NOHEATCLOUD ;
+		explode rfire1 type NOHEATCLOUD ;
+		explode barrel2 type NOHEATCLOUD ;
+		explode rfire2 type NOHEATCLOUD ;
+		explode barrel3 type NOHEATCLOUD ;
+		explode rfire3 type NOHEATCLOUD ;
+		explode barrel4 type NOHEATCLOUD ;
+		explode rfire4 type NOHEATCLOUD ;
+		explode rpada type NOHEATCLOUD ;
+		explode rpadb type NOHEATCLOUD ;
+		explode rockfire2 type NOHEATCLOUD ;
+		explode rockfire4 type NOHEATCLOUD ;
+		explode rockfire6 type NOHEATCLOUD ;
+		explode rockfire8 type NOHEATCLOUD ;
+		explode torsocover type NOHEATCLOUD ;
+		explode back type NOHEATCLOUD ;
+		explode lthigh type NOHEATCLOUD ;
+		explode lleg type NOHEATCLOUD ;
+		explode lfoot type NOHEATCLOUD ;
+		explode lftoes type NOHEATCLOUD ;
+		explode lleftoe type NOHEATCLOUD ;
+		explode rthigh type NOHEATCLOUD ;
+		explode rleg type NOHEATCLOUD ;
+		explode rfoot type NOHEATCLOUD ;
+		explode rftoes type NOHEATCLOUD ;
+		explode rrightoe type NOHEATCLOUD ;
+		explode headrest type NOHEATCLOUD ;
+		explode head type NOHEATCLOUD ;
+		explode headfire type NOHEATCLOUD ;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type SHATTER;
+		explode pelvis type SHATTER;
+		explode chest type SHATTER;
+		explode lbody type SHATTER;
+		explode lshoulder type SHATTER;
+		explode larm type SHATTER;
+		explode lhand type SHATTER;
+		explode lathe1 type SHATTER;
+		explode lathe2 type SHATTER;
+		explode lathe3 type SHATTER;
+		explode lathe4 type SHATTER;
+		explode lpada type SHATTER;
+		explode lpadb type SHATTER;
+		explode rockfire1 type SHATTER;
+		explode rockfire3 type SHATTER;
+		explode rockfire5 type SHATTER;
+		explode rockfire7 type SHATTER;
+		explode rbody type SHATTER;
+		explode rshoulder type SHATTER;
+		explode rarm type SHATTER;
+		explode barrel1 type SHATTER;
+		explode rfire1 type SHATTER;
+		explode barrel2 type SHATTER;
+		explode rfire2 type SHATTER;
+		explode barrel3 type SHATTER;
+		explode rfire3 type SHATTER;
+		explode barrel4 type SHATTER;
+		explode rfire4 type SHATTER;
+		explode rpada type SHATTER;
+		explode rpadb type SHATTER;
+		explode rockfire2 type SHATTER;
+		explode rockfire4 type SHATTER;
+		explode rockfire6 type SHATTER;
+		explode rockfire8 type SHATTER;
+		explode torsocover type SHATTER;
+		explode back type SHATTER;
+		explode lthigh type SHATTER;
+		explode lleg type SHATTER;
+		explode lfoot type SHATTER;
+		explode lftoes type SHATTER;
+		explode lleftoe type SHATTER;
+		explode rthigh type SHATTER;
+		explode rleg type SHATTER;
+		explode rfoot type SHATTER;
+		explode rftoes type SHATTER;
+		explode rrightoe type SHATTER;
+		explode headrest type SHATTER;
+		explode head type SHATTER;
+		explode headfire type SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode chest type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lbody type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lshoulder type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lhand type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lathe1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lathe2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lathe3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lathe4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lpada type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lpadb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire5 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire7 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rbody type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rshoulder type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfire1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfire2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfire3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfire4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rpada type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rpadb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire4 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire6 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rockfire8 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode torsocover type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode back type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lftoes type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleftoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rftoes type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rrightoe type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode headrest type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode headfire type FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

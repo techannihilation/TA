@@ -99,8 +99,7 @@ FirePrimary()
 		{
 			gun_1 = 0;		
 		}
-	}
-	
+	}	
 }
 
 AimFromPrimary(piecenum)
