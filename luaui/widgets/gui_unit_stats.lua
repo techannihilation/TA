@@ -270,7 +270,7 @@ end
 
 local function DrawText(t1, t2)
 	textBufferCount = textBufferCount + 1
-	textBuffer[textBufferCount] = {t1,t2,cX,cY}
+	textBuffer[textBufferCount] = {white..t1,white..t2,cX,cY}
 	cY = cY - fontSize
 	maxWidth = max(maxWidth, (gl.GetTextWidth(t1)*fontSize), (gl.GetTextWidth(t2)*fontSize)+(fontSize*6.5+textDistance))
 end

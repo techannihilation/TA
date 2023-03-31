@@ -132,6 +132,7 @@ else
 					if s_osVersion ~= nil and s_cpu == nil and s_cpuCoresPhysical == nil and (string.find(line:lower(), 'intel') or string.find(line:lower(), 'amd')) and string.find(line:lower(), 'hardware config') and string.find(line:lower(), 'mb ram') then
 						s_cpu = string.match(line, '^%[t=[^%]]+%]%s+(.+)')
 						if s_cpu ~= nil then
+							s_cpu = string.gsub(s_cpu, "Hardware Config:", "")
 							s_cpu = string.gsub(s_cpu, " Processor", "")
 							s_cpu = string.gsub(s_cpu, " Eight[-]Core", "")
 							s_cpu = string.gsub(s_cpu, " Six[-]Core", "")
@@ -152,9 +153,8 @@ else
 						s_osVersion = line
 					end
 				end
-				if s_configs_os == nil and string.find(line, 'Operating System:') then
-					local charStart = string.find(line, 'Operating System:')
-					s_os = string.sub(line, 19 + charStart)
+				if s_osVersion == nil and string.find(line, 'Operating System:') then
+					s_osVersion = string.match(line, '^%[t=[^%]]+%]%s+Operating System:%s+(.+)')
 				end
 
 				if s_config ~= nil and configEnd == nil and line == '============== </User Config> ==============' then
