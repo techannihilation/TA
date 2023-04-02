@@ -523,14 +523,17 @@ function widget:MouseRelease(x, y, button)
   local icon = MouseOverIcon(x, y)
 
   local units = spGetSelectedUnitsSorted()
-  if (units.n ~= unitTypes) then
-    return -1  -- discard this click
-  end
-  units.n = nil
 
+  if ( units.n ~= nil ) then
+    units.n = nil
+  end
   local unitDefID = -1
   local unitTable = nil
   local index = 0
+  local count = 0
+  for udid,uTable in pairs(units) do
+    count = count + 1
+  end
   for udid,uTable in pairs(units) do
     if (index == icon) then
       unitDefID = udid
@@ -539,7 +542,7 @@ function widget:MouseRelease(x, y, button)
     end
     index = index + 1
   end
-  if (unitTable == nil) then
+  if (unitTable == nil or count ~= unitTypes) then
     return -1
   end
   
