@@ -863,64 +863,60 @@ function widgetHandler:SelectorActive()
 end
 --------------------------------------------------------------------------------
 
+function widgetHandler:IsWidgetKnown(name)
+  return self.knownWidgets[name] and true or false
+end
+
 function widgetHandler:EnableWidget(name)
   local ki = self.knownWidgets[name]
-  if (not ki) then
-    Spring.Log(section, LOG.ERROR, "EnableWidget(), could not find widget: " .. tostring(name))
+  if not ki then
+    Spring.Echo("EnableWidget(), could not find widget: " .. tostring(name))
     return false
   end
-  if (not ki.active) then
-    Spring.Log(section, LOG.INFO, 'Loading:  '..ki.filename)
+  if not ki.active then
+    Spring.Echo('Loading:  ' .. ki.filename)
     local order = widgetHandler.orderList[name]
-    if (not order or (order <= 0)) then
+    if not order or order <= 0 then
       self.orderList[name] = 1
     end
     local w = self:LoadWidget(ki.filename)
-    if (not w) then return false end
+    if not w then
+      return false
+    end
     self:InsertWidget(w)
     self:SaveConfigData()
   end
-
-  if (not self:SelectorActive()) then
-    Spring.SendCommands({"luaui update"})
-  end
-
   return true
 end
 
-
 function widgetHandler:DisableWidget(name)
   local ki = self.knownWidgets[name]
-  if (not ki) then
-    Spring.Log(section, LOG.ERROR, "DisableWidget(), could not find widget: " .. tostring(name))
+  if not ki then
+    Spring.Echo("DisableWidget(), could not find widget: " .. tostring(name))
     return false
   end
-  if (ki.active) then
+  if ki.active then
     local w = self:FindWidget(name)
-    if (not w) then return false end
-    Spring.Log(section, LOG.INFO, 'Removed:  '..ki.filename)
+    if not w then
+      return false
+    end
+    Spring.Echo('Removed:  ' .. ki.filename)
     self:RemoveWidget(w)     -- deactivate
     self.orderList[name] = 0 -- disable
     self:SaveConfigData()
   end
-
-  if (not self:SelectorActive()) then
-    Spring.SendCommands({"luaui update"})
-  end
-
   return true
 end
 
-
 function widgetHandler:ToggleWidget(name)
   local ki = self.knownWidgets[name]
-  if (not ki) then
-    Spring.Log(section, LOG.ERROR, "ToggleWidget(), could not find widget: " .. tostring(name))
+  if not ki then
+    Spring.Echo("ToggleWidget(), could not find widget: " .. tostring(name))
     return
   end
-  if (ki.active) then
+  if ki.active then
     return self:DisableWidget(name)
-  elseif (self.orderList[name] <= 0) then
+  elseif self.orderList[name] <= 0 then
     return self:EnableWidget(name)
   else
     -- the widget is not active, but enabled; disable it
