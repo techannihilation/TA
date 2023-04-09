@@ -206,14 +206,6 @@ local options = {
     section = "ta_options",
   },
   {
-    key = "mo_terraforming",
-    name = "Terrain Terraform",
-    desc = "Enable Terraforming map surface\nAutoHost Usage :- mo_terraforming",
-    type = "bool",
-    def = false,
-    section = "ta_options",
-  },
-  {
     key = "mo_comtranslock",
     name = "Locktime for Commanders in Transport's",
     desc = "Sets time lock for Transport of own Commanders\nAutoHost Usage :- comtranslock",

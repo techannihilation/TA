@@ -12,7 +12,7 @@ if not tonumber(Spring.GetConfigInt("AdvMapShading",0) or 0) then
 	Spring.SetConfigInt("AdvMapShading", 1)
 end
 
--- disable ForceDisableShaders
+-- disable forcedisableshaders
 if Spring.GetConfigInt("ForceDisableShaders",0) == 1 then
 	Spring.SetConfigInt("ForceDisableShaders", 0)
 end
@@ -22,60 +22,47 @@ if not tonumber(Spring.GetConfigInt("LuaShaders",0) or 0) then
 	Spring.SetConfigInt("LuaShaders", 1)
 end
 
--- Disable PBO for intel GFX
+-- disable pbo for intel gfx
 if Platform.gpuVendor ~= "Nvidia" and Platform.gpuVendor ~= "AMD" then
 	Spring.SetConfigInt("UsePBO", 0)
 else
 	Spring.SetConfigInt("UsePBO", 1)
 end
 
--- Disable dynamic model lights
+-- disable dynamic model lights
 Spring.SetConfigInt("MaxDynamicModelLights", 0)
 
--- Enable deferred map/model rendering
+-- enable deferred map/model rendering
 Spring.SetConfigInt("AllowDeferredMapRendering", 1)
 Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 
--- Disable LoadingMT because: crashes on load, but fixed in 105.1.1-1422, redisable in 105.1.1-1432
-Spring.SetConfigInt("LoadingMT", 0)
+-- disable loadingmt because: crashes on load
+Spring.SetConfigInt("LoadingMT", 1) -- defaults to 0
 
-Spring.SetConfigInt("LuaGarbageCollectionMemLoadMult", 5)
+-- "how much the amount of lua memory in use increases the rate of garbage collection."
+Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.1) -- defaults to 1.33
 
-Spring.SetConfigInt("LuaGarbageCollectionRunTimeMult", 2)
+--"how many milliseconds the garbage collected can run for in each gc cycle"
+Spring.SetConfigFloat("LuaGarbageCollectionRunTimeMult", 2.0) -- defaults to 5.0
 
 -- ground mesh detail
 Spring.SetConfigInt("ROAM", 1)
-if tonumber(Spring.GetConfigInt("GroundDetail", 1) or 1) < 150 then
-	Spring.SetConfigInt("GroundDetail", 150)
+if tonumber(Spring.GetConfigInt("GroundDetail", 1) or 1) < 100 then
+	Spring.SetConfigInt("GroundDetail", 100)
 end
 
--- This makes between-simframe interpolation smoother in mid-late game situations
-Spring.SetConfigInt("SmoothTimeOffset", 2) -- New in BAR engine
+-- this makes between-simframe interpolation smoother in mid-late game situations
+-- frametimeoffset smoothing, 0 = off (old version), -1 = forced 0.5,  1-20 smooth, recommended = 2-3");
+Spring.SetConfigInt("SmoothTimeOffset", 3) -- defaults to 0
 
--- This is needed for better profiling info, and (theoretically better frame timing).
--- Notably a decade ago windows had issues with this
-Spring.SetConfigInt("UseHighResTimer", 1)  -- Default off
+-- this is needed for better profiling info, and (theoretically better frame timing).
+-- notably a decade ago windows had issues with this
+-- on Windows, sets whether spring will use low- or high-resolution timer functions for tasks like graphical interpolation between game frames
+Spring.SetConfigInt("UseHighResTimer", 1)  -- default to 0
 
--- This changes the sleep time of the game server thread to make it wake up every 1.999 ms instead of the default 5.999 ms
--- This hopefully gets us less variance in issuing new sim frames
-Spring.SetConfigInt("ServerSleepTime", 1)
+-- number of milliseconds to sleep per tick for the server thread. lower values have marginally higher cpu load, while high values can introduce additional latency.
+Spring.SetConfigInt("ServerSleepTime", 2) -- defaults to 5
 
 Spring.SetConfigFloat("CrossAlpha", 0)	-- will be in effect next launch
 
 Spring.SetConfigInt("UnitLodDist", 999999)
-
--- Configure sane keychain settings, this is to provide a standard experience
--- for users that is acceptable
-local springKeyChainTimeout = 750 -- expected engine default in ms
-local barKeyChainTimeout = 333 -- the setting we want to apply in ms
-local userKeyChainTimeout = Spring.GetConfigInt("KeyChainTimeout")
--- Only apply BARs default if current setting is equal to engine default
--- Reason is engine is unable to distinguish between:
---   - user configuring the setting to be equal to default
---   - the actual setting being empty and engine using default
-if userKeyChainTimeout == springKeyChainTimeout then
-	-- Setting a standardized keychain timeout, 750ms is too long
-	-- A side benefit of making it smaller is reduced complexity of actions handling
-	-- since there are fewer complex and long chains between keystrokes
-	Spring.SetConfigInt("KeyChainTimeout", barKeyChainTimeout)
-end

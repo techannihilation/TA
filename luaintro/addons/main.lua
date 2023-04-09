@@ -17,8 +17,6 @@ end
 local lastLoadMessage = ""
 local infoMessage = {}
 
---table.insert(infoMessage, "Spring Engine version 101.0.1-201 or above is needed for this version")
-
 --table.insert(infoMessage, "Merry Xmas From TECHA. T5 Mex & Titan are available")
 
 if Spring.GetModOptions() then
@@ -45,10 +43,6 @@ if Spring.GetModOptions() then
   	if Spring.GetModOptions().mo_greenfields == "1" then
     	message = "Metal Extraction Disabled"
     	table.insert(infoMessage, message)
-	end
-	if Spring.GetModOptions().mo_terraforming == "1" then
-  		message = "Advanced Planetary Terraforming Enabled"
-  		table.insert(infoMessage, message)
 	end
 	if Spring.GetModOptions().disablemapdamage == "1" then
   		message = "Weapon Deformation Dampeners Enabled"

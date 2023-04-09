@@ -1,29 +1,48 @@
- --------------------------- TechA Config ---------------------------
-local modrules  = {
-
-  movement = {
-    allowAirPlanesToLeaveMap = true,
-    allowPushingEnemyUnits   = true, -- defaults to false
-    allowCrushingAlliedUnits = false,
-    allowUnitCollisionDamage = false,
-    allowUnitCollisionOverlap = false,	-- defaults to true
-    allowGroundUnitGravity = false,
+--------------------------- TechA Config ---------------------------
+local modrules = {
+  experience = {
+    powerScale = 0.2; -- defaults to 1.0
+    healthScale = 0.9; -- defaults to 0.7
+    reloadScale = 0.1; -- defaults to 0.4
   },
 
-  construction = {
-    constructionDecay = (Spring.GetModOptions() and (Spring.GetModOptions().mo_terraforming == "0") and 1)
-    and (Spring.GetModOptions() and (Spring.GetModOptions().mo_nanoframedecay == "0") and 1) or 0,
-      },
+  featureLOS = {
+    featureVisibility = 2,
+  },
+
+  nanospray = {
+    allow_team_colors = false,
+  },
 
   reclaim = {
-    multiReclaim  = 1,
+    multiReclaim = 1,
     reclaimMethod = 0,
   },
 
-  experience = {
-    powerScale = 0,
-    healthScale = 0, -- disable 
-    reloadScale= 0,
+  system = {
+    LuaAllocLimit = 4096, -- value in megabytes
+    pathFinderSystem = 0, -- always default pathfinder
+    pathFinderRawDistMult = 100,
+    pathFinderUpdateRate = 0.0000001,
+    --pathFinderUpdateRateScale = 1.0,
+  },
+
+  construction = {
+    constructionDecay = Spring.GetModOptions().mo_nanoframedecay or 1
+  },
+
+  fireAtDead = {
+    fireAtKilled = false,
+    fireAtCrashing = false,
+  },
+
+  movement = {
+    allowAirPlanesToLeaveMap = true,
+    allowPushingEnemyUnits = true, -- defaults to false
+    allowCrushingAlliedUnits = false,
+    allowUnitCollisionDamage = false,
+    allowUnitCollisionOverlap = false, -- defaults to true
+    allowGroundUnitGravity = false,
   },
 
   sensors = {
@@ -31,36 +50,14 @@ local modrules  = {
       losMipLevel = 3,
       airMipLevel = 4,
       radarMipLevel = 3,
-     },
-  },
-
-  fireAtDead = {
-    fireAtKilled   = false,
-    fireAtCrashing = false,
-  },
-
-  nanospray = {
-    allow_team_colors = false,
-  },
-
-  featureLOS = {
-     featureVisibility = 2,
+    },
   },
 
   transportability = {
-     transportHover  = 1,
-     --targetableTransportedUnits = true,
+    transportHover = 1,
   },
-
-  system = {
-    pathFinderSystem = 0, -- always default pathfinder
-    pathFinderRawDistMult = 100,
-    pathFinderUpdateRate =  0.0000001,
-  },
- }
-
+}
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
 return modrules
