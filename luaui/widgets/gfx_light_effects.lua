@@ -11,6 +11,7 @@ function widget:GetInfo()
 		license   = "GPL V2",
 		layer     = 0,
 		enabled   = true,
+		handler = true
 	}
 end
 
@@ -924,10 +925,12 @@ end
 --------------------------------------------------------------------------------
 
 function widget:Shutdown()
+	widgetHandler:DisableWidget("Deferred rendering")
 	WG['lighteffects'] = nil
 end
 
 function widget:Initialize()
+	widgetHandler:EnableWidget("Deferred rendering")
 	loadWeaponDefs()
 
 	widgetHandler:RegisterGlobal('GadgetWeaponExplosion', GadgetWeaponExplosion)

@@ -512,15 +512,15 @@ local function processLine(line, g, cfg, newlinecolor)
 		end
 	end
 
-	-- filter Sync error
-	if sfind(line, "Sync error for ") then
-			ignoreThisMessage = true
-	end
+	-- -- filter Sync error
+	-- if sfind(line, "Sync error for ") then
+	-- 		ignoreThisMessage = true
+	-- end
 
-	-- filter Sync error
-	if sfind(line, "Error: %[DESYNC WARNING%] ") then
-			ignoreThisMessage = true
-	end
+	-- -- filter Sync error
+	-- if sfind(line, "Error: %[DESYNC WARNING%] ") then
+	-- 		ignoreThisMessage = true
+	-- end
 
 	-- filter Connection attempts
 	if sfind(line, "Connection attempt from ") then

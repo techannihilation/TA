@@ -36,13 +36,13 @@ Spring.SetConfigInt("MaxDynamicModelLights", 0)
 Spring.SetConfigInt("AllowDeferredMapRendering", 1)
 Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 
--- disable loadingmt because: crashes on load
+-- experimental option to load the game in separate thread.
 Spring.SetConfigInt("LoadingMT", 1) -- defaults to 0
 
--- "how much the amount of lua memory in use increases the rate of garbage collection."
+-- how much the amount of lua memory in use increases the rate of garbage collection.
 Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.1) -- defaults to 1.33
 
---"how many milliseconds the garbage collected can run for in each gc cycle"
+--how many milliseconds the garbage collected can run for in each gc cycle
 Spring.SetConfigFloat("LuaGarbageCollectionRunTimeMult", 2.0) -- defaults to 5.0
 
 -- ground mesh detail
@@ -65,4 +65,7 @@ Spring.SetConfigInt("ServerSleepTime", 2) -- defaults to 5
 
 Spring.SetConfigFloat("CrossAlpha", 0)	-- will be in effect next launch
 
-Spring.SetConfigInt("UnitLodDist", 999999)
+Spring.SetConfigInt("lupsenablerefraction", 0)
+Spring.SetConfigInt("lupsenablereflection", 0)
+
+Spring.SetConfigInt("MaxNanoParticles", 0)
