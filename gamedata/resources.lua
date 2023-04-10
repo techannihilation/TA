@@ -224,7 +224,8 @@ local resources = {
 			nanonew='nano.tga',
 			exploo='explo.jpg',
 			ring='ring.tga',
-
+			Yellowblast='Yellowblast.png',
+			Yellowblast3='Yellowblast3.png',
 			--Hot fix for generic lava map ceg
 			map_foam='other/foam_map.tga',
 			map_debris2='other/debris2.tga',
