@@ -7,13 +7,13 @@ local modrules = {
   },
 
   damage = {
-    debris = 150, -- controls damage done by exploding pieces
+    debris = 300, -- controls damage done by exploding pieces
   },
 
   experience = {
     experienceMult = 1.0, -- defaults to 1.0
     powerScale = 0.0, -- defaults to 1.0
-    healthScale = 0.25, -- defaults to 0.7
+    healthScale = 0.15, -- defaults to 0.7
     reloadScale = 0.4, -- defaults to 0.4
   },
 
@@ -33,7 +33,7 @@ local modrules = {
     allowPushingEnemyUnits = true, -- defaults to false
     allowUnitCollisionDamage = false,
     allowUnitCollisionOverlap = false, -- defaults to true
-    maxCollisionPushMultiplier = 1,
+    maxCollisionPushMultiplier = 1.2,
   },
 
   nanospray = {
