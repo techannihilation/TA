@@ -13,7 +13,7 @@ local modrules = {
   experience = {
     experienceMult = 1.0, -- defaults to 1.0
     powerScale = 0.0, -- defaults to 1.0
-    healthScale = 1.0, -- defaults to 0.7
+    healthScale = 0.25, -- defaults to 0.7
     reloadScale = 0.4, -- defaults to 0.4
   },
 
