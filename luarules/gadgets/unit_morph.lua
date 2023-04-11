@@ -790,6 +790,7 @@ local function FinishMorph(unitID, morphData)
 
   SpSetUnitBlocking(newUnit, true)
   SpDestroyUnit(unitID, false, true) -- selfd = false, reclaim = true
+  SendToUnsynced("mph_stp", unitID)
 end
 
 
