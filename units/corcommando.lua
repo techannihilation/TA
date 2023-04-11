@@ -45,7 +45,7 @@ return {
 		mincloakdistance = 75,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
-		name = "corcommando",
+		name = "Commando",
 		noautofire = false,
 		objectname = "corcommando",
 		radaremitheight = 51,
