@@ -40,7 +40,7 @@ Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 Spring.SetConfigInt("LoadingMT", 1) -- defaults to 0
 
 -- how much the amount of lua memory in use increases the rate of garbage collection.
-Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.1) -- defaults to 1.33
+Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.15) -- defaults to 1.33
 
 --how many milliseconds the garbage collected can run for in each gc cycle
 Spring.SetConfigFloat("LuaGarbageCollectionRunTimeMult", 2.0) -- defaults to 5.0
@@ -69,3 +69,5 @@ Spring.SetConfigInt("lupsenablerefraction", 0)
 Spring.SetConfigInt("lupsenablereflection", 0)
 
 Spring.SetConfigInt("MaxNanoParticles", 0)
+
+Spring.SetConfigInt("MiniMapDrawProjectiles", 0)
