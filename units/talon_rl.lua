@@ -1,7 +1,7 @@
 return {
 	talon_rl = {
 		acceleration = 0,
-		airsightdistance = 900,
+		airsightdistance = 850,
 		brakerate = 0,
 		buildcostenergy = 2590,
 		buildcostmetal = 204,
@@ -148,7 +148,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},
@@ -191,7 +191,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},

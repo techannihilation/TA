@@ -50,7 +50,7 @@ local inSpecFullView = false
 local myTeamID = Spring.GetMyTeamID()
 
 function widget:PlayerChanged()
-    myTeamID = Spring.GetMyTeamID()    
+    myTeamID = Spring.GetMyTeamID()
 end
 
 local TooHigh = true
@@ -64,14 +64,14 @@ local isCommander = {}
 function widget:Initialize()
 	for i=1,#UnitDefs do
     	local unitDefID = UnitDefs[i]
-  		if unitDefID.customParams.iscommander then
+  		if unitDefID.customParams.iscommander and not UnitDefNames["rumad_com"].id then
   			local DgunRange = WeaponDefs[UnitDefs[i].weapons[3].weaponDef].range+ 2*WeaponDefs[UnitDefs[i].weapons[3].weaponDef].damageAreaOfEffect
 			local deathBlasId = WeaponDefNames[string.lower(UnitDefs[i]["deathExplosion"])].id
 			local blastRadius = WeaponDefs[deathBlasId].damageAreaOfEffect
 			isCommander[i] = {dgunrange = DgunRange, deathblasid = deathBlasId, blastradius = blastRadius}
     	end
     end
-    
+
     widgetHandler:RegisterGlobal('SetOpacity_Comblast_DGun_Range', SetOpacity)
     widgetHandler:RegisterGlobal('DrawManager_combblast', DrawStatus)
 
@@ -89,7 +89,7 @@ function addCom(unitID, unitDefID, unitTeam)
     if not spValidUnitID(unitID) then return end --because units can be created AND destroyed on the same frame, in which case luaui thinks they are destroyed before they are created
     local x,y,z = Spring.GetUnitPosition(unitID)
     local teamID = unitTeam
-    if not teamID then 
+    if not teamID then
     	teamID = Spring.GetUnitTeam(unitID)
     end
     if x and teamID then
@@ -115,7 +115,7 @@ function widget:UnitCreated(unitID, unitDefID, teamID, builderID)
 end
 
 function widget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
-    if isCommander[unitDefID] then 
+    if isCommander[unitDefID] then
     	--Spring.Echo(unitTeam, newTeam,Spring.GetUnitTeam(unitID))
         addCom(unitID, unitDefID, newTeam)
     end
@@ -167,7 +167,7 @@ function checkSpecView()
     --check if we became a spec
     local _,_,spec,_ = spGetPlayerInfo(spGetMyPlayerID())
     if spec ~= amSpec then
-        amSpec = spec 
+        amSpec = spec
         checkComs()
     end
 end
@@ -177,7 +177,7 @@ function checkComs()
     for k,_ in pairs(comCenters) do
         comCenters[k] = nil
     end
-    
+
     local visibleUnits = spGetAllUnits()
     if visibleUnits ~= nil then
         for _, unitID in ipairs(visibleUnits) do
@@ -190,8 +190,8 @@ function checkComs()
 end
 
 
--- draw -- 
- 
+-- draw --
+
 -- map out what to draw
 function widget:GameFrame(n)
    if spIsGUIHidden() or HighPing or TooHigh then return end
@@ -206,12 +206,12 @@ function widget:GameFrame(n)
     for unitID,_ in pairs(comCenters) do
         local x,y,z = spGetUnitPosition(unitID)
         if x then
-            local yg = spGetGroundHeight(x,z) 
+            local yg = spGetGroundHeight(x,z)
             local draw = true
-            local opacity 
+            local opacity
             local wantedOpacity
             -- show if (1) unit is selected (2) com is enemy and we are not a spec (3) com has an enemy unit nearby
-	    
+
             local enemyUnitID = spGetUnitNearestEnemy(unitID,2*comCenters[unitID].blastRadius,false)
             if spIsUnitSelected(unitID) or (not spec and not spAreTeamAllied(myTeamID,comCenters[unitID].teamID)) then
                 wantedOpacity = 0.8
@@ -224,7 +224,7 @@ function widget:GameFrame(n)
             end
             opacity = comCenters[unitID].opacity*(29/30) + wantedOpacity*(1/30) --change gently
             -- check if com is off the ground
-            if (y-yg>10) or (not spIsSphereInView(x,y,z,blastRadius)) then 
+            if (y-yg>10) or (not spIsSphereInView(x,y,z,blastRadius)) then
                 draw = false
                 drawnComs[unitID] = nil
             end
@@ -235,12 +235,12 @@ function widget:GameFrame(n)
             comCenters[unitID].opacity = opacity
             drawnComs[unitID] = comCenters[unitID]
         else
-            --couldn't get position, check if its still a unit 
+            --couldn't get position, check if its still a unit
             if not spValidUnitID(unitID) then
                 removeCom(unitID)
             end
         end
-    end	
+    end
 end
 
 -- opacity control

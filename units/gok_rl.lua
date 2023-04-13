@@ -1,7 +1,7 @@
 return {
 	gok_rl = {
 		acceleration = 0,
-		airsightdistance = 1045,
+		airsightdistance = 775,
 		brakerate = 0,
 		buildangle = 65536,
 		buildcostenergy = 2458,
@@ -144,7 +144,7 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
-					
+
 					air = 160,
 				},
 			},

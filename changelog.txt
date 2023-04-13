@@ -1,3 +1,9 @@
+4.46 => 4.47
+2023-04-15
+
+Balance :
+ - Uniformize damage modifier for fix armored units : 0.10=>0.20
+
 4.45 => 4.46
 2023-03-24
 

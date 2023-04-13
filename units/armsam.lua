@@ -1,6 +1,7 @@
 return {
 	armsam = {
 		acceleration = 0.04,
+		airsightdistance = 800,
 		brakerate = 0.0495,
 		buildcostenergy = 1762,
 		buildcostmetal = 149,
@@ -167,13 +168,14 @@ return {
 				weaponvelocity = 1200,
 				damage = {
 					areoship = 20,
-					default = 5,					
+					default = 5,
 					air = 80,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

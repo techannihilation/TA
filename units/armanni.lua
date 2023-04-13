@@ -17,7 +17,7 @@ return {
 		canstop = 1,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.10,
+		damagemodifier = 0.20,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Tachyon Accelerator",
 		energystorage = 2000,

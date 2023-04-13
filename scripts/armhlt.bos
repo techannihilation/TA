@@ -126,16 +126,6 @@ Killed(severity, corpsetype)
 		explode turret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode flash1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode flash2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode guns type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | SHATTER;
-		return (corpsetype);
-	}
 	corpsetype = 3;
 	explode base type NOHEATCLOUD;
 	explode flash1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

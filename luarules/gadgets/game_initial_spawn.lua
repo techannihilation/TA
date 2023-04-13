@@ -45,6 +45,7 @@ local corcomDefID = UnitDefNames.corcom.id
 local tllcomDefID = UnitDefNames.tllcom.id
 local taloncomDefID = UnitDefNames.talon_com.id
 local gokcomDefID = UnitDefNames.gok_com.id
+local rumadcomDefID = UnitDefNames.rumad_com.id
 
 local validStartUnits = {
     [armcomDefID] = true,
@@ -52,6 +53,7 @@ local validStartUnits = {
     [tllcomDefID] = true,
     [taloncomDefID] = true,
 		[gokcomDefID] = true,
+		[rumadcomDefID] = true,
 }
 
 local superEco = {
@@ -196,6 +198,10 @@ function gadget:Initialize()
 				spSetTeamRulesParam(teamID, startUnitParamName, tllcomDefID)
 			elseif teamSide == 'talon' then
 				spSetTeamRulesParam(teamID, startUnitParamName, taloncomDefID)
+			elseif teamSide == 'gok' then
+				spSetTeamRulesParam(teamID, startUnitParamName, gokcomDefID)
+			elseif teamSide == 'rumad' then
+				spSetTeamRulesParam(teamID, startUnitParamName, rumadcomDefID)
 			else
 				spSetTeamRulesParam(teamID, startUnitParamName, armcomDefID)
 			end

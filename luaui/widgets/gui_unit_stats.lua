@@ -164,6 +164,7 @@ local pplants = {
 	["armufus"] = true,
 	["tllufus"] = true,
 	["talon_ufus"] = true,
+	["gok_ufus"] = true,
 
 	--Gok
 	["gok_solar"] = true,
@@ -584,7 +585,7 @@ function widget:DrawScreen()
 								energyColor .. '%d' .. white .. ' / ' ..
 								buildColor .. '%d', metalCost, energyCost, buildTime)
 				)
-		
+
 
 		if not (uDef.isBuilding or uDef.isFactory) then
 			if not Spring.GetUnitMoveTypeData(uID) then
@@ -742,9 +743,9 @@ function widget:DrawScreen()
 				local reloadBonus = reload ~= 0 and (uWep.reload/reload-1) or 0
 				local accuracyBonus = accuracy ~= 0 and (uWep.accuracy/accuracy-1) or 0
 				local moveErrorBonus = moveError ~= 0 and (uWep.targetMoveError/moveError-1) or 0
-				local range = spGetUnitWeaponState(uID,weaponNums[i] or -1,"range") or uWep.range 
+				local range = spGetUnitWeaponState(uID,weaponNums[i] or -1,"range") or uWep.range
 				local rangeBonus = range ~= 0 and (range/uWep.range-1) or 0
-			
+
 				if uExp ~= 0 then
 					DrawText("Exp:", format("+%d%% accuracy, +%d%% aim, +%d%% firerate, +%d%% range", accuracyBonus*100, moveErrorBonus*100, reloadBonus*100, rangeBonus*100 ))
 				end

@@ -44,6 +44,7 @@ function gadget:Initialize()
   Spring.AddUnitIcon("talon_com.user", "icons/talon_com.png", 2)
   Spring.AddUnitIcon("gok_com.user", "icons/gok_com.png", 2)
   Spring.AddUnitIcon("rumad_king.user", "icons/rumad_king.png", 2)
+  Spring.AddUnitIcon("rumad_com.user", "icons/rumad_com.png", 2)
   Spring.AddUnitIcon("cross.user", "icons/cross.png")
   Spring.AddUnitIcon("diamond.user", "icons/diamond.png", 1.1)
   Spring.AddUnitIcon("diamond4.user", "icons/diamond.png", 4)
@@ -263,6 +264,8 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "gok_com.user")
       elseif (ud.name == "rumad_king") or (ud.name == "rumad_king1") or (ud.name == "rumad_king2") or (ud.name == "rumad_king3") then
         Spring.SetUnitDefIcon(udid, "rumad_king.user")
+      elseif (ud.name == "rumad_com") or (ud.name == "rumad_com1") or (ud.name == "rumad_com2") or (ud.name == "rumad_com3") then
+        Spring.SetUnitDefIcon(udid, "rumad_com.user")
 
       --Medium mech
       elseif (ud.name == "armbanth") or (ud.name == "armgor") or (ud.name == "talon_talos") then

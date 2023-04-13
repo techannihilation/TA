@@ -1,7 +1,7 @@
 return {
 	corfrt = {
 		acceleration = 0,
-		airsightdistance = 700,
+		airsightdistance = 775,
 		brakerate = 0,
 		buildangle = 16384,
 		buildcostenergy = 1124,
@@ -136,7 +136,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},

@@ -1,0 +1,322 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, torso, pelvis, helm, thrust, lathe1, lathe2,
+	   rarm, raimer, rbarrel, larm, laimer,
+       lbarrel, rthigh, Rleg, rfoot, 
+       lthigh, lleg, lfoot, head, larmholder, rarmholder,
+       laimerholder, raimerholder;
+
+static-var  bAiming, bMoving, spray;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			4
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Walk()
+{
+	while( bMoving )
+	{
+		if( bMoving )
+		{
+			turn rthigh to x-axis <-30.000000> speed <60.000000>;
+			turn Rleg to x-axis <5.000000> speed <10.000000>;
+			turn Rfoot to x-axis <20.000000> speed <40.000000>;
+			turn lthigh to x-axis <26.000000> speed <52.000000>;
+			turn Lfoot to x-axis <-26.000000> speed <52.000000>;
+			if( !bAiming )
+			{
+				turn Larm to x-axis <-25.000000> speed <19.000000>;
+				turn Laimer to x-axis <-9.000000> speed <4.000000>;
+				turn Laimer to z-axis <12.000000> speed <17.000000>;
+				turn Rarm to x-axis <18.000000> speed <14.000000>;
+				turn Raimer to x-axis <0.000000> speed <2.500000>;
+				turn Raimer to z-axis <0.000000> speed <10.000000>;
+				move torso to y-axis [0.500000] speed [0.400000];
+				move head to y-axis [0.200000] speed [0.150000];
+				turn torso to y-axis <9.000000> speed <7.000000>;
+			}
+		}
+		if( bMoving )
+		{
+			turn rthigh to x-axis <-30.000000> speed <124.000000>;
+			turn Rleg to x-axis <5.000000> speed <10.000000>;
+			turn Rfoot to x-axis <20.000000> speed <10.000000>;
+			turn lthigh to x-axis <26.000000> speed <60.000000>;
+			turn Lleg to x-axis <0.000000> speed <8.000000>;
+			turn Lfoot to x-axis <-26.000000> speed <52.000000>;
+			if( !bAiming )
+			{
+				turn Larm to x-axis <-26.000000> speed <58.000000>;
+				turn Laimer to x-axis <-9.000000> speed <17.000000>;
+				turn Laimer to z-axis <12.000000> speed <40.000000>;
+				turn Rarm to x-axis <28.000000> speed <54.000000>;
+				turn Raimer to x-axis <0.000000> speed <17.000000>;
+				turn Raimer to z-axis <0.000000> speed <32.000000>;
+				move torso to y-axis [0.500000] speed [0.800000];
+				move head to y-axis [0.200000] speed [0.300000];
+				turn torso to y-axis <11.000000> speed <19.000000>;
+			}
+		}
+		sleep 500;
+		turn rthigh to x-axis <-4.000000> speed <78.000000>;
+		turn Rleg to x-axis <4.000000> speed <3.000000>;
+		turn Rfoot to x-axis <0.000000> speed <60.000000>;
+		turn lthigh to x-axis <32.000000> speed <18.000000>;
+		turn Lleg to x-axis <10.000000> speed <30.000000>;
+		turn Lfoot to x-axis <15.000000> speed <123.000000>;
+		if( !bAiming )
+		{
+			move torso to y-axis [0.000000] speed [0.500000];
+			move head to y-axis [0.000000] speed [0.200000];
+		}
+		sleep 334;
+		turn lthigh to x-axis <-30.000000> speed <124.000000>;
+		turn Lleg to x-axis <5.000000> speed <10.000000>;
+		turn Lfoot to x-axis <20.000000> speed <10.000000>;
+		turn rthigh to x-axis <26.000000> speed <60.000000>;
+		turn Rleg to x-axis <0.000000> speed <8.000000>;
+		turn Rfoot to x-axis <-26.000000> speed <52.000000>;
+		if( !bAiming )
+		{
+				turn Rarm to x-axis <-26.000000> speed <58.000000>;
+				turn Raimer to x-axis <-9.000000> speed <17.000000>;
+				turn Raimer to z-axis <-12.000000> speed <40.000000>;
+				turn Larm to x-axis <28.000000> speed <54.000000>;
+				turn Laimer to x-axis <0.000000> speed <17.000000>;
+				turn Laimer to z-axis <0.000000> speed <32.000000>;
+				move torso to y-axis [0.500000] speed [0.800000];
+				move head to y-axis [0.200000] speed [0.300000];
+				turn torso to y-axis <-11.000000> speed <19.000000>;
+		}
+		sleep 500;
+		turn lthigh to x-axis <-4.000000> speed <78.000000>;
+		turn Lleg to x-axis <4.000000> speed <3.000000>;
+		turn Lfoot to x-axis <0.000000> speed <60.000000>;
+		turn rthigh to x-axis <32.000000> speed <18.000000>;
+		turn Rleg to x-axis <10.000000> speed <30.000000>;
+		turn Rfoot to x-axis <15.000000> speed <123.000000>;
+		if( !bAiming )
+		{
+			move torso to y-axis [0.000000] speed [0.500000];
+			move head to y-axis [0.000000] speed [0.200000];
+		}
+		sleep 334;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	bMoving = TRUE;
+	bMoving = 1;
+	sleep 200;
+	start-script Walk();
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	bMoving = 0;
+	turn rthigh to x-axis <0.000000> speed <70.000000>;
+	turn Rleg to x-axis <0.000000> speed <50.000000>;
+	turn Rfoot to x-axis <0.000000> speed <120.000000>;
+	turn lthigh to x-axis <0.000000> speed <70.000000>;
+	turn Lleg to x-axis <0.000000> speed <50.000000>;
+	turn Lfoot to x-axis <0.000000> speed <120.000000>;
+	if( !bAiming )
+	{
+		turn torso to y-axis <0.000000> speed <20.000000>;
+		turn Rarm to x-axis <0.000000> speed <60.000000>;
+		turn Larm to x-axis <0.000000> speed <60.000000>;
+		turn Raimer to x-axis <0.000000> speed <70.000000>;
+		turn Laimer to x-axis <0.000000> speed <70.000000>;
+		move torso to y-axis [0.000000] speed [2.000000];
+		turn Raimer to y-axis <0.000000> speed <70.000000>;
+		turn Laimer to y-axis <0.000000> speed <70.000000>;
+		move head to y-axis [0.000000] speed [1.000000];
+	}
+}
+
+Create()
+{
+	bMoving = 0;
+	spray = 1;
+	start-script SmokeUnit();
+}
+
+RestorePosition()
+{
+	stop-spin lbarrel around y-axis decelerate <-2.000000>;
+	stop-spin rbarrel around y-axis decelerate <2.000000>;
+	turn torso to y-axis <0.000000> speed <90.000000>;
+	turn rarm to x-axis <0.000000> speed <50.000000>;
+	turn larm to x-axis <0.000000> speed <50.000000>;
+	turn raimer to x-axis <0.000000> speed <90.000000>;
+	turn laimer to x-axis <0.000000> speed <90.000000>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn laimer around x-axis;
+	bAiming = FALSE;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 1 )
+	{
+		piecenum = lathe1;
+		spray = 2;
+		return (0);
+	}
+	if( spray == 2 )
+	{
+		piecenum = lathe2;
+		spray = 1;
+		return (0);
+	}
+}
+
+StartBuilding(Func_Var_1, Func_Var_2)
+{
+	bAiming = 1;
+
+	while( bMoving )
+	{
+		sleep 100;
+	}
+	
+	turn torso to y-axis Func_Var_1 speed <300.000000>;
+	turn laimer to x-axis <-90.000000> speed <120.000000>;
+	turn raimer to x-axis <-90.000000> speed <120.000000>;
+	spin lbarrel around y-axis speed <-400.000000> accelerate <30.000000>;
+	spin rbarrel around y-axis speed <400.000000> accelerate <30.000000>;
+	turn rarm to x-axis <-10.000000> - Func_Var_2 speed <90.000000>;
+	turn larm to x-axis <-10.000000> - Func_Var_2 speed <90.000000>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn Rarm around x-axis;	
+	wait-for-turn laimer around x-axis;
+	wait-for-turn raimer around x-axis;
+	set INBUILDSTANCE to 1;
+}
+
+Activate()
+{
+	sleep 150;
+}
+
+Deactivate()
+{
+	sleep 150;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	call-script RestorePosition();
+}
+
+TargetCleared(Func_Var_1)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	call-script RestorePosition();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode torso type NOHEATCLOUD;
+		explode helm type NOHEATCLOUD;
+		explode Rarm type NOHEATCLOUD;
+		explode Raimer type NOHEATCLOUD;
+		explode Rbarrel type NOHEATCLOUD;
+		explode Larm type NOHEATCLOUD;
+		explode Laimer type NOHEATCLOUD;
+		explode Lbarrel type NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD;
+		explode rthigh type NOHEATCLOUD;
+		explode Rleg type NOHEATCLOUD;
+		explode Rfoot type NOHEATCLOUD;
+		explode lthigh type NOHEATCLOUD;
+		explode Lleg type NOHEATCLOUD;
+		explode Lfoot type NOHEATCLOUD;
+		explode head type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode torso type NOHEATCLOUD | FALL;
+		explode helm type NOHEATCLOUD | FALL;
+		explode Rarm type NOHEATCLOUD | FALL;
+		explode Raimer type NOHEATCLOUD | FALL;
+		explode Rbarrel type NOHEATCLOUD | FALL;
+		explode Larm type NOHEATCLOUD | FALL;
+		explode Laimer type NOHEATCLOUD | FALL;
+		explode Lbarrel type NOHEATCLOUD | FALL;
+		explode pelvis type NOHEATCLOUD | FALL;
+		explode rthigh type NOHEATCLOUD | FALL;
+		explode Rleg type NOHEATCLOUD | FALL;
+		explode Rfoot type NOHEATCLOUD | FALL;
+		explode lthigh type NOHEATCLOUD | FALL;
+		explode Lleg type NOHEATCLOUD | FALL;
+		explode Lfoot type NOHEATCLOUD | FALL;
+		explode head type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode Rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Raimer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Rbarrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Laimer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Lbarrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode Lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

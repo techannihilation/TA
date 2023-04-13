@@ -22,7 +22,7 @@ return {
 		description = "Tech Level 1",
 		energymake = 15,
 		energystorage = 15,
-		explodeas = "CA_EX",
+		explodeas = "SMALL_UNIT_VTOL",
 		footprintx = 2,
 		footprintz = 2,
 		hoverattack = true,

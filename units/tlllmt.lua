@@ -1,6 +1,6 @@
 return {
 	tlllmt = {
-		airsightdistance = 700,
+		airsightdistance = 775,
 		buildangle = 1768,
 		buildcostenergy = 742,
 		buildcostmetal = 88,
@@ -153,7 +153,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},

@@ -1,0 +1,124 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, socle, flare1, flare2, flare3, flare4, turret, pitchturret;
+
+// Signal definitions
+#define SIG_AIM				2
+
+static-var msl_1;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	msl_1 = 1;
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <250.0>;
+	turn pitchturret to x-axis <0.000000> - pitch speed <200.0>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return (1);
+}
+
+FirePrimary()
+{
+	while(TRUE)
+	{
+		sleep 125;	
+		++msl_1;
+		if (msl_1 == 5)
+		{
+			msl_1 = 1;
+			return (0);		
+		}
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = pitchturret;
+}
+
+QueryPrimary(piecenum)
+{
+	if( msl_1 == 1 )
+	{
+		piecenum = flare1;
+	}
+	if( msl_1 == 2 )
+	{
+		piecenum = flare2;
+	}
+	if( msl_1 == 3 )
+	{
+		piecenum = flare3;
+	}
+	if( msl_1 == 4 )
+	{
+		piecenum = flare4;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode socle type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode socle type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode socle type NOHEATCLOUD;
+	explode pitchturret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

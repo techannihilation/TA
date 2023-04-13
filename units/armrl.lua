@@ -1,7 +1,7 @@
 return {
 	armrl = {
 		acceleration = 0,
-		airsightdistance = 700,
+		airsightdistance = 775,
 		brakerate = 0,
 		buildcostenergy = 899,
 		buildcostmetal = 84,
@@ -154,7 +154,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},

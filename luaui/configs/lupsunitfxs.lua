@@ -3,6 +3,7 @@
 
 effectUnitDefs = {
  ---- FUSIONS ----------------------------
+
 --GOK
 gok_meteor = {
   {class='AirJet',options={color={0.9,0.15,0.75}, emitVector = {0,-1,0}, width=10, length=10000, piece="light", noIconDraw = true, priority=1, onActive=true}},
@@ -384,13 +385,6 @@ cafus = {
    },
 
   ---- OTHER ----------------------------
-tllmeteor = {
-	{class='SimpleParticles2', options=MergeTable({pos={32,265,-40}, delay=10, lifeSpread=30},sparksr1)},
-	{class='SimpleParticles2', options=MergeTable({pos={-32,265,-40}, delay=15, lifeSpread=30},sparksr1)},
-	{class='SimpleParticles2', options=MergeTable({pos={0,265,50}, delay=14, lifeSpread=30},sparksr1)},
-	{class='SimpleParticles2', options=MergeTable({pos={50,265,20}, delay=13, lifeSpread=30},sparksr1)},
-	{class='SimpleParticles2', options=MergeTable({pos={-50,265,20}, delay=12, lifeSpread=30},sparksr1)},
-},
  cjuno = {
     {class='ShieldSphere',options=junoShieldSphere, priority=1},
     {class='GroundFlash',options=groundFlashJuno},

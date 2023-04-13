@@ -25,7 +25,7 @@ return {
 		energymake = 20,
 		energystorage = 20,
 		energyuse = 0,
-		explodeas = "CA_EX",
+		explodeas = "SMALL_UNIT_VTOL",
 		footprintx = 2,
 		footprintz = 2,
 		hoverattack = true,

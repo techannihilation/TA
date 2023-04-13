@@ -12,7 +12,6 @@ return {
 		category = "ALL SURFACE",
 		cloakcost = 5,
 		corpse = "dead",
-		--damagemodifier = 0.15,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Melee",
 		digger = 1,

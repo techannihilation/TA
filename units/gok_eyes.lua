@@ -12,8 +12,7 @@ return {
 		category = "ALL SURFACE UNDERWATER",
 		cloakcost = 10,
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "16 26 16",
-		
+		collisionvolumescales = "16 26 16",		
 		collisionvolumetype = "CylY",
 		corpse = "dragonseyes_dead",
 		description = "Perimeter Camera",

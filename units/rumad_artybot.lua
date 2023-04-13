@@ -158,7 +158,7 @@ return {
 				impulsefactor = 0.123,
 				name = "GaussCannon",
 				noselfdamage = true,
-				range = 500,
+				range = 540,
 				reloadtime = 1,
 				rgbcolor = "1 0.95 0.9",
 				size = 1,

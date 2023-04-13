@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "31 39 31",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		damagemodifier = 0.15,
+		damagemodifier = 0.20,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Pop-Up Flamethrower Turret",
 		digger = 1,
@@ -86,7 +86,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				
+
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,

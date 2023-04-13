@@ -65,6 +65,10 @@ local copyLightDefs = {
     ["gok_com1_gok_disintegrator"  ] = "arm_disintegrator",
     ["gok_com2_gok_disintegrator"  ] = "arm_disintegrator",
     ["gok_com3_gok_disintegrator"  ] = "arm_disintegrator",
+    ["rumad_king_rumad_disintegrator"  ] = "arm_disintegrator",
+    ["rumad_king1_rumad_disintegrator"  ] = "arm_disintegrator",
+    ["rumad_king2_rumad_disintegrator"  ] = "arm_disintegrator",
+    ["rumad_king3_rumad_disintegrator"  ] = "arm_disintegrator",
 		--]]
 
 		--nukes

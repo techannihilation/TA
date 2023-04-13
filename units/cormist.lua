@@ -1,6 +1,7 @@
 return {
 	cormist = {
-		acceleration = 0.04,
+		acceleration = 0.04,.
+		airsightdistance = 800,
 		brakerate = 0.0495,
 		buildcostenergy = 1722,
 		buildcostmetal = 145,
@@ -168,13 +169,13 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "AA_MISSILE",
 				onlytargetcategory = "VTOL",
 			},

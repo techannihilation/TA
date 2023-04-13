@@ -23,7 +23,7 @@ return {
 		defaultmissiontype = "VTOL_standby",
 		description = "Tech Level 3",
 		energymake = 50,
-		explodeas = "CA_EX",
+		explodeas = "SMALL_UNIT_VTOL",
 		footprintx = 4,
 		footprintz = 4,
 		hoverattack = true,

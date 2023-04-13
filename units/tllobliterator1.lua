@@ -19,7 +19,7 @@ return {
 		collisionvolumescales = "133 127 133",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		damagemodifier = 0.10,
+		damagemodifier = 0.20,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "High Energy weapon",
 		energystorage = 1500,

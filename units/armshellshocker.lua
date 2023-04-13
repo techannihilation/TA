@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 143,
 		builder = false,
 		buildpic = "armshellshocker.dds",
-		buildtime = 2800,
+		buildtime = 3000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -54,7 +54,7 @@ return {
 		turninplace = 0,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.32,
-		turnrate = 393.79999,
+		turnrate = 300,
 		unitname = "armshellshocker",
 		customparams = {
 			buildpic = "armshellshocker.dds",

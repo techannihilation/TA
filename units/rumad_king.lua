@@ -11,6 +11,7 @@ return {
 		builder = true,
 		buildpic = "rumad_king.dds",
 		buildtime = 75000,
+		canassist = false,
 		canattack = true,
 		cancapture = true,
 		canguard = true,
@@ -75,13 +76,9 @@ return {
 		unitname = "rumad_king",
 		upright = true,
 		workertime = 300,
-		buildoptions = {
-			[1] = "rumad_artybot",
-		},
 		customparams = {
 			buildpic = "rumad_king.dds",
 			faction = "RUMAD",
-			iscommander = true,
 			paralyzemultiplier = 0.025,
 		},
 		featuredefs = {
@@ -239,7 +236,7 @@ return {
 				name = "GaussCannon",
 				noselfdamage = true,
 				range = 300,
-				reloadtime = 0.75,
+				reloadtime = 1.75,
 				rgbcolor = "1 0.95 0.9",
 				size = 1,
 				soundhitdry = "xplomed2",
@@ -251,7 +248,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					default = 150,
+					default = 350,
 					subs = 5,
 				},
 			},

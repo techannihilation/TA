@@ -2,7 +2,7 @@ return {
 	armfrt = {
 		acceleration = 0,
 		activatewhenbuilt = true,
-		airsightdistance = 780,
+		airsightdistance = 775,
 		brakerate = 0,
 		buildangle = 16384,
 		buildcostenergy = 1053,
@@ -141,7 +141,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},

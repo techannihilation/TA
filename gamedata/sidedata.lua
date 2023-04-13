@@ -20,4 +20,8 @@ return {
         name = 'GOK',
         startunit = 'gok_com',
 	},
+  {
+        name = 'RUMAD',
+        startunit = 'rumad_com',
+  },
 }

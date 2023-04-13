@@ -17,7 +17,6 @@ return {
 		collisionvolumescales = "100 75 135",
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
-		damagemodifier = 0.75,
 		defaultmissiontype = "Standby",
 		description = "Experimental Siege Tank",
 		downloadable = 1,

@@ -24,7 +24,7 @@ return {
 		defaultmissiontype = "VTOL_Standby",
 		description = "Stealth",
 		energyuse = 0,
-		explodeas = "CA_EX",
+		explodeas = "SMALL_UNIT_VTOL",
 		footprintx = 4,
 		footprintz = 4,
 		hoverattack = true,
