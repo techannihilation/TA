@@ -29,6 +29,7 @@ local windDefs = {
   [ UnitDefNames['tllwin1'].id ] = true,
   [ UnitDefNames['talon_win1'].id ] = true,
   [ UnitDefNames['gok_win1'].id ] = true,
+  [ UnitDefNames['rumad_win'].id ] = true,
 }
 
 local tllDefs = UnitDefNames['tllwin1'].id

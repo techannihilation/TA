@@ -15,7 +15,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "40 87 40",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produces Energy",
@@ -34,7 +33,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Generator",
 		noautofire = false,
-		
 		objectname = "ARMWIN",
 		radaremitheight = 77,
 		seismicsignature = 0,
@@ -45,7 +43,7 @@ return {
 		turnrate = 0,
 		unitname = "armwin",
 		usebuildinggrounddecal = true,
-		windgenerator = 120,
+		windgenerator = 90,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "armwin.dds",
