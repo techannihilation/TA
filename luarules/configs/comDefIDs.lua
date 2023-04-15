@@ -23,12 +23,11 @@ local comDefIDs = {
 	[UnitDefNames["gok_com1"].id] = true,
 	[UnitDefNames["gok_com2"].id] = true,
 	[UnitDefNames["gok_com3"].id] = true,
-}
---Rumad
-[UnitDefNames["rumad_com"].id] = true,
---[UnitDefNames["rumad_com1"].id] = true,
---[UnitDefNames["rumad_com2"].id] = true,
---[UnitDefNames["rumad_com3"].id] = true,
+	--Rumad
+	[UnitDefNames["rumad_com"].id] = true,
+	--[UnitDefNames["rumad_com1"].id] = true,
+	--[UnitDefNames["rumad_com2"].id] = true,
+	--[UnitDefNames["rumad_com3"].id] = true,
 }
 
 return comDefIDs
