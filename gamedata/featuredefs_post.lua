@@ -108,6 +108,12 @@ local skipUnits = {
 	['gok_fort'] = true,
 	['gok_claw'] = true,
 	['gok_edrag'] = true,
+
+	['rumad_drag'] = true,
+	['rumad_fdrag'] = true,
+	['rumad_fort'] = true,
+	['rumad_edrag'] = true,
+
 }
 
 

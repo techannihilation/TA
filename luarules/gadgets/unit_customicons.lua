@@ -371,6 +371,7 @@ function gadget:Initialize()
       or (ud.name == "armdrag") or (ud.name == "armfdrag") or (ud.name == "armfort") or (ud.name == "armedrag")
       or (ud.name == "gok_drag") or (ud.name == "gok_fdrag") or (ud.name == "gok_fort") or (ud.name == "talon_edrag")
       or (ud.name == "talon_drag") or (ud.name == "talon_fdrag") or (ud.name == "talon_fort") or (ud.name == "gok_edrag")
+      or (ud.name == "rumad_drag") or (ud.name == "rumad_fdrag") or (ud.name == "rumad_fort") or (ud.name == "rumad_edrag")
       or (ud.name == "tlldtns") or (ud.name == "tlladt") or (ud.name == "tlldt") or (ud.name == "tlledrag") then
         Spring.SetUnitDefIcon(udid, "blank.user")
 
