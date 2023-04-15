@@ -3,12 +3,15 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, launcher1, launcher2, launcher3, turret, pitchturret, msl1, msl2, msl3, flare1, flare2, flare3;
+piece  base, socle, turret, pitchturret,
+		launcher1, launcher2, launcher3, msl1, msl2, msl3, flare1, flare2, flare3,
+		launcher4, launcher5, launcher6, msl4, msl5, msl6, flare4, flare5, flare6;
 
-static-var  msl_1;
+static-var  msl_1, msl_2;
 
 // Signal definitions
 #define SIG_AIM_1				2
+#define SIG_AIM_2				4
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -41,6 +44,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 Create()
 {
 	msl_1 = 1;
+	msl_2 = 4;
 	start-script SmokeUnit();
 }
 
@@ -50,6 +54,15 @@ AimPrimary(heading, pitch)
 	set-signal-mask SIG_AIM_1;
 	turn turret to y-axis heading speed <450.000000>;
 	turn pitchturret to x-axis <0.000000> - pitch speed <450.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return (1);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	wait-for-turn turret around y-axis;
 	wait-for-turn pitchturret around x-axis;
 	return (1);
@@ -71,6 +84,21 @@ RestoreMsl(numberMsl)
 	{
 		sleep 1000;
 		move msl3 to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 4 )
+	{
+		sleep 1000;
+		move msl4 to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 5 )
+	{
+		sleep 1000;
+		move msl5 to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 6 )
+	{
+		sleep 1000;
+		move msl6 to z-axis [0.0] speed [3.0];
 	}	
 }
 
@@ -98,7 +126,36 @@ FirePrimary()
 	}
 }
 
+FireSecondary()
+{
+	if( msl_2 == 4 )
+	{
+		move msl4 to z-axis [-2.4] now;
+		start-script RestoreMsl(msl_2);
+	}
+	if( msl_2 == 5 )
+	{
+		move msl5 to z-axis [-2.4] now;
+		start-script RestoreMsl(msl_2);
+	}
+	if( msl_2 == 6 )
+	{
+		move msl6 to z-axis [-2.4] now;
+		start-script RestoreMsl(msl_2);
+	}
+	++msl_2;
+	if( msl_2 == 7 )
+	{
+		msl_2 = 4;
+	}
+}
+
 AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+AimFromSecondary(piecenum)
 {
 	piecenum = turret;
 }
@@ -119,6 +176,22 @@ QueryPrimary(piecenum)
 	}
 }
 
+QuerySecondary(piecenum)
+{
+	if( msl_2 == 4 )
+	{
+		piecenum = flare4;
+	}
+	if( msl_2 == 5 )
+	{
+		piecenum = flare5;
+	}
+	if( msl_2 == 6 )
+	{
+		piecenum = flare6;
+	}
+}
+
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -132,9 +205,9 @@ Killed(severity, corpsetype)
 		explode pitchturret type NOHEATCLOUD;
 		explode msl1 type NOHEATCLOUD;
 		explode msl2 type NOHEATCLOUD;
-		explode msl3 type NOHEATCLOUD;
+		explode msl5 type NOHEATCLOUD;
 		explode launcher1 type NOHEATCLOUD;
-		explode launcher2 type NOHEATCLOUD;
+		explode launcher5 type NOHEATCLOUD;
 		explode launcher3 type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
@@ -145,9 +218,9 @@ Killed(severity, corpsetype)
 		explode pitchturret type NOHEATCLOUD;
 		explode msl1 type NOHEATCLOUD | FALL;
 		explode msl2 type NOHEATCLOUD | FALL;
-		explode msl3 type NOHEATCLOUD | SHATTER;
+		explode msl5 type NOHEATCLOUD | SHATTER;
 		explode launcher1 type NOHEATCLOUD | FALL;
-		explode launcher2 type NOHEATCLOUD | FALL;
+		explode launcher5 type NOHEATCLOUD | FALL;
 		explode launcher3 type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
@@ -156,9 +229,9 @@ Killed(severity, corpsetype)
 	explode pitchturret type NOHEATCLOUD;
 	explode msl1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode msl2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode msl3 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode msl5 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode launcher1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode launcher2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode launcher5 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode launcher3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD;
 	return (corpsetype);

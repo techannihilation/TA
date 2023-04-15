@@ -50,7 +50,7 @@ return {
 		trackstrength = 6,
 		trackstretch = 1,
 		tracktype = "StdTank",
-		trackwidth = 24,
+		trackwidth = 28,
 		turninplace = 0,
 		turninplaceanglelimit = 120,
 		turninplacespeedlimit = 1.2,
@@ -95,9 +95,6 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				[1] = "custom:Generic_Muzzle",
-			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

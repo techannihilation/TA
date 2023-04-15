@@ -1,5 +1,5 @@
 return {
-	rumad_ca = {
+	rumad_ap = {
 		acceleration = 0.02,
 		activatewhenbuilt = true,
 		blocking = false,
@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 395,
 		builddistance = 100,
 		builder = true,
-		buildpic = "rumad_ca.dds",
+		buildpic = "rumad_ap.dds",
 		buildtime = 7000,
 		canfly = true,
 		canguard = true,
@@ -40,22 +40,23 @@ return {
 		metalmake = 0.1,
 		metalstorage = 50,
 		name = "Construction Air",
-		objectname = "rumad_ca",
+		objectname = "rumad_ap",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 4,
 		turnrate = 400,
-		unitname = "rumad_ca",
+		unitname = "rumad_ap",
 		workertime = 100,
 		buildoptions = {
-			[4] = "rumad_ca",
-			[10] = "",
-			[11] = "",
-			--[12] = "",
+			[1] = "rumad_ck",
+			[2] = "rumad_jeag",
+			[3] = "rumad_raviole",
+			[4] = "rumad_rottweiler",
+			[5] = "rumad_artybot",
 		},
 		customparams = {
-			buildpic = "rumad_ca.dds",
+			buildpic = "rumad_ap.dds",
 			faction = "RUMAD",
 		},
 		nanocolor = {

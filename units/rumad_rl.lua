@@ -46,14 +46,14 @@ return {
 		yardmap = "oooo",
 		customparams = {
 			buildpic = "rumad_rl.dds",
-			faction = "CORE",
+			faction = "RUMAD",
 			prioritytarget = "air",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "-0.808319091797 0.000184020996095 2.23503112793",
-				collisionvolumescales = "30.2288513184 52.705368042 33.0822753906",
+				collisionvolumeoffsets = "0 0 0",
+				collisionvolumescales = "30 52 33",
 				collisionvolumetype = "Box",
 				damage = 484,
 				description = "Pulverizer Wreckage",
