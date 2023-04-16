@@ -128,6 +128,35 @@ local morphDefs = {
 		tech = 2,
 		time = 60,
 	},
+
+	rumad_com = {
+	{
+			into = 'armcom1',
+			time = 120,
+			tech = 1,
+	},
+	{
+			into = 'corcom1',
+			time = 60,
+			tech = 1,
+	},
+	{
+			into = 'tllcom1',
+			time = 120,
+			tech = 1,
+	},
+	{
+			into = 'talon_com1',
+			time = 60,
+			tech = 1,
+	},
+	{
+			into = 'gok_com1',
+			time = 120,
+			tech = 1,
+	},
+},
+
 	armgeo = {
 		{
 				into = 'amgeo',
