@@ -51,6 +51,7 @@ local corcomDefID = UnitDefNames.corcom.id
 local tllcomDefID = UnitDefNames.tllcom.id
 local taloncomDefID = UnitDefNames.talon_com.id
 local gokcomDefID = UnitDefNames.gok_com.id
+local rumadcomDefID = UnitDefNames.rumad_com.id
 
 local commanderDefID = spGetTeamRulesParam(myTeamID, 'startUnit')
 local amNewbie = (spGetTeamRulesParam(myTeamID, 'isNewbie') == 1)
@@ -104,11 +105,14 @@ function widget:DrawWorld()
 			elseif teamStartUnit == tllcomDefID then
 				  glTexture('LuaUI/Images/tll.png')
 				  glBeginEnd(GL_QUADS, QuadVerts, tsx, spGetGroundHeight(tsx, tsz), tsz, 64)
-      elseif teamStartUnit == taloncomDefID then
+      		elseif teamStartUnit == taloncomDefID then
 				  glTexture('LuaUI/Images/talon.png')
 				  glBeginEnd(GL_QUADS, QuadVerts, tsx, spGetGroundHeight(tsx, tsz), tsz, 64)
 			elseif teamStartUnit == gokcomDefID then
 				  glTexture('LuaUI/Images/gok.png')
+				  glBeginEnd(GL_QUADS, QuadVerts, tsx, spGetGroundHeight(tsx, tsz), tsz, 64)
+			elseif teamStartUnit == rumadcomDefID then
+				  glTexture('LuaUI/Images/rumad.png')
 				  glBeginEnd(GL_QUADS, QuadVerts, tsx, spGetGroundHeight(tsx, tsz), tsz, 64)
 			end
 		end
@@ -141,7 +145,7 @@ end
 
 function FactionChangeList()
 	-- Panel
-	glRect(0, 0, 320, 80)
+	glRect(0, 0, 384, 80)
 		-- Highlight
 	glColor(1, 1, 0, 0.5)
         if commanderDefID == armcomDefID then
@@ -149,11 +153,13 @@ function FactionChangeList()
         elseif commanderDefID == corcomDefID then
             glRect(65, 1, 127, 63)
         elseif commanderDefID == tllcomDefID then
-            glRect(129, 1, 191, 63)
+        	glRect(129, 1, 191, 63)
         elseif commanderDefID == taloncomDefID then
-            glRect(193, 1, 255, 63)
-				elseif commanderDefID == gokcomDefID then
-		        glRect(257, 1, 319, 63)
+        	glRect(193, 1, 255, 63)
+		elseif commanderDefID == gokcomDefID then
+			glRect(257, 1, 319, 63)
+		elseif commanderDefID == rumadcomDefID then
+			glRect(321, 1, 383, 63)
         end
 
         -- Icons
@@ -166,8 +172,10 @@ function FactionChangeList()
         glTexRect(136, 8, 184, 56)
         glTexture('LuaUI/Images/TALON.png')
         glTexRect(200, 8, 248, 56)
-				glTexture('LuaUI/Images/GOK.png')
+		glTexture('LuaUI/Images/GOK.png')
         glTexRect(264, 8, 312, 56)
+        glTexture('LuaUI/Images/rumad.png')
+        glTexRect(328, 8, 376, 56)
         glTexture(false)
 
         -- Text
@@ -177,7 +185,8 @@ function FactionChangeList()
             glText('CORE', 96, 0, 12, 'cd')
             glText('TLL', 160, 0, 12, 'cd')
             glText('TALON', 224, 0, 12, 'cd')
-						glText('GOK', 288, 0, 12, 'cd')
+			glText('GOK', 288, 0, 12, 'cd')
+			glText('RUMAD', 352, 0, 12, 'cd')
         glEndText()
 end
 
@@ -205,10 +214,12 @@ function widget:MousePress(mx, my, mButton)
 				newCom = corcomDefID
 			elseif mx < px + 192 then
 				newCom = tllcomDefID
-      elseif mx < px + 256 then
+     		 elseif mx < px + 256 then
 				newCom = taloncomDefID
 			elseif mx < px + 320 then
 				newCom = gokcomDefID
+			elseif mx < px + 384 then
+				newCom = rumadcomDefID
 			end
 			if newCom then
 				commanderDefID = newCom

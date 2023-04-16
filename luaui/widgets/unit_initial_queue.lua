@@ -29,33 +29,34 @@ local COMMANDER = {
 [UnitDefNames["tllcom"].id] = "TLL",
 [UnitDefNames["talon_com"].id] = "TALON",
 [UnitDefNames["gok_com"].id] = "GOK",
+[UnitDefNames["rumad_com"].id] = "RUMAD",
 }
 
 local CONVERT_TABLE = {
-[1] =  {[UnitDefNames["armsolar"].id] = "ARM", 		[UnitDefNames["corsolar"].id] = "CORE",		[UnitDefNames["tllsolar"].id] = "TLL", 		[UnitDefNames["talon_solar"].id] = "TALON", 		[UnitDefNames["gok_solar"].id] = "GOK"			},
-[2] =  {[UnitDefNames["armwin"].id] = "ARM", 		[UnitDefNames["corwin"].id] = "CORE",		[UnitDefNames["tllwin"].id] = "TLL", 		[UnitDefNames["talon_win"].id] = "TALON", 			[UnitDefNames["gok_win"].id] = "GOK"			},
-[3] =  {[UnitDefNames["armgeo_mini"].id] = "ARM",	[UnitDefNames["corgeo_mini"].id] = "CORE", 	[UnitDefNames["tllgeo_mini"].id] = "TLL",	[UnitDefNames["talon_geo_mini"].id] = "TALON", 		[UnitDefNames["gok_geo_mini"].id] = "GOK"		},
-[4] =  {[UnitDefNames["armmstor"].id] = "ARM", 		[UnitDefNames["cormstor"].id] = "CORE", 	[UnitDefNames["tllmstor"].id] = "TLL",		[UnitDefNames["talon_mstor"].id] = "TALON", 		[UnitDefNames["gok_mstor"].id] = "GOK"			},
-[5] =  {[UnitDefNames["armestor"].id] = "ARM", 		[UnitDefNames["corestor"].id] = "CORE", 	[UnitDefNames["tllestor"].id] = "TLL",		[UnitDefNames["talon_estor"].id] = "TALON", 		[UnitDefNames["gok_estor"].id] = "GOK"			},
-[6] =  {[UnitDefNames["armmex"].id] = "ARM", 		[UnitDefNames["cormex"].id] = "CORE",		[UnitDefNames["tllmex"].id] = "TLL", 		[UnitDefNames["talon_mex"].id] = "TALON", 			[UnitDefNames["gok_mex"].id] = "GOK"			},
-[7] =  {[UnitDefNames["armmakr"].id] = "ARM", 		[UnitDefNames["cormakr"].id] = "CORE", 		[UnitDefNames["tllmm"].id] = "TLL", 		[UnitDefNames["talon_makr"].id] = "TALON", 			[UnitDefNames["gok_makr"].id] = "GOK"			},
-[8] =  {[UnitDefNames["armlab"].id] = "ARM", 		[UnitDefNames["corlab"].id] = "CORE", 		[UnitDefNames["tlllab"].id] = "TLL", 		[UnitDefNames["talon_clone_lab"].id] = "TALON", 	[UnitDefNames["gok_lab"].id] = "GOK"			},
-[9] =  {[UnitDefNames["armvp"].id] = "ARM", 		[UnitDefNames["corvp"].id] = "CORE", 		[UnitDefNames["tllvp"].id] = "TLL", 		[UnitDefNames["talon_vp"].id] = "TALON", 			[UnitDefNames["gok_lab"].id] = "GOK"			},
-[10] = {[UnitDefNames["armap"].id] = "ARM", 		[UnitDefNames["corap"].id] = "CORE", 		[UnitDefNames["tllap"].id] = "TLL",  		[UnitDefNames["talon_ap"].id] = "TALON", 			[UnitDefNames["gok_ap"].id] = "GOK"				},
-[11] = {[UnitDefNames["armeyes"].id] = "ARM", 		[UnitDefNames["coreyes"].id] = "CORE", 		[UnitDefNames["tlltower"].id] = "TLL",		[UnitDefNames["talon_eye"].id] = "TALON", 			[UnitDefNames["gok_eyes"].id] = "GOK",			},
-[12] = {[UnitDefNames["armrad"].id] = "ARM", 		[UnitDefNames["corrad"].id] = "CORE",		[UnitDefNames["tllradar"].id] = "TLL", 		[UnitDefNames["talon_rad"].id] = "TALON", 			[UnitDefNames["gok_rad"].id] = "GOK"			},
-[13] = {[UnitDefNames["armdrag"].id] = "ARM", 		[UnitDefNames["cordrag"].id] = "CORE", 		[UnitDefNames["tlldt"].id] = "TLL",			[UnitDefNames["talon_drag"].id] = "TALON", 			[UnitDefNames["gok_drag"].id] = "GOK"			},
-[14] = {[UnitDefNames["armllt"].id] = "ARM", 		[UnitDefNames["corllt"].id] = "CORE",		[UnitDefNames["tllllt"].id] = "TLL", 		[UnitDefNames["talon_llt"].id] = "TALON", 			[UnitDefNames["gok_llt"].id] = "GOK"			},
-[15] = {[UnitDefNames["armdl"].id] = "ARM", 		[UnitDefNames["cordl"].id] = "CORE", 		[UnitDefNames["tllshoretorp"].id] = "TLL",  																									},
-[16] = {[UnitDefNames["armrl"].id] = "ARM", 		[UnitDefNames["corrl"].id] = "CORE",		[UnitDefNames["tlllmt"].id] = "TLL",  		[UnitDefNames["talon_rl"].id] = "TALON", 			[UnitDefNames["gok_rl"].id] = "GOK"				},
-[17] = {[UnitDefNames["armtide"].id] = "ARM", 		[UnitDefNames["cortide"].id] = "CORE",		[UnitDefNames["tlltide"].id] = "TLL", 		[UnitDefNames["talon_tide"].id] = "TALON", 			[UnitDefNames["gok_tide"].id] = "GOK"			},
-[18] = {[UnitDefNames["armfmkr"].id] = "ARM", 		[UnitDefNames["corfmkr"].id] = "CORE", 		[UnitDefNames["tllwmconv"].id] = "TLL",		[UnitDefNames["talon_fmkr"].id] = "TALON", 			[UnitDefNames["gok_fmkr"].id] = "GOK"			},
-[19] = {[UnitDefNames["armsy"].id] = "ARM", 		[UnitDefNames["corsy"].id] = "CORE", 		[UnitDefNames["tllsy"].id] = "TLL", 		[UnitDefNames["talon_sy"].id] = "TALON", 			[UnitDefNames["gok_sy"].id] = "GOK"				},
-[20] = {[UnitDefNames["armsonar"].id] = "ARM", 		[UnitDefNames["corsonar"].id] = "CORE", 	[UnitDefNames["tllsonar"].id] = "TLL", 		[UnitDefNames["talon_sonar"].id] = "TALON", 		[UnitDefNames["gok_sonar"].id] = "GOK"			},
-[21] = {[UnitDefNames["armfdrag"].id] = "ARM", 		[UnitDefNames["corfdrag"].id] = "CORE", 	[UnitDefNames["tlldtns"].id] = "TLL", 		[UnitDefNames["talon_fdrag"].id] = "TALON", 		[UnitDefNames["gok_fdrag"].id] = "GOK"			},
-[22] = {[UnitDefNames["armtl"].id] = "ARM", 		[UnitDefNames["cortl"].id] = "CORE", 		[UnitDefNames["tlltorp"].id] = "TLL", 		[UnitDefNames["talon_tl"].id] = "TALON", 			[UnitDefNames["gok_tl"].id] = "GOK" 		 	},
-[23] = {[UnitDefNames["armfllt"].id] = "ARM", 		[UnitDefNames["corfllt"].id] = "CORE", 		[UnitDefNames["tllfllt"].id] = "TLL",															[UnitDefNames["gok_fllt"].id] = "GOK",			},
-[24] = {[UnitDefNames["armfrt"].id] = "ARM", 		[UnitDefNames["corfrt"].id] = "CORE", 		[UnitDefNames["tlllmtns"].id] = "TLL",		[UnitDefNames["talon_frl"].id] = "TALON", 			[UnitDefNames["gok_frl"].id] = "GOK", 			},
+[1] =  {[UnitDefNames["armsolar"].id] = "ARM", 		[UnitDefNames["corsolar"].id] = "CORE",		[UnitDefNames["tllsolar"].id] = "TLL", 		[UnitDefNames["talon_solar"].id] = "TALON", 		[UnitDefNames["gok_solar"].id] = "GOK",		[UnitDefNames["rumad_solar"].id] = "RUMAD", 		},
+[2] =  {[UnitDefNames["armwin"].id] = "ARM", 		[UnitDefNames["corwin"].id] = "CORE",		[UnitDefNames["tllwin"].id] = "TLL", 		[UnitDefNames["talon_win"].id] = "TALON", 			[UnitDefNames["gok_win"].id] = "GOK",		[UnitDefNames["rumad_win"].id] = "RUMAD", 			},
+[3] =  {[UnitDefNames["armgeo_mini"].id] = "ARM",	[UnitDefNames["corgeo_mini"].id] = "CORE", 	[UnitDefNames["tllgeo_mini"].id] = "TLL",	[UnitDefNames["talon_geo_mini"].id] = "TALON", 		[UnitDefNames["gok_geo_mini"].id] = "GOK",	[UnitDefNames["rumad_geo_mini"].id] = "RUMAD",		},
+[4] =  {[UnitDefNames["armmstor"].id] = "ARM", 		[UnitDefNames["cormstor"].id] = "CORE", 	[UnitDefNames["tllmstor"].id] = "TLL",		[UnitDefNames["talon_mstor"].id] = "TALON", 		[UnitDefNames["gok_mstor"].id] = "GOK",		[UnitDefNames["rumad_mstor"].id] = "RUMAD", 		},
+[5] =  {[UnitDefNames["armestor"].id] = "ARM", 		[UnitDefNames["corestor"].id] = "CORE", 	[UnitDefNames["tllestor"].id] = "TLL",		[UnitDefNames["talon_estor"].id] = "TALON", 		[UnitDefNames["gok_estor"].id] = "GOK",		[UnitDefNames["rumad_estor"].id] = "RUMAD", 		},
+[6] =  {[UnitDefNames["armmex"].id] = "ARM", 		[UnitDefNames["cormex"].id] = "CORE",		[UnitDefNames["tllmex"].id] = "TLL", 		[UnitDefNames["talon_mex"].id] = "TALON", 			[UnitDefNames["gok_mex"].id] = "GOK",		[UnitDefNames["rumad_mex"].id] = "RUMAD", 			},
+[7] =  {[UnitDefNames["armmakr"].id] = "ARM", 		[UnitDefNames["cormakr"].id] = "CORE", 		[UnitDefNames["tllmm"].id] = "TLL", 		[UnitDefNames["talon_makr"].id] = "TALON", 			[UnitDefNames["gok_makr"].id] = "GOK",		[UnitDefNames["rumad_makr"].id] = "RUMAD", 			},
+[8] =  {[UnitDefNames["armlab"].id] = "ARM", 		[UnitDefNames["corlab"].id] = "CORE", 		[UnitDefNames["tlllab"].id] = "TLL", 		[UnitDefNames["talon_clone_lab"].id] = "TALON", 	[UnitDefNames["gok_lab"].id] = "GOK",		--[[ [UnitDefNames["rumad_lab"].id] = "RUMAD", ]]	},
+[9] =  {[UnitDefNames["armvp"].id] = "ARM", 		[UnitDefNames["corvp"].id] = "CORE", 		[UnitDefNames["tllvp"].id] = "TLL", 		[UnitDefNames["talon_vp"].id] = "TALON", 			[UnitDefNames["gok_lab"].id] = "GOK",		[UnitDefNames["rumad_vp"].id] = "RUMAD", 			},
+[10] = {[UnitDefNames["armap"].id] = "ARM", 		[UnitDefNames["corap"].id] = "CORE", 		[UnitDefNames["tllap"].id] = "TLL",  		[UnitDefNames["talon_ap"].id] = "TALON", 			[UnitDefNames["gok_ap"].id] = "GOK",		[UnitDefNames["rumad_ap"].id] = "RUMAD", 			},
+[11] = {[UnitDefNames["armeyes"].id] = "ARM", 		[UnitDefNames["coreyes"].id] = "CORE", 		[UnitDefNames["tlltower"].id] = "TLL",		[UnitDefNames["talon_eye"].id] = "TALON", 			[UnitDefNames["gok_eyes"].id] = "GOK",		[UnitDefNames["rumad_eyes"].id] = "RUMAD", 			},
+[12] = {[UnitDefNames["armrad"].id] = "ARM", 		[UnitDefNames["corrad"].id] = "CORE",		[UnitDefNames["tllradar"].id] = "TLL", 		[UnitDefNames["talon_rad"].id] = "TALON", 			[UnitDefNames["gok_rad"].id] = "GOK",		--[[ [UnitDefNames["rumad_rad"].id] = "RUMAD", ]] 	},
+[13] = {[UnitDefNames["armdrag"].id] = "ARM", 		[UnitDefNames["cordrag"].id] = "CORE", 		[UnitDefNames["tlldt"].id] = "TLL",			[UnitDefNames["talon_drag"].id] = "TALON", 			[UnitDefNames["gok_drag"].id] = "GOK",		[UnitDefNames["rumad_drag"].id] = "RUMAD", 			},
+[14] = {[UnitDefNames["armllt"].id] = "ARM", 		[UnitDefNames["corllt"].id] = "CORE",		[UnitDefNames["tllllt"].id] = "TLL", 		[UnitDefNames["talon_llt"].id] = "TALON", 			[UnitDefNames["gok_llt"].id] = "GOK",		[UnitDefNames["rumad_llt"].id] = "RUMAD", 			},
+[15] = {[UnitDefNames["armdl"].id] = "ARM", 		[UnitDefNames["cordl"].id] = "CORE", 		[UnitDefNames["tllshoretorp"].id] = "TLL",  																								--[[ [UnitDefNames["rumad_dl"].id] = "RUMAD", ]]	},
+[16] = {[UnitDefNames["armrl"].id] = "ARM", 		[UnitDefNames["corrl"].id] = "CORE",		[UnitDefNames["tlllmt"].id] = "TLL",  		[UnitDefNames["talon_rl"].id] = "TALON", 			[UnitDefNames["gok_rl"].id] = "GOK",		[UnitDefNames["rumad_rl"].id] = "RUMAD", 			},
+[17] = {[UnitDefNames["armtide"].id] = "ARM", 		[UnitDefNames["cortide"].id] = "CORE",		[UnitDefNames["tlltide"].id] = "TLL", 		[UnitDefNames["talon_tide"].id] = "TALON", 			[UnitDefNames["gok_tide"].id] = "GOK",		--[[ [UnitDefNames["rumad_tide"].id] = "RUMAD", ]]	},
+[18] = {[UnitDefNames["armfmkr"].id] = "ARM", 		[UnitDefNames["corfmkr"].id] = "CORE", 		[UnitDefNames["tllwmconv"].id] = "TLL",		[UnitDefNames["talon_fmkr"].id] = "TALON", 			[UnitDefNames["gok_fmkr"].id] = "GOK",		--[[ [UnitDefNames["rumad_fmkr"].id] = "RUMAD", ]] 	},
+[19] = {[UnitDefNames["armsy"].id] = "ARM", 		[UnitDefNames["corsy"].id] = "CORE", 		[UnitDefNames["tllsy"].id] = "TLL", 		[UnitDefNames["talon_sy"].id] = "TALON", 			[UnitDefNames["gok_sy"].id] = "GOK",		--[[ [UnitDefNames["rumad_sy"].id] = "RUMAD", ]] 	},
+[20] = {[UnitDefNames["armsonar"].id] = "ARM", 		[UnitDefNames["corsonar"].id] = "CORE", 	[UnitDefNames["tllsonar"].id] = "TLL", 		[UnitDefNames["talon_sonar"].id] = "TALON", 		[UnitDefNames["gok_sonar"].id] = "GOK",		--[[ [UnitDefNames["rumad_sonar"].id] = "RUMAD", ]] },
+[21] = {[UnitDefNames["armfdrag"].id] = "ARM", 		[UnitDefNames["corfdrag"].id] = "CORE", 	[UnitDefNames["tlldtns"].id] = "TLL", 		[UnitDefNames["talon_fdrag"].id] = "TALON", 		[UnitDefNames["gok_fdrag"].id] = "GOK",		--[[ [UnitDefNames["rumad_fdrag"].id] = "RUMAD", ]] },
+[22] = {[UnitDefNames["armtl"].id] = "ARM", 		[UnitDefNames["cortl"].id] = "CORE", 		[UnitDefNames["tlltorp"].id] = "TLL", 		[UnitDefNames["talon_tl"].id] = "TALON", 			[UnitDefNames["gok_tl"].id] = "GOK", 		--[[ [UnitDefNames["rumad_tl"].id] = "RUMAD", ]] 	},
+[23] = {[UnitDefNames["armfllt"].id] = "ARM", 		[UnitDefNames["corfllt"].id] = "CORE", 		[UnitDefNames["tllfllt"].id] = "TLL",															[UnitDefNames["gok_fllt"].id] = "GOK",		--[[ [UnitDefNames["rumad_fllt"].id] = "RUMAD", ]] 	},
+[24] = {[UnitDefNames["armfrt"].id] = "ARM", 		[UnitDefNames["corfrt"].id] = "CORE", 		[UnitDefNames["tlllmtns"].id] = "TLL",		[UnitDefNames["talon_frl"].id] = "TALON", 			[UnitDefNames["gok_frl"].id] = "GOK", 		--[[ [UnitDefNames["rumad_frt"].id] = "RUMAD", ]] 	},
 }
 
 -- Panel
@@ -148,8 +149,8 @@ end
 ------------------------------------------------------------
 -- Globals
 ------------------------------------------------------------
---local sDefID -- Starting unit def ID
---local sDef -- UnitDefs[sDefID]
+local sDefID -- Starting unit def ID
+local sDef -- UnitDefs[sDefID]
 local selDefID = nil 
 local buildQueue = {}
 local buildNameToID = {}
@@ -429,7 +430,7 @@ function InitializeFaction(sDefID)
 	-- Set up cells
 	local numCols = math.min(#sBuilds, maxCols)
 	local numRows = math.ceil(#sBuilds / numCols)
-
+	cellRows = {} -- clear them before faction change
 	for r = 1, numRows do
 		cellRows[r] = {}
 	end
