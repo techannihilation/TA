@@ -7,7 +7,7 @@ local modrules = {
   },
 
   damage = {
-    debris = 300, -- controls damage done by exploding pieces
+    debris = 0, -- 0 for test -- controls damage done by exploding pieces
   },
 
   experience = {
