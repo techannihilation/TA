@@ -52,8 +52,8 @@ local validStartUnits = {
     [corcomDefID] = true,
     [tllcomDefID] = true,
     [taloncomDefID] = true,
-		[gokcomDefID] = true,
-		[rumadcomDefID] = true,
+	[gokcomDefID] = true,
+	[rumadcomDefID] = true,
 }
 
 local superEco = {
@@ -478,7 +478,10 @@ function SpawnStartUnit(teamID, x, z)
 
 	--spawn starting unit
 	local y = spGetGroundHeight(x,z)
-	local unitID = spCreateUnit(startUnit, x, y, z, 0, teamID)
+	spCreateUnit(startUnit, x, y, z, 0, teamID)
+	if startUnit == rumadcomDefID then
+		spCreateUnit(UnitDefNames["rumad_king"].id, x + 20 * (-1 * math.random(0,1)), y, z + 20 * (-1 * math.random(0,1)), 0, teamID)
+	end
 
 	--share info
 	teamStartPoints[teamID] = {x,y,z}

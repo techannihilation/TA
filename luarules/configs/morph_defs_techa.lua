@@ -133,27 +133,27 @@ local morphDefs = {
 	{
 			into = 'armcom1',
 			time = 120,
-			tech = 1,
+			tech = 0,
 	},
 	{
 			into = 'corcom1',
 			time = 60,
-			tech = 1,
+			tech = 0,
 	},
 	{
 			into = 'tllcom1',
 			time = 120,
-			tech = 1,
+			tech = 0,
 	},
 	{
 			into = 'talon_com1',
 			time = 60,
-			tech = 1,
+			tech = 0,
 	},
 	{
 			into = 'gok_com1',
 			time = 120,
-			tech = 1,
+			tech = 0,
 	},
 },
 
