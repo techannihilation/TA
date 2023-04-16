@@ -57,7 +57,7 @@ local commanderDefID = spGetTeamRulesParam(myTeamID, 'startUnit')
 local amNewbie = (spGetTeamRulesParam(myTeamID, 'isNewbie') == 1)
 
 local factionChangeList
-local px, py = wWidth - 320, 0.63*wHeight
+local px, py = wWidth - 400, 0.63*wHeight
 
 --------------------------------------------------------------------------------
 -- Funcs
