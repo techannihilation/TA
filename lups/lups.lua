@@ -28,9 +28,6 @@ local function GetInfo()
 end
 
 
---// FIXME
--- 1. add los handling (inRadar,alwaysVisible, etc.)
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -54,9 +51,9 @@ function print(priority,...)
   end
 end
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 --// locals
 
 local push = table.insert
@@ -86,7 +83,7 @@ local spGetUnitPieceMap      = Spring.GetUnitPieceMap
 local spValidUnitID          = Spring.ValidUnitID
 local spGetUnitIsStunned     = Spring.GetUnitIsStunned
 local spGetProjectilePosition = Spring.GetProjectilePosition
-local spGetUnitHealth    = Spring.GetUnitHealth
+local spGetUnitVelocity      = Spring.GetUnitVelocity 
 
 local glUnitPieceMatrix = gl.UnitPieceMatrix
 local glPushMatrix      = gl.PushMatrix
@@ -130,14 +127,10 @@ canDistortions = false --// check Initialize()
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-local reflectionrefractionEnabled = false
-
 --// widget/gadget handling
 local handler = (widget and widgetHandler)or(gadgetHandler)
 local GG      = (widget and WG)or(GG)
 local VFSMODE = (widget and VFS.RAW_FIRST)or(VFS.ZIP_ONLY)
-
-local this = widget or gadget
 
 --// locations
 local LUPS_LOCATION    = 'lups/'
@@ -176,92 +169,49 @@ function GetLupsSetting(key, default)
     return default
   end
 end
---------------------------------------------------------------------------------
-function table:copy()
-    local copy = {}
-
-    for key, value in pairs(self) do
-      if type(value) == "table" then
-        copy[key] = table.copy(value)
-      else
-        copy[key] = value
-      end
-    end
-
-    return copy
-  end
-
-function table.merge(primary, secondary)
-    local new = table.copy(primary)
-
-    for key, v in pairs(secondary) do
-      -- key not used in default, assign it the value at same key in override
-      if not new[key] and type(v) == "table" then
-        new[key] = table.copy(v)
-        -- values at key in both default and override are tables, merge those
-      elseif type(new[key]) == "table" and type(v) == "table" then
-        new[key] = table.merge(new[key], v)
-      else
-        new[key] = v
-      end
-    end
-
-    return new
-  end
-
-function table.mergeInPlace(mergeTarget, mergeData, deep)
-    if not deep then
-      local mergedData = table.merge(mergeTarget, mergeData)
-
-      for key, value in pairs(mergedData) do
-        mergeTarget[key] = value
-      end
-
-      return
-    end
-
-    for i, v in pairs(mergeData) do
-      if mergeTarget[i] and type(mergeTarget[i]) == "table" and type(v) == "table"  then
-        table.mergeInPlace(mergeTarget[i], v, deep)
-      else
-        if type(v) == "table" then
-          mergeTarget[i] = table.copy(v)
-        else
-          mergeTarget[i] = v
-        end
-      end
-    end
-  end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 --// some global vars (so the effects can use them)
-vsx, vsy, vpx, vpy = Spring.GetViewGeometry() --// screen pos & view pos (view pos only unequal zero if dualscreen+minimapOnTheLeft)
+vsx, vsy, vpx, vpy = Spring.GetViewGeometry() --// screen pos & view pos (view pos only unequal zero if dualscreen+minimapOnTheLeft) 
 LocalAllyTeamID = 0
 thisGameFrame   = 0
 frameOffset     = 0
 LupsConfig      = {}
 
+
+local spActivateMaterial   = (Spring.UnitRendering and Spring.UnitRendering.ActivateMaterial) or function() end
+local spDeactivateMaterial = (Spring.UnitRendering and Spring.UnitRendering.DeactivateMaterial) or function() end
+
 local noDrawUnits = {}
 function SetUnitLuaDraw(unitID,nodraw)
-  if nodraw then
+  if (nodraw) then
     noDrawUnits[unitID] = (noDrawUnits[unitID] or 0) + 1
-    if noDrawUnits[unitID]==1 then
-      Spring.UnitRendering.ActivateMaterial(unitID,1)
-      --Spring.UnitRendering.SetLODLength(unitID,1,-1000)
-      for pieceID in ipairs(Spring.GetUnitPieceList(unitID) or {}) do
-        Spring.UnitRendering.SetPieceList(unitID,1,pieceID,nilDispList)
-      end
+    if (noDrawUnits[unitID]==1) then
+      --if (Game.version=="0.76b1") then
+        spActivateMaterial(unitID,1)
+        --Spring.UnitRendering.SetLODLength(unitID,1,-1000)
+        for pieceID in ipairs(Spring.GetUnitPieceList(unitID) or {}) do
+          Spring.UnitRendering.SetPieceList(unitID,1,pieceID,nilDispList)
+        end
+      --else
+      --  Spring.UnitRendering.SetUnitLuaDraw(unitID,true)
+      --end
     end
   else
     noDrawUnits[unitID] = (noDrawUnits[unitID] or 0) - 1
-    if noDrawUnits[unitID]==0 then
-      Spring.UnitRendering.DeactivateMaterial(unitID,1)
+    if (noDrawUnits[unitID]==0) then
+      --if (Game.version=="0.76b1") then
+        spDeactivateMaterial(unitID,1)
+      --else
+      --  Spring.UnitRendering.SetUnitLuaDraw(unitID,false)
+      --end
       noDrawUnits[unitID] = nil
     end
   end
 end
+
 
 local function DrawUnit(_,unitID,drawMode)
 --[[
@@ -273,7 +223,7 @@ local function DrawUnit(_,unitID,drawMode)
   refractionDraw = 4
 --]]
 
-  if drawMode==1 and noDrawUnits[unitID] then
+  if (drawMode==1)and(noDrawUnits[unitID]) then
     return true
   end
   return false
@@ -291,11 +241,11 @@ local DistortionClass
 local files = VFS.DirList(PCLASSES_DIRNAME, "*.lua",VFSMODE)
 for _,filename in ipairs(files) do
   local Class = VFS.Include(filename,nil,VFSMODE)
-  if Class then
-    if Class.GetInfo then
+  if (Class) then
+    if (Class.GetInfo) then
       Class.pi = Class.GetInfo()
       local sClassName = string.lower(Class.pi.name)
-      if fxClasses[sClassName] then
+      if (fxClasses[sClassName]) then
         print(PRIO_LESS,'LUPS: duplicated particle class name "' .. sClassName .. '"')
       else
         fxClasses[sClassName] = Class
@@ -331,21 +281,22 @@ end
 
 
 --// the id param is internal don't use it!
+
 function AddParticles(Class,Options   ,__id)
-  if not Options then
+  if (not Options) then
     print(PRIO_LESS,'LUPS->AddFX: no options given');
     return -1;
   end
 
+  --[[
   if Options.quality and Options.quality > GetLupsSetting("quality", 3) then
     return -1;
   end
+  --]]
 
-  if Options.delay and Options.delay~=0 then
+  if (Options.delay and Options.delay~=0) then
     partIDCount = partIDCount+1
-    local newOptions = {}
-    table.mergeInPlace(newOptions, Options)
-    newOptions.delay=nil
+    newOptions = {}; CopyTable(newOptions,Options); newOptions.delay=nil
     effectsInDelay[#effectsInDelay+1] = {frame=thisGameFrame+Options.delay, class=Class, options=newOptions, id=partIDCount};
     return partIDCount
   end
@@ -353,23 +304,23 @@ function AddParticles(Class,Options   ,__id)
   Class = StrToLower(Class)
   local particleClass = fxClasses[Class]
 
-  if not particleClass then
+  if (not particleClass) then
     print(PRIO_LESS,'LUPS->AddFX: couldn\'t find a particle class named "' .. Class .. '"');
     return -1;
   end
 
-  if Options.unit and not spValidUnitID(Options.unit) then
+  if (Options.unit)and(not spValidUnitID(Options.unit)) then
     print(PRIO_LESS,'LUPS->AddFX: unit is already dead/invalid "' .. Class .. '"');
     return -1;
   end
 
   --// piecename to piecenum conversion (spring >=76b1 only!)
-  if Options.unit and Options.piece then
+  if (Options.unit and Options.piece) then
     local pieceMap = spGetUnitPieceMap(Options.unit)
     Options.piecenum = pieceMap and pieceMap[Options.piece] --added check. switching spectator view can cause "attempt to index a nil value"
-    if not Options.piecenum then
+    if (not Options.piecenum) then
       local udid = Spring.GetUnitDefID(Options.unit)
-      if not udid then
+      if (not udid) then
         print(PRIO_LESS,"LUPS->AddFX:wrong unitID")
       else
         print(PRIO_ERROR,"LUPS->AddFX:wrong unitpiece " .. Options.piece .. "(" .. UnitDefs[udid].name .. ")")
@@ -383,9 +334,10 @@ function AddParticles(Class,Options   ,__id)
 
 
   local newParticles,reusedFxID = particleClass.Create(Options)
-  if newParticles then
-    particlesCount = particlesCount + 1
-    if __id then
+  if (newParticles) then
+    particlesCount = particlesCount + 1;
+
+    if (__id) then
       newParticles.id = __id
     else
       partIDCount = partIDCount+1
@@ -393,17 +345,17 @@ function AddParticles(Class,Options   ,__id)
     end
     particles[ newParticles.id ] = newParticles
 
-    local space = (not newParticles.worldspace and newParticles.unit or -1)
+    local space = ((not newParticles.worldspace) and newParticles.unit) or (-1)
     local fxTable = CreateSubTables(RenderSequence,{newParticles.layer,particleClass,space})
     newParticles.fxTable = fxTable
     fxTable[#fxTable+1] = newParticles
 
     return newParticles.id;
   else
-    if reusedFxID then
+    if (reusedFxID) then
       return reusedFxID;
     else
-      if newParticles~=false then
+      if (newParticles~=false) then
         print(PRIO_LESS,"LUPS->AddFX:FX creation failed");
       end
       return -1;
@@ -428,25 +380,20 @@ end
 
 function RemoveParticles(particlesID)
   local fx = particles[particlesID]
-  if fx then
-    if type(fx.fxTable)=="table" then
+  if (fx) then
+    if (type(fx.fxTable)=="table") then
       for j,w in pairs(fx.fxTable) do
-        if w.id==particlesID then
+        if (w.id==particlesID) then
           pop(fx.fxTable,j)
         end
       end
     end
     fx:Destroy()
-      if fx.lightID then
-        if (WG and WG['lighteffects']) or Script.LuaUI("GadgetRemoveLight") then
-      if WG then
-        WG['lighteffects'].removeLight(fx.lightID)
-      else
-        Script.LuaUI.GadgetRemoveLight(fx.lightID)
-      end
-      fx.lightID = nil
-        end
-      end
+    if fx.lightID then
+	  if WG and WG['lighteffects'] then
+	    WG['lighteffects'].removeLight(fx.lightID)
+	  end
+	end
     particles[particlesID] = nil
     particlesCount = particlesCount-1;
     return
@@ -454,7 +401,7 @@ function RemoveParticles(particlesID)
     local status,err = pcall(function()
 --//FIXME
       for i=1,#effectsInDelay do
-        if effectsInDelay[i].id==particlesID then
+        if (effectsInDelay[i].id==particlesID) then
           table.remove(effectsInDelay,i)
           return
         end
@@ -462,7 +409,7 @@ function RemoveParticles(particlesID)
 --//
     end)
 
-    if not status then
+    if (not status) then
       Spring.Echo("Error (Lups) - "..(#effectsInDelay).." :"..err)
       for i=1,#effectsInDelay do
         Spring.Echo("->",effectsInDelay[i],type(effectsInDelay[i]))
@@ -478,13 +425,13 @@ function GetStats()
   local layers  = 0
 
   for i=-50,50 do
-    if RenderSequence[i] then
+    if (RenderSequence[i]) then
       local layer = RenderSequence[i];
 
-      if next(layer or {}) then layers=layers+1 end
+      if (next(layer or {})) then layers=layers+1 end
 
       for partClass,Units in pairs(layer) do
-        if not effects[partClass.pi.name] then
+        if (not effects[partClass.pi.name]) then
           effects[partClass.pi.name] = {0,0} --//[1]:=fx count  [2]:=part count
         end
         for unitID,UnitEffects in pairs(Units) do
@@ -509,14 +456,14 @@ end
 
 
 function GetErrorLog(minPriority)
-  if minPriority then
+  if (minPriority) then
     local log = ""
     for i=1,#errorLog do
       if (errorLog[i].priority<=minPriority) then
         log = log .. errorLog[i].message .. "\n"
       end
     end
-    if log~="" then
+    if (log~="") then
       local sysinfo = "Vendor:" .. glVendor ..
                       "\nRenderer:" .. glRenderer ..
                       (((isATI)and("\nisATI: true"))or("")) ..
@@ -530,7 +477,7 @@ function GetErrorLog(minPriority)
     end
     return log
   else
-    if errorlog~="" then
+    if (errorlog~="") then
       local sysinfo = "Vendor:" .. glVendor ..
                       "\nRenderer:" .. glRenderer ..
                       "\nisATI:" .. tostring(isATI) ..
@@ -553,21 +500,6 @@ end
 local anyFXVisible = false
 local anyDistortionsVisible = false
 
-local unitMovetype = {}
-for unitDefID, ud in pairs(UnitDefs) do
-  local moveType = nil
-  if ud.canFly or ud.isAirUnit then
-    if ud.isHoveringAirUnit then
-      moveType = 1 -- gunship
-    else
-      moveType = 0 -- fixedwing
-    end
-  elseif not ud.isBuilding or ud.isFactory or ud.speed == 0 then
-    moveType = 2 -- ground/sea
-  end
-  unitMovetype[unitDefID] = moveType
-end
-
 local function IsUnitPositionKnown(unitID)
   if LocalAllyTeamID < 0 then
     return true
@@ -581,24 +513,24 @@ local function IsUnitPositionKnown(unitID)
     return true
   end
   local identified = (targetVisiblityState > 2)
-
+  
   if not identified then
     return false
   end
   local unitDefID = Spring.GetUnitDefID(unitID)
-  if not unitDefID then
+  if not (unitDefID and UnitDefs[unitDefID]) then
     return false
   end
-  return not unitMovetype[unitDefID]
+  return not Spring.Utilities.getMovetype(UnitDefs[unitDefID])
 end
 
 local function RadarDotCheck(unitID)
   return true
 end
 
-local function Draw(extension,layer,water)
+local function Draw(extension,layer)
   local FxLayer = RenderSequence[layer];
-  if not FxLayer then return end
+  if (not FxLayer) then return end
 
   local BeginDrawPass = "BeginDraw"..extension
   local DrawPass      = "Draw"..extension
@@ -606,54 +538,51 @@ local function Draw(extension,layer,water)
 
   for partClass,Units in pairs(FxLayer) do
     local beginDraw = partClass[BeginDrawPass]
-    if beginDraw then
+    if (beginDraw) then
 
       beginDraw()
       local drawfunc = partClass[DrawPass]
 
-      if not next(Units) then
+      if (not next(Units)) then
         FxLayer[partClass]=nil
       else
         for unitID,UnitEffects in pairs(Units) do
-          if not UnitEffects[1] then
+          if (not UnitEffects[1]) then 
             Units[unitID]=nil
           else
 
-            if unitID>-1 then
+            if (unitID>-1) then
 
               ------------------------------------------------------------------------------------
               -- render in unit/piece space ------------------------------------------------------
               ------------------------------------------------------------------------------------
               glPushMatrix()
               if gadget and not IsUnitPositionKnown(unitID) then
-                local x, y, z = Spring.GetUnitPosition(unitID)
-                local a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, a41, a42, a43, a44 = Spring.GetUnitTransformMatrix(unitID)
-                if a11 then
-                  gl.MultMatrix(a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, x, y, z , a44)
-                else
-                  glUnitMultMatrix(unitID)
-                end
-              else
-                glUnitMultMatrix(unitID)
-              end
+			    local x, y, z = Spring.GetUnitPosition(unitID)
+				local a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, a41, a42, a43, a44 = Spring.GetUnitTransformMatrix(unitID)
+				if a11 then
+				  gl.MultMatrix(a11, a12, a13, a14, a21, a22, a23, a24, a31, a32, a33, a34, x, y, z , a44)
+				else
+				  glUnitMultMatrix(unitID)
+				end
+			  else
+				glUnitMultMatrix(unitID)
+			  end
+			  --// render effects
+			  for i=1,#UnitEffects do
 
-
-              --// render effects
-              for i=1,#UnitEffects do
                 local fx = UnitEffects[i]
-                if fx.alwaysVisible or fx.visible then
-                  if not water or not fx.nowater then
-                    if fx.piecenum then
-                      --// enter piece space
-                      glPushMatrix()
-                        glUnitPieceMultMatrix(unitID,fx.piecenum)
-                        glScale(1,1,-1)
-                        drawfunc(fx)
-                      glPopMatrix()
-                      --// leave piece space
-                    else
-                      fx[DrawPass](fx)
-                    end
+                if (fx.alwaysVisible or fx.visible) then
+                  if (fx.piecenum) then
+                    --// enter piece space
+                    glPushMatrix()
+                      glUnitPieceMultMatrix(unitID,fx.piecenum)
+                      glScale(1,1,-1)
+                      drawfunc(fx)
+                    glPopMatrix()
+                    --// leave piece space
+                  else
+                    fx[DrawPass](fx)
                   end
                 end
               end
@@ -668,16 +597,14 @@ local function Draw(extension,layer,water)
               ------------------------------------------------------------------------------------
               for i=1,#UnitEffects do
                 local fx = UnitEffects[i]
-                if fx.alwaysVisible or fx.visible then
-                  if not water or not fx.nowater then
-                    glPushMatrix()
-                    if fx.projectile and not fx.worldspace then
-                      local x,y,z = spGetProjectilePosition(fx.projectile)
-                      glTranslate(x,y,z)
-                    end
-                    drawfunc(fx)
-                    glPopMatrix()
+                if (fx.alwaysVisible or fx.visible) then
+                  glPushMatrix()
+                  if fx.projectile and not fx.worldspace then
+                    local x,y,z = spGetProjectilePosition(fx.projectile)
+                    glTranslate(x,y,z)
                   end
+                  drawfunc(fx)
+                  glPopMatrix()
                 end
               end -- for
             end -- if
@@ -702,10 +629,10 @@ local function DrawDistortionLayers()
 end
 
 local function DrawParticlesOpaque()
-  if not anyFXVisible then return end
+  if ( not anyFXVisible ) then return end
 
   vsx, vsy, vpx, vpy = Spring.GetViewGeometry()
-  if vsx~=oldVsx or vsy~=oldVsy then
+  if (vsx~=oldVsx)or(vsy~=oldVsy) then
     for _,partClass in pairs(fxClasses) do
       if partClass.ViewResize then partClass.ViewResize(vsx, vsy) end
     end
@@ -722,7 +649,7 @@ local function DrawParticlesOpaque()
 end
 
 local function DrawParticles()
-  if not anyFXVisible then return end
+  if ( not anyFXVisible ) then return end
 
   glDepthTest(true)
 
@@ -734,7 +661,7 @@ local function DrawParticles()
   glAlphaTest(false)
 
   --// DrawDistortion()
-  if anyDistortionsVisible and DistortionClass then
+  if (anyDistortionsVisible)and(DistortionClass) then
     DistortionClass.BeginDraw()
     gl.ActiveFBO(DistortionClass.fbo,DrawDistortionLayers)
     DistortionClass.EndDraw()
@@ -752,7 +679,7 @@ end
 
 
 local function DrawParticlesWater()
-  if not anyFXVisible then return end
+  if ( not anyFXVisible ) then return end
 
   glDepthTest(true)
 
@@ -766,7 +693,7 @@ local function DrawParticlesWater()
   --// Draw() (layers: -50 upto 50)
   glAlphaTest(GL_GREATER, 0)
   for i=-50,50 do
-    Draw("",i,true)
+    Draw("",i)
   end
   glAlphaTest(false)
 end
@@ -775,21 +702,110 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Unit activity
+
 local activeUnit = {}
 local activeUnitCheckTime = {}
-local ACTIVE_CHECK_PERIOD = 10
+local unitDrawStatus = {}
+local unitDrawStatusCheckTime = {}
+local ACTIVE_CHECK_PERIOD = 15
+
+local GetPriorityCheckTime = 0
+local GetDynamicLupsCheckTime = 0
+local GetPriorityConfig = Spring.GetConfigInt("LupsPriority") or 3
+local GetDynamicLupsStatus = Spring.GetConfigInt("DynamicLups") or 0
+local CONFIG_CHECK_PERIOD = 15
+
 
 local function GetUnitIsActive(unitID)
   if activeUnitCheckTime[unitID] and activeUnitCheckTime[unitID] > thisGameFrame then
     return activeUnit[unitID]
   end
-
   activeUnitCheckTime[unitID] = thisGameFrame + ACTIVE_CHECK_PERIOD
-  activeUnit[unitID] = (spGetUnitIsActive(unitID) or spGetUnitRulesParam(unitID, "unitActiveOverride") == 1)
-    and (spGetUnitRulesParam(unitID, "disarmed") ~= 1)
-    and (spGetUnitRulesParam(unitID, "morphDisable") ~= 1)
-    and not spGetUnitIsStunned(unitID)
+  activeUnit[unitID] = spGetUnitIsActive(unitID)
   return activeUnit[unitID]
+end
+
+local function GetUnitDrawStatus(unitID)
+  if unitDrawStatusCheckTime[unitID] and unitDrawStatusCheckTime[unitID] > thisGameFrame then
+    return unitDrawStatus[unitID]
+  end
+  unitDrawStatusCheckTime[unitID] = thisGameFrame + ACTIVE_CHECK_PERIOD
+
+  unitDrawStatus[unitID] = (spGetUnitRulesParam(unitID, "nolupsdraw") == 1) or spGetUnitIsStunned(unitID)
+  return unitDrawStatus[unitID]
+end
+
+local function GetPriority(priority)
+  if GetPriorityCheckTime and GetPriorityCheckTime > thisGameFrame then
+    return priority > GetPriorityConfig
+  end
+  GetPriorityCheckTime = thisGameFrame + ACTIVE_CHECK_PERIOD
+  GetPriorityConfig = Spring.GetConfigInt("LupsPriority") or 3
+  return priority > GetPriorityConfig 
+end
+
+local function GetDynamicLups()
+  if GetDynamicLupsCheckTime and GetDynamicLupsCheckTime > thisGameFrame then
+    return GetDynamicLupsStatus
+  end
+  GetDynamicLupsCheckTime = thisGameFrame + CONFIG_CHECK_PERIOD
+  GetDynamicLupsStatus = Spring.GetConfigInt("DynamicLups",0) or 0
+  return GetDynamicLupsStatus
+end
+
+local function ConvertRange(value)
+  local OldMax, OldMin, NewMax, NewMin = 50,30,5,1
+  local OldRange = (OldMax - OldMin)
+  local NewRange = (NewMax - NewMin)
+  value = (((value - OldMin) * NewRange) / OldRange) + NewMin
+  if value < 1 then value = 1 end
+  --value = (NewMax + NewMin) - value
+  return math.min(value)
+end
+
+local weight = 10
+local timecheck = 0
+local avgfps = 0
+local storedfps = {}
+local index = 1
+local SAMPLE_RATE = 35
+
+local index = 1
+local skipfpscheck = false
+
+for i=1,weight do
+  storedfps[i] = 200 --dummy value
+  avgfps = avgfps + storedfps[i]
+end
+
+local function GetAvgFPS()
+  if timecheck and timecheck > thisGameFrame then
+    return avgfps / weight
+  end
+  timecheck = thisGameFrame + SAMPLE_RATE
+  skipfpscheck = false
+  if index == weight + 1 then
+    index = 1
+  end
+  local oldfps = storedfps[index]
+  storedfps[index] = Spring.GetFPS()
+  avgfps = ((avgfps - oldfps) + storedfps[index])
+  index = index + 1
+  return avgfps / weight
+end
+
+local function GetReduceEffects(priority)
+  local avgFPS = GetAvgFPS()
+  if avgFPS < 68 then
+    if ConvertRange(avgFPS) < priority then
+      if not skipfpscheck then
+        timecheck = thisGameFrame + (SAMPLE_RATE * 4)
+        skipfpscheck = true
+      end
+      return true
+    end
+  end
+  return false
 end
 
 --------------------------------------------------------------------------------
@@ -805,7 +821,7 @@ local DrawInMiniMapVisibleFx
 
 local function UpdateAllyTeamStatus()
   local spec, specFullView = spGetSpectatingState()
-  if specFullView then
+  if (specFullView) then
     LocalAllyTeamID = scGetReadAllyTeam() or 0
   else
     LocalAllyTeamID = spGetLocalAllyTeamID() or 0
@@ -843,26 +859,30 @@ end
 local function IsUnitFXVisible(fx)
   local unitActive = true
   local unitID = fx.unit
-  local unitHealth = spGetUnitHealth(unitID)
-  if not unitHealth or unitHealth <= 0 then
-    return false
+  local priority = fx.priority or 3
+  local disableOnLevel = fx.disableabovelevel or nil
+  if (disableOnLevel and GetPriority(priority+1)==false) then return false end
+  if GetPriority(priority) then return false end
+
+  if GetDynamicLups() == 1 then
+    if GetReduceEffects(priority) then return false end
   end
+
   if fx.onActive then
     unitActive = GetUnitIsActive(unitID)
-  end
-  if fx.xzVelocity then
-    local uvx,_,uvz = Spring.GetUnitVelocity(unitID)
-    if math.abs(uvx)+math.abs(uvz) > fx.xzVelocity then
-      unitActive = true
-    else
-      return false
+    if (unitActive == nil) and GetPriority(5) then --because unitactive returns nil for enemy units, and onActive types are all airjets, we get the unit's velocity, and use that as an approximation to 'active' state --HACKY
+    local vx, vy, vz = spGetUnitVelocity(unitID)
+      if (vx~= nil and (vx~= 0  or vz~=0)) then
+        unitActive=true
+      end
     end
   end
-  --Spring.Utilities.UnitEcho(unitID, "w")
-  if not fx.onActive or unitActive then
+  if GetUnitDrawStatus(unitID) then
+    return false
+  elseif (not fx.onActive) or (unitActive) then
     if fx.alwaysVisible then
       return true
-    elseif fx.Visible then
+    elseif (fx.Visible) then
       return fx:Visible()
     else
       local unitRadius = (spGetUnitRadius(unitID) or 0) + 40
@@ -875,6 +895,13 @@ local function IsUnitFXVisible(fx)
 end
 
 local function IsProjectileFXVisible(fx)
+  local priority = fx.priority or 3
+  if GetPriority(priority) then return false end
+
+  if GetDynamicLups() == 1 then
+    if GetReduceEffects(priority) then return false end
+  end
+
   if fx.alwaysVisible then
     return true
   elseif fx.Visible then
@@ -882,20 +909,29 @@ local function IsProjectileFXVisible(fx)
   else
     local proID = fx.projectile
     local x,y,z = Spring.GetProjectilePosition(proID)
-    if IsPosInLos(x,y,z) and spIsSphereInView(x,y,z,(fx.radius or 200)+100) then
+    if (IsPosInLos(x,y,z)and (spIsSphereInView(x,y,z,(fx.radius or 200)+100)) ) then
       return true
     end
   end
 end
 
 local function IsWorldFXVisible(fx)
+  local priority = fx.priority or 3
+  if GetPriority(priority) then return false end
+
+ if GetDynamicLups() == 1 then
+    if GetReduceEffects(priority) then return false end
+  end
+
   if fx.alwaysVisible then
     return true
-  elseif fx.Visible then
+  elseif (fx.Visible) then
     return fx:Visible()
-  elseif fx.pos then
+  elseif (fx.pos) then
     local pos = fx.pos
-    if IsPosInLos(pos[1],pos[2],pos[3]) and spIsSphereInView(pos[1],pos[2],pos[3],(fx.radius or 200)+100) then
+    if (IsPosInLos(pos[1],pos[2],pos[3]))and
+      (spIsSphereInView(pos[1],pos[2],pos[3],(fx.radius or 200)+100))
+    then
       return true
     end
   end
@@ -907,30 +943,30 @@ local function CreateVisibleFxList()
   local removeCnt = 1
 
   for _,fx in pairs(particles) do
-    if (fx.unit or -1) > -1 then
+    if ((fx.unit or -1) > -1) then
       fx.visible = IsUnitFXVisible(fx)
-      if fx.visible then
-        if not anyFXVisible then anyFXVisible = true end
-        if not anyDistortionsVisible then anyDistortionsVisible = fx.pi.distortion end
+      if (fx.visible) then
+        if (not anyFXVisible) then anyFXVisible = true end
+        if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
       end
-    elseif (fx.projectile or -1) > -1 then
+    elseif ((fx.projectile or -1) > -1) then
       fx.visible = IsProjectileFXVisible(fx)
-      if fx.visible then
-      if not anyFXVisible then anyFXVisible = true end
-      if not anyDistortionsVisible then anyDistortionsVisible = fx.pi.distortion end
+      if (fx.visible) then
+      if (not anyFXVisible) then anyFXVisible = true end
+      if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
       end
     else
       fx.visible = IsWorldFXVisible(fx)
-      if fx.visible then
-        if not anyFXVisible then anyFXVisible = true end
-        if not anyDistortionsVisible then anyDistortionsVisible = fx.pi.distortion end
-      elseif fx.Valid and not fx:Valid() then
+      if (fx.visible) then
+        if (not anyFXVisible) then anyFXVisible = true end
+        if (not anyDistortionsVisible) then anyDistortionsVisible = fx.pi.distortion end
+      elseif (fx.Valid and (not fx:Valid())) then
         removeFX[removeCnt] = fx.id
         removeCnt = removeCnt + 1
       end
     end
   end
-  --Spring.Echo("Lups fx cnt", particles.GetIndexMax())
+   --Spring.Echo("Lups fx cnt", particles.GetIndexMax())
 
   for i=1,removeCnt-1 do
     RemoveParticles(removeFX[i])
@@ -947,11 +983,11 @@ local function CleanInvalidUnitFX()
   for layerID,layer in pairs(RenderSequence) do
     for partClass,Units in pairs(layer) do
       for unitID,UnitEffects in pairs(Units) do
-        if not UnitEffects[1] then
+        if (not UnitEffects[1]) then
           Units[unitID] = nil
         else
-          if unitID>-1 then
-            if not spValidUnitID(unitID) then --// UnitID isn't valid anymore, remove all its effects
+          if (unitID>-1) then
+            if (not spValidUnitID(unitID)) then --// UnitID isn't valid anymore, remove all its effects
               for i=1,#UnitEffects do
                 local fx = UnitEffects[i]
                 removeFX[removeCnt] = fx.id
@@ -976,7 +1012,7 @@ end
 --// needed to allow to use RemoveParticles in :Update of the particleclasses
 local fxRemoveList = {}
 function BufferRemoveParticles(id)
-  fxRemoveList[#fxRemoveList+1] = id
+	fxRemoveList[#fxRemoveList+1] = id
 end
 
 --------------------------------------------------------------------------------
@@ -986,19 +1022,22 @@ local lastGameFrame = 0
 
 local function GameFrame(_,n)
   thisGameFrame = n
-  if not next(particles) and not effectsInDelay[1] then return end
+
+  if ((not next(particles)) and (not effectsInDelay[1])) then return end
+
+  UpdateAllyTeamStatus()
 
   --// create delayed FXs
-  if effectsInDelay[1] then
+  if (effectsInDelay[1]) then
     local remaingFXs,cnt={},1
     for i=1,#effectsInDelay do
       local fx = effectsInDelay[i]
-      if fx.frame>thisGameFrame then
+      if (fx.frame>thisGameFrame) then
         remaingFXs[cnt]=fx
         cnt=cnt+1
       else
         AddParticles(fx.class,fx.options, fx.id)
-        if fx.frame-thisGameFrame > 0 then
+        if (fx.frame-thisGameFrame>0) then
           particles[fx.id]:Update(fx.frame-thisGameFrame)
         end
       end
@@ -1006,54 +1045,52 @@ local function GameFrame(_,n)
     effectsInDelay = remaingFXs
   end
 
-  --// cleanup FX from dead/invalid units
-  CleanInvalidUnitFX()
+	--// cleanup FX from dead/invalid units
+	CleanInvalidUnitFX()
 
-  --// update FXs
-  framesToUpdate = thisGameFrame - lastGameFrame
-  for _,partFx in pairs(particles) do
-    if n>=partFx.dieGameFrame then
+	--// update FXs
+	framesToUpdate = thisGameFrame - lastGameFrame
+	for _,partFx in pairs(particles) do
+    if (n>=partFx.dieGameFrame) then
       --// lifetime ended
-      if partFx.repeatEffect then
-        if type(partFx.repeatEffect)=="number" then
+      if (partFx.repeatEffect) then
+        if (type(partFx.repeatEffect)=="number") then
           partFx.repeatEffect = partFx.repeatEffect - 1
           if (partFx.repeatEffect==1) then partFx.repeatEffect = nil end
         end
-        if partFx.ReInitialize then
+        if (partFx.ReInitialize) then
           partFx:ReInitialize()
         else
-          partFx.dieGameFrame = partFx.dieGameFrame + partFx.life
-        end
-      else
-        --// we can't remove items from a table we are iterating atm, so just buffer them and remove them later
-        BufferRemoveParticles(partFx.id)
-      end
-    else
-      --// update particles
-      if partFx.Update then
+					partFx.dieGameFrame = partFx.dieGameFrame + partFx.life
+				end
+			else
+				--// we can't remove items from a table we are iterating atm, so just buffer them and remove them later
+				BufferRemoveParticles(partFx.id)
+			end
+		else
+			--// update particles
+      if (partFx.Update) then
         partFx:Update(framesToUpdate)
       end
-    end
-  end
+		end
+	end
 
-  --// now we can remove particles
-  if #fxRemoveList>0 then
-    for i=1,#fxRemoveList do
-      RemoveParticles(fxRemoveList[i])
+	--// now we can remove particles
+	if (#fxRemoveList>0) then
+		for i=1,#fxRemoveList do
+			RemoveParticles(fxRemoveList[i])
     end
     fxRemoveList = {}
   end
 end
 
 local function Update(_,dt)
-  UpdateAllyTeamStatus()
-
   --// update frameoffset
   frameOffset = spGetFrameTimeOffset()
 
   --// Game Frame Update
   local x = spGetGameFrame()
-  if x-lastGameFrame >=1 then
+  if ((x-lastGameFrame)>=1) then
     GameFrame(nil,x)
     lastGameFrame = x
   end
@@ -1061,21 +1098,11 @@ local function Update(_,dt)
   --// check which fxs are visible
   anyFXVisible = false
   anyDistortionsVisible = false
-  if next(particles) then
+  if (next(particles)) then
     CreateVisibleFxList()
   end
-  --if reflectionrefractionEnabled and Spring.GetConfigInt("lupsreflectionrefraction", 0) ~= 1 then
-  --  handler:RemoveCallIn("DrawWorldReflection")
-  --  handler:RemoveCallIn("DrawWorldRefraction")
-  --  reflectionrefractionEnabled = false
-  --  Spring.Echo("Lups reflection and refraction pass Disabled")
-  --elseif not reflectionrefractionEnabled and Spring.GetConfigInt("lupsreflectionrefraction", 0) ~= 0 then
-  --  handler:UpdateCallIn("DrawWorldReflection")
-  --  handler:UpdateCallIn("DrawWorldRefraction")
-  --  reflectionrefractionEnabled = true
-  --  Spring.Echo("Lups reflection and refraction pass Enabled")
-  --end
 end
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -1099,9 +1126,9 @@ local function Initialize()
   local showWarnings = LupsConfig.showwarnings
   if showWarnings then
     local t = type(showWarnings)
-    if t=="number" then
+    if (t=="number") then
       printErrorsAbove = showWarnings
-    elseif t=="boolean" then
+    elseif (t=="boolean") then
       printErrorsAbove = PRIO_LESS
     end
   end
@@ -1112,10 +1139,10 @@ local function Initialize()
   if DistortionClass then
     fxClasses["postdistortion"]=nil --// remove it from default classes
     local di = DistortionClass.pi
-    if di and CheckParticleClassReq(di) then
+    if (di) and CheckParticleClassReq(di) then
       local fine = true
       if (DistortionClass.Initialize) then fine = DistortionClass.Initialize() end
-      if fine~=nil and fine==false then
+      if (fine~=nil)and(fine==false) then
         print(PRIO_LESS,'LUPS: disabled Distortions');
         DistortionClass=nil
       end
@@ -1138,26 +1165,34 @@ local function Initialize()
   --// initialize particle classes
   for fxName,fxClass in pairs(fxClasses) do
     local fi = fxClass.pi --// .fi = fxClass.GetInfo()
-    if not disableFX[fxName] and (fi) and CheckParticleClassReq(fi) then
+    if (not disableFX[fxName]) and (fi) and CheckParticleClassReq(fi) then
       local fine = true
-      if fxClass.Initialize then fine = fxClass.Initialize() end
-      if fine~=nil and fine==false then
+      if (fxClass.Initialize) then fine = fxClass.Initialize() end
+      if (fine~=nil)and(fine==false) then
         print(PRIO_LESS,'LUPS: "' .. fi.name .. '" FXClass removed (class requested it during initialization)');
         fxClasses[fxName]=nil
-        if fi.backup and fi.backup~="" then
+        if (fi.backup and fi.backup~="") then
           linkBackupFXClasses[fxName] = fi.backup:lower()
         end
-        if fxClass.Finalize then fxClass.Finalize() end
+        if (fxClass.Finalize) then fxClass.Finalize() end
       end
     else --// unload particle class (not supported by this computer)
       print(PRIO_LESS,'LUPS: "' .. fi.name .. '" FXClass removed (hardware doesn\'t support it)');
       fxClasses[fxName]=nil
-      if fi.backup and fi.backup~="" then
+      if (fi.backup and fi.backup~="") then
         linkBackupFXClasses[fxName] = fi.backup:lower()
       end
     end
   end
 
+  if Spring.GetConfigInt("lupsenablerefraction", 0) ~= 1 then
+    (gadgetHandler or widgetHandler):RemoveCallIn("DrawWorldRefraction")
+    Spring.Echo("Lups Refraction Pass Disabled")
+  end
+  if Spring.GetConfigInt("lupsenablereflection", 0) ~= 1 then
+    (gadgetHandler or widgetHandler):RemoveCallIn("DrawWorldReflection")
+    Spring.Echo("Lups Reflection Pass Disabled")
+  end
 
   --// link backup FXClasses
   for className,backupName in pairs(linkBackupFXClasses) do
@@ -1204,20 +1239,18 @@ local function Shutdown()
 
   gl.DeleteList(nilDispList)
 end
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+local this = widget or gadget
 
 this.GetInfo    = GetInfo
 this.Initialize = Initialize
 this.Shutdown   = Shutdown
 this.DrawWorldPreUnit    = DrawParticlesOpaque
 this.DrawWorld           = DrawParticles
---if Spring.GetConfigInt("lupsreflectionrefraction", 0) == 1 then
---  reflectionrefractionEnabled = true
---  this.DrawWorldReflection = DrawParticlesWater
---  this.DrawWorldRefraction = DrawParticlesWater
---end
+this.DrawWorldReflection = DrawParticlesWater
+this.DrawWorldRefraction = DrawParticlesWater
 this.ViewResize = ViewResize
 this.Update     = Update
 if gadget then

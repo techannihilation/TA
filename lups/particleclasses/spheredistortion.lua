@@ -31,10 +31,10 @@ SphereDistortion.Default = {
   layer = 1,
   worldspace = true,
 
-  life     = 20,
+  life     = 25,
   pos      = {0,0,0},
-  growth   = 4.5,
-  strength = 0.25,
+  growth   = 2.5,
+  strength = 0.15,
 
   repeatEffect = false,
   dieGameFrame = math.huge
@@ -60,17 +60,6 @@ function SphereDistortion:EndDrawDistortion()
 end
 
 
-local function DrawQuad(x,y,z)
-  gl.TexCoord(-1,1)
-  gl.Vertex(x,y,z)
-  gl.TexCoord(1,1)
-  gl.Vertex(x,y,z)
-  gl.TexCoord(1,-1)
-  gl.Vertex(x,y,z)
-  gl.TexCoord(-1,-1)
-  gl.Vertex(x,y,z)
-end
-
 function SphereDistortion:DrawDistortion()
   local pos   = self.pos
   local x,y,z = pos[1],pos[2],pos[3]
@@ -79,7 +68,16 @@ function SphereDistortion:DrawDistortion()
   glUniform(strengthLoc, self.strength )
   glUniform(centerLoc,   cx,cy )
 
-  gl.BeginEnd(GL.QUADS,DrawQuad,x,y,z)
+  gl.BeginEnd(GL.QUADS,function()
+     gl.TexCoord(-1,1)
+    gl.Vertex(x,y,z)
+     gl.TexCoord(1,1)
+    gl.Vertex(x,y,z)
+     gl.TexCoord(1,-1)
+    gl.Vertex(x,y,z)
+     gl.TexCoord(-1,-1)
+    gl.Vertex(x,y,z)
+  end)
 end
 
 -----------------------------------------------------------------------------------------------------------------
@@ -88,7 +86,6 @@ end
 function SphereDistortion.Initialize()
   warpShader = gl.CreateShader({
     vertex = [[
-    #version 150 compatibility
       uniform vec2  center;
       uniform float radius;
       uniform vec2  screenInverse;
@@ -104,7 +101,6 @@ function SphereDistortion.Initialize()
       }
     ]],
     fragment = [[
-    #version 150 compatibility
       uniform vec2  center;
       uniform float strength;
       uniform vec2  screenInverse;
@@ -199,6 +195,7 @@ end
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
+local MergeTable   = MergeTable
 local setmetatable = setmetatable
 
 function SphereDistortion.Create(Options)
