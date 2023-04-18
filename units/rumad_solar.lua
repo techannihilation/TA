@@ -118,7 +118,7 @@ return {
 				[1] = "kbarmmov",
 			},
 			select = {
-				[1] = "windgen1",
+				[1] = "solar1",
 			},
 		},
 	},
