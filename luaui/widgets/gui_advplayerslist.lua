@@ -2291,13 +2291,9 @@ function DrawName(name, team, posY, dark, playerID)
 		DrawState(playerID, m_name.posX + widgetPosX, posY)
 	end
 	if (nameColourR + nameColourG*1.2 + nameColourB*0.4) < 0.8 then
-		gl_Text(colourNames(team) .. nameText, m_name.posX + widgetPosX + 3 + xPadding, posY + 4, 14, "o") -- draws name
+		gl_Text(nameText, m_name.posX + widgetPosX + 3 + xPadding, posY + 4, 14, "O") -- draws name
 	else
-		gl_Color(0,0,0,0.45)
-		gl_Text(nameText, m_name.posX + widgetPosX + 2 + xPadding, posY + 3, 14, "n") -- draws name
-		gl_Text(nameText, m_name.posX + widgetPosX + 4 + xPadding, posY + 3, 14, "n") -- draws name
-		gl_Color(nameColourR,nameColourG,nameColourB,1)
-		gl_Text(nameText, m_name.posX + widgetPosX + 3 + xPadding, posY + 4, 14, "n") -- draws name
+		gl_Text(nameText, m_name.posX + widgetPosX + 3 + xPadding, posY + 4, 14, "o") -- draws name
 	end
 	gl_Color(1,1,1)
 end
