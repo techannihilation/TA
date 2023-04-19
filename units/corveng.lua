@@ -38,7 +38,6 @@ return {
 		moverate1 = 8,
 		name = "Avenger",
 		noautofire = false,
-
 		objectname = "CORVENG",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
@@ -121,7 +120,7 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					
+
 					air = 75,
 				},
 			},

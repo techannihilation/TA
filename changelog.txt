@@ -1,7 +1,8 @@
 4.46 => 4.47
-2023-04-15
+2023-04-21
 
 Balance :
+ - Bombers damage vs commander are increase by 100% (total 50% for defaut damage vs 25% before)
  - Uniformize damage modifier for fix armored units : 0.10=>0.20
 
 4.45 => 4.46

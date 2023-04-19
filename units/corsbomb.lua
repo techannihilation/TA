@@ -132,7 +132,7 @@ return {
 				targetborder = 0,
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 500,
+					commanders = 1000,
 					default = 2000,
 					subs = 5,
 				},
