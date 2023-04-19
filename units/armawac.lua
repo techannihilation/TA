@@ -28,7 +28,7 @@ return {
 		idletime = 1800,
 		losemitheight = 6,
 		maneuverleashlength = 1280,
-		mass = 133.33333,
+		mass = 125,
 		maxdamage = 800,
 		maxslope = 10,
 		maxvelocity = 11,
@@ -36,7 +36,6 @@ return {
 		mobilestandorders = 1,
 		name = "Eagle",
 		noautofire = false,
-		
 		objectname = "ARMAWAC",
 		radardistance = 1600,
 		radaremitheight = 6,

@@ -1,6 +1,6 @@
 return {
 	armpnix = {
-		acceleration = 0.02587,
+		acceleration = 0.025,
 		altfromsealevel = 1,
 		attackrunlength = 300,
 		bankscale = 1,
@@ -129,7 +129,7 @@ return {
 				soundstart = "bombrel",
 				weapontype = "AircraftBomb",
 				damage = {
-					commanders = 60,
+					commanders = 120,
 					default = 240,
 					subs = 5,
 				},

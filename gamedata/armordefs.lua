@@ -48,6 +48,9 @@ return {
 		"gok_chariot",
 		"gok_wordbearer",
 		"gok_benne",
+		"rumad_bomber_lvl1",
+		"rumad_bomber_lvl2",
+		"rumad_bomber_lvl3",
 
 	--Fighters
 	"armwolf",
@@ -68,6 +71,9 @@ return {
 	"gok_angel",
 	"gok_sucub",
 	"gok_wraith",
+	"rumad_fighter_lvl1",
+	"rumad_fighter_lvl2",
+	"rumad_fighter_lvl3",
 
 	--Construction
 	"abuilderlvl1",
@@ -103,6 +109,9 @@ return {
 	"gok_aca",
 	"gok_eca",
 	"gok_engineera",
+	"rumad_ca",
+	"rumad_aca",
+	"rumad_eca",
 
 	--Gunships
 	"armbrawl",
@@ -128,6 +137,8 @@ return {
 	"gok_spook",
 	"gok_dvergar",
 	"gok_revenant",
+	"rumad_gunship_lvl1",
+	"rumad_gunship_lvl2",
 
 	-- Scout planes
 	"armawac",
@@ -150,6 +161,8 @@ return {
 	"talon_vigilante",
 	"gok_vision",
 	"gok_demoneye",
+	"rumad_ascout_lvl1",
+	"rumad_ascout_lvl2",
 
 	--T3 Raiser
 	"armerez",
@@ -205,6 +218,7 @@ return {
 		"gok_apocalypse",
 		"gok_octopus",
 		"talon_gold",
+		"rumad_ap",
 
 		-- T6 MAJOR
 		"gok_squid",

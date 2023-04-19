@@ -36,8 +36,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "Hawk",
-		
+		name = "Hawk",		
 		objectname = "ARMHAWK",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -122,7 +121,7 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					
+
 					air = 120,
 				},
 			},

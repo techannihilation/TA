@@ -49,7 +49,7 @@ return {
 		standingmoveorder = 1,
 		steeringmode = 1,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 5.016,
+		turninplacespeedlimit = 5,
 		turnrate = 185,
 		unitname = "armcyclone",
 		upright = true,
@@ -104,7 +104,7 @@ return {
 		},
 		weapondefs = {
 			mk83 = {
-				areaofeffect = 100,
+				areaofeffect = 96,
 				avoidfeature = false,
 				cegtag = "Trail_Medium_Rocket_Bomb",
 				collidefriendly = false,
@@ -136,7 +136,7 @@ return {
 				weapontype = "AircraftBomb",
 				weaponvelocity = 1000,
 				damage = {
-					commanders = 3000,
+					commanders = 6000,
 					default = 12000,
 					subs = 5,
 				},

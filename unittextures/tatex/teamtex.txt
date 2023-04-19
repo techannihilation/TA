@@ -31,3 +31,4 @@ goklogo
 goklogolight
 goklogoblue
 rumad_flag200
+rumad_plating_logo

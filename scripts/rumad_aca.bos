@@ -1,0 +1,79 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, turn1, engine1, thruster11, thruster12, engine2, thruster21, thruster22, turn2, engine3, engine4, thrust11, thrust12, thrust21, thrust22, thrust3, thrust4,
+       barrel1, barrel2, sp, carry, beam1, beam2;
+
+static-var  DesiredState, StateChanging, Flying, UnitHeading, UnitSpeed, Inactive, Gun, Launcher, spray;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+Create()
+{
+	spray = 0;
+	start-script SmokeUnit();
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = sp;
+}
+
+StartBuilding()
+{
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	if( spray == 0 )
+	{
+		piecenum = beam1;
+	}
+	if( spray != 0 )
+	{
+		piecenum = beam2;
+	}
+	spray = !spray;
+}
+
+Killed(severity, corpseType)
+{
+	CorpseType = 3;
+	explode hull type NOHEATCLOUD;
+	explode engine1 type NOHEATCLOUD;
+	explode engine2 type NOHEATCLOUD;
+	return corpseType;
+	
+}

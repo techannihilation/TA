@@ -1,0 +1,119 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, turret, pitchturret, barrel1, sbarrel1, flare1;
+
+// Signal definitions
+#define SIG_AIM_1			2
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	hide flare1;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	turn turret to y-axis <0.0> speed <75.0>;
+	turn pitchturret to x-axis <0.000000> speed <50.0>;
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = pitchturret;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret to y-axis heading speed <75.000000>;
+	turn pitchturret to x-axis <0.0> - pitch speed <50.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon1()
+{
+	emit-sfx 1024 from flare1;
+	move barrel1 to z-axis [-1.500000] speed [500.000000];
+	move sbarrel1 to z-axis [-2.500000] speed [500.000000];
+	sleep 100;
+	move barrel1 to z-axis [0.000000] speed [1.000000];
+	move sbarrel1 to z-axis [0.000000] speed [1.000000];
+}
+
+QueryWeapon1(piecenum)
+{
+	piecenum = flare1;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = pitchturret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode turret type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
