@@ -40,7 +40,7 @@ return {
 		name = "Desert Storm",
 		noautofire = true,
 		objectname = "rumad_bomber_lvl2",
-		script = "rumad_bomber_lvl.cob",
+		script = "basic_plane.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 195,
