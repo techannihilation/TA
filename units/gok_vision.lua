@@ -17,7 +17,7 @@ return {
 		collide = false,
 		cruisealt = 180,
 		defaultmissiontype = "VTOL_standby",
-		description = "MINOR Plane",
+		description = "Scout Plane",
 		explodeas = "SMALL_UNITEX",
 		footprintx = 2,
 		footprintz = 2,
