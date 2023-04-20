@@ -8,6 +8,7 @@ return {
 		builder = true,
 		buildpic = "rumad_vp.dds",
 		buildtime = 6000,
+		canassist = false,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,

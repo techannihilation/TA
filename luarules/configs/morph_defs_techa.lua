@@ -258,11 +258,11 @@ local morphDefs = {
 	rumad_geo_mini = {
 		into = 'rumad_geo',
 		time = 60,
-		tech = 1,
 	},
 	rumad_geo = {
 		into = 'rumad_mohogeo',
 		time = 30,
+		tech = 1,
 	},
 	armgate2 = {
 		into = 'armgate',

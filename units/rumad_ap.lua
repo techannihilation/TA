@@ -10,6 +10,7 @@ return {
 		builder = true,
 		buildpic = "rumad_ap.dds",
 		buildtime = 7000,
+		canassist = false,
 		canfly = true,
 		canguard = true,
 		canmove = true,
