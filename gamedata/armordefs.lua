@@ -112,6 +112,7 @@ return {
 	"rumad_ca",
 	"rumad_aca",
 	"rumad_eca",
+	"rumad_engineera",
 
 	--Gunships
 	"armbrawl",
