@@ -44,7 +44,6 @@ return {
 		sightdistance = 850,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		script = "basic_plane.cob",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 9.108,
 		turnrate = 880,

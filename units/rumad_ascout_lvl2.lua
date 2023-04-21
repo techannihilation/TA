@@ -45,7 +45,6 @@ return {
 		sonardistance = 1200,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		script = "basic_plane.cob",
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 7.26,
 		turnrate = 392,
