@@ -39,6 +39,7 @@ return {
 		objectname = "rumad_ascout_lvl2",
 		radardistance = 1600,
 		radaremitheight = 6,
+		script = "rumad_ascout_lvl2.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 1200,

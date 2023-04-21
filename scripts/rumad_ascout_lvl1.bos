@@ -3,7 +3,10 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, fire, queue;
+piece  base;
+
+static-var  statechg_DesiredState, statechg_StateChanging;
+
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -37,16 +40,6 @@ Create()
 	start-script SmokeUnit();
 }
 
-AimPrimary()
-{
-	return (1);
-}
-
-QueryPrimary(piecenum)
-{
-	piecenum = fire;
-}
-
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -57,19 +50,16 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode hull type NOHEATCLOUD;
-		explode queue type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode hull type NOHEATCLOUD;
-		explode queue type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode hull type NOHEATCLOUD;
-	explode queue type NOHEATCLOUD;
+	explode base type NOHEATCLOUD;
 	return (corpsetype);
 }
