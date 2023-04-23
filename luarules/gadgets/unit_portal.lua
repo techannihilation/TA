@@ -141,7 +141,8 @@ if (gadgetHandler:IsSyncedCode()) then
                             local uID = unitids[i]
                             if uID ~= unitID then -- DO not teleport self
                                 local udef = UnitDefs[Spring.GetUnitDefID(uID)]
-                                if not udef.canfly then
+                                local oldHealth,oldMaxHealth,paralyzeDamage,captureProgress,buildProgress = Spring.GetUnitHealth(uID)
+                                if not udef.canfly and buildProgress >= 1 and udef.canMove and udef.speed > 0.000001 then -- No planes, only completely built units and only units that can actually move
                                     if Spring.UseUnitResource(unitID, {
                                         m = 0,
                                         e = udef.metalCost
@@ -153,6 +154,7 @@ if (gadgetHandler:IsSyncedCode()) then
                                         local tz2 = tz 
 
                                         local heading = Spring.GetUnitHeading(unitID)
+                                        -- Move units to the front outside the portal
                                         if ( heading > 0 ) then 
                                             if ( heading < 8192 ) then -- South
                                                 tz2 = tz2 + 200
