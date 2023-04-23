@@ -16,6 +16,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Locates Water Units",
+		energyuse = 10,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 2,
 		footprintz = 2,

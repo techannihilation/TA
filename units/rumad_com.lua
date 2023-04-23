@@ -78,7 +78,7 @@ return {
 			[8] = "rumad_vp",
 			[9] = "rumad_ap",
 			--[10] = "",
-			--[11] = "rumad_rad",
+			[11] = "rumad_rad",
 			[12] = "rumad_eyes",
 			[13] = "rumad_drag",
 			[14] = "rumad_llt",

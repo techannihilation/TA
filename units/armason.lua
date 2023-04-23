@@ -17,6 +17,7 @@ return {
 		category = "ALL UNDERWATER",
 		corpse = "dead",
 		description = "Tech Level 2",
+		energyuse = 100,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 4,
 		footprintz = 4,
