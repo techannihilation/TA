@@ -12,9 +12,24 @@ end
 
 
 if (gadgetHandler:IsSyncedCode()) then
-
+    local CMD_LINK = 33000
     local portals = {}
     local portalID = UnitDefNames.portal.id
+    local linkCmdDesc = {
+        id			= CMD_LINK,
+        type		= CMDTYPE.ICON_UNIT,
+        name		= 'Link Portals',
+        cursor  = 'Patrol',  -- add with LuaUI?
+        action	= 'link',
+        tooltip = 'Link two portals to be able to teleport units',
+    }
+    
+
+    function gadget:Initialize() 
+        gadgetHandler:RegisterCMDID(CMD_LINK)
+
+    end
+
     function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
         if unitDefID == portalID and cmdID==CMD.ONOFF then
             local on = (cmdParams[1]==1) --invert because the command hasn't yet taken effect
@@ -26,7 +41,7 @@ if (gadgetHandler:IsSyncedCode()) then
             end
         end
 
-        if unitDefID == portalID and cmdID==CMD.PATROL then
+        if unitDefID == portalID and cmdID==CMD_LINK then
             local otherPortalID = cmdParams[1]
             local otherDefID = Spring.GetUnitDefID(otherPortalID)
             if otherDefID ~= portalID then 
@@ -39,7 +54,6 @@ if (gadgetHandler:IsSyncedCode()) then
                 Spring.Echo("Portals don't have same ally team")
                 return
             end
-            Spring.GiveOrderToUnit(otherPortalID, CMD.STOP, {}, {}) -- Here we prevent infinite loop by stopping other portal's patrol 
             portals[unitID].target = otherPortalID
             portals[otherPortalID].target = nil
             Spring.Echo("Portals "..unitID.." - "..otherPortalID.." linked")
@@ -56,6 +70,8 @@ if (gadgetHandler:IsSyncedCode()) then
                 target = nil,
                 on = true,
             }
+
+            Spring.InsertUnitCmdDesc(unitID, linkCmdDesc)
         end
     end
 
@@ -66,6 +82,11 @@ if (gadgetHandler:IsSyncedCode()) then
 
         if ( name == "portal" ) then
             portals[unitID] = nil
+            for unitID, portal in pairs(portals) do
+                if portal.target == unitID then
+                    portal.target = nil
+                end
+            end
         end
         
 
@@ -75,9 +96,27 @@ if (gadgetHandler:IsSyncedCode()) then
         if n % 10 == 0 then
             for unitID, portal in pairs(portals) do
                 if ( portal.on and portal.target ~= nil ) then 
-                    local unitids = Spring.GetUnitsInRectangle(left, bottom, right, top, Spring.GetUnitTeam(unitID))
+                    local x, y, z = Spring.GetUnitPosition(unitID)
+                    local unitids = Spring.GetUnitsInRectangle(x-60, z-60, x+60, z+60, Spring.GetUnitAllyTeam(unitID))
                     for i = 1, #unitids do
                         Spring.Echo(unitids[i])
+                        local uID = unitids[i]
+                        if uID ~= unitID then -- DO not teleport self
+                            local udef = UnitDefs[Spring.GetUnitDefID(uID)]
+                            if not udef.canfly then
+                                if Spring.UseUnitResource(unitID, {
+                                    m = 0,
+                                    e = udef.metalCost
+                                }) then
+                                    local tx,ty,tz = Spring.GetUnitPosition(portal.target)
+                                    Spring.SetUnitPosition(uID, tx, ty, tz)
+
+                                end
+                                
+                            end
+
+
+                        end
                     end
                 end
             end

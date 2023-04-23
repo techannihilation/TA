@@ -9,7 +9,10 @@ return {
 		builder = false,
 		buildpic = "armmex.dds",
 		buildtime = 200000,
-		category = "ALL SURFACE",
+		builddistance = 0.01,
+		reclaimspeed = 900,
+		repairspeed = 900,--Hack to make patrol pop up....
+		category = "ALL MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -1 -75",
 		collisionvolumescales = "100 100 100",
 		collisionvolumetype = "CylY",
