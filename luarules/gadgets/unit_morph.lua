@@ -152,7 +152,6 @@ local SpRemoveUnitCmdDesc = Spring.RemoveUnitCmdDesc
 local SpGetTeamInfo = Spring.GetTeamInfo
 local spGetUnitRulesParam = Spring.GetUnitRulesParam
 
-
 local CMD_GUARD = CMD.GUARD
 local CMD_INSERT = CMD.INSERT
 local CMD_REMOVE = CMD.REMOVE
@@ -794,13 +793,13 @@ local function FinishMorph(unitID, morphData)
 end
 
 
-local function UpdateMorph(unitID, morphData)
+local function UpdateMorph(unitID, morphData, canfinish)
   if SpGetUnitTransporter(unitID) then return true end
   if (morphData.progress < 1.0) and (SpUseUnitResource(unitID, morphData.def.resTable)) then
     morphData.progress = morphData.progress + morphData.increment
     SendToUnsynced("mph_prg", unitID, morphData.progress)
   end
-  if (morphData.progress >= 1.0) and morphData.teamID < (MAXunits) then
+  if (morphData.progress >= 1.0) and morphData.teamID < (MAXunits) and canfinish then
     FinishMorph(unitID, morphData)
     return false -- remove from the list, all done
   end
@@ -1071,8 +1070,15 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+local last_frame_morphs = -1
 
 function gadget:GameFrame(n)
+    local finished_morphs = 0
+    local max_morphs_per_frame = 40
+
+    if last_frame_morphs > 0 then -- Allow up to 40 per frame peak, if multiple frames have morphs diminish up to 40 - 30 = 10 
+      max_morphs_per_frame = floor(max_morphs_per_frame - last_frame_morphs*0.75)
+    end
 
   -- start pending morphs
     if (n % 2 == 0) then
@@ -1132,10 +1138,13 @@ function gadget:GameFrame(n)
   end
 
   for unitID, morphData in pairs(morphUnits) do
-    if (not UpdateMorph(unitID, morphData)) then
+    if (not UpdateMorph(unitID, morphData, finished_morphs < max_morphs_per_frame)) then
       morphUnits[unitID] = nil
+      finished_morphs = finished_morphs + 1
     end
   end
+
+  last_frame_morphs = finished_morphs
 end
 
 
