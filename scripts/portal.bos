@@ -1,0 +1,159 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, teleport1, teleport2, teleport3;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+fixGo()
+{
+    turn teleport1 to x-axis <0.000000> speed <30.000000>;
+    turn teleport3 to x-axis <0.000000> speed <30.000000>;
+    wait-for-turn teleport3 around x-axis;
+    hide teleport3;
+    show teleport2;
+	spin teleport2 around y-axis speed 500;
+	set YARD_OPEN to 1;
+}
+
+Stop()
+{
+    set YARD_OPEN to 0;
+	stop-spin teleport2 around y-axis;
+	turn teleport1 to x-axis <90.000000> speed <30.000000>;
+	wait-for-turn teleport2 around y-axis;
+	hide teleport2;
+	show teleport3;
+	turn teleport3 to x-axis <90.000000> speed <30.000000>;
+	wait-for-turn teleport1 around x-axis;
+	wait-for-turn teleport3 around x-axis;
+	
+	
+}
+
+InitState()
+{
+	hide teleport3;
+	show teleport2;
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script fixGo();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{
+	Static_Var_1 = 0;
+	Static_Var_2 = 80;
+	Static_Var_3 = 160;
+	dont-cache teleport2;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+SetSpeed(Func_Var_1)
+{
+	Static_Var_1 = Func_Var_1 * 20;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode teleport1 type NOHEATCLOUD;
+		explode teleport2 type NOHEATCLOUD;
+		explode base type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode teleport1 type NOHEATCLOUD | SHATTER;
+		explode teleport2 type NOHEATCLOUD | SHATTER;
+		explode base type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode teleport2 type NOHEATCLOUD | FALL;
+		explode teleport1 type NOHEATCLOUD | FALL;
+		explode base type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode teleport1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode teleport2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode base type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
