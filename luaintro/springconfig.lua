@@ -53,7 +53,7 @@ end
 
 -- this makes between-simframe interpolation smoother in mid-late game situations
 -- frametimeoffset smoothing, 0 = off (old version), -1 = forced 0.5,  1-20 smooth, recommended = 2-3");
-Spring.SetConfigInt("SmoothTimeOffset", 3) -- defaults to 0
+Spring.SetConfigInt("SmoothTimeOffset", 2) -- defaults to 0
 
 -- this is needed for better profiling info, and (theoretically better frame timing).
 -- notably a decade ago windows had issues with this
@@ -71,3 +71,4 @@ Spring.SetConfigInt("lupsenablereflection", 0)
 Spring.SetConfigInt("MaxNanoParticles", 0)
 
 Spring.SetConfigInt("MiniMapDrawProjectiles", 0)
+Spring.SetConfigInt("UnitIconsAsUI", 0)
