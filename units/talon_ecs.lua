@@ -72,6 +72,7 @@ return {
 			[12] = "talon_usy",
 			[13] = "talon_fnanotc2",
 			[14] = "talon_fgate1",
+			[15] = "portal",
 
 		},
 		customparams = {

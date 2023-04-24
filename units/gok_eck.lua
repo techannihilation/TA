@@ -81,6 +81,7 @@ return {
 			[19] = "gok_silo1",
 			[20] = "gok_lrpt1",
 			[21] = "gok_meteor2",
+			[22] = "portal",
 		},
 		customparams = {
 			buildpic = "gok_eck.dds",

@@ -74,6 +74,7 @@ return {
 			[13] = "armusy",
 			[14] = "armfnanotc2",
 			[15] = "armfgate1",
+			[16] = "portal",
 		},
 		customparams = {
 			buildpic = "armecs.dds",

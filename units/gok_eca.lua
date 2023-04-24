@@ -79,6 +79,7 @@ return {
 			[21] = "gok_meteor2",
 			[22] = "gok_plat",
 			[23] = "gok_eplat",
+			[24] = "portal",
 		},
 		customparams = {
 			buildpic = "gok_eca.dds",

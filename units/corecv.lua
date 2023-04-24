@@ -84,6 +84,7 @@ return {
 			[19] = "corsilo1",
 			[20] = "corint1",
 			[21] = "corbuzz2",
+			[22] = "portal",
 		},
 		customparams = {
 			buildpic = "corecv.dds",

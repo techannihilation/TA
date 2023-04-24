@@ -73,6 +73,7 @@
       [13] = "gok_usy",
       [14] = "gok_fnanotc2",
       [15] = "gok_fgate1",
+	  [16] = "portal",
 		},
 		customparams = {
 			buildpic = "gok_ecsub.dds",

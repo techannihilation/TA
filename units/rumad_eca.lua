@@ -67,6 +67,7 @@ return {
 			--[8] = "armaap",
 			--[9] = "armeap",
 			--[10] = "",
+			[8] = "portal"
 		},
 		customparams = {
 			buildpic = "rumad_eca.dds",

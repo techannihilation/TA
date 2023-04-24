@@ -80,6 +80,7 @@ return {
 			[21] = "armvulc2",
 			[22] = "armplat",
 			[23] = "armeplat",
+			[24] = "portal",
 		},
 		customparams = {
 			buildpic = "armeca.dds",

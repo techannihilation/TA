@@ -71,6 +71,7 @@ return {
 			[11] = "tllusy",
 			[12] = "tllfnanotc2",
 			[13] = "tllfgate1",
+			[14] = "portal",
 		},
 		customparams = {
 			buildpic = "tllecs.dds",

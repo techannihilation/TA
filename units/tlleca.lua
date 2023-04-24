@@ -74,6 +74,7 @@ return {
 			[20] = "tll_hydre2",
 			[21] = "tllplat",
 			[22] = "tlleplat",
+			[23] = "portal",
 		},
 		customparams = {
 			buildpic = "tlleca.dds",

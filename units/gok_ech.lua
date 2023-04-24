@@ -91,6 +91,7 @@ return {
 			[30] = "gok_fnanotc2",
 			[31] = "gok_asonar",
 			[32] = "gok_fgate1",
+			[33] = "portal",
 		},
 		customparams = {
 			buildpic = "gok_ech.dds",

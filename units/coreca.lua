@@ -80,6 +80,7 @@ return {
 			[22] = "corbuzz2",
 			[23] = "corplat",
 			[24] = "coreplat",
+			[25] = "portal",
 		},
 		customparams = {
 			buildpic = "coreca.dds",
