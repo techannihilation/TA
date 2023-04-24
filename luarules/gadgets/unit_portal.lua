@@ -12,21 +12,31 @@ end
 
 if (gadgetHandler:IsSyncedCode()) then
     local CMD_LINK = 33000
+    local CMD_OUTPOS = 33001
     local portals = {}
     local portalID = UnitDefNames.portal.id
     local linkCmdDesc = {
         id			= CMD_LINK,
         type		= CMDTYPE.ICON_UNIT,
-        name		= 'Link Portals',
+        name		= 'Link\nPortals',
         cursor  = 'Patrol',  -- add with LuaUI?
         action	= 'link',
         tooltip = 'Link two portals to be able to teleport units',
+    }
+
+    local outLocDesc = {
+        id			= CMD_OUTPOS,
+        type		= CMDTYPE.ICON_MAP,
+        name		= 'Incoming\n GoTo ',
+        cursor  = 'Move',  -- add with LuaUI?
+        action	= 'move',
+        tooltip = 'Where to move units just arrived',
     }
     
 
     function gadget:Initialize() 
         gadgetHandler:RegisterCMDID(CMD_LINK)
-        
+        gadgetHandler:RegisterCMDID(CMD_OUTPOS)
 
     end
 
@@ -41,6 +51,14 @@ if (gadgetHandler:IsSyncedCode()) then
             end
         end
 
+        if unitDefID == portalID and cmdID==CMD_OUTPOS then
+            portals[unitID].outpos = {
+                x = cmdParams[1],
+                y = cmdParams[2],
+                z = cmdParams[3]
+            }
+            SendToUnsynced("portal_targetpos", unitID, cmdParams[1], cmdParams[2], cmdParams[3]) 
+        end
         if unitDefID == portalID and cmdID==CMD_LINK then
             local otherPortalID = cmdParams[1]
             local otherDefID = Spring.GetUnitDefID(otherPortalID)
@@ -73,9 +91,11 @@ if (gadgetHandler:IsSyncedCode()) then
             portals[unitID] = {
                 target = nil,
                 on = true,
+                outpos = nil,
             }
 
             Spring.InsertUnitCmdDesc(unitID, linkCmdDesc)
+            Spring.InsertUnitCmdDesc(unitID, outLocDesc)
         end
     end
 
@@ -109,6 +129,8 @@ if (gadgetHandler:IsSyncedCode()) then
 
         if ( name == "portal" ) then
             portals[unitID] = nil
+            SendToUnsynced("portal_removeline", unitID) 
+            SendToUnsynced("portal_destroyed", unitID) 
             --Spring.Echo("Destroyed portal2")
             for existingPortalID, portal in pairs(portals) do
                 if portal.target == unitID then
@@ -125,7 +147,7 @@ if (gadgetHandler:IsSyncedCode()) then
     function gadget:GameFrame(n)
         if n % 10 == 0 then
             for unitID, portal in pairs(portals) do
-                if ( portal.on and portal.target ~= nil ) then 
+                if ( portal.on and portal.target ~= nil and portals[portal.target].on ) then -- Check that source portal is ON, it has a target and the target too is ON 
                     local x, y, z = Spring.GetUnitPosition(unitID)
                     local tx,ty,tz = Spring.GetUnitPosition(portal.target)
                     local unitids = Spring.GetUnitsInRectangle(x-60, z-60, x+60, z+60, Spring.GetUnitAllyTeam(unitID))
@@ -149,31 +171,37 @@ if (gadgetHandler:IsSyncedCode()) then
                                         
                                         Spring.SetUnitPosition(uID, tx, ty, tz)
 
-                                        local tx2 = tx
-                                        local tz2 = tz 
+                                        
 
-                                        local heading = Spring.GetUnitHeading(unitID)
-                                        -- Move units to the front outside the portal
-                                        if ( heading > 0 ) then 
-                                            if ( heading < 8192 ) then -- South
-                                                tz2 = tz2 + 200
-                                            elseif ( heading < 24576 ) then -- East
-                                                tx2 = tx2 - 200
-                                            else
-                                                tz2 = tz2 - 200 -- North
-                                            end
+                                        local targetportal = portals[portal.target]
+                                        if targetportal.outpos ~= nil then
+                                            Spring.GiveOrderToUnit(uID, CMD.MOVE, {targetportal.outpos.x,targetportal.outpos.y,targetportal.outpos.z}, {})
                                         else
-                                            if ( heading >= -8192 ) then -- South
-                                                tz2 = tz2 + 200
-                                            elseif ( heading >= -24576 ) then -- West
-                                                tx2 = tx2 + 200
+                                            local tx2 = tx
+                                            local tz2 = tz 
+
+                                            local heading = Spring.GetUnitHeading(unitID)
+                                            -- Move units to the front outside the portal
+                                            if ( heading > 0 ) then 
+                                                if ( heading < 8192 ) then -- South
+                                                    tz2 = tz2 + 200
+                                                elseif ( heading < 24576 ) then -- East
+                                                    tx2 = tx2 - 200
+                                                else
+                                                    tz2 = tz2 - 200 -- North
+                                                end
                                             else
-                                                tz2 = tz2 - 200 -- North
+                                                if ( heading >= -8192 ) then -- South
+                                                    tz2 = tz2 + 200
+                                                elseif ( heading >= -24576 ) then -- West
+                                                    tx2 = tx2 + 200
+                                                else
+                                                    tz2 = tz2 - 200 -- North
+                                                end
+
                                             end
-
+                                            Spring.GiveOrderToUnit(uID, CMD.MOVE, {tx2, ty, tz2}, {})
                                         end
-                                        Spring.GiveOrderToUnit(uID, CMD.MOVE, {tx2, ty, tz2}, {})
-
                                     end
                                     
                                 end
@@ -210,9 +238,9 @@ else
     local glText            = gl.Text
     local lines = {}
     local points = {}
+    local targets = {}
     local function DrawLine()
         for i = 1, #points do
-            
             glVertex(points[i].x,points[i].y,points[i].z)
         end
     end
@@ -224,6 +252,15 @@ else
 
     local function PortalRemoveLine(cmd, source)
         lines[source] = nil;
+    end
+
+    local function PortalDestroyed(cmd, source)
+        lines[source] = nil
+        targets[source] = nil
+    end
+
+    local function PortalTargetPos(cmd, source, x, y, z)
+        targets[source] = { x=x, y=y, z=z}
     end
 
     function gadget:DrawWorld()
@@ -248,10 +285,31 @@ else
             end
         end
 
+        for source , targetpos in pairs(targets) do  
+            if Spring.IsUnitSelected(source) then 
+                local x1,y1,z1 = Spring.GetUnitPosition(source)
+                
+                points = {{
+                    x = x1,
+                    y = y1,
+                    z = z1
+                },targetpos
+                }
+                glColor(0.0,1.0,0.0)
+                glBeginEnd(GL_LINE_STRIP, DrawLine)
+                glColor(1.0,1.0,1.0)
+
+            end
+
+        end
+        
+
     end
 
     function gadget:Initialize()
         gadgetHandler:AddSyncAction("portal_addline", PortalAddLine)
         gadgetHandler:AddSyncAction("portal_removeline", PortalRemoveLine)
+        gadgetHandler:AddSyncAction("portal_destroyed", PortalDestroyed)
+        gadgetHandler:AddSyncAction("portal_targetpos", PortalTargetPos)
     end
 end
