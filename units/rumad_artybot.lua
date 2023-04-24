@@ -29,7 +29,7 @@ return {
 		losemitheight = 55,
 		maneuverleashlength = 640,
 		mass = 4146,
-		maxdamage = 35000,
+		maxdamage = 15550,
 		maxslope = 30,
 		maxvelocity = 1,
 		maxwaterdepth = 50,
@@ -59,7 +59,7 @@ return {
 			dead = {
 				blocking = true,
 				damage = 18309,
-				description = "Vengence Wreckage",
+				description = "Rhyno Wreckage",
 				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
@@ -73,7 +73,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 22886,
-				description = "Vengence Debris",
+				description = "Rhyno Debris",
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3016,
