@@ -158,7 +158,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
                         local x, y, z = Spring.GetUnitPosition(unitID)
                         local tx,ty,tz = Spring.GetUnitPosition(portal.target)
-                        local unitids = Spring.GetUnitsInRectangle(x-60, z-60, x+60, z+60, Spring.GetUnitAllyTeam(unitID))
+                        local unitids = Spring.GetUnitsInRectangle(x-60, z-60, x+60, z+60)
                         local remote_unitids = Spring.GetUnitsInRectangle(tx-60, tz-60, tx+60, tz+60)
 
                         if #remote_unitids >= 2 then
