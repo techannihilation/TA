@@ -142,6 +142,14 @@ local options = {
     section = "ta_modes",
   },
   {
+    key = "mo_noshare",
+    name = "Disable ally sharing",
+    desc = "Will disable sharing to allies - units and resources\nAutoHost Usage :- mo_noshare",
+    type = "bool",
+    def = true,
+    section = "ta_modes",
+  },
+  {
     key = "mo_comgate",
     name = "Commander Teleport Effect",
     desc = "Commanders warp in at gamestart with a shiny teleport effect\nAutoHost Usage :- mo_comgate",
