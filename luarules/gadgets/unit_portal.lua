@@ -148,65 +148,74 @@ if (gadgetHandler:IsSyncedCode()) then
         if n % 10 == 0 then
             for unitID, portal in pairs(portals) do
                 if ( portal.on and portal.target ~= nil and portals[portal.target].on ) then -- Check that source portal is ON, it has a target and the target too is ON 
-                    local x, y, z = Spring.GetUnitPosition(unitID)
-                    local tx,ty,tz = Spring.GetUnitPosition(portal.target)
-                    local unitids = Spring.GetUnitsInRectangle(x-60, z-60, x+60, z+60, Spring.GetUnitAllyTeam(unitID))
-                    local remote_unitids = Spring.GetUnitsInRectangle(tx-60, tz-60, tx+60, tz+60)
-
-                    if #remote_unitids >= 2 then
-                        --Spring.Echo("Other end of portal is not clear")
                     
-                    else
-                        for i = 1, #unitids do
-                            --Spring.Echo(unitids[i])
-                            local uID = unitids[i]
-                            if uID ~= unitID then -- DO not teleport self
-                                local udef = UnitDefs[Spring.GetUnitDefID(uID)]
-                                local oldHealth,oldMaxHealth,paralyzeDamage,captureProgress,buildProgress = Spring.GetUnitHealth(uID)
-                                if not udef.canfly and buildProgress >= 1 and udef.canMove and udef.speed > 0.000001 then -- No planes, only completely built units and only units that can actually move
-                                    if Spring.UseUnitResource(unitID, {
-                                        m = 0,
-                                        e = udef.metalCost
-                                    }) then
-                                        
-                                        Spring.SetUnitPosition(uID, tx, ty, tz)
+                    local _,_,_,_,buildProgressP1 = Spring.GetUnitHealth(unitID)
+                    local _,_,_,_,buildProgressP2 = Spring.GetUnitHealth(portal.target)
+                    
+                    if buildProgressP1 == 1 and buildProgressP2 == 1 then
+                       
+                    
 
-                                        
+                        local x, y, z = Spring.GetUnitPosition(unitID)
+                        local tx,ty,tz = Spring.GetUnitPosition(portal.target)
+                        local unitids = Spring.GetUnitsInRectangle(x-60, z-60, x+60, z+60, Spring.GetUnitAllyTeam(unitID))
+                        local remote_unitids = Spring.GetUnitsInRectangle(tx-60, tz-60, tx+60, tz+60)
 
-                                        local targetportal = portals[portal.target]
-                                        if targetportal.outpos ~= nil then
-                                            Spring.GiveOrderToUnit(uID, CMD.MOVE, {targetportal.outpos.x,targetportal.outpos.y,targetportal.outpos.z}, {})
-                                        else
-                                            local tx2 = tx
-                                            local tz2 = tz 
+                        if #remote_unitids >= 2 then
+                            --Spring.Echo("Other end of portal is not clear")
+                        
+                        else
+                            for i = 1, #unitids do
+                                --Spring.Echo(unitids[i])
+                                local uID = unitids[i]
+                                if uID ~= unitID then -- DO not teleport self
+                                    local udef = UnitDefs[Spring.GetUnitDefID(uID)]
+                                    local oldHealth,oldMaxHealth,paralyzeDamage,captureProgress,buildProgress = Spring.GetUnitHealth(uID)
+                                    if not udef.canfly and buildProgress >= 1 and udef.canMove and udef.speed > 0.000001 then -- No planes, only completely built units and only units that can actually move
+                                        if Spring.UseUnitResource(unitID, {
+                                            m = 0,
+                                            e = udef.metalCost
+                                        }) then
+                                            
+                                            Spring.SetUnitPosition(uID, tx, ty, tz)
 
-                                            local heading = Spring.GetUnitHeading(unitID)
-                                            -- Move units to the front outside the portal
-                                            if ( heading > 0 ) then 
-                                                if ( heading < 8192 ) then -- South
-                                                    tz2 = tz2 + 200
-                                                elseif ( heading < 24576 ) then -- East
-                                                    tx2 = tx2 - 200
-                                                else
-                                                    tz2 = tz2 - 200 -- North
-                                                end
+                                            
+
+                                            local targetportal = portals[portal.target]
+                                            if targetportal.outpos ~= nil then
+                                                Spring.GiveOrderToUnit(uID, CMD.MOVE, {targetportal.outpos.x,targetportal.outpos.y,targetportal.outpos.z}, {})
                                             else
-                                                if ( heading >= -8192 ) then -- South
-                                                    tz2 = tz2 + 200
-                                                elseif ( heading >= -24576 ) then -- West
-                                                    tx2 = tx2 + 200
+                                                local tx2 = tx
+                                                local tz2 = tz 
+
+                                                local heading = Spring.GetUnitHeading(unitID)
+                                                -- Move units to the front outside the portal
+                                                if ( heading > 0 ) then 
+                                                    if ( heading < 8192 ) then -- South
+                                                        tz2 = tz2 + 200
+                                                    elseif ( heading < 24576 ) then -- East
+                                                        tx2 = tx2 - 200
+                                                    else
+                                                        tz2 = tz2 - 200 -- North
+                                                    end
                                                 else
-                                                    tz2 = tz2 - 200 -- North
+                                                    if ( heading >= -8192 ) then -- South
+                                                        tz2 = tz2 + 200
+                                                    elseif ( heading >= -24576 ) then -- West
+                                                        tx2 = tx2 + 200
+                                                    else
+                                                        tz2 = tz2 - 200 -- North
+                                                    end
+
                                                 end
-
+                                                Spring.GiveOrderToUnit(uID, CMD.MOVE, {tx2, ty, tz2}, {})
                                             end
-                                            Spring.GiveOrderToUnit(uID, CMD.MOVE, {tx2, ty, tz2}, {})
                                         end
+                                        
                                     end
-                                    
+
+
                                 end
-
-
                             end
                         end
                     end

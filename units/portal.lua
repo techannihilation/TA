@@ -64,7 +64,6 @@ return {
 				  ,			 
 		customparams = {
 			buildpic = "portal.dds",
-			faction = "ARM",
 		},
 		featuredefs = {
 
@@ -80,11 +79,11 @@ return {
 			},
 		},
 		sounds = {
-			activate = "mexrun1",
+			activate = "radar1",
 			canceldestruct = "cancel2",
-			deactivate = "mexoff1",
+			deactivate = "radarde1",
 			underattack = "warning1",
-			working = "mexrun1",
+			working = "radar2",
 			count = {
 				[1] = "count6",
 				[2] = "count5",
@@ -93,11 +92,8 @@ return {
 				[5] = "count2",
 				[6] = "count1",
 			},
-			ok = {
-				[1] = "servmed2",
-			},
 			select = {
-				[1] = "mexon1",
+				[1] = "radar2",
 			},
 		},
 	},
