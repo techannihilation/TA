@@ -146,7 +146,7 @@ local options = {
     name = "Disable ally sharing",
     desc = "Will disable sharing to allies - units and resources\nAutoHost Usage :- mo_noshare",
     type = "bool",
-    def = true,
+    def = false,
     section = "ta_modes",
   },
   {
