@@ -44,7 +44,12 @@ ShieldJitter.Default = {
   --texture    = 'bitmaps/GPL/Lups/perlin_noise.jpg',
 
   repeatEffect = false,
-  dieGameFrame = math.huge
+  dieGameFrame = math.huge,
+
+  onoff = false,
+  unit = -1,
+
+  draw = true
 }
 
 -----------------------------------------------------------------------------------------------------------------
@@ -65,6 +70,14 @@ function ShieldJitter:EndDrawDistortion()
 end
 
 function ShieldJitter:DrawDistortion()
+
+  if self.onoff then -- Todo maybe check every X frames?
+    local state = Spring.GetUnitStates(self.unit)
+    if not state.active then 
+      return
+    end
+  end
+
   local pos  = self.pos
   local size = self.size
   gl.Uniform(strengthUniform,  self.strength )

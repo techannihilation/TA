@@ -40,6 +40,7 @@ SimpleParticles2.Default = {
   airLos         = true,
   radar          = false,
 
+  onoff          = false;
   count          = 1,
   force          = {0,0,0}, --// global effect force
   forceExp       = 1,
@@ -385,6 +386,8 @@ function SimpleParticles2:Visible()
                  self.frame*self.sphereGrowth --FIXME: frame is only updated on Update()
   local posX,posY,posZ = self.pos[1],self.pos[2],self.pos[3]
   local losState
+
+  local active = true
   if (self.unit and not self.worldspace) then
     losState = GetUnitLosState(self.unit)
     local ux,uy,uz = spGetUnitViewPosition(self.unit)
@@ -413,7 +416,13 @@ function SimpleParticles2:Visible()
       losState = IsPosInLos(posX,posY,posZ)
     end
   end
-  return (losState)and(spIsSphereInView(posX,posY,posZ,radius))
+
+  if self.onoff == true then
+    local state = Spring.GetUnitStates(self.unit)
+    active = state.active
+  end
+
+  return (losState)and(spIsSphereInView(posX,posY,posZ,radius))and(active)
 end
 
 -----------------------------------------------------------------------------------------------------------------

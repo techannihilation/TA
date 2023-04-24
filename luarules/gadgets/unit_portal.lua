@@ -10,7 +10,6 @@ function gadget:GetInfo()
     }
 end
 
-
 if (gadgetHandler:IsSyncedCode()) then
     local CMD_LINK = 33000
     local portals = {}
@@ -36,9 +35,9 @@ if (gadgetHandler:IsSyncedCode()) then
             local on = (cmdParams[1]==1) --invert because the command hasn't yet taken effect
             portals[unitID].on = on
             if ( on ) then
-                Spring.Echo("Portal "..unitID.." is now ON");
+                --Spring.Echo("Portal "..unitID.." is now ON");
             else
-                Spring.Echo("Portal "..unitID.." is now OFF");
+                --Spring.Echo("Portal "..unitID.." is now OFF");
             end
         end
 
@@ -46,13 +45,13 @@ if (gadgetHandler:IsSyncedCode()) then
             local otherPortalID = cmdParams[1]
             local otherDefID = Spring.GetUnitDefID(otherPortalID)
             if otherDefID ~= portalID then 
-                Spring.Echo("Other unit not a portal")
+                --Spring.Echo("Other unit not a portal")
                 return
             end
             local p1Ally = Spring.GetUnitAllyTeam(unitID)
             local p2Ally = Spring.GetUnitAllyTeam(unitID)
             if ( p1Ally ~= p2Ally ) then
-                Spring.Echo("Portals don't have same ally team")
+                --Spring.Echo("Portals don't have same ally team")
                 return
             end
             portals[unitID].target = otherPortalID
@@ -61,14 +60,14 @@ if (gadgetHandler:IsSyncedCode()) then
                 SendToUnsynced("portal_removeline", otherPortalID) 
             end
             portals[otherPortalID].target = nil
-            Spring.Echo("Portals "..unitID.." - "..otherPortalID.." linked")
+            --Spring.Echo("Portals "..unitID.." - "..otherPortalID.." linked")
         end
     end
     function gadget:UnitCreated(unitID, unitDefID)
         local ud = UnitDefs[unitDefID]
         local name = ud.name
 
-        Spring.Echo("Created "..name)
+        --Spring.Echo("Created "..name)
 
         if ( name == "portal" ) then
             portals[unitID] = {
@@ -83,7 +82,7 @@ if (gadgetHandler:IsSyncedCode()) then
     function gadget:UnitGiven(uID, uDefID, newTeam, oldTeam)
         local ud = UnitDefs[uDefID]
         local name = ud.name
-        Spring.Echo("Given "..name)
+        --Spring.Echo("Given "..name)
 
         if ( name == "portal" ) then
             if portals[uID] ~= nil then
@@ -110,11 +109,11 @@ if (gadgetHandler:IsSyncedCode()) then
 
         if ( name == "portal" ) then
             portals[unitID] = nil
-            Spring.Echo("Destroyed portal2")
+            --Spring.Echo("Destroyed portal2")
             for existingPortalID, portal in pairs(portals) do
                 if portal.target == unitID then
                     portal.target = nil
-                    Spring.Echo("Linked portal died, unlinking")
+                    --Spring.Echo("Linked portal died, unlinking")
                     SendToUnsynced("portal_removeline", existingPortalID) 
                 end
             end
@@ -133,11 +132,11 @@ if (gadgetHandler:IsSyncedCode()) then
                     local remote_unitids = Spring.GetUnitsInRectangle(tx-60, tz-60, tx+60, tz+60)
 
                     if #remote_unitids >= 2 then
-                        Spring.Echo("Other end of portal is not clear")
+                        --Spring.Echo("Other end of portal is not clear")
                     
                     else
                         for i = 1, #unitids do
-                            Spring.Echo(unitids[i])
+                            --Spring.Echo(unitids[i])
                             local uID = unitids[i]
                             if uID ~= unitID then -- DO not teleport self
                                 local udef = UnitDefs[Spring.GetUnitDefID(uID)]
@@ -220,7 +219,7 @@ else
 
     local function PortalAddLine(cmd, source, target)
         lines[source] = target;
-        Spring.Echo("Unsynced added line")
+        --Spring.Echo("Unsynced added line")
     end
 
     local function PortalRemoveLine(cmd, source)

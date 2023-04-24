@@ -84,11 +84,11 @@ talon_ufus = {
 	{class='SimpleParticles2', options=MergeTable({pos={-105,105,-60}, delay=60, size=60, count=2, colormap={{0.6, 1.0, 0.70, 0.005}, {0.2, 0.55, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},sunlight_fusion)},
 	{class='ShieldJitter',options={life=math.huge, priority=2, pos={-105,105,-60}, size=20, precision=22, repeatEffect=true}},
 },
-portal = {
-  {class='SimpleParticles2', options=MergeTable({pos={0,75,-65}, delay=0, size=130, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-  {class='SimpleParticles2', options=MergeTable({pos={0,75,-65}, delay=40, size=130, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
-  {class='ShieldJitter',options={life=math.huge, priority=1, pos={0,75,-65}, size=50, precision=22, repeatEffect=true}},
-  {class='GroundFlash',options=groundFlashBlue},
+portal = { --pos={0,75,-65}
+  {class='SimpleParticles2', options=MergeTable({pos={0,0,-55}, piece="teleport3", onoff=true, delay=0, size=130, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.4, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+  {class='SimpleParticles2', options=MergeTable({pos={0,0,-55},piece="teleport3", onoff=true, delay=40, size=130, count=2, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.3, 0.6, 0.01}, {0.4, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
+  {class='ShieldJitter',options={life=math.huge, priority=1, onoff=true, pos={0,0,-55},piece="teleport3", size=50, precision=22, repeatEffect=true}},
+  {class='GroundFlash',options=groundFlashBigBlue},
 },
 cafus = {
     {class='SimpleParticles2', options=MergeTable({pos={0,58.9,-4.5}, priority=1, delay=0, size=85, count=3, colormap={{0.1, 0.1, 0.4, 0.005}, {0.2, 0.2, 0.6, 0.01}, {0.1, 0.1, 0.4, 0.005}}},plasmaball_fusion)},
