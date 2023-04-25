@@ -419,7 +419,9 @@ function SimpleParticles2:Visible()
 
   if self.onoff == true then
     local state = Spring.GetUnitStates(self.unit)
-    active = state.active
+    if state ~= nil then -- An unit can die but lups still exist for a moment, avoid crashing
+      active = state.active
+    end
   end
 
   return (losState)and(spIsSphereInView(posX,posY,posZ,radius))and(active)
