@@ -52,13 +52,11 @@ return {
 		customparams = {
 			buildpic = "armbats.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
 				blocking = false,
-				collisionvolumeoffsets = -22.182,
-				collisionvolumescales = "74.9459686279 67.6992492676 151.322341919",
+				collisionvolumescales = "74 67 151",
 				collisionvolumetype = "Box",
 				damage = 9118,
 				description = "Millennium Wreckage",

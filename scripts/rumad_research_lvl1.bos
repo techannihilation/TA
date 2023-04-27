@@ -1,0 +1,81 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, 
+		bengine, bsocle, bthrust,
+		fengine, fsocle, fthrust,
+		rengine, rsocle, rthrust, 
+		lengine, lsocle, lthrust;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Activate()
+{
+	sleep 150;
+}
+
+Deactivate()
+{
+	sleep 150;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 60 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode rengine type NOHEATCLOUD;
+		explode bengine type NOHEATCLOUD | SHATTER;
+		explode lengine type NOHEATCLOUD;
+		explode fengine type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD;
+	explode lengine type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode rengine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode fengine type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

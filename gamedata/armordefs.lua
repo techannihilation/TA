@@ -27,7 +27,7 @@ return {
 		"gok_dirgesinger",
 		"gok_hookah",
 		"gok_nurgle",
-
+		
 		--Transporters
 		"armatlas",
 		"armdfly",
@@ -229,6 +229,9 @@ return {
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
+		"rumad_research_lvl1",
+		"rumad_research_lvl2",
+		"rumad_research_lvl3",
 	},
 
 	flamethrowers = {
@@ -361,6 +364,7 @@ return {
 		"tllmlv",
 		"talon_mlv",
 		"gok_mlv",
+		"rumad_mlv",
 	},
 	commanders = {
 		"armcom",

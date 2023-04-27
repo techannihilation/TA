@@ -64,13 +64,15 @@ return {
 		workertime = 200,
 		buildoptions = {
 			[1] = "rumad_ck",
-			[2] = "rumad_jeag",
-			[3] = "rumad_raviole",
-			[4] = "rumad_bliz",
-			[5] = "rumad_rottweiler",
-			[6] = "rumad_garuda",
-			[7] = "rumad_artybot",
-
+			[2] = "rumad_mlv",
+			[3] = "rumad_tack",
+			[4] = "rumad_jeag",
+			[5] = "rumad_raviole",
+			[6] = "rumad_macm",
+			[7] = "rumad_bliz",
+			[8] = "rumad_rottweiler",
+			[9] = "rumad_garuda",
+			[10] = "rumad_artybot",
 		},
 		customparams = {
 			buildpic = "rumad_vp.dds",

@@ -16,7 +16,7 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -19 0",
 		collisionvolumescales = "95 125 265",
-		
+
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "cortyrnt.dds",
 			faction = "CORE",
-			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
