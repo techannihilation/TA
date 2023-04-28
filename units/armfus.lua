@@ -17,7 +17,6 @@ return {
 		cloakcost = 50,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "98 59 62",
-		
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",
@@ -42,7 +41,7 @@ return {
 		objectname = "ARMFUS",
 		radaremitheight = 50,
 		seismicsignature = 0,
-		selfdestructas = "MINE_NUKE",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 250,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

@@ -60,13 +60,16 @@ return {
 		unitname = "rumad_aca",
 		workertime = 90,
 		buildoptions = {
-			[1] = "rumad_mohogeo",
-			[2] = "rumad_moho",
-			[3] = "rumad_targ",
+			[1] = "rumad_mfus",
+			[2] = "rumad_mohogeo",
+			[3] = "rumad_moho",
+			[4] = "rumad_targ",
+			--[5] = "rumad_eca",
 		},
 		customparams = {
 			buildpic = "rumad_aca.dds",
 			faction = "RUMAD",
+			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			heap = {

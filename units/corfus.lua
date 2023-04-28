@@ -37,7 +37,7 @@ return {
 		objectname = "CORFUS",
 		radaremitheight = 52,
 		seismicsignature = 0,
-		selfdestructas = "MINE_NUKE_CORE",
+		selfdestructas = "CRAWL_BLAST_CORE",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

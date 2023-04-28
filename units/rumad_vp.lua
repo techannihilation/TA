@@ -73,6 +73,8 @@ return {
 			[8] = "rumad_rottweiler",
 			[9] = "rumad_garuda",
 			[10] = "rumad_artybot",
+			[11] = "rumad_mcv",
+
 		},
 		customparams = {
 			buildpic = "rumad_vp.dds",

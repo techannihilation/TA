@@ -57,12 +57,12 @@ return {
 		unitname = "rumad_eca",
 		workertime = 270,
 		buildoptions = {
-			--[1] = "afusionplant",
+			[1] = "afusionplant",
 			--[2] = "armfor",
 			[3] = "rumad_emex",
 			--[4] = "ametalmakerlvl2",
-			--[5] = "armses",
-			--[6] = "cadvmsto",
+			[5] = "armses",
+			[6] = "cadvmsto",
 			[7] = "rumad_ap",
 			--[8] = "armaap",
 			--[9] = "armeap",
@@ -72,6 +72,7 @@ return {
 		customparams = {
 			buildpic = "rumad_eca.dds",
 			faction = "RUMAD",
+			requiretech = "Advanced T3 Unit Research Centre",
 		},
 		nanocolor = {
 			[1] = 0.144,

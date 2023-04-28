@@ -1,8 +1,11 @@
 return {
 	rumad_research_lvl1 = {
 		acceleration = 0.010,
+		airStrafe  = true,
+		airHoverFactor = 1,
+		bankingAllowed = false,
 		blocking = false,
-		brakerate = 0.35,
+		brakerate = 0.05,
 		buildcostenergy = 30000,
 		buildcostmetal = 4500,
 		builder = false,
@@ -22,6 +25,7 @@ return {
 		firestandorders = 0,
 		footprintx = 8,
 		footprintz = 8,
+		hoverAttack = true,
 		icontype = "building",
 		hoverattack = true,
 		factoryHeadingTakeoff  = true,
@@ -45,9 +49,9 @@ return {
 		sightdistance = 1000,
 		standingmoveorder = 1,
 		steeringmode = 1,
-		turninplaceanglelimit = 360,
-		turninplacespeedlimit = 1.5,
-		turnrate = 180,
+		turninplaceanglelimit = 50,
+		turninplacespeedlimit = 2,
+		turnrate = 120,
 		unitname = "rumad_research_lvl1",
 		customparams = {
 			buildpic = "rumad_research_lvl1.png",

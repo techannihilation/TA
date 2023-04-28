@@ -179,6 +179,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 			},

@@ -34,7 +34,7 @@ return {
 		objectname = "gok_fusion",
 		radaremitheight = 46,
 		seismicsignature = 0,
-		selfdestructas = "MINE_NUKE",
+		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
