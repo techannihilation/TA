@@ -12,7 +12,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MEDIUM MOBILE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		defaultmissiontype = "Standby",
 		description = "Very Heavy Crawling Bomb",
 		explodeas = "MINE_NUKE",
