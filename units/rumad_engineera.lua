@@ -58,7 +58,7 @@ return {
 			--[7] = "gok_arad",
 			--[8] = "gok_jam1",
 			[9] = "rumad_pt",
-			--[10] = "gok_slesh",
+			[10] = "rumad_hotshot",
 			--[11] = "gok_orchid",
 			--[12] = "gok_blt",
 			[13] = "rumad_rl",

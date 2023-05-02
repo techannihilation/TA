@@ -6,7 +6,7 @@
 piece  base, turret1, stand, door1, door2, door3, door4, turret2,
        emit1, emit2, emit3, emit4;
 
-static-var  Static_Var_1, gun_1;
+static-var  bOpened, gun_1;
 
 // Signal definitions
 #define SIG_AIM				2
@@ -16,7 +16,7 @@ FClose()
 {
 	signal 4;
 	set-signal-mask 4;
-	Static_Var_1 = 0;
+	bOpened = 0;
 	turn turret1 to y-axis <0.000000> speed <200.000000>;
 	turn turret2 to x-axis <90.000000> speed <200.000000>;
 	wait-for-turn turret2 around x-axis;
@@ -51,7 +51,7 @@ FOpen()
 	move stand to y-axis [0.000000] speed [76.000000];
 	wait-for-turn door4 around x-axis;
 	wait-for-move stand along y-axis;
-	Static_Var_1 = 1;
+	bOpened = 1;
 	start-script FCloseAfterDelay();
 }
 
@@ -84,22 +84,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	dont-shade door1;
-	dont-shade door2;
-	dont-shade door3;
-	dont-shade door4;
-	dont-shade stand;
-	dont-shade turret1;
-	dont-shade turret2;
-	dont-cache door1;
-	dont-cache door2;
-	dont-cache door3;
-	dont-cache door4;
-	dont-cache stand;
-	dont-cache turret1;
-	dont-cache turret2;
 	gun_1 = turret1;
-	Static_Var_1 = 1;
+	bOpened = 1;
 	start-script FCloseAfterDelay();
 	start-script SmokeUnit();
 	move turret1 to y-axis [5.000000] now;
@@ -114,7 +100,7 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	start-script FOpen();
-	while( !Static_Var_1 )
+	while( !bOpened )
 	{
 		sleep 250;
 	}
@@ -182,11 +168,11 @@ Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
 	{
-		if( Static_Var_1 )
+		if( bOpened )
 		{
 			corpsetype = 1;
 		}
-		if( !Static_Var_1 )
+		if( !bOpened )
 		{
 			corpsetype = 2;
 		}
@@ -202,11 +188,11 @@ Killed(severity, corpsetype)
 	}
 	if( severity <= 50 )
 	{
-		if( Static_Var_1 )
+		if( bOpened )
 		{
 			corpsetype = 2;
 		}
-		if( !Static_Var_1 )
+		if( !bOpened )
 		{
 			corpsetype = 3;
 		}
@@ -222,11 +208,11 @@ Killed(severity, corpsetype)
 	}
 	if( severity <= 99 )
 	{
-		if( Static_Var_1 )
+		if( bOpened )
 		{
 			corpsetype = 3;
 		}
-		if( !Static_Var_1 )
+		if( !bOpened )
 		{
 			corpsetype = 4;
 		}
