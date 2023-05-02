@@ -62,7 +62,7 @@ return {
 			--[11] = "gok_orchid",
 			--[12] = "gok_blt",
 			[13] = "rumad_rl",
-			--[14] = "gok_flak",
+			[14] = "rumad_flak",
 			--[15] = "gok_ptr",
 			--[16] = "gok_mds",
 			--[17] = "gok_ca",
