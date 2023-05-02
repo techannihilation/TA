@@ -108,7 +108,7 @@ return {
 				areaofeffect = 226,
 				avoidfeature = false,
 				burst = 3,
-				burstrate = 0.3,
+				burstrate = 0.5,
 				cegtag = "gokblaster",
 				collidefriendly = false,
 				commandfire = false,

@@ -64,7 +64,7 @@ return {
 			[5] = "armses",
 			[6] = "cadvmsto",
 			[7] = "rumad_ap",
-			--[8] = "armaap",
+			[8] = "rumad_eflak",
 			--[9] = "armeap",
 			--[10] = "",
 			[8] = "portal"
