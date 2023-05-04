@@ -50,19 +50,24 @@ return {
 		unitname = "rumad_ap",
 		workertime = 100,
 		buildoptions = {
+			-- LVL1
 			[1] = "rumad_ca",
 			[2] = "rumad_ascout_lvl1",
 			[3] = "rumad_fighter_lvl1",
 			[4] = "rumad_airtrans_lvl1",
 			[5] = "rumad_gunship_lvl1",
 			[6] = "rumad_bomber_lvl1",
+
+			-- LVL2
 			[7] = "rumad_aca",
 			[8] = "rumad_engineera",
 			[9] = "rumad_ascout_lvl2",
 			[10] = "rumad_fighter_lvl2",
 			[11] = "rumad_airtrans_lvl2",
 			[12] = "rumad_bomber_lvl2",
-			[13] = "rumad_eca",			
+
+			-- LVL3
+			[13] = "rumad_eca",
 			[14] = "rumad_fighter_lvl3",
 			[15] = "rumad_bomber_lvl3",
 		},

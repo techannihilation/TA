@@ -93,7 +93,7 @@ Create()
 {
 	msl_1 = 1;
 	bOpened = 1;
-	restore_delay = 2000;
+	restore_delay = 5000;
 	start-script FCloseAfterDelay();
 	start-script SmokeUnit();
 }

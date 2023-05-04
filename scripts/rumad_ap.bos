@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, nano;
+piece  base, nano, rthrust, lthrust;
 
 static-var  statechg_DesiredState, statechg_StateChanging;
 

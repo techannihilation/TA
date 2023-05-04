@@ -65,6 +65,9 @@ return {
 			[3] = "rumad_moho",
 			[4] = "rumad_targ",
 			--[5] = "rumad_eca",
+			[11] = "rumad_vp",
+			[12] = "rumad_ap",
+			[13] = "rumad_research_lvl2",
 		},
 		customparams = {
 			buildpic = "rumad_aca.dds",

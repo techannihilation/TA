@@ -1,4 +1,5 @@
 local AC0 = 0.8/100
+local RUMAD0 = 0.9/100
 local AC1 = 1/100
 local AC2 = 1.1/100
 local AC3 = 1.2/100
@@ -62,9 +63,9 @@ local convertCapacities = {
 		[UnitDefNames.gok_metalmakerlvl4.id]  = { c = 275000, e = (AC5) }, -- T5
 
 		--RUMAD
-		[UnitDefNames.rumad_makr.id]  = { c = 50, e = (AC0) }, -- Normal
+		[UnitDefNames.rumad_makr.id]  = { c = 250, e = (RUMAD0) }, -- Normal
 		--[UnitDefNames.rumad_fmkr.id]  = { c = 100, e = (AC0) }, -- Floating
-		[UnitDefNames.rumad_makr1.id]  = { c = 150, e = (AC1) }, -- T1,5
+		--[UnitDefNames.rumad_makr1.id]  = { c = 150, e = (AC1) }, -- T1,5
 		--[UnitDefNames.rumad_amaker.id]  = { c = 800, e = (AC2) }, -- Moho
 		--[UnitDefNames.rumad_uwmmm.id]  = { c = 1000, e = (AC2) }, -- Underwater
 		--[UnitDefNames.rumad_metalmakerlvl2.id]  = { c = 8000, e = (AC3) }, -- T3

@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  base, hull, turn1, engine1, thruster11, thruster12, engine2, thruster21, thruster22, turn2, engine3, engine4, thrust11, thrust12, thrust21, thrust22, thrust3, thrust4,
-       barrel1, barrel2, beam1, beam2;
+       barrel1, barrel2, beam;
 
 static-var  DesiredState, StateChanging, Flying, UnitHeading, UnitSpeed, Inactive, Gun, Launcher, spray;
 
@@ -57,15 +57,7 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	if( spray == 0 )
-	{
-		piecenum = beam1;
-	}
-	if( spray != 0 )
-	{
-		piecenum = beam2;
-	}
-	spray = !spray;
+	spray = beam;
 }
 
 Killed(severity, corpseType)

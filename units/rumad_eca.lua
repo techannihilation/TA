@@ -60,14 +60,14 @@ return {
 			[1] = "afusionplant",
 			--[2] = "armfor",
 			[3] = "rumad_emex",
-			--[4] = "ametalmakerlvl2",
+			[4] = "ametalmakerlvl2",
 			[5] = "armses",
 			[6] = "cadvmsto",
 			[7] = "rumad_ap",
 			[8] = "rumad_eflak",
 			--[9] = "armeap",
 			--[10] = "",
-			[8] = "portal"
+			[9] = "portal"
 		},
 		customparams = {
 			buildpic = "rumad_eca.dds",

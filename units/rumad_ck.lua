@@ -39,7 +39,7 @@ return {
 		metalstorage = 20,
 		mobilestandorders = 1,
 		movementclass = "TKBOT2",
-		name = "Construction Spider",
+		name = "All-Terrain Construction Spider",
 		noautofire = false,
 		objectname = "rumad_ck",
 		radaremitheight = 25,

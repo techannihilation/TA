@@ -473,6 +473,43 @@ cafus = {
     {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="fthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="bthrust", noIconDraw = true, priority=3, onActive=true}},
   },
+  rumad_research_lvl2 = {
+    {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="fthrust", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="bthrust", noIconDraw = true, priority=3, onActive=true}},
+  },
+  rumad_ap = {
+    {class='AirJet',options={color={1,1,1}, width=2.5, length=25, emitVector = {0,1,0}, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=2.5, length=25, emitVector = {0,1,0}, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
+  },
+  rumad_ca = {
+    {class='AirJet',options={color={1,1,1}, width=2.5, length=25, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=2.5, length=25, emitVector = {0,1,0}, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=2.5, length=25, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=2.5, length=25, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
+  },
+  rumad_aca = {
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust11", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust12", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust21", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust22", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
+  },
+  rumad_engineera = {
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
+  },
+  rumad_eca = {
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust11", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust12", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust21", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust22", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
+  },
 
   corseahook = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},

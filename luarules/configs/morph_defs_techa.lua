@@ -78,6 +78,32 @@ local morphDefs = {
 		into = 'tllcom3',
 		time = 135,
 	},
+	rumad_research_lvl1 = {
+		into = 'rumad_research_lvl2',
+		time = 70,
+	},
+	rumad_research_lvl2 = {
+		{
+			into = 'arm_ulab',
+			time = 100,
+		},
+		{
+			into = 'core_hexapod_lab',
+			time = 100,
+		},
+		{
+			into = 'talon_ulab',
+			time = 100,
+		},
+		{
+			into = 'gok_ulab',
+			time = 100,
+		},
+		{
+			into = 'tll_ulab',
+			time = 100,
+		},
+	},
 	armamd = {
 		into = 'armamd1',
 		time = 60,

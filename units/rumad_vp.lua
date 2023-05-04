@@ -63,17 +63,23 @@ return {
 		unitname = "rumad_vp",
 		workertime = 200,
 		buildoptions = {
+			-- LVL1
 			[1] = "rumad_ck",
 			[2] = "rumad_mlv",
 			[3] = "rumad_tack",
 			[4] = "rumad_jeag",
 			[5] = "rumad_raviole",
-			[6] = "rumad_macm",
-			[7] = "rumad_bliz",
-			[8] = "rumad_rottweiler",
-			[9] = "rumad_garuda",
-			[10] = "rumad_artybot",
-			[11] = "rumad_mcv",
+			[6] = "rumad_bliz",
+			[7] = "rumad_rottweiler",
+
+			-- LVL2
+			[8] = "rumad_ack",
+			[9] = "rumad_macm",
+			[10] = "rumad_garuda",
+			[11] = "rumad_artybot",
+
+			-- LVL3
+			[12] = "rumad_mcv",
 
 		},
 		customparams = {
