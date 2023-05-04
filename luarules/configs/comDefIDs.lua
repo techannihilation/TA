@@ -28,7 +28,6 @@ local comDefIDs = {
 	--[UnitDefNames["rumad_com1"].id] = true,
 	--[UnitDefNames["rumad_com2"].id] = true,
 	--[UnitDefNames["rumad_com3"].id] = true,
-
 }
 
 return comDefIDs

@@ -45,15 +45,15 @@ local corcomDefID = UnitDefNames.corcom.id
 local tllcomDefID = UnitDefNames.tllcom.id
 local taloncomDefID = UnitDefNames.talon_com.id
 local gokcomDefID = UnitDefNames.gok_com.id
---local rumadcomDefID = UnitDefNames.rumad_com.id
+local rumadcomDefID = UnitDefNames.rumad_com.id
 
 local validStartUnits = {
     [armcomDefID] = true,
     [corcomDefID] = true,
     [tllcomDefID] = true,
     [taloncomDefID] = true,
-		[gokcomDefID] = true,
-		--[rumadcomDefID] = true,
+	[gokcomDefID] = true,
+	[rumadcomDefID] = true,
 }
 
 local superEco = {
