@@ -58,7 +58,7 @@ return {
 		upright = true,
 		workertime = 160,
 		buildoptions = {
-			[1] = "rumad_gen",
+			--[1] = "rumad_gen",
 			[2] = "rumad_mfus",
 			[3] = "rumad_mohogeo",
 			--[4] = "rumadgmm",

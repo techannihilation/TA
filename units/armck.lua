@@ -2,8 +2,8 @@ return {
 	armck = {
 		acceleration = 0.96,
 		brakerate = 6,
-		buildcostenergy = 1622,
-		buildcostmetal = 109,
+		buildcostenergy = 1620,
+		buildcostmetal = 110,
 		builddistance = 180,
 		builder = true,
 		buildpic = "armck.dds",

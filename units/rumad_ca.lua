@@ -62,7 +62,7 @@ return {
 			[4] = "rumad_mex",
 			[5] = "rumad_mex1",
 			[6] = "rumad_makr",
-			[7] = "rumad_makr1",
+			--[7] = "",
 			--[8] = "",
 			[9] = "rumad_mstor",
 			[10] = "rumad_estor",

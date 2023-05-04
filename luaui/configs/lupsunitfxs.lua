@@ -725,12 +725,6 @@ talon_handgod = {
   },
 
 -- Construction Aircraft
-abuilderlvl2 = {
-	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lfthrust", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="lbthrust", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rfthrust", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="rbthrust", noIconDraw = true, priority=3, onActive=true}},
-},
 abuilderlvl3 = {
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=25, emitVector = {0,1,0}, piece="thrust11", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust12", noIconDraw = true, priority=3, onActive=true}},
@@ -755,11 +749,6 @@ abuilderlvl5 = {
 cbuilderlvl1 = {
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExR", noIconDraw = true, priority=3, onActive=true}},
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=3, length=12, piece="engineExL", noIconDraw = true, priority=3, onActive=true}},
-},
-cbuilderlvl2 = {
-	{class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="lbthrust", noIconDraw = true, priority=3, onActive=true}},
-	{class='AirJet',options={color={1.0,0.1,0.2}, width=4.7, length=15, emitVector = {0,1,0}, piece="rbthrust", noIconDraw = true, priority=3, onActive=true}},
 },
 cbuilderlvl3 = {
 	{class='AirJet',options={color={0.8,0.1,0.1}, width=4, length=14, piece="engine1", noIconDraw = true, priority=3, onActive=true}},

@@ -1,6 +1,6 @@
 return {
 	cormist = {
-		acceleration = 0.04,.
+		acceleration = 0.04,
 		airsightdistance = 800,
 		brakerate = 0.0495,
 		buildcostenergy = 1722,

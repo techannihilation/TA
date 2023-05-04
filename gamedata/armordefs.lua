@@ -27,7 +27,7 @@ return {
 		"gok_dirgesinger",
 		"gok_hookah",
 		"gok_nurgle",
-		
+
 		--Transporters
 		"armatlas",
 		"armdfly",
@@ -77,7 +77,6 @@ return {
 
 	--Construction
 	"abuilderlvl1",
-	"abuilderlvl2",
 	"abuilderlvl3",
 	"abuilderlvl4",
 	"abuilderlvl5",
@@ -85,7 +84,6 @@ return {
 	"armeca",
 	"armca",
 	"cbuilderlvl1",
-	"cbuilderlvl2",
 	"cbuilderlvl3",
 	"cbuilderlvl4",
 	"cbuilderlvl5",
