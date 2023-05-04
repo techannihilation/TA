@@ -65,9 +65,9 @@ return {
 			[14] = "rumad_flak",
 			--[15] = "gok_ptr",
 			--[16] = "gok_mds",
-			--[17] = "gok_ca",
-			--[18] = "gok_sucub",
-			--[19] = "gok_hookah",
+			[17] = "rumad_ca",
+			[18] = "rumad_fighter_lvl2",
+			[19] = "rumad_bomber_lvl2",
 			--[20] = "",
 		},
 		customparams = {

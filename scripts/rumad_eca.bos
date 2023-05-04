@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, turn1, engine1, thruster11, thruster12, engine2, thruster21, thruster22, turn2, engine3, engine4, thrust11, thrust12, thrust21, thrust22, thrust3, thrust4,
-       barrel1, barrel2, beam;
+piece  base, hull, turn1, engine1, engine2, turn2, engine3, engine4, beam,
+		thrust11, thrust12, thrust21, thrust22, thrust3, thrust4;
 
 static-var  DesiredState, StateChanging, Flying, UnitHeading, UnitSpeed, Inactive, Gun, Launcher, spray;
 

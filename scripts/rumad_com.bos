@@ -261,62 +261,6 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	if( severity <= 25 )
-	{
-		corpsetype = 1;
-		explode torso type NOHEATCLOUD;
-		explode helm type NOHEATCLOUD;
-		explode Rarm type NOHEATCLOUD;
-		explode Raimer type NOHEATCLOUD;
-		explode Rbarrel type NOHEATCLOUD;
-		explode Larm type NOHEATCLOUD;
-		explode Laimer type NOHEATCLOUD;
-		explode Lbarrel type NOHEATCLOUD;
-		explode pelvis type NOHEATCLOUD;
-		explode rthigh type NOHEATCLOUD;
-		explode Rleg type NOHEATCLOUD;
-		explode Rfoot type NOHEATCLOUD;
-		explode lthigh type NOHEATCLOUD;
-		explode Lleg type NOHEATCLOUD;
-		explode Lfoot type NOHEATCLOUD;
-		explode head type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 50 )
-	{
-		corpsetype = 2;
-		explode torso type NOHEATCLOUD | FALL;
-		explode helm type NOHEATCLOUD | FALL;
-		explode Rarm type NOHEATCLOUD | FALL;
-		explode Raimer type NOHEATCLOUD | FALL;
-		explode Rbarrel type NOHEATCLOUD | FALL;
-		explode Larm type NOHEATCLOUD | FALL;
-		explode Laimer type NOHEATCLOUD | FALL;
-		explode Lbarrel type NOHEATCLOUD | FALL;
-		explode pelvis type NOHEATCLOUD | FALL;
-		explode rthigh type NOHEATCLOUD | FALL;
-		explode Rleg type NOHEATCLOUD | FALL;
-		explode Rfoot type NOHEATCLOUD | FALL;
-		explode lthigh type NOHEATCLOUD | FALL;
-		explode Lleg type NOHEATCLOUD | FALL;
-		explode Lfoot type NOHEATCLOUD | FALL;
-		explode head type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	corpsetype = 3;
-	explode Rarm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Raimer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Rbarrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Larm type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Laimer type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Lbarrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode pelvis type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Rleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Rfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode lthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Lleg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode Lfoot type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	corpsetype = 1;
 	return (corpsetype);
 }
