@@ -62,7 +62,7 @@ return {
 		script = "talon_com.cob",
 		seismicsignature = 4,
 		selfdestructas = "COMMANDER_BLAST2",
-		selfdestructcountdown = 1,
+		selfdestructcountdown = 5,
 		showplayername = true,
 		shownanospray = false,
 		sightdistance = 550,

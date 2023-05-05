@@ -61,7 +61,7 @@ return {
 		reclaimable = false,
 		seismicsignature = 2,
 		selfdestructas = "COMMANDER_BLAST",
-		selfdestructcountdown = 1,
+		selfdestructcountdown = 5,
 		shownanospray = false,
 		showplayername = true,
 		sightdistance = 450,

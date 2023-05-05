@@ -63,7 +63,7 @@ return {
 		script = "corcom.cob",
 		seismicsignature = 4,
 		selfdestructas = "COMMANDER_BLAST2",
-		selfdestructcountdown = 1,
+		selfdestructcountdown = 5,
 		shownanospray = false,
 		showplayername = true,
 		sightdistance = 550,
