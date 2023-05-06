@@ -171,7 +171,7 @@ if (gadgetHandler:IsSyncedCode()) then
                                 if uID ~= unitID then -- DO not teleport self
                                     local udef = UnitDefs[Spring.GetUnitDefID(uID)]
                                     local oldHealth,oldMaxHealth,paralyzeDamage,captureProgress,buildProgress = Spring.GetUnitHealth(uID)
-                                    if not udef.canfly and buildProgress >= 1 and udef.canMove and udef.speed > 0.000001 then -- No planes, only completely built units and only units that can actually move
+                                    if not udef.canFly and buildProgress >= 1 and udef.canMove and udef.speed > 0.000001 then -- No planes, only completely built units and only units that can actually move
                                         if Spring.UseUnitResource(unitID, {
                                             m = 0,
                                             e = udef.metalCost
