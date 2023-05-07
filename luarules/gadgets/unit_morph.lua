@@ -208,7 +208,22 @@ local nanos = {
   [UnitDefNames["talon_fnanotc2"].id] = true,
 
   --Gok
-  --[UnitDefNames["gok_nanotc"].id] = true,
+  [UnitDefNames["gok_nanotc"].id] = true,
+  [UnitDefNames["gok_nanotc1"].id] = true,
+  [UnitDefNames["gok_nanotc2"].id] = true,
+  [UnitDefNames["gok_nanotc3"].id] = true,
+  [UnitDefNames["gok_fnanotc"].id] = true,
+  [UnitDefNames["gok_fnanotc1"].id] = true,
+  [UnitDefNames["gok_fnanotc2"].id] = true,
+
+    --Rumad
+    [UnitDefNames["rumad_nanotc"].id] = true,
+    [UnitDefNames["rumad_nanotc1"].id] = true,
+    [UnitDefNames["rumad_nanotc2"].id] = true,
+    [UnitDefNames["rumad_nanotc3"].id] = true,
+    --[UnitDefNames["rumad_fnanotc"].id] = true,
+    --[UnitDefNames["rumad_fnanotc1"].id] = true,
+    --[UnitDefNames["rumad_fnanotc2"].id] = true,
 }
 
 --------------------------------------------------------------------------------
@@ -1076,7 +1091,7 @@ function gadget:GameFrame(n)
     local finished_morphs = 0
     local max_morphs_per_frame = 40
 
-    if last_frame_morphs > 0 then -- Allow up to 40 per frame peak, if multiple frames have morphs diminish up to 40 - 30 = 10 
+    if last_frame_morphs > 0 then -- Allow up to 40 per frame peak, if multiple frames have morphs diminish up to 40 - 30 = 10
       max_morphs_per_frame = floor(max_morphs_per_frame - last_frame_morphs*0.75)
     end
 

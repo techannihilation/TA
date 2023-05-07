@@ -590,6 +590,26 @@ local morphDefs = {
 		tech = 3,
 		time = 80,
 	},
+	rumad_nanotc = {
+		into = 'rumad_nanotc1',
+		tech = 1,
+		time = 30,
+	},
+	rumad_nanotc1 = {
+		into = 'rumad_nanotc2',
+		tech = 2,
+		time = 60,
+	},
+	rumad_nanotc2 = {
+		into = 'rumad_nanotc3',
+		tech = 3,
+		time = 80,
+	},
+	rumad_nanotc3 = {
+		into = 'rumad_nanotc4',
+		tech = 4,
+		time = 100,
+	},
 
 	-- Special Units
 	corkrog = {

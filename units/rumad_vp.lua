@@ -67,19 +67,21 @@ return {
 			[1] = "rumad_ck",
 			[2] = "rumad_mlv",
 			[3] = "rumad_tack",
-			[4] = "rumad_jeag",
-			[5] = "rumad_raviole",
-			[6] = "rumad_bliz",
-			[7] = "rumad_rottweiler",
+			[4] = "rumad_dragster",
+			[5] = "rumad_jeag",
+			[6] = "rumad_raviole",
+			[7] = "rumad_bliz",
+			[8] = "rumad_rottweiler",
 
 			-- LVL2
-			[8] = "rumad_ack",
-			[9] = "rumad_macm",
-			[10] = "rumad_garuda",
-			[11] = "rumad_artybot",
+			[10] = "rumad_ack",
+			[11] = "rumad_macm",
+			[12] = "rumad_garuda",
+			[13] = "rumad_artybot",
 
 			-- LVL3
-			[12] = "rumad_mcv",
+			[15] = "rumad_mcv",
+			[16] = "rumad_mlrpt",
 
 		},
 		customparams = {

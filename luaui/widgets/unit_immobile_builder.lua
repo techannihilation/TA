@@ -80,10 +80,17 @@ local morphednanos = { --not in use, look like 125
 
 --Gok
   [UnitDefNames["gok_nanotc"].id] = true,
-  --[UnitDefNames["gok_nanotc1"].id] = true,
-  --[UnitDefNames["gok_nanotc2"].id] = true,
-  --[UnitDefNames["gok_nanotc3"].id] = true,
-  --[UnitDefNames["gok_nanotc4"].id] = true,
+  [UnitDefNames["gok_nanotc1"].id] = true,
+  [UnitDefNames["gok_nanotc2"].id] = true,
+  [UnitDefNames["gok_nanotc3"].id] = true,
+  [UnitDefNames["gok_nanotc4"].id] = true,
+
+--Rumad
+  [UnitDefNames["rumad_nanotc"].id] = true,
+  [UnitDefNames["rumad_nanotc1"].id] = true,
+  [UnitDefNames["rumad_nanotc2"].id] = true,
+  [UnitDefNames["rumad_nanotc3"].id] = true,
+  --[UnitDefNames["rumad_nanotc4"].id] = true,
 
 }
 

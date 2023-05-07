@@ -97,7 +97,13 @@ local nanos = {
   [UnitDefNames["gok_fnanotc"].id] = true,
   [UnitDefNames["gok_fnanotc1"].id] = true,
   [UnitDefNames["gok_fnanotc2"].id] = true,
-  --[UnitDefNames["gok_fnanotc3"].id] = true,
+  [UnitDefNames["gok_fnanotc3"].id] = true,
+
+  --Rumad
+  [UnitDefNames["rumad_nanotc"].id] = true,
+  [UnitDefNames["rumad_nanotc1"].id] = true,
+  [UnitDefNames["rumad_nanotc2"].id] = true,
+  [UnitDefNames["rumad_nanotc3"].id] = true,
 }
 
 local buildspeedCmdDesc = {

@@ -1,0 +1,230 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, fsystem, ftrack, fshadow, bsystem, lbtrack, lbshadow, rbtrack, rbshadow, larm1, larm2, larm3, rarm1, rarm2, rarm3,
+       turret, pitchturret, sleeve, barrel, fire;
+
+static-var  UnitHeading, UnitSpeed, Deployed, Firing;
+
+// Signal definitions
+#define SIG_AIM			2
+#define SIG_MOVE		4
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RockUnit(AngleX, AngleZ)
+{
+	turn base to x-axis AngleX / 2 speed <25.00>;
+	turn base to z-axis AngleZ / 2 speed <25.00>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.00> speed <10.00>;
+	turn base to x-axis <0.00> speed <10.00>;
+}
+
+Create()
+{
+	UnitSpeed = 1;
+	Deployed = 0;
+	Firing = 0;	
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	Deployed = 0;
+	
+	turn larm1 to y-axis <0.00> speed <90.00>;
+	turn rarm1 to y-axis <0.00> speed <90.00>;
+	turn larm2 to x-axis <0.00> speed <60.00>;
+	turn larm3 to x-axis <0.00> speed <60.00>;
+	turn rarm2 to x-axis <0.00> speed <60.00>;
+	turn rarm3 to x-axis <0.00> speed <60.00>;
+		
+	while( TRUE )
+	{
+		if( UnitSpeed == 1 )
+			{
+			UnitHeading = UnitHeading - get XZ_ATAN(7);
+			turn fsystem to y-axis 6 * UnitHeading speed <40.00>;
+			turn bsystem to y-axis -3.0 * UnitHeading speed <20.00>;
+			UnitHeading = get XZ_ATAN(7);
+			}
+		if( UnitSpeed == 2 )
+			{
+			UnitHeading = UnitHeading - get XZ_ATAN(7);
+			turn fsystem to y-axis 4.00 * UnitHeading speed <40.00>;
+			turn bsystem to y-axis -2.00 * UnitHeading speed <20.00>;
+			UnitHeading = get XZ_ATAN(7);
+			}
+		sleep 100;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	
+	turn fsystem to y-axis <0.00> speed <100.00>;
+	turn bsystem to y-axis <0.00> speed <50.00>;
+	
+	sleep 1000;
+	turn larm1 to y-axis <-90.00> speed <180.00>;
+	turn rarm1 to y-axis <90.00> speed <180.00>;
+	sleep 500;
+	turn larm2 to x-axis <-40.00> speed <160.00>;
+	turn larm3 to x-axis <40.00> speed <160.00>;
+	turn rarm2 to x-axis <-40.00> speed <160.00>;
+	turn rarm3 to x-axis <40.00> speed <160.00>;
+	sleep 250;
+	Deployed = 1;
+}
+
+MoveRate1()
+{
+	UnitSpeed = 1;
+}
+
+MoveRate2()
+{
+	UnitSpeed = 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep 10000;
+	turn turret to y-axis <0.00> speed <50.00>;
+	turn pitchturret to x-axis <0.00> speed <20.00>;
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+QueryPrimary(PieceNum)
+{
+	PieceNum = fire;
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = pitchturret;
+}
+
+AimPrimary(Heading, Pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	while( Firing OR !Deployed )
+	{
+		sleep 100;
+	}
+	
+	turn turret to y-axis Heading speed <50.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <20.00>;
+	
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	
+	start-script RestoreAfterDelay();
+	
+	while( !Deployed )
+	{
+		sleep 100;
+	}
+	return(1);
+}
+
+FirePrimary(Random)
+{
+	emit-sfx 1024 + 0 from fire;
+	move barrel to z-axis [0.00] speed [1.00];
+	move sleeve to z-axis [0.00] speed [1.00];
+	sleep 100;
+	Firing = 0;
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	if( Severity <= 50 )
+	{
+		CorpseType = 1;		
+		Random = Rand( 1, 2 );
+		if( Random == 1 )
+			{
+			explode ftrack type NOHEATCLOUD;
+			}
+		Random = Rand( 1, 2 );
+		if( Random == 1 )
+			{
+			explode lbtrack type NOHEATCLOUD;
+			}
+		Random = Rand( 1, 2 );
+		if( Random == 1 )
+			{
+			explode rbtrack type NOHEATCLOUD;
+			}
+		return (CorpseType);
+	}
+	
+	CorpseType = 3;
+	
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode ftrack type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode lbtrack type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode rbtrack type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode barrel type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode sleeve type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	}
+	return (CorpseType);
+}

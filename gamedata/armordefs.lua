@@ -323,6 +323,11 @@ return {
 		"gok_fnanotc2",
 		"gok_fnanotc3",
 		"gok_fnanotc4",
+		"rumad_nanotc",
+		"rumad_nanotc1",
+		"rumad_nanotc2",
+		"rumad_nanotc3",
+		"rumad_nanotc4",
 	},
 
 	mines = {

@@ -58,13 +58,11 @@ return {
 			[3] = "cormlv",
 			[4] = "corfav",
 			[5] = "corgator",
-			--[8] = "corjeag",
 			[6] = "cormist",
 			[7] = "corwolv",
 			[9] = "corgarp",
 			[10] = "corraid",
 			[11] = "corlevlr",
-			--[12] = "corgfbt",
 		},
 		customparams = {
 			buildpic = "corvp.dds",
@@ -75,7 +73,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "0 -13 0",
 				collisionvolumescales = "90 56 90",
-				
+
 				collisionvolumetype = "CylZ",
 				damage = 2484,
 				description = "Vehicle Plant Wreckage",

@@ -153,4 +153,53 @@ return {
     },
   },
 
+  -- Orb
+  ["lightning_orb"] = {
+
+    smogcone6 = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        airdrag            = 0.8,
+        alwaysvisible      = true,
+        colormap           = [[1 1 1 0.02         0.87 0.87 0.82 0.01		      0 0 0 0.0]],
+        directional        = false,
+        emitrot            = 90,
+        emitrotspread      = 80,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, 0, 0]],
+        numparticles       = 15,
+        particlelife       = 50,
+        particlelifespread = 10,
+        particlesize       = 5,
+        particlesizespread = 8,
+        particlespeed      = 1,
+        particlespeedspread = 0,
+        pos                = [[0, 1, 0]],
+        sizegrowth         = 0.6,
+        sizemod            = 1.0,
+        texture            = [[brightblueexplo]],
+        useairlos          = true,
+      },
+    },
+    yuped = {
+      air                = true,
+      class              = [[CSimpleGroundFlash]],
+      count              = 1,
+      ground             = true,
+      water              = true,
+      properties = {
+        alwaysvisible      = true,
+        colormap           = [[1 1 1 1 	0.9 0.9 0.8 1		0.0 0.0 0.0 0.0]],
+        size               = 135,
+        sizegrowth         = -0.3,
+        texture            = [[groundflash]],
+        ttl                = 100,
+      },
+    },
+  },
+
 }

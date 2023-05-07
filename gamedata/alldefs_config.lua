@@ -51,6 +51,11 @@ local Nanos = {
 	gok_fnanotc2 = true,
 	gok_fnanotc3 = true,
 	gok_fnanotc4 = true,
+	rumad_nanotc = true,
+	rumad_nanotc1 = true,
+	rumad_nanotc2 = true,
+	rumad_nanotc3 = true,
+	rumad_nanotc4 = true,
 }
 
 return Nanos

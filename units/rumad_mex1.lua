@@ -60,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 260,
-				object = "rumad_mex1_DEAD",
+				object = "rumad_mex_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
