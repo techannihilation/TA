@@ -37,7 +37,7 @@ Spring.SetConfigInt("AllowDeferredMapRendering", 1)
 Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 
 -- experimental option to load the game in separate thread.
-Spring.SetConfigInt("LoadingMT", 1) -- defaults to 0
+Spring.SetConfigInt("LoadingMT", 0) -- defaults to 0
 
 -- how much the amount of lua memory in use increases the rate of garbage collection.
 Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.15) -- defaults to 1.33
