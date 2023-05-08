@@ -15,6 +15,15 @@
 ]]--
 
 return {
+	rumad_king1 = {
+		{
+			name = "shield_rumad_king_1",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	armcom1 = {
 		{
 			name = "shield_ac1",

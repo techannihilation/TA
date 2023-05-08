@@ -154,6 +154,18 @@ local morphDefs = {
 		tech = 2,
 		time = 60,
 	},
+	rumad_king = {
+		into = 'rumad_king1',
+		time = 30,
+	},
+	rumad_king1 = {
+		into = 'rumad_king2',
+		time = 45,
+	},
+	rumad_king2 = {
+		into = 'rumad_king3',
+		time = 60,
+	},
 
 	rumad_com = {
 	{

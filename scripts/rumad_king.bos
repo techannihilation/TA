@@ -11,13 +11,13 @@ piece  base, pelvis, chest, lbody, lshoulder, larm, lhand, lathe1,
        lleftoe, rthigh, rleg, rfoot, rftoes, rrightoe, headrest, head,
        headfire, headsupport, rshoulderholder;
 
-static-var  unitviewer, Main_Gun_Heading,
+static-var  unitviewer, Main_Gun_Heading, bShield,
             gun_1, msl_1, bMoving, bAiming, spray, bBuilding;
 
 // Signal definitions
 #define SIG_AIM_1			2
 #define SIG_AIM_2			4
-#define SIG_MOVE			16
+#define SIG_MOVE			8
 
 
 Walk()
@@ -92,9 +92,8 @@ Walk()
 		{
 			turn rarm to x-axis <-15.000000> speed <20.390110>;
 		}
-		turn lleg to x-axis <2.000000> speed <27.692308>;
 		
-		sleep 292;
+		sleep 250;
 		
 		if( !bAiming )
 		{
@@ -110,7 +109,21 @@ Walk()
 		turn rleg to x-axis <12.000000> speed <53.324176>;
 		turn rfoot to x-axis <5.000000> speed <53.324176>;
 		turn rftoes to x-axis <40.000000> speed <90.000000>;
-		sleep 375;
+		sleep 250;
+		
+		if ( !bMoving )
+		{
+			turn lthigh to x-axis <0.000000> speed <50.0>;
+			turn lleg to x-axis <0.000000> speed <50.0>;
+			turn lfoot to x-axis <0.000000> speed <50.0>;
+			turn lftoes to x-axis <0.000000> speed <0.0>;
+			turn rthigh to x-axis <0.000000> speed <50.0>;
+			turn rleg to x-axis <0.000000> speed <50.0>;
+			turn rfoot to x-axis <0.000000> speed <50.0>;
+			turn rftoes to x-axis <0.000000> speed <90.0>;
+		
+		}
+		
 	}
 }
 
@@ -144,6 +157,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 StartMoving()
 {
 	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
 	sleep 200;
 	bMoving = 1;
 	start-script Walk();
@@ -152,6 +166,7 @@ StartMoving()
 StopMoving()
 {
 	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
 	bMoving = 0;
 	turn rthigh to x-axis <0.000000> speed <135.000000>;
 	turn rleg to x-axis <0.000000> speed <80.000000>;
@@ -186,6 +201,7 @@ Create()
 	spray = 1;
 	bBuilding = 0;
 	Main_Gun_Heading = 0;
+	bShield = 1;
 	start-script SmokeUnit();
 }
 
@@ -198,6 +214,15 @@ RestorePrimary()
 RestoreSecondary()
 {
 	sleep 2000;
+	turn rarm to x-axis <0.000000> speed <65.000000>;	
+	turn rshoulder to x-axis <0.000000> speed <50.000000>;
+	bAiming = 0;
+}
+
+RestoreWeapon4()
+{
+	sleep 2000;
+	turn chest to y-axis <0.000000> speed <60.000000>;
 	turn rarm to x-axis <0.000000> speed <65.000000>;	
 	turn rshoulder to x-axis <0.000000> speed <50.000000>;
 	bAiming = 0;
@@ -337,6 +362,44 @@ QueryWeapon2(piecenum)
 	piecenum = rfire;
 }
 
+// SEALASER
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = rarm;
+}
+
+AimWeapon4(heading, pitch)
+{
+	//get PRINT(head);	
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	while( bBuilding )
+	{
+		sleep 500;
+	}
+	bAiming = 1;
+	Main_Gun_Heading = heading;
+	turn chest to y-axis heading speed <250.000000>;
+	turn rarm to x-axis <-45.000000> speed <65.000000>;	
+	turn rshoulder to x-axis <-45.000000> - pitch speed <50.000000>;
+	wait-for-turn chest around y-axis;
+	wait-for-turn rarm around x-axis;	
+	wait-for-turn rshoulder around x-axis;
+	start-script RestoreWeapon4();
+	return (1);
+}
+
+FireWeapon4()
+{
+	sleep 150;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = rfire;
+}
+
 AimFromTertiary(piecenum)
 {
 	piecenum = head;
@@ -363,6 +426,34 @@ FireTertiary()
 QueryTertiary(piecenum)
 {
 	piecenum = headfire;
+}
+
+//SHIELD
+Shield()
+{
+	bShield = !bShield;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = pelvis;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = pelvis;
+}
+
+AimWeapon5(heading, pitch)
+{
+	if( bShield )
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
 
 QueryNanoPiece(piecenum)

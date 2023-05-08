@@ -125,6 +125,10 @@ local ShieldUnits = {
   [UnitDefNames["gok_eck"].id] = true,
   [UnitDefNames["gok_ucp"].id] = true,
   [UnitDefNames["gok_azaroth"].id] = true,
+  --Rumad
+  [UnitDefNames["rumad_king1"].id] = true,
+  [UnitDefNames["rumad_king2"].id] = true,
+  [UnitDefNames["rumad_king3"].id] = true,
 }
 
 --------------------------------------------------------------------------------

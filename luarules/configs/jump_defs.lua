@@ -45,6 +45,7 @@ jumpClassGroups = {
   	"tllcom2",
   	"talon_com2",
     "gok_com2",
+    "rumad_king2",
 	},
 	supremecom = {
   	"armcom3",
@@ -52,6 +53,7 @@ jumpClassGroups = {
   	"tllcom3",
   	"talon_com3",
     "gok_com3",
+    "rumad_king3",
 	},
 	jumpbot = {
   	"tlldischarge",

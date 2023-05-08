@@ -174,6 +174,11 @@ gok_azaroth = true,
 gok_satan = true,
 gok_antichrist = true,
 gok_archon = true
+--Rumad
+rumad_king1 = true,
+--rumad_king2 = true,
+--rumad_king3 = true,
+
 }
 
 local ShieldUnits = {}

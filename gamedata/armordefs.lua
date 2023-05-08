@@ -391,5 +391,12 @@ return {
 		"gok_com2",
 		"gok_com3",
 		"rumad_king",
+		"rumad_king1",
+		"rumad_king2",
+		"rumad_king3",
+		"rumad_com",
+		"rumad_com1",
+		"rumad_com2",
+		"rumad_com3",
 	}
 }
