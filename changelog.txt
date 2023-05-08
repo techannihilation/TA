@@ -1,5 +1,12 @@
+4.47 => 4.48
+2023-05-08
+
 4.46 => 4.47
 2023-04-23
+
+Improvment :
+- Razorback : BeamLaser comes back.
+
 
 Balance :
  - AntiNuke T2/T3 becomes AntiMissiles. They can now intercept Tac Missiles. (If you have good range, you can try to saturate AntiNuke)

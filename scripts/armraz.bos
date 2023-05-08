@@ -9,7 +9,7 @@ piece  ground, hips, luparm, lloarm, lhand, fingerla, fingerlb, thumbl,
        Enrgycell2, b1, b2, arm1, arm2, ar, al;
 
 static-var  Static_Var_8, bMoving, bAiming, Static_Var_5,
-            Static_Var_6;
+            Static_Var_6, gun_1;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -406,6 +406,7 @@ Create()
 	hide flareb;
 	bMoving = FALSE;
 	bAiming = FALSE;
+	gun_1 = 0;
 	Static_Var_5 = 1;
 	Static_Var_8 = 0;
 	start-script SmokeUnit();
@@ -443,8 +444,8 @@ SweetSpot(piecenum)
 RestoreAfterDelay(Func_Var_1)
 {
 	sleep 2500;
-	//stop-spin canonbarrel1 around z-axis decelerate <25.000000>;
-	//stop-spin canonbarrel2 around z-axis decelerate <25.000000>;
+	stop-spin canonbarrel1 around z-axis decelerate <25.000000>;
+	stop-spin canonbarrel2 around z-axis decelerate <25.000000>;
 	turn cannonr to y-axis <0.000000> speed <15.000000>;
 	turn cannonl to y-axis <0.000000> speed <15.000000>;
 	turn body to y-axis <0.000000> speed <60.000000>;
@@ -458,19 +459,16 @@ AimFromPrimary(piecenum)
 	piecenum = body;
 }
 
-AimFromSecondary(piecenum)
-{
-	piecenum = body;
-}
-
 QueryPrimary(piecenum)
 {
-	piecenum = flarea;
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = flareb;
+	if( gun_1 == 0 )
+	{
+		piecenum = flarea;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flareb;
+	}
 }
 
 AimPrimary(heading, pitch)
@@ -478,8 +476,9 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	bAiming = TRUE;
-	//spin canonbarrel1 around z-axis speed <1000.000000> accelerate <30.000000>;
-	//spin canonbarrel2 around z-axis speed <1000.000000> accelerate <30.000000>;
+	
+	spin canonbarrel1 around z-axis speed <250.000000> accelerate <30.000000>;
+	spin canonbarrel2 around z-axis speed <250.000000> accelerate <30.000000>;
 	
 	
 	turn body to y-axis heading speed <280.000000>;
@@ -488,32 +487,12 @@ AimPrimary(heading, pitch)
 	turn cannonl to y-axis <-5.000000> speed <200.000000>;
 	turn arml to x-axis <0.000000> - pitch speed <200.000000>;
 	
-	Static_Var_8 = heading;
-		
-	wait-for-turn arml around x-axis;
-	wait-for-turn cannonl around y-axis;	
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	bAiming = TRUE;
-	//spin canonbarrel1 around z-axis speed <1000.000000> accelerate <30.000000>;
-	//spin canonbarrel2 around z-axis speed <1000.000000> accelerate <30.000000>;
-		
-	turn body to y-axis heading speed <280.000000>;
-	wait-for-turn body around y-axis;
-	
 	turn cannonr to y-axis <5.000000> speed <200.000000>;
 	turn armr to x-axis <0.000000> - pitch speed <200.000000>;
-	
-
-	Static_Var_8 = heading;
-	
+		
+	wait-for-turn arml around x-axis;
 	wait-for-turn armr around x-axis;
+	wait-for-turn cannonl around y-axis;	
 	wait-for-turn cannonr around y-axis;
 	start-script RestoreAfterDelay();
 	return (1);
@@ -521,29 +500,36 @@ AimSecondary(heading, pitch)
 
 FirePrimary()
 {
-	move b2 to z-axis [-2.000000] speed [400.000000];
-	turn al to x-axis <20.000000> speed <400.000000>;
-	turn cannonl to x-axis <-20.000000> speed <400.000000>;
-	show flareb;
-	sleep 100;
-	hide flareb;
-	move b2 to z-axis [0.000000] speed [2.000000];
-	turn al to x-axis <0.000000> speed <35.000000>;
-	turn cannonl to x-axis <0.000000> speed <35.000000>;
+	if( gun_1 == 0 )
+	{
+		move b2 to z-axis [-2.000000] speed [400.000000];
+		turn al to x-axis <20.000000> speed <400.000000>;
+		turn cannonl to x-axis <-20.000000> speed <400.000000>;
+		show flareb;
+		sleep 100;
+		hide flareb;
+		move b2 to z-axis [0.000000] speed [2.000000];
+		turn al to x-axis <0.000000> speed <35.000000>;
+		turn cannonl to x-axis <0.000000> speed <35.000000>;
+		gun_1 = hips;
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		move b1 to z-axis [-2.000000] speed [400.000000];
+		turn ar to x-axis <20.000000> speed <400.000000>;
+		turn cannonr to x-axis <-20.000000> speed <400.000000>;
+		show flarea;
+		sleep 100;
+		hide flarea;
+		move b1 to z-axis [0.000000] speed [2.000000];
+		turn ar to x-axis <0.000000> speed <35.000000>;
+		turn cannonr to x-axis <0.000000> speed <35.000000>;
+		gun_1 = ground;
+		return (0);
+	}
 }
 
-FireSecondary()
-{
-	move b1 to z-axis [-2.000000] speed [400.000000];
-	turn ar to x-axis <20.000000> speed <400.000000>;
-	turn cannonr to x-axis <-20.000000> speed <400.000000>;
-	show flarea;
-	sleep 100;
-	hide flarea;
-	move b1 to z-axis [0.000000] speed [2.000000];
-	turn ar to x-axis <0.000000> speed <35.000000>;
-	turn cannonr to x-axis <0.000000> speed <35.000000>;
-}
 
 Killed(severity, corpsetype)
 {
