@@ -27,7 +27,7 @@ return {
 		footprintx = 7,
 		footprintz = 7,
 		icontype = "Krogoth",
-		idleautoheal = 10,
+		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
 		losemitheight = 133,

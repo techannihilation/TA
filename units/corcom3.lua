@@ -29,7 +29,7 @@ return {
 		corpse = "dead",
 		decoyfor = "corcom",
 		defaultmissiontype = "Standby",
-		description = "Level 4",
+		
 		energymake = 2000,
 		energystorage = 4000,
 		explodeas = "COMMANDER_BLAST3",

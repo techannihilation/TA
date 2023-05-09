@@ -1019,18 +1019,18 @@ arm_sat_radar = {
      {class='SantaHat',options={color={1,0.1,0,1}, pos={0,11,2}, emitVector={0.3,1,0.2}, width=6, height=14, ballSize=1.6, piecenum=11, piece="head"}},
      {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
    },
-   rumad_com = {
+  rumad_king = {
       {class='SantaHat',options={color={1,0.1,0,1}, pos={0,9,2}, emitVector={0.1,1,0}, width=3, height=7, ballSize=0.9, piecenum=11, piece="head"}},
     },
-   rumad_com1 = {
+  rumad_king1 = {
       {class='SantaHat',options={color={1,0.1,0,1}, pos={0,9,2}, emitVector={0.3,1,0.2}, width=3.5, height=8, ballSize=1.15, piecenum=11, piece="head"}},
       {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=100, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
     },
-   rumad_com2 = {
+  rumad_king2 = {
       {class='SantaHat',options={color={1,0.1,0,1}, pos={0,10,2}, emitVector={0.3,1,0.2}, width=4, height=9, ballSize=1.3, piecenum=11, piece="head"}},
       {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=150, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
     },
-   rumad_com3 = {
+  rumad_king3 = {
       {class='SantaHat',options={color={1,0.1,0,1}, pos={0,11,2}, emitVector={0.3,1,0.2}, width=6, height=14, ballSize=1.6, piecenum=11, piece="head"}},
       {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
     },

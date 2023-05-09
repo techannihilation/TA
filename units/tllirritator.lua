@@ -25,7 +25,7 @@ return {
 		firestandorders = 1,
 		footprintx = 7,
 		footprintz = 7,
-		idleautoheal = 10,
+		idleautoheal = 5,
 		idletime = 30,
 		immunetoparalyzer = 1,
 		losemitheight = 130,

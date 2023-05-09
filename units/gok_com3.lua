@@ -28,7 +28,7 @@ return {
 		commander = true,
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Level 4",
+		
 		energymake = 2400,
 		energystorage = 4000,
 		explodeas = "COMMANDER_BLAST3",

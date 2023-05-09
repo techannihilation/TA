@@ -24,6 +24,24 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	rumad_king2 = {
+		{
+			name = "shield_rumad_king_2",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
+	rumad_king3 = {
+		{
+			name = "shield_rumad_king_3",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	armcom1 = {
 		{
 			name = "shield_ac1",

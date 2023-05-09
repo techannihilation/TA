@@ -71,17 +71,17 @@ local DGUN = {
   [WeaponDefNames['talon_com1_tal_disintegrator'].id] = true,
   [WeaponDefNames['talon_com2_tal_disintegrator'].id] = true,
   [WeaponDefNames['talon_com3_tal_disintegrator'].id] = true,
-    --Gok
+  --Gok
   [WeaponDefNames['gok_com_gok_disintegrator'].id] = true,
   [WeaponDefNames['gok_com1_gok_disintegrator'].id] = true,
   [WeaponDefNames['gok_com2_gok_disintegrator'].id] = true,
   [WeaponDefNames['gok_com3_gok_disintegrator'].id] = true,
 
-    --Rumad
-    [WeaponDefNames['rumad_king_rumad_disintegrator'].id] = true,
-    [WeaponDefNames['rumad_king1_rumad_disintegrator2'].id] = true,
-    [WeaponDefNames['rumad_king2_rumad_disintegrator3'].id] = true,
-    [WeaponDefNames['rumad_king3_rumad_disintegrator4'].id] = true,
+  --Rumad
+  [WeaponDefNames['rumad_king_rumad_disintegrator'].id] = true,
+  [WeaponDefNames['rumad_king1_rumad_disintegrator2'].id] = true,
+  [WeaponDefNames['rumad_king2_rumad_disintegrator3'].id] = true,
+  [WeaponDefNames['rumad_king3_rumad_disintegrator4'].id] = true,
 }
 
 local COMMANDER = VFS.Include("luarules/configs/comDefIDs.lua")

@@ -29,7 +29,7 @@ return {
 		corpse = "dead",
 		decoyfor = "armcom",
 		defaultmissiontype = "Standby",
-		description = "Level 3",
+		
 		energymake = 1000,
 		energystorage = 4000,
 		energyuse = 0,

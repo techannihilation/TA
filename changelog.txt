@@ -1,7 +1,7 @@
-4.47 => 4.48
+ 4.47 => 4.48
 2023-05-08
 
-4.46 => 4.47
+ 4.46 => 4.47
 2023-04-23
 
 Improvment :
@@ -15,7 +15,7 @@ Balance :
  - Obelisk Shield Talon : Reduce metalcost 4.6K => 3.6K
  - All Mobile Jam : Increase energycost ~2KE=>6KE. Decrease energy/s for jamming 100=>50
 
-4.45 => 4.46
+ 4.45 => 4.46
 2023-03-24
 
 Balance :

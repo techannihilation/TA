@@ -78,6 +78,30 @@ local morphDefs = {
 		into = 'tllcom3',
 		time = 135,
 	},
+	rumad_com = {
+		into = 'rumad_com1',
+		time = 60,
+	},
+	rumad_com1 = {
+		into = 'rumad_com2',
+		time = 120,
+	},
+	rumad_com2 = {
+		into = 'rumad_com3',
+		time = 180,
+	},
+	rumad_king = {
+		into = 'rumad_king1',
+		time = 30,
+	},
+	rumad_king1 = {
+		into = 'rumad_king2',
+		time = 45,
+	},
+	rumad_king2 = {
+		into = 'rumad_king3',
+		time = 60,
+	},
 	rumad_research_lvl1 = {
 		into = 'rumad_research_lvl2',
 		time = 70,
@@ -154,47 +178,6 @@ local morphDefs = {
 		tech = 2,
 		time = 60,
 	},
-	rumad_king = {
-		into = 'rumad_king1',
-		time = 30,
-	},
-	rumad_king1 = {
-		into = 'rumad_king2',
-		time = 45,
-	},
-	rumad_king2 = {
-		into = 'rumad_king3',
-		time = 60,
-	},
-
-	rumad_com = {
-	{
-			into = 'armcom1',
-			time = 120,
-			tech = 0,
-	},
-	{
-			into = 'corcom1',
-			time = 60,
-			tech = 0,
-	},
-	{
-			into = 'tllcom1',
-			time = 120,
-			tech = 0,
-	},
-	{
-			into = 'talon_com1',
-			time = 60,
-			tech = 0,
-	},
-	{
-			into = 'gok_com1',
-			time = 120,
-			tech = 0,
-	},
-},
-
 	armgeo = {
 		{
 				into = 'amgeo',

@@ -27,7 +27,7 @@ return {
 		footprintx = 12,
 		footprintz = 12,
 		icontype = "spider",
-		idleautoheal = 10,
+		idleautoheal = 5,
 		idletime = 1800,
 		immunetoparalyzer = 1,
 		losemitheight = 76,

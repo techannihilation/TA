@@ -36,49 +36,7 @@ local copyLightDefs = {
 		["crawl_blast"              ] = "crawl_blast",
 		["crawl_blastsml"           ] = "crawl_blastsml",
 
-		--Brthas
-		--["armbrtha_arm_berthacannon2"] = "berthacannon",
-		--["corint_core_intimidator2"  ] = "berthacannon",
-
 		["tlldmc_tlldmc"]              = "dark_matter",
-
-
-		--Dgun
-		--[[
-		["armcom_arm_disintegrator"  ] = "arm_disintegrator",
-		["armcom1_arm_disintegrator2"] = "arm_disintegrator",
-		["armcom2_arm_disintegrator2"] = "arm_disintegrator",
-		["armcom3_arm_disintegrator2"] = "arm_disintegrator",
-		["corcom_arm_disintegrator"  ] = "arm_disintegrator",
-		["corcom1_arm_disintegrator2" ] = "arm_disintegrator",
-		["corcom2_arm_disintegrator2"] = "arm_disintegrator",
-    ["corcom3_arm_disintegrator2"] = "arm_disintegrator",
-		["tllcom_tll_disintegrator" ] = "arm_disintegrator",
-		["tllcom1_tll_disintegrator2"] = "arm_disintegrator",
-		["tllcom2_tll_disintegrator2"] = "arm_disintegrator",
-		["tllcom3_tll_disintegrator2"] = "arm_disintegrator",
-    ["talon_com_tal_disintegrator" ] = "arm_disintegrator",
-    ["talon_com1_tal_disintegrator"] = "arm_disintegrator",
-    ["talon_com2_tal_disintegrator"] = "arm_disintegrator",
-    ["talon_com3_tal_disintegrator"] = "arm_disintegrator",
-    ["gok_com_gok_disintegrator"  ] = "arm_disintegrator",
-    ["gok_com1_gok_disintegrator"  ] = "arm_disintegrator",
-    ["gok_com2_gok_disintegrator"  ] = "arm_disintegrator",
-    ["gok_com3_gok_disintegrator"  ] = "arm_disintegrator",
-    ["rumad_king_rumad_disintegrator"  ] = "arm_disintegrator",
-    ["rumad_king1_rumad_disintegrator"  ] = "arm_disintegrator",
-    ["rumad_king2_rumad_disintegrator"  ] = "arm_disintegrator",
-    ["rumad_king3_rumad_disintegrator"  ] = "arm_disintegrator",
-		--]]
-
-		--nukes
-		--["corsilo_crblmssl"          ] = "nuke_crblmssl",
-		--["corsilo1_crblmssl1"        ] = "nuke_crblmssl1",
-		--["corfsilo_corfsilo_weapon"  ] = "fnuke_missile1",
-		--["tllsilo_crblmssl"          ] = "nuke_missile",
-		--["armsilo_nuclear_missile"   ] = "nuke_missile",
-		--["armsilo1_nuclear_missile1" ] = "nuke_missile1",
-		--["armfsilo_armfsilo_weapon"  ] = "fnuke_missile",
 		["armcybr_arm_pidr"          ] = "mini_nuke",
 
 		--Emp / Tacnuke

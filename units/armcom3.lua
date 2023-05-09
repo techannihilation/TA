@@ -95,7 +95,7 @@ return {
 			[14] = "armap",
 			[15] = "arm_ulab",
 			[16] = "armedrag",
-			--[17] = "armllt1",
+			--[17] = "",
 			[18] = "armpb",
 			[19] = "armanni",
 			[20] = "armflak",
@@ -353,7 +353,6 @@ return {
 				shieldradius = 200,
 				shieldrepulser = false,
 				smartshield = true,
-				
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
