@@ -16,7 +16,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "59.9 119.9 59.9",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "heap",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -123,6 +122,7 @@ return {
 			juno_pulse = {
 				areaofeffect = 1500,
 				avoidfeature = false,
+				collidefriendly = false,
 				commandfire = true,
 				craterareaofeffect = 2250,
 				craterboost = 0,

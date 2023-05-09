@@ -1,7 +1,5 @@
 return {
 	tlljuno = {
-		acceleration = 0,
-		brakerate = 0,
 		buildcostenergy = 6508,
 		buildcostmetal = 801,
 		builder = false,
@@ -16,7 +14,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "59.9 119.9 59.9",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -32,7 +29,6 @@ return {
 		mass = 801,
 		maxdamage = 2220,
 		maxslope = 10,
-		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Juno",
 		noautofire = false,
@@ -121,6 +117,7 @@ return {
 			juno_pulse = {
 				areaofeffect = 1500,
 				avoidfeature = false,
+				collidefriendly = false,
 				commandfire = true,
 				craterareaofeffect = 2250,
 				craterboost = 0,

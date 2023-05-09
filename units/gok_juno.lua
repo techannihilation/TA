@@ -1,7 +1,5 @@
 return {
 	gok_juno = {
-		acceleration = 0,
-		brakerate = 0,
 		buildcostenergy = 11094,
 		buildcostmetal = 625,
 		builder = false,
@@ -20,7 +18,6 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Anti Minefield / Light Units / Radar / Jammer",
-		energyuse = 0,
 		explodeas = "ESTOR_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 4,
@@ -122,6 +119,7 @@ return {
 			juno_pulse = {
 				areaofeffect = 1500,
 				avoidfeature = false,
+				collidefriendly = false,
 				commandfire = true,
 				craterareaofeffect = 2250,
 				craterboost = 0,
