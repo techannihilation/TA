@@ -14,6 +14,7 @@ static-var  Static_Var_1, Static_Var_2, bMoving, statechg_DesiredState, statechg
 
 // Signal definitions
 #define SIG_MOVE			2
+#define SIG_ACTIVATION		4
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -215,8 +216,8 @@ HitByWeapon(anglex, anglez)
 	}
 	if( Static_Var_1 )
 	{
-		signal 2;
-		set-signal-mask 2;
+		signal SIG_ACTIVATION;
+		set-signal-mask SIG_ACTIVATION;
 		set ACTIVATION to 0;
 		sleep 8000;
 		Static_Var_1 = 0;

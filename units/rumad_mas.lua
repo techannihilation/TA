@@ -37,7 +37,6 @@ return {
 		selfdestructas = "MINE_NUKE",
 		sightdistance = 322,
 		unitname = "rumad_mas",
-		usebuildinggrounddecal = true,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
 		customparams = {
 			buildpic = "rumad_mas.dds",

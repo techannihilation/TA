@@ -1,7 +1,6 @@
 return {
 	armscab = {
 		acceleration = 0.018,
-
 		brakerate = 0.102,
 		buildcostenergy = 51302,
 		buildcostmetal = 1551,
@@ -18,10 +17,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "All-terrain Mobile Anti-Nuke",
-		energymake = 25,
-		energystorage = 1000,
-		energyuse = 0,
+		description = "Tech Level 2",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 3,
@@ -37,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
-		name = "Scarab",
+		name = "Mobile All-Terrain Anti-Nuke",
 		objectname = "ARMSCAB",
 		radardistance = 50,
 		radaremitheight = 22,
