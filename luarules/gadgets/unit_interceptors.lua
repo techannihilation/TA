@@ -54,9 +54,6 @@ local antiNukes = {
   [UnitDefNames["gok_carry"].id] = true,
   [UnitDefNames["gok_morningstar"].id] = true,
   [UnitDefNames["gok_ucar"].id] = true,
-  --Rumad
-  [UnitDefNames["rumad_antinuke"].id] = true,
-  [UnitDefNames["rumad_antinuke1"].id] = true,
 }
 
 local interceptorsID = {}

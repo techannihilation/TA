@@ -41,9 +41,6 @@ local isAnti = {
 		[UnitDefNames['talon_damascus1'].id] = true, -- Adv Antinuke
 		[UnitDefNames['talon_damascus2'].id] = true, -- T4 Antinuke
 		[UnitDefNames['talon_carry'].id] = true, -- Hive (carrier)
-		--Rumad
-		[UnitDefNames['rumad_antinuke'].id] = true, -- Antinuke
-		[UnitDefNames['rumad_antinuke1'].id] = true, -- Antinuke
 	}
 
 local spSetUnitStockpile = Spring.SetUnitStockpile

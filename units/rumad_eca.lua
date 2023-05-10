@@ -66,7 +66,7 @@ return {
 			[7] = "rumad_ap",
 			[8] = "rumad_eflak",
 			--[9] = "armeap",
-			[10] = "rumad_antinuke1",
+			--[10] = "",
 			[9] = "portal"
 		},
 		customparams = {

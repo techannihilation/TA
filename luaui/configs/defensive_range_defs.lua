@@ -122,8 +122,6 @@ modConfig["TA"]["unitList"] =
 								corfmd2 = { weapons = { 3 } },
 								cortron = { weapons = { 3 } },
 								gok_eveningstar = { weapons = { 3 } },
-								rumad_antinuke = { weapons = { 1 } },
-								rumad_antinuke1 = { weapons = { 1 } },
 								corarbritator = { weapons = { 3 } },
 								talon_carry = { weapons = { 1 } },
 								talon_ucar = { weapons = { 6 } },
@@ -200,12 +198,13 @@ modConfig["TA"]["unitList"] =
 								talon_tl = { weapons = { 1 } },
 								talon_atl = { weapons = { 1 } },
 								talon_hlt = { weapons = { 1 } },
-								talon_juno = { weapons = { 1 } },
+								talon_vhlt = { weapons = { 1 } },
 
 								gok_slesh = { weapons = { 1 } },
 								gok_slesh1 = { weapons = { 1 } },
 								gok_blackdawn = { weapons = { 1 } },
 								gok_llt = { weapons = { 1 } },
+								--gok_llt1 = { weapons = { 1 } },
 								gok_lrpt = { weapons = { 1 } },
 								gok_lrpt1 = { weapons = { 1 } },
 								gok_meteor = { weapons = { 1 } },
@@ -213,14 +212,7 @@ modConfig["TA"]["unitList"] =
 								gok_meteor2 = { weapons = { 1 } },
 								gok_juno = { weapons = { 1 } },
 
-								--RUMAD
-								rumad_llt = { weapons = { 1 } },
-								rumad_pt = { weapons = { 1 } },
-								rumad_hotshot = { weapons = { 1 } },
-								rumad_orb = { weapons = { 1 } },
-								rumad_triton = { weapons = { 1 } },
-
-
+								talon_juno = { weapons = { 1 } },
 									-- AntiAir
 								talon_popcorn = { weapons = { 2 } },
 								talon_popcorn1 = { weapons = { 2 } },
@@ -235,10 +227,6 @@ modConfig["TA"]["unitList"] =
 								talon_ptr = { weapons = { 2 } },
 								gok_ptr = { weapons = { 2 } },
 								talon_kernel = { weapons = { 2 } },
-								rumad_sam = { weapons = { 1 } },
-								rumad_rl = { weapons = { 1 } },
-								rumad_flak = { weapons = { 1 } },
-								rumad_eflak = { weapons = { 1 } },
 
 								talon_damascus = { weapons = { 3 } },
 								talon_damascus1 = { weapons = { 3 } },
