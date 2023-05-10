@@ -141,7 +141,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 300,
-				model = "weapon_missile_rumad_antinuke1",
+				model = "antinukemsl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,
@@ -161,7 +161,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 3600,
 				damage = {
-					default = 1000,
+					default = 15000,
 					subs = 5,
 				},
 			},

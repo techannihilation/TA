@@ -1,7 +1,7 @@
 return {
 	rumad_ck = {
 		acceleration = 0.36,
-		brakerate = 0.21,
+		brakerate = 0.25,
 		buildcostenergy = 1905,
 		buildcostmetal = 125,
 		builddistance = 160,

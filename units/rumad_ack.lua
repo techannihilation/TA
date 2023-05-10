@@ -1,7 +1,7 @@
 return {
 	rumad_ack = {
-		acceleration = 0.01,
-		brakerate = 5,
+		acceleration = 0.3,
+		brakerate = 0.25,
 		buildcostenergy = 11560,
 		buildcostmetal = 600,
 		builddistance = 230,

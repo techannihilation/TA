@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, msl, door, flare,
+piece  base, body, door, flare,
 		w11, w12, w13, w14, 
 		w21, w22, w23, w24;
 
@@ -95,7 +95,6 @@ deactivatescr()
 		turn door to x-axis <0.000000> speed <60.000000>;
 		wait-for-turn door around x-axis;
 		bOpened = FALSE;
-		show msl;
 	}
 	sleep 15;
 }
@@ -177,11 +176,6 @@ AimPrimary(heading, pitch)
 	set-signal-mask SIG_AIM;
 	start-script RestoreAfterDelay();
 	return (1);
-}
-
-FirePrimary()
-{
-	hide msl;
 }
 
 QueryPrimary(piecenum)

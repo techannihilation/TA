@@ -38,7 +38,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "rumad_targ",
-		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
 			buildpic = "rumad_targ.dds",
