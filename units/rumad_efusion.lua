@@ -1,10 +1,10 @@
 return {
-	rumad_fusion = {
+	rumad_efusion = {
 		acceleration = 0.005,
 		brakerate = 1.8,
 		buildcostenergy = 310000,
 		buildcostmetal = 37850,
-		buildpic = "rumad_fusion.dds",
+		buildpic = "rumad_efusion.dds",
 		buildtime = 700000,
 		canguard = true,
 		canmove = true,
@@ -34,9 +34,9 @@ return {
 		maxwaterdepth = 18,
 		mobilestandorders = 1,
 		movementclass = "TANK5",
-		name = "Vehicle Fusion Reactor",
+		name = "Experimental Vehicle Fusion Reactor",
 		noautofire = false,
-		objectname = "rumad_fusion",
+		objectname = "rumad_efusion",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,9 +53,9 @@ return {
 		turninplaceanglelimit = 120,
 		turninplacespeedlimit = 1.0,
 		turnrate = 250,
-		unitname = "rumad_fusion",
+		unitname = "rumad_efusion",
 		customparams = {
-			buildpic = "rumad_fusion.dds",
+			buildpic = "rumad_efusion.dds",
 			faction = "RUMAD",
 		},
 		featuredefs = {
@@ -66,7 +66,7 @@ return {
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,
-				object = "rumad_fusion_DEAD",
+				object = "rumad_efusion_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
