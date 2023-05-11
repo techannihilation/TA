@@ -73,7 +73,7 @@ return {
 			[1] = "rumad_win",
 			[2] = "rumad_solar",
 			[3] = "rumad_geo_mini",
-			[4] = "rumad_makr",
+			[4] = "rumad_metalmakerlvl1",
 			[5] = "rumad_mex",
 			[6] = "rumad_mstor",
 			[7] = "rumad_estor",

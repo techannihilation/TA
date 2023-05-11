@@ -57,10 +57,10 @@ return {
 		unitname = "rumad_eca",
 		workertime = 270,
 		buildoptions = {
-			[1] = "afusionplant",
+			[1] = "rumad_efusion",
 			--[2] = "armfor",
 			[3] = "rumad_emex",
-			[4] = "ametalmakerlvl2",
+			[4] = "rumad_metalmakerlvl3",
 			[5] = "armses",
 			[6] = "cadvmsto",
 			[7] = "rumad_ap",

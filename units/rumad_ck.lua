@@ -61,7 +61,7 @@ return {
 			[3] = "rumad_geo",
 			[4] = "rumad_mex",
 			[5] = "rumad_mex1",
-			[6] = "rumad_makr",
+			[6] = "rumad_metalmakerlvl1",
 			--[7] = "",
 			--[8] = "",
 			[9] = "rumad_mstor",

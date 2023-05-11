@@ -2,7 +2,7 @@ return {
 	ametalmakerlvl3 = {
 		activatewhenbuilt = true,
 		buildcostenergy = 1237600,
-		buildcostmetal = 26112,
+		buildcostmetal = 26000,
 		builder = false,
 		buildpic = "ametalmakerlvl3.dds",
 		buildtime = 1500000,
@@ -20,7 +20,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 48,
-		mass = 26438,
+		mass = 26000,
 		maxdamage = 14040,
 		maxslope = 20,
 		maxwaterdepth = 0,

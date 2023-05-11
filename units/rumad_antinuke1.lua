@@ -1,6 +1,6 @@
 return {
 	rumad_antinuke1 = {
-		acceleration = 0.04,
+		acceleration = 0.005,
 		brakerate = 0.05,
 		buildcostenergy = 105000,
 		buildcostmetal = 3750,

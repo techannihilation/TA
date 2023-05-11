@@ -141,7 +141,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_missile_rumad_antinuke",
+				model = "antinukemsl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

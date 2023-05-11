@@ -60,7 +60,7 @@ return {
 		unitname = "rumad_aca",
 		workertime = 90,
 		buildoptions = {
-			[1] = "rumad_mfus",
+			[1] = "rumad_fusion",
 			[2] = "rumad_mohogeo",
 			[3] = "rumad_moho",
 			[4] = "rumad_aestor",

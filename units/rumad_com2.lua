@@ -25,7 +25,6 @@ return {
 		commander = true,
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
-		
 		energymake = 500,
 		energystorage = 2000,
 		explodeas = "COMMANDER_BLAST2",
@@ -71,10 +70,10 @@ return {
 		upright = true,
 		workertime = 600,
 		buildoptions = {
-			[1] = "afusionplant",
+			[1] = "rumad_efusion",
 			--[2] = "armfor",
 			[3] = "rumad_emex",
-			[4] = "ametalmakerlvl2",
+			[4] = "rumad_metalmakerlvl3",
 			[5] = "armses",
 			[6] = "cadvmsto",
 			[7] = "rumad_vp",

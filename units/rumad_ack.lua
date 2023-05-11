@@ -59,7 +59,7 @@ return {
 		workertime = 160,
 		buildoptions = {
 			--[1] = "rumad_gen",
-			[2] = "rumad_mfus",
+			[2] = "rumad_fusion",
 			[3] = "rumad_mohogeo",
 			--[4] = "rumadgmm",
 			[5] = "rumad_moho",

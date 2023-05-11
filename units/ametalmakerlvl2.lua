@@ -2,7 +2,7 @@ return {
 	ametalmakerlvl2 = {
 		activatewhenbuilt = true,
 		buildcostenergy = 247520,
-		buildcostmetal = 5712,
+		buildcostmetal = 5710,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 6,
@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 54,
-		mass = 9825,
+		mass = 5710,
 		maxdamage = 5855,
 		maxslope = 20,
 		maxwaterdepth = 0,
