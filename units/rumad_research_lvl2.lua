@@ -16,7 +16,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL MOBILE VTOL SURFACE",
+		category = "LEVEL2 ALL VTOL SURFACE",
 		collide = false,
 		corpse = "heap",
 		cruisealt = 200,

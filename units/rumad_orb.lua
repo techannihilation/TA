@@ -11,7 +11,7 @@ return {
 		category = "ALL SURFACE",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Tachyon Accelerator",
+		description = "Plasma Repulsor Turret",
 		energystorage = 2000,
 		energyuse = 0,
 		explodeas = "CRAWL_BLASTSML",

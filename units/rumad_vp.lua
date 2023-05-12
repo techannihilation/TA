@@ -75,9 +75,10 @@ return {
 
 			-- LVL2
 			[10] = "rumad_ack",
-			[11] = "rumad_macm",
-			[12] = "rumad_garuda",
-			[13] = "rumad_artybot",
+			[11] = "rumad_engineerk",
+			[12] = "rumad_macm",
+			[13] = "rumad_garuda",
+			[14] = "rumad_artybot",
 
 			-- LVL3
 			[15] = "rumad_mcv",

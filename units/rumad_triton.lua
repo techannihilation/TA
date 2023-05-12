@@ -31,7 +31,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Guardian",
+		name = "Triton",
 		noautofire = false,
 		objectname = "rumad_triton",
 		radaremitheight = 30,
