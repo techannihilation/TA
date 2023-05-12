@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 100,
 		builder = false,
 		buildpic = "rumad_rad.dds",
-		buildtime = 6000,
+		buildtime = 2500,
 		canattack = false,
 		canguard = true,
 		canmove = true,
