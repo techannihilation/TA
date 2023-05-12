@@ -63,9 +63,9 @@ local convertCapacities = {
 		[UnitDefNames.gok_metalmakerlvl4.id]  = { c = 275000, e = (AC5) }, -- T5
 
 		--RUMAD
-		[UnitDefNames.rumad_metalmakerlvl1.id]  = { c = 250, e = (RUMAD0) }, -- Normal
+		[UnitDefNames.rumad_metalmakerlvl1.id]  = { c = 250, e = (RUMAD0) }, -- T1
+		[UnitDefNames.rumad_metalmakerlvl2.id]  = { c = 1500, e = (AC2) }, -- T2
 		[UnitDefNames.rumad_metalmakerlvl3.id]  = { c = 10000, e = (AC3) }, -- T3
-		--[UnitDefNames.rumad_metalmakerlvl3.id]  = { c = 35000, e = (AC4) }, -- T4
 		--[UnitDefNames.rumad_metalmakerlvl4.id]  = { c = 192000, e = (AC5) }, -- T5
 }
 

@@ -80,6 +80,7 @@ return {
 		customparams = {
 			buildpic = "rumad_engineerk.dds",
 			faction = "TLL",
+			requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -90,7 +91,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "rumad_ck_dead",
+				object = "rumad_engineerk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

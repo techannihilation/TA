@@ -132,7 +132,7 @@ return {
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,
-				reloadtime = 3,
+				reloadtime = 2,
 				smoketrail = true,
 				soundhitdry = "TAWF114b",
 				soundhitwet = "splsmed",
@@ -152,8 +152,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 600,
 				damage = {
-					commanders = 600,
-					default = 1200,
+					default = 600,
 					subs = 5,
 				},
 			},
@@ -189,7 +188,6 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1000,
 				damage = {
-					commanders = 750,
 					default = 1500,
 					subs = 5,
 				},

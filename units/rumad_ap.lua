@@ -48,7 +48,7 @@ return {
 		turninplacespeedlimit = 4,
 		turnrate = 400,
 		unitname = "rumad_ap",
-		workertime = 100,
+		workertime = 225,
 		buildoptions = {
 			-- LVL1
 			[1] = "rumad_ca",

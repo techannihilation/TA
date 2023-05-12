@@ -30,8 +30,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMMMKR",
 		radaremitheight = 53,
 		seismicsignature = 0,

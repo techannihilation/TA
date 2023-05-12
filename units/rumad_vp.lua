@@ -61,7 +61,7 @@ return {
 		turninplacespeedlimit = 1.2,
 		turnrate = 350,
 		unitname = "rumad_vp",
-		workertime = 200,
+		workertime = 225,
 		buildoptions = {
 			-- LVL1
 			[1] = "rumad_ck",
@@ -81,8 +81,9 @@ return {
 			[14] = "rumad_artybot",
 
 			-- LVL3
-			[15] = "rumad_mcv",
-			[16] = "rumad_mlrpt",
+			[16] = "rumad_eck",
+			[17] = "rumad_mcv",
+			[18] = "rumad_mlrpt",
 
 		},
 		customparams = {
