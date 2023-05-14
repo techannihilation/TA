@@ -78,7 +78,8 @@ return {
 			[11] = "rumad_engineerk",
 			[12] = "rumad_macm",
 			[13] = "rumad_garuda",
-			[14] = "rumad_artybot",
+			[14] = "rumad_cordyceps",
+			[15] = "rumad_artybot",
 
 			-- LVL3
 			[16] = "rumad_eck",
