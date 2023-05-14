@@ -73,31 +73,37 @@ RestoreMsl(numberMsl)
 	if( numberMsl == 1 )
 	{
 		sleep 1000;
+		show msl1;
 		move msl1 to z-axis [0.0] speed [3.0];
 	}
 	if( numberMsl == 2 )
 	{
 		sleep 1000;
+		show msl2;
 		move msl2 to z-axis [0.0] speed [3.0];
 	}
 	if( numberMsl == 3 )
 	{
 		sleep 1000;
+		show msl3;
 		move msl3 to z-axis [0.0] speed [3.0];
 	}
 	if( numberMsl == 4 )
 	{
 		sleep 1000;
+		show msl4;
 		move msl4 to z-axis [0.0] speed [3.0];
 	}
 	if( numberMsl == 5 )
 	{
 		sleep 1000;
+		show msl5;
 		move msl5 to z-axis [0.0] speed [3.0];
 	}
 	if( numberMsl == 6 )
 	{
 		sleep 1000;
+		show msl6;		
 		move msl6 to z-axis [0.0] speed [3.0];
 	}	
 }
@@ -106,17 +112,20 @@ FirePrimary()
 {
 	if( msl_1 == 1 )
 	{
-		move msl1 to z-axis [-2.4] now;
+		move msl1 to z-axis [-2.3] now;
+		hide msl1;
 		start-script RestoreMsl(msl_1);
 	}
 	if( msl_1 == 2 )
 	{
-		move msl2 to z-axis [-2.4] now;
+		move msl2 to z-axis [-2.3] now;
+		hide msl2;
 		start-script RestoreMsl(msl_1);
 	}
 	if( msl_1 == 3 )
 	{
-		move msl3 to z-axis [-2.4] now;
+		move msl3 to z-axis [-2.3] now;
+		hide msl3;
 		start-script RestoreMsl(msl_1);
 	}
 	++msl_1;

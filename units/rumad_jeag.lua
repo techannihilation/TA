@@ -122,7 +122,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_rumad_aamissile",
+				model = "weapon_missile_rumad_aa",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,

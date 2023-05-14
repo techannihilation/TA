@@ -21,7 +21,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "armcir_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
-		description = "Heavy Missile Battery",
+		description = "Heavy Anti-Air Battery",
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 4,
@@ -161,7 +161,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},

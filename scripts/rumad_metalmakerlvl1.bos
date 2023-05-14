@@ -80,6 +80,7 @@ ImAMetalMaker()
 		{
 			if( Static_Var_1 != 1 )
 			{
+				set ARMORED to 0;
 				move mmaker to y-axis [4.500000] speed [2.000000];
 				Static_Var_1 = 1;
 			}
@@ -88,6 +89,7 @@ ImAMetalMaker()
 		{
 			move mmaker to y-axis [0.000000] speed [1.600000];
 			Static_Var_1 = 0;
+			set ARMORED to 1;
 		}
 		sleep 1000;
 	}
