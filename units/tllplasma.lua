@@ -1,8 +1,8 @@
 return {
 	tllplasma = {
 		buildangle = 8200,
-		buildcostenergy = 18074,
-		buildcostmetal = 2401,
+		buildcostenergy = 20075,
+		buildcostmetal = 2380,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 25,
-		mass = 2401,
+		mass = 2380,
 		maxdamage = 3790,
 		maxslope = 10,
 		maxwaterdepth = 0,
@@ -126,7 +126,7 @@ return {
 				noselfdamage = true,
 				predictboost = 0.2,
 				range = 1520,
-				reloadtime = 1.5,
+				reloadtime = 1.25,
 				rgbcolor = "0.73 0.42 0",
 				separation = 0.45,
 				size = 2.21,
@@ -140,7 +140,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 475,
 				damage = {
-					default = 240,
+					default = 250,
 					subs = 5,
 				},
 			},
