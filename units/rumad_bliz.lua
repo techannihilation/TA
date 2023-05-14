@@ -138,7 +138,7 @@ return {
 				name = "GaussCannon",
 				noselfdamage = true,
 				range = 350,
-				reloadtime = 3.5,
+				reloadtime = 3.6,
 				rgbcolor = "1 0.95 0.9",
 				size = 1,
 				soundhitdry = "xplomed2",
@@ -150,7 +150,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					default = 350,
+					default = 360,
 					subs = 5,
 				},
 			},

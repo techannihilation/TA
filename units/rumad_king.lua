@@ -28,7 +28,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
-		
+
 		energymake = 15,
 		energystorage = 500,
 		explodeas = "CRAWL_BLAST",
@@ -235,7 +235,7 @@ return {
 				name = "GaussCannon",
 				noselfdamage = true,
 				range = 300,
-				reloadtime = 1.75,
+				reloadtime = 1.8,
 				rgbcolor = "1 0.95 0.9",
 				size = 1,
 				soundhitdry = "xplomed2",
@@ -247,7 +247,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 500,
 				damage = {
-					default = 350,
+					default = 360,
 					subs = 5,
 				},
 			},
