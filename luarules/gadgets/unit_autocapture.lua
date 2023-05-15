@@ -27,7 +27,7 @@ local autoCapture = {
     type		= CMDTYPE.ICON_MODE,
     name		= 'Autocapture',
     tooltip     = 'Capture nearby units automatically',
-    params  = { '0', 'Autocapture\n     Off', 'Autocapture\n    On'}
+    params  = { '1', 'Autocapture\n     Off', 'Autocapture\n    On'}
 }
 function gadget:Initialize() 
     gadgetHandler:RegisterCMDID(CMD_AUTOCAPTURE_TOGGLE)
@@ -37,6 +37,8 @@ end
 function gadget:UnitCreated(uID, unitDefID, teamID) 
     if autocapture_units[unitDefID] ~= nil then
         Spring.InsertUnitCmdDesc(uID, autoCapture)
+        local unitDef = UnitDefs[unitDefID] 
+        autocapture_enabled[uID] = unitDef.buildDistance
     end
 end
 
