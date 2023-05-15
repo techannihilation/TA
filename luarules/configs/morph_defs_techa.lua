@@ -285,6 +285,11 @@ local morphDefs = {
 		time = 30,
 		tech = 1,
 	},
+	rumad_mohogeo = {
+		into = 'rumad_egeo',
+		time = 75,
+		tech = 2,
+	},
 	armgate2 = {
 		into = 'armgate',
 		time = 30,

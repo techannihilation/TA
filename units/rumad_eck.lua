@@ -59,7 +59,7 @@ return {
 		workertime = 480,
 		buildoptions = {
 			[1] = "rumad_efusion",
-			--[2] = "armfor",
+			[2] = "rumad_egeo",
 			[3] = "rumad_emex",
 			[4] = "rumad_metalmakerlvl3",
 			[5] = "armses",
