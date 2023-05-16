@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 2261,
 		builder = false,
 		buildpic = "tllgate2.dds",
-		buildtime = 25000,
+		buildtime = 15000,
 		canattack = false,
 		canstop = 1,
 		category = "ALL SURFACE",

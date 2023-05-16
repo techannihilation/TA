@@ -273,7 +273,13 @@ cafus = {
   gok_gate2 = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  rumad_gate2 = {
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=300, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   -- T2 GATE
+  rumad_gate = {
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   armgate = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=400, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
@@ -319,6 +325,9 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_gate4 = {
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  rumad_gate4 = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=700, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   --T3 SEA GATE

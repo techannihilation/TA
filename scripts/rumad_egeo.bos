@@ -9,13 +9,13 @@ Steam()
 {
 	while( TRUE )
 	{
-			//emit-sfx 257 from steam1;
+		emit-sfx 257 from steam1;
 			
-			emit-sfx 257 from steam2;
+		emit-sfx 257 from steam2;
 		
-			emit-sfx 257 from steam3;
+		emit-sfx 257 from steam3;
 			
-			sleep 400;
+		sleep 400;
 	}
 }
 

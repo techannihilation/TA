@@ -1,11 +1,12 @@
  4.47 => 4.48
-2023-05-08
+2023-05-17
 
 Balance :
  - All T1 Plasma Tower : Increase damage by 36% : 80dmg/s => 125dmg/s (Not enough used)
  - All T2 Plasma Tower : Increase damage by 20% : 160dmg/s => 200dmg/s
  - Orchid was already to 200dmg/s. So, decreasez energy & metal cost
  - Rumad Triton T1 at 175dmg/s but range at 1000
+ - Mobile Tachyon Arm & Talon : Decrease HP by 20%
 
 Improvment :
 - Razorback : BeamLaser comes back.

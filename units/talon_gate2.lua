@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_gate2.dds",
-		buildtime = 25000,
+		buildtime = 15000,
 		canattack = false,
 		category = "ALL SURFACE",
 		corpse = "dead",

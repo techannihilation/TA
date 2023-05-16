@@ -72,7 +72,6 @@ return {
 				blocking = false,
 				damage = 3219,
 				description = "Research Center Plant Debris",
-				energy = 0,
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,

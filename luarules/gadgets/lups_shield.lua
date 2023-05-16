@@ -178,6 +178,9 @@ gok_archon = true,
 rumad_king1 = true,
 rumad_king2 = true,
 rumad_king3 = true,
+rumad_gate = true,
+rumad_gate2 = true,
+rumad_gate4 = true,
 
 }
 

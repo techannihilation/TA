@@ -67,8 +67,9 @@ return {
 			[7] = "rumad_ap",
 			[8] = "rumad_eflak",
 			--[9] = "armeap",
-			[10] = "rumad_antinuke1",
-			[9] = "portal"
+			[10] = "rumad_gate4",
+			[11] = "rumad_antinuke1",
+			[12] = "portal",
 		},
 		customparams = {
 			buildpic = "rumad_eck.dds",

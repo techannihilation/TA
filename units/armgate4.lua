@@ -1,11 +1,9 @@
 return {
 	armgate4 = {
-		acceleration = 0,
 		activatewhenbuilt = true,
-		brakerate = 0,
 		buildangle = 2048,
-		buildcostenergy = 164672,
-		buildcostmetal = 13109,
+		buildcostenergy = 164675,
+		buildcostmetal = 13100,
 		builder = false,
 		buildpic = "armgate4.dds",
 		buildtime = 150000,
@@ -44,7 +42,7 @@ return {
 		customparams = {
 			buildpic = "armgate4.dds",
 			faction = "ARM",
-			shield_power = 30000,
+			shield_power = 25000,
 			shield_radius = 700,
 		},
 		featuredefs = {
@@ -111,9 +109,6 @@ return {
 		},
 		weapondefs = {
 			repulsor1 = {
-				craterareaofeffect = 0,
-				craterboost = 0,
-				cratermult = 0,
 				name = "PlasmaRepulsor",
 				range = 700,
 				shieldbadcolor = "1 0.2 0.2 0.30",
