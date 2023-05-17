@@ -68,11 +68,11 @@ return {
 		buildoptions = {
 			[1] = "rumad_drag",
 			[2] = "rumad_eyes",
-			[3] = "armmine1",
-			[4] = "armmine2",
-			[5] = "armmine3",
-			[6] = "armmine5",
-			[7] = "armmine6",
+			[3] = "rumad_mine1",
+			[4] = "rumad_mine2",
+			--[5] = "armmine3",
+			--[6] = "armmine5",
+			--[7] = "armmine6",
 		},
 		customparams = {
 			buildpic = "rumad_mlv.dds",

@@ -61,12 +61,16 @@ local exceptionList = { --add exempt units here
   "gok_mine2",
   "gok_mine3",
   "gok_fmine",
+  "rumad_mine1",
+  "rumad_mine2",
 	--Crawling Bomb
 	"corsktl",
 	"tllcrawlb",
 	--Snipers
 	"armsnipe",
-	"corprot"
+	"corprot",
+  "tllsniper",
+  "tllgrim",
 }
 
 local exceptionArray = {}

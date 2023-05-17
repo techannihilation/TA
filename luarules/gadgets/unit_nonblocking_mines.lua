@@ -43,6 +43,8 @@ local minedefs ={
 	[UnitDefNames["gok_mine1"].id] = true,
 	[UnitDefNames["gok_mine2"].id] = true,
 	[UnitDefNames["gok_mine3"].id] = true,
+	[UnitDefNames["rumad_mine1"].id] = true,
+	[UnitDefNames["rumad_mine2"].id] = true,
 
 	--Naval Mines
 	[UnitDefNames["tllfmine3"].id] = true,

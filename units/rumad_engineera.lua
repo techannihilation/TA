@@ -53,7 +53,7 @@ return {
 			--[2] = "",
 			--[3] = "",
 			--[4] = "",
-			--[5] = "gok_mine1",
+			[5] = "rumad_mine1",
 			--[6] = "gok_fort",
 			--[7] = "gok_arad",
 			--[8] = "gok_jam1",

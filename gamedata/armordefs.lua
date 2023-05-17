@@ -360,6 +360,8 @@ return {
 		"gok_mine2",
 		"gok_mine3",
 		"gok_fmine",
+		"rumad_mine1",
+		"rumad_mine2",
 	},
 	minelayers = {
 		"armmlv",

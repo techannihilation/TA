@@ -85,6 +85,7 @@ return {
 			[16] = "rumad_eck",
 			[17] = "rumad_mcv",
 			[18] = "rumad_mlrpt",
+			[19] = "rumad_mongol",
 
 		},
 		customparams = {

@@ -37,7 +37,6 @@ return {
 		movementclass = "kbot2",
 		name = "Assassin",
 		noautofire = false,
-
 		objectname = "TLLSNIPER",
 		radardistance = 0,
 		radaremitheight = 42,

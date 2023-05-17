@@ -144,7 +144,6 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tracks = true,
-				trajectoryheight = 0.45,
 				turnrate = 22000,
 				turret = true,
 				weaponacceleration = 150,
