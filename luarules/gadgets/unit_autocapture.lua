@@ -18,6 +18,9 @@ end
 
 local autocapture_units = {
     [UnitDefNames["rumad_cordyceps"].id] = true,
+    [UnitDefNames["corcommando"].id] = true,
+    [UnitDefNames["talon_shepherd"].id] = true,
+    [UnitDefNames["tllgizmo"].id] = true,
 }
 
 local autocapture_enabled = {}
@@ -86,6 +89,8 @@ function gadget:GameFrame(n)
                         local cmd = cmds[i]
                         Spring.GiveOrderToUnit(unitid, cmd.id, cmd.params, {"shift"})
                     end
+
+                    break -- Only queue ONE capture command
                 end
             end
         end
