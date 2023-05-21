@@ -7,7 +7,7 @@ local modrules = {
   },
 
   damage = {
-    debris = 0, -- 0 for test -- controls damage done by exploding pieces
+    debris = 0, -- controls damage done by exploding pieces
   },
 
   experience = {
@@ -33,7 +33,7 @@ local modrules = {
     allowPushingEnemyUnits = true, -- defaults to false
     allowUnitCollisionDamage = false,
     allowUnitCollisionOverlap = false, -- defaults to true
-    maxCollisionPushMultiplier = 1.2,
+    maxCollisionPushMultiplier = 0.8,
   },
 
   nanospray = {
@@ -60,11 +60,12 @@ local modrules = {
   },
 
   system = {
-    LuaAllocLimit = 4096, -- value in megabytes
     pathFinderSystem = 0, -- always default pathfinder
-    pathFinderRawDistMult = 100,
-    pathFinderUpdateRate = 0.0000001,
+    pathFinderRawDistMult = 100000, -- default: 1.25.  Engine does raw move with a limited distance, this multiplier adjusts that
+    pathFinderUpdateRate = 0.0000001, -- default: 0.007.  Controls how often the pathfinder updates; larger values means more rapid updates.
     --pathFinderUpdateRateScale = 1.0,
+    allowTake = true,       -- Enables and disables the /take UI command.
+    LuaAllocLimit = 2560, -- default: 1536.  Global Lua alloc limit (in megabytes)
   },
 
   transportability = {
