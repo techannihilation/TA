@@ -7,6 +7,9 @@ Balance :
  - Orchid was already to 200dmg/s. So, decreasez energy & metal cost
  - Rumad Triton T1 at 175dmg/s but range at 1000
  - Mobile Tachyon Arm & Talon : Decrease HP by 20%
+ - Fury : decreasse HP 245K => 205. Increase Main weapon range 600=>950. Decrease Damage 1.6K/S => 1.2K/S
+ - Krog : Increase Range for Main Weapon 590=>700. Decrease HP -10K
+ - Orca : Increase Range for Main Weapon 575=>650. Decrease HP -10K
 
 Improvment :
 - Razorback : BeamLaser comes back.
