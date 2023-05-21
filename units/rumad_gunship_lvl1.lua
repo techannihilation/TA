@@ -31,7 +31,7 @@ return {
 		losemitheight = 5.5,
 		maneuverleashlength = 1280,
 		mass = 155,
-		maxdamage = 395,
+		maxdamage = 435,
 		maxslope = 10,
 		maxvelocity = 4.5,
 		maxwaterdepth = 0,
@@ -118,7 +118,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 540,
 				damage = {
-					default = 60,
+					default = 50,
 					subs = 5,
 				},
 			},

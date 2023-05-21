@@ -41,7 +41,7 @@ return {
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
-		sightdistance = 500,
+		sightdistance = 525,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 1,
@@ -145,7 +145,7 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 540,
 				damage = {
-					default = 60,
+					default = 50,
 					subs = 5,
 				},
 			},

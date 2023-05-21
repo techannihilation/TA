@@ -28,7 +28,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
-		
+
 		energymake = 500,
 		energystorage = 2000,
 		explodeas = "COMMANDER_BLAST1",
@@ -353,8 +353,8 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 540,
 				damage = {
-					default = 180,
-					air = 360,
+					default = 150,
+					air = 300,
 				},
 			},
 		},
