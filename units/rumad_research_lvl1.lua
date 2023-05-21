@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "rumad_research_lvl1.png",
 			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre",
+			ismorphingrc = true,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
