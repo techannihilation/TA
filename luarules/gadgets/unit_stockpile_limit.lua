@@ -43,6 +43,8 @@ if (gadgetHandler:IsSyncedCode()) then
 	local tllmsiloDefID = UnitDefNames.tllhcar.id
 	local talonmsiloDefID = UnitDefNames.talon_hcar.id
 	local gokmsiloDefID = UnitDefNames.gok_hcar.id
+	local rumadsiloDefID = UnitDefNames.rumad_silo.id
+	local rumadsilo1DefID = UnitDefNames.rumad_silo1.id
 
   -- Launcher
 	local gok_blackpollenDefID = UnitDefNames.gok_blackpollen.id
@@ -97,26 +99,11 @@ if (gadgetHandler:IsSyncedCode()) then
 			or UnitDefID == corsiloDefID or UnitDefID == corsilo1DefID or UnitDefID == corsilo2DefID
 			or UnitDefID == tllsiloDefID or UnitDefID == tllsilo1DefID or UnitDefID == tllsilo2DefID
 			or UnitDefID == talonsiloDefID or UnitDefID == talonsilo1DefID or UnitDefID == talonsilo2DefID
-			or UnitDefID == goksiloDefID or UnitDefID == goksilo1DefID or UnitDefID == goksilo2DefID)
-			or UnitDefID == armcybrDefID then
+			or UnitDefID == goksiloDefID or UnitDefID == goksilo1DefID or UnitDefID == goksilo2DefID
+			or UnitDefID == rumadsiloDefID or UnitDefID == rumadsilo1DefID
+			or UnitDefID == armcybrDefID) then
 				pilelimit = nuke
 			end
-
-			--if (UnitDefID == armantinukeDefID or UnitDefID == armantinuke1DefID or UnitDefID == armantinuke2DefID
-			--or UnitDefID == corantinukeDefID or UnitDefID == corantinuke1DefID or UnitDefID == corantinuke2DefID
-			--or UnitDefID == tllantinukeDefID or UnitDefID == tllantinuke1DefID or UnitDefID == tllantinuke2DefID
-			--or UnitDefID == talonantinukeDefID or UnitDefID == talonantinuke1DefID or UnitDefID == talonantinuke2DefID
-			--or UnitDefID == gokantinukeDefID or UnitDefID == gokantinuke1DefID or UnitDefID == gokantinuke2DefID) then
-			--	pilelimit = antinuke
-			--end
-
-			--if (UnitDefID == armcarryDefID or UnitDefID == armucarryDefID or UnitDefID == armmobileantinukeDefID
-			--or UnitDefID == corcarryDefID or UnitDefID == corucarryDefID or UnitDefID == cormobileantinukeDefID
-			--or UnitDefID == tllcarryDefID or UnitDefID == tllucarryDefID or UnitDefID == tllmobileantinukeDefID
-			--or UnitDefID == taloncarryDefID or UnitDefID == talonucarryDefID or UnitDefID == talonmobileantinukeDefID
-			--or UnitDefID == gokcarryDefID or UnitDefID == gokmobileantinukeDefID) then
-			--	pilelimit = antinuke
-			--end
 
 			if (UnitDefID == armmsiloDefID or UnitDefID == cormsiloDefID or UnitDefID == tllmsiloDefID or UnitDefID == talonmsiloDefID or UnitDef == gokmsiloDefID) then
 				pilelimit = nuke

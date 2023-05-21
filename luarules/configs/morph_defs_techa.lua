@@ -178,6 +178,11 @@ local morphDefs = {
 		tech = 2,
 		time = 60,
 	},
+	rumad_silo = {
+		into = 'rumad_silo1',
+		tech = 2,
+		time = 60,
+	},
 	armgeo = {
 		{
 				into = 'amgeo',

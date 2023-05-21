@@ -1,0 +1,259 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, building1, building2, building3, shield1, shield2, launchpad, launcherbase, launcher, rocket, rocketbay1, rocketbay2,
+       door1a, door1b, door2a, door2b, door3a, door3b, door4a, door4b, aim;
+
+static-var  gun_1, ActiveBay, restore_delay, statechg_DesiredState, statechg_StateChanging;
+
+// Signal definitions
+#define SIG_AIM				2
+
+Bay1Prepare()
+{
+	move rocketbay1 to y-axis [0.00] now;
+	move rocketbay1 to x-axis [0.00] now;
+	show rocketbay1;
+	move door1a to x-axis [1.50] speed [6.00];
+	move door1b to x-axis [-1.50] speed [6.00];
+	sleep 500;
+	move rocketbay1 to x-axis [-4.00] speed [6.00];
+	sleep 1000;
+	hide rocketbay1;	
+	show rocket;
+	move shield1 to x-axis [4.00] speed [4.00];
+	move shield2 to x-axis [-4.00] speed [4.00];
+	wait-for-move shield1 along x-axis;
+	move launchpad to y-axis [6.00] speed [4.00];
+	wait-for-move launchpad along y-axis;
+	turn launcher to x-axis <-90.00> speed <90.00>;
+	move launcherbase to z-axis [5.50] speed [5.50];
+	wait-for-move launcherbase along z-axis;
+}
+
+Bay2Prepare()
+{
+	move rocketbay2 to y-axis [0.00] now;
+	move rocketbay2 to x-axis [0.00] now;
+	show rocketbay2;
+	move door2a to x-axis [1.50] speed [6.00];
+	move door2b to x-axis [-1.50] speed [6.00];
+	sleep 500;
+	move rocketbay2 to x-axis [4.00] speed [6.00];
+	sleep 1000;
+	hide rocketbay2;
+	show rocket;		
+	move shield1 to x-axis [4.00] speed [4.00];
+	move shield2 to x-axis [-4.00] speed [4.00];	
+	wait-for-move shield1 along x-axis;
+	move launchpad to y-axis [6.00] speed [4.00];
+	wait-for-move launchpad along y-axis;
+	turn launcher to x-axis <-90.00> speed <90.00>;
+	move launcherbase to z-axis [5.50] speed [5.50];
+	wait-for-move launcherbase along z-axis;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from shield1;
+			emit-sfx smoketype from shield2;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+activatescr()
+{
+	if( ActiveBay == 1 )
+	{
+		call-script Bay1Prepare();
+		ActiveBay = 2;
+	}	
+	else 	
+	{
+		call-script Bay2Prepare();
+		ActiveBay = 1;
+	}
+}
+
+deactivatescr()
+{
+	turn launcher to x-axis <0.00> speed <90.00>;
+	move launcherbase to z-axis [0.00] speed [5.50];
+	sleep 1000;
+	move shield1 to x-axis [0.00] speed [4.00];
+	move shield2 to x-axis [0.00] speed [4.00];
+	move launchpad to y-axis [0.00] speed [6.00];
+	sleep 1000;
+}
+
+
+Go()
+{
+	show rocket;
+	call-script activatescr();
+	gun_1 = 1;
+}
+
+Stop()
+{
+	gun_1 = 0;
+	sleep 4000;
+	call-script deactivatescr();
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script Go();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script Stop();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Create()
+{	
+	ActiveBay = 1;
+	restore_delay = 4000;
+	
+	hide rocket;
+	hide rocketbay1;
+	hide rocketbay2;
+
+	move door1a to x-axis [1.50] speed [6.00];
+	move door1b to x-axis [-1.50] speed [6.00];
+	move door2a to x-axis [1.50] speed [6.00];
+	move door2b to x-axis [-1.50] speed [6.00];
+	
+	call-script InitState();
+	
+	sleep 250;
+	hide door1a;
+	hide door1b;
+	hide door2a;
+	hide door2b;
+		
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	set-signal-mask 0;
+	start-script RequestState(1);
+	ActiveBay = !ActiveBay;	
+}
+
+QueryPrimary(PieceNum)
+{
+	PieceNum = rocket;
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = aim;
+}
+
+AimPrimary(Heading, Pitch)
+{	
+	start-script RequestState(0);
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	while( !gun_1 )
+	{
+		sleep 250;
+	}
+	start-script RestoreAfterDelay();
+	
+	return(1);
+}
+
+FirePrimary()
+{
+	hide rocket;
+	emit-sfx 256 | 2 from rocket;
+	sleep 100;
+	emit-sfx 256 | 2 from rocket;
+	sleep 150;
+	emit-sfx 256 | 1 from rocket;
+	sleep 150;
+	emit-sfx 256 | 1 from rocket;
+	
+	sleep 1500;
+	start-script RequestState(1);
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(Severity, CorpseType)
+{
+	explode launcherbase type SHATTER | NOHEATCLOUD;
+	explode shield1 type SHATTER | NOHEATCLOUD;
+	
+	if( Severity <= 50 )
+	{
+		CorpseType = 1;
+		return (CorpseType);
+	}
+	
+	CorpseType = 3;
+	return (CorpseType);
+}

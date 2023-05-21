@@ -1,5 +1,5 @@
  4.47 => 4.48
-2023-05-17
+2023-05-22
 
 Balance :
  - All T1 Plasma Tower : Increase damage by 36% : 80dmg/s => 125dmg/s (Not enough used)
@@ -10,6 +10,8 @@ Balance :
 
 Improvment :
 - Razorback : BeamLaser comes back.
+- T2 Core Sniper : Decrease Model size
+- T2 Core Sumo : Increase Model size
 
 
  4.46 => 4.47

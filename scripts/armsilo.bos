@@ -108,11 +108,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Go()
 {
-	dont-cache door1;
-	dont-cache door2;
-	dont-cache missile;
-	dont-cache plate;
-	dont-cache arm;
 	show missile;
 	call-script activatescr();
 	gun_1 = missile;
@@ -123,11 +118,6 @@ Stop()
 	gun_1 = base;
 	sleep 4000;
 	call-script deactivatescr();
-	cache door1;
-	cache door2;
-	cache missile;
-	cache plate;
-	cache arm;
 }
 
 InitState()
@@ -164,11 +154,6 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	dont-shade door1;
-	dont-shade door2;
-	dont-shade missile;
-	dont-shade plate;
-	dont-shade arm;
 	gun_1 = base;
 	restore_delay = 3000;
 	call-script InitState();

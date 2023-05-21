@@ -74,7 +74,7 @@ return {
 			[14] = "rumad_targ",
 			[15] = "rumad_gate",
 			[16] = "rumad_antinuke",
-			--[17] = "",
+			[17] = "rumad_silo",
 			--[18] = "",
 			--[19] = "",
 			--[20] = "",
