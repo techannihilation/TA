@@ -37,22 +37,14 @@ local scouts = {
   [UnitDefNames["corfav"].id] = true,
   [UnitDefNames["tllbug"].id] = true,
   [UnitDefNames["tllgladius"].id] = true,
-	[UnitDefNames["talon_topaz"].id] = true,
 	[UnitDefNames["gok_cut"].id] = true,
 	[UnitDefNames["gok_negator"].id] = true,
-	[UnitDefNames["gok_hellbiker"].id] = true,
-	[UnitDefNames["rumad_dragster"].id] = true,
 
 	--Infantry Talon
   [UnitDefNames["talon_infantry"].id] = true,
 	[UnitDefNames["talon_rebel"].id] = true,
 	[UnitDefNames["talon_sniper"].id] = true,
 	[UnitDefNames["talon_mercenary"].id] = true,
-
-	--T1 Light Kbot
-	--[UnitDefNames["armpw"].id] = true,
-	--[UnitDefNames["corak"].id] = true,
-	--[UnitDefNames["tllprivate"].id] = true,
 
 	-- Rez Bot
 	--[UnitDefNames["armrectr"].id] = true,
@@ -65,6 +57,8 @@ local scouts = {
 	[UnitDefNames["armpeep"].id] = true,
 	[UnitDefNames["corfink"].id] = true,
 	[UnitDefNames["tllprob"].id] = true,
+	[UnitDefNames["gok_vision"].id] = true,
+	[UnitDefNames["rumad_ascout_lvl1"].id] = true,
 
 	--Mines Layer
 	[UnitDefNames["armmin"].id] = true,

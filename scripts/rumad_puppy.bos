@@ -1,0 +1,198 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lfoot, rfoot, rthigh, lthigh, yaw, gun, fire;
+
+static-var  bMoving, Shot;
+
+// Signal definitions
+#define SIG_AIM				2
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		if( bMoving )
+		{
+				if( bMoving )
+				{
+					turn lthigh to x-axis <15.> speed <240.>;
+					turn lfoot to x-axis <30.> speed <240.>;
+					turn rthigh to x-axis <-75.> speed <720.>;
+					turn rfoot to x-axis <45.> speed <500.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn yaw to x-axis <0.> speed <40.>;
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lthigh to x-axis <45.> speed <230.>;
+					turn lfoot to x-axis <15.> speed <120.>;
+					turn rthigh to x-axis <-90.> speed <120.>;
+					turn rfoot to x-axis <90.> speed <360.>;
+					move pelvis to y-axis [0.] speed [16.];
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lthigh to x-axis <15.> speed <240.>;
+					turn lfoot to x-axis <-30.> speed <360.>;
+					turn rthigh to x-axis <-15.> speed <600.>;
+					turn rfoot to x-axis <30.> speed <480.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn yaw to x-axis <15.> speed <120.>;
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lthigh to x-axis <-75.> speed <720.>;
+					turn lfoot to x-axis <45.> speed <600.>;
+					turn rthigh to x-axis <15.> speed <240.>;
+					turn rfoot to x-axis <30.> speed <240.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn yaw to x-axis <0.> speed <40.>;
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lthigh to x-axis <-90.> speed <120.>;
+					turn lfoot to x-axis <90.> speed <360.>;
+					turn rthigh to x-axis <45.> speed <240.>;
+					turn rfoot to x-axis <15.> speed <120.>;
+					move pelvis to y-axis [0.] speed [16.];
+					sleep 125;
+				}
+				if( bMoving )
+				{
+					turn lthigh to x-axis <-15.> speed <600.>;
+					turn lfoot to x-axis <30.> speed <480.>;
+					turn rthigh to x-axis <15.> speed <240.>;
+					turn rfoot to x-axis <-30.> speed <360.>;
+					move pelvis to y-axis [2.] speed [16.];
+					turn yaw to x-axis <15.> speed <120.>;
+					sleep 125;
+				}
+			
+		justmoved = TRUE;
+		}
+		if( !bMoving )
+		{
+			if( justmoved )
+			{
+				turn lthigh to x-axis <0.> speed <360.>;
+				turn lfoot to x-axis <0.> speed <360.>;
+				turn rthigh to x-axis <0.> speed <360.>;
+				turn rfoot to x-axis <0.> speed <360.>;
+				move pelvis to y-axis [0.] speed [16.];
+				turn yaw to x-axis <0.> speed <40.>;
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from yaw;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;
+	Shot = FALSE;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 1500;
+	turn yaw to y-axis <0> speed <75.000000>;
+	turn gun to x-axis <0> speed <75.000000>;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = yaw;
+}
+
+AimPrimary(heading, pitch)
+{	
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	if( Shot )
+	{
+		return (0);
+	} 	
+	turn yaw to y-axis heading speed <180.000000>;
+	turn gun to x-axis <-25.0> speed <120.0>;
+	wait-for-turn yaw around y-axis;
+	wait-for-turn gun around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+FirePrimary()
+{
+	Shot = TRUE;
+	hide gun;
+	sleep 25;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	corpsetype = 3;
+	explode lthigh type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rthigh type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rfoot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lfoot type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

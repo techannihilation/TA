@@ -66,11 +66,12 @@ return {
 			[1] = "rumad_ck",
 			[2] = "rumad_mlv",
 			[3] = "rumad_tack",
-			[4] = "rumad_dragster",
-			[5] = "rumad_jeag",
-			[6] = "rumad_raviole",
-			[7] = "rumad_bliz",
-			[8] = "rumad_rottweiler",
+			[4] = "rumad_puppy",
+			[5] = "rumad_dragster",
+			[6] = "rumad_jeag",
+			[7] = "rumad_raviole",
+			[8] = "rumad_bliz",
+			[9] = "rumad_rottweiler",
 
 			-- LVL2
 			[10] = "rumad_ack",
