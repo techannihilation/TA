@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 24020,
 		buildcostmetal = 2865,
 		buildpic = "rumad_fusion.dds",
-		buildtime = 150000,
+		buildtime = 40000,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,
