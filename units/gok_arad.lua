@@ -84,11 +84,11 @@ return {
 			},
 		},
 		sounds = {
-			activate = "gokrad",
+			activate = "techa_sounds/gok_rad",
 			canceldestruct = "cancel2",
-			deactivate = "gokrad",
+			deactivate = "techa_sounds/gok_rad",
 			underattack = "warning1",
-			working = "gokrad",
+			working = "techa_sounds/gok_rad",
 			count = {
 				[1] = "count6",
 				[2] = "count5",

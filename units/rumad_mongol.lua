@@ -229,42 +229,37 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR SMALL",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[3] = {
-				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[4] = {
-				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[5] = {
-				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[6] = {
-				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[7] = {
-				badtargetcategory = "MINOR",
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "RUMAD_ADVMISSILEX6",
 				onlytargetcategory = "SURFACE",
 			},
