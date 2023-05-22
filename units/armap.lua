@@ -1,8 +1,8 @@
 return {
 	armap = {
 		activatewhenbuilt = false,
-		buildcostenergy = 2052,
-		buildcostmetal = 907,
+		buildcostenergy = 2050,
+		buildcostmetal = 905,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
 		buildinggrounddecalsizex = 9,
@@ -24,7 +24,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 66,
-		mass = 907,
+		mass = 905,
 		maxdamage = 1850,
 		maxslope = 15,
 		maxvelocity = 0,
