@@ -76,16 +76,17 @@ return {
 			-- LVL2
 			[10] = "rumad_ack",
 			[11] = "rumad_engineerk",
+			[11] = "rumad_lightartybot",
 			[12] = "rumad_macm",
 			[13] = "rumad_garuda",
 			[14] = "rumad_cordyceps",
 			[15] = "rumad_artybot",
 
 			-- LVL3
-			[16] = "rumad_eck",
-			[17] = "rumad_mcv",
-			[18] = "rumad_mlrpt",
-			[19] = "rumad_mongol",
+			[18] = "rumad_eck",
+			[19] = "rumad_mcv",
+			[20] = "rumad_mlrpt",
+			[21] = "rumad_mongol",
 
 		},
 		customparams = {

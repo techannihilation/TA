@@ -25,7 +25,7 @@ return {
 		firestandorders = 1,
 		footprintx = 3,
 		footprintz = 3,
-		idleautoheal = 7,
+		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 55,
 		maneuverleashlength = 640,

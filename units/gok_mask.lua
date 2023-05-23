@@ -86,7 +86,6 @@ return {
 		sounds = {
 			build = "nanlath2",
 			canceldestruct = "cancel2",
-			capture = "capture2",
 			repair = "repair2",
 			underattack = "warning1",
 			working = "reclaim1",

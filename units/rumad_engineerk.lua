@@ -61,7 +61,7 @@ return {
 			--[3] = "",
 			--[4] = "",
 			[5] = "rumad_mine1",
-			--[6] = "gok_fort",
+			[6] = "rumad_fort",
 			--[7] = "gok_arad",
 			--[8] = "gok_jam1",
 			[9] = "rumad_pt",

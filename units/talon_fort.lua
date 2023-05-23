@@ -4,10 +4,6 @@ return {
 		buildcostenergy = 750,
 		buildcostmetal = 45,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 4,
-		buildinggrounddecalsizey = 4,
-		buildinggrounddecaltype = "armfort_aoplane.dds",
 		buildpic = "talon_fort.dds",
 		buildtime = 1000,
 		category = "ALL SURFACE",
@@ -31,7 +27,6 @@ return {
 		radaremitheight = 50,
 		script = "drag.lua",
 		unitname = "talon_fort",
-		usebuildinggrounddecal = true,
 		yardmap = "ffff",
 		customparams = {
 			buildpic = "talon_fort.dds",

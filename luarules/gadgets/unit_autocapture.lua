@@ -21,6 +21,7 @@ local autocapture_units = {
     [UnitDefNames["corcommando"].id] = true,
     [UnitDefNames["talon_shepherd"].id] = true,
     [UnitDefNames["tllgizmo"].id] = true,
+    [UnitDefNames["armrambo"].id] = true,    
 }
 
 local autocapture_enabled = {}
@@ -32,22 +33,22 @@ local autoCapture = {
     tooltip     = 'Capture nearby units automatically',
     params  = { '1', 'Autocapture\n     Off', 'Autocapture\n    On'}
 }
-function gadget:Initialize() 
+function gadget:Initialize()
     gadgetHandler:RegisterCMDID(CMD_AUTOCAPTURE_TOGGLE)
 end
 
 
-function gadget:UnitCreated(uID, unitDefID, teamID) 
+function gadget:UnitCreated(uID, unitDefID, teamID)
     if autocapture_units[unitDefID] ~= nil then
         Spring.InsertUnitCmdDesc(uID, autoCapture)
-        local unitDef = UnitDefs[unitDefID] 
+        local unitDef = UnitDefs[unitDefID]
         autocapture_enabled[uID] = unitDef.buildDistance
     end
 end
 
 function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
     if autocapture_units[unitDefID] ~= nil and cmdID == CMD_AUTOCAPTURE_TOGGLE then
-        local unitDef = UnitDefs[unitDefID] 
+        local unitDef = UnitDefs[unitDefID]
         local cmdDescID = Spring.FindUnitCmdDesc(unitID, CMD_AUTOCAPTURE_TOGGLE)
         autoCapture.params[1] = cmdParams[1]
         Spring.EditUnitCmdDesc(unitID, cmdDescID, {
@@ -72,7 +73,7 @@ function gadget:GameFrame(n)
         local cmds = Spring.GetUnitCommands(unitid,5)
         if #cmds > 0 and cmds[1].id == CMD.CAPTURE then
             --Spring.Echo("Already capturing")
-            
+
         else
             local x,y,z = Spring.GetUnitPosition(unitid)
             local myally = Spring.GetUnitAllyTeam(unitid)

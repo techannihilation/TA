@@ -47,6 +47,9 @@ local airbaseDefIDs = {
     [UnitDefNames["gok_hcar"].id] = 100 ^ 2,
     [UnitDefNames["gok_ucar"].id] = 100 ^ 2,
 
+    --RUMAD
+    [UnitDefNames["rumad_asp"].id] = 100 ^ 2,
+
 }
 local tractorDist = 100 ^ 2 -- default sqr tractor distance, if not found in table
 

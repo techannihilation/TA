@@ -20,7 +20,7 @@ return {
 		footprintx = 12,
 		footprintz = 12,
 		icontype = "building",
-		idleautoheal = 7,
+		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 72,
 		mass = 72375,

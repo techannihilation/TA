@@ -1,0 +1,272 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lleg, lboot, lfoot, rleg, rboot, rfoot, turret, shield,
+       system, turretb, pitchturret, barrel, sbarrel, flare;
+
+static-var  bMoving, bAiming, Firing, Inactive;
+
+MotionControl(Moving, Aiming, JustMoved)
+	{
+	JustMoved = 1;
+	while( TRUE )
+		{
+		Moving = bMoving;
+		Aiming = bAiming;
+		if( Moving )
+			{
+			if( bMoving )
+				{
+				turn lleg to x-axis <10.00> speed <125.00>;
+				turn lboot to x-axis <50.00> speed <250.00>;
+				turn lfoot to x-axis <-45.00> speed <225.00>;
+				turn rleg to x-axis <-75.00> speed <450.00>;
+				turn rboot to x-axis <45.00> speed <375.00>;
+				turn rfoot to x-axis <0.00> speed <0.00>;
+				move pelvis to y-axis [0.90] speed [4.50];
+				if( !bAiming )
+					{
+					turn turret to x-axis <0.00> speed <25.00>;
+					}
+				
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lleg to x-axis <45.00> speed <175.00>;
+				turn lboot to x-axis <40.00> speed <50.00>;
+				turn lfoot to x-axis <-15.00> speed <150.00>;
+				turn rleg to x-axis <-90.00> speed <75.00>;
+				turn rboot to x-axis <90.00> speed <225.00>;
+				turn rfoot to x-axis <0.00> speed <0.00>;
+				move pelvis to y-axis [0.00] speed [4.50];
+				
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lleg to x-axis <15.00> speed <150.00>;
+				turn lboot to x-axis <-30.00> speed <350.00>;
+				turn lfoot to x-axis <0.00> speed <75.00>;
+				turn rleg to x-axis <-15.00> speed <375.00>;
+				turn rboot to x-axis <30.00> speed <300.00>;
+				turn rfoot to x-axis <0.00> speed <0.00>;
+				move pelvis to y-axis [0.90] speed [4.50];
+				if( !bAiming )
+					{
+					turn turret to x-axis <15.00> speed <75.00>;
+					}
+				
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lleg to x-axis <-75.00> speed <450.00>;
+				turn lboot to x-axis <45.00> speed <375.00>;
+				turn lfoot to x-axis <0.00> speed <0.00>;
+				turn rleg to x-axis <10.00> speed <125.00>;
+				turn rboot to x-axis <50.00> speed <250.00>;
+				turn rfoot to x-axis <-45.00> speed <225.00>;
+				move pelvis to y-axis [0.90] speed [4.50];
+				if( !bAiming )
+					{
+					turn turret to x-axis <0.00> speed <25.00>;
+					}
+				
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lleg to x-axis <-90.00> speed <75.00>;
+				turn lboot to x-axis <90.00> speed <225.00>;
+				turn lfoot to x-axis <0.00> speed <0.00>;
+				turn rleg to x-axis <45.00> speed <175.00>;
+				turn rboot to x-axis <40.00> speed <50.00>;
+				turn rfoot to x-axis <-15.00> speed <150.00>;
+				move pelvis to y-axis [0.00] speed [4.50];
+				
+				sleep 200;
+				}
+			
+			if( bMoving )
+				{
+				turn lleg to x-axis <-15.00> speed <375.00>;
+				turn lboot to x-axis <30.00> speed <300.00>;
+				turn lfoot to x-axis <0.00> speed <0.00>;
+				turn rleg to x-axis <15.00> speed <150.00>;
+				turn rboot to x-axis <-30.00> speed <350.00>;
+				turn rfoot to x-axis <0.00> speed <75.00>;
+				move pelvis to y-axis [0.90] speed [4.50];
+				if( !bAiming )
+					{
+					turn turret to x-axis <15.00> speed <75.00>;
+					}
+				
+				sleep 200;
+				}
+			JustMoved = 1;
+			}
+		if( !Moving )
+			{
+			if( JustMoved )
+				{
+				turn lleg to x-axis <0.00> speed <240.00>;
+				turn lboot to x-axis <0.00> speed <240.00>;
+				turn lfoot to x-axis <0.00> speed <240.00>;
+				turn rleg to x-axis <0.00> speed <240.00>;
+				turn rboot to x-axis <0.00> speed <240.00>;
+				turn rfoot to x-axis <0.00> speed <240.00>;
+				move pelvis to y-axis [0.00] speed [4.50];
+				turn turret to x-axis <0.00> speed <25.00>;
+				
+				JustMoved = 0;
+				}
+			sleep 100;
+			}
+		}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0); 
+}
+
+Create()
+{
+	bMoving = 0;
+	bAiming = 0;
+	Firing = 0;
+	Inactive = 13;
+	
+	hide flare;	
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = pitchturret;
+}
+
+QueryPrimary(PieceNum)
+{
+	PieceNum = flare;
+}
+
+RestoreAfterDelay()
+{
+	sleep 2500;
+	turn turret to y-axis <0.0> speed <40.00>;
+	turn pitchturret to x-axis <0.00> speed <40.00>;
+}
+
+AimPrimary(Heading, Pitch)
+{
+	signal 2;
+	signal 32;
+	set-signal-mask 2;
+	bAiming = 1;
+	Inactive = 0;
+	
+	while( Firing )
+	{
+		sleep 100;
+	}
+	
+	turn turret to y-axis Heading speed <80.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <80.00>;
+	
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return(1);
+}
+
+FirePrimary(Random)
+{
+	Firing = 1;	
+	emit-sfx 1024 from flare;
+	move barrel to z-axis [-1.500000] speed [500.000000];
+	move sbarrel to z-axis [-2.500000] speed [500.000000];
+	sleep 100;
+	move barrel to z-axis [0.000000] speed [1.000000];
+	move sbarrel to z-axis [0.000000] speed [1.000000];
+	Firing = 0;
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode pelvis type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rleg type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode pelvis type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode pitchturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
