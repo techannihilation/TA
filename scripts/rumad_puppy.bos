@@ -170,6 +170,7 @@ FirePrimary()
 	Shot = TRUE;
 	hide gun;
 	sleep 25;
+	get KILL_UNIT(0);
 }
 
 StartMoving()
