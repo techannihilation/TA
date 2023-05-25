@@ -45,6 +45,9 @@ local AIRPLANT = {
   [UnitDefNames["gok_eap"].id] = true,
   [UnitDefNames["gok_plat"].id] = true,
   [UnitDefNames["gok_eplat"].id] = true,
+  [UnitDefNames["rumad_ap"].id] = true,
+  [UnitDefNames["rumad_aap"].id] = true,
+  [UnitDefNames["rumad_eap"].id] = true,
 }
 
 local plantList = {}

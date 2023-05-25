@@ -1,7 +1,5 @@
 return {
 	armguard = {
-		acceleration = 0,
-		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 12470,
 		buildcostmetal = 1490,

@@ -73,7 +73,7 @@ return {
 		customparams = {
 			buildpic = "rumad_engineera.dds",
 			faction = "RUMAD",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		nanocolor = {
 			[1] = 0.12,

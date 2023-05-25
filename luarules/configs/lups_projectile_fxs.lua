@@ -1,4 +1,5 @@
 local lups_effects = {
+
   --GAUSS RUMAD
   rumad_bliz_rumad_gauss = {
     {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
@@ -18,11 +19,11 @@ local lups_effects = {
   rumad_pt_rumad_gauss = {
      {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
   },
+
+  --PLASMA RUMAD
   rumad_artybot_rumad_plasma = {
     {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
-
-  --PLASMA RUMAD
   rumad_triton_rumad_plasma = {
      {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
@@ -34,6 +35,12 @@ local lups_effects = {
   },
   rumad_mongol_rumad_plasma = {
      {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
+  },
+  rumad_mortor_rumad_plasma = {
+     {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
+  },
+  rumad_lightartybot_rumad_plasma = {
+    {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
 
   --BOMB RUMAD

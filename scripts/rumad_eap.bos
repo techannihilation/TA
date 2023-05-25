@@ -1,0 +1,253 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, plate, decor1, decor2, decor3, 
+		lbuilding, lsystem1, llathe1, lspray1, lsystem2, llathe2, lspray2, lshield1, lshield2,
+		rbuilding, rsystem1, rlathe1, rspray1, rsystem2, rlathe2, rspray2, rshield1, rshield2,
+		buildingside1, buildingside2, buildingside3, buildingside4, socle1, socle2, buildpad;
+
+static-var  DesiredState, StateChanging, Spray;
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script SmokeUnit();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from lbuilding;
+			emit-sfx smoketype from rbuilding;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RequestState(RequestedState, CurrentState)
+{
+	if( StateChanging )
+	{
+		DesiredState = RequestedState;
+		return;
+	}
+	
+	StateChanging = 1;
+	CurrentState = DesiredState;
+	DesiredState = RequestedState;
+	
+	while( DesiredState != CurrentState )
+	{
+		if( !DesiredState )
+		{			
+			move lsystem1 to y-axis [4.00] speed [8.00];
+			move lsystem2 to y-axis [4.00] speed [8.00];
+			move lshield1 to y-axis [-4.00] speed [8.00];
+			move lshield2 to y-axis [-4.00] speed [8.00];
+			move rsystem1 to y-axis [4.00] speed [8.00];
+			move rsystem2 to y-axis [4.00] speed [8.00];
+			move rshield1 to y-axis [-4.00] speed [8.00];
+			move rshield2 to y-axis [-4.00] speed [8.00];
+			sleep 250;
+			move lsystem1 to x-axis [4.00] speed [8.00];
+			move lsystem2 to x-axis [4.00] speed [8.00];
+			move rsystem1 to x-axis [-4.00] speed [8.00];
+			move rsystem2 to x-axis [-4.00] speed [8.00];
+			sleep 250;
+			move llathe1 to x-axis [4.00] speed [4.00];
+			move llathe2 to x-axis [4.00] speed [4.00];
+			turn llathe1 to z-axis <-40.00> speed <80.00>;
+			turn llathe2 to z-axis <-40.00> speed <80.00>;
+			move rlathe1 to x-axis [-4.00] speed [4.00];
+			move rlathe2 to x-axis [-4.00] speed [4.00];
+			turn rlathe1 to z-axis <-40.00> speed <80.00>;
+			turn rlathe2 to z-axis <-40.00> speed <80.00>;
+			sleep 500;
+			
+			set YARD_OPEN to 1;
+			
+			while( !get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 1;
+			}
+			
+			set BUGGER_OFF to 0;
+			set INBUILDSTANCE to 1;
+			CurrentState = 0;
+		}
+		if( DesiredState )
+		{
+			set INBUILDSTANCE to 0;
+			set YARD_OPEN to 0;
+			
+			while( get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 0;
+			}
+			
+			set BUGGER_OFF to 0;
+			
+			move llathe1 to x-axis [0.00] speed [4.00];
+			move llathe2 to x-axis [0.00] speed [4.00];
+			turn llathe1 to z-axis <0.00> speed <80.00>;
+			turn llathe2 to z-axis <0.00> speed <80.00>;
+			move rlathe1 to x-axis [0.00] speed [4.00];
+			move rlathe2 to x-axis [0.00] speed [4.00];
+			turn rlathe1 to z-axis <0.00> speed <80.00>;
+			turn rlathe2 to z-axis <0.00> speed <80.00>;
+			sleep 500;
+			move lsystem1 to x-axis [0.00] speed [8.00];
+			move lsystem2 to x-axis [0.00] speed [8.00];
+			move rsystem1 to x-axis [0.00] speed [8.00];
+			move rsystem2 to x-axis [0.00] speed [8.00];
+			sleep 250;
+			move lsystem1 to y-axis [0.00] speed [8.00];
+			move lsystem2 to y-axis [0.00] speed [8.00];
+			move lshield1 to y-axis [0.00] speed [8.00];
+			move lshield2 to y-axis [0.00] speed [8.00];
+			move rsystem1 to y-axis [0.00] speed [8.00];
+			move rsystem2 to y-axis [0.00] speed [8.00];
+			move rshield1 to y-axis [0.00] speed [8.00];
+			move rshield2 to y-axis [0.00] speed [8.00];
+			sleep 250;
+
+			CurrentState = 1;
+		}
+	}
+	
+	StateChanging = 0;
+	}
+
+Create()
+{
+	DesiredState = 1;
+	StateChanging = 0;
+	Spray = 0;
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(PieceNum)
+{
+	if( Spray == 0 )
+	{
+		PieceNum = lspray1;
+		++Spray;
+		return;
+	}
+	if( Spray == 1 )
+	{
+		PieceNum = lspray2;
+		++Spray;
+		return;
+	}
+	if( Spray == 2 )
+	{
+		PieceNum = rspray1;
+		++Spray;
+		return;
+	}
+	if( Spray == 3 )
+	{
+		PieceNum = rspray2;
+		Spray = 0;
+		return;
+	}	
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	sleep 5000;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(PieceNum)
+{
+	PieceNum = buildpad;
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode lshield2 type NOHEATCLOUD;
+		explode rshield2 type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode lshield1 type NOHEATCLOUD;
+		explode rshield1 type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor2 type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor3 type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode socle1 type NOHEATCLOUD;
+		explode socle2 type NOHEATCLOUD;
+	}
+	if( Severity <= 33 )
+	{
+		CorpseType = 1;
+		return (CorpseType);
+	}
+	if( Severity <= 66 )
+	{
+		CorpseType = 2;
+		return (CorpseType);
+	}		
+	CorpseType = 3;
+	return (CorpseType);
+}

@@ -70,7 +70,7 @@ return {
 		customparams = {
 			buildpic = "rumad_airtrans_lvl2.dds",
 			faction = "RUMAD",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			heap = {

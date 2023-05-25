@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, plate, decor4, decor5, decor6, building, system, lathe, spray, shield, decor1, decor2, decor3, buildpad, socle;
+piece  base, plate, decor1, decor2, decor3, building, system1, lathe1, spray1, system2, lathe2, spray2, shield1, shield2, buildingside1, buildingside2, socle, buildpad;
 
-static-var  DesiredState, StateChanging;
+static-var  DesiredState, StateChanging, Spray;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -13,6 +13,8 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	{
 		sleep 400;
 	}
+	
+	start-script SmokeUnit();
 	
 	while( TRUE )
 	{
@@ -38,7 +40,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 RequestState(RequestedState, CurrentState)
 {
 	if( StateChanging )
-		{
+	{
 		DesiredState = RequestedState;
 		return;
 	}
@@ -51,13 +53,18 @@ RequestState(RequestedState, CurrentState)
 	{
 		if( !DesiredState )
 		{			
-			move system to y-axis [3.00] speed [8.00];
-			move shield to y-axis [-3.00] speed [8.00];
+			move system1 to y-axis [3.00] speed [8.00];
+			move system2 to y-axis [3.00] speed [8.00];
+			move shield1 to y-axis [-3.00] speed [8.00];
+			move shield2 to y-axis [-3.00] speed [8.00];
 			sleep 250;
-			move system to x-axis [3.00] speed [8.00];
+			move system1 to x-axis [3.00] speed [8.00];
+			move system2 to x-axis [3.00] speed [8.00];
 			sleep 250;
-			move lathe to x-axis [3.00] speed [4.00];
-			turn lathe to z-axis <-40.00> speed <80.00>;
+			move lathe1 to x-axis [3.00] speed [4.00];
+			move lathe2 to x-axis [3.00] speed [4.00];
+			turn lathe1 to z-axis <-40.00> speed <80.00>;
+			turn lathe2 to z-axis <-40.00> speed <80.00>;
 			sleep 500;
 			
 			set YARD_OPEN to 1;
@@ -71,7 +78,6 @@ RequestState(RequestedState, CurrentState)
 			
 			set BUGGER_OFF to 0;
 			set INBUILDSTANCE to 1;
-			
 			CurrentState = 0;
 		}
 		if( DesiredState )
@@ -88,40 +94,53 @@ RequestState(RequestedState, CurrentState)
 			
 			set BUGGER_OFF to 0;
 			
-			move lathe to x-axis [0.00] speed [4.00];
-			turn lathe to z-axis <0.00> speed <80.00>;
+			move lathe1 to x-axis [0.00] speed [4.00];
+			move lathe2 to x-axis [0.00] speed [4.00];
+			turn lathe1 to z-axis <0.00> speed <80.00>;
+			turn lathe2 to z-axis <0.00> speed <80.00>;
 			sleep 500;
-			move system to x-axis [0.00] speed [8.00];
+			move system1 to x-axis [0.00] speed [8.00];
+			move system2 to x-axis [0.00] speed [8.00];
 			sleep 250;
-			move system to y-axis [0.00] speed [8.00];
-			move shield to y-axis [0.00] speed [8.00];
+			move system1 to y-axis [0.00] speed [8.00];
+			move system2 to y-axis [0.00] speed [8.00];
+			move shield1 to y-axis [0.00] speed [8.00];
+			move shield2 to y-axis [0.00] speed [8.00];
 			sleep 250;
-			
-			set ARMORED to 0;
+
 			CurrentState = 1;
 		}
 	}
 	
 	StateChanging = 0;
-}
+	}
 
 Create()
 {
 	DesiredState = 1;
-	StateChanging = 0;	
+	StateChanging = 0;
+	Spray = spray1;
 	start-script SmokeUnit();
 }
 
 QueryNanoPiece(PieceNum)
 {
-	PieceNum = spray;
-}
+	if( Spray == spray1 )
+	{
+		PieceNum = spray1;
+		Spray = spray2;
+		return;
+	}
+	
+	PieceNum = spray2;
+	Spray = spray1;
+	}
 
 Activate()
 {
 	signal 2;
 	start-script RequestState(0);
-}
+	}
 
 Deactivate()
 {
@@ -130,12 +149,12 @@ Deactivate()
 	sleep 5000;
 	set-signal-mask 0;
 	start-script RequestState(1);
-}
+	}
 
 QueryBuildInfo(PieceNum)
 {
 	PieceNum = buildpad;
-}
+	}
 
 StartBuilding()
 {
@@ -155,27 +174,27 @@ Killed(Severity, CorpseType, Random)
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 		{
-		explode system type NOHEATCLOUD;
+		explode shield2 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 		{
-		explode decor1 type NOHEATCLOUD;
+		explode shield1 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 		{
-		explode decor4 type NOHEATCLOUD;
+		explode decor2 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 		{
-		explode decor5 type NOHEATCLOUD;
+		explode decor3 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 		{
-		explode decor6 type NOHEATCLOUD;
+		explode socle type NOHEATCLOUD;
 	}
 	if( Severity <= 33 )
 	{

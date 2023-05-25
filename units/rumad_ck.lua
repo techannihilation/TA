@@ -77,7 +77,7 @@ return {
 			[19] = "rumad_jam",
 			[20] = "rumad_llt",
 			[21] = "rumad_pt",
-			--[22] = "rumad_triton",
+			[22] = "rumad_mortor",
 			[23] = "rumad_rl",
 			[24] = "rumad_sam",
 			[25] = "rumad_cir",

@@ -53,7 +53,7 @@ return {
 		customparams = {
 			buildpic = "rumad_ascout_lvl2.dds",
 			faction = "RUMAD",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
