@@ -27,7 +27,7 @@ return {
 		mass = 1173,
 		maxdamage = 3356,
 		maxvelocity = 0,
-		metalstorage = 200,
+		metalstorage = 0,
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",

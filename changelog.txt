@@ -1,5 +1,5 @@
  4.47 => 4.48
-2023-05-22
+2023-05-27
 
 Balance :
  - All T1 Plasma Tower : Increase damage by 36% : 80dmg/s => 125dmg/s (Not enough used)
@@ -10,6 +10,7 @@ Balance :
  - Fury : decreasse HP 245K => 205. Increase Main weapon range 600=>950. Decrease Damage 1.6K/S => 1.2K/S
  - Krog : Increase Range for Main Weapon 590=>700. Decrease HP -10K
  - Orca : Increase Range for Main Weapon 575=>650. Decrease HP -10K
+ - Mercenary : Decrease LOS
 
 Improvment :
 - Razorback : BeamLaser comes back.

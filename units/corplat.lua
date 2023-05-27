@@ -13,7 +13,7 @@ return {
 		category = "LEVEL1 ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		description = "Tech Level 2",
-		energystorage = 200,
+		energystorage = 0,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,

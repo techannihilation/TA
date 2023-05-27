@@ -21,7 +21,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Tech Level 3",
 		energymake = 50,
-		energystorage = 200,
+		energystorage = 0,
 		energyuse = 0,
 		explodeas = "BIG_UNITEX",
 		footprintx = 5,

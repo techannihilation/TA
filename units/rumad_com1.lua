@@ -81,7 +81,7 @@ return {
 			[10] = "rumad_amstor",
 			[11] = "rumad_vp",
 			[12] = "rumad_ap",
-			[13] = "rumad_research_lvl2",
+			--[13] = "rumad_research_lvl2",
 			[14] = "rumad_nanotc1",
 			--[11] = "rumad_arad",
 			[13] = "rumad_vp",

@@ -54,7 +54,7 @@ return {
 		customparams = {
 			buildpic = "rumad_mongol.dds",
 			faction = "RUMAD",
-			requiretech = "Advanced T3 Unit Research Centre",
+			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

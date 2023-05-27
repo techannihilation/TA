@@ -17,7 +17,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Missile Defense System",
-		energystorage = 200,
+		energystorage = 0,
 		energyuse = 0,
 		explodeas = "MEDIUM_BUILDINGEX",
 		firestandorders = 1,

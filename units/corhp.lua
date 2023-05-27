@@ -32,7 +32,7 @@ return {
 		maxslope = 15,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		metalstorage = 200,
+		metalstorage = 0,
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,

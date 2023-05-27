@@ -80,7 +80,7 @@ return {
 		customparams = {
 			buildpic = "rumad_engineerk.dds",
 			faction = "TLL",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

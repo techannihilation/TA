@@ -22,7 +22,7 @@ return {
 		defaultmissiontype = "Standby",
 		description = "Paratrooping Invisible Kbot",
 		downloadable = 1,
-		energystorage = 200,
+		energystorage = 0,
 		explodeas = "SMALL_UNIT",
 		firestandorders = 1,
 		footprintx = 2,

@@ -57,7 +57,7 @@ return {
 			detonaterange = "64",
 			faction = "RUMAD",
 			initcloaked = true,
-			requiretech = "Advanced T2 Unit Research Centre",
+			requiretech = "T2 Factory",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

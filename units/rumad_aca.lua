@@ -71,7 +71,7 @@ return {
 			[11] = "rumad_ap",
 			[12] = "rumad_aap",
 			[13] = "rumad_eap",
-			[14] = "rumad_research_lvl2",
+			--[14] = "rumad_research_lvl2",
 			[15] = "rumad_nanotc1",
 			[16] = "rumad_targ",
 			[17] = "rumad_gate",

@@ -19,7 +19,7 @@ return {
 		collisionvolumetype = "box",
 		corpse = "dead1",
 		description = "Tech Level 2",
-		energystorage = 200,
+		energystorage = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
 		footprintx = 10,

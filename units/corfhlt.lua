@@ -18,7 +18,7 @@ return {
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Laser Tower",
-		energystorage = 200,
+		energystorage = 0,
 		explodeas = "BIG_UNITEX",
 		firestandorders = 1,
 		footprintx = 3,

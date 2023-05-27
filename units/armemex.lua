@@ -13,7 +13,7 @@ return {
 		buildtime = 82000,
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "95 60 95",		
+		collisionvolumescales = "95 60 95",
 		collisionvolumetype = "CylY",
 		description = "Tech Level 3 (Amphibious)",
 		energyuse = 300,

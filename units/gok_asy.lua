@@ -16,7 +16,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "1_dead",
 		description = "Produces T2 Ships",
-		energystorage = 200,
+		energystorage = 0,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,

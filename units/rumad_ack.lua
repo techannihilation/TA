@@ -68,8 +68,8 @@ return {
 			[9] = "rumad_aestor",
 			[10] = "rumad_amstor",
 			[11] = "rumad_vp",
-			[12] = "rumad_ap",
-			[13] = "rumad_research_lvl2",
+			[12] = "rumad_avp",
+			[13] = "rumad_evp",
 			[14] = "rumad_nanotc1",
 			[15] = "rumad_targ",
 			[16] = "rumad_gate",
@@ -83,7 +83,7 @@ return {
 		customparams = {
 			buildpic = "rumad_ack.dds",
 			faction = "RUMAD",
-			requiretech = "Advanced T2 Unit Research Centre",
+			--requiretech = "Advanced T2 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {

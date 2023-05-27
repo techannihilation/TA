@@ -17,7 +17,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces T2 Amphibious/Underwater Units",
-		energystorage = 200,
+		energystorage = 0,
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
 		firestandorders = 1,
