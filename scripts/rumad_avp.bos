@@ -223,57 +223,57 @@ Killed(Severity, CorpseType, Random)
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor1 type BITMAPONLY | BITMAP1;
+		explode decor1 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor2 type BITMAPONLY | BITMAP1;
+		explode decor2 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor3 type BITMAPONLY | BITMAP1;
+		explode decor3 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor4 type BITMAPONLY | BITMAP1;
+		explode decor4 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor5 type BITMAPONLY | BITMAP1;
+		explode decor5 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor9 type BITMAPONLY | BITMAP1;
+		explode decor9 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor10 type BITMAPONLY | BITMAP1;
+		explode decor10 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor11 type BITMAPONLY | BITMAP1;
+		explode decor11 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor12 type BITMAPONLY | BITMAP1;
+		explode decor12 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor13 type BITMAPONLY | BITMAP1;
+		explode decor13 type NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode decor14 type BITMAPONLY | BITMAP1;
+		explode decor14 type NOHEATCLOUD;
 	}
 	
 	if( Severity <= 100 )
