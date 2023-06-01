@@ -29,7 +29,6 @@ return {
 		icontype = "lilith",
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 76,
 		maneuverleashlength = 1250,
 		mass = 1254488,

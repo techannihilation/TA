@@ -30,7 +30,6 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 84,
 		maneuverleashlength = 640,
 		mass = 174923,
@@ -210,7 +209,7 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					
+
 					air = 500,
 				},
 			},

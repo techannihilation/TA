@@ -27,7 +27,6 @@ return {
 		footprintz = 10,
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 145,
 		maneuverleashlength = 640,
 		mass = 136296,

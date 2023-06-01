@@ -25,7 +25,6 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 32,
 		maneuverleashlength = 640,
 		mass = 1709,
@@ -157,7 +156,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},

@@ -39,7 +39,6 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		mass = 90150,
 		maxdamage = 243000,
 		maxvelocity = 1.25,

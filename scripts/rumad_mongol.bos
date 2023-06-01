@@ -577,8 +577,8 @@ StopMoving()
 RestoreAfterDelay()
 {
 	sleep restore_delay;
-	turn torso to y-axis <0.0> speed <75.000000>;
-	turn rack to x-axis <0> speed <75.000000>;
+	turn torso to y-axis <0.0> speed <45.000000>;
+	turn rack to x-axis <0> speed <30.000000>;
 	bAiming = FALSE;
 }
 
@@ -619,8 +619,8 @@ AimWeapon1(Heading, Pitch)
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
 	bAiming = TRUE;
-	turn torso to y-axis Heading speed <75.00>;
-	turn rack to x-axis <0.00> - Pitch speed <45.00>;
+	turn torso to y-axis Heading speed <60.00>;
+	turn rack to x-axis <0.00> - Pitch speed <30.00>;
 	Main_Gun_Heading = Heading;
 	wait-for-turn torso around y-axis;
 	wait-for-turn rack around x-axis;
@@ -725,7 +725,7 @@ FireWeapon5()
 
 FireWeapon6()
 {	
-	emit-sfx 1024 from flare1;
+	emit-sfx 1024 from flare6;
 	move barrel6 to z-axis [-1.500000] speed [500.000000];
 	move sbarrel6 to z-axis [-2.500000] speed [500.000000];
 	sleep 100;
@@ -775,7 +775,7 @@ AimWeapon7(heading, pitch)
 	signal SIG_AIM_7;
 	set-signal-mask SIG_AIM_7;
 	
-	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
 		return (0);
 	}
@@ -865,7 +865,7 @@ AimWeapon8(heading, pitch)
 	signal SIG_AIM_8;
 	set-signal-mask SIG_AIM_8;
 	
-	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
 		return (0);
 	}
@@ -923,7 +923,7 @@ AimWeapon9(heading, pitch)
 	signal SIG_AIM_9;
 	set-signal-mask SIG_AIM_9;
 	
-	if (heading > (Main_Gun_Heading + 2000) or heading < (Main_Gun_Heading - 2000))
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
 		return (0);
 	}

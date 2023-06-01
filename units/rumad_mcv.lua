@@ -28,7 +28,6 @@ return {
 		footprintz = 6,
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 34,
 		maneuverleashlength = 640,
 		mass = 7810,
@@ -123,7 +122,7 @@ return {
 			},
 		},
 		weapondefs = {
-			rumad_plasma = {
+			rumad_plasmax2 = {
 				accuracy = 200,
 				areaofeffect = 128,
 				avoidfeature = false,
@@ -195,12 +194,12 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "MINOR SMALL",
-				def = "RUMAD_PLASMA",
+				def = "RUMAD_PLASMAX2",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				badtargetcategory = "MINOR SMALL",
-				def = "RUMAD_PLASMA",
+				def = "RUMAD_PLASMAX2",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},

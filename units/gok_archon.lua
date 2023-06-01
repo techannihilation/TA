@@ -28,7 +28,6 @@ return {
 		icontype = "Krogoth",
 		idleautoheal = 5,
 		idletime = 30,
-		immunetoparalyzer = 1,
 		losemitheight = 88,
 		maneuverleashlength = 1250,
 		mass = 33463,

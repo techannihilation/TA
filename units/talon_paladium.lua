@@ -16,7 +16,7 @@ return {
 		canstop = 1,
 		category = "ALL MAJOR MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -32 0",
-		collisionvolumescales = "130 160 470",		
+		collisionvolumescales = "130 160 470",
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -30,7 +30,6 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 84,
 		maneuverleashlength = 640,
 		mass = 170923,
@@ -243,7 +242,7 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-					
+
 					air = 250,
 				},
 			},

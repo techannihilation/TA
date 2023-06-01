@@ -26,7 +26,6 @@ return {
 		hightrajectory = 1,
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 50,
 		maneuverleashlength = 640,
 		mass = 5945,
@@ -52,7 +51,7 @@ return {
 		unitname = "gok_amon",
 		customparams = {
 			buildpic = "gok_amon.dds",
-			faction = "ARM",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {
@@ -137,7 +136,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				name = "IntimidatorCannon",
+				name = "Long Range Plasma",
 				nogap = 1,
 				noselfdamage = true,
 				range = 4000,

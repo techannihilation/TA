@@ -28,7 +28,6 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
-
 		energymake = 15,
 		energystorage = 500,
 		explodeas = "CRAWL_BLAST",

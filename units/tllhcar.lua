@@ -31,7 +31,6 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		istargetingupgrade = true,
 		losemitheight = 72,
 		maneuverleashlength = 640,

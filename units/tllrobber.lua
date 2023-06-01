@@ -28,7 +28,6 @@ return {
 		hoverattack = true,
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		losemitheight = 21.5,
 		maneuverleashlength = 1280,
 		mass = 915,
@@ -140,7 +139,7 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					
+
 					air = 120,
 				},
 			},

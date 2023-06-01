@@ -37,7 +37,6 @@ return {
 		icontype = "gunship",
 		idleautoheal = 5,
 		idletime = 1800,
-		immunetoparalyzer = 1,
 		mass = 140302,
 		maxdamage = 328050,
 		maxvelocity = 1.05,
@@ -181,7 +180,7 @@ return {
 				damage = {
 				areoship = 62.5,
 				default = 5,
-				
+
 				air = 250,
 				},
 			},

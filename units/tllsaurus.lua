@@ -43,7 +43,7 @@ return {
 		radaremitheight = 51,
 		selfdestructas = "MKL_BLAST",
 		selfdestructcountdown = 10,
-		sightdistance = 700,
+		sightdistance = 1000,
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
