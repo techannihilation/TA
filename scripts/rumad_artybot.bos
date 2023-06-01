@@ -5,10 +5,11 @@
 
 piece  base, body, pelvis,
 		luparm, lloarm, lhand, ruparm, rloarm, rhand, arml, armr,
-		rflare, lflare, flare1, flare2, flare3, 
+		right_msl1, right_msl2, right_msl3, left_msl1, left_msl2, left_msl3,
+		flare1, flare2, flare3, 
 		barrel1, barrel2, barrel3, sbarrel1, sbarrel2, sbarrel3, sleeve1, sleeve2, sleeve3;
 
-static-var  Static_Var_1, gun_1, bMoving, Main_Gun_Heading;
+static-var  Static_Var_1, msl_1, bMoving, Main_Gun_Heading;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -144,7 +145,7 @@ Create()
 	hide flare1;
 	hide flare2;
 	hide flare3;
-	gun_1 = 0;
+	msl_1 = 0;
 	Main_Gun_Heading = 0;
 	start-script SmokeUnit();
 }
@@ -288,23 +289,71 @@ AimWeapon4(heading, pitch)
 
 FireWeapon4()
 {
-	++gun_1;
-	if( gun_1 == 2 )
+	while(TRUE)
 	{
-		gun_1 = 0;
-	
+		sleep 125;	
+		++msl_1;
+		if (msl_1 == 6)
+		{
+			return (0);
+		}
+		if (msl_1 == 12)
+		{
+			msl_1 = 0;
+			return (0);		
+		}
 	}
 }
 
 QueryWeapon4(piecenum)
 {
-	if( gun_1 == 0 )
+	if ( msl_1 == 0)
 	{
-		piecenum = lflare;
+		piecenum = right_msl1;
 	}
-	if( gun_1 == 1 )
+	if ( msl_1 == 1)
 	{
-		piecenum = rflare;
+		piecenum = right_msl2;
+	}
+	if ( msl_1 == 2)
+	{
+		piecenum = right_msl3;
+	}
+	if ( msl_1 == 3)
+	{
+		piecenum = right_msl1;
+	}
+	if ( msl_1 == 4)
+	{
+		piecenum = right_msl2;
+	}
+	if ( msl_1 == 5)
+	{
+		piecenum = right_msl3;
+	}
+	if ( msl_1 == 6)
+	{
+		piecenum = left_msl1;
+	}
+	if ( msl_1 == 7)
+	{
+		piecenum = left_msl2;
+	}
+	if ( msl_1 == 8)
+	{
+		piecenum = left_msl3;
+	}
+	if ( msl_1 == 9)
+	{
+		piecenum = left_msl1;
+	}
+	if ( msl_1 == 10)
+	{
+		piecenum = left_msl2;
+	}
+	if ( msl_1 == 11)
+	{
+		piecenum = left_msl3;
 	}
 }
 

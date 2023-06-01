@@ -140,7 +140,7 @@ return {
 				damage = {
 					commanders = 8500,
 					default = 36000,
-					subs = 5,
+					subs = 8500,
 				},
 				customparams = {
 					light_color = "1 0.6 0.2",

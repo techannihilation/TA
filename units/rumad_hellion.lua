@@ -21,8 +21,8 @@ return {
 		description = "Experimental Amphibious Assault Kbot",
 		explodeas = "EXO_BLAST",
 		firestandorders = 1,
-		footprintx = 8,
-		footprintz = 8,
+		footprintx = 9,
+		footprintz = 9,
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 147,
@@ -33,7 +33,7 @@ return {
 		maxvelocity = 1.0,
 		maxwaterdepth = 48,
 		mobilestandorders = 1,
-		movementclass = "VKBOT8",
+		movementclass = "VKBOT9",
 		name = "Hellion",
 		noautofire = false,
 		objectname = "rumad_hellion",
@@ -122,7 +122,7 @@ return {
 		weapondefs = {
 			rumad_plasma = {
 				accuracy = 200,
-				areaofeffect = 128,
+				areaofeffect = 196,
 				avoidfeature = false,
 				craterareaofeffect = 64,
 				craterboost = 0,

@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "rumad_mongol.dds",
 			faction = "RUMAD",
-			--requiretech = "Advanced T3 Unit Research Centre",
 		},
 		featuredefs = {
 			dead = {
@@ -205,7 +204,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,
-				reloadtime = 3,
+				reloadtime = 2.4,
 				smoketrail = true,
 				soundhitdry = "xplosml2",
 				soundhitwet = "splshbig",
