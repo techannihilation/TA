@@ -1,0 +1,332 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, buildpad,
+		building1, decor1a, decor1b, decor1c,
+		building2, shield2a, shield2b, system2a, system2b, lathe2a, spray2a, lathe2b, spray2b, decor2a, decor2b, decor2c, decor2d, decor2e,
+		building3, decor3a, decor3b, decor3c,
+		building4, shield4a, shield4b, system4a, system4b, lathe4a, spray4a, lathe4b, spray4b, decor4a, decor4b, decor4c, decor4d, decor4e;
+
+static-var  DesiredState, StateChanging, Spray;
+
+RequestState(RequestedState, CurrentState)
+{
+	if( StateChanging )
+	{
+		DesiredState = RequestedState;
+		return;
+	}
+	
+	StateChanging = 1;
+	CurrentState = DesiredState;
+	DesiredState = RequestedState;
+	
+	while( DesiredState != CurrentState )
+	{
+		if( !DesiredState )
+		{
+			move system2a to y-axis [5.0] speed [8.00];
+			move system2b to y-axis [5.0] speed [8.00];
+			move system4a to y-axis [5.0] speed [8.00];
+			move system4b to y-axis [5.0] speed [8.00];
+			move shield2a to y-axis [-8.0] speed [8.00];
+			move shield2b to y-axis [-8.0] speed [8.00];
+			move shield4a to y-axis [-8.0] speed [8.00];
+			move shield4b to y-axis [-8.0] speed [8.00];
+			sleep 250;
+			
+			move building1 to x-axis [-43.8] speed [10.00];
+			move building3 to x-axis [43.8] speed [10.00];
+			
+			move system2a to x-axis [3.0] speed [8.00];
+			move system2b to x-axis [3.0] speed [8.00];
+			move system4a to x-axis [-3.0] speed [8.00];
+			move system4b to x-axis [-3.0] speed [8.00];
+			sleep 750;
+								
+			move lathe2a to x-axis [4.0] speed [4.00];
+			move lathe2b to x-axis [4.0] speed [4.00];
+			move lathe4a to x-axis [-4.0] speed [4.00];
+			move lathe4b to x-axis [-4.0] speed [4.00];
+			move lathe2a to y-axis [1.0] speed [4.00];
+			move lathe2b to y-axis [1.0] speed [4.00];
+			move lathe4a to y-axis [1.0] speed [4.00];
+			move lathe4b to y-axis [1.0] speed [4.00];
+			sleep 200;
+			
+			turn lathe2a to z-axis <-45.00> speed <60.00>;
+			turn lathe2b to z-axis <-45.00> speed <60.00>;
+			turn lathe4a to z-axis <45.00> speed <60.00>;
+			turn lathe4b to z-axis <45.00> speed <60.00>;
+			sleep 1000;
+					
+			set YARD_OPEN to 1;
+			
+			while( !get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 1;
+			}
+			
+			set BUGGER_OFF to 0;
+			set INBUILDSTANCE to 1;
+			CurrentState = 0;
+		}
+		if( DesiredState )
+		{
+			set INBUILDSTANCE to 0;
+			set YARD_OPEN to 0;
+			
+			while( get YARD_OPEN )
+			{
+				set BUGGER_OFF to 1;
+				sleep 1500;
+				set YARD_OPEN to 0;
+			}
+			
+			set BUGGER_OFF to 0;
+						
+			move building1 to x-axis [0.00] speed [8.00];
+			move building3 to x-axis [0.00] speed [8.00];
+			sleep 750;
+			
+			move lathe2a to x-axis [0.00] speed [4.00];
+			move lathe2b to x-axis [0.00] speed [4.00];
+			move lathe4a to x-axis [0.00] speed [4.00];
+			move lathe4b to x-axis [0.00] speed [4.00];
+			move lathe2a to y-axis [0.0] speed [4.00];
+			move lathe2b to y-axis [0.0] speed [4.00];
+			move lathe4a to y-axis [0.0] speed [4.00];
+			move lathe4b to y-axis [0.0] speed [4.00];
+			sleep 500;
+			
+			turn lathe2a to z-axis <0.00> speed <60.00>;
+			turn lathe2b to z-axis <0.00> speed <60.00>;
+			turn lathe4a to z-axis <0.00> speed <60.00>;
+			turn lathe4b to z-axis <0.00> speed <60.00>;
+			sleep 500;
+
+			move shield2a to y-axis [0.00] speed [8.00];
+			move shield2b to y-axis [0.00] speed [8.00];	
+			move shield4a to y-axis [0.00] speed [8.00];
+			move shield4b to y-axis [0.00] speed [8.00];
+			sleep 500;
+			
+			move building1 to x-axis [0.00] speed [8.00];
+			move building3 to x-axis [0.00] speed [8.00];
+			sleep 250;
+			
+			move system2a to x-axis [0.00] speed [8.00];
+			move system2b to x-axis [0.00] speed [8.00];
+			move system4a to x-axis [0.00] speed [8.00];
+			move system4b to x-axis [0.00] speed [8.00];
+			sleep 250;
+			
+			move system2a to y-axis [0.00] speed [8.00];
+			move system2b to y-axis [0.00] speed [8.00];
+			move system4a to y-axis [0.00] speed [8.00];
+			move system4b to y-axis [0.00] speed [8.00];
+			sleep 500;
+			
+			CurrentState = 1;
+		}
+	}
+	
+	StateChanging = 0;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from building1;
+			emit-sfx smoketype from building2;
+			emit-sfx smoketype from building3;
+			emit-sfx smoketype from building4;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	DesiredState = 1;
+	StateChanging = 0;
+	Spray = 0;	
+	start-script SmokeUnit();
+}
+
+QueryNanoPiece(PieceNum)
+{
+	if( Spray == 0 )
+	{
+		PieceNum = spray2a;
+		Spray = 1;
+		return;
+	}
+	if( Spray == 1 )
+	{
+		PieceNum = spray2b;
+		Spray = 2;
+		return;
+	}
+	if( Spray == 2 )
+	{
+		PieceNum = spray4a;
+		Spray = 3;
+		return;
+	}
+	if( Spray == 3 )
+	{
+		PieceNum = spray4b;
+		Spray = 0;
+		return;
+	}
+}
+
+Activate()
+{
+	signal 2;
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	signal 2;
+	set-signal-mask 2;
+	sleep 5000;
+	set-signal-mask 0;
+	start-script RequestState(1);
+}
+
+QueryBuildInfo(PieceNum)
+{
+	PieceNum = buildpad;
+}
+
+StartBuilding()
+{
+}
+
+StopBuilding()
+{
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	if( get BUILD_PERCENT_LEFT )
+	{
+		CorpseType = 3;
+		return;
+	}
+		
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode shield2a type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode shield2b type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode shield4a type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode shield4b type NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor1b type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor2a type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor3a type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor4d type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor4c type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor1a type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor3b type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor2e type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor2a type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor2d type BITMAPONLY | BITMAP1;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode decor3c type BITMAPONLY | BITMAP1;
+	}
+	
+	if( Severity <= 100 )
+	{
+		CorpseType = 1;
+		return;
+	}
+	
+	CorpseType = 2;
+}

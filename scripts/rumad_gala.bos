@@ -186,7 +186,6 @@ StopMoving()
 RestorePrimary()
 {
 	sleep 6500;
-	bAiming = FALSE;
 	turn pitchturret to x-axis <0.000000> speed <25.000000>;
 	turn torso to y-axis <0.000000> speed <25.000000>;
 
@@ -195,6 +194,7 @@ RestorePrimary()
 RestoreSecondary()
 {
 	sleep 3000;
+	bAiming = FALSE;
 	turn larm to x-axis <0.000000> speed <40.000000>;
 	turn rarm to x-axis <0.000000> speed <40.000000>;
 	turn left_gun to x-axis <0.000000> speed <65.000000>;

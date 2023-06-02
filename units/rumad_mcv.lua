@@ -204,14 +204,14 @@ return {
 				slaveto = 1,
 			},
 			[3] = {
-				badtargetcategory = "MINOR",
+				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_ADVMISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
-				badtargetcategory = "MINOR",
+				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_ADVMISSILE",
 				maindir = "1 0 0",
 				maxangledif = 200,
