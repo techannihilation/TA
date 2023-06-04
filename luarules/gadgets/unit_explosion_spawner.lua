@@ -41,14 +41,29 @@ function gadget:Explosion_GetWantedWeaponDef()
 	return wantedList
 end
 
+local SPIRAL_INCREMENT = 1.0
+local MAX_SPIRAL_T = 20
 function gadget:Explosion(w, x, y, z, owner)
 	if spawn_defs_id[w] and owner then
 		isonwater = Spring.GetGroundHeight(x,z)
 		if not noCreate[owner] then -- and isonwater >= 0
 			--if not Spring.GetGroundBlocked(x,z) then
-			if UseUnitResource(owner, "m", spawn_defs_id[w].cost) then
-				createList[#createList+1] = {name = spawn_defs_id[w].name, owner = owner, x=x,y=y,z=z, expire=spawn_defs_id[w].expire, feature = spawn_defs_id[w].feature}
-				return false
+			local max_dist = 100.0
+			local t = 1.0
+			local init_X = x 
+			local init_Z = z
+			-- Easiest way and less costly is trying with a spiral 
+			while Spring.GetGroundBlocked(x,z) and t < MAX_SPIRAL_T do
+				--Spring.Echo("Blocked Spiral check "..x.." "..z)
+				x = init_X+math.cos(t)*SPIRAL_INCREMENT
+				z = init_Z+math.sin(t)*SPIRAL_INCREMENT
+				t = t + 1.0
+			end
+			if not Spring.GetGroundBlocked(x,z) then
+				if UseUnitResource(owner, "m", spawn_defs_id[w].cost) then
+					createList[#createList+1] = {name = spawn_defs_id[w].name, owner = owner, x=x,y=y,z=z, expire=spawn_defs_id[w].expire, feature = spawn_defs_id[w].feature}
+					return false
+				end
 			end
 		else
 			noCreate[owner] = nil
