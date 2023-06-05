@@ -362,6 +362,9 @@ cafus = {
   gok_gate1 = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
+  rumad_gate1 = {
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,20,0.0}, size=1000, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
   --T5 GATE
   armgate3 = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={30,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
@@ -376,6 +379,9 @@ cafus = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   gok_gate3 = {
+    {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
+  },
+  rumad_gate3 = {
     {class='ShieldJitter', options={delay=0,life=math.huge, priority=2, pos={0,0,0}, size=2200, precision=0, noIconDraw = true, strength = 0.001, repeatEffect=true}},
   },
   -- Special Blue Shied

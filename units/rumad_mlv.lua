@@ -70,9 +70,8 @@ return {
 			[2] = "rumad_eyes",
 			[3] = "rumad_mine1",
 			[4] = "rumad_mine2",
-			--[5] = "armmine3",
-			--[6] = "armmine5",
-			--[7] = "armmine6",
+			[5] = "rumad_mine3",
+			[6] = "rumad_mine4",
 		},
 		customparams = {
 			buildpic = "rumad_mlv.dds",

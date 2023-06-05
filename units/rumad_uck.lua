@@ -74,7 +74,7 @@ return {
 			[14] = "armurad",
 			[15] = "armamd2",
 			[16] = "armfsilo",
-			[17] = "armgate1",
+			[17] = "rumad_gate1",
 			--[18] = "",
 		},
 		customparams = {

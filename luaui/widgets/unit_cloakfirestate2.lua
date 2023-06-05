@@ -63,6 +63,8 @@ local exceptionList = { --add exempt units here
   "gok_fmine",
   "rumad_mine1",
   "rumad_mine2",
+  "rumad_mine3",
+  "rumad_mine4",
 	--Crawling Bomb
 	"corsktl",
 	"tllcrawlb",

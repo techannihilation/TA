@@ -305,6 +305,16 @@ local morphDefs = {
 		time = 60,
 		tech = 2,
 	},
+	rumad_gate4 = {
+		into = 'rumad_gate1',
+		time = 90,
+		tech = 3,
+	},
+	rumad_gate1 = {
+		into = 'rumad_gate3',
+		time = 120,
+		tech = 4,
+	},
 	armgate2 = {
 		into = 'armgate',
 		time = 30,
