@@ -10,7 +10,7 @@ return {
 		builddistance = 250,
 		builder = true,
 		buildpic = "rumad_com.dds",
-		buildtime = 100000,
+		buildtime = 250000,
 		canguard = true,
 		canmove = true,
 		canpatrol = true,

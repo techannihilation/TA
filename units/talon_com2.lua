@@ -10,7 +10,7 @@ return {
 		builddistance = 350,
 		builder = true,
 		buildpic = "talon_com2.dds",
-		buildtime = 150000,
+		buildtime = 500000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,
@@ -28,7 +28,6 @@ return {
 		commander = true,
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		
 		energymake = 1200,
 		energystorage = 3000,
 		explodeas = "COMMANDER_BLAST2",
@@ -334,7 +333,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				
+
 				visibleshieldhitframes = 70,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",

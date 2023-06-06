@@ -10,7 +10,7 @@ return {
 		builddistance = 450,
 		builder = true,
 		buildpic = "tllcom3.dds",
-		buildtime = 200000,
+		buildtime = 1000000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,
@@ -29,7 +29,6 @@ return {
 		corpse = "dead",
 		decoyfor = "tllcom",
 		defaultmissiontype = "Standby",
-		
 		energymake = 1200,
 		energystorage = 4000,
 		energyuse = 0,

@@ -10,7 +10,7 @@ return {
 		builddistance = 250,
 		builder = true,
 		buildpic = "armcom1.dds",
-		buildtime = 100000,
+		buildtime = 250000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,
@@ -29,7 +29,6 @@ return {
 		corpse = "dead",
 		decoyfor = "armcom",
 		defaultmissiontype = "Standby",
-		
 		energymake = 250,
 		energystorage = 2000,
 		explodeas = "COMMANDER_BLAST1",

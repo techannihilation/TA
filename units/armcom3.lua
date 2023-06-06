@@ -10,7 +10,7 @@ return {
 		builddistance = 450,
 		builder = true,
 		buildpic = "armcom3.dds",
-		buildtime = 200000,
+		buildtime = 1000000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,

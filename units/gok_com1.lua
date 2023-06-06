@@ -10,7 +10,7 @@ return {
 		builddistance = 250,
 		builder = true,
 		buildpic = "gok_com1.dds",
-		buildtime = 100000,
+		buildtime = 250000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,
@@ -28,7 +28,6 @@ return {
 		commander = true,
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
-		
 		energymake = 300,
 		energystorage = 2000,
 		energyuse = 0,

@@ -1,6 +1,9 @@
  4.48 => 4.49
 2023-06-02
 
+Balance :
+ - Increase buildtime for all commander. Goal is to add more time to capture them.
+
 Improvment :
 - Add T4 Lab and T4 Units for Rumad
 

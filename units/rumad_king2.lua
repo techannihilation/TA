@@ -10,7 +10,7 @@ return {
 		builddistance = 350,
 		builder = true,
 		buildpic = "rumad_king.dds",
-		buildtime = 150000,
+		buildtime = 500000,
 		canassist = true,
 		canattack = true,
 		cancapture = true,
@@ -28,7 +28,6 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
-
 		energymake = 500,
 		energystorage = 2000,
 		explodeas = "COMMANDER_BLAST1",

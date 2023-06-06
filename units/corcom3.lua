@@ -10,7 +10,7 @@ return {
 		builddistance = 450,
 		builder = true,
 		buildpic = "corcom3.dds",
-		buildtime = 200000,
+		buildtime = 1000000,
 		canattack = true,
 		cancapture = true,
 		canguard = true,
@@ -29,7 +29,6 @@ return {
 		corpse = "dead",
 		decoyfor = "corcom",
 		defaultmissiontype = "Standby",
-		
 		energymake = 2000,
 		energystorage = 4000,
 		explodeas = "COMMANDER_BLAST3",
@@ -306,7 +305,7 @@ return {
 				shieldradius = 200,
 				shieldrepulser = false,
 				smartshield = true,
-				
+
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
