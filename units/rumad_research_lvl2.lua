@@ -56,7 +56,7 @@ return {
 		unitname = "rumad_research_lvl2",
 		customparams = {
 			buildpic = "rumad_research_lvl2.png",
-			providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre",
+			--providetech = "Advanced T1 Unit Research Centre,Advanced T2 Unit Research Centre,Advanced T3 Unit Research Centre",
 			ismorphingrc = true,
 		},
 		sfxtypes = {

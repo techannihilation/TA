@@ -1,9 +1,12 @@
  4.48 => 4.49
-2023-06-08
+2023-06-09
 
 Balance :
  - Increase buildtime for all commander. Goal is to add more time to capture them.
  - All Gok Quadrupod except crab arty : Delete All-Terrain Feature
+
+ Fix :
+ - Mines Tech2+ are buildable
 
 Improvment :
 - Add T4 Lab and T4 Units for Rumad
