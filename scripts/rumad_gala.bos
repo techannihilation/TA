@@ -10,7 +10,8 @@ piece  base, pelvis, torso, lshoulder, larm, rshoulder, rarm,
        left_msl1, left_msl2, left_msl3,
        right_msl1, right_msl2, right_msl3,
        pitchturret, sbarrel, barrel, flare,
-       nuke1, nuke2, smoke1, smoke2;
+       rnuke1, rnuke2, rnuke3,
+       lnuke1, lnuke2, lnuke3;
 
 static-var  msl_1, msl_2, nuke, bMoving, bAiming, Main_Gun_Heading;
 
@@ -347,26 +348,43 @@ AimFromTertiary(piecenum)
 {
 	if (nuke == 0)
 	{
-		piecenum = nuke1;
+		piecenum = lnuke1;
 	}
 	if (nuke == 1)
 	{
-		piecenum = nuke2;
+		piecenum = rnuke1;
 	}
-	if (nuke > 1)
+	if (nuke == 2)
 	{
-		piecenum = nuke1;
+		piecenum = lnuke2;
 	}
+	if (nuke == 3)
+	{
+		piecenum = rnuke2;
+	}
+	if (nuke == 4)
+	{
+		piecenum = lnuke3;
+	}
+	if (nuke == 5)
+	{
+		piecenum = rnuke3;
+	}
+	if (nuke > 5)
+	{
+		piecenum = lnuke1;
+	}
+	
 }
 
 AimTertiary(heading, pitch)
 {
-	if(nuke > 1)
+	if(nuke > 5)
 	{
 		return (0);
 	}
 	
-	if (heading > (Main_Gun_Heading + 5000) or heading < (Main_Gun_Heading - 5000))
+	if (heading > (Main_Gun_Heading + 6000) or heading < (Main_Gun_Heading - 6000))
 	{
 		return (0);
 	}
@@ -381,27 +399,34 @@ FireTertiary()
 {	
 	if (nuke == 0)
 	{
-		hide nuke1;
-		emit-sfx 256 | 2 from smoke1;
+		hide lnuke1;
 		sleep 100;
-		emit-sfx 256 | 2 from smoke1;
-		sleep 150;
-		emit-sfx 256 | 1 from smoke1;
-		sleep 150;
-		emit-sfx 256 | 1 from smoke1;
 	}
 	if (nuke == 1)
 	{
-		hide nuke2;
-		emit-sfx 256 | 2 from smoke2;
+		hide rnuke1;
 		sleep 100;
-		emit-sfx 256 | 2 from smoke2;
-		sleep 150;
-		emit-sfx 256 | 1 from smoke2;
-		sleep 150;
-		emit-sfx 256 | 1 from smoke2;
 	}
-	
+	if (nuke == 2)
+	{
+		hide lnuke2;
+		sleep 100;
+	}
+	if (nuke == 3)
+	{
+		hide rnuke2;
+		sleep 100;
+	}
+	if (nuke == 4)
+	{
+		hide lnuke3;
+		sleep 100;
+	}
+	if (nuke == 5)
+	{
+		hide rnuke3;
+		sleep 100;
+	}	
 	++nuke;
 }
 
@@ -409,11 +434,31 @@ QueryTertiary(piecenum)
 {
 	if (nuke == 0)
 	{
-		piecenum = nuke1;
+		piecenum = lnuke1;
 	}
 	if (nuke == 1)
 	{
-		piecenum = nuke2;
+		piecenum = rnuke1;
+	}
+	if (nuke == 2)
+	{
+		piecenum = lnuke2;
+	}
+	if (nuke == 3)
+	{
+		piecenum = rnuke2;
+	}
+	if (nuke == 4)
+	{
+		piecenum = lnuke3;
+	}
+	if (nuke == 5)
+	{
+		piecenum = rnuke3;
+	}
+	if (nuke > 5)
+	{
+		piecenum = lnuke1;
 	}
 }
 
