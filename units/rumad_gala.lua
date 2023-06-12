@@ -190,7 +190,7 @@ return {
 				flighttime = 400,
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
-				model = "weapon_nuke_rumad",
+				model = "weapon_nuke_gala",
 				name = "Nuclear Missiles",
 				range = 5000,
 				reloadtime = 1,
