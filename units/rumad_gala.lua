@@ -2,7 +2,7 @@ return {
 	rumad_gala = {
 		acceleration = 0.08,
 		brakerate = 0.63,
-		buildcostenergy = 1650430,
+		buildcostenergy = 1950430,
 		buildcostmetal = 119000,
 		builder = false,
 		buildpic = "rumad_gala.dds",

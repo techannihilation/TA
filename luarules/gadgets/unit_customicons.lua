@@ -136,6 +136,8 @@ function gadget:Initialize()
   Spring.AddUnitIcon("talon_repentance.user", "icons/talon_repentance.png", 5)
   Spring.AddUnitIcon("gok_satan.user", "icons/gok_satan.png", 3)
   Spring.AddUnitIcon("rumad_mongol.user", "icons/rumad_mongol.png", 3)
+  Spring.AddUnitIcon("rumad_gala.user", "icons/rumad_gala.png", 3.5)
+  Spring.AddUnitIcon("rumad_hellion.user", "icons/rumad_hellion.png", 4)
 
 
   -- Setup the unitdef icons
@@ -254,6 +256,10 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "krogoth.user")
       elseif ud.name == "rumad_mongol" then
         Spring.SetUnitDefIcon(udid, "rumad_mongol.user")
+      elseif ud.name == "rumad_hellion" then
+        Spring.SetUnitDefIcon(udid, "rumad_hellion.user")
+      elseif ud.name == "rumad_gala" then
+        Spring.SetUnitDefIcon(udid, "rumad_gala.user")
 
       --Commanders
       elseif (ud.name == "armcom") or (ud.name == "armcom1") or (ud.name == "armcom2") or (ud.name == "armcom3") then
