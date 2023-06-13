@@ -178,7 +178,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "e4.user")
 
       -- t2 fusions
-      elseif (ud.name == "cafus") or (ud.name == "aafus") or (ud.name == "tllcoldfus") or (ud.name == "talon_afus") then
+      elseif (ud.name == "cafus") or (ud.name == "aafus") or (ud.name == "tllcoldfus") or (ud.name == "talon_afus") or (ud.name == "rumad_afusion")  then
         Spring.SetUnitDefIcon(udid, "e3.user")
 
       -- std fusions

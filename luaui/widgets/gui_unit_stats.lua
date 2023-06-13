@@ -93,7 +93,6 @@ local pplants = {
 	["afusionplant"] = true,
 	["amgeo"] = true,
 	["armadvsol"] = true,
-	["armfor"] = true,
 	["armfus"] = true,
 	["armgeo"] = true,
 	["armgmm"] = true,
@@ -173,7 +172,24 @@ local pplants = {
 	["gok_gen"] = true,
 	["gok_geo_mini"] = true,
 	["gok_geo"] = true,
-	--["gok_gen"] = true,
+	["gok_gen"] = true,
+
+	--Rumad
+	["rumad_solar"] = true,
+	["rumad_fusion"] = true,
+	["rumad_afusion"] = true,
+	["rumad_geo_mini"] = true,
+	["rumad_geo"] = true,
+	["rumad_efusion"] = true,
+
+	--T3 Geo
+	["armfor"] = true,
+	["corbhmth1"] = true,
+	["talon_egeo"] = true,
+	["tllegeo"] = true,
+	["gok_egeo"] = true,
+	["rumad_egeo"] = true,
+
 }
 
 local tidalStrength = Game.tidal
