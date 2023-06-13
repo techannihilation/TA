@@ -52,8 +52,9 @@ return {
 			[2] = "rumad_engineera",
 			[3] = "rumad_ascout_lvl2",
 			[4] = "rumad_fighter_lvl2",
-			[5] = "rumad_airtrans_lvl2",
-			[6] = "rumad_bomber_lvl2",
+			[5] = "rumad_gunship_lvl2",
+			[6] = "rumad_airtrans_lvl2",
+			[7] = "rumad_bomber_lvl2",
 		},
 		customparams = {
 			buildpic = "rumad_aap.dds",

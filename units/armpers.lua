@@ -1,11 +1,11 @@
 return {
 	armpers = {
-		acceleration = 0.23,
+		acceleration = 0.2,
 		bankscale = 1,
 		blocking = false,
 		brakerate = 0.2,
 		buildcostenergy = 108070,
-		buildcostmetal = 3231,
+		buildcostmetal = 3230,
 		builder = false,
 		buildpic = "armpers.dds",
 		buildtime = 90000,
@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 5.5,
 		maneuverleashlength = 3000,
-		mass = 3231,
+		mass = 3230,
 		maxdamage = 7090,
 		maxslope = 10,
 		maxvelocity = 4.8,
@@ -132,7 +132,6 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 475,
 				damage = {
-					commanders = 19,
 					default = 38,
 					subs = 5,
 				},

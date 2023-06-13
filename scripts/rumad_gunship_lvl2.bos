@@ -3,8 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, lengine, rengine, rwing, lwing, thrust1, thrust2,
-		flare1, flare2, flare3, flare4;
+piece  base, hull, lengine, rengine, rwing, lwing, thrust1, thrust2, engine3, thrust3,
+		flare1, flare2, flare3, flare4, flare5, flare6, flare7, flare8;
 
 static-var  restore_delay, bMoving, msl_1, msl_2;
 
@@ -72,6 +72,14 @@ QueryPrimary(piecenum)
 	{
 		piecenum = flare2;
 	}
+	if ( msl_1 == 3)
+	{
+		piecenum = flare3;
+	}
+	if ( msl_1 == 4)
+	{
+		piecenum = flare4;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -92,7 +100,7 @@ FirePrimary()
 	{
 		sleep 125;	
 		++msl_1;
-		if (msl_1 == 3)
+		if (msl_1 == 5)
 		{
 			msl_1 = 1;
 			return (0);		
@@ -104,11 +112,19 @@ QuerySecondary(piecenum)
 {
 	if ( msl_2 == 1)
 	{
-		piecenum = flare3;
+		piecenum = flare5;
 	}
 	if ( msl_2 == 2)
 	{
-		piecenum = flare4;
+		piecenum = flare6;
+	}
+	if ( msl_2 == 3)
+	{
+		piecenum = flare7;
+	}
+	if ( msl_2 == 4)
+	{
+		piecenum = flare8;
 	}
 }
 
@@ -130,7 +146,7 @@ FireSecondary()
 	{
 		sleep 125;	
 		++msl_2;
-		if (msl_2 == 3)
+		if (msl_2 == 5)
 		{
 			msl_2 = 1;
 			return (0);		
