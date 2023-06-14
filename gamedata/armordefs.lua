@@ -138,6 +138,7 @@ return {
 	"gok_revenant",
 	"rumad_gunship_lvl1",
 	"rumad_gunship_lvl2",
+	"rumad_gunship_lvl3",
 
 	-- Scout planes
 	"armawac",
