@@ -253,6 +253,7 @@ modConfig["TA"]["unitList"] =
 
 								talon_mds = { weapons = { 3 } }, --Missile Defence System
 								gok_mds = { weapons = { 3 } }, --Missile Defence System
+								rumad_mds = { weapons = { 3 } }, --Missile Defence System
 								armmds = { weapons = { 3 } }, --Missile Defence System
 							}
 

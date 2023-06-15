@@ -64,7 +64,7 @@ return {
 			[13] = "rumad_rl",
 			[14] = "rumad_flak",
 			[15] = "rumad_ptr",
-			--[16] = "gok_mds",
+			[16] = "rumad_mds",
 			[17] = "rumad_ca",
 			[18] = "rumad_fighter_lvl2",
 			[19] = "rumad_bomber_lvl2",
