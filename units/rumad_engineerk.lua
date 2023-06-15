@@ -70,7 +70,7 @@ return {
 			[12] = "rumad_orb",
 			[13] = "rumad_rl",
 			[14] = "rumad_flak",
-			--[15] = "gok_ptr",
+			[15] = "rumad_ptr",
 			--[16] = "gok_mds",
 			[17] = "rumad_ck",
 			[18] = "rumad_macm",

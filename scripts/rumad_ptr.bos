@@ -1,0 +1,98 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, turret, pitchturret, flare, support1, support2, support3, support4;
+
+static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret to y-axis heading speed <125.000000>;
+	turn pitchturret to x-axis <0.0> - pitch speed <125.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return (1);
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = pitchturret;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode support2 type NOHEATCLOUD;
+		explode support1 type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode support1 type NOHEATCLOUD | FALL;
+		explode turret type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		explode support3 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pitchturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD;
+	explode support1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode support3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
