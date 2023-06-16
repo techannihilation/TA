@@ -2,6 +2,7 @@
 2023-06-16
 
 Balance :
+ - T1 Air Bomber : Balance damage between all faction. Need 5 bombers to destroy a Geo. Increase damage for arm / core to keep destroy this target in example.
  - Increase buildtime for all commander. Goal is to add more time to capture them.
  - All Gok Quadrupod except crab arty : Delete All-Terrain Feature
  - Some adjustement for all pewee class. Cost fixed at 50M min. Talon Sniper cost 85M=>45M and Energy cost 1400 => 2500. All units <50Metal are targeted by Juno

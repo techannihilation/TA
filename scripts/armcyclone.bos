@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  m1, m2, intake1, intake2, mount1, mount2, base, airframe,
+piece  intake1, intake2, base, airframe,
        wing1, wing2, tail, ex, drop;
 
 static-var  Static_Var_1, gun_2, statechg_StateChanging, statechg_DesiredState;
@@ -98,11 +98,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	hide m1;
-	hide m2;
 	turn wing1 to z-axis <95.000000> now;
 	turn wing2 to z-axis <-95.000000> now;
-	gun_2 = m2;
+	gun_2 = 0;
 	Static_Var_1 = 3000;
 	call-script InitState();
 	start-script SmokeUnit();
@@ -118,15 +116,6 @@ Deactivate()
 	start-script RequestState(1);
 }
 
-RestoreAfterDelay()
-{
-	sleep Static_Var_1;
-	turn mount1 to y-axis <0.000000> speed <90.016484>;
-	turn mount1 to x-axis <0.000000> speed <50.005495>;
-	turn mount2 to y-axis <0.000000> speed <90.016484>;
-	turn mount2 to x-axis <0.000000> speed <50.005495>;
-}
-
 AimPrimary()
 {
 	return (1);
@@ -137,65 +126,6 @@ QueryPrimary(piecenum)
 	piecenum = drop;
 }
 
-QuerySecondary(piecenum)
-{
-	if( gun_2 == 0 )
-	{
-		piecenum = mount1;
-	}
-	if( gun_2 == 1 )
-	{
-		piecenum = mount2;
-	}
-}
-
-AimSecondary(heading, pitch)
-{
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
-	turn mount1 to y-axis heading speed <390.093407>;
-	turn mount2 to x-axis <0.000000> - pitch speed <350.082418>;
-	turn mount1 to y-axis heading speed <390.093407>;
-	turn mount2 to x-axis <0.000000> - pitch speed <350.082418>;
-	wait-for-turn mount1 around y-axis;
-	wait-for-turn mount2 around x-axis;
-	wait-for-turn mount1 around y-axis;
-	wait-for-turn mount2 around x-axis;
-	start-script RestoreAfterDelay();
-	return (1);
-}
-
-FireSecondary()
-{
-	gun_2 = !gun_2;
-	if( gun_2 == 0 )
-	{
-		show m1;
-		sleep 150;
-		hide m1;
-		return (0);
-	}
-	if( gun_2 == 1 )
-	{
-		show m2;
-		sleep 150;
-		hide m2;
-		return (0);
-	}
-}
-
-AimFromSecondary(piecenum)
-{
-	if( gun_2 == 0 )
-	{
-		piecenum = mount1;
-	}
-	if( gun_2 == 1 )
-	{
-		piecenum = mount2;
-	}
-}
-
 SweetSpot(piecenum)
 {
 	piecenum = base;
@@ -203,15 +133,10 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	hide m1;
-	hide m2;
 	if( severity <= 50 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
 		explode drop type NOHEATCLOUD | FALL;
-		explode m1 type NOHEATCLOUD | FALL;
-		explode m2 type NOHEATCLOUD | FALL;
 		explode tail type NOHEATCLOUD | FALL;
 		explode ex type NOHEATCLOUD | FALL;
 		explode wing1 type NOHEATCLOUD | SHATTER;
@@ -219,10 +144,7 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
 	explode drop type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode m1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode m2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode tail type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode ex type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode wing1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
