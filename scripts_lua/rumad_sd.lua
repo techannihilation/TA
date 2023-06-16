@@ -1,10 +1,10 @@
 local base = piece 'base'
-local base = piece 'arm1'
-local base = piece 'arm2'
-local base = piece 'arm3'
-local base = piece 'arm4'
-local base = piece 'arm5'
-local base = piece 'arm6'
+local arm1 = piece 'arm1'
+local arm2 = piece 'arm2'
+local arm3 = piece 'arm3'
+local arm4 = piece 'arm4'
+local arm5 = piece 'arm5'
+local arm6 = piece 'arm6'
 
 
 local spGetUnitIsStunned = Spring.GetUnitIsStunned
