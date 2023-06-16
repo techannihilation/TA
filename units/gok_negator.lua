@@ -2,8 +2,8 @@ return {
 	gok_negator = {
 		acceleration = 0.36,
 		brakerate = 0.6,
-		buildcostenergy = 715,
-		buildcostmetal = 31,
+		buildcostenergy = 705,
+		buildcostmetal = 30,
 		builder = false,
 		buildpic = "gok_negator.dds",
 		buildtime = 750,

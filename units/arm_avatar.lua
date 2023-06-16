@@ -2,8 +2,8 @@ return {
 	arm_avatar = {
 		acceleration = 0.036,
 		brakerate = 0.15,
-		buildcostenergy = 90012,
-		buildcostmetal = 5335,
+		buildcostenergy = 80500,
+		buildcostmetal = 5035,
 		builder = false,
 		buildpic = "arm_avatar.dds",
 		buildtime = 85000,

@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 45,
 		builder = false,
 		buildpic = "talon_mercenary.dds",
-		buildtime = 1450,
+		buildtime = 1200,
 		canattack = true,
 		canguard = true,
 		canmove = true,

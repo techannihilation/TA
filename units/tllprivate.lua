@@ -2,11 +2,11 @@ return {
 	tllprivate = {
 		acceleration = 0.24,
 		brakerate = 1.2,
-		buildcostenergy = 792,
+		buildcostenergy = 715,
 		buildcostmetal = 60,
 		builder = false,
 		buildpic = "tllprivate.dds",
-		buildtime = 1525,
+		buildtime = 1400,
 		canattack = true,
 		canguard = true,
 		canmove = true,
