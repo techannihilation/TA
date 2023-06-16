@@ -136,7 +136,7 @@ return {
 				name = "Gauss Cannon",
 				noselfdamage = true,
 				projectiles = 3,
-				range = 900,
+				range = 600,
 				reloadtime = 1.8,
 				rgbcolor = "1 0.95 0.9",
 				size = 1,
