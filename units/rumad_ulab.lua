@@ -55,7 +55,7 @@ return {
 		buildoptions = {
 			[1] = "rumad_uck",
 			[2] = "rumad_gala",
-			[2] = "rumad_hellion",
+			[3] = "rumad_hellion",
 		},
 		customparams = {
 			buildpic = "rumad_ulab.dds",
