@@ -163,6 +163,7 @@ return {
 	"gok_demoneye",
 	"rumad_ascout_lvl1",
 	"rumad_ascout_lvl2",
+	"rumad_min",
 
 	--T3 Raiser
 	"armerez",

@@ -20,6 +20,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local tllminDefID = UnitDefNames.tlltsetse.id
 	local talonminDefID = UnitDefNames.talon_carbon.id
 	local gokminDefID = UnitDefNames.gok_min.id
+	local rumadminDefID = UnitDefNames.rumad_min.id
 	local armcybrDefID = UnitDefNames.armcybr.id
 
   -- Nuke
@@ -79,7 +80,7 @@ if (gadgetHandler:IsSyncedCode()) then
 		if UnitID then
 			pilelimit = 8 --Default
 
-			if (UnitDefID == gokminDefID or UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID or UnitDefID == tllacidDefID) then
+			if (UnitDefID == gokminDefID or UnitDefID == corminDefID or UnitDefID == armminDefID or UnitDefID == rumadminDefID or UnitDefID == tllminDefID or UnitDefID == talonminDefID or UnitDefID == tllacidDefID) then
 				pilelimit = minelayer
 			end
 

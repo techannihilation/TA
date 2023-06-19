@@ -46,11 +46,12 @@ return {
 		buildoptions = {
 			-- LVL1
 			[1] = "rumad_ca",
-			[2] = "rumad_ascout_lvl1",
-			[3] = "rumad_fighter_lvl1",
-			[4] = "rumad_airtrans_lvl1",
-			[5] = "rumad_gunship_lvl1",
-			[6] = "rumad_bomber_lvl1",
+			[2] = "rumad_min",
+			[3] = "rumad_ascout_lvl1",
+			[4] = "rumad_fighter_lvl1",
+			[5] = "rumad_airtrans_lvl1",
+			[6] = "rumad_gunship_lvl1",
+			[7] = "rumad_bomber_lvl1",
 		},
 		customparams = {
 			buildpic = "rumad_ap.dds",
