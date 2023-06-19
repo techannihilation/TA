@@ -54,7 +54,7 @@ return {
 		yardmap = "yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy",
 		buildoptions = {
 			[1] = "rumad_uck",
-			-- [2] = "rumad_gala",
+			[2] = "rumad_gala",
 			[2] = "rumad_hellion",
 		},
 		customparams = {
