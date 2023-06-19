@@ -501,10 +501,6 @@ FireWeapon9()
 	{
 		sleep 125;	
 		++msl_1;
-		if (msl_1 == 8)
-		{
-			return (0);
-		}
 		if (msl_1 == 16)
 		{
 			msl_1 = 0;
@@ -559,10 +555,6 @@ FireWeapon10()
 	{
 		sleep 125;	
 		++msl_2;
-		if (msl_2 == 8)
-		{
-			return (0);
-		}
 		if (msl_2 == 16)
 		{
 			msl_2 = 0;

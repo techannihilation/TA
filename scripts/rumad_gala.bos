@@ -9,17 +9,18 @@ piece  base, pelvis, torso, lshoulder, larm, rshoulder, rarm,
        right_gun, left_gun,
        left_msl1, left_msl2, left_msl3,
        right_msl1, right_msl2, right_msl3,
-       pitchturret, sbarrel, barrel, flare,
-       rnuke1, rnuke2, rnuke3,
-       lnuke1, lnuke2, lnuke3;
+       right_shoulder_msl1, right_shoulder_msl2, right_shoulder_msl3, right_shoulder_msl4,
+       left_shoulder_msl1, left_shoulder_msl2, left_shoulder_msl3, left_shoulder_msl4,
+       pitchturret, sbarrel, barrel, flare;
 
-static-var  msl_1, msl_2, nuke, bMoving, bAiming, Main_Gun_Heading;
+static-var  msl_1, msl_3, msl_4, bMoving, bAiming, Main_Gun_Heading;
 
 // Signal definitions
 #define SIG_AIM_1			2
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
-#define SIG_MOVE			16
+#define SIG_AIM_4			16
+#define SIG_MOVE			32
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -206,9 +207,9 @@ Create()
 {
 	bAiming = FALSE;
 	bMoving = FALSE;
-	nuke = 0;
 	msl_1 = 0;
-	msl_2 = 0;
+	msl_3 = 0;
+	msl_4 = 0;
 	hide flare;
 	Main_Gun_Heading = 0;
 	start-script SmokeUnit();
@@ -294,97 +295,64 @@ FireSecondary()
 
 QuerySecondary(piecenum)
 {
-	if ( msl_1 == 0 or msl_1 == 6)
-	{
-		piecenum = right_msl1;
-	}
-	if ( msl_1 == 1 or msl_1 == 7)
-	{
-		piecenum = right_msl2;
-	}
-	if ( msl_1 == 2 or msl_1 == 8)
-	{
-		piecenum = right_msl3;
-	}
-	if ( msl_1 == 3 or msl_1 == 9)
-	{
-		piecenum = right_msl1;
-	}
-	if ( msl_1 == 4 or msl_1 == 10)
-	{
-		piecenum = right_msl2;
-	}
-	if ( msl_1 == 5 or msl_1 == 11)
-	{
-		piecenum = right_msl3;
-	}
-	if ( msl_1 == 12 or msl_1 == 18)
+	if ( msl_1 == 0 or msl_1 == 12)
 	{
 		piecenum = left_msl1;
 	}
-	if ( msl_1 == 13 or msl_1 == 19)
+	if ( msl_1 == 1 or msl_1 == 13)
 	{
 		piecenum = left_msl2;
 	}
-	if ( msl_1 == 14 or msl_1 == 20)
+	if ( msl_1 == 2 or msl_1 == 14)
 	{
 		piecenum = left_msl3;
 	}
-	if ( msl_1 == 15 or msl_1 == 21)
+	if ( msl_1 == 3 or msl_1 == 15)
 	{
 		piecenum = left_msl1;
 	}
-	if ( msl_1 == 16 or msl_1 == 22)
+	if ( msl_1 == 4 or msl_1 == 16)
 	{
 		piecenum = left_msl2;
 	}
-	if ( msl_1 == 17 or msl_1 == 23)
+	if ( msl_1 == 5 or msl_1 == 17)
 	{
 		piecenum = left_msl3;
+	}
+	if ( msl_1 == 6 or msl_1 == 18)
+	{
+		piecenum = right_msl1;
+	}
+	if ( msl_1 == 7 or msl_1 == 19)
+	{
+		piecenum = right_msl2;
+	}
+	if ( msl_1 == 8 or msl_1 == 20)
+	{
+		piecenum = right_msl3;
+	}
+	if ( msl_1 == 9 or msl_1 == 21)
+	{
+		piecenum = right_msl1;
+	}
+	if ( msl_1 == 10 or msl_1 == 22)
+	{
+		piecenum = right_msl2;
+	}
+	if ( msl_1 == 11 or msl_1 == 23)
+	{
+		piecenum = right_msl3;
 	}
 }
 
 AimFromTertiary(piecenum)
 {
-	if (nuke == 0)
-	{
-		piecenum = lnuke1;
-	}
-	if (nuke == 1)
-	{
-		piecenum = rnuke1;
-	}
-	if (nuke == 2)
-	{
-		piecenum = lnuke2;
-	}
-	if (nuke == 3)
-	{
-		piecenum = rnuke2;
-	}
-	if (nuke == 4)
-	{
-		piecenum = lnuke3;
-	}
-	if (nuke == 5)
-	{
-		piecenum = rnuke3;
-	}
-	if (nuke > 5)
-	{
-		piecenum = lnuke1;
-	}
-	
+	piecenum = torso;	
 }
 
 AimTertiary(heading, pitch)
 {
-	if(nuke > 5)
-	{
-		return (0);
-	}
-	
-	if (heading > (Main_Gun_Heading + 6000) or heading < (Main_Gun_Heading - 6000))
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
 		return (0);
 	}
@@ -397,68 +365,87 @@ AimTertiary(heading, pitch)
 
 FireTertiary()
 {	
-	if (nuke == 0)
+	while(TRUE)
 	{
-		hide lnuke1;
-		sleep 100;
+		sleep 125;	
+		++msl_3;
+		if (msl_3 == 4)
+		{
+			msl_3 = 0;
+			return (0);		
+		}
 	}
-	if (nuke == 1)
-	{
-		hide rnuke1;
-		sleep 100;
-	}
-	if (nuke == 2)
-	{
-		hide lnuke2;
-		sleep 100;
-	}
-	if (nuke == 3)
-	{
-		hide rnuke2;
-		sleep 100;
-	}
-	if (nuke == 4)
-	{
-		hide lnuke3;
-		sleep 100;
-	}
-	if (nuke == 5)
-	{
-		hide rnuke3;
-		sleep 100;
-	}	
-	++nuke;
 }
 
 QueryTertiary(piecenum)
 {
-	if (nuke == 0)
+	if ( msl_3 == 0)
 	{
-		piecenum = lnuke1;
+		piecenum = left_shoulder_msl1;
 	}
-	if (nuke == 1)
+	if ( msl_3 == 1)
 	{
-		piecenum = rnuke1;
+		piecenum = left_shoulder_msl2;
 	}
-	if (nuke == 2)
+	if ( msl_3 == 2)
 	{
-		piecenum = lnuke2;
+		piecenum = left_shoulder_msl3;
 	}
-	if (nuke == 3)
+	if ( msl_3 == 3)
 	{
-		piecenum = rnuke2;
+		piecenum = left_shoulder_msl4;
 	}
-	if (nuke == 4)
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = torso;	
+}
+
+AimWeapon4(heading, pitch)
+{
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
 	{
-		piecenum = lnuke3;
+		return (0);
 	}
-	if (nuke == 5)
+	
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	wait-for-turn torso around y-axis;
+	return (1);
+}
+
+FireWeapon4()
+{	
+	while(TRUE)
 	{
-		piecenum = rnuke3;
+		sleep 125;	
+		++msl_4;
+		if (msl_4 == 4)
+		{
+			msl_4 = 0;
+			return (0);		
+		}
 	}
-	if (nuke > 5)
+}
+
+QueryWeapon4(piecenum)
+{
+	if ( msl_4 == 0)
 	{
-		piecenum = lnuke1;
+		piecenum = right_shoulder_msl1;
+	}
+	if ( msl_4 == 1)
+	{
+		piecenum = right_shoulder_msl2;
+	}
+	if ( msl_4 == 2)
+	{
+		piecenum = right_shoulder_msl3;
+	}
+	if ( msl_4 == 3)
+	{
+		piecenum = right_shoulder_msl4;
 	}
 }
 

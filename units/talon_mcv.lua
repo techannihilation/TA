@@ -119,7 +119,7 @@ return {
 				burnblow = true,
 				cegtag = "armblaster",
 				craterareaofeffect = 225,
-				energypershot = 10000,
+				energypershot = 15000,
 				explosiongenerator = "custom:explosion_light_talon",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,

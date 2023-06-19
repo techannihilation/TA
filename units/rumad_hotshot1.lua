@@ -129,7 +129,7 @@ return {
 		},
 		weapondefs = {
 			rumad_supermissile = {
-				areaofeffect = 96,
+				areaofeffect = 128,
 				avoidfeature = false,
 				burst = 8,
 				burstrate = 0.15,
