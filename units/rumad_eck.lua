@@ -70,7 +70,7 @@ return {
 			[10] = "rumad_ulab",
 			[11] = "rumad_nanotc1",
 			[12] = "rumad_edrag",
-			--[13] = "",
+			[13] = "rumad_ejam",
 			[14] = "rumad_gate4",
 			[15] = "rumad_antinuke1",
 			[16] = "rumad_silo1",

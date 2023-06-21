@@ -59,8 +59,8 @@ return {
 		buildoptions = {
 			[1] = "armnanotc",
 			[2] = "armeyes",
-			[3] = "armveil",
-			[4] = "armfort",
+			[3] = "armfort",
+			[4] = "armveil",
 			[5] = "armarad",
 			[6] = "armmine2",
 			[7] = "armgrape",

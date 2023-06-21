@@ -71,7 +71,7 @@ return {
 			[11] = "rumad_ulab",
 			[12] = "rumad_nanotc3",
 			[13] = "rumad_edrag",
-			[14] = "armurad",
+			[14] = "rumad_urad",
 			[15] = "armamd2",
 			[16] = "armfsilo",
 			[17] = "rumad_gate1",
