@@ -78,9 +78,10 @@ return {
 			[16] = "rumad_sd",
 			[17] = "rumad_gate",
 			[18] = "rumad_lrpt",
-			[19] = "rumad_antinuke",
-			[20] = "rumad_silo",
-			[21] = "rumad_asp",
+			[19] = "rumad_rlrpt",
+			[20] = "rumad_antinuke",
+			[21] = "rumad_silo",
+			[22] = "rumad_asp",
 		},
 		customparams = {
 			buildpic = "rumad_aca.dds",

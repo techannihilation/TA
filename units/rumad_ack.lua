@@ -77,8 +77,9 @@ return {
 			[18] = "rumad_sd",
 			[19] = "rumad_gate",
 			[20] = "rumad_lrpt",
-			[21] = "rumad_antinuke",
-			[22] = "rumad_silo",
+			[21] = "rumad_rlrpt",
+			[22] = "rumad_antinuke",
+			[23] = "rumad_silo",
 			--[23] = "",
 		},
 		customparams = {

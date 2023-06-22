@@ -3,16 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, socle, turret, rsleeves, lsleeves, rholder, lholder,
-		flare1, flare2, flare3, flare4, flare5, flare6, flare7, flare8,
-		barrel1a, barrel1b, barrel1c, barrel1d,
-		barrel2a, barrel2b, barrel2c, barrel2d,
-		barrel3a, barrel3b, barrel3c, barrel3d,
-		barrel4a, barrel4b, barrel4c, barrel4d,
-		barrel5a, barrel5b, barrel5c, barrel5d,
-		barrel6a, barrel6b, barrel6c, barrel6d,
-		barrel7a, barrel7b, barrel7c, barrel7d,
-		barrel8a, barrel8b, barrel8c, barrel8d;
+piece  base, socle, turret, pitchturret,
+		flare1, flare2, flare3, flare4,
+		barrel1, barrel2, barrel3, barrel4;
 
 static-var  gun_1, gun_2;
 
@@ -61,11 +54,9 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
 	turn turret to y-axis heading speed <500.000000>;
-	turn lsleeves to x-axis <0.000000> - pitch speed <450.000000>;
-	turn rsleeves to x-axis <0.000000> - pitch speed <450.000000>;
+	turn pitchturret to x-axis <0.000000> - pitch speed <450.000000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn lsleeves around x-axis;
-	wait-for-turn rsleeves around x-axis;
+	wait-for-turn pitchturret around x-axis;
 	return (1);
 }
 
@@ -73,46 +64,18 @@ FirePrimary()
 {
 	if( gun_1 == 0 )
 	{
-		move barrel1d to z-axis [-0.800000] speed [150.000000];
-		move barrel1c to z-axis [-0.600000] speed [75.000000];
-		move barrel1b to z-axis [-0.400000] speed [37.000000];
+		move barrel1 to z-axis [-0.800000] speed [150.000000];
 		sleep 100;
-		move barrel1d to z-axis [0.000000] speed [10.000000];
-		move barrel1c to z-axis [0.000000] speed [10.000000];
-		move barrel1b to z-axis [0.000000] speed [10.000000];
+		move barrel1 to z-axis [0.000000] speed [10.000000];
 	}
 	if( gun_1 == 1 )
 	{
-		move barrel2d to z-axis [-0.800000] speed [150.000000];
-		move barrel2c to z-axis [-0.600000] speed [75.000000];
-		move barrel2b to z-axis [-0.400000] speed [37.000000];
+		move barrel2 to z-axis [-0.800000] speed [150.000000];
 		sleep 100;
-		move barrel2d to z-axis [0.000000] speed [10.000000];
-		move barrel2c to z-axis [0.000000] speed [10.000000];
-		move barrel2b to z-axis [0.000000] speed [10.000000];
-	}
-	if( gun_1 == 2 )
-	{
-		move barrel3d to z-axis [-0.800000] speed [150.000000];
-		move barrel3c to z-axis [-0.600000] speed [75.000000];
-		move barrel3b to z-axis [-0.400000] speed [37.000000];
-		sleep 100;
-		move barrel3d to z-axis [0.000000] speed [10.000000];
-		move barrel3c to z-axis [0.000000] speed [10.000000];
-		move barrel3b to z-axis [0.000000] speed [10.000000];
-	}
-	if( gun_1 == 3 )
-	{
-		move barrel4d to z-axis [-0.800000] speed [150.000000];
-		move barrel4c to z-axis [-0.600000] speed [75.000000];
-		move barrel4b to z-axis [-0.400000] speed [37.000000];
-		sleep 100;
-		move barrel4b to z-axis [0.000000] speed [10.000000];
-		move barrel4c to z-axis [0.000000] speed [10.000000];
-		move barrel4b to z-axis [0.000000] speed [10.000000];
+		move barrel2 to z-axis [0.000000] speed [10.000000];
 	}
 	++gun_1;
-	if( gun_1 == 4 )
+	if( gun_1 == 2 )
 	{
 		gun_1 = 0;
 	}
@@ -128,14 +91,6 @@ QueryPrimary(piecenum)
 	{
 		piecenum = flare2;
 	}
-	if( gun_1 == 2 )
-	{
-		piecenum = flare3;
-	}
-	if( gun_1 == 3 )
-	{
-		piecenum = flare4;
-	}
 }
 
 AimFromPrimary(piecenum)
@@ -148,8 +103,7 @@ AimSecondary(heading, pitch)
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
 	wait-for-turn turret around y-axis;
-	wait-for-turn lsleeves around x-axis;
-	wait-for-turn rsleeves around x-axis;
+	wait-for-turn pitchturret around x-axis;
 	return (1);
 }
 
@@ -157,47 +111,19 @@ FireSecondary()
 {
 	if( gun_2 == 0 )
 	{
-		move barrel5d to z-axis [-0.800000] speed [150.000000];
-		move barrel5c to z-axis [-0.600000] speed [75.000000];
-		move barrel5b to z-axis [-0.400000] speed [37.000000];
+		move barrel3 to z-axis [-0.800000] speed [150.000000];
 		sleep 100;
-		move barrel5d to z-axis [0.000000] speed [10.000000];
-		move barrel5c to z-axis [0.000000] speed [10.000000];
-		move barrel5b to z-axis [0.000000] speed [10.000000];
-		
+		move barrel3 to z-axis [0.000000] speed [10.000000];
 	}
 	if( gun_2 == 1 )
 	{
-		move barrel6d to z-axis [-0.800000] speed [150.000000];
-		move barrel6c to z-axis [-0.600000] speed [75.000000];
-		move barrel6b to z-axis [-0.400000] speed [37.000000];
+		move barrel4 to z-axis [-0.800000] speed [150.000000];
 		sleep 100;
-		move barrel6d to z-axis [0.000000] speed [10.000000];
-		move barrel6c to z-axis [0.000000] speed [10.000000];
-		move barrel6b to z-axis [0.000000] speed [10.000000];
+		move barrel4 to z-axis [0.000000] speed [10.000000];
 	}
-	if( gun_2 == 2 )
-	{
-		move barrel7d to z-axis [-0.800000] speed [150.000000];
-		move barrel7c to z-axis [-0.600000] speed [75.000000];
-		move barrel7b to z-axis [-0.400000] speed [37.000000];
-		sleep 100;
-		move barrel7d to z-axis [0.000000] speed [10.000000];
-		move barrel7c to z-axis [0.000000] speed [10.000000];
-		move barrel7b to z-axis [0.000000] speed [10.000000];
-	}
-	if( gun_2 == 3 )
-	{
-		move barrel8d to z-axis [-0.800000] speed [150.000000];
-		move barrel8c to z-axis [-0.600000] speed [75.000000];
-		move barrel8b to z-axis [-0.400000] speed [37.000000];
-		sleep 100;
-		move barrel8b to z-axis [0.000000] speed [10.000000];
-		move barrel8c to z-axis [0.000000] speed [10.000000];
-		move barrel8b to z-axis [0.000000] speed [10.000000];
-	}
+	
 	++gun_2;
-	if( gun_2 == 4 )
+	if( gun_2 == 2 )
 	{
 		gun_2 = 0;
 	}
@@ -207,19 +133,11 @@ QuerySecondary(piecenum)
 {
 	if( gun_2 == 0 )
 	{
-		piecenum = flare5;
+		piecenum = flare3;
 	}
 	if( gun_2 == 1 )
 	{
-		piecenum = flare6;
-	}
-	if( gun_2 == 2 )
-	{
-		piecenum = flare7;
-	}
-	if( gun_2 == 3 )
-	{
-		piecenum = flare8;
+		piecenum = flare4;
 	}
 }
 
@@ -238,34 +156,32 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode barrel1a type NOHEATCLOUD;
-		explode barrel2d type NOHEATCLOUD;
+		explode barrel1 type NOHEATCLOUD;
+		explode barrel2 type NOHEATCLOUD;
 		explode socle type NOHEATCLOUD;
-		explode barrel5c type NOHEATCLOUD;
-		explode barrel7b type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
-		explode rholder type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode barrel1a type NOHEATCLOUD | FALL;
-		explode barrel2d type NOHEATCLOUD | FALL;
+		explode barrel1 type NOHEATCLOUD | FALL;
+		explode barrel2 type NOHEATCLOUD | FALL;
 		explode socle type NOHEATCLOUD;
-		explode barrel5c type NOHEATCLOUD | FALL;
-		explode barrel7d type NOHEATCLOUD | FALL;
+		explode barrel3 type NOHEATCLOUD | FALL;
+		explode barrel4 type NOHEATCLOUD | FALL;
 		explode turret type NOHEATCLOUD | SHATTER;
-		explode rholder type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode barrel1a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel2d type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode socle type NOHEATCLOUD;
-	explode barrel5a type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel7c type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel4 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode barrel3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode rholder type NOHEATCLOUD;
+	explode pitchturret type NOHEATCLOUD;
 	return (corpsetype);
 }

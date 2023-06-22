@@ -2,8 +2,8 @@ return {
 	armhys = {
 		airsightdistance = 1000,
 		buildangle = 10000,
-		buildcostenergy = 292667,
-		buildcostmetal = 14217,
+		buildcostenergy = 292660,
+		buildcostmetal = 14210,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 65,
-		mass = 14217,
+		mass = 14210,
 		maxdamage = 6500,
 		maxslope = 20,
 		maxwaterdepth = 0,
@@ -136,7 +136,7 @@ return {
 				weaponvelocity = 1550,
 				damage = {
 					areoship = 400,
-					default = 5,					
+					default = 5,
 					air = 2500,
 				},
 			},

@@ -27,7 +27,7 @@ return {
 		maxdamage = 3710,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Argus",
+		name = "Jammer Tower",
 		noautofire = false,
 		objectname = "tllomni",
 		onoffable = true,

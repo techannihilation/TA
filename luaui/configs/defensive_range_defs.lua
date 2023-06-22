@@ -44,6 +44,9 @@ modConfig["TA"]["unitList"] =
 								armvulc2 = { weapons = { 1 } },
 								armtabi = { weapons = { 1 } },
 								armpcan = { weapons = { 1 } },
+								rumad_rlrpt = { weapons = { 1 } },
+								rumad_rlrpt2 = { weapons = { 1 } },
+								--rumad_rlrpt1 = { weapons = { 1 } },
 
 									--Anti-Air--
 								armrl = { weapons = { 2 } }, --light aa
