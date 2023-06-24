@@ -33,6 +33,7 @@ return {
 		noautofire = false,
 		objectname = "rumad_mohogeo",
 		radaremitheight = 36,
+		script = "rumad_mohogeo.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 273,
