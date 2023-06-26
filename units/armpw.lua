@@ -48,6 +48,7 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 1056,
 		unitname = "armpw",
+		unitrestricted = 200,
 		upright = true,
 		customparams = {
 			buildpic = "armpw.dds",

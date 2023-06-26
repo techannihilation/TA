@@ -47,6 +47,7 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 1120,
 		unitname = "tllprivate",
+		unitrestricted = 200,
 		upright = true,
 		customparams = {
 			buildpic = "tllprivate.dds",

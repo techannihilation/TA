@@ -47,6 +47,7 @@ return {
 		turninplacespeedlimit = 1.848,
 		turnrate = 950,
 		unitname = "rumad_puppy",
+		unitrestricted = 200,
 		upright = true,
 		customparams = {
 			buildpic = "rumad_puppy.dds",

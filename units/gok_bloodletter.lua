@@ -47,6 +47,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.848,
 		turnrate = 1210,
+		unitrestricted = 200,
 		unitname = "gok_bloodletter",
 		upright = true,
 		customparams = {
