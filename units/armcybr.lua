@@ -132,7 +132,6 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "bombdropxx",
 				startvelocity = 125,
-				targetable = 0,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",
@@ -149,7 +148,7 @@ return {
 				damage = {
 					commanders = 1500,
 					default = 7500,
-					
+
 					subs = 3750,
 					air = 750,
 				},

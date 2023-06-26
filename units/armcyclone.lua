@@ -129,7 +129,6 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "bombrel",
 				startvelocity = 500,
-				targetable = 0,
 				tracks = true,
 				waterweapon = false,
 				weaponacceleration = 500,

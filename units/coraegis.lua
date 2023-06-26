@@ -115,7 +115,7 @@ return {
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 90,
-				targetable = 1,
+				targetable = 8,
 				tolerance = 4000,
 				turnrate = 32768,
 				weaponacceleration = 80,

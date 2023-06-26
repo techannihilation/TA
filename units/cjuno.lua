@@ -143,7 +143,6 @@ return {
 				soundstart = "junofir2",
 				stockpile = true,
 				stockpiletime = 45,
-				targetable = 0,
 				tolerance = 4000,
 				turnrate = 24384,
 				weaponacceleration = 80,

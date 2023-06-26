@@ -144,7 +144,7 @@ return {
 				soundstart = "misicbm1",
 				stockpile = true,
 				stockpiletime = 90,
-				targetable = 4,
+				targetable = 8,
 				texture1 = "null",
 				texture2 = "null",
 				texture3 = "null",

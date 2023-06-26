@@ -132,7 +132,6 @@ return {
 				soundstart = "bombrel",
 				sprayangle = 1,
 				startvelocity = 220,
-				targetable = 0,
 				tracks = true,
 				waterweapon = false,
 				weaponacceleration = 200,
