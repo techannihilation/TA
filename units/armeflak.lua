@@ -4,8 +4,8 @@ return {
 		acceleration = 0.05,
 		activatewhenbuilt = true,
 		brakerate = 0.138,
-		buildcostenergy = 96847,
-		buildcostmetal = 6554,
+		buildcostenergy = 96840,
+		buildcostmetal = 6550,
 		builder = false,
 		buildpic = "armeflak.dds",
 		buildtime = 105000,
@@ -31,7 +31,7 @@ return {
 		idletime = 1800,
 		losemitheight = 26,
 		maneuverleashlength = 1200,
-		mass = 6554,
+		mass = 6550,
 		maxdamage = 9485,
 		maxslope = 18,
 		maxvelocity = 1.75,
@@ -148,7 +148,6 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					
 					air = 500,
 				},
 			},
@@ -191,7 +190,6 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-					
 					air = 100,
 				},
 			},
