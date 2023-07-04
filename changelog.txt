@@ -1,7 +1,8 @@
  4.48 => 4.49
-2023-06-27
+2023-07-04
 
 Balance :
+ - Increase cost for all T3  Geo except for Core
  - Add Limit Restriction Units (200) to all Ak Pewee Class
  - T1 Air Bomber : Balance damage between all faction. Need 5 bombers to destroy a Geo. Increase damage for arm / core to keep destroy this target in example.
  - Increase buildtime for all commander. Goal is to add more time to capture them.

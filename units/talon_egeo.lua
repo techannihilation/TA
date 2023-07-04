@@ -3,7 +3,7 @@ return {
 		activatewhenbuilt = true,
 		buildangle = 8192,
 		buildcostenergy = 325124,
-		buildcostmetal = 15010,
+		buildcostmetal = 22500,
 		builder = false,
 		buildpic = "talon_egeo.dds",
 		buildtime = 375000,
