@@ -221,6 +221,7 @@ local nanos = {
     [UnitDefNames["rumad_nanotc1"].id] = true,
     [UnitDefNames["rumad_nanotc2"].id] = true,
     [UnitDefNames["rumad_nanotc3"].id] = true,
+    [UnitDefNames["rumad_nanotc4"].id] = true,
     --[UnitDefNames["rumad_fnanotc"].id] = true,
     --[UnitDefNames["rumad_fnanotc1"].id] = true,
     --[UnitDefNames["rumad_fnanotc2"].id] = true,

@@ -90,7 +90,7 @@ local morphednanos = { --not in use, look like 125
   [UnitDefNames["rumad_nanotc1"].id] = true,
   [UnitDefNames["rumad_nanotc2"].id] = true,
   [UnitDefNames["rumad_nanotc3"].id] = true,
-  --[UnitDefNames["rumad_nanotc4"].id] = true,
+  [UnitDefNames["rumad_nanotc4"].id] = true,
 
 }
 

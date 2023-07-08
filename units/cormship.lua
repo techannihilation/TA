@@ -126,6 +126,7 @@ return {
 				areaofeffect = 48,
 				avoidfeature = false,
 				canattackground = false,
+				cegtag = "Core_Def_AA_Rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -156,7 +157,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
+
 					air = 80,
 				},
 			},
@@ -164,7 +165,7 @@ return {
 				areaofeffect = 142,
 				avoidfeature = false,
 				burnblow = true,
-				cegtag = "CORRAVENTRAIL",
+				cegtag = "corstartbursttrail",
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,

@@ -177,7 +177,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "armmhmsl",
+				model = "weapon_starburstm",
 				name = "RocketArtillery",
 				noselfdamage = true,
 				range = 900,
