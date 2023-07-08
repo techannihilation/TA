@@ -56,7 +56,7 @@ return {
 		turninplacespeedlimit = 3.3,
 		turnrate = 200,
 		unitname = "gok_erez",
-		workertime = 1500,
+		workertime = 1000,
 		customparams = {
 			buildpic = "gok_erez.dds",
 			faction = "GOK",
