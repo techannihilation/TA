@@ -16,9 +16,9 @@ activatescr()
 	{
 		move body to y-axis [10.0] speed [2];
 		sleep 250;
-		move body to y-axis [35.0] speed [4];
+		move body to y-axis [30.0] speed [4];
 		sleep 500;
-		move body to y-axis [45.0] speed [2];
+		move body to y-axis [35.0] speed [2];
 		sleep 250;
 	}
 	
@@ -45,7 +45,7 @@ deactivatescr()
 	
 	if( TRUE )
 	{
-		move body to y-axis [35.0] speed [2];
+		move body to y-axis [30.0] speed [2];
 		sleep 250;
 		move body to y-axis [10.0] speed [4];
 		sleep 500;
