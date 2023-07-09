@@ -525,7 +525,16 @@ cafus = {
     {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust3", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=3, length=30, emitVector = {0,1,0}, piece="thrust4", noIconDraw = true, priority=3, onActive=true}},
   },
-
+  rumad_builderlvl5 = {
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust1a", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust1b", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust2a", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust2b", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust3a", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust3b", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust4a", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust4b", noIconDraw = true, priority=3, onActive=true}},
+  },
   corseahook = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
@@ -904,6 +913,10 @@ coreca = {
  cdevastator = {
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
+ },
+ rumad_jafa = {
+    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
  },
 cordust = {
 {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,67,-148}, size=27, precision=22, repeatEffect=true}},

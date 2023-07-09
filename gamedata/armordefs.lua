@@ -219,7 +219,7 @@ return {
 		"gok_apocalypse",
 		"gok_octopus",
 		"talon_gold",
-		"rumad_ap",
+		"rumad_jafa",
 
 		-- T6 MAJOR
 		"gok_squid",
@@ -229,9 +229,6 @@ return {
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
-		"rumad_research_lvl1",
-		"rumad_research_lvl2",
-		"rumad_research_lvl3",
 	},
 
 	flamethrowers = {
