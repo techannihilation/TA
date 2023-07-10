@@ -535,6 +535,12 @@ cafus = {
     {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust4a", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=3, length=35, emitVector = {0,1,0}, piece="thrust4b", noIconDraw = true, priority=3, onActive=true}},
   },
+  rumad_overlord = {
+    {class='AirJet',options={color={1,1,1}, width=2, length=15, emitVector = {0,0,1}, piece="thrust11", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=2, length=15, emitVector = {0,0,1}, piece="thrust12", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=2, length=15, emitVector = {0,0,1}, piece="thrust21", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,1,1}, width=2, length=15, emitVector = {0,0,1}, piece="thrust22", noIconDraw = true, priority=3, onActive=true}},
+  },
   corseahook = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=6, length=20, emitVector = {0,1,0}, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},

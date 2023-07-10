@@ -27,6 +27,7 @@ return {
 		"gok_dirgesinger",
 		"gok_hookah",
 		"gok_nurgle",
+		"rumad_overlord",
 
 		--Transporters
 		"armatlas",

@@ -67,7 +67,7 @@ return {
 			[8] = "rumad_aap",
 			[9] = "rumad_eap",
 			[10] = "rumad_ulab",
-			[11] = "rumad_nanotc1",
+			[11] = "rumad_nanotc2",
 			[12] = "rumad_edrag",
 			[13] = "rumad_ejam",
 			[14] = "rumad_gate4",

@@ -1,0 +1,480 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, bombs,
+		thrust1, thrust2, thrust3, thrust4,
+		lfturret, lfpitchturret, lfbarrel1, lfbarrel2, lfbarrel3, lfflare1, lfflare2, lfflare3,
+		rfturret, rfpitchturret, rfbarrel1, rfbarrel2, rfbarrel3, rfflare1, rfflare2, rfflare3,
+		lbturret, lbpitchturret, lbbarrel1, lbbarrel2, lbbarrel3, lbflare1, lbflare2, lbflare3,
+		rbturret, rbpitchturret, rbbarrel1, rbbarrel2, rbbarrel3, rbflare1, rbflare2, rbflare3;
+
+#define SIG_AIM_1 2
+#define SIG_AIM_2 4
+#define SIG_AIM_3 8
+#define SIG_AIM_4 16
+#define SIG_AIM_5 32
+#define SIG_AIM_6 64
+#define SIG_AIM_7 128
+#define SIG_AIM_8 256
+#define SIG_AIM_9 512
+#define SIG_AIM_10 1024
+#define SIG_AIM_11 2048
+#define SIG_AIM_12 4096
+#define SIG_AIM_13 8192
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+			emit-sfx smoketype from rfturret;
+			emit-sfx smoketype from lbturret;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RestoreAfterDelay()
+{
+	sleep 4000;
+	turn lfturret to y-axis <0.000000> speed <55.000000>;
+	turn lbturret to y-axis <180.000000> speed <55.000000>;
+	turn rfturret to y-axis <0.000000> speed <55.000000>;
+	turn rbturret to y-axis <180.000000> speed <55.000000>;
+	turn lfpitchturret to x-axis <0.000000> speed <35.000000>;
+	turn lbpitchturret to x-axis <0.000000> speed <35.000000>;
+	turn rfpitchturret to x-axis <0.000000> speed <35.000000>;
+	turn rbpitchturret to x-axis <0.000000> speed <35.000000>;
+}
+
+Create()
+{
+	hide lfflare1;
+	hide lfflare2;
+	hide lfflare3;
+	hide lbflare1;
+	hide lbflare2;
+	hide lbflare3;
+	hide rfflare1;
+	hide rfflare2;
+	hide rfflare3;
+	hide rbflare1;
+	hide rbflare2;
+	hide rbflare3;
+	turn rbturret to y-axis <180.000000> now;
+	turn lbturret to y-axis <180.000000> now;
+	start-script SmokeUnit();
+}
+
+// TURRET 1
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn rfturret to y-axis heading speed <45.000000>;
+	turn rfpitchturret to x-axis <0.000000> - pitch speed <35.000000>;
+	wait-for-turn rfturret around y-axis;
+	wait-for-turn rfpitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	wait-for-turn rfturret around y-axis;
+	wait-for-turn rfpitchturret around x-axis;
+	return (1);
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	wait-for-turn rfturret around y-axis;
+	wait-for-turn rfpitchturret around x-axis;
+	return (1);
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = rfturret;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = rfturret;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = rfturret;
+}
+
+QueryWeapon1(piecenum)
+{	
+	piecenum = rfflare1;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = rfflare2;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = rfflare3;
+}
+
+FireWeapon1()
+{
+	emit-sfx 1024 from rfflare1;
+	move rfbarrel1 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move rfbarrel1 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon2()
+{
+	emit-sfx 1024 from rfflare2;
+	move rfbarrel2 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move rfbarrel2 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon3()
+{
+	emit-sfx 1024 from rfflare3;
+	move rfbarrel3 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move rfbarrel3 to z-axis [0.000000] speed [1.000000];
+}
+
+// TURRET 2
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn rbturret to y-axis heading speed <45.000000>;
+	turn rbpitchturret to x-axis <0.000000> - pitch speed <35.000000>;
+	wait-for-turn rbturret around y-axis;
+	wait-for-turn rbpitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	wait-for-turn rbturret around y-axis;
+	wait-for-turn rbpitchturret around x-axis;
+	return (1);
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	wait-for-turn rbturret around y-axis;
+	wait-for-turn rbpitchturret around x-axis;
+	return (1);
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = rbturret;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = rbturret;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = rbturret;
+}
+
+QueryWeapon4(piecenum)
+{	
+	piecenum = rbflare1;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = rbflare2;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = rbflare3;
+}
+
+FireWeapon4()
+{
+	emit-sfx 1024 from rbflare1;
+	move rbbarrel1 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move rbbarrel1 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon5()
+{
+	emit-sfx 1024 from rbflare2;
+	move rbbarrel2 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move rbbarrel2 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon6()
+{
+	emit-sfx 1024 from rbflare3;
+	move rbbarrel3 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move rbbarrel3 to z-axis [0.000000] speed [1.000000];
+}
+
+// TURRET 3
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn lfturret to y-axis heading speed <45.000000>;
+	turn lfpitchturret to x-axis <0.000000> - pitch speed <35.000000>;
+	wait-for-turn lfturret around y-axis;
+	wait-for-turn lfpitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon8(heading, pitch)
+{
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	wait-for-turn lfturret around y-axis;
+	wait-for-turn lfpitchturret around x-axis;
+	return (1);
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal SIG_AIM_9;
+	set-signal-mask SIG_AIM_9;
+	wait-for-turn lfturret around y-axis;
+	wait-for-turn lfpitchturret around x-axis;
+	return (1);
+}
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = lfturret;
+}
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = lfturret;
+}
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = lfturret;
+}
+
+QueryWeapon7(piecenum)
+{	
+	piecenum = lfflare1;
+}
+
+QueryWeapon8(piecenum)
+{
+	piecenum = lfflare2;
+}
+
+QueryWeapon9(piecenum)
+{
+	piecenum = lfflare3;
+}
+
+FireWeapon7()
+{
+	emit-sfx 1024 from lfflare1;
+	move lfbarrel1 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move lfbarrel1 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon8()
+{
+	emit-sfx 1024 from lfflare2;
+	move lfbarrel2 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move lfbarrel2 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon9()
+{
+	emit-sfx 1024 from lfflare3;
+	move lfbarrel3 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move lfbarrel3 to z-axis [0.000000] speed [1.000000];
+}
+
+// TURRET 4
+
+AimWeapon10(heading, pitch)
+{
+	signal SIG_AIM_10;
+	set-signal-mask SIG_AIM_10;
+	turn lbturret to y-axis heading speed <45.000000>;
+	turn lbpitchturret to x-axis <0.000000> - pitch speed <35.000000>;
+	wait-for-turn lbturret around y-axis;
+	wait-for-turn lbpitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon11(heading, pitch)
+{
+	signal SIG_AIM_11;
+	set-signal-mask SIG_AIM_11;
+	wait-for-turn lbturret around y-axis;
+	wait-for-turn lbpitchturret around x-axis;
+	return (1);
+}
+
+AimWeapon12(heading, pitch)
+{
+	signal SIG_AIM_12;
+	set-signal-mask SIG_AIM_12;
+	wait-for-turn lbturret around y-axis;
+	wait-for-turn lbpitchturret around x-axis;
+	return (1);
+}
+
+AimFromWeapon10(piecenum)
+{
+	piecenum =  lbturret;
+}
+
+AimFromWeapon11(piecenum)
+{
+	piecenum =  lbturret;
+}
+
+AimFromWeapon12(piecenum)
+{
+	piecenum =  lbturret;
+}
+
+QueryWeapon10(piecenum)
+{	
+	piecenum = lbflare1;
+}
+
+QueryWeapon11(piecenum)
+{
+	piecenum = lbflare2;
+}
+
+QueryWeapon12(piecenum)
+{
+	piecenum = lbflare3;
+}
+
+FireWeapon10()
+{
+	emit-sfx 1024 from lbflare1;
+	move lbbarrel1 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move lbbarrel1 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon11()
+{
+	emit-sfx 1024 from lbflare2;
+	move lbbarrel2 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move lbbarrel2 to z-axis [0.000000] speed [1.000000];
+}
+
+FireWeapon12()
+{
+	emit-sfx 1024 from lbflare3;
+	move lbbarrel3 to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move lbbarrel3 to z-axis [0.000000] speed [1.000000];
+}
+
+// BOMBS
+
+AimFromWeapon13(piecenum)
+{
+	piecenum = bombs;
+}
+
+AimWeapon13(heading, pitch)
+{
+	signal SIG_AIM_13;
+	set-signal-mask SIG_AIM_13;
+	return (1);
+}
+
+FireWeapon13()
+{
+
+}
+
+QueryWeapon13(piecenum)
+{
+	piecenum = bombs;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 50 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode rfturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode rbturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lfturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lbturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rbturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lfturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lbturret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
