@@ -20,7 +20,7 @@ return {
 		canstop = 1,
 		category = "ALL MOBILE VTOL",
 		collide = false,
-		corpse = "dead",
+		corpse = "heap",
 		cruisealt = 180,
 		description = "Tech Level 5",
 		dontland = 0,
@@ -73,12 +73,11 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = false,
-				damage = 5148,
-				description = "Builder Level 4 Wreckage",
+				damage = 15148,
+				description = "Builder Wreckage",
 				footprintx = 4,
 				footprintz = 8,
-				metal = 19599,
-				object = "rumad_builderlvl5_dead",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

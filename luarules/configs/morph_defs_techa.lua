@@ -751,14 +751,6 @@ local morphDefs = {
 	},
 
 	--Special units morph
-	talon_mcv  = {
-		into = 'talon_mcv1',
-	  time = 12,
-	},
-	talon_mcv1  = {
-		into = 'talon_mcv',
-	  time = 12,
-	},
 	armnomad = {
 		into = 'armvp',
 		time = 10,

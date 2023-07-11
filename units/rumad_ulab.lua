@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 87000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 3000,
-		buildinggrounddecalsizex = 25,
+		buildinggrounddecalsizex = 32,
 		buildinggrounddecalsizey = 15,
 		buildinggrounddecaltype = "rumad_lab_aoplane.dds",
 		buildpic = "rumad_ulab.dds",

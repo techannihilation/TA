@@ -61,7 +61,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 184,
-				object = "rumad_urad_heap",
+				object = "4x4b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
