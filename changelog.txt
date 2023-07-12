@@ -1,7 +1,9 @@
  4.48 => 4.49
-2023-07-09
+2023-07-12
 
 Balance :
+ - Delete Silver Morph for T4 Talon
+ - delete MainWeapon for independence Talon
  - Decrease BuidPower for all T3 Air Rez (1500=>1000)
  - Increase cost for all T3  Geo except for Core
  - Add Limit Restriction Units (200) to all Ak Pewee Class

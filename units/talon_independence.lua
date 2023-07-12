@@ -185,10 +185,10 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
-				def = "INDEPENDENCE_WEAPON",
-				onlytargetcategory = "SURFACE",
-			},
+			--[1] = {
+			--	def = "INDEPENDENCE_WEAPON",
+			--	onlytargetcategory = "SURFACE",
+			--},
 			[2] = {
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
