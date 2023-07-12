@@ -176,6 +176,9 @@ local pplants = {
 
 	--Rumad
 	["rumad_solar"] = true,
+	["rumad_advsolar"] = true,
+	["rumad_win"] = true,
+	["rumad_win1"] = true,
 	["rumad_fusion"] = true,
 	["rumad_afusion"] = true,
 	["rumad_geo_mini"] = true,

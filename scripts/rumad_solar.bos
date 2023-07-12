@@ -208,6 +208,8 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = FALSE;
 }
 
+/*
+
 HitByWeapon(anglex, anglez)
 {
 	if( get ACTIVATION )
@@ -225,10 +227,12 @@ HitByWeapon(anglex, anglez)
 	}
 }
 
+*/
+
 Create()
 {
 	Static_Var_1 = 0;
-	
+	/*
 	turn up to x-axis <90.0> now;
 	turn bottom to x-axis <-90.0> now;
 	turn right to z-axis <-90.0> now;
@@ -245,9 +249,11 @@ Create()
 	turn lbottom to z-axis <90.0> now;
 	
 	call-script InitState();
+	*/
 	start-script SmokeUnit();
 }
 
+/*
 Activate()
 {
 	if( Static_Var_1 )
@@ -262,6 +268,7 @@ Deactivate()
 {
 	start-script RequestState(1);
 }
+*/
 
 StartMoving()
 {

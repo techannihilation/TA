@@ -20,6 +20,7 @@ end
 local noClosedE = {
     [UnitDefNames.corsolar.id] = true,
     [UnitDefNames.armsolar.id] = true,
+    [UnitDefNames.rumad_advsolar.id] = true,
     [UnitDefNames.crnns.id] = true,
     [UnitDefNames.tllsolar.id] = true,
     [UnitDefNames.tlladvsolar.id] = true,

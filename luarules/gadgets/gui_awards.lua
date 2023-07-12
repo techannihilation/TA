@@ -116,6 +116,7 @@ local econUnitDefIDs = { --better to hardcode these since its complicated to pic
   UnitDefNames.rumad_fusion.id,
   UnitDefNames.rumad_efusion.id,
   UnitDefNames.rumad_solar.id,
+  UnitDefNames.rumad_advsolar.id,
   UnitDefNames.rumad_win.id,
   --UnitDefNames.rumad_gen.id,
   UnitDefNames.rumad_geo_mini.id,

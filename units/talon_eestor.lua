@@ -8,7 +8,7 @@ return {
 		builder = false,
 		buildpic = "talon_eestor.dds",
 		buildtime = 90000,
-		category = "ALL SURFACE",
+		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "110 85 90",

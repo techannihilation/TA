@@ -152,7 +152,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "e.user")
 
       -- t1.5 wind/tidals
-      elseif (ud.name == "armawin") or (ud.name == "talon_tide1") or (ud.name == "talon_win1") or (ud.name == "corawin") or (ud.name == "armatidal") or (ud.name == "coratidal") or (ud.name == "tllatide") or (ud.name == "tllwin1") or (ud.name == "gok_tide1") or (ud.name == "gok_win1") then
+      elseif (ud.name == "armawin") or (ud.name == "talon_tide1") or (ud.name == "talon_win1") or (ud.name == "corawin") or (ud.name == "armatidal") or (ud.name == "coratidal") or (ud.name == "tllatide") or (ud.name == "tllwin1") or (ud.name == "gok_tide1") or (ud.name == "gok_win1") or (ud.name == "rumad_win1") then
         Spring.SetUnitDefIcon(udid, "e1.user")
 
       -- fighters

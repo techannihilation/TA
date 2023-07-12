@@ -12,7 +12,7 @@ end
 
 --fixed for 0.83 (by vbs)
 
-local bombers={armlance=true, armsb=true, armcyclone=true, corsb=true, armpnix=true, armcybr=true, armgripn=true, armthund=true, armsb=true, corhurc=true, corsb=true, corshad=true, cortitan=true, tllbomber=true, tllabomber=true, tlltorpp=true, coreclipse=true, tllseab=true, corseap=true, armseap=true, talon_shade, talon_handgod, talon_eclipse, talon_trident, gok_dirgesinger}
+local bombers={armlance=true, armsb=true, armcyclone=true, corsb=true, armpnix=true, armcybr=true, armgripn=true, armthund=true, armsb=true, corhurc=true, corsb=true, corshad=true, cortitan=true, tllbomber=true, tllabomber=true, tlltorpp=true, coreclipse=true, tllseab=true, corseap=true, armseap=true, talon_shade, talon_handgod, talon_eclipse, talon_trident, gok_dirgesinger, rumad_bomber_lvl1, rumad_bomber_lvl2, rumad_bomber_lvl3}
 local bomber_uds={}
 
 local GetUnitWeaponState   = Spring.GetUnitWeaponState
