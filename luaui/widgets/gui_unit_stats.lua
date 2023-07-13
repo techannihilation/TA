@@ -183,7 +183,9 @@ local pplants = {
 	["rumad_afusion"] = true,
 	["rumad_geo_mini"] = true,
 	["rumad_geo"] = true,
+	["rumad_sfusion"] = true,
 	["rumad_efusion"] = true,
+	["rumad_ufus"] = true,
 
 	--T3 Geo
 	["armfor"] = true,

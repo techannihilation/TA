@@ -172,11 +172,11 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "e6.user")
 
       -- t4 fusions
-      elseif (ud.name == "armefus") or (ud.name == "corefus") or (ud.name == "tllefus") or (ud.name == "talon_efus") or (ud.name == "gok_efusion") then
+      elseif (ud.name == "armefus") or (ud.name == "corefus") or (ud.name == "tllefus") or (ud.name == "talon_efus") or (ud.name == "gok_efusion") or (ud.name == "rumad_efusion") then
         Spring.SetUnitDefIcon(udid, "e5.user")
 
       -- t3 fusions
-      elseif (ud.name == "cfusionplant") or (ud.name == "afusionplant") or (ud.name == "tllmegacoldfus") or (ud.name == "talon_sfus") or (ud.name == "gok_sfusion") then
+      elseif (ud.name == "cfusionplant") or (ud.name == "afusionplant") or (ud.name == "tllmegacoldfus") or (ud.name == "talon_sfus") or (ud.name == "gok_sfusion") or (ud.name == "rumad_sfusion") then
         Spring.SetUnitDefIcon(udid, "e4.user")
 
       -- t2 fusions

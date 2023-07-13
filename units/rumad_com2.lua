@@ -70,7 +70,7 @@ return {
 		upright = true,
 		workertime = 600,
 		buildoptions = {
-			[1] = "rumad_efusion",
+			[1] = "rumad_sfusion",
 			[2] = "rumad_egeo",
 			[3] = "rumad_emex",
 			[4] = "rumad_metalmakerlvl3",

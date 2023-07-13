@@ -71,8 +71,8 @@ return {
 		workertime = 1200,
 		buildoptions = {
 			[1] = "rumad_fusion",
-			[2] = "rumad_efusion",
-			[3] = "armefus",
+			[2] = "rumad_sfusion",
+			[3] = "rumad_efusion",
 			--[4] = "",
 			[5] = "rumad_egeo",
 			[6] = "rumad_mas",
