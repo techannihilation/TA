@@ -256,9 +256,13 @@ AimFromWeapon1(piecenum)
 
 AimWeapon1(heading, pitch)
 {
+	if( bAiming == 1 )
+	{
+		return (0);
+	}
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
-	while( bBuilding )
+	while( bBuilding)
 	{
 		sleep 500;
 	}
