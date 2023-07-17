@@ -1,9 +1,7 @@
 return {
 	rumad_mine3 = {
-		acceleration = 0,
 		activatewhenbuilt = false,
 		blocking = false,
-		brakerate = 0,
 		buildcostenergy = 1860,
 		buildcostmetal = 75,
 		builder = false,
@@ -22,8 +20,7 @@ return {
 		collisionvolumetype = "CylY",
 		decloakspherical = false,
 		defaultmissiontype = "Standby_Mine",
-		description = "",
-		energyuse = 0,
+		description = "Heavy",
 		explodeas = "MINE_HEAVY",
 		firestandorders = 1,
 		firestate = 2,
@@ -40,7 +37,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		mincloakdistance = 0,
-		name = "Heavy Mine",
+		name = "Mine",
 		noautofire = false,
 		objectname = "rumad_mine3",
 		onoffable = false,

@@ -46,9 +46,10 @@ return {
 		yardmap = "ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo ooooooooooooooo",
 		buildoptions = {
 			[1] = "rumad_eca",
-			[2] = "rumad_fighter_lvl3",
-			[3] = "rumad_gunship_lvl3",
-			[4] = "rumad_bomber_lvl3",
+			[2] = "rumad_erez",
+			[3] = "rumad_fighter_lvl3",
+			[4] = "rumad_gunship_lvl3",
+			[5] = "rumad_bomber_lvl3",
 		},
 		customparams = {
 			buildpic = "rumad_eap.dds",

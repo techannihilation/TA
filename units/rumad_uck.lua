@@ -64,7 +64,7 @@ return {
 			--[4] = "",
 			[5] = "rumad_egeo",
 			[6] = "rumad_mas",
-			[7] = "ametalmakerlvl3",
+			[7] = "rumad_metalmakerlvl4",
 			[8] = "rumad_emstor",
 			[9] = "rumad_eestor",
 			[10] = "rumad_ulab",

@@ -54,7 +54,7 @@ return {
 		workertime = 2500,
 		buildoptions = {
 			[1] = "rumad_ufus",
-			[2] = "ametalmakerlvl4",
+			[2] = "rumad_metalmakerlvl5",
 			[3] = "rumad_mas",
 			[4] = "rumad_ulab",
 			[5] = "rumad_yard",

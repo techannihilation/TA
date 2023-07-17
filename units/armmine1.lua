@@ -7,10 +7,6 @@ return {
 		buildcostenergy = 252,
 		buildcostmetal = 10,
 		builder = false,
-		buildinggrounddecaldecayspeed = 30,
-		buildinggrounddecalsizex = 3,
-		buildinggrounddecalsizey = 3,
-		buildinggrounddecaltype = "armmine1_aoplane.dds",
 		buildpic = "armmine1.dds",
 		buildtime = 50,
 		canattack = false,
@@ -60,7 +56,6 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 0,
 		unitname = "armmine1",
-		usebuildinggrounddecal = true,
 		customparams = {
 			buildpic = "armmine1.dds",
 			detonaterange = "64",
