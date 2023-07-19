@@ -43,6 +43,8 @@ end
 
 local SPIRAL_INCREMENT = 1.0
 local MAX_SPIRAL_T = 20
+local mapX = Game.mapSizeX
+local mapZ = Game.mapSizeZ
 function gadget:Explosion(w, x, y, z, owner)
 	if spawn_defs_id[w] and owner then
 		isonwater = Spring.GetGroundHeight(x,z)
@@ -52,6 +54,12 @@ function gadget:Explosion(w, x, y, z, owner)
 			local t = 1.0
 			local init_X = x 
 			local init_Z = z
+
+			if init_X < 0 or init_X > mapX or init_Z < 0 or init_Z > mapZ then 
+				-- This happens if projectile has been deflected by shield and falls outside map , should not spawn zeuses for example if whole base is covered by shield
+				return false
+			end
+
 			-- Easiest way and less costly is trying with a spiral 
 			while Spring.GetGroundBlocked(x,z) and t < MAX_SPIRAL_T do
 				--Spring.Echo("Blocked Spiral check "..x.." "..z)
