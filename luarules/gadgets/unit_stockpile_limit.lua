@@ -46,6 +46,7 @@ if (gadgetHandler:IsSyncedCode()) then
 	local gokmsiloDefID = UnitDefNames.gok_hcar.id
 	local rumadsiloDefID = UnitDefNames.rumad_silo.id
 	local rumadsilo1DefID = UnitDefNames.rumad_silo1.id
+	local rumadsilo2DefID = UnitDefNames.rumad_silo2.id
 
   -- Launcher
 	local gok_blackpollenDefID = UnitDefNames.gok_blackpollen.id
@@ -101,7 +102,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			or UnitDefID == tllsiloDefID or UnitDefID == tllsilo1DefID or UnitDefID == tllsilo2DefID
 			or UnitDefID == talonsiloDefID or UnitDefID == talonsilo1DefID or UnitDefID == talonsilo2DefID
 			or UnitDefID == goksiloDefID or UnitDefID == goksilo1DefID or UnitDefID == goksilo2DefID
-			or UnitDefID == rumadsiloDefID or UnitDefID == rumadsilo1DefID
+			or UnitDefID == rumadsiloDefID or UnitDefID == rumadsilo1DefID or UnitDefID == rumadsilo2DefID
 			or UnitDefID == armcybrDefID) then
 				pilelimit = nuke
 			end

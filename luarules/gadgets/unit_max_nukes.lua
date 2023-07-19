@@ -22,7 +22,7 @@ local GetTeamList = Spring.GetTeamList
 -- CONSTANS
 --------------------------------------------------------------------------------
 local maxNukes = 12
-local NukeList = {"armsilo", "armsilo1", "corsilo", "corsilo1", "tllsilo", "tllsilo1", "talon_silo1", "talon_silo", "tllfsilo", "talon_elixir", "corfsilo", "armfsilo", "gok_silo", "gok_silo1", "gok_silo2", "rumad_silo", "rumad_silo1"}
+local NukeList = {"armsilo", "armsilo1", "corsilo", "corsilo1", "tllsilo", "tllsilo1", "talon_silo1", "talon_silo", "tllfsilo", "talon_elixir", "corfsilo", "armfsilo", "gok_silo", "gok_silo1", "gok_silo2", "rumad_silo", "rumad_silo1", "rumad_silo2"}
 local NUKES = {}
 
 for _, v in pairs(NukeList) do

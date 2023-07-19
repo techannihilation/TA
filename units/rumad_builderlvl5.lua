@@ -63,7 +63,7 @@ return {
 			[9] = "rumad_utur",
 			[10] = "rumad_gate3",
 			[11] = "rumad_antinuke2",
-			[12] = "armfsilo",
+			[12] = "rumad_silo2",
 			[15] = "armtabi",
 		},
 		customparams = {
