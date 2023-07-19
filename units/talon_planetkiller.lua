@@ -2,7 +2,6 @@ return {
 	talon_planetkiller = {
 		acceleration = 0.005,
 		activatewhenbuilt = false,
-		airsightdistance = 1200,
 		airStrafe  = true,
 		airHoverFactor = 1,
 		bankingAllowed = false,

@@ -488,7 +488,7 @@ cafus = {
     {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="fthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="bthrust", noIconDraw = true, priority=3, onActive=true}},
   },
-  rumad_research_lvl2 = {
+  rumad_thirdeye = {
     {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="rthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="lthrust", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,1,1}, width=5, length=50, emitVector = {0,1,0}, piece="fthrust", noIconDraw = true, priority=3, onActive=true}},

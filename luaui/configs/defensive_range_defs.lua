@@ -59,15 +59,6 @@ modConfig["TA"]["unitList"] =
 								armmercury = { weapons = { 2 } },
 								armhys = { weapons = { 2 } },
 
-									--Anti-Nuke--
-								armamd = { weapons = { 3 } }, --antinuke
-								armamd1 = { weapons = { 3 } }, --antinuke
-								armamd2 = { weapons = { 3 } }, --antinuke
-								armmds = { weapons = { 3 } }, --Missile Defence System
-								armcarry = { weapons = { 1 } }, --antinuke
-								armucar = { weapons = { 1 } }, --antinuke
-								corucar = { weapons = { 1 } }, --antinuke
-
 								--Core
 									--Ground Weapons--
 								cormaw = { weapons = { 1 } },
@@ -126,10 +117,18 @@ modConfig["TA"]["unitList"] =
 								cortron = { weapons = { 3 } },
 								gok_eveningstar = { weapons = { 3 } },
 								rumad_antinuke = { weapons = { 1 } },
-								rumad_antinuke1 = { weapons = { 1 } },
+								rumad_antinuke1 = { weapons = { 3 } },
+								rumad_antinuke2 = { weapons = { 3 } },
 								corarbritator = { weapons = { 3 } },
-								talon_carry = { weapons = { 1 } },
+								talon_carry = { weapons = { 3 } },
 								talon_ucar = { weapons = { 6 } },
+								armamd = { weapons = { 3 } }, --antinuke
+								armamd1 = { weapons = { 3 } }, --antinuke
+								armamd2 = { weapons = { 3 } }, --antinuke
+								armmds = { weapons = { 3 } }, --Missile Defence System
+								armcarry = { weapons = { 1 } }, --antinuke
+								armucar = { weapons = { 1 } }, --antinuke
+								corucar = { weapons = { 1 } }, --antinuke
 
 								--TLL
 									--Ground Weapons--

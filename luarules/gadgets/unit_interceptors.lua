@@ -57,6 +57,7 @@ local antiNukes = {
   --Rumad
   [UnitDefNames["rumad_antinuke"].id] = true,
   [UnitDefNames["rumad_antinuke1"].id] = true,
+  [UnitDefNames["rumad_antinuke2"].id] = true,
 }
 
 local interceptorsID = {}
