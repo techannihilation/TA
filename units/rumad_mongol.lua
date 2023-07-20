@@ -145,7 +145,7 @@ return {
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 350,
+				weaponvelocity = 500,
 				damage = {
 					default = 1400,
 					subs = 5,
@@ -231,26 +231,31 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[3] = {
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[4] = {
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[5] = {
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
 			[6] = {
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,

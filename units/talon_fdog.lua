@@ -147,7 +147,7 @@ return {
 				soundstart = "Mavgun2",
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 350,
+				weaponvelocity = 400,
 				damage = {
 					default = 300,
 					subs = 5,
