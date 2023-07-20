@@ -36,7 +36,7 @@ return {
 		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo",
 		customparams = {
 			buildpic = "rumad_silo2.dds",
-			faction = "ARM",
+			faction = "RUMAD",
 		},
 		featuredefs = {
 			dead = {

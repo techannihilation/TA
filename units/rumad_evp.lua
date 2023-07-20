@@ -55,7 +55,8 @@ return {
 			[4] = "rumad_mlrpt",
 			[5] = "rumad_mcv",
 			[6] = "rumad_macross",
-			[7] = "rumad_mongol",
+			[7] = "rumad_howie",
+			[8] = "rumad_mongol",
 		},
 		customparams = {
 			buildpic = "rumad_evp.dds",

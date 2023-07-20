@@ -501,7 +501,6 @@ StartBuilding(Func_Var_1, Func_Var_2)
 	signal SIG_AIM_1;
 	signal SIG_AIM_2;
 	bBuilding = 1;
-	bAiming = 1;
 	turn rarm to x-axis <0.000000> speed <15.000000>;
 	turn rshoulder to x-axis <0.000000> speed <15.000000>;
 	turn larm to x-axis <-60.000000> speed <70.000000>;

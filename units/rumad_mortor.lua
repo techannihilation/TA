@@ -129,7 +129,7 @@ return {
 				name = "Plasma",
 				noselfdamage = true,
 				proximitypriority = -3,
-				range = 1400,
+				range = 1500,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.9",
 				separation = 0.45,
@@ -143,7 +143,7 @@ return {
 				stages = 20,
 				turret = true,
 				weapontype = "Cannon",
-				weaponvelocity = 425,
+				weaponvelocity = 500,
 				damage = {
 					default = 360,
 					subs = 5,

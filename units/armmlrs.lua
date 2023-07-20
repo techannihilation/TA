@@ -14,8 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "60 45 90",
-		
+		collisionvolumescales = "60 45 90",		
 		collisionvolumetype = "box",
 		defaultmissiontype = "Standby",
 		description = "Experimental Rocket Vehicle",

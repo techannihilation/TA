@@ -1,0 +1,373 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  turretBase, howitzer, fire1, fire2, fire3, fire4, waist, rleg, rfoot, lleg, lfoot, lupleg,
+       rupleg, base, pelvis;
+
+static-var  bMoving, bAiming, gun_1, Static_Var_10;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_3			4
+#define SIG_MOVE			8
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			Func_Var_4 = Rand( 1, 4 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from base;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from howitzer;
+			}
+			if( Func_Var_4 == 3 )
+			{
+				emit-sfx smoketype from fire2;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+MotionControl()
+{
+	while( TRUE )
+	{
+		if( !bAiming )
+		{
+			if( !Static_Var_10 )
+			{
+				turn rupleg to x-axis <-35.000000> speed <140.000000>;
+				turn lupleg to x-axis <28.000000> speed <76.000000>;
+			}
+			if( Static_Var_10 )
+			{
+				turn rupleg to x-axis <-35.000000> speed <70.000000>;
+				turn lupleg to x-axis <28.000000> speed <56.000000>;
+			}
+			turn lleg to x-axis <-15.000000> speed <30.000000>;
+			turn lfoot to x-axis <-13.000000> speed <36.000000>;
+			turn waist to z-axis <10.000000> speed <8.000000>;
+			sleep 500;
+			turn waist to x-axis <0.000000> speed <28.000000>;
+			turn rupleg to x-axis <10.000000> speed <83.324176>;
+			turn rleg to x-axis <5.000000> speed <16.659341>;
+			turn lupleg to x-axis <35.000000> speed <23.324176>;
+			turn lleg to x-axis <10.000000> speed <83.324176>;
+			turn lfoot to x-axis <5.000000> speed <60.000000>;
+			sleep 300;
+			turn waist to x-axis <-10.500000> speed <22.000000>;
+			turn waist to y-axis <2.000000> speed <3.000000>;
+			turn lupleg to x-axis <-35.000000> speed <140.000000>;
+			turn rupleg to x-axis <28.000000> speed <76.000000>;
+			turn rleg to x-axis <-15.000000> speed <30.000000>;
+			turn rfoot to x-axis <-13.000000> speed <36.000000>;
+			turn waist to z-axis <-10.000000> speed <8.000000>;
+			sleep 500;
+			turn waist to x-axis <0.000000> speed <28.000000>;
+			turn lupleg to x-axis <10.000000> speed <83.324176>;
+			turn lleg to x-axis <5.000000> speed <16.659341>;
+			turn rupleg to x-axis <35.000000> speed <23.324176>;
+			turn rleg to x-axis <10.000000> speed <83.324176>;
+			turn rfoot to x-axis <5.000000> speed <60.000000>;
+			if( Static_Var_10 )
+			{
+				Static_Var_10 = 0;
+			}
+			sleep 300;
+			turn waist to x-axis <-10.500000> speed <22.000000>;
+			turn waist to y-axis <-2.000000> speed <3.000000>;
+		}
+		if( bAiming )
+		{
+			if( !Static_Var_10 )
+			{
+				turn rupleg to x-axis <-35.000000> speed <140.000000>;
+				turn lupleg to x-axis <28.000000> speed <76.000000>;
+			}
+			if( Static_Var_10 )
+			{
+				turn rupleg to x-axis <-35.000000> speed <70.000000>;
+				turn lupleg to x-axis <28.000000> speed <56.000000>;
+			}
+			turn lleg to x-axis <-15.000000> speed <30.000000>;
+			turn lfoot to x-axis <-13.000000> speed <36.000000>;
+			sleep 500;
+			turn rupleg to x-axis <10.000000> speed <83.324176>;
+			turn rleg to x-axis <5.000000> speed <16.659341>;
+			turn lupleg to x-axis <35.000000> speed <23.324176>;
+			turn lleg to x-axis <10.000000> speed <83.324176>;
+			turn lfoot to x-axis <5.000000> speed <60.000000>;
+			sleep 300;
+			turn lupleg to x-axis <-35.000000> speed <140.000000>;
+			turn rupleg to x-axis <28.000000> speed <76.000000>;
+			turn rleg to x-axis <-15.000000> speed <30.000000>;
+			turn rfoot to x-axis <-13.000000> speed <36.000000>;
+			sleep 500;
+			turn lupleg to x-axis <10.000000> speed <83.324176>;
+			turn lleg to x-axis <5.000000> speed <16.659341>;
+			turn rupleg to x-axis <35.000000> speed <23.324176>;
+			turn rleg to x-axis <10.000000> speed <83.324176>;
+			turn rfoot to x-axis <5.000000> speed <60.000000>;
+			if( Static_Var_10 )
+			{
+				Static_Var_10 = 0;
+			}
+			sleep 300;
+		}
+	}
+}
+
+Create()
+{
+	hide fire1;
+	hide fire2;
+	hide fire3;
+	hide fire4;
+	bMoving = FALSE;
+	bAiming = FALSE;
+	Static_Var_10 = 1;
+	gun_1 = 0;
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+	turn TurretBase to y-axis <0.000000> speed <35.000000>;
+	turn TurretBase to x-axis <0.000000> speed <40.000000>;
+	wait-for-turn TurretBase around x-axis;
+	bAiming = FALSE;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script MotionControl();
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	bMoving = FALSE;
+	Static_Var_10 = 1;
+	turn rupleg to x-axis <0.000000> speed <100.000000>;
+	turn rleg to x-axis <0.000000> speed <70.000000>;
+	turn rfoot to x-axis <0.000000> speed <60.000000>;
+	turn lupleg to x-axis <0.000000> speed <100.000000>;
+	turn lleg to x-axis <0.000000> speed <70.000000>;
+	turn lfoot to x-axis <0.000000> speed <60.000000>;
+	turn waist to z-axis <0.000000> speed <12.000000>;
+	if( !bAiming )
+	{
+		turn howitzer to x-axis <0.000000> speed <6.000000>;
+		turn waist to y-axis <0.000000> speed <1.000000>;
+	}
+	sleep 100;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	turn TurretBase to y-axis heading speed <80.000000>;
+	turn TurretBase to x-axis <0.000000> - pitch speed <45.000000>;
+	wait-for-turn TurretBase around y-axis;
+	wait-for-turn TurretBase around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+/*
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		show fire1;
+		hide fire1;
+		gun_1 = howitzer;
+		wait-for-move howitzer along z-axis;
+		move howitzer to z-axis [0.000000] speed [2.000000];
+		move HowitzerBack to z-axis [0.000000] speed [1.000000];
+		return (0);
+	}
+	if( gun_1 == 1 )
+	{
+		show fire2;
+		move HowitzerBack to z-axis [-1.000000] now;
+		move howitzer to z-axis [-1.500000] speed [200.000000];
+		sleep 140;
+		hide fire2;
+		gun_1 = fire1;
+		wait-for-move howitzer along z-axis;
+		move howitzer to z-axis [0.000000] speed [2.000000];
+		move HowitzerBack to z-axis [0.000000] speed [1.000000];
+		return (0);
+	}
+	if( gun_1 == 2 )
+	{
+		show fire3;
+		move HowitzerBack to z-axis [-1.000000] now;
+		move howitzer to z-axis [-1.500000] speed [200.000000];
+		sleep 140;
+		hide fire3;
+		gun_1 = fire2;
+		wait-for-move howitzer along z-axis;
+		move howitzer to z-axis [0.000000] speed [2.000000];
+		move HowitzerBack to z-axis [0.000000] speed [1.000000];
+		return (0);
+	}
+	if( gun_1 == 3 )
+	{
+		Static_Var_7 = 1;
+		show fire4;
+		move HowitzerBack to z-axis [-1.000000] now;
+		move howitzer to z-axis [-1.500000] speed [200.000000];
+		sleep 140;
+		hide fire4;
+		gun_1 = TurretBase;
+		wait-for-move howitzer along z-axis;
+		move howitzer to z-axis [0.000000] speed [2.000000];
+		move HowitzerBack to z-axis [0.000000] speed [1.000000];
+		return (0);
+	}
+}
+*/
+
+FirePrimary()
+{
+	gun_1 = 0;	
+	sleep 350;
+
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
+	
+	sleep 350;
+	gun_1 = 1;
+
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
+	
+	sleep 350;
+	gun_1 = 2;
+	
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
+	
+	sleep 350;
+	gun_1 = 3;
+
+	//move howitzer to z-axis [-1.500000] speed [500.000000];
+	sleep 75;
+	move howitzer to z-axis [0.000000] speed [2.000000];
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = fire1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = fire2;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = fire3;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = fire4;
+	}
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = howitzer;
+}
+
+Killed(severity, corpsetype)
+{
+	hide fire1;
+	hide fire2;
+	hide fire3;
+	hide fire4;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type NOHEATCLOUD;
+		explode howitzer type NOHEATCLOUD;
+		explode lfoot type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		explode lupleg type NOHEATCLOUD;
+		explode waist type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		explode rupleg type NOHEATCLOUD;
+		explode TurretBase type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type NOHEATCLOUD | FALL;
+		explode howitzer type NOHEATCLOUD | SHATTER;
+		explode lfoot type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		explode lupleg type NOHEATCLOUD;
+		explode waist type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		explode rupleg type NOHEATCLOUD;
+		explode TurretBase type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode howitzer type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode lfoot type NOHEATCLOUD;
+	explode lleg type NOHEATCLOUD;
+	explode lupleg type NOHEATCLOUD;
+	explode waist type NOHEATCLOUD;
+	explode rfoot type NOHEATCLOUD;
+	explode rleg type NOHEATCLOUD;
+	explode rupleg type NOHEATCLOUD;
+	explode TurretBase type NOHEATCLOUD | SHATTER;
+	return (corpsetype);
+}
