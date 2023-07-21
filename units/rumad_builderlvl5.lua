@@ -59,6 +59,7 @@ return {
 			[4] = "rumad_ulab",
 			[5] = "rumad_yard",
 			[6] = "rumad_nanotc4",
+			[7] = "rumad_ujam",
 			[8] = "rumad_thirdeye",
 			[9] = "rumad_utur",
 			[10] = "rumad_gate3",
