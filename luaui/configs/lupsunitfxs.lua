@@ -924,6 +924,10 @@ coreca = {
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
  },
+ rumad_lago = {
+    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
+ },
 cordust = {
 {class='ShieldJitter',options={life=math.huge, priority=2, pos={0,67,-148}, size=27, precision=22, repeatEffect=true}},
 {class='AirJet',options={color={0.8,0.1,0}, width=30, length=35, piece="r1", noIconDraw = true, priority=3, onActive=true}},

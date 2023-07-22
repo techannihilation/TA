@@ -232,7 +232,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 750,
+					commanders = 1500,
 					default = 3000,
 					subs = 5,
 				},
@@ -240,7 +240,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL MINOR",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "k666blaster",
 				onlytargetcategory = "SURFACE",
 			},

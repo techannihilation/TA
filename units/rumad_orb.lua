@@ -108,7 +108,8 @@ return {
 			},
 		},
 		weapondefs = {
-			orb = {
+			--[[
+				orb = {
 				accuracy = 100,
 				areaOfEffect = 256,
 				coreThickness = 0.5,
@@ -136,6 +137,46 @@ return {
 				weaponVelocity = 200,
 				damage = {
 					default = 3000,
+					subs = 5,
+				},
+			},
+			--]]
+			orb = {
+				areaofeffect = 16,
+				beamtime = 0.75,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
+				energypershot = 2500,
+				explosiongenerator = "custom:rumad_lightning_exp",
+				impactonly = true,
+				impulseboost = 0,
+				impulsefactor = 0,
+				name = "Orb Blaster",
+				noselfdamage = true,
+				projectiles = 2,
+				range = 1300,
+				reloadtime = 2.5,
+				rgbcolor = "0.95 0.95 0.95",
+				soundhitdry = "",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
+				soundstart = "techa_sounds/rumad_shockwave",
+				soundtrigger = 1,
+				texture1 = "wave",
+				texture2 = "null",
+				texture3 = "null",
+				texture4 = "null",
+				thickness = 20,
+				turret = true,
+				weapontype = "BeamLaser",
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
+				damage = {
+					commanders = 500,
+					default = 1000,
 					subs = 5,
 				},
 			},

@@ -237,6 +237,7 @@ local resources = {
 			lightningball_new='techa_artwork/lightningball.png',
 	    sunlight_new='techa_artwork/sunlight.png',
       sonic_glow='techa_artwork/sonic_glow.png',
+      wave='techa_artwork/wave.png',
 
       --Gok
       gokbeam='techa_artwork/gokbeam.png',

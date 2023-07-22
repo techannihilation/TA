@@ -41,7 +41,7 @@ return {
 		buildoptions = {
 			[1] = "rumad_builderlvl5",
 			[2] = "rumad_jafa",
-			--[3] = "",
+			[3] = "rumad_lago",
 			--[4] = "",
 		},
 		customparams = {

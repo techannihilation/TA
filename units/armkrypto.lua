@@ -159,7 +159,7 @@ return {
 					light_radius_mult = 1.2,
 				},
 				damage = {
-					commanders = 1500,
+					commanders = 3000,
 					default = 6000,
 					subs = 5,
 				},
@@ -167,7 +167,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MEDIUM SMALL MINOR",
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "K888BLASTER",
 				onlytargetcategory = "SURFACE",
 			},

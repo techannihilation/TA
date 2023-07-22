@@ -172,6 +172,7 @@ return {
 	"tllerez",
 	"talon_erez",
 	"gok_erez",
+	"rumad_erez",
 	},
 
 	subs = {
@@ -221,6 +222,7 @@ return {
 		"gok_octopus",
 		"talon_gold",
 		"rumad_jafa",
+		"rumad_lago",
 
 		-- T6 MAJOR
 		"gok_squid",

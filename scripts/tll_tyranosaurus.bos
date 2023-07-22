@@ -248,10 +248,10 @@ RestoreFlaks()
 	turn flakturret2 to y-axis <0.000000> speed <100.000000>;
 	turn flaksleeves2 to x-axis <0.000000> speed <80.000000>;
 	
-	turn flakturret3 to y-axis <0.000000> speed <100.000000>;
+	turn flakturret3 to y-axis <180.000000> speed <100.000000>;
 	turn flaksleeves3 to x-axis <0.000000> speed <80.000000>;
 	
-	turn flakturret4 to y-axis <0.000000> speed <100.000000>;
+	turn flakturret4 to y-axis <180.000000> speed <100.000000>;
 	turn flaksleeves4 to x-axis <0.000000> speed <80.000000>;
 }
 
