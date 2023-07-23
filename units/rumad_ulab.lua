@@ -56,7 +56,8 @@ return {
 			[1] = "rumad_uck",
 			[2] = "rumad_overlord",
 			[3] = "rumad_gala",
-			[4] = "rumad_hellion",
+			[4] = "rumad_oasis",
+			[5] = "rumad_hellion",
 		},
 		customparams = {
 			buildpic = "rumad_ulab.dds",
