@@ -1,3 +1,10 @@
+ 4.49 => 4.50
+2023-07-26
+
+Balance :
+ - All MountedWeaponAccelerator fix to 1500 range. (All T5, and independance)
+ - Many T6 Titan Weapon decrease range 1700=>1600
+
  4.48 => 4.49
 2023-07-12
 
@@ -18,7 +25,7 @@ Balance :
 Improvment :
 - Add T4 Lab and T4 Units for Rumad
 
-4.47 => 4.48
+ 4.47 => 4.48
 2023-05-27
 
 Balance :

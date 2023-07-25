@@ -122,7 +122,7 @@ return {
 				name = "Mounted antimatter accelerator",
 				noexplode = true,
 				noselfdamage = true,
-				range = 1600,
+				range = 1500,
 				reloadtime = 2,
 				rgbcolor = "0.1 0.9 1.0",
 				soundhitdry = "",

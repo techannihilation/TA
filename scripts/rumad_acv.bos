@@ -1,0 +1,233 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, lbtrack, lbshadow, rbtrack, rbshadow, fsystem, ftrack, fshadow, shield1, shield1b, shield2, shield2b, shield3,
+       turretbase, turret, pitchturret, spray1, spray2;
+
+static-var  UnitSpeed, Spray, statechg_DesiredState, statechg_StateChanging, toDeploy, UnitHeading;
+
+
+activatescr()
+{
+	move shield1b to x-axis [-1.50] speed [12.00];
+	move shield2b to x-axis [1.50] speed [12.00];
+	sleep 125;
+	turn shield1 to z-axis <80.00> speed <160.00>;
+	turn shield2 to z-axis <-80.00> speed <160.00>;
+	turn shield3 to x-axis <80.00> speed <160.00>;
+	sleep 250;
+	move turretbase to y-axis [2.00] speed [2.00];
+	move turret to y-axis [2.00] speed [2.00];
+	wait-for-move turretbase along y-axis;
+
+}
+
+deactivatescr()
+{
+	turn turret to y-axis <0.0> speed <160.0>;
+	wait-for-turn turret around y-axis;
+	
+	move turretbase to y-axis [0.00] speed [2.00];
+	move turret to y-axis [0.00] speed [2.00];
+	wait-for-move turretbase along y-axis;
+	wait-for-move turret along y-axis;
+	
+	move shield1b to x-axis [0.0] speed [12.00];
+	move shield2b to x-axis [0.0] speed [12.00];
+	sleep 125;
+	turn shield1 to z-axis <0.00> speed <160.00>;
+	turn shield2 to z-axis <0.00> speed <160.00>;
+	turn shield3 to x-axis <0.00> speed <160.00>;
+	sleep 250;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script activatescr();
+			toDeploy = 0;
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script deactivatescr();
+			toDeploy = 1;
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from hull;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+StartMoving()
+{
+	set-signal-mask 256;
+		
+	while( TRUE )
+	{
+		if( UnitSpeed == 1 )
+		{
+			UnitHeading = UnitHeading - get XZ_ATAN(7);
+			turn ftrack to y-axis 5.5 * UnitHeading speed <70.00>;
+			UnitHeading = get XZ_ATAN(7);
+			}
+		if( UnitSpeed == 2 )
+		{
+			UnitHeading = UnitHeading - get XZ_ATAN(7);
+			turn ftrack to y-axis 2.75 * UnitHeading speed <70.00>;
+			UnitHeading = get XZ_ATAN(7);
+			}
+		
+		sleep 100;
+	}
+}
+
+StopMoving()
+{
+	signal 256;
+	turn ftrack to y-axis <0.00> speed <50.00>;
+}
+
+MoveRate1()
+{
+	UnitSpeed = 1;
+}
+
+MoveRate2()
+{
+	UnitSpeed = 2;
+}
+
+Create()
+{
+	UnitSpeed = 1;
+	Spray = 1;
+	toDeploy = 1;
+	call-script InitState();
+	start-script SmokeUnit();
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+QueryNanoPiece(PieceNum)
+{
+	if( Spray == 1 )
+	{
+		PieceNum = spray1;
+		Spray = 2;
+		return;
+	}
+	
+	PieceNum = spray2;
+	Spray = 1;
+}
+
+StartBuilding(Heading, Pitch)
+{
+	start-script RequestState(0);
+	while( toDeploy )
+	{
+		sleep 100;
+	}
+	signal 4;
+	turn turret to y-axis Heading speed <160.0>;
+	wait-for-turn turret around y-axis;
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	signal 4;
+	set-signal-mask 4;
+	sleep 6000;
+	set-signal-mask 0;
+	signal 4;
+	start-script RequestState(1);
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	if( Severity <= 50 )
+	{
+		CorpseType = 1;
+		return (CorpseType);
+	}
+	
+	if( Severity <= 50 )
+	{
+		CorpseType = 2;	
+		explode pitchturret type NOHEATCLOUD;
+		
+		Random = Rand( 1, 2 );
+		if( Random == 1 )
+		{
+			explode turret type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		}
+		Random = Rand( 1, 2 );
+		if( Random == 1 )
+		{
+			explode shield1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		}
+		Random = Rand( 1, 2 );
+		if( Random == 1 )
+		{
+			explode shield2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		}
+	}
+	CorpseType = 3;
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode shield3 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	}
+	return (CorpseType);
+}

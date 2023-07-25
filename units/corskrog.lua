@@ -135,7 +135,7 @@ return {
 				laserflaresize = 10,
 				name = "Ultimate Beam",
 				noselfdamage = true,
-				range = 1600,
+				range = 1500,
 				reloadtime = 1,
 				rgbcolor = "1 0 0",
 				soundhitdry = "",

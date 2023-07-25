@@ -11,47 +11,48 @@ static-var  Static_Var_1, Static_Var_2, Static_Var_3;
 activatescr()
 {
 	turn door1 to z-axis <0.000000> now;
-	turn door1 to z-axis <-70.659341> speed <182.126374>;
+	turn door1 to z-axis <-65.714286> speed <154.258242>;
 	turn door2 to z-axis <0.000000> now;
-	turn door2 to z-axis <70.659341> speed <182.126374>;
+	turn door2 to z-axis <65.258242> speed <153.203297>;
 	sleep 40;
-	move door1 to y-axis [-2.350000] speed [6.041132];
-	move door2 to y-axis [-2.250000] speed [5.784058];
+	move door1 to y-axis [-3.099994] speed [7.242981];
+	move door2 to y-axis [-3.050000] speed [7.126172];
 	sleep 40;
-	move plate to y-axis [4.450000] speed [11.439600];
+	move plate to y-axis [3.800000] speed [8.878510];
 	sleep 40;
-	turn arm to x-axis <90.016484> speed <230.824176>;
-	turn nano to x-axis <-66.159341> speed <169.648352>;
+	turn arm to x-axis <85.967033> speed <200.390110>;
+	turn nano to x-axis <-69.758242> speed <162.626374>;
 	sleep 40;
 }
 
 deactivatescr()
 {
+	move plate to y-axis [3.800000] now;
+	move door1 to y-axis [-3.099994] now;
+	move door2 to y-axis [-3.050000] now;
+	turn door1 to z-axis <-65.714286> now;
+	turn door2 to z-axis <65.258242> now;
+	turn arm to x-axis <85.967033> now;
+	turn arm to x-axis <0.000000> speed <221.571429>;
+	turn nano to x-axis <-69.758242> now;
+	turn nano to x-axis <0.000000> speed <179.802198>;
+	sleep 40;
+	move plate to y-axis [0.000000] speed [9.768634];
+	sleep 40;
+	move door1 to y-axis [0.000000] speed [7.969147];
+	move door2 to y-axis [0.000000] speed [7.840619];
+	sleep 40;
+	turn door1 to z-axis <0.000000> speed <168.500000>;
+	turn door2 to z-axis <0.000000> speed <167.346154>;
+	sleep 40;
 	set INBUILDSTANCE to 0;
 	turn turret to y-axis <0.000000> speed <160.038462>;
 	wait-for-turn turret around y-axis;
-	move plate to y-axis [4.450000] now;
-	move door1 to y-axis [-2.350000] now;
-	move door2 to y-axis [-2.250000] now;
-	turn door1 to z-axis <-70.659341> now;
-	turn door2 to z-axis <70.659341> now;
-	turn arm to x-axis <90.016484> now;
-	turn arm to x-axis <0.000000> speed <232.005495>;
-	turn nano to x-axis <-66.159341> now;
-	turn nano to x-axis <0.000000> speed <170.527473>;
-	sleep 40;
-	move plate to y-axis [0.000000] speed [11.439600];
-	sleep 40;
-	move door1 to y-axis [0.000000] speed [6.041132];
-	move door2 to y-axis [0.000000] speed [5.784058];
-	sleep 40;
-	turn door1 to z-axis <0.000000> speed <181.192308>;
-	turn door2 to z-axis <0.000000> speed <181.192308>;
-	sleep 40;
 }
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
+	var Func_Var_4;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 500;
@@ -66,7 +67,15 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 257;
 			}
-			emit-sfx smoketype from base;
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from door1;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from door2;
+			}
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -163,12 +172,12 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode arm type NOHEATCLOUD;
 		explode base type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD;
 		explode beam type NOHEATCLOUD;
 		explode door1 type NOHEATCLOUD;
 		explode door2 type NOHEATCLOUD;
-		explode nano type NOHEATCLOUD;
-		explode plate type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
+		explode plate type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -176,12 +185,12 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode arm type NOHEATCLOUD | FALL;
 		explode base type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD | FALL;
 		explode beam type NOHEATCLOUD | FALL;
 		explode door1 type NOHEATCLOUD;
 		explode door2 type NOHEATCLOUD;
-		explode nano type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | SHATTER;
 		explode plate type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
@@ -189,22 +198,22 @@ Killed(severity, corpsetype)
 		corpsetype = 3;
 		explode arm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode base type NOHEATCLOUD;
+		explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode beam type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode door1 type NOHEATCLOUD;
 		explode door2 type NOHEATCLOUD;
-		explode nano type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | SHATTER;
 		explode plate type NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode arm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode base type NOHEATCLOUD;
+	explode nano type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode beam type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode door1 type NOHEATCLOUD;
 	explode door2 type NOHEATCLOUD;
-	explode nano type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
 	explode plate type NOHEATCLOUD;
-	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

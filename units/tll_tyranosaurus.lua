@@ -160,7 +160,7 @@ return {
 				impulsefactor = 0,
 				name = "Spray Lightning",
 				noselfdamage = true,
-				range = 1700,
+				range = 1600,
 				reloadtime = 2,
 				rgbcolor = "0.9 0.9 0.2",
 				soundhitdry = "",
