@@ -20,7 +20,11 @@ local lups_effects = {
      {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
   },
 
+
   --PLASMA RUMAD
+  rumad_templar_rumad_plasma = {
+    {class = "Ribbon", options={width=1.5, size=8, color={0.9,0.9,0.9,1},priority=1},},
+  },
   rumad_artybot_rumad_plasma = {
     {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },

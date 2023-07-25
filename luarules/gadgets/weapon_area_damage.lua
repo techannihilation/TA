@@ -39,6 +39,7 @@ local scouts = {
   [UnitDefNames["tllgladius"].id] = true,
 	[UnitDefNames["gok_cut"].id] = true,
 	[UnitDefNames["gok_negator"].id] = true,
+	[UnitDefNames["rumad_meyes"].id] = true,
 
 	--Infantry Talon
   [UnitDefNames["talon_infantry"].id] = true,
@@ -108,6 +109,14 @@ local scouts = {
 	[UnitDefNames["tlljam"].id] = true,
 	[UnitDefNames["talon_conspiracy"].id] = true,
 	[UnitDefNames["gok_jam1"].id] = true,
+
+	-- Eyes Perimeter & watch Tower
+	[UnitDefNames["armeyes"].id] = true,
+	[UnitDefNames["coreyes"].id] = true,
+	[UnitDefNames["gok_eyes"].id] = true,
+	[UnitDefNames["rumad_eyes"].id] = true,
+	[UnitDefNames["tlltower"].id] = true,
+	[UnitDefNames["talon_eye"].id] = true,
 
 }
 

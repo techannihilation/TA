@@ -57,12 +57,11 @@ return {
 			[2] = "talon_leur",
 			[3] = "talon_mlv",
 			[4] = "talon_topaz",
-			--[5] = "talon_quartz",
-			[6] = "talon_emerald",
-			[7] = "talon_lupa",
-			[8] = "talon_sheatiped",
-			[9] = "talon_whinestone",
-			[10] = "talon_obsidian",
+			[5] = "talon_emerald",
+			[6] = "talon_lupa",
+			[7] = "talon_sheatiped",
+			[8] = "talon_whinestone",
+			[9] = "talon_obsidian",
 		},
 		customparams = {
 			buildpic = "talon_vp.dds",
@@ -73,7 +72,7 @@ return {
 				blocking = true,
 				collisionvolumeoffsets = "-5 0 0",
 				collisionvolumescales = "110 34 92",
-				
+
 				collisionvolumetype = "Box",
 				damage = 2575,
 				description = "Vehicle Plant Wreckage",

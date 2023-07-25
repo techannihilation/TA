@@ -146,15 +146,15 @@ Shot1()
 {
 	if (msl_1 == 1)
 	{
-		move barrel1 to z-axis [-1.0] speed [180.0];
+		move barrel1 to z-axis [-0.3] speed [50.0];
 		sleep 500;
-		move barrel1 to z-axis [0.0] speed [2.0];	
+		move barrel1 to z-axis [0.0] speed [0.1];	
 	}
 	if (msl_1 == 5)
 	{
-		move barrel2 to z-axis [-1.0] speed [180.0];
+		move barrel2 to z-axis [-0.3] speed [50.0];
 		sleep 500;
-		move barrel2 to z-axis [0.0] speed [2.0];
+		move barrel2 to z-axis [0.0] speed [0.1];
 	}
 }
 

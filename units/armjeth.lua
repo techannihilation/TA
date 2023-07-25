@@ -3,7 +3,7 @@ return {
 		acceleration = 0.12,
 		airsightdistance = 775,
 		brakerate = 0.564,
-		buildcostenergy = 1282,
+		buildcostenergy = 1285,
 		buildcostmetal = 115,
 		builder = false,
 		buildpic = "armjeth.dds",
@@ -164,7 +164,6 @@ return {
 				damage = {
 					areoship = 11.25,
 					default = 5,
-					
 					air = 45,
 				},
 			},

@@ -4,6 +4,7 @@
 Balance :
  - All MountedWeaponAccelerator fix to 1500 range. (All T5, and independance)
  - Many T6 Titan Weapon decrease range 1700=>1600
+ - Boost T1 plasma Kbot (speed, + 10%, Hp + 10%)
 
  4.48 => 4.49
 2023-07-12

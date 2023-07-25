@@ -1,0 +1,325 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, pelvis,
+		lthigh, lleg, lfoot, 
+		rthigh, rleg, rfoot, 
+		rarm, larm,
+		Rmsl1, Rmsl2, Rmsl3, Lmsl1, Lmsl2, Lmsl3,
+		flare, barrel, sbarrel;
+
+static-var  Static_VaR1, msl_1, bMoving, Main_Gun_Heading;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM_1			4
+#define SIG_AIM_2			8
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+walk()
+{
+	if( TRUE )
+	{
+		turn larm to x-axis <10.000000> speed <9.000000>;
+		turn rarm to x-axis <-10.000000> speed <18.000000>;
+		turn lthigh to x-axis <20.000000> speed <50.000000>;
+		turn rthigh to x-axis <-20.000000> speed <50.000000>;
+		turn lfoot to x-axis <-15.005495> speed <70.000000>;
+		turn rfoot to x-axis <5.000000> speed <50.000000>;
+		turn rleg to x-axis <-10.000000> speed <70.000000>;
+		turn body to x-axis <3.000000> speed <5.000000>;
+		sleep 505;
+		turn lfoot to x-axis <20.005495> speed <100.000000>;
+		turn rfoot to x-axis <10.000000> speed <50.000000>;
+		turn rleg to x-axis <20.005495> speed <100.000000>;
+		sleep 600;
+		turn pelvis to z-axis <4.000000> speed <3.000000>;
+	}
+	if( TRUE )
+	{
+		turn larm to x-axis <-10.000000> speed <20.000000>;
+		turn rarm to x-axis <10.000000> speed <20.000000>;
+		turn lthigh to x-axis <-20.005495> speed <50.000000>;
+		turn rthigh to x-axis <20.005495> speed <50.000000>;
+		turn rfoot to x-axis <-10.005495> speed <130.000000>;
+		turn lleg to x-axis <-10.005495> speed <100.000000>;
+		sleep 1050;
+		turn rfoot to x-axis <20.005495> speed <100.000000>;
+		turn lleg to x-axis <20.005495> speed <100.000000>;
+		sleep 600;
+		turn pelvis to z-axis <-4.000000> speed <8.000000>;
+		turn larm to x-axis <0.000000> speed <14.000000>;
+		turn rarm to x-axis <0.000000> speed <14.000000>;
+	}
+	while( TRUE )
+	{
+		if( TRUE )
+		{
+			turn pelvis to y-axis <-5.000000> speed <12.000000>;
+			turn pelvis to x-axis <-2.000000> speed <6.000000>;
+			turn lthigh to x-axis <40.005495> speed <50.000000>;
+			turn rthigh to x-axis <-40.005495> speed <50.000000>;
+			turn lfoot to x-axis <-20.005495> speed <130.000000>;
+			turn rleg to x-axis <-10.005495> speed <100.000000>;
+			sleep 1050;
+			turn lfoot to x-axis <20.005495> speed <100.000000>;
+			turn rfoot to x-axis <20.005495> speed <70.000000>;
+			turn rleg to x-axis <10.005495> speed <100.000000>;
+			sleep 600;
+			turn pelvis to z-axis <4.000000> speed <8.000000>;
+		}
+		if( TRUE )
+		{
+			turn pelvis to y-axis <4.000000> speed <12.000000>;
+			turn pelvis to x-axis <6.000000> speed <6.000000>;
+			turn lthigh to x-axis <-40.005495> speed <50.000000>;
+			turn rthigh to x-axis <40.005495> speed <50.000000>;
+			turn rfoot to x-axis <-20.005495> speed <130.000000>;
+			turn lleg to x-axis <-10.005495> speed <100.000000>;
+			sleep 1050;
+			turn rfoot to x-axis <40.005495> speed <100.000000>;
+			turn lleg to x-axis <10.005495> speed <100.000000>;
+			sleep 600;		
+			turn pelvis to z-axis <-3.000000> speed <8.000000>;
+		}
+	}
+}
+
+stop()
+{
+	turn lthigh to x-axis <0.000000> speed <50.000000>;
+	turn rthigh to x-axis <0.000000> speed <50.000000>;
+	turn lleg to x-axis <0.000000> speed <100.000000>;
+	turn rleg to x-axis <0.000000> speed <100.000000>;
+	turn pelvis to y-axis <0.000000> speed <100.000000>;
+	turn pelvis to x-axis <0.000000> speed <20.000000>;
+	move pelvis to y-axis [0.000000] speed [20.000000];
+	turn pelvis to z-axis <0.000000> speed <20.000000>;
+	turn rfoot to x-axis <0.000000> speed <100.000000>;
+	turn lfoot to x-axis <0.000000> speed <100.000000>;
+	wait-for-turn body around x-axis;
+	turn pelvis to x-axis <10.000000> speed <48.000000>;
+	turn larm to x-axis <-10.000000> speed <48.000000>;
+	turn rarm to x-axis <-10.000000> speed <48.000000>;
+	wait-for-turn body around x-axis;
+	turn pelvis to x-axis <-3.000000> speed <48.000000>;
+	wait-for-turn body around x-axis;
+	turn pelvis to x-axis <0.000000> speed <48.000000>;
+	turn larm to x-axis <0.000000> speed <48.000000>;
+	turn rarm to x-axis <0.000000> speed <48.000000>;
+	wait-for-turn pelvis around x-axis;
+	sleep 20;
+}
+
+Create()
+{
+	hide flare;
+	msl_1 = 0;
+	Main_Gun_Heading = 0;
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script walk();
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	signal SIG_MOVE;
+	start-script stop();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	turn body to y-axis <0.000000> speed <20.000000>;
+	turn barrel to x-axis <0.0> speed <100.000000>;
+	wait-for-turn body around y-axis;
+	Main_Gun_Heading = 0;
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = barrel;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn body to y-axis heading speed <80.000000>;
+	turn barrel to x-axis <0.0> - pitch speed <80.000000>;
+	Main_Gun_Heading = heading;
+	wait-for-turn body around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon1()
+{
+	emit-sfx 1024 from flare;
+	move barrel to z-axis [-1.000000] speed [500.000000];
+	move sbarrel to z-axis [-1.500000] speed [500.000000];
+	sleep 100;
+	move barrel to z-axis [0.000000] speed [0.800000];
+	move sbarrel to z-axis [0.000000] speed [0.800000];
+}
+
+QueryWeapon1(piecenum)
+{
+	piecenum = flare;
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
+	{
+		return (0);
+	}
+	turn larm to x-axis <0.000000> - pitch speed <80.000000>;
+	turn rarm to x-axis <0.000000> - pitch speed <80.000000>;
+	wait-for-turn larm around x-axis;
+	wait-for-turn rarm around x-axis;
+	wait-for-turn body around y-axis;
+	return (1);
+}
+
+FireWeapon3()
+{
+	while(TRUE)
+	{
+		sleep 125;	
+		++msl_1;
+		if (msl_1 == 3)
+		{
+			return (0);
+		}
+		if (msl_1 == 6)
+		{
+			msl_1 = 0;
+			return (0);	
+		}
+	}
+}
+
+QueryWeapon3(piecenum)
+{
+	if ( msl_1 == 0)
+	{
+		piecenum = Rmsl1;
+	}
+	if ( msl_1 == 1)
+	{
+		piecenum = Rmsl2;
+	}
+	if ( msl_1 == 2)
+	{
+		piecenum = Rmsl3;
+	}
+	if ( msl_1 == 3)
+	{
+		piecenum = Lmsl1;
+	}
+	if ( msl_1 == 4)
+	{
+		piecenum = Lmsl2;
+	}
+	if ( msl_1 == 5)
+	{
+		piecenum = Lmsl3;
+	}
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode pelvis type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lthigh type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		explode lfoot type NOHEATCLOUD;
+		explode rthigh type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		explode body type NOHEATCLOUD;
+		explode larm type NOHEATCLOUD;
+		explode rarm type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode pelvis type NOHEATCLOUD;
+		explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode lthigh type NOHEATCLOUD | FALL;
+		explode lleg type NOHEATCLOUD | FALL;
+		explode lfoot type NOHEATCLOUD | FALL;
+		explode rthigh type NOHEATCLOUD | FALL;
+		explode rleg type NOHEATCLOUD | FALL;
+		explode rfoot type NOHEATCLOUD | FALL;
+		explode body type NOHEATCLOUD | FALL;
+		explode larm type NOHEATCLOUD | FALL;
+		explode rarm type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pelvis type NOHEATCLOUD;
+	explode barrel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rthigh type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode larm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

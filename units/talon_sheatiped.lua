@@ -4,7 +4,7 @@ return {
 		airsightdistance = 500,
 		brakerate = 0.4125,
 		buildcostenergy = 2050,
-		buildcostmetal = 151,
+		buildcostmetal = 150,
 		builder = false,
 		buildpic = "talon_sheatiped.dds",
 		buildtime = 2500,
@@ -31,7 +31,7 @@ return {
 		leavetracks = true,
 		losemitheight = 30,
 		maneuverleashlength = 30,
-		mass = 480,
+		mass = 150,
 		maxdamage = 670,
 		maxslope = 14,
 		maxvelocity = 2.0,
@@ -155,7 +155,6 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
-					
 					air = 225,
 				},
 			},

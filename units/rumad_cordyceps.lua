@@ -4,7 +4,7 @@ return {
 		brakerate = 0.05,
 		buildcostenergy = 22500,
 		buildcostmetal = 1405,
-		builddistance = 500,
+		builddistance = 600,
 		builder = true,
 		buildpic = "rumad_cordyceps.dds",
 		buildtime = 20000,
