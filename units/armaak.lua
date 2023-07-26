@@ -3,8 +3,8 @@ return {
 		acceleration = 0.12,
 		airsightdistance = 800,
 		brakerate = 0.564,
-		buildcostenergy = 6613,
-		buildcostmetal = 519,
+		buildcostenergy = 6610,
+		buildcostmetal = 520,
 		buildpic = "armaak.dds",
 		buildtime = 12500,
 		canmove = true,
@@ -22,7 +22,7 @@ return {
 		idletime = 1800,
 		losemitheight = 28,
 		maneuverleashlength = 640,
-		mass = 619,
+		mass = 520,
 		maxdamage = 1020,
 		maxslope = 14,
 		maxvelocity = 1.6,
@@ -143,7 +143,6 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-
 					air = 500,
 				},
 			},
@@ -190,7 +189,6 @@ return {
 				damage = {
 					areoship = 11.25,
 					default = 5,
-
 					air = 45,
 				},
 			},

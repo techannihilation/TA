@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, turret, pitchturret, barrel1, sbarrel1, barrel2, sbarrel2,
+piece  base, hull, turret, pitchturret, barrel1, barrel2,
 		flare1, flare2;
 
 static-var restore_delay, msl_1;
@@ -75,10 +75,8 @@ FireWeapon1()
 {
 	emit-sfx 1024 from flare1;
 	move barrel1 to z-axis [-1.500000] speed [500.000000];
-	move sbarrel1 to z-axis [-2.500000] speed [500.000000];
 	sleep 100;
 	move barrel1 to z-axis [0.000000] speed [1.000000];
-	move sbarrel1 to z-axis [0.000000] speed [1.000000];
 }
 
 QueryWeapon1(piecenum)
@@ -104,10 +102,8 @@ FireWeapon2()
 {
 	emit-sfx 1024 from flare2;
 	move barrel2 to z-axis [-1.500000] speed [500.000000];
-	move sbarrel2 to z-axis [-2.500000] speed [500.000000];
 	sleep 100;
 	move barrel2 to z-axis [0.000000] speed [1.000000];
-	move sbarrel2 to z-axis [0.000000] speed [1.000000];
 }
 
 QueryWeapon2(piecenum)
@@ -127,7 +123,6 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode hull type NOHEATCLOUD;
 		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode barrel2 type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
@@ -137,7 +132,6 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode hull type NOHEATCLOUD;
 		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD | FALL;
 		explode barrel2 type NOHEATCLOUD | FALL;
 		return (corpsetype);
@@ -145,7 +139,6 @@ Killed(severity, corpsetype)
 	corpsetype = 3;
 	explode hull type NOHEATCLOUD;
 	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);

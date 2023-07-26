@@ -19,6 +19,9 @@ local lups_effects = {
   rumad_macross_rumad_gauss = {
      {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
   },
+  rumad_sahara_rumad_gauss = {
+     {class = "Ribbon", options={width=1, size=3, color={0.9,0.9,0.9,1},priority=1},},
+  },
 
 
   --PLASMA RUMAD

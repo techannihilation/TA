@@ -45,16 +45,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	return (0);
 }
 
-RockUnit(anglex, anglez)
-{
-	turn base to x-axis anglex speed <50.000000>;
-	turn base to z-axis anglez speed <50.000000>;
-	wait-for-turn base around z-axis;
-	wait-for-turn base around x-axis;
-	turn base to z-axis <0.000000> speed <20.000000>;
-	turn base to x-axis <0.000000> speed <20.000000>;
-}
-
 HitByWeapon(anglex, anglez)
 {
 	turn base to z-axis anglez speed <105.000000>;

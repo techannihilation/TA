@@ -58,7 +58,7 @@ return {
 		stealth = false,
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
-		turninplacespeedlimit = 1.419,
+		turninplacespeedlimit = 1.4,
 		turnrate = 1016,
 		unitname = "corcommando",
 		upright = true,

@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, turret, pitchturret, barrel1, sbarrel1, flare1;
+piece  base, hull, turret, pitchturret, barrel1, flare1;
 
 // Signal definitions
 #define SIG_AIM_1			2
@@ -69,10 +69,8 @@ FireWeapon1()
 {
 	emit-sfx 1024 from flare1;
 	move barrel1 to z-axis [-0.500000] speed [500.000000];
-	move sbarrel1 to z-axis [-1.000000] speed [500.000000];
 	sleep 100;
 	move barrel1 to z-axis [0.000000] speed [1.000000];
-	move sbarrel1 to z-axis [0.000000] speed [1.000000];
 }
 
 QueryWeapon1(piecenum)
@@ -97,7 +95,6 @@ Killed(severity, corpsetype)
 		corpsetype = 1;
 		explode hull type NOHEATCLOUD;
 		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD;
 		return (corpsetype);
 	}
@@ -106,14 +103,12 @@ Killed(severity, corpsetype)
 		corpsetype = 2;
 		explode hull type NOHEATCLOUD;
 		explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		explode turret type NOHEATCLOUD | FALL;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode hull type NOHEATCLOUD;
 	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode sbarrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

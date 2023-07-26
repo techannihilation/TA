@@ -24,7 +24,7 @@ return {
 		maxdamage = 1525,
 		maxslope = 10,
 		maxwaterdepth = 0,
-		name = "Gatling",
+		name = "Grape",
 		noautofire = false,
 		objectname = "armgrape",
 		radaremitheight = 50,

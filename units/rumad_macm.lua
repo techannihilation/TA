@@ -162,12 +162,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
+				badtargetcategory = "SMALL MINOR",
 				def = "RUMAD_ADVMISSILE",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				badtargetcategory = "HUGE LARGE MEDIUM SMALL",
+				badtargetcategory = "SMALL MINOR",
 				def = "RUMAD_ADVMISSILE",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,

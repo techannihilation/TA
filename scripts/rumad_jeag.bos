@@ -3,13 +3,31 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, turret, launcher, flare, lpanel, rpanel, msl;
+piece  base, hull, turret, ltireturn, rtireturn, ltrack, rtrack,
+		launcher1, flare1, msl1,
+		launcher2, flare2, msl2;
 
-static-var  restore_delay, unitviewer;
+static-var  restore_delay, msl_1;
 
 // Signal definitions
 #define SIG_AIM				2
+#define SIG_MOVE			4
 
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	spin rtireturn around x-axis speed <200.000000> accelerate <15.000000>;
+	spin ltireturn around x-axis speed <200.000000> accelerate <15.000000>;
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	spin rtireturn around x-axis speed <0.000000> accelerate <-15.000000>;
+	spin ltireturn around x-axis speed <0.000000> accelerate <-15.000000>;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -40,16 +58,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
 }
 
-RockUnit(anglex, anglez)
-{
-	turn Base to x-axis anglex speed <50.000000>;
-	turn Base to z-axis anglez speed <50.000000>;
-	wait-for-turn Base around z-axis;
-	wait-for-turn Base around x-axis;
-	turn Base to z-axis <0.000000> speed <20.000000>;
-	turn Base to x-axis <0.000000> speed <20.000000>;
-}
-
 HitByWeapon(anglex, anglez)
 {
 	turn Base to z-axis anglez speed <105.000000>;
@@ -62,8 +70,8 @@ HitByWeapon(anglex, anglez)
 
 Create()
 {
-	unitviewer = FALSE;
 	restore_delay = 2000;
+	msl_1 = 0;
 	start-script SmokeUnit();
 }
 
@@ -71,20 +79,19 @@ RestoreAfterDelay()
 {
 	sleep restore_delay;
 	turn turret to y-axis <0.000000> speed <220.000000>;
-	turn launcher to x-axis <0.000000> speed <230.000000>;
-	wait-for-turn Turret around y-axis;
-	move turret to y-axis [0.0] speed [5.0];
-	turn lpanel to z-axis <0.0> speed <50.000000>;
-	move lpanel to x-axis [0.0] speed [9.000000];
-	move lpanel to y-axis [0.0] speed [2.000000];
-	turn rpanel to z-axis <0.0> speed <50.000000>;
-	move rpanel to x-axis [0.0] speed [9.000000];
-	move rpanel to y-axis [0.0] speed [2.000000];
+	turn turret to x-axis <0.000000> speed <230.000000>;
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = flare;
+	if (msl_1 == 0) 
+	{
+		piecenum = flare1;
+	}
+	if (msl_1 == 1) 
+	{
+		piecenum = flare1;
+	}
 }
 
 AimFromPrimary(piecenum)
@@ -96,24 +103,10 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	move Turret to y-axis [2.0] speed [5.0];
-	turn lpanel to z-axis <44.0> speed <50.0>;
-	move lpanel to x-axis [4.0] speed [9.0];
-	move lpanel to y-axis [-2.0] speed [2.0];
-	turn rpanel to z-axis <-44.0> speed <50.0>;
-	move rpanel to x-axis [-4.0] speed [9.0];
-	move rpanel to y-axis [-2.0] speed [2.0];
-	wait-for-move Turret along y-axis;
-	wait-for-turn lpanel around z-axis;
-	wait-for-move lpanel along x-axis;
-	wait-for-move lpanel along y-axis;
-	wait-for-turn rpanel around z-axis;
-	wait-for-move rpanel along x-axis;
-	wait-for-move rpanel along y-axis;
-	turn Turret to y-axis heading speed <380.000000>;
-	turn Launcher to x-axis <0.000000> - pitch speed <350.000000>;
-	wait-for-turn Turret around y-axis;
-	wait-for-turn Launcher around x-axis;
+	turn turret to y-axis heading speed <380.000000>;
+	turn turret to x-axis <0.0> - pitch speed <380.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
@@ -123,13 +116,36 @@ RestoreMsl(numberMsl)
 	if( numberMsl == 1 )
 	{
 		sleep 300;
-		move msl to z-axis [0.0] speed [3.0];
+		show msl1;
+		move msl1 to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 2 )
+	{
+		sleep 300;
+		show msl2;
+		move msl2 to z-axis [0.0] speed [3.0];
 	}
 }
+
 FirePrimary()
 {
-	move msl to z-axis [-2.4] now;
-	start-script RestoreMsl(1);
+	if( msl_1 == 0 )
+	{
+		hide msl1;
+		move msl1 to z-axis [-1.8] now;
+		start-script RestoreMsl(1);
+	}
+	if( msl_1 == 1 )
+	{
+		hide msl2;
+		move msl2 to z-axis [-1.8] now;
+		start-script RestoreMsl(2);
+	}
+	++msl_1;
+	if( msl_1 == 2 )
+	{
+		msl_1 = 0;
+	}
 }
 
 SweetSpot(piecenum)
@@ -143,34 +159,28 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode Base type NOHEATCLOUD;
-		explode Body type NOHEATCLOUD;
-		explode Turret type NOHEATCLOUD;
-		explode Launcher type NOHEATCLOUD;
-		explode Flare type NOHEATCLOUD;
-		explode lpanel type NOHEATCLOUD;
-		explode rpanel type NOHEATCLOUD;
+		explode ltrack type NOHEATCLOUD;
+		explode rtrack type NOHEATCLOUD;
+		explode hull type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode launcher1 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode Base type NOHEATCLOUD | SHATTER;
-		explode Body type NOHEATCLOUD | SHATTER;
-		explode Turret type NOHEATCLOUD | SHATTER;
-		explode Launcher type NOHEATCLOUD | SHATTER;
-		explode Flare type NOHEATCLOUD | SHATTER;
-		explode lpanel type NOHEATCLOUD | SHATTER;
-		explode rpanel type NOHEATCLOUD | SHATTER;
+		explode ltrack type NOHEATCLOUD;
+		explode rtrack type NOHEATCLOUD;
+		explode hull type NOHEATCLOUD | SHATTER;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode launcher1 type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode Base type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Launcher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Flare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode lpanel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode rpanel type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode ltrack type NOHEATCLOUD;
+	explode rtrack type NOHEATCLOUD;
+	explode hull type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode launcher1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }

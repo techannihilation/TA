@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, lbtrack, lbshadow, rbtrack, rbshadow, fsystem, ftrack, fshadow, shield1, shield1b, shield2, shield2b, shield3,
+piece  base, hull, lbtrack, rbtrack, fsystem, ftrack, fshadow, shield1, shield1b, shield2, shield2b, shield3,
        turretbase, turret, pitchturret, spray1, spray2;
 
 static-var  UnitSpeed, Spray, statechg_DesiredState, statechg_StateChanging, toDeploy, UnitHeading;
