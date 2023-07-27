@@ -64,7 +64,7 @@ return {
 		featuredefs = {
 			dead = {
 				blocking = true,
-				collisionvolumeoffsets = "0.0 -4.79290762939 0.0494384765625",
+				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "24.0 13.9999847412 43.189666748",
 				collisionvolumetype = "Box",
 				damage = 1498,
@@ -74,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 420,
-				object = "rumad_borer_DEAD",
+				object = "rumad_jeag_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
