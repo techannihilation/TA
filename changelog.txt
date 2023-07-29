@@ -1,3 +1,10 @@
+ 4.50 => 4.51
+2023-07-30
+
+Balance :
+  - Increase cost for all Commanders
+  - Commanders unlock tech for Geo & Nano Morph
+
  4.49 => 4.50
 2023-07-26
 

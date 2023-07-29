@@ -61,7 +61,7 @@ return {
 			detonaterange = "64",
 			faction = "CORE",
 			initcloaked = true,
-			requiretech = "T2 Factory",
+			--requiretech = "T2 Factory",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

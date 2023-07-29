@@ -55,7 +55,7 @@ return {
 			detonaterange = "64",
 			faction = "RUMAD",
 			initcloaked = true,
-			requiretech = "T3 Factory",
+			--requiretech = "T3 Factory",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

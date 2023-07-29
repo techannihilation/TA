@@ -27,7 +27,7 @@ return {
 		collisionvolumescales = "40 47 29",
 		collisionvolumetype = "Ell",
 		corpse = "8_dead",
-		defaultmissiontype = "Standby",		
+		defaultmissiontype = "Standby",
 		energymake = 125,
 		energystorage = 1000,
 		explodeas = "COMMANDER_BLAST",

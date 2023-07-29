@@ -2,7 +2,7 @@ return {
 	gok_ulab = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 618667,
+		buildcostenergy = 618000,
 		buildcostmetal = 89610,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,

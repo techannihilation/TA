@@ -5,8 +5,8 @@ return {
 		amphibious = 1,
 		autoheal = 10,
 		brakerate = 1.185,
-		buildcostenergy = 85000,
-		buildcostmetal = 6000,
+		buildcostenergy = 100000,
+		buildcostmetal = 7500,
 		builddistance = 250,
 		builder = true,
 		buildpic = "armcom1.dds",
@@ -110,10 +110,11 @@ return {
 			buildpic = "armcom1.dds",
 			faction = "ARM",
 			iscommander = true,
+			ismorphingrc = true,
 			paralyzemultiplier = 0.025,
 			shield_emit_height = 10,
 			shield_power = 1000,
-			shield_radius = 100,
+			shield_radius = 100,			
 		},
 		featuredefs = {
 			dead = {

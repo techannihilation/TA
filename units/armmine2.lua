@@ -45,8 +45,7 @@ return {
 		maxwaterdepth = 0,
 		mincloakdistance = 0,
 		name = "Kilo",
-		noautofire = false,
-		
+		noautofire = false,		
 		objectname = "ARMMINE2",
 		onoffable = false,
 		radaremitheight = 25,

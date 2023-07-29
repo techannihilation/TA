@@ -5,8 +5,8 @@ return {
 		amphibious = 1,
 		autoheal = 20,
 		brakerate = 1.125,
-		buildcostenergy = 2035000,
-		buildcostmetal = 85000,
+		buildcostenergy = 2500000,
+		buildcostmetal = 93000,
 		builddistance = 450,
 		builder = true,
 		buildpic = "rumad_com.dds",
@@ -94,6 +94,7 @@ return {
 			buildpic = "rumad_com.dds",
 			faction = "RUMAD",
 			iscommander = true,
+			ismorphingrc = true,
 			paralyzemultiplier = 0.025,
 		},
 		featuredefs = {
