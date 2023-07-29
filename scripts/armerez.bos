@@ -3,10 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, hull, turn1, engine1, thruster11, thruster12, engine2, thruster21, thruster22, turn2, engine3, engine4, thrust11, thrust12, thrust21, thrust22, thrust3, thrust4,
-       barrel1, barrel2, sp, carry, beam1, beam2;
-
-static-var  DesiredState, StateChanging, Flying, UnitHeading, UnitSpeed, Inactive, Gun, Launcher, spray;
+piece  base, hull, spray;
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -34,15 +31,15 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 }
+
 Create()
 {
-	spray = 0;
 	start-script SmokeUnit();
 }
 
 SweetSpot(PieceNum)
 {
-	PieceNum = sp;
+	PieceNum = base;
 }
 
 StartBuilding()
@@ -57,23 +54,13 @@ StopBuilding()
 
 QueryNanoPiece(piecenum)
 {
-	if( spray == 0 )
-	{
-		piecenum = beam1;
-	}
-	if( spray != 0 )
-	{
-		piecenum = beam2;
-	}
-	spray = !spray;
+		piecenum = spray;
 }
 
 Killed(severity, corpseType)
 {
 	CorpseType = 3;
 	explode hull type NOHEATCLOUD;
-	explode engine1 type NOHEATCLOUD;
-	explode engine2 type NOHEATCLOUD;
 	return corpseType;
 	
 }
