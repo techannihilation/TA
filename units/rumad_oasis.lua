@@ -3,7 +3,7 @@ return {
 		acceleration = 0.108,
 		brakerate = 0.714,
 		buildcostenergy = 1320000,
-		buildcostmetal = 1044450,
+		buildcostmetal = 104440,
 		builder = false,
 		buildpic = "rumad_oasis.dds",
 		buildtime = 2000000,
