@@ -13,8 +13,8 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
-		collisionvolumeoffsets = "0 -10 -4",
-		collisionvolumescales = "44 76 37",
+		collisionvolumeoffsets = "0 -5 -4",
+		collisionvolumescales = "44 90 37",
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -234,10 +234,12 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "RUMAD_ADVMISSILEX2",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "RUMAD_GAUSS",
 				onlytargetcategory = "SURFACE",
 				slaveto = 2,
