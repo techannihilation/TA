@@ -1,12 +1,12 @@
 return {
-	armaser = {
+	rumad_mkjam = {
 		acceleration = 0.12,
 		activatewhenbuilt = true,
 		brakerate = 0.45,
-		buildcostenergy = 6408,
+		buildcostenergy = 6400,
 		buildcostmetal = 95,
 		builder = false,
-		buildpic = "armaser.dds",
+		buildpic = "rumad_mkjam.dds",
 		buildtime = 5000,
 		canattack = false,
 		canguard = true,
@@ -14,8 +14,8 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
-		collisionvolumeoffsets = "0 -7 -2",
-		collisionvolumescales = "26 48 24",
+		collisionvolumeoffsets = "0 -2 0",
+		collisionvolumescales = "25 50 25",
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -38,10 +38,11 @@ return {
 		movementclass = "KBOT2",
 		name = "Eraser",
 		noautofire = false,
-		objectname = "ARMASER",
+		objectname = "rumad_mkjam",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 29,
+		script = "rumad_mkrad.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 260,
@@ -50,10 +51,10 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.056,
 		turnrate = 1045,
-		unitname = "armaser",
+		unitname = "rumad_mkjam",
 		customparams = {
-			buildpic = "armaser.dds",
-			faction = "ARM",
+			buildpic = "rumad_mkjam.dds",
+			faction = "RUMAD",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 60,
-				object = "ARMASER_DEAD",
+				object = "rumad_mkjam_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

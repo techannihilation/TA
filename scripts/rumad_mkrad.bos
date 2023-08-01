@@ -1,0 +1,192 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, torso, radar, spinner, top,
+		luparm, loarm, lhand, ruparm, roarm, rhand;
+
+static-var  bMoving;
+
+// Signal definitions
+#define SIG_MOVE			2
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Walk()
+{
+	if( TRUE )
+	{
+		turn luparm to x-axis <20.000000> speed <50.000000>;
+		turn ruparm to x-axis <-20.000000> speed <50.000000>;
+		turn lhand to x-axis <-15.005495> speed <70.000000>;
+		turn rhand to x-axis <5.000000> speed <50.000000>;
+		turn roarm to x-axis <-10.000000> speed <70.000000>;
+		sleep 505;
+		turn lhand to x-axis <20.005495> speed <100.000000>;
+		turn rhand to x-axis <10.000000> speed <50.000000>;
+		turn roarm to x-axis <20.005495> speed <100.000000>;
+		sleep 600;
+		turn pelvis to z-axis <4.000000> speed <3.000000>;
+	}
+	if( TRUE )
+	{
+		turn luparm to x-axis <-20.005495> speed <50.000000>;
+		turn ruparm to x-axis <20.005495> speed <50.000000>;
+		turn rhand to x-axis <-10.005495> speed <130.000000>;
+		turn loarm to x-axis <-10.005495> speed <100.000000>;
+		sleep 1050;
+		turn rhand to x-axis <20.005495> speed <100.000000>;
+		turn loarm to x-axis <20.005495> speed <100.000000>;
+		sleep 600;
+		turn pelvis to z-axis <-4.000000> speed <8.000000>;
+	}
+	while( TRUE )
+	{
+		if( TRUE )
+		{
+			turn pelvis to y-axis <-5.000000> speed <12.000000>;
+			turn pelvis to x-axis <-2.000000> speed <6.000000>;
+			turn luparm to x-axis <40.005495> speed <50.000000>;
+			turn ruparm to x-axis <-40.005495> speed <50.000000>;
+			turn lhand to x-axis <-20.005495> speed <130.000000>;
+			turn roarm to x-axis <-10.005495> speed <100.000000>;
+			sleep 1050;
+			turn lhand to x-axis <20.005495> speed <100.000000>;
+			turn rhand to x-axis <20.005495> speed <70.000000>;
+			turn roarm to x-axis <10.005495> speed <100.000000>;
+			sleep 600;
+			turn pelvis to z-axis <4.000000> speed <8.000000>;
+		}
+		if( TRUE )
+		{
+			turn pelvis to y-axis <4.000000> speed <12.000000>;
+			turn pelvis to x-axis <6.000000> speed <6.000000>;
+			turn luparm to x-axis <-40.005495> speed <50.000000>;
+			turn ruparm to x-axis <40.005495> speed <50.000000>;
+			turn rhand to x-axis <-20.005495> speed <130.000000>;
+			turn loarm to x-axis <-10.005495> speed <100.000000>;
+			sleep 1050;
+			turn rhand to x-axis <40.005495> speed <100.000000>;
+			turn loarm to x-axis <10.005495> speed <100.000000>;
+			sleep 600;		
+			turn pelvis to z-axis <-3.000000> speed <8.000000>;
+		}
+	}
+}
+
+StopWalk()
+{
+	turn luparm to x-axis <0.000000> speed <50.000000>;
+	turn ruparm to x-axis <0.000000> speed <50.000000>;
+	turn loarm to x-axis <0.000000> speed <100.000000>;
+	turn roarm to x-axis <0.000000> speed <100.000000>;
+	turn pelvis to y-axis <0.000000> speed <100.000000>;
+	turn pelvis to x-axis <0.000000> speed <20.000000>;
+	move pelvis to y-axis [0.000000] speed [20.000000];
+	turn pelvis to z-axis <0.000000> speed <20.000000>;
+	turn rhand to x-axis <0.000000> speed <100.000000>;
+	turn lhand to x-axis <0.000000> speed <100.000000>;
+	turn pelvis to x-axis <10.000000> speed <48.000000>;
+	turn pelvis to x-axis <-3.000000> speed <48.000000>;
+	turn pelvis to x-axis <0.000000> speed <48.000000>;
+	wait-for-turn pelvis around x-axis;
+	sleep 20;
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+Activate()
+{
+	spin spinner around y-axis speed <25.0>;
+}
+
+Deactivate()
+{
+	spin spinner around y-axis speed <0.000000>;
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	start-script Walk();
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	signal SIG_MOVE;
+	start-script StopWalk();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode pelvis type NOHEATCLOUD;
+		explode luparm type NOHEATCLOUD;
+		explode loarm type NOHEATCLOUD;
+		explode lhand type NOHEATCLOUD;
+		explode ruparm type NOHEATCLOUD;
+		explode roarm type NOHEATCLOUD;
+		explode rhand type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode pelvis type NOHEATCLOUD;
+		explode luparm type NOHEATCLOUD | FALL;
+		explode loarm type NOHEATCLOUD | FALL;
+		explode lhand type NOHEATCLOUD | FALL;
+		explode ruparm type NOHEATCLOUD | FALL;
+		explode roarm type NOHEATCLOUD | FALL;
+		explode rhand type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pelvis type NOHEATCLOUD;
+	explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode loarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode roarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}
