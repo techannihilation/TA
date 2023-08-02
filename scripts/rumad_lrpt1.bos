@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, socle, rail, turret, pitchturret, barrel, fire;
+piece  base, socle, rail1, rail2, turret, pitchturret, barrel1, barrel2, fire;
 
 static-var  UnitHeading, UnitSpeed, Deployed, Firing;
 
@@ -62,8 +62,8 @@ AimPrimary(Heading, Pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	
-	turn turret to y-axis Heading speed <50.00>;
-	turn pitchturret to x-axis <0.00> - Pitch speed <20.00>;
+	turn turret to y-axis Heading speed <25.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <15.00>;
 	
 	wait-for-turn turret around y-axis;
 	wait-for-turn pitchturret around x-axis;
@@ -74,9 +74,11 @@ AimPrimary(Heading, Pitch)
 FirePrimary(Random)
 {
 	emit-sfx 1024 + 0 from fire;
-	move rail to z-axis [-1.50] speed [200.00];
+	move rail1 to z-axis [-2.00] speed [200.00];
+	move rail2 to z-axis [-2.00] speed [200.00];
 	sleep 100;
-	move rail to z-axis [0.00] speed [1.00];
+	move rail1 to z-axis [0.00] speed [1.00];
+	move rail2 to z-axis [0.00] speed [1.00];
 	Firing = 0;
 }
 
@@ -94,12 +96,12 @@ Killed(Severity, CorpseType, Random)
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode barrel type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	}
 	Random = Rand( 1, 2 );
 	if( Random == 1 )
 	{
-		explode rail type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rail2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	}
 	return (CorpseType);
 }

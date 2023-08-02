@@ -2,7 +2,7 @@ return {
 	armbrtha1 = {
 		buildangle = 32700,
 		buildcostenergy = 342325,
-		buildcostmetal = 27322,
+		buildcostmetal = 27320,
 		builder = false,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,
@@ -27,7 +27,7 @@ return {
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 162,
-		mass = 20322,
+		mass = 27320,
 		maxdamage = 16000,
 		maxslope = 12,
 		maxvelocity = 0,

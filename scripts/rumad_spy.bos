@@ -1,0 +1,162 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, torso,
+		rupleg, lupleg, llowleg, rlowleg, lfoot, rfoot;
+
+static-var  bMoving;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SLEEP_MOV			550
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+StartMoving()
+{
+	set-signal-mask SIG_MOVE;
+	bMoving = TRUE;
+	while( bMoving )
+	{
+		move pelvis to y-axis [1.500000] speed [0.5];
+		turn torso to z-axis <-2.000000> speed <10.0>;		
+		turn lupleg to x-axis <5.000000> speed <50.0>;
+		turn rupleg to x-axis <-5.000000> speed <50.0>;
+		turn llowleg to x-axis <-30.000000> speed <90.0>;
+		turn rlowleg to x-axis <30.000000> speed <90.0>;
+		turn lfoot to x-axis <-10.000000> speed <60.0>;
+		turn rfoot to x-axis <10.000000> speed <60.0>;		
+		sleep SLEEP_MOV;
+			
+		if( bMoving )
+		{
+			move pelvis to y-axis [0.000000] speed [0.5];
+			turn torso to z-axis <2.000000> speed <10.0>;		
+			turn lupleg to x-axis <-5.000000> speed <50.0>;
+			turn rupleg to x-axis <5.000000> speed <50.0>;
+			turn llowleg to x-axis <30.000000> speed <90.0>;
+			turn rlowleg to x-axis <-30.000000> speed <90.0>;
+			turn lfoot to x-axis <10.000000> speed <60.0>;
+			turn rfoot to x-axis <-10.000000> speed <60.0>;
+			sleep SLEEP_MOV;
+		}
+				
+		if( bMoving )
+		{
+			move pelvis to y-axis [1.500000] speed [0.5];
+			turn torso to z-axis <-2.000000> speed <10.0>;		
+			turn lupleg to x-axis <5.000000> speed <50.0>;
+			turn rupleg to x-axis <-5.000000> speed <50.0>;
+			turn llowleg to x-axis <-30.000000> speed <90.0>;
+			turn rlowleg to x-axis <30.000000> speed <90.0>;
+			turn lfoot to x-axis <-10.000000> speed <60.0>;
+			turn rfoot to x-axis <10.000000> speed <60.0>;
+			sleep SLEEP_MOV;
+		}
+		
+		if( bMoving )
+		{	
+			move pelvis to y-axis [0.000000] speed [0.5];
+			turn torso to z-axis <2.000000> speed <10.0>;		
+			turn lupleg to x-axis <-5.000000> speed <50.0>;
+			turn rupleg to x-axis <5.000000> speed <50.0>;
+			turn llowleg to x-axis <30.000000> speed <90.0>;
+			turn rlowleg to x-axis <-30.000000> speed <90.0>;
+			turn lfoot to x-axis <10.000000> speed <60.0>;
+			turn rfoot to x-axis <-10.000000> speed <60.0>;
+			sleep SLEEP_MOV;
+		}
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	bMoving = FALSE;
+	turn torso to y-axis <0.000000> speed <40.000000>;
+	turn lupleg to x-axis <0.000000> speed <110.000000>;
+	turn llowleg to x-axis <0.000000> speed <110.000000>;
+	turn lfoot to x-axis <0.000000> speed <60.000000>;
+	turn lfoot to x-axis <0.000000> speed <60.000000>;
+	turn rupleg to x-axis <0.000000> speed <110.000000>;
+	turn rlowleg to x-axis <0.000000> speed <110.000000>;
+	turn rfoot to x-axis <0.000000> speed <60.000000>;
+	turn rfoot to x-axis <0.000000> speed <60.000000>;
+	turn torso to z-axis <0.000000> speed <8.000000>;
+	move torso to y-axis [0.000000] speed [4.000000];
+	move torso to x-axis [0.000000] speed [1.60000];
+	move pelvis to y-axis [0.0] speed [2.500000];
+}
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode pelvis type NOHEATCLOUD;
+		explode rupleg type NOHEATCLOUD;
+		explode lupleg type NOHEATCLOUD;
+		explode llowleg type NOHEATCLOUD;
+		explode rlowleg type NOHEATCLOUD;
+		explode lfoot type NOHEATCLOUD;
+		explode rfoot type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode pelvis type NOHEATCLOUD;
+		explode rupleg type NOHEATCLOUD | FALL;
+		explode lupleg type NOHEATCLOUD | FALL;
+		explode llowleg type NOHEATCLOUD | FALL;
+		explode rlowleg type NOHEATCLOUD | FALL;
+		explode lfoot type NOHEATCLOUD | FALL;
+		explode rfoot type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode pelvis type NOHEATCLOUD;
+	explode rupleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lupleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode llowleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rlowleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode lfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode rfoot type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	return (corpsetype);
+}

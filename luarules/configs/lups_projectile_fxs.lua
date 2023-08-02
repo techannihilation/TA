@@ -52,6 +52,9 @@ local lups_effects = {
   rumad_lrpt_rumad_plasma = {
      {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
+  rumad_lrpt1_rumad_plasma = {
+     {class = "Ribbon", options={width=3, size=14, color={0.9,0.9,0.9,1},priority=1},},
+  },
   rumad_rlrpt_rumad_plasma = {
      {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
@@ -82,6 +85,7 @@ local lups_effects = {
   rumad_lago_rumad_plasma = {
      {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
+
 
   --BOMB RUMAD
   rumad_bomber_lvl1_rumad_bomb = {

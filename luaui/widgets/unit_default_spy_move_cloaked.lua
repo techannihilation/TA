@@ -16,6 +16,7 @@ local spies  = {
 	[UnitDefNames.tllspy.id] = true,
 	[UnitDefNames.gok_spy.id] = true,
 	[UnitDefNames.talon_spy.id] = true,
+	[UnitDefNames.rumad_spy.id] = true,
 }
 
 local GetSelectedUnitsSorted = Spring.GetSelectedUnitsSorted
