@@ -2,8 +2,8 @@ return {
 	rumad_sfusion = {
 		acceleration = 0.005,
 		brakerate = 1.8,
-		buildcostenergy = 310000,
-		buildcostmetal = 37850,
+		buildcostenergy = 348500,
+		buildcostmetal = 34000,
 		buildpic = "rumad_sfusion.dds",
 		buildtime = 700000,
 		canguard = true,

@@ -60,8 +60,8 @@ return {
 		unitname = "rumad_aca",
 		workertime = 90,
 		buildoptions = {
-			[1] = "rumad_fusion",
-			--[2] = "",
+			[1] = "rumad_gen",
+			[2] = "rumad_fusion",
 			[3] = "rumad_mohogeo",
 			[4] = "rumad_metalmakerlvl2",
 			[5] = "rumad_moho",

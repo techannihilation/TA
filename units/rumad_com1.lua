@@ -70,7 +70,7 @@ return {
 		upright = true,
 		workertime = 300,
 		buildoptions = {
-			--[1] = "",
+			[1] = "rumad_gen",
 			[2] = "rumad_fusion",
 			[3] = "rumad_mohogeo",
 			[4] = "rumad_metalmakerlvl2",
