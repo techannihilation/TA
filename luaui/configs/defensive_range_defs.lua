@@ -221,7 +221,7 @@ modConfig["TA"]["unitList"] =
 								rumad_hotshot = { weapons = { 1 } },
 								rumad_orb = { weapons = { 1 } },
 								rumad_triton = { weapons = { 1 } },
-
+								rumad_juno = { weapons = { 1 } },
 
 									-- AntiAir
 								talon_popcorn = { weapons = { 2 } },

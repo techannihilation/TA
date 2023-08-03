@@ -50,6 +50,7 @@ local copyLightDefs = {
 		["tlljuno_juno_pulse"          ] = "juno",
     ["talon_juno_pulse"          ] = "juno",
     ["gok_juno_pulse"          ] = "juno",
+    ["rumad_juno_pulse"          ] = "juno",
 	},
 }
 local dynLightDefs = {

@@ -118,7 +118,6 @@ return {
 			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 10000,
 			shield_radius = 200,
-
 		},
 		featuredefs = {
 			dead = {
@@ -331,7 +330,6 @@ return {
 				shieldradius = 200,
 				shieldrepulser = false,
 				smartshield = true,
-
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

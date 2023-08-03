@@ -966,12 +966,6 @@ corlift = {
     {class='AirJet',options={color={1,0.4,0.4}, width=5, length=30, piece="engine6", noIconDraw = true, priority=3, onActive=true}},
 },
 
----- SATELLITE----
-arm_sat_radar = {
-   {class='Ribbon', options={width=2, size=15, piece="ribbon1", priority=3, noIconDraw = true}},
-   {class='Ribbon', options={width=2, size=15, piece="ribbon2", priority=3, noIconDraw = true}},
-},
-
 }
 
  ---- COMMANDER XMAS HATS ----------------------------

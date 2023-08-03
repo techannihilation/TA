@@ -26,6 +26,7 @@ local weapons = {
 	tlljuno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
 	talon_juno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
 	gok_juno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
+	rumad_juno_juno_pulse = { radius = 750, damage = 0, duration = 660, rangeFall = 0.8, timeFall = 0.1, scoutDmg = 10},
 
 	--Blue Light Explosion
 	tllleopard_mortor_cannon =  { radius = 95, damage = 250, duration = 140, rangeFall = 0.25, timeFall = 0.5, allyScale = 0.25, teamScale = 0.25},

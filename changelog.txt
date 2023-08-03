@@ -1,9 +1,11 @@
  4.50 => 4.51
-2023-07-30
+2023-08-04
 
 Balance :
   - Increase cost for all Commanders
   - Commanders unlock tech for Geo & Nano Morph
+  - Rework All Shield for T2/T3 Talon & Gok Commanders
+  - Rework All Shield for T4 Arm / Core / Tll Commanders and T4 King Rumad
 
  4.49 => 4.50
 2023-07-26

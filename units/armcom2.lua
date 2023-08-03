@@ -350,7 +350,6 @@ return {
 				shieldrepulser = true,
 				smartshield = true,
 				soundhitwet = "sizzle",
-				soundhitwetvolume = 0.5,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
