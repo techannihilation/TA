@@ -1,0 +1,568 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, hit, gun,
+		lthigh, lleg, lfoot, rthigh, rleg, rfoot,
+       torso, torsorecoil, headturn, head, 
+       larmrecoil, larmz, larmx, lhandx, lhandz, lfingers, lthumb, lsword, 
+       rarmrecoil, rarmz, rarmx, rhandz, rhandx, rshield, 
+       lightning, light01, light02, light03, light04;
+
+static-var  bMoving, MeleeAttack, AttackType, Static_Shield  ;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM_BLADE		4
+#define SIG_AIM_LIGHT_1		8
+#define SIG_AIM_LIGHT_2		16
+#define SIG_AIM_LIGHT_3		32
+#define SIG_AIM_LIGHT_4		64
+
+#define SLEEP_MOVE			350
+
+MotionControl(moving, aiming, justmoved)
+{
+	justmoved = TRUE;
+	while( TRUE )
+	{
+		if( bMoving )
+		{
+			if( bMoving )
+			{
+				turn lthigh to x-axis <15.> speed <20.>;
+				turn lleg to x-axis <-10.> speed <8.>;
+				turn lfoot to x-axis <-20.> speed <16.>;
+				turn rthigh to x-axis <-30.> speed <45.>;
+				turn rleg to x-axis <50.> speed <8.>;
+				turn rfoot to x-axis <0.> speed <0.>;
+				move pelvis to y-axis [1.] speed [5.];
+				if( !MeleeAttack )
+				{
+					turn larmrecoil to x-axis <25.> speed <8.>;
+					turn larmz to z-axis <-10.> speed <12.>;
+					turn larmx to x-axis <40.> speed <6.>;
+					
+					turn rarmrecoil to x-axis <-5.> speed <8.>;
+					turn rarmx to x-axis <5.> speed <25.>;
+					turn rarmrecoil to y-axis <-15.> speed <25.>;
+					
+					//turn rarmz to z-axis <10.> speed <12.>;
+					//turn rhandx to x-axis <-15.> speed <12.>;
+					
+					turn torso to y-axis <-10.> speed <8.>;
+					turn headturn to y-axis <15.> speed <12.>;
+					turn torsorecoil to x-axis <5.> speed <8.>;
+					turn larmrecoil to x-axis <0.> speed <25.>;
+					turn lfingers to y-axis <0.> speed <30.>;
+					turn lthumb to y-axis <0.> speed <45.>;
+					
+					//turn rarmrecoil to x-axis <0.> speed <25.>;
+					//turn rhandz to z-axis <0.> speed <25.>;
+				}
+				sleep SLEEP_MOVE;
+			}
+			if( bMoving )
+			{
+				turn lthigh to x-axis <25.> speed <17.>;
+				turn lleg to x-axis <10.> speed <25.>;
+				turn lfoot to x-axis <10.> speed <25.>;
+				turn rthigh to x-axis <-20.> speed <16.>;
+				turn rleg to x-axis <5.> speed <60.>;
+				turn rfoot to x-axis <20.> speed <15.>;
+				move pelvis to y-axis [-1.] speed [6.];
+				if( !MeleeAttack )
+				{
+					turn torsorecoil to x-axis <0.> speed <5.>;
+				}
+				sleep SLEEP_MOVE;
+			}
+			if( bMoving )
+			{
+				turn lthigh to x-axis <0.> speed <40.>;
+				turn lleg to x-axis <45.> speed <55.>;
+				turn lfoot to x-axis <0.> speed <8.>;
+				turn rthigh to x-axis <5.> speed <35.>;
+				turn rleg to x-axis <0.> speed <8.>;
+				turn rfoot to x-axis <0.> speed <16.>;
+				move pelvis to y-axis [-1.] speed [2.];
+				if( !MeleeAttack )
+				{
+					turn larmrecoil to x-axis <35.> speed <8.>;
+					turn larmz to z-axis <-10.> speed <12.>;
+					turn larmx to x-axis <45.> speed <8.>;
+					
+					//turn rarmrecoil to x-axis <35.> speed <8.>;
+					//turn rarmz to z-axis <10.> speed <12.>;
+					//turn rarmx to x-axis <45.> speed <8.>;
+					//turn rhandx to x-axis <0.> speed <12.>;
+					
+					turn rarmrecoil to x-axis <0.> speed <8.>;
+					turn rarmx to x-axis <0.> speed <25.>;
+					
+					turn torso to y-axis <0.> speed <8.>;
+					turn headturn to y-axis <0.> speed <12.>;
+					turn torsorecoil to x-axis <10.> speed <8.>;
+				}
+				sleep SLEEP_MOVE;
+			}
+			if( bMoving )
+			{
+				turn lthigh to x-axis <-30.> speed <48.>;
+				turn lleg to x-axis <50.> speed <8.>;
+				turn lfoot to x-axis <0.> speed <0.>;
+				turn rthigh to x-axis <15.> speed <20.>;
+				turn rleg to x-axis <-10.> speed <8.>;
+				turn rfoot to x-axis <-20.> speed <16.>;
+				move pelvis to y-axis [1.] speed [5.];
+				if( !MeleeAttack )
+				{
+					turn larmrecoil to x-axis <45.> speed <8.>;
+					turn larmz to z-axis <-10.> speed <12.>;
+					turn larmx to x-axis <50.> speed <6.>;
+					
+					//turn rarmrecoil to x-axis <25.> speed <8.>;
+					//turn rarmz to z-axis <10.> speed <12.>;
+					//turn rarmx to x-axis <40.> speed <5.>;
+					//turn rhandx to x-axis <15.> speed <12.>;
+					
+					turn rarmrecoil to x-axis <-5.> speed <8.>;
+					turn rarmx to x-axis <5.> speed <25.>;
+					
+					turn torso to y-axis <10.> speed <8.>;
+					turn headturn to y-axis <-15.> speed <12.>;
+					turn torsorecoil to x-axis <5.> speed <6.>;
+					
+					turn larmrecoil to x-axis <0.> speed <25.>;
+					turn lfingers to y-axis <0.> speed <30.>;
+					turn lthumb to y-axis <0.> speed <45.>;
+					
+					//turn rarmrecoil to x-axis <0.> speed <25.>;
+					//turn rarmx to y-axis <0.> speed <25.>;
+					//turn rhandz to z-axis <0.> speed <25.>;
+				}
+				sleep SLEEP_MOVE;
+			}
+			if( bMoving )
+			{
+				turn lthigh to x-axis <-20.> speed <16.>;
+				turn lleg to x-axis <10.> speed <77.>;
+				turn lfoot to x-axis <20.> speed <16.>;
+				turn rthigh to x-axis <25.> speed <16.>;
+				turn rleg to x-axis <20.> speed <24.>;
+				turn rfoot to x-axis <10.> speed <24.>;
+				move pelvis to y-axis [-1.] speed [6.];
+				if( !MeleeAttack )
+				{
+					turn torsorecoil to x-axis <0.> speed <6.>;
+				}
+				sleep SLEEP_MOVE;
+			}
+			if( bMoving )
+			{
+				turn lthigh to x-axis <5.> speed <35.>;
+				turn lleg to x-axis <0.> speed <8.>;
+				turn lfoot to x-axis <0.> speed <16.>;
+				turn rthigh to x-axis <0.> speed <40.>;
+				turn rleg to x-axis <60.> speed <55.>;
+				turn rfoot to x-axis <0.> speed <8.>;
+				move pelvis to y-axis [-1.] speed [2.];
+				if( !MeleeAttack )
+				{
+					turn larmrecoil to x-axis <35.> speed <8.>;
+					turn larmz to z-axis <-10.> speed <12.>;
+					turn larmx to x-axis <45.> speed <6.>;
+					
+					//turn rarmrecoil to x-axis <35.> speed <8.>;
+					//turn rarmz to z-axis <10.> speed <12.>;
+					//turn rarmx to x-axis <45.> speed <6.>;
+					//turn rhandx to x-axis <0.> speed <12.>;
+					
+					turn rarmrecoil to x-axis <0.> speed <8.>;
+					turn rarmx to x-axis <0.> speed <25.>;
+					turn rarmrecoil to y-axis <12.> speed <8.>;
+					
+					turn torso to y-axis <0.> speed <8.>;
+					turn headturn to y-axis <0.> speed <12.>;
+					turn torsorecoil to x-axis <10.> speed <8.>;
+				}
+				sleep SLEEP_MOVE;
+			}
+			justmoved = TRUE;
+		}
+		if( !bMoving )
+		{
+			if( justmoved )
+			{
+				turn lthigh to x-axis <0.> speed <25.>;
+				turn lleg to x-axis <0.> speed <50.>;
+				turn rthigh to x-axis <0.> speed <25.>;
+				turn rleg to x-axis <0.> speed <50.>;
+				move pelvis to y-axis [0.] speed [10.];
+				turn pelvis to x-axis <0.> speed <5.>;
+				turn torsorecoil to x-axis <0.> speed <50.>;
+				turn lfoot to x-axis <0.> speed <25.>;
+				turn rfoot to x-axis <0.> speed <25.>;
+				if( !MeleeAttack )
+				{				
+					turn headturn to y-axis <0.> speed <50.>;
+					turn head to y-axis <0.> speed <100.>;
+					//Arms
+					turn larmrecoil to x-axis <0.> speed <25.>;
+					turn lfingers to y-axis <0.> speed <30.>;
+					turn lthumb to y-axis <0.> speed <45.>;
+					turn rarmx to y-axis <0.> speed <25.>;
+					turn rhandx to x-axis <0.> speed <25.>;	
+					// NEW Values
+					turn larmx to x-axis <-10.0> speed <10.>;
+					turn larmz to z-axis <-10.0> speed <10.>;	
+					turn rarmrecoil to x-axis <-30.0> speed <10.>;
+					turn rarmrecoil to y-axis <0.> speed <25.>; 	
+					turn rarmx to x-axis <30.0> speed <10.>;
+					turn rarmz to z-axis <10.0> speed <10.>;
+					turn rhandz to z-axis  <-10.0> speed <10.>;	
+					move lsword to y-axis [25.0] speed <10.>;
+				}
+				justmoved = FALSE;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	spin lightning around y-axis speed <15.0>;
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from torso;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = FALSE;	
+	Static_Shield = 1;
+	MeleeAttack = FALSE;
+	AttackType = 1;
+	turn larmx to x-axis <-10.0> now;
+	turn larmz to z-axis <-10.0> now;
+	turn rarmrecoil to x-axis <-30.0> now; 	
+	turn rarmx to x-axis <30.0> now;
+	turn rarmz to z-axis <10.0> now;
+	turn rhandz to z-axis  <-10.0> now;
+	move lsword to y-axis [25.0] now;
+	move lightning to y-axis [150.0] now;
+	move light01 to z-axis [200.0] now;
+	move light02 to z-axis [-200.0] now;
+	move light03 to x-axis [-200.0] now;
+	move light04 to x-axis [200.0] now;
+		
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	bMoving = FALSE;
+}
+
+RestoreAfterDelay()
+{
+	sleep 1000;
+	turn headturn to y-axis <0.> speed <200.>;
+	turn head to y-axis <0.> speed <400.>;
+	turn torso to y-axis <0.> speed <200.>;
+	turn torsorecoil to y-axis <0.> speed <200.>;
+	
+	//Arms
+	turn larmrecoil to x-axis <0.> speed <100.>;
+	turn lfingers to y-axis <0.> speed <120.>;
+	turn lthumb to y-axis <0.> speed <180.>;
+	turn rarmx to y-axis <0.> speed <100.>;
+	turn rhandx to x-axis <0.> speed <100.>;	
+	// NEW Values
+	turn larmx to x-axis <-10.0> speed <30.>;
+	turn larmz to z-axis <-10.0> speed <30.>;
+	turn lhandz to z-axis <0.> speed <80.>;
+	turn lhandx to x-axis <0.> speed <80.>;
+	
+	turn rarmrecoil to x-axis <-30.0> speed <30.>; 	
+	turn rarmx to x-axis <30.0> speed <30.>;
+	turn rarmz to z-axis <10.0> speed <30.>;
+	turn rhandz to z-axis  <-10.0> speed <30.>;
+	move lsword to y-axis [25.0] speed <30.>;
+	
+	
+	MeleeAttack = FALSE;
+}
+
+// BLADE
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = torso;
+}
+
+QueryWeapon1(piecenum)
+{
+	piecenum = hit;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_BLADE;
+	set-signal-mask SIG_AIM_BLADE;	
+	if( AttackType == 1 )
+	{
+		turn rarmrecoil to x-axis <-5.> speed <40.>;
+		turn rarmz to z-axis <5.> speed <20.>;
+		turn rarmx to x-axis <-5.> speed <80.>;
+		
+		turn torso to y-axis heading speed <200.>;
+		turn torsorecoil to y-axis <-80.> speed <200.>;
+		
+		turn headturn to y-axis <40.> speed <90.>;
+		
+		turn larmrecoil to x-axis <-50.> - pitch speed <200.>;
+		turn larmz to z-axis <10.> speed <300.>;
+		turn larmx to x-axis <70.> speed <300.>;	
+		turn lhandz to z-axis <60.> speed <100.>;
+		
+		wait-for-turn torso around y-axis;
+		wait-for-turn torsorecoil around y-axis;
+		wait-for-turn larmrecoil around x-axis;
+		wait-for-turn larmz around z-axis;
+		wait-for-turn lhandx around x-axis;
+		wait-for-turn lhandz around z-axis;
+		
+		MeleeAttack = TRUE;
+		start-script RestoreAfterDelay();
+		return (1);
+	}
+	if( AttackType == 2 )
+	{
+		turn rarmrecoil to x-axis <5.> speed <40.>;
+		turn rarmz to z-axis <5.> speed <80.>;
+		turn rarmx to x-axis <5.> speed <120.>;
+		
+		turn torso to y-axis heading speed <200.>;
+		turn torsorecoil to y-axis <50.> speed <200.>;		
+		turn headturn to y-axis <-40.> speed <90.>;
+		
+		turn larmrecoil to x-axis <-50.> - pitch speed <300.>;		
+		turn larmz to z-axis <-15.> speed <300.>;
+		turn larmx to x-axis <-30.> speed <200.>;
+		
+		wait-for-turn torso around y-axis;
+		wait-for-turn torsorecoil around y-axis;
+		wait-for-turn larmrecoil around x-axis;
+		wait-for-turn larmz around z-axis;
+		wait-for-turn lhandx around x-axis;
+		wait-for-turn lhandz around z-axis;
+		MeleeAttack = TRUE;
+		start-script RestoreAfterDelay();
+		return (1);
+	}
+}
+
+FireWeapon1()
+{
+	MeleeAttack = TRUE;
+	if( AttackType == 1 )
+	{
+		AttackType = 2;
+		turn rarmrecoil to x-axis <5.> speed <40.>;
+		turn rarmz to z-axis <5.> speed <80.>;
+		turn rarmx to x-axis <5.> speed <40.>;
+		
+		turn torsorecoil to y-axis <10.> speed <180.>;
+		
+		turn larmrecoil to x-axis <-75.> speed <200.>;
+		//turn larmz to z-axis <0.> speed <80.>;
+		//turn larmx to x-axis <-75.> speed <200.>;
+		//turn larmx to y-axis <0.> speed <200.>;
+		//turn lhandx to x-axis <-60.> speed <180.>;
+		//turn lhandz to z-axis <90.> speed <240.>;
+		
+		wait-for-turn torsorecoil around y-axis;
+		return (0);
+	}
+	if( AttackType == 2 )
+	{
+		AttackType = 1;
+		
+		turn rarmrecoil to x-axis <-5.> speed <40.>;
+		turn rarmz to z-axis <5.> speed <20.>;
+		turn rarmx to x-axis <-5.> speed <80.>;
+		
+		turn torsorecoil to y-axis <0.> speed <180.>;
+		
+		turn larmrecoil to x-axis <0.> speed <200.>;
+		//turn larmz to z-axis <-80.> speed <200.>;
+		//turn larmx to x-axis <-80.> speed <200.>;
+		//turn larmx to y-axis <0.> speed <200.>;
+		//turn lhandx to x-axis <-60.> speed <180.>;
+		//turn lhandz to z-axis <0.> speed <240.>;
+		wait-for-turn torsorecoil around y-axis;
+		return (0);
+	}
+}
+
+//Shield Weapon
+Shield()
+{
+	Static_Shield = !Static_Shield;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = gun;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = gun;
+}
+
+AimWeapon3(heading, pitch)
+{
+	if( Static_Shield )
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+//LIGHTNING 
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = light01;
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_LIGHT_1;
+	set-signal-mask SIG_AIM_LIGHT_1;	
+	return (1);
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = light01;
+}
+
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = light02;
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_LIGHT_2;
+	set-signal-mask SIG_AIM_LIGHT_2;	
+	return (1);
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = light02;
+}
+
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = light03;
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_LIGHT_3;
+	set-signal-mask SIG_AIM_LIGHT_3;	
+	return (1);
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = light03;
+}
+
+
+AimFromWeapon7(piecenum)
+{
+	piecenum = light04;
+}
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_LIGHT_4;
+	set-signal-mask SIG_AIM_LIGHT_4;	
+	return (1);
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = light04;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( Severity <= 50 )
+	{
+		CorpseType = 1;
+		explode lsword type NOHEATCLOUD;
+		explode larmrecoil type NOHEATCLOUD;
+		explode pelvis type NOHEATCLOUD;
+		explode rleg type NOHEATCLOUD;
+		explode head type NOHEATCLOUD;
+		explode lleg type NOHEATCLOUD;
+		return (CorpseType);
+	}	
+	CorpseType = 3;
+	explode lsword type FALL | NOHEATCLOUD;
+	explode larmrecoil type FALL | NOHEATCLOUD;
+	explode pelvis type SHATTER | NOHEATCLOUD;
+	explode rleg type NOHEATCLOUD;
+	explode head type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lleg type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

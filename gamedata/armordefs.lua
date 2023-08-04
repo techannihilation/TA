@@ -265,6 +265,7 @@ return {
 		"gok_disciple",
 		"gok_antichrist",
 		"gok_satan",
+		"gok_slanesh",
 	},
 
 	crawlingbombs = {

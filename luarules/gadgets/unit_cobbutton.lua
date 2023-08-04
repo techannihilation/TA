@@ -120,6 +120,7 @@ local ShieldUnits = {
   [UnitDefNames["gok_bats"].id] = true,
   [UnitDefNames["gok_valefor"].id] = true,
   [UnitDefNames["gok_satan"].id] = true,
+  [UnitDefNames["gok_slanesh"].id] = true,
   [UnitDefNames["gok_antichrist"].id] = true,
   [UnitDefNames["gok_archon"].id] = true,
   [UnitDefNames["gok_eck"].id] = true,

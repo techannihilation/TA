@@ -617,6 +617,12 @@ local morphDefs = {
 		tech = 3,
 		xp = 0.10,
 	},
+	gok_satan = {
+		into = 'gok_slanesh',
+		tech = 3,
+		time = 60,
+		xp = 0.10,
+	},
 	core_turbulence = {
 		into = 'coradamantoise',
 		tech = 3,

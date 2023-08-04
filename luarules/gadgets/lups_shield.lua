@@ -172,6 +172,7 @@ gok_bats = true,
 gok_valefor = true,
 gok_azaroth = true,
 gok_satan = true,
+gok_slanesh = true,
 gok_antichrist = true,
 gok_archon = true,
 --Rumad
