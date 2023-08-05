@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "VKBOT8",
-		name = "Satan",
+		name = "Slanesh",
 		nochasecategory = "ALL",
 		objectname = "gok_slanesh",
 		radaremitheight = 250,

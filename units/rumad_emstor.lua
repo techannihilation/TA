@@ -9,7 +9,7 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "130 115 100",
+		collisionvolumescales = "150 115 100",
 		collisionvolumetype = "Box",
 		description = "60K Capacity (Amphibious)",
 		downloadable = 1,
