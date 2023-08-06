@@ -3,18 +3,17 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body1, body2, body3, pad,
-		pillar1a, pillar1b, pillar2a, pillar2b, pillar3a, pillar3b,
-		support1, support2, support3, support4,
-        plate1, plate2, plate3, beam1, beam2, beam3;
+piece  base, body, spiner, dome, pad,
+		soclea, gatea, nanoa, pillara, enginea, heada,
+		socleb, gateb, nanob, pillarb, engineb, headb,
+		soclec, gatec, nanoc, pillarc, enginec, headc,
+		socled, gated, nanod, pillard, engined, headd;
+		
 
-static-var  Static_Var_1, unitviewer, statechg_DesiredState, statechg_StateChanging;
+static-var  spray, unitviewer, statechg_DesiredState, statechg_StateChanging;
 
 // Signal definitions
 #define SIG_ACTIVATE		2
-#define SIG_AIM				4
-#define SIG_AIM_3			8
-
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -32,9 +31,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 256 | 1;
 			}
-			emit-sfx smoketype from body1;
-			emit-sfx smoketype from body2;
-			emit-sfx smoketype from body3;
+			emit-sfx smoketype from soclea;
+			emit-sfx smoketype from soclec;
+			emit-sfx smoketype from dome;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -44,6 +43,18 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		sleep sleeptime;
 	}
 	return (0);
+}
+
+activatescr()
+{
+	move body to y-axis [100.000000] speed [12.000000];
+	sleep 7000;
+}
+
+deactivatescr()
+{
+	move body to y-axis [0.000000] speed [2.000000];
+	sleep 15000;
 }
 
 OpenYard()
@@ -72,12 +83,14 @@ CloseYard()
 
 Go()
 {
+	call-script activatescr();
 	call-script OpenYard();
 	set INBUILDSTANCE to 1;
 }
 
 Stop()
 {
+	call-script deactivatescr();
 	set INBUILDSTANCE to 0;
 	call-script CloseYard();
 }
@@ -116,29 +129,33 @@ RequestState(requestedstate, currentstate)
 
 Create()
 {
-	Static_Var_1 = 0;
+	spray = 0;
 	call-script InitState();
 	start-script SmokeUnit();
 }
 
 QueryNanoPiece(piecenum)
 {
-	if( Static_Var_1 == 0 )
+	if( spray == 0 )
 	{
-		piecenum = beam2;
+		piecenum = nanoa;
 	}
-	if( Static_Var_1 == 1 )
+	if( spray == 1 )
 	{
-		piecenum = beam2;
+		piecenum = nanob;
 	}
-	if( Static_Var_1 == 2 )
+	if( spray == 2 )
 	{
-		piecenum = beam2;
+		piecenum = nanoc;
 	}
-	++Static_Var_1;
-	if( Static_Var_1 == 3 )
+	if( spray == 3 )
 	{
-		Static_Var_1 = 0;
+		piecenum = nanod;
+	}
+	++spray;
+	if( spray == 4 )
+	{
+		spray = 0;
 	}
 }
 
@@ -158,16 +175,12 @@ Deactivate()
 
 StartBuilding()
 {
-	spin plate1 around y-axis speed <18.0>;
-	spin plate2 around y-axis speed <-18.0>;
-	spin plate3 around y-axis speed <18.0>;
+	spin spiner around y-axis speed <18.0> accelerate <1.0>;
 }
 
 StopBuilding()
 {
-	stop-spin plate1 around y-axis;
-	stop-spin plate2 around y-axis;
-	stop-spin plate3 around y-axis;
+	spin spiner around y-axis speed <0.0> accelerate <-1.0>;
 }
 
 QueryBuildInfo(piecenum)
@@ -185,40 +198,36 @@ Killed(severity, corpsetype)
 	if( severity <= 33 )
 	{
 		corpsetype = 1;
-		explode body1 type NOHEATCLOUD | FALL | SMOKE;
-		explode body2 type NOHEATCLOUD | FALL | SMOKE;
-		explode body3 type NOHEATCLOUD | FALL | SMOKE;		
-		explode pillar1a type NOHEATCLOUD | FALL | SMOKE;
-		explode pillar1a type NOHEATCLOUD | FALL | SMOKE;
-		explode pillar2a type NOHEATCLOUD | FALL | SMOKE;
-		explode pillar2a type NOHEATCLOUD | FALL | SMOKE;
-		explode pillar3a type NOHEATCLOUD | FALL | SMOKE;
-		explode pillar3a type NOHEATCLOUD | FALL | SMOKE;
-		explode plate1 type NOHEATCLOUD | FALL | SMOKE;
-		explode plate2 type NOHEATCLOUD | FALL | SMOKE;
-		explode plate3 type NOHEATCLOUD | FALL | SMOKE;
-		explode support1 type NOHEATCLOUD | FALL | SMOKE;
-		explode support2 type NOHEATCLOUD | FALL | SMOKE;
-		explode support3 type NOHEATCLOUD | FALL | SMOKE;
-		explode support4 type NOHEATCLOUD | FALL | SMOKE;
+		explode body type NOHEATCLOUD | FALL | SMOKE;
+		explode dome type NOHEATCLOUD | FALL | SMOKE;
+		explode pillara type NOHEATCLOUD | FALL | SMOKE;
+		explode pillarb type NOHEATCLOUD | FALL | SMOKE;
+		explode pillarc type NOHEATCLOUD | FALL | SMOKE;
+		explode pillard type NOHEATCLOUD | FALL | SMOKE;
+		explode enginea type NOHEATCLOUD | FALL | SMOKE;
+		explode engineb type NOHEATCLOUD | FALL | SMOKE;
+		explode enginec type NOHEATCLOUD | FALL | SMOKE;
+		explode engined type NOHEATCLOUD | FALL | SMOKE;
+		explode gatea type NOHEATCLOUD | FALL | SMOKE;
+		explode gateb type NOHEATCLOUD | FALL | SMOKE;
+		explode gatec type NOHEATCLOUD | FALL | SMOKE;
+		explode gated type NOHEATCLOUD | FALL | SMOKE;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body1 type NOHEATCLOUD | FALL | SMOKE;
-	explode body2 type NOHEATCLOUD | FALL | SMOKE;
-	explode body3 type NOHEATCLOUD | FALL | SMOKE;		
-	explode pillar1a type NOHEATCLOUD | FALL | SMOKE;
-	explode pillar1a type NOHEATCLOUD | FALL | SMOKE;
-	explode pillar2a type NOHEATCLOUD | FALL | SMOKE;
-	explode pillar2a type NOHEATCLOUD | FALL | SMOKE;
-	explode pillar3a type NOHEATCLOUD | FALL | SMOKE;
-	explode pillar3a type NOHEATCLOUD | FALL | SMOKE;
-	explode plate1 type NOHEATCLOUD | FALL | SMOKE;
-	explode plate2 type NOHEATCLOUD | FALL | SMOKE;
-	explode plate3 type NOHEATCLOUD | FALL | SMOKE;
-	explode support1 type NOHEATCLOUD | FALL | SMOKE;
-	explode support2 type NOHEATCLOUD | FALL | SMOKE;
-	explode support3 type NOHEATCLOUD | FALL | SMOKE;
-	explode support4 type NOHEATCLOUD | FALL | SMOKE;
+	explode body type NOHEATCLOUD | FALL | SMOKE;
+	explode dome type NOHEATCLOUD | FALL | SMOKE;		
+	explode pillara type NOHEATCLOUD | FALL | SMOKE;
+	explode pillarb type NOHEATCLOUD | FALL | SMOKE;
+	explode pillarc type NOHEATCLOUD | FALL | SMOKE;
+	explode pillard type NOHEATCLOUD | FALL | SMOKE;
+	explode enginea type NOHEATCLOUD | FALL | SMOKE;
+	explode engineb type NOHEATCLOUD | FALL | SMOKE;
+	explode enginec type NOHEATCLOUD | FALL | SMOKE;
+	explode engined type NOHEATCLOUD | FALL | SMOKE;
+	explode gatea type NOHEATCLOUD | FALL | SMOKE;
+	explode gateb type NOHEATCLOUD | FALL | SMOKE;
+	explode gatec type NOHEATCLOUD | FALL | SMOKE;
+	explode gated type NOHEATCLOUD | FALL | SMOKE;
 	return (corpsetype);
 }
