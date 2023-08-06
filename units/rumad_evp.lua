@@ -50,14 +50,12 @@ return {
 		yardmap = "ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo ooccccccccoooooooo",
 		buildoptions = {
 			[1] = "rumad_eck",
-			[2] = "rumad_eagle",
-			[3] = "rumad_fennek",
+			[2] = "rumad_fennek",
+			[3] = "rumad_eagle",
 			[4] = "rumad_mflak",
 			[5] = "rumad_mlrpt",
 			[6] = "rumad_mcv",
-			[7] = "rumad_macross",
-			[8] = "rumad_howie",
-			[9] = "rumad_mongol",
+			[7] = "rumad_antarion",
 		},
 		customparams = {
 			buildpic = "rumad_evp.dds",

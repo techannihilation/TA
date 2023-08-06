@@ -8,6 +8,7 @@ Balance :
  - Add New Model for T5 Gok Lab
  - Add New T4 Fighter for GOK : Za'Kul
  - Add New T4 Morph for Gok Satan : Slanesh
+ - Split T3 Kbot/Veh Rumad (with adding Antarion for Rumad Veh)
 
  4.50 => 4.51
 2023-08-04
