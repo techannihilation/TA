@@ -72,6 +72,7 @@ return {
 	"gok_angel",
 	"gok_sucub",
 	"gok_wraith",
+	"gok_zakul",
 	"rumad_fighter_lvl1",
 	"rumad_fighter_lvl2",
 	"rumad_fighter_lvl3",

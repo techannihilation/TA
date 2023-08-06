@@ -1,3 +1,14 @@
+ 4.51 => 4.52
+2023-08-04
+
+Balance :
+ - ArmStratus buff (better dmg/s and better HP 35K=>42K)
+
+ Improvment :
+ - Add New Model for T5 Gok Lab
+ - Add New T4 Fighter for GOK : Za'Kul
+ - Add New T4 Morph for Gok Satan : Slanesh
+
  4.50 => 4.51
 2023-08-04
 

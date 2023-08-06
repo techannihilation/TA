@@ -61,7 +61,8 @@ return {
 			[3] = "gok_archon",
 			[4] = "gok_snipe",
 			[5] = "gok_cut1",
-			[6] = "gok_azaroth",
+			[6] = "gok_azaroth",gok_zakul
+			[7] = "gok_zakul",
 		},
 		customparams = {
 			buildpic = "gok_ulab.dds",

@@ -144,8 +144,7 @@ return {
 				},
 				damage = {
 					areoship = 40,
-					default = 5,
-					
+					default = 5,					
 					air = 160,
 				},
 			},

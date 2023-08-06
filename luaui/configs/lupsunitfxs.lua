@@ -455,6 +455,9 @@ cafus = {
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=4, length=36, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=4, length=36, piece="thrust2", noIconDraw = true, priority=3, onActive=true}},
   },
+  gok_zakul  = {
+    {class='AirJet',options={color={0.78, 0.08, 0.52}, width=6, length=42, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
+  },
   gok_dirgesinger = {
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=5, length=36, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
