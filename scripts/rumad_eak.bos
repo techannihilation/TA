@@ -1,0 +1,464 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, pelvis, lleg, lboot, ltoe, rleg, rboot, rtoe, torso, torsorecoil, pitchturret,
+       lcannon, lbarrelmove1, lbarrelmove2, lbarrelmove3, lbarrelmove4,
+       rcannon, rbarrelmove1, rbarrelmove2, rbarrelmove3, rbarrelmove4,
+       rflare1, rflare2, rflare3, rflare4,
+       lflare1, lflare2, lflare3, lflare4;
+
+static-var  bMoving, bAiming, gun_1, gun_2, gun_3, gun_4;
+
+// Signal definitions
+#define SIG_AIM_1				2
+#define SIG_AIM_2				4
+#define SIG_AIM_3				8
+#define SIG_AIM_4				16
+
+MotionControl(Moving, Aiming, JustMoved)
+{
+	JustMoved = 1;
+	while( TRUE )
+	{
+		Moving = bMoving;
+		Aiming = bAiming;
+		if( Moving )
+		{
+			if( bMoving )
+			{
+				turn lleg to x-axis <30.00> speed <100.00>;
+				turn lboot to x-axis <-10.00> speed <40.00>;
+				turn ltoe to x-axis <-20.00> speed <80.00>;
+				turn rleg to x-axis <-60.00> speed <240.00>;
+				turn rboot to x-axis <100.00> speed <40.00>;
+				turn rtoe to x-axis <0.00> speed <0.00>;
+				move pelvis to y-axis [0.90] speed [5.40];
+				if( !bAiming )
+				{
+					turn lcannon to x-axis <-5.00> speed <40.00>;
+					turn rcannon to x-axis <-5.00> speed <40.00>;
+					turn torsorecoil to x-axis <5.00> speed <20.00>;
+					}								
+				sleep 250;
+			}
+			
+			if( bMoving )
+			{
+				turn lleg to x-axis <50.00> speed <80.00>;
+				turn lboot to x-axis <20.00> speed <120.00>;
+				turn ltoe to x-axis <10.00> speed <120.00>;
+				turn rleg to x-axis <-40.00> speed <80.00>;
+				turn rboot to x-axis <10.00> speed <360.00>;
+				turn rtoe to x-axis <20.00> speed <80.00>;
+				move pelvis to y-axis [-0.90] speed [7.20];
+				if( !bAiming )
+				{
+					turn torsorecoil to x-axis <0.00> speed <20.00>;
+				}
+				sleep 250;
+			}
+			
+			if( bMoving )
+			{
+				turn lleg to x-axis <0.00> speed <200.00>;
+				turn lboot to x-axis <90.00> speed <280.00>;
+				turn ltoe to x-axis <0.00> speed <40.00>;
+				turn rleg to x-axis <5.00> speed <180.00>;
+				turn rboot to x-axis <0.00> speed <40.00>;
+				turn rtoe to x-axis <0.00> speed <80.00>;
+				move pelvis to y-axis [-0.45] speed [1.80];
+				if( !bAiming )
+				{
+					turn lcannon to x-axis <5.00> speed <60.00>;
+					turn rcannon to x-axis <5.00> speed <60.00>;
+					turn torsorecoil to x-axis <10.00> speed <40.00>;
+				}
+				sleep 250;
+			}
+			
+			if( bMoving )
+			{
+				turn lleg to x-axis <-60.00> speed <240.00>;
+				turn lboot to x-axis <100.00> speed <40.00>;
+				turn ltoe to x-axis <0.00> speed <0.00>;
+				turn rleg to x-axis <30.00> speed <100.00>;
+				turn rboot to x-axis <-10.00> speed <40.00>;
+				turn rtoe to x-axis <-20.00> speed <80.00>;
+				move pelvis to y-axis [0.90] speed [5.40];
+				if( !bAiming )
+				{
+					turn lcannon to x-axis <-5.00> speed <40.00>;
+					turn rcannon to x-axis <-5.00> speed <40.00>;
+					turn torsorecoil to x-axis <5.00> speed <20.00>;
+				}
+				sleep 250;
+			}
+			
+			if( bMoving )
+			{
+				turn lleg to x-axis <-40.00> speed <80.00>;
+				turn lboot to x-axis <10.00> speed <360.00>;
+				turn ltoe to x-axis <20.00> speed <80.00>;
+				turn rleg to x-axis <50.00> speed <80.00>;
+				turn rboot to x-axis <20.00> speed <120.00>;
+				turn rtoe to x-axis <10.00> speed <120.00>;
+				move pelvis to y-axis [-0.90] speed [7.20];
+				if( !bAiming )
+				{
+					turn torsorecoil to x-axis <0.00> speed <20.00>;
+				}				
+				sleep 250;
+			}
+			
+			if( bMoving )
+			{
+				turn lleg to x-axis <5.00> speed <180.00>;
+				turn lboot to x-axis <0.00> speed <40.00>;
+				turn ltoe to x-axis <0.00> speed <80.00>;
+				turn rleg to x-axis <0.00> speed <200.00>;
+				turn rboot to x-axis <90.00> speed <280.00>;
+				turn rtoe to x-axis <0.00> speed <40.00>;
+				move pelvis to y-axis [-0.45] speed [1.80];
+				if( !bAiming )
+				{
+					turn lcannon to x-axis <5.00> speed <60.00>;
+					turn rcannon to x-axis <5.00> speed <60.00>;
+					turn torsorecoil to x-axis <10.00> speed <40.00>;
+				}
+				sleep 250;
+			}
+			JustMoved = 1;
+		}
+		if( !Moving )
+		{
+			if( JustMoved )
+			{
+				turn lleg to x-axis <0.00> speed <180.00>;
+				turn lboot to x-axis <0.00> speed <180.00>;
+				turn ltoe to x-axis <0.00> speed <180.00>;
+				turn rleg to x-axis <0.00> speed <180.00>;
+				turn rboot to x-axis <0.00> speed <180.00>;
+				turn rtoe to x-axis <0.00> speed <180.00>;
+				move pelvis to y-axis [0.00] speed [9.00];
+				turn torsorecoil to x-axis <0.00> speed <10.00>;
+				if( !Aiming )
+				{
+					turn lcannon to x-axis <0.00> speed <40.00>;
+					turn rcannon to x-axis <0.00> speed <40.00>;
+				}
+				JustMoved = 0;
+			}
+			sleep 100;
+		}
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from pelvis;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	bMoving = 0;
+	bAiming = 0;
+	gun_1 = 0;
+	gun_2 = 0;
+	gun_3 = 0;
+	gun_4 = 0;
+	
+	start-script MotionControl();
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	bAiming = 0;
+	turn torso to y-axis <0.00> speed <100.00>;
+	turn pitchturret to x-axis <0.00> speed <30.00>;
+	turn lcannon to x-axis <0.00> speed <45.00>;
+	turn rcannon to x-axis <0.00> speed <45.00>;
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = torso;
+}
+
+QueryPrimary(PieceNum)
+{
+	if (gun_1 == 0)
+	{
+		PieceNum = lflare1;
+	}
+	if (gun_1 == 1)
+	{
+		PieceNum = lflare2;
+	}	
+}
+
+AimPrimary(Heading, Pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	bAiming = 1;
+	turn torso to y-axis Heading speed <300.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <300.00>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	return(1);
+}
+
+FirePrimary(Random)
+{
+	if (gun_1 == 0)
+	{
+		move lbarrelmove1 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move lbarrelmove1 to z-axis [0.00] speed [3.00];
+	}
+	if (gun_1 == 1)
+	{
+		move lbarrelmove2 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move lbarrelmove2 to z-axis [0.00] speed [3.00];
+	}
+	
+	++gun_1;
+	if (gun_1 == 2)
+	{
+		gun_1 = 0;
+	}
+}
+
+AimFromSecondary(PieceNum)
+{
+	PieceNum = torso;
+}
+
+QuerySecondary(PieceNum)
+{
+	if (gun_2 == 0)
+	{
+		PieceNum = lflare3;
+	}
+	if (gun_2 == 1)
+	{
+		PieceNum = lflare4;
+	}	
+}
+
+AimSecondary(Heading, Pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	wait-for-turn torso around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return(1);
+}
+
+FireSecondary(Random)
+{
+	if (gun_2 == 0)
+	{
+		move lbarrelmove3 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move lbarrelmove3 to z-axis [0.00] speed [3.00];
+	}
+	if (gun_2 == 1)
+	{
+		move lbarrelmove3 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move lbarrelmove3 to z-axis [0.00] speed [3.00];
+	}
+	
+	++gun_2;
+	if (gun_2 == 2)
+	{
+		gun_2 = 0;
+	}
+}
+
+// Second
+
+AimFromWeapon3(PieceNum)
+{
+	PieceNum = torso;
+}
+
+QueryWeapon3(PieceNum)
+{
+	if (gun_3 == 0)
+	{
+		PieceNum = lflare1;
+	}
+	if (gun_3 == 1)
+	{
+		PieceNum = lflare2;
+	}	
+}
+
+AimWeapon3(Heading, Pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	bAiming = 1;
+	wait-for-turn torso around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return(1);
+}
+
+FireWeapon3(Random)
+{
+	if (gun_3 == 0)
+	{
+		move rbarrelmove1 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move rbarrelmove1 to z-axis [0.00] speed [3.00];
+	}
+	if (gun_3 == 1)
+	{
+		move rbarrelmove2 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move rbarrelmove2 to z-axis [0.00] speed [3.00];
+	}
+	
+	++gun_3;
+	if (gun_3 == 2)
+	{
+		gun_3 = 0;
+	}
+}
+
+AimFromWeapon4(PieceNum)
+{
+	PieceNum = torso;
+}
+
+QueryWeapon4(PieceNum)
+{
+	if (gun_4 == 0)
+	{
+		PieceNum = rflare3;
+	}
+	if (gun_4 == 1)
+	{
+		PieceNum = rflare4;
+	}	
+}
+
+AimWeapon4(Heading, Pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	wait-for-turn torso around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	return(1);
+}
+
+FireWeapon4(Random)
+{
+	if (gun_4 == 0)
+	{
+		move rbarrelmove3 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move rbarrelmove3 to z-axis [0.00] speed [3.00];
+	}
+	if (gun_4 == 1)
+	{
+		move rbarrelmove4 to z-axis [-2.00] speed [500.00];
+		sleep 150;
+		move rbarrelmove4 to z-axis [0.00] speed [3.00];
+	}
+	
+	++gun_4;
+	if (gun_4 == 2)
+	{
+		gun_4 = 0;
+	}
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(Severity, CorpseType, Random)
+{
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode lcannon type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode rcannon type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	}
+	
+	if( Severity <= 40 )
+	{
+		CorpseType = 1;
+		return (CorpseType);
+	}
+	
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode rtoe type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	}
+	Random = Rand( 1, 2 );
+	if( Random == 1 )
+	{
+		explode ltoe type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	}
+	
+	if( Severity <= 60 )
+	{
+		CorpseType = 2;
+		return (CorpseType);
+	}
+	CorpseType = 3;	
+	explode rbarrelmove1 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lbarrelmove2 type FALL | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (CorpseType);
+}

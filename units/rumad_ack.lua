@@ -69,7 +69,7 @@ return {
 			[10] = "rumad_amstor",
 			[11] = "rumad_lab",
 			[12] = "rumad_alab",
-			[13] = "rumad_evp",
+			[13] = "rumad_elab",
 			[14] = "rumad_nanotc1",
 			--[15] = "",
 			--[16] = "",
