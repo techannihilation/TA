@@ -59,13 +59,14 @@ return {
 		buildoptions = {
 			[1] = "rumad_eck",
 			[2] = "rumad_eak",
-			[3] = "rumad_macross",
-			[4] = "rumad_howie",
-			[5] = "rumad_mongol",
+			[3] = "rumad_mklrpt",
+			[4] = "rumad_macross",
+			[5] = "rumad_howie",
+			[6] = "rumad_mongol",
 		},
 		customparams = {
 			buildpic = "rumad_elab.dds",
-			faction = "GOK",
+			faction = "RUMAD",
 		},
 		featuredefs = {
 			dead = {

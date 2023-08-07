@@ -1,0 +1,459 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, turret, pitchturret, sleeve, barrel, fire,
+		rfthigh, rfleg, rffoot, lfthigh, lfleg, lffoot, rbthigh, rbleg, rbfoot, lbthigh, lbleg, lbfoot;
+
+static-var  bMoving, Deployed, Firing;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SLEEP_MOVE			250
+#define COEFF_MOVE			2
+
+MotionControl()
+{
+	while(TRUE)
+	{
+		// for left feet, invert y and z axis, and flip front and back feet!
+		
+		// step 0 all centered
+		if (bMoving ) 
+		{
+		
+		turn rfthigh to y-axis <0> speed <72.000000> /  COEFF_MOVE;
+		turn rfthigh to z-axis <0> speed <42.000000> /  COEFF_MOVE;
+		
+		turn rfleg to x-axis <0> speed <48.000000> /  COEFF_MOVE;
+		turn rfleg to z-axis <0> speed <126.000000> /  COEFF_MOVE;
+		
+		turn rffoot to x-axis <0> speed <60.000000> /  COEFF_MOVE;
+		turn rffoot to y-axis <0> speed <54.000000> /  COEFF_MOVE;
+		turn rffoot to z-axis <0> speed <66.000000> /  COEFF_MOVE;
+		
+		
+		turn rbthigh to y-axis <-9> speed <54.000000> /  COEFF_MOVE;
+		turn rbthigh to z-axis <10> speed <60.000000> /  COEFF_MOVE;
+		
+		turn rbleg to x-axis <0> now;
+		turn rbleg to z-axis <-11> speed <66.000000> /  COEFF_MOVE;
+		
+		turn rbfoot to x-axis <9.3> speed <55.800000>;
+		turn rbfoot to y-axis <9> speed <54.000000> /  COEFF_MOVE;
+		turn rbfoot to z-axis <-1> speed <6.000000> /  COEFF_MOVE;
+		
+		turn lbthigh to y-axis <0> speed <72.000000> /  COEFF_MOVE;
+		turn lbthigh to z-axis <0> speed <42.000000> /  COEFF_MOVE;
+		
+		turn lbleg to x-axis <0> speed <48.000000> /  COEFF_MOVE;
+		turn lbleg to z-axis <0> speed <126.000000> /  COEFF_MOVE;
+		
+		turn lbfoot to x-axis <0> speed <60.000000> /  COEFF_MOVE;
+		turn lbfoot to y-axis <0> speed <54.000000> /  COEFF_MOVE;
+		turn lbfoot to z-axis <0> speed <66.000000> /  COEFF_MOVE;
+		
+		turn lfthigh to y-axis <9> speed <54.000000> /  COEFF_MOVE;
+		turn lfthigh to z-axis <-10> speed <60.000000> /  COEFF_MOVE;
+		
+		turn lfleg to x-axis <0> now;
+		turn lfleg to z-axis <11> speed <66.000000> /  COEFF_MOVE;
+		
+		turn lffoot to x-axis <9.3> speed <55.800000>;
+		turn lffoot to y-axis <-9> speed <54.000000> /  COEFF_MOVE;
+		turn lffoot to z-axis <1> speed <6.000000> /  COEFF_MOVE;
+		
+		sleep SLEEP_MOVE;
+		}
+		if (bMoving ) 
+		{
+		
+		// step 1 foot back
+		
+		turn rfthigh to y-axis <-15> speed <90.000000> /  COEFF_MOVE;
+		turn rfthigh to z-axis <-4> speed <24.000000> /  COEFF_MOVE;
+		
+		turn rfleg to x-axis <0> now;
+		turn rfleg to z-axis <14> speed <84.000000> /  COEFF_MOVE;
+		
+		turn rffoot to x-axis <-2> speed <12.000000> /  COEFF_MOVE;
+		turn rffoot to y-axis <15> speed <90.000000> /  COEFF_MOVE;
+		turn rffoot to z-axis <-9> speed <54.000000> /  COEFF_MOVE;
+		
+		turn rbthigh to y-axis <12> speed <126.000000> /  COEFF_MOVE;
+		turn rbthigh to z-axis <20> speed <60.000000> /  COEFF_MOVE;
+		
+		turn rbleg to x-axis <-8> speed <48.000000> /  COEFF_MOVE;
+		turn rbleg to z-axis <-28> speed <102.000000> /  COEFF_MOVE;
+		
+		turn rbfoot to x-axis <-12> speed <127.800000>;
+		turn rbfoot to y-axis <-13> speed <132.000000> /  COEFF_MOVE;
+		turn rbfoot to z-axis <9> speed <60.000000> /  COEFF_MOVE;
+		
+		turn lbthigh to y-axis <15> speed <90.000000> /  COEFF_MOVE;
+		turn lbthigh to z-axis <4> speed <24.000000> /  COEFF_MOVE;
+		
+		turn lbleg to x-axis <0> now;
+		turn lbleg to z-axis <-14> speed <84.000000> /  COEFF_MOVE;
+		
+		turn lbfoot to x-axis <-2> speed <12.000000> /  COEFF_MOVE;
+		turn lbfoot to y-axis <-15> speed <90.000000> /  COEFF_MOVE;
+		turn lbfoot to z-axis <9> speed <54.000000> /  COEFF_MOVE;
+		
+		turn lfthigh to y-axis <-12> speed <126.000000> /  COEFF_MOVE;
+		turn lfthigh to z-axis <-20> speed <60.000000> /  COEFF_MOVE;
+		
+		turn lfleg to x-axis <-8> speed <48.000000> /  COEFF_MOVE;
+		turn lfleg to z-axis <28> speed <102.000000> /  COEFF_MOVE;
+		
+		turn lffoot to x-axis <-12> speed <127.800000>;
+		turn lffoot to y-axis <13> speed <132.000000> /  COEFF_MOVE;
+		turn lffoot to z-axis <-9> speed <60.000000> /  COEFF_MOVE;
+		
+		
+		sleep SLEEP_MOVE;
+		}
+		if (bMoving ) 
+		{
+		
+		// step 2 foot lift heel
+		
+		turn rfthigh to y-axis <-23> speed <48.000000> /  COEFF_MOVE;
+		turn rfthigh to z-axis <0> speed <24.000000> /  COEFF_MOVE;
+		
+		turn rfleg to x-axis <0> now;
+		turn rfleg to z-axis <10> speed <24.000000> /  COEFF_MOVE;
+		
+		turn rffoot to x-axis <9.3> speed <67.800000>;
+		turn rffoot to y-axis <25> speed <60.000000> /  COEFF_MOVE;
+		turn rffoot to z-axis <-10> speed <6.000000> /  COEFF_MOVE;
+		
+		turn rbthigh to y-axis <12> now;
+		turn rbthigh to z-axis <-7> speed <162.000000> /  COEFF_MOVE;
+		
+		turn rbleg to x-axis <-8> now;
+		turn rbleg to z-axis <21> speed <294.000000> /  COEFF_MOVE;
+		
+		turn rbfoot to x-axis <10> speed <132.000000> /  COEFF_MOVE;
+		turn rbfoot to y-axis <-9> speed <24.000000> /  COEFF_MOVE;
+		turn rbfoot to z-axis <-11> speed <120.000000> /  COEFF_MOVE;
+		
+		turn lbthigh to y-axis <23> speed <48.000000> /  COEFF_MOVE;
+		turn lbthigh to z-axis <0> speed <24.000000> /  COEFF_MOVE;
+		
+		turn lbleg to x-axis <0> now;
+		turn lbleg to z-axis <-10> speed <24.000000> /  COEFF_MOVE;
+		
+		turn lbfoot to x-axis <9.3> speed <67.800000>;
+		turn lbfoot to y-axis <-25> speed <60.000000> /  COEFF_MOVE;
+		turn lbfoot to z-axis <10> speed <6.000000> /  COEFF_MOVE;
+		
+		turn lfthigh to y-axis <-12> now;
+		turn lfthigh to z-axis <7> speed <162.000000> /  COEFF_MOVE;
+		
+		turn lfleg to x-axis <-8> now;
+		turn lfleg to z-axis <-21> speed <294.000000> /  COEFF_MOVE;
+		
+		turn lffoot to x-axis <10> speed <132.000000> /  COEFF_MOVE;
+		turn lffoot to y-axis <9> speed <24.000000> /  COEFF_MOVE;
+		turn lffoot to z-axis <11> speed <120.000000> /  COEFF_MOVE;
+		
+		sleep SLEEP_MOVE;
+		}
+		if (bMoving ) 
+		{
+		
+		// step 3 foot lifted up
+		
+		turn rfthigh to y-axis <-9> speed <84.000000> /  COEFF_MOVE;
+		turn rfthigh to z-axis <10> speed <60.000000> /  COEFF_MOVE;
+		
+		turn rfleg to x-axis <0> now;
+		turn rfleg to z-axis <-11> speed <126.000000> /  COEFF_MOVE;
+		
+		turn rffoot to x-axis <9.3> now;
+		turn rffoot to y-axis <9> speed <96.000000> /  COEFF_MOVE;
+		turn rffoot to z-axis <-1> speed <54.000000> /  COEFF_MOVE;
+		
+		turn rbthigh to y-axis <0> speed <72.000000> /  COEFF_MOVE;
+		turn rbthigh to z-axis <0> speed <42.000000> /  COEFF_MOVE;
+		
+		turn rbleg to x-axis <0> speed <48.000000> /  COEFF_MOVE;
+		turn rbleg to z-axis <0> speed <126.000000> /  COEFF_MOVE;
+		
+		turn rbfoot to x-axis <0> speed <60.000000> /  COEFF_MOVE;
+		turn rbfoot to y-axis <0> speed <54.000000> /  COEFF_MOVE;
+		turn rbfoot to z-axis <0> speed <66.000000> /  COEFF_MOVE;
+		
+		turn lbthigh to y-axis <9> speed <84.000000> /  COEFF_MOVE;
+		turn lbthigh to z-axis <-10> speed <60.000000> /  COEFF_MOVE;
+		
+		turn lbleg to x-axis <0> now;
+		turn lbleg to z-axis <11> speed <126.000000> /  COEFF_MOVE;
+		
+		turn lbfoot to x-axis <9.3> now;
+		turn lbfoot to y-axis <-9> speed <96.000000> /  COEFF_MOVE;
+		turn lbfoot to z-axis <1> speed <54.000000> /  COEFF_MOVE;
+		
+		turn lfthigh to y-axis <0> speed <72.000000> /  COEFF_MOVE;
+		turn lfthigh to z-axis <0> speed <42.000000> /  COEFF_MOVE;
+		
+		turn lfleg to x-axis <0> speed <48.000000> /  COEFF_MOVE;
+		turn lfleg to z-axis <0> speed <126.000000> /  COEFF_MOVE;
+		
+		turn lffoot to x-axis <0> speed <60.000000> /  COEFF_MOVE;
+		turn lffoot to y-axis <0> speed <54.000000> /  COEFF_MOVE;
+		turn lffoot to z-axis <0> speed <66.000000> /  COEFF_MOVE;
+		
+		sleep SLEEP_MOVE;
+		}
+		if (bMoving ) 
+		{
+		
+		// step 4 foot forward
+		
+		turn rfthigh to y-axis <12> speed <126.000000> /  COEFF_MOVE;
+		turn rfthigh to z-axis <20> speed <60.000000> /  COEFF_MOVE;
+		
+		turn rfleg to x-axis <-8> speed <48.000000> /  COEFF_MOVE;
+		turn rfleg to z-axis <-28> speed <102.000000> /  COEFF_MOVE;
+		
+		turn rffoot to x-axis <-12> speed <127.800000>;
+		turn rffoot to y-axis <-13> speed <132.000000> /  COEFF_MOVE;
+		turn rffoot to z-axis <9> speed <60.000000> /  COEFF_MOVE;
+		
+		turn rbthigh to y-axis <-15> speed <90.000000> /  COEFF_MOVE;
+		turn rbthigh to z-axis <-4> speed <24.000000> /  COEFF_MOVE;
+		
+		turn rbleg to x-axis <0> now;
+		turn rbleg to z-axis <14> speed <84.000000> /  COEFF_MOVE;
+		
+		turn rbfoot to x-axis <-2> speed <12.000000> /  COEFF_MOVE;
+		turn rbfoot to y-axis <15> speed <90.000000> /  COEFF_MOVE;
+		turn rbfoot to z-axis <-9> speed <54.000000> /  COEFF_MOVE;
+		
+		turn lbthigh to y-axis <-12> speed <126.000000> /  COEFF_MOVE;
+		turn lbthigh to z-axis <-20> speed <60.000000> /  COEFF_MOVE;
+		
+		turn lbleg to x-axis <-8> speed <48.000000> /  COEFF_MOVE;
+		turn lbleg to z-axis <28> speed <102.000000> /  COEFF_MOVE;
+		
+		turn lbfoot to x-axis <-12> speed <127.800000>;
+		turn lbfoot to y-axis <13> speed <132.000000> /  COEFF_MOVE;
+		turn lbfoot to z-axis <-9> speed <60.000000> /  COEFF_MOVE;
+		
+		turn lfthigh to y-axis <15> speed <90.000000> /  COEFF_MOVE;
+		turn lfthigh to z-axis <4> speed <24.000000> /  COEFF_MOVE;
+		
+		turn lfleg to x-axis <0> now;
+		turn lfleg to z-axis <-14> speed <84.000000> /  COEFF_MOVE;
+		
+		turn lffoot to x-axis <-2> speed <12.000000> /  COEFF_MOVE;
+		turn lffoot to y-axis <-15> speed <90.000000> /  COEFF_MOVE;
+		turn lffoot to z-axis <9> speed <54.000000> /  COEFF_MOVE;
+		
+		sleep SLEEP_MOVE;
+		}
+		if (bMoving ) 
+		{
+		
+		// step 5 put down foot up front
+		
+		turn rfthigh to y-axis <12> now;
+		turn rfthigh to z-axis <-7> speed <162.000000> /  COEFF_MOVE;
+		
+		turn rfleg to x-axis <-8> now;
+		turn rfleg to z-axis <21> speed <294.000000> /  COEFF_MOVE;
+		
+		turn rffoot to x-axis <10> speed <132.000000> /  COEFF_MOVE;
+		turn rffoot to y-axis <-9> speed <24.000000> /  COEFF_MOVE;
+		turn rffoot to z-axis <-11> speed <120.000000> /  COEFF_MOVE;
+		
+		
+		turn rbthigh to y-axis <-23> speed <48.000000> /  COEFF_MOVE;
+		turn rbthigh to z-axis <0> speed <24.000000> /  COEFF_MOVE;
+		
+		turn rbleg to x-axis <0> now;
+		turn rbleg to z-axis <10> speed <24.000000> /  COEFF_MOVE;
+		
+		turn rbfoot to x-axis <9.3> speed <67.800000>;
+		turn rbfoot to y-axis <25> speed <60.000000> /  COEFF_MOVE;
+		turn rbfoot to z-axis <-10> speed <6.000000> /  COEFF_MOVE;
+		
+		
+		turn lbthigh to y-axis <-12> now;
+		turn lbthigh to z-axis <7> speed <162.000000> /  COEFF_MOVE;
+		
+		turn lbleg to x-axis <-8> now;
+		turn lbleg to z-axis <-21> speed <294.000000> /  COEFF_MOVE;
+		
+		turn lbfoot to x-axis <10> speed <132.000000> /  COEFF_MOVE;
+		turn lbfoot to y-axis <9> speed <24.000000> /  COEFF_MOVE;
+		turn lbfoot to z-axis <11> speed <120.000000> /  COEFF_MOVE;
+		
+		
+		turn lfthigh to y-axis <23> speed <48.000000> /  COEFF_MOVE;
+		turn lfthigh to z-axis <0> speed <24.000000> /  COEFF_MOVE;
+		
+		turn lfleg to x-axis <0> now;
+		turn lfleg to z-axis <-10> speed <24.000000> /  COEFF_MOVE;
+		
+		turn lffoot to x-axis <9.3> speed <67.800000>;
+		turn lffoot to y-axis <-25> speed <60.000000> /  COEFF_MOVE;
+		turn lffoot to z-axis <10> speed <6.000000> /  COEFF_MOVE;
+		}
+		sleep SLEEP_MOVE;
+
+	
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	
+	start-script MotionControl();
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RockUnit(AngleX, AngleZ)
+{
+	turn base to x-axis AngleX / 2 speed <25.00>;
+	turn base to z-axis AngleZ / 2 speed <25.00>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.00> speed <10.00>;
+	turn base to x-axis <0.00> speed <10.00>;
+}
+
+Create()
+{
+	hide fire;
+	bMoving = FALSE;
+	Deployed = 0;
+	Firing = 0;	
+	start-script SmokeUnit();
+}
+
+StartMoving()
+{
+	bMoving = TRUE;
+	Deployed = 0;
+}
+
+StopMoving()
+{
+	bMoving = FALSE;
+	Deployed = 1;
+}
+
+RestoreAfterDelay()
+{
+	sleep 10000;
+	turn turret to y-axis <0.00> speed <50.00>;
+	turn pitchturret to x-axis <0.00> speed <20.00>;
+}
+
+
+QueryPrimary(PieceNum)
+{
+	PieceNum = fire;
+}
+
+AimFromPrimary(PieceNum)
+{
+	PieceNum = pitchturret;
+}
+
+AimPrimary(Heading, Pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	while( Firing OR !Deployed )
+	{
+		sleep 100;
+	}
+	
+	turn turret to y-axis Heading speed <50.00>;
+	turn pitchturret to x-axis <0.00> - Pitch speed <20.00>;
+	
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	
+	start-script RestoreAfterDelay();
+	
+	while( !Deployed )
+	{
+		sleep 100;
+	}
+	return(1);
+}
+
+FirePrimary(Random)
+{
+	emit-sfx 1024 + 0 from fire;
+	move barrel to z-axis [0.00] speed [1.00];
+	move sleeve to z-axis [0.00] speed [1.00];
+	sleep 100;
+	Firing = 0;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode hull type NOHEATCLOUD;
+		explode rfleg type NOHEATCLOUD;
+		explode rffoot type NOHEATCLOUD;
+		explode rbthigh type NOHEATCLOUD;
+		explode lbleg type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode rfleg type NOHEATCLOUD | FALL;
+		explode rffoot type NOHEATCLOUD;
+		explode rbthigh type NOHEATCLOUD | FALL;
+		explode lbleg type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD | FALL;
+	explode rfleg type NOHEATCLOUD | FALL;
+	explode rffoot type NOHEATCLOUD | FALL;
+	explode rbthigh type NOHEATCLOUD | FALL;
+	explode lbleg type NOHEATCLOUD | FALL;
+	return (corpsetype);
+}

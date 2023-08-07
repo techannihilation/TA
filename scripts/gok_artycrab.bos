@@ -207,22 +207,28 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD;
+		explode ground type NOHEATCLOUD;
+		explode leg1 type NOHEATCLOUD;
+		explode leg2 type NOHEATCLOUD;
+		explode leg3 type NOHEATCLOUD;
+		explode leg4 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type NOHEATCLOUD;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
+		explode ground type NOHEATCLOUD;
+		explode leg1 type NOHEATCLOUD | FALL;
+		explode leg2 type NOHEATCLOUD;
+		explode leg3 type NOHEATCLOUD | FALL;
+		explode leg4 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type NOHEATCLOUD;
+	explode ground type NOHEATCLOUD | FALL;
+	explode leg1 type NOHEATCLOUD | FALL;
+	explode leg2 type NOHEATCLOUD | FALL;
+	explode leg3 type NOHEATCLOUD | FALL;
+	explode leg4 type NOHEATCLOUD | FALL;
 	return (corpsetype);
 }
