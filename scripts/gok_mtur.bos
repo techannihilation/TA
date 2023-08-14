@@ -1,0 +1,161 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, top, turret, rtop, ltop,
+		msl1, msl2, msl3, msl4, msl5, msl6,
+		mslflare1a, mslflare1b, mslflare2a, mslflare2b, mslflare3a, mslflare3b,
+		mslflare4a, mslflare4b, mslflare5a, mslflare5b, mslflare6a, mslflare6b;
+
+static-var  gun_1;
+
+// Signal definitions
+#define SIG_AIM_1			2
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 135;
+	}
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+
+Create()
+{
+	start-script SmokeUnit();
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret to y-axis heading speed <120.000000>;
+	wait-for-turn turret around y-axis;
+	return(1);
+}
+
+Shot1()
+{
+	++gun_1;
+	if ( gun_1 == 12)
+	gun_1 = 0;
+}
+
+QueryWeapon1(PieceNum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = mslflare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = mslflare4a;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = mslflare2a;
+	}
+	if( gun_1 == 3 )
+	{
+		piecenum = mslflare5a;
+	}
+	if( gun_1 == 4 )
+	{
+		piecenum = mslflare3a;
+	}
+	if( gun_1 == 5 )
+	{
+		piecenum = mslflare6a;
+	}
+	if( gun_1 == 6 )
+	{
+		piecenum = mslflare1b;
+	}
+	if( gun_1 == 7 )
+	{
+		piecenum = mslflare4b;
+	}
+	if( gun_1 == 8 )
+	{
+		piecenum = mslflare2b;
+	}
+	if( gun_1 == 9 )
+	{
+		piecenum = mslflare5b;
+	}
+	if( gun_1 == 10 )
+	{
+		piecenum = mslflare3b;
+	}
+	if( gun_1 == 11 )
+	{
+		piecenum = mslflare6b;
+	}		
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(severity, corpseType)
+{
+
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type NOHEATCLOUD;
+		explode top type NOHEATCLOUD;
+		explode ltop type NOHEATCLOUD;
+		explode rtop type NOHEATCLOUD;
+		explode msl1 type NOHEATCLOUD;
+		explode msl4 type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type NOHEATCLOUD;
+		explode top type NOHEATCLOUD;
+		explode ltop type NOHEATCLOUD | FALL;
+		explode rtop type NOHEATCLOUD | FALL;
+		explode msl1 type NOHEATCLOUD | FALL;
+		explode msl4 type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode body type NOHEATCLOUD | SHATTER;
+	explode top type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode ltop type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode rtop type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode msl1 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	explode msl4 type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT | FIRE;
+	return (corpsetype);
+}
