@@ -2,7 +2,7 @@ return {
 	gok_blackcoconut = {
 		acceleration = 0.048,
 		brakerate = 0.375,
-		buildcostenergy = 31034,
+		buildcostenergy = 31010,
 		buildcostmetal = 2255,
 		builder = false,
 		buildpic = "gok_blackcoconut.dds",
@@ -29,7 +29,7 @@ return {
 		losemitheight = 29,
 		maneuverleashlength = 640,
 		mass = 2255,
-		maxdamage = 10175,
+		maxdamage = 9175,
 		maxslope = 15,
 		maxvelocity = 1.0,
 		maxwaterdepth = 23,

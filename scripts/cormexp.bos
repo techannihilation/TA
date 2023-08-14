@@ -235,8 +235,8 @@ AimPrimary(heading, pitch)
 	}
 	Static_Var_11 = 0 - pitch;
 	Static_Var_12 = heading;
-	turn turret1 to y-axis Static_Var_12 speed <100.000000>;
-	turn sleeve1 to x-axis Static_Var_11 speed <75.000000>;
+	turn turret1 to y-axis Static_Var_12 speed <150.000000>;
+	turn sleeve1 to x-axis Static_Var_11 speed <100.000000>;
 	wait-for-turn turret1 around y-axis;
 	wait-for-turn sleeve1 around x-axis;
 	if( bAiming )
@@ -392,23 +392,6 @@ Killed(severity, corpsetype)
 		explode barrel2 type NOHEATCLOUD;
 		explode turret2 type NOHEATCLOUD;
 		explode rocketbox type NOHEATCLOUD | FALL;
-		return (corpsetype);
-	}
-	if( severity <= 99 )
-	{
-		corpsetype = 3;
-		explode base type NOHEATCLOUD;
-		explode dingle1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode dingle2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode rotary type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-		explode shell type NOHEATCLOUD;
-		explode stands type NOHEATCLOUD | SHATTER;
-		explode turret1 type NOHEATCLOUD;
-		explode sleeve1 type NOHEATCLOUD | SHATTER;
-		explode barrel1 type NOHEATCLOUD;
-		explode barrel2 type NOHEATCLOUD;
-		explode turret2 type NOHEATCLOUD;
-		explode rocketbox type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 		return (corpsetype);
 	}
 	corpsetype = 3;

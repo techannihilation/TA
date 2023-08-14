@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 350,
 		builder = false,
 		buildpic = "rumad_templar.dds",
-		buildtime = 4500,
+		buildtime = 5000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
@@ -121,7 +121,7 @@ return {
 		weapondefs = {
 			rumad_plasma = {
 				accuracy = 200,
-				areaofeffect = 128,
+				areaofeffect = 64,
 				avoidfeature = false,
 				craterareaofeffect = 64,
 				craterboost = 0,
@@ -130,7 +130,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Plasma",
 				noselfdamage = true,
-				range = 600,
+				range = 500,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.9",
 				separation = 0.45,
