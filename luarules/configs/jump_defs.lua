@@ -62,6 +62,7 @@ jumpClassGroups = {
     "gok_satan",
     "rumad_macross",
     "rumad_zorga",
+    "rumad_mirage",
 	},
   jumphover = {
     "talon_dutchman",

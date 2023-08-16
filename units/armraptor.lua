@@ -193,10 +193,12 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "MISSILES",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MINOR SMALL MEDIUM LARGE",
 				def = "MECH_RAPIDLASER1",
 				onlytargetcategory = "SURFACE",
 			},

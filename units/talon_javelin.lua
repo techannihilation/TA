@@ -150,7 +150,6 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-
 					air = 250,
 				},
 			},
@@ -189,7 +188,6 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-
 					air = 1500,
 				},
 			},
@@ -235,7 +233,6 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-
 					air = 100,
 				},
 			},

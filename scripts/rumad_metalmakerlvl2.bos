@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, pipes1, pipes2, tower, front, bltrack, brtrack;
+piece  base, body, metalmaker, head, pillars, top;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -27,7 +27,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			{
 				smoketype = 257;
 			}
-			emit-sfx smoketype from tower;
+			emit-sfx smoketype from top;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -86,18 +86,18 @@ Killed(severity, corpsetype)
 	{
 		corpsetype = 1;
 		explode body type NOHEATCLOUD;
-		explode tower type NOHEATCLOUD;
+		explode top type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
 		explode body type NOHEATCLOUD;
-		explode tower type NOHEATCLOUD | SHATTER;
+		explode top type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
 	explode body type NOHEATCLOUD | SHATTER | EXPLODE_ON_HIT;
-	explode tower type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode top type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	return (corpsetype);
 }
