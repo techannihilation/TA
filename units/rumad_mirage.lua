@@ -1,7 +1,6 @@
 return {
 	rumad_mirage = {
 		acceleration = 0.2,
-		autoheal = 100,
 		brakerate = 0.63,
 		buildcostenergy = 390000,
 		buildcostmetal = 24250,
@@ -19,7 +18,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Experimental Kbot (Auto-Repair 100)",
+		description = "Experimental Fast Kbot",
 		explodeas = "BANTHA_BLAST",
 		firestandorders = 1,
 		footprintx = 5,

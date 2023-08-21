@@ -1,7 +1,7 @@
 return {
 	corskrog = {
-		acceleration = 0.108,
-		brakerate = 0.714,
+		acceleration = 0.1,
+		brakerate = 0.7,
 		buildcostenergy = 6815985,
 		buildcostmetal = 498245,
 		builder = false,
@@ -18,7 +18,7 @@ return {
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Ultimate Mech (Amphibious)",
+		description = "Ultimate Kbot (Amphibious)",
 		explodeas = "MKL_BLAST",
 		firestandorders = 1,
 		footprintx = 12,
@@ -60,7 +60,7 @@ return {
 				collisionvolumeoffsets = "0 -11 0",
 				collisionvolumescales = "96 88 134",
 				collisionvolumetype = "Ell",
-				damage = 57435,
+				damage = 157435,
 				description = "Krogoth Wreckage",
 				energy = 0,
 				featuredead = "heap",
@@ -74,11 +74,11 @@ return {
 			},
 			heap = {
 				blocking = false,
-				damage = 71794,
+				damage = 271794,
 				description = "Krogoth Debris",
 				energy = 0,
-				footprintx = 3,
-				footprintz = 3,
+				footprintx = 7,
+				footprintz = 7,
 				object = "10x10z",
 				reclaimable = true,
 				customparams = {

@@ -94,7 +94,7 @@ return {
 				footprintz = 2,
 				height = 4,
 				hitdensity = 100,
-				object = "6X6F",
+				object = "6X6E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -125,7 +125,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				energypershot = 16000,
+				energypershot = 20000,
 				explosiongenerator = "custom:LARGE_BURN_WHITE",
 				impulseboost = 0,
 				impulsefactor = 0,

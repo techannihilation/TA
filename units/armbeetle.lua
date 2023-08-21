@@ -55,7 +55,7 @@ return {
 			buildpic = "armbeetle.dds",
 			faction = "ARM",
 			shield_emit_height = 75,
-			shield_power = 10000,
+			shield_power = 30000,
 			shield_radius = 500,
 		},
 		featuredefs = {

@@ -641,7 +641,13 @@ local morphDefs = {
 		tech = 3,
 		xp = 0.10,
 	},
-	armbanth = {
+	armorco = {
+		into = 'armexo',
+		time = 60,
+		tech = 3,
+		xp = 0.10,
+	},
+	arm_furie = {
 		into = 'armexo',
 		time = 60,
 		tech = 3,

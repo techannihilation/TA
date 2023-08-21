@@ -31,7 +31,7 @@ return {
 		losemitheight = 26,
 		maneuverleashlength = 1200,
 		mass = 6554,
-		maxdamage = 30080,
+		maxdamage = 20080,
 		maxslope = 18,
 		maxvelocity = 1.5,
 		maxwaterdepth = 12,
@@ -76,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 936,
-				object = "5x5f",
+				object = "5x5e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
