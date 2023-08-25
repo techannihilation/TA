@@ -27,7 +27,7 @@ local storageDefs = {
   --Arm
   [ UnitDefNames['armmstor'].id ] = true,
   [ UnitDefNames['armuwadvms'].id ] = true,
-  [ UnitDefNames['cadvmsto'].id ] = true,
+  [ UnitDefNames['arm_emstor'].id ] = true,
   ---Core
   [ UnitDefNames['cormstor'].id ] = true,
   [ UnitDefNames['coruwadvms'].id ] = true,
@@ -40,6 +40,14 @@ local storageDefs = {
   [ UnitDefNames['talon_mstor'].id ] = true,
   [ UnitDefNames['talon_amstor'].id ] = true,
   [ UnitDefNames['talon_emstor'].id ] = true,
+  --Gok
+  [ UnitDefNames['gok_mstor'].id ] = true,
+  [ UnitDefNames['gok_amstor'].id ] = true,
+  [ UnitDefNames['gok_emstor'].id ] = true,
+  --Rumad
+  [ UnitDefNames['rumad_mstor'].id ] = true,
+  [ UnitDefNames['rumad_amstor'].id ] = true,
+  [ UnitDefNames['rumad_emstor'].id ] = true,
  }
 
 local storageunits = {}

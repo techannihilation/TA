@@ -1,5 +1,5 @@
 return {
-	cadvmsto = {
+	arm_emstor = {
 		activatewhenbuilt = true,
 		buildangle = 8192,
 		buildcostenergy = 65859,
@@ -8,8 +8,8 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
-		buildinggrounddecaltype = "cadvmsto_aoplane.dds",
-		buildpic = "cadvmsto.dds",
+		buildinggrounddecaltype = "arm_emstor_aoplane.dds",
+		buildpic = "arm_emstor.dds",
 		buildtime = 66125,
 		category = "ALL UNDERWATER SURFACE",
 		corpse = "dead",
@@ -29,17 +29,17 @@ return {
 		metalstorage = 125000,
 		name = "T3 Metal Storage",
 		noautofire = false,		
-		objectname = "cadvmsto",
+		objectname = "arm_emstor",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 300,
-		unitname = "cadvmsto",
+		unitname = "arm_emstor",
 		upright = true,
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
-			buildpic = "cadvmsto.dds",
+			buildpic = "arm_emstor.dds",
 			faction = "ARM",
 		},
 		featuredefs = {
@@ -51,7 +51,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				object = "cadvmsto_dead",
+				object = "arm_emstor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

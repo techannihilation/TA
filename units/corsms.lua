@@ -8,7 +8,7 @@ return {
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
-		buildinggrounddecaltype = "cadvmsto_aoplane.dds",
+		buildinggrounddecaltype = "arm_emstor_aoplane.dds",
 		buildpic = "corsms.dds",
 		buildtime = 66125,
 		category = "ALL SURFACE UNDERWATER",

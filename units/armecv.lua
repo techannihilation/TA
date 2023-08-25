@@ -68,7 +68,7 @@ return {
 			[3] = "armemex",
 			[4] = "ametalmakerlvl2",
 			[5] = "armses",
-			[6] = "cadvmsto",
+			[6] = "arm_emstor",
 			[7] = "armvp",
 			[8] = "armavp",
 			[9] = "armevp",

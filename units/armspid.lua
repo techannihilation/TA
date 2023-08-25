@@ -61,7 +61,7 @@ return {
 			[2] = "armmas",
 			[3] = "ametalmakerlvl3",
 			[4] = "armses",
-			[5] = "cadvmsto",
+			[5] = "arm_emstor",
 			[6] = "arm_ulab",
 			[7] = "ashipyardlvl3",
 			[8] = "armnanotc3",

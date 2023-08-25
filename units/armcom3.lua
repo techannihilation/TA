@@ -87,7 +87,7 @@ return {
 			[6] = "armmas",
 			--[7] = "",
 			[8] = "ametalmakerlvl3",
-			[9] = "cadvmsto",
+			[9] = "arm_emstor",
 			[10] = "armses",
 			[11] = "armurad",
 			[12] = "armlab",
