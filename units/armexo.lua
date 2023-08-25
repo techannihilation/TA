@@ -71,7 +71,7 @@ return {
 				featuredead = "heap",
 				footprintx = 8,
 				footprintz = 8,
-				object = "corskrog_dead",
+				object = "armexo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 			heap = {
 				blocking = false,
 				damage = 271794,
-				description = "Krogoth Debris",
+				description = "Exo Debris",
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
