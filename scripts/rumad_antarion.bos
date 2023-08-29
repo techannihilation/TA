@@ -6,7 +6,7 @@
 piece  base, hull, sides, lsupport, rsupport, noze, tower,
 		lturret, lpitchturret, lbarrel1, lbarrel2, lbarrel3, lflare1, lflare2, lflare3,
 		rturret, rpitchturret, rbarrel1, rbarrel2, rbarrel3, rflare1, rflare2, rflare3,
-        flare1, flare2, flare3, flare4;
+        flare1, flare2, flare3, flare4, flare5, flare6, flare7, flare8;
 
 static-var  restore_delay, msl_1, msl_2;
 
@@ -72,19 +72,19 @@ RestoreAfterDelay()
 	turn rpitchturret to x-axis <0.000000> speed <35.000000>;
 }
 
-AimFromWeapon1(piecenum)
+AimFromWeapon7(piecenum)
 {
 	piecenum = tower;
 }
 
-AimWeapon1(heading, pitch)
+AimWeapon7(heading, pitch)
 {
-	signal SIG_AIM_1;
-	set-signal-mask SIG_AIM_1;
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
 	return(1);
 }
 
-FireWeapon1()
+FireWeapon7()
 {
 	while(TRUE)
 	{
@@ -92,13 +92,17 @@ FireWeapon1()
 		++msl_1;
 		if (msl_1 == 2)
 		{
+			return (0);
+		}
+		if (msl_1 == 4)
+		{
 			msl_1 = 0;
 			return (0);
 		}
 	}
 }
 
-QueryWeapon1(piecenum)
+QueryWeapon7(piecenum)
 {
 	if ( msl_1 == 0)
 	{
@@ -108,27 +112,35 @@ QueryWeapon1(piecenum)
 	{
 		piecenum = flare2;
 	}
+	if ( msl_1 == 2)
+	{
+		piecenum = flare3;
+	}
+	if ( msl_1 == 3)
+	{
+		piecenum = flare4;
+	}
 }
 
-AimFromWeapon2(piecenum)
+AimFromWeapon8(piecenum)
 {
 	piecenum = tower;
 }
 
-AimWeapon2(heading, pitch)
+AimWeapon8(heading, pitch)
 {
-	signal SIG_AIM_2;
-	set-signal-mask SIG_AIM_2;
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
 	return(1);
 }
 
-FireWeapon2()
+FireWeapon8()
 {
 	while(TRUE)
 	{
 		sleep 125;	
 		++msl_2;
-		if (msl_2 == 2)
+		if (msl_2 == 4)
 		{
 			msl_2 = 0;
 			return (0);
@@ -136,24 +148,32 @@ FireWeapon2()
 	}
 }
 
-QueryWeapon2(piecenum)
+QueryWeapon8(piecenum)
 {
 	if ( msl_2 == 0)
 	{
-		piecenum = flare3;
+		piecenum = flare5;
 	}
 	if ( msl_2 == 1)
 	{
-		piecenum = flare4;
+		piecenum = flare6;
+	}
+	if ( msl_2 == 2)
+	{
+		piecenum = flare7;
+	}
+	if ( msl_2 == 3)
+	{
+		piecenum = flare8;
 	}
 }
 
 // TURRET 1
 
-AimWeapon3(heading, pitch)
+AimWeapon1(heading, pitch)
 {
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
 	turn rturret to y-axis heading speed <45.000000>;
 	turn rpitchturret to x-axis <0.000000> - pitch speed <35.000000>;
 	wait-for-turn rturret around y-axis;
@@ -162,22 +182,32 @@ AimWeapon3(heading, pitch)
 	return (1);
 }
 
-AimWeapon4(heading, pitch)
+AimWeapon2(heading, pitch)
 {
-	signal SIG_AIM_4;
-	set-signal-mask SIG_AIM_4;
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	wait-for-turn rturret around y-axis;
 	wait-for-turn rpitchturret around x-axis;
 	return (1);
 }
 
-AimWeapon5(heading, pitch)
+AimWeapon3(heading, pitch)
 {
-	signal SIG_AIM_5;
-	set-signal-mask SIG_AIM_5;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
 	wait-for-turn rturret around y-axis;
 	wait-for-turn rpitchturret around x-axis;
 	return (1);
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = rturret;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = rturret;
 }
 
 AimFromWeapon3(piecenum)
@@ -185,32 +215,22 @@ AimFromWeapon3(piecenum)
 	piecenum = rturret;
 }
 
-AimFromWeapon4(piecenum)
-{
-	piecenum = rturret;
-}
-
-AimFromWeapon5(piecenum)
-{
-	piecenum = rturret;
-}
-
-QueryWeapon3(piecenum)
+QueryWeapon1(piecenum)
 {	
 	piecenum = rflare1;
 }
 
-QueryWeapon4(piecenum)
+QueryWeapon2(piecenum)
 {
 	piecenum = rflare2;
 }
 
-QueryWeapon5(piecenum)
+QueryWeapon3(piecenum)
 {
 	piecenum = rflare3;
 }
 
-FireWeapon3()
+FireWeapon1()
 {
 	emit-sfx 1024 from rflare1;
 	move rbarrel1 to z-axis [-1.500000] speed [500.000000];
@@ -218,7 +238,7 @@ FireWeapon3()
 	move rbarrel1 to z-axis [0.000000] speed [1.000000];
 }
 
-FireWeapon4()
+FireWeapon2()
 {
 	emit-sfx 1024 from rflare2;
 	move rbarrel2 to z-axis [-1.500000] speed [500.000000];
@@ -226,7 +246,7 @@ FireWeapon4()
 	move rbarrel2 to z-axis [0.000000] speed [1.000000];
 }
 
-FireWeapon5()
+FireWeapon3()
 {
 	emit-sfx 1024 from rflare3;
 	move rbarrel3 to z-axis [-1.500000] speed [500.000000];
@@ -236,10 +256,10 @@ FireWeapon5()
 
 // TURRET 2
 
-AimWeapon6(heading, pitch)
+AimWeapon4(heading, pitch)
 {
-	signal SIG_AIM_6;
-	set-signal-mask SIG_AIM_6;
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
 	turn lturret to y-axis heading speed <45.000000>;
 	turn lpitchturret to x-axis <0.000000> - pitch speed <35.000000>;
 	wait-for-turn lturret around y-axis;
@@ -248,22 +268,32 @@ AimWeapon6(heading, pitch)
 	return (1);
 }
 
-AimWeapon7(heading, pitch)
+AimWeapon5(heading, pitch)
 {
-	signal SIG_AIM_7;
-	set-signal-mask SIG_AIM_7;
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
 	wait-for-turn lturret around y-axis;
 	wait-for-turn lpitchturret around x-axis;
 	return (1);
 }
 
-AimWeapon8(heading, pitch)
+AimWeapon6(heading, pitch)
 {
-	signal SIG_AIM_8;
-	set-signal-mask SIG_AIM_8;
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
 	wait-for-turn lturret around y-axis;
 	wait-for-turn lpitchturret around x-axis;
 	return (1);
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = lturret;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = lturret;
 }
 
 AimFromWeapon6(piecenum)
@@ -271,32 +301,22 @@ AimFromWeapon6(piecenum)
 	piecenum = lturret;
 }
 
-AimFromWeapon7(piecenum)
-{
-	piecenum = lturret;
-}
-
-AimFromWeapon8(piecenum)
-{
-	piecenum = lturret;
-}
-
-QueryWeapon6(piecenum)
+QueryWeapon4(piecenum)
 {	
 	piecenum = lflare1;
 }
 
-QueryWeapon7(piecenum)
+QueryWeapon5(piecenum)
 {
 	piecenum = lflare2;
 }
 
-QueryWeapon8(piecenum)
+QueryWeapon6(piecenum)
 {
 	piecenum = lflare3;
 }
 
-FireWeapon6()
+FireWeapon4()
 {
 	emit-sfx 1024 from lflare1;
 	move lbarrel1 to z-axis [-1.500000] speed [500.000000];
@@ -304,7 +324,7 @@ FireWeapon6()
 	move lbarrel1 to z-axis [0.000000] speed [1.000000];
 }
 
-FireWeapon7()
+FireWeapon5()
 {
 	emit-sfx 1024 from lflare2;
 	move lbarrel2 to z-axis [-1.500000] speed [500.000000];
@@ -312,7 +332,7 @@ FireWeapon7()
 	move lbarrel2 to z-axis [0.000000] speed [1.000000];
 }
 
-FireWeapon8()
+FireWeapon6()
 {
 	emit-sfx 1024 from lflare3;
 	move lbarrel3 to z-axis [-1.500000] speed [500.000000];
