@@ -184,6 +184,7 @@ rumad_gate1 = true,
 rumad_gate2 = true,
 rumad_gate3 = true,
 rumad_gate4 = true,
+rumad_gala = true,
 
 }
 

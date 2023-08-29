@@ -614,7 +614,7 @@ local morphDefs = {
 	corkrog = {
 		into = 'corskrog',
 		time = 60,
-		tech = 3,
+		tech = 4,
 		xp = 0.10,
 	},
 	gok_satan = {
@@ -644,7 +644,7 @@ local morphDefs = {
 	armorco = {
 		into = 'armexo',
 		time = 60,
-		tech = 3,
+		tech = 4,
 		xp = 0.10,
 	},
 	arm_furie = {
@@ -659,6 +659,12 @@ local morphDefs = {
 		tech = 3,
 		xp = 0.10,
 	},
+	rumad_mcv = {
+		into = 'rumad_mcv1',
+		time = 60,
+		tech = 3,
+		xp = 0.10,
+	},	
 	talon_talos = {
 		into = 'talon_mythril',
 		time = 60,

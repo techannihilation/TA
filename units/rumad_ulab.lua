@@ -56,7 +56,7 @@ return {
 			[1] = "rumad_uck",
 			[2] = "rumad_uflak",
 			[3] = "rumad_mirage",
-			[4] = "rumad_gala",
+			[4] = "rumad_mcv1",
 			[5] = "rumad_oasis",
 			[6] = "rumad_hellion",
 			[7] = "rumad_overlord",

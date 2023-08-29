@@ -5,7 +5,7 @@
 
 piece  base, hull, lfsystem, 
 	   lftrack, lfshadow, rfsystem, rftrack, rfshadow, bsystem, lbtrack, lbshadow, rbtrack, rbshadow, 
-	   turret, pitchturret, rail1, canon1, rail2, canon2, fire1, fire2,
+	   turret, pitchturret, flarea, flareb, flarec, barrela, barrelb, barrelc,
        lturret, lpitchturret, lflare1, lflare2, lflare3, lflare4,
        rturret, rpitchturret, rflare1, rflare2, rflare3, rflare4;
 
@@ -16,6 +16,7 @@ static-var  msl_1, msl_2;
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
 #define SIG_AIM_4			16
+#define SIG_AIM_5			32
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -46,8 +47,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	hide fire1;
-	hide fire2;
+	hide flarea;
+	hide flareb;
+	hide flarec;
 	msl_1 = 0;
 	msl_2 = 0;	
 	start-script Smokeunit();
@@ -60,14 +62,14 @@ RestoreAfterDelay()
 	turn pitchturret to x-axis <0.0> speed <30.00>;	
 }
 
-RestoreAfterDelay3()
+RestoreAfterDelay4()
 {
 	sleep 3000;
 	turn lturret to y-axis <0.0> speed <90.00>;
 	turn lpitchturret to x-axis <0.0> speed <45.00>;	
 }
 
-RestoreAfterDelay4()
+RestoreAfterDelay5()
 {
 	sleep 3000;
 	turn rturret to y-axis <0.0> speed <90.00>;
@@ -83,7 +85,7 @@ AimWeapon1(Heading, Pitch)
 {
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
-	turn turret to y-axis Heading speed <90.00>;
+	turn turret to y-axis Heading speed <60.00>;
 	turn pitchturret to x-axis <0.00> - Pitch speed <45.00>;	
 	wait-for-turn turret around y-axis;
 	wait-for-turn pitchturret around x-axis;
@@ -93,17 +95,15 @@ AimWeapon1(Heading, Pitch)
 
 FireWeapon1()
 {	
-	emit-sfx 1024 + 0 from fire1;
-	move rail1 to z-axis [-1.00] speed [10.00];
-	move canon1 to z-axis [-3.00] speed [60.00];
-	sleep 150;	
-	move rail1 to z-axis [0.00] speed [2.00];
-	move canon1 to z-axis [0.00] speed [3.00];
+	emit-sfx 1024 + 0 from flarea;
+	move barrela to z-axis [-1.00000] speed [500.000000];
+	sleep 100;
+	move barrela to z-axis [0.000000] speed [1.000000];
 }
 
 QueryWeapon1(PieceNum)
 {
-	PieceNum = fire1;
+	PieceNum = flarea;
 }
 
 AimFromWeapon2(PieceNum)
@@ -122,37 +122,62 @@ AimWeapon2(Heading, Pitch)
 
 FireWeapon2()
 {	
-	emit-sfx 1024 + 0 from fire2;
-	move rail2 to z-axis [-1.00] speed [10.00];
-	move canon2 to z-axis [-3.00] speed [60.00];
-	sleep 150;	
-	move rail2 to z-axis [0.00] speed [2.00];
-	move canon2 to z-axis [0.00] speed [3.00];
+	emit-sfx 1024 + 0 from flareb;
+	move barrelb to z-axis [-1.00000] speed [500.000000];
+	sleep 100;
+	move barrelb to z-axis [0.000000] speed [1.000000];
 }
 
 QueryWeapon2(PieceNum)
 {
-	PieceNum = fire2;
+	PieceNum = flareb;
 }
 
 AimFromWeapon3(PieceNum)
 {
-	PieceNum = lturret;
+	PieceNum = turret;
 }
 
 AimWeapon3(Heading, Pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	turn lturret to y-axis Heading speed <90.00>;
-	turn lpitchturret to x-axis <0.00> - Pitch speed <45.00>;	
-	wait-for-turn lturret around y-axis;
-	wait-for-turn lpitchturret around x-axis;
-	start-script RestoreAfterDelay3();
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
 	return(1);
 }
 
 FireWeapon3()
+{	
+	emit-sfx 1024 + 0 from flarec;
+	move barrelc to z-axis [-1.00000] speed [500.000000];
+	sleep 100;
+	move barrelc to z-axis [0.000000] speed [1.000000];
+}
+
+QueryWeapon3(PieceNum)
+{
+	PieceNum = flarec;
+}
+
+AimFromWeapon4(PieceNum)
+{
+	PieceNum = lturret;
+}
+
+AimWeapon4(Heading, Pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn lturret to y-axis Heading speed <90.00>;
+	turn lpitchturret to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn lturret around y-axis;
+	wait-for-turn lpitchturret around x-axis;
+	start-script RestoreAfterDelay4();
+	return(1);
+}
+
+FireWeapon4()
 {	
 	while(TRUE)
 	{
@@ -170,7 +195,7 @@ FireWeapon3()
 	}
 }
 
-QueryWeapon3(pieceNum)
+QueryWeapon4(pieceNum)
 {
 	if (msl_1 == 0)
 	{
@@ -190,24 +215,24 @@ QueryWeapon3(pieceNum)
 	}
 }
 
-AimFromWeapon4(PieceNum)
+AimFromWeapon5(PieceNum)
 {
 	PieceNum = rturret;
 }
 
-AimWeapon4(Heading, Pitch)
+AimWeapon5(Heading, Pitch)
 {
-	signal SIG_AIM_4;
-	set-signal-mask SIG_AIM_4;
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
 	turn rturret to y-axis Heading speed <90.00>;
 	turn rpitchturret to x-axis <0.00> - Pitch speed <45.00>;	
 	wait-for-turn rturret around y-axis;
 	wait-for-turn rpitchturret around x-axis;
-	start-script RestoreAfterDelay4();
+	start-script RestoreAfterDelay5();
 	return(1);
 }
 
-FireWeapon4()
+FireWeapon5()
 {	
 	while(TRUE)
 	{
@@ -225,7 +250,7 @@ FireWeapon4()
 	}
 }
 
-QueryWeapon4(pieceNum)
+QueryWeapon5(pieceNum)
 {
 	if (msl_2 == 0)
 	{
@@ -262,8 +287,8 @@ Killed(severity, corpsetype)
 		explode rftrack type NOHEATCLOUD;
 		explode lbtrack type NOHEATCLOUD;
 		explode rbtrack type NOHEATCLOUD;
-		explode canon1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode canon2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrela type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrelc type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
@@ -276,8 +301,8 @@ Killed(severity, corpsetype)
 		explode lbtrack type FALL | NOHEATCLOUD;
 		explode rbtrack type FALL | NOHEATCLOUD;
 		explode rturret type NOHEATCLOUD;
-		explode canon1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode canon2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrela type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrelc type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
@@ -288,8 +313,8 @@ Killed(severity, corpsetype)
 	explode rftrack type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode lbtrack type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	explode rbtrack type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode canon1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode canon2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrela type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrelc type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }	
 		

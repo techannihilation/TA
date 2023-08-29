@@ -59,7 +59,7 @@ return {
 			faction = "GOK",
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_emit_height = 49.5,
-			shield_power = 5000,
+			shield_power = 2500,
 			shield_radius = 230,
 		},
 		featuredefs = {
@@ -173,7 +173,7 @@ return {
 				shieldforce = 8,
 				shieldgoodcolor = "0.9 0.9 0.45 0.35",
 				shieldintercepttype = 31,
-				shieldpower = 5000,
+				shieldpower = 2500,
 				shieldpowerregen = 45,
 				shieldpowerregenenergy = 500,
 				shieldradius = 230,

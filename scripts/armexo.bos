@@ -233,22 +233,22 @@ AimPrimary(heading, pitch)
 
 AimFromWeapon2(piecenum)
 {
-	piecenum = torso;
+	piecenum = rarm;
 }
 
 AimFromWeapon3(piecenum)
 {
-	piecenum = torso;
+	piecenum = rarm;
 }
 
 AimFromWeapon4(piecenum)
 {
-	piecenum = torso;
+	piecenum = larm;
 }
 
 AimFromWeapon5(piecenum)
 {
-	piecenum = torso;
+	piecenum = larm;
 }
 
 AimWeapon2(heading, pitch)
@@ -361,6 +361,21 @@ QueryWeapon4(piecenum)
 QueryWeapon5(piecenum)
 {
 	piecenum = lflare2;
+}
+
+AimWeapon6(heading, pitch)
+{
+	return (shield_onoff);
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = shield_pos;
 }
 
 SweetSpot(piecenum)

@@ -78,7 +78,7 @@ return {
 			buildpic = "corcrab.dds",
 			faction = "CORE",
 			shield_emit_height = 41.25,
-			shield_power = 5000,
+			shield_power = 2500,
 			shield_radius = 180,
 		},
 		featuredefs = {
@@ -150,19 +150,19 @@ return {
 			},
 		},
 		weapondefs = {
-			repulsor2 = {
+			repulsor = {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
 				name = "PlasmaRepulsor",
 				shieldbadcolor = "1 0.2 0.2 0.30",
-				shieldenergyuse = 500,
+				shieldenergyuse = 450,
 				shieldforce = 8,
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
-				shieldpower = 5000,
+				shieldpower = 2500,
 				shieldpowerregen = 45,
-				shieldpowerregenenergy = 500,
+				shieldpowerregenenergy = 450,
 				shieldradius = 180,
 				shieldrepulser = true,
 				smartshield = true,
@@ -178,7 +178,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "REPULSOR2",
+				def = "REPULSOR",
 			},
 		},
 	},

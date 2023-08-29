@@ -1,8 +1,9 @@
  4.51 => 4.52
-2023-08-15
+2023-09-01
 
 Balance :
  - ArmStratus buff (better dmg/s and better HP 35K=>42K)
+ - Exo & Skrog morph with level 5 instead 4
 
  Improvment :
  - Exo T4 Arm : Change model & Balance. Morph from Orco or Furie

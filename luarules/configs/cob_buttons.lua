@@ -159,6 +159,15 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	rumad_gala = {
+		{
+			name = "shield_rumad_gala",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	talon_mythril = {
 		{
 			name = "shield_mythril",

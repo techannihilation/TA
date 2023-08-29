@@ -50,8 +50,6 @@ return {
 		customparams = {
 			buildpic = "corshieldgen.dds",
 			faction = "CORE",
-			--shield_emit_height = 35,
-			--shield_emit_offset = 0,
 			shield_power = 3000,
 			shield_radius = 250,
 		},

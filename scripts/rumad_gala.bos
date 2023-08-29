@@ -9,11 +9,9 @@ piece  base, pelvis, torso, lshoulder, larm, rshoulder, rarm,
        right_gun, left_gun,
        left_msl1, left_msl2, left_msl3,
        right_msl1, right_msl2, right_msl3,
-       right_shoulder_msl1, right_shoulder_msl2, right_shoulder_msl3, right_shoulder_msl4,
-       left_shoulder_msl1, left_shoulder_msl2, left_shoulder_msl3, left_shoulder_msl4,
-       pitchturret, sbarrel, barrel, flare;
+       pitchturret, sbarrel, barrel, flare, shield_pos;
 
-static-var  msl_1, msl_3, msl_4, bMoving, bAiming, Main_Gun_Heading;
+static-var  shield_onoff, msl_1, bMoving, bAiming, Main_Gun_Heading;
 
 // Signal definitions
 #define SIG_AIM_1			2
@@ -21,6 +19,12 @@ static-var  msl_1, msl_3, msl_4, bMoving, bAiming, Main_Gun_Heading;
 #define SIG_AIM_3			8
 #define SIG_AIM_4			16
 #define SIG_MOVE			32
+
+
+Shield()
+{
+	shield_onoff = !shield_onoff;
+}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -207,9 +211,8 @@ Create()
 {
 	bAiming = FALSE;
 	bMoving = FALSE;
+	shield_onoff = 1;
 	msl_1 = 0;
-	msl_3 = 0;
-	msl_4 = 0;
 	hide flare;
 	Main_Gun_Heading = 0;
 	start-script SmokeUnit();
@@ -281,11 +284,11 @@ FireSecondary()
 	{
 		sleep 125;	
 		++msl_1;
-		if (msl_1 == 12)
+		if (msl_1 == 6)
 		{
 			return (0);
 		}
-		if (msl_1 == 24)
+		if (msl_1 == 12)
 		{
 			msl_1 = 0;
 			return (0);		
@@ -295,158 +298,69 @@ FireSecondary()
 
 QuerySecondary(piecenum)
 {
-	if ( msl_1 == 0 or msl_1 == 12)
-	{
-		piecenum = left_msl1;
-	}
-	if ( msl_1 == 1 or msl_1 == 13)
-	{
-		piecenum = left_msl2;
-	}
-	if ( msl_1 == 2 or msl_1 == 14)
-	{
-		piecenum = left_msl3;
-	}
-	if ( msl_1 == 3 or msl_1 == 15)
-	{
-		piecenum = left_msl1;
-	}
-	if ( msl_1 == 4 or msl_1 == 16)
-	{
-		piecenum = left_msl2;
-	}
-	if ( msl_1 == 5 or msl_1 == 17)
-	{
-		piecenum = left_msl3;
-	}
-	if ( msl_1 == 6 or msl_1 == 18)
+	if ( msl_1 == 0)
 	{
 		piecenum = right_msl1;
 	}
-	if ( msl_1 == 7 or msl_1 == 19)
+	if ( msl_1 == 1)
 	{
 		piecenum = right_msl2;
 	}
-	if ( msl_1 == 8 or msl_1 == 20)
+	if ( msl_1 == 2)
 	{
 		piecenum = right_msl3;
 	}
-	if ( msl_1 == 9 or msl_1 == 21)
+	if ( msl_1 == 3)
 	{
 		piecenum = right_msl1;
 	}
-	if ( msl_1 == 10 or msl_1 == 22)
+	if ( msl_1 == 4)
 	{
 		piecenum = right_msl2;
 	}
-	if ( msl_1 == 11 or msl_1 == 23)
+	if ( msl_1 == 5)
 	{
 		piecenum = right_msl3;
 	}
+	if ( msl_1 == 6)
+	{
+		piecenum = left_msl1;
+	}
+	if ( msl_1 == 7)
+	{
+		piecenum = left_msl2;
+	}
+	if ( msl_1 == 8)
+	{
+		piecenum = left_msl3;
+	}
+	if ( msl_1 == 9)
+	{
+		piecenum = left_msl1;
+	}
+	if ( msl_1 == 10)
+	{
+		piecenum = left_msl2;
+	}
+	if ( msl_1 == 11)
+	{
+		piecenum = left_msl3;
+	}
 }
 
-AimFromTertiary(piecenum)
+AimWeapon3(heading, pitch)
 {
-	piecenum = torso;	
+	return (shield_onoff);
 }
 
-AimTertiary(heading, pitch)
+AimFromWeapon3(piecenum)
 {
-	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
-	{
-		return (0);
-	}
-	
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	wait-for-turn torso around y-axis;
-	return (1);
+	piecenum = shield_pos;
 }
 
-FireTertiary()
-{	
-	while(TRUE)
-	{
-		sleep 125;	
-		++msl_3;
-		if (msl_3 == 4)
-		{
-			msl_3 = 0;
-			return (0);		
-		}
-	}
-}
-
-QueryTertiary(piecenum)
+QueryWeapon3(piecenum)
 {
-	if ( msl_3 == 0)
-	{
-		piecenum = left_shoulder_msl1;
-	}
-	if ( msl_3 == 1)
-	{
-		piecenum = left_shoulder_msl2;
-	}
-	if ( msl_3 == 2)
-	{
-		piecenum = left_shoulder_msl3;
-	}
-	if ( msl_3 == 3)
-	{
-		piecenum = left_shoulder_msl4;
-	}
-}
-
-AimFromWeapon4(piecenum)
-{
-	piecenum = torso;	
-}
-
-AimWeapon4(heading, pitch)
-{
-	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
-	{
-		return (0);
-	}
-	
-	signal SIG_AIM_4;
-	set-signal-mask SIG_AIM_4;
-	wait-for-turn torso around y-axis;
-	return (1);
-}
-
-FireWeapon4()
-{	
-	while(TRUE)
-	{
-		sleep 125;	
-		++msl_4;
-		if (msl_4 == 4)
-		{
-			msl_4 = 0;
-			return (0);		
-		}
-	}
-}
-
-QueryWeapon4(piecenum)
-{
-	if ( msl_4 == 0)
-	{
-		piecenum = right_shoulder_msl1;
-	}
-	if ( msl_4 == 1)
-	{
-		piecenum = right_shoulder_msl2;
-	}
-	if ( msl_4 == 2)
-	{
-		piecenum = right_shoulder_msl3;
-	}
-	if ( msl_4 == 3)
-	{
-		piecenum = right_shoulder_msl4;
-	}
+	piecenum = shield_pos;
 }
 
 SweetSpot(piecenum)

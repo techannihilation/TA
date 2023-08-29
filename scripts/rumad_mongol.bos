@@ -13,8 +13,7 @@ piece  base, pelvis, torso, luparm, ruparm, left_gun, right_gun,
 		barrel5, sbarrel5, flare5,
 		barrel6, sbarrel6, flare6,
 		left_msl1, left_msl2, left_msl3,
-		right_msl1, right_msl2, right_msl3,
-		msl1a, msl1b, msl2a, msl2b, msl3a, msl3b, msl4a, msl4b;
+		right_msl1, right_msl2, right_msl3;
 
 static-var  bMoving, bAiming, restore_delay, Main_Gun_Heading, msl_1, msl_2, msl_3;
 
@@ -852,122 +851,6 @@ QueryWeapon7(piecenum)
 	if ( msl_1 == 11)
 	{
 		piecenum = left_msl3;
-	}
-}
-
-AimFromWeapon8(piecenum)
-{
-	piecenum = torso;
-}
-
-AimWeapon8(heading, pitch)
-{
-	signal SIG_AIM_8;
-	set-signal-mask SIG_AIM_8;
-	
-	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
-	{
-		return (0);
-	}
-	
-	wait-for-turn torso around y-axis;
-	wait-for-turn rack around x-axis;
-	return(1);
-}
-
-FireWeapon8()
-{
-	while(TRUE)
-	{
-		sleep 125;	
-		++msl_2;
-		if (msl_2 == 2)
-		{
-			return (0);
-		}
-		if (msl_2 == 4)
-		{
-			msl_2 = 0;
-			return (0);		
-		}
-	}
-}
-
-QueryWeapon8(piecenum)
-{
-	if ( msl_2 == 0)
-	{
-		piecenum = msl1a;
-	}
-	if ( msl_2 == 1)
-	{
-		piecenum = msl1b;
-	}
-	if ( msl_2 == 2)
-	{
-		piecenum = msl3a;
-	}
-	if ( msl_2 == 3)
-	{
-		piecenum = msl3b;
-	}
-}
-
-AimFromWeapon9(piecenum)
-{
-	piecenum = torso;
-}
-
-AimWeapon9(heading, pitch)
-{
-	signal SIG_AIM_9;
-	set-signal-mask SIG_AIM_9;
-	
-	if (heading > (Main_Gun_Heading + 3000) or heading < (Main_Gun_Heading - 3000))
-	{
-		return (0);
-	}
-	
-	wait-for-turn torso around y-axis;
-	wait-for-turn rack around x-axis;
-	return(1);
-}
-
-FireWeapon9()
-{
-	while(TRUE)
-	{
-		sleep 125;	
-		++msl_3;
-		if (msl_3 == 2)
-		{
-			return (0);
-		}
-		if (msl_3 == 4)
-		{
-			msl_3 = 0;
-			return (0);		
-		}
-	}
-}
-
-QueryWeapon9(piecenum)
-{
-	if ( msl_3 == 0)
-	{
-		piecenum = msl2a;
-	}
-	if ( msl_3 == 1)
-	{
-		piecenum = msl2b;
-	}
-	if ( msl_3 == 2)
-	{
-		piecenum = msl4a;
-	}
-	if ( msl_3 == 3)
-	{
-		piecenum = msl4b;
 	}
 }
 

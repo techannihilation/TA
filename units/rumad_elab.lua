@@ -53,7 +53,8 @@ return {
 			[3] = "rumad_mklrpt",
 			[4] = "rumad_macross",
 			[5] = "rumad_howie",
-			[6] = "rumad_mongol",
+			[6] = "rumad_gala",
+			[7] = "rumad_mongol",
 		},
 		customparams = {
 			buildpic = "rumad_elab.dds",
