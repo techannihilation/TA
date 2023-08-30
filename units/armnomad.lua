@@ -39,7 +39,7 @@ return {
 		moverate1 = 8,
 		name = "Air Morphed Lab",
 		noautofire = false,
-		objectname = "armnomad",
+		objectname = "arm/armnomad.s3o",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDINGEX",
@@ -63,13 +63,13 @@ return {
 				[5] = "piecetrail4",
 				[6] = "piecetrail6",
 			},
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "-5 0 0",
 				collisionvolumescales = "110 34 92",
-
 				collisionvolumetype = "Box",
 				damage = 2575,
 				description = "Nomad Plant Wreckage",
@@ -78,7 +78,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 594,
-				object = "ARMNOMAD_DEAD",
+				object = "arm/armnomad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -92,7 +92,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

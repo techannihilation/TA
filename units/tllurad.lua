@@ -9,7 +9,6 @@ return {
 		buildtime = 750000,
 		category = "ALL SURFACE",
 		collisionvolumescales = "120 175 120",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 4",
@@ -27,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Radar Tower",
 		noautofire = false,
-		objectname = "tllurad",
+		objectname = "tll/tllurad.s3o",
 		onoffable = true,
 		radardistance = 24000,
 		radaremitheight = 41,
@@ -39,6 +38,7 @@ return {
 		customparams = {
 			buildpic = "tllurad.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +49,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 345,
-				object = "tllurad_dead",
+				object = "tll/tllurad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

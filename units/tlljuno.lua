@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Juno",
 		noautofire = false,
-		objectname = "TLLJUNO",
+		objectname = "tll/tlljuno.s3o",
 		radaremitheight = 53,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "tlljuno.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 600,
-				object = "4X4F",
+				object = "4x4f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 320,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +130,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 175,
-				model = "weapon_pulse",
+				model = "weapon_pulse.s3o",
 				name = "AntiSignal",
 				range = 6000,
 				reloadtime = 2,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TKBOT6",
 		name = "Turbulence",
 		noautofire = false,
-		objectname = "core_turbulence",
+		objectname = "core/core_turbulence.s3o",
 		radaremitheight = 35,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "core_turbulence.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				energy = 0,
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
-				object = "core_turbulence_dead",
+				object = "core/core_turbulence_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -130,7 +131,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.2,
 				impulsefactor = 0.2,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "Pepper spray",
 				nogap = 1,
 				noselfdamage = true,
@@ -168,7 +169,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

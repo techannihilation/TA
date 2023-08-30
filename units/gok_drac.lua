@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Drac",
 		noautofire = false,
-		objectname = "gok_drac",
+		objectname = "gok/gok_drac.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "gok_drac.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 840,
-				object = "gok_drac_DEAD",
+				object = "gok/gok_drac_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 448,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +136,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_gok",
+				model = "weapon_torpedo_gok.s3o",
 				name = "Advanced Torpedo",
 				noselfdamage = true,
 				range = 600,

@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dragonfly",
 		noautofire = false,
-		objectname = "talon_rukh",
+		objectname = "talon/talon_rukh.s3o",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		seismicsignature = 0,
@@ -63,6 +63,7 @@ return {
 		customparams = {
 			buildpic = "talon_rukh.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 156,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

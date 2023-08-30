@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Grim Reaper",
 		noautofire = false,
-		objectname = "ARMRECL",
+		objectname = "arm/armrecl.s3o",
 		radaremitheight = 25,
 		resurrect = 1,
 		seismicsignature = 0,

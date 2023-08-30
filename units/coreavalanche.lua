@@ -33,7 +33,7 @@ return {
 		movementclass = "AMPHKBOT",
 		name = "Avalanche",
 		noautofire = false,		
-		objectname = "coreavalanche",
+		objectname = "core/coreavalanche.s3o",
 		radaremitheight = 34,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 400,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "coreavalanche.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 285,
-				object = "coreavalanche_DEAD",
+				object = "core/coreavalanche_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 152,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

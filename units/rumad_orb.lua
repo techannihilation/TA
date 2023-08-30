@@ -27,7 +27,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Orb",
-		objectname = "rumad_orb",
+		objectname = "rumad/rumad_orb.s3o",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -41,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "rumad_orb.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +56,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3862,
-				object = "RUMAD_ORB_DEAD",
+				object = "rumad/rumad_orb_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -69,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2060,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

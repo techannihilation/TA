@@ -1,7 +1,6 @@
 return {
 	corsilo1 = {
 		acceleration = 0,
-
 		brakerate = 0,
 		buildangle = 8192,
 		buildcostenergy = 194551,
@@ -37,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "CORSILO1",
+		objectname = "core/corsilo1.s3o",
 		radardistance = 50,
 		radaremitheight = 67,
 		script = "corsilo.cob",
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corsilo1.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corsilo_dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 11062,
-				object = "CORSILO_DEAD",
+				object = "core/corsilo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5900,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -139,7 +139,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
 				metalpershot = 2500,
-				model = "weapon_nuke_core",
+				model = "weapon_nuke_core.s3o",
 				name = "CoreNuclearMissile",
 				range = 72000,
 				reloadtime = 20,

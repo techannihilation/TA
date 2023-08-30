@@ -42,7 +42,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Jafa",
-		objectname = "rumad_jafa",
+		objectname = "rumad/rumad_jafa.s3o",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "MEGA_BLAST",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "rumad_jafa.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				description = "Jafa Wreckage",
 				footprintx = 6,
 				footprintz = 8,
-				object = "rumad_jafa_dead",
+				object = "rumad/rumad_jafa_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

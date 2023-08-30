@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 70,
 		name = "Experimental Underwater Fusion",
 		noautofire = false,
-		objectname = "gok_uwefus",
+		objectname = "gok/gok_uwefus.s3o",
 		script = "gok_uwfusion.cob",
 		radaremitheight = 45,
 		seismicsignature = 0,
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "gok_uwefus.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3277,
-				object = "gok_uwefus_dead",
+				object = "gok/gok_uwefus_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1748,
-				object = "5X5C",
+				object = "5x5c",
 				reclaimable = true,
 			},
 		},

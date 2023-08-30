@@ -42,7 +42,7 @@ return {
 		metalmake = 5,
 		metalstorage = 100,
 		name = "Cruiser Constructor",
-		objectname = "rumad_builderlvl5",
+		objectname = "rumad/rumad_builderlvl5.s3o",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
 		shownanospray = false,
@@ -70,6 +70,7 @@ return {
 		customparams = {
 			buildpic = "rumad_builderlvl5.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {

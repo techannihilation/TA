@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
-		objectname = "ARMDRAG",
+		objectname = "arm/armdrag.s3o",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "armdrag",
@@ -41,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "armdrag.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dragonsteeth = {
@@ -60,7 +61,7 @@ return {
 				hitdensity = 100,
 				metal = 12,
 				nodrawundergray = true,
-				object = "armdrag",
+				object = "arm/armdrag",
 				reclaimable = true,
 				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
@@ -79,7 +80,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				customparams = {

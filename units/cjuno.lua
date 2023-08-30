@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Juno",
 		noautofire = false,
-		objectname = "CJUNO",
+		objectname = "core/cjuno.s3o",
 		radaremitheight = 71,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "cjuno.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 487,
-				object = "CJUNO_DEAD",
+				object = "core/cjuno_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 260,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +135,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 160,
-				model = "weapon_pulse",
+				model = "weapon_pulse.s3o",
 				name = "AntiSignal",
 				range = 6150,
 				reloadtime = 2,

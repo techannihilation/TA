@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Abyss",
 		noautofire = false,
-		objectname = "gok_abyss",
+		objectname = "gok/gok_abyss.s3o",
 		radaremitheight = 48,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 550,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_abyss.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1087,
-				object = "gok_abyss_dead",
+				object = "gok/gok_abyss_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

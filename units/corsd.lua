@@ -30,7 +30,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 	  name = "Countermeasure System",
-		objectname = "CORSD",
+		objectname = "core/corsd.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		script = "corsd.lua",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "corsd.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 558,
-				object = "CORSD_DEAD",
+				object = "core/corsd_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 298,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 11,
 		name = "Floating Moho Metal Maker",
 		noautofire = false,
-		objectname = "gok_famkr",
+		objectname = "gok/gok_famkr.s3o",
 		radaremitheight = 27,
 		script = "gok_makr.cob",
 		seismicsignature = 0,
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_famkr.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 1087,
-				--object = "gok_famkr_DEAD",
+				--object = "gok/gok_famkr_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 580,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 			},
 		},

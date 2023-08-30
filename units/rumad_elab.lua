@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
 		noautofire = false,
-		objectname = "rumad_elab",
+		objectname = "rumad/rumad_elab.s3o",
 		radardistance = 50,
 		radaremitheight = 40,
 		selfdestructas = "LARGE_BUILDING",
@@ -59,13 +59,13 @@ return {
 		customparams = {
 			buildpic = "rumad_elab.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -21 0",
 				collisionvolumescales = "114 74 129",
-
 				collisionvolumetype = "CylZ",
 				damage = 9570,
 				description = "Experimental Gantry Wreckage",
@@ -74,7 +74,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 13599,
-				object = "rumad_elab_DEAD",
+				object = "rumad/rumad_elab_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -85,7 +85,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 7253,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 			},
 		},

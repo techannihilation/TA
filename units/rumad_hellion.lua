@@ -36,7 +36,7 @@ return {
 		movementclass = "VKBOT9",
 		name = "Hellion",
 		noautofire = false,
-		objectname = "rumad_hellion",
+		objectname = "rumad/rumad_hellion.s3o",
 		radaremitheight = 150,
 		seismicsignature = 0,
 		selfdestructas = "MKL_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "rumad_hellion.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 110400,
-				object = "rumad_hellion_DEAD",
+				object = "rumad/rumad_hellion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 90880,
-				object = "7X7A",
+				object = "7x7a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -164,7 +165,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad",
+				model = "weapon_missile_rumad.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

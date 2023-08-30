@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Zipper",
 		noautofire = false,
-		objectname = "ARMFAST",
+		objectname = "arm/armfast.s3o",
 		radaremitheight = 36,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armfast.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 141,
-				object = "ARMFAST_DEAD",
+				object = "arm/armfast_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 75,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 5,
 		name = "Nano Turret Level 3",
 		noautofire = false,		
-		objectname = "CORFNANOTC2",
+		objectname = "core/corfnanotc2.s3o",
 		radaremitheight = 28,
 		reclaimspeed = 450,
 		repairspeed = 450,

@@ -41,7 +41,7 @@ return {
 		movementclass = "htank4",
 		name = "Champion",
 		noautofire = false,
-		objectname = "corchamp",
+		objectname = "core/corchamp.s3o",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
@@ -62,6 +62,7 @@ return {
 		customparams = {
 			buildpic = "corchamp.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3960,
-				object = "corchamp_dead",
+				object = "core/corchamp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

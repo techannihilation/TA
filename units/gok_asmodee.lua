@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT6",
 		name = "Asmodee",
 		noautofire = false,
-		objectname = "gok_asmodee",
+		objectname = "gok/gok_asmodee.s3o",
 		radardistance = 0,
 		radaremitheight = 76,
 		seismicsignature = 0,
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "gok_asmodee.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "gok_asmodee_DEAD",
+				object = "gok/gok_asmodee_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7680,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

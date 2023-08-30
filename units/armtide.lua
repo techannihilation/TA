@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 20,
 		name = "Tidal Generator",
 		noautofire = false,		
-		objectname = "ARMTIDE",
+		objectname = "arm/armtide.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "armtide.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 65,
-				object = "ARMTIDE_DEAD",
+				object = "arm/armtide_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

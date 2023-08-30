@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,		
-		objectname = "TLLASP",
+		objectname = "tll/tllasp.s3o",
 		onoffable = true,
 		radaremitheight = 47,
 		selfdestructas = "BIG_UNIT",
@@ -42,6 +42,7 @@ return {
 			isairbase = true,
 			buildpic = "tllasp.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 337,
-				object = "tllasp_dead",
+				object = "tll/tllasp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -65,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 180,
-				object = "4x4B",
+				object = "4x4b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

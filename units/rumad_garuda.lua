@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Garuda",
 		noautofire = false,
-		objectname = "rumad_garuda",
+		objectname = "rumad/rumad_garuda.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,6 +59,7 @@ return {
 			buildpic = "rumad_garuda.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 675,
-				object = "rumad_garuda_DEAD",
+				object = "rumad/rumad_garuda_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

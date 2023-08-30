@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK3",
 		name = "Convincer",
 		noautofire = false,
-		objectname = "TLLCONVINCER",
+		objectname = "tll/tllconvincer.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 230,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllconvincer.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 825,
-				object = "tllconvincer_dead",
+				object = "tll/tllconvincer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +128,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				range = 1400,

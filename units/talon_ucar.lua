@@ -42,7 +42,7 @@ return {
 		movementclass = "HDBOAT12",
 		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
-		objectname = "talon_ucar",
+		objectname = "talon/talon_ucar.s3o",
 		onoffable = true,
 		radardistance = 12000,
 		radaremitheight = 54,
@@ -63,6 +63,7 @@ return {
 			isairbase = true,
 			buildpic = "talon_ucar.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +78,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1237,
-				object = "talon_ucar_DEAD",
+				object = "talon/talon_ucar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +92,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 660,
-				object = "6X6C",
+				object = "6x6c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -152,7 +153,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 4,
 				metalpershot = 6780,
-				model = "weapon_antinuke1",
+				model = "weapon_antinuke1.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,
@@ -208,7 +209,6 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-					
 					air = 250,
 				},
 			},
@@ -225,7 +225,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo",
+				model = "weapon_advtorpedo.s3o",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 850,

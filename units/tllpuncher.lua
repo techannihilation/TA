@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Puncher",
 		noautofire = false,		
-		objectname = "TLLPUNCHER",
+		objectname = "tll/tllpuncher.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
@@ -53,6 +53,7 @@ return {
 			buildpic = "tllpuncher.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 440,
-				object = "tllpuncher_dead",
+				object = "tll/tllpuncher_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -148,7 +149,6 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
-					
 					air = 225,
 				},
 			},

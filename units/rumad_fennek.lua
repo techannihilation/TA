@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Fennek",
 		noautofire = false,
-		objectname = "rumad_fennek",
+		objectname = "rumad/rumad_fennek.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "rumad_fennek.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3240,
-				object = "rumad_fennek_DEAD",
+				object = "rumad/rumad_fennek_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2128,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

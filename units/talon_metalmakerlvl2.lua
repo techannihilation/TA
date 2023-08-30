@@ -30,8 +30,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
-
-		objectname = "talon_metalmakerlvl2",
+		objectname = "talon/talon_metalmakerlvl2.s3o",
 		radardistance = 0,
 		radaremitheight = 53,
 		selfdestructas = "BANTHA_BLAST",
@@ -42,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "talon_metalmakerlvl2.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {

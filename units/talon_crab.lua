@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Birgus",
 		noautofire = false,
-		objectname = "talon_crab",
+		objectname = "talon/talon_crab.s3o",
 		onoffable = true,
 		radaremitheight = 62,
 		seismicsigniture = 0,
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "talon_crab.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 8962,
-				object = "talon_crab_dead",
+				object = "talon/talon_crab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -170,7 +171,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA missile",
 				noselfdamage = true,
 				proximitypriority = -4,
@@ -196,7 +197,6 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					
 					air = 120,
 				},
 			},

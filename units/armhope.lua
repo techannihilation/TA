@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hope",
 		noautofire = false,
-		objectname = "armhope",
+		objectname = "arm/armhope.s3o",
 		pitchscale = 0.5,
 		radaremitheight = 30,
 		reclaimable = true,
@@ -54,6 +54,7 @@ return {
 		unitname = "armhope",
 		customparams = {
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				description = "Hope Wreckage",
 				footprintx = 10,
 				footprintz = 10,
-				object = "armhope_dead",
+				object = "arm/armhope_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +127,7 @@ return {
 				explosiongenerator = "custom:explosion_medium_rocket",
 				firestarter = 80,
 				flighttime = 3.4,
-				model = "weapon_rocketl",
+				model = "weapon_rocketl.s3o",
 				name = "Barrarge",
 				proximitypriority = -1,
 				range = 1800,
@@ -175,7 +176,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

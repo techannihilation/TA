@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Freedom Fighter",
 		noautofire = false,
-		objectname = "ARMFIG",
+		objectname = "arm/armfig.s3o",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 500,
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armfig.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
@@ -98,7 +99,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 500,

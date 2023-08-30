@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Frog",
 		noautofire = false,
-		objectname = "CORFROG",
+		objectname = "core/corfrog.s3o",
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 			buildpic = "corfrog.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corsent_dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 720,
-				object = "CORSENT_DEAD",
+				object = "core/corsent_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 384,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -150,7 +151,6 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
-					
 					air = 225,
 				},
 			},

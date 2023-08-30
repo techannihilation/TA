@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK5",
 		name = "T2 Metal Maker",
 		noautofire = false,
-		objectname = "rumad_metalmakerlvl2",
+		objectname = "rumad/rumad_metalmakerlvl2.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",

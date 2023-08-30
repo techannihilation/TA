@@ -28,7 +28,7 @@ return {
 		name = "Lotus",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "corfpun",
+		objectname = "core/corfpun.s3o",
 		onoffable = true,
 		radaremitheight = 26,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -40,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "corfpun.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +51,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2040,
-				object = "corfpun_dead",
+				object = "core/corfpun_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

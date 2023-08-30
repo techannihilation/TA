@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK4",
 		name = "Experimental Construction Vehicle",
 		noautofire = false,
-		objectname = "corecv",
+		objectname = "core/corecv.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 270,
 		repairspeed = 270,
@@ -89,6 +89,7 @@ return {
 		customparams = {
 			buildpic = "corecv.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -98,7 +99,7 @@ return {
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,
-				object = "CORECV_DEAD",
+				object = "core/corecv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -110,7 +111,7 @@ return {
 				description = "Vehicle Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fusion Reactor",
 		noautofire = false,
-		objectname = "gok_fusion",
+		objectname = "gok/gok_fusion.s3o",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "gok_fusion.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 3795,
-				object = "gok_fusion_DEAD",
+				object = "gok/gok_fusion_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2024,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 			},
 		},

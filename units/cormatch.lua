@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Matcher",
 		noautofire = false,
-		objectname = "CORMATCH",
+		objectname = "core/cormatch.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 300,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "cormatch.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 258,
-				object = "CORMATCH_DEAD",
+				object = "core/cormatch_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 138,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

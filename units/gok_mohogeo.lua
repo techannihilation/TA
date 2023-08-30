@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Hazardous Geothermal Powerplant",
 		noautofire = false,
-		objectname = "gok_MOHOGEO",
+		objectname = "gok/gok_mohogeo.s3o",
 		onoffable = false,
 		radaremitheight = 61,
 		selfdestructas = "FUSION_BLAST",
@@ -38,6 +38,7 @@ return {
 		customparams = {
 			buildpic = "gok_mohogeo.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			tllmohogeo_dead = {
@@ -48,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5107,
-				object = "gok_mohogeo_dead",
+				object = "gok/gok_mohogeo_dead",
 				reclaimable = true,
 			},
 			tllmohogeo_heap = {

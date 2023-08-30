@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Infiltrator",
 		noautofire = false,
-		objectname = "ARMSPY",
+		objectname = "arm/armspy.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 2,
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "armspy.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 102,
-				object = "ARMSPY_DEAD",
+				object = "arm/armspy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 54,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

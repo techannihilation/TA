@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Anti Christ",
 		nochasecategory = "ALL",
-		objectname = "gok_antichrist",
+		objectname = "gok/gok_antichrist.s3o",
 		radaremitheight = 63,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -84,6 +84,7 @@ return {
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 1000,
 			shield_radius = 100,
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			["dead"] = {
@@ -102,7 +103,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3500,
-				object = "GOK_ANTICHRIST_DEAD",
+				object = "gok/gok_antichrist_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -120,7 +121,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 2400,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

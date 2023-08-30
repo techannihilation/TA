@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 12,
 		name = "Urchin",
 		noautofire = false,
-		objectname = "CORTL",
+		objectname = "core/cortl.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "cortl.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 252,
-				object = "CORTL_DEAD",
+				object = "core/cortl_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -112,7 +113,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Level1TorpedoLauncher",
 				noselfdamage = true,
 				range = 600,

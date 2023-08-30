@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Executioner",
 		noautofire = false,
-		objectname = "CORCRUS",
+		objectname = "core/corcrus.s3o",
 		radaremitheight = 34,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "corcrus.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1436,
-				object = "CORCRUS_DEAD",
+				object = "core/corcrus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 766,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -176,7 +177,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

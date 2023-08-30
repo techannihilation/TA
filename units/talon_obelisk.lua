@@ -36,7 +36,7 @@ return {
 		name = "Obelisk",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "talon_obelisk",
+		objectname = "talon/talon_obelisk.s3o",
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
@@ -54,6 +54,7 @@ return {
 			shield_emit_height = 68,
 			shield_power = 15000,
 			shield_radius = 250,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1506,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 			},
 		},
@@ -115,7 +116,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

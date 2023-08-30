@@ -38,7 +38,7 @@ return {
 		movementclass = "TKBOT2",
 		name = "Tick",
 		noautofire = true,
-		objectname = "ARMTICK",
+		objectname = "arm/armtick.s3o",
 		radaremitheight = 22,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -79,6 +79,7 @@ return {
 		customparams = {
 			buildpic = "armtick.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -89,7 +90,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 82,
-				object = "armtick_dead",
+				object = "arm/armtick_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

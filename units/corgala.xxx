@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT9",
 		name = "Galacticus",
 		noautofire = false,
-		objectname = "CORGALA",
+		objectname = "core/corgala.s3o",
 		radaremitheight = 202,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,

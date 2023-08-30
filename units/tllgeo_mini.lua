@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
-		objectname = "TLLGEO_MINI",
+		objectname = "tll/tllgeo_mini.s3o",
 		onoffable = true,
 		radaremitheight = 29,
 		script = "tllgeo.cob",
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "tllgeo_mini.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 457,
-				object = "tllgeo_mini_dead",
+				object = "tll/tllgeo_mini_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

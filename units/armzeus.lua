@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Zeus",
 		noautofire = false,
-		objectname = "ARMZEUS",
+		objectname = "arm/armzeus.s3o",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armzeus.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 337,
-				object = "ARMZEUS_DEAD",
+				object = "arm/armzeus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 180,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

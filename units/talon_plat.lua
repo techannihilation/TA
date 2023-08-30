@@ -13,7 +13,6 @@ return {
 		category = "LEVEL1 ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 -7 0",
 		collisionvolumescales = "110 40 110",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 2",
@@ -34,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Sea Plant",
 		noautofire = false,
-		objectname = "talon_plat",
+		objectname = "talon/talon_plat.s3o",
 		radardistance = 50,
 		radaremitheight = 38,
 		seismicsignature = 0,
@@ -63,6 +62,7 @@ return {
 		customparams = {
 			buildpic = "talon_plat.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -76,7 +76,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3360,
-				object = "talon_plat_DEAD",
+				object = "talon/talon_plat_dead",
 				reclaimable = true,
 			},
 		},

@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Fortitude",
-		objectname = "CORFMD",
+		objectname = "core/corfmd.s3o",
 		radardistance = 50,
 		radaremitheight = 35,
 		seismicsignature = 0,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "corfmd.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1526,
-				object = "CORFMD_DEAD",
+				object = "core/corfmd_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 814,
-				object = "5X5D",
+				object = "5x5d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -131,7 +132,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke",
+				model = "weapon_antinuke.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

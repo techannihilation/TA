@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hydra",
 		noautofire = false,
-		objectname = "talon_hydra",
+		objectname = "talon/talon_hydra.s3o",
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -57,6 +57,7 @@ return {
 			buildpic = "talon_hydra.dds",
 			faction = "TALON",
 			prioritytarget = "air",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			corsent_dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1200,
-				object = "CORSENT_DEAD",
+				object = "core/corsent_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 640,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},
@@ -147,7 +148,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Javelin",
 		noautofire = false,
-		objectname = "talon_javelin",
+		objectname = "talon/talon_javelin.s3o",
 		radaremitheight = 76,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -56,6 +56,7 @@ return {
 			buildpic = "talon_javelin.dds",
 			faction = "TALON",
 			prioritytarget = "air",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "talon_talos_dead",
+				object = "talon/talon_talos_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7680,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -166,7 +167,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal",
+				model = "weapon_missileaal.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -205,7 +206,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,

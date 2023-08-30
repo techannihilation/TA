@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "talon_kevlar",
 		noautofire = false,
-		objectname = "talon_kevlar",
+		objectname = "talon/talon_kevlar.s3o",
 		radaremitheight = 80,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 500,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "talon_kevlar.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 228,
-				object = "talon_kevlar_DEAD",
+				object = "talon/talon_kevlar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 122,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +134,7 @@ return {
 				flighttime = 2.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "HeavyRocket",
 				noselfdamage = true,
 				range = 520,

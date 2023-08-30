@@ -38,7 +38,7 @@ return {
 		movementclass = "HTKBOT5",
 		name = "Shielded & All-terrain Construction Kbot",
 		noautofire = false,
-		objectname = "gok_ucp",
+		objectname = "gok/gok_ucp.s3o",
 		radaremitheight = 50,
 		reclaimspeed = 720,
 		repairspeed = 720,
@@ -70,7 +70,6 @@ return {
 			[14] = "gok_silo2",
 			[15] = "gok_meteor1",
 			[16] = "gok_usy",
-
 		},
 		customparams = {
 			buildpic = "gok_ucp.dds",
@@ -79,6 +78,7 @@ return {
 			shield_emit_height = 40.0,
 			shield_power = 2000,
 			shield_radius = 150,
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +92,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8081,
-				object = "gok_ucp_DEAD",
+				object = "gok/gok_ucp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -105,7 +105,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 6043,
-				object = "5X5D",
+				object = "5x5d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

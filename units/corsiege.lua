@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK5",
 		name = "Demolisher",
 		noautofire = false,
-		objectname = "corsiege",
+		objectname = "core/corsiege.s3o",
 		radardistance = 0,
 		radaremitheight = 34,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corsiege.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5625,
-				object = "corsiege_dead",
+				object = "core/corsiege_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

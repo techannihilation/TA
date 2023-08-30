@@ -35,7 +35,7 @@ return {
 		metalstorage = 25,
 		name = "Advanced Metal Extractor",
 		noautofire = false,
-		objectname = "gok_mex1",
+		objectname = "gok/gok_mex1.s3o",
 		onoffable = true,
 		radaremitheight = 35,
 		seismicsignature = 0,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "gok_mex1.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 39,
-				object = "gok_mex_DEAD",
+				object = "gok/gok_mex_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -76,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},

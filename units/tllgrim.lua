@@ -37,7 +37,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Grim Reaper",
 		noautofire = false,
-		objectname = "TLLGRIM",
+		objectname = "tll/tllgrim.s3o",
 		radardistance = 0,
 		radaremitheight = 72,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllgrim.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 17595,
-				object = "tllgrim_dead",
+				object = "tll/tllgrim_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

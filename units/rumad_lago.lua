@@ -43,7 +43,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Lago",
-		objectname = "rumad_lago",
+		objectname = "rumad/rumad_lago.s3o",
 		radardistance = 3500,
 		radaremitheight = 30,
 		selfdestructas = "MEGA_BLAST",
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "rumad_lago.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				description = "Lago Wreckage",
 				footprintx = 6,
 				footprintz = 8,
-				object = "rumad_jafa_dead",
+				object = "rumad/rumad_jafa_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -151,7 +152,7 @@ return {
 				explosiongenerator = "custom:FLASHNUKE480",
 				firestarter = 80,
 				flighttime = 6,
-				model = "weapon_rocketxl_rumad",
+				model = "weapon_rocketxl_rumad.s3o",
 				name = "Barrage missile",
 				proximitypriority = -1,
 				range = 2400,

@@ -32,7 +32,7 @@ return {
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tllHPNS",
+		objectname = "tll/tllhpns.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "tllhpns.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 975,
-				object = "tllhpns_dead",
+				object = "tll/tllhpns_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

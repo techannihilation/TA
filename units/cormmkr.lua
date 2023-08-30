@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
 		noautofire = false,		
-		objectname = "CORMMKR",
+		objectname = "core/cormmkr.s3o",
 		radaremitheight = 40,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "cormmkr.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1011,
-				object = "CORMMKR_DEAD",
+				object = "core/cormmkr_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 539,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

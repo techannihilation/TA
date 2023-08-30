@@ -32,8 +32,7 @@ return {
 		minwaterdepth = 25,
 		name = "Underwater Fusion Plant",
 		noautofire = false,
-		
-		objectname = "CORUWFUS",
+		objectname = "core/coruwfus.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
@@ -47,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "coruwfus.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3600,
-				object = "CORUWFUS_DEAD",
+				object = "core/coruwfus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +75,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1920,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -33,7 +33,7 @@ return {
 		name = "Pyramid",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "talon_pyramid",
+		objectname = "talon/talon_pyramid.s3o",
 		radaremitheight = 39,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -49,6 +49,7 @@ return {
 			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 150000,
 			shield_radius = 1000,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 10188,
-				object = "talon_pyramid_DEAD",
+				object = "talon/talon_pyramid_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5434,
-				object = "4X4E",
+				object = "4x4e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +127,6 @@ return {
 				shieldradius = 1000,
 				shieldrepulser = false,
 				smartshield = true,
-				
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

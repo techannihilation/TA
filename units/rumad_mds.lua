@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sunspot",
 		noautofire = false,
-		objectname = "rumad_mds",
+		objectname = "rumad/rumad_mds.s3o",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "rumad_mds.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 333,
-				object = "rumad_mds_DEAD",
+				object = "rumad/rumad_mds_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 178,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -44,7 +44,7 @@ return {
 		name = "Engineer Hover",
 		metalmake = 0.15,
 		noautofire = false,
-		objectname = "gok_engineerh",
+		objectname = "gok/gok_engineerh.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -93,6 +93,7 @@ return {
 		customparams = {
 			buildpic = "gok_engineerh.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -102,7 +103,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "gok_ch_dead",
+				object = "gok/gok_ch_dead",
 				reclaimable = true,
 			},
 		},

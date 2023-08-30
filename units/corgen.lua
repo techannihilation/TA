@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Energy Driller",
 		noautofire = false,
-		objectname = "corgen",
+		objectname = "core/corgen.s3o",
 		radaremitheight = 33,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 250,
@@ -41,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "corgen.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +52,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1147,
-				object = "corgen_dead",
+				object = "core/corgen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

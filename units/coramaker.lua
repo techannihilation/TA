@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Metal Maker",
 		noautofire = false,
-		objectname = "CORAMAKER",
+		objectname = "core/coramaker.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,

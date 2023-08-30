@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "ARCH",
-		objectname = "armarch",
+		objectname = "arm/armarch.s3o",
 		radardistance = 0,
 		radaremitheight = 120,
 		selfdestructas = "MEGA_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armarch.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 721250,
-				object = "armarch_dead",
+				object = "arm/armarch_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -195,7 +196,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "Heavy Rockets2",
 				range = 1400,
 				reloadtime = 0.5,

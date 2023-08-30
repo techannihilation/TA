@@ -25,7 +25,7 @@ return {
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
 		noautofire = false,
-		objectname = "ARMFDRAG",
+		objectname = "arm/armfdrag.s3o",
 		script = "drag.lua",
 		radaremitheight = 38,
 		unitname = "armfdrag",
@@ -34,6 +34,7 @@ return {
 		customparams = {
 			buildpic = "armfdrag.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			floatingteeth = {
@@ -46,7 +47,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 16,
-				object = "armfdrag",
+				object = "arm/armfdrag",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

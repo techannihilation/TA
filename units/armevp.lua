@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Vehicle Plant",
 		noautofire = false,
-		objectname = "ARMEVP",
+		objectname = "arm/armevp.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -63,6 +63,7 @@ return {
 		customparams = {
 			buildpic = "armevp.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 12000,
-				object = "armevp_dead",
+				object = "arm/armevp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

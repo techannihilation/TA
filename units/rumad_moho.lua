@@ -32,7 +32,7 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "rumad_moho",
+		objectname = "rumad/rumad_moho.s3o",
 		onoffable = true,
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "rumad_moho.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 465,
-				object = "rumad_moho_DEAD",
+				object = "rumad/rumad_moho_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 248,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

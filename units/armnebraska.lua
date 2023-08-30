@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "armnebraska",
 		noautofire = false,
-		objectname = "armnebraska",
+		objectname = "arm/armnebraska.s3o",
 		radardistance = 0,
 		radaremitheight = 66,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -40,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "armnebraska.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +51,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 23812,
-				object = "armnebraska_dead",
+				object = "arm/armnebraska_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

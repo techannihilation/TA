@@ -37,8 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Adonis",
 		noautofire = false,
-
-		objectname = "CORADON",
+		objectname = "core/coradon.s3o",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "coradon.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5265,
-				object = "coradon_dead",
+				object = "core/coradon_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

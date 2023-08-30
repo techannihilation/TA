@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "ARMVP",
+		objectname = "arm/armvp.s3o",
 		radaremitheight = 34,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -67,13 +67,13 @@ return {
 		customparams = {
 			buildpic = "armvp.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "-5 0 0",
 				collisionvolumescales = "110 34 92",
-
 				collisionvolumetype = "Box",
 				damage = 2575,
 				description = "Vehicle Plant Wreckage",
@@ -82,7 +82,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 594,
-				object = "ARMVP_DEAD",
+				object = "arm/armvp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -96,7 +96,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

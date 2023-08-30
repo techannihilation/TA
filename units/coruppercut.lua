@@ -40,7 +40,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "coruppercut",
 		noautofire = false,
-		objectname = "coruppercut",
+		objectname = "core/coruppercut.s3o",
 		radaremitheight = 52,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "coruppercut.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 11625,
-				object = "coruppercut_dead",
+				object = "core/coruppercut_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +120,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_exptorpedo",
+				model = "weapon_exptorpedo.s3o",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 1000,
@@ -156,7 +157,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 550,
-				model = "weapon_missile_emp",
+				model = "weapon_missile_emp.s3o",
 				name = "TacticalNuke",
 				noselfdamage = true,
 				range = 2750,

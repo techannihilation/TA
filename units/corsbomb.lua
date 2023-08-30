@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Black Lily",
 		noautofire = false,
-		objectname = "CORSBOMB",
+		objectname = "core/corsbomb.s3o",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingmoveorder = 1,
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "corsbomb.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1292,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +120,7 @@ return {
 				firestarter = 10,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				model = "weapon_advbomb",
+				model = "weapon_advbomb.s3o",
 				mygravity = 0.2,
 				name = "Very Heavy Bombs",
 				noselfdamage = true,

@@ -25,7 +25,7 @@ return {
 		name = "Sonar Station",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "TLLSONAR",
+		objectname = "tll/tllsonar.s3o",
 		onoffable = true,
 		radaremitheight = 48,
 		selfdestructas = "SMALL_BUILDING",
@@ -37,6 +37,7 @@ return {
 		customparams = {
 			buildpic = "tllsonar.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -46,7 +47,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 17,
-				object = "tllsonar_dead",
+				object = "tll/tllsonar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

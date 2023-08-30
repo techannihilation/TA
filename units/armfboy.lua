@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Fatboy",
 		noautofire = false,
-		objectname = "ARMFBOY",
+		objectname = "arm/armfboy.s3o",
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armfboy.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1162,
-				object = "ARMFBOY_DEAD",
+				object = "arm/armfboy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 620,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

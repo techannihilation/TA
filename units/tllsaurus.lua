@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT9",
 		name = "King Saurus",
 		noautofire = false,
-		objectname = "tllsaurus",
+		objectname = "tll/tllsaurus.s3o",
 		radardistance = 0,
 		radaremitheight = 51,
 		selfdestructas = "MKL_BLAST",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "tllsaurus.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 35737,
-				object = "tllsaurus_dead",
+				object = "tll/tllsaurus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -165,7 +166,7 @@ return {
 				explosiongenerator = "custom:thermite_mine",
 				firestarter = 80,
 				flighttime = 4,
-				model = "weapon_thermite_rocket_xl",
+				model = "weapon_thermite_rocket_xl.s3o",
 				name = "Thermite Barrarge",
 				proximitypriority = -1,
 				range = 1800,

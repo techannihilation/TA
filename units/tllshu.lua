@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Shu",
-
-		objectname = "tllshu",
+		objectname = "tll/tllshu.s3o",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,
@@ -99,7 +98,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 620,

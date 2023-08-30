@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Exorcist",
 		noautofire = false,
-		objectname = "gok_exorcist",
+		objectname = "gok/gok_exorcist.s3o",
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 			buildpic = "gok_exorcist.dds",
 			faction = "ARM",
 			prioritytarget = "air",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			corsent_dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1200,
-				object = "CORSENT_DEAD",
+				object = "core/corsent_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 640,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -125,7 +126,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "Depth Charge",
 				range = 400,
 				reloadtime = 2.5,

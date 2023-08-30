@@ -13,7 +13,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "55 65 55",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Enhanced Radar Targeting, more facilities enhance accuracy",
@@ -33,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Center Station",
 		noautofire = false,		
-		objectname = "talon_targ",
+		objectname = "talon/talon_targ.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 40,
@@ -45,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "talon_targ.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +55,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5844,
-				object = "talon_targ_dead",
+				object = "talon/talon_targ_dead",
 				reclaimable = true,
 			},
 			heap = {

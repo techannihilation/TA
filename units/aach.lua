@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Engineer Hover",
 		noautofire = false,
-		objectname = "AACH",
+		objectname = "arm/aach.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -93,6 +93,7 @@ return {
 		customparams = {
 			buildpic = "aach.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -102,7 +103,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "aach_dead",
+				object = "arm/aach_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

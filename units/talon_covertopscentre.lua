@@ -33,7 +33,7 @@
 		maxslope = 10,
 		maxwaterdepth = 255,
 		name = "OPS Center",
-		objectname = "talon_covertopscentre",
+		objectname = "talon/talon_covertopscentre.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 50,
@@ -53,6 +53,7 @@
 		customparams = {
 			buildpic = "talon_covertopscentre.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@
 				footprintx = 30,
 				footprintz = 30,
 				metal = 61230,
-				object = "talon_covertopscentre_dead",
+				object = "talon/talon_covertopscentre_dead",
 				reclaimable = true,
 			},
 		},

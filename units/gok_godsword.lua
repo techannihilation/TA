@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "God Sword",
 		noautofire = false,
-		objectname = "gok_godsword",
+		objectname = "gok/gok_godsword.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "gok_godsword.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 240,
-				object = "gok_godsword_DEAD",
+				object = "gok/gok_godsword_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 128,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -173,7 +174,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_gok",
+				model = "weapon_missile_gok.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -199,7 +200,6 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					
 					air = 500,
 				},
 			},

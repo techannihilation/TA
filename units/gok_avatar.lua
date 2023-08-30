@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Avatar",
 		noautofire = false,
-		objectname = "gok_avatar",
+		objectname = "gok/gok_avatar.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_avatar.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 215,
-				object = "gok_avatar_DEAD",
+				object = "gok/gok_avatar_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 114,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 			},
 		},

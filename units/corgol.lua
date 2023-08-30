@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Goliath",
 		noautofire = false,
-		objectname = "CORGOL",
+		objectname = "core/corgol.s3o",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "corgol.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1650,
-				object = "CORGOL_DEAD",
+				object = "core/corgol_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 880,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -32,7 +32,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Spider",
 		noautofire = false,
-		objectname = "armspider",
+		objectname = "arm/armspider.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 360,
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "armspider.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 135,
-				object = "armspider_DEAD",
+				object = "arm/armspider_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 72,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

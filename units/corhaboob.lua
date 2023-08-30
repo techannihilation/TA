@@ -37,7 +37,7 @@ return {
 		movementclass = "TKBOT4",
 		name = "Haboob",
 		noautofire = false,
-		objectname = "corhaboob",
+		objectname = "core/corhaboob.s3o",
 		radardistance = 0,
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corhaboob.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3165,
-				object = "corhaboob_dead",
+				object = "core/corhaboob_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +78,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1688,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

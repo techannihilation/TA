@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Revenant",
 		noautofire = false,
-		objectname = "gok_revenant",
+		objectname = "gok/gok_revenant.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_revenant.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 150,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -121,7 +122,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				numbounce = 1,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "TorpedoLauncher",
 				noselfdamage = true,
 				range = 500,

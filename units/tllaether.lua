@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aether",
 		noautofire = false,
-		objectname = "tllaether",
+		objectname = "tll/tllaether.s3o",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingmoveorder = 1,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllaether.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 6213,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +120,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				model = "weapon_missile_bomber",
+				model = "weapon_missile_bomber.s3o",
 				name = "ClusterBombs",
 				noselfdamage = true,
 				range = 2100,

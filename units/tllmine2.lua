@@ -46,8 +46,7 @@ return {
 		mincloakdistance = 0,
 		name = "Medium Mine",
 		noautofire = false,
-		
-		objectname = "TLLMINE2",
+		objectname = "tll/tllmine2.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

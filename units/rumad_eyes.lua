@@ -33,7 +33,7 @@ return {
 		mincloakdistance = 36,
 		name = "Nomad's Eye",
 		noautofire = false,
-		objectname = "rumad_eyes",
+		objectname = "rumad/rumad_eyes.s3o",
 		onoffable = false,
 		radaremitheight = 27,
 		seismicsignature = 0,
@@ -49,6 +49,7 @@ return {
 			buildpic = "rumad_eyes.dds",
 			faction = "rumad",
 			initcloaked = true,
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dragonseyes_dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 24,
-				object = "1X1B",
+				object = "1x1b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

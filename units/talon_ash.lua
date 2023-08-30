@@ -40,8 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Undertow",
 		noautofire = false,
-
-		objectname = "talon_ash",
+		objectname = "talon/talon_ash.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "talon_ash.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 292,
-				object = "talon_ash_dead",
+				object = "talon/talon_ash_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -122,7 +122,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "Depth Charge",
 				range = 500,
 				reloadtime = 1.4,

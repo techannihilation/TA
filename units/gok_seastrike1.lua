@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Cataphract",
 		noautofire = false,
-		objectname = "gok_seastrike1",
+		objectname = "gok/gok_seastrike1.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "gok_seastrike1.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 171,
-				object = "gok_seastrike1_DEAD",
+				object = "gok/gok_seastrike1_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +80,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 91,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},
@@ -129,7 +130,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_gok",
+				model = "weapon_missile_gok.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -149,7 +150,6 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					
 					air = 500,
 				},
 			},

@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "AAHP",
+		objectname = "arm/aahp.s3o",
 		radaremitheight = 37,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "aahp.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3360,
-				object = "Aahp_dead",
+				object = "arm/aahp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

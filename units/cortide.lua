@@ -31,8 +31,7 @@ return {
 		minwaterdepth = 20,
 		name = "Tidal Generator",
 		noautofire = false,
-		
-		objectname = "CORTIDE",
+		objectname = "core/cortide.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -48,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "cortide.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 64,
-				object = "CORTIDE_DEAD",
+				object = "core/cortide_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

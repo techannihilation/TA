@@ -40,7 +40,7 @@ return {
 		movementclass = "HDBOAT12",
 		name = "Centrum",
 		noautofire = false,
-		objectname = "armcentrum",
+		objectname = "arm/armcentrum.s3o",
 		radardistance = 2500,
 		radaremitheight = 126,
 		selfdestructas = "MKL_BLAST",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "armcentrum.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 33937,
-				object = "armcentrum_dead",
+				object = "arm/armcentrum_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -155,7 +156,7 @@ return {
 				flighttime = 2.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE1",
+				model = "WEAPON_DEPTHCHARGE1.s3o",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 850,
@@ -209,7 +210,6 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-
 					air = 500,
 				},
 			},

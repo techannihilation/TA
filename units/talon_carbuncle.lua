@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK5",
 		name = "Carbuncle",
 		noautofire = false,
-		objectname = "talon_carbuncle",
+		objectname = "talon/talon_carbuncle.s3o",
 		radaremitheight = 40,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "talon_carbuncle.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			carbuncle_dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2175,
-				object = "talon_carbuncle_dead",
+				object = "talon/talon_carbuncle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +85,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1160,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -170,7 +171,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

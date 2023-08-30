@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Aircraft Plant",
 		noautofire = false,
-		objectname = "tlleap",
+		objectname = "tll/tlleap.s3o",
 		radaremitheight = 64,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -61,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "tlleap.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 14955,
-				object = "tlleap_DEAD",
+				object = "tll/tlleap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 7976,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

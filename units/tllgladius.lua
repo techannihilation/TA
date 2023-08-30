@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK2",
 		name = "Vampire",
 		noautofire = false,
-		objectname = "TLLGLADIUS",
+		objectname = "tll/tllgladius.s3o",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 480,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllgladius.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 33,
-				object = "tllgladius_dead",
+				object = "tll/tllgladius_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

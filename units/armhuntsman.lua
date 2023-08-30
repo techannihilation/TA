@@ -35,7 +35,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Huntsman",
 		noautofire = false,
-		objectname = "armhuntsman",
+		objectname = "arm/armhuntsman.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -51,6 +51,7 @@ return {
 			buildpic = "armhuntsman.dds",
 			faction = "ARM",
 			prioritytarget = "air",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 195,
-				object = "armhuntsman_dead",
+				object = "arm/armhuntsman_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +130,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 850,
@@ -154,7 +155,6 @@ return {
 				damage = {
 					areoship = 22.5,
 					default = 5,
-
 					air = 90,
 				},
 			},

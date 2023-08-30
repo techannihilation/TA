@@ -28,7 +28,6 @@ return {
 		commander = true,
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
-		
 		energymake = 25,
 		energystorage = 1000,
 		explodeas = "COMMANDER_BLAST",
@@ -55,7 +54,7 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		objectname = "CORCOM.3DO",
+		objectname = "core/corcom.s3o",
 		radardistance = 700,
 		radaremitheight = 55,
 		reclaimable = false,
@@ -109,6 +108,7 @@ return {
 			faction = "CORE",
 			iscommander = true,
 			paralyzemultiplier = 0.025,
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			["8_dead"] = {
@@ -127,7 +127,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 1500,
-				object = "CORCOM_DEAD",
+				object = "core/corcom_dead",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -147,7 +147,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 750,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

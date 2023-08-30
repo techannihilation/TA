@@ -30,7 +30,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Sea Plant",
 		noautofire = false,
-		objectname = "CORPLAT",
+		objectname = "core/corplat.s3o",
 		radardistance = 50,
 		radaremitheight = 30,
 		seismicsignature = 0,
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "corplat.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 4608,
-				object = "CORPLAT_DEAD",
+				object = "core/corplat_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

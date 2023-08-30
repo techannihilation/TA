@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Snow Fox",
 		noautofire = false,
-		objectname = "talon_fox",
+		objectname = "talon/talon_fox.s3o",
 		radardistance = 50,
 		radaremitheight = 23,
 		resurrect = 1,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "talon_fox.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 81,
-				object = "talon_fox_DEAD",
+				object = "talon/talon_fox_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -39,7 +39,7 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Benne",
-		objectname = "gok_benne",
+		objectname = "gok/gok_benne.s3o",
 		radardistance = 0,
 		radaremitheight = 28.8,
 		releaseheld = true,
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "gok_benne.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -66,7 +67,7 @@ return {
 				description = "Aircraft Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

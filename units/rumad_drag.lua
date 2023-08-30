@@ -27,7 +27,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
-		objectname = "rumad_drag",
+		objectname = "rumad/rumad_drag.s3o",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "rumad_drag",
@@ -36,6 +36,7 @@ return {
 		customparams = {
 			buildpic = "rumad_drag.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dragonsteeth = {
@@ -55,7 +56,7 @@ return {
 				hitdensity = 100,
 				metal = 12,
 				nodrawundergray = true,
-				object = "rumad_drag",
+				object = "rumad/rumad_drag",
 				reclaimable = true,
 				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
@@ -74,7 +75,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				customparams = {

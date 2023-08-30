@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		objectname = "CORACV",
+		objectname = "core/coracv.s3o",
 		radaremitheight = 24,
 		reclaimspeed = 90,
 		repairspeed = 90,
@@ -88,6 +88,7 @@ return {
 		customparams = {
 			buildpic = "coracv.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -101,7 +102,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1480,
-				object = "CORACV_DEAD",
+				object = "core/coracv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

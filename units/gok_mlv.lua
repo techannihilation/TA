@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Podger",
-		objectname = "gok_mlv",
+		objectname = "gok/gok_mlv.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -71,6 +71,7 @@ return {
 		customparams = {
 			buildpic = "gok_mlv.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -85,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "gok_mlv_DEAD",
+				object = "gok/gok_mlv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -99,7 +100,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 22,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

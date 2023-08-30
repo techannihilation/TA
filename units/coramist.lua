@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "htank4",
 		name = "Covid",
-		objectname = "coramist",
+		objectname = "core/coramist.s3o",
 		radaremitheight = 30,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
@@ -53,6 +53,7 @@ return {
 			buildpic = "coramist.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 7960,
-				object = "coramist_dead",
+				object = "core/coramist_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +130,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Long-Range Missiles",
 				noselfdamage = true,
 				range = 1250,

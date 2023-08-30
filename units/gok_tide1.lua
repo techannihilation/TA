@@ -26,7 +26,7 @@ return {
 		minwaterdepth = 20,
 		name = "Advanced Tidal Generator",
 		noautofire = false,
-		objectname = "gok_tide1",
+		objectname = "gok/gok_tide1.s3o",
 		script = "gok_tide.cob",
 		radaremitheight = 42,
 		selfdestructas = "SMALL_BUILDING",
@@ -39,6 +39,7 @@ return {
 			buildpic = "gok_tide1.dds",
 			energymultiplier = 5,
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +50,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 159,
-				--object = "gok_tide1_dead",
+				--object = "gok/gok_tide1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

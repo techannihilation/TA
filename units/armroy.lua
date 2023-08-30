@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Crusader",
 		noautofire = false,
-		objectname = "ARMROY",
+		objectname = "arm/armroy.s3o",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "armroy.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 783,
-				object = "ARMROY_DEAD",
+				object = "arm/armroy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 418,
-				object = "5X5B",
+				object = "5x5b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -170,7 +171,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Agrat",
 		noautofire = false,
-		objectname = "gok_agrat",
+		objectname = "gok/gok_agrat.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 300,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "gok_agrat.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 258,
-				object = "gok_agrat_DEAD",
+				object = "gok/gok_agrat_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 138,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

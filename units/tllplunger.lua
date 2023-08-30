@@ -36,7 +36,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Plunger",
 		noautofire = false,
-		objectname = "TLLPLUNGER",
+		objectname = "tll/tllplunger.s3o",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 365,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllplunger.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 543,
-				object = "tllplunger_dead",
+				object = "tll/tllplunger_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Torpedo",
 				noselfdamage = true,
 				range = 500,

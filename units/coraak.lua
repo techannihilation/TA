@@ -24,7 +24,7 @@ return {
 		maxvelocity = 1.5,
 		movementclass = "AKBOT2",
 		name = "Manticore",
-		objectname = "CORAAK",
+		objectname = "core/coraak.s3o",
 		radaremitheight = 26,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -39,6 +39,7 @@ return {
 			buildpic = "coraak.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +54,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 480,
-				object = "CORAAK_DEAD",
+				object = "core/coraak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 256,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -159,7 +160,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -201,7 +202,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 850,

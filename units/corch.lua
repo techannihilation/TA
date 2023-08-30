@@ -41,7 +41,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		objectname = "CORCH",
+		objectname = "core/corch.s3o",
 		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -108,6 +108,7 @@ return {
 		customparams = {
 			buildpic = "corch.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -122,7 +123,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 123,
-				object = "CORCH_DEAD",
+				object = "core/corch_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +137,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 65,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

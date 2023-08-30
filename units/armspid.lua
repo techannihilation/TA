@@ -40,7 +40,7 @@ return {
 		movementclass = "HTKBOT6",
 		name = "All-Terrain Construction Kbot",
 		noautofire = false,
-		objectname = "armspid",
+		objectname = "arm/armspid.s3o",
 		radaremitheight = 50,
 		reclaimspeed = 720,
 		repairspeed = 720,
@@ -78,6 +78,7 @@ return {
 		customparams = {
 			buildpic = "armspid.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -91,7 +92,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 18081,
-				object = "armspid_DEAD",
+				object = "arm/armspid_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -104,7 +105,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 96043,
-				object = "5X5D",
+				object = "5x5d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

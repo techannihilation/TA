@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		objectname = "talon_arad",
+		objectname = "talon/talon_arad.s3o",
 		onoffable = true,
 		radardistance = 3650,
 		radaremitheight = 29,
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "talon_arad.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 420,
-				object = "talon_arad_DEAD",
+				object = "talon/talon_arad_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 224,
-				object = "2X2C",
+				object = "2x2c",
 				reclaimable = true,
 			},
 		},

@@ -40,7 +40,7 @@ return {
 		movementclass = "VKBOT12",
 		name = "Mygalo",
 		noautofire = false,
-		objectname = "armmygalo",
+		objectname = "arm/armmygalo.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
@@ -63,6 +63,7 @@ return {
 			isairbase = true,
 			buildpic = "armmygalo.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armmygalo_dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 44400,
-				object = "armmygalo_DEAD",
+				object = "arm/armmygalo_dead",
 				reclaimable = true,
 			},
 			armmygalo_heap = {
@@ -85,7 +86,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 18680,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 			},
 		},

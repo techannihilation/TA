@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
 		noautofire = false,		
-		objectname = "ARMGEO",
+		objectname = "arm/armgeo.s3o",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "armgeo.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1117,
-				object = "ARMGEO_DEAD",
+				object = "arm/armgeo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 596,
-				object = "4X4B",
+				object = "4x4b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

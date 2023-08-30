@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Generator",
 		noautofire = false,
-		objectname = "ARMWIN",
+		objectname = "arm/armwin.s3o",
 		radaremitheight = 77,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "armwin.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 27,
-				object = "ARMWIN_DEAD",
+				object = "arm/armwin_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 14,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

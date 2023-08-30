@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK6",
 		name = "Antarion",
 		noautofire = false,
-		objectname = "rumad_antarion",
+		objectname = "rumad/rumad_antarion.s3o",
 		radardistance = 0,
 		radaremitheight = 45,
 		selfdestructas = "KROG_BLAST",
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "rumad_antarion.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 13875,
-				object = "rumad_antarion_dead",
+				object = "rumad/rumad_antarion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -155,7 +156,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad",
+				model = "weapon_missilexl_rumad.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Amphibious Complex",
 		noautofire = false,
-		objectname = "ASUBPEN",
+		objectname = "arm/asubpen.s3o",
 		radaremitheight = 36,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -64,13 +64,13 @@ return {
 		customparams = {
 			buildpic = "asubpen.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = false,
 				collisionvolumeoffsets = "0 0 2",
 				collisionvolumescales = "118 35 107",
-				
 				collisionvolumetype = "Box",
 				damage = 2306,
 				description = "Amphibious Complex Wreckage",
@@ -78,7 +78,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 735,
-				object = "ASUBPEN_DEAD",
+				object = "arm/asubpen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

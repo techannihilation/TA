@@ -29,7 +29,7 @@ return {
 		metalstorage = 200,
 		name = "Mass Extractor",
 		noautofire = false,
-		objectname = "talon_mas",
+		objectname = "talon/talon_mas.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 97,

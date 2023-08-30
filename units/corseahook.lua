@@ -47,7 +47,7 @@ return {
 		moverate2 = 2,
 		name = "Seahook",
 		noautofire = false,
-		objectname = "corseahook",
+		objectname = "core/corseahook.s3o",
 		pitchscale = 1,
 		radaremitheight = 28.8,
 		releaseheld = true,
@@ -69,6 +69,7 @@ return {
 		customparams = {
 			buildpic = "corseahook.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 212,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

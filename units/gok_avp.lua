@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "gok_avp",
+		objectname = "gok/gok_avp.s3o",
 		radaremitheight = 34,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -71,6 +71,7 @@ return {
 		customparams = {
 			buildpic = "gok_avp.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
@@ -84,7 +85,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 2936,
-				object = "gok_avp_DEAD",
+				object = "gok/gok_avp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -97,7 +98,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1566,
-				object = "6X6D",
+				object = "6x6d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

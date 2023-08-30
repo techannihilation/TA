@@ -28,7 +28,7 @@ return {
 		mobilestandorders = 1,
 		name = "Capital Shipyard",
 		noautofire = false,
-		objectname = "gok_usy",
+		objectname = "gok/gok_usy.s3o",
 		radardistance = 100,
 		radaremitheight = 93,
 		selfdestructas = "CRAWL_BLAST",
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "gok_usy.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 12000,
-				object = "gok_usy_DEAD",
+				object = "gok/gok_usy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 6400,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

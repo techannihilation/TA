@@ -36,7 +36,7 @@ return {
 		minwaterdepth = 24,
 		name = "Sonar Station",
 		noautofire = false,
-		objectname = "CORASON",
+		objectname = "core/corason.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "corason.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 121,
-				object = "CORASON_DEAD",
+				object = "core/corason_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Happlic",
 		noautofire = false,
-		objectname = "tllplasma",
+		objectname = "tll/tllplasma.s3o",
 		radaremitheight = 25,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 350,
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "tllplasma.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2212,
-				object = "tllplasma_dead",
+				object = "tll/tllplasma_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

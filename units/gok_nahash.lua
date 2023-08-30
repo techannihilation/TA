@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Nahash",
 		noautofire = false,
-		objectname = "gok_nahash",
+		objectname = "gok/gok_nahash.s3o",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -54,6 +54,7 @@ return {
 			buildpic = "gok_nahash.dds",
 			faction = "GOK",
 			prioritytarget = "air",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5265,
-				object = "gok_nahash_dead",
+				object = "gok/gok_nahash_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -124,7 +125,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_gok",
+				model = "weapon_missile_gok.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -144,7 +145,6 @@ return {
 				damage = {
 					areoship = 60,
 					default = 5,
-					
 					air = 240,
 				},
 			},
@@ -161,7 +161,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_aa_xl_gok",
+				model = "weapon_missile_aa_xl_gok.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -182,7 +182,6 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					
 					air = 1500,
 				},
 			},

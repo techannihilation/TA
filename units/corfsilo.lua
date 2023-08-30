@@ -25,7 +25,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Remover",
 		noautofire = false,
-		objectname = "CORFSILO",
+		objectname = "core/corfsilo.s3o",
 		radardistance = 0,
 		radaremitheight = 136,
 		selfdestructas = "KROG_BLAST",
@@ -36,6 +36,7 @@ return {
 		customparams = {
 			buildpic = "corfsilo.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -46,7 +47,7 @@ return {
 				footprintx = 16,
 				footprintz = 16,
 				metal = 121968,
-				object = "corfsilo_dead",
+				object = "core/corfsilo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -116,7 +117,7 @@ return {
 				firestarter = 100,
 				flighttime = 450,
 				metalpershot = 18000,
-				model = "weapon_nuke_adv_core",
+				model = "weapon_nuke_adv_core.s3o",
 				name = "Ultimate Nuclear Missile",
 				range = 80000,
 				reloadtime = 2,

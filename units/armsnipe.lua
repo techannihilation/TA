@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
 		name = "Sharpshooter",		
-		objectname = "ARMSNIPE",
+		objectname = "arm/armsnipe.s3o",
 		radardistancejam = 10,
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "armsnipe.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 510,
-				object = "ARMSNIPE_DEAD",
+				object = "arm/armsnipe_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 272,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

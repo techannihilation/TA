@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Snakeneck",		
-		objectname = "tllsnakeneck",
+		objectname = "tll/tllsnakeneck.s3o",
 		radardistance = 0,
 		radaremitheight = 27,
 		selfdestructas = "BIG_UNIT",
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "tllsnakeneck.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +56,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 506,
-				object = "tllturtle_dead",
+				object = "tll/tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

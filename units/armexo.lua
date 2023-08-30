@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT12",
 		name = "Exo",
 		noautofire = false,
-		objectname = "armexo",
+		objectname = "arm/armexo.s3o",
 		radaremitheight = 150,
 		seismicsignature = 0,
 		selfdestructas = "MEGA_BLAST",
@@ -57,7 +57,8 @@ return {
 			faction = "ARM",
 			shield_emit_height = 100,
 			shield_power = 10000,
-			shield_radius = 500,
+			shield_radius = 230,
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {

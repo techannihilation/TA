@@ -31,7 +31,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "ARMGATE1",
+		objectname = "arm/armgate1.s3o",
 		radaremitheight = 41,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -46,6 +46,7 @@ return {
 			faction = "ARM",
 			shield_power = 60000,
 			shield_radius = 1000,
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 10025,
-				object = "ARMGATE1_DEAD",
+				object = "arm/armgate1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5346,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

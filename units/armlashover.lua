@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Python",
 		noautofire = false,
-		objectname = "armlhover",
+		objectname = "arm/armlhover.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "armlhover.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 270,
-				object = "armlhover_dead",
+				object = "arm/armlhover_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

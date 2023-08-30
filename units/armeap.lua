@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Aircraft Plant",
 		noautofire = false,
-		objectname = "ARMEAP",
+		objectname = "arm/armeap.s3o",
 		radaremitheight = 110,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -62,6 +62,7 @@ return {
 		customparams = {
 			buildpic = "armeap.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 15360,
-				object = "ARMEAP_DEAD",
+				object = "arm/armeap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 8192,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

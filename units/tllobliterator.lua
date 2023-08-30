@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Obliterator",
 		noautofire = false,
-		objectname = "TLLOBLITERATOR",
+		objectname = "tll/tllobliterator.s3o",
 		onoffable = true,
 		radardistance = 650,
 		radaremitheight = 55,
@@ -43,6 +43,7 @@ return {
 		customparams = {
 			buildpic = "tllobliterator.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +54,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 4237,
-				object = "tllobliterator_dead",
+				object = "tll/tllobliterator_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +68,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 2260,
-				object = "4x4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1412,
-				object = "3x3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

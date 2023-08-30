@@ -13,7 +13,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "42 45 42",
-
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -35,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sunspot",
 		noautofire = false,
-		objectname = "gok_mds",
+		objectname = "gok/gok_mds.s3o",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -49,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_mds.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 333,
-				object = "gok_mds_DEAD",
+				object = "gok/gok_mds_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -74,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 178,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},

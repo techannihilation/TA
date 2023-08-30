@@ -36,7 +36,7 @@ return {
 		movementclass = "VKBOT12",
 		name = "Super Krogoth",
 		noautofire = false,
-		objectname = "corskrog",
+		objectname = "core/corskrog.s3o",
 		radaremitheight = 147,
 		seismicsignature = 0,
 		selfdestructas = "MEGA_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corskrog.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				featuredead = "heap",
 				footprintx = 8,
 				footprintz = 8,
-				object = "corskrog_dead",
+				object = "core/corskrog_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -212,7 +213,7 @@ return {
 					flighttime = 7,
 					impulseboost = 0,
 					impulsefactor = 0,
-					model = "weapon_rocket_devastator",
+					model = "weapon_rocket_devastator.s3o",
 					name = "Heavy Rockets",
 					noselfdamage = true,
 					range = 1800,

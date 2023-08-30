@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Sea Plant",
 		noautofire = false,
-		objectname = "gok_eplat",
+		objectname = "gok/gok_eplat.s3o",
 		radardistance = 50,
 		radaremitheight = 39,
 		script = "gok_eap.cob",
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "gok_eplat.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3360,
-				object = "GOK_EAP_DEAD",
+				object = "gok/gok_eap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

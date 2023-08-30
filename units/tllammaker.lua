@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
 		noautofire = false,
-		objectname = "tllammaker",
+		objectname = "tll/tllammaker.s3o",
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "CRAWL_BLAST",
@@ -40,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "tllammaker.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +51,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 862,
-				object = "tllammaker_dead",
+				object = "tll/tllammaker_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

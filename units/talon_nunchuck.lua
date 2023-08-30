@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Nunchuck",
 		noautofire = false,
-		objectname = "talon_nunchuck",
+		objectname = "talon/talon_nunchuck.s3o",
 		pushresistant = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -60,6 +60,7 @@ return {
 			buildpic = "talon_nunchuck.dds",
 			canareaattack = 1,
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 315,
-				object = "talon_nunchuck_DEAD",
+				object = "talon/talon_nunchuck_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -85,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 168,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 			},
 		},

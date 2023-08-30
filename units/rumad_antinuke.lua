@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Mobile Anti-Nuke",
-		objectname = "rumad_antinuke",
+		objectname = "rumad/rumad_antinuke.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "rumad_antinuke.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1162,
-				object = "rumad_antinuke_dead",
+				object = "rumad/rumad_antinuke_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 620,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -141,7 +142,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke",
+				model = "weapon_antinuke.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

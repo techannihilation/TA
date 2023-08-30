@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dark Flail",
 		noautofire = false,
-		objectname = "gok_ucir",
+		objectname = "gok/gok_ucir.s3o",
 		script = "gok_cir.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "gok_ucir.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 624,
-				object = "gok_ucir_DEAD",
+				object = "gok/gok_ucir_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 332,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},

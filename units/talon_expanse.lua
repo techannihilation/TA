@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Expanse",
 		noautofire = false,
-		objectname = "talon_expanse",
+		objectname = "talon/talon_expanse.s3o",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -54,6 +54,7 @@ return {
 			buildpic = "talon_expanse.dds",
 			faction = "TALON",
 			prioritytarget = "air",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5265,
-				object = "talon_expanse_dead",
+				object = "talon/talon_expanse_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -140,7 +141,6 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-					
 					air = 250,
 				},
 			},
@@ -157,7 +157,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal",
+				model = "weapon_missileaal.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -180,7 +180,6 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					
 					air = 1500,
 				},
 			},

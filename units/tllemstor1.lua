@@ -28,7 +28,7 @@ return {
 		metalstorage = 100000,
 		name = "T3 Metal/Energy Storage",
 		noautofire = false,
-		objectname = "tllemstor1",
+		objectname = "tll/tllemstor1.s3o",
 		radardistance = 0,
 		radaremitheight = 50,
 		selfdestructas = "TWILIGHT_BIG",
@@ -38,6 +38,7 @@ return {
 		customparams = {
 			buildpic = "tllemstor1.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -48,7 +49,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 6048,
-				object = "tllemstor1_dead",
+				object = "tll/tllemstor1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

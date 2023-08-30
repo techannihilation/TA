@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK4",
 		name = "Construction Vehicle",
 		noautofire = false,
-		objectname = "ARMECV",
+		objectname = "arm/armecv.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		reclaimspeed = 240,
@@ -88,6 +88,7 @@ return {
 		customparams = {
 			buildpic = "armecv.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -97,7 +98,7 @@ return {
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,
-				object = "ARMECV_DEAD",
+				object = "arm/armecv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -109,7 +110,7 @@ return {
 				description = "Vehicle Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

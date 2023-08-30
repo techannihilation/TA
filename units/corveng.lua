@@ -38,7 +38,7 @@ return {
 		moverate1 = 8,
 		name = "Avenger",
 		noautofire = false,
-		objectname = "CORVENG",
+		objectname = "core/corveng.s3o",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 500,
@@ -98,7 +98,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 520,
@@ -120,7 +120,6 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-
 					air = 75,
 				},
 			},

@@ -34,7 +34,7 @@ return {
 		metalstorage = 200,
 		name = "Mass Extractor",
 		noautofire = false,
-		objectname = "ARMMAS",
+		objectname = "arm/armmas.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 97,

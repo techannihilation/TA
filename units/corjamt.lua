@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Device",
 		noautofire = false,
-		objectname = "CORJAMT",
+		objectname = "core/corjamt.s3o",
 		onoffable = true,
 		radardistancejam = 360,
 		radaremitheight = 26,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corjamt.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 87,
-				object = "CORJAMT_DEAD",
+				object = "core/corjamt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

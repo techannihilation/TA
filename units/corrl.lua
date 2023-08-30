@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Pulverizer",
 		noautofire = false,
-		objectname = "CORRL",
+		objectname = "core/corrl.s3o",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 			buildpic = "corrl.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 60,
-				object = "CORRL_DEAD",
+				object = "core/corrl_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 32,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -160,7 +161,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-
 					air = 80,
 				},
 			},

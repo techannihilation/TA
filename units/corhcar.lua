@@ -42,7 +42,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Aircraft Carrier",
 		nochasecategory = "ALL",
-		objectname = "CORHCAR",
+		objectname = "core/corhcar.s3o",
 		onoffable = true,
 		radardistance = 3500,
 		radaremitheight = 53,
@@ -61,6 +61,7 @@ return {
 			isairbase = true,
 			buildpic = "corhcar.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 11325,
-				object = "corhcar_dead",
+				object = "core/corhcar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
 				metalpershot = 2500,
-				model = "weapon_nuke_core",
+				model = "weapon_nuke_core.s3o",
 				name = "Operational Nuclear Missile",
 				range = 72000,
 				reloadtime = 20,
@@ -170,7 +171,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

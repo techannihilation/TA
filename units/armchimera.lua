@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Chimera",
 		noautofire = false,
-		objectname = "armchimera",
+		objectname = "arm/armchimera.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -59,6 +59,7 @@ return {
 			buildpic = "armchimera.dds",
 			faction = "ARM",
 			prioritytarget = "air",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3240,
-				object = "armchimera_DEAD",
+				object = "arm/armchimera_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2128,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -141,7 +142,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

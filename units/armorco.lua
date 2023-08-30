@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Orcone",
 		noautofire = false,
-		objectname = "ARMORCO",
+		objectname = "arm/armorco.s3o",
 		radardistance = 0,
 		radaremitheight = 93,
 		seismicsignature = 0,
@@ -56,6 +56,7 @@ return {
 			buildpic = "armorco.dds",
 			faction = "ARM",
 			--requiretech = "Advanced T3 Unit Research Centre",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 19440,
-				object = "Armorco_dead",
+				object = "arm/armorco_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -206,7 +207,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

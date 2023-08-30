@@ -39,7 +39,7 @@ return {
 		name = "Victory",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
-		objectname = "rumad_lightartybot",
+		objectname = "rumad/rumad_lightartybot.s3o",
 		radardistance = 0,
 		radaremitheight = 55,
 		selfdestructas = "BIG_UNIT",
@@ -56,6 +56,7 @@ return {
 			buildpic = "rumad_lightartybot.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5655,
-				object = "rumad_lightartybot_DEAD",
+				object = "rumad/rumad_lightartybot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

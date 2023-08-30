@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "CAHP",
+		objectname = "core/cahp.s3o",
 		radaremitheight = 27,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "cahp.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3472,
-				object = "Cahp_dead",
+				object = "core/cahp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

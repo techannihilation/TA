@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "tlljam",
+		objectname = "tll/tlljam.s3o",
 		onoffable = true,
 		radardistancejam = 500,
 		radaremitheight = 81,
@@ -41,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "tlljam.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +52,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 121,
-				object = "tlljam_dead",
+				object = "tll/tlljam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

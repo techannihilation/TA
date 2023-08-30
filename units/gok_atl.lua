@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 25,
 		name = "Black Spike",
 		noautofire = false,
-		objectname = "gok_atl",
+		objectname = "gok/gok_atl.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_atl.dds",
 			faction = "TALON",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 780,
-				object = "gok_tl_DEAD",
+				object = "gok/gok_tl_dead",
 				reclaimable = true,
 			},
 		},
@@ -110,7 +111,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_gok",
+				model = "weapon_torpedo_gok.s3o",
 				name = "Level1TorpedoLauncher",
 				noselfdamage = true,
 				range = 600,

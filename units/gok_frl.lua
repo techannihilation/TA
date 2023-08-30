@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "Anti-Air Tower",
 		noautofire = false,
-		objectname = "gok_frl",
+		objectname = "gok/gok_frl.s3o",
 		script = "gok_rl.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_frl.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 624,
-				object = "gok_frl_DEAD",
+				object = "gok/gok_frl_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 332,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},
@@ -146,7 +147,6 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
-					
 					air = 160,
 				},
 			},

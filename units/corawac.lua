@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vulture",
 		noautofire = false,		
-		objectname = "CORAWAC",
+		objectname = "core/corawac.s3o",
 		radardistance = 1600,
 		radaremitheight = 9.5,
 		seismicsignature = 0,

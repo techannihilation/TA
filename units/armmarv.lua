@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Marvin",
 		noautofire = false,
-		objectname = "armmarv",
+		objectname = "arm/armmarv.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -102,6 +102,7 @@ return {
 		customparams = {
 			buildpic = "armmarv.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -116,7 +117,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 112,
-				object = "armmarv_DEAD",
+				object = "arm/armmarv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -130,7 +131,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 60,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

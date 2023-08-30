@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Hyperion",
 		noautofire = false,
-		objectname = "tllhyperion",
+		objectname = "tll/tllhyperion.s3o",
 		radardistance = 0,
 		radaremitheight = 108,
 		selfdestructas = "KROG_BLAST",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "tllhyperion.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tllhyperion_dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 55125,
-				object = "tllhyperion_DEAD",
+				object = "tll/tllhyperion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 29400,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -165,7 +166,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "Heavy Rockets",
 				range = 1050,
 				reloadtime = 1,

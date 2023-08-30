@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Spider Lab",
 		noautofire = false,
-		objectname = "armslab",
+		objectname = "arm/armslab.s3o",
 		radardistance = 50,
 		radaremitheight = 33,
 		selfdestructas = "LARGE_BUILDING",
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "armslab.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 6,
 				footprintz = 7,
 				metal = 735,
-				object = "armslab_dead",
+				object = "arm/armslab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

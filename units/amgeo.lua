@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Hazardous Geothermal Powerplant",
 		noautofire = false,
-		objectname = "AMGEO",
+		objectname = "arm/amgeo.s3o",
 		radaremitheight = 58,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_BLAST",

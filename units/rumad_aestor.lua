@@ -29,7 +29,7 @@ return {
 		name = "T2 Energy Storage",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "rumad_aestor",
+		objectname = "rumad/rumad_aestor.s3o",
 		radaremitheight = 42,
 		script = "rumad_estor.cob",
 		seismicsignature = 0,
@@ -40,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "rumad_aestor.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 618,
-				object = "rumad_aestor_dead",
+				object = "rumad/rumad_aestor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +69,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 330,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

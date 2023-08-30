@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Adv Ultimate Fusion Reactor",
 		noautofire = false,
-		objectname = "tllufus",
+		objectname = "tll/tllufus.s3o",
 		radaremitheight = 500,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_SUPERBLAST2",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "tllufus.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +56,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 109000,
-				object = "tllufus_DEAD",
+				object = "tll/tllufus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -69,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 95000,
-				object = "5X5D",
+				object = "5x5d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Tetanos",
 		noautofire = false,
-		objectname = "tlltetanos",
+		objectname = "tll/tlltetanos.s3o",
 		radaremitheight = 55,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -43,6 +43,7 @@ return {
 			buildpic = "tlltetanos.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 624,
-				object = "tlltetanos_DEAD",
+				object = "tll/tlltetanos_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 332,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +127,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
@@ -153,7 +154,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

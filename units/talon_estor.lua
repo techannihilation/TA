@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		objectname = "talon_ESTOR",
+		objectname = "talon/talon_estor.s3o",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "talon_ESTOR.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 127,
-				object = "talon_ESTOR_DEAD",
+				object = "talon/talon_estor_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 68,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 			},
 		},

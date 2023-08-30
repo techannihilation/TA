@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER8",
 		name = "Saturn",
 		noautofire = false,
-		objectname = "corhflag",
+		objectname = "core/corhflag.s3o",
 		radardistance = 2000,
 		radaremitheight = 65,
 		selfdestructas = "EXO_BLAST",
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "corhflag.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 15265,
-				object = "corhflag_dead",
+				object = "core/corhflag_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -208,7 +209,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

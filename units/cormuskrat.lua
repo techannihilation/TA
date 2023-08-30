@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Construction Amphibious Vehicle",
 		noautofire = false,
-		objectname = "CORMUSKRAT",
+		objectname = "core/cormuskrat.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -114,6 +114,7 @@ return {
 		customparams = {
 			buildpic = "cormuskrat.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -128,7 +129,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 129,
-				object = "CORMUSKRAT_DEAD",
+				object = "core/cormuskrat_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -142,7 +143,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 68,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

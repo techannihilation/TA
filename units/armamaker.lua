@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Metal Maker",
 		noautofire = false,
-		objectname = "ARMAMAKER",
+		objectname = "arm/armamaker.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,

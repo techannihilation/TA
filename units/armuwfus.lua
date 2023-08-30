@@ -32,8 +32,7 @@ return {
 		minwaterdepth = 25,
 		name = "Underwater Fusion Plant",
 		noautofire = false,
-		
-		objectname = "ARMUWFUS",
+		objectname = "arm/armuwfus.s3o",
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
@@ -47,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "armuwfus.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3277,
-				object = "ARMUWFUS_DEAD",
+				object = "arm/armuwfus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +75,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1748,
-				object = "5X5C",
+				object = "5x5c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -33,7 +33,7 @@ return {
 		movementclass = "KBOT1",
 		name = "Punkie",
 		noautofire = false,		
-		objectname = "CORPUNK",
+		objectname = "core/corpunk.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FLEA_EX",
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "corpunk.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			armflea_dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 12,
-				object = "ARMFLEA_DEAD",
+				object = "arm/armflea_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 6,
-				object = "1X1A",
+				object = "1x1a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -12,7 +12,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "36 89 36",
-
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -34,8 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Neupert",
 		noautofire = false,
-
-		objectname = "cormds",
+		objectname = "core/cormds.s3o",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -49,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "cormda.png",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 333,
-				object = "CORMDS_DEAD",
+				object = "core/cormds_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 178,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

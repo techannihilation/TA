@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Fred",
 		noautofire = false,
-		objectname = "corfred",
+		objectname = "core/corfred.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -104,6 +104,7 @@ return {
 		customparams = {
 			buildpic = "corfred.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -118,7 +119,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 129,
-				object = "corfred_DEAD",
+				object = "core/corfred_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 68,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

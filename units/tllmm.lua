@@ -27,7 +27,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Metal Maker",
 		noautofire = false,		
-		objectname = "TLLMM",
+		objectname = "tll/tllmm.s3o",
 		radaremitheight = 25,
 		selfdestructas = "ARMESTOR_BUILDING",
 		sightdistance = 210,
@@ -37,6 +37,7 @@ return {
 		customparams = {
 			buildpic = "tllmm.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -47,7 +48,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 12,
-				object = "tllmm_dead",
+				object = "tll/tllmm_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6,
-				object = "3x3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT8",
 		name = "Mythril",
 		noautofire = false,
-		objectname = "talon_mythril",
+		objectname = "talon/talon_mythril.s3o",
 		radardistance = 0,
 		radaremitheight = 76,
 		seismicsignature = 0,
@@ -63,6 +63,7 @@ return {
 			shield_emit_height = 125,
 			shield_power = 25000,
 			shield_radius = 250,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 14400,
-				object = "talon_mythril_DEAD",
+				object = "talon/talon_mythril_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +89,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 7680,
-				object = "8X8A",
+				object = "8x8a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -225,7 +226,6 @@ return {
 				shieldradius = 250,
 				shieldrepulser = false,
 				smartshield = true,
-
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {
@@ -282,7 +282,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_rocketm",
+				model = "weapon_rocketm.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,
@@ -324,7 +324,7 @@ return {
 				explosiongenerator = "custom:Explosion_Rocket_L",
 				firestarter = 80,
 				flighttime = 4,
-				model = "weapon_rocketl",
+				model = "weapon_rocketl.s3o",
 				name = "Barrarge",
 				proximitypriority = -1,
 				range = 1800,
