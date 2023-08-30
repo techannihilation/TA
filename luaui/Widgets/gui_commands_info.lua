@@ -249,7 +249,7 @@ function DrawTextarea(x,y,width,height,scrollbar)
 			
 			local line = changelogLines[lineKey]
 			if string.find(line, '^/([a-zA-Z0-9]*)') then
-				local cmd = string.match(line, '^/([\+a-zA-Z0-9_-]*)')
+				local cmd = string.match(line, '^/([%+a-zA-Z0-9_-]*)')
 				local descr = string.sub(line, string.len(string.match(line, '^/[a-zA-Z0-9_-]*[ \t]*')))
 				descr, numLines = font:WrapText(descr, (width - 250 - textRightOffset)*(loadedFontSize/fontSizeLine))
 				if (fontSizeTitle)*(j+numLines-1) > height then 

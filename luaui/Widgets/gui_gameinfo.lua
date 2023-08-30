@@ -80,10 +80,10 @@ for key, value in pairs(modoptions) do
 end
 changelogFile = changelogFile .. titlecolor.."Mod options\n"
 for key, value in pairs(changedModoptions) do
-	changelogFile = changelogFile .. keycolor..key..separator..valuecolor..value.."\n"
+	changelogFile = changelogFile .. keycolor..key..separator..valuecolor..tostring(value).."\n"
 end
 for key, value in pairs(unchangedModoptions) do
-	changelogFile = changelogFile .. keycolor..key..separator..valuegreycolor..value.."\n"
+	changelogFile = changelogFile .. keycolor..key..separator..valuegreycolor..tostring(value).."\n"
 end
 
 
@@ -295,8 +295,8 @@ function DrawTextarea(x,y,width,height,scrollbar)
 			
 			local line = changelogLines[lineKey]
 			if string.find(line, '::') then
-				local cmd = string.match(line, '^[ \+a-zA-Z0-9_-]*')		-- escaping the escape: \\ doesnt work in lua !#$@&*()&5$#
-				local descr = string.sub(line, string.len(string.match(line, '^[ \+a-zA-Z0-9_-]*::'))+1)
+				local cmd = string.match(line, '^[ %+a-zA-Z0-9_-]*')		-- escaping the escape: \\ doesnt work in lua !#$@&*()&5$#
+				local descr = string.sub(line, string.len(string.match(line, '^[ %+a-zA-Z0-9_-]*::'))+1)
 				descr, numLines = font:WrapText(descr, (width-scrollbarMargin-scrollbarWidth - 250 - textRightOffset)*(loadedFontSize/fontSizeLine))
 				if (lineSeparator+fontSizeTitle)*(j+numLines-1) > height then
 					break;

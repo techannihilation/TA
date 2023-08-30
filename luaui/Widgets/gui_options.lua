@@ -2167,7 +2167,7 @@ function init()
 			name = widgetOptionColor .. "   enabled on this map",
 			type = "bool",
 			value = true,
-			description = "It will remember what you toggled for every map\n\n\(by default: maps with wintery names have this toggled)"
+			description = "It will remember what you toggled for every map\n\n(by default: maps with wintery names have this toggled)"
 		},
 		{
 			id = "snowautoreduce",

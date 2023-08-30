@@ -813,7 +813,7 @@ function widget:Shutdown()
 end
 
 function widget:AddConsoleLine(lines, priority)
-	lines = lines:match("^\[f=[0-9]+\] (.*)$") or lines
+	lines = lines:match("^%[f=[0-9]+%] (.*)$") or lines
 	local textcolor
 
 	if not Config.console then
