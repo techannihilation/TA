@@ -40,7 +40,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Engineer Hover",
 		noautofire = false,
-		objectname = "tllhengi",
+		objectname = "tll/tllhengi.s3o",
 		reclaimspeed = 45,
 		repairspeed = 45,
 		radaremitheight = 25,
@@ -94,6 +94,7 @@ return {
 		customparams = {
 			buildpic = "tllhengi.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -104,7 +105,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 157,
-				object = "tllchover_dead",
+				object = "tll/tllchover_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

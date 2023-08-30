@@ -37,7 +37,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "CORGATE",
+		objectname = "core/corgate.s3o",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,6 +53,7 @@ return {
 			faction = "CORE",
 			shield_power = 7500,
 			shield_radius = 400,
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2988,
-				object = "CORGATE_DEAD",
+				object = "core/corgate_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1594,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

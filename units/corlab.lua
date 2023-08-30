@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		objectname = "CORLAB",
+		objectname = "core/corlab.s3o",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -64,13 +64,13 @@ return {
 		customparams = {
 			buildpic = "corlab.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "88 28 88",
-				
 				collisionvolumetype = "Box",
 				damage = 2449,
 				description = "Kbot Lab Wreckage",
@@ -79,7 +79,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 464,
-				object = "CORLAB_DEAD",
+				object = "core/corlab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -93,7 +93,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 247,
-				object = "6X6B",
+				object = "6x6b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

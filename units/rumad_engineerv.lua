@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK4",
 		name = "Heavy Engineer Vehicle",
 		noautofire = false,
-		objectname = "rumad_engineerv",
+		objectname = "rumad/rumad_engineerv.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -87,6 +87,7 @@ return {
 		customparams = {
 			buildpic = "rumad_engineerv.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -101,7 +102,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 183,
-				object = "rumad_engineerv_DEAD",
+				object = "rumad/rumad_engineerv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -115,7 +116,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 98,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

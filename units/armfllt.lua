@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Floating Light Laser Tower",
 		noautofire = false,
-		objectname = "armfllt",
+		objectname = "arm/armfllt.s3o",
 		radaremitheight = 65,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "armfllt.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 64,
-				object = "ARMFLLT_DEAD",
+				object = "arm/armfllt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 34,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

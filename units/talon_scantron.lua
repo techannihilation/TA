@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Seer",
 		noautofire = false,		
-		objectname = "talon_scantron",
+		objectname = "talon/talon_scantron.s3o",
 		onoffable = true,
 		radardistance = 2500,
 		radaremitheight = 25,
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "talon_scantron.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 92,
-				object = "talon_scantron_DEAD",
+				object = "talon/talon_scantron_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -85,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 49,
-				object = "3X3E",
+				object = "3x3e",
 				reclaimable = true,
 			},
 		},

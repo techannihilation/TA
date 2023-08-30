@@ -35,7 +35,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Confuser",
 		noautofire = false,
-		objectname = "TLLCONFUSER",
+		objectname = "tll/tllconfuser.s3o",
 		onoffable = true,
 		radardistancejam = 550,
 		radaremitheight = 39,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "tllconfuser.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 141,
-				object = "tllconfuser_dead",
+				object = "tll/tllconfuser_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

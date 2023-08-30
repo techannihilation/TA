@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 95,
 		name = "Experimental Wall",
 		noautofire = false,
-		objectname = "gok_edrag",
+		objectname = "gok/gok_edrag.s3o",
 		radaremitheight = 100,
 		script = "drag.lua",
 		unitname = "gok_edrag",
@@ -35,6 +35,7 @@ return {
 		customparams = {
 			buildpic = "gok_edrag.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			fortification = {
@@ -51,7 +52,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 850,
-				object = "gok_edrag",
+				object = "gok/gok_edrag",
 				reclaimable = true,
 				reclaimtime = 16000,
 				customparams = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 290,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

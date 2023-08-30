@@ -35,7 +35,7 @@ return {
 		metalstorage = 500,
 		name = "Armed Moho Exploiter",
 		noautofire = false,
-		objectname = "CORMEXP",
+		objectname = "core/cormexp.s3o",
 		onoffable = true,
 		radaremitheight = 49,
 		seismicsignature = 0,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "cormexp.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2362,
-				object = "CORMEXP_DEAD",
+				object = "core/cormexp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1260,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +130,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "RocketBattery",
 				noselfdamage = true,
 				range = 650,

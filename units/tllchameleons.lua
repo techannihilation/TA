@@ -38,7 +38,7 @@ return {
 		movementclass = "htank4",
 		name = "Chameleons",
 		noautofire = false,
-		objectname = "tllchameleons",
+		objectname = "tll/tllchameleons.s3o",
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 450,
@@ -53,6 +53,7 @@ return {
 			buildpic = "tllchameleons.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6187,
-				object = "tllnaja_dead",
+				object = "tll/tllnaja_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -130,7 +131,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal",
+				model = "weapon_missileaal.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -153,7 +154,6 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					
 					air = 1500,
 				},
 			},

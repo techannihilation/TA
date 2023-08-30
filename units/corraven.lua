@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Catapult",
 		noautofire = false,
-		objectname = "CORRAVEN",
+		objectname = "core/corraven.s3o",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "corraven.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3637,
-				object = "CORRAVEN_DEAD",
+				object = "core/corraven_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1940,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +137,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_rocketm",
+				model = "weapon_rocketm.s3o",
 				movingaccuracy = 600,
 				name = "RavenCatapultRockets",
 				noselfdamage = true,

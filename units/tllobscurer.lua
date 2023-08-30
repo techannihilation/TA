@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Obscurer",
 		noautofire = false,
-		objectname = "TLLOBSCURER",
+		objectname = "tll/tllobscurer.s3o",
 		onoffable = true,
 		radardistancejam = 550,
 		radaremitheight = 30,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllobscurer.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 89,
-				object = "tllobscurer_dead",
+				object = "tll/tllobscurer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

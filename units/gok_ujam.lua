@@ -13,7 +13,6 @@ return {
 		canattack = false,
 		category = "ALL SURFACE",
 		collisionvolumescales = "150 165 150",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 5",
@@ -31,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Tower",
 		noautofire = false,
-		objectname = "gok_ujam",
+		objectname = "gok/gok_ujam.s3o",
 		onoffable = true,
 		radardistancejam = 6000,
 		radaremitheight = 180,
@@ -41,10 +40,10 @@ return {
 		unitname = "gok_ujam",
 		usebuildinggrounddecal = false,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
-
 		customparams = {
 			buildpic = "gok_ujam.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 776,
-				object = "gok_ujam_dead",
+				object = "gok/gok_ujam_dead",
 				reclaimable = true,
 			},
 			heap = {

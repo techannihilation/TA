@@ -15,7 +15,6 @@ return {
 		category = "ALL MOBILE MINOR SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "18 10 18",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,7 +36,7 @@ return {
 		movementclass = "KBOT1",
 		name = "Bug",
 		noautofire = false,
-		objectname = "TLLBUG",
+		objectname = "tll/tllbug.s3o",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 500,
@@ -52,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllbug.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 26,
-				object = "tllbug_dead",
+				object = "tll/tllbug_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

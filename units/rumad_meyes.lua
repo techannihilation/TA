@@ -33,7 +33,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Punkie",
 		noautofire = false,
-		objectname = "rumad_meyes",
+		objectname = "rumad/rumad_meyes.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FLEA_EX",
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "rumad_meyes.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 12,
-				object = "1X1B",
+				object = "1x1b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 6,
-				object = "1X1A",
+				object = "1x1a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

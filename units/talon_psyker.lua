@@ -41,7 +41,7 @@ talon_psyker = {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		objectname = "talon_psyker",
+		objectname = "talon/talon_psyker.s3o",
 		radaremitheight = 25,
 		--resurrect = 1,
 		seismicsignature = 0,
@@ -93,6 +93,7 @@ talon_psyker = {
 		customparams = {
 			buildpic = "talon_psyker.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -107,7 +108,7 @@ talon_psyker = {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 81,
-				object = "talon_psyker_DEAD",
+				object = "talon/talon_psyker_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -118,7 +119,7 @@ talon_psyker = {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 			},
 		},

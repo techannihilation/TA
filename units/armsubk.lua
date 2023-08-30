@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Piranha",
 		noautofire = false,
-		objectname = "ARMSUBK",
+		objectname = "arm/armsubk.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "armsubk.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 840,
-				object = "ARMSUBK_DEAD",
+				object = "arm/armsubk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 448,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +136,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 600,

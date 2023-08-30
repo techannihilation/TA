@@ -29,7 +29,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "Fusion Reactor",
-		objectname = "TLLMEDFUSION",
+		objectname = "tll/tllmedfusion.s3o",
 		radaremitheight = 44,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 263,
@@ -39,6 +39,7 @@ return {
 		customparams = {
 			buildpic = "tllmedfusion.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +50,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2910,
-				object = "tllmedfusion_dead",
+				object = "tll/tllmedfusion_dead",
 				customparams = {
 					fromunit = 1,
 				},

@@ -24,7 +24,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		objectname = "TLLADT",
+		objectname = "tll/tlladt.s3o",
 		radaremitheight = 61,
 		script = "drag.lua",
 		unitname = "tlladt",
@@ -33,6 +33,7 @@ return {
 		customparams = {
 			buildpic = "tlladt.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tllfortification = {
@@ -51,7 +52,7 @@ return {
 				hitdensity = 100,
 				metal = 45,
 				nodrawundergray = true,
-				object = "TLLADT",
+				object = "tll/tlladt",
 				reclaimable = true,
 				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
@@ -71,7 +72,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 8,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

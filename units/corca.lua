@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "CORCA",
+		objectname = "core/corca.s3o",
 		radardistance = 50,
 		reclaimspeed = 22.5,
 		repairspeed = 22.5,

@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Roaster",
 		noautofire = false,
-		objectname = "TLLROASTER",
+		objectname = "tll/tllroaster.s3o",
 		radaremitheight = 25,
 		selfdestructas = "ESTOR_BUILDING",
 		sightdistance = 450,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "tllroaster.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1083,
-				object = "TLLROASTER_dead",
+				object = "tll/tllroaster_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 578,
-				object = "4x4B",
+				object = "4x4b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

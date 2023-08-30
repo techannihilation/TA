@@ -24,7 +24,7 @@ return {
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
 		noautofire = false,
-		objectname = "TLLDTNS",
+		objectname = "tll/tlldtns.s3o",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "tlldtns",
@@ -34,12 +34,12 @@ return {
 		customparams = {
 			buildpic = "tlldtns.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tllfloatingteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-				
 				crushResistance = 250,
 				damage = 2500,
 				description = "Dragon's Teeth - NS",
@@ -50,7 +50,7 @@ return {
 				hitdensity = 100,
 				metal = 20,
 				nodrawundergray = true,
-				object = "tlldtns",
+				object = "tll/tlldtns",
 				reclaimable = true,
 				world = "allworld",
 				customparams = {

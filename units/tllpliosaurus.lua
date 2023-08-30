@@ -40,7 +40,7 @@ return {
 		movementclass = "HDBOAT12",
 		name = "Pliosaurus",
 		noautofire = false,
-		objectname = "tllpliosaurus",
+		objectname = "tll/tllpliosaurus.s3o",
 		radardistance = 2500,
 		radaremitheight = 126,
 		selfdestructas = "MKL_BLAST",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "tllpliosaurus.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 33937,
-				object = "tllpliosaurus_dead",
+				object = "tll/tllpliosaurus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

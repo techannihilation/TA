@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 0,
 		name = "Atlas",
 		noautofire = false,
-		objectname = "rumad_airtrans_lvl1",
+		objectname = "rumad/rumad_airtrans_lvl1.s3o",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		seismicsignature = 0,

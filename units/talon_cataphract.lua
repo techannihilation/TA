@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Cataphract",
 		noautofire = false,
-		objectname = "talon_cataphract",
+		objectname = "talon/talon_cataphract.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "talon_cataphract.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 171,
-				object = "talon_cataphract_DEAD",
+				object = "talon/talon_cataphract_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +80,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 91,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},
@@ -130,7 +131,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,
@@ -156,7 +157,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

@@ -35,7 +35,7 @@ return {
 		mincloakdistance = 72,
 		name = "Pack",
 		noautofire = false,
-		objectname = "armpack",
+		objectname = "arm/armpack.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -50,6 +50,7 @@ return {
 			buildpic = "armpack.dds",
 			faction = "ARM",
 			prioritytarget = "air",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 264,
-				object = "armpack_DEAD",
+				object = "arm/armpack_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 140,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,

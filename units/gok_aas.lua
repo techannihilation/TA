@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Grul",
 		noautofire = false,
-		objectname = "gok_aas",
+		objectname = "gok/gok_aas.s3o",
 		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,6 +55,7 @@ return {
 			buildpic = "gok_aas.dds",
 			faction = "GOK",
 			prioritytarget = "air",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 678,
-				object = "gok_aas_DEAD",
+				object = "gok/gok_aas_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 362,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +137,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_gok",
+				model = "weapon_missile_gok.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -156,7 +157,6 @@ return {
 				damage = {
 					areoship = 60,
 					default = 5,
-					
 					air = 240,
 				},
 			},

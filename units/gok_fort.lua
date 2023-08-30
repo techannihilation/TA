@@ -23,7 +23,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		objectname = "gok_fort",
+		objectname = "gok/gok_fort.s3o",
 		radaremitheight = 50,
 		script = "drag.lua",
 		unitname = "gok_fort",
@@ -31,12 +31,12 @@ return {
 		customparams = {
 			buildpic = "gok_fort.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			fortification = {
 				autoreclaimable = 0,
 				blocking = true,
-
 				crushResistance = 1000,
 				collisionvolumeoffsets = "0 -3 0",
 				collisionvolumescales = "32 50 32",
@@ -51,7 +51,7 @@ return {
 				hitdensity = 100,
 				metal = 45,
 				nodrawundergray = true,
-				object = "gok_fort",
+				object = "gok/gok_fort",
 				reclaimable = true,
 				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
@@ -70,7 +70,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 7,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

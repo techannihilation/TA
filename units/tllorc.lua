@@ -16,7 +16,6 @@ return {
 		category = "ALL LARGE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "44 24 74",
-		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,7 +36,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Orc",
 		noautofire = false,
-		objectname = "TLLORC",
+		objectname = "tll/tllorc.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 250,
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllorc.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2799,
-				object = "tllorc_dead",
+				object = "tll/tllorc_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +129,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo",
+				model = "weapon_advtorpedo.s3o",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 700,

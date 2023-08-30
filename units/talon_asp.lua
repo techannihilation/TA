@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,		
-		objectname = "talon_asp",
+		objectname = "talon/talon_asp.s3o",
 		onoffable = true,
 		radaremitheight = 42,
 		seismicsignature = 0,
@@ -52,13 +52,13 @@ return {
 			isairbase = true,
 			buildpic = "talon_asp.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -8 0",
 				collisionvolumescales = "135 24 135",
-				
 				collisionvolumetype = "Box",
 				damage = 2378,
 				description = "Air Repair Pad Wreckage",
@@ -67,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 562,
-				object = "talon_asp_DEAD",
+				object = "talon/talon_asp_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +78,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 300,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 			},
 		},

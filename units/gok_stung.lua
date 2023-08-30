@@ -34,7 +34,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Stung",
 		noautofire = false,
-		objectname = "gok_stung",
+		objectname = "gok/gok_stung.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNITEX",
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "gok_stung.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 56,
-				object = "gok_stung_dead",
+				object = "gok/gok_stung_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -146,7 +147,6 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-
 					air = 100,
 				},
 			},

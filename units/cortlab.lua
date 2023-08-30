@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Tortoise Lab",
 		noautofire = false,
-		objectname = "cortlab",
+		objectname = "core/cortlab.s3o",
 		radardistance = 0,
 		radaremitheight = 44,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -63,6 +63,7 @@ return {
 		customparams = {
 			buildpic = "cortlab.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 712,
-				object = "CORTLAB_DEAD",
+				object = "core/cortlab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

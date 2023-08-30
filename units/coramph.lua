@@ -37,7 +37,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Gimp",
 		noautofire = false,
-		objectname = "CORAMPH",
+		objectname = "core/coramph.s3o",
 		radardistance = 300,
 		radaremitheight = 26,
 		script = "coramph.lua",
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "coramph.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 130,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +119,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Torpedo",
 				noselfdamage = true,
 				predictboost = 0,

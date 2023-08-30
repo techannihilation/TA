@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 8,
 		name = "Stopper",
 		noautofire = false,
-		objectname = "talon_mine3",
+		objectname = "talon/talon_mine3.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

@@ -23,7 +23,7 @@ return {
 		name = "Floating Moho Metal Maker",
 		noautofire = false,		
 		noshadow = 1,
-		objectname = "tllwmmohoconv",
+		objectname = "tll/tllwmmohoconv.s3o",
 		radaremitheight = 36,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 200,

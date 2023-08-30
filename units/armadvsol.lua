@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Collector",
 		noautofire = false,
-		objectname = "ARMADVSOL",
+		objectname = "arm/armadvsol.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -49,13 +49,13 @@ return {
 		customparams = {
 			buildpic = "armadvsol.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -3 -1",
 				collisionvolumescales = "49 7 49",
-				
 				collisionvolumetype = "CylY",
 				damage = 1214,
 				description = "Advanced Solar Collector Wreckage",
@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 274,
-				object = "ARMADVSOL_DEAD",
+				object = "arm/armadvsol_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +78,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 146,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

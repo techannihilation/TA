@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK3",
 		name = "Vehicle ",
 		noautofire = false,
-		objectname = "gok_mrad",
+		objectname = "gok/gok_mrad.s3o",
 		onoffable = true,
 		radardistance = 2500,
 		radaremitheight = 25,
@@ -61,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "gok_mrad.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "gok_mrad_DEAD",
+				object = "gok/gok_mrad_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -86,7 +87,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 			},
 		},

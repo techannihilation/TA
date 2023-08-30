@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Raise Air",
 		noautofire = false,
-		objectname = "gok_erez",
+		objectname = "gok/gok_erez.s3o",
 		radardistance = 50,
 		radaremitheight = 26,
 		resurrect = 1,

@@ -15,7 +15,6 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "90 112 90",
-
 		collisionvolumetype = "CylY",
 		description = "Tech Level 3 (Amphibious)",
 		energyuse = 300,
@@ -34,7 +33,7 @@ return {
 		metalstorage = 100,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "coremex",
+		objectname = "core/coremex.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 45,

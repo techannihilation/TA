@@ -43,7 +43,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Shielded Construction Kbot",
 		nochasecategory = "ALL",
-		objectname = "gok_eck",
+		objectname = "gok/gok_eck.s3o",
 		radaremitheight = 63,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -89,6 +89,7 @@ return {
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 2000,
 			shield_radius = 150,
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			["dead"] = {
@@ -107,7 +108,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3500,
-				object = "gok_eck_DEAD",
+				object = "gok/gok_eck_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -125,7 +126,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 2400,
-				object = "4X4F",
+				object = "4x4f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

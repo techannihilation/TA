@@ -34,7 +34,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Troman",
 		noautofire = false,
-		objectname = "cortroman",
+		objectname = "core/cortroman.s3o",
 		radardistance = 0,
 		radaremitheight = 58,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "cortroman.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3090,
-				object = "cortroman_dead",
+				object = "core/cortroman_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -151,7 +152,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

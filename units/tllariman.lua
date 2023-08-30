@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Ariman",
 		noautofire = false,
-		objectname = "TLLARIMAN",
+		objectname = "tll/tllariman.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 320,
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "tllariman.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 232,
-				object = "tllariman_dead",
+				object = "tll/tllariman_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

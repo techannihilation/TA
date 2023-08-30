@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Gantry",
 		noautofire = false,
-		objectname = "talon_ulab",
+		objectname = "talon/talon_ulab.s3o",
 		radardistance = 50,
 		radaremitheight = 82,
 		seismicsignature = 0,
@@ -69,6 +69,7 @@ return {
 		customparams = {
 			buildpic = "talon_ulab.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -80,7 +81,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 67200,
-				object = "talon_ulab_dead",
+				object = "talon/talon_ulab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -94,7 +95,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 35840,
-				object = "7X7C",
+				object = "7x7c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

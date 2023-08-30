@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		objectname = "ARMACK",
+		objectname = "arm/armack.s3o",
 		radaremitheight = 26,
 		reclaimspeed = 80,
 		repairspeed = 80,
@@ -83,6 +83,7 @@ return {
 		customparams = {
 			buildpic = "armack.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -93,7 +94,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1120,
-				object = "armack_dead",
+				object = "arm/armack_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

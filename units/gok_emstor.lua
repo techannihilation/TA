@@ -27,7 +27,7 @@ return {
 		metalstorage = 60000,
 		name = "T3 Metal Storage",
 		noautofire = false,
-		objectname = "gok_emstor",
+		objectname = "gok/gok_emstor.s3o",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "SMALL_BUILDING",
@@ -39,6 +39,7 @@ return {
 		customparams = {
 			buildpic = "gok_emstor.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +50,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				--object = "gok_emstor_dead",
+				--object = "gok/gok_emstor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -38,8 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Petrel",
 		noautofire = false,
-
-		objectname = "TLLASSHIP",
+		objectname = "tll/tllasship.s3o",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "BIG_UNIT",
@@ -57,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "tllasship.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1087,
-				object = "tllASSHIP_dead",
+				object = "tll/tllasship_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +133,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "guided torpedo pack",
 				noselfdamage = true,
 				range = 500,

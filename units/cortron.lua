@@ -38,7 +38,7 @@ return {
 		name = "Catalyst",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "CORTRON",
+		objectname = "core/cortron.s3o",
 		radaremitheight = 42,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "cortron.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1440,
-				object = "CORTRON_DEAD",
+				object = "core/cortron_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 768,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 550,
-				model = "weapon_missile_emp",
+				model = "weapon_missile_emp.s3o",
 				name = "TacticalNuke",
 				noselfdamage = true,
 				range = 2750,

@@ -16,7 +16,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "59.2 69.2 59.2",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -39,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Destrustor",
 		noautofire = false,
-		objectname = "armhanni",
+		objectname = "arm/armhanni.s3o",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "ESTOR_BUILDINGEX",
@@ -55,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "armhanni.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1087,
-				object = "armhanni_dead",
+				object = "arm/armhanni_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

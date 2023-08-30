@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Collector",
 		noautofire = false,
-		objectname = "rumad_advsolar",
+		objectname = "rumad/rumad_advsolar.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "rumad_advsolar.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 274,
-				object = "rumad_advsolar_DEAD",
+				object = "rumad/rumad_advsolar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 146,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

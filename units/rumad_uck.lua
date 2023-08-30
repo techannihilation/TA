@@ -42,7 +42,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Fast Construction Kbot",
 		nochasecategory = "ALL",
-		objectname = "rumad_uck",
+		objectname = "rumad/rumad_uck.s3o",
 		radaremitheight = 63,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -80,6 +80,7 @@ return {
 		customparams = {
 			buildpic = "rumad_uck.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			["dead"] = {
@@ -98,7 +99,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3500,
-				object = "rumad_uck_DEAD",
+				object = "rumad/rumad_uck_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -116,7 +117,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 2400,
-				object = "4X4F",
+				object = "4x4f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -178,7 +179,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad",
+				model = "weapon_missile_rumad.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

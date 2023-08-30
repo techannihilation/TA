@@ -30,7 +30,7 @@ return {
 		name = "Torpedo Launcher",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "TLLtorp",
+		objectname = "tll/tlltorp.s3o",
 		radaremitheight = 32,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 150,
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "tlltorp.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 259,
-				object = "tlltorp_dead",
+				object = "tll/tlltorp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -117,7 +118,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Level1TorpedoLauncher",
 				noselfdamage = true,
 				range = 600,

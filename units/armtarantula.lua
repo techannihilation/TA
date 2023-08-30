@@ -32,7 +32,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Tarantula",
 		noautofire = false,		
-		objectname = "armtarantula",
+		objectname = "arm/armtarantula.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "armtarantula.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 243,
-				object = "armtarantula_DEAD",
+				object = "arm/armtarantula_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 130,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "HeavyRocket",
 				noselfdamage = true,
 				range = 1000,

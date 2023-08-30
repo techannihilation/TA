@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT6",
 		name = "Fox Terrier",
 		noautofire = false,
-		objectname = "armfox",
+		objectname = "arm/armfox.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armfox.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 202,
-				object = "armfox_DEAD",
+				object = "arm/armfox_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 108,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -196,7 +197,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				range = 700,
@@ -223,7 +224,6 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
-					
 					air = 50,
 				},
 			},

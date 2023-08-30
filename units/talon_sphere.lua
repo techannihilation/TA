@@ -38,7 +38,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Invader",
 		noautofire = false,		
-		objectname = "talon_sphere",
+		objectname = "talon/talon_sphere.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "talon_sphere.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			corpse = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 48,
-				object = "talon_sphere_DEAD",
+				object = "talon/talon_sphere_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 26,
-				object = "1X1B",
+				object = "1x1b",
 				reclaimable = true,
 			},
 		},

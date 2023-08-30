@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Penetrator",
 		noautofire = false,
-		objectname = "ARMMANNI",
+		objectname = "arm/armmanni.s3o",
 		radaremitheight = 52,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "armmanni.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 900,
-				object = "ARMMANNI_DEAD",
+				object = "arm/armmanni_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 480,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

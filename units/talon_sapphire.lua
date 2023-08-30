@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Sapphire",
 		noautofire = false,
-		objectname = "talon_sapphire",
+		objectname = "talon/talon_sapphire.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "talon_sapphire.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 675,
-				object = "talon_Sapphire_DEAD",
+				object = "talon/talon_sapphire_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -83,7 +84,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 			},
 		},

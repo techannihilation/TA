@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "rumad_vp",
+		objectname = "rumad/rumad_vp.s3o",
 		radaremitheight = 34,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -63,13 +63,13 @@ return {
 		customparams = {
 			buildpic = "rumad_vp.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "-5 0 0",
 				collisionvolumescales = "110 34 92",
-
 				collisionvolumetype = "Box",
 				damage = 2575,
 				description = "Vehicle Plant Wreckage",
@@ -78,7 +78,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 594,
-				object = "rumad_vp_DEAD",
+				object = "rumad/rumad_vp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -92,7 +92,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

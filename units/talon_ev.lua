@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Engineer Vehicle",
 		noautofire = false,
-		objectname = "talon_ev",
+		objectname = "talon/talon_ev.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -85,6 +85,7 @@ return {
 		customparams = {
 			buildpic = "talon_ev.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -99,7 +100,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 183,
-				object = "talon_ev_DEAD",
+				object = "talon/talon_ev_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -110,7 +111,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 98,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 			},
 		},

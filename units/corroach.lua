@@ -39,7 +39,7 @@ return {
 		movementclass = "AKBOT1",
 		name = "Roach",
 		noautofire = false,
-		objectname = "CORROACH",
+		objectname = "core/corroach.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",

@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Discharge",
 		noautofire = false,
-		objectname = "TLLDISCHARGE",
+		objectname = "tll/tlldischarge.s3o",
 		radardistance = 0,
 		radaremitheight = 42,
 		selfdestructas = "BIG_UNIT",
@@ -59,6 +59,7 @@ return {
 			canjump = "1",
 			faction = "TLL",
 			paralyzemultiplier = 0.25,
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 487,
-				object = "tlldischarge_dead",
+				object = "tll/tlldischarge_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -170,7 +171,7 @@ return {
 				cratermult = 0,
 				edgeeffectiveness = 0.75,
 				explosiongenerator = "custom:EMPFLASH240",
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "Stun Bomb",
 				nogap = 1,
 				noselfdamage = true,

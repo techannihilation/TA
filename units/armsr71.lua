@@ -36,8 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "SR-71",
 		noautofire = false,
-		
-		objectname = "armsr71",
+		objectname = "arm/armsr71.s3o",
 		radardistance = 1400,
 		radaremitheight = 5,
 		seismicsignature = 0,

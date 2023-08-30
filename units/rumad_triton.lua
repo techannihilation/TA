@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Triton",
 		noautofire = false,
-		objectname = "rumad_triton",
+		objectname = "rumad/rumad_triton.s3o",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "rumad_triton.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1117,
-				object = "rumad_triton_DEAD",
+				object = "rumad/rumad_triton_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 596,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

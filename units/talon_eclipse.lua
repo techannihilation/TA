@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Eclipse",
 		noautofire = false,
-		objectname = "talon_eclipse",
+		objectname = "talon/talon_eclipse.s3o",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingfireorder = 2,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_eclipse.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 141,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -120,7 +121,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "AdvancedBombs",
 				noselfdamage = true,
 				range = 1280,
@@ -146,7 +147,6 @@ return {
 				def = "TALON_BOMB",
 				onlytargetcategory = "SURFACE",
 			},
-
 		},
 	},
 }

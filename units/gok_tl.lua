@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 12,
 		name = "Spike",
 		noautofire = false,
-		objectname = "gok_tl",
+		objectname = "gok/gok_tl.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "gok_tl.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 241,
-				object = "gok_tl_DEAD",
+				object = "gok/gok_tl_dead",
 				reclaimable = true,
 			},
 		},
@@ -108,7 +109,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_gok",
+				model = "weapon_torpedo_gok.s3o",
 				name = "Level1TorpedoLauncher",
 				noselfdamage = true,
 				range = 600,

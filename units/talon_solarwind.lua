@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Wind",
 		noautofire = false,
-		objectname = "talon_solarwind",
+		objectname = "talon/talon_solarwind.s3o",
 		radaremitheight = 92,
 		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 210,
@@ -39,6 +39,7 @@ return {
 			buildpic = "talon_solarwind.dds",
 			canareaattack = 1,
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +50,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 26150,
-				object = "talon_solarwind_dead",
+				object = "talon/talon_solarwind_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +134,7 @@ return {
 				explosiongenerator = "custom:Explosion_Rocket_L",
 				firestarter = 80,
 				flighttime = 6,
-				model = "weapon_rocketl",
+				model = "weapon_rocketl.s3o",
 				name = "Barrage",
 				proximitypriority = -1,
 				range = 2400,

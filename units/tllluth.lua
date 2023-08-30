@@ -36,7 +36,7 @@ return {
 		movementclass = "AMPTBOT5",
 		name = "Luth",
 		noautofire = false,
-		objectname = "tllluth",
+		objectname = "tll/tllluth.s3o",
 		radaremitheight = 62,
 		seismicsigniture = 5,
 		selfdestructas = "BANTHA_BLAST",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "tllluth.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 8962,
-				object = "tllluth_dead",
+				object = "tll/tllluth_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -124,7 +125,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

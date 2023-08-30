@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK3",
 		name = "Loki",
 		noautofire = false,
-		objectname = "TLLLOKI",
+		objectname = "tll/tllloki.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 230,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllloki.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 341,
-				object = "TLLLOKI_dead",
+				object = "tll/tllloki_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 182,
-				object = "3x3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

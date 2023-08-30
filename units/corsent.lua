@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Copperhead",
 		noautofire = false,
-		objectname = "CORSENT",
+		objectname = "core/corsent.s3o",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -61,6 +61,7 @@ return {
 			buildpic = "corsent.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 360,
-				object = "CORSENT_DEAD",
+				object = "core/corsent_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +90,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -160,7 +161,6 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
-					
 					air = 225,
 				},
 			},

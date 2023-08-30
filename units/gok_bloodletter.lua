@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Bloodletter",
 		noautofire = false,
-		objectname = "gok_bloodletter",
+		objectname = "gok/gok_bloodletter.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_bloodletter.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 26,
-				object = "gok_bloodletter_DEAD",
+				object = "gok/gok_bloodletter_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 14,
-				object = "2X2C",
+				object = "2x2c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

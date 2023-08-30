@@ -28,7 +28,6 @@ return {
 		commander = true,
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		
 		energymake = 35,
 		energystorage = 1000,
 		energyuse = 0,
@@ -56,7 +55,7 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		objectname = "talon_COM",
+		objectname = "talon/talon_com.s3o",
 		radardistance = 700,
 		radaremitheight = 37,
 		reclaimable = false,
@@ -110,6 +109,7 @@ return {
 			faction = "TALON",
 			iscommander = true,
 			paralyzemultiplier = 0.025,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -128,7 +128,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 1500,
-				object = "ARMCOM_DEAD",
+				object = "arm/armcom_dead",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -145,7 +145,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 750,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

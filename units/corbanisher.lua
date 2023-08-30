@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Banisher",
 		noautofire = false,
-		objectname = "corbanisher",
+		objectname = "core/corbanisher.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "corbanisher.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 765,
-				object = "corbanisher_DEAD",
+				object = "core/corbanisher_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 408,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -142,7 +143,7 @@ return {
 				flighttime = 1.85,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_rocketm",
+				model = "weapon_rocketm.s3o",
 				name = "Banisher Thermite Rocket",
 				noselfdamage = true,
 				range = 900,

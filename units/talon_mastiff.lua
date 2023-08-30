@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Mastiff",
 		noautofire = false,		
-		objectname = "talon_mastiff",
+		objectname = "talon/talon_mastiff.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_mastiff.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 202,
-				object = "talon_mastiff_DEAD",
+				object = "talon/talon_mastiff_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 108,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},
@@ -129,7 +130,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "HeavyRocket",
 				noselfdamage = true,
 				range = 950,

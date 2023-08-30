@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Predator",
 		noautofire = false,
-		objectname = "gok_snipe",
+		objectname = "gok/gok_snipe.s3o",
 		radardistance = 0,
 		radaremitheight = 72,
 		selfdestructas = "BANTHA_BLAST",
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "gok_snipe.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 17595,
-				object = "gok_snipe_dead",
+				object = "gok/gok_snipe_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

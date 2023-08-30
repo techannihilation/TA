@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT6",
 		name = "Pandora",
 		noautofire = false,
-		objectname = "gok_pandora",
+		objectname = "gok/gok_pandora.s3o",
 		radaremitheight = 76,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -56,6 +56,7 @@ return {
 			buildpic = "gok_pandora.dds",
 			faction = "GOK",
 			prioritytarget = "air",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "gok_pandora_DEAD",
+				object = "gok/gok_pandora_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7680,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -165,7 +166,7 @@ return {
 				flighttime = 1.5,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1250,
@@ -190,7 +191,6 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-
 					air = 100,
 				},
 			},

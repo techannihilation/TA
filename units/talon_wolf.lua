@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Wolf",
 		noautofire = false,
-		objectname = "talon_wolf",
+		objectname = "talon/talon_wolf.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_wolf.dds",
 			faction = "ARM",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 202,
-				object = "talon_wolf_DEAD",
+				object = "talon/talon_wolf_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 108,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},

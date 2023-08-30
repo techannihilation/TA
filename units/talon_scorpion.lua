@@ -15,7 +15,6 @@ return {
 		category = "ALL HUGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "180 105 190",
-
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,7 +36,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Scorpion",
 		noautofire = false,
-		objectname = "talon_scorpion",
+		objectname = "talon/talon_scorpion.s3o",
 		radaremitheight = 62,
 		seismicsigniture = 0,
 		selfdestructas = "KROG_BLAST",
@@ -53,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "talon_scorpion.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 8962,
-				object = "talon_scorpion_dead",
+				object = "talon/talon_scorpion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -168,7 +168,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "talon_missile",
+				model = "talon/talon_missile.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,
@@ -284,7 +284,6 @@ return {
 				maindir = "0 0 1",
 				maxangledif = 90,
 				onlytargetcategory = "SURFACE",
-
 			},
 			[3] = {
 				def = "TALON_LASER",

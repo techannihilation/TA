@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Weasel",
 		noautofire = false,
-		objectname = "CORFAV",
+		objectname = "core/corfav.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "corfav.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 19,
-				object = "CORFAV_DEAD",
+				object = "core/corfav_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 10,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "CORHP",
+		objectname = "core/corhp.s3o",
 		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -62,13 +62,13 @@ return {
 		customparams = {
 			buildpic = "corhp.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "120 26 108",
-
 				collisionvolumetype = "Box",
 				damage = 2966,
 				description = "Hovercraft Platform Wreckage",
@@ -77,7 +77,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 815,
-				object = "CORHP_DEAD",
+				object = "core/corhp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +91,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 434,
-				object = "7X7D",
+				object = "7x7d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

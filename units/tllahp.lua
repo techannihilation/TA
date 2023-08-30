@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "tllahp",
+		objectname = "tll/tllahp.s3o",
 		radaremitheight = 37,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "tllahp.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3360,
-				object = "tllahp_dead",
+				object = "tll/tllahp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

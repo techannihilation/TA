@@ -29,7 +29,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
-		objectname = "AMetalMakerLvl2",
+		objectname = "arm/ametalmakerlvl2.s3o",
 		radaremitheight = 53,
 		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 210,
@@ -39,6 +39,7 @@ return {
 		customparams = {
 			buildpic = "ametalmakerlvl2.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -48,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4860,
-				object = "6x6E",
+				object = "6x6e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

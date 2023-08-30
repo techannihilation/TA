@@ -39,8 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Bishop",
 		noautofire = false,
-
-		objectname = "talon_bishop",
+		objectname = "talon/talon_bishop.s3o",
 		radaremitheight = 74,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "talon_bishop.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 735,
-				object = "talon_bishop_DEAD",
+				object = "talon/talon_bishop_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -83,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 392,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 			},
 		},

@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Bustle",
 		noautofire = false,
-		objectname = "coruflak",
+		objectname = "core/coruflak.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -43,6 +43,7 @@ return {
 		customparams = {
 			buildpic = "coruflak.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +54,7 @@ return {
 				featuredead = "heap",
 				footprintx = 6,
 				footprintz = 6,
-				object = "coruflak_dead",
+				object = "core/coruflak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

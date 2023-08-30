@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hand God",
 		noautofire = false,
-		objectname = "talon_handgod",
+		objectname = "talon/talon_handgod.s3o",
 		script = "talon_handgod.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "talon_handgod.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 6213,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -117,7 +118,7 @@ return {
 				impulseboost = 0.15,
 				impulsefactor = 0.15,
 				interceptedbyshieldtype = 16,
-				model = "weapon_advbomb",
+				model = "weapon_advbomb.s3o",
 				mygravity = 0.2,
 				name = "ClusterBombs",
 				noselfdamage = true,

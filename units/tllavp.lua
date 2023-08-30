@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "TLLAVP",
+		objectname = "tll/tllavp.s3o",
 		radaremitheight = 93,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -65,6 +65,7 @@ return {
 		customparams = {
 			buildpic = "tllavp.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 3476,
-				object = "tllavp_dead",
+				object = "tll/tllavp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +90,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1854,
-				object = "6x6B",
+				object = "6x6b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -102,7 +103,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1158,
-				object = "4x4B",
+				object = "4x4b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

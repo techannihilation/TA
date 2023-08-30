@@ -13,7 +13,6 @@ return {
 		canattack = false,
 		category = "ALL SURFACE",
 		collisionvolumescales = "150 75 150",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 5",
@@ -31,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Station",
 		noautofire = false,		
-		objectname = "talon_talpax",
+		objectname = "talon/talon_talpax.s3o",
 		onoffable = true,
 		radardistancejam = 6000,
 		radaremitheight = 180,
@@ -41,10 +40,10 @@ return {
 		unitname = "talon_talpax",
 		usebuildinggrounddecal = false,
 		yardmap = "oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo oooooooooooo",
-
 		customparams = {
 			buildpic = "talon_talpax.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 776,
-				object = "talon_talpax_dead",
+				object = "talon/talon_talpax_dead",
 				reclaimable = true,
 			},
 			heap = {

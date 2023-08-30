@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 255,
 		movementclass = "VKBOT4",
 		name = "Seller",
-		objectname = "talon_eak",
+		objectname = "talon/talon_eak.s3o",
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 390,
@@ -42,6 +42,7 @@ return {
 			buildpic = "talon_eak.dds",
 			faction = "TALON",
 			prioritytarget = "air",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +57,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 6480,
-				object = "talon_eak_DEAD",
+				object = "talon/talon_eak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3256,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -125,7 +126,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal",
+				model = "weapon_missileaal.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -147,7 +148,6 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					
 					air = 1500,
 				},
 			},
@@ -164,7 +164,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,
@@ -190,7 +190,6 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
-					
 					air = 100,
 				},
 			},

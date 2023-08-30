@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "CORAP",
+		objectname = "core/corap.s3o",
 		radardistance = 510,
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -65,13 +65,13 @@ return {
 		customparams = {
 			buildpic = "corap.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -14 -23",
 				collisionvolumescales = "110 33 50",
-				
 				collisionvolumetype = "Box",
 				damage = 1955,
 				description = "Aircraft Plant Wreckage",
@@ -80,7 +80,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 663,
-				object = "CORAP_DEAD",
+				object = "core/corap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -94,7 +94,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 354,
-				object = "6X6B",
+				object = "6x6b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

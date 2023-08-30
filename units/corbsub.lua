@@ -36,7 +36,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Hammerhead",
 		noautofire = false,
-		objectname = "corbsub",
+		objectname = "core/corbsub.s3o",
 		radaremitheight = 45,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 400,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corbsub.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2799,
-				object = "corbsub_dead",
+				object = "core/corbsub_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -122,7 +123,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_exptorpedo",
+				model = "weapon_exptorpedo.s3o",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 1000,
@@ -157,7 +158,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 600,

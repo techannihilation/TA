@@ -43,7 +43,7 @@ return {
 		movementclass = "TANKHOVER8",
 		name = "Construction Hover",
 		noautofire = false,
-		objectname = "talon_uch",
+		objectname = "talon/talon_uch.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 240,
 		repairspeed = 240,
@@ -80,6 +80,7 @@ return {
 		customparams = {
 			buildpic = "talon_uch.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -89,7 +90,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "talon_uch_dead",
+				object = "talon/talon_uch_dead",
 				reclaimable = true,
 			},
 		},

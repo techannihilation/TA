@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Anaconda",
 		noautofire = false,		
-		objectname = "ARMANAC",
+		objectname = "arm/armanac.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armanac.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 215,
-				object = "ARMANAC_DEAD",
+				object = "arm/armanac_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 114,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

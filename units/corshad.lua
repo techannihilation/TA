@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shadow",
 		noautofire = true,
-		objectname = "CORSHAD",
+		objectname = "core/corshad.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 169,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corshad.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 66,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +119,7 @@ return {
 				impulseboost = 0.3,
 				impulsefactor = 0.3,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "Bombs",
 				noselfdamage = true,
 				range = 1280,

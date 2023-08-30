@@ -40,7 +40,7 @@ return {
 		movementclass = "VKBOT12",
 		name = "Black Widow",
 		noautofire = false,
-		objectname = "cormkl",
+		objectname = "core/cormkl.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
@@ -64,6 +64,7 @@ return {
 			buildpic = "cormkl.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T4 Unit Research Centre",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			cormkl_dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 44400,
-				object = "CORMKL_DEAD",
+				object = "core/cormkl_dead",
 				reclaimable = true,
 			},
 			cormkl_heap = {
@@ -86,7 +87,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 18680,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 			},
 		},
@@ -225,7 +226,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

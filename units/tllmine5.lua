@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 0,
 		name = "Crippler",
 		noautofire = false,
-		objectname = "TLLMINE5",
+		objectname = "tll/tllmine5.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

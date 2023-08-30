@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Halberd",
 		noautofire = false,
-		objectname = "corhalberd",
+		objectname = "core/corhalberd.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corhalberd.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 517,
-				object = "corhalberd_DEAD",
+				object = "core/corhalberd_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 276,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

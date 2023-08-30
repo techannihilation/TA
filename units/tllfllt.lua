@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Floating Lightening Tower",
 		noautofire = false,
-		objectname = "tllfllt",
+		objectname = "tll/tllfllt.s3o",
 		radaremitheight = 65,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "tllfllt.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "TLLFLLT_DEAD",
+				object = "tll/tllfllt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

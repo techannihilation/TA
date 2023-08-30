@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "rumad_avp",
+		objectname = "rumad/rumad_avp.s3o",
 		radaremitheight = 34,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -66,6 +66,7 @@ return {
 		customparams = {
 			buildpic = "rumad_avp.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
@@ -79,7 +80,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 2936,
-				object = "rumad_avp_DEAD",
+				object = "rumad/rumad_avp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -92,7 +93,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1566,
-				object = "6X6D",
+				object = "6x6d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

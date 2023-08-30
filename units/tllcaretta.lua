@@ -38,7 +38,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Caretta",
 		noautofire = false,
-		objectname = "tllcaretta",
+		objectname = "tll/tllcaretta.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -93,6 +93,7 @@ return {
 		customparams = {
 			buildpic = "tllcaretta.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -103,7 +104,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "tllcaretta_dead",
+				object = "tll/tllcaretta_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

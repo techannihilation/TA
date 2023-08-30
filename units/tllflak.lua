@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Candlestick",
 		noautofire = false,
-		objectname = "TLLFLAK",
+		objectname = "tll/tllflak.s3o",
 		radaremitheight = 29,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 525,
@@ -39,6 +39,7 @@ return {
 			buildpic = "tllflak.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +50,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1755,
-				object = "tllflak_dead",
+				object = "tll/tllflak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +136,6 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-					
 					air = 250,
 				},
 			},

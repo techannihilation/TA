@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Sumo",
 		noautofire = false,
-		objectname = "CORSUMO",
+		objectname = "core/corsumo.s3o",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corsumo.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1616,
-				object = "CORSUMO_DEAD",
+				object = "core/corsumo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

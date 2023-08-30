@@ -28,7 +28,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 33,
 		name = "T2 Stuner",
-		objectname = "tll_emp_lrpt",
+		objectname = "tll/tll_emp_lrpt.s3o",
 		radardistance = 0,
 		radaremitheight = 70,
 		selfdestructas = "CRAWL_BLAST",
@@ -42,6 +42,7 @@ return {
 			buildpic = "tll_emp_lrpt.dds",
 			canareaattack = 1,
 			faction = "ARM",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +54,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3225,
-				object = "tll_emp_lrpt",
+				object = "tll/tll_emp_lrpt",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1720,
-				object = "3X3E",
+				object = "3x3e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

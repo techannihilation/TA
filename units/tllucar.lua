@@ -41,7 +41,7 @@ return {
 		movementclass = "HDBOAT12",
 		name = "Aircraft Carrier",
 		noautofire = false,
-		objectname = "tllucar",
+		objectname = "tll/tllucar.s3o",
 		onoffable = true,
 		radardistance = 12000,
 		radaremitheight = 54,
@@ -62,6 +62,7 @@ return {
 			isairbase = true,
 			buildpic = "tllucar.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -76,7 +77,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1237,
-				object = "tllucar_DEAD",
+				object = "tll/tllucar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +91,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 660,
-				object = "6X6C",
+				object = "6x6c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -151,7 +152,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 4,
 				metalpershot = 6780,
-				model = "weapon_antinuke1",
+				model = "weapon_antinuke1.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

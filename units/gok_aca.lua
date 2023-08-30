@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "gok_aca",
+		objectname = "gok/gok_aca.s3o",
 		seismicsignature = 0,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -87,6 +87,7 @@ return {
 		customparams = {
 			buildpic = "gok_aca.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -96,7 +97,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 213,
-				object = "2X2Z",
+				object = "2x2z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

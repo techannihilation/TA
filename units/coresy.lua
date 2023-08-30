@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Capital Shipyard",
 		noautofire = false,
-		objectname = "CORESY",
+		objectname = "core/coresy.s3o",
 		radardistance = 100,
 		radaremitheight = 93,
 		selfdestructas = "CRAWL_BLAST",
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "coresy.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 12000,
-				object = "CORESY_DEAD",
+				object = "core/coresy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 6400,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

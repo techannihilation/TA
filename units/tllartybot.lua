@@ -36,8 +36,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Troll",
 		noautofire = false,
-		
-		objectname = "TLLARTYBOT",
+		objectname = "tll/tllartybot.s3o",
 		radardistance = 0,
 		radaremitheight = 45,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "tllartybot.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 720,
-				object = "tllartybot_dead",
+				object = "tll/tllartybot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

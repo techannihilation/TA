@@ -30,7 +30,7 @@ return {
 		minwaterdepth = 25,
 		name = "Rubix",
 		noautofire = false,
-		objectname = "talon_atl",
+		objectname = "talon/talon_atl.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "talon_atl.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 780,
-				object = "talon_atl_DEAD",
+				object = "talon/talon_atl_dead",
 				reclaimable = true,
 			},
 		},
@@ -105,7 +106,7 @@ return {
 				explosiongenerator = "custom:FLASH3",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo",
+				model = "weapon_advtorpedo.s3o",
 				name = "LongRangeTorpedo",
 				noselfdamage = true,
 				range = 900,

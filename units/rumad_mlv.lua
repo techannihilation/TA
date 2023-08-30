@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Podger",
-		objectname = "rumad_mlv",
+		objectname = "rumad/rumad_mlv.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -76,6 +76,7 @@ return {
 		customparams = {
 			buildpic = "rumad_mlv.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -90,7 +91,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "rumad_mlv_DEAD",
+				object = "rumad/rumad_mlv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -104,7 +105,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 22,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

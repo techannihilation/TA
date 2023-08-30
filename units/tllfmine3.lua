@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "U-47",
 		noautofire = false,
-		objectname = "tllfmine3",
+		objectname = "tll/tllfmine3.s3o",
 		script = "mines_lus.lua",
 		radaremitheight = 25,
 		seismicsignature = 0,

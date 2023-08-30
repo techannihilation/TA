@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK8",
 		name = "Minotaur",
 		noautofire = false,
-		objectname = "corminotaur",
+		objectname = "core/corminotaur.s3o",
 		radaremitheight = 44,
 		selfdestructas = "KROG_BLAST",
 		sightdistance = 750,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "corminotaur.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -79,7 +80,7 @@ return {
 				footprintx = 4,
 				footprintz = 6,
 				metal = 14425,
-				object = "corminotaur_dead",
+				object = "core/corminotaur_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -165,7 +166,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

@@ -11,6 +11,8 @@
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+VFS.Include("init.lua", nil, VFS.ZIP)
+
 Spring.SendCommands({"ctrlpanel " .. LUAUI_DIRNAME .. "ctrlpanel.txt"})
 
 VFS.Include(LUAUI_DIRNAME .. 'utils.lua', utilFile)

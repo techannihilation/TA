@@ -36,7 +36,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "talon_gate1",
+		objectname = "talon/talon_gate1.s3o",
 		radaremitheight = 45,
 		script = "talon_gate1",
 		seismicsignature = 0,
@@ -54,6 +54,7 @@ return {
 			faction = "TALON",
 			shield_power = 60000,
 			shield_radius = 1000,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2825,
-				object = "talon_gate1_DEAD",
+				object = "talon/talon_gate1_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1506,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 			},
 		},
@@ -131,7 +132,6 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

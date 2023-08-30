@@ -41,7 +41,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Zeppelin",
-		objectname = "tllzeppelin",
+		objectname = "tll/tllzeppelin.s3o",
 		radardistance = 0,
 		radaremitheight = 50,
 		selfdestructas = "MEGA_BLAST",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tllzeppelin.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 6,
 				footprintz = 8,
 				metal = 221250,
-				object = "tllzeppelin_dead",
+				object = "tll/tllzeppelin_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -199,10 +200,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-				areoship = 62.5,
-				default = 5,
-				
-				air = 250,
+					areoship = 62.5,
+					default = 5,
+					air = 250,
 				},
 			},
 		},

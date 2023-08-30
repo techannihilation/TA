@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-		objectname = "talon_alab",
+		objectname = "talon/talon_alab.s3o",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -69,13 +69,13 @@ return {
 		customparams = {
 			buildpic = "talon_alab.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 -1",
 				collisionvolumescales = "73 56 89",
-
 				collisionvolumetype = "CylZ",
 				damage = 3261,
 				description = "Advanced Kbot Lab Wreckage",
@@ -84,7 +84,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 3080,
-				object = "talon_alab_DEAD",
+				object = "talon/talon_alab_dead",
 				reclaimable = true,
 			},
 			heap1 = {
@@ -95,7 +95,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1642,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 			},
 		},

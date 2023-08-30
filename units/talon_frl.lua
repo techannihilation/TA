@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 2,
 		name = "Infac",
 		noautofire = false,
-		objectname = "talon_frl",
+		objectname = "talon/talon_frl.s3o",
 		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "talon_frl.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 57,
-				object = "talon_rl_DEAD",
+				object = "talon/talon_rl_dead",
 				reclaimable = true,
 			},
 		},
@@ -111,7 +112,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,
@@ -137,7 +138,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},
@@ -154,7 +154,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 850,
@@ -180,11 +180,9 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {
@@ -197,7 +195,6 @@ return {
 				def = "ARMRL_STARBURST",
 				onlytargetcategory = "VTOL",
 			},
-
 		},
 	},
 }

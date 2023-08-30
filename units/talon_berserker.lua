@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Berserker",
 		noautofire = false,
-		objectname = "talon_berserker",
+		objectname = "talon/talon_berserker.s3o",
 		radaremitheight = 58,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "talon_berserker.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2857,
-				object = "talon_berserker_DEAD",
+				object = "talon/talon_berserker_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -77,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1524,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},
@@ -149,7 +150,6 @@ return {
 					subs = 5,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {

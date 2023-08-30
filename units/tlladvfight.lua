@@ -35,8 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Falcon",
-
-		objectname = "tlladvfight",
+		objectname = "tll/tlladvfight.s3o",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -101,7 +100,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 560,
@@ -123,7 +122,6 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-
 					air = 120,
 				},
 			},
@@ -141,7 +139,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 520,

@@ -28,8 +28,7 @@ return {
 		minwaterdepth = 34,
 		name = "Underwater Heavy Elemental Reactor",
 		noautofire = false,
-		
-		objectname = "tllUWFUSion",
+		objectname = "tll/tlluwfusion.s3o",
 		radaremitheight = 42,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 110,
@@ -38,6 +37,7 @@ return {
 		customparams = {
 			buildpic = "tlluwfusion.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -48,7 +48,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 3502,
-				object = "tlluwfusion_dead",
+				object = "tll/tlluwfusion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

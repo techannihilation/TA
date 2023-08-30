@@ -41,7 +41,7 @@
 		movementclass = "UBOAT3",
 		name = "Construction Sub",
 		noautofire = false,
-		objectname = "gok_ecsub",
+		objectname = "gok/gok_ecsub.s3o",
     script = "gok_acsub.cob",
 		radaremitheight = 25,
 		reclaimspeed = 100,
@@ -78,6 +78,7 @@
 		customparams = {
 			buildpic = "gok_ecsub.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -88,7 +89,7 @@
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2037,
-				--object = "gok_ecsub_dead",
+				--object = "gok/gok_ecsub_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

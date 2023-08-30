@@ -28,7 +28,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "rumad_ap",
+		objectname = "rumad/rumad_ap.s3o",
 		radardistance = 500,
 		radaremitheight = 66,
 		seismicsignature = 0,
@@ -56,13 +56,13 @@ return {
 		customparams = {
 			buildpic = "rumad_ap.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "11 -17 -23",
 				collisionvolumescales = "85 39 49",
-
 				collisionvolumetype = "Box",
 				damage = 1897,
 				description = "Aircraft Plant Wreckage",
@@ -71,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 680,
-				object = "rumad_ap_DEAD",
+				object = "rumad/rumad_ap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +85,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 362,
-				object = "6X6B",
+				object = "6x6b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

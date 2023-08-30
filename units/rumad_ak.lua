@@ -28,7 +28,7 @@ return {
 		maxvelocity = 1.5,
 		movementclass = "AKBOT2",
 		name = "Light Demos",
-		objectname = "rumad_ak",
+		objectname = "rumad/rumad_ak.s3o",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -43,6 +43,7 @@ return {
 			buildpic = "rumad_ak.dds",
 			faction = "RUMAD",
 			prioritytarget = "air",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 464,
-				object = "rumad_ak_DEAD",
+				object = "rumad/rumad_ak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 247,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

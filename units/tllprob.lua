@@ -34,8 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Mosquito",
 		noautofire = false,
-		
-		objectname = "tllprob",
+		objectname = "tll/tllprob.s3o",
 		radardistance = 900,
 		radaremitheight = 9,
 		selfdestructas = "SMALL_UNIT_VTOL",

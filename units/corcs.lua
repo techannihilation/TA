@@ -41,7 +41,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Construction Ship",
 		noautofire = false,
-		objectname = "CORCS",
+		objectname = "core/corcs.s3o",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
@@ -87,6 +87,7 @@ return {
 		customparams = {
 			buildpic = "corcs.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -101,7 +102,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 207,
-				object = "CORCS_DEAD",
+				object = "core/corcs_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -115,7 +116,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 110,
-				object = "5X5C",
+				object = "5x5c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 15,
 		name = "Underwater Moho Metal Maker",
 		noautofire = false,		
-		objectname = "talon_famkr",
+		objectname = "talon/talon_famkr.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "talon_famkr.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 1087,
-				object = "talon_famkr_DEAD",
+				object = "talon/talon_famkr_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 580,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 			},
 		},

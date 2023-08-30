@@ -39,7 +39,7 @@ return {
 		maxvelocity = 0.85,
 		maxwaterdepth = 0,
 		name = "Independance",
-		objectname = "talon_independence",
+		objectname = "talon/talon_independence.s3o",
 		radardistance = 2000,
 		radaremitheight = 50,
 		selfdestructas = "MEGA_BLAST",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "talon_independence.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 227250,
-				object = "talon_independence_dead",
+				object = "talon/talon_independence_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

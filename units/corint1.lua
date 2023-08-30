@@ -30,7 +30,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Long Range Plasma Cannon",
-		objectname = "CORINT1",
+		objectname = "core/corint1.s3o",
 		radaremitheight = 100,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -45,6 +45,7 @@ return {
 			buildpic = "corint1.dds",
 			canareaattack = 1,
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +57,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 13500,
-				object = "corint1_dead",
+				object = "core/corint1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "7X7A",
+				object = "7x7a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

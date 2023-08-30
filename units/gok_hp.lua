@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "gok_hp",
+		objectname = "gok/gok_hp.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -62,13 +62,13 @@ return {
 		customparams = {
 			buildpic = "gok_hp.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "116 20 104",
-				
 				collisionvolumetype = "Box",
 				damage = 2730,
 				description = "Hovercraft Platform Wreckage",
@@ -77,7 +77,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 764,
-				object = "gok_hp_DEAD",
+				object = "gok/gok_hp_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +88,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 407,
-				object = "7X7A",
+				object = "7x7a",
 				reclaimable = true,
 			},
 		},

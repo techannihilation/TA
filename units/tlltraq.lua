@@ -41,7 +41,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Tracker",
 		noautofire = false,
-		objectname = "TLLTRAQ",
+		objectname = "tll/tlltraq.s3o",
 		radardistance = 450,
 		radaremitheight = 45,
 		selfdestructas = "BIG_UNITEX",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "tlltraq.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 637,
-				object = "tlltraq_dead",
+				object = "tll/tlltraq_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

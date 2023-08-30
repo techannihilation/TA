@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT8",
 		name = "Colossus",
 		noautofire = false,
-		objectname = "tllcolossus",
+		objectname = "tll/tllcolossus.s3o",
 		radardistance = 0,
 		radaremitheight = 51,
 		selfdestructas = "EXO_BLAST",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tllcolossus.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 35737,
-				object = "tllcolossus_dead",
+				object = "tll/tllcolossus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -185,7 +186,6 @@ return {
 				damage = {
 				areoship = 62.5,
 				default = 5,
-				
 				air = 250,
 				},
 			},
@@ -200,7 +200,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "Heavy Rockets",
 				range = 1400,
 				reloadtime = 1,

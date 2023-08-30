@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Diplomat",
 		noautofire = false,
-		objectname = "CORVROC",
+		objectname = "core/corvroc.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "corvroc.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 660,
-				object = "CORVROC_DEAD",
+				object = "core/corvroc_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 352,
-				object = "3X3E",
+				object = "3x3e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -139,7 +140,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburst_core",
+				model = "weapon_starburst_core.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1400,

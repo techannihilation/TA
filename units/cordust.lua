@@ -48,7 +48,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dust",
 		noautofire = false,
-		objectname = "cordust",
+		objectname = "core/cordust.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -66,6 +66,7 @@ return {
 		customparams = {
 			buildpic = "cordust.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 14,
 				footprintz = 8,
 				metal = 227250,
-				object = "cordust_dead",
+				object = "core/cordust_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -149,7 +150,6 @@ return {
 				damage = {
 					areoship = 162.5,
 					default = 5,
-					
 					air = 650,
 				},
 			},
@@ -167,7 +167,7 @@ return {
 				firestarter = 0,
 				flighttime = 7,
 				impulseboost = 0,
-				model = "weapon_rocket_devastator",
+				model = "weapon_rocket_devastator.s3o",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				range = 1800,

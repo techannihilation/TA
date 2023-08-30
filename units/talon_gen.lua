@@ -28,7 +28,7 @@ return {
 		mincloakdistance = 80,
 		name = "Cloakable Mini Fusion Reactor",
 		noautofire = false,
-		objectname = "talon_gen",
+		objectname = "talon/talon_gen.s3o",
 		radaremitheight = 32,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 250,
@@ -37,6 +37,7 @@ return {
 		customparams = {
 			buildpic = "talon_gen.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -47,7 +48,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1147,
-				object = "talon_gen_dead",
+				object = "talon/talon_gen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

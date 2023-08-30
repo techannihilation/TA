@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Light Lightning Tower",
 		noautofire = false,
-		objectname = "TLLLLT",
+		objectname = "tll/tllllt.s3o",
 		radaremitheight = 72,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDINGEX",
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllllt.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "TLLLLT_DEAD",
+				object = "tll/tllllt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

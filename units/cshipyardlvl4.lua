@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 600,
 		name = "Shipyard",
-		objectname = "CShipyardLvl4",
+		objectname = "core/cshipyardlvl4.s3o",
 		radardistance = 0,
 		radaremitheight = 97,
 		selfdestructas = "SUPERBLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "cshipyardlvl4.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 13,
 				footprintz = 30,
 				metal = 87999,
-				object = "CShipyardLvl4_dead",
+				object = "core/cshipyardlvl4_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -35,7 +35,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Shrinker",
 		noautofire = false,
-		objectname = "tllshrinker",
+		objectname = "tll/tllshrinker.s3o",
 		radaremitheight = 34,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 450,
@@ -51,6 +51,7 @@ return {
 			buildpic = "tllshrinker.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 312,
-				object = "tllshrinker_dead",
+				object = "tll/tllshrinker_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +130,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
@@ -154,7 +155,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

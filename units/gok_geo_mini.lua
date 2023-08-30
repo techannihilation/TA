@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
-		objectname = "gok_geo_mini",
+		objectname = "gok/gok_geo_mini.s3o",
 		onoffable = true,
 		radaremitheight = 30,
 		script ="gok_geo.cob",
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "gok_geo_mini.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 292,
-				object = "gok_geo_mini_dead",
+				object = "gok/gok_geo_mini_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 156,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},

@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Marlin",
 		noautofire = false,
-		objectname = "armmarlin",
+		objectname = "arm/armmarlin.s3o",
 		radardistance = 0,
 		radaremitheight = 52,
 		seismicsignature = 0,
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "armmarlin.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 11625,
-				object = "armmarlin_dead",
+				object = "arm/armmarlin_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -120,7 +121,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo",
+				model = "weapon_advtorpedo.s3o",
 				name = "AdvTorpedo",
 				noselfdamage = true,
 				range = 700,
@@ -156,7 +157,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 350,
-				model = "weapon_missile_emp",
+				model = "weapon_missile_emp.s3o",
 				name = "EMPMissile",
 				noselfdamage = true,
 				paralyzer = true,

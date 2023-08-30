@@ -19,6 +19,11 @@
 --
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+local VFSMODE = VFS.ZIP_ONLY -- FIXME: ZIP_FIRST ?
+if Spring.IsDevLuaEnabled() then
+	VFSMODE = VFS.RAW_ONLY
+end
+
 local HANDLER_BASENAME = "gadgets.lua"
 local isMission = VFS.FileExists("mission.lua") -- or Game.gameName:find("Scenario Editor")
 
@@ -29,10 +34,7 @@ local SCRIPT_DIR = Script.GetName() .. '/'
 local ECHO_DESCRIPTIONS = false
 local SYNC_MEMORY_DEBUG = (gcinfo or false)
 
-local VFSMODE = VFS.ZIP_ONLY
-if (Spring.IsDevLuaEnabled()) then
-  VFSMODE = VFS.RAW_ONLY
-end
+VFS.Include('init.lua', nil, VFSMODE)
 
 VFS.Include(HANDLER_DIR .. 'setupdefs.lua', nil, VFSMODE)
 VFS.Include(HANDLER_DIR .. 'system.lua',    nil, VFSMODE)

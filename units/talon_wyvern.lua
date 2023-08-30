@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 0,
 		name = "Wyvern",
 		noautofire = false,
-		objectname = "talon_wyvern",
+		objectname = "talon/talon_wyvern.s3o",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		seismicsignature = 0,

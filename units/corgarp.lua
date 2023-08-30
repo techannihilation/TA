@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Garpike",
 		noautofire = false,		
-		objectname = "CORGARP",
+		objectname = "core/corgarp.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "corgarp.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 153,
-				object = "CORGARP_DEAD",
+				object = "core/corgarp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

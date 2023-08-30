@@ -16,7 +16,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -12 -5",
 		collisionvolumescales = "60 27 65",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -39,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Dimetrodon",
 		noautofire = false,
-		objectname = "tlldimetrodon",
+		objectname = "tll/tlldimetrodon.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 360,
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tlldimetrodon.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 742,
-				object = "tlldimetrodon_dead",
+				object = "tll/tlldimetrodon_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -128,7 +128,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
 				range = 1400,

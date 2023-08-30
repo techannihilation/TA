@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT8",
 		name = "Slanesh",
 		nochasecategory = "ALL",
-		objectname = "gok_slanesh",
+		objectname = "gok/gok_slanesh.s3o",
 		radaremitheight = 250,
 		seismicsignature = 0,
 		selfdestructas = "MKL_BLAST",
@@ -60,6 +60,7 @@ return {
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 4000,
 			shield_radius = 300,
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			["dead"] = {
@@ -77,7 +78,7 @@ return {
 				footprintz = 6,
 				height = 20,
 				hitdensity = 100,
-				object = "gok_slanesh_DEAD",
+				object = "gok/gok_slanesh_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

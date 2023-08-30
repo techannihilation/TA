@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Taipan",
 		noautofire = false,
-		objectname = "armtaipan",
+		objectname = "arm/armtaipan.s3o",
 		radardistance = 450,
 		radaremitheight = 31,
 		selfdestructas = "BIG_UNITEX",
@@ -56,6 +56,7 @@ return {
 			faction = "ARM",
 			prioritytarget = "air",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 371,
-				object = "armtaipan_dead",
+				object = "arm/armtaipan_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Maverick",
 		noautofire = false,
-		objectname = "ARMMAV",
+		objectname = "arm/armmav.s3o",
 		radaremitheight = 47,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armmav.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 487,
-				object = "armmav_dead",
+				object = "arm/armmav_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

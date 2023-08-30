@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK5",
 		name = "Metron",
 		noautofire = false,
-		objectname = "CORBT",
+		objectname = "core/corbt.s3o",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "KROG_BLAST",
@@ -50,6 +50,7 @@ return {
 			buildpic = "corbt.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T3 Unit Research Centre",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 13875,
-				object = "CORBT_dead",
+				object = "core/corbt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -128,7 +129,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.2,
 				impulsefactor = 0.2,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "Pepper spray",
 				nogap = 1,
 				noselfdamage = true,

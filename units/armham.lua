@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Hammer",
 		noautofire = false,
-		objectname = "ARMHAM",
+		objectname = "arm/armham.s3o",
 		radaremitheight = 26,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armham.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 96,
-				object = "ARMHAM_DEAD",
+				object = "arm/armham_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 51,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

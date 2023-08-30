@@ -40,8 +40,7 @@ return {
 		movementclass = "TANK3",
 		name = "Lupa",
 		noautofire = false,
-		
-		objectname = "talon_lupa",
+		objectname = "talon/talon_lupa.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -62,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "talon_lupa.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 120,
-				object = "talon_lupa_dead",
+				object = "talon/talon_lupa_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -131,7 +131,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "RocketArtillery",
 				noselfdamage = true,
 				range = 750,

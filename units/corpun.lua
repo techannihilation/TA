@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Punisher",
 		noautofire = false,
-		objectname = "CORPUN",
+		objectname = "core/corpun.s3o",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "corpun.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1207,
-				object = "CORPUN_DEAD",
+				object = "core/corpun_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 644,
-				object = "4X4B",
+				object = "4x4b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

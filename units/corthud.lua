@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Thud",
 		noautofire = false,
-		objectname = "CORTHUD",
+		objectname = "core/corthud.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "corthud.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 105,
-				object = "CORTHUD_DEAD",
+				object = "core/corthud_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 56,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

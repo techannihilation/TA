@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 5,
 		name = "Floating Radar Tower",
 		noautofire = false,
-		objectname = "gok_frad",
+		objectname = "gok/gok_frad.s3o",
 		onoffable = true,
 		radardistance = 2100,
 		radaremitheight = 52,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "gok_frad.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 101,
-				object = "gok_frad_DEAD",
+				object = "gok/gok_frad_dead",
 				reclaimable = true,
 			},
 		},

@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Gorg",
 		noautofire = false,
-		objectname = "corgorg",
+		objectname = "core/corgorg.s3o",
 		radaremitheight = 76,
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "corgorg.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 27675,
-				object = "corgorg_DEAD",
+				object = "core/corgorg_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 14760,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

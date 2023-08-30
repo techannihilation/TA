@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Anemone",
 		noautofire = false,
-		objectname = "ARMDL",
+		objectname = "arm/armdl.s3o",
 		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "armdl.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 216,
-				object = "ARMDL_DEAD",
+				object = "arm/armdl_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 115,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				groundbounce = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "DepthCharge",
 				noselfdamage = true,
 				numbounce = 1,

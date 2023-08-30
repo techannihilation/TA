@@ -37,7 +37,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Dreadnought",
 		noautofire = false,
-		objectname = "TLLBLIND",
+		objectname = "tll/tllblind.s3o",
 		radardistance = 0,
 		radaremitheight = 51,
 		seismicsignature = 0,
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tllblind.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5737,
-				object = "tllblind_dead",
+				object = "tll/tllblind_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -160,7 +161,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

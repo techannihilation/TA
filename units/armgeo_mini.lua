@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
-		objectname = "ARMGEO_MINI",
+		objectname = "arm/armgeo_mini.s3o",
 		onoffable = true,
 		radaremitheight = 30,
 		script = "armgeo.cob",
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "armgeo_mini.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 292,
-				object = "ARMGEO_MINI_DEAD",
+				object = "arm/armgeo_mini_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 156,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

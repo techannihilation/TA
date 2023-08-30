@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "EC-33",
 		noautofire = false,		
-		objectname = "TLLRSPLANE",
+		objectname = "tll/tllrsplane.s3o",
 		radardistance = 1600,
 		radaremitheight = 6,
 		selfdestructas = "SMALL_UNIT_VTOL",

@@ -38,7 +38,7 @@ return {
 		mincloakdistance = 70,
 		name = "Blaze Orchid",
 		noautofire = false,
-		objectname = "gok_orchid",
+		objectname = "gok/gok_orchid.s3o",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_orchid.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1867,
-				object = "gok_orchid_DEAD",
+				object = "gok/gok_orchid_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 622,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},

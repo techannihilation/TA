@@ -34,7 +34,7 @@ return {
 		movementclass = "akbot2",
 		name = "Spreader",
 		noautofire = false,
-		objectname = "TLLAAK",
+		objectname = "tll/tllaak.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 500,
@@ -50,6 +50,7 @@ return {
 			buildpic = "tllaak.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 600,
-				object = "TLLAAK_DEAD",
+				object = "tll/tllaak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 320,
-				object = "2x2F",
+				object = "2x2f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +128,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -154,7 +155,6 @@ return {
 				damage = {
 					areoship = 15,
 					default = 5,
-					
 					air = 60,
 				},
 			},

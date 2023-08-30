@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Archon",
 		noautofire = false,
-		objectname = "gok_archon",
+		objectname = "gok/gok_archon.s3o",
 		radardistance = 0,
 		radaremitheight = 76,
 		seismicsignature = 0,
@@ -61,6 +61,7 @@ return {
 			shield_emit_height = 49.5,
 			shield_power = 2500,
 			shield_radius = 230,
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "gok_archon_DEAD",
+				object = "gok/gok_archon_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7680,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

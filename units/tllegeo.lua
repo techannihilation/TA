@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Experimental Geothermal Powerplant",
 		noautofire = false,
-		objectname = "tllegeo",
+		objectname = "tll/tllegeo.s3o",
 		radaremitheight = 61,
 		selfdestructas = "FUSION_BLAST_BIG",
 		script = "tllmohogeo.cob",
@@ -38,6 +38,7 @@ return {
 		customparams = {
 			buildpic = "tllegeo.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tllmohogeo_heap = {

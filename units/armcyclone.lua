@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Cyclone",
 		noautofire = false,
-		objectname = "armcyclone",
+		objectname = "arm/armcyclone.s3o",
 		script = "armcyclone.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "armcyclone.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +65,7 @@ return {
 				description = "Aircraft Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +119,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.133,
 				interceptedbyshieldtype = 16,
-				model = "airbombmsl",
+				model = "arm/airbombmsl.s3o",
 				name = "Mk-83",
 				noselfdamage = true,
 				range = 2100,

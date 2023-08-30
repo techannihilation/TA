@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nurgle",
 		noautofire = false,
-		objectname = "gok_ptr",
+		objectname = "gok/gok_ptr.s3o",
 		onoffable = false,
 		radaremitheight = 51,
 		seismicsignature = 0,
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "gok_ptr.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1359,
-				object = "gok_ptr_DEAD",
+				object = "gok/gok_ptr_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -77,7 +78,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 725,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 			},
 		},
@@ -120,7 +121,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_aa_xl_gok",
+				model = "weapon_missile_aa_xl_gok.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -146,7 +147,6 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					
 					air = 1500,
 				},
 			},

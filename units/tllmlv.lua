@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Podger",
-		objectname = "TLLMLV",
+		objectname = "tll/tllmlv.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -78,6 +78,7 @@ return {
 		customparams = {
 			buildpic = "tllmlv.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +93,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 154,
-				object = "TLLMLV_DEAD",
+				object = "tll/tllmlv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -106,7 +107,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 82,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

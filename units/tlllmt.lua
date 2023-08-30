@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Besom",
 		noautofire = false,
-		objectname = "TLLLMT",
+		objectname = "tll/tlllmt.s3o",
 		radaremitheight = 81,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 425,
@@ -49,6 +49,7 @@ return {
 			buildpic = "tlllmt.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 69,
-				object = "tlllmt_dead",
+				object = "tll/tlllmt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +128,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -153,7 +154,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-
 					air = 80,
 				},
 			},
