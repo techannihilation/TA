@@ -36,7 +36,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Mirage",
 		noautofire = false,
-		objectname = "rumad/rumad_mirage.s3o",
+		objectname = "rumad_mirage",
 		radardistance = 40,
 		radaremitheight = 131,
 		selfdestructas = "KROG_BLAST",

@@ -72,7 +72,7 @@ return {
 				featuredead = "heap",
 				footprintx = 8,
 				footprintz = 8,
-				object = "arm/armexo_dead.s3o",
+				object = "armexo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -25,7 +25,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Black Pollen",
-		objectname = "gok/gok_mtur.s3o",
+		objectname = "gok_mtur",
 		radaremitheight = 70,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",

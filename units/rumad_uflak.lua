@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK8",
 		name = "True Spirit",
-		objectname = "rumad/rumad_uflak.s3o",
+		objectname = "rumad_uflak",
 		radaremitheight = 30,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
