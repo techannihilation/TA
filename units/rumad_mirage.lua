@@ -63,7 +63,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 10875,
-				object = "rumad/rumad_mirage_dead.s3o",
+				object = "rumad_mirage_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
