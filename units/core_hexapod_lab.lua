@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Lab",
 		noautofire = false,
-		objectname = "core/core_hexapod_lab.s3o",
+		objectname = "core_hexapod_lab",
 		radardistance = 50,
 		radaremitheight = 68,
 		seismicsignature = 0,
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "core_hexapod_lab.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 30840,
-				object = "7x7c",
+				object = "7X7C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

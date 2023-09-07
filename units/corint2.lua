@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Intimidator",
 		noautofire = false,
-		objectname = "core/corint2.s3o",
+		objectname = "corint2",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,7 +50,6 @@ return {
 			buildpic = "corint2.dds",
 			canareaattack = 1,
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1320,
-				object = "core/corint2_dead",
+				object = "corint2_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

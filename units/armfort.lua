@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		objectname = "arm/armfort.s3o",
+		objectname = "ARMFORT",
 		radaremitheight = 50,
 		script = "drag.lua",
 		unitname = "armfort",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "armfort.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			fortification = {
@@ -59,7 +58,7 @@ return {
 				hitdensity = 100,
 				metal = 45,
 				nodrawundergray = true,
-				object = "arm/armfort",
+				object = "armfort",
 				reclaimable = true,
 				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
@@ -78,7 +77,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 7,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flame Tower",
 		noautofire = false,
-		objectname = "tll/tlllft.s3o",
+		objectname = "TLLLFT",
 		radaremitheight = 74,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 500,
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "tllllt.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +55,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 201,
-				object = "tll/tlllft_dead",
+				object = "tlllft_dead",
 				reclaimable = true,
 			},
 			heap = {

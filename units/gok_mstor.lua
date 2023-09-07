@@ -35,7 +35,7 @@ return {
 		metalstorage = 1000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		objectname = "gok/gok_mstor.s3o",
+		objectname = "gok_MSTOR",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "gok_MSTOR.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 243,
-				object = "gok/gok_mstor_dead",
+				object = "gok_MSTOR_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -75,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 130,
-				object = "4x4e",
+				object = "4X4E",
 				reclaimable = true,
 			},
 		},

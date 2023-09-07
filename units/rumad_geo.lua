@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
 		noautofire = false,
-		objectname = "rumad/rumad_geo.s3o",
+		objectname = "rumad_geo",
 		radaremitheight = 51,
 		script = "rumad_geo.cob",
 		seismicsignature = 0,
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "rumad_geo.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1117,
-				object = "rumad/rumad_geo_dead",
+				object = "rumad_geo_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 596,
-				object = "4x4b",
+				object = "4X4B",
 				reclaimable = true,
 			},
 		},

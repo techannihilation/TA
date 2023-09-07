@@ -38,7 +38,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "Amphibious Construction Kbot",
 		noautofire = false,
-		objectname = "tll/tlldoc.s3o",
+		objectname = "tlldoc",
 		radaremitheight = 34,
 		reclaimspeed = 300,
 		repairspeed = 300,
@@ -83,7 +83,6 @@ return {
 		customparams = {
 			buildpic = "tlldoc.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -94,7 +93,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 217,
-				object = "tll/tlldoc_dead",
+				object = "TLLDOC_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

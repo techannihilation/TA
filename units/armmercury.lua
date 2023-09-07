@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Mercury",
 		noautofire = false,
-		objectname = "arm/armmercury.s3o",
+		objectname = "armmercury",
 		radaremitheight = 62,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -48,7 +48,6 @@ return {
 			buildpic = "armmercury.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1237,
-				object = "arm/armmercury_dead",
+				object = "armmercury_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 660,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +125,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal.s3o",
+				model = "weapon_missileaal",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -148,6 +147,7 @@ return {
 				damage = {
 					areoship = 500,
 					default = 5,
+					
 					air = 2000,
 				},
 			},

@@ -36,7 +36,7 @@ return {
 		moverate1 = 8,
 		name = "Angel",
 		noautofire = false,
-		objectname = "gok/gok_angel.s3o",
+		objectname = "gok_angel",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 500,
@@ -96,7 +96,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 480,
@@ -118,6 +118,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 60,
 				},
 			},

@@ -36,7 +36,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "gok/gok_gate1.s3o",
+		objectname = "gok_gate1",
 		radaremitheight = 45,
 		script = "gok_gate.cob",
 		seismicsignature = 0,
@@ -54,7 +54,6 @@ return {
 			faction = "GOK",
 			shield_power = 60000,
 			shield_radius = 1000,
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2825,
-				object = "gok/gok_gate1_dead",
+				object = "gok_gate1_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1506,
-				object = "2x2d",
+				object = "2X2D",
 				reclaimable = true,
 			},
 		},
@@ -135,6 +134,7 @@ return {
 				smartshield = true,
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
+				
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

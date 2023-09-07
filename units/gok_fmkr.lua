@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 11,
 		name = "Floating Metal Maker",
 		noautofire = false,
-		objectname = "gok/gok_fmkr.s3o",
+		objectname = "gok_fmkr",
 		radaremitheight = 25,
 		script = "gok_makr.cob",
 		seismicsignature = 0,

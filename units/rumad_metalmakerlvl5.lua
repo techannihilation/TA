@@ -25,7 +25,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T5 Metal Maker",
-		objectname = "rumad/rumad_metalmakerlvl5.s3o",
+		objectname = "rumad_metalmakerlvl5",
 		script = "rumad_metalmakerlvl4.cob",
 		radardistance = 0,
 		radaremitheight = 53,
@@ -36,7 +36,6 @@ return {
 		customparams = {
 			buildpic = "rumad_metalmakerlvl5.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {

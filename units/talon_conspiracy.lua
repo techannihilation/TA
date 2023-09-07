@@ -36,7 +36,7 @@ return {
 		mincloakdistance = 35,
 		name = "Cloakable Jammer Tower",
 		noautofire = false,
-		objectname = "talon/talon_conspiracy.s3o",
+		objectname = "talon_conspiracy",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 74,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "talon_conspiracy.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 180,
-				object = "talon/talon_conspiracy_dead",
+				object = "talon_conspiracy_DEAD",
 				reclaimable = true,
 			},
 		},

@@ -36,7 +36,8 @@ return {
 		movementclass = "TANK3",
 		name = "Announcer",
 		noautofire = false,
-		objectname = "tll/tllannouncer.s3o",
+		
+		objectname = "TLLANNOUNCER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 580,
@@ -51,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllannouncer.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 142,
-				object = "tll/tllannouncer_dead",
+				object = "tllannouncer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -131,7 +131,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 615,

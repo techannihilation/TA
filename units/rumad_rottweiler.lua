@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Rottweiler",
 		noautofire = false,
-		objectname = "rumad/rumad_rottweiler.s3o",
+		objectname = "rumad_rottweiler",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "rumad_rottweiler.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 161,
-				object = "rumad/rumad_rottweiler_dead",
+				object = "rumad_rottweiler_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +87,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 86,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -168,7 +167,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Bulldog",
 		noautofire = false,
-		objectname = "arm/armbull.s3o",
+		objectname = "ARMBULL",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "armbull.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 675,
-				object = "arm/armbull_dead",
+				object = "ARMBULL_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

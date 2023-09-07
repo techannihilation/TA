@@ -40,7 +40,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Construction Sub",
 		noautofire = false,
-		objectname = "arm/armacsub.s3o",
+		objectname = "ARMACSUB",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
@@ -76,7 +76,6 @@ return {
 		customparams = {
 			buildpic = "armacsub.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -90,7 +89,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1950,
-				object = "arm/armacsub_dead",
+				object = "ARMACSUB_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

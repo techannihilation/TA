@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Razorback",
 		noautofire = false,
-		objectname = "arm/armraz.s3o",
+		objectname = "ARMRAZ",
 		radaremitheight = 58,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "armraz.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2857,
-				object = "arm/armraz_dead",
+				object = "ARMRAZ_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1524,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

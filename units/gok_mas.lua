@@ -29,7 +29,7 @@ return {
 		metalstorage = 200,
 		name = "Mass Extractor",
 		noautofire = false,
-		objectname = "gok/gok_mas.s3o",
+		objectname = "gok_mas",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 97,

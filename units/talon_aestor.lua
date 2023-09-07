@@ -33,7 +33,7 @@ return {
 		name = "T2 Energy Storage",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "talon/talon_aestor.s3o",
+		objectname = "talon_aestor",
 		radaremitheight = 42,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "talon_aestor.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 618,
-				object = "talon/talon_aestor_dead",
+				object = "talon_aestor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 330,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

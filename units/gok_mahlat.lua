@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Mahlat",
 		noautofire = false,
-		objectname = "gok/gok_mahlat.s3o",
+		objectname = "gok_mahlat",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "gok_mahlat.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 240,
-				object = "gok/gok_mahlat_dead",
+				object = "gok_mahlat_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 128,
-				object = "2x2d",
+				object = "2X2D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

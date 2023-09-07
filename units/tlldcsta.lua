@@ -27,7 +27,7 @@ return {
 		name = "Missile Launcher",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tll/tlldcsta.s3o",
+		objectname = "TLLdcsta",
 		radardistance = 1200,
 		radaremitheight = 61,
 		selfdestructas = "SMALL_UNIT",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "tlldcsta.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 592,
-				object = "tll/tlldcsta_dead",
+				object = "tlldcsta_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -116,7 +115,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
 				range = 1150,

@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Recon",
 		noautofire = false,
-		objectname = "gok/gok_vision.s3o",
+		objectname = "gok_vision",
 		radardistance = 1000,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

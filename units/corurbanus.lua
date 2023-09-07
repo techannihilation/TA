@@ -40,7 +40,7 @@ return {
 		movementclass = "HDBOAT12",
 		name = "Urbanus",
 		noautofire = false,
-		objectname = "core/corurbanus.s3o",
+		objectname = "corurbanus",
 		radardistance = 2500,
 		radaremitheight = 126,
 		selfdestructas = "MKL_BLAST",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "corurbanus.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 33937,
-				object = "core/corurbanus_dead",
+				object = "corurbanus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -192,7 +191,7 @@ return {
 				flighttime = 2.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 750,
@@ -247,6 +246,7 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
+
 					air = 500,
 				},
 			},

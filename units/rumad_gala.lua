@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Galacticus",
 		noautofire = false,
-		objectname = "rumad/rumad_gala.s3o",
+		objectname = "rumad_gala",
 		radaremitheight = 225,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
@@ -55,7 +55,9 @@ return {
 		customparams = {
 			buildpic = "rumad_gala.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
+			shield_emit_height = 30.0,
+			shield_power = 2500,
+			shield_radius = 120,
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 60400,
-				object = "rumad/rumad_gala_dead",
+				object = "rumad_gala_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +86,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 25880,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -153,7 +155,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 25,
 		name = "Underwater Fusion Plant",
 		noautofire = false,
-		objectname = "talon/talon_uwfus.s3o",
+		objectname = "talon_uwfus",
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "talon_uwfus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3277,
-				object = "talon/talon_uwfus_dead",
+				object = "talon_uwfus_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -71,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1748,
-				object = "5x5c",
+				object = "5X5C",
 				reclaimable = true,
 			},
 		},

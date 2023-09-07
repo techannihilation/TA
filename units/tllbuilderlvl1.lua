@@ -42,7 +42,7 @@ return {
 		metalmake = 0.2,
 		metalstorage = 20,
 		name = "Engineer Air",
-		objectname = "tll/tllbuilderlvl1.s3o",
+		objectname = "tllbuilderlvl1",
 		radaremitheight = 27,
 		reclaimspeed = 25,
 		repairspeed = 25,

@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		objectname = "core/corestor.s3o",
+		objectname = "CORESTOR",
 		radaremitheight = 32,
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "corestor.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 132,
-				object = "core/corestor_dead",
+				object = "CORESTOR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +77,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 70,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

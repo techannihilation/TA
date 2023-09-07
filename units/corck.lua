@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		objectname = "core/corck.s3o",
+		objectname = "CORCK",
 		radaremitheight = 26,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -97,7 +97,6 @@ return {
 		customparams = {
 			buildpic = "corck.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -112,7 +111,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 90,
-				object = "core/corck_dead",
+				object = "CORCK_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +125,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 48,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

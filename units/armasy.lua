@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
 		noautofire = false,
-		objectname = "arm/armasy.s3o",
+		objectname = "ARMASY",
 		radardistance = 50,
 		radaremitheight = 71,
 		seismicsignature = 0,
@@ -65,13 +65,13 @@ return {
 		customparams = {
 			buildpic = "armasy.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
 				blocking = false,
 				collisionvolumeoffsets = "0 -9 -2",
 				collisionvolumescales = "180 60 176",
+				
 				collisionvolumetype = "Box",
 				damage = 3703,
 				description = "Advanced Shipyard Wreckage",
@@ -79,7 +79,7 @@ return {
 				footprintx = 12,
 				footprintz = 12,
 				metal = 3687,
-				object = "arm/armasy_dead",
+				object = "ARMASY_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

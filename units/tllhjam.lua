@@ -36,7 +36,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hippie",
 		noautofire = false,
-		objectname = "tll/tllhjam.s3o",
+		
+		objectname = "tllhjam",
 		onoffable = true,
 		radardistance = 1490,
 		radardistancejam = 480,
@@ -54,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "tllhjam.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 152,
-				object = "tll/tllhjam_dead",
+				object = "tllhjam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

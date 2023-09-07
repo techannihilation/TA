@@ -36,7 +36,8 @@ return {
 		movementclass = "KBOT2",
 		name = "Insistent Fireraiser",
 		noautofire = false,
-		objectname = "tll/tllfireraiser1.s3o",
+
+		objectname = "tllfireraiser1",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 400,
@@ -51,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllfireraiser1.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 108,
-				object = "tll/tllfireraiser_dead",
+				object = "tllfireraiser_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +126,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Rockets",
 				noselfdamage = true,
 				range = 550,

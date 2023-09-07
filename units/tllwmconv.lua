@@ -27,7 +27,7 @@ return {
 		name = "Metal Producer",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tll/tllwmconv.s3o",
+		objectname = "tllWMconv",
 		radaremitheight = 57,
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 200,
@@ -37,7 +37,6 @@ return {
 		customparams = {
 			buildpic = "tllwmconv.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -47,7 +46,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "tll/tllwmconv_dead",
+				object = "tllWMconv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

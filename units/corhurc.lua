@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hurricane",
 		noautofire = true,
-		objectname = "core/corhurc.s3o",
+		objectname = "CORHURC",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 221,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corhurc.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 142,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +117,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb.s3o",
+				model = "weapon_bomb",
 				name = "AdvancedBombs",
 				noselfdamage = true,
 				range = 1280,

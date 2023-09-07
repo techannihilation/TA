@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Trawler",
 		noautofire = false,
-		objectname = "tll/tlltorpp.s3o",
+		objectname = "TLLTORPP",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 350,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "tlltorpp.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 100,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -117,7 +116,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				flighttime = 1.65,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "TorpedoLauncher",
 				noselfdamage = true,
 				range = 500,

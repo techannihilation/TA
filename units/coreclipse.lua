@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Eclipse",
 		noautofire = false,
-		objectname = "core/coreclipse.s3o",
+		objectname = "coreclipse",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingmoveorder = 1,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "coreclipse.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2492,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -121,7 +120,7 @@ return {
 				impulseboost = 0.15,
 				impulsefactor = 0.15,
 				interceptedbyshieldtype = 16,
-				model = "weapon_missile_bomber.s3o",
+				model = "weapon_missile_bomber",
 				name = "ClusterBombs",
 				noselfdamage = true,
 				range = 2100,

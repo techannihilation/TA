@@ -41,7 +41,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Broadside",
-		objectname = "rumad/rumad_overlord.s3o",
+		objectname = "rumad_overlord",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "BANTHA_BLAST",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "rumad_overlord.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				description = "Aircraft Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -148,7 +147,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
-				model = "weapon_bomb.s3o",
+				model = "weapon_bomb",
 				name = "Heavy Bombs",
 				noselfdamage = true,
 				range = 280,

@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Metal Maker",
 		noautofire = false,
-		objectname = "gok/gok_makr1.s3o",
+		objectname = "gok_makr1",
 		radaremitheight = 25,
 		script = "gok_makr.cob",
 		seismicsignature = 0,

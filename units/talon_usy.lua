@@ -28,7 +28,7 @@ return {
 		mobilestandorders = 1,
 		name = "Capital Shipyard",
 		noautofire = false,
-		objectname = "talon/talon_usy.s3o",
+		objectname = "talon_usy",
 		radardistance = 100,
 		radaremitheight = 93,
 		selfdestructas = "CRAWL_BLAST",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "talon_usy.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 12000,
-				--object = "talon/talon_usy_dead",
+				--object = "talon_usy_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +73,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 6400,
-				object = "7x7b",
+				object = "7X7B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -39,7 +39,8 @@ return {
 		movementclass = "BOAT5",
 		name = "Envoy",
 		noautofire = false,
-		objectname = "core/cortship.s3o",
+
+		objectname = "CORTSHIP",
 		radaremitheight = 68,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -57,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "cortship.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 709,
-				object = "core/cortship_dead",
+				object = "CORTSHIP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 378,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

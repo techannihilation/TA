@@ -36,7 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Annihilator",
-		objectname = "arm/armanni1.s3o",
+		objectname = "ARMANNI1",
 		onoffable = true,
 		radardistance = 1500,
 		radaremitheight = 158,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "armanni1.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 10650,
-				object = "arm/armanni1_dead",
+				object = "ARMANNI1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +78,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5680,
-				object = "6x6b",
+				object = "6X6B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

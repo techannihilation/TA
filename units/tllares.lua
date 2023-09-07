@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK2",
 		name = "Ares",
 		noautofire = false,
-		objectname = "tll/tllares.s3o",
+		objectname = "TLLARES",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 300,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "tllares.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 118,
-				object = "tll/tllares_dead",
+				object = "tllares_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 0,
 		name = "Thermite Mine",
 		noautofire = false,
-		objectname = "tll/tllmine4.s3o",
+		objectname = "TLLMINE4",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

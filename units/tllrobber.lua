@@ -38,7 +38,7 @@ return {
 		mintransportmass = 50,
 		name = "Robber",
 		noautofire = false,
-		objectname = "tll/tllrobber.s3o",
+		objectname = "TLLROBBER",
 		radardistance = 0,
 		radaremitheight = 28.8,
 		releaseheld = true,
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "tllrobber.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 413,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +117,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "tll/tllvtolmissile.s3o",
+				model = "tllvtolmissile",
 				name = "Guided Missiles",
 				noselfdamage = true,
 				range = 530,
@@ -140,6 +139,7 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
+
 					air = 120,
 				},
 			},

@@ -42,7 +42,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Engineer Kbot",
 		noautofire = false,
-		objectname = "core/corfast.s3o",
+		objectname = "CORFAST",
 		radaremitheight = 34,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -89,7 +89,6 @@ return {
 		customparams = {
 			buildpic = "corfast.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -104,7 +103,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 153,
-				object = "core/corfast_dead",
+				object = "CORFAST_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +117,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 82,
-				object = "2x2d",
+				object = "2X2D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

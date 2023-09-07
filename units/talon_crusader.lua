@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Crusader",
 		noautofire = false,
-		objectname = "talon/talon_crusader.s3o",
+		objectname = "talon_crusader",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_crusader.DDS",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 202,
-				object = "talon/talon_crusader_dead",
+				object = "talon_crusader_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 108,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},

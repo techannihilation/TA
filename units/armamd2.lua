@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Anti-Nuke",
-		objectname = "arm/armamd2.s3o",
+		objectname = "ARMAMD2",
 		radardistance = 50,
 		radaremitheight = 63,
 		script = "armamd.cob",
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "armamd2.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armamd1_dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 17549,
-				object = "arm/armamd_dead",
+				object = "ARMAMD_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +74,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 9359,
-				object = "5x5b",
+				object = "5X5B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -131,7 +130,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 4,
 				metalpershot = 6780,
-				model = "weapon_antinuke1.s3o",
+				model = "weapon_antinuke1",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

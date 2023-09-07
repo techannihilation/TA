@@ -24,7 +24,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
-		objectname = "talon/talon_drag.s3o",
+		objectname = "talon_drag",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "talon_drag",
@@ -33,7 +33,6 @@ return {
 		customparams = {
 			buildpic = "talon_drag.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dragonsteeth = {
@@ -52,7 +51,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 12,
-				object = "talon/talon_drag",
+				object = "talon_drag",
 				reclaimable = true,
 				reclaimtime = 600,
 				customparams = {
@@ -70,7 +69,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

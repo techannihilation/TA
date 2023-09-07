@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Gold",
 		noautofire = false,
-		objectname = "talon/talon_gold.s3o",
+		objectname = "talon_gold",
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "EXO_BLAST",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "talon_gold.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 32192,
-				object = "10x10z",
+				object = "10X10Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -223,6 +222,7 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
+					
 					air = 250,
 				},
 			},

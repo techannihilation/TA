@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,
-		objectname = "rumad/rumad_asp.s3o",
+		objectname = "rumad_asp",
 		onoffable = true,
 		radaremitheight = 42,
 		seismicsignature = 0,
@@ -48,7 +48,6 @@ return {
 			isairbase = true,
 			buildpic = "rumad_asp.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 562,
-				object = "rumad/rumad_asp_dead",
+				object = "rumad_asp_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 300,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

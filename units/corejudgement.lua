@@ -37,7 +37,7 @@ return {
 		movementclass = "TKBOT4",
 		name = "Judgement",
 		noautofire = false,
-		objectname = "core/corejudgement.s3o",
+		objectname = "corejudgement",
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "corejudgement.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corgol_heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1688,
-				object = "4x4c",
+				object = "4X4C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3165,
-				object = "core/corejudgement_dead",
+				object = "corejudgement_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -166,7 +165,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

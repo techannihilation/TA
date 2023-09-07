@@ -33,7 +33,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
 		noautofire = false,
-		objectname = "talon/talon_amaker.s3o",
+		
+		objectname = "talon_amaker",
 		radaremitheight = 40,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -47,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "talon_amaker.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1011,
-				object = "talon/talon_amaker_dead",
+				object = "talon_amaker_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 539,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 			},
 		},

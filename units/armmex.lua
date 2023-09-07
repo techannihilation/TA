@@ -36,7 +36,7 @@ return {
 		metalstorage = 0,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "arm/armmex.s3o",
+		objectname = "ARMMEX",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armmex.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 39,
-				object = "arm/armmex_dead",
+				object = "ARMMEX_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

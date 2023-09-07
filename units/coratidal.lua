@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 20,
 		name = "Advanced Tidal Generator",
 		noautofire = false,
-		objectname = "core/coratidal.s3o",
+		objectname = "CORATIDAL",
 		onoffable = false,
 		radaremitheight = 36,
 		seismicsignature = 0,
@@ -45,7 +45,6 @@ return {
 			buildpic = "coratidal.dds",
 			energymultiplier = 5,
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 259,
-				object = "core/coratidal_dead",
+				object = "CORATIDAL_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +70,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 138,
-				object = "6x6b",
+				object = "6X6B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

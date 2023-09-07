@@ -35,7 +35,8 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Hickatee",
 		noautofire = false,
-		objectname = "tll/tllhickatee.s3o",
+		
+		objectname = "tllhickatee",
 		onoffable = true,
 		radardistance = 2200,
 		radaremitheight = 36,
@@ -51,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllhickatee.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 183,
-				object = "tll/tllturtle_dead",
+				object = "tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

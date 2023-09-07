@@ -40,7 +40,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Construction Kbot",
 		noautofire = false,
-		objectname = "gok/gok_ack.s3o",
+		objectname = "gok_ack",
 		radaremitheight = 26,
 		reclaimspeed = 80,
 		repairspeed = 80,
@@ -81,7 +81,6 @@ return {
 		customparams = {
 			buildpic = "gok_ack.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +91,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1120,
-				object = "gok/gok_ack_dead",
+				object = "gok_ack_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

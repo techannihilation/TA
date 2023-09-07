@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "November",
 		noautofire = false,
-		objectname = "talon/talon_november.s3o",
+		objectname = "talon_november",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_november.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 270,
-				object = "talon/talon_november_dead",
+				object = "talon_november_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -125,7 +124,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "talon/talon_rocket.s3o",
+				model = "talon_rocket",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1420,

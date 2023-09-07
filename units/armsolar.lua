@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		objectname = "arm/armsolar.s3o",
+		objectname = "ARMSOLAR",
 		onoffable = true,
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "armsolar.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 116,
-				object = "arm/armsolar_dead",
+				object = "ARMSOLAR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 62,
-				object = "5x5b",
+				object = "5X5B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

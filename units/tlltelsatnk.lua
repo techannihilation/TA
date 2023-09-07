@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Tesla Tank",
 		noautofire = false,
-		objectname = "tll/tlltelsatnk.s3o",
+		objectname = "TLLTELSATNK",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tlltelsatnk.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2737,
-				object = "tll/tlltelsatnk_dead",
+				object = "tlltelsatnk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -36,7 +36,7 @@ return {
 		movementclass = "VKBOT20",
 		name = "Kadesh",
 		noautofire = false,
-		objectname = "gok/gok_kadesh.s3o",
+		objectname = "gok_kadesh",
 		radaremitheight = 147,
 		seismicsignature = 0,
 		selfdestructas = "MEGA_BLAST",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_kadesh.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				featuredead = "heap",
 				footprintx = 12,
 				footprintz = 12,
-				object = "gok/gok_kadesh_dead",
+				object = "gok_kadesh_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 500,
 		name = "Shipyard",		
-		objectname = "tll/tllshipyardlvl3.s3o",
+		objectname = "tllshipyardlvl3",
 		radardistance = 0,
 		radaremitheight = 243,
 		selfdestructas = "SHIPBLAST",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "tllshipyardlvl3.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 20,
 				footprintz = 15,
 				metal = 78000,
-				object = "tll/tllshipyardlvl3_dead",
+				object = "tllshipyardlvl3_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

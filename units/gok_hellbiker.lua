@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Hell Biker",
 		noautofire = false,
-		objectname = "gok/gok_hellbiker.s3o",
+		objectname = "gok_hellbiker",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "gok_hellbiker.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 12,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 			},
 		},

@@ -43,7 +43,7 @@ return {
 		movementclass = "HDBOAT12",
 		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
-		objectname = "core/corucar.s3o",
+		objectname = "corucar",
 		onoffable = true,
 		radardistance = 12000,
 		radaremitheight = 54,
@@ -64,7 +64,6 @@ return {
 			isairbase = true,
 			buildpic = "corucar.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1237,
-				object = "core/corucar_dead",
+				object = "corucar_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -93,7 +92,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 660,
-				object = "6x6c",
+				object = "6X6C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -154,7 +153,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 4,
 				metalpershot = 6780,
-				model = "weapon_antinuke1.s3o",
+				model = "weapon_antinuke1",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,
@@ -192,7 +191,7 @@ return {
 				flighttime = 2.75,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
@@ -219,6 +218,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

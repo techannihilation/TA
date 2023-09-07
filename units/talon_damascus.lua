@@ -32,7 +32,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Anti-Nuke",
-		objectname = "talon/talon_damascus.s3o",
+		objectname = "talon_damascus",
 		radardistance = 50,
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "Talon_damascus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1526,
-				object = "talon/talon_damascus_dead",
+				object = "Talon_damascus_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 814,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 			},
 		},
@@ -127,7 +126,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

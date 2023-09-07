@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Barbecue",
 		noautofire = false,
-		objectname = "tll/tllgeo_armored.s3o",
+		objectname = "tllgeo_armored",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "tllgeo_armored.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3753,
-				object = "tll/tllgeo_armored_dead",
+				object = "TLLGEO_ARMORED_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +78,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2002,
-				object = "5x5c",
+				object = "5X5C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

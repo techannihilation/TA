@@ -39,7 +39,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Mako",
 		noautofire = false,
-		objectname = "tll/tllmako.s3o",
+		objectname = "TLLmako",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 650,
@@ -56,7 +56,6 @@ return {
 			faction = "TLL",
 			shield_power = 2500,
 			shield_radius = 300,
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5700,
-				object = "tll/tllmako_dead",
+				object = "tllmako_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

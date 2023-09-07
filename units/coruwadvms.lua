@@ -33,7 +33,7 @@ return {
 		name = "T2 Metal Storage",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "core/coruwadvms.s3o",
+		objectname = "CORUWADVMS",
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "coruwadvms.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 567,
-				object = "core/coruwadvms_dead",
+				object = "CORUWADVMS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 302,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

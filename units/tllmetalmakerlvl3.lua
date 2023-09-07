@@ -30,7 +30,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T4 Metal Maker",
-		objectname = "tll/tllmetalmakerlvl3.s3o",
+		objectname = "tllmetalmakerlvl3",
 		radardistance = 0,
 		radaremitheight = 85,
 		selfdestructas = "BANTHA_BLAST",
@@ -40,7 +40,6 @@ return {
 		customparams = {
 			buildpic = "tllmetalmakerlvl3.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {

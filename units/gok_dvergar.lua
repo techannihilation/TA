@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dvergar",
 		noautofire = false,
-		objectname = "gok/gok_dvergar.s3o",
+		objectname = "gok_dvergar",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "gok_dvergar.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3192,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

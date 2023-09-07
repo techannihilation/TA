@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Black Lotus",
 		noautofire = false,
-		objectname = "gok/gok_dl.s3o",
+		objectname = "gok_dl",
 		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -42,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "gok_dl.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 216,
-				object = "gok/gok_dl_dead",
+				object = "gok_dl_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 115,
-				object = "3x3c",
+				object = "3X3C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -128,7 +127,7 @@ return {
 				groundbounce = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_gok.s3o",
+				model = "weapon_torpedo_gok",
 				name = "DepthCharge",
 				noselfdamage = true,
 				numbounce = 1,

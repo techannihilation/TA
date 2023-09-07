@@ -33,7 +33,7 @@ return {
 		name = "T2 Energy Storage",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "gok/gok_aestor.s3o",
+		objectname = "gok_aestor",
 		radaremitheight = 42,
 		script = "gok_estor.cob",
 		seismicsignature = 0,
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "gok_aestor.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 618,
-				object = "gok/gok_aestor_dead",
+				object = "gok_aestor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 330,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

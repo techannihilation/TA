@@ -40,7 +40,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Construction Turtle",
 		noautofire = true,
-		objectname = "tll/tllmusk.s3o",
+		objectname = "tllmusk",
 		radaremitheight = 25,
 		reclaimspeed = 100,
 		repairspeed = 100,
@@ -91,7 +91,6 @@ return {
 		customparams = {
 			buildpic = "tllmusk.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -102,7 +101,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2032,
-				object = "tll/tllmusk_dead",
+				object = "tllmusk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

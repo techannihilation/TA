@@ -42,7 +42,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Amphibious Construction Vehicle",
 		noautofire = false,
-		objectname = "tll/tllucv.s3o",
+		objectname = "tllucv",
 		radardistance = 50,
 		radaremitheight = 22,
 		reclaimspeed = 900,
@@ -80,7 +80,6 @@ return {
 		customparams = {
 			buildpic = "tllucv.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -93,7 +92,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1480,
-				object = "tll/tllucv_dead",
+				object = "tllucv_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

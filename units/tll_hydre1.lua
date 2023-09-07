@@ -26,7 +26,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Rapid Long-Range Plasma Cannon",
-		objectname = "tll/tll_hydre1.s3o",
+		objectname = "tll_hydre1",
 		radaremitheight = 272,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "tll_hydre1.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 30525,
-				object = "tll/tll_hydre1_dead",
+				object = "tll_hydre1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 16480,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

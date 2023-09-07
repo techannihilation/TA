@@ -16,6 +16,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "46 22 35",
+		
 		collisionvolumetype = "Box",
 		description = "Converts upto 64 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",
@@ -32,7 +33,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Metal Maker",
 		noautofire = false,
-		objectname = "core/cormakr.s3o",
+		
+		objectname = "CORMAKR",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ARMESTOR_BUILDING",

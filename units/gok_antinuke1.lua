@@ -30,7 +30,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Anti-Nuke",
-		objectname = "gok/gok_antinuke1.s3o",
+		objectname = "gok_antinuke1",
 		radardistance = 50,
 		radaremitheight = 34,
 		script = "gok_antinuke.cob",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "gok_antinuke1.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1526,
-				object = "gok/gok_antinuke_dead",
+				object = "gok_antinuke_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 814,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 			},
 		},
@@ -126,7 +125,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 300,
-				model = "weapon_antinuke_gok.s3o",
+				model = "weapon_antinuke_gok",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

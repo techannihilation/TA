@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Spook",
 		noautofire = false,
-		objectname = "gok/gok_spook.s3o",
+		objectname = "gok_spook",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_spook.dds",
 			faction = "ARM",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 122,
-				object = "2x2z",
+				object = "2X2Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

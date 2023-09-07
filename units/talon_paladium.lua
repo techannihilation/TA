@@ -40,7 +40,7 @@ return {
 		movementclass = "HDBOAT12",
 		name = "Paladium",
 		noautofire = false,
-		objectname = "talon/talon_paladium.s3o",
+		objectname = "talon_paladium",
 		radardistance = 2500,
 		radaremitheight = 126,
 		selfdestructas = "MKL_BLAST",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "talon_paladium.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 33937,
-				object = "talon/talon_paladium_dead",
+				object = "talon_paladium_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -190,7 +189,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo.s3o",
+				model = "weapon_advtorpedo",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 850,
@@ -243,6 +242,7 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
+
 					air = 250,
 				},
 			},

@@ -31,7 +31,7 @@ return {
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "arm/aahpns.s3o",
+		objectname = "AAHPNS",
 		radaremitheight = 37,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "aahpns.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3615,
-				object = "arm/aahpns_dead",
+				object = "Aahpns_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

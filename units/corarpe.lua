@@ -42,7 +42,7 @@ return {
 		moverate1 = 3,
 		name = "Surveyor",
 		noautofire = false,
-		objectname = "core/corarpe.s3o",
+		objectname = "corarpe",
 		scale = 1,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "corarpe.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -69,7 +68,7 @@ return {
 				description = "Aircraft Debris",
 				footprintx = 2,
 				footprintz = 2,
-				object = "2x2z",
+				object = "2X2Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

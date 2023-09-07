@@ -38,7 +38,8 @@ return {
 		movementclass = "ATANK3",
 		name = "Centurion",
 		noautofire = false,
-		objectname = "tll/tllcenturion.s3o",
+
+		objectname = "tllcenturion",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "tllcenturion.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 373,
-				object = "tll/tllcenturion_dead",
+				object = "tllcenturion_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -84,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 199,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},

@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "1100 NS",
 		noautofire = false,
-		objectname = "core/corfmine3.s3o",
+		objectname = "CORFMINE3",
 		script = "mines_lus.lua",
 		radaremitheight = 25,
 		seismicsignature = 0,

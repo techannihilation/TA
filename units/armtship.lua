@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Hulk",
 		noautofire = false,
-		objectname = "arm/armtship.s3o",
+		objectname = "ARMTSHIP",
 		radaremitheight = 74,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "armtship.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 735,
-				object = "arm/armtship_dead",
+				object = "ARMTSHIP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 392,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

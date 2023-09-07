@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Bantha",
 		noautofire = false,
-		objectname = "arm/armbanth.s3o",
+		objectname = "ARMBANTH",
 		radaremitheight = 61,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "armbanth.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 8100,
-				object = "arm/armbanth_dead",
+				object = "ARMBANTH_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 4320,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -168,7 +167,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

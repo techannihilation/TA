@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Snitch",
 		noautofire = false,
-		objectname = "talon/talon_snitch.s3o",
+		objectname = "talon_snitch",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_snitch.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 69,
-				object = "talon/talon_snitch_dead",
+				object = "talon_snitch_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 37,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 			},
 		},

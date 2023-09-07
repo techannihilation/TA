@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Desert Python",
 		noautofire = false,
-		objectname = "rumad/rumad_erl.s3o",
+		objectname = "rumad_erl",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,7 +47,6 @@ return {
 			buildpic = "rumad_erl.dds",
 			faction = "RUMAD",
 			prioritytarget = "air",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 60,
-				object = "rumad/rumad_erl_dead",
+				object = "rumad_erl_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 32,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -128,7 +127,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missilexl_rumad_aa.s3o",
+				model = "weapon_missilexl_rumad_aa",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1600,

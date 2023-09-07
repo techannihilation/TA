@@ -35,7 +35,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Rimpler",
 		noautofire = false,
-		objectname = "tll/tllhplasma.s3o",
+		
+		objectname = "TLLhplasma",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -51,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllhplasma.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 607,
-				object = "tll/tllhplasma_dead",
+				object = "tllhplasma_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

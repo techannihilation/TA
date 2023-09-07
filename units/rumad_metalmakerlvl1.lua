@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Metal Maker",
 		noautofire = false,
-		objectname = "rumad/rumad_metalmakerlvl1.s3o",
+		objectname = "rumad_metalmakerlvl1",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ARMESTOR_BUILDING",

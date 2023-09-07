@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Merl",
 		noautofire = false,
-		objectname = "arm/armmerl.s3o",
+		objectname = "ARMMERL",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "armmerl.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 690,
-				object = "arm/armmerl_dead",
+				object = "ARMMERL_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 368,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -140,7 +139,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl.s3o",
+				model = "weapon_starburstl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1365,

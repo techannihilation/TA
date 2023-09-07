@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Durandil",
 		noautofire = false,
-		objectname = "rumad/rumad_mlrpt.s3o",
+		objectname = "rumad_mlrpt",
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,7 +53,6 @@ return {
 			buildpic = "rumad_mlrpt.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T3 Unit Research Centre",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3975,
-				object = "rumad/rumad_mlrpt_dead",
+				object = "rumad_mlrpt_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

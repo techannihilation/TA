@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Acae",
 		noautofire = false,
-		objectname = "rumad/rumad_gunship_lvl2.s3o",
+		objectname = "rumad_gunship_lvl2",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 600,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "rumad_gunship_lvl2.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 188,
-				object = "2x2z",
+				object = "2X2Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -114,7 +113,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 650,

@@ -47,7 +47,7 @@ return {
 		moverate2 = 2,
 		name = "Seahook",
 		noautofire = false,
-		objectname = "rumad/rumad_airtrans_lvl2.s3o",
+		objectname = "rumad_airtrans_lvl2",
 		pitchscale = 1,
 		radaremitheight = 28.8,
 		releaseheld = true,
@@ -71,7 +71,6 @@ return {
 			buildpic = "rumad_airtrans_lvl2.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -81,7 +80,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 212,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

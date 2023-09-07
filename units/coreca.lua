@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Armored Construction Aircraft",
 		noautofire = false,
-		objectname = "core/coreca.s3o",
+		objectname = "CORECA",
 		radaremitheight = 7.5,
 		reclaimspeed = 150,
 		repairspeed = 150,
@@ -85,7 +85,6 @@ return {
 		customparams = {
 			buildpic = "coreca.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -95,7 +94,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2192,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Zealot",
 		noautofire = false,
-		objectname = "gok/gok_zealot.s3o",
+		objectname = "gok_zealot",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_zealot.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 198,
-				object = "gok/gok_zealot_dead",
+				object = "gok_zealot_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 106,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

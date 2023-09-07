@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Trap",
 		noautofire = false,
-		objectname = "gok/gok_win.s3o",
+		objectname = "gok_win",
 		radardistance = 0,
 		radaremitheight = 38,
 		selfdestructas = "SMALL_BUILDING",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "gok_win.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 29,
-				object = "gok/gok_win_dead",
+				object = "gok_win_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

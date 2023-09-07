@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Adv Ultimate Fusion Reactor",
 		noautofire = false,
-		objectname = "arm/armufus.s3o",
+		objectname = "armufus",
 		radaremitheight = 500,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_SUPERBLAST2",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "armufus.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 109000,
-				object = "arm/armufus_dead",
+				object = "armufus_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +73,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 95000,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -30,7 +30,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Countermeasure System",
-		objectname = "talon/talon_sd.s3o",
+		objectname = "talon_sd",
 		onoffable = true,
 		radaremitheight = 55,
 		script = "talon_sd.lua",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "talon_sd.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 282,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 			},
 		},

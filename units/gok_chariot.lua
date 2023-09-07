@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 0,
 		name = "Wyvern",
 		noautofire = false,
-		objectname = "gok/gok_chariot.s3o",
+		objectname = "gok_chariot",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		seismicsignature = 0,

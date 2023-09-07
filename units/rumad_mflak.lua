@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "htank4",
 		name = "Desert Spirit",
-		objectname = "rumad/rumad_mflak.s3o",
+		objectname = "rumad_mflak",
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 350,
@@ -53,7 +53,6 @@ return {
 			buildpic = "rumad_mflak.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 7960,
-				object = "rumad/rumad_mflak_dead",
+				object = "rumad_mflak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

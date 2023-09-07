@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sun",
 		noautofire = false,
-		objectname = "arm/arm_ucir.s3o",
+		objectname = "arm_ucir",
 		onoffable = true,
 		radardistance = 3000,
 		seismicsignature = 0,
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "arm_ucir.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 624,
-				object = "arm/arm_ucir_dead",
+				object = "arm_ucir_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 332,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 			},
 		},
@@ -124,7 +123,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal.s3o",
+				model = "weapon_missileaal",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -145,6 +144,7 @@ return {
 				damage = {
 					areoship = 750,
 					default = 5,
+					
 					air = 3000,
 				},
 			},

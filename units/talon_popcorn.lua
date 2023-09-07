@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Popcorn",
 		noautofire = false,
-		objectname = "talon/talon_popcorn.s3o",
+		objectname = "talon_popcorn",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "talon_popcorn.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 783,
-				object = "talon/talon_popcorn_dead",
+				object = "talon_popcorn_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 418,
-				object = "2x2c",
+				object = "2X2C",
 				reclaimable = true,
 			},
 		},
@@ -144,6 +143,7 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
+					
 					air = 250,
 				},
 			},

@@ -38,7 +38,7 @@ return {
 		mincloakdistance = 70,
 		name = "Slinger",
 		noautofire = false,
-		objectname = "talon/talon_slinger.s3o",
+		objectname = "talon_slinger",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_slinger.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1867,
-				object = "talon/talon_slinger_dead",
+				object = "talon_slinger_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 622,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 			},
 		},

@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Ranger",
 		noautofire = false,
-		objectname = "arm/armmship.s3o",
+		objectname = "ARMMSHIP",
 		radardistance = 1400,
 		radaremitheight = 30,
 		seismicsignature = 0,
@@ -55,7 +55,6 @@ return {
 			buildpic = "armmship.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1893,
-				object = "arm/armmship_dead",
+				object = "ARMMSHIP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1010,
-				object = "4x4b",
+				object = "4X4B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -137,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl.s3o",
+				model = "weapon_starburstl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1550,
@@ -182,7 +181,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
@@ -208,6 +207,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

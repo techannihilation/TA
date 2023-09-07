@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Ceddral",
 		noautofire = false,
-		objectname = "talon/talon_ceddral.s3o",
+		objectname = "talon_ceddral",
 		radaremitheight = 28.8,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "talon_ceddral.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2213,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

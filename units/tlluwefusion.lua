@@ -30,7 +30,7 @@ return {
 		minwaterdepth = 70,
 		name = "Advanced Underwater Antimater Fusion",
 		noautofire = false,
-		objectname = "tll/tlluwefusion.s3o",
+		objectname = "tlluwefusion",
 		radaremitheight = 60,
 		script = "tlluwfusion.cob",
 		seismicsignature = 0,

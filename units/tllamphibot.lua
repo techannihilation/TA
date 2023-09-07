@@ -35,7 +35,7 @@ return {
 		name = "Seagull",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tll/tllamphibot.s3o",
+		objectname = "TLLAMPHiBOT",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllamphibot.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 401,
-				object = "tll/tllamphibot_dead",
+				object = "TLLamphibot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 214,
-				object = "3x3f",
+				object = "3x3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

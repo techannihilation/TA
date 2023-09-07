@@ -26,7 +26,7 @@ return {
 		name = "Advanced Antimater Fusion",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "core/crnns.s3o",
+		objectname = "crnns",
 		radardistance = 0,
 		radaremitheight = 56,
 		selfdestructas = "FUSION_BLAST_CORE",

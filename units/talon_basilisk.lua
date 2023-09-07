@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Basilisk",
 		noautofire = false,
-		objectname = "talon/talon_basilisk.s3o",
+		objectname = "talon_basilisk",
 		radaremitheight = 25,
 		sonardistance = 400,
 		seismicsignature = 0,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "talon_basilisk.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 315,
-				object = "talon/talon_basilisk_dead",
+				object = "talon_basilisk_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 214,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 			},
 		},
@@ -151,6 +150,7 @@ return {
 					default = 75,
 					subs = 5,
 				},
+
 			},
 			depthcharge = {
 				areaofeffect = 32,
@@ -166,7 +166,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,
@@ -189,6 +189,7 @@ return {
 					subs = 240,
 				},
 			},
+
 		},
 		weapons = {
 			[1] = {

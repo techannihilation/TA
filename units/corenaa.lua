@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 2,
 		name = "Cobra",
 		noautofire = false,
-		objectname = "core/corenaa.s3o",
+		objectname = "CORENAA",
 		radaremitheight = 39,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -50,7 +50,6 @@ return {
 			buildpic = "corenaa.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 663,
-				object = "core/corenaa_dead",
+				object = "CORENAA_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -138,6 +137,7 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
+					
 					air = 500,
 				},
 			},

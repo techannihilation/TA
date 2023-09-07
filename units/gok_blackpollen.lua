@@ -26,7 +26,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Black Pollen",
-		objectname = "gok/gok_blackpollen.s3o",
+		objectname = "gok_blackpollen",
 		radaremitheight = 70,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -43,7 +43,6 @@ return {
 			buildpic = "gok_blackpollen.dds",
 			canareaattack = 1,
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 720,
-				object = "gok/gok_blackpollen_dead",
+				object = "gok_blackpollen_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 384,
-				object = "3x3e",
+				object = "3X3E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +125,7 @@ return {
 				impulsefactor = 0.1,
 				commandfire = true,
 				metalpershot = 24,
-				model = "gok/gok_cut.s3o",
+				model = "GOK_CUT",
 				name = "Cut Launcher",
 				noselfdamage = true,
 				range = 2800,

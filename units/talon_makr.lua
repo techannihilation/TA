@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Metal Maker",
 		noautofire = false,		
-		objectname = "talon/talon_makr.s3o",
+		objectname = "talon_makr",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ARMESTOR_BUILDING",

@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Asgard",
 		noautofire = false,
-		objectname = "tll/tllasgard.s3o",
+		objectname = "TLLASGARD",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 550,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllasgard.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8400,
-				object = "tll/tllasgard_dead",
+				object = "tllasgard_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

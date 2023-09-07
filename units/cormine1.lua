@@ -42,7 +42,7 @@ return {
 		mincloakdistance = 0,
 		name = 11,
 		noautofire = false,
-		objectname = "core/cormine1.s3o",
+		objectname = "CORMINE1",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

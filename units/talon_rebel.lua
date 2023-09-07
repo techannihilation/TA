@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Rebel",
 		noautofire = false,
-		objectname = "talon/talon_rebel.s3o",
+		objectname = "talon_rebel",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "talon_rebel.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 37,
-				object = "talon/talon_infantry_dead",
+				object = "talon_infantry_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 20,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 			},
 		},
@@ -128,7 +127,7 @@ return {
 				flighttime = 1.75,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA Missile",
 				noselfdamage = true,
 				range = 500,
@@ -150,6 +149,7 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
+					
 					air = 50,
 				},
 			},

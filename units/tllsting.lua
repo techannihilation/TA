@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Stinger",
 		noautofire = false,
-		objectname = "tll/tllsting.s3o",
+		objectname = "TLLSTING",
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 525,
@@ -53,7 +53,6 @@ return {
 			buildpic = "tllsting.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 855,
-				object = "tll/tllsting_dead",
+				object = "tllsting_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -128,7 +127,7 @@ return {
 				firestarter = 72,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
 				range = 850,
@@ -155,6 +154,7 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
+					
 					air = 50,
 				},
 			},
@@ -188,6 +188,7 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
+					
 					air = 225,
 				},
 			},

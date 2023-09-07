@@ -36,7 +36,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Oasis",
 		noautofire = false,
-		objectname = "rumad/rumad_oasis.s3o",
+		objectname = "rumad_oasis",
 		radaremitheight = 147,
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "rumad_oasis.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 20400,
-				object = "rumad/rumad_oasis_dead",
+				object = "rumad_oasis_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 10880,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +133,7 @@ return {
 				explosiongenerator = "custom:FLASHNUKE480",
 				firestarter = 80,
 				flighttime = 6,
-				model = "weapon_rocketxl_rumad.s3o",
+				model = "weapon_rocketxl_rumad",
 				name = "Barrage missile",
 				proximitypriority = -1,
 				range = 2400,

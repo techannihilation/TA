@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "arm/armavp.s3o",
+		objectname = "ARMAVP",
 		radaremitheight = 34,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -73,7 +73,6 @@ return {
 		customparams = {
 			buildpic = "armavp.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
@@ -87,7 +86,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 2936,
-				object = "arm/armavp_dead",
+				object = "ARMAVP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -100,7 +99,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1566,
-				object = "6x6d",
+				object = "6X6D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

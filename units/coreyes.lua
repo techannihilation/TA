@@ -33,7 +33,7 @@ return {
 		mincloakdistance = 36,
 		name = "Dragon's Eye",
 		noautofire = false,
-		objectname = "core/coreyes.s3o",
+		objectname = "COREYES",
 		onoffable = false,
 		radaremitheight = 27,
 		seismicsignature = 0,
@@ -49,7 +49,6 @@ return {
 			buildpic = "coreyes.dds",
 			faction = "CORE",
 			initcloaked = true,
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			cdragonseyes_dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 24,
-				object = "1x1b",
+				object = "1X1B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

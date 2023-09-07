@@ -39,7 +39,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Black Hydra",
 		noautofire = false,
-		objectname = "core/corblackhy.s3o",
+		objectname = "CORBLACKHY",
 		radardistance = 1500,
 		radaremitheight = 63,
 		seismicsignature = 0,
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "corblackhy.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 6,
 				footprintz = 18,
 				metal = 19800,
-				object = "core/corblackhy_dead",
+				object = "CORBLACKHY_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 10560,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -218,7 +217,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				impactonly = 1,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "RapidSamMissile",
 				noselfdamage = true,
 				range = 600,
@@ -240,6 +239,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+
 					air = 80,
 				},
 			},

@@ -41,7 +41,7 @@ return {
 		name = "Abritator",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "core/corarbritator.s3o",
+		objectname = "corarbritator",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
@@ -64,7 +64,6 @@ return {
 		customparams = {
 			buildpic = "corarbritator.dds",
 			faction = "Core",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corarbritator_dead = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "core/corarbritator_dead",
+				object = "corarbritator_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +89,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7680,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -186,7 +185,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 550,
-				model = "weapon_missile_emp.s3o",
+				model = "weapon_missile_emp",
 				name = "TacticalNuke",
 				noselfdamage = true,
 				range = 2750,

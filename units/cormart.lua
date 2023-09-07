@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Pillager",
 		noautofire = false,
-		objectname = "core/cormart.s3o",
+		objectname = "CORMART",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,7 +59,6 @@ return {
 			buildpic = "cormart.dds",
 			canareaattack = 1,
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 292,
-				object = "core/cormart_dead",
+				object = "CORMART_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 156,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

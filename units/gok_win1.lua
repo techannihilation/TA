@@ -27,7 +27,7 @@ return {
 		name = "Advanced Wind Trap",
 		noautofire = false,
 		noautofire = false,
-		objectname = "gok/gok_win1.s3o",
+		objectname = "gok_win1",
 		radardistance = 0,
 		radaremitheight = 57,
 		selfdestructas = "LARGE_BUILDING",
@@ -39,7 +39,6 @@ return {
 			buildpic = "gok_win1.dds",
 			energymultiplier = 4,
 			faction = "TLL",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 97,
-				object = "tll/tlladvsolar_dead",
+				object = "tlladvsolar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

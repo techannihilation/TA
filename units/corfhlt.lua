@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 5,
 		name = "Floating Thunderbolt",
 		noautofire = false,
-		objectname = "core/corfhlt.s3o",
+		objectname = "CORFHLT",
 		radaremitheight = 55,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "corfhlt.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 446,
-				object = "core/corfhlt_dead",
+				object = "CORFHLT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

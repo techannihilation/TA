@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Sun Strike",
 		noautofire = false,
-		objectname = "gok/gok_sunstrike.s3o",
+		objectname = "gok_sunstrike",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 350,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_sunstrike.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 270,
-				object = "gok/gok_sunstrike_dead",
+				object = "gok_sunstrike_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -124,7 +123,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_gok.s3o",
+				model = "weapon_missile_gok",
 				name = "RocketArtillery",
 				noselfdamage = true,
 				range = 1400,

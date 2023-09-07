@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER8",
 		name = "Ray",
 		noautofire = false,
-		objectname = "arm/armhcrus.s3o",
+		objectname = "armhcrus",
 		radaremitheight = 65,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "armhcrus.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 15265,
-				object = "arm/armhcrus_dead",
+				object = "armhcrus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
 				range = 700,
@@ -163,6 +162,7 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
+					
 					air = 50,
 				},
 			},

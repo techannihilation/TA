@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Adder",
 		noautofire = false,
-		objectname = "tll/tllpulaser.s3o",
+		objectname = "TLLPULASER",
 		radaremitheight = 31,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 600,
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "tllpulaser.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 4,
 				footprintz = 3,
 				metal = 993,
-				object = "tll/tllpulaser_dead",
+				object = "tllpulaser_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

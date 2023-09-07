@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dark Slesh",
 		noautofire = false,
-		objectname = "gok/gok_slesh1.s3o",
+		objectname = "gok_slesh1",
 		radaremitheight = 64,
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 500,
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "gok_slesh1.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "gok/gok_slesh1_dead",
+				object = "gok_slesh1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 460,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

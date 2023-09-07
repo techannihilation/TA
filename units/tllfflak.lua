@@ -30,7 +30,7 @@ return {
 		minwaterdepth = 5,
 		name = "Flakker NS",
 		noautofire = false,
-		objectname = "tll/tllfflak.s3o",
+		objectname = "TLLFFLAK",
 		radaremitheight = 32,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -46,7 +46,6 @@ return {
 			buildpic = "tllfflak.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 1755,
-				object = "arm/armfflak_dead",
+				object = "ARMFFLAK_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,6 +132,7 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
+					
 					air = 250,
 				},
 			},

@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Squarepants",
-		objectname = "talon/talon_squarepants.s3o",
+		objectname = "talon_squarepants",
 		onoffable = true,
 		radardistance = 800,
 		radaremitheight = 25,
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "talon_squarepants.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1417,
-				object = "talon/talon_squarepants_dead",
+				object = "talon_squarepants_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -164,7 +163,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "Guided Torpedo",
 				range = 450,
 				reloadtime = 2,

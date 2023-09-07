@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Jeager",
 		noautofire = false,
-		objectname = "rumad/rumad_jeag.s3o",
+		objectname = "rumad_jeag",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -60,7 +60,6 @@ return {
 			buildpic = "rumad_jeag.dds",
 			faction = "RUMAD",
 			prioritytarget = "air",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 140,
-				object = "rumad/rumad_jeag_dead",
+				object = "rumad_jeag_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -123,7 +122,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_rumad_aa.s3o",
+				model = "weapon_missile_rumad_aa",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,

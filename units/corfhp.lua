@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
-		objectname = "core/corfhp.s3o",
+		objectname = "CORFHP",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
@@ -59,13 +59,13 @@ return {
 		customparams = {
 			buildpic = "corfhp.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = false,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "120 26 108",
+				
 				collisionvolumetype = "Box",
 				damage = 2966,
 				description = "Floating Hovercraft Platform Wreckage",
@@ -73,7 +73,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 879,
-				object = "core/corfhp_dead",
+				object = "CORFHP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

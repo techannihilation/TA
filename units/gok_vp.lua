@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "gok/gok_vp.s3o",
+		objectname = "gok_vp",
 		radardistance = 0,
 		radaremitheight = 22,
 		seismicsignature = 0,
@@ -70,13 +70,13 @@ return {
 		customparams = {
 			buildpic = "gok_vp.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -7 0",
 				collisionvolumescales = "95 22 95",
+
 				collisionvolumetype = "Box",
 				damage = 2512,
 				description = "Kbot Lab Wreckage",
@@ -85,7 +85,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 483,
-				object = "gok/gok_vp_dead",
+				object = "gok_vp_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -99,7 +99,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 258,
-				object = "5x5b",
+				object = "5X5B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Planet Killer",
 		noautofire = false,
-		objectname = "talon/talon_planetkiller.s3o",
+		objectname = "talon_planetkiller",
 		radardistance = 0,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "talon_planetkiller.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 		},

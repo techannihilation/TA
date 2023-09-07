@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Black Coconut",
 		noautofire = false,
-		objectname = "gok/gok_blackcoconut.s3o",
+		objectname = "gok_blackcoconut",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_blackcoconut.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1616,
-				object = "gok/gok_blackcoconut_dead",
+				object = "gok_blackcoconut_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +135,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "HeavyRocket",
 				noselfdamage = true,
 				range = 1000,

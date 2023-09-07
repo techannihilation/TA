@@ -34,7 +34,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Armadillo",
 		noautofire = false,
-		objectname = "tll/tllcrawlb.s3o",
+		objectname = "TLLCRAWLB",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "MINE_NUKE",

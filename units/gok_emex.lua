@@ -16,6 +16,7 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "100 125 100",
+
 		collisionvolumetype = "CylY",
 		description = "Tech Level 3 (Amphibious)",
 		energyuse = 300,
@@ -35,7 +36,7 @@ return {
 		metalstorage = 100,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "gok/gok_emex.s3o",
+		objectname = "gok_emex",
 		onoffable = true,
 		radaremitheight = 35,
 		seismicsignature = 0,

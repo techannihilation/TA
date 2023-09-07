@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Heavy Engineer Vehicle",
 		noautofire = false,
-		objectname = "tll/tllhtcb.s3o",
+		objectname = "TLLHTCB",
 		radaremitheight = 25,
 		reclaimspeed = 125,
 		repairspeed = 125,
@@ -81,7 +81,6 @@ return {
 		customparams = {
 			buildpic = "tllhtcb.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +91,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 655,
-				object = "tll/tllhtcb_dead",
+				object = "tllhtcb_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Valiant",
 		noautofire = false,
-		objectname = "core/corvaliant.s3o",
+		objectname = "corvaliant",
 		pitchscale = 0.5,
 		radardistance = 0,
 		reclaimable = true,
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "corvaliant.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				description = "Hope Wreckage",
 				footprintx = 8,
 				footprintz = 8,
-				object = "core/corvaliant_dead",
+				object = "corvaliant_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

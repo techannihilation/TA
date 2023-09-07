@@ -1026,6 +1026,7 @@ return {
           alwaysvisible      = true,
           color              = [[0.8,0.1,0.8]],
           dir                = [[-2 r2, -2 r2, -2 r2]],
+          length             = 1.0,
           lengthgrowth       = 1.0,
           length             = 0.0001,
           width              = 10,

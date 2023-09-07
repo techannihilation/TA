@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Shielded Construction Kbot",
 		noautofire = false,
-		objectname = "core/corcrab.s3o",
+		objectname = "corcrab",
 		radaremitheight = 50,
 		reclaimspeed = 810,
 		repairspeed = 810,
@@ -80,7 +80,6 @@ return {
 			shield_emit_height = 41.25,
 			shield_power = 2500,
 			shield_radius = 180,
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -94,7 +93,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8081,
-				object = "core/corcrab_dead",
+				object = "corcrab_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -107,7 +106,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 6043,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

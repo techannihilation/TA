@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Imperator",
 		noautofire = false,
-		objectname = "talon/talon_imperator.s3o",
+		objectname = "talon_imperator",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 600,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "talon_imperator.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5700,
-				object = "talon/talon_imperator_dead",
+				object = "talon_imperator_dead",
 				reclaimable = true,
 			},
 			heap = {

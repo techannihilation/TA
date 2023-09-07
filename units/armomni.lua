@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "arm/armomni.s3o",
+		objectname = "armomni",
 		onoffable = true,
 		radardistancejam = 2000,
 		radaremitheight = 50,
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "armomni.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5844,
-				object = "arm/armomni_dead",
+				object = "armomni_dead",
 				reclaimable = true,
 			},
 			heap = {

@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Bladewing",
 		noautofire = false,
-		objectname = "core/corbladew.s3o",
+		objectname = "corbladew",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 364,

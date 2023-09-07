@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
-		objectname = "arm/armfhp.s3o",
+		objectname = "ARMFHP",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
@@ -58,13 +58,13 @@ return {
 		customparams = {
 			buildpic = "armfhp.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = false,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "116 20 104",
+				
 				collisionvolumetype = "Box",
 				damage = 2730,
 				description = "Floating Hovercraft Platform Wreckage",
@@ -72,7 +72,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 825,
-				object = "arm/armfhp_dead",
+				object = "ARMFHP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -54,7 +54,7 @@ return {
 		name = "Supreme Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		objectname = "gok/gok_com3.s3o",
+		objectname = "gok_com3",
 		radardistance = 1500,
 		radaremitheight = 41,
 		reclaimable = false,
@@ -118,7 +118,7 @@ return {
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 3000,
 			shield_radius = 200,
-			normaltex = "unittextures/gok_normals.dds",
+
 		},
 		featuredefs = {
 			dead = {
@@ -137,7 +137,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 24000,
-				object = "arm/armcom_dead",
+				object = "ARMCOM_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -154,7 +154,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 12000,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

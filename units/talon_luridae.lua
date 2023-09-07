@@ -32,7 +32,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Luridae",
 		noautofire = false,
-		objectname = "talon/talon_luridae.s3o",
+		objectname = "talon_luridae",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 330,
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "talon_luridae.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 356,
-				object = "talon/talon_luridae_dead",
+				object = "talon_luridae_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

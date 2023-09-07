@@ -35,7 +35,7 @@ return {
 		movementclass = "TKBOT4",
 		name = "Oust",
 		noautofire = false,
-		objectname = "core/corshieldgen.s3o",
+		objectname = "corshieldgen.3do",
 		radaremitheight = 59,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,7 +52,6 @@ return {
 			faction = "CORE",
 			shield_power = 3000,
 			shield_radius = 250,
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1896,
-				object = "core/corshieldgen_dead",
+				object = "corshieldgen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1011,
-				object = "2x2e",
+				object = "2X2E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

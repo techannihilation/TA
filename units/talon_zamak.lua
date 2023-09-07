@@ -38,7 +38,8 @@ return {
 		movementclass = "DBOAT6",
 		name = "Zamak",
 		noautofire = false,
-		objectname = "talon/talon_zamak.s3o",
+
+		objectname = "talon_zamak",
 		sonardistance = 600,
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
@@ -54,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_zamak.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 3100,
-				object = "talon/talon_zamak_dead",
+				object = "talon_zamak_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -163,7 +163,7 @@ return {
 				flighttime = 2.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,
@@ -185,6 +185,7 @@ return {
 					subs = 280,
 				},
 			},
+
 		},
 		weapons = {
 			[1] = {

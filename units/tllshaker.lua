@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Earth Shaker",
 		noautofire = false,
-		objectname = "tll/tllshaker.s3o",
+		objectname = "TLLSHAKER",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,7 +60,6 @@ return {
 			buildpic = "tllshaker.dds",
 			canareaattack = 1,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 183,
-				object = "tll/tllshaker_dead",
+				object = "TLLSHAKER_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -29,7 +29,7 @@ return {
 		name = "Floating Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "tll/tllfgate.s3o",
+		objectname = "tllfgate",
 		radaremitheight = 38,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",

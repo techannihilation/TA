@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Collector",
 		noautofire = false,
-		objectname = "gok/gok_advsolar.s3o",
+		objectname = "gok_advsolar",
 		radaremitheight = 49,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -43,13 +43,13 @@ return {
 		customparams = {
 			buildpic = "gok_advsolar.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -27 -1",
 				collisionvolumescales = "60 112 58",
+				
 				collisionvolumetype = "Ell",
 				damage = 1267,
 				description = "Advanced Solar Collector Wreckage",
@@ -58,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 235,
-				object = "gok/gok_advsolar_dead",
+				object = "gok_advsolar_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 125,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

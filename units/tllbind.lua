@@ -33,7 +33,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Binder",
 		noautofire = false,
-		objectname = "tll/tllbind.s3o",
+		objectname = "TLLBind",
 		radaremitheight = 34,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 450,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "tllbind.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2212,
-				object = "tll/tllbind_dead",
+				object = "tllbind_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

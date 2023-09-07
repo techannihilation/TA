@@ -25,7 +25,7 @@ return {
 		minwaterdepth = 17,
 		name = "Underwater Advanced Tidal Generator",
 		noautofire = false,		
-		objectname = "tll/tllatidal.s3o",
+		objectname = "tllatidal",
 		onoffable = false,
 		radardistance = 0,
 		radaremitheight = 42,
@@ -38,7 +38,6 @@ return {
 			buildpic = "tllatidal.dds",
 			energymultiplier = 2.5,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +48,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 159,
-				object = "tll/tllatidal_dead",
+				object = "tllatidal_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

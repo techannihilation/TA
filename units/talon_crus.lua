@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Palladium",
 		noautofire = false,
-		objectname = "talon/talon_crus.s3o",
+		objectname = "talon_crus",
 		radaremitheight = 40,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_crus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1372,
-				object = "talon/talon_crus_dead",
+				object = "talon_crus_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 732,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -137,7 +136,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nano Turret Level 5",
 		noautofire = false,
-		objectname = "arm/armnanotc4.s3o",
+		objectname = "armnanotc4",
 		radaremitheight = 44,
 		reclaimspeed = 3600,
 		repairspeed = 3600,

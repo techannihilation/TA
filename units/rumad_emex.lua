@@ -33,7 +33,7 @@ return {
 		metalstorage = 100,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "rumad/rumad_emex.s3o",
+		objectname = "rumad_emex",
 		onoffable = true,
 		radaremitheight = 35,
 		script = "rumad_emex.cob",

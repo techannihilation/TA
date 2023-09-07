@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Viper",
-		objectname = "talon/talon_mlv.s3o",
+		objectname = "talon_mlv",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -75,7 +75,6 @@ return {
 		customparams = {
 			buildpic = "talon_mlv.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -90,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "talon/talon_mlv_dead",
+				object = "talon_mlv_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -101,7 +100,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 22,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 			},
 		},

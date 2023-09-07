@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 25,
 		name = "Underwater Fusion Plant",
 		noautofire = false,
-		objectname = "gok/gok_uwfusion.s3o",
+		objectname = "gok_uwfusion",
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "MINE_NUKE",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "gok_uwfusion.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3277,
-				object = "gok/gok_uwfusion_dead",
+				object = "gok_uwfusion_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1748,
-				object = "5x5c",
+				object = "5X5C",
 				reclaimable = true,
 			},
 		},

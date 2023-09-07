@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Mobile All-Terrain Anti-Nuke",
-		objectname = "tll/tllturtle.s3o",
+		objectname = "tllturtle",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "tllturtle.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1687,
-				object = "tll/tllturtle_dead",
+				object = "tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +126,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 150,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Heavy Experimental Fusion Reactor",
 		noautofire = false,
-		objectname = "talon/talon_efus.s3o",
+		objectname = "talon_efus",
 		onoffable = false,
 		radaremitheight = 128,
 		seismicsignature = 0,
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "talon_efus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 7455,
-				object = "talon/talon_efus_dead",
+				object = "talon_efus_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +78,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3976,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

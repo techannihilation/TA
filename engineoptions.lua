@@ -31,6 +31,7 @@ local options = {
    {
        key="ta_others",
        name="Tech Annihilation - Other Settings",
+       name="Tech Annihilation - Other Settings",
        type="section",
     },
   {

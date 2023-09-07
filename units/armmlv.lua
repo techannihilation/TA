@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Podger",
-		objectname = "arm/armmlv.s3o",
+		objectname = "ARMMLV",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -78,7 +78,6 @@ return {
 		customparams = {
 			buildpic = "armmlv.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -93,7 +92,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "arm/armmlv_dead",
+				object = "ARMMLV_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -107,7 +106,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 22,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

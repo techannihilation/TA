@@ -32,7 +32,7 @@ return {
 		mincloakdistance = 25,
 		name = "Cloakable Dragon's Cut",
 		noautofire = false,
-		objectname = "gok/gok_claw.s3o",
+		objectname = "gok_claw",
 		radaremitheight = 44,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "gok_claw.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				hitdensity = 100,
 				metal = 205,
 				nodrawundergray = true,
-				object = "gok/gok_drag",
+				object = "GOK_DRAG",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -79,6 +78,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
+
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,
@@ -86,7 +86,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 2,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

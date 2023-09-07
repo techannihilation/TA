@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Solar Generator",
 		noautofire = false,
-		objectname = "tll/tlladvsolar.s3o",
+		objectname = "Tlladvsolar",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 44,
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "tlladvsolar.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 315,
-				object = "tll/tlladvsolar_dead",
+				object = "tlladvsolar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

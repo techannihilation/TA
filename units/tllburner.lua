@@ -35,7 +35,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Burner",
 		noautofire = false,
-		objectname = "tll/tllburner.s3o",
+		objectname = "TLLBURNER",
 		radaremitheight = 29,
 		selfdestructas = "CORPYRO_BLAST",
 		sightdistance = 289,
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "tllburner.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 300,
-				object = "tll/tllburner_dead",
+				object = "tllburner_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

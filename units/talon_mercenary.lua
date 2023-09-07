@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Mercenary",
 		noautofire = false,
-		objectname = "talon/talon_mercenary.s3o",
+		objectname = "talon_mercenary",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_mercenary.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 37,
-				object = "talon/talon_mercenary_dead",
+				object = "talon_mercenary_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 20,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 			},
 		},
@@ -153,6 +152,7 @@ return {
 					default = 45,
 					subs = 5,
 				},
+
 			},
 		},
 		weapons = {

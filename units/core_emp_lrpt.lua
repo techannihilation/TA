@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 33,
 		name = "Intimidator Paralizer",
 		noautofire = false,
-		objectname = "core/core_emp_lrpt.s3o",
+		objectname = "core_emp_lrpt",
 		radardistance = 0,
 		radaremitheight = 67,
 		selfdestructas = "CRAWL_BLAST",
@@ -41,7 +41,6 @@ return {
 			buildpic = "core_emp_lrpt.dds",
 			canareaattack = 1,
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corint_dead = {
@@ -53,7 +52,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3750,
-				object = "core/corint_dead",
+				object = "CORINT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2000,
-				object = "3x3c",
+				object = "3X3C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

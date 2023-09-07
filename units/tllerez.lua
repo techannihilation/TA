@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Raise Air",
 		noautofire = false,
-		objectname = "tll/tllerez.s3o",
+		objectname = "tllerez",
 		radardistance = 50,
 		radaremitheight = 26,
 		resurrect = 1,

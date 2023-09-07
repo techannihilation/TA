@@ -33,7 +33,8 @@ return {
 		--metalstorage = 500,
 		name = "Heavy Elemental Reactor",
 		noautofire = false,
-		objectname = "tll/tllcoldfus.s3o",
+		
+		objectname = "TLLCOLDFUS",
 		radaremitheight = 71,
 		selfdestructas = "FUSION_BLAST",
 		sightdistance = 210,
@@ -43,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "tllcoldfus.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +54,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 9937,
-				object = "tll/tllcoldfus_dead",
+				object = "tllcoldfus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

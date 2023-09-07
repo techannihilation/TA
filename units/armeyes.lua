@@ -33,7 +33,7 @@ return {
 		mincloakdistance = 36,
 		name = "Dragon's Eye",
 		noautofire = false,
-		objectname = "arm/armeyes.s3o",
+		objectname = "ARMEYES",
 		onoffable = false,
 		radaremitheight = 27,
 		seismicsignature = 0,
@@ -49,7 +49,6 @@ return {
 			buildpic = "armeyes.dds",
 			faction = "ARM",
 			initcloaked = true,
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dragonseyes_dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 24,
-				object = "1x1b",
+				object = "1X1B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

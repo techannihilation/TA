@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		objectname = "arm/armshltx.s3o",
+		objectname = "ARMSHLTX",
 		radaremitheight = 47,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -68,7 +68,6 @@ return {
 		customparams = {
 			buildpic = "armshltx.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armshlt_dead = {
@@ -84,7 +83,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 12862,
-				object = "arm/armshlt_dead",
+				object = "ARMSHLT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -98,7 +97,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 6860,
-				object = "7x7b",
+				object = "7X7B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

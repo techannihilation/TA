@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Spectre",
 		noautofire = false,
-		objectname = "core/corspec.s3o",
+		objectname = "CORSPEC",
 		onoffable = true,
 		radardistance = 0,
 		radardistancejam = 450,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "corspec.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 56,
-				object = "core/corspec_dead",
+				object = "CORSPEC_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 30,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

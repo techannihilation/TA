@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Decade",
 		noautofire = false,
-		objectname = "arm/armdecade.s3o",
+		objectname = "armdecade",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "armdecade.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 315,
-				object = "arm/armdecade_dead",
+				object = "armdecade_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

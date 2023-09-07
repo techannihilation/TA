@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Cobra",
 		noautofire = false,
-		objectname = "core/corsam.s3o",
+		objectname = "corsam",
 		radaremitheight = 38,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +53,6 @@ return {
 			buildpic = "corsam.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 236,
-				object = "core/corsam_dead",
+				object = "corsam_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 126,
-				object = "2x2c",
+				object = "2X2C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -140,7 +139,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,

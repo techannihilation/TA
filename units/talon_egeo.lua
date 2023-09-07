@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Safe Geothermal Powerplant",
 		noautofire = false,
-		objectname = "talon/talon_egeo.s3o",
+		objectname = "talon_egeo",
 		radaremitheight = 61,
 		selfdestructas = "CRAWL_BLAST",
 		script = "tllmohogeo.cob",
@@ -38,7 +38,6 @@ return {
 		customparams = {
 			buildpic = "talon_egeo.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			talon_mohogeo_heap = {

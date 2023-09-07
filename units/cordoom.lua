@@ -32,7 +32,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Doomsday Machine",
-		objectname = "core/cordoom.s3o",
+		objectname = "CORDOOM",
 		onoffable = true,
 		radardistance = 1200,
 		radaremitheight = 79,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "cordoom.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3656,
-				object = "core/cordoom_dead",
+				object = "CORDOOM_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1950,
-				object = "3x3e",
+				object = "3X3E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hookah",
 		noautofire = false,
-		objectname = "gok/gok_hookah.s3o",
+		objectname = "gok_hookah",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingfireorder = 2,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_hookah.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 143,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

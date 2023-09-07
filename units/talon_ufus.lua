@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Adv Ultimate Fusion Reactor",
 		noautofire = false,
-		objectname = "talon/talon_ufus.s3o",
+		objectname = "talon_ufus",
 		radaremitheight = 500,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_SUPERBLAST2",
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "talon_ufus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 109000,
-				object = "talon/talon_ufus_dead",
+				object = "talon_ufus_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +75,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 95000,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

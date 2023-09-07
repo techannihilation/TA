@@ -37,7 +37,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Riptide",
 		noautofire = false,
-		objectname = "core/core_riptide.s3o",
+		objectname = "core_riptide",
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 480,
@@ -54,7 +54,6 @@ return {
 			buildpic = "core_riptide.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corgol_heap = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1688,
-				object = "4x4c",
+				object = "4X4C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3165,
-				object = "core/core_riptide_dead",
+				object = "core_riptide_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -168,7 +167,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

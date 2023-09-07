@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Gaat Gun",
 		noautofire = false,
-		objectname = "core/corhlt.s3o",
+		objectname = "CORHLT",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corhlt.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 360,
-				object = "core/corhlt_dead",
+				object = "CORHLT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

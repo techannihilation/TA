@@ -17,6 +17,7 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "-5 -6 0",
 		collisionvolumescales = "75 60 158",
+		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -43,7 +44,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
-		objectname = "talon/talon_carry.s3o",
+		objectname = "talon_carry",
 		radardistance = 2500,
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -62,7 +63,6 @@ return {
 			isairbase = true,
 			buildpic = "talon_carry.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +77,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1237,
-				object = "talon/talon_carry_dead",
+				object = "talon_carry_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 660,
-				object = "6x6c",
+				object = "6X6C",
 				reclaimable = true,
 			},
 		},
@@ -146,7 +146,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

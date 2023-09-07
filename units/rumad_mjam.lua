@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Jammer",
 		noautofire = false,
-		objectname = "rumad/rumad_mjam.s3o",
+		objectname = "rumad_mjam",
 		onoffable = true,
 		radardistance = 0,
 		radardistancejam = 450,
@@ -60,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "rumad_mjam.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "rumad/rumad_mrad_dead",
+				object = "rumad_mrad_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

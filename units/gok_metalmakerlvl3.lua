@@ -26,7 +26,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T4 Metal Maker",
-		objectname = "gok/gok_metalmakerlvl3.s3o",
+		objectname = "gok_metalmakerlvl3",
 		script = "gok_makr.cob",
 		radardistance = 0,
 		radaremitheight = 53,
@@ -37,7 +37,6 @@ return {
 		customparams = {
 			buildpic = "gok_metalmakerlvl3.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {

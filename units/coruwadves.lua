@@ -33,7 +33,7 @@ return {
 		name = "T2 Energy Storage",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "core/coruwadves.s3o",
+		objectname = "CORUWADVES",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "coruwadves.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 552,
-				object = "core/coruwadves_dead",
+				object = "CORUWADVES_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 294,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,		
-		objectname = "core/corasp.s3o",
+		objectname = "CORASP",
 		onoffable = true,
 		radaremitheight = 39,
 		seismicsignature = 0,
@@ -53,13 +53,13 @@ return {
 			isairbase = true,
 			buildpic = "corasp.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "135 20 135",
+				
 				collisionvolumetype = "Box",
 				damage = 2197,
 				description = "Air Repair Pad Wreckage",
@@ -68,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 540,
-				object = "core/corasp_dead",
+				object = "CORASP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 288,
-				object = "4x4c",
+				object = "4X4C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

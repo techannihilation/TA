@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Stinger",
 		noautofire = false,
-		objectname = "core/corfrt.s3o",
+		objectname = "CORFRT",
 		radaremitheight = 47,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -48,7 +48,6 @@ return {
 			buildpic = "corfrt.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 57,
-				object = "core/corfrt_dead",
+				object = "CORFRT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -114,7 +113,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -137,6 +136,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+
 					air = 80,
 				},
 			},

@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Big Behemoth",
 		noautofire = false,
-		objectname = "core/corbhmth1.s3o",
+		objectname = "corbhmth1",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_BLAST",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "corbhmth1.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3753,
-				object = "core/corbhmth1_dead",
+				object = "corbhmth1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 12002,
-				object = "8x8a",
+				object = "8X8A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -46,7 +46,8 @@ return {
 		movementclass = "KBOT2",
 		name = "Gizmo",
 		noautofire = false,
-		objectname = "tll/tllgizmo.s3o",
+
+		objectname = "tllgizmo",
 		radaremitheight = 31,
 		seismicsignature = 2,
 		selfdestructas = "SMALL_UNIT",

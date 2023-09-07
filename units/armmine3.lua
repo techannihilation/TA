@@ -46,7 +46,7 @@ return {
 		mincloakdistance = 0,
 		name = "Mega",
 		noautofire = false,
-		objectname = "arm/armmine3.s3o",
+		objectname = "ARMMINE3",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

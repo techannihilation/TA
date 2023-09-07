@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK2",
 		name = "Sheatiped",
 		noautofire = false,
-		objectname = "gok/gok_earthstrike.s3o",
+		objectname = "gok_earthstrike",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "gok_earthstrike.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 210,
-				object = "gok/gok_earthstrike_dead",
+				object = "gok_earthstrike_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},
@@ -159,6 +158,7 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
+					
 					air = 100,
 				},
 			},

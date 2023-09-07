@@ -66,6 +66,7 @@ return {
 			buildpic = "portal.dds",
 		},
 		featuredefs = {
+
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {

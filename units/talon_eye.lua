@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Third Eye",
 		noautofire = false,
-		objectname = "talon/talon_eye.s3o",
+		objectname = "talon_eye",
 		radaremitheight = 137,
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 1200,
@@ -40,7 +40,6 @@ return {
 		customparams = {
 			buildpic = "talon_eye.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +50,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 120,
-				object = "talon/talon_eye_dead",
+				object = "talon_eye_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
-		objectname = "gok/gok_hpns.s3o",
+		objectname = "gok_hpns",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		script = "gok_hp.cob",
@@ -57,13 +57,13 @@ return {
 		customparams = {
 			buildpic = "gok_hpns.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "116 20 104",
+				
 				collisionvolumetype = "Box",
 				damage = 2730,
 				description = "Hovercraft Platform Wreckage",
@@ -72,7 +72,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 764,
-				--object = "gok/gok_hpns_dead",
+				--object = "gok_hpns_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -83,7 +83,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 407,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 			},
 		},

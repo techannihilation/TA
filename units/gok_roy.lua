@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Node",
 		noautofire = false,
-		objectname = "gok/gok_roy.s3o",
+		objectname = "gok_roy",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "gok_roy.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 583,
-				object = "gok/gok_roy_dead",
+				object = "gok_roy_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -82,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 318,
-				object = "5x5b",
+				object = "5X5B",
 				reclaimable = true,
 			},
 		},
@@ -164,7 +163,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

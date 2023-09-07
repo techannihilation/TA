@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Desert Cobra",
 		noautofire = false,
-		objectname = "rumad/rumad_pt.s3o",
+		objectname = "rumad_pt",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "rumad_pt.dds",
 			faction = "GOK",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 333,
-				object = "rumad/rumad_pt_dead",
+				object = "rumad_pt_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -71,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 178,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},

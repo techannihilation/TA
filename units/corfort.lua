@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		objectname = "core/corfort.s3o",
+		objectname = "CORFORT",
 		radaremitheight = 53,
 		script = "drag.lua",
 		unitname = "corfort",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "corfort.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			fortification_core = {
@@ -59,7 +58,7 @@ return {
 				hitdensity = 100,
 				metal = 45,
 				nodrawundergray = true,
-				object = "core/corfort",
+				object = "corfort",
 				reclaimable = true,
 				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
@@ -72,6 +71,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = true,
+
 				damage = 5000,
 				description = "Rubble",
 				footprintx = 2,
@@ -79,7 +79,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 6,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

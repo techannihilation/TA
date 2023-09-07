@@ -41,7 +41,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		objectname = "arm/armch.s3o",
+		objectname = "ARMCH",
 		radaremitheight = 22,
 		seismicsignature = 0,
 		reclaimspeed = 50,
@@ -111,7 +111,6 @@ return {
 		customparams = {
 			buildpic = "armch.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -126,7 +125,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 108,
-				object = "arm/armch_dead",
+				object = "ARMCH_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -140,7 +139,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 58,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

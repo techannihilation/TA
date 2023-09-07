@@ -27,7 +27,7 @@ return {
 		name = "Advanced Wind Trap",
 		noautofire = false,
 		noautofire = false,
-		objectname = "tll/tllwin1.s3o",
+		objectname = "tllwin1",
 		radardistance = 0,
 		radaremitheight = 57,
 		script = "tllwin.cob",
@@ -40,7 +40,6 @@ return {
 			buildpic = "tllwin1.dds",
 			energymultiplier = 4,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +50,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 97,
-				object = "tll/tlladvsolar_dead",
+				object = "tlladvsolar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

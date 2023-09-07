@@ -27,7 +27,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "gok/gok_silo.s3o",
+		objectname = "gok_silo",
 		radardistance = 0,
 		radaremitheight = 69,
 		selfdestructas = "CRAWL_BLAST",
@@ -38,7 +38,6 @@ return {
 		customparams = {
 			buildpic = "gok_silo.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -49,7 +48,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 8625,
-				object = "gok/gok_silo_dead",
+				object = "gok_silo_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -116,7 +115,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 2.9,
 				metalpershot = 1250,
-				model = "weapon_nuke_gok.s3o",
+				model = "weapon_nuke_gok",
 				name = "CoreNuclearMissile",
 				range = 72000,
 				reloadtime = 20,

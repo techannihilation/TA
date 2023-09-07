@@ -33,7 +33,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Harbinger",
 		noautofire = false,
-		objectname = "gok/gok_harbinger.s3o",
+		objectname = "gok_harbinger",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "gok_harbinger.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 356,
-				object = "gok/gok_harbinger_dead",
+				object = "gok_harbinger_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -125,7 +124,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_gok.s3o",
+				model = "weapon_missile_gok",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -145,6 +144,7 @@ return {
 				damage = {
 					areoship = 187.5,
 					default = 5,
+
 					air = 750,
 				},
 			},

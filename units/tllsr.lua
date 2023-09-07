@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "SoulRaiZer",
 		noautofire = false,
-		objectname = "tll/tllsr.s3o",
+		objectname = "TLLSR",
 		radaremitheight = 25,
 		resurrect = 1,
 		seismicsignature = 0,

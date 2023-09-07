@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "tll/tllomni.s3o",
+		objectname = "tllomni",
 		onoffable = true,
 		radardistancejam = 2000,
 		radaremitheight = 50,
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "tllomni.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +51,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5844,
-				object = "tll/tllomni_dead",
+				object = "tllomni_dead",
 				reclaimable = true,
 			},
 			heap = {

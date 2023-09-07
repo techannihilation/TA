@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Black Dawn",
 		noautofire = false,
-		objectname = "gok/gok_blackdawn.s3o",
+		objectname = "gok_blackdawn",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "gok_blackdawn.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 333,
-				object = "gok/gok_blackdawn_dead",
+				object = "gok_blackdawn_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 178,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},

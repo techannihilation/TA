@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Avatar",
 		noautofire = false,
-		objectname = "arm/arm_avatar.s3o",
+		objectname = "arm_avatar",
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "CRAWL_BLAST",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "arm_avatar.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3975,
-				object = "arm/arm_avatar_dead",
+				object = "arm_avatar_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

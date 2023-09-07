@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Kafka",
 		noautofire = false,
-		objectname = "gok/gok_kafka.s3o",
+		objectname = "gok_kafka",
 		radaremitheight = 40,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "gok_kafka.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1372,
-				object = "gok/gok_corvette_dead",
+				object = "gok_corvette_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 732,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

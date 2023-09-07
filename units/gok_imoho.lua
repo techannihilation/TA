@@ -34,7 +34,7 @@ return {
 		mincloakdistance = 60,
 		name = "Stealthy & Cloakable Metal Extractor",
 		noautofire = false,
-		objectname = "gok/gok_imoho.s3o",
+		objectname = "gok_imoho",
 		onoffable = true,
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -51,7 +51,6 @@ return {
 			buildpic = "gok_imoho.dds",
 			faction = "GOK",
 			initcloaked = true,
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 152,
-				object = "gok/gok_moho_dead",
+				object = "gok_moho_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 81,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Fusion Reactor",
 		noautofire = false,
-		objectname = "arm/aafus.s3o",
+		objectname = "AAFUS",
 		onoffable = false,
 		radaremitheight = 64,
 		seismicsignature = 0,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "aafus.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 7455,
-				object = "arm/aafus_dead",
+				object = "AAFUS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3976,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -39,7 +39,7 @@ return {
 		moverate1 = 8,
 		name = "Titan",
 		noautofire = false,
-		objectname = "core/cortitan.s3o",
+		objectname = "CORTITAN",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 455,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "cortitan.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 99,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -117,7 +116,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo.s3o",
+				model = "weapon_advtorpedo",
 				name = "TorpedoLauncher",
 				noselfdamage = true,
 				range = 550,

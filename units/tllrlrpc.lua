@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Barret",
 		noautofire = false,
-		objectname = "tll/tllrlrpc.s3o",
+		objectname = "tllrlrpc",
 		onoffable = true,
 		radaremitheight = 92,
 		selfdestructas = "BANTHA_BLAST",
@@ -47,7 +47,6 @@ return {
 			buildpic = "tllrlrpc.dds",
 			canareaattack = 1,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 26150,
-				object = "tll/tllrlrpc_dead",
+				object = "tllrlrpc_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK4",
 		name = "Rex",
 		noautofire = false,
-		objectname = "arm/armrex.s3o",
+		objectname = "armrex",
 		radaremitheight = 39,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "armrex.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4387,
-				object = "arm/armrex_dead",
+				object = "armrex_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

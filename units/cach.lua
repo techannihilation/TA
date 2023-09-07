@@ -39,7 +39,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Engineer Hover",
 		noautofire = false,
-		objectname = "core/cach.s3o",
+		objectname = "CACH",
 		radaremitheight = 25,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -93,7 +93,6 @@ return {
 		customparams = {
 			buildpic = "cach.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -103,7 +102,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1356,
-				object = "core/cach_dead",
+				object = "cach_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

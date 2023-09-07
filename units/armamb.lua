@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 70,
 		name = "Ambusher",
 		noautofire = false,
-		objectname = "arm/armamb.s3o",
+		objectname = "ARMAMB",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "armamb.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1867,
-				object = "arm/armamb_dead1",
+				object = "ARMAMB_DEAD1",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +84,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 996,
-				object = "arm/armamb_dead2",
+				object = "ARMAMB_DEAD2",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -99,7 +98,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 622,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

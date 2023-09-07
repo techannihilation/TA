@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK2",
 		name = "Gremlin",
 		noautofire = false,
-		objectname = "arm/armst.s3o",
+		objectname = "ARMST",
 		radaremitheight = 25,
 		seismicsignature = 2,
 		selfdestructas = "BIG_UNIT",
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "armst.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 169,
-				object = "arm/armst_dead",
+				object = "ARMST_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +90,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 90,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

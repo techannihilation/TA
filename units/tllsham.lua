@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Shaman",
 		noautofire = false,
-		objectname = "tll/tllsham.s3o",
+		objectname = "TLLSHAM",
 		radaremitheight = 30,
 		resurrect = 1,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "tllsham.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 96,
-				object = "tll/tllsham_dead",
+				object = "TLLSHAM_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

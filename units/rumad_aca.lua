@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "rumad/rumad_aca.s3o",
+		objectname = "rumad_aca",
 		reclaimspeed = 45,
 		repairspeed = 45,
 		radaremitheight = 7,
@@ -87,7 +87,6 @@ return {
 			buildpic = "rumad_aca.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -97,7 +96,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2x2z",
+				object = "2X2Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

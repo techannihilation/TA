@@ -40,7 +40,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Hovercraft",
 		noautofire = false,
-		objectname = "tll/tllchover.s3o",
+		objectname = "TLLCHOVER",
 		radaremitheight = 25,
 		reclaimspeed = 60,
 		repairspeed = 60,
@@ -111,7 +111,6 @@ return {
 		customparams = {
 			buildpic = "tllchover.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -122,7 +121,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 157,
-				object = "tll/tllchover_dead",
+				object = "tllchover_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

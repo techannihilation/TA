@@ -31,7 +31,8 @@ return {
 		minwaterdepth = 5,
 		name = "Floating Radar Tower",
 		noautofire = false,
-		objectname = "core/corfrad.s3o",
+		
+		objectname = "CORFRAD",
 		onoffable = true,
 		radardistance = 2100,
 		radaremitheight = 82,
@@ -48,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "corfrad.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 98,
-				object = "core/corfrad_dead",
+				object = "CORFRAD_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

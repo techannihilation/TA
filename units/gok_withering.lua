@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Withering",
 		noautofire = false,
-		objectname = "gok/gok_withering.s3o",
+		objectname = "gok_withering",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "gok_withering.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "gok/gok_withering_dead",
+				object = "gok_withering_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +133,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Rockets",
 				noselfdamage = true,
 				range = 475,

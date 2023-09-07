@@ -31,7 +31,7 @@ return {
 		metalstorage = 50,
 		name = "Armored Metal Extractor",
 		noautofire = false,
-		objectname = "talon/talon_amoho.s3o",
+		objectname = "talon_amoho",
 		onoffable = true,
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "talon_amoho.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 465,
-				object = "talon/talon_amoho_dead",
+				object = "talon_amoho_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 248,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 			},
 		},

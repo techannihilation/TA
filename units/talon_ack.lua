@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		objectname = "talon/talon_ack.s3o",
+		objectname = "talon_ack",
 		radardistance = 50,
 		radaremitheight = 25,
 		reclaimspeed = 80,
@@ -84,7 +84,6 @@ return {
 		customparams = {
 			buildpic = "talon_ack.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -95,7 +94,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1120,
-				object = "talon/talon_ack_dead",
+				object = "talon_ack_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -34,7 +34,8 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Loggerhead",
 		noautofire = false,
-		objectname = "tll/tllloggerhead.s3o",
+		
+		objectname = "tllloggerhead",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -50,7 +51,6 @@ return {
 			buildpic = "tllloggerhead.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 592,
-				object = "tll/tllturtle_dead",
+				object = "tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -146,6 +146,7 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
+					
 					air = 225,
 				},
 			},

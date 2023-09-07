@@ -35,7 +35,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Mobile Plasma Deflector",
 		noautofire = false,
-		objectname = "rumad/rumad_gate.s3o",
+		objectname = "rumad_gate.3do",
 		radaremitheight = 60,
 		script = "rumad_gate.lua",
 		seismicsignature = 0,
@@ -53,7 +53,6 @@ return {
 			faction = "RUMAD",
 			shield_power = 6000,
 			shield_radius = 400,
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1896,
-				object = "rumad/rumad_gate_dead",
+				object = "rumad_gate_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +78,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1011,
-				object = "2x2e",
+				object = "2X2E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

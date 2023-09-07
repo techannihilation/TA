@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Condor",
-		objectname = "tll/tllcondor.s3o",
+		objectname = "tllcondor",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,
 		standingfireorder = 2,
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "tllcondor.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2213,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -113,7 +112,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 750,
@@ -152,7 +151,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missileaal.s3o",
+				model = "weapon_missileaal",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 1000,

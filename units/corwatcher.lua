@@ -36,7 +36,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "corwatcher",
 		noautofire = false,
-		objectname = "core/corwatcher.s3o",
+
+		objectname = "corwatcher",
 		onoffable = true,
 		radardistance = 1600,
 		radaremitheight = 22,
@@ -54,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "corwatcher.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 72,
-				object = "core/corwatcher_dead",
+				object = "corwatcher_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

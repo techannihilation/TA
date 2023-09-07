@@ -44,7 +44,8 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Spoiler",
-		objectname = "core/cormlv.s3o",
+
+		objectname = "CORMLV",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -78,7 +79,6 @@ return {
 		customparams = {
 			buildpic = "cormlv.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -93,7 +93,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 45,
-				object = "core/cormlv_dead",
+				object = "CORMLV_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -107,7 +107,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 24,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

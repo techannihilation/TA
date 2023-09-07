@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Blackdawn",
 		noautofire = false,
-		objectname = "core/corblackdawn.s3o",
+		objectname = "corblackdawn",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 480,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corblackdawn.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2992,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -114,7 +113,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Sabotrocket",
 				noselfdamage = true,
 				range = 650,

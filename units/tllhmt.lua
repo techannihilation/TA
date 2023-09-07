@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "H.M.T.",
 		noautofire = false,
-		objectname = "tll/tllhmt.s3o",
+		objectname = "TLLHMT",
 		radaremitheight = 37,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 350,
@@ -44,7 +44,6 @@ return {
 			buildpic = "tllhmt.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1479,
-				object = "tll/tllhmt_dead",
+				object = "tllhmt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 789,
-				object = "3x3a",
+				object = "3x3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -122,7 +121,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal.s3o",
+				model = "weapon_missileaal",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -144,6 +143,7 @@ return {
 				damage = {
 					areoship = 500,
 					default = 5,
+					
 					air = 2000,
 				},
 			},

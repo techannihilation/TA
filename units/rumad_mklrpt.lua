@@ -36,7 +36,7 @@ return {
 		movementclass = "TKBOT6",
 		name = "Halbear",
 		noautofire = false,
-		objectname = "rumad/rumad_mklrpt.s3o",
+		objectname = "rumad_mklrpt",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "rumad_mklrpt.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3637,
-				object = "rumad/rumad_mklrpt_dead",
+				object = "rumad_mklrpt_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1940,
-				object = "3x3c",
+				object = "3X3C",
 				reclaimable = true,
 			},
 		},

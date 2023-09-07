@@ -19,6 +19,7 @@ return {
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "34 31 54",
+		
 		collisionvolumetype = "ellipsoid",
 		cruisealt = 90,
 		description = "Tech Level 2",
@@ -42,7 +43,7 @@ return {
 		metalmake = 0.1,
 		metalstorage = 25,
 		name = "Engineer Air",
-		objectname = "core/cbuilderlvl1.s3o",
+		objectname = "CBuilderLvl1.s3o",
 		radaremitheight = 27,
 		reclaimspeed = 22.5,
 		repairspeed = 22.5,

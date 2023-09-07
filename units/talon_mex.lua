@@ -36,7 +36,7 @@ return {
 		metalstorage = 25,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "talon/talon_mex.s3o",
+		objectname = "talon_mex",
 		script = "talon_moho.cob",
 		onoffable = true,
 		radaremitheight = 25,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_mex.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 39,
-				object = "talon/talon_mex_dead",
+				object = "talon_mex_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 			},
 		},

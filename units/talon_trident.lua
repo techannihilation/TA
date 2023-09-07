@@ -41,7 +41,7 @@ return {
 		moverate1 = 8,
 		name = "trident",
 		noautofire = false,
-		objectname = "talon/talon_trident.s3o",
+		objectname = "talon_trident",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 455,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_trident.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 103,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -122,7 +121,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				flighttime = 2.0,
-				model = "weapon_advtorpedo.s3o",
+				model = "weapon_advtorpedo",
 				name = "TorpedoLauncher",
 				noselfdamage = true,
 				range = 550,

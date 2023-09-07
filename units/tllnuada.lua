@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nuada",
 		noautofire = false,
-		objectname = "tll/tllnuada.s3o",
+		objectname = "tllnuada",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllnuada.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3013,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

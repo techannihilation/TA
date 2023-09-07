@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Anti-Nuke",
-		objectname = "core/corfmd1.s3o",
+		objectname = "CORFMD1",
 		radardistance = 50,
 		radaremitheight = 35,
 		seismicsignature = 0,
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "corfmd1.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2486,
-				object = "core/corfmd_dead",
+				object = "CORFMD_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1326,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +128,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 300,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

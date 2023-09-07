@@ -30,7 +30,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "arm/armgate2.s3o",
+		objectname = "ARMGATE2",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -45,7 +45,6 @@ return {
 			faction = "ARM",
 			shield_power = 2500,
 			shield_radius = 300,
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armgate1_heap = {
@@ -56,7 +55,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 597,
-				object = "4x4d",
+				object = "4X4D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1119,
-				object = "arm/armgate2_dead",
+				object = "ARMGATE2_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

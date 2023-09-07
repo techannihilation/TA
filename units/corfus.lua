@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Fusion Reactor",
 		noautofire = false,
-		objectname = "core/corfus.s3o",
+		objectname = "CORFUS",
 		radaremitheight = 52,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST_CORE",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "corfus.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3562,
-				object = "core/corfus_dead",
+				object = "CORFUS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1900,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

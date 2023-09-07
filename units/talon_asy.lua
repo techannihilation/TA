@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
 		noautofire = false,
-		objectname = "talon/talon_asy.s3o",
+		objectname = "talon_asy",
 		radaremitheight = 70,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -62,13 +62,13 @@ return {
 		customparams = {
 			buildpic = "talon_asy.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
 				blocking = false,
 				collisionvolumeoffsets = "0 -9 -2",
 				collisionvolumescales = "180 60 176",
+				
 				collisionvolumetype = "Box",
 				damage = 3703,
 				description = "Advanced Shipyard Wreckage",
@@ -76,7 +76,7 @@ return {
 				footprintx = 12,
 				footprintz = 12,
 				metal = 3687,
-				object = "talon/talon_asy_dead",
+				object = "talon_asy_DEAD",
 				reclaimable = true,
 			},
 		},

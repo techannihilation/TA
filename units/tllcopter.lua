@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dark Crow",
 		noautofire = false,
-		objectname = "tll/tllcopter.s3o",
+		objectname = "tllcopter",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 350,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllcopter.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 253,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

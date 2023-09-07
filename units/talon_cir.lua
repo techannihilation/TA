@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flail",
 		noautofire = false,
-		objectname = "talon/talon_cir.s3o",
+		objectname = "talon_cir",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 300,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "talon_cir.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 624,
-				object = "talon/talon_cir_dead",
+				object = "talon_cir_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -77,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 332,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 			},
 		},
@@ -129,7 +128,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -4,
@@ -157,6 +156,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Slesh",
 		noautofire = false,
-		objectname = "gok/gok_slesh.s3o",
+		objectname = "gok_slesh",
 		radaremitheight = 48,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "gok_slesh.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "gok/gok_slesh_dead",
+				object = "gok_slesh_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 460,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "kbot2",
 		name = "Assassin",
 		noautofire = false,
-		objectname = "tll/tllsniper.s3o",
+		objectname = "TLLSNIPER",
 		radardistance = 0,
 		radaremitheight = 42,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllsniper.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 937,
-				object = "tll/tllsniper_dead",
+				object = "tllsniper_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

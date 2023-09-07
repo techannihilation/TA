@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Marky",
 		noautofire = false,
-		objectname = "arm/armmark.s3o",
+		objectname = "ARMMARK",
 		onoffable = true,
 		radardistance = 2200,
 		radaremitheight = 22,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "armmark.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 75,
-				object = "arm/armmark_dead",
+				object = "ARMMARK_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 40,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

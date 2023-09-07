@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
-		objectname = "talon/talon_ahpns.s3o",
+		objectname = "talon_ahpns",
 		radardistance = 50,
 		radaremitheight = 36,
 		selfdestructas = "LARGE_BUILDING",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "talon_ahpns.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3360,
-				object = "talon/talon_ahp_dead",
+				object = "talon_ahp_dead",
 				reclaimable = true,
 			},
 			heap = {

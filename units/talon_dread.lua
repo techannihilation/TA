@@ -39,7 +39,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Dread",
 		noautofire = false,
-		objectname = "talon/talon_dread.s3o",
+		objectname = "talon_dread",
 		pushresistant = true,
 		sonardistance = 750,
 		radardistance = 2000,
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "talon_dread.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 36000,
-				object = "talon/talon_dread_dead",
+				object = "talon_dread_dead",
 				reclaimable = true,
 			},
 		},
@@ -150,7 +149,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo.s3o",
+				model = "weapon_advtorpedo",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 850,
@@ -231,6 +230,7 @@ return {
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
+
 			},
 			[5] = {
 				badtargetcategory = "SURFACE",
@@ -239,6 +239,7 @@ return {
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
+
 		},
 	},
 }

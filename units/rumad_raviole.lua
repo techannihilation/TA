@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Raviole",
 		noautofire = false,
-		objectname = "rumad/rumad_raviole.s3o",
+		objectname = "rumad_raviole",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "rumad_raviole.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 111,
-				object = "rumad/rumad_raviole_dead",
+				object = "rumad_raviole_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 59,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -142,7 +141,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

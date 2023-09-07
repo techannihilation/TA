@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 0,
 		name = "Zergon",
 		noautofire = false,
-		objectname = "tll/tlltplane.s3o",
+		objectname = "TLLTplane",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		selfdestructas = "SMALL_UNIT_VTOL",

@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
 		noautofire = false,
-		objectname = "core/cordrag.s3o",
+		objectname = "CORDRAG",
 		script = "drag.lua",
 		unitname = "cordrag",
 		usebuildinggrounddecal = true,
@@ -40,7 +40,6 @@ return {
 		customparams = {
 			buildpic = "cordrag.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dragonsteeth_core = {
@@ -60,7 +59,7 @@ return {
 				hitdensity = 100,
 				metal = 12,
 				nodrawundergray = true,
-				object = "core/cordrag",
+				object = "cordrag",
 				reclaimable = true,
 				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
@@ -79,7 +78,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				customparams = {

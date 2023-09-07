@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shock",
 		noautofire = false,
-		objectname = "core/corshock.s3o",
+		objectname = "corshock",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "corshock.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 6213,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -138,6 +137,7 @@ return {
 				damage = {
 					areoship = 312.5,
 					default = 5,
+					
 					air = 1250,
 				},
 			},

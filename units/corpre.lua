@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Precipitator",
 		noautofire = false,
-		objectname = "core/corpre.s3o",
+		objectname = "CORPRE",
 		radaremitheight = 44,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 500,
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "corpre.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 7920,
-				object = "core/corpre_dead",
+				object = "corpre_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -138,6 +137,7 @@ return {
 				damage = {
 					areoship = 400,
 					default = 5,
+					
 					air = 2000,
 				},
 			},

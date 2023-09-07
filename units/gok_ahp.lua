@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "gok/gok_ahp.s3o",
+		objectname = "gok_ahp",
 		radardistance = 50,
 		radaremitheight = 36,
 		selfdestructas = "LARGE_BUILDING",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "gok_ahp.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3360,
-				object = "gok/gok_ahp_dead",
+				object = "gok_ahp_dead",
 				reclaimable = true,
 			},
 			heap = {

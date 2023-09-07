@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Aircraft Plant",
 		noautofire = false,
-		objectname = "rumad/rumad_eap.s3o",
+		objectname = "rumad_eap",
 		radaremitheight = 110,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "rumad_eap.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 15360,
-				object = "rumad/rumad_eap_dead",
+				object = "rumad_eap_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 8192,
-				object = "7x7b",
+				object = "7X7B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

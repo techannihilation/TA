@@ -16,6 +16,7 @@ return {
 		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 -4",
 		collisionvolumescales = "27 27 33",
+
 		collisionvolumetype = "CylZ",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Pelican",
 		noautofire = false,
-		objectname = "arm/armamph.s3o",
+		objectname = "ARMAMPH",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +56,6 @@ return {
 			buildpic = "armamph.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 195,
-				object = "arm/armamph_dead",
+				object = "ARMAMPH_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +84,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 104,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
@@ -162,6 +162,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

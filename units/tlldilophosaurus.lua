@@ -27,7 +27,7 @@ return {
 		maxvelocity = 1.75,
 		movementclass = "HOVER4",
 		name = "Dilophosaurus",
-		objectname = "tll/tlldilophosaurus.s3o",
+		objectname = "tlldilophosaurus",
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 390,
@@ -41,7 +41,6 @@ return {
 			buildpic = "tlldilophosaurus.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +55,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 6480,
-				object = "tll/tlldilophosaurus_dead",
+				object = "tlldilophosaurus_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +69,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3256,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -122,7 +121,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,
@@ -148,6 +147,7 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
+					
 					air = 100,
 				},
 			},
@@ -182,6 +182,7 @@ return {
 				damage = {
 				areoship = 62.5,
 				default = 5,
+				
 				air = 250,
 				},
 			},

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Energy Driller",
 		noautofire = false,
-		objectname = "arm/armgen.s3o",
+		objectname = "armgen",
 		radaremitheight = 32,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 250,
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "armgen.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +51,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1147,
-				object = "arm/armgen_dead",
+				object = "armgen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -35,7 +35,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		objectname = "talon/talon_solar.s3o",
+		
+		objectname = "talon_solar",
 		onoffable = true,
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -50,13 +51,13 @@ return {
 		customparams = {
 			buildpic = "talon_solar.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -18 1",
 				collisionvolumescales = "50 76 50",
+				
 				collisionvolumetype = "Ell",
 				damage = 492,
 				description = "Solar Collector Wreckage",
@@ -65,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 116,
-				object = "talon/talon_solar_dead",
+				object = "talon_solar_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -76,7 +77,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 62,
-				object = "5x5b",
+				object = "5X5B",
 				reclaimable = true,
 			},
 		},

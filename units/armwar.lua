@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Warrior",
 		noautofire = false,
-		objectname = "arm/armwar.s3o",
+		objectname = "ARMWAR",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armwar.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 198,
-				object = "arm/armwar_dead",
+				object = "ARMWAR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 106,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

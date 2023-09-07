@@ -37,7 +37,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "Shiva",
 		noautofire = false,
-		objectname = "core/corshiva.s3o",
+		objectname = "corshiva",
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corshiva.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2600,
-				object = "core/corshiva_dead",
+				object = "corshiva_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1386,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -166,7 +165,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -208,7 +207,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "Torpedo",
 				noselfdamage = true,
 				predictboost = 0,

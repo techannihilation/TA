@@ -37,7 +37,7 @@ return {
 		metalmake = 0.1,
 		metalstorage = 10,
 		name = "Engineer Air",
-		objectname = "gok/gok_engineera.s3o",
+		objectname = "gok_engineera",
 		reclaimspeed = 20,
 		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",

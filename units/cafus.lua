@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Fusion Reactor",
 		noautofire = false,		
-		objectname = "core/cafus.s3o",
+		objectname = "CAFUS",
 		onoffable = false,
 		radaremitheight = 86,
 		seismicsignature = 0,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "cafus.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 8137,
-				object = "core/cafus_dead",
+				object = "CAFUS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 4340,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

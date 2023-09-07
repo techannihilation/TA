@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Krogoth",
 		noautofire = false,
-		objectname = "core/corkrog.s3o",
+		objectname = "CORKROG",
 		radaremitheight = 147,
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
@@ -54,13 +54,13 @@ return {
 		customparams = {
 			buildpic = "corkrog.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -11 0",
 				collisionvolumescales = "96 88 134",
+
 				collisionvolumetype = "Ell",
 				damage = 57435,
 				description = "Krogoth Wreckage",
@@ -69,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 20400,
-				object = "core/corkrog_dead",
+				object = "CORKROG_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +83,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 10880,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -207,7 +207,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

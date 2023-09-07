@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Raise Air",
 		noautofire = false,
-		objectname = "core/corerez.s3o",
+		objectname = "corerez",
 		radardistance = 50,
 		radaremitheight = 26,
 		resurrect = 1,

@@ -41,7 +41,7 @@ return {
 		mincloakdistance = 0,
 		name = "Deployed Skuttle",
 		noautofire = false,
-		objectname = "core/cormine6.s3o",
+		objectname = "CORMINE6",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

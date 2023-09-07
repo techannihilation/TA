@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Cerberus",
 		noautofire = false,
-		objectname = "talon/talon_cerberus.s3o",
+		objectname = "talon_cerberus",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",
 		selfdestructcountdown = 10,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_cerberus.dds",
 			faction = "TLL",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 507200,
-				object = "talon/talon_cerberus_dead",
+				object = "talon_cerberus_dead",
 				reclaimable = true,
 			},
 			heap = {

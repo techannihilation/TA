@@ -36,7 +36,8 @@ return {
 		movementclass = "kbot2",
 		name = "Observer",
 		noautofire = false,
-		objectname = "tll/tllobserver.s3o",
+
+		objectname = "TLLOBSERVER",
 		onoffable = true,
 		radardistance = 1800,
 		radaremitheight = 30,
@@ -52,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllobserver.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 152,
-				object = "tll/tllobserver_dead",
+				object = "tllobserver_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

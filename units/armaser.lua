@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Eraser",
 		noautofire = false,
-		objectname = "arm/armaser.s3o",
+		objectname = "ARMASER",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 29,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "armaser.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 60,
-				object = "arm/armaser_dead",
+				object = "ARMASER_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 32,
-				object = "1x1a",
+				object = "1X1A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

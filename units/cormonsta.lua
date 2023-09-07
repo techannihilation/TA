@@ -37,7 +37,8 @@ return {
 		movementclass = "HTKBOT3",
 		name = "Defiler",
 		noautofire = false,
-		objectname = "core/cormonsta.s3o",
+
+		objectname = "CORMONSTA",
 		onoffable = true,
 		radaremitheight = 31,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -54,7 +55,6 @@ return {
 			faction = "CORE",
 			prioritytarget = "air",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 2062,
-				object = "core/cormonsta_dead",
+				object = "cormonsta_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -163,7 +163,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
@@ -191,6 +191,7 @@ return {
 				damage = {
 					areoship = 15,
 					default = 5,
+					
 					air = 60,
 				},
 			},

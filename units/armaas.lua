@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Archer",
 		noautofire = false,
-		objectname = "arm/armaas.s3o",
+		objectname = "ARMAAS",
 		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,6 @@ return {
 			buildpic = "armaas.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 678,
-				object = "arm/armaas_dead",
+				object = "ARMAAS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 362,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -137,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
 				range = 850,
@@ -165,6 +164,7 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
+					
 					air = 50,
 				},
 			},
@@ -199,6 +199,7 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
+					
 					air = 160,
 				},
 			},

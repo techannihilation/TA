@@ -13,6 +13,7 @@ return {
 		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "42 75 45",
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -30,7 +31,7 @@ return {
 		minwaterdepth = 2,
 		name = "Naval Serie Sprinkler",
 		noautofire = false,
-		objectname = "talon/talon_fsprinkler.s3o",
+		objectname = "talon_fsprinkler",
 		radaremitheight = 43,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -45,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "talon_fsprinkler.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 431,
-				object = "talon/talon_fsprinkler_dead",
+				object = "talon_fsprinkler_DEAD",
 				reclaimable = true,
 			},
 		},

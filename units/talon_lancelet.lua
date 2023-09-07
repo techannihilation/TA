@@ -16,6 +16,7 @@ return {
 		category = "ALL LARGE MOBILE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "54 54 132",
+		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -36,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Lancelet",
 		noautofire = false,
-		objectname = "talon/talon_lancelet.s3o",
+		objectname = "talon_lancelet",
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 650,
@@ -53,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "talon_lancelet.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2799,
-				object = "talon/talon_lancelet_dead",
+				object = "talon_lancelet_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -123,7 +123,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_exptorpedo.s3o",
+				model = "weapon_exptorpedo",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 1000,

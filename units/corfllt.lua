@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Floating Light Laser Tower",
 		noautofire = false,
-		objectname = "core/corfllt.s3o",
+		objectname = "corfllt",
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "corfllt.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 64,
-				object = "core/corfllt_dead",
+				object = "CORFLLT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +75,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 34,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

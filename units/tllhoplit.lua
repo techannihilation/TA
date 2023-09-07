@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Hoplit",
 		noautofire = false,
-		objectname = "tll/tllhoplit.s3o",
+		objectname = "TLLHOPLIT",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 740,
@@ -53,7 +53,6 @@ return {
 			buildpic = "tllhoplit.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 135,
-				object = "tll/tllhoplit_dead",
+				object = "tllhoplit_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +133,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
@@ -162,6 +161,7 @@ return {
 				damage = {
 					areoship = 22.5,
 					default = 5,
+					
 					air = 90,
 				},
 			},

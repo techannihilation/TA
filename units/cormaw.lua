@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Maw",
 		noautofire = false,
-		objectname = "core/cormaw.s3o",
+		objectname = "CORMAW",
 		radardistancejam = 8,
 		radaremitheight = 45,
 		seismicsignature = 0,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "cormaw.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +74,7 @@ return {
 				hitdensity = 100,
 				metal = 177.0132,
 				nodrawundergray = true,
-				object = "core/cordrag",
+				object = "CORDRAG",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -87,6 +86,7 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
+
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,
@@ -94,7 +94,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 2,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

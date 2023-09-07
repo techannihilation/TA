@@ -38,7 +38,8 @@ return {
 		moverate1 = 8,
 		name = "Sparrow",
 		noautofire = false,
-		objectname = "tll/tllfight.s3o",
+		
+		objectname = "tllfight",
 		radardistance = 0,
 		selfdestructas = "SMALL_UNI_VTOLT",
 		sightdistance = 500,
@@ -101,7 +102,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "tll/tllvtolmissile.s3o",
+				model = "tllvtolmissile",
 				name = "Guided Missiles",
 				noselfdamage = true,
 				range = 500,
@@ -123,6 +124,7 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
+					
 					air = 50,
 				},
 			},

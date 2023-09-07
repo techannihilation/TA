@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER12",
 		name = "Albertosaurus",
 		noautofire = false,
-		objectname = "tll/tllalbertosaurus.s3o",
+		objectname = "tllalbertosaurus",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "MKL_BLAST",
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "tllalbertosaurus.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 13875,
-				object = "tll/tllalbertosaurus_dead",
+				object = "tllalbertosaurus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -179,6 +178,7 @@ return {
 				damage = {
 				areoship = 62.5,
 				default = 5,
+				
 				air = 250,
 				},
 			},

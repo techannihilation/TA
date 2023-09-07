@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Violator",
 		noautofire = false,
-		objectname = "tll/tllviolator.s3o",
+		objectname = "TLLVIOLATOR",
 		radaremitheight = 35,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 520,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "tllviolator.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 903,
-				object = "tll/tllviolator_dead",
+				object = "tllviolator_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -164,7 +163,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

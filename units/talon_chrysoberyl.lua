@@ -44,7 +44,7 @@ return {
 		name = "Engineer Hover",
 		metalmake = 0.15,
 		noautofire = false,
-		objectname = "talon/talon_chrysoberyl.s3o",
+		objectname = "talon_chrysoberyl",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -96,7 +96,6 @@ return {
 		customparams = {
 			buildpic = "talon_chrysoberyl.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -106,7 +105,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "talon/talon_ch_dead",
+				object = "talon_ch_dead",
 				reclaimable = true,
 			},
 		},

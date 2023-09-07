@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Raise Air",
 		noautofire = false,
-		objectname = "talon/talon_erez.s3o",
+		objectname = "talon_erez",
 		radardistance = 50,
 		radaremitheight = 26,
 		resurrect = 1,

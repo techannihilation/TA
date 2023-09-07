@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Hawk",		
-		objectname = "arm/armhawk.s3o",
+		objectname = "ARMHAWK",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 560,
@@ -99,7 +99,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 540,
@@ -121,6 +121,7 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
+
 					air = 120,
 				},
 			},

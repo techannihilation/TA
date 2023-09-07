@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		objectname = "arm/armacv.s3o",
+		objectname = "ARMACV",
 		radaremitheight = 23,
 		reclaimspeed = 80,
 		repairspeed = 80,
@@ -88,7 +88,6 @@ return {
 		customparams = {
 			buildpic = "armacv.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -102,7 +101,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1343,
-				object = "arm/armacv_dead",
+				object = "ARMACV_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

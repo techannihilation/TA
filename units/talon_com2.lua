@@ -54,7 +54,7 @@ return {
 		name = "Star Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		objectname = "talon/talon_com2.s3o",
+		objectname = "talon_com2",
 		radardistance = 1250,
 		radaremitheight = 41,
 		reclaimable = false,
@@ -117,7 +117,7 @@ return {
 			shield_color1 = "{{0.05, 0.4, 1, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 5000,
 			shield_radius = 150,
-			normaltex = "unittextures/talon_normals.dds",
+
 		},
 		featuredefs = {
 			dead = {
@@ -136,7 +136,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 12000,
-				object = "arm/armcom_dead",
+				object = "ARMCOM_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -153,7 +153,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 6000,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

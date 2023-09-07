@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		objectname = "tll/tllradar.s3o",
+		objectname = "TLLRADAR",
 		onoffable = true,
 		radardistance = 2000,
 		radaremitheight = 35,
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "tllradar.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 60,
-				object = "tll/tllradar_dead",
+				object = "tllradar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

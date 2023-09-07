@@ -32,7 +32,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Hobo",
 		noautofire = false,
-		objectname = "arm/armhobo.s3o",
+		objectname = "armhobo",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -48,7 +48,6 @@ return {
 			buildpic = "armhobo.dds",
 			faction = "ARM",
 			--requiretech = "Advanced T1 Unit Research Centre",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 356,
-				object = "arm/armhobo_dead",
+				object = "armhobo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -35,7 +35,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Verifier",
 		noautofire = false,
-		objectname = "core/coreverifier.s3o",
+		objectname = "coreverifier",
 		onoffable = true,
 		radardistance = 2300,
 		radaremitheight = 36,
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "coreverifier.dds",
 			faction = "TLL",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 183,
-				object = "tll/tllturtle_dead",
+				object = "tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -39,7 +39,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Mirage",
 		noautofire = false,
-		objectname = "talon/talon_mirage.s3o",
+		
+		objectname = "talon_mirage",
 		onoffable = true,
 		radardistancejam = 500,
 		radaremitheight = 25,
@@ -56,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "talon_mirage.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 152,
-				object = "talon/talon_mirage_dead",
+				object = "talon_mirage_dead",
 				reclaimable = true,
 			},
 			heap = {

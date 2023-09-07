@@ -32,7 +32,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Targeting Facility",
 		noautofire = false,
-		objectname = "core/cortarg.s3o",
+		
+		objectname = "CORTARG",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -47,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "cortarg.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 599,
-				object = "core/cortarg_dead",
+				object = "CORTARG_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 319,
-				object = "4x4d",
+				object = "4X4D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

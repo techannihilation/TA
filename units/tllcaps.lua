@@ -39,7 +39,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "DesMINOR",
 		noautofire = false,
-		objectname = "tll/tllcaps.s3o",
+		objectname = "tllcaps",
 		radardistance = 2000,
 		radaremitheight = 84,
 		selfdestructas = "KROG_BLAST",
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "tllcaps.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 28100,
-				object = "tll/tllcaps_dead",
+				object = "tllcaps_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 14320,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 			},
 		},
@@ -219,6 +218,7 @@ return {
 				damage = {
 				areoship = 62.5,
 				default = 5,
+
 				air = 250,
 				},
 			},
@@ -233,7 +233,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "Heavy Rockets",
 				range = 1050,
 				reloadtime = 1,

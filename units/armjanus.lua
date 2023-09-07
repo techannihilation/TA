@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Janus",
 		noautofire = false,
-		objectname = "arm/armjanus.s3o",
+		objectname = "ARMJANUS",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "armjanus.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 216,
-				object = "arm/armjanus_dead",
+				object = "ARMJANUS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 115,
-				object = "2x2c",
+				object = "2X2C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +135,7 @@ return {
 				explosiongenerator = "custom:VEHROCKET_EXPLOSION",
 				firestarter = 70,
 				impulsefactor = 1,
-				model = "weapon_janusrocket.s3o",
+				model = "weapon_janusrocket",
 				name = "HeavyRocket",
 				noselfdamage = true,
 				range = 420,

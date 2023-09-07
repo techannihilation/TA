@@ -40,7 +40,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Shadow",
 		noautofire = false,
-		objectname = "gok/gok_mship.s3o",
+		objectname = "gok_mship",
 		onoffable = true,
 		radardistance = 2250,
 		radaremitheight = 30,
@@ -58,7 +58,6 @@ return {
 			buildpic = "gok_mship.dds",
 			faction = "GOK",
 			prioritytarget = "air",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1893,
-				object = "gok/gok_mship_dead",
+				object = "gok_mship_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1010,
-				object = "4x4b",
+				object = "4X4B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -140,7 +139,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_gok.s3o",
+				model = "weapon_missile_gok",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1500,
@@ -182,7 +181,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_aa_xl_gok.s3o",
+				model = "weapon_missile_aa_xl_gok",
 				name = "Missiles",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -208,6 +207,7 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
+					
 					air = 1500,
 				},
 			},

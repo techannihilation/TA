@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Topaz",
 		noautofire = false,
-		objectname = "rumad/rumad_dragster.s3o",
+		objectname = "rumad_dragster",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "rumad_dragster.dds",
 			faction = "TALON",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 23,
-				object = "rumad/rumad_dragster_dead",
+				object = "rumad_dragster_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 12,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 			},
 		},
@@ -127,7 +126,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

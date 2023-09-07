@@ -41,7 +41,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Construction Kbot",
 		noautofire = false,
-		objectname = "talon/talon_eck.s3o",
+		objectname = "talon_eck",
 		radaremitheight = 34,
 		reclaimspeed = 240,
 		repairspeed = 240,
@@ -82,7 +82,6 @@ return {
 		customparams = {
 			buildpic = "talon_eck.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -93,7 +92,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 217,
-				object = "talon/talon_eck_dead",
+				object = "talon_eck_dead",
 				reclaimable = true,
 			},
 		},

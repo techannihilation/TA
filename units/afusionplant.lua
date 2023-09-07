@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
 		noautofire = false,		
-		objectname = "arm/afusionplant.s3o",
+		objectname = "AFusionPlant",
 		radardistance = 0,
 		radaremitheight = 110,
 		seismicsignature = 0,
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "afusionplant.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 44775,
-				object = "arm/afusionplant_dead",
+				object = "AFusionPlant_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 23880,
-				object = "arm/afusionplant_heap",
+				object = "AFusionPlant_heap",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

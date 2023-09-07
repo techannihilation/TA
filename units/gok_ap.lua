@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "gok/gok_ap.s3o",
+		objectname = "gok_ap",
 		radardistance = 0,
 		radaremitheight = 66,
 		selfdestructas = "LARGE_BUILDING",
@@ -62,13 +62,13 @@ return {
 		customparams = {
 			buildpic = "gok_ap.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "11 -17 -23",
 				collisionvolumescales = "85 39 49",
+				
 				collisionvolumetype = "Box",
 				damage = 1897,
 				description = "Aircraft Plant Wreckage",
@@ -77,7 +77,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 680,
-				object = "gok/gok_ap_dead",
+				object = "gok_ap_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +88,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 362,
-				object = "6x6b",
+				object = "6X6B",
 				reclaimable = true,
 			},
 		},

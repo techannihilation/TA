@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Viking",
 		noautofire = false,
-		objectname = "tll/tllviking.s3o",
+		objectname = "TLLVIKING",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 600,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllviking.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5700,
-				object = "tll/tllviking_dead",
+				object = "tllviking_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

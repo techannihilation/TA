@@ -22,7 +22,7 @@ return {
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
 		noautofire = false,
-		objectname = "talon/talon_fdrag.s3o",
+		objectname = "talon_fdrag",
 		radaremitheight = 38,
 		script = "drag.lua",
 		unitname = "talon_fdrag",
@@ -31,12 +31,12 @@ return {
 		customparams = {
 			buildpic = "talon_fdrag.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			floatingteeth = {
 				autoreclaimable = 0,
 				blocking = true,
+				
 				crushResistance = 250,
 				damage = 2500,
 				description = "Shark's Teeth",
@@ -47,7 +47,7 @@ return {
 				hitdensity = 100,
 				metal = 16,
 				nodrawundergray = true,
-				object = "talon/talon_fdrag",
+				object = "talon_fdrag",
 				reclaimable = true,
 				world = "allworld",
 				customparams = {

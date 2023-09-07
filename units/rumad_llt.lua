@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Light Missile Tower",
 		noautofire = false,
-		objectname = "rumad/rumad_llt.s3o",
+		objectname = "rumad_llt",
 		radaremitheight = 65,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDINGEX",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "rumad_llt.dds",
 			faction = "ARM",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 64,
-				object = "rumad/rumad_llt_dead",
+				object = "rumad_llt_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +75,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 34,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -130,7 +129,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

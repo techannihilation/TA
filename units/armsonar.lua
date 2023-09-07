@@ -36,7 +36,7 @@ return {
 		minwaterdepth = 10,
 		name = "Sonar Station",
 		noautofire = false,
-		objectname = "arm/armsonar.s3o",
+		objectname = "ARMSONAR",
 		onoffable = true,
 		radaremitheight = 37,
 		seismicsignature = 0,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armsonar.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 15,
-				object = "arm/armsonar_dead",
+				object = "ARMSONAR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

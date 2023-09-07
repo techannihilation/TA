@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jellyfish",
 		noautofire = false,
-		objectname = "core/cordl.s3o",
+		objectname = "CORDL",
 		radaremitheight = 45,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "cordl.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 224,
-				object = "core/cordl_dead",
+				object = "CORDL_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 119,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +132,7 @@ return {
 				groundbounce = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				numbounce = 1,

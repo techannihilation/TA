@@ -42,7 +42,7 @@ return {
 		mincloakdistance = 0,
 		name = "Mine",
 		noautofire = false,
-		objectname = "rumad/rumad_mine1.s3o",
+		objectname = "rumad_mine1",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

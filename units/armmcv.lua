@@ -39,7 +39,7 @@ return {
 		movementclass = "HTANK5",
 		name = "Kronos",
 		noautofire = false,
-		objectname = "arm/armmcv.s3o",
+		objectname = "ARMMCV",
 		onoffable = true,
 		radaremitheight = 38,
 		selfdestructas = "BANTHA_BLAST",
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "armmcv.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 7200,
-				object = "arm/armmcv_dead",
+				object = "armmcv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -169,7 +168,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Enforcer",
 		noautofire = false,
-		objectname = "core/corroy.s3o",
+		objectname = "CORROY",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "corroy.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 817,
-				object = "core/corroy_dead",
+				object = "CORROY_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 436,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -172,7 +171,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

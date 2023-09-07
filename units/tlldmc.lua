@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "DMC",
 		noautofire = false,
-		objectname = "tll/tlldmc.s3o",
+		objectname = "tlldmc",
 		radardistance = 0,
 		radaremitheight = 75,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -41,7 +41,6 @@ return {
 			buildpic = "tlldmc.dds",
 			canareaattack = 1,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +52,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 27892,
-				object = "tll/tlldmc_dead",
+				object = "TLLDMC_DEAD",
 				reclaimable = false,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 14876,
-				object = "3x3e",
+				object = "3X3E",
 				reclaimable = false,
 				customparams = {
 					fromunit = 1,

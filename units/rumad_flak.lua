@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Crotale",
 		noautofire = false,
-		objectname = "rumad/rumad_flak.s3o",
+		objectname = "rumad_flak",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -49,7 +49,6 @@ return {
 			buildpic = "rumad_flak.dds",
 			faction = "RUMAD",
 			prioritytarget = "air",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 783,
-				object = "rumad/rumad_flak_dead",
+				object = "rumad_flak_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 418,
-				object = "2x2c",
+				object = "2X2C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

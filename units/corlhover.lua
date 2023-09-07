@@ -16,6 +16,7 @@ return {
 		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -3 3",
 		collisionvolumescales = "57.7 37.7 80.7",
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -40,7 +41,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Venom",
 		noautofire = false,
-		objectname = "core/corlhover.s3o",
+		objectname = "corlhover",
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "BIG_UNIT",
@@ -56,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "corlhover.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 862,
-				object = "core/corlhover_dead",
+				object = "corlhover_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

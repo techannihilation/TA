@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		objectname = "rumad/rumad_alab.s3o",
+		objectname = "rumad_alab",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -67,7 +67,6 @@ return {
 		customparams = {
 			buildpic = "rumad_alab.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -81,7 +80,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 2680,
-				object = "rumad/rumad_alab_dead",
+				object = "rumad_alab_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -94,7 +93,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1642,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Armadillo",
 		noautofire = false,
-		objectname = "talon/talon_armadillo.s3o",
+		objectname = "talon_armadillo",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "talon_armadillo.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 690,
-				object = "talon/talon_armadillo_dead",
+				object = "talon_armadillo_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -84,7 +83,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 368,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 			},
 		},
@@ -134,7 +133,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "talon/talon_rocket.s3o",
+				model = "talon_rocket",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1400,

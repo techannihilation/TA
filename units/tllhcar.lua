@@ -43,7 +43,7 @@ return {
 		name = "Aircraft Carrier",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "tll/tllhcar.s3o",
+		objectname = "tllhcar",
 		onoffable = true,
 		radardistance = 3500,
 		radaremitheight = 72,
@@ -62,7 +62,6 @@ return {
 			isairbase = true,
 			buildpic = "tllhcar.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 13125,
-				object = "tll/tllhcar_dead",
+				object = "tllhcar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +133,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
 				metalpershot = 2500,
-				model = "weapon_nuke_core.s3o",
+				model = "weapon_nuke_core",
 				name = "Operational Nuclear Missile",
 				range = 72000,
 				reloadtime = 20,
@@ -171,7 +170,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "Heavy Rockets",
 				range = 1050,
 				reloadtime = 1,

@@ -13,6 +13,7 @@ return {
 		canattack = false,
 		category = "ALL SURFACE",
 		collisionvolumescales = "150 150 150",
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Ultimate Jammer",
@@ -30,7 +31,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Talpax",
 		noautofire = false,
-		objectname = "core/corujam.s3o",
+		
+		objectname = "corujam",
 		onoffable = true,
 		radardistancejam = 6200,
 		radaremitheight = 180,
@@ -43,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "corujam.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 776,
-				object = "core/corujam_dead",
+				object = "corujam_dead",
 				reclaimable = true,
 			},
 			heap = {

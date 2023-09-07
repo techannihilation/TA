@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK4",
 		name = "Tankanotor",
 		noautofire = false,
-		objectname = "arm/armtankanotor.s3o",
+		objectname = "ARMTANKANOTOR",
 		radardistance = 0,
 		radaremitheight = 33,
 		selfdestructas = "BIG_UNIT",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armtankanotor.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2655,
-				object = "arm/armtankanotor_dead",
+				object = "armtankanotor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1416,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -131,7 +130,7 @@ return {
 				flighttime = 4,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_rocketm.s3o",
+				model = "weapon_rocketm",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1300,

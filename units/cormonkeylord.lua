@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Cybran Monkeylord",
 		noautofire = false,
-		objectname = "core/cormonkeylord.s3o",
+		objectname = "cormonkeylord",
 		radardistance = 0,
 		radaremitheight = 76,
 		seismicsignature = 0,
@@ -62,7 +62,6 @@ return {
 			shield_emit_height = 49.5,
 			shield_power = 2600,
 			shield_radius = 230,
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "core/cormonkeylord_dead",
+				object = "cormonkeylord_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +87,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7680,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Rapier",
 		noautofire = false,
-		objectname = "core/corape.s3o",
+		objectname = "CORAPE",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corape.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 122,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -115,7 +114,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "RiotRocket",
 				noselfdamage = true,
 				range = 410,

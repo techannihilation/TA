@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Amari",
 		noautofire = false,
-		objectname = "rumad/rumad_gunship_lvl3.s3o",
+		objectname = "rumad_gunship_lvl3",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 750,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "rumad_gunship_lvl3.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1580,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -114,7 +113,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad.s3o",
+				model = "weapon_missile_rumad",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

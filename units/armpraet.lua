@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Praetorian",
 		noautofire = false,
-		objectname = "arm/armpraet.s3o",
+		objectname = "ARMPRAET",
 		radardistance = 0,
 		radaremitheight = 100,
 		script = "armpraet.cob",
@@ -61,7 +61,6 @@ return {
 			shield_emit_height = 60.43,
 			shield_power = 5000,
 			shield_radius = 230,
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 9400,
-				object = "arm/armpraet_dead",
+				object = "armpraet_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5320,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -141,7 +140,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

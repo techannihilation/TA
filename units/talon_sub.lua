@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Kraken",
 		noautofire = false,
-		objectname = "talon/talon_sub.s3o",
+		objectname = "talon_sub",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_sub.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 520,
-				object = "talon/talon_sub_dead",
+				object = "talon_sub_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 277,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 			},
 		},
@@ -131,7 +130,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "Torpedo",
 				noselfdamage = true,
 				range = 500,

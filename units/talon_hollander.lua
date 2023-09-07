@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Hollander",
 		noautofire = false,
-		objectname = "talon/talon_hollander.s3o",
+		objectname = "talon_hollander",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "talon_hollander.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3637,
-				object = "talon/talon_hollander_dead",
+				object = "talon_hollander_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1940,
-				object = "3x3c",
+				object = "3X3C",
 				reclaimable = true,
 			},
 		},

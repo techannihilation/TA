@@ -36,7 +36,8 @@ return {
 		moverate1 = 8,
 		name = "Token",
 		noautofire = false,
-		objectname = "talon/talon_token.s3o",
+
+		objectname = "talon_token",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 500,
@@ -96,7 +97,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 500,
@@ -118,6 +119,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

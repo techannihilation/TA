@@ -33,7 +33,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "Matamata",
 		noautofire = false,
-		objectname = "tll/tllmatamata.s3o",
+		objectname = "tllmatamata",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "tllmatamata.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1987,
-				object = "tll/tllturtle_dead",
+				object = "tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

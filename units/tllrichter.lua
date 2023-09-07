@@ -27,7 +27,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Countermeasure System",
-		objectname = "tll/tllrichter.s3o",
+		objectname = "TLLRICHTER",
 		onoffable = true,
 		radaremitheight = 31,
 		script = "tllrichter.lua",
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "tllrichter.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +52,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 558,
-				object = "tll/tllrichter_dead",
+				object = "TLLRICHTER_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 298,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

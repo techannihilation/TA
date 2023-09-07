@@ -29,7 +29,7 @@ return {
 		name = "Trident",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tll/tlltrid.s3o",
+		objectname = "tlltrid",
 		radaremitheight = 42,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 380,
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "tlltrid.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3562,
-				object = "tll/tlltrid_dead",
+				object = "tlltrid_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

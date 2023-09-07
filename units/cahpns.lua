@@ -35,7 +35,7 @@ return {
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "core/cahpns.s3o",
+		objectname = "CAHPNS",
 		radaremitheight = 27,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "cahpns.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3712,
-				object = "core/cahpns_dead",
+				object = "Cahpns_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -43,7 +43,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Construction Gravitank",
 		noautofire = false,
-		objectname = "talon/talon_ach.s3o",
+		objectname = "talon_ach",
 		radaremitheight = 25,
 		reclaimspeed = 80,
 		repairspeed = 80,
@@ -94,7 +94,6 @@ return {
 		customparams = {
 			buildpic = "talon_ach.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -104,7 +103,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "talon/talon_ach_dead",
+				object = "talon_ach_dead",
 				reclaimable = true,
 			},
 		},

@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flail",
 		noautofire = false,
-		objectname = "gok/gok_cir.s3o",
+		objectname = "gok_cir",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
 		sightdistance = 300,
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "gok_cir.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 624,
-				object = "gok/gok_cir_dead",
+				object = "gok_cir_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 332,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 			},
 		},

@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Macross",
 		noautofire = false,
-		objectname = "rumad/rumad_macross.s3o",
+		objectname = "rumad_macross",
 		radaremitheight = 61,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -54,7 +54,6 @@ return {
 			buildpic = "rumad_macross.dds",
 			canjump = "1",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 8100,
-				object = "rumad/rumad_macross_dead",
+				object = "rumad_macross_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4320,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -168,7 +167,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad.s3o",
+				model = "weapon_missile_rumad",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,
@@ -204,7 +203,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad.s3o",
+				model = "weapon_missile_rumad",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

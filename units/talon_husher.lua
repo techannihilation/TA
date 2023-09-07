@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Husher",
 		noautofire = false,
-		objectname = "talon/talon_husher.s3o",
+		objectname = "talon_husher",
 		onoffable = true,
 		radardistancejam = 525,
 		radaremitheight = 29,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_husher.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 60,
-				object = "talon/talon_husher_dead",
+				object = "talon_husher_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -81,7 +80,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 32,
-				object = "1x1a",
+				object = "1X1A",
 				reclaimable = true,
 			},
 		},

@@ -33,7 +33,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Howie",
 		noautofire = false,
-		objectname = "rumad/rumad_howie.s3o",
+		objectname = "rumad_howie",
 		radaremitheight = 61,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 450,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "rumad_howie.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5655,
-				object = "rumad/rumad_howie_dead",
+				object = "rumad_howie_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3016,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -107,7 +106,7 @@ return {
 				firestarter = 80,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "weapon_rocketl_rumad.s3o",
+				model = "weapon_rocketl_rumad",
 				name = "Barrage missile",
 				proximitypriority = -1,
 				range = 2050,

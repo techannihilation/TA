@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Grape",
 		noautofire = false,
-		objectname = "arm/armgrape.s3o",
+		objectname = "armgrape",
 		radaremitheight = 50,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 475,
@@ -35,7 +35,6 @@ return {
 		yardmap = "oooo",
 		customparams = {
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -46,7 +45,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2650,
-				object = "arm/armgrape_dead",
+				object = "armgrape_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

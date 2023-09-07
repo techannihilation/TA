@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Messenger",
 		noautofire = false,
-		objectname = "core/cormship.s3o",
+		objectname = "CORMSHIP",
 		radardistance = 1400,
 		radaremitheight = 33,
 		seismicsignature = 0,
@@ -55,7 +55,6 @@ return {
 			buildpic = "cormship.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1837,
-				object = "core/cormship_dead",
+				object = "CORMSHIP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 980,
-				object = "6x6b",
+				object = "6X6B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
@@ -158,6 +157,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+
 					air = 80,
 				},
 			},
@@ -175,7 +175,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstl.s3o",
+				model = "weapon_starburstl",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 1550,

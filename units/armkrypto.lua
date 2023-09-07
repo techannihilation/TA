@@ -40,7 +40,7 @@ return {
 		movementclass = "HTANK5",
 		name = "Krypto-Blaster",
 		noautofire = false,
-		objectname = "arm/armkrypto.s3o",
+		objectname = "armkrypto",
 		onoffable = true,
 		radardistance = 1000,
 		radaremitheight = 70,
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "armkrypto.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21750,
-				object = "arm/armkrypto_dead",
+				object = "armkrypto_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

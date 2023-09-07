@@ -33,7 +33,7 @@ return {
 		metalstorage = 3000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		objectname = "core/cormstor.s3o",
+		objectname = "CORMSTOR",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "cormstor.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 255,
-				object = "core/cormstor_dead",
+				object = "CORMSTOR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +75,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 136,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -34,7 +34,8 @@ return {
 		minwaterdepth = 15,
 		name = "Underwater Moho Metal Maker",
 		noautofire = false,
-		objectname = "core/coruwmmm.s3o",
+
+		objectname = "CORUWMMM",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -48,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "coruwmmm.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1237,
-				object = "core/coruwmmm_dead",
+				object = "CORUWMMM_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +77,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 660,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

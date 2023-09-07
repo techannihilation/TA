@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		objectname = "gok/gok_rad.s3o",
+		objectname = "gok_rad",
 		onoffable = true,
 		radardistance = 2100,
 		radaremitheight = 65,
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "gok_rad.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "gok/gok_rad_dead",
+				object = "gok_rad_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 23,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},

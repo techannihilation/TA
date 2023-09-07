@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Tantrum",
 		noautofire = false,
-		objectname = "gok/gok_tantrum.s3o",
+		objectname = "gok_tantrum",
 		radardistance = 50,
 		radaremitheight = 23,
 		resurrect = 1,
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "gok_tantrum.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 81,
-				object = "gok/gok_tantrum_dead",
+				object = "gok_tantrum_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "2x2d",
+				object = "2X2D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

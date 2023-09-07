@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Rapid Long Range Plasma Cannon",
-		objectname = "talon/talon_veloute2.s3o",
+		objectname = "talon_veloute2",
 		radaremitheight = 136,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "talon_veloute2.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 21525,
-				object = "talon/talon_veloute_dead",
+				object = "talon_veloute_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 11480,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 			},
 		},

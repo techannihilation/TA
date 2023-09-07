@@ -27,7 +27,7 @@ return {
 		name = "Advanced Torpedo Launcher",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tll/tllatorp.s3o",
+		objectname = "TLLatorp",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 150,
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "tllatorp.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1057,
-				object = "tll/tllatorp_dead",
+				object = "tllatorp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -111,7 +110,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "weapon_torpedo_tll.s3o",
+				model = "weapon_torpedo_tll",
 				name = "Torpedo Launcher",
 				range = 900,
 				reloadtime = 4,

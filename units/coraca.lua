@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "core/coraca.s3o",
+		objectname = "CORACA",
 		reclaimspeed = 50,
 		repairspeed = 50,
 		seismicsignature = 0,
@@ -88,6 +88,7 @@ return {
 			buildpic = "coraca.dds",
 			faction = "CORE",
 		},
+
 		nanocolor = {
 			[1] = 0.144,
 			[2] = 0.494,

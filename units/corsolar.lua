@@ -35,7 +35,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		objectname = "core/corsolar.s3o",
+		
+		objectname = "CORSOLAR",
 		onoffable = true,
 		radaremitheight = 27,
 		seismicsignature = 0,
@@ -50,13 +51,13 @@ return {
 		customparams = {
 			buildpic = "corsolar.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -9 0",
 				collisionvolumescales = "70 36 70",
+				
 				collisionvolumetype = "Ell",
 				damage = 508,
 				description = "Solar Collector Wreckage",
@@ -65,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 90,
-				object = "core/corsolar_dead",
+				object = "CORSOLAR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 48,
-				object = "5x5c",
+				object = "5X5C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

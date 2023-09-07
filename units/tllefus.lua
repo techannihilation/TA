@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Dark Matter",
 		noautofire = false,
-		objectname = "tll/tllefus.s3o",
+		objectname = "tllefus",
 		radardistance = 0,
 		radaremitheight = 160,
 		selfdestructas = "FUSION_SUPERBLAST",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "tllefus.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +55,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 66750,
-				object = "tll/tllefus_dead",
+				object = "tllefus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

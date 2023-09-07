@@ -43,7 +43,7 @@ return {
 		mintransportmass = 4000,
 		mobilestandorders = 1,
 		name = "Lift",
-		objectname = "arm/armlift.s3o",
+		objectname = "armlift",
 		radaremitheight = 30,
 		releaseheld = true,
 		selfdestructas = "BANTHA_BLAST",
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "armlift.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 12212,
-				object = "7x7z",
+				object = "7X7Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -124,7 +123,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 875,
@@ -149,6 +148,7 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
+					
 					air = 120,
 				},
 			},

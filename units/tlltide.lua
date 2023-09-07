@@ -28,7 +28,7 @@ return {
 		name = "Tidal Generator",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tll/tlltide.s3o",
+		objectname = "tllTIDE",
 		onoffable = false,
 		radaremitheight = 38,
 		selfdestructas = "SMALL_BUILDING",
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "tlltide.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +51,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 75,
-				object = "tll/tlltide_dead",
+				object = "tlltide_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

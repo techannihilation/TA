@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Vehicle/Gravity Plant",
 		noautofire = false,
-		objectname = "talon/talon_evp.s3o",
+		objectname = "talon_evp",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -61,7 +61,6 @@ return {
 		customparams = {
 			buildpic = "talon_evp.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 12000,
-				object = "talon/talon_evp_dead",
+				object = "talon_evp_dead",
 				reclaimable = true,
 			},
 			heap = {

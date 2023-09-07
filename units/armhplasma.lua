@@ -35,7 +35,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Mamba",
 		noautofire = false,
-		objectname = "arm/armhplasma.s3o",
+		
+		objectname = "ARMHPLASMA",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -51,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armhplasma.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 742,
-				object = "arm/armhplasma_dead",
+				object = "armhplasma_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

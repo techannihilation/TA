@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Metal Maker",
 		noautofire = false,
-		objectname = "talon/talon_makr1.s3o",
+		objectname = "talon_makr1",
 		radaremitheight = 25,
 		script = "talon_makr.cob",
 		seismicsignature = 0,

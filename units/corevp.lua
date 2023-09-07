@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Vehicle Plant",
 		noautofire = false,
-		objectname = "core/corevp.s3o",
+		objectname = "COREVP",
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "LARGE_BUILDING",
@@ -63,7 +63,6 @@ return {
 		customparams = {
 			buildpic = "corevp.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 12337,
-				object = "core/corevp_dead",
+				object = "corevp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

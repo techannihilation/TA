@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT5",
 		name = "Raptor",
 		noautofire = false,
-		objectname = "arm/armraptor.s3o",
+		objectname = "ARMRAPTOR",
 		radardistance = 40,
 		radaremitheight = 131,
 		selfdestructas = "KROG_BLAST",
@@ -55,7 +55,6 @@ return {
 			buildpic = "armraptor.dds",
 			faction = "ARM",
 			--requiretech = "Advanced T4 Unit Research Centre",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 10875,
-				object = "arm/armraptor_dead",
+				object = "armraptor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -159,7 +158,7 @@ return {
 				flighttime = 4,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_rocketm.s3o",
+				model = "weapon_rocketm",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1250,

@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Supporter",
 		noautofire = false,
-		objectname = "core/coresupp.s3o",
+		objectname = "CORESUPP",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "coresupp.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 293,
-				object = "core/coresupp_dead",
+				object = "CORESUPP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

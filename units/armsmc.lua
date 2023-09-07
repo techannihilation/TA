@@ -41,7 +41,7 @@ return {
 		name = "Jammer Construction Kbot",
 		onoffable = true,
 		noautofire = false,
-		objectname = "arm/armsmc.s3o",
+		objectname = "armsmc",
 		radaremitheight = 34,
 		seismicsignature = 0,
 		radardistancejam = 450,
@@ -84,7 +84,6 @@ return {
 		customparams = {
 			buildpic = "armsmc.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -96,7 +95,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3217,
-				object = "arm/armsmc_dead",
+				object = "ARMSMC_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -110,7 +109,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2320,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

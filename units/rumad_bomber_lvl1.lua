@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Desert Thunder",
 		noautofire = true,
-		objectname = "rumad/rumad_bomber_lvl1.s3o",
+		objectname = "rumad_bomber_lvl1",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 195,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "rumad_bomber_lvl1.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 64,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +117,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb.s3o",
+				model = "weapon_bomb",
 				name = "Bombs",
 				noselfdamage = true,
 				range = 1200,

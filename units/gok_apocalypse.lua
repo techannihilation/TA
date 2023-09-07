@@ -48,7 +48,7 @@ return {
 		mobilestandorders = 1,
 		name = "Apocalypse",
 		noautofire = false,
-		objectname = "gok/gok_apocalypse.s3o",
+		objectname = "gok_apocalypse",
 		radardistance = 0,
 		radaremitheight = 25,
 		script = "gok_apocalypse.cob",
@@ -66,7 +66,6 @@ return {
 		customparams = {
 			buildpic = "gok_apocalypse.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 14,
 				footprintz = 8,
 				metal = 227250,
-				object = "gok/gok_apocalypse_dead",
+				object = "gok_apocalypse_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +131,7 @@ return {
 				firestarter = 0,
 				flighttime = 7,
 				impulseboost = 0,
-				model = "weapon_antinuke_gok.s3o",
+				model = "weapon_antinuke_gok",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				range = 2000,

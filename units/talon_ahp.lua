@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "talon/talon_ahp.s3o",
+		objectname = "talon_ahp",
 		radardistance = 50,
 		radaremitheight = 36,
 		selfdestructas = "LARGE_BUILDING",
@@ -61,7 +61,6 @@ return {
 		customparams = {
 			buildpic = "talon_ahp.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3360,
-				object = "talon/talon_ahp_dead",
+				object = "talon_ahp_dead",
 				reclaimable = true,
 			},
 			heap = {

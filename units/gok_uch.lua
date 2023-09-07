@@ -43,7 +43,7 @@ return {
 		movementclass = "TANKHOVER8",
 		name = "Construction Hover",
 		noautofire = false,
-		objectname = "gok/gok_uch.s3o",
+		objectname = "gok_uch",
 		radaremitheight = 25,
 		reclaimspeed = 240,
 		repairspeed = 240,
@@ -80,7 +80,6 @@ return {
 		customparams = {
 			buildpic = "gok_uch.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -90,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "gok/gok_uch_dead",
+				object = "gok_uch_dead",
 				reclaimable = true,
 			},
 		},

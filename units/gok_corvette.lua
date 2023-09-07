@@ -35,7 +35,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Shrinker",
 		noautofire = false,
-		objectname = "gok/gok_corvette.s3o",
+		objectname = "gok_corvette",
 		radaremitheight = 34,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 450,
@@ -51,7 +51,6 @@ return {
 			buildpic = "gok_corvette.dds",
 			faction = "GOK",
 			prioritytarget = "air",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 312,
-				object = "gok/gok_corvette_dead",
+				object = "gok_corvette_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -149,6 +148,7 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
+					
 					air = 160,
 				},
 			},
@@ -165,7 +165,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_gok.s3o",
+				model = "weapon_missile_gok",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -191,6 +191,7 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
+					
 					air = 500,
 				},
 			},

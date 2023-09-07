@@ -34,7 +34,7 @@ return {
 		name = "Detonator",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "arm/armemp.s3o",
+		objectname = "ARMEMP",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "EMP_EXPLOSION",
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "armemp.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1200,
-				object = "arm/armemp_dead",
+				object = "ARMEMP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 640,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +131,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 350,
-				model = "weapon_missile_emp.s3o",
+				model = "weapon_missile_emp",
 				name = "EMPMissile",
 				noselfdamage = true,
 				paralyzer = true,

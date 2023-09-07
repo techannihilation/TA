@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Thunder",
 		noautofire = true,
-		objectname = "arm/armthund.s3o",
+		objectname = "ARMTHUND",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 195,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "armthund.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 64,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +118,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb.s3o",
+				model = "weapon_bomb",
 				name = "Bombs",
 				noselfdamage = true,
 				range = 1280,

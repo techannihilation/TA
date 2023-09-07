@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Rainman",
 		noautofire = false,
-		objectname = "tll/tllpbot.s3o",
+		objectname = "TLLpbot",
 		radaremitheight = 40,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 360,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "tllpbot.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 153,
-				object = "tll/tllpbot_dead",
+				object = "tllpbot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

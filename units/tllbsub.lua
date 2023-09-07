@@ -36,7 +36,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Hammerhead",
 		noautofire = false,
-		objectname = "tll/tllbsub.s3o",
+		objectname = "tllbsub",
 		radaremitheight = 45,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 400,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllbsub.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2799,
-				object = "tll/tllbsub_dead",
+				object = "tllbsub_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -123,7 +122,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_exptorpedo.s3o",
+				model = "weapon_exptorpedo",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 1000,
@@ -158,7 +157,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 700,

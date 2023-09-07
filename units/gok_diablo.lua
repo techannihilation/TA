@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK8",
 		name = "Diablo",
 		noautofire = false,
-		objectname = "gok/gok_diablo.s3o",
+		objectname = "gok_diablo",
 		radaremitheight = 44,
 		selfdestructas = "KROG_BLAST",
 		sightdistance = 750,
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "gok_diablo.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -80,7 +79,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 14425,
-				object = "gok/gok_diablo_dead",
+				object = "gok_diablo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -164,7 +163,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -259,6 +258,7 @@ return {
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
+
 		},
 	},
 }

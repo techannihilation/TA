@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Hazardous Geothermal Powerplant",
 		noautofire = false,
-		objectname = "tll/tllmohogeo.s3o",
+		objectname = "TLLMOHOGEO",
 		onoffable = false,
 		radaremitheight = 61,
 		selfdestructas = "FUSION_BLAST",
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "tllmohogeo.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tllmohogeo_dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5107,
-				object = "tll/tllmex_dead",
+				object = "tllmex_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

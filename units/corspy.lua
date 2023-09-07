@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Parasite",
 		noautofire = false,
-		objectname = "core/corspy.s3o",
+		objectname = "CORSPY",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 2,
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "corspy.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 124,
-				object = "core/corspy_dead",
+				object = "CORSPY_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 66,
-				object = "1x1a",
+				object = "1X1A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

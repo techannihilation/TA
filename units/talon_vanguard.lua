@@ -40,7 +40,8 @@ return {
 		movementclass = "ATANK3",
 		name = "Vanguard",
 		noautofire = false,
-		objectname = "talon/talon_vanguard.s3o",
+
+		objectname = "talon_vanguard",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -62,7 +63,6 @@ return {
 		customparams = {
 			buildpic = "talon_vanguard.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 360,
-				object = "talon/talon_vanguard_dead",
+				object = "talon_vanguard_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},
@@ -172,7 +172,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,
@@ -203,11 +203,13 @@ return {
 			},
 		},
 		weapons = {
+
 			[2] = {
 				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "TALON_STARBURST",
 				onlytargetcategory = "VTOL",
 			},
+
 			[3] = {
 				badtargetcategory = "MINOR MAJOR", --Ground AA
 				def = "MOBILEFLAK",

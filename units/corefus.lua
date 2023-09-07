@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Heavy Experimental Fusion Reactor",
 		noautofire = false,
-		objectname = "core/corefus.s3o",
+		objectname = "corefus",
 		radaremitheight = 152,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_SUPERBLAST_CORE",
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "corefus.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 10425,
-				object = "core/corefus_dead",
+				object = "COREFUS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5560,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Trap",
 		noautofire = false,
-		objectname = "tll/tllwin.s3o",
+		objectname = "tllwin",
 		radardistance = 0,
 		radaremitheight = 38,
 		selfdestructas = "SMALL_BUILDING",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "tllwin.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 29,
-				object = "tll/tllwin_dead",
+				object = "tllwin_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

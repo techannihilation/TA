@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Orion",
 		noautofire = false,
-		objectname = "arm/armorion.s3o",
+		objectname = "ARMORION",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingfireorder = 2,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "armorion.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1492,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -122,7 +121,7 @@ return {
 				groundbounce = true,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				model = "weapon_advbomb.s3o",
+				model = "weapon_advbomb",
 				mygravity = 0.2,
 				name = "Heavy Bombs",
 				noselfdamage = true,

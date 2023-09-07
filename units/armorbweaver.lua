@@ -33,7 +33,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Orbweaver",
 		noautofire = false,
-		objectname = "arm/armorbweaver.s3o",
+		objectname = "armorbweaver",
 		onoffable = true,
 		radardistance = 0,
 		radardistancejam = 450,
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "armorbweaver.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 52,
-				object = "arm/armorbweaver_dead",
+				object = "armorbweaver_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

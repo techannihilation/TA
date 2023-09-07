@@ -35,7 +35,7 @@ return {
 		metalstorage = 100,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "talon/talon_emex.s3o",
+		objectname = "talon_emex",
 		onoffable = true,
 		radaremitheight = 35,
 		script = "talon_mas.cob",

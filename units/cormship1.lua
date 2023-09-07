@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Desecrator",
 		noautofire = false,
-		objectname = "core/cormship1.s3o",
+		objectname = "cormship1",
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 550,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "cormship1.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8400,
-				object = "core/cormship1_dead",
+				object = "cormship1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -147,7 +146,7 @@ return {
 				firestarter = 80,
 				flighttime = 5,
 				metalpershot = 0,
-				model = "weapon_rocketl.s3o",
+				model = "weapon_rocketl",
 				name = "Barrage missile",
 				proximitypriority = -1,
 				range = 2100,
@@ -196,7 +195,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				impactonly = 1,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "RapidSamMissile",
 				noselfdamage = true,
 				range = 600,
@@ -218,6 +217,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

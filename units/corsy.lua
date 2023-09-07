@@ -30,7 +30,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shipyard",
 		noautofire = false,
-		objectname = "core/corsy.s3o",
+		objectname = "CORSY",
 		radaremitheight = 71,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -57,13 +57,13 @@ return {
 		customparams = {
 			buildpic = "corsy.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = false,
 				collisionvolumeoffsets = "0 -10 -4",
 				collisionvolumescales = "116 56 120",
+				
 				collisionvolumetype = "Box",
 				damage = 2720,
 				description = "Shipyard Wreckage",
@@ -71,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 480,
-				object = "core/corsy_dead",
+				object = "CORSY_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

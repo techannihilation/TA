@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Wind Generator",
 		noautofire = false,
-		objectname = "arm/armawin.s3o",
+		objectname = "ARMAWIN",
 		radaremitheight = 136,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -43,7 +43,6 @@ return {
 			buildpic = "armawin.dds",
 			energymultiplier = 4,
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 93,
-				object = "arm/armawin_dead",
+				object = "ARMAWIN_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -69,7 +68,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 50,
-				object = "7x7b",
+				object = "7X7B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

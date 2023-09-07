@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "talon/talon_silo.s3o",
+		objectname = "talon_silo",
 		radardistance = 0,
 		radaremitheight = 69,
 		script = "talon_silo.cob",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "talon_silo.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 8625,
-				object = "talon/talon_silo_dead",
+				object = "talon_silo_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -122,7 +121,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
 				metalpershot = 2500,
-				model = "weapon_nuke.s3o",
+				model = "weapon_nuke",
 				name = "NuclearMissile",
 				range = 72000,
 				reloadtime = 2,

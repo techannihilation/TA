@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Perseus",
 		noautofire = false,
-		objectname = "arm/armpers.s3o",
+		objectname = "ARMPERS",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "armpers.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2192,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

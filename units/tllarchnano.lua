@@ -41,7 +41,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Engineer All-Terrain",
 		noautofire = false,
-		objectname = "tll/tllarchnano.s3o",
+		objectname = "TLLARCHNANO",
 		radaremitheight = 25,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -81,7 +81,6 @@ return {
 		customparams = {
 			buildpic = "tllarchnano.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +91,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "tll/tllarchnano_dead",
+				object = "TLLARCHNANO_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

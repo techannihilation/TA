@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Radar Tower",
 		noautofire = false,
-		objectname = "talon/talon_urad.s3o",
+		objectname = "talon_urad",
 		onoffable = true,
 		radardistance = 24000,
 		radaremitheight = 41,
@@ -37,7 +37,6 @@ return {
 		customparams = {
 			buildpic = "talon_urad.dds",
 		faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -48,7 +47,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 345,
-				object = "talon/talon_urad_dead",
+				object = "talon_urad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -61,7 +60,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 184,
-				--object = "talon/talon_urad_head",
+				--object = "talon_urad_head",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

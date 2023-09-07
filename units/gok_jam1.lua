@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "gok/gok_jam1.s3o",
+		objectname = "gok_jam1",
 		onoffable = true,
 		radardistancejam = 750,
 		radaremitheight = 74,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "gok_jam1.dds",
 			faction = "TALON",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 180,
-				object = "talon/talon_conspiracy_dead",
+				object = "talon_conspiracy_DEAD",
 				reclaimable = true,
 			},
 		},

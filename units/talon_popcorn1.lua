@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Hysteric",
 		noautofire = false,
-		objectname = "talon/talon_popcorn1.s3o",
+		objectname = "talon_popcorn1",
 		radaremitheight = 65,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 500,
@@ -42,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "talon_popcorn1.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +52,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 8400,
-				object = "talon/talon_popcorn1_dead",
+				object = "talon_popcorn1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -137,6 +136,7 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
+					
 					air = 1500,
 				},
 			},

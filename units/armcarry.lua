@@ -44,7 +44,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
-		objectname = "arm/armcarry.s3o",
+		objectname = "ARMCARRY",
 		radardistance = 2500,
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -63,7 +63,6 @@ return {
 			isairbase = true,
 			buildpic = "armcarry.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -78,7 +77,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1237,
-				object = "arm/armcarry_dead",
+				object = "ARMCARRY_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -92,7 +91,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 660,
-				object = "6x6c",
+				object = "6X6C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -153,7 +152,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

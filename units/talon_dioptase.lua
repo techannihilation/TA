@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Dioptase",
 		noautofire = false,
-		objectname = "talon/talon_dioptase.s3o",
+		objectname = "talon_dioptase",
 		radaremitheight = 25,
 		reclaimspeed = 50,
 		repairspeed = 50,
@@ -77,7 +77,6 @@ return {
 		customparams = {
 			buildpic = "talon_dioptase.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +91,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 206,
-				object = "talon/talon_dioptase",
+				object = "talon_dioptase",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -106,7 +105,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 110,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

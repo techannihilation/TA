@@ -36,7 +36,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Black Drac",
 		noautofire = false,
-		objectname = "gok/gok_bsub.s3o",
+		objectname = "gok_bsub",
 		radaremitheight = 45,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 400,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_bsub.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2799,
-				object = "gok/gok_bsub_dead",
+				object = "gok_bsub_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -123,7 +122,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_gok.s3o",
+				model = "weapon_torpedo_gok",
 				name = "Advanced Torpedo",
 				noselfdamage = true,
 				range = 700,
@@ -157,7 +156,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_adv_gok.s3o",
+				model = "weapon_torpedo_adv_gok",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 1000,

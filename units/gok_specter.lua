@@ -39,7 +39,7 @@ return {
 		moverate1 = 3,
 		name = "Specter",
 		noautofire = false,
-		objectname = "gok/gok_specter.s3o",
+		objectname = "gok_specter",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 520,

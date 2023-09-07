@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Mortar",
 		noautofire = false,
-		objectname = "rumad/rumad_mortor.s3o",
+		objectname = "rumad_mortor",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "rumad_mortor.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1117,
-				object = "rumad/rumad_mortor_dead",
+				object = "rumad_mortor_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 596,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

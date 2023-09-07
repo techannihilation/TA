@@ -17,6 +17,7 @@ return {
 		cloakcostmoving = 700,
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "53.1 73.1 53.1",
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -39,7 +40,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Protos",
 		noautofire = false,
-		objectname = "core/corprot.s3o",
+		objectname = "CORPROT",
 		radardistance = 0,
 		radaremitheight = 65,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "corprot.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1312,
-				object = "core/corprot_dead",
+				object = "corprot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 700,
-				object = "core/corprot_heap",
+				object = "corprot_heap",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

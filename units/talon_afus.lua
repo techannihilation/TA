@@ -39,7 +39,7 @@ return {
 		mincloakdistance = 100,
 		name = "Cloakable Advncanced Fusion Reactor",
 		noautofire = false,
-		objectname = "talon/talon_afus.s3o",
+		objectname = "talon_afus",
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_BLAST",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_afus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 2595,
-				object = "talon/talon_afus_dead",
+				object = "talon_afus_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 1384,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 			},
 		},

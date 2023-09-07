@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Air Plant",
 		noautofire = false,
-		objectname = "gok/gok_eap.s3o",
+		objectname = "gok_eap",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "gok_eap.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 12000,
-				object = "gok/gok_eap_dead",
+				object = "gok_eap_dead",
 				reclaimable = true,
 			},
 			heap = {

@@ -30,7 +30,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Countermeasure System",
-		objectname = "arm/armsd.s3o",
+		objectname = "ARMSD",
 		onoffable = true,
 		radaremitheight = 55,
 		script = "armsd.lua",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "armsd.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 528,
-				object = "arm/armsd_dead",
+				object = "ARMSD_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 282,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

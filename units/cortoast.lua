@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Toaster",
 		noautofire = false,
-		objectname = "core/cortoast.s3o",
+		objectname = "CORTOAST",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "cortoast.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1957,
-				object = "core/cortoast_dead",
+				object = "CORTOAST_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +84,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1044,
-				object = "core/cortoast_dead2",
+				object = "CORTOAST_DEAD2",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -99,7 +98,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 652,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Shark",
 		noautofire = false,
-		objectname = "core/corshark.s3o",
+		objectname = "CORSHARK",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "corshark.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 759,
-				object = "core/corshark_dead",
+				object = "CORSHARK_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 405,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +135,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 600,

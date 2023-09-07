@@ -40,7 +40,7 @@ return {
 		movementclass = "TANK3",
 		name = "Sheatiped",
 		noautofire = false,
-		objectname = "talon/talon_sheatiped.s3o",
+		objectname = "talon_sheatiped",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "talon_sheatiped.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 210,
-				object = "talon/talon_sheatiped_dead",
+				object = "talon_sheatiped_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},

@@ -41,7 +41,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Construction Ship",
 		noautofire = false,
-		objectname = "tll/tllecs.s3o",
+		objectname = "tllecs",
 		radardistance = 50,
 		radaremitheight = 22,
 		reclaimspeed = 390,
@@ -76,7 +76,6 @@ return {
 		customparams = {
 			buildpic = "tllecs.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -91,7 +90,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 7204,
-				object = "tll/tllecs_dead",
+				object = "tllecs_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -105,7 +104,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 4108,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -31,7 +31,8 @@ return {
 		minwaterdepth = 30,
 		name = "Floating Targeting Facility",
 		noautofire = false,
-		objectname = "core/corfatf.s3o",
+		
+		objectname = "CORFATF",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -46,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "corfatf.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 599,
-				object = "core/corfatf_dead",
+				object = "CORFATF_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +75,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 319,
-				object = "4x4d",
+				object = "4X4D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

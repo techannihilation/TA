@@ -38,7 +38,7 @@ return {
 		mincloakdistance = 100,
 		name = "Cloakable Fusion Reactor",
 		noautofire = false,
-		objectname = "arm/armfus.s3o",
+		objectname = "ARMFUS",
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armfus.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 2595,
-				object = "arm/armfus_dead",
+				object = "ARMFUS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1384,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

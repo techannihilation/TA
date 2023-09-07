@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Desert Eagle",
 		noautofire = false,
-		objectname = "rumad/rumad_ascout_lvl2.s3o",
+		objectname = "rumad_ascout_lvl2",
 		radardistance = 1600,
 		radaremitheight = 6,
 		script = "rumad_ascout_lvl1.cob",

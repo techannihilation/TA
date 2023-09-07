@@ -26,7 +26,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "talon/talon_conspiracy2.s3o",
+		
+		objectname = "talon_conspiracy2",
 		onoffable = true,
 		radardistancejam = 2000,
 		radaremitheight = 50,
@@ -37,7 +38,6 @@ return {
 		customparams = {
 			buildpic = "talon_conspiracy2.dds",
 			faction = "CORE",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -48,7 +48,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5844,
-				object = "talon/talon_conspiracy2_dead",
+				object = "talon_conspiracy2_dead",
 				reclaimable = true,
 			},
 			heap = {

@@ -34,7 +34,7 @@ return {
 		mincloakdistance = 60,
 		name = "Stealthy & Cloakable Metal Extractor",
 		noautofire = false,
-		objectname = "arm/armimoho.s3o",
+		objectname = "armimoho",
 		onoffable = true,
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -51,7 +51,6 @@ return {
 			buildpic = "armimoho.dds",
 			faction = "ARM",
 			initcloaked = true,
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 152,
-				object = "arm/armimoho_dead",
+				object = "ARMIMOHO_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 81,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

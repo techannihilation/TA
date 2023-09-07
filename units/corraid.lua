@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Raider",
 		noautofire = false,
-		objectname = "core/corraid.s3o",
+		objectname = "CORRAID",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "corraid.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 168,
-				object = "core/corraid_dead",
+				object = "CORRAID_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 90,
-				object = "2x2e",
+				object = "2X2E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

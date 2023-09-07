@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Light Laser Tower",
 		noautofire = false,
-		objectname = "gok/gok_llt.s3o",
+		objectname = "gok_llt",
 		radaremitheight = 65,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDINGEX",
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "gok_llt.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 64,
-				object = "gok/gok_llt_dead",
+				object = "gok_llt_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -77,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 34,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 			},
 		},

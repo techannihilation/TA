@@ -38,7 +38,7 @@ return {
 		movementclass = "AMPTBOT8",
 		name = "Gorgon",
 		noautofire = false,
-		objectname = "tll/tllgorgon.s3o",
+		objectname = "tllgorgon",
 		radardistance = 0,
 		radaremitheight = 76,
 		selfdestructas = "BANTHA_BLAST",
@@ -57,7 +57,6 @@ return {
 			shield_emit_height = 75,
 			shield_power = 10000,
 			shield_radius = 500,
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 16400,
-				object = "tll/tllgorgon_dead",
+				object = "tllgorgon_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 9680,
-				object = "5x5c",
+				object = "5X5C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

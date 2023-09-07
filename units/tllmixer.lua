@@ -34,7 +34,8 @@ return {
 		movementclass = "BOAT4",
 		name = "Mixer",
 		noautofire = false,
-		objectname = "tll/tllmixer.s3o",
+		
+		objectname = "TLLMIXER",
 		onoffable = true,
 		radardistancejam = 715,
 		radaremitheight = 29,
@@ -51,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllmixer.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 106,
-				object = "tll/tllmixer_dead",
+				object = "tllmixer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

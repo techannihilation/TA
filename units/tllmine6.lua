@@ -22,6 +22,7 @@ return {
 		cloakcost = 25,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "21 11 21",
+		
 		collisionvolumetype = "CylY",
 		decloakspherical = false,
 		defaultmissiontype = "Standby_Mine",
@@ -44,7 +45,7 @@ return {
 		mincloakdistance = 0,
 		name = "Mininuke mine",
 		noautofire = false,
-		objectname = "tll/tllmine6.s3o",
+		objectname = "TLLMINE6",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

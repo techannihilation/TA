@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Pampa",
 		noautofire = false,
-		objectname = "talon/talon_pampa.s3o",
+		objectname = "talon_pampa",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "talon_pampa.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1513,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

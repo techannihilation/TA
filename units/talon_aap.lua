@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "talon/talon_aap.s3o",
+		objectname = "talon_aap",
 		radaremitheight = 67,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -67,13 +67,13 @@ return {
 		customparams = {
 			buildpic = "talon_aap.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 -23",
 				collisionvolumescales = "106 40 48",
+				
 				collisionvolumetype = "Box",
 				damage = 2968,
 				description = "Advanced Aircraft Plant Wreckage",
@@ -82,7 +82,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 3524,
-				object = "talon/talon_aap_dead",
+				object = "talon_aap_DEAD",
 				reclaimable = true,
 			},
 			heap1 = {
@@ -93,7 +93,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1879,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 			},
 		},

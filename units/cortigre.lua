@@ -34,7 +34,7 @@ return {
 		movementclass = "ATANK4",
 		name = "Black Tiger",
 		noautofire = false,
-		objectname = "core/cortigre.s3o",
+		objectname = "cortigre",
 		radaremitheight = 44,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "cortigre.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			armtigre_heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 6,
 				metal = 4425,
-				object = "core/cortigre_dead",
+				object = "cortigre_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -159,7 +158,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

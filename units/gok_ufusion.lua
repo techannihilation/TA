@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Adv Ultimate Fusion Reactor",
 		noautofire = false,
-		objectname = "gok/gok_ufusion.s3o",
+		objectname = "gok_ufusion",
 		radaremitheight = 500,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_SUPERBLAST2",
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "gok_ufusion.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 109000,
-				object = "gok/gok_ufusion_dead",
+				object = "gok_ufusion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 95000,
-				object = "5x5d",
+				object = "5X5D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

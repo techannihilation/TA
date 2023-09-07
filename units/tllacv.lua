@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		objectname = "tll/tllacv.s3o",
+		objectname = "TLLACV",
 		radaremitheight = 25,
 		reclaimspeed = 100,
 		repairspeed = 100,
@@ -82,7 +82,6 @@ return {
 		customparams = {
 			buildpic = "tllacv.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -93,7 +92,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1610,
-				object = "tll/tllacv_dead",
+				object = "tllacv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

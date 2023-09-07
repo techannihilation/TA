@@ -42,7 +42,7 @@ return {
 		movementclass = "TANKHOVER8",
 		name = "Construction Hover",
 		noautofire = false,
-		objectname = "core/coruch.s3o",
+		objectname = "coruch",
 		radaremitheight = 25,
 		reclaimspeed = 810,
 		repairspeed = 810,
@@ -80,7 +80,6 @@ return {
 		customparams = {
 			buildpic = "coruch.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -90,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1356,
-				object = "core/coruch_dead",
+				object = "coruch_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

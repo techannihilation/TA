@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "God Hammer",
 		noautofire = false,
-		objectname = "gok/gok_godhammer.s3o",
+		objectname = "gok_godhammer",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "gok_godhammer.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 94,
-				object = "gok/gok_godhammer_dead",
+				object = "gok_godhammer_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 50,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

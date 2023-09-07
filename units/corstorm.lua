@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Storm",
 		noautofire = false,
-		objectname = "core/corstorm.s3o",
+		objectname = "CORSTORM",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "corstorm.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 67,
-				object = "core/corstorm_dead",
+				object = "CORSTORM_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 36,
-				object = "2x2c",
+				object = "2X2C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +134,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Rockets",
 				noselfdamage = true,
 				range = 475,

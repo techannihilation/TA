@@ -43,7 +43,7 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Tau",
-		objectname = "talon/talon_tau.s3o",
+		objectname = "talon_tau",
 		radaremitheight = 30,
 		releaseheld = true,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "talon_tau.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1413,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -124,7 +123,7 @@ return {
 				flighttime = 1.2,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal.s3o",
+				model = "weapon_missileaal",
 				name = "Medium Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -146,6 +145,7 @@ return {
 				damage = {
 					areoship = 250,
 					default = 5,
+					
 					air = 1000,
 				},
 			},

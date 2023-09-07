@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Fog",
 		noautofire = false,
-		objectname = "gok/gok_mjamk.s3o",
+		objectname = "gok_mjamk",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 29,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "gok_mjamk.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 60,
-				object = "gok/gok_mradk_dead",
+				object = "gok_mradk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +83,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 32,
-				object = "1x1a",
+				object = "1X1A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

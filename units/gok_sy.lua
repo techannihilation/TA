@@ -30,7 +30,7 @@ return {
 		mobilestandorders = 1,
 		name = "Shipyard",
 		noautofire = false,
-		objectname = "gok/gok_sy.s3o",
+		objectname = "gok_sy",
 		radardistance = 50,
 		radaremitheight = 55,
 		seismicsignature = 0,
@@ -59,13 +59,13 @@ return {
 		customparams = {
 			buildpic = "gok_sy.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = false,
 				collisionvolumeoffsets = -7,
 				collisionvolumescales = "116 52 116",
+
 				collisionvolumetype = "Box",
 				damage = 2720,
 				description = "Shipyard Wreckage",
@@ -73,7 +73,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 487,
-				object = "gok/gok_sy_dead",
+				object = "gok_sy_DEAD",
 				reclaimable = true,
 			},
 		},

@@ -35,7 +35,7 @@ return {
 		metalstorage = 3000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		objectname = "arm/armmstor.s3o",
+		objectname = "ARMMSTOR",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "armmstor.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 243,
-				object = "arm/armmstor_dead",
+				object = "ARMMSTOR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +77,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 130,
-				object = "4x4e",
+				object = "4X4E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

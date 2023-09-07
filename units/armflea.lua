@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT1",
 		name = "Flea",
 		noautofire = false,
-		objectname = "arm/armflea.s3o",
+		objectname = "ARMFLEA",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FLEA_EX",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armflea.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 11,
-				object = "arm/armflea_dead",
+				object = "ARMFLEA_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 6,
-				object = "1x1a",
+				object = "1X1A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

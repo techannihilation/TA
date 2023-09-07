@@ -28,6 +28,7 @@ return {
 		commander = true,
 		corpse = "8_dead",
 		defaultmissiontype = "Standby",
+		
 		energymake = 25,
 		energystorage = 1000,
 		explodeas = "COMMANDER_BLAST",
@@ -54,7 +55,7 @@ return {
 		name = "Commander",
 		nochasecategory = "ALL",
 		norestrict = 1,
-		objectname = "gok/gok_com.s3o",
+		objectname = "gok_com",
 		radardistance = 750,
 		radaremitheight = 55,
 		reclaimable = false,
@@ -111,7 +112,6 @@ return {
 			faction = "GOK",
 			iscommander = true,
 			paralyzemultiplier = 0.025,
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			["8_dead"] = {
@@ -130,7 +130,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 1500,
-				object = "arm/armcom_dead",
+				object = "armcom_DEAD",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -150,7 +150,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 750,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

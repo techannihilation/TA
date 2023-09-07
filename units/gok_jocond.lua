@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Jocond",
 		noautofire = false,
-		objectname = "gok/gok_jocond.s3o",
+		objectname = "gok_jocond",
 		radardistance = 0,
 		radaremitheight = 34,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_jocond.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2625,
-				object = "gok/gok_jocond_dead",
+				object = "gok_jocond_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

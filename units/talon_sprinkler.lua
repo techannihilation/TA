@@ -38,7 +38,7 @@ return {
 		mincloakdistance = 55,
 		name = "Sprinkler",
 		noautofire = false,
-		objectname = "talon/talon_sprinkler.s3o",
+		objectname = "talon_sprinkler",
 		radaremitheight = 48,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_sprinkler.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "talon/talon_sprinkler_dead",
+				object = "talon_sprinkler_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 460,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 			},
 		},
@@ -165,6 +164,7 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveTo = 1,
 			},
+
 		},
 	},
 }

@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Anti-Nuke",
 		noautofire = true,
-		objectname = "tll/tllantinuke1.s3o",
+		objectname = "TLLANTINUKE1",
 		radardistance = 0,
 		radaremitheight = 60,
 		script = "tllantinuke.cob",
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "tllantinuke1.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +51,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2628,
-				object = "tll/tllantinuke_dead",
+				object = "tllantinuke_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -121,7 +120,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 300,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

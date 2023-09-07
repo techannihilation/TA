@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT3",
 		name = "Mac",
 		noautofire = false,
-		objectname = "rumad/rumad_macm.s3o",
+		objectname = "rumad_macm",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +53,6 @@ return {
 			buildpic = "rumad_macm.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "rumad/rumad_macm_dead",
+				object = "rumad_macm_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -137,7 +136,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad.s3o",
+				model = "weapon_missile_rumad",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

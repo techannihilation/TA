@@ -25,7 +25,7 @@ return {
 		maxwaterdepth = 95,
 		name = "Experimental Wall",
 		noautofire = false,
-		objectname = "arm/armedrag.s3o",
+		objectname = "armedrag",
 		radaremitheight = 100,
 		script = "drag.lua",
 		unitname = "armedrag",
@@ -34,7 +34,6 @@ return {
 		customparams = {
 			buildpic = "armedrag.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			fortification = {
@@ -51,7 +50,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 850,
-				object = "arm/armedrag",
+				object = "armedrag",
 				reclaimable = true,
 				reclaimtime = 16000,
 				customparams = {
@@ -67,7 +66,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 290,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

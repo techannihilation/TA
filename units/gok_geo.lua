@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
 		noautofire = false,
-		objectname = "gok/gok_geo.s3o",
+		objectname = "gok_geo",
 		radaremitheight = 51,
 		--script ="gok_geo_mini.cob",
 		seismicsignature = 0,
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "gok_geo.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1117,
-				object = "gok/gok_geo_dead",
+				object = "gok_geo_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 596,
-				object = "4x4b",
+				object = "4X4B",
 				reclaimable = true,
 			},
 		},

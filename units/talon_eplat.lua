@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Sea Plant",
 		noautofire = false,
-		objectname = "talon/talon_eplat.s3o",
+		objectname = "talon_eplat",
 		radardistance = 50,
 		radaremitheight = 39,
 		seismicsignature = 0,
@@ -60,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "talon_eplat.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3360,
-				object = "talon/talon_plat_dead",
+				object = "talon_plat_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

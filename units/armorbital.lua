@@ -27,7 +27,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Orbital",
-		objectname = "arm/armorbital.s3o",
+		objectname = "armorbital",
 		radaremitheight = 70,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -44,7 +44,6 @@ return {
 			buildpic = "armorbital.dds",
 			canareaattack = 1,
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 720,
-				object = "arm/armorbital_dead",
+				object = "armorbital_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 384,
-				object = "9x9c",
+				object = "9x9C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -130,7 +129,7 @@ return {
 				impulseboost = 0.1,
 				impulsefactor = 0.1,
 				metalpershot = 452,
-				model = "weapon_unitshell.s3o",
+				model = "weapon_unitshell",
 				name = "Zeus Cannon",
 				noselfdamage = true,
 				range = 8000,

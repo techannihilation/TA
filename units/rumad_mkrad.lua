@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Marky",
 		noautofire = false,
-		objectname = "rumad/rumad_mkrad.s3o",
+		objectname = "rumad_mkrad",
 		onoffable = true,
 		radardistance = 2300,
 		radaremitheight = 22,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "rumad_mkrad.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 75,
-				object = "rumad/rumad_mkrad_dead",
+				object = "rumad_mkrad_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 40,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

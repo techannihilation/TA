@@ -33,7 +33,8 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "tll/tllaap.s3o",
+		
+		objectname = "TLLAAP",
 		radardistance = 1000,
 		radaremitheight = 53,
 		selfdestructas = "LARGE_BUILDING",
@@ -59,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "tllaap.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +70,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3255,
-				object = "tll/tllaap_dead",
+				object = "tllaap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

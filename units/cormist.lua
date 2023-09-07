@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Slasher",
 		noautofire = false,
-		objectname = "core/cormist.s3o",
+		objectname = "CORMIST",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,7 +60,6 @@ return {
 			buildpic = "cormist.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 117,
-				object = "core/cormist_dead",
+				object = "CORMIST_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +88,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 62,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -145,7 +144,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,

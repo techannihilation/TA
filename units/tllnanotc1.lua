@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 2",
 		noautofire = false,
-		objectname = "tll/tllnanotc1.s3o",
+		objectname = "tllNANOTC1",
 		radaremitheight = 31,
 		reclaimspeed = 300,
 		repairspeed = 300,

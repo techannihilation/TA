@@ -38,7 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Swatter",
 		noautofire = false,
-		objectname = "arm/armah.s3o",
+		objectname = "ARMAH",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -56,7 +56,6 @@ return {
 			buildpic = "armah.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 171,
-				object = "arm/armah_dead",
+				object = "ARMAH_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +84,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 91,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -139,7 +138,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,
@@ -165,6 +164,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

@@ -40,7 +40,7 @@ return {
 		movementclass = "VKBOT25",
 		name = "Lilith",
 		noautofire = false,
-		objectname = "core/corlilith.s3o",
+		objectname = "corlilith",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "corlilith.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corlilith_dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 44400,
-				object = "core/corlilith_dead",
+				object = "corlilith_DEAD",
 				reclaimable = true,
 			},
 			corlilith_heap = {
@@ -85,7 +84,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 18680,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 			},
 		},

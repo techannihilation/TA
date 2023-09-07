@@ -24,7 +24,7 @@ return {
 		maxvelocity = 1.4,
 		movementclass = "TKBOT3",
 		name = "Peacock",
-		objectname = "core/coraapod.s3o",
+		objectname = "coraapod",
 		radaremitheight = 26,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -39,7 +39,6 @@ return {
 			buildpic = "coraapod.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 480,
-				object = "core/coraapod_dead",
+				object = "coraapod_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 256,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -120,7 +119,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 850,
@@ -146,6 +145,7 @@ return {
 				damage = {
 					areoship = 15,
 					default = 5,
+
 					air = 60,
 				},
 			},

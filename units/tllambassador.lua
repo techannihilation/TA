@@ -16,6 +16,7 @@ return {
 		category = "ALL LARGE MOBILE",
 		collisionvolumeoffsets = "0 -13 0",
 		collisionvolumescales = "82.450546264648 100.45054626465 134.45054626465",
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,7 +38,8 @@ return {
 		movementclass = "BOAT5",
 		name = "Ambassador",
 		noautofire = false,
-		objectname = "tll/tllambassador.s3o",
+
+		objectname = "TLLAMBASSADOR",
 		radaremitheight = 70,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 325,
@@ -53,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "tllambassador.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 756,
-				object = "tll/tllambassador_dead",
+				object = "tllambassador_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

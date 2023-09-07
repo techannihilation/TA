@@ -36,7 +36,7 @@ return {
 		metalstorage = 500,
 		name = "Armed Moho Exploiter",
 		noautofire = false,
-		objectname = "tll/tllamoho.s3o",
+		objectname = "tllamoho",
 		onoffable = true,
 		radaremitheight = 49,
 		seismicsignature = 0,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "tllamoho.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2362,
-				object = "tll/tllmoho_dead",
+				object = "tllmoho_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1260,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

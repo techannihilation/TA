@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 5,
 		name = "Floating Radar Tower",
 		noautofire = false,
-		objectname = "talon/talon_frad.s3o",
+		objectname = "talon_frad",
 		onoffable = true,
 		radardistance = 2100,
 		radaremitheight = 52,
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "talon_frad.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 101,
-				object = "talon/talon_frad_dead",
+				object = "talon_frad_DEAD",
 				reclaimable = true,
 			},
 		},

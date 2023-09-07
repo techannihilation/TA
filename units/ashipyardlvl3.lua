@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 0,
 		name = "Shipyard",
-		objectname = "arm/ashipyardlvl3.s3o",
+		objectname = "AShipyardLvl3",
 		radardistance = 0,
 		radaremitheight = 101,
 		selfdestructas = "SHIPBLAST",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "ashipyardlvl3.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 8,
 				footprintz = 12,
 				metal = 80000,
-				object = "arm/ashipyardlvl3_dead",
+				object = "AShipyardLvl3_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

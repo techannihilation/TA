@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Phalanx",
 		noautofire = false,
-		objectname = "arm/armyork.s3o",
+		objectname = "ARMYORK",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,7 +60,6 @@ return {
 			buildpic = "armyork.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 420,
-				object = "arm/armyork_dead",
+				object = "ARMYORK_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 224,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -160,6 +159,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

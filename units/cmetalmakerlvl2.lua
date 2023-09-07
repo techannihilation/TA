@@ -30,7 +30,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
-		objectname = "core/cmetalmakerlvl2.s3o",
+		objectname = "cmetalmakerlvl2",
 		radardistance = 0,
 		radaremitheight = 40,
 		selfdestructas = "BANTHA_BLAST",
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "cmetalmakerlvl2.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {

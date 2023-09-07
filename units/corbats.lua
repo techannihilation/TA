@@ -38,7 +38,8 @@ return {
 		movementclass = "DBOAT6",
 		name = "Warlord",
 		noautofire = false,
-		objectname = "core/corbats.s3o",
+
+		objectname = "CORBATS",
 		radaremitheight = 74,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -54,7 +55,6 @@ return {
 			buildpic = "corbats.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5062,
-				object = "core/corbats_dead",
+				object = "CORBATS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2700,
-				object = "6x6c",
+				object = "6X6C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

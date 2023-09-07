@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Eagle",
 		noautofire = false,
-		objectname = "rumad/rumad_eagle.s3o",
+		objectname = "rumad_eagle",
 		radardistance = 0,
 		radaremitheight = 29,
 		selfdestructas = "BIG_UNIT",
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "rumad_eagle.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6187,
-				object = "rumad/rumad_eagle_dead",
+				object = "rumad_eagle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +131,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missilexl_rumad.s3o",
+				model = "weapon_missilexl_rumad",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1800,

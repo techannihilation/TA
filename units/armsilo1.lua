@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "arm/armsilo1.s3o",
+		objectname = "ARMSILO1",
 		radardistance = 50,
 		radaremitheight = 32,
 		script = "armsilo.cob",
@@ -42,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "armsilo1.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armsilo_dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 10612,
-				object = "arm/armsilo_dead",
+				object = "ARMSILO_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5660,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -128,7 +127,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
 				metalpershot = 2500,
-				model = "weapon_nuke.s3o",
+				model = "weapon_nuke",
 				name = "NuclearMissile",
 				range = 72000,
 				reloadtime = 20,

@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK3",
 		name = "Unobtanium ",
 		noautofire = false,
-		objectname = "talon/talon_unobtanium.s3o",
+		objectname = "talon_unobtanium",
 		onoffable = true,
 		radardistancejam = 460,
 		radaremitheight = 25,
@@ -61,7 +61,6 @@ return {
 		customparams = {
 			buildpic = "talon_unobtanium.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "talon/talon_unobtanium_dead",
+				object = "talon_unobtanium_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -87,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 			},
 		},

@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Seer",
 		noautofire = false,
-		objectname = "arm/armseer.s3o",
+		objectname = "ARMSEER",
 		onoffable = true,
 		radardistance = 2300,
 		radaremitheight = 22,
@@ -61,7 +61,6 @@ return {
 		customparams = {
 			buildpic = "armseer.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 92,
-				object = "arm/armseer_dead",
+				object = "ARMSEER_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 49,
-				object = "3x3e",
+				object = "3X3E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

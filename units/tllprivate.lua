@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Private",
 		noautofire = false,
-		objectname = "tll/tllprivate.s3o",
+		objectname = "TLLPRIVATE",
 		radaremitheight = 39,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 425,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllprivate.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 48,
-				object = "tll/tllprivate_dead",
+				object = "tllprivate_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

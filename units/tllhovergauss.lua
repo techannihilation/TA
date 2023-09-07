@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Maggot",
 		noautofire = false,
-		objectname = "tll/tllhovergauss.s3o",
+		objectname = "TLLhovergauss",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "tllhovergauss.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 206,
-				object = "tll/tllhovergauss_dead",
+				object = "tllhovergauss_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 110,
-				object = "3x3c",
+				object = "3x3C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

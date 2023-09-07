@@ -11,6 +11,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -50 0",
 		collisionvolumescales = "200 260 200",
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -30,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Black Flame",
 		noautofire = false,
-		objectname = "gok/gok_dmc.s3o",
+		objectname = "gok_dmc",
 		radardistance = 0,
 		radaremitheight = 66,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -41,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "gok_dmc.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +52,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 23812,
-				object = "gok/gok_dmc_dead",
+				object = "gok_dmc_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

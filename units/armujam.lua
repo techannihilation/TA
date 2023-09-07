@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Tower",
 		noautofire = false,
-		objectname = "arm/armujam.s3o",
+		objectname = "armujam",
 		onoffable = true,
 		radardistancejam = 6000,
 		radaremitheight = 180,
@@ -40,10 +40,10 @@ return {
 		unitname = "armujam",
 		usebuildinggrounddecal = false,
 		yardmap = "oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo oooooooo",
+
 		customparams = {
 			buildpic = "armujam.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +54,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 776,
-				object = "arm/armujam_dead",
+				object = "armujam_dead",
 				reclaimable = true,
 			},
 			heap = {

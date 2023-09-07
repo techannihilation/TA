@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "core/corsilo.s3o",
+		objectname = "CORSILO",
 		radardistance = 50,
 		radaremitheight = 67,
 		seismicsignature = 0,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "corsilo.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6562,
-				object = "core/corsilo_dead",
+				object = "CORSILO_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3500,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -141,7 +140,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
 				metalpershot = 1250,
-				model = "weapon_nuke_core.s3o",
+				model = "weapon_nuke_core",
 				name = "CoreNuclearMissile",
 				range = 72000,
 				reloadtime = 20,

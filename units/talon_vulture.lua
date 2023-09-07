@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vulture",
 		noautofire = false,
-		objectname = "talon/talon_vulture.s3o",
+		objectname = "talon_vulture",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "talon_vulture.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 113,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

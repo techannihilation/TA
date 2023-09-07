@@ -26,7 +26,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Rapid Long Range Plasma Cannon",
-		objectname = "rumad/rumad_rlrpt.s3o",
+		objectname = "rumad_rlrpt",
 		radaremitheight = 136,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -42,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "rumad_rlrpt.dds",
 			faction = "ARM",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 21525,
-				object = "rumad/rumad_rlrpt_dead",
+				object = "rumad_rlrpt_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +70,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 11480,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

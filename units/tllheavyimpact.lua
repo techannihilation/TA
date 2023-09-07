@@ -37,7 +37,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Heavy Impact",
 		noautofire = false,
-		objectname = "tll/tllheavyimpact.s3o",
+		objectname = "tllheavyimpact",
 		piecetrailcegrange = 4,
 		piecetrailcegtag = "Debree",
 		radaremitheight = 62,
@@ -56,7 +56,6 @@ return {
 			buildpic = "tllheavyimpact.dds",
 			canareaattack = 1,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tllheavyimpact_dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5587,
-				object = "tll/tllheavyimpact_dead",
+				object = "tllheavyimpact_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2980,
-				object = "4x4b",
+				object = "4X4B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

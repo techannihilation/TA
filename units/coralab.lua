@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-		objectname = "core/coralab.s3o",
+		objectname = "CORALAB",
 		radaremitheight = 60,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -74,7 +74,6 @@ return {
 		customparams = {
 			buildpic = "coralab.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -88,7 +87,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 2687,
-				object = "core/coralab_dead",
+				object = "CORALAB_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -101,7 +100,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1646,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

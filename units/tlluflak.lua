@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Neo Bahomet",
 		noautofire = false,
-		objectname = "tll/tlluflak.s3o",
+		objectname = "tlluflak",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "tlluflak.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 10125,
-				object = "tll/tlluflak_dead",
+				object = "tlluflak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -142,6 +141,7 @@ return {
 				damage = {
 					areoship = 500,
 					default = 5,
+					
 					air = 2000,
 				},
 			},

@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Vengence",
 		noautofire = false,
-		objectname = "arm/armvengence.s3o",
+		objectname = "armvengence",
 		radardistance = 0,
 		radaremitheight = 55,
 		renchname = "Vengence",
@@ -58,7 +58,6 @@ return {
 			shield_emit_height = 15,
 			shield_power = 1000,
 			shield_radius = 100,
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5655,
-				object = "arm/armvengence_dead",
+				object = "armvengence_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

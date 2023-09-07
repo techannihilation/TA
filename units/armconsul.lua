@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK3",
 		name = "Engineer Vehicle",
 		noautofire = false,
-		objectname = "arm/armconsul.s3o",
+		objectname = "armconsul",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -85,7 +85,6 @@ return {
 		customparams = {
 			buildpic = "armconsul.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -100,7 +99,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 183,
-				object = "arm/armconsul_dead",
+				object = "armconsul_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -114,7 +113,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 98,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

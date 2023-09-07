@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Mosasaurus",
 		noautofire = false,
-		objectname = "tll/tllmosasaurus.s3o",
+		objectname = "tllmosasaurus",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "KROG_BLAST",
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "tllmosasaurus.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 13875,
-				object = "tll/tllmosasaurus_dead",
+				object = "tllmosasaurus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

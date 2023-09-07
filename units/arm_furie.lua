@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT5",
 		name = "Furie",
 		noautofire = false,
-		objectname = "arm/arm_furie.s3o",
+		objectname = "ARM_FURIE",
 		radaremitheight = 85,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "arm_furie.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 28125,
-				object = "arm/arm_furie_dead",
+				object = "arm_furie_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -198,7 +197,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
 		noautofire = false,
-		objectname = "gok/gok_amaker.s3o",
+		objectname = "gok_amaker",
 		radaremitheight = 40,
 		script = "gok_makr.cob",
 		seismicsignature = 0,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "gok_amaker.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 539,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 			},
 		},

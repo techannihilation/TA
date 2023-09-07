@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 5,
 		name = "Baahl",
 		noautofire = false,
-		objectname = "gok/gok_fflak.s3o",
+		objectname = "gok_fflak",
 		radaremitheight = 32,
 		script = "gok_flak.cob",
 		seismicsignature = 0,
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "gok_fflak.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 1355,
-				object = "arm/armfflak_dead",
+				object = "ARMFFLAK_DEAD",
 				reclaimable = true,
 			},
 		},
@@ -113,7 +112,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_gok.s3o",
+				model = "weapon_missile_gok",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -133,6 +132,7 @@ return {
 				damage = {
 					areoship = 175,
 					default = 5,
+					
 					air = 750,
 				},
 			},
@@ -151,7 +151,7 @@ return {
 				gravityaffected = true,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_plasma_gok.s3o",
+				model = "weapon_plasma_gok",
 				name = "FlakCannon",
 				noselfdamage = true,
 				range = 775,
@@ -169,6 +169,7 @@ return {
 				damage = {
 					areoship = 312.5,
 					default = 5,
+					
 					air = 1250,
 				},
 			},

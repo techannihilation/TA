@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Immolator",
 		noautofire = false,
-		objectname = "tll/tlllrpt2.s3o",
+		objectname = "tlllrpt2",
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 300,
@@ -47,7 +47,6 @@ return {
 			buildpic = "tlllrpt2.dds",
 			canareaattack = 1,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1320,
-				object = "tll/tlllrpt2_dead",
+				object = "tlllrpt2_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

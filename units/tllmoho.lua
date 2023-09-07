@@ -29,7 +29,7 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "tll/tllmoho.s3o",
+		objectname = "tllmoho",
 		onoffable = true,
 		radaremitheight = 44,
 		selfdestructas = "SMALL_BUILDING",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "tllmoho.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 403,
-				object = "tll/tllmoho_dead",
+				object = "tllmoho_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

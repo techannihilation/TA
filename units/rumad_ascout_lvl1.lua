@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Salt",
 		noautofire = false,
-		objectname = "rumad/rumad_ascout_lvl1.s3o",
+		objectname = "rumad_ascout_lvl1",
 		radardistance = 1000,
 		radaremitheight = 4,
 		seismicsignature = 0,

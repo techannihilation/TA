@@ -40,7 +40,7 @@ return {
 		movementclass = "AKBOT1",
 		name = "Invader",
 		noautofire = false,
-		objectname = "arm/armvader.s3o",
+		objectname = "ARMVADER",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "armvader.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			corpse = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 48,
-				object = "arm/armvader_dead",
+				object = "ARMVADER_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 26,
-				object = "1x1b",
+				object = "1X1B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

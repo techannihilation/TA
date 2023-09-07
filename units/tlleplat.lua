@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Sea Plant",
 		noautofire = false,
-		objectname = "tll/tlleplat.s3o",
+		objectname = "tlleplat",
 		radardistance = 50,
 		radaremitheight = 39,
 		seismicsignature = 0,
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "tlleplat.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3360,
-				object = "tll/tllplat_dead",
+				object = "tllplat_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

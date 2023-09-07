@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK4",
 		name = "Construction Vehicle",
 		noautofire = false,
-		objectname = "rumad/rumad_ecv.s3o",
+		objectname = "rumad_ecv",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		reclaimspeed = 240,
@@ -88,7 +88,6 @@ return {
 		customparams = {
 			buildpic = "rumad_ecv.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -98,7 +97,7 @@ return {
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,
-				object = "rumad/rumad_ecv_dead",
+				object = "rumad_ecv_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -110,7 +109,7 @@ return {
 				description = "Vehicle Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

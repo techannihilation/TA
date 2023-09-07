@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T3 Energy Storage",
 		noautofire = false,
-		objectname = "core/corses.s3o",
+		objectname = "corses",
 		radaremitheight = 41,
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "corses.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8625,
-				object = "core/corses_dead",
+				object = "CORSES_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4600,
-				object = "4x4c",
+				object = "4X4C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

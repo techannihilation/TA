@@ -39,7 +39,7 @@ return {
 		moverate1 = 8,
 		name = "Air Morphed Lab",
 		noautofire = false,
-		objectname = "gok/gok_dome.s3o",
+		objectname = "gok_dome",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDINGEX",
@@ -63,7 +63,6 @@ return {
 				[5] = "piecetrail4",
 				[6] = "piecetrail6",
 			},
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -78,7 +77,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 594,
-				object = "gok/gok_dome_dead",
+				object = "gok_dome_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +90,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

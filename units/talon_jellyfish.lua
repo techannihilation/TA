@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Jellyfish",
 		noautofire = false,
-		objectname = "talon/talon_jellyfish.s3o",
+		objectname = "talon_jellyfish",
 		radaremitheight = 25,
 		resurrect = 1,
 		seismicsignature = 0,

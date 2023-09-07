@@ -39,7 +39,7 @@ return {
 		mincloakdistance = 35,
 		name = "Cloakable Jammer Tower",
 		noautofire = false,
-		objectname = "arm/armjamt.s3o",
+		objectname = "ARMJAMT",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 74,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "armjamt.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 180,
-				object = "arm/armjamt_dead",
+				object = "ARMJAMT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -38,7 +38,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Irritator",
 		noautofire = false,
-		objectname = "tll/tllirritator.s3o",
+		objectname = "tllirritator",
 		radardistance = 0,
 		radaremitheight = 130,
 		script = "tllirritator.cob",
@@ -64,7 +64,6 @@ return {
 			shield_emit_height = 30,
 			shield_power = 2000,
 			shield_radius = 150,
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tllirritator_dead = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 17625,
-				object = "tll/tllirritator_dead",
+				object = "tllirritator_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +89,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 9400,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -145,7 +144,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

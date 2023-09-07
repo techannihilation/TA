@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
 		noautofire = false,
-		objectname = "tll/tllgeo.s3o",
+		objectname = "TLLGEO",
 		onoffable = false,
 		radaremitheight = 49,
 		selfdestructas = "CRAWL_BLAST",
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "tllgeo.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +51,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1357,
-				object = "tll/tllgeo_dead",
+				object = "tllgeo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

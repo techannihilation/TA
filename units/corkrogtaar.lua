@@ -33,7 +33,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "KrogTaar",
 		noautofire = false,
-		objectname = "core/corkrogtaar.s3o",
+		objectname = "corkrogtaar",
 		radardistance = 0,
 		radaremitheight = 56,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "corkrogtaar.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 4612,
-				object = "core/corkrogtaar_dead",
+				object = "corkrogtaar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

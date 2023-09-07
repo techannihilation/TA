@@ -45,7 +45,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Mask",
 		noautofire = false,
-		objectname = "gok/gok_mask.s3o",
+		objectname = "gok_mask",
 		radaremitheight = 51,
 		seismicsignature = 2,
 		selfdestructas = "SMALL_UNIT",

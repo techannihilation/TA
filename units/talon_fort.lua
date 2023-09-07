@@ -23,7 +23,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		objectname = "talon/talon_fort.s3o",
+		objectname = "talon_fort",
 		radaremitheight = 50,
 		script = "drag.lua",
 		unitname = "talon_fort",
@@ -31,15 +31,16 @@ return {
 		customparams = {
 			buildpic = "talon_fort.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			fortification = {
 				autoreclaimable = 0,
 				blocking = true,
+
 				crushResistance = 1000,
 				collisionvolumeoffsets = "0 -3 0",
 				collisionvolumescales = "32 50 32",
+
 				collisionvolumetype = "CylY",
 				damage = 15000,
 				description = "Fortification Wall",
@@ -51,7 +52,7 @@ return {
 				hitdensity = 100,
 				metal = 45,
 				nodrawundergray = true,
-				object = "talon/talon_fort",
+				object = "talon_fort",
 				reclaimable = true,
 				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
@@ -70,7 +71,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 7,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

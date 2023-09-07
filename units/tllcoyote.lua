@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Coyote",
 		noautofire = false,
-		objectname = "tll/tllcoyote.s3o",
+		objectname = "TLLCOYOTE",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 400,
@@ -54,7 +54,6 @@ return {
 			buildpic = "tllcoyote.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 596,
-				object = "tll/tllcoyote_dead",
+				object = "tllcoyote_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +132,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
@@ -158,6 +157,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

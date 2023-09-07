@@ -42,7 +42,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Aircraft Carrier",
 		noautofire = false,
-		objectname = "talon/talon_hcar.s3o",
+		objectname = "talon_hcar",
 		onoffable = true,
 		radardistance = 2500,
 		radaremitheight = 68,
@@ -61,7 +61,6 @@ return {
 			isairbase = true,
 			buildpic = "talon_hcar.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +70,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 10875,
-				object = "talon/talon_hcar_dead",
+				object = "talon_hcar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +126,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "talon/talon_rocket.s3o",
+				model = "talon_rocket",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -175,7 +174,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
 				metalpershot = 2500,
-				model = "weapon_nuke.s3o",
+				model = "weapon_nuke",
 				name = "Operational Nuclear Missile",
 				range = 72000,
 				reloadtime = 20,

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Hasseloff",
 		noautofire = false,
-		objectname = "tll/tlltower.s3o",
+		objectname = "TLLtower",
 		radaremitheight = 137,
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 1200,
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "tlltower.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +51,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 120,
-				object = "tll/tlltower_dead",
+				object = "tlltower_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

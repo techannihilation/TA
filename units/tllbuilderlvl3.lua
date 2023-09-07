@@ -43,7 +43,7 @@ return {
 		metalmake = 8,
 		metalstorage = 150,
 		name = "Cruiser",
-		objectname = "tll/tllbuilderlvl3.s3o",
+		objectname = "tllbuilderlvl3",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
 		shownanospray = false,
@@ -72,7 +72,6 @@ return {
 		customparams = {
 			buildpic = "tllbuilderlvl3.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -82,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19200,
-				object = "tll/tllbuilderlvl3_dead",
+				object = "tllbuilderlvl3_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

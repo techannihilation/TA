@@ -38,7 +38,7 @@ return {
 		name = "Rhyno",
 		noautofire = false,
 		nochasecategory = "SUB VTOL",
-		objectname = "rumad/rumad_artybot.s3o",
+		objectname = "rumad_artybot",
 		radardistance = 0,
 		radaremitheight = 55,
 		selfdestructas = "CRAWL_BLAST",
@@ -55,7 +55,6 @@ return {
 			buildpic = "rumad_artybot.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5655,
-				object = "rumad/rumad_artybot_dead",
+				object = "rumad_artybot_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -162,7 +161,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

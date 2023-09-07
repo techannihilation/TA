@@ -35,7 +35,7 @@ return {
 		mincloakdistance = 100,
 		name = "Cloakable Fusion Reactor",
 		noautofire = false,
-		objectname = "talon/talon_ckfus.s3o",
+		objectname = "talon_ckfus",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "talon_ckfus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 3795,
-				object = "talon/talon_ckfus_dead",
+				object = "TALON_CKFUS_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -75,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2024,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 			},
 		},

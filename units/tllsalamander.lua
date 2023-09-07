@@ -36,7 +36,8 @@ return {
 		movementclass = "ATANK3",
 		name = "Salamander",
 		noautofire = false,
-		objectname = "tll/tllsalamander.s3o",
+		
+		objectname = "TLLSALAMANDER",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 325,
@@ -51,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllsalamander.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 435,
-				object = "tll/tllsalamander_dead",
+				object = "tllsalamander_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

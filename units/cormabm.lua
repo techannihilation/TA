@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Mobile Anti-Nuke",
-		objectname = "core/cormabm.s3o",
+		objectname = "CORMABM",
 		radardistance = 0,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "cormabm.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1162,
-				object = "core/cormabm_dead",
+				object = "CORMABM_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 620,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -142,7 +141,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 150,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

@@ -39,7 +39,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Everchosen",
 		noautofire = false,
-		objectname = "gok_everchosen.s3o",
+		objectname = "gok_everchosen",
 		radardistance = 0,
 		radaremitheight = 108,
 		selfdestructas = "KROG_BLAST",
@@ -67,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 55125,
-				object = "gok/gok_everchosen_dead",
+				object = "gok_everchosen_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 29400,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

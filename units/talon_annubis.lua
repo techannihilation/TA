@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Annubis",
 		noautofire = false,
-		objectname = "talon/talon_annubis.s3o",
+		objectname = "talon_annubis",
 		radaremitheight = 38,
 		selfdestructas = "crawl_blast",
 		selfdestructcountdown = 10,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_annubis.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "talon/talon_annubis_dead",
+				object = "talon_annubis_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

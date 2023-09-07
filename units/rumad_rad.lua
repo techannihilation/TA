@@ -27,7 +27,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		objectname = "rumad/rumad_rad.s3o",
+		objectname = "rumad_rad",
 		onoffable = true,
 		radardistance = 2100,
 		radaremitheight = 66,
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "rumad_rad.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "rumad/rumad_rad_dead",
+				object = "rumad_rad_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +71,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 23,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

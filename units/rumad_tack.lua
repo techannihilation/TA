@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT2",
 		name = "Tack",
 		noautofire = false,
-		objectname = "rumad/rumad_tack.s3o",
+		objectname = "rumad_tack",
 		radardistance = 50,
 		radaremitheight = 23,
 		resurrect = 1,
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "rumad_tack.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 81,
-				object = "rumad/rumad_tack_dead",
+				object = "rumad_tack_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "2x2d",
+				object = "2X2D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

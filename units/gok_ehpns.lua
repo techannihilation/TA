@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
-		objectname = "gok/gok_ehpns.s3o",
+		objectname = "gok_ehpns",
 		radardistance = 50,
 		radaremitheight = 36,
 		script = "gok_ahp.cob",
@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "gok_ehpns.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 10,
 				footprintz = 8,
 				metal = 3360,
-				object = "gok/gok_ehp_dead",
+				object = "gok_ehp_dead",
 				reclaimable = true,
 			},
 			heap = {

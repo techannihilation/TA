@@ -26,7 +26,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Countermeasure System",
-		objectname = "rumad/rumad_sd.s3o",
+		objectname = "rumad_sd",
 		onoffable = true,
 		radaremitheight = 55,
 		script = "rumad_sd.lua",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "rumad_sd.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 528,
-				object = "rumad/rumad_sd_dead",
+				object = "rumad_sd_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +67,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 282,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

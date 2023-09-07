@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "htank4",
 		name = "Spirit",
-		objectname = "arm/armeflak.s3o",
+		objectname = "armeflak",
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 350,
@@ -53,7 +53,6 @@ return {
 			buildpic = "armeflak.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 7960,
-				object = "arm/armeflak_dead",
+				object = "armeflak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -165,7 +164,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

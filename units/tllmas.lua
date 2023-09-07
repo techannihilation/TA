@@ -34,7 +34,7 @@ return {
 		metalstorage = 200,
 		name = "Xenolith",
 		noautofire = false,
-		objectname = "tll/tllmas.s3o",
+		objectname = "tllmas",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 114,

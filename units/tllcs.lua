@@ -40,7 +40,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Construction Ship",
 		noautofire = false,
-		objectname = "tll/tllcs.s3o",
+		objectname = "TLLCS",
 		radaremitheight = 25,
 		reclaimspeed = 60,
 		repairspeed = 60,
@@ -88,7 +88,6 @@ return {
 		customparams = {
 			buildpic = "tllcs.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -99,7 +98,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 217,
-				object = "tll/tllcs_dead",
+				object = "TLLCS_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -112,7 +111,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 116,
-				object = "4x4d",
+				object = "4x4D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

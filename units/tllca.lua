@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "tll/tllca.s3o",
+		objectname = "TLLCA",
 		reclaimspeed = 25,
 		repairspeed = 25,
 		selfdestructas = "SMALL_UNIT_VTOL",

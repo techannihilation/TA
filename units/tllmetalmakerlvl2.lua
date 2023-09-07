@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T3 Metal Maker",
 		noautofire = false,
-		objectname = "tll/tllmetalmakerlvl2.s3o",
+		objectname = "tllmetalmakerlvl2",
 		radardistance = 0,
 		radaremitheight = 40,
 		script = "tllammaker.cob",
@@ -41,7 +41,6 @@ return {
 		customparams = {
 			buildpic = "tllmetalmakerlvl2.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +51,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 862,
-				object = "tll/tllmetalmakerlvl2_dead",
+				object = "tllmetalmakerlvl2_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

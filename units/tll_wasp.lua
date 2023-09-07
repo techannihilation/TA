@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Wasp",
 		noautofire = false,
-		objectname = "tll/tll_wasp.s3o",
+		objectname = "tll_wasp",
 		radardistance = 0,
 		selfdestructas = "SMALL_UNIT_VTOL",
 		sightdistance = 300,

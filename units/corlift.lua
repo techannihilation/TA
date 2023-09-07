@@ -43,7 +43,7 @@ return {
 		mintransportmass = 4000,
 		mobilestandorders = 1,
 		name = "Lift",
-		objectname = "core/corlift.s3o",
+		objectname = "corlift",
 		radaremitheight = 30,
 		releaseheld = true,
 		selfdestructas = "BANTHA_BLAST",
@@ -62,7 +62,6 @@ return {
 		customparams = {
 			buildpic = "corlift.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 12212,
-				object = "7x7z",
+				object = "7X7Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

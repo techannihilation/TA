@@ -41,7 +41,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "All-Terrain and Amphibious Construction Kbot",
 		noautofire = false,
-		objectname = "core/corpinchy.s3o",
+		objectname = "corpinchy",
 		radaremitheight = 34,
 		reclaimspeed = 270,
 		repairspeed = 270,
@@ -87,7 +87,6 @@ return {
 		customparams = {
 			buildpic = "corpinchy.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -99,7 +98,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 6895,
-				object = "core/corpinchy_dead",
+				object = "corpinchy_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -113,7 +112,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 4320,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Center Station",
 		noautofire = false,
-		objectname = "tll/tlltarg.s3o",
+		objectname = "TLLTARG",
 		onoffable = true,
 		radaremitheight = 39,
 		script = "tlltarg.lua",
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "tlltarg.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5844,
-				object = "tll/tlltarg_dead",
+				object = "tlltarg_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Jammer Tower",
 		noautofire = false,
-		objectname = "gok/gok_ejam.s3o",
+		objectname = "gok_ejam",
 		onoffable = true,
 		radardistancejam = 2000,
 		radaremitheight = 50,
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "gok_ejam.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5844,
-				object = "gok/gok_ejam_dead",
+				object = "gok_ejam_dead",
 				reclaimable = true,
 			},
 			heap = {

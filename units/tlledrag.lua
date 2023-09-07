@@ -23,7 +23,7 @@ return {
 		maxwaterdepth = 95,
 		name = "Experimental Wall",
 		noautofire = false,
-		objectname = "tll/tlledrag.s3o",
+		objectname = "tlledrag",
 		radaremitheight = 100,
 		script = "drag.lua",
 		unitname = "tlledrag",
@@ -31,8 +31,7 @@ return {
 		yardmap = "wwww wwww wwww wwww",
 		customparams = {
 			buildpic = "tlledrag.dds",
-			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
+			faction = "tll",
 		},
 		featuredefs = {
 			fortification = {
@@ -49,7 +48,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 850,
-				object = "tll/tlledrag",
+				object = "tlledrag",
 				reclaimable = true,
 				reclaimtime = 16000,
 				customparams = {
@@ -67,7 +66,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 290,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

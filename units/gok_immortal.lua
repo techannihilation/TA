@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Immortal",
 		noautofire = false,
-		objectname = "gok/gok_immortal.s3o",
+		objectname = "gok_immortal",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "gok_immortal.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 198,
-				object = "gok/gok_immortal_dead",
+				object = "gok_immortal_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 106,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

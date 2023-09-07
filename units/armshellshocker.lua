@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Shellshocker",
 		noautofire = false,
-		objectname = "arm/armshellshocker.s3o",
+		objectname = "armshellshocker",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,7 +60,6 @@ return {
 			buildpic = "armshellshocker.dds",
 			canareaattack = 1,
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 112,
-				object = "arm/armshellshocker_dead",
+				object = "armshellshocker_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +88,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 60,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

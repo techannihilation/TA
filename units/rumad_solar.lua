@@ -35,7 +35,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Solar Generator Kbot",
 		noautofire = false,
-		objectname = "rumad/rumad_solar.s3o",
+		objectname = "rumad_solar",
 		--onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "rumad_solar.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "rumad/rumad_win_dead",
+				object = "rumad_win_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

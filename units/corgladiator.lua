@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Gladiator",
 		noautofire = false,
-		objectname = "core/corgladiator.s3o",
+		objectname = "corgladiator",
 		radardistance = 0,
 		radaremitheight = 36,
 		selfdestructas = "SMALL_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corgladiator.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 363,
-				object = "core/corgladiator_dead",
+				object = "corgladiator_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,		
-		objectname = "core/corshroud.s3o",
+		objectname = "CORSHROUD",
 		onoffable = true,
 		radardistancejam = 700,
 		radaremitheight = 83,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corshroud.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 99,
-				object = "core/corshroud_dead",
+				object = "CORSHROUD_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 52,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -38,7 +38,7 @@ talon_clone_lab = {
 		mobilestandorders = 1,
 		name = "Infantry Lab",
 		noautofire = false,
-		objectname = "talon/talon_clone_lab.s3o",
+		objectname = "talon_clone_lab",
 		radardistance = 50,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -66,13 +66,13 @@ talon_clone_lab = {
 		customparams = {
 			buildpic = "talon_clone_lab.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -7 0",
 				collisionvolumescales = "95 22 95",
+				
 				collisionvolumetype = "Box",
 				damage = 2512,
 				description = "Kbot Lab Wreckage",
@@ -81,7 +81,7 @@ talon_clone_lab = {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 483,
-				object = "talon/talon_clone_lab_dead",
+				object = "talon_clone_lab_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -92,7 +92,7 @@ talon_clone_lab = {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 258,
-				object = "5x5b",
+				object = "5X5B",
 				reclaimable = true,
 			},
 		},

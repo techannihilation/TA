@@ -38,7 +38,7 @@ return {
 		name = "Dart",
 		noautofire = false,
 		
-		objectname = "talon_dart.s3o",
+		objectname = "talon_dart",
 		radardistance = 1000,
 		seismicsignature = 0, --Don't work for air unit
 		selfdestructas = "BIG_UNITEX",

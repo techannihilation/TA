@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		objectname = "arm/armalab.s3o",
+		objectname = "ARMALAB",
 		radaremitheight = 31,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -69,7 +69,6 @@ return {
 		customparams = {
 			buildpic = "armalab.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
@@ -83,7 +82,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 2680,
-				object = "arm/armalab_dead",
+				object = "ARMALAB_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -96,7 +95,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1642,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

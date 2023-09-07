@@ -41,7 +41,7 @@ return {
 		movementclass = "HTKBOT2",
 		name = "Skuttle",
 		noautofire = false,
-		objectname = "core/corsktl.s3o",
+		objectname = "CORSKTL",
 		radaremitheight = 25,
 		seismicsignature = 5,
 		selfdestructas = "MINE_NUKE",

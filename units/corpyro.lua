@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Pyro",
 		noautofire = false,
-		objectname = "core/corpyro.s3o",
+		objectname = "CORPYRO",
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "CORPYRO_BLAST",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corpyro.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 82,
-				object = "2x2c",
+				object = "2X2C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

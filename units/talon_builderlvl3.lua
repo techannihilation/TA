@@ -41,7 +41,7 @@ return {
 		metalmake = 3.75,
 		metalstorage = 100,
 		name = "Construction Ship",
-		objectname = "talon/talon_builderlvl3.s3o",
+		objectname = "talon_builderlvl3",
 		reclaimspeed = 1500,
 		repairspeed = 1500,
 		selfdestructas = "SHIPBLAST",
@@ -73,7 +73,6 @@ return {
 		customparams = {
 			buildpic = "talon_builderlvl3.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -83,7 +82,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19599,
-				object = "talon/talon_builderlvl3_dead",
+				object = "talon_builderlvl3_dead",
 				reclaimable = true,
 			},
 		},

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Super Hot Shot",
 		noautofire = false,
-		objectname = "rumad/rumad_hotshot1.s3o",
+		objectname = "rumad_hotshot1",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "rumad_hotshot1.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1008,
-				object = "rumad/rumad_hotshot1_dead",
+				object = "rumad_hotshot1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 538,
-				object = "rumad/rumad_hotshot1_dead",
+				object = "rumad_hotshot1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 336,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -142,7 +141,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missilexl_rumad.s3o",
+				model = "weapon_missilexl_rumad",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1800,

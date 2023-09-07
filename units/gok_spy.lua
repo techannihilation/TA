@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Spore",
 		noautofire = false,
-		objectname = "gok/gok_spy.s3o",
+		objectname = "gok_spy",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 2,
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "gok_spy.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 102,
-				object = "gok/gok_mradk_dead",
+				object = "gok_mradk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 54,
-				object = "2x2d",
+				object = "2X2D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

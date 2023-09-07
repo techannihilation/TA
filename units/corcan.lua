@@ -15,6 +15,7 @@ return {
 		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "28 27 25",
+		
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -36,7 +37,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Can",
 		noautofire = false,
-		objectname = "core/corcan.s3o",
+		objectname = "CORCAN",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -52,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corcan.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 412,
-				object = "core/corcan_dead",
+				object = "CORCAN_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 220,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

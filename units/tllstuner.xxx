@@ -32,7 +32,7 @@ return {
 		name = "T1 Stuner",
 		noautofire = false,
 
-		objectname = "arm/tllstuner.s3o",
+		objectname = "tllstuner",
 		radaremitheight = 72,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 410,
@@ -53,7 +53,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 420,
-				object = "tll/tllstuner_dead",
+				object = "tllstuner_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

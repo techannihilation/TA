@@ -33,7 +33,7 @@ return {
 		metalstorage = 100,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "arm/armemex.s3o",
+		objectname = "armemex",
 		onoffable = true,
 		radaremitheight = 35,
 		script = "armemex.cob",

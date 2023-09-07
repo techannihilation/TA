@@ -39,7 +39,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Triumph",
 		noautofire = false,
-		objectname = "arm/armtrmph.s3o",
+		objectname = "ARMTRMPH",
 		radardistance = 2000,
 		radaremitheight = 79,
 		selfdestructas = "KROG_BLAST",
@@ -58,7 +58,6 @@ return {
 			buildpic = "armtrmph.dds",
 			faction = "ARM",
 			--requiretech = "Advanced T3 Unit Research Centre",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 36000,
-				object = "arm/armtrmph_dead",
+				object = "armtrmph_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -188,7 +187,7 @@ return {
 				flighttime = 5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Heavy Guided Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -236,7 +235,7 @@ return {
 				flighttime = 2.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE1.s3o",
+				model = "WEAPON_DEPTHCHARGE1",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 850,

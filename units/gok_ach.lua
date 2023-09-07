@@ -43,7 +43,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Construction Gravitank",
 		noautofire = false,
-		objectname = "gok/gok_ach.s3o",
+		objectname = "gok_ach",
 		radaremitheight = 25,
 		reclaimspeed = 80,
 		repairspeed = 80,
@@ -94,7 +94,6 @@ return {
 		customparams = {
 			buildpic = "gok_ach.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -104,7 +103,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "gok/gok_ach_dead",
+				object = "gok_ach_dead",
 				reclaimable = true,
 			},
 		},

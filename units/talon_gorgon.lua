@@ -38,7 +38,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Gorgon",
 		noautofire = false,
-		objectname = "talon/talon_gorgon.s3o",
+
+		objectname = "talon_gorgon",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 410,
@@ -53,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "talon_gorgon.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 270,
-				object = "talon/talon_gorgon_dead",
+				object = "talon_gorgon_dead",
 				reclaimable = true,
 			},
 			heap = {

@@ -18,6 +18,8 @@ local shared = {} -- shared amongst the lua explosiondef enviroments
 local preProcFile  = 'gamedata/explosions_pre.lua'
 local postProcFile = 'gamedata/explosions_post.lua'
 
+local TDF = TDFparser or VFS.Include('gamedata/parse_tdf.lua')
+
 local system = VFS.Include('gamedata/system.lua')
 VFS.Include('gamedata/VFSUtils.lua')
 local section = 'explosions.lua'
@@ -35,6 +37,58 @@ if (VFS.FileExists(preProcFile)) then
   ExplosionDefs = nil
   Shared = nil
 end
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+--  Load the TDF explosiondef files
+--
+
+local function ParseColorString(str)
+  local color = { 1.0, 1.0, 0.8 }
+  local i = 1
+  for word in string.gmatch(str, '[^,]+') do
+    local val = tonumber(word)
+    if (val) then
+      color[i] = val
+    end
+    i = i + 1
+    if (i > 3) then
+      break
+    end
+  end
+  return color
+end
+
+
+local function FixGroundFlashColor(ed)
+  for spawnName, groundFlash  in pairs(ed) do
+    if ((spawnName == 'groundflash') and (type(groundFlash) == 'table')) then
+      local colorStr = groundFlash.color
+      if (type(colorStr) == 'string') then
+        groundFlash.color = ParseColorString(colorStr)
+      end
+    end
+  end
+end
+
+local function LoadTDFs(dir)
+  local tdfFiles = RecursiveFileSearch(dir, '*.tdf')
+
+  for _, filename in ipairs(tdfFiles) do
+    local eds, err = TDF.Parse(filename)
+    if (eds == nil) then
+      Spring.Log(section, LOG.ERROR, 'Error parsing ' .. filename .. ': ' .. err)
+    else
+      for name, ed in pairs(eds) do
+        ed.filename = filename
+        explosionDefs[name] = ed
+        FixGroundFlashColor(ed)
+      end
+    end
+  end
+ end
 
 
 --------------------------------------------------------------------------------
@@ -66,6 +120,10 @@ local function LoadLuas(dir)
   end  
 end
 
+--  Load the TDF format explosiondef files
+--  Files in effects/ will override those in gamedata/explosions/
+LoadTDFs('gamedata/explosions/')
+LoadTDFs('effects/')
 --  Load the raw LUA format explosiondef files
 --  (these will override the TDF versions)
 --  Files in effects/ will override those in gamedata/explosions/

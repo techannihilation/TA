@@ -28,7 +28,7 @@ return {
 		mobilestandorders = 1,
 		name = "Capital Shipyard",
 		noautofire = false,
-		objectname = "tll/tllusy.s3o",
+		objectname = "tllusy",
 		radardistance = 100,
 		radaremitheight = 93,
 		selfdestructas = "CRAWL_BLAST",
@@ -49,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "tllusy.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 12000,
-				--object = "tll/tllusy_dead",
+				--object = "tllusy_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +74,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 6400,
-				object = "7x7b",
+				object = "7X7B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

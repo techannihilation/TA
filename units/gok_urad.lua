@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Radar Tower",
 		noautofire = false,
-		objectname = "gok/gok_urad.s3o",
+		objectname = "gok_urad",
 		onoffable = true,
 		radardistance = 24000,
 		radaremitheight = 41,
@@ -37,7 +37,6 @@ return {
 		customparams = {
 			buildpic = "gok_urad.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -48,7 +47,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 345,
-				object = "gok/gok_urad_dead",
+				object = "gok_urad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -61,7 +60,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 184,
-				object = "6x6c",
+				object = "6X6C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

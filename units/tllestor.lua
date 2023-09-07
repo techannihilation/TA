@@ -14,6 +14,7 @@ return {
 		category = "ALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "96 50 59",
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		description = "16K Capacity (Amphibious)",
@@ -31,7 +32,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		objectname = "tll/tllestor.s3o",
+		objectname = "TLLESTOR",
 		radaremitheight = 26,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 210,
@@ -41,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "tllestor.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +52,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 195,
-				object = "tll/tllestor_dead",
+				object = "tllestor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -13,6 +13,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -5 0",
 		collisionvolumescales = "45 80 45",
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		description = "Tech Level 2",
@@ -33,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "talon/talon_conspiracy1.s3o",
+		objectname = "talon_conspiracy1",
 		onoffable = true,
 		radardistancejam = 750,
 		radaremitheight = 74,
@@ -48,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "talon_conspiracy1.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 180,
-				object = "talon/talon_conspiracy_dead",
+				object = "talon_conspiracy_DEAD",
 				reclaimable = true,
 			},
 		},

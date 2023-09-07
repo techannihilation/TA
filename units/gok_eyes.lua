@@ -33,7 +33,7 @@ return {
 		mincloakdistance = 36,
 		name = "Demon's Eye",
 		noautofire = false,
-		objectname = "gok/gok_eyes.s3o",
+		objectname = "gok_eyes",
 		onoffable = false,
 		radaremitheight = 27,
 		seismicsignature = 0,
@@ -49,7 +49,6 @@ return {
 			buildpic = "gok_eyes.dds",
 			faction = "GOK",
 			initcloaked = true,
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dragonseyes_dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 24,
-				object = "1x1b",
+				object = "1X1B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

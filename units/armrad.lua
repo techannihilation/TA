@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		objectname = "arm/armrad.s3o",
+		objectname = "ARMRAD",
 		onoffable = true,
 		radardistance = 2100,
 		radaremitheight = 66,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "armrad.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "arm/armrad_dead",
+				object = "ARMRAD_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 23,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

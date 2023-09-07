@@ -42,7 +42,7 @@ return {
 		metalmake = 3.75,
 		metalstorage = 100,
 		name = "Construction Ship",
-		objectname = "gok/gok_builderlvl5.s3o",
+		objectname = "gok_builderlvl5",
 		reclaimspeed = 1500,
 		repairspeed = 1500,
 		selfdestructas = "SHIPBLAST",
@@ -73,7 +73,6 @@ return {
 		customparams = {
 			buildpic = "gok_builderlvl5.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -83,7 +82,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19599,
-				object = "gok/gok_builderlvl5_dead",
+				object = "gok_builderlvl5_dead",
 				reclaimable = true,
 			},
 		},

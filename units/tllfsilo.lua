@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "tll/tllfsilo.s3o",
+		objectname = "tllfsilo",
 		radaremitheight = 300,
 		selfdestructas = "KROG_BLAST",
 		sightdistance = 1200,
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "tllfsilo.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 121500,
-				--object = "tll/tllfsilo_dead",
+				--object = "tllfsilo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -120,7 +119,7 @@ return {
 				firestarter = 100,
 				flighttime = 450,
 				metalpershot = 32000,
-				model = "weapon_nuke_adv_tll.s3o",
+				model = "weapon_nuke_adv_tll",
 				name = "Ultimate Nuclear Missile",
 				range = 80000,
 				reloadtime = 30,

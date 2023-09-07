@@ -32,7 +32,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Jammer Tower",
 		noautofire = false,
-		objectname = "core/coromni.s3o",
+		
+		objectname = "coromni",
 		onoffable = true,
 		radardistancejam = 2000,
 		radaremitheight = 50,
@@ -44,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "coromni.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +55,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5844,
-				object = "core/coromni_dead",
+				object = "coromni_dead",
 				reclaimable = true,
 			},
 			heap = {

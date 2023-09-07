@@ -27,7 +27,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 500,
 		name = "Shipyard",
-		objectname = "rumad/rumad_yard.s3o",
+		objectname = "rumad_yard",
 		radardistance = 0,
 		radaremitheight = 243,
 		selfdestructas = "SHIPBLAST",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "rumad_yard.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 20,
 				footprintz = 15,
 				metal = 78000,
-				object = "rumad/rumad_yard_dead",
+				object = "rumad_yard_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

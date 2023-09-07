@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Cacodemon",
 		noautofire = false,
-		objectname = "gok/gok_cacodemon.s3o",
+		objectname = "gok_cacodemon",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "gok_cacodemon.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 161,
-				object = "gok/gok_cacodemon_dead",
+				object = "gok_cacodemon_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 86,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 8,
 		name = "Mininuke mine",
 		noautofire = false,
-		objectname = "talon/talon_mine4.s3o",
+		objectname = "talon_mine4",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

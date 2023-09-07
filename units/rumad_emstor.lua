@@ -27,7 +27,7 @@ return {
 		metalstorage = 60000,
 		name = "T3 Metal Storage",
 		noautofire = false,
-		objectname = "rumad/rumad_emstor.s3o",
+		objectname = "rumad_emstor",
 		radardistance = 0,
 		radaremitheight = 48,
 		script = "rumad_amstor.cob",
@@ -40,7 +40,6 @@ return {
 		customparams = {
 			buildpic = "rumad_emstor.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +50,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				--object = "rumad/rumad_emstor_dead",
+				--object = "rumad_emstor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -41,7 +41,7 @@ return {
 		moverate1 = 9,
 		name = "Liche",
 		noautofire = false,
-		objectname = "arm/armcybr.s3o",
+		objectname = "ARMCYBR",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 455,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "armcybr.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1326,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -122,7 +121,7 @@ return {
 				impulsefactor = 0.5,
 				interceptedbyshieldtype = 16,
 				metalpershot = 300,
-				model = "weapon_cybr.s3o",
+				model = "weapon_cybr",
 				name = "PlasmaImplosionDumpRocket",
 				noselfdamage = true,
 				range = 500,
@@ -149,6 +148,7 @@ return {
 				damage = {
 					commanders = 1500,
 					default = 7500,
+
 					subs = 3750,
 					air = 750,
 				},

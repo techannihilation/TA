@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "talon/talon_avp.s3o",
+		objectname = "talon_avp",
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -72,7 +72,6 @@ return {
 		customparams = {
 			buildpic = "talon_avp.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -87,7 +86,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 594,
-				object = "talon/talon_avp_dead",
+				object = "talon_avp_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -98,7 +97,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "6x6d",
+				object = "6X6D",
 				reclaimable = true,
 			},
 		},

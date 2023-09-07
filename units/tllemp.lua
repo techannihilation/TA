@@ -32,7 +32,7 @@ return {
 		name = "Freezer",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "tll/tllemp.s3o",
+		objectname = "TLLEMP",
 		radardistance = 0,
 		radaremitheight = 118,
 		selfdestructas = "EMP_EXPLOSION",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "tllemp.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 896,
-				object = "tll/tllemp_dead",
+				object = "tllemp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -122,7 +121,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 350,
-				model = "weapon_missile_emp.s3o",
+				model = "weapon_missile_emp",
 				name = "EMPMissile",
 				noselfdamage = true,
 				paralyzer = true,

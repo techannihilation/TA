@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Floating Stingray",
 		noautofire = false,
-		objectname = "arm/armfhlt.s3o",
+		objectname = "ARMFHLT",
 		radaremitheight = 43,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,7 +47,6 @@ return {
 		customparams = {
 			buildpic = "armfhlt.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 431,
-				object = "arm/armfhlt_dead",
+				object = "ARMFHLT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

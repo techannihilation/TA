@@ -36,7 +36,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Behegoli",
 		noautofire = false,
-		objectname = "core/corhgol.s3o",
+
+		objectname = "corhgol",
 		radardistance = 0,
 		radaremitheight = 33,
 		selfdestructas = "BIG_UNIT",
@@ -52,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corhgol.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1777,
-				object = "core/corhgol_dead",
+				object = "corhgol_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

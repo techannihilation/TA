@@ -30,7 +30,7 @@ return {
 		metalstorage = 200,
 		name = "Mass Extractor",
 		noautofire = false,
-		objectname = "rumad/rumad_mas.s3o",
+		objectname = "rumad_mas",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 97,

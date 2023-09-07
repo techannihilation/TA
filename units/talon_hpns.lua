@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",
 		noautofire = false,
-		objectname = "talon/talon_hpns.s3o",
+		objectname = "talon_hpns",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -56,13 +56,13 @@ return {
 		customparams = {
 			buildpic = "talon_hpns.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "116 20 104",
+				
 				collisionvolumetype = "Box",
 				damage = 2730,
 				description = "Hovercraft Platform Wreckage",
@@ -71,7 +71,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 764,
-				object = "talon/talon_hpns_dead",
+				object = "talon_hpns_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -82,7 +82,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 407,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 			},
 		},

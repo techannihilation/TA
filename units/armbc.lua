@@ -38,7 +38,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Nemo",
 		noautofire = false,
-		objectname = "arm/armbc.s3o",
+		objectname = "ARMBC",
 		radardistance = 0,
 		radaremitheight = 60,
 		selfdestructas = "CRAWL_BLAST",
@@ -54,7 +54,6 @@ return {
 			buildpic = "armbc.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7125,
-				object = "arm/armbc_dead",
+				object = "armbc_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -200,7 +199,7 @@ return {
 				cratermult = 0,
 				firestarter = 70,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				range = 900,
 				reloadtime = 0.25,
@@ -225,6 +224,7 @@ return {
 				damage = {
 					areoship = 75,
 					default = 5,
+
 					air = 300,
 				},
 			},

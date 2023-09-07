@@ -36,7 +36,8 @@ return {
 		movementclass = "KBOT2",
 		name = "Rocketeer",
 		noautofire = false,
-		objectname = "core/corrock.s3o",
+		
+		objectname = "CORROCK",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +54,6 @@ return {
 			buildpic = "corrock.dds",
 			faction = "CORE",
 			requiretech = "Advanced T1 Unit Research Centre",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 176,
-				object = "core/corrock_dead",
+				object = "CORROCK_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 94,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +134,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Rockets",
 				noselfdamage = true,
 				range = 610,

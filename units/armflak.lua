@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Flakker",
 		noautofire = false,
-		objectname = "arm/armflak.s3o",
+		objectname = "ARMFLAK",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -54,7 +54,6 @@ return {
 			buildpic = "armflak.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 783,
-				object = "arm/armflak_dead",
+				object = "ARMFLAK_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 418,
-				object = "2x2c",
+				object = "2X2C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -156,6 +155,7 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
+
 					air = 500,
 				},
 			},

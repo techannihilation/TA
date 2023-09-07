@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Juno",
 		noautofire = false,
-		objectname = "talon/talon_juno.s3o",
+		objectname = "talon_juno",
 		radaremitheight = 71,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "talon_juno.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 468,
-				object = "arm/ajuno_dead",
+				object = "ajuno_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 250,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +134,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 150,
-				model = "weapon_pulse.s3o",
+				model = "weapon_pulse",
 				name = "AntiSignal",
 				range = 6000,
 				reloadtime = 2,

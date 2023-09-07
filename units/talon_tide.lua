@@ -30,7 +30,7 @@ return {
 		minwaterdepth = 20,
 		name = "Tidal Generator",
 		noautofire = false,		
-		objectname = "talon/talon_tide.s3o",
+		objectname = "talon_tide",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "talon_tide.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 65,
-				object = "talon/talon_tide_dead",
+				object = "talon_tide_DEAD",
 				reclaimable = true,
 			},
 		},

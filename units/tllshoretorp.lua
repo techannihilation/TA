@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 5,
 		name = "Fish Hook",
 		noautofire = false,
-		objectname = "tll/tllshoretorp.s3o",
+		objectname = "TLLshoretorp",
 		radaremitheight = 105,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 380,
@@ -42,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "tllshoretorp.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +52,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 481,
-				object = "tll/tllshoretorp_dead",
+				object = "tllshoretorp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -123,7 +122,7 @@ return {
 				groundbounce = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "Shore Torpedo Launcher",
 				noselfdamage = true,
 				numbounce = 1,

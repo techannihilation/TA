@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Sardine",
 		noautofire = false,
-		objectname = "talon/talon_aas.s3o",
+		objectname = "talon_aas",
 		radardistance = 900,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_aas.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 678,
-				object = "talon/talon_aas_dead",
+				object = "talon_aas_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 362,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 			},
 		},
@@ -130,7 +129,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 850,
@@ -156,6 +155,7 @@ return {
 				damage = {
 					areoship = 25,
 					default = 5,
+					
 					air = 100,
 				},
 			},
@@ -189,6 +189,7 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
+					
 					air = 160,
 				},
 			},

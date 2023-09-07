@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nurgle",
 		noautofire = false,
-		objectname = "gok/gok_nurgle.s3o",
+		objectname = "gok_nurgle",
 		script = "gok_hookah.cob",
 		selfdestructas = "VBIG_UNIT_VTOL",
 		sightdistance = 400,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "gok_nurgle.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1213,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

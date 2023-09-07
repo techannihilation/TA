@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 24,
 		name = "Sonar Station",
 		noautofire = false,
-		objectname = "gok/gok_asonar.s3o",
+		objectname = "gok_asonar",
 		onoffable = true,
 		radaremitheight = 41,
 		script = "gok_sonar.cob",
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "gok_asonar.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 131,
-				object = "gok/gok_sonar_dead",
+				object = "gok_sonar_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

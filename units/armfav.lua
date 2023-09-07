@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Jeffy",
 		noautofire = false,
-		objectname = "arm/armfav.s3o",
+		objectname = "ARMFAV",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "armfav.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 23,
-				object = "arm/armfav_dead",
+				object = "ARMFAV_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 12,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

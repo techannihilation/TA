@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Brachiosorus",
 		noautofire = false,
-		objectname = "tll/tllmlrpc.s3o",
+		objectname = "TLLMLRPC",
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "CRAWL_BLAST",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "tllmlrpc.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4125,
-				object = "tll/tllmlrpc_dead",
+				object = "TLLMLRPC_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

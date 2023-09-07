@@ -43,7 +43,7 @@ return {
 		name = "Aircraft Carrier",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "arm/armhcar.s3o",
+		objectname = "ARMHCAR",
 		onoffable = true,
 		radardistance = 3500,
 		radaremitheight = 68,
@@ -62,7 +62,6 @@ return {
 			isairbase = true,
 			buildpic = "armhcar.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 10875,
-				object = "arm/armhcar_dead",
+				object = "armhcar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +133,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
 				metalpershot = 2500,
-				model = "weapon_nuke.s3o",
+				model = "weapon_nuke",
 				name = "Operational Nuclear Missile",
 				range = 72000,
 				reloadtime = 20,
@@ -172,7 +171,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

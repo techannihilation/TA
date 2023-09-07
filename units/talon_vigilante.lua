@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vigilante",
 		noautofire = false,
-		objectname = "talon/talon_vigilante.s3o",
+		objectname = "talon_vigilante",
 		radardistance = 2250,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

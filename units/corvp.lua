@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "core/corvp.s3o",
+		objectname = "CORVP",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -67,13 +67,13 @@ return {
 		customparams = {
 			buildpic = "corvp.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -13 0",
 				collisionvolumescales = "90 56 90",
+
 				collisionvolumetype = "CylZ",
 				damage = 2484,
 				description = "Vehicle Plant Wreckage",
@@ -82,7 +82,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 577,
-				object = "core/corvp_dead",
+				object = "CORVP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -96,7 +96,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 308,
-				object = "7x7b",
+				object = "7X7B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

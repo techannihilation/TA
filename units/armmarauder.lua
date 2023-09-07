@@ -36,7 +36,7 @@ return {
 		movementclass = "ATANK3",
 		name = "armmarauder",
 		noautofire = false,
-		objectname = "arm/armmarauder.s3o",
+		objectname = "armmarauder",
 		radaremitheight = 32,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -54,7 +54,6 @@ return {
 			buildpic = "armmarauder.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1080,
-				object = "arm/armmarauder_dead",
+				object = "armmarauder_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 576,
-				object = "3x3f",
+				object = "3X3F",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +134,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
@@ -157,6 +156,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+
 					air = 80,
 				},
 			},

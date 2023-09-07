@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "Mega NS",
 		noautofire = false,
-		objectname = "talon/talon_fmine.s3o",
+		objectname = "TALON_FMINE",
 		script = "mines_lus.lua",
 		radaremitheight = 25,
 		seismicsignature = 0,

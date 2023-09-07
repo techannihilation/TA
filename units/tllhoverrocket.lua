@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Vandal",
 		noautofire = false,
-		objectname = "tll/tllhoverrocket.s3o",
+		objectname = "tllhoverrocket",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -51,7 +51,6 @@ return {
 		customparams = {
 			buildpic = "tllhoverrocket.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 243,
-				object = "tll/tllhoverrocket_dead",
+				object = "tllhoverrocket_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -125,7 +124,7 @@ return {
 				firesubmersed = true,
 				flighttime = 10,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "Vpulse Rocket",
 				range = 800,
 				reloadtime = 10.5,

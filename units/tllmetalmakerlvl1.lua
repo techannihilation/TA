@@ -29,7 +29,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 255,
 		name = "Advanced Metal Maker",
-		objectname = "tll/tllmetalmakerlvl1.s3o",
+		objectname = "tllmetalmakerlvl1",
 		radardistance = 0,
 		radaremitheight = 25,
 		script = "tllmm.cob",

@@ -37,7 +37,7 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "core/cormoho.s3o",
+		objectname = "CORMOHO",
 		onoffable = true,
 		radaremitheight = 32,
 		seismicsignature = 0,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "cormoho.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 478,
-				object = "core/cormoho_dead",
+				object = "CORMOHO_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 255,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -36,7 +36,7 @@ return {
 		movementclass = "UBOAT8",
 		name = "Tzenth",
 		noautofire = false,
-		objectname = "gok/gok_tzenth.s3o",
+		objectname = "gok_tzenth",
 		radaremitheight = 45,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 750,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_tzenth.dds",
 			faction = "ARM",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 2799,
-				object = "gok/gok_tzenth_dead",
+				object = "gok_tzenth_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -125,7 +124,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_adv_gok.s3o",
+				model = "weapon_torpedo_adv_gok",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 1200,
@@ -159,7 +158,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_adv_gok.s3o",
+				model = "weapon_torpedo_adv_gok",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 1200,

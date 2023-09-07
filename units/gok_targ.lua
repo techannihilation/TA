@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Targeting Facility",
 		noautofire = false,
-		objectname = "gok/gok_targ.s3o",
+		objectname = "gok_targ",
 		onoffable = true,
 		radaremitheight = 35,
 		seismicsignature = 0,
@@ -42,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "gok_targ.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +56,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 605,
-				object = "gok/gok_targ_dead",
+				object = "gok_targ_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 322,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

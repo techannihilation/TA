@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Sneak",
 		noautofire = false,
-		objectname = "tll/tllspy.s3o",
+		objectname = "tllspy",
 		onoffable = true,
 		radaremitheight = 28,
 		seismicsignature = 2,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "tllspy.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 149,
-				object = "tll/tllspy_dead",
+				object = "tllspy_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 79,
-				object = "1x1a",
+				object = "1X1A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

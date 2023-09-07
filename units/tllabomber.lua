@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Ghost",
 		noautofire = false,
-		objectname = "tll/tllabomber.s3o",
+		objectname = "tllabomber",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 350,
 		standingfireorder = 2,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "tllabomber.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 203,
-				object = "4x4z",
+				object = "4X4Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -120,7 +119,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb.s3o",
+				model = "weapon_bomb",
 				name = "AdvancedBombs",
 				noselfdamage = true,
 				range = 1280,

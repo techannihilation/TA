@@ -34,7 +34,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
 		noautofire = false,
-		objectname = "core/cfusionplant.s3o",
+		
+		objectname = "CFusionPlant",
 		radardistance = 0,
 		radaremitheight = 75,
 		seismicsignature = 0,
@@ -47,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "cfusionplant.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 50400,
-				object = "core/cfusionplant_dead",
+				object = "CFusionPlant_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 26880,
-				object = "core/cfusionplant_heap",
+				object = "CFusionPlant_heap",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

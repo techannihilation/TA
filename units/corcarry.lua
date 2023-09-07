@@ -43,7 +43,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
-		objectname = "core/corcarry.s3o",
+		objectname = "CORCARRY",
 		radardistance = 2500,
 		radaremitheight = 49,
 		seismicsignature = 0,
@@ -62,7 +62,6 @@ return {
 			isairbase = true,
 			buildpic = "corcarry.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1263,
-				object = "core/corcarry_dead",
+				object = "CORCARRY_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +90,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 673,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -152,7 +151,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke.s3o",
+				model = "weapon_antinuke",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

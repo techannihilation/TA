@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Aircraft Plant",
 		noautofire = false,
-		objectname = "core/coreap.s3o",
+		objectname = "COREAP",
 		radaremitheight = 110,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -60,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "coreap.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 14960,
-				object = "core/coreap_dead",
+				object = "COREAP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 7978,
-				object = "7x7b",
+				object = "7X7B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

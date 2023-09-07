@@ -37,7 +37,8 @@ return {
 		movementclass = "BOAT4",
 		name = "Escort",
 		noautofire = false,
-		objectname = "arm/armsjam.s3o",
+		
+		objectname = "ARMSJAM",
 		onoffable = true,
 		radardistancejam = 980,
 		radaremitheight = 25,
@@ -53,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "armsjam.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 104,
-				object = "arm/armsjam_dead",
+				object = "ARMSJAM_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 55,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

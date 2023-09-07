@@ -40,7 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Cancer",
 		noautofire = false,
-		objectname = "gok/gok_cancer.s3o",
+		objectname = "gok_cancer",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "gok_cancer.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				featurereclaimate = "smudge01",
 				footprintx = 3,
 				footprintz = 3,
-				object = "gok/gok_cancer_dead",
+				object = "gok_cancer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +125,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "Depth Charge",
 				range = 375,
 				reloadtime = 0.7,

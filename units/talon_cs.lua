@@ -41,7 +41,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Construction Ship",
 		noautofire = false,
-		objectname = "talon/talon_cs.s3o",
+		objectname = "talon_cs",
 		radaremitheight = 25,
 		reclaimspeed = 50,
 		repairspeed = 50,
@@ -82,7 +82,6 @@ return {
 		customparams = {
 			buildpic = "talon_cs.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -97,7 +96,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 204,
-				object = "talon/talon_cs_dead",
+				object = "talon_cs_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -108,7 +107,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 108,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 			},
 		},

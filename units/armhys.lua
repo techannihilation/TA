@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Hysteric",
 		noautofire = false,
-		objectname = "arm/armhys.s3o",
+		objectname = "ARMHYS",
 		radardistance = 1000,
 		radaremitheight = 65,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -43,7 +43,6 @@ return {
 		customparams = {
 			buildpic = "armhys.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 8400,
-				object = "arm/armhys_dead",
+				object = "armhys_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

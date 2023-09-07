@@ -36,7 +36,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Leopard",
 		noautofire = false,
-		objectname = "core/coreleopard.s3o",
+		objectname = "coreleopard",
 		radardistance = 50,
 		radaremitheight = 22,
 		reclaimspeed = 45,
@@ -77,7 +77,6 @@ return {
 		customparams = {
 			buildpic = "coreleopard.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -88,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 116,
-				object = "core/coreleopard_dead",
+				object = "coreleopard_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

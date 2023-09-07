@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Long Range Plasma Cannon",
-		objectname = "talon/talon_lrpt.s3o",
+		objectname = "talon_lrpt",
 		radaremitheight = 92,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,7 +50,6 @@ return {
 			buildpic = "talon_lrpt.dds",
 			canareaattack = 1,
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3225,
-				object = "talon/talon_lrpt_dead",
+				object = "talon_lrpt_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1720,
-				object = "3x3c",
+				object = "3X3C",
 				reclaimable = true,
 			},
 		},

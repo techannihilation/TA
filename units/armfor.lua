@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Unstable Geothermal Powerplant",
 		noautofire = false,
-		objectname = "arm/armfor.s3o",
+		objectname = "armfor",
 		radaremitheight = 73,
 		selfdestructas = "FUSION_BLAST",
 		sightdistance = 250,

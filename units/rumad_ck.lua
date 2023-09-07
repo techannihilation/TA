@@ -41,7 +41,7 @@ return {
 		movementclass = "TKBOT2",
 		name = "All-Terrain Construction Spider",
 		noautofire = false,
-		objectname = "rumad/rumad_ck.s3o",
+		objectname = "rumad_ck",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -88,7 +88,6 @@ return {
 		customparams = {
 			buildpic = "rumad_ck.dds",
 			faction = "TLL",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -99,7 +98,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "rumad/rumad_ck_dead",
+				object = "rumad_ck_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

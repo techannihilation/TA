@@ -41,7 +41,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Construction Ship",
 		noautofire = false,
-		objectname = "talon/talon_ecs.s3o",
+		objectname = "talon_ecs",
 		radaremitheight = 24,
 		seismicsignature = 0,
 		reclaimspeed = 300,
@@ -73,11 +73,11 @@ return {
 			[13] = "talon_fnanotc2",
 			[14] = "talon_fgate1",
 			[15] = "portal",
+
 		},
 		customparams = {
 			buildpic = "talon_ecs.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +92,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 7204,
-				object = "talon/talon_ecs_dead",
+				object = "talon_ecs_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -106,7 +106,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 4108,
-				object = "5x5a",
+				object = "5X5A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Blotter",
 		noautofire = false,
-		objectname = "core/corblotter.s3o",
+		objectname = "corblotter",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 25,
@@ -52,7 +52,6 @@ return {
 		customparams = {
 			buildpic = "corblotter.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "core/corblotter_dead",
+				object = "corblotter_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

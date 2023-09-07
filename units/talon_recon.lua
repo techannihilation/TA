@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Recon",
 		noautofire = false,
-		objectname = "talon/talon_recon.s3o",
+		objectname = "talon_recon",
 		radardistance = 1000,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

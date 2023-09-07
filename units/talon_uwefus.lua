@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 70,
 		name = "Experimental Underwater Fusion",
 		noautofire = false,
-		objectname = "talon/talon_uwefus.s3o",
+		objectname = "talon_uwefus",
 		radaremitheight = 45,
 		seismicsignature = 0,
 		selfdestructas = "KROG_BLAST",
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "talon_uwefus.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3277,
-				object = "talon/talon_uwefus_dead",
+				object = "talon_uwefus_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1748,
-				object = "5x5c",
+				object = "5X5C",
 				reclaimable = true,
 			},
 		},

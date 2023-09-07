@@ -27,7 +27,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T5 Metal Maker",
-		objectname = "tll/tllmetalmakerlvl4.s3o",
+		objectname = "tllmetalmakerlvl4",
 		radardistance = 0,
 		radaremitheight = 75,
 		selfdestructas = "KROG_BLAST",
@@ -37,7 +37,6 @@ return {
 		customparams = {
 			buildpic = "tllmetalmakerlvl4.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {

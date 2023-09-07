@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Rapid Long Range Plasma Cannon",
-		objectname = "core/corbuzz1.s3o",
+		objectname = "CORBUZZ1",
 		radaremitheight = 341,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "corbuzz1.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +55,7 @@ return {
 				footprintx = 14,
 				footprintz = 14,
 				metal = 214500,
-				object = "core/corbuzz1_dead",
+				object = "CORBUZZ1_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

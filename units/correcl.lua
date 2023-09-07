@@ -36,7 +36,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Death Cavalry",
 		noautofire = false,
-		objectname = "core/correcl.s3o",
+		objectname = "CORRECL",
 		radaremitheight = 25,
 		resurrect = 1,
 		seismicsignature = 0,

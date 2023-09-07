@@ -41,7 +41,7 @@ return {
 		movementclass = "UBOAT5",
 		name = "Marlin",
 		noautofire = false,
-		objectname = "talon/talon_frigate.s3o",
+		objectname = "talon_frigate",
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 52,
@@ -60,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "talon_frigate.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 11625,
-				object = "talon/talon_frigate_dead",
+				object = "talon_frigate_dead",
 				reclaimable = true,
 			},
 		},
@@ -119,7 +118,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo.s3o",
+				model = "weapon_advtorpedo",
 				name = "AdvTorpedo",
 				noselfdamage = true,
 				range = 700,
@@ -156,7 +155,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 350,
-				model = "weapon_missile_emp.s3o",
+				model = "weapon_missile_emp",
 				name = "EMPMissile",
 				noselfdamage = true,
 				paralyzer = true,

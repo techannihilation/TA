@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragons Breath",
 		noautofire = false,
-		objectname = "tll/tlldb.s3o",
+		objectname = "TLLDB",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "tlldb.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +59,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 10125,
-				object = "tll/tlldb_dead",
+				object = "tlldb_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -147,6 +146,7 @@ return {
 				damage = {
 					areoship = 625,
 					default = 5,
+					
 					air = 2500,
 				},
 			},
@@ -165,7 +165,7 @@ return {
 				flighttime = 1.3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Dragons Breath Missile",
 				noselfdamage = true,
 				range = 1500,
@@ -187,6 +187,7 @@ return {
 				damage = {
 					areoship = 187.5,
 					default = 5,
+					
 					air = 750,
 				},
 			},

@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Wind Generator Kbot",
 		noautofire = false,
-		objectname = "rumad/rumad_win.s3o",
+		objectname = "rumad_win",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "WIND_EX",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "rumad_win.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "rumad/rumad_win_dead",
+				object = "rumad_win_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2x2b",
+				object = "2X2B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

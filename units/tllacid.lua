@@ -39,7 +39,7 @@ return {
 		name = "Acidic Rain",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "tll/tllacid.s3o",
+		objectname = "tllacid",
 		radaremitheight = 42,
 		selfdestructas = "ACID_EXPLOSION",
 		sightdistance = 390,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "tllacid.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4575,
-				object = "tll/tllacid_dead",
+				object = "tllacid_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +134,7 @@ return {
 				impulseboost = 0.023,
 				impulsefactor = 0.023,
 				metalpershot = 750,
-				model = "weapon_acidmissile.s3o",
+				model = "weapon_acidmissile",
 				name = "Chemical Weapon",
 				noselfdamage = true,
 				range = 2750,

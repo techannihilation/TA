@@ -37,7 +37,8 @@ return {
 		movementclass = "KBOT2",
 		name = "Lizard",
 		noautofire = false,
-		objectname = "tll/tlllasbot.s3o",
+
+		objectname = "TLLLASBOT",
 		radardistance = 0,
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",
@@ -53,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "tlllasbot.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 258,
-				object = "tll/tlllasbot_dead",
+				object = "tlllasbot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

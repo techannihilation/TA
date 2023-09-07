@@ -43,7 +43,7 @@ return {
 		moverate2 = 2,
 		name = "Valkyrie",
 		noautofire = false,
-		objectname = "core/corvalk.s3o",
+		objectname = "CORVALK",
 		pitchscale = 1,
 		radaremitheight = 28.8,
 		releaseheld = true,

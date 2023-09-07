@@ -37,7 +37,7 @@ return {
 		minwaterdepth = 5,
 		name = "Naval Sodium",
 		noautofire = false,
-		objectname = "talon/talon_fptr.s3o",
+		objectname = "talon_fptr",
 		onoffable = false,
 		radaremitheight = 51,
 		seismicsignature = 0,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "talon_fptr.png",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1359,
-				object = "talon/talon_ptr_dead",
+				object = "talon_ptr_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +79,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 725,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 			},
 		},
@@ -126,7 +125,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal.s3o",
+				model = "weapon_missileaal",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -148,6 +147,7 @@ return {
 				damage = {
 					areoship = 500,
 					default = 5,
+					
 					air = 2000,
 				},
 			},

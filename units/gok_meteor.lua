@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Meteor Controller",
 		noautofire = false,
-		objectname = "gok/gok_meteor.s3o",
+		objectname = "gok_meteor",
 		onoffable = true,
 		radaremitheight = 182,
 		selfdestructas = "crawl_blast",
@@ -42,7 +42,6 @@ return {
 		customparams = {
 			buildpic = "gok_meteor.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +52,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 121500,
-				object = "gok/gok_meteor_dead",
+				object = "gok_meteor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +118,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 5,
-				model = "weapon_meteor.s3o",
+				model = "weapon_meteor",
 				name = "Meteor",
 				noselfdamage = false,
 				range = 5000,

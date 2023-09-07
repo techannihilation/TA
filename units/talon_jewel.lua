@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Jewel",
 		noautofire = false,
-		objectname = "talon/talon_jewel.s3o",
+		objectname = "talon_jewel",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "talon_jewel.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 900,
-				object = "talon/talon_jewel_dead",
+				object = "talon_jewel_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 480,
-				object = "3x3c",
+				object = "3X3C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

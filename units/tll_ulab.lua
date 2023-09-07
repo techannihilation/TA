@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Mech Lab",
 		noautofire = false,
-		objectname = "tll/tll_ulab.s3o",
+		objectname = "tll_ulab",
 		radardistance = 50,
 		radaremitheight = 140,
 		seismicsignature = 0,
@@ -65,7 +65,6 @@ return {
 		customparams = {
 			buildpic = "tll_ulab.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 39840,
-				object = "7x7c",
+				object = "7X7C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

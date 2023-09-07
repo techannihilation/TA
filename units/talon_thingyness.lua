@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "thingyness",
 		noautofire = false,
-		objectname = "talon/talon_thingyness.s3o",
+		objectname = "talon_thingyness",
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_thingyness.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			corsent_dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1200,
-				object = "core/corsent_dead",
+				object = "CORSENT_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 640,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},
@@ -127,7 +126,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "talon/talon_missile.s3o",
+				model = "talon_missile",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,

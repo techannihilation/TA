@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 0,
 		name = "Atlas",
 		noautofire = false,
-		objectname = "arm/armatlas.s3o",
+		objectname = "ARMATLAS",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		seismicsignature = 0,

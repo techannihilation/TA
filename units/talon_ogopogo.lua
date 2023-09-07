@@ -43,7 +43,8 @@ return {
 		movementclass = "ATANK3",
 		name = "Ogopogo",
 		noautofire = false,
-		objectname = "talon/talon_ogopogo.s3o",
+		
+		objectname = "talon_ogopogo",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 3,
@@ -66,7 +67,6 @@ return {
 		customparams = {
 			buildpic = "talon_ogopogo.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -80,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 360,
-				object = "talon/talon_ogopogo_dead",
+				object = "talon_ogopogo_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -91,7 +91,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2x2e",
+				object = "2X2E",
 				reclaimable = true,
 			},
 		},

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Moonstrike",
 		noautofire = false,
-		objectname = "gok/gok_moonstrike.s3o",
+		objectname = "gok_moonstrike",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +58,6 @@ return {
 		customparams = {
 			buildpic = "gok_moonstrike.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 120,
-				object = "gok/gok_moonstrike_dead",
+				object = "gok_moonstrike_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -128,7 +127,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_gok.s3o",
+				model = "weapon_missile_gok",
 				name = "RocketArtillery",
 				noselfdamage = true,
 				range = 750,

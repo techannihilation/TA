@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Karganeth",
 		noautofire = false,
-		objectname = "core/corkarg.s3o",
+		objectname = "CORKARG",
 		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -54,7 +54,6 @@ return {
 			buildpic = "corkarg.dds",
 			faction = "CORE",
 			prioritytarget = "air",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2850,
-				object = "core/corkarg_dead",
+				object = "CORKARG_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -122,7 +121,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "AA missile",
 				noselfdamage = true,
 				proximitypriority = -4,
@@ -148,6 +147,7 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
+
 					air = 120,
 				},
 			},
@@ -161,7 +161,7 @@ return {
 				firestarter = 5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "KarganethMissiles",
 				noselfdamage = true,
 				range = 600,
@@ -203,7 +203,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				movingaccuracy = 600,
 				name = "RavenCatapultRockets",
 				noselfdamage = true,

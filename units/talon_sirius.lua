@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Sirius",
 		noautofire = false,
-		objectname = "talon/talon_sirius.s3o",
+		objectname = "talon_sirius",
 		radaremitheight = 50,
 		selfdestructas = "KROG_BLAST",
 		sightdistance = 750,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_sirius.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5265,
-				object = "talon/talon_sirius_dead",
+				object = "talon_sirius_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -204,7 +203,7 @@ return {
 				flighttime = 6,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "talon/talon_rocket.s3o",
+				model = "talon_rocket",
 				name = "Guided Rockets",
 				range = 1050,
 				reloadtime = 1,

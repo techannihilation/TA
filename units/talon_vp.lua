@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "talon/talon_vp.s3o",
+		objectname = "talon_vp",
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -66,13 +66,13 @@ return {
 		customparams = {
 			buildpic = "talon_vp.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "-5 0 0",
 				collisionvolumescales = "110 34 92",
+
 				collisionvolumetype = "Box",
 				damage = 2575,
 				description = "Vehicle Plant Wreckage",
@@ -81,7 +81,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 594,
-				object = "talon/talon_vp_dead",
+				object = "talon_vp_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -92,7 +92,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 			},
 		},

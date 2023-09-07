@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Squid",
-		objectname = "gok/gok_squid.s3o",
+		objectname = "gok_squid",
 		radardistance = 0,
 		radaremitheight = 120,
 		script = "gok_octopus.cob",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "gok_squid.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 721250,
-				object = "gok/gok_squid_dead",
+				object = "gok_squid_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

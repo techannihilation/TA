@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT8",
 		name = "Azaroth",
 		noautofire = false,
-		objectname = "gok/gok_azaroth.s3o",
+		objectname = "gok_azaroth",
 		radardistance = 0,
 		radaremitheight = 76,
 		seismicsignature = 0,
@@ -61,7 +61,6 @@ return {
 			shield_emit_height = 125,
 			shield_power = 10000,
 			shield_radius = 250,
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14400,
-				object = "gok/gok_azaroth_dead",
+				object = "gok_azaroth_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +86,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7680,
-				object = "6x6a",
+				object = "6X6A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

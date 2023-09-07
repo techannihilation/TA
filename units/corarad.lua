@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Radar Tower",
 		noautofire = false,
-		objectname = "core/corarad.s3o",
+		objectname = "CORARAD",
 		onoffable = true,
 		radardistance = 3500,
 		radaremitheight = 91,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "corarad.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 417,
-				object = "core/corarad_dead",
+				object = "CORARAD_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 222,
-				object = "3x3c",
+				object = "3X3C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Dutchman",
 		noautofire = false,
-		objectname = "talon/talon_dutchman.s3o",
+		objectname = "talon_dutchman",
 		radardistance = 0,
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",
@@ -55,7 +55,6 @@ return {
 			buildpic = "talon_dutchman.dds",
 			canjump = "1",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4293,
-				object = "talon/talon_dutchman_dead",
+				object = "talon_dutchman_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -162,7 +161,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile.s3o",
+				model = "titan_missile",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

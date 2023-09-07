@@ -38,7 +38,8 @@ return {
 		movementclass = "ATANK3",
 		name = "Insulator",
 		noautofire = false,
-		objectname = "tll/tllinsulator.s3o",
+
+		objectname = "tllinsulator",
 		radaremitheight = 60,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -59,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "tllinsulator.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 373,
-				object = "tll/tllinsulator_dead",
+				object = "tllinsulator_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -84,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 199,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 			},
 		},

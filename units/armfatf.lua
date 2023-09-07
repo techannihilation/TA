@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 30,
 		name = "Floating Targeting Facility",
 		noautofire = false,		
-		objectname = "arm/armfatf.s3o",
+		objectname = "ARMFATF",
 		onoffable = true,
 		radaremitheight = 32,
 		seismicsignature = 0,
@@ -46,7 +46,6 @@ return {
 		customparams = {
 			buildpic = "armfatf.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 604,
-				object = "arm/armfatf_dead",
+				object = "ARMFATF_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 322,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

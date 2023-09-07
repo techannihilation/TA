@@ -25,7 +25,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T4 Metal Maker",
-		objectname = "rumad/rumad_metalmakerlvl4.s3o",
+		objectname = "rumad_metalmakerlvl4",
 		radardistance = 0,
 		radaremitheight = 53,
 		selfdestructas = "BANTHA_BLAST",
@@ -35,7 +35,6 @@ return {
 		customparams = {
 			buildpic = "rumad_metalmakerlvl4.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {

@@ -39,7 +39,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Black Rose",
 		noautofire = false,
-		objectname = "gok/gok_bats.s3o",
+		objectname = "gok_bats",
 		radaremitheight = 57,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -57,7 +57,6 @@ return {
 			shield_emit_height = 20.0,
 			shield_power = 2000,
 			shield_radius = 150,
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5250,
-				object = "gok/gok_bats_dead",
+				object = "gok_bats_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2800,
-				object = "6x6d",
+				object = "6X6D",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

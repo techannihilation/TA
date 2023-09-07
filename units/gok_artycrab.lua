@@ -36,7 +36,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Onyx",
 		noautofire = false,
-		objectname = "gok/gok_artycrab.s3o",
+		objectname = "gok_ARTYCRAB",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 62,
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "gok_artycrab.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 8962,
-				object = "gok/gok_artycrab_dead",
+				object = "gok_artycrab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

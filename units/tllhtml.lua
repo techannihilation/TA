@@ -36,7 +36,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Bumblebee",
 		noautofire = false,
-		objectname = "tll/tllhtml.s3o",
+		objectname = "TLLHTML",
 		radardistance = 0,
 		radaremitheight = 73,
 		selfdestructas = "BANTHA_BLAST",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllhtml.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 12937,
-				object = "tll/tllhtml_dead",
+				object = "tllhtml_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -184,7 +183,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_thermite_rocket.s3o",
+				model = "weapon_thermite_rocket",
 				movingaccuracy = 600,
 				name = "Thermite Rockets",
 				noselfdamage = true,

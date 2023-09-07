@@ -39,7 +39,7 @@ return {
 		moverate1 = 3,
 		name = "Banshee",
 		noautofire = false,
-		objectname = "arm/armkam.s3o",
+		objectname = "ARMKAM",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 520,

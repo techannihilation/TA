@@ -40,7 +40,7 @@ return {
 		movementclass = "HTANK8",
 		name = "Dark Kronos",
 		noautofire = false,
-		objectname = "arm/armmcv1.s3o",
+		objectname = "armmcv1",
 		onoffable = true,
 		radaremitheight = 38,
 		selfdestructas = "EXO_BLAST",
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "armmcv1.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "arm/armmcv1_dead",
+				object = "armmcv1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -171,7 +170,7 @@ return {
 				flighttime = 5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "Heavy Guided Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -252,7 +251,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Anti-Air Missile",
 				noselfdamage = true,
 				range = 800,

@@ -25,7 +25,7 @@ return {
 		name = "Shipyard",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "tll/tllsy.s3o",
+		objectname = "TLLSY",
 		radaremitheight = 38,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -48,7 +48,6 @@ return {
 		customparams = {
 			buildpic = "tllsy.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +58,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 551,
-				object = "tll/tllsy_dead",
+				object = "tllsy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +72,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 294,
-				object = "6x6c",
+				object = "6x6C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 183,
-				object = "4x4c",
+				object = "4x4C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

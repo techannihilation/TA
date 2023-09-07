@@ -34,7 +34,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Rlik",
 		noautofire = false,
-		objectname = "tll/tllhrk.s3o",
+		objectname = "TLLHRK",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "tllhrk.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +60,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 592,
-				object = "tll/tllhrk_dead",
+				object = "tllhrk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +126,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm.s3o",
+				model = "weapon_starburstm",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1350,

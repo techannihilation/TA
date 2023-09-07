@@ -40,7 +40,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Reality",
 		noautofire = false,
-		objectname = "talon/talon_reality.s3o",
+		
+		objectname = "talon_reality",
 		onoffable = true,
 		radardistance = 1750,
 		radaremitheight = 25,
@@ -59,7 +60,6 @@ return {
 		customparams = {
 			buildpic = "talon_reality.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 72,
-				object = "talon/talon_reality_dead",
+				object = "talon_reality_dead",
 				reclaimable = true,
 			},
 			heap = {

@@ -32,7 +32,7 @@ return {
 		maxslope = 14,
 		name = "Earth Lotus",
 		noautofire = false,
-		objectname = "core/corspun.s3o",
+		objectname = "corspun",
 		radaremitheight = 26,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -45,7 +45,6 @@ return {
 		customparams = {
 			buildpic = "corspun.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +55,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2040,
-				object = "core/cortoast_dead",
+				object = "CORTOAST_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

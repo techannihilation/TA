@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Negator",
 		noautofire = false,
-		objectname = "gok/gok_negator.s3o",
+		objectname = "gok_negator",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_negator.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 15,
-				object = "talon/talon_infantry_dead",
+				object = "talon_infantry_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 5,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 			},
 		},

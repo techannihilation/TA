@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK4",
 		name = "Sahara",
-		objectname = "rumad/rumad_sahara.s3o",
+		objectname = "rumad_sahara",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "rumad_sahara.dds",
 			faction = "RUMAD",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1650,
-				object = "rumad/rumad_sahara_dead",
+				object = "rumad_sahara_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +85,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 880,
-				object = "4x4c",
+				object = "4X4C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -169,7 +168,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad.s3o",
+				model = "weapon_missile_rumad",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

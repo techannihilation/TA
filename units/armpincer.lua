@@ -37,7 +37,8 @@ return {
 		movementclass = "ATANK3",
 		name = "Pincer",
 		noautofire = false,
-		objectname = "arm/armpincer.s3o",
+		
+		objectname = "ARMPINCER",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "armpincer.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 150,
-				object = "arm/armpincer_dead",
+				object = "ARMPINCER_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

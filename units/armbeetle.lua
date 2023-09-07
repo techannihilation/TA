@@ -38,7 +38,7 @@ return {
 		movementclass = "TKBOT8",
 		name = "Beetle",
 		noautofire = false,
-		objectname = "arm/armbeetle.s3o",
+		objectname = "armbeetle",
 		radardistance = 0,
 		radaremitheight = 76,
 		selfdestructas = "BANTHA_BLAST",
@@ -57,7 +57,6 @@ return {
 			shield_emit_height = 75,
 			shield_power = 30000,
 			shield_radius = 500,
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 16400,
-				object = "arm/armbeetle_dead",
+				object = "armbeetle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +80,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 9680,
-				object = "6x6c",
+				object = "6X6C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

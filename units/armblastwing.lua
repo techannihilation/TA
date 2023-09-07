@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "blastwing",
 		noautofire = false,
-		objectname = "arm/armblastwing.s3o",
+		objectname = "armblastwing",
 		selfdestructas = "armblastwing",
 		selfdestructcountdown = 1,
 		sightdistance = 400,

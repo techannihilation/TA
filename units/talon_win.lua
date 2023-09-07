@@ -14,6 +14,7 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 1 0",
 		collisionvolumescales = "40 87 40",
+		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produces Energy",
@@ -32,7 +33,8 @@ return {
 		maxwaterdepth = 0,
 		name = "Wind Generator",
 		noautofire = false,
-		objectname = "talon/talon_win.s3o",
+		
+		objectname = "talon_win",
 		radaremitheight = 77,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -47,7 +49,6 @@ return {
 		customparams = {
 			buildpic = "talon_win.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 27,
-				object = "talon/talon_win_dead",
+				object = "talon_win_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 14,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 			},
 		},

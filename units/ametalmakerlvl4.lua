@@ -25,7 +25,7 @@ return {
 		maxslope = 20,
 		maxwaterdepth = 0,
 		name = "T5 Metal Maker",
-		objectname = "arm/ametalmakerlvl4.s3o",
+		objectname = "ametalmakerlvl4",
 		radardistance = 0,
 		radaremitheight = 75,
 		selfdestructas = "KROG_BLAST",
@@ -35,7 +35,6 @@ return {
 		customparams = {
 			buildpic = "ametalmakerlvl4.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {

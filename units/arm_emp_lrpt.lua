@@ -28,7 +28,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 33,
 		name = "T2 Paralizer",
-		objectname = "arm/arm_emp_lrpt.s3o",
+		objectname = "arm_emp_lrpt",
 		radardistance = 0,
 		radaremitheight = 66,
 		selfdestructas = "CRAWL_BLAST",
@@ -42,7 +42,6 @@ return {
 			buildpic = "arm_emp_lrpt.dds",
 			canareaattack = 1,
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armbrtha_dead = {
@@ -54,7 +53,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3225,
-				object = "arm/arm_emp_lrpt_dead",
+				object = "arm_emp_lrpt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1720,
-				object = "3x3e",
+				object = "3X3E",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

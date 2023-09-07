@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Infantry",
 		noautofire = false,
-		objectname = "talon/talon_infantry.s3o",
+		objectname = "talon_infantry",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "talon_infantry.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 37,
-				object = "talon/talon_infantry_dead",
+				object = "talon_infantry_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 20,
-				object = "2x2f",
+				object = "2X2F",
 				reclaimable = true,
 			},
 		},

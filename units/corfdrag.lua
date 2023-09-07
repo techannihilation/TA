@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
 		noautofire = false,
-		objectname = "core/corfdrag.s3o",
+		objectname = "CORFDRAG",
 		script = "drag.lua",
 		radaremitheight = 25,
 		unitname = "corfdrag",
@@ -36,12 +36,12 @@ return {
 		customparams = {
 			buildpic = "corfdrag.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			floatingteeth_core = {
 				autoreclaimable = 0,
 				blocking = true,
+				
 				crushResistance = 250,
 				damage = 2500,
 				description = "Shark's Teeth",
@@ -52,7 +52,7 @@ return {
 				hitdensity = 100,
 				metal = 16,
 				nodrawundergray = true,
-				object = "core/corfdrag",
+				object = "corfdrag",
 				reclaimable = true,
 				world = "allworld",
 				customparams = {

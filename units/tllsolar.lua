@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		objectname = "tll/tllsolar.s3o",
+		objectname = "TLLSOLAR",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 55,
@@ -44,7 +44,6 @@ return {
 		customparams = {
 			buildpic = "tllsolar.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 165,
-				object = "tll/tllsolar_dead",
+				object = "tllsolar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

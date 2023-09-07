@@ -37,7 +37,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Anvil",
 		noautofire = false,
-		objectname = "tll/tllanvil.s3o",
+		objectname = "tllanvil",
 		radardistance = 0,
 		radaremitheight = 40,
 		selfdestructas = "twilight_big",
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "tllanvil.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 13162,
-				object = "tll/tllanvil_dead",
+				object = "tllanvil_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

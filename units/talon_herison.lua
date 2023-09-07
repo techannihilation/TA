@@ -38,7 +38,7 @@ return {
 		movementclass = "AKBOT1",
 		name = "Herison",
 		noautofire = false,		
-		objectname = "talon/talon_herison.s3o",
+		objectname = "talon_herison",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "talon_herison.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 26,
-				object = "1x1b",
+				object = "1X1B",
 				reclaimable = true,
 			},
 		},

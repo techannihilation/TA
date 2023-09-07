@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Gollum",
 		noautofire = false,
-		objectname = "gok/gok_recl.s3o",
+		objectname = "gok_recl",
 		radaremitheight = 25,
 		resurrect = 1,
 		seismicsignature = 0,

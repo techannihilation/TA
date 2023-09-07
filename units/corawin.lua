@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Wind Generator",
 		noautofire = false,
-		objectname = "core/corawin.s3o",
+		objectname = "CORAWIN",
 		radaremitheight = 123,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -43,7 +43,6 @@ return {
 			buildpic = "corawin.dds",
 			energymultiplier = 4,
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +54,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 107,
-				object = "core/corawin_dead",
+				object = "CORAWIN_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -69,7 +68,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 57,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

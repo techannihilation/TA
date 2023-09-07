@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Dragonfly",
 		noautofire = false,
-		objectname = "arm/armdfly.s3o",
+		objectname = "ARMDFLY",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		seismicsignature = 0,
@@ -65,7 +65,6 @@ return {
 		customparams = {
 			buildpic = "armdfly.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -75,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 126,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

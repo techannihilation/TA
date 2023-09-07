@@ -30,7 +30,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Long Range Plasma Cannon",
-		objectname = "tll/tlllrpt1.s3o",
+		objectname = "TLLLRPT1",
 		radaremitheight = 90,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -46,7 +46,6 @@ return {
 			buildpic = "tlllrpt1.dds",
 			canareaattack = 1,
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +57,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 15150,
-				object = "tll/tlllrpt1_dead",
+				object = "tlllrpt1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 8400,
-				object = "7x7a",
+				object = "7X7A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

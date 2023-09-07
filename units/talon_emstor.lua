@@ -27,7 +27,7 @@ return {
 		metalstorage = 125000,
 		name = "T3 Metal Storage",
 		noautofire = false,
-		objectname = "talon/talon_emstor.s3o",
+		objectname = "talon_emstor",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "SMALL_BUILDING",
@@ -39,7 +39,6 @@ return {
 		customparams = {
 			buildpic = "talon_emstor.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +49,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				object = "talon/talon_emstor_dead",
+				object = "talon_emstor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

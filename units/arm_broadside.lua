@@ -41,7 +41,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Broadside",
-		objectname = "arm/arm_broadside.s3o",
+		objectname = "arm_broadside",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "MEGA_BLAST",
@@ -54,7 +54,6 @@ return {
 		customparams = {
 			buildpic = "arm_broadside.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				description = "BROADSIDE Wreckage",
 				footprintx = 6,
 				footprintz = 8,
-				object = "arm/arm_broadside_dead",
+				object = "arm_broadside_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -175,6 +174,7 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
+
 					air = 500,
 				},
 			},

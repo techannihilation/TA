@@ -18,6 +18,7 @@ return {
 		corpse = "dead",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "38 25 50",
+		
 		collisionvolumetype = "ellipsoid",
 		defaultmissiontype = "Standby",
 		description = "Anti-Submarine HoverCraft",
@@ -39,7 +40,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Angler",
 		noautofire = false,
-		objectname = "core/corangler.s3o",
+		objectname = "corangler",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -56,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "corangler.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 281,
-				object = "core/corangler_dead",
+				object = "corangler_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +127,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "WEAPON_DEPTHCHARGE.s3o",
+				model = "WEAPON_DEPTHCHARGE",
 				name = "Depth Charge",
 				range = 400,
 				reloadtime = 1.25,

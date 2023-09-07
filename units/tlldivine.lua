@@ -37,7 +37,8 @@ return {
 		movementclass = "TANK3",
 		name = "Divine",
 		noautofire = false,
-		objectname = "tll/tlldivine.s3o",
+		
+		objectname = "TLLDIVINE",
 		onoffable = true,
 		radardistance = 2200,
 		radaremitheight = 32,
@@ -54,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "tlldivine.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 233,
-				object = "tll/tlldivine_dead",
+				object = "tlldivine_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

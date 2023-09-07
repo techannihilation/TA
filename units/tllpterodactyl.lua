@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Pterodactyl",
 		noautofire = false,
-		objectname = "tll/tllpterodactyl.s3o",
+		objectname = "tllpterodactyl",
 		radaremitheight = 28.8,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "tllpterodactyl.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -69,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1913,
-				object = "3x3z",
+				object = "3X3Z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -158,7 +157,7 @@ return {
 				flighttime = 3.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_thermite_rocket.s3o",
+				model = "weapon_thermite_rocket",
 				name = "Thermite Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

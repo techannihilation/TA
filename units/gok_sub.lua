@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Abyss Knight",
 		noautofire = false,
-		objectname = "gok/gok_sub.s3o",
+		objectname = "gok_sub",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -55,7 +55,6 @@ return {
 		customparams = {
 			buildpic = "gok_sub.dds",
 			faction = "gok",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 520,
-				object = "gok/gok_sub_dead",
+				object = "gok_sub_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -81,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 277,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 			},
 		},
@@ -131,7 +130,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo_gok.s3o",
+				model = "weapon_torpedo_gok",
 				name = "Torpedo",
 				noselfdamage = true,
 				range = 500,

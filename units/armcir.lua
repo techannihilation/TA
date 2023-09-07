@@ -37,7 +37,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Chainsaw",
 		noautofire = false,
-		objectname = "arm/armcir.s3o",
+		objectname = "armcir",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -53,7 +53,6 @@ return {
 			buildpic = "armcir.dds",
 			faction = "ARM",
 			prioritytarget = "air",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armcir_dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1424,
-				object = "arm/armcir_dead",
+				object = "ARMCIR_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 759,
-				object = "3x3b",
+				object = "3X3B",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +134,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "ExplosiveRockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -162,6 +161,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+
 					air = 80,
 				},
 			},

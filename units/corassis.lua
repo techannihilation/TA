@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Engineer Vehicle",
 		noautofire = false,
-		objectname = "core/corassis.s3o",
+		objectname = "CORASSIS",
 		radaremitheight = 25,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -86,7 +86,6 @@ return {
 		customparams = {
 			buildpic = "corassis.dds",
 			faction = "CORE",
-			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -98,7 +97,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 172,
-				object = "core/corassis_dead",
+				object = "CORASSIS_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

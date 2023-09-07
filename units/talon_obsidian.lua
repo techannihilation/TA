@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK3",
 		name = "Obsidian",
 		noautofire = false,
-		objectname = "talon/talon_obsidian.s3o",
+		objectname = "talon_obsidian",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,7 +59,6 @@ return {
 		customparams = {
 			buildpic = "talon_obsidian.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 112,
-				object = "talon/talon_obsidian_dead",
+				object = "talon_obsidian_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -85,7 +84,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 60,
-				object = "3x3a",
+				object = "3X3A",
 				reclaimable = true,
 			},
 		},

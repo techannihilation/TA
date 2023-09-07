@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Snake",
 		noautofire = false,
-		objectname = "tll/tllhovermissile.s3o",
+		objectname = "TLLHOVERMISSILE",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -52,7 +52,6 @@ return {
 			buildpic = "tllhovermissile.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 144,
-				object = "tll/tllhovermissile_dead",
+				object = "tllhovermissile_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -129,7 +128,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile.s3o",
+				model = "weapon_missile",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,
@@ -152,6 +151,7 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
+					
 					air = 80,
 				},
 			},

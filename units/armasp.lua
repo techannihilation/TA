@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
 		noautofire = false,
-		objectname = "arm/armasp.s3o",
+		objectname = "ARMASP",
 		onoffable = true,
 		radaremitheight = 42,
 		seismicsignature = 0,
@@ -53,13 +53,13 @@ return {
 			isairbase = true,
 			buildpic = "armasp.dds",
 			faction = "ARM",
-			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -8 0",
 				collisionvolumescales = "135 24 135",
+
 				collisionvolumetype = "Box",
 				damage = 2378,
 				description = "Air Repair Pad Wreckage",
@@ -68,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 562,
-				object = "arm/armasp_dead",
+				object = "ARMASP_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 300,
-				object = "4x4a",
+				object = "4X4A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Night",
 		noautofire = false,
-		objectname = "gok/gok_mradk.s3o",
+		objectname = "gok_mradk",
 		onoffable = true,
 		radardistance = 2200,
 		radaremitheight = 22,
@@ -53,7 +53,6 @@ return {
 		customparams = {
 			buildpic = "gok_mradk.dds",
 			faction = "GOK",
-			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 75,
-				object = "gok/gok_mradk_dead",
+				object = "gok_mradk_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 40,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

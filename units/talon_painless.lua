@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Painless",
 		noautofire = false,
-		objectname = "talon/talon_painless.s3o",
+		objectname = "talon_painless",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "talon_painless.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1117,
-				object = "talon/talon_painless_dead",
+				object = "talon_painless_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -76,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 596,
-				object = "3x3d",
+				object = "3X3D",
 				reclaimable = true,
 			},
 		},

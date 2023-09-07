@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Advanced Kbot Lab",
 		noautofire = false,
-		objectname = "tll/tllalab.s3o",
+		objectname = "TLLALAB",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -68,7 +68,6 @@ return {
 		customparams = {
 			buildpic = "tllalab.dds",
 			faction = "TLL",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -79,7 +78,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 3412,
-				object = "tll/tllalab_dead",
+				object = "tllalab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -92,7 +91,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 1820,
-				object = "7x7c",
+				object = "7x7C",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

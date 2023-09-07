@@ -18,6 +18,7 @@ return {
 		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "45 30 60",
+		
 		collisionvolumetype = "ellipsoid",
 		corpse = "corsent_dead",
 		defaultmissiontype = "Standby",
@@ -40,7 +41,8 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Hopomis",
 		noautofire = false,
-		objectname = "tll/tllhopomis.s3o",
+
+		objectname = "tllhopomis",
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -59,7 +61,6 @@ return {
 			buildpic = "tllhopomis.dds",
 			faction = "TLL",
 			prioritytarget = "air",
-			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			corsent_dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1200,
-				object = "core/corsent_dead",
+				object = "CORSENT_DEAD",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 640,
-				object = "2x2a",
+				object = "2X2A",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -138,7 +139,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo.s3o",
+				model = "weapon_torpedo",
 				name = "guided torpedo pack",
 				noselfdamage = true,
 				range = 500,

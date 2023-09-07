@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "Mega",
 		noautofire = false,
-		objectname = "gok/gok_fmine.s3o",
+		objectname = "gok_fmine",
 		script = "mines_lus.lua",
 		radaremitheight = 25,
 		seismicsignature = 0,

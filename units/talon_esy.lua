@@ -28,7 +28,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
 		noautofire = false,
-		objectname = "talon/talon_esy.s3o",
+		objectname = "talon_esy",
 		radardistance = 500,
 		radaremitheight = 73,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,7 +50,6 @@ return {
 		customparams = {
 			buildpic = "talon_asy.dds",
 			faction = "TALON",
-			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +61,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 11925,
-				object = "talon/talon_esy_dead",
+				object = "talon_esy_DEAD",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +72,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 6360,
-				object = "7x7e",
+				object = "7X7E",
 				reclaimable = true,
 			},
 		},

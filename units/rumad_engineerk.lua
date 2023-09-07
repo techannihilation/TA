@@ -41,7 +41,7 @@ return {
 		movementclass = "TKBOT2",
 		name = "All-Terrain Engineer Spider",
 		noautofire = false,
-		objectname = "rumad/rumad_engineerk.s3o",
+		objectname = "rumad_engineerk",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -81,7 +81,6 @@ return {
 			buildpic = "rumad_engineerk.dds",
 			faction = "TLL",
 			--requiretech = "Advanced T2 Unit Research Centre",
-			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -92,7 +91,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "rumad/rumad_engineerk_dead",
+				object = "rumad_engineerk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
