@@ -1,0 +1,874 @@
+#define TA
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, hull, support, frontsupport, backsupport, head, frontcylinder, backcylinder,
+		fronthull,
+		backhull, 
+		rfplatform, rfsystem, rftrack, turret1, pitchturret1, flare1, barrels1,
+		lfplatform, lfsystem, lftrack, turret2, pitchturret2, flare2, barrels2,
+		rbplatform, rbsystem, rbtrack, turret3, pitchturret3, flare3, barrels3,
+		lbplatform, lbsystem, lbtrack, turret4, pitchturret4, flare4, barrels4,
+		lfturret, lfpitchturret, lfflare1, lfflare2, lfflare3, lfflare4,
+       	rfturret, rfpitchturret, rfflare1, rfflare2, rfflare3, rfflare4,
+       	lbturret, lbpitchturret, lbflare1, lbflare2, lbflare3, lbflare4,
+       	rbturret, rbpitchturret, rbflare1, rbflare2, rbflare3, rbflare4,
+       	mslturret1, mslpitchturret1, mslflare1a,  mslflare1b, mslflare1c, mslflare1d, mslflare1e, mslflare1f, msl1a, msl1b, msl1c, msl1d, msl1e, msl1f,
+       	mslturret2, mslpitchturret2, mslflare2a,  mslflare2b, mslflare2c, mslflare2d, mslflare2e, mslflare2f, msl2a, msl2b, msl2c, msl2d, msl2e, msl2f,
+       	shield_pos, glow, rb_leaf, lb_leaf, rf_leaf, lf_leaf;
+
+// Signal definitions
+#define SIG_AIM_1			2
+#define SIG_AIM_2			4
+#define SIG_AIM_3			8
+#define SIG_AIM_4			16
+#define SIG_AIM_5			32
+#define SIG_AIM_6			64
+#define SIG_AIM_7			128
+#define SIG_AIM_8			256
+#define SIG_AIM_9			512
+#define SIG_AIM_10			1024
+#define SIG_AIM_11			2048
+#define SIG_AIM_12			5096
+#define SIG_MOVE			10192
+
+static-var  shield_onoff, msl_1, msl_2, msl_3, msl_4, gun_1, gun_2, UnitSpeed, UnitHeading, statechg_DesiredState, statechg_StateChanging;
+
+ShieldOn()
+{
+	sleep 250;
+		
+	turn lf_leaf to x-axis <30.000000> speed <5.000000>;
+	turn lf_leaf to z-axis <30.000000> speed <5.000000>;
+	
+	turn rf_leaf to x-axis <30.000000> speed <5.000000>;
+	turn rf_leaf to z-axis <-30.000000> speed <5.000000>;
+	
+	turn rb_leaf to x-axis <-30.000000> speed <5.000000>;
+	turn rb_leaf to z-axis <-30.000000> speed <5.000000>;
+	
+	turn lb_leaf to x-axis <-30.000000> speed <5.000000>;
+	turn lb_leaf to z-axis <30.000000> speed <5.000000>;
+}
+
+ShieldOff()
+{
+	turn lf_leaf to x-axis <0.000000> speed <5.000000>;
+	turn lf_leaf to z-axis <0.000000> speed <5.000000>;
+	
+	turn rf_leaf to x-axis <0.000000> speed <5.000000>;
+	turn rf_leaf to z-axis <0.000000> speed <5.000000>;
+	
+	turn rb_leaf to x-axis <0.000000> speed <5.000000>;
+	turn rb_leaf to z-axis <0.000000> speed <5.000000>;
+	
+	turn lb_leaf to x-axis <0.000000> speed <5.000000>;
+	turn lb_leaf to z-axis <0.000000> speed <5.000000>;
+	
+	sleep 250;
+}
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+		return (0);
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+			call-script ShieldOn();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+			call-script ShieldOff();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+Shield()
+{
+	shield_onoff = !shield_onoff;
+	if(shield_onoff == 1)
+	{
+		start-script RequestState(0);
+	}
+	else
+	{
+		start-script RequestState(1);
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+
+	start-script RequestState(0);
+	
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from fronthull;
+			emit-sfx smoketype from backhull;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	turn lbturret to y-axis <180.0> now;
+	turn rbturret to y-axis <180.0> now;	
+	turn mslturret2 to y-axis <180.0> now;
+	turn turret3 to y-axis <180.0> now;
+	turn turret4 to y-axis <180.0> now;
+	start-script InitState();
+	UnitSpeed = 1;
+	msl_1 = 0;
+	msl_2 = 0;	
+	msl_3 = 0;
+	msl_4 = 0;
+	gun_1 = 1;
+	gun_2 = 1;
+	shield_onoff = 1;
+	start-script Smokeunit();
+}
+
+StartMoving()
+{	
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;		
+	while( TRUE )
+	{
+		if( UnitSpeed == 1 )
+		{
+			UnitHeading = UnitHeading - get XZ_ATAN(7);
+			turn backhull to y-axis -2.00 * UnitHeading * 1.20 speed <5.00>;
+			turn fronthull to y-axis 2.00 * UnitHeading * 1.20 speed <5.00>;			
+			turn lftrack to y-axis 2.00 * UnitHeading * 2.0 speed <5.00>;
+			turn rftrack to y-axis 2.00 * UnitHeading * 2.0 speed <5.00>;
+			turn lbtrack to y-axis -2.00 * UnitHeading * 2.0 speed <5.00>;
+			turn rbtrack to y-axis -2.00 * UnitHeading * 2.0 speed <5.00>;			
+			UnitHeading = get XZ_ATAN(7);
+		}
+		if( UnitSpeed == 2 )
+		{
+			UnitHeading = UnitHeading - get XZ_ATAN(7);
+			turn backhull to y-axis -2.00 * UnitHeading * 1.20 speed <5.00>;
+			turn fronthull to y-axis 2.00 * UnitHeading * 1.20 speed <5.00>;			
+			turn lftrack to y-axis 2.00 * UnitHeading * 2.0 speed <5.00>;
+			turn rftrack to y-axis 2.00 * UnitHeading * 2.0 speed <5.00>;
+			turn lbtrack to y-axis -2.00 * UnitHeading * 2.0 speed <5.00>;
+			turn rbtrack to y-axis -2.00 * UnitHeading * 2.0 speed <5.00>;			
+			UnitHeading = get XZ_ATAN(7);
+		}
+		sleep 100;
+	}
+	
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;	
+	turn fronthull to y-axis <0.00> speed <50.00>;
+	turn backhull to y-axis <0.00> speed <50.00>;
+	sleep 250;
+}
+
+
+MoveRate1()
+{
+	UnitSpeed = 1;
+}
+
+MoveRate2()
+{
+	UnitSpeed = 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+	turn turret1 to y-axis <0.0> speed <60.00>;
+	turn turret2 to y-axis <0.0> speed <60.00>;
+	turn turret3 to y-axis <180.0> speed <60.00>;
+	turn turret4 to y-axis <180.0> speed <60.00>;
+	turn pitchturret1 to x-axis <0.0> speed <30.00>;
+	turn pitchturret2 to x-axis <0.0> speed <30.00>;
+	turn pitchturret3 to x-axis <0.0> speed <30.00>;
+	turn pitchturret4 to x-axis <0.0> speed <30.00>;
+}
+
+RestoreAfterDelayMSL()
+{
+	sleep 3000;
+	turn lfturret to y-axis <0.0> speed <90.00>;
+	turn lfpitchturret to x-axis <0.0> speed <45.00>;	
+	turn rfturret to y-axis <0.0> speed <90.00>;
+	turn rfpitchturret to x-axis <0.0> speed <45.00>;	
+	turn lbturret to y-axis <180.0> speed <90.00>;
+	turn lbpitchturret to x-axis <0.0> speed <45.00>;	
+	turn rbturret to y-axis <180.0> speed <90.00>;
+	turn rbpitchturret to x-axis <0.0> speed <45.00>;	
+}
+
+RestoreAfterDelayFLAK()
+{
+	sleep 3000;
+	turn mslturret1 to y-axis <0.0> speed <120.00>;
+	turn mslpitchturret1 to x-axis <0.0> speed <120.00>;
+	turn mslturret2 to y-axis <180.0> speed <120.00>;
+	turn mslpitchturret2 to x-axis <0.0> speed <120.00>;
+}
+
+AimFromWeapon1(PieceNum)
+{
+	PieceNum = turret1;
+}
+
+AimWeapon1(Heading, Pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret1 to y-axis Heading speed <60.00>;
+	turn pitchturret1 to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn pitchturret1 around x-axis;
+	start-script RestoreAfterDelay();
+	return(1);
+}
+
+FireWeapon1()
+{	
+	emit-sfx 1024 + 0 from flare1;
+	move barrels1 to z-axis [-1.00000] speed [500.000000];
+	sleep 100;
+	move barrels1 to z-axis [0.000000] speed [1.000000];
+}
+
+QueryWeapon1(PieceNum)
+{
+	PieceNum = flare1;
+}
+
+AimFromWeapon2(PieceNum)
+{
+	PieceNum = turret2;
+}
+
+AimWeapon2(Heading, Pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis Heading speed <60.00>;
+	turn pitchturret2 to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn pitchturret2 around x-axis;
+	start-script RestoreAfterDelay();
+	return(1);
+}
+
+FireWeapon2()
+{	
+	emit-sfx 1024 + 0 from flare2;
+	move barrels2 to z-axis [-1.00000] speed [500.000000];
+	sleep 100;
+	move barrels2 to z-axis [0.000000] speed [1.000000];
+}
+
+QueryWeapon2(PieceNum)
+{
+	PieceNum = flare2;
+}
+
+AimFromWeapon3(PieceNum)
+{
+	PieceNum = turret3;
+}
+
+AimWeapon3(Heading, Pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn turret3 to y-axis Heading speed <60.00>;
+	turn pitchturret3 to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn turret3 around y-axis;
+	wait-for-turn pitchturret3 around x-axis;
+	start-script RestoreAfterDelay();
+	return(1);
+}
+
+FireWeapon3()
+{	
+	emit-sfx 1024 + 0 from flare3;
+	move barrels3 to z-axis [-1.00000] speed [500.000000];
+	sleep 100;
+	move barrels3 to z-axis [0.000000] speed [1.000000];
+}
+
+QueryWeapon3(PieceNum)
+{
+	PieceNum = flare3;
+}
+
+AimFromWeapon4(PieceNum)
+{
+	PieceNum = turret4;
+}
+
+AimWeapon4(Heading, Pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn turret4 to y-axis Heading speed <60.00>;
+	turn pitchturret4 to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn turret4 around y-axis;
+	wait-for-turn pitchturret4 around x-axis;
+	start-script RestoreAfterDelay();
+	return(1);
+}
+
+FireWeapon4()
+{	
+	emit-sfx 1024 + 0 from flare4;
+	move barrels4 to z-axis [-1.00000] speed [500.000000];
+	sleep 100;
+	move barrels4 to z-axis [0.000000] speed [1.000000];
+}
+
+QueryWeapon4(PieceNum)
+{
+	PieceNum = flare4;
+}
+
+//MISSILE TURRETS
+
+AimFromWeapon5(PieceNum)
+{
+	PieceNum = lfturret;
+}
+
+AimWeapon5(Heading, Pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn lfturret to y-axis Heading speed <90.00>;
+	//turn lfpitchturret to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn lfturret around y-axis;
+	wait-for-turn lfpitchturret around x-axis;
+	start-script RestoreAfterDelayMSL();
+	return(1);
+}
+
+FireWeapon5()
+{	
+	while(TRUE)
+	{
+		sleep 125;	
+		++msl_1;
+		if (msl_1 == 4)
+		{
+			msl_1 = 0;
+			return (0);	
+		}
+	}
+}
+
+QueryWeapon5(pieceNum)
+{
+	if (msl_1 == 0)
+	{
+		piecenum = lfflare1;
+	}
+	if (msl_1 == 1)
+	{
+		piecenum = lfflare2;
+	}
+	if (msl_1 == 2)
+	{
+		piecenum = lfflare3;
+	}
+	if (msl_1 == 3)
+	{
+		piecenum = lfflare4;
+	}
+}
+
+AimFromWeapon6(PieceNum)
+{
+	PieceNum = rfturret;
+}
+
+AimWeapon6(Heading, Pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn rfturret to y-axis Heading speed <90.00>;
+	//turn rfpitchturret to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn rfturret around y-axis;
+	wait-for-turn rfpitchturret around x-axis;
+	start-script RestoreAfterDelayMSL();
+	return(1);
+}
+
+FireWeapon6()
+{	
+	while(TRUE)
+	{
+		sleep 125;	
+		++msl_2;
+		if (msl_2 == 4)
+		{
+			msl_2 = 0;
+			return (0);	
+		}
+	}
+}
+
+QueryWeapon6(pieceNum)
+{
+	if (msl_2 == 0)
+	{
+		piecenum = rfflare1;
+	}
+	if (msl_2 == 1)
+	{
+		piecenum = rfflare2;
+	}
+	if (msl_2 == 2)
+	{
+		piecenum = rfflare3;
+	}
+	if (msl_2 == 3)
+	{
+		piecenum = rfflare4;
+	}
+}
+
+AimFromWeapon7(PieceNum)
+{
+	PieceNum = lbturret;
+}
+
+AimWeapon7(Heading, Pitch)
+{
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
+	turn lbturret to y-axis Heading speed <90.00>;
+	//turn lbpitchturret to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn lbturret around y-axis;
+	wait-for-turn lbpitchturret around x-axis;
+	start-script RestoreAfterDelayMSL();
+	return(1);
+}
+
+FireWeapon7()
+{	
+	while(TRUE)
+	{
+		sleep 125;	
+		++msl_3;
+		if (msl_3 == 4)
+		{
+			msl_3 = 0;
+			return (0);	
+		}
+	}
+}
+
+QueryWeapon7(pieceNum)
+{
+	if (msl_3 == 0)
+	{
+		piecenum = lbflare1;
+	}
+	if (msl_3 == 1)
+	{
+		piecenum = lbflare2;
+	}
+	if (msl_3 == 2)
+	{
+		piecenum = lbflare3;
+	}
+	if (msl_3 == 3)
+	{
+		piecenum = lbflare4;
+	}
+}
+
+AimFromWeapon8(PieceNum)
+{
+	PieceNum = rbturret;
+}
+
+AimWeapon8(Heading, Pitch)
+{
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	turn rbturret to y-axis Heading speed <90.00>;
+	//turn rbpitchturret to x-axis <0.00> - Pitch speed <45.00>;	
+	wait-for-turn rbturret around y-axis;
+	wait-for-turn rbpitchturret around x-axis;
+	start-script RestoreAfterDelayMSL();
+	return(1);
+}
+
+FireWeapon8()
+{	
+	while(TRUE)
+	{
+		sleep 125;	
+		++msl_4;
+		if (msl_4 == 4)
+		{
+			msl_4 = 0;
+			return (0);	
+		}
+	}
+}
+
+QueryWeapon8(pieceNum)
+{
+	if (msl_4 == 0)
+	{
+		piecenum = rbflare1;
+	}
+	if (msl_4 == 1)
+	{
+		piecenum = rbflare2;
+	}
+	if (msl_4 == 2)
+	{
+		piecenum = rbflare3;
+	}
+	if (msl_4 == 3)
+	{
+		piecenum = rbflare4;
+	}
+}
+
+// FLAK TURRET
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = mslturret1;
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal SIG_AIM_9;
+	set-signal-mask SIG_AIM_9;
+	turn mslturret1 to y-axis heading speed <450.000000>;
+	turn mslpitchturret1 to x-axis <0.000000> - pitch speed <450.000000>;
+	wait-for-turn mslturret1 around y-axis;
+	wait-for-turn mslpitchturret1 around x-axis;
+	start-script RestoreAfterDelayFLAK();
+	return (1);
+}
+
+RestoreMsl9(numberMsl)
+{
+	if( numberMsl == 1 )
+	{
+		sleep 1000;
+		show msl1a;
+		move msl1a to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 2 )
+	{
+		sleep 1000;
+		show msl1b;
+		move msl1b to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 3 )
+	{
+		sleep 1000;
+		show msl1c;
+		move msl1c to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 4 )
+	{
+		sleep 1000;
+		show msl1d;
+		move msl1d to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 5 )
+	{
+		sleep 1000;
+		show msl1e;
+		move msl1e to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 6 )
+	{
+		sleep 1000;
+		show msl1f;		
+		move msl1f to z-axis [0.0] speed [3.0];
+	}	
+}
+
+FireWeapon9()
+{
+	if( gun_1 == 1 )
+	{
+		move msl1a to z-axis [-4.0] now;
+		hide msl1a;
+		start-script RestoreMsl9(gun_1);
+	}
+	if( gun_1 == 2 )
+	{
+		move msl1b to z-axis [-4.0] now;
+		hide msl1b;
+		start-script RestoreMsl9(gun_1);
+	}
+	if( gun_1 == 3 )
+	{
+		move msl1c to z-axis [-4.0] now;
+		hide msl1c;
+		start-script RestoreMsl9(gun_1);
+	}
+	++gun_1;
+	if( gun_1 == 4 )
+	{
+		gun_1 = 1;
+	}
+}
+
+QueryWeapon9(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = mslflare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = mslflare1b;
+	}
+	if( gun_1 == 2 )
+	{
+		piecenum = mslflare1c;
+	}
+}
+
+//
+
+AimFromWeapon10(piecenum)
+{
+	piecenum = mslturret2;
+}
+
+AimWeapon10(heading, pitch)
+{
+	signal SIG_AIM_10;
+	set-signal-mask SIG_AIM_10;
+	turn mslturret2 to y-axis heading speed <450.000000>;
+	turn mslpitchturret2 to x-axis <0.000000> - pitch speed <450.000000>;
+	wait-for-turn mslturret2 around y-axis;
+	wait-for-turn mslpitchturret2 around x-axis;
+	start-script RestoreAfterDelayFLAK();
+	return (1);
+}
+
+RestoreMsl10(numberMsl)
+{
+	if( numberMsl == 1 )
+	{
+		sleep 1000;
+		show msl2a;
+		move msl2a to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 2 )
+	{
+		sleep 1000;
+		show msl2b;
+		move msl2b to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 3 )
+	{
+		sleep 1000;
+		show msl2c;
+		move msl2c to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 4 )
+	{
+		sleep 1000;
+		show msl2d;
+		move msl2d to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 5 )
+	{
+		sleep 1000;
+		show msl2e;
+		move msl2e to z-axis [0.0] speed [3.0];
+	}
+	if( numberMsl == 6 )
+	{
+		sleep 1000;
+		show msl2f;		
+		move msl2f to z-axis [0.0] speed [3.0];
+	}	
+}
+
+FireWeapon10()
+{
+	if( gun_2 == 1 )
+	{
+		move msl2a to z-axis [-4.0] now;
+		hide msl2a;
+		start-script RestoreMsl10(gun_2);
+	}
+	if( gun_2 == 2 )
+	{
+		move msl2b to z-axis [-4.0] now;
+		hide msl2b;
+		start-script RestoreMsl10(gun_2);
+	}
+	if( gun_2 == 3 )
+	{
+		move msl2c to z-axis [-4.0] now;
+		hide msl2c;
+		start-script RestoreMsl10(gun_2);
+	}
+	++gun_2;
+	if( gun_2 == 4 )
+	{
+		gun_2 = 1;
+	}
+}
+
+QueryWeapon10(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = mslflare2a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = mslflare2b;
+	}
+	if( gun_2 == 2 )
+	{
+		piecenum = mslflare2c;
+	}
+}
+
+AimWeapon11(heading, pitch)
+{
+	return (shield_onoff);
+}
+
+AimFromWeapon11(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+QueryWeapon11(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+SweetSpot(PieceNum)
+{
+	PieceNum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;		
+		explode hull type NOHEATCLOUD;
+		explode fronthull type NOHEATCLOUD;
+		explode backhull type NOHEATCLOUD;
+		explode turret4 type NOHEATCLOUD;
+		explode turret3 type NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode lftrack type NOHEATCLOUD;
+		explode rftrack type NOHEATCLOUD;
+		explode lbtrack type NOHEATCLOUD;
+		explode rbtrack type NOHEATCLOUD;
+		explode mslturret1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode mslturret2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;	
+		explode rb_leaf type NOHEATCLOUD | FALL;
+		explode lb_leaf type NOHEATCLOUD | FALL;
+		explode rf_leaf type NOHEATCLOUD | FALL;
+		explode lf_leaf type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode hull type NOHEATCLOUD;
+		explode fronthull type NOHEATCLOUD;
+		explode backhull type NOHEATCLOUD;
+		explode turret4 type FALL | NOHEATCLOUD;
+		explode turret2 type NOHEATCLOUD;
+		explode turret1 type NOHEATCLOUD;
+		explode rftrack type FALL | NOHEATCLOUD;
+		explode lbtrack type FALL | NOHEATCLOUD;
+		explode rbtrack type FALL | NOHEATCLOUD;
+		explode support type NOHEATCLOUD;
+		explode mslturret1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode mslturret2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode rb_leaf type NOHEATCLOUD | FALL;
+		explode lb_leaf type NOHEATCLOUD | FALL;
+		explode rf_leaf type NOHEATCLOUD | FALL;
+		explode lf_leaf type NOHEATCLOUD | FALL;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode hull type NOHEATCLOUD;
+	explode fronthull type NOHEATCLOUD;
+	explode backhull type NOHEATCLOUD;
+	explode turret4 type NOHEATCLOUD;
+	explode turret2 type NOHEATCLOUD;
+	explode turret1 type NOHEATCLOUD;
+	explode turret3 type NOHEATCLOUD;
+	explode support type NOHEATCLOUD;
+	explode head type NOHEATCLOUD;
+	explode lftrack type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rftrack type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lbtrack type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rbtrack type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode mslturret1 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode mslturret2 type FALL | SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode rb_leaf type SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+	explode lb_leaf type SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+	explode rf_leaf type SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+	explode lf_leaf type SMOKE | EXPLODE_ON_HIT | NOHEATCLOUD | FALL;
+	return (corpsetype);
+}	
+		
+	
+	

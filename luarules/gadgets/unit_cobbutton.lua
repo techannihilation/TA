@@ -131,6 +131,7 @@ local ShieldUnits = {
   [UnitDefNames["rumad_king2"].id] = true,
   [UnitDefNames["rumad_king3"].id] = true,
   [UnitDefNames["rumad_gala"].id] = true,
+  [UnitDefNames["rumad_mcv2"].id] = true,
 
 }
 

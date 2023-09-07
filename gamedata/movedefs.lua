@@ -45,6 +45,15 @@ local moveDatas = {
         maxwaterdepth = 5000,
         maxwaterslope = 80
     },
+    ATANK20 = {
+        crushstrength = 10000,
+        depthmod = 0,
+        footprintx = 20,
+        footprintz = 20,
+        maxslope = 36,
+        maxwaterdepth = 5000,
+        maxwaterslope = 80
+    },
     BOAT4 = {
         allowterraincollisions = false,
         crushstrength = 50,
@@ -188,6 +197,14 @@ local moveDatas = {
         footprintz = 12,
         maxslope = 18,
         maxwaterdepth = 22
+    },
+    HTANK15 = {
+        allowterraincollisions = false,
+        crushstrength = 10000,
+        footprintx = 15,
+        footprintz = 15,
+        maxslope = 18,
+        maxwaterdepth = 30
     },
     HKBOT3 = {
         crushstrength = 250,

@@ -664,7 +664,7 @@ local morphDefs = {
 		time = 60,
 		tech = 3,
 		xp = 0.10,
-	},	
+	},
 	talon_talos = {
 		into = 'talon_mythril',
 		time = 60,
@@ -680,7 +680,7 @@ local morphDefs = {
 	gok_asmodee = {
 		into = 'gok_kadesh',
 		time = 60,
-		tech = 3,
+		tech = 4,
 		xp = 0.10,
 	},
 	tllblind = {
@@ -737,6 +737,12 @@ local morphDefs = {
 	},
 	talon_boxer = {
 		into = 'talon_cerberus',
+		tech = 4,
+		time = 120,
+		xp = 0.10,
+	},
+	rumad_mcv1 = {
+		into = 'rumad_mcv2',
 		tech = 4,
 		time = 120,
 		xp = 0.10,

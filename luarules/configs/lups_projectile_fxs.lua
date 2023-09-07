@@ -49,6 +49,9 @@ local lups_effects = {
   rumad_mcv1_rumad_plasma = {
      {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
+  rumad_mcv2_rumad_plasma = {
+     {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
+  },
   rumad_mlrpt_rumad_plasma = {
      {class = "Ribbon", options={width=2, size=12, color={0.9,0.9,0.9,1},priority=1},},
   },
