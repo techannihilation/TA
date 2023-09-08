@@ -20,6 +20,8 @@ static-var  shield_onoff, msl_1, bMoving, bAiming, Main_Gun_Heading;
 #define SIG_AIM_4			16
 #define SIG_MOVE			32
 
+#define SLEEP_MOVE			600
+
 
 Shield()
 {
@@ -72,85 +74,81 @@ StartMoving()
 	bMoving = TRUE;
 	while( bMoving )
 	{
-		turn rfoot to x-axis <10.000000> speed <30.000000>;
-		turn lupleg to x-axis <15.000000> speed <22.500000>;
-		turn lbtoe1 to x-axis <-5.000000> speed <8.000000>;
-		move pelvis to y-axis [3.500000] speed [2.500000];
-		turn torso to z-axis <-2.000000> speed <8.000000>;
+		turn rfoot to x-axis <10.000000> speed <50.000000>;
+		turn lupleg to x-axis <15.000000> speed <30.500000>;
+		turn lbtoe1 to x-axis <-5.000000> speed <16.000000>;
+		move pelvis to y-axis [1.0] speed [2.500000];
+		turn torso to z-axis <-2.000000> speed <16.000000>;
 		if( !bAiming )
 		{
-				move torso to y-axis [1.500000] speed [2.500000];
 				turn torso to z-axis <2.500000> speed <1.000000>;
-				turn torso to y-axis <6.000000> speed <10.000000>;
-				turn larm to x-axis <-22.000000> speed <14.000000>;
-				turn rarm to x-axis <18.000000> speed <14.000000>;
-				move torso to x-axis [0.200000] speed [0.100000];
-				turn left_gun to y-axis <4.000000> speed <2.500000>;
-				turn right_gun to y-axis <-4.000000> speed <2.500000>;
+				turn torso to y-axis <4.000000> speed <10.000000>;
+				turn larm to x-axis <-5.000000> speed <14.000000>;
+				turn rarm to x-axis <5.000000> speed <14.000000>;
+				turn left_gun to y-axis <3.000000> speed <2.500000>;
+				turn right_gun to y-axis <-3.000000> speed <2.500000>;
 		}
 		
-		turn llowleg to x-axis <20.000000> speed <22.500000>;
-		turn lftoe to x-axis <-10.000000> speed <15.000000>;
-		turn lfoot to x-axis <-30.000000> speed <22.500000>;
-		sleep 1200;
+		turn llowleg to x-axis <20.000000> speed <40.500000>;
+		turn lftoe to x-axis <-10.000000> speed <30.000000>;
+		turn lfoot to x-axis <-30.000000> speed <40.500000>;
+		sleep SLEEP_MOVE;
 			
 		if( bMoving )
 		{
-			turn rupleg to x-axis <0.000000> speed <68.000000>;
-			turn rlowleg to x-axis <-10.000000> speed <17.000000>;
-			turn rfoot to x-axis <0.000000> speed <51.093407>;
-			turn rftoe to x-axis <0.000000> speed <91.000000>;
-			turn rbtoe1 to x-axis <0.000000> speed <60.000000>;
-			turn llowleg to x-axis <35.000000> speed <24.890110>;
-			turn lftoe to x-axis <25.000000> speed <110.000000>;
-			turn lfoot to x-axis <20.000000> speed <40.000000>;
-			turn lbtoe1 to x-axis <-15.000000> speed <45.000000>;
-			move pelvis to y-axis [1.500000] speed [2.500000];
-			turn torso to z-axis <2.000000> speed <8.000000>;
-			sleep 1200;
+			turn rupleg to x-axis <0.000000> speed <80.000000>;
+			turn rlowleg to x-axis <-10.000000> speed <35.000000>;
+			turn rfoot to x-axis <0.000000> speed <80.093407>;
+			turn rftoe to x-axis <0.000000> speed <100.000000>;
+			turn rbtoe1 to x-axis <0.000000> speed <120.000000>;
+			turn llowleg to x-axis <35.000000> speed <50.890110>;
+			turn lftoe to x-axis <25.000000> speed <100.000000>;
+			turn lfoot to x-axis <20.000000> speed <60.000000>;
+			turn lbtoe1 to x-axis <-15.000000> speed <70.000000>;
+			move pelvis to y-axis [0.0] speed [2.500000];
+			turn torso to z-axis <2.000000> speed <16.000000>;
+			sleep SLEEP_MOVE;
 		}
 		
 		if( !bAiming )
 		{
-			move torso to y-axis [1.500000] speed [2.500000];
 			turn torso to z-axis <-2.500000> speed <1.000000>;
-			turn torso to y-axis <-6.000000> speed <10.000000>;
-			turn larm to x-axis <18.000000> speed <14.000000>;
-			turn rarm to x-axis <-22.000000> speed <14.000000>;
-			move torso to x-axis [-0.200000] speed [0.100000];
-			turn left_gun to y-axis <-4.000000> speed <2.500000>;
-			turn right_gun to y-axis <4.000000> speed <2.500000>;
+			turn torso to y-axis <-4.000000> speed <20.000000>;
+			turn larm to x-axis <5.000000> speed <28.000000>;
+			turn rarm to x-axis <-5.000000> speed <28.000000>;
+			turn left_gun to y-axis <-3.000000> speed <5.500000>;
+			turn right_gun to y-axis <3.000000> speed <5.500000>;
 		}
 		
 		if( bMoving )
 		{
-			turn rupleg to x-axis <15.000000> speed <22.500000>;
-			turn rlowleg to x-axis <10.000000> speed <22.500000>;
-			turn rftoe to x-axis <-10.000000> speed <15.000000>;
-			turn rfoot to x-axis <-15.000000> speed <22.500000>;
+			turn rupleg to x-axis <15.000000> speed <40.500000>;
+			turn rlowleg to x-axis <10.000000> speed <40.500000>;
+			turn rftoe to x-axis <-10.000000> speed <30.000000>;
+			turn rfoot to x-axis <-15.000000> speed <40.500000>;
 			turn rbtoe1 to x-axis <-5.000000> speed <8.000000>;
-			turn lupleg to x-axis <-20.000000> speed <52.500000>;
-			turn llowleg to x-axis <0.000000> speed <26.247253>;
-			turn lfoot to x-axis <10.000000> speed <30.000000>;
-			move pelvis to y-axis [3.500000] speed [2.500000];
-			turn torso to z-axis <-2.000000> speed <8.000000>;
-			sleep 1200;
+			turn lupleg to x-axis <-20.000000> speed <90.0>;
+			turn llowleg to x-axis <0.000000> speed <75.0>;
+			turn lfoot to x-axis <10.000000> speed <60.000000>;
+			move pelvis to y-axis [1.0] speed [2.500000];
+			turn torso to z-axis <-2.000000> speed <16.000000>;
+			sleep SLEEP_MOVE;
 		}
 		
 		if( bMoving )
 		{		
-			turn lupleg to x-axis <0.000000> speed <68.000000>;
-			turn llowleg to x-axis <-10.000000> speed <17.000000>;
-			turn lftoe to x-axis <0.000000> speed <82.000000>;
-			turn lfoot to x-axis <0.000000> speed <51.093407>;
-			turn lbtoe1 to x-axis <0.000000> speed <60.000000>;
-			turn rlowleg to x-axis <15.000000> speed <24.890110>;
-			turn rftoe to x-axis <25.000000> speed <110.000000>;
-			turn rfoot to x-axis <10.000000> speed <40.000000>;
+			turn lupleg to x-axis <0.000000> speed <80.000000>;
+			turn llowleg to x-axis <-10.000000> speed <30.000000>;
+			turn lftoe to x-axis <0.000000> speed <80.000000>;
+			turn lfoot to x-axis <0.000000> speed <60.093407>;
+			turn lbtoe1 to x-axis <0.000000> speed <80.000000>;
+			turn rlowleg to x-axis <15.000000> speed <50.890110>;
+			turn rftoe to x-axis <25.000000> speed <100.000000>;
+			turn rfoot to x-axis <10.000000> speed <60.000000>;
 			turn rbtoe1 to x-axis <-15.000000> speed <45.000000>;
-			move pelvis to y-axis [1.500000] speed [2.500000];
-			turn torso to z-axis <2.000000> speed <8.000000>;
-			sleep 1200;
+			move pelvis to y-axis [0.0] speed [2.500000];
+			turn torso to z-axis <2.000000> speed <16.000000>;
+			sleep SLEEP_MOVE;
 		}
 	}
 }

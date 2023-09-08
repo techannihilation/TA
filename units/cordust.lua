@@ -149,7 +149,7 @@ return {
 				damage = {
 					areoship = 162.5,
 					default = 5,
-					
+
 					air = 650,
 				},
 			},
@@ -285,14 +285,14 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
-				def = "MountedAntimatterAccelerator",
+				def = "AntimatterAccelerator",
 				maindir = "1 0 0",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
-				def = "MountedAntimatterAccelerator",
+				def = "AntimatterAccelerator",
 				maindir = "-1 0 0",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",

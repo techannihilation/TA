@@ -118,7 +118,7 @@ return {
 			},
 		},
 		weapondefs = {
-			cor_taar_rc = {
+			core_blaster = {
 				accuracy = 200,
 				areaofeffect = 64,
 				avoidfeature = false,
@@ -131,7 +131,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				intensity = 4,
-				name = "KrogTaarBlaster",
+				name = "Blaster",
 				noselfdamage = true,
 				range = 500,
 				reloadtime = 0.5,
@@ -153,7 +153,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "COR_TAAR_RC",
+				def = "CORE_BLASTER",
 				onlytargetcategory = "SURFACE",
 			},
 		},

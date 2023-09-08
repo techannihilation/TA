@@ -158,7 +158,7 @@ return {
 					subs = 5,
 				},
 			},
-			cor_taar_rc = {
+			core_blaster = {
 				accuracy = 200,
 				areaofeffect = 64,
 				avoidfeature = false,
@@ -191,7 +191,7 @@ return {
 					subs = 5,
 				},
 			},
-			corgor_head = {
+			atad = {
 				areaofeffect = 14,
 				beamtime = 0.5,
 				corethickness = 0.5,
@@ -234,11 +234,12 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "cor_taar_rc",
+				badtargetcategory = "MINOR MEDIUM",
+				def = "ATAD",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
-				def = "corgor_HEAD",
+				def = "CORE_BLASTER",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {

@@ -1,5 +1,5 @@
  4.51 => 4.52
-2023-09-01
+2023-09-09
 
 Balance :
  - ArmStratus buff (better dmg/s and better HP 35K=>42K)
@@ -15,6 +15,7 @@ Balance :
 
  Fix :
   - Rumad T3 Kbot Lab
+  - Fix T5 Aeroship Dust. Add MountedWeaponAccelerator on.
 
  4.50 => 4.51
 2023-08-04
