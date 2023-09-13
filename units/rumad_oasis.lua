@@ -136,7 +136,7 @@ return {
 				model = "weapon_rocketxl_rumad",
 				name = "Barrage missile",
 				proximitypriority = -1,
-				range = 2400,
+				range = 2250,
 				reloadtime = 25,
 				smoketrail = true,
 				sprayangle = 300,

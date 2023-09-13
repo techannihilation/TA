@@ -38,7 +38,7 @@ return {
 		yardmap = "ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
 			buildpic = "gok_emstor.dds",
-			faction = "gok",
+			faction = "GOK",
 		},
 		featuredefs = {
 			dead = {

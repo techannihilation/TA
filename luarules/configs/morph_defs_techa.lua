@@ -696,20 +696,11 @@ local morphDefs = {
 		xp = 0.10,
 	},
 	rumad_mongol = {
-		{
-	 		into = 'rumad_gala',
-	 		time = 45,
-	 		tech = 3,
-	 		xp = 0.05,
-		},
-		{
-	 		into = 'rumad_hellion',
-	 		time = 60,
-	 		tech = 3,
-	 		xp = 0.10,
-	 	},
+	 	into = 'rumad_hellion',
+	 	time = 60,
+	 	tech = 3,
+	 	xp = 0.10,
 	},
-
 	-- Titan
 	cormkl = {
 		into = 'corlilith',

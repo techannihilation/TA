@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 115010,
 		builder = false,
 		buildpic = "rumad_mcv1.dds",
-		buildtime = 150000,
+		buildtime = 2150000,
 		canattack = true,
 		canguard = true,
 		canmove = true,
