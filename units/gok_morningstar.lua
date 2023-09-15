@@ -11,7 +11,7 @@ return {
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
-		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
+		category = "ALL MEDIUM MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -4 0",
 		collisionvolumescales = "45 40 45",
 		collisionvolumetype = "CylZ",
@@ -163,7 +163,6 @@ return {
 		weapons = {
 			[1] = {
 				def = "ANTINUKE_WEAPON",
-				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

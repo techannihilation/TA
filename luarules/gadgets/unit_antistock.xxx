@@ -45,6 +45,7 @@ local isAnti = {
 		[UnitDefNames['rumad_antinuke'].id] = true, -- Antinuke
 		[UnitDefNames['rumad_antinuke1'].id] = true, -- Antinuke
 		[UnitDefNames['rumad_antinuke2'].id] = true, -- Antinuke
+		[UnitDefNames['rumad_mantinuke'].id] = true, -- Antinuke
 	}
 
 local spSetUnitStockpile = Spring.SetUnitStockpile

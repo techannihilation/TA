@@ -115,7 +115,7 @@ local antiNukes = {
   [UnitDefNames["rumad_antinuke"].id] = true,
   [UnitDefNames["rumad_antinuke1"].id] = true,
   [UnitDefNames["rumad_antinuke2"].id] = true,
-
+  [UnitDefNames["rumad_mantinuke"].id] = true,
 }
 
 for unitDefID, _ in pairs(antiNukes) do

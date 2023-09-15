@@ -119,6 +119,7 @@ modConfig["TA"]["unitList"] =
 								rumad_antinuke = { weapons = { 1 } },
 								rumad_antinuke1 = { weapons = { 3 } },
 								rumad_antinuke2 = { weapons = { 3 } },
+								rumad_mantinuke = { weapons = { 3 } },
 								corarbritator = { weapons = { 3 } },
 								talon_carry = { weapons = { 3 } },
 								talon_ucar = { weapons = { 6 } },

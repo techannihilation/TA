@@ -1,11 +1,12 @@
  4.51 => 4.52
-2023-09-09
+2023-09-16
 
 Balance :
  - ArmStratus buff (better dmg/s and better HP 35K=>42K)
  - Exo & Skrog morph with level 5 instead 4
 
  Improvment :
+ - Add T2 & T3 Static Antinuke for Rumad. Add mobile into Vehicle Lab
  - Exo T4 Arm : Change model & Balance. Morph from Orco or Furie
  - Add T1 Long Range Missile Turret for Gok
  - Add New Model for T5 Gok Lab

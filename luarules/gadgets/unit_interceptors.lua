@@ -55,6 +55,7 @@ local antiNukes = {
   [UnitDefNames["gok_morningstar"].id] = true,
   [UnitDefNames["gok_ucar"].id] = true,
   --Rumad
+  [UnitDefNames["rumad_mantinuke"].id] = true,
   [UnitDefNames["rumad_antinuke"].id] = true,
   [UnitDefNames["rumad_antinuke1"].id] = true,
   [UnitDefNames["rumad_antinuke2"].id] = true,
