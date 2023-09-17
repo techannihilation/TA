@@ -39,7 +39,7 @@ return {
 		onoffable = false,
 		radaremitheight = 128,
 		seismicsignature = 0,
-		selfdestructas = "FUSION_SUPERBLAST_BUILDING",
+		selfdestructas = "FUSION_SUPERBLAST",
 		sightdistance = 300,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,

@@ -40,7 +40,7 @@ return {
 		radaremitheight = 128,
 		script = "gok_sfusion.cob",
 		seismicsignature = 0,
-		selfdestructas = "FUSION_SUPERBLAST_BUILDING",
+		selfdestructas = "FUSION_SUPERBLAST",
 		sightdistance = 300,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
