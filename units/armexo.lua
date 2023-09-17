@@ -190,7 +190,7 @@ return {
 				laserflaresize = 20,
 				name = "ATA",
 				noselfdamage = true,
-				range = 1800,
+				range = 1600,
 				reloadtime = 3,
 				rgbcolor = "0.2 0.2 1",
 				soundhitdry = "",
