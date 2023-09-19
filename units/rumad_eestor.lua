@@ -32,7 +32,7 @@ return {
 		noautofire = false,
 		objectname = "rumad_eestor",
 		radaremitheight = 102,
-		script = "rumad_aestor.cob",
+		script = "rumad_estor.cob",
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 273,
