@@ -3,25 +3,24 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, ruparm, Rarm, rhand, Rweapon, Raim1, Rbarr1,
-       Rbflare1, Raim2, Rbarr2, Rbflare2, Raim3, Rbarr3, Rbflare3, luparm,
-       Larm, lhand, Lweapon, Laim1, Lbarr1, Lbflare1, Laim2, Lbarr2,
-       Lbflare2, Laim3, Lbarr3, Lbflare3, launcher, Rmissflare, Lmissflare, pelvis,
+piece  base, pelvis, torso, shield_pos,
+		ruparm, Rarm, rhand, Rweapon, rminigun1, rflare1, rminigun2, rflare2,
+		luparm, Larm, lhand, Lweapon, lminigun1, lflare1, lminigun2, lflare2,
+       
        Rhileg, Rleg, Rdownleg, Rfoot, Rbackfing, Rfinger, Rfinger1, Rfinger2,
        Lhileg, Lleg, Ldownleg, Lfoot, Lbackfing, Lfinger, Lfinger1, Lfinger2,
        head, Raim, Rbarrl, Rheadflare, Laim, Lbarrl, Lheadflare, luparmhold,
-       ruparmhold, Lweapglo, Rweapglo;
+       ruparmhold;
 
-static-var  gun_1, gun_2, gun_3, gun_4, bMoving, bAiming,
-            Static_Var_6, Static_Var_8, Static_Var_9, Static_Var_10,
-            Static_Var_11, Static_Var_12, Static_Var_13, Static_Var_15;
+static-var shield_onoff, gun_1, bMoving, bAiming;
 
 // Signal definitions
-#define SIG_AIM				2
+#define SIG_AIM_1			2
 #define SIG_AIM_2			4
 #define SIG_AIM_3			8
 #define SIG_AIM_4			16
-
+#define SIG_AIM_5			32
+#define SIG_MOVE			64
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -43,7 +42,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			}
 			if( Func_Var_4 == 1 )
 			{
-				emit-sfx smoketype from base;
+				emit-sfx smoketype from pelvis;
 			}
 			else if( Func_Var_4 == 2 )
 			{
@@ -71,8 +70,6 @@ Walk()
 {
 	while( bMoving )
 	{
-		if( Static_Var_6 )
-		{
 			turn Rhileg to x-axis <-7.000000> speed <10.000000>;
 			turn Rleg to x-axis <-28.000000> speed <28.000000>;
 			turn Rdownleg to x-axis <15.000000> speed <15.000000>;
@@ -81,14 +78,7 @@ Walk()
 			turn Rfinger1 to x-axis <40.000000> speed <60.000000>;
 			turn Rfinger2 to x-axis <40.000000> speed <60.000000>;
 			turn Rbackfing to x-axis <-50.000000> speed <70.000000>;
-		}
-		if( !Static_Var_6 )
-		{
-			turn Rhileg to x-axis <-7.000000> speed <20.000000>;
-			turn Rleg to x-axis <-28.000000> speed <48.000000>;
-			turn Rdownleg to x-axis <15.000000> speed <21.000000>;
-		}
-		Static_Var_6 = 0;
+
 		if( !bAiming )
 		{
 			turn luparm to x-axis <-6.000000> speed <16.000000>;
@@ -97,10 +87,10 @@ Walk()
 			turn Larm to x-axis <-10.000000> speed <10.000000>;
 			turn ruparm to x-axis <6.000000> speed <8.000000>;
 			turn Rarm to x-axis <9.000000> speed <12.000000>;
-			turn body to y-axis <4.000000> speed <9.000000>;
+			turn torso to y-axis <4.000000> speed <9.000000>;
 			turn head to y-axis <3.000000> speed <7.000000>;
-			turn body to z-axis <2.000000> speed <2.000000>;
-			move body to y-axis [1.000000] speed [1.500000];
+			turn torso to z-axis <2.000000> speed <2.000000>;
+			move torso to y-axis [1.000000] speed [1.500000];
 			move head to y-axis [1.500000] speed [1.875000];
 		}
 		turn Lhileg to x-axis <8.000000> speed <8.000000>;
@@ -116,7 +106,7 @@ Walk()
 		{
 			turn lhand to y-axis <-15.000000> speed <15.000000>;
 			turn Rarm to x-axis <10.000000> speed <30.000000>;
-			move body to y-axis [0.000000] speed [0.750000];
+			move torso to y-axis [0.000000] speed [0.750000];
 			move head to y-axis [1.500000] speed [1.000000];
 		}
 		sleep 200;
@@ -159,10 +149,10 @@ Walk()
 			turn Rarm to x-axis <-10.000000> speed <10.000000>;
 			turn luparm to x-axis <6.000000> speed <8.000000>;
 			turn Larm to x-axis <9.000000> speed <12.000000>;
-			turn body to y-axis <-4.000000> speed <9.000000>;
+			turn torso to y-axis <-4.000000> speed <9.000000>;
 			turn head to y-axis <-3.000000> speed <7.000000>;
-			turn body to z-axis <-2.000000> speed <2.000000>;
-			move body to y-axis [1.000000] speed [1.500000];
+			turn torso to z-axis <-2.000000> speed <2.000000>;
+			move torso to y-axis [1.000000] speed [1.500000];
 			move head to y-axis [1.500000] speed [1.875000];
 		}
 		sleep 800;
@@ -170,7 +160,7 @@ Walk()
 		{
 			turn rhand to y-axis <15.000000> speed <15.000000>;
 			turn Larm to x-axis <10.000000> speed <30.000000>;
-			move body to y-axis [0.000000] speed [0.750000];
+			move torso to y-axis [0.000000] speed [0.750000];
 			move head to y-axis [0.000000] speed [1.000000];
 		}
 		sleep 200;
@@ -199,19 +189,18 @@ Walk()
 
 StartMoving()
 {
-	set-signal-mask 32;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
 	bMoving = TRUE;
 	sleep 200;
-	Static_Var_10 = 1;
-	Static_Var_8 = Rand( 1, 6 );
 	start-script Walk();
 }
 
 StopMoving()
 {
-	signal 16;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
 	bMoving = FALSE;
-	Static_Var_6 = 1;
 	turn Rhileg to x-axis <0.000000> speed <40.000000>;
 	turn Rleg to x-axis <0.000000> speed <60.000000>;
 	turn Rdownleg to x-axis <0.000000> speed <50.000000>;
@@ -229,12 +218,12 @@ StopMoving()
 	turn Lfinger2 to x-axis <0.000000> speed <60.000000>;
 	turn Lbackfing to x-axis <0.000000> speed <60.000000>;
 	move head to x-axis [0.000000] speed [12.500000];
-	move body to x-axis [0.000000] speed [17.500000];
-	turn body to z-axis <0.000000> speed <9002.192308>;
+	move torso to x-axis [0.000000] speed [17.500000];
+	turn torso to z-axis <0.000000> speed <9002.192308>;
 	move head to y-axis [0.000000] speed [2.500000];
 	if( !bAiming )
 	{
-		turn body to y-axis <0.000000> speed <80.000000>;
+		turn torso to y-axis <0.000000> speed <80.000000>;
 		turn ruparm to x-axis <0.000000> speed <65.000000>;
 		turn rhand to x-axis <0.000000> speed <60.000000>;
 		turn head to y-axis <0.000000> speed <50.000000>;
@@ -249,76 +238,109 @@ StopMoving()
 	}
 }
 
+
+Shield()
+{
+	shield_onoff = !shield_onoff;
+}
+
+
 Create()
 {
-	gun_1 = 1;
-	gun_2 = 0;
-	gun_3 = 0;
-	gun_4 = 0;
+	gun_1 = 0;
+	shield_onoff = 1;
 	bMoving = FALSE;
 	bAiming = FALSE;
-	Static_Var_6 = 1;
-	Static_Var_11 = 0;
-	Static_Var_9 = 0;
-	Static_Var_8 = 0;
-	Static_Var_10 = 0;
-	Static_Var_13 = 0;
-	Static_Var_15 = 0;
-	hide Rbflare1;
-	hide Lbflare1;
-	hide Rbflare2;
-	hide Lbflare2;
-	hide Rbflare3;
-	hide Lbflare3;
-	hide Lheadflare;
-	hide Rheadflare;
 	start-script SmokeUnit();
 }
 
 RestoreAfterDelay()
 {
-	sleep 7500;
-	turn body to y-axis <0.000000> speed <80.000000>;
+
+	sleep 500;
+	spin lminigun1 around z-axis speed <500.0> accelerate <-100.0>;
+	spin rminigun1 around z-axis speed <500.0> accelerate <-100.0>;
+	spin lminigun2 around z-axis speed <500.0> accelerate <-100.0>;
+	spin rminigun2 around z-axis speed <500.0> accelerate <-100.0>;
+	
+	sleep 350;
+	spin lminigun1 around z-axis speed <350.0> accelerate <-75.0>;
+	spin rminigun1 around z-axis speed <350.0> accelerate <-75.0>;
+	spin lminigun2 around z-axis speed <350.0> accelerate <-75.0>;
+	spin rminigun2 around z-axis speed <350.0> accelerate <-75.0>;
+	
+	sleep 350;
+	spin lminigun1 around z-axis speed <150.0> accelerate <-50.0>;
+	spin rminigun1 around z-axis speed <150.0> accelerate <-50.0>;
+	spin lminigun2 around z-axis speed <150.0> accelerate <-50.0>;
+	spin rminigun2 around z-axis speed <150.0> accelerate <-50.0>;
+	
+	sleep 350;
+	spin lminigun1 around z-axis speed <0.0> accelerate <-25.0>;
+	spin rminigun1 around z-axis speed <0.0> accelerate <-25.0>;
+	spin lminigun2 around z-axis speed <0.0> accelerate <-25.0>;
+	spin rminigun2 around z-axis speed <0.0> accelerate <-25.0>;
+	
+	sleep 4000;
+	turn torso to y-axis <0.000000> speed <80.000000>;
 	turn ruparm to x-axis <0.000000> speed <60.000000>;
 	turn luparm to x-axis <0.000000> speed <60.000000>;
 	turn lhand to y-axis <0.000000> speed <40.000000>;
 	turn rhand to y-axis <0.000000> speed <40.000000>;
 	turn ruparmhold to x-axis <0.000000> speed <60.000000>;
 	turn luparmhold to x-axis <0.000000> speed <60.000000>;
-	wait-for-turn body around y-axis;
+	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn lhand around y-axis;
 	wait-for-turn ruparmhold around x-axis;
-	bAiming = FALSE;
-	
+	bAiming = FALSE;	
 }
 
-RestoreWeapon4()
+RestoreHead()
 {
 	sleep 5000;
 	turn head to y-axis <0.000000> speed <80.000000>;
 	wait-for-turn head around y-axis;
 }
 
-QueryWeapon2(piecenum)
+
+// Head
+
+QueryWeapon1(piecenum)
 {
-	if( gun_2 == 0 )
+	if( gun_1 )
 	{
-		piecenum = Rbflare1;
+		piecenum = Lheadflare;
 	}
-	if( gun_2 == 1 )
+	else
 	{
-		piecenum = Rbflare2;
+		piecenum = Rheadflare;
 	}
-	if( gun_2 == 2 )
-	{
-		piecenum = Rbflare3;
-	}
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = head;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn head to y-axis heading speed <110.000000>;
+	wait-for-turn head around y-axis;
+	start-script RestoreHead();
+	return (1);
+}
+
+FireWeapon1()
+{
+	gun_1 = !gun_1;
 }
 
 AimFromWeapon2(piecenum)
 {
-	piecenum = body;
+	piecenum = torso;
 }
 
 AimWeapon2(heading, pitch)
@@ -326,7 +348,7 @@ AimWeapon2(heading, pitch)
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
 	bAiming = TRUE;
-	turn body to y-axis heading speed <75.000000>;
+	turn torso to y-axis heading speed <75.000000>;
 	turn ruparm to x-axis <0.000000> - pitch speed <70.000000>;
 	turn luparm to x-axis <0.000000> - pitch speed <70.000000>;
 	turn ruparmhold to x-axis <0.000000> speed <70.000000>;
@@ -337,7 +359,7 @@ AimWeapon2(heading, pitch)
 	turn lhand to x-axis <0.000000> speed <55.000000>;
 	turn Larm to x-axis <0.000000> speed <55.000000>;
 	turn Rarm to x-axis <0.000000> speed <55.000000>;
-	wait-for-turn body around y-axis;
+	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn luparm around x-axis;
 	wait-for-turn ruparmhold around x-axis;
@@ -348,166 +370,113 @@ AimWeapon2(heading, pitch)
 	wait-for-turn Rarm around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
-}
-
-FireWeapon2()
-{
-	
-	if( gun_2 == 0 )
-	{		
-		move Rbarr1 to z-axis [-3.000000] speed [125.000000];
-		sleep 80;
-		move Rbarr1 to z-axis [0.000000] speed [8.500000];
-	}	
-	if( gun_2 == 1 )
-	{		
-		move Rbarr2 to z-axis [-3.000000] speed [125.000000];
-		sleep 80;
-		move Rbarr2 to z-axis [0.000000] speed [8.500000];
-	}
-	if( gun_2 == 2 )
-	{		
-		move Rbarr3 to z-axis [-3.000000] speed [125.000000];
-		sleep 80;
-		move Rbarr3 to z-axis [0.000000] speed [8.500000];
-	}
-	++gun_2;
-	if( gun_2 == 3 )
-	{
-		gun_2 = 0;
-	}
-}
-
-QueryWeapon3(piecenum)
-{
-	if( gun_3 == 0 )
-	{
-		piecenum = Lbflare1;
-	}
-	if( gun_3 == 1 )
-	{
-		piecenum = Lbflare2;
-	}
-	if( gun_3 == 2 )
-	{
-		piecenum = Lbflare3;
-	}
-}
-
-AimFromWeapon3(piecenum)
-{
-	piecenum = body;
 }
 
 AimWeapon3(heading, pitch)
 {
 	signal SIG_AIM_3;
 	set-signal-mask SIG_AIM_3;
-	bAiming = TRUE;
-	wait-for-turn body around y-axis;
+	wait-for-turn torso around y-axis;
 	wait-for-turn ruparm around x-axis;
 	wait-for-turn luparm around x-axis;
-	wait-for-turn lhand around y-axis;
-	wait-for-turn rhand around y-axis;
 	wait-for-turn ruparmhold around x-axis;
 	wait-for-turn luparmhold around x-axis;
+	wait-for-turn lhand around y-axis;
+	wait-for-turn rhand around y-axis;
 	wait-for-turn Larm around x-axis;
 	wait-for-turn Rarm around x-axis;
-	start-script RestoreAfterDelay();
 	return (1);
-}
-
-FireWeapon3()
-{
-	if( gun_3 == 0 )
-	{		
-		move Lbarr1 to z-axis [-3.000000] speed [125.000000];
-		sleep 80;
-		move Lbarr1 to z-axis [0.000000] speed [8.500000];
-	}	
-	if( gun_3 == 1 )
-	{		
-		move Lbarr2 to z-axis [-3.000000] speed [125.000000];
-		sleep 80;
-		move Lbarr2 to z-axis [0.000000] speed [8.500000];
-	}
-	if( gun_3 == 2 )
-	{		
-		move Lbarr3 to z-axis [-3.000000] speed [125.000000];
-		sleep 80;
-		move Lbarr3 to z-axis [0.000000] speed [8.500000];
-	}
-	++gun_3;
-	if( gun_3 == 3 )
-	{
-		gun_3 = 0;
-	}
-}
-
-
-// Starburst
-QueryPrimary(piecenum)
-{
-	if( gun_1 )
-	{
-		piecenum = Lmissflare;
-	}
-	else
-	{
-		piecenum = Rmissflare;
-	}
-}
-
-AimFromPrimary(piecenum)
-{
-	piecenum = launcher;
-}
-
-AimPrimary(heading, pitch)
-{
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	return (1);
-}
-
-FirePrimary()
-{
-	gun_1 = !gun_1;
-}
-
-// Head
-QueryWeapon4(piecenum)
-{
-	if( gun_4 )
-	{
-		piecenum = Lheadflare;
-	}
-	else
-	{
-		piecenum = Rheadflare;
-	}
-}
-
-AimFromWeapon4(piecenum)
-{
-	piecenum = Laim;
 }
 
 AimWeapon4(heading, pitch)
 {
 	signal SIG_AIM_4;
 	set-signal-mask SIG_AIM_4;
-	bAiming = TRUE;
-	Static_Var_15 = 1;
-	turn head to y-axis heading speed <110.000000>;
-	wait-for-turn head around y-axis;
-	start-script RestoreWeapon4();
+	wait-for-turn torso around y-axis;
+	wait-for-turn ruparm around x-axis;
+	wait-for-turn luparm around x-axis;
+	wait-for-turn ruparmhold around x-axis;
+	wait-for-turn luparmhold around x-axis;
+	wait-for-turn lhand around y-axis;
+	wait-for-turn rhand around y-axis;
+	wait-for-turn Larm around x-axis;
+	wait-for-turn Rarm around x-axis;
 	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	wait-for-turn torso around y-axis;
+	wait-for-turn ruparm around x-axis;
+	wait-for-turn luparm around x-axis;
+	wait-for-turn ruparmhold around x-axis;
+	wait-for-turn luparmhold around x-axis;
+	wait-for-turn lhand around y-axis;
+	wait-for-turn rhand around y-axis;
+	wait-for-turn Larm around x-axis;
+	wait-for-turn Rarm around x-axis;
+	return (1);
+}
+
+FireWeapon2()
+{
+	emit-sfx 1024 + 0 from rflare1;
+	spin rminigun1 around z-axis speed <750.0>;
+}
+
+FireWeapon3()
+{
+	emit-sfx 1024 + 0 from lflare1;
+	spin lminigun1 around z-axis speed <750.0>;
 }
 
 FireWeapon4()
 {
-	gun_4 = !gun_4;
+	emit-sfx 1024 + 0 from rflare2;
+	spin rminigun2 around z-axis speed <750.0>;
+}
+
+FireWeapon5()
+{
+	emit-sfx 1024 + 0 from lflare2;
+	spin lminigun2 around z-axis speed <750.0>;
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = rflare1;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = lflare1;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = rflare2;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = lflare2;
+}
+
+AimWeapon6(heading, pitch)
+{
+	return (shield_onoff);
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = shield_pos;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = shield_pos;
 }
 
 SweetSpot(piecenum)
@@ -520,36 +489,15 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode body type NOHEATCLOUD;
+		explode torso type NOHEATCLOUD;
 		explode ruparm type NOHEATCLOUD;
 		explode Rarm type NOHEATCLOUD;
 		explode rhand type NOHEATCLOUD;
 		explode Rweapon type NOHEATCLOUD | SHATTER;
-		explode Raim1 type NOHEATCLOUD | SHATTER;
-		explode Rbarr1 type NOHEATCLOUD | SHATTER;
-		explode Rbflare1 type NOHEATCLOUD;
-		explode Raim2 type NOHEATCLOUD;
-		explode Rbarr2 type NOHEATCLOUD;
-		explode Rbflare2 type NOHEATCLOUD;
-		explode Raim3 type NOHEATCLOUD;
-		explode Rbarr3 type NOHEATCLOUD;
-		explode Rbflare3 type NOHEATCLOUD;
 		explode luparm type NOHEATCLOUD;
 		explode Larm type NOHEATCLOUD;
 		explode lhand type NOHEATCLOUD;
 		explode Lweapon type NOHEATCLOUD;
-		explode Laim1 type NOHEATCLOUD;
-		explode Lbarr1 type NOHEATCLOUD;
-		explode Lbflare1 type NOHEATCLOUD;
-		explode Laim2 type NOHEATCLOUD;
-		explode Lbarr2 type NOHEATCLOUD;
-		explode Lbflare2 type NOHEATCLOUD;
-		explode Laim3 type NOHEATCLOUD;
-		explode Lbarr3 type NOHEATCLOUD;
-		explode Lbflare3 type NOHEATCLOUD;
-		explode launcher type NOHEATCLOUD;
-		explode Rmissflare type NOHEATCLOUD;
-		explode Lmissflare type NOHEATCLOUD;
 		explode pelvis type NOHEATCLOUD;
 		explode Rhileg type NOHEATCLOUD;
 		explode Rleg type NOHEATCLOUD;
@@ -579,36 +527,15 @@ Killed(severity, corpsetype)
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode body type NOHEATCLOUD | SHATTER;
+		explode torso type NOHEATCLOUD | SHATTER;
 		explode ruparm type NOHEATCLOUD | SHATTER;
 		explode Rarm type NOHEATCLOUD | SHATTER;
 		explode rhand type NOHEATCLOUD | SHATTER;
 		explode Rweapon type NOHEATCLOUD | SHATTER;
-		explode Raim1 type NOHEATCLOUD | SHATTER;
-		explode Rbarr1 type NOHEATCLOUD | SHATTER;
-		explode Rbflare1 type NOHEATCLOUD | SHATTER;
-		explode Raim2 type NOHEATCLOUD | SHATTER;
-		explode Rbarr2 type NOHEATCLOUD | SHATTER;
-		explode Rbflare2 type NOHEATCLOUD | SHATTER;
-		explode Raim3 type NOHEATCLOUD | SHATTER;
-		explode Rbarr3 type NOHEATCLOUD | SHATTER;
-		explode Rbflare3 type NOHEATCLOUD | SHATTER;
 		explode luparm type NOHEATCLOUD | SHATTER;
 		explode Larm type NOHEATCLOUD | SHATTER;
 		explode lhand type NOHEATCLOUD | SHATTER;
 		explode Lweapon type NOHEATCLOUD | SHATTER;
-		explode Laim1 type NOHEATCLOUD | SHATTER;
-		explode Lbarr1 type NOHEATCLOUD | SHATTER;
-		explode Lbflare1 type NOHEATCLOUD | SHATTER;
-		explode Laim2 type NOHEATCLOUD | SHATTER;
-		explode Lbarr2 type NOHEATCLOUD | SHATTER;
-		explode Lbflare2 type NOHEATCLOUD | SHATTER;
-		explode Laim3 type NOHEATCLOUD | SHATTER;
-		explode Lbarr3 type NOHEATCLOUD | SHATTER;
-		explode Lbflare3 type NOHEATCLOUD | SHATTER;
-		explode launcher type NOHEATCLOUD | SHATTER;
-		explode Rmissflare type NOHEATCLOUD | SHATTER;
-		explode Lmissflare type NOHEATCLOUD | SHATTER;
 		explode pelvis type NOHEATCLOUD | SHATTER;
 		explode Rhileg type NOHEATCLOUD | SHATTER;
 		explode Rleg type NOHEATCLOUD | SHATTER;
@@ -636,36 +563,15 @@ Killed(severity, corpsetype)
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+	explode torso type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode ruparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Rarm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode rhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Rweapon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Raim1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Rbarr1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Rbflare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Raim2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Rbarr2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Rbflare2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Raim3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Rbarr3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Rbflare3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode luparm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Larm type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode lhand type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Lweapon type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Laim1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lbarr1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lbflare1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Laim2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lbarr2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lbflare2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Laim3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lbarr3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lbflare3 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode launcher type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Rmissflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode Lmissflare type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode pelvis type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Rhileg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode Rleg type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;

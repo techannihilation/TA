@@ -70,6 +70,7 @@ local ShieldUnits = {
   [UnitDefNames["armflosh"].id] = true,
   [UnitDefNames["armfgate1"].id] = true,
   [UnitDefNames["armpraet"].id] = true,
+  [UnitDefNames["armorco"].id] = true,
   [UnitDefNames["armexo"].id] = true,
   [UnitDefNames["armbeetle"].id] = true,
   [UnitDefNames["armshieldgen"].id] = true,

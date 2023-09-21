@@ -63,7 +63,7 @@ return {
 			[7] = "armbanth",
 			[8] = "armfox",
 			[9] = "armorco",
-			[10] = "arm_furie",
+			[10] = "armorco",
 		},
 		customparams = {
 			buildpic = "armshltx.dds",

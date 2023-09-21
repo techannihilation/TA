@@ -337,7 +337,7 @@ return {
       },
     },
   },
- ["arm_furie_muzzle"] = {
+ ["armorco_muzzle"] = {
     usedefaultexplosions = false,
     muzzle_puff_ring_1 = {
       air                = true,

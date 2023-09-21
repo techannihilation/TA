@@ -89,7 +89,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:arm_furie_muzzle",
+				[1] = "custom:armorco_muzzle",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

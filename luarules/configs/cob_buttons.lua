@@ -159,6 +159,15 @@ return {
 			params = {'1', 'Shield Off', 'Shield On'},
 		},
 	},
+	armorco = {
+		{
+			name = "shield_furie",
+			cob = "Shield",
+			tooltip = "Toggle shield activation",
+			type = CMDTYPE.ICON_MODE,
+			params = {'1', 'Shield Off', 'Shield On'},
+		},
+	},
 	rumad_gala = {
 		{
 			name = "shield_rumad_gala",

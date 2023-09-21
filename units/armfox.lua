@@ -223,13 +223,14 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
-					
+
 					air = 50,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR MEDIUM",
 				def = "PLUTON_GUN",
 				onlytargetcategory = "SURFACE",
 			},
