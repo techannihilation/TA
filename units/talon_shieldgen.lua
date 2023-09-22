@@ -53,7 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_shieldgen.dds",
 			faction = "TALON",
-			shield_power = 3000,
+			shield_power = 2500,
 			shield_radius = 250,
 		},
 		featuredefs = {
