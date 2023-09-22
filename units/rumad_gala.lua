@@ -57,7 +57,7 @@ return {
 			faction = "RUMAD",
 			shield_emit_height = 30.0,
 			shield_power = 2500,
-			shield_radius = 120,
+			shield_radius = 150,
 		},
 		featuredefs = {
 			dead = {
@@ -188,7 +188,7 @@ return {
 				shieldpower = 2500,
 				shieldpowerregen = 45,
 				shieldpowerregenenergy = 450,
-				shieldradius = 120,
+				shieldradius = 150,
 				shieldrepulser = true,
 				smartshield = true,
 				visibleshieldrepulse = true,

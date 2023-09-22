@@ -56,9 +56,9 @@ return {
 		customparams = {
 			buildpic = "armorco.dds",
 			faction = "ARM",
-			shield_emit_height = 45,
+			shield_emit_height = 40,
 			shield_power = 2500,
-			shield_radius = 230,
+			shield_radius = 150,
 		},
 		featuredefs = {
 			dead = {
@@ -178,7 +178,7 @@ return {
 				shieldpower = 2500,
 				shieldpowerregen = 37.5,
 				shieldpowerregenenergy = 375,
-				shieldradius = 230,
+				shieldradius = 150,
 				shieldrepulser = true,
 				smartshield = true,
 				soundhitwet = "sizzle",

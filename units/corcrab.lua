@@ -151,10 +151,7 @@ return {
 		},
 		weapondefs = {
 			repulsor = {
-				craterareaofeffect = 0,
-				craterboost = 0,
-				cratermult = 0,
-				name = "PlasmaRepulsor",
+				name = "Plasma Repulsor",
 				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 450,
 				shieldforce = 8,
