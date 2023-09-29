@@ -19,7 +19,7 @@ return {
     },
     particlesystem_dirt_small_bullet_fx = {
       air                = true,
-      class              = [[CSphereParticleSpawner]],
+      class              = [[CSimpleParticleSystem]],
       count              = 0,
       ground             = true,
       water              = false,
