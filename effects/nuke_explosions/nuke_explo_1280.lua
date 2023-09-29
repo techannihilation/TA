@@ -514,7 +514,7 @@ return {
   ["fireball_piece2_nuke_1280"] = {
      smokeup = {
       air                = true,
-      class              = [[CSphereParticleSpawner]],
+      class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
       water              = true,
@@ -542,7 +542,7 @@ return {
     },
     heatup = {
       air                = true,
-      class              = [[CSphereParticleSpawner]],
+      class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
       water              = true,
@@ -570,7 +570,7 @@ return {
     },
      heatup1 = {
       air                = true,
-      class              = [[CSphereParticleSpawner]],
+      class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
       water              = true,

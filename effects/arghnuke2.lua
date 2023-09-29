@@ -44,7 +44,7 @@ return {
   ["smoke_column_nuke_fx_01_012"] = {
     smokin01 = {
       air                = true,
-      class              = [[CSphereParticleSpawner]],
+      class              = [[CSimpleParticleSystem]],
       count              = 9,
       ground             = true,
       water              = true,
@@ -386,7 +386,7 @@ return {
   ["smoke_column_nuke_fx_02_012"] = {
     smokin02 = {
       air                = true,
-      class              = [[CSphereParticleSpawner]],
+      class              = [[CSimpleParticleSystem]],
       count              = 90,
       ground             = true,
       water              = true,
