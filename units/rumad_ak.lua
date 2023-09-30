@@ -14,7 +14,7 @@ return {
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
-		description = "Advanced Amphibious Anti-Air Kbot",
+		description = "Amphibious Anti-Air Kbot",
 		explodeas = "BIG_UNITEX",
 		footprintx = 2,
 		footprintz = 2,
