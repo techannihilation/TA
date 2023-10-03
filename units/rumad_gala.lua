@@ -122,7 +122,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Plasma",
 				noselfdamage = true,
-				range = 1600,
+				range = 1400,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.9",
 				separation = 0.45,
