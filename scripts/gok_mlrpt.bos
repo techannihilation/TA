@@ -1,0 +1,240 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, rwing, lwing, rgate, lgate,
+		turret, recoil, pitchturretrecoil, pitchturret, barrel,
+       system1, system2, system3, fire, system2turn, system3turn, 
+       wake1, wake2, wake3, wake4, wake5, wake6, wake7, wake8;
+
+static-var  Static_Var_1, restore_delay, Deployed, Firing;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_MOVE			4
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	var Func_Var_4;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			Func_Var_4 = Rand( 1, 2 );
+			if( Func_Var_4 == 1 )
+			{
+				emit-sfx smoketype from body;
+			}
+			if( Func_Var_4 == 2 )
+			{
+				emit-sfx smoketype from barrel;
+			}
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	restore_delay = 4000;
+	Deployed = 0;
+	Firing = 0;
+	turn system2turn to z-axis <-120.> now;
+	turn system3turn to z-axis <120.> now;
+	start-script SmokeUnit();
+}
+
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	
+	Deployed = 0;
+
+	
+	move lgate to x-axis [0.00] speed [1.00];
+	move rgate to x-axis [0.00] speed [1.00];
+	wait-for-move lgate along x-axis;
+	move lgate to y-axis [0.00] speed [1.00];	
+	move rgate to y-axis [0.00] speed [1.00];
+	
+	var Func_Var_1, Func_Var_2;
+	Func_Var_1 = 3;
+	Func_Var_2 = 4;
+	while( TRUE )
+	{
+		Deployed = 0;
+		
+		if( Static_Var_1 >= 1 )
+		{
+			emit-sfx Func_Var_1 from wake1;
+			emit-sfx Func_Var_1 from wake2;
+			emit-sfx Func_Var_1 from wake3;
+			emit-sfx Func_Var_1 from wake4;
+			emit-sfx Func_Var_1 from wake5;
+			emit-sfx Func_Var_1 from wake6;
+			emit-sfx Func_Var_1 from wake7;
+			emit-sfx Func_Var_1 from wake8;
+			emit-sfx Func_Var_2 from wake1;
+			emit-sfx Func_Var_2 from wake2;
+			emit-sfx Func_Var_2 from wake3;
+			emit-sfx Func_Var_2 from wake4;
+			emit-sfx Func_Var_2 from wake5;
+			emit-sfx Func_Var_2 from wake6;
+			emit-sfx Func_Var_2 from wake7;
+			emit-sfx Func_Var_2 from wake8;
+		}
+		sleep 300;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	sleep 250;
+	
+	move lgate to x-axis [-3.50] speed [1.00];
+	move lgate to y-axis [1.00] speed [1.00];
+	move rgate to x-axis [3.50] speed [1.00];
+	move rgate to y-axis [1.00] speed [1.00];
+	
+	Deployed = 1;
+}
+
+setSFXoccupy(state)
+{
+	Static_Var_1 = state;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret to y-axis <0.000000> speed <30.000000>;
+	turn pitchturret to x-axis <0.000000> speed <30.000000>;
+		
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	while( !Deployed )
+	{
+		sleep 100;
+	}
+	
+	turn turret to y-axis heading speed <7.>;
+	turn pitchturret to x-axis <0.> - pitch speed <4.>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn pitchturret around x-axis;
+	start-script RestoreAfterDelay();
+	
+	while( !Deployed )
+	{
+		sleep 100;
+	}
+	
+	return (1);
+}
+
+FirePrimary()
+{
+	emit-sfx 1024 from fire;
+	move barrel to z-axis [-3.] speed [25.];
+	turn pitchturretrecoil to x-axis <-10.> speed <37.>;
+	sleep 100;
+	turn system1 to x-axis <-30.> speed <150.>;
+	turn system2 to x-axis <-30.> speed <150.>;
+	turn system3 to x-axis <-30.> speed <150.>;
+	sleep 100;
+	turn pitchturretrecoil to x-axis <-10.> speed <15.>;
+	turn system1 to x-axis <-30.> speed <90.>;
+	turn system2 to x-axis <-30.> speed <90.>;
+	turn system3 to x-axis <-30.> speed <90.>;
+	sleep 100;
+	turn system1 to x-axis <-30.> speed <30.>;
+	turn system2 to x-axis <-30.> speed <30.>;
+	turn system3 to x-axis <-30.> speed <30.>;
+	sleep 25;
+	turn pitchturretrecoil to x-axis <-10.> speed <5.>;
+	sleep 75;
+	turn pitchturretrecoil to x-axis <0.> speed <4.>;
+	move barrel to z-axis [0.] speed [1.];
+	turn system1 to x-axis <0.> speed <14.>;
+	turn system2 to x-axis <0.> speed <14.>;
+	turn system3 to x-axis <0.> speed <14.>;
+	Firing = 0;
+	sleep 250;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = fire;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = barrel;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lgate type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode recoil type NOHEATCLOUD;
+		explode pitchturret type NOHEATCLOUD;
+		return (corpsetype);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode lgate type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode recoil type NOHEATCLOUD | SHATTER;
+		explode pitchturret type NOHEATCLOUD | SHATTER;
+		return (corpsetype);
+	}
+	corpsetype = 3;
+	explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode lgate type NOHEATCLOUD;
+	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode recoil type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pitchturret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	return (corpsetype);
+}

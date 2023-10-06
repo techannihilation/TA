@@ -6,7 +6,7 @@
 piece  base, hull, fsystem, ftrack, fshadow, bsystem, lbtrack, lbshadow, rbtrack, rbshadow, larm1, larm2, larm3, rarm1, rarm2, rarm3,
        turret, pitchturret, sleeve, barrel, fire;
 
-static-var  UnitHeading, UnitSpeed, Deployed, Firing;
+static-var  UnitHeading, UnitSpeed, Deployed;
 
 // Signal definitions
 #define SIG_AIM			2
@@ -53,7 +53,6 @@ Create()
 {
 	UnitSpeed = 1;
 	Deployed = 0;
-	Firing = 0;	
 	start-script SmokeUnit();
 }
 
@@ -147,7 +146,7 @@ AimPrimary(Heading, Pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	
-	while( Firing OR !Deployed )
+	while( !Deployed )
 	{
 		sleep 100;
 	}
@@ -173,7 +172,6 @@ FirePrimary(Random)
 	move barrel to z-axis [0.00] speed [1.00];
 	move sleeve to z-axis [0.00] speed [1.00];
 	sleep 100;
-	Firing = 0;
 }
 
 Killed(Severity, CorpseType, Random)

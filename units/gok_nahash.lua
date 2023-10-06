@@ -3,8 +3,8 @@ return {
 		airsightdistance = 1500,
 		acceleration = 0.01,
 		brakerate = 0.08,
-		buildcostenergy = 90121,
-		buildcostmetal = 6008,
+		buildcostenergy = 90100,
+		buildcostmetal = 6010,
 		builder = false,
 		buildpic = "gok_nahash.dds",
 		buildtime = 100000,
@@ -29,7 +29,7 @@ return {
 		idletime = 1800,
 		losemitheight = 50,
 		maneuverleashlength = 640,
-		mass = 6008,
+		mass = 6010,
 		maxdamage = 11020,
 		maxslope = 16,
 		maxvelocity = 2,
@@ -144,7 +144,7 @@ return {
 				damage = {
 					areoship = 60,
 					default = 5,
-					
+
 					air = 240,
 				},
 			},
@@ -182,7 +182,7 @@ return {
 				damage = {
 					areoship = 375,
 					default = 5,
-					
+
 					air = 1500,
 				},
 			},

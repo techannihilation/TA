@@ -51,8 +51,9 @@ return {
 			[1] = "gok_ech",
 			[2] = "gok_godsword",
 			[3] = "gok_abyss",
-			[4] = "gok_nahash",
-			[5] = "gok_diablo",
+			[4] = "gok_mlrpt",
+			[5] = "gok_nahash",
+			[6] = "gok_diablo",
 			--[6] = "",
 		},
 		customparams = {
