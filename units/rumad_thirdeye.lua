@@ -45,7 +45,6 @@ return {
 		noautofire = false,
 		objectname = "rumad_thirdeye",
 		radaremitheight = 35,
-		script = "rumad_research_lvl1.cob",
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDINGEX",
 		sightdistance = 4000,
