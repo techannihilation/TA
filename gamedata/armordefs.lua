@@ -233,6 +233,8 @@ return {
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
+		"halloween",
+		"halloween1",
 	},
 
 	flamethrowers = {

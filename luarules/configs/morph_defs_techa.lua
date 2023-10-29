@@ -18,6 +18,10 @@ local morphDefs = {				--beginig of morphDefs
 local devolution = (-1 > 0)
 
 local morphDefs = {
+	halloween = {
+		into = 'halloween1',
+		time = 20,
+	},
 	armcom = {
 		into = 'armcom1',
 		time = 45,

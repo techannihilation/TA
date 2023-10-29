@@ -483,6 +483,11 @@ function SpawnStartUnit(teamID, x, z)
 		spCreateUnit(UnitDefNames["rumad_king"].id, x + 20 * (-1 * math.random(0,1)), y, z + 20 * (-1 * math.random(0,1)), 0, teamID)
 	end
 
+	--spawn halloween
+		spCreateUnit(UnitDefNames["halloween"].id, x + 40 * (-1 * math.random(0,1)), y, z + 40 * (-1 * math.random(0,1)), 0, teamID)
+
+
+
 	--share info
 	teamStartPoints[teamID] = {x,y,z}
 	spSetTeamRulesParam(teamID, startUnitParamName, startUnit, {public=true}) -- visible to all (and picked up by advpllist)
