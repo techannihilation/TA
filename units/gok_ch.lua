@@ -99,9 +99,10 @@ return {
 			[39] = "gok_frad",
 			[40] = "gok_sonar",
 			[41] = "gok_fdrag",
-			[42] = "gok_tl",
-			--[43] = "",
-			[44] = "gok_frl",
+			[42] = "gok_fllt",
+			[43] = "gok_fblackdawn",
+			[44] = "gok_tl",
+			[45] = "gok_frl",
 		},
 		customparams = {
 			buildpic = "gok_ch.dds",
