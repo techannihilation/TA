@@ -32,7 +32,7 @@ return {
 		maxvelocity = 2.5,
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
-		name = "Halloween",
+		name = "Pumpkin",
 		noautofire = false,
 		objectname = "halloween",
 		seismicsignature = 0,
@@ -44,7 +44,7 @@ return {
 		turninplaceanglelimit = 360,
 		turninplacespeedlimit = 5,
 		turnrate = 750,
-		unitname = "Pumpkin",
+		unitname = "halloween",
 		upright = true,
 		customparams = {
 			buildpic = "halloween.dds",
