@@ -1,3 +1,9 @@
+4.52 => 4.53
+2023-10-30
+
+Improvment :
+- Add Halloween event 
+
  4.51 => 4.52
 2023-09-22
 
