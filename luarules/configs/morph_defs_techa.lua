@@ -131,6 +131,11 @@ local morphDefs = {
 		time = 60,
 		tech = 2,
 	},
+	rumad_antinuke = {
+		into = 'rumad_antinuke1',
+		time = 60,
+		tech = 2,
+	},
 	armsilo = {
 		into = 'armsilo1',
 		tech = 2,
