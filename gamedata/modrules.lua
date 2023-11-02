@@ -47,8 +47,8 @@ local modrules = {
 
   flankingBonus = {
     defaultMode = 1, -- default to 1
-    defaultMin = 1,
-    defaultMax = 4,
+    defaultMin = 1.5,
+    defaultMax = 5,
   },
 
   sensors = {
