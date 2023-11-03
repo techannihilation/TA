@@ -484,7 +484,7 @@ function SpawnStartUnit(teamID, x, z)
 	end
 
 	--spawn halloween
-		spCreateUnit(UnitDefNames["halloween"].id, x + 40 * (-1 * math.random(0,1)), y, z + 40 * (-1 * math.random(0,1)), 0, teamID)
+	--	spCreateUnit(UnitDefNames["halloween"].id, x + 40 * (-1 * math.random(0,1)), y, z + 40 * (-1 * math.random(0,1)), 0, teamID)
 
 
 
