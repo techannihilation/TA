@@ -1,5 +1,6 @@
 --------------------------- TechA Config ---------------------------
-local flankmultiplier = Spring.GetModOptions().mo_flankmultiplier or 1
+local flankDefaultMin = Spring.GetModOptions().mo_flankdefaultmin or 1
+local flankDefaultMax = Spring.GetModOptions().mo_flankdefaultmax or 2
 
 local modrules = {
   construction = {
@@ -49,8 +50,8 @@ local modrules = {
 
   flankingBonus = {
     defaultMode = 1, -- default to 1
-    defaultMin = 1,
-    defaultMax = 2 * flankmultiplier,
+    defaultMin = flankDefaultMin,
+    defaultMax = flankDefaultMax,
   },
 
   sensors = {
