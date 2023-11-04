@@ -1,4 +1,6 @@
 --------------------------- TechA Config ---------------------------
+local flankmultiplier = Spring.GetModOptions().mo_flankmultiplier or 1
+
 local modrules = {
   construction = {
     constructionDecay = true, -- defaults to true (do uncompleted building frames begin to decay if no builder is working on them?)
@@ -47,8 +49,8 @@ local modrules = {
 
   flankingBonus = {
     defaultMode = 1, -- default to 1
-    defaultMin = 1.5,
-    defaultMax = 5,
+    defaultMin = 1,
+    defaultMax = 2 * flankmultiplier,
   },
 
   sensors = {

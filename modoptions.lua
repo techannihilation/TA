@@ -225,6 +225,17 @@ local options = {
     step = 1,
   },
   {
+    key = "mo_flankmultiplier",
+    name = "Multiplier for max flanking bonus",
+    desc = "",
+    section = "ta_options",
+    type = "number",
+    def = 1,
+    min = 0,
+    max = 10,
+    step = 0.1,
+  },
+  {
     key = "mo_storageowner",
     name = "Team Storage Owner",
     desc = "What owns the starting resource storage\nAutoHost Usage :- mo_storageowner",
