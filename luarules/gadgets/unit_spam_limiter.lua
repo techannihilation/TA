@@ -17,7 +17,7 @@ if gadgetHandler:IsSyncedCode() then
     local buildTimeCache = {}
     local isFactoryCache = {}
     local UnitDefs = UnitDefs
-    local UNIT_LIMIT = 50
+    local UNIT_LIMIT = 100
     local PENALTY_FACTOR = 0.5 -- 50% of buildtime
 
     function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
