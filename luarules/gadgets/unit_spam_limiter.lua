@@ -10,6 +10,13 @@ function gadget:GetInfo()
     }
 end
 
+local unitLimit = tonumber(Spring.GetModOptions().exp_unitlimit) or 0
+local penaltyFactor = tonumber(Spring.GetModOptions().exp_penaltyfactor) or 0.1
+
+if unitLimit == 0 then
+    return
+end
+
 if gadgetHandler:IsSyncedCode() then
     local spGetUnitDefID = Spring.GetUnitDefID
     local spSetUnitCosts = Spring.SetUnitCosts
@@ -17,8 +24,8 @@ if gadgetHandler:IsSyncedCode() then
     local buildTimeCache = {}
     local isFactoryCache = {}
     local UnitDefs = UnitDefs
-    local UNIT_LIMIT = 100
-    local PENALTY_FACTOR = 0.5 -- 50% of buildtime
+    local UNIT_LIMIT = unitLimit
+    local PENALTY_FACTOR = penaltyFactor
 
     function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
         if builderID then
@@ -32,7 +39,6 @@ if gadgetHandler:IsSyncedCode() then
                 if count > UNIT_LIMIT then
                     buildTimeCache[unitDefID] = buildTimeCache[unitDefID] or UnitDefs[unitDefID].buildTime
                     local newBuildTime = buildTimeCache[unitDefID] * (1 + (count - UNIT_LIMIT) * PENALTY_FACTOR)
-                    Spring.Echo("Team: ",unitTeam,": unitDefID ",unitDefID," buildTime ",newBuildTime)
                     spSetUnitCosts(unitID, {buildTime = newBuildTime})
                 end
             end

@@ -1,6 +1,6 @@
 --------------------------- TechA Config ---------------------------
-local flankDefaultMin = Spring.GetModOptions().mo_flankdefaultmin or 1
-local flankDefaultMax = Spring.GetModOptions().mo_flankdefaultmax or 2
+local flankDefaultMin = Spring.GetModOptions().exp_flankdefaultmin or 1
+local flankDefaultMax = Spring.GetModOptions().exp_flankdefaultmax or 2
 
 local modrules = {
   construction = {
