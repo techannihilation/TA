@@ -1,7 +1,7 @@
 return {
 	rumad_hellion = {
-		acceleration = 0.108,
-		brakerate = 0.714,
+		acceleration = 0.05,
+		brakerate = 0.7,
 		buildcostenergy = 2430195,
 		buildcostmetal = 195450,
 		builder = false,
@@ -27,8 +27,8 @@ return {
 		idletime = 1800,
 		losemitheight = 147,
 		maneuverleashlength = 640,
-		mass = 29450,
-		maxdamage = 600000,
+		mass = 195450,
+		maxdamage = 570000,
 		maxslope = 17,
 		maxvelocity = 0.9,
 		maxwaterdepth = 48,
@@ -47,7 +47,7 @@ return {
 		steeringmode = 2,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.8,
-		turnrate = 380,
+		turnrate = 300,
 		unitname = "rumad_hellion",
 		upright = true,
 		customparams = {
@@ -121,7 +121,7 @@ return {
 		},
 		weapondefs = {
 			rumad_plasma = {
-				accuracy = 200,
+				accuracy = 500,
 				areaofeffect = 196,
 				avoidfeature = false,
 				craterareaofeffect = 64,
@@ -188,7 +188,7 @@ return {
 				},
 			},
 			rumad_plasmax4 = {
-				accuracy = 200,
+				accuracy = 750,
 				areaofeffect = 128,
 				avoidfeature = false,
 				craterareaofeffect = 64,

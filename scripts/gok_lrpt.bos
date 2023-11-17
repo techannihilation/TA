@@ -3,10 +3,8 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, turret, turretrecoil, arm, arm2, pitchturret, cannon,
-       plate1, plate2, barrel, bar1, bar2,
-       bar2b, bar3, bar3b, fire, system, backpack, backpack2,
-       backpack3;
+piece  base, socle, turret, recoil, pitchturretrecoil, pitchturret, barrel,
+       system1, system2, system3, fire, system2turn, system3turn;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -29,7 +27,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			Func_Var_4 = Rand( 1, 2 );
 			if( Func_Var_4 == 1 )
 			{
-				emit-sfx smoketype from backpack2;
+				emit-sfx smoketype from socle;
 			}
 			if( Func_Var_4 == 2 )
 			{
@@ -47,10 +45,9 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	hide fire;
-	turn bar2 to z-axis <-120.> now;
-	turn bar3 to z-axis <120.> now;
-	start-script SmokeUnit();	
+	turn system2turn to z-axis <-120.> now;
+	turn system3turn to z-axis <120.> now;
+	start-script SmokeUnit();
 }
 
 AimPrimary(heading, pitch)
@@ -67,29 +64,29 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 from fire;
-	move barrel to z-axis [-3.] speed [25.];
-	turn turretrecoil to x-axis <-10.> speed <37.>;
+	move barrel to z-axis [-1.5] speed [25.];
+	turn pitchturretrecoil to x-axis <-10.> speed <37.>;
 	sleep 100;
-	turn bar1 to x-axis <-30.> speed <150.>;
-	turn bar2b to x-axis <-30.> speed <150.>;
-	turn bar3b to x-axis <-30.> speed <150.>;
+	turn system1 to x-axis <-30.> speed <150.>;
+	turn system2 to x-axis <-30.> speed <150.>;
+	turn system3 to x-axis <-30.> speed <150.>;
 	sleep 100;
-	turn turretrecoil to x-axis <-10.> speed <15.>;
-	turn bar1 to x-axis <-30.> speed <90.>;
-	turn bar2b to x-axis <-30.> speed <90.>;
-	turn bar3b to x-axis <-30.> speed <90.>;
+	turn pitchturretrecoil to x-axis <-10.> speed <15.>;
+	turn system1 to x-axis <-30.> speed <90.>;
+	turn system2 to x-axis <-30.> speed <90.>;
+	turn system3 to x-axis <-30.> speed <90.>;
 	sleep 100;
-	turn bar1 to x-axis <-30.> speed <30.>;
-	turn bar2b to x-axis <-30.> speed <30.>;
-	turn bar3b to x-axis <-30.> speed <30.>;
+	turn system1 to x-axis <-30.> speed <30.>;
+	turn system2 to x-axis <-30.> speed <30.>;
+	turn system3 to x-axis <-30.> speed <30.>;
 	sleep 25;
-	turn turretrecoil to x-axis <-10.> speed <5.>;
+	turn pitchturretrecoil to x-axis <-10.> speed <5.>;
 	sleep 75;
-	turn turretrecoil to x-axis <0.> speed <4.>;
+	turn pitchturretrecoil to x-axis <0.> speed <4.>;
 	move barrel to z-axis [0.] speed [1.];
-	turn bar1 to x-axis <0.> speed <14.>;
-	turn bar2b to x-axis <0.> speed <14.>;
-	turn bar3b to x-axis <0.> speed <14.>;
+	turn system1 to x-axis <0.> speed <14.>;
+	turn system2 to x-axis <0.> speed <14.>;
+	turn system3 to x-axis <0.> speed <14.>;
 	sleep 250;
 }
 
@@ -110,48 +107,37 @@ SweetSpot(piecenum)
 
 Killed(severity, corpsetype)
 {
-	explode backpack type NOHEATCLOUD | BITMAP1;
-	explode backpack2 type NOHEATCLOUD;
-	explode backpack3 type NOHEATCLOUD;
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type NOHEATCLOUD | BITMAP1;
-		explode turret type NOHEATCLOUD | BITMAP1;
+		explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode socle type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD;
+		explode recoil type NOHEATCLOUD;
 		explode pitchturret type NOHEATCLOUD;
-		explode plate1 type NOHEATCLOUD;
-		explode plate2 type NOHEATCLOUD;
-		explode barrel type NOHEATCLOUD;
-		explode bar1 type NOHEATCLOUD;
-		explode bar2 type NOHEATCLOUD;
-		explode bar3 type NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-		explode turret type NOHEATCLOUD | BITMAP1;
-		explode turretrecoil type SHATTER | NOHEATCLOUD;
-		explode pitchturret type NOHEATCLOUD;
-		explode plate1 type NOHEATCLOUD;
-		explode plate2 type NOHEATCLOUD;
-		explode barrel type NOHEATCLOUD;
-		explode bar1 type FALL | SMOKE | NOHEATCLOUD;
-		explode bar2 type NOHEATCLOUD;
-		explode bar3 type NOHEATCLOUD;
+		explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode socle type NOHEATCLOUD;
+		explode turret type NOHEATCLOUD | SHATTER;
+		explode recoil type NOHEATCLOUD | SHATTER;
+		explode pitchturret type NOHEATCLOUD | SHATTER;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode turret type NOHEATCLOUD | BITMAP1;
-	explode turretrecoil type SHATTER | NOHEATCLOUD;
-	explode pitchturret type NOHEATCLOUD;
-	explode plate1 type NOHEATCLOUD;
-	explode plate2 type NOHEATCLOUD;
-	explode barrel type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode bar1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode bar2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
-	explode bar3 type NOHEATCLOUD;
+	explode system1 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system2 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode system3 type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode socle type NOHEATCLOUD;
+	explode turret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode recoil type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode pitchturret type SHATTER | EXPLODE_ON_HIT | NOHEATCLOUD;
 	return (corpsetype);
 }

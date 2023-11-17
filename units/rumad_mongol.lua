@@ -28,7 +28,7 @@ return {
 		losemitheight = 147,
 		maneuverleashlength = 640,
 		mass = 27950,
-		maxdamage = 120500,
+		maxdamage = 115000,
 		maxslope = 17,
 		maxvelocity = 0.9,
 		maxwaterdepth = 48,
@@ -121,7 +121,7 @@ return {
 		},
 		weapondefs = {
 			rumad_plasma = {
-				accuracy = 200,
+				accuracy = 500,
 				areaofeffect = 128,
 				avoidfeature = false,
 				craterareaofeffect = 64,
