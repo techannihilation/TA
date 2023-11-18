@@ -60,9 +60,10 @@ return {
 			[5] = "rumad_osiris",
 			[6] = "rumad_borer",
 			[7] = "rumad_garuda",
-			[8] = "rumad_cordyceps",
-			[9] = "rumad_mantinuke",
-			[10] = "rumad_sahara",
+			[8] = "rumad_raviole",
+			[9] = "rumad_cordyceps",
+			[10] = "rumad_mantinuke",
+			[11] = "rumad_sahara",
 		},
 		customparams = {
 			buildpic = "rumad_avp.dds",

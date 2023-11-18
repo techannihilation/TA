@@ -56,7 +56,7 @@ return {
 			--[3] = "scout?",
 			[4] = "rumad_dragster",
 			[5] = "rumad_jeag",
-			[6] = "rumad_raviole",
+			[6] = "rumad_pasta",
 			[7] = "rumad_bliz",
 			[8] = "rumad_rottweiler",
 		},

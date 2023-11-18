@@ -1,8 +1,9 @@
 4.52 => 4.53
-2023-11-18
+2023-11-19
 
 Balance :
  - Mongol & Hellion Rumad : Decrease HP by 8%. Decrease Accuracy for lon,g range plasma.
+ - Add New T2 Missile veh for RUMAD
 
 Improvment :
 - End of Halloween event

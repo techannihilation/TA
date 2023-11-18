@@ -3,9 +3,9 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, pitchturret, barrel1, barrel2, turret, middle, 
-		flare1, flare2, flare3, flare4, flare5, flare6, flare7, flare8, 
-		w1, w2, w3, w4, w5, w6;
+piece  base, body, pitchturret, barrel1, turret, 
+		flare1, flare2, flare3, flare4, 
+		w1, w2, w3, w4;
 
 static-var  restore_delay, bMoving, msl_1;
 
@@ -59,8 +59,6 @@ StartMoving()
 	spin w2 around x-axis speed <200.000000> accelerate <15.000000>;
 	spin w3 around x-axis speed <200.000000> accelerate <15.000000>;
 	spin w4 around x-axis speed <200.000000> accelerate <15.000000>;
-	spin w5 around x-axis speed <200.000000> accelerate <15.000000>;
-	spin w6 around x-axis speed <200.000000> accelerate <15.000000>;
 }
 
 StopMoving()
@@ -71,8 +69,6 @@ StopMoving()
 	spin w2 around x-axis speed <0.000000> accelerate <-15.000000>;
 	spin w3 around x-axis speed <0.000000> accelerate <-15.000000>;
 	spin w4 around x-axis speed <0.000000> accelerate <-15.000000>;
-	spin w5 around x-axis speed <0.000000> accelerate <-15.000000>;
-	spin w6 around x-axis speed <0.000000> accelerate <-15.000000>;
 }
 
 Create()
@@ -107,22 +103,6 @@ QueryPrimary(piecenum)
 	{
 		piecenum = flare4;
 	}
-	if ( msl_1 == 5)
-	{
-		piecenum = flare5;
-	}
-	if ( msl_1 == 6)
-	{
-		piecenum = flare6;
-	}
-	if ( msl_1 == 7)
-	{
-		piecenum = flare7;
-	}
-	if ( msl_1 == 8)
-	{
-		piecenum = flare8;
-	}
 }
 
 AimFromPrimary(piecenum)
@@ -144,18 +124,9 @@ AimPrimary(heading, pitch)
 
 Shot1()
 {
-	if (msl_1 == 1)
-	{
-		move barrel1 to z-axis [-1.0] speed [50.0];
-		sleep 500;
-		move barrel1 to z-axis [0.0] speed [0.25];	
-	}
-	if (msl_1 == 5)
-	{
-		move barrel2 to z-axis [-1.0] speed [50.0];
-		sleep 500;
-		move barrel2 to z-axis [0.0] speed [0.25];
-	}
+	move barrel1 to z-axis [-0.5] speed [50.0];
+	sleep 500;
+	move barrel1 to z-axis [0.0] speed [0.15];	
 }
 
 
@@ -166,10 +137,6 @@ FirePrimary()
 		sleep 125;	
 		++msl_1;
 		if (msl_1 == 5)
-		{
-			return (0);		
-		}
-		if (msl_1 == 9)
 		{
 			msl_1 = 1;
 			return (0);		
@@ -191,7 +158,6 @@ Killed(severity, corpsetype)
 		explode body type NOHEATCLOUD;
 		explode turret type NOHEATCLOUD;
 		explode barrel1 type NOHEATCLOUD;
-		explode barrel2 type NOHEATCLOUD;
 		explode w1 type NOHEATCLOUD;
 		explode w2 type NOHEATCLOUD;
 		explode w3 type NOHEATCLOUD;
@@ -204,7 +170,6 @@ Killed(severity, corpsetype)
 		explode body type NOHEATCLOUD | SHATTER;
 		explode turret type NOHEATCLOUD | SHATTER;
 		explode barrel1 type NOHEATCLOUD | SHATTER;
-		explode barrel2 type NOHEATCLOUD | SHATTER;
 		explode w1 type NOHEATCLOUD | SHATTER;
 		explode w2 type NOHEATCLOUD | SHATTER;
 		explode w3 type NOHEATCLOUD | SHATTER;
@@ -215,7 +180,6 @@ Killed(severity, corpsetype)
 	explode body type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode turret type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode barrel1 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
-	explode barrel2 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
 	explode w1 type NOHEATCLOUD | SHATTER;
 	explode w2 type NOHEATCLOUD | SHATTER;
 	explode w3 type NOHEATCLOUD | SHATTER;
