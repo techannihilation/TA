@@ -4,6 +4,7 @@
 Balance :
  - Mongol & Hellion Rumad : Decrease HP by 8%. Decrease Accuracy for lon,g range plasma.
  - Add New T2 Missile veh for RUMAD
+ - Arm Tankanator : Reduce speed 1.2=>1.1. Decrease range 1300=>1200
 
 Improvment :
 - End of Halloween event

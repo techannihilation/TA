@@ -9,7 +9,7 @@ return {
       underwater         = 1,
       water              = true,
       properties = {
-        colormap           = [[0.2 0.2 1.0 0.01 0.3 0.2 0.1 0.01 0 0 0 0.01]],
+        colormap           = [[0.1 0.1 1.0 0.01 0.0 0.0 0.9 0.01 0 0 0 0.01]],
         dir                = [[dir]],
         frontoffset        = 0,
         fronttexture       = [[laserend]],
