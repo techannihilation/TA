@@ -4,9 +4,10 @@
 #include "exptype.h"
 
 
-piece 	base, body, turret, sleeve, barrel, barrel2, emit, flare, arm1, plat1, 
-		tread1a, tread1b, arm2, plat2, tread2a, tread2b, arm3, plat3, tread3a, 
-		tread3b, arm4, plat4, tread4a, tread4b, 
+piece 	base, body,
+		turret, sleeves, barrela, barrelb, barrelc, flare, rotate, 
+		arm1, plat1, tread1a, tread1b, arm2, plat2, tread2a, tread2b, arm3, plat3, tread3a, 
+		tread3b, arm4, plat4, tread4a, tread4b,
 		r1, r2, r3, r4, msl1, msl2, msl3, msl4, support1, support2, support3, support4,
 		turret1, sleeves1, barrel1a, barrel1b, barrel1c, flare1a, flare1b, flare1c,
 		turret2, sleeves2, barrel2a, barrel2b, barrel2c, flare2a, flare2b, flare2c,
@@ -14,21 +15,15 @@ piece 	base, body, turret, sleeve, barrel, barrel2, emit, flare, arm1, plat1,
 		turret4, sleeves4, barrel4a, barrel4b, barrel4c, flare4a, flare4b, flare4c;
 
 	    
-static-var is_moving, firedelay, firing, missile_1, gun_1, gun_2, gun_3, gun_4, amunition;
+static-var is_moving, firedelay, firing, missile_1, main_gun, gun_1, gun_2, gun_3, gun_4;
 
-#define SIG_AIM 	2
-#define SIG_AIM_BIS 4
-#define SIG_AIM3	8
-#define SIG_AIM4	16
-#define SIG_AIM5	32
-#define SIG_AIM6	64
-#define SIG_AIM7	128
-#define SIG_MOVE 	256
-
-Dive()
-{
-	amunition = !amunition;
-}
+#define SIG_AIM_1 	2
+#define SIG_AIM_2	4
+#define SIG_AIM_3	8
+#define SIG_AIM_4	16
+#define SIG_AIM_5	32
+#define SIG_AIM_6	64
+#define SIG_MOVE 	128
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -50,7 +45,7 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 			emit-sfx smoketype from turret1;
 			emit-sfx smoketype from turret3; 
 			emit-sfx smoketype from tread4b;
-			emit-sfx smoketype from sleeve;
+			emit-sfx smoketype from sleeves;
 		}
 		sleeptime = healthpercent * 50;
 		if( sleeptime < 200 )
@@ -65,12 +60,13 @@ Create()
 {	
 	turn turret2 to y-axis <180.000000> now;
 	turn turret4 to y-axis <180.000000> now;
+	hide flare;
 	missile_1 = 0;
+	main_gun = 0;
 	gun_1 = 0;
 	gun_2 = 0;
 	gun_3 = 0;
 	gun_4 = 0;
-	amunition = 1;
 	start-script SmokeUnit();	
 }
 
@@ -80,97 +76,78 @@ RestoreAfterDelay()
 	sleep 15000;
 	set-signal-mask 0;
 	turn turret to y-axis <0.000000> speed <9.000000>;
-	turn sleeve to x-axis <0.000000> speed <4.500000>;
+	turn sleeves to x-axis <0.000000> speed <4.500000>;
 }
 
 
 AimPrimary(heading, pitch)
 {
-	signal SIG_AIM;
-	set-signal-mask SIG_AIM;
-	if (amunition == 1)
-	{
-		return (0);
-	}
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
 	turn turret to y-axis heading speed <18.000000>;
-	turn sleeve to x-axis <0.000000> - pitch speed <4.500000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <4.500000>;
 	wait-for-turn turret around y-axis;
-	wait-for-turn sleeve around x-axis;
+	wait-for-turn sleeves around x-axis;
 	start-script RestoreAfterDelay();
 	return (1);
 }
 
 FirePrimary()
 {
-	move barrel2 to z-axis [-12.000000] speed [400.000000];	
-	move barrel to z-axis [-4.000000] speed [250.000000];
-	emit-sfx 1024 from emit;
-	wait-for-move barrel along z-axis;
-	sleep 250;
-	move barrel2 to z-axis [0.000000] speed [2.000000];
-	move barrel to z-axis [0.000000] speed [1.000000];
+	emit-sfx 1024 from flare;
+	
+	if (main_gun == 0)
+	{
+		move barrela to z-axis [-5.000000] speed [500.000000];
+		sleep 250;	
+		move barrela to z-axis [0.000000] speed [5.000000];
+		turn rotate to z-axis <120.0> speed <90.0>;		
+	}
+	if (main_gun == 1)
+	{
+		move barrelb to z-axis [-5.000000] speed [500.000000];
+		sleep 250;	
+		move barrelb to z-axis [0.000000] speed [5.000000];
+		turn rotate to z-axis <240.0> speed <90.0>;
+	}
+	if (main_gun == 2)
+	{
+		move barrelc to z-axis [-5.000000] speed [500.000000];
+		sleep 250;	
+		move barrelc to z-axis [0.000000] speed [5.000000];
+		turn rotate to z-axis <0.0> speed <90.0>;
+	}
+	
+	++main_gun;
+	if (main_gun == 3)
+	{
+		main_gun = 0;
+	}
 }
 
 QueryPrimary(piecenum)
 {
-	piecenum = emit;
+	piecenum = flare;
 }
 
 AimFromPrimary(piecenum)
 {
-	piecenum = sleeve;
+	piecenum = sleeves;
 }
 
 AimSecondary(heading, pitch)
 {
-	signal SIG_AIM_BIS;
-	set-signal-mask SIG_AIM_BIS;
-	if (amunition == 0)
-	{
-		return (0);
-	}
-	turn turret to y-axis heading speed <18.000000>;
-	turn sleeve to x-axis <0.000000> - pitch speed <4.500000>;
-	wait-for-turn turret around y-axis;
-	wait-for-turn sleeve around x-axis;
-	start-script RestoreAfterDelay();
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
 	return (1);
-}
-
-FireSecondary()
-{
-	move barrel2 to z-axis [-12.000000] speed [400.000000];	
-	move barrel to z-axis [-4.000000] speed [250.000000];
-	emit-sfx 1024 from emit;
-	wait-for-move barrel along z-axis;
-	sleep 250;
-	move barrel2 to z-axis [0.000000] speed [2.000000];
-	move barrel to z-axis [0.000000] speed [1.000000];
-}
-
-QuerySecondary(piecenum)
-{
-	piecenum = emit;
 }
 
 AimFromSecondary(piecenum)
 {
-	piecenum = sleeve;
-}
-
-AimTertiary(heading, pitch)
-{
-	signal SIG_AIM3;
-	set-signal-mask SIG_AIM3;
-	return (1);
-}
-
-AimFromTertiary(piecenum)
-{
 	piecenum = body;
 }
 
-FireTertiary()
+FireSecondary()
 {
 	++missile_1;
 	if(missile_1 == 4) 
@@ -180,7 +157,7 @@ FireTertiary()
 	
 }
 
-QueryTertiary(piecenum)
+QuerySecondary(piecenum)
 {
 	if(missile_1 == 0) 
 	{
@@ -230,8 +207,8 @@ RestoreWeapon7()
 
 AimWeapon4(heading, pitch)
 {
-	signal SIG_AIM4;
-	set-signal-mask SIG_AIM4;
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
 	
 	turn turret1 to y-axis heading speed <60>;
 	turn sleeves1 to x-axis <0.000000> - pitch speed <60>;
@@ -245,8 +222,8 @@ AimWeapon4(heading, pitch)
 
 AimWeapon5(heading, pitch)
 {
-	signal SIG_AIM5;
-	set-signal-mask SIG_AIM5;
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
 	
 	turn turret2 to y-axis heading speed <60>;
 	turn sleeves2 to x-axis <0.000000> - pitch speed <60>;
@@ -259,8 +236,8 @@ AimWeapon5(heading, pitch)
 
 AimWeapon6(heading, pitch)
 {
-	signal SIG_AIM6;
-	set-signal-mask SIG_AIM6;
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
 	
 	turn turret3 to y-axis heading speed <60>;
 	turn sleeves3 to x-axis <0.000000> - pitch speed <60>;
@@ -273,8 +250,8 @@ AimWeapon6(heading, pitch)
 
 AimWeapon7(heading, pitch)
 {
-	signal SIG_AIM7;
-	set-signal-mask SIG_AIM7;
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
 	
 	turn turret4 to y-axis heading speed <60>;
 	turn sleeves4 to x-axis <0.000000> - pitch speed <60>;
@@ -511,45 +488,51 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode arm1 type NOHEATCLOUD ;
-		explode arm2 type NOHEATCLOUD ;
-		explode sleeve type NOHEATCLOUD;
+		explode arm1 type NOHEATCLOUD;
+		explode arm2 type NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
 		explode flare type NOHEATCLOUD;
-		explode emit type NOHEATCLOUD;
+		explode barrela type NOHEATCLOUD;
+		explode barrelb type NOHEATCLOUD;
+		explode barrelc type NOHEATCLOUD;
 		explode plat3 type NOHEATCLOUD;
-		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode barrel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode barrel2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode arm1 type FALL | NOHEATCLOUD ;
-		explode arm2 type FALL | NOHEATCLOUD ;
-		explode sleeve type NOHEATCLOUD;
-		explode flare type FALL | NOHEATCLOUD ;
-		explode emit type FALL | NOHEATCLOUD ;
-		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode barrel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-		explode barrel2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+		explode arm1 type FALL | NOHEATCLOUD;
+		explode arm2 type FALL | NOHEATCLOUD;
+		explode sleeves type NOHEATCLOUD;
+		explode flare type FALL | NOHEATCLOUD;
+		explode barrela type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrelb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrelc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+		explode barrel2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode arm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode arm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode sleeve type NOHEATCLOUD;
-	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode emit type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode barrel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
-	explode barrel2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD ;
+	explode arm1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode arm2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode sleeves type NOHEATCLOUD;
+	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrela type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrelb type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrelc type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode turret3 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel1a type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2b type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
+	explode barrel2c type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | NOHEATCLOUD;
 	
 }
 

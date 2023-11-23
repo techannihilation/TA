@@ -7,6 +7,7 @@ Balance :
  - Arm Tankanator : Reduce speed 1.2=>1.1. Decrease range 1300=>1200
 
 Improvment :
+- Add new weapon for Olympus.
 - End of Halloween event
 
  4.51 => 4.52
