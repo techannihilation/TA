@@ -1,4 +1,12 @@
-4.52 => 4.53
+4.53 => 4.54
+2023-12-02
+
+Balance :
+ - Mongol / Antarion : Decrease range 1300=>1200. Decrease Damage 1400=>1200 / shot
+ - Triton : Range 1400=>1200. Damage 360=>600
+ - T1/T2 Rumad Medium Tank : Nerf some stats
+
+ 4.52 => 4.53
 2023-11-19
 
 Balance :
