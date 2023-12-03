@@ -152,7 +152,7 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				duration = 1,
-				energypershot = 10000,
+				energypershot = 20000,
 				explosiongenerator = "custom:tll_spray_exp",
 				firestarter = 50,
 				impactonly = true,
@@ -353,7 +353,6 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-
 					air = 250,
 				},
 			},

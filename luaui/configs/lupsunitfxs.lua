@@ -958,6 +958,12 @@ tllzeppelin = {
     {class='AirJet',options={color={1,0.9,0.9}, width=15, length=45, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1,0.9,0.9}, width=15, length=45, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
 },
+tllzeppelin1 = {
+    {class='AirJet',options={color={1,0.4,0.4}, width=30, length=35, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.4,0.4}, width=30, length=35, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.9,0.9}, width=15, length=45, piece="engine3", noIconDraw = true, priority=3, onActive=true}},
+    {class='AirJet',options={color={1,0.9,0.9}, width=15, length=45, piece="engine4", noIconDraw = true, priority=3, onActive=true}},
+},
 tllbarbarus = {
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust1", noIconDraw = true, priority=3, onActive=true}},
     {class='AirJet',options={color={1.0,0.2,0.3}, width=4.7, length=20, emitVector = {0,1,0}, piece="thrust2", noIconDraw = true, priority=4, onActive=true}},

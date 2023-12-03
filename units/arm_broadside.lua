@@ -6,7 +6,7 @@ return {
 		bankingallowed = false,
 		blocking = false,
 		brakerate = 0.04,
-		buildcostenergy = 2377449,
+		buildcostenergy = 2377000,
 		buildcostmetal = 425725,
 		builder = false,
 		buildpic = "arm_broadside.dds",
@@ -174,7 +174,6 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-
 					air = 500,
 				},
 			},

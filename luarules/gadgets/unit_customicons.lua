@@ -317,7 +317,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "t5ships.user")
 
       --T5 Crusers
-      elseif (ud.name == "arm_broadside") or (ud.name == "cdevastator") or (ud.name == "tllzeppelin") or (ud.name == "gok_apocalypse") or (ud.name == "rumad_jafa") or (ud.name == "rumad_lago") then
+      elseif (ud.name == "arm_broadside") or (ud.name == "cdevastator") or (ud.name == "tllzeppelin") or (ud.name == "tllzeppelin1") or (ud.name == "gok_apocalypse") or (ud.name == "rumad_jafa") or (ud.name == "rumad_lago") then
         Spring.SetUnitDefIcon(udid, "t5bigships.user")
 
       --T6 Crusers

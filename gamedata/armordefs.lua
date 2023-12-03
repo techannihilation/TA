@@ -217,6 +217,7 @@ return {
 		"cdevastator",
 		"corvaliant",
 		"tllzeppelin",
+		"tllzeppelin1",
 		"tllbarbarus",
 		"talon_independence",
 		"gok_apocalypse",

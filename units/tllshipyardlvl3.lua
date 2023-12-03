@@ -29,7 +29,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 255,
 		metalstorage = 500,
-		name = "Shipyard",		
+		name = "Shipyard",
 		objectname = "tllshipyardlvl3",
 		radardistance = 0,
 		radaremitheight = 243,
@@ -43,6 +43,7 @@ return {
 			[1] = "tllbuilderlvl3",
 			[2] = "tllbarbarus",
 			[3] = "tllzeppelin",
+			[4] = "tllzeppelin1",
 		},
 		customparams = {
 			buildpic = "tllshipyardlvl3.dds",
