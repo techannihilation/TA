@@ -1,5 +1,5 @@
 return {
-	armshltx = {
+	arm_elab = {
 		acceleration = 0,
 		brakerate = 0,
 		buildcostenergy = 364421,
@@ -8,8 +8,8 @@ return {
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
-		buildinggrounddecaltype = "armshltx_aoplane.dds",
-		buildpic = "armshltx.dds",
+		buildinggrounddecaltype = "arm_elab_aoplane.dds",
+		buildpic = "arm_elab.dds",
 		buildtime = 250000,
 		canmove = true,
 		canpatrol = true,
@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		objectname = "ARMSHLTX",
+		objectname = "arm_elab",
 		radaremitheight = 47,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -49,7 +49,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "armshltx",
+		unitname = "arm_elab",
 		usebuildinggrounddecal = true,
 		workertime = 800,
 		yardmap = "ooooooooo ooooooooo occccccco occccccco occccccco occccccco occccccco occccccco occccccco",
@@ -66,7 +66,7 @@ return {
 			[10] = "armorco",
 		},
 		customparams = {
-			buildpic = "armshltx.dds",
+			buildpic = "arm_elab.dds",
 			faction = "ARM",
 		},
 		featuredefs = {

@@ -63,7 +63,7 @@ unitList["TA"] = {
 [UnitDefNames["talon_armistice"].id] = 	{["en"]="EMP Silo", ["de"]="", ["fr"]="" },
 
 --T3 labs
-[UnitDefNames["armshltx"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
+[UnitDefNames["arm_elab"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["corgant"].id] = 	{["en"]="T3 Kbot Lab", ["de"]="", ["fr"]="" },
 [UnitDefNames["armesy"].id] = 	{["en"]="T3 Shipyard", ["de"]="", ["fr"]="" },
 [UnitDefNames["coresy"].id] = 	{["en"]="T3 Shipyard", ["de"]="", ["fr"]="" },

@@ -68,7 +68,7 @@ return {
 			[10] = "armuwadvms",
 			[11] = "armlab",
 			[12] = "armalab",
-			[13] = "armshltx",
+			[13] = "arm_elab",
 			[14] = "armnanotc1",
 			[15] = "armtarg",
 			[16] = "armsd",
