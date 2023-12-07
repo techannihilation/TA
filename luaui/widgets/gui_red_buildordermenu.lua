@@ -36,6 +36,19 @@ for i=1,#UnitDefs do
 	end
 end
 
+local function convertToNumber(input)
+    if type(input) == "number" then
+        return input
+    end
+    if type(input) == "string" and input:sub(1, 2) == "@@" then
+        local number = tonumber(input:sub(3))
+        if number then
+            return number
+        end
+    end
+    return tonumber(input)
+end
+
 --todo: build categories (eco | labs | defences | etc) basically sublists of buildcmds (maybe for regular orders too)
 
 local Config = {
@@ -388,6 +401,7 @@ local function UpdateGrid(g,cmds,ordertype)
 			end},
 		}
 		
+		cmd.params[1] = convertToNumber(cmd.params[1])
 		if (ordertype == 1) then --build orders
 			if oldUnitpics and UnitDefs[cmd.id*-1] ~= nil and OtaIconExist[cmd.id*-1] then
 				icon.texture = OtaIconExist[cmd.id*-1]
