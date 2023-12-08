@@ -63,7 +63,7 @@ return {
 				footprintx = 6,
 				footprintz = 8,
 				metal = 221250,
-				object = "tll/tllzeppelin1_dead.s3o",
+				object = "tll/tllzeppelin_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
