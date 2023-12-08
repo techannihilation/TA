@@ -1,4 +1,8 @@
 --------------------------- TechA Config ---------------------------
+-- Retrieve the current engine version
+local engineVersionString = Engine.version
+local engineVersion = tonumber(string.match(engineVersionString, "%-(%d+)"))
+
 local flankDefaultMin = Spring.GetModOptions().exp_flankdefaultmin or 1
 local flankDefaultMax = Spring.GetModOptions().exp_flankdefaultmax or 2
 
@@ -63,7 +67,7 @@ local modrules = {
   },
 
   system = {
-    pathFinderSystem = 1, -- Which pathfinder does the game use? Can be 0 - The legacy default pathfinder, 1 - Quad-Tree Pathfinder System (QTPFS) or -1 - disabled.    
+    pathFinderSystem = (engineVersion >= 2142) and 1 or 0, -- Which pathfinder does the game use? Can be 0 - The legacy default pathfinder, 1 - Quad-Tree Pathfinder System (QTPFS) or -1 - disabled.    
     pathFinderRawDistMult = 100000, -- default: 1.25.  Engine does raw move with a limited distance, this multiplier adjusts that
     --pathFinderUpdateRate = 0.0000001, -- default: 0.007.  Controls how often the pathfinder updates; larger values means more rapid updates.
     --pathFinderUpdateRateScale = 1.0,    
