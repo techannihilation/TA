@@ -152,7 +152,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				local rs, hs, ws, ars, ahs
 				if (spGetUnitRadius(unitID)>47 and not canFly[unitDefID]) then
 					rs, hs, ws = 0.59, 0.59, 0.59
-					ars, ahs = 0.60, 0.60
+					ars, ahs = 0.1, 0.1
 				elseif (not canFly[unitDefID] ) then
 					rs, hs, ws = 0.68, 0.68, 0.68
 					ars, ahs = 0.70, 0.70 
