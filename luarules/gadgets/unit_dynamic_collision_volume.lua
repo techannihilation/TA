@@ -149,19 +149,25 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
 				end
 			else
-				local rs, hs, ws
+				local rs, hs, ws, ars, ahs
+				Spring.Echo("radius",spGetUnitRadius(unitID))
 				if (spGetUnitRadius(unitID)>47 and not canFly[unitDefID]) then
 					rs, hs, ws = 0.59, 0.59, 0.59
+					ars, ahs = 1, 1
 				elseif (not canFly[unitDefID] ) then
 					rs, hs, ws = 0.68, 0.68, 0.68
+					ars, ahs = 1, 1
 				elseif spGetUnitRadius(unitID)>120 then --Fix hero's not moving in latest engine
 					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
 					rs, hs, ws = 0.77, 0.18, 0.77
+					ars, ahs = 0.25, 0.25 
 				elseif spGetUnitRadius(unitID)>60 then
 					--Spring.Echo(UnitDefs[unitDefID].name,spGetUnitRadius(unitID))
 					rs, hs, ws = 0.77, 0.18, 0.77
-				else
+					ars, ahs = 0.375, 0.375 
+				else 
 					rs, hs, ws = 0.53, 0.26, 0.53
+					ars, ahs = 0.40, 0.40
 				end
 				local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
 				if (vtype>=3 and xs==ys and ys==zs) then
@@ -177,6 +183,8 @@ if (gadgetHandler:IsSyncedCode()) then
 					spSetUnitRadiusAndHeight(unitID, 16, 16)
 				elseif isSub[unitDefID] then
 					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.65, spGetUnitHeight(unitID)*0.65)
+				else
+					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 				end
 			end
 			if isShip[unitDefID] then 
