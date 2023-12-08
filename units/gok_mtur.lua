@@ -25,7 +25,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Black Pollen",
-		objectname = "gok_mtur",
+		objectname = "gok/gok_mtur.s3o",
 		radaremitheight = 70,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -34,7 +34,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "gok/gok_mtur.s3o",
+		unitname = "gok_mtur",
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "gok_mtur.dds",
