@@ -36,7 +36,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Mirage",
 		noautofire = false,
-		objectname = "rumad_mirage",
+		objectname = "rumad/rumad_mirage.s3o",
 		radardistance = 40,
 		radaremitheight = 131,
 		selfdestructas = "KROG_BLAST",
@@ -63,7 +63,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 10875,
-				object = "rumad_mirage_dead",
+				object = "rumad/rumad_mirage_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

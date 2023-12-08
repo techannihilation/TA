@@ -34,7 +34,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "gok_mtur",
+		unitname = "gok/gok_mtur.s3o",
 		yardmap = "ooo ooo ooo",
 		customparams = {
 			buildpic = "gok_mtur.dds",
@@ -54,7 +54,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 720,
-				object = "gok_mtur_DEAD",
+				object = "gok/gok_mtur_DEAD.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Mobile Anti-Nuke",
-		objectname = "rumad_mantinuke",
+		objectname = "rumad/rumad_mantinuke.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -71,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1162,
-				object = "rumad_mantinuke_DEAD",
+				object = "rumad/rumad_mantinuke_DEAD.s3o",
 				reclaimable = true,
 			},
 			heap = {

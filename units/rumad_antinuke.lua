@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Anti-Nuke",
-		objectname = "rumad_antinuke",
+		objectname = "rumad/rumad_antinuke.s3o",
 		radardistance = 50,
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1526,
-				object = "rumad_antinuke_DEAD",
+				object = "rumad/rumad_antinuke_DEAD.s3o",
 				reclaimable = true,
 			},
 			heap = {

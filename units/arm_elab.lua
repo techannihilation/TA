@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Kbot Lab",
 		noautofire = false,
-		objectname = "arm_elab",
+		objectname = "arm/arm_elab.s3o",
 		radaremitheight = 47,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -84,7 +84,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 12862,
-				object = "arm/armshlt_dead",
+				object = "arm/armshlt_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

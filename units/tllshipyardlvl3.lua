@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 500,
 		name = "Shipyard",
-		objectname = "tllshipyardlvl3",
+		objectname = "tll/tllshipyardlvl3.s3o",
 		radardistance = 0,
 		radaremitheight = 243,
 		selfdestructas = "SHIPBLAST",
@@ -58,7 +58,7 @@ return {
 				footprintx = 20,
 				footprintz = 15,
 				metal = 78000,
-				object = "tll/tllshipyardlvl3_dead",
+				object = "tll/tllshipyardlvl3_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

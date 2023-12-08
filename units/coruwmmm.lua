@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 15,
 		name = "Underwater Moho Metal Maker",
 		noautofire = false,
-		objectname = "CORUWMMM",
+		objectname = "core/CORUWMMM.s3o",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1237,
-				object = "core/coruwmmm_dead",
+				object = "core/coruwmmm_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

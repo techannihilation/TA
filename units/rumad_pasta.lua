@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Pasta",
 		noautofire = false,
-		objectname = "rumad_pasta",
+		objectname = "rumad/rumad_pasta.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -72,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 111,
-				object = "rumad_pasta_DEAD",
+				object = "rumad/rumad_pasta_DEAD.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

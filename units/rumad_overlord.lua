@@ -41,7 +41,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Overlord",
-		objectname = "rumad_overlord",
+		objectname = "rumad/rumad_overlord.s3o",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "BANTHA_BLAST",
