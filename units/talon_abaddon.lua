@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK8",
 		name = "Abaddon",
 		noautofire = false,
-		objectname = "talon_abaddon",
+		objectname = "talon/talon_abaddon.s3o",
 		onoffable = true,
 		pushresistant = true,
 		radaremitheight = 33,
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "talon_abaddon.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 12200,
-				object = "talon_abaddon_dead",
+				object = "talon/talon_abaddon_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -166,7 +167,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "talon_missile",
+				model = "talon/talon_missile.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,

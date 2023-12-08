@@ -39,7 +39,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Tyrant",
 		noautofire = false,
-		objectname = "CORTYRNT",
+		objectname = "core/cortyrnt.s3o",
 		radardistance = 2000,
 		radaremitheight = 84,
 		selfdestructas = "KROG_BLAST",
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "cortyrnt.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 33937,
-				object = "cortyrnt_dead",
+				object = "core/cortyrnt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -194,7 +195,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
@@ -280,7 +281,7 @@ return {
 				flighttime = 2.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 750,

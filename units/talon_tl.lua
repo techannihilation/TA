@@ -31,7 +31,7 @@ return {
 		minwaterdepth = 12,
 		name = "Harpoon",
 		noautofire = false,
-		objectname = "talon_tl",
+		objectname = "talon/talon_tl.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "talon_tl.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 241,
-				object = "talon_tl_DEAD",
+				object = "talon/talon_tl_dead",
 				reclaimable = true,
 			},
 		},
@@ -108,7 +109,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Level1TorpedoLauncher",
 				noselfdamage = true,
 				range = 600,

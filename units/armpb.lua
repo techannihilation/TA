@@ -36,7 +36,7 @@ return {
 		mincloakdistance = 55,
 		name = "Pit Bull",
 		noautofire = false,
-		objectname = "ARMPB",
+		objectname = "arm/armpb.s3o",
 		radaremitheight = 48,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "armpb.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "ARMPB_DEAD",
+				object = "arm/armpb_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 460,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

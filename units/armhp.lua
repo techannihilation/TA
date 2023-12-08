@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "ARMHP",
+		objectname = "arm/armhp.s3o",
 		radaremitheight = 22,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -61,13 +61,13 @@ return {
 		customparams = {
 			buildpic = "armhp.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "116 20 104",
-
 				collisionvolumetype = "Box",
 				damage = 2730,
 				description = "Hovercraft Platform Wreckage",
@@ -76,7 +76,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 764,
-				object = "ARMHP_DEAD",
+				object = "arm/armhp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +90,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 407,
-				object = "7X7A",
+				object = "7x7a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

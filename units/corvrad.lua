@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Informer",
 		noautofire = false,
-		objectname = "CORVRAD",
+		objectname = "core/corvrad.s3o",
 		onoffable = true,
 		radardistance = 2200,
 		radaremitheight = 22,
@@ -61,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "corvrad.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 69,
-				object = "CORVRAD_DEAD",
+				object = "core/corvrad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +90,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 36,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

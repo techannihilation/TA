@@ -34,7 +34,7 @@ return {
 		movementclass = "AMPTBOT4",
 		name = "Om",
 		noautofire = false,
-		objectname = "tllom",
+		objectname = "tll/tllom.s3o",
 		radaremitheight = 41,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "tllom.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5362,
-				object = "tllom_dead",
+				object = "tll/tllom_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2860,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -160,7 +161,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

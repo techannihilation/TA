@@ -41,7 +41,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Construction Gravitank",
 		noautofire = false,
-		objectname = "talon_ch",
+		objectname = "talon/talon_ch.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		reclaimspeed = 50,
@@ -106,6 +106,7 @@ return {
 		customparams = {
 			buildpic = "talon_ch.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -120,7 +121,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 108,
-				object = "talon_ch_DEAD",
+				object = "talon/talon_ch_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -131,7 +132,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 58,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 			},
 		},

@@ -29,7 +29,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "rumad_gate1",
+		objectname = "rumad/rumad_gate1.s3o",
 		radaremitheight = 41,
 		script = "rumad_gate_fix.lua",
 		seismicsignature = 0,
@@ -45,6 +45,7 @@ return {
 			faction = "RUMAD",
 			shield_power = 60000,
 			shield_radius = 1000,
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +57,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 10025,
-				object = "rumad_gate1_DEAD",
+				object = "rumad/rumad_gate1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5346,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

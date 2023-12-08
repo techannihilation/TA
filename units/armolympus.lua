@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK10",
 		name = "Olympus",
 		noautofire = false,
-		objectname = "armolympus",
+		objectname = "arm/armolympus.s3o",
 		radaremitheight = 145,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "armolympus.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 71859,
-				object = "armolympus_dead",
+				object = "arm/armolympus_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 28749,
-				object = "armolympus_heap",
+				object = "arm/armolympus_heap",
 				reclaimable = true,
 			},
 			debris = {
@@ -139,7 +140,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "Heavy Rockets2",
 				range = 1400,
 				reloadtime = 0.5,

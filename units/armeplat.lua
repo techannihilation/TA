@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Sea Plant",
 		noautofire = false,
-		objectname = "armeplat",
+		objectname = "arm/armeplat.s3o",
 		radardistance = 50,
 		radaremitheight = 39,
 		seismicsignature = 0,
@@ -62,6 +62,7 @@ return {
 		customparams = {
 			buildpic = "armeplat.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3360,
-				object = "armeplat_DEAD",
+				object = "arm/armeplat_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Hazardous Geothermal Powerplant",
 		noautofire = false,
-		objectname = "TALON_MOHOGEO",
+		objectname = "talon/talon_mohogeo.s3o",
 		onoffable = false,
 		radaremitheight = 61,
 		selfdestructas = "FUSION_BLAST",
@@ -38,6 +38,7 @@ return {
 		customparams = {
 			buildpic = "talon_mohogeo.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			tllmohogeo_dead = {
@@ -48,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5107,
-				object = "talon_mohogeo_dead",
+				object = "talon/talon_mohogeo_dead",
 				reclaimable = true,
 			},
 			tllmohogeo_heap = {

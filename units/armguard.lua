@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Guardian",
 		noautofire = false,
-		objectname = "ARMGUARD",
+		objectname = "arm/armguard.s3o",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "armguard.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1117,
-				object = "ARMGUARD_DEAD",
+				object = "arm/armguard_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 596,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

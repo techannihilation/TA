@@ -26,7 +26,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T4 Vulcan",
-		objectname = "ARMVULC1",
+		objectname = "arm/armvulc1.s3o",
 		radaremitheight = 272,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "armvulc1.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 14,
 				footprintz = 14,
 				metal = 218250,
-				object = "ARMVULC1_DEAD",
+				object = "arm/armvulc1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

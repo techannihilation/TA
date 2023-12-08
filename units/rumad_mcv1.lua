@@ -39,7 +39,7 @@ return {
 		movementclass = "HTANK10",
 		name = "Desert Gin",
 		noautofire = false,
-		objectname = "rumad_mcv1",
+		objectname = "rumad/rumad_mcv1.s3o",
 		onoffable = true,
 		radaremitheight = 38,
 		selfdestructas = "BANTHA_BLAST",
@@ -66,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 7200,
-				object = "rumad_mcv1_dead",
+				object = "rumad/rumad_mcv1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

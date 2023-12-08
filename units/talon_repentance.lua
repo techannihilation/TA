@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK12",
 		name = "Repentance",
 		noautofire = false,
-		objectname = "talon_repentance",
+		objectname = "talon/talon_repentance.s3o",
 		radardistance = 0,
 		radaremitheight = 34,
 		selfdestructas = "MKL_BLAST",
@@ -58,6 +58,7 @@ return {
 			shield_emit_height = 40,
 			shield_power = 50000,
 			shield_radius = 500,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5625,
-				object = "talon_repentance_dead",
+				object = "talon/talon_repentance_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -199,7 +200,6 @@ return {
 				shieldradius = 500,
 				shieldrepulser = false,
 				smartshield = true,
-
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
 				damage = {

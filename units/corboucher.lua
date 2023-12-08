@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "The Butcher",
 		noautofire = false,
-		objectname = "corboucher",
+		objectname = "core/corboucher.s3o",
 		radardistance = 0,
 		radaremitheight = 71,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -40,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "corboucher.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +51,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 25687,
-				object = "corboucher_dead",
+				object = "core/corboucher_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

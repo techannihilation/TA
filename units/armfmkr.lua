@@ -25,8 +25,7 @@ return {
 		minwaterdepth = 11,
 		name = "Floating Metal Maker",
 		noautofire = false,
-		
-		objectname = "ARMFMKR",
+		objectname = "arm/armfmkr.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ARMESTOR_BUILDING",

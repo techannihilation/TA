@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Fox",
 		noautofire = false,
-		objectname = "TLLHOVERLIGHT",
+		objectname = "tll/tllhoverlight.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 550,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "tllhoverlight.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 56,
-				object = "tllhoverlight_dead",
+				object = "tll/tllhoverlight_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

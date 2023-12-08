@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Gorgon",
 		noautofire = false,
-		objectname = "gok_mlrpt",
+		objectname = "gok/gok_mlrpt.s3o",
 		radardistance = 0,
 		radaremitheight = 26,
 		selfdestructas = "CRAWL_BLAST",
@@ -62,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3975,
-				object = "gok_mlrpt_DEAD",
+				object = "gok/gok_mlrpt_DEAD.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

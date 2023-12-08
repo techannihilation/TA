@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Iguana",
 		noautofire = false,
-		objectname = "ARMIGUANA",
+		objectname = "arm/armiguana.s3o",
 		radardistance = 0,
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 			buildpic = "armiguana.dds",
 			faction = "ARM",
 			prioritytarget = "air",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			corsent_dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1200,
-				object = "CORSENT_DEAD",
+				object = "core/corsent_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 640,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -150,7 +151,6 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
-					
 					air = 225,
 				},
 			},

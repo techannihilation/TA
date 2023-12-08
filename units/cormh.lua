@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Nixer",
 		noautofire = false,
-		objectname = "CORMH",
+		objectname = "core/cormh.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "cormh.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 146,
-				object = "CORMH_DEAD",
+				object = "core/cormh_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 78,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstxs_core",
+				model = "weapon_starburstxs_core.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 700,

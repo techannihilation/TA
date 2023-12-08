@@ -34,7 +34,7 @@ return {
 		metalstorage = 200,
 		name = "Dildo",
 		noautofire = false,
-		objectname = "CORMAS",
+		objectname = "core/cormas.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 114,

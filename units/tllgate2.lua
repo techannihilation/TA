@@ -28,7 +28,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "tllgate2",
+		objectname = "tll/tllgate2.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		script = "tllgate.cob",
@@ -41,6 +41,7 @@ return {
 			faction = "TLL",
 			shield_power = 2500,
 			shield_radius = 300,
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +52,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2793,
-				object = "tllgate2_dead",
+				object = "tll/tllgate2_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

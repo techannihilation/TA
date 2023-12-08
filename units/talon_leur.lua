@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Construction Amphibious Vehicle",
 		noautofire = false,
-		objectname = "talon_leur",
+		objectname = "talon/talon_leur.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 50,
 		repairspeed = 50,
@@ -111,6 +111,7 @@ return {
 		customparams = {
 			buildpic = "talon_leur.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -125,7 +126,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 112,
-				object = "talon_leur_DEAD",
+				object = "talon/talon_leur_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -139,7 +140,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 60,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

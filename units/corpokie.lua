@@ -40,7 +40,7 @@ return {
 		movementclass = "HTKBOT7",
 		name = "Pokie",
 		noautofire = false,
-		objectname = "corpokie",
+		objectname = "core/corpokie.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radaremitheight = 76,
@@ -61,6 +61,7 @@ return {
 			buildpic = "corpokie.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T4 Unit Research Centre",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corpokie_dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 44400,
-				object = "corpokie_DEAD",
+				object = "core/corpokie_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 18680,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

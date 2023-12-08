@@ -17,7 +17,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "60 42 65",
-		
 		collisionvolumetype = "box",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -40,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "htank4",
 		name = "Mantis",
-		objectname = "tllmantis",
+		objectname = "tll/tllmantis.s3o",
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 350,
@@ -54,6 +53,7 @@ return {
 			buildpic = "tllmantis.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 7960,
-				object = "tllmantis_dead",
+				object = "tll/tllmantis_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -149,7 +149,6 @@ return {
 				damage = {
 					areoship = 100,
 					default = 5,
-					
 					air = 400,
 				},
 			},

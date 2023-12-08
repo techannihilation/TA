@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Behemoth",
 		noautofire = false,
-		objectname = "CORBHMTH",
+		objectname = "core/corbhmth.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "corbhmth.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3753,
-				object = "CORBHMTH_DEAD",
+				object = "core/corbhmth_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2002,
-				object = "5X5C",
+				object = "5x5c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

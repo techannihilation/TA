@@ -37,7 +37,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Menacer",
 		noautofire = false,
-		objectname = "CORMENACER",
+		objectname = "core/cormenacer.s3o",
 		radardistance = 0,
 		radaremitheight = 29,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "cormenacer.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			corgol_heap = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 960,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1800,
-				object = "cormenacer_dead",
+				object = "core/cormenacer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

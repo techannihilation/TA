@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Pyroclastic",
 		noautofire = false,
-		objectname = "talon_pyroclastic",
+		objectname = "talon/talon_pyroclastic.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "talon_pyroclastic.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3753,
-				object = "talon_pyroclastic_DEAD",
+				object = "talon/talon_pyroclastic_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +78,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2002,
-				object = "5X5C",
+				object = "5x5c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

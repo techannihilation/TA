@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT2",
 		name = "Abyss",
 		noautofire = false,
-		objectname = "gok_ssub",
+		objectname = "gok/gok_ssub.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FLEA_EX",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "gok_ssub.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 520,
-				object = "gok_ssub_DEAD",
+				object = "gok/gok_ssub_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 277,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 			},
 		},

@@ -36,7 +36,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "All-Terrain Construction Spider",
 		noautofire = false,
-		objectname = "armcspider",
+		objectname = "arm/armcspider.s3o",
 		radaremitheight = 22,
 		reclaimspeed = 80,
 		repairspeed = 80,
@@ -77,6 +77,7 @@ return {
 		customparams = {
 			buildpic = "armcspider.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -87,7 +88,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 120,
-				object = "armcspider_dead",
+				object = "arm/armcspider_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

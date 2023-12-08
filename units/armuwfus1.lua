@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 70,
 		name = "Advanced Underwater Antimater Fusion",
 		noautofire = false,		
-		objectname = "ARMUWFUS1",
+		objectname = "arm/armuwfus1.s3o",
 		radaremitheight = 60,
 		script = "armuwfus1.cob",
 		seismicsignature = 0,

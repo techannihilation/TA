@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK5",
 		name = "Vehicle Fusion Reactor",
 		noautofire = false,
-		objectname = "rumad_fusion",
+		objectname = "rumad/rumad_fusion.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "rumad_fusion.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,
-				object = "rumad_fusion_DEAD",
+				object = "rumad/rumad_fusion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				description = "Vehicle Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -34,7 +34,7 @@ return {
 		name = "Floating Electro",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "TLLHLTNS",
+		objectname = "tll/tllhltns.s3o",
 		radaremitheight = 75,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 380,
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "tllhltns.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 517,
-				object = "tllhltns_dead",
+				object = "tll/tllhltns_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

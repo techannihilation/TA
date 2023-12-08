@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Barbarus",
 		noautofire = false,
-		objectname = "tllbarbarus",
+		objectname = "tll/tllbarbarus.s3o",
 		pitchscale = 0.5,
 		radaremitheight = 25,
 		reclaimable = true,
@@ -62,6 +62,7 @@ return {
 		customparams = {
 			buildpic = "tllbarbarus.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				description = "Barbarus Wreckage",
 				footprintx = 25,
 				footprintz = 25,
-				object = "tllbarbarus_dead",
+				object = "tll/tllbarbarus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -180,7 +181,6 @@ return {
 				damage = {
 				areoship = 62.5,
 				default = 5,
-
 				air = 250,
 				},
 			},

@@ -36,8 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Thumper",
 		noautofire = false,
-
-		objectname = "TLLTHUMPER",
+		objectname = "tll/tllthumper.s3o",
 		radaremitheight = 28,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 395,
@@ -52,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllthumper.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2463,
-				object = "TLLTHUMPER_dead",
+				object = "tll/tllthumper_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +75,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1314,
-				object = "4x4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

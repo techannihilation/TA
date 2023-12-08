@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Hell Spawn",
 		noautofire = false,
-		objectname = "gok_hellspawn",
+		objectname = "gok/gok_hellspawn.s3o",
 		radaremitheight = 58,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_hellspawn.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2857,
-				object = "gok_hellspawn_DEAD",
+				object = "gok/gok_hellspawn_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1524,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},

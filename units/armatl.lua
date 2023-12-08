@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 25,
 		name = "Moray",
 		noautofire = false,
-		objectname = "ARMATL",
+		objectname = "arm/armatl.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "armatl.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 780,
-				object = "ARMATL_DEAD",
+				object = "arm/armatl_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -108,7 +109,7 @@ return {
 				explosiongenerator = "custom:FLASH3",
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo",
+				model = "weapon_advtorpedo.s3o",
 				name = "LongRangeTorpedo",
 				noselfdamage = true,
 				range = 900,

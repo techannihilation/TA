@@ -34,7 +34,7 @@ return {
 		minwaterdepth = 5,
 		name = "Naval Screamer",
 		noautofire = false,
-		objectname = "corfscreamer",
+		objectname = "core/corfscreamer.s3o",
 		onoffable = false,
 		radaremitheight = 51,
 		seismicsignature = 0,
@@ -51,6 +51,7 @@ return {
 			buildpic = "corscreamer.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1359,
-				--object = "corfscreamer_DEAD",
+				--object = "core/corfscreamer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 725,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -128,7 +129,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missileaal",
+				model = "weapon_missileaal.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -150,7 +151,6 @@ return {
 				damage = {
 					areoship = 500,
 					default = 5,
-					
 					air = 2000,
 				},
 			},

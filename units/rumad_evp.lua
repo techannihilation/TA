@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Vehicle Plant",
 		noautofire = false,
-		objectname = "rumad_evp",
+		objectname = "rumad/rumad_evp.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "rumad_evp.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 12000,
-				object = "rumad_evp_dead",
+				object = "rumad/rumad_evp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

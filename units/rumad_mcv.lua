@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK6",
 		name = "Gin",
 		noautofire = false,
-		objectname = "rumad_mcv",
+		objectname = "rumad/rumad_mcv.s3o",
 		onoffable = true,
 		radaremitheight = 38,
 		selfdestructas = "BANTHA_BLAST",
@@ -57,6 +57,7 @@ return {
 			buildpic = "rumad_mcv.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T3 Unit Research Centre",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 7200,
-				object = "rumad_mcv_dead",
+				object = "rumad/rumad_mcv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -166,7 +167,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile_rumad",
+				model = "weapon_missile_rumad.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,

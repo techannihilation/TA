@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Raise Air",
 		noautofire = false,
-		objectname = "rumad_erez",
+		objectname = "rumad/rumad_erez.s3o",
 		radardistance = 50,
 		radaremitheight = 26,
 		resurrect = 1,

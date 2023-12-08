@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Pains",
 		noautofire = false,
-		objectname = "gok_pains",
+		objectname = "gok/gok_pains.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,6 +60,7 @@ return {
 			buildpic = "gok_pains.dds",
 			faction = "GOK",
 			prioritytarget = "air",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 420,
-				--object = "gok_pains_DEAD",
+				--object = "gok/gok_pains_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +89,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 224,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -141,7 +142,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_gok",
+				model = "weapon_missile_gok.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -161,7 +162,6 @@ return {
 				damage = {
 					areoship = 60,
 					default = 5,
-					
 					air = 240,
 				},
 			},

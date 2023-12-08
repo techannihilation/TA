@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Steadfast",
 		noautofire = false,
-		objectname = "ARMMLS",
+		objectname = "arm/armmls.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 50,
 		repairspeed = 50,
@@ -75,6 +75,7 @@ return {
 		customparams = {
 			buildpic = "armmls.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -89,7 +90,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 206,
-				object = "ARMMLS_DEAD",
+				object = "arm/armmls_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -103,7 +104,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 110,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

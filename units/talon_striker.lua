@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Striker",
 		noautofire = false,
-		objectname = "talon_striker",
+		objectname = "talon/talon_striker.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "talon_striker.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 202,
-				object = "talon_striker_DEAD",
+				object = "talon/talon_striker_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 108,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},
@@ -129,7 +130,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,

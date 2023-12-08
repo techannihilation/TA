@@ -41,7 +41,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 1000,
 		name = "Zeppelin",
-		objectname = "tllzeppelin1",
+		objectname = "tll/tllzeppelin1.s3o",
 		radardistance = 0,
 		radaremitheight = 50,
 		selfdestructas = "MEGA_BLAST",
@@ -63,7 +63,7 @@ return {
 				footprintx = 6,
 				footprintz = 8,
 				metal = 221250,
-				object = "tllzeppelin1_dead",
+				object = "tll/tllzeppelin1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

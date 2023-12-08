@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "talon_aca",
+		objectname = "talon/talon_aca.s3o",
 		seismicsignature = 0,
 		reclaimspeed = 45,
 		repairspeed = 45,
@@ -86,6 +86,7 @@ return {
 		customparams = {
 			buildpic = "talon_aca.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -95,7 +96,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 213,
-				object = "2X2Z",
+				object = "2x2z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

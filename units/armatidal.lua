@@ -26,7 +26,7 @@ return {
 		minwaterdepth = 20,
 		name = "Advanced Tidal Generator",
 		noautofire = false,
-		objectname = "ARMATIDAL",
+		objectname = "arm/armatidal.s3o",
 		onoffable = false,
 		radaremitheight = 39,
 		seismicsignature = 0,
@@ -43,6 +43,7 @@ return {
 			buildpic = "armatidal.dds",
 			energymultiplier = 5,
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 272,
-				object = "ARMATIDAL_DEAD",
+				object = "arm/armatidal_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 145,
-				object = "6X6B",
+				object = "6x6b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Desert Cobra",
 		noautofire = false,
-		objectname = "rumad_sam",
+		objectname = "rumad/rumad_sam.s3o",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,6 +47,7 @@ return {
 			buildpic = "rumad_sam.dds",
 			faction = "RUMAD",
 			prioritytarget = "air",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 60,
-				object = "rumad_sam_DEAD",
+				object = "rumad/rumad_sam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 32,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -128,7 +129,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_rumad_aa",
+				model = "weapon_missile_rumad_aa.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 900,

@@ -35,7 +35,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Tempest",
 		noautofire = false,
-		objectname = "ARMTEM",
+		objectname = "arm/armtem.s3o",
 		radardistance = 0,
 		radaremitheight = 35,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,6 +52,7 @@ return {
 			buildpic = "armtem.dds",
 			faction = "ARM",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4293,
-				object = "armtem_dead",
+				object = "arm/armtem_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

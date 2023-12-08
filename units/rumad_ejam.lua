@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "rumad_ejam",
+		objectname = "rumad/rumad_ejam.s3o",
 		onoffable = true,
 		radardistancejam = 2000,
 		radaremitheight = 50,
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "rumad_ejam.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5844,
-				object = "rumad_ejam_dead",
+				object = "rumad/rumad_ejam_dead",
 				reclaimable = true,
 			},
 			heap = {

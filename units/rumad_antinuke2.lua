@@ -27,7 +27,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Anti-Nuke",
-		objectname = "rumad_antinuke2",
+		objectname = "rumad/rumad_antinuke2.s3o",
 		radardistance = 50,
 		radaremitheight = 63,
 		script = "rumad_antinuke.cob",
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "rumad_antinuke2.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +54,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 17549,
-				object = "ARMAMD_DEAD",
+				object = "arm/armamd_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +68,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 9359,
-				object = "5X5B",
+				object = "5x5b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -123,7 +124,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 4,
 				metalpershot = 6780,
-				model = "weapon_antinuke1",
+				model = "weapon_antinuke1.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

@@ -33,7 +33,7 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "gok_moho",
+		objectname = "gok/gok_moho.s3o",
 		onoffable = true,
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_moho.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 465,
-				object = "gok_moho_DEAD",
+				object = "gok/gok_moho_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 248,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 			},
 		},

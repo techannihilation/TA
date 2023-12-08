@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Viper",
 		noautofire = false,
-		objectname = "CORVIPE",
+		objectname = "core/corvipe.s3o",
 		radaremitheight = 31,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "corvipe.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1008,
-				object = "CORVIPE_DEAD",
+				object = "core/corvipe_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 538,
-				object = "CORVIPE_DEAD2",
+				object = "core/corvipe_dead2",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -95,7 +96,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 336,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -147,7 +148,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Sabot",
 				noselfdamage = true,
 				range = 730,

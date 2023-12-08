@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "gok_ca",
+		objectname = "gok/gok_ca.s3o",
 		reclaimspeed = 20,
 		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",

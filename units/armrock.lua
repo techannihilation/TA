@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Rocko",
 		noautofire = false,
-		objectname = "ARMROCK",
+		objectname = "arm/armrock.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armrock.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "ARMROCK_DEAD",
+				object = "arm/armrock_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +134,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Rockets",
 				noselfdamage = true,
 				range = 475,

@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Serpent",
 		noautofire = false,
-		objectname = "armserpent",
+		objectname = "arm/armserpent.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -56,6 +56,7 @@ return {
 			buildpic = "armserpent.dds",
 			faction = "ARM",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1280,
-				object = "armserpent_DEAD",
+				object = "arm/armserpent_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +85,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 682,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +137,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo",
+				model = "weapon_advtorpedo.s3o",
 				name = "AdvTorpedo",
 				noselfdamage = true,
 				range = 700,

@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT4",
 		name = "Collier",
 		noautofire = false,
-		objectname = "talon_collier",
+		objectname = "talon/talon_collier.s3o",
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 75,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "talon_collier.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5040,
-				object = "talon_collier_dead",
+				object = "talon/talon_collier_dead",
 				reclaimable = true,
 			},
 			heap = {

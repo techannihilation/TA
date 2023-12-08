@@ -39,7 +39,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Valefor",
 		noautofire = false,
-		objectname = "gok_valefor",
+		objectname = "gok/gok_valefor.s3o",
 		radardistance = 1500,
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -61,6 +61,7 @@ return {
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 5000,
 			shield_radius = 230,
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 6,
 				footprintz = 18,
 				metal = 18750,
-				object = "gok_valefor_DEAD",
+				object = "gok/gok_valefor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +90,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 10000,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

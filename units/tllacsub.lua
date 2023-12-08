@@ -16,7 +16,6 @@
 		category = "ALL LARGE MOBILE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "36 26 66",
-		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -42,7 +41,7 @@
 		movementclass = "UBOAT3",
 		name = "Advanced Construction Sub",
 		noautofire = false,
-		objectname = "TLLACSUB",
+		objectname = "tll/tllacsub.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 120,
 		repairspeed = 120,
@@ -77,6 +76,7 @@
 		customparams = {
 			buildpic = "tllacsub.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -87,7 +87,7 @@
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2037,
-				object = "tllacsub_dead",
+				object = "tll/tllacsub_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

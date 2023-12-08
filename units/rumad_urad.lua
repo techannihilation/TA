@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Radar Tower",
 		noautofire = false,
-		objectname = "rumad_urad",
+		objectname = "rumad/rumad_urad.s3o",
 		onoffable = true,
 		radardistance = 24000,
 		radaremitheight = 41,
@@ -38,6 +38,7 @@ return {
 		customparams = {
 			buildpic = "rumad_urad.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -48,7 +49,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 345,
-				object = "rumad_urad_dead",
+				object = "rumad/rumad_urad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

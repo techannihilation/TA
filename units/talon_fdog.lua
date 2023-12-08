@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Fatdog",
 		noautofire = false,
-		objectname = "TALON_FDOG",
+		objectname = "talon/talon_fdog.s3o",
 		radaremitheight = 33,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "talon_fdog.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1162,
-				object = "talon_fdog_dead",
+				object = "talon/talon_fdog_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 620,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

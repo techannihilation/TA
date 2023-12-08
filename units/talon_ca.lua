@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "talon_ca",
+		objectname = "talon/talon_ca.s3o",
 		reclaimspeed = 20,
 		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",

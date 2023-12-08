@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Air Plant",
 		noautofire = false,
-		objectname = "talon_eap",
+		objectname = "talon/talon_eap.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "talon_eap.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 12000,
-				object = "talon_eap_dead",
+				object = "talon/talon_eap_dead",
 				reclaimable = true,
 			},
 			heap = {

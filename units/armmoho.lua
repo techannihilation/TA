@@ -36,7 +36,7 @@ return {
 		metalstorage = 50,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "ARMMOHO",
+		objectname = "arm/armmoho.s3o",
 		onoffable = true,
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "armmoho.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 465,
-				object = "ARMMOHO_DEAD",
+				object = "arm/armmoho_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 248,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

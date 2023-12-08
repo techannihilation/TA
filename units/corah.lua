@@ -38,8 +38,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Slinger",
 		noautofire = false,
-
-		objectname = "CORAH",
+		objectname = "core/corah.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -57,6 +56,7 @@ return {
 			buildpic = "corah.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 183,
-				object = "CORAH_DEAD",
+				object = "core/corah_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +85,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 98,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -138,7 +138,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,
@@ -161,7 +161,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Absolutor",
 		noautofire = false,
-		objectname = "corabsolutor",
+		objectname = "core/corabsolutor.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "corabsolutor.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 420,
-				object = "corabsolutor_dead",
+				object = "core/corabsolutor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

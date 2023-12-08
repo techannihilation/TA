@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
 		noautofire = false,
-		objectname = "tllesy",
+		objectname = "tll/tllesy.s3o",
 		radardistance = 100,
 		radaremitheight = 64,
 		selfdestructas = "CRAWL_BLAST",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "tllesy.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 15750,
-				object = "TLLESY_DEAD",
+				object = "tll/tllesy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 8400,
-				object = "7X7E",
+				object = "7x7e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

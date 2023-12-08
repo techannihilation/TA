@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 12,
 		name = "Harpoon",
 		noautofire = false,
-		objectname = "ARMTL",
+		objectname = "arm/armtl.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "armtl.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 241,
-				object = "ARMTL_DEAD",
+				object = "arm/armtl_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -112,7 +113,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Level1TorpedoLauncher",
 				noselfdamage = true,
 				range = 600,

@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK8",
 		name = "Grenat",
 		noautofire = false,
-		objectname = "talon_grenat",
+		objectname = "talon/talon_grenat.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "EXO_BLAST",
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "talon_grenat.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 675,
-				object = "talon_grenat_DEAD",
+				object = "talon/talon_grenat_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -82,7 +83,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 			},
 		},
@@ -243,7 +244,7 @@ return {
 				firestarter = 70,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "titan_missile",
+				model = "titan_missile.s3o",
 				name = "Mini-Rocket",
 				noselfdamage = true,
 				proximitypriority = -1,

@@ -43,7 +43,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
-		objectname = "gok_carry",
+		objectname = "gok/gok_carry.s3o",
 		onoffable = true,
 		radardistance = 2750,
 		radaremitheight = 54,
@@ -63,6 +63,7 @@ return {
 			isairbase = true,
 			buildpic = "gok_carry.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -77,7 +78,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1237,
-				object = "gok_carry_DEAD",
+				object = "gok/gok_carry_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +92,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 660,
-				object = "6X6C",
+				object = "6x6c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -152,7 +153,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke_gok",
+				model = "weapon_antinuke_gok.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

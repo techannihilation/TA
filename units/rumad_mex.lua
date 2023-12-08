@@ -32,7 +32,7 @@ return {
 		metalstorage = 25,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "rumad_mex",
+		objectname = "rumad/rumad_mex.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "rumad_mex.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 39,
-				object = "rumad_mex_DEAD",
+				object = "rumad/rumad_mex_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

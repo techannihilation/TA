@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Veil",
 		noautofire = false,		
-		objectname = "ARMVEIL",
+		objectname = "arm/armveil.s3o",
 		onoffable = true,
 		radardistancejam = 760,
 		radaremitheight = 66,
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armveil.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 95,
-				object = "ARMVEIL_DEAD",
+				object = "arm/armveil_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 50,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

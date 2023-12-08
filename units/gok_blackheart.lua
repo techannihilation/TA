@@ -39,7 +39,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "Black Heart",
 		noautofire = false,
-		objectname = "gok_blackheart",
+		objectname = "gok/gok_blackheart.s3o",
 		radaremitheight = 25,
 		seismicsignature = 1,
 		selfdestructas = "EXO_BLAST",

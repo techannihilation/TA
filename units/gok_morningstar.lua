@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Mobile Anti-Nuke",
-		objectname = "gok_morningstar",
+		objectname = "gok/gok_morningstar.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -57,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "gok_morningstar.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1162,
-				object = "gok_morningstar_DEAD",
+				object = "gok/gok_morningstar_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -82,7 +83,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 620,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 			},
 		},
@@ -135,7 +136,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 150,
-				model = "weapon_antinuke_gok",
+				model = "weapon_antinuke_gok.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

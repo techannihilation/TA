@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 25,
 		name = "Lamprey",
 		noautofire = false,
-		objectname = "CORATL",
+		objectname = "core/coratl.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "coratl.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "CORATL_DEAD",
+				object = "core/coratl_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -109,7 +110,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_exptorpedo",
+				model = "weapon_exptorpedo.s3o",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 900,

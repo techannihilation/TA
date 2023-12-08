@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Electro",
 		noautofire = false,
-		objectname = "TLLHLT",
+		objectname = "tll/tllhlt.s3o",
 		radaremitheight = 83,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 490,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "tllhlt.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 506,
-				object = "tllhlt_dead",
+				object = "tll/tllhlt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

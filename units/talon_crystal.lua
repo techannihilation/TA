@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Crystal",
 		noautofire = false,
-		objectname = "talon_crystal",
+		objectname = "talon/talon_crystal.s3o",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "talon_crystal.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 675,
-				object = "talon_crystal_DEAD",
+				object = "talon/talon_crystal_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "5X5C",
+				object = "5x5c",
 				reclaimable = true,
 			},
 		},
@@ -127,7 +128,7 @@ return {
 				explosiongenerator = "custom:Explosion_Rocket_L",
 				firestarter = 80,
 				flighttime = 6,
-				model = "weapon_rocketl",
+				model = "weapon_rocketl.s3o",
 				name = "Barrarge",
 				proximitypriority = -1,
 				range = 2050,

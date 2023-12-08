@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Bahamut",
 		noautofire = false,
-		objectname = "tllmcv",
+		objectname = "tll/tllmcv.s3o",
 		radaremitheight = 145,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tllmcv.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "tllmcv_dead",
+				object = "tll/tllmcv_dead",
 				reclaimable = true,
 			},
 			heap = {

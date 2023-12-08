@@ -36,7 +36,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Crasher",
 		noautofire = false,
-		objectname = "CORCRASH",
+		objectname = "core/corcrash.s3o",
 		radaremitheight = 26,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 			buildpic = "corcrash.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 147,
-				object = "CORCRASH_DEAD",
+				object = "core/corcrash_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -134,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -160,7 +161,6 @@ return {
 				damage = {
 					areoship = 22.5,
 					default = 5,
-					
 					air = 90,
 				},
 			},

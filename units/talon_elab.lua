@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
 		noautofire = false,
-		objectname = "talon_elab",
+		objectname = "talon/talon_elab.s3o",
 		radardistance = 50,
 		radaremitheight = 40,
 		seismicsignature = 0,
@@ -67,13 +67,13 @@ return {
 		customparams = {
 			buildpic = "talon_elab.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -21 0",
 				collisionvolumescales = "114 74 129",
-
 				collisionvolumetype = "CylZ",
 				damage = 9570,
 				description = "Experimental Gantry Wreckage",
@@ -82,7 +82,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 13599,
-				object = "talon_elab_DEAD",
+				object = "talon/talon_elab_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -93,7 +93,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 7253,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 			},
 		},

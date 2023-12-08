@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Solar Collector",
 		noautofire = false,
-		objectname = "gok_solar",
+		objectname = "gok/gok_solar.s3o",
 		onoffable = true,
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -45,13 +45,13 @@ return {
 		customparams = {
 			buildpic = "gok_solar.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -18 1",
 				collisionvolumescales = "50 76 50",
-				
 				collisionvolumetype = "Ell",
 				damage = 492,
 				description = "Solar Collector Wreckage",
@@ -60,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 116,
-				object = "gok_solar_dead",
+				object = "gok/gok_solar_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -71,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 62,
-				object = "5X5B",
+				object = "5x5b",
 				reclaimable = true,
 			},
 		},

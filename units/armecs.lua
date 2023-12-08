@@ -41,7 +41,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Construction Ship",
 		noautofire = false,
-		objectname = "armecs",
+		objectname = "arm/armecs.s3o",
 		radardistance = 50,
 		radaremitheight = 22,
 		seismicsignature = 0,
@@ -79,6 +79,7 @@ return {
 		customparams = {
 			buildpic = "armecs.dds",
 			faction = "arm",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -93,7 +94,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 7204,
-				object = "armecs_DEAD",
+				object = "arm/armecs_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -107,7 +108,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 4108,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

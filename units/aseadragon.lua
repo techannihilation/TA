@@ -40,7 +40,7 @@ return {
 		movementclass = "HDBOAT8",
 		name = "Epoch",
 		noautofire = false,
-		objectname = "ASEADRAGON",
+		objectname = "arm/aseadragon.s3o",
 		radardistance = 1500,
 		radaremitheight = 54,
 		seismicsignature = 0,
@@ -59,6 +59,7 @@ return {
 			buildpic = "aseadragon.dds",
 			faction = "ARM",
 			prioritytarget = "air",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 6,
 				footprintz = 18,
 				metal = 18750,
-				object = "ASEADRAGON_DEAD",
+				object = "arm/aseadragon_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 10000,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -194,7 +195,6 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-
 					air = 250,
 				},
 			},

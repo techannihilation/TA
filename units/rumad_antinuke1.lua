@@ -30,7 +30,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Anti-Nuke",
-		objectname = "rumad_antinuke1",
+		objectname = "rumad/rumad_antinuke1.s3o",
 		radardistance = 50,
 		radaremitheight = 34,
 		script = "rumad_antinuke.cob",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "rumad_antinuke1.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1526,
-				object = "gok_antinuke_DEAD",
+				object = "gok/gok_antinuke_DEAD.s3o",
 				reclaimable = true,
 			},
 			heap = {

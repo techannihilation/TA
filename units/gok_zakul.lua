@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Za'Kul",
-		objectname = "gok_zakul",
+		objectname = "gok/gok_zakul.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 500,
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "gok_zakul.dds",
 			faction = "ARM",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -60,7 +61,7 @@ return {
 				description = "Aircraft Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

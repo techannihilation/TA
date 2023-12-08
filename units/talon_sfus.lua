@@ -10,7 +10,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "150 90 150",
-		
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",
@@ -30,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
 		noautofire = false,		
-		objectname = "talon_sfus",
+		objectname = "talon/talon_sfus.s3o",
 		radaremitheight = 90,
 		selfdestructas = "FUSION_BLAST_BIG",
 		sightdistance = 300,
@@ -41,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "talon_sfus.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +51,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 44775,
-				object = "talon_sfus_dead",
+				object = "talon/talon_sfus_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 23880,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 			},
 		},

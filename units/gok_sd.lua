@@ -30,7 +30,7 @@ return {
 		maxslope = 36,
 		maxwaterdepth = 0,
 		name = "Countermeasure System",
-		objectname = "gok_sd",
+		objectname = "gok/gok_sd.s3o",
 		onoffable = true,
 		radaremitheight = 55,
 		script = "gok_sd.lua",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "gok_sd.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 528,
-				object = "GOK_SD_DEAD",
+				object = "gok/gok_sd_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 282,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

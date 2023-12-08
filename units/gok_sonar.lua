@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 10,
 		name = "Sonar Station",
 		noautofire = false,
-		objectname = "gok_sonar",
+		objectname = "gok/gok_sonar.s3o",
 		onoffable = true,
 		radaremitheight = 37,
 		seismicsignature = 0,
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_sonar.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 15,
-				object = "gok_sonar_DEAD",
+				object = "gok/gok_sonar_dead",
 				reclaimable = true,
 			},
 		},

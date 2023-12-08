@@ -37,7 +37,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Hellfire",
 		noautofire = false,
-		objectname = "gok_hellfire",
+		objectname = "gok/gok_hellfire.s3o",
 		radaremitheight = 63,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 450,
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "gok_hellfire.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1912,
-				object = "gok_hellfire_dead",
+				object = "gok/gok_hellfire_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1076,
-				object = "2X2C",
+				object = "2x2c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

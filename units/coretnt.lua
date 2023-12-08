@@ -34,7 +34,7 @@ return {
 		movementclass = "TKBOT2",
 		name = "TnT",
 		noautofire = false,
-		objectname = "coretnt",
+		objectname = "core/coretnt.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BANTHA_BLAST",

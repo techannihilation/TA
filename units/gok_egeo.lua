@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Experimental Geothermal Powerplant",
 		noautofire = false,
-		objectname = "gok_egeo",
+		objectname = "gok/gok_egeo.s3o",
 		radaremitheight = 61,
 		selfdestructas = "FUSION_BLAST_BIG",
 		sightdistance = 210,
@@ -37,6 +37,7 @@ return {
 		customparams = {
 			buildpic = "gok_egeo.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			tllmohogeo_heap = {

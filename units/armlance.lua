@@ -39,7 +39,7 @@ return {
 		moverate1 = 8,
 		name = "Lancet",
 		noautofire = false,
-		objectname = "ARMLANCE",
+		objectname = "arm/armlance.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 455,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armlance.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 126,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +119,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "TorpedoLauncher",
 				noselfdamage = true,
 				range = 500,

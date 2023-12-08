@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK4",
 		name = "Skull",
 		noautofire = false,
-		objectname = "armshieldgen",
+		objectname = "arm/armshieldgen.s3o",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -55,6 +55,7 @@ return {
 			faction = "ARM",
 			shield_power = 2500,
 			shield_radius = 250,
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1896,
-				object = "armshieldgen_dead",
+				object = "arm/armshieldgen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1011,
-				object = "3X3E",
+				object = "3x3e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

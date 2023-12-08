@@ -38,8 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Croc",
 		noautofire = false,
-		
-		objectname = "CORSEAL",
+		objectname = "core/corseal.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "corseal.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 360,
-				object = "CORSEAL_DEAD",
+				object = "core/corseal_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

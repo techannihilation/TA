@@ -37,7 +37,7 @@ return {
 		movementclass = "htank4",
 		name = "Naja",
 		noautofire = false,
-		objectname = "tllnaja",
+		objectname = "tll/tllnaja.s3o",
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 450,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllnaja.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6187,
-				object = "tllnaja_dead",
+				object = "tll/tllnaja_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +134,7 @@ return {
 				explosiongenerator = "custom:thermite_mine",
 				firestarter = 80,
 				flighttime = 6,
-				model = "weapon_thermite_rocket_xl",
+				model = "weapon_thermite_rocket_xl.s3o",
 				name = "Thermite Barrage",
 				proximitypriority = -1,
 				range = 1800,

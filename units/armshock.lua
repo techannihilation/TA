@@ -36,7 +36,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Vanguard",
 		noautofire = false,
-		objectname = "ARMSHOCK",
+		objectname = "arm/armshock.s3o",
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "SHOCKER",
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "armshock.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2437,
-				object = "ARMSHOCK_DEAD",
+				object = "arm/armshock_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1300,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

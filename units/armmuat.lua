@@ -39,7 +39,7 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Ornith",
-		objectname = "armmuat",
+		objectname = "arm/armmuat.s3o",
 		radardistance = 0,
 		radaremitheight = 28.8,
 		releaseheld = true,
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "armmuat.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2192,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +120,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 875,
@@ -144,7 +145,6 @@ return {
 				damage = {
 					areoship = 30,
 					default = 5,
-					
 					air = 120,
 				},
 			},

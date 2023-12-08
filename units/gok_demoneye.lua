@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Demon Eye",
 		noautofire = false,
-		objectname = "gok_demoneye",
+		objectname = "gok/gok_demoneye.s3o",
 		radardistance = 1750,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

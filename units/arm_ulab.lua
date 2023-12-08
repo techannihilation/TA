@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Lab",
 		noautofire = false,
-		objectname = "arm_ulab",
+		objectname = "arm/arm_ulab.s3o",
 		radaremitheight = 174,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -61,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "arm_ulab.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 		dead = {
@@ -72,7 +73,7 @@ return {
 			footprintx = 16,
 			footprintz = 16,
 			metal = 67200,
-			object = "arm_ulab_dead",
+			object = "arm/arm_ulab_dead",
 			reclaimable = true,
 			customparams = {
 				fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 35840,
-				object = "7X7C",
+				object = "7x7c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,8 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Scrubber",
 		noautofire = false,
-
-		objectname = "CORSH",
+		objectname = "core/corsh.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corsh.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 57,
-				object = "CORSH_DEAD",
+				object = "core/corsh_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 30,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

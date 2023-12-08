@@ -43,7 +43,7 @@ return {
 		name = "Aircraft Carrier",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "gok_hcar",
+		objectname = "gok/gok_hcar.s3o",
 		onoffable = true,
 		radardistance = 3500,
 		radaremitheight = 68,
@@ -62,6 +62,7 @@ return {
 			isairbase = true,
 			buildpic = "gok_hcar.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 10875,
-				object = "gok_hcar_dead",
+				object = "gok/gok_hcar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +134,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 3.9,
 				metalpershot = 2500,
-				model = "weapon_nuke_gok",
+				model = "weapon_nuke_gok.s3o",
 				name = "Operational Nuclear Missile",
 				range = 72000,
 				reloadtime = 20,

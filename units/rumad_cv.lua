@@ -41,7 +41,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		objectname = "rumad_cv",
+		objectname = "rumad/rumad_cv.s3o",
 		radardistance = 50,
 		radaremitheight = 24,
 		reclaimspeed = 40,
@@ -96,6 +96,7 @@ return {
 		customparams = {
 			buildpic = "rumad_cv.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -110,7 +111,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 102,
-				object = "rumad_cv_DEAD",
+				object = "rumad/rumad_cv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -124,7 +125,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 54,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

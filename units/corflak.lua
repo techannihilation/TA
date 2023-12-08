@@ -38,7 +38,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Cobra",
 		noautofire = false,
-		objectname = "CORFLAK",
+		objectname = "core/corflak.s3o",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -54,6 +54,7 @@ return {
 			buildpic = "corflak.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 771,
-				object = "CORFLAK_DEAD",
+				object = "core/corflak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 411,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -155,7 +156,6 @@ return {
 				damage = {
 					areoship = 125,
 					default = 5,
-					
 					air = 500,
 				},
 			},

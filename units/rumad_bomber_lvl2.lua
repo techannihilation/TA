@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Desert Storm",
 		noautofire = true,
-		objectname = "rumad_bomber_lvl2",
+		objectname = "rumad/rumad_bomber_lvl2.s3o",
 		script = "rumad_bomber_lvl1.cob",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -55,6 +55,7 @@ return {
 			buildpic = "rumad_bomber_lvl2.dds",
 			faction = "RUMAD",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 64,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +120,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "Bombs",
 				noselfdamage = true,
 				range = 1400,

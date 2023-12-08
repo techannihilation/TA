@@ -39,7 +39,7 @@ return {
 		mintransportmass = 100,
 		mobilestandorders = 1,
 		name = "Muat",
-		objectname = "cormuat",
+		objectname = "core/cormuat.s3o",
 		radardistance = 0,
 		radaremitheight = 28.8,
 		releaseheld = true,
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "cormuat.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1492,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

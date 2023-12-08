@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "ARMAP",
+		objectname = "arm/armap.s3o",
 		radardistance = 500,
 		radaremitheight = 66,
 		seismicsignature = 0,
@@ -63,13 +63,13 @@ return {
 		customparams = {
 			buildpic = "armap.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "11 -17 -23",
 				collisionvolumescales = "85 39 49",
-
 				collisionvolumetype = "Box",
 				damage = 1897,
 				description = "Aircraft Plant Wreckage",
@@ -78,7 +78,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 680,
-				object = "ARMAP_DEAD",
+				object = "arm/armap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -92,7 +92,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 362,
-				object = "6X6B",
+				object = "6x6b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

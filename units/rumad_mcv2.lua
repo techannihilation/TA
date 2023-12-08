@@ -38,7 +38,7 @@ return {
 		movementclass = "HTANK15",
 		name = "Vizir",
 		noautofire = false,
-		objectname = "rumad_mcv2",
+		objectname = "rumad/rumad_mcv2.s3o",
 		radaremitheight = 38,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -66,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 257200,
-				object = "rumad/rumad_mcv2_dead",
+				object = "rumad/rumad_mcv2_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Hovercraft Lab",
 		noautofire = false,
-		objectname = "talon_hp",
+		objectname = "talon/talon_hp.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -62,13 +62,13 @@ return {
 		customparams = {
 			buildpic = "talon_hp.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "116 20 104",
-				
 				collisionvolumetype = "Box",
 				damage = 2730,
 				description = "Hovercraft Platform Wreckage",
@@ -77,7 +77,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 764,
-				object = "talon_hp_DEAD",
+				object = "talon/talon_hp_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +88,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 407,
-				object = "7X7A",
+				object = "7x7a",
 				reclaimable = true,
 			},
 		},

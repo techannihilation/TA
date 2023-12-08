@@ -36,7 +36,7 @@ return {
 		movementclass = "TANK4",
 		name = "Leopard",
 		noautofire = false,
-		objectname = "tllleopard",
+		objectname = "tll/tllleopard.s3o",
 		radaremitheight = 33,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 400,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tllleopard.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2655,
-				object = "tllleopard_dead",
+				object = "tll/tllleopard_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1416,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 			},
 		},
@@ -162,7 +163,7 @@ return {
 				flighttime = 3.5,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_thermite_rocket",
+				model = "weapon_thermite_rocket.s3o",
 				name = "Thermite Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,

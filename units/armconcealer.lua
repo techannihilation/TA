@@ -36,7 +36,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Concealer",
 		noautofire = false,
-		objectname = "armconcealer",
+		objectname = "arm/armconcealer.s3o",
 		onoffable = true,
 		radardistancejam = 480,
 		radaremitheight = 25,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armconcealer.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 152,
-				object = "armconcealer_dead",
+				object = "arm/armconcealer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

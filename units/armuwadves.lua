@@ -33,7 +33,7 @@ return {
 		name = "T2 Energy Storage",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "ARMUWADVES",
+		objectname = "arm/armuwadves.s3o",
 		radaremitheight = 42,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "armuwadves.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 618,
-				object = "ARMUWADVES_DEAD",
+				object = "arm/armuwadves_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +73,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 330,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

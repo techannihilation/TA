@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Jammer Tower",
 		noautofire = false,
-		objectname = "gok_jam",
+		objectname = "gok/gok_jam.s3o",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 74,
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_jam.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 180,
-				object = "gok_jam_DEAD",
+				object = "gok/gok_jam_dead",
 				reclaimable = true,
 			},
 		},

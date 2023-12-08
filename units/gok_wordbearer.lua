@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Word Bearer",
 		noautofire = false,
-		objectname = "gok_wordbearer",
+		objectname = "gok/gok_wordbearer.s3o",
 		radaremitheight = 28.8,
 		releaseheld = true,
 		seismicsignature = 0,
@@ -65,6 +65,7 @@ return {
 		customparams = {
 			buildpic = "gok_wordbearer.dds",
 			faction = "ARM",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 313,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -35,8 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
-
-		objectname = "corgeo_mini",
+		objectname = "core/corgeo_mini.s3o",
 		onoffable = true,
 		radaremitheight = 30,
 		script = "corgeo.cob",
@@ -51,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "corgeo_mini.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 303,
-				object = "CORGEO_MINI_DEAD",
+				object = "core/corgeo_mini_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 162,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

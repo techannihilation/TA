@@ -34,8 +34,7 @@ return {
 		mobilestandorders = 1,
 		moverate1 = 8,
 		name = "Hornet",
-
-		objectname = "talon_hornet",
+		objectname = "talon/talon_hornet.s3o",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -97,7 +96,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 500,
@@ -119,7 +118,6 @@ return {
 				damage = {
 					areoship = 50,
 					default = 5,
-					
 					air = 200,
 				},
 			},
@@ -137,7 +135,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "GuidedMissiles",
 				noselfdamage = true,
 				range = 590,
@@ -159,7 +157,6 @@ return {
 				damage = {
 					areoship = 100,
 					default = 5,
-					
 					air = 400,
 				},
 			},

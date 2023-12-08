@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Leviathan",
 		noautofire = false,
-		objectname = "CORSSUB",
+		objectname = "core/corssub.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -56,6 +56,7 @@ return {
 			buildpic = "corssub.dds",
 			faction = "CORE",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1400,
-				object = "CORSSUB_DEAD",
+				object = "core/corssub_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 746,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +137,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_advtorpedo",
+				model = "weapon_advtorpedo.s3o",
 				name = "advTorpedo",
 				noselfdamage = true,
 				range = 700,

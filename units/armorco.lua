@@ -38,7 +38,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Orcone",
 		noautofire = false,
-		objectname = "ARMORCO",
+		objectname = "arm/armorco.s3o",
 		radardistance = 0,
 		radaremitheight = 93,
 		seismicsignature = 0,
@@ -72,7 +72,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 19440,
-				object = "Armorco_dead",
+				object = "arm/armorco_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

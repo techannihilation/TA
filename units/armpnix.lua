@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Phoenix",
 		noautofire = true,
-		objectname = "ARMPNIX",
+		objectname = "arm/armpnix.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 260,
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "armpnix.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 126,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -118,7 +119,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "AdvancedBombs",
 				noselfdamage = true,
 				range = 1280,

@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Safe Geothermal Powerplant",
 		noautofire = false,
-		objectname = "rumad_mohogeo",
+		objectname = "rumad/rumad_mohogeo.s3o",
 		radaremitheight = 36,
 		script = "rumad_geo.cob",
 		seismicsignature = 0,

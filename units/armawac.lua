@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Eagle",
 		noautofire = false,
-		objectname = "ARMAWAC",
+		objectname = "arm/armawac.s3o",
 		radardistance = 1600,
 		radaremitheight = 6,
 		seismicsignature = 0,

@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Agent",
 		noautofire = false,
-		objectname = "rumad_spy",
+		objectname = "rumad/rumad_spy.s3o",
 		radaremitheight = 25,
 		seismicsignature = 2,
 		selfdestructas = "SPYBOMBX",
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "rumad_spy.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 102,
-				object = "rumad_spy_DEAD",
+				object = "rumad/rumad_spy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 54,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

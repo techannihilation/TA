@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Carpenter",
 		noautofire = false,
-		objectname = "talon_dl",
+		objectname = "talon/talon_dl.s3o",
 		radaremitheight = 54,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "talon_dl.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -56,7 +57,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 216,
-				object = "talon_dl_DEAD",
+				object = "talon/talon_dl_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 115,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +128,7 @@ return {
 				groundbounce = true,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Torpedo Launcher",
 				noselfdamage = true,
 				numbounce = 1,

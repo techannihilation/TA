@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Oblivion",
 		noautofire = false,
-		objectname = "talon_drone",
+		objectname = "talon/talon_drone.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNITEX",
 		sightdistance = 350,
@@ -117,7 +117,6 @@ return {
 					default = 15,
 					subs = 5,
 				},
-
 			},
 		},
 		weapons = {

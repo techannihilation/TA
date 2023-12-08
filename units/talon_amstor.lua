@@ -29,7 +29,7 @@ return {
 		name = "T2 Metal Storage",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "talon_amstor",
+		objectname = "talon/talon_amstor.s3o",
 		radaremitheight = 43,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -39,6 +39,7 @@ return {
 		customparams = {
 			buildpic = "talon_amstor.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +54,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 564,
-				object = "talon_amstor_DEAD",
+				object = "talon/talon_amstor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 300,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

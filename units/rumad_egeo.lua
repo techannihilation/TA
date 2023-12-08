@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Armored Geothermal Powerplant",
 		noautofire = false,
-		objectname = "rumad_egeo",
+		objectname = "rumad/rumad_egeo.s3o",
 		radaremitheight = 61,
 		selfdestructas = "FUSION_BLAST_BIG",
 		sightdistance = 210,
@@ -37,6 +37,7 @@ return {
 		customparams = {
 			buildpic = "rumad_egeo.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			talon_mohogeo_heap = {

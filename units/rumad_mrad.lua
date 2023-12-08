@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Seer",
 		noautofire = false,
-		objectname = "rumad_mrad",
+		objectname = "rumad/rumad_mrad.s3o",
 		onoffable = true,
 		radardistance = 2300,
 		radaremitheight = 22,
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "rumad_mrad.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 92,
-				object = "rumad_mrad_DEAD",
+				object = "rumad/rumad_mrad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 49,
-				object = "3X3E",
+				object = "3x3e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

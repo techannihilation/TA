@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "HTANK8",
 		name = "True Spirit",
-		objectname = "rumad_uflak",
+		objectname = "rumad/rumad_uflak.s3o",
 		radaremitheight = 30,
 		selfdestructas = "KROG_BLAST",
 		selfdestructcountdown = 10,
@@ -63,7 +63,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 7960,
-				object = "rumad_uflak_dead",
+				object = "rumad/rumad_uflak_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

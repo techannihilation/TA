@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Brawler",
 		noautofire = false,
-		objectname = "ARMBRAWL",
+		objectname = "arm/armbrawl.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 550,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armbrawl.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 122,
-				object = "2X2Z",
+				object = "2x2z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 255,
 		metalstorage = 500,
 		name = "Shipyard",
-		objectname = "gok_yard",
+		objectname = "gok/gok_yard.s3o",
 		radardistance = 0,
 		radaremitheight = 243,
 		selfdestructas = "SHIPBLAST",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_yard.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 20,
 				footprintz = 15,
 				metal = 78000,
-				object = "gok_yard_dead",
+				object = "gok/gok_yard_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

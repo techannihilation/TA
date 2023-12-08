@@ -39,7 +39,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 4",
 		noautofire = false,
-		objectname = "gok_NANOTC3",
+		objectname = "gok/gok_nanotc3.s3o",
 		radaremitheight = 37,
 		reclaimspeed = 900,
 		repairspeed = 900,

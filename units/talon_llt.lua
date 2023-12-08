@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "LLT",
 		noautofire = false,
-		objectname = "talon_llt",
+		objectname = "talon/talon_llt.s3o",
 		radaremitheight = 65,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDINGEX",
@@ -46,6 +46,7 @@ return {
 		customparams = {
 			buildpic = "talon_llt.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 64,
-				object = "talon_llt_DEAD",
+				object = "talon/talon_llt_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -71,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 34,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 			},
 		},

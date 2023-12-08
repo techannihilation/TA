@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Wiper",
 		noautofire = false,
-		objectname = "TLLSAM",
+		objectname = "tll/tllsam.s3o",
 		radardistance = 950,
 		radaremitheight = 32,
 		selfdestructas = "BIG_UNIT",
@@ -45,6 +45,7 @@ return {
 			buildpic = "tllsam.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +56,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 383,
-				object = "tllSAM_dead",
+				object = "tll/tllsam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -125,7 +126,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
@@ -153,7 +154,6 @@ return {
 					damage = {
 						areoship = 20,
 						default = 5,
-						
 						air = 80,
 					},
 			},

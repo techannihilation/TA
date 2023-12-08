@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Veil",
 		noautofire = false,
-		objectname = "rumad_jam1",
+		objectname = "rumad/rumad_jam1.s3o",
 		onoffable = true,
 		script = "rumad_radar.lua",
 		radardistancejam = 780,
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "rumad_jam1.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 95,
-				object = "rumad_arad_DEAD",
+				object = "rumad/rumad_arad_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 50,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction KBot",
 		noautofire = false,
-		objectname = "TLLCK",
+		objectname = "tll/tllck.s3o",
 		radaremitheight = 26,
 		reclaimspeed = 50,
 		repairspeed = 50,
@@ -96,6 +96,7 @@ return {
 		customparams = {
 			buildpic = "tllck.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -106,7 +107,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 112,
-				object = "tllck_dead",
+				object = "tll/tllck_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

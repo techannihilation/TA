@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "High Tech Construction Plant",
 		noautofire = false,
-		objectname = "tll_elab",
+		objectname = "tll/tll_elab.s3o",
 		radaremitheight = 25,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "tll_elab.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 14250,
-				object = "tll_elab_dead",
+				object = "tll/tll_elab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

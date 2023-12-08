@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		name = "LLT",
 		noautofire = false,
-		objectname = "CORLLT",
+		objectname = "core/corllt.s3o",
 		radaremitheight = 62,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDINGEX",
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "corllt.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 67,
-				object = "CORLLT_DEAD",
+				object = "core/corllt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 36,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

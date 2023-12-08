@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "gok_aap",
+		objectname = "gok/gok_aap.s3o",
 		radaremitheight = 67,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -68,6 +68,7 @@ return {
 		customparams = {
 			buildpic = "gok_aap.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
@@ -82,7 +83,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 3524,
-				object = "gok_aap_DEAD",
+				object = "gok/gok_aap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -96,7 +97,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1879,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

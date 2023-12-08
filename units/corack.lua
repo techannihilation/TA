@@ -40,7 +40,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Construction Kbot",
 		noautofire = false,
-		objectname = "CORACK",
+		objectname = "core/corack.s3o",
 		radardistance = 50,
 		radaremitheight = 28,
 		reclaimspeed = 90,
@@ -84,6 +84,7 @@ return {
 		customparams = {
 			buildpic = "corack.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -97,7 +98,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1207,
-				object = "CORACK_DEAD",
+				object = "core/corack_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

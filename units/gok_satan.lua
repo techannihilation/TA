@@ -38,7 +38,7 @@ return {
 		movementclass = "KBOT4",
 		name = "Satan",
 		nochasecategory = "ALL",
-		objectname = "gok_satan",
+		objectname = "gok/gok_satan.s3o",
 		radaremitheight = 63,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -61,6 +61,7 @@ return {
 			shield_color1 = "{{0.9, 0.9, 0.45, 0.3}, {1, 0.2, 0.2, 0.2}}",
 			shield_power = 2000,
 			shield_radius = 150,
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			["dead"] = {
@@ -79,7 +80,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3500,
-				object = "gok_satan_DEAD",
+				object = "gok/gok_satan_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -97,7 +98,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 2400,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

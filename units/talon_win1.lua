@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Advanced Wind Generator",
 		noautofire = false,
-		objectname = "talon_win1",
+		objectname = "talon/talon_win1.s3o",
 		radaremitheight = 136,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -43,6 +43,7 @@ return {
 			buildpic = "talon_win1.dds",
 			energymultiplier = 4,
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 93,
-				object = "TALON_WIN1_DEAD",
+				object = "talon/talon_win1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +69,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 50,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

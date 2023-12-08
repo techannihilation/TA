@@ -24,7 +24,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
-		objectname = "gok_drag",
+		objectname = "gok/gok_drag.s3o",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "gok_drag",
@@ -33,12 +33,12 @@ return {
 		customparams = {
 			buildpic = "gok_drag.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dragonsteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-
 				crushResistance = 250,
 				collisionvolumeoffsets = "0 0 0",
 				collisionvolumescales = "30 20 30",
@@ -53,7 +53,7 @@ return {
 				hitdensity = 100,
 				metal = 12,
 				nodrawundergray = true,
-				object = "gok_drag",
+				object = "gok/gok_drag",
 				reclaimable = true,
 				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
@@ -72,7 +72,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

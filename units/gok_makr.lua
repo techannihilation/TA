@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Metal Maker",
 		noautofire = false,
-		objectname = "gok_makr",
+		objectname = "gok/gok_makr.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ARMESTOR_BUILDING",

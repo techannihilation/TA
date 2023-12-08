@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Long Range Plasma Cannon",
-		objectname = "ARMBRTHA1",
+		objectname = "arm/armbrtha1.s3o",
 		radaremitheight = 90,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -49,6 +49,7 @@ return {
 			buildpic = "armbrtha1.dds",
 			canareaattack = 1,
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 13500,
-				object = "armbrtha1_dead",
+				object = "arm/armbrtha1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +75,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7200,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

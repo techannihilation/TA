@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Armistice",
 		nochasecategory = "ALL",
-		objectname = "talon_armistice",
+		objectname = "talon/talon_armistice.s3o",
 		radardistance = 50,
 		radaremitheight = 34,
 		seismicsignature = 0,
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "talon_armistice.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1526,
-				object = "talon_armistice_DEAD",
+				object = "talon/talon_armistice_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 814,
-				object = "5X5D",
+				object = "5x5d",
 				reclaimable = true,
 			},
 		},
@@ -124,7 +125,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				metalpershot = 350,
-				model = "weapon_missile_emp",
+				model = "weapon_missile_emp.s3o",
 				name = "EMPMissile",
 				noselfdamage = true,
 				paralyzer = true,
@@ -151,7 +152,6 @@ return {
 					subs = 5,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {

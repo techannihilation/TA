@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, engine, bconnection, fconnection, rthrust, lthrust,
+piece  body, engine, bconnection, fconnection, rthrust, lthrust,
 	   turret1, sleeves1, spindle, flare1,
 	   turret2, sleeves2, barrels2, flare2a, flare2b,
 	   turret3, sleeves3, barrels3, flare3a, flare3b,
@@ -879,7 +879,7 @@ QueryWeapon11(piecenum)
 
 SweetSpot(piecenum)
 {
-	piecenum = base;
+	piecenum = body;
 }
 
 Killed(severity, corpsetype)

@@ -16,7 +16,6 @@ return {
 		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 1",
 		collisionvolumescales = "37 37 37",
-
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -38,7 +37,7 @@ return {
 		movementclass = "AKBOT2",
 		name = "Firestarter",
 		noautofire = false,
-		objectname = "TLLFIRESTARTER",
+		objectname = "tll/tllfirestarter.s3o",
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 500,
@@ -54,6 +53,7 @@ return {
 			buildpic = "tllfirestarter.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 135,
-				object = "tllfirestarter_dead",
+				object = "tll/tllfirestarter_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -130,7 +130,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 775,
@@ -155,7 +155,6 @@ return {
 				damage = {
 					areoship = 22.5,
 					default = 5,
-					
 					air = 90,
 				},
 			},

@@ -34,7 +34,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Curred",
 		noautofire = false,
-		objectname = "gok_curred",
+		objectname = "gok/gok_curred.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "gok_curred.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 56,
-				object = "gok_curred_dead",
+				object = "gok/gok_curred_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -144,7 +145,6 @@ return {
 				damage = {
 					areoship = 40,
 					default = 5,
-					
 					air = 160,
 				},
 			},

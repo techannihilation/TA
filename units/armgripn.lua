@@ -40,7 +40,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Stiletto",
-		objectname = "armgripn",
+		objectname = "arm/armgripn.s3o",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDINGEX",
 		sightdistance = 390,
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "armgripn.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 126,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -120,7 +121,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "EMPbomb",
 				noselfdamage = true,
 				paralyzer = true,

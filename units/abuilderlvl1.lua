@@ -39,7 +39,7 @@ return {
 		metalmake = 0.1,
 		metalstorage = 10,
 		name = "Engineer Air",
-		objectname = "ABuilderLvl1",
+		objectname = "arm/abuilderlvl1.s3o",
 		reclaimspeed = 20,
 		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",

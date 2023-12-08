@@ -36,7 +36,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "All-Terrain Construction Tortoise",
 		noautofire = false,
-		objectname = "CORCT",
+		objectname = "core/corct.s3o",
 		radaremitheight = 22,
 		reclaimspeed = 90,
 		repairspeed = 90,
@@ -78,6 +78,7 @@ return {
 		customparams = {
 			buildpic = "corct.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -88,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 108,
-				object = "CORCT_dead",
+				object = "core/corct_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

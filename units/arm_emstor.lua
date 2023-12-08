@@ -29,7 +29,7 @@ return {
 		metalstorage = 125000,
 		name = "T3 Metal Storage",
 		noautofire = false,		
-		objectname = "arm_emstor",
+		objectname = "arm/arm_emstor.s3o",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "SMALL_BUILDING",
@@ -41,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "arm_emstor.dds",
 			faction = "ARM",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +52,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				object = "arm_emstor_dead",
+				object = "arm/arm_emstor_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

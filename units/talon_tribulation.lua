@@ -1,7 +1,6 @@
 return {
 	talon_tribulation = {
 		acceleration = 0.015,
-
 		brakerate = 0.3,
 		buildcostenergy = 50300,
 		buildcostmetal = 1675,
@@ -36,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK3",
 		name = "Mobile Anti-Nuke",
-		objectname = "talon_tribulation",
+		objectname = "talon/talon_tribulation.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -58,6 +57,7 @@ return {
 		customparams = {
 			buildpic = "talon_tribulation.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1162,
-				object = "talon_tribulation_DEAD",
+				object = "talon/talon_tribulation_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -83,7 +83,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 620,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 			},
 		},
@@ -136,7 +136,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 150,
-				model = "weapon_antinuke",
+				model = "weapon_antinuke.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

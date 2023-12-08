@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK4",
 		name = "Tremor",
 		noautofire = false,
-		objectname = "cortremor",
+		objectname = "core/cortremor.s3o",
 		radaremitheight = 55,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "cortremor.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1567,
-				object = "cortremor_DEAD",
+				object = "core/cortremor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 836,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

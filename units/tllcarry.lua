@@ -36,7 +36,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Anti-Nuke & Aircraft Carrier",
 		noautofire = false,
-		objectname = "tllcarry",
+		objectname = "tll/tllcarry.s3o",
 		onoffable = true,
 		radardistance = 2500,
 		radaremitheight = 72,
@@ -56,6 +56,7 @@ return {
 			isairbase = true,
 			buildpic = "tllcarry.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1350,
-				object = "tllcarry_dead",
+				object = "tll/tllcarry_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -140,7 +141,7 @@ return {
 				impulsefactor = 0.123,
 				interceptor = 1,
 				metalpershot = 200,
-				model = "weapon_antinuke",
+				model = "weapon_antinuke.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 72000,

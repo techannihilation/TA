@@ -30,7 +30,7 @@ return {
 		metalstorage = 25,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "TLLMEX",
+		objectname = "tll/tllmex.s3o",
 		onoffable = true,
 		radaremitheight = 60,
 		selfdestructas = "TINY_BUILDINGEX",
@@ -41,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "tllmex.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +52,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 48,
-				object = "tllmex_dead",
+				object = "tll/tllmex_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 25,
-				object = "3x3F",
+				object = "3x3f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

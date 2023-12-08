@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "A.K.",
 		noautofire = false,
-		objectname = "CORAK",
+		objectname = "core/corak.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corak.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 26,
-				object = "CORAK_DEAD",
+				object = "core/corak_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 14,
-				object = "2X2C",
+				object = "2x2c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Disciple",
 		noautofire = false,
-		objectname = "gok_disciple",
+		objectname = "gok/gok_disciple.s3o",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_disciple.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 198,
-				object = "gok_disciple_DEAD",
+				object = "gok/gok_disciple_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 106,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

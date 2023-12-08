@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,
-		objectname = "ARMAAP",
+		objectname = "arm/armaap.s3o",
 		radaremitheight = 67,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -67,13 +67,13 @@ return {
 		customparams = {
 			buildpic = "armaap.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -17 -23",
 				collisionvolumescales = "106 40 48",
-
 				collisionvolumetype = "Box",
 				damage = 2968,
 				description = "Advanced Aircraft Plant Wreckage",
@@ -82,7 +82,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 3524,
-				object = "ARMAAP_DEAD",
+				object = "arm/armaap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -96,7 +96,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1879,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

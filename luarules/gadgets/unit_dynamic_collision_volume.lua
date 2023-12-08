@@ -11,7 +11,6 @@ function gadget:GetInfo()
 end
 
 local isSub = {}
-local is3do = {}
 local isShip = {}
 local canFly = {}
 local isFlyingTrans = {}
@@ -24,9 +23,6 @@ for i=1,#UnitDefs do
     if Game.armorTypes[UnitDefs[i].armorType] =="ships" or Game.armorTypes[UnitDefs[i].armorType] =="experimental_ships" then
     	--Spring.Echo("Ship Found ",UnitDefs[i].name)
         isShip[i] = true
-    end
-    if UnitDefs[i].modeltype=="3do" then
-        is3do[i] = true
     end
     if UnitDefs[i].canFly then
         canFly[i] = true
@@ -83,37 +79,24 @@ if (gadgetHandler:IsSyncedCode()) then
 						local p = mapFeatures[featureModelTrim]
 						spSetFeatureCollisionData(featID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 						spSetFeatureRadiusAndHeight(featID, math.min(p[1], p[3])/2, p[2])
-					elseif featureModel:find(".s3o") then
-						local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
-						--Spring.Echo(featureModel, xs, ys, zs, xo, yo, zo, vtype, htype, axis)
-						if (vtype>=3 and xs==ys and ys==zs) then
-							spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  1, htype, 1)
-						end
 					end
 				end
-			end			
+			end	
 		else
 			for _, featID in pairs(Spring.GetAllFeatures()) do
-					local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].modelpath
-					local featureModel = modelpath:lower()
-					if featureModel:find(".3do") then
-					local rs, hs
-					if (spGetFeatureRadius(featID)>47) then
-						rs, hs = 0.68, 0.60
-					else
-						rs, hs = 0.75, 0.67  
-					end
-					local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
-					if (vtype>=3 and xs==ys and ys==zs) then
-						spSetFeatureCollisionData(featID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.1323529*rs, zo,  vtype, htype, axis)
-					end
-					spSetFeatureRadiusAndHeight(featID, spGetFeatureRadius(featID)*rs, spGetFeatureHeight(featID)*hs)			
-				elseif featureModel:find(".s3o") then
-					local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
-					if (vtype>=3 and xs==ys and ys==zs) then
-						spSetFeatureCollisionData(featID, xs, ys*0.75, zs,  xo, yo-ys*0.09, zo,  vtype, htype, axis)
-					end
+				local modelpath = FeatureDefs[Spring.GetFeatureDefID(featID)].modelpath
+				local featureModel = modelpath:lower()
+				local rs, hs
+				if (spGetFeatureRadius(featID)>47) then
+					rs, hs = 0.68, 0.60
+				else
+					rs, hs = 0.75, 0.67  
 				end
+				local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetFeatureCollisionData(featID)
+				if (vtype>=3 and xs==ys and ys==zs) then
+					spSetFeatureCollisionData(featID, xs*rs, ys*hs, zs*rs,  xo, yo-ys*0.1323529*rs, zo,  vtype, htype, axis)
+				end
+				spSetFeatureRadiusAndHeight(featID, spGetFeatureRadius(featID)*rs, spGetFeatureHeight(featID)*hs)			
 			end
 		end
 	end
@@ -127,18 +110,26 @@ if (gadgetHandler:IsSyncedCode()) then
 	  	--Spring.Echo("Units Armor Class is : " .. (Game.armorTypes[uDef.armorType] or ""))
 	  	local perPieceTrunk = {}
 	  	local trunkIndex = nil
-		if is3do[unitDefID] then
-			if (pieceCollisionVolume[unitDefID]) then
-			local t = pieceCollisionVolume[unitDefID]
-				for pieceIndex=1, #spGetPieceList(unitID) do
-				local p = t[tostring(pieceIndex)]
-					if pieceIndex == t.trunk then
-						perPieceTrunk = p
-						trunkIndex = t.trunk
-					end
-					spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
+		if (pieceCollisionVolume[unitDefID]) then
+		local t = pieceCollisionVolume[unitDefID]
+			for pieceIndex=1, #spGetPieceList(unitID) do
+			local p = t[tostring(pieceIndex)]
+				if pieceIndex == t.trunk then
+					perPieceTrunk = p
+					trunkIndex = t.trunk
 				end
-			elseif dynamicPieceCollisionVolume[unitDefID] then
+				spSetPieceCollisionData(unitID, pieceIndex, false, 1, 1, 1, 0, 0, 0, 1, 1)
+			end
+		elseif dynamicPieceCollisionVolume[unitDefID] then
+			local t = dynamicPieceCollisionVolume[unitDefID].off
+			for pieceIndex=1, #spGetPieceList(unitID) do
+				local p = t[tostring(pieceIndex)]
+				if pieceIndex == t.trunk then
+					perPieceTrunk = p
+					trunkIndex = t.trunk
+				end
+			end
+			if dynamicPieceCollisionVolume[unitDefID] then
 				local t = dynamicPieceCollisionVolume[unitDefID].off
 				for pieceIndex=1, #spGetPieceList(unitID) do
 					local p = t[tostring(pieceIndex)]
@@ -166,40 +157,29 @@ if (gadgetHandler:IsSyncedCode()) then
 					rs, hs, ws = 0.77, 0.18, 0.77
 					ars, ahs = 0.375, 0.375 
 				else 
-					rs, hs, ws = 0.53, 0.26, 0.53
-					ars, ahs = 0.40, 0.40
-				end
-				local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
-				if (vtype>=3 and xs==ys and ys==zs) then
-					if ( ys*hs ) < 13 and (canFly[unitDefID]) then -- Limit Max V height
-				        spSetUnitCollisionData(unitID, xs*ws, 13, zs*rs,  xo, yo, zo,  1, htype, 1)
-					elseif (UnitDefs[unitDefID].canFly) then
-						spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  1, htype, 1)
-				  	else 
-						spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
-			  		end
-				end
-				if isFlyingTrans[unitDefID] then
-					spSetUnitRadiusAndHeight(unitID, 16, 16)
-				elseif isSub[unitDefID] then
-					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.65, spGetUnitHeight(unitID)*0.65)
-				else
-					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
+					spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
 				end
 			end
-			if isShip[unitDefID] then 
-				local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
-				local h = Spring.GetUnitHeight(unitID)
-				if by <= 0 and by + h >= 0 then
-					--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID)
-					Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az) 
-				end		
+			if isFlyingTrans[unitDefID] then
+				spSetUnitRadiusAndHeight(unitID, 16, 16)
+			elseif isSub[unitDefID] then
+				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.65, spGetUnitHeight(unitID)*0.65)
+			else
+				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*ars, spGetUnitHeight(unitID)*ahs)
 			end
-			if isTorp[unitDefID] then
-				local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
-				--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
-				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
-			end
+		end
+		if isShip[unitDefID] then 
+			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+			local h = Spring.GetUnitHeight(unitID)
+			if by <= 0 and by + h >= 0 then
+				--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID)
+				Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az) 
+			end		
+		end
+		if isTorp[unitDefID] then
+			local bx,by,bz,mx,my,mz,ax,ay,az = Spring.GetUnitPosition(unitID,true,true) --basepoint,midpoint,aimpoint
+			--Spring.Echo("Aimpoint Waterline: Set aimpoint of " .. unitID .. " torp ".. ay)
+			Spring.SetUnitMidAndAimPos(unitID,mx,my,mz,ax,2,az)
 		end
 
 		local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
@@ -241,7 +221,7 @@ if (gadgetHandler:IsSyncedCode()) then
 			local p = mapFeatures[featureModelTrim]
 			spSetFeatureCollisionData(featureID, p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9])
 			spSetFeatureRadiusAndHeight(featureID, min(p[1], p[3])*0.5, p[2])		
-		elseif featureModelTrim:find(".3do") then
+		else
 			local rs, hs
 			if (spGetFeatureRadius(featureID)>47) then
 				rs, hs = 0.68, 0.68

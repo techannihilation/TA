@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Millennium",
 		noautofire = false,
-		objectname = "ARMBATS",
+		objectname = "arm/armbats.s3o",
 		radaremitheight = 57,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "armbats.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 5250,
-				object = "ARMBATS_DEAD",
+				object = "arm/armbats_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2800,
-				object = "6X6D",
+				object = "6x6d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

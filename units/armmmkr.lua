@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Moho Metal Maker",
 		noautofire = false,		
-		objectname = "ARMMMKR",
+		objectname = "arm/armmmkr.s3o",
 		radaremitheight = 53,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "armmmkr.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 756,
-				object = "ARMMMKR_DEAD",
+				object = "arm/armmmkr_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 403,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

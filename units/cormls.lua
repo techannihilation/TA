@@ -40,7 +40,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Pathfinder",
 		noautofire = false,
-		objectname = "CORMLS",
+		objectname = "core/cormls.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		reclaimspeed = 60,
@@ -77,6 +77,7 @@ return {
 		customparams = {
 			buildpic = "cormls.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -91,7 +92,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 228,
-				object = "CORMLS_DEAD",
+				object = "core/cormls_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -105,7 +106,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 122,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
