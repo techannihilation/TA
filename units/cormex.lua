@@ -37,7 +37,7 @@ return {
 		metalstorage = 25,
 		name = "Metal Extractor",
 		noautofire = false,
-		objectname = "CORMEX",
+		objectname = "core/cormex.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 0,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "cormex.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 40,
-				object = "CORMEX_DEAD",
+				object = "core/cormex_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "3X3E",
+				object = "3x3e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

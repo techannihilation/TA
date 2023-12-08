@@ -27,7 +27,7 @@ return {
 		name = "Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "TLLGATE",
+		objectname = "tll/tllgate.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "CRAWL_BLAST",
@@ -39,6 +39,7 @@ return {
 			faction = "TLL",
 			shield_power = 7500,
 			shield_radius = 400,
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2793,
-				object = "tllgate_dead",
+				object = "tll/tllgate_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

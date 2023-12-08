@@ -28,7 +28,7 @@ return {
 		name = "Trident",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "armfguard",
+		objectname = "arm/armfguard.s3o",
 		onoffable = true,
 		radaremitheight = 26,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -40,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "armfguard.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +51,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2040,
-				object = "armfguard_dead",
+				object = "arm/armfguard_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

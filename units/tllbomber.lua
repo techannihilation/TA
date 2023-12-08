@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Pterodactyl",
 		noautofire = false,
-		objectname = "TLLBOMBER",
+		objectname = "tll/tllbomber.s3o",
 		radardistance = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 350,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllbomber.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 93,
-				object = "3X3Z",
+				object = "3x3z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -121,7 +122,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "Bombs",
 				noselfdamage = true,
 				range = 1280,

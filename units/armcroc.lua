@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Triton",
 		noautofire = false,		
-		objectname = "ARMCROC",
+		objectname = "arm/armcroc.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "armcroc.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 373,
-				object = "ARMCROC_DEAD",
+				object = "arm/armcroc_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 199,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

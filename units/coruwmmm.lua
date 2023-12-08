@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "coruwmmm.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1237,
-				object = "CORUWMMM_DEAD",
+				object = "core/coruwmmm_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +77,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 660,
-				object = "5X5A",
+				object = "5x5a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -16,7 +16,6 @@ return {
 		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "65 50 60",
-
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -39,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Loch Ness",
 		noautofire = false,
-		objectname = "tlllochness",
+		objectname = "tll/tlllochness.s3o",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "ESTOR_BUILDINGEX",
@@ -55,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tlllochness.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1087,
-				object = "tlllochness_dead",
+				object = "tll/tlllochness_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

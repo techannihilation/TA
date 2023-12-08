@@ -40,7 +40,7 @@ return {
 		mincloakdistance = 8,
 		name = "Mininuke mine",
 		noautofire = false,
-		objectname = "gok_mine3",
+		objectname = "gok/gok_mine3.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Instigator",
 		noautofire = false,
-		objectname = "CORGATOR",
+		objectname = "core/corgator.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "corgator.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 94,
-				object = "CORGATOR_DEAD",
+				object = "core/corgator_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 50,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

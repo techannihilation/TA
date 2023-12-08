@@ -22,7 +22,6 @@ return {
 		cloakcost = 1,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "18 10 18",
-		
 		collisionvolumetype = "CylY",
 		decloakspherical = false,
 		defaultmissiontype = "Standby_Mine",
@@ -45,7 +44,7 @@ return {
 		mincloakdistance = 0,
 		name = "Stopper",
 		noautofire = false,
-		objectname = "TLLMINE1",
+		objectname = "tll/tllmine1.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

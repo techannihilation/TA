@@ -38,7 +38,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Vasculitis",
 		noautofire = false,
-		objectname = "talon_vasculitis",
+		objectname = "talon/talon_vasculitis.s3o",
 		radaremitheight = 40,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_vasculitis.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 472,
-				object = "talon_vasculitis_DEAD",
+				object = "talon/talon_vasculitis_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -77,7 +78,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 232,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},
@@ -128,7 +129,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "HeavyRocket",
 				noselfdamage = true,
 				range = 750,
@@ -177,7 +178,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "RocketArtillery",
 				noselfdamage = true,
 				range = 900,
@@ -203,7 +204,6 @@ return {
 					subs = 5,
 				},
 			},
-
 		},
 		weapons = {
 			[1] = {

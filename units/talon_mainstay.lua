@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Mainstay",
 		noautofire = false,
-		objectname = "talon_mainstay",
+		objectname = "talon/talon_mainstay.s3o",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "talon_mainstay.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 583,
-				object = "talon_mainstay_DEAD",
+				object = "talon/talon_mainstay_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -81,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 318,
-				object = "5X5B",
+				object = "5x5b",
 				reclaimable = true,
 			},
 		},
@@ -164,7 +165,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

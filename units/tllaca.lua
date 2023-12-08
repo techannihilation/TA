@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "TLLACA",
+		objectname = "tll/tllaca.s3o",
 		selfdestructas = "BIG_UNIT_VTOL",
 		shownanospray = false,
 		sightdistance = 295,
@@ -83,6 +83,7 @@ return {
 		customparams = {
 			buildpic = "tllaca.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -92,7 +93,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 311,
-				object = "2X2Z",
+				object = "2x2z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

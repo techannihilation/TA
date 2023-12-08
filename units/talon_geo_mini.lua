@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Dwarf Geothermal Powerplant",
 		noautofire = false,
-		objectname = "talon_geo_mini",
+		objectname = "talon/talon_geo_mini.s3o",
 		onoffable = true,
 		radaremitheight = 30,
 		seismicsignature = 0,
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "talon_geo_mini.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 292,
-				object = "talon_geo_mini_dead",
+				object = "talon/talon_geo_mini_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 156,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},

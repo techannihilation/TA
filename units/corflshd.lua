@@ -28,7 +28,7 @@ return {
 		name = "Floating Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "corflshd.s3o",
+		objectname = "core/corflshd.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",

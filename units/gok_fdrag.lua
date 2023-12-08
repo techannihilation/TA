@@ -22,7 +22,7 @@ return {
 		minwaterdepth = 1,
 		name = "Shark's Teeth",
 		noautofire = false,
-		objectname = "gok_fdrag",
+		objectname = "gok/gok_fdrag.s3o",
 		radaremitheight = 38,
 		script = "drag.lua",
 		unitname = "gok_fdrag",
@@ -31,12 +31,12 @@ return {
 		customparams = {
 			buildpic = "gok_fdrag.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			floatingteeth = {
 				autoreclaimable = 0,
 				blocking = true,
-				
 				crushResistance = 250,
 				damage = 2500,
 				description = "Shark's Teeth",
@@ -47,7 +47,7 @@ return {
 				hitdensity = 100,
 				metal = 16,
 				nodrawundergray = true,
-				object = "gok_fdrag",
+				object = "gok/gok_fdrag",
 				reclaimable = true,
 				world = "allworld",
 				customparams = {

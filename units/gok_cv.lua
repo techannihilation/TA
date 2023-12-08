@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Amphibious Construction Vehicle",
 		noautofire = false,
-		objectname = "gok_cv",
+		objectname = "gok/gok_cv.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 40,
 		repairspeed = 40,
@@ -110,6 +110,7 @@ return {
 		customparams = {
 			buildpic = "gok_cv.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -124,7 +125,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 102,
-				object = "gok_cv_DEAD",
+				object = "gok/gok_cv_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -135,7 +136,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 54,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 			},
 		},

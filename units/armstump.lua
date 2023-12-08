@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Stumpy",
 		noautofire = false,
-		objectname = "ARMSTUMP",
+		objectname = "arm/armstump.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "armstump.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 161,
-				object = "ARMSTUMP_DEAD",
+				object = "arm/armstump_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 86,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Zorga",
 		noautofire = false,
-		objectname = "rumad_zorga",
+		objectname = "rumad/rumad_zorga.s3o",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 			buildpic = "rumad_zorga.dds",
 			faction = "RUMAD",
 			canjump = "1",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 337,
-				object = "rumad_zorga_DEAD",
+				object = "rumad/rumad_zorga_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 180,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

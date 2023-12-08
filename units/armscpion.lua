@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Scorpion",
-		objectname = "ARMSCPION",
+		objectname = "arm/armscpion.s3o",
 		radardistance = 620,
 		radardistancejam = 50,
 		radaremitheight = 25,
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "armscpion.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1417,
-				object = "armscpion_dead",
+				object = "arm/armscpion_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -208,7 +209,7 @@ return {
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Guided Torpedo",
 				range = 400,
 				reloadtime = 2.5,

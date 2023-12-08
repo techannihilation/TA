@@ -36,7 +36,7 @@ return {
 		movementclass = "HOVER1",
 		name = "Cut Throat",
 		noautofire = false,
-		objectname = "gok_cut",
+		objectname = "gok/gok_cut.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "FLEA_EX",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "gok_cut.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 6,
-				object = "1X1A",
+				object = "1x1a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

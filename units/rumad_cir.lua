@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Chainsaw",
 		noautofire = false,
-		objectname = "rumad_cir",
+		objectname = "rumad/rumad_cir.s3o",
 		radaremitheight = 51,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -47,6 +47,7 @@ return {
 			buildpic = "rumad_cir.dds",
 			faction = "RUMAD",
 			prioritytarget = "air",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			rumad_cir_dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1424,
-				object = "rumad_cir_DEAD",
+				object = "rumad/rumad_cir_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 759,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +128,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_rumad_aa",
+				model = "weapon_missile_rumad_aa.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1100,

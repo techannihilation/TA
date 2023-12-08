@@ -39,7 +39,7 @@ return {
 		movementclass = "ATANK4",
 		name = "Azul",
 		noautofire = false,
-		objectname = "talon_azul",
+		objectname = "talon/talon_azul.s3o",
 		onoffable = true,
 		radardistance = 1200,
 		radaremitheight = 50,
@@ -63,6 +63,7 @@ return {
 		customparams = {
 			buildpic = "talon_azul.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 675,
-				object = "talon_azul_DEAD",
+				object = "talon/talon_azul_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -85,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 			},
 		},

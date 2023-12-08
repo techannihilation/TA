@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T3 Energy Storage",
 		noautofire = false,
-		objectname = "talon_eestor",
+		objectname = "talon/talon_eestor.s3o",
 		radaremitheight = 102,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "talon_eestor.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -55,7 +56,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 7500,
-				object = "talon_eestor_DEAD",
+				object = "talon/talon_eestor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -69,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4000,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -31,7 +31,7 @@ return {
 		metalstorage = 3000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		objectname = "talon_MSTOR",
+		objectname = "talon/talon_mstor.s3o",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_BUILDING",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "talon_MSTOR.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 243,
-				object = "talon_MSTOR_DEAD",
+				object = "talon/talon_mstor_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 130,
-				object = "4X4E",
+				object = "4x4e",
 				reclaimable = true,
 			},
 		},

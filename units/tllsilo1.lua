@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Enriched Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "TLLSILO1",
+		objectname = "tll/tllsilo1.s3o",
 		radardistance = 0,
 		radaremitheight = 69,
 		script = "tllsilo.cob",
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "tllsilo.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 10625,
-				object = "tllsilo_dead",
+				object = "tll/tllsilo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -127,7 +128,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
 				metalpershot = 2500,
-				model = "weapon_nuke_core",
+				model = "weapon_nuke_core.s3o",
 				name = "NuclearMissile",
 				range = 72000,
 				reloadtime = 20,

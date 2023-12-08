@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nano Turret Level 4",
 		noautofire = false,
-		objectname = "RUMAD_NANOTC3",
+		objectname = "rumad/rumad_nanotc3.s3o",
 		radaremitheight = 37,
 		reclaimspeed = 900,
 		repairspeed = 900,

@@ -38,7 +38,7 @@ return {
 		name = "Evening Star",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "gok_eveningstar",
+		objectname = "gok/gok_eveningstar.s3o",
 		radaremitheight = 42,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_eveningstar.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1440,
-				object = "gok_eveningstar_DEAD",
+				object = "gok/gok_eveningstar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 768,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 280,
-				model = "weapon_antinuke_gok",
+				model = "weapon_antinuke_gok.s3o",
 				name = "TacticalNuke",
 				range = 2000,
 				reloadtime = 5,

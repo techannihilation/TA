@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "T1 Energy Storage",
 		noautofire = false,
-		objectname = "ARMESTOR",
+		objectname = "arm/armestor.s3o",
 		radaremitheight = 30,
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "armestor.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 127,
-				object = "ARMESTOR_DEAD",
+				object = "arm/armestor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +78,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 68,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

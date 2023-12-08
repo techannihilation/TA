@@ -28,7 +28,7 @@ return {
 		minwaterdepth = 11,
 		name = "Floating Metal Maker",
 		noautofire = false,		
-		objectname = "talon_fmkr",
+		objectname = "talon/talon_fmkr.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "ATOMIC_BLAST",

@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Detector",
 		noautofire = false,
-		objectname = "armdetector",
+		objectname = "arm/armdetector.s3o",
 		onoffable = true,
 		radardistance = 1490,
 		radaremitheight = 23,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "armdetector.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armhplasma_dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 72,
-				object = "armhplasma_dead",
+				object = "arm/armhplasma_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

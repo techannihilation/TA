@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Odin",
 		noautofire = false,
-		objectname = "tllhcrus",
+		objectname = "tll/tllhcrus.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tllhcrus.dds",
 			faction = "ARM",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 742,
-				object = "tllhcrus_dead",
+				object = "tll/tllhcrus_dead",
 				reclaimable = true,
 			},
 			heap = {

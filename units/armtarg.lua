@@ -32,7 +32,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Targeting Facility",
 		noautofire = false,		
-		objectname = "ARMTARG",
+		objectname = "arm/armtarg.s3o",
 		onoffable = true,
 		radaremitheight = 35,
 		seismicsignature = 0,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "armtarg.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 605,
-				object = "ARMTARG_DEAD",
+				object = "arm/armtarg_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 322,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

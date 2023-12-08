@@ -37,7 +37,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Silver",
 		noautofire = false,
-		objectname = "talon_mcv",
+		objectname = "talon/talon_mcv.s3o",
 		radaremitheight = 100,
 		selfdestructas = "EXO_BLAST",
 		selfdestructcountdown = 10,
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_mcv.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "talon_mcv_dead",
+				object = "talon/talon_mcv_dead",
 				reclaimable = true,
 			},
 			heap = {

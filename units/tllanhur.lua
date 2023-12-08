@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		name = "Anhur",
 		noautofire = false,
-		objectname = "tllanhur",
+		objectname = "tll/tllanhur.s3o",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingmoveorder = 1,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "tllanhur.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2213,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -115,7 +116,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "EMPbomb",
 				noselfdamage = true,
 				paralyzer = true,

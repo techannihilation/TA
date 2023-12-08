@@ -32,7 +32,7 @@ return {
 		movementclass = "HKBOT3",
 		name = "Hailstorm",
 		noautofire = false,
-		objectname = "tllhailstorm",
+		objectname = "tll/tllhailstorm.s3o",
 		radaremitheight = 80,
 		selfdestructas = "CRAWL_BLASTSML",
 		sightdistance = 620,
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "tllhailstorm.png",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 28216,
-				object = "tllpbot_dead",
+				object = "tll/tllpbot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

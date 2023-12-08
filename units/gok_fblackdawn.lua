@@ -11,7 +11,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "30 40 30",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -30,7 +29,7 @@ return {
 		minwaterdepth = 2,
 		name = "Black Dawn - Naval Series",
 		noautofire = false,
-		objectname = "gok_fblackdawn",
+		objectname = "gok/gok_fblackdawn.s3o",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -45,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "gok_fblackdawn.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +59,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 333,
-				object = "gok_blackdawn_DEAD",
+				object = "gok/gok_blackdawn_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -70,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 178,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},

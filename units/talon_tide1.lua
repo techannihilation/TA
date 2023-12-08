@@ -27,7 +27,7 @@ return {
 		minwaterdepth = 17,
 		name = "Underwater Advanced Tidal Generator",
 		noautofire = false,		
-		objectname = "talon_tide1",
+		objectname = "talon/talon_tide1.s3o",
 		onoffable = false,
 		radardistance = 0,
 		radaremitheight = 42,
@@ -40,6 +40,7 @@ return {
 			buildpic = "talon_tide1.dds",
 			energymultiplier = 3,
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +51,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 159,
-				object = "talon_tide1_dead",
+				object = "talon/talon_tide1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

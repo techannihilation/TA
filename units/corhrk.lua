@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Dominator",
 		noautofire = false,
-		objectname = "CORHRK",
+		objectname = "core/corhrk.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "corhrk.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 442,
-				object = "CORHRK_DEAD",
+				object = "core/corhrk_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 236,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -133,7 +134,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburst_core",
+				model = "weapon_starburst_core.s3o",
 				name = "Heavy Rocket",
 				noselfdamage = true,
 				range = 1350,

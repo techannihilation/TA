@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Sentinel",
 		noautofire = false,
-		objectname = "ARMHLT",
+		objectname = "arm/armhlt.s3o",
 		radaremitheight = 79,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "armhlt.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 333,
-				object = "ARMHLT_DEAD",
+				object = "arm/armhlt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 178,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

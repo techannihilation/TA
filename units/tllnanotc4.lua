@@ -40,7 +40,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nano Turret Level 5",
 		noautofire = false,
-		objectname = "tllnanotc4",
+		objectname = "tll/tllnanotc4.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		reclaimspeed = 5000,
@@ -58,7 +58,7 @@ return {
 		workertime = 10000,
 		customparams = {
 			buildpic = "tllnanotc4.dds",
-			faction = "tll",
+			faction = "TLL",
 		},
 		nanocolor = {
 			[1] = 0.56,

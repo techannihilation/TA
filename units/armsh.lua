@@ -37,8 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Skimmer",
 		noautofire = false,
-
-		objectname = "ARMSH",
+		objectname = "arm/armsh.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "armsh.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 69,
-				object = "ARMSH_DEAD",
+				object = "arm/armsh_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 37,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 9999,
 		name = "Safe Geothermal Powerplant",
 		noautofire = false,
-		objectname = "ARMGMM",
+		objectname = "arm/armgmm.s3o",
 		radaremitheight = 36,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",

@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Aircraft Plant",
 		noautofire = false,		
-		objectname = "CORAAP",
+		objectname = "core/coraap.s3o",
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -66,13 +66,13 @@ return {
 		customparams = {
 			buildpic = "coraap.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
 				blocking = true,
 				collisionvolumeoffsets = "0 -12 -22",
 				collisionvolumescales = "98 32 52",
-				
 				collisionvolumetype = "Box",
 				damage = 3074,
 				description = "Advanced Aircraft Plant Wreckage",
@@ -81,7 +81,7 @@ return {
 				footprintx = 7,
 				footprintz = 6,
 				metal = 3567,
-				object = "CORAAP_DEAD",
+				object = "core/coraap_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -95,7 +95,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1902,
-				object = "6X6A",
+				object = "6x6a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

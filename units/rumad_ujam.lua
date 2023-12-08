@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Tower",
 		noautofire = false,
-		objectname = "rumad_ujam",
+		objectname = "rumad/rumad_ujam.s3o",
 		onoffable = true,
 		script = "rumad_radar.lua",
 		radardistancejam = 6000,
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "rumad_ujam.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 776,
-				object = "rumad_ujam_dead",
+				object = "rumad/rumad_ujam_dead",
 				reclaimable = true,
 			},
 			heap = {

@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 1,
 		name = "Adv Ultimate Fusion Reactor",
 		noautofire = false,
-		objectname = "rumad_ufus",
+		objectname = "rumad/rumad_ufus.s3o",
 		radaremitheight = 500,
 		seismicsignature = 0,
 		selfdestructas = "FUSION_SUPERBLAST2",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "rumad_ufus.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 109000,
-				object = "rumad_ufus_DEAD",
+				object = "rumad/rumad_ufus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +74,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 95000,
-				object = "5X5D",
+				object = "5x5d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

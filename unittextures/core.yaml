@@ -1,0 +1,3849 @@
+color_image: ../TA/unittextures/core_tex1.dds
+other_image: ../TA/unittextures/core_tex2.dds
+normal_image: ../TA/unittextures/core_normals.dds
+width: 1388
+height: 1388
+textures:
+  - name: metal3a00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1356
+    top: 676
+  - name: noise3a00
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 528
+  - name: arm4b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 676
+  - name: armpanel400
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 900
+    top: 744
+  - name: arm5c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 1220
+  - name: krog0700
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 472
+  - name: noise6c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1344
+    top: 780
+  - name: 32xgouraud
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 676
+  - name: 32xlogos
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 676
+  - name: arm4c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 676
+  - name: krog1700
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 916
+  - name: solgradb
+    width: 12
+    height: 12
+    orig_width: 8
+    orig_height: 8
+    left: 620
+    top: 188
+  - name: krog1100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 676
+  - name: metal3c00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1224
+    top: 1284
+  - name: coreap0100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 960
+  - name: armpanel200
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1104
+  - name: noise6d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 1104
+  - name: metal3d00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1244
+    top: 1248
+  - name: krog1300
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1104
+  - name: metal3b00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 940
+    top: 1320
+  - name: krog1900
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 1188
+  - name: krog1800
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 868
+    top: 888
+  - name: arm4d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1136
+    top: 132
+  - name: arm5d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 200
+  - name: noise3b00
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 924
+  - name: noise6b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1104
+  - name: noise3c00
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 1056
+  - name: graynoise200
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 1032
+  - name: graynoise100
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 676
+    top: 1344
+  - name: graynoise400
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1140
+  - name: wreck004c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1212
+  - name: wreck001d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 472
+  - name: wreck00100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1220
+    top: 472
+  - name: wreck001c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1288
+    top: 472
+  - name: explauncher00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 996
+  - name: wreck002b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 540
+  - name: wreck004d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 996
+  - name: wreck004e00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 676
+  - name: wreck003g00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 744
+  - name: wreck001b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 812
+  - name: wreck004f00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 996
+  - name: wreck003e00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 996
+  - name: wreck004b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 1016
+  - name: meteor0300
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 1084
+  - name: wreck006g00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 996
+  - name: wreck002c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 472
+  - name: wreck002a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 1288
+  - name: corut1b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 540
+  - name: corve02b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 960
+  - name: corsea5b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 540
+  - name: arm32lt
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 540
+  - name: corv05b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 540
+  - name: circ0200
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 996
+  - name: corve01b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 540
+  - name: plate1b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 540
+  - name: stone200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 540
+  - name: corv02e00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 1032
+  - name: corbld2c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 540
+  - name: corv02d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 1104
+  - name: corv04b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1288
+    top: 540
+  - name: corbld2d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 1140
+  - name: armv3c00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 868
+    top: 1160
+  - name: corv02a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 1248
+  - name: armv4a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 996
+  - name: corveh2a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 404
+  - name: armpanel300
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 996
+  - name: noise6a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1068
+  - name: corv02b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1140
+    top: 816
+  - name: corplat00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1276
+    top: 816
+  - name: corbld0100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 540
+  - name: corv02c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 888
+  - name: corveh8a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 608
+  - name: armv01b00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 1256
+  - name: wreck003d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 996
+  - name: wreck003c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1320
+  - name: wreck003b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1284
+  - name: wreck003a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1248
+  - name: armv3a00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 800
+    top: 960
+  - name: flashing0100
+    width: 12
+    height: 12
+    orig_width: 8
+    orig_height: 8
+    left: 644
+    top: 188
+  - name: flashing0200
+    width: 12
+    height: 12
+    orig_width: 8
+    orig_height: 8
+    left: 608
+    top: 188
+  - name: armv3b00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 800
+    top: 1064
+  - name: noise2b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1212
+  - name: coreap0300
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 812
+  - name: noise2c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1176
+  - name: corebridge00
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 132
+    top: 0
+  - name: corelogogouraud
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 880
+  - name: dkengine200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 948
+  - name: longtile00
+    width: 132
+    height: 68
+    orig_width: 128
+    orig_height: 64
+    left: 0
+    top: 596
+  - name: lightarmour00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 1084
+  - name: dkengine100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 1152
+  - name: darkarmour00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 1220
+  - name: darkarmourlit00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 1288
+  - name: darkarmour200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 472
+  - name: corsea7c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 472
+  - name: corsea7d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 472
+  - name: corut1a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 472
+  - name: corcl0800
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1072
+    top: 816
+  - name: color_16776960
+    width: 5
+    height: 5
+    orig_width: 1
+    orig_height: 1
+    left: 124
+    top: 674
+  - name: corve01d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 764
+    top: 1324
+  - name: noise2d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 1032
+  - name: corcl09a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1004
+    top: 852
+  - name: corv04d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1176
+  - name: corve02c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1276
+    top: 852
+  - name: enginelt100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 1084
+  - name: graynoise500
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1264
+    top: 1248
+  - name: corve02d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 888
+  - name: corcl0900
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 972
+    top: 888
+  - name: corveh0100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1140
+  - name: halftileblend00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1040
+    top: 888
+  - name: redengine00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 1016
+  - name: tredside100
+    width: 68
+    height: 20
+    orig_width: 64
+    orig_height: 16
+    left: 132
+    top: 1360
+  - name: corveh10c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 676
+  - name: armv3d00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 868
+    top: 956
+  - name: darkpatch00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 676
+  - name: glass200
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 996
+  - name: greyblend00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 676
+  - name: grid100
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 664
+  - name: corve01a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1344
+    top: 816
+  - name: corv05c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 676
+  - name: corsea6d100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 744
+  - name: corut1c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 812
+  - name: glow1a00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 1068
+  - name: corv2d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 948
+  - name: corv04a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 1016
+  - name: corv04c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1344
+    top: 852
+  - name: bluelight00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1208
+    top: 852
+  - name: missiles1600
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 796
+  - name: corve01c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 904
+    top: 1284
+  - name: corsea7b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 1220
+  - name: graynoise300
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 1104
+  - name: corv3d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 608
+  - name: corv08a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 960
+  - name: corve03b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 608
+  - name: corcl0600
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 608
+  - name: corcl0700
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1072
+    top: 852
+  - name: corsea6d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 608
+  - name: 32xgouraudoa00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 608
+  - name: corv2c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 608
+  - name: metal1b00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 1140
+  - name: circuitsc00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 936
+    top: 852
+  - name: metal1a00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 1212
+  - name: metal1c00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1224
+    top: 1248
+  - name: corsea5d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1288
+    top: 608
+  - name: wreck004a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 676
+  - name: wreck004g00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 960
+  - name: wreck003f00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 960
+  - name: wreck005b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1032
+  - name: wreck008a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 880
+  - name: meteor0200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 948
+  - name: wreck005c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 996
+  - name: clplat00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 960
+  - name: arm3d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 960
+  - name: corv01b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1244
+    top: 924
+  - name: beacon300
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 372
+    top: 1356
+  - name: beacon100
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1224
+    top: 1320
+  - name: armhov0200
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 1356
+    top: 268
+  - name: corve02a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 1340
+  - name: noise3d00
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 928
+  - name: juncam0100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1284
+  - name: corv4d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 744
+  - name: cl03a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 1176
+  - name: camod0200
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1284
+  - name: armhov0400
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 676
+    top: 1276
+  - name: corv4b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 812
+  - name: armhov0300
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 836
+    top: 1064
+  - name: armhov0100
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 1356
+    top: 200
+  - name: corv4c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 336
+  - name: corcl0500
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 800
+    top: 1272
+  - name: corve10b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 868
+    top: 852
+  - name: corv4a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1220
+    top: 200
+  - name: juncam0300
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 1140
+  - name: juncam0400
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1212
+  - name: wreck007c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 1176
+  - name: meteor0100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 1288
+  - name: wreck005f00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1248
+  - name: wreck005a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1320
+  - name: wreck007b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 1212
+  - name: wreck007a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 1212
+  - name: wreck005d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 1212
+  - name: wreck005e00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 1068
+  - name: glow00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 268
+  - name: corsea6b00
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 1060
+  - name: corveh9a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1108
+    top: 888
+  - name: skinny3c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1176
+    top: 888
+  - name: colorsdk
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 1344
+    top: 712
+  - name: energy200
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 264
+    top: 0
+  - name: corcl0200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 268
+  - name: corbld2b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 268
+  - name: color_16711680
+    width: 5
+    height: 5
+    orig_width: 1
+    orig_height: 1
+    left: 124
+    top: 694
+  - name: corveh6b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 1084
+  - name: metal2b00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1284
+    top: 1248
+  - name: corsea5a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1204
+    top: 132
+  - name: corsea6a00
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 132
+  - name: iceblend00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1284
+  - name: glass100
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1244
+    top: 1320
+  - name: glass300
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1244
+    top: 1284
+  - name: corveh03c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 864
+    top: 132
+  - name: corve03a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 796
+    top: 132
+  - name: plate1a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 728
+    top: 132
+  - name: armpanel100
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1140
+    top: 852
+  - name: corve03d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 132
+    top: 1188
+  - name: corv3c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 200
+  - name: plate1c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 200
+  - name: armbldg22b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1104
+  - name: armdome100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 132
+    top: 1256
+  - name: corbd01b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 200
+  - name: corv09b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 200
+  - name: armbld200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 200
+  - name: corbld22a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 200
+  - name: plant6a00
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 1356
+    top: 404
+  - name: corcl0300
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 396
+    top: 0
+  - name: corbld22b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 200
+  - name: core32dk
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 1104
+  - name: corveh10b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 200
+  - name: noise4a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 200
+  - name: core32lt
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1140
+  - name: wreck002d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 200
+  - name: colorsmd
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 104
+    top: 1360
+  - name: arm01a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 200
+  - name: colordk2
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 440
+    top: 1356
+  - name: corse10a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 200
+  - name: corse10c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 880
+  - name: corbd01c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 336
+  - name: arm01c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 268
+  - name: corse10b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 336
+  - name: arm01b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 336
+  - name: corsea6a100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1220
+    top: 336
+  - name: color_16777215
+    width: 5
+    height: 5
+    orig_width: 1
+    orig_height: 1
+    left: 124
+    top: 684
+  - name: corcam6c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 404
+  - name: corcam4c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 472
+  - name: corv1b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 1236
+  - name: armv01a00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 800
+    top: 1168
+  - name: corcam5c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 1132
+  - name: corv05a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 608
+  - name: arm01d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 676
+  - name: arm02b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 744
+  - name: arm5b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 812
+  - name: solid3a
+    width: 12
+    height: 12
+    orig_width: 8
+    orig_height: 8
+    left: 596
+    top: 188
+  - name: corcam7c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 1028
+  - name: arm6b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 336
+  - name: corcam2c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 924
+  - name: colorslt
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 1256
+    top: 712
+  - name: noise5c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 1016
+  - name: corsea13b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 1084
+  - name: solid3b
+    width: 12
+    height: 12
+    orig_width: 8
+    orig_height: 8
+    left: 656
+    top: 188
+  - name: corv2b00
+    width: 132
+    height: 68
+    orig_width: 128
+    orig_height: 64
+    left: 200
+    top: 132
+  - name: armv02c00
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 676
+    top: 1140
+  - name: corv3b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 1288
+  - name: tredside200
+    width: 68
+    height: 20
+    orig_width: 64
+    orig_height: 16
+    left: 0
+    top: 1360
+  - name: armbui2d00
+    width: 36
+    height: 132
+    orig_width: 32
+    orig_height: 128
+    left: 68
+    top: 664
+  - name: armv02b00
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 1356
+    top: 608
+  - name: armhrk100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 404
+  - name: corsea6c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 404
+  - name: corve05a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 852
+  - name: corv09c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1068
+  - name: bluenoise300
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 404
+  - name: armbld300
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1208
+    top: 816
+  - name: window1d00
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 668
+    top: 168
+  - name: corve05b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1244
+    top: 888
+  - name: window1c00
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 268
+    top: 1356
+  - name: corsol1b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 268
+  - name: corsol1a00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 868
+    top: 1092
+  - name: corcl1a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 268
+  - name: metal1d00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 960
+  - name: energy300
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1220
+    top: 268
+  - name: ducts200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1288
+    top: 268
+  - name: energy100
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 528
+    top: 0
+  - name: etch300
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 336
+  - name: mav0200
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 576
+    top: 1356
+  - name: noise5b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 472
+  - name: comcent1200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 540
+  - name: comcent1000
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 608
+  - name: circuits00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 676
+  - name: noise2a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1176
+  - name: corcam1c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 812
+  - name: corcam1a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 880
+  - name: corcam1b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 268
+  - name: bluenoise100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 1016
+  - name: corcam1d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 1084
+  - name: corcam2b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 1068
+  - name: solid2a
+    width: 12
+    height: 12
+    orig_width: 8
+    orig_height: 8
+    left: 632
+    top: 188
+  - name: solid1a
+    width: 12
+    height: 12
+    orig_width: 8
+    orig_height: 8
+    left: 668
+    top: 188
+  - name: rockcam100
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1176
+    top: 924
+  - name: rockcam200
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 972
+    top: 924
+  - name: rockcam300
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1312
+    top: 888
+  - name: armv02d00
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 1356
+    top: 472
+  - name: coreap0200
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 868
+    top: 1024
+  - name: armcam1a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 1176
+  - name: corsea7a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 336
+  - name: corv02f00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 936
+    top: 816
+  - name: armbui2a00
+    width: 36
+    height: 132
+    orig_width: 32
+    orig_height: 128
+    left: 68
+    top: 1060
+  - name: armbui2c00
+    width: 36
+    height: 132
+    orig_width: 32
+    orig_height: 128
+    left: 68
+    top: 928
+  - name: armbui2b00
+    width: 36
+    height: 132
+    orig_width: 32
+    orig_height: 128
+    left: 68
+    top: 796
+  - name: cocam9c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 924
+  - name: cocam11a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1040
+    top: 924
+  - name: cocam11b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1108
+    top: 924
+  - name: corv01c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1312
+    top: 924
+  - name: corv01a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 1212
+  - name: cocam12a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 336
+  - name: cocam12c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 336
+  - name: cocam12d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 744
+    top: 336
+  - name: cocam9a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 904
+    top: 1176
+  - name: cocam10d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 996
+  - name: cocam10c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 1212
+  - name: cocam12b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 336
+  - name: cocam9b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 832
+    top: 744
+  - name: cocam11c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1280
+  - name: core_dead00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 336
+  - name: corcam5b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1176
+  - name: corv03b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 336
+  - name: corsea3c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 336
+  - name: corcam5d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 960
+  - name: corsea2d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 888
+  - name: corcam2a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 852
+  - name: corv03c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 1288
+  - name: corsea2c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 780
+  - name: corsea2a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 744
+  - name: corsea2b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1288
+    top: 676
+  - name: corsea3b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 1220
+  - name: corcom3a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1212
+  - name: corcom3b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 1140
+  - name: noise4b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1248
+  - name: corcl0400
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 1152
+  - name: etch0200
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 1052
+  - name: corcam6b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 744
+  - name: corcam4d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 404
+  - name: corcam7a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 968
+    top: 744
+  - name: corv09d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 1068
+  - name: corcom2d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1308
+    top: 744
+  - name: corcam7b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1172
+    top: 744
+  - name: corcam7d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1104
+    top: 744
+  - name: noise4d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 1068
+  - name: noise4c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 1068
+  - name: corsea5c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 268
+  - name: bluenoise200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 948
+  - name: arm6d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 404
+  - name: armplat0200
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1004
+    top: 816
+  - name: arm6c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 404
+  - name: arm07g00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1068
+  - name: arm6a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 404
+  - name: skinny3a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 404
+  - name: camo200
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1140
+  - name: corse11a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 1220
+  - name: window1b00
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 632
+    top: 168
+  - name: armv4b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1320
+  - name: wreck005g00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1212
+  - name: corcam6d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 1152
+  - name: corcam4b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 948
+  - name: corsea1c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1176
+  - name: corsea1d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1140
+  - name: corv06b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 936
+    top: 780
+  - name: czmet700
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 660
+    top: 0
+  - name: corv07c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1068
+  - name: corv1a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1276
+    top: 780
+  - name: armv02a00
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 836
+    top: 1272
+  - name: armplat02c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 996
+  - name: corv07b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1212
+  - name: corv06a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 868
+    top: 780
+  - name: noise5a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 540
+  - name: corv1c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 816
+  - name: corv07a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1248
+  - name: corv2a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1288
+    top: 336
+  - name: corbd01a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 200
+  - name: corv08d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1320
+  - name: corv08c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 1104
+  - name: corv07d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1176
+  - name: corv03a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 200
+  - name: corsea4b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 816
+  - name: corsea4a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1068
+  - name: corv08b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 1104
+  - name: lackshaken00
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 792
+    top: 0
+  - name: circuitsb00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 696
+    top: 1212
+  - name: colours_0200
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 924
+    top: 0
+  - name: armplat02b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 764
+    top: 744
+  - name: colours00
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 0
+    top: 0
+  - name: wreck006c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1104
+  - name: corve04a00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 132
+    top: 1324
+  - name: corve04b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1140
+    top: 780
+  - name: armbld100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 932
+    top: 132
+  - name: arm02a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1000
+    top: 132
+  - name: arm02d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1068
+    top: 132
+  - name: arm02c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1272
+    top: 132
+  - name: bluenoise400
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 268
+  - name: arm3c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1176
+  - name: descamo200
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1140
+  - name: descamo300
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1068
+  - name: mav0300
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 1364
+    top: 712
+  - name: mav0100
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 704
+    top: 168
+  - name: arm7b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 268
+  - name: arm7a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1248
+  - name: descamo400
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1284
+  - name: krog0100
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 404
+    top: 1356
+  - name: armbui1a00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 848
+  - name: corv1d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1036
+    top: 744
+  - name: armcam4c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1332
+    top: 1032
+  - name: b700
+    width: 5
+    height: 5
+    orig_width: 1
+    orig_height: 1
+    left: 124
+    top: 679
+  - name: b600
+    width: 5
+    height: 5
+    orig_width: 1
+    orig_height: 1
+    left: 124
+    top: 664
+  - name: corsea5c100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1068
+  - name: reactorenergy2glow00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 268
+  - name: a400
+    width: 5
+    height: 5
+    orig_width: 1
+    orig_height: 1
+    left: 124
+    top: 689
+  - name: arm5a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 268
+  - name: treadsvlight00
+    width: 132
+    height: 36
+    orig_width: 128
+    orig_height: 32
+    left: 0
+    top: 1324
+  - name: armbld400
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 800
+    top: 780
+  - name: corbld2a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 336
+    top: 268
+  - name: noise5d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 268
+    top: 268
+  - name: corv06c00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1072
+    top: 780
+  - name: wreck006f00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 1176
+  - name: wreck006b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1320
+  - name: metal2a00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 1368
+    top: 1176
+  - name: diamond floor00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 1220
+  - name: darkpatch2lit00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 1152
+  - name: darkpatchlit00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 1016
+  - name: corv09a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 1140
+  - name: glow100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 1140
+  - name: corsea6b100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 948
+  - name: arm07f00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 1120
+  - name: energy400
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 880
+  - name: wreck006a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1140
+  - name: camod0100
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1220
+    top: 676
+  - name: armcam3d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1140
+  - name: camoe0200
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1320
+  - name: camoc0300
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1284
+  - name: camoc0200
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1248
+  - name: camoc0400
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1176
+  - name: bluelight2_anim00
+    width: 36
+    height: 132
+    orig_width: 32
+    orig_height: 128
+    left: 68
+    top: 1192
+  - name: bluelight_anim00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 924
+  - name: krog1200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 676
+  - name: krog0500
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 1288
+    top: 712
+  - name: krog0800
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 608
+  - name: krog0900
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 540
+  - name: krog0200
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 1220
+    top: 712
+  - name: krog1000
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 472
+  - name: coresolar02b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 404
+  - name: etchb0200
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1352
+  - name: corsea12b00
+    width: 132
+    height: 68
+    orig_width: 128
+    orig_height: 64
+    left: 332
+    top: 132
+  - name: corsea12c00
+    width: 132
+    height: 68
+    orig_width: 128
+    orig_height: 64
+    left: 464
+    top: 132
+  - name: corsea12d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 336
+  - name: corsea8a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 200
+    top: 268
+  - name: armv4c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1296
+    top: 960
+  - name: corsea9b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1288
+    top: 200
+  - name: corsea3d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 404
+  - name: corsea8b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 812
+  - name: armhov0700
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 836
+    top: 960
+  - name: armhov0600
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 676
+    top: 1208
+  - name: corsea8c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 744
+  - name: corcam8b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1104
+  - name: corv3a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1220
+    top: 608
+  - name: krog1400
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 608
+  - name: wreck006d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 960
+  - name: armbui1b00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 1340
+    top: 132
+  - name: window1a00
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 336
+    top: 1356
+  - name: cocam10b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 960
+  - name: cocam11d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1032
+  - name: missile300
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 508
+    top: 1356
+  - name: arm4a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 608
+  - name: corcom3d00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 960
+  - name: armlogogouraud
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 608
+  - name: corse10d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 1288
+  - name: corveh7a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 960
+  - name: corcam3c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 904
+    top: 1320
+  - name: krog1500
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 1152
+  - name: bar000
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 780
+  - name: krog1600
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 608
+  - name: corveh10a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 540
+    top: 880
+  - name: onoff01
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 1324
+    top: 712
+  - name: krog0600
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 540
+    top: 1356
+  - name: krog0300
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 472
+    top: 1356
+  - name: amhov0800
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 1356
+    top: 336
+  - name: metal300
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 660
+  - name: mat100
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 1056
+    top: 0
+  - name: metal100
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 792
+  - name: dcom200
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 264
+  - name: mat200
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 1188
+    top: 0
+  - name: alien_green_dots200
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 0
+    top: 132
+  - name: alien_full00
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 0
+    top: 264
+  - name: beacon500
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1044
+    top: 1032
+  - name: alienskin1
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 676
+    top: 676
+  - name: beacon400
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1068
+  - name: beacon600
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1104
+  - name: alienglo00
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 644
+    top: 1356
+  - name: alienskin1-12000
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 1288
+  - name: alienskin1-11000
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 1220
+  - name: alienskin1-9000
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 1152
+  - name: cocam13b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 1084
+  - name: cocam13d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 472
+  - name: cocam13c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 472
+  - name: corv04b100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1212
+  - name: corveh01a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1248
+  - name: corv04c100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1284
+  - name: corv04a100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1320
+  - name: corv04d100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1008
+    top: 1032
+  - name: wreck006e00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1080
+    top: 1032
+  - name: comcent200
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1116
+    top: 1032
+  - name: camoc0100
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 1032
+  - name: 4lounch00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1188
+    top: 1032
+  - name: mkl_dead00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 880
+    top: 472
+  - name: armhov0500
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 1356
+    top: 540
+  - name: juncam0200
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1224
+    top: 1032
+  - name: metal2c00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1260
+    top: 1032
+  - name: naval011300
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 608
+    top: 1356
+  - name: execside100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 812
+    top: 472
+  - name: mine1_~300
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 132
+    top: 396
+  - name: missile200
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 236
+    top: 1356
+  - name: missile100
+    width: 20
+    height: 20
+    orig_width: 16
+    orig_height: 16
+    left: 304
+    top: 1356
+  - name: corsea1b00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 972
+    top: 1104
+  - name: tubc00
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 104
+    top: 928
+  - name: tuba00
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 104
+    top: 1060
+  - name: grid200
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 1320
+    top: 0
+  - name: can200
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 676
+    top: 1008
+  - name: can300
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 104
+    top: 664
+  - name: car100
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1004
+    top: 780
+  - name: mat300
+    width: 132
+    height: 132
+    orig_width: 128
+    orig_height: 128
+    left: 0
+    top: 396
+  - name: tub400
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 836
+    top: 1168
+  - name: can100
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 104
+    top: 796
+  - name: rouil100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 744
+  - name: tub100
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 868
+    top: 1228
+  - name: dcom100
+    width: 68
+    height: 132
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 1192
+  - name: tub300
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 868
+    top: 1296
+  - name: car200
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1240
+    top: 744
+  - name: tubb00
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 104
+    top: 1192
+  - name: lum100
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 676
+    top: 744
+  - name: tub200
+    width: 20
+    height: 68
+    orig_width: 16
+    orig_height: 64
+    left: 732
+    top: 1212
+  - name: can400
+    width: 20
+    height: 132
+    orig_width: 16
+    orig_height: 128
+    left: 676
+    top: 876
+  - name: far00
+    width: 132
+    height: 36
+    orig_width: 128
+    orig_height: 32
+    left: 596
+    top: 132
+  - name: arm3b00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 868
+    top: 816
+  - name: corsea8d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 472
+  - name: plant3b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1288
+    top: 404
+  - name: krog0400
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 200
+    top: 1356
+  - name: corsea13c00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1220
+    top: 404
+  - name: corsea13d00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1152
+    top: 404
+  - name: brownvent3light00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1016
+    top: 404
+  - name: corcam4a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 948
+    top: 404
+  - name: coresolar02a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 404
+    top: 1016
+  - name: coresolar01b00
+    width: 36
+    height: 68
+    orig_width: 32
+    orig_height: 64
+    left: 764
+    top: 984
+  - name: corsea3a00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1220
+    top: 540
+  - name: corsea1a00
+    width: 36
+    height: 36
+    orig_width: 32
+    orig_height: 32
+    left: 1152
+    top: 996
+  - name: plant4b00
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 1084
+    top: 540
+  - name: explauncher0100
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 596
+    top: 168
+  - name: explauncher0200
+    width: 36
+    height: 20
+    orig_width: 32
+    orig_height: 16
+    left: 68
+    top: 1360
+  - name: camoflage300
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 1208
+    top: 780
+  - name: metal2d00
+    width: 20
+    height: 36
+    orig_width: 16
+    orig_height: 32
+    left: 940
+    top: 1284
+  - name: corv03b100
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 608
+    top: 540
+  - name: corcl02_200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 1152
+  - name: corveh9a_300
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 948
+  - name: corcl02_300
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 880
+  - name: corveh9a_200
+    width: 68
+    height: 68
+    orig_width: 64
+    orig_height: 64
+    left: 472
+    top: 608
+  - name: corv03c100
+    width: 5
+    height: 5
+    orig_width: 1
+    orig_height: 1
+    left: 124
+    top: 669
+  - name: cocam9d00
+    width: 68
+    height: 36
+    orig_width: 64
+    orig_height: 32
+    left: 696
+    top: 1316
+  - name: corsea12a00
+    width: 132
+    height: 68
+    orig_width: 128
+    orig_height: 64
+    left: 0
+    top: 528

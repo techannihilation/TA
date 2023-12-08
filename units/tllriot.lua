@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Pacifier",
 		noautofire = false,
-		objectname = "tllriot",
+		objectname = "tll/tllriot.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllriot.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 260,
-				object = "tllriot_dead",
+				object = "tll/tllriot_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

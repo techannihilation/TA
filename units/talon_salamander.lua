@@ -37,7 +37,7 @@ return {
 		movementclass = "HOVER3",
 		name = "Salamander",
 		noautofire = false,
-		objectname = "talon_salamander",
+		objectname = "talon/talon_salamander.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_salamander.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 215,
-				object = "talon_salamander_DEAD",
+				object = "talon/talon_salamander_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 114,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 			},
 		},

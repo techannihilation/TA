@@ -38,7 +38,7 @@ return {
 		movementclass = "TKBOT3",
 		name = "Weaver",
 		noautofire = false,
-		objectname = "armweaver",
+		objectname = "arm/armweaver.s3o",
 		radardistance = 0,
 		radaremitheight = 34,
 		selfdestructas = "CRAWL_BLAST",
@@ -56,6 +56,7 @@ return {
 			faction = "ARM",
 			prioritytarget = "air",
 			--requiretech = "Advanced T2 Unit Research Centre",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2512,
-				object = "armweaver_dead",
+				object = "arm/armweaver_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1340,
-				object = "4X4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -135,7 +136,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
@@ -160,7 +161,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

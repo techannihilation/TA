@@ -38,7 +38,7 @@ return {
 		movementclass = "TANKHOVER3",
 		name = "Night Fall",
 		noautofire = false,
-		objectname = "gok_nightfall",
+		objectname = "gok/gok_nightfall.s3o",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "ESTOR_BUILDINGEX",
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "gok_nightfall.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1087,
-				object = "gok_nightfall_dead",
+				object = "gok/gok_nightfall_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

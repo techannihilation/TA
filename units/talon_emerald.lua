@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Emerald",
 		noautofire = false,		
-		objectname = "talon_emerald",
+		objectname = "talon/talon_emerald.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "talon_emerald.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 206,
-				object = "talon_emerald_DEAD",
+				object = "talon/talon_emerald_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -83,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 110,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 			},
 		},

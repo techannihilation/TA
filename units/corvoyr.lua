@@ -38,8 +38,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Voyeur",
 		noautofire = false,
-		
-		objectname = "CORVOYR",
+		objectname = "core/corvoyr.s3o",
 		onoffable = true,
 		radardistance = 2200,
 		radaremitheight = 22,
@@ -56,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "corvoyr.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 74,
-				object = "CORVOYR_DEAD",
+				object = "core/corvoyr_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 39,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

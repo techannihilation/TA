@@ -46,7 +46,7 @@ return {
 		mobilestandorders = 1,
 		name = "Octopus",
 		noautofire = false,
-		objectname = "gok_octopus",
+		objectname = "gok/gok_octopus.s3o",
 		pitchscale = 0.5,
 		radaremitheight = 30,
 		reclaimable = true,
@@ -63,6 +63,7 @@ return {
 		unitname = "gok_octopus",
 		customparams = {
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 12,
 				footprintz = 12,
 				metal = 721250,
-				object = "gok_octopus_dead",
+				object = "gok/gok_octopus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

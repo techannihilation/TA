@@ -34,7 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Baahl",
 		noautofire = false,
-		objectname = "gok_flak",
+		objectname = "gok/gok_flak.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_flak.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 783,
-				object = "gok_flak_DEAD",
+				object = "gok/gok_flak_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 418,
-				object = "2X2C",
+				object = "2x2c",
 				reclaimable = true,
 			},
 		},
@@ -125,7 +126,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_missile_gok",
+				model = "weapon_missile_gok.s3o",
 				name = "Long Range Missile",
 				noselfdamage = true,
 				proximitypriority = -1.5,
@@ -145,7 +146,6 @@ return {
 				damage = {
 					areoship = 175,
 					default = 5,
-					
 					air = 750,
 				},
 			},
@@ -164,7 +164,7 @@ return {
 				gravityaffected = true,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_plasma_gok",
+				model = "weapon_plasma_gok.s3o",
 				name = "FlakCannon",
 				noselfdamage = true,
 				range = 775,
@@ -182,7 +182,6 @@ return {
 				damage = {
 					areoship = 312.5,
 					default = 5,
-					
 					air = 1250,
 				},
 			},

@@ -36,7 +36,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Templar",
 		noautofire = false,
-		objectname = "rumad_templar",
+		objectname = "rumad/rumad_templar.s3o",
 		radaremitheight = 28,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "rumad_templar.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 198,
-				object = "rumad_templar_DEAD",
+				object = "rumad/rumad_templar_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 106,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -163,7 +164,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,

@@ -32,7 +32,7 @@ return {
 		metalstorage = 4000,
 		name = "T1 Metal Storage",
 		noautofire = false,
-		objectname = "tllMSTOR",
+		objectname = "tll/tllmstor.s3o",
 		radaremitheight = 43,
 		selfdestructas = "SMALL_BUILDING",
 		sightdistance = 210,
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "tllmstor.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 171,
-				object = "tllmstor_dead",
+				object = "tll/tllmstor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

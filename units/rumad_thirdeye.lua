@@ -43,7 +43,7 @@ return {
 		moverate1 = 8,
 		name = "Third Eye",
 		noautofire = false,
-		objectname = "rumad_thirdeye",
+		objectname = "rumad/rumad_thirdeye.s3o",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDINGEX",
@@ -66,6 +66,7 @@ return {
 				[5] = "piecetrail4",
 				[6] = "piecetrail6",
 			},
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -76,7 +77,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 317,
-				object = "8X8A",
+				object = "8x8a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

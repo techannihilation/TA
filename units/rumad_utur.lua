@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "rumad_utur",
 		noautofire = false,
-		objectname = "rumad_utur",
+		objectname = "rumad/rumad_utur.s3o",
 		radardistance = 0,
 		radaremitheight = 66,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -40,6 +40,7 @@ return {
 		customparams = {
 			buildpic = "rumad_utur.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -50,7 +51,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 23812,
-				object = "rumad_utur_dead",
+				object = "rumad/rumad_utur_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

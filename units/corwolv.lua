@@ -38,8 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Wolverine",
 		noautofire = false,
-
-		objectname = "CORWOLV",
+		objectname = "core/corwolv.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -61,6 +60,7 @@ return {
 			buildpic = "corwolv.dds",
 			canareaattack = 1,
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 127,
-				object = "CORWOLV_DEAD",
+				object = "core/corwolv_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

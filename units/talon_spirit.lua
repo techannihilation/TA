@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Spirit",
 		noautofire = false,
-		objectname = "talon_spirit",
+		objectname = "talon/talon_spirit.s3o",
 		selfdestructas = "BIG_UNIT_VTOL",
 		sightdistance = 400,
 		standingmoveorder = 1,
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "talon_spirit.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1213,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -117,7 +118,7 @@ return {
 				impulseboost = 0.15,
 				impulsefactor = 0.15,
 				interceptedbyshieldtype = 16,
-				model = "weapon_advbomb",
+				model = "weapon_advbomb.s3o",
 				mygravity = 0.2,
 				name = "ClusterBombs",
 				noselfdamage = true,

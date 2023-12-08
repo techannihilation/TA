@@ -16,7 +16,6 @@ return {
 		category = "ALL UNDERWATER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "90 60 90",
-		
 		collisionvolumetype = "CylY",
 		description = "Tech Level 3 (Amphibious)",
 		energyuse = 300,
@@ -36,8 +35,7 @@ return {
 		metalstorage = 100,
 		name = "Metal Extractor",
 		noautofire = false,
-		
-		objectname = "tllemex",
+		objectname = "tll/tllemex.s3o",
 		onoffable = true,
 		radaremitheight = 35,
 		seismicsignature = 0,

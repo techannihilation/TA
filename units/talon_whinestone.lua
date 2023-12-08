@@ -38,8 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Whinestone",
 		noautofire = false,
-
-		objectname = "talon_whinestone",
+		objectname = "talon/talon_whinestone.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "talon_whinestone.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 161,
-				object = "talon_whinestone_DEAD",
+				object = "talon/talon_whinestone_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -85,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 86,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 			},
 		},

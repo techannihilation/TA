@@ -29,7 +29,7 @@ return {
 		minwaterdepth = 10,
 		name = "Sonar Station",
 		noautofire = false,
-		objectname = "talon_sonar",
+		objectname = "talon/talon_sonar.s3o",
 		onoffable = true,
 		radaremitheight = 37,
 		seismicsignature = 0,
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "talon_sonar.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 15,
-				object = "talon_sonar_DEAD",
+				object = "talon/talon_sonar_dead",
 				reclaimable = true,
 			},
 		},

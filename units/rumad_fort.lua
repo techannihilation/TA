@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Fortification Wall",
 		noautofire = false,
-		objectname = "rumad_fort",
+		objectname = "rumad/rumad_fort.s3o",
 		radaremitheight = 50,
 		script = "drag.lua",
 		unitname = "rumad_fort",
@@ -34,6 +34,7 @@ return {
 		customparams = {
 			buildpic = "rumad_fort.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			fortification = {
@@ -53,7 +54,7 @@ return {
 				hitdensity = 100,
 				metal = 45,
 				nodrawundergray = true,
-				object = "rumad_fort",
+				object = "rumad/rumad_fort",
 				reclaimable = true,
 				reclaimtime = 2000,
 				seqnamereclamate = "tree1reclamate",
@@ -72,7 +73,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 7,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

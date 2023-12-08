@@ -33,7 +33,7 @@ return {
 		minwaterdepth = 5,
 		name = "Kernel",
 		noautofire = false,
-		objectname = "talon_kernel",
+		objectname = "talon/talon_kernel.s3o",
 		radaremitheight = 32,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "talon_kernel.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 1355,
-				object = "ARMFFLAK_DEAD",
+				object = "arm/armfflak_dead",
 				reclaimable = true,
 			},
 		},
@@ -131,10 +132,8 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-					
 					air = 250,
 				},
-
 			},
 		},
 		weapons = {

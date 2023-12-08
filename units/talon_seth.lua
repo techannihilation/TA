@@ -39,7 +39,7 @@ return {
 		movementclass = "HTANK8",
 		name = "Seth",
 		noautofire = false,
-		objectname = "talon_seth",
+		objectname = "talon/talon_seth.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -63,6 +63,7 @@ return {
 			shield_emit_height = 75,
 			shield_power = 10000,
 			shield_radius = 500,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 675,
-				object = "talon_seth_DEAD",
+				object = "talon/talon_seth_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -85,7 +86,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 360,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 			},
 		},

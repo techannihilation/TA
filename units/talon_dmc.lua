@@ -11,7 +11,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 -50 0",
 		collisionvolumescales = "200 260 200",
-		
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "GUARD_NOMOVE",
@@ -31,7 +30,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Black Diamond",
 		noautofire = false,
-		objectname = "talon_dmc",
+		objectname = "talon/talon_dmc.s3o",
 		radardistance = 0,
 		radaremitheight = 66,
 		selfdestructas = "MEDIUM_BUILDING",
@@ -42,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "talon_dmc.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +52,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 23812,
-				object = "talon_dmc_dead",
+				object = "talon/talon_dmc_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

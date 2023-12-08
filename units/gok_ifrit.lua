@@ -34,7 +34,7 @@ return {
 		movementclass = "hkbot4",
 		name = "Ifrit",
 		noautofire = false,
-		objectname = "gok_ifrit",
+		objectname = "gok/gok_ifrit.s3o",
 		radardistance = 0,
 		radaremitheight = 76,
 		selfdestructas = "BANTHA_BLAST",
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "gok_ifrit.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 8475,
-				object = "gok_ifrit_dead",
+				object = "gok/gok_ifrit_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

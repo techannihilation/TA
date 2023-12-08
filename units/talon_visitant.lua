@@ -37,8 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Visitant",
 		noautofire = false,
-
-		objectname = "talon_visitant",
+		objectname = "talon/talon_visitant.s3o",
 		radaremitheight = 50,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 500,
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_visitant.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5265,
-				object = "talon_visitant_dead",
+				object = "talon/talon_visitant_dead",
 				reclaimable = true,
 			},
 			heap = {

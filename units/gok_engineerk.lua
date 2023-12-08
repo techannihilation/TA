@@ -42,7 +42,7 @@ return {
 		name = "Assault Engineer Kbot",
 		noautofire = false,
 		nochasecategory = "ALL",
-		objectname = "gok_engineerk",
+		objectname = "gok/gok_engineerk.s3o",
 		radardistance = 50,
 		radaremitheight = 25,
 		reclaimspeed = 40,
@@ -84,6 +84,7 @@ return {
 		customparams = {
 			buildpic = "gok_engineerk.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -97,7 +98,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1105,
-				object = "gok_engineerk_DEAD",
+				object = "gok/gok_engineerk_dead",
 				reclaimable = true,
 			},
 		},

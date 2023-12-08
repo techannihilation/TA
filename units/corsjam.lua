@@ -37,8 +37,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Phantom",
 		noautofire = false,
-		
-		objectname = "CORSJAM",
+		objectname = "core/corsjam.s3o",
 		onoffable = true,
 		radardistancejam = 900,
 		radaremitheight = 25,
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corsjam.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 108,
-				object = "CORSJAM_DEAD",
+				object = "core/corsjam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 57,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

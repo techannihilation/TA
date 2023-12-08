@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Floating Light Laser Tower",
 		noautofire = false,
-		objectname = "gok_fllt",
+		objectname = "gok/gok_fllt.s3o",
 		radaremitheight = 65,
 		script = "gok_llt.cob",
 		seismicsignature = 0,
@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "gok_fllt.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 78,
-				--object = "gok_fllt_DEAD",
+				--object = "gok/gok_fllt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 42,
-				object = "2X2B",
+				object = "2x2b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

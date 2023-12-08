@@ -44,7 +44,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "ARMACA",
+		objectname = "arm/armaca.s3o",
 		reclaimspeed = 45,
 		repairspeed = 45,
 		radaremitheight = 7,
@@ -91,6 +91,7 @@ return {
 		customparams = {
 			buildpic = "armaca.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -100,7 +101,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2X2Z",
+				object = "2x2z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

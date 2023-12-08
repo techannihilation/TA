@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Samson",
 		noautofire = false,
-		objectname = "ARMSAM",
+		objectname = "arm/armsam.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -60,6 +60,7 @@ return {
 			buildpic = "armsam.dds",
 			faction = "ARM",
 			prioritytarget = "air",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -74,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 111,
-				object = "ARMSAM_DEAD",
+				object = "arm/armsam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +89,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 59,
-				object = "3X3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -144,7 +145,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 800,

@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Reliser",
 		noautofire = false,
-		objectname = "TLLLBT",
+		objectname = "tll/tlllbt.s3o",
 		radaremitheight = 50,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 350,
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "tlllbt.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -54,7 +55,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1612,
-				object = "tlllbt_dead",
+				object = "tll/tlllbt_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 860,
-				object = "3x3D",
+				object = "3x3d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

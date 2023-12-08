@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Shipyard",
 		noautofire = false,
-		objectname = "ARMESY",
+		objectname = "arm/armesy.s3o",
 		radaremitheight = 73,
 		selfdestructas = "CRAWL_BLAST",
 		shownanospray = false,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "armesy.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 15,
 				footprintz = 15,
 				metal = 11925,
-				object = "ARMESY_DEAD",
+				object = "arm/armesy_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 6360,
-				object = "7X7E",
+				object = "7x7e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

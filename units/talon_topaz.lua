@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Topaz",
 		noautofire = false,		
-		objectname = "talon_topaz",
+		objectname = "talon/talon_topaz.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "talon_topaz.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 23,
-				object = "talon_topaz_DEAD",
+				object = "talon/talon_topaz_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -84,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 12,
-				object = "2X2F",
+				object = "2x2f",
 				reclaimable = true,
 			},
 		},

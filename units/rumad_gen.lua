@@ -26,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Energy Driller",
 		noautofire = false,
-		objectname = "rumad_gen",
+		objectname = "rumad/rumad_gen.s3o",
 		radaremitheight = 32,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 250,
@@ -35,6 +35,7 @@ return {
 		customparams = {
 			buildpic = "rumad_gen.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -45,7 +46,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1147,
-				object = "rumad_gen_dead",
+				object = "rumad/rumad_gen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

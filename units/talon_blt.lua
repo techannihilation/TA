@@ -36,8 +36,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Thea",
-		
-		objectname = "talon_blt",
+		objectname = "talon/talon_blt.s3o",
 		radardistance = 1500,
 		radaremitheight = 79,
 		seismicsignature = 0,
@@ -53,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "talon_blt.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3862,
-				object = "talon_blt_DEAD",
+				object = "talon/talon_blt_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -78,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2060,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 			},
 		},

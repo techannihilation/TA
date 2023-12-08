@@ -34,7 +34,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Juggo",
 		noautofire = false,
-		objectname = "ARMJUGG",
+		objectname = "arm/armjugg.s3o",
 		radardistance = 0,
 		radaremitheight = 73,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -52,6 +52,7 @@ return {
 			buildpic = "armjugg.dds",
 			canjump = "1",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 9937,
-				object = "armjugg_dead",
+				object = "arm/armjugg_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

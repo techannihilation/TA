@@ -40,7 +40,7 @@ return {
 		minwaterdepth = 0,
 		name = "Mega",
 		noautofire = false,
-		objectname = "ARMFMINE3",
+		objectname = "arm/armfmine3.s3o",
 		radaremitheight = 25,
 		script = "mines_lus.lua",
 		seismicsignature = 0,

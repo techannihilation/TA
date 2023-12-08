@@ -35,7 +35,7 @@ return {
 		mobilestandorders = 1,
 		name = "Peeper",
 		noautofire = false,
-		objectname = "ARMPEEP",
+		objectname = "arm/armpeep.s3o",
 		radardistance = 1000,
 		radaremitheight = 4,
 		seismicsignature = 0,

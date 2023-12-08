@@ -34,8 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Fink",
 		noautofire = false,
-		
-		objectname = "CORFINK",
+		objectname = "core/corfink.s3o",
 		radardistance = 900,
 		radaremitheight = 6,
 		seismicsignature = 0,

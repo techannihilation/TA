@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Heavy Experimental Armored Fusion Reactor",
 		noautofire = false,
-		objectname = "armefus",
+		objectname = "arm/armefus.s3o",
 		onoffable = false,
 		radaremitheight = 128,
 		seismicsignature = 0,
@@ -50,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "armefus.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 7455,
-				object = "armefus_DEAD",
+				object = "arm/armefus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +79,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 3976,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

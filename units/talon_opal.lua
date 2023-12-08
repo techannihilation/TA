@@ -37,7 +37,7 @@ return {
 		movementclass = "HAKBOT4",
 		name = "Opal",
 		noautofire = false,
-		objectname = "talon_opal",
+		objectname = "talon/talon_opal.s3o",
 		radaremitheight = 37,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_opal.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2600,
-				object = "talon_opal_DEAD",
+				object = "talon/talon_opal_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -77,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1386,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 			},
 		},
@@ -162,7 +163,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Torpedo",
 				noselfdamage = true,
 				range = 450,

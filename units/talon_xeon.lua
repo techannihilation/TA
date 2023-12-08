@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK2",
 		name = "Xeon",
 		noautofire = false,
-		objectname = "talon_xeon",
+		objectname = "talon/talon_xeon.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "talon_xeon.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 240,
-				object = "talon_xeon_DEAD",
+				object = "talon/talon_xeon_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 128,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

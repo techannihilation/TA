@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Shredder",
 		noautofire = false,
-		objectname = "CORARCH",
+		objectname = "core/corarch.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -55,6 +55,7 @@ return {
 			buildpic = "corarch.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 753,
-				object = "CORARCH_DEAD",
+				object = "core/corarch_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 402,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -136,7 +137,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				range = 850,
@@ -164,7 +165,6 @@ return {
 				damage = {
 					areoship = 5,
 					default = 5,
-					
 					air = 50,
 				},
 			},
@@ -200,7 +200,6 @@ return {
 				damage = {
 					areoship = 56.25,
 					default = 5,
-					
 					air = 225,
 				},
 			},

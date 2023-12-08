@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Super Heavy Elemental Reactor",
 		noautofire = false,
-		objectname = "TLLMEGACOLDFUS",
+		objectname = "tll/tllmegacoldfus.s3o",
 		radaremitheight = 106,
 		selfdestructas = "FUSION_BLAST_BIG",
 		sightdistance = 210,
@@ -38,6 +38,7 @@ return {
 		customparams = {
 			buildpic = "tllmegacoldfus.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -48,7 +49,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 66750,
-				object = "tllmegacoldfus_dead",
+				object = "tll/tllmegacoldfus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

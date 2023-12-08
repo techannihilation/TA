@@ -36,7 +36,7 @@ return {
 		movementclass = "HTANK4",
 		name = "Demon",
 		noautofire = false,
-		objectname = "tlldemon",
+		objectname = "tll/tlldemon.s3o",
 		radardistance = 0,
 		radaremitheight = 29,
 		selfdestructas = "BIG_UNIT",
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "tlldemon.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6187,
-				object = "tllnaja_dead",
+				object = "tll/tllnaja_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile_demon",
+				model = "weapon_missile_demon.s3o",
 				name = "Experimental Missile",
 				noselfdamage = true,
 				proximitypriority = -1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Coral",
 		noautofire = false,
-		objectname = "talon_coral",
+		objectname = "talon/talon_coral.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "talon_coral.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 840,
-				object = "talon_coral_DEAD",
+				object = "talon/talon_coral_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -80,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 448,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 			},
 		},
@@ -129,7 +130,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 600,

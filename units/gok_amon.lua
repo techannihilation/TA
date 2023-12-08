@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT6",
 		name = "Amon",
 		noautofire = false,
-		objectname = "gok_amon",
+		objectname = "gok/gok_amon.s3o",
 		radaremitheight = 50,
 		seismicsignature = 0,
 		selfdestructas = "SHOCKER",
@@ -52,6 +52,7 @@ return {
 		customparams = {
 			buildpic = "gok_amon.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1737,
-				object = "gok_amon_DEAD",
+				object = "gok/gok_amon_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1200,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

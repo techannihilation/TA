@@ -37,8 +37,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Anonymous",
 		noautofire = false,
-		
-		objectname = "talon_anonymous",
+		objectname = "talon/talon_anonymous.s3o",
 		onoffable = true,
 		radardistancejam = 1000,
 		radaremitheight = 25,
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "talon_anonymous.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +68,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 104,
-				object = "talon_anonymous_DEAD",
+				object = "talon/talon_anonymous_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +79,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 55,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 			},
 		},

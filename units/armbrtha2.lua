@@ -34,8 +34,7 @@ return {
 		maxwaterdepth = 0,
 		name = "T1 Big Bertha",
 		noautofire = false,
-
-		objectname = "armbrtha2",
+		objectname = "arm/armbrtha2.s3o",
 		radardistance = 0,
 		radaremitheight = 30,
 		selfdestructas = "CRAWL_BLAST",
@@ -50,6 +49,7 @@ return {
 			buildpic = "armbrtha2.dds",
 			canareaattack = 1,
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1721,
-				object = "armbrtha2_dead",
+				object = "arm/armbrtha2_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -41,7 +41,7 @@ return {
 		movementclass = "ATANK3",
 		name = "Construction Amphibious Vehicle",
 		noautofire = false,
-		objectname = "tllmando",
+		objectname = "tll/tllmando.s3o",
 		radaremitheight = 25,
 		repairspeed = 75,
 		reclaimspeed = 60,
@@ -117,6 +117,7 @@ return {
 		customparams = {
 			buildpic = "tllmando.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -128,7 +129,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 517,
-				object = "tllmando_DEAD",
+				object = "tll/tllmando_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -37,7 +37,7 @@ return {
 		movementclass = "DBOAT6",
 		name = "Visitor",
 		noautofire = false,
-		objectname = "TLLVISITOR",
+		objectname = "tll/tllvisitor.s3o",
 		radaremitheight = 36,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 245,
@@ -53,6 +53,7 @@ return {
 			buildpic = "tllvisitor.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -63,7 +64,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 2137,
-				object = "tllvisitor_dead",
+				object = "tll/tllvisitor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_rocketl",
+				model = "weapon_rocketl.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				range = 650,
@@ -159,7 +160,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},
@@ -177,7 +177,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_starburstm",
+				model = "weapon_starburstm.s3o",
 				name = "Vpulse Rocket",
 				noselfdamage = true,
 				range = 1550,

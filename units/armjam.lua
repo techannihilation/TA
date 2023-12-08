@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK3",
 		name = "Jammer",
 		noautofire = false,
-		objectname = "ARMJAM",
+		objectname = "arm/armjam.s3o",
 		onoffable = true,
 		radardistance = 0,
 		radardistancejam = 450,
@@ -60,6 +60,7 @@ return {
 		customparams = {
 			buildpic = "armjam.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "ARMJAM_DEAD",
+				object = "arm/armjam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "3X3B",
+				object = "3x3b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

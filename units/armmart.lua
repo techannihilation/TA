@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK3",
 		name = "Luger",
 		noautofire = false,
-		objectname = "ARMMART",
+		objectname = "arm/armmart.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,6 +59,7 @@ return {
 			buildpic = "armmart.dds",
 			canareaattack = 1,
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 315,
-				object = "ARMMART_DEAD",
+				object = "arm/armmart_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 168,
-				object = "2X2E",
+				object = "2x2e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

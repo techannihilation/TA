@@ -42,7 +42,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "rumad_ca",
+		objectname = "rumad/rumad_ca.s3o",
 		reclaimspeed = 20,
 		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",

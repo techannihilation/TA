@@ -34,8 +34,7 @@ return {
 		movementclass = "AMPTBOT",
 		name = "SoftShell",
 		noautofire = false,
-		
-		objectname = "tllsoftshell",
+		objectname = "tll/tllsoftshell.s3o",
 		onoffable = true,
 		radardistancejam = 550,
 		radaremitheight = 26,
@@ -51,6 +50,7 @@ return {
 		customparams = {
 			buildpic = "tllsoftshell.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -61,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 232,
-				object = "tllturtle_dead",
+				object = "tll/tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

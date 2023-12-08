@@ -39,7 +39,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Praetorian",
 		noautofire = false,
-		objectname = "talon_boxer",
+		objectname = "talon/talon_boxer.s3o",
 		radardistance = 0,
 		radaremitheight = 100,
 		script = "talon_boxer.cob",
@@ -62,6 +62,7 @@ return {
 			shield_emit_height = 60.43,
 			shield_power = 2600,
 			shield_radius = 230,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -76,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 9400,
-				object = "talon_boxer_dead",
+				object = "talon/talon_boxer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +91,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5320,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -203,7 +204,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_rocketm",
+				model = "weapon_rocketm.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,

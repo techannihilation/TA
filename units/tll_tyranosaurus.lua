@@ -38,7 +38,7 @@ return {
 		movementclass = "ATANK20",
 		name = "Tyranosaurus",
 		noautofire = false,
-		objectname = "tll_tyranosaurus",
+		objectname = "tll/tll_tyranosaurus.s3o",
 		radaremitheight = 145,
 		selfdestructas = "MEGA_BLAST",
 		selfdestructcountdown = 10,
@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "tll_tyranosaurus.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 507200,
-				object = "tll_tyranosaurus_dead",
+				object = "tll/tll_tyranosaurus_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -192,7 +193,7 @@ return {
 				firestarter = 100,
 				flighttime = 6,
 				metalpershot = 0,
-				model = "weapon_starburstl",
+				model = "weapon_starburstl.s3o",
 				name = "Vpulse Rocket",
 				range = 1400,
 				reloadtime = 1,

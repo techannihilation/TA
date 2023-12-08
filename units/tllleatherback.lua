@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
 		name = "Leatherback",
-		objectname = "tllleatherback",
+		objectname = "tll/tllleatherback.s3o",
 		radardistance = 0,
 		radaremitheight = 25,
 		selfdestructas = "BIG_UNITEX",
@@ -49,6 +49,7 @@ return {
 		customparams = {
 			buildpic = "tllleatherback.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 487,
-				object = "tllturtle_dead",
+				object = "tll/tllturtle_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -124,7 +125,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "Torpedo",
 				noselfdamage = true,
 				predictboost = 0,

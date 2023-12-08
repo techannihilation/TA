@@ -34,7 +34,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Long Range Plasma Cannon",
-		objectname = "gok_lrpt",
+		objectname = "gok/gok_lrpt.s3o",
 		radaremitheight = 92,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -51,6 +51,7 @@ return {
 			buildpic = "gok_lrpt.dds",
 			canareaattack = 1,
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3225,
-				object = "gok_lrpt_dead",
+				object = "gok/gok_lrpt_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -76,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1720,
-				object = "3X3C",
+				object = "3x3c",
 				reclaimable = true,
 			},
 		},

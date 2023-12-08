@@ -34,7 +34,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Valkyrie",
 		noautofire = false,
-		objectname = "gok_valkyrie",
+		objectname = "gok/gok_valkyrie.s3o",
 		radardistance = 0,
 		radaremitheight = 73,
 		selfdestructas = "CRAWL_BLASTSML",
@@ -52,6 +52,7 @@ return {
 			buildpic = "gok_valkyrie.dds",
 			canjump = "1",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -62,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 9937,
-				object = "gok_valkyrie_dead",
+				object = "gok/gok_valkyrie_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

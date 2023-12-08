@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "tllshipyardlvl3.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -57,7 +58,7 @@ return {
 				footprintx = 20,
 				footprintz = 15,
 				metal = 78000,
-				object = "tllshipyardlvl3_dead",
+				object = "tll/tllshipyardlvl3_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

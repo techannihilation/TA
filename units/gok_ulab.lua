@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Gantry",
 		noautofire = false,
-		objectname = "gok_ulab",
+		objectname = "gok/gok_ulab.s3o",
 		radardistance = 50,
 		radaremitheight = 82,
 		seismicsignature = 0,
@@ -67,6 +67,7 @@ return {
 		customparams = {
 			buildpic = "gok_ulab.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -78,7 +79,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 67200,
-				object = "gok_ulab_dead",
+				object = "gok/gok_ulab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -92,7 +93,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 35840,
-				object = "7X7C",
+				object = "7x7c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

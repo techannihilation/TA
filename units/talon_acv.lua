@@ -42,7 +42,7 @@ return {
 		movementclass = "TANK3",
 		name = "Construction Vehicle",
 		noautofire = false,
-		objectname = "talon_acv",
+		objectname = "talon/talon_acv.s3o",
 		radardistance = 50,
 		radaremitheight = 25,
 		reclaimspeed = 80,
@@ -90,6 +90,7 @@ return {
 		customparams = {
 			buildpic = "talon_acv.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			["1_dead"] = {
@@ -103,7 +104,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1343,
-				object = "talon_acv_DEAD",
+				object = "talon/talon_acv_dead",
 				reclaimable = true,
 			},
 		},

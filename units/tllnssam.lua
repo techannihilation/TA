@@ -29,7 +29,7 @@ return {
 		name = "NS Wiper",
 		noautofire = false,
 		noshadow = 1,
-		objectname = "TLLNSSAM",
+		objectname = "tll/tllnssam.s3o",
 		onoffable = true,
 		radardistance = 950,
 		radaremitheight = 37,
@@ -43,6 +43,7 @@ return {
 			buildpic = "tllnssam.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +54,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 336,
-				object = "tllNSSAM_dead",
+				object = "tll/tllnssam_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -123,7 +124,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				proximitypriority = 1,
@@ -152,7 +153,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

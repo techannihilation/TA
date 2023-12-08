@@ -40,7 +40,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Engineer Sub",
 		noautofire = false,
-		objectname = "TLLCSUB",
+		objectname = "tll/tllcsub.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 60,
 		repairspeed = 60,
@@ -79,6 +79,7 @@ return {
 		customparams = {
 			buildpic = "tllcsub.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -89,7 +90,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 322,
-				object = "TLLCSUB_dead",
+				object = "tll/tllcsub_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -102,7 +103,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 172,
-				object = "3x3F",
+				object = "3x3f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

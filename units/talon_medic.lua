@@ -37,7 +37,7 @@ return {
 		metalmake = 0.1,
 		metalstorage = 10,
 		name = "Engineer Air",
-		objectname = "talon_medic",
+		objectname = "talon/talon_medic.s3o",
 		reclaimspeed = 20,
 		repairspeed = 20,
 		selfdestructas = "SMALL_UNIT_VTOL",

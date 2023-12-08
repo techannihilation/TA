@@ -33,7 +33,7 @@ return {
 		metalmake = 0,
 		name = "Energy Driller",
 		noautofire = false,
-		objectname = "tllgen",
+		objectname = "tll/tllgen.s3o",
 		radaremitheight = 32,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 200,
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "tllgen.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1147,
-				object = "tllgen_dead",
+				object = "tll/tllgen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

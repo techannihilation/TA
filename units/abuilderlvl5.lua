@@ -40,7 +40,7 @@ return {
 		metalmake = 5,
 		metalstorage = 100,
 		name = "Cruiser",
-		objectname = "abuilderlvl5",
+		objectname = "arm/abuilderlvl5.s3o",
 		radardistance = 0,
 		selfdestructas = "SHIPBLAST",
 		shownanospray = false,
@@ -71,6 +71,7 @@ return {
 		customparams = {
 			buildpic = "abuilderlvl5.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -80,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19599,
-				object = "abuilderlvl5_dead",
+				object = "arm/abuilderlvl5_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

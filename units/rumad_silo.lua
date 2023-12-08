@@ -29,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Nuclear ICBM Launcher",
 		noautofire = false,
-		objectname = "rumad_silo",
+		objectname = "rumad/rumad_silo.s3o",
 		radardistance = 50,
 		radaremitheight = 32,
 		seismicsignature = 0,
@@ -44,6 +44,7 @@ return {
 		customparams = {
 			buildpic = "rumad_silo.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -58,7 +59,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6112,
-				object = "rumad_silo_DEAD",
+				object = "rumad/rumad_silo_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +73,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3260,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +133,7 @@ return {
 				impulseboost = 0.5,
 				impulsefactor = 2.5,
 				metalpershot = 1250,
-				model = "weapon_nuke_rumad",
+				model = "weapon_nuke_rumad.s3o",
 				name = "Nuclear Missile",
 				range = 72000,
 				reloadtime = 20,

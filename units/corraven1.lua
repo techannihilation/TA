@@ -36,7 +36,7 @@ return {
 		movementclass = "HKBOT7",
 		name = "Cataclysm",
 		noautofire = false,
-		objectname = "corraven1",
+		objectname = "core/corraven1.s3o",
 		radaremitheight = 46,
 		seismicsignature = 0,
 		selfdestructas = "EXO_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "corraven1.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 3637,
-				object = "corraven1_DEAD",
+				object = "core/corraven1_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 1940,
-				object = "7X7A",
+				object = "7x7a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -137,7 +138,7 @@ return {
 				flighttime = 6,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_rocketl",
+				model = "weapon_rocketl.s3o",
 				movingaccuracy = 800,
 				name = "Ultimate Barrage",
 				noselfdamage = true,

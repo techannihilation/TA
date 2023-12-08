@@ -39,7 +39,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Glass",
 		noautofire = false,
-		objectname = "talon_spy",
+		objectname = "talon/talon_spy.s3o",
 		onoffable = true,
 		radaremitheight = 25,
 		seismicsignature = 2,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "talon_spy.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -70,7 +71,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 102,
-				object = "talon_mercenary_dead",
+				object = "talon/talon_mercenary_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 54,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

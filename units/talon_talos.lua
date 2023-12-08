@@ -37,7 +37,7 @@ return {
 		movementclass = "VKBOT5",
 		name = "Talos",
 		noautofire = false,
-		objectname = "talon_talos",
+		objectname = "talon/talon_talos.s3o",
 		pushresistant = true,
 		radardistance = 0,
 		radaremitheight = 93,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "talon_talos.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 19440,
-				object = "talon_talos_dead",
+				object = "talon/talon_talos_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -128,7 +129,7 @@ return {
 				flighttime = 3,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_rocketm",
+				model = "weapon_rocketm.s3o",
 				name = "Rocket",
 				noselfdamage = true,
 				range = 900,
@@ -203,7 +204,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "talon_rocket",
+				model = "talon/talon_rocket.s3o",
 				name = "HeavyRockets",
 				noselfdamage = true,
 				proximitypriority = -1,

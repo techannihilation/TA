@@ -9,7 +9,6 @@ return {
 		buildtime = 10000,
 		category = "ALL SURFACE",
 		collisionvolumescales = "45 38 45",
-		
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Produce Energy",
@@ -27,7 +26,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Mini Fusion Reactor",
 		noautofire = false,
-		objectname = "gok_gen",
+		objectname = "gok/gok_gen.s3o",
 		radaremitheight = 32,
 		selfdestructas = "MEDIUM_BUILDING",
 		sightdistance = 250,
@@ -36,6 +35,7 @@ return {
 		customparams = {
 			buildpic = "gok_gen.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -46,7 +46,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1147,
-				object = "gok_gen_dead",
+				object = "gok/gok_gen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

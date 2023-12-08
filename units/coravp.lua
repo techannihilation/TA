@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		name = "Vehicle Lab",
 		noautofire = false,
-		objectname = "CORAVP",
+		objectname = "core/coravp.s3o",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -71,6 +71,7 @@ return {
 		customparams = {
 			buildpic = "coravp.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead1 = {
@@ -84,7 +85,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 2913,
-				object = "CORAVP_DEAD",
+				object = "core/coravp_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -97,7 +98,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1554,
-				object = "6X6C",
+				object = "6x6c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

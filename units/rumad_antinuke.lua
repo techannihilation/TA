@@ -48,6 +48,7 @@ return {
 		customparams = {
 			buildpic = "rumad_antinuke.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {

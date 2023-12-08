@@ -37,7 +37,7 @@ return {
 		movementclass = "HTKBOT4",
 		name = "Junglenaut",
 		noautofire = false,
-		objectname = "gok_junglenaut",
+		objectname = "gok/gok_junglenaut.s3o",
 		radaremitheight = 29,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -53,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "gok_junglenaut.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -67,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1616,
-				object = "gok_junglenaut_DEAD",
+				object = "gok/gok_junglenaut_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "3X3A",
+				object = "3x3a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

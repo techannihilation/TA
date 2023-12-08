@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK2",
 		name = "Bliz",
 		noautofire = false,
-		objectname = "rumad_bliz",
+		objectname = "rumad/rumad_bliz.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "rumad_bliz.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 161,
-				object = "rumad_bliz_DEAD",
+				object = "rumad/rumad_bliz_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 86,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

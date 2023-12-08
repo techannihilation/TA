@@ -37,7 +37,7 @@ return {
 		movementclass = "TANK4",
 		name = "Thor",
 		noautofire = false,
-		objectname = "armthor",
+		objectname = "arm/armthor.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "BANTHA_BLAST",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "armthor.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -72,7 +73,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3240,
-				object = "armthor_dead",
+				object = "arm/armthor_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 2128,
-				object = "4X4D",
+				object = "4x4d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

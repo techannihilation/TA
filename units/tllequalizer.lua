@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT5",
 		name = "Equalizer",
 		noautofire = false,
-		objectname = "TLLEQUALIZER",
+		objectname = "tll/tllequalizer.s3o",
 		radaremitheight = 39,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 450,
@@ -55,6 +55,7 @@ return {
 		customparams = {
 			buildpic = "tllequalizer.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1620,
-				object = "tllequalizer_dead",
+				object = "tll/tllequalizer_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -158,7 +159,7 @@ return {
 				flighttime = 1.25,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "WEAPON_DEPTHCHARGE",
+				model = "WEAPON_DEPTHCHARGE.s3o",
 				name = "DepthCharge",
 				noselfdamage = true,
 				range = 400,

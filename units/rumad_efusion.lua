@@ -31,7 +31,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Heavy Experimental Armored Fusion Reactor",
 		noautofire = false,
-		objectname = "rumad_efusion",
+		objectname = "rumad/rumad_efusion.s3o",
 		onoffable = false,
 		radaremitheight = 128,
 		seismicsignature = 0,
@@ -45,6 +45,7 @@ return {
 		customparams = {
 			buildpic = "rumad_efusion.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -59,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 7455,
-				object = "rumad_efusion_dead",
+				object = "rumad/rumad_efusion_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

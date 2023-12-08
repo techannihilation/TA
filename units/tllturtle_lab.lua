@@ -34,7 +34,7 @@ return {
 		mobilestandorders = 1,
 		name = "Ground & Amphibious Lab",
 		noautofire = false,
-		objectname = "tllturtle_lab",
+		objectname = "tll/tllturtle_lab.s3o",
 		radaremitheight = 34,
 		selfdestructas = "LARGE_BUILDING",
 		shownanospray = false,
@@ -58,6 +58,7 @@ return {
 		customparams = {
 			buildpic = "tllturtle_lab.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 3300,
-				object = "tllturtle_lab_dead",
+				object = "tll/tllturtle_lab_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1760,
-				object = "6x6C",
+				object = "6x6c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -95,7 +96,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1100,
-				object = "4x4C",
+				object = "4x4c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

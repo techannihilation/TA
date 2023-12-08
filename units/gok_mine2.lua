@@ -45,8 +45,7 @@ return {
 		mincloakdistance = 8,
 		name = "Mega",
 		noautofire = false,
-
-		objectname = "gok_mine2",
+		objectname = "gok/gok_mine2.s3o",
 		onoffable = false,
 		radaremitheight = 25,
 		script = "mines_lus.lua",

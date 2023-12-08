@@ -39,7 +39,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Dioptase",
 		noautofire = false,
-		objectname = "gok_engineers",
+		objectname = "gok/gok_engineers.s3o",
 		radaremitheight = 25,
 		reclaimspeed = 50,
 		repairspeed = 50,
@@ -75,6 +75,7 @@ return {
 		customparams = {
 			buildpic = "gok_engineers.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -89,7 +90,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 206,
-				object = "gok_engineers",
+				object = "gok/gok_engineers",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -103,7 +104,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 110,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

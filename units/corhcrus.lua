@@ -37,7 +37,7 @@ return {
 		movementclass = "TANKHOVER4",
 		name = "Neptune",
 		noautofire = false,
-		objectname = "corhcrus",
+		objectname = "core/corhcrus.s3o",
 		radaremitheight = 65,
 		selfdestructas = "BANTHA_BLAST",
 		sightdistance = 500,
@@ -54,6 +54,7 @@ return {
 			buildpic = "corhcrus.dds",
 			faction = "CORE",
 			prioritytarget = "air",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +65,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 15265,
-				object = "corhcrus_dead",
+				object = "core/corhcrus_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -126,7 +127,7 @@ return {
 				flighttime = 2,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "AA2Missile",
 				noselfdamage = true,
 				range = 700,
@@ -152,7 +153,6 @@ return {
 				damage = {
 					areoship = 12.5,
 					default = 5,
-					
 					air = 50,
 				},
 			},

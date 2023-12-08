@@ -16,7 +16,6 @@ return {
 		category = "ALL LARGE UNDERWATER",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "32 22 62",
-		
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -37,7 +36,7 @@ return {
 		movementclass = "UBOAT3",
 		name = "Manta",
 		noautofire = false,
-		objectname = "TLLMANTA",
+		objectname = "tll/tllmanta.s3o",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 150,
@@ -54,6 +53,7 @@ return {
 		customparams = {
 			buildpic = "tllmanta.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -64,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 920,
-				object = "tllmanta_dead",
+				object = "tll/tllmanta_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -132,7 +132,7 @@ return {
 				impactonly = 1,
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
-				model = "weapon_torpedo",
+				model = "weapon_torpedo.s3o",
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 600,

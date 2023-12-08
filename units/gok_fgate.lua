@@ -33,7 +33,7 @@ return {
 		name = "Floating Plasma Deflector",
 		noautofire = false,
 		norestrict = 1,
-		objectname = "gok_fgate",
+		objectname = "gok/gok_fgate.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",

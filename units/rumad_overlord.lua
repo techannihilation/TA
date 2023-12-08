@@ -54,6 +54,7 @@ return {
 		customparams = {
 			buildpic = "rumad_overlord.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -62,7 +63,7 @@ return {
 				description = "Aircraft Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -147,7 +148,7 @@ return {
 				gravityaffected = "TRUE",
 				impulseboost = 0.5,
 				impulsefactor = 0.5,
-				model = "weapon_bomb",
+				model = "weapon_bomb.s3o",
 				name = "Heavy Bombs",
 				noselfdamage = true,
 				range = 280,

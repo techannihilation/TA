@@ -37,7 +37,7 @@ return {
 		movementclass = "KBOT2",
 		name = "Necro",
 		noautofire = false,
-		objectname = "CORNECRO",
+		objectname = "core/cornecro.s3o",
 		radardistance = 50,
 		radaremitheight = 36,
 		resurrect = 1,
@@ -56,6 +56,7 @@ return {
 		customparams = {
 			buildpic = "cornecro.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -69,7 +70,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 81,
-				object = "CORNECRO_DEAD",
+				object = "core/cornecro_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "2X2D",
+				object = "2x2d",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

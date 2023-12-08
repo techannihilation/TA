@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Claw",
 		noautofire = false,
-		objectname = "ARMCLAW",
+		objectname = "arm/armclaw.s3o",
 		radardistancejam = 8,
 		radaremitheight = 44,
 		seismicsignature = 0,
@@ -51,6 +51,7 @@ return {
 		customparams = {
 			buildpic = "armclaw.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -71,7 +72,7 @@ return {
 				hitdensity = 100,
 				metal = 205,
 				nodrawundergray = true,
-				object = "ARMDRAG",
+				object = "arm/armdrag",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",
@@ -83,7 +84,6 @@ return {
 				animating = 0,
 				animtrans = 0,
 				blocking = false,
-				
 				damage = 500,
 				description = "Rubble",
 				footprintx = 2,
@@ -91,7 +91,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 2,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

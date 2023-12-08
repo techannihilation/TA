@@ -41,7 +41,7 @@ return {
 		mobilestandorders = 1,
 		name = "Construction Aircraft",
 		noautofire = false,
-		objectname = "gok_eca",
+		objectname = "gok/gok_eca.s3o",
 		radaremitheight = 9,
 		reclaimspeed = 135,
 		repairspeed = 135,
@@ -84,6 +84,7 @@ return {
 		customparams = {
 			buildpic = "gok_eca.dds",
 			faction = "gok",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -93,7 +94,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1613,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

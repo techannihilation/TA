@@ -43,7 +43,7 @@ return {
 		mobilestandorders = 1,
 		name = "Nosferatu",
 		noautofire = false,
-		objectname = "gok_nosferatu",
+		objectname = "gok/gok_nosferatu.s3o",
 		radaremitheight = 28.8,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",
@@ -59,6 +59,7 @@ return {
 		customparams = {
 			buildpic = "gok_nosferatu.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			heap = {
@@ -68,7 +69,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2213,
-				object = "4X4Z",
+				object = "4x4z",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -155,7 +156,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 700,

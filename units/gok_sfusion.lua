@@ -10,7 +10,6 @@ return {
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "175 90 175",
-		
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produces Energy",
@@ -30,7 +29,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
 		noautofire = false,
-		objectname = "gok_sfusion",
+		objectname = "gok/gok_sfusion.s3o",
 		radardistance = 0,
 		radaremitheight = 90,
 		seismicsignature = 0,
@@ -43,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "gok_sfusion.dds",
 			faction = "GOK",
+			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -53,7 +53,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 44775,
-				object = "gok_sfusion_dead",
+				object = "gok/gok_sfusion_dead",
 				reclaimable = true,
 			},
 			heap = {
@@ -63,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 23880,
-				object = "4X4A",
+				object = "4x4a",
 				reclaimable = true,
 			},
 		},

@@ -26,7 +26,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "T3 Vulcan",
-		objectname = "ARMVULC2",
+		objectname = "arm/armvulc2.s3o",
 		radaremitheight = 115,
 		seismicsignature = 0,
 		selfdestructas = "crawl_blast",
@@ -42,6 +42,7 @@ return {
 		customparams = {
 			buildpic = "armvulc2.dds",
 			faction = "ARM",
+			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
 			armvulc_heap = {
@@ -52,7 +53,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 18400,
-				object = "7X7A",
+				object = "7x7a",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +68,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 34500,
-				object = "ARMVULC2_DEAD",
+				object = "arm/armvulc2_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

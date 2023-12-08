@@ -39,7 +39,7 @@ return {
 		movementclass = "TANK3",
 		name = "Deleter",
 		noautofire = false,
-		objectname = "CORETER",
+		objectname = "core/coreter.s3o",
 		onoffable = true,
 		radardistancejam = 450,
 		radaremitheight = 25,
@@ -61,6 +61,7 @@ return {
 		customparams = {
 			buildpic = "coreter.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -75,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "CORETER_DEAD",
+				object = "core/coreter_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +90,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "3X3F",
+				object = "3x3f",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

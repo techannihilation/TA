@@ -39,7 +39,7 @@ return {
 		mobilestandorders = 1,
 		name = "Experimental Gantry",
 		noautofire = false,
-		objectname = "CORGANT",
+		objectname = "core/corgant.s3o",
 		radardistance = 50,
 		radaremitheight = 41,
 		seismicsignature = 0,
@@ -72,6 +72,7 @@ return {
 		customparams = {
 			buildpic = "corgant.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -86,7 +87,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 13599,
-				object = "CORGANT_DEAD",
+				object = "core/corgant_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -100,7 +101,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 7253,
-				object = "7X7B",
+				object = "7x7b",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

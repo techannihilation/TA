@@ -38,7 +38,7 @@ return {
 		movementclass = "TANK4",
 		name = "Skull",
 		noautofire = false,
-		objectname = "talon_shieldgen",
+		objectname = "talon/talon_shieldgen.s3o",
 		radaremitheight = 35,
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
@@ -55,6 +55,7 @@ return {
 			faction = "TALON",
 			shield_power = 2500,
 			shield_radius = 250,
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -66,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1896,
-				object = "talon_shieldgen_dead",
+				object = "talon/talon_shieldgen_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1011,
-				object = "3X3E",
+				object = "3x3e",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

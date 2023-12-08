@@ -29,7 +29,7 @@ return {
 		metalstorage = 145000,
 		name = "T3 Metal Storage",
 		noautofire = false,
-		objectname = "corsms",
+		objectname = "core/corsms.s3o",
 		radardistance = 0,
 		radaremitheight = 48,
 		selfdestructas = "SMALL_BUILDING",
@@ -41,6 +41,7 @@ return {
 		customparams = {
 			buildpic = "corsms.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +52,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				object = "corsms_dead",
+				object = "core/corsms_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

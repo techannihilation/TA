@@ -24,7 +24,7 @@ return {
 		maxwaterdepth = 0,
 		name = "Dragon's Teeth",
 		noautofire = false,
-		objectname = "TLLDT",
+		objectname = "tll/tlldt.s3o",
 		radaremitheight = 25,
 		script = "drag.lua",
 		unitname = "tlldt",
@@ -33,6 +33,7 @@ return {
 		customparams = {
 			buildpic = "tlldt.dds",
 			faction = "TLL",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			tlldragonsteeth = {
@@ -52,7 +53,7 @@ return {
 				hitdensity = 100,
 				metal = 12,
 				nodrawundergray = true,
-				object = "TLLDT",
+				object = "tll/tlldt",
 				reclaimable = true,
 				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
@@ -71,7 +72,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2X2A",
+				object = "2x2a",
 				reclaimable = true,
 				shadtrans = 1,
 				customparams = {

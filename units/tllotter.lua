@@ -16,7 +16,6 @@ return {
 		category = "ALL MOBILE SMALL SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "19.277297973633 28.277294158936 69.277297973633",
-
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -38,7 +37,7 @@ return {
 		movementclass = "BOAT4",
 		name = "Otter",
 		noautofire = false,
-		objectname = "TLLOTTER",
+		objectname = "tll/tllotter.s3o",
 		radaremitheight = 25,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 900,
@@ -55,6 +54,7 @@ return {
 			buildpic = "tllotter.dds",
 			faction = "TLL",
 			prioritytarget = "air",
+			normaltex = "unittextures/tll_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 108,
-				object = "tllotter_dead",
+				object = "tll/tllotter_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -131,7 +131,7 @@ return {
 				impulseboost = 0.123,
 				impulsefactor = 0.123,
 				metalpershot = 0,
-				model = "weapon_missile",
+				model = "weapon_missile.s3o",
 				name = "Missiles",
 				noselfdamage = true,
 				range = 600,
@@ -157,7 +157,6 @@ return {
 				damage = {
 					areoship = 20,
 					default = 5,
-					
 					air = 80,
 				},
 			},

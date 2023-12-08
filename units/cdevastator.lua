@@ -48,7 +48,7 @@ return {
 		mobilestandorders = 1,
 		name = "DEVASTATOR",
 		noautofire = false,
-		objectname = "CDevastator",
+		objectname = "core/cdevastator.s3o",
 		radardistance = 0,
 		radaremitheight = 62.5,
 		script = "cdevastator.cob",
@@ -64,6 +64,7 @@ return {
 		customparams = {
 			buildpic = "cdevastator.dds",
 			faction = "CORE",
+			normaltex = "unittextures/core_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -73,7 +74,7 @@ return {
 				footprintx = 14,
 				footprintz = 8,
 				metal = 227250,
-				object = "CDevastator_dead",
+				object = "core/cdevastator_dead",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -147,7 +148,6 @@ return {
 			damage = {
 				areoship = 125,
 				default = 5,
-				
 				air = 500,
 			},
 		},
@@ -166,7 +166,7 @@ return {
 				flighttime = 7,
 				impulseboost = 0,
 				impulsefactor = 0,
-				model = "weapon_rocket_devastator",
+				model = "weapon_rocket_devastator.s3o",
 				name = "Heavy Rockets",
 				noselfdamage = true,
 				range = 1800,

@@ -32,7 +32,7 @@ return {
 		minwaterdepth = 2,
 		name = "Floating Kerberos",
 		noautofire = false,
-		objectname = "talon_fhlt",
+		objectname = "talon/talon_fhlt.s3o",
 		radaremitheight = 43,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
@@ -47,6 +47,7 @@ return {
 		customparams = {
 			buildpic = "talon_fhlt.dds",
 			faction = "TALON",
+			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {
 			dead = {
@@ -60,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 431,
-				object = "talon_fhlt_DEAD",
+				object = "talon/talon_fhlt_dead",
 				reclaimable = true,
 			},
 		},

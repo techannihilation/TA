@@ -38,7 +38,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Lab",
 		noautofire = false,
-		objectname = "rumad_ulab",
+		objectname = "rumad/rumad_ulab.s3o",
 		radaremitheight = 174,
 		seismicsignature = 0,
 		selfdestructas = "LARGE_BUILDING",
@@ -64,6 +64,7 @@ return {
 		customparams = {
 			buildpic = "rumad_ulab.dds",
 			faction = "RUMAD",
+			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
 		dead = {
@@ -75,7 +76,7 @@ return {
 			footprintx = 16,
 			footprintz = 16,
 			metal = 67200,
-			object = "rumad_ulab_dead",
+			object = "rumad/rumad_ulab_dead",
 			reclaimable = true,
 			customparams = {
 				fromunit = 1,
@@ -89,7 +90,7 @@ return {
 				footprintx = 18,
 				footprintz = 18,
 				metal = 35840,
-				object = "7X7C",
+				object = "7x7c",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
