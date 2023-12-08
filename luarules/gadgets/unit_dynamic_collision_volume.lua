@@ -150,7 +150,7 @@ if (gadgetHandler:IsSyncedCode()) then
 				end
 			else
 				local rs, hs, ws, ars, ahs
-				Spring.Echo("radius",spGetUnitRadius(unitID))
+				--Spring.Echo("radius",spGetUnitRadius(unitID))
 				if (spGetUnitRadius(unitID)>47 and not canFly[unitDefID]) then
 					rs, hs, ws = 0.59, 0.59, 0.59
 					ars, ahs = 1, 1
