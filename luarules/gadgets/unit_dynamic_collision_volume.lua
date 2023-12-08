@@ -240,7 +240,10 @@ if gadgetHandler:IsSyncedCode() then
 			if canFly[unitDefID] then
 				local rs, hs, ws = 1.15, 0.33, 1.15	-- dont know why 3do uses: 0.53, 0.17, 0.53
 				local xs, ys, zs, xo, yo, zo, vtype, htype, axis, _ = spGetUnitCollisionData(unitID)
-				if vtype>=3 and xs==ys and ys==zs then
+				if spGetUnitRadius(unitID)>120 then --Fix hero's not moving in latest engine (2142)
+					spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
+					spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.25, spGetUnitHeight(unitID)*0.25)
+				elseif vtype>=3 and xs==ys and ys==zs then
 					if ys*hs < 13 then -- Limit Max V height
 						spSetUnitCollisionData(unitID, xs*ws, 13, zs*rs,  xo, yo, zo,  3, htype, 0)
 					elseif canFly[unitDefID] then
@@ -249,8 +252,6 @@ if gadgetHandler:IsSyncedCode() then
 						spSetUnitCollisionData(unitID, xs*ws, ys*hs, zs*rs,  xo, yo, zo,  vtype, htype, axis)
 					end
 				end
-			elseif spGetUnitRadius(unitID)>120 then --Fix hero's not moving in latest engine
-				spSetUnitRadiusAndHeight(unitID, spGetUnitRadius(unitID)*0.25, spGetUnitHeight(unitID)*0.25)
 			end
 		end
 		
