@@ -550,11 +550,11 @@ fragment = [[
 
 	//uniform vec3 rndVec;
 
-	#ifdef USE_LOSMAP
-		//uniform vec2 mapSize;
-		//uniform float inLosMode;
-		uniform sampler2D losMapTex;	//8
-	#endif
+	// #ifdef USE_LOSMAP
+	// 	//uniform vec2 mapSize;
+	// 	//uniform float inLosMode;
+	// 	uniform sampler2D losMapTex;	//8
+	// #endif
 
 
 	/***********************************************************************/
@@ -1330,7 +1330,7 @@ fragment = [[
 		}
 		#endif
 		vec4 teeeeemcolor = teamCol;
-		vec3 albedoColor = SRGBtoLINEAR(mix(texColor1.rgb, teeeeemcolor.rgb, texColor1.a));
+		vec3 albedoColor = SRGBtoLINEAR(mix(texColor1.rgb, teeeeemcolor.rgb, clamp(step(0.1, texColor1.a), 0.0, 0.9)));
 
 		if (BITMASK_FIELD(bitOptions, OPTION_HEALTH_TEXRAPTORS)) {
 			float texHeight = normalTexVal.a;
@@ -1567,17 +1567,17 @@ fragment = [[
 		// final color
 		outColor += emissiveness * albedoColor;
 		//vec3 debugloscolor;
-		#ifdef USE_LOSMAP
-			vec2 losMapUV = worldVertexPos.xz;
-			losMapUV /= mapSize.zw; //xz, xzPO2
-			//debugloscolor = texture(losMapTex, losMapUV).rgb * 2.0 ;
-			float losValue =  texture(losMapTex, losMapUV).r * 2.0;
-			losValue = clamp(losValue,0.5, 1.0);
+		// #ifdef USE_LOSMAP
+		// 	vec2 losMapUV = worldVertexPos.xz;
+		// 	losMapUV /= mapSize.zw; //xz, xzPO2
+		// 	//debugloscolor = texture(losMapTex, losMapUV).rgb * 2.0 ;
+		// 	float losValue =  texture(losMapTex, losMapUV).r * 2.0;
+		// 	losValue = clamp(losValue,0.5, 1.0);
 
-			outColor *= losValue;
-			outSpecularColor.rgb *= losValue;
-			emissiveness *= losValue;
-		#endif
+		// 	outColor *= losValue;
+		// 	outSpecularColor.rgb *= losValue;
+		// 	emissiveness *= losValue;
+		// #endif
 
 		vec4 debugColor = vec4(outColor.rgb ,1.0);
 		#ifdef EXPOSURE

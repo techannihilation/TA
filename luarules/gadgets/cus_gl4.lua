@@ -262,7 +262,7 @@ do --save a ton of locals
 	local OPTION_TREEWIND         = 2048
 	local OPTION_PBROVERRIDE      = 4096
 
-	local defaultBitShaderOptions = OPTION_SHADOWMAPPING + OPTION_NORMALMAPPING + OPTION_MODELSFOG
+	local defaultBitShaderOptions = OPTION_NORMALMAPPING
 
 	uniformBins                   = {
 		arm_unit = {
