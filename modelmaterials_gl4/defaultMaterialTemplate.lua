@@ -1398,7 +1398,7 @@ fragment = [[
 		vec3 H = normalize(L + V); //half vector
 
 		// R - reflection of worldCameraDir against worldFragNormal
-		vec3 Rv = -reflect(V, N);
+		vec3 Rv = reflect(V, N);
 
 		// dot products
 		float NdotLu = dot(N, L);
