@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 1500,
 		builder = false,
 		buildpic = "gate.dds",
-		buildtime = 50000,
+		buildtime = 4000,
 		builddistance = 0.01,
 		category = "ALL MOBILE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
