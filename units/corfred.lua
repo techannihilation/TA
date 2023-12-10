@@ -100,6 +100,7 @@ return {
 			[35] = "corfscreamer",
 			[36] = "corcs",
 			[37] = "corshark",
+			[38] = "gate",
 		},
 		customparams = {
 			buildpic = "corfred.dds",

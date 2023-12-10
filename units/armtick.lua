@@ -75,6 +75,7 @@ return {
 			[21] = "armvader",
 			[22] = "armhobo",
 			[23] = "armrambo",
+			[24] = "gate",
 		},
 		customparams = {
 			buildpic = "armtick.dds",

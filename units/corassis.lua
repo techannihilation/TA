@@ -82,6 +82,7 @@ return {
 			[20] = "corcv",
 			[21] = "correap",
 			[22] = "corseal",
+			[23] = "gate",
 		},
 		customparams = {
 			buildpic = "corassis.dds",

@@ -82,6 +82,7 @@ return {
 			[22] = "armfllt",
 			[23] = "armfhlt",
 			[24] = "armtl",
+			[25] = "gate",
 		},
 		customparams = {
 			buildpic = "armcs.dds",

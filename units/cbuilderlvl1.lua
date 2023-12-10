@@ -78,6 +78,7 @@ return {
 			[20] = "corca",
 			[21] = "corhurc",
 			[22] = "corvamp",
+			[23] = "gate",
 		},
 		customparams = {
 			buildpic = "cbuilderlvl1.dds",

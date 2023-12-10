@@ -89,6 +89,7 @@ return {
 			--[29] = "gok_fsprinkler",
 			[30] = "gok_frl",
 			[31] = "gok_fflak",
+			[32] = "gate",
 		},
 		customparams = {
 			buildpic = "gok_engineerh.dds",

@@ -80,6 +80,7 @@ return {
 			--[18] = "gok_herison",
 			[19] = "gok_zealot",
 			[20] = "gok_mask",
+			[21] = "gate",
 		},
 		customparams = {
 			buildpic = "gok_engineerk.dds",

@@ -90,6 +90,7 @@ return {
 			[34] = "tllshoretorp",
 			[35] = "tllsy",
 			[36] = "tllplat",
+			[37] = "gate",
 		},
 		customparams = {
 			buildpic = "tllca.dds",

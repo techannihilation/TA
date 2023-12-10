@@ -93,6 +93,7 @@ return {
 			[33] = "corerad",
 			[34] = "cordl",
 			[35] = "corsy",
+			[36] = "gate",
 		},
 		customparams = {
 			buildpic = "corck.dds",

@@ -78,6 +78,7 @@ return {
 			[18] = "talon_herison",
 			[19] = "talon_wolf",
 			[20] = "talon_shepherd",
+			[21] = "gate",
 		},
 		customparams = {
 			buildpic = "talon_engineerk.dds",

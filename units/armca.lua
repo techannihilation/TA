@@ -90,6 +90,7 @@ return {
 			[32] = "armcir",
 			[33] = "armsy",
 			[34] = "armplat",
+			[35] = "gate",
 		},
 		customparams = {
 			buildpic = "armca.dds",

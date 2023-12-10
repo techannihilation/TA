@@ -68,6 +68,7 @@ return {
 			[17] = "rumad_ca",
 			[18] = "rumad_fighter_lvl2",
 			[19] = "rumad_bomber_lvl2",
+			[20] = "gate",
 			--[20] = "",
 		},
 		customparams = {

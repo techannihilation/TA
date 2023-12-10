@@ -75,6 +75,7 @@ return {
 			[18] = "tlladvfight",
 			[19] = "tllabomber",
 			[20] = "tllca",
+			[21] = "gate",
 		},
 		customparams = {
 			buildpic = "tllbuilderlvl1.dds",
