@@ -341,8 +341,6 @@ local materials = {
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-Spring.Echo("Hello World")
-
 local cusUnitMaterials = GG.CUS.unitMaterialDefs
 local unitMaterials = {}
 local blankNormal = "unittextures/blank_normal.dds"
