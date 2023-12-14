@@ -759,7 +759,8 @@ function widget:DrawScreen()
 				if uWep.targetable == 16 then
 			  		DrawText("MDS:","Is Targetable", '')
 				end
-				local reload = spGetUnitWeaponState(uID,weaponNums[i] or -1,"reloadTime") or uWep.reload
+
+				local reload = spGetUnitWeaponState(uID,weaponNums[i] or -1,"reloadTimeXP") or spGetUnitWeaponState(uID,weaponNums[i] or -1,"reloadTime")  or uWep.reload
 				local accuracy = spGetUnitWeaponState(uID,weaponNums[i] or -1,"accuracy") or uWep.accuracy
 				local moveError = spGetUnitWeaponState(uID,weaponNums[i] or -1,"targetMoveError") or uWep.targetMoveError
 				local reloadBonus = reload ~= 0 and (uWep.reload/reload-1) or 0
@@ -767,10 +768,21 @@ function widget:DrawScreen()
 				local moveErrorBonus = moveError ~= 0 and (uWep.targetMoveError/moveError-1) or 0
 				local range = spGetUnitWeaponState(uID,weaponNums[i] or -1,"range") or uWep.range
 				local rangeBonus = range ~= 0 and (range/uWep.range-1) or 0
-
+				cY = cY - 2
 				if uExp ~= 0 then
-					DrawText("Exp:", format("+%d%% accuracy, +%d%% aim, +%d%% firerate, +%d%% range", accuracyBonus*100, moveErrorBonus*100, reloadBonus*100, rangeBonus*100 ))
+					local colorAdjust = (255 * reloadBonus) / 0.7
+					local red = 255
+					local green = 255 - colorAdjust
+					local blue = 255 - colorAdjust
+					green = math.max(0, green)
+					blue = math.max(0, blue)
+					local colorRed = string.char(red)
+					local colorGreen = string.char(green)
+					local colorBlue = string.char(blue)
+					DrawText("Exp:", string.format("\255" .. colorRed .. colorGreen .. colorBlue .. "+%d%% firerate,\255\255\255\255 +%d%% accuracy, +%d%% aim, +%d%% range", reloadBonus*100, accuracyBonus*100, moveErrorBonus*100, rangeBonus*100))
+
 				end
+				cY = cY - 2
 				local infoText = ""
 				if wpnName == "Death explosion" or wpnName == "Self Destruct" then
 					infoText = format("%d aoe, %d%% edge", uWep.damageAreaOfEffect, 100 * uWep.edgeEffectiveness)
