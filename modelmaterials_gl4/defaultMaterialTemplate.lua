@@ -1497,79 +1497,86 @@ fragment = [[
 
 		// Indirect and ambient lighting
 		vec3 outColor;
-		vec3 ambientContrib;
-		vec3 iblDiffuse = vec3(0);
-		vec3 iblSpecular = vec3(0);
-		{
-			// ambient lighting (we now use IBL as the ambient term)
-			vec3 F = FresnelWithRoughness(F0, F90, VdotH, roughness, envBRDF);
 
-			//vec3 kS = F;
-			vec3 kD = 1.0 - F;
-			kD *= 1.0 - metalness;
-
-			///
-			#if (USE_ENVIRONMENT_DIFFUSE == 1) || (USE_ENVIRONMENT_SPECULAR == 1)
-				#if (RENDERING_MODE == 0)
-					//TextureEnvBlured(N, Rv, iblDiffuse, iblSpecular);	//needed for Intel GPU
-				#endif
-			#endif
-			///
-
-			#if (USE_ENVIRONMENT_DIFFUSE == 1)
+		#ifdef USE_IBL
+			vec3 ambientContrib;
+			vec3 iblDiffuse = vec3(0);
+			vec3 iblSpecular = vec3(0);
 			{
-				#if 0
-					vec3 iblDiffuseYCbCr = RGB2YCBCR * iblDiffuse;
-					float sunAmbientLuma = dot(LUMA, sunAmbientModel.rgb);
+				// ambient lighting (we now use IBL as the ambient term)
+				vec3 F = FresnelWithRoughness(F0, F90, VdotH, roughness, envBRDF);
 
-					vec2 sunAmbientLumaLeeway = vec2(pbrParams[5]);
+				//vec3 kS = F;
+				vec3 kD = 1.0 - F;
+				kD *= 1.0 - metalness;
 
-					iblDiffuseYCbCr.x = smoothclamp(iblDiffuseYCbCr.x,
-						(1.0 - sunAmbientLumaLeeway.x) * sunAmbientLuma,
-						(1.0 + sunAmbientLumaLeeway.y) * sunAmbientLuma);
-
-					iblDiffuse = YCBCR2RGB * iblDiffuseYCbCr;
-				#else
-					iblDiffuse = mix(sunAmbientModel.rgb, iblDiffuse, pbrParams[5]);
+				///
+				#if (USE_ENVIRONMENT_DIFFUSE == 1) || (USE_ENVIRONMENT_SPECULAR == 1)
+					#if (RENDERING_MODE == 0)
+						//TextureEnvBlured(N, Rv, iblDiffuse, iblSpecular);	//needed for Intel GPU
+					#endif
 				#endif
+				///
+
+				#if (USE_ENVIRONMENT_DIFFUSE == 1)
+				{
+					#if 0
+						vec3 iblDiffuseYCbCr = RGB2YCBCR * iblDiffuse;
+						float sunAmbientLuma = dot(LUMA, sunAmbientModel.rgb);
+
+						vec2 sunAmbientLumaLeeway = vec2(pbrParams[5]);
+
+						iblDiffuseYCbCr.x = smoothclamp(iblDiffuseYCbCr.x,
+							(1.0 - sunAmbientLumaLeeway.x) * sunAmbientLuma,
+							(1.0 + sunAmbientLumaLeeway.y) * sunAmbientLuma);
+
+						iblDiffuse = YCBCR2RGB * iblDiffuseYCbCr;
+					#else
+						iblDiffuse = mix(sunAmbientModel.rgb, iblDiffuse, pbrParams[5]);
+					#endif
+				}
+				#else
+					iblDiffuse = sunAmbientModel.rgb;
+				#endif
+
+				//vec4 debugColor = vec4(albedoColor.rgb ,1.0);
+				vec3 diffuse = iblDiffuse * albedoColor * aoTerm;
+
+				// sample both the pre-filter map and the BRDF lut and combine them together as per the Split-Sum approximation to get the IBL specular part.
+
+				#if (RENDERING_MODE == 0)
+					vec3 reflectionColor = SampleEnvironmentWithRoughness(Rv, roughness);
+				#else
+					vec3 reflectionColor = vec3(0.0);
+				#endif
+
+				#if (USE_ENVIRONMENT_SPECULAR == 1)
+					reflectionColor = mix(reflectionColor, iblSpecular, roughness);
+				#endif
+
+				//vec3 specular = reflectionColor * (F * envBRDF.x + (1.0 - F) * envBRDF.y);
+
+				// specular ambient occlusion (see Filament)
+				float aoTermSpec = ComputeSpecularAOFilament(NdotV, aoTerm, roughness2);
+				//vec3 specular = reflectionColor * mix(vec3(envBRDF.y), vec3(envBRDF.x), F);
+				vec3 specular = reflectionColor * (F0 * envBRDF.x + F90 * envBRDF.y);
+				specular *= aoTermSpec * energyCompensation;
+
+
+				outSpecularColor += specular;
+
+				ambientContrib = (kD * diffuse + specular);
+
+				outColor = ambientContrib + dirContrib;
 			}
-			#else
-				iblDiffuse = sunAmbientModel.rgb;
-			#endif
 
-			//vec4 debugColor = vec4(albedoColor.rgb ,1.0);
-			vec3 diffuse = iblDiffuse * albedoColor * aoTerm;
+			// final color
+			outColor += emissiveness * albedoColor;	
+		#else
+			// final color
+			outColor = (0.8 + emissiveness) * albedoColor;	
+		#endif
 
-			// sample both the pre-filter map and the BRDF lut and combine them together as per the Split-Sum approximation to get the IBL specular part.
-
-			#if (RENDERING_MODE == 0)
-				vec3 reflectionColor = SampleEnvironmentWithRoughness(Rv, roughness);
-			#else
-				vec3 reflectionColor = vec3(0.0);
-			#endif
-
-			#if (USE_ENVIRONMENT_SPECULAR == 1)
-				reflectionColor = mix(reflectionColor, iblSpecular, roughness);
-			#endif
-
-			//vec3 specular = reflectionColor * (F * envBRDF.x + (1.0 - F) * envBRDF.y);
-
-			// specular ambient occlusion (see Filament)
-			float aoTermSpec = ComputeSpecularAOFilament(NdotV, aoTerm, roughness2);
-			//vec3 specular = reflectionColor * mix(vec3(envBRDF.y), vec3(envBRDF.x), F);
-			vec3 specular = reflectionColor * (F0 * envBRDF.x + F90 * envBRDF.y);
-			specular *= aoTermSpec * energyCompensation;
-
-
-			outSpecularColor += specular;
-
-			ambientContrib = (kD * diffuse + specular);
-
-			outColor = ambientContrib + dirContrib;
-		}
-
-		// final color
-		outColor += emissiveness * albedoColor;
 		//vec3 debugloscolor;
 		// #ifdef USE_LOSMAP
 		// 	vec2 losMapUV = worldVertexPos.xz;
