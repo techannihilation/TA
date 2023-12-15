@@ -1330,7 +1330,7 @@ fragment = [[
 		}
 		#endif
 		vec4 teeeeemcolor = teamCol;
-		vec3 albedoColor = SRGBtoLINEAR(mix(texColor1.rgb, teeeeemcolor.rgb, clamp(step(0.1, texColor1.a), 0.0, 0.9)));
+		vec3 albedoColor = SRGBtoLINEAR(mix(texColor1.rgb, teeeeemcolor.rgb, texColor1.a));
 
 		if (BITMASK_FIELD(bitOptions, OPTION_HEALTH_TEXRAPTORS)) {
 			float texHeight = normalTexVal.a;
