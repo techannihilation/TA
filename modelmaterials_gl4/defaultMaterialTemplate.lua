@@ -1347,31 +1347,35 @@ fragment = [[
 
 		N = normalize(worldTBN * tbnNormal);
 
-		float emissiveness = texColor2.r;
-
-		emissiveness = clamp(selfIllumMod * emissiveness, 0.0, 1.0);
-
-		#ifdef METALNESS
-			float metalness = METALNESS;
-		#else
-			float metalness = texColor2.g;
-		#endif
-
-		//metalness = SNORM2NORM( sin(simFrame * 0.05) );
-		//metalness = 1.0;
-
-		metalness = clamp(metalness, 0.0, 1.0);
-
-		#ifdef ROUGHNESS
-			float roughness = ROUGHNESS;
-		#else
-			float roughness = texColor2.b;
-		#endif
+		float emissiveness;
+		float metalness;
+		float roughness;
 
 		if (BITMASK_FIELD(bitOptions, OPTION_PBROVERRIDE)){
 			emissiveness = 0.2;
-			roughness = 0.8;
+			emissiveness = clamp(selfIllumMod * emissiveness, 0.0, 1.0); // Flashlights
 			metalness = 0.1;
+			roughness = 0.8;
+		} else {
+			emissiveness = texColor2.r;
+			emissiveness = clamp(selfIllumMod * emissiveness, 0.0, 1.0);
+	
+			#ifdef METALNESS
+				metalness = METALNESS;
+			#else
+				metalness = texColor2.g;
+			#endif
+	
+			//metalness = SNORM2NORM( sin(simFrame * 0.05) );
+			//metalness = 1.0;
+	
+			metalness = clamp(metalness, 0.0, 1.0);
+	
+			#ifdef ROUGHNESS
+				roughness = ROUGHNESS;
+			#else
+				roughness = texColor2.b;
+			#endif	
 		}
 
 		//roughness = SNORM2NORM( sin(simFrame * 0.25) );
