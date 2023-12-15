@@ -268,7 +268,7 @@ do --save a ton of locals
 		arm_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM + OPTION_PBROVERRIDE, -- + OPTION_FLASHLIGHTS,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.2,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		arm_unit_health = {
@@ -280,7 +280,7 @@ do --save a ton of locals
 		core_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE + OPTION_PBROVERRIDE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.2,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		core_unit_health = {
@@ -292,7 +292,7 @@ do --save a ton of locals
 		gok_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM + OPTION_PBROVERRIDE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.2,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		gok_unit_health = {
@@ -304,7 +304,7 @@ do --save a ton of locals
 		rumad_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE + OPTION_PBROVERRIDE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.2,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		rumad_unit_health = {
@@ -328,7 +328,7 @@ do --save a ton of locals
 		tll_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE + OPTION_PBROVERRIDE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.2,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		tll_unit_health = {
