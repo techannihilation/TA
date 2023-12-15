@@ -262,70 +262,80 @@ do --save a ton of locals
 	local OPTION_TREEWIND         = 2048
 	local OPTION_PBROVERRIDE      = 4096
 
-	local defaultBitShaderOptions = OPTION_NORMALMAPPING
+	local defaultBitShaderOptions = OPTION_NORMALMAPPING + OPTION_VERTEX_AO
 
 	uniformBins                   = {
 		arm_unit = {
-			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM , -- + OPTION_FLASHLIGHTS + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE + OPTION_VERTEX_AO,
+			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM, -- + OPTION_FLASHLIGHTS + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE + OPTION_VERTEX_AO,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.3,
+			brightnessFactor = 1.4,
 			hasAlphaShadows = 0.0,
 		},
 		arm_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE, -- + OPTION_VERTEX_AO,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.3,
+			brightnessFactor = 1.4,
 			hasAlphaShadows = 0.0,
 		},
 		core_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		core_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		gok_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		gok_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		rumad_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		rumad_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		talon_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		talon_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_ARM + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		tll_unit = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		tll_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_THREADS_CORE + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
 			brightnessFactor = 1.3,
+			hasAlphaShadows = 0.0,
 		},
 		-- raptor = {
 		-- 	bitOptions = defaultBitShaderOptions + OPTION_FLASHLIGHTS + OPTION_HEALTH_DISPLACE + OPTION_HEALTH_TEXCHICKS +

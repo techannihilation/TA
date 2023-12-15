@@ -1398,7 +1398,7 @@ fragment = [[
 		vec3 H = normalize(L + V); //half vector
 
 		// R - reflection of worldCameraDir against worldFragNormal
-		vec3 Rv = reflect(V, N);
+		vec3 Rv = -reflect(V, N);
 
 		// dot products
 		float NdotLu = dot(N, L);
@@ -1999,7 +1999,7 @@ local function SunChanged(luaShader)
 		Spring.GetConfigFloat("unitSunMult", 1.0),
 		Spring.GetConfigFloat("unitExposureMult", 1.0),
 	})
-	luaShader:SetUniformFloatAlways("gamma", Spring.GetConfigFloat("modelGamma", 100.0))
+	luaShader:SetUniformFloatAlways("gamma", Spring.GetConfigFloat("modelGamma", 1.0))
 end
 
 defaultMaterialTemplate.ProcessOptions = ProcessOptions
