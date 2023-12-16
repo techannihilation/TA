@@ -1566,7 +1566,8 @@ fragment = [[
 
 				ambientContrib = (kD * diffuse + specular);
 
-				outColor = ambientContrib + dirContrib + emissiveness * albedoColor;
+				outColor = ambientContrib + dirContrib;
+				outColor += emissiveness * albedoColor;
 			}
 		#else
 			outColor = albedoColor;
@@ -1700,13 +1701,13 @@ local defaultMaterialTemplate = {
 		"#define SUNMULT pbrParams[6]",
 		"#define EXPOSURE pbrParams[7]",
 
-		-- "#define SPECULAR_AO",
+		"#define SPECULAR_AO",
 
 		"#define ROUGHNESS_AA 1.0",
 
 		"#define ENV_SMPL_NUM " .. tostring(Spring.GetConfigInt("ENV_SMPL_NUM", 64)),
-		
-		-- "#define USE_IBL",
+
+		"#define USE_IBL",
 		"#define USE_ENVIRONMENT_DIFFUSE 1",
 		"#define USE_ENVIRONMENT_SPECULAR 1",
 
@@ -1719,13 +1720,13 @@ local defaultMaterialTemplate = {
 		"#define SUNMULT pbrParams[6]",
 		"#define EXPOSURE pbrParams[7]",
 
-		-- "#define SPECULAR_AO",
+		"#define SPECULAR_AO",
 
 		"#define ROUGHNESS_AA 1.0",
 
 		"#define ENV_SMPL_NUM " .. tostring(Spring.GetConfigInt("ENV_SMPL_NUM", 64)),
 
-		-- "#define USE_IBL",
+		"#define USE_IBL",
 		"#define USE_ENVIRONMENT_DIFFUSE 1",
 		"#define USE_ENVIRONMENT_SPECULAR 1",
 
@@ -1755,13 +1756,13 @@ local defaultMaterialTemplate = {
 		"#define SUNMULT pbrParams[6]",
 		"#define EXPOSURE pbrParams[7]",
 
-		-- "#define SPECULAR_AO",
+		"#define SPECULAR_AO",
 
 		"#define ROUGHNESS_AA 1.0",
 
 		"#define ENV_SMPL_NUM " .. tostring(Spring.GetConfigInt("ENV_SMPL_NUM", 64)),
 
-		-- "#define USE_IBL",
+		"#define USE_IBL",
 		"#define USE_ENVIRONMENT_DIFFUSE 1",
 		"#define USE_ENVIRONMENT_SPECULAR 1",
 
