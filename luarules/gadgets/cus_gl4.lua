@@ -1542,7 +1542,7 @@ local function ExecuteDrawPass(drawPass)
 	local batches = 0
 	local units = 0
 	local shaderswaps = 0
-	gl.Culling(GL.BACK)
+	gl.Culling(false)
 	--for shaderName, data in pairs(unitDrawBins[drawPass]) do
 	for _, shaderName in ipairs(shaderOrder) do
 		if unitDrawBins[drawPass][shaderName] then

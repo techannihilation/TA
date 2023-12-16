@@ -1835,8 +1835,8 @@ local defaultMaterialTemplate = {
 	uuid = nil, -- currently unused (not sent to engine)
 	order = nil, -- currently unused (not sent to engine)
 
-	culling = GL.BACK, -- usually GL.BACK is default, except for 3do
-	shadowCulling = GL.BACK,
+	culling = false, -- usually GL.BACK is default, except for 3do
+	shadowCulling = false,
 	usecamera = false, -- usecamera ? {gl_ModelViewMatrix, gl_NormalMatrix} = {modelViewMatrix, modelViewNormalMatrix} : {modelMatrix, modelNormalMatrix}
 }
 
