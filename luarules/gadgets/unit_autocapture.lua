@@ -43,7 +43,7 @@ if gadgetHandler:IsSyncedCode() then
                 type = CMDTYPE.ICON_MODE,
                 name = 'Autocapture',
                 tooltip = 'Capture nearby units automatically',
-                params = { '1', 'Autocapture\n     On', 'Autocapture\n    Off'}
+                params = { '0', 'Autocapture\n     Off', 'Autocapture\n    On'}
             })
             autocapture_enabled[uID] = UnitDefs[unitDefID].buildDistance
         end
