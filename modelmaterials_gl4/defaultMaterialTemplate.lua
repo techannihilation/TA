@@ -1494,7 +1494,6 @@ fragment = [[
 		// getSpecularDominantDirection (Filament)
 		Rv = mix(Rv, N, roughness4);
 
-
 		// Indirect and ambient lighting
 		vec3 outColor;
 
@@ -1567,14 +1566,10 @@ fragment = [[
 
 				ambientContrib = (kD * diffuse + specular);
 
-				outColor = ambientContrib + dirContrib;
+				outColor = ambientContrib + dirContrib + emissiveness * albedoColor;
 			}
-
-			// final color
-			outColor += emissiveness * albedoColor;	
 		#else
-			// final color
-			outColor = (0.8 + emissiveness) * albedoColor;	
+			outColor = albedoColor;
 		#endif
 
 		//vec3 debugloscolor;
@@ -1598,7 +1593,7 @@ fragment = [[
 
 
 
-		outColor = TONEMAP(outColor);
+		// outColor = TONEMAP(outColor);
 
 		if (BITMASK_FIELD(bitOptions, OPTION_MODELSFOG)) {
 			outColor = mix(fogColor.rgb, outColor, fogFactor);
@@ -1643,7 +1638,7 @@ fragment = [[
 			fragData[GBUFFER_NORMTEX_IDX] = vec4(SNORM2NORM(N), alphaBin);
 			fragData[GBUFFER_DIFFTEX_IDX] = vec4(outColor, alphaBin);
 
-			fragData[GBUFFER_SPECTEX_IDX] = vec4(outSpecularColor, alphaBin);
+			// fragData[GBUFFER_SPECTEX_IDX] = vec4(outSpecularColor, alphaBin);
 
 			#ifndef HASALPHASHADOWS
 				fragData[GBUFFER_EMITTEX_IDX] = vec4(vec3(albedoColor * emissiveness * 2.0) + outSpecularColor * 0.3, alphaBin);
@@ -1705,11 +1700,13 @@ local defaultMaterialTemplate = {
 		"#define SUNMULT pbrParams[6]",
 		"#define EXPOSURE pbrParams[7]",
 
-		"#define SPECULAR_AO",
+		-- "#define SPECULAR_AO",
 
 		"#define ROUGHNESS_AA 1.0",
 
 		"#define ENV_SMPL_NUM " .. tostring(Spring.GetConfigInt("ENV_SMPL_NUM", 64)),
+		
+		-- "#define USE_IBL",
 		"#define USE_ENVIRONMENT_DIFFUSE 1",
 		"#define USE_ENVIRONMENT_SPECULAR 1",
 
@@ -1722,11 +1719,13 @@ local defaultMaterialTemplate = {
 		"#define SUNMULT pbrParams[6]",
 		"#define EXPOSURE pbrParams[7]",
 
-		"#define SPECULAR_AO",
+		-- "#define SPECULAR_AO",
 
 		"#define ROUGHNESS_AA 1.0",
 
 		"#define ENV_SMPL_NUM " .. tostring(Spring.GetConfigInt("ENV_SMPL_NUM", 64)),
+
+		-- "#define USE_IBL",
 		"#define USE_ENVIRONMENT_DIFFUSE 1",
 		"#define USE_ENVIRONMENT_SPECULAR 1",
 
@@ -1756,11 +1755,13 @@ local defaultMaterialTemplate = {
 		"#define SUNMULT pbrParams[6]",
 		"#define EXPOSURE pbrParams[7]",
 
-		"#define SPECULAR_AO",
+		-- "#define SPECULAR_AO",
 
 		"#define ROUGHNESS_AA 1.0",
 
 		"#define ENV_SMPL_NUM " .. tostring(Spring.GetConfigInt("ENV_SMPL_NUM", 64)),
+
+		-- "#define USE_IBL",
 		"#define USE_ENVIRONMENT_DIFFUSE 1",
 		"#define USE_ENVIRONMENT_SPECULAR 1",
 

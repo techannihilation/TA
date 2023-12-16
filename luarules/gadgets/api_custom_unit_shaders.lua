@@ -32,10 +32,6 @@ if (gadgetHandler:IsSyncedCode()) then
 	return
 end
 
--- TODO(jochumdev): Move to better place.
-Spring.SetSunDirection(0)
-Spring.SetSunLighting({groundAmbientColor = {1, 0.1, 1}, groundDiffuseColor = {1, 0.1, 1} })
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 -- Unsynced
