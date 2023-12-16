@@ -1825,8 +1825,8 @@ local defaultMaterialTemplate = {
 		[6] = "$shadow",
 		[7] = "$reflection",
 
-		[9] = "modelmaterials_gl4/brdf_0.png",
-		[10] = "modelmaterials_gl4/envlut_0.png",
+		[9] = "",
+		[10] = "",
 	},
 
 	predl = nil, -- `predl` is replaced with `prelist` later in api_cus

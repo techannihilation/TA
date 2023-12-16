@@ -811,9 +811,6 @@ local function GenFastTextureKey(objectDefID, objectDef, normaltexpath, texturet
 	return fastTextureKeyCache[strkey]
 end
 
-local brdfLUT = "modelmaterials_gl4/brdf_0.png"
-local envLUT = "modelmaterials_gl4/envlut_0.png"
-
 local existingfilecache = {} -- this speeds up the VFS calls
 
 local function GetNormal(unitDef, featureDef)
