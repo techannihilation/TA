@@ -1,2119 +1,2084 @@
 color_image: ../TA/unittextures/gok_tex1.dds
 other_image: ../TA/unittextures/gok_tex2.dds
 normal_image: ../TA/unittextures/gok_normals.dds
-width: 820
-height: 820
+width: 736
+height: 736
 textures:
   - name: gokgemplate1c200
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 628
-    top: 520
+    left: 560
+    top: 528
   - name: gokcore700
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 628
-    top: 448
-  - name: goktech100
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
     left: 592
     top: 448
+  - name: goktech100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 656
   - name: gokmarmor300
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 556
-    top: 448
+    left: 496
+    top: 592
   - name: explauncher00
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 520
-    top: 448
+    left: 464
+    top: 672
   - name: gokglowpit100
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 484
-    top: 448
+    left: 528
+    top: 496
   - name: gokruneplate1spe100
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 448
-    top: 448
+    left: 496
+    top: 496
   - name: goktech300
-    width: 36
-    height: 68
+    width: 32
+    height: 64
     orig_width: 32
     orig_height: 64
-    left: 784
-    top: 272
+    left: 256
+    top: 544
   - name: metal3a00
-    width: 20
-    height: 36
+    width: 16
+    height: 32
     orig_width: 16
     orig_height: 32
-    left: 780
-    top: 628
+    left: 352
+    top: 480
   - name: corve01b00
-    width: 68
-    height: 68
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
-    left: 240
-    top: 340
+    left: 192
+    top: 192
   - name: gokmetal100
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 412
-    top: 736
+    left: 464
+    top: 704
   - name: noise2b00
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 700
-    top: 412
+    left: 656
+    top: 560
   - name: corut1b00
-    width: 68
-    height: 68
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
-    left: 716
-    top: 204
+    left: 128
+    top: 640
   - name: gokstripes200
-    width: 20
-    height: 20
+    width: 16
+    height: 16
     orig_width: 16
     orig_height: 16
-    left: 36
-    top: 704
+    left: 592
+    top: 688
   - name: graynoise200
-    width: 20
-    height: 36
+    width: 16
+    height: 32
     orig_width: 16
     orig_height: 32
-    left: 740
-    top: 628
+    left: 352
+    top: 512
   - name: goktech200
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 412
-    top: 664
+    left: 688
+    top: 560
   - name: gokcitadelpds1glow00
-    width: 20
-    height: 36
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 352
+    top: 640
+  - name: graynoise500
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 352
+    top: 672
+  - name: gokgradient1_100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 384
+    top: 256
+  - name: gokmsocle200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 592
+    top: 560
+  - name: wreck001b00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 256
+    top: 256
+  - name: gokwhiteglow00
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 704
+    top: 592
+  - name: goktracks1u00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 640
+    top: 256
+  - name: gokmetal300
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 720
+    top: 592
+  - name: goktarmor200
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 576
+    top: 288
+  - name: goksphere2_500
+    width: 8
+    height: 8
+    orig_width: 8
+    orig_height: 8
+    left: 608
+    top: 688
+  - name: gokcore7b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 688
+  - name: glass200
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 352
+    top: 608
+  - name: metal3d00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 352
+    top: 544
+  - name: goktracksfrontu00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 528
+  - name: gokpitturretbase100
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 608
+    top: 624
+  - name: gokwindow2d00
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 656
+    top: 480
+  - name: greyblend00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 384
+  - name: gokcomshoulderl200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 624
+    top: 416
+  - name: gokarmor300
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 560
+    top: 416
+  - name: gokmarmor200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 640
+  - name: gokmetal600
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 608
+  - name: gokruneplate1spe200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 544
+  - name: wreck002a00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 384
+    top: 192
+  - name: goksarmorpb00
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 688
+    top: 608
+  - name: gokrune000
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 512
+  - name: gokhellspawn1f00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 640
+  - name: gokhellspawn1a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 576
+  - name: gokhellspawn1b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 512
+  - name: graynoise100
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 352
+    top: 576
+  - name: goklwing2_300
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 496
+    top: 720
+  - name: gokmplating200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 624
+    top: 448
+  - name: goktracks2front00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 560
+    top: 448
+  - name: goksarmorp00
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 640
+    top: 608
+  - name: goktarmor100
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 640
+    top: 288
+  - name: goktech1000
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 576
+  - name: gokscore200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 544
+  - name: gokrwing2_300
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 624
+    top: 480
+  - name: gokrwing2_200
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 528
+    top: 720
+  - name: goktarmor1b00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 256
+    top: 416
+  - name: gokrwing2_100
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 560
+    top: 688
+  - name: gokcarrier1_base100
+    width: 128
+    height: 32
+    orig_width: 128
+    orig_height: 32
+    left: 512
+    top: 64
+  - name: glow00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 448
+    top: 64
+  - name: glass100
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 560
+    top: 704
+  - name: gokarmor400
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 608
+  - name: gokramp100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 640
+  - name: gokscore100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 672
+  - name: graynoise400
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 704
+  - name: graynoise300
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 576
+    top: 704
+  - name: gokmplating100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 448
+  - name: darksnw5dark00
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 256
+    top: 608
+  - name: gokssocle300
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 448
+  - name: goktoe1l00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 448
+  - name: guntipdark00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 128
+    top: 64
+  - name: solid3a
+    width: 8
+    height: 8
+    orig_width: 8
+    orig_height: 8
+    left: 616
+    top: 680
+  - name: gokheel1r00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 512
+  - name: metal3b00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 592
+    top: 592
+  - name: goksabarrel100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 656
+    top: 448
+  - name: solid3b
+    width: 8
+    height: 8
+    orig_width: 8
+    orig_height: 8
+    left: 608
+    top: 680
+  - name: metal3c00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 352
+    top: 448
+  - name: noise2c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 688
+    top: 448
+  - name: goklogolight
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 0
+    top: 448
+  - name: wreck003b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 480
+  - name: wreck004a00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 640
+    top: 0
+  - name: wreck00100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 576
+    top: 0
+  - name: gokmarmorshadow00
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 656
+    top: 608
+  - name: gokarmor4b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 544
+  - name: goktech600
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 384
+    top: 0
+  - name: goktracksfrontub00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 608
+  - name: gokssocle400
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 416
+  - name: goktech900
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 448
+  - name: gokruneplate13a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 480
+  - name: metal1b00
+    width: 16
+    height: 32
     orig_width: 16
     orig_height: 32
     left: 720
-    top: 628
-  - name: graynoise500
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 344
-    top: 772
-  - name: gokgradient1_100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 340
-  - name: gokmsocle200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 556
-  - name: wreck001b00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 204
-  - name: gokwhiteglow00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 704
-    top: 724
-  - name: goktracks1u00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 592
-  - name: gokmetal300
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 704
-    top: 764
-  - name: goktarmor200
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 556
-  - name: goksphere2_500
-    width: 12
-    height: 12
-    orig_width: 8
-    orig_height: 8
-    left: 500
-    top: 56
-  - name: gokcore7b00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 520
-  - name: glass200
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 36
-    top: 668
-  - name: metal3d00
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 36
-    top: 632
-  - name: goktracksfrontu00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 448
-  - name: gokpitturretbase100
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 704
-    top: 744
-  - name: gokwindow2d00
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 464
-    top: 36
-  - name: greyblend00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 580
-    top: 272
-  - name: gokcomshoulderl200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 628
-    top: 484
-  - name: gokarmor300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 484
-  - name: gokmarmor200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 736
-  - name: gokmetal600
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 664
-  - name: gokruneplate1spe200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 628
-  - name: wreck002a00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 308
-    top: 272
-  - name: goksarmorpb00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 784
-    top: 704
-  - name: gokrune000
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 556
-  - name: gokhellspawn1f00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 520
-  - name: gokhellspawn1a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 484
-  - name: gokhellspawn1b00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 772
-    top: 376
-  - name: graynoise100
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 684
-    top: 720
-  - name: goklwing2_300
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 700
-    top: 664
-  - name: gokmplating200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 376
-  - name: goktracks2front00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 736
-    top: 376
-  - name: goksarmorp00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 500
-    top: 36
-  - name: goktarmor100
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 664
-  - name: goktech1000
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 376
-  - name: gokscore200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 376
-  - name: gokrwing2_300
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 628
-    top: 724
-  - name: gokrwing2_200
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 628
-    top: 704
-  - name: goktarmor1b00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 628
-  - name: gokrwing2_100
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 628
-    top: 684
-  - name: gokcarrier1_base100
-    width: 132
-    height: 36
-    orig_width: 128
-    orig_height: 32
-    left: 396
-    top: 0
-  - name: glow00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 648
-    top: 68
-  - name: glass100
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 628
-    top: 780
-  - name: gokarmor400
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 308
-    top: 772
-  - name: gokramp100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 376
-  - name: gokscore100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 308
-    top: 736
-  - name: graynoise400
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 772
-  - name: graynoise300
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 664
-    top: 756
-  - name: gokmplating100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 412
-  - name: darksnw5dark00
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 784
-    top: 204
-  - name: gokssocle300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 520
-  - name: goktoe1l00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 484
-  - name: guntipdark00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 596
-    top: 0
-  - name: solid3a
-    width: 12
-    height: 12
-    orig_width: 8
-    orig_height: 8
-    left: 444
-    top: 56
-  - name: gokheel1r00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 772
-  - name: metal3b00
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 760
-    top: 628
-  - name: goksabarrel100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 628
-    top: 592
-  - name: solid3b
-    width: 12
-    height: 12
-    orig_width: 8
-    orig_height: 8
-    left: 368
-    top: 56
-  - name: metal3c00
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 684
-    top: 756
-  - name: noise2c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 772
-  - name: goklogolight
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 580
-    top: 136
-  - name: wreck003b00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 700
-    top: 592
-  - name: wreck004a00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 444
-    top: 136
-  - name: wreck00100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 376
-    top: 136
-  - name: gokmarmorshadow00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 744
-    top: 704
-  - name: gokarmor4b00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 628
-  - name: goktech600
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 308
-    top: 136
-  - name: goktracksfrontub00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 628
-  - name: gokssocle400
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 628
-  - name: goktech900
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 700
-    top: 520
-  - name: gokruneplate13a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 520
-  - name: metal1b00
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 684
-    top: 684
+    top: 384
   - name: goktech1400
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 556
-    top: 556
+    left: 400
+    top: 576
   - name: goktracksfront00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 36
-    top: 572
-  - name: gokbarrel100
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 36
-    top: 536
-  - name: gokmetal200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 736
-    top: 520
-  - name: goktracks1d00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 700
-  - name: gokimmortalface00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 628
-  - name: wreck003e00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 592
-  - name: wreck003d00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 556
-  - name: wreck003c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 772
-    top: 520
-  - name: wreck001c00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 272
-  - name: wreck003f00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 412
-  - name: wreck002c00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 444
-    top: 68
-  - name: wreck002b00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 340
-  - name: wreck001d00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 408
-  - name: wreck002d00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 476
-  - name: wreck003g00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 544
-  - name: glass300
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 800
-    top: 628
-  - name: goksolar1bright00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 612
-  - name: gokmsocle100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 664
-  - name: gokengineintake100
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 724
-    top: 684
-  - name: gokglowpit200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 700
-  - name: goktech2200
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 664
-    top: 792
-  - name: noise6a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 736
-  - name: goklwing00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 772
-  - name: goktech400
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 68
-    top: 336
-  - name: goktech2000
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 556
-  - name: gokssocle4c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 628
-    top: 556
-  - name: goktech2300
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 344
-    top: 736
-  - name: goktech1600
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 556
-  - name: goktech1200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 700
-    top: 556
-  - name: gokarmor4c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 736
-    top: 556
-  - name: gokssocle3c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 772
-    top: 556
-  - name: metal1d00
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 36
-    top: 596
-  - name: gokcomface2r00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 592
-  - name: gokbarrel200
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 36
-    top: 464
-  - name: gokpitturretbase200
-    width: 20
-    height: 20
+    width: 16
+    height: 16
     orig_width: 16
     orig_height: 16
     left: 704
-    top: 684
-  - name: gokcomface2u00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 736
-  - name: gokmisc400
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 36
-    top: 500
-  - name: gokssocle500
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 736
-    top: 484
-  - name: goktech3b00
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 68
-    top: 404
-  - name: gokengineintake200
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 704
-    top: 704
-  - name: goktracks2rt00
-    width: 68
-    height: 20
-    orig_width: 64
-    orig_height: 16
-    left: 264
-    top: 36
-  - name: goklwing2_100
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 628
-    top: 664
-  - name: goklwing2_200
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 736
-    top: 664
-  - name: gokrwing2_400
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 772
-    top: 664
-  - name: gokmisc500
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 684
-    top: 792
-  - name: gokcore600
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 680
-  - name: gokcore8c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 772
-    top: 484
-  - name: gokarmor200
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 748
-  - name: gokmetal400
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 520
-  - name: gokbotfaceu00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 556
-  - name: gokbotfacel00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 592
-  - name: gokarmor3b00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 628
-  - name: goktech2100
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 704
-    top: 784
-  - name: gokruneplate14a00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 444
-    top: 340
-  - name: gokmarmor3bfade200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 664
-  - name: gokruneplate13bright00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 700
-  - name: color_16776960
-    width: 5
-    height: 5
-    orig_width: 1
-    orig_height: 1
-    left: 388
-    top: 41
-  - name: gokcomshoulderr300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 700
-    top: 484
-  - name: gokcomshoulderr100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 772
-  - name: gokscore300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 520
-  - name: wreck006a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 520
-  - name: gokrwing00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 520
-  - name: bluelight00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 580
-    top: 340
-  - name: metal1c00
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 628
-    top: 744
-  - name: blanklogogouraud00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 136
-  - name: gokcolor1_100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 204
-  - name: noise3c00
-    width: 68
-    height: 132
-    orig_width: 64
-    orig_height: 128
-    left: 0
-    top: 200
-  - name: window1b00
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 664
-    top: 664
-  - name: corve01a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 700
-  - name: node3light00
-    width: 36
-    height: 132
-    orig_width: 32
-    orig_height: 128
-    left: 0
-    top: 596
-  - name: holess3light00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 716
-    top: 340
-  - name: bluelight2_anim00
-    width: 36
-    height: 132
-    orig_width: 32
-    orig_height: 128
-    left: 68
-    top: 68
-  - name: 32xlogos
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 512
-    top: 136
-  - name: pitgrey2light00
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 68
-    top: 744
-  - name: gokcore7c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 736
-  - name: color_16711935
-    width: 5
-    height: 5
-    orig_width: 1
-    orig_height: 1
-    left: 388
-    top: 36
-  - name: plate1a00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 648
-    top: 136
-  - name: 32xgouraud
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 716
-    top: 136
-  - name: gokglowpit400
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 736
-  - name: wreck005e00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 664
-  - name: wreck005f00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 736
-    top: 592
-  - name: wreck004f00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 664
-  - name: wreck005g00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 700
-  - name: wreck004g00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 592
-    top: 592
-  - name: gokcolor4_100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 204
-  - name: gokmsocle1c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 592
-  - name: gokmplating2c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 772
-    top: 592
-  - name: gokmisc5a_0100
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 752
-    top: 308
-  - name: gokgradient3_100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 272
-  - name: engineon00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 136
-  - name: gokruneplate15a00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 520
-  - name: gokcomshoulderl100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 628
-    top: 628
-  - name: goktyre100
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 784
-    top: 684
-  - name: color_16777215
-    width: 5
-    height: 5
-    orig_width: 1
-    orig_height: 1
-    left: 388
-    top: 46
-  - name: goklwing2_400
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 716
-    top: 308
-  - name: goktracks2ru00
-    width: 68
-    height: 20
-    orig_width: 64
-    orig_height: 16
-    left: 0
-    top: 796
-  - name: gokcore800
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 448
-  - name: panelofventlight00
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 784
-    top: 68
-  - name: goklogo
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 664
-    top: 0
-  - name: gokscomplatel00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 556
-  - name: wreck003a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 592
-  - name: goktracks2ruf00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 368
-    top: 36
-  - name: goktech1900
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 628
-  - name: goktracks2rub00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 764
-    top: 704
-  - name: goktracks2rd00
-    width: 68
-    height: 20
-    orig_width: 64
-    orig_height: 16
-    left: 396
-    top: 36
-  - name: goktankface00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 664
-  - name: gokmplating2b00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 700
-  - name: gokstatue1rwing00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 736
-  - name: gokcomshoulderl400
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 412
-  - name: goktoe1r00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 412
-  - name: gokcomface2l00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 412
-  - name: gokcomshoulderl300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 772
-    top: 448
-  - name: gokcomshoulderr400
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 520
-    top: 412
-  - name: tredfront00
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 784
-    top: 136
-  - name: gokglowpit300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 412
-  - name: gokcore300
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 732
-    top: 0
-  - name: gokcomshoulderr200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 628
-    top: 412
-  - name: gokwreck2200
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 0
-    top: 728
-  - name: gokgem14_300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 412
-  - name: gokwreck3b00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 68
-  - name: gokwreck300
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 68
-  - name: gokwreck2100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 68
-  - name: goktech1800
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 784
-    top: 340
-  - name: apventlight00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 528
-    top: 0
-  - name: packpanellight00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 580
-    top: 68
-  - name: pitgrey2vlight00
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 68
-    top: 676
-  - name: darksnw6vlight00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 376
-    top: 376
-  - name: darksnw4vlight00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 376
-  - name: greenthing00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 376
-  - name: bluelight200
-    width: 36
-    height: 132
-    orig_width: 32
-    orig_height: 128
-    left: 0
-    top: 464
-  - name: pitbrownlight00
-    width: 36
-    height: 68
-    orig_width: 32
-    orig_height: 64
-    left: 68
     top: 608
-  - name: gokstripes100
-    width: 20
-    height: 20
+  - name: gokbarrel100
+    width: 16
+    height: 32
     orig_width: 16
-    orig_height: 16
-    left: 764
-    top: 684
-  - name: meteor0300
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 716
-    top: 68
-  - name: gokmarmor3b00
-    width: 36
-    height: 36
+    orig_height: 32
+    left: 560
+    top: 608
+  - name: gokmetal200
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 556
-    top: 376
-  - name: gokcolor2_100
-    width: 68
-    height: 68
+    left: 400
+    top: 672
+  - name: goktracks1d00
+    width: 64
+    height: 32
     orig_width: 64
-    orig_height: 64
-    left: 104
-    top: 136
-  - name: metal1a00
-    width: 20
-    height: 36
-    orig_width: 16
     orig_height: 32
-    left: 664
-    top: 684
-  - name: gokstealthfacer00
-    width: 36
-    height: 36
+    left: 64
+    top: 704
+  - name: gokimmortalface00
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 628
-    top: 376
-  - name: gokstealthface00
-    width: 20
-    height: 36
-    orig_width: 16
+    left: 400
+    top: 704
+  - name: wreck003e00
+    width: 32
+    height: 32
+    orig_width: 32
     orig_height: 32
-    left: 664
-    top: 720
-  - name: gokdarkplate100
-    width: 68
-    height: 68
+    left: 432
+    top: 416
+  - name: wreck003d00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 416
+  - name: wreck003c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 416
+  - name: wreck001c00
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
-    left: 376
-    top: 68
-  - name: arm4b00
-    width: 68
-    height: 68
+    left: 128
+    top: 320
+  - name: wreck003f00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 416
+  - name: wreck002c00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 128
+    top: 256
+  - name: wreck002b00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 128
+    top: 192
+  - name: wreck001d00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 640
+    top: 128
+  - name: wreck002d00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 576
+    top: 128
+  - name: wreck003g00
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
     left: 512
-    top: 68
-  - name: gokmsocle2c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 376
-  - name: gokssocle600
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 700
-    top: 376
-  - name: meteor0100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 308
-    top: 68
-  - name: meteor0200
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 680
-  - name: armpanel300
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 700
-  - name: noise6c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 700
-    top: 448
-  - name: almetal1_0200
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 376
-    top: 204
-  - name: corsea6c00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 612
-  - name: corve01c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 736
-    top: 448
-  - name: corsea5b00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 476
-  - name: gokwhiteplate1g00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 544
-  - name: corcl0900
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 648
-    top: 340
-  - name: armhov0200
-    width: 20
-    height: 68
+    top: 128
+  - name: glass300
+    width: 16
+    height: 32
     orig_width: 16
-    orig_height: 64
-    left: 800
-    top: 0
-  - name: corsea5c00
-    width: 68
-    height: 68
+    orig_height: 32
+    left: 720
+    top: 560
+  - name: goksolar1bright00
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
-    left: 240
-    top: 748
-  - name: corcl09a00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 412
-  - name: corve01d00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 592
-  - name: corsea6d00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 376
-    top: 272
-  - name: noise3d00
-    width: 68
-    height: 132
-    orig_width: 64
-    orig_height: 128
-    left: 0
-    top: 332
-  - name: goktyre1b00
-    width: 20
-    height: 20
-    orig_width: 16
-    orig_height: 16
-    left: 744
-    top: 684
-  - name: gokhellspawn1c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 448
-  - name: corsea7a00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 444
-    top: 272
-  - name: goktech1500
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 448
-    top: 772
-  - name: goktech1700
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 484
-    top: 484
-  - name: gokwindow2e00
-    width: 36
-    height: 20
-    orig_width: 32
-    orig_height: 16
-    left: 332
-    top: 36
-  - name: noise3b00
-    width: 68
-    height: 132
-    orig_width: 64
-    orig_height: 128
-    left: 0
-    top: 68
-  - name: gokruneplate13afade100
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 556
-    top: 484
-  - name: wreck005b00
-    width: 36
-    height: 36
+    left: 64
+    top: 320
+  - name: gokmsocle100
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
     left: 592
-    top: 484
-  - name: wreck004b00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 512
-    top: 272
-  - name: wreck005c00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 664
-    top: 484
-  - name: wreck005d00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 700
-  - name: wreck005a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 736
-    top: 412
-  - name: wreck004e00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 240
-    top: 408
-  - name: wreck004d00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 772
-    top: 412
-  - name: armbld100
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 648
-    top: 272
-  - name: corve03b00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 408
-  - name: corcam1c00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 476
-  - name: gokssocle5bfade200
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 484
-  - name: corve03d00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 544
-  - name: bluenoise300
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 612
-  - name: treadslight00
-    width: 132
-    height: 36
-    orig_width: 128
-    orig_height: 32
-    left: 264
-    top: 0
-  - name: tlltexm500
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 680
-  - name: tlltexm400
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 172
-    top: 748
-  - name: gokwindow1d00
-    width: 36
-    height: 12
-    orig_width: 32
-    orig_height: 8
-    left: 332
-    top: 56
-  - name: gokwindow1e00
-    width: 36
-    height: 12
-    orig_width: 32
-    orig_height: 8
-    left: 396
-    top: 56
-  - name: gokwindow1b00
-    width: 36
-    height: 12
-    orig_width: 32
-    orig_height: 8
-    left: 464
-    top: 56
-  - name: gokwindow1c00
-    width: 36
-    height: 12
-    orig_width: 32
-    orig_height: 8
-    left: 716
-    top: 328
-  - name: gokwindow100
-    width: 36
-    height: 12
-    orig_width: 32
-    orig_height: 8
-    left: 308
-    top: 808
-  - name: corv1b00
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 484
-  - name: armpanel400
-    width: 68
-    height: 36
-    orig_width: 64
-    orig_height: 32
-    left: 308
-    top: 448
-  - name: solgradb
-    width: 12
-    height: 12
-    orig_width: 8
-    orig_height: 8
-    left: 432
-    top: 56
-  - name: snw7light00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 308
-    top: 204
-  - name: black3light00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 444
-    top: 204
-  - name: wreck007a00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 592
-  - name: wreck006d00
-    width: 36
-    height: 36
-    orig_width: 32
-    orig_height: 32
-    left: 412
-    top: 628
-  - name: gokbarrel1b00
-    width: 20
-    height: 36
-    orig_width: 16
-    orig_height: 32
-    left: 700
-    top: 628
-  - name: gokwindow2bisd0000
-    width: 20
-    height: 20
+    top: 416
+  - name: gokengineintake100
+    width: 16
+    height: 16
     orig_width: 16
     orig_height: 16
-    left: 724
+    left: 608
+    top: 608
+  - name: gokglowpit200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 656
+    top: 416
+  - name: goktech2200
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 720
+    top: 608
+  - name: noise6a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 688
+    top: 416
+  - name: goklwing00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 448
+  - name: goktech400
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 320
+    top: 448
+  - name: goktech2000
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 480
+  - name: gokssocle4c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 688
+    top: 528
+  - name: goktech2300
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 720
+    top: 496
+  - name: goktech1600
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 560
+  - name: goktech1200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 592
+  - name: gokarmor4c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 624
+  - name: gokssocle3c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 656
+  - name: metal1d00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 720
+    top: 416
+  - name: gokcomface2r00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 560
+    top: 560
+  - name: gokbarrel200
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 720
+    top: 448
+  - name: gokpitturretbase200
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 672
+    top: 592
+  - name: gokcomface2u00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 624
+    top: 560
+  - name: gokmisc400
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 720
+    top: 528
+  - name: gokssocle500
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 656
+    top: 528
+  - name: goktech3b00
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 160
+    top: 512
+  - name: gokengineintake200
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 720
+    top: 480
+  - name: goktracks2rt00
+    width: 64
+    height: 16
+    orig_width: 64
+    orig_height: 16
+    left: 496
+    top: 480
+  - name: goklwing2_100
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 560
+    top: 640
+  - name: goklwing2_200
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 560
+    top: 656
+  - name: gokrwing2_400
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 608
+    top: 592
+  - name: gokmisc500
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 592
     top: 704
-  - name: noise4a00
-    width: 68
-    height: 68
+  - name: gokcore600
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
-    left: 512
-    top: 204
-  - name: corv4b00
-    width: 68
-    height: 68
-    orig_width: 64
-    orig_height: 64
-    left: 580
-    top: 204
-  - name: bar000
-    width: 36
-    height: 68
+    left: 64
+    top: 640
+  - name: gokcore8c00
+    width: 32
+    height: 32
     orig_width: 32
-    orig_height: 64
-    left: 68
-    top: 540
-  - name: goksolar1glow00
-    width: 68
-    height: 68
+    orig_height: 32
+    left: 560
+    top: 496
+  - name: gokarmor200
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
-    left: 648
-    top: 204
-  - name: gokcarrier100
-    width: 68
-    height: 36
+    left: 64
+    top: 576
+  - name: gokmetal400
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 592
+    top: 496
+  - name: gokbotfaceu00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 624
+    top: 496
+  - name: gokbotfacel00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 656
+    top: 496
+  - name: gokarmor3b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 688
+    top: 496
+  - name: goktech2100
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 640
+    top: 592
+  - name: gokruneplate14a00
+    width: 64
+    height: 32
     orig_width: 64
     orig_height: 32
-    left: 512
-    top: 340
-  - name: arm01c00
-    width: 68
-    height: 68
+    left: 256
+    top: 704
+  - name: gokmarmor3bfade200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 560
+  - name: gokruneplate13bright00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 624
+  - name: color_16776960
+    width: 1
+    height: 1
+    orig_width: 1
+    orig_height: 1
+    left: 618
+    top: 688
+  - name: gokcomshoulderr300
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 688
+  - name: gokcomshoulderr100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 528
+  - name: gokscore300
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 672
+    top: 320
+  - name: wreck006a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 592
+    top: 528
+  - name: gokrwing00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 624
+    top: 528
+  - name: bluelight00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 256
+    top: 384
+  - name: metal1c00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 592
+    top: 624
+  - name: blanklogogouraud00
+    width: 64
+    height: 64
     orig_width: 64
     orig_height: 64
-    left: 240
-    top: 272
+    left: 640
+    top: 64
+  - name: gokcolor1_100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 320
+    top: 0
+  - name: noise3c00
+    width: 64
+    height: 128
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 320
+  - name: window1b00
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 560
+    top: 672
+  - name: corve01a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 640
+    top: 320
+  - name: node3light00
+    width: 32
+    height: 128
+    orig_width: 32
+    orig_height: 128
+    left: 64
+    top: 192
+  - name: holess3light00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 256
+    top: 448
+  - name: bluelight2_anim00
+    width: 32
+    height: 128
+    orig_width: 32
+    orig_height: 128
+    left: 96
+    top: 192
+  - name: 32xlogos
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 64
+    top: 384
+  - name: pitgrey2light00
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 288
+    top: 544
+  - name: gokcore7c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 608
+    top: 320
+  - name: color_16711935
+    width: 1
+    height: 1
+    orig_width: 1
+    orig_height: 1
+    left: 617
+    top: 688
+  - name: plate1a00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 64
+    top: 448
+  - name: 32xgouraud
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 64
+    top: 512
+  - name: gokglowpit400
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 576
+    top: 320
+  - name: wreck005e00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 544
+    top: 320
+  - name: wreck005f00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 512
+    top: 320
+  - name: wreck004f00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 480
+    top: 320
+  - name: wreck005g00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 320
+    top: 704
+  - name: wreck004g00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 320
+    top: 672
+  - name: gokcolor4_100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 128
+    top: 128
+  - name: gokmsocle1c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 320
+    top: 640
+  - name: gokmplating2c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 320
+    top: 608
+  - name: gokmisc5a_0100
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 688
+    top: 592
+  - name: gokgradient3_100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 128
+  - name: engineon00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 256
+    top: 128
+  - name: gokruneplate15a00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 576
+    top: 256
+  - name: gokcomshoulderl100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 320
+    top: 576
+  - name: goktyre100
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 592
+    top: 720
+  - name: color_16777215
+    width: 1
+    height: 1
+    orig_width: 1
+    orig_height: 1
+    left: 616
+    top: 688
+  - name: goklwing2_400
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 560
+    top: 592
+  - name: goktracks2ru00
+    width: 64
+    height: 16
+    orig_width: 64
+    orig_height: 16
+    left: 416
+    top: 320
+  - name: gokcore800
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 320
+    top: 544
+  - name: panelofventlight00
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 320
+    top: 320
+  - name: goklogo
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 320
+    top: 128
+  - name: gokscomplatel00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 320
+    top: 512
+  - name: wreck003a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 704
+    top: 256
+  - name: goktracks2ruf00
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 608
+    top: 656
+  - name: goktech1900
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 432
+    top: 384
+  - name: goktracks2rub00
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 608
+    top: 640
+  - name: goktracks2rd00
+    width: 64
+    height: 16
+    orig_width: 64
+    orig_height: 16
+    left: 416
+    top: 336
+  - name: goktankface00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 544
+  - name: gokmplating2b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 576
+  - name: gokstatue1rwing00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 608
+  - name: gokcomshoulderl400
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 640
+  - name: goktoe1r00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 672
+  - name: gokcomface2l00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 704
+  - name: gokcomshoulderl300
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 400
+    top: 384
+  - name: gokcomshoulderr400
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 512
+  - name: tredfront00
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 704
+    top: 64
+  - name: gokglowpit300
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 464
+    top: 384
+  - name: gokcore300
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 448
+    top: 128
+  - name: gokcomshoulderr200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 528
+    top: 384
+  - name: goktech1800
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 560
+    top: 384
+  - name: apventlight00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 128
+    top: 384
+  - name: packpanellight00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 128
+    top: 448
+  - name: pitgrey2vlight00
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 704
+    top: 128
+  - name: darksnw6vlight00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 592
+    top: 384
+  - name: darksnw4vlight00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 624
+    top: 384
+  - name: greenthing00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 192
+    top: 704
+  - name: bluelight200
+    width: 32
+    height: 128
+    orig_width: 32
+    orig_height: 128
+    left: 128
+    top: 512
+  - name: pitbrownlight00
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 704
+    top: 0
+  - name: gokstripes100
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 672
+    top: 608
+  - name: meteor0300
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 384
+    top: 128
+  - name: gokmarmor3b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 656
+    top: 384
+  - name: gokcolor2_100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 256
+    top: 0
+  - name: metal1a00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 576
+    top: 608
+  - name: gokstealthfacer00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 576
+    top: 352
+  - name: gokstealthface00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 592
+    top: 656
+  - name: gokdarkplate100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 448
+    top: 0
+  - name: arm4b00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 512
+    top: 0
+  - name: gokmsocle2c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 352
+    top: 352
+  - name: gokssocle600
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 384
+    top: 352
+  - name: meteor0100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 0
+    top: 512
+  - name: meteor0200
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 0
+    top: 576
+  - name: armpanel300
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 448
+    top: 352
+  - name: noise6c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 480
+    top: 352
+  - name: almetal1_0200
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 0
+    top: 640
+  - name: corsea6c00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 64
+    top: 64
+  - name: corve01c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 512
+    top: 352
+  - name: corsea5b00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 64
+  - name: gokwhiteplate1g00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 256
+    top: 64
+  - name: corcl0900
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 256
+    top: 352
+  - name: armhov0200
+    width: 16
+    height: 64
+    orig_width: 16
+    orig_height: 64
+    left: 352
+    top: 384
+  - name: corsea5c00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 320
+    top: 64
+  - name: corcl09a00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 256
+    top: 512
+  - name: corve01d00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 608
+    top: 352
+  - name: corsea6d00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 384
+    top: 64
+  - name: noise3d00
+    width: 64
+    height: 128
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 192
+  - name: goktyre1b00
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 624
+    top: 608
+  - name: gokhellspawn1c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 384
+  - name: corsea7a00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 64
+    top: 128
+  - name: goktech1500
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 448
+  - name: goktech1700
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 480
+  - name: gokwindow2e00
+    width: 32
+    height: 16
+    orig_width: 32
+    orig_height: 16
+    left: 688
+    top: 480
+  - name: noise3b00
+    width: 64
+    height: 128
+    orig_width: 64
+    orig_height: 128
+    left: 0
+    top: 64
+  - name: gokruneplate13afade100
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 368
+    top: 416
+  - name: wreck005b00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 704
+    top: 352
+  - name: wreck004b00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 640
+  - name: wreck005c00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 672
+    top: 352
+  - name: wreck005d00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 640
+    top: 352
+  - name: wreck005a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 704
+    top: 320
+  - name: wreck004e00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 256
+  - name: wreck004d00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 544
+    top: 352
+  - name: armbld100
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 448
+    top: 192
+  - name: corve03b00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 320
+    top: 192
+  - name: corcam1c00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 576
+    top: 192
+  - name: gokssocle5bfade200
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 416
+    top: 352
+  - name: corve03d00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 512
+    top: 192
+  - name: bluenoise300
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 640
+    top: 192
+  - name: treadslight00
+    width: 128
+    height: 32
+    orig_width: 128
+    orig_height: 32
+    left: 512
+    top: 96
+  - name: tlltexm500
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 512
+  - name: tlltexm400
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 320
+    top: 256
+  - name: gokwindow1d00
+    width: 32
+    height: 8
+    orig_width: 32
+    orig_height: 8
+    left: 592
+    top: 488
+  - name: gokwindow1e00
+    width: 32
+    height: 8
+    orig_width: 32
+    orig_height: 8
+    left: 624
+    top: 624
+  - name: gokwindow1b00
+    width: 32
+    height: 8
+    orig_width: 32
+    orig_height: 8
+    left: 656
+    top: 624
+  - name: gokwindow1c00
+    width: 32
+    height: 8
+    orig_width: 32
+    orig_height: 8
+    left: 688
+    top: 624
+  - name: gokwindow100
+    width: 32
+    height: 8
+    orig_width: 32
+    orig_height: 8
+    left: 560
+    top: 488
   - name: snw4light00
-    width: 36
-    height: 36
+    width: 32
+    height: 32
     orig_width: 32
     orig_height: 32
-    left: 412
-    top: 772
-  - name: gokcrys1_100
-    width: 12
-    height: 12
+    left: 688
+    top: 384
+  - name: corv1b00
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 128
+    top: 704
+  - name: armpanel400
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 0
+    top: 704
+  - name: solgradb
+    width: 8
+    height: 8
     orig_width: 8
     orig_height: 8
-    left: 380
-    top: 56
+    left: 608
+    top: 672
+  - name: snw7light00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 320
+  - name: black3light00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 448
+  - name: wreck007a00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 496
+    top: 384
+  - name: wreck006d00
+    width: 32
+    height: 32
+    orig_width: 32
+    orig_height: 32
+    left: 704
+    top: 288
+  - name: gokbarrel1b00
+    width: 16
+    height: 32
+    orig_width: 16
+    orig_height: 32
+    left: 352
+    top: 704
+  - name: gokwindow2bisd0000
+    width: 16
+    height: 16
+    orig_width: 16
+    orig_height: 16
+    left: 656
+    top: 592
+  - name: noise4a00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 448
+    top: 256
+  - name: corv4b00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 512
+    top: 256
+  - name: bar000
+    width: 32
+    height: 64
+    orig_width: 32
+    orig_height: 64
+    left: 288
+    top: 608
+  - name: goksolar1glow00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 192
+    top: 576
+  - name: gokcarrier100
+    width: 64
+    height: 32
+    orig_width: 64
+    orig_height: 32
+    left: 256
+    top: 320
+  - name: arm01c00
+    width: 64
+    height: 64
+    orig_width: 64
+    orig_height: 64
+    left: 256
+    top: 192
+  - name: gokcrys1_100
+    width: 8
+    height: 8
+    orig_width: 8
+    orig_height: 8
+    left: 616
+    top: 672
   - name: goktarmor000
-    width: 68
-    height: 36
+    width: 64
+    height: 32
     orig_width: 64
     orig_height: 32
-    left: 376
-    top: 340
+    left: 352
+    top: 320
   - name: goktracks100
-    width: 68
-    height: 36
+    width: 64
+    height: 32
     orig_width: 64
     orig_height: 32
-    left: 308
-    top: 340
+    left: 256
+    top: 672
   - name: armplat0200
-    width: 68
-    height: 36
+    width: 64
+    height: 32
     orig_width: 64
     orig_height: 32
-    left: 716
-    top: 272
+    left: 256
+    top: 480
   - name: tex0005_b00
-    width: 68
-    height: 12
+    width: 64
+    height: 8
     orig_width: 64
     orig_height: 8
-    left: 264
-    top: 56
+    left: 560
+    top: 480
   - name: black1vlight00
-    width: 132
-    height: 68
+    width: 128
+    height: 64
     orig_width: 128
     orig_height: 64
-    left: 132
+    left: 128
     top: 0
   - name: vent100
-    width: 36
-    height: 68
+    width: 32
+    height: 64
     orig_width: 32
     orig_height: 64
-    left: 68
-    top: 268
+    left: 704
+    top: 192
   - name: vent1dark00
-    width: 36
-    height: 68
+    width: 32
+    height: 64
     orig_width: 32
     orig_height: 64
-    left: 68
-    top: 200
+    left: 160
+    top: 576
   - name: vent1light00
-    width: 36
-    height: 68
+    width: 32
+    height: 64
     orig_width: 32
     orig_height: 64
-    left: 68
-    top: 472
+    left: 320
+    top: 384
   - name: black100
-    width: 132
-    height: 68
+    width: 128
+    height: 64
     orig_width: 128
     orig_height: 64
     left: 0

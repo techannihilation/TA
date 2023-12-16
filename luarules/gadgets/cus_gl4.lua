@@ -266,75 +266,75 @@ do --save a ton of locals
 
 	uniformBins                   = {
 		arm_unit = {
-			bitOptions = defaultBitShaderOptions + OPTION_PBROVERRIDE, -- + OPTION_FLASHLIGHTS,
+			bitOptions = defaultBitShaderOptions, -- + OPTION_FLASHLIGHTS,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		arm_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		core_unit = {
-			bitOptions = defaultBitShaderOptions + OPTION_PBROVERRIDE,
+			bitOptions = defaultBitShaderOptions,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		core_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		gok_unit = {
-			bitOptions = defaultBitShaderOptions + OPTION_PBROVERRIDE,
+			bitOptions = defaultBitShaderOptions,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		gok_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		rumad_unit = {
-			bitOptions = defaultBitShaderOptions + OPTION_PBROVERRIDE,
+			bitOptions = defaultBitShaderOptions,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 0.85,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		rumad_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		talon_unit = {
-			bitOptions = defaultBitShaderOptions + OPTION_PBROVERRIDE,
+			bitOptions = defaultBitShaderOptions,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		talon_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		tll_unit = {
-			bitOptions = defaultBitShaderOptions + OPTION_PBROVERRIDE,
+			bitOptions = defaultBitShaderOptions,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		tll_unit_health = {
 			bitOptions = defaultBitShaderOptions + OPTION_HEALTH_TEXTURING + OPTION_HEALTH_DISPLACE,
 			baseVertexDisplacement = 0.0,
-			brightnessFactor = 1.0,
+			brightnessFactor = 1.1,
 			hasAlphaShadows = 0.0,
 		},
 		-- raptor = {
@@ -874,8 +874,8 @@ local function initBinsAndTextures()
 				[6] = "$shadow",
 				[7] = "$reflection",
 				[8] = "$info:los",
-				[9] = brdfLUT,
-				[10] = envLUT,
+				[9] = GG:GetBrdfTexture(),
+				[10] = GG:GetEnvTexture(),
 			}
 
 			local unittexttures = "unittextures/"
@@ -987,8 +987,8 @@ local function initBinsAndTextures()
 				[6] = "$shadow",
 				[7] = "$reflection",
 				[8] = "$info",
-				[9] = brdfLUT,
-				[10] = envLUT,
+				[9] = GG:GetBrdfTexture(),
+				[10] = GG:GetEnvTexture(),
 			}
 
 			objectDefToUniformBin[-1 * featureDefID] = 'feature'
