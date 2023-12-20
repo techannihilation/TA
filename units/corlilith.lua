@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "350 280 350",
 		collisionvolumetype = "CylY",
-		corpse = "corlilith_dead.s3o",
+		corpse = "corlilith_dead",
 		defaultmissiontype = "Standby",
 		description = "Titan Amphibious Hexapod (Auto-Repair 500)",
 		energystorage = 10000,

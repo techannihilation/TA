@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "36 36 47",
 		collisionvolumetype = "CylZ",
-		corpse = "1_dead.s3o",
+		corpse = "1_dead",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 2",
 		energymake = 20,

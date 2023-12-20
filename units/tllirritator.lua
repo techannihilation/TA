@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -6 4",
 		collisionvolumescales = "115 142 115",
 		collisionvolumetype = "CylY",
-		corpse = "tllirritator_dead.s3o",
+		corpse = "tllirritator_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Shield Unit",
 		energystorage = 1000,

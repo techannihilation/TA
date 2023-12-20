@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "38 68 38",
 		collisionvolumetype = "Box",
-		corpse = "armamd1_dead.s3o",
+		corpse = "armamd1_dead",
 		description = "Tech Level 4",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",

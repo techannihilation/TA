@@ -9,7 +9,7 @@ return {
 		canguard = true,
 		canstop = 1,
 		category = "ALL SURFACE",
-		corpse = "corint_dead.s3o",
+		corpse = "corint_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range EMP Paralizer",
 		downloadable = 1,

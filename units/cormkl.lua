@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "263 200 263",
 		collisionvolumetype = "CylY",
-		corpse = "cormkl_dead.s3o",
+		corpse = "cormkl_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Amphibious Hexapod (Auto-Repair 250)",
 		energystorage = 10000,

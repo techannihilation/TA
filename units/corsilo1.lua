@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 18 -2",
 		collisionvolumescales = "90 38 84",
 		collisionvolumetype = "Box",
-		corpse = "corsilo_dead.s3o",
+		corpse = "corsilo_dead",
 		description = "Tech Level 2",
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",

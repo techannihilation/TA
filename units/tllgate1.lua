@@ -13,7 +13,7 @@ return {
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "56 32 56",
 		collisionvolumetype = "box",
-		corpse = "tllgate_dead.s3o",
+		corpse = "tllgate_dead",
 		description = "Tech Level 4",
 		energystorage = 2000,
 		energyuse = 0,

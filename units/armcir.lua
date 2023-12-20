@@ -19,7 +19,7 @@ return {
 		collisionvolumeoffsets = "-2 -3 0",
 		collisionvolumescales = "58 62 58",
 		collisionvolumetype = "CylY",
-		corpse = "armcir_dead.s3o",
+		corpse = "armcir_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Anti-Air Battery",
 		explodeas = "LARGE_BUILDINGEX",

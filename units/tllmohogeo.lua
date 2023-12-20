@@ -15,7 +15,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "80 40 80",
 		collisionvolumetype = "Box",
-		corpse = "tllmohogeo_dead.s3o",
+		corpse = "tllmohogeo_dead",
 		description = "Produces Energy (Amphibious)",
 		energymake = 2500,
 		energystorage = 2500,

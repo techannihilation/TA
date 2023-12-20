@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE SURFACE",
-		corpse = "corsent_dead.s3o",
+		corpse = "corsent_dead",
 		defaultmissiontype = "Standby",
 		description = "Flak Hovercraft",
 		downloadable = 1,

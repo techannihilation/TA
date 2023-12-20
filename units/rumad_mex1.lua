@@ -13,7 +13,7 @@ return {
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "50 28 50",
 		collisionvolumetype = "CylY",
-		corpse = "rumad_mex1_dead.s3o",
+		corpse = "rumad_mex1_dead",
 		description = "Tech Level 1 (Amphibious)",
 		energyuse = 15,
 		explodeas = "SMALL_BUILDING",

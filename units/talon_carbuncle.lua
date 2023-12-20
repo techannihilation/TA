@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "65 40 78",
 		collisionvolumetype = "CylZ",
-		corpse = "carbuncle_dead.s3o",
+		corpse = "carbuncle_dead",
 		defaultmissiontype = "Standby",
 		description = "Very Heavy Assault Tank (Auto-Repair 50)",
 		explodeas = "CRAWL_BLASTSML",

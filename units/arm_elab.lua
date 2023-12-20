@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 -5 8",
 		collisionvolumescales = "150 43 150",
 		collisionvolumetype = "CylY",
-		corpse = "armshlt_dead.s3o",
+		corpse = "armshlt_dead",
 		description = "Tech Level 3",
 		energystorage = 500,
 		energyuse = 0,

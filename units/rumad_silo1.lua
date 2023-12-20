@@ -12,7 +12,7 @@ return {
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "115 32 80",
 		collisionvolumetype = "box",
-		corpse = "armsilo_dead.s3o",
+		corpse = "armsilo_dead",
 		description = "Tech Level 2",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,

@@ -16,7 +16,7 @@ return {
 		collisionvolumeoffsets = "0 -3 1",
 		collisionvolumescales = "82 98 62",
 		collisionvolumetype = "ellipsoid",
-		corpse = "tllheavyimpact_dead.s3o",
+		corpse = "tllheavyimpact_dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Artillery Amphibious Mech",
 		explodeas = "BIG_UNIT",

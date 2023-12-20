@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "-2 -3 0",
 		collisionvolumescales = "58 62 58",
 		collisionvolumetype = "CylY",
-		corpse = "rumad_cir_dead.s3o",
+		corpse = "rumad_cir_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Anti-Air Battery",
 		explodeas = "LARGE_BUILDINGEX",

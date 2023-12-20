@@ -23,7 +23,7 @@ return {
 		collisionvolumescales = "42 60 32",
 		collisionvolumetype = "Ell",
 		commander = true,
-		corpse = "8_dead.s3o",
+		corpse = "8_dead",
 		defaultmissiontype = "Standby",
 		energymake = 1000,
 		energystorage = 2500,

@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE MINOR SURFACE UNDERWATER",
-		corpse = "armflea_dead.s3o",
+		corpse = "armflea_dead",
 		defaultmissiontype = "Standby",
 		description = "Stealthy Scout Kbot",
 		explodeas = "FLEA_EX",

@@ -19,7 +19,7 @@ return {
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "56 56 56",
 		collisionvolumetype = "CylY",
-		corpse = "corerad_dead.s3o",
+		corpse = "corerad_dead",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Missile Battery",
 		explodeas = "LARGE_BUILDINGEX",

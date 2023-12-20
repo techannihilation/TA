@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE SMALL SURFACE",
-		corpse = "armhplasma_dead.s3o",
+		corpse = "armhplasma_dead",
 		defaultmissiontype = "Standby",
 		description = "Battlefield Intelligence Hover Radar and Sonar",
 		downloadable = 1,

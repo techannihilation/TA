@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 8 0",
 		collisionvolumescales = "50 35 50",
 		collisionvolumetype = "CylY",
-		corpse = "cormex_dead.s3o",
+		corpse = "cormex_dead",
 		damagemodifier = 0.25,
 		description = "Tech Level 1 (Amphibious)",
 		energyuse = 15,

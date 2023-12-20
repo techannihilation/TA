@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "263 200 263",
 		collisionvolumetype = "Ell",
-		corpse = "armmygalo_dead.s3o",
+		corpse = "armmygalo_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Amphibious Spider (Auto-Repair 250)",
 		energystorage = 10000,

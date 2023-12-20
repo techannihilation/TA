@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "125 142 92",		
 		collisionvolumetype = "ellipsoid",
-		corpse = "gok_everchosen_dead.s3o",
+		corpse = "gok_everchosen_dead",
 		defaultmissiontype = "Standby",
 		description = "Amphibious Assault Kbot (Auto-Repair 125)",
 		downloadable = 1,

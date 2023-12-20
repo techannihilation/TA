@@ -10,7 +10,7 @@ return {
 		canattack = false,
 		canstop = 1,
 		category = "ALL SURFACE",
-		corpse = "tllgate_dead.s3o",
+		corpse = "tllgate_dead",
 		description = "Tech Level 2",
 		energystorage = 1800,
 		explodeas = "CRAWL_BLASTSML",

@@ -9,7 +9,7 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
-		corpse = "armsilo_dead.s3o",
+		corpse = "armsilo_dead",
 		description = "Tech Level 2",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,

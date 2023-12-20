@@ -16,7 +16,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "125 142 92",
 		collisionvolumetype = "ellipsoid",
-		corpse = "tllhyperion_dead.s3o",
+		corpse = "tllhyperion_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Amphibious Assault Kbot",
 		downloadable = 1,

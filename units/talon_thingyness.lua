@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -2 0",
 		collisionvolumescales = "38 30 60",
 		collisionvolumetype = "Box",
-		corpse = "corsent_dead.s3o",
+		corpse = "corsent_dead",
 		defaultmissiontype = "Standby",
 		description = "Heavy Missile Gravitank",
 		downloadable = 1,

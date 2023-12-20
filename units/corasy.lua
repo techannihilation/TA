@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "0 -13 -3",
 		collisionvolumescales = "192 61 180",
 		collisionvolumetype = "Box",
-		corpse = "1_dead.s3o",
+		corpse = "1_dead",
 		description = "Produces T2 Ships",
 		energystorage = 0,
 		explodeas = "LARGE_BUILDINGEX",

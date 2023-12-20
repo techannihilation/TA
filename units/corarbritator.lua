@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "135 105 135",
 		collisionvolumetype = "CylY",
-		corpse = "corarbritator_dead.s3o",
+		corpse = "corarbritator_dead",
 		defaultmissiontype = "Standby",
 		description = "Experimental Tactical Hexapod",
 		energystorage = 1000,
