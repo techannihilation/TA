@@ -9,7 +9,7 @@ return {
 		canguard = true,
 		canstop = 1,
 		category = "ALL SURFACE",
-		corpse = "corint_dead",
+		corpse = "corint_dead.s3o",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range EMP Paralizer",
 		downloadable = 1,
@@ -53,7 +53,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3750,
-				object = "core/corint_dead",
+				object = "core/corint_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2000,
-				object = "3x3c",
+				object = "3x3c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -68,7 +68,7 @@ return {
 				featurereclaimate = "smudge01",
 				footprintx = 3,
 				footprintz = 3,
-				object = "gok/gok_cancer_dead",
+				object = "gok/gok_cancer_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				description = "Cancer Debris",
 				footprintx = 3,
 				footprintz = 3,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

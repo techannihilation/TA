@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "80 60 100",
 		collisionvolumetype = "box",
-		corpse = "1_dead",
+		corpse = "1_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 4",
 		energymake = 75,
@@ -94,7 +94,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1480,
-				object = "tll/tllucv_dead",
+				object = "tll/tllucv_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

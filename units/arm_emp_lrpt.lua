@@ -10,7 +10,7 @@ return {
 		canguard = true,
 		canstop = 1,
 		category = "ALL SURFACE",
-		corpse = "armbrtha_dead",
+		corpse = "armbrtha_dead.s3o",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Long Range EMP Paralizer",
 		downloadable = 1,
@@ -54,7 +54,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3225,
-				object = "arm/arm_emp_lrpt_dead",
+				object = "arm/arm_emp_lrpt_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1720,
-				object = "3x3e",
+				object = "3x3e.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

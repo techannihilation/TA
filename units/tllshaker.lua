@@ -74,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 183,
-				object = "tll/tllshaker_dead",
+				object = "tll/tllshaker_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

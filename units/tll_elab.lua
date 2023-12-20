@@ -70,7 +70,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 14250,
-				object = "tll/tll_elab_dead",
+				object = "tll/tll_elab_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +84,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 7600,
-				object = "7x7d",
+				object = "7x7d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -100,7 +100,7 @@ return {
 				footprintz = 11,
 				hitdensity = 5,
 				metal = 7884.80029,
-				object = "4x4d",
+				object = "4x4d.s3o",
 				reclaimable = true,
 				seqnamereclamate = "tree1reclamate",
 				world = "all",

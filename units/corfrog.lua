@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL LARGE MOBILE SURFACE",
-		corpse = "corsent_dead",
+		corpse = "corsent_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Flak Hovercraft",
 		downloadable = 1,
@@ -66,7 +66,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 720,
-				object = "core/corsent_dead",
+				object = "core/corsent_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 384,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

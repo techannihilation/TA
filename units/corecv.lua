@@ -99,7 +99,7 @@ return {
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,
-				object = "core/corecv_dead",
+				object = "core/corecv_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -111,7 +111,7 @@ return {
 				description = "Vehicle Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4x4a",
+				object = "4x4a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 18 -2",
 		collisionvolumescales = "90 38 84",
 		collisionvolumetype = "Box",
-		corpse = "corsilo_dead",
+		corpse = "corsilo_dead.s3o",
 		description = "Tech Level 2",
 		energyuse = 0,
 		explodeas = "CRAWL_BLAST",
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 11062,
-				object = "core/corsilo_dead",
+				object = "core/corsilo_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5900,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

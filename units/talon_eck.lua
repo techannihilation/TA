@@ -93,7 +93,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 217,
-				object = "talon/talon_eck_dead",
+				object = "talon/talon_eck_dead.s3o",
 				reclaimable = true,
 			},
 		},

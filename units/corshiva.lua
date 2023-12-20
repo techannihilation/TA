@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2600,
-				object = "core/corshiva_dead",
+				object = "core/corshiva_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1386,
-				object = "3x3f",
+				object = "3x3f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

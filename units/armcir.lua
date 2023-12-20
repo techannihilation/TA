@@ -19,7 +19,7 @@ return {
 		collisionvolumeoffsets = "-2 -3 0",
 		collisionvolumescales = "58 62 58",
 		collisionvolumetype = "CylY",
-		corpse = "armcir_dead",
+		corpse = "armcir_dead.s3o",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Anti-Air Battery",
 		explodeas = "LARGE_BUILDINGEX",
@@ -65,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1424,
-				object = "arm/armcir_dead",
+				object = "arm/armcir_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 759,
-				object = "3x3b",
+				object = "3x3b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

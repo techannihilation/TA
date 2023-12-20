@@ -64,7 +64,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 507200,
-				object = "tll/tllsamael_dead",
+				object = "tll/tllsamael_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {

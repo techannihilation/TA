@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "16 26 16",
 		collisionvolumetype = "CylY",
-		corpse = "dragonseyes_dead",
+		corpse = "dragonseyes_dead.s3o",
 		description = "Perimeter Camera",
 		energymake = 0,
 		energyuse = 3,
@@ -63,7 +63,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 24,
-				object = "1x1b",
+				object = "1x1b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "31 30 73",
 		collisionvolumetype = "CylZ",
-		corpse = "1_dead",
+		corpse = "1_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 2",
 		energymake = 30,
@@ -90,7 +90,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1950,
-				object = "arm/armacsub_dead",
+				object = "arm/armacsub_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

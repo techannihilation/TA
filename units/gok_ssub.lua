@@ -70,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 520,
-				object = "gok/gok_ssub_dead",
+				object = "gok/gok_ssub_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -81,7 +81,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 277,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 			},
 		},

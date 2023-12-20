@@ -62,7 +62,7 @@ return {
 				footprintx = 8,
 				footprintz = 12,
 				metal = 80000,
-				object = "arm/ashipyardlvl3_dead",
+				object = "arm/ashipyardlvl3_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

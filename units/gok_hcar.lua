@@ -72,7 +72,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 10875,
-				object = "gok/gok_hcar_dead",
+				object = "gok/gok_hcar_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

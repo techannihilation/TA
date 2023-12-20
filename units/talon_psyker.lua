@@ -108,7 +108,7 @@ talon_psyker = {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 81,
-				object = "talon/talon_psyker_dead",
+				object = "talon/talon_psyker_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -119,7 +119,7 @@ talon_psyker = {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 43,
-				object = "2x2d",
+				object = "2x2d.s3o",
 				reclaimable = true,
 			},
 		},

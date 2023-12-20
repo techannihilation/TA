@@ -56,7 +56,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3862,
-				object = "rumad/rumad_orb_dead",
+				object = "rumad/rumad_orb_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2060,
-				object = "3x3b",
+				object = "3x3b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -65,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1053,
-				object = "core/corgeo_dead",
+				object = "core/corgeo_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 562,
-				object = "4x4b",
+				object = "4x4b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

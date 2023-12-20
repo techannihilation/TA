@@ -107,7 +107,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1411,
-				object = "gok/gok_ech_dead",
+				object = "gok/gok_ech_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -119,7 +119,7 @@ return {
 				description = "Hover Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "4x4a",
+				object = "4x4a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -13,7 +13,7 @@ return {
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "56 32 56",
 		collisionvolumetype = "box",
-		corpse = "tllgate_dead",
+		corpse = "tllgate_dead.s3o",
 		description = "Tech Level 4",
 		energystorage = 2000,
 		energyuse = 0,
@@ -53,7 +53,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5400,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -67,7 +67,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 10125,
-				object = "tll/tllgate_dead",
+				object = "tll/tllgate_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

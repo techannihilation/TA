@@ -50,7 +50,7 @@ return {
 				hitdensity = 100,
 				metal = 20,
 				nodrawundergray = true,
-				object = "tll/tlldtns",
+				object = "tll/tlldtns.s3o",
 				reclaimable = true,
 				world = "allworld",
 				customparams = {

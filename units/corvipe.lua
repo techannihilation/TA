@@ -67,7 +67,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1008,
-				object = "core/corvipe_dead",
+				object = "core/corvipe_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 538,
-				object = "core/corvipe_dead2",
+				object = "core/corvipe_dead2.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -96,7 +96,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 336,
-				object = "2x2f",
+				object = "2x2f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

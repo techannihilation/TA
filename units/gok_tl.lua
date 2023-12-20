@@ -60,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 241,
-				object = "gok/gok_tl_dead",
+				object = "gok/gok_tl_dead.s3o",
 				reclaimable = true,
 			},
 		},

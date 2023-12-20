@@ -69,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 11625,
-				object = "tll/tllswordfish_dead",
+				object = "tll/tllswordfish_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

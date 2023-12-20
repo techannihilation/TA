@@ -48,7 +48,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 12,
-				object = "tll/tllmm_dead",
+				object = "tll/tllmm_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -61,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 6,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

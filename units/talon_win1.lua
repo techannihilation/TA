@@ -55,7 +55,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 93,
-				object = "talon/talon_win1_dead",
+				object = "talon/talon_win1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -69,7 +69,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 50,
-				object = "7x7b",
+				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -66,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 152,
-				object = "gok/gok_moho_dead",
+				object = "gok/gok_moho_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 81,
-				object = "5x5a",
+				object = "5x5a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

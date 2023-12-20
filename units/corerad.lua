@@ -19,7 +19,7 @@ return {
 		collisionvolumeoffsets = "0 -3 0",
 		collisionvolumescales = "56 56 56",
 		collisionvolumetype = "CylY",
-		corpse = "corerad_dead",
+		corpse = "corerad_dead.s3o",
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Heavy Missile Battery",
 		explodeas = "LARGE_BUILDINGEX",
@@ -65,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1431,
-				object = "core/corerad_dead",
+				object = "core/corerad_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 763,
-				object = "3x3b",
+				object = "3x3b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

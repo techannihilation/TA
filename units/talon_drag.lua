@@ -52,7 +52,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 12,
-				object = "talon/talon_drag",
+				object = "talon/talon_drag.s3o",
 				reclaimable = true,
 				reclaimtime = 600,
 				customparams = {
@@ -70,7 +70,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

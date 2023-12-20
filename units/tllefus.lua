@@ -56,7 +56,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 66750,
-				object = "tll/tllefus_dead",
+				object = "tll/tllefus_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -69,7 +69,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 35600,
-				object = "5x5a",
+				object = "5x5a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

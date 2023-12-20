@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "22 33 25",
 		collisionvolumetype = "Box",
-		corpse = "1_dead",
+		corpse = "1_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Tech Level 2",
 		energymake = 20,
@@ -98,7 +98,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1207,
-				object = "core/corack_dead",
+				object = "core/corack_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

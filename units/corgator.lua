@@ -73,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 94,
-				object = "core/corgator_dead",
+				object = "core/corgator_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 50,
-				object = "2x2f",
+				object = "2x2f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

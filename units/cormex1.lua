@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 8 0",
 		collisionvolumescales = "50 35 50",
 		collisionvolumetype = "CylY",
-		corpse = "cormex_dead",
+		corpse = "cormex_dead.s3o",
 		damagemodifier = 0.25,
 		description = "Tech Level 1 (Amphibious)",
 		energyuse = 15,
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 264,
-				object = "core/cormex_dead",
+				object = "core/cormex_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 141,
-				object = "3x3e",
+				object = "3x3e.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

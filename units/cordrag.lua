@@ -60,7 +60,7 @@ return {
 				hitdensity = 100,
 				metal = 12,
 				nodrawundergray = true,
-				object = "core/cordrag",
+				object = "core/cordrag.s3o",
 				reclaimable = true,
 				reclaimtime = 600,
 				seqnamereclamate = "tree1reclamate",
@@ -79,7 +79,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				shadtrans = 1,
 				customparams = {

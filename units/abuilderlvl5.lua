@@ -81,7 +81,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19599,
-				object = "arm/abuilderlvl5_dead",
+				object = "arm/abuilderlvl5_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

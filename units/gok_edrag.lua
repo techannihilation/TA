@@ -52,7 +52,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 850,
-				object = "gok/gok_edrag",
+				object = "gok/gok_edrag.s3o",
 				reclaimable = true,
 				reclaimtime = 16000,
 				customparams = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 290,
-				object = "4x4a",
+				object = "4x4a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

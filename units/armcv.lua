@@ -117,7 +117,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 102,
-				object = "arm/armcv_dead",
+				object = "arm/armcv_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -131,7 +131,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 54,
-				object = "3x3c",
+				object = "3x3c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

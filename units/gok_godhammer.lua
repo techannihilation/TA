@@ -73,7 +73,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 94,
-				object = "gok/gok_godhammer_dead",
+				object = "gok/gok_godhammer_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +87,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 50,
-				object = "2x2f",
+				object = "2x2f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 69,
-				object = "gok/gok_faerie_dead",
+				object = "gok/gok_faerie_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 37,
-				object = "3x3d",
+				object = "3x3d.s3o",
 				reclaimable = true,
 			},
 		},

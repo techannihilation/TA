@@ -78,7 +78,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 594,
-				object = "gok/gok_dome1_dead",
+				object = "gok/gok_dome1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +91,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 317,
-				object = "7x7a",
+				object = "7x7a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -49,7 +49,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 850,
-				object = "tll/tlledrag",
+				object = "tll/tlledrag.s3o",
 				reclaimable = true,
 				reclaimtime = 16000,
 				customparams = {
@@ -67,7 +67,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 290,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				shadtrans = 1,
 				world = "greenworld",

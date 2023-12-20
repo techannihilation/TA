@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 2850,
-				object = "core/corkarg_dead",
+				object = "core/corkarg_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

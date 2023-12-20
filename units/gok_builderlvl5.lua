@@ -83,7 +83,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19599,
-				object = "gok/gok_builderlvl5_dead",
+				object = "gok/gok_builderlvl5_dead.s3o",
 				reclaimable = true,
 			},
 		},

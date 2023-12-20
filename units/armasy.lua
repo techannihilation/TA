@@ -14,7 +14,7 @@ return {
 		collisionvolumeoffsets = "0 -9 -2",
 		collisionvolumescales = "180 60 176",
 		collisionvolumetype = "Box",
-		corpse = "1_dead",
+		corpse = "1_dead.s3o",
 		description = "Produces T2 Ships",
 		energystorage = 0,
 		explodeas = "LARGE_BUILDINGEX",
@@ -79,7 +79,7 @@ return {
 				footprintx = 12,
 				footprintz = 12,
 				metal = 3687,
-				object = "arm/armasy_dead",
+				object = "arm/armasy_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

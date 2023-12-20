@@ -64,7 +64,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 663,
-				object = "core/corenaa_dead",
+				object = "core/corenaa_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

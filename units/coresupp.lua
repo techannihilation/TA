@@ -69,7 +69,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 293,
-				object = "core/coresupp_dead",
+				object = "core/coresupp_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

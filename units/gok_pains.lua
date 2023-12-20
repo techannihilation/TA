@@ -75,7 +75,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 420,
-				--object = "gok/gok_pains_dead",
+				--object = "gok/gok_pains_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +89,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 224,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

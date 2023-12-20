@@ -72,7 +72,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 14960,
-				object = "core/coreap_dead",
+				object = "core/coreap_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +86,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 7978,
-				object = "7x7b",
+				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

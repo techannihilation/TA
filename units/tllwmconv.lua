@@ -47,7 +47,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "tll/tllwmconv_dead",
+				object = "tll/tllwmconv_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -73,7 +73,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 14955,
-				object = "tll/tlleap_dead",
+				object = "tll/tlleap_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +87,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 7976,
-				object = "7x7b",
+				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

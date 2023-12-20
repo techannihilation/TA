@@ -64,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 181,
-				object = "3x3f",
+				object = "3x3f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

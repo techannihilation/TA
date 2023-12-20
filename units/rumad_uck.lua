@@ -99,7 +99,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3500,
-				object = "rumad/rumad_uck_dead",
+				object = "rumad/rumad_uck_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -117,7 +117,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 2400,
-				object = "4x4f",
+				object = "4x4f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

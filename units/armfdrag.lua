@@ -47,7 +47,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 16,
-				object = "arm/armfdrag",
+				object = "arm/armfdrag.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

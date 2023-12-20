@@ -55,7 +55,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 121500,
-				object = "gok/gok_meteor_dead",
+				object = "gok/gok_meteor_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +68,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 78800,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

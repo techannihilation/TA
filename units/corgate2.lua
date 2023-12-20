@@ -62,7 +62,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1440,
-				object = "core/corgate2_dead",
+				object = "core/corgate2_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +76,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 768,
-				object = "2x2e",
+				object = "2x2e.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

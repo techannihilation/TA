@@ -70,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1957,
-				object = "core/cortoast_dead",
+				object = "core/cortoast_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +85,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1044,
-				object = "core/cortoast_dead2",
+				object = "core/cortoast_dead2.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -99,7 +99,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 652,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

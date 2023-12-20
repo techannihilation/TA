@@ -82,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 620,
-				object = "3X3D",
+				object = "3X3D.s3o",
 				reclaimable = true,
 			},
 		},

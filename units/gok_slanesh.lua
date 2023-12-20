@@ -78,7 +78,7 @@ return {
 				footprintz = 6,
 				height = 20,
 				hitdensity = 100,
-				object = "gok/gok_slanesh_dead",
+				object = "gok/gok_slanesh_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -95,7 +95,7 @@ return {
 				footprintz = 2,
 				height = 4,
 				hitdensity = 100,
-				object = "6X6E",
+				object = "6X6E.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

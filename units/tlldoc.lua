@@ -94,7 +94,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 217,
-				object = "tll/tlldoc_dead",
+				object = "tll/tlldoc_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

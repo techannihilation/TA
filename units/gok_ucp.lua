@@ -92,7 +92,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8081,
-				object = "gok/gok_ucp_dead",
+				object = "gok/gok_ucp_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -105,7 +105,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 6043,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

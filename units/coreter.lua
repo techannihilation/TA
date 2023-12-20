@@ -76,7 +76,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 80,
-				object = "core/coreter_dead",
+				object = "core/coreter_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +90,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 42,
-				object = "3x3f",
+				object = "3x3f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

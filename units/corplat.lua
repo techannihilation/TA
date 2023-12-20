@@ -74,7 +74,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 4608,
-				object = "core/corplat_dead",
+				object = "core/corplat_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

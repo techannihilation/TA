@@ -74,7 +74,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1567,
-				object = "core/cortremor_dead",
+				object = "core/cortremor_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -88,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 836,
-				object = "2x2b",
+				object = "2x2b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

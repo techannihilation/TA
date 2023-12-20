@@ -52,7 +52,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2793,
-				object = "tll/tllgate2_dead",
+				object = "tll/tllgate2_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -65,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1490,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -70,7 +70,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 678,
-				object = "arm/armaas_dead",
+				object = "arm/armaas_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -84,7 +84,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 362,
-				object = "2x2b",
+				object = "2x2b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

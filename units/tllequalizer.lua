@@ -66,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1620,
-				object = "tll/tllequalizer_dead",
+				object = "tll/tllequalizer_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 864,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

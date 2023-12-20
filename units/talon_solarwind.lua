@@ -50,7 +50,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 26150,
-				object = "talon/talon_solarwind_dead",
+				object = "talon/talon_solarwind_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -64,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 13946,
-				object = "5x5b",
+				object = "5x5b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +77,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 8716,
-				object = "4x4b",
+				object = "4x4b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

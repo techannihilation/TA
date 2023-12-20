@@ -50,7 +50,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 403,
-				object = "tll/tllmoho_dead",
+				object = "tll/tllmoho_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 215,
-				object = "5x5b",
+				object = "5x5b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -101,7 +101,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1356,
-				object = "core/corach_dead",
+				object = "core/corach_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -66,7 +66,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 8137,
-				object = "core/cafus_dead",
+				object = "core/cafus_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 4340,
-				object = "4x4a",
+				object = "4x4a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

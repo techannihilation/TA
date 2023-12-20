@@ -103,7 +103,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 3500,
-				object = "gok/gok_antichrist_dead",
+				object = "gok/gok_antichrist_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -121,7 +121,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 2400,
-				object = "2x2f",
+				object = "2x2f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

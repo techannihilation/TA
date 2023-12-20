@@ -57,7 +57,7 @@ return {
 				footprintx = 10,
 				footprintz = 10,
 				metal = 13500,
-				object = "core/corint1_dead",
+				object = "core/corint1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +71,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 7200,
-				object = "7x7a",
+				object = "7x7a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

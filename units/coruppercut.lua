@@ -68,7 +68,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 11625,
-				object = "core/coruppercut_dead",
+				object = "core/coruppercut_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

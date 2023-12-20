@@ -48,7 +48,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 345,
-				object = "core/corurad_dead",
+				object = "core/corurad_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -61,7 +61,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 184,
-				--object = "core/corurad_head",
+				--object = "core/corurad_head.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -77,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1263,
-				object = "core/corcarry_dead",
+				object = "core/corcarry_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -91,7 +91,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 673,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

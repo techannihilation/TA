@@ -67,7 +67,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 15265,
-				object = "core/corhflag_dead",
+				object = "core/corhflag_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8808,
-				object = "6x6d",
+				object = "6x6d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -72,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 124,
-				object = "core/corspy_dead",
+				object = "core/corspy_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -86,7 +86,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 66,
-				object = "1x1a",
+				object = "1x1a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

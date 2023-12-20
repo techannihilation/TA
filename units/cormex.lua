@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 40,
-				object = "core/cormex_dead",
+				object = "core/cormex_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "3x3e",
+				object = "3x3e.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

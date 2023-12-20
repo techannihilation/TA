@@ -63,7 +63,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 8400,
-				object = "core/cormship1_dead",
+				object = "core/cormship1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +77,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 4480,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +90,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 2800,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

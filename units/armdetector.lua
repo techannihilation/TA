@@ -15,7 +15,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE SMALL SURFACE",
-		corpse = "armhplasma_dead",
+		corpse = "armhplasma_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Battlefield Intelligence Hover Radar and Sonar",
 		downloadable = 1,
@@ -67,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 72,
-				object = "arm/armhplasma_dead",
+				object = "arm/armhplasma_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 38,
-				object = "3x3c",
+				object = "3x3c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -77,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 360,
-				object = "talon/talon_vanguard_dead",
+				object = "talon/talon_vanguard_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -88,7 +88,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 192,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 			},
 		},

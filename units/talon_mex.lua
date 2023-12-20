@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 39,
-				object = "talon/talon_mex_dead",
+				object = "talon/talon_mex_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 21,
-				object = "3x3b",
+				object = "3x3b.s3o",
 				reclaimable = true,
 			},
 		},

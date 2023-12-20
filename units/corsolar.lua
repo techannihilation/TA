@@ -65,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 90,
-				object = "core/corsolar_dead",
+				object = "core/corsolar_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 48,
-				object = "5x5c",
+				object = "5x5c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

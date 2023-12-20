@@ -71,7 +71,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 10875,
-				object = "talon/talon_hcar_dead",
+				object = "talon/talon_hcar_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

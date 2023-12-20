@@ -80,7 +80,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 753,
-				object = "core/csubpen_dead",
+				object = "core/csubpen_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

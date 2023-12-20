@@ -61,7 +61,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 13875,
-				object = "tll/tllalbertosaurus_dead",
+				object = "tll/tllalbertosaurus_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -73,7 +73,7 @@ return {
 				description = "Albertosaurus Debris",
 				footprintx = 4,
 				footprintz = 4,
-				object = "8x8a",
+				object = "8x8a.s3o",
 				reclamable = 1,
 				customparams = {
 					fromunit = 1,

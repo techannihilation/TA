@@ -58,7 +58,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 720,
-				object = "gok/gok_blackpollen_dead",
+				object = "gok/gok_blackpollen_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 384,
-				object = "3x3e",
+				object = "3x3e.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

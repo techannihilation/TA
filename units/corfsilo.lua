@@ -47,7 +47,7 @@ return {
 				footprintx = 16,
 				footprintz = 16,
 				metal = 121968,
-				object = "core/corfsilo_dead",
+				object = "core/corfsilo_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -60,7 +60,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 65049,
-				object = "6x6d",
+				object = "6x6d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

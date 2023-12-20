@@ -50,7 +50,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2910,
-				object = "tll/tllmedfusion_dead",
+				object = "tll/tllmedfusion_dead.s3o",
 				customparams = {
 					fromunit = 1,
 				},
@@ -62,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 1552,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				customparams = {
 					fromunit = 1,
 				},

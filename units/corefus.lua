@@ -58,7 +58,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 10425,
-				object = "core/corefus_dead",
+				object = "core/corefus_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5560,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

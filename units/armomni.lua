@@ -55,7 +55,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5844,
-				object = "arm/armomni_dead",
+				object = "arm/armomni_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3116,
-				object = "6x6b",
+				object = "6x6b.s3o",
 				reclaimable = true,
 			},
 		},

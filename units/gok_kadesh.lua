@@ -66,7 +66,7 @@ return {
 				featuredead = "heap",
 				footprintx = 12,
 				footprintz = 12,
-				object = "gok/gok_kadesh_dead",
+				object = "gok/gok_kadesh_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +78,7 @@ return {
 				description = "Kadesh Debris",
 				footprintx = 10,
 				footprintz = 10,
-				object = "10x10z",
+				object = "10x10z.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

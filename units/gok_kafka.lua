@@ -69,7 +69,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1372,
-				object = "gok/gok_corvette_dead",
+				object = "gok/gok_corvette_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -83,7 +83,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 732,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -58,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 50400,
-				object = "core/cfusionplant_dead",
+				object = "core/cfusionplant_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 26880,
-				object = "core/cfusionplant_heap",
+				object = "core/cfusionplant_heap.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -63,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1912,
-				object = "gok/gok_hellfire_dead",
+				object = "gok/gok_hellfire_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +77,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1076,
-				object = "2x2c",
+				object = "2x2c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

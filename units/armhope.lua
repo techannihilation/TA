@@ -63,7 +63,7 @@ return {
 				description = "Hope Wreckage",
 				footprintx = 10,
 				footprintz = 10,
-				object = "arm/armhope_dead",
+				object = "arm/armhope_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

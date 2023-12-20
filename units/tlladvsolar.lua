@@ -50,7 +50,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 315,
-				object = "tll/tlladvsolar_dead",
+				object = "tll/tlladvsolar_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 168,
-				object = "5x5a",
+				object = "5x5a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -64,7 +64,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 401,
-				object = "tll/tllamphibot_dead",
+				object = "tll/tllamphibot_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +77,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 214,
-				object = "3x3f",
+				object = "3x3f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

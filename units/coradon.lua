@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5265,
-				object = "core/coradon_dead",
+				object = "core/coradon_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -77,7 +77,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2808,
-				object = "4x4d",
+				object = "4x4d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -63,7 +63,7 @@ return {
 				description = "BROADSIDE Wreckage",
 				footprintx = 6,
 				footprintz = 8,
-				object = "arm/arm_broadside_dead",
+				object = "arm/arm_broadside_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

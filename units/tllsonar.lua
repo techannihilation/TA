@@ -47,7 +47,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 17,
-				object = "tll/tllsonar_dead",
+				object = "tll/tllsonar_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

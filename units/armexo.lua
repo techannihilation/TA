@@ -85,7 +85,7 @@ return {
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				object = "10x10z",
+				object = "10x10z.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

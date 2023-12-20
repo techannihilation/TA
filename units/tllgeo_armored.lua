@@ -65,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3753,
-				object = "tll/tllgeo_armored_dead",
+				object = "tll/tllgeo_armored_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2002,
-				object = "5x5c",
+				object = "5x5c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

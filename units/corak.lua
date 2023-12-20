@@ -68,7 +68,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 26,
-				object = "core/corak_dead",
+				object = "core/corak_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 14,
-				object = "2x2c",
+				object = "2x2c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -72,7 +72,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1162,
-				object = "gok/gok_morningstar_dead",
+				object = "gok/gok_morningstar_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -83,7 +83,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 620,
-				object = "3x3d",
+				object = "3x3d.s3o",
 				reclaimable = true,
 			},
 		},

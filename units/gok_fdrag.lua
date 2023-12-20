@@ -47,7 +47,7 @@ return {
 				hitdensity = 100,
 				metal = 16,
 				nodrawundergray = true,
-				object = "gok/gok_fdrag",
+				object = "gok/gok_fdrag.s3o",
 				reclaimable = true,
 				world = "allworld",
 				customparams = {

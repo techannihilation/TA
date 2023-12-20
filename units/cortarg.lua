@@ -62,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 599,
-				object = "core/cortarg_dead",
+				object = "core/cortarg_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 319,
-				object = "4x4d",
+				object = "4x4d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -82,7 +82,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19200,
-				object = "tll/tllbuilderlvl3_dead",
+				object = "tll/tllbuilderlvl3_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

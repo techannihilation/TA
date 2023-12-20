@@ -48,7 +48,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 3502,
-				object = "tll/tlluwfusion_dead",
+				object = "tll/tlluwfusion_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -61,7 +61,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 1868,
-				object = "4x4d",
+				object = "4x4d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

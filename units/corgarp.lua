@@ -72,7 +72,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 153,
-				object = "core/corgarp_dead",
+				object = "core/corgarp_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

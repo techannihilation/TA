@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 -6 0",
 		collisionvolumescales = "263 132 263",
 		collisionvolumetype = "CylY",
-		corpse = "corpokie_dead",
+		corpse = "corpokie_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "All-terrain Hexapod (Auto-Repair 250)",
 		energystorage = 10000,
@@ -73,7 +73,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 44400,
-				object = "core/corpokie_dead",
+				object = "core/corpokie_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -87,7 +87,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 18680,
-				object = "6x6a",
+				object = "6x6a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

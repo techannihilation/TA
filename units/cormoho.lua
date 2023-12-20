@@ -67,7 +67,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 478,
-				object = "core/cormoho_dead",
+				object = "core/cormoho_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +81,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 255,
-				object = "5x5a",
+				object = "5x5a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

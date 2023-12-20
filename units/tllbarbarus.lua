@@ -71,7 +71,7 @@ return {
 				description = "Barbarus Wreckage",
 				footprintx = 25,
 				footprintz = 25,
-				object = "tll/tllbarbarus_dead",
+				object = "tll/tllbarbarus_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

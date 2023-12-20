@@ -60,7 +60,7 @@ return {
 				footprintx = 14,
 				footprintz = 14,
 				metal = 218250,
-				object = "talon/talon_veloute1_dead",
+				object = "talon/talon_veloute1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

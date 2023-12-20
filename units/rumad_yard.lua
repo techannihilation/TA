@@ -57,7 +57,7 @@ return {
 				footprintx = 20,
 				footprintz = 15,
 				metal = 78000,
-				object = "rumad/rumad_yard_dead",
+				object = "rumad/rumad_yard_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

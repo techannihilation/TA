@@ -13,7 +13,7 @@ return {
 		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "50 28 50",
 		collisionvolumetype = "CylY",
-		corpse = "rumad_mex1_dead",
+		corpse = "rumad_mex1_dead.s3o",
 		description = "Tech Level 1 (Amphibious)",
 		energyuse = 15,
 		explodeas = "SMALL_BUILDING",
@@ -61,7 +61,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 260,
-				object = "rumad/rumad_mex_dead",
+				object = "rumad/rumad_mex_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +75,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 138,
-				object = "3x3b",
+				object = "3x3b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

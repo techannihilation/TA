@@ -57,7 +57,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 10025,
-				object = "tll/tllgate4_dead",
+				object = "tll/tllgate4_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5346,
-				object = "4x4d",
+				object = "4x4d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

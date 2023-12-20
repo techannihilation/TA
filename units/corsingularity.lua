@@ -69,7 +69,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 16400,
-				object = "core/corsingularity_dead",
+				object = "core/corsingularity_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -82,7 +82,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 9680,
-				object = "5x5c",
+				object = "5x5c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

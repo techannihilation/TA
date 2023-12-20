@@ -56,7 +56,7 @@ return {
 				footprintx = 14,
 				footprintz = 14,
 				metal = 214500,
-				object = "core/corbuzz1_dead",
+				object = "core/corbuzz1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

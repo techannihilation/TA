@@ -83,7 +83,7 @@ return {
 				footprintx = 4,
 				footprintz = 8,
 				metal = 19200,
-				object = "core/cbuilderlvl5_dead",
+				object = "core/cbuilderlvl5_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

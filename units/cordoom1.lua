@@ -60,7 +60,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 12375,
-				object = "core/cordoom1_dead",
+				object = "core/cordoom1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +74,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 6600,
-				object = "6x6e",
+				object = "6x6e.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

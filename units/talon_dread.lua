@@ -69,7 +69,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 36000,
-				object = "talon/talon_dread_dead",
+				object = "talon/talon_dread_dead.s3o",
 				reclaimable = true,
 			},
 		},

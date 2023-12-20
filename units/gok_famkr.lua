@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 1087,
-				--object = "gok/gok_famkr_dead",
+				--object = "gok/gok_famkr_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -74,7 +74,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 580,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 			},
 		},

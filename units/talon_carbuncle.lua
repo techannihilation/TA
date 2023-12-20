@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -20 0",
 		collisionvolumescales = "65 40 78",
 		collisionvolumetype = "CylZ",
-		corpse = "carbuncle_dead",
+		corpse = "carbuncle_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Very Heavy Assault Tank (Auto-Repair 50)",
 		explodeas = "CRAWL_BLASTSML",
@@ -71,7 +71,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2175,
-				object = "talon/talon_carbuncle_dead",
+				object = "talon/talon_carbuncle_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +85,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1160,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

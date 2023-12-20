@@ -60,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 65,
-				--object = "gok/gok_tide_dead",
+				--object = "gok/gok_tide_dead.s3o",
 				reclaimable = true,
 			},
 		},

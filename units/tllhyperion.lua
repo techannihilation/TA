@@ -16,7 +16,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "125 142 92",
 		collisionvolumetype = "ellipsoid",
-		corpse = "tllhyperion_dead",
+		corpse = "tllhyperion_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Experimental Amphibious Assault Kbot",
 		downloadable = 1,
@@ -67,7 +67,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 55125,
-				object = "tll/tllhyperion_dead",
+				object = "tll/tllhyperion_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -81,7 +81,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 29400,
-				object = "3x3a",
+				object = "3x3a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

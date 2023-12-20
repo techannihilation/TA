@@ -63,7 +63,7 @@ return {
 				energy = 0,
 				footprintx = 4,
 				footprintz = 4,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +76,7 @@ return {
 				featuredead = "heap",
 				footprintx = 3,
 				footprintz = 3,
-				object = "core/core_turbulence_dead",
+				object = "core/core_turbulence_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

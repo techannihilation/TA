@@ -65,7 +65,7 @@ return {
 				description = "Lago Wreckage",
 				footprintx = 6,
 				footprintz = 8,
-				object = "rumad/rumad_jafa_dead",
+				object = "rumad/rumad_jafa_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

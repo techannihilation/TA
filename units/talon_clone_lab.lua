@@ -81,7 +81,7 @@ talon_clone_lab = {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 483,
-				object = "talon/talon_clone_lab_dead",
+				object = "talon/talon_clone_lab_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -92,7 +92,7 @@ talon_clone_lab = {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 258,
-				object = "5x5b",
+				object = "5x5b.s3o",
 				reclaimable = true,
 			},
 		},

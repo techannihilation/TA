@@ -62,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 57,
-				object = "talon/talon_rl_dead",
+				object = "talon/talon_rl_dead.s3o",
 				reclaimable = true,
 			},
 		},

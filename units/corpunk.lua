@@ -13,7 +13,7 @@ return {
 		canpatrol = true,
 		canstop = 1,
 		category = "ALL MOBILE MINOR SURFACE UNDERWATER",
-		corpse = "armflea_dead",
+		corpse = "armflea_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Stealthy Scout Kbot",
 		explodeas = "FLEA_EX",
@@ -62,7 +62,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 12,
-				object = "arm/armflea_dead",
+				object = "arm/armflea_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +76,7 @@ return {
 				footprintx = 1,
 				footprintz = 1,
 				metal = 6,
-				object = "1x1a",
+				object = "1x1a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

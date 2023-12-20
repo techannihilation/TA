@@ -10,7 +10,7 @@ return {
 		canattack = false,
 		canstop = 1,
 		category = "ALL SURFACE",
-		corpse = "tllgate_dead",
+		corpse = "tllgate_dead.s3o",
 		description = "Tech Level 2",
 		energystorage = 1800,
 		explodeas = "CRAWL_BLASTSML",
@@ -49,7 +49,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1490,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -63,7 +63,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2793,
-				object = "tll/tllgate_dead",
+				object = "tll/tllgate_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

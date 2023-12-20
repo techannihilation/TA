@@ -65,7 +65,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 71859,
-				object = "arm/armolympus_dead",
+				object = "arm/armolympus_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -76,7 +76,7 @@ return {
 				footprintx = 7,
 				footprintz = 7,
 				metal = 28749,
-				object = "arm/armolympus_heap",
+				object = "arm/armolympus_heap.s3o",
 				reclaimable = true,
 			},
 			debris = {
@@ -86,7 +86,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 14950,
-				object = "6x6c",
+				object = "6x6c.s3o",
 				reclaimable = true,
 			},
 		},

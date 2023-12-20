@@ -67,7 +67,7 @@ return {
 				description = "Hope Wreckage",
 				footprintx = 8,
 				footprintz = 8,
-				object = "core/corvaliant_dead",
+				object = "core/corvaliant_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -9,7 +9,7 @@ return {
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
-		corpse = "armsilo_dead",
+		corpse = "armsilo_dead.s3o",
 		description = "Tech Level 2",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
@@ -54,7 +54,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 10612,
-				object = "arm/armsilo_dead",
+				object = "arm/armsilo_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -68,7 +68,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5660,
-				object = "3x3f",
+				object = "3x3f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

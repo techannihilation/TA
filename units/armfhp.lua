@@ -72,7 +72,7 @@ return {
 				footprintx = 8,
 				footprintz = 7,
 				metal = 825,
-				object = "arm/armfhp_dead",
+				object = "arm/armfhp_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

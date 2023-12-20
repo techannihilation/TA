@@ -68,7 +68,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 33937,
-				object = "talon/talon_paladium_dead",
+				object = "talon/talon_paladium_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

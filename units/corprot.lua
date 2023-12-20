@@ -66,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1312,
-				object = "core/corprot_dead",
+				object = "core/corprot_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -79,7 +79,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 700,
-				object = "core/corprot_heap",
+				object = "core/corprot_heap.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

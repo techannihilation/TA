@@ -67,7 +67,7 @@ return {
 				featuredead = "heap",
 				footprintx = 8,
 				footprintz = 8,
-				object = "core/corskrog_dead",
+				object = "core/corskrog_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				energy = 0,
 				footprintx = 7,
 				footprintz = 7,
-				object = "10x10z",
+				object = "10x10z.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

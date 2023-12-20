@@ -55,7 +55,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 5844,
-				object = "gok/gok_ejam_dead",
+				object = "gok/gok_ejam_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -65,7 +65,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 3116,
-				object = "6x6b",
+				object = "6x6b.s3o",
 				reclaimable = true,
 			},
 		},

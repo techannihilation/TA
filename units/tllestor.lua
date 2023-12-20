@@ -52,7 +52,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 195,
-				object = "tll/tllestor_dead",
+				object = "tll/tllestor_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -65,7 +65,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 104,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

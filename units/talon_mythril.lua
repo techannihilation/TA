@@ -75,7 +75,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 14400,
-				object = "talon/talon_mythril_dead",
+				object = "talon/talon_mythril_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +89,7 @@ return {
 				footprintx = 8,
 				footprintz = 8,
 				metal = 7680,
-				object = "8x8a",
+				object = "8x8a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

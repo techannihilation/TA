@@ -59,7 +59,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 131,
-				object = "gok/gok_sonar_dead",
+				object = "gok/gok_sonar_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

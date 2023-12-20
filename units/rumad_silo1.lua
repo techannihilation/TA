@@ -12,7 +12,7 @@ return {
 		collisionvolumeoffsets = "0 -10 0",
 		collisionvolumescales = "115 32 80",
 		collisionvolumetype = "box",
-		corpse = "armsilo_dead",
+		corpse = "armsilo_dead.s3o",
 		description = "Tech Level 2",
 		explodeas = "CRAWL_BLAST",
 		firestandorders = 1,
@@ -57,7 +57,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 10612,
-				object = "rumad/rumad_silo_dead",
+				object = "rumad/rumad_silo_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +71,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 5660,
-				object = "3x3f",
+				object = "3x3f.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

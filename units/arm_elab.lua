@@ -18,7 +18,7 @@ return {
 		collisionvolumeoffsets = "0 -5 8",
 		collisionvolumescales = "150 43 150",
 		collisionvolumetype = "CylY",
-		corpse = "armshlt_dead",
+		corpse = "armshlt_dead.s3o",
 		description = "Tech Level 3",
 		energystorage = 500,
 		energyuse = 0,
@@ -98,7 +98,7 @@ return {
 				footprintx = 9,
 				footprintz = 9,
 				metal = 6860,
-				object = "7x7b",
+				object = "7x7b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

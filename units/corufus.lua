@@ -56,7 +56,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 109000,
-				object = "core/corufus_dead",
+				object = "core/corufus_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 95000,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

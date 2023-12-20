@@ -60,7 +60,7 @@ return {
 				footprintx = 5,
 				footprintz = 6,
 				metal = 2509,
-				object = "arm/armamd_dead",
+				object = "arm/armamd_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -74,7 +74,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1338,
-				object = "5x5b",
+				object = "5x5b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

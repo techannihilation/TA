@@ -62,7 +62,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 227250,
-				object = "talon/talon_independence_dead",
+				object = "talon/talon_independence_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

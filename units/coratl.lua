@@ -58,7 +58,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 862,
-				object = "core/coratl_dead",
+				object = "core/coratl_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

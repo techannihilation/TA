@@ -89,7 +89,7 @@
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2037,
-				--object = "gok/gok_ecsub_dead",
+				--object = "gok/gok_ecsub_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -102,7 +102,7 @@
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1300,
-				object = "4x4a",
+				object = "4x4a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

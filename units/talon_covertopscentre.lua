@@ -63,7 +63,7 @@
 				footprintx = 30,
 				footprintz = 30,
 				metal = 61230,
-				object = "talon/talon_covertopscentre_dead",
+				object = "talon/talon_covertopscentre_dead.s3o",
 				reclaimable = true,
 			},
 		},

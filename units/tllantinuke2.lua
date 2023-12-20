@@ -58,7 +58,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 49072,
-				object = "tll/tllantinuke2_dead",
+				object = "tll/tllantinuke2_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -72,7 +72,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 26172,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

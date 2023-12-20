@@ -19,7 +19,7 @@ return {
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "45 30 60",
 		collisionvolumetype = "ellipsoid",
-		corpse = "corsent_dead",
+		corpse = "corsent_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Sub Exterminator",
 		downloadable = 1,
@@ -71,7 +71,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 1200,
-				object = "core/corsent_dead",
+				object = "core/corsent_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -85,7 +85,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 640,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

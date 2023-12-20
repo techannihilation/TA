@@ -17,7 +17,7 @@ return {
 		collisionvolumeoffsets = "0 -6 4",
 		collisionvolumescales = "115 142 115",
 		collisionvolumetype = "CylY",
-		corpse = "tllirritator_dead",
+		corpse = "tllirritator_dead.s3o",
 		defaultmissiontype = "Standby",
 		description = "Experimental Shield Unit",
 		energystorage = 1000,
@@ -76,7 +76,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 17625,
-				object = "tll/tllirritator_dead",
+				object = "tll/tllirritator_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -90,7 +90,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 9400,
-				object = "6x6a",
+				object = "6x6a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

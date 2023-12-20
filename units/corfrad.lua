@@ -62,7 +62,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 98,
-				object = "core/corfrad_dead",
+				object = "core/corfrad_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

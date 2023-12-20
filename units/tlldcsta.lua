@@ -50,7 +50,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 592,
-				object = "tll/tlldcsta_dead",
+				object = "tll/tlldcsta_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -63,7 +63,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 316,
-				object = "2x2a",
+				object = "2x2a.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

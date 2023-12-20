@@ -125,7 +125,7 @@ return {
 				height = 20,
 				hitdensity = 100,
 				metal = 1500,
-				object = "arm/armcom_dead",
+				object = "arm/armcom_dead.s3o",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				customparams = {
@@ -144,7 +144,7 @@ return {
 				height = 4,
 				hitdensity = 100,
 				metal = 750,
-				object = "2x2f",
+				object = "2x2f.s3o",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
 				world = "All Worlds",

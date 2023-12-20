@@ -64,7 +64,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 1688,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -78,7 +78,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 3165,
-				object = "core/coradamantoise_dead",
+				object = "core/coradamantoise_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

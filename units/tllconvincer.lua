@@ -62,7 +62,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 825,
-				object = "tll/tllconvincer_dead",
+				object = "tll/tllconvincer_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -75,7 +75,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 440,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

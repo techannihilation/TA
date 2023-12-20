@@ -50,7 +50,7 @@ return {
 				footprintx = 6,
 				footprintz = 4,
 				metal = 7250,
-				object = "talon/talon_emstor_dead",
+				object = "talon/talon_emstor_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -63,7 +63,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 4200,
-				object = "4x4b",
+				object = "4x4b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -10,7 +10,7 @@ return {
 		collisionvolumeoffsets = "0 0 -1",
 		collisionvolumescales = "48 78 48",
 		collisionvolumetype = "Box",
-		corpse = "corfmd1_dead",
+		corpse = "corfmd1_dead.s3o",
 		description = "Tech Level 4",
 		energyuse = 0,
 		explodeas = "LARGE_BUILDINGEX",
@@ -56,7 +56,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 17686,
-				object = "core/corfmd_dead",
+				object = "core/corfmd_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +70,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 9432,
-				object = "5x5d",
+				object = "5x5d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

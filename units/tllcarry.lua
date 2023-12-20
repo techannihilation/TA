@@ -67,7 +67,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 1350,
-				object = "tll/tllcarry_dead",
+				object = "tll/tllcarry_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -80,7 +80,7 @@ return {
 				footprintx = 6,
 				footprintz = 6,
 				metal = 720,
-				object = "4x4d",
+				object = "4x4d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

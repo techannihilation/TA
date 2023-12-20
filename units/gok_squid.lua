@@ -64,7 +64,7 @@ return {
 				footprintx = 25,
 				footprintz = 25,
 				metal = 721250,
-				object = "gok/gok_squid_dead",
+				object = "gok/gok_squid_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

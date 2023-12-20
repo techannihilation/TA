@@ -57,7 +57,7 @@ return {
 				footprintx = 4,
 				footprintz = 3,
 				metal = 993,
-				object = "tll/tllpulaser_dead",
+				object = "tll/tllpulaser_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -70,7 +70,7 @@ return {
 				footprintx = 4,
 				footprintz = 3,
 				metal = 530,
-				object = "3x3c",
+				object = "3x3c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

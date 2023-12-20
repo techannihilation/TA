@@ -61,7 +61,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 64,
-				object = "core/cortide_dead",
+				object = "core/cortide_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

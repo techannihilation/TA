@@ -104,7 +104,7 @@ return {
 				footprintx = 3,
 				footprintz = 4,
 				metal = 1356,
-				object = "core/cach_dead",
+				object = "core/cach_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

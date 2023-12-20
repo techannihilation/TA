@@ -62,7 +62,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 13237,
-				object = "tll/tllobliterator1_dead",
+				object = "tll/tllobliterator1_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -76,7 +76,7 @@ return {
 				footprintx = 5,
 				footprintz = 4,
 				metal = 6260,
-				object = "4x4c",
+				object = "4x4c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -89,7 +89,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 7412,
-				object = "3x3c",
+				object = "3x3c.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

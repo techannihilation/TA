@@ -57,7 +57,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 10025,
-				object = "gok/gok_gate_dead",
+				object = "gok/gok_gate_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -71,7 +71,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 5346,
-				object = "4x4d",
+				object = "4x4d.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

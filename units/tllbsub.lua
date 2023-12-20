@@ -64,7 +64,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 2799,
-				object = "tll/tllbsub_dead",
+				object = "tll/tllbsub_dead.s3o",
 				reclaimable = true,
 			},
 			heap = {
@@ -74,7 +74,7 @@ return {
 				footprintx = 5,
 				footprintz = 5,
 				metal = 1493,
-				object = "3x3d",
+				object = "3x3d.s3o",
 				reclaimable = true,
 			},
 		},

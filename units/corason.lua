@@ -66,7 +66,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 121,
-				object = "core/corason_dead",
+				object = "core/corason_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

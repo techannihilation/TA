@@ -63,7 +63,7 @@ return {
 				footprintx = 13,
 				footprintz = 30,
 				metal = 87999,
-				object = "core/cshipyardlvl4_dead",
+				object = "core/cshipyardlvl4_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

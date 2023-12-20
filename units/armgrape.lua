@@ -46,7 +46,7 @@ return {
 				footprintx = 4,
 				footprintz = 4,
 				metal = 2650,
-				object = "arm/armgrape_dead",
+				object = "arm/armgrape_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
@@ -60,7 +60,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1825,
-				object = "3x3b",
+				object = "3x3b.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,

@@ -63,7 +63,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 1087,
-				object = "gok/gok_abyss_dead",
+				object = "gok/gok_abyss_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
