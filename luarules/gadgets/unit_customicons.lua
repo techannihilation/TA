@@ -272,6 +272,8 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "rumad_mcv1.user")
       elseif ud.name == "rumad_mcv2" then
         Spring.SetUnitDefIcon(udid, "rumad_mcv2.user")
+      elseif ud.name == "talon_cerberus" then
+        Spring.SetUnitDefIcon(udid, "talon_cerberus.user")
 
       --Commanders
       elseif (ud.name == "armcom") or (ud.name == "armcom1") or (ud.name == "armcom2") or (ud.name == "armcom3") then
