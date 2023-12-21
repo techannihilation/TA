@@ -293,12 +293,14 @@ return {
 				maxangledif = 260,
 			},
 			[5] = {
+				badtargetcategory = "MINOR",
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
+				badtargetcategory = "MINOR",
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[7] = {
 				def = "FLAMMER_WEAPON",

@@ -439,14 +439,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[13] = {
-				badtargetcategory = "MEDIUM SMALL MINOR",
+				badtargetcategory = "MINOR",
 				def = "TLL_ROCKET",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[14] = {
-				badtargetcategory = "MEDIUM SMALL MINOR",
+				badtargetcategory = "MINOR",
 				def = "TLL_ROCKET",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[15] = {
 				badtargetcategory = "MINOR MAJOR", --Ground AA

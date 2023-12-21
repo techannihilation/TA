@@ -173,8 +173,9 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR",
 				def = "TALON_STARBURST",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				badtargetcategory = "MINOR MAJOR", --Ground AA

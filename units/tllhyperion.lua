@@ -200,12 +200,14 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MINIGUN_GAUSS_TLL",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "MINOR",
 				def = "ROCKET",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

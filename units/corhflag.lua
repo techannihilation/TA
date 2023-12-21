@@ -322,8 +322,9 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[7] = {
+				badtargetcategory = "MINOR",
 				def = "ROCKET_KROG",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

@@ -245,8 +245,9 @@ return {
 				maxangledif = 320,
 			},
 			[3] = {
+				badtargetcategory = "MINOR",
 				def = "TALON_STARBURST",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

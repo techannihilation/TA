@@ -234,6 +234,7 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MEDIUM MINOR",
 				def = "TALON_BATS",
 				onlytargetcategory = "SURFACE",
 			},
@@ -244,6 +245,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "MEDIUM MINOR",
 				def = "TALON_MISSILE",
 				onlytargetcategory = "SURFACE",
 			},

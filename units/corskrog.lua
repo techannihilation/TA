@@ -214,7 +214,7 @@ return {
 					impulseboost = 0,
 					impulsefactor = 0,
 					model = "weapon_rocket_devastator.s3o",
-					name = "Heavy Rockets",
+					name = "Mega Rockets",
 					noselfdamage = true,
 					range = 1800,
 					reloadtime = 2,

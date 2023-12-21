@@ -197,7 +197,7 @@ return {
 				impulsefactor = 0,
 				metalpershot = 0,
 				model = "weapon_starburstl.s3o",
-				name = "Heavy Rockets2",
+				name = "Heavy Rockets",
 				range = 1400,
 				reloadtime = 0.5,
 				rgbcolor = "1.000 0.000 0.000",
@@ -285,7 +285,7 @@ return {
 			[9] = {
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MULTI_ROCKET",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

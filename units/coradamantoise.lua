@@ -242,36 +242,41 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "PEPPER_CANON",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "CORE_LASER",
 				maindir = "1 0 -1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "CORE_LASER",
 				maindir = "1 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "CORE_LASER",
 				maindir = "-1 0 -1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			[7] = {
+				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "CORE_LASER",
 				maindir = "-1 0 1",
 				maxangledif = 220,

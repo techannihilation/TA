@@ -250,7 +250,6 @@ return {
 			},
 			[6] = {
 				def = "SHIELD",
-				onlytargetcategory = "SURFACE VTOL",
 			},
 		},
 	},

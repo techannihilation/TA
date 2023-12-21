@@ -235,17 +235,18 @@ return {
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "MINOR MEDIUM",
+				badtargetcategory = "LARGE MINOR MEDIUM",
 				def = "ATAD",
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MINOR MEDIUM",
 				def = "CORE_BLASTER",
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

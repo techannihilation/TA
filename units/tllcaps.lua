@@ -277,8 +277,9 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "MINOR",
 				def = "ROCKET",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "TLL_LIGHTNING",

@@ -195,7 +195,7 @@ return {
 		weapons = {
 			[1] = {
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
 				def = "TALON_LASER",

@@ -234,7 +234,7 @@ return {
 			},
 			[2] = {
 				def = "RAVE_MISSILE",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "TLL_LIGHTNING",

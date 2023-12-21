@@ -142,7 +142,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "weapon_starburstm.s3o",
-				name = "HeavyRockets",
+				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1050,
@@ -246,12 +246,14 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
+				badtargetcategory = "MINOR",
 				def = "PRAETORIAN_ROCKET",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "MINOR",
 				def = "PRAETORIAN_ROCKET",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[4] = {
 				def = "Praetorian_Shield",

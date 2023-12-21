@@ -208,8 +208,9 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR",
 				def = "ROCKET_KROG",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "NUKE_HCAR_CORE",

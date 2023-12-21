@@ -1,4 +1,10 @@
-4.53 => 4.54
+ 4.54 => 4.55
+2023-12-22
+
+Balance :
+ - All Starburst can target only Surface units
+
+ 4.53 => 4.54
 2023-12-02
 
 Improvment :

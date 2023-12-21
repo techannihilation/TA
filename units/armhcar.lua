@@ -173,7 +173,7 @@ return {
 				impulsefactor = 0.123,
 				metalpershot = 0,
 				model = "weapon_starburstm.s3o",
-				name = "HeavyRockets",
+				name = "Heavy Rockets",
 				noselfdamage = true,
 				proximitypriority = -1,
 				range = 1050,
@@ -210,8 +210,9 @@ return {
 		},
 		weapons = {
 			[1] = {
+				badtargetcategory = "MINOR",
 				def = "ROCKET_MCV",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "NUKE_HCAR_ARM",

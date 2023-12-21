@@ -285,8 +285,9 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
+				badtargetcategory = "MINOR",
 				def = "ROCKET_MCV",
-				onlytargetcategory = "SURFACE VTOL",
+				onlytargetcategory = "SURFACE",
 			},
 			[6] = {
 				badtargetcategory = "SURFACE",
