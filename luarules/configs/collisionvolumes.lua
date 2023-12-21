@@ -201,12 +201,6 @@ local pieceCollisionVolume = {					--per piece collision volume definitions
 			offsets={0,50,0},
 			trunk = 1
 	},
-	[UnitDefNames["arm_big_bertha"].id] = {
-			["1"]={28,74,28,0,34,0,1,1},
-			["3"]={15,15,113,0,0,30,1,2},
-			offsets={0,40,0},
-			trunk = 1
-	},
 	[UnitDefNames["armveil"].id] = {
 			["1"]={25,58,25,0,30,0,1,1},
 			["3"]={76,16,16,6,0,0,1,0},
