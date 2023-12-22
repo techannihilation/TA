@@ -480,14 +480,14 @@ function SpawnStartUnit(teamID, x, z)
 	local y = spGetGroundHeight(x,z)
 	spCreateUnit(startUnit, x, y, z, 0, teamID)
 	if startUnit == rumadcomDefID then
-		spCreateUnit(UnitDefNames["rumad_king"].id, x + 20 * (-1 * math.random(0,1)), y, z + 20 * (-1 * math.random(0,1)), 0, teamID)
+		spCreateUnit(UnitDefNames["rumad_king"].id, x + 40, y, z + 40, 0, teamID)
 	end
 
 	--spawn halloween
 	--	spCreateUnit(UnitDefNames["halloween"].id, x + 40 * (-1 * math.random(0,1)), y, z + 40 * (-1 * math.random(0,1)), 0, teamID)
 
 	--spawn Christmas
-		spCreateUnit(UnitDefNames["xmas"].id, x + 50 * (-1 * math.random(0,1)), y, z + 40 * (-1 * math.random(0,1)), 0, teamID)
+		spCreateUnit(UnitDefNames["xmas"].id, x + 60 * (-1), y, z + 60 * (-1), 0, teamID)
 
 
 	--share info
