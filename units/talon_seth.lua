@@ -92,37 +92,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				--[1] = "custom:MEDIUMFLARE",
-					[2] = "custom:PILOT",
+				[2] = "custom:PILOT",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -156,13 +155,14 @@ return {
 					default = 300,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			repulsor2 = {
 				name = "Plasma Repulsor",
 				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 2500,
 				shieldforce = 8,
-					shieldgoodcolor = "0.2 1 0.2 0.30",
+				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldpower = 30000,
 				shieldpowerregen = 250,
@@ -176,10 +176,11 @@ return {
 					default = 100,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "CARBUNCLE_RC",
 				maindir = "0 0 1",

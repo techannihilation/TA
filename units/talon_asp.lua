@@ -32,7 +32,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_asp.s3o",
 		onoffable = true,
 		radaremitheight = 42,

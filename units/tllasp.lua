@@ -27,7 +27,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "tll/tllasp.s3o",
 		onoffable = true,
 		radaremitheight = 47,

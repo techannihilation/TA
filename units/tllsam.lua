@@ -151,11 +151,11 @@ return {
 				weapontype = "MissileLauncher",
 				weaponvelocity = 1200,
 				wobble = 120,
-					damage = {
-						areoship = 20,
-						default = 5,
-						air = 80,
-					},
+				damage = {
+					areoship = 20,
+					default = 5,
+					air = 80,
+				},
 			},
 		},
 		weapons = {

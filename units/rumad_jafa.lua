@@ -73,36 +73,36 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
@@ -137,6 +137,7 @@ return {
 					default = 3600,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rumad_flak_gun = {
 				accuracy = 1000,
@@ -172,25 +173,18 @@ return {
 					default = 5,
 					air = 75,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
-				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
-				def = "RUMAD_PLASMA",
-				maindir = "0 0 1",
-				maxangledif = 270,
-				onlytargetcategory = "SURFACE",
-				slaveto = 1,
-			},
-			[3] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 1",
@@ -198,14 +192,22 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
-			[4] = {
+			{
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
+				def = "RUMAD_PLASMA",
+				maindir = "0 0 1",
+				maxangledif = 270,
+				onlytargetcategory = "SURFACE",
+				slaveto = 1,
+			},
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 1",
@@ -213,7 +215,7 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 4,
 			},
-			[6] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 1",
@@ -221,22 +223,14 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 4,
 			},
-			[7] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[8] = {
-				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
-				def = "RUMAD_PLASMA",
-				maindir = "0 0 -1",
-				maxangledif = 270,
-				onlytargetcategory = "SURFACE",
-				slaveto = 7,
-			},
-			[9] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 -1",
@@ -244,14 +238,22 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 7,
 			},
-			[10] = {
+			{
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
+				def = "RUMAD_PLASMA",
+				maindir = "0 0 -1",
+				maxangledif = 270,
+				onlytargetcategory = "SURFACE",
+				slaveto = 7,
+			},
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[11] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 -1",
@@ -259,7 +261,7 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 10,
 			},
-			[12] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0 0 -1",
@@ -267,45 +269,45 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 10,
 			},
-			[13] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
-			[14] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 				slaveto = 1,
 			},
-			[15] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 240,
 				onlytargetcategory = "VTOL",
 			},
-			[16] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 240,
 				onlytargetcategory = "VTOL",
 				slaveto = 15,
 			},
-			[17] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 240,
 				onlytargetcategory = "VTOL",
 			},
-			[18] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 240,

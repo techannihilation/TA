@@ -81,38 +81,38 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tll_spray_muzzle",
-				[2] = "custom:mediumflare_front_only",
-				[3] = "custom:tll_muzzle",
+				"custom:tll_spray_muzzle",
+				"custom:mediumflare_front_only",
+				"custom:tll_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -145,6 +145,7 @@ return {
 					default = 50000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tll_mega_lightning = {
 				areaofeffect = 80,
@@ -181,6 +182,7 @@ return {
 					default = 30000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tll_rocket = {
 				areaofeffect = 100,
@@ -208,7 +210,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				turnrate = 90000,
-				tracks = true,
+				tracks = false,
 				weaponacceleration = 600,
 				weapontimer = 1,
 				weapontype = "StarburstLauncher",
@@ -257,6 +259,7 @@ return {
 					default = 200,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tll_gauss = {
 				alphaDecay = 0.5,
@@ -289,6 +292,7 @@ return {
 					default = 6400,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tll_minigun_gauss = {
 				alphaDecay = 0.5,
@@ -321,6 +325,7 @@ return {
 					default = 3200,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tll_flak = {
 				accuracy = 1000,
@@ -356,121 +361,122 @@ return {
 					default = 5,
 					air = 250,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "TLL_BLAST",
 				maindir = "0 0 1",
 				maxangledif = 80,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "TLL_MEGA_LIGHTNING",
 				maindir = "0 0 1",
 				maxangledif = 80,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "TLL_MINIGUN_GAUSS",
 				maindir = "-1 0 0",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "TLL_MINIGUN_GAUSS",
 				maindir = "1 0 0",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "TLL_GAUSS",
 				maindir = "0 0 1",
 				maxangledif = 120,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "TLL_GAUSS",
 				maindir = "0 0 -1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "TLL_GAUSS",
 				maindir = "0 0 1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[8] = {
+			{
 				def = "TLL_BATS",
 				maindir = "-1 0 1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[9] = {
+			{
 				def = "TLL_BATS",
 				maindir = "1 0 1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[10] = {
+			{
 				def = "TLL_BATS",
 				maindir = "-1 0 1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[11] = {
+			{
 				def = "TLL_BATS",
 				maindir = "1 0 1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[12] = {
+			{
 				def = "TLL_BATS",
 				maindir = "0 0 1",
 				maxangledif = 140,
 				onlytargetcategory = "SURFACE",
 			},
-			[13] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "TLL_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
-			[14] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "TLL_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
-			[15] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "TLL_FLAK",
 				maindir = "0 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[16] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "TLL_FLAK",
 				maindir = "0 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[17] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "TLL_FLAK",
 				maindir = "0 0 -1",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[18] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "TLL_FLAK",
 				maindir = "0 0 -1",
 				maxangledif = 180,

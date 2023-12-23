@@ -29,7 +29,7 @@ return {
 		maxslope = 12,
 		maxwaterdepth = 0,
 		name = "Ultimate Jammer Station",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_talpax.s3o",
 		onoffable = true,
 		radardistancejam = 6000,

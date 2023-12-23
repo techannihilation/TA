@@ -81,38 +81,38 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tll_spray_muzzle",
-				[2] = "custom:mediumflare_front_only",
-				[3] = "custom:tll_muzzle",
+				"custom:tll_spray_muzzle",
+				"custom:mediumflare_front_only",
+				"custom:tll_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -150,6 +150,7 @@ return {
 					default = 200,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tll_blast = {
 				areaofeffect = 396,
@@ -180,6 +181,7 @@ return {
 					default = 25000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tll_lightning = {
 				areaofeffect = 10,
@@ -216,47 +218,48 @@ return {
 					default = 500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "TLL_BLAST",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "TLL_BATSAFTX",
 				maindir = "0 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "TLL_BATSAFTX",
 				maindir = "0 0 -1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "TLL_LIGHTNING",
 				maindir = "1 0 -1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				def = "TLL_LIGHTNING",
 				maindir = "1 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				def = "TLL_LIGHTNING",
 				maindir = "-1 0 -1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				def = "TLL_LIGHTNING",
 				maindir = "-1 0 1",
 				maxangledif = 220,

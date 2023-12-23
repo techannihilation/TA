@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Veil",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "arm/armveil.s3o",
 		onoffable = true,
 		radardistancejam = 760,

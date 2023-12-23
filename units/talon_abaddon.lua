@@ -1,5 +1,5 @@
 return {
-	talon_abaddon= {
+	talon_abaddon = {
 		acceleration = 0.02,
 		activatewhenbuilt = true,
 		brakerate = 0.18,
@@ -84,36 +84,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:armvengence_muzzle",
+				"custom:armvengence_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -153,6 +153,7 @@ return {
 					default = 360,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			talon_missile = {
 				areaofeffect = 128,
@@ -182,7 +183,7 @@ return {
 				texture2 = "coresmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tracks = true,
+				tracks = false,
 				trajectoryheight = 0.45,
 				turnrate = 22000,
 				turret = true,
@@ -213,7 +214,7 @@ return {
 				range = 500,
 				reloadtime = 0.5,
 				rgbcolor = "1.0 0.8 0.25",
-				rgbcolor2= "1.0 1.0 1.00",
+				rgbcolor2 = "1.0 1.0 1.00",
 				soundhitdry = "talongunhit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
@@ -230,32 +231,33 @@ return {
 					default = 75,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MEDIUM MINOR",
 				def = "TALON_BATS",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "TALON_LASER",
 				maindir = "-1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "MEDIUM MINOR",
 				def = "TALON_MISSILE",
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "TALON_LASER",
 				maindir = "1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				def = "TALON_LASER",
 				maindir = "1 0 -1",
 				maxangledif = 220,

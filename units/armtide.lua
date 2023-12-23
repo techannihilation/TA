@@ -30,7 +30,7 @@ return {
 		maxvelocity = 0,
 		minwaterdepth = 20,
 		name = "Tidal Generator",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "arm/armtide.s3o",
 		onoffable = false,
 		radaremitheight = 25,

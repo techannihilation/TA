@@ -87,40 +87,40 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:mediumflare_front_only",
+				"custom:mediumflare_front_only",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				"kbcormov",
 			},
 			select = {
-				[1] = "kbcorsel",
+				"kbcorsel",
 			},
 		},
 		weapondefs = {
-				quatro_gun = {
+			quatro_gun = {
 				areaofeffect = 325,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
@@ -154,6 +154,7 @@ return {
 					default = 1800,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			miniflak = {
 				accuracy = 1000,
@@ -184,10 +185,11 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-				areoship = 62.5,
-				default = 5,
-				air = 250,
+					areoship = 62.5,
+					default = 5,
+					air = 250,
 				},
+				tracks = false,
 			},
 			rocket = {
 				areaofeffect = 100,
@@ -215,7 +217,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				turnrate = 90000,
-				tracks = true,
+				tracks = false,
 				weaponacceleration = 600,
 				weapontimer = 1.25,
 				weapontype = "StarburstLauncher",
@@ -246,7 +248,6 @@ return {
 				range = 1500,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.2",
-				--separation = 0.15,
 				size = 1.2,
 				sizedecay = -0.1,
 				soundhitdry = "soft_crunch",
@@ -262,33 +263,34 @@ return {
 					default = 15000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "GAUSS_TLL",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "QUATRO_GUN",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[4] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "MINIFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[5] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "ROCKET",
 				onlytargetcategory = "SURFACE",

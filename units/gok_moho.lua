@@ -1,5 +1,5 @@
 return {
-	gok_moho  = {
+	gok_moho = {
 		acceleration = 0,
 		activatewhenbuilt = true,
 		brakerate = 0,

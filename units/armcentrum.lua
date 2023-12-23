@@ -77,37 +77,37 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:MEDIUMFLARE",
-				[2] = "custom:goliathflare",
+				"custom:MEDIUMFLARE",
+				"custom:goliathflare",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "sharmmov",
+				"sharmmov",
 			},
 			select = {
-				[1] = "sharmsel",
+				"sharmsel",
 			},
 		},
 		weapondefs = {
@@ -141,6 +141,7 @@ return {
 					default = 1800,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			advdepthcharge = {
 				areaofeffect = 64,
@@ -165,7 +166,7 @@ return {
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 150,
-				tracks = true,
+				tracks = false,
 				turnrate = 6000,
 				turret = true,
 				waterweapon = true,
@@ -196,7 +197,7 @@ return {
 				name = "FlakCannon",
 				noselfdamage = true,
 				range = 775,
-				reloadtime = 0.50,
+				reloadtime = 0.5,
 				rgbcolor = "1.0 0.5 0.0",
 				size = 5,
 				soundhitdry = "flakhit",
@@ -212,6 +213,7 @@ return {
 					default = 5,
 					air = 500,
 				},
+				tracks = false,
 			},
 			arm_bats = {
 				accuracy = 350,
@@ -246,6 +248,7 @@ return {
 					default = 225,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			seadragprime = {
 				accuracy = 350,
@@ -281,84 +284,85 @@ return {
 					default = 500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "OLY_GUN",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "OLY_GUN",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "SEADRAGPRIME",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "ARM_BATS",
 				maindir = "-0.8 0 -0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
-				},
-			[5] = {
+			},
+			{
 				def = "ARM_BATS",
 				maindir = "0.8 0 -0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				def = "ARM_BATS",
 				maindir = "-0.8 0 0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				def = "ARM_BATS",
 				maindir = "0.8 0 0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[8] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},
-			[9] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
 			},
-			[10] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "ARMFLAK_GUN",
 				maindir = "-0.2 0 0.8",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[11] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "ARMFLAK_GUN",
 				maindir = "0.2 0 0.8",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[12] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "ARMFLAK_GUN",
 				maindir = "-0.2 0 -0.8",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[13] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "ARMFLAK_GUN",
 				maindir = "0.2 0 -0.8",
 				maxangledif = 220,

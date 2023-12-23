@@ -56,7 +56,6 @@ return {
 		customparams = {
 			buildpic = "rumad_mcv.dds",
 			faction = "RUMAD",
-			--requiretech = "Advanced T3 Unit Research Centre",
 			normaltex = "unittextures/rumad_normals.dds",
 		},
 		featuredefs = {
@@ -89,37 +88,35 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				--[1] = "custom:MEDIUMFLARE",
-			},
+			explosiongenerators = {},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -153,6 +150,7 @@ return {
 					default = 700,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rumad_advmissile = {
 				areaofeffect = 96,
@@ -178,7 +176,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 500,
-				tracks = true,
+				tracks = false,
 				turnrate = 20000,
 				turret = true,
 				weaponacceleration = 100,
@@ -192,31 +190,31 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
-				badtargetcategory = "MINOR SMALL",
-				def = "RUMAD_PLASMA",
-				onlytargetcategory = "SURFACE",
-				slaveto = 1,
-			},
-			[3] = {
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
-			[4] = {
+			{
+				badtargetcategory = "MINOR SMALL",
+				def = "RUMAD_PLASMA",
+				onlytargetcategory = "SURFACE",
+				slaveto = 1,
+			},
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_ADVMISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_ADVMISSILE",
 				maindir = "1 0 0",

@@ -60,7 +60,7 @@ return {
 				collisionvolumescales = "60 112 58",
 				collisionvolumetype = "Ell",
 				damage = 1267,
-				description = "Advanced Solar Collector Wreckage",                                
+				description = "Advanced Solar Collector Wreckage",
 				featuredead = "heap",
 				footprintx = 4,
 				footprintz = 4,

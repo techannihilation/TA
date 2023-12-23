@@ -60,10 +60,7 @@ return {
 		upright = true,
 		workertime = 80,
 		buildoptions = {
-			[1] = "gok_nanotc",
-			--[2] = "",
-			--[3] = "",
-			--[4] = "",
+			"gok_nanotc",
 			[5] = "gok_mine1",
 			[6] = "gok_fort",
 			[7] = "gok_arad",
@@ -71,13 +68,11 @@ return {
 			[9] = "gok_blackdawn",
 			[10] = "gok_slesh",
 			[11] = "gok_orchid",
-			--[12] = "",
 			[13] = "gok_rl",
 			[14] = "gok_flak",
 			[15] = "gok_ptr",
 			[16] = "gok_mds",
 			[17] = "gok_cv",
-			--[18] = "gok_herison",
 			[19] = "gok_zealot",
 			[20] = "gok_mask",
 			[21] = "gate",
@@ -104,18 +99,18 @@ return {
 			},
 		},
 		nanocolor = {
-			[1] = 0.216,
-			[2] = 0.616,
-			[3] = 0.216,
+			0.216,
+			0.616,
+			0.216,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -126,21 +121,21 @@ return {
 			underattack = "warning1",
 			working = "reclaim1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kbarmmov",
+				"kbarmmov",
 			},
 			select = {
-				[1] = "kbarmsel",
+				"kbarmsel",
 			},
 		},
 		weapondefs = {
@@ -178,14 +173,15 @@ return {
 					default = 20,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "GOK_BEAM",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "GOK_BEAM",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,

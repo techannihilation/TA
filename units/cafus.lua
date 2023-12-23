@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 0,
 		name = "Advanced Fusion Reactor",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core/cafus.s3o",
 		onoffable = false,
 		radaremitheight = 86,

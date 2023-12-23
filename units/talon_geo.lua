@@ -31,7 +31,7 @@ return {
 		noautofire = false,
 		objectname = "talon/talon_geo.s3o",
 		radaremitheight = 51,
-		script ="talon_geo_mini.cob",
+		script = "talon_geo_mini.cob",
 		seismicsignature = 0,
 		selfdestructas = "CRAWL_BLAST",
 		sightdistance = 273,

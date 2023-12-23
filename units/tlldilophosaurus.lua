@@ -79,33 +79,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				"kbcormov",
 			},
 			select = {
-				[1] = "kbcorsel",
+				"kbcorsel",
 			},
 		},
 		weapondefs = {
@@ -126,7 +126,7 @@ return {
 				name = "Missiles",
 				noselfdamage = true,
 				range = 1000,
-				reloadtime = 0.20,
+				reloadtime = 0.2,
 				smoketrail = true,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
@@ -138,7 +138,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 90000,
-				tracks = true,
+				tracks = false,
 				turnrate = 50000,
 				turret = true,
 				weaponacceleration = 200,
@@ -180,10 +180,11 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-				areoship = 62.5,
-				default = 5,
-				air = 250,
+					areoship = 62.5,
+					default = 5,
+					air = 250,
 				},
+				tracks = false,
 			},
 			tll_lightning = {
 				areaofeffect = 10,
@@ -218,34 +219,35 @@ return {
 					default = 250,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "TLL_LIGHTNING",
 				maindir = "1 0 1",
 				maxangledif = 100,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "TLL_LIGHTNING",
 				maindir = "-1 0 1",
 				maxangledif = 100,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "TLL_LIGHTNING",
 				maindir = "0 0 -1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "MINIFLAK",
 				onlytargetcategory = "VTOL",
 			},
-			[5] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "AA_STARBURST",
 				onlytargetcategory = "VTOL",
 			},

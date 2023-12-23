@@ -1,5 +1,5 @@
 return {
-	talon_amoho  = {
+	talon_amoho = {
 		activatewhenbuilt = true,
 		buildangle = 2048,
 		buildcostenergy = 11775,

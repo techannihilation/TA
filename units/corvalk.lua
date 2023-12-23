@@ -18,7 +18,7 @@ return {
 		category = "ALL MOBILE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 -3 0",
-		collisionvolumescales = "27 27 50",		
+		collisionvolumescales = "27 27 50",
 		collisionvolumetype = "box",
 		cruisealt = 70,
 		defaultmissiontype = "VTOL_standby",

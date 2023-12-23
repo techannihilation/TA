@@ -86,33 +86,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "krogok1",
+				"krogok1",
 			},
 			select = {
-				[1] = "krogsel1",
+				"krogsel1",
 			},
 		},
 		weapondefs = {
@@ -144,7 +144,7 @@ return {
 				texture2 = "null",
 				texture3 = "null",
 				texture4 = "null",
-				tracks = true,
+				tracks = false,
 				turnrate = 22000,
 				turret = true,
 				weaponacceleration = 150,
@@ -159,7 +159,7 @@ return {
 			talon_blt = {
 				areaofeffect = 16,
 				beamtime = 0.15,
-				beamttl=5,
+				beamttl = 5,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -191,6 +191,7 @@ return {
 					default = 1500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			talon_starburst = {
 				areaofeffect = 96,
@@ -223,7 +224,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 9000,
-				tracks = true,
+				tracks = false,
 				turnrate = 50000,
 				weaponacceleration = 230,
 				weapontimer = 1.25,
@@ -236,15 +237,15 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "TALON_BLT",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "TALON_MISSILE",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "TALON_STARBURST",
 				onlytargetcategory = "SURFACE",

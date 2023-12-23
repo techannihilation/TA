@@ -90,12 +90,12 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		weapondefs = {
@@ -123,6 +123,7 @@ return {
 					default = 100,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			talon_laser = {
 				areaofeffect = 12,
@@ -142,7 +143,7 @@ return {
 				range = 500,
 				reloadtime = 0.5,
 				rgbcolor = "1.0 0.8 0.25",
-				rgbcolor2= "1.0 1.0 1.00",
+				rgbcolor2 = "1.0 1.0 1.00",
 				soundhitdry = "talongunhit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
@@ -158,16 +159,17 @@ return {
 					default = 75,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "TALON_LASER",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "REPULSOR2",
 			},
 		},

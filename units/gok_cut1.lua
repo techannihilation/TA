@@ -90,39 +90,39 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "servtny2",
+				"servtny2",
 			},
 			select = {
-				[1] = "servtny2",
+				"servtny2",
 			},
 		},
 		weapondefs = {
 			saw = {
 				areaofeffect = 64,
-				beamtime = 0.10,
+				beamtime = 0.1,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -133,7 +133,7 @@ return {
 				range = 240,
 				reloadtime = 0.1,
 				rgbcolor = "0.0 0.0 0.0",
-				rgbcolor2= "0.0 0.0 0.0",
+				rgbcolor2 = "0.0 0.0 0.0",
 				soundstart = "techa_sounds/gok_saw",
 				soundtrigger = 1,
 				turret = true,
@@ -143,10 +143,11 @@ return {
 					default = 1250,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR MEDIUM",
 				def = "SAW",
 				onlytargetcategory = "SURFACE",

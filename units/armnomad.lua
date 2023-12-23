@@ -25,7 +25,7 @@ return {
 		footprintz = 8,
 		icontype = "building",
 		hoverattack = true,
-		factoryHeadingTakeoff  = true,
+		factoryHeadingTakeoff = true,
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 14.5,

@@ -53,7 +53,6 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 225,
 		unitname = "gok_asmodee",
-		--upright = true,
 		customparams = {
 			buildpic = "gok_asmodee.dds",
 			faction = "GOK",
@@ -92,36 +91,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:gok_muzzle",
+				"custom:gok_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				"kbcormov",
 			},
 			select = {
-				[1] = "kbcorsel",
+				"kbcorsel",
 			},
 		},
 		weapondefs = {
@@ -162,15 +161,16 @@ return {
 					default = 1800,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "gok_beam",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "gok_beam",
 				onlytargetcategory = "SURFACE",

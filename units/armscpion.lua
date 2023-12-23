@@ -14,7 +14,7 @@ return {
 		canstop = 1,
 		category = "ALL LARGE MOBILE SURFACE UNDERWATER",
 		collisionvolumeoffsets = "0 -6 1",
-		collisionvolumescales = "38 38 54",		
+		collisionvolumescales = "38 38 54",
 		collisionvolumetype = "CylX",
 		corpse = "dead",
 		defaultmissiontype = "Standby",
@@ -91,36 +91,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:arm_lightning_muzzle",
+				"custom:arm_lightning_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -162,6 +162,7 @@ return {
 					default = 2300,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			arm_lightning = {
 				areaofeffect = 16,
@@ -201,6 +202,7 @@ return {
 					default = 260,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			armscpion_torpedo = {
 				areaofeffect = 16,
@@ -219,7 +221,7 @@ return {
 				soundstart = "torpedo1",
 				startvelocity = 100,
 				tolerance = 32767,
-				tracks = true,
+				tracks = false,
 				turnrate = 10000,
 				turret = false,
 				waterweapon = true,
@@ -233,15 +235,15 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "ATAM",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "ARM_LIGHTNING",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "ARMSCPION_TORPEDO",
 				onlytargetcategory = "UNDERWATER",

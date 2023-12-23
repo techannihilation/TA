@@ -29,7 +29,6 @@ return {
 		dontland = 1,
 		energystorage = 10000,
 		explodeas = "MKL_BLAST",
-		dontland = 1,
 		firestandorders = 1,
 		footprintx = 16,
 		footprintz = 16,
@@ -83,75 +82,76 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
-		corflak_gun = {
-			accuracy = 1000,
-			areaofeffect = 192,
-			avoidfeature = false,
-			burnblow = true,
-			canattackground = false,
-			cegtag = "corflak-fx",
-			craterareaofeffect = 288,
-			craterboost = 0,
-			cratermult = 0,
-			edgeeffectiveness = 0.85,
-			explosiongenerator = "custom:FLASH3",
-			gravityaffected = true,
-			impulseboost = 0,
-			impulsefactor = 0,
-			name = "FlakCannon",
-			noselfdamage = true,
-			range = 775,
-			reloadtime = 0.5,
-			rgbcolor = "1.0 0.5 0.0",
-			size = 5,
-			soundhitdry = "flakhit",
-			soundhitwet = "splslrg",
-			soundhitwetvolume = 0.6,
-			soundstart = "flakfire",
-			turret = true,
-			weapontimer = 1,
-			weapontype = "Cannon",
-			weaponvelocity = 1550,
-			damage = {
-				areoship = 125,
-				default = 5,
-				air = 500,
+			corflak_gun = {
+				accuracy = 1000,
+				areaofeffect = 192,
+				avoidfeature = false,
+				burnblow = true,
+				canattackground = false,
+				cegtag = "corflak-fx",
+				craterareaofeffect = 288,
+				craterboost = 0,
+				cratermult = 0,
+				edgeeffectiveness = 0.85,
+				explosiongenerator = "custom:FLASH3",
+				gravityaffected = true,
+				impulseboost = 0,
+				impulsefactor = 0,
+				name = "FlakCannon",
+				noselfdamage = true,
+				range = 775,
+				reloadtime = 0.5,
+				rgbcolor = "1.0 0.5 0.0",
+				size = 5,
+				soundhitdry = "flakhit",
+				soundhitwet = "splslrg",
+				soundhitwetvolume = 0.6,
+				soundstart = "flakfire",
+				turret = true,
+				weapontimer = 1,
+				weapontype = "Cannon",
+				weaponvelocity = 1550,
+				damage = {
+					areoship = 125,
+					default = 5,
+					air = 500,
+				},
+				tracks = false,
 			},
-		},
-		devastatorrockets = {
+			devastatorrockets = {
 				areaofeffect = 350,
 				avoidfeature = false,
 				burnblow = true,
@@ -180,7 +180,7 @@ return {
 				startvelocity = 350,
 				targetable = 16,
 				tolerance = 3000,
-				tracks = true,
+				tracks = false,
 				turnrate = 30000,
 				turret = true,
 				weaponacceleration = 280,
@@ -239,6 +239,7 @@ return {
 					default = 15000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			antimatteraccelerator = {
 				areaofeffect = 80,
@@ -286,75 +287,76 @@ return {
 					default = 12000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "AntimatterAccelerator",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "AntimatterAccelerator",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "DevastatorRockets",
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "DevastatorRockets",
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[7] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[8] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[9] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[10] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "VTOL",
 			},
-			[11] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 180,

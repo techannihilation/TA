@@ -35,7 +35,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "Vulture",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core/corawac.s3o",
 		radardistance = 1600,
 		radaremitheight = 9.5,

@@ -2,7 +2,7 @@ return {
 	rumad_thirdeye = {
 		acceleration = 0.005,
 		activatewhenbuilt = false,
-		airStrafe  = true,
+		airStrafe = true,
 		airHoverFactor = 1,
 		bankingAllowed = false,
 		blocking = false,
@@ -29,7 +29,7 @@ return {
 		hoverAttack = true,
 		icontype = "building",
 		hoverattack = true,
-		factoryHeadingTakeoff  = true,
+		factoryHeadingTakeoff = true,
 		idleautoheal = 5,
 		idletime = 1800,
 		losemitheight = 14.5,

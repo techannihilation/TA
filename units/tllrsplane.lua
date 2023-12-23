@@ -33,7 +33,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		name = "EC-33",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "tll/tllrsplane.s3o",
 		radardistance = 1600,
 		radaremitheight = 6,

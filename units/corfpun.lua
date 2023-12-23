@@ -73,16 +73,16 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:mediumflare",
-				[2] = "custom:watersplash_large",
+				"custom:mediumflare",
+				"custom:watersplash_large",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -91,21 +91,21 @@ return {
 			uncloak = "kloak1un",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "twractv3",
+				"twractv3",
 			},
 			select = {
-				[1] = "twractv3",
+				"twractv3",
 			},
 		},
 		weapondefs = {
@@ -144,10 +144,11 @@ return {
 					default = 170,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "Floating_Plasma",
 				onlytargetcategory = "SURFACE",

@@ -64,22 +64,22 @@ return {
 			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
-		dead = {
-			blocking = true,
-			damage = 39519,
-			description = "Prototype Pod Wreckage",
-			energy = 0,
-			featuredead = "heap",
-			footprintx = 16,
-			footprintz = 16,
-			metal = 67200,
-			object = "arm/arm_ulab_dead.s3o",
-			reclaimable = true,
-			customparams = {
-				fromunit = 1,
+			dead = {
+				blocking = true,
+				damage = 39519,
+				description = "Prototype Pod Wreckage",
+				energy = 0,
+				featuredead = "heap",
+				footprintx = 16,
+				footprintz = 16,
+				metal = 67200,
+				object = "arm/arm_ulab_dead.s3o",
+				reclaimable = true,
+				customparams = {
+					fromunit = 1,
+				},
 			},
-		},
-		heap = {
+			heap = {
 				blocking = false,
 				damage = 49399,
 				description = "Prototype Mech Lab Debris",

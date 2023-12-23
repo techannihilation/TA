@@ -87,36 +87,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:PILOT",
+				"custom:PILOT",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "krogok1",
+				"krogok1",
 			},
 			select = {
-				[1] = "krogsel1",
+				"krogsel1",
 			},
 		},
 		weapondefs = {
@@ -162,10 +162,11 @@ return {
 					default = 15000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			gok_beam = {
 				areaofeffect = 32,
-				beamtime = 0.60,
+				beamtime = 0.6,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -200,6 +201,7 @@ return {
 					default = 4500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			black_flame = {
 				areaofeffect = 48,
@@ -237,24 +239,25 @@ return {
 					flamethrowers = 75,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "GOK_KADESH_BEAM",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GOK_BEAM",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "BLACK_FLAME",
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "BLACK_FLAME",
 				onlytargetcategory = "SURFACE",
 				sleeveto = 3,

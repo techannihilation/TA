@@ -31,7 +31,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Center Station",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_targ.s3o",
 		onoffable = true,
 		radardistance = 0,

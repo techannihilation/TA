@@ -29,7 +29,7 @@ return {
 		maxdamage = 1380,
 		maxslope = 36,
 		maxwaterdepth = 0,
-	  name = "Countermeasure System",
+		name = "Countermeasure System",
 		objectname = "core/corsd.s3o",
 		onoffable = true,
 		radaremitheight = 25,

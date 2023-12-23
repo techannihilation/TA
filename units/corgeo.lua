@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core/corgeo.s3o",
 		radaremitheight = 50,
 		seismicsignature = 0,

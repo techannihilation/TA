@@ -10,7 +10,7 @@ return {
 		canstop = 1,
 		category = "ALL SURFACE",
 		corpse = "dead",
-		damagemodifier = 0.20,
+		damagemodifier = 0.2,
 		defaultmissiontype = "GUARD_NOMOVE",
 		description = "Experimental Rocket Tower",
 		explodeas = "BANTHA_BLAST",
@@ -86,37 +86,37 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tlluberweb",
-				[2] = "custom:tlluber_glow",
+				"custom:tlluberweb",
+				"custom:tlluber_glow",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "servlrg3",
+				"servlrg3",
 			},
 			select = {
-				[1] = "servlrg3",
+				"servlrg3",
 			},
 		},
 		weapondefs = {
@@ -168,7 +168,7 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "BARRAGE",
 				onlytargetcategory = "SURFACE",

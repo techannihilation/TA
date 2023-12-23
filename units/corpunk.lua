@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "KBOT1",
 		name = "Punkie",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core/corpunk.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,

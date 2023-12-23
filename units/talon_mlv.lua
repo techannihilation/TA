@@ -66,11 +66,11 @@ return {
 		unitname = "talon_mlv",
 		workertime = 40,
 		buildoptions = {
-			[1] = "talon_drag",
-			[2] = "talon_mine1",
-			[3] = "talon_mine2",
-			[4] = "talon_mine3",
-			[5] = "talon_mine4",
+			"talon_drag",
+			"talon_mine1",
+			"talon_mine2",
+			"talon_mine3",
+			"talon_mine4",
 		},
 		customparams = {
 			buildpic = "talon_mlv.dds",
@@ -106,18 +106,18 @@ return {
 			},
 		},
 		nanocolor = {
-			[1] = 0.032,
-			[2] = 0.432,
-			[3] = 0.032,
+			0.032,
+			0.432,
+			0.032,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -127,21 +127,21 @@ return {
 			underattack = "warning1",
 			working = "reclaim1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "varmmove",
+				"varmmove",
 			},
 			select = {
-				[1] = "varmsel",
+				"varmsel",
 			},
 		},
 		weapondefs = {
@@ -171,10 +171,11 @@ return {
 					default = 20,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "MINESWEEP",
 				onlytargetcategory = "MINE",
 			},

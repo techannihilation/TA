@@ -21,7 +21,7 @@ return {
 		maxslope = 10,
 		minwaterdepth = 15,
 		name = "Floating Moho Metal Maker",
-		noautofire = false,		
+		noautofire = false,
 		noshadow = 1,
 		objectname = "tll/tllwmmohoconv.s3o",
 		radaremitheight = 36,

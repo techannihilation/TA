@@ -27,7 +27,7 @@ return {
 		maxdamage = 2885,
 		maxslope = 15,
 		maxvelocity = 0,
-		minwaterdepth  = 30,
+		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Floating Hovercraft Lab",
 		noautofire = false,

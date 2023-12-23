@@ -15,7 +15,7 @@ return {
 		buildtime = 4000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 1",
-		collisionvolumescales = "48.6 29.6 54.6",		
+		collisionvolumescales = "48.6 29.6 54.6",
 		collisionvolumetype = "box",
 		description = "Converts upto 150 Energy to Metal",
 		explodeas = "ARMESTOR_BUILDING",

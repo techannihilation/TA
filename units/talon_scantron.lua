@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Seer",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_scantron.s3o",
 		onoffable = true,
 		radardistance = 2500,

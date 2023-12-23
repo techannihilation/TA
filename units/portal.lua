@@ -51,22 +51,20 @@ return {
 		turninplacespeedlimit = 0,
 		turnrate = 1,
 		unitname = "portal",
-		yardmap = "oooooooooo"..
-			      "oooooooooo"..
-			      "ooccccccoo"..
-			      "ooccccccoo"..
-			      "ooccccccoo"..
-			      "ooccccccoo"..
-			      "ooccccccoo"..
-			      "ooccccccoo"..
-			      "ooccccccoo"..
-			      "ooccccccoo"
-				  ,			 
+		yardmap = "oooooooooo"
+			.. "oooooooooo"
+			.. "ooccccccoo"
+			.. "ooccccccoo"
+			.. "ooccccccoo"
+			.. "ooccccccoo"
+			.. "ooccccccoo"
+			.. "ooccccccoo"
+			.. "ooccccccoo"
+			.. "ooccccccoo",
 		customparams = {
 			buildpic = "portal.dds",
 		},
-		featuredefs = {
-		},
+		featuredefs = {},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

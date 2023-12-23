@@ -33,7 +33,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 1,
 		name = "Air Repair Pad",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core/corasp.s3o",
 		onoffable = true,
 		radaremitheight = 39,

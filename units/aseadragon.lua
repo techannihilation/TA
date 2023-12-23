@@ -1,6 +1,6 @@
 return {
 	aseadragon = {
-		acceleration = 0.020,
+		acceleration = 0.02,
 		activatewhenbuilt = true,
 		airsightdistance = 775,
 		brakerate = 0.063,
@@ -97,33 +97,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "sharmmov",
+				"sharmmov",
 			},
 			select = {
-				[1] = "sharmsel",
+				"sharmsel",
 			},
 		},
 		weapondefs = {
@@ -162,6 +162,7 @@ return {
 					default = 225,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			seadragonflak = {
 				accuracy = 1000,
@@ -197,6 +198,7 @@ return {
 					default = 5,
 					air = 250,
 				},
+				tracks = false,
 			},
 			seadragprime = {
 				accuracy = 350,
@@ -233,48 +235,49 @@ return {
 					default = 500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "SEADRAGPRIME",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "ARM_BATSAFTX",
 				maindir = "0 0 1",
 				maxangledif = 320,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "SEADRAGPRIME",
 				maindir = "0 0 1",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "ARM_BATSAFTX",
 				maindir = "-4 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				def = "ARM_BATSAFTX",
 				maindir = "4 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "SEADRAGONFLAK",
 				maindir = "1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "VTOL",
 			},
-			[7] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "SEADRAGONFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 200,

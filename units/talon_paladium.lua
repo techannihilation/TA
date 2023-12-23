@@ -76,38 +76,35 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				--[1] = "custom:MEDIUMFLARE",
-				--[2] = "custom:goliathflare",
-			},
+			explosiongenerators = {},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "sharmmov",
+				"sharmmov",
 			},
 			select = {
-				[1] = "sharmsel",
+				"sharmsel",
 			},
 		},
 		weapondefs = {
@@ -143,6 +140,7 @@ return {
 					default = 500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			cannon_talon = {
 				accuracy = 375,
@@ -176,6 +174,7 @@ return {
 					default = 500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			adv_torpedo = {
 				areaofeffect = 16,
@@ -199,7 +198,7 @@ return {
 				soundhitwet = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 150,
-				tracks = true,
+				tracks = false,
 				turnrate = 1500,
 				turret = true,
 				waterweapon = true,
@@ -245,6 +244,7 @@ return {
 					default = 5,
 					air = 250,
 				},
+				tracks = false,
 			},
 			gatling = {
 				accuracy = 10,
@@ -282,88 +282,89 @@ return {
 					default = 750,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR SMALL LARGE",
 				def = "rapid_cannon_talon",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MINOR SMALL LARGE",
 				def = "cannon_talon",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "MINOR SMALL LARGE",
 				def = "cannon_talon",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "MINOR SMALL LARGE",
 				def = "GATLING",
 				maindir = "0 0 -1",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "adv_torpedo",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
-			[6] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "adv_torpedo",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
-			[7] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "adv_torpedo",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
-			[8] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "adv_torpedo",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
-			[9] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "talon_flak_gun",
 				maindir = "0.8 0 -0.2",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[10] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "talon_flak_gun",
 				maindir = "0.8 0 0.2",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[11] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "talon_flak_gun",
 				maindir = "-0.8 0 -0.2",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[12] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "talon_flak_gun",
 				maindir = "-0.8 0 0.2",
 				maxangledif = 220,

@@ -34,7 +34,7 @@ return {
 		objectname = "gok/gok_geo_mini.s3o",
 		onoffable = true,
 		radaremitheight = 30,
-		script ="gok_geo.cob",
+		script = "gok_geo.cob",
 		seismicsignature = 0,
 		selfdestructas = "ESTOR_BUILDING",
 		sightdistance = 275,

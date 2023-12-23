@@ -90,33 +90,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "mavbok1",
+				"mavbok1",
 			},
 			select = {
-				[1] = "mavbsel1",
+				"mavbsel1",
 			},
 		},
 		weapondefs = {
@@ -125,7 +125,7 @@ return {
 				areaofeffect = 220,
 				avoidfeature = false,
 				burst = 40,
-				burstrate = 0.10,
+				burstrate = 0.1,
 				cegtag = "Core_Def_AA_Rocket",
 				craterareaofeffect = 330,
 				craterboost = 0,
@@ -168,10 +168,11 @@ return {
 					default = 360,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "EXP_HEAVYROCKET",
 				onlytargetcategory = "SURFACE",
 			},

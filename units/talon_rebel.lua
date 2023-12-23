@@ -1,5 +1,5 @@
 return {
-	talon_rebel= {
+	talon_rebel = {
 		acceleration = 0.36,
 		airsightdistance = 500,
 		brakerate = 0.6,

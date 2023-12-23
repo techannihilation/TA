@@ -1,4 +1,4 @@
- return {
+return {
 	gok_acsub = {
 		acceleration = 0.09,
 		brakerate = 0.36,
@@ -58,10 +58,10 @@
 		waterline = 30,
 		workertime = 200,
 		buildoptions = {
-      [1] = "gok_mohogeo",
-      --[2] = "",
-      [3] = "gok_amstor",
-      [4] = "gok_aestor",
+			[1] = "gok_mohogeo",
+			--[2] = "",
+			[3] = "gok_amstor",
+			[4] = "gok_aestor",
 			[5] = "gok_moho",
 			--[6] = "",
 			[7] = "gok_uwfusion",
@@ -70,7 +70,7 @@
 			[10] = "gok_asy",
 			[11] = "gok_esy",
 			[12] = "gok_plat",
-      [13] = "gok_ehpns",
+			[13] = "gok_ehpns",
 			[14] = "gok_fnanotc1",
 			[15] = "gok_fgate",
 		},
