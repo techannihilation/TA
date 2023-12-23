@@ -37,7 +37,7 @@ return {
 		mass = 29281,
 		maxdamage = 129775,
 		maxslope = 15,
-		maxvelocity = 3.20,
+		maxvelocity = 3.2,
 		maxwaterdepth = 0,
 		mintransportmass = 4000,
 		mobilestandorders = 1,
@@ -64,33 +64,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "vtolarmv",
+				"vtolarmv",
 			},
 			select = {
-				[1] = "vtolarac",
+				"vtolarac",
 			},
 		},
 		weapondefs = {
@@ -118,7 +118,7 @@ return {
 				soundstart = "launch",
 				startvelocity = 1000,
 				texture2 = "coresmoketrail",
-				tracks = true,
+				tracks = false,
 				trajectoryheight = 0.55,
 				turnrate = 99000,
 				turret = true,
@@ -159,7 +159,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 5000,
-				tracks = true,
+				tracks = false,
 				turnrate = 50000,
 				weaponacceleration = 75,
 				weapontimer = 2,
@@ -172,20 +172,20 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "TALON_STARBURST",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				maindir = "-1 0 0.75",
 				maxangledif = 220,
 				def = "ADVANCED_MISSILE",
 				onlytargetcategory = "VTOL",
 			},
-			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "ADVANCED_MISSILE",
 				maindir = "1 0 0.75",
 				maxangledif = 220,

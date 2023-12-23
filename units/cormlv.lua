@@ -67,13 +67,13 @@ return {
 		unitname = "cormlv",
 		workertime = 40,
 		buildoptions = {
-			[1] = "cordrag",
-			[2] = "coreyes",
-			[3] = "cormine1",
-			[4] = "cormine2",
-			[5] = "cormine3",
-			[6] = "cormine5",
-			[7] = "cormine6",
+			"cordrag",
+			"coreyes",
+			"cormine1",
+			"cormine2",
+			"cormine3",
+			"cormine5",
+			"cormine6",
 		},
 		customparams = {
 			buildpic = "cormlv.dds",
@@ -115,18 +115,18 @@ return {
 			},
 		},
 		nanocolor = {
-			[1] = 0.032,
-			[2] = 0.382,
-			[3] = 0.382,
+			0.032,
+			0.382,
+			0.382,
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -137,21 +137,21 @@ return {
 			underattack = "warning1",
 			working = "reclaim1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "vcormove",
+				"vcormove",
 			},
 			select = {
-				[1] = "vcorsel",
+				"vcorsel",
 			},
 		},
 		weapondefs = {
@@ -181,10 +181,11 @@ return {
 					default = 20,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "MINESWEEP",
 				onlytargetcategory = "MINE",
 			},

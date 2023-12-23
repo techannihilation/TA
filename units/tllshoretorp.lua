@@ -75,12 +75,12 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -89,21 +89,21 @@ return {
 			uncloak = "kloak1un",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "twrturn3",
+				"twrturn3",
 			},
 			select = {
-				[1] = "twrturn3",
+				"twrturn3",
 			},
 		},
 		weapondefs = {
@@ -133,7 +133,7 @@ return {
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 250,
-				tracks = true,
+				tracks = false,
 				turnrate = 64000,
 				turret = true,
 				waterweapon = true,
@@ -147,7 +147,7 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "TLL_TORPEDO",
 				onlytargetcategory = "UNDERWATER",

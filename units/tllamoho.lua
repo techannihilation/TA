@@ -86,15 +86,15 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:goliathflare",
+				"custom:goliathflare",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -104,18 +104,18 @@ return {
 			underattack = "warning1",
 			working = "mohorun2",
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "twractv3",
+				"twractv3",
 			},
 			select = {
-				[1] = "mohoon2",
+				"mohoon2",
 			},
 		},
 		weapondefs = {
@@ -151,10 +151,11 @@ return {
 					default = 900,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "CANNON",
 				onlytargetcategory = "SURFACE",

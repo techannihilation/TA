@@ -74,12 +74,12 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -89,21 +89,21 @@ return {
 			underattack = "warning1",
 			working = "reclaim1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "vtolcrmv",
+				"vtolcrmv",
 			},
 			select = {
-				[1] = "seapsel1",
+				"seapsel1",
 			},
 		},
 		weapondefs = {
@@ -132,7 +132,7 @@ return {
 				soundstart = "bombrel",
 				startvelocity = 100,
 				tolerance = 12000,
-				tracks = true,
+				tracks = false,
 				turnrate = 25000,
 				turret = false,
 				waterweapon = true,
@@ -147,7 +147,7 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "TALON_WEAPON",
 				onlytargetcategory = "UNDERWATER",

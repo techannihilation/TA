@@ -89,36 +89,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:MEDIUMFLARE",
+				"custom:MEDIUMFLARE",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "hovlgok2",
+				"hovlgok2",
 			},
 			select = {
-				[1] = "hovlgsl2",
+				"hovlgsl2",
 			},
 		},
 		weapondefs = {
@@ -153,7 +153,7 @@ return {
 				texture2 = "armsmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tracks = true,
+				tracks = false,
 				turnrate = 68000,
 				turret = true,
 				weaponacceleration = 200,
@@ -192,6 +192,7 @@ return {
 					default = 60,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			pluton_gun = {
 				areaofeffect = 64,
@@ -219,48 +220,49 @@ return {
 					default = 150,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "PLUTON_GUN",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "MAMBA_GATLING",
 				maindir = "-1 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "MAMBA_GATLING",
 				maindir = "1 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "AA_MISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
-			[5] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "AA_MISSILE",
 				maindir = "1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
-			[6] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "AA_MISSILE",
 				maindir = "1 0 0",
 				maxangledif = 190,
 				onlytargetcategory = "VTOL",
 			},
-			[7] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "AA_MISSILE",
 				maindir = "-1 0 0",
 				maxangledif = 190,

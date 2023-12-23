@@ -77,33 +77,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "vtolcrmv",
+				"vtolcrmv",
 			},
 			select = {
-				[1] = "vtolcrac",
+				"vtolcrac",
 			},
 		},
 		weapondefs = {
@@ -154,6 +154,7 @@ return {
 					default = 15000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			gatling = {
 				accuracy = 10,
@@ -170,7 +171,7 @@ return {
 				intensity = 1,
 				name = "Talon Gatling",
 				range = 1200,
-				reloadtime = 0.20,
+				reloadtime = 0.2,
 				rgbcolor = "0.15 0.15 1",
 				soundhitdry = "xplomed2",
 				soundhitwet = "sizzle",
@@ -190,6 +191,7 @@ return {
 					default = 250,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			talon_flak_gun = {
 				accuracy = 1000,
@@ -225,39 +227,40 @@ return {
 					default = 5,
 					air = 250,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR LARGE",
 				def = "AntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "SMALL MINOR LARGE",
 				def = "AntimatterAccelerator",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
-			[3] = {
+			{
 				def = "GATLING",
 				maindir = "-1 0 0",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "GATLING",
 				maindir = "1 0 0",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "TALON_FLAK_GUN",
 				onlytargetcategory = "VTOL",
 			},
-			[6] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "TALON_FLAK_GUN",
 				onlytargetcategory = "VTOL",
 				slaveto = 5,

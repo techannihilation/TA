@@ -81,38 +81,35 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				--[1] = "custom:tll_spray_muzzle",
-				--[2] = "custom:mediumflare_front_only",
-			},
+			explosiongenerators = {},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -153,6 +150,7 @@ return {
 					default = 60000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			mountedantimatteraccelerator = {
 				areaofeffect = 60,
@@ -197,6 +195,7 @@ return {
 					default = 18000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			gatling = {
 				accuracy = 10,
@@ -234,47 +233,48 @@ return {
 					default = 750,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "ULTIMATE_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "GATLING",
 				maindir = "1 0 0.25",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "GATLING",
 				maindir = "-1 0 0.25",
 				maxangledif = 190,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MOUNTEDANTIMATTERACCELERATOR",
 				maindir = "1 0 -0.1",
 				maxangledif = 120,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MOUNTEDANTIMATTERACCELERATOR",
 				maindir = "-1 0 -0.1",
 				maxangledif = 120,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				def = "GATLING",
 				maindir = "1 0 -1",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				def = "GATLING",
 				maindir = "-1 0 -1",
 				maxangledif = 240,

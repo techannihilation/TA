@@ -77,41 +77,39 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "servlrg3",
+				"servlrg3",
 			},
 			select = {
-				[1] = "servlrg3",
+				"servlrg3",
 			},
 		},
 		weapondefs = {
 			gok_rocket = {
 				areaofeffect = 72,
 				avoidfeature = false,
-				--burst = 3,
-				--burstrate = 0.3,
 				cegtag = "gok_trail_rocket",
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -128,7 +126,6 @@ return {
 				range = 1000,
 				reloadtime = 0.35,
 				smoketrail = true,
-				--sprayangle = 250,
 				soundhitdry = "xplosml1",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.6,
@@ -159,10 +156,11 @@ return {
 					default = 140,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "GOK_ROCKET",
 				onlytargetcategory = "SURFACE",

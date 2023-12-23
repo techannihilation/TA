@@ -80,36 +80,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:mediumflare_front_only",
+				"custom:mediumflare_front_only",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "tllwarning",
 			cant = {
-				[1] = "wearoff",
+				"wearoff",
 			},
 			count = {
-				[1] = "tllcount",
-				[2] = "tllcount",
-				[3] = "tllcount",
-				[4] = "tllcount",
-				[5] = "tllcount",
-				[6] = "tllcount",
+				"tllcount",
+				"tllcount",
+				"tllcount",
+				"tllcount",
+				"tllcount",
+				"tllcount",
 			},
 			ok = {
-				[1] = "tllkbotmove",
+				"tllkbotmove",
 			},
 			select = {
-				[1] = "tllunitok",
+				"tllunitok",
 			},
 		},
 		weapondefs = {
@@ -146,10 +146,11 @@ return {
 					default = 450,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MOBILE",
 				def = "RAPID_CANNON",
 				onlytargetcategory = "SURFACE",

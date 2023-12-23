@@ -77,37 +77,37 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:MEDIUMFLARE",
-				[2] = "custom:goliathflare",
+				"custom:MEDIUMFLARE",
+				"custom:goliathflare",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "sharmmov",
+				"sharmmov",
 			},
 			select = {
-				[1] = "sharmsel",
+				"sharmsel",
 			},
 		},
 		weapondefs = {
@@ -141,6 +141,7 @@ return {
 					default = 1500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			core_laser = {
 				areaofeffect = 8,
@@ -177,6 +178,7 @@ return {
 					default = 300,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			depthcharge = {
 				areaofeffect = 32,
@@ -202,7 +204,7 @@ return {
 				soundstart = "torpedo1",
 				startvelocity = 140,
 				tolerance = 1000,
-				tracks = true,
+				tracks = false,
 				turnrate = 6000,
 				turret = true,
 				waterweapon = true,
@@ -249,6 +251,7 @@ return {
 					default = 5,
 					air = 500,
 				},
+				tracks = false,
 			},
 			core_bats = {
 				accuracy = 400,
@@ -283,112 +286,113 @@ return {
 					default = 900,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "CANNON_TYRNT",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MINOR SMALL MEDIUM",
 				def = "CANNON_TYRNT",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "CORE_BATS",
 				maindir = "0 0 1",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "CORE_BATS",
 				maindir = "0 0 -1",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				def = "CORE_LASER",
 				maindir = "1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				def = "CORE_LASER",
 				maindir = "-1 0 0",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
-			[8] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "UNDERWATER",
 			},
-			[9] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[10] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[11] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[12] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[13] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[14] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[15] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
-			[16] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "CORFLAK_GUN",
 				maindir = "-1 0 0",
 				maxangledif = 220,

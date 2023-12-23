@@ -74,36 +74,36 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
@@ -138,6 +138,7 @@ return {
 					default = 3600,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rumad_rocket = {
 				accuracy = 750,
@@ -214,6 +215,7 @@ return {
 					default = 5,
 					air = 75,
 				},
+				tracks = false,
 			},
 			rumad_orb = {
 				areaofeffect = 16,
@@ -253,28 +255,29 @@ return {
 					default = 10000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_ORB",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_ORB",
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
-			[3] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_ORB",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_ORB",
 				maindir = "0 0 1",
@@ -282,22 +285,14 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 3,
 			},
-			[5] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "-1 0 0",
 				maxangledif = 170,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
-				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
-				def = "RUMAD_PLASMA",
-				maindir = "-1 0 0",
-				maxangledif = 170,
-				onlytargetcategory = "SURFACE",
-				slaveto = 5,
-			},
-			[7] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "-1 0 0",
@@ -305,14 +300,22 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 5,
 			},
-			[8] = {
+			{
+				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
+				def = "RUMAD_PLASMA",
+				maindir = "-1 0 0",
+				maxangledif = 170,
+				onlytargetcategory = "SURFACE",
+				slaveto = 5,
+			},
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "1 0 0",
 				maxangledif = 170,
 				onlytargetcategory = "SURFACE",
 			},
-			[9] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "1 0 0",
@@ -320,7 +323,7 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 8,
 			},
-			[10] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "1 0 0",
@@ -328,29 +331,29 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 8,
 			},
-			[11] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_ROCKET",
 				maindir = "0 0 1",
 				maxangledif = 20,
 				onlytargetcategory = "SURFACE",
 			},
-			[12] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_ROCKET",
 				maindir = "0 0 1",
 				maxangledif = 20,
 				onlytargetcategory = "SURFACE",
 			},
-			[13] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "VTOL",
 			},
-			[14] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_FLAK_GUN",
 				maindir = "0 0 -1",
 				maxangledif = 270,

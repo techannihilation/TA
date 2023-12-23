@@ -87,37 +87,35 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				--[1] = "custom:MEDIUMFLARE",
-			},
+			explosiongenerators = {},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "tarmmove",
+				"tarmmove",
 			},
 			select = {
-				[1] = "tarmsel",
+				"tarmsel",
 			},
 		},
 		weapondefs = {
@@ -153,6 +151,7 @@ return {
 					default = 3600,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rumad_supermissilex4 = {
 				areaofeffect = 128,
@@ -178,7 +177,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 800,
-				tracks = true,
+				tracks = false,
 				turnrate = 20000,
 				turret = true,
 				weaponacceleration = 150,
@@ -218,7 +217,7 @@ return {
 				texture2 = "coresmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tracks = true,
+				tracks = false,
 				turnrate = 63000,
 				turret = true,
 				weaponacceleration = 300,
@@ -256,81 +255,82 @@ return {
 					default = 100,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR SMALL MEDIUM LARGE HUGE",
 				def = "RUMAD_PLASMA",
 				maindir = "0.5 0 0.5",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MINOR SMALL MEDIUM LARGE HUGE",
 				def = "RUMAD_PLASMA",
 				maindir = "-0.5 0 0.5",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "MINOR SMALL MEDIUM LARGE HUGE",
 				def = "RUMAD_PLASMA",
 				maindir = "0.5 0 -0.5",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "MINOR SMALL MEDIUM LARGE HUGE",
 				def = "RUMAD_PLASMA",
 				maindir = "-0.5 0 -0.5",
 				maxangledif = 160,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_SUPERMISSILEX4",
 				maindir = "-0.5 0 0.5",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_SUPERMISSILEX4",
 				maindir = "0.5 0 0.5",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_SUPERMISSILEX4",
 				maindir = "-0.5 0 -0.5",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[8] = {
+			{
 				badtargetcategory = "MINOR SMALL",
 				def = "RUMAD_SUPERMISSILEX4",
 				maindir = "0.5 0 -0.5",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[9] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_AA_MISSILE",
 				maindir = "0 0 1",
 				maxangledif = 320,
 				onlytargetcategory = "VTOL",
 			},
-			[10] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "RUMAD_AA_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 320,
 				onlytargetcategory = "VTOL",
 				slaveto = 1,
 			},
-			[11] = {
+			{
 				def = "REPULSOR3",
 			},
 		},

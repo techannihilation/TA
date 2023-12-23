@@ -95,18 +95,15 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:lrpt",
-				--[2] = "custom:gala_flare",
-				--[3] = "custom:gala_ring_large",
-				--[4] = "custom:gala_ring_small",
+				"custom:lrpt",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		weapondefs = {
@@ -141,6 +138,7 @@ return {
 					default = 2400,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rumad_missilex6 = {
 				areaofeffect = 48,
@@ -166,7 +164,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "rocklit1",
 				startvelocity = 450,
-				tracks = true,
+				tracks = false,
 				turnrate = 20000,
 				turret = true,
 				weaponacceleration = 100,
@@ -197,19 +195,20 @@ return {
 					default = 100,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "RUMAD_MISSILEX6",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "SHIELD",
 			},
 		},

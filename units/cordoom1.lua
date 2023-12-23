@@ -16,7 +16,7 @@ return {
 		collisionvolumescales = "82 160 82",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
-		damagemodifier = 0.20,
+		damagemodifier = 0.2,
 		description = "Hight Energy Weapon",
 		explodeas = "ESTOR_BUILDING",
 		firestandorders = 1,
@@ -83,33 +83,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "doom",
+				"doom",
 			},
 			select = {
-				[1] = "doom",
+				"doom",
 			},
 		},
 		weapondefs = {
@@ -151,6 +151,7 @@ return {
 					default = 90,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			atadr10 = {
 				areaofeffect = 52,
@@ -189,6 +190,7 @@ return {
 					default = 16000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			corsumo_weapon10 = {
 				areaofeffect = 12,
@@ -226,20 +228,21 @@ return {
 					default = 350,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "ATADR10",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "CORSUMO_WEAPON10",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "ADV_DECKLASER10",
 				onlytargetcategory = "SURFACE",
 			},

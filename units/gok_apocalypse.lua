@@ -28,7 +28,6 @@ return {
 		dontland = 1,
 		energystorage = 10000,
 		explodeas = "MKL_BLAST",
-		dontland = 1,
 		firestandorders = 1,
 		footprintx = 16,
 		footprintz = 22,
@@ -85,36 +84,36 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
@@ -146,7 +145,7 @@ return {
 				startvelocity = 350,
 				targetable = 16,
 				tolerance = 3000,
-				tracks = true,
+				tracks = false,
 				turnrate = 30000,
 				turret = true,
 				weaponacceleration = 280,
@@ -195,6 +194,7 @@ return {
 					default = 4500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			gok_blast = {
 				areaofeffect = 425,
@@ -225,36 +225,37 @@ return {
 					default = 30000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "GOK_BLAST",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "GOK_BEAM",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "GOK_BEAM",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "GOK_BEAM",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				def = "ROCKETS",
 				onlytargetcategory = "SURFACE",
 			},

@@ -89,36 +89,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:MEDIUMFLARE",
+				"custom:MEDIUMFLARE",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "hovlgok2",
+				"hovlgok2",
 			},
 			select = {
-				[1] = "hovlgsl2",
+				"hovlgsl2",
 			},
 		},
 		weapondefs = {
@@ -161,6 +161,7 @@ return {
 					default = 275,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			cannon_tyrnt = {
 				accuracy = 375,
@@ -194,6 +195,7 @@ return {
 					default = 900,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rocket_krog = {
 				areaofeffect = 80,
@@ -227,7 +229,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 9000,
-				tracks = true,
+				tracks = false,
 				turnrate = 63000,
 				weaponacceleration = 200,
 				weapontimer = 1,
@@ -282,46 +284,47 @@ return {
 					default = 2500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "CANNON_TYRNT",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "BLOD_DOOM",
 				maindir = "0 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "BEAM_WEAPON",
 				maindir = "0.25 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "BEAM_WEAPON",
 				maindir = "0.15 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				def = "BEAM_WEAPON",
 				maindir = "-0.15 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				def = "BEAM_WEAPON",
 				maindir = "-0.25 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "ROCKET_KROG",
 				onlytargetcategory = "SURFACE",

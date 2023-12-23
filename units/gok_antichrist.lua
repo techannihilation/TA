@@ -50,7 +50,6 @@ return {
 		standingfireorder = 2,
 		standingmoveorder = 1,
 		steeringmode = 2,
-		--stealth = true,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 1.0,
 		turnrate = 1000,
@@ -58,7 +57,7 @@ return {
 		upright = true,
 		workertime = 800,
 		buildoptions = {
-			[1] = "gok_nanotc",
+			"gok_nanotc",
 			[5] = "gok_mine1",
 			[6] = "gok_fort",
 			[7] = "gok_arad",
@@ -66,15 +65,12 @@ return {
 			[9] = "gok_blackdawn",
 			[10] = "gok_slesh",
 			[11] = "gok_orchid",
-			--[12] = "",
 			[13] = "gok_rl",
 			[14] = "gok_flak",
 			[15] = "gok_ptr",
 			[16] = "gok_mds",
 			[17] = "gok_cv",
 			[18] = "gok_zealot",
-			--[19] = "",
-			--[20] = "",
 		},
 		customparams = {
 			buildpic = "gok_antichrist.dds",
@@ -87,7 +83,7 @@ return {
 			normaltex = "unittextures/gok_normals.dds",
 		},
 		featuredefs = {
-			["dead"] = {
+			dead = {
 				blocking = true,
 				category = "corpses",
 				collisionvolumeoffsets = "0 0 0",
@@ -109,7 +105,7 @@ return {
 					fromunit = 1,
 				},
 			},
-			["heap"] = {
+			heap = {
 				blocking = false,
 				category = "heaps",
 				damage = 25000,
@@ -129,16 +125,14 @@ return {
 			},
 		},
 		sfxtypes = {
-			explosiongenerators = {
-				--[1] = "custom:com_sea_laser_bubbles",
-			},
+			explosiongenerators = {},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
@@ -152,27 +146,27 @@ return {
 			unitcomplete = "kcarmmov",
 			working = "reclaim1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kcarmmov",
+				"kcarmmov",
 			},
 			select = {
-				[1] = "kcarmsel",
+				"kcarmsel",
 			},
 		},
 		weapondefs = {
 			blade = {
 				areaofeffect = 196,
-				beamtime = 0.10,
+				beamtime = 0.1,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
@@ -193,6 +187,7 @@ return {
 					default = 666,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			com_shield = {
 				name = "Universal Repulsor",
@@ -213,10 +208,11 @@ return {
 				damage = {
 					default = 100,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "BLADE",
 				onlytargetcategory = "SURFACE",
 			},

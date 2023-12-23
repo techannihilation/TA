@@ -72,36 +72,36 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
@@ -135,6 +135,7 @@ return {
 					default = 1200,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rumad_bomb = {
 				accuracy = 750,
@@ -165,25 +166,18 @@ return {
 					default = 1000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "-0.7 0 0.3",
 				maxangledif = 170,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
-				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
-				def = "RUMAD_PLASMA",
-				maindir = "-0.7 0 0.3",
-				maxangledif = 170,
-				onlytargetcategory = "SURFACE",
-				slaveto = 1,
-			},
-			[3] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "-0.7 0 0.3",
@@ -191,14 +185,22 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 1,
 			},
-			[4] = {
+			{
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
+				def = "RUMAD_PLASMA",
+				maindir = "-0.7 0 0.3",
+				maxangledif = 170,
+				onlytargetcategory = "SURFACE",
+				slaveto = 1,
+			},
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "-0.7 0 -0.3",
 				maxangledif = 170,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "-0.7 0 -0.3",
@@ -206,7 +208,7 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 4,
 			},
-			[6] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "-0.7 0 -0.3",
@@ -214,22 +216,14 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 4,
 			},
-			[7] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0.7 0 0.3",
 				maxangledif = 170,
 				onlytargetcategory = "SURFACE",
 			},
-			[8] = {
-				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
-				def = "RUMAD_PLASMA",
-				maindir = "0.7 0 0.3",
-				maxangledif = 170,
-				onlytargetcategory = "SURFACE",
-				slaveto = 7,
-			},
-			[9] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0.7 0 0.3",
@@ -237,14 +231,22 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 7,
 			},
-			[10] = {
+			{
+				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
+				def = "RUMAD_PLASMA",
+				maindir = "0.7 0 0.3",
+				maxangledif = 170,
+				onlytargetcategory = "SURFACE",
+				slaveto = 7,
+			},
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0.7 0 -0.3",
 				maxangledif = 170,
 				onlytargetcategory = "SURFACE",
 			},
-			[11] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0.7 0 -0.3",
@@ -252,7 +254,7 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 10,
 			},
-			[12] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "RUMAD_PLASMA",
 				maindir = "0.7 0 -0.3",
@@ -260,7 +262,7 @@ return {
 				onlytargetcategory = "SURFACE",
 				slaveto = 10,
 			},
-			[13] = {
+			{
 				def = "RUMAD_BOMB",
 				onlytargetcategory = "SURFACE",
 				maindir = "0 -1 0",

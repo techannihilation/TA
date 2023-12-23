@@ -10,7 +10,6 @@ return {
 		buildtime = 8000,
 		canattack = true,
 		canguard = true,
-		--canmanualfire = true,
 		canmove = true,
 		canpatrol = true,
 		canstop = 1,
@@ -92,38 +91,38 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:jetpack",
-				[2] = "custom:tlldischarge",
-				[3] = "custom:might_and_magic",
+				"custom:jetpack",
+				"custom:tlldischarge",
+				"custom:might_and_magic",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "mavbok1",
+				"mavbok1",
 			},
 			select = {
-				[1] = "mavbsel1",
+				"mavbsel1",
 			},
 		},
 		weapondefs = {
@@ -160,6 +159,7 @@ return {
 					default = 100,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			stun_bomb = {
 				accuracy = 75,
@@ -195,14 +195,15 @@ return {
 					default = 2400,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "STUN_BOMB",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "DISCHARGE",
 				onlytargetcategory = "SURFACE",
 			},

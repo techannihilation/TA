@@ -83,12 +83,12 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		weapondefs = {
@@ -99,7 +99,6 @@ return {
 				burnblow = true,
 				burst = 4,
 				burstrate = 0.85,
-				--cegtag = "Core_Howie_Rocket",
 				craterareaofeffect = 375,
 				craterboost = 0,
 				cratermult = 0,
@@ -138,7 +137,7 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL TINY",
 				def = "ASM",
 				onlytargetcategory = "SURFACE",

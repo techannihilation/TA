@@ -75,45 +75,45 @@ return {
 			},
 		},
 		nanocolor = {
-			[1] = 0.56,
-			[2] = 0.56,
-			[3] = 0.56,
+			0.56,
+			0.56,
+			0.56,
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:goliathflare",
+				"custom:goliathflare",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
@@ -150,6 +150,7 @@ return {
 					default = 900,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			tehlazerofdewm = {
 				areaofeffect = 14,
@@ -190,87 +191,88 @@ return {
 					default = 2500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "CORE_BATS",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MEDIUM SMALL MINOR",
 				def = "CORE_BATS",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "0 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "0 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[8] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[9] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "-1 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[10] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "-1 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[11] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "1 0 1",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
-			[12] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "tehlazerofdewm",
 				maindir = "1 0 1",

@@ -87,33 +87,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "hovlgok2",
+				"hovlgok2",
 			},
 			select = {
-				[1] = "hovlgsl2",
+				"hovlgsl2",
 			},
 		},
 		weapondefs = {
@@ -144,7 +144,7 @@ return {
 				texture2 = "armsmoketrail",
 				texture3 = "null",
 				texture4 = "null",
-				tracks = true,
+				tracks = false,
 				turret = true,
 				weaponacceleration = 200,
 				weapontimer = 2,
@@ -195,6 +195,7 @@ return {
 					default = 80,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			lrpc_weapon = {
 				accuracy = 800,
@@ -230,33 +231,34 @@ return {
 					default = 250,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				def = "LRPC_WEAPON",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "LRPC_WEAPON",
 				maindir = "0 0 1",
 				maxangledif = 90,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "BEAM_WEAPON",
 				maindir = "-1 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "BEAM_WEAPON",
 				maindir = "1 0 1",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "AA_MISSILE",
 				maindir = "0 0 -1",
 				maxangledif = 220,

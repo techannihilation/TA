@@ -99,33 +99,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "krogok1",
+				"krogok1",
 			},
 			select = {
-				[1] = "krogsel1",
+				"krogsel1",
 			},
 		},
 		weapondefs = {
@@ -160,7 +160,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 9000,
-				tracks = true,
+				tracks = false,
 				turnrate = 50000,
 				weaponacceleration = 230,
 				weapontimer = 2,
@@ -197,6 +197,7 @@ return {
 					default = 100,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			k666blaster = {
 				areaofeffect = 16,
@@ -205,7 +206,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 20000,
-				--explosiongenerator = "custom:hope_lightning",
 				firestarter = 90,
 				impactonly = 1,
 				impulseboost = 0,
@@ -237,25 +237,26 @@ return {
 					default = 3000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "k666blaster",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "PRAETORIAN_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "PRAETORIAN_ROCKET",
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "Praetorian_Shield",
 				onlytargetcategory = "SURFACE",
 			},

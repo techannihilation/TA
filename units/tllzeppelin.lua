@@ -73,36 +73,36 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
@@ -137,6 +137,7 @@ return {
 					default = 3200,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			gauss_tll = {
 				alphaDecay = 0.5,
@@ -154,7 +155,6 @@ return {
 				range = 1200,
 				reloadtime = 1.6,
 				rgbcolor = "0.2 0.2 1.0",
-				--separation = 0.15,
 				size = 0.8,
 				sizedecay = -0.1,
 				soundhitdry = "soft_crunch",
@@ -170,6 +170,7 @@ return {
 					default = 6400,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			miniflak = {
 				accuracy = 1000,
@@ -202,27 +203,27 @@ return {
 				damage = {
 					areoship = 62.5,
 					default = 5,
-
 					air = 250,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM LARGE",
 				def = "MINIGUN_GAUSS_TLL",
 				maindir = "0 0 1",
 				maxangledif = 280,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM LARGE",
 				def = "MINIGUN_GAUSS_TLL",
 				maindir = "0 0 -1",
 				maxangledif = 280,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM LARGE",
 				def = "GAUSS_TLL",
 				maindir = "0 0 1",
@@ -230,28 +231,28 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[5] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR",
 				def = "MINIFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[6] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR",
 				def = "MINIFLAK",
 				maindir = "-1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[7] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR",
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 220,
 				onlytargetcategory = "VTOL",
 			},
 			[8] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+				badtargetcategory = "MINOR MAJOR",
 				def = "MINIFLAK",
 				maindir = "1 0 0",
 				maxangledif = 220,

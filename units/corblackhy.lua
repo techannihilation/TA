@@ -95,33 +95,33 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "sharmmov",
+				"sharmmov",
 			},
 			select = {
-				[1] = "sharmsel",
+				"sharmsel",
 			},
 		},
 		weapondefs = {
@@ -166,6 +166,7 @@ return {
 					default = 300,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			hydra_prime = {
 				accuracy = 400,
@@ -201,6 +202,7 @@ return {
 					default = 450,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			hydramiss = {
 				areaofeffect = 48,
@@ -231,7 +233,7 @@ return {
 				soundstart = "Rocklit3",
 				stages = 20,
 				startvelocity = 600,
-				tracks = true,
+				tracks = false,
 				turnrate = 68000,
 				turret = true,
 				weaponacceleration = 200,
@@ -245,38 +247,38 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "HYDRA_PRIME",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				def = "HYDRA_GUN",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "HYDRAMISS",
 				maindir = "1 0 1",
 				maxangledif = 240,
 				onlytargetcategory = "VTOL",
 			},
-			[4] = {
+			{
 				def = "HYDRA_GUN",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				def = "HYDRA_GUN",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
-				badtargetcategory = "MINOR MAJOR", --Ground AA
+			{
+				badtargetcategory = "MINOR MAJOR",
 				def = "HYDRAMISS",
 				maindir = "-1 0 1",
 				maxangledif = 240,

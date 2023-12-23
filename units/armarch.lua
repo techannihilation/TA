@@ -72,36 +72,36 @@ return {
 		},
 		sfxtypes = {
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			arrived = {
-				[1] = "bigstop",
+				"bigstop",
 			},
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "biggo",
+				"biggo",
 			},
 			select = {
-				[1] = "bigsel",
+				"bigsel",
 			},
 		},
 		weapondefs = {
@@ -112,7 +112,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 5000,
-				--explosiongenerator = "custom:hope_lightning",
 				firestarter = 90,
 				impactonly = 1,
 				impulseboost = 0,
@@ -143,6 +142,7 @@ return {
 					default = 4500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			ultimate_lightning = {
 				areaofeffect = 18,
@@ -182,6 +182,7 @@ return {
 					default = 2400,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			multi_rocket = {
 				areaofeffect = 80,
@@ -213,7 +214,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 9000,
-				tracks = true,
+				tracks = false,
 				turnrate = 63000,
 				weaponacceleration = 200,
 				weapontimer = 2.5,
@@ -226,63 +227,63 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "-1 0 0",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "ULTIMATE_LIGHTNING",
 				maindir = "1 0 0",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "k777blaster",
 				maindir = "0 0 1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "k777blaster",
 				maindir = "0 0 -1",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[7] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "k777blaster",
 				maindir = "-1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[8] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "k777blaster",
 				maindir = "1 0 0",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
-			[9] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "MULTI_ROCKET",
 				onlytargetcategory = "SURFACE",

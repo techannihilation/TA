@@ -83,37 +83,37 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tll_spray_muzzle",
-				[2] = "custom:arm_lightning_muzzle",
+				"custom:tll_spray_muzzle",
+				"custom:arm_lightning_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				"kbcormov",
 			},
 			select = {
-				[1] = "kbcorsel",
+				"kbcorsel",
 			},
 		},
 		weapondefs = {
@@ -148,6 +148,7 @@ return {
 					default = 2000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rave_missile = {
 				acceleration = 0.3,
@@ -179,10 +180,10 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 9000,
-				tracks = true,
+				tracks = false,
 				turnrate = 35000,
 				weaponacceleration = 150,
-				weapontimer = 0.60,
+				weapontimer = 0.6,
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 2100,
 				damage = {
@@ -192,7 +193,7 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "GAUSS_TLL",
 				onlytargetcategory = "SURFACE",

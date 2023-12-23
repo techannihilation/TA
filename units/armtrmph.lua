@@ -57,7 +57,6 @@ return {
 		customparams = {
 			buildpic = "armtrmph.dds",
 			faction = "ARM",
-			--requiretech = "Advanced T3 Unit Research Centre",
 			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
@@ -77,36 +76,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:MEDIUMFLARE",
+				"custom:MEDIUMFLARE",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "sharmmov",
+				"sharmmov",
 			},
 			select = {
-				[1] = "sharmsel",
+				"sharmsel",
 			},
 		},
 		weapondefs = {
@@ -143,6 +142,7 @@ return {
 					default = 225,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			cannon_trmph = {
 				accuracy = 375,
@@ -174,6 +174,7 @@ return {
 					default = 1000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			rocket_mcv = {
 				areaofeffect = 64,
@@ -206,7 +207,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 6000,
-				tracks = true,
+				tracks = false,
 				turnrate = 68000,
 				weaponacceleration = 200,
 				weapontimer = 1,
@@ -245,7 +246,7 @@ return {
 				soundhitwet = "xplodep2",
 				soundstart = "torpedo1",
 				startvelocity = 150,
-				tracks = true,
+				tracks = false,
 				turnrate = 6000,
 				turret = true,
 				waterweapon = true,
@@ -260,36 +261,36 @@ return {
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "CANNON_TRMPH",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "CANNON_TRMPH",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "CANNON_BATS_AFT",
 				maindir = "0 0 1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "CANNON_BATS_AFT",
 				maindir = "0 0 -1",
 				maxangledif = 270,
 				onlytargetcategory = "SURFACE",
 			},
-			[5] = {
+			{
 				badtargetcategory = "MINOR",
 				def = "ROCKET_MCV",
 				onlytargetcategory = "SURFACE",
 			},
-			[6] = {
+			{
 				badtargetcategory = "SURFACE",
 				def = "ADVDEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",

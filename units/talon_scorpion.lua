@@ -85,36 +85,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:arm_lightning_muzzle",
+				"custom:arm_lightning_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kbcormov",
+				"kbcormov",
 			},
 			select = {
-				[1] = "kbcorsel",
+				"kbcorsel",
 			},
 		},
 		weapondefs = {
@@ -154,6 +154,7 @@ return {
 					default = 6000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			talon_missile = {
 				areaofeffect = 128,
@@ -184,7 +185,7 @@ return {
 				texture3 = "null",
 				texture4 = "null",
 				tolerance = 9000,
-				tracks = true,
+				tracks = false,
 				trajectoryheight = 0.45,
 				turnrate = 22000,
 				turret = true,
@@ -235,6 +236,7 @@ return {
 					default = 1500,
 					subs = 5,
 				},
+				tracks = false,
 			},
 			talon_laser = {
 				areaofeffect = 12,
@@ -270,42 +272,43 @@ return {
 					default = 75,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "SMALL MINOR",
 				def = "TALON_BLT",
 				onlytargetcategory = "SURFACE",
 			},
-			[2] = {
+			{
 				badtargetcategory = "SMALL MINOR MEDIUM",
 				def = "LIGHTNING_SCORPION",
 				maindir = "0 0 1",
 				maxangledif = 90,
 				onlytargetcategory = "SURFACE",
 			},
-			[3] = {
+			{
 				def = "TALON_LASER",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 			},
-			[4] = {
+			{
 				def = "TALON_LASER",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 				slaveto = 3,
 			},
-			[5] = {
+			{
 				def = "TALON_MISSILE",
 				maindir = "0 0 1",
 				maxangledif = 300,
 				onlytargetcategory = "SURFACE",
 				slaveto = 3,
 			},
-			[6] = {
+			{
 				def = "TALON_MISSILE",
 				maindir = "0 0 1",
 				maxangledif = 300,

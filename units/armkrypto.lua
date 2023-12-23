@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "80 77 92",
 		collisionvolumetype = "box",
 		corpse = "dead",
-		damagemodifier = 0.20,
+		damagemodifier = 0.2,
 		defaultmissiontype = "Standby",
 		description = "Armored Mobile Blaster",
 		downloadable = 1,
@@ -92,36 +92,36 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-				[1] = "custom:tll_spray_muzzle",
+				"custom:tll_spray_muzzle",
 			},
 			pieceexplosiongenerators = {
-				[1] = "piecetrail0",
-				[2] = "piecetrail1",
-				[3] = "piecetrail2",
-				[4] = "piecetrail3",
-				[5] = "piecetrail4",
-				[6] = "piecetrail6",
+				"piecetrail0",
+				"piecetrail1",
+				"piecetrail2",
+				"piecetrail3",
+				"piecetrail4",
+				"piecetrail6",
 			},
 		},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",
 			cant = {
-				[1] = "cantdo4",
+				"cantdo4",
 			},
 			count = {
-				[1] = "count6",
-				[2] = "count5",
-				[3] = "count4",
-				[4] = "count3",
-				[5] = "count2",
-				[6] = "count1",
+				"count6",
+				"count5",
+				"count4",
+				"count3",
+				"count2",
+				"count1",
 			},
 			ok = {
-				[1] = "kbarmmov",
+				"kbarmmov",
 			},
 			select = {
-				[1] = "kbarmsel",
+				"kbarmsel",
 			},
 		},
 		weapondefs = {
@@ -132,7 +132,6 @@ return {
 				craterboost = 0,
 				cratermult = 0,
 				energypershot = 30000,
-				--explosiongenerator = "custom:hope_lightning",
 				firestarter = 90,
 				impactonly = 1,
 				impulseboost = 0,
@@ -164,10 +163,11 @@ return {
 					default = 6000,
 					subs = 5,
 				},
+				tracks = false,
 			},
 		},
 		weapons = {
-			[1] = {
+			{
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "K888BLASTER",
 				onlytargetcategory = "SURFACE",
