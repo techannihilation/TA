@@ -134,7 +134,7 @@ return {
 					default = 4000,
 					subs = 50,
 				},
-	},
+			},
 		},
 		weapons = {
 			[1] = {

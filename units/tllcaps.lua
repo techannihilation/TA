@@ -217,9 +217,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-				areoship = 62.5,
-				default = 5,
-				air = 250,
+					areoship = 62.5,
+					default = 5,
+					air = 250,
 				},
 			},
 			rocket = {

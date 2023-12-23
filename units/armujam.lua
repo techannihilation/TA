@@ -12,7 +12,7 @@ return {
 		buildtime = 500000,
 		canattack = false,
 		category = "ALL SURFACE",
-		collisionvolumescales = "150 165 150",		
+		collisionvolumescales = "150 165 150",
 		collisionvolumetype = "CylY",
 		corpse = "dead",
 		description = "Tech Level 5",

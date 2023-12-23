@@ -134,7 +134,7 @@ return {
 				range = 125,
 				reloadtime = 1,
 				rgbcolor = "0.0 0.0 0.0",
-				rgbcolor2= "0.0 0.0 0.0",
+				rgbcolor2 = "0.0 0.0 0.0",
 				soundstart = "techa_sounds/gok_sword",
 				soundtrigger = 1,
 				turret = true,

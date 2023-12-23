@@ -93,7 +93,7 @@ return {
 		sfxtypes = {
 			explosiongenerators = {
 				--[1] = "custom:MEDIUMFLARE",
-					[2] = "custom:PILOT",
+				[2] = "custom:PILOT",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
@@ -162,7 +162,7 @@ return {
 				shieldbadcolor = "1 0.2 0.2 0.30",
 				shieldenergyuse = 2500,
 				shieldforce = 8,
-					shieldgoodcolor = "0.2 1 0.2 0.30",
+				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
 				shieldpower = 30000,
 				shieldpowerregen = 250,

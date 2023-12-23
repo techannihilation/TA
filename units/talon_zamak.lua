@@ -1,5 +1,5 @@
 return {
-	talon_zamak= {
+	talon_zamak = {
 		acceleration = 0.02,
 		activatewhenbuilt = true,
 		brakerate = 0.5,
@@ -114,7 +114,7 @@ return {
 			blt = {
 				areaofeffect = 16,
 				beamtime = 0.5,
-				beamttl=5,
+				beamttl = 5,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -195,7 +195,7 @@ return {
 				badtargetcategory = "SURFACE",
 				def = "DEPTHCHARGE",
 				onlytargetcategory = "UNDERWATER",
-			}
+			},
 		},
 	},
 }

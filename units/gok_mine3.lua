@@ -1,5 +1,5 @@
 return {
-	gok_mine3= {
+	gok_mine3 = {
 		acceleration = 0,
 		activatewhenbuilt = false,
 		blocking = false,

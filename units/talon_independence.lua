@@ -1,7 +1,7 @@
 return {
 	talon_independence = {
 		acceleration = 0.005,
-		airstrafe  = false,
+		airstrafe = false,
 		airHoverFactor = 1,
 		bankingallowed = false,
 		brakerate = 0.01,

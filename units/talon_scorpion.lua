@@ -201,7 +201,7 @@ return {
 			talon_blt = {
 				areaofeffect = 16,
 				beamtime = 0.15,
-				beamttl=5,
+				beamttl = 5,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -254,7 +254,7 @@ return {
 				range = 650,
 				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
-				rgbcolor2= "1.0 1.0 1.00",
+				rgbcolor2 = "1.0 1.0 1.00",
 				soundhitdry = "talongunhit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

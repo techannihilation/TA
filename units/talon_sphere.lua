@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT2",
 		name = "Invader",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_sphere.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,

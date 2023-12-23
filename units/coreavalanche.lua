@@ -32,7 +32,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AMPHKBOT",
 		name = "Avalanche",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core/coreavalanche.s3o",
 		radaremitheight = 34,
 		selfdestructas = "BIG_UNIT",

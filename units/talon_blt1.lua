@@ -35,7 +35,7 @@ return {
 		maxslope = 10,
 		maxvelocity = 0,
 		maxwaterdepth = 0,
-		name = "Advanced Thea",		
+		name = "Advanced Thea",
 		objectname = "talon/talon_blt1.s3o",
 		radardistance = 1500,
 		radaremitheight = 79,

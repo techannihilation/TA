@@ -26,7 +26,7 @@ return {
 		maxvelocity = 0,
 		minwaterdepth = 70,
 		name = "Advanced Underwater Antimater Fusion",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "arm/armuwfus1.s3o",
 		radaremitheight = 60,
 		script = "armuwfus1.cob",

@@ -180,10 +180,10 @@ return {
 				onlytargetcategory = "VTOL",
 			},
 			[2] = {
-					badtargetcategory = "MINOR MAJOR", --Ground AA
-					def = "GOK_AA_MISSILE",
-					onlytargetcategory = "VTOL",
-					slaveto = 1,
+				badtargetcategory = "MINOR MAJOR", --Ground AA
+				def = "GOK_AA_MISSILE",
+				onlytargetcategory = "VTOL",
+				slaveto = 1,
 			},
 		},
 	},

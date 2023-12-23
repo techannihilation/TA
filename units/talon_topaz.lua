@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Topaz",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_topaz.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,

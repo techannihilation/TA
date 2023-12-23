@@ -29,7 +29,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "arm/afusionplant.s3o",
 		radardistance = 0,
 		radaremitheight = 110,

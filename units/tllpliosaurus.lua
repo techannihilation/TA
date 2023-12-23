@@ -240,7 +240,7 @@ return {
 				maindir = "0 0 -1",
 				maxangledif = 260,
 				onlytargetcategory = "SURFACE",
-				},
+			},
 			[5] = {
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "GAUSS_TLL",

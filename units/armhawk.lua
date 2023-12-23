@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 0,
 		mobilestandorders = 1,
 		moverate1 = 8,
-		name = "Hawk",		
+		name = "Hawk",
 		objectname = "arm/armhawk.s3o",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT_VTOL",

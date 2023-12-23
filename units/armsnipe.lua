@@ -37,7 +37,7 @@ return {
 		mincloakdistance = 80,
 		mobilestandorders = 1,
 		movementclass = "KBOT2",
-		name = "Sharpshooter",		
+		name = "Sharpshooter",
 		objectname = "arm/armsnipe.s3o",
 		radardistancejam = 10,
 		radaremitheight = 36,

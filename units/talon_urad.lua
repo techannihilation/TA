@@ -36,7 +36,7 @@ return {
 		yardmap = "oooo oooo oooo oooo",
 		customparams = {
 			buildpic = "talon_urad.dds",
-		faction = "TALON",
+			faction = "TALON",
 			normaltex = "unittextures/talon_normals.dds",
 		},
 		featuredefs = {

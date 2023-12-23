@@ -36,7 +36,7 @@ return {
 		maxwaterdepth = 9999,
 		metalstorage = 25,
 		name = "Advanced Metal Extractor",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "core/cormex1.s3o",
 		onoffable = true,
 		radaremitheight = 25,

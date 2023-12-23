@@ -30,7 +30,7 @@ return {
 		maxwaterdepth = 200,
 		mobilestandorders = 1,
 		movementclass = "AMPTBOT",
-		name = "Snakeneck",		
+		name = "Snakeneck",
 		objectname = "tll/tllsnakeneck.s3o",
 		radardistance = 0,
 		radaremitheight = 27,

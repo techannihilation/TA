@@ -1,4 +1,4 @@
- return {
+return {
 	talon_covertopscentre = {
 		activatewhenbuilt = true,
 		buildcostenergy = 2286405,

@@ -140,15 +140,15 @@ return {
 		},
 		weapons = {
 			[1] = {
-					badtargetcategory = "MINOR",
-					def = "RUMAD_GAUSS",
-					onlytargetcategory = "SURFACE",
-				},
+				badtargetcategory = "MINOR",
+				def = "RUMAD_GAUSS",
+				onlytargetcategory = "SURFACE",
+			},
 			[2] = {
-						badtargetcategory = "MINOR",
-						def = "RUMAD_GAUSS",
-						onlytargetcategory = "SURFACE",
-						slaveto = 1,
+				badtargetcategory = "MINOR",
+				def = "RUMAD_GAUSS",
+				onlytargetcategory = "SURFACE",
+				slaveto = 1,
 			},
 		},
 	},

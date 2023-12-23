@@ -175,7 +175,7 @@ return {
 				range = 220,
 				reloadtime = 1,
 				rgbcolor = "1.0 0.8 0.25",
-				rgbcolor2= "1.0 1.0 1.0";
+				rgbcolor2 = "1.0 1.0 1.0",
 				soundhitdry = "talongunhit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

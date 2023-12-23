@@ -2,7 +2,7 @@ return {
 	talon_planetkiller = {
 		acceleration = 0.005,
 		activatewhenbuilt = false,
-		airStrafe  = true,
+		airStrafe = true,
 		airHoverFactor = 1,
 		bankingAllowed = false,
 		blocking = false,
@@ -64,8 +64,7 @@ return {
 			faction = "TALON",
 			normaltex = "unittextures/talon_normals.dds",
 		},
-		featuredefs = {
-		},
+		featuredefs = {},
 		sfxtypes = {
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

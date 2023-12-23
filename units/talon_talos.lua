@@ -159,7 +159,7 @@ return {
 			talon_blt = {
 				areaofeffect = 16,
 				beamtime = 0.15,
-				beamttl=5,
+				beamttl = 5,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,

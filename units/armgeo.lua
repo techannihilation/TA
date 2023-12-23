@@ -35,7 +35,7 @@ return {
 		maxvelocity = 0,
 		maxwaterdepth = 9999,
 		name = "Geothermal Powerplant",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "arm/armgeo.s3o",
 		radaremitheight = 51,
 		seismicsignature = 0,

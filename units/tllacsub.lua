@@ -1,4 +1,4 @@
- return {
+return {
 	tllacsub = {
 		acceleration = 0.09,
 		brakerate = 0.36,
@@ -58,9 +58,9 @@
 		waterline = 30,
 		workertime = 240,
 		buildoptions = {
-      [1] = "tllmohogeo",
-      --[2] = "",
-      [3] = "tllemstor",
+			[1] = "tllmohogeo",
+			--[2] = "",
+			[3] = "tllemstor",
 			[4] = "tllmoho",
 			[5] = "tllturtle_lab",
 			[6] = "tlluwfusion",

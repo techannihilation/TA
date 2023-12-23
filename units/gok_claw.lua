@@ -143,7 +143,7 @@ return {
 				range = 55,
 				reloadtime = 0.1,
 				rgbcolor = "0.0 0.0 0.0",
-				rgbcolor2= "0.0 0.0 0.0",
+				rgbcolor2 = "0.0 0.0 0.0",
 				--soundhitdry = "armgunhit",
 				soundstart = "techa_sounds/gok_saw",
 				soundtrigger = 1,

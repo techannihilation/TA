@@ -133,7 +133,7 @@ return {
 				range = 550,
 				reloadtime = 0.3,
 				rgbcolor = "1.0 0.8 0.25",
-				rgbcolor2= "1.0 1.0 1.00",
+				rgbcolor2 = "1.0 1.0 1.00",
 				soundhitdry = "talongunhit",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,

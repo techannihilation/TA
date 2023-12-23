@@ -364,8 +364,8 @@ return {
 				onlytargetcategory = "SURFACE VTOL",
 			},
 			[2] = {
-					def = "RUMAD_GAUSS3",
-					onlytargetcategory = "SURFACE",
+				def = "RUMAD_GAUSS3",
+				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
 				def = "RUMAD_DISINTEGRATOR3",

@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "ATANK3",
 		name = "Triton",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "arm/armcroc.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,

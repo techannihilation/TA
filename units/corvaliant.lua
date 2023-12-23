@@ -80,9 +80,9 @@ return {
 			[3] = 0.56,
 		},
 		sfxtypes = {
-		explosiongenerators = {
-			[1] = "custom:goliathflare",
-		},
+			explosiongenerators = {
+				[1] = "custom:goliathflare",
+			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",
 				[2] = "piecetrail1",

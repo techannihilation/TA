@@ -1,5 +1,5 @@
 return {
-	talon_asonar= {
+	talon_asonar = {
 		acceleration = 0,
 		activatewhenbuilt = true,
 		brakerate = 0,

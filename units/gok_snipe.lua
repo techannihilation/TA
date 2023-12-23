@@ -1,5 +1,5 @@
 return {
---add cloak
+	--add cloak
 	gok_snipe = {
 		acceleration = 0.21,
 		brakerate = 0.45,

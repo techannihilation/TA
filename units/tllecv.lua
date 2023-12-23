@@ -82,7 +82,7 @@ return {
 			[17] = "tllsilo1",
 			[18] = "tlllrpt1",
 			[19] = "tll_hydre2",
-			[20] = "portal"
+			[20] = "portal",
 		},
 		customparams = {
 			buildpic = "tllecv.dds",

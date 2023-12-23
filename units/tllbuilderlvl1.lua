@@ -18,7 +18,7 @@ return {
 		category = "ALL MOBILE VTOL",
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "34 31 54",		
+		collisionvolumescales = "34 31 54",
 		collisionvolumetype = "ellipsoid",
 		cruisealt = 90,
 		description = "Tech Level 2",

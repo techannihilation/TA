@@ -78,7 +78,7 @@ return {
 			dead = {
 				blocking = true,
 				collisionvolumeoffsets = "-5 0 0",
-				collisionvolumescales = "110 34 92",				
+				collisionvolumescales = "110 34 92",
 				collisionvolumetype = "Box",
 				damage = 2575,
 				description = "Vehicle Plant Wreckage",

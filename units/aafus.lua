@@ -15,7 +15,7 @@ return {
 		buildtime = 175000,
 		category = "ALL SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "118 78 76",		
+		collisionvolumescales = "118 78 76",
 		collisionvolumetype = "Box",
 		corpse = "dead",
 		description = "Produce Energy / Storage (30K)",

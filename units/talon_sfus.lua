@@ -28,7 +28,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Experimental Fusion Reactor",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_sfus.s3o",
 		radaremitheight = 90,
 		selfdestructas = "FUSION_BLAST_BIG",

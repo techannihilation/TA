@@ -1,5 +1,5 @@
 return {
-talon_psyker = {
+	talon_psyker = {
 		acceleration = 0.96,
 		brakerate = 6,
 		buildcostenergy = 970,

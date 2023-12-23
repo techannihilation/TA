@@ -31,7 +31,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TKBOT3",
 		name = "Tarantula",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "arm/armtarantula.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,

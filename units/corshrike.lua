@@ -117,7 +117,7 @@ return {
 				weapontimer = 7,
 				weapontype = "MissileLauncher",
 				weaponvelocity = 850,
-					damage = {
+				damage = {
 					areoship = 100,
 					default = 5,
 					air = 400,

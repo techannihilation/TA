@@ -198,8 +198,8 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-			def = "RAVE_MISSILE",
-			onlytargetcategory = "SURFACE",
+				def = "RAVE_MISSILE",
+				onlytargetcategory = "SURFACE",
 			},
 		},
 	},

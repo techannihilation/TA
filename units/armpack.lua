@@ -164,7 +164,7 @@ return {
 				wobble = 120,
 				damage = {
 					areoship = 20,
-					default = 5,					
+					default = 5,
 					air = 80,
 				},
 			},

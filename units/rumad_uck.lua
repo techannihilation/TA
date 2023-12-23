@@ -126,7 +126,7 @@ return {
 		},
 		sfxtypes = {
 			explosiongenerators = {
-					[1] = "custom:PILOT",
+				[1] = "custom:PILOT",
 			},
 			pieceexplosiongenerators = {
 				[1] = "piecetrail0",

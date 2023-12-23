@@ -120,7 +120,7 @@ return {
 			},
 		},
 		weapondefs = {
-				quatro_gun = {
+			quatro_gun = {
 				areaofeffect = 325,
 				avoidfeature = false,
 				cegtag = "Trail_cannon",
@@ -184,9 +184,9 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1550,
 				damage = {
-				areoship = 62.5,
-				default = 5,
-				air = 250,
+					areoship = 62.5,
+					default = 5,
+					air = 250,
 				},
 			},
 			rocket = {

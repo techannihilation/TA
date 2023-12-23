@@ -1,5 +1,5 @@
 return {
-	talon_moho  = {
+	talon_moho = {
 		acceleration = 0,
 		activatewhenbuilt = true,
 		brakerate = 0,

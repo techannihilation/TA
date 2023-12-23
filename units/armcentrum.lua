@@ -307,7 +307,7 @@ return {
 				maindir = "-0.8 0 -0.2",
 				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
-				},
+			},
 			[5] = {
 				def = "ARM_BATS",
 				maindir = "0.8 0 -0.2",

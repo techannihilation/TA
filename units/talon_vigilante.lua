@@ -1,5 +1,5 @@
 return {
-	talon_vigilante= {
+	talon_vigilante = {
 		acceleration = 0.03666,
 		altfromsealevel = 1,
 		amphibious = 1,

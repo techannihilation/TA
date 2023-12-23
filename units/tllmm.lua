@@ -26,7 +26,7 @@ return {
 		maxslope = 10,
 		maxwaterdepth = 0,
 		name = "Metal Maker",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "tll/tllmm.s3o",
 		radaremitheight = 25,
 		selfdestructas = "ARMESTOR_BUILDING",

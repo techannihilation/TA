@@ -26,7 +26,7 @@ return {
 		minwaterdepth = 30,
 		mobilestandorders = 1,
 		name = "Advanced Shipyard",
-		noautofire = false,		
+		noautofire = false,
 		noshadow = 1,
 		objectname = "tll/tllasy.s3o",
 		radaremitheight = 49,

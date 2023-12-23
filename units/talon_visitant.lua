@@ -113,7 +113,7 @@ return {
 			talon_visitant_weapon = {
 				areaofeffect = 16,
 				beamtime = 0.5,
-				beamttl=5,
+				beamttl = 5,
 				corethickness = 0.2,
 				craterareaofeffect = 0,
 				craterboost = 0,

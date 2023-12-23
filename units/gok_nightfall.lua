@@ -15,7 +15,7 @@ return {
 		canstop = 1,
 		category = "ALL LARGE MOBILE SURFACE",
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "59.2 69.2 59.2",		
+		collisionvolumescales = "59.2 69.2 59.2",
 		collisionvolumetype = "ellipsoid",
 		corpse = "dead",
 		defaultmissiontype = "Standby",

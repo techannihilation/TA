@@ -311,7 +311,7 @@ return {
 				maindir = "0 0 -1",
 				maxangledif = 240,
 				onlytargetcategory = "SURFACE",
-				},
+			},
 			[5] = {
 				def = "CORE_LASER",
 				maindir = "1 0 0",

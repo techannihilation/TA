@@ -31,7 +31,7 @@ return {
 		maxvelocity = 0,
 		minwaterdepth = 15,
 		name = "Underwater Moho Metal Maker",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_famkr.s3o",
 		radaremitheight = 27,
 		seismicsignature = 0,

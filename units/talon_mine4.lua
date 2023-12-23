@@ -1,5 +1,5 @@
 return {
-	talon_mine4= {
+	talon_mine4 = {
 		acceleration = 0,
 		activatewhenbuilt = false,
 		blocking = false,

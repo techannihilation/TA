@@ -37,7 +37,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "AKBOT1",
 		name = "Herison",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_herison.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,

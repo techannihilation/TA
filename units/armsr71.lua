@@ -1,5 +1,5 @@
 return {
-	armsr71= {
+	armsr71 = {
 		acceleration = 0.1,
 		altfromsealevel = 1,
 		bankscale = 1,

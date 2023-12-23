@@ -36,7 +36,7 @@ return {
 		mobilestandorders = 1,
 		movementclass = "TANK2",
 		name = "Emerald",
-		noautofire = false,		
+		noautofire = false,
 		objectname = "talon/talon_emerald.s3o",
 		radaremitheight = 25,
 		seismicsignature = 0,

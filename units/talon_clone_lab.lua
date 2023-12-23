@@ -1,5 +1,5 @@
 return {
-talon_clone_lab = {
+	talon_clone_lab = {
 		acceleration = 0,
 		brakerate = 0,
 		buildangle = 1024,

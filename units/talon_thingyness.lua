@@ -114,7 +114,7 @@ return {
 			},
 		},
 		weapondefs = {
-			hunter_missiles= {
+			hunter_missiles = {
 				areaofeffect = 96,
 				avoidfeature = false,
 				cegtag = "Talon_Ban_Rocket",

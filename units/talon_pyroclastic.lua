@@ -112,7 +112,7 @@ return {
 			},
 		},
 		weapondefs = {
-		carbuncle_rc = {
+			carbuncle_rc = {
 				accuracy = 500,
 				areaofeffect = 64,
 				avoidfeature = false,

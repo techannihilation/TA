@@ -155,7 +155,7 @@ return {
 				weaponvelocity = 1550,
 				damage = {
 					areoship = 56.25,
-					default = 5,					
+					default = 5,
 					air = 225,
 				},
 			},
