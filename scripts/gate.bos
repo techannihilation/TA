@@ -5,7 +5,7 @@
 
 piece  base1, base2,dt1,dt2,dt3,dt4,dt1001,dt2001,dt3001,dt4001,gate1,gate2,base;
 
-static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
+static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging, cstate;
 
 // Signal definitions
 #define SIG_ACTIVATE			2
@@ -85,10 +85,8 @@ Go()
 
 Stop()
 {
-	call-script deactivatescr();
 	call-script CloseYard();
-
-
+	call-script deactivatescr();
 }
 
 RequestState(requestedstate, currentstate)
@@ -101,17 +99,17 @@ RequestState(requestedstate, currentstate)
 	statechg_StateChanging = TRUE;
 	currentstate = statechg_DesiredState;
 	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
+	while( statechg_DesiredState != cstate )
 	{
 		if( statechg_DesiredState == 0 )
 		{
 			call-script Go();
-			currentstate = 0;
+			cstate = 0;
 		}
 		if( statechg_DesiredState == 1 )
 		{
 			call-script Stop();
-			currentstate = 1;
+			cstate = 1;
 		}
 	}
 	statechg_StateChanging = FALSE;
@@ -123,6 +121,7 @@ Create()
 	Static_Var_1 = 0;
 	Static_Var_2 = 80;
 	Static_Var_3 = 160;
+	cstate = 1;
 	set ARMORED to 1;
 	dont-cache gate1;
 	dont-cache gate2;
