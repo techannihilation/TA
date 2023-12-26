@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, body, NP, SP, EP, WP, glow;
+piece  base, body, NP, SP, EP, WP;
 
 static-var  Static_Var_1, Static_Var_2;
 
@@ -102,7 +102,6 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 
 Create()
 {
-	hide glow;
 	start-script SmokeUnit();
 	start-script ImAMetalMaker();
 }
