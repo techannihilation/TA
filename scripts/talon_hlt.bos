@@ -60,17 +60,13 @@ FirePrimary()
 	if( Static_Var_1 == 0 )
 	{
 		move barrel1a to z-axis [-3.] now;
-		show flare1a;
 		sleep 150;
-		hide flare1a;
 		move barrel1a to z-axis [0.] speed [5.];
 	}
 	if( Static_Var_1 == 1 )
 	{
 		move barrel1b to z-axis [-3.] now;
-		show flare1b;
 		sleep 150;
-		hide flare1b;
 		move barrel1b to z-axis [0.] speed [5.];
 	}
 	++Static_Var_1;

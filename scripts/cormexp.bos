@@ -4,8 +4,8 @@
 #include "exptype.h"
 
 piece  base, stands, shell, rotary, dingle1, dingle2, turret1, patch,
-       sleeve1, barrel1, flare1, barrel2, flare2, post, turret2, rocketbox,
-       rocket1, rocket2, rocket3, rocket4, smoke1, smoke2, smoke3, smoke4, fakeshell;
+       sleeve1, barrel1, flare1, barrel2, flare2, turret2, rocketbox,
+       rocket1, rocket2, rocket3, rocket4, smoke1, smoke2, smoke3, smoke4;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, restore_delay,
             gun_1, gun_2, Static_Var_9, Static_Var_10,
@@ -70,7 +70,6 @@ fixGo()
 	sleep 250;
 	move stands to y-axis [0.000000] speed [11.000000];
 	sleep 250;
-	hide fakeshell;
 	set ACTIVATION to 100;
 	spin rotary around y-axis speed Static_Var_1 accelerate Static_Var_2;
 	spin dingle1 around y-axis speed Static_Var_1;
@@ -86,7 +85,6 @@ Stop()
 		show barrel1;
 		show barrel2;
 		show patch;
-		show post;
 		show turret2;
 		show rocketbox;
 		//start-script LowerArmor();
@@ -188,7 +186,6 @@ Create()
 	hide barrel1;
 	hide barrel2;
 	hide patch;
-	hide post;
 	hide turret2;
 	hide rocketbox;
 	call-script InitState();
