@@ -176,7 +176,7 @@ return {
 				shieldintercepttype = 31,
 				shieldpower = 2500,
 				shieldpowerregen = 45,
-				shieldpowerregenenergy = 500,
+				shieldpowerregenenergy = 900,
 				shieldradius = 230,
 				shieldrepulser = true,
 				smartshield = true,

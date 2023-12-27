@@ -1,7 +1,11 @@
  4.54 => 4.55
-2023-12-22
+2023-12-28
 
 Balance :
+ - Decrease T5 Shield Regen 3K/S => 1.6K/S
+ - Decrease T4 Shield Regen 0.3K/S => 0.25K/S
+ - Decrease T3 Shield Regen 0.15K/S => 0.125K/S
+ - Decrease Mobile T4 Shield Regen 0.25K/S => 0.125K/S
  - All Starburst can target only Surface units
 
  4.53 => 4.54

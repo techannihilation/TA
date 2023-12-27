@@ -230,10 +230,6 @@ return {
 				smartshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
-				damage = {
-					default = 100,
-				},
-				tracks = false,
 			},
 			gatling = {
 				accuracy = 10,

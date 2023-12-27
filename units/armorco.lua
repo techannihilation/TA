@@ -57,7 +57,7 @@ return {
 			buildpic = "armorco.dds",
 			faction = "ARM",
 			shield_emit_height = 40,
-			shield_power = 2500,
+			shield_power = 2000,
 			shield_radius = 150,
 		},
 		featuredefs = {
@@ -176,7 +176,7 @@ return {
 				shieldforce = 8,
 				shieldgoodcolor = "0.2 1 0.2 0.30",
 				shieldintercepttype = 1,
-				shieldpower = 2500,
+				shieldpower = 2000,
 				shieldpowerregen = 37.5,
 				shieldpowerregenenergy = 375,
 				shieldradius = 150,
@@ -186,11 +186,6 @@ return {
 				soundhitwetvolume = 0.5,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
-				damage = {
-					default = 100,
-					subs = 5,
-				},
-				tracks = false,
 			},
 			arm_emcc4 = {
 				areaofeffect = 8,
