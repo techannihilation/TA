@@ -2,8 +2,8 @@ return {
 	tllobliterator = {
 		activatewhenbuilt = true,
 		buildangle = 4096,
-		buildcostenergy = 69119,
-		buildcostmetal = 5451,
+		buildcostenergy = 69100,
+		buildcostmetal = 5450,
 		builder = false,
 		buildpic = "tllobliterator.dds",
 		buildtime = 50000,

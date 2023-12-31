@@ -26,7 +26,7 @@ return {
 		collisionvolumetype = "Ell",
 		corpse = "dead",
 		cruisealt = 50,
-		description = "Cruser AeroShip - Pizza Eater",
+		description = "Cruser AeroShip",
 		dontland = 1,
 		energystorage = 10000,
 		explodeas = "MKL_BLAST",

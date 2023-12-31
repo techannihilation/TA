@@ -47,7 +47,7 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
-	turn turret to y-axis heading speed <50.000000>;
+	turn turret to y-axis heading speed <100.000000>;
 	turn pitchturret to x-axis <0.000000> - pitch speed <25.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn pitchturret around x-axis;
@@ -57,9 +57,9 @@ AimPrimary(heading, pitch)
 FirePrimary()
 {
 	emit-sfx 1024 + 0 from flare;
-	move barrel to z-axis [-1.00] speed [10.00];
+	//move barrel to z-axis [-1.00] speed [10.00];
 	sleep 150;	
-	move barrel to z-axis [0.00] speed [1.00];
+	//move barrel to z-axis [0.00] speed [1.00];
 }
 
 QueryPrimary(piecenum)
