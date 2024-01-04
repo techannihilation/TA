@@ -21,12 +21,19 @@ FClose()
 	turn turret2 to x-axis <90.000000> speed <200.000000>;
 	wait-for-turn turret2 around x-axis;
 	wait-for-turn turret1 around y-axis;
-	move stand to y-axis [-23.389990] speed [41.000000];
-	sleep 400;
-	turn door1 to z-axis <-3.000000> speed <309.000000>;
-	turn door2 to z-axis <3.000000> speed <308.000000>;
-	turn door3 to x-axis <-3.000000> speed <309.000000>;
-	turn door4 to x-axis <3.000000> speed <309.000000>;
+	move stand to y-axis [-23.0] speed [40.000000];
+	wait-for-move stand along y-axis;
+	
+	move door1 to y-axis [0.000000] speed [25.000000];
+	move door2 to y-axis [0.000000] speed [25.000000];
+	move door3 to y-axis [0.000000] speed [25.000000];
+	move door4 to y-axis [0.000000] speed [25.000000];
+	wait-for-move door1 along y-axis;
+	
+	turn door1 to z-axis <0.000000> speed <309.000000>;
+	turn door2 to z-axis <0.000000> speed <308.000000>;
+	turn door3 to x-axis <0.000000> speed <309.000000>;
+	turn door4 to x-axis <0.000000> speed <309.000000>;
 	sleep 400;
 	set ARMORED to 1;
 }
@@ -44,13 +51,18 @@ FOpen()
 	signal 4;
 	set-signal-mask 4;
 	set ARMORED to 0;
-	turn door1 to z-axis <-179.038462> speed <827.000000>;
-	turn door2 to z-axis <178.038462> speed <826.000000>;
-	turn door3 to x-axis <-179.038462> speed <827.000000>;
-	turn door4 to x-axis <179.038462> speed <829.000000>;
+	turn door1 to z-axis <-90.0> speed <800.000000>;
+	turn door2 to z-axis <90.0> speed <800.000000>;
+	turn door3 to x-axis <-90.0> speed <800.000000>;
+	turn door4 to x-axis <90.0> speed <800.000000>;
 	move stand to y-axis [0.000000] speed [76.000000];
 	wait-for-turn door4 around x-axis;
 	wait-for-move stand along y-axis;
+	move door1 to y-axis [-3.000000] speed [25.000000];
+	move door2 to y-axis [-3.000000] speed [25.000000];
+	move door3 to y-axis [-3.000000] speed [25.000000];
+	move door4 to y-axis [-3.000000] speed [25.000000];
+	
 	bOpened = 1;
 	start-script FCloseAfterDelay();
 }
