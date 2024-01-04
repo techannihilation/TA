@@ -170,25 +170,21 @@ return {
 				},
 				tracks = false,
 			},
-			com_shield1 = {
+			shield = {
 				name = "Universal Repulsor",
 				shieldbadcolor = "1 0.2 0.2 0.35",
-				shieldenergyuse = 900,
+				shieldenergyuse = 750,
 				shieldforce = 8,
 				shieldgoodcolor = "0.9 0.9 0.45 0.35",
 				shieldintercepttype = 31,
 				shieldpower = 2000,
-				shieldpowerregen = 45,
-				shieldpowerregenenergy = 900,
+				shieldpowerregen = 37.5,
+				shieldpowerregenenergy = 750,
 				shieldradius = 150,
 				shieldrepulser = true,
 				smartshield = true,
 				visibleshieldrepulse = true,
 				weapontype = "Shield",
-				damage = {
-					default = 100,
-				},
-				tracks = false,
 			},
 		},
 		weapons = {
@@ -197,7 +193,7 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
-				def = "COM_SHIELD1",
+				def = "SHIELD",
 			},
 		},
 	},
