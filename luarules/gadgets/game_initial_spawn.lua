@@ -79,8 +79,6 @@ local allyTeams = {} --allyTeams[allyTeamID] is non-nil if this allyTeam will sp
 local red = "\255\255\1\1"
 
 local mapBlackList = {
-	"Senna",
-	"Geo",
 	}
 
 ----------------------------------------------------------------
