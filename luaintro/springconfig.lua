@@ -7,10 +7,10 @@ if not tonumber(Spring.GetConfigInt("AdvUnitShading",0) or 0) then
 	Spring.SetConfigInt("AdvUnitShading", 1)
 end
 
--- adv map shading
-if not tonumber(Spring.GetConfigInt("AdvMapShading",0) or 0) then
-	Spring.SetConfigInt("AdvMapShading", 1)
-end
+-- -- adv map shading
+-- if not tonumber(Spring.GetConfigInt("AdvMapShading",0) or 0) then
+-- 	Spring.SetConfigInt("AdvMapShading", 1)
+-- end
 
 -- disable forcedisableshaders
 if Spring.GetConfigInt("ForceDisableShaders",0) == 1 then
@@ -49,6 +49,12 @@ Spring.SetConfigFloat("LuaGarbageCollectionRunTimeMult", 2.0) -- defaults to 5.0
 Spring.SetConfigInt("ROAM", 1)
 if tonumber(Spring.GetConfigInt("GroundDetail", 1) or 1) < 100 then
 	Spring.SetConfigInt("GroundDetail", 100)
+end
+
+-- change default (6000) feature draw distance
+if tonumber(Spring.GetConfigInt("FeatureDrawDistance", 25000)) == 6000 then
+	Spring.SetConfigInt("FeatureFadeDistance", math.floor(25000 * 0.8))
+	Spring.SetConfigInt("FeatureDrawDistance", 25000)
 end
 
 -- this makes between-simframe interpolation smoother in mid-late game situations

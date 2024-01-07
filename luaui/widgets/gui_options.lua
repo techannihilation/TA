@@ -1235,6 +1235,9 @@ function applyOptionValue(i, skipRedrawWindow)
 		elseif id == "disticon" then
 			Spring.SendCommands("disticon " .. value)
 			Spring.SetConfigInt("UnitIconDist", value)
+		elseif id == "featuredrawdist" then
+			Spring.SetConfigInt("FeatureFadeDistance", math.floor(value * 0.8))
+			Spring.SetConfigInt("FeatureDrawDistance", value)
 		elseif id == "treeradius" then
 			Spring.SetConfigInt("TreeRadius", value)
 		elseif id == "particles" then
@@ -1999,6 +2002,16 @@ function init()
 			max = 700,
 			step = 10,
 			value = tonumber(Spring.GetConfigInt("UnitIconDist", 1) or 800)
+		},
+		{
+			id = "featuredrawdist",
+			group = "gfx",
+			name = "Feature Draw Distance",
+			type = "slider",
+			min = 2500,
+			max = 25000,
+			step = 500,
+			value = tonumber(Spring.GetConfigInt("FeatureDrawDistance", 25000)),
 		},
 		{
 			id = "lighteffects",
