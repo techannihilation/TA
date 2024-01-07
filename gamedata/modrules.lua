@@ -25,7 +25,7 @@ local modrules = {
   },
 
   featureLOS = {
-    featureVisibility = 0,
+    featureVisibility = 2,
   },
 
   fireAtDead = {
