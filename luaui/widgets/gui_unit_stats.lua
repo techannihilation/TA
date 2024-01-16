@@ -1121,7 +1121,7 @@ function widget:DrawScreen()
 						if oBurst > 1 then
 							dmgString = format(yellow .. "%d (x%d)" .. white .. " / " .. yellow .. "%.2f%s" .. white .. " = " .. yellow .. "%.2f %d%p%s", oDmg, oBurst, oRld, oBurst * oDmg / oRld)
 						else
-							dmgString = format(yellow .. "%d" .. white .. " / " .. yellow .. "%.2f%s" .. white .. " = " .. yellow .. "%.2f %d%p%s", oDmg, oRld, oDmg / oRld)
+							dmgString = format(yellow .. "%d" .. white .. " / " .. yellow .. "%.2f" .. white .. " = " .. yellow .. "%.2f", oDmg, oRld, oDmg / oRld)
 						end
 
 						if wepCount > 1 then
