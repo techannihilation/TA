@@ -7,10 +7,10 @@ if not tonumber(Spring.GetConfigInt("AdvUnitShading",0) or 0) then
 	Spring.SetConfigInt("AdvUnitShading", 1)
 end
 
--- -- adv map shading
--- if not tonumber(Spring.GetConfigInt("AdvMapShading",0) or 0) then
--- 	Spring.SetConfigInt("AdvMapShading", 1)
--- end
+-- adv map shading
+if not tonumber(Spring.GetConfigInt("AdvMapShading",0) or 0) then
+	Spring.SetConfigInt("AdvMapShading", 1)
+end
 
 -- disable forcedisableshaders
 if Spring.GetConfigInt("ForceDisableShaders",0) == 1 then
@@ -51,15 +51,9 @@ if tonumber(Spring.GetConfigInt("GroundDetail", 1) or 1) < 100 then
 	Spring.SetConfigInt("GroundDetail", 100)
 end
 
--- change default (6000) feature draw distance
-if tonumber(Spring.GetConfigInt("FeatureDrawDistance", 25000)) == 6000 then
-	Spring.SetConfigInt("FeatureFadeDistance", math.floor(25000 * 0.8))
-	Spring.SetConfigInt("FeatureDrawDistance", 25000)
-end
-
 -- this makes between-simframe interpolation smoother in mid-late game situations
 -- frametimeoffset smoothing, 0 = off (old version), -1 = forced 0.5,  1-20 smooth, recommended = 2-3");
-Spring.SetConfigInt("SmoothTimeOffset", 2) -- defaults to 0
+Spring.SetConfigInt("SmoothTimeOffset", 3) -- defaults to 0
 
 -- this is needed for better profiling info, and (theoretically better frame timing).
 -- notably a decade ago windows had issues with this
