@@ -57,7 +57,7 @@ return {
 			faction = "ARM",
 			shield_emit_height = 100,
 			shield_power = 10000,
-			shield_radius = 230,
+			shield_radius = 500,
 			normaltex = "unittextures/arm_normals.dds",
 		},
 		featuredefs = {
