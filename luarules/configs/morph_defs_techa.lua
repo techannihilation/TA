@@ -18,10 +18,6 @@ local morphDefs = {				--beginig of morphDefs
 local devolution = (-1 > 0)
 
 local morphDefs = {
-	--halloween = {
-	--	into = 'halloween1',
-	--	time = 20,
-	--},
 	armcom = {
 		into = 'armcom1',
 		time = 45,
@@ -32,7 +28,7 @@ local morphDefs = {
 	},
 	armcom2 = {
 		into = 'armcom3',
-    time = 135,
+    time = 180,
 	},
 	talon_com = {
 		into = 'talon_com1',
@@ -44,7 +40,7 @@ local morphDefs = {
 	},
 	talon_com2 = {
 		into = 'talon_com3',
-    time = 135,
+    time = 180,
 	},
 	gok_com = {
 		into = 'gok_com1',
@@ -56,7 +52,7 @@ local morphDefs = {
 	},
 	gok_com2 = {
 		into = 'gok_com3',
-		time = 135,
+		time = 180,
 	},
 	corcom = {
 		into = 'corcom1',
@@ -68,7 +64,7 @@ local morphDefs = {
 	},
 	corcom2 = {
 		into = 'corcom3',
-		time = 135,
+		time = 180,
 	},
 	tllcom = {
 		into = 'tllcom1',
@@ -80,7 +76,7 @@ local morphDefs = {
 	},
 	tllcom2 = {
 		into = 'tllcom3',
-		time = 135,
+		time = 180,
 	},
 	rumad_com = {
 		into = 'rumad_com1',
@@ -92,19 +88,19 @@ local morphDefs = {
 	},
 	rumad_com2 = {
 		into = 'rumad_com3',
-		time = 180,
+		time = 240,
 	},
 	rumad_king = {
 		into = 'rumad_king1',
-		time = 30,
+		time = 25,
 	},
 	rumad_king1 = {
 		into = 'rumad_king2',
-		time = 45,
+		time = 50,
 	},
 	rumad_king2 = {
 		into = 'rumad_king3',
-		time = 60,
+		time = 100,
 	},
 	armamd = {
 		into = 'armamd1',
@@ -275,7 +271,7 @@ local morphDefs = {
 	},
 	rumad_mohogeo = {
 		into = 'rumad_egeo',
-		time = 75,
+		time = 110,
 		tech = 2,
 	},
 	rumad_gate2 = {

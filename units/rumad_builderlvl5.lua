@@ -6,7 +6,7 @@ return {
 		bankingallowed = false,
 		blocking = false,
 		brakerate = 0.35,
-		buildcostenergy = 786488,
+		buildcostenergy = 786400,
 		buildcostmetal = 37150,
 		builddistance = 320,
 		builder = true,

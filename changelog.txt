@@ -1,4 +1,15 @@
- 4.54 => 4.55
+ 4.55 => 4.56
+2024-02-13
+Balance :
+ - Increase time for morph all commander between T3=>T4 (More time for Rumad faction)
+ - Increase timemorph for T2=>T3 Rumad Geo
+
+Fix :
+ - Rumad T5 Cons can be killed by air
+ - Sattelites (PlanetKiller and ThirdEye can be killed by air)
+ - Oasis Missiles : Range is respected
+
+4.54 => 4.55
 2023-12-28
 
 Balance :

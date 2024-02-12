@@ -113,6 +113,7 @@ return {
 	"rumad_aca",
 	"rumad_eca",
 	"rumad_engineera",
+	"rumad_builderlvl5",
 
 	--Gunships
 	"armbrawl",
@@ -174,6 +175,11 @@ return {
 	"talon_erez",
 	"gok_erez",
 	"rumad_erez",
+
+	--SAT
+	"rumad_thirdeye",
+	"talon_planetkiller",
+	
 	},
 
 	subs = {
@@ -234,8 +240,6 @@ return {
 		"armnomad",
 		"gok_dome",
 		"gok_dome1",
-		"halloween",
-		"halloween1",
 	},
 
 	flamethrowers = {
