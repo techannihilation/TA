@@ -3,6 +3,7 @@
 Balance :
  - Increase time for morph all commander between T3=>T4 (More time for Rumad faction)
  - Increase timemorph for T2=>T3 Rumad Geo
+ - Add Ultimate weapon for Rumad
 
 Fix :
  - Rumad T5 Cons can be killed by air

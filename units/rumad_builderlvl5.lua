@@ -65,7 +65,7 @@ return {
 			[10] = "rumad_gate3",
 			[11] = "rumad_antinuke2",
 			[12] = "rumad_silo2",
-			[15] = "armtabi",
+			[13] = "rumad_parasite",
 		},
 		customparams = {
 			buildpic = "rumad_builderlvl5.dds",

@@ -17,6 +17,7 @@ local autocapture_units = {
     [UnitDefNames['talon_shepherd'].id] = true,
     [UnitDefNames['tllgizmo'].id] = true,
     [UnitDefNames['armrambo'].id] = true,
+    [UnitDefNames['rumad_parasite'].id] = true,    
 }
 local autocapture_enabled = {}
 
