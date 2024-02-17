@@ -32,7 +32,7 @@ return {
 		noautofire = false,
 		objectname = "arm/armujam.s3o",
 		onoffable = true,
-		radardistancejam = 6000,
+		radardistancejam = 4000,
 		radaremitheight = 180,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 1000,

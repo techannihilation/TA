@@ -32,7 +32,7 @@ return {
 		noautofire = false,
 		objectname = "core/corujam.s3o",
 		onoffable = true,
-		radardistancejam = 6200,
+		radardistancejam = 4000,
 		radaremitheight = 180,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 1000,

@@ -33,7 +33,7 @@ return {
 		objectname = "rumad/rumad_ujam.s3o",
 		onoffable = true,
 		script = "rumad_radar.lua",
-		radardistancejam = 6000,
+		radardistancejam = 4000,
 		radaremitheight = 180,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 1000,

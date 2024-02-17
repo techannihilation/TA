@@ -1,6 +1,7 @@
  4.55 => 4.56
 2024-02-13
 Balance :
+ - Decrease T4 Jam range 6K=>4K
  - Increase time for morph all commander between T3=>T4 (More time for Rumad faction)
  - Increase timemorph for T2=>T3 Rumad Geo
  - Add Ultimate weapon for Rumad
