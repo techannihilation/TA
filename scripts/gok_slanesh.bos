@@ -296,6 +296,26 @@ StopMoving()
 	bMoving = FALSE;
 }
 
+StartBuilding()
+{
+	set INBUILDSTANCE to 1;
+}
+
+StopBuilding()
+{
+	set INBUILDSTANCE to 0;
+}
+
+QueryNanoPiece(piecenum)
+{
+	piecenum = lsword;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = lsword;
+}
+
 RestoreAfterDelay()
 {
 	sleep 1000;
