@@ -1,4 +1,9 @@
- 4.55 => 4.56
+ 4.56 => 4.57
+2024-02-26
+Balance :
+- GOK Slanesh can now Repair, Rezzurect, Reclaim. Worker Speed = 20666, Build Distance = 566
+
+4.55 => 4.56
 2024-02-24
 Balance :
  - Decrease T4 Jam range 6K=>4K
