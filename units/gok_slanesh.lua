@@ -55,7 +55,7 @@ return {
 		turnrate = 850,
 		unitname = "gok_slanesh",
 		upright = true,
-		workertime = 20666,
+		workertime = 66666,
 		customparams = {
 			buildpic = "gok_slanesh.dds",
 			faction = "GOK",
