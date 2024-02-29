@@ -1,4 +1,9 @@
- 4.56 => 4.57
+ 4.57 => 4.58
+2024-02-29
+Balance :
+- GOK Slanesh: builddistance 566 to 666, buildtime 2250000 to 1950000
+
+4.56 => 4.57
 2024-02-26
 Balance :
 - GOK Slanesh can now Repair, Rezzurect, Reclaim. Worker Speed = 20666, Build Distance = 566
