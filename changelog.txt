@@ -1,7 +1,7 @@
  4.57 => 4.58
-2024-02-29
+2024-03-01
 Balance :
-- GOK Slanesh: builddistance 566 to 666, buildtime 2250000 to 1950000
+- GOK Slanesh: builddistance 566 to 666, buildtime 2250000 to 1950000, workertime 20666 to 66666
 
 4.56 => 4.57
 2024-02-26
