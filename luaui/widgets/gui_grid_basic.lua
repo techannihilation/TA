@@ -1,15 +1,16 @@
 function widget:GetInfo()
   return {
-    name = "Building Grid 1.1",
+    name = "Building Grid 1.2",
     desc = "Draws a grid on the map to assist with building placement",
     author = "TechA",
-    date = "2024-02-02",
+    date = "2024-03-24",
     license = "GNU GPL, v2 or later",
     layer = 0,
     enabled = true,
   }
 end
 
+local minFootPrint = 16
 local drawRadius = 1000
 local gridSizeX = 15 * 16
 local gridSizeZ = 15 * 16
@@ -22,6 +23,7 @@ local GetActiveCommand = Spring.GetActiveCommand
 local GetMouseState = Spring.GetMouseState
 local TraceScreenRay = Spring.TraceScreenRay
 local GetGroundHeight = Spring.GetGroundHeight
+local GetBuildFacing = Spring.GetBuildFacing
 local glColor = gl.Color
 local glDepthTest = gl.DepthTest
 local glVertex = gl.Vertex
@@ -37,10 +39,6 @@ local function getUnitFootprint(unitDefID)
     else
         return nil, nil
     end
-end
-
-local function logisticQuantile(y, a)
-    return -math.log((1 / y) - 1) / a + 0.5
 end
 
 local function calculateAlpha(x, z, mouseX, mouseZ)
@@ -107,6 +105,8 @@ end
 
 function widget:Update()
     local _, activeCmdID = GetActiveCommand()
+    local buildingFacing = GetBuildFacing()
+
     drawGrid = (activeCmdID and activeCmdID < 0)
     if not drawGrid then return end
     local mx, my = GetMouseState()
@@ -117,10 +117,14 @@ function widget:Update()
         if activeCmdID then
             local unitDefID = -activeCmdID
             unitFootprintX, unitFootprintZ = getUnitFootprint(unitDefID)
-            if unitFootprintX * unitFootprintZ < 64 then glDeleteList(mainGridList) return end
+            if unitFootprintX * unitFootprintZ < minFootPrint then glDeleteList(mainGridList) return end
         end
         local gridX = unitFootprintX * 8 or gridSizeX
         local gridZ = unitFootprintZ * 8 or gridSizeZ
+        -- Swapping grids for east-west facing
+        if buildingFacing % 2 == 1 then
+            gridX, gridZ = gridZ, gridX
+        end
         if updateGridBounds(mx, my, gridX, gridZ) then
             glDeleteList(mainGridList)
             mainGridList = createGridList(2, mouseX, mouseZ, gridX, gridZ)
