@@ -76,14 +76,14 @@ local options = {
       },
     }
   },
-  {
-    key = "mo_coop",
-    name = "Cooperative Mode",
-    desc = "Adds an extra commander for comsharing teams\nAutoHost Usage :- mo_coop",
-    type = "bool",
-    def = false,
-    section = "ta_modes",
-  },
+  -- {
+  --   key = "mo_coop",
+  --   name = "Cooperative Mode",
+  --   desc = "Adds an extra commander for comsharing teams\nAutoHost Usage :- mo_coop",
+  --   type = "bool",
+  --   def = false,
+  --   section = "ta_modes",
+  -- },
   {
     key = "mo_greenfields",
     name = "No Metal Extraction",
@@ -149,14 +149,14 @@ local options = {
     def = false,
     section = "ta_options",
   },
-  {
-    key = "mo_dynamic",
-    name = "Dynamic Lighting",
-    desc = "Toggles Dynamic lighing on or off\nAutoHost Usage :- mo_dynamic",
-    type = "bool",
-    def = true,
-    section = "ta_options",
-  },
+  -- {
+  --   key = "mo_dynamic",
+  --   name = "Dynamic Lighting",
+  --   desc = "Toggles Dynamic lighing on or off\nAutoHost Usage :- mo_dynamic",
+  --   type = "bool",
+  --   def = true,
+  --   section = "ta_options",
+  -- },
   {
     key = "mo_enemywrecks",
     name = "Show Enemy Wrecks",
