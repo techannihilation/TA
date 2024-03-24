@@ -18,10 +18,10 @@ local modrules = {
   },
 
   experience = {
-    experienceMult = 0.33, -- defaults to 1.0
-    powerScale = 1.0, -- defaults to 1.0
-    healthScale = 0.25, -- defaults to 0.7
-    reloadScale = 5.0, -- defaults to 0.4
+    experienceMult = 0.8, -- defaults to 1.0
+    powerScale = 2.0, -- defaults to 1.0
+    healthScale = 0.33, -- defaults to 0.7
+    reloadScale = 4.4, -- defaults to 0.4
   },
 
   featureLOS = {
