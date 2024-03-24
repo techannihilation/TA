@@ -6,7 +6,7 @@ function gadget:GetInfo()
     date      = "2015",
     license   = "Horses",
     layer     = 0,
-    enabled   = true  --  loaded by default?
+    enabled   = false  --  loaded by default?
   }
 end
 

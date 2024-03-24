@@ -152,7 +152,7 @@ local function UpdateButton(unitID, statusStr)
   if (statusStr == 0) then
     tooltip = 'Nano running in normal opperations\n\255\255\001\001Warning Boost mode all power diverted to Production\nNano will be running in an unstable mode\nDAMAGE WILL OCCUR'
   else
-    tooltip = 'Boost: Production at 180%, Reclaim at 0%,\nRepair set at 0%, Select to Revert to normal production.'
+    tooltip = 'Boost: Production at 220%, Reclaim at 0%,\nRepair set at 0%, Select to Revert to normal production.'
    end
 
   buildspeedCmdDesc.params[1] = statusStr
@@ -166,8 +166,8 @@ end
 local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	if cmdParams[1] == 1 then
 		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.8)
-		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed *1.8,0,0)
-		spSetUnitRulesParam(unitID,"nanoPower",(buildspeedlist[unitID].speed *1.8))
+		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed * 2.2,0,0)
+		spSetUnitRulesParam(unitID,"nanoPower",(buildspeedlist[unitID].speed * 2.2))
     spSetUnitRulesParam(unitID,"nanoBoosted",1)
 		boostednanos[unitID] = true
 
@@ -222,7 +222,7 @@ function gadget:GameFrame(n)
     for unitID in pairs(boostednanos) do
       	if mrandom(0,1) == 0 then
 	  local _,hp = SpGetUnitHealth(unitID)
-	  local damage = mrandom(hp*0.01,(hp*0.25))
+	  local damage = mrandom(hp*0.013,(hp*0.27))
 	  --Spring.Echo("hp = " .. hp .."      " .. damage)
 	  SpAddUnitDamage(unitID , damage)
 	  local x,y,z = SpGetUnitPosition(unitID)

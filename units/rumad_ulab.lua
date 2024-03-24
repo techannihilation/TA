@@ -51,7 +51,7 @@ return {
 		turnrate = 0,
 		unitname = "rumad_ulab",
 		workertime = 1600,
-		yardmap = "yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy yyyyyccccccccccccccccccccyyyyy",
+		yardmap = string.rep("yyyyyyccccccccccccccccccccyyyyyy ", 15),
 		buildoptions = {
 			[1] = "rumad_uck",
 			[2] = "rumad_uflak",

@@ -134,7 +134,6 @@ return {
 				cratermult = 0,
 				impulseboost = 0.123,
 				impulsefactor = 2.0,
-				minbarrelangle = -15,
 				name = "Gauss Cannon",
 				noselfdamage = true,
 				projectiles = 3,

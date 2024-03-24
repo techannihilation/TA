@@ -12,6 +12,10 @@ if not tonumber(Spring.GetConfigInt("AdvMapShading",0) or 0) then
 	Spring.SetConfigInt("AdvMapShading", 1)
 end
 
+if Spring.GetConfigInt("AdvModelShading", 0) ~= 1 then
+	Spring.SetConfigInt("AdvModelShading", 1)
+end
+
 -- disable forcedisableshaders
 if Spring.GetConfigInt("ForceDisableShaders",0) == 1 then
 	Spring.SetConfigInt("ForceDisableShaders", 0)
@@ -20,13 +24,6 @@ end
 -- enable lua shaders
 if not tonumber(Spring.GetConfigInt("LuaShaders",0) or 0) then
 	Spring.SetConfigInt("LuaShaders", 1)
-end
-
--- disable pbo for intel gfx
-if Platform.gpuVendor ~= "Nvidia" and Platform.gpuVendor ~= "AMD" then
-	Spring.SetConfigInt("UsePBO", 0)
-else
-	Spring.SetConfigInt("UsePBO", 1)
 end
 
 -- disable dynamic model lights
@@ -40,7 +37,7 @@ Spring.SetConfigInt("AllowDeferredModelRendering", 1)
 Spring.SetConfigInt("LoadingMT", 0) -- defaults to 0
 
 -- how much the amount of lua memory in use increases the rate of garbage collection.
-Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.15) -- defaults to 1.33
+Spring.SetConfigFloat("LuaGarbageCollectionMemLoadMult", 1.10) -- defaults to 1.33
 
 --how many milliseconds the garbage collected can run for in each gc cycle
 Spring.SetConfigFloat("LuaGarbageCollectionRunTimeMult", 2.0) -- defaults to 5.0
@@ -50,6 +47,8 @@ Spring.SetConfigInt("ROAM", 1)
 if tonumber(Spring.GetConfigInt("GroundDetail", 1) or 1) < 100 then
 	Spring.SetConfigInt("GroundDetail", 100)
 end
+
+Spring.SetConfigInt("GrassDetail", 0)
 
 -- this makes between-simframe interpolation smoother in mid-late game situations
 -- frametimeoffset smoothing, 0 = off (old version), -1 = forced 0.5,  1-20 smooth, recommended = 2-3");

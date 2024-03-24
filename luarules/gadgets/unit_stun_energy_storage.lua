@@ -36,10 +36,18 @@ local storageDefs = {
   [ UnitDefNames['tllestor'].id ] = true,
   [ UnitDefNames['tllemstor'].id ] = true,
   [ UnitDefNames['tllemstor1'].id ] = true,
-  --The Lost Legacy
-  --[ UnitDefNames['talon_estor'].id ] = true,
-  --[ UnitDefNames['talon_aestor'].id ] = true,
-  --[ UnitDefNames['talon_eestor'].id ] = true,
+  --Talon
+  [ UnitDefNames['talon_estor'].id ] = true,
+  [ UnitDefNames['talon_aestor'].id ] = true,
+  [ UnitDefNames['talon_eestor'].id ] = true,
+  --Gok
+  [ UnitDefNames['gok_estor'].id ] = true,
+  [ UnitDefNames['gok_aestor'].id ] = true,
+  [ UnitDefNames['gok_eestor'].id ] = true,
+  --Rumad
+  [ UnitDefNames['rumad_estor'].id ] = true,
+  [ UnitDefNames['rumad_aestor'].id ] = true,
+  [ UnitDefNames['rumad_eestor'].id ] = true,
  }
 
 local storageunits = {}
@@ -85,7 +93,7 @@ local function SetupUnit(unitID, unitDefID, unitTeam)
   if (ud == nil)or(ud.height == nil) then return nil end
    storageunits[unitID] = {
    height = (ud.height * 0.40),
-   storagecap = (ud.energyStorage  * 0.01), -- would work out 150e for t1 and 750e for t2
+   storagecap = (ud.energyStorage  * 0.05), -- would work out 150e for t1 and 750e for t2
    teamID = unitTeam
    }
 end

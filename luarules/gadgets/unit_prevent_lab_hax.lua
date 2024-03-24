@@ -144,7 +144,7 @@ function gadget:UnitGiven(unitID, unitDefID)
 end
 
 function gadget:GameFrame(n)
-  if (n % 31 == 0) then 
+  if (n % 61 == 0) then 
 	checkLabs()
   end
 end
