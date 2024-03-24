@@ -50,6 +50,8 @@ end
 
 Spring.SetConfigInt("GrassDetail", 0)
 
+Spring.SetConfigInt("GroundDecals", 0)
+
 -- this makes between-simframe interpolation smoother in mid-late game situations
 -- frametimeoffset smoothing, 0 = off (old version), -1 = forced 0.5,  1-20 smooth, recommended = 2-3");
 Spring.SetConfigInt("SmoothTimeOffset", 3) -- defaults to 0
