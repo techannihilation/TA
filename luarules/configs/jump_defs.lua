@@ -33,9 +33,9 @@ jumpCategory = {
   jumpbot = {
     range = 400, height = 200, speed = 3,  reload = 20,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
   starcom = {
-		range = 600, height = 300, speed = 2.5,  reload = 45,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
+		range = 600, height = 250, speed = 2.5,  reload = 45,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 	supremecom = {
-		range = 800, height = 800, speed = 3,  reload = 30,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
+		range = 800, height = 300, speed = 3,  reload = 30,  aaShootMe = false, delay = 0, cobscript = true, rotateMidAir = true, limitHeight=false},
 }
 
 jumpClassGroups = {
