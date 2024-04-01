@@ -612,7 +612,7 @@ function SetMaxPlayerNameWidth()
 		name,_,spec = Spring_GetPlayerInfo(wplayer)
 		local charSize
 		if spec then charSize = 11 else charSize = 14 end
-		nextWidth = charSize*gl_GetTextWidth(name)+8
+		nextWidth = charSize*gl_GetTextWidth(name)+24
 		if nextWidth > maxWidth then
 			maxWidth = nextWidth
 		end
@@ -2398,20 +2398,20 @@ function DrawPingCpu(pingLvl, cpuLvl, posY, spec, alpha, cpu, fps)
 	else
 	
 		if fps ~= nil then
-			if fps > 99 then
-				fps = 99
+			if fps > 999 then
+				fps = 999
 			end
-			grayvalue = 0.95 - (fps/195)
+			grayvalue = 0.85
 			if spec then
 				gl_Color(0,0,0,0.1+(grayvalue*0.4))
-				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 4.3, 9, "r")
+				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 4.3, 10, "r")
 				gl_Color(grayvalue,grayvalue,grayvalue,0.77*alpha*grayvalue)
-				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 5.3, 9, "r")
+				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 5.3, 10, "r")
 			else
 				gl_Color(0,0,0,0.12+(grayvalue*0.44))
-				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 4.3, 9.5, "r")
+				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 4.3, 11, "r")
 				gl_Color(grayvalue,grayvalue,grayvalue,alpha*grayvalue)
-				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 5.3, 9.5, "r")
+				gl_Text(fps, m_cpuping.posX + widgetPosX+11, posY + 5.3, 11, "r")
 			end
 			gl_Color(1,1,1)
 		else
