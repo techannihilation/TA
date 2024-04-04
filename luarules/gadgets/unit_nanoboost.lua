@@ -36,6 +36,7 @@ local uDefs = UnitDefs
 local SpGetUnitHealth = Spring.GetUnitHealth
 local SpAddUnitDamage = Spring.AddUnitDamage
 local spSetUnitRulesParam  = Spring.SetUnitRulesParam
+local gaiaTeamID = Spring.GetGaiaTeamID()
 
 local mrandom = math.random
 --------------------------------------------------------------------------------
@@ -144,21 +145,19 @@ end
 
 local function UpdateButton(unitID, statusStr)
   local cmdDescID = FindUnitCmdDesc(unitID, CMD_NANOBOOST)
-  if (cmdDescID == nil) then
-    return
-  end
-
+  if cmdDescID == nil then return end
   local tooltip
-  if (statusStr == 0) then
-    tooltip = 'Nano running in normal opperations\n\n\255\255\001\001Nano will be running in an 220% unstable mode\nDAMAGE WILL OCCUR'
+
+  if statusStr == 0 then
+    tooltip = 'Nano operating under normal conditions\n\n\255\255\001\001Nano will operate at a 300% boost in an unstable mode\nDAMAGE WILL OCCUR.'
   else
-    tooltip = 'Boost: \n- Production at 220% \n- Reclaim at 180%\n- Repair set at 200% \nSelect to Revert to normal production.'
-   end
+    tooltip = 'Boost:\n- Production increased to 300%\n- Reclamation efficiency at 180%\n- Repair rate set to 200%\nSelect to revert to normal operations.'
+  end
 
   buildspeedCmdDesc.params[1] = statusStr
 
   spEditUnitCmdDesc(unitID, cmdDescID, {
-    params  = buildspeedCmdDesc.params,
+    params = buildspeedCmdDesc.params,
     tooltip = tooltip,
   })
 end
@@ -166,8 +165,8 @@ end
 local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
 	if cmdParams[1] == 1 then
 		--Spring.Echo("boosted at " .. buildspeedlist[unitID].speed *1.8)
-		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed * 2.2,buildspeedlist[unitID].repair * 2.0 , buildspeedlist[unitID].reclaim * 1.8)
-		spSetUnitRulesParam(unitID,"nanoPower",(buildspeedlist[unitID].speed * 2.2))
+		Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed * 3.0,buildspeedlist[unitID].repair * 2.0 , buildspeedlist[unitID].reclaim * 1.8)
+		spSetUnitRulesParam(unitID,"nanoPower",(buildspeedlist[unitID].speed * 3.0))
     spSetUnitRulesParam(unitID,"nanoBoosted",1)
 		boostednanos[unitID] = true
 
@@ -218,16 +217,16 @@ function gadget:Initialize()
 end
 
 function gadget:GameFrame(n)
-  if n %35 == 0 then
+  if n % 35 == 0 then
     for unitID in pairs(boostednanos) do
-      	if mrandom(0,1) == 0 then
-	  local _,hp = SpGetUnitHealth(unitID)
-	  local damage = mrandom(hp*0.013,(hp*0.27))
-	  --Spring.Echo("hp = " .. hp .."      " .. damage)
-	  SpAddUnitDamage(unitID , damage)
-	  local x,y,z = SpGetUnitPosition(unitID)
-	  SpSpawnCEG("ZEUS_FLASH_SUB",x,y,z,0,0,0)
-	  SendToUnsynced("boostsound", x, y, z)
+      if mrandom(1, 2) == 1 then
+        local _, hp = SpGetUnitHealth(unitID)
+        local damage = mrandom(hp * 0.025, hp * 0.1)
+        --Spring.Echo("hp = " .. hp .."      " .. damage)
+        SpAddUnitDamage(unitID, damage, 0, gaiaTeamID, 1)
+        local x, y, z = SpGetUnitPosition(unitID)
+        SpSpawnCEG("ZEUS_FLASH_SUB", x, y, z, 0, 0, 0)
+        SendToUnsynced("boostsound", x, y, z)
       end
     end
   end
