@@ -119,10 +119,10 @@ local modrules = {
   },
 
   experience = {
-    experienceMult = 0.5, -- defaults to 1.0
+    experienceMult = 0.8, -- defaults to 1.0
     powerScale = 0.0, -- defaults to 1.0
     healthScale = 0.0, -- defaults to 0.7
-    reloadScale = 5.0, -- defaults to 0.4
+    reloadScale = 2.5, -- defaults to 0.4
   },
 
   damage = {
