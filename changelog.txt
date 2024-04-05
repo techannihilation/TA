@@ -1,4 +1,9 @@
- 4.57 => 4.58
+ 4.58 => 4.59
+2024-05-06
+Improvment :
+- Add T7 Core Unit
+
+4.57 => 4.58
 2024-03-01
 Balance :
 - GOK Slanesh: builddistance 566 to 666, buildtime 2250000 to 1950000, workertime 20666 to 66666

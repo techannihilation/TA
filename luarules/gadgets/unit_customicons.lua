@@ -323,7 +323,7 @@ function gadget:Initialize()
         Spring.SetUnitDefIcon(udid, "t5bigships.user")
 
       --T6 Crusers
-      elseif (ud.name == "armarch") or (ud.name == "talon_independence") or (ud.name == "gok_squid") then
+      elseif (ud.name == "armarch") or (ud.name == "talon_independence") or (ud.name == "gok_squid") or (ud.name == "core_core") then
         Spring.SetUnitDefIcon(udid, "t6ships.user")
 
       -- T2 Battleships

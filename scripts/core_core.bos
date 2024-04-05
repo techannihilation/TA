@@ -1,0 +1,476 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, bridge, pentons, engines, mstors, estor, doodads, energy, pipes, blods, winglets,
+	
+	   turret, sleeves, flare,
+	   
+       blod_pad_01, blod_tur_01, blod_slv_01, blod_spindle_01, blod_fire_01,
+       blod_pad_02, blod_tur_02, blod_slv_02, blod_spindle_02, blod_fire_02,
+       blod_pad_03, blod_tur_03, blod_slv_03, blod_spindle_03, blod_fire_03,       
+       blod_pad_04, blod_tur_04, blod_slv_04, blod_spindle_04, blod_fire_04,
+       blod_pad_05, blod_tur_05, blod_slv_05, blod_spindle_05, blod_fire_05,
+       blod_pad_06, blod_tur_06, blod_slv_06, blod_spindle_06, blod_fire_06,       
+       
+       flare01a, flare01b, flare02a, flare02b, flare03a, flare03b, flare04a, flare04b,
+	   flare05a, flare05b, flare06a, flare06b, flare07a, flare07b, flare08a, flare08b,
+	   flare09a, flare09b, flare10a, flare10b, flare11a, flare11b, flare12a, flare12b,
+	   flare13a, flare13b, flare14a, flare14b, flare15a, flare15b, flare16a, flare16b,
+       
+       wing_01, las_01, wing_02, las_02, wing_03, las_03, wing_04, las_04, 
+       wing_05, las_05, wing_06, las_06, wing_07, las_07, wing_08, las_08, 
+       wing_09, las_09, wing_10, las_10, wing_11, las_11, wing_12, las_12, 
+       wing_13, las_13, wing_14, las_14, wing_15, las_15, wing_16, las_16;
+
+static-var  gun_1, gun_2, gun_3, gun_4, gun_5, gun_6, 
+			beam_1, beam_2, beam_3, beam_4,
+			beam_5, beam_6, beam_7, beam_8,
+			beam_9, beam_10, beam_11, beam_12,
+			beam_13, beam_14, beam_15, beam_16;
+
+// Signal definitions
+
+//Main
+#define SIG_AIM_1 2 
+//Spindle
+#define SIG_AIM_2 4 
+#define SIG_AIM_3 8
+#define SIG_AIM_4 16
+#define SIG_AIM_5 32
+#define SIG_AIM_6 64
+#define SIG_AIM_7 128
+//Blue Beam
+#define SIG_AIM_8 256
+#define SIG_AIM_9 512
+#define SIG_AIM_10 1024
+#define SIG_AIM_11 2048
+#define SIG_AIM_12 4096
+#define SIG_AIM_13 8192
+#define SIG_AIM_14 16384
+#define SIG_AIM_15 32768
+#define SIG_AIM_16 65536
+#define SIG_AIM_17 131072
+#define SIG_AIM_18 262144
+#define SIG_AIM_19 524288
+#define SIG_AIM_20 1048576
+#define SIG_AIM_21 2097152
+#define SIG_AIM_22 4194304
+#define SIG_AIM_23 8388608
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+
+}
+
+Create()
+{
+	gun_1 = 0;
+	gun_2 = 0;
+	gun_3 = 0;
+	gun_4 = 0;
+	gun_5 = 0;
+	gun_6 = 0;	
+	beam_1 = 0;
+	beam_2 = 0;
+	beam_3 = 0;
+	beam_4 = 0;
+	beam_5 = 0;
+	beam_6 = 0;
+	beam_7 = 0;
+	beam_8 = 0;
+	beam_9 = 0;
+	beam_10 = 0;
+	beam_11 = 0;
+	beam_12 = 0;
+	beam_13 = 0;
+	beam_14 = 0;
+	beam_15 = 0;
+	beam_16 = 0;
+	
+	turn blod_tur_05 to y-axis <180.0> now;
+	turn blod_tur_06 to y-axis <180.0> now;
+	
+	
+	turn las_16 to y-axis <45.0> now;
+	turn las_15 to y-axis <67.5> now;
+	turn las_14 to y-axis <90.0> now;
+	turn las_13 to y-axis <112.5> now;
+	turn las_12 to y-axis <135.0> now;
+	turn las_11 to y-axis <157.5> now;
+	turn las_10 to y-axis <180.0> now;
+	turn las_09 to y-axis <202.5> now;
+	turn las_08 to y-axis <225.0> now;
+	turn las_07 to y-axis <247.5> now;
+	turn las_06 to y-axis <270.0> now;
+	turn las_05 to y-axis <292.5> now;
+	turn las_04 to y-axis <315.5> now;
+	turn las_03 to y-axis <337.5> now;
+	turn las_02 to y-axis <0.0> now;
+	turn las_01 to y-axis <22.5> now;
+	
+	start-script SmokeUnit();
+}
+
+
+RestoreMainWeapon()
+{
+	sleep 12000;
+	turn turret to y-axis <0.000000> speed <30.000000>;
+	turn sleeves to x-axis <0.000000> speed <30.000000>;
+}	
+	
+RestoreAfterDelay()
+{
+	sleep 8000;
+	turn blod_tur_01 to y-axis <0.000000> speed <60.000000>;
+	turn blod_slv_01 to x-axis <0.000000> speed <60.000000>;
+	
+	turn blod_tur_02 to y-axis <0.000000> speed <60.000000>;
+	turn blod_slv_02 to x-axis <0.000000> speed <60.000000>;
+	
+	turn blod_tur_03 to y-axis <90.000000> speed <60.000000>;
+	turn blod_slv_03 to x-axis <0.000000> speed <60.000000>;
+	
+	turn blod_tur_04 to y-axis <270.000000> speed <60.000000>;
+	turn blod_slv_04 to x-axis <0.000000> speed <60.000000>;
+	
+	turn blod_tur_05 to y-axis <180.000000> speed <60.000000>;
+	turn blod_slv_05 to x-axis <0.000000> speed <60.000000>;
+	
+	turn blod_tur_06 to y-axis <180.000000> speed <60.000000>;
+	turn blod_slv_06 to x-axis <0.000000> speed <60.000000>;	
+}
+
+// MAIN
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM_1;
+	set-signal-mask SIG_AIM_1;
+	turn turret to y-axis heading speed <30.000000>;
+	turn sleeves to x-axis <0.000000> - pitch speed <30.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn sleeves around x-axis;
+	start-script RestoreMainWeapon();
+	return (1);
+}
+
+QueryWeapon1(piecenum)
+{
+	piecenum = flare;
+}
+
+// Spindles
+
+AimWeapon2(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn blod_tur_01 to y-axis heading speed <60.000000>;
+	turn blod_slv_01 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn blod_tur_01 around y-axis;
+	wait-for-turn blod_slv_01 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon3(heading, pitch)
+{
+	signal SIG_AIM_3;
+	set-signal-mask SIG_AIM_3;
+	turn blod_tur_02 to y-axis heading speed <60.000000>;
+	turn blod_slv_02 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn blod_tur_02 around y-axis;
+	wait-for-turn blod_slv_02 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon4(heading, pitch)
+{
+	signal SIG_AIM_4;
+	set-signal-mask SIG_AIM_4;
+	turn blod_tur_03 to y-axis heading speed <60.000000>;
+	turn blod_slv_03 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn blod_tur_03 around y-axis;
+	wait-for-turn blod_slv_03 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon5(heading, pitch)
+{
+	signal SIG_AIM_5;
+	set-signal-mask SIG_AIM_5;
+	turn blod_tur_04 to y-axis heading speed <60.000000>;
+	turn blod_slv_04 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn blod_tur_04 around y-axis;
+	wait-for-turn blod_slv_04 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon6(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn blod_tur_05 to y-axis heading speed <60.000000>;
+	turn blod_slv_05 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn blod_tur_05 around y-axis;
+	wait-for-turn blod_slv_05 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon7(heading, pitch)
+{
+	signal SIG_AIM_6;
+	set-signal-mask SIG_AIM_6;
+	turn blod_tur_06 to y-axis heading speed <60.000000>;
+	turn blod_slv_06 to x-axis <0.000000> - pitch speed <60.000000>;
+	wait-for-turn blod_tur_06 around y-axis;
+	wait-for-turn blod_slv_06 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireWeapon2()
+{
+	if( gun_1 == 0 )
+	{
+		sleep 1000;
+		turn blod_spindle_01 to z-axis <120.> speed <270.>;
+	}
+	if( gun_1 == 1 )
+	{
+		sleep 1000;
+		turn blod_spindle_01 to z-axis <240.> speed <270.>;
+	}
+	if( gun_1 == 2 )
+	{
+		sleep 1000;
+		turn blod_spindle_01 to z-axis <0.> speed <270.>;
+	}
+	++gun_1;
+	if( gun_1 == 3 )
+	{
+		gun_1 = 0;
+	}
+}
+
+FireWeapon3()
+{
+	if( gun_2 == 0 )
+	{
+		sleep 1000;
+		turn blod_spindle_02 to z-axis <120.> speed <270.>;
+	}
+	if( gun_2 == 1 )
+	{
+		sleep 1000;
+		turn blod_spindle_02 to z-axis <240.> speed <270.>;
+	}
+	if( gun_2 == 2 )
+	{
+		sleep 1000;
+		turn blod_spindle_02 to z-axis <0.> speed <270.>;
+	}
+	++gun_2;
+	if( gun_2 == 3 )
+	{
+		gun_2 = 0;
+	}
+}
+
+FireWeapon4()
+{
+	if( gun_3 == 0 )
+	{
+		sleep 1000;
+		turn blod_spindle_03 to z-axis <120.> speed <270.>;
+	}
+	if( gun_3 == 1 )
+	{
+		sleep 1000;
+		turn blod_spindle_03 to z-axis <240.> speed <270.>;
+	}
+	if( gun_3 == 2 )
+	{
+		sleep 1000;
+		turn blod_spindle_03 to z-axis <0.> speed <270.>;
+	}
+	++gun_3;
+	if( gun_3 == 3 )
+	{
+		gun_3 = 0;
+	}
+}
+
+FireWeapon5()
+{
+	if( gun_4 == 0 )
+	{
+		sleep 1000;
+		turn blod_spindle_04 to z-axis <120.> speed <270.>;
+	}
+	if( gun_4 == 1 )
+	{
+		sleep 1000;
+		turn blod_spindle_04 to z-axis <240.> speed <270.>;
+	}
+	if( gun_4 == 2 )
+	{
+		sleep 1000;
+		turn blod_spindle_04 to z-axis <0.> speed <270.>;
+	}
+	++gun_4;
+	if( gun_4 == 3 )
+	{
+		gun_4 = 0;
+	}
+}
+
+FireWeapon6()
+{
+	if( gun_5 == 0 )
+	{
+		sleep 1000;
+		turn blod_spindle_05 to z-axis <120.> speed <270.>;
+	}
+	if( gun_5 == 1 )
+	{
+		sleep 1000;
+		turn blod_spindle_05 to z-axis <240.> speed <270.>;
+	}
+	if( gun_5 == 2 )
+	{
+		sleep 1000;
+		turn blod_spindle_05 to z-axis <0.> speed <270.>;
+	}
+	++gun_5;
+	if( gun_5 == 3 )
+	{
+		gun_5 = 0;
+	}
+}
+
+FireWeapon7()
+{
+	if( gun_6 == 0 )
+	{
+		sleep 1000;
+		turn blod_spindle_06 to z-axis <120.> speed <270.>;
+	}
+	if( gun_6 == 1 )
+	{
+		sleep 1000;
+		turn blod_spindle_06 to z-axis <240.> speed <270.>;
+	}
+	if( gun_6 == 2 )
+	{
+		sleep 1000;
+		turn blod_spindle_06 to z-axis <0.> speed <270.>;
+	}
+	++gun_6;
+	if( gun_6 == 3 )
+	{
+		gun_6 = 0;
+	}
+}
+
+QueryWeapon2(piecenum)
+{
+	piecenum = blod_fire_01;
+}
+
+QueryWeapon3(piecenum)
+{
+	piecenum = blod_fire_02;
+}
+
+QueryWeapon4(piecenum)
+{
+	piecenum = blod_fire_03;
+}
+
+QueryWeapon5(piecenum)
+{
+	piecenum = blod_fire_04;
+}
+
+QueryWeapon6(piecenum)
+{
+	piecenum = blod_fire_05;
+}
+
+QueryWeapon7(piecenum)
+{
+	piecenum = blod_fire_06;
+}
+
+AimFromWeapon2(piecenum)
+{
+	piecenum = blod_tur_01;
+}
+
+AimFromWeapon3(piecenum)
+{
+	piecenum = blod_tur_02;
+}
+
+AimFromWeapon4(piecenum)
+{
+	piecenum = blod_tur_03;
+}
+
+AimFromWeapon5(piecenum)
+{
+	piecenum = blod_tur_04;
+}
+
+AimFromWeapon6(piecenum)
+{
+	piecenum = blod_tur_05;
+}
+
+AimFromweapon7(piecenum)
+{
+	piecenum = blod_tur_06;
+}
+
+// BLUE BEAM
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 33 )
+	{
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP5;
+		explode blod_tur_01 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode blod_tur_02 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode blod_tur_03 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode blod_tur_04 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode blod_tur_05 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode blod_tur_06 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode bridge type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode engines type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode blod_slv_01 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		explode blod_slv_02 type NOHEATCLOUD | FALL | SMOKE | FIRE | EXPLODE_ON_HIT;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type BITMAPONLY | BITMAP5;
+	
+}

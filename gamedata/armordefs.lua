@@ -179,7 +179,7 @@ return {
 	--SAT
 	"rumad_thirdeye",
 	"talon_planetkiller",
-	
+
 	},
 
 	subs = {
@@ -231,6 +231,7 @@ return {
 		"talon_gold",
 		"rumad_jafa",
 		"rumad_lago",
+		"core_core",
 
 		-- T6 MAJOR
 		"gok_squid",
