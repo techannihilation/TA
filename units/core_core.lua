@@ -196,6 +196,46 @@ return {
 					subs = 5,
 				},
 			},
+			tehlazerofdewm = {
+				areaofeffect = 14,
+				beamtime = 1.05,
+				corethickness = 0.5,
+				craterareaofeffect = 0,
+				craterboost = 0,
+				cratermult = 0,
+				energypershot = 1000,
+				explosiongenerator = "custom:BURN_WHITE",
+				impactonly = 1,
+				impulseboost = 0,
+				impulsefactor = 0,
+				laserflaresize = 12,
+				name = "DEEWWMM",
+				noselfdamage = true,
+				range = 1000,
+				reloadtime = 2.5,
+				rgbcolor = "0.2 0.2 1",
+				soundhitdry = "",
+				soundhitwet = "sizzle",
+				soundhitwetvolume = 0.5,
+				soundstart = "annigun1",
+				soundtrigger = 1,
+				sweepfire = false,
+				targetmoveerror = 0.2,
+				thickness = 4,
+				tolerance = 10000,
+				turret = true,
+				weapontype = "BeamLaser",
+				weaponvelocity = 1500,
+				customparams = {
+					light_mult = 1.8,
+					light_radius_mult = 1.2,
+				},
+				damage = {
+					commanders = 1250,
+					default = 2500,
+					subs = 5,
+				},
+			},
 		},
 		weapons = {
 			{
@@ -206,14 +246,14 @@ return {
 			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
-				maindir = "0.2 0 0.8",
+				maindir = "0.3 0 0.7",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
 			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
-				maindir = "-0.2 0 0.8",
+				maindir = "-0.3 0 0.7",
 				maxangledif = 200,
 				onlytargetcategory = "SURFACE",
 			},
@@ -234,15 +274,143 @@ return {
 			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
-				maindir = "0.2 0 -0.8",
+				maindir = "0.3 0 -0.7",
 				maxangledif = 220,
 				onlytargetcategory = "SURFACE",
 			},
 			{
 				badtargetcategory = "HUGE LARGE MEDIUM SMALL MINOR",
 				def = "MountedAntimatterAccelerator",
-				maindir = "-0.2 0 -0.8",
+				maindir = "-0.3 0 -0.7",
 				maxangledif = 220,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon08 - Wing01 -22.5°
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "-0.25 0 0.75",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon09 - Wing02 0°
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0 0 0",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon10 - Wing03 22.5°
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0.25 0 0.75",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon11 - Wing04 45°
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0.50 0 0.50",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon12 - Wing05 67.5°
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0.75 0 0.25",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon13 - Wing06 90.0°
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "1 0 0",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon14 - Wing07
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0.75 0 -0.25",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon15 - Wing08
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0.50 0 -0.50",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon16 - Wing09
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0.25 0 -0.75",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon17 - Wing10
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "0 0 -1",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon18 - Wing11
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "-0.25 0 -0.75",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon19 - Wing12
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "-0.50 0 -0.50",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon20 - Wing13
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "-0.75 0 -0.25",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon21 - Wing14
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "-1 0 0",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon22 - Wing15
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "-0.75 0 0.25",
+				maxangledif = 180,
+				onlytargetcategory = "SURFACE",
+			},
+			-- Weapon23 - Wing16
+			{
+				badtargetcategory = "MAJOR MINOR",
+				def = "tehlazerofdewm",
+				maindir = "-0.50 0 0.50",
+				maxangledif = 180,
 				onlytargetcategory = "SURFACE",
 			},
 		},

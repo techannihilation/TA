@@ -130,10 +130,10 @@ RestoreAfterDelay()
 	turn blod_tur_02 to y-axis <0.000000> speed <60.000000>;
 	turn blod_slv_02 to x-axis <0.000000> speed <60.000000>;
 	
-	turn blod_tur_03 to y-axis <90.000000> speed <60.000000>;
+	turn blod_tur_03 to y-axis <0.000000> speed <60.000000>;
 	turn blod_slv_03 to x-axis <0.000000> speed <60.000000>;
 	
-	turn blod_tur_04 to y-axis <270.000000> speed <60.000000>;
+	turn blod_tur_04 to y-axis <0.000000> speed <60.000000>;
 	turn blod_slv_04 to x-axis <0.000000> speed <60.000000>;
 	
 	turn blod_tur_05 to y-axis <180.000000> speed <60.000000>;
@@ -141,6 +141,28 @@ RestoreAfterDelay()
 	
 	turn blod_tur_06 to y-axis <180.000000> speed <60.000000>;
 	turn blod_slv_06 to x-axis <0.000000> speed <60.000000>;	
+}
+
+RestoreSecondaryWeapons()
+{
+	sleep 4000;
+	turn las_16 to y-axis <45.0> speed <45.000000>;
+	turn las_15 to y-axis <67.5> speed <45.000000>;
+	turn las_14 to y-axis <90.0> speed <45.000000>;
+	turn las_13 to y-axis <112.5> speed <45.000000>;
+	turn las_12 to y-axis <135.0> speed <45.000000>;
+	turn las_11 to y-axis <157.5> speed <45.000000>;
+	turn las_10 to y-axis <180.0> speed <45.000000>;
+	turn las_09 to y-axis <202.5> speed <45.000000>;
+	turn las_08 to y-axis <225.0> speed <45.000000>;
+	turn las_07 to y-axis <247.5> speed <45.000000>;
+	turn las_06 to y-axis <270.0> speed <45.000000>;
+	turn las_05 to y-axis <292.5> speed <45.000000>;
+	turn las_04 to y-axis <315.5> speed <45.000000>;
+	turn las_03 to y-axis <337.5> speed <45.000000>;
+	turn las_02 to y-axis <0.0> speed <45.000000>;
+	turn las_01 to y-axis <22.5> speed <45.000000>;
+
 }
 
 // MAIN
@@ -173,6 +195,11 @@ AimWeapon2(heading, pitch)
 {
 	signal SIG_AIM_2;
 	set-signal-mask SIG_AIM_2;
+	//get PRINT(heading);
+	//if (pitch < -7000)
+	//{
+	//	return (0);
+	//}	
 	turn blod_tur_01 to y-axis heading speed <60.000000>;
 	turn blod_slv_01 to x-axis <0.000000> - pitch speed <60.000000>;
 	wait-for-turn blod_tur_01 around y-axis;
@@ -231,8 +258,8 @@ AimWeapon6(heading, pitch)
 
 AimWeapon7(heading, pitch)
 {
-	signal SIG_AIM_6;
-	set-signal-mask SIG_AIM_6;
+	signal SIG_AIM_7;
+	set-signal-mask SIG_AIM_7;
 	turn blod_tur_06 to y-axis heading speed <60.000000>;
 	turn blod_slv_06 to x-axis <0.000000> - pitch speed <60.000000>;
 	wait-for-turn blod_tur_06 around y-axis;
@@ -446,6 +473,583 @@ AimFromweapon7(piecenum)
 }
 
 // BLUE BEAM
+
+
+AimFromWeapon8(piecenum)
+{
+	piecenum = las_01;
+}
+
+AimFromWeapon9(piecenum)
+{
+	piecenum = las_02;
+}
+
+AimFromWeapon10(piecenum)
+{
+	piecenum = las_03;
+}
+
+AimFromWeapon11(piecenum)
+{
+	piecenum = las_04;
+}
+
+AimFromWeapon12(piecenum)
+{
+	piecenum = las_05;
+}
+
+AimFromWeapon13(piecenum)
+{
+	piecenum = las_06;
+}
+
+AimFromWeapon14(piecenum)
+{
+	piecenum = las_07;
+}
+
+AimFromWeapon15(piecenum)
+{
+	piecenum = las_08;
+}
+
+AimFromWeapon16(piecenum)
+{
+	piecenum = las_09;
+}
+
+AimFromWeapon17(piecenum)
+{
+	piecenum = las_10;
+}
+
+AimFromWeapon18(piecenum)
+{
+	piecenum = las_11;
+}
+
+AimFromWeapon19(piecenum)
+{
+	piecenum = las_12;
+}
+
+AimFromWeapon20(piecenum)
+{
+	piecenum = las_13;
+}
+
+AimFromWeapon21(piecenum)
+{
+	piecenum = las_14;
+}
+
+AimFromWeapon22(piecenum)
+{
+	piecenum = las_15;
+}
+
+AimFromWeapon23(piecenum)
+{
+	piecenum = las_16;
+}
+
+AimWeapon8(heading, pitch)
+{
+	signal SIG_AIM_8;
+	set-signal-mask SIG_AIM_8;
+	turn las_01 to y-axis heading speed <45.000000>;
+	wait-for-turn las_01 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon9(heading, pitch)
+{
+	signal SIG_AIM_9;
+	set-signal-mask SIG_AIM_9;
+	turn las_02 to y-axis heading speed <45.000000>;
+	wait-for-turn las_02 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon10(heading, pitch)
+{
+	signal SIG_AIM_10;
+	set-signal-mask SIG_AIM_10;
+	turn las_03 to y-axis heading speed <45.000000>;
+	wait-for-turn las_03 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon11(heading, pitch)
+{
+	signal SIG_AIM_11;
+	set-signal-mask SIG_AIM_11;
+	turn las_04 to y-axis heading speed <45.000000>;
+	wait-for-turn las_04 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon12(heading, pitch)
+{
+	signal SIG_AIM_12;
+	set-signal-mask SIG_AIM_12;
+	turn las_05 to y-axis heading speed <45.000000>;
+	wait-for-turn las_05 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon13(heading, pitch)
+{
+	signal SIG_AIM_13;
+	set-signal-mask SIG_AIM_13;
+	turn las_06 to y-axis heading speed <45.000000>;
+	wait-for-turn las_06 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon14(heading, pitch)
+{
+	signal SIG_AIM_14;
+	set-signal-mask SIG_AIM_14;
+	turn las_07 to y-axis heading speed <45.000000>;
+	wait-for-turn las_07 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon15(heading, pitch)
+{
+	signal SIG_AIM_15;
+	set-signal-mask SIG_AIM_15;
+	turn las_08 to y-axis heading speed <45.000000>;
+	wait-for-turn las_08 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon16(heading, pitch)
+{
+	signal SIG_AIM_16;
+	set-signal-mask SIG_AIM_16;
+	turn las_09 to y-axis heading speed <45.000000>;
+	wait-for-turn las_09 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon17(heading, pitch)
+{
+	signal SIG_AIM_17;
+	set-signal-mask SIG_AIM_17;
+	turn las_10 to y-axis heading speed <45.000000>;
+	wait-for-turn las_10 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon18(heading, pitch)
+{
+	signal SIG_AIM_18;
+	set-signal-mask SIG_AIM_18;
+	turn las_11 to y-axis heading speed <45.000000>;
+	wait-for-turn las_11 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon19(heading, pitch)
+{
+	signal SIG_AIM_19;
+	set-signal-mask SIG_AIM_19;
+	turn las_12 to y-axis heading speed <45.000000>;
+	wait-for-turn las_12 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon20(heading, pitch)
+{
+	signal SIG_AIM_20;
+	set-signal-mask SIG_AIM_20;
+	turn las_13 to y-axis heading speed <45.000000>;
+	wait-for-turn las_13 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon21(heading, pitch)
+{
+	signal SIG_AIM_21;
+	set-signal-mask SIG_AIM_21;
+	turn las_14 to y-axis heading speed <45.000000>;
+	wait-for-turn las_14 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon22(heading, pitch)
+{
+	signal SIG_AIM_22;
+	set-signal-mask SIG_AIM_22;
+	turn las_15 to y-axis heading speed <45.000000>;
+	wait-for-turn las_15 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+AimWeapon23(heading, pitch)
+{
+	signal SIG_AIM_23;
+	set-signal-mask SIG_AIM_23;
+	turn las_16 to y-axis heading speed <45.000000>;
+	wait-for-turn las_16 around y-axis;
+	start-script RestoreSecondaryWeapons();
+	return (1);
+}
+
+FireWeapon8()
+{
+	++beam_1;
+	if(beam_1 == 2)
+	{	
+		beam_1 = 0;
+	}
+}
+
+FireWeapon9()
+{
+	++beam_2;
+	if(beam_2 == 2)
+	{	
+		beam_2 = 0;
+	}
+}
+
+FireWeapon10()
+{
+	++beam_3;
+	if(beam_3 == 2)
+	{	
+		beam_3 = 0;
+	}
+}
+
+FireWeapon11()
+{
+	++beam_4;
+	if(beam_4 == 2)
+	{	
+		beam_4 = 0;
+	}
+}
+
+FireWeapon12()
+{
+	++beam_5;
+	if(beam_5 == 2)
+	{	
+		beam_5 = 0;
+	}
+}
+
+FireWeapon13()
+{
+	++beam_6;
+	if(beam_6 == 2)
+	{	
+		beam_6 = 0;
+	}
+}
+
+FireWeapon14()
+{
+	++beam_7;
+	if(beam_7 == 2)
+	{	
+		beam_7 = 0;
+	}
+}
+
+FireWeapon15()
+{
+	++beam_8;
+	if(beam_8 == 2)
+	{	
+		beam_8 = 0;
+	}
+}
+
+FireWeapon16()
+{
+	++beam_9;
+	if(beam_9 == 2)
+	{	
+		beam_9 = 0;
+	}
+}
+
+FireWeapon17()
+{
+	++beam_10;
+	if(beam_10 == 2)
+	{	
+		beam_10 = 0;
+	}
+}
+
+FireWeapon18()
+{
+	++beam_11;
+	if(beam_11 == 2)
+	{	
+		beam_11 = 0;
+	}
+}
+
+FireWeapon19()
+{
+	++beam_12;
+	if(beam_12 == 2)
+	{	
+		beam_12 = 0;
+	}
+}
+
+FireWeapon20()
+{
+	++beam_13;
+	if(beam_13 == 2)
+	{	
+		beam_13 = 0;
+	}
+}
+
+FireWeapon21()
+{
+	++beam_14;
+	if(beam_14 == 2)
+	{	
+		beam_14 = 0;
+	}
+}
+
+FireWeapon22()
+{
+	++beam_15;
+	if(beam_15 == 2)
+	{	
+		beam_15 = 0;
+	}
+}
+
+FireWeapon23()
+{
+	++beam_16;
+	if(beam_16 == 2)
+	{	
+		beam_16 = 0;
+	}
+}
+
+QueryWeapon8(piecenum)
+{
+	if(beam_1 == 0)
+	{	
+		piecenum = flare01a;
+	}
+	if(beam_1 == 1)
+	{	
+		piecenum = flare01b;
+	}
+}
+
+QueryWeapon9(piecenum)
+{
+	if(beam_2 == 0)
+	{	
+		piecenum = flare02a;
+	}
+	if(beam_2 == 1)
+	{	
+		piecenum = flare02b;
+	}
+}
+
+QueryWeapon10(piecenum)
+{
+	if(beam_3 == 0)
+	{	
+		piecenum = flare03a;
+	}
+	if(beam_3 == 1)
+	{	
+		piecenum = flare03b;
+	}
+}
+
+QueryWeapon11(piecenum)
+{
+	if(beam_4 == 0)
+	{	
+		piecenum = flare04a;
+	}
+	if(beam_4 == 1)
+	{	
+		piecenum = flare04b;
+	}
+}
+
+QueryWeapon12(piecenum)
+{
+	if(beam_5 == 0)
+	{	
+		piecenum = flare05a;
+	}
+	if(beam_5 == 1)
+	{	
+		piecenum = flare05b;
+	}
+}
+
+QueryWeapon13(piecenum)
+{
+	if(beam_6 == 0)
+	{	
+		piecenum = flare06a;
+	}
+	if(beam_6 == 1)
+	{	
+		piecenum = flare06b;
+	}
+}
+
+QueryWeapon14(piecenum)
+{
+	if(beam_7 == 0)
+	{	
+		piecenum = flare07a;
+	}
+	if(beam_7 == 1)
+	{	
+		piecenum = flare07b;
+	}
+}
+
+QueryWeapon15(piecenum)
+{
+	if(beam_8 == 0)
+	{	
+		piecenum = flare08a;
+	}
+	if(beam_8 == 1)
+	{	
+		piecenum = flare08b;
+	}
+}
+
+QueryWeapon16(piecenum)
+{
+	if(beam_9 == 0)
+	{	
+		piecenum = flare09a;
+	}
+	if(beam_9 == 1)
+	{	
+		piecenum = flare09b;
+	}
+}
+
+QueryWeapon17(piecenum)
+{
+	if(beam_10 == 0)
+	{	
+		piecenum = flare10a;
+	}
+	if(beam_10 == 1)
+	{	
+		piecenum = flare10b;
+	}
+}
+
+QueryWeapon18(piecenum)
+{
+	if(beam_11 == 0)
+	{	
+		piecenum = flare11a;
+	}
+	if(beam_11 == 1)
+	{	
+		piecenum = flare11b;
+	}
+}
+
+QueryWeapon19(piecenum)
+{
+	if(beam_12 == 0)
+	{	
+		piecenum = flare12a;
+	}
+	if(beam_12 == 1)
+	{	
+		piecenum = flare12b;
+	}
+}
+
+QueryWeapon20(piecenum)
+{
+	if(beam_13 == 0)
+	{	
+		piecenum = flare13a;
+	}
+	if(beam_13 == 1)
+	{	
+		piecenum = flare13b;
+	}
+}
+
+QueryWeapon21(piecenum)
+{
+	if(beam_14 == 0)
+	{	
+		piecenum = flare14a;
+	}
+	if(beam_14 == 1)
+	{	
+		piecenum = flare14b;
+	}
+}
+
+QueryWeapon22(piecenum)
+{
+	if(beam_15 == 0)
+	{	
+		piecenum = flare15a;
+	}
+	if(beam_15 == 1)
+	{	
+		piecenum = flare15b;
+	}
+}
+
+QueryWeapon23(piecenum)
+{
+	if(beam_16 == 0)
+	{	
+		piecenum = flare16a;
+	}
+	if(beam_16 == 1)
+	{	
+		piecenum = flare16b;
+	}
+}
 
 SweetSpot(piecenum)
 {
