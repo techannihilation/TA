@@ -1,5 +1,10 @@
  4.58 => 4.59
 2024-05-06
+Fix/Balance:
+- Fix nano boost damage
+- Tweak nano boosts: Nanos can now BUILD boost to 300% (before 180%), REPAIR 200% (before 0%), RECLAIM 180% (before 0%)
+- Tweak nano boosts: Less penalty 5.3%hp / sec to 3.8%hp / sec
+
 Improvment :
 - Add T7 Core Unit
 
