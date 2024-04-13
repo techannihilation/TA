@@ -146,7 +146,7 @@ return {
 			},
 		},
 		weapons = {
-			[2] = {
+			[1] = {
 				badtargetcategory = "LARGE MEDIUM SMALL MINOR",
 				def = "TALON_BLAST",
 				onlytargetcategory = "SURFACE",
