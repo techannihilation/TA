@@ -1,5 +1,11 @@
- 4.58 => 4.59
-2024-05-06
+ 4.59 => 4.60
+2024-04-14
+Balance:
+ - Nano boost damage based on now on the Gaussian factor (max single damage chance 55% HP)
+ - Nanos can now boost to 450% !!!  (300% before, 180% originally in past)
+
+4.58 => 4.59
+2024-04-06
 Fix/Balance:
 - Fix nano boost damage
 - Tweak nano boosts: Nanos can now BUILD boost to 300% (before 180%), REPAIR 200% (before 0%), RECLAIM 180% (before 0%)
