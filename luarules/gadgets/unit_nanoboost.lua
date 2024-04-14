@@ -233,13 +233,13 @@ function processDamage()
         local unitID = table.remove(boostednanosQueue, 1)
         local _, hp = SpGetUnitHealth(unitID)
         local z = mrandom()
-        local scaledZ = (z - 0.997) * (1000 / boostednanosQueueCount) -- Shift and scale for skewness towards low damage
+        local scaledZ = (z - 0.995) * (1000 / boostednanosQueueCount) -- Shift and scale for skewness towards low damage
 
         -- Calculate the Gaussian factor using the error function, tightly focused near zero
         local gaussianFactor = math.erf(scaledZ) / 2 + 0.5 -- Normalize to [0,1], shift to favor low values
 
         -- Define damage limits
-        local minDamage = hp * 0.005
+        local minDamage = hp * 0.015
         local maxDamage = hp * 0.550
 
         -- Calculate damage based on the Gaussian factor
