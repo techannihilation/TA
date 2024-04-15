@@ -155,8 +155,8 @@ function processDamage()
         local unitID = table.remove(boostednanosQueue, 1)
         local curhp, hp = SpGetUnitHealth(unitID)
 
-        local stdDev = 0.2
-        local constDmg = 0.0004
+        local stdDev = 0.175
+        local constDmg = 0.0002
 
         local damage = math.abs(curhp * (stdDev * getGaussian())) + (hp * constDmg)
 
