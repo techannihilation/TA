@@ -37,7 +37,7 @@ local SpAddUnitDamage = Spring.AddUnitDamage
 local spSetUnitRulesParam  = Spring.SetUnitRulesParam
 local gaiaTeamID = Spring.GetGaiaTeamID()
 local comDefs = VFS.Include('luarules/configs/comDefIDs.lua')
-local nanos = VFS.Include('luarules/configs/comDefIDs.lua')
+local nanos = VFS.Include('luarules/configs/nanoDefIDs.lua')
 
 CMD_NANOBOOST = 33456
 local boostednanos = {} -- list of nanos in boostmode
