@@ -36,7 +36,7 @@ local SpGetUnitHealth = Spring.GetUnitHealth
 local SpAddUnitDamage = Spring.AddUnitDamage
 local spSetUnitRulesParam  = Spring.SetUnitRulesParam
 local gaiaTeamID = Spring.GetGaiaTeamID()
-local comDefs = VFS.Include('luarules/configs/comDefIDs.lua')
+local coms = VFS.Include('luarules/configs/comDefIDs.lua')
 local nanos = VFS.Include('luarules/configs/nanoDefIDs.lua')
 
 CMD_NANOBOOST = 33456
@@ -188,7 +188,7 @@ function gadget:GameFrame(n)
 end
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
-    if cmdID ~= CMD_NANOBOOST or not nanos[unitDefID] then
+    if cmdID ~= CMD_NANOBOOST or not nanos[unitDefID] and not coms[unitDefID] then
         return true
     end
     if cmdParams[1] == 1 then
@@ -202,7 +202,7 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
     local ud = uDefs[unitDefID]
-    if nanos[unitDefID] or comDefs[unitDefID] then
+    if nanos[unitDefID] or coms[unitDefID] then
         local stMode = 0
         buildspeedlist[unitID]={speed=ud.buildSpeed, repair=ud.repairSpeed, reclaim=ud.reclaimSpeed, mode=stMode}
         AddBuildspeedCmdDesc(unitID)
