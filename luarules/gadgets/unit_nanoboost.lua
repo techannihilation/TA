@@ -148,9 +148,9 @@ local function UpdateButton(unitID, statusStr)
   local tooltip
 
   if statusStr == 0 then
-    tooltip = 'Nano operating under normal conditions\n\n\255\255\001\001Nano will operate at a 400% boost in an unstable mode\nDAMAGE WILL OCCUR.'
+    tooltip = 'Nano operating under normal conditions\n\nNano will operate at a\255\001\255\001 500% boost\255\255\255\255 in an unstable mode\n\255\255\001\001DAMAGE WILL OCCUR.'
   else
-    tooltip = 'Boost:\n- Production increased to 450%\n- Reclamation efficiency at 400%\n- Repair rate set to 250%\nSelect to revert to normal operations.'
+    tooltip = 'Boost:\n- Production increased to\255\001\255\001 500%\n\255\255\255\255- Reclamation efficiency at\255\001\255\001 500%\n\255\255\255\255- Repair rate set to\255\001\255\001 250%\n\255\255\255\255Select to revert to normal operations.'
   end
 
   buildspeedCmdDesc.params[1] = statusStr
@@ -164,8 +164,8 @@ end
 local function BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
     if cmdParams[1] == 1 then
         --Spring.Echo('boosted at ' .. buildspeedlist[unitID].speed *1.8)
-        Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed * 4.5, buildspeedlist[unitID].repair * 2.5, buildspeedlist[unitID].reclaim * 4.0)
-        spSetUnitRulesParam(unitID, 'nanoPower', buildspeedlist[unitID].speed * 4.5)
+        Spring.SetUnitBuildSpeed(unitID, buildspeedlist[unitID].speed * 5.0, buildspeedlist[unitID].repair * 2.5, buildspeedlist[unitID].reclaim * 5.0)
+        spSetUnitRulesParam(unitID, 'nanoPower', buildspeedlist[unitID].speed * 5.0)
         spSetUnitRulesParam(unitID, 'nanoBoosted', 1)
         boostednanos[unitID] = true
     else
@@ -191,72 +191,62 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
-function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
-    local ud = uDefs[unitDefID]
-    if nanos[unitDefID] then
-        local stMode = 0
-        buildspeedlist[unitID]={speed=ud.buildSpeed, repair=ud.repairSpeed, reclaim=ud.reclaimSpeed, mode=stMode}
-        AddBuildspeedCmdDesc(unitID)
-        UpdateButton(unitID, stMode)
-    end
-end
-
-function gadget:UnitDestroyed(unitID, _, teamID)
-    buildspeedlist[unitID] = nil
-    boostednanos[unitID] = nil
-end
-
-function gadget:Initialize()
-    gadgetHandler:RegisterCMDID(CMD_NANOBOOST)
-    for _, unitID in ipairs(Spring.GetAllUnits()) do
-        local teamID = Spring.GetUnitTeam(unitID)
-        local unitDefID = GetUnitDefID(unitID)
-        gadget:UnitCreated(unitID, unitDefID, teamID)
-    end
-end
-
 local boostednanosQueue = {}
 local currentDamageCoroutine = nil
+local gaussianTable = {}
+local tableSize = 1000 -- Number of pre-generated Gaussian values
 
-function damageUnit(unitID, damage)
+local function damageUnit(unitID, damage)
     SpAddUnitDamage(unitID, damage, 0, gaiaTeamID, 1)
     local x, y, z = SpGetUnitPosition(unitID)
     SpSpawnCEG('ZEUS_FLASH_SUB', x, y, z, 0, 0, 0)
     SendToUnsynced('boostsound', x, y, z)
 end
 
+local function gaussianRandom()
+    local u, v, s
+    repeat
+        u = 2 * math.random() - 1
+        v = 2 * math.random() - 1
+        s = u * u + v * v
+    until s ~= 0 and s < 1
+    local mul = math.sqrt(-2.0 * math.log(s) / s)
+    return u * mul  -- Only one Gaussian value is generated
+end
+
+local function generateGaussianTable()
+    for i = 1, tableSize do
+        gaussianTable[i] = gaussianRandom()
+    end
+end
+
+local function getGaussian()
+    return gaussianTable[math.random(tableSize)]
+end
 
 function processDamage()
     local count = 0
     local boostednanosQueueCount = #boostednanosQueue
     while boostednanosQueueCount > 0 do
         local unitID = table.remove(boostednanosQueue, 1)
-        local _, hp = SpGetUnitHealth(unitID)
-        local z = mrandom()
-        local scaledZ = (z - 0.995) * (1000 / boostednanosQueueCount) -- Shift and scale for skewness towards low damage
+        local curhp, hp = SpGetUnitHealth(unitID)
 
-        -- Calculate the Gaussian factor using the error function, tightly focused near zero
-        local gaussianFactor = math.erf(scaledZ) / 2 + 0.5 -- Normalize to [0,1], shift to favor low values
+        local stdDev = 0.15
+        local constDmg = 0.00025
 
-        -- Define damage limits
-        local minDamage = hp * 0.015
-        local maxDamage = hp * 0.550
-
-        -- Calculate damage based on the Gaussian factor
-        local damage = minDamage + gaussianFactor * (maxDamage - minDamage)
+        local damage = math.abs(curhp * (stdDev * getGaussian())) + (hp * constDmg)
 
         if damage > 0 then
             damageUnit(unitID, damage)
         end
 
         count = count + 1
-        if count >= 30 then
+        if count >= 8 then
             count = 0
             coroutine.yield()
         end
     end
 end
-
 
 function gadget:GameFrame(n)
     if n % 31 == 0 then
@@ -284,6 +274,31 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, _)
     end
     BuildspeedCommand(unitID, unitDefID, cmdParams, teamID)
     return false
+end
+
+function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
+    local ud = uDefs[unitDefID]
+    if nanos[unitDefID] then
+        local stMode = 0
+        buildspeedlist[unitID]={speed=ud.buildSpeed, repair=ud.repairSpeed, reclaim=ud.reclaimSpeed, mode=stMode}
+        AddBuildspeedCmdDesc(unitID)
+        UpdateButton(unitID, stMode)
+    end
+end
+
+function gadget:UnitDestroyed(unitID, _, teamID)
+    buildspeedlist[unitID] = nil
+    boostednanos[unitID] = nil
+end
+
+function gadget:Initialize()
+    gadgetHandler:RegisterCMDID(CMD_NANOBOOST)
+    for _, unitID in ipairs(Spring.GetAllUnits()) do
+        local teamID = Spring.GetUnitTeam(unitID)
+        local unitDefID = GetUnitDefID(unitID)
+        gadget:UnitCreated(unitID, unitDefID, teamID)
+    end
+    generateGaussianTable() -- Generate Gaussian values table on initialization
 end
 
 function gadget:Shutdown()
