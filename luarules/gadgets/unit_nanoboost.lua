@@ -42,6 +42,7 @@ local nanos = VFS.Include('luarules/configs/nanoDefIDs.lua')
 CMD_NANOBOOST = 33456
 local boostednanos = {} -- list of nanos in boostmode
 local buildspeedlist = {}
+local unitType = {}
 
 local buildspeedCmdDesc = {
   id      = CMD_NANOBOOST,
@@ -155,8 +156,12 @@ function processDamage()
         local unitID = table.remove(boostednanosQueue, 1)
         local curhp, hp = SpGetUnitHealth(unitID)
 
-        local stdDev = 0.175
-        local constDmg = 0.0002
+        local stdDev = 0.15
+        local constDmg = 0.00025
+
+        if unitType[unitID] == 'com' then
+            constDmg = 0.004
+        end
 
         local damage = math.abs(curhp * (stdDev * getGaussian())) + (hp * constDmg)
 
@@ -202,9 +207,20 @@ end
 
 function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
     local ud = uDefs[unitDefID]
-    if nanos[unitDefID] or coms[unitDefID] then
+    local nano = nanos[unitDefID]
+    local com = coms[unitDefID]
+
+    if nano or com then
         local stMode = 0
-        buildspeedlist[unitID]={speed=ud.buildSpeed, repair=ud.repairSpeed, reclaim=ud.reclaimSpeed, mode=stMode}
+
+        if nano then
+            unitType[unitID] = 'nano'
+        else
+            unitType[unitID] = 'com'
+        end
+
+        --Spring.Echo(unitType[unitID])
+        buildspeedlist[unitID]={speed=ud.buildSpeed, repair=ud.repairSpeed, reclaim=ud.reclaimSpeed, mode=stMode, }
         AddBuildspeedCmdDesc(unitID)
         UpdateButton(unitID, stMode)
     end
