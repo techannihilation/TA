@@ -19,7 +19,6 @@ local preProcFile  = 'gamedata/explosions_pre.lua'
 local postProcFile = 'gamedata/explosions_post.lua'
 
 local system = VFS.Include('gamedata/system.lua')
-VFS.Include('gamedata/VFSUtils.lua')
 local section = 'explosions.lua'
 
 --------------------------------------------------------------------------------
@@ -42,7 +41,7 @@ end
 
 
 local function LoadLuas(dir)
-  local luaFiles = RecursiveFileSearch(dir, '*.lua')
+  local luaFiles = VFS.DirList(dir, '*.lua', nil, true)
 
   for _, filename in ipairs(luaFiles) do
     local edEnv = {}
