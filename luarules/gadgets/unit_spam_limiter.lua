@@ -1,7 +1,7 @@
 function gadget:GetInfo()
     return {
         name = "UnitBuildTimeAdjuster",
-        desc = "Monitors unit production and adjusts build time based on quantity created",
+        desc = "Monitors unit production and adjusts build time based on quantity created and team resources",
         author = "[MOL]Silver",
         date = "2023-11-05",
         license = "GNU GPL, v2 or later",
@@ -10,22 +10,16 @@ function gadget:GetInfo()
     }
 end
 
-local unitLimit = tonumber(Spring.GetModOptions().exp_unitlimit) or 0
-local penaltyFactor = tonumber(Spring.GetModOptions().exp_penaltyfactor) or 0.1
-
-if unitLimit == 0 then
-    return
-end
-
 if gadgetHandler:IsSyncedCode() then
     local spGetUnitDefID = Spring.GetUnitDefID
     local spSetUnitCosts = Spring.SetUnitCosts
+    local spGetTeamResources = Spring.GetTeamResources
+    local math_smoothstep = math.smoothstep
     local playerUnitCount = {}
     local buildTimeCache = {}
     local isFactoryCache = {}
     local UnitDefs = UnitDefs
-    local UNIT_LIMIT = unitLimit
-    local PENALTY_FACTOR = penaltyFactor
+    local unitThreshhold = 10
 
     function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
         if builderID then
@@ -36,10 +30,17 @@ if gadgetHandler:IsSyncedCode() then
                 playerUnitCount[unitTeam] = playerData
                 playerData[unitDefID] = (playerData[unitDefID] or 0) + 1
                 local count = playerData[unitDefID]
-                if count > UNIT_LIMIT then
+                if count > unitThreshhold then
+                    local _, _, _, energyIncome = spGetTeamResources(unitTeam, "energy")
+                    local baseEnergy = 15000
+                    local maxEnergy = 3000000
+                    local penaltyMultiplayer = 1.5
+                    if energyIncome < baseEnergy then return end
+                    local penaltyFactor = math_smoothstep(baseEnergy, maxEnergy, energyIncome) * penaltyMultiplayer
                     buildTimeCache[unitDefID] = buildTimeCache[unitDefID] or UnitDefs[unitDefID].buildTime
-                    local newBuildTime = buildTimeCache[unitDefID] * (1 + (count - UNIT_LIMIT) * PENALTY_FACTOR)
+                    local newBuildTime = buildTimeCache[unitDefID] * (1 + ((count - unitThreshhold) * penaltyFactor) )
                     spSetUnitCosts(unitID, {buildTime = newBuildTime})
+                    --Spring.Echo(newBuildTime,penaltyFactor,count)
                 end
             end
         end
@@ -61,5 +62,3 @@ if gadgetHandler:IsSyncedCode() then
     end
 
 end
-
-
