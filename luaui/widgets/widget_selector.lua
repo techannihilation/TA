@@ -86,9 +86,9 @@ local buttons = {
 }
 
 local titleFontSize = 16
-local buttonFontSize = 24
-local buttonHeight = 20
-local buttonTop = 20 -- offset between top of buttons and bottom of widget
+local buttonFontSize = 20
+local buttonHeight = 22
+local buttonTop = 40 -- offset between top of buttons and bottom of widget
 
 local function DisableCallIns()
   widgetHandler:RemoveWidgetCallIn("DrawScreen", widget)
@@ -114,6 +114,17 @@ function widget:Initialize()
 end
 
 -------------------------------------------------------------------------------
+local function DrawSeparator(x1, y1, x2, y2)
+  gl.Color(0, 0, 0, 0.3)  -- Set color to light gray, semi-transparent
+  gl.LineWidth(4)  -- Sets the line width to 2.5 pixels
+  gl.Shape(GL.LINES, {
+    { v = { x1, y1 } },
+    { v = { x2, y2 } },
+
+  })
+  gl.Color(1, 1, 1, 1)  -- Reset color to white
+end
+
 local function DrawRectRound(px, py, sx, sy, cs)
   gl.TexCoord(0.8, 0.8)
   gl.Vertex(px + cs, py, 0)
@@ -207,7 +218,7 @@ local function UpdateGeometry()
   local halfWidth = ((maxWidth + 2) * fontSize) * sizeMultiplier * 0.5
   minx = floor(midx - halfWidth - (borderx * sizeMultiplier))
   maxx = floor(midx + halfWidth + (borderx * sizeMultiplier))
-  local ySize = (yStep * sizeMultiplier) * (#widgetsList)
+  local ySize = (yStep * sizeMultiplier) * (#widgetsList) + 10
   miny = floor(midy - (0.5 * ySize)) - ((fontSize + bgPadding + bgPadding) * sizeMultiplier)
   maxy = floor(midy + (0.5 * ySize))
 end
@@ -277,10 +288,15 @@ local function SortWidgetListFunc(nd1, nd2)
   end
 
   -- mod widgets first, then user widgets
-  if nd1[2].fromZip ~= nd2[2].fromZip then return nd1[2].fromZip end
-  -- sort by name
+  if nd1[2].fromZip ~= nd2[2].fromZip then
+    return nd1[2].fromZip
+  end
 
-  return nd1[1] < nd2[1]
+  -- sort by name, case-insensitive
+  local name1 = nd1[1]:lower()  -- Convert name to lowercase
+  local name2 = nd2[1]:lower()  -- Convert name to lowercase
+
+  return name1 < name2
 end
 
 local function UpdateList()
@@ -398,7 +414,7 @@ function widget:DrawScreen()
   borderx = (yStep * sizeMultiplier) * 0.75
   bordery = (yStep * sizeMultiplier) * 0.75
   -- draw the header
-  gl.Text("Widget Selector", midx, maxy + ((8 + bgPadding) * sizeMultiplier), titleFontSize * sizeMultiplier, "oc")
+  gl.Text(WhiteStr .. "Widget Selector", midx, maxy + ((8 + bgPadding) * sizeMultiplier), titleFontSize * sizeMultiplier, "oc")
   local mx, my, lmb, mmb, rmb = Spring.GetMouseState()
   local tcol = WhiteStr
 
@@ -439,6 +455,7 @@ function widget:DrawScreen()
   local pointedName = (nd and nd[1]) or nil
   local posy = maxy - ((yStep + bgPadding) * sizeMultiplier)
   sby1 = posy + ((fontSize + fontSpace) * sizeMultiplier) * 0.5
+  local lastFromZip = nil  -- Tracks the source of the last widget
 
   for _, namedata in ipairs(widgetsList) do
     local name = namedata[1]
@@ -448,6 +465,14 @@ function widget:DrawScreen()
     local order = widgetHandler.orderList[name]
     local enabled = order and (order > 0)
     local active = data.active
+
+    -- Now you would check if you need to draw a separator
+    if lastFromZip ~= nil and data.fromZip ~= lastFromZip then
+      posy = posy - 5  -- Decrease posy to create a gap; adjust '20' as needed for bigger or smaller gaps
+      DrawSeparator(minx, posy+13.5, maxx-15, posy+13.5)
+      posy = posy - 5  -- Decrease posy to create a gap; adjust '20' as needed for bigger or smaller gaps
+    end
+    lastFromZip = data.fromZip
 
     if pointed and not activescrollbar then
       pointedY = posy
