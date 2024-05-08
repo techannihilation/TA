@@ -260,26 +260,12 @@ local options = {
     step = 0.01,
   },
   {
-    key = "exp_unitlimit",
-    name = "Unit Limit",
-    desc = "Monitors unit production and adjusts build time based on quantity created - 0 to disable",
+    key = "exp_spamlimit",
+    name = "Spam Limit",
+    desc = "Monitors unit mass production and adjusts build time.",
+    type = "bool",
+    def = false,
     section = "ta_exp",
-    type = "number",
-    def = 0, -- 0 is disable
-    min = 0,
-    max = 5000,
-    step = 1,
-  },
-  {
-    key = "exp_penaltyfactor",
-    name = "Unit Limiter -  Penalty factor",
-    desc = "0.1 - 10% for each unit over limit",
-    section = "ta_exp",
-    type = "number",
-    def = 0.2,
-    min = 0.01,
-    max = 10,
-    step = 0.01,
   },
 }
 

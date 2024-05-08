@@ -10,6 +10,12 @@ function gadget:GetInfo()
     }
 end
 
+local spamLimit = Spring.GetModOptions().exp_spamlimit or false
+--Spring.Echo("SPAMLIMIT STATUS: ",spamLimit)
+if spamLimit == false then
+    return
+end
+
 if gadgetHandler:IsSyncedCode() then
     local spSetUnitCosts = Spring.SetUnitCosts
     local spGetTeamResources = Spring.GetTeamResources

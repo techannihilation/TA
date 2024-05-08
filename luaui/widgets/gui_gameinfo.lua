@@ -78,14 +78,25 @@ for key, value in pairs(modoptions) do
 		changedModoptions[key] = value
 	end
 end
-changelogFile = changelogFile .. titlecolor.."Mod options\n"
-for key, value in pairs(changedModoptions) do
-	changelogFile = changelogFile .. keycolor..key..separator..valuecolor..tostring(value).."\n"
-end
-for key, value in pairs(unchangedModoptions) do
-	changelogFile = changelogFile .. keycolor..key..separator..valuegreycolor..tostring(value).."\n"
+-- Collect keys from modoptions into a list
+local keys = {}
+for k in pairs(modoptions) do
+    table.insert(keys, k)
 end
 
+-- Sort keys alphabetically
+table.sort(keys)
+
+-- Generate changelog entries for modoptions, sorted by key
+changelogFile = changelogFile .. titlecolor.."Mod options\n"
+for _, key in ipairs(keys) do
+    local value = modoptions[key]
+    if modoptionsDefault[key] == value then
+        changelogFile = changelogFile .. keycolor..key..separator..valuegreycolor..tostring(value).."\n"
+    else
+        changelogFile = changelogFile .. keycolor..key..separator..valuecolor..tostring(value).."\n"
+    end
+end
 
 local bgMargin = 6
 
