@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 28900,
 		builder = false,
 		buildpic = "armvulc.dds",
-		buildtime = 500000,
+		buildtime = 1157080,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

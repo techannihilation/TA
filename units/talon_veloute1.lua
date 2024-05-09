@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 19,
 		buildinggrounddecaltype = "talon_aoplane.dds",
 		buildpic = "talon_veloute1.dds",
-		buildtime = 4000000,
+		buildtime = 9256637,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

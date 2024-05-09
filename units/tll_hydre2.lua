@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 48534,
 		builder = false,
 		buildpic = "tll_hydre2.dds",
-		buildtime = 850000,
+		buildtime = 1967035,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

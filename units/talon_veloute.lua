@@ -5,7 +5,7 @@ return {
 		buildcostmetal = 28717,
 		builder = false,
 		buildpic = "talon_veloute.dds",
-		buildtime = 500000,
+		buildtime = 1157080,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",

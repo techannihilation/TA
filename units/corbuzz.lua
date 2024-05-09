@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 28368,
 		builder = false,
 		buildpic = "corbuzz.dds",
-		buildtime = 500000,
+		buildtime = 1157080,
 		canattack = true,
 		canstop = 1,
 		category = "ALL SURFACE",
