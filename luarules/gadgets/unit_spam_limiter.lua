@@ -10,11 +10,11 @@ function gadget:GetInfo()
     }
 end
 
-local spamLimit = Spring.GetModOptions().exp_spamlimit or false
+-- local spamLimit = Spring.GetModOptions().exp_spamlimit or false
 --Spring.Echo("SPAMLIMIT STATUS: ",spamLimit)
-if spamLimit == false then
-    return
-end
+-- if spamLimit == false then
+--     return
+-- end
 
 if gadgetHandler:IsSyncedCode() then
     local spSetUnitCosts = Spring.SetUnitCosts
@@ -27,9 +27,9 @@ if gadgetHandler:IsSyncedCode() then
 
         if builderID then
             local _, _, _, energyIncome = spGetTeamResources(unitTeam, "energy")
-            local baseEnergy = 3000
-            local maxEnergy = 3000000
-            local multiplier  = 0.5
+            local baseEnergy = 5000
+            local maxEnergy = 10000000
+            local multiplier  = 0.333
             if energyIncome < baseEnergy then return end
 
             local playerData = playerUnitCount[unitTeam] or {}
