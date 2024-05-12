@@ -264,7 +264,7 @@ local options = {
     name = "Spam Limit",
     desc = "Monitors unit mass production and adjusts build time.",
     type = "bool",
-    def = false,
+    def = true,
     section = "ta_exp",
   },
 }
