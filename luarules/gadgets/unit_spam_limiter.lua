@@ -20,6 +20,7 @@ if gadgetHandler:IsSyncedCode() then
     local nanos = VFS.Include('luarules/configs/nanoDefIDs.lua')
     local spSetUnitCosts = Spring.SetUnitCosts
     local spGetTeamResources = Spring.GetTeamResources
+    local spSetUnitRulesParam = Spring.SetUnitRulesParam
     local math_min = math.min
     local playerUnitCount = {}
     local buildTimeCache = {}
@@ -42,6 +43,7 @@ if gadgetHandler:IsSyncedCode() then
             local newBuildTime = buildTimeCache[unitDefID] * penatlyFactor
             --Spring.Echo('count = ' .. count .. '  ', unitDefID, penatlyFactor, newBuildTime)
             spSetUnitCosts(unitID, {buildTime = newBuildTime})
+            spSetUnitRulesParam(unitID,'buildTime', newBuildTime)
         end
     end
 
