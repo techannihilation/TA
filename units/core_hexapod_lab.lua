@@ -58,7 +58,6 @@ return {
 			[7] = "cormkl",
 			[8] = "corshock",
 			[9] = "corlift",
-			[10] = "corlilith",
 		},
 		customparams = {
 			buildpic = "core_hexapod_lab.dds",

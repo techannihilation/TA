@@ -57,7 +57,6 @@ return {
 			[7] = "armmygalo",
 			[8] = "armstratus",
 			[9] = "armlift",
-			[10] = "armexo",
 		},
 		customparams = {
 			buildpic = "arm_ulab.dds",
