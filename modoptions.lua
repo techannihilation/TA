@@ -267,6 +267,17 @@ local options = {
     def = true,
     section = "ta_exp",
   },
+  {
+    key = "expscaleenabled",
+    name = "Experience health/power/reload scaling",
+    desc = "",
+    type = "number",
+    def = 1,
+    min = 0,
+    max = 1,
+    step = 1,
+    section = "ta_exp",
+  },
 }
 
 return options

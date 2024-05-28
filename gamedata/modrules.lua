@@ -3,6 +3,7 @@
 -- local engineVersionString = Engine.version
 -- local engineVersion = tonumber(string.match(engineVersionString, "%-(%d+)"))
 
+local expEnabled = Spring.GetModOptions().expscaleenabled or 1
 local flankDefaultMin = Spring.GetModOptions().exp_flankdefaultmin or 1
 local flankDefaultMax = Spring.GetModOptions().exp_flankdefaultmax or 2
 
@@ -119,7 +120,7 @@ local modrules = {
   },
 
   experience = {
-    experienceMult = 0.9, -- defaults to 1.0
+    experienceMult = expEnabled * 0.9, -- defaults to 1.0
     powerScale = 1.0, -- defaults to 1.0
     healthScale = 0.7, -- defaults to 0.7
     reloadScale = 2.23, -- defaults to 0.4
