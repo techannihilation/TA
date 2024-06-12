@@ -2,7 +2,7 @@ return {
 	talon_xeon = {
 		acceleration = 0.125,
 		brakerate = 0.375,
-		buildcostenergy = 4001,
+		buildcostenergy = 8901,
 		buildcostmetal = 298,
 		builder = false,
 		buildpic = "talon_xeon.dds",
