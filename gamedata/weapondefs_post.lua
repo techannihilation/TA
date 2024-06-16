@@ -113,3 +113,11 @@ end
 -- apply mod options that need _post 
 ModOptions_Post(UnitDefs, WeaponDefs)
 
+-- engine compatibility
+if not Script.IsEngineMinVersion(105, 0, 2365) then
+	for name, ud in pairs(UnitDefs) do
+		if ud.trackstretch then
+			ud.trackstretch = 1 / ud.trackstretch
+		end
+	end
+end

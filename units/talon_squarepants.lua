@@ -51,7 +51,7 @@ return {
 		steeringmode = 1,
 		trackoffset = 7,
 		trackstrength = 6,
-		trackstretch = 1.2,
+		trackstretch = 0.833,
 		tracktype = "StdTank",
 		trackwidth = 25,
 		turninplace = 0,

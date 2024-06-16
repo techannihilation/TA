@@ -52,7 +52,7 @@ return {
 		stealth = true,
 		trackoffset = 6,
 		trackstrength = 7,
-		trackstretch = 1.2,
+		trackstretch = 0.833,
 		tracktype = "StdTank",
 		trackwidth = 50,
 		turninplace = 0,
