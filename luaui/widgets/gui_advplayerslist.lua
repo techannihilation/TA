@@ -2283,7 +2283,7 @@ function DrawName(name, team, posY, dark, playerID)
     local nameText = name .. willSub  
     
     local nameColourR,nameColourG,nameColourB,nameColourA = Spring_GetTeamColor(team)
-    local xPadding = 0
+    local xPadding = -10
     
     -- includes readystate icon if factions arent shown
 	if not gameStarted and not m_side.active then
@@ -2398,9 +2398,9 @@ function DrawPingCpu(pingLvl, cpuLvl, posY, spec, alpha, cpu, fps)
 	else
 	
 		if fps ~= nil then
-			if fps > 999 then
-				fps = 999
-			end
+			-- if fps > 999 then
+			-- 	fps = 999
+			-- end
 			grayvalue = 0.85
 			if spec then
 				gl_Color(0,0,0,0.1+(grayvalue*0.4))
@@ -2537,7 +2537,7 @@ function PingCpuTip(mouseX, pingLvl, cpuLvl, fps, gpumem, system, name)
 			pingLvl = round(pingLvl/60000,0).." min"
 		end
 		tipText = "Ping: "..pingLvl
-	elseif mouseX >= widgetPosX + (m_cpuping.posX  + 1) * widgetScale and mouseX <=  widgetPosX + (m_cpuping.posX + 11) * widgetScale then	
+	elseif mouseX >= widgetPosX -10 + (m_cpuping.posX  + 1) * widgetScale and mouseX <=  widgetPosX + (m_cpuping.posX + 11) * widgetScale then	
 		tipText = "Cpu: "..cpuLvl.."%"
 		if fps ~= nil then 
 			tipText = "FPS: "..fps.."    "..tipText
