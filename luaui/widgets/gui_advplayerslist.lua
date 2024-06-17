@@ -341,7 +341,7 @@ m_indent = {
 	play      = true, --display for players?
 	active    = true, --display? (overrides above)
 	default   = true, --display by default?
-	width     = 9,
+	width     = 2,
 	position  = position,
 	posX      = 0,
 	pic       = pics["indentPic"],
@@ -367,7 +367,7 @@ m_rank = {
 	play      = true, --display for players?
 	active    = true, --display? (overrides above)
 	default   = false, --display by default?
-	width     = 18,
+	width     = 28,
 	position  = position,
 	posX      = 0,
 	pic       = pics["rank6"],
@@ -380,7 +380,7 @@ m_country = {
 	play      = true,
 	active    = true,
 	default   = true,
-	width     = 20,
+	width     = 28,
 	position  = position,
 	posX      = 0,
 	pic       = pics["countryPic"],
@@ -392,7 +392,7 @@ m_side = {
 	spec      = true,
 	play      = true,
 	active    = false,
-	width     = 18,
+	width     = 28,
 	position  = position,
 	posX      = 0,
 	pic       = pics["sidePic"],
@@ -605,7 +605,7 @@ end
 function SetMaxPlayerNameWidth()
 	-- determines the maximal player name width (in order to set the width of the widget)
 	local t = Spring_GetPlayerList()
-	local maxWidth = 14*gl_GetTextWidth(absentName) + 8 -- 8 is minimal width
+	local maxWidth = 76*gl_GetTextWidth(absentName) + 8 -- 8 is minimal width
 	local name = ""
 	local nextWidth = 0
 	for _,wplayer in ipairs(t) do
@@ -2360,7 +2360,7 @@ function DrawID(playerID, posY, dark, dead)
 end
 
 function DrawSkill(skill, posY, dark)
-	gl_Text(skill, m_skill.posX + widgetPosX + m_skill.width - 2, posY + 5.3, 9.5, "or")
+	gl_Text(skill, m_skill.posX + widgetPosX + m_skill.width - 12, posY + 5.3, 9.5, "or")
 	gl_Color(1,1,1)
 end
 
