@@ -3,7 +3,7 @@ return {
 		acceleration = 0.03594,
 		blocking = false,
 		brakerate = 0.015,
-		buildcostenergy = 98013,
+		buildcostenergy = 112500,
 		buildcostmetal = 4075,
 		builder = false,
 		buildpic = "tllanhur.dds",
@@ -100,7 +100,7 @@ return {
 		},
 		weapondefs = {
 			emp_bomb = {
-				areaofeffect = 240,
+				areaofeffect = 200,
 				avoidfeature = false,
 				burst = 16,
 				burstrate = 0.15,
@@ -117,7 +117,7 @@ return {
 				impulsefactor = 0,
 				interceptedbyshieldtype = 16,
 				model = "weapon_bomb.s3o",
-				name = "EMPbomb",
+				name = "EMP bomb",
 				noselfdamage = true,
 				paralyzer = true,
 				paralyzetime = 18,
@@ -135,7 +135,6 @@ return {
 					default = 5000,
 					subs = 5,
 				},
-				tracks = false,
 			},
 		},
 		weapons = {
