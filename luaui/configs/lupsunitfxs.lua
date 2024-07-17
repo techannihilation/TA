@@ -476,6 +476,10 @@ cafus = {
   gok_nurgle = {
     {class='AirJet',options={color={0.78, 0.08, 0.52}, width=8, length=54, piece="thrust", noIconDraw = true, priority=3, onActive=true}},
   },
+  gok_lift = {
+      {class='AirJet',options={color={0.78, 0.08, 0.52}, width=5, length=30, piece="engine1", noIconDraw = true, priority=3, onActive=true}},
+      {class='AirJet',options={color={0.78, 0.08, 0.52}, width=5, length=30, piece="engine2", noIconDraw = true, priority=3, onActive=true}},
+  },
   armatlas = {
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet1", noIconDraw = true, priority=3, onActive=true}},
     {class='ThundAirJet',options={color={0.3,0.2,0}, width=7, length=25, emitVector = {0,1,0}, piece="jet2", noIconDraw = true, priority=3, onActive=true}},
