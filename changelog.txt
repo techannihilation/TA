@@ -1,5 +1,9 @@
 4.61 => 4.62
 2024-07-19
+Balance:
+ - Parasite : Decrease Range 5k=>4k. Increase BuildTime 65M=>80M
+ - Talon Silver : Increase cost by 5%. Decrease HP by 5%
+
 Improvment :
 - Add New T4 Air Transport for GOK
 
