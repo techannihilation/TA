@@ -1,7 +1,15 @@
+ 4.62 => 4.63
+2024-07-19
+Balance:
+  - Rumad Parasite: 
+    • Decrease metal cost 38387000m -> 32166000m, 
+    • Increase LOS 1500 -> 8000, 
+    • Increase capture speed 100000 -> 500000
+
 4.61 => 4.62
 2024-07-19
 Balance:
- - Parasite : Decrease Range 5k=>4k. Increase BuildTime 65M=>80M
+ - Rumad Parasite : Decrease Range 5k=>4k. Increase BuildTime 65M=>80M
  - Talon Silver : Increase cost by 5%. Decrease HP by 5%
 
 Improvment :
