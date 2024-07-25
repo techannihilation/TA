@@ -2,7 +2,7 @@ return {
 	rumad_parasite = {
 		buildangle = 4096,
 		buildcostenergy = 305200000,
-		buildcostmetal = 32166000,
+		buildcostmetal = 38387000,
 		builddistance = 40000,
 		builder = true,
 		buildpic = "rumad_parasite.dds",
@@ -41,7 +41,7 @@ return {
 		selfdestructas = "TSAR_DEATH",
 		selfdestructcountdown = 10,
 		shownanospray = false,
-		sightdistance = 8000,
+		sightdistance = 10000,
 		standingfireorder = 2,
 		unitname = "rumad_parasite",
 		workertime = 500000,

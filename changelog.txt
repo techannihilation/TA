@@ -1,5 +1,12 @@
- 4.62 => 4.63
-2024-07-19
+ 4.63 => 4.64
+2024-07-25
+Balance:
+  - Rumad Parasite: 
+    • Revert metal cost to 38387000m from 32166000m,
+    • Increase LOS 8000 -> 10000, 
+
+4.62 => 4.63
+2024-07-24
 Balance:
   - Rumad Parasite: 
     • Decrease metal cost 38387000m -> 32166000m, 
