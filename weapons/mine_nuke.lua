@@ -1,8 +1,8 @@
 return {
 	mine_nuke = {
-		areaofeffect = 700,
+		areaofeffect = 800,
 		craterboost = 5,
-		cratermult = 2.5,
+		cratermult = 12,
 		edgeeffectiveness = 0.2,
 		explosiongenerator = "custom:FLASHNUKE768",
 		impulseboost = 0.25,
