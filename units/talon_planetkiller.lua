@@ -120,7 +120,7 @@ return {
 				name = "Antimatter accelerator",
 				noexplode = true,
 				noselfdamage = true,
-				range = 4000,
+				range = 3500,
 				reloadtime = 1,
 				rgbcolor = "0.1 0.9 1.0",
 				soundhitdry = "",
@@ -138,7 +138,7 @@ return {
 				weapontype = "BeamLaser",
 				weaponvelocity = 1500,
 				damage = {
-					default = 150000,
+					default = 200000,
 				},
 				tracks = false,
 			},

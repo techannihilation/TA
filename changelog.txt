@@ -1,4 +1,22 @@
- 4.63 => 4.64
+ 4.64 => 4.65
+2024-07-25
+Balance:
+  • TSAR like armtabi, corflu, gok_cain, tllvanya: 
+    - increase overall cost from ~36million to ~46million
+    - shorten missile load time 240sec to 90sec
+    - weapon range is infinite
+    - damage is "huge" now
+
+  • Rumad Parasite: set build distance with los -> 7500
+
+  • Talon Planet Killer: 
+    - Increase overall cost from ~31million -> ~36 million, 
+    - Nerf range from 10000 -> 3500
+    - HP increase from 650k to 1m450k
+    - Buff DPS from 25000 -> 200000
+    - Buff los 1000 -> 2000
+
+4.63 => 4.64
 2024-07-25
 Balance:
   - Rumad Parasite: 
