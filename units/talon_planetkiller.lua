@@ -7,9 +7,9 @@ return {
 		bankingAllowed = false,
 		blocking = false,
 		brakerate = 0.01,
-		buildcostenergy = 1700000000,
+		buildcostenergy = 106250000,
 		buildcostmetal = 34187000,
-		-- cost: 34187000 + 1700000000/1000 = 35.9 million
+		-- cost: 34187000 + (106250000/1000) × 16 = 35.9 million
 		builder = false,
 		buildpic = "talon_planetkiller.dds",
 		buildtime = 45000000,

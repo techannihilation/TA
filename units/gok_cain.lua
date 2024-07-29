@@ -1,9 +1,9 @@
 return {
 	gok_cain = {
 		buildangle = 4096,
-		buildcostenergy = 13114050664,
+		buildcostenergy = 819628166,
 		buildcostmetal = 33182140,
-		-- cost: 33182140 + 13114050664/1000 = 46.30 million
+		-- cost: 33182140 + (819628166/1000) × 16 = 46.30 million
 		builder = false,
 		buildpic = "gok_cain.dds",
 		buildtime = 60000000,

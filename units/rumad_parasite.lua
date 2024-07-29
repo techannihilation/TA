@@ -1,9 +1,9 @@
 return {
 	rumad_parasite = {
 		buildangle = 4096,
-		buildcostenergy = 6805200000,
+		buildcostenergy = 425325000,
 		buildcostmetal = 31387000,
-		-- cost: 31387000 + 6805200000/1000 = 38.2 million
+		-- cost: 31387000 + (425325000/1000) × 16 = 38.2 million
 		builddistance = 8000,
 		builder = true,
 		buildpic = "rumad_parasite.dds",
