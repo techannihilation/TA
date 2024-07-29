@@ -1,8 +1,9 @@
 return {
 	tllvanya = {
 		buildangle = 4096,
-		buildcostenergy = 200703223,
-		buildcostmetal = 38265866,
+		buildcostenergy = 3800703223,
+		buildcostmetal = 42965866,
+		-- cost: 42965866 + 3800703223/1000 = 46.76 million
 		builder = false,
 		buildpic = "tllvanya.dds",
 		buildtime = 60000000,
