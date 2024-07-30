@@ -67,6 +67,7 @@ return {
 		workertime = 40,
 		buildoptions = {
 			"talon_drag",
+			"talon_eye",
 			"talon_mine1",
 			"talon_mine2",
 			"talon_mine3",
