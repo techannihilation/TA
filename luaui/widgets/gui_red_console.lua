@@ -512,17 +512,6 @@ local function processLine(line, g, cfg, newlinecolor)
 		end
 	end
 
-	-- Ignore users who send spam messages
-	local usernames = {"123456", "Fundamental_", "KLNG101"}
-	for _, username in ipairs(usernames) do
-	    -- Build the pattern to include angle brackets around the username
-	    local pattern = "<" .. username .. ">"
-	    if sfind(line, pattern) then
-	        ignoreThisMessage = true
-	        break
-	    end
-	end
-
 	-- -- filter Sync error
 	-- if sfind(line, "Error: %[DESYNC WARNING%] ") then
 	-- 		ignoreThisMessage = true
