@@ -37,7 +37,7 @@ local modrules = {
   },
 
   capture = {
-    energyCostFactor = 0, -- How much of the original energy cost it requires to capture something.
+    energyCostFactor = 0.5, -- How much of the original energy cost it requires to capture something.
   },
 
   flankingBonus = {
@@ -68,7 +68,7 @@ local modrules = {
     allowUnitCollisionDamage = false, -- default: true if using QTPFS pathfinder.  Do unit-unit (skidding) collisions cause damage?
     allowUnitCollisionOverlap = false, -- defaults to true -- this lets units clump close together when moving, after which they are pushed apart
     allowCrushingAlliedUnits = true,
-    allowGroundUnitGravity = false,
+    allowGroundUnitGravity = true,
 
     allowAirPlanesToLeaveMap = true,  -- Are (gunship) aircraft allowed to fly outside the bounds of the map?
     allowAircraftToHitGround = true,  -- Are aircraft allowed to hit the ground whilst manoeuvring?
@@ -79,11 +79,11 @@ local modrules = {
     allowAircraftToLeaveMap = true,   -- determines if gunships are allowed to leave map boundaries
     maxCollisionPushMultiplier = 1.0,
 
-    unitQuadPositionUpdateRate = 5; -- affects collision accuracy (incl. with projectiles).
+    unitQuadPositionUpdateRate = 9; -- affects collision accuracy (incl. with projectiles).
                                      -- rate in sim frames that a unit's position in the quad grid is updated (default: 3)
                                      -- a lower number will increase CPU load, but increase accuracy of collision detection                    
 
-    groundUnitCollisionAvoidanceUpdateRate = 5; -- for controlling steering performance vs quality tradeoff load. 
+    groundUnitCollisionAvoidanceUpdateRate = 9; -- for controlling steering performance vs quality tradeoff load. 
                                                  -- Reduce to get better quality at the cost of perf. 
                                                  -- Default value is 3 for cycling through all units over 3 sim frames.
   },
@@ -116,7 +116,7 @@ local modrules = {
     transportShip = true,  -- Can ships be transported?
     transportHover = true,  -- Can hovercraft be transported?
     transportGround = true, -- Can ground units be transported?
-    targetableTransportedUnits = false, -- Can transported units be targeted by weapons? true allows both manual and automatic targeting.
+    targetableTransportedUnits = true, -- Can transported units be targeted by weapons? true allows both manual and automatic targeting.
   },
 
   paralyze = {
@@ -125,10 +125,10 @@ local modrules = {
   },
 
   experience = {
-    experienceMult = expEnabled * 0.9, -- defaults to 1.0
+    experienceMult = expEnabled * 1.0, -- defaults to 1.0
     powerScale = 1.0, -- defaults to 1.0
     healthScale = 0.7, -- defaults to 0.7
-    reloadScale = 2.23, -- defaults to 0.4
+    reloadScale = 2.1, -- defaults to 0.4
   },
 
   damage = {
