@@ -101,14 +101,14 @@ local modrules = {
 
     pathFinderSystem = 1, -- Which pathfinder does the game use? Can be 0 - The legacy default pathfinder, 1 - Quad-Tree Pathfinder System (QTPFS) or -1 - disabled.    
     pathFinderRawDistMult = 100000,   -- default: 1.25    Engine does raw move with a limited distance, this multiplier adjusts that  
-    pfRepathDelayInFrames = 90,       -- default: 60      How many frames at least must pass between checks for whether a unit is making enough progress to its current waypoint or whether a new path should be requested
-    pfRepathMaxRateInFrames = 180,    -- default: 150     Controls the minimum amount of frames that must pass before a unit is allowed to request a new path. Mostly for rate limiting and prevent excessive CPU wastage
+    pfRepathDelayInFrames = 60,       -- default: 60      How many frames at least must pass between checks for whether a unit is making enough progress to its current waypoint or whether a new path should be requested
+    pfRepathMaxRateInFrames = 150,    -- default: 150     Controls the minimum amount of frames that must pass before a unit is allowed to request a new path. Mostly for rate limiting and prevent excessive CPU wastage
     pfUpdateRateScale = 1,            -- default: 1       Multiplier for the update rate
     pfRawMoveSpeedThreshold = 0,      -- default: 0       Controls the speed modifier (which includes typemap boosts and up/down hill modifiers) under which units will never do raw move, regardless of distance etc. Defaults to 0, which means units will not try to raw-move into unpathable terrain (e.g. typemapped lava, cliffs, water). You can set it to some positive value to make them avoid pathable but very slow terrain (for example if you set it to 0.2 then they will not raw-move across terrain where they move at 20% speed or less, and will use normal pathing instead - which may still end up taking them through that path).
     pfHcostMult = 0.5,                -- default: 0.2     A float value between 0 and 2. Controls how aggressively the pathing search prioritizes nodes going in the direction of the goal. Higher values mean pathing is cheaper, but can start producing degenerate paths where the unit goes straight at the goal and then has to hug a wall.
     qtLowerQualityPaths = true,       -- default: false   Enable to reduce CPU usage, but also reduce quality of resultant paths.
-    qtMaxNodesSearched = 8192,        -- default: 8192    Limits how many nodes the QTPFS pathing system is permitted to search. A smaller number improves CPU performance, but a larger number will resolve longer paths better, without needing to refresh the path.
-    qtRefreshPathMinDist = 3000,      -- default: 2000    A larger number reduces CPU usage, but also increses the chance that a unit will become trapped in a complex terrain/base setup even if there's a route that would bring the unit nearer to the goal.
+    qtMaxNodesSearched = 4096,        -- default: 8192    Limits how many nodes the QTPFS pathing system is permitted to search. A smaller number improves CPU performance, but a larger number will resolve longer paths better, without needing to refresh the path.
+    qtRefreshPathMinDist = 4000,      -- default: 2000    A larger number reduces CPU usage, but also increses the chance that a unit will become trapped in a complex terrain/base setup even if there's a route that would bring the unit nearer to the goal.
   },
 
   transportability = {
