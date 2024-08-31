@@ -68,7 +68,7 @@ local modrules = {
     allowUnitCollisionDamage = false, -- default: true if using QTPFS pathfinder.  Do unit-unit (skidding) collisions cause damage?
     allowUnitCollisionOverlap = false, -- defaults to true -- this lets units clump close together when moving, after which they are pushed apart
     allowCrushingAlliedUnits = true,
-    allowGroundUnitGravity = true,
+    allowGroundUnitGravity = false,
 
     allowAirPlanesToLeaveMap = true,  -- Are (gunship) aircraft allowed to fly outside the bounds of the map?
     allowAircraftToHitGround = true,  -- Are aircraft allowed to hit the ground whilst manoeuvring?
