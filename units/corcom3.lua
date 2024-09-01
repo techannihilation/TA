@@ -91,7 +91,7 @@ return {
 			[12] = "corlab",
 			[13] = "corvp",
 			[14] = "corap",
-			[15] = "core_hexapod_lab",
+			[15] = "core_ulab",
 			[16] = "coredrag",
 			--[17] = "corllt1",
 			[18] = "corvipe",

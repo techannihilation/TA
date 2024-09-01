@@ -66,7 +66,7 @@ return {
 			[8] = "coraap",
 			[9] = "coreap",
 			--[10] = "",
-			[11] = "core_hexapod_lab",
+			[11] = "core_ulab",
 			[12] = "cornanotc2",
 			[13] = "coredrag",
 			[14] = "coromni",

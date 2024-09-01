@@ -61,7 +61,7 @@ return {
 			[4] = "cmetalmakerlvl3",
 			[5] = "corses",
 			[6] = "corsms",
-			[7] = "core_hexapod_lab",
+			[7] = "core_ulab",
 			--[8] = "",
 			[9] = "cshipyardlvl4",
 			[10] = "cornanotc3",

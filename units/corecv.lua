@@ -72,7 +72,7 @@ return {
 			[7] = "corvp",
 			[8] = "coravp",
 			[9] = "corevp",
-			[10] = "core_hexapod_lab",
+			[10] = "core_ulab",
 			[11] = "cornanotc2",
 			[12] = "coredrag",
 			[13] = "coromni",

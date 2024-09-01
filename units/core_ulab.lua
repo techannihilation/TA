@@ -1,13 +1,13 @@
 return {
-	core_hexapod_lab = {
+	core_ulab = {
 		buildcostenergy = 1552290,
 		buildcostmetal = 86630,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.01,
 		buildinggrounddecalsizex = 20,
 		buildinggrounddecalsizey = 20,
-		buildinggrounddecaltype = "core_hexapod_lab_aoplane.dds",
-		buildpic = "core_hexapod_lab.dds",
+		buildinggrounddecaltype = "core_ulab_aoplane.dds",
+		buildpic = "core_ulab.dds",
 		buildtime = 1000000,
 		canmove = true,
 		canpatrol = true,
@@ -33,7 +33,7 @@ return {
 		mobilestandorders = 1,
 		name = "Prototype Lab",
 		noautofire = false,
-		objectname = "core/core_hexapod_lab.s3o",
+		objectname = "core/core_ulab.s3o",
 		radardistance = 50,
 		radaremitheight = 68,
 		seismicsignature = 0,
@@ -45,7 +45,7 @@ return {
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0,
 		turnrate = 0,
-		unitname = "core_hexapod_lab",
+		unitname = "core_ulab",
 		workertime = 1600,
 		yardmap = "yyooccccccccccccoooo yoooccccccccccccoooy ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo ooooccccccccccccoooo yoooccccccccccccoooy yyooccccccccccccooyy",
 		buildoptions = {
@@ -60,7 +60,7 @@ return {
 			[9] = "corlift",
 		},
 		customparams = {
-			buildpic = "core_hexapod_lab.dds",
+			buildpic = "core_ulab.dds",
 			faction = "CORE",
 			normaltex = "unittextures/core_normals.dds",
 		},
