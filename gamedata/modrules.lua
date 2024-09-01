@@ -77,15 +77,17 @@ local modrules = {
 
     allowDirectionalPathing = true,   -- determines if ground speed going downhill != going uphill
     allowAircraftToLeaveMap = true,   -- determines if gunships are allowed to leave map boundaries
-    maxCollisionPushMultiplier = 1.0,
+    -- maxCollisionPushMultiplier = 1.0, -- Defaults to infinity/unlimited.
 
-    unitQuadPositionUpdateRate = 9; -- affects collision accuracy (incl. with projectiles).
-                                     -- rate in sim frames that a unit's position in the quad grid is updated (default: 3)
-                                     -- a lower number will increase CPU load, but increase accuracy of collision detection                    
+    unitQuadPositionUpdateRate = 12;  -- default: 3 
+                                      -- affects collision accuracy (incl. with projectiles).
+                                      -- rate in sim frames that a unit's position in the quad grid is updated
+                                      -- a lower number will increase CPU load, but increase accuracy of collision detection                    
 
-    groundUnitCollisionAvoidanceUpdateRate = 9; -- for controlling steering performance vs quality tradeoff load. 
-                                                 -- Reduce to get better quality at the cost of perf. 
-                                                 -- Default value is 3 for cycling through all units over 3 sim frames.
+    groundUnitCollisionAvoidanceUpdateRate = 12;  -- default: 3 
+                                                  -- for controlling steering performance vs quality tradeoff load. 
+                                                  -- Reduce to get better quality at the cost of perf. 
+                                                  -- Default value is 3 for cycling through all units over 3 sim frames.
   },
 
   featureLOS = {
@@ -96,7 +98,7 @@ local modrules = {
     allowTake = true, -- Enables and disables the /take UI command.
     LuaAllocLimit = 2560, -- default: 1536.  Global Lua alloc limit (in megabytes)
     enableSmoothMesh = true;
-    smoothMeshResDivider = 4;     -- default: 2 -- Reduce the resolution of the smooth mesh by the divider value. Increasing the value reduces the accuracy of the smooth mesh, but improves performance. Minimum 1, default 2.
+    smoothMeshResDivider = 8;     -- default: 2 -- Reduce the resolution of the smooth mesh by the divider value. Increasing the value reduces the accuracy of the smooth mesh, but improves performance. Minimum 1, default 2.
     smoothMeshSmoothRadius = 40;  -- default: 40 -- Radius in heightmap squares to use the smooth the mesh gradients. Increasing value increases the area that a given point uses to find the local heighest point, and the distance of the slope. Default is 40.
 
     pathFinderSystem = 1, -- Which pathfinder does the game use? Can be 0 - The legacy default pathfinder, 1 - Quad-Tree Pathfinder System (QTPFS) or -1 - disabled.    
@@ -105,7 +107,7 @@ local modrules = {
     pfRepathMaxRateInFrames = 150,    -- default: 150     Controls the minimum amount of frames that must pass before a unit is allowed to request a new path. Mostly for rate limiting and prevent excessive CPU wastage
     pfUpdateRateScale = 1,            -- default: 1       Multiplier for the update rate
     pfRawMoveSpeedThreshold = 0,      -- default: 0       Controls the speed modifier (which includes typemap boosts and up/down hill modifiers) under which units will never do raw move, regardless of distance etc. Defaults to 0, which means units will not try to raw-move into unpathable terrain (e.g. typemapped lava, cliffs, water). You can set it to some positive value to make them avoid pathable but very slow terrain (for example if you set it to 0.2 then they will not raw-move across terrain where they move at 20% speed or less, and will use normal pathing instead - which may still end up taking them through that path).
-    pfHcostMult = 0.5,                -- default: 0.2     A float value between 0 and 2. Controls how aggressively the pathing search prioritizes nodes going in the direction of the goal. Higher values mean pathing is cheaper, but can start producing degenerate paths where the unit goes straight at the goal and then has to hug a wall.
+    pfHcostMult = 0.6,                -- default: 0.2     A float value between 0 and 2. Controls how aggressively the pathing search prioritizes nodes going in the direction of the goal. Higher values mean pathing is cheaper, but can start producing degenerate paths where the unit goes straight at the goal and then has to hug a wall.
     qtLowerQualityPaths = true,       -- default: false   Enable to reduce CPU usage, but also reduce quality of resultant paths.
     qtMaxNodesSearched = 4096,        -- default: 8192    Limits how many nodes the QTPFS pathing system is permitted to search. A smaller number improves CPU performance, but a larger number will resolve longer paths better, without needing to refresh the path.
     qtRefreshPathMinDist = 4000,      -- default: 2000    A larger number reduces CPU usage, but also increses the chance that a unit will become trapped in a complex terrain/base setup even if there's a route that would bring the unit nearer to the goal.
