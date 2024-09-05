@@ -33,7 +33,7 @@ return {
 		mass = 115010,
 		maxdamage = 200150,
 		maxslope = 12,
-		maxvelocity = 1.4,
+		maxvelocity = 1.0,
 		maxwaterdepth = 12,
 		mobilestandorders = 1,
 		movementclass = "HTANK10",
@@ -121,7 +121,7 @@ return {
 		weapondefs = {
 			rumad_plasma = {
 				accuracy = 200,
-				areaofeffect = 196,
+				areaofeffect = 156,
 				avoidfeature = false,
 				craterareaofeffect = 64,
 				craterboost = 0,
@@ -132,7 +132,7 @@ return {
 				name = "Plasma",
 				noselfdamage = true,
 				range = 2000,
-				reloadtime = 3,
+				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.9",
 				separation = 0.45,
 				size = 2,
@@ -147,7 +147,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 600,
 				damage = {
-					default = 3600,
+					default = 2800,
 					subs = 5,
 				},
 				tracks = false,

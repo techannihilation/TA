@@ -1,7 +1,15 @@
+4.65 => 4.66
+2024-09-10
+Balance:
+  • Rumad T4 Vehicle Plasma :
+    - Decrease Range, Damage and Increase Reload for plasma battery.
+    - Decrease Speed 1.4 => 1.0
+    - Same for Hero Vizir and Hellion T4 Kbot
+
  4.64 => 4.65
 2024-07-25
 Balance:
-  • TSAR like armtabi, corflu, gok_cain, tllvanya: 
+  • TSAR like armtabi, corflu, gok_cain, tllvanya:
     - increase overall cost from ~36million to ~46million
     - shorten missile load time 240sec to 90sec
     - weapon range is infinite
@@ -9,8 +17,8 @@ Balance:
 
   • Rumad Parasite: set build distance with los -> 7500
 
-  • Talon Planet Killer: 
-    - Increase overall cost from ~31million -> ~36 million, 
+  • Talon Planet Killer:
+    - Increase overall cost from ~31million -> ~36 million,
     - Nerf range from 10000 -> 3500
     - HP increase from 650k to 1m450k
     - Buff DPS from 25000 -> 200000
@@ -19,16 +27,16 @@ Balance:
 4.63 => 4.64
 2024-07-25
 Balance:
-  - Rumad Parasite: 
+  - Rumad Parasite:
     • Revert metal cost to 38387000m from 32166000m,
-    • Increase LOS 8000 -> 10000, 
+    • Increase LOS 8000 -> 10000,
 
 4.62 => 4.63
 2024-07-24
 Balance:
-  - Rumad Parasite: 
-    • Decrease metal cost 38387000m -> 32166000m, 
-    • Increase LOS 1500 -> 8000, 
+  - Rumad Parasite:
+    • Decrease metal cost 38387000m -> 32166000m,
+    • Increase LOS 1500 -> 8000,
     • Increase capture speed 100000 -> 500000
 
 4.61 => 4.62

@@ -122,8 +122,8 @@ return {
 		},
 		weapondefs = {
 			rumad_plasma = {
-				accuracy = 500,
-				areaofeffect = 196,
+				accuracy = 200,
+				areaofeffect = 156,
 				avoidfeature = false,
 				craterareaofeffect = 64,
 				craterboost = 0,
@@ -132,7 +132,7 @@ return {
 				impulsefactor = 0.123,
 				name = "Plasma",
 				noselfdamage = true,
-				range = 1800,
+				range = 2000,
 				reloadtime = 5,
 				rgbcolor = "0.9 0.9 0.9",
 				separation = 0.45,
