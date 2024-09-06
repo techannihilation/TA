@@ -78,7 +78,7 @@ return {
 			[13] = "rumad_ejam",
 			[14] = "rumad_gate4",
 			[15] = "rumad_lrpt1",
-			[16] = "rumad_rlrpt2",
+			[16] = "rumad_rainfire2",
 			[17] = "rumad_antinuke1",
 			[18] = "rumad_silo1",
 			[19] = "rumad_erl",

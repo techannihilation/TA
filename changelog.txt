@@ -1,6 +1,7 @@
 4.65 => 4.66
 2024-09-10
 Balance:
+  • Add T2 / T3 Rapid Mortar for Rumad
   • Rumad T4 Vehicle Plasma :
     - Decrease Range, Damage and Increase Reload for plasma battery.
     - Decrease Speed 1.4 => 1.0
