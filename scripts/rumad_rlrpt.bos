@@ -60,9 +60,9 @@ AimPrimary(heading, pitch)
 {
 	signal SIG_AIM_1;
 	set-signal-mask SIG_AIM_1;
-	turn turret to y-axis heading speed <25.000000>;
-	turn lsleeves to x-axis <0.000000> - pitch speed <15.000000>;
-	turn rsleeves to x-axis <0.000000> - pitch speed <15.000000>;
+	turn turret to y-axis heading speed <300.000000>;
+	turn lsleeves to x-axis <0.000000> - pitch speed <300.000000>;
+	turn rsleeves to x-axis <0.000000> - pitch speed <300.000000>;
 	wait-for-turn turret around y-axis;
 	wait-for-turn lsleeves around x-axis;
 	wait-for-turn rsleeves around x-axis;
@@ -77,9 +77,9 @@ FirePrimary()
 		move barrel1c to z-axis [-1.600000] speed [75.000000];
 		move barrel1b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel1d to z-axis [0.000000] speed [1.000000];
-		move barrel1c to z-axis [0.000000] speed [1.000000];
-		move barrel1b to z-axis [0.000000] speed [1.000000];
+		move barrel1d to z-axis [0.000000] speed [5.000000];
+		move barrel1c to z-axis [0.000000] speed [5.000000];
+		move barrel1b to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 1 )
 	{
@@ -87,9 +87,9 @@ FirePrimary()
 		move barrel2c to z-axis [-1.600000] speed [75.000000];
 		move barrel2b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel2d to z-axis [0.000000] speed [1.000000];
-		move barrel2c to z-axis [0.000000] speed [1.000000];
-		move barrel2b to z-axis [0.000000] speed [1.000000];
+		move barrel2d to z-axis [0.000000] speed [5.000000];
+		move barrel2c to z-axis [0.000000] speed [5.000000];
+		move barrel2b to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 2 )
 	{
@@ -97,9 +97,9 @@ FirePrimary()
 		move barrel3c to z-axis [-1.600000] speed [75.000000];
 		move barrel3b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel3d to z-axis [0.000000] speed [1.000000];
-		move barrel3c to z-axis [0.000000] speed [1.000000];
-		move barrel3b to z-axis [0.000000] speed [1.000000];
+		move barrel3d to z-axis [0.000000] speed [5.000000];
+		move barrel3c to z-axis [0.000000] speed [5.000000];
+		move barrel3b to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_1 == 3 )
 	{
@@ -107,9 +107,9 @@ FirePrimary()
 		move barrel4c to z-axis [-1.600000] speed [75.000000];
 		move barrel4b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel4b to z-axis [0.000000] speed [1.000000];
-		move barrel4c to z-axis [0.000000] speed [1.000000];
-		move barrel4b to z-axis [0.000000] speed [1.000000];
+		move barrel4b to z-axis [0.000000] speed [5.000000];
+		move barrel4c to z-axis [0.000000] speed [5.000000];
+		move barrel4b to z-axis [0.000000] speed [5.000000];
 	}
 	++gun_1;
 	if( gun_1 == 4 )
@@ -161,9 +161,9 @@ FireSecondary()
 		move barrel5c to z-axis [-1.600000] speed [75.000000];
 		move barrel5b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel5d to z-axis [0.000000] speed [1.000000];
-		move barrel5c to z-axis [0.000000] speed [1.000000];
-		move barrel5b to z-axis [0.000000] speed [1.000000];
+		move barrel5d to z-axis [0.000000] speed [5.000000];
+		move barrel5c to z-axis [0.000000] speed [5.000000];
+		move barrel5b to z-axis [0.000000] speed [5.000000];
 		
 	}
 	if( gun_2 == 1 )
@@ -172,9 +172,9 @@ FireSecondary()
 		move barrel6c to z-axis [-1.600000] speed [75.000000];
 		move barrel6b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel6d to z-axis [0.000000] speed [1.000000];
-		move barrel6c to z-axis [0.000000] speed [1.000000];
-		move barrel6b to z-axis [0.000000] speed [1.000000];
+		move barrel6d to z-axis [0.000000] speed [5.000000];
+		move barrel6c to z-axis [0.000000] speed [5.000000];
+		move barrel6b to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_2 == 2 )
 	{
@@ -182,9 +182,9 @@ FireSecondary()
 		move barrel7c to z-axis [-1.600000] speed [75.000000];
 		move barrel7b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel7d to z-axis [0.000000] speed [1.000000];
-		move barrel7c to z-axis [0.000000] speed [1.000000];
-		move barrel7b to z-axis [0.000000] speed [1.000000];
+		move barrel7d to z-axis [0.000000] speed [5.000000];
+		move barrel7c to z-axis [0.000000] speed [5.000000];
+		move barrel7b to z-axis [0.000000] speed [5.000000];
 	}
 	if( gun_2 == 3 )
 	{
@@ -192,9 +192,9 @@ FireSecondary()
 		move barrel8c to z-axis [-1.600000] speed [75.000000];
 		move barrel8b to z-axis [-1.400000] speed [37.000000];
 		sleep 100;
-		move barrel8b to z-axis [0.000000] speed [1.000000];
-		move barrel8c to z-axis [0.000000] speed [1.000000];
-		move barrel8b to z-axis [0.000000] speed [1.000000];
+		move barrel8b to z-axis [0.000000] speed [5.000000];
+		move barrel8c to z-axis [0.000000] speed [5.000000];
+		move barrel8b to z-axis [0.000000] speed [5.000000];
 	}
 	++gun_2;
 	if( gun_2 == 4 )

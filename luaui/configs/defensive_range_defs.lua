@@ -44,9 +44,9 @@ modConfig["TA"]["unitList"] =
 								armvulc2 = { weapons = { 1 } },
 								armtabi = { weapons = { 1 } },
 								armpcan = { weapons = { 1 } },
-								rumad_rlrpt = { weapons = { 1 } },
-								rumad_rlrpt2 = { weapons = { 1 } },
-								--rumad_rlrpt1 = { weapons = { 1 } },
+
+								rumad_rlrpt = { weapons = { 2 } },
+
 
 									--Anti-Air--
 								armrl = { weapons = { 2 } }, --light aa
@@ -223,6 +223,8 @@ modConfig["TA"]["unitList"] =
 								rumad_orb = { weapons = { 1 } },
 								rumad_triton = { weapons = { 1 } },
 								rumad_juno = { weapons = { 1 } },
+								rumad_rainfire = { weapons = { 1 } },
+								rumad_rainfire2 = { weapons = { 1 } },
 
 									-- AntiAir
 								talon_popcorn = { weapons = { 2 } },
