@@ -8,7 +8,7 @@ Balance:
     Build Time:
         Increased by +60% (from 17,000,000 to 27,200,000)
     Max Damage:
-        Increased by +70% (from 3,500,000 to 5,950,000)
+        Increased by + 127% (from 3,500,000 to 7,950,000)
     Weapons:
         Ultimate Beam:
             Damage to default units increased by +60% (from 15,000 to 24,000)
