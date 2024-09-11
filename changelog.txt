@@ -1,3 +1,22 @@
+ 4.66 => 4.67
+2024-09-11
+Balance:
+  Unit: Core Core (Admiral AeroShip)
+    Build Cost:
+        Energy cost increased by +60% (from 12,500,000 to 20,000,000)
+        Metal cost increased by +94.8% (from 1,150,000 to 2,240,000)
+    Build Time:
+        Increased by +60% (from 17,000,000 to 27,200,000)
+    Max Damage:
+        Increased by +70% (from 3,500,000 to 5,950,000)
+    Weapons:
+        Ultimate Beam:
+            Damage to default units increased by +60% (from 15,000 to 24,000)
+        Mounted Antimatter Accelerator:
+            Damage to default units increased by +60% (from 15,000 to 24,000)
+        Tehlazerofdewm:
+            Damage to default units increased by +60% (from 2,500 to 4,000)
+
 4.65 => 4.66
 2024-09-10
 Balance:
@@ -8,7 +27,7 @@ Balance:
     - Decrease Speed 1.4 => 1.0
     - Same for Hero Vizir and Hellion T4 Kbot
 
- 4.64 => 4.65
+4.64 => 4.65
 2024-07-25
 Balance:
   • TSAR like armtabi, corflu, gok_cain, tllvanya:
