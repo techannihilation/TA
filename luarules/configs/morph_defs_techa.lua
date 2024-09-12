@@ -717,7 +717,7 @@ local morphDefs = {
 		into = 'core_core',
 		tech = 4,
 		time = 120,
-		xp = 0.10,
+		xp = 0.25,
 	},
 	gok_octopus = {
 		into = 'gok_squid',
