@@ -206,7 +206,7 @@ return {
 				name = "Missiles",
 				range = 900,
 				reloadtime = 0.25,
-				smoketrail = true,
+				smoketrail = false,
 				soundhitdry = "xplomed2",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.6,
