@@ -6,7 +6,7 @@ function gadget:GetInfo()
 		date = "15.09.2024",
 		license = "GNU GPL, v2 or later",
 		layer = 0,
-		version = "1.0",
+		version = "1.1",
 		enabled = true,
 	}
 end
@@ -18,22 +18,19 @@ if gadgetHandler:IsSyncedCode() then
 	local GetUnitRootPiece = Spring.GetUnitRootPiece
 	local GetUnitCollisionVolumeData = Spring.GetUnitCollisionVolumeData
 	local SetUnitCollisionVolumeData = Spring.SetUnitCollisionVolumeData
-	local SetUnitSelectionVolumeData = Spring.SetUnitSelectionVolumeData
+	-- local SetUnitSelectionVolumeData = Spring.SetUnitSelectionVolumeData
+    -- local GetUnitSelectionVolumeData = Spring.GetUnitSelectionVolumeData -- not works?
 
 	local unitsToScale = {
 		[UnitDefNames["core_core"].id] = {
 			modelScale = 1.5,
-			colVolumeScale = 2.5,
+			colVolumeScale = 1.5,
 			selVolumeScale = 2
 		},
 	}
 
-	local function toTable(...)
-		return {...}
-	end
-
 	local function UnitModelScale(unitID, base, scale)
-		local pieceTable = toTable(GetUnitPieceMatrix(unitID, base))
+		local pieceTable = {GetUnitPieceMatrix(unitID, base)}
 		pieceTable[1] = scale
 		pieceTable[6] = scale
 		pieceTable[11] = scale
@@ -41,9 +38,11 @@ if gadgetHandler:IsSyncedCode() then
 	end
 
 	local function UnitVolumeScale(unitID, colVolumeScale, selVolumeScale)
-		local vd = toTable(GetUnitCollisionVolumeData(unitID))
+		local vd = {GetUnitCollisionVolumeData(unitID)}
+        --local svd = {GetUnitSelectionVolumeData(unitID)}
+
 		SetUnitCollisionVolumeData(unitID, vd[1] * colVolumeScale, vd[2] * colVolumeScale, vd[3] * colVolumeScale, vd[4], vd[5], vd[6], vd[7], vd[8], vd[9])
-		SetUnitSelectionVolumeData(unitID, vd[1] * selVolumeScale, vd[2] * selVolumeScale, vd[3] * selVolumeScale, vd[4], vd[5], vd[6], vd[7], vd[8], vd[9])
+		--SetUnitSelectionVolumeData(unitID, svd[1] * selVolumeScale, svd[2] * selVolumeScale, svd[3] * selVolumeScale, svd[4], svd[5], svd[6], svd[7], svd[8], svd[9])
 	end
 
 	function gadget:UnitFinished(unitID, unitDefID, unitTeam)
