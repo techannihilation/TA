@@ -186,48 +186,15 @@ local function UpdateUnitDefIDs()
   table.sort(unitDefIDs)
 end
 
--- Draw Rounded Rectangle
-local function RectRound(px, py, sx, sy, cs)
-  px, py, sx, sy, cs = math.floor(px), math.floor(py), math.ceil(sx), math.ceil(sy), math.floor(cs)
-
-  gl.Texture(false)
-  glRect(px + cs, py, sx - cs, sy)
+function Rect(px, py, sx, sy, cs)
+  px, py = math.floor(px), math.floor(py)
+  sx, sy = math.ceil(sx), math.ceil(sy)
+  cs = math.floor(cs)
+  glTexture(false)
+  glRect(px, py, sx, py + cs)
+  glRect(px, sy - cs, sx, sy)
+  glRect(px, py + cs, px + cs, sy - cs)
   glRect(sx - cs, py + cs, sx, sy - cs)
-  glRect(px + cs, py + cs, px, sy - cs)
-
-  -- Top Left Corner
-  if py > 0 and px > 0 then
-    gl.Texture(bgcorner)
-    glTexRect(px, py + cs, px + cs, py)
-  else
-    gl.Texture(false)
-  end
-
-  -- Top Right Corner
-  if py > 0 and sx < vsx then
-    gl.Texture(bgcorner)
-    glTexRect(sx, py + cs, sx - cs, py)
-  else
-    gl.Texture(false)
-  end
-
-  -- Bottom Left Corner
-  if sy < vsy and px > 0 then
-    gl.Texture(bgcorner)
-    glTexRect(px, sy - cs, px + cs, sy)
-  else
-    gl.Texture(false)
-  end
-
-  -- Bottom Right Corner
-  if sy < vsy and sx < vsx then
-    gl.Texture(bgcorner)
-    glTexRect(sx, sy - cs, sx - cs, sy)
-  else
-    gl.Texture(false)
-  end
-
-  gl.Texture(false)
 end
 
 -- Draw Unit Definition Texture
@@ -297,10 +264,10 @@ local function DrawIconQuad(iconPos, color)
   glTexRect(xmin + iconMargin, ymin + 2 * iconMargin, xmax - iconMargin, ymax - iconMargin)
   gl.Texture(false)
 
-  RectRound(xmin + iconMargin, ymin + 2 * iconMargin, xmax - iconMargin, ymax - iconMargin, (xmax - xmin) / 15)
+  Rect(xmin + iconMargin, ymin + 2 * iconMargin, xmax - iconMargin, ymax - iconMargin, (xmax - xmin) / 15)
   glBlending(GL_SRC_ALPHA, GL_ONE)
   gl.Color(color[1], color[2], color[3], color[4] / 2)
-  RectRound(xmin + iconMargin, ymin + 2 * iconMargin, xmax - iconMargin, ymax - iconMargin, (xmax - xmin) / 15)
+  Rect(xmin + iconMargin, ymin + 2 * iconMargin, xmax - iconMargin, ymax - iconMargin, (xmax - xmin) / 15)
   glBlending(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 end
 
@@ -334,12 +301,12 @@ local function DrawPicList()
 
   backgroundDimentions = {xmin - iconMargin - 0.5, ymin, xmax + iconMargin + 0.5, ymax + iconMargin - 1}
   gl.Color(0, 0, 0, 0.66)
-  RectRound(backgroundDimentions[1], backgroundDimentions[2], backgroundDimentions[3], backgroundDimentions[4], usedIconSizeX / 7)
+  Rect(backgroundDimentions[1], backgroundDimentions[2], backgroundDimentions[3], backgroundDimentions[4], usedIconSizeX / 7)
 
   -- Draw Border Padding
   local borderPadding = iconMargin
   glColor(1, 1, 1, 0.025)
-  RectRound(backgroundDimentions[1] + borderPadding, backgroundDimentions[2] + borderPadding,
+  Rect(backgroundDimentions[1] + borderPadding, backgroundDimentions[2] + borderPadding,
            backgroundDimentions[3] - borderPadding, backgroundDimentions[4] - borderPadding,
            usedIconSizeX / 9)
 
