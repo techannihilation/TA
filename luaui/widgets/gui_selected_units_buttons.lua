@@ -195,6 +195,32 @@ function Rect(px, py, sx, sy, cs)
   glRect(px, sy - cs, sx, sy)
   glRect(px, py + cs, px + cs, sy - cs)
   glRect(sx - cs, py + cs, sx, sy - cs)
+  glRect(px + cs, py, sx - cs, sy)
+end
+
+-- Draw Rounded Rectangle
+function RectRound(px,py,sx,sy,cs)
+  
+  local px,py,sx,sy,cs = math.floor(px),math.floor(py),math.ceil(sx),math.ceil(sy),math.floor(cs)
+  
+  glTexture(false)
+  glRect(px+cs, py, sx-cs, sy)
+  glRect(sx-cs, py+cs, sx, sy-cs)
+  glRect(px+cs, py+cs, px, sy-cs)
+  
+  if py <= 0 or px <= 0 then glTexture(false) else glTexture(bgcorner) end
+  glTexRect(px, py+cs, px+cs, py)   -- top left
+  
+  if py <= 0 or sx >= vsx then glTexture(false) else glTexture(bgcorner) end
+  glTexRect(sx, py+cs, sx-cs, py)   -- top right
+  
+  if sy >= vsy or px <= 0 then glTexture(false) else glTexture(bgcorner) end
+  glTexRect(px, sy-cs, px+cs, sy)   -- bottom left
+  
+  if sy >= vsy or sx >= vsx then glTexture(false) else glTexture(bgcorner) end
+  glTexRect(sx, sy-cs, sx-cs, sy)   -- bottom right
+  
+  glTexture(false)
 end
 
 -- Draw Unit Definition Texture
