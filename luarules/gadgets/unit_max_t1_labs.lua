@@ -3,7 +3,7 @@ function gadget:GetInfo()
         name = "Tech Level 1 Lab Limit",
         desc = "Limits construction of T1 labs",
         author = "Silver",
-        version = "1.4",
+        version = "1.6",
         date = "2024",
         license = "GNU GPL, v2 or later",
         layer = 0,
@@ -24,6 +24,8 @@ local UnitDefs = UnitDefs  -- Alias for better readability
 --------------------------------------------------------------------------------
 local maxLabsPerType = 3  -- Maximum number of T1 labs per unitDefID
 local TeamLabsNb = {}  -- Stores the number of T1 labs for each team and unitDefID
+local limitedUnitDefIDs = {}  -- Set of unitDefIDs that should be limited
+local unitDefNames = {}  -- Stores the name of limited units for messaging
 local color = "\255\255\64\64"
 
 -- Pattern matching various "tech level 1" variants
@@ -34,20 +36,17 @@ local techLevel1Pattern = "tech%s*level?%s*1"
 -- HELPER FUNCTIONS
 --------------------------------------------------------------------------------
 
--- Function to check if the unit's description matches the T1 lab pattern
-local function isTechLevel1(unitDef)
-    local description = unitDef.description
-    local isBuilding = unitDef.isBuilding
-
-    if not isBuilding then
+-- Function to determine if a unit should be limited based on its description and building status
+local function determineLimit(unitDef)
+    if not unitDef.isBuilding then
         return false  -- Exclude non-building units (constructors)
     end
 
-    if not description then
+    if not unitDef.description then
         return false
     end
 
-    local descLower = string.lower(description)
+    local descLower = string.lower(unitDef.description)
     return string.find(descLower, techLevel1Pattern) ~= nil
 end
 
@@ -59,67 +58,113 @@ if (gadgetHandler:IsSyncedCode()) then
     -- BEGIN SYNCED
     --------------------------------------------------------------------------------
 
+    --------------------------------------------------------------------------------
+    -- CACHE LIMITED UNITDEFS
+    --------------------------------------------------------------------------------
+    local function PreCacheLimitedUnitDefs()
+        for unitDefID, unitDef in pairs(UnitDefs) do
+            if determineLimit(unitDef) then
+                limitedUnitDefIDs[unitDefID] = true
+                unitDefNames[unitDefID] = unitDef.name  -- Store only the name for messaging
+            end
+        end
+    end
+
+    --------------------------------------------------------------------------------
+    -- INITIALIZATION FUNCTION
+    --------------------------------------------------------------------------------
     function gadget:Initialize()
-        for _, teamID in ipairs(GetTeamList()) do
+        PreCacheLimitedUnitDefs()  -- Pre-cache limited unitDefs
+
+        local teamList = GetTeamList()  -- Cache the team list
+        for _, teamID in ipairs(teamList) do
             TeamLabsNb[teamID] = {}
             local allTeamUnits = GetTeamUnits(teamID)
+            local teamLabs = TeamLabsNb[teamID]  -- Local reference to team labs table
             for i = 1, #allTeamUnits do
                 local unitID = allTeamUnits[i]
                 local unitDefID = GetUnitDefID(unitID)
-                local unitDef = UnitDefs[unitDefID]
-                if unitDef and isTechLevel1(unitDef) then
-                    TeamLabsNb[teamID][unitDefID] = (TeamLabsNb[teamID][unitDefID] or 0) + 1
+                if limitedUnitDefIDs[unitDefID] then
+                    teamLabs[unitDefID] = (teamLabs[unitDefID] or 0) + 1
                 end
             end
         end
     end
 
+    --------------------------------------------------------------------------------
+    -- PRECOMPUTE COMMON VALUES
+    --------------------------------------------------------------------------------
+    local warningMessageTemplate = "Warning: Can't build more %s, limit of %d reached for this lab type."
+    local transferWarningMessageTemplate = "Warning: Can't transfer %s, limit of %d reached for team %d."
+
+    --------------------------------------------------------------------------------
+    -- UNIT CREATED CALLBACK
+    --------------------------------------------------------------------------------
     function gadget:UnitCreated(unitID, unitDefID, unitTeam)
-        local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef) then
-            TeamLabsNb[unitTeam][unitDefID] = (TeamLabsNb[unitTeam][unitDefID] or 0) + 1
+        if limitedUnitDefIDs[unitDefID] then
+            local teamLabs = TeamLabsNb[unitTeam]
+            teamLabs[unitDefID] = (teamLabs[unitDefID] or 0) + 1
         end
     end
 
+    --------------------------------------------------------------------------------
+    -- UNIT DESTROYED CALLBACK
+    --------------------------------------------------------------------------------
     function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
-        local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef) then
-            TeamLabsNb[unitTeam][unitDefID] = (TeamLabsNb[unitTeam][unitDefID] or 1) - 1
-            if TeamLabsNb[unitTeam][unitDefID] < 0 then
-                TeamLabsNb[unitTeam][unitDefID] = 0
+        if limitedUnitDefIDs[unitDefID] then
+            local teamLabs = TeamLabsNb[unitTeam]
+            teamLabs[unitDefID] = (teamLabs[unitDefID] or 1) - 1
+            if teamLabs[unitDefID] < 0 then
+                teamLabs[unitDefID] = 0
             end
         end
     end
 
+    --------------------------------------------------------------------------------
+    -- UNIT GIVEN CALLBACK
+    --------------------------------------------------------------------------------
     function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
-        local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef) then
-            TeamLabsNb[oldTeam][unitDefID] = (TeamLabsNb[oldTeam][unitDefID] or 1) - 1
-            if TeamLabsNb[oldTeam][unitDefID] < 0 then
-                TeamLabsNb[oldTeam][unitDefID] = 0
+        if limitedUnitDefIDs[unitDefID] then
+            -- Decrement old team count
+            local oldTeamLabs = TeamLabsNb[oldTeam]
+            oldTeamLabs[unitDefID] = (oldTeamLabs[unitDefID] or 1) - 1
+            if oldTeamLabs[unitDefID] < 0 then
+                oldTeamLabs[unitDefID] = 0
             end
-            TeamLabsNb[newTeam][unitDefID] = (TeamLabsNb[newTeam][unitDefID] or 0) + 1
+            -- Increment new team count
+            local newTeamLabs = TeamLabsNb[newTeam]
+            newTeamLabs[unitDefID] = (newTeamLabs[unitDefID] or 0) + 1
         end
     end
 
+    --------------------------------------------------------------------------------
+    -- ALLOW UNIT CREATION CALLBACK
+    --------------------------------------------------------------------------------
     function gadget:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z, facing)
-        local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef) then
-            local currentCount = TeamLabsNb[builderTeam][unitDefID] or 0
+        if limitedUnitDefIDs[unitDefID] then
+            local teamLabs = TeamLabsNb[builderTeam]
+            local currentCount = teamLabs[unitDefID] or 0
             if currentCount >= maxLabsPerType then
-                SendMessageToTeam(builderTeam, color .. "Warning: Can't build more " .. unitDef.name .. ", limit of " .. maxLabsPerType .. " reached for this lab type.")
+                local unitName = unitDefNames[unitDefID] or "Unknown Unit"
+                local message = string.format(warningMessageTemplate, unitName, maxLabsPerType)
+                SendMessageToTeam(builderTeam, color .. message)
                 return false
             end
         end
         return true
     end
 
+    --------------------------------------------------------------------------------
+    -- ALLOW UNIT TRANSFER CALLBACK
+    --------------------------------------------------------------------------------
     function gadget:AllowUnitTransfer(unitID, unitDefID, oldTeam, newTeam, capture)
-        local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef) then
-            local currentCountNewTeam = TeamLabsNb[newTeam][unitDefID] or 0
+        if limitedUnitDefIDs[unitDefID] then
+            local newTeamLabs = TeamLabsNb[newTeam]
+            local currentCountNewTeam = newTeamLabs[unitDefID] or 0
             if currentCountNewTeam >= maxLabsPerType then
-                SendMessageToTeam(oldTeam, color .. "Warning: Can't transfer " .. unitDef.name .. ", limit of " .. maxLabsPerType .. " reached for team " .. newTeam .. ".")
+                local unitName = unitDefNames[unitDefID] or "Unknown Unit"
+                local message = string.format(transferWarningMessageTemplate, unitName, maxLabsPerType, newTeam)
+                SendMessageToTeam(oldTeam, color .. message)
                 return false
             end
         end
