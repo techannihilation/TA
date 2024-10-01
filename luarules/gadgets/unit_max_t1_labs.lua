@@ -3,7 +3,7 @@ function gadget:GetInfo()
         name = "Tech Level 1 Lab Limit",
         desc = "Limits construction of T1 labs",
         author = "Silver",
-        version = "1.3",
+        version = "1.4",
         date = "2024",
         license = "GNU GPL, v2 or later",
         layer = 0,
@@ -35,10 +35,18 @@ local techLevel1Pattern = "tech%s*level?%s*1"
 --------------------------------------------------------------------------------
 
 -- Function to check if the unit's description matches the T1 lab pattern
-local function isTechLevel1(description)
+local function isTechLevel1(unitDef)
+    local description = unitDef.description
+    local isBuilding = unitDef.isBuilding
+
+    if not isBuilding then
+        return false  -- Exclude non-building units (constructors)
+    end
+
     if not description then
         return false
     end
+
     local descLower = string.lower(description)
     return string.find(descLower, techLevel1Pattern) ~= nil
 end
@@ -59,7 +67,7 @@ if (gadgetHandler:IsSyncedCode()) then
                 local unitID = allTeamUnits[i]
                 local unitDefID = GetUnitDefID(unitID)
                 local unitDef = UnitDefs[unitDefID]
-                if unitDef and isTechLevel1(unitDef.description) then
+                if unitDef and isTechLevel1(unitDef) then
                     TeamLabsNb[teamID][unitDefID] = (TeamLabsNb[teamID][unitDefID] or 0) + 1
                 end
             end
@@ -68,14 +76,14 @@ if (gadgetHandler:IsSyncedCode()) then
 
     function gadget:UnitCreated(unitID, unitDefID, unitTeam)
         local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef.description) then
+        if unitDef and isTechLevel1(unitDef) then
             TeamLabsNb[unitTeam][unitDefID] = (TeamLabsNb[unitTeam][unitDefID] or 0) + 1
         end
     end
 
     function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
         local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef.description) then
+        if unitDef and isTechLevel1(unitDef) then
             TeamLabsNb[unitTeam][unitDefID] = (TeamLabsNb[unitTeam][unitDefID] or 1) - 1
             if TeamLabsNb[unitTeam][unitDefID] < 0 then
                 TeamLabsNb[unitTeam][unitDefID] = 0
@@ -85,7 +93,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
     function gadget:UnitGiven(unitID, unitDefID, newTeam, oldTeam)
         local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef.description) then
+        if unitDef and isTechLevel1(unitDef) then
             TeamLabsNb[oldTeam][unitDefID] = (TeamLabsNb[oldTeam][unitDefID] or 1) - 1
             if TeamLabsNb[oldTeam][unitDefID] < 0 then
                 TeamLabsNb[oldTeam][unitDefID] = 0
@@ -96,7 +104,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
     function gadget:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z, facing)
         local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef.description) then
+        if unitDef and isTechLevel1(unitDef) then
             local currentCount = TeamLabsNb[builderTeam][unitDefID] or 0
             if currentCount >= maxLabsPerType then
                 SendMessageToTeam(builderTeam, color .. "Warning: Can't build more " .. unitDef.name .. ", limit of " .. maxLabsPerType .. " reached for this lab type.")
@@ -108,7 +116,7 @@ if (gadgetHandler:IsSyncedCode()) then
 
     function gadget:AllowUnitTransfer(unitID, unitDefID, oldTeam, newTeam, capture)
         local unitDef = UnitDefs[unitDefID]
-        if unitDef and isTechLevel1(unitDef.description) then
+        if unitDef and isTechLevel1(unitDef) then
             local currentCountNewTeam = TeamLabsNb[newTeam][unitDefID] or 0
             if currentCountNewTeam >= maxLabsPerType then
                 SendMessageToTeam(oldTeam, color .. "Warning: Can't transfer " .. unitDef.name .. ", limit of " .. maxLabsPerType .. " reached for team " .. newTeam .. ".")
