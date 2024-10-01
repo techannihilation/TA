@@ -24,7 +24,6 @@ local function UpdateCount()
 	for teamID, _ in pairs(teamComs) do
 		local enemyComCount = 0
 		local _, _, _, _, _, allyTeamID = Spring.GetTeamInfo(teamID, false)
-
 		for otherTeamID, _ in pairs(teamComs) do
 			local _, _, _, _, _, otherAllyTeamID = Spring.GetTeamInfo(otherTeamID, false)
 
@@ -32,7 +31,6 @@ local function UpdateCount()
 				enemyComCount = enemyComCount + teamComs[otherTeamID]
 			end
 		end
-
 		Spring.SetTeamRulesParam(teamID, "enemyComCount", enemyComCount, {
 			private = true,
 			allied = false
@@ -42,17 +40,14 @@ end
 
 function gadget:Initialize()
 	local teamList = Spring.GetTeamList()
-
 	for _, teamID in ipairs(teamList) do
 		local newCount = 0
 
 		for commanders in pairs(comDefs) do
 			newCount = newCount + Spring.GetTeamUnitDefCount(teamID, commanders)
 		end
-
 		teamComs[teamID] = newCount
 	end
-
 	UpdateCount()
 end
 
@@ -61,7 +56,6 @@ function gadget:UnitCreated(unitID, unitDefID, teamID)
 		if not teamComs[teamID] then
 			teamComs[teamID] = 0
 		end
-
 		teamComs[teamID] = teamComs[teamID] + 1
 		UpdateCount()
 	end
@@ -72,7 +66,6 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID)
 		if not teamComs[teamID] then
 			teamComs[teamID] = 0
 		end
-
 		teamComs[teamID] = teamComs[teamID] - 1
 		UpdateCount()
 	end

@@ -1,222 +1,146 @@
 function gadget:GetInfo()
 	return {
-		name = "Team Com Ends + dead allyteam blowup",
-		desc = "Implements com ends for allyteams + blows up team if no players left",
-		author = "KDR_11k (David Becker), Fast (René Jochum)",
-		date = "2020-04-19",
+		name = "Team Com Ends",
+		desc = "Implements com ends for allyteams",
+		author = "KDR_11k (David Becker), Floris",
+		date = "2008-02-04",
 		license = "Public domain",
 		layer = 1,
 		enabled = true
 	}
 end
 
--- this acts just like Com Ends except instead of killing a player's units when
--- his com dies it acts on an allyteam level, if all coms in an allyteam are dead
--- the allyteam is out
-
--- the deathmode modoption must be set to one of the following to enable this
-local endmodes = {
-	com=true,
-}
-
-if (gadgetHandler:IsSyncedCode()) then
-
---SYNCED
-
-local destroyQueue = {}
-
-local destroyUnitQueue = {}
-
-local aliveCount = {}
-local deadAllyTeams = {}
-local isAlive = {}
-
-local GetTeamList=Spring.GetTeamList
-local GetTeamUnits = Spring.GetTeamUnits
-local GetUnitAllyTeam = Spring.GetUnitAllyTeam
-local DestroyUnit=Spring.DestroyUnit
-local GetUnitPosition = Spring.GetUnitPosition
-local SpawnCEG = Spring.SpawnCEG
-
-local DISTANCE_LIMIT = (math.max(Game.mapSizeX,Game.mapSizeZ) * math.max(Game.mapSizeX,Game.mapSizeZ))
-local min = math.min
-local deathWave = false -- is the death wave happening right now?
-local deathTimeBoost = 1
-local modeComEnds = true
-
-local gaiaTeamID = Spring.GetGaiaTeamID()
-local allyTeamList = Spring.GetAllyTeamList()
-
--- Get coms from UnitDefs
-local comDefs = {}
-for _, u in ipairs(UnitDefs) do
-	if u.customParams.iscommander then
-		comDefs[u.id] = true
-	end
+if not gadgetHandler:IsSyncedCode() then
+	return
 end
 
+local GetTeamList = Spring.GetTeamList
+local GetUnitAllyTeam = Spring.GetUnitAllyTeam
+local gaiaTeamID = Spring.GetGaiaTeamID()
+
+local ignoredTeams = {
+	[gaiaTeamID] = true,
+}
 local teamCount = 0
-for _,teamID in ipairs(GetTeamList()) do
-	if teamID ~= gaiaTeamID then
+local teamList = Spring.GetTeamList()
+for i = 1, #teamList do
+	local luaAI = Spring.GetTeamLuaAI(teamList[i])
+	if luaAI  then
+		ignoredTeams[teamList[i]] = true
+		local teamID, leader, isDead, isAiTeam, side, allyTeam, incomeMultiplier, customTeamKeys = Spring.GetTeamInfo(teamList[i])
+		local teammates = Spring.GetTeamList(allyTeam)
+		for j = 1, #teammates do
+			ignoredTeams[teammates[j]] = true
+		end
+	end
+	if teamList[i] ~= gaiaTeamID then
 		teamCount = teamCount + 1
 	end
 end
+teamList = nil
 
---[[
-local blowUpWhenEmptyAllyTeam = true
-if Spring.GetModOptions() and Spring.GetModOptions().mo_noowner ~= nil and (tonumber(Spring.GetModOptions().mo_noowner) or 0) == 1 then
-	blowUpWhenEmptyAllyTeam = false
+local aliveComCount = {}
+local aliveTeamComCount = {}
+local commanderDeathQueue = {}
+local comDefs = VFS.Include("luarules/configs/comDefIDs.lua")
+
+local function commanderDeath(teamID, originX, originZ) -- optional: attackerUnitID, originX, originZ
+	local allyTeamID = select(6, Spring.GetTeamInfo(teamID, false))
+	aliveComCount[allyTeamID] = aliveComCount[allyTeamID] - 1
+	aliveTeamComCount[teamID] = aliveTeamComCount[teamID] - 1
+	if aliveComCount[allyTeamID] <= 0 then
+		for _, teamID in ipairs(Spring.GetTeamList(allyTeamID)) do
+			if not select(3, Spring.GetTeamInfo(teamID, false)) then
+				Spring.KillTeam(teamID)
+			end
+		end
+	end
+
+	if Spring.GetModOptions().deathmode == "own_com" and aliveTeamComCount[teamID] <= 0 then
+		if not select(3, Spring.GetTeamInfo(teamID, false)) then
+			Spring.KillTeam(teamID)
+		end
+	end
 end
-if teamCount == 2 then
-	blowUpWhenEmptyAllyTeam = false -- let player quit & rejoin in 1v1
+
+function gadget:GameFrame(gf)
+
+	-- execute 1 frame delayed destroyedunit (because a unit can be taken before its given which could make the game end)
+	-- untested if this actually is the case
+	for unitID, params in pairs(commanderDeathQueue) do
+		commanderDeath(params[1], params[2], params[3])
+		commanderDeathQueue[unitID] = nil
+	end
 end
---]]
-blowUpWhenEmptyAllyTeam = false -- disabled for now because other gadget already seems to handle this
 
+function gadget:UnitCreated(unitID, unitDefID, unitTeam)
+	if comDefs[unitDefID] and unitTeam ~= gaiaTeamID then
+		local allyTeam = GetUnitAllyTeam(unitID)
+		aliveComCount[allyTeam] = aliveComCount[allyTeam] + 1
+		aliveTeamComCount[unitTeam] = aliveTeamComCount[unitTeam] + 1
+	end
+end
 
-local function getSqrDistance(x1,z1,x2,z2)
-  local dx,dz = x1-x2,z1-z2
-  return (dx*dx)+(dz*dz)
+function gadget:UnitDestroyed(unitID, unitDefID, unitTeam, attackerID, attackerDefID, attackerTeam)
+	if comDefs[unitDefID] and not ignoredTeams[unitTeam] then
+		local x,_,z = Spring.GetUnitPosition(unitID)
+		commanderDeathQueue[unitID] = {unitTeam, x, z}
+	end
+end
+
+local function transferCommander(unitID, unitTeam, newTeam)
+	local allyTeamID = select(6, Spring.GetTeamInfo(unitTeam, false))
+	local newAllyTeamID = select(6, Spring.GetTeamInfo(newTeam, false))
+	if allyTeamID ~= newAllyTeamID then
+		-- add to newTeam
+		aliveComCount[newAllyTeamID] = aliveComCount[newAllyTeamID] + 1
+		aliveTeamComCount[newTeam] = aliveTeamComCount[newTeam] + 1
+		-- remove from unitTeam
+		local x,_,z = Spring.GetUnitPosition(unitID)
+		commanderDeathQueue[unitID] = {unitTeam, x, z}
+	end
+end
+
+function gadget:UnitGiven(unitID, unitDefID, newTeam, unitTeam)
+	if comDefs[unitDefID] and not ignoredTeams[unitTeam] then
+		transferCommander(unitID, unitTeam, newTeam)
+	end
+end
+
+function gadget:UnitTaken(unitID, unitDefID, unitTeam, newTeam)
+	if comDefs[unitDefID] and not ignoredTeams[unitTeam] then
+		transferCommander(unitID, unitTeam, newTeam)
+	end
 end
 
 function gadget:Initialize()
-	if not endmodes[Spring.GetModOptions().deathmode] then
-		if blowUpWhenEmptyAllyTeam == false then
-			gadgetHandler:RemoveGadget(self) -- in particular, this gadget is removed if deathmode is "killall" or "none"
-		end
-		modeComEnds = false
-	end
-	for _,t in ipairs(allyTeamList) do
-		aliveCount[t] = 0
-	end
-end
-
-local function ReCheck()
-	-- occasionally, recheck just to make sure...
-	for _,at in ipairs(allyTeamList) do
-		local ac = 0
-		for _,teamID in ipairs(GetTeamList(at)) do
-			for commander,_ in pairs(comDefs) do
-				ac = ac + Spring.GetTeamUnitDefCount(teamID, commander)
-			end			
-		end
-		aliveCount[at] = ac
-	end
-end
-
-function gadget:GameFrame(t)
-
-	if t%30==0 then
-		ReCheck()
+	-- disable gadget when deathmode is "killall" or "none", or scoremode isnt regular
+	if Spring.GetModOptions().deathmode ~= 'com' then
+		gadgetHandler:RemoveGadget(self)
 	end
 
-	if t % 15 < .1 then
-		-- blow up an allyteam when it has no players left
-		if blowUpWhenEmptyAllyTeam then
-			for _,allyTeamID in ipairs(allyTeamList) do
-				if deadAllyTeams[allyTeamID] == nil then
-					local deadAllyTeam = true
-					local teamsList = GetTeamList(allyTeamID)
-					for _,teamID in ipairs(teamsList) do
-						local _,_,_,isAi, _, _ = Spring.GetTeamInfo(teamID)
-						if isAi or teamID == gaiaTeamID then
-							deadAllyTeam = false
-						else
-							local playersList = Spring.GetPlayerList(teamID,true)
-							for _,playerID in ipairs(playersList) do
-								local name,_,isSpec = Spring.GetPlayerInfo(playerID)
-								if name ~= nil and not isSpec then
-									deadAllyTeam = false
-								end
-							end
-						end
-					end
-					if deadAllyTeam then
-						destroyQueue[allyTeamID] = {x=0,y=0,z=0}
-						aliveCount[allyTeamID] = 0
-						deadAllyTeams[allyTeamID] = true
-						for _,teamID in ipairs(teamsList) do
-							Spring.KillTeam(teamID)
-						end
-						break
-					end
+	for _,allyTeamID in ipairs(Spring.GetAllyTeamList()) do
+		aliveComCount[allyTeamID] = 0
+	end
+	for _,teamID in ipairs(Spring.GetTeamList()) do
+		aliveTeamComCount[teamID] = 0
+	end
+
+	-- in case a luarules reload happens
+	local units = Spring.GetAllUnits()
+	for i = 1, #units do
+		local unitID = units[i]
+		gadget:UnitCreated(unitID, Spring.GetUnitDefID(unitID), Spring.GetUnitTeam(unitID))
+	end
+
+	-- for debug purpose: destroy comless allyteams (usefull when team has no coms because of error and you do luarules reload)
+	if Spring.GetGameFrame() > 1 then
+		for allyTeamID, count in ipairs(aliveComCount) do
+			if count <= 0 then
+				for _,teamID in ipairs(GetTeamList(allyTeamID)) do
+					commanderDeath(teamID)
 				end
 			end
 		end
-
-		for at,defs in pairs(destroyQueue) do
-			if aliveCount[at] <= 0 then --safety check, triggers on transferring the last com otherwise
-				for _,team in ipairs(GetTeamList(at)) do
-					for _,unitID in ipairs(GetTeamUnits(team)) do
-						local x,y,z = GetUnitPosition(unitID)
-						local deathTime = min(((getSqrDistance(x,z,defs.x,defs.z) / DISTANCE_LIMIT) * 450), 450)
-						if (destroyUnitQueue[unitID] == nil) then
-							destroyUnitQueue[unitID] = {
-								time = t + deathTime + math.random(0,7),
-								x = x,
-								y = y,
-								z = z,
-								spark = false,
-                                a = defs.a,
-							}
-						end
-					end
-				end
-				deathWave = true
-			end
-			destroyQueue[at]=nil
-		end
 	end
-
-	if (deathWave) and next(destroyUnitQueue) then
-		local dt = (t + deathTimeBoost)
-		for unitID, defs in pairs(destroyUnitQueue) do
-			if ((dt > (defs.time - 15)) and (defs.spark == false)) then
-				SpawnCEG("lightningexplo",defs.x,defs.y,defs.z,0,0,0)
-				destroyUnitQueue[unitID].spark = true
-			end
-			if (dt > defs.time) then
-                if defs.a then DestroyUnit(unitID, true, nil, defs.a)
-                    else DestroyUnit(unitID, true) -- if 4th arg is given, it cannot be nil (or engine complains)                
-                end
-				destroyUnitQueue[unitID] = nil
-			end
-		end
-		deathTimeBoost = math.min(deathTimeBoost * 1.5, 500)
-	end
-	
-end
-
-function gadget:UnitCreated(u, ud, team)
-	if modeComEnds then
-		isAlive[u] = true
-		if UnitDefs[ud].customParams.iscommander then
-			local allyTeam = GetUnitAllyTeam(u)
-			aliveCount[allyTeam] = aliveCount[allyTeam] + 1
-		end
-	end
-end
-
-function gadget:UnitDestroyed(u, ud, team, a, ad, ateam)
-	if modeComEnds then
-		isAlive[u] = nil
-		if UnitDefs[ud].customParams.iscommander then
-			local allyTeam = GetUnitAllyTeam(u)
-			aliveCount[allyTeam] = aliveCount[allyTeam] - 1
-			if aliveCount[allyTeam] <= 0 then
-				local x,y,z = Spring.GetUnitPosition(u)
-				destroyQueue[allyTeam] = {x = x, y = y, z = z, a = a}
-            end
-		end
-	end
-end
-
--- TA does not allow sharing to enemy, so no need to check Given, Taken, etc
-
-else
-
---UNSYNCED
-
-return false
-
 end

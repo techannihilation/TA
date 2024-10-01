@@ -60,7 +60,7 @@ local options = {
     section = "ta_modes",
     items = {
       {
-        key = "neverend",
+        key = "none",
         name = "None",
         desc = "Teams are never eliminated"
       },
@@ -68,6 +68,11 @@ local options = {
         key = "com",
         name = "Kill all enemy Commanders",
         desc = "When a team has no Commanders left, it loses"
+      },
+        {
+        key = "own_com",
+        name = "Player resign on Com deat",
+        desc = "When player commander dies, you auto-resign."
       },
       {
         key = "killall",
