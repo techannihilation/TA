@@ -37,7 +37,7 @@ local modrules = {
   },
 
   capture = {
-    energyCostFactor = 0.5, -- How much of the original energy cost it requires to capture something.
+    energyCostFactor = 0.8, -- How much of the original energy cost it requires to capture something.
   },
 
   flankingBonus = {
