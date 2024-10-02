@@ -28,18 +28,17 @@ local limitedUnitDefIDs = {}  -- Set of unitDefIDs that should be limited
 local unitDefNames = {}  -- Stores the name of limited units for messaging
 local color = "\255\255\64\64"
 
--- Pattern matching various "tech level 1" variants
--- Matches fragments like "tech level 1", "techlevel1", "tech level1", "tech1"
-local techLevel1Pattern = "tech%s*level?%s*1"
-
+-- This pattern matches different variations of the terms "t1", "tech1", "tech 1", or "tech level 1".
+local techLevel1Pattern = "t?e?c?h?%s?l?e?v?e?l?%s?1"
 --------------------------------------------------------------------------------
 -- HELPER FUNCTIONS
 --------------------------------------------------------------------------------
 
 -- Function to determine if a unit should be limited based on its description and building status
 local function determineLimit(unitDef)
-    if not unitDef.isBuilding then
-        return false  -- Exclude non-building units (constructors)
+
+    if not unitDef.isBuilding or not unitDef.isBuilder then
+        return false -- Exclude non-building units and units that cannot build
     end
 
     if not unitDef.description then
