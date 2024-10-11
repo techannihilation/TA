@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 1789,
 		buildcostmetal = 95,
 		buildpic = "tllfight.dds",
-		buildtime = 3500,
+		buildtime = 5250,
 		canattack = true,
 		canfly = true,
 		canguard = true,

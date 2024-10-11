@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 9618,
 		buildcostmetal = 150,
 		buildpic = "corvamp.dds",
-		buildtime = 9000,
+		buildtime = 13500,
 		canattack = true,
 		canfly = true,
 		canguard = true,

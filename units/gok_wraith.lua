@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 66666,
 		buildcostmetal = 666,
 		buildpic = "gok_wraith.dds",
-		buildtime = 18500,
+		buildtime = 27750,
 		canattack = true,
 		canfly = true,
 		canguard = true,

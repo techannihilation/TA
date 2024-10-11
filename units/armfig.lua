@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 2133,
 		buildcostmetal = 85,
 		buildpic = "armfig.dds",
-		buildtime = 4000,
+		buildtime = 6000,
 		canattack = true,
 		canfly = true,
 		canguard = true,

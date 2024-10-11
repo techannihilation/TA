@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 8888,
 		buildcostmetal = 161,
 		buildpic = "gok_sucub.dds",
-		buildtime = 8750,
+		buildtime = 13125,
 		canattack = true,
 		canfly = true,
 		canguard = true,

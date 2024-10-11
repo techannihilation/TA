@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 62850,
 		buildcostmetal = 690,
 		buildpic = "talon_hornet.dds",
-		buildtime = 18500,
+		buildtime = 27750,
 		canattack = true,
 		canfly = true,
 		canguard = true,

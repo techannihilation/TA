@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 54645,
 		buildcostmetal = 790,
 		buildpic = "rumad_fighter_lvl3.dds",
-		buildtime = 18000,
+		buildtime = 27000,
 		canattack = true,
 		canfly = true,
 		canguard = true,

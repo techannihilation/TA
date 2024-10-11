@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 2222,
 		buildcostmetal = 88,
 		buildpic = "gok_angel.dds",
-		buildtime = 3500,
+		buildtime = 5250,
 		canattack = true,
 		canfly = true,
 		canguard = true,

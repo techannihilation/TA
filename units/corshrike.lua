@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 70612,
 		buildcostmetal = 580,
 		buildpic = "corshrike.dds",
-		buildtime = 18000,
+		buildtime = 27000,
 		canattack = true,
 		canfly = true,
 		canguard = true,

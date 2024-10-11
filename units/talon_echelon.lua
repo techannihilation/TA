@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 11800,
 		buildcostmetal = 120,
 		buildpic = "talon_echelon.dds",
-		buildtime = 8750,
+		buildtime = 13125,
 		canattack = true,
 		canfly = true,
 		canguard = true,

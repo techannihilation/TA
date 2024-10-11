@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 10235,
 		buildcostmetal = 141,
 		buildpic = "armhawk.dds",
-		buildtime = 9000,
+		buildtime = 13500,
 		canattack = true,
 		canfly = true,
 		canguard = true,

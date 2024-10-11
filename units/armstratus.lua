@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 13500,
 		builder = false,
 		buildpic = "armstratus.dds",
-		buildtime = 300000,
+		buildtime = 450000,
 		canattack = true,
 		canfly = true,
 		canguard = true,

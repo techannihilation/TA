@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 93820,
 		buildcostmetal = 5130,
 		buildpic = "tllcondor.dds",
-		buildtime = 50000,
+		buildtime = 75000,
 		canattack = true,
 		canfly = true,
 		canguard = true,

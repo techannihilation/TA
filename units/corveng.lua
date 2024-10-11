@@ -8,7 +8,7 @@ return {
 		buildcostenergy = 2025,
 		buildcostmetal = 87,
 		buildpic = "corveng.dds",
-		buildtime = 3500,
+		buildtime = 5250,
 		canattack = true,
 		canfly = true,
 		canguard = true,

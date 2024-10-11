@@ -9,7 +9,7 @@ return {
 		buildcostmetal = 10450,
 		builder = false,
 		buildpic = "gok_zakul.dds",
-		buildtime = 200000,
+		buildtime = 300000,
 		canattack = true,
 		canfly = true,
 		canguard = true,
