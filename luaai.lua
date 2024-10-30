@@ -11,6 +11,10 @@ return {
     name = 'Null AI',
     desc = 'Empty AI for testing purposes'
   },
+  {
+    name = 'Simple AI',
+    desc = 'Modified for Tech Annihilation'
+  },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
