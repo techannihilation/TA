@@ -15,6 +15,14 @@ return {
     name = 'Simple AI',
     desc = 'Modified for Tech Annihilation'
   },
+  {
+    name = 'SimpleDefenderAI',
+    desc = 'EasyAI'
+  },
+  {
+    name = 'SimpleConstructorAI',
+    desc = 'EasyAI'
+  },
 }
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
