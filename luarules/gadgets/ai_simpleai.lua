@@ -270,7 +270,7 @@ local function SimpleBuildOrder(cUnitID, building)
 				local buildnear = units[random(1, #units)]
 				local refDefID = Spring.GetUnitDefID(buildnear)
 				local isBuilding = UnitDefs[refDefID].isBuilding
-				local isCommander = (UnitDefs[refDefID].name == "armcom" or UnitDefs[refDefID].name == "corcom")
+				local isCommander = (UnitDefs[refDefID].name == "armcom" or UnitDefs[refDefID].name == "corcom" or UnitDefs[refDefID].name == "gok_com" or UnitDefs[refDefID].name == "rumad_com" or UnitDefs[refDefID].name == "talon_com" or UnitDefs[refDefID].name == "tllcom")
 				local isExtractor = UnitDefs[refDefID].extractsMetal > 0
 				if (isBuilding or isCommander) then-- and not isExtractor then
 					local refx, refy, refz = Spring.GetUnitPosition(buildnear)
