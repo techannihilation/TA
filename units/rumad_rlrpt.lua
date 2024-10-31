@@ -55,7 +55,7 @@ return {
 				footprintx = 3,
 				footprintz = 3,
 				metal = 10125,
-				object = "tll/rumad_rlrpt_dead.s3o",
+				object = "rumad/rumad_rlrpt_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
