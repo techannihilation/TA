@@ -151,7 +151,7 @@ for unitDefID, unitDef in pairs(UnitDefs) do
 			SimpleExtractorDefs[unitDefID] = 1
 		elseif (unitDef.energyMake > 19 and (not unitDef.energyUpkeep or unitDef.energyUpkeep < 10)) or (unitDef.windGenerator > 0 and wind > 10) or unitDef.tidalGenerator > 0 or unitDef.customParams.solar then
 			SimpleGeneratorDefs[unitDefID] = 1
-		elseif unitDef.customParams.energyconv_capacity and unitDef.customParams.energyconv_efficiency then
+		elseif convertCapacities[unitDefID] then
 			SimpleConverterDefs[#SimpleConverterDefs + 1] = unitDefID
 		elseif unitDef.isBuilding and #unitDef.weapons > 0 then
 			SimpleTurretDefs[unitDefID] = 1
