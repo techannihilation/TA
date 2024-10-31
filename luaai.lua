@@ -13,7 +13,7 @@ return {
   },
   {
     name = 'Simple AI',
-    desc = 'Modified for Tech Annihilation'
+    desc = 'EasyAI'
   },
   {
     name = 'SimpleDefenderAI',
@@ -21,6 +21,10 @@ return {
   },
   {
     name = 'SimpleConstructorAI',
+    desc = 'EasyAI'
+  },
+  {
+    name = 'SimpleCheaterAI',
     desc = 'EasyAI'
   },
 }
