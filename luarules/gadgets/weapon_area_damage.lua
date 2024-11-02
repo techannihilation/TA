@@ -40,6 +40,7 @@ local scouts = {
 	[UnitDefNames["gok_cut"].id] = true,
 	[UnitDefNames["gok_negator"].id] = true,
 	[UnitDefNames["rumad_meyes"].id] = true,
+	[UnitDefNames["talon_topaz"].id] = true,
 
 	--Infantry Talon
   [UnitDefNames["talon_infantry"].id] = true,
