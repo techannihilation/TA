@@ -18,7 +18,7 @@ local lastLoadMessage = ""
 local infoMessage = {}
 
 --table.insert(infoMessage, "Merry Xmas From TECHA.")
-table.insert(infoMessage, "Halloween is comming on TECHA.")
+--table.insert(infoMessage, "Halloween is comming on TECHA.")
 
 if Spring.GetModOptions() then
 	if Spring.GetModOptions().deathmode then

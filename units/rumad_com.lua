@@ -51,7 +51,7 @@ return {
 		nochasecategory = "ALL",
 		norestrict = 1,
 		objectname = "rumad/rumad_com.s3o",
-		objectname = "rumad_com_halloween.s3o",
+		--objectname = "rumad_com_halloween.s3o",
 		radaremitheight = 55,
 		reclaimable = false,
 		script = "rumad_com.cob",
