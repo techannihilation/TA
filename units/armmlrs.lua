@@ -89,7 +89,7 @@ return {
 		weapondefs = {
 			barrage = {
 				accuracy = 1000,
-				areaofeffect = 256,
+				areaofeffect = 425,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 3,
@@ -100,7 +100,7 @@ return {
 				cratermult = 0,
 				explosiongenerator = "custom:Explosion_Rocket_L",
 				firestarter = 80,
-				flighttime = 6,
+				flighttime = 4,
 				model = "weapon_rocketl.s3o",
 				name = "Barrarge",
 				proximitypriority = -1,
@@ -112,7 +112,7 @@ return {
 				soundhitwetvolume = 0.6,
 				soundstart = "mlrsfireshort",
 				soundtrigger = true,
-				sprayangle = 300,
+				sprayangle = 400,
 				startvelocity = 150,
 				targetable = 16,
 				texture1 = "null",
@@ -129,8 +129,8 @@ return {
 				weaponvelocity = 900,
 				wobble = 6000,
 				damage = {
-					commanders = 1000,
-					default = 2000,
+					commanders = 2000,
+					default = 3500,
 					subs = 5,
 				},
 			},
