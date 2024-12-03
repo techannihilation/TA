@@ -136,7 +136,7 @@ return {
 				impulseboost = 0,
 				impulsefactor = 0,
 				name = "Multi-Laser",
-				range = 1400,
+				range = 1450,
 				reloadtime = 0.15,
 				rgbcolor = "0.18 0.10 0.65",
 				soundhitdry = "xplosml3",

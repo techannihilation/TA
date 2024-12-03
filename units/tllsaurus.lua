@@ -133,7 +133,7 @@ return {
 				intensity = 8,
 				name = "RapidBlaster",
 				noselfdamage = true,
-				range = 1000,
+				range = 1200,
 				reloadtime = 0.75,
 				rgbcolor = "0.1 0.9 1.0",
 				size = 3,
