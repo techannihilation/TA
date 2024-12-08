@@ -59,7 +59,7 @@ return {
 				footprintx = 2,
 				footprintz = 2,
 				metal = 187,
-				object = "armbeamer_DEAD",
+				object = "arm/armbeamer_dead.s3o",
 				reclaimable = true,
 				customparams = {
 					fromunit = 1,
