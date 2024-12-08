@@ -89,7 +89,7 @@ return {
 		weapondefs = {
 			barrage = {
 				accuracy = 1000,
-				areaofeffect = 425,
+				areaofeffect = 272,
 				avoidfeature = false,
 				burnblow = true,
 				burst = 3,
