@@ -8,7 +8,7 @@ return {
 		canattack = false,
 		category = "ALL SURFACE",
 		corpse = "dragonsteeth",
-		description = "Free Resources :p",
+		description = "Happy Xmas",
 		footprintx = 2,
 		footprintz = 2,
 		idleautoheal = 5,
