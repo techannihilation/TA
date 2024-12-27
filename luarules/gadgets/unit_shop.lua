@@ -157,7 +157,7 @@ function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdO
     speedBoostedUnits[unitID] = true
     upgradedUnits[unitID]     = true  -- mark that this unit has *any* special upgrade now
 
-    local moveData = Spring.GetUnitMoveTypeData(unitID)
+    local moveData = UnitDefs[ud].speed
     if moveData and moveData.maxSpeed then
       Spring.MoveCtrl.SetGroundMoveTypeData(unitID, {
         maxSpeed = moveData.maxSpeed * SPEED_BOOST_FACTOR,
