@@ -4,7 +4,7 @@ function gadget:GetInfo()
     desc    = "Units purchase upgrades over time.",
     author  = "[ur]uncle",
     date    = "2024-12-28",
-    version = "1.5",
+    version = "1.6",
     license = "GNU GPL v2 or later",
     layer   = 0,
     enabled = true
@@ -35,12 +35,12 @@ local UPGRADE_COMMANDS = {
 
 -- Multipliers
 local SPEED_BOOST_FACTOR = 1.60
-local SPEED_COST_MULT    = 2.40
+local SPEED_COST_MULT    = 1.70
 
 local ARMOR_BOOST_FACTOR = 1.80
-local ARMOR_COST_MULT    = 2.00
+local ARMOR_COST_MULT    = 1.60
 
-local CLOAK_COST_MULT    = 2.70
+local CLOAK_COST_MULT    = 1.90
 
 local DECLAK_DISTANCE_MULT = 0.05
 
@@ -50,7 +50,7 @@ local SPEED_MOVING_CEG    = "speedboost_effect"
 local ARMOR_MOVING_CEG    = "armorboost_effect"
 local CLOAK_MOVING_CEG    = "cloak_effect"
 
-local TARGET_FRAMES_FULL = 15 * 30  -- 60s at 30fps
+local TARGET_FRAMES_FULL = 12 * 30  -- 60s at 30fps
 
 
 --------------------------------------------------------------------------------
@@ -205,14 +205,34 @@ local function FinishUpgrade(unitID, data)
   SendToUnsynced("UpgradeStop", unitID) -- notify unsynced (Stop once it's completed)
 
   local cmdID = data.cmdID
+  local currDefID = Spring.GetUnitDefID(unitID)
+  local ud        = UnitDefs[currDefID or -1]
+
   if cmdID == CMD_BUY_SPEED_BOOST then
     speedBoostedUnits[unitID] = true
 
-    local currDefID = Spring.GetUnitDefID(unitID)
-    local ud        = UnitDefs[currDefID or -1]
+    -- figure out the correct move-type call
     local moveData  = Spring.GetUnitMoveTypeData(unitID)
     local baseSpeed = (moveData and moveData.maxSpeed) or (ud and ud.speed) or 0
-    Spring.MoveCtrl.SetGroundMoveTypeData(unitID, { maxSpeed = baseSpeed * SPEED_BOOST_FACTOR })
+
+    if ud.canFly then
+      if ud.isHoveringAirUnit or ud.hoverAttack then
+        -- Gunship / hover-type air unit
+        Spring.MoveCtrl.SetGunshipMoveTypeData(unitID, {
+          maxSpeed = baseSpeed * SPEED_BOOST_FACTOR
+        })
+      else
+        -- Fighter or other flying unit
+        Spring.MoveCtrl.SetAirMoveTypeData(unitID, {
+          maxSpeed = baseSpeed * SPEED_BOOST_FACTOR
+        })
+      end
+    else
+      -- Ground or ship
+      Spring.MoveCtrl.SetGroundMoveTypeData(unitID, {
+        maxSpeed = baseSpeed * SPEED_BOOST_FACTOR
+      })
+    end
 
   elseif cmdID == CMD_BUY_ARMOR_BOOST then
     armorBoostedUnits[unitID] = true
@@ -221,21 +241,20 @@ local function FinishUpgrade(unitID, data)
   elseif cmdID == CMD_BUY_CLOAK then
     cloakedUnits[unitID] = true
 
-    local currDefID = Spring.GetUnitDefID(unitID)
-    local ud        = UnitDefs[currDefID or -1]
     if ud then
       local baseLOS = ud.losRadius or 0
       local decloakDistance = baseLOS * DECLAK_DISTANCE_MULT
-      Spring.SetUnitCloak(unitID, true, decloakDistance)
+      Spring.SetUnitCloak(unitID, 2, decloakDistance)
     end
   end
 
+  -- some special-effect
   local x,y,z = Spring.GetUnitPosition(unitID)
   if x then
     Spring.SpawnCEG(REPAIR_PAD_FX, x,y,z, 0,0,0,0)
   end
 
-  -- remove the relevant commands entirely (no second upgrade)
+  -- remove all upgrade commands so there's no second purchase
   local removeList = {CMD_BUY_SPEED_BOOST, CMD_BUY_ARMOR_BOOST, CMD_BUY_CLOAK}
   for _, cID in ipairs(removeList) do
     local cDesc = Spring.FindUnitCmdDesc(unitID, cID)
@@ -244,6 +263,7 @@ local function FinishUpgrade(unitID, data)
     end
   end
 end
+
 
 
 --------------------------------------------------------------------------------
@@ -319,7 +339,7 @@ function gadget:GameFrame(f)
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
         if x then
-          Spring.SpawnCEG(SPEED_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 20), z)
+          Spring.SpawnCEG(SPEED_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 50), z)
         end
       end
     end
@@ -327,18 +347,18 @@ function gadget:GameFrame(f)
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
         if x then
-          Spring.SpawnCEG(ARMOR_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 20), z)
+          Spring.SpawnCEG(ARMOR_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 50), z)
         end
       end
     end
   end
 
-  if f % 45 == 0 then
+  if f % 90 == 0 then
     for uID in pairs(cloakedUnits) do
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
         if x then
-          Spring.SpawnCEG(CLOAK_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 20), z)
+          Spring.SpawnCEG(CLOAK_MOVING_CEG, x, y+(Spring.GetUnitHeight(uID) or 50), z)
         end
       end
     end
@@ -369,7 +389,7 @@ function gadget:UnitDestroyed(unitID)
   end
   upgradedUnits[unitID]     = nil
   speedBoostedUnits[unitID] = nil
-  armorBoostedUnits[unitID]    = nil
+  armorBoostedUnits[unitID] = nil
   cloakedUnits[unitID]      = nil
 end
 
