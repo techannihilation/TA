@@ -7,7 +7,7 @@ return {
     sparklespawn = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 20,
+      count              = 12,
       ground             = true,
       water              = false,
       properties = {
@@ -33,7 +33,7 @@ return {
         emitrot            = 45,
         emitrotspread      = 32,
         emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 10, 0]],
+        gravity            = [[0, 20, 0]],
         numparticles       = 1,
         particlelife       = [[4 i0.43 r1]],
         particlelifespread = 16,
@@ -58,7 +58,7 @@ return {
     sparklespawn = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 20,
+      count              = 12,
       ground             = true,
       water              = false,
       properties = {
@@ -84,7 +84,7 @@ return {
         emitrot            = 45,
         emitrotspread      = 32,
         emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 10, 0]],
+        gravity            = [[0, 20, 0]],
         numparticles       = 1,
         particlelife       = [[4 i0.43 r1]],
         particlelifespread = 16,
@@ -109,7 +109,7 @@ return {
     sparklespawn = {
       air                = true,
       class              = [[CExpGenSpawner]],
-      count              = 20,
+      count              = 12,
       ground             = true,
       water              = false,
       properties = {
@@ -135,7 +135,7 @@ return {
         emitrot            = 45,
         emitrotspread      = 32,
         emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 10, 0]],
+        gravity            = [[0, 20, 0]],
         numparticles       = 1,
         particlelife       = [[4 i0.43 r1]],
         particlelifespread = 16,
