@@ -75,7 +75,7 @@ local function MakeSpeedCmdDesc(cost)
     name    = "Buy\nSpeed",
     action  = "buyspeedboost",
     tooltip = string.format(
-      "\255\1\255\1Purchase a +50%% Speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +60%% Speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       cost
     ),
     cursor  = "Attack",
@@ -90,7 +90,7 @@ local function MakeARMORCmdDesc(cost)
     name    = "Buy\nArmor",
     action  = "buyarmorboost",
     tooltip = string.format(
-      "\255\1\255\1Purchase a +75%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +80%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       cost
     ),
     cursor  = "Attack",
