@@ -34,13 +34,13 @@ local UPGRADE_COMMANDS = {
 }
 
 -- Multipliers
-local SPEED_BOOST_FACTOR = 1.60
-local SPEED_COST_MULT    = 1.70
+local SPEED_BOOST_FACTOR = 1.71
+local SPEED_COST_MULT    = 1.25
 
-local ARMOR_BOOST_FACTOR = 1.80
-local ARMOR_COST_MULT    = 1.60
+local ARMOR_BOOST_FACTOR = 1.91
+local ARMOR_COST_MULT    = 0.85
 
-local CLOAK_COST_MULT    = 1.90
+local CLOAK_COST_MULT    = 1.15
 
 local DECLAK_DISTANCE_MULT = 0.05
 
@@ -50,7 +50,7 @@ local SPEED_MOVING_CEG    = "speedboost_effect"
 local ARMOR_MOVING_CEG    = "armorboost_effect"
 local CLOAK_MOVING_CEG    = "cloak_effect"
 
-local TARGET_FRAMES_FULL = 12 * 30  -- 60s at 30fps
+local TARGET_FRAMES_FULL = 12 * 30
 
 
 --------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ local TARGET_FRAMES_FULL = 12 * 30  -- 60s at 30fps
 local upgradedUnits      = {}  -- [unitID] = true if upgrade is completed
 local inProgress         = {}  -- [unitID] = { cmdID, teamID, totalCost, accumPaid, baseDefID, cmdDescID }
 local speedBoostedUnits  = {}
-local armorBoostedUnits     = {}
+local armorBoostedUnits  = {}
 local cloakedUnits       = {}
 
 
@@ -75,7 +75,7 @@ local function MakeSpeedCmdDesc(cost)
     name    = "Buy\nSpeed",
     action  = "buyspeedboost",
     tooltip = string.format(
-      "\255\1\255\1Purchase a +60%% Speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +70%% Speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       cost
     ),
     cursor  = "Attack",
@@ -90,7 +90,7 @@ local function MakeARMORCmdDesc(cost)
     name    = "Buy\nArmor",
     action  = "buyarmorboost",
     tooltip = string.format(
-      "\255\1\255\1Purchase a +80%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +90%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       cost
     ),
     cursor  = "Attack",
@@ -526,9 +526,9 @@ function gadget:DrawWorld()
               -- Show progress
               if myTeam and spAreTeamsAllied(myTeam, teamID) then
                 gl.PushMatrix()
-                  gl.Translate(px, py+14, pz)
+                  gl.Translate(px, py + 14, pz)
                   gl.Billboard()
-                  gl.Text(string.format("Upgrading: %.0f%%", ratio * 100), 0, -20, 11, "oc")
+                  gl.Text(string.format("%.0f%%", ratio * 100), 0, -20, 11, "oc")
                 gl.PopMatrix()
               end
             end
