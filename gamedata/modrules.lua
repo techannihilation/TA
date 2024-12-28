@@ -3,7 +3,7 @@
 -- local engineVersionString = Engine.version
 -- local engineVersion = tonumber(string.match(engineVersionString, "%-(%d+)"))
 
-local expEnabled = Spring.GetModOptions().expscaleenabled or 0
+local expEnabled = Spring.GetModOptions().expscaleenabled or 1
 local flankDefaultMin = Spring.GetModOptions().exp_flankdefaultmin or 0.9
 local flankDefaultMax = Spring.GetModOptions().exp_flankdefaultmax or 1.9
 
