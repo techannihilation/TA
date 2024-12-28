@@ -23,9 +23,9 @@ if gadgetHandler:IsSyncedCode() then
 --  CONFIG / CONSTANTS
 --------------------------------------------------------------------------------
 
-local CMD_BUY_SPEED_BOOST   = 34567
-local CMD_BUY_ARMOR_BOOST   = 34568
-local CMD_BUY_CLOAK         = 34569
+local CMD_BUY_SPEED_BOOST   = 34797
+local CMD_BUY_ARMOR_BOOST   = 34798
+local CMD_BUY_CLOAK         = 34799
 
 local UPGRADE_COMMANDS = {
   [CMD_BUY_SPEED_BOOST] = true,
