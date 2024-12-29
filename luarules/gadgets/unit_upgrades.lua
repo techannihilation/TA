@@ -37,10 +37,10 @@ local UPGRADE_COMMANDS = {
 local SPEED_BOOST_FACTOR = 1.71
 local SPEED_COST_MULT    = 1.25
 
-local ARMOR_BOOST_FACTOR = 1.91
-local ARMOR_COST_MULT    = 0.85
+local ARMOR_BOOST_FACTOR = 2.20
+local ARMOR_COST_MULT    = 0.90
 
-local CLOAK_COST_MULT    = 1.15
+local CLOAK_COST_MULT    = 0.90
 
 local DECLAK_DISTANCE_MULT = 0.05
 
@@ -94,7 +94,7 @@ local function MakeARMORCmdDesc(cost)
     name    = "Buy\nArmor",
     action  = "buyarmorboost",
     tooltip = string.format(
-      "\255\1\255\1Purchase a +90%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +120%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       cost
     ),
     cursor  = "Attack",
