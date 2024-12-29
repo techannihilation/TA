@@ -56,7 +56,7 @@ local validUnitDefs = {}
 
 function gadget:Initialize()
   for udid, ud in pairs(UnitDefs) do
-    if (not ud.isFactory) and (not ud.isBomberAirUnit) then
+    if not ud.isBomberAirUnit then --(not ud.isFactory) and
       validUnitDefs[udid] = true
     end
   end
