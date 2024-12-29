@@ -224,7 +224,8 @@ local function FinishUpgrade(unitID, data)
     else
       -- Ground or ship
       Spring.MoveCtrl.SetGroundMoveTypeData(unitID, {
-        maxSpeed = baseSpeed * SPEED_BOOST_FACTOR
+        maxSpeed = baseSpeed * SPEED_BOOST_FACTOR,
+        maxWantedSpeed = baseSpeed * SPEED_BOOST_FACTOR
       })
     end
 

@@ -615,8 +615,9 @@ local defs = {}
 
 for moveName, moveData in pairs(moveDatas) do
     moveData.heatmapping = true
-    moveData.allowRawMovement = true
     moveData.name = moveName
+    moveData.allowRawMovement = true
+    moveData.allowTerrainCollisions = false
     defs[#defs + 1] = moveData
 end
 
