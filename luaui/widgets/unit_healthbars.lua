@@ -269,9 +269,6 @@ function widget:Shutdown()
   widgetHandler:DeregisterGlobal('MorphFinished', MorphFinished)
   widgetHandler:DeregisterGlobal('MorphStart', MorphStart)
   widgetHandler:DeregisterGlobal('MorphStop', MorphStop)
-  widgetHandler:DeregisterGlobal('UpgradeStart', UpgradeStart)
-  widgetHandler:DeregisterGlobal('UpgradeStop', UpgradeStop)
-  
   widgetHandler:DeregisterGlobal('MorphDrawProgress')
 
   --// catch f9
@@ -582,8 +579,7 @@ do
         end
       end
 
-      local upgrade = UnitUpgrades[unitID]
-      --Spring.Echo(upgrade)
+      local upgrade = WG["unitInUpgrade"][unitID]
       --// PARALYZE
       if (emp>0.01)and(hp>0.01)and(emp<1e8)and(not morph) and not upgrade then 
         local stunned = GetUnitIsStunned(unitID) 
@@ -951,16 +947,6 @@ end
 function MorphFinished(unitID)
   UnitMorphs[unitID] = nil
 end
-
-
-function UpgradeStart(unitID)
-  UnitUpgrades[unitID] = true
-end
-
-function UpgradeStop(unitID)
- UnitUpgrades[unitID] = nil
-end
-
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------

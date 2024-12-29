@@ -3,8 +3,8 @@ function gadget:GetInfo()
     name    = "UnitUpgrades",
     desc    = "Units purchase upgrades over time.",
     author  = "[ur]uncle",
-    date    = "2024-12-28",
-    version = "1.6",
+    date    = "2024-12-29",
+    version = "1.7",
     license = "GNU GPL v2 or later",
     layer   = 0,
     enabled = true
@@ -52,6 +52,15 @@ local CLOAK_MOVING_CEG    = "cloak_effect"
 
 local TARGET_FRAMES_FULL = 12 * 30
 
+local validUnitDefs = {}
+
+function gadget:Initialize()
+  for udid, ud in pairs(UnitDefs) do
+    if (not ud.isFactory) and (not ud.isBomberAirUnit) then
+      validUnitDefs[udid] = true
+    end
+  end
+end
 
 --------------------------------------------------------------------------------
 --  UPGRADE STATE
@@ -62,11 +71,6 @@ local inProgress         = {}  -- [unitID] = { cmdID, teamID, totalCost, accumPa
 local speedBoostedUnits  = {}
 local armorBoostedUnits  = {}
 local cloakedUnits       = {}
-
-
---------------------------------------------------------------------------------
---  CMD DESCRIPTORS
---------------------------------------------------------------------------------
 
 local function MakeSpeedCmdDesc(cost)
   return {
@@ -126,11 +130,6 @@ local function SetCmdDescToBuy(unitID, cmdDescID, oldName)
   })
 end
 
-
---------------------------------------------------------------------------------
---  UTIL
---------------------------------------------------------------------------------
-
 local function ParalyzeUnit(unitID, yes)
   if yes then
     Spring.SetUnitHealth(unitID, { paralyze = 1.0e9 })
@@ -138,10 +137,6 @@ local function ParalyzeUnit(unitID, yes)
     Spring.SetUnitHealth(unitID, { paralyze = -1 })
   end
 end
-
---------------------------------------------------------------------------------
---  UPGRADE CONTROL
---------------------------------------------------------------------------------
 
 local function StartUpgrade(unitID, cmdID, teamID, totalCost, cmdDescID)
   inProgress[unitID] = {
@@ -167,7 +162,6 @@ local function StartUpgrade(unitID, cmdID, teamID, totalCost, cmdDescID)
 
   -- **Unsynced**: call UpgradeStart
   SendToUnsynced("UpgradeStart", unitID)
-
 end
 
 local function StopUpgrade(unitID)
@@ -264,27 +258,13 @@ local function FinishUpgrade(unitID, data)
   end
 end
 
-
-
 --------------------------------------------------------------------------------
 --  Gadget Callins (Synced)
 --------------------------------------------------------------------------------
 
-function gadget:UnitCreated(unitID, unitDefID, teamID)
-  local ud = UnitDefs[unitDefID]
-  if not ud then return end
-
-  local baseMetal = ud.metalCost or 0
-  local speedCost = baseMetal * SPEED_COST_MULT
-  local armorCost    = baseMetal * ARMOR_COST_MULT
-  local cloakCost = baseMetal * CLOAK_COST_MULT
-
-  Spring.InsertUnitCmdDesc(unitID, MakeSpeedCmdDesc(speedCost))
-  Spring.InsertUnitCmdDesc(unitID, MakeARMORCmdDesc(armorCost))
-  Spring.InsertUnitCmdDesc(unitID, MakeCloakCmdDesc(cloakCost))
-end
-
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
+  if not validUnitDefs[unitDefID] then return true end
+
   if cmdID == CMD.STOP then
     if inProgress[unitID] then
       StopUpgrade(unitID)
@@ -383,6 +363,19 @@ function gadget:GameFrame(f)
   end
 end
 
+function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+  if not validUnitDefs[unitDefID] then return end
+  local ud = UnitDefs[unitDefID]
+  local baseMetal = ud.metalCost or 0
+  local speedCost = baseMetal * SPEED_COST_MULT
+  local armorCost = baseMetal * ARMOR_COST_MULT
+  local cloakCost = baseMetal * CLOAK_COST_MULT
+
+  Spring.InsertUnitCmdDesc(unitID, MakeSpeedCmdDesc(speedCost))
+  Spring.InsertUnitCmdDesc(unitID, MakeARMORCmdDesc(armorCost))
+  Spring.InsertUnitCmdDesc(unitID, MakeCloakCmdDesc(cloakCost))
+end
+
 function gadget:UnitDestroyed(unitID)
   if inProgress[unitID] then
     StopUpgrade(unitID)
@@ -392,159 +385,32 @@ function gadget:UnitDestroyed(unitID)
   armorBoostedUnits[unitID] = nil
   cloakedUnits[unitID]      = nil
 end
-
-
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --
 --  UNSYNCED SECTION
 --
 --------------------------------------------------------------------------------
-
 else
-
---------------------------------------------------------------------------------
---  We'll do the same “ghost draw” logic, plus
---  we add two sync actions: "UpgradeStart" -> Script.LuaUI.UpgradeStart(unitID)
---                          "UpgradeStop"  -> Script.LuaUI.UpgradeStop(unitID)
---------------------------------------------------------------------------------
-
-local spIsUnitVisible     = Spring.IsUnitVisible
-local spGetUnitHeading    = Spring.GetUnitHeading
-local spGetUnitBasePos    = Spring.GetUnitBasePosition
-local spGetUnitTeam       = Spring.GetUnitTeam
-local spGetLocalTeamID    = Spring.GetLocalTeamID
-local spAreTeamsAllied    = Spring.AreTeamsAllied
-local spGetUnitRulesParam = Spring.GetUnitRulesParam
-local spValidUnitID       = Spring.ValidUnitID
-
-local headingToDegree     = 360 / 65535
-
-local alreadyInit = {}
-local teamColors  = {}
-
---------------------------------------------------------------------------------
---  Calls for LuaUI
---------------------------------------------------------------------------------
-
-local function UpgradeStart(_, unitID)
-  if Script and Script.LuaUI and Script.LuaUI.UpgradeStart then
-    Script.LuaUI.UpgradeStart(unitID)
-  end
-end
-
-local function UpgradeStop(_, unitID)
-  if Script and Script.LuaUI and Script.LuaUI.UpgradeStop then
-    Script.LuaUI.UpgradeStop(unitID)
-  end
-end
-
---------------------------------------------------------------------------------
---  Gadget:Initialize & Gadget:Shutdown
---------------------------------------------------------------------------------
-
-function gadget:Initialize()
-  gadgetHandler:AddSyncAction("UpgradeStart", UpgradeStart)
-  gadgetHandler:AddSyncAction("UpgradeStop",  UpgradeStop)
-end
-
-function gadget:Shutdown()
-  gadgetHandler:RemoveSyncAction("UpgradeStart")
-  gadgetHandler:RemoveSyncAction("UpgradeStop")
-end
-
-
---------------------------------------------------------------------------------
---  DRAW
---------------------------------------------------------------------------------
-
-local function InitializeUnitShape(unitDefID, teamID)
-  alreadyInit[teamID] = alreadyInit[teamID] or {}
-  if alreadyInit[teamID][unitDefID] then return end
-  gl.PushMatrix()
-    gl.ColorMask(false)
-    gl.UnitShape(unitDefID, teamID, true)
-    gl.ColorMask(true)
-  gl.PopMatrix()
-  alreadyInit[teamID][unitDefID] = true
-end
-
-local function SetTeamColor(teamID, alpha)
-  local c = teamColors[teamID]
-  if c then
-    gl.Color(c[1], c[2], c[3], alpha)
-    return
-  end
-  local r, g, b = Spring.GetTeamColor(teamID)
-  if r and g and b then
-    teamColors[teamID] = {r, g, b}
-    gl.Color(r, g, b, alpha)
-  else
-    gl.Color(1,1,1, alpha)
-  end
-end
-
-function gadget:DrawWorld()
-
-  local units = Spring.GetAllUnits()
-  if not units or #units == 0 then return end
-
-  gl.Blending(GL.SRC_ALPHA, GL.ONE)
-  gl.DepthTest(GL.LEQUAL)
-
-  local myTeam = spGetLocalTeamID()
-
-  for i = 1,#units do
-    local uID = units[i]
-    if spValidUnitID(uID) then
-      local inProg = spGetUnitRulesParam(uID, "upgrade_inProgress") or 0
-      if inProg == 1 then
-        if spIsUnitVisible(uID, 64, true) then
-          local heading = spGetUnitHeading(uID)
-          if heading then
-            local px, py, pz = spGetUnitBasePos(uID)
-            if px then
-              local teamID    = spGetUnitTeam(uID) or -1
-              local accumPaid = spGetUnitRulesParam(uID, "upgrade_accumPaid") or 0
-              local totalCost = spGetUnitRulesParam(uID, "upgrade_totalCost")  or 1
-              local ratio     = math.min(accumPaid / math.max(totalCost, 0.0001), 1)
-              local defID     = Spring.GetUnitDefID(uID) or -1
-
-              InitializeUnitShape(defID, teamID)
-
-              -- Flicker alpha
-              local alpha = (math.sin((Spring.GetGameFrame() + uID) * 0.1) * 0.3) + 0.7
-
-              SetTeamColor(teamID, alpha)
-              gl.PushMatrix()
-                gl.Translate(px, py, pz)
-                gl.Rotate(heading * headingToDegree, 0,1,0)
-                gl.Scale(1.05, 1.05, 1.05)
-                gl.UnitShape(defID, teamID, true, true, true)
-              gl.PopMatrix()
-
-              -- Show progress
-              if myTeam and spAreTeamsAllied(myTeam, teamID) then
-                gl.PushMatrix()
-                  gl.Translate(px, py + 14, pz)
-                  gl.Billboard()
-                  gl.Text(string.format("%.0f%%", ratio * 100), 0, -20, 11, "oc")
-                gl.PopMatrix()
-              end
-            end
-          end
-        end
+    local function HandleUpgradeStart(_, unitID)
+      if Script and Script.LuaUI and Script.LuaUI.UpgradeStart then
+        Script.LuaUI.UpgradeStart(unitID)
       end
     end
-  end
 
-  gl.Color(1,1,1,1)
-  gl.DepthTest(false)
-  gl.Blending(GL.SRC_ALPHA, GL.ONE_MINUS_SRC_ALPHA)
-end
+    local function HandleUpgradeStop(_, unitID)
+      if Script and Script.LuaUI and Script.LuaUI.UpgradeStop then
+        Script.LuaUI.UpgradeStop(unitID)
+      end
+    end
 
---------------------------------------------------------------------------------
--- done
---------------------------------------------------------------------------------
+    function gadget:Initialize()
+      gadgetHandler:AddSyncAction("UpgradeStart", HandleUpgradeStart)
+      gadgetHandler:AddSyncAction("UpgradeStop",  HandleUpgradeStop)
+    end
 
+    function gadget:Shutdown()
+      gadgetHandler:RemoveSyncAction("UpgradeStart")
+      gadgetHandler:RemoveSyncAction("UpgradeStop")
+    end
 end
