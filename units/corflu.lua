@@ -77,7 +77,7 @@ return {
 		weapondefs = {
 			cor_flucannon = {
 				accuracy = 120,
-				areaofeffect = 8360,
+				areaofeffect = 60000,
 				avoidfeature = false,
 				avoidfriendly = false,
 				cegtag = "Trail_cannon",
@@ -105,7 +105,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 1340,
 				damage = {
-					commanders = 5,
+					commanders = 100,
 					default = 99750000,
 				},
 				tracks = false,
