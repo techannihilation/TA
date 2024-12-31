@@ -34,13 +34,13 @@ local UPGRADE_COMMANDS = {
 }
 
 -- Multipliers
-local SPEED_BOOST_FACTOR = 1.71
-local SPEED_COST_MULT    = 1.15
+local SPEED_BOOST_FACTOR = 1.85
+local SPEED_COST_MULT    = 1.35
 
 local ARMOR_BOOST_FACTOR = 2.50
-local ARMOR_COST_MULT    = 0.90
+local ARMOR_COST_MULT    = 1.00
 
-local CLOAK_COST_MULT    = 0.60
+local CLOAK_COST_MULT    = 0.40
 
 local DECLAK_DISTANCE_MULT = 0.05
 
@@ -79,7 +79,7 @@ local function MakeSpeedCmdDesc(cost)
     name    = "Buy\nSpeed",
     action  = "buyspeedboost",
     tooltip = string.format(
-      "\255\1\255\1Purchase a +70%% Speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +85%% Speed upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       cost
     ),
     cursor  = "Attack",
