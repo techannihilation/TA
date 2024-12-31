@@ -35,12 +35,12 @@ local UPGRADE_COMMANDS = {
 
 -- Multipliers
 local SPEED_BOOST_FACTOR = 1.71
-local SPEED_COST_MULT    = 1.25
+local SPEED_COST_MULT    = 1.15
 
-local ARMOR_BOOST_FACTOR = 2.20
+local ARMOR_BOOST_FACTOR = 2.50
 local ARMOR_COST_MULT    = 0.90
 
-local CLOAK_COST_MULT    = 0.90
+local CLOAK_COST_MULT    = 0.60
 
 local DECLAK_DISTANCE_MULT = 0.05
 
@@ -94,7 +94,7 @@ local function MakeARMORCmdDesc(cost)
     name    = "Buy\nArmor",
     action  = "buyarmorboost",
     tooltip = string.format(
-      "\255\1\255\1Purchase a +120%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
+      "\255\1\255\1Purchase a +150%% Armor upgrade.\n\255\255\255\1Costs %.1f metal total.\255\255\255\255",
       cost
     ),
     cursor  = "Attack",
@@ -223,6 +223,7 @@ local function FinishUpgrade(unitID, data)
       end
     else
       -- Ground or ship
+      --if ud.yardmap == nil and ud.workertime == true then return end -- nano turret (not uDef.yardmap and not uDef.workertime)
       Spring.MoveCtrl.SetGroundMoveTypeData(unitID, {
         maxSpeed = baseSpeed * SPEED_BOOST_FACTOR,
         maxWantedSpeed = baseSpeed * SPEED_BOOST_FACTOR
@@ -315,7 +316,7 @@ end
 
 function gadget:GameFrame(f)
   -- Basic effects for completed upgrades
-  if f % 15 == 0 then
+  if f % 20 == 0 then
     for uID in pairs(speedBoostedUnits) do
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
@@ -334,7 +335,7 @@ function gadget:GameFrame(f)
     end
   end
 
-  if f % 90 == 0 then
+  if f % 180 == 0 then
     for uID in pairs(cloakedUnits) do
       if Spring.ValidUnitID(uID) and not Spring.GetUnitIsDead(uID) then
         local x,y,z = Spring.GetUnitPosition(uID)
