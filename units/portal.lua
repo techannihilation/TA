@@ -11,7 +11,7 @@ return {
 		buildtime = 200000,
 		builddistance = 0.01,
 		category = "ALL MOBILE SURFACE",
-		collisionvolumeoffsets = "0 50 -150",
+		collisionvolumeoffsets = "0 50 -70",
 		collisionvolumescales = "100 100 20",
 		collisionvolumetype = "box",
 		--corpse = "dead",
